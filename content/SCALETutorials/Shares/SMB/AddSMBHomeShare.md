@@ -15,13 +15,19 @@ Future TrueNAS SCALE releases can introduce instability or require configuration
 {{< /hint >}}
 
 ## Setting Up SMB Home Shares
-TrueNAS offers the **Use as Home Share** option, found in the **Add SMB** and **Edit SMB** screen **Advanced Options** settings in the **Other Options** section, for organizations or SMEs that want to use a single SMB share to provide a personal directory to every user account.
+The **Use as Home Share** option, found in the **Add SMB** and **Edit SMB** screen **Advanced Options** settings in the **Other Options** section, is an available option for organizations or SMEs that want to use a single SMB share to provide a personal directory to every user account.
 
 With home shares, each user is given a personal home directory when connecting to the share.
 These home directories are not accessible by other users.
 You can use only one share as the home share, but you can create as many non-home shares as you need or want.
 
-Creating an SMB home share requires configuring the system storage and joining Active Directory.
+<!-- Place holders for future tutorials/links below. Update with links to appropriate procedures as part of PD-1252 -->
+Other options for configuring individual user directories include:
+* Configure a single share on the TrueNAS and provision individual user directories on the client OS. 
+* Create a single SMB share and configure the ACL so that users can create individual directories on the share that inherit write access for the user and grant read access the administrator.
+* Create an SMB share using the **Private SMB datasets and shares** preset that can create per-user datasets under the umbrella of a single share when users access the share.
+
+Creating an SMB home share requires configuring the system storage and provisioning local users or joining Active Directory.
 
 ### Adding Local Share Users
 Go to **Credentials > Local Users** and click **Add**.
