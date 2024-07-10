@@ -55,13 +55,13 @@ After you configure SAML in Google Admin, you configure and start the TrueComman
    
    {{< trueimage src="/images/SAML/GAAddServiceProviderDetailsCropped.png" alt="GA Add Service Provider Details Cropped" id="GA Add Service Provider Details Cropped" >}}
     
-   a. Enter the TrueCommand login URL http://*IP:PORT*/saml/acs in the **ACS Url** field. 
-      *IP:PORT* is your TrueCommand system IP and port address.
+   a. Enter the TrueCommand login URL `https://*IP:PORT*/saml/acs` in the **ACS Url** field.
+      *IP:PORT* is your TrueCommand system IP with HTTPS port.
    
    b. Type any name you want into the **Entity ID** field (ex. truecommand-saml).
    
-   c. Type the https://*IP:PORT*/saml/helloURL into the **Start URL** field. 
-      *IP:PORT* is your TrueCommand system IP and port address. 
+   c. Type the `https://*IP:PORT*/saml/hello` into the **Start URL** field.
+      *IP:PORT* is your TrueCommand system IP with HTTPS port.
 
    d. Set **Name ID** format to **PERSISTENT**.
    
@@ -79,16 +79,18 @@ After you configure SAML in Google Admin, you configure and start the TrueComman
 	  {{< truetable >}}
       | Parameter | Value |
       |-----------|-------|
-      | E-Mail-Addresses | email |
-      | Display-Name | given_name |
-      | User-Principal-Name | unique_name |
-      | Telephone-Number | telephoneNumber |
+      | Primary email | email |
+      | First name | given_name |
+      | Employee ID | unique_name |
+      | Phone number | telephone_number |
       | Title | title |
       {{< /truetable >}}
+
+      Adjust the parameters according to your own organization, where `unique_name` corresponds to the TrueCommand `username` and is the only required attribute. `Primary email` might be desired instead of and if an `Employee ID` is not available. 
 	  
    h. Click **FINISH**.
 
-5. Verify the information is correct. 
+5. Verify the information is correct.
    Select **TEST SAML LOGIN** in the **tcsaml** area on the left side of the screen to open the **TrueCommand SAML Test** screen.
 
    {{< trueimage src="/images/SAML/GAAddCustomSAMLAppTrueCommandSAMLTestCropped.png" alt="GA Add Custom SAML App TrueCommand SAML Test Cropped" id="GA Add Custom SAML App TrueCommand SAML Test Cropped" >}}
@@ -101,7 +103,7 @@ After you configure SAML in Google Admin, you configure and start the TrueComman
    
    b. Click **DOWNLOAD METADATA** again. When complete, click **CLOSE**.
       
-7. Verify user access details. 
+7. Verify user access details.
    
    a. Click **View Details** under **User access** to display the **Service status** details.
       
