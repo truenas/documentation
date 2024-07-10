@@ -110,4 +110,37 @@ Click **Verify Credential** to ensure the credentials are valid, then click **Sa
 
 ## Creating the Cloud Sync Task
 
-{{< include file="/static/includes/CreateCloudSyncTaskScale.md" >}}
+To add a cloud sync task, go to **Data Protection > Cloud Sync Tasks** and click **Add**. The **Cloud Sync Task Wizard** opens.
+
+{{< trueimage src="/images/SCALE/DataProtection/CloudSyncTaskWizardProviderScreen.png" alt="Cloud Sync Task Wizard" id="Cloud Sync Task Wizard" >}}
+
+1. Select the Google Photos backup credentials from the **Credentials** dropdown list.
+
+   Click **Verify Credential** to ensure the credentials are valid then click **Next**.
+
+2. Select the **Direction** as **PUSH** or **PULL** and set **Transfer Mode** to **SYNC**.
+   Select the Google Photos location to back up data to or from in **Folder**.
+   Browse to and select the **album** folder or enter **/album**.
+
+   {{< trueimage src="/images/SCALE/DataProtection/CloudSyncTaskWizardWhatandWhenScreen.png" alt="Cloud Sync Task Wizard What and When" id="Cloud Sync Task Wizard - What and When" >}}
+
+3. Select the local dataset in **Directory/Files**.
+   This is the dataset sent to Google Photos for push tasks or the write destination for pull tasks.
+
+   {{< hint type=info title="Sync Albums Not Files" >}}
+   Push tasks containing media files saved directly to the local dataset fail with the error **Failed to sync: can't upload files here**.  
+
+   Save files to child directories, not to the root level of the TrueNAS dataset.
+   Directories under the local dataset correspond to albums in the Google Photos library.
+   {{< /hint >}}
+
+4. Enter a **Description** for the cloud sync task.
+
+5. Select the time to run the task from the **Schedule** options.
+
+6. Click **Save** to add the task.
+
+TrueNAS adds the task to the **Cloud Sync Task** widget with the status **Pending**, until the task runs on schedule.
+
+Click <i class="fa fa-refresh" aria-hidden="true" title="Dry Run"></i> **Dry Run** to test the task by to connecting to Google Photos and simulating transferring a file.
+Click <i class="fa fa-play" aria-hidden="true" title="Run Job"></i> **Run Job** to start the cloud sync task immediately.
