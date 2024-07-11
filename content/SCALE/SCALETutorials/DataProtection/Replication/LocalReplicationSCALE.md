@@ -62,3 +62,5 @@ Saving changes to the configuration creates a new replication task without alter
       To make it easier to find the snapshot, give it name easy for you to identify. For example, a replicated task named *dailyfull* for a full file system snapshot taken daily.
 
 {{< include file="/static/includes/ReplicationScheduleAndRetentionSteps.md" >}}
+
+{{<include file="/static/includes/addcolumnorganizer.md">}}
