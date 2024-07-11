@@ -12,6 +12,57 @@ keywords:
 ---
 
 Google Photos works best in TrueNAS using a Google Photos API key and [rclone](https://rclone.org/) token.
+See the [rclone Google Photos backend documentation](https://rclone.org/googlephotos/) for additional information on using rclone to sync Google Photos, including features and limitations of the Google Photos API.
+
+This is a multi-part procedure that includes [generating Google API credentials](#creating-the-api-credentials), [installing and configuring rclone](#configuring-rclone) on your client OS, [creating cloud credentials](#creating-google-photos-cloud-credentials) for Google Photos on TrueNAS SCALE, and then [configuring the cloud sync task](#creating-the-cloud-sync-task).
+
+## Before You Begin
+
+Review your storage and data protection requirements and carefully consider your options before setting up a Google Photos cloud sync task.
+Consider how you want to manage your media files on Google Photos and in your local dataset.
+Select the cloud sync task direction, transfer mode, and remote folder to target that best fit your needs.
+
+### Choosing a Sync Direction and Mode
+
+A Google Photos cloud sync task can be configured to either pull files from Google Photos to a local dataset on TrueNAS SCALE or to push local files to Google Photos.
+Select the direction that best fits the way you intend to manage your media files.
+
+Choose to pull data from Google Photos if you prefer to manage media files via the Google Photos UI and use the local dataset as a backup target.
+
+Choose to push data to Google Photos if you prefer to manage media files in the local dataset and use Google Photos as a cloud backup location.
+
+Next, select the data transfer mode that best fits the way you want to manage file retention and synchronization between the source and destination.
+There are three options:
+  * **SYNC** - Select to change files on the destination to match those on the source.
+    If a file does not exist on the source, it is also deleted from the destination.
+  * **COPY** - Select to duplicate each source file into the destination.
+    If files with the same names are present on the destination, they are overwritten.
+  * **MOVE** - Select to transfer files from the source to the destination and delete source files.
+    Copies files from the source to the destination and then deletes them from the source. Files with the same names on the destination are overwritten.
+
+### Choosing a Target Folder
+
+After choosing the direction and mode for your cloud sync task, choose the appropriate remote Google Photos folder that rclone targets to sync data.
+Note that because of the way rclone interacts with the Google Photos API, each target folder option has specific file management and structure requirements.
+A cloud sync task cannot target the root level folder (<file>/</file>).
+
+{{< truetable >}}
+| Folder | Recommended | Direction | Description |
+|-----------|-------------|-------------|-------------|
+| <file>/album</file> | Yes | Push or Pull | Use this option for push tasks or if you prefer to organize the Google Photos library by sorting media files into one or more discrete albums. All files must be sorted into distinct albums or child directories of the local dataset. Media files uploaded to Google Photos but not assigned to an album are not pulled to a local dataset mirroring <file>/album</file>. Files uploaded to the base level of the local dataset instead of a child directory (an album) cannot be pushed to <file>/album</file>. |
+|  <file>/media/all</file> | Yes | Pull | Use this option if you prefer to use the Google Photos library as single directory, without organizing media files into discrete albums. The local dataset of a <file>/media/all</file> sync task contains all media files stored on the Google Photos account at the same level, with no further organization into subdirectories. Using <file>/media/all</file> allows you to upload new files directly to Google Photos, without needing to organize them into albums, and then pull them to TrueNAS. |
+| <file>/upload</file> | **No** | Push | Media files pushed from the local dataset to <file>/upload</file> are then uploaded to Google Photos, without being sorted into an album. Because <file>/upload</file> is a temporary storage location, it does not preserve the full Google Photos library to synchronize from one task to the next. Pushing to this folder can result in duplicated files, poor performance, file name instability, and does not preserve metadata. |
+{{< /truetable >}}
+
+### Creating the Dataset and Organizing Files
+
+After selecting the cloud sync task direction, transfer mode, and remote folder to target, create a TrueNAS SCALE local dataset to use as the task source or destination.
+
+{{< expand "Creating a Dataset" "v" >}}
+{{< include file="/static/includes/CreateDatasetSCALE.md" >}}
+{{< /expand >}}
+
+Configure the local dataset file structure (for push tasks) or Google Photos library albums (for pull tasks) as required by your direction, mode, and target selections (see above).
 
 ## Creating the API Credentials
 On the [Google API dashboard](https://console.cloud.google.com/apis/dashboard), click the dropdown menu to the right of the Google Cloud logo and select your project.
@@ -70,7 +121,7 @@ Copy and save your client ID and secret, or download the JSON file.
 {{< trueimage src="/images/SCALE/DataProtection/GooglePhotosAPICopyIDandSecret.png" alt="Copy Client ID and Secret" id="Copy Client ID and Secret" >}}
 
 ## Configuring Rclone
-Download [rclone](https://rclone.org/downloads/) for your OS and open it in a command line utility following the [rclone installation instructions](https://rclone.org/install/).
+Download [rclone](https://rclone.org/downloads/) for your client OS and open it in a command line utility following the [rclone installation instructions](https://rclone.org/install/).
 The example photos in this article use Powershell in Windows OS.
 
 Enter `rclone config`, then enter `n` to create a new remote.
@@ -92,8 +143,6 @@ In the command line, enter `y` to confirm rclone uploads media items with full r
 Copy and save the type, client_id, client_secret, and token, then enter `y` to save the new remote.
 
 {{< trueimage src="/images/SCALE/DataProtection/GooglePhotosAPIrcloneConfig3.png" alt="Confirm rclone Configuration" id="Confirm rclone Configuration" >}}
-
-See the [rclone Google Photos backend documentation](https://rclone.org/googlephotos/) for additional information on using rclone to sync Google Photos.
 
 ## Creating Google Photos Cloud Credentials
 Open your TrueNAS Web UI. Go to **Credentials > Backup Credentials** and click **Add** in the **Cloud Credentials** widget.
@@ -118,7 +167,7 @@ To add a cloud sync task, go to **Data Protection > Cloud Sync Tasks** and click
 
    Click **Verify Credential** to ensure the credentials are valid then click **Next**.
 
-2. Select the **Direction** as **PUSH** or **PULL** and set **Transfer Mode** to **SYNC**.
+2. Select the **Direction** as **PUSH** or **PULL** and select the **Transfer Mode** as **SYNC**, **COPY**, or **MOVE**.
    Select the Google Photos location to back up data to or from in **Folder**.
    Browse to and select the **album** folder or enter **/album**.
 
@@ -142,5 +191,10 @@ To add a cloud sync task, go to **Data Protection > Cloud Sync Tasks** and click
 
 TrueNAS adds the task to the **Cloud Sync Task** widget with the status **Pending**, until the task runs on schedule.
 
-Click <i class="fa fa-refresh" aria-hidden="true" title="Dry Run"></i> **Dry Run** to test the task by to connecting to Google Photos and simulating transferring a file.
+Click <i class="fa fa-refresh" aria-hidden="true" title="Dry Run"></i> **Dry Run** to test the task by connecting to Google Photos and simulating transferring a file.
+Note that no data is sent or received during a dry run.
+A dry run can report successful even for a task that ultimately fails to transfer data due to misconfiguration
+
 Click <i class="fa fa-play" aria-hidden="true" title="Run Job"></i> **Run Job** to start the cloud sync task immediately.
+
+### Troubleshooting
