@@ -11,7 +11,7 @@ keywords:
 - data backup and recovery
 ---
 
-Google Photos works best in TrueNAS using a Google Photos API key and [rclone](https://rclone.org/) token.
+Configuring a Google Photos cloud sync task requires a Google Photos API key and [rclone](https://rclone.org/) token.
 See the [rclone Google Photos backend documentation](https://rclone.org/googlephotos/) for more on using rclone to sync Google Photos, including features and limitations of the Google Photos API.
 
 This is a multi-part procedure that includes [generating Google API credentials](#creating-the-api-credentials), [installing and configuring rclone](#configuring-rclone) on your client OS, [creating cloud credentials](#creating-google-photos-cloud-credentials) for Google Photos on TrueNAS SCALE, and then [configuring the cloud sync task](#creating-the-cloud-sync-task).
@@ -237,7 +237,7 @@ Organize your Google Photos library or local dataset as needed for the selected 
 After reviewing available logs, click <i class="material-icons" aria-hidden="true" title="Edit">edit</i> **Edit** on the task and review the configuration.
 Compare configured options to the requirements in [Before You Begin](#before-you-begin) above and correct any issues.
 
-If a pull task completes but some or all files are missing from the local dataset, review your library organization in Google Photos.
+If a pull task is successful but some or all files are missing from the local dataset, review your library organization in Google Photos.
 Pull tasks configured with <file>/album</file> as the target folder only transfer files organized into albums.
 Files uploaded to Google Photos but not added to an album are not transferred.
 Using the Google Photos UI, create one or more albums and add all files to an album then click <i class="fa fa-play" aria-hidden="true" title="Run Job"></i> **Run Job** to re-run the cloud sync task.
