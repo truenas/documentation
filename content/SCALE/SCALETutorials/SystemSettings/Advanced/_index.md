@@ -26,7 +26,7 @@ Advanced Settings provides configuration options for the console, syslog, kernel
 This article provides information on sysctl, system dataset pool, setting the maximum number of simultaneous replication tasks the system can perform, and managing sessions.
 
 ## Managing Allowed IP Addresses
-Use the **System Settings > Advanced** screen **Allowed IP Addresses** configuration screen to restrict access to the TrueNAS SCALE web UI and API.
+Use the **System > Advanced** screen **Allowed IP Addresses** configuration screen to restrict access to the TrueNAS SCALE web UI and API.
 
 Entering an IP address limits access to the system to only the address(es) entered here. To allow unrestricted access to all IP addresses, leave this list empty.
 

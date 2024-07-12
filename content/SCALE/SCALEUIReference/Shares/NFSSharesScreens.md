@@ -115,7 +115,7 @@ Only the **Access** settings display on the **Advanced Options** screen.
 {{< /truetable >}}
 
 ## NFS Sessions Screen
-You can access the **NFS Sessions** screen from the **NFS** option on the **System Settings > Services** screen with the <i class="material-icons" aria-hidden="true" title="list">list</i> icon and from the <span class="material-icons">more_vert</span> on the **Shares > Unix (NFS) Shares** widget.
+You can access the **NFS Sessions** screen from the **NFS** option on the **System > Services** screen with the <i class="material-icons" aria-hidden="true" title="list">list</i> icon and from the <span class="material-icons">more_vert</span> on the **Shares > Unix (NFS) Shares** widget.
 
 {{< trueimage src="/images/SCALE/Shares/NFSSessionsScreen.png" alt="NFS Sessions Screen" id="NFS Sessions Screen" >}}
 

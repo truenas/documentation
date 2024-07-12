@@ -17,7 +17,7 @@ keywords:
 TrueNAS SCALE allows users to manage the system configuration by uploading or downloading configurations, or by resetting the system to the default configuration. 
 
 ## System Configuration Options
-The **Manage Configuration** option on the **System Settings > General** screen provides three options:
+The **Manage Configuration** option on the **System > General** screen provides three options:
 
 * **Download File** that downloads your system configuration settings to a file on your system.
 * **Upload File** that allows you to upload a replacement configuration file.

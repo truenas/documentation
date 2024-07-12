@@ -39,7 +39,7 @@ When creating a user, you must:
 * Enter a **Username** or accept the generated user name.
 * Enter and enable a **Password**.
 * Specify or accept the default user ID (**UID**)
-* (Optional) Select the **Shell** the user has access to when they go to **System Settings > Shell**.
+* (Optional) Select the **Shell** the user has access to when they go to **System > Shell**.
    Not all users can select a shell.
 
 All other settings are optional.

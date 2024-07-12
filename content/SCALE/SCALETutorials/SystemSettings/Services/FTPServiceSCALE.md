@@ -19,7 +19,7 @@ keywords:
 The [File Transfer Protocol (FTP)](https://tools.ietf.org/html/rfc959) is a simple option for data transfers.
 The SSH options provide secure transfer methods for critical objects like configuration files, while the Trivial FTP options provide simple file transfer methods for non-critical files.
 
-Options for configuring **FTP**, **SSH**, and **TFTP** are in **System Settings > Services**.
+Options for configuring **FTP**, **SSH**, and **TFTP** are in **System > Services**.
 Click the <i class="material-icons" aria-hidden="true" title="Configure">edit</i> to configure the related service.
 
 ## Configuring FTP For Any Local User
@@ -43,7 +43,7 @@ Click **Save**.
 
 ### Configuring FTP Service
 
-To configure FTP, go to **System Settings > Services** and find **FTP**, then click <i class="material-icons" aria-hidden="true" title="Configure">edit</i> to open the **Services > FTP** screen.
+To configure FTP, go to **System > Services** and find **FTP**, then click <i class="material-icons" aria-hidden="true" title="Configure">edit</i> to open the **Services > FTP** screen.
 
 {{< trueimage src="/images/SCALE/SystemSettings/FTPBasicSettings.png" alt="FTP Basic Settings" id="FTP Basic Settings" >}}
 
@@ -75,7 +75,7 @@ Select the **Read**, **Write**, and **Execute** for **User**, **Group**, and **O
 
 ### Configuring FTP Service
 
-Go to **System Settings > Services** and find **FTP**, then click <i class="material-icons" aria-hidden="true" title="Configure">edit</i> to open the **Services > FTP** screen.
+Go to **System > Services** and find **FTP**, then click <i class="material-icons" aria-hidden="true" title="Configure">edit</i> to open the **Services > FTP** screen.
 
 {{< trueimage src="/images/SCALE/SystemSettings/FTPBasicSettings.png" alt="FTP Basic Settings" id="FTP Basic Settings" >}}
 
