@@ -109,7 +109,7 @@ Use the **Cache** wizard screen to configure a ZFS L2ARC read-cache VDEV.
 Use the **Metadata** wizard screen to configure a special allocation class VDEV. Metadata VDEVS are used when creating a fusion pool.
 This VDEV type is used to speed up metadata and small block IO.
 
-{{< trueimage src="/images/SCALE/Storage/PoolCreationWizardMetadataScreen.png" alt="Pool Creation Wizard Metadata Screen" id="Pool Creation Wizard Metadata Screen" >}}
+{{< trueimage src="/images/SCALE/Storage/PoolCreationWizardMetadataScreen(1).png" alt="Pool Creation Wizard Metadata Screen" id="Pool Creation Wizard Metadata Screen" >}}
 
 {{< expand "Common Pool Creation Wizard Settings" "v" >}}
 The **Layout** dropdown list includes the **Stripe** or **Mirror** types.
@@ -121,7 +121,7 @@ The **Layout** dropdown list includes the **Stripe** or **Mirror** types.
 Use the **Dedup** wizard screen to configure a VDEV. A Dedup VDEV is used to store de-duplication tables.
 Size dedup VDEVs as *x* GiB for each *x* TiB of general storage.
 
-{{< trueimage src="/images/SCALE/Storage/PoolCreationWizardDedupScreen.png" alt="Pool Creation Wizard Dedup Screen" id="Pool Creation Wizard Dedup Screen" >}}
+{{< trueimage src="/images/SCALE/Storage/PoolCreationWizardDedupScreen(1).png" alt="Pool Creation Wizard Dedup Screen" id="Pool Creation Wizard Dedup Screen" >}}
 
 {{< expand "Common Pool Creation Wizard Settings" "v" >}}
 The **Layout** dropdown list includes the **Stripe** or **Mirror** types.
