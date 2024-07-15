@@ -118,6 +118,8 @@ To begin sharing, click the <span class="material-icons">more_vert</span> on the
 Or you can go to **System Settings > Services**, locate **NFS**, and click the toggle to running.
 Select **Start Automatically** if you want NFS to activate when TrueNAS boots.
 
+{{<include file="/static/includes/addcolumnorganizer.md">}}
+
 {{< hint type=note >}}
 The NFS service does not automatically start on boot if all NFS shares are encrypted and locked.
 {{< /hint >}}

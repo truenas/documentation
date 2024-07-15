@@ -41,6 +41,8 @@ The **Idmap** screen displays a list view of idmaps configured on your SCALE sys
 
 Click on an Idmap on the widget to open the screen for the selected idmap. 
 
+{{<include file="/static/includes/addcolumnorganizer.md">}}
+
 ## Add and Edit IDMAP Screens
 The settings on the **Add Idmap** and **Edit Idmap** change based on the selection made in both the **Name** and **Idmap Backend** fields. 
 

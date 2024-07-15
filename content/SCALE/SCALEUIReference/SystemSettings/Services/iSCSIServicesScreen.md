@@ -45,3 +45,5 @@ The **iSCSI** screen displays settings to configure iSCSI block shares.
 ### Associated Targets Screen
 
 {{< include file="/static/includes/iscsiAssociatedTargets.md" >}}
+
+{{<include file="/static/includes/addcolumnorganizer.md">}}

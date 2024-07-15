@@ -28,6 +28,8 @@ Users can click **Add** in the **Idmap** widget to configure backends or click o
 
 TrueNAS automatically generates an Idmap after you configure AD or LDAP.
 
+{{<include file="/static/includes/addcolumnorganizer.md">}}
+
 ## Adding an ID Map
 
 From the **Directory Services** screen, click **Show** to the right of **Advanced Settings** and then click **Confirm** to close the warning dialog.
