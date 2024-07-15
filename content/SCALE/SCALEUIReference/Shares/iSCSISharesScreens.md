@@ -97,3 +97,5 @@ To display the **iSCSI Group** settings, click **Add**.
 ### Associated Targets Screen
 
 {{< include file="/static/includes/iscsiAssociatedTargets.md" >}}
+
+{{<include file="/static/includes/addcolumnorganizer.md">}}
