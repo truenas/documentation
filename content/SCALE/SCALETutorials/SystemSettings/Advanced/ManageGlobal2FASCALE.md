@@ -1,6 +1,6 @@
 ---
 title: "Managing Global 2FA (Two-Factor Authentication)"
-description: "Provides information on SCALE global two-factor authentication, setting it up, and logging in with it enabled."
+description: "Provides information on setting up and managing global two-factor authentication, and logging in with it enabled."
 weight: 70
 alias:
  - /scale/scaletutorials/credentials/2fascale
@@ -16,7 +16,7 @@ keywords:
 
 Global Two-factor authentication (2FA) is great for increasing security.
 
-TrueNAS offers global 2FA to ensure that entities cannot use a compromised administrator root password to access the administrator interface.
+TrueNAS offers global 2FA to ensure that entities cannot use a compromised administrator or root password to access the administrator interface.
 
 {{< include file="/static/includes/AdvancedSettingsWarningSCALE.md" >}}
 
@@ -67,33 +67,45 @@ Before you begin, download Google Authenticator to your mobile device.
 
    TrueNAS takes you to the **Two-Factor Authentication** screen to finish 2FA setup.
 
-   {{< trueimage src="/images/SCALE/SystemSettings/2FAScreenEnabled.png" alt="2FAScreenEnabled" id="2FA Screen with Enabled Message" >}}
+   You can also access the two-factor authentication settings for the currently logged-in user from the **Settings** option on the top toolbar.
+   Click on the **Settings** icon, then select **Two-Factor Authentication** to open the **User Two-Factor Authentication Actions** screen.
+
+   {{< trueimage src="/images/SCALE/SystemSettings/UserTwoFactorAuthenticationActionsScreen.png" alt="User Two-Factor Authentication Actions Screen" id="User Two-Factor Authentication Actions Screen" >}}
+
+   Click **Configure 2FA Secret** to view the QR code.
+
+   {{< hint type="info">}}
+   You can configure two-factor authentication and get the QR code for an authenticator app for the logged-in user but nothing happens until you configure global two-factor authentication.
+   {{< /hint >}}
    
    When using Google Authenticator, set **Interval** to **30** or the authenticator code might not function when logging in.
 
-3. Click **Show QR** and scan the QR code using Google Authenticator.
+3. Click **Configure 2FA Secret** to open the **User Two-Factor Authentication Actions** screen where you scan the QR code using Google Authenticator.
+   Click **Renew 2FA Secret** to generate a new QR code.
 
    After scanning the code click **CLOSE** to close the dialog on the **Two-Factor Authentication** screen.
 
 Accounts that are already configured with individual 2FA are not prompted for 2FA login codes until **Global 2FA** is enabled.
-When **Global 2FA** is enabled, user accounts that have not configured 2FA settings yet are shown the **Two-Factor Authentication** screen on their next login to configure and enable 2FA authentication for that account.
+When **Global 2FA** is enabled, user accounts without 2FA settings configured see the **Two-Factor Authentication** screen on their next login to configure and enable 2FA authentication for that account.
 
 ### Disabling or Bypassing 2FA
-Go to **System Settings > Advanced**, scroll down to the **Global Two Factor Authentication** widget, and click **Config**. Clear the **Enable Two-Factor Authentication Globally** checkbox and click **Save**.
+Go to **System Settings > Advanced**, scroll down to the **Global Two Factor Authentication** widget, and click **Config**.
+Clear the **Enable Two-Factor Authentication Globally** checkbox and click **Save**.
 
 ### Reactivating 2FA
 If you want to enable 2FA again, go to **System Settings > Advanced**, scroll down to the **Global Two Factor Authentication** widget, and click **Config**.
 
 Check **Enable Two Factor Authentication Globally**, then click **Save**.
-To change the system-generated **Secret**, go to **Credentials > 2FA** and click **Renew 2FA Secret**.
+To change the system-generated **Secret**, click on the **Settings** icon on the top toolbar and select **Two-Factor Authentication**. 
+Click **Renew 2FA Secret**.
 
 ## Using 2FA to Log in to TrueNAS
-Enabling 2FA changes the login process for both the TrueNAS web interface and SSH logins.
+Enabling 2FA changes the log in process for both the TrueNAS web interface and SSH logins.
 
 ### Logging In Using the Web Interface
 The login screen adds another field for the randomized authenticator code. If this field is not immediately visible, try refreshing the browser.
 
-Enter the code from the mobile device (without the space) in the login window and use the root username and password.
+Enter the code from the mobile device (without the space) in the login window and use the admin username and password.
 
 {{< trueimage src="/images/SCALE/Login/2faSigninSplashScreen.png" alt="2FA Signin Splash Screen" id="2FA Splash Screen" >}}
 
