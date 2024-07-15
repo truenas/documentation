@@ -118,6 +118,8 @@ These options, except the ID, appear on the **Columns** dropdown list.
 {{< /truetable >}}
 {{< /expand >}}
 
+{{<include file="/static/includes/addcolumnorganizer.md">}}
+
 ### Wipe Disk Dialogs
 The option to wipe a disk only displays when a disk is unused by a pool.
 **Wipe** opens three dialogs, one to select the method, a confirmation dialog, and a progress dialog that includes the option to abort the process.

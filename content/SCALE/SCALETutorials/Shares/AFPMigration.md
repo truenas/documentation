@@ -37,6 +37,8 @@ To make the migrated AFP share accessible, start the SMB service.
 
 ![MigratedAFPShareSCALE](/images/SCALE/Shares/MigratedAFPShareSCALE.png "Migrated AFP Share")
 
+{{<include file="/static/includes/addcolumnorganizer.md">}}
+
 ## Connecting Migrated Shares
 
 Since AFP shares migrate to SMB in SCALE, you must use SMB syntax to mount them.

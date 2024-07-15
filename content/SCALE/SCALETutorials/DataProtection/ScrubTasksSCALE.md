@@ -20,6 +20,8 @@ TrueNAS generates a default scrub task when you create a new pool and sets it to
 
 ![ScrubTaskDefaultSCALE](/images/SCALE/DataProtection/scrubtaskpriority.png "Default Scrub Task")
 
+{{<include file="/static/includes/addcolumnorganizer.md">}}
+
 ## Adjusting Scrub/Resilver Priority
 
 {{< include file="/static/includes/ResilverPriority.md" >}}

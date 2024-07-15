@@ -175,6 +175,8 @@ See [Permissions]({{< relref "PermissionsScale.md" >}}) for more information on 
 
 After setting the dataset permission, connect to the share.
 
+{{<include file="/static/includes/addcolumnorganizer.md">}}
+
 ### Connecting to a Multiprotocol Share
 After creating and configuring the shares, connect to the mulit-protocol share using either SMB or NFS protocols from a variety of client operating systems including Windows, Apple, FreeBSD, and Linux/Unix systems.
 

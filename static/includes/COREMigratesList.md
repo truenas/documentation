@@ -1,7 +1,7 @@
 &NewLine;
 
 Although TrueNAS attempts to keep most of your CORE configuration data when upgrading to SCALE, some CORE-specific items do not transfer.
-These are the items that don't migrate from CORE:
+These are the items that do not migrate from CORE:
 
 * Microsoft OneDrive Cloud Sync credentials and tasks. OneDrive compatibility is not available in TrueNAS SCALE.
 * FreeBSD GELI encryption.
@@ -15,6 +15,9 @@ These are the items that don't migrate from CORE:
 * NIS data.
 * System tunables.
 * ZFS boot environments.
+* SMB auxiliary parameters.
+  As of SCALE 23.10 (Cobia), the **Auxiliary Parameters** option is no longer available in the UI as a configurable option.
+  We recommend removing any auxiliary parameter settings in CORE before migrating to SCALE.
 * AFP shares also do not transfer, but migrate into an SMB share with AFP compatibility enabled.
 * CORE `netcli` utility. A new CLI utility is used for the [Console Setup Menu]({{< relref "ConsoleSetupMenuSCALE.md" >}}) and other commands issued in a CLI.
   By default, any TrueNAS user account with **netcli** as the chosen **Shell** updates to use the **nologin** option instead. See the [Users Screens]({{< relref "LocalUsersScreensSCALE.md#authentication-settings" >}}) reference article for descriptions of all **Shell** options.

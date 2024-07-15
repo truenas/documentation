@@ -42,6 +42,8 @@ It provides the option to edit or delete the user, and access user audit logs.
 The **Add User** and **Edit User** configuration screens display the same setting options. 
 Built-in users (except the **root** user) do not include the **Home Directory Permissions** settings, but all new users created, such as those for an SMB share like the **smbguest** user, do.
 
+{{<include file="/static/includes/addcolumnorganizer.md">}}
+
 ### Identification Settings
 **Identification** settings specify the name, user name, password, and user email.
 

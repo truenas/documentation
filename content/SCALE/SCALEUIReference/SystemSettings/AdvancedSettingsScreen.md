@@ -339,6 +339,8 @@ The **Global Two Factor Authentication** widget allows you to set up two-factor 
 
 **Configure** opens the **Global Two Factor Authentication Settings** configuration screen.
 
+{{<include file="/static/includes/addcolumnorganizer.md">}}
+
 {{< trueimage src="/images/SCALE/SystemSettings/GlobalTwoFactorAuthenticationSettingsScreen.png" alt="Global Two Factor Authentication Settings Screen" id="Global Two Factor Authentication Settings Screen" >}}
 
 {{< expand "Global Two Factor Authentication Settings" "v" >}}
