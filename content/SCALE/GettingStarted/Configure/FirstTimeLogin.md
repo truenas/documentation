@@ -153,28 +153,27 @@ If the web interface displays but seems unresponsive or incomplete:
 If the UI becomes unresponsive after an upgrade or other system operation, clear the site data and refresh the browser (<kbd>Shift</kbd>+<kbd>F5</kbd>).
 {{< /expand >}}
 
-## Introducing the Main SCALE Dashboard
+## Introducing the SCALE Dashboard
 
-{{< expand "Dashboard Video Tutorial" >}}
-
-{{< embed-video name="scaledashboardtour" >}}
-
-{{< /expand >}}
 After logging in for the first time, the main system **Dashboard** screen displays.
-The **Dashboard** shows different system information cards (widgets) with basic information about the installed version, systems component usage, network traffic, and configured pools or storage usage. 
+The **Dashboard** shows different system information cards (widgets) with basic information about the installed version, systems component usage, network traffic, and configured pools or storage usage.
+The dashboard includes new categories of widgets that include a text-only **Custom** widget, and an **Apps** widget you can configure to monitor your installed applications.
 
 {{< enterprise >}}
-SCALE Enterprise users with an iXsystems-provided TrueNAS server also see an image of the system in the **System Information** widget. Click on the system image to open the **System Settings > [View Enclosure]({{< relref "EnclosureScreensSCALE.md" >}})** screen.
+SCALE Enterprise users with an iXsystems-provided TrueNAS server also see an image of the system in the **System Information** widget.
+Click on the system image to open the **System Settings > [View Enclosure]({{< relref "EnclosureScreensSCALE.md" >}})** screen.
 
-{{< trueimage src="/images/SCALE/Dashboard/DashboardMainScreenSCALE.png" alt="TrueNAS SCALE Dashboard" id="TrueNAS SCALE Dashboard" >}}
+{{< trueimage src="/images/SCALE/Dashboard/DashboardMainScreen.png" alt="TrueNAS SCALE Dashboard" id="TrueNAS SCALE Dashboard" >}}
 
 {{< /enterprise >}}
 
 The **Dashboard** for non-Enterprise systems displays the TrueNAS SCALE logo on the **System Information** widget.
 
-You can reorder dashboard widgets by clicking **Reorder** and then dragging them into your preferred order. You can also choose which widgets appear on the dashboard by clicking **Configure**.
+To [customize dashboard ]({{< relref "/SCALE/SCALETutorials/Dashboard/_index.md" >}}) click **Configure** to put the **Dashboard** into configuration mode.
+Use the drag bar to move widget groups to new positions on the screen. 
+Click **Add** to create new widgets, or the **Edit** option in the widget group to change the look or information included in a widget.
 
-{{< trueimage src="/images/SCALE/Dashboard/DashboardConfigureScreenSCALE.png" alt="Dashboard Configure Panel" id="Dashboard Configure Panel" >}}
+{{< trueimage src="/images/SCALE/Dashboard/DashboardInConfigMode.png" alt="Dashboard in Configuration Mode" id="Dashboard in Configuration Mode" >}}
 
 ## Introducing SCALE Navigation Options
 
