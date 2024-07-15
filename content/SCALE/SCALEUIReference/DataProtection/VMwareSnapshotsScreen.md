@@ -37,3 +37,5 @@ This synchronizes TrueNAS SCALE with the VMWare host and populates the **ZFS Fil
 Configured snapshots show on the **VMware Snapshots** screen.
 
 {{< trueimage src="/images/SCALE/DataProtection/VMWareSnapshotsScreenConfigured.png" alt="VMWare Snapshot Configured" id="VMWare Snapshot Configured" >}}
+
+{{<include file="/static/includes/addcolumnorganizer.md">}}

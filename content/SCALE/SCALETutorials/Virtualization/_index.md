@@ -142,6 +142,8 @@ Click on the VM row on the **Virtual Machines** screen to expand it and show the
 
 {{< trueimage src="/images/SCALE/Virtualization/VMDevicesListed.png" alt="Devices" id="Devices" >}}
 
+{{<include file="/static/includes/addcolumnorganizer.md">}}
+
 Device notes:
 
 * A virtual machine attempts to boot from devices according to the **Device Order**, starting with **1000**, then ascending.
