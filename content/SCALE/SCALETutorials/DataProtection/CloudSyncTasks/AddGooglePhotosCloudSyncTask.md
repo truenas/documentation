@@ -11,16 +11,23 @@ keywords:
 - data backup and recovery
 ---
 
-Configuring a Google Photos cloud sync task requires a Google Photos API key and [rclone](https://rclone.org/) token.
-See the [rclone Google Photos backend documentation](https://rclone.org/googlephotos/) for more on using rclone to sync Google Photos, including features and limitations of the Google Photos API.
+Google Photos cloud sync tasks in TrueNAS SCALE use the [rclone](https://rclone.org/) backend for the [Google Photos API](https://developers.google.com/photos) to authenticate credentials and transfer data.
 
-This is a multi-part procedure that includes [generating Google API credentials](#creating-the-api-credentials), [installing and configuring rclone](#configuring-rclone) on your client OS, [creating cloud credentials](#creating-google-photos-cloud-credentials) for Google Photos on TrueNAS SCALE, and then [configuring the cloud sync task](#creating-the-cloud-sync-task).
+Configuring a Google Photos cloud sync task is a multi-part procedure that includes:
+
+1. [Planning your deployment](#before-you-begin) and selecting a local dataset.
+2. [Generating Google API credentials](#creating-the-api-credentials) on the Google Cloud API dashboard.
+3. [Installing rclone and generating a token](#configuring-rclone) on your remote client OS.
+4. [Adding Google Photos cloud credentials](#adding-google-photos-cloud-credentials) on TrueNAS SCALE.
+5. [Configuring the cloud sync task](#creating-the-cloud-sync-task) on SCALE.
 
 ## Before You Begin
 
 Review your storage and data protection requirements and consider your options before setting up a Google Photos cloud sync task.
+Refer to the rclone Google Photos backend documentation for more information on using rclone to sync Google Photos, including [standard options](https://rclone.org/googlephotos/#standard-options) and [limitations of the Google Photos API](https://rclone.org/googlephotos/#limitations), that might help you plan your deployment.
+
 Consider how you want to manage your media files on Google Photos and in your local dataset.
-Select the cloud sync task direction, transfer mode, and remote folder to target that best fit your needs.
+Select the cloud sync task [direction and transfer mode](#choosing-a-sync-direction-and-mode), [remote folder](#choosing-a-target-folder) to target, and [new or existing local dataset](#selecting-the-dataset-and-organizing-files) to pull to or push from, that best fit your needs.
 
 ### Choosing a Sync Direction and Mode
 
@@ -33,6 +40,7 @@ Choose to push data to Google Photos if you prefer to manage media files in the 
 
 Next, select the data transfer mode that best fits the way you want to manage file retention between the source and destination.
 There are three options:
+
   * **SYNC** - Select to change files on the destination to match those on the source.
     If a file does not exist on the source, it is also deleted from the destination.
   * **COPY** - Select to duplicate each source file into the destination.
@@ -55,9 +63,9 @@ A cloud sync task cannot target the root level folder (<file>/</file>).
 | <file>/upload</file> | **No** | Push | Media files pushed from the local dataset to <file>/upload</file> are then uploaded to Google Photos and not sorted into an album. Because <file>/upload</file> is a temporary storage location, it can not accurately synchronize from one task to the next. Pushing to this folder does not preserve metadata and can result in duplicated files, poor performance, file name instability. |
 {{< /truetable >}}
 
-### Creating the Dataset and Organizing Files
+### Selecting the Dataset and Organizing Files
 
-Next, create a TrueNAS SCALE local dataset to use as the source or destination.
+Next, select TrueNAS SCALE local dataset or create a new one to use as the source or destination.
 
 {{< expand "Creating a Dataset" "v" >}}
 {{< include file="/static/includes/CreateDatasetSCALE.md" >}}
@@ -152,9 +160,9 @@ Copy and save the type, client_id, client_secret, and token, then enter `y` to s
 
 {{< trueimage src="/images/SCALE/DataProtection/GooglePhotosAPIrcloneConfig3.png" alt="Confirm rclone Configuration" id="Confirm rclone Configuration" >}}
 
-## Creating Google Photos Cloud Credentials
+## Adding Google Photos Cloud Credentials
 
-Open your TrueNAS Web UI. Go to **Credentials > Backup Credentials** and click **Add** in the **Cloud Credentials** widget.
+On the TrueNAS Web UI, go to **Credentials > Backup Credentials** and click **Add** in the **Cloud Credentials** widget.
 
 {{< trueimage src="/images/SCALE/DataProtection/GooglePhotosAPIAddCloudCredentials.png" alt="Add Cloud Credentials" id="Add Cloud Credentials" >}}
 
