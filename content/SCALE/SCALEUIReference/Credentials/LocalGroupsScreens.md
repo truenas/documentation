@@ -94,6 +94,8 @@ Edit opens the **Edit Privilege** screen.
 
 The new and edit privilege screens show the same settings but not all settings are editable.
 
+{{<include file="/static/includes/addcolumnorganizer.md">}}
+
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|

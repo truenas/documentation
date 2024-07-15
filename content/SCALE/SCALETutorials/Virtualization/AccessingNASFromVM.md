@@ -96,3 +96,5 @@ The example below shows the Windows VM accessing an SMB share on TrueNAS.
 
 {{< trueimage src="/images/SCALE/AccessNASfromVM9.png" alt="SMB Share" id="SMB Share" >}}
 {{< /expand >}}
+
+{{<include file="/static/includes/addcolumnorganizer.md">}}

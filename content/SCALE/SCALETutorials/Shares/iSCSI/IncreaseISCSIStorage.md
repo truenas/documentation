@@ -38,3 +38,5 @@ Click the <i class="material-icons" aria-hidden="true" title="Options">more_vert
 Enter a new size in **Filesize**.
 Enter the new value as an integer that is one or more multiples of the logical block size (default 512) larger than the current file size.
 Click **Save**.
+
+{{<include file="/static/includes/addcolumnorganizer.md">}}
