@@ -23,7 +23,7 @@ To add a cloud sync task, go to **Data Protection > Cloud Sync Tasks** and click
 
    {{< include file="/static/includes/FileExplorerFolderIcons.md" >}}
 
-4. Cloud provider settings change based on the credential you select. Select or enter the required settings that include where files are stored.
+4. Select or enter the required settings that include where files are stored. Cloud provider settings change based on the credential selected. 
    If shown, select the bucket on the **Bucket** dropdown list.
 
 5. Select the time to run the task from the **Schedule** options.
