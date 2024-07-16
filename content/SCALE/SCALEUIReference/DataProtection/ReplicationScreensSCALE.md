@@ -59,6 +59,8 @@ The details view of each replication task shows the **Transport**, **SSH Connect
 
 The <span class="material-icons">edit</span> **Edit** button opens the **[Edit Replication Task](#edit-replication-task-screen)** screen.
 
+{{<include file="/static/includes/addcolumnorganizer.md">}}
+
 ### Run Now Option
 The <span class="material-icons">play_arrow</span> **Run Now** button opens a **Run Now** dialog.
 

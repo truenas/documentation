@@ -66,3 +66,5 @@ You can also click the **Manage Snapshots** link on the **Data Protection** widg
 5. (Optional) Select **Recursive** to include child datasets with the snapshot.
 
 6. Click **Save** to create the snapshot.
+
+{{<include file="/static/includes/addcolumnorganizer.md">}}
