@@ -64,9 +64,19 @@ To update this section, edit the <file>.md.part</file> file.
 Remember that this snippet file is used in multiple documents, so only content that generally applies is included in the snippet.
 Changes that are specific to a certain piece of content are added directly to that article.
 
+## Differences in Master and Version Branches
+
+Due to numerous software updates and version releases, the ***24.04*** and ***23.10*** SCALE branches have been created to assist in the organization of the Documentation Hub. 
+
++ Changes to content within the ***master*** branch result in changes to the TrueNAS SCALE Nightly Development Documentation content. To ensure your edits are submitted to the ***master*** branch, create a simple copy ("fork") of the main repository and check that ***master*** is listed as the *base*.
+
++ Changes to material in the ***24.04*** branch result in modifications to the TrueNAS SCALE 24.04 (Dragonfish) Documentation content. To ensure your edits are proposed to the ***24.04*** branch, create a fork of the main repository and check that ***24.04*** is listed as the *base*.
+
++ Changes to content within the ***23.10*** branch cause changes to the TrueNAS SCALE 23.10 (Cobia) Documentation content. To ensure your edits are submitted to the ***23.10*** branch, create a fork of the main repository and check that ***23.10*** is listed as the *base*.
+
 ## Forking the Repo
 
-To submit a change, you'll create a simple copy ("fork") of the main repository, edit your copy, then propose "merging" your changes back into the main repository.
+To submit a change, you'll create a fork of the main repository, edit your copy, then propose "merging" your changes back into the main repository.
 To start, click the *Edit this Page* link in the top right of the site.
 
 [![ArticletoEdit](/images/Contribute/ArticletoEdit.png)](/images/Contribute/ArticletoEdit.png)
