@@ -42,9 +42,6 @@ Click on the image to display the **View Enclosure** screen.
 
 {{< trueimage src="/images/SCALE/Dashboard/DashboardSystemInfoWidget.png" alt="System Information Widget for iX Systems" id="System Information Widget for iX Systems" >}}
 
-The **System Information** widget includes an option to synchronize the system server time with TrueNAS SCALE time if they get out of sync with each other.
-When out of sync, the widget displays a message and shows a **Synchronize Time** link that executes a time-synchronization operation.
-
 {{< truetable >}}
 | Field | Description |
 |-------|-------------|
@@ -53,7 +50,6 @@ When out of sync, the widget displays a message and shows a **Synchronize Time**
 | **Hostname** | Shows the host name for the TrueNAS system. Configure the host name on the **Network > Global Configuration** screen. |
 | **Uptime** | Shows the number of consecutive days, and hours and minutes the system of runtime since the last reboot. |
 | **Updates Available**<br>**Check for Updates** | Opens the **System Update** screen, or go to **System > Update** on the left-side main menu panel to open the **System Update** screen. **Updates Available** shows when systems updates are available for the current system release train. | 
-| **Synchronize Time** <span class="material-icons">loop</span> | Executes a time-synchronization operation to bring the system server and TrueNAS SCALE time into alignment when these times get out of sync. Only shows when the system and SCALE time are out of sync. This operation is not designed to correct time that is weeks out of sync. |
 {{< /truetable >}}
 {{< /expand >}}
 
