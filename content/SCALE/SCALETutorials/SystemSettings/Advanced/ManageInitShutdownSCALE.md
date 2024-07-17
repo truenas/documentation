@@ -20,6 +20,8 @@ The **Init/Shutdown Scripts** widget on the **System > Advanced** screen allows 
 
 The **Init/Shutdown Scripts** widget displays **No Init/Shutdown Scripts configured** until you add either a command or script, and then the widget lists the scripts configured on the system.
 
+Note that the table(s) below can be reorganized by clicking on the column titles. This allows you to toggle the information in each toggle between a descending and ascending order.
+
 {{< trueimage src="/images/SCALE/SystemSettings/AdvancedSystemInitShutdownScriptWidget.png" alt="Init/Shutdown Scripts Widget" id="Init/Shutdown Scripts Widget" >}}
 
 Click **Add** to open the **Add Init/Shutdown Script** configuration screen.

@@ -85,6 +85,8 @@ Enter a number for the maximum number of simultaneous replication tasks you want
 
 <div class="noprint">
 
+{{<include file="/static/includes/addcolumnorganizer.md">}}
+
 ## Contents
 
 {{< children depth="2" description="true" >}}

@@ -45,6 +45,8 @@ The **Rsync Task** screen lists all tasks configured on the system.
 
 Each task shows details about the configured task and the same icon buttons found on the Rsync Task widget to run the task outside of the scheduled time, edit, or delete the task.
 
+{{<include file="/static/includes/addcolumnorganizer.md">}}
+
 ## Add and Edit Rsync Task Screens
 The **Add Rsync Task** and **Edit Rsync Task** screens display the same settings.
 

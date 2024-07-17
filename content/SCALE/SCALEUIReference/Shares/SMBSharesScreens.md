@@ -239,4 +239,7 @@ The **SMB Status** screen has four tabs with information related to SMB shares:
 **Column** displays a dropdown list of options for the selected tab to customize the information included on the screen.
 
 Click **Sharing** or **SBM** on the top breadcrumb to open the selected screen.
+
 The breadcrumb displays when you access the SMB Status screen from the **System > Services SMB** row.
+
+{{< include file="/static/includes/addcolumnorganizer.md" >}}

@@ -30,6 +30,8 @@ Users can configure Kerberos realms by navigating to **Directory Services** and 
 
 Enter the realm and key distribution (KDC) names, then define the admin and password servers for the realm.
 
+{{<include file="/static/includes/addcolumnorganizer.md">}}
+
 Click **Save**. 
 
 ## Kerberos Keytabs

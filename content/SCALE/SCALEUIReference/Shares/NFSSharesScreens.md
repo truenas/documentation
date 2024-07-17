@@ -126,3 +126,5 @@ The **NFS Sessions** screen shows current NFS sessions.
 **Column** displays a dropdown list of options for the selected tab to customize the information included on the screen.
 
 Click **Sharing** on the top breadcrumb to open the Shares dashboard.
+
+{{<include file="/static/includes/addcolumnorganizer.md">}}

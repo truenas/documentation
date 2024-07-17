@@ -35,6 +35,8 @@ The fields on the **Edit Interface** are almost identical to the **Add Interface
 
 Use **Apply** to save your setting changes.
 
+{{<include file="/static/includes/addcolumnorganizer.md">}}
+
 ### Interface Settings
 These settings display for all interface types. The **Type** setting is only available and required on the **Add Interface** configuration screen.
 

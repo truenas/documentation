@@ -102,6 +102,8 @@ Start the S.M.A.R.T. service. Go to **System > Services** and scroll down to the
 If you have not configured the S.M.A.R.T. service yet, while the service is stopped, click <i class="material-icons" aria-hidden="true" title="Configure">edit</i> to open the service configuration form. See [Services S.M.A.R.T. Screen]({{< relref "SMARTServicesScreen.md" >}}) for more information on service settings.
 Click **Save** to save settings and return to the **Services** screen.
 
+{{<include file="/static/includes/addcolumnorganizer.md">}}
+
 {{< expand "RAID controllers?" "v" >}}
 Disable the S.M.A.R.T. service when a RAID controller controls the disks.
 The controller monitors S.M.A.R.T. separately and marks disks as a **Predictive Failure** on a test failure.

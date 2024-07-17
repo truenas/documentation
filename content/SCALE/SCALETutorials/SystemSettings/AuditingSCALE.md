@@ -83,7 +83,7 @@ Generated when a client attempts to set basic file attributes (for example DOS m
 The key **attr_type** indicates the precise type of attributes that are changed in the event this message records.
 {{< /expand >}}
 {{< expand "Unlink Events" "v" >}}
-Generated when a client attempts to set a user or group quota on an SMB share.
+Generated when a client attempts to delete a file or directory from a share.
 {{< /expand >}}
 {{< expand "Set_ACL Events" "v" >}}
 Generated when a client attempts to set an NFSv4 ACL on a file system or to grant a user (OWNER) read and write permissions to the file system.

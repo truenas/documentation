@@ -284,3 +284,5 @@ Set iSCSI to start when TrueNAS boots up, go to **System > Services** and locate
 ![iSCSISystemServicesSCALE](/images/SCALE/Shares/iSCSISystemServicesSCALE.png "Starting the iSCSI Service")
 
 Clicking the <i class="material-icons" aria-hidden="true" title="Configure">edit</i> returns to the options in **Shares > Block (iSCSI) Shares Targets**.
+
+{{<include file="/static/includes/addcolumnorganizer.md">}}
