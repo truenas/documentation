@@ -13,6 +13,7 @@ Remote logging capabilities through syslog have been available in TrueCommand si
 
 To enable, first edit the internal configuration file `/etc/config.yaml`. Overwrite the TC_CONFIG_PATH or create an additional tied volume for this file to preserve changes.
 
+{{< highlight yaml "" >}}
 logger:
   remote_log:
     enabled: false
@@ -21,6 +22,7 @@ logger:
     port: 6514                # port based on the protocol
     protocol: tcp             # tcp or udp
     identifier: TrueCommand   # will be added as tag in the logs
+{{< / highlight >}}
 
 Then restart the container.
 
@@ -31,6 +33,7 @@ To try it out, an Rsyslog server can easily be setup with Docker.
 
 ### rsyslog.conf
 
+```
 $ModLoad imudp
 $UDPServerRun 5514
 $ModLoad imtcp
@@ -38,13 +41,16 @@ $InputTCPServerRun 6514
 $template RemoteStore, "/var/log/remote/%$year%/%$Month%/%$Day%.log"
 :source, !isequal, "localhost" -?RemoteStore
 :source, isequal, "last" ~
+```
 
 ### Dockerfile
 
+{{< highlight yaml "" >}}
 FROM ubuntu:latest
 RUN apt update && apt install rsyslog -y
 ADD rsyslog.conf /etc/.
 ENTRYPOINT ["rsyslogd", "-n"]
+{{< / highlight >}}
 
 
 ### Docker Build & Run

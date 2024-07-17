@@ -35,14 +35,78 @@ Storage usage includes a fixed 80M MiB disk storage for metrics and 2 to 5 MiB f
 
 CAdvisor, Prometheus, and Grafana were used to generate this data. See the following configuration files to reproduce:
 
-Compose Stack
+### Prometheus Config
 
-https://gitea.ixsystems.com/iX-DevOps-Tools/truecommand-scripts/src/branch/master/prom/prometheus-tcperf.yml
+{{< highlight yaml "" >}}
+global:
+  scrape_interval: 10s
+  evaluation_interval: 10s
+  # scrape_timeout is set to the global default (10s).
 
-Prometheus Config
+rule_files:
+# - "first.rules"
 
-https://gitea.ixsystems.com/iX-DevOps-Tools/truecommand-scripts/src/branch/master/prom/prometheus-tcperf.yml
+scrape_configs:
+  - job_name: prometheus
+    static_configs:
+      - targets: ["localhost:9090"]
 
-Grafana Dashboard
+  - job_name: docker
+    static_configs:
+      - targets: ["host.docker.internal:9323"]
+    metrics_path: "/metrics"
+    params:
+      format: ['prometheus']
+{{< /highlight >}}
 
-Insert JSON
+### Compose Stack
+
+{{< highlight yaml "" >}}
+---
+name: cadvisor_prometheus
+services:
+  prometheus:
+    image: prom/prometheus:v2.53.1
+    volumes:
+      - type: bind
+        source: ./prometheus.yml
+        target: /etc/prometheus/prometheus.yml
+        read_only: true
+    ports:
+      - 9090:9090
+  grafana:
+    image: grafana/grafana-oss:11.0.1
+    volumes:
+      - type: volume
+        source: grafana-storage
+        target: /var/lib/grafana
+    ports:
+      - 4000:3000
+  cadvisor:
+    image: gcr.io/cadvisor/cadvisor:v0.47.2
+    volumes:
+      - type: bind
+        source: /
+        target: /rootfs
+        read_only: true
+      - type: bind
+        source: /var/run
+        target: /var/run
+        read_only: true
+      - type: bind
+        source: /var/lib/docker
+        target: /var/lib/docker
+        read_only: true
+      - type: bind
+        source: /sys
+        target: /sys
+        read_only: true
+    ports:
+      - 8090:8080
+    userns_mode: "host"
+    security_opt:
+      - seccomp=default.json
+    command: --docker=unix:///var/run/user/1000/docker.sock --listen_ip=0.0.0.0
+volumes:
+  grafana-storage:
+{{< /highlight >}}

@@ -23,8 +23,8 @@ then the TrueCommand container will have a route to the NAS. Simply input the ad
 
 For more information, see Docker's guide to enable IPv6 support
 
-https://docs.docker.com/config/daemon/ipv6/
+{{< ref "https://docs.docker.com/config/daemon/ipv6/">}}
 
 And the TrueNAS IPv6 recommendation document
 
-LINK
+{{< ref "/scale/scaletutorials/network/configureipv6/" >}}
