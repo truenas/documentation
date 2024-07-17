@@ -22,7 +22,7 @@ Syslog sends audit messages via explicit syslog call with configurable priority 
 The default is syslog sent audit messages.
 Debug sends audit messages from the Samba debug library and these messages have a configurable severity (WARNING, NOTICE, or INFO).
 
-The **System Settings > Audit** screen lists all session, user, or SMB events, facilitating comprehensive monitoring.
+The **System > Audit** screen lists all session, user, or SMB events, facilitating comprehensive monitoring.
 Logs include who performed the action, timestamp, event type, and a short string of the action performed (event data).
 
 SCALE includes a manual page with more information on the [VFS auditing functions](https://github.com/truenas/samba/blob/SCALE-v4-19-stable/docs-xml/manpages/vfs_truenas_audit.8.xml).
@@ -138,7 +138,7 @@ Users have access to audit information from three locations in the SCALE UI:
   * On the **Sharing** page, click the <span class="material-icons">edit</span> **Edit** icon on the desired **SMB share** row where **Enable**, **watch** and **ignore** settings are available. For details see [Configuring SMB Auditing](#configuring-smb-auditing).
 * **System > Services > SMB** to view **SMB** audit logs
   * On the **Services** page, click the <span class="material-icons">receipt_long</span> **Audit Logs** icon on the **SMB** row. This opens the main **Audit** log page with the **Search** field filter configured to show only SMB events.  For details see [Audit Screen](#audit-screen).
-* **System Settings > Audit** option on the main navigation panel
+* **System > Audit** option on the main navigation panel
   * The default **Audit** log page is unfiltered and displays all system events such as authentication and SMB events.
 
 ## Searching Audit Logs
@@ -176,7 +176,7 @@ The <i class="material-icons" aria-hidden="true" title="Copy to Clipboard">assig
 
 ## Configuring Audit Storage and Retention Policies
 
-To configure Audit storage and retention settings, go to **System Settings > Advanced**, then click **Configure** on the [**Audit**]({{< relref "/SCALE/SCALEUIReference/SystemSettings/AdvancedSettingsScreen.md#audit-widget" >}}) widget.
+To configure Audit storage and retention settings, go to **System > Advanced**, then click **Configure** on the [**Audit**]({{< relref "/SCALE/SCALEUIReference/SystemSettings/AdvancedSettingsScreen.md#audit-widget" >}}) widget.
 
 {{< include file="/static/includes/ConfigureSystemAuditSCALE.md" >}}
 

@@ -24,7 +24,7 @@ Click the <i class="material-icons" aria-hidden="true" title="delete">delete</i>
 {{< enterprise >}}
 High Availability (HA) Enterprise systems are unable to reset or delete interfaces while failover is enabled.
 On systems with HA failover enabled, the <i class="material-icons" aria-hidden="true" title="reset configuration">refresh</i> or <i class="material-icons" aria-hidden="true" title="delete">delete</i> icons are disabled.
-Disable failover from the **System Settings > Failover** screen to modify interfaces.
+Disable failover from the **System > Failover** screen to modify interfaces.
 
 ![NetworkInterfacesWidgetHA](/images/SCALE/Network/NetworkInterfacesWidgetHA.png "Network Interfaces Widget with HA Enabled")
 
