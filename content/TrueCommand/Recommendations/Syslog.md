@@ -55,7 +55,9 @@ ENTRYPOINT ["rsyslogd", "-n"]
 
 ### Docker Build & Run
 
-> `docker build -t rsyslog-server .`
-> `docker run --rm -d -p 6514:6514 -p 5514:5514/udp --name rsyslog rsyslog-server`
+```
+joe@joe-minty:~$ docker build -t rsyslog-server
+joe@joe-minty:~$ docker run --rm -d -p 6514:6514 -p 5514:5514/udp --name rsyslog rsyslog-server
+```
 
 Logs will be stored under the `/var/log/remote/YEAR/MONTH/DAY.log` path.

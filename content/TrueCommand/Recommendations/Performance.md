@@ -9,25 +9,24 @@ geekdocCollapseSection: true
 
 ### Base Usage
 
-Resource | Usage
----
-Memory | 20 MiB
-Storage | < 1 MiB
-Container | 1.1 GiB
-Network | Nothing with UI closed, 10 KiB/min serving UI
+|Resource | Usage |
+|-----|-----|
+|Memory | 20 MiB|
+|Storage | < 1 MiB|
+|Container | 1.1 GiB|
+|Network | Nothing with UI closed, 10 KiB/min serving UI|
 
 TrueCommand scales for each system added. Without any systems, TrueCommand uses ~20 MiB memory and 600 KiB disk for the sqlite settings database and slightly more for logs. Each TrueNAS connected uses the following resources:
 
 ### System Usage
 
-Resource | Usage
----
-Memory | ~5-10 MiB
-Storage | ~100 MiB
-Disk | 1 MiB reads/hour, 4 MiB writes/hour
-CPU | ~5s/hour, ~22ms/15s, 0.1 to 1.5%
-Network | Rx 5-10 KiB/min
-          Tx < 1 KiB/min
+|Resource | Usage|
+|------| -----|
+|Memory | ~5-10 MiB|
+|Storage | ~100 MiB|
+|Disk | 1 MiB reads/hour, 4 MiB writes/hour|
+|CPU | ~5s/hour, ~22ms/15s, 0.1 to 1.5%|
+|Network | Rx 5-10 KiB/min<br>Tx < 1 KiB/min|
 
 Storage usage includes a fixed 80M MiB disk storage for metrics and 2 to 5 MiB for NAS configuration backups. Backup retention and metric storage duration can be changed, although resizing metrics can result in larger files even after reversion. Network transmitted bytes are very low for each system, as TrueCommand only sends requests to the NAS. Typically the ratio of received bytes to transmitted is about 20:1.
 
@@ -58,7 +57,6 @@ See the compose file below for configuring the exposed port and provide a route 
 ### Compose Stack
 
 {{< highlight yaml "" >}}
----
 name: cadvisor_prometheus
 services:
   prometheus:
@@ -107,6 +105,6 @@ volumes:
   grafana-storage:
 {{< /highlight >}}
 
-Run `docker compose up` to deploy the three containers. CAdvisor will read from the cgroup and report container-level metrics to Prometheus. Grafana can then be used to display these metrics, such as in the following dashboard:
+Run `docker compose up` to deploy the three containers. CAdvisor will read from the cgroup and report container-level metrics to Prometheus. Grafana can then be used to display these metrics, as seen in the following dashboard:
 
-![GrafanaSystemDashboard](/images/TrueCommand/tc-three-system-perf.png "Grafana dashboard with TrueCommand running and connected to three different TrueNAS systems")
+{{< trueimage src="/images/TrueCommand/tc-three-system-perf.png" alt="Grafana dashboard with TrueCommand running and connected to three TrueNAS systems" id="Grafana dashboard with TrueCommand running and connected to three TrueNAS systems" >}}
