@@ -39,25 +39,21 @@ CAdvisor, Prometheus, and Grafana were used to generate this data. See the follo
 
 {{< highlight yaml "" >}}
 global:
-  scrape_interval: 10s
-  evaluation_interval: 10s
+  scrape_interval: 15s
+  evaluation_interval: 15s
   # scrape_timeout is set to the global default (10s).
 
-rule_files:
-# - "first.rules"
-
 scrape_configs:
-  - job_name: prometheus
-    static_configs:
-      - targets: ["localhost:9090"]
-
   - job_name: docker
     static_configs:
-      - targets: ["host.docker.internal:9323"]
+      - targets: ["DOCKERHOST:8090"]
     metrics_path: "/metrics"
     params:
       format: ['prometheus']
 {{< /highlight >}}
+
+This will enable Prometheus to collect metrics about itself, the docker engine directly, if `metrics-addr` is configured for the daemon, and CAdvisor.
+See the compose file below for configuring the exposed port and provide a route from the prometheus container to its sibling cadvisor container.
 
 ### Compose Stack
 
@@ -81,7 +77,7 @@ services:
         source: grafana-storage
         target: /var/lib/grafana
     ports:
-      - 4000:3000
+      - 3000:3000
   cadvisor:
     image: gcr.io/cadvisor/cadvisor:v0.47.2
     volumes:
@@ -110,3 +106,7 @@ services:
 volumes:
   grafana-storage:
 {{< /highlight >}}
+
+Run `docker compose up` to deploy the three containers. CAdvisor will read from the cgroup and report container-level metrics to Prometheus. Grafana can then be used to display these metrics, such as in the following dashboard:
+
+![GrafanaSystemDashboard](/images/TrueCommand/tc-three-system-perf.png "Grafana dashboard with TrueCommand running and connected to three different TrueNAS systems")
