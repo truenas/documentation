@@ -5,6 +5,7 @@ weight: 30
 aliases:
  - /scale/scaleclireference/auth/cliapikey/
 tags:
+- toolbar
 - apikeys
 ---
 
