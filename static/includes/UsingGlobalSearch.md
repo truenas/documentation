@@ -33,7 +33,7 @@ TrueNAS SCALE highlights the selected element for visibility.
 ## Searching TrueNAS Documentation
 
 Click **Search Documentation for <<*query*>>** to redirect the search to the TrueNAS Documentation Hub.
-TrueNAS SCALE opens a new browser tab to display documentation search results for the entered query.
+TrueNAS SCALE opens a new browser tab to display documentation search results for the query.
 
 {{< trueimage src="/images/SCALE/Dashboard/GlobalSearchDocs.png" alt="Search Documentation Results" id="Search Documentation Results" style="border:1px solid #0095d5" >}}
 
