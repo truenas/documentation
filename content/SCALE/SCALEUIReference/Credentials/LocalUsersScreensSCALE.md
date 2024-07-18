@@ -5,6 +5,7 @@ weight: 10
 alias: 
  - /scale/scaleclireference/account/
  - /scale/scaleclireference/account/cliuser/
+ - /scale/scaleuireference/credentials/localusers/
 tags:
 - users
 - accounts

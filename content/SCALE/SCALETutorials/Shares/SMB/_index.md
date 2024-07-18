@@ -5,7 +5,7 @@ geekdocCollapseSection: true
 weight: 50
 related: false
 aliases:
- - /docs/scale/scaletutorials/shares/smb/addsmbshares/
+ - /scale/scaletutorials/shares/smb/addsmbshares/
 tags:
 - smb
 - afp

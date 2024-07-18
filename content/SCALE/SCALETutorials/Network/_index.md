@@ -5,6 +5,7 @@ geekdocCollapseSection: true
 weight: 9
 aliases:
  - /scale/network/
+ - /scale/scaleclireference/network/cliconfiguration/
 related: false
 ---
 

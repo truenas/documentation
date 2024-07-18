@@ -2,6 +2,8 @@
 title: "Creating Rsync Tasks"
 description: "Provides information on how to create a remote sync (rsync) task on your TrueNAS."
 weight: 30
+aliases:
+ - /core/tasks/rsync/
 tags:
 - rsync
 - databackup
