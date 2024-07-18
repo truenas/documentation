@@ -14,7 +14,7 @@ tags:
 related: false
 ---
 
-**System Settings > Services** displays each system component that runs continuously in the background. These typically control data-sharing or other external access to the system. Individual services have configuration screens and activation toggles, and you can set them to run automatically.
+**System > Services** displays each system component that runs continuously in the background. These typically control data-sharing or other external access to the system. Individual services have configuration screens and activation toggles, and you can set them to run automatically.
 
 {{< trueimage src="/images/SCALE/SystemSettings/ServicesSCALE.png" alt="SCALE Services Screen" id="SCALE Services Screen" >}}
 
@@ -29,6 +29,8 @@ The **SMB** service row has two additional icons that link to other screens:
 Select **Start Automatically** to set the service to start after the system reboots.
 
 Click on the **Running** toggle to start the service or to stop it if it is running. Stop services before changing configuration settings.
+
+{{<include file="/static/includes/addcolumnorganizer.md">}}
 
 <div class="noprint">
 

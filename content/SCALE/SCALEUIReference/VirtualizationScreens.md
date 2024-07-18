@@ -244,6 +244,8 @@ By default, every VM displays three devices: **Disks**, **NIC**, and **Display**
 
 **Add** opens the [**Add Device**](#devices-add-screens) screen. Settings change based on the various device types.
 
+{{<include file="/static/includes/addcolumnorganizer.md">}}
+
 ### Device Actions
 Each device listed on the **Devices** screen has the same three options, accessed by clicking the <span class="material-icons">more_vert</span> at the right of the device row:
 

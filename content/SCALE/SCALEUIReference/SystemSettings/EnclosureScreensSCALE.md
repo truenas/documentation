@@ -13,7 +13,7 @@ tags:
 
 {{< enterprise >}}
 The **View Enclosure** screen only displays on TrueNAS SCALE Enterprise systems with compatible hardware.
-The UI options to select **System Settings > Enclosure** is not present on incompatible non-Enterprise systems.
+The UI options to select **System > Enclosure** is not present on incompatible non-Enterprise systems.
 {{< /enterprise >}}
 
 The **System Information** widget on the main **Dashboard** displays an image of the specific TrueNAS system. Hover the mouse over the image to see the **View Enclosure** label.

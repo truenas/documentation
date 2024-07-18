@@ -22,3 +22,5 @@ A bridge can also be used to allow a VM configured on TrueNAS to communicate wit
 {{< include file="/static/includes/BeforeYouBridge.md" >}}
 
 {{< include file="/static/includes/NetworkBridgeSCALE.md" >}}
+
+{{<include file="/static/includes/addcolumnorganizer.md">}}

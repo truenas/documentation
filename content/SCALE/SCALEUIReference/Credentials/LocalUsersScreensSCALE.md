@@ -42,6 +42,8 @@ It provides the option to edit or delete the user, and access user audit logs.
 The **Add User** and **Edit User** configuration screens display the same setting options. 
 Built-in users (except the **root** user) do not include the **Home Directory Permissions** settings, but all new users created, such as those for an SMB share like the **smbguest** user, do.
 
+{{<include file="/static/includes/addcolumnorganizer.md">}}
+
 ### Identification Settings
 **Identification** settings specify the name, user name, password, and user email.
 
@@ -97,7 +99,7 @@ Built-in users (except the **root** user) do not include the **Home Directory Pe
 
 ### Authentication settings
 **Authentication** settings specify authentication methods, the public SSH key, user administration access, and enable/disable password authentication.
-The add and edit user screens grant access to a shell option, but the [privilege screen **Web Shell Access** setting]({{< relref "LocalGroupsScreens.md#PrivilegesScreen" >}}) determines the ability to see the **System Settings > Shell** screen.
+The add and edit user screens grant access to a shell option, but the [privilege screen **Web Shell Access** setting]({{< relref "LocalGroupsScreens.md#PrivilegesScreen" >}}) determines the ability to see the **System > Shell** screen.
 
 {{< trueimage src="/images/SCALE/Credentials/AddUserHomeDirAuthSCALE.png" alt="Authentication Settings" id="Authentication Settings" >}}
 

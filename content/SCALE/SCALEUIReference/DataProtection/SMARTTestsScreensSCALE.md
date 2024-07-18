@@ -36,6 +36,8 @@ The <span class="material-icons">more_vert</span> for each test has two options,
 **Edit** opens the **Edit S.M.A.R.T. Test** configuration screen and **Delete** opens a **Delete** confirmation dialog. 
 The <span class="material-icons">delete</span> delete icon on the widget also opens the **Delete** dialog for the selected S.M.A.R.T. test. Click **Confirm** to activate **Delete**.
 
+{{<include file="/static/includes/addcolumnorganizer.md">}}
+
 ![DeleteSMARTTest](/images/SCALE/DataProtection/DeleteSMARTTest.png "Delete S.M.A.R.T. Test")
 
 ## Add and Edit SMART Test Screens

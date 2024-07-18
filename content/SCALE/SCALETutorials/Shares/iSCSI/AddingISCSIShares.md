@@ -277,10 +277,12 @@ Go to **Shares** and click the **Block (iSCSI) Shares Targets** widget.
 ## Starting the iSCSI Service
 
 When adding an iSCSI share the system prompts you to start, or restart, the service. You can also do this by clicking the <span class="material-icons">more_vert</span> on the **Block (iSCSI) Shares Targets** widget and selecting **Turn On Service**.
-You can also go to **System Settings > Services** and locate **iSCSI** on the list and click the **Running** toggle to start the service.
+You can also go to **System > Services** and locate **iSCSI** on the list and click the **Running** toggle to start the service.
 
-Set iSCSI to start when TrueNAS boots up, go to **System Settings > Services** and locate **iSCSI** on the list. Select **Start Automatically**.
+Set iSCSI to start when TrueNAS boots up, go to **System > Services** and locate **iSCSI** on the list. Select **Start Automatically**.
 
 ![iSCSISystemServicesSCALE](/images/SCALE/Shares/iSCSISystemServicesSCALE.png "Starting the iSCSI Service")
 
 Clicking the <i class="material-icons" aria-hidden="true" title="Configure">edit</i> returns to the options in **Shares > Block (iSCSI) Shares Targets**.
+
+{{<include file="/static/includes/addcolumnorganizer.md">}}

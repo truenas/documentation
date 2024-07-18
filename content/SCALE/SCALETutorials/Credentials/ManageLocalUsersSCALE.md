@@ -27,6 +27,8 @@ To see user accounts, go to **Credentials > Local Users**.
 
 TrueNAS hides all built-in users (except root) by default. Click the toggle **Show Built-In Users** to see all built-in users.
 
+{{<include file="/static/includes/addcolumnorganizer.md">}}
+
 ## Creating an Admin User Account
 
 {{< include file="/static/includes/AddAdminUserAccount.md" >}}
@@ -39,7 +41,7 @@ When creating a user, you must:
 * Enter a **Username** or accept the generated user name.
 * Enter and enable a **Password**.
 * Specify or accept the default user ID (**UID**)
-* (Optional) Select the **Shell** the user has access to when they go to **System Settings > Shell**.
+* (Optional) Select the **Shell** the user has access to when they go to **System > Shell**.
    Not all users can select a shell.
 
 All other settings are optional.
