@@ -35,14 +35,14 @@ After [logging into SCALE]({{< relref "FirstTimeLogin.md#logging-into-the-scale-
 {{< enterprise >}}
 ### Applying Enterprise Licenses
 TrueNAS SCALE Enterprise customers should contact iXsystems support to obtain license information for their TrueNAS system.
-To apply the license information, go to the **System Settings > General** screen and use the **[Update License]({{< relref "AddLicenseProactiveSupport.md" >}})** option on the **Support** widget (system information card).
+To apply the license information, go to the **System > General** screen and use the **[Update License]({{< relref "AddLicenseProactiveSupport.md" >}})** option on the **Support** widget (system information card).
 
 ### Setting up Proactive Support
 TrueNAS SCALE Enterprise customers with Silver or Gold Coverage support contracts can configure proactive support.
 
 Customers with appropriate support contracts can configure **[Proactive Support]({{< relref "AddLicenseProactiveSupport.md" >}})** after they apply their system license, and after acknowledging and signing the End User License Agreement (EULA).
 
-The **Support** widget on the **System Settings > General** screen displays the **Proactive Support** option after entering your system license.
+The **Support** widget on the **System > General** screen displays the **Proactive Support** option after entering your system license.
 {{< /enterprise >}}
 
 ## Setting Up Networking
@@ -147,7 +147,7 @@ After completing your initial system configuration and before you begin day-to-d
 1. Saving the [system configuration file]({{< relref "SetUpBackupSCALE.md" >}}).
 2. Saving or [creating a new boot environment]({{< relref "ManageBootEnvironSCALE.md" >}}) to use as a restore point if system issues cause you to lose access to the SCALE UI.
 3. Downloading a system debug to capture system information to use as a comparison against future debug files.
-  To download a system debug file, go to **System Settings > Advanced** and click **Save Debug** to begin the download.
+  To download a system debug file, go to **System > Advanced** and click **Save Debug** to begin the download.
 
 Keep both the system configuration file and the initial system debug file in a safe location where important files are regularly backed up.
 You can use the boot environment in an SSH session to restore your system to the point where you completed your system configuration, and then import data or pools to recover stored data.
@@ -216,14 +216,14 @@ Non-Enterprise users can find support for configuring directory services in the 
 ## Using Enclosure Management
 {{< enterprise >}}
 For TrueNAS Enterprise customers with compatible hardware, the TrueNAS SCALE main **Dashboard** displays an image of the TrueNAS system server on the **System Information** widget.
-Click on the image to open the **[View Enclosure]({{< relref "EnclosureScreensSCALE" >}})** screen, or select the **System Settings > Enclosure** option on the main menu navigation panel.
+Click on the image to open the **[View Enclosure]({{< relref "EnclosureScreensSCALE" >}})** screen, or select the **System > Enclosure** option on the main menu navigation panel.
 
 The **View Enclosure** screen provides details on the system disks, the pools and VDEVs disks are in, the hardware details, and the disk status.
 Click on a drive to view the disk details.
 If the TrueNAS system has an expansion shelf, the **Enclosure** screen also displays an image of the expansion shelf populated with disks.
 {{< /enterprise >}}
 
-If using SCALE on servers not provided by TrueNAS, the **System Information** widget on the **Dashboard** displays the TrueNAS SCALE logo, and the **System Settings > Enclosure** option does not exist on the menu navigation panel.
+If using SCALE on servers not provided by TrueNAS, the **System Information** widget on the **Dashboard** displays the TrueNAS SCALE logo, and the **System > Enclosure** option does not exist on the menu navigation panel.
 
 ## Using Applications in SCALE
 SCALE provides a list of applications you can deploy on the **Apps > Discover** screen.
@@ -236,8 +236,8 @@ You can update your system with an <file>iso</file> file using the system admini
 There are a few ways to find available updates for your instance of TrueNAS SCALE:
 
 * The main **Dashboard > System Information** widget alerts you when a SCALE update is available to download and install.
-  Click the update option to open the **System Settings > Updates** screen.
-* Go to **System Settings > Updates** to check if an update is available.
+  Click the update option to open the **System > Updates** screen.
+* Go to **System > Updates** to check if an update is available.
 
 For all update options and procedures using the SCALE UI see **[Updating SCALE]({{< relref "UpdateSCALE.md" >}})**.
 

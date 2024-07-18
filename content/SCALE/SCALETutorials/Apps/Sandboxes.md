@@ -3,6 +3,7 @@ title: "Sandboxes (Jail-like Containers)"
 description: "Provides advanced users information on deploying custom FreeBSD jail-like containers in SCALE."
 weight: 30
 aliases:
+ - /scale/scaletutorials/apps/sandboxes/)
 tags:
 - customapp
 - apps
@@ -60,7 +61,7 @@ These containers persist across upgrades in 24.04 (Dragonfish) and later SCALE m
 Before making any sandboxes, configure TrueNAS to run the Jailmaker tool when the system starts.
 This ensures the sandboxes start properly.
 
-1. Log in to the web interface and go to **System Settings** > **Advanced**.
+1. Log in to the web interface and go to **System** > **Advanced**.
 2. Find the **Init/Shutdown Scripts** widget and click **Add**:
 
    a. Enter this or a similar note in **Description**: *Jailmaker Startup*

@@ -17,12 +17,23 @@ Software documentation is released under the Creative Commons license.
 * The custom [GeekDocs theme](https://geekdocs.de/) provides a bare-bones theme with templates and shortcodes for styling the website and content.
 * Specific .css customizations are added on top of GeekDocs in the /static/custom.css, /data/menu/, and /layouts/ files
 
-# Local Build Process
+# Install Hugo
 
 1. Download Hugo Extended v0.117.0 from [https://github.com/gohugoio/hugo/releases/](https://github.com/gohugoio/hugo/releases/tag/v0.117.0) and [install](https://gohugo.io/getting-started/installing/ "Install Hugo").
    See these instructions for manually installing the Hugo extended version in WSL: https://sal.as/post/install-hugo-on-wsl/
 
 2. Download this repository.
 
-3. Open the downloaded repository and run Hugo with `hugo serve`.
-   When complete, a local copy of the website is available by entering `localhost:1313` in a browser address bar.
+# Local Build Process
+
+Open the downloaded repository in a terminal program like Windows PowerShell, then enter `hugo serve`.
+When complete, a local copy of the website is available.
+Enter <code>//localhost:<i>1313</i>/`</code> in a browser address bar, where <code><i>1313</i></code> is the port number shown in the text output of the Hugo build status. In most cases this is `1313` but can be a different port number.
+Hugo automatically rebuilds the local copy to include any changes made and saved in your chosen text editor or integrated development environment (IDE).
+
+# Make File Changes
+
+1. Open your desired text editor (VS Code, Sublime Text, Atom, Notepad++, etc) and enter text changes using [CommonMark](https://spec.commonmark.org/0.31.2/) Markdown or [HTML](https://www.w3schools.com/html/default.asp) tags to format text.
+2. Save your changes and wait for modifications to show in the local build.
+3. Submit the pull request. 
+   If using GitHub Desktop, make sure you commit all desired changes to your working branch before creating the final pull request.

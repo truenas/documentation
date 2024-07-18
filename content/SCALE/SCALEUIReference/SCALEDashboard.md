@@ -86,6 +86,7 @@ The **Memory** widget shows current system memory consumption information.
 The widget includes a gauge showing GiB **Free** in blue, **ZFS Cache** in fuchsia pink, and **Services** in orange.
 
 You can configure the memory widget as a one large (100%) or one long (50%) plus two quarter size (25%) widget layouts.
+
 {{< /expand >}}
 
 {{< expand "Network and Interface Widgets" "v" >}}

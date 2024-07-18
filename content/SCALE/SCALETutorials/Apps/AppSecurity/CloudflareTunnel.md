@@ -10,7 +10,7 @@ keywords:
 - software storage solutions
 ---
 
-This Guide shows how to create a Cloudflare tunnel and configure the **Nextcloud** and **Cloudflared** applications in TrueNAS SCALE.
+This guide shows how to create a Cloudflare tunnel and configure the **Nextcloud** and **Cloudflared** applications in TrueNAS SCALE.
 The goal is to allow secure access from anywhere.
 
 {{< hint type=important >}}
@@ -118,8 +118,6 @@ If you want to access your application via subdomain (shown in this guide) two e
 Enter the two environment variables in **Name** as *OVERWRITECLIURL* and *OVERWRITEHOST*.
 
 Enter the address for the Cloudflare Tunnel, configured above in **Value**, for example *nextcloud.example.com*.
-
-{{< trueimage src="/images/SCALE/Apps/NextcloudEnviromentVariables.png" alt="Nextcloud Environment Variables" id="Nextcloud Environment Variables" >}}
 
 ### Testing the Cloudflare Tunnel
 
