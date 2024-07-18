@@ -26,7 +26,7 @@ Software documentation is released under the Creative Commons license.
 
 # Local Build Process
 
-Open the downloaded repository in a terminal program like Windows Power Shell, then enter `hugo serve`.
+Open the downloaded repository in a terminal program like Windows PowerShell, then enter `hugo serve`.
 When complete, a local copy of the website is available.
 Enter <code>//localhost:<i>1313</i>/`</code> in a browser address bar, where <code><i>1313</i></code> is the port number shown in the text output of the Hugo build status. In most cases this is `1313` but can be a different port number.
 Hugo automatically rebuilds the local copy to include any changes made and saved in your chosen text editor or integrated development environment (IDE).
