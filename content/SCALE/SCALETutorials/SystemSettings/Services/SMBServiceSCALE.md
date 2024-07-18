@@ -13,7 +13,7 @@ keywords:
 ---
 
 The **Services > SMB** screen displays after going to the **Shares** screen, finding the **Windows (SMB) Shares** section, and clicking <span class="material-icons">more_vert</span> + **Config Service**.
-Alternatively, you can go to **System Settings > Services** and click the <span class="material-icons">edit</span> edit icon for the SMB service.
+Alternatively, you can go to **System > Services** and click the <span class="material-icons">edit</span> edit icon for the SMB service.
 
 ## Configuring SMB Service
 The **SMB Services** screen displays setting options to configure TrueNAS SMB settings to fit your use case. 
@@ -66,7 +66,7 @@ For more information on Windows SMB-client side transport encryption see [Window
 ## Auditing SMB Events
 
 To monitor SMB service event logs, such as when a client attempts to authenticate to the share, use the TrueNAS SCALE [auditing screen]({{< relref "auditingscale.md" >}}).
-Go to **System Settings > Audit** to review event logs including SMB connect, disconnect, create, read or write events, and others.
+Go to **System > Audit** to review event logs including SMB connect, disconnect, create, read or write events, and others.
 
 Enter `SMB` in the [search bar]({{< relref "auditingscale.md#searching-audit-logs" >}}) to view only SMB service logs or use the advanced search to further limit results.
 

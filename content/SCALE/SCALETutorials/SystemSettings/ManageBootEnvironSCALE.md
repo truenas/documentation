@@ -13,12 +13,12 @@ keywords:
 - persistent storage
 ---
 
-**System Settings > Boot** contains options for monitoring and managing the ZFS pool and devices that store the TrueNAS operating system.
+**System > Boot** contains options for monitoring and managing the ZFS pool and devices that store the TrueNAS operating system.
 
 ## Changing the Scrub Interval
 The **Stats/Settings** option displays current system statistics and provides the option to change the scrub interval, or how often the system runs a data integrity check on the operating system device.
 
-Go to **System Settings > Boot** screen and click **Stats/Settings**.
+Go to **System > Boot** screen and click **Stats/Settings**.
 The **Stats/Settings** window displays statistics for the operating system device: **Boot pool Condition** as **ONLINE** or **OFFLINE**, **Size** in GiB and the space in use in **Used**, and **Last Scrub Run** with the date and time of the scrub.
 By default, the operating system device is scrubbed every 7 days.
 
@@ -28,7 +28,7 @@ To change the default scrub interval, input a different number in **Scrub interv
 
 ## Boot Pool Device Management
 
-From the **System Settings > Boot** screen, click the **Boot Pool Status** button to open the **Boot Pool Status** screen.
+From the **System > Boot** screen, click the **Boot Pool Status** button to open the **Boot Pool Status** screen.
 This screen shows the **boot-pool** and expands to show the devices that are allocated to that pool.
 Read, write, or checksum errors are also shown for the pool.
 
@@ -58,7 +58,7 @@ Click **Save**.
 ## Scrubbing a Boot Pool
 A manual data integrity check (scrub) of the operating system device can be initiated at any time.
 
-On the **System Settings > Boot** screen, and click **Scrub Boot Pool** to open the **Scrub** dialog.
+On the **System > Boot** screen, and click **Scrub Boot Pool** to open the **Scrub** dialog.
 
 {{< trueimage src="/images/SCALE/SystemSettings/ScrubBootPoolNowSCALE.png" alt="Boot Pool Scrub" id="Boot Pool Scrub" >}}
 
@@ -80,7 +80,7 @@ Boot environments do not preserve or restore the state of any attached storage p
 Storage backups must be handled through the [ZFS snapshot]({{<relref "PeriodicSnapshotTasksSCALE.md" >}}) feature or other [backup options]({{< relref "/SCALE/SCALETutorials/DataProtection/_index.md" >}}).
 TrueNAS [applications]({{< relref "/SCALE/SCALETutorials/Apps/_index.md" >}}) also use separate upgrade and container image management methods to provide app update and rollback features.
 
-To view the list of boot environments on the system, go to **System Settings > Boot**.
+To view the list of boot environments on the system, go to **System > Boot**.
 Each boot environment entry contains this information:
 
 * **Name**: the name of the boot entry as it appears in the boot menu.
@@ -119,7 +119,7 @@ Click **Save**.
 {{< /expand >}}
 
 {{< expand "Rename (Click to expand)" "v" >}}
-You can change the name of any boot environment on the **System Settings > Boot** screen.
+You can change the name of any boot environment on the **System > Boot** screen.
 Click the <span class="material-icons">more_vert</span> for a boot environment, and then select **Rename** to open the **Rename Boot Environment** window.
 
 {{< trueimage src="/images/SCALE/SystemSettings/RenameBootEnvironmentSCALE.png" alt="Rename Boot Environment" id="Rename Boot Environment" >}}
@@ -132,7 +132,7 @@ Click **Save**.
 {{< /expand >}}
 
 {{< expand "Delete (Click to expand)" "v" >}}
-Deleting a boot environment removes it from the **System Settings > Boot** screen and from the boot menu.
+Deleting a boot environment removes it from the **System > Boot** screen and from the boot menu.
 
 Click the <span class="material-icons">more_vert</span> for a boot environment, and then select **Delete** to open the **Delete** dialog.
 Select **Confirm** and then click **Delete**.
