@@ -15,7 +15,3 @@ Alternately, append `/api/docs/` to your TrueNAS hostname or IP address in a bro
 For convenience, static builds of the current 2.0 API documentation stored on the Docs Hub:
 * [Websocket Protocol](/api/core_websocket_api.html)
 * [RESTful](/api/core_rest_api.html)
-
-## CORE Documentation Sections
-
-{{< include file="/static/includes/COREDocsSections.md" >}}
