@@ -116,8 +116,6 @@ Enter the two environment variables in **Name** as *OVERWRITECLIURL* and *OVERWR
 
 Enter the address for the Cloudflare Tunnel, configured above in **Value**, for example *nextcloud.example.com*.
 
-{{< trueimage src="/images/SCALE/Apps/NextcloudEnviromentVariables.png" alt="Nextcloud Environment Variables" id="Nextcloud Environment Variables" >}}
-
 ### Testing the Cloudflare Tunnel
 
 With the Cloudflare connector and Nextcloud installed and configured, in your Cloudflare dashboard, go to **Networks** and select **Tunnels**.
