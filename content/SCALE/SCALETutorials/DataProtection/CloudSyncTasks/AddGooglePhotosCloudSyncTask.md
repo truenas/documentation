@@ -71,7 +71,7 @@ Next, select TrueNAS SCALE local dataset or create a new one to use as the sourc
 {{< include file="/static/includes/CreateDatasetSCALE.md" >}}
 {{< /expand >}}
 
-Configure the local dataset file structure (for push tasks) or Google Photos library albums (for pull tasks) as required by your direction, mode, and target selections (see above).
+Configure file management structure inside the local dataset (for push tasks) or albums in the Google Photos (for pull tasks) as required by your direction, mode, and target selections (see above).
 
 ## Creating the API Credentials
 
