@@ -65,7 +65,7 @@ A cloud sync task cannot target the root level folder (<file>/</file>).
 
 ### Selecting the Dataset and Organizing Files
 
-Next, select TrueNAS SCALE local dataset or create a new one to use as the source or destination.
+Select TrueNAS SCALE local dataset or create a new one to use as the source or destination.
 
 {{< expand "Creating a Dataset" "v" >}}
 {{< include file="/static/includes/CreateDatasetSCALE.md" >}}
