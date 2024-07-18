@@ -78,7 +78,7 @@ Uploading the CORE config file deletes the admin user account created during a c
 
 After gaining access to the UI, you might need to [use the Shell to configure the primary networking interfaces]({{< relref "ConsoleSetupMenuScale.md" >}}) to enable GUI accessibility.
 
-After booting and gaining access to the UI, go to **System Settings > General** and [upload the system config file](/scale/scaletutorials/systemsettings/general/managesysconfigscale/#uploading-the-file).
+After booting and gaining access to the UI, go to **System Settings > General** and [upload the system config file]({{< relref "ManageSysConfigSCALE.md#uploading-the-file" >}}).
 This migrates your CORE settings, imports your pools, shares, etc. into SCALE.
 
 After uploading the config file, review each area of the UI previously configured in CORE to validate pools imported and settings migrated correctly. Begin with your network settings.
