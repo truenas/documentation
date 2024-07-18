@@ -70,9 +70,9 @@ TrueNAS documentation uses branches to organize content related to specific soft
 
 + Content changes in the ***master*** branch result in changes to the TrueNAS SCALE Nightly Development Documentation content. To make changes in the ***master*** branch, create a simple copy ("fork") of the main repository, select that forked *master* as the *base* for your changes. Do not make changes directly to the **master** branch of the Documentation Hub repository.
 
-+ Changes to material in the ***24.04*** branch result in modifications to the TrueNAS SCALE 24.04 (Dragonfish) Documentation content. To ensure your edits are proposed to the ***24.04*** branch, create a fork of the main repository and check that ***24.04*** is listed as the *base*.
++ To make content changes in the ***24.04*** branch, create a fork of the main repository and check that ***24.04*** is listed as the *base*. This ensures that approved modifications will be added to the TrueNAS SCALE 24.04 (Dragonfish) Documentation content.
 
-+ Changes to content within the ***23.10*** branch cause changes to the TrueNAS SCALE 23.10 (Cobia) Documentation content. To ensure your edits are submitted to the ***23.10*** branch, create a fork of the main repository and check that ***23.10*** is listed as the *base*.
++ To make content changes in the ***23.10*** branch, create a fork of the main repository and check that ***23.10*** is listed as the *base*. This ensures that approved modifications will be added to the TrueNAS SCALE 23.10 (Cobia) Documentation content.
 
 ## Fork the Repo
 
