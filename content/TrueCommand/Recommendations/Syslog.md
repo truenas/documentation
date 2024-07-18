@@ -7,11 +7,10 @@ aliases:
 geekdocCollapseSection: true
 ---
 
-## TrueCommand Configuration
+Remote logging capabilities through syslog are available in TrueCommand version 2.3 or later.
 
-Remote logging capabilities through syslog have been available in TrueCommand since 2.3 without any documentation on how to enable it.
-
-To enable, first edit the internal configuration file `/etc/config.yaml`. Overwrite the TC_CONFIG_PATH or create an additional tied volume for this file to preserve changes.
+To enable, first edit the internal configuration file `/etc/config.yaml`.
+Overwrite the TC_CONFIG_PATH or create an additional tied volume for this file to preserve changes.
 
 {{< highlight yaml "" >}}
 logger:
@@ -24,12 +23,11 @@ logger:
     identifier: TrueCommand   # will be added as tag in the logs
 {{< / highlight >}}
 
-Then restart the container.
-
+Restart the container.
 
 ## Server Setup
 
-To try it out, an Rsyslog server can easily be setup with Docker.
+An Rsyslog server can easily be setup with Docker.
 
 ### rsyslog.conf
 
@@ -52,7 +50,6 @@ ADD rsyslog.conf /etc/.
 ENTRYPOINT ["rsyslogd", "-n"]
 {{< / highlight >}}
 
-
 ### Docker Build & Run
 
 ```
@@ -60,4 +57,4 @@ joe@joe-minty:~$ docker build -t rsyslog-server
 joe@joe-minty:~$ docker run --rm -d -p 6514:6514 -p 5514:5514/udp --name rsyslog rsyslog-server
 ```
 
-Logs will be stored under the `/var/log/remote/YEAR/MONTH/DAY.log` path.
+Logs are stored under the `/var/log/remote/YEAR/MONTH/DAY.log` path.
