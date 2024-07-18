@@ -9,6 +9,8 @@ tags:
 
 {{< include file="/static/includes/AlertsSettings.md" >}}
 
+{{<include file="/static/includes/addcolumnorganizer.md">}}
+
 ## Add/Edit Alert Service Screen
 
 {{< include file="/static/includes/AlertsAddEdit.md" >}}

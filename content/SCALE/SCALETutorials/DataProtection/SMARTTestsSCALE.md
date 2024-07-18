@@ -95,12 +95,14 @@ Saved schedules appear in the **S.M.A.R.T. Tests** window.
 S.M.A.R.T. tests can offline disks! Avoid scheduling S.M.A.R.T. tests simultaneously with scrub or other data protection tasks.
 {{< /hint >}}
 
-Start the S.M.A.R.T. service. Go to **System Settings > Services** and scroll down to the **S.M.A.R.T.** service. If not running, click the toggle to turn the service on. Select **Start Automatically** to have this service start after after the system reboots.
+Start the S.M.A.R.T. service. Go to **System > Services** and scroll down to the **S.M.A.R.T.** service. If not running, click the toggle to turn the service on. Select **Start Automatically** to have this service start after after the system reboots.
 
 ![SMARTSystemServicesSCALE](/images/SCALE/SystemSettings/SMARTSystemServicesSCALE.png "System Services S.M.A.R.T. Test")
 
 If you have not configured the S.M.A.R.T. service yet, while the service is stopped, click <i class="material-icons" aria-hidden="true" title="Configure">edit</i> to open the service configuration form. See [Services S.M.A.R.T. Screen]({{< relref "SMARTServicesScreen.md" >}}) for more information on service settings.
 Click **Save** to save settings and return to the **Services** screen.
+
+{{<include file="/static/includes/addcolumnorganizer.md">}}
 
 {{< expand "RAID controllers?" "v" >}}
 Disable the S.M.A.R.T. service when a RAID controller controls the disks.

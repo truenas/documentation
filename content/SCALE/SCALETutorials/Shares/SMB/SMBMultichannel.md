@@ -19,7 +19,7 @@ SMB multichannel does not function if you combine NICs into a LAGG.
 If you already have clients connected to SMB shares, disconnect them before activating multichannel.
 {{< /hint >}}
 
-1. Go to **System Settings > Services** and click the <span class="material-icons">edit</span> edit icon for the SMB service.
+1. Go to **System > Services** and click the <span class="material-icons">edit</span> edit icon for the SMB service.
 2. Click **Advanced Settings**, then enable **Multichannel**.
 3. Save and restart the SMB service, then reconnect all clients to their SMB Shares.
 
