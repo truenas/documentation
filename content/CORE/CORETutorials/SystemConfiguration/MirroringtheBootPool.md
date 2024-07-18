@@ -4,6 +4,8 @@ description: "Provides information on how to mirror the boot pool on TrueNAS COR
 weight: 35
 tags:
 - boot
+aliases:
+ - /hub/tasks/advanced/mirror-boot-pool/
 slug: mirroring-the-boot-pool
 ---
 
