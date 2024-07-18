@@ -4,6 +4,7 @@ description: "Provides information on using Install Custom App to configure cust
 weight: 10
 aliases:
  - /scale/scaletutorials/apps/docker/
+ - /scale/apps/docker/
 tags:
 - customapp
 - apps

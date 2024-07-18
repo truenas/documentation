@@ -6,6 +6,7 @@ tags:
 - boot
 aliases:
  - /hub/tasks/advanced/mirror-boot-pool/
+ - /core/system/boot/bootpoolmirror/
 slug: mirroring-the-boot-pool
 ---
 
