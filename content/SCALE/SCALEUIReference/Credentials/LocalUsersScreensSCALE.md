@@ -5,6 +5,7 @@ weight: 10
 alias: 
  - /scale/scaleclireference/account/
  - /scale/scaleclireference/account/cliuser/
+ - /scale/scaleuireference/credentials/localusers/
 tags:
 - users
 - accounts
@@ -99,7 +100,7 @@ Built-in users (except the **root** user) do not include the **Home Directory Pe
 
 ### Authentication settings
 **Authentication** settings specify authentication methods, the public SSH key, user administration access, and enable/disable password authentication.
-The add and edit user screens grant access to a shell option, but the [privilege screen **Web Shell Access** setting]({{< relref "LocalGroupsScreens.md#PrivilegesScreen" >}}) determines the ability to see the **System Settings > Shell** screen.
+The add and edit user screens grant access to a shell option, but the [privilege screen **Web Shell Access** setting]({{< relref "LocalGroupsScreens.md#PrivilegesScreen" >}}) determines the ability to see the **System > Shell** screen.
 
 {{< trueimage src="/images/SCALE/Credentials/AddUserHomeDirAuthSCALE.png" alt="Authentication Settings" id="Authentication Settings" >}}
 

@@ -80,7 +80,7 @@ TrueNAS supports setting a global password for all detected SEDs or setting indi
 
 ### Setting a Global Password for SEDs
 
-Go to **System Settings > Advanced > Self-Encrypting Drive** and click **Configure**. A warning displays stating **Changing Advanced settings can be dangerous when done incorrectly. Please use caution before saving.** Click **Close** to display the settings form. Enter the password in **SED Password** and **Confirm SED Password** and click **Save**. 
+Go to **System > Advanced > Self-Encrypting Drive** and click **Configure**. A warning displays stating **Changing Advanced settings can be dangerous when done incorrectly. Please use caution before saving.** Click **Close** to display the settings form. Enter the password in **SED Password** and **Confirm SED Password** and click **Save**. 
 {{< hint type=warning >}}
 Record this password and store it in a safe place!
 {{< /hint >}}

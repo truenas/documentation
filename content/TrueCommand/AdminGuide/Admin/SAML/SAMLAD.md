@@ -5,6 +5,7 @@ weight: 20
 aliases:
  - /truecommand/administration/admin/samlad/
  - /truecommand/administration/admin/saml/samlad/
+ - /truecommand/administration/settings/samlad/
 tags:
 - saml
 ---

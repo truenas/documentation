@@ -10,6 +10,8 @@ tags:
 aliases:
   - /core/coretutorials/updatingtruenas/updatingcore/
   - /core/coretutorials/updatingtruenas/updatingsoftwareforamajorversion/
+  - /core/system/update/updatecore/
+  - /core/system/update/majorupgrade/
 ---
 
 TrueNAS CORE has an integrated update system to make it easy to keep up to date.
