@@ -52,12 +52,12 @@ TrueCommand also has the ability to create custom reports about individual syste
 	<br><a href="/adminguide/systems/">TrueNAS System Management</a>
 	<br><a href="/adminguide/users/">TrueCommand User Management</a>
 	<br><a href="/adminguide/admin/ldapservers/">LDAP Connections</a>
+	<br><a href="/adminguide/api/">API Reference</a>
   </p>
   <p>
 	User Guide
 	<br><a href="/userguide/fleetdashboard/">TrueNAS Fleet Dashboard</a>
 	<br><a href="/userguide/replicationmanagement/">TrueNAS Replication Management</a>
 	<br><a href="/userguide/systemmanagement/">TrueNAS System Management</a>
-	<br><a href="/userguide/api/">API Reference</a>
   </p>
 </div>
