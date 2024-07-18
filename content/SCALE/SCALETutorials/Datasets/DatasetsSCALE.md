@@ -6,6 +6,7 @@ aliases:
  - /scale/scaleuireference/storage/pools/datasetsscale/
  - /scale/scaletutorials/storage/pools/datasetsscale/
  - /scale/scaletutorials/storage/datasets/datasetsscale/
+ - /_includes/storagecompressionlevelsscale/
 tags:
  - datasets
  - storage

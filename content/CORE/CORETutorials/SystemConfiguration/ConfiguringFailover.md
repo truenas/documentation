@@ -4,6 +4,7 @@ description: "Describes how to configure failover on TrueNAS CORE Enterprise."
 weight: 150
 aliases:
  - /hub/tasks/advanced/high-availability/
+ - /core/system/failover/
 tags:
 - HA
 - failover

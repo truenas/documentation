@@ -5,6 +5,7 @@ weight: 50
 aliases:
  - /scale/storage/encryptionscale/
  - /scale/scaletutorials/storage/datasets/encryptionscale/
+ - /scale/storage/pools/encryptionscale/ 
 tags:
 - encryption
 - datasets

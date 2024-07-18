@@ -5,6 +5,8 @@ weight: 40
 aliases:
   - /core/solutions/integrations/veeam/
   - /core/solutions/integrations/veeam/tnrecommendationsforveeam/
+  - /scale/scaletutorials/communityrecommends/hardened-backup-repository-for-veeam/
+  - /scale/communityrecommends/hardened-backup-repository-for-veeam/
 ---
 <div style="text-align:center;">
 

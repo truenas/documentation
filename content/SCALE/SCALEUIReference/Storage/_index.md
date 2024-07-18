@@ -7,6 +7,7 @@ aliases:
  - /scale/scaleuireference/storage/pools/
  - /scale/scaleclireference/storage/
  - /scale/scaleclireference/storage/clifilesystem-storage/
+ - /scale/scaleuireference/storage/storagedashboardscreen/ 
 tags:
 - pools
 - storage

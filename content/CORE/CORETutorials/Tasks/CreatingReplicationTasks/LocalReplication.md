@@ -5,6 +5,7 @@ weight: 10
 aliases:
   - /core/coretutorials/tasks/replicationtasks/localreplication/
   - /core/tasks/replicationtasks/
+  - /core/tasks/replicationtasks/local/
 tags:
 - replication
 ---
