@@ -152,8 +152,6 @@ To create a basic Windows SMB share, go to **Shares**.
 
 1. Click on **Windows Shares (SMB)** to select it and then click **Add**. The **Add SMB** configuration screen displays the **Basic Options** settings.
 
-   {{< trueimage src="/images/SCALE/23.10/AddShareBasicOptions.png" alt="Add SMB Basic Options" id="Add SMB Basic Options" >}}
-
 2. Enter the SMB share **Path** and **Name**.
 
    The **Path** is the directory tree on the local file system that TrueNAS exports over the SMB protocol.
@@ -240,8 +238,6 @@ You can start the service from the **Windows SMB Share** header on the **Sharing
 ### Starting the Service Using the Windows SMB Share
 
 From the **Sharing** screen, click on the **Windows (SMB) Shares** <span class="material-icons">more_vert</span> to display the service options, which are **Turn Off Service** if the service is running or **Turn On Service** if the service is not running.
-
-{{< trueimage src="/images/SCALE/23.10/SharingSMBServicesActionOptions.png" alt="SMB Service Options" id="SMB Service Options" >}}
 
 Each SMB share on the list also has a toggle to enable or disable the service for that share.
 
