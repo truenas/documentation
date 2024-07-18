@@ -101,7 +101,7 @@ Read the warning, select **Confirm**, and then click **I UNDERSTAND**.
 
 A second dialog opens where you click **Download Encryption Key** for the pool encryption key.
 
-{{< trueimage src="/images/SCALE/Storage/DownloadEncryptionKeyForPool.png" alt="Download Encryption Key on Pool Manager" id="Download Encryption Key on Pool Manager" >}}
+{{< trueimage src="/images/SCALE/Storage/DownloadPoolEncryptionKey.png" alt="Download Encryption Key on Pool Manager" id="Download Encryption Key on Pool Manager" >}}
 
 Click **Done** to close the window.
 Move the encryption key to safe location where you can back up the file.
