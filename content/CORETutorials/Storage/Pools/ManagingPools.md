@@ -79,7 +79,7 @@ Increases the size of the pool to match all available disk space.
 This option is typically used when virtual disks are resized apart from TrueNAS.
 {{< /expand >}}
 {{< expand "Upgrade Pool" >}}
-This option only displays when the pool can be upgraded to use new [ZFS feature flags](https://www.truenas.com/docs/references/zfsprimer/}).
+This option only displays when the pool can be upgraded to use new [ZFS feature flags](https://www.truenas.com/docs/references/zfsprimer/).
 Before upgrading an existing pool, be aware of these caveats:
 
 * Upgrading a pool is one-way. This means that if you change your mind. 
