@@ -2,6 +2,8 @@
 title: "UPS Screen"
 description: "Describes the UPS screen in TrueNAS CORE."
 weight: 150
+aliases:
+- /core/services/ups/
 tags:
 - ups
 ---

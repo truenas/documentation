@@ -5,6 +5,8 @@ weight: 40
 aliases:
   - /core/solutions/integrations/veeam/
   - /core/solutions/integrations/veeam/tnrecommendationsforveeam/
+  - /scale/scaletutorials/communityrecommends/hardened-backup-repository-for-veeam/
+  - /scale/communityrecommends/hardened-backup-repository-for-veeam/
 ---
 <div style="text-align:center;">
 
@@ -121,7 +123,7 @@ Detailed configurations can be discussed with iXsystems sales representatives an
 
 TrueNAS storage pools can be expanded online to the maximum size supported by a particular TrueNAS system. 
 Storage pools can be expanded one vdev (RAID group) at a time so long as each vdev shares the same type. 
-When deploying an iSCSI share requiring a zvol (LUN), users should consider [thin provisioning]({{{< relref "thinprovisioning.md" >}}}) using the [sparse option](https://www.truenas.com/docs/core/storage/pools/zvols/#options) during setup.
+When deploying an iSCSI share requiring a zvol (LUN), users should consider [thin provisioning]({{< relref "thinprovisioning.md" >}}) using the [sparse option](https://www.truenas.com/docs/core/storage/pools/zvols/#options) during setup.
 
 ## Other Considerations
 

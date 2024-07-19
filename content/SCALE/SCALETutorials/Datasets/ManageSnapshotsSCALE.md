@@ -6,6 +6,7 @@ aliases:
  - /scale/scaleuireference/storage/snapshotsscale/
  - /scale/scaletutorials/storage/snapshotsscale/
  - /scale/scaletutorials/storage/datasets/managesnapshotsscale/
+ - /_includes/cloneandpromotesnapshotdataset/
 tags: 
  - snapshots
  - backup

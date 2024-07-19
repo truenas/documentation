@@ -2,6 +2,8 @@
 title: "Creating Alerts"
 description: "Describes how to create an alert on TrueNAS CORE."
 weight: 90
+aliases:
+ - /core/system/alert/
 tags:
 - alerts
 ---

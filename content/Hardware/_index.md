@@ -2,6 +2,8 @@
 title: "TrueNAS Systems"
 geekdocCollapseSection: true
 weight: 40
+aliases:
+ - /hardware/stencils/
 cascade:
   - _target:
     related: false

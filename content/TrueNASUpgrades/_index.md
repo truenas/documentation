@@ -7,6 +7,7 @@ url: /softwarereleases/
 aliases:
  - /scale/gettingstarted/upgrades/
  - /truenasupgrades/
+ - /releasenotes/releaseschedule/
 ---
 
 ## Release List
