@@ -7,7 +7,7 @@ tags:
 aliases:
  - /hub/tasks/advanced/mirror-boot-pool/
  - /core/system/boot/bootpoolmirror/
-slug: mirroring-the-boot-pool
+ - /core/coretutorials/systemconfiguration/mirroring-the-boot-pool/
 ---
 
 Adding a second storage device to the boot pool changes the configuration to a **Mirror**.

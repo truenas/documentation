@@ -23,7 +23,7 @@ Use the **Storage > Pools Add Zvol** screen to add a zvol to a pool.
 | **Sync** | Select an option from the dropdown list that sets the data write synchronization. **Inherit** sets zvol to get sync settings from the parent dataset, **Standard** uses the sync settings requested by the client software, **Always** that waits for data writes to complete,or **Disabled** that never waits for writes to complete. |
 | **Compression level** | Select a compression option from the dropdown list. Select **Off** to not compress data to save space. Refer to Compression for a description of the available algorithms. |
 | **ZFS Deduplication** | Do not change this setting unless instructed to do so by your iXsystems support engineer. |
-| **Sparse** | Select to provide [thin provisioning]({{{< relref "thinprovisioning.md" >}}}). Use with caution as writes fail when the pool is low on space. |
+| **Sparse** | Select to provide [thin provisioning]({{< relref "thinprovisioning.md" >}}). Use with caution as writes fail when the pool is low on space. |
 | **Read-only** | Select an option from the dropdown list to set whether the zvol can be modified. Options are **Inherit** to get and use the parent pool or root dataset settings, **On** to prevent modifying the zvol, or **Off** to allow the zvol to be modified. |
 | **Inherit** (**Encryption Options**) | Select to enable the zvol to use the encryption properties of the root dataset. |
 {{< /truetable >}}
