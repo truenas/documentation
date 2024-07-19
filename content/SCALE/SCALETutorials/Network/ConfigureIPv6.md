@@ -19,6 +19,7 @@ After configuring your network infrastructure for IPv6, assign the IP addresses 
 Use the SCALE UI to configure your network settings.
 If setting SCALE up for the first time after a clean install, use the Console Setup menu to enter IPv6 addresses.
 
+
 ### Configuring an Interface Using the Console Setup Menu
 If configuring your network settings using the Console Setup menu for the first time after installing SCALE, first configure the interface address.
 Type 1, then press <kbd>Enter</kbd>.
@@ -37,7 +38,7 @@ Navigate to the **Network** screen to enter your network settings.
 
 Click on **Add** in the **Interfaces** to open the **Add Interface** screen.
 
-1. Enter **eno1** as the name for the interface if it is the primary interface.
+1. Enter **en8s0** as the name for the interface if it is the primary interface.
 2. Clear the **DHCP** checkbox, then select **Autoconfigure IPv6** if you want to create the IP address using SLAAC.
    This automatically configures the IPv6 address.
    You can only use this option one time to configure an IPv6 address for the system.
@@ -50,6 +51,51 @@ Click on **Add** in the **Interfaces** to open the **Add Interface** screen.
 
 To access the UI after configuring an IPv6 address, enter the IPv6 address inside square brackets in the browser URL field.
 You cannot access the UI with the assigned host name when the system is configured on an IPv6 network.
+
+### Configuring Dual Stacking
+SCALE supports dual-stacking IPv4 and IPv6 addresses in the same interface.
+An IPv4 network cannot see or communicate with an IPv6 network unless some gateway is configured to allow IPv6 communication.
+Dual stacking these two protocols allows SCALE to see and communicate with an all IPv6 address or website.
+
+You must have IPv6 configured in your networking infrastructure.
+Add IPv6 to your network router to permit the incoming and outgoing traffic. This provides the required gateway to permit communication with this IP protocol.
+Assign a static IPv6 address and netmask, the network gateway address, and name servers to configure in SCALE.
+
+{{< hint type=info >}}
+When configuring dual stacking, the order in which you configure the two network IP protocols does not matter.
+{{< /hint >}}
+
+If IPv4 networking is already configured in SCALE, to set up dual stacking of IPv6 in the UI, go to **Network**:
+
+1. Add the IPv6 gateway information.
+
+   Click **Settings** on the **Global Configuration** widget. The **Edit Global Configuration** screen opens.
+
+   Enter the IPv6 address for the gateway in **IPv6 Default Gateway**.
+   
+   Click **Save**.
+
+2. Add the IPv6 static IP address to the primary interface.
+
+   Select the primary interface **en8s0**, then click **Edit**.
+
+   Click **Add*** to the right of **Aliases** to add another set of IP Address fields.
+
+   Enter the IPv6 address, then select the netmask.
+
+   Click **Save**
+
+3. Test the network change.
+   To verify the IPv6 address, in a new browser window, enter the address inside square brackets. For example, *[ffff:ff:59f8:100::12].
+
+   Log into the UI, and click **Save Changes**.
+
+   Log out of that browser session, return to your other UI session.
+   Both IPv4 and IPv6 addresses should show on the screen for the primary interface.
+
+After installing SCALE and using the Console Setup menu to configure system networking and set up dual stacking, add the name servers and both IP protocol default gateways in general network settings (option 2 on the menu), then add both IP address with netmasks as aliases on the primary network interface (option 1 on the menu).
+
+If using the Console Setup menu to set up IPv6 on an already IPv4-configured system, add the v6 default gateway in general network, then add the IPv6 IP address with netmask as an alias on the primary interface.
 
 ### Connecting to the UI IPv6 Address
 Unlike IPv4, you must enter the IPv6 address with a square bracket preceding and following the address.
@@ -90,9 +136,15 @@ Enter two forward slashes, followed by the IPv6 address with **.ipv6-literal.net
 For example, <code>\\<i>ffff-ff-59f8-100--12</i>.ipv6-literal.net\<i>v6smbshare</i></code>.
 
 <!-- 
-### Setting up Rsync Tasks  Commenting out this section as the rsync task tutorials need attention and there is an open Jira ticket on issues with functionality. Ticket reports issues in CORE but it also applies to SCALE. https://ixsystems.atlassian.net/browse/NAS-129340
+### Setting up Rsync Tasks
 
-### Setting Up Cloud Sync Tasks  This section is commented out until we have Internet access over our IPv6 network so we can test. 
+Commenting out this section Until I can test rsync tasks using module and ssh modes.
 
-### Using IPv6 with Applications   This section is commented out until we have Internet access over our IPv6 network so we can test. 
+### Setting Up Cloud Sync Tasks  
+
+Commented out until we have Internet access over our IPv6 network so we can test. 
+
+### Using IPv6 with Applications
+Commented out until we have Internet access over our IPv6 network so we can test. 
+
 -->
