@@ -55,7 +55,7 @@ Set up a second 2FA device as a backup before proceeding.
 
 Before you begin, download Google Authenticator to your mobile device.
 
-1. Go to **System Settings > Advanced**, scroll down to the **Global Two Factor Authentication** widget, and click **Config**.
+1. Go to **System > Advanced**, scroll down to the **Global Two Factor Authentication** widget, and click **Config**.
 
    {{< trueimage src="/images/SCALE/SystemSettings/GlobalTwoFactorAuthenticationWidget.png" alt="Global TwoFactor Authentication Widget" id="1 - Global Two Factor Authentication Settings Widget" >}}
 
@@ -89,11 +89,10 @@ Accounts that are already configured with individual 2FA are not prompted for 2F
 When **Global 2FA** is enabled, user accounts without 2FA settings configured see the **Two-Factor Authentication** screen on their next login to configure and enable 2FA authentication for that account.
 
 ### Disabling or Bypassing 2FA
-Go to **System Settings > Advanced**, scroll down to the **Global Two Factor Authentication** widget, and click **Config**.
-Clear the **Enable Two-Factor Authentication Globally** checkbox and click **Save**.
+Go to **System > Advanced**, scroll down to the **Global Two Factor Authentication** widget, and click **Config**. Clear the **Enable Two-Factor Authentication Globally** checkbox and click **Save**.
 
 ### Reactivating 2FA
-If you want to enable 2FA again, go to **System Settings > Advanced**, scroll down to the **Global Two Factor Authentication** widget, and click **Config**.
+If you want to enable 2FA again, go to **System > Advanced**, scroll down to the **Global Two Factor Authentication** widget, and click **Config**.
 
 Check **Enable Two Factor Authentication Globally**, then click **Save**.
 To change the system-generated **Secret**, click on the **Settings** icon on the top toolbar and select **Two-Factor Authentication**. 
@@ -112,9 +111,9 @@ Enter the code from the mobile device (without the space) in the login window an
 If you wait too long, a new number code displays in Google Authenticator, so you can retry.
 
 ### Logging In Using SSH
-1. Confirm that you set **Enable Two-Factor Auth for SSH** in **System Settings > Advanced > Global Two Factor Authentication**.
+1. Confirm that you set **Enable Two-Factor Auth for SSH** in **System > Advanced > Global Two Factor Authentication**.
 
-2. Go to **System Settings > Services** and edit the **SSH** service.
+2. Go to **System > Services** and edit the **SSH** service.
 
    a. Set **Log in as Admin with Password**, then click **Save**.
 

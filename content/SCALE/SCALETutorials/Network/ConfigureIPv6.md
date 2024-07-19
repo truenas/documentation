@@ -61,7 +61,7 @@ When configuring an SMB or NFS share, first configure the bind address in the sh
 Next, configure the share user, and add the share and dataset.
 Finally, add the share owner to the dataset permissions.
 
-1. Go to **System Settings > Services** click **Advanced Options** then edit the share service.
+1. Go to **System > Services** click **Advanced Options** then edit the share service.
    
    For SMB, scroll down and select the IPv6 address as the **Bind IP Address** and click **Save**.
 

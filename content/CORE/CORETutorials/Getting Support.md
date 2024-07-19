@@ -4,6 +4,7 @@ description: "Describes different options for getting support for TrueNAS CORE."
 weight: 16
 aliases:
   - /core/system/support
+  - /_includes/createdebugcore/
 tags:
 - support
 ---

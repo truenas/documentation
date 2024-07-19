@@ -18,6 +18,33 @@ aliases:
   - /releasenotes/scale/21.02-alpha.1/
   - /releasenotes/scale/20.12-alpha/
   - /releasenotes/scale/20.10-alpha/
+  - /_includes/corereleasenotes/freenas/11.2/11.2u7/
+  - /_includes/corereleasenotes/freenas/11.3/11.3/
+  - /_includes/corereleasenotes/freenas/11.1/11.1u4/
+  - /_includes/corereleasenotes/freenas/11.1/11.1u5/
+  - /_includes/corereleasenotes/12.0/12.0u8.1/
+  - /_includes/corereleasenotes/freenas/11.2/11.2u5/
+  - /_includes/corereleasenotes/freenas/11.2/11.2u2/
+  - /_includes/corereleasenotes/freenas/11.1/11.1u3/
+  - /_includes/corereleasenotes/freenas/11.1/11.1/
+  - /_includes/corereleasenotes/freenas/11.3/11.3u1/
+  - /_includes/corereleasenotes/freenas/11.3/11.3u2/
+  - /_includes/corereleasenotes/freenas/11.1/11.1u6/
+  - /_includes/corereleasenotes/freenas/11.2/11.2u4/
+  - /_includes/corereleasenotes/freenas/11.1/11.1u1/
+  - /_includes/corereleasenotes/freenas/11.2/11.2u3/
+  - /_includes/corereleasenotes/12.0/12.0u2/
+  - /_includes/corereleasenotes/freenas/11.2/11.2u6/
+  - /_includes/corereleasenotes/freenas/11.2/11.2u8/
+  - /_includes/corereleasenotes/freenas/11.3/11.3u3/
+  - /_includes/corereleasenotes/freenas/11.3/11.3u4/
+  - /_includes/corereleasenotes/freenas/11.1/11.1u7/
+  - /_includes/corereleasenotes/freenas/11.2/11.2u1/
+  - /_includes/corereleasenotes/freenas/11.1/11.1u2/
+  - /_includes/corereleasenotes/freenas/11.3/11.3u5/
+  - /_includes/corereleasenotes/12.0/12.0u6/
+  - /_includes/corereleasenotes/12.0/12.0u1/
+  - /_includes/corereleasenotes/12.0/12.0u3/
 ---
 
 Welcome to the Documentation Archive!
