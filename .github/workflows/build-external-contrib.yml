@@ -20,9 +20,9 @@ jobs:
         with:
           fetch-depth: 0         # Fetch all history for .GitInfo and .Lastmod
 
-      - uses: pnpm/action-setup@v2.2.2
+      - uses: pnpm/action-setup@v4
         with:
-          version: 6.0.2
+          version: latest
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2.6.0
