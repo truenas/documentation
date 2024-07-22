@@ -103,12 +103,40 @@ Select **Confirm** then click **Start Over** to clear all changes.
 
 To save changes click **Update Pool**.
 
-### Extending a Vdev
-You cannot add more drives to an existing data VDEV but you can stripe a new VDEV of the same type to increase the overall pool size.
+## Extending a Vdev
 
-To extend a pool, you must add a data VDEV of the same type as existing VDEVs.
+You can increase the size of an existing pool by adding one or more drives to an existing RAIDZ VDEV or you can stripe a new VDEV of the same type to increase the overall pool size.
+
+### Extending a RAIDZ VDEV
+
+Additional disks can be added one at a time to a RAID-Z VDEV, expanding its capacity incrementally.
+This is especially useful for small pools (typically with only one RAID-Z VDEV), where there isn't sufficient hardware capacity to add a mirrored VDEV by doubling the number of disks.
+
+{{< expand "How does RAIDZ Extension Work?" "v" >}}
+
+{{< /expand >}}
+
+To extend a RAIDZ VDEV, go to **Storage**.
+Locate the pool and click **Manage Devices** to open the ***Poolname* Devices** screen.
+
+{{< trueimage src="/images/SCALE/Storage/DevicesExtend.png" alt="Devices Screen" id="Devices Screen" >}}
+
+Select the target VDEV and click **Extend** to open the **Extend Vdev** window.
+
+{{< trueimage src="/images/SCALE/Storage/ExtendVdev.png" alt="Extend Vdev" id="Extend Vdev" >}}
+
+Select an available disk from the **New Disk** dropdown menu.
+Click **Extend**.
+
+A job progress window appears.
+TrueNAS SCALE returns to the ***Poolname* Devices** screen when complete.
+
+### Mirroring an Existing VDEV
+
+<!-- Rewrite this section to clarify -->
+To extend a pool by mirroring, you must add a data VDEV of the same type as existing VDEVs.
 For example, create another mirror, then stripe the new mirror VDEV to the existing mirror VDEV.
-While on the **Devices** screen, click on the data vdev, then click **Extend**. 
+While on the **Devices** screen, click on the data vdev, then click **Extend**. <!-- What? Did they repurpose an existing button? -->
 
 {{< expand "Extending VDEV Examples" "v" >}}
 * To make a striped mirror, add the same number of drives to extend a ZFS mirror.
