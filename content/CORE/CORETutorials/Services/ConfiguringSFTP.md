@@ -2,6 +2,8 @@
 title: "Configuring SFTP"
 description: "Configuring SSH File Transfer Protocol (SFTP) service on your TrueNAS."
 weight: 20
+aliases:
+ - /hub/sharing/ftp-sftp/
 tags:
 - ftp
 - sftp

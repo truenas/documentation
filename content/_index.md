@@ -46,7 +46,7 @@ See these additional content areas:
 
 <div class="docs-more-sections">
   <p>Project Contributions
-	<br><a href="/contributing">Overview</a>
+	<br><a href="/contributing/">Overview</a>
 	<br><a href="/contributing/uitranslations/">Interface Translations</a>
 	<br><a href="/contributing/issuereporting/">TrueNAS Issue Reporting</a>
 	<br><a href="/contributing/documentation/">Documentation Changes</a>
