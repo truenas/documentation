@@ -24,11 +24,11 @@ For example, select **Shares <i class="material-icons" aria-hidden="true" title=
 {{< trueimage src="/images/SCALE/Dashboard/GlobalSearchResult.png" alt="Global Search Result - Screen" id="Global Search Result - Screen" >}}
 
 Select a widget or button result to go to the screen containing the element.
-For example, select **Shares <i class="material-icons" aria-hidden="true" title="Arrow Right">arrow_right_alt</i> SMB <i class="material-icons" aria-hidden="true" title="Arrow Right">arrow_right_alt</i> SMB Status <i class="material-icons" aria-hidden="true" title="Arrow Right">arrow_right_alt</i> Notifications** to go to the **Notifications** tab on the [**SMB Status**]({{< relref "SMBSharesScreens.md#smb-status-screens" >}}) screen.
+For example, select **Shares <i class="material-icons" aria-hidden="true" title="Arrow Right">arrow_right_alt</i> SMB <i class="material-icons" aria-hidden="true" title="Arrow Right">arrow_right_alt</i> Add SMB Share** to locate to the **Add** button on the **SMB** screen.
 
 {{< trueimage src="/images/SCALE/Dashboard/GlobalSearchElementResult.png" alt="Global Search Result - Element" id="Global Search Result - Element" >}}
 
-TrueNAS SCALE highlights the selected element for visibility.
+TrueNAS SCALE indicates the selected element with an arrow.
 
 ## Searching TrueNAS Documentation
 
