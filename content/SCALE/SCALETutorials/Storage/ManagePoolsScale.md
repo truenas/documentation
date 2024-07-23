@@ -21,6 +21,7 @@ This article provides instructions on pool management functions available in the
 {{< trueimage src="/images/SCALE/Storage/StorageDashboardWithPool.png" alt="Storage Dashboard with Pool" id="Storage Dashboard with Pool" >}}
 
 ## Setting Up Auto TRIM
+
 Select **Storage** on the main navigation panel to open the **Storage Dashboard**.
 Locate the **ZFS Health** widget for the pool, then click the **Edit Auto TRIM**. The **Pool Options for *poolname*** dialog opens.
 
@@ -36,6 +37,7 @@ Auto TRIM can impact pool performance, so the default setting is disabled.
 For more details about TRIM in ZFS, see the `autotrim` property description in [zpool.8](https://zfsonlinux.org/manpages/0.8.1/man8/zpool.8.html).
 
 ## Exporting/Disconnecting or Deleting a Pool
+
 Use the **Export/Disconnect** button to disconnect a pool and transfer drives to a new system where you can import the pool.
 It also lets you completely delete the pool and any data stored on it.
 
@@ -55,6 +57,7 @@ Select **Confirm Export/Disconnect**
 Click **Export/Disconnect**. A confirmation dialog displays when the export/disconnect completes.
 
 ## Upgrading a Pool
+
 Storage pool upgrades are typically not required unless the new OpenZFS feature flags are deemed necessary for required or improved system operation.
 
 Do *not* do a pool-wide ZFS upgrade until you are ready to commit to this SCALE major version and lose the ability to roll back to an earlier major version!
@@ -70,6 +73,7 @@ However, the best practice is to upgrade when the pool is not in heavy use.
 The upgrade process suspends I/O for a short period but is nearly instantaneous on a quiet pool.
 
 ## Running a Pool Data Integrity Check (Scrub)
+
 Use **Scrub** on the **ZFS Health** pool widget to start a pool data integrity check.
 
 {{< trueimage src="/images/SCALE/Storage/StorageDashboardZFSHealthWidget.png" alt="ZFS Health Widget" id="ZFS Health Widget" >}}
@@ -85,6 +89,7 @@ The **ZFS Health** widget displays the state of the last scrub or disks in the p
 To view scheduled scrub tasks, click **View all Scrub Tasks** on the **ZFS Health** widget.
 
 ## Managing Pool Disks
+
 The **Storage Dashboard** screen **Disks** button and the **Manage Disks** button on the **Disk Health** widget both open the **Disks** screen.
 
 **Manage Devices** on the **Topology** widget opens the ***Poolname* Devices** screen.
@@ -107,13 +112,44 @@ If a pool is not automatically expanded, for example when resizing virtual disks
 Additional disks can be added one at a time to a RAIDZ VDEV, expanding its capacity incrementally.
 This is especially useful for small pools (typically with only one RAID-Z VDEV), where there isn't sufficient hardware capacity to add a mirrored VDEV by doubling the number of disks.
 
-{{< expand "RAIDZ Extension Overview" "v" >}}
+{{< expand "Overview and Considerations" "v" >}}
+TrueNAS SCALE 24.10 (Electric Eel) introduces RAIDZ extension to allow incremental expansion of an existing RAIDZ VDEV using one more disks.
+RAIDZ extension allows resource- or hardware-limited homelab and small enterprise users to expand storage capacity with lower upfront costs compared to traditional ZFS expansion methods.
 
+To expand a RAIDZ array, TrueNAS reads data from the current disks and rewrites it onto the new configuration, including any additional disks.
+
+Data redundancy is maintained.
+If a disk fails mid-expansion, the process pauses until the RAIDZ virtual device (vdev) is healthy again, typically by replacing the failed disk and waiting for the system to rebuild.
+
+The storage pool remains accessible throughout the expansion.
+If you reboot or export/import the pool, the expansion resumes from where it left off.
+
+After the expansion, the extra space becomes available for use.
+
+The fault tolerance level of the RAIDZ array remains unchanged.
+For example, a RAIDZ2 stays a RAIDZ2 even after adding more disks.
+
+You can expand a RAIDZ vdev multiple times.
+
+Existing data blocks retain their original data-to-parity ratio and block width, but spread across the larger set of disks.
+New data blocks adopt the new data-to-parity ratio and width.
+Because of this overhead, an extended RAIDZ VDEV can report a lower total capacity than a freshly created VDEV with the same number of disks.
+
+{{< trueimage src="/images/Reference/RaidzExpansion.png" alt="RAIDZ Expansion" id="RAIDZ Expansion" caption="Before (left) and after (right) expansion of a four-disk to five-disk RAIDZ1<br>Thanks to Matt Ahrens ([Source](https://arstechnica.com/gadgets/2021/06/raidz-expansion-code-lands-in-openzfs-master/))" >}}
+
+The additional overhead of now-undersized existing blocks can be recovered by reading and rewriting existing data to the extended pool.
+This can occur naturally over the lifetime of the pool as ZFS rewrites data blocks when you modify or delete data.
+Alternately, you can manually replicate and rewrite the data to the pool.
+Data is rewritten using the extended block size and parity ratio.
+
+<!-- Link to references/extension-calculator here -->
+
+For more information, see [Jim Salter's article](https://arstechnica.com/gadgets/2021/06/raidz-expansion-code-lands-in-openzfs-master/) at Ars Technica and the upstream [RAIDZ extension](https://github.com/openzfs/zfs/pull/15022) PR, sponsored by iXsystems, at OpenZFS.
+See also [ZFS RAIDZ Expansion Is Awesome but Has a Small Caveat](https://louwrentius.com/zfs-raidz-expansion-is-awesome-but-has-a-small-caveat.html) for an in-depth discussion of capacity limitations and recovering overhead.
 {{< /expand >}}
 
-{{< expand "Considerations" "v" >}}
-
-{{< /expand >}}
+<!-- for testing purposes. Remove and replace with a link above. -->
+{{< extension-calculator >}}
 
 To extend a RAIDZ VDEV, go to **Storage**.
 Locate the pool and click **Manage Devices** on the **Topology** widget to open the ***Poolname* Devices** screen.
@@ -131,6 +167,7 @@ A job progress window appears.
 TrueNAS SCALE returns to the ***Poolname* Devices** screen when complete.
 
 ### Adding a VDEV to a Pool
+
 ZFS supports adding VDEVs to an existing ZFS pool to increase the capacity or performance of the pool.
 To extend a pool by mirroring, you must add a data VDEV of the same type as existing VDEVs.
 
@@ -228,6 +265,7 @@ Repeat steps 1-4 for all attached disks.
 TrueNAS SCALE automatically expands the usable capacity of the pool to fit all available space once the last attached disk is replaced.
 
 ## Removing VDEVs
+
 You can always remove the L2ARC (cache) and SLOG (log) VDEVs from an existing pool, regardless of topology or VDEV type.
 Removing these devices does not impact data integrity, but can significantly impact performance for reads and writes.
 
