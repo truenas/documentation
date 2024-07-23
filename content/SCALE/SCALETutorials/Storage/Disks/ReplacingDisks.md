@@ -58,13 +58,15 @@ To replace a failed disk:
 
    Click **Offline** on the **ZFS Info** widget to take the disk offline. The button toggles to **Online**.
 
-3. Pull the disk from your system and replace it with a disk of at least the same or greater capacity as the failed disk. V:
+3. Pull the disk from your system and replace it with a disk of at least the same or greater capacity as the failed disk.
 
    {{< trueimage src="/images/SCALE/Storage/ReplaceDiskAndOnline.png" alt="Replace and Online a Disk" id="Replace and Online a Disk" >}}
 
    a. Click **Replace** on the **Disk Info** widget on the **Devices** screen for the disk you off-lined.
 
    b. Select the new drive from the **Member Disk** dropdown list on the **Replacing disk *diskname*** dialog.
+
+   {{< trueimage src="/images/SCALE/Storage/ReplacingDiskDialog.png" alt="Replacing Disk Dialog" id="Replacing Disk Dialog" >}}
 
 4. Add the new disk to the existing VDEV. Click **Replace Disk** to add the new disk to the VDEV and bring it online.
 
