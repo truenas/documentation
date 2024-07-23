@@ -54,70 +54,69 @@ Select **Confirm Export/Disconnect**
 
 Click **Export/Disconnect**. A confirmation dialog displays when the export/disconnect completes.
 
-## Adding a VDEV to a Pool
-ZFS supports adding VDEVs to an existing ZFS pool to increase the capacity or performance of the pool.
+## Upgrading a Pool
+Storage pool upgrades are typically not required unless the new OpenZFS feature flags are deemed necessary for required or improved system operation.
 
-{{< hint type=tip >}}
-You cannot change the original encryption or data VDEV configuration.
-{{< /hint >}}
+Do *not* do a pool-wide ZFS upgrade until you are ready to commit to this SCALE major version and lose the ability to roll back to an earlier major version!
 
-To add a VDEV to a pool:
-Click **Manage Devices** on the **Topology** widget to open the **Devices** screen.
-Click **Add VDEV** on the **Devices** screen to open the **Add Vdevs to Pool** screen.
+The **Upgrade** button displays on the **Storage Dashboard** for existing pools after an upgrade to a new TrueNAS major version that includes new [OpenZFS feature flags]({{< relref "SCALEReleaseNotes.md#component-versions" >}}).
+Newly created pools are always up to date with the OpenZFS feature flags available in the installed TrueNAS version.
 
-{{< trueimage src="/images/SCALE/Storage/AddVdevsToPoolScreen.png" alt="Add VDEVs to Pool Screen" id="Add VDEVs to Pool Screen" >}}
+{{< trueimage src="/images/SCALE/Storage/StorageDashboardUpgradPoolConfirmationDialog.png" alt="Upgrade Pool Confirmation Dialog" id="Upgrade Pool Confirmation Dialog" >}}
 
-Adding a vdev to an existing pool follows the same process as documented in [Create Pool]({{< relref "CreatePoolWizard.md" >}}). 
-Click on the type of vdev you want to add, for example, to add a spare, click on **Spare** to show the vdev spare options.
+The upgrade itself only takes a few seconds and is non-disruptive.
+It is not necessary to stop any sharing services to upgrade the pool.
+However, the best practice is to upgrade when the pool is not in heavy use.
+The upgrade process suspends I/O for a short period but is nearly instantaneous on a quiet pool.
 
-{{< trueimage src="/images/SCALE/Storage/AddVdevToPoolSpareScreen.png" alt="Add VDEVs to Pool Spare Example" id="Add VDEVs to Pool Spare Example" >}}
+## Running a Pool Data Integrity Check (Scrub)
+Use **Scrub** on the **ZFS Health** pool widget to start a pool data integrity check.
 
-To use the automated option, select the disk size from the **Automated Disk Selection > Disk Size** dropdown list, then select the number of vdevs to add from the **Width** dropdown.
-To add the vdev manually, click **Manual Disk Selection** to open the **Manual Selection** screen. 
+{{< trueimage src="/images/SCALE/Storage/StorageDashboardZFSHealthWidget.png" alt="ZFS Health Widget" id="ZFS Health Widget" >}}
 
-{{< trueimage src="/images/SCALE/Storage/AddVdevToPoolManualSelectionScreen.png" alt="Add Vdev Manual Selection Screen" id="Add Vdev Manual Selection Screen" >}}
+Click **Scrub** to open the **Scrub Pool** dialog.
+Select **Confirm**, then click **Start Scrub**.
 
-Click **Add** to show the vdev options available for the vdev type.
-The example image shows adding a stripe vdev for the spare. 
-Vdev options are limited by the number of available disks in your system and the configuration of any existing vdevs of that type in the pool. 
-Drag the disk icon to the stripe vdev, then click **Save Selection**.
+If TrueNAS detects problems during the scrub operation, it either corrects them or generates an [alert]({{< relref "/SCALE/SCALEUIReference/TopToolbar/Alerts/_index.md" >}}) in the web interface.
 
-{{< trueimage src="/images/SCALE/Storage/ManualSelectionAddVdevAddDisk.png" alt="Add Disk to Stripe Vdev for Spare" id="Add Disk to Stripe Vdev for Spare" >}}
+By default, TrueNAS automatically checks every pool on a recurring scrub schedule.
 
-The **Manual Selection** screen closes and returns to the **Add Vdev to Pool** wizard screen (in this case the Spare option.)
+The **ZFS Health** widget displays the state of the last scrub or disks in the pool.
+To view scheduled scrub tasks, click **View all Scrub Tasks** on the **ZFS Health** widget.
 
-{{< trueimage src="/images/SCALE/Storage/AddVdevToPoolSpareWithVdevAdded.png" alt="Add Vdev to Pool Spare with Vdev Added" id="Add Vdev to Pool Spare with Vdev Added" >}}
+## Managing Pool Disks
+The **Storage Dashboard** screen **Disks** button and the **Manage Disks** button on the **Disk Health** widget both open the **Disks** screen.
 
-You have the option to accept the change or click **Edit Manual Disk Selection** to change the disk added to the strip vdev for the spare, or click **Reset Step** to clear the strip vdev from the spare completely.
-Click either **Next** or a numbered item to add another type of vdev to this pool. 
+**Manage Devices** on the **Topology** widget opens the ***Poolname* Devices** screen.
+To manage disks in a pool, click on the VDEV to expand it and show the disks in that VDEV.
+Click on a disk to see the devices widgets for that disk.
+You can take a disk offline, detach it, replace it, manage the SED encryption password, and perform other disk management tasks from this screen.
 
-Repeat the same process above for each type of vdev to add.
+See [Replacing Disks]({{< relref "ReplacingDisks.md" >}}) for more information on the **Offline**, **Replace** and **Online** options.
 
-Click **Save and Go to Review** to go to the **Review** screen when ready to save your changes.
+## Expanding a Pool
 
-{{< trueimage src="/images/SCALE/Storage/AddVdevToPoolReviewScreen.png" alt="Add Vdev to Pool Review Screen" id="Add Vdev to Pool Review Screen" >}}
+You can increase the size of an existing pool by adding one or more drives to an existing RAIDZ VDEV, adding a new VDEV of the same type, or by replacing all existing disks in the VDEV with larger disks.
 
-To make changes, click either **Back** or the vdev option (i.e., **Log**, **Cache**, etc.) to return to the settings for that vdev.
-To clear all changes, click **Start Over**.
-Select **Confirm** then click **Start Over** to clear all changes.
-
-To save changes click **Update Pool**.
-
-## Extending a Vdev
-
-You can increase the size of an existing pool by adding one or more drives to an existing RAIDZ VDEV or you can stripe a new VDEV of the same type to increase the overall pool size.
+By default, a VDEV limits all disks to the usable capacity of the smallest attached device.
+TrueNAS SCALE automatically expands the usable capacity of the pool to fit all available space once the smallest attached disk is replaced (see [Replacing Disks to Expand a Pool](#replacing-disks-to-expand-a-pool) below).
+If a pool is not automatically expanded, for example when resizing virtual disks in a hypervisor apart from TrueNAS, click **Expand** on the **Storage Dashboard** to manually increase the pool size to match all available disk space.
 
 ### Extending a RAIDZ VDEV
 
-Additional disks can be added one at a time to a RAID-Z VDEV, expanding its capacity incrementally.
+Additional disks can be added one at a time to a RAIDZ VDEV, expanding its capacity incrementally.
 This is especially useful for small pools (typically with only one RAID-Z VDEV), where there isn't sufficient hardware capacity to add a mirrored VDEV by doubling the number of disks.
 
-{{< expand "How does RAIDZ Extension Work?" "v" >}}
+{{< expand "RAIDZ Extension Overview" "v" >}}
+
+{{< /expand >}}
+
+{{< expand "Considerations" "v" >}}
 
 {{< /expand >}}
 
 To extend a RAIDZ VDEV, go to **Storage**.
-Locate the pool and click **Manage Devices** to open the ***Poolname* Devices** screen.
+Locate the pool and click **Manage Devices** on the **Topology** widget to open the ***Poolname* Devices** screen.
 
 {{< trueimage src="/images/SCALE/Storage/DevicesExtend.png" alt="Devices Screen" id="Devices Screen" >}}
 
@@ -131,21 +130,104 @@ Click **Extend**.
 A job progress window appears.
 TrueNAS SCALE returns to the ***Poolname* Devices** screen when complete.
 
-### Mirroring an Existing VDEV
-
-<!-- Rewrite this section to clarify -->
+### Adding a VDEV to a Pool
+ZFS supports adding VDEVs to an existing ZFS pool to increase the capacity or performance of the pool.
 To extend a pool by mirroring, you must add a data VDEV of the same type as existing VDEVs.
-For example, create another mirror, then stripe the new mirror VDEV to the existing mirror VDEV.
-While on the **Devices** screen, click on the data vdev, then click **Extend**. <!-- What? Did they repurpose an existing button? -->
 
-{{< expand "Extending VDEV Examples" "v" >}}
+{{< hint type=tip >}}
+You cannot change the original encryption or data VDEV configuration.
+{{< /hint >}}
+
+{{< expand "Adding VDEV Examples" "v" >}}
 * To make a striped mirror, add the same number of drives to extend a ZFS mirror.
   For example, you start with ten available drives. Begin by creating a mirror of two drives, and then extending the mirror by adding another mirror of two drives. Repeat this three more times until you add all ten drives.
 * To make a stripe of two RAIDZ1 VDEVs (similar to RAID 50 on a hardware controller), add another three drives to extend the three-drive RAIDZ1.
 * To make a stripe of RAIDZ2 VDEVs (similar to RAID 60 on a hardware controller), add another four drives to extend the four-drive RAIDZ2.
 {{< /expand >}}
 
-### Removing VDEVs 
+To add a VDEV to a pool:
+Click **Manage Devices** on the **Topology** widget to open the ***Poolname* Devices** screen.
+Click **Add VDEV** on the ***Poolname* Devices** screen to open the **Add Vdevs to Pool** screen.
+
+{{< trueimage src="/images/SCALE/Storage/AddVdevsToPoolScreen.png" alt="Add VDEVs to Pool Screen" id="Add VDEVs to Pool Screen" >}}
+
+Adding a vdev to an existing pool follows the same process as documented in [Create Pool]({{< relref "CreatePoolWizard.md" >}}).
+Click on the type of vdev you want to add, for example, to add a spare, click on **Spare** to show the vdev spare options.
+
+{{< trueimage src="/images/SCALE/Storage/AddVdevToPoolSpareScreen.png" alt="Add VDEVs to Pool Spare Example" id="Add VDEVs to Pool Spare Example" >}}
+
+To use the automated option, select the disk size from the **Automated Disk Selection > Disk Size** dropdown list, then select the number of vdevs to add from the **Width** dropdown.
+To add the vdev manually, click **Manual Disk Selection** to open the **Manual Selection** screen.
+
+{{< trueimage src="/images/SCALE/Storage/AddVdevToPoolManualSelectionScreen.png" alt="Add Vdev Manual Selection Screen" id="Add Vdev Manual Selection Screen" >}}
+
+Click **Add** to show the vdev options available for the vdev type.
+The example image shows adding a stripe vdev for the spare.
+Vdev options are limited by the number of available disks in your system and the configuration of any existing vdevs of that type in the pool.
+Drag the disk icon to the stripe vdev, then click **Save Selection**.
+
+{{< trueimage src="/images/SCALE/Storage/ManualSelectionAddVdevAddDisk.png" alt="Add Disk to Stripe Vdev for Spare" id="Add Disk to Stripe Vdev for Spare" >}}
+
+The **Manual Selection** screen closes and returns to the **Add Vdev to Pool** wizard screen (in this case the Spare option.)
+
+{{< trueimage src="/images/SCALE/Storage/AddVdevToPoolSpareWithVdevAdded.png" alt="Add Vdev to Pool Spare with Vdev Added" id="Add Vdev to Pool Spare with Vdev Added" >}}
+
+You have the option to accept the change or click **Edit Manual Disk Selection** to change the disk added to the strip vdev for the spare, or click **Reset Step** to clear the strip vdev from the spare completely.
+Click either **Next** or a numbered item to add another type of vdev to this pool.
+
+Repeat the same process above for each type of vdev to add.
+
+Click **Save and Go to Review** to go to the **Review** screen when ready to save your changes.
+
+{{< trueimage src="/images/SCALE/Storage/AddVdevToPoolReviewScreen.png" alt="Add Vdev to Pool Review Screen" id="Add Vdev to Pool Review Screen" >}}
+
+To make changes, click either **Back** or the vdev option (i.e., **Log**, **Cache**, etc.) to return to the settings for that vdev.
+To clear all changes, click **Start Over**.
+Select **Confirm** then click **Start Over** to clear all changes.
+
+To save changes click **Update Pool**.
+
+### Replacing Disks to Expand a Pool
+
+To expand a pool by replacing disks, you must individually offline each disk in the pool and replace it with a higher capacity disk following the same procedure as in [Replacing Disks]({{< relref "ReplacingDisks.md" >}}).
+
+1. Go to the **Storage Dashboard** and click **Manage Devices** on the **Topology** widget for the pool to open the ***Poolname* Devices** screen.
+Click anywhere on the VDEV to expand it and select one of the existing disks.
+
+2. Take the disk offline.
+
+   {{< trueimage src="/images/SCALE/Storage/DevicesDiskWidgets.png" alt="Devices Disk Widgets" id="Devices Disk Widgets" >}}
+
+   Click **Offline** on the **ZFS Info** widget to take the disk offline. The button toggles to **Online**.
+
+3. Remove the disk from the system and replace it with a larger capacity disk.
+
+   {{< trueimage src="/images/SCALE/Storage/ReplaceDiskAndOnline.png" alt="Replace and Online a Disk" id="Replace and Online a Disk" >}}
+
+   a. Click **Replace** on the **Disk Info** widget on the ***Poolname* Devices** screen for the disk you off-lined.
+
+   b. Select the new drive from the **Member Disk** dropdown list on the **Replacing disk *diskname*** dialog.
+
+   {{< trueimage src="/images/SCALE/Storage/ReplacingDiskDialog.png" alt="Replacing Disk Dialog" id="Replacing Disk Dialog" >}}
+
+4. Add the new disk to the existing VDEV. Click **Replace Disk** to add the new disk to the VDEV and bring it online.
+
+   Disk replacement fails when the selected disk has partitions or data present.
+   To destroy any data on the replacement disk and allow the replacement to continue, select the **Force** option.
+
+   {{< trueimage src="/images/SCALE/Storage/ReplacingDiskStatusDialog.png" alt="Replacing Disk Status" id="Replacing Disk Status" >}}
+
+   When the disk wipe completes, TrueNAS starts replacing the failed disk.
+   TrueNAS resilvers the pool during the replacement process.
+   For pools with large amounts of data, this can take a long time.
+   When the resilver process completes, the pool status returns to **Online** status on the ***Poolname* Devices** screen.
+
+Wait for the resilver to complete before replacing the next disk.
+Repeat steps 1-4 for all attached disks.
+
+TrueNAS SCALE automatically expands the usable capacity of the pool to fit all available space once the last attached disk is replaced.
+
+## Removing VDEVs
 You can always remove the L2ARC (cache) and SLOG (log) VDEVs from an existing pool, regardless of topology or VDEV type.
 Removing these devices does not impact data integrity, but can significantly impact performance for reads and writes.
 
@@ -162,53 +244,10 @@ This process preserves data integrity but has multiple requirements:
 When a RAIDZ data VDEV is present, it is generally not possible to remove a device.
 
 To remove a VDEV from a pool:
-1. Click **Manage Devices** on the **Topology** widget to open the **Devices** screen.
+1. Click **Manage Devices** on the **Topology** widget to open the ***Poolname* Devices** screen.
 2. Click the device or drive to remove, then click the **Remove** button in the **ZFS Info** pane.
    If the **Remove** button is not visible, check that all conditions for VDEV removal listed above are correct.
 3. Confirm the removal operation and click the **Remove** button.
 
 The VDEV removal process status shows in the [Task Manager]({{< relref "TasksScreens.md" >}}) (or alternately with the `zpool status` command).
 Avoid physically removing or attempting to wipe the disks until the removal operation completes.
-
-## Running a Pool Data Integrity Check (Scrub)
-Use **Scrub** on the **ZFS Health** pool widget to start a pool data integrity check.
-
-{{< trueimage src="/images/SCALE/Storage/StorageDashboardDiskHealthWidget.png" alt="Disk Health Widget" id="Disk Health Widget" >}}
-
-Click **Scrub** to open the **Scrub Pool** dialog.
-Select **Confirm**, then click **Start Scrub**.
-
-If TrueNAS detects problems during the scrub operation, it either corrects them or generates an [alert]({{< relref "/SCALE/SCALEUIReference/TopToolbar/Alerts/_index.md" >}}) in the web interface.
-
-By default, TrueNAS automatically checks every pool on a recurring scrub schedule.
-
-The **ZFS Health** widget displays the state of the last scrub or disks in the pool.
-To view scheduled scrub tasks, click **View all Scrub Tasks** on the **ZFS Health** widget.
-
-## Managing Pool Disks
-The **Storage Dashboard** screen **Disks** button and the **Manage Disks** button on the **Disk Health** widget both open the **Disks** screen.
-
-**Manage Devices** on the **Topology** widget opens the **Devices** screen.
-To manage disks in a pool, click on the VDEV to expand it and show the disks in that VDEV.
-Click on a disk to see the devices widgets for that disk.
-You can take a disk offline, detach it, replace it, manage the SED encryption password, and perform other disk management tasks from this screen.
-
-See [Replacing Disks]({{< relref "ReplacingDisks.md" >}}) for more information on the **Offline**, **Replace** and **Online** options.
-
-## Expanding a Pool
-Click **Expand** on the **Storage Dashboard** to increase the pool size to match all available disk space. An example is expanding a pool when resizing virtual disks apart from TrueNAS.
-
-## Upgrading a Pool
-Storage pool upgrades are typically not required unless the new OpenZFS feature flags are deemed necessary for required or improved system operation.
-
-Do *not* do a pool-wide ZFS upgrade until you are ready to commit to this SCALE major version and lose the ability to roll back to an earlier major version!
-
-The **Upgrade** button displays on the **Storage Dashboard** for existing pools after an upgrade to a new TrueNAS major version that includes new [OpenZFS feature flags]({{< relref "SCALEReleaseNotes.md#component-versions" >}}).
-Newly created pools are always up to date with the OpenZFS feature flags available in the installed TrueNAS version.
-
-{{< trueimage src="/images/SCALE/Storage/StorageDashboardUpgradPoolConfirmationDialog.png" alt="Upgrade Pool Confirmation Dialog" id="Upgrade Pool Confirmation Dialog" >}}
-
-The upgrade itself only takes a few seconds and is non-disruptive.
-It is not necessary to stop any sharing services to upgrade the pool.
-However, the best practice is to upgrade when the pool is not in heavy use.
-The upgrade process suspends I/O for a short period but is nearly instantaneous on a quiet pool.
