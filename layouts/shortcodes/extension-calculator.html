@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZFS RAIDZ VDEV Expansion Calculator</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .calculator { max-width: 800px; margin: 0 auto; }
+        .calculator input { width: 100%; padding: 10px; margin: 5px 0; }
+        .calculator button { padding: 10px; width: 100%; }
+        .results {
+            width: 100%; /* Ensures the container takes full width */
+            max-width: 400px; /* Limits the width for better readability */
+            margin: 20px auto; /* Centers the container horizontally */
+            padding: 10px; /* Adds padding inside the container */
+            border: 1px solid #0095d5; /* Optional: Adds a border around the results */
+            background-color: var(--code-background); /* Optional: Adds a background color */
+        }
+        .results h4 {
+            padding-top: 10px; /* Adjusts margins for better spacing */
+        }
+        .results h3 {
+            margin-top: 0; /* Removes top margin for the header */
+        }
+        .results-content {
+            display: none; /* Hides the content initially */
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <h2>ZFS RAIDZ VDEV Expansion Calculator</h2>
+        <label for="driveSize">Drive Size (TB):</label>
+        <input type="number" id="driveSize" value="8" step="0.1">
+
+        <label for="raidzLevel">RAIDZ Level / Number of Parity Disks:</label>
+        <input type="number" id="raidzLevel" value="2" step="1">
+
+        <label for="expansionThreshold">Data Expansion Threshold (%):</label>
+        <input type="number" id="expansionThreshold" value="95" step="1">
+
+        <label for="initialDrives">Initial Number of Drives:</label>
+        <input type="number" id="initialDrives" value="4" step="1">
+
+        <label for="finalDrives">Final Expanded Number of Drives:</label>
+        <input type="number" id="finalDrives" value="8" step="1">
+        
+        <button onclick="calculate()">Calculate</button>
+
+        <div class="results" id="results">
+            <h3>Results</h3>
+            <div class="results-content" id="resultsContent"></div>
+        </div>
+    </div>
+
+    <script>
+      function calculate() {
+          var driveSize = parseFloat(document.getElementById('driveSize').value);
+          var raidzLevel = parseInt(document.getElementById('raidzLevel').value);
+          var initialDrives = parseInt(document.getElementById('initialDrives').value);
+          var finalDrives = parseInt(document.getElementById('finalDrives').value);
+          var expansionThresholdPercentage = parseFloat(document.getElementById('expansionThreshold').value);
+  
+          // Convert percentage to decimal
+          var expansionThreshold = expansionThresholdPercentage / 100;
+  
+          // Calculate metrics for expanding "in one go"
+          var tbGainedOneGo = driveSize * expansionThreshold * raidzLevel * (finalDrives - initialDrives) / finalDrives;
+          var drivesWorthOneGo = expansionThreshold * raidzLevel * (finalDrives - initialDrives) / finalDrives;
+          var percentGainedOneGo = (drivesWorthOneGo / finalDrives) * 100;
+  
+          // Calculate metrics for expanding "by 1 drive"
+          var drivesWorthByOne = 0;
+          var tbGainedByOne = 0;
+          var reciprocalSum = 0;
+  
+          // Accumulate the sum of reciprocals
+          for (var i = initialDrives + 1; i <= finalDrives; i++) {
+              reciprocalSum += 1 / i;
+          }
+  
+          // Calculate the drives worth of capacity and TB gained
+          drivesWorthByOne = expansionThreshold * raidzLevel * reciprocalSum;
+          tbGainedByOne = driveSize * drivesWorthByOne; // Use drivesWorthByOne directly
+  
+          // Calculate percentage
+          var percentGainedByOne = (drivesWorthByOne / finalDrives) * 100;
+  
+          // Display the results
+          document.getElementById('resultsContent').innerHTML = `
+              <h4>Expand VDEV to final width "in one go":</h4>
+              <p>TB that could be gained: ${tbGainedOneGo.toFixed(2)}</p>
+              <p>Number of drives worth of capacity gained: <b>${drivesWorthOneGo.toFixed(2)}</b></p>
+              <p>Percentage of total capacity gained: ${percentGainedOneGo.toFixed(2)}%</p>
+              <h4>Expand VDEV by one drive at a time:</h4>
+              <p>TB that could be gained: ${tbGainedByOne.toFixed(2)}</p>
+              <p>Number of drives worth of capacity gained: <b>${drivesWorthByOne.toFixed(2)}</b></p>
+              <p>Percentage of total capacity gained: ${percentGainedByOne.toFixed(2)}%</p>
+          `;
+
+          // Show the results content
+          document.getElementById('resultsContent').style.display = 'block';
+      }
+  </script>    
+</body>
+</html>
