@@ -151,9 +151,6 @@ enable = true
     name = "CC BY-SA 4.0"
     link = "https://creativecommons.org/licenses/by-sa/4.0/"
 	
-  # Add a default image for use by OpenGraph or as a generic fallback
-  images = ["/images/TrueNAS_Open_Enterprise_Storage.svg"]
-
 [frontmatter]
 lastmod = ["lastmod", ":git", ":fileModTime", ":default"]
 
