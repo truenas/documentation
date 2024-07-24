@@ -49,7 +49,7 @@ Click **REBUILD DIRECTORY SERVICE CACHE** to resync the cache if it becomes out 
 | **DNS timout** | Default value is **10** seconds. Increase if DNS queries take too long to respond. |
 | **Samba Schema (DEPRECATED - see help text)** | Select if SMB shares need LDAP authentication and the LDAP server is already configured with Samba attributes. If selected, specify the type of schema from the **Schema** dropdown list. |
 | **Auxiliary Parameters** | Enter for [nslcd.conf](https://arthurdejong.org/nss-pam-ldapd/nslcd.conf.5). |
-| **Schema** | Select the Samba schema from the dropdown list. Options are **RFC2307** or **RFC2307BIS**. |
+| **Schema** | Select the LDAP NSS schema from the dropdown list. Options are **RFC2307** or **RFC2307BIS**. |
 {{< /truetable >}}
 
 {{< hint type=important >}}
