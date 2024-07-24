@@ -8,12 +8,13 @@ tags:
 - raidz
 ---
 
-RAIDZ extension allows TrueNAS users to add disks to a RAIDZ VDEV one at a time, expanding its capacity incrementally.
+RAIDZ extension allows TrueNAS users to add disks one at a time to an existing RAIDZ VDEV, incrementally expanding its capacity.
 Use this calculator to estimate the storage capacity efficiency of a ZFS RAIDZ VDEV after incremental extension.
 
 Existing data blocks retain their original data-to-parity ratio and block width, but spread across the larger set of disks.
 New data blocks adopt the new data-to-parity ratio and width.
 Because of this overhead, an extended RAIDZ VDEV can report a lower total capacity than a freshly created VDEV with the same number of disks.
+Excess overhead, or lost headroom, can be recovered by replicating and rewriting existing data to the extended pool.
 
 See [Extending a RAIDZ VDEV]({{< relref "ManagePoolsSCALE.md #extending-a-raidz-vdev" >}}) for more information, including a detailed overview, considerations, and a tutorial.
 
