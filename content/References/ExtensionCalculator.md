@@ -48,5 +48,5 @@ The calculator returns estimated capacity values for two scenarios:
 {{< extension-calculator >}}
 
 <div style="text-align: right; font-size: smaller; padding-top: 1em;">
-    Adapted from this <a href="https://docs.google.com/spreadsheets/d/1qiDPfLN-K88FMHMxcgtkxswY5Wtu7h9tBAOgJfnO7VE/edit?gid=1026363877#gid=1026363877">spreadsheet</a> with thanks to TrueNAS community member <a href="https://forums.truenas.com/u/yorick/summary">yorick</a> (<a href="https://github.com/yorickdowne">github</a>). <br> Additional contributions from <a href="https://www.truenas.com/community/threads/raidz-expansion-its-happening-someday.58575/page-11#post-649581">DayBlur</a> and <a href="https://github.com/louwrentius">Louwrentius</a>.
+    Adapted from this <a href="https://docs.google.com/spreadsheets/d/1qiDPfLN-K88FMHMxcgtkxswY5Wtu7h9tBAOgJfnO7VE/edit?usp=sharing">spreadsheet</a> with thanks to TrueNAS community member <a href="https://forums.truenas.com/u/yorick/summary">yorick</a> (<a href="https://github.com/yorickdowne">github</a>). <br> Additional contributions from <a href="https://www.truenas.com/community/threads/raidz-expansion-its-happening-someday.58575/page-11#post-649581">DayBlur</a> and <a href="https://github.com/louwrentius">Louwrentius</a>.
 </div>
