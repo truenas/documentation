@@ -1959,3 +1959,4 @@ FFF
 MSeriesPUM
 MSeriesNetworkPortID
 releaseschedule
+ManagePoolsSCALE
