@@ -110,7 +110,9 @@ If a pool is not automatically expanded, for example when resizing virtual disks
 ### Extending a RAIDZ VDEV
 
 Additional disks can be added one at a time to a RAIDZ VDEV, expanding its capacity incrementally.
-This is especially useful for small pools (typically with only one RAID-Z VDEV), where there isn't sufficient hardware capacity to add a mirrored VDEV by doubling the number of disks.
+This can be useful for small pools (typically with only one RAID-Z VDEV), where there isn't sufficient hardware capacity to add a mirrored VDEV by doubling the number of disks.
+
+You can  use the [RAIDZ Extension Calculator]({{< relref "/References/ExtensionCalculator.md" >}}) to visualize potential capacity gains from extending an existing VDEV.
 
 {{< expand "Overview and Considerations" "v" >}}
 TrueNAS SCALE 24.10 (Electric Eel) introduces RAIDZ extension to allow incremental expansion of an existing RAIDZ VDEV using one more disks.
@@ -142,14 +144,9 @@ This can occur naturally over the lifetime of the pool as ZFS rewrites data bloc
 Alternately, you can manually replicate and rewrite the data to the pool.
 Data is rewritten using the extended block size and parity ratio.
 
-<!-- Link to references/extension-calculator here -->
-
 For more information, see [Jim Salter's article](https://arstechnica.com/gadgets/2021/06/raidz-expansion-code-lands-in-openzfs-master/) at Ars Technica and the upstream [RAIDZ extension](https://github.com/openzfs/zfs/pull/15022) PR, sponsored by iXsystems, at OpenZFS.
-See also [ZFS RAIDZ Expansion Is Awesome but Has a Small Caveat](https://louwrentius.com/zfs-raidz-expansion-is-awesome-but-has-a-small-caveat.html) for an in-depth discussion of capacity limitations and recovering overhead.
+See also Louwrentius' ["ZFS RAIDZ Expansion Is Awesome but Has a Small Caveat"](https://louwrentius.com/zfs-raidz-expansion-is-awesome-but-has-a-small-caveat.html) for an in-depth discussion of lost capacity and recovering overhead.
 {{< /expand >}}
-
-<!-- for testing purposes. Remove and replace with a link above. -->
-{{< extension-calculator >}}
 
 To extend a RAIDZ VDEV, go to **Storage**.
 Locate the pool and click **Manage Devices** on the **Topology** widget to open the ***Poolname* Devices** screen.
