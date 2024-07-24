@@ -6,51 +6,72 @@
     <title>ZFS RAIDZ VDEV Expansion Calculator</title>
     <style>
         body { font-family: Arial, sans-serif; }
-        .calculator { max-width: 800px; margin: 0 auto; }
+        .calculator-container {
+            width: 100%;
+            max-width: 800px;
+            margin: 20px auto; /* Centers the container horizontally */
+            padding: 20px; /* Adds padding inside the container */
+            border: 1px solid #0095d5; /* Border color */
+            background-color: var(--code-background); /* Background color */
+        }
         .calculator input { width: 100%; padding: 10px; margin: 5px 0; }
-        .calculator button { padding: 10px; width: 100%; }
+        .calculator button { padding: 10px; margin-top: 10px; width: 100%; }
+        .calculator h3 {
+          padding-top: 10px;
+        }
         .results {
             width: 100%; /* Ensures the container takes full width */
             max-width: 400px; /* Limits the width for better readability */
             margin: 20px auto; /* Centers the container horizontally */
-            padding: 10px; /* Adds padding inside the container */
-            border: 1px solid #0095d5; /* Optional: Adds a border around the results */
-            background-color: var(--code-background); /* Optional: Adds a background color */
         }
         .results h4 {
             padding-top: 10px; /* Adjusts margins for better spacing */
         }
-        .results h3 {
-            margin-top: 0; /* Removes top margin for the header */
-        }
         .results-content {
             display: none; /* Hides the content initially */
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 10px 0;
+        }
+        th, td {
+            border: 1px solid rgb(107, 107, 107);
+            padding: 8px;
+            text-align: left;
         }
     </style>
 </head>
 <body>
-    <div class="calculator">
-        <h2>ZFS RAIDZ VDEV Expansion Calculator</h2>
-        <label for="driveSize">Drive Size (TB):</label>
-        <input type="number" id="driveSize" value="8" step="0.1">
+    <div class="calculator-container">
+        <div class="calculator">
+            <h2>ZFS RAIDZ VDEV Extension Calculator</h2>
+            <label for="driveSize">Drive Size (TB):</label>
+            <input type="number" id="driveSize" value="8" step="0.1">
 
-        <label for="raidzLevel">RAIDZ Level / Number of Parity Disks:</label>
-        <input type="number" id="raidzLevel" value="2" step="1">
+            <label for="raidzLevel">RAIDZ Level / Number of Parity Disks:</label>
+            <select id="raidzLevel" style="width: 100%; padding: 10px;">
+              <option value="1">1</option>
+              <option value="2" selected>2</option>
+              <option value="3">3</option>
+            </select>
 
-        <label for="expansionThreshold">Data Expansion Threshold (%):</label>
-        <input type="number" id="expansionThreshold" value="95" step="1">
+            <label for="expansionThreshold">Data Expansion Threshold (%):</label>
+            <input type="number" id="expansionThreshold" value="80" step="1">
 
-        <label for="initialDrives">Initial Number of Drives:</label>
-        <input type="number" id="initialDrives" value="4" step="1">
+            <label for="initialDrives">Initial Number of Drives:</label>
+            <input type="number" id="initialDrives" value="4" step="1">
 
-        <label for="finalDrives">Final Expanded Number of Drives:</label>
-        <input type="number" id="finalDrives" value="8" step="1">
-        
-        <button onclick="calculate()">Calculate</button>
-
-        <div class="results" id="results">
+            <label for="finalDrives">Final Expanded Number of Drives:</label>
+            <input type="number" id="finalDrives" value="8" step="1">
+            
+            <button onclick="calculate()">Calculate</button>
+            
             <h3>Results</h3>
-            <div class="results-content" id="resultsContent"></div>
+
+            <div class="results" id="results">
+                <div class="results-content" id="resultsContent"></div>
+            </div>
         </div>
     </div>
 
@@ -86,17 +107,43 @@
   
           // Calculate percentage
           var percentGainedByOne = (drivesWorthByOne / finalDrives) * 100;
-  
+
           // Display the results
           document.getElementById('resultsContent').innerHTML = `
-              <h4>Expand VDEV to final width "in one go":</h4>
-              <p>TB that could be gained: ${tbGainedOneGo.toFixed(2)}</p>
-              <p>Number of drives worth of capacity gained: <b>${drivesWorthOneGo.toFixed(2)}</b></p>
-              <p>Percentage of total capacity gained: ${percentGainedOneGo.toFixed(2)}%</p>
-              <h4>Expand VDEV by one drive at a time:</h4>
-              <p>TB that could be gained: ${tbGainedByOne.toFixed(2)}</p>
-              <p>Number of drives worth of capacity gained: <b>${drivesWorthByOne.toFixed(2)}</b></p>
-              <p>Percentage of total capacity gained: ${percentGainedByOne.toFixed(2)}%</p>
+              <table>
+                  <tr>
+                      <th colspan="2">Extend VDEV to final width at one time.</th>
+                  </tr>
+                  <tr>
+                      <td>TB that could be gained</td>
+                      <td>${tbGainedOneGo.toFixed(2)}</td>
+                  </tr>
+                  <tr>
+                      <td>Number of drives worth of capacity gained</td>
+                      <td><b>${drivesWorthOneGo.toFixed(2)}</b></td>
+                  </tr>
+                  <tr>
+                      <td>Percentage of total capacity gained</td>
+                      <td>${percentGainedOneGo.toFixed(2)}%</td>
+                  </tr>
+              </table>
+              <table>
+                  <tr>
+                      <th colspan="2">Extend VDEV by one drive at a time</th>
+                  </tr>
+                  <tr>
+                      <td>TB that could be gained</td>
+                      <td>${tbGainedByOne.toFixed(2)}</td>
+                  </tr>
+                  <tr>
+                      <td>Number of drives worth of capacity gained</td>
+                      <td><b>${drivesWorthByOne.toFixed(2)}</b></td>
+                  </tr>
+                  <tr>
+                      <td>Percentage of total capacity gained</td>
+                      <td>${percentGainedByOne.toFixed(2)}%</td>
+                  </tr>
+              </table>
           `;
 
           // Show the results content
