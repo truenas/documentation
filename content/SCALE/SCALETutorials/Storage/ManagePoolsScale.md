@@ -110,7 +110,7 @@ If a pool is not automatically expanded, for example when resizing virtual disks
 ### Extending a RAIDZ VDEV
 
 Additional disks can be added one at a time to a RAIDZ VDEV, expanding its capacity incrementally.
-This can be useful for small pools (typically with only one RAID-Z VDEV), where there isn't sufficient hardware capacity to add a mirrored VDEV by doubling the number of disks.
+This can be useful for small pools (typically with only one RAID-Z VDEV), where there isn't sufficient hardware capacity to add a second VDEV, doubling the number of disks.
 
 {{< expand "Overview and Considerations" "v" >}}
 TrueNAS SCALE 24.10 (Electric Eel) introduces RAIDZ extension to allow incremental expansion of an existing RAIDZ VDEV using one more disks.
@@ -119,6 +119,7 @@ RAIDZ extension allows resource- or hardware-limited homelab and small enterpris
 To expand a RAIDZ array, TrueNAS reads data from the current disks and rewrites it onto the new configuration, including any additional disks.
 
 Data redundancy is maintained.
+Make sure the pool is healthy before beginning the expansion process.
 If a disk fails mid-expansion, the process pauses until the RAIDZ virtual device (vdev) is healthy again, typically by replacing the failed disk and waiting for the system to rebuild.
 
 The storage pool remains accessible throughout the expansion.
@@ -175,8 +176,8 @@ You cannot change the original encryption or data VDEV configuration.
 {{< expand "Adding VDEV Examples" "v" >}}
 * To make a striped mirror, add the same number of drives to extend a ZFS mirror.
   For example, you start with ten available drives. Begin by creating a mirror of two drives, and then extending the mirror by adding another mirror of two drives. Repeat this three more times until you add all ten drives.
-* To make a stripe of two RAIDZ1 VDEVs (similar to RAID 50 on a hardware controller), add another three drives to extend the three-drive RAIDZ1.
-* To make a stripe of RAIDZ2 VDEVs (similar to RAID 60 on a hardware controller), add another four drives to extend the four-drive RAIDZ2.
+* To make a stripe of two 3-drive RAIDZ1 VDEVs (similar to RAID 50 on a hardware controller), add another three drives as a new RAIDZ1 VDEV to existing single 3-drive RAIDZ1 VDEV pool.
+* To make a stripe of two 6-disk RAIDZ2 VDEVs (similar to RAID 60 on a hardware controller), add another six drives as a new RAIDZ2 VDEV to existing single 6-drive RAIDZ2 VDEV pool.
 {{< /expand >}}
 
 To add a VDEV to a pool:
@@ -223,18 +224,22 @@ To save changes click **Update Pool**.
 
 ### Replacing Disks to Expand a Pool
 
-To expand a pool by replacing disks, you must individually offline each disk in the pool and replace it with a higher capacity disk following the same procedure as in [Replacing Disks]({{< relref "ReplacingDisks.md" >}}).
+To expand a pool by replacing disks, replace each with a higher capacity disk following the same procedure as in [Replacing Disks]({{< relref "ReplacingDisks.md" >}}).
+Insert the new disk into an empty enclosure slot and remove the old disk only after the replace operation is completed.
+If an empty slot is not available, you can offline the existing disk and replace it in place, but redundancy is reduced during the process. 
 
 1. Go to the **Storage Dashboard** and click **Manage Devices** on the **Topology** widget for the pool to open the ***Poolname* Devices** screen.
 Click anywhere on the VDEV to expand it and select one of the existing disks.
 
-2. Take the disk offline.
+2. (Optional) If replacing disks in place, take one existing disk offline.
 
    {{< trueimage src="/images/SCALE/Storage/DevicesDiskWidgets.png" alt="Devices Disk Widgets" id="Devices Disk Widgets" >}}
 
    Click **Offline** on the **ZFS Info** widget to take the disk offline. The button toggles to **Online**.
+   
+   Remove the disk from the system.
 
-3. Remove the disk from the system and replace it with a larger capacity disk.
+3. Insert a larger capacity disk into an open enclosure slot.
 
    {{< trueimage src="/images/SCALE/Storage/ReplaceDiskAndOnline.png" alt="Replace and Online a Disk" id="Replace and Online a Disk" >}}
 
