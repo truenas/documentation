@@ -70,5 +70,6 @@ The settings on the **Advanced Options** screen include the **[Basic Options](#l
 | **LDAP Timeout** | Enter the number of seconds for the LDAP timeout. Increase this value if a Kerberos ticket timeout occurs. |
 | **DNS Timeout** | Enter the number of seconds for the DNS timeout. Increase this value if DNS queries timeout. |
 | **Auxiliary Parameters** | (Optional - only experienced users) Specify additional options for [nslcd.conf](https://arthurdejong.org/nss-pam-ldapd/nslcd.conf.5). |
+| **Schema** | Select the LDAP NSS schema from the dropdown list. Options are **RFC2307** or **RFC2307BIS**. |
 {{< /truetable >}}
 {{< /expand >}}
