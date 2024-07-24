@@ -45,7 +45,6 @@
 <body>
     <div class="calculator-container">
         <div class="calculator">
-            <h2>ZFS RAIDZ VDEV Extension Calculator</h2>
             <label for="driveSize">Drive Size (TB):</label>
             <input type="number" id="driveSize" value="8" step="0.1">
 
@@ -62,7 +61,7 @@
             <label for="initialDrives">Initial Number of Drives:</label>
             <input type="number" id="initialDrives" value="4" step="1">
 
-            <label for="finalDrives">Final Expanded Number of Drives:</label>
+            <label for="finalDrives">Final Number of Drives:</label>
             <input type="number" id="finalDrives" value="8" step="1">
             
             <button onclick="calculate()">Calculate</button>
@@ -112,36 +111,36 @@
           document.getElementById('resultsContent').innerHTML = `
               <table>
                   <tr>
-                      <th colspan="2">Extend VDEV to final width at one time.</th>
+                      <th colspan="2">Extend VDEV to final width all at once</th>
                   </tr>
                   <tr>
-                      <td>TB that could be gained</td>
-                      <td>${tbGainedOneGo.toFixed(2)}</td>
+                      <td>Capacity that could be recovered</td>
+                      <td>${tbGainedOneGo.toFixed(2)}&nbsp;TB</td>
                   </tr>
                   <tr>
-                      <td>Number of drives worth of capacity gained</td>
+                      <td>Number of drives worth of capacity recovered</td>
                       <td><b>${drivesWorthOneGo.toFixed(2)}</b></td>
                   </tr>
                   <tr>
-                      <td>Percentage of total capacity gained</td>
-                      <td>${percentGainedOneGo.toFixed(2)}%</td>
+                      <td>Percentage of total capacity recovered</td>
+                      <td>${percentGainedOneGo.toFixed(2)}&nbsp;%</td>
                   </tr>
               </table>
               <table>
                   <tr>
-                      <th colspan="2">Extend VDEV by one drive at a time</th>
+                      <th colspan="2">Extend VDEV one drive at a time</th>
                   </tr>
                   <tr>
-                      <td>TB that could be gained</td>
-                      <td>${tbGainedByOne.toFixed(2)}</td>
+                      <td>Capacity that could be recovered</td>
+                      <td>${tbGainedByOne.toFixed(2)}&nbsp;TB</td>
                   </tr>
                   <tr>
-                      <td>Number of drives worth of capacity gained</td>
+                      <td>Number of drives worth of capacity recovered</td>
                       <td><b>${drivesWorthByOne.toFixed(2)}</b></td>
                   </tr>
                   <tr>
-                      <td>Percentage of total capacity gained</td>
-                      <td>${percentGainedByOne.toFixed(2)}%</td>
+                      <td>Percentage of total capacity recovered</td>
+                      <td>${percentGainedByOne.toFixed(2)}&nbsp;%</td>
                   </tr>
               </table>
           `;
