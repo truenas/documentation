@@ -4,6 +4,7 @@ description: "Tutorials for SMB sharing scenarios."
 geekdocCollapseSection: true
 weight: 50
 aliases: 
+ - /hub/sharing/smb/smb-share/
  - /core/sharing/smb/smbshare/
  - /core/coretutorials/sharing/smb/smbshare/
 related: false

@@ -1956,4 +1956,6 @@ DisableDeleteNotify
 NAA
 3FFF
 FFF
+MSeriesPUM
+MSeriesNetworkPortID
 releaseschedule

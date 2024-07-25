@@ -44,7 +44,7 @@ Disk latency and write endurance capability are the primary concern for slog dev
 You might need multiple striped slog devices to reach write endurance and the synchronous write throughput needs of each slog device.
 Combined SLOG write throughput should be higher than the planned synchronous write throughput of the pool.
 
-The iXsystems current recommendation is a 16 GB SLOG device over-provisioned from larger SSDs to increase the write endurance and throughput of an individual SSD.
+The iXsystems current recommendation is a 16 GB SLOG device over-provisioned from larger SSDs to increase the write endurance and throughput of an individual SSD, though this is not the only usable size for SLOG devices.
 This 16 GB size recommendation is based on performance characteristics of typical HDD pools with SSD SLOGs and capped by the value of the tunable <code>vfs.zfs.dirty_data_max_max</code>.
 
 TrueNAS Enterprise appliances from iXsystems might have an additional platform specific auto-tuning set and are built with SLOG devices specifically set up for the performance of that appliance.
@@ -55,7 +55,7 @@ Add and manage SLOG devices in the **Storage > Pools** web interface area.
 When creating or expanding a pool, open the **ADD VDEV** dropdown list and select the **Log**.
 Allocate SSDs into this vdev according to your use case.
 
-To avoid data loss from device failure or any performance degradation, arrange the **Log VDev** as a mirror.
+Users can exercise an optional step to avoid data loss from device failure or any performance degradation by arranging the **Log VDev** as a mirror.
 The drives must be the same size.
 As stated earlier in the recommended drive size is 16 GB after over-provisioning.
 See the SLOG over-provisioning guide for [TrueNAS CORE]({{< relref "CORE/CORETutorials/Storage/Pools/SLOGOverprovision.md" >}}) or [TrueNAS SCALE]({{< relref "/SCALE/SCALETutorials/Storage/Disks/SLOGOverprovisionSCALE.md" >}}) over-provisioning procedures.
