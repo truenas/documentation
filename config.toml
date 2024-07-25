@@ -150,7 +150,7 @@ enable = true
   [params.geekdocContentLicense]
     name = "CC BY-SA 4.0"
     link = "https://creativecommons.org/licenses/by-sa/4.0/"
-
+	
 [frontmatter]
 lastmod = ["lastmod", ":git", ":fileModTime", ":default"]
 
