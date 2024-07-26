@@ -13,6 +13,7 @@ tags:
 ---
 
 ## About Windows (SMB) Shares
+
 SMB (also known as CIFS) is the native file-sharing system in Windows.
 SMB shares can connect to most operating systems, including Windows, MacOS, and Linux.
 TrueNAS can use SMB to share files among single or multiple users or devices.
@@ -40,9 +41,11 @@ Discoverability through broadcast protocols is a convenience feature and is not 
 {{< /hint >}}
 
 ## Sharing Administrator Access
+
 {{< include file="/static/includes/SharingAdminRole.md" >}}
 
 ## How do I add an SMB Share?
+
 Creating an SMB share to your system involves several steps to add the share and get it working.
 
 1. [Create the SMB share user account](#creating-the-smb-share-user-account).
@@ -79,20 +82,14 @@ Using a guest account also increases the likelihood of unauthorized users gainin
 Major SMB client vendors are deprecating it, partly because signing and encryption are impossible for guest sessions.
 {{< /expand >}}
 {{< expand "What about LDAP users?" "v" >}}
-If you want LDAP server users to access the SMB share, go to **Credentials > Directory Services**.
-If you configured an LDAP server, select the server and click **Edit** to display the **LDAP** configuration screen.
-If not configured, click **Configure LDAP** to display the **LDAP** configuration screen.
-Click **Advanced Options** and select **Samba Schema (DEPRECATED - see the help text**).
 {{< hint type=important >}}
-Only enable LDAP authentication for the SMB share if you require it. Your LDAP server must have Samba attributes.
-Support for **Samba Schema** is [officially deprecated in Samba 4.13](https://www.samba.org/samba/history/samba-4.13.0.html).
-Samba Schema is no longer in Samba after 4.14.
-Users should begin upgrading legacy Samba domains to Samba AD domains.
+Support for LDAP **Samba Schema** is deprecated in TrueNAS SCALE 22.02 (Angelfish) and removed in 24.10 (Electric Eel).
+Migrate legacy Samba domains to Active Directory before upgrading to 24.10 or later.
 {{< /hint >}}
-Local TrueNAS user accounts can no longer access the share.
 {{< /expand >}}
 
 ## Adding an SMB Share and Dataset
+
 You can create an SMB share while [creating a dataset on the **Add Dataset** screen]({{< relref "DatasetsSCALE.md" >}}) or create the dataset while creating the share on the **Add SMB Share** screen.
 This article covers adding the dataset on the **Add SMB Share** screen.
 
@@ -150,6 +147,7 @@ To create a basic Windows SMB share and a dataset, go to **Shares** and click **
 Enable the SMB service when prompted.
 
 ### Configuring Share Advanced Options Settings
+
 For a basic SMB share, you do not need to use the **Advanced Options** settings, but if you set **Purpose** to **No Presets**, click **Advanced Options** to finish customizing the SMB share for your use case.
 
 The following are possible use cases, but for all settings, see [SMB Shares Screens]({{< relref "SMBSharesScreens.md" >}}).
@@ -210,16 +208,19 @@ To enable SMB audit logging, from either the **Add SMB** or **Edit SMB** screens
 {{< /expand >}}
 
 ### Enabling ACL Support
+
 To add ACL support to the share, select **Enable ACL** under **Advanced Options** on either the **Add SMB** or **Edit SMB** screens.
 See [Managing SMB Shares]({{< relref "ManageSMBShares.md" >}}) for more on configuring permissions for the share and the file system.
 
 ## Tuning ACLs for SMB Shares
+
 There are two levels to set SMB share permissions, at the share or for the dataset associated for with the share.
 See [Managing SMB Shares]({{< relref "ManageSMBShares.md" >}}) for more information on these options.
 
 See [Permissions]({{< relref "PermissionsScale.md" >}}) for more information on dataset permissions.
 
 ### Tuning the Share ACL
+
 {{< include file="/static/includes/ShareACLPermissions.md" >}}
 
 ### Tuning the Dataset (Filesystem) Permissions
@@ -239,6 +240,7 @@ See [Permissions]({{< relref "PermissionsScale.md" >}}) for more information on 
 {{< include file="/static/includes/UsingTraversePermission.md" >}}
 
 ## Starting the SMB Service
+
 To connect to an SMB share, you must start the related system service.
 
 After adding a new share the system prompts you to either start, or restart the SMB service.
@@ -264,6 +266,7 @@ Configure the SMB service by clicking **Config Service** from the <span class="m
 Unless you need a specific setting or are configuring a unique network environment, we recommend using the default settings.
 
 ## Mounting the SMB Share
+
 The instructions in this section cover mounting the SMB share on a system with the following operating systems.
 
 {{< expand "Mounting on a Linux System" "v" >}}
@@ -310,6 +313,7 @@ Mount the volume. `sudo mount_smbfs -I computer_name\share_name /mnt/smb_share`.
 {{< /expand >}}
 
 ## Setting up an External SMB Share
+
 External SMB shares are essentially redirects to shares on other systems.
 Administrators might want to use this when managing multiple TrueNAS systems with SMB shares and if they don't want to keep track of which shares live on which boxes for clients.
 This feature allows admins to connect to any of the TrueNAS systems with external shares set up and see them all.
@@ -332,6 +336,7 @@ Change the auto-populated name to EXTERNAL2 or something to distinguish it from 
 <div class="noprint">
 
 ## SMB Shares Contents
+
 These tutorials describe creating and managing various specific configurations of SMB shares.
 
 {{< children depth="2" description="true" >}}

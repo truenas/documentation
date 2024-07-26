@@ -47,10 +47,15 @@ Click **REBUILD DIRECTORY SERVICE CACHE** to resync the cache if it becomes out 
 | **Disable LDAP User/Group Cache** | Select to disable caching LDAP users and groups in large LDAP environments. When disabled, LDAP users and groups do not display on dropdown lists. They are still accepted when typed into fields. |
 | **LDAP timeout** | Default value is **10** seconds. Increase if Kerberos ticket queries are not responding within the default time. |
 | **DNS timout** | Default value is **10** seconds. Increase if DNS queries take too long to respond. |
-| **Samba Schema (DEPRECATED - see help text)** | [Samba 4.13.0](https://www.samba.org/samba/history/samba-4.13.0.html) deprecated **Samba Schema**. Select if SMB shares need LDAP authentication and the LDAP server is already configured with Samba attributes. If selected, specify the type of schema from the **Schema** dropdown list. |
+| **Samba Schema (DEPRECATED - see help text)** | Select if SMB shares need LDAP authentication and the LDAP server is already configured with Samba attributes. If selected, specify the type of schema from the **Schema** dropdown list. |
 | **Auxiliary Parameters** | Enter for [nslcd.conf](https://arthurdejong.org/nss-pam-ldapd/nslcd.conf.5). |
-| **Schema** | Select the Samba schema from the dropdown list. Options are **RFC2307** or **RFC2307BIS**. |
+| **Schema** | Select the LDAP NSS schema from the dropdown list. Options are **RFC2307** or **RFC2307BIS**. |
 {{< /truetable >}}
+
+{{< hint type=important >}}
+Support for LDAP **Samba Schema** is deprecated in TrueNAS CORE 13.0 or later.
+Users with LDAP and SMB shares configured should begin to migrate legacy Samba domains to Active Directory.
+{{< /hint >}}
 
 Click **SAVE** to save settings and return to the **LDAP** screen.
 

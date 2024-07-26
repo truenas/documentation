@@ -38,7 +38,7 @@ Some options only display when the appropriate hardware is present.
 |---------|-------------|
 | **Hostname** | Enter the system host name. If an Enterprise system with two controllers, this is the first TrueNAS controller host name. Upper and lower case alphanumeric, (.) and (-) characters are allowed. |
 | **Hostname (TrueNAS Controller 2)** | Enter the host name of second TrueNAS controller (for HA only). Upper and lower case alphanumeric, (.) and (-) characters are allowed. |
-| **Hostname (Virtual)** | Ener the virtual host name. When using a virtualhost, this is also used as the Kerberos principal name. Enter the fully qualified host name plus the domain name. Upper and lower case alphanumeric, (.) and (-) characters are allowed. |
+| **Hostname (Virtual)** | Enter the virtual host name. When using a virtual host, this is also used as the Kerberos principal name. Enter the fully qualified host name plus the domain name. Upper and lower case alphanumeric, (.) and (-) characters are allowed. |
 | **Domain** | Enter the system domain name. |
 | **Additional Domains** | Enter additional domains to search. Separate entries by pressing <kbd>Enter</kbd>. Adding search domains can cause slow DNS lookups |
 {{< /truetable >}}
@@ -49,7 +49,7 @@ Some options only display when the appropriate hardware is present.
 | Setting | Description |
 |---------|-------------|
 | **NetBIOS-NS** | Select to advertise the SMB service NetBIOS name. Legacy NetBIOS name server. Can be required for legacy SMB1 clients to discover the server. When advertised, the server appears in Network Neighborhood. |
-| **mDNS** | Select to use the system host name (in **Hostname**) to advertise enabled and runnint services. Multicast DNS. For example, this controls if the server appears under **Network** on MacOS clients.|
+| **mDNS** | Select to use the system host name (in **Hostname**) to advertise enabled and running services. Multicast DNS. For example, this controls if the server appears under **Network** on MacOS clients.|
 | **WS-Discovery** | Select to use the SMB Service **NetBIOS Name** to advertise the server to WS-Discovery clients. This causes the computer to appear in the **Network Neighborhood** of modern Windows OSes. |
 {{< /truetable >}}
 

@@ -5,6 +5,7 @@ geekdocCollapseSection: true
 weight: 2
 tags:
 - settings
+- toolbar
 ---
 
 The <span class="material-icons">account_circle</span> **Settings** icon button displays a menu of general system settings options. 
