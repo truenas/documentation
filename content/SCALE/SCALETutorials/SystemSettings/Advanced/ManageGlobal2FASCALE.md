@@ -75,7 +75,7 @@ Before you begin, download Google Authenticator to your mobile device.
    Click **Configure 2FA Secret** to view the QR code.
 
    {{< hint type="info">}}
-   You can configure two-factor authentication and get the QR code for an authenticator app for the logged-in user but nothing happens until you configure global two-factor authentication.
+   You can configure two-factor authentication and get the QR code for an authenticator app for the logged-in user at any time, but you must configure global two-factor authentication to enable it.
    {{< /hint >}}
    
    When using Google Authenticator, set **Interval** to **30** or the authenticator code might not function when logging in.
