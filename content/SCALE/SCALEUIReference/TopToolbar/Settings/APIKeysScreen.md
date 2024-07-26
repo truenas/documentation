@@ -6,6 +6,7 @@ aliases:
  - /scale/scaleclireference/auth/cliapikey/
 tags:
 - apikeys
+- toolbar
 ---
 
 The **API Keys** option on the top toolbar **Settings** dropdown menu displays the **API Keys** screen.
