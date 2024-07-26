@@ -5,7 +5,7 @@ geekdocCollapseSection: true
 weight: 4
 tags:
 - dashboard
-related: false
+related: true
 ---
 
 This section contains tutorials for the [main Dashboard]({{< relref "SCALEDashboard.md" >}}).
@@ -78,11 +78,3 @@ To delete a widget from the **Dashboard** screen, click **Configure** to put the
 Click the **Delete** icon in the widget group for the widget you want to delete. The widget no longer shows on the screen.
 
 Click **Save** at the top right of the screen. The screen exits configuration mode and the **Dashboard** no longer shows the widget.
-
-<div class="noprint">
-
-## Contents
-
-{{< children sort="name" depth="2" description="true" >}}
-
-related: true
