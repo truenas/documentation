@@ -33,8 +33,8 @@ The top toolbar icon buttons provide access to the iXsystems website, displays t
 | <span class="material-icons">info</span> | Directory Services status | Displays a dialog with the status of Active Directory and LDAP directory servers configured on the system. |
 | <span class="material-icons">assignment</span> | Jobs | Displays the Jobs dialog. Click the **History** button to display the **Tasks** screen with a list of **All**, **Active** or **Failed** tasks or processes. |
 | <span class="material-icons">notifications</span> | Alerts | Displays a list of system alerts and a dropdown list with the alert options **Alert Settings** and **Email**. |
-| <span class="material-icons">account_circle</span> | Settings | Displays a dropdown list of setting options **Change Password**, **Two-Factor Authentication**, **API Keys**, **Guide** and **About**. |
-| <span class="material-icons">power_settings_new</span> | Power options | Displays the power related options **Log Out**, **Restart** or **Shut Down**. |
+| <span class="material-icons">account_circle</span> | Settings | Displays a dropdown list of setting options **Change Password**, **Two-Factor Authentication**, **API Keys**, **Guide**, **About**, and **Log Out**. |
+| <span class="material-icons">power_settings_new</span> | Power options | Displays the power related options **Restart** or **Shut Down**. |
 {{< /truetable >}}
 
 ### Search UI
@@ -82,9 +82,11 @@ The <span class="material-icons-outlined">info</span> **About** icon button disp
 
 {{< trueimage src="/images/SCALE/Dashboard/AboutWindow.png" alt="About Window" id="About Window" >}}
 
+The <span class="iconify" data-icon="bx:exit">info</span> **Log Out** icon button logs the currently logged in user out of the SCALE UI.
+
 ### Power
 
-The **Power** <span class="material-icons">power_settings_new</span> button provides three options that let the user log out of the web UI, restart, or shut down their TrueNAS system.
+The **Power** <span class="material-icons">power_settings_new</span> button provides two options that let the user restart or shut down their TrueNAS system.
 
 <div class="noprint">
 

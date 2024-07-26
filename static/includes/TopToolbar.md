@@ -41,7 +41,7 @@ Users can also use the iXsystems home page to access their customer portal and t
 {{< /expand >}}
 
 {{< expand "Settings" "v" >}}
-The **Settings** <span class="material-icons">account_circle</span> icon opens a dropdown list of options for passwords, API keys, and TrueNAS information.
+The **Settings** <span class="material-icons">account_circle</span> icon opens a dropdown list of options to change passwords, set up user two-factor authentication, create and manage API keys, access the TrueNAS API guide, see information on the system, and to logout of the SCALE UI.
 {{< expand "Change Password" >}}
 {{< include file="/static/includes/ChangeLoggedInUserPassword.md" >}}
 {{< /expand >}}
@@ -65,14 +65,18 @@ Click on **About** <span class="iconify" data-icon="ant-design:info-circle-outli
 {{< trueimage src="/images/SCALE/Dashboard/TrueNASAboutScreenSCALE.png" alt="About Window" id="About Window" >}}
 
 {{< /expand >}}
+
+{{< expand "Log Out" "v" >}}
+**Log Out** logs the current user out of the SCALE UI, but does not power off the system. 
+The **Read-Only Admin** and **Sharing Admin** roles only have access to the **Log Out** option.
+{{< /expand >}}
 {{< /expand >}}
 
 {{< expand "Power Options" "v" >}}
 Click the **Power** <span class="material-icons">power_settings_new</span> button to open the dropdown list of power options.
-Options are **Log Out** which logs you out of the SCALE UI but does not power off the system, **Restart** which logs you out of the SCALE UI and restarts the server, or **Shut Down** which logs you out of the SCALE UI and powers off the system as though you pressed the power button on the physical server.
+Options **Restart** which logs you out of the SCALE UI and restarts the server or **Shut Down** which logs you out of the SCALE UI and powers off the system as though you pressed the power button on the physical server.
 
-With the implementation of administrator roles, the power options displayed could be locked based on the level of privileges for the administrator role.
-The local administrator has access to all three power options.
-The **Read-Only** and **Sharing Manager** admin roles only have access to the **Log Out** option.
-The other power options display with a lock icon indicating the function is not permitted.
+With the implementation of administrator roles, the power options are locked based on the level of privileges for the administrator role.
+The full administrator has access to both power options but readonly and sharing admin roles do not.
+The power options that show a lock icon indicate the function is not permitted.
 {{< /expand >}}
