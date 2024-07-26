@@ -170,7 +170,7 @@ Click on the system image to open the **System Settings > [View Enclosure]({{< r
 
 The **Dashboard** for non-Enterprise systems displays the TrueNAS SCALE logo on the **System Information** widget.
 
-To [customize dashboard ]({{< relref "/SCALE/SCALETutorials/Dashboard/_index.md" >}}) click **Configure** to put the **Dashboard** into configuration mode.
+To [customize the dashboard ]({{< relref "/SCALE/SCALETutorials/Dashboard/_index.md" >}}), click **Configure** to put the **Dashboard** into configuration mode.
 Use the drag bar to move widget groups to new positions on the screen. 
 Click **Add** to create new widgets, or the **Edit** option in the widget group to change the look or information included in a widget.
 
