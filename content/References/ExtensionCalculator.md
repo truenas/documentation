@@ -8,12 +8,12 @@ tags:
 - raidz
 ---
 
-RAIDZ extension allows TrueNAS users to add disks one at a time to an existing RAIDZ VDEV, incrementally expanding its capacity.
+RAIDZ extension allows TrueNAS users to add disks one at a time to an existing RAIDZ VDEV, incrementally expanding capacity.
 Use this calculator to estimate the storage capacity efficiency of a ZFS RAIDZ VDEV after incremental extension.
 
-Existing data blocks retain their original data-to-parity ratio and block width, but spread across the larger set of disks.
-New data blocks adopt the new data-to-parity ratio and width.
-Because of this overhead, an extended RAIDZ VDEV can report a lower total capacity than a freshly created VDEV with the same number of disks.
+Existing data blocks retain their original data-to-parity ratio and block width, but are spread across the larger set of disks.
+New data blocks adopt the new data-to-parity ratio and width, or overhead.
+Because of this overhead, an extended RAIDZ VDEV can report a lower total capacity than a newly created VDEV with the same number of disks.
 Excess overhead, or lost headroom, can be recovered by replicating and rewriting existing data to the extended pool.
 
 See [Extending a RAIDZ VDEV]({{< relref "ManagePoolsSCALE.md #extending-a-raidz-vdev" >}}) for more information, including a detailed overview, considerations, and a tutorial.
@@ -34,7 +34,7 @@ Edit the values to see how much lost headroom capacity could be gained by rewrit
 
 {{< expand "How to interpret the results" "v" >}}
 Calculated values represent how much space on the final extended VDEV is lost to headroom, or data capacity that would be available in an equivalent VDEV created from scratch with the same width and data-to-parity ratio.
-This is the capacity that could be recovered by rewriting existing data to the extended width.
+This is the capacity available to recover by rewriting existing data to the extended width.
 
 The calculator returns estimated capacity values for two scenarios:
 {{< truetable >}}

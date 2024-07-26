@@ -58,19 +58,20 @@ Click **Export/Disconnect**. A confirmation dialog displays when the export/disc
 
 ## Upgrading a Pool
 
-Storage pool upgrades are typically not required unless the new OpenZFS feature flags are deemed necessary for required or improved system operation.
+Upgrading a storage pool is typically not required unless the new OpenZFS feature flags are deemed necessary for required or improved system operation.
 
-Do *not* do a pool-wide ZFS upgrade until you are ready to commit to this SCALE major version and lose the ability to roll back to an earlier major version!
+Do not do a pool-wide ZFS upgrade until you are ready to commit to this SCALE major version! You can not undo a pool upgrade, and you lose the ability to roll back to an earlier major version!
 
 The **Upgrade** button displays on the **Storage Dashboard** for existing pools after an upgrade to a new TrueNAS major version that includes new [OpenZFS feature flags]({{< relref "SCALEReleaseNotes.md#component-versions" >}}).
 Newly created pools are always up to date with the OpenZFS feature flags available in the installed TrueNAS version.
 
 {{< trueimage src="/images/SCALE/Storage/StorageDashboardUpgradPoolConfirmationDialog.png" alt="Upgrade Pool Confirmation Dialog" id="Upgrade Pool Confirmation Dialog" >}}
 
-The upgrade itself only takes a few seconds and is non-disruptive.
-It is not necessary to stop any sharing services to upgrade the pool.
-However, the best practice is to upgrade when the pool is not in heavy use.
+Upgrading pools only takes a few seconds and is non-disruptive.
+However, the best practice is to upgrade a pool while it is not in heavy use.
 The upgrade process suspends I/O for a short period but is nearly instantaneous on a quiet pool.
+
+It is not necessary to stop sharing services to upgrade the pool.
 
 ## Running a Pool Data Integrity Check (Scrub)
 
@@ -101,22 +102,26 @@ See [Replacing Disks]({{< relref "ReplacingDisks.md" >}}) for more information o
 
 ## Expanding a Pool
 
-You can increase the size of an existing pool by adding one or more drives to an existing RAIDZ VDEV, adding a new VDEV of the same type, or by replacing all existing disks in the VDEV with larger disks.
+There are a few  ways to increase the size of an existing pool:
+* Add one or more drives to an existing RAIDZ VDEV.
+* Add a new VDEV of the same type.
+* Replace all existing disks in the VDEV with larger disks.
+
 
 By default, a VDEV limits all disks to the usable capacity of the smallest attached device.
-TrueNAS SCALE automatically expands the usable capacity of the pool to fit all available space once the smallest attached disk is replaced (see [Replacing Disks to Expand a Pool](#replacing-disks-to-expand-a-pool) below).
+SCALE automatically expands the usable capacity of the pool to fit all available space after replacing the smallest attached disk (see [Replacing Disks to Expand a Pool](#replacing-disks-to-expand-a-pool) below).
 If a pool is not automatically expanded, for example when resizing virtual disks in a hypervisor apart from TrueNAS, click **Expand** on the **Storage Dashboard** to manually increase the pool size to match all available disk space.
 
 ### Extending a RAIDZ VDEV
 
-Additional disks can be added one at a time to a RAIDZ VDEV, expanding its capacity incrementally.
-This can be useful for small pools (typically with only one RAID-Z VDEV), where there isn't sufficient hardware capacity to add a second VDEV, doubling the number of disks.
+Extend a RAIDZ VDEV to add additional disks one at a time, expanding capacity incrementally.
+This is useful for small pools (typically with only one RAID-Z VDEV), where there is not enough hardware capacity to add a second VDEV, doubling the number of disks.
 
 {{< expand "Overview and Considerations" "v" >}}
-TrueNAS SCALE 24.10 (Electric Eel) introduces RAIDZ extension to allow incremental expansion of an existing RAIDZ VDEV using one more disks.
-RAIDZ extension allows resource- or hardware-limited homelab and small enterprise users to expand storage capacity with lower upfront costs compared to traditional ZFS expansion methods.
+SCALE 24.10 (Electric Eel) introduces RAIDZ extension to allow incremental expansion of an existing RAIDZ VDEV using one more disks.
+RAIDZ extension allows resource- or hardware-limited home lab and small enterprise users to expand storage capacity with lower upfront costs compared to traditional ZFS expansion methods.
 
-To expand a RAIDZ array, TrueNAS reads data from the current disks and rewrites it onto the new configuration, including any additional disks.
+To expand a RAIDZ array, SCALE reads data from the current disks and rewrites it onto the new configuration, including any additional disks.
 
 Data redundancy is maintained.
 Make sure the pool is healthy before beginning the expansion process.
@@ -143,10 +148,10 @@ This can occur naturally over the lifetime of the pool as ZFS rewrites data bloc
 Alternately, you can manually replicate and rewrite the data to the pool.
 Data is rewritten using the extended block size and parity ratio.
 
-You can  use the [RAIDZ Extension Calculator]({{< relref "/References/ExtensionCalculator.md" >}}) to visualize potential lost headroom and capacity available to recover by rewriting existing data.
+You can use the [RAIDZ Extension Calculator]({{< relref "/References/ExtensionCalculator.md" >}}) to visualize potential lost headroom and capacity available to recover by rewriting existing data.
 
 For more information, see [Jim Salter's article](https://arstechnica.com/gadgets/2021/06/raidz-expansion-code-lands-in-openzfs-master/) at Ars Technica and the upstream [RAIDZ extension](https://github.com/openzfs/zfs/pull/15022) PR, sponsored by iXsystems, at OpenZFS.
-See also Louwrentius' ["ZFS RAIDZ Expansion Is Awesome but Has a Small Caveat"](https://louwrentius.com/zfs-raidz-expansion-is-awesome-but-has-a-small-caveat.html) for an in-depth discussion of lost capacity and recovering overhead.
+See also ["ZFS RAIDZ Expansion Is Awesome but Has a Small Caveat"](https://louwrentius.com/zfs-raidz-expansion-is-awesome-but-has-a-small-caveat.html) by Louwrentius for an in-depth discussion of lost capacity and recovering overhead.
 {{< /expand >}}
 
 To extend a RAIDZ VDEV, go to **Storage**.
@@ -161,7 +166,7 @@ Select the target VDEV and click **Extend** to open the **Extend Vdev** window.
 Select an available disk from the **New Disk** dropdown menu.
 Click **Extend**.
 
-A job progress window appears.
+A job progress window opens.
 TrueNAS SCALE returns to the ***Poolname* Devices** screen when complete.
 
 ### Adding a VDEV to a Pool
