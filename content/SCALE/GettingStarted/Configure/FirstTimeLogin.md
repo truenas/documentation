@@ -157,7 +157,7 @@ If the UI becomes unresponsive after an upgrade or other system operation, clear
 
 After logging in for the first time, the main system **Dashboard** screen displays.
 The **Dashboard** shows different system information cards (widgets) with basic information about the installed version, systems component usage, network traffic, and configured pools or storage usage.
-The dashboard includes new categories of widgets that include a text-only **Custom** widget, and an **Apps** widget you can configure to monitor your installed applications.
+The dashboard includes configurable widgets that include a text-only **Custom** widget and an **Apps** widget you can configure to monitor your installed applications.
 
 {{< enterprise >}}
 SCALE Enterprise users with an iXsystems-provided TrueNAS server also see an image of the system in the **System Information** widget.
