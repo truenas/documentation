@@ -14,12 +14,15 @@ Use this calculator to estimate the storage capacity efficiency of a ZFS RAIDZ V
 Existing data blocks retain their original data-to-parity ratio and block width, but are spread across the larger set of disks.
 New data blocks adopt the new data-to-parity ratio and width, or overhead.
 Because of this overhead, an extended RAIDZ VDEV can report a lower total capacity than a newly created VDEV with the same number of disks.
-Excess overhead, or lost headroom, can be recovered by replicating and rewriting existing data to the extended pool.
+
+Extended VDEVs recover lost headroom as existing data is read and rewritten to the new parity ratio.
+This can occur naturally over the lifetime of the pool as you modify or delete data.
+To manually recover capacity, simply replicate and rewrite the data to the extended pool.
 
 See [Extending a RAIDZ VDEV]({{< relref "ManagePoolsSCALE.md #extending-a-raidz-vdev" >}}) for more information, including a detailed overview, considerations, and a tutorial.
 
 {{< expand "How to use this calculator" "v" >}}
-Edit the values to see how much lost headroom capacity could be gained by rewriting existing data after extension.
+Edit the values to see how much lost headroom capacity is available to recover.
 
 {{< truetable >}}
 | Value | Description |

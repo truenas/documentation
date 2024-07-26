@@ -143,10 +143,9 @@ Because of this overhead, an extended RAIDZ VDEV can report a lower total capaci
 
 {{< trueimage src="/images/Reference/RaidzExpansion.png" alt="RAIDZ Expansion" id="RAIDZ Expansion" caption="Before (left) and after (right) expansion of a four-disk to five-disk RAIDZ1<br>Thanks to Matt Ahrens ([Source](https://arstechnica.com/gadgets/2021/06/raidz-expansion-code-lands-in-openzfs-master/))" >}}
 
-The additional overhead of now-undersized existing blocks can be recovered by reading and rewriting existing data to the extended pool.
-This can occur naturally over the lifetime of the pool as ZFS rewrites data blocks when you modify or delete data.
-Alternately, you can manually replicate and rewrite the data to the pool.
-Data is rewritten using the extended block size and parity ratio.
+Extended VDEVs recover lost headroom as existing data is read and rewritten to the new parity ratio.
+This can occur naturally over the lifetime of the pool as you modify or delete data.
+To manually recover capacity, simply replicate and rewrite the data to the extended pool.
 
 You can use the [RAIDZ Extension Calculator]({{< relref "/References/ExtensionCalculator.md" >}}) to visualize potential lost headroom and capacity available to recover by rewriting existing data.
 
