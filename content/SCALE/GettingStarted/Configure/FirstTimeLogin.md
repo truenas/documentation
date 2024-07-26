@@ -172,7 +172,7 @@ The **Dashboard** for non-Enterprise systems displays the TrueNAS SCALE logo on 
 
 To [customize the dashboard ]({{< relref "/SCALE/SCALETutorials/Dashboard/_index.md" >}}), click **Configure** to put the **Dashboard** into configuration mode.
 Use the drag bar to move widget groups to new positions on the screen. 
-Click **Add** to create new widgets, or the **Edit** option in the widget group to change the look or information included in a widget.
+Click **Add** to create new widgets or the **Edit** option in the widget group to change the look or information included in a widget.
 
 {{< trueimage src="/images/SCALE/Dashboard/DashboardInConfigMode.png" alt="Dashboard in Configuration Mode" id="Dashboard in Configuration Mode" >}}
 
