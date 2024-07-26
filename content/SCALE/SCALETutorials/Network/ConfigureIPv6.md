@@ -86,7 +86,7 @@ If IPv4 networking is already configured in SCALE, to set up dual stacking of IP
    Click **Save**
 
 3. Test the network change.
-   To verify the IPv6 address, in a new browser window, enter the address inside square brackets. For example, *[ffff:ff:59f8:100::12].
+   To verify the IPv6 address, in a new browser window, enter the address inside square brackets. For example, [*ffff:ff:59f8:100::12*].
 
    Log into the UI, and click **Save Changes**.
 
