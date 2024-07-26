@@ -61,7 +61,7 @@ Click on **About** <span class="iconify" data-icon="ant-design:info-circle-outli
 {{< /expand >}}
 
 {{< expand "Log Out" "v" >}}
-**Log Out** logsthe current user out of the SCALE UI but does not power off the system. 
+**Log Out** logs the current user out of the SCALE UI, but does not power off the system. 
 The **Read-Only Admin** and **Sharing Admin** roles only have access to the **Log Out** option.
 {{< /expand >}}
 {{< /expand >}}
