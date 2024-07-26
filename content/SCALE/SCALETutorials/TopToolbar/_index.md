@@ -5,6 +5,7 @@ geekdocCollapseSection: true
 weight: 3
 tags:
 - tasks
+- toolbar
 related: false
 ---
 

@@ -57,6 +57,10 @@ More details are available from [Software Releases]({{< relref "/TrueNASUpgrades
 
 * As of [June 6, Kubernetes is removed from 24.10 Nightly builds](https://forums.truenas.com/t/apps-update-2024-06-06/6041).
   The apps feature is not functional in these nightly builds while development continues with replacing Kubernetes with Docker Compose ([announcement](https://forums.truenas.com/t/the-future-of-electric-eel-and-apps/5409)).
+
+* Support for the deprecated LDAP **Samba Schema** is removed in 24.10.
+  Users with both LDAP and SMB shares configured should migrate legacy Samba domains to Active Directory before upgrading to 24.10.
+  
 <!--
   ### Upgrade Paths
   

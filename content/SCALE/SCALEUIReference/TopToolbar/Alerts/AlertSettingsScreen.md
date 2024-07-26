@@ -5,6 +5,7 @@ weight: 10
 aliases: /scaleuireference/toptoolbar/alerts/alertservicesscreen/
 tags:
 - alerts
+- toolbar
 ---
 
 {{< include file="/static/includes/AlertsSettings.md" >}}
