@@ -81,7 +81,7 @@ Before you begin, download Google Authenticator to your mobile device.
    When using Google Authenticator, set **Interval** to **30** or the authenticator code might not function when logging in.
 
 3. Click **Configure 2FA Secret** to open the **User Two-Factor Authentication Actions** screen where you scan the QR code using Google Authenticator.
-   Click **Renew 2FA Secret** to generate a new QR code.
+   To generate a new QR code click **Renew 2FA Secret**.
 
    After scanning the code click **CLOSE** to close the dialog on the **Two-Factor Authentication** screen.
 

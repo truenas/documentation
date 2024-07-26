@@ -71,7 +71,7 @@ The <span class="material-icons-outlined">info</span> **About** icon button disp
 
 {{< trueimage src="/images/SCALE/Dashboard/AboutWindow.png" alt="About Window" id="About Window" >}}
 
-The <span class="iconify" data-icon="bx:exit">info</span> **Log Out** icon button logs out the currently logged in user.
+The <span class="iconify" data-icon="bx:exit">info</span> **Log Out** icon button logs the currently logged in user out of the SCALE UI.
 
 ### Power
 
