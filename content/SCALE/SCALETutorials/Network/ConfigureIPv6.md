@@ -93,7 +93,7 @@ If IPv4 networking is already configured in SCALE, to set up dual stacking of IP
    Log out of that browser session, return to your other UI session.
    Both IPv4 and IPv6 addresses should show on the screen for the primary interface.
 
-After installing SCALE and using the Console Setup menu to configure system networking and set up dual stacking, add the name servers and both IP protocol default gateways in general network settings (option 2 on the menu), then add both IP address with netmasks as aliases on the primary network interface (option 1 on the menu).
+After installing SCALE and using the Console Setup menu to configure system networking and set up dual stacking, add the name servers and both IP protocol default gateways in general network settings (option 2 on the menu), then add both IP address, with netmasks as aliases, on the primary network interface (option 1 on the menu).
 
 If using the Console Setup menu to set up IPv6 on an already IPv4-configured system, add the v6 default gateway in general network, then add the IPv6 IP address with netmask as an alias on the primary interface.
 
