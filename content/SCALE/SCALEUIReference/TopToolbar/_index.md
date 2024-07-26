@@ -8,7 +8,9 @@ aliases:
  - /scale/scaleuireference/scaletopbar/
  - /contributing/issuereporting/prereleaseuserfeedback/
 weight: 3
-keywords:
+tags:
+- toolbar
+- keywords:
 - nas storage software
 - enterprise storage system
 ---
@@ -23,6 +25,7 @@ The top toolbar icon buttons provide access to the iXsystems website, displays t
 | Icon | Name | Description |
 |------|------|-------------|
 | <span class="iconify" data-icon="bytesize:menu"></span> | Toggle collapse | Click to expand or collapse the main menu panel on the left side of the screen. |
+| ![SearchUI](/images/SCALE/Dashboard/GlobalSearchSelected.png "Search UI") | Search UI | Searches UI screens and elements or redirects queries to the TrueNAS Documentation Hub. |
 | ![iXsystemsLogo](/images/SCALE/Dashboard/iXsystemsLogo.png "iXsystems Logo") | iXsystems | Opens the [iXsystems home page](https://www.ixsystems.com/) website where users can find information about storage and server systems. Users can also use the iXsystems home page to access their customer portal and community section for support. |
 | ![FeedbackIcon](/images/SCALE/Dashboard/FeedbackIcon.png "Feedback Icon") | How would you rate this page? | Opens the **How would you rate this page?** feedback window for sending UI ratings, bug reports, and improvement suggestions to the TrueNAS developers. |
 | ![TrueCommandIcon](/images/SCALE/Dashboard/TrueCommandIcon.png "TrueCommand Icon") | Status of TrueCommand | Displays either the status of a TrueCommand cloud connection or a dialog that allows users to [sign up for a new TrueCommand cloud connection](https://portal.ixsystems.com/portal/signin/#login). |
@@ -33,6 +36,14 @@ The top toolbar icon buttons provide access to the iXsystems website, displays t
 | <span class="material-icons">account_circle</span> | Settings | Displays a dropdown list of setting options **Change Password**, **Two-Factor Authentication**, **API Keys**, **Guide**, **About**, and **Log Out**. |
 | <span class="material-icons">power_settings_new</span> | Power options | Displays the power related options **Restart** or **Shut Down**. |
 {{< /truetable >}}
+
+### Search UI
+
+The **Search UI** global search bar allows users to search for screens and elements within the TrueNAS SCALE UI or to redirect search terms to the TrueNAS Documentation Hub.
+
+{{< expand "Using Global Search" "v" >}}
+{{< include file="/static/includes/UsingGlobalSearch.md" >}}
+{{< /expand >}}
 
 ### How would you rate this page?
 
