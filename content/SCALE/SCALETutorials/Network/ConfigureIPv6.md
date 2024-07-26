@@ -77,7 +77,7 @@ If IPv4 networking is already configured in SCALE, to set up dual stacking of IP
 
 2. Add the IPv6 static IP address to the primary interface.
 
-   Select the primary interface **en8s0**, then click **Edit**.
+   Select the primary interface, **en8s0**, then click **Edit**.
 
    Click **Add*** to the right of **Aliases** to add another set of IP Address fields.
 
