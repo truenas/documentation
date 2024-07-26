@@ -1196,7 +1196,7 @@ a.section-box:hover {
 /* Style for tables with class "inputs" */
 table.inputs {
     border-collapse: collapse;
-    border: 1px solid black;
+    border: 1px solid #0095d5;
     background-color: var(--code-background);
     width: 75% !important;
     margin: 0 auto;
@@ -1307,7 +1307,7 @@ table.results {
 /* Adjust class "debug" table from the capacity calculator */
 table.debug {
     border-collapse: collapse;
-    border: 1px solid black;
+    border: 1px solid #0095d5;
     width: 50% !important;
     background-color: var(--code-background);
     margin: 0 auto;
