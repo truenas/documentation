@@ -18,7 +18,7 @@ It displays a set of default widgets with system, help, storage, and network inf
 
 {{< trueimage src="/images/SCALE/Dashboard/DashboardMainScreenSCALE.png" alt="TrueNAS SCALE Dashboard" id="TrueNAS SCALE Dashboard" >}}
 
-The **Configure** button at the top right of the **Dashboard** changes the screen to [configuration mode]() and allows you to turn widget displays on or off.
+The **Configure** button at the top right of the **Dashboard** changes the screen to [configuration mode](#dashboard-in-configuration-mode) and allows you to turn widget displays on or off.
 
 ## Dashboard Widgets
 The **Dashboard** widgets show information about the TrueNAS system basic settings, CPU and memory usage, network traffic and link status, storage, and backup tasks.
