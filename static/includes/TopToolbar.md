@@ -6,7 +6,13 @@ It also shows the name of admin user currently logged into the system to the lef
 
 You can also collapse or expand the main function menu on the left side of the screen.
 
-{{< trueimage src="/images/SCALE/Dashboard/TopToolbar.png" alt="TrueNAS SCALE Top Toolbar Icons" id="TrueNAS SCALE Top Toolbar Icons" >}}
+{{< trueimage src="/images/SCALE/Dashboard/TopToolbar.png" alt="TrueNAS SCALE Top Toolbar" id="TrueNAS SCALE Top Toolbar" >}}
+
+{{< expand "Search UI" "v" >}}
+The **Search UI** global search bar allows users to search for screens and elements within the TrueNAS SCALE UI or to redirect search terms to the TrueNAS Documentation Hub.
+
+{{< include file="/static/includes/UsingGlobalSearch.md" >}}
+{{< /expand >}}
 
 {{< expand "iXsystems" "v" >}}
 The iXsystems logo opens the [iXsystems home page](https://www.ixsystems.com/) where users can find information about iXsystems storage and server systems.

@@ -770,14 +770,35 @@ svg.gdoc-icon {
 }
 /* End print view styling */
 /* Adjust code blocks rendering */
-.gdoc-markdown code {
+
+/* Ensure the code block takes the necessary styles */
+.gdoc-markdown code,
+.gdoc-markdown code.language-yaml {
 	color: var(--body-font-color);
 	background-color: var(--accent-color-lite);
 }
-.gdoc-markdown pre {
+
+/* Ensure the pre block resizes to fit the code inside it */
+.gdoc-markdown pre,
+.gdoc-markdown pre.chroma {
     display: inline-block; /* Make the container adjust to content */
     max-width: 100%; /* Set the maximum width to 100% */
+    white-space: pre-wrap; /* Ensure long lines wrap if needed */
+    word-wrap: break-word; /* Break long words if needed */
 }
+
+/* Additional rule to ensure pre.chroma adjusts its size to fit the code inside */
+pre.chroma {
+    width: auto;
+}
+
+/* Ensure the higher-level container resizes to fit the pre and code inside it */
+.highlight.gdoc-post__codecontainer {
+    display: inline-block; /* Make the container adjust to content */
+    max-width: 100%; /* Set the maximum width to 100% */
+    width: auto; /* Ensure the container width adjusts to fit content */
+}
+
 /* End adjustment of code rendering */
 /* Add display styling for <file> tags */
 .gdoc-markdown file {

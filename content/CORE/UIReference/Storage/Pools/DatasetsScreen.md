@@ -38,7 +38,7 @@ Use the **Other Options** to help tune the dataset for particular data sharing p
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **ZFS Deduplication** | Select an option to transparently reuse a single copy of duplicated data to save spacefrom the dropdown list. Options are **Inherit (off)**, **on**, **verify** or **off**. Deduplication can improve storage capacity, but is RAM intensive. Compressing data is generally recommended before using deduplication. Deduplicating data is a one-way process. *Deduplicated data cannot be undeduplicated! |
+| **ZFS Deduplication** | Select an option to transparently reuse a single copy of duplicated data to save space from the dropdown list. Options are **Inherit (off)**, **on**, **verify** or **off**. Deduplication can improve storage capacity, but is RAM intensive. Compressing data is generally recommended before using deduplication. Deduplicating data is a one-way process. *Deduplicated data cannot be undeduplicated! |
 | **Case Sensitivity** | Select an option from the dropdown list. **Sensitive** assumes file names are case sensitive. **Insensitive** assumes file names are not case sensitive. **Mixed** understands both types of file names. Case sensitivity cannot be changed after the dataset is created! |
 | **Share Type** | Select an option from the dropdown list to define the type of data sharing the dataset uses to optimize the dataset for that sharing protocol. Options are **Generic** or **SMB**. AFP type shares use **SMB** unless directed to select **Generic**. The type of share cannot be changed after the dataset is created! |
 {{< /truetable >}}
