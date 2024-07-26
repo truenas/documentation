@@ -8,6 +8,7 @@ aliases:
  - /scale/scaleclireference/system/clintpserver/
  - /scale/scaleclireference/system/clisupport/
  - /scale/scaleclireference/system/clitruenas/
+ - /scale/scaletutorials/dashboard/scaletimesync/
 tags:
  - settings
  - console
