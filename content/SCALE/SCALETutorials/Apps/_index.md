@@ -15,10 +15,16 @@ keywords:
 - software storage solutions
 ---
 
+{{< hint type=important title="Application Tutorials" >}}
+{{< include file="/static/includes/AppsUnversioned.md" >}}
+{{< /hint >}}
+
+We welcome community contributions to keep our documentation current!
+Click **Edit Page** in the top right corner to propose changes to an article.
+See [Updating Content](https://www.truenas.com/docs/contributing/documentation/contentupdate/) for more information.
+
 TrueNAS applications allow for quick and easy integration of third-party software and TrueNAS SCALE.
 Applications are available from official, Enterprise, and community maintained trains.
-
-{{< include file="/static/includes/AppsUnversioned.md" >}}
 
 ## Installed Applications Screen
 
@@ -26,24 +32,28 @@ The first time you go to **Apps**, the **Installed** applications screen display
 
 {{< trueimage src="/images/SCALE/Apps/AppsServiceNotConfigured.png" alt="Apps Service Not Configured" id="Apps Service Not Configured" >}}
 
-After setting the pool apps uses, this changes to **Apps Service Running**.
+After setting the pool apps use, the header changes to show **Apps Service Running**.
 
 The **Installed** applications screen displays **Check Available Apps** before you install the first application.
 
 {{< trueimage src="/images/SCALE/Apps/AppsInstalledAppsScreenNoApps.png" alt="Installed Applications Screen No Apps" id="Installed Applications Screen No Apps" >}}
 
-Click **Check Available Apps** or **Discover Apps** to open the **[Discover](#using-the-discover-applications-screen)** screen to see application widgets available in the TRUENAS catalog.
+Click **Check Available Apps** or **Discover Apps** to open the **[Discover](#using-the-discover-applications-screen)** screen to see application widgets available in the official TRUENAS catalog.
 
-After installing an application, the **Installed** screen populates the **Applications** area with a table listing installed applications.
-Select an application to view the information widgets for applications, with options to edit the application settings, open container pod shell or logs, and access the **Web Portal** for the application, if applicable.
+After installing an application, the **Installed** screen populates the **Applications** area with a list of installed apps.
+Click on an application row to view the information widgets for that app.
+Options allow editing the application settings, opening container pod shell or logs, and accessing the **Web Portal** for the application, if applicable.
 
 {{< trueimage src="/images/SCALE/Apps/InstalledAppsScreenWithApps.png" alt="Installed Applications Screen with Apps" id="Installed Applications Screen with Apps" >}}
 
-Application widgets vary by app, but all include the **Application Info** and **Workloads** widgets. Some include the **History** and **Notes** widgets.
+Application widgets vary by app, but all include the **Application Info** and **Workloads** widgets.
+Some include the **History** and **Notes** widgets.
 
-### Choosing the Apps Pool
+### Setting the Apps Pool
 You must choose the pool apps use before you can add applications.
-The first time you go to the **Applications** screen, click **Settings > Choose Pool** to choose a storage pool for Apps.
+The first time you go to the **Applications** screen, click **Settings > Choose Pool** to select a storage pool for apps.
+This adds the **ix-applications** dataset to the pool.
+The **ix-applications** dataset stores all container-related data, and is for internal use only.
 
 {{< trueimage src="/images/SCALE/Apps/AppsSettingsChoosePool.png" alt="Choosing a Pool for Apps" id="Choosing a Pool for Apps" >}}
 
@@ -51,8 +61,6 @@ We recommend keeping the application use case in mind when choosing a pool.
 Select a pool with enough space for all the applications you intend to use.
 For stability, we also recommend using SSD storage for the applications pool.
 
-TrueNAS creates an *ix-applications* dataset on the chosen pool and uses it to store all container-related data.
-The dataset is for internal use only.
 Set up a new dataset before installing your applications if you want to store your application data in a location separate from other storage on your system.
 For example, create the datasets for the Nextcloud application, and, if installing Plex, create the dataset(s) for Plex data storage needs.
 
@@ -60,10 +68,11 @@ For example, create the datasets for the Nextcloud application, and, if installi
 
 {{< trueimage src="/images/SCALE/SystemSettings/SystemSettingsGUISettingsSCALE.png" alt="General System Settings" id="General System Settings" >}}
 
-After an apps storage pool is configured, the status changes to <span class="iconify" data-icon="mdi:check-circle" color=#71BF44></span> **Apps Service Running**.
+After configuring a storage pool for your apps, the status changes to <span class="iconify" data-icon="mdi:check-circle" color=#71BF44></span> **Apps Service Running**.
 
 ### Unsetting the Apps Pool
-To select a different pool for apps to use, click **Settings > Unset Pool**. This turns off the Apps service until you choose another pool for apps to use.
+To select a different pool for apps to use, click **Settings > Unset Pool**.
+This turns off the apps service until you choose another pool.
 
 ### Changing Official Application Networking
 Official applications use the default system-level Kubernetes node IP settings.
