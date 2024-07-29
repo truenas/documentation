@@ -16,7 +16,7 @@ tags:
 related: false
 ---
 
-{{< hint type=important title="Application Tutorials" >}}
+{{< hint type=important title="Application Screens" >}}
 {{< include file="/static/includes/AppsUnversioned.md" >}}
 {{< /hint >}}
 
