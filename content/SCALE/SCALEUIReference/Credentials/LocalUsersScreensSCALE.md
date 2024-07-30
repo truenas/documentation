@@ -132,7 +132,7 @@ You can set a specific [shell]({{< relref "UseScaleShell.md" >}}) for the user f
 | **dash** | [Debian Almquist shell](https://man7.org/linux/man-pages/man1/dash.1.html) |
 | **sh** | [Bourne shell](https://www.in-ulm.de/~mascheck/bourne/v7/) |
 | **tmux** | [terminal multiplexer](https://man7.org/linux/man-pages/man1/tmux.1.html)  |
-| **zsh** | [Z shell](http://zsh.sourceforge.net/) |
+| **zsh** | [Z shell](https://zsh.sourceforge.net/) |
 | **TrueNAS CLI** | Use to open **Shell** in the CLI. Eliminates the need to enter `cli` at the Shell system prompt to enter the TrueNAS CLI. Enter `ls` to see the list of namespaces. |
 | **TrueNAS Console** |Use to open **Shell** in the Console Setup menu. Eliminates the need to enter `menu`. Displays the console setup menu options. This option provides the user with access to the Linux and TrueNAS CLI shells. |
 {{< /truetable >}}
