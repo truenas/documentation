@@ -47,6 +47,8 @@ Update SCALE HA systems to TrueNAS SCALE version 23.10.1 or later before connect
 
 After upgrading to TrueCommand 3.0, you might need to edit and re-apply connected TrueNAS system passwords to ensure connectivity.
 
+After updating, clear the browser cache (CTRL+F5) before logging in to TrueCommand. This ensures stale data doesn’t interfere the TrueCommand UI.
+
 ### TrueNAS Compatibility
 
 TrueCommand 3.0 is tested and compatible with these TrueNAS versions:
