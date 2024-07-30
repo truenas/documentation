@@ -55,8 +55,8 @@ TrueCommand 3.0 is tested and compatible with these TrueNAS versions:
 
 * CORE 13.0
 * SCALE 22.12
-* SCALE 23.10 - High Availability systems are not yet fully supported.
-<!--* SCALE 24.04 ? -->
+* SCALE 23.10
+* SCALE 24.04
 
 ### Paths
 
@@ -117,6 +117,10 @@ If TrueCommand 3.0.2 is used to upgrade HA systems, the standby controller might
 {{< /enterprise >}}
 
 * The **Explore > Snapshots** tab can timeout when selected for datasets with high numbers of stored snapshots ([TC-3078](https://ixsystems.atlassian.net/browse/TC-3078)).
+
+* Changes made to SMTP email configuration after initial setup might not apply for new users created after created after the configuration updates.
+  If you have previously updated your SMTP configuration, create new user accounts as described in [Creating User Accounts]({{< relref "UserAccounts.md" >}}).
+  Log in as the new user and review settings in **Alert Services > SMTP Email** and **Administration > Alert Recipients > Configure** to confirm they are correct.
 
 <a href="https://ixsystems.atlassian.net/issues/?filter=10581" target="_blank">Click here to see the latest Jira tickets</a> about known issues in 3.0.2 that are being resolved in a future TrueCommand release.
 
