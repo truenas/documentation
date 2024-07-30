@@ -24,4 +24,3 @@ See the [GitHub Help](https://help.github.com/articles/about-pull-requests/) for
 ## Issue Reports
 
 To report an issue with the website or content, go to https://jira.ixsystems.com/ and open a ticket in the [NAS](https://jira.ixsystems.com/projects/NAS/) project.
-New feature issues are added as suggestions for the community to vote and developers to review.
