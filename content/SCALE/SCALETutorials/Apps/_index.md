@@ -15,10 +15,6 @@ keywords:
 - software storage solutions
 ---
 
-{{< hint type=important title="Application Tutorials" >}}
-{{< include file="/static/includes/AppsUnversioned.md" >}}
-{{< /hint >}}
-
 We welcome community contributions to keep our documentation current!
 Click **Edit Page** in the top right corner to propose changes to an article.
 See [Updating Content](https://www.truenas.com/docs/contributing/documentation/contentupdate/) for more information.
