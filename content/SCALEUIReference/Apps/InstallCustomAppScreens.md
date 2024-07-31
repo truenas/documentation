@@ -6,7 +6,7 @@ tags:
 - customapp
 ---
 
-{{< hint type=important title="Application Tutorials" >}}
+{{< hint type=important title="Application Articles" >}}
 {{< include file="/static/includes/AppsUnversioned.md" >}}
 {{< /hint >}}
 
