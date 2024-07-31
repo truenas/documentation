@@ -136,7 +136,7 @@ For rough calculations, additional resources are listed below.
 * [Veeam Backup Capacity Calculator](https://calculator.veeam.com/)
 * [Sizing from Veeam Best Practices](https://bp.veeam.com/vbr/VBP/3_Build_structures/B_Veeam_Components/B_VBR_Server/Backup_Server.html)
 * [Veeam Size Estimation Tool](https://vse.veeambp.com/)
-* [3rd Party Bandwidth Calculator](http://rps.dewin.me/bandwidth/)
+* [3rd Party Bandwidth Calculator](https://rps.dewin.me/bandwidth/)
 
 ## Advantages
 

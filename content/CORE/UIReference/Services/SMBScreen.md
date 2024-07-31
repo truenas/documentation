@@ -41,5 +41,5 @@ Unless a specific setting is needed or configuring for a specific network enviro
 | **File Mask** | Overrides default file creation mask of **0666**. File creation mask **0666** creates files with read and write access for everybody. |
 | **Directory Mask** | Overrides default directory creation mask of **0777**. Directory creation mask **0777** grants directory read, write and execute access for everybody. |
 | **Bind IP Addresses** | Select from the dropdown list. These are the static IP addresses which SMB listens on for connections. If not selected, defaults to listen on all active interfaces. |
-| **Auxiliary Parameters** | Enter additional smb.conf options. See the [Samba Guide](http://www.oreilly.com/openbook/samba/book/appb_02.html) for more information on these settings. To log more details when a client attempts to authenticate to the share, add *log level = 1, auth_audit:5*. |
+| **Auxiliary Parameters** | Enter additional smb.conf options. See the [Samba Guide](https://www.oreilly.com/openbook/samba/book/appb_02.html) for more information on these settings. To log more details when a client attempts to authenticate to the share, add *log level = 1, auth_audit:5*. |
 {{< /truetable >}}

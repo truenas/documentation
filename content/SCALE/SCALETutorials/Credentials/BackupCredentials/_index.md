@@ -7,6 +7,7 @@ aliases:
   - /scale/credentials/backupcredentials/cloudcredentialsscale/
   - /scale/credentials/backupcredentials/sshconnections/
   - /scale/credentials/backupcredentials/sshkeypairsscale/
+  - /scale/credentials/backupcredentials/
 related: false
 keywords:
 - enterprise data storage

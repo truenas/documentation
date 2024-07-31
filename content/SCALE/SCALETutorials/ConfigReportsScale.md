@@ -2,9 +2,9 @@
 title: "Reporting"
 description: "Provides information on changing settings that control how SCALE displays report graphs, how to interact with graphs, and configuring reporting exporters."
 weight: 13
-alias:
-- /scale/scaletutorials/reporting/configreportsscale/
-- /scale/scaletutorials/reporting/
+aliases:
+ - /scale/scaletutorials/reporting/configreportsscale/
+ - /scale/scaletutorials/reporting/
 tags:
  - reporting
  - data reporting

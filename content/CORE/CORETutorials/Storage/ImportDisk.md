@@ -13,7 +13,7 @@ Only one disk can be imported at a time, and the disk must be installed or physi
 
 {{< expand "What about EXT3 or EXT4 filesystems?" "v" >}}
 Importing an EXT3 or EXT4 filesystem is possible in some cases, although neither is fully supported.
-EXT3 journaling is not supported, so those file systems must have an external `fsck` utility, like the one provided by [E2fsprogs utilities](http://e2fsprogs.sourceforge.net/), run on them before import.
+EXT3 journaling is not supported, so those file systems must have an external `fsck` utility, like the one provided by [E2fsprogs utilities](https://e2fsprogs.sourceforge.net/), run on them before import.
 EXT4 file systems with extended attributes or inodes greater than 128 bytes are not supported.
 EXT4 file systems with EXT3 journaling must have an `fsck` run on them before import, as described above.
 {{< /expand >}}
