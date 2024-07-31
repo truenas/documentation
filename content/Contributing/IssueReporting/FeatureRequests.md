@@ -1,7 +1,7 @@
 ---
 title: "Feature Requests"
 description: "How to suggest and vote for improvements and features in the TrueNAS Community Forum."
-weight: 10
+weight: 20
 tags:
 - contributing
 - issues
