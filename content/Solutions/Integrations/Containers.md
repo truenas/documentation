@@ -288,7 +288,7 @@ Visit the [Nomad Storage Plugins](https://www.nomadproject.io/docs/internals/plu
 {{< tab "Mesos" >}}
 ## Mesos
  
-[Mesos](http://mesos.apache.org/documentation/latest/csi/) is an open source cluster manager that abstracts CPU, memory, storage, and other compute resources away from machines (physical or virtual), enabling fault-tolerant and elastic distributed systems to easily be built and run effectively.
+[Mesos](https://mesos.apache.org/documentation/latest/csi/) is an open source cluster manager that abstracts CPU, memory, storage, and other compute resources away from machines (physical or virtual), enabling fault-tolerant and elastic distributed systems to easily be built and run effectively.
 {{< /tab >}}
 {{< tab "Cloud Foundry" >}}
 ## Cloud Foundry

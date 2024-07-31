@@ -4,6 +4,8 @@ description: "Tutorials for configuring the different credentials needed for Tru
 geekdocCollapseSection: true
 weight: 10
 related: false
+aliases:
+ - /scale/credentials/
 ---
 
 SCALE Credential options are collected in this section of the UI and organized into a few different screens:

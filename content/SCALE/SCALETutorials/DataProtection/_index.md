@@ -4,6 +4,8 @@ description: "Tutorials related to configuring data backup features in TrueNAS S
 geekdocCollapseSection: true
 weight: 8
 related: false
+aliases:
+ - /scale/dataprotection/
 ---
 
 The Data Protection section allows users to set up multiple reduntant tasks that will protect and/or backup data in case of drive failure.

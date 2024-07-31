@@ -51,7 +51,7 @@ Make sure to have account credentials ready with the chosen DNS provider before 
   <tr><td><a href="https://www.infomaniak.com/" target="_blank">Infomaniak</a></tr></td>
   <tr><td><a href="https://www.inwx.com/" target="_blank">INWX</a></tr></td>
   <tr><td><a href="https://www.linode.com/" target="_blank">Linode</a></tr></td>
-  <tr><td><a href="http://www.luadns.com/" target="_blank">LuaDNS</a></tr></td>
+  <tr><td><a href="https://www.luadns.com/" target="_blank">LuaDNS</a></tr></td>
   <tr><td><a href="https://www.namecheap.com/" target="_blank">Namecheap</a></tr></td>
   <tr><td><a href="https://njal.la/" target="_blank">Njalla</a></tr></td>
   <tr><td><a href="https://www.noip.com/" target="_blank">NoIP</a></tr></td>

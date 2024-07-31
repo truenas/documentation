@@ -26,10 +26,10 @@ Click <i class="material-icons" aria-hidden="true" title="Configure">edit</i> to
 | Setting | Description |
 |---------|-------------|
 | **Identifier** | Required. Type a description for the UPS device. You can use alphanumeric, period (.), comma (,), hyphen (-), and underscore (_) characters. |
-| **UPS Mode** | Select the either **Master** or **Slave** mode from the dropdown list. Select **Master** if the UPS is plugged directly into the system serial port, or **Slave** to shut down this system before the master system. **Slave** displays the **Remote Hostname** and **Remote Port** fields, and removes the **Driver** field. The UPS remains the last item to shut down. See the [Network UPS Tools Overview](http://networkupstools.org/docs/user-manual.chunked/ar01s02.html#_monitoring_client). |
+| **UPS Mode** | Select the either **Master** or **Slave** mode from the dropdown list. Select **Master** if the UPS is plugged directly into the system serial port, or **Slave** to shut down this system before the master system. **Slave** displays the **Remote Hostname** and **Remote Port** fields, and removes the **Driver** field. The UPS remains the last item to shut down. See the [Network UPS Tools Overview](https://networkupstools.org/docs/user-manual.chunked/ar01s02.html#_monitoring_client). |
 | **Remote Host** | Required. Enter a valid IP address for the remote system with the **UPS Mode** set to **Master**. This field displays only when **UPS Mode** is set to **Slave**. |
 | **Remote Port** | Required. Enter the open network port number of the UPS master system. The default port is 3493. This field displays only when **UPS Mode** is set to **Slave**. |
-| **Driver** | Required. Enter or select the device driver from the dropdown list. See the [Network UPS Tools compatibility list](http://networkupstools.org/stable-hcl.html) for a list of supported UPS devices. This field displays only when **UPS Mode** is set to **Master**. |
+| **Driver** | Required. Enter or select the device driver from the dropdown list. See the [Network UPS Tools compatibility list](https://networkupstools.org/stable-hcl.html) for a list of supported UPS devices. This field displays only when **UPS Mode** is set to **Master**. |
 | **Port or Hostname** | Required. Enter or select the serial or USB port connected to the UPS from the dropdown list. Options include a list of port on your system and **auto**. Select **auto** to automatically detect and manage the USB port settings.<br> When selecting an SNMP driver, enter the IP address or host name of the SNMP UPS device. |
 {{< /truetable >}}
 
@@ -70,6 +70,6 @@ Click <i class="material-icons" aria-hidden="true" title="Configure">edit</i> to
 | **No Communication Warning Time** | Enter the number of seconds to wait before alerting that the service cannot reach any UPS. Warnings continue until the situation is fixed. |
 | **Host Sync** | Upsmon waits up to this many seconds in master mode for the slaves to disconnect during a shutdown situation. |
 | **Description** | Enter a description for this service. |
-| **Auxiliary Parameters (ups.conf)** | Enter any extra options from [ups.conf](http://networkupstools.org/docs/man/ups.conf.html). |
-| **Auxiliary Parameters (upsd.conf)** | Enter any extra options from [upsd.conf](http://networkupstools.org/docs/man/upsd.conf.html). |
+| **Auxiliary Parameters (ups.conf)** | Enter any extra options from [ups.conf](https://networkupstools.org/docs/man/ups.conf.html). |
+| **Auxiliary Parameters (upsd.conf)** | Enter any extra options from [upsd.conf](https://networkupstools.org/docs/man/upsd.conf.html). |
 {{< /truetable >}}
