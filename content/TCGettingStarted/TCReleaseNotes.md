@@ -47,6 +47,10 @@ Update SCALE HA systems to TrueNAS SCALE version 23.10.1 or later before connect
 
 After upgrading to TrueCommand 3.0, you might need to edit and re-apply connected TrueNAS system passwords to ensure connectivity.
 
+Starting in version 3.0.2, TrueCommand does not support STARTTLS or port 587 for SMTP email configuration.
+Users with SMTP configured on port 587 should use port *465* and select **Enable TLS** for full SSL/TLS encryption.
+See [Configuring SMTP Email]({{< relref "AlertManage.md #configuring-smtp-email" >}}) for more information.
+
 After updating, clear the browser cache (CTRL+F5) before logging in to TrueCommand. This ensures stale data doesn’t interfere the TrueCommand UI.
 
 ### TrueNAS Compatibility
@@ -120,7 +124,7 @@ If TrueCommand 3.0.2 is used to upgrade HA systems, the standby controller might
 
 * Changes made to SMTP email configuration after initial setup might not apply for new users created after created after the configuration updates.
   If you have previously updated your SMTP configuration, create new user accounts as described in [Creating User Accounts]({{< relref "UserAccounts.md" >}}).
-  Log in as the new user and review settings in **Alert Services > SMTP Email** and **Administration > Alert Recipients > Configure** to confirm they are correct.
+  Log in as the new user and review settings in **Alert Services > SMTP Email** to confirm they are correct.
 
 <a href="https://ixsystems.atlassian.net/issues/?filter=10581" target="_blank">Click here to see the latest Jira tickets</a> about known issues in 3.0.2 that are being resolved in a future TrueCommand release.
 
