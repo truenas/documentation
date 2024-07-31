@@ -7,6 +7,7 @@ aliases:
  - /core/coretutorials/network/interfaces/editingphysicalinterface/
  - /core/network/interfaces/editingphysicalinterface/
  - /core/coretutorials/network/networksummary/
+ - /core/network/interfaces/
 related: false
 tags:
  - network 

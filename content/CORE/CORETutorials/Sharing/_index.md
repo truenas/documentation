@@ -4,6 +4,8 @@ description: "Tutorials for configuring different storage sharing protocols in T
 geekdocCollapseSection: true
 weight: 110
 related: false
+aliases:
+ - /core/sharing/
 ---
 
 File sharing is a core benefit of a NAS. TrueNAS helps foster collaboration between users through network shares.  

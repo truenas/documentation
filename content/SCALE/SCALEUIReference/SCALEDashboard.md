@@ -107,7 +107,7 @@ The **Storage** widget shows information on the primary (root) pool status, path
 It also shows the percentage of used and free space, and any caches.
 It reports the number disks with errors, the total number of disks in the pool, and if a spare exists.
 
-{{< trueimage src="/images/SCALE/Dashboard/DashboardStorageWidgetSCALE.png" alt="Storage Widget" id="Storage Widget" >}}
+{{< trueimage src="/images/SCALE/Dashboard/DashboardStorageWidget.png" alt="Storage Widget" id="Storage Widget" >}}
 
 You can configure individual pool widgets that show the same information as the root pool in the **Storage** widget.
 
