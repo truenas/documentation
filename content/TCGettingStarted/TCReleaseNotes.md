@@ -51,7 +51,7 @@ Starting in version 3.0.2, TrueCommand does not support STARTTLS or port 587 for
 Users with SMTP configured on port 587 should use port *465* and select **Enable TLS** for full SSL/TLS encryption.
 See [Configuring SMTP Email]({{< relref "AlertManage.md #configuring-smtp-email" >}}) for more information.
 
-After updating, clear the browser cache (CTRL+F5) before logging in to TrueCommand. This ensures stale data doesn’t interfere the TrueCommand UI.
+After updating, clear the browser cache (CTRL+F5) before logging in to TrueCommand. This ensures stale data doesn't interfere the TrueCommand UI.
 
 ### TrueNAS Compatibility
 
