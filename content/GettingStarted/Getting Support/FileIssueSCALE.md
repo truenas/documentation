@@ -8,7 +8,7 @@ tags:
 
 {{< include file="/static/includes/FileIssueTicketSCALE.md" >}}
 
-## Using the SCALE Feedback Window
+## Using the Send Feedback Window
 
 {{< include file="/static/includes/FeedbackWindow.md" >}}
 
