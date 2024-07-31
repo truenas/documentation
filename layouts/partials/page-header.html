@@ -67,6 +67,28 @@
   </div>
 </blockquote>
 </article>
+{{ else if and (in .Section "SCALE") (hasPrefix .RelPermalink "/scale/scaletutorials/apps/") }}
+<article class="gdoc-markdown">
+<blockquote class="gdoc-hint caution">
+  <div class="gdoc-hint__title flex align-center">
+    <img src="/favicon/TNScale-favicon-32x32.png" alt="TrueNAS SCALE Application Tutorials" title="TrueNAS SCALE Application Tutorials" style="padding-right:.75rem;"></img>TrueNAS SCALE Application Tutorials
+  </div>
+  <div class="gdoc-hint__text" style="font-size:smaller;">
+    Application maintenance is independent from TrueNAS SCALE version release cycles. <br>App version information, features, configuration options, and installation behavior at the time of access might vary from those in documented tutorials.
+  </div>
+</blockquote>
+</article>
+{{ else if and (in .Section "SCALE") (hasPrefix .RelPermalink "/scale/scaleuireference/apps/") }}
+<article class="gdoc-markdown">
+<blockquote class="gdoc-hint caution">
+  <div class="gdoc-hint__title flex align-center">
+    <img src="/favicon/TNScale-favicon-32x32.png" alt="TrueNAS SCALE Applications - UI Reference" title="TrueNAS SCALE Applications - UI Reference" style="padding-right:.75rem;"></img>TrueNAS SCALE Applications - UI Reference
+  </div>
+  <div class="gdoc-hint__text" style="font-size:smaller;">
+    Application maintenance is independent from TrueNAS SCALE version release cycles. <br>App version information, features, configuration options, and installation behavior at the time of access might vary from those in documentation.
+  </div>
+</blockquote>
+</article>
 {{ else if in .Section "SCALE" }}
 <article class="gdoc-markdown">
 <blockquote class="gdoc-hint warning">
