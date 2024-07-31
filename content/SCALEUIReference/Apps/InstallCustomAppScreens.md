@@ -10,13 +10,6 @@ tags:
 ---
 
 
-{{< hint type=important title="Application Screens" >}}
-Application maintenance is independent from TrueNAS SCALE version release cycles. <br>App version information, features, configuration options, and installation behavior at the time of access might vary from those in documented tutorials.
-
-Application maintenance is independent from TrueNAS SCALE version release cycles. 
-App version information, features, configuration options, and installation behavior at the time of access might vary from those in documentation.
-{{< /hint >}}
-
 The apps article content is End of Life (EOL) for 23.10 (Cobia) which means this content is not currently maintained.
 
 ## Install Custom App Screen
