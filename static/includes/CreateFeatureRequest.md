@@ -16,13 +16,13 @@ Click **<i class="fa fa-plus" aria-hidden="true"></i> Create Topic** to submit t
 
 {{< trueimage src="/images/Contribute/FeatureRequest.png" alt="Submit a Feature Request" id="Submit a Feature Request" >}}
 
-To vote for a Feature Request, open that thread use the **Vote** button in the top left corner, next to the title.
+To vote for a feature request, open that thread then click **Vote** at the top left corner, next to the title.
 
 {{< trueimage src="/images/Contribute/FeatureRequestVote.png" alt="Vote for a Feature Request" id="Vote for a Feature Request" >}}
 
-Each forum user has a limited number of votes that can be cast for items at any given time.
-The higher your Trust Level, the more votes you can cast.
-The number of votes based on Trust Level is as follows:
+Each forum user can cast a limited number of votes for items at any given time.
+The higher your trust level, the more votes you can cast.
+The number of votes based on trust level is as follows:
 
 {{< truetable >}}
 | Trust Level | Votes |
@@ -35,13 +35,13 @@ The number of votes based on Trust Level is as follows:
 {{< /truetable >}}
 
 Votes on a topic are kept until either you remove the vote manually or the topic is closed.
-Topics are closed periodically as they are reviewed and either accepted or rejected based on their merit and feasibility.
+Topics are closed periodically after they are reviewed and either accepted or rejected based on their merit and feasibility.
 
 ## What is a good feature request?
 
 Before creating a new feature request, it is important to take some time to think through the implementation and user story.
-A good feature request includes details about the functionality being added, if there is a UI component, and a detailed user story about how a TrueNAS user might interact with the said feature.
+A good feature request includes details about the functionality requested, if it involves a UI component, and a detailed user story describing how a TrueNAS user might interact with the proposed feature.
 
 ## What is a bad feature request?
 
-Items which are flat out unrealistic (i.e. Can you base TrueNAS on Windows) or feature requests which are not well within the scope of typical NAS functionality (i.e. I want a full desktop with Gnome on TrueNAS).
+Items which are completely unrealistic (i.e. Can you base TrueNAS on Windows) or feature requests which are outside of the scope of typical NAS functionality (i.e. I want a full desktop with Gnome on TrueNAS).
