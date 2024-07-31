@@ -8,6 +8,10 @@ related: false
 ---
 
 
+{{< hint type=important title="Application Tutorials" >}}
+{{< include file="/static/includes/AppsUnversioned.md" >}}
+{{< /hint >}}
+
 The TrueNAS community creates and maintains numerous applications intended to expand system functionality far beyond what is typically expected from a NAS.
 
 The TrueNAS catalog is loaded by default and is used to populate the **Discover** apps screen.
@@ -18,8 +22,6 @@ Some applications deploy as the **root** user for initial configuration before o
 Make sure the application is required for your specific use requirements and does not violate your security policies before installation.
 
 The remaining tutorials in this section are for specific applications that are commonly used or replace some functionality that was previously built-in with TrueNAS.
-
-{{< include file="/static/includes/AppsUnversioned.md" >}}
 
 ## Section Contents
 

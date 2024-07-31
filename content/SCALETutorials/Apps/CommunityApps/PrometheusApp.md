@@ -8,6 +8,11 @@ tags:
 - reporting
 ---
 
+
+{{< hint type=important title="Application Tutorials" >}}
+{{< include file="/static/includes/AppsUnversioned.md" >}}
+{{< /hint >}}
+
 Prometheus is a monitoring platform that collects metrics from *targets* it monitors. Targets are system HTTP endpoints configured in the Prometheus web UI. Prometheus is itself an HTTP endpoint so it can monitor itself.
 
 Prometheus collects and stores metrics such as time series data. Information stored is time-stamped at the point when it is recorded.
@@ -17,8 +22,6 @@ Use the Prometheus application to record numeric time series.
 Also use it to diagnose problems with the monitored endpoints when there is a system outage.
 
 TrueNAS SCALE makes installing Prometheus easy, but you must use the Prometheus web portal to configure targets, labels, alerts, and queries.
-
-{{< include file="/static/includes/AppsUnversioned.md" >}}
 
 ## First Steps
 

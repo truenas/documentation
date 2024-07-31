@@ -7,6 +7,11 @@ tags:
 - apps
 ---
 
+
+{{< hint type=important title="Application Tutorials" >}}
+{{< include file="/static/includes/AppsUnversioned.md" >}}
+{{< /hint >}}
+
 The new **TFTP Server** application provides Trivial File Transfer Protocol (TFTP) server functions.
 The TFTP Server application is a lightweight TFTP-server container in TrueNAS SCALE. It is not intended for use as a standalone container.
 
@@ -16,8 +21,6 @@ This checks the parent directory permissions and ownership.
 If it finds a mismatch, the container applies the correct permissions to the TFTP directories.
 If **Allow Create** is selected, the container also checks and chmods TFTP directories to 757 or to 555 if not checked.
 Afterwards, the TFTP container runs as root user, dropping privileges to the tftp (9069) user for the TFTP service.
-
-{{< include file="/static/includes/AppsUnversioned.md" >}}
 
 ## First Steps
 

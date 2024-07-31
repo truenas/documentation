@@ -7,11 +7,14 @@ tags:
 - apps
 ---
 
+
+{{< hint type=important title="Application Tutorials" >}}
+{{< include file="/static/includes/AppsUnversioned.md" >}}
+{{< /hint >}}
+
 {{< hint info >}}
 This article applies to the public release of the S3 **MinIO** community application in the **charts** train of the TRUENAS catalog.
 {{< /hint >}}
-
-{{< include file="/static/includes/AppsUnversioned.md" >}}
 
 ## Manual Update Overview
 
