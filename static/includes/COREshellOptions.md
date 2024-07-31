@@ -12,7 +12,7 @@
 | rbash | [Restricted bash](https://www.gnu.org/software/bash/manual/html_node/The-Restricted-Shell.html) |
 | rzsh  | [Restricted zsh](https://www.csse.uwa.edu.au/programming/linux/zsh-doc/zsh_14.html) |
 | scponly | [scponly](https://github.com/scponly/scponly/wiki) restricts the user's SSH usage to only the `scp` and `sftp` commands. |
-| zsh | [Z shell](http://zsh.sourceforge.net/) |
+| zsh | [Z shell](https://zsh.sourceforge.net/) |
 | git-shell | [restricted git shell](https://git-scm.com/docs/git-shell) |
 | nologin | Use when creating a system account or to create a user account that can authenticate with shares but which cannot log in to the TrueNAS system using `ssh`.
 {{< /truetable >}}

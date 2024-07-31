@@ -2,7 +2,7 @@
 title: "Virtualization"
 description: "Tutorials for configuring TrueNAS SCALE virtualization features."
 geekdocCollapseSection: true
-alias:
+aliases:
  - /scale/scaleuireference/virtualization/creatingmanagingvmsscale/
  - /scale/scaletutorials/virtualization/creatingmanagingvmsscale/
 weight: 11
