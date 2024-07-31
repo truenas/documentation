@@ -12,3 +12,7 @@ tags:
 ## Using the SCALE Feedback Window
 
 {{< include file="/static/includes/FeedbackWindow.md" >}}
+
+## Making Feature Suggestions
+
+{{< include file="/static/includes/CreateJiraSuggestion.md" >}}
