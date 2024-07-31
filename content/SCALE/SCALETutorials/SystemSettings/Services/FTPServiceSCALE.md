@@ -51,7 +51,7 @@ Configure the options according to your environment and security considerations.
 
 To confine FTP sessions to the home directory of a local user, select both **chroot** and **Allow Local User Login**. 
 
-Do *not* allow anonymous or root access unless it is necessary. 
+Do *not* allow anonymous access unless it is necessary. 
 Enable TLS when possible (especially when exposing FTP to a WAN). TLS effectively makes this [FTPS](https://tools.ietf.org/html/rfc4217) for better security.
 
 Click **Save** and then start the FTP service.
@@ -87,7 +87,7 @@ When configuring FTP bandwidth settings, we recommend manually entering the unit
 
 To confine FTP sessions to the home directory of a local user, select **chroot**. 
 
-Do *not* allow anonymous or root access unless it is necessary. 
+Do *not* allow anonymous access unless it is necessary. 
 Enable TLS when possible (especially when exposing FTP to a WAN). TLS effectively makes this [FTPS](https://tools.ietf.org/html/rfc4217) for better security.
 
 Click **Save**, then start the FTP service.
