@@ -1,20 +1,12 @@
 ---
-title: "Apps"
-description: "Articles describing the TrueNAS SCALE Apps screens and fields."
-geekdocCollapseSection: true
-weight: 100
+title: "Install Custom App Screen"
+description: "Provides information on the Install Custom App screen and configuration settings."
+weight: 25
 aliases:
- - /scale/scaleuireference/apps/appsscreensscale/
- - /scal/scaleuireference/apps/installcustomappscreens/
- - /scale/scaleclireference/app/
- - /scale/scaleclireference/app/clicatalog/
- - /scale/scaleclireference/app/clichartrelease/
- - /scale/scaleclireference/app/clicontainer/
- - /scale/scaleclireference/app/clidocker/
- - /scale/scaleclireference/app/clikubernetes/
+ - /scale/scaleuireference/apps/launchdockerimagescreens/
+ - /scale/scaletutorials/apps/docker/
 tags:
-- apps
-related: false
+- scalecustomapp
 ---
 
 
