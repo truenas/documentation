@@ -4,6 +4,7 @@ description: "Tutorial to deploy and use the TrueNAS vCenter Plugin with TrueNAS
 geekdocCollapseSection: true
 weight: 10
 aliases:
+  - /solutions/integrations/vmware/truenasvcenterplugin/
   - /core/solutions/integrations/vmware/truenasvcenterplugin/
   - /core/solutions/integrations/vmware/truenasvcenterplugin/install/
   - /core/solutions/integrations/vmware/truenasvcenterplugin/hosts/
@@ -15,7 +16,7 @@ aliases:
   - /solutions/integrations/vmware/truenasvcenterplugin/releasenotes/3.4.0/
   - /solutions/integrations/vmware/truenasvcenterplugin/releasenotes/3.3.0/
   - /solutions/integrations/vmware/truenasvcenterplugin/releasenotes/3.2.0/
-  - /solutions/integrations/vmware/truenasvcenterplugin/releasenotes/3.1.0/
+  - /solutions/integrations/vmware/truenasvcenterplugin/releasenotes/3.1.0/  
 ---
 
 [vCenter Server](https://www.vmware.com/products/vcenter-server.html) provides a web interface to manage physical and virtual machines.
