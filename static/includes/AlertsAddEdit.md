@@ -17,7 +17,7 @@ Use the **Edit Alert Service** screen to modify settings for a service. Select t
 | **Name** | Enter a name for the new alert service. |
 | **Enabled** | Clear the checkmark to disable this service without deleting it. |
 | **Type** | Select an option from the dropdown list for an alert service to display options for that service. Options are **AWS SNS** which is the default type displayed, **E-Mail**, **InfluxDB**, **Mattermost**, **OpsGenie**, **PagerDuty**, **Slack**, **SNMP Trap**, **Telegram** or **VictorOPS**. |
-| **Level** | Select the severity from the dropdown list. Options are **Info**, **Notice**, **Warning**, **Error**, **Critical**, **Alert** or **Emergency**. |
+| **Level** | Select the severity from the dropdown list. Options are **Info**, **Notice**, **Warning**, **Error**, **Critical**, **Alert** or **Emergency**. <br> TrueNAS SCALE sends alert notifications for all warnings matching and above the selected level. For example, a warning level set to **Critical** triggers notifications for **Critical**, **Alert**, and **Emergency** level warnings. |
 {{< /truetable >}}
 
 Use **SEND TEST ALERT** to generate a test alert to confirm the alert service works.
