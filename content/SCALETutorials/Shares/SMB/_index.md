@@ -243,7 +243,7 @@ To connect to an SMB share, you must start the related system service.
 
 After adding a new share the system prompts you to either start, or restart the SMB service.
 
-You can also start the service from the **Windows (SMB) Share** widget or on the **System Settings > Services** screen from the **SMB** service row.
+You can also start the service from the **Windows (SMB) Share** widget or on the **System > Services** screen from the **SMB** service row.
 
 ### Starting the Service Using the Windows SMB Share
 
@@ -255,7 +255,7 @@ Each SMB share on the list also has a toggle to enable or disable the service fo
 
 ### Starting the Service Using System Settings
 
-To make SMB share available on the network, go to **System Settings > Services** and click the toggle for **SMB**.
+To make SMB share available on the network, go to **System > Services** and click the toggle for **SMB**.
 Set **Start Automatically** if you want the service to activate when TrueNAS boots.
 
 ## Configuring the SMB Service

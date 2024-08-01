@@ -101,7 +101,7 @@ Now that you configured your system network, storage, and the data shares you wa
 
 ### Downloading the Initial System Debug File
 
-After saving the system configuration, go to **System Settings > Advanced** and click **Save Debug**. After the download completes, save this initial debug file with your system configuration file.
+After saving the system configuration, go to **System > Advanced** and click **Save Debug**. After the download completes, save this initial debug file with your system configuration file.
 
 ## Create a Boot Environment
 

@@ -69,7 +69,7 @@ Click the icon to see the current status of the update and which TrueNAS adminis
 
 After updating, you might find that you can update your storage pools and boot-pool to enable new supported and requested features that are not enabled on the pool.
 
-Go to **System Settings > Shell** and enter `cli` to enter the CLI if Shell does not open in the CLI.
+Go to **System > Shell** and enter `cli` to enter the CLI if Shell does not open in the CLI.
 
 To show which pools you can update, first enter a query command to see the list of pools on your system and the id number for each pool.
 

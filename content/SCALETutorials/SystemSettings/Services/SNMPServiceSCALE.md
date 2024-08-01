@@ -10,7 +10,7 @@ tags:
 
 [SNMP (Simple Network Management Protocol)](https://tools.ietf.org/html/rfc1157) monitors network-attached devices for conditions that warrant administrative attention.
 TrueNAS uses [Net-SNMP](https://sourceforge.net/projects/net-snmp/) to provide SNMP.
-To configure SNMP, go to **System Settings > Services** page, find **SNMP**, and click the <i class="material-icons" aria-hidden="true" title="Configure">edit</i>.
+To configure SNMP, go to **System > Services** page, find **SNMP**, and click the <i class="material-icons" aria-hidden="true" title="Configure">edit</i>.
 
 ![ServicesSNMPSCALE](/images/SCALE/SystemSettings/SCALESNMPOptions.png "SCALE SNMP Service Options")
 

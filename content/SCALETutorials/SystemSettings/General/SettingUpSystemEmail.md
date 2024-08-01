@@ -126,7 +126,7 @@ If the system email send method is configured, the admin email receives a system
 
 You can also add/configure the **Email Alert Service** to send timely warnings when a system alert hits a warning level that is specified in [**Alert Settings**]({{< relref "/SCALEUIReference/toptoolbar/alerts/alertsettingsscreen.md" >}}).
 
-From the **Alerts** <span class="material-icons">notifications</span> panel, select the <span class="material-icons">settings</span> icon and then **Alert Settings**, or go to **System Settings > Alert Settings**.
+From the **Alerts** <span class="material-icons">notifications</span> panel, select the <span class="material-icons">settings</span> icon and then **Alert Settings**, or go to **System > Alert Settings**.
 
 Locate **Email** under **Alert Services**, select the <span class="material-icons">more_vert</span> icon, and then click **Edit** to open the **Edit Alert Service** screen.
 

@@ -65,7 +65,7 @@ To access these basic options, enter `?` or `help`, then press <kbd>Enter</kbd>.
 ## Navigating Namespaces
 
 The TrueNAS CLI provides eleven top-level (parent) namespaces that correspond to SCALE UI functions but not all namespaces mirror the UI counterpart.
-For example, the **system** namespace includes **alerts** and **certificates** in the CLI but in the UI the counterpart is **System Settings**, and neither **Alerts** or **Certificates** are found under **System Settings**.
+For example, the **system** namespace includes **alerts** and **certificates** in the CLI but in the UI the counterpart is **System**, and neither **Alerts** or **Certificates** are found under **System**.
 Each parent namespace has child namespaces and commands.
 
 Use the `ls` command to view the list of namespaces or commands.

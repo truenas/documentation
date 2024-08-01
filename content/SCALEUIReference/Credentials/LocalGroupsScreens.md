@@ -99,7 +99,7 @@ The new and edit privilege screens show the same settings but not all settings a
 | **Local Groups** | Click in the field to see a dropdown list of available groups to apply the privilege to. ***Do not*** add the predefined administrator or builtin groups! Only select new user groups created if you experiment with this function. |
 | **Directory Services Groups** | Click in the field to see a dropdown list of available groups to apply the privilege to. |
 | **Roles** | Click in the field to see a dropdown list of all available roles available to assign to the new privilege. |
-| **Web Shell Access** | Select to allow a user assign the new privilege access to the **System Settings > Shell** screen.  |
+| **Web Shell Access** | Select to allow a user assign the new privilege access to the **System > Shell** screen.  |
 {{< /truetable >}}
 
 Assigned administrator roles display on the [Users Screen]({{< relref "LocalUsersScreensSCALE.md" >}}).

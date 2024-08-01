@@ -33,7 +33,7 @@ While not required for declaring the system is in production, TrueNAS has the op
 Silver/Gold Coverage Customers can enable iXsystems Proactive Support.
 This feature automatically emails iXsystems when certain conditions occur in a TrueNAS system.
 
-To configure proactive support, click **Get Support** on the **Support** widget located on the **System Settings > General** screen.
+To configure proactive support, click **Get Support** on the **Support** widget located on the **System > General** screen.
 Select **Proactive Support** from the dropdown list.
 
 ![GeneralSettingsSCALEProactiveSupport](/images/SCALE/SystemSettings/GeneralSettingsSCALEProactiveSupport.png "SCALE General Settings Proactive Support")

@@ -46,7 +46,7 @@ It also covers the related steps you should take prior to configuring a replicat
 Configure your SSH connection before you begin configuring the replication task through the **Add Replication Task** screen.
 If you have an existing SSH connection with the remote system the option displays on the **SSH Connection** dropdown list.
 
-Turn on SSH service. Go to **System Settings > Services** screen, verify the **SSH** service configuration, then enable it.
+Turn on SSH service. Go to **System > Services** screen, verify the **SSH** service configuration, then enable it.
 
 ## Creating a Simplified Advanced Replication Task
 

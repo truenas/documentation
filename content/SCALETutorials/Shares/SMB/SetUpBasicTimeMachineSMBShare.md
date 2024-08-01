@@ -55,7 +55,7 @@ Do not start the SMB service when prompted, start it after configuring the SMB s
 ### Modifying the SMB Service
 Click on the <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i> on the **Windows (SMB) Share** widget, then click **Configure Service** to open the **SMB Service** screen.
 
-You can also go to **System Settings > Services** and scroll down to **SMB**.
+You can also go to **System > Services** and scroll down to **SMB**.
 If using the **Services** screen, click the toggle to turn off the SMB service if it is running, then click <i class="material-icons" aria-hidden="true" title="Configure">edit</i> **Configure** to open the **SMB Service** settings screen.
 
 1. Click **Advanced Settings**.

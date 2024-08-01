@@ -7,14 +7,14 @@ tags:
 - boot
 ---
 
-The **System Settings > Boot** screen contains options for monitoring and maintaining the TrueNAS install pool and disks.
+The **System > Boot** screen contains options for monitoring and maintaining the TrueNAS install pool and disks.
 This includes managing OS restore points, called boot environments, for the TrueNAS system.
 
 {{< trueimage src="/images/SCALE/SystemSettings/BootEnvironmentListingSCALE.png" alt="System Boot Screen" id="System Boot Screen" >}}
 
 ## System Boot Actions
 
-The **System Settings > Boot** screen displays four options at the top right of the screen.
+The **System > Boot** screen displays four options at the top right of the screen.
 
 {{< truetable >}}
 |Setting | Description |
@@ -27,7 +27,7 @@ The **System Settings > Boot** screen displays four options at the top right of 
 
 ### Boot Pool Status
 
-The **System Settings > Boot > Boot Pool Status** screen shows the status of the current **boot-pool**.
+The **System > Boot > Boot Pool Status** screen shows the status of the current **boot-pool**.
 It includes the current status, the path, and the number of read, write and checksum errors.
 
 {{< trueimage src="/images/SCALE/SystemSettings/BootPoolStatusListingSCALE.png" alt="Boot Pool Status" id="Boot Pool Status" >}}

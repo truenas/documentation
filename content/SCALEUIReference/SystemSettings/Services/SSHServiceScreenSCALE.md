@@ -9,7 +9,7 @@ tags:
  - backup
 ---
 
-The **System Settings > Services > SSH** screen allows you to set up SSH service on TrueNAS SCALE.
+The **System > Services > SSH** screen allows you to set up SSH service on TrueNAS SCALE.
 
 Click <i class="material-icons" aria-hidden="true" title="Configure">edit</i> to open the **Services > SSH** configuration screen.
 

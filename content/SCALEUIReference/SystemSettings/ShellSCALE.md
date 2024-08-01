@@ -7,7 +7,7 @@ tags:
 - shell
 ---
 
-SCALE **System Settings > Shell** is convenient for running command lines tools, configuring different system settings, or finding log files and debug information.
+SCALE **System > Shell** is convenient for running command lines tools, configuring different system settings, or finding log files and debug information.
 When the user **Shell** setting is set to **TrueNAS CLI**, the **Shell** screen opens at the TrueNAS CLI prompt.
 
 {{< trueimage src="/images/SCALE/CLI/SystemShellSCALE.png" alt="Shell Screen" id="Shell Screen" >}}

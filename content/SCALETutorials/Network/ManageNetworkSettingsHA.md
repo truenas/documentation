@@ -19,7 +19,7 @@ The instructions in the article only apply to SCALE Enterprise (HA) systems.
 {{< include file="/static/includes/ConfigureController1Networking.md" >}}
 
 6. Turn failover back on.
-   Go to **System Settings > Failover** and select **Disable Failover** to clear the checkmark and turn failover back on, then click **Save**.
+   Go to **System > Failover** and select **Disable Failover** to clear the checkmark and turn failover back on, then click **Save**.
 
    The system might reboot.
    Monitor the status of controller 2 and wait until the controller is back up and running, then click **Sync To Peer**.

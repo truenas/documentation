@@ -35,7 +35,7 @@ When the remote system is not TrueNAS, make sure that system has the rsync servi
 * Update the admin user by adding the private key to user in the UI and then adding the private key to the home directory for the admin user.
   When the **Rsync Mode** is **SSH**, 
 
-* Start the SSH service on both systems. Go to **System Settings > Services** and enable **SSH**.
+* Start the SSH service on both systems. Go to **System > Services** and enable **SSH**.
 
 ### Preparing Module Mode Remote Sync
 

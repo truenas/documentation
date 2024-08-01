@@ -110,7 +110,7 @@ To begin sharing, click the <span class="material-icons">more_vert</span> on the
 
 {{< trueimage src="/images/SCALE/Shares/NFSWidgetOptions.png" alt="Unix (NFS) Shares Widget Options" id="Unix (NFS) Shares Widget Options" >}}
 
-Or you can go to **System Settings > Services**, locate **NFS**, and click the toggle to running.
+Or you can go to **System > Services**, locate **NFS**, and click the toggle to running.
 Select **Start Automatically** if you want NFS to activate when TrueNAS boots.
 
 {{< hint type=note >}}
@@ -118,9 +118,9 @@ The NFS service does not automatically start on boot if all NFS shares are encry
 {{< /hint >}}
 
 ### Configuring NFS Service
-You can configure the NFS service from either the **System Settings > Services** or the **Shares > Unix Shares (NFS)** widget.
+You can configure the NFS service from either the **System > Services** or the **Shares > Unix Shares (NFS)** widget.
 
-To configure NFS service settings from the **Services** screen, click <i class="material-icons" aria-hidden="true" title="Configure">edit</i> on the **System Settings > Services** screen to open the **NFS** service screen.
+To configure NFS service settings from the **Services** screen, click <i class="material-icons" aria-hidden="true" title="Configure">edit</i> on the **System > Services** screen to open the **NFS** service screen.
 
 To configure NFS service settings from the **Shares > Unix Shares (NFS)** widget, click the **Config Service** from the <span class="material-icons">more_vert</span> dropdown menu on the widget header to open the **NFS** service screen.
 Unless you need specific settings, we recommend using the default NFS settings.

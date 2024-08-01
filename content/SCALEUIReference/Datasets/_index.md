@@ -59,7 +59,7 @@ A dataset with an active task includes an activity spinner when that task is in 
 {{< truetable >}}
 | Role | Icon | Description |
 |------|------|-------------|
-| System dataset | ![DatasetRolesSystemDatasetIcon](/images/SCALE/Datasets/DatasetRolesSystemDatasetIcon.png "Roles System Dataset Icon") | Indicates the parent (root) dataset designated as the system dataset. To change the system dataset go to **System Settings > Advanced Settings** and edit the **System Dataset Pool**. |
+| System dataset | ![DatasetRolesSystemDatasetIcon](/images/SCALE/Datasets/DatasetRolesSystemDatasetIcon.png "Roles System Dataset Icon") | Indicates the parent (root) dataset designated as the system dataset. To change the system dataset go to **System > Advanced Settings** and edit the **System Dataset Pool**. |
 | Share | ![DatasetRolesShareGenericIcon](/images/SCALE/Datasets/DatasetRolesShareGenericIcon.png "Roles Dataset Share Icon") | Indicates the dataset is used by a share or that child datasets of the parent are used by shares. |
 | SMB share | ![DatasetRolesSMBShareIcon](/images/SCALE/Datasets/DatasetRolesSMBShareIcon.png "Roles Dataset SMB Share Icon") | Indicates the dataset is used by an SMB share. |
 | VM | ![DatasetRolesVMIcon](/images/SCALE/Datasets/DatasetRolesVMIcon.png "Roles Dataset VM Icon") | Indicates the dataset is used by a virtual machine (VM). |
@@ -193,7 +193,7 @@ A dataset with a POSIX ACL type, such as the ix-applications dataset, is only ed
 ### Roles Widget
 The **Roles** widget shows the dataset role or the service that the dataset uses (i.e., a share, application, virtual machine, or the system dataset).
 A parent dataset displays information on child datasets and service(s) it uses.
-If the dataset is the system dataset, the widget includes a link to the **System Settings > Advanced** screen where you can manage the system dataset.
+If the dataset is the system dataset, the widget includes a link to the **System > Advanced** screen where you can manage the system dataset.
 
 {{< trueimage src="/images/SCALE/Datasets/RolesWidgetRootDataset.png" alt="Roles Widget System Dataset" id="Roles Widget System Dataset" >}}
 

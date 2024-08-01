@@ -35,7 +35,7 @@ Click on the widget header to open the [**Sharing > SMB** details](#sharing-smb-
 
 The <span class="material-icons">more_vert</span> icon displays four options available to SMB shares in general:
 * **Turn Off Service** what shows when the SMB service is enabled and that toggles to **Turn On Service** when the SMB service is disabled.
-* **Config Service** that opens the [**System Settings > SMB**]({{< relref "SMBServicesScreen.md" >}}).
+* **Config Service** that opens the [**System > SMB**]({{< relref "SMBServicesScreen.md" >}}).
 * **SMB Sessions** that opens the **SMB Status** screen with four tabs: **Sessions**, **Locks**, **Shares**, and **Notifications**.
 * **Audit Logs** that opens the [**Audit** screen]({{< relref "AuditingSCALE.md" >}}) with a predefined filter for and showing the SMB share logs.
 
@@ -219,7 +219,7 @@ Use the ACL editor screen to set filesystem permissions for the shared dataset.
 See [Permissions]({{< relref "PermissionsSCALE.md" >}}) for more information on configuring permissions.
 
 ## SMB Status Screens
-You can access the **SMB Status** screen from the **SMB** option on the **System Settings > Services** screen with the <i class="material-icons" aria-hidden="true" title="list">list</i> icon and from the <span class="material-icons">more_vert</span> on the **Shares > Windows (SMB) Shares** widget.
+You can access the **SMB Status** screen from the **SMB** option on the **System > Services** screen with the <i class="material-icons" aria-hidden="true" title="list">list</i> icon and from the <span class="material-icons">more_vert</span> on the **Shares > Windows (SMB) Shares** widget.
 
 {{< trueimage src="/images/SCALE/Shares/SMBStatusScreenSessionsTab.png" alt="SMB Status Sessions Tab" id="SMB Status Sessions Tab" >}}
 
@@ -234,4 +234,4 @@ The **SMB Status** screen has four tabs with information related to SMB shares:
 **Column** displays a dropdown list of options for the selected tab to customize the information included on the screen.
 
 Click **Sharing** or **SBM** on the top breadcrumb to open the selected screen.
-The breadcrumb displays when you access the SMB Status screen from the **System Settings > Services SMB** row.
+The breadcrumb displays when you access the SMB Status screen from the **System > Services SMB** row.

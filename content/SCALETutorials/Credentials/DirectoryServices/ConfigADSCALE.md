@@ -42,7 +42,7 @@ To confirm that name resolution is functioning, you can use the **Shell** and is
 
 To use `dig` to verify name resolution and return DNS information:
 
-1. Go to **System Settings > Shell** and type `dig` to check the connection to the AD domain controller. 
+1. Go to **System > Shell** and type `dig` to check the connection to the AD domain controller. 
    The domain controller manages or restricts access to domain resources by authenticating user identity from one domain to the other through login credentials, and it prevents unauthorized access to these resources. The domain controller applies security policies to request-for-access domain resources.
 
    ![DigCommandOutput](/images/SCALE/CLI/DigCommandOutput.png "Dig Command Output")
@@ -67,7 +67,7 @@ Also using Shell, check the network SRV records and verify DNS resolution enter 
 
 Active Directory relies on the time-sensitive [Kerberos](https://tools.ietf.org/html/rfc1510) protocol.
 TrueNAS adds the AD domain controller with the [PDC Emulator FSMO Role](https://support.microsoft.com/en-us/help/197132/active-directory-fsmo-roles-in-windows) as the preferred NTP server during the domain join process. 
-If your environment requires something different, go to **System Settings > General** to add or edit a server in the **NTP Servers** window.
+If your environment requires something different, go to **System > General** to add or edit a server in the **NTP Servers** window.
 
 Keep the local system time sync within five (5) minutes of the AD domain controller time in a default AD environment.
 
@@ -76,7 +76,7 @@ TrueNAS generates alerts if the system time gets out-of-sync with the AD domain 
 
 TrueNAS has a few options to ensure both systems are synchronized:
 
-1. Go to **System Settings > General** and click **Settings** in the **Localization** window to select the **Timezone** that matches location of the AD domain controller.
+1. Go to **System > General** and click **Settings** in the **Localization** window to select the **Timezone** that matches location of the AD domain controller.
 
 ![LocalizationSCALE](/images/SCALE/Credentials/LocalizationSCALE.png "Timezone Options")
 

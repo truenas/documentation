@@ -38,7 +38,7 @@ The NFS share on the widget opens the **[Edit NFS](#add-and-edit-nfs-screens)** 
 
 The <span class="material-icons">more_vert</span> icon displays three options available to NFS shares in general:
 * **Turn Off Service** what shows when the NFS service is enabled and that toggles to **Turn On Service** when the NFS service is disabled.
-* **Config Service** that opens the [**System Settings > NFS**]({{< relref "NFSServiceScreen.md" >}}).
+* **Config Service** that opens the [**System > NFS**]({{< relref "NFSServiceScreen.md" >}}).
 * **NFS Sessions** that opens the [**NFS Sessions** screen](#nfs-sessions-screen).
 
 The toolbar displays the **STOPPED** service status in red before you start the service or click **Enable Service** when the dialog displays.
@@ -111,7 +111,7 @@ Only the **Access** settings display on the **Advanced Options** screen.
 {{< /truetable >}}
 
 ## NFS Sessions Screen
-You can access the **NFS Sessions** screen from the **NFS** option on the **System Settings > Services** screen with the <i class="material-icons" aria-hidden="true" title="list">list</i> icon and from the <span class="material-icons">more_vert</span> on the **Shares > Unix (NFS) Shares** widget.
+You can access the **NFS Sessions** screen from the **NFS** option on the **System > Services** screen with the <i class="material-icons" aria-hidden="true" title="list">list</i> icon and from the <span class="material-icons">more_vert</span> on the **Shares > Unix (NFS) Shares** widget.
 
 {{< trueimage src="/images/SCALE/Shares/NFSSessionsScreen.png" alt="NFS Sessions Screen" id="NFS Sessions Screen" >}}
 

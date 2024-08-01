@@ -200,7 +200,7 @@ To perform a manual update via the TrueNAS CLI, you must first upload a manual u
 
 Connect to your system with your choice of FTP program (such as [WinSCP](https://winscp.net/eng/index.php)) and place the manual update file in **/var/tmp/firmware**.
 
-After it finishes uploading, go to **System Settings > Shell** and enter `cli` at the prompt if the system shell is set to a shell other than **TrueNAS CLI** for the admin user.
+After it finishes uploading, go to **System > Shell** and enter `cli` at the prompt if the system shell is set to a shell other than **TrueNAS CLI** for the admin user.
 From the SCALE CLI, enter:
 
 <code>system update manual path=/var/tmp/firmware/<i>updatefilename</i></code>

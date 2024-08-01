@@ -157,7 +157,7 @@ After logging in for the first time, the main system **Dashboard** screen displa
 The **Dashboard** shows different system information cards (widgets) with basic information about the installed version, systems component usage, network traffic, and configured pools or storage usage. 
 
 {{< enterprise >}}
-SCALE Enterprise users with an iXsystems-provided TrueNAS server also see an image of the system in the **System Information** widget. Click on the system image to open the **System Settings > [View Enclosure]({{< relref "EnclosureScreensSCALE.md" >}})** screen.
+SCALE Enterprise users with an iXsystems-provided TrueNAS server also see an image of the system in the **System Information** widget. Click on the system image to open the **System > [View Enclosure]({{< relref "EnclosureScreensSCALE.md" >}})** screen.
 
 {{< trueimage src="/images/SCALE/Dashboard/DashboardMainScreenSCALE.png" alt="TrueNAS SCALE Dashboard" id="TrueNAS SCALE Dashboard" >}}
 
@@ -181,7 +181,7 @@ The left-hand panel lists the main feature and functional areas and lets users n
 ## Managing Sessions
 The **Power** icon <span class="material-icons">power_settings_new</span> on the far right side of the top toolbar shows power-related settings as described in the [**Top Toolbar Power** options](https://www.truenas.com/docs/scale/gettingstarted/configure/firsttimelogin/#expand-18-First%20Time%20Login) section above.
 
-To monitor and manage all active sessions, go to **System Settings > Advanced** and locate the **Access** widget.
+To monitor and manage all active sessions, go to **System > Advanced** and locate the **Access** widget.
 {{< include file="/static/includes/SessionsSettingsWidget.md" >}}
 
 ## Next Steps

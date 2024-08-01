@@ -278,7 +278,7 @@ true
 ### License_Update Command
 
 The `license_update` command updates the license file.
-This is the license added to the system on the **System Settings > General** screen on the **Support** widget.
+This is the license added to the system on the **System > General** screen on the **Support** widget.
 
 {{< expand "Obtaining System Information" "v" >}}
 #### Description

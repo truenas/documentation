@@ -46,7 +46,7 @@ More details are available from [Software Releases](https://www.truenas.com/docs
   Systems installed with 24.04 cannot be used in experimental TrueCommand clusters.
   Community users that experimented with this now-deprecated TrueCommand feature need to migrate any data from the TrueCommand cluster and delete it before upgrading any clustered SCALE systems to 24.04.
 
-* Several built-in services from SCALE 22.12 (Bluefin) in **System Settings > Services** are replaced by community applications ([details](https://www.truenas.com/docs/scale/22.12/gettingstarted/scaledeprecatedfeatures/)).
+* Several built-in services from SCALE 22.12 (Bluefin) in **System > Services** are replaced by community applications ([details](https://www.truenas.com/docs/scale/22.12/gettingstarted/scaledeprecatedfeatures/)).
   SCALE 22.12 (Bluefin) systems must disable these built-in services and begin using the equivalent application **before** upgrading to SCALE 23.10 (Cobia), before upgrading to SCALE 24.04, or users can force an upgrade without disabling them. This is not recommended for the S3 service as you must migrate the MinIO service and data or lose it.
 
 * {{< include file="/static/includes/24.04HomeDirectory.md" >}}
@@ -54,7 +54,7 @@ More details are available from [Software Releases](https://www.truenas.com/docs
   See [Managing Users]({{< relref "managelocalusersscale.md#configuring-a-user" >}}) for more information.
 
 * Users upgrading from TrueNAS SCALE 23.10 (Cobia) to 24.04 (Dragonfish) who import a Cobia configuration file might find that some services are not automatically enabled as expected.
-After uploading the configuration file and rebooting the system, review **System Settings > Services**.
+After uploading the configuration file and rebooting the system, review **System > Services**.
 For any services that should be enabled, set it to **Running** and **Start Automatically**.
 
 ### Upgrade Paths
@@ -298,7 +298,7 @@ Notable changes:
 ### 24.04-RC.1 Known Issues
 
 * Users upgrading from TrueNAS SCALE 23.10 (Cobia) to 24.04 (Dragonfish) who import a Cobia configuration file might find that some services are not automatically enabled as expected.
-After uploading the configuration file and rebooting the system, review **System Settings > Services**.
+After uploading the configuration file and rebooting the system, review **System > Services**.
 For services that should be enabled, set it to **Running** and **Start Automatically**.
 * System data reporting graphs on the **Dashboard** and **Reporting** screens are undergoing additional review and polish ahead of the 24.04.0 release.
 
@@ -331,7 +331,7 @@ Notable changes:
 
 * The [Feedback reporting]({{< relref "/SCALEUIReference/TopToolbar/_index.md#how-would-you-rate-this-page" >}}) window has improved!
   The page rating icon is now always visible on the top toolbar and the feedback window also functions for new bug reports and improvement suggestions ([NAS-124484](https://ixsystems.atlassian.net/browse/NAS-124484)).
-  Clicking **File a ticket** on **System Settings** > **General** also opens the feedback window.
+  Clicking **File a ticket** on **System** > **General** also opens the feedback window.
   
 * An unsupported [development mode]({{< relref "DeveloperMode.md" >}}) is added to the base system.
   Enabling this puts the system in an unsupported state and allows customization of the operating system.

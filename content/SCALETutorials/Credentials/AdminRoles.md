@@ -57,7 +57,7 @@ To enable SSH to access the system as the admin user (or for root):
 
 1. Configure the SSH service.
 
-   a. Go to **System Settings > Services**, then select **Configure** for the SSH service.
+   a. Go to **System > Services**, then select **Configure** for the SSH service.
 
    b. Select **Log in as Root with Password** to enable the root user to sign in as root.
 

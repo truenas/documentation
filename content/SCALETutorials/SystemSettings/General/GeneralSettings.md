@@ -58,7 +58,7 @@ To display console messages in real time at the bottom of the browser, select th
 
 ## Localizing TrueNAS SCALE
 
-To change the WebUI on-screen language and set the keyboard to work with the selected language, click **Settings** on the **System Settings > General > Localization** widget. The **Localization Settings** configuration screen opens.
+To change the WebUI on-screen language and set the keyboard to work with the selected language, click **Settings** on the **System > General > Localization** widget. The **Localization Settings** configuration screen opens.
 
 Select the language from the **Language** dropdown list, and then the keyboard layout in **Console Keyboard Map**.
 
