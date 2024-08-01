@@ -10,7 +10,7 @@ tags:
 
 {{< include file="/static/includes/AlertsSettings.md" >}}
 
-{{<include file="/static/includes/addcolumnorganizer.md">}}
+{{< include file="/static/includes/addcolumnorganizer.md" >}}
 
 ## Add/Edit Alert Service Screen
 
@@ -23,6 +23,7 @@ tags:
 ## Alert Categories
 
 {{< include file="/static/includes/AlertsCategories.md" >}}
+
 ## Alert Warning Levels
 
 {{< include file="/static/includes/AlertsWarningLevels.md" >}}
