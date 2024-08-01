@@ -1,7 +1,7 @@
 &NewLine;
 
 The **Send Feedback** ![FeedbackIcon](/images/SCALE/Dashboard/FeedbackIcon.png "Feedback Icon") icon opens a feedback window.
-Alternately, go to **System Settings** > **General**, find the **Support** widget, and click **File Ticket** to see the feedback window.
+Alternately, go to **System** > **General**, find the **Support** widget, and click **File Ticket** to see the feedback window.
 
 The feedback window allows users to send page ratings, comments, and report issues or suggest improvements directly to the TrueNAS development team.
 Submitting a bug report requires a free [Atlassian account](https://id.atlassian.com/signup).
