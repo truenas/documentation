@@ -12,23 +12,25 @@ keywords:
 - enterprise storage solutions
 - nas storage solutions
 - software storage solutions
+- persistent storage
+- storage provisioning
 ---
 
 The [File Transfer Protocol (FTP)](https://tools.ietf.org/html/rfc959) is a simple option for data transfers.
 The SSH options provide secure transfer methods for critical objects like configuration files, while the Trivial FTP options provide simple file transfer methods for non-critical files.
 
-Options for configuring **FTP**, **SSH**, and **TFTP** are in **System Settings > Services**.
+Options for configuring **FTP**, **SSH**, and **TFTP** are in **System > Services**.
 Click the <i class="material-icons" aria-hidden="true" title="Configure">edit</i> to configure the related service.
 
 ## Configuring FTP For Any Local User
 FTP requires a new dataset and a local user account.
 
-Go to **Storage** to add a new [dataset]({{< relref "DatasetsSCALE.md" >}}) to use as storage for files. 
+Go to **Storage** to add a new [dataset]({{< relref "DatasetsSCALE.md" >}}) to use as storage for files.
 
 Next, add a new user. Go to **Credentials > Local Users**  and click **Add** to create a local user on the TrueNAS.
 
 Assign a user name and password, and link the newly created FTP dataset as the user home directory.
-You can do this for every user or create a global account for FTP (for example, *OurOrgFTPaccnt*).
+You can do this for every user or create a global account for FTP (for example, *OurOrgFTPaccnt*). Note, however, that you cannot create multiple accounts utilizing the same dataset as your home directory.
 
 Edit the file permissions for the new dataset. Go to **Datasets**, then click on the name of the new dataset. Scroll down to **Permissions** and click **Edit**.
 
@@ -41,7 +43,7 @@ Click **Save**.
 
 ### Configuring FTP Service
 
-To configure FTP, go to **System Settings > Services** and find **FTP**, then click <i class="material-icons" aria-hidden="true" title="Configure">edit</i> to open the **Services > FTP** screen.
+To configure FTP, go to **System > Services** and find **FTP**, then click <i class="material-icons" aria-hidden="true" title="Configure">edit</i> to open the **Services > FTP** screen.
 
 {{< trueimage src="/images/SCALE/SystemSettings/FTPBasicSettings.png" alt="FTP Basic Settings" id="FTP Basic Settings" >}}
 
@@ -49,7 +51,7 @@ Configure the options according to your environment and security considerations.
 
 To confine FTP sessions to the home directory of a local user, select both **chroot** and **Allow Local User Login**. 
 
-Do *not* allow anonymous or root access unless it is necessary. 
+Do *not* allow anonymous access unless it is necessary. 
 Enable TLS when possible (especially when exposing FTP to a WAN). TLS effectively makes this [FTPS](https://tools.ietf.org/html/rfc4217) for better security.
 
 Click **Save** and then start the FTP service.
@@ -73,7 +75,7 @@ Select the **Read**, **Write**, and **Execute** for **User**, **Group**, and **O
 
 ### Configuring FTP Service
 
-Go to **System Settings > Services** and find **FTP**, then click <i class="material-icons" aria-hidden="true" title="Configure">edit</i> to open the **Services > FTP** screen.
+Go to **System > Services** and find **FTP**, then click <i class="material-icons" aria-hidden="true" title="Configure">edit</i> to open the **Services > FTP** screen.
 
 {{< trueimage src="/images/SCALE/SystemSettings/FTPBasicSettings.png" alt="FTP Basic Settings" id="FTP Basic Settings" >}}
 
@@ -85,7 +87,7 @@ When configuring FTP bandwidth settings, we recommend manually entering the unit
 
 To confine FTP sessions to the home directory of a local user, select **chroot**. 
 
-Do *not* allow anonymous or root access unless it is necessary. 
+Do *not* allow anonymous access unless it is necessary. 
 Enable TLS when possible (especially when exposing FTP to a WAN). TLS effectively makes this [FTPS](https://tools.ietf.org/html/rfc4217) for better security.
 
 Click **Save**, then start the FTP service.

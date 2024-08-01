@@ -4,6 +4,7 @@ description: "Provides information on the settings and functions found on the Sn
 weight: 35
 aliases:
  - /scale/scaleuireference/storage/datasets/snapshotsscreens/
+ - /scale/scaleclireference/storage/clisnapshot/
 tags:
 - snapshots
 - datasets

@@ -3,9 +3,11 @@ title: "Periodic Snapshot Tasks Screens"
 description: "Provides information on the Data Protection and Periodic Snapshot Task screens and settings."
 weight: 50
 aliases:
+ - /scale/scaleclireference/task/clisnapshottask/
 tags:
 - snapshots
 - replication
+- snapshot technology
 ---
 
 The **Data Protection** screen **Periodic Snapshot Task** widget displays periodic snapshot tasks created on the system. 
@@ -82,7 +84,7 @@ These **Schedule** setting options display on both the add and edit configuratio
 | Setting | Description |
 |---------|-------------|
 | **Snapshot Lifetime** | Enter the length of time to retain the snapshot on this system using a numeric value and a single lowercase letter for units. Examples: *3h* is three hours, *1m* is one month, and *1y* is one year. Does not accept minute values. After the time expires, the snapshot is removed during the next snapshot scheduled execution finds the snapshot lifetime is expired. Snapshots replicated to other systems are not affected. |
-| **Naming Schema** | Snapshot name format string. The default is `auto-%Y-%m-%d_%H-%M`. Must include the strings `%Y`, `%m`, `%d`, `%H`, and `%M`, which are replaced with the four-digit year, month, day of month, hour, and minute as defined in [strftime(3)](https://www.freebsd.org/cgi/man.cgi?query=strftime). For example, snapshots of *pool1* with a Naming Schema of `customsnap-%Y%m%d.%H%M` have names like *pool1@customsnap-20190315.0527*. |
+| **Naming Schema** | Snapshot name format string. The default is `auto-%Y-%m-%d_%H-%M`. Must include the strings `%Y`, `%m`, `%d`, `%H`, and `%M`, which are replaced with the four-digit year, month, day of month, hour, and minute as defined in [strftime(3)](https://man7.org/linux/man-pages/man3/strftime.3.htmle). For example, snapshots of *pool1* with a Naming Schema of `customsnap-%Y%m%d.%H%M` have names like *pool1@customsnap-20190315.0527*. |
 | **Schedule** | Select a presets from the dropdown list. Select *Custom* to open the advanced scheduler. |
 | **Begin** | Displays when **Schedule** is set to *Hourly*. Enter the hour and minute when the system can begin taking snapshots. |
 | **End** | Displays when **Schedule** is set to *Hourly*. Enter the hour and minute the system must stop creating snapshots. Snapshots already in progress continue until complete. |

@@ -4,6 +4,7 @@ description: "Describes different options for getting support for TrueNAS CORE."
 weight: 16
 aliases:
   - /core/system/support
+  - /_includes/createdebugcore/
 tags:
 - support
 ---
@@ -44,7 +45,7 @@ We recommend keeping the description less than three paragraphs and including an
 
 ## Suggesting New Features
 
-{{< include file="/static/includes/CreateJiraSuggestion.md" >}}
+{{< include file="/static/includes/CreateFeatureRequest.md" >}}
 
 ## TrueNAS Community
 

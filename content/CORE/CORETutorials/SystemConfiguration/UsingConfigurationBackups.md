@@ -3,7 +3,8 @@ title: "Using Configuration Backups"
 description: "Provides information concerning configuration backups on TrueNAS CORE."
 weight: 10
 aliases:
-  - /core/system/general/configbackup
+  - /core/system/general/configbackup/
+  - /core/coretutorials/systemconfiguration/usingconfigurationbackups/%E2%80%8B%E2%80%8B/
 tags:
 - configbackup
 - update

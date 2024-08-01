@@ -4,6 +4,8 @@ description: "Provides information on using Install Custom App to configure cust
 weight: 10
 aliases:
  - /scale/scaletutorials/apps/docker/
+ - /scale/apps/docker/
+ - /scale/scaleuireference/apps/docker/
 tags:
 - customapp
 - apps
@@ -35,7 +37,8 @@ If your application requires directory paths, specific datasets, or other storag
 
 You cannot exit the configuration wizard and save settings to create data storage or directories in the middle of the process. If you are unsure about any configuration settings, review the [Install Custom App Screen UI reference article]({{< relref "InstallCustomAppScreens.md" >}}) before creating a new container image.
 
-To create directories in a dataset on SCALE, before you begin installing the container, open the TrueNAS SCALE CLI and enter `storage filesystem mkdir path="/PATH/TO/DIRECTORY"`.
+Create directories in a dataset on SCALE, before you begin installing the container. 
+{{< include file="/static/includes/MakeDirectory.md" >}}
 {{< /hint >}}
 
 When you are ready to create a container, go to **Apps**, click **Discover Apps**, then click **Custom App**.

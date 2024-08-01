@@ -21,10 +21,12 @@ Advanced Settings provides configuration options for the console, syslog, kernel
 
 {{< trueimage src="/images/SCALE/SystemSettings/SystemAdvancedScreen.png" alt="SCALE Advanced Settings Screen" id="SCALE Advanced Settings Screen" >}}
 
+{{< trueimage src="/images/SCALE/SystemSettings/SystemAdvancedScreen2.png" alt="SCALE Advanced Settings Screen" id="SCALE Advanced Settings Screen" >}}
+
 This article provides information on sysctl, system dataset pool, setting the maximum number of simultaneous replication tasks the system can perform, and managing sessions.
 
 ## Managing Allowed IP Addresses
-Use the **System Settings > Advanced** screen **Allowed IP Addresses** configuration screen to restrict access to the TrueNAS SCALE web UI and API.
+Use the **System > Advanced** screen **Allowed IP Addresses** configuration screen to restrict access to the TrueNAS SCALE web UI and API.
 
 Entering an IP address limits access to the system to only the address(es) entered here. To allow unrestricted access to all IP addresses, leave this list empty.
 
@@ -47,7 +49,8 @@ Click **Save**.
 
 ## Managing the System Dataset Pool
 **Storage** widget displays the pool configured as the system dataset pool and allows users to select the storage pool they want to hold the system dataset.
-The system dataset stores core files for debugging and keys for encrypted pools. It also stores Samba4 metadata, such as the user and group cache and share-level permissions.
+The system dataset stores core files for debugging and keys for encrypted pools.
+It also stores Samba4 metadata, such as the user and group cache and share-level permissions.
 
 ![AdvancedSystemStorageWidget](/images/SCALE/SystemSettings/AdvancedSystemStorageWidget.png "SCALE Advanced System Dataset Pool Widget")
 
@@ -55,19 +58,18 @@ The system dataset stores core files for debugging and keys for encrypted pools.
 
 ### Storage Settings Configuration Screen
 
-If the system has one pool, TrueNAS configures that pool as the system dataset pool. If your system has more than one pool, you can set the system dataset pool using the **Select Pool** dropdown. Users can move the system dataset to an unencrypted pool, or an encrypted pool without passphrases.
+If the system has one pool, TrueNAS configures that pool as the system dataset pool.
+If your system has more than one pool, you can set the system dataset pool using the **Select Pool** dropdown.
+Users can move the system dataset to an unencrypted pool, or an encrypted pool without passphrases.
 
 ![SystemDatasetPoolConfigScreen](/images/SCALE/SystemSettings/SystemStorageConfigScreen.png "SCALE Advanced Settings System Dataset Pool Screen")
 
-Users can move the system dataset to a key-encrypted pool, but cannot change the pool encryption type afterward. If the encrypted pool already has a passphrase set, you cannot move the system dataset to that pool.
-
-**Swap Size** lets users enter an amount (in GiB) of hard disk space to use as a substitute for RAM when the system fully utilizes the actual RAM.
-
-By default, the system creates all data disks with the specified swap amount. Changing the value does not affect the amount of swap on existing disks, only disks added after the change. Swap size does not affect log or cache devices.
+Users can move the system dataset to a key-encrypted pool, but cannot change the pool encryption type afterward.
+If the encrypted pool already has a passphrase set, you cannot move the system dataset to that pool.
 
 ## Setting the Number of Replication Tasks
 
-The **Replication** widget displays the number of replication tasks that can execute simultaneously configured on the system. It allows users to adjust the maximum number of replication tasks the system can execute simultaneously.
+The **Replication** widget displays the number of replication tasks that can execute simultaneously on the system. It allows users to adjust the maximum number of replication tasks the system can execute simultaneously.
 
 ![SystemAdvancedSettingsReplicationWidget](/images/SCALE/SystemSettings/SystemAdvancedSettingsReplicationWidget.png "SCALE Advanced Settings Replication Widget")
 
@@ -77,11 +79,13 @@ Click **Configure** to open the **Replication** configuration screen.
 
 Enter a number for the maximum number of simultaneous replication tasks you want to allow the system to process and click **Save**.
 
-## Managing Access (Websocket Sessions)
+## Managing Access (WebSocket Sessions)
 
 {{< include file="/static/includes/AccessSettingsWidget.md" >}}
 
 <div class="noprint">
+
+{{<include file="/static/includes/addcolumnorganizer.md">}}
 
 ## Contents
 

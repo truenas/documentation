@@ -6,6 +6,7 @@ aliases:
  - /scale/scaleuireference/storage/snapshotsscale/
  - /scale/scaletutorials/storage/snapshotsscale/
  - /scale/scaletutorials/storage/datasets/managesnapshotsscale/
+ - /_includes/cloneandpromotesnapshotdataset/
 tags: 
  - snapshots
  - backup
@@ -84,3 +85,5 @@ Click **Confirm** to activate the **Rollback** button.
 ## Browsing a Snapshot Collection
 
 {{< include file="/static/includes/BrowsingSnapshotCollections1.md" >}}
+
+{{<include file="/static/includes/addcolumnorganizer.md">}}

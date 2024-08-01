@@ -4,6 +4,7 @@ description: "Tutorials for SMB sharing scenarios."
 geekdocCollapseSection: true
 weight: 50
 aliases: 
+ - /hub/sharing/smb/smb-share/
  - /core/sharing/smb/smbshare/
  - /core/coretutorials/sharing/smb/smbshare/
 related: false
@@ -80,6 +81,11 @@ It is not required to access an SMB server.
    {{< /expand >}}
 
    {{< expand "What about LDAP users?" "v" >}}
+   {{< hint type=important >}}
+   Support for LDAP **Samba Schema** is deprecated in TrueNAS CORE 13.0 or later.
+   Users with LDAP and SMB shares configured should begin to migrate legacy Samba domains to Active Directory.
+   {{< /hint >}}
+
    With LDAP configured, users from the LDAP server can have access the SMB share.
    Go to **Directory Services > LDAP > ADVANCED MODE** and set **Samba Schema**.
    Caution: local TrueNAS user accounts no longer have access to the share.

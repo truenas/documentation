@@ -2,7 +2,7 @@
 title: "Virtualization"
 description: "Tutorials for configuring TrueNAS SCALE virtualization features."
 geekdocCollapseSection: true
-alias:
+aliases:
  - /scale/scaleuireference/virtualization/creatingmanagingvmsscale/
  - /scale/scaletutorials/virtualization/creatingmanagingvmsscale/
 weight: 11
@@ -141,6 +141,8 @@ After creating the VM, you can add or remove virtual devices.
 Click on the VM row on the **Virtual Machines** screen to expand it and show the options, then click <i class="material-icons" aria-hidden="true" title="Devices">device_hub</i> **Devices**.
 
 {{< trueimage src="/images/SCALE/Virtualization/VMDevicesListed.png" alt="Devices" id="Devices" >}}
+
+{{<include file="/static/includes/addcolumnorganizer.md">}}
 
 Device notes:
 

@@ -10,6 +10,7 @@ keywords:
 - enterprise storage solutions
 - nas storage solutions
 - software storage solutions
+- hybrid storage
 ---
 
 An Uninterruptible Power Supply (UPS) is a power backup system that ensures continuous electricity during outages, preventing downtime and damage.
@@ -29,7 +30,7 @@ TrueNAS displays the issue in logs as a recurring error like **libusb_get_interr
 If you get an error, decrease the polling frequency by adding an entry to **Auxiliary Parameters (ups.conf)**: `pollinterval = 10`.
 
 {{< expand "How do I find a device name?" "v" >}}
-For USB devices, the easiest way to determine the correct device name is to set **Show console messages** in **System Settings > Advanced**.
+For USB devices, the easiest way to determine the correct device name is to set **Show console messages** in **System > Advanced**.
 Plug in the USB device and look for a <file>/dev/ugen</file> or <file>/dev/uhid</file> device name in the console messages.
 {{< /expand >}}
 

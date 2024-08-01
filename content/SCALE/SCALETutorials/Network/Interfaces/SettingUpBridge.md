@@ -5,6 +5,7 @@ weight: 20
 tags:
 - network
 - interfaces
+- data provisioning
 ---
 
 In general, a [bridge](https://tools.ietf.org/html/rfc6325) refers to various methods of combining (aggregating) multiple network connections into a single aggregate network.
@@ -21,3 +22,5 @@ A bridge can also be used to allow a VM configured on TrueNAS to communicate wit
 {{< include file="/static/includes/BeforeYouBridge.md" >}}
 
 {{< include file="/static/includes/NetworkBridgeSCALE.md" >}}
+
+{{<include file="/static/includes/addcolumnorganizer.md">}}

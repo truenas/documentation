@@ -2,9 +2,12 @@
 title: "Email Screens"
 description: "Provides information on the email configuration screens for SMTP and GMail OAuth."
 weight: 20
+aliases:
+ - /scale/scaleclireference/system/climail/
 tags:
 - email
 - alerts
+- toolbar
 ---
 
 The top toolbar **Alerts** <span class="material-icons">notifications</span> icon button and <span class="material-icons">settings</span> icon display the **Alerts** dropdown list with two options: **Alert Settings** and **Email**.

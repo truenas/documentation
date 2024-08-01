@@ -38,7 +38,7 @@ Before adding a multiprotocol SMB and NFS share to your system:
 Before joining AD and creating a dataset for the share to use, start both the SMB and NFS services and configure the NFS service for Kerberos authentication.
 Configure the NFS service before joining AD for simpler Kerberos credential creation.
 
-You can either use the**Shares** screen **Configure Service** option on both the **Windows (SMB) Share** and on the **UNIX (NFS) Shares** widgets, or go to **System Settings > Services** and select the **Edit** option on the **SMB** and **NFS** services.
+You can either use the**Shares** screen **Configure Service** option on both the **Windows (SMB) Share** and on the **UNIX (NFS) Shares** widgets, or go to **System > Services** and select the **Edit** option on the **SMB** and **NFS** services.
 
 {{< trueimage src="/images/SCALE/Shares/SharingSMBServicesActionOptions.png" alt="SMB Service Options" id="SMB Service Options" >}}
 
@@ -50,7 +50,7 @@ From the **Sharing** screen, click on the **Windows (SMB) Shares** <span class="
 
 After adding a share, use the toggle to enable or disable the service for that share.
 
-To enable the service from the **System Settings > Services** screen, click the toggle for the service and set **Start Automatically** if you want the service to activate when TrueNAS boots.
+To enable the service from the **System > Services** screen, click the toggle for the service and set **Start Automatically** if you want the service to activate when TrueNAS boots.
 
 ### Configuring and Starting the NFS Service
 Open the **NFS** service screen, then select only **NFSv4** on the **Enabled Protocols** dropdown list.
@@ -78,7 +78,7 @@ Each NFS share on the list also has a toggle to enable or disable the service fo
 
 {{< trueimage src="/images/SCALE/Shares/NFSWidgetOptions.png" alt="Unix (NFS) Shares Widget Options" id="Unix (NFS) Shares Widget Options" >}}
 
-To enable the service from the **System Settings > Services** screen, click the toggle for the service and set **Start Automatically** if you want the service to activate when TrueNAS boots.
+To enable the service from the **System > Services** screen, click the toggle for the service and set **Start Automatically** if you want the service to activate when TrueNAS boots.
 
 {{< hint type=note >}}
 The NFS service does not automatically start on boot if all NFS shares are encrypted and locked.
@@ -174,6 +174,8 @@ If not, add this Access Control Entry (ACE) item on the **Edit ACL** screen for 
 See [Permissions]({{< relref "PermissionsScale.md" >}}) for more information on editing dataset permissions.
 
 After setting the dataset permission, connect to the share.
+
+{{<include file="/static/includes/addcolumnorganizer.md">}}
 
 ### Connecting to a Multiprotocol Share
 After creating and configuring the shares, connect to the mulit-protocol share using either SMB or NFS protocols from a variety of client operating systems including Windows, Apple, FreeBSD, and Linux/Unix systems.

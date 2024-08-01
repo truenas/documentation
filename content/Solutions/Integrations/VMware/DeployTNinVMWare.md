@@ -144,6 +144,12 @@ To create the virtual machine for your TrueNAS, from the **Virtual Machines** sc
 
    If needed, click **Add hard disk** again to add more hard drives if you want to equip your VM with more than the minimum required number of drives.
 
+   In order to prevent potential errors when importing your pool, a custom parameter should be set to allow VMware to provide serial numbers for virtual hard disks.
+   Click on the **VM Options** tab, and then click on **Advanced** to expand this section.
+   Next to the Configuration Parameters section, click on **Edit Configuration**.
+   Click **Add parameter**. In the **Key** column, enter `disk.EnableUUID` and enter `TRUE` in the **Value** column.
+   Click **OK**.
+
    Click **Next** to finish creating the VM. You can use the **Edit** option later to add more drives to support your TrueNAS deployment.
 
    Each storage layout has different disk minimum disk requirements.

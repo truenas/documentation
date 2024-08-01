@@ -10,7 +10,7 @@ tags:
  - services
 ---
 
-The **System Settings > Services** screen includes three icons on the **SMB** service row:
+The **System > Services** screen includes three icons on the **SMB** service row:
 * <span class="iconify" data-icon="material-symbols:receipt-long"></span> **Audit Logs** opens the [**Audit** screen]({{< relref "AuditingSCALE.md#accessing-auditing-screens" >}}).
 * <span class="iconify" data-icon="material-symbols:list"></span> **SMB Sessions** opens the [**SMB Status** screen]({{< relref "SMBSharesScreens.md" >}}).
 * <span class="iconify" data-icon="ic:baseline-edit"></span> **Configure** opens the **SMB Service** screen showing the **Basic Settings** by default.
@@ -45,12 +45,12 @@ Click **Save** or **Cancel** to close the configuration screen and return to the
 | Setting | Description |
 |---------|-------------|
 | **UNIX Charset** | Select the character set to use internally from the dropdown list of options. **UTF-8** is standard for most systems as it supports all characters in all languages. |
+| **Transport Encryption Behavior** | Select the option for the level of transport encryption to implement. Options and behaviors:<br><li>**Default - follow upstream/TrueNAS default** <br><li>**Negotiate - only encrypt transport if explicitly requested by the SMB client** <br><li>**Desired - encrypt transport if supported by client during session negotiation** <br><li>**Required - always encrypt transport (rejecting access if client does not support encryption - incompatible with SMB1 server `enable_smb1`)** </li>the TrueNAS and Samba default behavior allows SMB clients to negotiate different encryption levels for SMB shares. When set to **Default**, there is no technical limitation preventing an SMB client from negotiating an encrypted session if it is required. **Default** enables negotiating encryption but does not turn on data encryption globally per share. For more information on SMB1 and SMB2 session or per-share encryption, see [Samba Server SMB Encrypt(s)](https://www.samba.org/samba/docs/current/man-html/smb.conf.5.html#SERVERSMBENCRYPT). For more information on using Windows client-side SMB signing, see [Windows SMB Signing Policies](https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/overview-server-message-block-signing#policy-locations-for-smb-signing). |
 | **Log Level** | Record SMB service messages up to the specified log level from the dropdown list. Options are **None**, **Minimum**, **Normal**, **full** and **Debug**. By default, TrueNAS logs error and warning-level messages. We do not recommend using a log level above **Minimum** for production servers. |
 | **Use Syslog Only** | Select to log authentication failures in <file>/var/log/messages</file> instead of the default <file>/var/log/samba4/log.smbd</file>. |
 | **Local Master** | Selected by default and determines if the system participates in a browser election. Leave cleared when the network contains an Active Directory or LDAP server or when Vista or Windows 7 machines are present. |
 | **Enable Apple SMB2/3 Protocol Extensions** | Select to allow MacOS to use these [protocol extensions](https://support.apple.com/en-us/HT210803) to improve the performance and behavioral characteristics of SMB shares. TrueNAS requires Apple SMB2/3 protocol extensions for Time Machine support. |
 | **Multichannel** | SMB multichannel allows servers to use multiple network connections simultaneously by combining the bandwidth of several network interface cards (NICs) for better performance. SMB multichannel does not function if you combine NICs into a LAGG. |
-| **Administrators Group** | Enter or select members from the dropdown list. Members of this group are local administrators and automatically have privileges to take ownership of any file in an SMB share, reset permissions, and administer the SMB server through the Computer Management MMC snap-in. |
 {{< /truetable >}}
 
 {{< trueimage src="/images/SCALE/SystemSettings/SMBServiceAdvanced2.png" alt="SMB Service Advanced Settings (continued)" id="SMB Service Advanced Settings (continued)" >}}
@@ -58,9 +58,9 @@ Click **Save** or **Cancel** to close the configuration screen and return to the
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
+| **Administrators Group** | Enter or select members from the dropdown list. Members of this group are local administrators and automatically have privileges to take ownership of any file in an SMB share, reset permissions, and administer the SMB server through the Computer Management MMC snap-in. |
 | **Guest Account** | Select the account for guest access from the dropdown list. The default is **nobody**. The selected account must have permission for the shared pool or dataset. To adjust permissions, edit the dataset Access Control List (ACL), add a new entry for the chosen guest account, and configure the permissions in that entry. If you delete the selected **Guest Account**, the field resets to **nobody**. |
 | **File Mask** | Overrides default **0666** file creation mask, which creates files with read and write access for everybody. |
 | **Directory Mask** | Overrides default directory creation mask of **0777**, which grants everyone directory read, write, and execute access. |
 | **Bind IP Addresses** | Select static IP addresses that SMB listens on for connections from the dropdown list. Leaving all unselected defaults to listening on all active interfaces. |
-| **Auxiliary Parameters** | Enter additional [smb.conf](https://www.samba.org/samba/docs/current/man-html/smb.conf.5.html) options. Refer to the [Samba Guide](http://www.oreilly.com/openbook/samba/book/appb_02.html) for more information on these settings. You can use **Auxiliary Parameters** to override the default SMB server configuration, but such changes could adversely affect SMB server stability or behavior. To log more details when a client attempts to authenticate to the share, add `log level = 1, auth_audit:5`. |
 {{< /truetable >}}

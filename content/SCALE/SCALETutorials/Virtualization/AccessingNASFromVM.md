@@ -13,7 +13,7 @@ keywords:
 
 If you want to access your TrueNAS SCALE directories from a VM, you have multiple options:
 
-* If you have only one physical interface, you must create a bridge interface for the VM.
+* If you have only one physical interface, you must create a bridge interface for the VM. 
 * If your system has more than one physical interface you can assign your VMs to a NIC other than the primary one your TrueNAS server uses.
   This method makes communication more flexible but does not offer the potential speed of a bridge.
 
@@ -96,3 +96,5 @@ The example below shows the Windows VM accessing an SMB share on TrueNAS.
 
 {{< trueimage src="/images/SCALE/AccessNASfromVM9.png" alt="SMB Share" id="SMB Share" >}}
 {{< /expand >}}
+
+{{<include file="/static/includes/addcolumnorganizer.md">}}

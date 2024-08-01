@@ -11,6 +11,7 @@ keywords:
 - nas data storage
 - data protection
 - data backup and recovery
+- VMWare storage profiles
 ---
 
 Use this procedure to create ZFS snapshots when using TrueNAS SCALE as a VMWare datastore.
@@ -86,6 +87,8 @@ Virtual machines must be running for TrueNAS to include them in VMWare snapshots
 ## Creating a VMWare Snapshot
 
 To configure TrueNAS SCALE to create VMWare snapshots, go to **Data Protection** and click the **VMware Snapshot Integration** button in the **Periodic Snapshot Tasks** widget to open the **VMWare Snapshots** screen.
+
+Note that you can organize information in the columns of the table(s) below by clicking on each column title. This allows you to toggle the information between a descending an ascending order.
 
 {{< trueimage src="/images/SCALE/DataProtection/vmwaresnapshottask.png" alt="VMware Snapshot Integration" id="VMware Snapshot Integration" >}}
 

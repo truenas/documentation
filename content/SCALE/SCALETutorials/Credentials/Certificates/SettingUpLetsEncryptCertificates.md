@@ -27,9 +27,9 @@ Go to **Credentials > Certificates** and click **ADD** in the **ACME DNS-Authent
 Enter the required fields depending on your provider, then click **Save**.
 
 For Cloudflare, enter either your **Cloudflare Email** and **API Key**, or enter an **API Token**.
-If you create an [API Token](https://dash.cloudflare.com/profile/api-tokens), make sure to give the token the permission **Zone.DNS:Edit** as it's [required by certbot](https://certbot-dns-cloudflare.readthedocs.io/en/stable/).
+If you create an [API Token](https://dash.cloudflare.com/profile/api-tokens), make sure to give the token the permission **Zone.DNS:Edit**, as it's [required by certbot](https://certbot-dns-cloudflare.readthedocs.io/en/stable/).
 
-For Route53, enter your **Access Key ID** and **Secret Access Key**.
+For Route53, enter your **Access Key ID** and **Secret Access Key**. The associated IAM user must have permission to perform the Route53 actions `ListHostedZones`, `ChangeResourceRecordSets`, and `GetChange`.
 
 For OVH, enter your **OVH Application Key**, **OVH Application Secret**, **OVH Consumer Key**, and **OVH Endpoint**.
 
@@ -57,7 +57,7 @@ You can create testing and staging certificates for your domain.
 
 ## Set the GUI SSL Certificate
 
-Go to **System Settings > General** and click **Settings** in the GUI widget.
+Go to **System > General** and click **Settings** in the GUI widget.
 
 Select the new ACME certificate you created from the **GUI SSL Certificate** dropdown, then click **Save**.
 

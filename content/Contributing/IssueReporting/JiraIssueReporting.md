@@ -69,10 +69,6 @@ Developers review and update the ticket if/when they need additional information
 The Jira account receives emails about the ticket status.
 Developers might request more details as they work to resolve the issue, so check the ticket periodically.
 
-### Making Feature Suggestions
-
-{{< include file="/static/includes/CreateJiraSuggestion.md" >}}
-
 ### Security Issues
 
 See https://security.truenas.com/ for security advisories and software bill of materials for specific TrueNAS releases.

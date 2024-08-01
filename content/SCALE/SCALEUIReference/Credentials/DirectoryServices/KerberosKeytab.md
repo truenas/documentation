@@ -35,6 +35,8 @@ The **Kerberos Realms** screen displays a list view of realms configured on your
 
 The <span class="material-icons">more_vert</span> button opens the actions options for the selected keytab. Options are **Edit** which opens the **Edit Kerberos Keytab** screen for the selected keytab, and **Delete** that opens a delete confirmation dialog.
 
+{{<include file="/static/includes/addcolumnorganizer.md">}}
+
 ## Add and Edit Kerberos Keytab Screens
 The settings found on the **Add Kerberos Keytab** and **Edit Kerberos Keytab** screens are the same. 
 

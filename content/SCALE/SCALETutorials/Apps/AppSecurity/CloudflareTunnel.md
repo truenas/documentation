@@ -10,7 +10,7 @@ keywords:
 - software storage solutions
 ---
 
-This Guide shows how to create a Cloudflare tunnel and configure the **Nextcloud** and **Cloudflared** applications in TrueNAS SCALE.
+This guide shows how to create a Cloudflare tunnel and configure the **Nextcloud** and **Cloudflared** applications in TrueNAS SCALE.
 The goal is to allow secure access from anywhere.
 
 {{< hint type=important >}}
@@ -21,6 +21,8 @@ See [additional security considerations](#additional-security-considerations) be
 {{< /hint >}}
 
 Review the [Nextcloud documentation](https://docs.nextcloud.com/server/latest/admin_manual/configuration_server/reverse_proxy_configuration.html) to get a better understanding of the security implications before proceeding.
+
+{{< include file="/static/includes/AppsUnversioned.md" >}}
 
 ## Setting Up Cloudflare
 
@@ -111,13 +113,11 @@ The [Nextcloud documentation](https://docs.nextcloud.com/server/latest/admin_man
 Depending on the reverse proxy and its configuration, these settings may vary.
 For example, if you don't use a subdomain, but a path like *example.com/nextcloud*.
 
-If you want to access your application via subdomain (shown in this guide) two environment variables must be set in the Nextcloud application: [overwrite.cli.url](https://docs.nextcloud.com/server/latest/admin_manual/configuration_server/config_sample_php_parameters.html#overwrite-cli-url) and [overwritehost](https://docs.nextcloud.com/server/latest/admin_manual/configuration_server/config_sample_php_parameters.html#overwritehost).
+If you want to access your application via subdomain (shown in this guide) two environment variables must be set in the Nextcloud application: [overwrite.cli.url](https://docs.nextcloud.com/server/latest/admin_manual/configuration_server/config_sample_php_parameters.html#overwrite-cli-url) and [overwritehost](https://docs.nextcloud.com/server/latest/admin_manual/configuration_server/config_sample_php_parameters.html#overwritehost). Additionally, you will need to clear the Host field under Nextcloud Configuration, otherwise the OVERWRITEHOST variable cannot be set.
 
 Enter the two environment variables in **Name** as *OVERWRITECLIURL* and *OVERWRITEHOST*.
 
 Enter the address for the Cloudflare Tunnel, configured above in **Value**, for example *nextcloud.example.com*.
-
-{{< trueimage src="/images/SCALE/Apps/NextcloudEnviromentVariables.png" alt="Nextcloud Environment Variables" id="Nextcloud Environment Variables" >}}
 
 ### Testing the Cloudflare Tunnel
 

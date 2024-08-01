@@ -8,6 +8,7 @@ aliases:
 tags:
  - replication
  - backup
+ - replication
 ---
 
 The **Replication Task** widget on the **Data Protection** screen lists replication tasks configured on the TrueNAS system.
@@ -57,6 +58,8 @@ The details view of each replication task shows the **Transport**, **SSH Connect
 {{< trueimage src="/images/SCALE/DataProtection/ReplicationTaskDetails.png" alt="Replication Task Details" id="Replication Task Details" >}}
 
 The <span class="material-icons">edit</span> **Edit** button opens the **[Edit Replication Task](#edit-replication-task-screen)** screen.
+
+{{<include file="/static/includes/addcolumnorganizer.md">}}
 
 ### Run Now Option
 The <span class="material-icons">play_arrow</span> **Run Now** button opens a **Run Now** dialog.
@@ -253,8 +256,8 @@ These setting display for all three **Transport** options.
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Allow Blocks Larger than 128KB** | Select to allow this replication to send large data blocks. The destination system must also support large blocks. This setting cannot be changed after it is enabled and the replication task is created. For more details, see [zfs(8)](https://www.freebsd.org/cgi/man.cgi?query=zfs). |
-| **Allow Compressed WRITE Records** | Use compressed WRITE records to make the stream more efficient. The destination system must also support compressed WRITE records. See [zfs(8)](https://www.freebsd.org/cgi/man.cgi?query=zfs). |
+| **Allow Blocks Larger than 128KB** | Select to allow this replication to send large data blocks. The destination system must also support large blocks. This setting cannot be changed after it is enabled and the replication task is created. For more details, see [zfs(8)](https://linux.die.net/man/8/zfs). |
+| **Allow Compressed WRITE Records** | Use compressed WRITE records to make the stream more efficient. The destination system must also support compressed WRITE records. See [zfs(8)](https://linux.die.net/man/8/zfs). |
 {{< /truetable >}}
 {{< /expand >}}
 

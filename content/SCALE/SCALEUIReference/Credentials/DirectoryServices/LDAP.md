@@ -13,6 +13,11 @@ tags:
 - directoryservices
 ---
 
+{{< hint type=important >}}
+Support for LDAP **Samba Schema** is deprecated in TrueNAS SCALE 22.02 (Angelfish) and removed in 24.10 (Electric Eel).
+Migrate legacy Samba domains to Active Directory before upgrading to 24.10 or later.
+{{< /hint >}}
+
 ## LDAP Widget
 
 The **LDAP** widget displays after you configure SCALE settings for your LDAP instance.
@@ -64,12 +69,7 @@ The settings on the **Advanced Options** screen include the **[Basic Options](#l
 | **Kerberos Principal** | Select the location of the principal in the keytab created in **Kerberos Keytab**. |
 | **LDAP Timeout** | Enter the number of seconds for the LDAP timeout. Increase this value if a Kerberos ticket timeout occurs. |
 | **DNS Timeout** | Enter the number of seconds for the DNS timeout. Increase this value if DNS queries timeout. |
-| **Samba Schema (DEPRECATED - see help text below)** | Only select if you configured the LDAP server with Samba attributes and it requires LDAP authentication for SMB shares. |
 | **Auxiliary Parameters** | (Optional - only experienced users) Specify additional options for [nslcd.conf](https://arthurdejong.org/nss-pam-ldapd/nslcd.conf.5). |
-| **Schema** | Select the schema to use with Samba Schema. |
+| **Schema** | Select the LDAP NSS schema from the dropdown list. Options are **RFC2307** or **RFC2307BIS**. |
 {{< /truetable >}}
-
-{{< hint type=important >}}
-**DEPRECATED:** Samba Schema support is deprecated in Samba 4.13. We are removing this feature after Samba 4.14. Users should begin upgrading legacy Samba domains to Samba AD domains.
-{{< /hint >}}
 {{< /expand >}}

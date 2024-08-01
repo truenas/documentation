@@ -8,6 +8,7 @@ aliases:
 tags:
 - nfs
 - shares
+- Linux
 ---
 
 ## About UNIX (NFS) Shares
@@ -114,17 +115,19 @@ To begin sharing, click the <span class="material-icons">more_vert</span> on the
 
 {{< trueimage src="/images/SCALE/Shares/NFSWidgetOptions.png" alt="Unix (NFS) Shares Widget Options" id="Unix (NFS) Shares Widget Options" >}}
 
-Or you can go to **System Settings > Services**, locate **NFS**, and click the toggle to running.
+Or you can go to **System > Services**, locate **NFS**, and click the toggle to running.
 Select **Start Automatically** if you want NFS to activate when TrueNAS boots.
+
+{{<include file="/static/includes/addcolumnorganizer.md">}}
 
 {{< hint type=note >}}
 The NFS service does not automatically start on boot if all NFS shares are encrypted and locked.
 {{< /hint >}}
 
 ### Configuring NFS Service
-You can configure the NFS service from either the **System Settings > Services** or the **Shares > Unix Shares (NFS)** widget.
+You can configure the NFS service from either the **System > Services** or the **Shares > Unix Shares (NFS)** widget.
 
-To configure NFS service settings from the **Services** screen, click <i class="material-icons" aria-hidden="true" title="Configure">edit</i> on the **System Settings > Services** screen to open the **NFS** service screen.
+To configure NFS service settings from the **Services** screen, click <i class="material-icons" aria-hidden="true" title="Configure">edit</i> on the **System > Services** screen to open the **NFS** service screen.
 
 To configure NFS service settings from the **Shares > Unix Shares (NFS)** widget, click the **Config Service** from the <span class="material-icons">more_vert</span> dropdown menu on the widget header to open the **NFS** service screen.
 Unless you need specific settings, we recommend using the default NFS settings.
@@ -143,7 +146,7 @@ Where *{IPaddressOfTrueNASsystem}* is the remote TrueNAS system IP address that 
 For example, `sudo mount -t nfs 10.239.15.110:/mnt/Pool1/NFS_Share /mnt` mounts the NFS share *NFS_Share* to the local directory */mnt*.
 
 You can also use the Linux `nconnect` function to let your NFS mount support multiple TCP connections.
-To enable `nconnect`, enter `sudo mount -t nfs -o rw,nconnect=16 {IPaddressOfTrueNASsystem}:{path/to/nfsShare} {localMountPoint}`.
+To enable Linux `nconnect`, enter `sudo mount -t nfs -o rw,nconnect=16 {IPaddressOfTrueNASsystem}:{path/to/nfsShare} {localMountPoint}`.
 Where *{IPaddressOfTrueNASsystem}*, *{path/to/nfsShare}*, and *{localMountPoint}* are the same ones you used when connecting to the share.
 For example, `sudo mount -t nfs -o rw,nconnect=16 10.239.15.110:/mnt/Pool1/NFS_Share /mnt`.
 

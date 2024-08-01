@@ -2,7 +2,10 @@
 title: "Local Users Screens"
 description: "Provides information on the Users screens and settings and information on settings for the TrueNAS SCALE Shell screen."
 weight: 10
-alias: 
+aliases: 
+ - /scale/scaleclireference/account/
+ - /scale/scaleclireference/account/cliuser/
+ - /scale/scaleuireference/credentials/localusers/
 tags:
 - users
 - accounts
@@ -39,6 +42,8 @@ It provides the option to edit or delete the user, and access user audit logs.
 
 The **Add User** and **Edit User** configuration screens display the same setting options. 
 Built-in users (except the **root** user) do not include the **Home Directory Permissions** settings, but all new users created, such as those for an SMB share like the **smbguest** user, do.
+
+{{<include file="/static/includes/addcolumnorganizer.md">}}
 
 ### Identification Settings
 **Identification** settings specify the name, user name, password, and user email.
@@ -95,7 +100,7 @@ Built-in users (except the **root** user) do not include the **Home Directory Pe
 
 ### Authentication settings
 **Authentication** settings specify authentication methods, the public SSH key, user administration access, and enable/disable password authentication.
-The add and edit user screens grant access to a shell option, but the [privilege screen **Web Shell Access** setting]({{< relref "LocalGroupsScreens.md#PrivilegesScreen" >}}) determines the ability to see the **System Settings > Shell** screen.
+The add and edit user screens grant access to a shell option, but the [privilege screen **Web Shell Access** setting]({{< relref "LocalGroupsScreens.md#PrivilegesScreen" >}}) determines the ability to see the **System > Shell** screen.
 
 {{< trueimage src="/images/SCALE/Credentials/AddUserHomeDirAuthSCALE.png" alt="Authentication Settings" id="Authentication Settings" >}}
 
@@ -127,7 +132,7 @@ You can set a specific [shell]({{< relref "UseScaleShell.md" >}}) for the user f
 | **dash** | [Debian Almquist shell](https://man7.org/linux/man-pages/man1/dash.1.html) |
 | **sh** | [Bourne shell](https://www.in-ulm.de/~mascheck/bourne/v7/) |
 | **tmux** | [terminal multiplexer](https://man7.org/linux/man-pages/man1/tmux.1.html)  |
-| **zsh** | [Z shell](http://zsh.sourceforge.net/) |
+| **zsh** | [Z shell](https://zsh.sourceforge.net/) |
 | **TrueNAS CLI** | Use to open **Shell** in the CLI. Eliminates the need to enter `cli` at the Shell system prompt to enter the TrueNAS CLI. Enter `ls` to see the list of namespaces. |
 | **TrueNAS Console** |Use to open **Shell** in the Console Setup menu. Eliminates the need to enter `menu`. Displays the console setup menu options. This option provides the user with access to the Linux and TrueNAS CLI shells. |
 {{< /truetable >}}

@@ -1,6 +1,6 @@
 ---
 title: Dashboard
-description: "Explains the main Dashboard information cards (widgets). Includes basic instructions on synchronizing the system server and SCALE time, and on customizing the Dashboard display."
+description: "Explains the main dashboard information cards (widgets) and provides basic information on synchronizing the system and SCALE server times, and on customizing the Dashboard display."
 weight: 4
 tags:
 - dashboard
@@ -8,143 +8,292 @@ tags:
 keywords:
 - nas storage software
 - enterprise storage system
+- data reporting
+- storage provisioning
 ---
 
-The **Dashboard** screen displays the first time you log into the SCALE web interface. 
-To display the **Dashboard** screen again click **Dashboard** on the left side panel. 
+The **Dashboard** is the first screen you see after logging into the web interface after installing SCALE.
+It displays a set of default widgets with system, help, storage, and network information, but you can customize the display to suit your needs and preferences.
+**Dashboard** on the left side navigation panel returns to the main dashboard from any other screen in the UI.
 
-{{< trueimage src="/images/SCALE/Dashboard/DashboardMainScreenSCALE.png" alt="TrueNAS SCALE Dashboard" id="TrueNAS SCALE Dashboard" >}}
+{{< trueimage src="/images/SCALE/Dashboard/DashboardMainScreen.png" alt="TrueNAS SCALE Dashboard" id="TrueNAS SCALE Dashboard" >}}
 
-The **Dashboard** displays basic information about your TrueNAS system in widgets or information cards that group information about your TrueNAS by type. For example, CPU information appears in the CPU widget. 
-These widgets display in a default layout that you can change.
+The **Configure** button at the top right of the **Dashboard** changes the screen to [configuration mode](#dashboard-in-configuration-mode) and allows you to turn widget displays on or off.
 
-Use the **Reorder** button to change the layout of the various widgets to suit your preference.
+## Dashboard Widgets
+The **Dashboard** widgets show information about the TrueNAS system basic settings, CPU and memory usage, network traffic and link status, storage, and backup tasks.
+Dashboard widgets are customizable. Options include changing which widgets layouts and the location on the screen, and adding custom or application widgets.
 
-Use **Configure** turn the widget display on or off. When on, the widget displays on the dashboard.
+Pool and network interface widgets vary based on storage and network configurations on the system.
 
-## Dashboard Configuration Panel
+Click on the <span class="iconify" data-icon="ic:baseline-assessment"></span> **Reports** icon to display the data report screen that corresponds to the widget category.
+For example, clicking the <span class="iconify" data-icon="ic:baseline-assessment"></span> assessment icon on the **CPU** widget opens the **Reporting > CPU** screen. 
 
-The **Dashboard Configuration** panel allows you to turn widget displays on or off. 
-There are three widget group types: **System Widgets**, **Storage Widgets** and **Network Widgets**. 
-Storage and network widgets vary based on the pools and network interfaces configured on your TrueNAS. 
+{{< expand "System Information Widget" "v" >}} 
+The **System Information** widget shows general information about the SCALE system.
+The **Updates Available** button opens the **System Settings > Update** screen.
 
-{{< trueimage src="/images/SCALE/Dashboard/DashboardConfigureScreenSCALE.png" alt="Dashboard Configure Panel" id="Dashboard Configure Panel" >}}
+{{< trueimage src="/images/SCALE/Dashboard/DashboardSystemInfoWidgetGeneric.png" alt="System Information Widget" id="System Information Widget" >}}
 
-Click on the slider to turn the information display on or off.
+If installed on a customer-provided server, the widget shows a generic TrueNAS image.
 
-**System Widgets** control the display of the **System Information**, **Help**, **CPU**, **Memory**, and **Backup** widgets.
+If installed on iXsystems-provided hardware, the widget shows a picture of the system.
+Click on the image to display the **View Enclosure** screen.
 
-**Storage Widgets** control the display of the **Storage** widget and individual widgets for each pool configured on your TrueNAS.
-
-**Network Widgets** control the display of the **Network** widget and any individual interfaces configured on your TrueNAS.
-
-Use **Save** to retain any setting changes you make. Click on the **X** or on any part of the UI screen away from the **Dashboard Configure** panel to close it without saving changes.
-
-Click on the <span class="iconify" data-icon="ic:baseline-assessment"></span> assessment icon to display the report screen that corresponds to that widget. For example, clicking the <span class="iconify" data-icon="ic:baseline-assessment"></span> assessment icon on the **CPU** widget opens the **Reporting > CPU** screen. 
-
-### System Information Widget
-
-The **System Information** widget displays general information about the SCALE system. It includes an option to synchronize the system server time with TrueNAS SCALE time if they get out of sync.   
-{{< expand "Click here for more information" "v" >}}
-If installed on customer-provided servers the widget displays a generic TrueNAS image. 
-If installed on iXsystems-provided hardware, a picture of the iXsystems hardware displays on the card above the **Check For Updates** button. Click on the image to display the **View Enclosure** screen.
-
-{{< trueimage src="/images/SCALE/Dashboard/DashboardSystemInfoWidgetGeneric.png" alt="System Information Widget - Generic Hardware" id="System Information Widget - Generic Hardware" >}}
-
-{{< trueimage src="/images/SCALE/Dashboard/DashboardSystemInfoWidgetSCALE.png" alt="System Information Widget for iXsystems Hardware" id="System Information Widget for iXsystems Hardware" >}}
-
-If TrueNAS SCALE time gets out of sync with the system server time, the **System Information** widget displays a message and provides a **Synchronize Time** link that executes a time-synchronization operation.
-
-{{< trueimage src="/images/SCALE/Dashboard/DashboardSytemInfoWidgetTimeSync.png" alt="System Information Widget with Time Sync" id="System Information Widget with Time Sync" >}}
+{{< trueimage src="/images/SCALE/Dashboard/DashboardSystemInfoWidget.png" alt="System Information Widget for iX Systems" id="System Information Widget for iX Systems" >}}
 
 {{< truetable >}}
 | Field | Description |
 |-------|-------------|
-| **Platform** | Displays **Generic** for customer-provided server and hardware, and a TrueNAS logo displays to the left of the **System Information** fields. <br> Displays the TrueNAS model number for the iXsystems-provided server and hardware, and a picture of the server displays in the area to the left of the fields. |
-| **Version** | Displays the currently-installed software release of TrueNAS SCALE. Use the clipboard <span class="material-icons-outlined">assignment</span> icon to display the full name of the release installed and to copy the version to the clipboard. |
-| **Hostname** | Displays the host name for the TrueNAS system. Configure the host name on the **Network > Global Configuration** screen. |
-| **Uptime** | Displays the number of consecutive days and the number of hours and minutes the system has run since the last reboot. |
-| **Check For Updates** | Click to display the **System Update** screen. You can also display the **System Update** screen by selecting **System Settings > Update** on the main menu panel on the left side of the screen. | 
-| **Synchronize Time** <span class="material-icons">loop</span> | Executes a time-synchronization operation to bring the system server and TrueNAS SCALE time into alignment when time gets out of sync. This operation is not designed to correct time that is weeks out of sync, and only displays when the system and SCALE time are out of sync. |
+| **Platform** | Shows as **Generic** for customer-provided server and hardware and displays the TrueNAS SCALE logo to the left of the **System Information** fields. The TrueNAS model number for the iXsystems-provided server and hardware and a picture of the server shows in the area to the left of the fields. |
+| **Version** | Shows the currently-installed software release of TrueNAS SCALE. Use the clipboard <span class="material-icons-outlined">assignment</span> icon to display the full name of the release installed and to copy the version to the clipboard. |
+| **Hostname** | Shows the host name for the TrueNAS system. Configure the host name on the **Network > Global Configuration** screen. |
+| **Uptime** | Shows the number of consecutive days, and hours and minutes the system of runtime since the last reboot. |
+| **Updates Available**<br>**Check for Updates** | Opens the **System Update** screen, or go to **System > Update** on the left-side main menu panel to open the **System Update** screen. **Updates Available** shows when systems updates are available for the current system release train. | 
 {{< /truetable >}}
 {{< /expand >}}
 
-### CPU Widget
+{{< expand "HA System Information Widgets" "v" >}}
+{{< enterprise >}}
+The two HA **Active** and **Standby** controller **System Information** widgets show only for systems licensed for HA.
 
-The **CPU** widget displays information on the system CPU. 
-{{< expand "Click here for more information" "v" >}}
-The widget includes an **Avg Usage** dynamic spinner that displays the percentage of usage at that moment on the CPU. 
-The **Stats Per Thread** bar graph displays **Usage** in blue and **Temperature** in orange with the x axis with the number threads and the y axis the percent usage in 20 increment counts. 
-It also details the number **Cores** as ***x* cores (*y* threads)**, the **Highest Usage** as ***x*% (*y* threads at *x*%)**, and the **Hottest** temperature as ***x*&deg;C (*y* cores at *x*&deg;C)**.
+Each HA active or standby **System Information** widget shows the same information found on the non-HA **System Information** widget but also shows the system serial number, and system license number and type.
+The standby controller widget shows the **Initiate Failover** button.
+The active controller widget shows the **Check for Updates** button.
 
-{{< trueimage src="/images/SCALE/Dashboard/DashboardCPUWidgetSCALE.png" alt="CPU Widget" id="CPU Widget" >}}
+{{< trueimage src="/images/SCALE/Dashboard/DashboardHASystemInformationWidgets.png" alt="HA System Information Widgets" id="HA System Information Widgets" >}}
+
+{{< /enterprise >}}
+{{< /expand >}}
+
+{{< expand "CPU Widget" "v" >}}
+The **CPU** widget shows dynamic gauges and graphs with CPU usage and temperature readings for system cores updated in realtime.
+
+{{< trueimage src="/images/SCALE/Dashboard/DashboardCPUWidget.png" alt="CPU Widget" id="CPU Widget" >}}
+
+The widget shows gauges and graphs showing CPU statistics:
+* **CPU Usage** gauge that shows the average percentage of usage for the CPU cores.
+* **CPU Recent Usage** gauge that shows recent CPU usage updated in realtime, and includes the CPU model number, number of cores and physical cores.
+* **CPU Usage per CORE** bar graph that shows CPU usage per core.
+* **CPU Temperature per Core** bar graph that shows CPU **Usage** in blue and **Temperature** in orange.
+{{< /expand >}}
+
+{{< expand "Memory Widget" "v" >}}
+The **Memory** widget shows current system memory consumption information.
+
+{{< trueimage src="/images/SCALE/Dashboard/DashboardMemoryWidget.png" alt="Memory Widget" id="Memory Widget" >}}
+
+The widget includes a gauge showing GiB **Free** in blue, **ZFS Cache** in fuchsia pink, and **Services** in orange.
+
+You can configure the memory widget as a one large (100%) or one long (50%) plus two quarter size (25%) widget layouts.
 
 {{< /expand >}}
 
-### Memory Widget
+{{< expand "Network and Interface Widgets" "v" >}}
+The **Network** widget shows the status the configured primary system interface(s), link status, network I/O traffic, primary interface IP address, and media type and subtype if known.
+It includes a dynamic graph showing the time of recorded traffic and the incoming (blue) and outgoing (orange) traffic in kbs.
 
-The **Memory** widget displays information on the system memory. 
-{{< expand "Click here for more information" "v" >}}
-The widget displays a spinner showing the GiB **Free** in blue, **ZFS Cache** in fuchsia pink, and **Services** in orange. 
+{{< trueimage src="/images/SCALE/Dashboard/DashboardNetworkWidget.png" alt="Network Widget" id="Network Widget" >}}
 
-{{< trueimage src="/images/SCALE/Dashboard/DashboardMemoryWidgetSCALE.png" alt="Memory Widget" id="Memory Widget" >}}
+You can configure an individual network interface (NIC) widgets in addition to the **Network** widget.
+An **Interface** widget shows traffic, link status, interface media type and subtype, and any VLANS and the IP Address and port number.
+
+{{< trueimage src="/images/SCALE/Dashboard/DashboardInterfaceWidget.png" alt="Interface Widget" id="Interface Widget" >}}
+
+{{< /expand >}}
+
+{{< expand "Storage and Pool Widgets" "v" >}}
+The **Storage** widget shows information on the primary (root) pool status, path, and number of VDEVs configured in that pool.
+It also shows the percentage of used and free space, and any caches.
+It reports the number disks with errors, the total number of disks in the pool, and if a spare exists.
+
+{{< trueimage src="/images/SCALE/Dashboard/DashboardStorageWidget.png" alt="Storage Widget" id="Storage Widget" >}}
+
+You can configure individual pool widgets that show the same information as the root pool in the **Storage** widget.
+
+{{< trueimage src="/images/SCALE/Dashboard/DashboardPoolWidget.png" alt="Pool Widget" id="Pool Widget" >}}
 
 {{< /expand >}}
 
-### Network and Interface Widgets
-
-The **Network** widget displays network the status of the system interfaces, link status, and the system IP address and port number.
-Clicking <i class="material-icons" aria-hidden="true" title="Open Network Reporting Screen">assessment</i> opens the **Reporting** screen and shows more network statistics.
-
-{{< expand "Click here for more information" "v" >}}
-The **Network** widget displays a dynamic graph of incoming (blue) and outgoing (orange) traffic over the primary system interface.
-
-{{< trueimage src="/images/SCALE/Dashboard/DashboardNetworkWidgetSCALE.png" alt="Network Widget" id="Network Widget" >}}
-
-{{< /expand >}}
-The **Interface** widgets display traffic stats, link status, and provide more information on that interface media type and subtype, any VLANS and the IP Address and port number.
-{{< expand "Multiple Interfaces" "v" >}}
-When more than one interface is configured on your TrueNAS, use the **Dashboard Configuration** panel to add an interface widget for each interface.
-The **Interface** card displays the information for that interface.
-
-{{< trueimage src="/images/SCALE/Dashboard/DashboardInterfaceWidgetSCALE.png" alt="Interface Widget" id="Interface Widget" >}}
-
-Click on the **>** to display the **Addresses** widget for that interface. 
-
-{{< trueimage src="/images/SCALE/Dashboard/DashboardInterfaceAddressesWidgetSCALE.png" alt="Interface Addresses Widget" id="Interface Addresses Widget" >}}
-
-Click the <span class="iconify" data-icon="material-symbols:edit-outline"></span> edit icon to open the **Network** > **Edit Interface** screen.
-{{< /expand >}}
-
-### Storage and Pool Widgets
-
-The **Storage** widget displays information on the root and other storage pools configured on your system.
-{{< expand "Click here for more information" "v" >}}
-The **Storage** widget displays the root pool status, path, and the number of VDEVs configured. It also displays the percentage of used space, free space and any caches.
-It reports on the number disks with errors, the total number of disks the root pool uses, and if a spare exists.
-
-{{< trueimage src="/images/SCALE/Dashboard/DashboardStorageWidgetSCALE.png" alt="Storage Widget" id="Storage Widget" >}}
-
-The individual pool information displayed in this widget includes the same information as the root pool.
-{{< /expand >}}
-
-### Backup Tasks Widget
-
-When no backup tasks exist, this shows links to quickly set up an automated data backup schedule.
+{{< expand "Backup Tasks Widget" "v" >}}
+The **Backup Task** widget shows links to quickly set up an automated data backup schedule if a backup task does not exist.
 Click <i class="material-icons" aria-hidden="true" title="Open Data Protection Screen">open_in_new</i> to open the **Data Protection** screen with all options for checking or backing up stored data.
 
-{{< trueimage src="/images/SCALE/Dashboard/BackupTasksEmpty.png" alt="Empty Backup Tasks Widget" id="Empty Backup Tasks Widget" >}}
+{{< trueimage src="/images/SCALE/Dashboard/DashboardBackupTasksEmpty.png" alt="Empty Backup Tasks Widget" id="Empty Backup Tasks Widget" >}}
 
-When a backup task exists, the widget shows details about the various backup tasks that are configured on the system.
+When a backup task exists, the widget shows details about the various backup tasks configured on the system.
 
-{{< trueimage src="/images/SCALE/Dashboard/BackupTasksExample.png" alt="Backup Tasks Widget with Cloud Sync Example" id="Backup Tasks Widget with Cloud Sync Example" >}}
+{{< trueimage src="/images/SCALE/Dashboard/DashboardBackupTasks.png" alt="Backup Tasks Widget with Cloud Sync Example" id="Backup Tasks Widget with Cloud Sync Example" >}}
 
-Details provided include how many tasks of each type of backup exist, if they send or receive data, how many times tasks have failed and succeeded, and weekly success counters.
+The widget shows the number of tasks for each type of backup, direction for data (sent or received), the number of times tasks failed and succeeded, and weekly success counters.
+{{< /expand >}}
 
-### Help Widget
+{{< expand "Help Widget" "v" >}}
+The **TrueNAS Help** widget shows links to various TrueNAS websites.
 
-The **TrueNAS Help** widget displays links to the [TrueNAS Documentation Site](https://www.truenas.com/docs/) and [TrueNAS Community Forums](https://forums.truenas.com/). It also includes a link where users can sign up for the [TrueNAS Newsletter](https://www.truenas.com/newsletter/), and a link to the Github web page for [TrueNAS Open Source software](https://github.com/truenas/). There is also a link for the [iXsystems home page](https://www.ixsystems.com/).
+{{< trueimage src="/images/SCALE/Dashboard/DashboardHelpWidget.png" alt="Help Widget" id="Help Widget" >}}
 
-{{< trueimage src="/images/SCALE/Dashboard/DashboardHelpWidgetSCALE.png" alt="Help Widget" id="Help Widget" >}}
+Links included are:
+
+* [TrueNAS Documentation Site](https://www.truenas.com/docs/)
+* [TrueNAS Community Forums](https://forums.truenas.com/)
+* [TrueNAS Open Source software](https://github.com/truenas/)
+* [iXsystems home page](https://www.ixsystems.com/) where users can access the GitHub web page.
+* [TrueNAS Newsletter](https://www.truenas.com/newsletter/) where users can sign up for the newsletter.
 
 Click on each link to open it in a new browser tab.
+{{< /expand >}}
+
+{{< expand "App Widget" "v" >}}
+The **App** widget shows the app name, version, state (Deploying, Active, Stopped, etc.), release status, CPU usage in percentage, memory usage in MiB, network I/O traffic, and disk I/O traffic.
+The TrueNAS SCALE logo shows in the the top left corner of the widget if a logo image for the app is unavailable.
+
+{{< trueimage src="/images/SCALE/Dashboard/DashboardAppWidget.png" alt="App Widget" id="App Widget" >}}
+
+The widget includes three icon function buttons at the top left:
+* <span class="iconify" data-icon="mdi:web"></span> **Web Portal** to access the web portal for the app.
+* <span class="iconify" data-icon="mdi:restart"></span> **Restart** to restart the app.
+* <span class="iconify" data-icon="mdi:cog"></span> **App Details** to show the app settings.
+
+{{< /expand >}}
+<!-- Commenting out until this widget is completed by devs
+{{< expand "Custom Widget" "v" >}}
+The **Custom** widget shows l
+
+{{< trueimage src="/images/SCALE/Dashboard/ .png" alt="Custom Widget" id="Custom Widget" >}}
+
+{{< /expand >}} -->
+
+## Dashboard in Configuration Mode
+In configuration mode, dashboard widgets are enclosed in dotted-line boxes to show the *grouping area* for each widget.
+
+**Add** opens a blank **Widget Editor** screen.
+
+**Save** saves all changes made to the dashboard.
+
+**Cancel** closes configuration mode without saving any changes. Changes made and saved on the [**Widget Editor**](#widget-editor) screen are discarded if you click **Cancel**.
+
+{{< trueimage src="/images/SCALE/Dashboard/DashboardInConfigMode.png" alt="Dashboard Configuration Mode" id="Dashboard Configuration Mode" >}}
+
+**Add** opens a blank **Widget Editor**.
+
+**Save** saves any changes and exits configuration mode.
+**Cancel** exists configuration mode without saving changes.
+
+Pressing <kbd>Esc</kbd> (escape) also exits configuration mode and discards any changes made to widget group area configurations or placements.
+
+### Widget Group Areas
+Widget groups (areas) can use one of five layouts that consist of other widgets of different sizes and configurations.
+Layouts options show on the [**Widget Editor**](#widget-editor) screen.
+
+Each grouping area shows three function icons:
+
+* <span class="iconify" data-icon="mdi:drag-horizontal"></span> Drag handle that allows you to grab and move the widget to a new location on the screen.
+  Dragging a widget to a new location shifts the other widgets one position to the left or right depending on where the dragged widget is placed.
+
+* <span class="iconify" data-icon="ic:round-edit"></span> **Edit** opens the **Widget Editor** populated with the settings for the existing widget.
+ 
+* <span class="iconify" data-icon="ic:baseline-delete"></span> **Delete** removes the widget from the **Dashboard**.
+
+Pressing <kbd>Tab</kbd> allows selecting the next button or function icon on the screen and across all widget groups.
+
+## Widget Editor
+Access to the **Widget Editor** screen is available when the **Dashboard** screen is in configuration mode.
+The edit icon for any widget group opens the **Widget Editor** populated with the current settings for that widget group.
+**Add** opens the **Widget Editor** with no settings.
+
+{{< trueimage src="/images/SCALE/Dashboard/WidgetEditorAddNew.png" alt="Widget Editor for New Widget" id="Widget Editor for New Widget" >}}
+
+{{< trueimage src="/images/SCALE/Dashboard/WidgetEditorExistingWidget.png" alt="Widget Editor for Existing Widget" id="Widget Editor for Existing Widget" >}}
+
+Select an individual widget in a layout with multiple widgets to change the category and type and customize the display of the widget group.
+### Widget Editor Settings
+{{< truetable>}}
+| Setting | Description |
+|---------|-------------|
+| **Layouts** | Click on the layout image to add one to four widgets in the group. Not all widget categories support all layouts. |
+| **Widget Category** | Select the information category from the dropdown list of options:<br><li>**Empty** - Default selection for a new widget. Use to fill a grouping of multiple widgets where only two are defined and the others are not.<br><li>**Network** - Use to to set up a network widget.<br><li>**Storage** - Use to set up a storage or single pool widget.<br><li>**Help** - Use to include the widget with links to SCALE resources.<br><li>**Memory** - Use to set up a memory-usage widget.<br><li>**Backup Tasks** - Use to set up a widget showing either configured data protection tasks or links to locations to configure tasks.<br><li>**CPU** - Use to set up a CPU usage widget.<br><li>**System Information** - Use to add one of four system information widget types. <br><li>**Custom** - Use to set up a text-only widget with whatever text-based information you want to include on the **Dashboard**.<br></li> The **Widget Type** field shows after selecting the category. |
+| **Widget Type** | Select the type of information to show in the selected widget. Options change based on the selected **Widget Category**. See [Widget Type Options by Category](#widget-type-options-by-category) for information on the options by the category and type selected. |
+{{< /truetable >}}
+
+### Widget Type Options by Category
+
+{{< expand "Widget Type Options for Network" "v" >}}
+There are four types available when **Widget Category** is set to **Network**.
+Selecting **Network**, **IPv4 Address** or **IPv6 Address** as the type adds the **Interfaces** field to the screen.
+
+**Hostname** can use a full, half, or quarter size widget. It does not add additional fields.
+
+**IPv4 Address** and **IPv6 Address** can use a full, half, or quarter size widget. Shows the **Interface** field.
+
+**Network** can use a full or half size widget with network information for a primary or other interface configured on the system. Shows the **Interface** field.
+
+Select the interface to show in the widget from the **Interface** dropdown field.
+{{< /expand >}}
+
+{{< expand "Widget Type Options for Storage" "v" >}}
+There are two widget types available when **Widget Category** is set to **Storage**: **Storage** and **Pool**.
+The layout for the widget must be full size.
+
+Selecting either **Storage** or **Pool** as the type adds the **Pool** field to the screen.
+{{< /expand >}}
+
+{{< expand "Widget Type Options for Help" "v" >}}
+Only **Help** is the available widget type when **Widget Category** is set to **Help**.
+
+The **Help** widget can use a full, half, or quarter size widget, but using the half or quarter size adds scrollbars to the widget to provide access to the full content in this widget category.
+For best viewing and access to the content we recommend using the full size for the **Help** widget.
+{{< /expand >}}
+
+{{< expand "Widget Type Options for Memory" "v" >}}
+Only **Memory** is the available widget type when **Widget Category** is set to **Memory**.
+
+The **Memory** widget can use a full, half, or quarter size widget, and can be included in a widget group with other widget categories and types.
+{{< /expand >}}
+
+{{< expand "Widget Type Options for Backup Tasks" "v" >}}
+Only **Backup Tasks** is the available widget type when **Widget Category** is set to **Backup Tasks**.
+
+The **Backup Task** widget can only use a full size widget.
+{{< /expand >}}
+
+{{< expand "Widget Type Options for CPU" "v" >}}
+Only **CPU** is the available widget type when **Widget Category** is set to **CPU**.
+
+The **CPU** widget can only use a full size widget.
+{{< /expand >}}
+
+{{< expand "Widget Type Options for System Information" "v" >}}
+There are four widget types available when **Widget Category** is set to **System Information**: **System Information Active Node**, **OS Version**, **System Uptime**, and **System Image**.
+
+**System Information Active Node** shows system information for a single controller system in a full size widget.
+<!-- Commenting out until I can verify this on a system
+{{< enterprise >}}
+If the system is an HA system with an Enterprise license, shows the active controller widget in a full size widget.
+If an HA system with dual controllers, the **HA** option displays as a **Widget Category**.
+{{< /enterprise >}}
+-->
+
+**OS Version**, **System Uptime**, or **System Image** can use a full, half, or quarter size widget.
+These can be included in a widget group with other widget categories and types to create a mixed information widget.
+
+{{< /expand >}}
+<!-- Commenting out until apps is working in EE so I can verify the options for this widget
+{{< expand "Widget Type Options for Apps" "v" >}}
+Only **Application** is the available widget type when **Widget Category** is set to **Apps**.
+The widget includes the app name and image, app status, and information on the app portal.
+
+You can configure extra widgets for app CPU and/or memory usage, and network traffic for the selected app.
+
+If you uninstall (delete) the app shown in the app widget, it is not automatically removed from the dashboard, rather it shows an error message that directs you to configure the widget for a new app.
+Either reconfigure or delete the app widget to remove the error message.
+{{< /expand >}} -->
+
+{{< expand "Widget Type Options for Custom" "v" >}}
+Only **Arbitrary Text** is the available widget type when **Widget Category** is set to **Custom**.
+
+There are three additional fields to enter text strings in a full, half, or quarter-size widget.
+Enter text in **Widget Title**, **Widget Text**, and **Widget Subtext** (if desired) that does not exceed the maximum character count.
+The maximum number of character for the **Custom** widget is 200 upper and lower case alpha-numeric or special characters.
+Spaces between characters count as characters.
+{{< /expand >}}

@@ -6,6 +6,7 @@ weight: 20
 aliases:
  - /scaleuireference/storage/pools/disks/disksscreensscale/
  - /scale/scaleuireference/storage/pools/disksscreen/
+ - /scale/scaleclireference/storage/clidisk/
 tags:
  - disks
  - smart
@@ -60,7 +61,7 @@ The screen lists the device names for each selected disk in the **Disks to be ed
 |---------|-------------|
 | **HDD Standby** | Select the minutes of inactivity before the drive enters standby mode from the dropdown list. Options are **Always On** or **5**, **10**, **20**, **30**, **60**, **120**, **240**, **300**, and **330**. For more information read this [forum post|(https://forums.freenas.org/index.php?threads/how-to-find-out-if-a-drive-is-spinning-down-properly.2068/) describing identifying spun-down drives. Temperature monitoring is disabled for the standby disk. |
 | **Advanced Power Management** | Select the power management profile from the dropdown list. Options are **Disabled**, **Level 1 - Minimum power usage with Standby (spindown)**, **Level 64 - Intermediate power usage with Standby**, **Level 127 - Maximum power usage with Standby**, **Level 128 - Minimum power usage without Standby (no spindown)**, **Level 192 - Intermediate power usage without Standby**, and **Level 254 - Maximum performance, maximum power usage**. |
-| **Enable S.M.A.R.T.**  | Select to enable and allow the system to conduct periodic [S.M.A.R.T. tests](http://10.220.0.219/ui/--docurl--/tasks.html/#s-m-a-r-t-tests). |
+| **Enable S.M.A.R.T.**  | Select to enable and allow the system to conduct periodic [S.M.A.R.T. tests]({{< relref "SMARTTestsScreensSCALE.md" >}}). |
 | **S.M.A.R.T. Extra Options** | Enter additional [smartctl(8)](https://www.smartmontools.org/browser/trunk/smartmontools/smartctl.8.in). |
 {{< /truetable >}}
 {{< /expand >}}
@@ -116,6 +117,8 @@ These options, except the ID, appear on the **Columns** dropdown list.
 | **Error** | Displays details about any error encountered during the test. Displays **N/A** if no error was encountered during the test. |
 {{< /truetable >}}
 {{< /expand >}}
+
+{{<include file="/static/includes/addcolumnorganizer.md">}}
 
 ### Wipe Disk Dialogs
 The option to wipe a disk only displays when a disk is unused by a pool.

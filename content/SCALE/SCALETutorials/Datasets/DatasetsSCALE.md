@@ -6,6 +6,7 @@ aliases:
  - /scale/scaleuireference/storage/pools/datasetsscale/
  - /scale/scaletutorials/storage/pools/datasetsscale/
  - /scale/scaletutorials/storage/datasets/datasetsscale/
+ - /_includes/storagecompressionlevelsscale/
 tags:
  - datasets
  - storage
@@ -15,6 +16,7 @@ keywords:
 - nas storage device
 - enterprise data storage
 - nas data storage
+- data sharing
 ---
 
 A TrueNAS *dataset* is a file system within a data storage pool.

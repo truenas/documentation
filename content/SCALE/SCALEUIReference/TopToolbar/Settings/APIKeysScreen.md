@@ -2,8 +2,11 @@
 title: "API Keys Screen"
 description: "Describes how the API keys screen in TrueNAS SCALE."
 weight: 20
+aliases: 
+ - /scale/scaleclireference/auth/cliapikey/
 tags:
 - apikeys
+- toolbar
 ---
 
 The **API Keys** option on the top toolbar **Settings** dropdown menu displays the **API Keys** screen.
@@ -16,8 +19,6 @@ Click the <span class="iconify" data-icon="eva:more-vertical-outline"></span> ic
 Use **Add** to add a new API key to your TrueNAS.
 
 {{< include file="/static/includes/APIKeyWarn.md" >}}
-
-{{< include file="/static/includes/APIKeyCLI.md" >}}
 
 ## API Key Documentation
 

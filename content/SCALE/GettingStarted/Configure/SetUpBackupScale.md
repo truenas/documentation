@@ -10,6 +10,7 @@ keywords:
 - nas data storage solution
 - nas storage software
 - data backups
+- snapshot technology
 ---
 
 After configuring your TrueNAS storage and data sharing or any other function, service, or application, it is time to ensure an effective data backup.
@@ -67,7 +68,7 @@ See [Adding Cloud Credentials]({{< relref "/scale/scaletutorials/credentials/bac
 ### Using Replication for Data Backup
 
 Replication is the process of taking a moment-in-time snapshot of data and then copying that snapshot to another location.
-Snapshots typically use less storage than full file backups and have more management options.
+Snapshot technology typically uses less storage than full file backups and has more management and snapshot storage options.
 {{< expand "Click here for basic instructions" "v" >}}
 To create a simple replication task with the TrueNAS replication wizard:
 
@@ -107,7 +108,7 @@ Now that you configured your system network, storage, and the data shares you wa
 
 ### Downloading the Initial System Debug File
 
-After saving the system configuration, go to **System Settings > Advanced** and click **Save Debug**. After the download completes, save this initial debug file with your system configuration file.
+After saving the system configuration, go to **System > Advanced** and click **Save Debug**. After the download completes, save this initial debug file with your system configuration file.
 
 ## Create a Boot Environment
 

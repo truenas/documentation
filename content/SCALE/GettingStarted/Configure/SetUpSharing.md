@@ -10,6 +10,8 @@ keywords:
 - nas storage solution
 - data migration
 - enterprise storage solution
+- high availability (ha)
+- data sharing
 ---
 
 After setting up storage on your TrueNAS, it is time to begin sharing data!
@@ -39,6 +41,7 @@ For more information on the fields and adding users, see [Creating User Accounts
 
 By default, all new local users are members of a built-in group called **builtin_users**.
 You can use a group to grant access to all local users on the server or add more groups to fine-tune permissions for large numbers of users.
+This approach is particularly useful for high availability (HA) configurations and efficient data sharing across multiple users.
 
 {{< expand "Why not just allow anonymous access to the share?" "v" >}}
 Anonymous or guest access to a share is possible, but it is a security vulnerability and not recommended for Enterprise or systems with more than one share administrator account.

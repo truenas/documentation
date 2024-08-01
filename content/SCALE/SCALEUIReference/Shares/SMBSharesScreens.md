@@ -10,6 +10,7 @@ tags:
 - smb
 - afp
 - acl
+- data sharing
 ---
 
 ## Windows (SMB) Shares Widget
@@ -223,7 +224,7 @@ Use the ACL editor screen to set filesystem permissions for the shared dataset.
 See [Permissions]({{< relref "PermissionsSCALE.md" >}}) for more information on configuring permissions.
 
 ## SMB Status Screens
-You can access the **SMB Status** screen from the **SMB** option on the **System Settings > Services** screen with the <i class="material-icons" aria-hidden="true" title="list">list</i> icon and from the <span class="material-icons">more_vert</span> on the **Shares > Windows (SMB) Shares** widget.
+You can access the **SMB Status** screen from the **SMB** option on the **System > Services** screen with the <i class="material-icons" aria-hidden="true" title="list">list</i> icon and from the <span class="material-icons">more_vert</span> on the **Shares > Windows (SMB) Shares** widget.
 
 {{< trueimage src="/images/SCALE/Shares/SMBStatusScreenSessionsTab.png" alt="SMB Status Sessions Tab" id="SMB Status Sessions Tab" >}}
 
@@ -238,4 +239,7 @@ The **SMB Status** screen has four tabs with information related to SMB shares:
 **Column** displays a dropdown list of options for the selected tab to customize the information included on the screen.
 
 Click **Sharing** or **SBM** on the top breadcrumb to open the selected screen.
-The breadcrumb displays when you access the SMB Status screen from the **System Settings > Services SMB** row.
+
+The breadcrumb displays when you access the SMB Status screen from the **System > Services SMB** row.
+
+{{< include file="/static/includes/addcolumnorganizer.md" >}}

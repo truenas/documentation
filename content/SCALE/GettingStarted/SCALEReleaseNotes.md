@@ -2,6 +2,7 @@
 title: "24.10 (Electric Eel) Development Notes"
 description: "Highlights, change log, and known issues for the latest SCALE nightly development version."
 aliases:
+ - /scale/scalereleasenotes/
  - /scalenext-releasenotes/
  - /scale/scalenextversion/
  - /scale/scale22.12/
@@ -49,11 +50,17 @@ More details are available from [Software Releases]({{< relref "/TrueNASUpgrades
 * TrueNAS SCALE is an appliance built from specific Linux packages.
   Attempting to update SCALE with `apt` or methods other than the SCALE web interface can result in a nonfunctional system.
 
-* All auxiliary parameters can change between TrueNAS major versions due to security and development changes.
-  We recommend removing all auxiliary parameters from TrueNAS configurations before upgrading.
+* All auxiliary parameters can experience changes between TrueNAS major versions due to security and development changes.
+  We recommend removing all auxiliary parameters from TrueNAS configurations before upgrading as these settings can result in SMB share failures after an upgrade.
 
 * {{< include file="/static/includes/UpgradeClearCache.md" >}}
 
+* As of [June 6, Kubernetes is removed from 24.10 Nightly builds](https://forums.truenas.com/t/apps-update-2024-06-06/6041).
+  The apps feature is not functional in these nightly builds while development continues with replacing Kubernetes with Docker Compose ([announcement](https://forums.truenas.com/t/the-future-of-electric-eel-and-apps/5409)).
+
+* Support for the deprecated LDAP **Samba Schema** is removed in 24.10.
+  Users with both LDAP and SMB shares configured should migrate legacy Samba domains to Active Directory before upgrading to 24.10.
+  
 <!--
   ### Upgrade Paths
   

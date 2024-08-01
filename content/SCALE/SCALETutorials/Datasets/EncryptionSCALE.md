@@ -5,6 +5,7 @@ weight: 50
 aliases:
  - /scale/storage/encryptionscale/
  - /scale/scaletutorials/storage/datasets/encryptionscale/
+ - /scale/storage/pools/encryptionscale/ 
 tags:
 - encryption
 - datasets
@@ -14,6 +15,7 @@ keywords:
 - enterprise data storage 
 - nas data storage
 - data protection
+- data sharing
 ---
 
 TrueNAS SCALE offers ZFS encryption for your sensitive data in pools and datasets or Zvols.
@@ -45,6 +47,7 @@ Leave the **Encryption** option on the **Pool Creation Wizard** screen cleared t
 You can create both unencrypted and encrypted datasets within an unencrypted pool (root dataset).
 If you create an encrypted dataset within an unencrypted dataset, all datasets or zvol created within that encrypted dataset are automatically encrypted.
 
+Using encryption ensures secure data sharing and storage.
 
 If you have only one pool on your system, do not select the **Encryption** option for this pool.
 
@@ -99,7 +102,7 @@ Read the warning, select **Confirm**, and then click **I UNDERSTAND**.
 
 A second dialog opens where you click **Download Encryption Key** for the pool encryption key.
 
-{{< trueimage src="/images/SCALE/Storage/DownloadEncryptionKeyForPool.png" alt="Download Encryption Key on Pool Manager" id="Download Encryption Key on Pool Manager" >}}
+{{< trueimage src="/images/SCALE/Storage/DownloadPoolEncryptionKey.png" alt="Download Encryption Key on Pool Manager" id="Download Encryption Key on Pool Manager" >}}
 
 Click **Done** to close the window.
 Move the encryption key to safe location where you can back up the file.

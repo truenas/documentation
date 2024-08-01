@@ -5,11 +5,14 @@ geekdocCollapseSection: true
 weight: 30 
 aliases:
  - /scale/scaleuireference/storage/pools/
+ - /scale/scaleclireference/storage/
  - /scale/scaleclireference/storage/clifilesystem-storage/
+ - /scale/scaleuireference/storage/storagedashboardscreen/ 
 tags:
 - pools
 - storage
 - scrub
+- storage provisioning
 ---
 
 The **Storage Dashboard** screen allows users to configure and manage storage resources such as pools (VDEVs), and disks, and keep the pool healthy (scrub).

@@ -11,6 +11,10 @@ keywords:
 - enterprise data storage solution
 - enterprise nas solution
 - nas data storage
+- high availability (ha)
+- storage replication
+- LDAP
+- persistent storage
 ---
 
 {{< enterprise >}}
@@ -35,7 +39,7 @@ This article outlines a procedure to do a clean install of a SCALE Enterprise Hi
 HA systems are dual controller systems with the primary controller referred to as controller 1 (sometimes also as controller A) and controller 2 (or controller B).
 {{< include file="/static/includes/HAControllerInstallBestPracticeSCALE.md" >}}
 
-SCALE includes features and functions to help with completing the configuration process after installing and getting access to the SCALE web interface.
+SCALE includes features and functions to help with completing the configuration process after installing and getting access to the SCALE web interface. This includes utilizing numerous high availability (HA) features to ensure data integrity and availability.
 
 ### Preparing for a Clean Install
 
@@ -115,7 +119,7 @@ These steps are nearly identical to the section above but controller 2 is either
 4. Log into controller 1 using the IP address assigned to controller 1.
    Apply the HA license, sign the EULA, and [complete the UI configuration](#configuring-settings-in-the-scale-ui) to the point where you are ready to sync to peer on controller 1, but do not sync yet.
 5. Power up controller 2 and wait for it to complete the boot process.
-6. Log into controller 1, go to **System Settings > Failover**, and click **Sync to Peer**.
+6. Log into controller 1, go to **System > Failover**, and click **Sync to Peer**.
    This synchronizes controller 2 with controller 1 and reboots controller 2. Controller 2 becomes the standby controller when it finishes rebooting.
 
 ### Downloading the SCALE Install File
@@ -243,10 +247,10 @@ SCALE UI Enterprise customers see the End User License Agreement (EULA) screen t
 Sign the agreement to open the main SCALE **Dashboard**.
 Apply the system license next.
 
-Go to **System Settings > General** and click **Add License** on the **Support** widget. Copy your license and paste it into the **License** field, then click **Save License**.
+Go to **System > General** and click **Add License** on the **Support** widget. Copy your license and paste it into the **License** field, then click **Save License**.
 The **Reload** dialog opens. Click **Reload Now**. Controller 1 restarts, and displays the EULA for controller 2. Sign the EULA agreement for controller 2, and add the license.
 
-The controller 1 and 2 (or a and b) serial numbers display on the **Support** widget on the **System Settings > General** screen.
+The controller 1 and 2 (or a and b) serial numbers display on the **Support** widget on the **System > General** screen.
 
 ### Configuring Network Settings
 {{< include file="/static/includes/ConfigureController1Networking.md" >}}
@@ -261,7 +265,7 @@ For more information on how to import a pool [click here]({{< relref "ImportPool
 
 ### Syncing Controller 1 and 2
 
-1. Turn the failover service back on. Go to **System Settings > Services** locate the **Failover** service and click edit.
+1. Turn the failover service back on. Go to **System > Services** locate the **Failover** service and click edit.
 
 2. Select **Disable Failover** to clear the checkmark and turn failover back on, then click **Save**.
    The system might reboot. Use IPMI to monitor the status of controller 2 and wait until the controller is back up and running.
@@ -284,9 +288,9 @@ Take note of this information.
 ### Troubleshooting HA Installation
 
 If controller 2 comes online as the primary and controller 1 as the standby, you installed and configured the controllers incorrectly.
-1. Go to **System Settings > Failover**, clear the **Default TrueNAS Controller** option, and click **Save**. The system reboots and fails over to the current standby controller (in this case, to controller 1).
+1. Go to **System > Failover**, clear the **Default TrueNAS Controller** option, and click **Save**. The system reboots and fails over to the current standby controller (in this case, to controller 1).
 
-2. Log back into the UI with the VIP address. Go to **System Settings > Failover** and select **Default TrueNAS Controller** to make controller 1 the primary controller.
+2. Log back into the UI with the VIP address. Go to **System > Failover** and select **Default TrueNAS Controller** to make controller 1 the primary controller.
 
 3. Select **Sync to Peer**. SCALE makes controller 2 the standby controller and syncs the configuration on controller 1 to controller
 

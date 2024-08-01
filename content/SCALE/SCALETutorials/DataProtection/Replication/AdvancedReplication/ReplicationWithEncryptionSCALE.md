@@ -108,6 +108,8 @@ This saves some time when creating multiple replication tasks between the same t
     
 {{< include file="/static/includes/ReplicationScheduleAndRetentionSteps.md" >}}
 
+{{<include file="/static/includes/addcolumnorganizer.md">}}
+
 ### Configure a New SSH Connection
 
 {{< include file="/static/includes/ReplicationConfigNewSSHConnection.md" >}}

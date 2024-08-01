@@ -2,7 +2,10 @@
 title: "Managing API Keys"
 description: "This tutorial shows how to add, create, or edit an API key in TrueNAS SCALE."
 weight: 30
+aliases:
+ - /scale/scaleclireference/auth/cliapikey/
 tags:
+- toolbar
 - apikeys
 ---
 
@@ -11,7 +14,7 @@ This screen displays a list of API keys added to your system and allows you to a
 
 {{< trueimage src="/images/SCALE/Dashboard/APIKeysScreen.png" alt="API Keys Screen" id="API Keys Screen" >}}
 
-{{< include file="/static/includes/APIKeyCLI.md" >}}
+{{<include file="/static/includes/addcolumnorganizer.md">}}
 
 ## Adding an API Key
 

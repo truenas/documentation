@@ -13,7 +13,6 @@ keywords:
 ---
 
 {{< include file="/static/includes/CommunityAppsLegacy.md" >}}
-{{< include file="/static/includes/CommunityAppsContribute.md" >}}
 
 SCALE includes the ability to run Docker containers using Kubernetes.
 
@@ -27,6 +26,8 @@ Kubernetes is a portable, extensible, open-source container-orchestration system
 
 Always read through the Docker Hub page for the container you are considering installing so that you know all of the settings that you need to configure.
 To set up a Docker image, first determine if you want the container to use its own dataset. If yes, create a dataset for host volume paths before you click **Launch Docker Image**.
+
+{{< include file="/static/includes/AppsUnversioned.md" >}}
 
 ## Installing Pi-hole Application
 
@@ -57,7 +58,9 @@ Click the arrow to the left of **<span class="material-icons">folder</span> /mnt
 Pi-hole uses volumes store your data between container upgrades.
 
 {{< hint type=warning >}}  
-You need to create these directories in a dataset on SCALE before you begin installing this container. To create a directory, open the TrueNAS SCALE CLI and enter `storage filesystem mkdir path="/PATH/TO/DIRECTORY"`.
+You need to create these directories in a dataset on SCALE before you begin installing this container.
+Create directories in a dataset on SCALE, before you begin installing the container. 
+{{< include file="/static/includes/MakeDirectory.md" >}}
 {{< /hint >}}
 
 ![AppPiHoleStorageSettings](/images/SCALE/Apps/AppPiHoleStorageSettings.png "PiHole Storage Settings")

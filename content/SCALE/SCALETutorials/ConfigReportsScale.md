@@ -2,11 +2,12 @@
 title: "Reporting"
 description: "Provides information on changing settings that control how SCALE displays report graphs, how to interact with graphs, and configuring reporting exporters."
 weight: 13
-alias:
-- /scale/scaletutorials/reporting/configreportsscale/
-- /scale/scaletutorials/reporting/
+aliases:
+ - /scale/scaletutorials/reporting/configreportsscale/
+ - /scale/scaletutorials/reporting/
 tags:
  - reporting
+ - data reporting
 ---
 
 TrueNAS has a built-in reporting engine that provides helpful graphs and information about the system.
@@ -53,20 +54,20 @@ See [Dashboards and Charts](https://learn.netdata.cloud/docs/dashboards-and-char
 You can configure TrueNAS to export Netdata information to any time-series database, reporting cloud service or application installed on a server.
 For example, Graphite, Grafana, etc., installed on a server or use their cloud service.
 
-Creating reporting exporters enables SCALE to send Netdata reporting metrics, formatted as a JSON object, to another reporting entity.
+Creating reporting exporters enables SCALE to send Netdata data reporting metrics, formatted as a JSON object, to another reporting entity.
 
 For more information on exporting Netdata records to other servers or services, refer to the Netdata [exporting reference guide](https://learn.netdata.cloud/docs/exporting/exporting-reference).
 
 [Graphite](https://graphiteapp.org/) is a monitoring tool available as an application you can deploy on a server or use their cloud service.
 It stores and renders time-series data based on a plaintext database.
-Netdata exports reporting metrics to Graphite in the format *prefix*.*hostname*.*chart*.*dimension*.
+Netdata exports data reporting metrics to Graphite in the format *prefix*.*hostname*.*chart*.*dimension*.
 For additional information, see the Netdata [Graphite exporting guide](https://learn.netdata.cloud/docs/exporting/graphite).
 
 ### Adding a Reporting Exporter
 To configure a reporting exporter in SCALE, you need the:
 
 * IP address of the reporting service or server.
-  If using another TrueNAS system with a reporting application, this is the IP address of the TrueNAS running the application.
+  If using another TrueNAS system with a data reporting application, this is the IP address of the TrueNAS running the application.
 * Port number the reporting service listens on.
   If using another TrueNAS system with a reporting application, this is the port number the TrueNAS system listens on (port:80)
 
@@ -77,7 +78,7 @@ Any reporting exporters configured on the system display on the **Reporting Expo
 
 {{< trueimage src="/images/SCALE/Reporting/ReportingExportersScreen.png" alt="Reporting Exporters Screen" id="Reporting Exporters Screen" >}}
 
-Click **Add** to open the **Add Reporting Exporter** screen to configure a third party reporting integration.
+Click **Add** to open the **Add Reporting Exporter** screen to configure a third party data reporting integration.
 
 {{< trueimage src="/images/SCALE/Reporting/AddReportingExporter.png" alt="Add Reporting Exporter" id="Add Reporting Exporter" >}}
 

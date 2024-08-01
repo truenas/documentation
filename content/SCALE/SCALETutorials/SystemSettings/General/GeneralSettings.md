@@ -9,6 +9,7 @@ keywords:
 - enterprise storage solutions
 - nas storage solutions
 - software storage solutions
+- configuration files
 ---
 
 The TrueNAS SCALE General Settings section provides settings options for support, graphic user interface, localization, NTP servers, and system configuration.
@@ -57,12 +58,14 @@ To send failed HTTP request data which can include client and server IP addresse
 ### Sending Usage Statistics to iXsystems
 To send anonymous usage statistics to iXsystems, select the **Usage Collection** option.
 
+For more information about what usage data is collected, see the [TrueNAS Data Collection Statement]({{< relref "/SCALE/GettingStarted/UserAgreements/DataCollectionStatement.md" >}}).
+
 ### Showing Console Messages
 To display console messages in real time at the bottom of the browser, select the **Show Console Messages** option.
 
 ## Localizing TrueNAS SCALE
 
-To change the WebUI on-screen language and set the keyboard to work with the selected language, click **Settings** on the **System Settings > General > Localization** widget. The **Localization Settings** configuration screen opens.
+To change the WebUI on-screen language and set the keyboard to work with the selected language, click **Settings** on the **System > General > Localization** widget. The **Localization Settings** configuration screen opens.
 
 Select the language from the **Language** dropdown list, and then the keyboard layout in **Console Keyboard Map**.
 

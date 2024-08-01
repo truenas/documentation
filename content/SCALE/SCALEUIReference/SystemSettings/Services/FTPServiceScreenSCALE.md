@@ -19,7 +19,7 @@ Click the <i class="material-icons" aria-hidden="true" title="Configure">edit</i
 
 ## FTP Basic Settings
 
-To configure FTP, go to **System Settings > Services** and find **FTP**, then click <i class="material-icons" aria-hidden="true" title="Configure">edit</i>.
+To configure FTP, go to **System > Services** and find **FTP**, then click <i class="material-icons" aria-hidden="true" title="Configure">edit</i>.
 
 {{< trueimage src="/images/SCALE/SystemSettings/FTPBasicSettings.png" alt="FTP Basic Settings" id="FTP Basic Settings" >}}
 
@@ -48,7 +48,6 @@ To configure FTP, go to **System Settings > Services** and find **FTP**, then cl
 | Settings | Description |
 |----------|-------------|
 | **Always Chroot** | Only allows users to access their home directory if they are in the **wheel** group. This option increases security risk. To confine FTP sessions to a local user home directory, enable **chroot** and select **Allow Local User Login**. |
-| **Allow Root Login** | Select to allow root logins. This option increases security risk, so enabling this is discouraged. Do *not* allow anonymous or root access unless it is necessary. 
 Enable TLS when possible (especially when exposing FTP to a WAN). TLS effectively makes this [FTPS](https://tools.ietf.org/html/rfc4217) for better security. |
 | **Allow Anonymous Login** | Select to allow anonymous FTP logins with access to the directory specified in **Path**. Selecting this displays the **Path** field. Enter or browse the location to populate the field. |
 | **Allow Local User Login** | Select to allow any local user to log in. Only members of the **ftp** group may log in by default. |

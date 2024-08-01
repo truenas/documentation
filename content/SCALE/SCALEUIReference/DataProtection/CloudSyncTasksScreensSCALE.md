@@ -4,13 +4,15 @@ description: "Provides information on the Cloud Sync task screens and settings."
 weight: 20
 aliases:
 - /scale/scaleuireference/dataprotection/cloud-sync-tasks/
+- /scale/scaleclireference/task/cloudsync/
 tags:
 - cloud
 - backup
+- cloud-storage-migration
 ---
 
 The **Cloud Sync Tasks** widget on the **Data Protection** screen shows configured cloud sync tasks, and provides access to configuration screens to add single-time or scheduled recurring transfers between TrueNAS SCALE and a cloud storage provider.
-Cloud sync tasks are an effective method to back up data to a remote location.
+Cloud sync tasks are an effective method to back up data to a remote location, or to perform cloud-storage-migration through a  provider.
 
 {{< include file="/static/includes/CloudServiceProvidersSCALE.md" >}}
 
@@ -63,6 +65,8 @@ Buttons for these task options perform the same functions as the icons on the wi
   This is the same function as the **Dry Run** button on the **Edit Cloud Sync Task** screen and the **Advanced Options** for the **Cloudsync Task Wizard**. 
 
 * **Restore** opens the **Restore Cloud Sync Task** window where you can create a new cloud sync task from an existing task with the same options but the new task reverses the transfer from PUSH to PULL and vice-versa.
+
+{{<include file="/static/includes/addcolumnorganizer.md">}}
   
   {{< trueimage src="/images/SCALE/DataProtection/RestoreCloudSyncTaskWindow.png" alt="Restore Cloud Sync Tasks" id="Restore Cloud Sync Tasks" >}}
 
@@ -112,7 +116,7 @@ The **Manage Credentials** link opens the [Backup Credentials]({{< relref "/SCAL
 |----------|-------------|
 | **Description** | Enter a description of the cloud sync task. |
 | **Direction** | Select a direction option from the dropdown list. **PUSH** sends data to cloud storage. **PULL** receives data from cloud storage and is the default setting. |
-| **Transfer Mode** | Select the transfer mode type from the dropdown list. To keep all files identical between the two storage locations, select **SYNC**. This changes files on the destination to match those on the source. If a file does not exist on the source, it is also deleted from the destination. There are three options:<br><li>**COPY** - Select to duplicate each source file into the destination and overwrite destination files using the same source. Copies files from the source to the destination. If files with the same names are present on the destination, they are overwritten.<br><li>**MOVE** - Select to transfer files from the source to the destination and delete source files. Copies files from the source to the destination and then deletes them from the source. Files with the same names on the destination are overwritten.<br><li>**SYNC** - Select to change files on the destination to match those on the source. If a file does not exist on the source, it is also deleted from the destination.</li> |
+| **Transfer Mode** | Select the transfer mode type from the dropdown list. There are three options:<br><li>**COPY** - Select to duplicate each source file into the destination. If files with the same names are present on the destination, they are overwritten.<br><li>**MOVE** - Select to transfer files from the source to the destination and delete source files. Copies files from the source to the destination and then deletes them from the source. Files with the same names on the destination are overwritten.<br><li>**SYNC** - Select to change files on the destination to match those on the source. If a file does not exist on the source, it is also deleted from the destination.</li> |
 | **Directory/Files** | Enter or click the <span class="material-icons">arrow_right</span> arrow to the left of **/mnt** folder to expand and show datasets and directories within that folder. When you locate the dataset or directory location to send to the cloud for push syncs, or as the destination to write to for pull syncs. Be cautious with pull destinations to avoid overwriting existing files. Click the <span class="material-icons">arrow_right</span> arrow to the left of **/mnt** folder again to collapse the directory tree. |
 {{< /truetable >}}
 

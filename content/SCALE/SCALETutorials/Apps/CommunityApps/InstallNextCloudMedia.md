@@ -13,12 +13,12 @@ keywords:
 - software storage solutions
 ---
 
-{{< include file="/static/includes/CommunityAppsContribute.md" >}}
-
 Nextcloud is a drop-in replacement for many popular cloud services, including file sharing, calendar, groupware and more.
 One of its more common uses for the home environment is serving as a media backup, and organizing and sharing service.
 This procedure demonstrates how to set up Nextcloud on TrueNAS SCALE, and configure it to support hosting a wider variety of media file previews, including High Efficiency Image Container (HEIC), MP4 and MOV files.
 The instructions in this article apply to SCALE 22.12.0 and later.
+
+{{< include file="/static/includes/AppsUnversioned.md" >}}
 
 ## Before You Begin
 
@@ -163,18 +163,34 @@ If the pool for apps is not already set, do it when prompted.
 {{< trueimage src="/images/SCALE/Apps/NextcloudSignInScreen.png" alt="Nextcloud Sign In Screen" id="Nextcloud Sign In Screen" >}}
 
 ## Troubleshooting Tips
+{{< hint type=info title="Update pre v. 2.0.4 Nextcloud Installations">}}
 There are known issues with Nextcloud app releases earlier than 2.0.4. Use the **Upgrade** option in the SCALE UI to update your Nextcloud release to 2.0.4.
 For more information on known issues, click [here](https://github.com/truenas/charts/issues/2444).
 
-For information on Nextcloud fixes involving TN Charts, see [PR 2447 nextcloud:fixes](https://github.com/truenas/charts/pull/2447)
+For information on Nextcloud fixes involving TN Charts, see [PR 2447 nextcloud:fixes](https://github.com/truenas/charts/pull/2447).
+{{< /hint >}}
+
+Nextcloud stability issues often result from misconfigured data ownership.
+Review logs for denied permissions and correct any apparent errors.
+To do this:
+1. Go to **Apps** and select Nextcloud from the installed applications screen.
+2. Click <i class="material-icons" aria-hidden="true" title="View Logs">article</i> **View Logs** to open a **Choose Pod** window.
+
+{{< trueimage src="/images/SCALE/Apps/NextcloudLogsChoosePod.png" alt="Choose Pod Window" id="Choose Pod Window" >}}
+
+3. Select the pod and container to review, enter a number of **Tail Lines** to view or accept the default 500, and click **Choose** to open the **Pod Logs** screen.
 
 ### App Sticks in Deploying State
-If the app does not deploy, try adding the **www-data** user and group to the **/nextcloud** dataset but do not set recursive.
+
+If the app does not deploy, try adding the **www-data** user and group (33:33) to the **/nextcloud** dataset but do not set recursive.
 Stop the app before editing the ACL permissions for the datasets.
 
-Next, add the **www-data** user and group to the **/nextcloud/data** dataset. You can set this to recursive, but it is not necessary.
+Next, add the **www-data** user and group to the **appdata** and **userdata** datasets. You can set this to recursive, but it is not necessary.
 To do this:
 1. Select the dataset, scroll down to the **Permissions** widget, click **Edit** to open the **ACL Editor** screen.
 2. Click **Add Item**, select **User** in **Who** and **www-data** in the **User** field, and select **Full Control** in **Permissions**.
 3. Add an entry for the group by repeating the above steps but select **Group**.
 4. Click **Save Access Control List**.
+
+Finally, add the user **netdata** and group **docker** (999:999) to the **Postgres Data** and **Postgres Backup** datasets, following the same process.
+Within the Nextcloud container, the user and group 999 map to **postgres**.

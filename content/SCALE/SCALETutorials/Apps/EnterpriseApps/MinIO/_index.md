@@ -16,17 +16,11 @@ keywords:
 - enterprise data storage
 ---
 
-{{< enterprise >}}
+{{< include file="/static/includes/SCALEEnterpriseApps.md" >}}
+
 The instructions in this article apply to the Official TrueNAS Enterprise MinIO application.
 This smaller version of MinIO is tested and polished for a safe and supportable experience for TrueNAS Enterprise customers.
-To use the complete MinIO app without iXsystems support, see the application available in the Community Apps catalog.
-
 The Enterprise MinIO application is tested and verified as an immutable target for Veeam Backup and Replication.
-
-We recommend that TrueNAS SCALE Enterprise (HA) systems not deploy applications.
-
-SCALE Enterprise single controller systems with the applications and virtual machines license feature have access to the **MinIO Official Enterprise** widget.
-{{< /enterprise >}}
 
 ## Adding MinIO Enterprise App
 Community members can add and use the MinIO Enterprise app or the default community version.
@@ -35,7 +29,7 @@ Community members can add and use the MinIO Enterprise app or the default commun
 {{< /expand >}}
 ## First Steps
 
-If your system has active sharing configurations (SMB, NFS, iSCSI), disable them in **System Settings > Services** before adding and configuring the MinIO application.
+If your system has active sharing configurations (SMB, NFS, iSCSI), disable them in **System > Services** before adding and configuring the MinIO application.
 Start any sharing services after MinIO completes the installation and starts.
 
 ## Installing MinIO Enterprise

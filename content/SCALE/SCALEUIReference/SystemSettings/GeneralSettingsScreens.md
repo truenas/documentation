@@ -3,13 +3,20 @@ title: "General Settings Screen"
 description: "Provides information on General system setting screen, widgets, and settings for getting support, changing console or the GUI, localization and keyboard setups, and adding NTP servers."
 weight: 20
 aliases: 
+ - /scale/scaleclireference/system/cliconfig/
+ - /scale/scaleclireference/system/cligeneral/
+ - /scale/scaleclireference/system/clintpserver/
+ - /scale/scaleclireference/system/clisupport/
+ - /scale/scaleclireference/system/clitruenas/
+ - /scale/scaletutorials/dashboard/scaletimesync/
 tags:
  - settings
  - console
  - ntp
+ - configuration files
 ---
 
-The TrueNAS SCALE **System Settings > General** screen includes widgets for **[Support](#support-widget)**, **[GUI](#gui-settings-screen)**, **[Localization](#localization-settings-screen)**, **[NTP](#add-ntp-server-screen)**, and system [**Email**](#email-options-screen) functions. Each widget displays information about current settings and includes one or more buttons for related actions and configuration options.
+The TrueNAS SCALE **System > General** screen includes widgets for **[Support](#support-widget)**, **[GUI](#gui-settings-screen)**, **[Localization](#localization-settings-screen)**, **[NTP](#add-ntp-server-screen)**, and system [**Email**](#email-options-screen) functions. Each widget displays information about current settings and includes one or more buttons for related actions and configuration options.
 
 {{< trueimage src="/images/SCALE/SystemSettings/SystemGeneralScreen.png" alt="System General Screen" id="System General Screen" >}}
 
@@ -25,7 +32,9 @@ The **Download File** option opens the **Save Configuration** dialog, which allo
 
 {{< trueimage src="/images/SCALE/SystemSettings/SaveConfigurationWindow.png" alt="Save Configuration" id="Save Configuration" >}}
 
-The **Export Password Secret Seed** option includes encrypted passwords in the downloaded configuration file. This option allows you to restore the configuration file to a different operating system device where the decryption seed is not already present. Users must physically secure configuration backups containing the seed to prevent unauthorized access or password decryption.
+The **Export Password Secret Seed** option includes encrypted passwords in the downloaded configuration file.
+This option allows you to restore the configuration file to a different operating system device where the decryption seed is not already present.
+Users must physically secure configuration file backups containing the seed to prevent unauthorized access or password decryption.
 
 ### Upload File
 
@@ -116,7 +125,7 @@ Click **Settings** to open the **GUI Settings** screen.
 | **Web Interface HTTPS Port** | Enter a port number for an HTTPS connection to the web interface. This field allows configuring a non-standard port to access the GUI over HTTPS. |
 | **HTTPS Protocols** | Select the [Transport Layer Security (TLS)](https://en.wikipedia.org/wiki/Transport_Layer_Security) versions TrueNAS SCALE can use for connection security from the dropdown list. Cryptographic protocol for securing client/server connections. |
 | **Web Interface HTTP -> HTTPS Redirect** | Select to redirect HTTP connections to HTTPS. A GUI SSL Certificate is required for HTTPS. Activating this also sets the [HTTP Strict Transport Security (HSTS)](https://en.wikipedia.org/wiki/HTTP_Strict_Transport_Security) maximum age to 31536000 seconds (one year). This means that after a browser connects to the web interface for the first time, the browser continues to use HTTPS and renews this setting every year. |
-| **Usage Collection** | Select to enable sending anonymous usage statistics to iXsystems. |
+| **Usage Collection** | Select to enable sending anonymous usage statistics to iXsystems. For more information about what usage data is collected, see the [TrueNAS Data Collection Statement]({{< relref "/SCALE/GettingStarted/UserAgreements/DataCollectionStatement.md" >}}). |
 | **Show Console Messages** | Select to display console messages in real-time at the bottom of the browser. |
 {{< /truetable >}}
 {{< /expand >}}

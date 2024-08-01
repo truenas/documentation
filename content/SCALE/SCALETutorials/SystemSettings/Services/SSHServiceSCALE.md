@@ -24,7 +24,7 @@ See [Security Recommendations](https://www.truenas.com/docs/solutions/optimizati
 
 ## Configuring SSH Service
 
-To configure SSH go to **System Settings > Services**, find **SSH**, and click <i class="material-icons" aria-hidden="true" title="Configure">edit</i> to open the basic settings **General Options** configuration screen.
+To configure SSH go to **System > Services**, find **SSH**, and click <i class="material-icons" aria-hidden="true" title="Configure">edit</i> to open the basic settings **General Options** configuration screen.
 
 {{< trueimage src="/images/SCALE/SystemSettings/ServicesSSHBasicSettingsGenOptionsSCALE.png" alt="SSH General Options" id="SSH General Options" >}}
 
@@ -44,7 +44,7 @@ These **Auxiliary Parameters** can be useful when troubleshooting SSH connectivi
 * Increase the `ClientAliveInterval` if SSH connections tend to drop.
 * Increase the `MaxStartups` value (**10** is default) when you need more concurrent SSH connections.
 
-Remember to enable the SSH service in **System Settings > Services** after making changes.
+Remember to enable the SSH service in **System > Services** after making changes.
 
 Create and store SSH connections and keypairs to allow SSH access in **Credentials > Backup Credentials** or by editing an administrative user account. See [Adding SSH Credentials]({{< relref "AddSSHConnectionKeyPair.md" >}}) for more information.
 
@@ -53,7 +53,7 @@ Create and store SSH connections and keypairs to allow SSH access in **Credentia
 SFTP (SSH File Transfer Protocol) is available by enabling SSH remote access to the TrueNAS system.
 SFTP is more secure than standard FTP as it applies SSL encryption on all transfers by default.
 
-Go to **System Settings > Services**, find the **SSH** entry, and click the <i class="material-icons" aria-hidden="true" title="Configure">edit</i> to open the **Services > SSH** basic settings configuration screen.
+Go to **System > Services**, find the **SSH** entry, and click the <i class="material-icons" aria-hidden="true" title="Configure">edit</i> to open the **Services > SSH** basic settings configuration screen.
 
 {{< trueimage src="/images/SCALE/SystemSettings/ServicesSSHBasicSettingsGenOptionsSCALE.png" alt="SSH General Options" id="SSH General Options" >}}
 
@@ -69,7 +69,7 @@ Choose a non-root administrative user to allow SSH access.
 
 Review the remaining options and configure them according to your environment or security needs.
 
-Remember to enable the SSH service in **System Settings > Services** after making changes.
+Remember to enable the SSH service in **System > Services** after making changes.
 
 Create and store SSH connections and keypairs to allow SSH access in **Credentials > Backup Credentials** or by editing an administrative user account. See [Adding SSH Credentials]({{< relref "AddSSHConnectionKeyPair.md" >}}) for more information.
 

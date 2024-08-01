@@ -2,12 +2,15 @@
 title: "Managing S.M.A.R.T. Tests"
 description: "Provides instructions on running S.M.A.R.T. tests manually or automatically, using Shell to view the list of tests, and configuring the S.M.A.R.T. test service."
 weight: 60
-aliases: 
+aliases:
+ - /scale/dataprotection/smarttestsscale/
 tags:
 - smart
 - disks
 keywords:
 - nas devices
+- storage volume
+- S.M.A.R.T. test
 ---
 
 [S.M.A.R.T.](https://en.wikipedia.org/wiki/S.M.A.R.T.) or Self-Monitoring, Analysis and Reporting Technology is a standard for disk monitoring and testing.
@@ -93,12 +96,14 @@ Saved schedules appear in the **S.M.A.R.T. Tests** window.
 S.M.A.R.T. tests can offline disks! Avoid scheduling S.M.A.R.T. tests simultaneously with scrub or other data protection tasks.
 {{< /hint >}}
 
-Start the S.M.A.R.T. service. Go to **System Settings > Services** and scroll down to the **S.M.A.R.T.** service. If not running, click the toggle to turn the service on. Select **Start Automatically** to have this service start after after the system reboots.
+Start the S.M.A.R.T. service. Go to **System > Services** and scroll down to the **S.M.A.R.T.** service. If not running, click the toggle to turn the service on. Select **Start Automatically** to have this service start after after the system reboots.
 
 ![SMARTSystemServicesSCALE](/images/SCALE/SystemSettings/SMARTSystemServicesSCALE.png "System Services S.M.A.R.T. Test")
 
 If you have not configured the S.M.A.R.T. service yet, while the service is stopped, click <i class="material-icons" aria-hidden="true" title="Configure">edit</i> to open the service configuration form. See [Services S.M.A.R.T. Screen]({{< relref "SMARTServicesScreen.md" >}}) for more information on service settings.
 Click **Save** to save settings and return to the **Services** screen.
+
+{{<include file="/static/includes/addcolumnorganizer.md">}}
 
 {{< expand "RAID controllers?" "v" >}}
 Disable the S.M.A.R.T. service when a RAID controller controls the disks.

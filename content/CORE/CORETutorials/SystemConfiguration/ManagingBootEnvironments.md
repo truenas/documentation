@@ -3,10 +3,12 @@ title: "Managing Boot Environments"
 description: "Provides information about managing boot environments on TrueNAS CORE."
 weight: 30
 aliases:
-  - /core/system/boot/bootscreen
+  - /core/system/boot/bootscreen/
+  - /core/coretutorials/systemconfiguration/managingbootenvironments/
 tags:
 - boot
 - update
+slug: managing-boot-environments
 ---
 
 TrueNAS supports a ZFS feature known as boot environments.

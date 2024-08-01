@@ -13,8 +13,8 @@ keywords:
 The SCALE **Shell** is convenient for running command line tools, configuring different system settings, or finding log files and debug information.
 
 {{< hint type=warning >}}
-Warning! The supported mechanisms for making configuration changes are the TrueNAS WebUI, CLI, and API exclusively.
-All others are not supported and result in undefined behavior that can result in system failure!
+Warning! The supported mechanisms for making configuration changes are the TrueNAS WebUI and API exclusively.
+All other are not supported and result in undefined behavior that can result in system failure!
 {{< /hint >}}
 
 {{< trueimage src="/images/SCALE/CLI/SystemShellSCALE.png" alt="Shell Screen" id="Shell Screen" >}}
@@ -30,7 +30,7 @@ Click **Reconnect** to start a new session.
 
 ## Navigating In Shell
 This section provides keyboard navigation shortcuts you can use in Shell.
-{{< expand "Click Here for More Information" "v" >}}
+
 {{< truetable >}}
 | Action | Keyboard/Command | Description |
 |--------|------------------|-------------|
@@ -47,7 +47,6 @@ This section provides keyboard navigation shortcuts you can use in Shell.
 | Paste text | <kbd>Shift+Insert</kbd> | Enter <kbd>Shift+Insert</kbd> to paste copied text in Shell. |
 | Kill running process | <kbd>Ctrl+c</kbd> | Enter <kbd>Ctrl+c</kbd> to kill a process running in Shell. For example, the `ping` command. |
 {{< /truetable >}}
-{{< /expand >}}
 
 ## Changing the Default Shell
 
@@ -58,8 +57,9 @@ Scroll down to **Shell** and select a different option from the dropdown list.
 Options are **nologin**, **TrueNAS CLI**, **TrueNAS Console**, **sh**, **bash**, **rbash**, **dash**, **tmux**, and **zsh**.
 Click **Save**.
 
-Most Linux command-line utilities are available in the **Shell**.
-Clicking other SCALE UI menu options closes the shell session and stops commands running in the **Shell** screen.
+Admin users can set the Shell to default to the TrueNAS Console by selecting **TrueNAS Console** in **Shell** on the **Edit User** screen.
+
+Clicking other SCALE UI menus options closes the shell session and stops commands running in the **Shell** screen.
 
 [Tmux](https://github.com/tmux/tmux/wiki/) allows you to detach sessions in **Shell** and then reattach them later.
 Commands continue to run in a detached session.

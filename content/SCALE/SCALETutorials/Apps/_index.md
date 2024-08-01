@@ -15,6 +15,11 @@ keywords:
 - software storage solutions
 ---
 
+TrueNAS applications allow for quick and easy integration of third-party software and TrueNAS SCALE.
+Applications are available from official, Enterprise, and community maintained trains.
+
+{{< include file="/static/includes/AppsUnversioned.md" >}}
+
 ## Installed Applications Screen
 
 The first time you go to **Apps**, the **Installed** applications screen displays an <i class="fa fa-cog" aria-hidden="true"></i> **Apps Service Not Configured** status on the screen header.
@@ -222,7 +227,7 @@ It is not possible at this time to specify which available GPU device is allocat
 If installed GPU devices do not populate as available for allocation in **GPU Configuration**:
 
 1. Ensure the GPU devices you want to allocate are not configured as isolated.
-   Go to **System Settings > Advanced** and locate the **Isolated GPU Device(s)** widget.
+   Go to **System > Advanced** and locate the **Isolated GPU Device(s)** widget.
    If necessary, click **Configure**, deselect the device(s) you want to allocate, and click **Save**.
 
 2. Ensure the GPU devices you want to allocate are not assigned to any existing VMs.

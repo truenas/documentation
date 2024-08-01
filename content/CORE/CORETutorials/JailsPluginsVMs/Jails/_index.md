@@ -5,6 +5,7 @@ geekdocCollapseSection: true
 aliases:
  - /core/applications/jails/create/
  - /core/coretutorials/jailspluginsvms/jails/creatingjails/
+ - /core/applications/jails/
 weight: 10
 related: false
 tags:

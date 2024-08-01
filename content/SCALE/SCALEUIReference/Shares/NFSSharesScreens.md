@@ -5,6 +5,7 @@ weight: 30
 aliases:
 - /scale/scaleuireference/shares/nfs/nfssharesscreens/
 - /scale/scaleuireference/shares/nfs/
+- /scale/scaleclireference/sharing/clinfs/
 tags:
 - nfs
 - shares
@@ -114,7 +115,7 @@ Only the **Access** settings display on the **Advanced Options** screen.
 {{< /truetable >}}
 
 ## NFS Sessions Screen
-You can access the **NFS Sessions** screen from the **NFS** option on the **System Settings > Services** screen with the <i class="material-icons" aria-hidden="true" title="list">list</i> icon and from the <span class="material-icons">more_vert</span> on the **Shares > Unix (NFS) Shares** widget.
+You can access the **NFS Sessions** screen from the **NFS** option on the **System > Services** screen with the <i class="material-icons" aria-hidden="true" title="list">list</i> icon and from the <span class="material-icons">more_vert</span> on the **Shares > Unix (NFS) Shares** widget.
 
 {{< trueimage src="/images/SCALE/Shares/NFSSessionsScreen.png" alt="NFS Sessions Screen" id="NFS Sessions Screen" >}}
 
@@ -125,3 +126,5 @@ The **NFS Sessions** screen shows current NFS sessions.
 **Column** displays a dropdown list of options for the selected tab to customize the information included on the screen.
 
 Click **Sharing** on the top breadcrumb to open the Shares dashboard.
+
+{{<include file="/static/includes/addcolumnorganizer.md">}}

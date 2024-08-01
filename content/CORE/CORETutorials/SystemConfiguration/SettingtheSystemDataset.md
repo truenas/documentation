@@ -3,7 +3,8 @@ title: "Setting the System Dataset"
 description: "Describes how to configure the system dataset on TrueNAS CORE."
 weight: 70
 aliases:
-  - /core/system/systemdataset
+  - /core/system/systemdataset/
+  - /core/coretutorials/systemconfiguration/setting-the-system-dataset/
 tags:
 - systemdataset
 - datasets

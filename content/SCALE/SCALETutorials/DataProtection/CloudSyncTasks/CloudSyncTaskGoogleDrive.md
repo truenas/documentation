@@ -65,6 +65,8 @@ To add a cloud sync task, go to **Data Protection > Cloud Sync Tasks** and click
 
 See **Using Scripting and Environment Variables** for more information on [environment variables]({{< relref "/SCALE/SCALETutorials/DataProtection/CloudSyncTasks/_index.md" >}}).
 
+{{<include file="/static/includes/addcolumnorganizer.md">}}
+
 ### Working with Google Created Content
 
 {{< include file="/static/includes/GoogleDriveBadPermissions.md" >}}

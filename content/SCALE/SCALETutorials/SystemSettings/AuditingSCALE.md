@@ -22,11 +22,10 @@ Syslog sends audit messages via explicit syslog call with configurable priority 
 The default is syslog sent audit messages.
 Debug sends audit messages from the Samba debug library and these messages have a configurable severity (WARNING, NOTICE, or INFO).
 
-The **System Settings > Audit** screen lists all session, user, or SMB events.
+The **System > Audit** screen lists all session, user, or SMB events, facilitating comprehensive monitoring.
 Logs include who performed the action, timestamp, event type, and a short string of the action performed (event data).
 
 SCALE includes a manual page with more information on the [VFS auditing functions](https://github.com/truenas/samba/blob/SCALE-v4-19-stable/docs-xml/manpages/vfs_truenas_audit.8.xml).
-Administrative users can enter {{< cli >}}man vfs_truenas_audit{{< /cli >}} in a SCALE command prompt to view the embedded manual page.
 
 ### Auditing Event Types
 Events are organized by session and user, and SMB auditing.
@@ -84,7 +83,7 @@ Generated when a client attempts to set basic file attributes (for example DOS m
 The key **attr_type** indicates the precise type of attributes that are changed in the event this message records.
 {{< /expand >}}
 {{< expand "Unlink Events" "v" >}}
-Generated when a client attempts to set a user or group quota on an SMB share.
+Generated when a client attempts to delete a file or directory from a share.
 {{< /expand >}}
 {{< expand "Set_ACL Events" "v" >}}
 Generated when a client attempts to set an NFSv4 ACL on a file system or to grant a user (OWNER) read and write permissions to the file system.
@@ -139,10 +138,10 @@ Users have access to audit information from three locations in the SCALE UI:
   * On the **Sharing** page, click the <span class="material-icons">edit</span> **Edit** icon on the desired **SMB share** row where **Enable**, **watch** and **ignore** settings are available. For details see [Configuring SMB Auditing](#configuring-smb-auditing).
 * **System > Services > SMB** to view **SMB** audit logs
   * On the **Services** page, click the <span class="material-icons">receipt_long</span> **Audit Logs** icon on the **SMB** row. This opens the main **Audit** log page with the **Search** field filter configured to show only SMB events.  For details see [Audit Screen](#audit-screen).
-* **System Settings > Audit** option on the main navigation panel
+* **System > Audit** option on the main navigation panel
   * The default **Audit** log page is unfiltered and displays all system events such as authentication and SMB events.
 
-## Audit Screen
+## Searching Audit Logs
 {{< trueimage src="/images/SCALE/SystemSettings/SystemSettingsAuditScreen.png" alt="Audit Screen" id="Audit Screen" >}}
 
 The audit screen includes basic and advanced search options.
@@ -175,8 +174,9 @@ The <i class="material-icons" aria-hidden="true" title="Copy to Clipboard">assig
 
 {{< include file="/static/includes/ConfigureSMBShareAuditingSCALE.md" >}}
 
-## Configuring Session Auditing
-To configure session auditing settings, go to **System Settings > Advanced**, then click **Configure** on the **Audit** widget.
+## Configuring Audit Storage and Retention Policies
+
+To configure Audit storage and retention settings, go to **System > Advanced**, then click **Configure** on the [**Audit**]({{< relref "/SCALE/SCALEUIReference/SystemSettings/AdvancedSettingsScreen.md#audit-widget" >}}) widget.
 
 {{< include file="/static/includes/ConfigureSystemAuditSCALE.md" >}}
 

@@ -59,7 +59,7 @@ enable = true
 
   # (Optional, default static/brand.svg) Set the path to a logo for the Geekdoc
   # relative to your 'static/' folder.
-  geekdocLogo = "/images/truenas_open_storage-logo-full-color-rgb.png"
+  geekdocLogo = "/images/TrueNAS_Open_Enterprise_Storage.png"
 
   # (Optional, default false) Render menu from data file im 'data/menu/main.yaml'.
   geekdocMenuBundle = false
@@ -150,7 +150,7 @@ enable = true
   [params.geekdocContentLicense]
     name = "CC BY-SA 4.0"
     link = "https://creativecommons.org/licenses/by-sa/4.0/"
-
+	
 [frontmatter]
 lastmod = ["lastmod", ":git", ":fileModTime", ":default"]
 
