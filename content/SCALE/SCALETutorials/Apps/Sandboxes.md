@@ -1,7 +1,7 @@
 ---
 title: "Sandboxes (Jail-like Containers)"
 description: "Provides advanced users information on deploying custom FreeBSD jail-like containers in SCALE."
-weight: 30
+weight: 60
 aliases:
  - /scale/scaletutorials/apps/sandboxes/)
 tags:

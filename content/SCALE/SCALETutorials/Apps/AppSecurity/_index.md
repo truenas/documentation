@@ -2,7 +2,7 @@
 title: "Securing Apps"
 description: "Securing TrueNAS applications with VPNs and Zero Trust."
 geekdocCollapseSection: true
-weight: 12
+weight:35
 tags:
 - apps
 - vpn

@@ -1,7 +1,7 @@
 ---
 title: "Community Apps"
 description: "Notes about community applications and individual tutorials for applications."
-weight: 15
+weight: 30
 tags:
 - apps
 related: false
