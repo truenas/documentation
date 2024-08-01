@@ -9,10 +9,10 @@ tags:
 
 {{< include file="/static/includes/FileIssueTicketSCALE.md" >}}
 
-## Using the SCALE Feedback Window
+## Using the Send Feedback Window
 
 {{< include file="/static/includes/FeedbackWindow.md" >}}
 
 ## Making Feature Suggestions
 
-{{< include file="/static/includes/CreateJiraSuggestion.md" >}}
+{{< include file="/static/includes/CreateFeatureRequest.md" >}}
