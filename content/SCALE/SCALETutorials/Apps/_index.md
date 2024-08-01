@@ -15,12 +15,63 @@ keywords:
 - software storage solutions
 ---
 
-We welcome community contributions to keep our documentation current!
-Click **Edit Page** in the top right corner to propose changes to an article.
-See [Updating Content](https://www.truenas.com/docs/contributing/documentation/contentupdate/) for more information.
+{{< include file="/static/includes/ProposeArticleChange.md" >}}
 
 TrueNAS applications allow for quick and easy integration of third-party software and TrueNAS SCALE.
-Applications are available from official, Enterprise, and community maintained trains.
+
+TrueNAS is certified with leading hypervisors and backup solutions to streamline storage operations and ensure compatibility with your existing IT infrastructure.
+TrueNAS SCALE delivers a wide range of features and scalability for virtualization and private cloud environments, with the ability to create off-site backups with scheduled sync and replication features.
+SCALE applications expand the capabilities of your system by adding third-party software, but they can add significant risk to system stability and security.
+
+## Best Practices
+The sections below outline general best practices to keep in mind when using applications with TrueNAS SCALE.
+
+{{< expand "App Pool Selection" "v" >}}
+
+{{< include file="/static/includes/AppsPoolOrDataset.md" >}}
+
+{{< /expand >}}
+
+{{< expand "App Dataset and File Sharing" "v" >}}
+
+{{< include file="/static/includes/AppsFileSharing.md" >}}
+
+{{< /expand >}}
+
+{{< expand "Docker Compose Settings" "v" >}}
+
+{{< include file="/static/includes/AppsDockerCompose.md" >}}
+
+{{< /expand >}}
+
+{{< expand "Custom Apps" "v" >}}
+
+{{< include file="/static/includes/AppsCustomApp.md" >}}
+
+{{< /expand >}}
+
+{{< expand "App Directory Services" "v" >}}
+
+{{< include file="/static/includes/AppsDirectoryService.md" >}}
+
+## Application Catalogs
+Applications are available from three catalogs (trains) of applications:
+
+* Enterprise - Maintained by iXsystems for Enterprise users.
+* Chart - Maintained by iXsystems for non-Enterprise and community users.
+* Community - Proposed and maintained by the community.
+
+Official chart applications are sometimes proposed by community members, but are vetted by iXsystems for feature and functionality and how they integrate with the SCALE platform.
+All applications added to SCALE are intended to expand system functionality far beyond what is typically expected from a NAS.
+
+The TrueNAS **Chart** and **Community** catalogs are loaded by default and populate the **Discover** apps screen.
+Users can add the **Enterprise** catalog.
+To view the catalog settings, select the **Manage Catalogs** at the top of the **Discover** apps screen.
+
+Applications are provided "as-is" and can introduce system stability or security issues when installed.
+Make sure the application is required for your specific use requirements and does not violate your security policies before installation.
+
+Some applications deploy as the **root** user for initial configuration before operating as a non-root user.
 
 ## Installed Applications Screen
 
@@ -28,28 +79,24 @@ The first time you go to **Apps**, the **Installed** applications screen display
 
 {{< trueimage src="/images/SCALE/Apps/AppsServiceNotConfigured.png" alt="Apps Service Not Configured" id="Apps Service Not Configured" >}}
 
-After setting the pool apps use, the header changes to show **Apps Service Running**.
+After setting the pool apps uses, this changes to **Apps Service Running**.
 
 The **Installed** applications screen displays **Check Available Apps** before you install the first application.
 
 {{< trueimage src="/images/SCALE/Apps/AppsInstalledAppsScreenNoApps.png" alt="Installed Applications Screen No Apps" id="Installed Applications Screen No Apps" >}}
 
-Click **Check Available Apps** or **Discover Apps** to open the **[Discover](#using-the-discover-applications-screen)** screen to see application widgets available in the official TRUENAS catalog.
+Click **Check Available Apps** or **Discover Apps** to open the **[Discover](#using-the-discover-applications-screen)** screen to see application widgets available in the TRUENAS catalog.
 
-After installing an application, the **Installed** screen populates the **Applications** area with a list of installed apps.
-Click on an application row to view the information widgets for that app.
-Options allow editing the application settings, opening container pod shell or logs, and accessing the **Web Portal** for the application, if applicable.
+After installing an application, the **Installed** screen populates the **Applications** area with a table listing installed applications.
+Select an application to view the information widgets for applications, with options to edit the application settings, open container pod shell or logs, and access the **Web Portal** for the application, if applicable.
 
 {{< trueimage src="/images/SCALE/Apps/InstalledAppsScreenWithApps.png" alt="Installed Applications Screen with Apps" id="Installed Applications Screen with Apps" >}}
 
-Application widgets vary by app, but all include the **Application Info** and **Workloads** widgets.
-Some include the **History** and **Notes** widgets.
+Application widgets vary by app, but all include the **Application Info** and **Workloads** widgets. Some include the **History** and **Notes** widgets.
 
-### Setting the Apps Pool
+### Choosing the Apps Pool
 You must choose the pool apps use before you can add applications.
-The first time you go to the **Applications** screen, click **Settings > Choose Pool** to select a storage pool for apps.
-This adds the **ix-applications** dataset to the pool.
-The **ix-applications** dataset stores all container-related data, and is for internal use only.
+The first time you go to the **Applications** screen, click **Settings > Choose Pool** to choose a storage pool for Apps.
 
 {{< trueimage src="/images/SCALE/Apps/AppsSettingsChoosePool.png" alt="Choosing a Pool for Apps" id="Choosing a Pool for Apps" >}}
 
@@ -57,6 +104,8 @@ We recommend keeping the application use case in mind when choosing a pool.
 Select a pool with enough space for all the applications you intend to use.
 For stability, we also recommend using SSD storage for the applications pool.
 
+TrueNAS creates an *ix-applications* dataset on the chosen pool and uses it to store all container-related data.
+The dataset is for internal use only.
 Set up a new dataset before installing your applications if you want to store your application data in a location separate from other storage on your system.
 For example, create the datasets for the Nextcloud application, and, if installing Plex, create the dataset(s) for Plex data storage needs.
 
@@ -64,11 +113,10 @@ For example, create the datasets for the Nextcloud application, and, if installi
 
 {{< trueimage src="/images/SCALE/SystemSettings/SystemSettingsGUISettingsSCALE.png" alt="General System Settings" id="General System Settings" >}}
 
-After configuring a storage pool for your apps, the status changes to <span class="iconify" data-icon="mdi:check-circle" color=#71BF44></span> **Apps Service Running**.
+After an apps storage pool is configured, the status changes to <span class="iconify" data-icon="mdi:check-circle" color=#71BF44></span> **Apps Service Running**.
 
 ### Unsetting the Apps Pool
-To select a different pool for apps to use, click **Settings > Unset Pool**.
-This turns off the apps service until you choose another pool.
+To select a different pool for apps to use, click **Settings > Unset Pool**. This turns off the Apps service until you choose another pool for apps to use.
 
 ### Changing Official Application Networking
 Official applications use the default system-level Kubernetes node IP settings.
