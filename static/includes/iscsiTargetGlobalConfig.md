@@ -4,7 +4,7 @@ The **Target Global Configuration** displays configuration settings that apply t
 There are no add, edit, or delete options for this screen.
 It opens after you click **Configure** on the **Block (iSCSI) Share Target** widget on the **Sharing** screen. It also opens when you click **Config Service**.
 
-The **System Settings > Services > iSCSI** displays the **Target Global Configuration** and all the other configuration screens after you click the iSCSI **Config** option on the **Services** screen.
+The **System > Services > iSCSI** displays the **Target Global Configuration** and all the other configuration screens after you click the iSCSI **Config** option on the **Services** screen.
 
 ![iSCSIManualTargetGlobalConfig](/images/SCALE/Shares/iSCSIManualTargetGlobalConfig.png "iSCSI Target Global Configuration")
 

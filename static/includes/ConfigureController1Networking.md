@@ -13,7 +13,7 @@ Only configure network settings on controller 1! When ready to sync to peer, SCA
 To configure network settings on controller 1:
 
 1. Disable the failover service.
-   Go to **System Settings > Services** locate the **Failover** service and click edit.
+   Go to **System > Services** locate the **Failover** service and click edit.
    Select **Disable Failover** and click **Save**.
 
 2. [Edit the global network settings]({{< relref "AddingGlobalConf.md" >}}) to add the controller and virtual hostnames and update any other network settings.
