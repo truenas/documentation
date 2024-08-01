@@ -1,6 +1,6 @@
 &NewLine;
 
-On TrueNAS SCALE systems, go to **System Settings > Advanced**, then click **Save Debug** and wait for the file to download to your local system. 
+On TrueNAS SCALE systems, go to **System > Advanced**, then click **Save Debug** and wait for the file to download to your local system. 
 Generating the debug file might take a few minutes to complete. After that, it downloads to your system.
 
 To generate a debug from the SCALE CLI, enter <command>system debug > <i>debugname</i>.tgz</command>, replacing <i>debugname</i> with your chosen filename.
