@@ -12,8 +12,11 @@ related: false
 
 {{< hint type="tip" >}}
 This page is being rebuilt with notes from the latest TrueNAS CORE **nightly** development versions.
-The latest [TrueNAS CORE **13.3** version release notes](https://www.truenas.com/docs/core/13.3/gettingstarted/corereleasenotes/) are now available from the TrueNAS CORE 13.3 documentation section.
-Release notes for all the latest major versions are also linked from the [Docs Hub Home](/).
+
+**Not what you were looking for?** Release notes for other CORE versions are also available:
+
+* [TrueNAS CORE **13.0**](https://www.truenas.com/docs/core/13.0/gettingstarted/corereleasenotes/)
+* [TrueNAS CORE **13.3**](https://www.truenas.com/docs/core/13.3/gettingstarted/corereleasenotes/)
 {{< /hint >}}
 
 ## Obtaining a Release
