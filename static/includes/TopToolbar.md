@@ -20,7 +20,7 @@ The iXsystems logo opens the [iXsystems home page](https://www.ixsystems.com/) w
 Users can also use the iXsystems home page to access their customer portal and the community section for support.
 {{< /expand >}}
 
-{{< expand "How would you rate this page?" "v" >}}
+{{< expand "Send Feedback" "v" >}}
 {{< include file="/static/includes/FeedbackWindow.md" >}}
 {{< /expand >}}
 

@@ -6,7 +6,7 @@ You must have [a Jira account](https://id.atlassian.com/signup?continue=https%3A
 If you encounter a bug or other issue while using TrueNAS SCALE, you can report issues in one of two ways:
 
 * Log into Jira and use **Create** to open a new ticket [details]({{< relref "JiraIssueReporting.md" >}}).
-* Use the **How would you rate this page?** ![FeedbackIcon](/images/SCALE/Dashboard/FeedbackIcon.png "Feedback Icon") icon or **File Ticket** option on the **System Settings > General** screen to create a bug report in the [TrueNAS Jira Project](https://ixsystems.atlassian.net/jira/software/c/projects/NAS/issues).
+* Use the **Send Feedback** ![FeedbackIcon](/images/SCALE/Dashboard/FeedbackIcon.png "Feedback Icon") icon or **File Ticket** option on the **System > General** screen to create a bug report in the [TrueNAS Jira Project](https://ixsystems.atlassian.net/jira/software/c/projects/NAS/issues).
 
 The web interface provides a form to report issues without logging out of SCALE.
 The form prompts you to provide the information and attachments we need to assist users.
