@@ -13,7 +13,7 @@ Here are the major changes in this release:
 
 * New multi-system ZFS replication quickly backs up storage snapshots across connected TrueNAS systems.
 <--->
-* The experimental clustering feature is deprecated and scheduled for removal in a future TrueCommand version.
+* The experimental clustering feature is deprecated and UI screens disabled in TrueCommand 3.0.2.
 
 * The experimental iSCSI management feature is permanently removed. iSCSI shares previously created by TrueCommand continue to live on the individual TrueNAS systems.
 
@@ -110,6 +110,7 @@ Notable changes:
 * Increase temp password timeout for Cloud to 48 hours ([TC-3187](https://ixsystems.atlassian.net/browse/TC-3187)).
 * Do not check for upgrade_pending status if connected via the passive controller ([TC-3182](https://ixsystems.atlassian.net/browse/TC-3182)).
 * Paused internal alerts do not persist past reboot ([TC-3181](https://ixsystems.atlassian.net/browse/TC-3181)).
+* The deprecated Clusters screen has been disabled in the TrueCommand UI ([TC-3223](https://ixsystems.atlassian.net/issues/TC-3223))
 
 <a href="https://ixsystems.atlassian.net/issues/?filter=10580" target="_blank">Click here for the full changelog</a> of completed tickets that are included in the TrueCommand 3.0.2 release.
 

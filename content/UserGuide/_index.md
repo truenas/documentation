@@ -5,6 +5,8 @@ weight: 15
 cascade:
   - _target:
     book: "TrueCmdUG"
+aliases:
+ - /userguide/clusters/
 ---
 
 TrueCommand supports creating additional user accounts that can log in to the web interface and use some TrueCommand features.
