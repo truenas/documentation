@@ -15,16 +15,34 @@ keywords:
 - software storage solutions
 ---
 
-{{< include file="/static/includes/ProposeArticleChange.md" >}}
 
 TrueNAS applications allow for quick and easy integration of third-party software and TrueNAS SCALE.
+
+{{< include file="/static/includes/ProposeArticleChange.md" >}}
 
 TrueNAS is certified with leading hypervisors and backup solutions to streamline storage operations and ensure compatibility with your existing IT infrastructure.
 TrueNAS SCALE delivers a wide range of features and scalability for virtualization and private cloud environments, with the ability to create off-site backups with scheduled sync and replication features.
 SCALE applications expand the capabilities of your system by adding third-party software, but they can add significant risk to system stability and security.
 
-## Best Practices
-The sections below outline general best practices to keep in mind when using applications with TrueNAS SCALE.
+## Getting Started
+All applications added to SCALE are intended to expand system functionality far beyond what is typically expected from a NAS.
+
+You must choose a pool before you can install an application.
+
+SCALE applications are available in three catalogs (trains):
+
+* Enterprise - Apps are simplified and validated for Enterprise users that are maintained by iXsystems for Enterprise users.
+* Chart - Default catalog, maintained by iXsystems for non-Enterprise and community users.
+* Community - Apps proposed and maintained by the community.
+
+Some apps proposed by community members get adopted as official **Chart** applications apps.
+Official apps are vetted by iXsystems based on the features and functionality the provide and how they integrate with the SCALE platform.
+
+Applications are provided "as-is" and can introduce system stability or security issues when installed.
+Make sure the application is required for your specific use requirements and does not violate your security policies before installation.
+
+Some applications deploy as the **root** user for initial configuration before operating as a non-root user.
+Keep these general best practices in mind when using applications with TrueNAS SCALE.
 
 {{< expand "App Pool Selection" "v" >}}
 
@@ -56,34 +74,46 @@ The sections below outline general best practices to keep in mind when using app
 
 {{< /expand >}}
 
-## Application Catalogs
-Applications are available from three catalogs (trains) of applications:
+## Choosing the Application Pool
+You are prompted to [select the pool for apps](#choosing-the-apps-pool) the first time you click on **Apps**.
+You can exit out of this if you are not ready to deploy apps or do not have a pool configured for apps to use for storage.
+You must set the pool before you can add any application. 
 
-* Enterprise - Maintained by iXsystems for Enterprise users.
-* Chart - Maintained by iXsystems for non-Enterprise and community users.
-* Community - Proposed and maintained by the community.
+We recommend keeping the application use case in mind when choosing a pool.
+Select a pool with enough space for all the applications you intend to use.
+For stability, we also recommend using SSD storage for the applications pool.
 
-Official chart applications are sometimes proposed by community members, but are vetted by iXsystems for feature and functionality and how they integrate with the SCALE platform.
-All applications added to SCALE are intended to expand system functionality far beyond what is typically expected from a NAS.
+Select the pool and click **Save**. If you close the dialog to set the pool later, click **Settings > Choose Pool** to set the pool.
 
-The TrueNAS **Chart** and **Community** catalogs are loaded by default and populate the **Discover** apps screen.
-Users can add the **Enterprise** catalog.
+{{< trueimage src="/images/SCALE/Apps/AppsSettingsChoosePool.png" alt="Choosing a Pool for Apps" id="Choosing a Pool for Apps" >}}
+
+TrueNAS creates an **ix-applications** dataset on the chosen pool and uses it to store all container-related data.
+The dataset is for internal use only.
+
+If you want to set up new datasets to store your application data in a location separate from other storage on your system, create the datasets before installing the application.
+For example, create the datasets for the Nextcloud app before installing the app.
+
+{{< include file="/static/includes/AppsVMsNoHTTPS.md" >}}
+
+{{< trueimage src="/images/SCALE/SystemSettings/SystemSettingsGUISettingsSCALE.png" alt="General System Settings" id="General System Settings" >}}
+
+### Unsetting the Apps Pool
+To select a different pool for apps to use, click 
+
+## Adding a Catalog Train
+The TrueNAS **Chart** catalog populates the **Discover** apps screen by default.
+Users can add the **Community** or **Enterprise** catalog.
 To view the catalog settings, select the **Manage Catalogs** at the top of the **Discover** apps screen.
 
-Applications are provided "as-is" and can introduce system stability or security issues when installed.
-Make sure the application is required for your specific use requirements and does not violate your security policies before installation.
+{{< include file="/static/includes/AddEnterpriseTrain.md" >}}**Settings > Unset Pool**. This turns off the apps service until you choose another pool for apps to use.
 
-Some applications deploy as the **root** user for initial configuration before operating as a non-root user.
-
-## Installed Applications Options
-
+## Installing an Application
 The first time you go to **Apps**, the **Installed** applications screen displays an <i class="fa fa-cog" aria-hidden="true"></i> **Apps Service Not Configured** status on the screen header.
+You must choose the pool apps use before you can install applications.
 
 {{< trueimage src="/images/SCALE/Apps/AppsServiceNotConfigured.png" alt="Apps Service Not Configured" id="Apps Service Not Configured" >}}
 
-You are prompted to [select the pool for apps](#choosing-the-apps-pool).
-You can exit out of this if you are not ready to deploy apps or have not configured the pool for apps to use for storage.
-You must set the pool before you can add any application. After setting the pool, **Apps Service Running** shows at the top of the screen.
+After setting the pool, **Apps Service Running** shows at the top of the screen.
 
 The **Installed** applications screen displays **Check Available Apps** before you install the first application.
 
@@ -94,7 +124,9 @@ Click **Check Available Apps** or **Discover** to open the **[Discover Apps](#us
 After installing an application, the **Installed** screen populates the **Applications** table with a row that shows the row shows the current state, the option to stop or start the app, and a badge when an update is available.
 Select an application to view the information widgets for that application.
 
-The **Application Info** widget provides options to edit or delete the app, and shows information about the app, and acces to the **Web Portal** for the application, if applicable. 
+The **Application Info** widget provides options to edit or delete the app.
+It shows information about the app and provides access to the **Web Portal** for the application, if applicable.
+
 The **Workload** widget provides information on the container and access to the container pod shell and log screens.
 If not deployed these pod options do not show.
 
@@ -102,12 +134,13 @@ If not deployed these pod options do not show.
 
 Application widgets vary by app, but all include the **Application Info** and **Workloads** widgets. Some include the **History** and **Notes** widgets.
 
-### Installing an App
+### Opening an App Installation Wizard
+While on the **Discover Apps** screen, click on an app widget to open the information screen for that app.
 From the application information screen, click **Install** to open the installation wizard for the application.
 
 {{< trueimage src="/images/SCALE/Apps/MinIOS3AppInfoScreen.png" alt="Application Information Screen Example" id="Application Information Screen Example" >}}
 
-After installing an application, the **Installed** applications screen shows the application in the **Deploying** state.
+After installing an application, the **Installed** applications screen opens showing the application in the **Deploying** state.
 It changes to **Running** when the application is ready to use.
 
 The installation wizard configuration sections vary by application, with some including more configuration areas than others.
@@ -151,7 +184,7 @@ If a certificate is required for the application, create the certificate authori
 Storage configuration can includes the primary data mount volume, a configuration volume, postgres volumes, and an option to add additional storage volumes.
 The primary mount volumes have two options:
 * **ixVolume** that creates a storage volume inside the **ix-applications** dataset. This is the default setting.
-* **Host Path** that allows you to select an exisiting dataset created for the application. Shows additional fields to select the path to the dataset and add the mount point.
+* **Host Path** that allows you to select an existing dataset created for the application. Shows additional fields to select the path to the dataset and add the mount point.
 
 If adding an additional storage volume, click **Add** to configure additional storage volumes for the application to use in addition to the main storage volume (dataset).
 The three storage options are:
@@ -170,37 +203,12 @@ This section can also be named **Resource Limits**.
 In most cases, accept the default settings or change these settings to limit the system resources available to the application.
 {{< /expand >}}
 
-After installing an app, you can modify most settings by clicking on the app row on the **Installed** applications screen, then clicking **Edit**on the **Application Info** widget.
+After installing an app, you can modify most settings by clicking on the app row on the **Installed** applications screen, then clicking **Edit** on the **Application Info** widget.
 Make sure you have the right app row selected or you end up accessing the first app listed in the table of deployed apps.
 
-Refer to individual tutorials in the [Chart]({{< relref "/SCALE/SCALETutorials/Apps/ChartApps/_index.md" >}}), [Community]({{< relref "/SCALE/SCALETutorials/Apps/CommunityApps/_index.md" >}}), or [Enterprise]({{< relref "/SCALE/SCALETutorials/Apps/CEnterpriseApps/_index.md" >}}) sections of the Documentation Hub for more details on configuring application settings.
+Refer to individual tutorials in the [Chart]({{< relref "/SCALE/SCALETutorials/Apps/ChartApps/_index.md" >}}), [Community]({{< relref "/SCALE/SCALETutorials/Apps/CommunityApps/_index.md" >}}), or [Enterprise]({{< relref "/SCALE/SCALETutorials/Apps/EnterpriseApps/_index.md" >}}) sections of the Documentation Hub for more details on configuring application settings.
 
-### Choosing the Apps Pool
-You must choose the pool apps use before you can install applications.
-We recommend keeping the application use case in mind when choosing a pool.
-Select a pool with enough space for all the applications you intend to use.
-For stability, we also recommend using SSD storage for the applications pool.
-
-The first time you open the **Applications** screen, a dialog shows prompting you to set the pool. 
-Select the pool and click **Save**. If you close the dialog, to set the pool later, click **Settings > Choose Pool**.
-
-{{< trueimage src="/images/SCALE/Apps/AppsSettingsChoosePool.png" alt="Choosing a Pool for Apps" id="Choosing a Pool for Apps" >}}
-
-TrueNAS creates an **ix-applications** dataset on the chosen pool and uses it to store all container-related data.
-The dataset is for internal use only.
-
-If you want to set up new datasets to store your application data in a location separate from other storage on your system, create the datasets before installing your application.
-For example, create the datasets for the Nextcloud application, then if installing Plex, create the dataset(s) for Plex data storage needs before installing these apps.
-
-{{< include file="/static/includes/AppsVMsNoHTTPS.md" >}}
-
-{{< trueimage src="/images/SCALE/SystemSettings/SystemSettingsGUISettingsSCALE.png" alt="General System Settings" id="General System Settings" >}}
-
-After choosing the storage pool for app the screen status changes to <span class="iconify" data-icon="mdi:check-circle" color=#71BF44></span> **Apps Service Running**.
-
-### Unsetting the Apps Pool
-To select a different pool for apps to use, click **Settings > Unset Pool**. This turns off the apps service until you choose another pool for apps to use.
-
+<!-- commenting out until the new UI is available to verify how this is handled 
 ### Changing Official Application Networking 
 Official applications use the default system-level Kubernetes node IP settings.
 
@@ -339,11 +347,11 @@ Custom applications use the system-level Kubernetes Node IP settings by default.
 
 You can assign an external interface to custom apps using  one of the **Networking** section  settings found on the **Install Custom App** screen.
 
-Unless you need to run an application separately from the Web UI, we recommend using the default Kubernetes **Node IP** (0.0.0.0) to ensure apps function correctly.
+Unless you need to run an application separately from the Web UI, we recommend using the default Kubernetes **Node IP** (0.0.0.0) to ensure apps function correctly.-->
 
 <div class="noprint">
 
-## Section Contents
+## Apps Contents
 
 {{< children depth="1" description="true" >}}
 
