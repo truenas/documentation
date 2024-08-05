@@ -7,27 +7,7 @@ related: false
 
 {{< header logo="/images/truenas-core-logo.png" logo_alt="TrueNAS CORE Logo" version="13.3" icon="" icon_alt="" >}}
 
-{{< hint type="tip" title="13.3 Early Release Documentation">}}
-This page tracks the latest development roadmap and release notes for the upcoming TrueNAS CORE major version, 13.3.
-The latest [TrueNAS CORE **13.0** version release notes](https://www.truenas.com/docs/core/13.0/gettingstarted/corereleasenotes/) are available from the TrueNAS CORE 13.0 documentation section.
-{{< /hint >}}
-
 {{< include file="/static/includes/13.3Overview.md" >}}
-
-## Obtaining a Release
-
-{{< include file="/static/includes/EarlyReleaseWarning.md" >}}
-
-To download a <file>.tar</file> file for installing or upgrading to a CORE 13.3 nightly version, go to https://www.truenas.com/download-truenas-core/ and click **Download Future Previews**.
-Select the latest <file>.tar</file> file and click **Download**.
-
-Log in to the web interface and go to **System > Update**.
-Click **INSTALL MANUAL UPDATE FILE**.
-Select **SAVE CONFIGURATION** when prompted.
-Select an **Update File Temporary Storage Location** then click **Chose File** and browse to select the <file>.tar</file> file.
-Click **APPLY UPDATE**.
-
-More details are available from [Updating Core]({{< relref "/CORETutorials/UpdatingTrueNAS/_index.md" >}}).
 
 ## Release Schedule
 
@@ -54,6 +34,13 @@ More details are available from [Updating Core]({{< relref "/CORETutorials/Updat
   Users with a critical need to use containers or virtualization solutions in production should migrate to the tested and supported virtualization features available in [TrueNAS SCALE](https://www.truenas.com/download-truenas-scale/).
   [TrueNAS Enterprise customers](https://www.truenas.com/truenas-enterprise/) can contact iXsystems to schedule a TrueNAS SCALE deployment.
   See [CORE to SCALE Migrations](https://www.truenas.com/docs/scale/gettingstarted/migrate/) for more information.
+
+## Obtaining a Release
+
+13.3 releases are only available as manual update **.tar** or full installation **.iso** files.
+Go to https://www.truenas.com/download-truenas-core/ to download either file type.
+
+See [Updating TrueNAS]({{< relref "/CORETutorials/UpdatingTrueNAS/_index.md" >}}) for instructions about updating with either file type.
 
 ### Upgrade Paths
 
@@ -85,6 +72,10 @@ The items listed here represent new feature flags implemented since the previous
 {{< /truetable >}}
 
 For more details on feature flags see [OpenZFS Feature Flags](https://openzfs.github.io/openzfs-docs/Basic%20Concepts/Feature%20Flags.html) and [OpenZFS zpool-feature.7](https://openzfs.github.io/openzfs-docs/man/7/zpool-features.7.html).
+
+## 13.3-RELEASE Changelog
+
+
 
 ## 13.3-BETA2 Changelog
 
