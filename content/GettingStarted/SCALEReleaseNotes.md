@@ -154,7 +154,7 @@ Notable changes:
 
 ### 24.04.2 Known Issues
 
-* Network UPS Tools (NUT) service takes 100% CPU on 1 thread when power is cut to the UPS [NAS-130175](https://ixsystems.atlassian.net/browse/NAS-130175).
+* Network UPS Tools (NUT) service can utilize 100% of 1 CPU thread when power is cut to the UPS [NAS-130175](https://ixsystems.atlassian.net/browse/NAS-130175).
   This issue is resolved in a new version of the related service, which will be made available in a future TrueNAS release when the [updated NUT version](https://tracker.debian.org/pkg/nut) is moved into upstream stable Debian repositories.
 
 <a href="https://ixsystems.atlassian.net/issues/?filter=10573" target="_blank">Click here to see the latest information</a> about public issues discovered in 24.04.2 that are being resolved in a future TrueNAS SCALE release.
