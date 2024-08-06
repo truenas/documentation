@@ -78,10 +78,29 @@ For more details on feature flags see [OpenZFS Feature Flags](https://openzfs.gi
 
 ## 13.3-RELEASE Changelog
 
+**August 13, 2024**
 
+iXsystems is pleased to release TrueNAS CORE 13.3-RELEASE!
+This stabilized release is intended only for community users that are looking for upstream incremental fixes that are included in this release.
+See the 13.3 introduction at the top of this page or the [official announcement](https://forums.truenas.com/t/truenas-core-13-3-release-in-august/10344) for more details.
+
+This release includes a very small number of notable changes from the BETA2 release:
+
+* Update openssh package to address CVE-2024-6387 ([NAS-129828](https://ixsystems.atlassian.net/browse/NAS-129828))
+* VNC functionality fixes ([NAS-130278](https://ixsystems.atlassian.net/browse/NAS-130278))
+* Fix image placeholders for iX Plugins ([NAS-129352](https://ixsystems.atlassian.net/browse/NAS-129352))
+* Updated samba and fix issue with Time Machine share and snapshot creation ([NAS-130169](https://ixsystems.atlassian.net/browse/NAS-130169))
+
+<a href="https://ixsystems.atlassian.net/issues/?filter=10582" target="_blank">Click here for the full changelog</a> of completed tickets that are included in this release.
+{{< include file="/static/includes/JiraFilterInstructions.md" >}}
+
+### 13.3-RELEASE Ongoing Issues
+
+<a href="https://ixsystems.atlassian.net/issues/?filter=10583" target="_blank">Click here to see the latest information</a> about issues discovered in this release, including future fix versions.
 
 ## 13.3-BETA2 Changelog
 
+{{< expand "Click to expand" "v" >}}
 {{< include file="/static/includes/EarlyReleaseWarning.md" >}}
 
 **June 4, 2024**
@@ -103,6 +122,8 @@ Notable changes:
 ### 13.3-BETA2 Ongoing Issues
 
 <a href="https://ixsystems.atlassian.net/issues/?filter=10568" target="_blank">Click here to see the latest information</a> about issues discovered in 13.3-BETA2 that are being resolved in a future TrueNAS CORE release.
+
+{{< /expand >}}
 
 ## 13.3-BETA1 Changelog
 
