@@ -118,6 +118,11 @@ Release Notes:
 
 {{< expand "TrueCommand 2.x" "v" >}}
 
+<a href="https://www.truenas.com/docs/truecommand/2.3/">TrueCommand 2.3</a>
+
+TrueCommand 2.3 docs are available as a navigable website branch.
+The contents of this archived branch are provided for reference only and not actively maintained.
+
 <a href="https://www.truenas.com/docs/files/TC2.1Docs.pdf">TrueCommand 2.1</a>
 
 <a href="https://www.truenas.com/docs/files/TrueCommand2.0Documentation.pdf">TrueCommand 2.0</a>
