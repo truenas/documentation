@@ -56,9 +56,11 @@ This contains creation and configuration options for physical and virtual networ
 
 You can configure static IP addresses while creating or editing an interface.
 
+<!-- Enterprise specific comment that doesn't apply in 13.3-RELEASE
 {{< hint type=tip >}}
-To edit an active interface on TrueNAS Enterprise systems, you must first disable [High Availability]({{< relref "/UIReference/System/Failover.md" >}}).
+To edit an active interface on TrueNAS Enterprise systems, you must first disable High Availability relref "/UIReference/System/Failover.md" .
 {{< /hint >}}
+-->
 
 {{< trueimage src="/images/CORE/Network/NetworkInterfacesEdit.png" alt="Editing an Interface" id="Editing an Interface" >}}
 
