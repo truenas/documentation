@@ -13,7 +13,7 @@
       flowchart LR
       A["11.3-U5"] -->|update| B["12.0-U2"]
       B -->|update| C["13.0-U6.2"]
-      C -->|update| D["13.3.0"]
+      C -->|update| D["13.3-RELEASE"]
       {{< /mermaid >}}
     </div>
     <div class="upgrade-paths-container">

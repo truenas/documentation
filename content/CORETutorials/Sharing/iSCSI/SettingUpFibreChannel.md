@@ -4,6 +4,7 @@ description: "Describes how to set up Fibre Channel on TrueNAS CORE."
 weight: 20
 tags:
 - iscsi
+draft: true
 ---
 
 {{< hint type=note >}}

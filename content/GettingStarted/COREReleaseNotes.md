@@ -3,6 +3,14 @@ title: 13.3 Version Notes
 description: "Highlights and change log for each TrueNAS CORE 13.3 release."
 weight: 3
 related: false
+aliases:
+ - /coretutorials/systemconfiguration/configuringfailover/
+ - /coretutorials/systemconfiguration/configuringkmip/
+ - /coretutorials/sharing/iscsi/settingupfibrechannel/
+ - /uireference/system/failover/
+ - /uireference/system/viewenclosure/
+ - /uireference/system/kmip/
+ - /uireference/sharing/iscsi/fibrechannel/
 ---
 
 {{< header logo="/images/truenas-core-logo.png" logo_alt="TrueNAS CORE Logo" version="13.3" icon="" icon_alt="" >}}
