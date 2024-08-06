@@ -38,6 +38,16 @@ Bluefin introduced many new features and general improvements to the TrueNAS SCA
 
 The [22.12 release notes article]({{< relref "SCALEReleaseNotes.md" >}}) has additional details.
 
+## Documentation End of Life (EOL)
+
+**22.12 (Bluefin) Documentation EOL: 05-03-2024**
+
+iXsystems employees maintain documentation and provide regular updates for current and in development (future) versions of TrueNAS software.
+For documentation purposes, current and future releases are those recommended by the TrueNAS [Software Status page](https://www.truenas.com/software-status/) for one or more user type.
+
+Documentation for previous releases, that are no longer recommended for any user type, is archived and unmaintained.
+All documentation provided here is end-of-life (EOL), intended for reference only, and no longer receives *any* updates.
+
 ## 22.12 Featured Content
 
 <div class="docs-sections">
