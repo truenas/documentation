@@ -122,6 +122,8 @@ Release Notes:
 
 TrueCommand 2.3 docs are available as a navigable website branch.
 The contents of this archived branch are provided for reference only and not actively maintained.
+* Release Notes:
+  * [TrueCommand 2.1 - 2.3 Release Notes](https://www.truenas.com/docs/truecommand/2.3/tcgettingstarted/tcreleasenotes/)
 
 <a href="https://www.truenas.com/docs/files/TC2.1Docs.pdf">TrueCommand 2.1</a>
 
