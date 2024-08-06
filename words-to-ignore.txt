@@ -2038,3 +2038,4 @@ settingupfibrechannel
 coretutorials
 configuringkmip
 systemconfiguration
+configuringfailover
