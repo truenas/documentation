@@ -24,7 +24,7 @@ The **Support** screen displays system information. Users may also manage thier 
 | Description | A one to three paragraph summary of the issue. |
 | Browse... | Attaches screenshots that illustrate the problem. |
 {{< /truetable >}}
-
+<!-- Comment out Enterprise-specific content as not relevent in 13.3-RELEASE
 ## TrueNAS Enterprise
 
 {{< enterprise >}}
@@ -64,3 +64,4 @@ Contact the [iXsystems Sales Team](mailto:sales@ixsystems.com) to inquire about 
 | Description | A one to three paragraph summary of the issue. |
 | Choose Files | Attaches screenshots that illustrate the problem. |
 {{< /truetable >}}
+-->
