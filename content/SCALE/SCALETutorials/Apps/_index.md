@@ -199,6 +199,7 @@ All applications include these basic setting sections:
 * **Storage Configuration** shows options to configure storage for the application.
   Storage options include using the default ixVolume setting that adds a storage volume under the **ix-applications** dataset, host path where you select existing dataset(s) to use, or in some cases the SMB share option where you configure a share for the application to use.
   The **Add** button allows you to configure additional storage volumes for the application to use in addition to the main storage volume (dataset).
+  * Note that having your iX-applications folder on the same dataset as a share will create an error due to access permission and data management conflicts. This can be avoided by storing the iX-applications folder and share in separate datasets or partitions, as well as by making the iX-applications folder and share individual children of the same parent pool.
 
   If the application requires specific datasets, configure these before using the installation wizard.
 
