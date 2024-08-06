@@ -15,11 +15,6 @@ related: false
 
 {{< releaselist name=core-releases defaultTab=3 >}}
 
-{{< expand "Software Lifecycle" "v" >}}
-{{< include file="/static/includes/LifecycleTable.md" >}}
-{{< include file="/static/includes/SoftwareStatusPage.md" >}}
-{{< /expand >}}
-
 ## Upgrade Notes
 
 * Due to security vulnerabilities and maintainability issues, the S3 service is deprecated in TrueNAS CORE 13.0 and removed in CORE 13.3 ([NAS-127694](https://ixsystems.atlassian.net/browse/NAS-127694)).
