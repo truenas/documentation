@@ -6,23 +6,38 @@ tags:
 - contributing
 ---
 
-Every article needs a "front matter" section that contains the article title and a numeric "weight" that orders the article in the table of contents.
-You can also include a shortened title for the table contents.
+This template provides general information on constructing and writing TrueNAS tutorial articles.
+It contains an template example article with front matter, styling, and syntax examples.
 
-The rest of this article contains an example article with front matter, styling, and syntax examples.
-Please feel free to copy this example and rework it when writing your own articles for this website.
-The <file>template/</file> directory can also be copied to provide a starting point for contributing an article bundle that has additional images.
-You can refer to the [Style Guide]({{< relref "Style.md" >}}) for specific text syntax and formatting examples.
+Refer to the [Style Guide]({{< relref "Style.md" >}}) for specific text syntax and formatting examples, Markdown and Hugo website enhancements, and content guidelines to follow.
 
+Application tutorials follow a specific format that covers the installation screens and deployment process.
+If submitting a tutorial for a community-maintainted application article, please use the [application tutorial template]({{< relref "AppTutorialTemplate.md" >}})
+
+## Front Matter
+Every article needs a front matter section that contains these parameters:
+* `title` for the article title.
+* `description` that provides a brief summary of the article content.
+  Keep the description to less than 160 characters. The character count includes spaces between alphanumeric and special characters.
+* `weight` that orders the article in the table of contents.
+
+Optional front matter parameters are:
+* `aliases` where you include links to articles removed from the website that should be directed to this page.
+* `tags` where you include single word or a few word flags for the article content.
+  Tags are use internally to pull articles into the **Related Artilces** sections at the bottom of articles and externally for search optimization.
+
+## Article Template
+Feel free to copy this article template example and rework it when writing your own articles for this website.
+You can copy the <file>template/</file> directory to provide a starting point for contributing an article or article bundle that includes links to images.
 ```
 ---
 title: "Example Article"
-linkTitle: "Example"
+description: "This is a template for any tutorial article in the Documentation Hub website."
 weight: 5
 ---
 
 This is an introductory paragraph for the article.
-It should explain the purpose of the procedure and link to or outline any procedures that must be done before the tasks in the article can be accomplished.
+It should explain the purpose of the procedure, describe what the feature is or can be used to accomplish, and can include links to other websites about the article subject or that support the procedure the article covers.
 The introduction typically includes an explanation of why this procedure is beneficial and/or who is the typical audience for this content.
 When the procedure is advanced, users might want some references to other sources that have more details or deeper explanations about what the system is doing.
 
@@ -30,25 +45,43 @@ After introducing the material, describe the process to accomplish the task.
 Writing in short, declarative sentences that are structured very simply can help readers avoid confusion.
 It also makes translations easier!
 
-## How to Do X
+## Prerequisites
+This section can be titled **Prerequisites**, **Before You Begin**, or **First Steps**.
+It should cover actions the reader should or must take before they begin the procedure detailed in the article.
 
-The first step is typically to log in to the system and go to a location like *System > General*.
-Including a screenshot is a good way for the reader to confirm they're in the correct location and get more context.
+Typical first steps might include configuring data storage, adding certificates, and creating user accounts on the TrueNAS system or remote provider if describing a procedure involving a third party.
 
-![Image Name Text](/images/CORE/imagename.png "Image Name Text")
+## How to Do *X*
 
-{{\< hint danger >}}
-Danger warnings about common errors that are made during the procedure are best placed before listing out any specific changes to make to the system.
+Begin outlining the procedure steps.
+The first step is typically to log in to the system and go to a location like **System > General**.
+Including a screenshot is a good way for the reader to confirm they are in the correct location and to get more context.
+
+![Image Name Text](/images/SCALE/imagename.png "Image Name Text")
+
+{{\< hint type="danger" >}}
+Danger, information, and warnings admonition boxes include information about common errors that are made during the procedure.
+These admonitions are best placed before listing out any specific changes to make to the system.
 This can help prevent mistakes and educate the reader about common troubleshooting steps.
 {{\< /hint >}}
 
-Now find the settings to change or button to click to move forward in the procedure.
-Button or setting names need to be precise to avoid confusing the reader.
-UI labels are typically *emphasized*.
+The step procedure should no exceed a maximum of 10 steps in an ordered list.
+If the procedure exceeds 10 steps, use sub-steps.
+A good practice is to organize the procedure into what to do and how to do it steps.
+What steps are the primary list items, the how to do it are the sub-step items.
 
-### More Information From the Shell
+Enter screen names and fields on screens in **bold** and a variable value in *italics*.
 
-Sometimes a user will need to open the *Shell* and enter a command.
+Be precise with button or setting names to avoid confusing the reader.
+
+### Entering Commands
+
+Sometimes a user might need to open a shell to enter a command.
+To avoid confusing readers, use either the back back tick or HTML <code> and </code> tags for any command name or string.
+If the command string includes a variable, use the HTML <code> and <i> open and close tags to show the string properly formatted.
+Do not use all caps for a command or variable, or brackets to enclose a variable.
+Some CLI and API command syntax might require the square or curly brackets as part of the string and some commands or command values are case sensitive.
+
 Use inline and multi-line code-blocks to define exactly what to type and show an example of the output.
 Entering `ifconfig` shows more information about the network interfaces:
 ```
@@ -67,12 +100,16 @@ em0: flags=8943<UP,BROADCAST,RUNNING,PROMISC,SIMPLEX,MULTICAST> metric 0 mtu 150
 
 ## Final Steps
 
-Make sure to include any final steps the user can take to confirm the procedure was done correctly.
+Make sure to include any final steps the user can take to confirm they executed the procedure correctly.
 Be specific!
-Using vague terms can be misleading and result in confusion.
-Instead, directly say what happens:
-"Clicking *Generate Debug* compiles system information into a *.tar* file.
+Using vague terms can mislead or confuse the reader. Do not assume the reader knows what you are talking about. 
+Instead, directly state what happens. for example:
+"Click *Generate Debug* to compile the system information into a *.tar* file.
 A dialog opens to download the file to your local system."
 
-This is also a good place to put any troubleshooting tips, in case the user isn't seeing the expected result.
+This is a good place to put any troubleshooting tips, in case the user is not seeing the expected result.
+
+If a command or setting should produce a specific result, provide that information.
+If the command or setting does not produce the result provide information on what that means and how to correct or resolve the problem.
+
 ```
