@@ -49,6 +49,14 @@ They are provided "as-is" and typically do not receive further maintenance relea
 Individual releases are within each major version.
 
 Legacy releases can only be used by downloading the .iso file and freshly installing to the hardware.
+
+## Documentation Lifecycle
+
+This website is a repository of all documentation for TrueNAS projects and related products.
+iXsystems employees maintain this documentation and provide regular updates for current and in development (future) versions of TrueNAS software.
+For documentation purposes, current and future releases are those recommended by the TrueNAS [Software Status page](https://www.truenas.com/software-status/) for one or more user type.
+
+Documentation for previous releases, that are no longer recommended for any user type, is archived and unmaintained.
 See the [Documentation Archive](https://www.truenas.com/docs/archive/) for content related to these releases.
 
 ## Upgrade Paths
