@@ -40,5 +40,7 @@ tags:
 TrueNAS applications allow for quick and easy integration of third-party software and TrueNAS SCALE.
 Applications are available from official, Enterprise, and community maintained trains.
 
-The apps tutorials are End of Life (EOL) for Cobia.
-Select either **24.04** or **Nightly** from the **Documentation Hub Product and Version** dropdowns for **SCALE** at the top if this article, then go to [Apps)](https://www.truenas.com/docs/scale/scaletutorials/apps/).
+Apps tutorials are End of Life (EOL) for Cobia.
+
+To view apps tutorials, see the [24.04 (Dragonfish)](https://www.truenas.com/docs/scale/24.04/scaletutorials/apps/) apps documentation (for TrueNAS 24.04 or earlier installations) or the [24.10 (Electric Eel)](https://www.truenas.com/docs/scale/scaletutorials/apps/) documentation.
+Alternately, select **24.04** or **Nightly** from the **Documentation Hub Product and Version** dropdowns for **SCALE** at the top if this article, then go to **Apps**.
