@@ -18,7 +18,7 @@ related: false
 {{< include file="/static/includes/ProposeArticleChange.md" >}}
 {{< /hint >}}
 
-The open source TrueNAS project welcomes contributions to the project. We also welcome changes to articles found in the TrueNAS Documenation Hub.
+The open source TrueNAS project welcomes contributions to the project. We also welcome changes to articles found in the TrueNAS Documentation Hub.
 
 Contributions to the TrueNAS open source projects are made through GitHub. For more information see [Issue reporting]({{< relref "/contributing/IssueReporting/_index.md" >}})
 
