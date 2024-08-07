@@ -12,7 +12,7 @@ It contains an template example article with front matter, styling, and syntax e
 Refer to the [Style Guide]({{< relref "Style.md" >}}) for specific text syntax and formatting examples, Markdown and Hugo website enhancements, and content guidelines to follow.
 
 Application tutorials follow a specific format that covers the installation screens and deployment process.
-If submitting a tutorial for a community-maintainted application article, please use the [application tutorial template]({{< relref "AppTutorialTemplate.md" >}})
+If submitting a tutorial for a community-maintainted application article, please use the [application tutorial template]({{< relref "/Contributing/Documentation/AppArticleTemplate.md" >}})
 
 ## Front Matter
 Every article needs a front matter section that contains these parameters:

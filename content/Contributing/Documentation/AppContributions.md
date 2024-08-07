@@ -1,13 +1,14 @@
 ---
 title: "Contributing to Apps"
 description: "Information on requesting new apps, reporting issues with or making changes to existing apps."
-weight: 10
+weight: 20
 tags:
 - contributing
 - issues
 - support
 - apps
 ---
+
 
 We welcome community user contributions, issue reporting, and suggestions for new features and new apps to create the best possible TrueNAS app user experience!
 
@@ -18,8 +19,8 @@ App version information, features, configuration options, and installation behav
 SCALE apps show the **Update** button and a badge on any deployed application instance on the **Installed** application screen when a new version is available.
 Users can apply the update(s) individually or collectively and at a convenient time based on needs.
 
-## Contributing to TrueNAS Application Projects
-Users can submit changes to an existing application through any of the following means:
+## Contributing to TrueNAS Application Catalogs
+Users can submit changes to an existing application catalogs through:
 
 * GitHub PRs
 
@@ -56,22 +57,22 @@ Click on [community](https://github.com/truenas/charts/tree/master/community) to
 
 ## Contributing to TrueNAS Application Documentation
 Community members can submit change requests or add new tutorials to the Community Apps tutorials section of the Documentation Hub.
-For more information on submitting change requests, forking repos, and submitting PRs, see [Content Updates]({{< relref "ContentUpdates.md" >}}).
+For more information on submitting change requests, forking repos, and submitting PRs, see [Content Updates]({{< relref "/Contributing/Documentation/ContentUpdate.md" >}}).
 
 When submitting new tutorials or request changes to existing TrueNAS Documentation Hub application tutorials:
   
-  * Create the PR against the correct directory of the [TrueNAS Documentation Hub public repository](https://github.com/truenas/documentation/tree/master).
+  * Create the PR against a forked copy of the [TrueNAS Documentation Hub public repository](https://github.com/truenas/documentation/tree/master).
     
-    In your local forked repository, open the existing article file in either the **CommunityApps** or the **ChartApps** folder in the **/content/SCALE/SCALETutorials/Apps/** folder.
+    In your local forked repository, open the existing article file in either the **CommunityApps** or the **ChartApps** folder of the **/content/SCALE/SCALETutorials/Apps/** directory.
      
     If submitting a new tutorial, add the new tutorial to the **CommunityApps** folder in your local copy of the repository.
     
-    Use the text editor of your choice to make changes to the [application tutorial template]() as the basis for your new article. Article content is written in Commonmark Markdown.
+    Use the text editor of your choice to make changes to the [application tutorial template]({{< relref "/Contributing/Documentation/AppArticleTemplate.md" >}}) as the basis for your new article.
+    Article content is written in Commonmark Markdown.
     
     (Optional) Save images in the **/documentation/static/scale/apps** folder of your local branch.
     
     Submit the PR against the **Master** branch.
   
-  * Click **Edit Article** at the top of the article in the Documentation Hub to request changes to an existing article.
-    Refer to the [Content Updates]({{< relref "ContentUpdates.md" >}}) article for more details.
-
+  * Click **Edit Article** at the top of the Documentation Hub article to request changes to an existing article.
+    Refer to the [Content Updates]({{< relref "/Contributing/Documentation/ContentUpdate.md" >}}) article for more details.

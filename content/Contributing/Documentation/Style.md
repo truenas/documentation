@@ -1,7 +1,7 @@
 ---
 title: "Content Styling"
 description: "How to style your documentation contributions to TrueNAS."
-weight: 30
+weight: 5
 tags:
 - contributing
 ---
