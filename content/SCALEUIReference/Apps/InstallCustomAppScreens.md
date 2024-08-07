@@ -9,7 +9,8 @@ tags:
 - scalecustomapp
 ---
 
-{{< toc >}}
+
+The apps article content is End of Life (EOL) for 23.10 (Cobia) which means this content is not currently maintained.
 
 ## Install Custom App Screen
 

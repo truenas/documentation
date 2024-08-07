@@ -24,14 +24,14 @@ To prevent any loss of service, customers with Silver or Gold level support cont
 {{< /enterprise >}}
 
 {{< columns >}}
-* Dynamic DNS replaced by **[ddns-updater]({{< relref "ddns-updater.md" >}})**
-* OpenVPN Server replaced by multiple VPN [apps]({{< relref "/SCALETutorials/Apps/CommunityApps/_index.md" >}})
+* Dynamic DNS replaced by **[ddns-updater]({{< relref "/SCALETutorials/Apps/_index.md" >}})**
+* OpenVPN Server replaced by multiple VPN [apps]({{< relref "/SCALETutorials/Apps/_index.md" >}})
 * OpenVPN Client has no equivalent application
-* Rsyncd Server replaced by **[rsyncd]({{< relref "rsyncd.md" >}})**
+* Rsyncd Server replaced by **rsyncd]({{< relref "/SCALETutorials/Apps/_index.md" >}})**
 <--->
-* S3 replaced by **[minio]({{< relref "/SCALETutorials/Apps/CommunityApps/MinIOApp/_index.md" >}})**
-* WebDAV replaced by **[webdav]({{< relref "webdav.md" >}})**
-* TFTP replaced by **[tftpd-hpa]({{< relref "tftp-hpaapp.md" >}})**
+* S3 replaced by **[minio]({{< relref "/SCALETutorials/Apps/_index.md" >}})**
+* WebDAV replaced by **[webdav]({{< relref "/SCALETutorials/Apps/_index.md" >}})**
+* TFTP replaced by **[tftpd-hpa]({{< relref "/SCALETutorials/Apps/_index.md" >}})**
 
 {{< /columns >}}
 {{< hint type="info" title="S3 Service Replacement" >}}

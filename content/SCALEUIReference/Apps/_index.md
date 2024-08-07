@@ -3,9 +3,22 @@ title: "Apps"
 description: "Articles describing the TrueNAS SCALE Apps screens and fields."
 geekdocCollapseSection: true
 weight: 100
+aliases:
+ - /scale/scaleuireference/apps/appsscreensscale/
+ - /scal/scaleuireference/apps/installcustomappscreens/
+ - /scale/scaleclireference/app/
+ - /scale/scaleclireference/app/clicatalog/
+ - /scale/scaleclireference/app/clichartrelease/
+ - /scale/scaleclireference/app/clicontainer/
+ - /scale/scaleclireference/app/clidocker/
+ - /scale/scaleclireference/app/clikubernetes/
+tags:
+- apps
+related: false
 ---
 
-{{< toc >}}
+
+The apps article content is End of Life (EOL) for 23.10 (Cobia) which means this content is not currently maintained.
 
 ## Installed Applications Screen
 
