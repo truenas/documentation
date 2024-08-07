@@ -1,6 +1,6 @@
 ---
 title: "TrueNAS SCALE 22.12 (Archived)"
-description: "Documentation for the SCALE 22.12 major version."
+description: "Archival documentation for the TrueNAS SCALE 22.12 (Bluefin) major version. This documentation is End of Life (EOL) and presented for reference only."
 geekdocCollapseSection: true
 weight: 10
 ---
@@ -8,9 +8,11 @@ weight: 10
 {{< columns size="small" >}}
 <img src="/images/SCALE/Bluefin.png" alt="TrueNAS SCALE 22.12 Logo" style="margin: 1rem 0 0 2rem;">
 <--->
-iXsystems is pleased to introduce TrueNAS SCALE 22.12 (Bluefin)!
+iXsystems released TrueNAS SCALE 22.12.0 (Bluefin) on December 13, 2022.
+It received its final update on October 13, 2023.
+The terminal version of Bluefin is 22.12.4.2.
 
-This release has many new features and general improvements to the TrueNAS SCALE experience:
+Bluefin introduced many new features and general improvements to the TrueNAS SCALE experience:
 {{< /columns >}}
 
 {{< columns >}}
@@ -35,6 +37,16 @@ This release has many new features and general improvements to the TrueNAS SCALE
 {{< /columns >}}
 
 The [22.12 release notes article]({{< relref "SCALEReleaseNotes.md" >}}) has additional details.
+
+## Documentation End of Life (EOL)
+
+**22.12 (Bluefin) Documentation EOL: 05-03-2024**
+
+iXsystems employees maintain documentation and provide regular updates for current and in development (future) versions of TrueNAS software.
+For documentation purposes, current and future releases are those recommended by the TrueNAS [Software Status page](https://www.truenas.com/software-status/) for one or more user type.
+
+Documentation for previous releases, that are no longer recommended for any user type, is archived and unmaintained.
+All documentation provided here is end-of-life (EOL), intended for reference only, and no longer receives *any* updates.
 
 ## 22.12 Featured Content
 
