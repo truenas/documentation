@@ -1,6 +1,4 @@
 Application maintenance is independent from TrueNAS SCALE version release cycles.
-App versions, features, fields, and install behavior at the time of access might vary from those in documented tutorials, especially for legacy version documentation that no longer receives active updates.
+This means app version information, features, configuration options, and installation behavior at the time of access might vary from those in documented tutorials.
 
-We welcome community contributions to keep this documentation current!
-Click **Edit Page** in the top right corner to propose changes to this article.
-See [Updating Content](https://www.truenas.com/docs/contributing/documentation/contentupdate/) for more information.
+All application articles are no longer associated with individual major SCALE releases such as 23.10 or 24.04, and are now only found in the SCALE Nightly branch of the Documenation Hub.

@@ -131,7 +131,7 @@ Click **Save**.
 
 Before you create an rsync task on the host system, you must create a module on the remote system.
 You must define at least one module in [rsyncd.conf(5)](https://www.samba.org/ftp/rsync/rsyncd.conf.html) of the rsync server.
-The [Rsync Daemon]({{< relref "Rsyncd.md" >}}) application is available in situations where configuring TrueNAS as an rsync server with an rsync module is necessary.
+The Rsync Daemon application is available in situations where configuring TrueNAS as an rsync server with an rsync module is necessary.
 
 When the rsync server is configured, go to **Data Protection > Rsync Tasks**, and click **Add** to open the **Add Rsync Task** configuration screen.
 Enter the required information as described in [Creating an Rsync Task](#creating-an-rsync-task) above.
