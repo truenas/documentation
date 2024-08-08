@@ -29,7 +29,7 @@ TrueNAS hides all built-in users (except root) by default. Click the toggle **Sh
 
 {{<include file="/static/includes/addcolumnorganizer.md">}}
 
-## Creating an Admin User Account
+## Creating an Administrator User Account
 
 {{< include file="/static/includes/AddAdminUserAccount.md" >}}
 
@@ -81,7 +81,7 @@ When creating a user, the home directory path is set to <file>/var/empty</file>,
 To add a home directory, enter or browse to a path in **Home Directory**, then select **Create Home Directory**.
 
 {{< hint type="important" title="Home Directory Known Impacts" >}}
-SCALE 24.04 changes the user home directory location from **/nonexistent**, a directory that should never exist, to **/var/empty**.
+SCALE 24.04 changed the user home directory location from **/nonexistent**, a directory that should never exist, to **/var/empty**.
 This new directory is an immutable directory shared by service accounts and accounts that should not have a full home directory.
 Services impacted:
 
@@ -115,7 +115,7 @@ Do *not* paste the private key.
 
 Always keep a backup of an SSH public key if you are using one.
 
-As of SCALE 24.04, users assigned to the **trueNAS_readonly_administrators** group cannot access the **Shell** screen.
+As of SCALE 24.04, the **Shell** setting defaults to **nologin** for users assigned to the **trueNAS_readonly_administrators** and **truenas_sharing_administrator** groups which means they cannot access the **Shell** screen.
 
 Select the [shell]({{< relref "LocalUsersScreensSCALE.md" >}}) option for the admin user from the **Shell** dropdown list.
 Options are **nologin**, **TrueNAS CLI**, **TrueNAS Console**, **sh**, **bash**, **rbash**, **dash**, **tmux**, and **zsh**.
@@ -132,7 +132,7 @@ Enter each command as an absolute path to the ELF (Executable and Linkable Forma
 <file>/usr/bin/</file> is the default location for commands.
 Select **Allow all sudo commands** or **Allow all sudo commands with no password**.
 
-Leave **Samba Authentication** selected to allow using the account credentials to access data shared with [SMB]({{< relref "/SCALE/SCALEUIReference/Shares/_index.md" >}}).
+Leave **SMB User** selected to allow using the account credentials to access data shared with [SMB]({{< relref "/SCALE/SCALEUIReference/Shares/_index.md" >}}).
 
 Click **Save**.
 
