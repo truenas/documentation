@@ -13,38 +13,42 @@ keywords:
 - FIPS compliance
 ---
 
-The initial implementation of the TrueNAS SCALE administrator login permitted users to continue using the root user but encouraged users to create a local administrator account when first [installing SCALE]({{< relref "InstallingSCALE.md" >}}).
+The initial implementation of the TrueNAS SCALE administrator login permitted users to continue using the root user but encouraged users to create an administrator account when first [installing SCALE]({{< relref "InstallingSCALE.md" >}}).
 
 {{< include file="/static/includes/RootLoginWarnSCALE.md" >}}
 
-SCALE has implemented administrator roles and privileges that allow greater control over access to functions in SCALE and to further utilize FIPS-compliance.
+The SCALE administrator account name changes from **admin** to **trunase_admin** in 24.10 when fresh installing from an <file>iso</file> file.
+Earlier releases of SCALE with the **admin** account retain this account when upgrading to 24.10 through the UI.
+
+Administrator accounts have roles and privileges that allow greater control over access to functions in SCALE and to further utilize FIPS-compliance.
 SCALE includes three predefined admin user account levels:
 
-* Full Admin - This is the local administrator account created by the system when doing a clean install using an <file>iso</file> file or by manually creating when logged in as the root user account after upgrading or migrating from CORE or a pre-22.12.3 release of SCALE.
+* Full Admin - Assigned to the local administrator account created by the system when clean installing SCALE using an <file>iso</file> file.
+  Also assigned when manually creating an admin user if logged in as the root user account after upgrading from a pre-22.12.3 release of SCALE or migrating from CORE to SCALE.
 
-* Sharing Admin - This is assigned to users responsible for only managing shares (SMB, NFS, iSCSI).
+* Sharing Admin - Assigned to users responsible for only managing shares (SMB, NFS, iSCSI).
   This user can create shares and the datasets for shares, start/restart the share service, and modify the ACL for the share dataset.
 
-* Read-only Admin - This is assigned to users that can monitor the system but not make changes to settings.
+* Readonly Admin - Assigned to users that can monitor the system but not make changes to settings.
 
 ##  About Admin and Root Logins and Passwords
 At present, SCALE has both the root and local administrator user logins and passwords.
 
 {{< include file="/static/includes/RootToAdminUserAccount.md" >}}
 
-All systems should [create the local administrator account]({{< relref "ManageLocalUsersSCALE.md" >}}) and use this account for web interface access.
-When properly set up, the local administrator (full admin) account performs the same functions and has the same access as the root user.
+All systems should [create an administrator account]({{< relref "ManageLocalUsersSCALE.md" >}}) with the full admin role and privileges, and use this account for web interface access.
+When properly set up, the administrator (full admin) account performs the same functions and has the same access as the root user.
 
 {{< hint type="note" title="References to Root Account" >}}
 Some UI screens and settings still refer to the root account, but these references are updating to the administrator account in future releases of SCALE.
 {{< /hint >}}
 
-To improve system security after the local administrator account is created, disable the root account password to restrict root access to the system.
+To improve system security after the administrator account is created, disable the root account password to restrict root access to the system.
 
 For more information on the different administrator scenarios users can encounter, read [Logging Into SCALE the First Time]({{< relref "FirstTimeLogin.md" >}}).
 
 ### Disabling Root and Admin User Passwords
-As a security measure, the root user is no longer the default account and the password is disabled when you create the admin user during installation.
+As a security measure, the root user is no longer the default account and the password is disabled when you create the truenas_admin or admin user during installation.
 
 Do not disable the admin account and root passwords at the same time.
 If both root and admin account passwords become disabled at the same time and the web interface session times out, a one-time sign-in screen allows access to the system.
