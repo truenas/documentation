@@ -1,6 +1,6 @@
 ---
 title: "RAIDZ Extension Calculator"
-description: "RAIDZ expansion adds disks to an existing RAIDZ VDEV. Use this calculator to estimate the storage capacity efficiency of an extended ZFS RAIDZ VDEV."
+description: "Use this calculator to estimate the storage capacity efficiency of an extended ZFS RAIDZ VDEV. RAIDZ expansion adds disks to an existing RAIDZ VDEV."
 weight: 110
 tags:
 - zfs
