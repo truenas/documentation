@@ -3,7 +3,7 @@ title: "User Guide"
 description: "How to find and use TrueCommand features that are available to any user account."
 weight: 15
 aliases:
- -
+ - /truecommand/userguide/clusters/
 cascade:
   - _target:
     book: "TrueCmdUG"

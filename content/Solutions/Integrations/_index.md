@@ -5,6 +5,7 @@ geekdocCollapseSection: true
 weight: 20
 aliases:
   - /core/solutions/integrations/
+  - /solutions/integrations/smbclustering/
 related: false
 ---
 
