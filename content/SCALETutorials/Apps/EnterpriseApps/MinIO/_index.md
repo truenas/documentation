@@ -9,6 +9,11 @@ tags:
 - apps
 ---
 
+
+{{< hint type=important title="Application Tutorials" >}}
+{{< include file="/static/includes/AppsUnversioned.md" >}}
+{{< /hint >}}
+
 {{< include file="/static/includes/SCALEEnterpriseApps.md" >}}
 
 The instructions in this article apply to the Official TrueNAS Enterprise MinIO application.

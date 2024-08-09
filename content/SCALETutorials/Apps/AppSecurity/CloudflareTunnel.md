@@ -7,6 +7,11 @@ tags:
 - vpn
 ---
 
+
+{{< hint type=important title="Application Tutorials" >}}
+{{< include file="/static/includes/AppsUnversioned.md" >}}
+{{< /hint >}}
+
 This Guide shows how to create a Cloudflare tunnel and configure the **Nextcloud** and **Cloudflared** applications in TrueNAS SCALE.
 The goal is to allow secure access from anywhere.
 

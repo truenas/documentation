@@ -7,30 +7,31 @@ tags:
 - apps
 ---
 
+{{< hint type=important title="Application Tutorials" >}}
+{{< include file="/static/includes/AppsUnversioned.md" >}}
+{{< /hint >}}
+
 SCALE includes the ability to run third-party apps in containers (pods) using Kubernetes settings.
 
 {{< expand "What is Kubernetes?" "v" >}}
 Kubernetes (K8s) is an open-source system for automating deployment, scaling, and managing containerized applications.
 {{< /expand >}}
 
-Generally, any container that follows the [Open Container Initiative](https://opencontainers.org/) specifications can be deployed.
+Generally, you can deploy any container that follows the [Open Container Initiative](https://opencontainers.org/) specifications.
 
 Always read through the documentation page for the application container you are considering installing so that you know all of the settings that you need to configure.
 To set up a new container image, first, determine if you want the container to use additional TrueNAS datasets.
 If yes, [create a dataset]({{< relref "DatasetsSCALE.md" >}}) for host volume paths before you click **Custom App** on the **Discover** application screen.
 
 ### Custom Docker Applications
-
-Custom Docker applications typically follow Open Container specifications and deploy in TrueNAS following the Custom Application deployment process described below.
+Custom Docker applications typically follow open container specifications and deploy in TrueNAS following the custom application deployment process described below.
 
 ## Adding Custom Applications
-
 {{< hint type=important title="Configure TrueNAS before installing Custom Applications" >}}
 If your application requires directory paths, specific datasets, or other storage arrangements, configure these before you start the **Install Custom App** wizard.
 
-You cannot exit the configuration wizard and save settings to create data storage or directories in the middle of the process. If you are unsure about any configuration settings, review the [Install Custom App Screen UI reference article]({{< relref "InstallCustomAppScreens.md" >}}) before creating a new container image.
-
-To create directories in a dataset on SCALE, before you begin installing the container, open the TrueNAS SCALE CLI and enter [`storage filesystem mkdir path="/PATH/TO/DIRECTORY"`]({{< relref "CLIFilesystem-Storage.md#mkdir-command" >}}).
+You cannot exit the configuration wizard and save settings to create data storage or directories in the middle of the process.
+If you are unsure about any configuration settings, review the [Install Custom App Screen UI reference article]({{< relref "InstallCustomAppScreens.md" >}}) before creating a new container image.
 {{< /hint >}}
 
 When you are ready to create a container, go to **Apps**, click **Discover Apps**, then click **Custom App**.
@@ -139,10 +140,9 @@ You need to name each new dataset and define a path where that dataset appears i
 To view created container datasets, go to **Datasets** and expand the dataset tree for the pool you use for applications.
 
 ### Setting Up Persistent Volume Access
-
 Users developing applications should be mindful that if an application uses Persistent Volume Claims (PVC), those datasets are not mounted on the host and therefore are not accessible within a file browser. Upstream zfs-localpv uses this behavior to manage PVC(s).
 
-If you want to consume or have file browser access to data that is present on the host, set up your custom application to use host path volumes.
+To consume or have file browser access to data that is present on the host, set up your custom application to use host path volumes.
 
 Alternatively, you can use the network to copy directories and files to and from the pod using `k3s kubectl` commands.
 

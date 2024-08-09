@@ -8,6 +8,10 @@ tags:
 related: false
 ---
 
+{{< hint type=important title="Application Articles" >}}
+{{< include file="/static/includes/AppsUnversioned.md" >}}
+{{< /hint >}}
+
 ## Installed Applications Screen
 
 The **Apps** option on the main feature panel opens the **Installed Applications** screen.

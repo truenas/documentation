@@ -6,6 +6,10 @@ tags:
 - customapp
 ---
 
+{{< hint type=important title="Application Articles" >}}
+{{< include file="/static/includes/AppsUnversioned.md" >}}
+{{< /hint >}}
+
 ## Install Custom App Screen
 
 The **Install Custom App** screen allows you to configure third-party applications using settings based on Kubernetes.

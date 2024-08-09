@@ -8,14 +8,17 @@ tags:
 - media
 ---
 
+
+{{< hint type=important title="Application Tutorials" >}}
+{{< include file="/static/includes/AppsUnversioned.md" >}}
+{{< /hint >}}
+
 Immich is a self-hosted photo and video backup tool.
 
 Immich integrates photo and video storage with a web portal and mobile app.
 It includes features such as libraries, automatic backup, bulk upload, partner sharing, Typesense search, facial recognition, and reverse geocoding.
 
 TrueNAS SCALE makes installing Immich easy, but you must use the Immich web portal and mobile app to configure accounts and access libraries.
-
-{{< include file="/static/includes/AppsUnversioned.md" >}}
 
 ## First Steps
 
