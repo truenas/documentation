@@ -86,7 +86,7 @@ See the 13.3 introduction at the top of this page or the [official announcement]
 
 This release includes a very small number of notable changes from the BETA2 release:
 
-* Update openssh package to address CVE-2024-6387 ([NAS-129828](https://ixsystems.atlassian.net/browse/NAS-129828))
+* Updates openssh package to address CVE-2024-6387 ([NAS-129828](https://ixsystems.atlassian.net/browse/NAS-129828))
 * Includes VNC functionality fixes ([NAS-130278](https://ixsystems.atlassian.net/browse/NAS-130278))
 * Fixes image placeholders for iX Plugins ([NAS-129352](https://ixsystems.atlassian.net/browse/NAS-129352))
 * Updates samba and fixes issue with Time Machine share and snapshot creation ([NAS-130169](https://ixsystems.atlassian.net/browse/NAS-130169))
