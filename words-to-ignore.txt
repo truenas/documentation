@@ -2030,3 +2030,12 @@ Bugfix
 zettarepl
 bugfix
 COREUpgradePaths
+openssh
+fibrechannel
+uireference
+viewenclosure
+settingupfibrechannel
+coretutorials
+configuringkmip
+systemconfiguration
+configuringfailover

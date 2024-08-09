@@ -23,7 +23,7 @@ Data-at-rest encryption is available with:
 
 The local TrueNAS system manages keys for data-at-rest.
 The user is responsible for storing and securing their keys.
-The [Key Management Interface Protocol (KMIP)](https://docs.oasis-open.org/kmip/spec/v1.1/os/kmip-spec-v1.1-os.html) is included in TrueNAS 12.0.
+<!-- The [Key Management Interface Protocol KMIPhttps://docs.oasis-open.org/kmip/spec/v1.1/os/kmip-spec-v1.1-os.html is included in TrueNAS 12.0.-->
 
 {{< expand "Encryption Drawbacks and Considerations" "v" >}}
 Always consider the following drawbacks/considerations when encrypting data:
@@ -171,9 +171,9 @@ Set the rest of the options:
 
 ## Unlocking a Replicated Encrypted Dataset or Zvol Without a Passphrase
 
-TrueNAS Enterprise users can connect a Key Management Interoperability Protocol ([KMIP]({{< relref "/UIReference/System/KMIP.md" >}})) server to centralize keys when they are not using passphrases to unlock a dataset or zvol.
+<!-- TrueNAS Enterprise users can connect a Key Management Interoperability Protocol KMIPrelref "/UIReference/System/KMIP.md" server to centralize keys when they are not using passphrases to unlock a dataset or zvol.-->
 
-Users with TrueNAS CORE or Enterprise installations without [KMIP]({{< relref "/UIReference/System/KMIP.md" >}}) should either replicate the dataset or zvol without properties to disable encryption at the remote end or construct a special json manifest to unlock each child dataset/zvol with a unique key.
+Users with TrueNAS CORE or Enterprise installations without KMIP should either replicate the dataset or zvol without properties to disable encryption at the remote end or construct a special json manifest to unlock each child dataset/zvol with a unique key.
 
 ### Unlocking Methods
 {{< expand "Method 1: Construct JSON Manifest" >}}
@@ -193,10 +193,11 @@ To not encrypt the dataset on the remote side so it does not require a key to un
 4. Click **SUBMIT**.
 {{< /expand >}}
 
+<!-- Comment out Enterprise content not applicable in 13.3-RELEASE
 {{< hint type=tip >}}
-This does not affect TrueNAS Enterprise installs with [KMIP]({{< relref "/UIReference/System/KMIP.md" >}}).
+This does not affect TrueNAS Enterprise installs with KMIPrelref "/UIReference/System/KMIP.md".
 {{< /hint >}}
-
+-->
 ## Legacy GELI Encryption
 
 TrueNAS no longer supports GELI encryption (deprecated).

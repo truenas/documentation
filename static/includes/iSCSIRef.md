@@ -47,7 +47,7 @@ iSCSI exports disk devices (zvols on TrueNAS) over a network that other iSCSI cl
 * **Jumbo Frames**: Jumbo frames are the name given to Ethernet frames that exceed the default 1500 byte size. This parameter is typically referenced by the nomenclature as a maximum transmission unit (MTU). A MTU that exceeds the default 1500 bytes necessitates that all devices transmitting Ethernet frames between the source and destination support the specific jumbo frame MTU setting, which means that NICs, dependent hardware iSCSI, independent hardware iSCSI cards, ingress and egress Ethernet switch ports, and the NICs of the storage array must all support the same jumbo frame MTU value. So, how does one decide if they should use jumbo frames?
 
   Administrative time is consumed configuring jumbo frames and troubleshooting if/when things go sideways. Some network switches might also have ASICs optimized for processing MTU 1500 frames while others might be optimized for larger frames. Systems administrators should also account for the impact on host CPU utilization. Although jumbo frames are designed to increase data throughput, it may measurably increase latency (as is the case with some un-optimized switch ASICs); latency is typically more important than throughput in a VMware environment. Some iSCSI applications might see a net benefit running jumbo frames despite possible increased latency. Systems administrators should test jumbo frames on their workload with lab infrastructure as much as possible before updating the MTU on their production network.
-
+<!-- Comment out enterprise-specific content as not applicable in 13.3-RELEASE
 {{< enterprise >}}
 * **Asymmetric Logical Unit Access (ALUA)**: ALUA allows a client computer to discover the best path to the storage on a TrueNAS system.
   HA storage clusters can provide multiple paths to the same storage.
@@ -60,17 +60,18 @@ iSCSI exports disk devices (zvols on TrueNAS) over a network that other iSCSI cl
 
 Do not enable ALUA on TrueNAS unless it is also supported by and enabled on the client computers. ALUA only works when enabled on both the client and server.
 {{< /enterprise >}}
+-->
 {{< /expand >}}
 
 ## iSCSI Configuration Methods
 
 There are a few different approaches for configuring and managing iSCSI-shared data:
-
+<!-- Comment out enterprise-specific content as not applicable in 13.3-RELEASE
 {{< enterprise >}}
 TrueNAS Enterprise customers that use vCenter to manage their systems can use the TrueNAS vCenter Plugin to connect their TrueNAS systems to vCenter and create and share iSCSI datastores.
 This is all managed through the vCenter web interface.
 {{< /enterprise >}}
-
+-->
 * TrueNAS CORE web interface: the TrueNAS web interface is fully capable of configuring iSCSI shares. This requires creating and populating zvol block devices with data, then setting up the iSCSI Share. TrueNAS Enterprise licensed customers also have additional options to configure the share with Fibre Channel.
 
 * TrueNAS SCALE web interface: TrueNAS SCALE offers a similar experience to TrueNAS CORE for managing data with iSCSI; create and populate the block storage, then configure the iSCSI share.

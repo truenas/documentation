@@ -7,12 +7,16 @@ related: false
 tags:
 - configbackup
 - update
+aliases:
+ - /coretutorials/updatingtruenas/updatingenterprise/
 ---
 
 TrueNAS CORE has an integrated update system to make it easy to keep up to date.
 
 {{< enterprise >}}
-TrueNAS CORE Enterprise High Availability (HA) customers should see [Updating CORE Enterprise]({{< relref "/CORETutorials/UpdatingTrueNAS/UpdatingENTERPRISE.md" >}}) for additional considerations.
+TrueNAS 13.3 is not available for Enterprise deployments.
+Instead, 13.0 support continues with security and major bug fix releases.
+See the [official announcement](https://forums.truenas.com/t/truenas-core-13-3-release-in-august/10344) for details and [software status page](https://www.truenas.com/software-status/) for up to date deployment recommendations.
 {{< /enterprise >}}
 
 ## Prepare the System
@@ -23,7 +27,7 @@ Plan updates around scheduled maintenance times to avoid disrupting user activit
 
 The update process does not proceed unless there is enough free space in the boot pool for the new update files.
 If a space warning displays, go to **System > Boot** to remove unneeded boot environments.
-
+<!-- Comment out automatic update content for 13.3 Community release.
 {{< expand "Updates and Trains" "v" >}}
 TrueNAS uses cryptographically signed update files to update.
 Update files provide flexibility in deciding when to upgrade the system.
@@ -70,7 +74,7 @@ To go back to an earlier version after testing or running a more recent version,
 
 Information about the update displays with a link to the release notes.
 Always read the release notes before updating to determine if any of the changes in that release impact system use.
-
+-->
 ### Save the Configuration File
 
 A dialog to save the system configuration file appears before installing updates.
@@ -85,6 +89,14 @@ The security information in the configuration file can grant unauthorized access
 ## Update the System
 
 Ensure the system is in a low-usage state as described above in [Preparing for Updates](#prepare-the-system).
+
+Each update creates a boot environment.
+If the update process needs more space, it attempts to remove old boot environments.
+TrueNAS does not remove boot environments marked with the *Keep* attribute as shown in **System > Boot**.
+The upgrade fails if your system does not have space for a new boot environment.
+Space on the operating system device can be manually freed by going to **System > Boot** and removing the *Keep* attribute or deleting any boot environments that are no longer needed.
+
+<!-- Commented out automatic update content as inapplicable to 13.3
 Click **DOWNLOAD UPDATES** to download and install an update.
 
 The **Save Configuration** dialog appears so you can save the current configuration to external media.
@@ -95,14 +107,6 @@ The update can be downloaded for a later manual installation by unsetting **Appl
 
 **APPLY PENDING UPDATE** displays when an update is downloaded and ready to install.
 Setting **Confirm** and clicking **CONTINUE** updates and reboots the system.
-
-{{< hint type=important >}}
-Each update creates a boot environment.
-If the update process needs more space, it attempts to remove old boot environments.
-TrueNAS does not remove boot environments marked with the *Keep* attribute as shown in **System > Boot**.
-The upgrade fails if your system does not have space for a new boot environment.
-Space on the operating system device can be manually freed by going to **System > Boot** and removing the *Keep* attribute or deleting any boot environments that are no longer needed.
-{{< /hint >}}
 
 {{< expand "Can I force a full update?" "v" >}}
 TrueNAS defaults to delta packages for updates.
@@ -121,16 +125,13 @@ To force a full update, open the shell and enter this command:
 The updater downloads the full package containing all the files from the latest software release.
 When the download completes, the system reboots with the standard configuration.
 {{< /expand >}}
+-->
 
 ### Manual Updates
 
 You can manually download and apply updates in **System > Update**.
 
-{{< hint type=note >}}
-You cannot use manual updates to upgrade from older major versions.
-{{< /hint >}}
-
-Go to https://download.freenas.org/ and find an update file of the desired version.
+Go to https://www.truenas.com/download-truenas-core/ to find the latest 13.3 manual update file.
 Manual update file names end with <file>manual-update.tar</file>.
 
 Download the desired update file to your local system.
@@ -142,7 +143,7 @@ You can save a copy of the current configuration to external media for backup in
 
 After the dialog closes, the manual update screen displays.
 
-The current version of TrueNAS displays for verification.
+The current TrueNAS version displays for verification.
 
 ![Update Manual](/images/CORE/System/UpdateManual.png "Manual Update")
 
@@ -150,14 +151,10 @@ Select the manual update file saved to your local system using **Browse**.
 Set **Reboot After Update** to reboot the system after the update installs.
 Click **APPLY UPDATE** to begin the update.
 
-{{< hint type=important >}}
-**Update in Progress**
-
 Starting an update shows a progress dialog.
 When an update is in progress, the web interface shows an animated <i class="material-icons" aria-hidden="true" title="System Update">system_update_alt</i> icon in the top row.
 Dialogs also appear in every active web interface session to warn that a system update is in progress.
 **Do not** interrupt a system update.
-{{< /hint >}}
 
 ## Upgrade Via ISO
 

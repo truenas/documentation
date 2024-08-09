@@ -57,6 +57,7 @@ You are always welcome to network with other TrueNAS users using the various soc
 * [LinkedIn](https://www.linkedin.com/groups/3903140/)
 * [Facebook](https://www.facebook.com/truenascommunity)
 
+<!-- Comment out Enterprise support as not used in 13.3-RELEASE
 ## TrueNAS Enterprise
 
 {{< enterprise >}}
@@ -114,3 +115,4 @@ Use the same email address submitted with the ticket when registering.
 ## Contacting iXsystems Support
 
 {{< include file="/static/includes/iXsystemsSupportContact.md" >}}
+-->

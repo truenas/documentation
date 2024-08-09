@@ -5,6 +5,8 @@ geekdocCollapseSection: true
 weight: 20
 tags:
 - enterprise
+draft:
+ - true
 ---
 
 {{< enterprise >}}
