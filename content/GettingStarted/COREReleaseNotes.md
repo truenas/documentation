@@ -81,7 +81,7 @@ For more details on feature flags see [OpenZFS Feature Flags](https://openzfs.gi
 **August 13, 2024**
 
 iXsystems is pleased to release TrueNAS CORE 13.3-RELEASE!
-This stabilized release is intended only for community users that are looking for upstream incremental fixes that are included in this release.
+This stabilized release is intended only for community users who are looking for the upstream incremental fixes included in this release.
 See the 13.3 introduction at the top of this page or the [official announcement](https://forums.truenas.com/t/truenas-core-13-3-release-in-august/10344) for more details.
 
 This release includes a very small number of notable changes from the BETA2 release:
