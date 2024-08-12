@@ -23,7 +23,7 @@ The **Installed** applications screen shows status of installed apps, provides a
 
 The **Discover** screen show widgets for the installed catalog of apps.
 The individual app widgets open app information screens with details about that application, and access to an installation wizard for the app.
-<!-- It also provides access to a [**Custom Apps**](#install-custom-app-screen) wizard that allows users to add an app not included in the catalog. commentint out until RC1 release when the Custom App screen is added back to the UI -->
+<!-- It also provides access to a [**Custom Apps**](#install-custom-app-screen) wizard that allows users to add an app not included in the catalog. commented out until RC1 release when the Custom App screen is added back to the UI -->
 
 ## Installed Screen
 
@@ -194,8 +194,8 @@ Each **Pod Log** screen includes a banner with the **Application Name**, **Pod N
 -->
 ### Application Metadata Widget
 
-The **Application Metadata** widget shows application capabilites unique to the application, and **Run As Content** showing the user and group IDs, the default user and group name, and brief description for the application. 
-**View More** expands the widget to show more information on application setttings.
+The **Application Metadata** widget shows application capabilities unique to the application, and **Run As Content** showing the user and group IDs, the default user and group name, and brief description for the application. 
+**View More** expands the widget to show more information on application settings.
 **Collapse** hides the extra information.
 
 {{< trueimage src="/images/SCALE/Apps/ApplicationMetadataWidget.png" alt="Application Metadata Widget" id="Application Metadata Widget" >}}
