@@ -93,6 +93,8 @@ Migrate legacy Samba domains to Active Directory before upgrading to 24.10 or la
 You can create an SMB share while [creating a dataset on the **Add Dataset** screen]({{< relref "DatasetsSCALE.md" >}}) or create the dataset while creating the share on the **Add SMB Share** screen.
 This article covers adding the dataset on the **Add SMB Share** screen.
 
+{{< include file="/static/includes/AppsSMBErrorWarning.md" >}}
+
 {{< include file="/static/includes/ShareDatasetsNotPools.md" >}}
 
 {{< expand "What are ZFS dataset setting defaults?" "v" >}}
