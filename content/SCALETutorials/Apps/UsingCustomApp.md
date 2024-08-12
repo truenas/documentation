@@ -23,38 +23,44 @@ If yes, [create a dataset]({{< relref "DatasetsSCALE.md" >}}) for host volume pa
 
 Custom Docker applications typically follow Open Container specifications and deploy in TrueNAS following the Custom Application deployment process described below.
 
-## Adding Custom Applications
+Carefully review documentation for the app you plan to install before attempting to install a custom app.
+Take note of any required environment variables, optional variables you want to define, start-up commands or arguments, networking requirements, such as port numbers, and required storage configuration.
 
 {{< hint type=important title="Configure TrueNAS before installing Custom Applications" >}}
-If your application requires directory paths, specific datasets, or other storage arrangements, configure these before you start the **Install Custom App** wizard.
+If your application requires specific directory paths, datasets, or other storage arrangements, configure these before you start the **Install Custom App** wizard.
 
-You cannot exit the configuration wizard and save settings to create data storage or directories in the middle of the process. If you are unsure about any configuration settings, review the [Install Custom App Screen UI reference article]({{< relref "InstallCustomAppScreens.md" >}}) before creating a new container image.
+You cannot save settings and exit the configuration wizard to create data storage or directories in the middle of the process.
+If you are unsure about any configuration settings, review the [Install Custom App Screen UI reference article]({{< relref "InstallCustomAppScreens.md" >}}) before creating a new container image.
 
-To create directories in a dataset on SCALE, before you begin installing the container, open the TrueNAS SCALE CLI and enter [`storage filesystem mkdir path="/PATH/TO/DIRECTORY"`]({{< relref "CLIFilesystem-Storage.md#mkdir-command" >}}).
+To create directories in a dataset on SCALE, before you begin installing the container, open the TrueNAS SCALE CLI and enter `storage filesystem mkdir path="/PATH/TO/DIRECTORY"`.
 {{< /hint >}}
+
+## Adding Custom Applications
 
 When you are ready to create a container, go to **Apps**, click **Discover Apps**, then click **Custom App**.
 
 {{< trueimage src="/images/SCALE/Apps/AppsDiscoverScreen.png" alt="Applications Discover Screen" id="Applications Discover Screen" >}}
 
-1. Fill in the **Application Name** and the current version information in **Version**.
-   Add the GitHub repository URL in **Image Repository** for the docker container.
+1. Enter a name for the container in **Application Name**.
+   Accept the application train number in **Version**.
 
    {{< trueimage src="/images/SCALE/Apps/InstallCustomAppApplicationName.png" alt="Application Name" id="Application Name" >}}
 
-2. Enter the Github repository for the application you want to install in **Image Repository**.
-   If the application requires it, enter the correct setting values in **Image Tag** and select the **Image Pull Policy** to use.
+2. Enter the Docker Hub repository for the application you want to install in **Image Repository** using the format `maintainer/image`, for example *storjlabs/storagenode*, or `image`, such as *debian*, for Docker Official Images.
 
-   If the application requires it, enter the executables you want or need to run after starting the container in **Container Entrypoint**. Click **Add** for **Container CMD** to add a command. Click **Add** for **Container Arg** to add a container argument.
+   If the application requires it, enter the correct value in **Image Tag** and select the **Image Pull Policy** to use.
 
    {{< trueimage src="/images/SCALE/Apps/InstallCustomAppContainerImages.png" alt="Container Images Settings" id="Container Images Settings" >}}
 
-3. Enter the **Container Entrypoint** commands and arguments the application requires.
+3. If the application requires it, enter the executables you want or need to run after starting the container in **Container Entrypoint**.
+   Click **Add** for **Container CMD** to add a command.
+   Click **Add** for **Container Arg** to add a container argument.
 
    {{< trueimage src="/images/SCALE/Apps/InstallCustomAppContainerEntrypoint.png" alt="Container Entrypoint Settings" id="Container Entrypoint Settings" >}}
 
-4. Enter the **Container Environment Variables**. Not all applications use environment variables.
-   Check the application container documentation for details on what to install and to verify the variables that particular application requires.
+4. Enter the **Container Environment Variables**.
+   Not all applications use environment variables.
+   Check the application documentation to verify the variables that particular application requires.
 
    {{< trueimage src="/images/SCALE/Apps/InstallCustomAppContainerEnvironmentVariables.png" alt="Container Environment Variables Settings" id="Container Environment Variables Settings" >}}
 
@@ -89,7 +95,7 @@ When you are ready to create a container, go to **Apps**, click **Discover Apps*
 
    Set any resource limits you want to impose on this application.
 
-9. Enter or select any **Portal Configuration** settings to use.
+9.  Enter or select any **Portal Configuration** settings to use.
 
 10. Click **Install** to deploy the container.
    If you correctly configured the app, the widget displays on the **Installed Applications** screen.
