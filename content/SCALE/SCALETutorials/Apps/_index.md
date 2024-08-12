@@ -129,10 +129,8 @@ The **Discover** screen displays **New & Updated Apps** application widgets for 
 Non-Enterprise systems show the **Chart** catalog of apps by default.
 The **Chart** catalog train has official applications that are pre-configured and only require a name during deployment.
 
-Enterprise applications display automatically for Enterprise=licensed systems, but community users can add these apps using the **Manage Catalogs** screen.
-App trains display based on the **Trains** settings on the **Edit Catalog** screen.
-
-See [Using SCALE Catalogs]({{< relref "usingcatalogs.md" >}}) for more information on managing catalogs.
+Enterprise applications display automatically for Enterprise-licensed systems, but community users can add these apps using the **Edit Catalog** screen.
+App trains display based on the **Preferred Trains** settings on the **Edit Catalog** screen.
 
 {{< trueimage src="/images/SCALE/Apps/AppsDiscoverScreen.png" alt="Applications Discover Screen" id="Applications Discover Screen" >}}
 
@@ -140,9 +138,8 @@ The **Discover** screen includes three links:
 
 * [**Refresh Charts**](#refreshing-charts) 
 * **Manage Installed Apps** opens the **Installed** application screen.
-* [**Manage Catalogs**]({{< relref "UsingCatalogs.md" >}})
-
-The **Custom App** button opens a wizard where you can install unofficial apps or an app not included in a catalog.
+<!-- commenting out until RC1 when this screen gets added back to the UI
+The **Custom App** button opens a wizard where you can install unofficial apps or an app not included in a catalog. -->
 
 Browse the widgets or use the search field to find an available application.
 Click on an application widget to go to the application information screen.
