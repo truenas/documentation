@@ -89,7 +89,7 @@ D["3.0.2"]
 
 ## 3.0.2 Changelog
 
-**August 1, 2024**
+**August 13, 2024**
 
 iXsystems is pleased to release TrueCommand 3.0.2!
 
