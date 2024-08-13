@@ -18,9 +18,9 @@ related: false
 {{< include file="/static/includes/ProposeArticleChange.md" >}}
 {{< /hint >}}
 
-The open source TrueNAS project welcomes contributions to the project. We also welcome changes to articles found in the TrueNAS Documentation Hub.
+The open-source TrueNAS project welcomes contributions to the project. We also welcome changes to articles found in the TrueNAS Documentation Hub.
 
-Contributions to the TrueNAS open source projects are made through GitHub. For more information see [Issue reporting]({{< relref "/contributing/IssueReporting/_index.md" >}})
+Contributions to the TrueNAS open-source projects are made through GitHub. For more information see [Issue reporting]({{< relref "/contributing/IssueReporting/_index.md" >}})
 
 The Documentation hub uses [Hugo](https://gohugo.io/) to create the documentation website and the [Geekdoc theme](https://geekdocs.de) for general website styling.
 Articles are written in a combination of [Markdown](https://daringfireball.net/projects/markdown/syntax) and [HTML](https://www.w3schools.com/html/html_intro.asp) syntax.
@@ -30,7 +30,7 @@ Refer to the tutorials in the [Documentation section]({{< relref "/contributing/
 Article templates for general tutorial articles and new application tutorials are provided that you can copy and use to submit new articles.
 
 
-Please feel free to propose changes and add new content in these articles to help others learn how to contribute to project documentation!
+Please feel free to propose changes and add new content to these articles to help others learn how to contribute to project documentation!
 
 Want to discuss your in-progress changes or other TrueNAS contributions?
 The TrueNAS contributors `#truenas-docs` Slack workspace is available for contributors to discuss their changes and help each other improve the software.
