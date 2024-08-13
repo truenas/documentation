@@ -29,7 +29,7 @@ Review the [Nextcloud documentation](https://docs.nextcloud.com/server/latest/ad
 [Cloudflare Tunnel](https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/) is a system that proxies traffic between the user and the application over the Cloudflare network.
 It uses a **Cloudflared** client that is installed on the TrueNAS SCALE system.
 
-This allows a secure and encrypted connection without the need of exposing ports or the private IP of the TrueNAS system to the internet.
+This allows a secure and encrypted connection without the need to expose ports or the private IP of the TrueNAS system to the internet.
 
 {{< trueimage src="/images/SCALE/Apps/CloudflareTunnelOverview.jpg" alt="Cloudflare Tunnel Overview" id="Cloudflare Tunnel Overview" caption="Illustration via [Cloudflare](https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/) (CC BY)" >}}
 
@@ -49,7 +49,7 @@ In the Cloudflare One dashboard:
 
 Go to **Networks** and select **Tunnels**.
 
-Click **Create Tunnel**, choose type **Cloudflared** and click **Next**.
+Click **Create Tunnel**, choose type **Cloudflared**, and click **Next**.
 
 Choose a **Tunnel Name** and click **Save tunnel**.
 
@@ -70,10 +70,10 @@ xUZ3hZVGd0TlRWbE9UQmpaakEyTlRFMCJ9
 
 Copy the string after `--token`, then click **Next**.
 
-Add a public hostname for accessing Nextcloud, for example: *nextcloud.example.com*.
+Add a public hostname for accessing Nextcloud, for example *nextcloud.example.com*.
 
 Set service **Type** to **HTTPS**.
-Enter the local TrueNAS IP with the Nextcloud container port, for example *192.168.1.1:9001*.
+Enter the local TrueNAS IP with the Nextcloud container port, for example, *192.168.1.1:9001*.
 
 {{< trueimage src="/images/SCALE/Apps/CloudflareTunnelHostname.png" alt="Cloudflare Tunnel Hostname" id="Cloudflare Tunnel Hostname" >}}
 
@@ -127,7 +127,7 @@ The status of the tunnel should be **HEALTHY**.
 
 {{< trueimage src="/images/SCALE/Apps/CloudflareTunnelStateHealthy.png" alt="Cloudflare Tunnel Healthy" id="Cloudflare Tunnel Healthy" >}}
 
-Nextcloud should now be reachable via the Cloudflare Tunnel address, *nextcloud.example.com* in this example, using a HTTPS connection.
+Nextcloud should now be reachable via the Cloudflare Tunnel address, *nextcloud.example.com* in this example, using an HTTPS connection.
 
 ## Additional Security Considerations
 
