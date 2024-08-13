@@ -52,14 +52,14 @@ Selecting the checkbox on an app row shows the **[Bulk Actions](#bulk-actions)**
 The checkbox to the left of **Applications** selects all installed apps.
 
 ## Settings Menu
-
-**Settings** at the top of the **Installed** applications displays global options that apply to all applications.
+**Settings** on the **Installed** applications header displays global options that apply to all applications. 
 
 * **Choose Pool** opens the **[Choose a pool for Apps](#choose-a-pool-for-apps-dialog)** dialog.
 * **Unset Pool** shows after setting a pool for applications to use. It opens the **Unset Pool** dialog.
-* **[Train Settings](#train-settings)** opens the **Edit Catalog** screen. Use to add or remove other trains to the **Stable** catalog of applications.
-<!-- commenting out until the Manage Container Image option is back on this menu, then replace this image with new. 
-{{< trueimage src="/images/SCALE/Apps/AppsInstalledAppsSettingOptions.png" alt="Installed Applications Screen Settings" id="Installed Applications Screen Settings" >}}-->
+* **Manage Container Images** opens the [**Manage Container Images**](#manage-container-images) screen.
+* **[Train Settings](#train-settings)** opens the **Edit Catalog** screen. Use to add or remove other trains to the **Stable** catalog of applications. <!-- more changes coming in RC -->
+
+{{< trueimage src="/images/SCALE/Apps/AppsInstalledAppsSettingOptions.png" alt="Installed Applications Screen Settings" id="Installed Applications Screen Settings" >}}
 
 ### Choose a Pool for Apps
 **Choose Pool**  opens the **Choose a pool for apps** dialog. The **Pool** dropdown list shows a list of available pools on the system.
@@ -67,25 +67,21 @@ The checkbox to the left of **Applications** selects all installed apps.
 
 {{< trueimage src="/images/SCALE/Apps/AppsChoosePoolForApps.png" alt="Apps Choose a Pool for Apps" id="Apps Choose a Pool for Apps" >}}
 
-### Train Settings
-
+### Train Settings <!-- comment out more image changes expected in RC1. -->  
 **Train Settings** opens the **Edit Catalog** screen.
-<!-- comment out image until this screen gets updated, tomorrow? 
-{{< trueimage src="/images/SCALE/Apps/AppsEditCatalogScreen.png" alt="Apps Edit Catalog" id="Apps Edit Catalog" >}} -->
+
+{{< trueimage src="/images/SCALE/Apps/AppsEditCatalogScreen.png" alt="Apps Edit Catalog" id="Apps Edit Catalog" >}}
 
 Enter the train name in **Preferred Train** to add another train to the **Stable** applications catalog.
-Train options are **charts** the default train for official apps, **community** for community proposed and maintained apps, and **enterprise** for apps verified and simplified for Enterprise users.
+Train options are **stable** the default train for official apps, **community** for community proposed and maintained apps, and **enterprise** for apps verified and simplified for Enterprise users.
 
 ### Unset Pool
-
 **Unset Pool** on the **Settings** menu opens the **Unset Pool** dialog. Click **Unset** to unset the pool and turn off the application service.
 When complete, a **Success** dialog displays.
 
 {{< trueimage src="/images/SCALE/Apps/AppsUnsetPoolDialog.png" alt="Apps Unset Pool" id="Apps Unset Pool" >}}
 
-<!-- Commenting out until it get into the UI, it is added to nightly but not yet in UI
 ### Manage Container Images
-
 This screen displays all container images currently downloaded on TrueNAS.
 
 {{< trueimage src="/images/SCALE/Apps/AppsManageContainerImages.png" alt="Apps Manage Container Images" id="Apps Manage Container Images" >}}
@@ -107,10 +103,9 @@ The **Pull Image** button opens a side panel with options to download specific i
 | **Docker Registry Authentication** | Optional. Only needed for private images. |
 | **Username** | User account name to access a private Docker image. |
 | **Password** | User account password to access a private Docker image. |
-{{< /truetable >}} -->
+{{< /truetable >}} 
 
 ### Bulk Actions
-
 The **Bulk Action** dropdown list allows you to apply actions to one or more applications installed and running on your system.  
 Options are **Start All Selected**, **Stop All Selected**, **Upgrade All Selected**, and **Delete All Selected**.
 
@@ -134,7 +129,6 @@ The **Application Info** widget shows the name, version number, date last update
 **[Update](#update-apps)** opens a window for the application showing the current version and the new version the upgrade installs.
 
 #### Delete Apps
-
 The **Delete** dialog asks for confirmation to delete the selected application.
 
 {{< trueimage src="/images/SCALE/Apps/AppsDeleteAppDialog.png" alt="Delete Application Dialog" id="Delete Application Dialog" >}}
@@ -193,7 +187,6 @@ The **Pod Logs** screen opens a shell displaying logs for the selected installed
 Each **Pod Log** screen includes a banner with the **Application Name**, **Pod Name** and **Container Name**.
 -->
 ### Application Metadata Widget
-
 The **Application Metadata** widget shows application capabilities unique to the application, and **Run As Content** showing the user and group IDs, the default user and group name, and brief description for the application. 
 **View More** expands the widget to show more information on application settings.
 **Collapse** hides the extra information.
@@ -232,8 +225,8 @@ You can enter a new setting in fields that include a preprogrammed default.
 {{< include file="/static/includes/AppsInstallWizardSettings.md" >}}
 
 ## Discover Apps Screen
-
-The **Discover** screen displays application widgets for the official TrueNAS **charts** train by default. Users can add the **Community** and **Enterprise** train applications on the **[Edit Catalog](#edit-catalog-screen)** screen. First-time SCALE installation includes the **Chart** catalog train.
+The **Discover** screen displays application widgets for the official TrueNAS **stable** train by default.
+Users can add the **Community** and **Enterprise** train applications on the **[Edit Catalog](#edit-catalog-screen)** screen.
 
 {{< trueimage src="/images/SCALE/Apps/AppsDiscoverScreen.png" alt="Applications Discover Screen" id="Applications Discover Screen" >}}
 
