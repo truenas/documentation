@@ -18,7 +18,7 @@ Articles are written in a combination of [Markdown](https://daringfireball.net/p
 
 The tutorials in this section are designed to guide you with different kinds of documentation contributions and two different tutorial article templates.
 There is also an article template that you can copy and use to submit new articles.
-Please feel free to propose changes and add new content in these articles to help others learn how to contribute to project documentation!
+Please feel free to propose changes and add new content to these articles to help others learn how to contribute to project documentation!
 
 Want to discuss your in-progress changes or other TrueNAS contributions?
 The TrueNAS contributors `#truenas-docs` Slack workspace is available for contributors to discuss their changes and help each other improve the software.
