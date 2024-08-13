@@ -1,6 +1,6 @@
 ---
 title: "MinIO"
-description: "Tutorials for installing and using the MinIO charts application available in the stable train of TrueNAS SCALE."
+description: "Tutorials for installing and using the MinIO charts application available in the stable train in TrueNAS SCALE."
 geekdocCollapseSection: true
 weight:
 aliases: 
