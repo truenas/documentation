@@ -21,7 +21,7 @@ This page tracks the latest development roadmap and release notes for the next u
 
 {{< include file="/static/includes/24.10FeatureList.md" >}}
 
-To see the latest on each feature in active development, click one of the **NAS-###### development project** links above.
+To see the latest on each feature in active development, click one of the **NAS-######** development project links above.
 
 ## Obtaining a Release
 
@@ -120,8 +120,8 @@ Click the component version number to see the latest release notes for that comp
 {{< truetable >}}
 | Component | Version |
 |-----------|-------------|
-| Linux Kernel | [6.6.20](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/tag/?h=v6.6.20) |
-| NVIDIA Driver | [545.23.08-2](https://docs.nvidia.com/cuda/cuda-toolkit-release-notes/index.html) |
+| Linux Kernel | [6.6.44](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/tag/?h=v6.6.44) |
+| NVIDIA Driver | [555.42.06-2](https://docs.nvidia.com/cuda/cuda-toolkit-release-notes/index.html) |
 | OpenZFS | [2.2.99-2](https://github.com/openzfs/zfs/tree/zfs-2.2.99) |
 {{< /truetable >}}
 
