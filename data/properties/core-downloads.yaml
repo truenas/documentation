@@ -22,7 +22,7 @@ majorVersions:
         date: "2019-01-24"
   - lifecycle: "Previous"
     majorVersion: "13.0"
-    majorLink: "https://download-core.sys.truenas.net/12.0/STABLE/"
+    majorLink: "https://download-core.sys.truenas.net/13.0/STABLE/"
     releases:
       - name: "13.0-U6.2"
         link: "https://download-core.sys.truenas.net/13.0/STABLE/U6.2/"
