@@ -1,7 +1,7 @@
 ---
 title: "RAIDZ Extension Calculator"
-description: "Calculator to determine usable ZFS capacity and other ZFS pool metrics, and to compare storage pool layouts."
-weight: 90
+description: "Use this calculator to estimate the storage capacity efficiency of an extended ZFS RAIDZ VDEV. RAIDZ expansion adds disks to an existing RAIDZ VDEV."
+weight: 110
 tags:
 - zfs
 - storage
