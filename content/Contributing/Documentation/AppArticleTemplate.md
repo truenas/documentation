@@ -112,7 +112,7 @@ Do not change the **Version**. SCALE alerts you when a new version is available 
 
 6. Review the **Resource Configuration** settings.
    Accept the default values or enter new CPU and memory values.
-   By default, this application is limited to using no more than 4 CPU cores and 8 gibibytes available memory.
+   By default, this application is limited to using no more than 2 CPUs and 4096 megabytes of available memory.
    The application might use considerably less system resources.
 
    To customize the CPU and memory allocated to the container uses, enter new CPU values as a plain integer value followed by the suffix m (milli).
