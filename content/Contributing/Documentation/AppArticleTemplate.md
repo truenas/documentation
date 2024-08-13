@@ -115,11 +115,11 @@ Do not change the **Version**. SCALE alerts you when a new version is available 
    By default, this application is limited to using no more than 2 CPUs and 4096 megabytes of available memory.
    The application might use considerably less system resources.
 
-   To customize the CPU and memory allocated to the container uses, enter new CPU values as a plain integer value followed by the suffix m (milli).
-   The default is 4000m, which means the app can use 4 cores.
+   To customize the CPU and memory allocated to the container uses, enter new CPU values as a plain integer value.
+   The default is 2, which means the app can use 2 cores.
 
-   Accept the default value 8Gi allocated memory or enter a new limit in bytes.
-   Enter a plain integer followed by the measurement suffix. For example, 4G or 123Mi.
+   Accept the default value of 4096 MB allocated memory or enter a new limit in megabytes.
+   Enter a plain integer. For example, 8192.
 
 7. Click **Install**.
    The system opens the **Installed** applications screen with the *AppName* app in the **Deploying** state.
