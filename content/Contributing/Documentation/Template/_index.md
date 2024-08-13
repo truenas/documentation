@@ -7,32 +7,32 @@ tags:
 ---
 
 This template provides general information on constructing and writing TrueNAS tutorial articles.
-It contains an template example article with front matter, styling, and syntax examples.
+It contains a template example article with front matter, styling, and syntax examples.
 
 Refer to the [Style Guide]({{< relref "Style.md" >}}) for specific text syntax and formatting examples, Markdown and Hugo website enhancements, and content guidelines to follow.
 
 Application tutorials follow a specific format that covers the installation screens and deployment process.
-If submitting a tutorial for a community-maintainted application article, please use the [application tutorial template]({{< relref "/Contributing/Documentation/AppArticleTemplate.md" >}})
+If submitting a tutorial for a community-maintained application article, please use the [application tutorial template]({{< relref "/Contributing/Documentation/AppArticleTemplate.md" >}})
 
 ## Front Matter
-Every article needs a front matter section that contains these parameters:
+Every article needs a front-matter section that contains these parameters:
 * `title` for the article title.
-* `description` that provides a brief summary of the article content.
+* `description` that provides a summary of the article content.
   Keep the description to less than 160 characters. The character count includes spaces between alphanumeric and special characters.
 * `weight` that orders the article in the table of contents.
 
 Optional front matter parameters are:
 * `aliases` where you include links to articles removed from the website that should be directed to this page.
-* `tags` where you include single word or a few word flags for the article content.
-  Tags are use internally to pull articles into the **Related Artilces** sections at the bottom of articles and externally for search optimization.
+* `tags` where you include a single word or a few word flags for the article content.
+  Tags are used internally to pull articles into the **Related Articles** sections at the bottom of articles and externally for search optimization.
 
 ## Article Template
-Feel free to copy this article template example and rework it when writing your own articles for this website.
+Feel free to copy this article template example and rework it when writing your articles for this website.
 You can copy the <file>template/</file> directory to provide a starting point for contributing an article or article bundle that includes links to images.
 ```
 ---
 title: "Example Article"
-description: "This is a template for any tutorial article in the Documentation Hub website."
+description: "This is a template for any tutorial article on the Documentation Hub website."
 weight: 5
 ---
 
@@ -65,24 +65,24 @@ These admonitions are best placed before listing out any specific changes to mak
 This can help prevent mistakes and educate the reader about common troubleshooting steps.
 {{\< /hint >}}
 
-The step procedure should no exceed a maximum of 10 steps in an ordered list.
+The step procedure should not exceed a maximum of 10 steps in an ordered list.
 If the procedure exceeds 10 steps, use sub-steps.
 A good practice is to organize the procedure into what to do and how to do it steps.
-What steps are the primary list items, the how to do it are the sub-step items.
+What steps are the primary list items, and the how to do it are the sub-step items.
 
 Enter screen names and fields on screens in **bold** and a variable value in *italics*.
 
-Be precise with button or setting names to avoid confusing the reader.
+Be precise with buttons or setting names to avoid confusing the reader.
 
 ### Entering Commands
 
 Sometimes a user might need to open a shell to enter a command.
-To avoid confusing readers, use either the back back tick or HTML <code> and </code> tags for any command name or string.
+To avoid confusing readers, use either the back backtick or HTML <code> and </code> tags for any command name or string.
 If the command string includes a variable, use the HTML <code> and <i> open and close tags to show the string properly formatted.
 Do not use all caps for a command or variable, or brackets to enclose a variable.
 Some CLI and API command syntax might require the square or curly brackets as part of the string and some commands or command values are case sensitive.
 
-Use inline and multi-line code-blocks to define exactly what to type and show an example of the output.
+Use inline and multi-line code blocks to define exactly what to type and show an example of the output.
 Entering `ifconfig` shows more information about the network interfaces:
 ```
 ```
