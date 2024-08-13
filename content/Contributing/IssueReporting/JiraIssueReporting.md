@@ -24,9 +24,9 @@ Go to the [TrueNAS project on Jira](https://ixsystems.atlassian.net/jira/softwar
 
 Set the **Issue Type** to **Bug**. The form reloads with more fields. Do not select the **Defect** option which is only for internal use.
 
-Developers use most of the fields on bug tickets, but you should fill out the **Summary** and **Description** to provide a usable report, and include the **Affects Version** fields.
+Developers use most of the fields on bug tickets, but you should fill out the **Summary** and **Description** to provide a usable report and include the **Affects Version** fields.
 
-Enter a short, descriptive title that helps developers find the issue and understand the topic un the **Summary** field.
+Enter a short, descriptive title that helps developers find the issue and understand the topic in the **Summary** field.
 
 Enter specific issue details in the **Description** field.
 
@@ -42,7 +42,7 @@ A good bug report includes these elements:
 
 * An explanation of what should have happened while taking the steps listed above.
 
-* A description of what actually happened while taking the steps listed above.
+* A description of what happened while taking the steps listed above.
 
 * The TrueNAS software version you are using, which is found on the main **Dashboard**.
 
@@ -89,7 +89,7 @@ Debug files attached directly to a Jira issue ticket are visible to other users 
 For users concerned about data privacy, iXsystems provides a link to a secure file attachment ticket where you can upload files with sensitive information like a system debug or screenshot of network connections.
 
 After submitting a bug report, Jira sends a confirmation email with a link to your Jira issue ticket.
-The Jira issue ticket includes a link to the **TrueNAS Private File Attachments** area where you can upload the debug file, any other images or logs you kept private. 
+The Jira issue ticket includes a link to the **TrueNAS Private File Attachments** area where you can upload the debug file and any other images or logs you kept private. 
 Link the private file upload ticket to your Jira issue report before you save the private upload file ticket.
 
 Only authorized individuals can access files attached to private file upload tickets!
@@ -106,7 +106,7 @@ To protect your privacy, use the link in the system-generated message in your Ji
 Link your private upload ticket to your Jira issue ticket so developers can locate the file. Files uploaded to this service are only visible to project developers.
 
 ### Attaching Files to Existing Tickets
-For public facing files, open the ticket in your browser and either click **Attach**, at the top of the ticket, or click the **+**, in the **Attachments** section, to open a local system file browser to select the files.
+For public-facing files, open the ticket in your browser and either click **Attach**, at the top of the ticket or click the **+**, in the **Attachments** section, to open a local system file browser to select the files.
 You can also drag and drop the file onto the **Attachments** box and add any comments about it.
 
 Upload private files to our secure private upload service located at
