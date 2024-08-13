@@ -130,6 +130,8 @@ If TrueCommand 3.0.2 is used to upgrade HA systems, the standby controller might
   If you have previously updated your SMTP configuration, create new user accounts as described in [Creating User Accounts]({{< relref "UserAccounts.md" >}}).
   Log in as the new user and review settings in **Alert Services > SMTP Email** to confirm they are correct.
 
+* Removing all the systems from a group doesn't automatically delete the group. However, the system group is still manually removable.
+
 <a href="https://ixsystems.atlassian.net/issues/?filter=10581" target="_blank">Click here to see the latest Jira tickets</a> about known issues in 3.0.2 that are being resolved in a future TrueCommand release.
 
 ## 3.0.1 Changelog
