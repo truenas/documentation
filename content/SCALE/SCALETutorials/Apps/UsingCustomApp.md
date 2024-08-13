@@ -14,6 +14,11 @@ keywords:
 - software storage solutions
 ---
 
+{{< include file="/static/includes/CustomAppEE.md" >}}
+
+<!-- Existing content to be rewritten once Custom App redesign is complete -->
+
+<!--
 SCALE includes the ability to run third-party apps in containers (pods) using Kubernetes settings.
 
 {{< expand "What is Kubernetes?" "v" >}}
@@ -162,3 +167,4 @@ To copy a local file to the remote pod:
 
 To copy a remote pod file locally:
 `k3s kubectl cp <some-namespace>/<some-pod>:/tmp/foo /tmp/bar`
+-->
