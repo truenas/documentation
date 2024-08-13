@@ -8,7 +8,7 @@ tags:
 
 This guide has many examples of how to style your documentation contributions.
 TrueNAS documentation uses standardized Commonmark Markdown, HTML, and Hugo syntax to transform text, add images, stylize tables, and link to other locations.
-The guide is not exhaustive, but contains examples of the elements that are most commonly used when writing TrueNAS documentation.
+The guide is not exhaustive but contains examples of the elements that are most commonly used when writing TrueNAS documentation.
 To learn more about each markup language, see these resources:
 
 * Markdown: https://daringfireball.net/projects/markdown
@@ -17,7 +17,7 @@ To learn more about each markup language, see these resources:
 * Hugo: https://gohugo.io/documentation/
 
 ## Markdown Examples
-TrueNAS Documentation Hub article make use of the following formatting options:
+TrueNAS Documentation Hub articles make use of the following formatting options:
 {{< expand "Headers" "v" >}}
 Use hashes (#) to designate a section of content:
 ```
@@ -25,7 +25,7 @@ Use hashes (#) to designate a section of content:
 ## Level 2
 ### Level 3
 ```
-On this website, the title of the article is designated as a level 1 heading.
+On this website, the article title is designated as a level 1 heading.
 The rest of the section content should be organized with level 2 and greater headings.
 This populates the article navigation sidebar with links to the different sections of your article.
 
@@ -63,7 +63,7 @@ You can also link directly just by typing the URL with no additional markup: `ww
 
 HTML linking syntax is also allowed: `<a href="www.example.com">Example Site</a>`
 
-You can also use the `relref` shortcode to link to documents in the TrueNAS Documentation Hub website.
+You can also use the `relref` shortcode to link to documents on the TrueNAS Documentation Hub website.
 For example, linking to an existing article such as a SCALE tutorial [Dashboard]({{ relref "/SCALE/SCALETutorials/Dashboard.md" }}).
 
 To link to another section of the **same** article, use an anchor (`#`) to refer to that section header.
@@ -135,22 +135,22 @@ For example:
 | **Field name** | Description of what to enter into this field. |
 {{\< /truetable >}}
 ```
-If you want to use specfic column sizes you can use  HTML tags to customize how your table displays.
+If you want to use specific column sizes, you can use HTML tags to customize how your table displays.
 {{< /expand >}}
 {{< expand "Expand/Collapse Text" "v" >}}
-A you can use the `{{\< expand >}}` short code to create expandable section of text such as those used in this article (do not include the escaping backslash \\).
+You can use the `{{\< expand >}}` shortcode to create an expandable section of text such as those used in this article (do not include the escaping backslash \\).
 For example:
 ```
 {{\< expand "Text for the expandable text block" "v" >}}
 Enter the text or title for the expandable text in double quotes followed by the "v" to indicate the start of the expandable text:
-End the section with with the close tag.
+End the section with the close tag.
 {{\< /expand >}}
 ```
 You can use the `expand` short code as a bullet point list item. the arrow is enough to indicate a point in a bullet list if all list items are also expandable.
 {{< /expand >}}
 
 ## Hugo Style Elements
-There are a number of style elements you can use that are built into the Hugo static site generator.
+There are many style elements you can use that are built into the Hugo static site generator.
 This site uses Hugo shortcode syntax for images, internal references, and admonition boxes.
 
 The documentation website also uses the [Docsy](https://github.com/google/docsy) theme.
@@ -158,7 +158,7 @@ This theme has some additional styling elements that can be used to enhance your
 See the [Docsy shortcodes guide](https://www.docsy.dev/docs/adding-content/shortcodes/) for a list of built-in reusable content snippets.
 
 {{< expand "Linking to Other Articles on this Website" >}}
-Internal references use the `ref` shortcode to look up a file by name, or the `relref` shortcode to link to another article in the Documentation Hub website:
+Internal references use the `ref` shortcode to look up a file by name, or the `relref` shortcode to link to another article on the Documentation Hub website:
 ```
 [Creating a new ZFS Pool]({{\< relref "pools.md" >}})
 (do not include the escaping backslash \)
@@ -182,7 +182,7 @@ You can also use an anchor to link to a specific section within an article:
 ```
 {{< /expand >}}
 {{< expand "Images" "v" >}}
-To add an image to your article, you need to add the image file to your article bundle.
+To add an image to your article, you must add the image file to your article bundle.
 You can insert an image without a caption with a simple image link using this markdown string:
 
 ```
@@ -209,7 +209,7 @@ To create a simple note box use the `hint` shortcode:
 
 ```
 {{\< hint type="info" >}}
-This is a simple note box with a blue background and darker blue border
+This is a simple note box with a blue background and a darker blue border
 {{\< /hint >}}
 (do not include the escaping backslash \)
 ```
@@ -225,23 +225,23 @@ You can include a title for the admonition using the `title=\"Title Text"` in th
 
 ```
 {{\< hint type="info" title="Admonition Titles" >}}
-This the text in the information box.
+This is the text in the information box.
 {{\< /hint >}}
 (do not include the escaping backslash \)
 ```
 This renders as:
 {{< hint type="info" title="Admonition Titles" >}}
-This the text in the information box.
+This is the text in the information box.
 {{< /hint >}}
 {{< /expand >}}
 {{< expand "Graphical Fonts and Icons" "v" >}}
 You can call either the Font Awesome or Material Design graphical fonts in your text to be more precise about what buttons or icons to click in the TrueNAS web interface.
-Below are examples of icons that are already being used on the Docs website, along with the exact code you would add to the Markdown file to call that icon.
+Below are examples of icons we already use on the Docs website, along with the exact code you would add to the Markdown file to call that icon.
 
-To find icons that you can include with your text, please refer to the [Material Design](https://material.io/resources/icons/?style=baseline) or [Font Awesome](https://fontawesome.com/icons?d=gallery&s=solid&m=free) Icon Libraries. Note that only the *Free* and *Solid* Font Awesome icons are supported.
+To find icons that you can include with your text, please refer to the [Material Design](https://material.io/resources/icons/?style=baseline) or [Font Awesome](https://fontawesome.com/icons?d=gallery&s=solid&m=free) Icon Libraries. Note that we only support the *Free* and *Solid* Font Awesome icons.
 
-To improve accessibility assistance, please be sure to use the `aria-hidden` and `title` fields with your icon.
-This allows users that require accessibility assistance like screen readers to be able to know what icon is being used.
+To improve accessibility assistance, please use the `aria-hidden` and `title` fields with your icon.
+This allows users who require accessibility assistance like screen readers to know what icon is being used.
 
 ### Icon Examples
 
@@ -262,7 +262,7 @@ This allows users that require accessibility assistance like screen readers to b
 <i class="material-icons" aria-hidden="true" title="System Update">system_update_alt</i> = `<i class="material-icons" aria-hidden="true" title="System Update">system_update_alt</i>`
 
 ### Key Strokes
-When a specific keyboard key or key combination are used, use the `<kbd>` HTML code to highlight the keystrokes.  Here are a few examples:
+When a specific keyboard key or key combination is used, use the `<kbd>` HTML code to highlight the keystrokes.  Here are a few examples:
 
 <kbd>Ctrl + C</kbd> = `<kbd>Ctrl + C</kbd>`
 
@@ -282,11 +282,11 @@ Do not use the following in your articles:
 * The word *may*. We all say it but we are not giving permission to do something, we are saying it *might* do something.
   You can also replace *may* with *can* or *should* if these words better describe the situation. Only use *may* when granting permission to do something.
 
-* Do not use possessive case. Replace the ('s) instances with a statement. For example, do not say "The system's IP address." Instead say "The IP address for the system."
-  It is okay to use *its* or *their*, but try to avoid possessives where possible.
+* Do not use possessive case. Replace the ('s) instances with a statement. For example, do not say "The system's IP address." Instead, say "The IP address for the system."
+  You can use *its* or *their*, but try to avoid possessives where possible.
 
 * Do not use contractions. Contractions do not translate well for non-English and English as a second language reader populations.
   For example, change instances such as *doesn't* to *does not*.
 
 * Spell out numbers between one and ten when referring to numbers of items in general terms.
-  If you are referring to entering a number then type the digit (for example, enter *1* in the field). Use digits for numbers greater than ten.
+  If you are referring to entering a number, type the digit (for example, enter *1* in the field). Use digits for numbers greater than ten.
