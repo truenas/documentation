@@ -8,28 +8,28 @@ tags:
 ---
 
 Use this template as a guideline when creating a new application tutorial.
-The shaded areas encompass standard article content, but feel free to change by adding or removing sections to fit the app installation process.
+The shaded areas encompass standard article content but feel free to change by adding or removing sections to fit the app installation process.
 Change the front matter `description` parameter to suit the subject and content of the new tutorial.
-The description text must not exceed 160 alphanumeric or special characters, including spaces between charcters.
+The description text must not exceed 160 alphanumeric or special characters, including spaces between characters.
 
 ```
 ```
-*AppName* is community-maintained application.
-Enter a description about this app, common or specific uses for it. Also include any links to documentation created by the developer of the application.
+*AppName* is a community-maintained application.
+Enter a description of this app and common or specific uses for it. Also, include any links to documentation created by the application developer.
 For example, 
 *AppName provides a [Quickstart Setup Guide](\https://docs.appName/setup) with step-by-step instructions to help users create a Storj node.*
 
 ## Before You Begin
 ```
 ```
-Enter information about configuration or preparation steps required before beginning the installation process.
+Enter information about the configuration or preparation steps required before beginning the installation process.
 For example, creating a certificate, adding a third-party account if the app requires this before installing it, and creating TrueNAS datasets for the application to use.
 
 Include names of datasets if required or strongly recommended. For example, a dataset named ***data***, or ***config***, etc.
 
 Specify system resources the app requires to operate properly, such as CPU or memory resources, and/or additional network interface or router configuration.
 
-If a the app requires setting up a crypto wallet, include this information.
+If the app requires setting up a crypto wallet, include this information.
 
 Example of possible points to include in this section: (do not include the three backticks in the article)
 ```
@@ -37,7 +37,7 @@ Example of possible points to include in this section: (do not include the three
 Prepare TrueNAS SCALE before installing the app by: 
    
 * [Creating datasets](#creating-the-storj-datasets-on-truenas-scale) for application storage. 
-  Create a parent dataset, such as *appName* and then the storage datasets (***config*** and ***data***) under it.
+  Create a parent dataset, such as *appName*, and then the storage datasets (***config*** and ***data***) under it.
   Select **apps** as the **Dataset Preset** for these datasets. You can modify the dataset ACLs at the time of creation, or modify them later when adding them in the app.
 
 * Add a new SCALE user account if not using the default apps user and group (568).
@@ -48,14 +48,14 @@ Prepare TrueNAS SCALE before installing the app by:
 
 ```
 ```
-The following content is considered standard when installing an new application using an app installation wizard. Modify the instructions based on what is required or optional to get the application to fully deploy.
-The template sections are highlighted inside the three backticks. The backslash included in link to images or shortcodes prevents them from rendering in this template. Remove them in your article.
+The following content is considered standard when installing a new application using an app installation wizard. Modify the instructions based on what is required or optional to get the application to fully deploy.
+The template sections are highlighted inside the three backticks. The backslash included in the link to images or shortcodes prevents them from rendering in this template. Remove them from your article.
 ```
 ```
 ## Installing the Application
 
-Go to **Apps**, click on **Discover Apps**.
-Either scroll down to the ***AppNName*** widget or begin typing the name into into the search field to locate the widget.
+Go to **Apps**, and click on **Discover Apps**.
+Either scroll down to the ***AppNName*** widget or begin typing the name into the search field to locate the widget.
 
 {{\< trueimage src="/images/SCALE/Apps/LocateImageNameWidget.png" alt="Locate *AppName* Widget" id="Locate *AppName* Widget" >}}
 
@@ -99,7 +99,7 @@ Do not change the **Version**. SCALE alerts you when a new version is available 
 
    {{\< trueimage src="/images/SCALE/Apps/InstallAppNameStorage.png" alt="Add Datasets" id="Add Datasets" >}}
 
-   Select the option to configure ACL entries if you want to configure this while installing the app, otherwise, use the **Permissions** widget for each dataset to edit ACL settings and and ACE entries for the app user.
+   Select the option to configure ACL entries if you want to configure this while installing the app, otherwise, use the **Permissions** widget for each dataset to edit ACL settings and ACE entries for the app user.
 
    To modify the dataset permissions, select **Enable ACL** to show the option to create an ACL entry to customize the dataset permissions.
    
@@ -112,21 +112,21 @@ Do not change the **Version**. SCALE alerts you when a new version is available 
 
 6. Review the **Resource Configuration** settings.
    Accept the default values or enter new CPU and memory values.
-   By default, this application is limited to use no more than 4 CPU cores and 8 gibibytes available memory.
+   By default, this application is limited to using no more than 4 CPU cores and 8 gibibytes available memory.
    The application might use considerably less system resources.
 
    To customize the CPU and memory allocated to the container uses, enter new CPU values as a plain integer value followed by the suffix m (milli).
-   Default is 4000m, which means the app is able to use 4 cores.
+   The default is 4000m, which means the app can use 4 cores.
 
    Accept the default value 8Gi allocated memory or enter a new limit in bytes.
-   Enter a plain integer followed by the measurement suffix, for example 4G or 123Mi.
+   Enter a plain integer followed by the measurement suffix. For example, 4G or 123Mi.
 
 7. Click **Install**.
    The system opens the **Installed** applications screen with the *AppName* app in the **Deploying** state.
    When the installation completes it changes to **Running**.
 
 ### Using the Web Portal
-Click **Web Portal** on the **Application Info** widget to open the web interface for the application.
+Click **Web Portal** on the **Application Info** widget to open the application web interface.
 
 The time required to install the app varies depending on your hardware and network configuration.
 ```
