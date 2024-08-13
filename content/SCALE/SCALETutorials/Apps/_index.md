@@ -101,8 +101,8 @@ For example, create the datasets for the Nextcloud app before installing the app
 To select a different pool for apps to use, click 
 
 ## Adding a Catalog Train
-The TrueNAS **Chart** catalog populates the **Discover** apps screen by default.
-Users can add the **Community** or **Enterprise** catalog.
+The TrueNAS **Stable** catalog populates the **Discover** apps screen by default with apps found in the **charts** repository.
+Users can add the **Community** or **Enterprise** train catalogs. <!-- RC1 brings in the enterprise train, leaving this in here for this PR. Will comment it out in the PD-1356 PR>
 To view the catalog settings, select the **Manage Catalogs** at the top of the **Discover** apps screen.
 
 {{< include file="/static/includes/AddEnterpriseTrain.md" >}}**Settings > Unset Pool**. This turns off the apps service until you choose another pool for apps to use.
@@ -232,7 +232,7 @@ To download a specific image, click the button and enter a valid path and tag to
 Enter the path using the format *registry*/*repository*/*image* to identify the specific image.
 The default **latest** tag downloads the most recent image version.
 
-When downloading a private image, enter user account credentials that allow access to the private registry.
+When downloading a private image, enter user account credentials that allow access to the private registry. -->
 
 ### Upgrading Apps
 Apps display a yellow circle with an exclamation point that indicates an upgrade is available, and the **Installed** application screen banner displays an **Update** or **Update All** button when upgrades are available.
@@ -263,9 +263,10 @@ The **Settings** dropdown list at the top of the **Installed** applications scre
 * [**Manage Container Images**](#managing-container-images) where you can manage every container image downloaded to TrueNAS.
 
 ## Discover Apps Options
-The **Discover Apps** screen shows application widgets for the official **Chart**, **Community**, and **Enterprise** catalog trains.
-Non-Enterprise systems show the **Chart** catalog of apps by default.
-The **Chart** catalog train has official applications that are pre-configured and only require a name during deployment.
+The **Discover Apps** screen shows application widgets for the official **Stable**, **Community**, and **Enterprise** catalog trains.
+The **Stable** train includes the apps in the **charts** repository.
+Non-Enterprise systems show the **stable** catalog of apps by default.
+The **Stable** catalog train has official applications that are pre-configured and only require a name during deployment.
 
 Enterprise applications display automatically for Enterprise-licensed systems, but community users can add these apps using the **Manage Catalogs** screen.
 App trains display based on the **Trains** settings on the **Edit Catalog** screen.
@@ -289,10 +290,7 @@ Click on an app widget to open the information screen for that application.
 
 ### Refreshing Charts
 To refresh the charts catalog, click **Refresh Charts** on the **Discover** screen.
-Refresh the catalog after adding or editing the catalogs on your system.
-
-You can also refresh all catalogs from the **Catalogs** screen.
-Click **Manage Catalogs**, then click **Refresh All**.
+Refresh the apps catalog after adding or editing the trains on your system.
 
 ### Using the Discover Screen Filters
 To alter how the app widgets show, click the down arrow to the right of **Filters**.
@@ -337,7 +335,7 @@ If installed GPU devices do not populate as available for allocation in **GPU Co
 If the GPU was previously isolated and/or assigned to a VM, a reboot could be required to free it up for app allocation.
 Restart the system then return to the **Resources Configuration** section of the application to see if expected devices are available.
 {{< /expand >}}
-
+<!-- commenting out until the UI includes this in RC1
 ## Installing Custom Applications
 To deploy a custom application, go to **Discover** and click **Custom App** to open the **Install Custom App** screen.
 See [Using Install Custom App]({{< relref "UsingCustomApp.md" >}}) for more information.
