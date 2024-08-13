@@ -1725,3 +1725,5 @@ APIInterface
 defaultTab
 dereference
 bugfix
+configuring-smtp-email
+userguide

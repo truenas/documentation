@@ -13,7 +13,7 @@ Here are the major changes in this release:
 
 * New multi-system ZFS replication quickly backs up storage snapshots across connected TrueNAS systems.
 <--->
-* The experimental clustering feature is deprecated and scheduled for removal in a future TrueCommand version.
+* The experimental clustering feature is deprecated and UI screens disabled in TrueCommand 3.0.2.
 
 * The experimental iSCSI management feature is permanently removed. iSCSI shares previously created by TrueCommand continue to live on the individual TrueNAS systems.
 
@@ -24,9 +24,9 @@ Here are the major changes in this release:
 TrueCommand is primarily offered as a Software as a Service (SaaS) solution from iXsystems, but can be self-hosted as a container deployment.
 
 TrueCommand Cloud registrations are available from https://portal.ixsystems.com.
-A valid email address and credit card is required ([signup instructions]({{< relref "InstallTCCloud.md" >}})).
+A valid email address and credit card is required ([sign up instructions]({{< relref "InstallTCCloud.md" >}})).
 
-A self-hosted TrueCommand container is available from https://hub.docker.com/r/ixsystems/truecommand/tags under the tag **release-3.0.1** ([deployment instructions]({{< relref "InstallTCDocker.md" >}})).
+A self-hosted TrueCommand container is available from https://hub.docker.com/r/ixsystems/truecommand/tags under the tag **release-3.0.2** ([deployment instructions]({{< relref "InstallTCDocker.md" >}})).
 
 ## Upgrade Notes
 
@@ -42,10 +42,19 @@ Updating from TrueCommand v1.3 to v2.0 or later involves a database migration pr
 This preserves all configuration data, but does not preserve old performance statistics.
 Additionally, it is not possible to roll back to TrueCommand v1.3 from v2.1 or later.
 
-An issue is found with High Availability (HA) TrueNAS SCALE 23.10.0.1 systems connected to TrueCommand 3.0.0-BETA.1.
+An issue is found with High Availability (HA) TrueNAS SCALE 23.10.0.1 systems connected to TrueCommand 3.0.
 Update SCALE HA systems to TrueNAS SCALE version 23.10.1 or later before connecting to TrueCommand 3.0.
 
 After upgrading to TrueCommand 3.0, you might need to edit and re-apply connected TrueNAS system passwords to ensure connectivity.
+
+Starting in version 3.0.2, TrueCommand does not support STARTTLS or port 587 for SMTP email configuration.
+Users with SMTP configured on port 587 should use port *465* and select **Enable TLS** for full SSL/TLS encryption.
+See [Configuring SMTP Email]({{< relref "AlertManage.md #configuring-smtp-email" >}}) for more information.
+
+In version 3.0.2 administrative users no longer appear on the list of users available to be assigned to a team.
+Administrative users have full admin permissions for all connected systems, so manual team assignment is not needed.
+
+After updating, clear the browser cache (CTRL+F5) before logging in to TrueCommand. This ensures stale data doesn't interfere the TrueCommand UI.
 
 ### TrueNAS Compatibility
 
@@ -53,17 +62,18 @@ TrueCommand 3.0 is tested and compatible with these TrueNAS versions:
 
 * CORE 13.0
 * SCALE 22.12
-* SCALE 23.10 - High Availability systems are not yet fully supported.
+* SCALE 23.10
+* SCALE 24.04
 
 ### Paths
 
 Self-hosted Containers:
 ```mermaid
 flowchart LR
-A["Legacy (Pre 1.2"] --> B
+A["Legacy (Pre 1.2)"] --> B
 B["1.3"] --> C
 C["2.3.3"] --> D
-D["3.0.1"]
+D["3.0.2"]
 ```
 
 ## Release Schedule
@@ -77,8 +87,56 @@ D["3.0.1"]
 {{< include file="/static/includes/SoftwareStatusPage.md" >}}
 {{< /expand >}}
 
+## 3.0.2 Changelog
+
+**August 13, 2024**
+
+iXsystems is pleased to release TrueCommand 3.0.2!
+
+This is a maintenance release to address issues found in the 3.0.1 version.
+
+Notable changes:
+
+* Fix Cloud SMTP email configuration for authentication ([TC-3186](https://ixsystems.atlassian.net/browse/TC-3186)).
+* Investigate detached NAS connections ([TC-3188](https://ixsystems.atlassian.net/browse/TC-3188)).
+* Disable TrueNAS UI proxy ([TC-3190](https://ixsystems.atlassian.net/browse/TC-3190)).
+* Do not try to decrypt text between 1 and 15 bytes ([TC-3198](https://ixsystems.atlassian.net/browse/TC-3198)).
+* UI refreshes token too often ([TC-3200](https://ixsystems.atlassian.net/browse/TC-3200)).
+* Job "config.save" does not finish and constantly yields error 32 ([TC-3202](https://ixsystems.atlassian.net/browse/TC-3202)).
+* User alert creator status reset on migration ([TC-3177](https://ixsystems.atlassian.net/browse/TC-3177)).
+* Stale sessions appear as active users ([TC-3180](https://ixsystems.atlassian.net/browse/TC-3180)).
+* Enable HSTS on web server ([TC-3196](https://ixsystems.atlassian.net/browse/TC-3196)).
+* Disable SWEET32 cipher suite support ([TC-3195](https://ixsystems.atlassian.net/browse/TC-3195)).
+* Increase temp password timeout for Cloud to 48 hours ([TC-3187](https://ixsystems.atlassian.net/browse/TC-3187)).
+* Do not check for upgrade_pending status if connected via the passive controller ([TC-3182](https://ixsystems.atlassian.net/browse/TC-3182)).
+* Paused internal alerts do not persist past reboot ([TC-3181](https://ixsystems.atlassian.net/browse/TC-3181)).
+* The deprecated Clusters screen has been disabled in the TrueCommand UI ([TC-3223](https://ixsystems.atlassian.net/issues/TC-3223))
+
+<a href="https://ixsystems.atlassian.net/issues/?filter=10580" target="_blank">Click here for the full changelog</a> of completed tickets that are included in the TrueCommand 3.0.2 release.
+
+{{< include file="/static/includes/JiraFilterInstructions.md" >}}
+
+### 3.0.2 Ongoing Issues
+
+{{< enterprise >}}
+We recommend that TrueNAS Enterprise High Availability (HA) systems be updated from the TrueNAS UI.
+
+If TrueCommand 3.0.2 is used to upgrade HA systems, the standby controller might fail to activate the updated boot environment, resulting in a version mismatch error between the controllers. If you encounter this issue, manually activate the updated boot environment on the active controller and then failover to complete the upgrade.
+{{< /enterprise >}}
+
+* The **Explore > Snapshots** tab can timeout when selected for datasets with high numbers of stored snapshots ([TC-3078](https://ixsystems.atlassian.net/browse/TC-3078)).
+
+* Changes made to SMTP email configuration after initial setup might not apply for new users created after created after the configuration updates.
+  If you have previously updated your SMTP configuration, create new user accounts as described in [Creating User Accounts]({{< relref "UserAccounts.md" >}}).
+  Log in as the new user and review settings in **Alert Services > SMTP Email** to confirm they are correct.
+
+* Removing all the systems from a group doesn't automatically delete the group. However, the system group is still manually removable.
+
+<a href="https://ixsystems.atlassian.net/issues/?filter=10581" target="_blank">Click here to see the latest Jira tickets</a> about known issues in 3.0.2 that are being resolved in a future TrueCommand release.
+
 ## 3.0.1 Changelog
 
+{{< expand "Click to Expand" "v" >}}
 **March 12, 2024**
 
 iXsystems is pleased to release TrueCommand 3.0.1!
@@ -108,6 +166,7 @@ If TrueCommand 3.0.1 is used to upgrade HA systems, the standby controller might
 * The **Explore > Snapshots** tab can timeout when selected for datasets with high numbers of stored snapshots ([TC-3078](https://ixsystems.atlassian.net/browse/TC-3078)).
 
 <a href="https://ixsystems.atlassian.net/issues/?filter=10510" target="_blank">Click here to see the latest Jira tickets</a> about known issues in 3.0.1 that are being resolved in a future TrueCommand release.
+{{< /expand >}}
 
 ## 3.0.0 Changelog
 

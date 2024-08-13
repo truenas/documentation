@@ -9,8 +9,8 @@ tags:
 TrueCommand alerts provide visual warnings for monitored systems that require attention.
 Monitored TrueNAS systems and TrueCommand alert rules can both generate alerts.
 
-TrueCommand can discover and show TrueNAS system alerts created created in the last two months. 
-Alerts older than this do not show in TrueCommand. 
+TrueCommand can discover and show TrueNAS system alerts created created in the last two months.
+Alerts older than this do not show in TrueCommand.
 
 Administrator accounts can see all system alerts but non-administrator accounts can only see alerts on systems they are permitted to access.
 
@@ -38,14 +38,14 @@ System widgets on the main **Dashboard** and the **Systems** screen display blue
 
 ![DashboardSingleSystemview](/images/TrueCommand/Dashboard/DashboardSingleSystemView.png "Dashboard System Widget Alerts")
 
-Click on the system name on a main **Dashboard** system widget to open the detailed single system screen. Each single system detail screen includes an **Alerts** widget that displays alerts for that system. 
+Click on the system name on a main **Dashboard** system widget to open the detailed single system screen. Each single system detail screen includes an **Alerts** widget that displays alerts for that system.
 
 ![DashboardSystemDetailAlerts](/images/TrueCommand/Dashboard/DashboardSystemDetailAlerts.png "Dashboard System Detail Alerts")
 
-Click the arrow icon at the top right corner of the single system **Alerts** widget to open the **Alert Notices** screen. 
+Click the arrow icon at the top right corner of the single system **Alerts** widget to open the **Alert Notices** screen.
 Alternatively, click the gear icon on the top toolbar, then click **All Alerts** to open the same **Alert Notices** screen.
 
-To view all alerts from the **Systems** screen system list, click the blue alert bubble to open the single system detail screen with the **Alerts** widget. 
+To view all alerts from the **Systems** screen system list, click the blue alert bubble to open the single system detail screen with the **Alerts** widget.
 
 ### Resolving Alerts
 To resolve an alert, select the checkbox to the left of the alert, then click **RESOLVE SELECTED**. A green checkmark displays in the **Dismissed** column.
@@ -78,7 +78,7 @@ To view all TrueCommand alert rules, click the gear <i class="material-icons" ar
 The **Alert Rules** screen details each TrueCommand alert rule, the administrator user account that created it, the alert rule priority level, name, and system.
 
 ### Managing Alert Rules
-Administrator users can activate, pause, edit, or delete alert rules. 
+Administrator users can activate, pause, edit, or delete alert rules.
 
 To create a new alert rule, click **NEW ALERT RULE**, then follow the creation wizard:
 
@@ -92,14 +92,14 @@ To create a new rule:
    c. Select the alert type in **Priority**. Choose **Information**, **Warning**, or **Critical** to determine the alert category generated.
    d. Enter an optional description for the alert.
 2. Specify the **Alert Triggers**.
-   a. Select a metric. 
+   a. Select a metric.
       For example, *cpu_temperature* means the alert rule monitors the temperature of the chosen system. Scroll down to find a desired source.
 
    ![AlertTriggerDataSources](/images/TrueCommand/Alerts/AlertTriggerDataSources.png "Alert Trigger Data Sources")
 
    b. Select a comparison type in **Comparator** (**Greater Than**, **Less Than**, or **Not Equals**).
-      The comparison type applies to the data source and comparison value. 
-   c. Enter the comparison value by entering an integer appropriate for the selected options in the **Value** field. 
+      The comparison type applies to the data source and comparison value.
+   c. Enter the comparison value by entering an integer appropriate for the selected options in the **Value** field.
       The integer acts as a threshold or limitation for when the rule generates an alert.
 3. Click **SAVE ALERT RULE ** to finish creating the new alert rule. To start over, click **RESET**.
 
@@ -111,7 +111,7 @@ TrueCommand uses different service plugins to expand how it communicates alerts 
 Individual user accounts can use service plugins to manage how TrueCommand notifies them of a system alert.  
 
 ### Configuring Alert Services
-To configure an alert service plugin, click the gear <i class="material-icons" aria-hidden="true" title="Settings">settings</i> icon, then click **Alert Services**. 
+To configure an alert service plugin, click the gear <i class="material-icons" aria-hidden="true" title="Settings">settings</i> icon, then click **Alert Services**.
 TrueCommand has two alert services:
 * **PagerDuty** plugin that configures a pager to receive an alert.
 * **SMTP Email** plugin that configures system SMTP and user email services.
@@ -120,12 +120,12 @@ TrueCommand has two alert services:
 
 Each plugin has three options:
 * **Send test alert** <span class="iconify" data-icon="mdi:test-tube"></span>
-* **Configure plugin** <i class="material-icons" aria-hidden="true" title="Settings">settings</i> 
-* **Clear plugin configuration** <mat-icon _ngcontent-ath-c200="" role="img" class="mat-icon notranslate material-icons mat-icon-no-color" aria-hidden="true">remove_circle</mat-icon> 
+* **Configure plugin** <i class="material-icons" aria-hidden="true" title="Settings">settings</i>
+* **Clear plugin configuration** <mat-icon _ngcontent-ath-c200="" role="img" class="mat-icon notranslate material-icons mat-icon-no-color" aria-hidden="true">remove_circle</mat-icon>
 
 ### Configuring SMTP Email
 {{< hint type=note >}}
-Before proceeding, verify that the sending mail server has TLS enabled. 
+Before proceeding, verify that the sending mail server has TLS enabled.
 TrueCommand cannot send emails through a mail server without TLS.
 The user profile page must have an email address to receive emails.
 {{< /hint >}}
@@ -133,21 +133,23 @@ The user profile page must have an email address to receive emails.
 To configure SMTP service:
 
 1. Enter values in all fields on the **SMTP Email** screen and then click **SAVE**:
-   
+
    ![AlertServiceSMTPEmailScreen](/images/TrueCommand/Alerts/AlertServiceSMTPEmailScreen.png "Alert Services: SMTP Email options")
 
    Enter the host name for the mail server in **Mailserver** (*smtp.gmail.com* for example).
 
    Enter the port number for the mail server in **Mailserver port**.
+   Use port *465* for best security with SSL/TLS encryption.
 
-   Enter the email address for plain authentication in **Auth user**, for example, *adminuser@yourmail.com*, and the password for plain authentication in **Auth pass**. For a *No-Auth* SMTP configuration, leave the password field blank.
-   If configuring smtp.gmail.com, create an **App Password** in the gmail account for the gmail account. 
+   Enter the email address for plain authentication in **Username**, for example, *adminuser@yourmail.com*, and the password for plain authentication in **Password**.
+   For a *No-Auth* SMTP configuration, leave the password field blank.
+   
+   If configuring smtp.gmail.com, create an **App Password** in the Gmail account.
+   Enter this password here to configure Gmail SMTP service authentication.
 
-   Enter this passcode here to configure gmail SMTP service authentication.
+   Enter the address that sends the email (i.e., no-reply@TrueCommand.io) or allows you to customize the sender field of the email in **From Address**
 
-   Enter the address that sends the email (i.e., no-reply@TrueCommand.io) or allows you to customize the sender field of the email in **From**
-
-   Select **Tls** to initiate a connection with TLS.
+   Select **Enable TLS** to initiate a connection with TLS.
 
    Click **Test** on the **SMTP Email** configuration screen to verify that the configuration is correct.
    If you do not receive a test alert email, check the values entered are accurate.
@@ -155,22 +157,22 @@ To configure SMTP service:
    The system displays pop-up messages to prompt you if the email address for the administration user account (root or admin user) is not added.
 
 2. Click on the avatar to the right of the gear <i class="material-icons" aria-hidden="true" title="Settings">settings</i> icon, then click **Profile**.
-     
+
    ![EditUserProfile](/images/TrueCommand/Alerts/EditUserProfile.png "Edit User Profile")
 
 3. Type the email for that user in the **Email** field and click **SAVE CHANGES**.
    The first time you set up SMTP email, a **VERIFY EMAIL** button displays below the **Email** field to the left of the **Enable 2FA** checkbox.
 
-   The system should automatically send a test email to the specified email address. 
+   The system should automatically send a test email to the specified email address.
    If not, click **VERIFY EMAIL**.
    Enter or copy/paste the code emailed to verify the email in the **Confirm** dialog.
-   
+
    ![SMTPSetupVerifyEmail](/images/TrueCommand/Users/SMTPSetupVerifyEmail.png "SMTP Setup Verify Email")
 
 ### Configuring PagerDuty
 
 Open the **Configure Plugin** <i class="material-icons" aria-hidden="true" title="Settings">settings</i> for PagerDuty.
-Enter the pagerDuty API key in the **Authtoken** field. 
+Enter the pagerDuty API key in the **Authtoken** field.
 If you have an active subscription with PagerDuty, the key should be available to you. Click **TEST**.
 
 ![AlertServicesPagerDutyOptions](/images/TrueCommand/Alerts/AlertServicesPagerDutyOptions.png "Alert Services: Pager Duty options")
