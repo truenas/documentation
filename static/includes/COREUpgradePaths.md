@@ -12,8 +12,8 @@
       {{< mermaid class="mermaid_sizing" >}}
       flowchart LR
       A["11.3-U5"] -->|update| B["12.0-U2"]
-      B -->|update| C["13.0-U6.1"]
-      C -->|"(anticipated)"| D["13.3.0"]
+      B -->|update| C["13.0-U6.2"]
+      C -->|update| D["13.3-RELEASE"]
       {{< /mermaid >}}
     </div>
     <div class="upgrade-paths-container">
@@ -21,7 +21,8 @@
       {{< mermaid class="mermaid_sizing" >}}
       flowchart LR
       A["11.3-U5"] -->|update| B["12.0-U2"]
-      B -->|update| C["13.0-U6.1"]
+      B -->|update| C["13.0-U6.2"]
+	  C -.-|X| D["13.3-RELEASE"]
       {{< /mermaid >}}
     </div>
 </div>

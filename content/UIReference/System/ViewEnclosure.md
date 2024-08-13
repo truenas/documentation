@@ -4,6 +4,7 @@ description: "Provides information about the View Enclosure screen on TrueNAS CO
 weight: 45
 tags:
 - enclosure
+draft: true
 ---
 
 {{< enterprise >}}

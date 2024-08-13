@@ -4,14 +4,13 @@ description: "Provides information about using Fibre Channel with TrueNAS CORE."
 weight: 20
 tags:
 - iscsi
+draft: true
 ---
 
 {{< enterprise >}}
 Fibre Channel is an Enterprise feature in TrueNAS CORE.
 Only TrueNAS systems licensed for Fibre Channel have the **Fibre Channel Ports** tab on the **Sharing > Block Shares (iSCSI)** screen.
 {{< /enterprise >}}
-
-
 
 Fibre Channel is a high-speed data transfer protocol providing in-order, lossless delivery of raw block data.
 Fibre Channel is primarily used to connect computer data storage to servers in storage area networks in commercial data centers.

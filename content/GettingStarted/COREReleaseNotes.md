@@ -3,42 +3,25 @@ title: 13.3 Version Notes
 description: "Highlights and change log for each TrueNAS CORE 13.3 release."
 weight: 3
 related: false
+aliases:
+ - /coretutorials/systemconfiguration/configuringfailover/
+ - /coretutorials/systemconfiguration/configuringkmip/
+ - /coretutorials/sharing/iscsi/settingupfibrechannel/
+ - /uireference/system/failover/
+ - /uireference/system/viewenclosure/
+ - /uireference/system/kmip/
+ - /uireference/sharing/iscsi/fibrechannel/
 ---
 
 {{< header logo="/images/truenas-core-logo.png" logo_alt="TrueNAS CORE Logo" version="13.3" icon="" icon_alt="" >}}
 
-{{< hint type="tip" title="13.3 Early Release Documentation">}}
-This page tracks the latest development roadmap and release notes for the upcoming TrueNAS CORE major version, 13.3.
-The latest [TrueNAS CORE **13.0** version release notes](https://www.truenas.com/docs/core/13.0/gettingstarted/corereleasenotes/) are available from the TrueNAS CORE 13.0 documentation section.
-{{< /hint >}}
-
 {{< include file="/static/includes/13.3Overview.md" >}}
-
-## Obtaining a Release
-
-{{< include file="/static/includes/EarlyReleaseWarning.md" >}}
-
-To download a <file>.tar</file> file for installing or upgrading to a CORE 13.3 nightly version, go to https://www.truenas.com/download-truenas-core/ and click **Download Future Previews**.
-Select the latest <file>.tar</file> file and click **Download**.
-
-Log in to the web interface and go to **System > Update**.
-Click **INSTALL MANUAL UPDATE FILE**.
-Select **SAVE CONFIGURATION** when prompted.
-Select an **Update File Temporary Storage Location** then click **Chose File** and browse to select the <file>.tar</file> file.
-Click **APPLY UPDATE**.
-
-More details are available from [Updating Core]({{< relref "/CORETutorials/UpdatingTrueNAS/_index.md" >}}).
 
 ## Release Schedule
 
 {{< include file="/static/includes/ReleaseScheduleWarning.md" >}}
 
 {{< releaselist name=core-releases defaultTab=3 >}}
-
-{{< expand "Software Lifecycle" "v" >}}
-{{< include file="/static/includes/LifecycleTable.md" >}}
-{{< include file="/static/includes/SoftwareStatusPage.md" >}}
-{{< /expand >}}
 
 ## Upgrade Notes
 
@@ -54,6 +37,13 @@ More details are available from [Updating Core]({{< relref "/CORETutorials/Updat
   Users with a critical need to use containers or virtualization solutions in production should migrate to the tested and supported virtualization features available in [TrueNAS SCALE](https://www.truenas.com/download-truenas-scale/).
   [TrueNAS Enterprise customers](https://www.truenas.com/truenas-enterprise/) can contact iXsystems to schedule a TrueNAS SCALE deployment.
   See [CORE to SCALE Migrations](https://www.truenas.com/docs/scale/gettingstarted/migrate/) for more information.
+
+## Obtaining a Release
+
+13.3 releases are only available as manual update <file>.tar</file> or full installation <file>.iso</file> files.
+Go to https://www.truenas.com/download-truenas-core/ to download either file type.
+
+See [Updating TrueNAS]({{< relref "/CORETutorials/UpdatingTrueNAS/_index.md" >}}) for instructions about updating with either file type.
 
 ### Upgrade Paths
 
@@ -86,8 +76,31 @@ The items listed here represent new feature flags implemented since the previous
 
 For more details on feature flags see [OpenZFS Feature Flags](https://openzfs.github.io/openzfs-docs/Basic%20Concepts/Feature%20Flags.html) and [OpenZFS zpool-feature.7](https://openzfs.github.io/openzfs-docs/man/7/zpool-features.7.html).
 
+## 13.3-RELEASE Changelog
+
+**August 13, 2024**
+
+iXsystems is pleased to release TrueNAS CORE 13.3-RELEASE!
+This stabilized release is intended only for community users who are looking for the upstream incremental fixes included in this release.
+See the 13.3 introduction at the top of this page or the [official announcement](https://forums.truenas.com/t/truenas-core-13-3-release-in-august/10344) for more details.
+
+This release includes a very small number of notable changes from the BETA2 release:
+
+* Updates openssh package to address CVE-2024-6387 ([NAS-129828](https://ixsystems.atlassian.net/browse/NAS-129828))
+* Includes VNC functionality fixes ([NAS-130278](https://ixsystems.atlassian.net/browse/NAS-130278))
+* Fixes image placeholders for iX Plugins ([NAS-129352](https://ixsystems.atlassian.net/browse/NAS-129352))
+* Updates samba and fixes issue with Time Machine share and snapshot creation ([NAS-130169](https://ixsystems.atlassian.net/browse/NAS-130169))
+
+<a href="https://ixsystems.atlassian.net/issues/?filter=10582" target="_blank">Click here for the full changelog</a> of completed tickets that are included in this release.
+{{< include file="/static/includes/JiraFilterInstructions.md" >}}
+
+### 13.3-RELEASE Ongoing Issues
+
+<a href="https://ixsystems.atlassian.net/issues/?filter=10583" target="_blank">Click here to see the latest information</a> about issues discovered in this release, including future fix versions.
+
 ## 13.3-BETA2 Changelog
 
+{{< expand "Click to expand" "v" >}}
 {{< include file="/static/includes/EarlyReleaseWarning.md" >}}
 
 **June 4, 2024**
@@ -109,6 +122,8 @@ Notable changes:
 ### 13.3-BETA2 Ongoing Issues
 
 <a href="https://ixsystems.atlassian.net/issues/?filter=10568" target="_blank">Click here to see the latest information</a> about issues discovered in 13.3-BETA2 that are being resolved in a future TrueNAS CORE release.
+
+{{< /expand >}}
 
 ## 13.3-BETA1 Changelog
 
