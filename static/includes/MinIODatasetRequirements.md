@@ -9,4 +9,4 @@ After creating the dataset, create the directory where MinIO stores information 
 
 {{< include file="/static/includes/MakeDirectory.md" >}}
 
-MinIO uses **/data** but allows users to replace this with the directory of their choice.
+MinIO uses both the default **/export** and the **/data** mount points during storage configuration.

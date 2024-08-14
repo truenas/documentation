@@ -1,7 +1,7 @@
 ---
 title: "Sandboxes (Jail-like Containers)"
 description: "Provides advanced users information on deploying custom FreeBSD jail-like containers in SCALE."
-weight: 30
+weight: 60
 aliases:
  - /scale/scaletutorials/apps/sandboxes/)
 tags:
@@ -17,7 +17,7 @@ keywords:
 TrueNAS Sandboxes and Jailmaker are not supported by iXsystems.
 This is provided solely for users with advanced command-line, containerization, and networking experience.
 
-There is significant risk that using Jailmaker causes conflicts with the built-in Apps framework within SCALE.
+There is a significant risk that using Jailmaker causes conflicts with the built-in Apps framework within SCALE.
 Do not mix the two features unless you are capable of self-supporting and resolving any issues caused by using this solution.
 {{< /hint >}}
 
@@ -47,7 +47,7 @@ These containers persist across upgrades in 24.04 (Dragonfish) and later SCALE m
 
    c. Make `jlmkr.py` executable: {{< cli >}}chmod +x jlmkr.py{{< /cli >}}
 
-4. Create an alias for jailmaker to allow the currently logged in (admin) user to run `jlmkr.py` without entering the full absolute path.
+4. Create an alias for jailmaker to allow the currently logged-in (admin) user to run `jlmkr.py` without entering the full absolute path.
 
    a. Run this command as admin: {{< cli >}}echo "alias jlmkr=\"sudo -E '/mnt/*tank*/jailmaker/jlmkr.py'\"" >> ~/*.zshrc*{{< /cli >}}.
       Replace *tank* with the name of your pool.

@@ -6,130 +6,140 @@ tags:
 - contributing
 ---
 
+
 Changes wanted!
 Contributing changes to the TrueNAS documentation has never been easier.
-The Documentation Hub has been specifically built to allow users to quickly propose changes to the content without having to install any special applications.
+The Documentation Hub is specifically built to allow users to quickly propose changes to the content without having to install any special applications.
 All that is required is to have a [GitHub account](https://github.com) and a basic understanding of [Markdown](https://daringfireball.net/projects/markdown/).
 
-The repository automatically builds a preview site for each open Pull Request (PR).
+You need to log in to your GitHub account to propose any changes.
+The repository automatically builds a preview site for each open pull request (PR) created in GitHub.
 The link to this preview site is added to the PR as a comment.
-The preview updates with any changes to the pull request, so you can always see an accurate preview of the changes you're making to the website.
+The preview updates with the changes you make to the pull request, so you can always see an accurate preview of the changes you make to the website.
 
 ## Making Quick Changes to an Article
+We welcome community contributions to keep the documentation current!
 
-{{< embed-video name="docsquickedit" >}}
+Click **Edit Page** in the top right corner of an article screen to propose changes to the article.
 
-If you find text that needs to be fixed or improved in an article, click *Edit this page* to view the article source text in a new browser tab.
 To check your changes for bugs in the Markdown or HTML syntax, switch to the **Preview changes** tab.
-The preview renders generic Markdown, but won't render any Hugo-specific syntax.
-You'll need to log in to your GitHub account to propose any changes.
+The preview renders generic Markdown but does not render Hugo-specific syntax.
 
 ### Replacing an Image
+To update an existing image, click **Edit Page** and find the image location and name in the article source text.
+Name a replacement image with the same name as the existing image you are replacing.
 
-To update an existing image, click *Edit this page* and find the image location and name in the article source text.
-Make sure your replacement image has the same name as the image to be replaced.
-
-In the repository, click *Code* and go to the image location in the repository.
-Images are located in either the <file>/static/images/</file> directory or are in the same location as the article text file as part of an article bundle.
+In the repository, click **Code** and go to the image location in the repository.
+Images are located in the <file>/static/images/</file> directory and in the same folder location as indicated in the image path found in the article text file as part of an article bundle.
 
 [![ImageLocation](/images/Contribute/GitHubImagesLocation.png)](/images/Contribute/GitHubImagesLocation.png)
 
-Click *Upload files* and either drag and drop your image or open the file browser to select your image.
-As long as the new image name is the same as the old image, the old image is replaced and the article automatically uses the new image.
+Click **Upload files** and either drag and drop the new or replacement image into the file upload area or open the file browser to select your image.
+Naming the new image name the same as the old image automatically replaces the old image with the new one in every article that includes it. 
+
+If adding a new image to the article, give the PNG image a descriptive name, such as *Adding an SMB Share* or *Add SMB Share Advanced Settings* and save it in the appropriate <file>/static/images/</file> folder.
+Enter the path to the image and the image name to the image link in the article.
 
 ### Editing an Included File
-
-Some article content comes from a separate *include* statement.
+Some article content comes from a separate `include file` statement, also referred to as a shortcode.
 This statement pulls in content from a different location and allows using common text in multiple website articles simultaneously.
-Updating an <file>_include/</file> file updates the content in every affected article!
+These files are called *snippets*.
+Updating an <file>/static/includes/</file> file updates the content in every article that uses that included snippet file!
 
-An example of this is in the [Cron Jobs]({{< relref "/CORE/CORETutorials/Tasks/CreatingCronJobs.md" >}}) article.
-The expandable *Advanced Scheduler* content is pulled from another location in the repository (<file>content/archive/AdvancedScheduler.md</file>).
-The <file>AdvancedScheduler.md</file> snippet is also included in [Cloud Sync Tasks]({{< relref "/CORE/CORETutorials/Tasks/CreatingCloudSyncTasks.md" >}}) and other **Tasks** content.
+For example, the snippet file <file>AdvancedScheduler.md</file> is called into articles where the procedure mentions creating a custom schedule for tasks that can run on a schedule, such as for replication, cloud sync, and other data protection tasks.
+You can insert the `include file` shortcode anywhere in the body of an article.
+The example below shows this inside the `expand` tags.
 
-Clicking the *Edit this Page* link opens the article markdown file, but only these lines are visible for the included content (the `\` characters are added to prevent rendering the shortcodes):
+Clicking **Edit Page** opens the article markdown file, but only these lines are visible for the included content (the added `\` characters prevent rendering the shortcodes in this article):
 ```
 {{\< expand "Advanced Scheduler" "v" >}}
 {{\< include file="/static/includes/AdvancedScheduler.md" >}}
 {{\< /expand >}}
-(Remove the escaping backslashes \)
+(Do not include the escaping backslashes \)
 ```
 
-The *expand* and */expand* shortcodes handle the expansion/collapse section of the document and don't need to change.
-The include statement is within the expandable element:
-`{{/< include file="/static/includes/AdvancedScheduler.md" >}}`.
+In the above example, the `expand` and `/expand` shortcode tags create an expansion/collapse function in the document.
+The include shortcode is within the expandable element: `{{\< include file="/static/includes/AdvancedScheduler.md" >}}`.
+(Do not include the escaping backslashes \)
 
-The [repository](https://github.com/truenas/documentation/) file <file>static/includes/CORE/AdvancedScheduler.md.part</file> contains the documentation for this section.
-To update this section, edit the <file>.md.part</file> file.
-Remember that this snippet file is used in multiple documents, so only content that generally applies is included in the snippet.
-Changes that are specific to a certain piece of content are added directly to that article.
+The [repository](https://github.com/truenas/documentation/) file <file>static/includes/AdvancedScheduler.md</file> contains the text for the included snippet.
+To update the content, edit the <file>AdvancedScheduler.md</file> file.
+Multiple documents can use a snippet file, so only make changes to snippet content that applies to this included file.
+Changing the snippet content makes the same changes in all articles calling this file.
+Make changes directly in the article that are specific to the article but not applicable to all other articles that share the snippet.
+For example, make only content changes that apply to the advanced scheduler in the snippet, but do not include mentions about tasks that use the scheduler.
 
 ##  Master and Version Branch Differences
+TrueNAS documentation uses branches to organize content related to specific software releases and updates, for example, the ***24.04*** and ***23.10*** SCALE branches of the Documentation Hub. 
 
-TrueNAS documentation uses branches to organize content related to specific software releases and updates, for example the ***24.04*** and ***23.10*** SCALE branches of the Documentation Hub. 
++ Content changes in the ***master*** branch result in changes to the TrueNAS SCALE Nightly Development Documentation content.
+  To make changes in the ***master*** branch, *fork* this branch to create a simple copy of the main repository.
+  Make changes in your forked *master* as the *base* for your changes.
+  Do not make changes directly to the TrueNAS **master** branch of the Documentation Hub repository.
 
-+ Content changes in the ***master*** branch result in changes to the TrueNAS SCALE Nightly Development Documentation content. To make changes in the ***master*** branch, create a simple copy ("fork") of the main repository, select that forked *master* as the *base* for your changes. Do not make changes directly to the **master** branch of the Documentation Hub repository.
++ To make content changes in the ***24.04*** branch, select the ***24.04*** as the **base**, then create a fork of that main repository.
+  This ensures approved modifications are added to the TrueNAS SCALE 24.04 (Dragonfish) Documentation content.
 
-+ To make content changes in the ***24.04*** branch, create a fork of the main repository and check that ***24.04*** is listed as the *base*. This ensures that approved modifications will be added to the TrueNAS SCALE 24.04 (Dragonfish) Documentation content.
-
-+ To make content changes in the ***23.10*** branch, create a fork of the main repository and check that ***23.10*** is listed as the *base*. This ensures that approved modifications will be added to the TrueNAS SCALE 23.10 (Cobia) Documentation content.
++ To make content changes in the ***23.10*** branch, select the ***23.10*** as the **base**, then create a fork of that main repository.
+  This ensures that approved modifications are added to the TrueNAS SCALE 23.10 (Cobia) Documentation content.
 
 ## Fork the Repo
+To submit a change or a new article, create a *fork* (local copy) of the main repository, edit your local copy, and then propose merging your changes back into the main repository.
 
-To submit a change, create a fork of the main repository, edit your copy, then propose merging your changes back into the main repository.
-To start, click the *Edit this Page* link in the top right of the site.
+To start, click the **Edit Page** link in the top right of the site.
 
 [![ArticletoEdit](/images/Contribute/ArticletoEdit.png)](/images/Contribute/ArticletoEdit.png)
 
-To fork the repo to your GitHub account, click the green *Fork this repository* button.
+To fork the repo to your GitHub account, click the green **Fork this repository** button.
 
 [![ForktheRepository](/images/Contribute/GitHubForktheRepository.png)](/images/Contribute/GitHubForktheRepository.png)
 
 {{< expand "Syncing an Existing Fork" "v" >}}
-When you already have a fork of the documentation repository, it is recommended to sync your fork before continuing on to make changes:
-* Open your fork repository, typically found by opening the GitHub profile drop down and clicking *Your repositories*.
-* Find the sync status bar and click *Pull request*.
-* Set the *base repository* to your fork and the *head repository* to truenas/documentation.
-  You might need to click *compare across forks* first.
+When you already have a fork of the documentation repository, we recommend you sync your fork before continuing on to make changes. This updates your local copy with changes made to the main repository after you forked it.
+1. Open your fork repository, typically found by opening the GitHub profile drop-down and clicking **Your repositories**.
+2. Find the sync status bar and click **Pull request**.
+3. Set the **base repository** to your fork and the **head repository** to *truenas/documentation*.
+   You might need to click **compare across forks** first.
+
   [![CompareFork](/images/Contribute/GitHubCompareFork.png)](/images/Contribute/GitHubCompareFork.png)
-  <br>
-* Click **Create pull request** and continue to merge the pull request.
+
+4. Click **Create pull request** and continue to merge the pull request.
 {{< /expand >}}
 
 Edit the page as needed.
 
 [![EditForkNotice](/images/Contribute/GitHubEditForkNotice.png)](/images/Contribute/GitHubEditForkNotice.png)
 
-When the changes are complete, add a quick overview of what changes were made in the description box, and click the green *Commit changes* button.
+When the changes are complete, add a quick overview of the changes made in the** Description** box, and click the green **Commit changes** button.
 
 [![CommitChanges](/images/Contribute/GitHubEditCommitChanges.png)](/images/Contribute/GitHubEditCommitChanges.png)
 
 When the page refreshes the changes are complete in your forked repository.
-Now you can request merging these changes main repository using a "Pull Request" (PR).
-Click on *Pull Requests*.
+Now you can request merging these changes to the main repository using a pull request (PR).
+Click on **Pull Requests**.
 
 [![RepositoryFork](/images/Contribute/GitHubRepositoryFork.png)](/images/Contribute/GitHubRepositoryFork.png)
 
-After the **Pull Requests** page opens, click on the green *New Pull Request* button.
+After the **Pull Requests** page opens, click the green **New Pull Request** button.
 
 [![ForkPullRequests](/images/Contribute/GitHubRepositoryForkPullrequests.png)](/images/Contribute/GitHubRepositoryForkPullrequests.png)
 
-Confirm that the *base repository* is set to *truenas/documentation* and  *base* is set to *master*.
-*head repository* must be set to your forked repository, for example *q5sys/documentation*.
-*compare* needs to be set to *master*.
-Make sure these options are correct, then click the green *Create pull request* button to create the PR.
+Confirm that the **base repository** is set to **truenas/documentation** and  **base** is set to **master** or the version branch you are changing (i.e., if you are using 24.04, set that as the **base**).
+Set **head repository** to your forked repository, for example, *q5sys/documentation*.
+Set **compare** to **master**, or the version branch if proposing changes to either of those branches.
+Ensure these options are correct, then click the green **Create pull request** button to create the PR.
 
 [![RepositoryComparison](/images/Contribute/GitHubRepositoryComparison.png)](/images/Contribute/GitHubRepositoryComparison.png)
 
-Describe your changes and click the green *Create pull request* button.
+Describe your changes and click the green **Create pull request** button.
 
 [![CreatePullRequest](/images/Contribute/GitHubPullRequestCreate.png)](/images/Contribute/GitHubPullRequestCreate.png)
 
-That's it!
+That is it!
 Other contributors review and merge your changes!
 
-As part of the review process, automation builds a preview of the Docs site with your changes.
-When the build is completed, a comment appears in the PR that shows the automation result.
-Click on *Show all checks* and *Details* to see a live demo of the site with your changes.
+As part of the review process, automation builds a preview of the docs site with your changes.
+When the build completes, a comment appears in the PR that shows the automation result.
+Click on **Show all checks** and **Details** to see a live demo of the site with your changes.
 
 [![PullRequestSummary](/images/Contribute/GitHubPullRequestSummary.png)](/images/Contribute/GitHubPullRequestSummary.png)
