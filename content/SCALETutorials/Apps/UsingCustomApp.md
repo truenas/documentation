@@ -7,7 +7,7 @@ tags:
 - apps
 ---
 
-{{< hint type=important title="Application Tutorials" >}}
+{{< hint type=important title="24.04 Application Tutorials" >}}
 {{< include file="/static/includes/AppsUnversioned.md" >}}
 {{< /hint >}}
 

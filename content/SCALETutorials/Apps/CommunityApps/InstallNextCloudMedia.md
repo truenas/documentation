@@ -8,11 +8,9 @@ tags:
 ---
 
 
-{{< hint type=important title="Application Tutorials" >}}
+{{< hint type=important title="24.04 Application Tutorials" >}}
 {{< include file="/static/includes/AppsUnversioned.md" >}}
 {{< /hint >}}
-
-The instructions in this article apply to SCALE 22.12.0 and later.
 
 Nextcloud is a drop-in replacement for many popular cloud services, including file sharing, calendar, groupware and more.
 One of its more common uses for the home environment is serving as a media backup, and organizing and sharing service.
