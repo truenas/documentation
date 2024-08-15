@@ -89,7 +89,7 @@ When you are ready to create a container, go to **Apps**, click **Discover Apps*
 6. Enter the **Port Forwarding** settings.
    You can define multiple ports to forward to the workload.
 
-   Note: If port forwarding settings do not display, remove external networking interfaces under **Networking**.
+   If port forwarding settings do not display, remove external networking interfaces under **Networking**.
 
    {{< trueimage src="/images/SCALE/Apps/InstallCustomAppPortForwarding.png" alt="Port Forwarding Settings" id="Port Forwarding Settings" >}}
 
