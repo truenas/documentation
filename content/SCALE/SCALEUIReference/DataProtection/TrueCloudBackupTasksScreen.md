@@ -126,7 +126,7 @@ Selecting the dataset populates the **Source Path** field.
 {{< /truetable >}}
 
 ### Remote Settings
-The **Remote** settings specify the cloud sync credential and destination storage locations.
+The **Remote** settings specify the TrueCloud credential and destination storage locations.
 
 {{< truetable >}}
 | Settings | Description |
@@ -154,7 +154,7 @@ The **Remote** settings specify the cloud sync credential and destination storag
 | Settings | Description |
 |----------|-------------|
 | **Schedule** | Select a schedule preset or choose **Custom** to open the advanced scheduler. |
-| **Enabled** | Select to enable this cloud sync task. Leave clear to disable the task without deleting it and keep the configuration available without allowing the specified schedule to run the task. You can use the toggle in the **Enable** column on the **Cloud Sync Tasks** widget to enable or disable the task. |
+| **Enabled** | Select to enable this TrueCloud task. Leave clear to disable the task without deleting it and keep the configuration available without allowing the specified schedule to run the task. You can use the toggle in the **Enable** column on the **TrueCloud Backup Tasks** widget to enable or disable the task. |
 {{< /truetable >}}
 
 {{< expand "Advanced Scheduler" "v" >}}
