@@ -280,8 +280,6 @@ Use the **Discover** screen links to access other functions.
 <!-- commenting out until RC1 when this screen gets added back to the UI
 The **Custom App** button opens a wizard where you can install unofficial apps or an app not included in a catalog. -->
 
-Click **Manage Catalogs**]({{< relref "UsingCatalogs.md" >}}) to open the **Catalogs** screen.
-
 **Custom App** opens a wizard where you can configure an unofficial app or one not included in a SCALE catalog.
 
 Scroll the screen to scan app widgets or use the search field to find a specific app in the catalogs configured on the system.
