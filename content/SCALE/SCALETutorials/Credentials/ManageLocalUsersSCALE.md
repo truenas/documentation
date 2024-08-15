@@ -8,7 +8,7 @@ tags:
 - accounts
 keywords:
 - enterprise storage solution
-- nas storage 
+- nas storage
 ---
 
 In TrueNAS, user accounts allow flexibility for accessing shared data.
@@ -78,18 +78,9 @@ Configure a home directory and permissions for the user. Some functions, such as
 {{< trueimage src="/images/SCALE/Credentials/AddUserHomeDirPermSCALE.png" alt="Add User Home Directory" id="Add User Home Directory" >}}
 
 When creating a user, the home directory path is set to <file>/var/empty</file>, which does not create a home directory for the user.
-To add a home directory, enter or browse to a path in **Home Directory**, then select **Create Home Directory**.
+This directory is an immutable directory shared by service accounts and accounts that should not have a full home directory.
 
-{{< hint type="important" title="Home Directory Known Impacts" >}}
-SCALE 24.04 changed the user home directory location from **/nonexistent**, a directory that should never exist, to **/var/empty**.
-This new directory is an immutable directory shared by service accounts and accounts that should not have a full home directory.
-Services impacted:
-
-* SMB if a home share is enabled
-* SSH
-* Shell access (edited)
-
-{{< expand "Why the change?" "v" >}}
+{{< expand "Why did this change in TrueNAS 24.04 (Dragonfish) and later?" "v" >}}
 TrueNAS uses the `pam_mkhomdir` PAM module in the pam_open_session configuration file to automatically create user home directories if they do not exist.
 `pam_mkhomedir` returns `PAM_PERM_DENIED` if it fails to create a home directory for a user, which eventually turns into a pam_open_session() failure.
 This does not impact other PAM API calls, for example, `pam_authenticate()`.
@@ -99,7 +90,8 @@ TrueNAS SCALE does include the customized version of `pam_mkhomedir` used in Tru
 Starting in SCALE 24.04 (Dragonfish), the root filesystem of TrueNAS is read-only, which prevents `pam_mkhomdir` from creating the `/nonexistent` directory in cases where it previously did.
 This results in a permissions error if `pam_open_session()` is called by an application for a user account that has **Home Directory** set to **/nonexistent**.
 {{< /expand >}}
-{{< /hint >}}
+
+To add a home directory, enter or browse to a path in **Home Directory**, then select **Create Home Directory**.
 
 {{< trueimage src="/images/SCALE/Credentials/AddUserHomeDirAuthSCALE.png" alt="Add User Home Directory and Authentication Settings" id="Add User Home Directory and Authentication Settings" >}}
 
