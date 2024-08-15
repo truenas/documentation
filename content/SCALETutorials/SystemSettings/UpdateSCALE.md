@@ -64,27 +64,3 @@ When a system update starts, <span class="iconify" data-icon="ic:sharp-system-up
 Click the icon to see the current status of the update and which TrueNAS administrative account initiated the update.
 
 {{< trueimage src="/images/SCALE/SystemSettings/UpdateStatus.png" alt="Update Status" id="Update Status Example" >}}
-
-## Updating Pools
-
-After updating, you might find that you can update your storage pools and boot-pool to enable new supported and requested features that are not enabled on the pool.
-
-Go to **System Settings > Shell** and enter `cli` to enter the CLI if Shell does not open in the CLI.
-
-To show which pools you can update, first enter a query command to see the list of pools on your system and the id number for each pool.
-
-`storage pool query`
-
-Next, check the update status:
-
-<code>storage pool is_upgraded id=<i>2</i></code>
-
-where *2* is the pool ID number you want to check the update status for.
-
-To update the pool, enter:
-
-<code>storage pool upgrade id=<i>2</i></code>
-
-{{< hint type=important >}}
-Upgrading pools is a one-way operation. After upgrading pools to the latest zfs features, you might not be able to boot into older versions of TrueNAS.
-{{< /hint >}}
