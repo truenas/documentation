@@ -49,16 +49,21 @@ aliases:
 
 Welcome to the Documentation Archive!
 
+iXsystems employees maintain documentation and provide regular updates for current and in development (future) versions of TrueNAS software.
+For documentation purposes, current and future releases are those recommended by the TrueNAS [Software Status page](https://www.truenas.com/software-status/) for one or more user type.
+
+Documentation for previous releases, that are no longer recommended for any user type, is archived and unmaintained.
+
 {{< hint type=important >}}
-All documentation provided here is end-of-life (EoL) and no longer receives *any* updates.
+All documentation provided here is end-of-life (EoL), intended for reference only, and no longer receives *any* updates.
 {{< /hint >}}
+
+Software releases after TrueNAS SCALE 22.12 (Bluefin) are available as navigable website branches.
+Earlier releases are available only in PDF.
 
 ## TrueNAS SCALE
 
 {{< expand "TrueNAS SCALE 22.12 (Bluefin)" "v" >}}
-22.12 Bluefin docs are available as a navigable website branch.
-The contents of this archived branch are provided for reference only and not actively maintained.
-
 [TrueNAS SCALE 22.12 (Bluefin)](https://www.truenas.com/docs/scale/22.12/)
 
 Release notes for each minor release of 22.12 are available in the [SCALE 22.12 Bluefin Release Notes](https://www.truenas.com/docs/scale/22.12/gettingstarted/scalereleasenotes/).
