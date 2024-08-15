@@ -10,7 +10,13 @@ tags:
 related: false
 ---
 
-We encourage all users to help us make TrueNAS the best NAS by reporting issues, requesting potentially helpful features, and relaying security vulnerabilities.  
+{{< hint type="info" title="Article Content Out of Date?">}}
+{{< include file="/static/includes/ProposeArticleChange.md" >}}
+{{< /hint >}}
+
+We encourage all users to help us make the open source TrueNAS project the best NAS by reporting issues with CORE or SCALE releases, requesting potentially helpful features, and relaying security vulnerabilities.  
+
+The articles listed below provide information on reporting issues or to request changes or new content.
 
 <div class="noprint">
 
