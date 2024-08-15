@@ -10,6 +10,11 @@ author:
 - Fabian Mühlberger
 ---
 
+
+{{< hint type=important title="24.04 Application Tutorials" >}}
+{{< include file="/static/includes/AppsUnversioned.md" >}}
+{{< /hint >}}
+
 {{< hint type=note >}}
 Enhancing app security is a multifaceted challenge and there are various effective approaches. We invite community members to share insights on their methods by [contributing](https://www.truenas.com/docs/contributing/) to the documentation.
 {{< /hint >}}

@@ -7,6 +7,10 @@ tags:
 - customapp
 ---
 
+{{< hint type=important title="24.04 Application Tutorials" >}}
+{{< include file="/static/includes/AppsUnversioned.md" >}}
+{{< /hint >}}
+
 TrueNAS SCALE has a pre-built official catalog of over 50 available iXsystems-approved applications.
 
 Users can configure custom apps catalogs if they choose, but iXsystems does not directly support non-official apps in a custom catalog.

@@ -8,7 +8,9 @@ tags:
 - apps
 ---
 
+{{< hint type=important title="24.04 Application Tutorials" >}}
 {{< include file="/static/includes/AppsUnversioned.md" >}}
+{{< /hint >}}
 
 This section has tutorials for using the MinIO apps available for TrueNAS SCALE.
 

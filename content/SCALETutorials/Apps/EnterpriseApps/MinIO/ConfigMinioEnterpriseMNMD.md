@@ -9,6 +9,11 @@ tags:
 - apps
 ---
 
+
+{{< hint type=important title="24.04 Application Tutorials" >}}
+{{< include file="/static/includes/AppsUnversioned.md" >}}
+{{< /hint >}}
+
 {{< include file="/static/includes/SCALEEnterpriseApps.md" >}}
 
 The instructions in this article apply to the TrueNAS MinIO Enterprise application installed in a Multi-Node Multi-Disk (MNMD) multi-mode configuration.
