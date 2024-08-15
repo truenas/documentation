@@ -5,8 +5,8 @@ After migrating or upgrading from CORE or a pre-SCALE 22.12.3 releases to a late
 
 Go to **Credentials > Local Users** and click **Add**.
 
-Enter the name to use for the administrator account. For example, **truenas_admin**, **admin**, etc.
-You can create multiple admin users with any name and assign each different administration roles and privileges.
+Enter the name to use for the administrator account. For example, **truenas_admin**, **admin**, or the name of your choice.
+You can create multiple admin users with any name and assign each different administration roles and privileges. 
 
 Enter and confirm the admin user password.
 
