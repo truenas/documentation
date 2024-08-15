@@ -49,13 +49,13 @@ The simplest way to set up a cloud sync task is using an iX-Storj account.
    The **Storj iX** provider is preselected.
    Click **Signup for account** to open a browser tab, then register, select a plan, and activate an iX-Storj Account.
 
-   After creating the iX-Storj account, log in to the Storj portal, create a new bucket, and create new S3 access credentials ([details]({{< relref "AddStorjCloudSyncTask.md#adding-storj-cloud-credentials" >}})).
+   After creating the iX-Storj account, log in to the Storj portal, create a new bucket, and create new S3 access credentials ([details]({{< relref "TrueCloudTasks.md#adding-storj-cloud-credentials" >}})).
    When the new S3 Credentials are created, download the **Access Key** and **Secret Key** and paste each string into the TrueNAS **Access Key ID** and **Secret Access Key** fields, respectively.
    Click **Save**.
 
 2. Define the backup targets and schedule.
 
-   In the TrueNAS Cloud sync task wizard, review the fields in the **What and When** section ([details]({{< relref "AddStorjCloudSyncTask.md#setting-up-the-storj-cloud-sync-task" >}})).
+   In the TrueNAS Cloud sync task wizard, review the fields in the **What and When** section ([details]({{< relref "TrueCloudTasks.md#setting-up-the-storj-cloud-sync-task" >}})).
    Select the created Storj **Bucket** before choosing a **Folder**.
 
    There are several predefined **Schedules** to choose from, or you can select **Custom** to define your own.
