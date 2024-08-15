@@ -17,7 +17,7 @@ The initial implementation of the TrueNAS SCALE administrator login permitted us
 
 {{< include file="/static/includes/RootLoginWarnSCALE.md" >}}
 
-The SCALE administrator account name changes from **admin** to **trunase_admin** in 24.10 when fresh installing from an <file>iso</file> file.
+The default SCALE administrator account name changes from **admin** to **trunase_admin** in 24.10 when fresh installing from an <file>iso</file> file.
 Earlier releases of SCALE with the **admin** account retain this account when upgrading to 24.10 through the UI.
 
 Administrator accounts have roles and privileges that allow greater control over access to functions in SCALE and to further utilize FIPS-compliance.
