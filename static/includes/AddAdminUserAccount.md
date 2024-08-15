@@ -10,7 +10,7 @@ You can create multiple admin users with any name and assign each different admi
 
 Enter and confirm the admin user password.
 
-Select **truenas_admin** on the **Auxiliary Group** dropdown list.
+Select **truenas_admin** on the **Auxiliary Group** dropdown list if recreating the **truenas_admin** user, but if creating **admin** or any other named administrator select **builtin_administrator as the auxiliary group.
 
 {{< trueimage src="/images/SCALE/Credentials/AddAuxiliaryGroupAdminUserSettings.png" alt="Add Admin User Auxiliary Groups" id="Add Admin User Auxiliary Groups" >}}
 
