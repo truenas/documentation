@@ -47,7 +47,7 @@ For network configuration options **1**, **2**, and **3**, we recommend using th
 * **4) Change local administrator password**
   
   Use to change the administrator user password.
-  If you selected option 1 on the iso installer menu, you have already configured the admin user and password.
+  If you selected option 1 on the iso installer menu, you have already configured the **truenas_admin** user and password.
   You can use this to change the admin password before you log into the SCALE UI.
   {{< hint type=note >}}
   This is not the password for the root user in the CLI or the root user login password for the web UI.
@@ -140,13 +140,16 @@ Home users have a few options to allow Internet access using TrueNAS SCALE:
 
 ## Changing the Administrator Password
 SCALE has implemented administrator account logins as replacements for the root user.
-The Local Administrator user account is the default account, and the root password is now disabled by default.
-If you migrate from CORE to SCALE and need to upload the CORE system configuration file, the root user password is not disabled but you must recreate the admin user account and disable the root password to comply with FIPS-compliance standards and security hardening practices.
+The truenas_admin user account is the default account, and the root password is now disabled by default.
+If you migrate from CORE to SCALE and need to upload the CORE system configuration file, the root user password is not disabled but you must recreate the truenas_admin (or an admin) user account and disable the root password to comply with FIPS-compliance standards and security hardening practices.
 
+Existing SCALE systems migrating from earlier SCALE release with the **admin** user retain this administrator account.
+Only a clean install using a SCALE 24.10 <file>iso</file> creates the **truenas_admin** administrator account.
+Both the earlier **admin** and new **truenas_admin** accounts have the same permissions and privileges.
 You can change the admin user password in the UI or from the Console Setup menu.
 You can set and enable the root user password in the UI, but for security hardening, we recommend leaving it disabled.
 
-Changing the admin user (or root if you have not created the admin user) password disables 2FA (Two-Factor Authentication).
+Changing an admin user (or root if you have not created the admin user) password disables 2FA (Two-Factor Authentication).
 
 {{< hint type=important >}}
 Disabling a password in the UI prevents the user from logging in with it.

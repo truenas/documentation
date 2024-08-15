@@ -82,7 +82,7 @@ If this process fails, retry using the iso file method above.
    ![SCALESidegradeReboot](/images/SCALE/SystemSettings/SidegradeRestart.png  "Reboot to Finish")
 
 After TrueNAS SCALE reboots, sign in with the root user credentials used in CORE.
-Uploading the CORE config file deletes the admin user account created during a clean install and therefore requires you to [recreate it](#recreating-the-admin-user-account).
+Uploading the CORE config file deletes the **truenas_admin** user account created during a clean install and therefore requires you to [recreate it](#recreating-the-admin-user-account).
 
 After gaining access to the UI, you might need to [use the Shell to configure the primary networking interfaces]({{< relref "ConsoleSetupMenuScale.md" >}}) to enable GUI accessibility.
 
