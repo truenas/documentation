@@ -7,12 +7,12 @@ tags:
 - crypto
 ---
 
-{{< include file="/static/includes/CommunityAppsLegacy.md" >}}
+{{< hint type=important title="24.04 Application Tutorials" >}}
+{{< include file="/static/includes/AppsUnversioned.md" >}}
+{{< /hint >}}
 
 Storj is an open-source decentralized cloud storage (DCS) platform.
-Storj permits a computer running this software to configure the system as a node and to rent unused system storage capacity and bandwidth to other users.
-
-{{< include file="/static/includes/AppsUnversioned.md" >}}
+Storj permits a computer running this software to configure the system as a node, and where you can rent unused system storage capacity and bandwidth on your system to other users.
 
 ## Before You Begin
 

@@ -8,6 +8,11 @@ tags:
 - enterprise
 ---
 
+
+{{< hint type=important title="24.04 Application Tutorials" >}}
+{{< include file="/static/includes/AppsUnversioned.md" >}}
+{{< /hint >}}
+
 {{< include file="/static/includes/SCALEEnterpriseApps.md" >}}
 
 {{< include file="/static/includes/SyncthingArticleIntro.md" >}}

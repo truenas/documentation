@@ -8,6 +8,11 @@ tags:
 - syncthing
 ---
 
+
+{{< hint type=important title="24.04 Application Tutorials" >}}
+{{< include file="/static/includes/AppsUnversioned.md" >}}
+{{< /hint >}}
+
 {{< expand "Adding the Enterprise App" "v" >}}
 To add the **enterprise** train Syncthing application to the list of available applications: 
 {{< include file="/static/includes/AddEnterpriseTrain.md" >}}
@@ -20,8 +25,6 @@ The **charts** and **enterprise** train versions of the Syncthing app widget dis
 {{< include file="/static/includes/SyncthingOverview.md" >}}
 
 {{< include file="/static/includes/SyncthingArticleIntro.md" >}}
-
-{{< include file="/static/includes/AppsUnversioned.md" >}}
 
 ## Before Installing Syncthing
 {{< include file="/static/includes/SyncthingFirstSteps.md" >}}
