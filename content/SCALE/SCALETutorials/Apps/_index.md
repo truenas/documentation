@@ -288,6 +288,10 @@ Scroll the screen to scan app widgets or use the search field to find a specific
 
 Click on an app widget to open the information screen for that application.
 
+{{< include file="/static/includes/AppsSMBErrorWarning.md" >}}
+
+If the application requires specific datasets, configure these before using the installation wizard.
+
 ### Refreshing Charts
 To refresh the charts catalog, click **Refresh Charts** on the **Discover** screen.
 Refresh the apps catalog after adding or editing the trains on your system.
