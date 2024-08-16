@@ -27,7 +27,7 @@ You should also set up a data storage backup method using either a cloud sync or
 
 TrueNAS provides for data backup through cloud sync or replication.
 
-### Using Cloud Sync for Data Backup
+### Using TrueCloud Backup or Cloud Sync
 
 {{< hint type=note title="3rd Party Account Required" >}}
 Cloud sync requires an account with a cloud storage provider and a storage location created with that provider, like an Amazon S3 bucket.
@@ -36,27 +36,32 @@ These providers can charge fees for data transfer and storage, so please review 
 {{< /hint >}}
 
 You can configure TrueNAS to send, receive, or synchronize data with a cloud storage provider.
-The simplest way to set up a cloud sync task is using an iX-Storj account.
+The simplest way to set up a TrueCloud Backup task is using an Storj iX account.
+See [Managing TrueCloud Backup Tasks]({{< relref "TrueCloudTasks.md" >}}) for a full tutorial.
 
-{{< expand "Cloud Sync Quickstart with a Storj Account" "v" >}}
+{{< expand "TrueCloud Backup Quickstart with a Storj Account" "v" >}}
 
-1. Create an iX Storj account and link to TrueNAS.
+1. Create an Storj iX account and link to TrueNAS.
 
    From the TrueNAS **Dashboard**, find the **Backup Tasks** widget and click **Cloud Sync to Storj or similar provider**.
 
    Open the **Credentials** dropdown and select **Add New**.
 
    The **Storj iX** provider is preselected.
-   Click **Signup for account** to open a browser tab, then register, select a plan, and activate an iX-Storj Account.
+   Click **Signup for account** to open a browser tab, then register, select a plan, and activate an Storj iX Account.
 
-   After creating the iX-Storj account, log in to the Storj portal, create a new bucket, and create new S3 access credentials ([details]({{< relref "TrueCloudTasks.md#adding-storj-cloud-credentials" >}})).
+   After creating the Storj iX account, log in to the Storj portal, create a new bucket, and create new S3 access credentials ([details]({{< relref "TrueCloudTasks.md#adding-storj-cloud-credentials" >}})).
    When the new S3 Credentials are created, download the **Access Key** and **Secret Key** and paste each string into the TrueNAS **Access Key ID** and **Secret Access Key** fields, respectively.
    Click **Save**.
 
 2. Define the backup targets and schedule.
 
-   In the TrueNAS Cloud sync task wizard, review the fields in the **What and When** section ([details]({{< relref "TrueCloudTasks.md#setting-up-the-storj-cloud-sync-task" >}})).
-   Select the created Storj **Bucket** before choosing a **Folder**.
+   To add the TrueCloud backup task, go to **Data Protection > TrueCloud Backup Tasks**:
+
+   Click **Add** to open the **Add TrueCloud Backup Task** screen.
+
+   Review the fields in the **Local**, **Remote**, **Task Settings**, and **Control** sections.
+   Select the created Storj **Credentials** and **Bucket** before choosing a **Folder**.
 
    There are several predefined **Schedules** to choose from, or you can select **Custom** to define your own.
 
@@ -65,7 +70,7 @@ The simplest way to set up a cloud sync task is using an iX-Storj account.
 
 See [Adding Cloud Credentials]({{< relref "/scale/scaletutorials/credentials/backupcredentials/addcloudcredentials.md" >}}) for information on connecting TrueNAS SCALE to other cloud storage providers.
 
-### Using Replication for Data Backup
+### Using Replication
 
 Replication is the process of taking a moment-in-time snapshot of data and then copying that snapshot to another location.
 Snapshot technology typically uses less storage than full file backups and has more management and snapshot storage options.
