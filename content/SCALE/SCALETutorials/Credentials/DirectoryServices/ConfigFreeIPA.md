@@ -28,7 +28,7 @@ You can have either Active Directory or LDAP configured on SCALE, but not both.
 ## First Steps
 Your IPA server must have DNS properly configured and have access through the firewall. Having functional DNS for the IPA domain is an absolute requirement.
 If improperly configured, the IPA server cannot resolve Kerberos SRV records and the configuration in TrueNAS fails with network errors.
-Running the IPA server as the LDAP client does the realm join automatically with the ldap creds.
+Running the IPA server as the LDAP client automatically joins the realm with the ldap creds.
 
 Change the global network settings default **Hostname** setting from **truenas** to any other name. Leaving it set to the default breaks the configuration.
 
