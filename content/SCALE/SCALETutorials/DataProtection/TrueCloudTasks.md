@@ -34,7 +34,7 @@ You must have all system storage (pool and datasets or zvols) configured and rea
 
 ## Creating a TrueCloud Backup Task
 
-To create a cloud sync task for a TrueCloud transfer:
+To create a TrueCloud Backup task for a TrueCloud transfer:
 
 1. Create the SCALE [cloud credential](#adding-storj-cloud-credentials).
 
@@ -50,7 +50,7 @@ To create a cloud sync task for a TrueCloud transfer:
 
 5. Finish creating the SCALE [cloud credential](#adding-storj-cloud-credentials) using the S3 access and secret keys provided by Storj.
 
-6. Create the [cloud sync task](#setting-up-the-storj-cloud-sync-task) for one bucket.
+6. Create the [TrueCloud Backup task](#setting-up-the-truecloud-backup-task) for one bucket.
 
 ### Adding Storj Cloud Credentials
 
@@ -80,7 +80,7 @@ The **Cloud Credentials** screen opens with Storj displayed as the default provi
 
 5. Click **Save**.
 
-After completing this configuration form, you can set up the [cloud sync task](#setting-up-the-storj-cloud-sync-task).
+After completing this configuration form, you can set up the [TrueCloud Backup task](#setting-up-the-truecloud-backup-task).
 
 ### Creating the Storj iX Account
 
@@ -98,7 +98,7 @@ The Storj main dashboard opens.
 
 ### Adding the Storj iX Bucket
 
-Now you can add the storage bucket you want to use in your Storj iX account and SCALE cloud sync task.
+Now you can add the storage bucket you want to use in your Storj iX account and SCALE TrueCloud Backup task.
 
 From the Storj main dashboard:
 
@@ -123,7 +123,7 @@ From the Storj main dashboard:
 
 ### Setting up S3 Access to the Bucket
 
-After creating your bucket, add S3 access for the new bucket(s) you want to use in your Storj iX account and the SCALE cloud sync task.
+After creating your bucket, add S3 access for the new bucket(s) you want to use in your Storj iX account and the SCALE TrueCloud Backup task.
 
 1. Click **Access Keys** to open the **Access Keys** dashboard, then click **New Access Key**.
 
@@ -142,7 +142,7 @@ After creating your bucket, add S3 access for the new bucket(s) you want to use 
    {{< trueimage src="/images/SCALE/DataProtection/StorjCreateAccessSelectConfig.png" alt="Storj Access Permissions Window." id="Storj Access Permissions Window." >}}
 
    {{< hint type=note >}}
-   If you want to use the SCALE option to [add new buckets](#creating-a-storj-cloud-sync-task) in SCALE, set the access configuration to **Full Access**.
+   If you want to use the SCALE option to [add new buckets](#setting-up-the-truecloud-backup-task) in SCALE, set the access configuration to **Full Access**.
    {{< /hint >}}
 
 4. (Optional) If configuring advanced access options:
@@ -228,7 +228,7 @@ This option is only available for datasets that have no child datasets.
 
 Advanced users can write scripts that run immediately before or after the TrueCloud backup task.
 Enter environment variables in either the **Pre-script** or **Post-script** fields.
-The **Post-script** field only runs when the cloud sync task succeeds.
+The **Post-script** field only runs when the TrueCloud Backup task succeeds.
 
 Use **Exclude** to enter a list of files and directories to exclude from sync.
 Separate entries by pressing <kbd>Enter</kbd>.
