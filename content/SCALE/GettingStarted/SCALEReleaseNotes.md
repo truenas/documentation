@@ -159,5 +159,4 @@ Notable changes:
 * 
 
 <a href="https://ixsystems.atlassian.net/issues/?filter=######" target="_blank">Click here to see the latest information</a> about public issues discovered in 24.10-BETA.1 that are being resolved in a future TrueNAS SCALE release.
-{{< /expand >}}
 -->
