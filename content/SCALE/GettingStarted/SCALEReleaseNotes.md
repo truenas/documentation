@@ -63,35 +63,16 @@ More details are available from [Software Releases]({{< relref "/TrueNASUpgrades
   
 <!--
   ### Upgrade Paths
-  
-  There are a variety of options for upgrading to SCALE 24.04.
-  
+
+  There are a variety of options for upgrading to SCALE 24.10.
+
   {{< include file="/static/includes/24.04UpgradeMethods.md" >}}
-  
+
   See the <a href="https://www.truenas.com/software-status/" target="_blank">TrueNAS Software Status</a> page for recommendations about which software version to use based on your user type.
-  
+
   Update the system to the latest maintenance release of the installed major version before attempting to upgrade to a new TrueNAS SCALE major version.
-  
-  **TrueNAS SCALE (Anticipated)**
-  
-  {{< mermaid class="mermaid_sizing" >}}
-  flowchart LR
-  
-  A["22.02.4 (Angelfish)"] |update| C
-  B[CORE 13.0-U6.1] |ISO install| E
-  C["22.12.4.2 (Bluefin)"] |update| D
-  C["22.12.4.2 (Bluefin)"] |update| E
-  D["23.10.2 (Cobia)"] |update| E
-  E["24.04.0 (Dragonfish)"]
-  {{< /mermaid >}}
-  
-  **TrueNAS SCALE Enterprise (Anticipated)**
-  
-  {{< mermaid class="mermaid_sizing" >}}
-  flowchart LR
-  A["CORE 13.0-U6.1"] |ISO install| D
-  B["Current 23.10 (Cobia) release"] |update| C["23.10.2 (Cobia)"] |update| D["24.04.0 (Dragonfish)"]
-  {{< /mermaid >}}
+
+  {{< include file="/static/includes/SCALEUpgradePaths.md" >}}
 
   ### CORE > SCALE Migrations
   
@@ -138,4 +119,45 @@ Any new feature flags introduced since the previous OpenZFS version that was int
 
 For more details on feature flags, see [OpenZFS Feature Flags](https://openzfs.github.io/openzfs-docs/Basic%20Concepts/Feature%20Flags.html) and [OpenZFS zpool-feature.7](https://openzfs.github.io/openzfs-docs/man/7/zpool-features.7.html).
 
-<!-- 24.10-BETA.1 (relnotes)-->
+<!-- 24.10-BETA.1 (relnotes)
+
+{{< hint type=warning title="Early Release Software" >}}
+Early releases are intended for testing and feedback purposes.
+Do not use early-release software for critical tasks.
+{{< /hint >}}
+
+**August 29, 2024**
+
+iXsystems is pleased to release TrueNAS SCALE 24.10-BETA.1!
+This has software component updates and new features that are in the polishing phase.
+
+Notable changes:
+
+* Dashboard reworked with more widgets, data reporting, and customization ([NAS-127217](https://ixsystems.atlassian.net/browse/NAS-127217)).
+
+* Applications backend framework is shifted from Kubernetes to Docker ([](https://ixsystems.atlassian.net/browse/)). See the official [announcement](https://forums.truenas.com/t/the-future-of-electric-eel-and-apps/5409) for more information. The **Custom App** installation screen is disabled in 24.10-BETA.1. A redesigned screen, including Docker Compose support, is projected for the RC.1 version.
+  
+* New [TrueCloud Backup Tasks]({{< relref "TrueCloudTasks.md" >}}) with streamlined functionality for Storj iX cloud backups and restoration ([NAS-127165](https://ixsystems.atlassian.net/browse/NAS-127165)).
+
+* [Extend a RAIDZ vdev]({{< relref "ManagePoolsScale.md #extending-a-raidz-vdev" >}}) with individual disks (OpenZFS feature sponsored by iXsystems) ([NAS-123548](https://ixsystems.atlassian.net/browse/NAS-123548)).
+
+* New [global search]({{< relref "GlobalSearch.md" >}}) for finding pages and settings in the SCALE UI ([NAS-127224](https://ixsystems.atlassian.net/browse/NAS-127224)).
+
+* UI support for NVMe SMART tests [NAS-128116](https://ixsystems.atlassian.net/browse/NAS-128116)
+
+* Align Enclosure Management code with CORE and improve the feature's performance ([NAS-123474](https://ixsystems.atlassian.net/browse/NAS-123474)).
+
+* Preserve SMB alternate data streams when ingesting data from remote servers ([NAS-127114](https://ixsystems.atlassian.net/browse/NAS-127114)).
+
+* Rewrite TrueNAS installer to better support future development efforts ([NAS-127092](https://ixsystems.atlassian.net/browse/NAS-127092)).
+
+<a href="https://ixsystems.atlassian.net/issues/?filter=######" target="_blank">Click here for the full changelog</a> of completed tickets that are included in the 24.10-BETA.1 release.
+{{< include file="/static/includes/JiraFilterInstructions.md" >}}
+
+### 24.04-BETA.1 Known Issues
+
+* 
+
+<a href="https://ixsystems.atlassian.net/issues/?filter=######" target="_blank">Click here to see the latest information</a> about public issues discovered in 24.10-BETA.1 that are being resolved in a future TrueNAS SCALE release.
+{{< /expand >}}
+-->
