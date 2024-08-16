@@ -22,7 +22,7 @@ TrueNAS does not support non-CA certificates.
 {{< /expand >}}
 
 {{< hint type=note >}}
-You can have either Active Directory or LDAP configured on SCALE but not both.
+You can have either Active Directory or LDAP configured on SCALE, but not both.
 {{< /hint >}}
 
 ## First Steps
