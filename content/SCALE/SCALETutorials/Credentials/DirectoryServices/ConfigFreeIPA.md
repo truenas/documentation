@@ -60,7 +60,7 @@ To configure TrueNAS for a FreeIPA server:
 
 2. Go to **Credentials > Directory Services** and click **Configure LDAP**.
 
-   ![LDAPBasicOptionsSettings](/images/SCALE/Credentials/LDAPBasicOptionsSettings.png "LDAP Basic Options")
+   {{< trueimage src="/images/SCALE/Credentials/LDAPBasicOptionsSettings.png" alt="LDAP Basic Options" id="LDAP Basic Options" >}}
 
    a. Enter the FQDN for the IPA server in the **Hostname** field. Do not enter the IP address for the IPA server!
 
