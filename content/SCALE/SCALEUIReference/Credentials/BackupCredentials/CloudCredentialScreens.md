@@ -51,7 +51,7 @@ The selection in **Provider** changes the **Authentication** settings.
 
 ### Storj Authentication Settings
 
-Storj authentication includes going to the Storj-TrueNAS sign-in screen to either create a new Storj-TrueNAS account or log into an existing Storj-TrueNAS account, and then returning to SCALE to enter the S3 credentials provided by Storj for this credential.
+Storj authentication includes going to the Storj iX sign-in screen to either create a new Storj iX account or log into an existing Storj iX account, and then returning to SCALE to enter the S3 credentials provided by Storj for this credential.
 {{< expand "Click Here for Settings" "v" >}}
 
 ![CloudCredentialsAdd](/images/SCALE/Credentials/CloudCredentialsAdd.png "Cloud Credentials Add for Storj")
@@ -59,7 +59,7 @@ Storj authentication includes going to the Storj-TrueNAS sign-in screen to eithe
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Signup for account** | Link to the Storj-TrueNAS account sign-up page where you either create a new account or sign into your Storj-TrueNAS account. |
+| **Signup for account** | Link to the Storj iX account sign-up page where you either create a new account or sign into your Storj iX account. |
 | **Access Key ID** | Enter the alphanumeric key provided by Storj when you [create the S3 account access]({{< relref "TrueCloudTasks.md" >}}) associated with the storage buckets added in Storj. |
 | **Secret Access Key** | Enter the alphanumeric key provided by Storj when you [create the S3 account access]({{< relref "TrueCloudTasks.md" >}}) associated with the storage buckets added in Storj. |
 {{< /truetable >}}
