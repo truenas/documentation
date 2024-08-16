@@ -139,13 +139,12 @@ By default, the rsync daemon will allow access to everything within the dataset 
 In order to set up password authentication you needs to add two auxilary parameters for the module:
 
 Parameter: "auth users"
-Value: comma separated list of usernames
+Value: comma separated list of usernames, [more details can be found here.](https://www.samba.org/ftp/rsync/rsyncd.conf.html#auth_users)
 
 Parameter: "secrets file"
 Value: path to the rsyncd.secrets file
 
-You will have to place the file inside your module dataset and use the value:
-"/data/<module name>/rsynd.secrets"
+You will have to place the file inside your module dataset and use the value: `/data/<module name>/rsynd.secrets`
 
 The file will have to be chmod 600 and owned by root:root in order for the rsync daemon to accept it for authentication.
 
