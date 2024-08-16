@@ -62,37 +62,37 @@ More details are available from [Software Releases]({{< relref "/TrueNASUpgrades
   Users with both LDAP and SMB shares configured should migrate legacy Samba domains to Active Directory before upgrading to 24.10.
   
 <!--
-  ### Upgrade Paths
+### Upgrade Paths
 
-  There are a variety of options for upgrading to SCALE 24.10.
+There are a variety of options for upgrading to SCALE 24.10.
 
-  {{< include file="/static/includes/24.04UpgradeMethods.md" >}}
+ include file="/static/includes/24.04UpgradeMethods.md" 
 
-  See the <a href="https://www.truenas.com/software-status/" target="_blank">TrueNAS Software Status</a> page for recommendations about which software version to use based on your user type.
+See the <a href="https://www.truenas.com/software-status/" target="_blank">TrueNAS Software Status</a> page for recommendations about which software version to use based on your user type.
 
-  Update the system to the latest maintenance release of the installed major version before attempting to upgrade to a new TrueNAS SCALE major version.
+Update the system to the latest maintenance release of the installed major version before attempting to upgrade to a new TrueNAS SCALE major version.
 
-  {{< include file="/static/includes/SCALEUpgradePaths.md" >}}
+ include file="/static/includes/SCALEUpgradePaths.md" 
 
-  ### CORE > SCALE Migrations
-  
-  {{< include file="/_includes/MigrateCOREtoSCALEWarning.md" >}}
-  
-  {{< enterprise >}}
-  Enterprise customers with HA systems should contact iXsystems Support for assistance with migrating to TrueNAS SCALE.
-  {{< expand "iXsystems Support" "v" >}}
-  {{< include file="content/_includes/iXsystemsSupportContact.md" >}}
-  {{< /expand >}}
-  {{< /enterprise >}}
-  
-  When attempting to migrate from TrueNAS CORE, the general recommendation is to back up the system configuration file and use a SCALE **.iso** file to fresh install TrueNAS.
-  After install, restore the system configuration and import the pools.
-  
-  Depending on the specific system configuration, this can be a straightforward or complicated process.
-  See the [Migration articles]({{< relref "/SCALE/GettingStarted/Migrate/_index.md" >}}) for cautions and notes about differences between each software and the CORE to SCALE migration process.
-  
-  You must either clean install or use an upgrade ***iso** file to migrate a TrueNAS CORE system to SCALE 24.04 (Dragonfish).
-  Enterprise customers should [contact Support](https://www.truenas.com/docs/scale/gettingstarted/migrate/migratecorehatoscaleha/#expand-1-Enterprise%20HA%20Migrations) for assistance with transitioning from CORE to SCALE.
+### CORE > SCALE Migrations
+
+{{< include file="/_includes/MigrateCOREtoSCALEWarning.md" >}}
+
+{{< enterprise >}}
+Enterprise customers with HA systems should contact iXsystems Support for assistance with migrating to TrueNAS SCALE.
+{{< expand "iXsystems Support" "v" >}}
+{{< include file="content/_includes/iXsystemsSupportContact.md" >}}
+{{< /expand >}}
+{{< /enterprise >}}
+
+When attempting to migrate from TrueNAS CORE, the general recommendation is to back up the system configuration file and use a SCALE **.iso** file to fresh install TrueNAS.
+After install, restore the system configuration and import the pools.
+
+Depending on the specific system configuration, this can be a straightforward or complicated process.
+See the [Migration articles]({{< relref "/SCALE/GettingStarted/Migrate/_index.md" >}}) for cautions and notes about differences between each software and the CORE to SCALE migration process.
+
+You must either clean install or use an upgrade ***iso** file to migrate a TrueNAS CORE system to SCALE 24.04 (Dragonfish).
+Enterprise customers should [contact Support](https://www.truenas.com/docs/scale/gettingstarted/migrate/migratecorehatoscaleha/#expand-1-Enterprise%20HA%20Migrations) for assistance with transitioning from CORE to SCALE.
 -->
 
 ## Component Versions
