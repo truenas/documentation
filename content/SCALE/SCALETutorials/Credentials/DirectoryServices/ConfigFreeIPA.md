@@ -25,7 +25,9 @@ TrueNAS does not support non-CA certificates.
 You can have either Active Directory or LDAP configured on SCALE, but not both.
 {{< /hint >}}
 
-## First Steps
+## Before You Begin
+You must do the following things listed in this section. See the procedure below for detailed steps.
+
 Your IPA server must have DNS properly configured and have access through the firewall. Having functional DNS for the IPA domain is an absolute requirement.
 If improperly configured, the IPA server cannot resolve Kerberos SRV records and the configuration in TrueNAS fails with network errors.
 Running the IPA server as the LDAP client automatically joins the realm with the ldap creds.
