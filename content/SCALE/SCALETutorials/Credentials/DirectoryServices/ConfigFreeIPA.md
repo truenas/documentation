@@ -32,7 +32,7 @@ Running the IPA server as the LDAP client automatically joins the realm with the
 
 Change the global network settings default **Hostname** setting from **truenas** to any other name. Leaving it set to the default breaks the configuration.
 
-Change the **Nameserver 1** network setting to the IP address for the IPA server and remove any other IP addresses configured as **Nameserver 2** and **Nameserver 3**.
+Change **Nameserver 1** to the IP address for the IPA server and remove any other IP addresses configured as **Nameserver 2** and **Nameserver 3**.
 Having extra non-IPA DNS nameserver addresses configured in TrueNAS breaks DNS.
 
 You must set the **LDAP** screen **Hostname** to the Fully Qualified Domain Name (FQDN) for for the IPA server.
