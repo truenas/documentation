@@ -5,6 +5,7 @@ weight:
 alias:
  - /scale/scaleuireference/apps/nextcloudscale/
  - /scale/scaletutorials/apps/installnextcloudmedia/
+ - /scale/scaletutorials/apps/chartapps/installnextcloudmedia/
 tags:
 - apps
 - media

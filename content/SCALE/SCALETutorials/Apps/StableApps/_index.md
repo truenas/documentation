@@ -2,6 +2,8 @@
 title: "Chart Apps"
 description: "Notes about official TrueNAS chart applications and individual tutorials for applications."
 weight: 25
+aliases:
+ - /scale/scaletutorials/apps/chartapps/
 tags:
 - apps
 related: false

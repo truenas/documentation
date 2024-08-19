@@ -3,6 +3,7 @@ title: "Prometheus"
 description: "Provides installation instructions for the Prometheus application."
 weight: 
 aliases:
+ - /scale/scaletutorials/apps/chartapps/prometheusapp/
 tags:
 - apps
 - reporting

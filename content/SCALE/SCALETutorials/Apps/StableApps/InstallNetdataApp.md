@@ -4,6 +4,7 @@ description: "Provides information on installing and configuring the Netdata app
 weight:
 aliases:
  - /scale/scaletutorials/apps/installnetdataapp/
+ - /scale/scaletutorials/apps/chartapps/installnetdataapp/
 tags:
 - apps
 - reporting

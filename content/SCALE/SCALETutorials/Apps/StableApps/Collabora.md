@@ -5,6 +5,7 @@ weight:
 aliases:
  - /scale/scaleuireference/apps/collabora/
  - /scale/scaletutorials/apps/collabora/
+ -/scale/scaletutorials/apps/chartapps/collabora/
 tags:
  - apps
  - cloud
