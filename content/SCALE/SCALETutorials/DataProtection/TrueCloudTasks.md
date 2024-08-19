@@ -1,6 +1,6 @@
 ---
 title: "Managing TrueCloud Backup Tasks"
-description: "Provides instructions on how to set up a TrueCloud Backup Task and how to configure an Storj iX account to work with TrueNAS."
+description: "Provides instructions on setting up a TrueCloud backup task and configuring an Storj iX account to work with TrueNAS."
 weight: 5
 tags:
 - TrueCloud
@@ -15,7 +15,7 @@ aliases:
 ---
 
 TrueNAS can send, receive, or synchronize data with the cloud storage provider Storj.
-TrueCloud Backup Tasks allow for single-time transfers or recurring transfers on a schedule.
+TrueCloud backup tasks allow for single-time transfers or recurring transfers on a schedule.
 They are an effective method to back up data to a remote location.
 
 {{< hint type=important >}}
@@ -23,7 +23,7 @@ To take advantage of the lower-cost benefits of the TrueCloud backup service, yo
 
 You must also create and authorize the storage buckets on Storj for use by SCALE.
 
-iXsystems is not responsible for any charges you incur using a third-party vendor with the TrueCloud Backup feature.
+iXsystems is not responsible for any charges you incur using a third-party vendor with the TrueCloud backup feature.
 {{< /hint >}}
 
 This procedure provides instructions to set up both Storj and SCALE.
@@ -40,17 +40,7 @@ To create a TrueCloud Backup task for a TrueCloud transfer:
 
    Adding the cloud credential in SCALE includes using the link to create the Storj iX account, create a new bucket, and obtain the S3 authentication credentials needed to complete the process in SCALE.
 
-2. Create the [Storj iX account](#creating-the-storj-truenas-scale-account).
-
-   You must create a new Storj iX account to use SCALE to access a Storj account.
-
-3. Add a  new [Storj bucket](#adding-the-storj-truenas-bucket).
-
-4. [Create Storj S3 access](#setting-up-s3-access-to-the-bucket) for the new bucket.
-
-5. Finish creating the SCALE [cloud credential](#adding-storj-cloud-credentials) using the S3 access and secret keys provided by Storj.
-
-6. Create the [TrueCloud Backup task](#setting-up-the-truecloud-backup-task) for one bucket.
+2. Create the [TrueCloud Backup task](#setting-up-the-truecloud-backup-task) for one bucket.
 
 ### Adding Storj Cloud Credentials
 
@@ -191,8 +181,9 @@ To add the TrueCloud backup task, go to **Data Protection > TrueCloud Backup Tas
    Click the arrow to the left of the name to expand it, then click on the name to select it.
 
 3. Select the Storj credential on the **Credentials** dropdown list.
+    You can select **Add New** to create the Storj credential if you skipped the instructions above.
 
-   Select the bucket you created in Storj from the **Bucket** dropdown list.
+ 4.  Select the bucket you created in Storj from the **Bucket** dropdown list.
 
    If you set the Storj S3 access to only apply to the [new bucket created in Storj](#adding-the-storj-truenas-bucket), you can only use that bucket, selecting **Add New** results in an error.
    If you set the Storj S3 **Bucket** access to **All**, you can select the new bucket you created in Storj or **Add New** to create a new Storj bucket.
@@ -200,17 +191,17 @@ To add the TrueCloud backup task, go to **Data Protection > TrueCloud Backup Tas
    Click the arrow icon for the **Folder** field to expand the dropdown list and select the desired folder in the Storj bucket or enter a folder path.
    Enter `/name`, where *name* is a folder that does not exist, to create a new folder in the Storj bucket.
 
-4. Enter a name for the task under **Task Settings**.
+5. Enter a name for the task under **Task Settings**.
   
-5. Enter the number of snapshot copies to retain in **Keep Last**.
+6. Enter the number of snapshot copies to retain in **Keep Last**.
 
-6. Enter a password for the backup repository.
+7. Enter a password for the backup repository.
    Record this password in a secure location.
    It is needed to recreate the task using the same bucket/folder, such as in a new TrueNAS install or system, or to restore data from the existing snapshots in another TrueNAS system.
 
-7. Set the task schedule for when to run this task.
+8. Set the task schedule for when to run this task.
 
-8. Click **Save**.
+9. Click **Save**.
 
 TrueNAS adds the task to the **TrueCloud Backup Tasks** widget with the state **N/A** until the task runs on schedule.
 To test the task, click **<i class="fa fa-play" aria-hidden="true" title="Run Job"></i> Run Job** to start the task apart from the scheduled time.

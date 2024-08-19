@@ -36,12 +36,12 @@ These providers can charge fees for data transfer and storage, so please review 
 {{< /hint >}}
 
 You can configure TrueNAS to send, receive, or synchronize data with a cloud storage provider.
-The simplest way to set up a TrueCloud Backup task is using an Storj iX account.
+The simplest way to set up a TrueCloud backup task is using an Storj iX account.
 See [Managing TrueCloud Backup Tasks]({{< relref "TrueCloudTasks.md" >}}) for a full tutorial.
 
 {{< expand "TrueCloud Backup Quickstart with a Storj Account" "v" >}}
-
-1. Create an Storj iX account and link to TrueNAS.
+You can create a Storj cloud credential and set up your Storj account from the **Add TrueCloud Backup Task** screen or from the **Credentials > Backup Credentials** screen.
+1. Create a Storj iX account and link to TrueNAS.
 
    From the TrueNAS **Dashboard**, find the **Backup Tasks** widget and click **Cloud Sync to Storj or similar provider**.
 
@@ -50,15 +50,13 @@ See [Managing TrueCloud Backup Tasks]({{< relref "TrueCloudTasks.md" >}}) for a 
    The **Storj iX** provider is preselected.
    Click **Signup for account** to open a browser tab, then register, select a plan, and activate an Storj iX Account.
 
-   After creating the Storj iX account, log in to the Storj portal, create a new bucket, and create new S3 access credentials ([details]({{< relref "TrueCloudTasks.md#adding-storj-cloud-credentials" >}})).
-   When the new S3 Credentials are created, download the **Access Key** and **Secret Key** and paste each string into the TrueNAS **Access Key ID** and **Secret Access Key** fields, respectively.
+   After creating the Storj iX account, log in to the Storj portal to create a new bucket and new S3 access credentials ([details]({{< relref "TrueCloudTasks.md#adding-storj-cloud-credentials" >}})).
+  After the new S3 credentials are created, download the **Access Key** and **Secret Key** and paste each string into the TrueNAS **Access Key ID** and **Secret Access Key** fields, respectively.
    Click **Save**.
 
 2. Define the backup targets and schedule.
 
-   To add the TrueCloud backup task, go to **Data Protection > TrueCloud Backup Tasks**:
-
-   Click **Add** to open the **Add TrueCloud Backup Task** screen.
+   To add the TrueCloud backup task, go to **Data Protection > TrueCloud Backup Tasks** and click **Add** to open the **Add TrueCloud Backup Task** screen.
 
    Review the fields in the **Local**, **Remote**, **Task Settings**, and **Control** sections.
    Select the created Storj **Credentials** and **Bucket** before choosing a **Folder**.
