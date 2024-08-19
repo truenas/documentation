@@ -50,7 +50,7 @@ Have any authentication information your cloud storage provider requires on-hand
 
 ### Adding Storj Cloud Credentials
 
-The process to set up the Storj-TrueNAS account, buckets, create the S3 access and download the credentials is documented fully in [Adding a Storj Cloud Sync Task]({{< relref "AddStorjCloudSyncTask.md" >}}) in the **Adding Storj Cloud Credentials** section.
+The process to set up the Storj-TrueNAS account, buckets, create the S3 access and download the credentials is documented fully in [Adding a Storj Cloud Sync Task]({{< relref "TrueCloudTasks.md" >}}) in the **Adding Storj Cloud Credentials** section.
 
 ### Adding Amazon S3 Cloud Credentials
 
