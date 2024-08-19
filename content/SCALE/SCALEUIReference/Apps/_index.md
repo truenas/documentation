@@ -41,7 +41,7 @@ After setting the apps storage pool, the screen shows <span class="iconify" data
 Click **Check Available Apps** or **Discover Apps** to open the **[Discover](#discover-screen)** applications screen to access widgets for applications available in SCALE.
 
 After installing an application, the **Installed** screen populates the **Applications** table.
-When returing to the **Installed** screen, the first application on the list is selected by default.
+When returning to the **Installed** screen, the first application on the list is selected by default.
 Each application row shows the name, status, and update information for the application.
 
 {{< trueimage src="/images/SCALE/Apps/InstalledAppsScreenWithApps.png" alt="Installed Applications Status" id="Installed Applications Status" >}}
