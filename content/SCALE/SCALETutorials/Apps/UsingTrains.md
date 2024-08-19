@@ -1,6 +1,6 @@
 ---
-title: "Managing Catalog Trains"
-description: "Provides basic information on adding or managing application catalogs in TrueNAS SCALE."
+title: "Managing App Trains"
+description: "Provides basic information on adding or managing application trains in TrueNAS SCALE."
 weight: 5
 aliases:
  - /scale/scaleuireference/apps/usingcatalogs/
@@ -17,29 +17,27 @@ keywords:
 TrueNAS SCALE has a pre-built official catalog of available iXsystems-approved applications.
 
 Users can configure and add catalog trains if they choose.
-The default train is **stable** which shows the **charts** apps. Other available trains are **enterprise** and **community**.
+The default train is **stable** which shows the apps found in the charts repository. Other available trains are **enterprise** and **community**.
 
 {{< hint type=note >}}
 TrueNAS uses outbound ports 80/443 to retrieve the TRUENAS catalog.
 {{< /hint >}}
 
-## Managing Catalogs
-Users can manage the catalog trains from the **Settings** option on the **Installed** screen.
-You can also click **Manage Installed Apps** at the top right side of the **Discover** screen to open the **Installed** screen.
+## Managing the Application Catalog
+Users can manage the catalog by changing the trains included in it.
+To add or remove a train, from the **Installed** application screen, click **Settings** then on **Train Settings** on the dropdown menu to open the **Train Settings** screen.
+You can also click **Manage Installed Apps** at the top right of the **Discover** screen to open the **Installed** screen.
 
 {{< trueimage src="/images/SCALE/Apps/AppsDiscoverScreen.png" alt="Applications Discover Screen" id="Applications Discover Screen" >}} new image
 
-Click **Train Settings** on **Settings** menu to open the **Edit Catalog** screen.
-From this screen users can change the catalog trains and show apps in those trains. Changing the train resyncs the catalog of apps.
+Users can change the catalog trains and show apps in those trains on the **Train Settings** screen. After making a change, go to the **Discover** screen and click on **Refresh Catalog** to pull the catalog from the repository and refresh it in SCALE.
 
 {{< trueimage src="/images/SCALE/Apps/AppsEditCatalogScreen.png" alt="Apps Edit Catalog Screen" id="Apps Edit Catalog Screen" >}} [new image]
 
-Click **Refresh Catalog** on the **Discover** screen to pull the catalog from the repository and refresh it.
-
-To remove a catalog from the system, remove it from the **Preferred Trains** field on the **Edit Catalog** screen and click **Save**.
-Users cannot delete the default catalog train.
+To remove a train from the catalog, select the checkbox for the train on the **Train Settings** screen to clear the checkbox, then click **Save**.
+You must have one train selected.
 <!-- commenting out this section until we get confirmation of how to add a third-party catalog.
-## Adding Catalogs 
+## Adding a Catalog 
 {{< include file="/static/includes/ThirdPartyCatalogs.md" >}}
 
 To deploy a third-party application, use the **Custom App** option.

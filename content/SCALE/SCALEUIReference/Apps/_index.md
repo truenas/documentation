@@ -57,7 +57,7 @@ The checkbox to the left of **Applications** selects all installed apps.
 * **Choose Pool** opens the **[Choose a pool for Apps](#choose-a-pool-for-apps-dialog)** dialog.
 * **Unset Pool** shows after setting a pool for applications to use. It opens the **Unset Pool** dialog.
 * **Manage Container Images** opens the [**Manage Container Images**](#manage-container-images) screen.
-* **[Train Settings](#train-settings)** opens the **Edit Catalog** screen. Use to add or remove other trains to the **Stable** catalog of applications. <!-- more changes coming in RC -->
+* **[Train Settings](#train-settings)** opens the **Train Settings** screen. Use to add or remove other trains to the **Stable** catalog of applications.
 
 {{< trueimage src="/images/SCALE/Apps/AppsInstalledAppsSettingOptions.png" alt="Installed Applications Screen Settings" id="Installed Applications Screen Settings" >}}
 
