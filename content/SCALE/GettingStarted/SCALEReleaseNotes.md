@@ -27,8 +27,7 @@ To see the latest on each feature in active development, click one of the **NAS-
 
 {{< include file="/static/includes/EarlyReleaseWarning.md" >}}
 
-<!-- (uncomment with BETA.1 release) 24.10 (Electric Eel) early releases (BETA and RC) are available from the [TrueNAS SCALE download page](https://www.truenas.com/download-truenas-scale/).
--->
+24.10 (Electric Eel) early releases (BETA and RC) are available from the [TrueNAS SCALE download page](https://www.truenas.com/download-truenas-scale/).
 
 For adventurous users that want to experiment with the latest feature development, nightly build [.iso](https://download.truenas.com/truenas-scale-electriceel-nightly/) and [.update](https://update.sys.truenas.net/scale/TrueNAS-SCALE-ElectricEel-Nightlies/) files are available.
 
@@ -61,18 +60,15 @@ More details are available from [Software Releases]({{< relref "/TrueNASUpgrades
 * Support for the deprecated LDAP **Samba Schema** is removed in 24.10.
   Users with both LDAP and SMB shares configured should migrate legacy Samba domains to Active Directory before upgrading to 24.10.
   
-<!--
-### Upgrade Paths
+### Upgrade Paths (Anticipated)
 
-There are a variety of options for upgrading to SCALE 24.10.
-
- include file="/static/includes/24.04UpgradeMethods.md" 
+{{< include file="/static/includes/24.10UpgradeMethods.md" >}}
 
 See the <a href="https://www.truenas.com/software-status/" target="_blank">TrueNAS Software Status</a> page for recommendations about which software version to use based on your user type.
 
 Update the system to the latest maintenance release of the installed major version before attempting to upgrade to a new TrueNAS SCALE major version.
 
- include file="/static/includes/SCALEUpgradePaths.md" 
+{{< include file="/static/includes/SCALEUpgradePaths.md" >}}
 
 ### CORE > SCALE Migrations
 
