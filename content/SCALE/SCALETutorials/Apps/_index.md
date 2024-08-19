@@ -208,7 +208,7 @@ In most cases, accept the default settings or change these settings to limit the
 After installing an app, you can modify most settings by clicking on the app row on the **Installed** applications screen, then clicking **Edit** on the **Application Info** widget.
 Make sure you have the right app row selected or you end up accessing the first app listed in the table of deployed apps.
 
-Refer to individual tutorials in the [Chart]({{< relref "/SCALE/SCALETutorials/Apps/ChartApps/_index.md" >}}), [Community]({{< relref "/SCALE/SCALETutorials/Apps/CommunityApps/_index.md" >}}), or [Enterprise]({{< relref "/SCALE/SCALETutorials/Apps/EnterpriseApps/_index.md" >}}) sections of the Documentation Hub for more details on configuring application settings.
+Refer to individual tutorials in the [Chart]({{< relref "/SCALE/SCALETutorials/Apps/StableApps/_index.md" >}}), [Community]({{< relref "/SCALE/SCALETutorials/Apps/CommunityApps/_index.md" >}}), or [Enterprise]({{< relref "/SCALE/SCALETutorials/Apps/EnterpriseApps/_index.md" >}}) sections of the Documentation Hub for more details on configuring application settings.
 
 ### Managing Container Images
 The **Settings** dropdown includes an option 

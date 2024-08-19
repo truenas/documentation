@@ -4,7 +4,7 @@ description: "Provides information on installing Pi-hole to support network-leve
 weight: 
 aliases: 
  - /scale/scaletutorials/apps/installpiholeapp/
- -/scale/scaletutorials/apps/chartapps/installpiholeapp/
+ - /scale/scaletutorials/apps/chartapps/installpiholeapp/
 tags:
 - apps
 - dns
