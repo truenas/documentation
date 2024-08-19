@@ -34,7 +34,7 @@ From this screen users can change the catalog trains and show apps in those trai
 
 {{< trueimage src="/images/SCALE/Apps/AppsEditCatalogScreen.png" alt="Apps Edit Catalog Screen" id="Apps Edit Catalog Screen" >}} [new image]
 
-Click **Refresh Catalog** on the **Discover** screen to pull the catalog from the repository and refresh it by applying any updates.
+Click **Refresh Catalog** on the **Discover** screen to pull the catalog from the repository and refresh it.
 
 To remove a catalog from the system, remove it from the **Preferred Trains** field on the **Edit Catalog** screen and click **Save**.
 Users cannot delete the default catalog train.
