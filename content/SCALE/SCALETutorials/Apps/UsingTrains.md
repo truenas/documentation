@@ -16,7 +16,7 @@ keywords:
 
 TrueNAS SCALE has a pre-built official catalog of available iXsystems-approved applications.
 
-Users can configure add catalog trains if they choose.
+Users can configure and add catalog trains if they choose.
 The default train is **stable** which shows the **charts** apps. Other available trains are **enterprise** and **community**.
 
 {{< hint type=note >}}
