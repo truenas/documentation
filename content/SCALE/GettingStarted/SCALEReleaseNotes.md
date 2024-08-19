@@ -87,9 +87,8 @@ After install, restore the system configuration and import the pools.
 Depending on the specific system configuration, this can be a straightforward or complicated process.
 See the [Migration articles]({{< relref "/SCALE/GettingStarted/Migrate/_index.md" >}}) for cautions and notes about differences between each software and the CORE to SCALE migration process.
 
-You must either clean install or use an upgrade ***iso** file to migrate a TrueNAS CORE system to SCALE 24.04 (Dragonfish).
+You must either clean install or use an upgrade ***iso** file to migrate a TrueNAS CORE system to SCALE 24.10 (Electric Eel).
 Enterprise customers should [contact Support](https://www.truenas.com/docs/scale/gettingstarted/migrate/migratecorehatoscaleha/#expand-1-Enterprise%20HA%20Migrations) for assistance with transitioning from CORE to SCALE.
--->
 
 ## Component Versions
 Click the component version number to see the latest release notes for that component.
@@ -98,7 +97,6 @@ Click the component version number to see the latest release notes for that comp
 | Component | Version |
 |-----------|-------------|
 | Linux Kernel | [6.6.44](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/tag/?h=v6.6.44) |
-| NVIDIA Driver | [555.42.06-2](https://docs.nvidia.com/cuda/cuda-toolkit-release-notes/index.html) |
 | OpenZFS | [2.2.99-2](https://github.com/openzfs/zfs/tree/zfs-2.2.99) |
 {{< /truetable >}}
 
