@@ -1,11 +1,11 @@
 &NewLine;
 
-SCALE provides two default storage options, one to use the default iXvolume or to use a host path to a prexisting dataset.
+SCALE provides two default storage options, iXvolumes and host path to a pre-existing dataset.
 
-{{< hint type=important title="Separating Applications Datasets" >}}
-TrueNAS considers shared host paths as insecure.
-In the past, apps using shared host paths (such as a service like SMB is using) could fail to deploy.
-However, this shared host path issue has been corrected so the host path option no longer exists.
+Selecting the iXvolume allows SCALE to create the storage volume for the application.
+If the application requires datasets with specific names, you must create these before launching the installation wizard for the application.
 
-It is recommended to create datasets for applications that do not share the same host path as an SMB or NFS share.
+{{< hint type=information >}}
+Earlier versions of SCALE had issues with apps failing to deploy if the application and an SMB or NFS share had the same host path to a dataset.
+This issue no longer exists, but we still recommended creating datasets for applications that do not share the same host path as an SMB or NFS share.
 {{< /hint >}}

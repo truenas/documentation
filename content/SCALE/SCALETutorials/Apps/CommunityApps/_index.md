@@ -14,8 +14,12 @@ keywords:
 
 The TrueNAS community creates and maintains numerous applications intended to expand system functionality far beyond what is typically expected from a NAS.
 
-The TrueNAS **Chart** catalog loads as the default catalog to populate the **Discover** screen.
-To view or make catalog settings changes, select the **Manage Catalogs** to the right of the search field on the **Discover** apps screen.
+The TrueNAS application catalog includes the **stable** train by default.
+To see community-maintained applications on the **Discover** screen, you must add the train.
+
+To view the community apps, from the **Installed** application screen, click **Settings** and then **Train Settings**.
+Select the **community** checkbox on the **Train Settings** screen and click **Save**.
+Go to the **Discover** screen and click **Refresh Catalog**, to the right of the search field.
 
 Applications are provided "as-is" and can introduce system stability or security issues when installed.
 

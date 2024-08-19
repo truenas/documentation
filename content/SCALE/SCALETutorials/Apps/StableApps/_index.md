@@ -1,6 +1,6 @@
 ---
 title: "Stable Apps"
-description: "Notes about official TrueNAS chart applications and individual tutorials for applications."
+description: "Notes about official TrueNAS/chart applications and individual tutorials for these applications."
 weight: 25
 aliases:
  - /scale/scaletutorials/apps/chartapps/
@@ -14,14 +14,13 @@ keywords:
 
 
 
-The **stable** catalog includes official applications for use in SCALE found in the /charts repository in GitHub.
-This catalog populates the **Discover** screen by default.
+The **stable** train populates the application catalog with the official applications found in the TrueNAS/charts repository in GitHub.
+The **Discover** screen shows the **stable** train applications by default.
 
-The applications in the **stable** catalog are intended to expand system functionality far beyond what is typically expected from a NAS.
+Applications in the **stable** catalog are added and maintained by iXsystems, and are intended to expand system functionality far beyond what is typically expected from a NAS.
+Some apps replace deprecated services or functionality previously built into SCALE.
 
-The tutorials in this section for commonly-used **stable** catalog apps are created and maintained by iXsystems.
-
-Some apps replace services or functionality previously built into SCALE but that are now deprecated.
+The tutorials in this section for commonly-used **stable** train catalog.
 
 {{< include file="/static/includes/ProposeArticleChange.md" >}}
 

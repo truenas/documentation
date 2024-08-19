@@ -67,13 +67,15 @@ The checkbox to the left of **Applications** selects all installed apps.
 
 {{< trueimage src="/images/SCALE/Apps/AppsChoosePoolForApps.png" alt="Apps Choose a Pool for Apps" id="Apps Choose a Pool for Apps" >}}
 
-### Train Settings <!-- comment out more image changes expected in RC1. -->  
-**Train Settings** opens the **Edit Catalog** screen.
+### Train Settings
+**Train Settings** opens the **Train Settings** screen.
 
-{{< trueimage src="/images/SCALE/Apps/AppsEditCatalogScreen.png" alt="Apps Edit Catalog" id="Apps Edit Catalog" >}}
+{{< trueimage src="/images/SCALE/Apps/AppsTrainSettingsScreen.png" alt="Train Settings Add Enterprise Train" id="Train Settings Add Enterprise Train" >}}
 
-Enter the train name in **Preferred Train** to add another train to the **Stable** applications catalog.
+Select the checkbox to the left of the train name to add another train to the applications catalog.
 Train options are **stable** the default train for official apps, **community** for community proposed and maintained apps, and **enterprise** for apps verified and simplified for Enterprise users.
+You must have at least one train specified.'
+To change to only show applications in one of the other trains, select the train and then clear the **stable** train checkbox. Click **Save**.
 
 ### Unset Pool
 **Unset Pool** on the **Settings** menu opens the **Unset Pool** dialog. Click **Unset** to unset the pool and turn off the application service.
@@ -161,31 +163,30 @@ After selecting the container options, a shell screen for the pod opens.
 
 The **View Logs** <span class="iconify" data-icon="mdi:text-box" title="Logs">Logs</span> button also opens the **Choose Pod** window.
 After selecting the options, the **Pod Logs** screen for the app opens.
-<!-- commenting out until UI is uploaded, in nightly build but not in the UI yet 
-### Choose Pod
-The **Choose Pod** window shows options to choose the pod, active container. After selecting the **Shell** button, the window shows shell commands to use when the **Applications > Pod Shell** screen displays.
 
-{{< trueimage src="/images/SCALE/Apps/AppsChoosePodWindow.png" alt="Apps Choose Pod Window" id="Apps Choose Pod Window" >}}
+#### Choose Shell Details
+The **Choose Shell Details** dialog allows you to enter a shell command to open the **Pod Shell** screen. You can accept the default value in **Command** or specify another.
 
-{{< truetable >}}
-| Setting | Description |
-|---------|-------------|
-| **Pods** | Required. Select the pod installed from the dropdown list. |
-| **Containers** | Required. Select the container from the dropdown list. |
-| **Commands** | Enter the shell commands. |
-{{< /truetable >}}
+{{< trueimage src="/images/SCALE/Apps/ChooseShellDetailsDialog.png" alt="Choose Shell Details" id="Choose Shell Details" >}}
 
-**Choose** on the **Choose Pod** screen opens either the **Pod Shell** or **Pod Log** screen.
+**Choose**  opens the **Applications > Pod Shell** screen.
 
 {{< trueimage src="/images/SCALE/Apps/AppsPodShellScreen.png" alt="Apps Pod Shell Screen" id="Apps Pod Shell Screen" >}}
 
 Click **Installed** on the breadcrumb to return to the **Installed** applications screen.
 
+#### Volume Mounts
+**Volume Mounts** opens a dialog showing information on the app volume mounts for current and exited volume mounts for the application container. 
+
+{{< trueimage src="/images/SCALE/Apps/MinIOVolumeMountsDialog.png" alt="MinIO Volume Mounts" id="MinIO Volume Mounts" >}}
+
+#### Pod Log
+Each **Pod Log** screen includes a banner with the **Application Name**, **Pod Name** and **Container Name**.
+
 {{< trueimage src="/images/SCALE/Apps/WebDAVPodLogsScreen.png" alt="WebDAV Pod Logs Screen" id="WebDAV Pod Logs Screen" >}}
 
-The **Pod Logs** screen opens a shell displaying logs for the selected installed application.
-Each **Pod Log** screen includes a banner with the **Application Name**, **Pod Name** and **Container Name**.
--->
+Use the logs to help troubleshoot problems with your container pods.
+
 ### Application Metadata Widget
 The **Application Metadata** widget shows application capabilities unique to the application, and **Run As Content** showing the user and group IDs, the default user and group name, and brief description for the application. 
 **View More** expands the widget to show more information on application settings.
@@ -226,7 +227,7 @@ You can enter a new setting in fields that include a preprogrammed default.
 
 ## Discover Apps Screen
 The **Discover** screen displays application widgets for the official TrueNAS **stable** train by default.
-Users can add the **Community** and **Enterprise** train applications on the **[Edit Catalog](#edit-catalog-screen)** screen.
+Users can add the **community** and **enterprise** train applications on the **[Train Settings](#train-settings-screen)** screen.
 
 {{< trueimage src="/images/SCALE/Apps/AppsDiscoverScreen.png" alt="Applications Discover Screen" id="Applications Discover Screen" >}}
 
