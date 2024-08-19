@@ -268,21 +268,19 @@ The **Stable** train includes the apps in the **charts** repository.
 Non-Enterprise systems show the **stable** catalog of apps by default.
 The **Stable** catalog train has official applications that are pre-configured and only require a name during deployment.
 
-Enterprise applications display automatically for Enterprise-licensed systems, but community users can add these apps using the **Manage Catalogs** screen.
-App trains display based on the **Trains** settings on the **Edit Catalog** screen.
+Enterprise applications display automatically for Enterprise-licensed systems, but community users can add these apps using the **Edit Catalog** screen.
+App trains display based on the **Preferred Trains** settings on the **Edit Catalog** screen.
 
 {{< trueimage src="/images/SCALE/Apps/AppsDiscoverScreen.png" alt="Applications Discover Screen" id="Applications Discover Screen" >}}
 
 Use the **Discover** screen links to access other functions. 
 
-Click [**Refresh Charts**](#refreshing-charts) to refresh the widgets on the screen.
+* [**Refresh Charts**](#refreshing-charts) 
+* **Manage Installed Apps** opens the **Installed** application screen.
+<!-- commenting out until RC1 when this screen gets added back to the UI
+The **Custom App** button opens a wizard where you can install unofficial apps or an app not included in a catalog. -->
 
-Click **Manage Installed Apps** or on the **Applications** breadcrumb at the top of the screen to open the **Installed** application screen.
-See [Using SCALE Catalogs]({{< relref "usingcatalogs.md" >}}) for more information on managing catalogs.
-
-Click **Manage Catalogs**]({{< relref "UsingCatalogs.md" >}}) to open the **Catalogs** screen.
-
-**Custom App** opens a wizard where you can configure an unofficial app or one not included in a SCALE catalog.
+<!-- **Custom App** opens a wizard where you can configure an unofficial app or one not included in a SCALE catalog. -->
 
 Scroll the screen to scan app widgets or use the search field to find a specific app in the catalogs configured on the system.
 
@@ -305,6 +303,16 @@ To quickly locate an app, begin typing the name in the search field.
 
 To sort app widgets by category, click in **Categories**.
 To select multiple categories, click **Categories** again and select another category from the dropdown.
+
+{{< trueimage src="/images/SCALE/Apps/MinIOS3AppInfoScreen.png" alt="Application Information Screen Example" id="Application Information Screen Example" >}}
+
+After installing an application, the **Installed** applications screen shows the application in the **Deploying** state.
+It changes to **Running** when the application is ready to use.
+
+{{< include file="/static/includes/AppsInstallWizardSettings.md" >}}
+
+Refer to individual tutorials in the Community or Enterprise sections of the Documentation Hub for more details on application settings.
+Installation and editing wizards include tooltips to help users configure application settings.
 
 ## Allocating GPU
 Users with compatible hardware can allocate one or more GPU devices to an application for use in hardware acceleration.
