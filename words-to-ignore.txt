@@ -1958,3 +1958,4 @@ clichartrelease
 clicatalog
 cligroup
 cliuser
+cliftp
