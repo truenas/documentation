@@ -1,7 +1,7 @@
 ---
 title: "Managing App Trains"
 description: "Provides basic information on adding or managing application trains in TrueNAS SCALE."
-weight: 5
+weight: 36
 aliases:
  - /scale/scaleuireference/apps/usingcatalogs/
  - /scale/apps/usingcatalogs/
