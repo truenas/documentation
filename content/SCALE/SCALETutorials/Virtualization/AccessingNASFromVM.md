@@ -59,7 +59,7 @@ You might have to set up [shares]({{< relref "/SCALE/SCALEUIReference/Shares/_in
 
 ## Assigning a Secondary NIC: Multiple Physical Interfaces
 If you have more than one NIC on your system, you can assign VM traffic to a secondary NIC.
-Configure the secondary interface as described in [Managing Interfaces]({{< relref "managinginterfaces.md" >}}) before attaching it to a VM.
+Configure the secondary interface as described in [Managing Interfaces]({{< relref "/SCALE/SCALETutorials/Network/Interfaces/_index.md" >}}) before attaching it to a VM.
 
 If you are creating a new VM, use the **Attach NIC** dropdown menu under **Network Interface** to select the secondary NIC.
 

@@ -66,7 +66,7 @@ DHCP is available for only a single interface; any other physical interfaces mus
 You can also configure virtual network interfaces such as a [bridge]({{< relref "SettingUpBridge.md" >}}), link aggregate (LAGG), or virtual LAN (VLAN) interface.
 
 You can use the Console Setup menu or SCALE UI to configure network interfaces.
-We recommend using the web UI the **Network** screen to [add or change network interfaces or aliases]({{< relref "ManagingInterfaces.md" >}}), set up link aggregate [LAGG]({{< relref "SettingUpLAGG.md" >}}) or virtual LAN [VLAN]({{< relref "SettingUpVLAN.md" >}}) interfaces, change or [configure global network settings]({{< relref "ManagingGlobalConfig.md" >}}), or set up [static IP addresses]({{< relref "SettingUpStaticIPs.md" >}}).
+We recommend using the web UI the **Network** screen to [add or change network interfaces or aliases]({{< relref "/SCALE/SCALETutorials/Network/Interfaces/_index.md" >}}), set up link aggregate [LAGG]({{< relref "SettingUpLAGG.md" >}}) or virtual LAN [VLAN]({{< relref "SettingUpVLAN.md" >}}) interfaces, change or [configure global network settings]({{< relref "ManagingGlobalConfig.md" >}}), or set up [static IP addresses]({{< relref "SettingUpStaticIPs.md" >}}).
 
 ### Adding Aliases or Static IP Addresses
 Static IP addresses and aliases provide support for various network applications.
@@ -75,7 +75,7 @@ SCALE Enterprise HA systems use a virtual IP (VIP) to maintain access to the UI 
 This VIP address might experience a minor blip at failover, but you do not need to log in with the standby controller IP address to gain access to the UI after a failover.
 {{< /enterprise >}}
 You can configure a network interface with a static IP or add an alias IP address on the same screen in the SCALE UI.
-For more information on when to use an alias or a static IP address, see [Managing Interfaces]({{< relref "ManagingInterfaces.md" >}}).
+For more information on when to use an alias or a static IP address, see [Managing Interfaces]({{< relref "/SCALE/SCALETutorials/Network/Interfaces/_index.md" >}}).
 
 ## Setting Up Storage
 TrueNAS SCALE requires at least one storage pool.

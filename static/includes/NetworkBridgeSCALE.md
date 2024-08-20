@@ -3,13 +3,20 @@
 To set up a bridge interface, go to **Network**, click **Add** on the **Interfaces** widget to open the **Add Interface** screen, then:
 
 1. Select **Bridge** from the **Type** dropdown list.
-   You cannot change the **Type** field value after you click **Save**.
+   You cannot change the **Type** field value after clicking **Save**!
 
    {{< trueimage src="/images/SCALE/Network/AddInterfaceNicDeviceSCALE.png" alt="Add Bridge Interface" id="Add Bridge Interface" >}}
 
 2. Enter a name for the interface.
-   Use the format **bond*X***, **vlan*X***, or *brX* where *X* is a number representing a non-parent interface.
-   You cannot change the **Name** of the interface after you click **Save**.
+   Use the correct format based on the interface type:
+   
+   ***bond*X*** for a LAGG interface
+   **vlan*X*** for a VLAN interface
+   **br*x*** for a bridge interface
+   
+   Where *X* is a number representing a non-parent interface. Assing the first bridge interface **br0**.
+
+   You cannot change the **Name** of the interface after clicking **Save**.
 
 3. (Optional but recommended) Enter any notes or reminders about this particular bridge in **Description**.
 
@@ -25,6 +32,7 @@ To set up a bridge interface, go to **Network**, click **Add** on the **Interfac
    {{< trueimage src="/images/SCALE/Network/NetworkInterfacesBridgeSCALE.png" alt="Network Interfaces with Bridge" id="Network Interfaces with Bridge" >}}
 
 7. Click **Test Changes** to determine if network changes are successful.
+   See [Testing Network Interface Changes]({{< relref "/SCALE/SCALETutorials/Network/Interfaces/_index.md#Testing-Network-Interface-Changes">}})
 
    {{< trueimage src="/images/SCALE/Virtualization/VMTestNetworkChanges.png" alt="Test Network Changes" id="Test Network Changes" >}}
 
@@ -48,9 +56,7 @@ Try options one and two before proceeding with option three and then four.
      Click <span class="material-icons">edit</span> **Configure** to view the current configuration of sharing services including **SMB** and **NFS**.
      Stop any services that have a bind IP address matching the bridge IP address.
      Restart the service(s) after network changes are tested and saved.
-  4. (Optional) Stop the Kubernetes service.
-     Connect to a shell session and enter `systemctl k3s.service stop`.
-     Press <kbd>Enter</kbd>.
-     After network changes are tested and saved, restart Kubernetes with `systemctl k3s.service start`.
+  4. (Optional) Stop running apps.
+     After network changes are tested and saved, restart apps.
 
 {{< /expand >}}
