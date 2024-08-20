@@ -54,8 +54,27 @@ More details are available from [Software Releases]({{< relref "/TrueNASUpgrades
 
 * {{< include file="/static/includes/UpgradeClearCache.md" >}}
 
-* As of [June 6, Kubernetes is removed from 24.10 Nightly builds](https://forums.truenas.com/t/apps-update-2024-06-06/6041).
-  The apps feature is not functional in these nightly builds while development continues with replacing Kubernetes with Docker Compose ([announcement](https://forums.truenas.com/t/the-future-of-electric-eel-and-apps/5409)).
+* 24.10 moves the applications backend from Kubernetes to Docker ([announcement](https://forums.truenas.com/t/the-future-of-electric-eel-and-apps/5409)).
+
+  * Installed applications automatically migrate to Docker deployments on upgrade from from 24.04 (Dragonfish) to Electric Eel.
+  
+    App migration is receiving active development in 24.10-BETA.1.
+    To see which applications currently support automatic migration, see the [Parity Status with truenas/charts](https://github.com/truenas/apps?tab=readme-ov-file#parity-status-with-truenascharts) chart from the /truenas/apps/ github repository.
+    Applications that support migration display a green check (✅) in both **Added** and **Migrated** columns.
+    Check back regularly and note the update history of the [README.md](https://github.com/truenas/apps/blob/master/README.md) file for the latest developments.
+
+    You can re-initiate migration of Kubernetes apps to Docker at any time after upgrading to Electric Eel, for example to migrate an app that was not yet available for automatic migration upon upgrade but is now available.
+    From a shell session enter `midclt call --job k8s_to_docker.migrate POOLNAME`, where *POOLNAME* is the name of the applications pool.
+
+  * The **Custom App** installation screen is disabled in 24.10-BETA.1.
+  A redesigned screen, including Docker Compose support, is projected for the RC.1 version.
+  Users wishing to leverage Docker Compose in BETA can do so using the **Dockge** or **Portainer** apps, available from the [**Community**]({{< relref "/SCALE/SCALETutorials/Apps/CommunityApps/_index.md" >}}) train, or in a [**Sandbox**]({{< relref "Sandboxes.md" >}}).
+
+* Starting in 24.10, TrueNAS does not install a default Nvidia driver.
+  This allows for driver updates in between TrueNAS release versions.
+  
+  A UI selectable option to install/update Nvidia drivers is planned for a future 24.10 development version.
+  Users needing Nvidia GPU support in 24.10.BETA.1 can enable this option from a shell session using the command `midclt call -job docker.update '{"nvidia": true}'`.
 
 * Support for the deprecated LDAP **Samba Schema** is removed in 24.10.
   Users with both LDAP and SMB shares configured should migrate legacy Samba domains to Active Directory before upgrading to 24.10.
@@ -70,7 +89,7 @@ Update the system to the latest maintenance release of the installed major versi
 
 {{< include file="/static/includes/SCALEUpgradePaths.md" >}}
 
-### CORE > SCALE Migrations
+### CORE to SCALE Migrations
 
 {{< include file="/_includes/MigrateCOREtoSCALEWarning.md" >}}
 
@@ -113,7 +132,7 @@ Any new feature flags introduced since the previous OpenZFS version that was int
 
 For more details on feature flags, see [OpenZFS Feature Flags](https://openzfs.github.io/openzfs-docs/Basic%20Concepts/Feature%20Flags.html) and [OpenZFS zpool-feature.7](https://openzfs.github.io/openzfs-docs/man/7/zpool-features.7.html).
 
-<!-- 24.10-BETA.1 (relnotes)
+## 24.10-BETA.1 Changelog
 
 {{< hint type=warning title="Early Release Software" >}}
 Early releases are intended for testing and feedback purposes.
@@ -129,7 +148,7 @@ Notable changes:
 
 * Dashboard reworked with more widgets, data reporting, and customization ([NAS-127217](https://ixsystems.atlassian.net/browse/NAS-127217)).
 
-* Applications backend framework is shifted from Kubernetes to Docker ([](https://ixsystems.atlassian.net/browse/)). See the official [announcement](https://forums.truenas.com/t/the-future-of-electric-eel-and-apps/5409) for more information. The **Custom App** installation screen is disabled in 24.10-BETA.1. A redesigned screen, including Docker Compose support, is projected for the RC.1 version.
+* Applications backend framework is shifted from Kubernetes to Docker ([](https://ixsystems.atlassian.net/browse/)). See the official [announcement](https://forums.truenas.com/t/the-future-of-electric-eel-and-apps/5409) for more information. The **Custom App** installation screen is disabled in 24.10-BETA.1. A redesigned screen, including Docker Compose support, is projected for the RC.1 version. See [Upgrade Notes](#upgrade-notes) for more information.
   
 * New [TrueCloud Backup Tasks]({{< relref "TrueCloudTasks.md" >}}) with streamlined functionality for Storj iX cloud backups and restoration ([NAS-127165](https://ixsystems.atlassian.net/browse/NAS-127165)).
 
@@ -150,7 +169,7 @@ Notable changes:
 
 ### 24.04-BETA.1 Known Issues
 
-* 
+* ([NAS-130373](https://ixsystems.atlassian.net/browse/NAS-130373)).
 
 <a href="https://ixsystems.atlassian.net/issues/?filter=######" target="_blank">Click here to see the latest information</a> about public issues discovered in 24.10-BETA.1 that are being resolved in a future TrueNAS SCALE release.
 -->
