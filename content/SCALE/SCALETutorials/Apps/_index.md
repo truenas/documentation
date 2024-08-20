@@ -94,10 +94,10 @@ To select a different pool for apps to use, click **Settings > Unset Pool**. Thi
 SCALE applications are available in three catalogs (trains):
 
 * **stable** - Default train of official apps, vetted by iXsystems, choosen because of the features and functionality of the app, and how they integrate with SCALE. 
-* **enterprise** - Default train with apps simplified and validated for for Enterprise users for Enterprised-licensed systems.
-* **community** - Apps proposed and maintained by the community, and found in the TrueNAS/charts/community repository in GitHub
+* **enterprise** - Default train of apps, simplified and validated for for Enterprise users for Enterprised-licensed systems.
+* **community** - Apps proposed and maintained by the community
 
-The default TrueNAS **Stable** catalog populates the **Discover** apps screen with apps found in the TrueNAS/charts repository.
+The default TrueNAS **Stable** catalog populates the **Discover** apps screen with apps.
 
 Some apps proposed by community members might be adopted as official **stable** train apps.
 Official apps are maintained by iXsystems for non-Enterprise and community users.
@@ -279,7 +279,6 @@ Click **Confirm** then **Continue** to delete the application.
 The **Discover** screen shows application widgets based on the trains selected on the **Train Settings** screen.
 
 Non-Enterprise systems show the **stable** catalog of apps by default.
-The **stable** train includes the apps in the TrueNAS/charts repository.
 These are official applications that are pre-configured and only require a name during deployment.
 
 Enterprise-licensed systems display the **enterprise** train of applications simmplified and validated for Enterprise systems.

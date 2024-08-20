@@ -93,9 +93,11 @@ Entering characters in the **<span class="iconify" data-icon="mdi:magnify"></spa
 {{< trueimage src="/images/SCALE/Apps/AppsTrainSettingsScreen.png" alt="Train Settings Add Enterprise Train" id="Train Settings Add Enterprise Train" >}}
 
 Select the checkbox to the left of the train name to add another train to the applications catalog.
-Train options are **stable** the default train for official apps, **community** for community proposed and maintained apps, and **enterprise** for apps verified and simplified for Enterprise users.
-You must have at least one train specified.
-To change to only show applications in one of the other trains, select the train and then clear the **stable** train checkbox. Click **Save**.
+Train options:
+* **stable** the default train for official apps
+* **enterprise** for apps verified and simplified for Enterprise users, default for enterprise-licensed systems.
+* **community** for community proposed and maintained apps
+You must specify at least one train.
 
 ## Applications Table
 The **Applications** table on the **Installed** screen populates a row for each installed app that shows the current state, and the option to stop the app. Stopped apps show the option to start the app.
