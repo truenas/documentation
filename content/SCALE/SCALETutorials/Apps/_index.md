@@ -1,6 +1,6 @@
 ---
 title: "Apps"
-description: "Expanding TrueNAS SCALE functionality with additional applications."
+description: "Expanding TrueNAS SCALE functionality with applications."
 geekdocCollapseSection: true
 weight: 12
 aliases:
@@ -93,8 +93,8 @@ To select a different pool for apps to use, click **Settings > Unset Pool**. Thi
 ## Changing App Trains
 SCALE applications are available in three catalogs (trains):
 
-* **stable** - Default train of official apps, vetted by iXsystems, choosen because of the features and functionality of the app, and how they integrate with SCALE. 
-* **enterprise** - Default train of apps, simplified and validated for for Enterprise users for Enterprised-licensed systems.
+* **stable** - Default train of official apps, vetted by iXsystems, chosen because of the features and functionality of the app, and how they integrate with SCALE. 
+* **enterprise** - Default train of apps, simplified and validated for for Enterprise users for Enterprise-licensed systems.
 * **community** - Apps proposed and maintained by the community
 
 The default TrueNAS **Stable** catalog populates the **Discover** apps screen with apps.
@@ -105,7 +105,7 @@ Official apps are maintained by iXsystems for non-Enterprise and community users
 {{< trueimage src="/images/SCALE/Apps/AppsTrainSettingsScreen.png" alt="Train Settings Add Enterprise Train" id="Train Settings Add Enterprise Train" >}}
 
 Users can change apps on the **Discover** screen from the **Train Settings** screen.
-Click **Train Settings** on the **Settings** dropdown menu to open the **Train Settings** scree, then select the desired trian(s).
+Click **Train Settings** on the **Settings** dropdown menu to open the **Train Settings** scree, then select the desired train(s).
 To show only the one train of apps, for example the **enterprise** train, after selecting **enterprise** deselect the **stable** checkbox and click **Save**. 
 
 For more information on trains, see [Managing App Trains]({{< relref "UsingTrains.md" >}}).
@@ -281,7 +281,7 @@ The **Discover** screen shows application widgets based on the trains selected o
 Non-Enterprise systems show the **stable** catalog of apps by default.
 These are official applications that are pre-configured and only require a name during deployment.
 
-Enterprise-licensed systems display the **enterprise** train of applications simmplified and validated for Enterprise systems.
+Enterprise-licensed systems display the **enterprise** train of applications simplified and validated for Enterprise systems.
 Community users can add the **community** and **enterprise** trains on the [**Train Settings**](#changing-app-trains) screen.
 
 {{< trueimage src="/images/SCALE/Apps/AppsDiscoverScreen.png" alt="Applications Discover Screen" id="Applications Discover Screen" >}}

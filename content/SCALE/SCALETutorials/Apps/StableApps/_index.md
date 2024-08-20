@@ -22,6 +22,8 @@ Some apps replace deprecated services or functionality previously built into SCA
 
 The tutorials in this section for commonly-used **stable** train catalog.
 
+For information on adding to or changing the train for the apps catalog, see [Managing App Trains]({{< relref "UsingTrains.md" >}}).
+
 {{< include file="/static/includes/ProposeArticleChange.md" >}}
 
 <div class="noprint">

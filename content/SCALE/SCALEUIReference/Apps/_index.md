@@ -27,7 +27,7 @@ The individual app widgets open app information screens with details about that 
 
 ## Installed Screen
 The first time you go to **Apps**, the **Installed** applications screen header shows an <i class="fa fa-cog" aria-hidden="true"></i> **Apps Service Not Configured** status and dialog opens prompting you to choose the pool for apps to use.
-You must choose the pool apps use before you can install applications. See [Choose A Pool for Apps](#choose-a-pool-for-apps) for more informaiton.
+You must choose the pool apps use before you can install applications. See [Choose A Pool for Apps](#choose-a-pool-for-apps) for more information.
 
 {{< trueimage src="/images/SCALE/Apps/AppsServiceNotConfigured.png" alt="Apps Service Not Configured" id="Apps Service Not Configured" >}}
 

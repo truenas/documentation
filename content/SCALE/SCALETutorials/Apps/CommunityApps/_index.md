@@ -21,6 +21,8 @@ To view the community apps, from the **Installed** application screen, click **S
 Select the **community** checkbox on the **Train Settings** screen and click **Save**.
 Go to the **Discover** screen and click **Refresh Catalog**, to the right of the search field.
 
+For more information on adding to or changing the train for the apps catalog, see [Managing App Trains]({{< relref "UsingTrains.md" >}}).
+
 Applications are provided "as-is" and can introduce system stability or security issues when installed.
 
 Some applications deploy as the **root** user for initial configuration before changing to operate as a non-root user.
