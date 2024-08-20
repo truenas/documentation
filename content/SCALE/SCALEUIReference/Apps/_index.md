@@ -169,7 +169,7 @@ Information includes the number of pods, used ports, number of deployments, stat
 It also shows the **Shell**, **Volume Mounts** and **View Log** icon buttons that provide access to the container pod shell and log screens and mount point windows.
 These options do not show for stopped apps.
 
-{{< trueimage src="/images/SCALE/Apps/InstalledAppsScreenContainersWidget.png" alt="Installed Apps Containers Widget" id="Installed Apps Containers Widget" >}}
+{{< trueimage src="/images/SCALE/Apps/InstalledAppsWorkloadsWidget.png" alt="Installed Apps Containers Widget" id="Installed Apps Containers Widget" >}}
 
 The **Shell** <span class="iconify" data-icon="mdi:console" title="Shell">Shell</span> button opens the **[Choose Shell Details](#choose-shell-details)** window.
 After selecting the container options, a shell screen for the pod opens.

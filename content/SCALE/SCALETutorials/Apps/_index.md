@@ -113,6 +113,44 @@ For more information on trains, see [Managing App Trains]({{< relref "UsingTrain
 Some applications deploy as the **root** user for initial configuration before operating as a non-root user.
 Keep these general best practices in mind when using applications with TrueNAS SCALE.
 
+### Managing Container Images
+While on the **Installed** application screen, click **Settings** > **Manage Container Images** to open the **Manage Container Images** screen.
+
+{{< trueimage src="/images/SCALE/Apps/AppsManageContainerImages.png" alt="Apps Manage Container Images" id="Apps Manage Container Images" >}}
+
+Delete images or add new from this screen.
+
+Click **Pull Image** to download a specific custom image to TrueNAS.
+
+{{< trueimage src="/images/SCALE/Apps/AppsManageContainerImagesPullImage.png" alt="Pull a Container Image" id="Pull a Container Image" >}}
+
+To download a specific image, click the button and enter a valid path and tag to the image.
+Enter the path using the format *registry*/*repository*/*image* to identify the specific image.
+The default **latest** tag downloads the most recent image version.
+
+When downloading a private image, enter user account credentials that allow access to the private registry.
+
+### Upgrading Apps
+Apps display a yellow circle with an exclamation point that indicates an upgrade is available, and the **Installed** application screen banner displays an **Update** or **Update All** button when upgrades are available.
+To upgrade an app to the latest version, click **Update** on the **Application Info** widget or to upgrade multiple apps, click the **Update All** button on the **Installed** applications banner.
+Both buttons only display if TrueNAS SCALE detects an available update for installed applications.
+
+**Update** opens an upgrade window that includes two selectable options, **Images (to be updated)** and **Changelog**.
+Click on the down arrow to see the options available for each.
+
+{{< trueimage src="/images/SCALE/Apps/AppUpdateWindow.png" alt="Update Application Window" id="Update Application Window" >}}
+
+Click **Upgrade** to begin the process. A counter dialog opens showing the upgrade progress.
+When complete, the update badge and buttons disappear and the application **Update** state on the **Installed** screen changes from **Update Available** to **Up to date**.
+
+### Deleting Apps
+To delete an application, click <i class="fa fa-stop" aria-hidden="true"></i> **Stop** on the application row.
+After the app status changes to stopped, click **Delete** on the **Application Info** widget for the selected application to open the **Delete** dialog.
+
+{{< trueimage src="/images/SCALE/Apps/AppsDeleteAppDialog.png" alt="Delete Application Dialog" id="Delete Application Dialog" >}}
+
+Click **Confirm** then **Continue** to delete the application.
+
 ## Installing an Application
 The first time you go to **Apps**, choose the pool apps use before you can install applications.
 Select the pool in the [**Choosing the Application Pool**](#choosing-the-application-pool) for more information.
@@ -151,7 +189,7 @@ When a new version becomes available, an **Upodate** banner shows on the **Insta
 Updating the app changes the version shown on the edit wizard for the application.
 {{< /expand >}}
 
-{{< expand "*Application* Configuration" "v" >}}
+{{< expand "Application Configuration" "v" >}}
 ***Application* Configuration** shows required and optional settings for that app.
 For example, the MinIO app uses  **MinIO Configuration**.
 
@@ -237,44 +275,6 @@ If the GPU was previously isolated and/or assigned to a VM, a reboot could be re
 Restart the system then return to the **Resources Configuration** section of the application to see if expected devices are available.
 {{< /expand >}}
 
-### Managing Container Images
-While on the **Installed** application screen, click **Settings** > **Manage Container Images** to open the **Manage Container Images** screen.
-
-{{< trueimage src="/images/SCALE/Apps/AppsManageContainerImages.png" alt="Apps Manage Container Images" id="Apps Manage Container Images" >}}
-
-Delete images or add new from this screen.
-
-Click **Pull Image** to download a specific custom image to TrueNAS.
-
-{{< trueimage src="/images/SCALE/Apps/AppsManageContainerImagesPullImage.png" alt="Pull a Container Image" id="Pull a Container Image" >}}
-
-To download a specific image, click the button and enter a valid path and tag to the image.
-Enter the path using the format *registry*/*repository*/*image* to identify the specific image.
-The default **latest** tag downloads the most recent image version.
-
-When downloading a private image, enter user account credentials that allow access to the private registry.
-
-### Upgrading Apps
-Apps display a yellow circle with an exclamation point that indicates an upgrade is available, and the **Installed** application screen banner displays an **Update** or **Update All** button when upgrades are available.
-To upgrade an app to the latest version, click **Update** on the **Application Info** widget or to upgrade multiple apps, click the **Update All** button on the **Installed** applications banner.
-Both buttons only display if TrueNAS SCALE detects an available update for installed applications.
-
-**Update** opens an upgrade window that includes two selectable options, **Images (to be updated)** and **Changelog**.
-Click on the down arrow to see the options available for each.
-
-{{< trueimage src="/images/SCALE/Apps/AppUpdateWindow.png" alt="Update Application Window" id="Update Application Window" >}}
-
-Click **Upgrade** to begin the process. A counter dialog opens showing the upgrade progress.
-When complete, the update badge and buttons disappear and the application **Update** state on the **Installed** screen changes from **Update Available** to **Up to date**.
-
-### Deleting Apps
-To delete an application, click <i class="fa fa-stop" aria-hidden="true"></i> **Stop** on the application row.
-After the app status changes to stopped, click **Delete** on the **Application Info** widget for the selected application to open the **Delete** dialog.
-
-{{< trueimage src="/images/SCALE/Apps/AppsDeleteAppDialog.png" alt="Delete Application Dialog" id="Delete Application Dialog" >}}
-
-Click **Confirm** then **Continue** to delete the application.
-
 ## Discover Screen Options
 The **Discover** screen shows application widgets based on the trains selected on the **Train Settings** screen.
 
@@ -314,11 +314,6 @@ To select multiple categories, click **Categories** again and select another cat
 
 After installing an application, the **Installed** applications screen shows the app in the **Deploying** state.
 The status changes to **Running** when the application is fully deployed and ready to use.
-
-{{< include file="/static/includes/AppsInstallWizardSettings.md" >}}
-
-Refer to individual tutorials in the Stable, Community, or Enterprise sections of the Documentation Hub for more details on application settings.
-Installation and editing wizards include tooltips to help users configure application settings.
 
 <!-- commenting out until the UI includes this in RC1
 ## Installing Custom Applications
