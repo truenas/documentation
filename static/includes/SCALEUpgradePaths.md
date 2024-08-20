@@ -49,7 +49,7 @@
           {{< mermaid class="mermaid_sizing" >}}
           flowchart LR
             A["22.02.4 (Angelfish)"] -->|update| C
-            B["CORE 13.0-U6.2<br>CORE 13.3-RELEASE"] -->|ISO install| E
+            B["CORE 13.0-U6.2<br><br>CORE 13.3-RELEASE"] -->|ISO install| E
             C["22.12.4.2 (Bluefin)"] -->|update| D
             D["23.10.2 (Cobia)"] -->|update| E
             E["24.04.2 (Dragonfish)"] -->|anticipated| H
