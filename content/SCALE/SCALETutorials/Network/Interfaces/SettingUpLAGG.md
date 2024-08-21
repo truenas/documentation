@@ -46,7 +46,7 @@ To set up a LAGG, go to **Network**, click **Add** on the **Interfaces** widget 
    **FAST** sets the timeout rate at one per second even after synchronization. **FAST** allows for rapid detection of faults.
    {{< /expand >}}
    {{< expand "FAILOVER" "v" >}}
-   Select **FAILOVER** send traffic through the primary interface of the group. If the primary interface fails, traffic diverts to the next available interface in the LAGG.
+   Select **FAILOVER** to send traffic through the primary interface of the group. If the primary interface fails, traffic diverts to the next available interface in the LAGG.
    {{< /expand >}}
    {{< expand "LOADBALANCE" "v" >}}
    Select **LOADBALANCE** to accept traffic on any port of the LAGG group and balance the outgoing traffic on the active ports in the LAGG group.
