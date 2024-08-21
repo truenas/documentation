@@ -6,4 +6,4 @@ Prepare the system for interface changes by stopping apps, VM NIC devices, and s
 2. Power off any running virtual machines (VMs) before making interface IP changes.
 3. Remove active NIC devices for VMs.
 
-If you encounter issues with testing network changes, you might need to stop services such as sharing services such as SMB, using the current IP address.
+If you encounter issues with testing network changes, you might need to stop sharing services such as SMB, using the current IP address.
