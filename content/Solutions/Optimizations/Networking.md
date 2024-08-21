@@ -92,7 +92,7 @@ VLANs allow you to create logical segments within a physical network switch, eve
 VLANs provide logical segmentation, allowing different groups of devices to be in separate broadcast domains regardless of their physical location in the network.
 Devices in one VLAN do not see the broadcast traffic of devices in other VLANs, reducing broadcast domain size and improving network efficiency.
 VLANs provide flexibility in network design, providing enhanced isolation, access control, and scalability.
-They are often used to group devices based on functional roles or department and optimize performance by prioritizing discrete traffic types on each VLAN.
+They are often used to group devices based on functional roles or departments and optimize performance by prioritizing discrete traffic types on each VLAN.
 
 See also [Setting Up a Network VLAN]({{< relref "settingupvlan.md" >}}).
 
@@ -174,7 +174,7 @@ Reboot the system and restart the iSCSI share to inherit.
 
 {{< enterprise >}}
 TrueNAS Enterprise High Availability (HA) systems should enable Asymmetric Logical Unit Access (ALUA) for iSCSI shares.
-ALUA and MPIO can be used at same time.
+ALUA and MPIO can be used at the same time.
 
 ALUA allows a client computer to discover the best path to the storage on a TrueNAS® system.
 HA storage clusters can provide multiple paths to the same storage.
@@ -193,7 +193,7 @@ Enterprise customers should contact iXsystems Support to validate network design
 
 ## 100 Gigabit Ethernet Design Considerations
 
-In a 100G network environment, established best practices remain relevant, however close attention to detail becomes critical to achieve expected performance of both single and multi-client deployment strategies.
+In a 100G network environment, established best practices remain relevant, however close attention to detail becomes critical to achieve the expected performance of both single and multi-client deployment strategies.
 Configuration and infrastructure elements that may present minor inconveniences at lower speeds, can result in significant disruptions at 100 gigabytes.
 
 ### Capacity and Bandwidth
@@ -205,7 +205,7 @@ The network should provide low latency and high throughput to ensure efficient d
 ### Network Architecture
 
 The overall network architecture and design play a significant role in supporting 100G networking.
-This includes considerations such as deployment of appropriate routers, switches, and other networking equipment capable of handling high-speed data flows.
+This includes considerations such as deploying appropriate routers, switches, and other networking equipment capable of handling high-speed data flows.
 
 All components, such as optical transceivers, should be compatible.
 Consult your network switch manufacturer's compatibility matrix to confirm.
@@ -214,7 +214,7 @@ Consult your network switch manufacturer's compatibility matrix to confirm.
 
 The increased bandwidth capacity of a 100G network can result in enhanced performance.
 However, implementing Link Aggregation Control Protocol (LACP) on 100G switches, particularly with Multi-Chassis Link Aggregations (MLAGs) and additional layers of abstraction, can introduce added complexity.
-This has the potential to result in performance issues and requiring more meticulous configuration.
+This can result in performance issues and requires more meticulous configuration.
 
 Implementing SMB Multichannel in a 100G environment can contribute to more efficient utilization of the available resources and improved overall performance for file sharing and data access.
 
@@ -231,7 +231,7 @@ The increased bandwidth of 100G networks has the potential to expose performance
 This means that optimization practices, such as record size tuning, can have a significant impact on network performance.
 
 You should ensure that the record size for each dataset is in alignment with its I/O workload.
-To adjust record size in TrueNAS SCALE or CORE, got to Advanced/Other Options on the **Add** or **Edit Dataset** screen.
+To adjust record size in TrueNAS SCALE or CORE, go to Advanced/Other Options on the **Add** or **Edit Dataset** screen.
 
 For a detailed discussion of record size tuning, see [Tuning Recordsize in OpenZFS](https://klarasystems.com/articles/tuning-recordsize-in-openzfs/) from Klara.
 
@@ -239,10 +239,10 @@ For a detailed discussion of record size tuning, see [Tuning Recordsize in OpenZ
 
 ## Performance Testing
 
-After completing initial network configuration, you should obtain performance benchmarks and verify the configuration suits your use case.
+After completing the initial network configuration, you should obtain performance benchmarks and verify the configuration suits your use case.
 
 {{< hint type=tip >}}
-Choose benchmark tests that closely resemble your real world workload.
+Choose benchmark tests that closely resemble your real-world workload.
 Synthetic benchmarks may not give a full understanding of the performance characteristics of your system.
 {{< /hint >}}
 
@@ -277,7 +277,7 @@ See the [fio documentation](https://fio.readthedocs.io/en/latest/index.html) for
 
 ### Network Testing
 
-Use [iperf3](https://software.es.net/iperf/index.html) to test the max bandwith between the TrueNAS system and a client computer.
+Use [iperf3](https://software.es.net/iperf/index.html) to test the max bandwidth between the TrueNAS system and a client computer.
 iperf comes installed in TrueNAS CORE and SCALE.
 Before you begin, check the client computer and install iperf if needed.
 
@@ -321,7 +321,7 @@ iperf Done.
 To establish multiple connections from the client system to the TrueNAS host, use the `-P` (parallel) flag.
 From the client computer, enter {{< cli >}}iperf3 -c *hostname* -p *5201* -P *4*{{< /cli >}}, where *hostname* is the IP address or hostname and domain for the host server, *5201* is the port the server is listening on, and *4* is the number of simultaneous connections to make.
 
-Note that iperf 3 is single threaded, which means that some hosts may be CPU-bound, including 40G and 100G networks.
+Note that iperf 3 is single-threaded, meaning that some hosts may be CPU-bound, including 40G and 100G networks.
 See the [iperf FAQ](https://software.es.net/iperf/faq.html) for more information.
 
 To run parallel streams of iperf3 on multiple cores/ports, first initialize the TrueNAS system on multiple ports:
