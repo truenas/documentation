@@ -23,7 +23,7 @@ To set up a bridge interface, go to **Network**, click **Add** on the **Interfac
 4. Select the interfaces on the **Bridge Members** dropdown list.
 
 5. Click **Add** to the right of **Aliases** to show the IP address fields, and enter the IP address for this bridge interface.
-   Click **Add** again to show an additional IP address fields for each additional IP address you want to add.
+   Click **Add** again to show additional IP address fields for each additional IP address you want to add.
 
    {{< trueimage src="/images/SCALE/Network/AddInterfaceNicDeviceOtherSettingsSCALE.png" alt="Add IP and Subnet Mask" id="Add IP and Subnet Mask" >}}
 
@@ -46,9 +46,9 @@ Occasionally, a misconfigured bridge or a conflict with a running application, V
 Typically, this is because the bridge is configured using an IP address that is already in use.
 If the system does not receive a **Save Changes** check-in before the test times out (default 60 seconds), TrueNAS automatically reverts all unsaved changes.
 
-The following troubleshooting options are available if you are unable to save the new bridge and network changes.
+The following troubleshooting options are available if you cannot save the new bridge and network changes.
 Options are ordered from the least to the most disruptive.
-Try options one and two before proceeding with option three and then four.
+Try options one and two before proceeding with options three and four.
 
   1. Ensure that there are no currently running applications.
   2. Stop any running VMs.
