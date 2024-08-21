@@ -63,21 +63,28 @@ More details are available from [Software Releases]({{< relref "/TrueNASUpgrades
     Applications that support migration display a green check (✅) in both **Added** and **Migrated** columns.
     Check back regularly and note the update history of the [README.md](https://github.com/truenas/apps/blob/master/README.md) file for the latest developments.
 
+    Configuration data for applications that do not automatically migrate is retained in the ixapplications dataset.
     You can re-initiate migration of Kubernetes apps to Docker at any time after upgrading to Electric Eel, for example to migrate an app that was not yet available for automatic migration upon upgrade but is now available.
-    From a shell session enter `midclt call --job k8s_to_docker.migrate POOLNAME`, where *POOLNAME* is the name of the applications pool.
+    From a shell session enter {{< cli >}}midclt call -job k8s_to_docker.migrate *poolname*{{< /cli >}}, where *poolname* is the name of the applications pool.
 
   * The **Custom App** installation screen is disabled in 24.10-BETA.1.
-  A redesigned screen, including Docker Compose support, is projected for the RC.1 version.
+  A redesigned screen, including Docker Compose support, is anticipated for the RC.1 version.
   Users wishing to leverage Docker Compose in BETA can do so using the **Dockge** or **Portainer** apps, available from the [**Community**]({{< relref "/SCALE/SCALETutorials/Apps/CommunityApps/_index.md" >}}) train, or in a [**Sandbox**]({{< relref "Sandboxes.md" >}}).
 
 * Starting in 24.10, TrueNAS does not install a default Nvidia driver.
   This allows for driver updates in between TrueNAS release versions.
   
   A UI selectable option to install/update Nvidia drivers is planned for a future 24.10 development version.
-  Users needing Nvidia GPU support in 24.10.BETA.1 can enable this option from a shell session using the command `midclt call -job docker.update '{"nvidia": true}'`.
+  Users needing Nvidia GPU support in 24.10.BETA.1 can enable this option from a shell session using the command {{< cli >}}midclt call -job docker.update '{"nvidia": true}'{{< /cli >}}.
 
 * Support for the deprecated LDAP **Samba Schema** is removed in 24.10.
   Users with both LDAP and SMB shares configured should migrate legacy Samba domains to Active Directory before upgrading to 24.10.
+
+* Electric Eel introduces redesigns of the UI **Dashboard** and **View Enclosure** screens with numerous improvements to system and enclosure management.
+  24.10-BETA-1 includes both the new and legacy screen versions.
+  Legacy versions are identified as **(old)** in the navigation menu.
+
+  Removal of the legacy **Dashboard** and **View Enclosure** screens is anticipated in the RC.1 release version.
   
 ### Upgrade Paths (Anticipated)
 
@@ -148,7 +155,7 @@ Notable changes:
 
 * Dashboard reworked with more widgets, data reporting, and customization ([NAS-127217](https://ixsystems.atlassian.net/browse/NAS-127217)).
 
-* Applications backend framework is shifted from Kubernetes to Docker ([](https://ixsystems.atlassian.net/browse/)). See the official [announcement](https://forums.truenas.com/t/the-future-of-electric-eel-and-apps/5409) for more information. The **Custom App** installation screen is disabled in 24.10-BETA.1. A redesigned screen, including Docker Compose support, is projected for the RC.1 version. See [Upgrade Notes](#upgrade-notes) for more information.
+* Applications backend framework is shifted from Kubernetes to Docker ([](https://ixsystems.atlassian.net/browse/)). See the official [announcement](https://forums.truenas.com/t/the-future-of-electric-eel-and-apps/5409) for more information. The **Custom App** installation screen is disabled in 24.10-BETA.1. A redesigned screen, including Docker Compose support, is anticipated for the RC.1 version. See [Upgrade Notes](#upgrade-notes) for more information.
   
 * New [TrueCloud Backup Tasks]({{< relref "TrueCloudTasks.md" >}}) with streamlined functionality for Storj iX cloud backups and restoration ([NAS-127165](https://ixsystems.atlassian.net/browse/NAS-127165)).
 
@@ -164,12 +171,11 @@ Notable changes:
 
 * Rewrite TrueNAS installer to better support future development efforts ([NAS-127092](https://ixsystems.atlassian.net/browse/NAS-127092)).
 
-<a href="https://ixsystems.atlassian.net/issues/?filter=######" target="_blank">Click here for the full changelog</a> of completed tickets that are included in the 24.10-BETA.1 release.
+<a href="https://ixsystems.atlassian.net/issues/?filter=10587" target="_blank">Click here for the full changelog</a> of completed tickets that are included in the 24.10-BETA.1 release.
 {{< include file="/static/includes/JiraFilterInstructions.md" >}}
 
 ### 24.04-BETA.1 Known Issues
 
-* ([NAS-130373](https://ixsystems.atlassian.net/browse/NAS-130373)).
+* The **System > Audit** screen can display different values for **Timestamp** in the entries list and **Localtime** in **Event Data**, depending on the local timezone of the system ([NAS-130373](https://ixsystems.atlassian.net/browse/NAS-130373)).
 
-<a href="https://ixsystems.atlassian.net/issues/?filter=######" target="_blank">Click here to see the latest information</a> about public issues discovered in 24.10-BETA.1 that are being resolved in a future TrueNAS SCALE release.
--->
+<a href="https://ixsystems.atlassian.net/issues/?filter=10588" target="_blank">Click here to see the latest information</a> about public issues discovered in 24.10-BETA.1 that are being resolved in a future TrueNAS SCALE release.
