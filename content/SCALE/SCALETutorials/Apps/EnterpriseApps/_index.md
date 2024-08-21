@@ -62,6 +62,8 @@ For more information on configuring general application functions and installati
 
 {{< include file="/static/includes/ProposeArticleChange.md" >}}
 
+For information on adding to or changing the train for the apps catalog, see [Managing App Trains]({{< relref "UsingTrains.md" >}}).
+
 <div class="noprint">
 
 ## Enterprise Apps Contents

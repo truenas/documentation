@@ -1,6 +1,6 @@
 ---
 title: "Apps"
-description: "Expanding TrueNAS SCALE functionality with additional applications."
+description: "Expanding TrueNAS SCALE functionality with applications."
 geekdocCollapseSection: true
 weight: 12
 aliases:
@@ -27,22 +27,10 @@ SCALE applications expand the capabilities of your system by adding third-party 
 ## Getting Started
 All applications added to SCALE are intended to expand system functionality far beyond what is typically expected from a NAS.
 
-You must choose a pool before you can install an application.
-
-SCALE applications are available in three catalogs (trains):
-
-* Enterprise - Apps are simplified and validated for Enterprise users that are maintained by iXsystems for Enterprise users.
-* Chart - Default catalog, maintained by iXsystems for non-Enterprise and community users.
-* Community - Apps proposed and maintained by the community.
-
-Some apps proposed by community members get adopted as official **Chart** applications apps.
-Official apps are vetted by iXsystems based on the features and functionality the provide and how they integrate with the SCALE platform.
-
 Applications are provided "as-is" and can introduce system stability or security issues when installed.
 Make sure the application is required for your specific use requirements and does not violate your security policies before installation.
 
-Some applications deploy as the **root** user for initial configuration before operating as a non-root user.
-Keep these general best practices in mind when using applications with TrueNAS SCALE.
+You must choose a pool before you can install an application.
 
 {{< expand "App Pool Selection" "v" >}}
 
@@ -74,6 +62,8 @@ Keep these general best practices in mind when using applications with TrueNAS S
 
 {{< /expand >}}
 
+For more information on screens and screen functions, refer to the UI Reference article on [Apps Screens]({{ relref "SCALE/SCALEUIReference/Apps/_index.md" }}).
+
 ## Choosing the Application Pool
 You are prompted to [select the pool for apps](#choosing-the-apps-pool) the first time you click on **Apps**.
 You can exit out of this if you are not ready to deploy apps or do not have a pool configured for apps to use for storage.
@@ -98,50 +88,90 @@ For example, create the datasets for the Nextcloud app before installing the app
 {{< trueimage src="/images/SCALE/SystemSettings/SystemSettingsGUISettingsSCALE.png" alt="General System Settings" id="General System Settings" >}}
 
 ### Unsetting the Apps Pool
-To select a different pool for apps to use, click 
+To select a different pool for apps to use, click **Settings > Unset Pool**. This turns off the apps service until you choose another pool for apps to use.
 
-## Adding a Catalog Train
-The TrueNAS **Stable** catalog populates the **Discover** apps screen by default with apps found in the **charts** repository.
-Users can add the **Community** or **Enterprise** train catalogs. <!-- RC1 brings in the enterprise train, leaving this in here for this PR. Will comment it out in the PD-1356 PR>
-To view the catalog settings, select the **Manage Catalogs** at the top of the **Discover** apps screen.
+## Changing App Trains
+SCALE applications are available in three catalogs (trains):
 
-{{< include file="/static/includes/AddEnterpriseTrain.md" >}}**Settings > Unset Pool**. This turns off the apps service until you choose another pool for apps to use.
+* **stable** - Default train of official apps, vetted by iXsystems, chosen because of the features and functionality of the app, and how they integrate with SCALE. 
+* **enterprise** - Default train of apps, simplified and validated for for Enterprise users for Enterprise-licensed systems.
+* **community** - Apps proposed and maintained by the community
+
+The default TrueNAS **Stable** catalog populates the **Discover** apps screen with apps.
+
+Some apps proposed by community members might be adopted as official **stable** train apps.
+Official apps are maintained by iXsystems for non-Enterprise and community users.
+
+{{< trueimage src="/images/SCALE/Apps/AppsTrainSettingsScreen.png" alt="Train Settings Add Enterprise Train" id="Train Settings Add Enterprise Train" >}}
+
+Users can change apps on the **Discover** screen from the **Train Settings** screen.
+Click **Train Settings** on the **Settings** dropdown menu to open the **Train Settings** scree, then select the desired train(s).
+To show only the one train of apps, for example the **enterprise** train, after selecting **enterprise** deselect the **stable** checkbox and click **Save**. 
+
+For more information on trains, see [Managing App Trains]({{< relref "UsingTrains.md" >}}).
+
+Some applications deploy as the **root** user for initial configuration before operating as a non-root user.
+Keep these general best practices in mind when using applications with TrueNAS SCALE.
+
+### Managing Container Images
+While on the **Installed** application screen, click **Settings** > **Manage Container Images** to open the **Manage Container Images** screen.
+
+{{< trueimage src="/images/SCALE/Apps/AppsManageContainerImages.png" alt="Apps Manage Container Images" id="Apps Manage Container Images" >}}
+
+Delete images or add new from this screen.
+
+Click **Pull Image** to download a specific custom image to TrueNAS.
+
+{{< trueimage src="/images/SCALE/Apps/AppsManageContainerImagesPullImage.png" alt="Pull a Container Image" id="Pull a Container Image" >}}
+
+To download a specific image, click the button and enter a valid path and tag to the image.
+Enter the path using the format *registry*/*repository*/*image* to identify the specific image.
+The default **latest** tag downloads the most recent image version.
+
+When downloading a private image, enter user account credentials that allow access to the private registry.
+
+### Upgrading Apps
+Apps display a yellow circle with an exclamation point that indicates an upgrade is available, and the **Installed** application screen banner displays an **Update** or **Update All** button when upgrades are available.
+To upgrade an app to the latest version, click **Update** on the **Application Info** widget or to upgrade multiple apps, click the **Update All** button on the **Installed** applications banner.
+Both buttons only display if TrueNAS SCALE detects an available update for installed applications.
+
+**Update** opens an upgrade window that includes two selectable options, **Images (to be updated)** and **Changelog**.
+Click on the down arrow to see the options available for each.
+
+{{< trueimage src="/images/SCALE/Apps/AppUpdateWindow.png" alt="Update Application Window" id="Update Application Window" >}}
+
+Click **Upgrade** to begin the process. A counter dialog opens showing the upgrade progress.
+When complete, the update badge and buttons disappear and the application **Update** state on the **Installed** screen changes from **Update Available** to **Up to date**.
+
+### Deleting Apps
+To delete an application, click <i class="fa fa-stop" aria-hidden="true"></i> **Stop** on the application row.
+After the app status changes to stopped, click **Delete** on the **Application Info** widget for the selected application to open the **Delete** dialog.
+
+{{< trueimage src="/images/SCALE/Apps/AppsDeleteAppDialog.png" alt="Delete Application Dialog" id="Delete Application Dialog" >}}
+
+Click **Confirm** then **Continue** to delete the application.
 
 ## Installing an Application
-The first time you go to **Apps**, the **Installed** applications screen displays an <i class="fa fa-cog" aria-hidden="true"></i> **Apps Service Not Configured** status on the screen header.
-You must choose the pool apps use before you can install applications.
-
-{{< trueimage src="/images/SCALE/Apps/AppsServiceNotConfigured.png" alt="Apps Service Not Configured" id="Apps Service Not Configured" >}}
-
-After setting the pool, **Apps Service Running** shows at the top of the screen.
+The first time you go to **Apps**, choose the pool apps use before you can install applications.
+Select the pool in the [**Choosing the Application Pool**](#choosing-the-application-pool) for more information.
 
 The **Installed** applications screen displays **Check Available Apps** before you install the first application.
 
 {{< trueimage src="/images/SCALE/Apps/AppsInstalledAppsScreenNoApps.png" alt="Installed Applications Screen No Apps" id="Installed Applications Screen No Apps" >}}
 
-Click **Check Available Apps** or **Discover** to open the **[Discover Apps](#using-the-discover-applications-screen)** screen.
+Click **Check Available Apps** or **Discover Apps** to open the **[Discover](#using-the-discover-applications-screen)** screen.
 
-After installing an application, the **Installed** screen populates the **Applications** table with a row that shows the row shows the current state, the option to stop or start the app, and a badge when an update is available.
-Select an application to view the information widgets for that application.
+Search for the application widget, click on that widget to open the information screen for the app and to access the installation wizard.
 
-The **Application Info** widget provides options to edit or delete the app.
-It shows information about the app and provides access to the **Web Portal** for the application, if applicable.
+{{< include file="/static/includes/AppsSMBErrorWarning.md" >}}
 
-The **Workload** widget provides information on the container and access to the container pod shell and log screens.
-If not deployed these pod options do not show.
-
-{{< trueimage src="/images/SCALE/Apps/InstalledAppsScreenWithApps.png" alt="Installed Applications Screen with Apps" id="Installed Applications Screen with Apps" >}}
-
-Application widgets vary by app, but all include the **Application Info** and **Workloads** widgets. Some include the **History** and **Notes** widgets.
+If the application requires specific datasets, configure these before using the installation wizard.
 
 ### Opening an App Installation Wizard
-While on the **Discover Apps** screen, click on an app widget to open the information screen for that app.
+After clicking on an app widget on the **Discover Apps** screen, the information screen for that app opens.
 From the application information screen, click **Install** to open the installation wizard for the application.
 
 {{< trueimage src="/images/SCALE/Apps/MinIOS3AppInfoScreen.png" alt="Application Information Screen Example" id="Application Information Screen Example" >}}
-
-After installing an application, the **Installed** applications screen opens showing the application in the **Deploying** state.
-It changes to **Running** when the application is ready to use.
 
 The installation wizard configuration sections vary by application, with some including more configuration areas than others.
 Click **Install** to review settings ahead of time to check for required settings.
@@ -159,7 +189,7 @@ When a new version becomes available, an **Upodate** banner shows on the **Insta
 Updating the app changes the version shown on the edit wizard for the application.
 {{< /expand >}}
 
-{{< expand "*Application* Configuration" "v" >}}
+{{< expand "Application Configuration" "v" >}}
 ***Application* Configuration** shows required and optional settings for that app.
 For example, the MinIO app uses  **MinIO Configuration**.
 
@@ -203,118 +233,15 @@ This section can also be named **Resource Limits**.
 In most cases, accept the default settings or change these settings to limit the system resources available to the application.
 {{< /expand >}}
 
-After installing an app, you can modify most settings by clicking on the app row on the **Installed** applications screen, then clicking **Edit** on the **Application Info** widget.
-Make sure you have the right app row selected or you end up accessing the first app listed in the table of deployed apps.
-
-Refer to individual tutorials in the [Chart]({{< relref "/SCALE/SCALETutorials/Apps/ChartApps/_index.md" >}}), [Community]({{< relref "/SCALE/SCALETutorials/Apps/CommunityApps/_index.md" >}}), or [Enterprise]({{< relref "/SCALE/SCALETutorials/Apps/EnterpriseApps/_index.md" >}}) sections of the Documentation Hub for more details on configuring application settings.
-
-<!-- commenting out until the new UI is available to verify how this is handled 
-### Changing Official Application Networking 
-Official applications use the default system-level Kubernetes node IP settings.
-
-You can change the Kubernetes node IP to assign an external interface to your apps, separate from the web UI interface, in **Apps > Settings > Advanced Settings**.
-
-{{< trueimage src="/images/SCALE/Apps/KubernetesSettingsScreenTop.png" alt="Advanced/Kubernetes Settings" id="Advanced/Kubernetes Settings" >}}
-
-We recommend using the default Kubernetes node IP (0.0.0.0) to ensure apps function correctly.
-
-### Managing Container Images
-The **Settings** dropdown includes an option 
-Click **Settings** > **Manage Container Images** to open the **Manage Container Images** screen.
-
-{{< trueimage src="/images/SCALE/Apps/AppsManageContainerImages.png" alt="Apps Manage Container Images" id="Apps Manage Container Images" >}}
-
-Update or delete images from this screen, or click **Pull Image** to download a specific custom image to TrueNAS.
-
-{{< trueimage src="/images/SCALE/Apps/AppsManageContainerImagesPullImage.png" alt="Pull a Container Image" id="Pull a Container Image" >}}
-
-To download a specific image, click the button and enter a valid path and tag to the image.
-Enter the path using the format *registry*/*repository*/*image* to identify the specific image.
-The default **latest** tag downloads the most recent image version.
-
-When downloading a private image, enter user account credentials that allow access to the private registry. -->
-
-### Upgrading Apps
-Apps display a yellow circle with an exclamation point that indicates an upgrade is available, and the **Installed** application screen banner displays an **Update** or **Update All** button when upgrades are available.
-To upgrade an app to the latest version, click **Update** on the **Application Info** widget or to upgrade multiple apps, click the **Update All** button on the **Installed** applications banner.
-Both buttons only display if TrueNAS SCALE detects an available update for installed applications.
-
-**Update** opens an upgrade window that includes two selectable options, **Images (to be updated)** and **Changelog**.
-Click on the down arrow to see the options available for each.
-
-{{< trueimage src="/images/SCALE/Apps/AppUpdateWindow.png" alt="Update Application Window" id="Update Application Window" >}}
-
-Click **Upgrade** to begin the process. A counter dialog opens showing the upgrade progress.
-When complete, the update badge and buttons disappear and the application **Update** state on the **Installed** screen changes from **Update Available** to **Up to date**.
-
-### Deleting Apps
-To delete an application, click <i class="fa fa-stop" aria-hidden="true"></i> **Stop** on the application row.
-After the app status changes to stopped, click **Delete** on the **Application Info** widget for the selected application to open the **Delete** dialog.
-
-{{< trueimage src="/images/SCALE/Apps/AppsDeleteAppDialog.png" alt="Delete Application Dialog" id="Delete Application Dialog" >}}
-
-Click **Confirm** then **Continue** to delete the application.
-
-### Using App Settings
-The **Settings** dropdown list at the top of the **Installed** applications screen provides these options:
-* [**Choose Pool**](#choosing-the-apps-pool) where you set the pool apps uses and create the **ix-applications** dataset.
-* [**Advanced Setting**](#changing-offiical-application-networking) where you can make changes to the Kubernetes node IP setting.
-* [**Unset Pool**](#unsetting-the-apps-pool) where you can unset the apps pool, and if desired, then choose a different pool for apps to use.
-* [**Manage Container Images**](#managing-container-images) where you can manage every container image downloaded to TrueNAS.
-
-## Discover Apps Options
-The **Discover Apps** screen shows application widgets for the official **Stable**, **Community**, and **Enterprise** catalog trains.
-The **Stable** train includes the apps in the **charts** repository.
-Non-Enterprise systems show the **stable** catalog of apps by default.
-The **Stable** catalog train has official applications that are pre-configured and only require a name during deployment.
-
-Enterprise applications display automatically for Enterprise-licensed systems, but community users can add these apps using the **Edit Catalog** screen.
-App trains display based on the **Preferred Trains** settings on the **Edit Catalog** screen.
-
-{{< trueimage src="/images/SCALE/Apps/AppsDiscoverScreen.png" alt="Applications Discover Screen" id="Applications Discover Screen" >}}
-
-Use the **Discover** screen links to access other functions. 
-
-* [**Refresh Charts**](#refreshing-charts) 
-* **Manage Installed Apps** opens the **Installed** application screen.
-<!-- commenting out until RC1 when this screen gets added back to the UI
-The **Custom App** button opens a wizard where you can install unofficial apps or an app not included in a catalog. -->
-
-<!-- **Custom App** opens a wizard where you can configure an unofficial app or one not included in a SCALE catalog. -->
-
-Scroll the screen to scan app widgets or use the search field to find a specific app in the catalogs configured on the system.
-
-Click on an app widget to open the information screen for that application.
-
-{{< include file="/static/includes/AppsSMBErrorWarning.md" >}}
-
-If the application requires specific datasets, configure these before using the installation wizard.
-
-### Refreshing Charts
-To refresh the charts catalog, click **Refresh Charts** on the **Discover** screen.
-Refresh the apps catalog after adding or editing the trains on your system.
-
-### Using the Discover Screen Filters
-To alter how the app widgets show, click the down arrow to the right of **Filters**.
-
-{{< trueimage src="/images/SCALE/Apps/DiscoverAppsScreenFilterOptions.png" alt="Discover Apps Filter Options" id="Discover Apps Filter Options" >}}
-
-To quickly locate an app, begin typing the name in the search field.
-
-To sort app widgets by category, click in **Categories**.
-To select multiple categories, click **Categories** again and select another category from the dropdown.
-
-{{< trueimage src="/images/SCALE/Apps/MinIOS3AppInfoScreen.png" alt="Application Information Screen Example" id="Application Information Screen Example" >}}
-
-After installing an application, the **Installed** applications screen shows the application in the **Deploying** state.
+After installing an application, the **Installed** applications screen opens showing the application in the **Deploying** state.
 It changes to **Running** when the application is ready to use.
 
-{{< include file="/static/includes/AppsInstallWizardSettings.md" >}}
+To modify installed application settings, click on the app row on the **Applications** table on the **Installed** screen, then click **Edit** on the **Application Info** widget.
+Make sure you have the right app row selected or you end up accessing the first app listed in the table of deployed apps.
 
-Refer to individual tutorials in the Community or Enterprise sections of the Documentation Hub for more details on application settings.
-Installation and editing wizards include tooltips to help users configure application settings.
+Refer to individual tutorials in the [Stable]({{< relref "/SCALE/SCALETutorials/Apps/StableApps/_index.md" >}}), [Community]({{< relref "/SCALE/SCALETutorials/Apps/CommunityApps/_index.md" >}}), or [Enterprise]({{< relref "/SCALE/SCALETutorials/Apps/EnterpriseApps/_index.md" >}}) sections of the Documentation Hub for more details on configuring application settings.
 
-## Allocating GPU
+#### Allocating GPU
 Users with compatible hardware can allocate one or more GPU devices to an application for use in hardware acceleration.
 This is an advanced process that could require significant troubleshooting depending on installed GPU device(s) and application-specific criteria.
 
@@ -347,6 +274,47 @@ If installed GPU devices do not populate as available for allocation in **GPU Co
 If the GPU was previously isolated and/or assigned to a VM, a reboot could be required to free it up for app allocation.
 Restart the system then return to the **Resources Configuration** section of the application to see if expected devices are available.
 {{< /expand >}}
+
+## Discover Screen Options
+The **Discover** screen shows application widgets based on the trains selected on the **Train Settings** screen.
+
+Non-Enterprise systems show the **stable** catalog of apps by default.
+These are official applications that are pre-configured and only require a name during deployment.
+
+Enterprise-licensed systems display the **enterprise** train of applications simplified and validated for Enterprise systems.
+Community users can add the **community** and **enterprise** trains on the [**Train Settings**](#changing-app-trains) screen.
+
+{{< trueimage src="/images/SCALE/Apps/AppsDiscoverScreen.png" alt="Applications Discover Screen" id="Applications Discover Screen" >}}
+
+Use the **Discover** screen links to access other functions. 
+
+* [**Refresh Catalog**](#refreshing-the-apps-catalog)
+* **Manage Installed Apps** 
+
+**Manage Installed Apps** opens the **Installed** apps screen where you access the **Settings** menu to manage general application settings.
+
+<!-- commenting out until RC1 when this screen gets added back to the UI
+**Custom App** opens a wizard where you can configure an unofficial app or one not included in a SCALE catalog. -->
+
+### Refreshing the Apps Catalog
+Click **Refresh Catalog** on the **Discover** screen to refresh the apps catalog.
+Refresh the apps catalog after adding or editing the trains on your system.
+
+### Using the Discover Screen Filters
+To change the way app widgets show on the screen, click the down arrow to the right of **Filters**, and select the filter option you want to use.
+
+{{< trueimage src="/images/SCALE/Apps/DiscoverAppsScreenFilterOptions.png" alt="Discover Apps Filter Options" id="Discover Apps Filter Options" >}}
+
+To quickly locate a specific app, begin typing the name in the search field.
+
+To sort app widgets by category, click in **Categories**.
+To select multiple categories, click **Categories** again and select another category from the dropdown.
+
+{{< trueimage src="/images/SCALE/Apps/MinIOS3AppInfoScreen.png" alt="Application Information Screen Example" id="Application Information Screen Example" >}}
+
+After installing an application, the **Installed** applications screen shows the app in the **Deploying** state.
+The status changes to **Running** when the application is fully deployed and ready to use.
+
 <!-- commenting out until the UI includes this in RC1
 ## Installing Custom Applications
 To deploy a custom application, go to **Discover** and click **Custom App** to open the **Install Custom App** screen.
