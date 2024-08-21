@@ -1,6 +1,6 @@
 &NewLine;
 
-Go to **Apps**, click on **Settings** at the top of the **Installed** applications screen and select **Train Settings** to open the **Train Settings** screen.
+Go to **Apps**, click on **Settings** at the top of the **Installed** applications screen, and select **Train Settings** to open the **Train Settings** screen.
 
 You can also access this from the **Discover** screen by clicking on **Manage Installed Apps** at the top of the **Discover** screen to open the **Installed** screen. 
 
