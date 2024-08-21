@@ -6,6 +6,86 @@ weight: 45
 cascade:
   - _target:
     book: "SCALECLIReference"
+aliases:
+ - /scaleclireference/account/
+ - /scaleclireference/account/cliuser/
+ - /scaleclireference/account/cligroup/
+ - /scaleclireference/app/
+ - /scaleclireference/app/clicatalog/
+ - /scaleclireference/app/clichartrelease/
+ - /scaleclireference/app/clicontainer/
+ - /scaleclireference/app/clidocker/
+ - /scaleclireference/app/clikubernetes/
+ - /scaleclireference/auth/
+ - /scaleclireference/auth/cliapikey/
+ - /scaleclireference/auth/cliprivilege/
+ - /scaleclireference/auth/clitwofactor/
+ - /scaleclireference/directory-service/
+ - /scaleclireference/directory-service/cliiactivedirectory/
+ - /scaleclireference/directory-service/cliiidmap/
+ - /scaleclireference/directory-service/clikerberos/
+ - /scaleclireference/directory-service/clildap/
+ - /scaleclireference/filesystem/
+ - /scaleclireference/filesystem/cliacltemplate/
+ - /scaleclireference/network/
+ - /scaleclireference/service/
+ - /scaleclireference/service/clismart/
+ - /scaleclireference/service/clictdb/
+ - /scaleclireference/service/cliftp/
+ - /scaleclireference/service/cligluster/
+ - /scaleclireference/service/cliipmi/
+ - /scaleclireference/service/clinfs/
+ - /scaleclireference/service/clismb/
+ - /scaleclireference/service/clisnmp/
+ - /scaleclireference/service/clissh/
+ - /scaleclireference/service/cliups/
+ - /scaleclireference/service/clivm/
+ - /scaleclireference/sharing/
+ - /scaleclireference/sharing/cliiscsi/
+ - /scaleclireference/sharing/clinfs/
+ - /scaleclireference/sharing/clismb/
+ - /scaleclireference/storage/
+ - /scaleclireference/storage/clidataset/
+ - /scaleclireference/storage/clidisk/
+ - /scaleclireference/storage/clienclosure/
+ - /scaleclireference/storage/clifilesystem-storage/
+ - /scaleclireference/storage/clipool/
+ - /scaleclireference/storage/cliresilver/
+ - /scaleclireference/storage/cliscrub/
+ - /scaleclireference/storage/clisnapshot/
+ - /scaleclireference/storage/clivmware/
+ - /scaleclireference/system/
+ - /scaleclireference/system/cliacme/
+ - /scaleclireference/system/cliadvanced/
+ - /scaleclireference/system/clialert/
+ - /scaleclireference/system/cliboot/
+ - /scaleclireference/system/clibootenv/
+ - /scaleclireference/system/clicertificate/
+ - /scaleclireference/system/cliconfig/
+ - /scaleclireference/system/clicore/
+ - /scaleclireference/system/clidevice/
+ - /scaleclireference/system/clifailover/
+ - /scaleclireference/system/cligeneral/
+ - /scaleclireference/system/cliinitshutdownscript/
+ - /scaleclireference/system/clikeychaincredential/
+ - /scaleclireference/system/clikmip/
+ - /scaleclireference/system/climail/
+ - /scaleclireference/system/clintpserver/
+ - /scaleclireference/system/clireporting/
+ - /scaleclireference/system/clisupport/
+ - /scaleclireference/system/clisystemdataset/
+ - /scaleclireference/system/clitruecommand/
+ - /scaleclireference/system/clitruenas/
+ - /scaleclireference/system/clitunable/
+ - /scaleclireference/system/cliupdate/
+ - /scaleclireference/task/
+ - /scaleclireference/task/cloudsync/
+ - /scaleclireference/task/cloudsync/clicredential/
+ - /scaleclireference/task/clicronjob/
+ - /scaleclireference/task/clireplication/
+ - /scaleclireference/task/clirsync/
+ - /scaleclireference/task/clismarttest/
+ - /scaleclireference/task/clisnapshottask/ 
 ---
 
 {{< include file="/static/includes/CLI/CLIGuideWIP.md" >}}
