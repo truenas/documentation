@@ -6,7 +6,14 @@ pipeline {
     }
 
     parameters {
-        string(name: 'BRANCH_NAME', defaultValue: 'master', description: 'Branch to Build')
+        gitParameter name: 'BRANCH_NAME',
+                     type: 'PT_BRANCH',
+                     defaultValue: 'master',
+                     description: 'Branch to Build',
+                     branchFilter: 'origin/(.*)',
+                     selectedValue: 'DEFAULT',
+                     sortMode: 'DESCENDING_SMART',
+                     useRepository: 'https://github.com/truenas/documentation.git'
         choice(name: 'ENVIRONMENT', choices: ['Dev', 'QA', 'Production'], description: 'Deployment Environment')
         choice(name: 'DEPLOY_PATH', choices: ['root', 'scale', 'core', 'truecommand', 'hardware', 'other'], description: 'Deployment Path')
         string(name: 'CUSTOM_PATH', defaultValue: '', description: 'Custom Path (only if "other" is selected)')
