@@ -22,7 +22,7 @@ You must also configure and activate the [SSH Service]({{< relref "sshservicesca
 
 To begin setting up an SSH connection, go to **Credentials > Backup Credentials**.
 
-{{< trueimage src="/images/SCALE/Credentials/BackupCredentialsAllCloudSSH.png" alt="Backup Credentials Screen" id="Backup Credentials Screen" >}}
+{{< trueimage src="/images/SCALE/Credentials/BackupCredentialsScreen.png" alt="Backup Credentials Screen" id="Backup Credentials Screen" >}}
 
 Click **Add** on the **SSH Connections** widget.
 

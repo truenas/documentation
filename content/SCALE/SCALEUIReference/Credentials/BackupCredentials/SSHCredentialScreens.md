@@ -1,4 +1,4 @@
----
+BackupCredentialsAllCloudSSH---
 title: "SSH Screens"
 description: "Provides information on the SSH Connections and SSH Keypairs screens, widgets, and settings."
 weight: 20
@@ -18,7 +18,7 @@ You must also configure and activate the [SSH Service]({{< relref "sshservicescr
 
 The **SSH Connections** and **SSH Keypairs** widgets display a list of SSH connections and keypairs configured on the system.
 
-{{< trueimage src="/images/SCALE/Credentials/BackupCredentialsAllCloudSSH.png" alt="Backup Credentials Screen" id="Backup Credentials Screen" >}}
+{{< trueimage src="/images/SCALE/Credentials/BackupCredentialsScreen.png" alt="Backup Credentials Screen" id="Backup Credentials Screen" >}}
 
 The **SSH Connections** widget allows users to establish Secure Socket Shell (SSH) connections.
 The **SSH Keypairs** widget allows users to generate SSH keypairs required to authenticate the identity of a user or process that wants to access the system using SSH protocol.
