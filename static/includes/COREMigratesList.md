@@ -28,4 +28,8 @@ These are the items that do not migrate from CORE:
 
 VM storage and its basic configuration transfer over during a migration, but you need to double-check the VM configuration and the network interface settings specifically before starting the VM.
 
+{{< hint type=info title="VM Networking in TrueNAS SCALE" >}}
+{{< include file="static/includes/ABridgeToSellYou.md" >}}
+{{< /hint >}}
+
 Init/shutdown scripts transfer, but can break. Review them before use.
