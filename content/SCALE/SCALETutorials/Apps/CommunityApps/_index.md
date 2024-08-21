@@ -14,7 +14,7 @@ keywords:
 
 The TrueNAS community creates and maintains numerous applications intended to expand system functionality far beyond what is typically expected from a NAS.
 
-The TrueNAS application catalog includes the **stable** train by default.
+By default, the TrueNAS application catalog includes the **stable** train.
 To see community-maintained applications on the **Discover** screen, you must add the train.
 
 To view the community apps, from the **Installed** application screen, click **Settings** and then **Train Settings**.
