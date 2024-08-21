@@ -22,7 +22,7 @@ If you want to access your TrueNAS SCALE directories from a VM, you have multipl
 ## Creating a Bridge: Single Physical Interface
 If your system only has a single physical interface, complete these steps to create a network bridge.
 
-1. Go to **Virtualization**, find the VM you want to use to access TrueNAS storage and toggle it off.
+1. Go to **Virtualization**, find the VM you want to use to access TrueNAS storage, and toggle it off.
 
    {{< trueimage src="/images/SCALE/Virtualization/VirtualMachinesScreenwithVM.png" alt="Virtual Machine Screen" id="Virtual Machine Screen" >}}
 
@@ -48,7 +48,7 @@ If your system only has a single physical interface, complete these steps to cre
 
 6. Edit VM device configuration.
 
-   Go to **Virtualization**, expand the VM you want to use to access TrueNAS storage and click **Devices**.
+   Go to **Virtualization**, expand the VM you want to use to access TrueNAS storage, and click **Devices**.
    Click <i class="material-icons" aria-hidden="true" title="System Update">more_vert</i> in the **NIC** row and select **Edit**.
    Select the new bridge interface from the **NIC to Attach** dropdown list, then click **Save**.
 
@@ -65,7 +65,7 @@ If you are creating a new VM, use the **Attach NIC** dropdown menu under **Netwo
 
 To edit the NIC attached to an existing VM:
 
-1. Go to **Virtualization**, expand the VM you want to use to access TrueNAS storage and click **Devices**.
+1. Go to **Virtualization**, expand the VM you want to use to access TrueNAS storage, and click **Devices**.
 
    {{< trueimage src="/images/SCALE/Virtualization/VMDevicesListed.png" alt="Virtual Machine Devices" id="Virtual Machine Devices" >}}
 
