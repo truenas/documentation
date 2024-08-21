@@ -80,22 +80,22 @@ If this process fails, retry using the iso file method above.
 
 4. Click **INSTALL MANUAL UPDATE FILE**.
 
-   ![SCALEManualSidegrade](/images/SCALE/SystemSettings/SidegradeInstallManualUpdate.png "Install the Manual Upgrade")
+   {{< trueimage src="/images/SCALE/SystemSettings/SidegradeInstallManualUpdate.png" alt="Install the Manual Upgrade" id="Install the Manual Upgrade" >}}
 
 5. Click **SAVE CONFIGURATION** to download a backup file that can restore the system configuration in the event something goes wrong with the migration.
 
-   ![SCALEConfigSidegrade](/images/SCALE/SystemSettings/SidegradeSaveConfig.png "Save the Config file")
+   {{< trueimage src="/images/SCALE/SystemSettings/SidegradeSaveConfig.png" alt="Save the Config file" id="Save the Config file" >}}
 
 6. Select a **Temporary Storage Location** (either **Memory Device** or a **Pool**) for the manual update file.
    Click **Choose File** and select the <file>TrueNAS-SCALE.update</file> file you downloaded.
 
-   ![SCALEFileSidegrade](/images/SCALE/SystemSettings/SidegradeSetInstallFile.png "Settings for the Manual Upgrade")
+   {{< trueimage src="/images/SCALE/SystemSettings/SidegradeSetInstallFile.png" alt="Settings for the Manual Upgrade" id="Settings for the Manual Upgrade" >}}
 
    Then click **APPLY UPDATE**.
 
 7. After the update completes, reboot the system if it does not reboot automatically.
 
-   ![SCALESidegradeReboot](/images/SCALE/SystemSettings/SidegradeRestart.png  "Reboot to Finish")
+   {{< trueimage src="/images/SCALE/SystemSettings/SidegradeRestart.png" alt="Reboot to Finish" id="Reboot to Finish" >}}
 
 After TrueNAS SCALE reboots, you might need to [use the Shell to configure the primary networking interfaces]({{< relref "ConsoleSetupMenuScale.md" >}}) to enable GUI accessibility.
 
@@ -106,7 +106,7 @@ This migrates your CORE settings, imports your pools, shares, etc. into SCALE.
 The system reboots to apply the uploaded configuration.
 
 After TrueNAS SCALE reboots, sign in with the root user credentials used in CORE.
-Uploading the CORE config file deletes the **truenas_admin** user account created during a clean install and therefore requires you to [recreate it](#recreating-the-admin-user-account).
+Uploading the CORE config file deletes the **truenas_admin** user account created during a clean install and therefore requires you to [recreate an administrative user](#recreating-the-admin-user-account).
 
 After uploading the config file, review each area of the UI previously configured in CORE to validate pools imported and settings migrated correctly. Begin with your network settings.
 
