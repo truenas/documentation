@@ -79,7 +79,7 @@ For more information on when to use an alias or a static IP address, see [Managi
 
 ## Setting Up Storage
 TrueNAS SCALE requires at least one storage pool.
-We recommend you create the required pool and then plan the rest of your storage needs before adding sharing, container applications, virtual machines, or data storage.
+We recommend you create the required pool and plan the rest of your storage needs before adding sharing, container applications, virtual machines, or data storage.
 When planning your data storage, consider the type of data sharing you want to do, any container applications you might want to deploy, and how you want to organize stored data.
 
 The storage creation process begins with creating a pool, then adding datasets or zvols as needed.
