@@ -54,7 +54,7 @@ After logging in to the TrueNAS SCALE UI, use a system configuration file to res
 This method is only available for non-Enterprise community systems.
 
 1. Go to **System > Update**
- 
+
 2. From the **Train** dropdown, choose the latest stable TrueNAS SCALE release, 24.04 (Dragonfish) or newer.
 
 3. Review the SCALE migrations warning and verify the system is ready to migrate before confirming and continuing.
@@ -69,7 +69,7 @@ Some CORE 13.0 releases can migrate using the CORE UI **Upgrade** function using
 To use this method, you must upgrade to the latest maintenance release.
 
 Earlier releases of CORE must upgrade to 13.0 and then the latest maintenance release U6.2 to use this method.
-For community users, 13.3 and the latest public release is acceptible.
+For community users, 13.3 and the latest public release is acceptable.
 If this process fails, retry using the iso file method above.
 
 1. Confirm that the TrueNAS CORE system is on the latest public release, 13.0-U6.2 (community users could have 13.3-RELEASE or newer installed).
@@ -97,13 +97,16 @@ If this process fails, retry using the iso file method above.
 
    ![SCALESidegradeReboot](/images/SCALE/SystemSettings/SidegradeRestart.png  "Reboot to Finish")
 
+After TrueNAS SCALE reboots, you might need to [use the Shell to configure the primary networking interfaces]({{< relref "ConsoleSetupMenuScale.md" >}}) to enable GUI accessibility.
+
+After gaining access to the UI, sign in with the admin user credentials created during installation.
+
+Go to **System > General** and [upload the system config file](/scale/scaletutorials/systemsettings/general/managesysconfigscale/#uploading-the-file).
+This migrates your CORE settings, imports your pools, shares, etc. into SCALE.
+The system reboots to apply the uploaded configuration.
+
 After TrueNAS SCALE reboots, sign in with the root user credentials used in CORE.
 Uploading the CORE config file deletes the **truenas_admin** user account created during a clean install and therefore requires you to [recreate it](#recreating-the-admin-user-account).
-
-After gaining access to the UI, you might need to [use the Shell to configure the primary networking interfaces]({{< relref "ConsoleSetupMenuScale.md" >}}) to enable GUI accessibility.
-
-After booting and gaining access to the UI, go to **System > General** and [upload the system config file](/scale/scaletutorials/systemsettings/general/managesysconfigscale/#uploading-the-file).
-This migrates your CORE settings, imports your pools, shares, etc. into SCALE.
 
 After uploading the config file, review each area of the UI previously configured in CORE to validate pools imported and settings migrated correctly. Begin with your network settings.
 
