@@ -66,7 +66,7 @@ DHCP is available for only a single interface; any other physical interfaces mus
 You can also configure virtual network interfaces such as a [bridge]({{< relref "SettingUpBridge.md" >}}), link aggregate (LAGG), or virtual LAN (VLAN) interface.
 
 You can use the Console Setup menu or SCALE UI to configure network interfaces.
-We recommend using the web UI the **Network** screen to [add or change network interfaces or aliases]({{< relref "ManagingInterfaces.md" >}}), set up link aggregate [LAGG]({{< relref "SettingUpLAGG.md" >}}) or virtual LAN [VLAN]({{< relref "SettingUpVLAN.md" >}}) interfaces, change or [configure global network settings]({{< relref "ManagingGlobalConfig.md" >}}), or set up [static IP addresses]({{< relref "SettingUpStaticIPs.md" >}}).
+We recommend using the web UI the **Network** screen to [add or change network interfaces or aliases]({{< relref "/SCALE/SCALETutorials/Network/Interfaces/_index.md" >}}), set up link aggregate [LAGG]({{< relref "SettingUpLAGG.md" >}}) or virtual LAN [VLAN]({{< relref "SettingUpVLAN.md" >}}) interfaces, change or [configure global network settings]({{< relref "ManagingGlobalConfig.md" >}}), or set up [static IP addresses]({{< relref "SettingUpStaticIPs.md" >}}).
 
 ### Adding Aliases or Static IP Addresses
 Static IP addresses and aliases provide support for various network applications.
@@ -75,11 +75,11 @@ SCALE Enterprise HA systems use a virtual IP (VIP) to maintain access to the UI 
 This VIP address might experience a minor blip at failover, but you do not need to log in with the standby controller IP address to gain access to the UI after a failover.
 {{< /enterprise >}}
 You can configure a network interface with a static IP or add an alias IP address on the same screen in the SCALE UI.
-For more information on when to use an alias or a static IP address, see [Managing Interfaces]({{< relref "ManagingInterfaces.md" >}}).
+For more information on when to use an alias or a static IP address, see [Managing Interfaces]({{< relref "/SCALE/SCALETutorials/Network/Interfaces/_index.md" >}}).
 
 ## Setting Up Storage
 TrueNAS SCALE requires at least one storage pool.
-We recommend you create the required pool and then plan the rest of your storage needs before adding sharing, container applications, virtual machines, or data storage.
+We recommend you create the required pool and plan the rest of your storage needs before adding sharing, container applications, virtual machines, or data storage.
 When planning your data storage, consider the type of data sharing you want to do, any container applications you might want to deploy, and how you want to organize stored data.
 
 The storage creation process begins with creating a pool, then adding datasets or zvols as needed.
