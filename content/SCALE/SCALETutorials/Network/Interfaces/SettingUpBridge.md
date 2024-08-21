@@ -18,8 +18,8 @@ Refer to the FAQ section that covers bridging topics more generally.
 Network bridging does not inherently aggregate bandwidth like [link aggregation (LAGG)]({{< relref "settinguplagg.md" >}}).
 Bridging is often used for scenarios that require extending a network segment or combining different types of network traffic.
 
-Bridging can be used to integrate different types of networks (e.g., wireless and wired networks) or to segment traffic within the same network.
-A bridge can also be used to allow a VM configured on TrueNAS to communicate with the host system.
+You can use bridging to integrate different types of networks (e.g., wireless and wired networks) or to segment traffic within the same network.
+You can also use a bridge to allow a VM configured on TrueNAS to communicate with the host system.
 See [Accessing NAS From a VM]({{< relref "accessingnasfromvm.md" >}}) for more information.
 
 {{< include file="/static/includes/BeforeYouBridge.md" >}}
