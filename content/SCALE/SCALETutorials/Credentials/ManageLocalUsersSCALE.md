@@ -15,8 +15,6 @@ In TrueNAS, user accounts allow flexibility for accessing shared data.
 Typically, administrators create users and assign them to [groups]({{< relref "ManageLocalGroups.md" >}}).
 Doing so makes tuning permissions for large numbers of users more efficient.
 
-{{< include file="/static/includes/RootToAdminUserAccount.md" >}}
-
 When the network uses a directory service, import the existing account information using the instructions in [Directory Services]({{< relref "/SCALE/SCALEUIReference/Credentials/DirectoryServices/_index.md" >}}).
 
 Using [Active Directory]({{< relref "/SCALE/SCALEUIReference/Credentials/DirectoryServices/_index.md" >}}) requires setting Windows user passwords in Windows.
@@ -32,6 +30,15 @@ TrueNAS hides all built-in users (except root) by default. Click the toggle **Sh
 ## Creating an Administrator User Account
 
 {{< include file="/static/includes/AddAdminUserAccount.md" >}}
+
+### Assigning Administrative Group Privileges
+
+SCALE 24.04 or new supports administrator privileges for role-based administrator accounts.
+Users can create new administrator accounts with limited privileges based on their needs.
+Predefined administrator roles are read only, share admin, and the default full access local administrator account.
+See [Using Administrator Logins]({{< relref "adminroles.md" >}}) for more information.
+
+{{< include file="/static/includes/AddAdminGroup.md" >}}
 
 ## Creating User Accounts
 
@@ -107,7 +114,7 @@ Do *not* paste the private key.
 
 Always keep a backup of an SSH public key if you are using one.
 
-As of SCALE 24.04, the **Shell** setting defaults to **nologin** for users assigned to the **trueNAS_readonly_administrators** and **truenas_sharing_administrator** groups which means they cannot access the **Shell** screen.
+As of SCALE 24.04, the **Shell** setting defaults to **nologin** for read only and sharing administrators, which means they cannot access the **Shell** screen.
 
 Select the [shell]({{< relref "LocalUsersScreensSCALE.md" >}}) option for the admin user from the **Shell** dropdown list.
 Options are **nologin**, **TrueNAS CLI**, **TrueNAS Console**, **sh**, **bash**, **rbash**, **dash**, **tmux**, and **zsh**.
