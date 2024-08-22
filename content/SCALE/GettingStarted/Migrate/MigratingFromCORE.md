@@ -49,14 +49,30 @@ Follow the instructions in the [Install]({{< relref "InstallingSCALE.md" >}}) ar
 When TrueNAS SCALE boots, you might need to [use the Shell to configure networking interfaces]({{< relref "ConsoleSetupMenuScale.md" >}}) to enable GUI accessibility.
 After logging in to the TrueNAS SCALE UI, use a system configuration file to restore the system settings to the SCALE installation and import the data storage pools.
 
+### Select SCALE Update Train
+
+This method is only available for non-Enterprise community systems.
+
+1. Go to **System > Update**
+ 
+2. From the **Train** dropdown, choose the latest stable TrueNAS SCALE release, 24.04 (Dragonfish) or newer.
+
+3. Review the SCALE migrations warning and verify the system is ready to migrate before confirming and continuing.
+
+4. When the latest update for that chosen TrueNAS release is loaded, click Apply Pending Update or Download Updates to begin the update process documented in [Updating SCALE]({{< relref "UpdateSCALE.md#performing-an-automatic-update" >}}).
+   It is strongly recommended to download the system configuration backup prior to starting the update.
+
+5. After the system installs the update and reboots, log in and review the system configuration to ensure the migration was successful.
+
 ### Manual Update
 Some CORE 13.0 releases can migrate using the CORE UI **Upgrade** function using a SCALE update file downloaded from the website.
 To use this method, you must upgrade to the latest maintenance release.
 
-Earlier releases of CORE must upgrade to 13.0 and then the latest maintenance release U6.1 to use this method. 
+Earlier releases of CORE must upgrade to 13.0 and then the latest maintenance release U6.2 to use this method.
+For community users, 13.3 and the latest public release is acceptible.
 If this process fails, retry using the iso file method above.
 
-1. Confirm that the TrueNAS CORE system is on the latest public release, 13.0-U6.1 or newer.
+1. Confirm that the TrueNAS CORE system is on the latest public release, 13.0-U6.2 (community users could have 13.3-RELEASE or newer installed).
 
 2. Download the [SCALE manual update file](https://www.truenas.com/download-truenas-scale/).
 
@@ -82,7 +98,7 @@ If this process fails, retry using the iso file method above.
    ![SCALESidegradeReboot](/images/SCALE/SystemSettings/SidegradeRestart.png  "Reboot to Finish")
 
 After TrueNAS SCALE reboots, sign in with the root user credentials used in CORE.
-Uploading the CORE config file deletes the admin user account created during a clean install and therefore requires you to [recreate it](#recreating-the-admin-user-account).
+Uploading the CORE config file deletes the **truenas_admin** user account created during a clean install and therefore requires you to [recreate it](#recreating-the-admin-user-account).
 
 After gaining access to the UI, you might need to [use the Shell to configure the primary networking interfaces]({{< relref "ConsoleSetupMenuScale.md" >}}) to enable GUI accessibility.
 

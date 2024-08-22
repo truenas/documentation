@@ -27,7 +27,7 @@ While browsing, switch to a different version of the same product to see the cor
     <img src="/images/Software_Status_Icon_2.png" alt="Engineering Icon" title="Development Preview" style="padding-right: .75rem; max-width: 45px; max-height: 45px; align-self: flex-start;">
     <h3 style="margin: 0;">Development Preview</h3>
   </div>
-  <p>To stay up to date with the most recent developments, including anticipated features and improvements, click <strong>Next</strong> on the cards above.<br>
+  <p>To stay up to date with the most recent developments, including anticipated features and improvements, choose a <strong>Nighly</strong> option from the <strong>Version</strong> dropdown.<br>
   See <a href="/truenasupgrades/">Software Releases</a> to download releases or view upgrade paths, release schedules, and development timelines.</p>
 </div>
 
@@ -36,6 +36,9 @@ While browsing, switch to a different version of the same product to see the cor
     <i class="fas fa-archive fa-lg" style="color: #0095d5; padding-right: .75rem; max-width: 45px; max-height: 45px; align-self: flex-start;" title="Historical Documentation" aria-label="Archive Icon"></i>
     <h3 style="margin: 0;">Historical Documentation</h3>
   </div>
+  <p>iXsystems employees maintain this documentation and provide regular updates for current and in development (future) versions of TrueNAS software.
+  For documentation purposes, current and future releases are those recommended by the TrueNAS <a href="https://www.truenas.com/software-status/">Software Status page</a> for one or more user type.</p>
+  <p>Documentation for previous releases, that are no longer recommended for any user type, is archived and unmaintained.</p>
   <p>To view documentation for past versions of TrueNAS software products, visit the <a href="/archive/">Documentation Archive</a>.</p>
 </div>
 

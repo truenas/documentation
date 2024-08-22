@@ -12,7 +12,7 @@ The **Data Protection** screen allows users to set up multiple redundant tasks t
 
 Scrub tasks and S.M.A.R.T. (Self-Monitoring, Analysis and Reporting Technology) tests can provide early disk failure alerts by identifying data integrity problems and detecting various indicators of drive reliability.
 
-Cloud sync, periodic snapshot, rsync, and replication tasks provide backup storage for data and allow users to revert the system to a previous configuration or point in time.
+TrueCloud Backup, Cloud sync, periodic snapshot, rsync, and replication tasks provide backup storage for data and allow users to revert the system to a previous configuration or point in time.
 
 <div class="noprint">
 

@@ -1,7 +1,7 @@
 ---
 title: "Community Apps"
-description: "Notes about community applications and individual tutorials for applications."
-weight: 15
+description: "Notes about community-maintained applications and individual tutorials for those applications."
+weight: 30
 tags:
 - apps
 related: false
@@ -11,18 +11,27 @@ keywords:
 ---
 
 
+
 The TrueNAS community creates and maintains numerous applications intended to expand system functionality far beyond what is typically expected from a NAS.
 
-The TrueNAS catalog is loaded by default and is used to populate the **Discover** apps screen.
-To view the catalog settings, select the **Manage Catalogs** at the top of the **Discover** apps screen.
+By default, the TrueNAS application catalog includes the **stable** train.
+To see community-maintained applications on the **Discover** screen, you must add the train.
+
+To view the community apps, from the **Installed** application screen, click **Settings** and then **Train Settings**.
+Select the **community** checkbox on the **Train Settings** screen and click **Save**.
+Go to the **Discover** screen and click **Refresh Catalog**, to the right of the search field.
+
+For more information on adding to or changing the train for the apps catalog, see [Managing App Trains]({{< relref "UsingTrains.md" >}}).
 
 Applications are provided "as-is" and can introduce system stability or security issues when installed.
-Some applications deploy as the **root** user for initial configuration before operating as a non-root user.
+
+Some applications deploy as the **root** user for initial configuration before changing to operate as a non-root user.
 Make sure the application is required for your specific use requirements and does not violate your security policies before installation.
 
-The remaining tutorials in this section are for specific applications that are commonly used or replace some functionality that was previously built-in with TrueNAS.
+The tutorials in this section are for commonly used community-maintained applications.
+Some apps in this section replace deprecated services or functionality previously built into TrueNAS SCALE.
 
-{{< include file="/static/includes/AppsUnversioned.md" >}}
+{{< include file="/static/includes/ProposeArticleChange.md" >}}
 
 <div class="noprint">
 

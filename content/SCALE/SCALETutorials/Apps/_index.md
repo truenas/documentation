@@ -1,6 +1,6 @@
 ---
 title: "Apps"
-description: "Expanding TrueNAS SCALE functionality with additional applications."
+description: "Expanding TrueNAS SCALE functionality with applications."
 geekdocCollapseSection: true
 weight: 12
 aliases:
@@ -15,77 +15,112 @@ keywords:
 - software storage solutions
 ---
 
-We welcome community contributions to keep our documentation current!
-Click **Edit Page** in the top right corner to propose changes to an article.
-See [Updating Content](https://www.truenas.com/docs/contributing/documentation/contentupdate/) for more information.
 
 TrueNAS applications allow for quick and easy integration of third-party software and TrueNAS SCALE.
-Applications are available from official, Enterprise, and community maintained trains.
 
-## Installed Applications Screen
+{{< include file="/static/includes/ProposeArticleChange.md" >}}
 
-The first time you go to **Apps**, the **Installed** applications screen displays an <i class="fa fa-cog" aria-hidden="true"></i> **Apps Service Not Configured** status on the screen header.
+TrueNAS is certified with leading hypervisors and backup solutions to streamline storage operations and ensure compatibility with your existing IT infrastructure.
+TrueNAS SCALE delivers a wide range of features and scalability for virtualization and private cloud environments, with the ability to create off-site backups with scheduled sync and replication features.
+SCALE applications expand the capabilities of your system by adding third-party software, but they can add significant risk to system stability and security.
 
-{{< trueimage src="/images/SCALE/Apps/AppsServiceNotConfigured.png" alt="Apps Service Not Configured" id="Apps Service Not Configured" >}}
+## Getting Started
+All applications added to SCALE are intended to expand system functionality far beyond what is typically expected from a NAS.
 
-After setting the pool apps use, the header changes to show **Apps Service Running**.
+Applications are provided "as-is" and can introduce system stability or security issues when installed.
+Make sure the application is required for your specific use requirements and does not violate your security policies before installation.
 
-The **Installed** applications screen displays **Check Available Apps** before you install the first application.
+You must choose a pool before you can install an application.
 
-{{< trueimage src="/images/SCALE/Apps/AppsInstalledAppsScreenNoApps.png" alt="Installed Applications Screen No Apps" id="Installed Applications Screen No Apps" >}}
+{{< expand "App Pool Selection" "v" >}}
 
-Click **Check Available Apps** or **Discover Apps** to open the **[Discover](#using-the-discover-applications-screen)** screen to see application widgets available in the official TRUENAS catalog.
+{{< include file="/static/includes/AppsPoolOrDataset.md" >}}
 
-After installing an application, the **Installed** screen populates the **Applications** area with a list of installed apps.
-Click on an application row to view the information widgets for that app.
-Options allow editing the application settings, opening container pod shell or logs, and accessing the **Web Portal** for the application, if applicable.
+{{< /expand >}}
 
-{{< trueimage src="/images/SCALE/Apps/InstalledAppsScreenWithApps.png" alt="Installed Applications Screen with Apps" id="Installed Applications Screen with Apps" >}}
+{{< expand "App Dataset and File Sharing" "v" >}}
 
-Application widgets vary by app, but all include the **Application Info** and **Workloads** widgets.
-Some include the **History** and **Notes** widgets.
+{{< include file="/static/includes/AppsFileSharing.md" >}}
 
-### Setting the Apps Pool
-You must choose the pool apps use before you can add applications.
-The first time you go to the **Applications** screen, click **Settings > Choose Pool** to select a storage pool for apps.
-This adds the **ix-applications** dataset to the pool.
-The **ix-applications** dataset stores all container-related data, and is for internal use only.
+{{< /expand >}}
 
-{{< trueimage src="/images/SCALE/Apps/AppsSettingsChoosePool.png" alt="Choosing a Pool for Apps" id="Choosing a Pool for Apps" >}}
+{{< expand "Docker Compose Settings" "v" >}}
+
+{{< include file="/static/includes/AppsDockerCompose.md" >}}
+
+{{< /expand >}}
+
+{{< expand "Custom Apps" "v" >}}
+
+{{< include file="/static/includes/AppsCustomApp.md" >}}
+
+{{< /expand >}}
+
+{{< expand "App Directory Services" "v" >}}
+
+{{< include file="/static/includes/AppsDirectoryService.md" >}}
+
+{{< /expand >}}
+
+For more information on screens and screen functions, refer to the UI Reference article on [Apps Screens]({{ relref "SCALE/SCALEUIReference/Apps/_index.md" }}).
+
+## Choosing the Application Pool
+You are prompted to [select the pool for apps](#choosing-the-apps-pool) the first time you click on **Apps**.
+You can exit out of this if you are not ready to deploy apps or do not have a pool configured for apps to use for storage.
+You must set the pool before you can add any application. 
 
 We recommend keeping the application use case in mind when choosing a pool.
 Select a pool with enough space for all the applications you intend to use.
 For stability, we also recommend using SSD storage for the applications pool.
 
-Set up a new dataset before installing your applications if you want to store your application data in a location separate from other storage on your system.
-For example, create the datasets for the Nextcloud application, and, if installing Plex, create the dataset(s) for Plex data storage needs.
+Select the pool and click **Save**. If you close the dialog to set the pool later, click **Settings > Choose Pool** to set the pool.
+
+{{< trueimage src="/images/SCALE/Apps/AppsSettingsChoosePool.png" alt="Choosing a Pool for Apps" id="Choosing a Pool for Apps" >}}
+
+TrueNAS creates an **ix-applications** dataset on the chosen pool and uses it to store all container-related data.
+The dataset is for internal use only.
+
+If you want to set up new datasets to store your application data in a location separate from other storage on your system, create the datasets before installing the application.
+For example, create the datasets for the Nextcloud app before installing the app.
 
 {{< include file="/static/includes/AppsVMsNoHTTPS.md" >}}
 
 {{< trueimage src="/images/SCALE/SystemSettings/SystemSettingsGUISettingsSCALE.png" alt="General System Settings" id="General System Settings" >}}
 
-After configuring a storage pool for your apps, the status changes to <span class="iconify" data-icon="mdi:check-circle" color=#71BF44></span> **Apps Service Running**.
-
 ### Unsetting the Apps Pool
-To select a different pool for apps to use, click **Settings > Unset Pool**.
-This turns off the apps service until you choose another pool.
+To select a different pool for apps to use, click **Settings > Unset Pool**. This turns off the apps service until you choose another pool for apps to use.
 
-### Changing Official Application Networking
-Official applications use the default system-level Kubernetes node IP settings.
+## Changing App Trains
+SCALE applications are available in three catalogs (trains):
 
-You can change the Kubernetes node IP to assign an external interface to your apps, separate from the web UI interface, in **Apps > Settings > Advanced Settings**.
+* **stable** - Default train of official apps, vetted by iXsystems, chosen because of the features and functionality of the app, and how they integrate with SCALE. 
+* **enterprise** - Default train of apps, simplified and validated for for Enterprise users for Enterprise-licensed systems.
+* **community** - Apps proposed and maintained by the community
 
-{{< trueimage src="/images/SCALE/Apps/KubernetesSettingsScreenTop.png" alt="Advanced/Kubernetes Settings" id="Advanced/Kubernetes Settings" >}}
+The default TrueNAS **Stable** catalog populates the **Discover** apps screen with apps.
 
-We recommend using the default Kubernetes node IP (0.0.0.0) to ensure apps function correctly.
+Some apps proposed by community members might be adopted as official **stable** train apps.
+Official apps are maintained by iXsystems for non-Enterprise and community users.
+
+{{< trueimage src="/images/SCALE/Apps/AppsTrainSettingsScreen.png" alt="Train Settings Add Enterprise Train" id="Train Settings Add Enterprise Train" >}}
+
+Users can change apps on the **Discover** screen from the **Train Settings** screen.
+Click **Train Settings** on the **Settings** dropdown menu to open the **Train Settings** scree, then select the desired train(s).
+To show only the one train of apps, for example the **enterprise** train, after selecting **enterprise** deselect the **stable** checkbox and click **Save**. 
+
+For more information on trains, see [Managing App Trains]({{< relref "UsingTrains.md" >}}).
+
+Some applications deploy as the **root** user for initial configuration before operating as a non-root user.
+Keep these general best practices in mind when using applications with TrueNAS SCALE.
 
 ### Managing Container Images
-The **Settings** dropdown includes an option 
-Click **Settings** > **Manage Container Images** to open the **Manage Container Images** screen.
+While on the **Installed** application screen, click **Settings** > **Manage Container Images** to open the **Manage Container Images** screen.
 
 {{< trueimage src="/images/SCALE/Apps/AppsManageContainerImages.png" alt="Apps Manage Container Images" id="Apps Manage Container Images" >}}
 
-Update or delete images from this screen, or click **Pull Image** to download a specific custom image to TrueNAS.
+Delete images or add new from this screen.
+
+Click **Pull Image** to download a specific custom image to TrueNAS.
 
 {{< trueimage src="/images/SCALE/Apps/AppsManageContainerImagesPullImage.png" alt="Pull a Container Image" id="Pull a Container Image" >}}
 
@@ -116,59 +151,27 @@ After the app status changes to stopped, click **Delete** on the **Application I
 
 Click **Confirm** then **Continue** to delete the application.
 
-### Using App Settings
+## Installing an Application
+The first time you go to **Apps**, choose the pool apps use before you can install applications.
+Select the pool in the [**Choosing the Application Pool**](#choosing-the-application-pool) for more information.
 
-The **Settings** dropdown list at the top of the **Installed** applications screen provides these options:
-* [**Choose Pool**](#choosing-the-apps-pool) where you set the pool apps uses and create the **ix-applications** dataset.
-* [**Advanced Setting**](#changing-offiical-application-networking) where you can make changes to the Kubernetes node IP setting.
-* [**Unset Pool**](#unsetting-the-apps-pool) where you can unset the apps pool, and if desired, then choose a different pool for apps to use.
-* [**Manage Container Images**](#managing-container-images) where you can manage every container image downloaded to TrueNAS.
+The **Installed** applications screen displays **Check Available Apps** before you install the first application.
 
-## Discover Applications Screen
-The **Discover** screen displays **New & Updated Apps** application widgets for the official TRUENAS catalog **Chart**, **Community**, and **Enterprise** trains.
-Non-Enterprise systems show the **Chart** catalog of apps by default.
-The **Chart** catalog train has official applications that are pre-configured and only require a name during deployment.
+{{< trueimage src="/images/SCALE/Apps/AppsInstalledAppsScreenNoApps.png" alt="Installed Applications Screen No Apps" id="Installed Applications Screen No Apps" >}}
 
-Enterprise applications display automatically for Enterprise=licensed systems, but community users can add these apps using the **Manage Catalogs** screen.
-App trains display based on the **Trains** settings on the **Edit Catalog** screen.
+Click **Check Available Apps** or **Discover Apps** to open the **[Discover](#using-the-discover-applications-screen)** screen.
 
-See [Using SCALE Catalogs]({{< relref "usingcatalogs.md" >}}) for more information on managing catalogs.
+Search for the application widget, click on that widget to open the information screen for the app and to access the installation wizard.
 
-{{< trueimage src="/images/SCALE/Apps/AppsDiscoverScreen.png" alt="Applications Discover Screen" id="Applications Discover Screen" >}}
+{{< include file="/static/includes/AppsSMBErrorWarning.md" >}}
 
-The **Discover** screen includes three links: 
+If the application requires specific datasets, configure these before using the installation wizard.
 
-* [**Refresh Charts**](#refreshing-charts) 
-* **Manage Installed Apps** opens the **Installed** application screen.
-* [**Manage Catalogs**]({{< relref "UsingCatalogs.md" >}})
-
-The **Custom App** button opens a wizard where you can install unofficial apps or an app not included in a catalog.
-
-Browse the widgets or use the search field to find an available application.
-Click on an application widget to go to the application information screen.
-
-### Refreshing Charts
-You can refresh the charts catalog by clicking **Refresh Charts** on the **Discover** screen.
-You can also refresh all catalogs from the **Catalogs** screen. Click **Manage Catalogs**, then click **Refresh All**.
-Refresh the catalog after adding or editing the catalogs on your system.
-
-### Using the Discover Screen Filters
-To filter the app widgets shown, click the down arrow to the right of **Filters**.
-
-{{< trueimage src="/images/SCALE/Apps/DiscoverAppsScreenFilterOptions.png" alt="Discover Apps Filter Options" id="Discover Apps Filter Options" >}}
-
-You can filter by catalog, app category, name, catalog name, and date last updated.
-Click on the option then begin typing the name of the app into the search field to narrow the widgets to fit the filter criteria.
-Click in **Categories** to select apps based on the selection you make.
-Click in the field again to add another category from the dropdown list to select multiple categories.
-
-## Installing Official Applications
+### Opening an App Installation Wizard
+After clicking on an app widget on the **Discover Apps** screen, the information screen for that app opens.
 From the application information screen, click **Install** to open the installation wizard for the application.
 
 {{< trueimage src="/images/SCALE/Apps/MinIOS3AppInfoScreen.png" alt="Application Information Screen Example" id="Application Information Screen Example" >}}
-
-After installing an application, the **Installed** applications screen shows the application in the **Deploying** state.
-It changes to **Running** when the application is ready to use.
 
 The installation wizard configuration sections vary by application, with some including more configuration areas than others.
 Click **Install** to review settings ahead of time to check for required settings.
@@ -176,43 +179,69 @@ Click **Discover** on the breadcrumb at the top of the installation wizard to ex
 
 All applications include these basic setting sections:
 
-* **Application Name** shows the default name for the application.
+{{< expand "Application Name and Version" "v" >}}
+**Application Name** shows the default name for the application (typically the app name, like *storj*) and **Version** shows the installed version.
 
-  If deploying more than one instance of the application, you must change the default name. Also includes the **version** number for the application.
-  Do not change the version number for official apps or those included in a SCALE catalog.
-  When a new version becomes available, the **Installed** application screen banner and application row displays an update alert, and the **Application Info** widget displays an update button> Updating the app changes the version shown on the edit wizard for the application.
+If deploying more than one instance of the application, you must change the default name. For example, *storj2* or *storj-node1*.
 
-* ***Application* Configuration** shows settings that app requires to deploy.
-  This section can be named anything. For example, the MinIO app uses  **MinIO Configuration**.
+Do not change the version number for official apps or those included in a SCALE catalog.
+When a new version becomes available, an **Upodate** banner shows on the **Installed** application screen, the app row shows an update alert, and the **Application Info** widget showss an update button.
+Updating the app changes the version shown on the edit wizard for the application.
+{{< /expand >}}
 
-  Typical settings include user credentials, environment variables, additional argument settings, name of the node, or even sizing parameters.
+{{< expand "Application Configuration" "v" >}}
+***Application* Configuration** shows required and optional settings for that app.
+For example, the MinIO app uses  **MinIO Configuration**.
 
-  If not using the default user and group provided, add the new user (and group) to manage the application before using the installation wizard.
+Typical settings include admin user credentials, environment variables, additional argument settings, name of the node, or even sizing parameters.
 
-* **Network Configuration** shows network settings the app needs to communicate with SCALE and the Internet.
-  Settings include the default port assignment, host name, IP addresses, and other network settings.
+Sometimes users show in a **Users and Group Configuration** section.
+If not using the default user and group, create the new user (and group) to manage the application before using the installation wizard.
+{{< /expand >}}
 
-  If changing the port number to something other than the default setting, refer to [Default Ports](https://www.truenas.com/docs/references/defaultports/) for a list of used and available port numbers.
+{{< expand "Network Configuration" "v" >}}
+**Network Configuration** shows network settings the app uses to communicate with SCALE and the Internet.
+Settings include the default port assignment, host name, IP addresses, and other network settings.
 
-  Some network configuration settings include the option to add a certificate. Create the certificate authority and certificate before using the installation wizard if using a certificate is required for the application.
+If changing the port number to something other than the default setting, refer to [Default Ports](https://www.truenas.com/docs/references/defaultports/) for a list of used and available port numbers.
 
-* **Storage Configuration** shows options to configure storage for the application.
-  Storage options include using the default ixVolume setting that adds a storage volume under the **ix-applications** dataset, host path where you select existing dataset(s) to use, or in some cases the SMB share option where you configure a share for the application to use.
-  The **Add** button allows you to configure additional storage volumes for the application to use in addition to the main storage volume (dataset).
+Some network configuration settings include the option to add a certificate.
+If a certificate is required for the application, create the certificate authority and certificate before using the installation wizard.
+{{< /expand >}}
 
-  If the application requires specific datasets, configure these before using the installation wizard.
+{{< expand "Storage Configuration" "v" >}}
+**Storage Configuration** shows options to configure storage for the application.
+Storage configuration can includes the primary data mount volume, a configuration volume, postgres volumes, and an option to add additional storage volumes.
+The primary mount volumes have two options:
+* **ixVolume** that creates a storage volume inside the **ix-applications** dataset. This is the default setting.
+* **Host Path** that allows you to select an existing dataset created for the application. Shows additional fields to select the path to the dataset and add the mount point.
 
-  {{< include file="/static/includes/FileExplorerFolderIcons.md" >}}
+If adding an additional storage volume, click **Add** to configure additional storage volumes for the application to use in addition to the main storage volume (dataset).
+The three storage options are:
+* **ixVolume**
+* **Host path**
+* **SMB share** that allows you to create a storage volume used by an SMB share. 
 
-* **Resources Configuration** shows CPU and memory settings for the container pod.
-   This section can also be named **Resource Limits**. In most cases, you can accept the default settings, or you can change these settings to limit the system resources available to the application.
+If the application requires specific datasets or you want to allow SBM share access, configure the dataset(s) and SMB share before using the installation wizard.
 
-After installing an app, you can modify most settings by selecting the app on the **Installed** applications screen and then clicking the **Edit** button on the **Application Info** widget for that app.
+{{< include file="/static/includes/FileExplorerFolderIcons.md" >}}
+{{< /expand >}}
 
-Refer to individual tutorials in the Community or Enterprise sections of the Documentation Hub for more details on application settings.
-Installation and editing wizards include tooltips to help users configure application settings.
+{{< expand "Resource Configuration" "v" >}}
+**Resources Configuration** shows default CPU and memory settings for the container pod.
+This section can also be named **Resource Limits**.
+In most cases, accept the default settings or change these settings to limit the system resources available to the application.
+{{< /expand >}}
 
-### Allocating GPU
+After installing an application, the **Installed** applications screen opens showing the application in the **Deploying** state.
+It changes to **Running** when the application is ready to use.
+
+To modify installed application settings, click on the app row on the **Applications** table on the **Installed** screen, then click **Edit** on the **Application Info** widget.
+Make sure you have the right app row selected or you end up accessing the first app listed in the table of deployed apps.
+
+Refer to individual tutorials in the [Stable]({{< relref "/SCALE/SCALETutorials/Apps/StableApps/_index.md" >}}), [Community]({{< relref "/SCALE/SCALETutorials/Apps/CommunityApps/_index.md" >}}), or [Enterprise]({{< relref "/SCALE/SCALETutorials/Apps/EnterpriseApps/_index.md" >}}) sections of the Documentation Hub for more details on configuring application settings.
+
+#### Allocating GPU
 Users with compatible hardware can allocate one or more GPU devices to an application for use in hardware acceleration.
 This is an advanced process that could require significant troubleshooting depending on installed GPU device(s) and application-specific criteria.
 
@@ -246,6 +275,47 @@ If the GPU was previously isolated and/or assigned to a VM, a reboot could be re
 Restart the system then return to the **Resources Configuration** section of the application to see if expected devices are available.
 {{< /expand >}}
 
+## Discover Screen Options
+The **Discover** screen shows application widgets based on the trains selected on the **Train Settings** screen.
+
+Non-Enterprise systems show the **stable** catalog of apps by default.
+These are official applications that are pre-configured and only require a name during deployment.
+
+Enterprise-licensed systems display the **enterprise** train of applications simplified and validated for Enterprise systems.
+Community users can add the **community** and **enterprise** trains on the [**Train Settings**](#changing-app-trains) screen.
+
+{{< trueimage src="/images/SCALE/Apps/AppsDiscoverScreen.png" alt="Applications Discover Screen" id="Applications Discover Screen" >}}
+
+Use the **Discover** screen links to access other functions. 
+
+* [**Refresh Catalog**](#refreshing-the-apps-catalog)
+* **Manage Installed Apps** 
+
+**Manage Installed Apps** opens the **Installed** apps screen where you access the **Settings** menu to manage general application settings.
+
+<!-- commenting out until RC1 when this screen gets added back to the UI
+**Custom App** opens a wizard where you can configure an unofficial app or one not included in a SCALE catalog. -->
+
+### Refreshing the Apps Catalog
+Click **Refresh Catalog** on the **Discover** screen to refresh the apps catalog.
+Refresh the apps catalog after adding or editing the trains on your system.
+
+### Using the Discover Screen Filters
+To change the way app widgets show on the screen, click the down arrow to the right of **Filters**, and select the filter option you want to use.
+
+{{< trueimage src="/images/SCALE/Apps/DiscoverAppsScreenFilterOptions.png" alt="Discover Apps Filter Options" id="Discover Apps Filter Options" >}}
+
+To quickly locate a specific app, begin typing the name in the search field.
+
+To sort app widgets by category, click in **Categories**.
+To select multiple categories, click **Categories** again and select another category from the dropdown.
+
+{{< trueimage src="/images/SCALE/Apps/MinIOS3AppInfoScreen.png" alt="Application Information Screen Example" id="Application Information Screen Example" >}}
+
+After installing an application, the **Installed** applications screen shows the app in the **Deploying** state.
+The status changes to **Running** when the application is fully deployed and ready to use.
+
+<!-- commenting out until the UI includes this in RC1
 ## Installing Custom Applications
 To deploy a custom application, go to **Discover** and click **Custom App** to open the **Install Custom App** screen.
 See [Using Install Custom App]({{< relref "UsingCustomApp.md" >}}) for more information.
@@ -255,11 +325,11 @@ Custom applications use the system-level Kubernetes Node IP settings by default.
 
 You can assign an external interface to custom apps using  one of the **Networking** section  settings found on the **Install Custom App** screen.
 
-Unless you need to run an application separately from the Web UI, we recommend using the default Kubernetes **Node IP** (0.0.0.0) to ensure apps function correctly.
+Unless you need to run an application separately from the Web UI, we recommend using the default Kubernetes **Node IP** (0.0.0.0) to ensure apps function correctly.-->
 
 <div class="noprint">
 
-## Section Contents
+## Apps Contents
 
 {{< children depth="1" description="true" >}}
 

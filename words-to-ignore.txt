@@ -1960,3 +1960,5 @@ MSeriesPUM
 MSeriesNetworkPortID
 releaseschedule
 ManagePoolsSCALE
+ProposeArticleChange
+configuring-smtp-email
