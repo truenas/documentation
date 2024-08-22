@@ -15,7 +15,10 @@ Users can set up backup credentials with cloud and SSH clients to back up data i
 
 {{< trueimage src="/images/SCALE/Credentials/BackupCredentialsScreen.png" alt="Backup Credentials Screen" id="Backup Credentials Screen" >}}
 
-Click **Add** on the widget for the type of credential to add and open that configuration screen.
+The **Backup Credentials** screen displays the **Cloud Credentials**, **SSH Connections** and **SSH Keypairs** widgets.
+
+Click **Add** on the widget for the type of credential to add to open that configuration screen.
+
 <div class="noprint">
 
 ## Contents

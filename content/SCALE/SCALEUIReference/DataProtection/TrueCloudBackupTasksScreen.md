@@ -45,6 +45,7 @@ Click on the state oval to open the **Logs** dialog for that task.
 
 ## TrueCloud Backup Tasks Screen
 The **TrueCloud Backup Tasks** screen lists all tasks configured on the system.
+Click **TrueCloud Backup Tasks <i class="material-icons" aria-hidden="true" title="Open In New">open_in_new</i>** on the widget title or **<i class="material-icons" aria-hidden="true" title="View Details">visibility</i> View Details** on a task to go to the **TrueCloud Backup Tasks** screen.
 
 {{< trueimage src="/images/SCALE/DataProtection/TrueCloudBackupTasksScreenComplete.png" alt="TrueCloud Backup Tasks Screen" id="TrueCloud Backup Tasks Screen" >}}
 
@@ -61,7 +62,6 @@ Buttons for these task options perform the same functions as the icons on the wi
 Select any task to see details on the configured task, such as the schedule, path to the dataset or directories, snapshots and other options for that task.
 
 ### Snapshots Widget
-
 The **Snapshots** widget lists existing TrueCloud snapshots for the selected backup task.
 It contains options to restore from or delete an existing snapshot.
 
@@ -72,14 +72,13 @@ It contains options to restore from or delete an existing snapshot.
 <span class="material-icons">delete</span> **Delete** opens a confirmation dialog before the system deletes the snapshot.
 
 ### Restore from Snapshot Screen
-
 The **Restore from Snapshot** screen displays the date and time of the selected snapshot.
 It contains **Remote** and **Local** options to configure the TrueCloud snapshot restoration.
 
 {{< trueimage src="/images/SCALE/DataProtection/TrueCloudRestore.png" alt="Restore from Snapshot" id="Restore from Snapshot" >}}
 
 #### Remote Settings
-Configure remote settings to include all data in the backup or exclude some data from the restoration
+**Remote Settings** specify all data in the backup or exclude some data from a restoration.
 Additional settings display depending on the **Include/Exclude** selection.
 
 {{< truetable >}}
@@ -92,7 +91,7 @@ Additional settings display depending on the **Include/Exclude** selection.
 | **Select paths to exclude** | Exclude only certain paths from the data to restore. |
 | **Excluded Paths** | Displays when **Select paths to exclude** is selected. Enter or select files and directories to exclude from the backup. Use the checkboxes to select multiple paths or separate multiple entries with a comma. |
 | **Exclude by pattern** | Exclude files and directories matching defined glob patterns. |
-| **Pattern** | Displays when **Exclude by pattern** is selected
+| **Pattern** | Displays when **Exclude by pattern** is selected. | 
 {{< /truetable >}}
 
 #### Local Settings
@@ -105,24 +104,21 @@ Be cautious with setting the restore target to avoid overwriting existing files.
 
 Click **Save** to restore data from the snapshot.
   
-## Add TrueCloud Backup Task Screen
-
-The **Add TrueCloud Backup Task** screen contains options to configure a new backup task.
-The **Edit TrueCloud Backup Task** screen contains the same settings for an existing task.
-Settings are grouped into the Local, Remote, Task Settings, and Control, as well as Advanced and Advanced Remote Options for advanced users.
+## Add and Edit TrueCloud Backup Task Screen
+The **Add TrueCloud Backup Task** and **Edit TrueCloud Backup Task** screens contain options to configure a new backup task. The edit screen opens populated with the existing task settings.
+Settings are grouped into the **Local**, **Remote**, **Task** Settings, and **Control**. **Advanced** and **Advanced Remote Options** are for use by advanced users.
 
 {{< trueimage src="/images/SCALE/DataProtection/AddTrueCloudTaskBasicOptions.png" alt="Add TrueCloud Backup Task - Basic Options" id="Add TrueCloud Backup Task - Basic Options" >}}
 
 ### Local Settings
-**Local** settings allow selecting the dataset or directory to use in the task.
-Selecting the dataset populates the **Source Path** field.
+**Local** settings allow selecting the dataset or directory to use in the task. Selecting the dataset populates the **Source Path** field.
 
 {{< include file="/static/includes/FileExplorerFolderIcons.md" >}}
 
 {{< truetable >}}
 | Settings | Description |
 |----------|-------------|
-| **Source Path** | Enter or click the <span class="material-icons">arrow_right</span> arrow to the left of **/mnt** folder to expand and show datasets and directories within that folder. Locate the dataset or directory location to send to Storj for TrueCloud backup. Click the <span class="material-icons">arrow_right</span> arrow to the left of **/mnt** folder again to collapse the directory tree. |
+| **Source Path** | Use to specify the path to the dataset or directory to send to the cloud backup provider used in the task. Enter or click the <span class="material-icons">arrow_right</span> arrow to the left of **/mnt** folder to expand and show datasets and directories within that folder. Locate the dataset or directory location to send to Storj for TrueCloud backup. Click the <span class="material-icons">arrow_right</span> arrow to the left of **/mnt** folder again to collapse the directory tree. |
 {{< /truetable >}}
 
 ### Remote Settings
@@ -131,20 +127,20 @@ The **Remote** settings specify the TrueCloud credential and destination storage
 {{< truetable >}}
 | Settings | Description |
 |----------|-------------|
-| **Credential** | Select an exiting Storj iX credential from the dropdown list. TrueNAS automatically validates the selected credential. <br> Select **Add New** to open the **Cloud Credentials** screen. This is the same configuration screen as when you click **Add** on the **Credentials > Backup Credentials** screen. |
-| **Bucket** | Select the pre-defined Storj bucket to use. |
-| **Folder** | Enter or click the <span class="material-icons">arrow_right</span> arrow to the left of the folder icon and at each dataset or directory to reach the storage location to use for this task. <br> Enter `/name`, where *name* is a folder that does not exist, to create a new folder in the Storj bucket. |
+| **Credential** | Select an exiting cloud storage provider credential, such as Storj iX from the dropdown list. TrueNAS automatically validates the selected credential. <br> Select **Add New** to open the [**Cloud Credentials**]({{< relref "CloudCredentialScreen.md" >}}) screen. This is the same configuration screen as when you click **Add** on the **Credentials > Backup Credentials** screen. |
+| **Bucket** | Shows after selecting the cloud provider in the **Credential** field. Select the pre-defined bucket to use if the provider uses buckets. For example, Amazon S3 and Storj use buckets. |
+| **Folder** | Use to specify the dataset or directory to receive the backed up data. Enter the path or click the <span class="material-icons">arrow_right</span> arrow to the left of the folder icon and at each dataset or directory to reach the storage location to use for this task. <br> Enter `/name`, where *name* is a folder that does not exist, to create a new folder in the Storj bucket. |
 {{< /truetable >}}
 
 ### Task Settings
-**Task Settings** specify the task name, snapshot retention policy, and password.
+**Task Settings** specifies the task name, snapshot retention policy, and password.
 
 {{< truetable >}}
 | Settings | Description |
 |----------|-------------|
-| **Name** | Enter a name for the TrueCloud Backup Task. |
+| **Name** | Enter a name for the TrueCloud backup task. |
 | **Keep Last** | Enter a number of past snapshot copies to retain before removing older snapshots. |
-| **Password** | Enter a password for the backup repository. Record this password in a secure location. It is needed to recreate the task using the same bucket/folder, such as in a new TrueNAS install or system, or to restore data from the existing snapshots in another TrueNAS system. |
+| **Password** | Enter a password for the backup repository. Record this password in a secure location. Required to recreate the task using the same bucket/folder, such as in a new TrueNAS install or system, or to restore data from the existing snapshots in another TrueNAS system. |
 {{< /truetable >}}
 
 ### Control Settings
@@ -154,7 +150,7 @@ The **Remote** settings specify the TrueCloud credential and destination storage
 | Settings | Description |
 |----------|-------------|
 | **Schedule** | Select a schedule preset or choose **Custom** to open the advanced scheduler. |
-| **Enabled** | Select to enable this TrueCloud task. Leave clear to disable the task without deleting it and keep the configuration available without allowing the specified schedule to run the task. You can use the toggle in the **Enable** column on the **TrueCloud Backup Tasks** widget to enable or disable the task. |
+| **Enabled** | Select to enable this TrueCloud task. Leave clear to disable the task without deleting it and keep the configuration available without allowing the specified schedule to run the task. The toggle in the **Enable** column on the **TrueCloud Backup Tasks** widget enables/disables the task. |
 {{< /truetable >}}
 
 {{< expand "Advanced Scheduler" "v" >}}
@@ -162,20 +158,21 @@ The **Remote** settings specify the TrueCloud credential and destination storage
 {{< /expand >}}
 
 ### Advanced Options Settings
-**Advanced Options** settings are for advanced users.
+**Advanced Options** settings are intended for use by advanced users.
 
 {{< trueimage src="/images/SCALE/DataProtection/AddTrueCloudTaskAdvancedOptions.png" alt="Add TrueCloud Backup Task - Advanced Options" id="Add TrueCloud Backup Task - Advanced Options" >}}
 
 {{< truetable >}}
 | Settings | Description |
 |----------|-------------|
-| **Take Snapshot** | Select to take a snapshot before transferring data to Storj. This option is only available for datasets that have no child datasets. |
-| **Pre-Script** | For advanced users. Enter a script to execute before running the task. See the [Managing TrueCloud Backup Tasks tutorial]({{< relref "TrueCloudTasks.md #using-advanced-options" >}}) for more information. |
-| **Post-Script** | For advanced user. Enter a script to execute after running the task. See the [Managing TrueCloud Backup Tasks tutorial]({{< relref "TrueCloudTasks.md #using-advanced-options" >}}) for more information. |
+| **Take Snapshot** | Select to take a snapshot before transferring data to Storj or the cloud storage provider specified. This option is not available to datasets with child datasets. |
+| **Pre-Script** | For advanced users only. Enter a script to execute before running the task. See the [Managing TrueCloud Backup Tasks tutorial]({{< relref "TrueCloudTasks.md #using-advanced-options" >}}) for more information. |
+| **Post-Script** | For advanced users only. Enter a script to execute after running the task. See the [Managing TrueCloud Backup Tasks tutorial]({{< relref "TrueCloudTasks.md #using-advanced-options" >}}) for more information. |
 | **Exclude** | Enter a list of files and directories to exclude from the backup. Separate entries by pressing <kbd>Enter</kbd>.<br> Examples of proper syntax to exclude files/directories are:<li>`photos</code>` excludes a file named *photos*</li><li>`/photos`> excludes a file named *photos* from root directory (but not subdirectories)</li><li>`photos/` excludes a directory named *photos*</li><li>`/photos/` excludes a directory named *photos* from root directory (but not subdirectories).</li></ul> See [rclone filtering](https://rclone.org/filtering/) for more details about the `--exclude` option. |
 {{< /truetable >}}
 
 ### Advanced Remote Options
+*Advanced Remote Options** settings are intended for use by advanced users.
 
 {{< truetable >}}
 | Settings | Description |

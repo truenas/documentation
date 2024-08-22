@@ -13,6 +13,8 @@ tags:
 ---
 
 
+{{< include file="/static/includes/CloudServiceProvidersSCALE.md" >}}
+
 ## Cloud Credentials Widget
 
 The **Cloud Credentials** widget displays a list of cloud storage credentials configured on the system.
@@ -34,7 +36,6 @@ It shows settings to add or edit cloud credentials TrueNAS uses to integrate wit
 **Provider** shows a list of available providers.
 Select the name of a cloud provider to populate the configuration screen with credential settings for that provider.
 
-{{< include file="/static/includes/CloudServiceProvidersSCALE.md" >}}
 
 **Verify Credentials** uses the credentials entered to verify access the cloud storage provider account.
 
@@ -113,7 +114,7 @@ This section provides information on the BackBlaze B2 authentication settings.
 Several cloud storage providers use OAuth authentication and a required access token to authenticate the cloud storage account.
 Providers using these methods are Box, Dropbox, Google Photo, pCloud, and Yandex.
 
-{{< trueimage src="/images/SCALE/Credentials/CloudCredentialsOAuthAccessTokenAuthentications.png" alt="OAuth and Access Token Authentications" id="OAuth and Access Token Authentication" >}}
+{{< trueimage src="/images/SCALE/Credentials/CloudCredentialsOAuthAccessTokenAuthentication.png" alt="OAuth and Access Token Authentications" id="OAuth and Access Token Authentication" >}}
 
 {{< expand "OAuth and Access Token Authentication Settings" "v" >}}
 Use **Login to Provider** to enter the account username and password.
@@ -163,7 +164,7 @@ Google Cloud Storage authentication uses a Google [service account json key cred
 Google Drive also uses OAuth authentication, a required access token, and a team drive ID to authenticate accounts.
 Google Drive adds one additional authentication setting to the general OAuth settings.
 
-{{< trueimage src="/images/SCALE/Credentials/CloudCredentialsGoogleDriveAuthentication.png" alt="Google Drive Authentication" id="Google Drive Authentication" >}}
+{{< trueimage src="/images/SCALE/DataProtection/CloudCredentialsGoogleDriveAuthentication.png" alt="Google Drive Authentication" id="Google Drive Authentication" >}}
 
 {{< expand "Google Drive Authentication Settings" "v" >}}
 Use **Login to Provider** to enter the account username and password.
