@@ -156,7 +156,7 @@ function updateDropdownPlaceholderText() {
 	if (path.includes('/3.0/')) {
 	  versionButton.textContent = '3.0';
 	} else if (path.includes('/2.3/')) {
-	  versionButton.textContent = '2.3';
+	  versionButton.textContent = 'Archive';
 	} else {
 	  versionButton.textContent = 'Nightly';
 	}
@@ -221,7 +221,6 @@ updateDropdownPlaceholderText();
       versionDropdown.innerHTML = `
         <div class="truenas-dropdown-item" onclick="selectVersion('tc-nightly')" id="tc-nightly">Nightly</div>
 		<div class="truenas-dropdown-item" onclick="selectVersion('3.0')" id="30">3.0</div>
-		<div class="truenas-dropdown-item" onclick="selectVersion('2.3')" id="23">2.3</div>
     <div class="truenas-dropdown-item" onclick="selectVersion('Archive')" id="Archive">Archive</div>
       `;
     }
