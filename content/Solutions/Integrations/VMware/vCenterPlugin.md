@@ -38,8 +38,6 @@ This is a minor release designed to make the plugin compatible with vCenter 7.0 
 TrueNAS CORE | Enterprise 13.0 systems are compatible with the 3.5.0 plugin.
 CORE 12.0 deployments connected to an earlier version of this plugin should upgrade to 13.0 before attempting to connect to the 3.5.0 version of the plugin.
 
-TrueNAS SCALE deployments are not compatible with the TrueNAS vCenter Plugin at this time.
-
 **Changelog**
 
 Individual tickets require an iXsystems Jira login to view.
