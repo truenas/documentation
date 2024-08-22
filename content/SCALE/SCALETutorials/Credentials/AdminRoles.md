@@ -39,10 +39,6 @@ At present, SCALE has both the root and local administrator user logins and pass
 All systems should [create an administrator account]({{< relref "ManageLocalUsersSCALE.md" >}}) with the full admin role and privileges, and use this account for web interface access.
 When properly set up, the administrator (full admin) account performs the same functions and has the same access as the root user.
 
-{{< hint type="note" title="References to Root Account" >}}
-Some UI screens and settings still refer to the root account, but these references are updating to the administrator account in future releases of SCALE.
-{{< /hint >}}
-
 To improve system security after the administrator account is created, disable the root account password to restrict root access to the system.
 
 For more information on the different administrator scenarios users can encounter, read [Logging Into SCALE the First Time]({{< relref "FirstTimeLogin.md" >}}).
