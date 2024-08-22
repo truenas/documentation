@@ -35,8 +35,6 @@ The process requires an extended maintenance window, requires executing steps in
 
 Depending on system configuration, migrating from CORE to SCALE can be more or less complicated.
 
-{{< include file="/static/includes/RootToAdminUserAccount.md" >}}
-
 ## Migration Methods
 
 {{< include file="/static/includes/MigrateCOREtoSCALEWarning.md" >}}
