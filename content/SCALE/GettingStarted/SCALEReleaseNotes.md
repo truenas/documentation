@@ -171,6 +171,18 @@ Notable changes:
 
 * Rewrite TrueNAS installer to better support future development efforts ([NAS-127092](https://ixsystems.atlassian.net/browse/NAS-127092)).
 
+* The **Allow root login** option is removed from the FTP service ([NAS-128837](https://ixsystems.atlassian.net/browse/NAS-128837)).
+
+* Rename the default administrator account (UID 950) from **admin** to **truenas_admin** to prevent DS conflicts ([NAS-129997](https://ixsystems.atlassian.net/browse/NAS-129997)).
+  This change affects fresh installs of 24.10 only.
+  Existing **admin** accounts are preserved on upgrade.
+
+  For improved security, we recommended that users create a unique administrator account and disable password access for default administrator accounts.
+  See [Using Administrator Logins]({{< relref "adminroles.md" >}}) for more information.
+
+* SMB audit log entries are omitted by default from the **System > Audit** screen ([NAS-130498](https://ixsystems.atlassian.net/browse/NAS-130498)).
+  To view SMB audit results, go to **System > Services** and click <i class="material-icons" aria-hidden="true" title="Audit Logs">receipt_long</i> **Audit Logs** for the SMB service or use advanced search on the main **Audit** screen to query SMB events.
+
 <a href="https://ixsystems.atlassian.net/issues/?filter=10587" target="_blank">Click here for the full changelog</a> of completed tickets that are included in the 24.10-BETA.1 release.
 {{< include file="/static/includes/JiraFilterInstructions.md" >}}
 
