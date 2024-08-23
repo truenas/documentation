@@ -33,7 +33,7 @@ We recommend users open another browser tab to open and log into the cloud stora
 Some TrueNAS providers credentials require entering additional information generated while creating the provider account.
 For example, the Storj iX account produces an access and secret key that must be entered in the **Cloud Credential** screen to create the credential.
 
-Have the authentication information required by your cloud storage provider on-hand to make the process easier.
+Have the authentication information required by your cloud storage provider on hand to make the process easier.
 Authentication information can include but is not limited to user credentials, access tokens, and access and security keys.
 
 To add a cloud credential:
@@ -44,7 +44,7 @@ To add a cloud credential:
 
 2. Enter a name for the credential.
 
-3. Enter the required authentication credentials, such as access token, access key and/or secret keys, user credentials for the account into the appropriate fields.
+3. Enter the required authentication credentials, such as access token, access key and/or secret keys, and user credentials for the account into the appropriate fields.
 
 3. Click **Verify Credentials** to test the entered credentials and verify they work.
 
@@ -80,7 +80,7 @@ To add a cloud credential for Amazon S3, select **Amazon S3** in **Provider**, e
 4. Enter or copy/paste the Amazon Web Services alphanumeric password that is between 8 and 40 characters into **Secret Access Key**
 
 5. (Optional) Enter a value to define the maximum number of chunks for a multipart upload in **Maximum Upload Ports**.
-   Setting a maximum is necessary if a service does not support the 10,000 chunk AWS S3 specification.
+   Setting a maximum is necessary if a service does not support the 10,000-chunk AWS S3 specification.
 
 6. (Optional) Select **Advanced Settings** to display the endpoint settings.
 
@@ -92,7 +92,7 @@ To add a cloud credential for Amazon S3, select **Amazon S3** in **Provider**, e
    b. Enter an [AWS resources in a geographic area](https://docs.aws.amazon.com/general/latest/gr/rande-manage.html) in **Region**.
 
       To detect the correct public region for the selected bucket leave the field blank.
-      Entering a private region name allows interacting with Amazon buckets created in that region.
+      Entering a private region name allows interaction with Amazon buckets created in that region.
 
    c. (Optional) Configure a custom endpoint URL.
 
@@ -108,17 +108,17 @@ To add a cloud credential for Amazon S3, select **Amazon S3** in **Provider**, e
 8. Click **Save**
 
 ## Adding Cloud Credentials that Authenticate with OAuth
-Cloud storage providers using OAuth as an authentication method are Box, Dropbox, Google Drive, Google Photo, pCloud and Yandex.
-Some provider like Google Drive and pCloud use additional settings to authenticate credentials.
+Cloud storage providers using OAuth as an authentication method are Box, Dropbox, Google Drive, Google Photos, pCloud, and Yandex.
+Some providers like Google Drive and pCloud use additional settings to authenticate credentials.
 
 {{< include file="/static/includes/OAuthCloudCredentialSetupSCALE.md" >}}
 
 ## Adding BackBlaze B2 Cloud Credentials
 BackBlaze B2 uses an application key and key ID to authenticate credentials.
 
-Open the **Cloud Credentials** screen, select **BackBlaze B2** im **Provider**, enter a name and then:
+Open the **Cloud Credentials** screen, select **BackBlaze B2** in **Provider**, enter a name and then:
 
-1. Log into the BackBlaze account, go to **App Keys** page and add a new application key. Copy and paste this into **Key ID**.
+1. Log into the BackBlaze account, go to the **App Keys** page, and add a new application key. Copy and paste this into **Key ID**.
 
 2. Generate a new application key on the BackBlaze B2 website.
    From the **App Keys** page, add a new application key. Copy the application Key string **Application Key**.
@@ -128,14 +128,14 @@ Open the **Cloud Credentials** screen, select **BackBlaze B2** im **Provider**, 
 4. Click **Save**.
 
 ## Adding Google Cloud Storage Credentials
-Google Cloud Storage uses a service account json file to authenticate credentials.
+Google Cloud Storage uses a service account JSON file to authenticate credentials.
 
 Open the **Cloud Credentials** screen, select **Google Cloud Storage** in **Provider**, enter a name and then:
 
 1. Go to your Google Cloud Storage website to download this file to the TrueNAS SCALE server.
    The [Google Cloud Platform Console](https://console.cloud.google.com/apis/credentials) creates the file.
 
-2. Click **Choose File** to browse the server to locate the downloaded filejson file and upload. The file populates **Preview JSON Service Account Key** 
+2. Click **Choose File** to browse the server to locate the downloaded JSON file and upload it. The file populates **Preview JSON Service Account Key** 
    For help uploading a Google Service Account credential file [click here](https://rclone.org/googlecloudstorage/#service-account-support).
 
 3. Click **Verify Credentials**.
@@ -144,7 +144,7 @@ Open the **Cloud Credentials** screen, select **Google Cloud Storage** in **Prov
 
 ## Adding OpenStack Swift Cloud Credentials
 OpenStack Swift authentication credentials change based on selections made in **AuthVersion**.
-All options use the user name, API key or password and authentication URL, and can use the optional endpoint settings.
+All options use the user name, API key or password, and authentication URL, and can use the optional endpoint settings.
 For more information on OpenStack Swift settings, see [rclone documentation](https://rclone.org/swift/#standard-options).
 
 Open the **Cloud Credentials** screen, select **OpenStack Swift Cloud** in **Provider**, enter a name for the credential and then:
@@ -168,7 +168,7 @@ Open the **Cloud Credentials** screen, select **OpenStack Swift Cloud** in **Pro
 
    e. (Optional) Enter the URL in **Storage URL**.
 
-   f. (Required) Select service catalog option from the **Endpoint Type** dropdown. Options are **Public**, **Internal** and **Admin**. **Public** is recommended.
+   f. (Required) Select the service catalog option from the **Endpoint Type** dropdown. Options are **Public**, **Internal** and **Admin**. **Public** is recommended.
    {{< /expand >}}
    {{< expand "Set Auth(vx) to V3" "v" >}}
    If set to **v3** the **Advanced Options** settings displayed change.
@@ -187,7 +187,7 @@ Open the **Cloud Credentials** screen, select **OpenStack Swift Cloud** in **Pro
 
    g. (Optional) Enter the URL in **Storage URL**.
 
-   h. (Required) Select service catalog option from the **Endpoint Type** dropdown. Options are **Public**, **Internal** and **Admin**. **Public** is recommended.
+   h. (Required) Select the service catalog option from the **Endpoint Type** dropdown. Options are **Public**, **Internal** and **Admin**. **Public** is recommended.
    {{< /expand >}}
 
 4. Click **Verify Credentials**.
@@ -197,7 +197,7 @@ Open the **Cloud Credentials** screen, select **OpenStack Swift Cloud** in **Pro
 ## Using Automatic Authentication
 Some providers can automatically populate the required authentication strings by logging in to the account.
 
-To automatically configure the credential, click **Login to Provider** and entering your account user name and password.
+To automatically configure the credential, click **Login to Provider** and enter your account user name and password.
 
 ![AutomaticAuthenticationSCALE](/images/SCALE/Credentials/AutomaticAuthenticationSCALE.png "Cloud Automatic Authentication")
 
