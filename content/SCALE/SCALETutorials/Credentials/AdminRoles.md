@@ -30,11 +30,15 @@ SCALE includes three predefined admin user account levels:
 
 For more information on the different administrator scenarios users can encounter, read [Logging Into SCALE the First Time]({{< relref "FirstTimeLogin.md" >}}).
 
-## Configuring Administrative Priviledges
+## Configuring Administrative Privileges
+
+[Create a new administrator]({{< relref "managelocalusersscale.md #creating-an-administrator-user-account" >}}) account or select an existing account to grant administrative privileges.
+Note the primary group assigned to that user.
 
 {{< include file="/static/includes/AddAdminGroup.md" >}}
 
 ## Disabling Root and Admin User Passwords
+
 As a security measure, the root user is no longer the default account and the password is disabled when you create the truenas_admin or admin user during installation.
 
 Do not disable the default admin account, root, and any custom admin account passwords at the same time.
@@ -49,6 +53,7 @@ This temporary password is not saved as a new password and it does not enable th
 When disabling a password for UI login, it is also disabled for SSH access.
 
 ## Accessing the System Through an SSH Session
+
 To enable SSH to access the system as an admin user (or for root):
 
 1. Configure the SSH service.
