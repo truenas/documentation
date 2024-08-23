@@ -22,7 +22,10 @@ The **Pool Creation Wizard** configuration screens include a configuration previ
 **Inventory** displays the number of available disks by size on the system, and this list dynamically updates as disks move to VDEVs added in the wizard.
 
 ## Pool Creation Wizard
-The **Pool Creation Wizard** has seven configuration screens, numbered in sequence, to create a pool with VDEVs.
+The **Pool Creation Wizard** for most systems has seven configuration screens, numbered in sequence, to create a pool with VDEVs.
+{{< enterprise>}}
+Larger iXsystems-provided servers for Enterprise users equipped with expansion shelves include the additional [**Enclosure Options**](#enclosure-options) screen.
+{{< /enterprise >}}
 
 Each wizard VDEV configuration screen includes the **Automated Disk Selection** and **Advanced Options** areas.
 Click **Manual Disk Selection** to open the **[Manual Selection](#manual-selection-screen)** screen.
@@ -66,6 +69,25 @@ If system disks have non-unique serial numbers, a warning displays with addition
 **Allow** permits using disks with non-unique serial numbers, such as those that can occur on virtual disks, and displays them as available disks on the **Data** wizard screen.
 **Don't Allow** does not permit using disks with non-unique serial numbers.
 
+{{< enterprise >}}
+### Enclosure Options
+The **Enclosure Options** screen shows in the **Pool Creation Wizard** if the iXsystems hardware includes one or more expansion shelves.
+
+{{< trueimage src="/images/SCALE/Storage/PoolCreationWizardEnclosureOptionsScreen.png" alt="Pool Creation Wizard Enclosure Options" id="Pool Creation Wizard Enclosure Options" >}}
+
+The **Enclosure Options** screen shows three radio buttons that could apply a set pool storage configuration topology when using the **Automated Disk Selection** option to assign disks to a VDEV.
+
+* **No Enclosure Dispersal Strategy** does not apply a dispersal strategy in how the system adds disks by size and type to the pool VDEVs created when using the **Automated Disk Selection** option.
+  Does not show additional options. Disks added to the pool VDEVs are assigned in sequence based on disk availability and not balanced across all enclosures.
+* **Maximum Dispersal Strategy** applies a maximum dispersal strategy in how the system adds disks by size and type to the pool VDEVs created when using the **Automated Disk Selection** option.
+  This balances disk selection across all enclosures and available disks.
+  Does not show additional options. Disks added to the pool VDEVs are spread across all available enclosure disks.
+* **Limit Pool To A Single Enclosure** applies a minimum dispersal strategy in how the system adds disks by size and type to the pool VDEVs created when using the **Automated Disk Selection** option.
+  Shows the **Enclosure** dropdown with a list of available expansion shelf options. Disks added to the pool VDEVs are spread across the enclosure disks that align with the selection in **Enclosure**.
+
+{{< trueimage src="/images/SCALE/Storage/PoolCreationWizardEnclosureOptionsLimitedToSingleEnclosure.png" alt="Enclosure Option Limit Pool to a Single Enclosure" id="Enclosure Option Limit Pool to a Single Enclosure" >}}
+
+{{< /enterprise >}}
 ### Data Screen
 The **Data** wizard screen includes the option to automatically or manually add disks to a data VDEV.
 You must add a data VDEV before you can add other types of VDEVs to the pool.
