@@ -12,9 +12,9 @@ keywords:
 - data backup and recovery
 ---
 
-The **TrueCloud Backup Tasks** widget on the **Data Protection** screen shows configured TrueCloud tasks, and provides access to configuration screens to add or scheduled recurring transfers between TrueNAS SCALE and a cloud storage provider account like Storj iX.
+The **TrueCloud Backup Tasks** widget on the **Data Protection** screen shows configured TrueCloud tasks, and provides access to configuration screens to add or schedule recurring transfers between TrueNAS SCALE and a cloud storage provider account like Storj iX.
 
-TrueCloud backup tasks are an effective method to back up data to a remote location, restore snapshots, or to perform cloud-storage-migration.
+TrueCloud backup tasks are an effective method to back up data to a remote location, restore snapshots, or perform cloud-storage-migration.
 
 ## TrueCloud Backup Tasks Widget
 The **TrueCloud Backup Tasks** widget shows a list of tasks configured on the system.
@@ -33,7 +33,7 @@ Each task on the widget shows four icons for various functions:
 
 * <i class="material-icons" aria-hidden="true" title="Run Now">play_arrow</i> **Run Now** starts and runs the backup task outside of the scheduled time.
 
-* **<i class="material-icons" aria-hidden="true" title="View Details">visibility</i> View Details** opens the [**TrueCloud Backup Tasks**](#truecloud-backup-tasks-screen) screen that lists backup tasks configured on the system. Click on a tasks to see details for the selected task.
+* **<i class="material-icons" aria-hidden="true" title="View Details">visibility</i> View Details** opens the [**TrueCloud Backup Tasks**](#truecloud-backup-tasks-screen) screen that lists backup tasks configured on the system. Click on a task to see details for the selected task.
 
 * <span class="material-icons">delete</span> **Delete** opens a confirmation dialog before the system deletes the task.
 
@@ -91,8 +91,8 @@ Additional settings show depending on the **Include/Exclude** selection.
 {{< truetable >}}
 | Settings | Description |
 |----------|-------------|
-| **Include Everything** | Select to restore all backed up data from the remote snapshot to the selected local path. |
-| **Include from subfolder** | Select to restore data from a subfolder within the backed up data.  |
+| **Include Everything** | Select to restore all backed-up data from the remote snapshot to the selected local path. |
+| **Include from subfolder** | Select to restore data from a subfolder within the backed-up data.  |
 | **Subfolder** | Shows when **Include from subfolder** is selected. Enter or browse to the subfolder within the snapshot to restore data from. |
 | **Included Paths** | Shows when **Include from subfolder** is selected. Select files and directories to include from the backup. Leave empty to include everything in the selected subfolder. |
 | **Select paths to exclude** | Select to exclude only certain paths from the data to restore. |
@@ -129,7 +129,7 @@ The **Advanced** and **Advanced Remote Options** are for use by advanced users.
 {{< truetable >}}
 | Settings | Description |
 |----------|-------------|
-| **Source Path** | Enter or browse to the path of the dataset or directory with the data to send to the cloud backup provider used in the task. Click the <span class="material-icons">arrow_right</span> arrow to the left of **/mnt** folder to expand and show datasets and directories within that folder. This is the dataset or directory location with the data the TrueCloud backup task sends to the cloud storage provider. Click the <span class="material-icons">arrow_right</span> arrow to the left of **/mnt** folder again to collapse the directory tree. |
+| **Source Path** | Enter or browse to the path of the dataset or directory with the data to send to the cloud backup provider used in the task. Click the <span class="material-icons">arrow_right</span> arrow to the left of the **/mnt** folder to expand and show datasets and directories within that folder. This is the dataset or directory location with the data the TrueCloud backup task sends to the cloud storage provider. Click the <span class="material-icons">arrow_right</span> arrow to the left of the **/mnt** folder again to collapse the directory tree. |
 {{< /truetable >}}
 
 ### Remote Settings
@@ -138,9 +138,9 @@ The **Remote** settings specify the TrueCloud credential and destination storage
 {{< truetable >}}
 | Settings | Description |
 |----------|-------------|
-| **Credential** | Select an exiting cloud storage provider credential, such as Storj iX from the dropdown list (default option). TrueNAS automatically validates the selected credential. <br> Select **Add New** to open the [**Cloud Credentials**]({{< relref "CloudCredentialScreens.md" >}}) screen. This is same configuration screen opens when you click **Add** on the **Credentials > Backup Credentials** screen. |
+| **Credential** | Select an existing cloud storage provider credential, such as Storj iX from the dropdown list (default option). TrueNAS automatically validates the selected credential. <br> Select **Add New** to open the [**Cloud Credentials**]({{< relref "CloudCredentialScreens.md" >}}) screen. This is the same configuration screen that opens when you click **Add** on the **Credentials > Backup Credentials** screen. |
 | **Bucket** | Shows after selecting a cloud provider that uses buckets in the **Credential** field. Select a pre-defined bucket configured in the provider web UI. For example, Amazon S3 and Storj use buckets. |
-| **Folder** | Enter or browse to the dataset or directory to receive the backed up data. Click the <span class="material-icons">arrow_right</span> arrow to the left of the folder icon and at each dataset or directory to reach the storage location to use for this task. <br> Enter <code>/<i>name</i></code>, where *name* is a folder that does not exist, to create a new folder in the bucket. |
+| **Folder** | Enter or browse to the dataset or directory to receive the backed-up data. Click the <span class="material-icons">arrow_right</span> arrow to the left of the folder icon and at each dataset or directory to reach the storage location to use for this task. <br> Enter <code>/<i>name</i></code>, where *name* is a folder that does not exist, to create a new folder in the bucket. |
 {{< /truetable >}}
 
 ### Task Settings
@@ -188,6 +188,6 @@ The **Remote** settings specify the TrueCloud credential and destination storage
 {{< truetable >}}
 | Settings | Description |
 |----------|-------------|
-| **Transfers** | Enter the number of simultaneous file transfers to allow. Base thenumber on the available bandwidth and destination system performance. See [rclone --transfers](https://rclone.org/docs/#transfers-n). |
+| **Transfers** | Enter the number of simultaneous file transfers to allow. Base the number on the available bandwidth and destination system performance. See [rclone --transfers](https://rclone.org/docs/#transfers-n). |
 | **Bandwidth limit** | Enter a single bandwidth limit or bandwidth limit schedule in rclone format. Separate entries by pressing <kbdEnter</kbd>. Example: *08:00,512 12:00,10MB 13:00,512 18:00,30MB 23:00,off*. You can specify units with the beginning letter **b**, **k** (default), **M**, or **G**. See [rclone --bwlimit](https://rclone.org/docs/#bwlimit-bandwidth-spec). |
 {{< /truetable >}}
