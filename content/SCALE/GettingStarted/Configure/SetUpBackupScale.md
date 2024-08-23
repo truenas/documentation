@@ -25,7 +25,7 @@ You should also:
 TrueNAS provides several options to set up a data storage backup method including using either a cloud sync provider and scheduled task, or configuring a replication task.
 
 ## Backing Up the System Configuration
-First thing after you set up TrueNAS is to back up your system configuration by downloading the system configuration file.
+The first thing you should do after you set up TrueNAS is back up your system configuration by downloading the system configuration file.
 
 {{< include file="/static/includes/DownloadSystemConfigFileSCALE.md" >}}
 
@@ -49,7 +49,7 @@ TrueNAS has several options that allow you to back up data:
 * [Replication tasks](#using-replication)
 * [Rsync tasks]({{< relref "RsyncTasksSCALE.md" >}})
 
-Both TrueCloud backup and cloud sync tasks require setting up a cloud service provider account and adding the credentials in TrueNAS before configuring and schedule the tasks.
+Both TrueCloud backup and cloud sync tasks require setting up a cloud service provider account and adding the credentials in TrueNAS before configuring and scheduling the tasks.
 
 Replication requires setting up SSH credentials before configuring and scheduling the task. Rsync tasks can be configured with SSH credentials or set up to use a module.
 
@@ -63,11 +63,11 @@ These providers can charge fees for data transfer and storage, so please review 
 
 Cloud sync and TrueCloud backup tasks can be configured to send, receive, or synchronize data with a cloud storage provider.
 
-The simplest way to set up a TrueCloud backup task is using an Storj iX account.
+The simplest way to set up a TrueCloud backup task is using a Storj iX account.
 See [Managing TrueCloud Backup Tasks]({{< relref "TrueCloudTasks.md" >}}) for a full tutorial.
 
 {{< expand "TrueCloud Backup Quickstart with a Storj Account" "v" >}}
-TrueNAS allows you to create a Storj cloud credential in TrueNAS, and set up a Storj account, from **Backup Task** widget on the main **Dashboard**, the **Add TrueCloud Backup Task** screen,  or from the **Add Cloud Credentials** screen accessed from on the **Credentials > Backup Credentials** screens.
+TrueNAS allows you to create a Storj cloud credential in TrueNAS, and set up a Storj account, from the **Backup Task** widget on the main **Dashboard**, the **Add TrueCloud Backup Task** screen,  or from the **Add Cloud Credentials** screen accessed from on the **Credentials > Backup Credentials** screens.
 
 To create the TrueCloud backup task using Storj:
 
@@ -80,7 +80,7 @@ To create the TrueCloud backup task using Storj:
    Click **Signup for account** to open the **Storj + iX** browser tab. Register an account, select a plan, and activate the Storj iX account.
 
    After creating the Storj iX account, log into the Storj portal to create a new bucket and new S3 access credentials ([details]({{< relref "TrueCloudTasks.md#adding-storj-cloud-credentials" >}})).
-   Download the **Access Key** and **Secret Key** provided while creating the new S3 credentials, copy and paste each string into the TrueNAS **Access Key ID** and **Secret Access Key** fields, respectively.
+   Download the **Access Key** and **Secret Key** provided while creating the new S3 credentials. Copy and paste each string into the TrueNAS **Access Key ID** and **Secret Access Key** fields, respectively.
 
    Click **Save**.
 
@@ -106,20 +106,20 @@ Snapshot technology typically uses less storage than full file backups and has m
 To create a simple replication task with the TrueNAS replication wizard:
 
 Replication needs an existing [periodic snapshot task]({{< relref "PeriodicSnapshotTasksSCALE.md" >}})** to run before the replication task runs or the replication task fails.
-You can define this before configuring the replication task or select the replication wizard **Replicate Custom Snapshots** option have TrueNAS automatically to create the task before running the replication task.
+You can define this before configuring the replication task or select the replication wizard **Replicate Custom Snapshots** option to have TrueNAS automatically create the task before running the replication task.
 
 1. Create a periodic snapshot task using the or use the replication wizard **Replicate Custom Snapshots** replication option.
    If scheduling a task, SCALE creates the periodic snapshot task when it runs the replication task according to the scheduled time.
 
 2. Create the replication task.
 
-   Go to **Data Protection**, click **Add** on the **Replication Tasks** widget to open the **Replication Task Wizard** configuration screen.
+   Go to **Data Protection**, and click **Add** on the **Replication Tasks** widget to open the **Replication Task Wizard** configuration screen.
    
    Select both the **Source Location** and **Destination Location** using the dropdown list options.
    You can back up your data on the same system or a different system.
    If you select **A different system** you must have an SSH connection. Have your destination and source information ready.
 
-   Set the **Source** and **Destination** paths, either enter the full path to the data you want to back up or click on the caret <i class="fa fa-caret-right" aria-hidden="true"></i> to the left of **mnt** and at the pool and dataset levels to expand the options. Click on the dataset or directory to narrow backup down to that level.
+   Set the **Source** and **Destination** paths, either enter the full path to the data you want to back up or click on the caret <i class="fa fa-caret-right" aria-hidden="true"></i> to the left of **mnt** and at the pool and dataset levels to expand the options. Click on the dataset or directory to narrow the backup down to that level.
 
    The task name populates from the values in **Source** and **Destination**. 
    
