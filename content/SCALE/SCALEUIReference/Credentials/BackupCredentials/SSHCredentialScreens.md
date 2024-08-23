@@ -50,10 +50,10 @@ These authentication settings show when **Setup Method** is **Semi-automatic (Tr
 | Name | Description |
 |------|-------------|
 | **TrueNAS URL** | (Required) Enter the host name or IP address of the remote system. Use a valid URL scheme for the remote TrueNAS URL. IP address example of *https://10.231.3.76*. |
-| **Admin Username** | Enter the user name for logging into the remote system. Default is set to **root** but change this to the name of the system administrator for the remote system for this connection. |
+| **Admin Username** | Enter the user name for logging into the remote system. The default is set to **root** but change this to the name of the system administrator for the remote system for this connection. |
 | **Admin Password** | (Required) Enter the administrator user account password for logging into the remote system. |
 | **One-Time Password (if necessary)** | One-time password if two-factor authentication is enabled. |
-| **Username** | (Required) Username on the remote system used to login via SSH. |
+| **Username** | (Required) Username on the remote system used to log in via SSH. |
 | **Private Key** | (Required) Select a saved SSH keypair, import the private key from a previously created SSH keypair, or select **Generate New** to create a new keypair to use for the connection to this remote system. |
 {{< /truetable >}}
 
@@ -81,14 +81,14 @@ A manual setup allows a secure connection without a password prompt.
 {{< truetable >}}
 | Name | Description |
 |------|-------------|
-| **Connect Timeout** | Enter time (in seconds) before the system stops attempting to establish a connection with the remote system. |
+| **Connect Timeout** | Enter the time (in seconds) before the system stops attempting to establish a connection with the remote system. |
 {{< /truetable >}}
 
 **Save** automatically opens a connection to the remote TrueNAS and exchanges SSH keys.
 
 ### SSH Keypairs Widget
 
-The **SSH Keypairs** widget on the **Backup Credentials** screen lists SSH keypairs added to the TrueNAS SCALE system.
+The **SSH Keypairs** widget on the **Backup Credentials** screen lists SSH key pairs added to the TrueNAS SCALE system.
 
 {{< trueimage src="/images/SCALE/Credentials/BackupCredentialsSSHKeypairsWidget.png" alt="SSH Keypairs Widgit" id="SSH Keypairs Widgit" >}}
 
@@ -96,21 +96,21 @@ The name of the keypair listed on the widget is a link that opens the **[SSH Key
 
 The <iconify-icon icon="icon-park-outline:download"></iconify-icon> download icon, and the <span class="material-icons">more_vert</span> at the bottom of the **SSH Keypairs** configuration screen, download the public and private key strings as text files for later use.
 
-The <span class="material-icons">delete</span> delete icon opens the a delete dialog. Click **Confirm** and then **Delete** to remove the stored keypairs from the system.
+The <span class="material-icons">delete</span> delete icon opens the delete dialog. Click **Confirm** and then **Delete** to remove the stored keypairs from the system.
 
 #### SSH Keypairs Screen
 
-The **SSH Keypairs** configuration screen displays the same settings for both add and edit options. Click **Add** to open a new configuration form, or click on an existing keypair to open the configuration screen populated with the settings for the selected keypair.
+The **SSH Keypairs** configuration screen displays the same settings for both add and edit options. Click **Add** to open a new configuration form, or click on an existing keypair to open the configuration screen populated with the settings for the selected key pair.
 
 {{< trueimage src="/images/SCALE/Credentials/BackupCredentialsSSHKeypairsAdd.png" alt="SSH Keypairs Settings" id="SSH Keypairs Settings" >}}
 
 {{< truetable >}}
 | Name | Description |
 |------|-------------|
-| **Name** | Required. Enter a unique name for this SSH keypair. Automatically generated keypairs are named after the object that generated the keypair with **key** appended to the name. |
-|**Generate Keypair** | Click to have TrueNAS SCALE automatically generate a new keypair and populate the **Private Key** and **Public Keys** fields with these values. |
+| **Name** | Required. Enter a unique name for this SSH key pair. Automatically generated key pairs are named after the object that generated the keypair with **key** appended to the name. |
+|**Generate Keypair** | Click to have TrueNAS SCALE automatically generate a new key pair and populate the **Private Key** and **Public Keys** fields with these values. |
 | **Private Key** | See **Authentication** in [SSH/Authentication](https://man7.org/linux/man-pages/man1/ssh.1.html). |
 | **Public Key** | See **Authentication** in [SSH/Authentication](https://man7.org/linux/man-pages/man1/ssh.1.html) |
 {{< /truetable >}}
 
-**Save** adds the keypair to the widget and activates the <i class="material-icons" aria-hidden="true">more_vert</i> with options to **Download Private Key** and **Download Public key**.
+**Save** adds the key pair to the widget and activates the <i class="material-icons" aria-hidden="true">more_vert</i> with options to **Download Private Key** and **Download Public key**.
