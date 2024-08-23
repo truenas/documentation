@@ -1,10 +1,10 @@
 &NewLine;
 
-Open the **Cloud Credentials** screen, select the name of the cloud storage provider on the **Provider** dropdown list, enter a name for the credential and then:
+Open the **Cloud Credentials** screen, select the name of the cloud storage provider on the **Provider** dropdown list, enter a name for the credential, and then:
 
 1. Enter the provider account email in **OAuth Client ID** and the password for that user account in **OAuth Client Secret**.
 
-2. Click **Log In To Provider**. The **Authentication** window opens. Click **Proceed** to open the OAuth credential account sign in window.
+2. Click **Log In To Provider**. The **Authentication** window opens. Click **Proceed** to open the OAuth credential account sign-in window.
 
    Yandex displays a cookies message you must accept before you can enter credentials.
 
@@ -19,7 +19,7 @@ Open the **Cloud Credentials** screen, select the name of the cloud storage prov
    {{< truetable >}}
    | Provider | Access Token |
    |----------|--------------|
-   | Box | For more information the user access token for Box [click here](https://developer.box.com/). An [access token](https://developer.box.com/reference/) enables Box to verify a request belongs to an authorized session. Example token: T9cE5asGnuyYCCqIZFoWjFHvNbvVqHjl. |
+   | Box | For more information on the user access token for Box [click here](https://developer.box.com/). An [access token](https://developer.box.com/reference/) enables Box to verify a request belongs to an authorized session. Example token: T9cE5asGnuyYCCqIZFoWjFHvNbvVqHjl. |
    | Dropbox | Create an access [token](https://dropbox.tech/developers/generate-an-access-token-for-your-own-account) from the [Dropbox account](https://www.dropbox.com/). |
    | Google Drive | The authentication process creates the token for [Google Drive](https://developers.google.com/drive/api/v3/about-auth) and populates the **Access Token** field automatically. Access tokens expire periodically, so you must refresh them. |
    | Google Photo | Does not use an access token. |
