@@ -4,12 +4,12 @@
 The default SCALE administrator account name changes from **admin** to **truenas_admin** in TrueNAS SCALE 24.10 (Electric Eel) fresh installations.
 Earlier releases of SCALE with the **admin** account retain this account when upgrading to 24.10 through the UI.
 
-To maximize system security and minimize username discoverability, create one or more administrative users with unique usernames and passwords following the procedure below and disable password access for the default administrative account (**root**, **admin**, or **truenas_admin**).
+To improve security and minimize username discoverability, create one or more administrator accounts with unique usernames and passwords and disable password access for default administrator accounts (**root**, **admin**, or **truenas_admin**).
 Configure appropriate administrative privileges for each admin account.
 Follow the principle of least privilege (PoLP) and assign the lowest permissions required to perform the administrative tasks expected for that user.
 See [Security Recommendations]({{< relref "Security.md" >}}) for more information.
 
-After adding the admin user account and group privileges, login to confirm UI access then disable the root and/or default administrative user password(s).
+After adding the admin user account and group privileges, login to confirm UI access then disable the root and/or default administrator user password(s).
 Go to **Credentials > Local Users**, click on the user, and select **Edit**.
 Click the **Disable Password** toggle to disable the password, then click **Save**.
 {{< /hint >}}
