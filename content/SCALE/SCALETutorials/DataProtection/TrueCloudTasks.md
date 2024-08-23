@@ -1,6 +1,6 @@
 ---
 title: "Managing TrueCloud Backup Tasks"
-description: "Provides instructions on setting up a TrueCloud backup task and configuring an Storj iX account to work with TrueNAS."
+description: "Provides instructions on setting up a TrueCloud backup task and configuring a Storj iX account to work with TrueNAS."
 weight: 5
 tags:
 - TrueCloud
@@ -19,7 +19,7 @@ TrueNAS can send, receive, or synchronize data with the cloud storage providers 
 TrueCloud backup tasks allow for single-time transfers or recurring transfers on a schedule.
 They are an effective method to back up data to a remote location.
 
-This article provides instructions on configuring a TrueCloud backup task using Storj, and covers setting up both the Storj iX account and SCALE credential.
+This article provides instructions on configuring a TrueCloud backup task using Storj and covers setting up both the Storj iX account and SCALE credential.
 
 *<sup><sub>TrueCloud backup tasks streamline functionality for Storj iX cloud backups and restoration.</sub></sup>
 
@@ -41,7 +41,7 @@ To create a TrueCloud Backup task for a TrueCloud transfer:
 
 1. Create the SCALE [Storj cloud credential](#adding-storj-cloud-credentials).
 
-   Adding the Storj cloud credential in SCALE includes following the link to create the Storj iX account, a new bucket, and obtain the S3 authentication credentials needed to complete the process in SCALE.
+   Adding the Storj cloud credential in SCALE includes following the link to create the Storj iX account, creating a new bucket, and obtaining the S3 authentication credentials needed to complete the process in SCALE.
 
 2. Create the [TrueCloud Backup task](#setting-up-the-truecloud-backup-task) for one bucket.
 
@@ -88,7 +88,7 @@ To add the TrueCloud backup task, go to **Data Protection > TrueCloud Backup Tas
 
 7. Enter a password for the backup repository.
    Record this password in a secure location.
-   It is needed to recreate the task using the same bucket/folder, such as in a new TrueNAS install or system, or to restore data from the existing snapshots in another TrueNAS system.
+   You need the password to recreate the task using the same bucket/folder, such as in a new TrueNAS install or system, or to restore data from the existing snapshots in another TrueNAS system.
 
 8. Set the task schedule for when to run this task.
 
