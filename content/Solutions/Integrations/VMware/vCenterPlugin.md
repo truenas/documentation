@@ -43,10 +43,15 @@ The vCenter plugin supports many different TrueNAS software versions installed o
 |---------|-----------|
 | 12.0    | Yes |
 | 13.0    | Yes |
-| 22.12   | Yes |
-| 23.10   | Yes |
-| 24.04   | Yes |
+| 22.12   | Yes (exception) |
+| 23.10   | Yes (exception) |
+| 24.04   | Yes (exception) |
 {{< /truetable >}}
+
+Exceptions
+
+* TrueNAS 22.12, 23.10, and 24.04 do not support Fibre Channel for VMFS datastores.
+
 
 ## Plugin Release Notes
 
