@@ -1,6 +1,6 @@
 ---
 title: "Adding SSH Credentials"
-description: "Provides information on adding SSH connections, generating SSH keypairs, and adding the SSH public key to the root user."
+description: "Provides information on adding SSH connections, generating SSH key pairs, and adding the SSH public key to the root user."
 weight: 20
 alias:
 tags:
@@ -12,9 +12,10 @@ keywords:
 - nas data storage
 - cloud backup and recovery
 - key pair
+- key pairs
 ---
 
-The **SSH Connections** and **SSH Keypairs** widgets on the **Backup Credentials** screen display a list of SSH connections and keypairs configured on the system.
+The **SSH Connections** and **SSH Keypairs** widgets on the **Backup Credentials** screen display a list of SSH connections and key pairs configured on the system.
 Using these widgets, users can establish Secure Socket Shell (SSH) connections.
 
 You must also configure and activate the [SSH Service]({{< relref "sshservicescale.md" >}}) to allow SSH access.
@@ -150,16 +151,16 @@ If the remote NAS is not a TrueNAS system, refer to the documentation for that s
 
 ## Generating SSH Keypairs
 
-TrueNAS generates and stores [RSA-encrypted](https://tools.ietf.org/html/rfc8017) SSH public and private keypairs on the **SSH Keypairs** widget found on the **Credentials > Backup Credentials** screen.
+TrueNAS generates and stores [RSA-encrypted](https://tools.ietf.org/html/rfc8017) SSH public and private key pairs on the **SSH Keypairs** widget found on the **Credentials > Backup Credentials** screen.
 Keypairs are generally used when configuring **SSH Connections** or SFTP **Cloud Credentials**.
-TrueNAS does not support encrypted keypairs or keypairs with passphrases.
+TrueNAS does not support encrypted key pairs or key pairs with passphrases.
 
-TrueNAS automatically generates keypairs as needed when creating new **SSH Connections** or **Replication** tasks.
+TrueNAS automatically generates key pairs as needed when creating new **SSH Connections** or **Replication** tasks.
 
 To manually create a new key pair:
 1. Click **Add** on the **SSH Keypairs** widget.
 2. Click **Generate New** on the **SSH Keypairs** screen.
-3. Give the new keypair a unique name and click **Save**.
+3. Give the new key pair a unique name and click **Save**.
    The keypair displays on the **SSH Keypairs** widget.
 
 {{< trueimage src="/images/SCALE/Credentials/BackupCredentialsSSHKeypairsAdd.png" alt="SSH Keypairs Form" id="SSH Keypairs Form" >}}
