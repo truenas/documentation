@@ -66,13 +66,14 @@ This method is only available for non-Enterprise community systems.
 Some CORE 13.0 releases can migrate using the CORE UI **Upgrade** function using a SCALE update file downloaded from the website.
 To use this method, you must upgrade to the latest maintenance release.
 
-Earlier releases of CORE must upgrade to 13.0 and then the latest maintenance release U6.2 to use this method.
+Earlier releases of CORE must upgrade to 13.0 and then the latest maintenance release (U6.2) to use this method.
 For community users, 13.3 and the latest public release is acceptable.
 If this process fails, retry using the iso file method above.
 
 1. Confirm that the TrueNAS CORE system is on the latest public release, 13.0-U6.2 (community users could have 13.3-RELEASE or newer installed).
 
 2. Download the [SCALE manual update file](https://www.truenas.com/download-truenas-scale/).
+   See [Software Releases]({{< relref "TrueNASUpgrades/_index.md #upgrade-paths" >}}) for current recommended update paths to make sure you download and migrate to the correct SCALE version.
 
 3. Click **CHECK FOR UPDATES** in the **System Information** card on the **Dashboard** or go to **System > Update**.
 
