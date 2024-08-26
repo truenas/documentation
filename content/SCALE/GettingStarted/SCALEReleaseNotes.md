@@ -207,4 +207,10 @@ Notable changes:
   
 * Some users have reported incomplete shutdown and reboot behavior ([NAS-130118](https://ixsystems.atlassian.net/browse/NAS-130118)). This issue has not been reported in iXsystems hardware.
 
+* Unexpected behavior can occur when unlocking a dataset with recursive set to false ([NAS-130329](https://ixsystems.atlassian.net/browse/NAS-130329)). Child datasets with inherited keys are also unlocked with the parent dataset.
+
+* Development of the new TrueCloud backup feature for TrueNAS and Storj integration is ongoing, with fixes for known issues expected in a future 24.10 development version release ([NAS-130320](https://ixsystems.atlassian.net/browse/NAS-130320), [NAS-130794](https://ixsystems.atlassian.net/browse/NAS-130794), and [NAS-130644](https://ixsystems.atlassian.net/browse/NAS-130644)).
+
+* Auto-populated portal group IDs for iSCSI configurations can differ between the **Portals** and **Targets** screen. This is a cosmetic issue in the UI and underlying functionality is not impacted ([NAS-130656](https://ixsystems.atlassian.net/browse/NAS-130656)).
+
 <a href="https://ixsystems.atlassian.net/issues/?filter=10588" target="_blank">Click here to see the latest information</a> about public issues discovered in 24.10-BETA.1 that are being resolved in a future TrueNAS SCALE release.
