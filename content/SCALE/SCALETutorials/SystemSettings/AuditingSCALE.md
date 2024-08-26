@@ -14,7 +14,6 @@ keywords:
 - nas storage solutions
 ---
 
-## Auditing Overview
 TrueNAS SCALE auditing and logs provide a trail of all actions performed by a session, user, or service (SMB, middleware).
 
 The audit function backends are both the syslog and the Samba debug library.
@@ -22,23 +21,33 @@ Syslog sends audit messages via explicit syslog call with configurable priority 
 The default is syslog sent audit messages.
 Debug sends audit messages from the Samba debug library and these messages have a configurable severity (WARNING, NOTICE, or INFO).
 
-The **System > Audit** screen lists all session, user, or SMB events, facilitating comprehensive monitoring.
+The **System > Audit** screen lists all session, or user events, facilitating comprehensive monitoring.
 Logs include who performed the action, timestamp, event type, and a short string of the action performed (event data).
 
 SCALE includes a manual page with more information on the [VFS auditing functions](https://github.com/truenas/samba/blob/SCALE-v4-19-stable/docs-xml/manpages/vfs_truenas_audit.8.xml).
 
-### Auditing Event Types
-Events are organized by session and user, and SMB auditing.
+## Auditing Event Types
 
-**Session and user auditing events**
+### Session and user auditing events
 {{< expand "Authentication Events" "v" >}}
 Audit message generated every time a client logs into the SCALE UI or an SSH session or makes changes to user credentials.
 {{< /expand >}}
 {{< expand "Method Call Events" "v" >}}
 Audit message generated every time the currently logged in user creates a new user account or changes user credentials.
 {{< /expand >}}
+{{< expand "Sudo Accept or Reject Events" "v" >}}
+Generated every time a user logged in to a shell session uses sudo to perform a command as root or is denied sudo permission.
+The event data for a sudo event includes the command.
+{{< /expand >}}
 
-**SMB auditing events**
+### SMB auditing events
+
+SMB events are omitted by default from the **System > Audit** screen.
+To view SMB audit results, go to **System > Services** and click <i class="material-icons" aria-hidden="true" title="Audit Logs">receipt_long</i> **Audit Logs** for the SMB service or use advanced search on the main **Audit** screen to query {{< cli >}}"Service" = "SMB"{{< /cli >}}.
+
+Note: SMB audit logs include all SMB protocol events, but do not include changes to SMB configuration such as creating an SMB share or querying and modifying SMB ACLs.
+See the middleware service log to review those events.
+
 {{< expand "Connect Events" "v" >}}
 Generated every time an SMB client performs an SMB tree connection (TCON) to a given share.
 Each session can have zero or more TCONs.
@@ -89,7 +98,7 @@ Generated when a client attempts to delete a file or directory from a share.
 Generated when a client attempts to set an NFSv4 ACL on a file system or to grant a user (OWNER) read and write permissions to the file system.
 {{< /expand >}}
 
-### Audit Message Records
+## Audit Message Records
 Audit records contain information that establishes:
 * Type of event
 * When the event occurred (timestamp)
@@ -120,14 +129,10 @@ Each audit message JSON object includes:
 | event | Human-readable name for the event type for the audit message. Name is in all uppercase alpha characters that can include an underscore (_) or dot(.) special characters. See [Audit Event Types](#auditing-event-types) above for more information.
 | svc_data | A JSON object containing tree connection (TCON) specific data. This is standardized for all events. |
 | event_data | A JSON object containing event-specific data. This varies based on the event type. |
-| sess | GUID unique identifier for the session. ||
+| sess | GUID unique identifier for the session. |
 | success | Shows true if the operation succeeded or false if it fails. |
 {{< /truetable >}}
 {{< /expand >}}
-
-## System and User Auditing
-Authentication and other events are captured by the TrueNAS audit logging functions.
-The TrueNAS SCALE auditing logs event data varies based on the type of event tracked.
 
 ## Accessing Auditing Screens
 Users have access to audit information from three locations in the SCALE UI:
@@ -176,7 +181,7 @@ The <i class="material-icons" aria-hidden="true" title="Copy to Clipboard">assig
 
 ## Configuring Audit Storage and Retention Policies
 
-To configure Audit storage and retention settings, go to **System > Advanced**, then click **Configure** on the [**Audit**]({{< relref "/SCALE/SCALEUIReference/SystemSettings/AdvancedSettingsScreen.md#audit-widget" >}}) widget.
+To configure Audit storage and retention settings, click **Audit Settings** on the **Audit** screen or go to **System > Advanced**, then click **Configure** on the [**Audit**]({{< relref "/SCALE/SCALEUIReference/SystemSettings/AdvancedSettingsScreen.md#audit-widget" >}}) widget.
 
 {{< include file="/static/includes/ConfigureSystemAuditSCALE.md" >}}
 
