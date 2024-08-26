@@ -85,6 +85,9 @@ More details are available from [Software Releases]({{< relref "/TrueNASUpgrades
   Legacy versions are identified as **(old)** in the navigation menu.
 
   Removal of the legacy **Dashboard** and **View Enclosure** screens is anticipated in the RC.1 release version.
+
+* SMB audit log entries are omitted by default from the **System > Audit** screen.
+  To view SMB audit results, go to **System > Services** and click <i class="material-icons" aria-hidden="true" title="Audit Logs">receipt_long</i> **Audit Logs** for the SMB service or use advanced search on the main **Audit** screen to query SMB events.
   
 ### Upgrade Paths (Anticipated)
 
@@ -167,11 +170,17 @@ Notable changes:
 
 * Align Enclosure Management code with CORE and improve the feature's performance ([NAS-123474](https://ixsystems.atlassian.net/browse/NAS-123474)).
 
+* Improved web UI tables ([NAS-113063](https://ixsystems.atlassian.net/browse/NAS-113063)).
+  
 * Preserve SMB alternate data streams when ingesting data from remote servers ([NAS-127114](https://ixsystems.atlassian.net/browse/NAS-127114)).
 
 * Rewrite TrueNAS installer to better support future development efforts ([NAS-127092](https://ixsystems.atlassian.net/browse/NAS-127092)).
 
 * The **Allow root login** option is removed from the FTP service ([NAS-128837](https://ixsystems.atlassian.net/browse/NAS-128837)).
+  
+* Implement a globally unique system ID ([NAS-123519](https://ixsystems.atlassian.net/browse/NAS-123519)).
+
+* Remove creation/reporting/management of swap on TrueNAS ([NAS-12887](https://ixsystems.atlassian.net/browse/NAS-12887)).
 
 * Rename the default administrator account (UID 950) from **admin** to **truenas_admin** to prevent DS conflicts ([NAS-129997](https://ixsystems.atlassian.net/browse/NAS-129997)).
   This change affects fresh installs of 24.10 only.
@@ -183,11 +192,19 @@ Notable changes:
 * SMB audit log entries are omitted by default from the **System > Audit** screen ([NAS-130498](https://ixsystems.atlassian.net/browse/NAS-130498)).
   To view SMB audit results, go to **System > Services** and click <i class="material-icons" aria-hidden="true" title="Audit Logs">receipt_long</i> **Audit Logs** for the SMB service or use advanced search on the main **Audit** screen to query SMB events.
 
+* Fix IPv6 bind for VM display ([NAS-128102](https://ixsystems.atlassian.net/browse/NAS-128102)).
+
+* Replace nslcd with sssd ([NAS-127073](https://ixsystems.atlassian.net/browse/NAS-127073)).
+
+* Fix management of SNMPv3 user ([NAS-128335](https://ixsystems.atlassian.net/browse/NAS-128335)).
+
 <a href="https://ixsystems.atlassian.net/issues/?filter=10587" target="_blank">Click here for the full changelog</a> of completed tickets that are included in the 24.10-BETA.1 release.
 {{< include file="/static/includes/JiraFilterInstructions.md" >}}
 
 ### 24.04-BETA.1 Known Issues
 
 * The **System > Audit** screen can display different values for **Timestamp** in the entries list and **Localtime** in **Event Data**, depending on the local timezone of the system ([NAS-130373](https://ixsystems.atlassian.net/browse/NAS-130373)).
+  
+* Some users have reported incomplete shutdown and reboot behavior ([NAS-130118](https://ixsystems.atlassian.net/browse/NAS-130118)). This issue has not been reported in iXsystems hardware.
 
 <a href="https://ixsystems.atlassian.net/issues/?filter=10588" target="_blank">Click here to see the latest information</a> about public issues discovered in 24.10-BETA.1 that are being resolved in a future TrueNAS SCALE release.
