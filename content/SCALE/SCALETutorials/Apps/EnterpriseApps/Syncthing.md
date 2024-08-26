@@ -79,7 +79,7 @@ You can allow Syncthing to create the configuration storage volume, but we recom
 
 Next, Click **add** to the right of **Additional Storage** to add the storage configuration settings for the data volume.
 
-{{< trueimage src="/images/SCALE/Apps/InstallSyncthingEnterpriseStorageConfigData1HostPathh.png" alt="Syncthing Data1 Storage Settings" id="Syncthing Data1 Storage Settings" >}}
+{{< trueimage src="/images/SCALE/Apps/InstallSyncthingEnterpriseStorageConfigData1HostPath.png" alt="Syncthing Data1 Storage Settings" id="Syncthing Data1 Storage Settings" >}}
 
 Enter or browse to the dataset created to populate the **Host Path** field (for example, */mnt/tank/syncthing/config*), then enter or browse to the location of the **data1** dataset to populate the **Host Path** field under the **Mount Path** field.
 
