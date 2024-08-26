@@ -1,6 +1,6 @@
 ---
-title: "Syncthing Charts App"
-description: "Provides general information, guidelines, installation instructions, and use scenarios for the community version of the Syncthing app."
+title: "Syncthing Stable App"
+description: "Provides general information, guidelines, installation instructions, and use scenarios for the offical version of Syncthing in the stable app train."
 weight: 90
 aliases:
  - /scale/scaletutorials/apps/chartapps/syncthingcharts/
@@ -22,41 +22,65 @@ The **charts** and **enterprise** train versions of the Syncthing app widget dis
 
 {{< include file="/static/includes/SyncthingArticleIntro.md" >}}
 
-{{< include file="/static/includes/AppsUnversioned.md" >}}
-
 ## Before Installing Syncthing
 {{< include file="/static/includes/SyncthingFirstSteps.md" >}}
 
 ## Installing the Syncthing Application
+You can have multiple Syncthing app deployments (for example two or more **stable**, two or more **enterprise**, or a combination of **stable** and **enterprise** trains, etc.).
+Each Syncthing app deployment requires a unique name that can include numbers, and dashes or underscores (for example, *syncthing2*, *syncthing-test*, *syncthing_1*, etc.).
+If deploying multiple Syncthing apps on your system, each app deployment requires separate storage volumes.
+Using the same two storage datasets for two different app deployments results in the app failing to start.
+Create a new folder for each Syncthing app deployment and add both the **home** and **data1** datasets in that folder.
 
-Go to **Apps > Discover Apps** and locate the **Syncthing** charts app widget.
+Use a consistent file-naming convention to avoid conflict situations where data does not or cannot synchronize because of file name conflicts.
+Path and file names in the Syncthing app are case sensitive.
+For example, a file named *MyData.txt* is not the same as *mydata.txt* file in Syncthing.
 
-{{< trueimage src="/images/SCALE/Apps/SyncthingChartsAppWidget.png" alt="Syncthing Charts App Widget" id="Syncthing Charts App Widget" >}}
+Go to **Apps > Discover Apps** and locate the **Syncthing** widget for the app in the stable train.
+
+{{< trueimage src="/images/SCALE/Apps/SyncthingAppWidget.png" alt="Syncthing App Widget Stable Train" id="Syncthing App Widget Stable Train" >}}
 
 Click on the widget to open the Syncthing details screen. 
 
-{{< trueimage src="/images/SCALE/Apps/SyncthingChartsDetailsScreen.png" alt="Syncthing Charts Details Screen" id="Syncthing Charts Details Screen" >}}
+{{< trueimage src="/images/SCALE/Apps/SyncthingAppDetailsScreen.png" alt="Syncthing Details Screen Stable Train" id="Syncthing Details Screen Stable Screen" >}}
 
-Click **Install** to open the **Install Syncthing** screen.
+Click on the widget to open the Syncthing details screen.
+
+Click **Install** to open the **Install Syncthing** wizard.
 
 Application configuration settings are presented in several sections, each explained below.
-To find specific fields, click in the **Search Input Fields** search field, scroll down to a particular section or click on the section heading on the navigation area in the upper-right corner.
+To find specific fields click in the **Search Input Fields** search field, scroll down to a particular section, or click on the section heading in the navigation area in the upper-right corner.
 
-{{< trueimage src="/images/SCALE/Apps/InstallSyncthingChartsScreen.png" alt="Install Syncthing Screen" id="Install Syncthing Screen" >}}
+{{< trueimage src="/images/SCALE/Apps/InstallSyncthingAppWizard.png" alt="Install Syncthing Wizard" id="Install Syncthing Wizard" >}}
 
-Accept the default values in **Application Name** and **Version**. 
+Accept the default values in **Application Name** and **Version**.
 
-Accept the default owner user and group ID settings. You can customize your Syncthing charts deployment by adding [environment variables](#configuration-settings) but these are not required.
+Select the timezone where the TrueNAS server is located from the **Timezone** dropdown list.
 
-Add the storage volume(s). 
-Either allow the Syncthing app to create the configuration storage volume or use an existing dataset created for this app.
-To use an existing dataset, select **Enable Custom Host Path for Syncthing Configuration Volume**, then browse to and select the dataset to populate the field. 
-See [Storage Settings](#storage-settings) for more details on adding existing datasets.
+Accept the default user and group ID settings (**568**).
+If you created a user for this app, change these settings to the UID/GID for that new user.
+
+Configure the storage settings.
+You can allow Syncthing to create the configuration storage volume, but we recommend setting **Type** to **Host Path (Path that already exists on the system)**, and then enter or browse to the location of the **home** dataset to populate the **Host Path** field for the **Syncthing Config Storage** settings.
+
+{{< trueimage src="/images/SCALE/Apps/InstallSyncthingStorageConfigHomeHostPath.png" alt="Syncthing Home Storage Settings" id="Syncthing Home Storage Settings" >}}
+
+Next, Click **add** to the right of **Additional Storage** to add the storage configuration settings for the data volume.
+
+{{< trueimage src="/images/SCALE/Apps/InstallSyncthingStorageConfigData1HostPath.png" alt="Syncthing Data1 Storage Settings" id="Syncthing Data1 Storage Settings" >}}
+
+Enter or browse to the dataset created to populate the **Host Path** field (for example, */mnt/tank/syncthing/config*), then enter or browse to the location of the **data1** dataset to populate the **Host Path** field under the **Mount Path** field.
+
+To add another dataset path inside the container, see [**Storage Settings**](#storage-settings) below for more information.
+Set **Type** to **Host Path (Path that already exists on the system)**, enter **/data1** in **Mount Path**, and then either enter or browse to the path to the **data1** dataset to populate the **Host Path** field.
 
 Accept the default port numbers in **Networking**. 
 See [Network Settings](#networking-settings) below for more information on network settings. 
 Before changing the default port number, see [Default Ports](https://www.truenas.com/docs/references/defaultports/) for a list of assigned port numbers.
-When selected, **Host Network** binds to the default host settings programmed for Syncthing. We recommend leaving this disabled.
+When selected, **Host Network** binds to the default host settings programmed for Syncthing.
+When enabled the app uses the host network for Syncthing.
+The TCP and UDP ports listen on port **20978** and **20979**.
+Web UI listens on port **20910**.
 
 Syncthing does not require advanced DNS options. If you want to add DNS options, see [Advanced DNS Settings](#advanced-dns-settings) below.
 
@@ -78,26 +102,27 @@ Secure Syncthing by setting up a username and password.
 The following sections provide more detail explanations of the settings found in each section of the **Install Syncthing** screen.
 
 ### Application Name Settings
+Accept the default value or enter a name in **Application Name** field.
+In most cases use the default name, but if adding a second deployment of the application you must change this name.
 
-Accept the default value or enter a name in **Application Name** field. 
-In most cases use the default name but adding a second application deployment requires a different name.
-
-Accept the default version number in **Version**. 
-When a new version becomes available, the application has an update badge. 
-The **Installed Applications** screen shows the option to update applications.
+Accept the default version number in **Version**.
+When a new version becomes available, the application shows an update badge and the **Application Info** widget on the **Installed** applications screen shows the **Update** button.
 
 ### Configuration Settings
+The Syncthing app wizard is configured with all settings required to deploy the container, but you can add additional settings if you want to further customize the app in SCALE.
 
-Accept the defaults in the **Configuration** settings or enter new user and group IDs. The default value for **Owner User ID** and **Owner Group ID** is **568**.
+{{< trueimage src="/images/SCALE/Apps/InstallSyncthingWizardSyncthingConfigSettings.png" alt="Add Syncthing Variables" id="Add Syncthing Environment Variables" >}}
 
-{{< trueimage src="/images/SCALE/Apps/InstallSyncthingChartsConfig.png" alt="Syncthing Configuration Settings" id="Syncthing Configuration Settings" >}}
+Click **Add** to the right of **Environmental Variables** to show a set of fields to configure the application with additional [Syncthing environmental variables](https://docs.syncthing.net/v1.22.0/users/syncthing.html).
 
-Click **Add** to the right of **Syncthing environment** to show the **Name** and **Value** fields. 
+You can add environment variables to the Syncthing app configuration after deploying the app.
+Click **Edit** on the **Syncthing Application Info** widget found on the **Installed Application** screen to open the **Edit Syncthing** screen.
 
-{{< trueimage src="/images/SCALE/Apps/InstallSyncthingChartsConfigAddEnviron.png" alt="Add Syncthing Environment Variable" id="Add Syncthing Environment Variable" >}}
+### User and Group Settings
+Accept the user and group defaults settings in **User and Group Configuration**, or enter new user and group IDs for the user created to administer this app.
+The default value for **User Id** and **Group ID** is **568**.
 
-For a list of Syncthing environment variables, go to the [Syncthing documentation](https://docs.syncthing.net/) website and search for environment variables. 
-You can add environment variables to the Syncthing app configuration after deploying the app. Click **Edit** on the **Syncthing Application Info** widget found on the **Installed Application** screen to open the **Edit Syncthing** screen.
+{{< trueimage src="/images/SCALE/Apps/InstallSyncthingWizardSyncthingUserAndGroup.png" alt="Syncthing User and Group Settings" id="Syncthing User and Group Setting" >}}
 
 ### Storage Settings 
 You can allow the Syncthing app to create the configuration storage volume or you can create datasets to use for the configuration storage volume and to use for storage within the container pod.

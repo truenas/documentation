@@ -73,7 +73,7 @@ Before changing ports, see [Default Ports](https://www.truenas.com/docs/referenc
 Select the certificate created for Syncthing from the **Certificates** dropdown list.
 
 Configure the storage settings.
-You can allow Syncthing to create the configuration storage volume, but we recommend setting **Type** to **Host Path (Path that already exists on the system)**, and then enter or browse to the location of the **home** dataset to populate the **Host Path** field for the **Synchthing Home Storage** settings.
+You can allow Syncthing to create the configuration storage volume, but we recommend setting **Type** to **Host Path (Path that already exists on the system)**, and then enter or browse to the location of the **home** dataset to populate the **Host Path** field for the **Syncthing Home Storage** settings.
 
 {{< trueimage src="/images/SCALE/Apps/InstallSyncthingEnterpriseStorageConfigHomeHostPath.png" alt="Syncthing Home Storage Settings" id="Syncthing Home Storage Settings" >}}
 
