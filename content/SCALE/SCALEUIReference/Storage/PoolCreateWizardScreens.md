@@ -17,7 +17,7 @@ The **Pool Creation Wizard** configuration screens include a configuration previ
 
 {{< trueimage src="/images/SCALE/Storage/PoolCreationWizard.png" alt="Pool Creation Wizard" id="Pool Creation Wizard" >}}
 
-**Configuration Preview** displays a list of pool and VDEV settings that dynamically update as you configure settings in the wizard.
+**Configuration Preview** lists pool and VDEV settings that dynamically update as you configure settings in the wizard.
 
 **Inventory** displays the number of available disks by size on the system, and this list dynamically updates as disks move to VDEVs added in the wizard.
 
@@ -30,7 +30,7 @@ Larger iXsystems-provided servers for Enterprise users equipped with expansion s
 Each wizard VDEV configuration screen includes the **Automated Disk Selection** and **Advanced Options** areas.
 Click **Manual Disk Selection** to open the **[Manual Selection](#manual-selection-screen)** screen.
 
-**Back** and **Next** move to either the previous or next wizard screen.
+**Back** and **Next** move to the previous or next wizard screen.
 **Reset Step** clears the VDEV settings for the VDEV type selected. For example, **Data** VDEV configuration.
 **Save And Go To Review** saves the current selections and goes directly to the **Review** wizard screen.
 
@@ -78,7 +78,7 @@ The **Enclosure Options** screen shows in the **Pool Creation Wizard** if the iX
 The **Enclosure Options** screen shows three radio buttons that could apply a set pool storage configuration topology when using the **Automated Disk Selection** option to assign disks to a VDEV.
 
 * **No Enclosure Dispersal Strategy** does not apply a dispersal strategy in how the system adds disks by size and type to the pool VDEVs created when using the **Automated Disk Selection** option.
-  Does not show additional options. Disks added to the pool VDEVs are assigned in sequence based on disk availability and not balanced across all enclosures.
+  Does not show additional options. Disks added to the pool VDEVs are assigned in sequence based on disk availability and are not balanced across all enclosures.
 * **Maximum Dispersal Strategy** applies a maximum dispersal strategy in how the system adds disks by size and type to the pool VDEVs created when using the **Automated Disk Selection** option.
   This balances disk selection across all enclosures and available disks.
   Does not show additional options. Disks added to the pool VDEVs are spread across all available enclosure disks.
