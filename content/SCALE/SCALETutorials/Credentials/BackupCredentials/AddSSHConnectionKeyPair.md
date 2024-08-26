@@ -1,6 +1,6 @@
 ---
 title: "Adding SSH Credentials"
-description: "Provides information on adding SSH connections, generating SSH keypairs, and adding the SSH public key to the root user."
+description: "Provides information on adding SSH connections, generating SSH key pairs, and adding the SSH public key to the root user."
 weight: 20
 alias:
 tags:
@@ -11,9 +11,11 @@ keywords:
 - enterprise data storage
 - nas data storage
 - cloud backup and recovery
+- key pair
+- key pairs
 ---
 
-The **SSH Connections** and **SSH Keypairs** widgets on the **Backup Credentials** screen display a list of SSH connections and keypairs configured on the system.
+The **SSH Connections** and **SSH Keypairs** widgets on the **Backup Credentials** screen display a list of SSH connections and key pairs configured on the system.
 Using these widgets, users can establish Secure Socket Shell (SSH) connections.
 
 You must also configure and activate the [SSH Service]({{< relref "sshservicescale.md" >}}) to allow SSH access.
@@ -22,7 +24,7 @@ You must also configure and activate the [SSH Service]({{< relref "sshservicesca
 
 To begin setting up an SSH connection, go to **Credentials > Backup Credentials**.
 
-{{< trueimage src="/images/SCALE/Credentials/BackupCredentialsAllCloudSSH.png" alt="Backup Credentials Screen" id="Backup Credentials Screen" >}}
+{{< trueimage src="/images/SCALE/Credentials/BackupCredentialsScreen.png" alt="Backup Credentials Screen" id="Backup Credentials Screen" >}}
 
 Click **Add** on the **SSH Connections** widget.
 
@@ -31,9 +33,9 @@ Click **Add** on the **SSH Connections** widget.
 This procedure uses the semi-automatic setup method for creating an SSH connection with another TrueNAS system.
 {{< expand "Click here for more information" "v" >}}
 **Semi-automatic** simplifies setting up an SSH connection with another TrueNAS system without logging in to that system to transfer SSH keys.
-This requires an SSH keypair on the local system and administrator account credentials for the remote TrueNAS.
+This requires an SSH key pair on the local system and administrator account credentials for the remote TrueNAS.
 You must configure the remote system to allow root access with SSH.
-You can generate the keypair as part of the semiautomatic configuration or a manually created one using **SSH Keypairs**.
+You can generate the key pair as part of the semiautomatic configuration or a manually created one using **SSH Keypairs**.
 
 Using the **SSH Connections** configuration screen:
 
@@ -52,11 +54,11 @@ Using the **SSH Connections** configuration screen:
    b. Enter an admin user name, which is the username on the remote system entered to log in via the web UI to set up the connection.
       Or, leave **Admin Username** set to the default **root** user and enter the user password in **Admin Password**.
 
-   c. If two-factor authentication is enabled, enter the one-time password in **One-Time Password (if neccessary)**.
+   c. If two-factor authentication is enabled, enter the one-time password in **One-Time Password (if necessary)**.
 
    d. Enter a **Username**, which is the user name on the remote system to log in via SSH.
 
-   e. Enter or import the private key from a previously created SSH keypair, or create a new one using the **SSH Keypair** widget.
+   e. Enter or import the private key from a previously created SSH key pair, or create a new one using the **SSH Keypair** widget.
 
 4. (Optional) Enter the number of seconds you want to have SCALE wait for the remote TrueNAS system to connect in **Connect Timeout**.
 
@@ -92,11 +94,11 @@ Using the **SSH Connections** configuration screen:
 
    c. Enter a user name for logging into the remote system in **Username**.
 
-   c. Select the private key from the SSH keypair that you use to transfer the public key on the remote NAS from the **Private Key** dropdown.
+   c. Select the private key from the SSH key pair that you use to transfer the public key on the remote NAS from the **Private Key** dropdown.
 
    d. Click **Discover Remote Host Key** after properly configuring all other fields to query the remote system and automatically populate the **Remote Host Key** field.
 
-4. (Optional) Enter the number of seconds you want SCALE wait for the remote TrueNAS system to connect in **Connect Timeout**.
+4. (Optional) Enter the number of seconds you want SCALE to wait for the remote TrueNAS system to connect in **Connect Timeout**.
 
 {{< trueimage src="/images/SCALE/Credentials/NewSSHConnectMoreOptions.png" alt="Manual More Options" id="Manual More Options" >}}
 
@@ -112,9 +114,9 @@ This procedure covers adding a public SSH key to the admin account on the TrueNA
 {{< expand "Click here for more information" "v" >}}
 1. Copy the SSH public key text or download it to a text file:
 
-   Log into the TrueNAS system that generated the SSH keypair and go to **Credentials > Backup Credentials**.
+   Log into the TrueNAS system that generated the SSH key pair and go to **Credentials > Backup Credentials**.
 
-   Click on the name of the keypair on the **SSH Keypairs** widget to open the keypair for the SSH connection.
+   Click on the name of the key pair on the **SSH Keypairs** widget to open the key pair for the SSH connection.
 
    Copy the text of the public SSH key or download the public key as a text file.
 
@@ -137,7 +139,7 @@ This procedure covers adding a public SSH key to the admin account on the TrueNA
 
 3. Click **Save**.
 
-If you need to generate a new SSH keypair:
+If you need to generate a new SSH key pair:
 
 1. Go to **Credentials > Backup Credentials**.
 2. Click **Add** on the **SSH Keypairs** widget and select **Generate New**.
@@ -149,17 +151,17 @@ If the remote NAS is not a TrueNAS system, refer to the documentation for that s
 
 ## Generating SSH Keypairs
 
-TrueNAS generates and stores [RSA-encrypted](https://tools.ietf.org/html/rfc8017) SSH public and private keypairs on the **SSH Keypairs** widget found on the **Credentials > Backup Credentials** screen.
-Keypairs are generally used when configuring **SSH Connections** or SFTP **Cloud Credentials**.
-TrueNAS does not support encrypted keypairs or keypairs with passphrases.
+TrueNAS generates and stores [RSA-encrypted](https://tools.ietf.org/html/rfc8017) SSH public and private key pairs on the **SSH Keypairs** widget found on the **Credentials > Backup Credentials** screen.
+Key pairs are generally used when configuring **SSH Connections** or SFTP **Cloud Credentials**.
+TrueNAS does not support encrypted key pairs or key pairs with passphrases.
 
-TrueNAS automatically generates keypairs as needed when creating new **SSH Connections** or **Replication** tasks.
+TrueNAS automatically generates key pairs as needed when creating new **SSH Connections** or **Replication** tasks.
 
-To manually create a new keypair:
+To manually create a new key pair:
 1. Click **Add** on the **SSH Keypairs** widget.
 2. Click **Generate New** on the **SSH Keypairs** screen.
-3. Give the new keypair a unique name and click **Save**.
-   The keypair displays on the **SSH Keypairs** widget.
+3. Give the new key pair a unique name and click **Save**.
+   The key pair displays on the **SSH Keypairs** widget.
 
 {{< trueimage src="/images/SCALE/Credentials/BackupCredentialsSSHKeypairsAdd.png" alt="SSH Keypairs Form" id="SSH Keypairs Form" >}}
 

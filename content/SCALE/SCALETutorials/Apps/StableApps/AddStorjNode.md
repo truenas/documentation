@@ -4,6 +4,7 @@ description: "Provides information on setting up the Storj node app on your True
 weight: 
 aliases:
  - /scale/scaletutorials/apps/addstorjnode/
+ - /scale/scaletutorials/apps/chartapps/addstorjnode/
 tags:
 - apps
 - crypto

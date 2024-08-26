@@ -3,6 +3,7 @@ title: "Syncthing Charts App"
 description: "Provides general information, guidelines, installation instructions, and use scenarios for the community version of the Syncthing app."
 weight: 90
 aliases:
+ - /scale/scaletutorials/apps/chartapps/syncthingcharts/
 tags:
 - apps
 - syncthing

@@ -4,6 +4,7 @@ description: "Provides information on updating MinIO from 1.6.58 to newer versio
 weight: 10
 aliases:
  - /scale/scaletutorials/apps/minioclustersscale/miniomanualupdate/
+ - /scale/scaletutorials/apps/chartapps/minioapp/miniomanualupdate/
 tags:
 - s3
 - apps
@@ -14,7 +15,7 @@ keywords:
 ---
 
 {{< hint info >}}
-This article applies to the public release of the S3 **MinIO** community application in the **charts** train of the TRUENAS catalog.
+This article applies to the public release of the S3 **MinIO** community application in the **stable** train for the application catalog.
 {{< /hint >}}
 
 {{< include file="/static/includes/AppsUnversioned.md" >}}
@@ -53,7 +54,7 @@ To manually update your MinIO application:
 
 ### Creating a New MinIO Deployment
 
-Follow the instructions [here]({{< relref "/SCALE/SCALETutorials/Apps/ChartApps/MinIOApp/_index.md" >}}) to make a new, up-to-date MinIO deployment in TrueNAS.
+Follow the instructions [here]({{< relref "/SCALE/SCALETutorials/Apps/StableApps/MinIOApp/_index.md" >}}) to make a new, up-to-date MinIO deployment in TrueNAS.
 Make sure it is version **2022-10-29_1.6.59** or later.
 
 ### Downloading the MinIO Client

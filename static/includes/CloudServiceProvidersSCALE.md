@@ -24,5 +24,3 @@ These providers are supported for Cloud Sync tasks in TrueNAS SCALE:
 * [WebDAV](http://www.webdav.org/)
 * [Yandex](https://cloud.yandex.com/en/)
 {{< /columns >}}
-
-*<sup><sub>[TrueCloud Backup Tasks]({{< relref "TrueCloudTasks.md" >}}) streamline functionality for Storj iX cloud backups and restoration.</sub></sup>

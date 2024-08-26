@@ -8,6 +8,7 @@ aliases:
  - /scale/scaletutorials/apps/communityapps/minioclustersscale/miniomanualupdate/
  - /scale/scaletutorials/systemsettings/services/s3servicescale/
  - /scale/scaleuireference/systemsettings/services/s3servicescreen/
+ - /scale/scaletutorials/apps/chartapps/minioapp/
 tags:
 - s3
 - apps
