@@ -55,8 +55,21 @@ Exceptions
 
 ## Plugin Release Notes
 
-### TrueNAS vCenter Plugin 3.5.0
+### TrueNAS vCenter Plugin 3.6.0
 
+**August 28, 2024**
+
+iXsystems is pleased to release TrueNAS vCenter Plugin version 3.6.0!
+This is a minor release to fix an issue with VMFS datastore management with TrueNAS 24.04 systems that have iSCSI ALUA enabled.
+
+#### Known Issues
+
+The TrueNAS vCenter Plugin deployment status can appear to be stuck in the vCenter activity panel.
+This is a cosmetic issue and the plugin deploys fully.
+
+### Previous Versions Release Notes
+
+{{< expand "3.5.0 (Click to expand)" "v" >}}
 **October 6, 2023**
 
 iXsystems is pleased to release TrueNAS vCenter Plugin version 3.5.0!
@@ -74,7 +87,7 @@ Individual tickets require an iXsystems Jira login to view.
 * Plugin dependencies update
 * Offline installer fix
 
-### Previous Versions Release Notes
+{{< /expand >}}
 
 {{< expand "3.4.0 (Click to expand)" "v" >}}
   
