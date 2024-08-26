@@ -21,7 +21,7 @@ Click **Create Pool** to open the **Pool Creation Wizard**.
    {{< trueimage src="/images/SCALE/Storage/PoolCreationWizardEnclosureOptionsScreen.png" alt="Pool Creation Wizard Enclosure Options" id="Pool Creation Wizard Enclosure Options" >}}
 
    **No Enclosure Dispersal Strategy** does not apply a dispersal strategy in how the system adds disks by size and type to the pool VDEVs created when using the **Automated Disk Selection** option.
-   Does not show additional options. Disks added to the pool VDEVs are assigned in sequence based on disk availability and not balanced across all enclosures.
+   Does not show additional options. Disks added to the pool VDEVs are assigned in sequence based on disk availability and are not balanced across all enclosures.
 
    **Maximum Dispersal Strategy** applies a maximum dispersal strategy in how the system adds disks by size and type to the pool VDEVs created when using the **Automated Disk Selection** option.
    This balances disk selection across all enclosures and available disks.
