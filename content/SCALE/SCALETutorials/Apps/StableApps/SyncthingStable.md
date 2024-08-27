@@ -4,6 +4,7 @@ description: "Provides general information, guidelines, installation instruction
 weight: 90
 aliases:
  - /scale/scaletutorials/apps/chartapps/syncthingcharts/
+ - /scale/scaletutorials/apps/stableapps/syncthingcharts/
 tags:
 - apps
 - syncthing
