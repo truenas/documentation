@@ -154,6 +154,9 @@ Notable changes:
 
 ### 24.04.2 Known Issues
 
+* Systems migrating from 13.0-U6.2 that have storage pools with cache and spare devices can show, post-upgrade to 24.04.2, pools as having unavailable devices and other disk detection errors ([NAS- ]()).
+  This is caused by a difference between how CORE and SCALE identify devices for pool import. To work around this issue, use the TrueNAS UI to export the affected pool and then re-import it.
+
 * Network UPS Tools (NUT) service can utilize 100% of 1 CPU thread when power is cut to the UPS [NAS-130175](https://ixsystems.atlassian.net/browse/NAS-130175).
   This issue is resolved in a new version of the related service, which will be made available in a future TrueNAS release when the [updated NUT version](https://tracker.debian.org/pkg/nut) is moved into upstream stable Debian repositories.
 
