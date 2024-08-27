@@ -6,7 +6,7 @@ tags:
 - toolbar
 ---
  
-TrueNAS SCALE 24.10 (Electric Eel) introduces global search function that allows users to quickly access screens and management functions across the TrueNAS UI.
+TrueNAS 24.10 (Electric Eel) introduces global search function that allows users to quickly access screens and management functions across the TrueNAS UI.
 Global search also allows users to redirect queries to the TrueNAS Documentation Hub to retrieve relevant documentation.
 
 {{< trueimage src="/images/SCALE/Dashboard/TopToolbar.png" alt="TrueNAS SCALE Top Toolbar" id="TrueNAS SCALE Top Toolbar" >}}

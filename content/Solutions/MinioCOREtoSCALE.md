@@ -23,7 +23,7 @@ This process has been validated using a CORE 13.0-U6.1 system that was migrated 
 ## First Steps
 
 The TrueNAS CORE system must have the MinIO plugin deployed, not the deprecated S3 service.
-Users with TrueNAS CORE 13.0-U6.1 or earlier installed and the S3 service active must [migrate to the MinIO plugin](https://www.truenas.com/docs/core/13.0/coretutorials/jailspluginsvms/plugins/minioplugin/#migrating-from-s3-service-to-minio-plugin) before upgrading to TrueNAS CORE 13.3 or migrating to TrueNAS SCALE.
+Users with TrueNAS 13.0-U6.1 or earlier installed and the S3 service active must [migrate to the MinIO plugin](https://www.truenas.com/docs/core/13.0/coretutorials/jailspluginsvms/plugins/minioplugin/#migrating-from-s3-service-to-minio-plugin) before upgrading to TrueNAS 13.3 or migrating to TrueNAS SCALE.
 
 Configure the CORE MinIO plugin to access data via a mount point rather than the default MinIO plugin storage location.
 In this example MinIO data is stored in <file>/mnt/tank/minio</file> on both CORE and SCALE.

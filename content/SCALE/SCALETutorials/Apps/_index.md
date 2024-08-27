@@ -62,7 +62,7 @@ You must choose a pool before you can install an application.
 
 {{< /expand >}}
 
-For more information on screens and screen functions, refer to the UI Reference article on [Apps Screens]({{ relref "SCALE/SCALEUIReference/Apps/_index.md" }}).
+For more information on screens and screen functions, refer to the UI Reference article on [Apps Screens]({{< relref "SCALE/SCALEUIReference/Apps/_index.md" >}}).
 
 ## Choosing the Application Pool
 You are prompted to [select the pool for apps](#choosing-the-apps-pool) the first time you click on **Apps**.
