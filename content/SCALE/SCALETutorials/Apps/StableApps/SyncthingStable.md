@@ -107,7 +107,7 @@ Go to **Actions > Settings** and set a user password for the web UI.
 
 {{< include file="/static/includes/SyncthingWebPortalInfo.md" >}}
 
-## Understanding Syncthing Settings
+## Understanding TrueNAS Syncthing Wizard Settings
 The following sections provide more detail explanations of the settings found in each section of the **Install Syncthing** screen.
 
 ### Application Name Settings

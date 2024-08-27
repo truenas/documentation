@@ -4,6 +4,7 @@ description: "Provides general information, guidelines, installation instruction
 weight: 100
 aliases:
  - /scale/scaletutorials/apps/syncthing/
+ - 
 tags:
 - syncthing
 - apps
@@ -106,7 +107,7 @@ Go to **Actions > Settings** and set a user password for the web UI.
 
 {{< include file="/static/includes/SyncthingWebPortalInfo.md" >}}
 
-## Understanding Syncthing Settings
+## Understanding TrueNAS Syncthing Wizard Settings
 The following sections provide detailed explanations of the settings found in each section of the Enterprise train **Install Syncthing** screen.
 
 ### Application Name Settings
