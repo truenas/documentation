@@ -32,7 +32,7 @@ VM snapshots are included as part of the connected Virtual Machine File System (
 The temporary VMware snapshots are automatically deleted on the VMWare side, but still exist in the ZFS snapshot and are available as stable restore points.
 
 {{< enterprise >}}
-TrueNAS Enterprise customers with TrueNAS CORE 12.0 and newer and TrueNAS SCALE 22.12.4 (Bluefin) and newer deployed can access the iXsystems TrueNAS vCenter plugin.
+TrueNAS Enterprise customers with TrueNAS CORE 12.0 and newer and TrueNAS 22.12.4 (Bluefin) and newer deployed can access the iXsystems TrueNAS vCenter plugin.
 This activates management options for TrueNAS hardware attached to vCenter Server and enables limited management of TrueNAS systems from a single interface.
 
 Please contact iXsystems Support to learn more and schedule a time to deploy or upgrade the plugin.

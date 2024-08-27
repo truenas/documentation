@@ -58,20 +58,20 @@ Documentation for previous releases, that are no longer recommended for any user
 All documentation provided here is end-of-life (EoL), intended for reference only, and no longer receives *any* updates.
 {{< /hint >}}
 
-Software releases after TrueNAS SCALE 22.12 (Bluefin) are available as navigable website branches.
+Software releases after TrueNAS 22.12 (Bluefin) are available as navigable website branches.
 Earlier releases are available only in PDF.
 
 ## TrueNAS SCALE
 
-{{< expand "TrueNAS SCALE 22.12 (Bluefin)" "v" >}}
-[TrueNAS SCALE 22.12 (Bluefin)](https://www.truenas.com/docs/scale/22.12/)
+{{< expand "TrueNAS 22.12 (Bluefin)" "v" >}}
+[TrueNAS 22.12 (Bluefin)](https://www.truenas.com/docs/scale/22.12/)
 
 Release notes for each minor release of 22.12 are available in the [SCALE 22.12 Bluefin Release Notes](https://www.truenas.com/docs/scale/22.12/gettingstarted/scalereleasenotes/).
 {{< /expand >}}
 
-{{< expand "TrueNAS SCALE 22.02 (Angelfish)" "v" >}}
+{{< expand "TrueNAS 22.02 (Angelfish)" "v" >}}
 Release notes for each minor release of 22.02 Angelfish are included in the archived docs.
-<a href="https://www.truenas.com/docs/files/SCALE22.02Docs.pdf">TrueNAS SCALE 22.02 (Angelfish)</a>
+<a href="https://www.truenas.com/docs/files/SCALE22.02Docs.pdf">TrueNAS 22.02 (Angelfish)</a>
 {{< /expand >}}
 
 ## TrueNAS CORE

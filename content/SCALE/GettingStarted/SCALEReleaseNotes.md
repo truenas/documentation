@@ -128,7 +128,7 @@ Do not use early-release software for critical tasks.
 
 **August 29, 2024**
 
-iXsystems is pleased to release TrueNAS SCALE 24.10-BETA.1!
+iXsystems is pleased to release TrueNAS 24.10-BETA.1!
 This has software component updates and new features that are in the polishing phase.
 
 Notable changes:
