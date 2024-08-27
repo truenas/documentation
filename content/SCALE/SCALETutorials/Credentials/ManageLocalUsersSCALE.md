@@ -33,7 +33,7 @@ TrueNAS hides all built-in users (except root) by default. Click the toggle **Sh
 
 ### Assigning Administrative Group Privileges
 
-SCALE 24.04 or new supports administrator privileges for role-based administrator accounts.
+SCALE 24.04 or newer supports administrator privileges for role-based administrator accounts.
 Users can create new administrator accounts with limited privileges based on their needs.
 Predefined administrator roles are read only, share admin, and the default full access local administrator account.
 See [Using Administrator Logins]({{< relref "adminroles.md" >}}) for more information.

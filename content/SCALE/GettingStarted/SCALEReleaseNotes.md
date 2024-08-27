@@ -1,5 +1,5 @@
 ---
-title: "24.10 (Electric Eel) Development Notes"
+title: "24.10 (Electric Eel) Version Notes"
 description: "Highlights, change log, and known issues for the latest SCALE nightly development version."
 aliases:
  - /scale/scalereleasenotes/
@@ -56,7 +56,7 @@ More details are available from [Software Releases]({{< relref "/TrueNASUpgrades
 
 * 24.10 moves the applications backend from Kubernetes to Docker ([announcement](https://forums.truenas.com/t/the-future-of-electric-eel-and-apps/5409)).
 
-  * Installed applications automatically migrate to Docker deployments on upgrade from from 24.04 (Dragonfish) to Electric Eel.
+  * Supported catalog applications automatically migrate to Docker deployments on upgrade from from 24.04 (Dragonfish) to Electric Eel.
   
     App migration is receiving active development in 24.10-BETA.1.
     To see which applications currently support automatic migration, see the [Parity Status with truenas/charts](https://github.com/truenas/apps?tab=readme-ov-file#parity-status-with-truenascharts) chart from the /truenas/apps/ github repository.
@@ -67,7 +67,8 @@ More details are available from [Software Releases]({{< relref "/TrueNASUpgrades
     You can re-initiate migration of Kubernetes apps to Docker at any time after upgrading to Electric Eel, for example to migrate an app that was not yet available for automatic migration upon upgrade but is now available.
     From a shell session enter {{< cli >}}midclt call -job k8s_to_docker.migrate *poolname*{{< /cli >}}, where *poolname* is the name of the applications pool.
 
-  * The **Custom App** installation screen is disabled in 24.10-BETA.1.
+  * Custom apps are not supported for migration on 24.10-BETA.1.
+  The **Custom App** installation screen is disabled.
   A redesigned screen, including Docker Compose support, is anticipated for the RC.1 version.
   Users wishing to leverage Docker Compose in BETA can do so using the **Dockge** or **Portainer** apps, available from the [**Community**]({{< relref "/SCALE/SCALETutorials/Apps/CommunityApps/_index.md" >}}) train, or in a [**Sandbox**]({{< relref "Sandboxes.md" >}}).
 

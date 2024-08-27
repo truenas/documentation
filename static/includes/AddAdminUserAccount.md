@@ -16,7 +16,7 @@ Enter and confirm the admin user password.
 {{< trueimage src="/images/SCALE/Credentials/AddUser-UserIDAndGroupSettings.png" alt="Add User Group Settings" id="Add User Group Settings" >}}
 
 Select **Create New Primary Group** to create a group with the same name as the admin user.
-To assign the new admin to an existing group with appropriate administrative privileges, either assign the group as an auxiliary group  or deselect **Create New Primary Group**  and select the group as the primary group.
+To assign the new admin to an existing group with appropriate administrative privileges, either assign the group as an auxiliary group or deselect **Create New Primary Group** and select the group as the primary group.
 
 {{< trueimage src="/images/SCALE/Credentials/AddUserDirPermsAuthSettings.png" alt="Add User Directory and Authentication Settings" id="Add User Directory and Authentication Settings" >}}
 
@@ -28,9 +28,11 @@ Select the **Read**, **Write**, and **Execute** permissions for **User**, **Grou
 Select the shell for this admin user from the **Shell** dropdown list.
 We recommend setting shell to **TrueNAS Console** as this provides access to the Console Setup menu and the Linux shell from the SCALE **Shell** screen.
 
-Select the sudo authorization permissions for the admin user.
-Some applications, such as [Nextcloud]({{< relref "InstallNextCloudMedia.md" >}}), require sudo permissions for the administrator account.
+When required, select the sudo authorization permissions to allow the admin user.
 For administrator accounts generated during the initial installation process, TrueNAS SCALE sets authorization to **Allow all sudo commands**.
+For improved security, deny sudo permissions unless required for specific, recurring administrative tasks or allow sudo permissions only when needed to perform a discrete task and then deny again when finished.
+Do not allow sudo permissions for read-only administrators.
+
 Alternatively, accept default user sudo permissions and apply permissions to the group (see below).
 
 Click **Save**.
