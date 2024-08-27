@@ -92,7 +92,7 @@ Click **Install**.
 The system opens the **Installed Applications** screen with the Syncthing app in the **Deploying** state.
 After installation completes the status changes to **Running**.
 
-{{< trueimage src="/images/SCALE/Apps/SyncthingChartsInstalled.png" alt="Syncthing Installed" id="Syncthing Installed" >}}
+{{< trueimage src="/images/SCALE/Apps/SyncthingStableInstalled.png" alt="Syncthing Installed" id="Syncthing Installed" >}}
 
 Click **Web Portal** on the **Application Info** widget to open the Syncthing web portal to begin configuring folders, devices, and other settings.
 
@@ -131,6 +131,17 @@ The default value for **User Id** and **Group ID** is **568**.
 
 {{< trueimage src="/images/SCALE/Apps/InstallSyncthingWizardSyncthingUserAndGroup.png" alt="Syncthing User and Group Settings" id="Syncthing User and Group Setting" >}}
 
+### Networking Settings
+Accept the default port numbers in **Web Port for Syncthing**, **TCP Port for Syncthing** and **UDP Port for Syncthing**.
+The TrueNAS Syncthing stable app listens on port **20910**.
+The default TCP port is **20978** and the default UDP port is **20979**.
+Before changing default ports and assigning new port numbers, refer to the TrueNAS [default port list](https://www.truenas.com/docs/references/defaultports/) for a list of assigned port numbers.
+To change the port numbers, enter a number within the range 9000-65535.
+
+{{< trueimage src="/images/SCALE/Apps/InstallSyncthingStableNetworking.png" alt="Syncthing (stable) Network Configuration" id="Syncthing (stable) Network Configuration" >}}
+
+We recommend not selecting **Host Network**. This binds to the host network.
+
 ### Storage Settings
 The Syncthing **stable** train app requires two storage volumes/datasets. One named **home**, the other **data1**.
 The first storage volume assigned is **home**, and is where Syncthing configuration information is stored.
@@ -165,17 +176,6 @@ Set **Type** an **SMB/CIFS Share (Mounts a persistent volume claim to a SMB shar
 {{< trueimage src="/images/SCALE/Apps/InstallSyncthingStableStorageConfigSMBShare.png" alt="Syncthing Add SMB Share Option" id="Syncthing Add SMB Share Option" >}}
 
 {{< include file="/static/includes/AppWizardStorageSMBOption.md" >}}
-
-### Networking Settings
-Accept the default port numbers in **Web Port for Syncthing**, **TCP Port for Syncthing** and **UDP Port for Syncthing**.
-The TrueNAS Syncthing stable app listens on port **20910**.
-The default TCP port is **20978** and the default UDP port is **20979**.
-Before changing default ports and assigning new port numbers, refer to the TrueNAS [default port list](https://www.truenas.com/docs/references/defaultports/) for a list of assigned port numbers.
-To change the port numbers, enter a number within the range 9000-65535.
-
-{{< trueimage src="/images/SCALE/Apps/InstallSyncthingChartsNetworking.png" alt="Syncthing (stable) Network Configuration" id="Syncthing (stable) Network Configuration" >}}
-
-We recommend not selecting **Host Network**. This binds to the host network.
 
 ### Advanced DNS Settings
 Syncthing does not require configuring advanced DNS options.
