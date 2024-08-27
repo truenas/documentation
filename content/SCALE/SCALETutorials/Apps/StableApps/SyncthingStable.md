@@ -1,5 +1,5 @@
 ---
-title: "Syncthing Stable App"
+title: "Syncthing (Stable)"
 description: "Provides general information, guidelines, installation instructions, and use scenarios for the offical version of Syncthing in the stable app train."
 weight: 90
 aliases:
@@ -10,18 +10,19 @@ tags:
 - syncthing
 ---
 
-{{< expand "Adding the Enterprise App" "v" >}}
-To add the **enterprise** train Syncthing application to the list of available applications: 
-{{< include file="/static/includes/AddEnterpriseTrain.md" >}}
-The **charts** and **enterprise** train versions of the Syncthing app widget display on the **Discover** application screen.
-
-{{< trueimage src="/images/SCALE/Apps/DiscoverSyncthingAppWidgets.png" alt="Discovering Syncthing App Widgets" id="Discovering Syncthing App Widget" >}}
-
-{{< /expand >}}
 ## Syncthing Overview
 {{< include file="/static/includes/SyncthingOverview.md" >}}
 
 {{< include file="/static/includes/SyncthingArticleIntro.md" >}}
+
+{{< expand "Adding the Enterprise App" "v" >}}
+To add the **enterprise** train Syncthing application to the list of available applications:
+{{< include file="/static/includes/AddEnterpriseTrain.md" >}}
+The **stables** and **enterprise** train versions of the Syncthing app widget display on the **Discover** application screen.
+
+{{< trueimage src="/images/SCALE/Apps/DiscoverSyncthingAppWidgets.png" alt="Discovering Syncthing App Widgets" id="Discovering Syncthing App Widget" >}}
+
+{{< /expand >}}
 
 ## Before Installing Syncthing
 {{< include file="/static/includes/SyncthingFirstSteps.md" >}}
@@ -41,7 +42,7 @@ Go to **Apps > Discover Apps** and locate the **Syncthing** widget for the app i
 
 {{< trueimage src="/images/SCALE/Apps/SyncthingAppWidget.png" alt="Syncthing App Widget Stable Train" id="Syncthing App Widget Stable Train" >}}
 
-Click on the widget to open the Syncthing details screen. 
+Click on the widget to open the Syncthing details screen.
 
 {{< trueimage src="/images/SCALE/Apps/SyncthingAppDetailsScreen.png" alt="Syncthing Details Screen Stable Train" id="Syncthing Details Screen Stable Screen" >}}
 
@@ -75,8 +76,8 @@ Enter or browse to the dataset created to populate the **Host Path** field (for 
 To add another dataset path inside the container, see [**Storage Settings**](#storage-settings) below for more information.
 Set **Type** to **Host Path (Path that already exists on the system)**, enter **/data1** in **Mount Path**, and then either enter or browse to the path to the **data1** dataset to populate the **Host Path** field.
 
-Accept the default port numbers in **Networking**. 
-See [Network Settings](#networking-settings) below for more information on network settings. 
+Accept the default port numbers in **Networking**.
+See [Network Settings](#networking-settings) below for more information on network settings.
 Before changing the default port number, see [Default Ports](https://www.truenas.com/docs/references/defaultports/) for a list of assigned port numbers.
 When selected, **Host Network** binds to the default host settings programmed for Syncthing.
 When enabled the app uses the host network for Syncthing.
@@ -87,9 +88,9 @@ Syncthing does not require advanced DNS options. If you want to add DNS options,
 
 Accept the default resource limit values for CPU and memory or select **Enable Pod resource limits** to show the CPU and memory limit fields, then enter the new values you want to use for Syncthing. See [Resource Configuration Settings](#resource-configuration-settings) below for more information.
 
-Click **Install**. 
+Click **Install**.
 The system opens the **Installed Applications** screen with the Syncthing app in the **Deploying** state.
-After installation completes the status changes to **Running**. 
+After installation completes the status changes to **Running**.
 
 {{< trueimage src="/images/SCALE/Apps/SyncthingChartsInstalled.png" alt="Syncthing Installed" id="Syncthing Installed" >}}
 
@@ -115,7 +116,7 @@ The following sections provide more detail explanations of the settings found in
 {{< include file="/static/includes/AppsWizardAppNameAndVersion.md" >}}
 
 ### Configuration Settings
-The Syncthing app wizard is configured with all settings required to deploy the container, but you can add additional settings if you want to further customize the app in SCALE.
+The Syncthing app wizard is configured with all settings required to deploy the container, but you can add additional settings if you want to further customize the app in TrueNAS.
 
 {{< trueimage src="/images/SCALE/Apps/InstallSyncthingWizardSyncthingConfigSettings.png" alt="Add Syncthing Variables" id="Add Syncthing Environment Variables" >}}
 
@@ -130,7 +131,7 @@ The default value for **User Id** and **Group ID** is **568**.
 
 {{< trueimage src="/images/SCALE/Apps/InstallSyncthingWizardSyncthingUserAndGroup.png" alt="Syncthing User and Group Settings" id="Syncthing User and Group Setting" >}}
 
-### Storage Settings 
+### Storage Settings
 The Syncthing **stable** train app requires two storage volumes/datasets. One named **home**, the other **data1**.
 The first storage volume assigned is **home**, and is where Syncthing configuration information is stored.
 The second storage volume assigned in **data1**, and is for the application data storage.
@@ -156,7 +157,7 @@ To modify the permissions for an app storage volume or host path dataset, select
 You can use this option or after installing the app, go to **Datasets**, select the dataset for the app, scroll down to the **Permissions** widget and click **Edit** to open the **ACL Editor** screen to modify dataset permissions.
 
 #### Mounting an SMB Share
-The TrueNAS SCALE Syncthing app includes the option to mount an SMB share inside the container pod.
+The TrueNAS Syncthing app includes the option to mount an SMB share inside the container pod.
 This allows data synchronization between the share and the app.
 
 Set **Type** an **SMB/CIFS Share (Mounts a persistent volume claim to a SMB share)** to use when migrating third-party data using Syncthing.
@@ -167,17 +168,17 @@ Set **Type** an **SMB/CIFS Share (Mounts a persistent volume claim to a SMB shar
 
 ### Networking Settings
 Accept the default port numbers in **Web Port for Syncthing**, **TCP Port for Syncthing** and **UDP Port for Syncthing**.
-The SCALE Syncthing chart app listens on port **20910**. 
+The TrueNAS Syncthing stable app listens on port **20910**.
 The default TCP port is **20978** and the default UDP port is **20979**.
 Before changing default ports and assigning new port numbers, refer to the TrueNAS [default port list](https://www.truenas.com/docs/references/defaultports/) for a list of assigned port numbers.
 To change the port numbers, enter a number within the range 9000-65535.
 
-{{< trueimage src="/images/SCALE/Apps/InstallSyncthingChartsNetworking.png" alt="Syncthing (Chart) Network Configuration" id="Syncthing (Chart) Network Configuration" >}}
+{{< trueimage src="/images/SCALE/Apps/InstallSyncthingChartsNetworking.png" alt="Syncthing (stable) Network Configuration" id="Syncthing (stable) Network Configuration" >}}
 
 We recommend not selecting **Host Network**. This binds to the host network.
 
 ### Advanced DNS Settings
-Syncthing does not require configuring advanced DNS options. 
+Syncthing does not require configuring advanced DNS options.
 Accept the default settings or click **Add** to the right of **DNS Options** to enter the option name and value.
 
 {{< trueimage src="/images/SCALE/Apps/InstallSyncthingChartsAddAdvanceDNSOptions.png" alt="Syncthing Add Advanced DNS Options" id="Syncthing Add Advanced DNS Options" >}}

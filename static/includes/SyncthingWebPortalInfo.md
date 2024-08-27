@@ -55,6 +55,6 @@ You can forward logs to a specific folder or remote device.
 
 {{< expand "Maintaining File Ownership (ACL Preservation)" "v" >}}
 Syncthing includes the ability to maintain ownership and extend attributes during transfers between nodes (systems).
-This ensures ACLs and permissions remain consistent across TrueNAS SCALE systems during one and bi-directional Syncthing moves.
+This ensures ACLs and permissions remain consistent across TrueNAS systems during one and bi-directional Syncthing moves.
 You can configure this setting on a per folder basis.
 {{< /expand >}}

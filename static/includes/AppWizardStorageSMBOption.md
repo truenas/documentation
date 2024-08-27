@@ -1,6 +1,5 @@
 &NewLine;
 
-
 Selecting this option shows the SMB share fields that allow you to configure the share server, path, and user authentication credentials while configuring the app.
 
 Select **Read Only** to make the storage volume read only.
