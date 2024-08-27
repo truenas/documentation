@@ -50,7 +50,7 @@ See [Kerberos]({{< relref "/CORE/CORETutorials/DirectoryServices/Kerberos.md" >}
 To configure LDAP certificate-based authentication for the LDAP provider to sign, see [Certificate Signing Requests]({{< relref "CORE/CORETutorials/SystemConfiguration/CreatingCAsandCertificates/CreatingCertificates.md" >}}).
 
 {{< hint type=important >}}
-Support for LDAP **Samba Schema** is deprecated in TrueNAS CORE 13.0 or later.
+Support for LDAP **Samba Schema** is deprecated in TrueNAS 13.0 or later.
 Users with LDAP and SMB shares configured should begin to migrate legacy Samba domains to Active Directory.
 {{< /hint >}}
 

@@ -74,7 +74,7 @@ The **Options** settings change based on the selected **Name** and **Idmap Backe
 {{< /truetable >}}
 
 {{< hint type=important >}}
-Support for LDAP **Schema Mode** for SMB shares is deprecated in TrueNAS SCALE 22.02 (Angelfish) and removed in 24.10 (Electric Eel).
+Support for LDAP **Schema Mode** for SMB shares is deprecated in TrueNAS 22.02 (Angelfish) and removed in 24.10 (Electric Eel).
 Before updating to 24.10 or later, Administrators using this legacy feature should stop using SMB shares (continue using LDAP), convert directory users to local TrueNAS accounts (stop using LDAP), or convert to Active Directory (stop using LDAP).
 {{< /hint >}}
 

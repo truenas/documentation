@@ -1,6 +1,6 @@
 &NewLine;
 
-These providers are supported for Cloud Sync tasks in TrueNAS CORE:
+These providers are supported for Cloud Sync tasks in TrueNAS 13:
 
 {{< columns >}}
 * [Amazon S3](https://aws.amazon.com/s3/)

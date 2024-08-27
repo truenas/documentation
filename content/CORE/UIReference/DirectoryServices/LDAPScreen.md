@@ -53,7 +53,7 @@ Click **REBUILD DIRECTORY SERVICE CACHE** to resync the cache if it becomes out 
 {{< /truetable >}}
 
 {{< hint type=important >}}
-Support for LDAP **Samba Schema** is deprecated in TrueNAS CORE 13.0 or later.
+Support for LDAP **Samba Schema** is deprecated in TrueNAS 13.0 or later.
 Users with LDAP and SMB shares configured should begin to migrate legacy Samba domains to Active Directory.
 {{< /hint >}}
 
