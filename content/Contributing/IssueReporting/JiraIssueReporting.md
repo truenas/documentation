@@ -32,7 +32,7 @@ Enter specific issue details in the **Description** field.
 
 ![JiraSummaryDescription](/images/Contribute/JiraSummaryDescription.png "Summary and Description Field")
 
-Select the CORE or SCALE release from the **Affects Version** dropdown list. If you cannot locate the version of software installed on the dropdown list, include it in the **Description** field.
+Select a TrueNAS release from the **Affects Version** dropdown list. If you cannot locate the version of software installed on the dropdown list, include it in the **Description** field.
 
 A good bug report includes these elements:
 
