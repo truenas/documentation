@@ -96,17 +96,22 @@ Click **Web Portal** on the **Application Info** widget to open the Syncthing we
 
 {{< trueimage src="/images/SCALE/Apps/SyncthingWebPortalForTrueNAS.png" alt="Syncthing Web Portal for TrueNAS" id="Syncthing Web Portal for TrueNaS" >}}
 
-Secure Syncthing by setting up a username and password.
+### Securing the Syncthing Web UI
+After installing and starting the Syncthing application, launch the Syncthing web UI.
+Go to **Actions > Settings** and set a user password for the web UI.
+
+{{< trueimage src="/images/SCALE/Apps/SyncthingUIActionsMenu.png" alt="Syncthing UI Actions Menu" id="Syncthing UI Actions Menu" >}}
+
+### Using the Syncthing Web Portal for TrueNAS
+
+{{< include file="/static/includes/SyncthingWebPortalInfo.md" >}}
 
 ## Understanding Syncthing Settings
 The following sections provide more detail explanations of the settings found in each section of the **Install Syncthing** screen.
 
 ### Application Name Settings
-Accept the default value or enter a name in **Application Name** field.
-In most cases use the default name, but if adding a second deployment of the application you must change this name.
 
-Accept the default version number in **Version**.
-When a new version becomes available, the application shows an update badge and the **Application Info** widget on the **Installed** applications screen shows the **Update** button.
+{{< include file="/static/includes/AppsWizardAppNameAndVersion.md" >}}
 
 ### Configuration Settings
 The Syncthing app wizard is configured with all settings required to deploy the container, but you can add additional settings if you want to further customize the app in SCALE.
@@ -125,23 +130,41 @@ The default value for **User Id** and **Group ID** is **568**.
 {{< trueimage src="/images/SCALE/Apps/InstallSyncthingWizardSyncthingUserAndGroup.png" alt="Syncthing User and Group Settings" id="Syncthing User and Group Setting" >}}
 
 ### Storage Settings 
-You can allow the Syncthing app to create the configuration storage volume or you can create datasets to use for the configuration storage volume and to use for storage within the container pod.
+The Syncthing **stable** train app requires two storage volumes/datasets. One named **home**, the other **data1**.
+The first storage volume assigned is **home**, and is where Syncthing configuration information is stored.
+The second storage volume assigned in **data1**, and is for the application data storage.
+The app can create the configuration storage volumes or you can create datasets to use for the configuration and data storage volumes to use within the container pod.
 
-To use existing datasets, select **Enable Custom Host Path for Syncthing Configuration Volume** to show the **Host Path for Syncthing Configuration Volume** and **Extra Host Path Volumes** fields.
-Enter the host path in **Host Path for Syncthing Configuration Volume** or browse to and select the dataset an existing dataset created for the configuration storage volume. 
+To allow the app to create a configuration storage volume, leave **Type** set to **ixVolume (Dataset created automatically by the system)** which is the default setting.
+The ixVolumes created are found in the **iX-apps** dataset created by adding the pool for apps.
+You can see these volumes if you take a recursive snapshot of the **iX-Apps** dataset.
 
-{{< trueimage src="/images/SCALE/Apps/InstallSyncthingChartsEnableCustomHostPath.png" alt="Syncthing Enable Host Path Storage fields" id="Syncthing Enable Host Path Storage Fields" >}}
+{{< trueimage src="/images/SCALE/Apps/InstallSyncthingStableStorageConfigiXvolume.png" alt="ixVolume Storage Option" id="ixVolume Storage Option" >}}
 
-**Add** to the right of **Extra Host Path Volumes** shows the **Mount Path in Pod** and **Host Path** fields. 
+To use existing datasets, set **Type** to **Host Path (Path that already exist on the system)** for the **Syncthing Config Storage**.
+This shows the **Host Path** and a file explorer where you can either enter or browse to and select the dataset an existing dataset created for the configuration storage volume.
+Use these to enter the **Home** dataset.
 
-{{< trueimage src="/images/SCALE/Apps/InstallSyncthingChartAddExtraHostPaths.png" alt="Syncthing Add Extra Host Paths" id="Syncthing Add Extra Host Paths" >}}
+{{< trueimage src="/images/SCALE/Apps/InstallSyncthingStableStorageConfigHostPathandAddStorage.png" alt="Stable Synchting Add Host Path" id="Stable Syncthing Add Host Path" >}}
 
-Enter the **data1** dataset in **Mount Path in Pod**, then enter or browse to the dataset location in **Host Path**.
-If you added extra datasets to mount inside the container pod, click **Add** for each extra host path you want to mount inside the container pod.
-Enter or browse to the dataset created for the extra storage volumes to add inside the pod.
+To add the **data1** datasets, click **Add** to the right of **Additional Storage** to show the set of **Mount Path**, **Host Path** and a file explorer where you can either enter or browse to select the dataset to mount.
+
+Click **Add** again to add another set of fields where you can select either an ixVolume or host path option to mount additional datasets to use as other storage volumes within the pod.
+
+To modify the permissions for an app storage volume or host path dataset, select **Enable ACE** and use these fields to add an ACL entry.
+You can use this option or after installing the app, go to **Datasets**, select the dataset for the app, scroll down to the **Permissions** widget and click **Edit** to open the **ACL Editor** screen to modify dataset permissions.
+
+#### Mounting an SMB Share
+The TrueNAS SCALE Syncthing app includes the option to mount an SMB share inside the container pod.
+This allows data synchronization between the share and the app.
+
+Set **Type** an **SMB/CIFS Share (Mounts a persistent volume claim to a SMB share)** to use when migrating third-party data using Syncthing.
+
+{{< trueimage src="/images/SCALE/Apps/InstallSyncthingStableStorageConfigSMBShare.png" alt="Syncthing Add SMB Share Option" id="Syncthing Add SMB Share Option" >}}
+
+{{< include file="/static/includes/AppWizardStorageSMBOption.md" >}}
 
 ### Networking Settings
-
 Accept the default port numbers in **Web Port for Syncthing**, **TCP Port for Syncthing** and **UDP Port for Syncthing**.
 The SCALE Syncthing chart app listens on port **20910**. 
 The default TCP port is **20978** and the default UDP port is **20979**.
@@ -159,21 +182,5 @@ Accept the default settings or click **Add** to the right of **DNS Options** to 
 {{< trueimage src="/images/SCALE/Apps/InstallSyncthingChartsAddAdvanceDNSOptions.png" alt="Syncthing Add Advanced DNS Options" id="Syncthing Add Advanced DNS Options" >}}
 
 ### Resource Configuration Settings
-Accept the default values in **Resources Configuration** or select **Enable Pod resource limits** to enter new CPU and memory values.
-By default, this application is limited to use no more than 4 CPU cores and 8 Gigabytes available memory. The application might use considerably less system resources.
 
-{{< trueimage src="/images/SCALE/Apps/InstallSyncthingChartsEnablePodResourcesLimits.png" alt="Syncthing Enable Pod Resource Limits" id="Syncthing Enable Pod Resource Limit" >}}
-
-To customize the CPU and memory allocated to the container (pod) Syncthing uses, enter new CPU values as a plain integer value followed by the suffix m (milli). Default is 4000m.
-
-Accept the default value 8Gi allocated memory or enter a new limit in bytes. 
-Enter a plain integer followed by the measurement suffix, for example 129M or 123Mi
-
-## Securing the Syncthing Web UI
-After installing and starting the Syncthing application, launch the Syncthing web portal.
-Go to **Actions > Settings** and set a user password for the web UI.
-
-{{< trueimage src="/images/SCALE/Apps/SyncthingUIActionsMenu.png" alt="Syncthing UI Actions Menu" id="Syncthing UI Actions Menu" >}}
-
-## Using the Syncthing Web Portal for TrueNAS
-{{< include file="/static/includes/SyncthingWebPortalInfo.md" >}}
+{{< include file="/static/includes/SyncthingWizardResourceConfig.md" >}}

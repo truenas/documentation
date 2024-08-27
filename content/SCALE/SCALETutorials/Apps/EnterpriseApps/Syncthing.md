@@ -96,17 +96,22 @@ Click **Web Portal** on the **Application Info** widget to open the Syncthing we
 
 {{< trueimage src="/images/SCALE/Apps/SyncthingWebPortalForTrueNAS.png" alt="Syncthing Web Portal for TrueNAS" id="Syncthing Web Portal for TrueNaS" >}}
 
-Secure Syncthing by setting up a username and password.
+### Securing the Syncthing Web UI
+After installing and starting the Syncthing application, launch the Syncthing web UI.
+Go to **Actions > Settings** and set a user password for the web UI.
+
+{{< trueimage src="/images/SCALE/Apps/SyncthingUIActionsMenu.png" alt="Syncthing UI Actions Menu" id="Syncthing UI Actions Menu" >}}
+
+### Using the Syncthing Web Portal for TrueNAS
+
+{{< include file="/static/includes/SyncthingWebPortalInfo.md" >}}
 
 ## Understanding Syncthing Settings
 The following sections provide detailed explanations of the settings found in each section of the Enterprise train **Install Syncthing** screen.
 
 ### Application Name Settings
-Accept the default value or enter a name in **Application Name** field.
-In most cases use the default name, but if adding a second deployment of the application you must change this name.
 
-Accept the default version number in **Version**.
-When a new version becomes available, the application shows an update badge and the **Application Info** widget on the **Installed** applications screen shows the **Update** button.
+{{< include file="/static/includes/AppsWizardAppNameAndVersion.md" >}}
 
 ### Configuration Setting
 Select the timezone where your TrueNAS SCALE system is located.
@@ -144,9 +149,9 @@ If you did not create this certificate before starting the installation wizard y
 The Syncthing **enterprise** train app requires two storage volumes/datasets. One named **home**, the other **data1**.
 The first storage volume assigned is **home**, and is where Syncthing configuration information is stored.
 The second storage volume assigned in **data1**, and is for the application data storage.
-The Syncthing app can create the configuration storage volumes or you can create datasets to use for the configuration and data storage volumes to use within the container pod.
+The app can create the configuration storage volumes or you can create datasets to use for the configuration and data storage volumes to use within the container pod.
 
-To allow the Syncthing app to create a configuration storage volume, leave **Type** set to **ixVolume (Dataset created automatically by the system)**.
+To allow the app to create a configuration storage volume, leave **Type** set to **ixVolume (Dataset created automatically by the system)**.
 The app ixVolumes created are found in the **iX-apps** dataset created by adding the pool for apps.
 You can see these volumes if you take a recursive snapshot of the **iX-Apps** dataset.
 
@@ -161,6 +166,9 @@ In addition to the **home** and **data1** datasets, you can mount additional dat
 Click **Add** to the right of **Additional Storage** to show another set of **Mount Path** and **Host Path** fields for each dataset to mount.
 The first time you add additional storage, mount the **data** one dataset as a host path.
 
+To modify the permissions for an app storage volume or host path dataset, select **Enable ACE** and use these fields to add an ACL entry.
+You can use this option or after installing the app, go to **Datasets**, select the dataset for the app, scroll down to the **Permissions** widget and click **Edit** to open the **ACL Editor** screen to modify dataset permissions.
+
 #### Mounting an SMB Share
 The TrueNAS SCALE Syncthing Enterprise app includes the option to mount an SMB share inside the container pod.
 This allows data synchronization between the share and the app.
@@ -169,34 +177,13 @@ Set **Type** an **SMB/CIFS Share (Mounts a persistent volume claim to a SMB shar
 
 {{< trueimage src="/images/SCALE/Apps/InstallSyncthingEnterpriseStorageConfigSMBShare.png" alt="Syncthing Add SMB Share Option" id="Syncthing Add SMB Share Option" >}}
 
-Selecting this option shows the SMB share fields that allow you to configure the share server, path, and user authentication credentials while configuring the app.
-
-Select **Read Only** to make the storage volume read only.
-
-Enter the path inside the container to mount the storage for the share volume in **Mount Path**.
-
-Select **Migration Mode** if migrating third-party data.
-Enter the server address for the SMB share in **Server**, the path to mount the SMB share in **Path**, and the share authentication user credentials in **User** and **Password**.
-**domain** is an optional field for the share domain name.
-
-Permissions are currently limited to the permissions of the user that mounted the share.
-Alternate data streams (metadata), finder colors tags, previews, resource forks, and MacOS metadata is stripped from the share along with file system permissions, but this functionality is undergoing active development and implementation planned for a future TrueNAS SCALE release.
+{{< include file="/static/includes/AppWizardStorageSMBOption.md" >}}
 
 ### Resource Configuration Settings
-Accept the default values in **Resources Configuration** or enter new CPU and memory values.
-By default, this application is limited to use no more than 2 CPU cores and 4096 Megabytes available memory.
-The application might use considerably less system resources.
 
-{{< trueimage src="/images/SCALE/Apps/InstallSyncthingEnterpriseResourcesConfig.png" alt="Syncthing Enterprise Resource Limits" id="Syncthing Enterprise Resource Limits" >}}
-
-To customize the CPU and memory allocated to the container (pod) Syncthing uses, enter new CPU values as a plain integer value followed by the suffix **m** (milli).
-The default is 4096m.
-
-Accept the default value 8Gb allocated memory or enter a new limit in bytes.
-Enter a plain integer followed by the measurement suffix, for example, 129M or 123MiB.
+{{< include file="/static/includes/SyncthingWizardResourceConfig.md" >}}
 
 ## Increasing inotify Watchers
-
 Syncthing uses [inotify](https://man7.org/linux/man-pages/man7/inotify.7.html) to monitor file system events, with one inotify watcher per monitored directory.
 Linux defaults to a maximum of 8192 inotify watchers.
 Using the Syncthing Enterprise app to sync directories with greater than 8191 subdirectories (possibly lower if other services are also utilizing inotify) produces errors that prevent automatic monitoring of file system changes.
@@ -220,13 +207,3 @@ There is a small memory impact for each inotify watcher of 1080 bytes, so it is 
 Enter a **Description** for the variable, such as *Increase inotify limit*.
 
 Select **Enabled** and click **Save**.
-
-## Securing the Syncthing Web UI
-
-After installing and starting the Syncthing application, launch the Syncthing web UI.
-Go to **Actions > Settings** and set a user password for the web UI.
-
-{{< trueimage src="/images/SCALE/Apps/SyncthingUIActionsMenu.png" alt="Syncthing UI Actions Menu" id="Syncthing UI Actions Menu" >}}
-
-## Using the Syncthing Web Portal for TrueNAS
-{{< include file="/static/includes/SyncthingWebPortalInfo.md" >}}
