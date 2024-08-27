@@ -28,7 +28,7 @@ SCALE includes a manual page with more information on the [VFS auditing function
 
 ## Auditing Event Types
 
-### Session and user auditing events
+### Session and User Auditing Events
 {{< expand "Authentication Events" "v" >}}
 Audit message generated every time a client logs into the SCALE UI or an SSH session or makes changes to user credentials.
 {{< /expand >}}
@@ -40,13 +40,15 @@ Generated every time a user logged in to a shell session uses sudo to perform a 
 The event data for a sudo event includes the command.
 {{< /expand >}}
 
-### SMB auditing events
+### SMB Auditing Events
 
 SMB events are omitted by default from the **System > Audit** screen.
 To view SMB audit results, go to **System > Services** and click <i class="material-icons" aria-hidden="true" title="Audit Logs">receipt_long</i> **Audit Logs** for the SMB service or use advanced search on the main **Audit** screen to query {{< cli >}}"Service" = "SMB"{{< /cli >}}.
 
-Note: SMB audit logs include all SMB protocol events, but do not include changes to SMB configuration such as creating an SMB share or querying and modifying SMB ACLs.
+{{< hint type=info title="SMB Service Audit Logs" >}}
+SMB audit logs include all SMB protocol events, but do not include changes to SMB configuration such as creating an SMB share or querying and modifying SMB ACLs.
 See the middleware service log to review those events.
+{{< /hint >}}
 
 {{< expand "Connect Events" "v" >}}
 Generated every time an SMB client performs an SMB tree connection (TCON) to a given share.
