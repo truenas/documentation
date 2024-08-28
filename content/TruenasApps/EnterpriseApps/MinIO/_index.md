@@ -5,6 +5,7 @@ geekdocCollapseSection: true
 weight: 20
 aliases: 
  - /scale/scaletutorials/apps/enterpriseapps/configminioenterprise/
+ - /scale/scaletutorials/apps/enterpriseapps/minio/
 tags:
 - s3
 - enterprise
@@ -27,14 +28,14 @@ Community members can add and use the MinIO Enterprise app or the default commun
 {{< expand "Adding Enterprise Train Apps" "v" >}}
 {{< include file="/static/includes/AddMinioEnterpriseTrain.md" >}}
 {{< /expand >}}
-## First Steps
 
+## Before You Begin
 If your system has active sharing configurations (SMB, NFS, iSCSI), disable them in **System > Services** before adding and configuring the MinIO application.
 Start any sharing services after MinIO completes the installation and starts.
 
 ## Installing MinIO Enterprise
 {{< hint info >}}
-This basic procedure covers the required MinIO Enterprise app settings.
+This basic procedure covers the required MinIO enterprise app settings.
 It does not provide instructions for optional settings.
 {{< /hint >}}
 
@@ -84,7 +85,7 @@ Enter eight to 40 random characters for the root user password (MinIO secret key
 
 #### User and Group Configuration
 Accept the default values in **User and Group Configuration**.
-If you configured SCALE with a new administration user for MinIO, enter the UID and GID in these fields.
+If you configured TrueNAS with a new administration user for MinIO, enter the UID and GID in these fields.
 
 #### Network Configuration
 Accept the default port numbers in **API Port** and **Web Port**, which are the port numbers MinIO uses to communicate with the app and web portal.

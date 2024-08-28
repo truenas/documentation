@@ -4,7 +4,7 @@ description: "Provides general information, guidelines, installation instruction
 weight: 100
 aliases:
  - /scale/scaletutorials/apps/syncthing/
- - 
+ - /scale/scaletutorials/apps/enterpriseapps/syncthing/
 tags:
 - syncthing
 - apps
@@ -23,12 +23,11 @@ keywords:
 
 {{< include file="/static/includes/SyncthingOverview.md" >}}
 
-Users migrating data from an existing third-party NAS solution to TrueNAS 24.04 (Dragonfish) or newer can use the Syncthing Enterprise application to mount the source with a remote SMB share that preserves metadata.
+Users migrating data from an existing third-party NAS solution to TrueNAS 24.04 (Dragonfish) or newer can use the Syncthing **enterprise** application to mount the source with a remote SMB share that preserves metadata.
 
 See [Third-Party SMB Data Migration]({{< relref "DataMigrationSyncthing.md" >}}) for considerations and a full tutorial.
 
 ## Before You Begin
-
 To install the Syncthing **enterprise** train app, first create a self-signed certificate for the Syncthing enterprise app.
 {{< include file="/static/includes/AddAppCertificate.md" >}}
 
@@ -36,7 +35,6 @@ Syncthing requires two storage volumes.
 {{< include file="/static/includes/SyncthingFirstSteps.md" >}}
 
 ## Installing the Syncthing Application
-
 You can have multiple Syncthing app deployments (for example two or more **stable**, two or more **enterprise**, or a combination of **stable** and **enterprise** trains, etc.).
 Each Syncthing app deployment requires a unique name that can include numbers, and dashes or underscores (for example, *syncthing2*, *syncthing-test*, *syncthing_1*, etc.).
 
@@ -101,7 +99,6 @@ Click **Web Portal** on the **Application Info** widget to open the Syncthing we
 {{< trueimage src="/images/SCALE/Apps/SyncthingWebPortalForTrueNAS.png" alt="Syncthing Web Portal for TrueNAS" id="Syncthing Web Portal for TrueNaS" >}}
 
 ### Securing the Syncthing Web UI
-
 After installing and starting the Syncthing application, launch the Syncthing web UI.
 Go to **Actions > Settings** and set a user password for the web UI.
 
@@ -120,7 +117,6 @@ The following sections provide detailed explanations of the settings found in ea
 {{< include file="/static/includes/AppsWizardAppNameAndVersion.md" >}}
 
 ### Configuration Setting
-
 Select the timezone where your TrueNAS system is located.
 
 The Syncthing Enterprise app wizard is configured with all settings required to deploy the container, but you can add additional settings if you want to further customize the app in TrueNAS.
@@ -131,14 +127,12 @@ Click **Add** to the right of **Environmental Variables** to show a set of field
 Click **Add** for each environmental variable you want to configure.
 
 ### User and Group Settings
-
 Accept the user and group defaults settings in **User and Group Configuration**, or enter new user and group IDs for the user created to administer this app.
 The default value for **User Id** and **Group ID** is **568**.
 
 {{< trueimage src="/images/SCALE/Apps/InstallSyncthingEnterpriseUserAndGroupConfig.png" alt="Syncthing Enterprise User and Group IDs" id="Syncthing Enterprise User and Group IDs" >}}
 
 ### Networking Settings
-
 Accept the default port numbers in **Web UI Port**.
 The TrueNAS Syncthing enterprise app listens on port **8384**.
 
@@ -155,7 +149,6 @@ Select the self-signed certificate created in TrueNAS for Syncthing from the **C
 If you did not create this certificate before starting the installation wizard you can select the default **TrueNAS** certificate and edit the certificate after deploying the application.
 
 ### Storage Settings
-
 The Syncthing **enterprise** train app requires two storage volumes/datasets. One named **home**, the other **data1**.
 The first storage volume assigned is **home**, and is where Syncthing configuration information is stored.
 The second storage volume assigned in **data1**, and is for the application data storage.
@@ -180,7 +173,6 @@ To modify the permissions for an app storage volume or host path dataset, select
 You can use this option or after installing the app, go to **Datasets**, select the dataset for the app, scroll down to the **Permissions** widget and click **Edit** to open the **ACL Editor** screen to modify dataset permissions.
 
 #### Mounting an SMB Share
-
 The TrueNAS Syncthing Enterprise app includes the option to mount an SMB share inside the container pod.
 This allows data synchronization between the share and the app.
 
@@ -195,7 +187,6 @@ Set **Type** an **SMB/CIFS Share (Mounts a persistent volume claim to a SMB shar
 {{< include file="/static/includes/SyncthingWizardResourceConfig.md" >}}
 
 ## Increasing inotify Watchers
-
 Syncthing uses [inotify](https://man7.org/linux/man-pages/man7/inotify.7.html) to monitor file system events, with one inotify watcher per monitored directory.
 Linux defaults to a maximum of 8192 inotify watchers.
 Using the Syncthing Enterprise app to sync directories with greater than 8191 subdirectories (possibly lower if other services are also utilizing inotify) produces errors that prevent automatic monitoring of file system changes.
@@ -203,7 +194,7 @@ Using the Syncthing Enterprise app to sync directories with greater than 8191 su
 Increase inotify values to allow Syncthing to monitor all sync directories.
 Add a sysctl variable to ensure changes persist through reboot.
 
-Go to **System > Advanced** and locate the [**Sysctl** widget](https://www.truenas.com/docs/scale/scaletutorials/systemsettings/advanced/#managing-sysctl-variables).
+Go to **System > Advanced** and locate the [**Sysctl** widget]({{< relref "/scale/scaletutorials/systemsettings/advanced/_index.md #managing-sysctl-variables" >}}).
 
 {{< trueimage src="/images/SCALE/SystemSettings/AdvancedSysctlWidget.png" alt="Sysctl Widget" id="Sysctl Widget" >}}
 

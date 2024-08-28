@@ -2,7 +2,8 @@
 title: "Installing MinIO Enterprise MNMD"
 description: "Provides instructions on installing and configuring MinIO Enterprise in a Multi-Node Multi-Disk (MNMD) configuration."
 weight: 20 
-aliases: 
+aliases:
+ - /scale/scaletutorials/apps/enterpriseapps/minio/configminioenterprisemnmd/
 tags:
 - s3
 - enterprise
@@ -19,17 +20,18 @@ keywords:
 
 The instructions in this article apply to the TrueNAS MinIO Enterprise application installed in a Multi-Node Multi-Disk (MNMD) multi-mode configuration.
 
-For more information on MinIO multi-mode configurations see [MinIO Single-Node Multi-Drive (SNMD)](https://min.io/docs/minio/linux/operations/install-deploy-manage/deploy-minio-single-node-multi-drive.html) or [Multi-Node Multi-Drive (MNMD)](https://min.io/docs/minio/linux/operations/install-deploy-manage/deploy-minio-multi-node-multi-drive.html#minio-mnmd). MinIO recommends using MNMD (distributed) for enterprise-grade performance and scalability.
+For more information on MinIO multi-mode configurations see [MinIO Single-Node Multi-Drive (SNMD)](https://min.io/docs/minio/linux/operations/install-deploy-manage/deploy-minio-single-node-multi-drive.html) or [Multi-Node Multi-Drive (MNMD)](https://min.io/docs/minio/linux/operations/install-deploy-manage/deploy-minio-multi-node-multi-drive.html#minio-mnmd).
+MinIO recommends using MNMD (distributed) for enterprise-grade performance and scalability.
 
 ## Adding MinIO Enterprise App
 Community members can add and use the MinIO Enterprise app or the default community version.
 
 {{< include file="/static/includes/AddMinioEnterpriseTrain.md" >}}
 
-## First Steps
+## Befor You Begin
 Complete these steps for every system (node) in the cluster. 
 
-Assign four sequential IP addresses or host names such as **minio1.*mycompany.com*** through **minio4.*mycompany.com*** to the TrueNAS SCALE system. 
+Assign four sequential IP addresses or host names such as **minio1.*mycompany.com*** through **minio4.*mycompany.com*** to the TrueNAS system. 
 If you assign IP address numbers such as *#.#.#.*100 - 103 or *#.#.#.134 - .137, you can use these in the command string in the **Multi Mode** field. 
 If not using sequential IP addresses, use sequentially numbered host names. 
 Add network settings using either the **Network** screen. Enter host names on the **Global Configuration** screen. 
@@ -67,7 +69,7 @@ Enter <b>https://minio{1...4}.<i>mycompany.com</i>:30000/data{1...4}</b> in the 
 
 ### Completing the MinIO Configuration
 
-After installing and getting the MinIO Enterprise application running in SCALE, log into the MinIO web portal and complete the MinIO setup.
+After installing and getting the MinIO Enterprise application running in TrueNAS, log into the MinIO web portal and complete the MinIO setup.
 
 Go to **Monitoring > Metrics** to verify the servers match the total number of systems (nodes) you configured. 
 Verify the number of drives matches the number you configured on each system, four systems each with four drives (4 systems x 4 drives each = 16 drives).
