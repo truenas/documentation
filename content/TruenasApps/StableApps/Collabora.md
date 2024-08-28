@@ -6,6 +6,7 @@ aliases:
  - /scale/scaleuireference/apps/collabora/
  - /scale/scaletutorials/apps/collabora/
  - /scale/scaletutorials/apps/chartapps/collabora/
+ - /scale/scaletutorials/apps/stableapps/collabora/
 tags:
  - apps
  - cloud
@@ -16,7 +17,7 @@ keywords:
 
 {{< include file="/static/includes/CommunityAppsLegacy.md" >}}
 
-The SCALE **Apps** catalogue now includes [Collabora](https://nextcloud.com/collaboraonline/) from the developers of [Nextcloud](https://nextcloud.com/).
+The TrueNAS **Apps** catalogue now includes [Collabora](https://nextcloud.com/collaboraonline/) from the developers of [Nextcloud](https://nextcloud.com/).
 
 With Collabora, you can host your online office suite at home.
 

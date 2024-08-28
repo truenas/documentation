@@ -4,6 +4,7 @@ description: "Provides installation instructions for the Prometheus application.
 weight: 
 aliases:
  - /scale/scaletutorials/apps/chartapps/prometheusapp/
+ - /scale/scaletutorials/apps/stableapps/prometheusapp/
 tags:
 - apps
 - reporting
@@ -20,27 +21,25 @@ Prometheus uses key-value pairs called *labels* to differentiate characteristics
 Use the Prometheus application to record numeric time series.
 Also use it to diagnose problems with the monitored endpoints when there is a system outage.
 
-TrueNAS SCALE makes installing Prometheus easy, but you must use the Prometheus web portal to configure targets, labels, alerts, and queries.
+TrueNAS makes installing Prometheus easy, but you must use the Prometheus web portal to configure targets, labels, alerts, and queries.
 
 {{< include file="/static/includes/AppsUnversioned.md" >}}
 
-## First Steps
-
-The Prometheus app in SCALE installs, completes the initial configuration, then starts the Prometheus Rule Manager.
+## Before You Begin
+The TrueNAS Prometheus app installs, completes the initial configuration, then starts the Prometheus Rule Manager.
 When updates become available, SCALE alerts and provides easy updates.
 
-Before installing the Prometheus app in SCALE, review their [Configuration documentation](https://prometheus.io/docs/prometheus/latest/configuration/configuration/) and list of feature flags and environment variables to see if you want to include any during installation.
+Before installing the TrueNAS Prometheus app, review the [Prometheus Configuration documentation](https://prometheus.io/docs/prometheus/latest/configuration/configuration/) and list of feature flags and environment variables to see if you want to include any during installation.
 You can configure environment variables at any time after deploying the application.
 
-SCALE does not need advance preparation.
+TrueNAS does not need advance preparation.
 
 If not using the default user and group to manage the application, create a new user (and group) and take note of the IDs.
 
-You can allow SCALE to create the two datasets Prometheus requires automatically during app installation.
+You can allow TrueNAS to create the two datasets Prometheus requires automatically during app installation.
 Or before beginning app installation, [create the datasets]({{< relref "DatasetsSCALE.md" >}}) named **data** and **config** to use in the **Storage Configuration** section during installation.
 
 ## Installing the Prometheus Application
-
 To install the **Prometheus** application, go to **Apps**, click **Discover Apps**, either begin typing Prometheus into the search field or scroll down to locate the **Prometheus** application widget.
 
 {{< trueimage src="/images/SCALE/Apps/PrometheusWidget.png" alt="Prometheus App Widget" id="Prometheus App Widget" >}}
@@ -72,9 +71,9 @@ Accept the default port in **API Port**.
 Select **Host Network** to bind to the host network, but we recommend leaving this disabled.
 
 Prometheus requires two storage datasets.
-You can allow SCALE to create these for you, or use the datasets named **data** and **config** created before in [First Steps](#first-steps).
+You can allow TrueNAS to create these for you, or use the datasets named **data** and **config** created before in [First Steps](#first-steps).
 Select the storage option you want to use for both **Prometheus Data Storage** and **Prometheus Config Storage**.
-Select **ixVolume** in **Type** to let SCALE create the dataset or select **Host Path** to use the existing datasets created on the system.
+Select **ixVolume** in **Type** to let TrueNAS create the dataset or select **Host Path** to use the existing datasets created on the system.
 
 Accept the defaults in Resources or change the CPU and memory limits to suit your use case.
 
@@ -88,20 +87,14 @@ Click **Web Portal** on the **Application Info** widget to open the Prometheus w
 
 {{< trueimage src="/images/SCALE/Login/PrometheusWebPortal.png" alt="Prometheus Web Portal" id="Prometheus Web Portal" >}}
 
-## Understanding Prometheus Settings
+## Understanding TrueNAS Prometheus Wizard Settings
 The following sections provide more detailed explanations of the settings found in each section of the **Install Prometheus** screen.
 
 ### Application Name Settings
 
-Accept the default value or enter a name in **Application Name** field.
-In most cases use the default name, but if adding a second deployment of the application you must change this name.
-
-Accept the default version number in **Version**.
-When a new version becomes available, the application has an update badge.
-The **Installed Applications** screen shows the option to update applications.
+{{< include file="/static/includes/AppsWizardAppNameAndVersion.md" >}}
 
 ### Prometheus Configuration Settings
-
 You can accept the defaults in the **Prometheus Configuration** settings, or enter the settings you want to use.
 
 {{< trueimage src="/images/SCALE/Apps/InstallPrometheusConfigSettings.png" alt="Prometheus Configuration Settings" id="Prometheus Configuration Settings" >}}
@@ -122,7 +115,7 @@ Enter the Prometheus flag in **Name** and desired value in **Value**. For a comp
 ### Networking Settings
 
 Accept the default port numbers in **API Port**.
-The SCALE Prometheus app listens on port **30002**.
+The TrueNAS Prometheus app listens on port **30002**.
 
 Refer to the TrueNAS [default port list](https://www.truenas.com/docs/references/defaultports/) for a list of assigned port numbers.
 To change the port numbers, enter a number within the range 9000-65535.
@@ -142,7 +135,6 @@ Set **Prometheus Data Storage** to the **data** dataset path, and **Prometheus C
 {{< trueimage src="/images/SCALE/Apps/InstallPrometheusStorageConfigHostPath.png" alt="Prometheus Host Paths" id="Prometheus Host Paths" >}}
 
 ### Resource Configuration Settings
-
 Accept the default values in **Resources Configuration** or enter new CPU and memory values
 By default, this application is limited to use no more than 4 CPU cores and 8 Gigabytes available memory. The application might use considerably less system resources.
 

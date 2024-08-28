@@ -5,6 +5,7 @@ weight: 90
 aliases:
  - /scale/scaletutorials/apps/chartapps/syncthingcharts/
  - /scale/scaletutorials/apps/stableapps/syncthingcharts/
+ - /scale/scaletutorials/apps/stableapps/syncthingstable/
 tags:
 - apps
 - syncthing

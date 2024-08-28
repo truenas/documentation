@@ -7,6 +7,7 @@ aliases:
  - /scale/scaleuireference/systemsettings/services/openvpnscreens/
  - /scale/scaleuireference/network/openvpn/
  - /scale/scaletutorials/apps/chartapps/installwgeasyapp/
+ - /scale/scaletutorials/apps/stableapps/installwgeasyapp/
 tags:
 - vpn
 - apps
@@ -18,9 +19,10 @@ keywords:
 WG Easy is the easiest way to install and manage WireGuard on any Linux host.
 The application is included in the Community catalog of applications.
 
-WG EASY is a Docker image designed to simplify setting up and managing WireGuard connections. This app provides a pre-configured environment with all the necessary components and a web-based user interface to manage VPN connections.
+WG EASY is a Docker image designed to simplify setting up and managing WireGuard connections.
+This app provides a pre-configured environment with all the necessary components and a web-based user interface to manage VPN connections.
 
-{{< include file="/static/includes/AppsUnversioned.md" >}}
+{{< include file="/static/includes/ProposeArticleChange.md" >}}
 
 ## Installing the WG Easy Application
 WG Easy does not require advanced preparation before installing the application.
@@ -45,13 +47,14 @@ Click **Web PortaL** on the **Application Info** widget to open the WG Easy web 
 
 {{< trueimage src="/images/SCALE/Apps/WGEasyWebPortal.png" alt="WG Easy Web Portal" id="WG Easy Web Portal" >}}
 
+## Understanding TrueNAS WG Easy Wizard Settings
+The following sections provide more detail explanations of the settings found in each section of the **Install WG Easy** screen.
+
 ### Application Name Settings
 
-Accept the default value or enter a name in **Application Name** field.
-Accept the default version number in **Version**.
+{{< include file="/static/includes/AppsWizardAppNameAndVersion.md" >}}
 
 ### Configuration Settings
-
 You can accept the defaults in the **Configuration** settings, or enter the configuration settings you want to use.
 
 {{< trueimage src="/images/SCALE/Apps/WGEasyAppConfigSettings.png" alt="WG Easy Configuration Settings" id="WG Easy Configuration Settings" >}}
@@ -100,7 +103,6 @@ Enter the path in **Mount Path in Pod** where you want to mount the volume insid
 Enter or browse to the host path for the WG Easy application dataset.
 
 ### Networking Settings
-
 Accept the default port numbers in **WireGuard UDP Node Port for WG-Easy** and **WebUI Node Port for WG-Easy**.
 WireGuard always listens on 51820 inside the Docker container.
 Refer to the TrueNAS [default port list](https://www.truenas.com/docs/references/defaultports/) for a list of assigned port numbers.
@@ -115,7 +117,6 @@ Accept the default settings or click **Add** to the right of **DNS Options** to 
 {{< trueimage src="/images/SCALE/Apps/WGEasyInstallAddDNSOptions.png" alt="WG Easy Add DNS Options" id="WG Easy Add DNS Options" >}}
 
 ### Resource Configuration Settings
-
 Accept the default values in **Resources Configuration** or select **Enable Pod resource limits** to show the fields to enter new CPU and memory values for the destination system.
 
 {{< trueimage src="/images/SCALE/Apps/WGEasyInstallAddResourceLimits.png" alt="WG Easy Enable Resource Limits" id="WG Easy Enable Resource Limits" >}}

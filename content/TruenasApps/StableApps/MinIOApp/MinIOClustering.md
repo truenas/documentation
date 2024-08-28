@@ -7,6 +7,7 @@ aliases:
  - /scale/scaletutorials/apps/minioclustersscale/minioclustering/
  - /scale/scaletutorials/apps/communityapps/minioclustersscale/minioclustering/
  - /scale/scaletutorials/apps/chartapps/minioapp/minioclustering/
+ - /scale/scaletutorials/apps/stableapps/minioapp/minioclustering/
 tags:
 - s3
 - apps
@@ -23,13 +24,13 @@ This article applies to the public release of the S3 **MinIO** charts applicatio
 
 {{< include file="/static/includes/AppsUnversioned.md" >}}
 
-On TrueNAS 23.10 and later, users can create a MinIO S3 distributed instance to scale out and handle individual node failures.
+On TrueNAS 23.10 and later, users can create a MinIO S3 distributed instance to TrueNAS out and handle individual node failures.
 A node is a single TrueNAS storage system in a cluster.
 
 The examples below use four TrueNAS systems to create a distributed cluster.
 For more information on MinIO distributed setups, refer to the [MinIO documentation](https://docs.min.io/docs/distributed-minio-quickstart-guide.html).
 
-## First Steps
+## Before You Begin
 
 {{< include file="/static/includes/MinIODatasetRequirements.md" >}}
 

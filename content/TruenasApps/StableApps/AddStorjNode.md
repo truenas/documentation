@@ -5,6 +5,7 @@ weight:
 aliases:
  - /scale/scaletutorials/apps/addstorjnode/
  - /scale/scaletutorials/apps/chartapps/addstorjnode/
+ - /scale/scaletutorials/apps/stableapps/addstorjnode/
 tags:
 - apps
 - crypto
@@ -16,17 +17,17 @@ keywords:
 {{< include file="/static/includes/CommunityAppsLegacy.md" >}}
 
 Storj is an open-source decentralized cloud storage (DCS) platform.
-TrueNAS SCALE partners with Storj in two areas, the [cloud service]({{< relref "AddCloudCredentials.md" >}}) offering and as storage media for cloud service data through the Storj node application.
+TrueNAS partners with Storj in two areas, the [cloud service]({{< relref "AddCloudCredentials.md" >}}) offering and as storage media for cloud service data through the Storj node application.
 
 Installing the Storj node app allows you to configure your system as a storage node, and to rent out unused system storage capacity and bandwidth to other Storj cloud service users.
 
 {{< hint type=info >}}
 Storj offers features such as their multi-tenant solution architecture pattern that is used on the customer side and their website service.
-Using TrueNAS SCALE in a multi-tenant solution architecture pattern is outside the scope of this document and the Storj node application.
-Contact Storj support for assistance with their products and services not covered in the TrueNAS SCALE articles.
+Using TrueNAS in a multi-tenant solution architecture pattern is outside the scope of this document and the Storj node application.
+Contact Storj support for assistance with their products and services not covered in the TrueNAS articles.
 {{< /hint >}}
 
-{{< include file="/static/includes/AppsUnversioned.md" >}}
+{{< include file="/static/includes/ProposeArticleChange.md" >}}
 
 ## Before You Begin
 
@@ -34,7 +35,7 @@ Before you can configure your system to act as a Storj node:
 
 * Review the Storj node hardware and bandwidth considerations at [Storj Node](https://www.storj.io/node).
 
-* Update [TrueNAS SCALE]({{< relref "UpdateSCALE.md" >}}) to the latest public release.
+* Update [TrueNAS]({{< relref "UpdateSCALE.md" >}}) to the latest public release.
 
 * Create a [wallet address](#getting-a-wallet-address).
 
@@ -50,7 +51,7 @@ Before you can configure your system to act as a Storj node:
   If the identity is not present in the storage directory, it generates and authorizes one automatically.
   This can take a long time and consume system resources while it generates one.
 
-* Prepare TrueNAS SCALE for the app installation by [creating the datasets](#creating-the-storj-datasets-on-truenas-scale) for the application storage, and a new user if not using the default apps user.
+* Prepare TrueNAS for the app installation by [creating the datasets](#creating-the-storj-datasets-on-truenas) for the application storage, and a new user if not using the default apps user.
    
    Create a parent dataset, such as *storj-node* and then the two storage datasets (**identity** and **data**) under it.
    Select **apps** as the **Dataset Preset** for these datasets. You can modify the dataset ACLs at the time of creation, or modify them later when adding them in the app.
@@ -61,10 +62,10 @@ Before you can configure your system to act as a Storj node:
    If using ports other than the assigned default ports (**20909** and **28967**), go to [Default Ports](https://www.truenas.com/docs/references/defaultports/) for a list of available or unavailable port numbers to verify the port numbers you want to use are available options.
 
    {{< hint type=info >}}
-   Earlier releases of SCALE used port 20988 for in and outbound traffic. This port assignment changed in later releases to 28967.
+   Earlier releases of TrueNAS used port 20988 for in and outbound traffic. This port assignment changed in later releases to 28967.
    {{< /hint >}}
 
-* [Install the Storj application](#installing-the-storj-app) in SCALE.
+* [Install the Storj application](#installing-the-storj-app) in TrueNAS.
 
 Storj provides a [Quickstart Node Setup Guide](https://docs.storj.io/node/setup) with step-by-step instructions to help users create a Storj node.
 
@@ -111,10 +112,10 @@ You can use a service such as NoIP to create a domain name (i.e., *name.ddns.net
 
 To verify it works, use <code>nslookup <i>name.ddns.net</i></code> where <code><i>name.ddns.net</i></code> is your DDNS host name.
 
-## Creating the Storj Datasets on TrueNAS SCALE
+## Creating the Storj Datasets on TrueNAS
 [Create three new datasets]({{< relref "datasetsscale.md#creating-a-dataset" >}}), one parent with two child datasets nested under it.
 
-Log into TrueNAS SCALE, then go to **Datasets** and click **Add Dataset** to open the **Add Dataset** screen.
+Log into TrueNAS then go to **Datasets** and click **Add Dataset** to open the **Add Dataset** screen.
 
 {{< trueimage src="/images/SCALE/Datasets/AddDatasetNameAndOptions.png" alt="Name and Options" id="Name and Options" >}}
 
@@ -134,7 +135,7 @@ The **Datasets** screen displays two nested datasets **data** and **identity** u
 After adding each dataset you might be prompted to change the ACL permissions or to return to the **Datasets** screen.
 You can modify the dataset permissions now, or wait to modify permissions when you add the dataset as a storage volume in the **Storage Configuration** section of the **Install Storj** wizard.
 
-See [Setting Up Permissions]({{< relref "PermissionsSCALE.md" >}}) for more information on changing permissions in SCALE.
+See [Setting Up Permissions]({{< relref "PermissionsSCALE.md" >}}) for more information on changing permissions in TrueNAS.
 
 ## Installing the Storj App
 Go to **Apps**, click on **Discover Apps**.
@@ -148,7 +149,7 @@ Click on the widget to open the **Storj** information screen.
 
 Click **Install** to open the **Install Storj** app configuration wizard.
 
-{{< trueimage src="/images/SCALE/Apps/InstallStorjAppScreen.png" alt="Install Storj App SCALE" id="Install Storj App SCALE" >}}
+{{< trueimage src="/images/SCALE/Apps/InstallStorjAppScreen.png" alt="Install TrueNAS Storj App" id="Install TrueNAS Storj App" >}}
 
 Scroll down to each section or click the navigation menu item on the right of the screen to jump to that section.
 
@@ -156,7 +157,8 @@ Accept the default name or enter a new name for your Storj application if you pr
 Enter a name that consists of, and begins or ends with lowercase alphanumeric characters.
 Do not use a hyphen as the first or last character. For example, *storjnode*, or *storj-node*, but not *-storjnode* or *storjnode-*.
 
-Do not change the **Version**. SCALE alerts you when a new version is available for deployed apps, and allows you to update through the click of a button on the **Installed** application screen.
+Do not change the **Version**.
+TrueNAS alerts you when a new version is available for deployed apps, and allows you to update through the click of a button on the **Installed** application screen.
 
 1. Enter the **Storj Configuration** settings:
 
@@ -188,11 +190,11 @@ Do not change the **Version**. SCALE alerts you when a new version is available 
    {{< trueimage src="/images/SCALE/Apps/InstallStorjNetworkConfig.png" alt="Storj Network Settings" id="Storj Network Settings" >}}
 
 4. Accept the default **Network Configuration** settings. 
-   If you want to use different ports, check the [Default Ports](https://www.truenas.com/docs/references/defaultports/) for a list of available or unavailable port numbers.
+   If you want to use different ports, check the [Default Ports]({{< relref "/References/DefaultPorts.md" >}}) for a list of available or unavailable port numbers.
    Leave **Host Network** unselected.
 
 5. Configure the **Storage Configuration** settings.
-   You can use the default **ixVolume** option to allow SCALE to create the data storage volume or select **Host Path** to select the path to the new **data** dataset created earlier in this document.
+   You can use the default **ixVolume** option to allow TrueNAS to create the data storage volume or select **Host Path** to select the path to the new **data** dataset created earlier in this document.
 
    {{< trueimage src="/images/SCALE/Apps/InstallStorjStorageACLEntry.png" alt="Add ACL Entries to a Dataset" id="Add ACL Entries to a Dataset" >}}
 

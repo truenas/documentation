@@ -5,6 +5,7 @@ weight:
 aliases:
  - /scale/scaletutorials/apps/installnetdataapp/
  - /scale/scaletutorials/apps/chartapps/installnetdataapp/
+ - /scale/scaletutorials/apps/stableapps/installnetdataapp/
 tags:
 - apps
 - reporting
@@ -13,18 +14,18 @@ keywords:
 - software storage solutions
 ---
 
-The TrueNAS SCALE Netdata app provides an easy way to install and access the Netdata infrastructure monitoring solution.
-SCALE deploys the Netdata app in a Kubernetes container using the Helm package manager.
-After successfully deploying the app, you can access the Netdata web portal from SCALE.
+The TrueNAS Netdata app provides an easy way to install and access the Netdata infrastructure monitoring solution.
+TrueNAS deploys the Netdata app in a Kubernetes container using the Helm package manager.
+After successfully deploying the app, you can access the Netdata web portal from TrueNAS.
 The Netdata web portal opens on the local dashboard, and where you can create new dashboards, add plugins, metric databases, physical and virtual systems, containers, and other cloud deployments you want to monitor.
 The portal also provides access to the Netdata Cloud sign-in screen.
 
 {{< include file="/static/includes/AppsUnversioned.md" >}}
 
 ## Before You Begin
-The SCALE Netdata app does not require advance preparation.
+The TrueNAS Netdata app does not require advance preparation.
 
-You can allow SCALE to automatically create storage volumes for the Netdata app or you can create specific datasets to use for configuration, cache, and library storage and extra storage volumes in the container pod.
+You can allow TrueNAS to automatically create storage volumes for the Netdata app or you can create specific datasets to use for configuration, cache, and library storage and extra storage volumes in the container pod.
 If using specific datasets, create these before beginning the app installation.
 
 The administrator account must have sudo permissions enabled.
@@ -35,7 +36,7 @@ If you upgraded from Angelfish or early releases of Bluefin that do not have an 
 
 You can create a Netdata account before or after installing and deploying the Netdata app.
 
-## Installing Netdata on SCALE
+## Installing Netdata on TrueNAS
 To install the **Netdata** application, go to **Apps**, click on **Discover Apps**, then either scroll down to the **Netdata** app widget or begin typing Netdata in the search field to filter the list to find the Netdata app widget.
 
 {{< trueimage src="/images/SCALE/Apps/NetdataWidget.png" alt="Netdata App Widget" id="Netdata App Widget" >}}
@@ -48,15 +49,15 @@ Click **Install** to open the **Install Netdata** screen.
 
 {{< trueimage src="/images/SCALE/Apps/InstallNetdataScreen.png" alt="Install Netdata Screen" id="Install Netdata Screen" >}}
 
-Application configuration settings presented in several sections, are explained in [Understanding Netdata Settings](#understanding-netdata-settings) below.
+Application configuration settings presented in several sections, are explained in [Understanding Netdata Settings](#understanding-netdata-wizard-settings) below.
 To find specific fields click in the **Search Input Fields** search field, scroll down to a particular section or click on the section heading on the navigation area in the upper-right corner.
 
 Accept the default values in **Application Name** and **Version**.
 
 Accept the default settings in **Netdata Configuration** and the default port in **Node Port to use for Netdata UI**.
-The SCALE Netdata app uses the default port **20489** to communicate with Netdata and show the Netdata local dashboard.
+The TrueNAS Netdata app uses the default port **20489** to communicate with Netdata and show the Netdata local dashboard.
 
-Make no changes in the **Storage** section to allow SCALE to create the storage volumes for the app, or to use datasets created for Netdata configuration storage, select **Enable Host Path for Netdata** to show the **Host Path for Netdata Configuration** settings.
+Make no changes in the **Storage** section to allow TrueNAS to create the storage volumes for the app, or to use datasets created for Netdata configuration storage, select **Enable Host Path for Netdata** to show the **Host Path for Netdata Configuration** settings.
 
 {{< trueimage src="/images/SCALE/Apps/InstallNetdataStorageEnableHostPath.png" alt="Install Netdata Storage Enable Host Path" id="Install Netdata Storage Enable Host Path" >}}
 
@@ -77,15 +78,12 @@ Click **Web Portal** on the **Application Info** widget to open the Netdata web 
 
 {{< trueimage src="/images/SCALE/Apps/NetdataWebPortalLocalDashboard.png" alt="Netdata Web Portal Local Dashboard" id="Netdata Web Portal Local Dashboard" >}}
 
-## Understanding Netdata Settings
-The following sections provide more detailed explanations of the settings found in each section of the **Install Netdata** screen.
+## Understanding Netdata Wizard Settings
+The following sections provide more detail explanations of the settings found in each section of the **Install Netdata** screen.
 
 ### Application Name Settings
-Accept the default value or enter a name in **Application Name**.
-In most cases use the default name, but if adding a second deployment of the application you must change the name.
 
-Accept the default version number in **Version**.
-When a new version becomes available, the application shows an update badge on the **Installed Applications** screen and adds Update buttons to the **Application Info** widget and the **Installed** applications screen.
+{{< include file="/static/includes/AppsWizardAppNameAndVersion.md" >}}
 
 ### Netdata Configuration Settings
 You can accept the defaults in the **Netdata Configuration** settings or enter the settings you want to use.
@@ -95,13 +93,13 @@ Netdata does not require using environment variables to deploy the application b
 
 {{< trueimage src="/images/SCALE/Apps/InstallNetdataConfigAddEnvironmentVariable.png" alt="Netdata Configuration Add Environment Variable" id="Netdata Configuration Add Environment Variable" >}}
 
-The SCALE Netdata app uses port **20489** to communicate with Netdata and open the web portal.
+The TrueNAS Netdata app uses port **20489** to communicate with Netdata and open the web portal.
 Netdata documentation states it uses **19999** as the default port, but it recommends restricting access to this for security reasons.
 Refer to the TrueNAS [default port list](https://www.truenas.com/docs/references/defaultports/) for a list of assigned port numbers.
 To change the port numbers, enter a number within the range 9000-65535.
 
 ### Netdata Storage Settings
-SCALE defaults to automatically creating storage volumes for Netdata without enabling the host path options.
+TrueNAS defaults to automatically creating storage volumes for Netdata without enabling the host path options.
 
 To create and use datasets for the Netdata configuration, cache, and library storage or extra storage volumes inside the container pod, first create these datasets.
 Go to **Datasets** and create the datasets before you begin the app installation process.
@@ -140,7 +138,7 @@ Accept the default value 8Gi allocated memory or enter a new limit in bytes.
 Enter a plain integer followed by the measurement suffix, for example 129M or 123Mi.
 
 ## Using the Netdata Web Portal
-After deploying the SCALE Netdata app click on **Web Portal** to open the Netdata agent local dashboard.
+After deploying the TrueNAS Netdata app click on **Web Portal** to open the Netdata agent local dashboard.
 This Netdata dashboard provides a system overview of CPU usage and other vital statistics for the TrueNAS server connecting to Netdata.
 
 {{< trueimage src="/images/SCALE/Apps/NetdataWebPortalLocalDashboard.png" alt="Netdata Web Portal Local Dashboard" id="Netdata Web Portal Local Dashboard" >}}
@@ -148,7 +146,9 @@ This Netdata dashboard provides a system overview of CPU usage and other vital s
 The Netdata System Overview dashboard displays a limited portion of the reporting capabilities. 
 Scroll down to see more information or click on a listed metric on the right side of the screen to show the graph and reporting on that metric.
 Click the other tabs at the top left of the dashboard to view other dashboards for nodes, alerts, anomalies, functions, and events. 
+
 You can add your own Netdata dashboards using Netdata configuration documentation to guide you.
+
 Click on the **Nodes** tab to better understand the differences between the Netdata agent and Netdata Cloud service reporting. 
 The Netdata Cloud monitors your cloud storage providers added to Netdata. 
 

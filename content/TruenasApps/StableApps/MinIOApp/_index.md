@@ -9,6 +9,7 @@ aliases:
  - /scale/scaletutorials/systemsettings/services/s3servicescale/
  - /scale/scaleuireference/systemsettings/services/s3servicescreen/
  - /scale/scaletutorials/apps/chartapps/minioapp/
+ - /scale/scaletutorials/apps/stableapps/minioapp/
 tags:
 - s3
 - apps
@@ -20,9 +21,9 @@ keywords:
 
 {{< include file="/static/includes/AppsUnversioned.md" >}}
 
-This section has tutorials for using the MinIO apps available for TrueNAS SCALE.
+This section has tutorials for using the MinIO apps available for TrueNASE.
 
-SCALE has two version of the MinIO application.
+TrueNAS has two version of the MinIO application.
 The stable train version of the MinIO S3 application is found in the **stable** train that includes the applications in GitHub TrueNAS/charts repository.
 The smaller MinIO Enterprise version of the application, tested and polished for a safe and supportable experience for TrueNAS Enterprise customers, is found in the **enterprise** train.
 Community members can install either version of this application.
@@ -42,16 +43,16 @@ The Minio applications, **stable** and **enterprise** train versions, allow user
 
 MinIO supports [distributed mode](https://min.io/docs/minio/kubernetes/upstream/index.html?ref=docs-redirect).
 Distributed mode, allows pooling multiple drives, even on different systems, into a single object storage server.
-For information on configuring a distributed mode cluster in SCALE using MinIO, see [Setting Up MinIO Clustering]({{< relref "MinIOClustering.md" >}}).
+For information on configuring a distributed mode cluster in TrueNAS using MinIO, see [Setting Up MinIO Clustering]({{< relref "MinIOClustering.md" >}}).
 
-For information on installing and configuring MinIO Enterprise, see [Installing MinIO Enterprise]({{< relref "/SCALE/SCALETutorials/Apps/EnterpriseApps/MinIO/_index.md" >}}).
+For information on installing and configuring MinIO Enterprise, see [Installing MinIO Enterprise]({{< relref "/content/TruenasApps/EnterpriseApps/MinIO/_index.md" >}}).
 
 ## Installing MinIO (S3) Community App
 This procedure covers the basic requirements and instruction on installing and configuring the non-enterprise version of the MinIO application in the **stable** train.
 For instructions on installing the Enterprise version of the MinIO application see [Configuring
-Enterprise MinIO]({{< relref "/SCALE/SCALETutorials/Apps/EnterpriseApps/_index.md" >}}).
+Enterprise MinIO]({{< relref "/content/TruenasApps/EnterpriseApps/_index.md" >}}).
 
-### First Steps
+### Before You Begin
 
 {{< include file="/static/includes/MinIODatasetRequirements.md" >}}
 
@@ -82,12 +83,12 @@ Click **Web Portal** to open the MinIO sign-in screen.
 
 {{< trueimage src="/images/SCALE/Login/MinIOWebPortal.png" alt="MinIO Sign-In Screen" id="MinIO Sign-In Screen" >}}
 
-## Understanding MinIO App Settings
+## Understanding MinIO Wizard Settings
 The following section provide more detailed explanations of the settings found in each section of the **Install MinIO** configuration screen.
 
 ### Application Name
-Accept the default value or enter a name in **Application Name** field.
-Accept the default version number in **Version**.
+
+{{< include file="/static/includes/AppsWizardAppNameAndVersion.md" >}}
 
 ### MinIO Configuration
 The **MinIO Configuration** section provides options to set up a cluster, add arguments, credentials, and environment variables to the deployment.
@@ -114,7 +115,7 @@ Accept the default settings or click **Add** to the right of **DNS Options** to 
 
 ### Storage Configuration
 MinIO storage settings include the option to add mount paths and storage volumes to use inside the container (pod).
-Storage configuration uses both the default **/export** and **/data** mount paths created in [First Steps](#first-steps) above.
+Storage configuration uses both the default **/export** and **/data** mount paths created in [First Steps](#before-you-begin) above.
 
 {{< include file="/static/includes/MinIOStorageDataVolume.md" >}}
 

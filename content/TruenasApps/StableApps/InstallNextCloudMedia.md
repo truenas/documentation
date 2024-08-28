@@ -1,11 +1,12 @@
 ---
 title: "Nextcloud"
-description: "Provides instructions to configure TrueNAS SCALE and install Nextcloud to support hosting a wider variety of media file previews such as HEIC, Mp4 and MOV files."
+description: "Provides instructions to configure TrueNAS and install Nextcloud to support hosting a wider variety of media file previews such as HEIC, Mp4 and MOV files."
 weight:
 alias:
  - /scale/scaleuireference/apps/nextcloudscale/
  - /scale/scaletutorials/apps/installnextcloudmedia/
  - /scale/scaletutorials/apps/chartapps/installnextcloudmedia/
+ - /scale/scaletutorials/apps/stableapps/installnextcloudmedia/
 tags:
 - apps
 - media
@@ -16,22 +17,21 @@ keywords:
 
 Nextcloud is a drop-in replacement for many popular cloud services, including file sharing, calendar, groupware and more.
 One of its more common uses for the home environment is serving as a media backup, and organizing and sharing service.
-This procedure demonstrates how to set up Nextcloud on TrueNAS SCALE, and configure it to support hosting a wider variety of media file previews, including High Efficiency Image Container (HEIC), MP4 and MOV files.
-The instructions in this article apply to SCALE 22.12.0 and later.
+This procedure demonstrates how to set up Nextcloud on TrueNAS, and configure it to support hosting a wider variety of media file previews, including High Efficiency Image Container (HEIC), MP4 and MOV files.
+The instructions in this article apply to TrueNAS 22.12.0 and later.
 
 {{< include file="/static/includes/AppsUnversioned.md" >}}
 
 ## Before You Begin
+Before using TrueNAS to install the Nextcloud application you need to [create four datasets](#adding-nextcloud-storage) to use as storage for the Nextcloud application.
 
-Before using SCALE to install the Nextcloud application you need to [create four datasets](#adding-nextcloud-storage) to use as storage for the Nextcloud application.
-
-If you are creating a new user account to manage this application or using the [local administrator]({{< relref "ManageLocalUsersSCALE.md" >}}) account, enable sudo permissions for that account.
+If you are creating a new user account to manage this application or using an [administrator]({{< relref "ManageLocalUsersSCALE.md" >}}) account, enable sudo permissions for that account.
 
 If creating a new user for Nextcloud, add the user to the dataset ACL permissions.
 
 If you want to use a certificate for this application, create a new self-signed CA and certificate, or import the CA and create the certificate if using one already configured for Nextcloud. A certificate is not required to deploy the application.
 
-Set up an account with Nextcloud if you don't already have one. Enter this user account in the application configuration.
+Set up an account with Nextcloud if you do not already have one. Enter this user account in the application configuration.
 
 ## Installing Nextcloud on SCALE
 
@@ -42,7 +42,6 @@ In this procedure you:
 2. Install the Nextcloud app in SCALE.
 
 ### Adding Nextcloud Storage
-
 Nextcloud needs five datasets. A primary dataset for the application (**nextcloud**) with four child datasets.
 The four child datasets are named and used as follows:
 
@@ -51,7 +50,7 @@ The four child datasets are named and used as follows:
 * **pgdata** that contains the database files.
 * **pgbackup** that contains the database backups
 
-SCALE creates the **ix-applications** dataset in the pool you set as the application pool when you first go to the **Apps** screen.
+TrueNAS creates the **ix-apps** dataset in the pool you set as the application pool when you first go to the **Apps** screen.
 This dataset is internally managed, so you cannot use this as the parent when you create the required Nextcloud datasets.
 
 To create the Nextcloud app datasets, go to **Datasets**, select the dataset you want to use as the parent dataset, then click **Add Dataset** to [add a dataset]({{< relref "DatasetsScale.md" >}}).
@@ -74,8 +73,7 @@ When finished you should have the **nextcloud** parent dataset with four child d
 
 {{< trueimage src="/images/SCALE/Apps/AppsAddNextcloudDatasets.png" alt="Add Nextcloud Storage" id="Add Nextcloud Storage" >}}
 
-### Installing Nextcloud in SCALE
-
+### Installing Nextcloud in TrueNAS
 Go to **Apps**.
 If the pool for apps is not already set, do it when prompted.
 
@@ -89,7 +87,7 @@ If the pool for apps is not already set, do it when prompted.
    {{< trueimage src="/images/SCALE/Apps/LocateNextcloudAppWidget.png" alt="Locate Nextcloud App Widget" id="Locate Nextcloud App Widget" >}}
 
    Click on the widget to open the **Nextcloud** details screen, then click **Install**.
-   If this is the first application installed, SCALE displays a dialog about configuring apps.
+   If this is the first application installed, TrueNAS displays a dialog about configuring apps.
 
    {{< trueimage src="/images/SCALE/Apps/AppsInformationDialog.png" alt="Apps Information Dialog" id="Apps Information Dialog" >}}
 
@@ -135,7 +133,7 @@ If the pool for apps is not already set, do it when prompted.
 5. Enter the storage settings for each of the four datasets created for the Nextcloud app.
 
    Do not select **Pre v2 Storage Structure** if you are deploying Nextcloud for the first time as this slows down the installation and is not necessary.
-   If you are upgrading where your Nextcloud deployment in SCALE was a 1.x.x release, select this option.
+   If you are upgrading where your Nextcloud deployment in TrueNAS was a 1.x.x release, select this option.
   
    a. Select **Host Path (Path that already exists on the system)** in **Type**, then browse to and select the **appdata** dataset to populate the **Host Path** for the **Nextcloud AppData Storage** fields.
 
@@ -165,10 +163,11 @@ If the pool for apps is not already set, do it when prompted.
 
 ## Troubleshooting Tips
 {{< hint type=info title="Update pre v. 2.0.4 Nextcloud Installations">}}
-There are known issues with Nextcloud app releases earlier than 2.0.4. Use the **Upgrade** option in the SCALE UI to update your Nextcloud release to 2.0.4.
+There are known issues with Nextcloud app releases earlier than 2.0.4.
+Use the **Upgrade** option in the TrueNAS UI to update your Nextcloud release to 2.0.4.
 For more information on known issues, click [here](https://github.com/truenas/charts/issues/2444).
 
-For information on Nextcloud fixes involving TN Charts, see [PR 2447 nextcloud:fixes](https://github.com/truenas/charts/pull/2447).
+For information on Nextcloud fixes involving TrueNAS apps, see [PR 2447 nextcloud:fixes](https://github.com/truenas/charts/pull/2447).
 {{< /hint >}}
 
 Nextcloud stability issues often result from misconfigured data ownership.
@@ -182,7 +181,6 @@ To do this:
 3. Select the pod and container to review, enter a number of **Tail Lines** to view or accept the default 500, and click **Choose** to open the **Pod Logs** screen.
 
 ### App Sticks in Deploying State
-
 If the app does not deploy, try adding the **www-data** user and group (33:33) to the **/nextcloud** dataset but do not set recursive.
 Stop the app before editing the ACL permissions for the datasets.
 

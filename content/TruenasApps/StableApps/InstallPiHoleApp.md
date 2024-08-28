@@ -5,6 +5,7 @@ weight:
 aliases: 
  - /scale/scaletutorials/apps/installpiholeapp/
  - /scale/scaletutorials/apps/chartapps/installpiholeapp/
+ - /scale/scaletutorials/apps/stableapps/installpiholeapp/
 tags:
 - apps
 - dns
@@ -15,18 +16,15 @@ keywords:
 
 {{< include file="/static/includes/CommunityAppsLegacy.md" >}}
 
-SCALE includes the ability to run Docker containers using Kubernetes.
+TrueNAS includes the ability to run Docker containers using Docker Compose.
 
 {{< expand "What is Docker?" "v" >}}
 Docker is an open platform for developing, shipping, and running applications. Docker enables the separation of applications from infrastructure through OS-level virtualization to deliver software in containers.
 {{< /expand >}}
 
-{{< expand "What is Kubernetes?" "v" >}}
-Kubernetes is a portable, extensible, open-source container-orchestration system for automating computer application deployment, scaling, and management with declarative configuration and automation.
-{{< /expand >}}
-
 Always read through the Docker Hub page for the container you are considering installing so that you know all of the settings that you need to configure.
-To set up a Docker image, first determine if you want the container to use its own dataset. If yes, create a dataset for host volume paths before you click **Launch Docker Image**.
+To set up a Docker image, first determine if you want the container to use its own dataset.
+If yes, create a dataset for host volume paths before you click **Launch Docker Image**.
 
 {{< include file="/static/includes/AppsUnversioned.md" >}}
 
@@ -51,7 +49,7 @@ Adjust the **Configure timezone** setting if it does not match where your TrueNA
 To add the WEBPASSWORD environment variable, click **Add** for **Pihole Environment** to add a block of environment variable settings.
 Enter **WEBPASSWORD** in **Name**, then a secure password like the example the one used, *s3curep4$$word*.
 
-![AppPiHoleConfigurationSettings](/images/SCALE/Apps/AppPiHoleConfigurationSettings.png "SCALE Apps Configuration Settings")
+![AppPiHoleConfigurationSettings](/images/SCALE/Apps/AppPiHoleConfigurationSettings.png "TrueNAS Apps Configuration Settings")
 
 Scroll down to the **Storage** settings.
 Select **Enable Custom Host Path for Pihole Configuration Volume** to add the **Host Path for Pihole Configuration Volume** field and dataset browse option.
@@ -59,8 +57,8 @@ Click the arrow to the left of **<span class="material-icons">folder</span> /mnt
 Pi-hole uses volumes store your data between container upgrades.
 
 {{< hint type=warning >}}  
-You need to create these directories in a dataset on SCALE before you begin installing this container.
-Create directories in a dataset on SCALE, before you begin installing the container. 
+You need to create these directories in a dataset on TrueNAS before you begin installing this container.
+Create directories in a dataset on TrueNAS, before you begin installing the container. 
 {{< include file="/static/includes/MakeDirectory.md" >}}
 {{< /hint >}}
 
@@ -69,7 +67,7 @@ Create directories in a dataset on SCALE, before you begin installing the contai
 Click **Add** to display setting options to add extra host path volumes to the container if you need them.
 
 Enter any **Networking** settings you want to use or customize.
-TrueNAS adds the port assignments Pi-hole requires in the **Web Port for pihole**, **DNS TCP Port for pihole**, and **DNS UDP Port for pihole** fields. TrueNAS SCALE requires setting all **Node Ports** above 9000.
+TrueNAS adds the port assignments Pi-hole requires in the **Web Port for pihole**, **DNS TCP Port for pihole**, and **DNS UDP Port for pihole** fields. TrueNAS  requires setting all **Node Ports** above 9000.
 Select **Enable Host Network** to add host network settings.
 Click **Add** for **DNS Options** to add a block of DNS settings if you want to configure DNS options.
 
@@ -81,7 +79,7 @@ Select **Enable Pod resource limits** if you want to limit the CPU and memory fo
 ![AppPiHoleDNSAndResourceLimitsSettings](/images/SCALE/Apps/AppPiHoleDNSAndResourceLimitsSettings.png "PiHole DNS and Resource Limit Settings")
 
 Click **Save**.
-TrueNAS SCALE deploys the container.
+TrueNAS deploys the container.
 If correctly configured, the Pi-Hole widget displays on the **Installed Applications** screen.
 
 When the deployment is completed the container becomes active. If the container does not automatically start, click **Start** on the widget.
