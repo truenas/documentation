@@ -2,6 +2,8 @@
 title: Cloudflare Tunnel
 description: "Securing the Nextcloud application using a Cloudflare Tunnel."
 weight: 5
+aliases:
+ - /scale/scaletutorials/apps/appsecurity/cloudflaretunnel/
 tags:
 - apps
 - vpn
@@ -10,7 +12,7 @@ keywords:
 - software storage solutions
 ---
 
-This guide shows how to create a Cloudflare tunnel and configure the **Nextcloud** and **Cloudflared** applications in TrueNAS SCALE.
+This guide shows how to create a Cloudflare tunnel and configure the **Nextcloud** and **Cloudflared** applications in TrueNAS.
 The goal is to allow secure access from anywhere.
 
 {{< hint type=important >}}
@@ -27,7 +29,7 @@ Review the [Nextcloud documentation](https://docs.nextcloud.com/server/latest/ad
 ## Setting Up Cloudflare
 
 [Cloudflare Tunnel](https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/) is a system that proxies traffic between the user and the application over the Cloudflare network.
-It uses a **Cloudflared** client that is installed on the TrueNAS SCALE system.
+It uses a **Cloudflared** client that is installed on the TrueNAS system.
 
 This allows a secure and encrypted connection without the need to expose ports or the private IP of the TrueNAS system to the internet.
 
@@ -42,7 +44,7 @@ Follow Cloudflare documentation to [register a domain](https://developers.cloudf
 
 {{< hint type=note >}}
 [This video](https://www.youtube.com/watch?v=eojWaJQvqiw) from Lawrence Systems provides a detailed overview of setting up Cloudflare tunnels for applications.
-It assumes that the applications run as a docker container, but the same approach can be used to secure apps running on TrueNAS SCALE in Kubernetes.
+It assumes that the applications run as a docker container, but the same approach can be used to secure apps running on TrueNAS in Kubernetes.
 {{< /hint >}}
 
 In the Cloudflare One dashboard:
@@ -54,7 +56,7 @@ Click **Create Tunnel**, choose type **Cloudflared**, and click **Next**.
 Choose a **Tunnel Name** and click **Save tunnel**.
 
 Copy the tunnel token from the **Install and run a connector** screen.
-This is needed to configure the **Cloudflared** app in TrueNAS SCALE.
+This is needed to configure the **Cloudflared** app in TrueNAS.
 
 {{< trueimage src="/images/SCALE/Apps/CloudflareCreateToken.png" alt="Cloudflare Create Token" id="Cloudflare Create Token" >}}
 
@@ -87,8 +89,8 @@ The new tunnel displays on the **Tunnels** screen.
 
 ### Installing Cloudflared
 
-After creating the Cloudflare tunnel, go to **Apps** in the TrueNAS SCALE UI and click **Discover Apps**.
-Search or browse to select the **Cloudflared** app from the community train and click **Install**.
+After creating the Cloudflare tunnel, go to **Apps** in the TrueNAS UI and click **Discover Apps**.
+Search or browse to select the **Cloudflared** app from the **community** train and click **Install**.
 
 Accept the default **Application Name** and **Version**.
 
@@ -104,20 +106,21 @@ Click **Save** and deploy the application.
 
 ### Nextcloud Configuration
 
-Install the [Nextcloud]({{< relref "installnextcloudmedia.md" >}}) chart application.
+Install the [Nextcloud]({{< relref "installnextcloudmedia.md" >}}) **stable** application.
 
-The first application deployment may take a while and starts and stops multiple times.
+The first application deployment could take a while, and starts and stops multiple times.
 This is normal behavior.
 
 The [Nextcloud documentation](https://docs.nextcloud.com/server/latest/admin_manual/configuration_server/reverse_proxy_configuration.html) provides information on running Nextcloud behind a reverse proxy.
-Depending on the reverse proxy and its configuration, these settings may vary.
-For example, if you don't use a subdomain, but a path like *example.com/nextcloud*.
+Depending on the reverse proxy and its configuration, these settings might vary.
+For example, if you do not use a subdomain, but a path like *example.com/nextcloud*.
 
-If you want to access your application via subdomain (shown in this guide) two environment variables must be set in the Nextcloud application: [overwrite.cli.url](https://docs.nextcloud.com/server/latest/admin_manual/configuration_server/config_sample_php_parameters.html#overwrite-cli-url) and [overwritehost](https://docs.nextcloud.com/server/latest/admin_manual/configuration_server/config_sample_php_parameters.html#overwritehost). Additionally, you will need to clear the Host field under Nextcloud Configuration, otherwise the OVERWRITEHOST variable cannot be set.
+If you want to access your application via subdomain (shown in this guide) two environment variables must be set in the Nextcloud application: [overwrite.cli.url](https://docs.nextcloud.com/server/latest/admin_manual/configuration_server/config_sample_php_parameters.html#overwrite-cli-url) and [overwritehost](https://docs.nextcloud.com/server/latest/admin_manual/configuration_server/config_sample_php_parameters.html#overwritehost). 
+Additionally, you need to clear the **Host** field under **Nextcloud Configuration**, otherwise you cannot set the OVERWRITEHOST variable.
 
 Enter the two environment variables in **Name** as *OVERWRITECLIURL* and *OVERWRITEHOST*.
 
-Enter the address for the Cloudflare Tunnel, configured above in **Value**, for example *nextcloud.example.com*.
+Enter the address for the Cloudflare tunnel, configured above in **Value**, for example *nextcloud.example.com*.
 
 ### Testing the Cloudflare Tunnel
 
@@ -133,17 +136,17 @@ Nextcloud should now be reachable via the Cloudflare Tunnel address, *nextcloud.
 
 Use strong user passwords and configure [two-factor authentication](https://docs.nextcloud.com/server/latest/admin_manual/configuration_user/two_factor-auth.html) for additional security.
 
-Cloudflare offers [access policies](https://developers.cloudflare.com/cloudflare-one/policies/access/) to restrict access to the application to specific users, emails or authentication methods.
+Cloudflare offers [access policies](https://developers.cloudflare.com/cloudflare-one/policies/access/) to restrict access to the application to specific users, emails, or authentication methods.
 
 Go to **Access**, click **Add an Application**, and select **Self-Hosted**.
 
-Add your Nextcloud application and the domain you configured in the Cloudflare tunnel.
+Add your Nextcloud application and the domain configured in the Cloudflare tunnel.
 
 {{< trueimage src="/images/SCALE/Apps/CloudflareAddApplication.png" alt="Cloudflare Add Application" id="Cloudflare Add Application" >}}
 
 Click **Next**.
 
-Create a new policy by entering a **Policy Name**. Groups can be assigned to this policy or additional rules can be added.
+Create a new policy by entering a **Policy Name**. You can assign groups to this policy or add additional rules.
 
 {{< trueimage src="/images/SCALE/Apps/CloudflareAddPolicy.png" alt="Cloudflare Add Policy" id="Cloudflare Add Policy" >}}
 
@@ -152,5 +155,5 @@ Create a new policy by entering a **Policy Name**. Groups can be assigned to thi
 Click **Next** and **Save**.
 
 {{< hint type=note >}}
-Note: there are additional options for policy configuration, but these are beyond the scope of this tutorial.
+There are additional options for policy configuration, but these are beyond the scope of this tutorial.
 {{< /hint >}}
