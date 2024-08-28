@@ -6,6 +6,7 @@ aliases:
  - /scale/scaleuireference/systemsettings/services/ddnsservicescreenscale/
  - /scale/scaletutorials/systemsettings/services/ddnsservicescale/
  - /scale/scaletutorials/systemsettings/services/ddnsservicemigrate/
+ - /scale/scaletutorials/apps/communityapps/ddns-updater/
 tags:
   - ddns
   - apps
@@ -18,7 +19,7 @@ The DDNS-Updater application is a lightweight universal dynamic DNS (DDNS) updat
 When installed, a container launches with root privileges in order to apply the correct permissions to the DDNS-Updater directories.
 Afterwards, the container runs as a non-root user.
 
-{{< include file="/static/includes/AppsUnversioned.md" >}}
+{{< include file="/static/includes/ProposeArticleChange.md" >}}
 
 ## First Steps
 
@@ -91,8 +92,7 @@ Find specific fields or skip to a particular section with the navigation box in 
 
 ### Application Name
 
-Leave these fields at their default settings.
-Changing the application version is only recommended when a specific version is required.
+{{< include file="/static/includes/AppsWizardAppNameAndVersion.md" >}}
 
 ### DDNS Updater Configuration
 

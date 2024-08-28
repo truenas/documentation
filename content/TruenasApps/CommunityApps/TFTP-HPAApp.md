@@ -6,13 +6,14 @@ aliases:
  - /scale/scaletutorials/apps/tftp-hpaapp/
  - /scale/scaletutorials/systemsettings/services/tftpservicescale/
  - /scale/scaleuireference/systemsettings/services/tftpservicescreen/
+ - /scale/scaletutorials/apps/communityapps/tftp-hpaapp/
 tags:
 - tftp
 - apps
 ---
 
 The new **TFTP Server** application provides Trivial File Transfer Protocol (TFTP) server functions.
-The TFTP Server application is a lightweight TFTP-server container in TrueNAS SCALE. It is not intended for use as a standalone container.
+The TFTP Server application is a lightweight TFTP-server container in TrueNAS. It is not intended for use as a standalone container.
 
 The app runs as root and drops privileges to the tftp (9069) user for the TFTP service.
 Every application start launches a container with root privileges.

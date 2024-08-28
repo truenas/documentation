@@ -3,6 +3,7 @@ title: "Immich"
 description: "Provides installation instructions for the Immich application."
 weight: 
 aliases:
+ - /scale/scaletutorials/apps/communityapps/immich/
 tags:
 - apps
 - media
@@ -16,21 +17,21 @@ Immich is a self-hosted photo and video backup tool.
 Immich integrates photo and video storage with a web portal and mobile app.
 It includes features such as libraries, automatic backup, bulk upload, partner sharing, Typesense search, facial recognition, and reverse geocoding.
 
-TrueNAS SCALE makes installing Immich easy, but you must use the Immich web portal and mobile app to configure accounts and access libraries.
+TrueNAS makes installing Immich easy, but you must use the Immich web portal and mobile app to configure accounts and access libraries.
 
-{{< include file="/static/includes/AppsUnversioned.md" >}}
+{{< include file="/static/includes/ProposeArticleChange.md" >}}
 
 ## First Steps
 
-The Immich app in TrueNAS SCALE installs, completes the initial configuration, then starts the Immich web portal.
-When updates become available, SCALE alerts and provides easy updates.
+The Immich app in TrueNAS installs, completes the initial configuration, then starts the Immich web portal.
+When updates become available, TrueNAS alerts and provides easy updates.
 
-Before installing the Immich app in SCALE, review their [Environment Variables](https://documentation.immich.app/docs/install/environment-variables) documentation and to see if you want to configure any during installation.
+Before installing the TrueNAS Immich app, review the [Immich Environment Variables](https://documentation.immich.app/docs/install/environment-variables) documentation and to see if you want to configure any during installation.
 You can configure environment variables at any time after deploying the application.
 
-SCALE does not need advance preparation.
+TrueNAS does not need advance preparation.
 
-You can allow SCALE to create the datasets Immich requires automatically during app installation.
+You can allow TrueNAS to create the datasets Immich requires automatically during app installation.
 Or before beginning app installation, [create the datasets]({{< relref "DatasetsSCALE.md" >}}) to use in the **Storage Configuration** section during installation.
 Immich requires seven datasets: **library**, **pgBackup**, **pgData**, **profile**, **thumbs**, **uploads**, and **video**.
 You can organize these as one parent with seven child datasets, for example <file>mnt/tank/immich/library</file>, <file>mnt/tank/immich/pgBackup</file>, and so on.
@@ -60,9 +61,9 @@ Accept the default value in **Timezone** or change to match your local timezone.
 Accept the default port in **Web Port**.
 
 Immich requires seven storage datasets.
-You can allow SCALE to create them for you, or use the dataset(s) created in [First Steps](#first-steps).
+You can allow TrueNAS to create them for you, or use the dataset(s) created in [First Steps](#first-steps).
 Select the storage options you want to use for **Immich Uploads Storage**, **Immich Library Storage**, **Immich Thumbs Storage**, **Immich Profile Storage**, **Immich Video Storage**, **Immich Postgres Data Storage**, **Immich Postgres Backup Storage**.
-Select **ixVolume (dataset created automatically by the system)** in **Type** to let SCALE create the dataset or select **Host Path** to use the existing datasets created on the system.
+Select **ixVolume (dataset created automatically by the system)** in **Type** to let TrueNAS create the dataset or select **Host Path** to use the existing datasets created on the system.
 
 Accept the defaults in Resources or change the CPU and memory limits to suit your use case.
 
@@ -93,12 +94,7 @@ The following sections provide more detailed explanations of the settings found 
 
 ### Application Name Settings
 
-Accept the default value or enter a name in the **Application Name** field.
-In most cases use the default name, but if adding a second deployment of the application you must change this name.
-
-Accept the default version number in **Version**.
-When a new version becomes available, the application has an update badge.
-The **Installed Applications** screen shows the option to update applications.
+{{< include file="/static/includes/AppsWizardAppNameAndVersion.md" >}}
 
 ### Immich Configuration Settings
 
@@ -114,9 +110,9 @@ You can enter a **Public Login Message** to display on the login page, or leave 
 ### Networking Settings
 
 Accept the default port numbers in **Web Port**.
-The SCALE Immich app listens on port **30041**.
+The TrueNAS Immich app listens on port **30041**.
 
-Refer to the TrueNAS [default port list](https://www.truenas.com/docs/references/defaultports/) for a list of assigned port numbers.
+Refer to the TrueNAS [default port list]({{< relref "/references/defaultports.md" >}}) for a list of assigned port numbers.
 To change the port numbers, enter a number within the range 9000-65535.
 
 {{< trueimage src="/images/SCALE/Apps/InstallImmichNetworkConfig.png" alt="Immich Networking" id="Immich Networking" >}}
@@ -147,7 +143,7 @@ Enter a plain integer followed by the measurement suffix, for example 4G or 123M
 Systems with compatible GPU(s) display devices in **GPU Configuration**.
 Use the **GPU Resource** dropdown menu(s) to configure device allocation.
 
-See [Allocating GPU]({{< relref "/scale/scaletutorials/apps/_index.md#allocating-gpu" >}}) for more information about allocating GPU devices in TrueNAS SCALE.
+See [Allocating GPU]({{< relref "/content/TruenasApps/_index.md#allocating-gpu" >}}) for more information about allocating GPU devices in TrueNAS SCALE.
 
 ## Immich Database Backup and Restore
 

@@ -2,6 +2,8 @@
 title: "Community Apps"
 description: "Notes about community-maintained applications and individual tutorials for those applications."
 weight: 30
+aliases:
+ - /scale/scaletutorials/apps/communityapps/
 tags:
 - apps
 related: false
@@ -9,7 +11,6 @@ keywords:
 - nas data storage
 - software storage solutions
 ---
-
 
 
 The TrueNAS community creates and maintains numerous applications intended to expand system functionality far beyond what is typically expected from a NAS.

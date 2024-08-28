@@ -6,6 +6,7 @@ aliases:
  - /scale/scaletutorials/apps/rsyncd/
  - /scale/scaletutorials/systemsettings/services/configrsyncservicescale/
  - /scale/scaleuireference/systemsettings/services/rsyncservicesscreenscale/
+ - /scale/scaletutorials/apps/communityapps/rsyncd/
 tags:
 - rsync
 - apps
@@ -25,7 +26,7 @@ You do not need this application to schedule or run rsync tasks from the **Data 
 This application is an open source server that provides fast incremental file transfers.
 When installed, the Rsync Daemon application provides the server function to rsync clients given the server information and ability to connect.
 
-{{< include file="/static/includes/AppsUnversioned.md" >}}
+{{< include file="/static/includes/ProposeArticleChange.md" >}}
 
 ## Installing the Rsync Daemon Application
 

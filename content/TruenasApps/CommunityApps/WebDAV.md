@@ -8,13 +8,15 @@ aliases:
  - /scale/scaletutorials/shares/configurewebdav/
  - /scale/scaleuireference/shares/webdavsharesscreens/
  - /scale/scaleuireference/systemsettings/services/webdavservicescreen/
+ - /scale/scaletutorials/apps/communityapps/webdav/
 tags:
  - webdav
  - shares
  - apps
 ---
 
-The WebDAV application is a set of extensions to the HTTP protocol that allows users to collaboratively edit and manage files on remote web servers. It serves as the replacement for the built-in TrueNAS SCALE WebDAV feature.
+The WebDAV application is a set of extensions to the HTTP protocol that allows users to collaboratively edit and manage files on remote web servers.
+It serves as the replacement for the built-in TrueNAS WebDAV feature.
 
 When installed and configured with at least one share, a container launches with temporary root privileges to configure the shares and activate the service.
 

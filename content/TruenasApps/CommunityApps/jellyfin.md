@@ -3,6 +3,7 @@ title: "Jellyfin"
 description: "Provides installation instructions for the Jellyfin application."
 weight: 
 aliases:
+ - /scale/scaletutorials/apps/communityapps/jellyfin/
 tags:
 - apps
 - media
@@ -16,20 +17,20 @@ keywords:
 
 Jellyfin enables you to collect, manage, and stream media files. Official and third-party Jellyfin streaming clients are available on most popular platforms.
 
-TrueNAS SCALE makes installing Jellyfin easy, but you must use the Jellyfin web portal to configure accounts and manage libraries.
+TrueNAS makes installing Jellyfin easy, but you must use the Jellyfin web portal to configure accounts and manage libraries.
 
-{{< include file="/static/includes/AppsUnversioned.md" >}}
+{{< include file="/static/includes/ProposeArticleChange.md" >}}
 
 ## First Steps
 
-The Jellyfin app in TrueNAS SCALE installs, completes the initial configuration, then starts the Jellyfin web portal.
-When updates become available, SCALE alerts and provides easy updates.
+The Jellyfin app in TrueNAS installs, completes the initial configuration, then starts the Jellyfin web portal.
+When updates become available, TrueNAS alerts and provides easy updates.
 
 You can configure environment variables at any time after deploying the application.
 
-SCALE does not need advance preparation.
+TrueNAS does not need advance preparation.
 
-You can allow SCALE to create the datasets Jellyfin requires automatically during app installation.
+You can allow TrueNAS to create the datasets Jellyfin requires automatically during app installation.
 Or before beginning app installation, [create the datasets]({{< relref "DatasetsSCALE.md" >}}) to use in the **Storage Configuration** section during installation.
 Jellyfin requires two datasets: **config** and **cache**.
 You can organize these as one parent with two child datasets, for example <file>mnt/tank/jellyfin/config</file>, <file>mnt/tank/jellyfin/cache</file>, and so on.
@@ -60,12 +61,12 @@ Accept the defaults in **Jellyfin Configuration**, **User and Group Configuratio
 You must select **Host Network** under **Network Configuration** if using [DLNA](https://jellyfin.org/docs/general/networking/dlna/).
 
 Jellyfin requires three app storage datasets.
-You can allow SCALE to create them for you, or use the dataset(s) created in [First Steps](#first-steps).
+You can allow TrueNAS to create them for you, or use the dataset(s) created in [First Steps](#first-steps).
 Select the storage options you want to use for **Jellyfin Config Storage** and **Jellyfin Cache Storage**.
-Select **ixVolume (dataset created automatically by the system)** in **Type** to let SCALE create the dataset or select **Host Path** to use the existing datasets created on the system.
+Select **ixVolume (dataset created automatically by the system)** in **Type** to let TrueNAS create the dataset or select **Host Path** to use the existing datasets created on the system.
 
 Jellyfin also requires a dataset or [emptyDir](https://kubernetes.io/docs/concepts/storage/volumes/#emptydir) for **Jellyfin Transcodes Storage**.
-Select **ixVolume (dataset created automatically by the system)** in **Type** to let SCALE create the dataset, select **Host Path** to use an existing dataset created on the system, or select **emptyDir** to use a temporary storage volume on the disk or in memory.
+Select **ixVolume (dataset created automatically by the system)** in **Type** to let TrueNAS create the dataset, select **Host Path** to use an existing dataset created on the system, or select **emptyDir** to use a temporary storage volume on the disk or in memory.
 
 Solid state storage is recommended for config and cache storage.
 Do not use the same spinning disk device for both cache and config and media storage libraries.
@@ -110,12 +111,7 @@ The following sections provide more detailed explanations of the settings found 
 
 ### Application Name Settings
 
-Accept the default value or enter a name in the **Application Name** field.
-In most cases use the default name, but if adding a second deployment of the application you must change this name.
-
-Accept the default version number in **Version**.
-When a new version becomes available, the application has an update badge.
-The **Installed Applications** screen shows the option to update applications.
+{{< include file="/static/includes/AppsWizardAppNameAndVersion.md" >}}
 
 ### Jellyfin Configuration Settings
 
@@ -171,7 +167,7 @@ Select **Host Path (Path that already exists on the system)** or **SMB Share (Mo
 You can select **iXvolume (dataset created automatically by the system)** to create a new library dataset, but this is not recommended.
 
 Mounting an SMB share allows data synchronization between the share and the app.
-The SMB share mount does not include ACL protections at this time. Permissions are currently limited to the permissions of the user that mounted the share. Alternate data streams (metadata), finder colors tags, previews, resource forks, and MacOS metadata is stripped from the share along with filesystem permissions, but this functionality is undergoing active development and implementation planned for a future TrueNAS SCALE release.
+The SMB share mount does not include ACL protections at this time. Permissions are currently limited to the permissions of the user that mounted the share. Alternate data streams (metadata), finder colors tags, previews, resource forks, and MacOS metadata is stripped from the share along with filesystem permissions, but this functionality is undergoing active development and implementation planned for a future TrueNAS release.
 
 For all types, enter a **Mount Path** to be used within the Jellyfin container.
 For example, the local **Host Path** <file>/mnt/tank/video/movies</file> could be assigned the **Mount Path** <file>/media/movies</file>.
@@ -208,4 +204,4 @@ Enter a plain integer followed by the measurement suffix, for example 4G.
 Systems with compatible GPU(s) display devices in **GPU Configuration**.
 Use the **GPU Resource** dropdown menu(s) to configure device allocation.
 
-See [Allocating GPU]({{< relref "/scale/scaletutorials/apps/_index.md#allocating-gpu" >}}) for more information about allocating GPU devices in TrueNAS SCALE.
+See [Allocating GPU]({{< relref "/content/TruenasApps/_index.md#allocating-gpu" >}}) for more information about allocating GPU devices in TrueNAS.
