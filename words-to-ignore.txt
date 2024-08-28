@@ -2006,4 +2006,5 @@ ResourcesConfiguration
 Nvidia
 ResourcesConfigurationAllocateGPU
 AppsDiscoverScreen
-DiscoverAppsScreenFilterOption
+DiscoverAppsScreenFilterOptions
+managegpuscale
