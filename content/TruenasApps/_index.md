@@ -186,7 +186,7 @@ All applications include these basic setting sections:
 If deploying more than one instance of the application, you must change the default name. For example, *storj2* or *storj-node1*.
 
 Do not change the version number for official apps or those included in a TrueNAS catalog.
-When a new version becomes available, an **Upodate** banner shows on the **Installed** application screen, the app row shows an update alert, and the **Application Info** widget showss an update button.
+When a new version becomes available, an **Update** banner shows on the **Installed** application screen, the app row shows an update alert, and the **Application Info** widget  an update button.
 Updating the app changes the version shown on the edit wizard for the application.
 {{< /expand >}}
 
@@ -223,7 +223,7 @@ The three storage options are:
 * **Host path**
 * **SMB share** that allows you to create a storage volume used by an SMB share. 
 
-If the application requires specific datasets or you want to allow SBM share access, configure the dataset(s) and SMB share before using the installation wizard.
+If the application requires specific datasets or you want to allow SMB share access, configure the dataset(s) and SMB share before using the installation wizard.
 
 {{< include file="/static/includes/FileExplorerFolderIcons.md" >}}
 {{< /expand >}}
