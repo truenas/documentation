@@ -44,7 +44,7 @@ You can migrate from CORE to SCALE with a clean install using an <file>iso</file
 With a clean SCALE install, you need to reconfigure your CORE settings in SCALE and import your data.
 Follow the instructions in the [Install]({{< relref "InstallingSCALE.md" >}}) articles.
 
-When TrueNAS SCALE boots, you might need to [use the Shell to configure networking interfaces]({{< relref "ConsoleSetupMenuScale.md" >}}) to enable GUI accessibility.
+When TrueNAS SCALE boots, you might need to [use the Console Setup Menu to configure networking interfaces]({{< relref "ConsoleSetupMenuScale.md" >}}) to enable GUI accessibility.
 After logging in to the TrueNAS SCALE UI, use a system configuration file to restore the system settings to the SCALE installation and import the data storage pools.
 
 ### Select SCALE Update Train
@@ -57,7 +57,7 @@ This method is only available for non-Enterprise community systems.
 
 3. Review the SCALE migrations warning and verify the system is ready to migrate before confirming and continuing.
 
-4. When the latest update for that chosen TrueNAS release is loaded, click Apply Pending Update or Download Updates to begin the update process documented in [Updating SCALE]({{< relref "UpdateSCALE.md#performing-an-automatic-update" >}}).
+4. When the latest update for that chosen TrueNAS release is loaded, click **Apply Pending Update** or **Download Updates** to begin the update process documented in [Updating SCALE]({{< relref "UpdateSCALE.md#performing-an-automatic-update" >}}).
    It is strongly recommended to download the system configuration backup prior to starting the update.
 
 5. After the system installs the update and reboots, log in and review the system configuration to ensure the migration was successful.
@@ -96,11 +96,11 @@ If this process fails, retry using the iso file method above.
 
    {{< trueimage src="/images/SCALE/SystemSettings/SidegradeRestart.png" alt="Reboot to Finish" id="Reboot to Finish" >}}
 
-After TrueNAS SCALE reboots, you might need to [use the Shell to configure the primary networking interfaces]({{< relref "ConsoleSetupMenuScale.md" >}}) to enable GUI accessibility.
+After TrueNAS SCALE reboots, you might need to [use the Console Setup menu to configure the primary networking interfaces]({{< relref "ConsoleSetupMenuScale.md" >}}) to enable GUI accessibility.
 
 After gaining access to the UI, sign in with the admin user credentials created during installation.
 
-Go to **System > General** and [upload the system config file](/scale/scaletutorials/systemsettings/general/managesysconfigscale/#uploading-the-file).
+Go to **System > General Settings** and [upload the system config file](/scale/scaletutorials/systemsettings/general/managesysconfigscale/#uploading-the-file).
 This migrates your CORE settings, imports your pools, shares, etc. into SCALE.
 The system reboots to apply the uploaded configuration.
 
