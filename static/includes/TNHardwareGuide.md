@@ -11,7 +11,7 @@ From repurposed systems to highly custom builds, the fundamental freedom of True
 {{< /truetable >}}
 
 The TrueNAS installer recommends 8 GB of RAM.
-TrueNAS installs, runs, and operates jails (in TrueNAS CORE).
+TrueNAS installs, runs, and operates jails (in TrueNAS 13).
 It also hosts SMB shares and replicates TBs of data with less. iXsystems recommends the above for better performance and fewer issues.
 
 You do not need an SSD boot device, but we discourage using a spinner or a USB stick.
@@ -312,7 +312,7 @@ Watch for VT-d/AMD-Vi device virtualization support on the CPU and motherboard t
 Be aware if a given CPU contains a GPU or requires an external one. Also note that many server motherboards include a BMC chip with a built-in GPU. See below for more details on BMCs.
 
 AMD CPUs are becoming more popular thanks to the Ryzen and EPYC (Naples/Rome) lines.
-Support for these platforms is limited on FreeBSD and, by extension, TrueNAS CORE. However, Linux has more support, and TrueNAS SCALE should work with AMD CPUs without issue.
+Support for these platforms is limited on FreeBSD and, by extension, TrueNAS 13. However, Linux has more support, and TrueNAS 24.10 should work with AMD CPUs without issue.
 
 {{< expand "SHA Extensions for x86 instruction set architecture" "v" >}}
 SHA Extensions in the x86 instruction set architecture support Secure Hash Algorithm family hardware acceleration.

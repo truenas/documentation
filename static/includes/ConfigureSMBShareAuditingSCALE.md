@@ -22,3 +22,5 @@ Click on a group to add it to the list and explicitly avoid recording any events
 The **Watch List** takes precedence over the **Ignore List** when using both lists.
 
 Click **Save**.
+
+You might need to stop and restart the SMB service in order to view logged events.

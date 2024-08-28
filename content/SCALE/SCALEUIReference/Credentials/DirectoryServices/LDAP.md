@@ -14,7 +14,7 @@ tags:
 ---
 
 {{< hint type=important >}}
-Support for LDAP **Samba Schema** is deprecated in TrueNAS SCALE 22.02 (Angelfish) and removed in 24.10 (Electric Eel).
+Support for LDAP **Samba Schema** is deprecated in TrueNAS 22.02 (Angelfish) and removed in 24.10 (Electric Eel).
 Migrate legacy Samba domains to Active Directory before upgrading to 24.10 or later.
 {{< /hint >}}
 

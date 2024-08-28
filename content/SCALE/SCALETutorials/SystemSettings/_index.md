@@ -35,6 +35,8 @@ SCALE system management options are collected in this section of the UI and orga
 
 * **Alert Settings** allows users to configure **Alert Services** and to adjust the threshold and frequency of various alert types. See [Alerts Settings Screens]({{< relref "AlertSettingsScreen.md" >}}) for more information.
 
+* **Audit** allows users to review auditing logs of all actions performed by a session, user, or service (SMB, middleware).
+
 * **Enclosure** appears when the system is attached to compatible SCALE hardware.
   This is a visual representation of the system with additional details about disks and other physical hardware components.
 

@@ -148,7 +148,7 @@ Slots available for boot differs by hardware. For optimal performance, consider 
 
 #### Using the TrueNAS Installer
 {{< hint type=important >}}
-If you are doing a clean install from the SCALE <kbd>.iso</kbd> file as part of migrating from a different version of TrueNAS CORE or SCALE, or to recover from a serious issue that requires you to re-install SCALE from the <kbd>.iso</kbd>, have your network configuration information ready to use after the installation completes.
+If you are doing a clean install from the SCALE <kbd>.iso</kbd> file as part of migrating from a different TrueNAS version, or to recover from a serious issue that requires you to re-install SCALE from the <kbd>.iso</kbd>, have your network configuration information ready to use after the installation completes.
 Also have your SCALE system configuration file and data backups handy, so you can recover your system settings and import your data into the recovered SCALE clean-install system.
 {{< /hint >}}
 
