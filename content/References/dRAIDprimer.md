@@ -7,7 +7,7 @@ tags:
 - storage
 ---
 
-Introduced in OpenZFS version 2.1.0 and initially supported in TrueNAS SCALE 23.10 (Cobia), declustered RAID (dRAID) is an alternate method for creating OpenZFS data virtual devices (vdevs).
+Introduced in OpenZFS version 2.1.0 and initially supported in TrueNAS 23.10 (Cobia), declustered RAID (dRAID) is an alternate method for creating OpenZFS data virtual devices (vdevs).
 
 Intended for storage arrays with numerous attached disks (>100), the primary benefit of a dRAID vdev layout is to reduce resilver times.
 It does this by building the dRAID vdev from multiple internal raid groups that have their own data and parity devices, using precomputed permutation maps for the rebuild IO, and using a fixed stripe width that fills storage capacity with zeroes when necessary.

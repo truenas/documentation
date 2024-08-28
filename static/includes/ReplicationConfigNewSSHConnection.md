@@ -1,5 +1,5 @@
 &NewLine;
-When using a TrueNAS system on a different release, like CORE or SCALE Angelfish, the remote or destination system user is always root. 
+When using a TrueNAS system on a different release, the remote or destination system user is always root. 
 
 To configure a new SSH connection from the **Replication Task Wizard**:
 

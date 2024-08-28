@@ -2,7 +2,7 @@
 
 The TrueNAS web interface lets users save debugging information to a text file.
 
-On TrueNAS CORE systems, go to **System > Advanced** and click **SAVE DEBUG**.
+On TrueNAS 13 systems, go to **System > Advanced** and click **SAVE DEBUG**.
 
 {{< trueimage src="/images/CORE/System/GenerateDebugFile.png" alt="Generate Debug Warning" id="Generate Debug Warning" >}}
 

@@ -56,13 +56,17 @@ The **Sharing >SMB** details screen, lists all SMB shares added to the system.
 
 {{< trueimage src="/images/SCALE/Shares/SharingSMBScreen.png" alt="Sharing SMB Screen" id="Sharing SMB Screen" >}}
 
-**Add** opens the **Add SMB** configuration screen.
+**SMB Sessions** opens the **SMB Status** screen.
 
 **Columns** displays a set of options to customize the list view.
 Options include **Unselect All**, **Path**, **Description**, **Enabled** and **Reset to Defaults**.
 
+**Add** opens the **Add SMB** configuration screen.
+
 **Enabled** indicates whether the share is enabled or disabled. If selected, the share path is available when the SMB service is active.
 If cleared, the share is disabled but not deleted from the system.
+
+**Audit Logging** indicates whether auditing for the share is enabled or disabled.
 
 The <span class="material-icons">more_vert</span> displays a dropdown list of options for each share:
 * **[Edit](#add-and-edit-smb-screens)** opens the **Edit SMB** screen.

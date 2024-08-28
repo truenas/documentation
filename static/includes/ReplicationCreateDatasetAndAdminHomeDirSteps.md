@@ -12,11 +12,9 @@ To create a replication task:
 2. Verify the admin user home directory, auxiliary groups, and sudo setting on both the local and remote destination systems.
    Local replication does not require an SSH connection, so this only applies to replication to another system.
 
-   If using a TrueNAS CORE system as the remote server, the remote user is always root.
+   If using a TrueNAS 13 system as the remote server, the remote user is always root.
 
-   If using a TrueNAS SCALE system on an earlier release like Angelfish, the remote user is always root.
-
-   If using an earlier TrueNAS SCALE Bluefin system (22.12.1) or you installed SCALE as the root user then created the admin user after initial installation, you must verify the admin user is correctly configured.
+   If using an earlier TrueNAS 22.12.1 system or you installed TrueNAS as the root user then created the admin user after initial installation, you must verify the admin user is correctly configured.
 
    {{< expand "Verify Admin User Settings" "v" >}}
 
