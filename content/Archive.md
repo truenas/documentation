@@ -58,20 +58,20 @@ Documentation for previous releases, that are no longer recommended for any user
 All documentation provided here is end-of-life (EoL), intended for reference only, and no longer receives *any* updates.
 {{< /hint >}}
 
-Software releases after TrueNAS SCALE 22.12 (Bluefin) are available as navigable website branches.
+Software releases after TrueNAS 22.12 (Bluefin) are available as navigable website branches.
 Earlier releases are available only in PDF.
 
 ## TrueNAS SCALE
 
-{{< expand "TrueNAS SCALE 22.12 (Bluefin)" "v" >}}
-[TrueNAS SCALE 22.12 (Bluefin)](https://www.truenas.com/docs/scale/22.12/)
+{{< expand "TrueNAS 22.12 (Bluefin)" "v" >}}
+[TrueNAS 22.12 (Bluefin)](https://www.truenas.com/docs/scale/22.12/)
 
 Release notes for each minor release of 22.12 are available in the [SCALE 22.12 Bluefin Release Notes](https://www.truenas.com/docs/scale/22.12/gettingstarted/scalereleasenotes/).
 {{< /expand >}}
 
-{{< expand "TrueNAS SCALE 22.02 (Angelfish)" "v" >}}
+{{< expand "TrueNAS 22.02 (Angelfish)" "v" >}}
 Release notes for each minor release of 22.02 Angelfish are included in the archived docs.
-<a href="https://www.truenas.com/docs/files/SCALE22.02Docs.pdf">TrueNAS SCALE 22.02 (Angelfish)</a>
+<a href="https://www.truenas.com/docs/files/SCALE22.02Docs.pdf">TrueNAS 22.02 (Angelfish)</a>
 {{< /expand >}}
 
 ## TrueNAS CORE
@@ -84,16 +84,16 @@ Some TrueNAS M-Series systems installed with 12.0 releases with some 16GB 2666mh
 ![NvdimmFirmwareAlert](/images/CORE/Dashboard/NvdimmFirmwareAlert.png "NVDIMM Firmware Alert")
 
 This can be a false positive that has been fixed in TrueNAS 13.0-U1 (see [NAS-116986](https://ixsystems.atlassian.net/browse/NAS-116986)).
-Upgrading to an Enterprise-recommended release of TrueNAS CORE 13.0 resolves this alert.
-To help determine if the deployment is ready to upgrade to TrueNAS CORE 13.0, please refer to the current TrueNAS [Software Status](https://www.truenas.com/software-status/) and, when your use case matches a recommended 13.0 release, contact iXsystems Support to schedule an upgrade.
+Upgrading to an Enterprise-recommended release of TrueNAS 13.0 resolves this alert.
+To help determine if the deployment is ready to upgrade to TrueNAS 13.0, please refer to the current TrueNAS [Software Status](https://www.truenas.com/software-status/) and, when your use case matches a recommended 13.0 release, contact iXsystems Support to schedule an upgrade.
 {{< expand "Contacting iX Support" >}}
 {{< include file="/static/includes/iXsystemsSupportContact.md" >}}
 {{< /expand >}}
 {{< /hint >}}
 
-{{< expand "TrueNAS CORE 12.0" "v" >}}
+{{< expand "TrueNAS 12.0" "v" >}}
 
-<a href="https://www.truenas.com/docs/files/CORE12.0Docs.pdf">TrueNAS CORE 12.0</a>
+<a href="https://www.truenas.com/docs/files/CORE12.0Docs.pdf">TrueNAS 12.0</a>
 
 Release Notes:
 * [12.0-U8.1]({{< ref "/_archive/COREReleaseNotes/12.0/12.0U8.1.md" >}})
@@ -269,8 +269,8 @@ Notices:
 
 ### Legacy TrueNAS
 
-{{< expand "TrueNAS CORE 11.3" "v" >}}
-<a href="https://www.truenas.com/docs/files/TrueNAS-11.3-U5-User-Guide.pdf">TrueNAS CORE 11.3</a></li>
+{{< expand "TrueNAS 11.3" "v" >}}
+<a href="https://www.truenas.com/docs/files/TrueNAS-11.3-U5-User-Guide.pdf">TrueNAS 11.3</a></li>
 
 11.3 Release Notes:
 * [11.3-U5]({{< ref "/_archive/COREReleaseNotes/TrueNAS/11.3/11.3U5.md" >}})
@@ -282,9 +282,9 @@ Notices:
 * [11.3-RC1]({{< ref "/_archive/COREReleaseNotes/TrueNAS/11.3/11.3RC1.md" >}})
 
 {{< /expand >}}
-{{< expand "TrueNAS CORE 11.2" "v" >}}
+{{< expand "TrueNAS 11.2" "v" >}}
 
-<a href="https://www.ixsystems.com/documentation/truenas/11.2-U8-legacy/TrueNAS-11.2-U8-Legacy-User-Guide_screen.pdf">TrueNAS CORE 11.2</a>
+<a href="https://www.ixsystems.com/documentation/truenas/11.2-U8-legacy/TrueNAS-11.2-U8-Legacy-User-Guide_screen.pdf">TrueNAS 11.2</a>
 
 11.2 Release Notes:
 * [11.2-U8.1]({{< ref "/_archive/COREReleaseNotes/TrueNAS/11.2/11.2U8.1.md" >}})
@@ -296,9 +296,9 @@ Notices:
 * [11.2-U5]({{< ref "/_archive/COREReleaseNotes/TrueNAS/11.2/11.2U5.md" >}})
 
 {{< /expand >}}
-{{< expand "TrueNAS CORE 11.1" "v" >}}
+{{< expand "TrueNAS 11.1" "v" >}}
 
-<a href="https://www.ixsystems.com/documentation/truenas/11.1/TrueNAS.pdf">TrueNAS CORE 11.1</a>
+<a href="https://www.ixsystems.com/documentation/truenas/11.1/TrueNAS.pdf">TrueNAS 11.1</a>
 
 11.1 Release Notes:
 * [11.1-U7.1]({{< ref "/_archive/COREReleaseNotes/TrueNAS/11.1/11.1U7.1.md" >}})

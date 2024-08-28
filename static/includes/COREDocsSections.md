@@ -1,8 +1,8 @@
 &NewLine;
 
-Each major section of TrueNAS CORE/Enterprise documentation is organized as a standalone book:
+Each major section of TrueNAS 13/Enterprise documentation is organized as a standalone book:
 
-* The [Getting Started Guide](/core/gettingstarted) provides the first steps for your experience with TrueNAS CORE/Enterprise:
+* The [Getting Started Guide](/core/gettingstarted) provides the first steps for your experience with TrueNAS 13/Enterprise:
   * Recommendations and considerations when selecting hardware for CORE.
   * Software Licensing information.
   * Installation tutorials.

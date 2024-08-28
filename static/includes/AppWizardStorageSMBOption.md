@@ -1,0 +1,15 @@
+&NewLine;
+
+Selecting this option shows the SMB share fields that allow you to configure the share server, path, and user authentication credentials while configuring the app.
+
+Select **Read Only** to make the storage volume read only.
+
+Enter the path inside the container to mount the storage for the share volume in **Mount Path**.
+
+Select **Migration Mode** if migrating third-party data.
+Enter the server address for the SMB share in **Server**, the path to mount the SMB share in **Path**, and the share authentication user credentials in **User** and **Password**.
+**domain** is an optional field for the share domain name.
+
+Permissions are currently limited to the permissions of the user that mounted the share.
+<!-- Commenting this out until I can get it verified with devs/solutions team 
+Alternate data streams (metadata), finder colors tags, previews, resource forks, and MacOS metadata is stripped from the share along with file system permissions, but this functionality is undergoing active development and implementation planned for a future TrueNAS SCALE release.-->
