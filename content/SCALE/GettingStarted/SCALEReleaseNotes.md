@@ -62,7 +62,7 @@ More details are available from [Software Releases]({{< relref "/TrueNASUpgrades
     Check back regularly and note the update history of the [README.md](https://github.com/truenas/apps/blob/master/README.md) file for the latest developments.
 
     Configuration data for applications that do not automatically migrate is retained in the ixapplications dataset.
-    You can re-initiate migration of Kubernetes apps to Docker at any time after upgrading to Electric Eel, for example to migrate an app that was not yet available for automatic migration upon upgrade but is now available.
+    You can re-initiate migration of previously-installed Kubernetes apps to Docker at any time after upgrading to Electric Eel, for example to migrate an app that was not yet available for automatic migration upon upgrade but is now available.
     From a shell session enter {{< cli >}}midclt call -job k8s_to_docker.migrate *poolname*{{< /cli >}}, where *poolname* is the name of the applications pool.
 
   * Custom apps are not supported for migration on 24.10-BETA.1.
@@ -115,7 +115,7 @@ After install, restore the system configuration and import the pools.
 Depending on the specific system configuration, this can be a straightforward or complicated process.
 See the [Migration articles]({{< relref "/SCALE/GettingStarted/Migrate/_index.md" >}}) for cautions and notes about differences between each software and the CORE to SCALE migration process.
 
-You must either clean install or use an upgrade ***iso** file to migrate a TrueNAS CORE system to SCALE 24.10 (Electric Eel).
+You must either clean install using an <file>iso</file> or use an upgrade file to migrate a TrueNAS CORE system to SCALE 24.10 (Electric Eel).
 Enterprise customers should [contact Support](https://www.truenas.com/docs/scale/gettingstarted/migrate/migratecorehatoscaleha/#expand-1-Enterprise%20HA%20Migrations) for assistance with transitioning from CORE to SCALE.
 
 ## Component Versions
