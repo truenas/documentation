@@ -14,7 +14,7 @@ related: false
 
 {{< hint type="tip" title="24.10 Early Release Documentation" >}}
 This page tracks the latest development roadmap and release notes for the next upcoming TrueNAS SCALE major version, 24.10 (Electric Eel).
-The stable [24.04 (Dragonfish) release notes](https://www.truenas.com/docs/scale/24.04/gettingstarted/scalereleasenotes/) are available with that documentation for that version.
+The stable [24.04 (Dragonfish) release notes](https://www.truenas.com/docs/scale/24.04/gettingstarted/scalereleasenotes/) are available with documentation for that version.
 {{< /hint >}}
 
 ## Features
