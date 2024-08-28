@@ -1,6 +1,6 @@
 ---
 title: "Apps"
-description: "Expanding TrueNAS SCALE functionality with applications."
+description: "Expanding TrueNAS functionality with applications."
 geekdocCollapseSection: true
 weight: 12
 aliases:
@@ -8,6 +8,7 @@ aliases:
  - /scale/scaleuireference/apps/usingapps/
  - /scale/apps/usingapps/
  - /scale/scaleclireference/app/
+ - /scale/scaletutorials/apps/
 tags:
 - apps
 keywords:
@@ -16,16 +17,16 @@ keywords:
 ---
 
 
-TrueNAS applications allow for quick and easy integration of third-party software and TrueNAS SCALE.
+TrueNAS applications allow for quick and easy integration of third-party software and TrueNAS.
 
 {{< include file="/static/includes/ProposeArticleChange.md" >}}
 
 TrueNAS is certified with leading hypervisors and backup solutions to streamline storage operations and ensure compatibility with your existing IT infrastructure.
-TrueNAS SCALE delivers a wide range of features and scalability for virtualization and private cloud environments, with the ability to create off-site backups with scheduled sync and replication features.
-SCALE applications expand the capabilities of your system by adding third-party software, but they can add significant risk to system stability and security.
+TrueNAS delivers a wide range of features and scalability for virtualization and private cloud environments, with the ability to create off-site backups with scheduled sync and replication features.
+TrueNAS applications expand the capabilities of your system by adding third-party software, but they can add significant risk to system stability and security.
 
 ## Getting Started
-All applications added to SCALE are intended to expand system functionality far beyond what is typically expected from a NAS.
+All applications added to TrueNAS are intended to expand system functionality far beyond what is typically expected from a NAS.
 
 Applications are provided "as-is" and can introduce system stability or security issues when installed.
 Make sure the application is required for your specific use requirements and does not violate your security policies before installation.
@@ -91,9 +92,9 @@ For example, create the datasets for the Nextcloud app before installing the app
 To select a different pool for apps to use, click **Settings > Unset Pool**. This turns off the apps service until you choose another pool for apps to use.
 
 ## Changing App Trains
-SCALE applications are available in three catalogs (trains):
+TrueNAS applications are available in three catalogs (trains):
 
-* **stable** - Default train of official apps, vetted by iXsystems, chosen because of the features and functionality of the app, and how they integrate with SCALE. 
+* **stable** - Default train of official apps, vetted by iXsystems, chosen because of the features and functionality of the app, and how they integrate with TrueNAS. 
 * **enterprise** - Default train of apps, simplified and validated for for Enterprise users for Enterprise-licensed systems.
 * **community** - Apps proposed and maintained by the community
 
@@ -111,7 +112,7 @@ To show only the one train of apps, for example the **enterprise** train, after 
 For more information on trains, see [Managing App Trains]({{< relref "UsingTrains.md" >}}).
 
 Some applications deploy as the **root** user for initial configuration before operating as a non-root user.
-Keep these general best practices in mind when using applications with TrueNAS SCALE.
+Keep these general best practices in mind when using applications with TrueNAS.
 
 ### Managing Container Images
 While on the **Installed** application screen, click **Settings** > **Manage Container Images** to open the **Manage Container Images** screen.
@@ -184,7 +185,7 @@ All applications include these basic setting sections:
 
 If deploying more than one instance of the application, you must change the default name. For example, *storj2* or *storj-node1*.
 
-Do not change the version number for official apps or those included in a SCALE catalog.
+Do not change the version number for official apps or those included in a TrueNAS catalog.
 When a new version becomes available, an **Upodate** banner shows on the **Installed** application screen, the app row shows an update alert, and the **Application Info** widget showss an update button.
 Updating the app changes the version shown on the edit wizard for the application.
 {{< /expand >}}
@@ -200,7 +201,7 @@ If not using the default user and group, create the new user (and group) to mana
 {{< /expand >}}
 
 {{< expand "Network Configuration" "v" >}}
-**Network Configuration** shows network settings the app uses to communicate with SCALE and the Internet.
+**Network Configuration** shows network settings the app uses to communicate with TrueNAS and the Internet.
 Settings include the default port assignment, host name, IP addresses, and other network settings.
 
 If changing the port number to something other than the default setting, refer to [Default Ports](https://www.truenas.com/docs/references/defaultports/) for a list of used and available port numbers.
@@ -213,7 +214,7 @@ If a certificate is required for the application, create the certificate authori
 **Storage Configuration** shows options to configure storage for the application.
 Storage configuration can includes the primary data mount volume, a configuration volume, postgres volumes, and an option to add additional storage volumes.
 The primary mount volumes have two options:
-* **ixVolume** that creates a storage volume inside the **ix-applications** dataset. This is the default setting.
+* **ixVolume** that creates a storage volume inside the **ix-apps** dataset. This is the default setting.
 * **Host Path** that allows you to select an existing dataset created for the application. Shows additional fields to select the path to the dataset and add the mount point.
 
 If adding an additional storage volume, click **Add** to configure additional storage volumes for the application to use in addition to the main storage volume (dataset).
@@ -239,7 +240,7 @@ It changes to **Running** when the application is ready to use.
 To modify installed application settings, click on the app row on the **Applications** table on the **Installed** screen, then click **Edit** on the **Application Info** widget.
 Make sure you have the right app row selected or you end up accessing the first app listed in the table of deployed apps.
 
-Refer to individual tutorials in the [Stable]({{< relref "/SCALE/SCALETutorials/Apps/StableApps/_index.md" >}}), [Community]({{< relref "/SCALE/SCALETutorials/Apps/CommunityApps/_index.md" >}}), or [Enterprise]({{< relref "/SCALE/SCALETutorials/Apps/EnterpriseApps/_index.md" >}}) sections of the Documentation Hub for more details on configuring application settings.
+Refer to individual tutorials in the [Stable]({{< relref "/content/TruenasApps/StableApps/_index.md" >}}), [Community]({{< relref "/content/TruenasApps/CommunityApps/_index.md" >}}), or [Enterprise]({{< relref "/content/Truenas/Apps/EnterpriseApps/_index.md" >}}) sections of the Documentation Hub for more details on configuring application settings.
 
 #### Allocating GPU
 Users with compatible hardware can allocate one or more GPU devices to an application for use in hardware acceleration.
@@ -294,7 +295,7 @@ Use the **Discover** screen links to access other functions.
 **Manage Installed Apps** opens the **Installed** apps screen where you access the **Settings** menu to manage general application settings.
 
 <!-- commenting out until RC1 when this screen gets added back to the UI
-**Custom App** opens a wizard where you can configure an unofficial app or one not included in a SCALE catalog. -->
+**Custom App** opens a wizard where you can configure an unofficial app or one not included in a TrueNAS catalog. -->
 
 ### Refreshing the Apps Catalog
 Click **Refresh Catalog** on the **Discover** screen to refresh the apps catalog.
@@ -324,8 +325,7 @@ See [Using Install Custom App]({{< relref "UsingCustomApp.md" >}}) for more info
 Custom applications use the system-level Kubernetes Node IP settings by default.
 
 You can assign an external interface to custom apps using  one of the **Networking** section  settings found on the **Install Custom App** screen.
-
-Unless you need to run an application separately from the Web UI, we recommend using the default Kubernetes **Node IP** (0.0.0.0) to ensure apps function correctly.-->
+-->
 
 <div class="noprint">
 

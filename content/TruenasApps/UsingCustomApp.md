@@ -6,6 +6,7 @@ aliases:
  - /scale/scaletutorials/apps/docker/
  - /scale/apps/docker/
  - /scale/scaleuireference/apps/docker/
+ - /scale/scaletutorials/apps/usingcustomapp/
 tags:
 - customapp
 - apps
@@ -19,7 +20,7 @@ keywords:
 <!-- Existing content to be rewritten once Custom App redesign is complete -->
 
 <!--
-SCALE includes the ability to run third-party apps in containers (pods) using Kubernetes settings.
+TrueNAS includes the ability to run third-party apps in containers (pods) using Kubernetes settings.
 
 {{< expand "What is Kubernetes?" "v" >}}
 Kubernetes (K8s) is an open-source system for automating deployment, scaling, and managing containerized applications.
@@ -44,7 +45,7 @@ If your application requires specific directory paths, datasets, or other storag
 You cannot save settings and exit the configuration wizard to create data storage or directories in the middle of the process.
 If you are unsure about any configuration settings, review the [Install Custom App Screen UI reference article]({{< relref "InstallCustomAppScreens.md" >}}) before creating a new container image.
 
-To create directories in a dataset on SCALE, before you begin installing the container, open the TrueNAS SCALE CLI and enter `storage filesystem mkdir path="/PATH/TO/DIRECTORY"`.
+To create directories in a dataset on TrueNAS, before you begin installing the container, open the TrueNAS CLI and enter `storage filesystem mkdir path="/PATH/TO/DIRECTORY"`.
 {{< /hint >}}
 
 ## Adding Custom Applications
@@ -152,8 +153,8 @@ When you are ready to create a container, go to **Apps**, click **Discover Apps*
 
 ### Defining Host Path Volumes
 
-You can mount SCALE storage locations inside the container.
-To mount SCALE storage, define the path to the system storage and the container internal path for the system storage location to appear.
+You can mount TrueNAs storage locations inside the container.
+To mount TrueNAS storage, define the path to the system storage and the container internal path for the system storage location to appear.
 You can also mount the storage as read-only to prevent using the container to change any stored data.
 For more details, see the [Kubernetes hostPath documentation](https://kubernetes.io/docs/concepts/storage/volumes/#hostpath).
 
