@@ -25,7 +25,7 @@ With Collabora, you can host your online office suite at home.
 To integrate Collabora correctly, you must have a [Nextcloud account with Collabora added](https://nextcloud.com/collaboraonline/).
 {{< /hint >}}
 
-{{< include file="/static/includes/AppsUnversioned.md" >}}
+{{< include file="/static/includes/ProposeArticleChange.md" >}}
 
 ## Install the Collabora App
 

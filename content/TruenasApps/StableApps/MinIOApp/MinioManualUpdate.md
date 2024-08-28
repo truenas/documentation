@@ -105,7 +105,7 @@ To port your configuration from your old MinIO deployment to your new, export yo
 MinIO Client exports the config file to the current directory path.
 
 {{< expand "Example" "v" >}}
-<code><i>old-deployment-name` is your old MinIO app name in TrueNAS.
+<code><i>old-deployment-name</i></code> is your old MinIO app name in TrueNAS.
 
 {{< trueimage src="/images/SCALE/Apps/MinIOClientConfigExport.png" alt="Export Configuration" id="Export Configuration" >}}
 

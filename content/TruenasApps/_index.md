@@ -1,8 +1,8 @@
 ---
-title: "Apps"
+title: "TrueNas Apps"
 description: "Expanding TrueNAS functionality with applications."
 geekdocCollapseSection: true
-weight: 12
+weight: 26
 aliases:
  - /scale/scaletutorials/apps/usingapps/
  - /scale/scaleuireference/apps/usingapps/
@@ -240,7 +240,7 @@ It changes to **Running** when the application is ready to use.
 To modify installed application settings, click on the app row on the **Applications** table on the **Installed** screen, then click **Edit** on the **Application Info** widget.
 Make sure you have the right app row selected or you end up accessing the first app listed in the table of deployed apps.
 
-Refer to individual tutorials in the [Stable]({{< relref "/content/TruenasApps/StableApps/_index.md" >}}), [Community]({{< relref "/content/TruenasApps/CommunityApps/_index.md" >}}), or [Enterprise]({{< relref "/content/Truenas/Apps/EnterpriseApps/_index.md" >}}) sections of the Documentation Hub for more details on configuring application settings.
+Refer to individual tutorials in the [Stable]({{< relref "/content/TruenasApps/StableApps/_index.md" >}}), [Community]({{< relref "/content/TruenasApps/CommunityApps/_index.md" >}}), or [Enterprise]({{< relref "/content/TruenasApps/EnterpriseApps/_index.md" >}}) sections of the Documentation Hub for more details on configuring application settings.
 
 #### Allocating GPU
 Users with compatible hardware can allocate one or more GPU devices to an application for use in hardware acceleration.
