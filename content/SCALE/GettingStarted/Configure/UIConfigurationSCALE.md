@@ -28,7 +28,7 @@ Use the information mentioned in the [installation preparation instructions]({{<
 
 {{< include file="/static/includes/RootLoginWarnSCALE.md" >}}
 
-After [logging into SCALE]({{< relref "FirstTimeLogin.md#logging-into-the-scale-ui" >}}) as admin, you can begin configuring SCALE using the web interface.
+After [logging into SCALE]({{< relref "FirstTimeLogin.md#logging-into-the-scale-ui" >}}), you can begin configuring SCALE using the web interface.
 
 ## Enterprise Licenses and Proactive Support
 

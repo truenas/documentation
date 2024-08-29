@@ -27,6 +27,8 @@ The primary network interface is configured as part of the SCALE installation pr
 Go to **Network > Global Configuration** screen in the TrueNAS web UI to determine if the default gateway, host name, domain, and DNS name servers have been configured correctly.
 See [Console Setup Menu Configuration]({{< relref "ConsoleSetupMenuScale.md" >}}) for more information on network settings.
 
+{{< include file="static/includes/ABridgeToSellYou.md" >}}
+
 ### VLAN Configuration (Optional)
 
 You can configure a virtual LAN (VLAN) to route traffic for your VMs.

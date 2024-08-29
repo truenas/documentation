@@ -11,7 +11,7 @@ tags:
 
 ## Groups Screen
 
-The **Credentials > Local Groups** screen displays a list of groups configured on the screen. By default, built-in groups are hidden until you make them visible. 
+The **Credentials > Local Groups** screen displays a list of groups configured on the screen. By default, built-in groups are hidden until you make them visible.
 
 {{< trueimage src="/images/SCALE/Credentials/GroupsListedSCALE.png" alt="Local Groups Screen" id="Local Groups Screen" >}}
 
@@ -43,7 +43,7 @@ Click **Add** to open the **Add Group** configuration screen.
 |---------|-------------|
 | **GID** | Required. Enter a unique number for the group ID (**GID**) TrueNAS uses to identify a Unix group. Enter a number above 1000 for a group with user accounts (you cannot change the GID later). If a system service uses a group, the group ID must match the default port number for the service. |
 | **Name** | Required. Enter a name for the group. The group name cannot begin with a hyphen (-) or contain a space, tab, or any of these characters: colon (:), plus (+), ampersand (&), hash (#), percent (%), carat (^), open or close parentheses ( ), exclamation mark (!), at symbol (@), tilde (~), asterisk (*), question mark (?) greater or less than (<) (>), equal (=). You can only use the dollar sign ($) as the last character in a user name. |
-| **Privileges** | Attaches administrator role privileges to the group. Privileges is an **experimental** early release feature that defines administrator roles. Using custom administrator roles aside from the defaults is not supported. Do not modify the local administrator or primary admin user privileges! Only use if you need users in this group to access limited areas of the web UI or access in the TrueNAS API. |
+| **Privileges** | Attaches administrator role privileges to the group. Using custom administrator roles aside from the defaults is an **experimental** feature and is not supported. Do not modify the local administrator or default admin user privileges! Only use if you need users in this group to access limited areas of the web UI or authentication for TrueNAS API calls. |
 | **Allowed sudo commands** | Use to list specific [sudo](https://www.sudo.ws/) commands allowed for group members. Enter each command as an absolute path to the ELF (Executable and Linkable Format) executable file, for example */usr/bin/nano*. <file>/usr/bin/</file> is the default location for commands. <br> Grants limited root-like permissions for group members when using these commands. Using sudo prompts the user for their account password. |
 | **Allow all sudo commands** | Select to give group members permission to use all [sudo](https://www.sudo.ws/) commands. Using sudo prompts the user for their account password. |
 | **Allowed sudo commands with no password** | Use to list specific [sudo](https://www.sudo.ws/) commands allowed for group members with no password required. Enter each command as an absolute path to the ELF (Executable and Linkable Format) executable file, for example */usr/bin/nano*. <file>/usr/bin/</file> is the default location for commands. <br> Grants limited root-like permissions for group members when using these commands. Exercise caution when allowing sudo commands without password prompts. It is recommended to limit this privilege to trusted users and specific commands to minimize security risks. |
@@ -73,6 +73,7 @@ Select multiple users by holding <kbd>Ctrl</kbd> while clicking each entry.
 Click **Save**.
 
 ## Privileges Screen
+
 {{< hint type="warning" title="Experimental Feature" >}}
 The **Privileges** feature is an early release experimental feature.
 Use the **Privileges** screens to view default administrator groups and roles, or define customized groupings of roles for different local or Directory Service-imported account groups.
@@ -90,7 +91,7 @@ Editing the unrestricted administrator account privilege can result in lost acce
 {{< trueimage src="/images/SCALE/Credentials/AddNewPrivilegeScreen.png" alt="New Privilege Screen" id="New Privilege Screen" >}}
 
 Click on a listed privilege to expand the row and show details on the privilege.
-Edit opens the **Edit Privilege** screen. 
+Edit opens the **Edit Privilege** screen.
 
 The new and edit privilege screens show the same settings but not all settings are editable.
 
