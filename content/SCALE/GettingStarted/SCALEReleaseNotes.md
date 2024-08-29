@@ -157,7 +157,7 @@ Notable changes:
 
 * Dashboard reworked with more widgets, data reporting, and customization ([NAS-127217](https://ixsystems.atlassian.net/browse/NAS-127217)).
 
-* Applications backend framework is shifted from Kubernetes to Docker ([](https://ixsystems.atlassian.net/browse/)). See the official [announcement](https://forums.truenas.com/t/the-future-of-electric-eel-and-apps/5409) for more information. The **Custom App** installation screen is disabled in 24.10-BETA.1. A redesigned screen, including Docker Compose support, is anticipated for the RC.1 version. See [Upgrade Notes](#upgrade-notes) for more information.
+* Applications backend framework is shifted from Kubernetes to Docker. See the official [announcement](https://forums.truenas.com/t/the-future-of-electric-eel-and-apps/5409) for more information. The **Custom App** installation screen is disabled in 24.10-BETA.1. A redesigned screen, including Docker Compose support, is anticipated for the RC.1 version. See [Upgrade Notes](#upgrade-notes) for more information.
   
 * New [TrueCloud Backup Tasks]({{< relref "TrueCloudTasks.md" >}}) with streamlined functionality for Storj iX cloud backups and restoration ([NAS-127165](https://ixsystems.atlassian.net/browse/NAS-127165)).
 
