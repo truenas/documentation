@@ -253,7 +253,7 @@ Allocate GPU from the **Resources Configuration** section of the application ins
 
 {{< trueimage src="/images/SCALE/Apps/ResourcesConfiguration.png" alt="Resources Configuration" id="Resources Configuration" >}}
 
-Click the **GPU Resource** allocation row for the type of GPU (AMD, Intel, or Nvidia) and select the number of GPU devices the application is allowed access to.
+Click the **GPU Resource** allocation row for the type of GPU (AMD, Intel, or NVIDIA) and select the number of GPU devices the application is allowed access to.
 It is not possible at this time to specify which available GPU device is allocated to the application and assigned devices can change on reboot.
 
 {{< trueimage src="/images/SCALE/Apps/ResourcesConfigurationAllocateGPU.png" alt="Select GPU Allocation" id="Select GPU Allocation" >}}
