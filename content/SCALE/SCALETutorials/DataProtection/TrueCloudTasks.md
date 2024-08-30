@@ -21,8 +21,6 @@ They are an effective method to back up data to a remote location.
 
 This article provides instructions on configuring a TrueCloud backup task using Storj and covers setting up both the Storj iX account and SCALE credential.
 
-*<sup><sub>TrueCloud backup tasks streamline functionality for Storj iX cloud backups and restoration.</sub></sup>
-
 {{< hint type=important >}}
 To take advantage of the lower-cost benefits of the TrueCloud backup service, you must create your Storj iX account using the link provided on the **Add Cloud Credentials** screen.
 
