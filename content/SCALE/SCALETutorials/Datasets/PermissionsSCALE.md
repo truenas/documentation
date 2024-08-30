@@ -42,7 +42,7 @@ Both the POSIX and NFSv4 **ACL Editors** screens allow you to define the owner u
 The owner user and group should remain set to either **root** or the admin account with full privileges.
 
 Add ACE items for other users, groups, directories, or other options to grant access permissions to the dataset.
-Click in the **Who** field and select the item (like **User** or **Group**) and to display the **User** or **Group** fields where you select the user or group accounts.
+Click in the **Who** field and select the item (like **User** or **Group**) to display the **User** or **Group** fields where you choose the user or group accounts.
 
 {{< include file="/static/includes/SkipExecutionCheckWarning.md" >}}
 
@@ -50,7 +50,7 @@ Click in the **Who** field and select the item (like **User** or **Group**) and 
 Basic ACL permissions are viewable and configurable from the **Datasets** screen.
 Select a dataset, then scroll down to the **Permissions** widget to view owner and individual ACL entry permissions.
 
-To view the **Edit ACL** screen, either select the dataset and click **Edit** on the **Permissions** widget or go to **Sharing** and click on the share widget header to open the list of shares. Select the share, then click the options icon and select **Edit Filesystem ACL**. 
+To view the **Edit ACL** screen, select the dataset and click **Edit** on the **Permissions** widget, or go to **Sharing** and click on the share widget header to open the list of shares. Select the share, then click the options icon and select **Edit Filesystem ACL**. 
 
 {{< trueimage src="/images/SCALE/Datasets/ViewRootDatasetPermissionsWidget.png" alt="View Root Dataset Permissions" id="View Root Dataset Permissions" >}}
 
@@ -113,7 +113,7 @@ From the **Unix Permissions Editor** screen:
 4. Select the ACE entry on the **Access Control List** list on the left of the screen just below **Owner** and **Owner Group**.
    If adding a new entry, click **Add Item**.
 
-5. Click in **Who** and select the value from the dropdown list.
+5. Click on **Who** and select the value from the dropdown list.
 
    If selecting **User**, the **User** field displays below the **Who** field. Same for **Group**.
 
@@ -123,7 +123,7 @@ From the **Unix Permissions Editor** screen:
 
 7. (Optional) Select **Apply permissions recursively**, below the list of access control entries, to apply this preset to all child datasets.
 
-8. (Optional) Click **Use Preset** to display the ACL presets window and select a predefined set of permission from the list of presets.
+8. (Optional) Click **Use Preset** to display the ACL presets window and select a predefined set of permissions from the list of presets.
    See [Using Preset ACL Entries (POSIX ACL)](#using-preset-acl-entries-posix-acl) for the list of presets.
 
 9. Click **Save as Preset** to add this to the list of ACL presets. Click **Save Access Control List** to save the changes made to the ACL.
@@ -134,7 +134,7 @@ An NFS4 ACL preset loads pre-configured permissions to match general permissions
 {{< hint type="important" title="Changing the ACL Type" >}}
 Changing the ACL type affects how TrueNAS writes and reads on-disk ZFS ACL.
 
-When the ACL type changes from NFSv4 to POSIX, native ZFS ACLs do not convert to posix1e extended attributes, but ZFS usea the native ACL for access checks.
+When the ACL type changes from NFSv4 to POSIX, native ZFS ACLs do not convert to posix1e extended attributes, but ZFS uses the native ACL for access checks.
 
 When the ACL type changes from NFSv4 to POSIX, native ZFS ACLs do not convert to posix1e extended attributes, but ZFS will use the native ACL for access checks.
 
