@@ -68,7 +68,7 @@ More details are available from [Software Releases]({{< relref "/TrueNASUpgrades
   * Custom apps are not supported for migration on 24.10-BETA.1.
   The **Custom App** installation screen is disabled.
   A redesigned screen, including Docker Compose support, is anticipated for the RC.1 version.
-  Users wishing to leverage Docker Compose in BETA can do so using the **Dockge** or **Portainer** apps, available from the [**Community**]({{< relref "/SCALE/SCALETutorials/Apps/CommunityApps/_index.md" >}}) train, or in a [**Sandbox**]({{< relref "Sandboxes.md" >}}).
+  Users wishing to leverage Docker Compose in BETA can do so using the **Dockge** or **Portainer** apps, available from the [**Community**]({{< relref "/TruenasApps/CommunityApps/_index.md" >}}) train, or in a [**Sandbox**]({{< relref "Sandboxes.md" >}}).
 
 * Starting in 24.10, TrueNAS does not install a default Nvidia driver.
   This allows for driver updates in between TrueNAS release versions.
