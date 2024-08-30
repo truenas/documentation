@@ -1,8 +1,10 @@
 ---
-title: "Accessing NAS From a VM"
-description: "Provides instructions on how to create a bridge interface for the VM and provides Linux and Windows examples."
-weight: 20
-alias: /scale/scaleuireference/virtualization/accessingnasfromvm/
+title: "Accessing NAS from a VM or Apps"
+description: "Provides instructions on how to create a bridge interface for virtual machines or applications and provides Linux and Windows examples."
+weight: 60
+alias: 
+- /scale/scaleuireference/virtualization/accessingnasfromvm/
+- /scale/scaletutorials/virtualization/accessingnasfromvm/
 tags:
  - vm
 keywords:
@@ -11,9 +13,9 @@ keywords:
 - storage container virtualization
 ---
 
-If you want to access your TrueNAS SCALE directories from a VM, you have multiple options:
+If you want to access your TrueNAS SCALE directories from a VM or within an app container, you have multiple options:
 
-* If you have only one physical interface, you must create a bridge interface for the VM. 
+* If you have only one physical interface, you must create a bridge interface.
 * If your system has more than one physical interface you can assign your VMs to a NIC other than the primary one your TrueNAS server uses.
   This method makes communication more flexible but does not offer the potential speed of a bridge.
 

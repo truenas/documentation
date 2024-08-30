@@ -40,7 +40,7 @@ Configure the NFS service before joining AD for simpler Kerberos credential crea
 
 You can either use the**Shares** screen **Configure Service** option on both the **Windows (SMB) Share** and on the **UNIX (NFS) Shares** widgets, or go to **System > Services** and select the **Edit** option on the **SMB** and **NFS** services.
 
-{{< trueimage src="/images/SCALE/Shares/SharingSMBServicesActionOptions.png" alt="SMB Service Options" id="SMB Service Options" >}}
+{{< trueimage src="/images/SCALE/Shares/SMBShareOptions.png" alt="SMB Service Options" id="SMB Service Options" >}}
 
 Unless you need a specific setting or are configuring a unique network environment, we recommend using the default SMB service settings.
 

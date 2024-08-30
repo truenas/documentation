@@ -31,7 +31,7 @@ Only trusted users with the code can open the file(s) with shared data.
 {{< expand "Using Syncthing File Versioning" "V" >}}
 **File Versioning** applies to changes received from other devices.
 For example, *Bill* turns on versioning and *Alice* changes a file.
-Syncthing archives the old version on *Bill's* computer when it syncs the change from *Alice*.
+Syncthing archives the old version on the computer *Bill* uses when it syncs the change from *Alice*.
 But if *Bill* changes a file locally on his computer, Syncthing does not and cannot archive the old version.
 
 For more information on specific file versioning, see [Versioning](https://docs.syncthing.net/v1.23.2/users/versioning)
@@ -55,6 +55,6 @@ You can forward logs to a specific folder or remote device.
 
 {{< expand "Maintaining File Ownership (ACL Preservation)" "v" >}}
 Syncthing includes the ability to maintain ownership and extend attributes during transfers between nodes (systems).
-This ensures ACLs and permissions remain consistent across TrueNAS SCALE systems during one and bi-directional Syncthing moves.
+This ensures ACLs and permissions remain consistent across TrueNAS systems during one and bi-directional Syncthing moves.
 You can configure this setting on a per folder basis.
 {{< /expand >}}

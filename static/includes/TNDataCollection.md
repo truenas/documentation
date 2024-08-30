@@ -3,7 +3,7 @@
 The protocol for system data collection uses the same TCP ports as HTTPS (443) and passes through most firewalls as an outgoing web connection.
 If a firewall blocks the data collection or the data collection is disabled, there is no adverse impact to the TrueNAS system.
 
-When **Usage collection** is disabled, anonymous usage statistics consisting only of the software version and total system capacity (e.g. TrueNAS SCALE 24.04.0, 55 TB) are still collected.
+When **Usage collection** is disabled, anonymous usage statistics consisting only of the software version and total system capacity (e.g. TrueNAS 24.04.0, 55 TB) are still collected.
 Information about system configuration and usage is not collected.
 
 When enabled, non-sensitive system data is transmitted to iXsystems.
