@@ -200,7 +200,7 @@ Notable changes:
 <a href="https://ixsystems.atlassian.net/issues/?filter=10587" target="_blank">Click here for the full changelog</a> of completed tickets that are included in the 24.10-BETA.1 release.
 {{< include file="/static/includes/JiraFilterInstructions.md" >}}
 
-### 24.04-BETA.1 Known Issues
+### 24.10-BETA.1 Known Issues
 
 * The **System > Audit** screen can display different values for **Timestamp** in the entries list and **Localtime** in **Event Data**, depending on the local timezone of the system ([NAS-130373](https://ixsystems.atlassian.net/browse/NAS-130373)).
   
@@ -214,7 +214,7 @@ Notable changes:
 
 * Audit logging status indicators on SMB share tables might not accurately reflect if logging is or is not enabled on a given share ([NAS-130830](https://ixsystems.atlassian.net/browse/NAS-130830)).
 
-* App icons can periodically fail to render on the **Descover** applications screen, especially when searching for applications ([NAS-130831](https://ixsystems.atlassian.net/browse/NAS-130831)).
+* App icons can periodically fail to render on the **Discover** applications screen, especially when searching for applications ([NAS-130831](https://ixsystems.atlassian.net/browse/NAS-130831)).
 
 * On the virtual machine creation screen, a validation error displays if a configured GPU device is not valid for use in the VM. However, in some cases it can be possible to continue and create the VM with an invalid GPU configuration ([NAS-130754](https://ixsystems.atlassian.net/browse/NAS-130754)). If you receive a GPU validation error during VM creation, remove or correct the invalid GPU before creating the VM.
 
