@@ -1,14 +1,21 @@
 ---
-title: "TrueNas Apps"
+title: "TrueNAS Apps"
 description: "Expanding TrueNAS functionality with applications."
 geekdocCollapseSection: true
-weight: 26
+weight: 22
 aliases:
  - /scale/scaletutorials/apps/usingapps/
  - /scale/scaleuireference/apps/usingapps/
  - /scale/apps/usingapps/
  - /scale/scaleclireference/app/
  - /scale/scaletutorials/apps/
+cascade:
+  - _target:
+    book: "TrueNASApps"
+  - _target:
+    volume: "SCALE"
+  - _target:
+    volume: "Appendices" 
 tags:
 - apps
 keywords:
