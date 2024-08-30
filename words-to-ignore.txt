@@ -2008,3 +2008,4 @@ ResourcesConfigurationAllocateGPU
 AppsDiscoverScreen
 DiscoverAppsScreenFilterOptions
 managegpuscale
+TrueNASApps
