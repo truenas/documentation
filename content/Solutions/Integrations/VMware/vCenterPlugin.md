@@ -330,6 +330,8 @@ The volume must be large enough to contain the chosen datastore size.
 If you have a high availability NAS with a Fibre Channel license and a network configured to form a Fibre Channel fabric with the NAS and ESXi, you are also able to select a Fibre Channel port for the datastore.
 
 Selecting a Fibre Channel port enables that port with the datastore target on the NAS and creates a datastore with a corresponding Fibre Channel HBA on the ESXi.
+One target per port is supported.
+
 {{< /expand >}}
 {{< expand "NFS Datastore Configuration" >}}
 ![NFSDataStoreSettings](/images/vCenterPlugin/NFSDatastoreSettings.png "NFS Options")
