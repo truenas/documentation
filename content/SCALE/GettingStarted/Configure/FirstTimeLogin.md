@@ -53,9 +53,11 @@ The browser used to access the SCALE UI can impact the quality of your user expe
 
 {{< include file="/static/includes/RootLoginWarnSCALE.md" >}}
 
-With the implementation of administrator accounts, the root user is no longer the default administrator username. 
+{{< include file="/static/includes/AdminAccountSecurity.md" >}}
 
-Based on the method used to install SCALE, you can be presented with different first-time login scenarios, each described below. 
+With the implementation of administrator accounts, the root user is no longer the default administrator username.
+
+Based on the method used to install SCALE, you can be presented with different first-time login scenarios, each described below.
 
 {{< expand "Clean Installing SCALE" "v" >}}
 When installing SCALE from an <file>iso</file> file, and based on the authentication method selected in step 4 of the SCALE [TrueNAS installer]({{< relref "InstallingScale.md#using-the-truenas-installer" >}}) process, you can see a different sign-in screen for the web UI and need to use different login credentials.
@@ -164,7 +166,7 @@ Click on the system image to open the **System Settings > [View Enclosure]({{< r
 The **Dashboard** for non-Enterprise systems displays the TrueNAS SCALE logo on the **System Information** widget.
 
 To [customize the dashboard ]({{< relref "/SCALE/SCALETutorials/Dashboard/_index.md" >}}), click **Configure** to put the **Dashboard** into configuration mode.
-Use the drag bar to move widget groups to new positions on the screen. 
+Use the drag bar to move widget groups to new positions on the screen.
 Click **Add** to create new widgets or the **Edit** option in the widget group to change the look or information included in a widget.
 
 {{< trueimage src="/images/SCALE/Dashboard/DashboardInConfigMode.png" alt="Dashboard in Configuration Mode" id="Dashboard in Configuration Mode" >}}
