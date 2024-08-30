@@ -1,5 +1,5 @@
 ---
-title: "Enterprise Applications"
+title: "Enterprise Apps"
 description: "Tutorials for using TrueNAS applications in an Enterprise-licensed deployment."
 geekdocCollapseSection: true
 weight: 20
@@ -18,8 +18,6 @@ related: false
 
 
 {{< include file="/static/includes/SCALEEnterpriseApps.md" >}}
-
-## Enterprise Applications
 
 TrueNAS is certified with leading hypervisors and backup solutions to streamline storage operations and ensure compatibility with your existing IT infrastructure.
 TrueNAS Enterprise storage appliances deliver a wide range of features and scalability for virtualization and private cloud environments, with the ability to create off-site backups with scheduled sync and replication features.
