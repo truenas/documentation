@@ -12,7 +12,6 @@ keywords:
 - software storage solutions
 ---
 
-
 The TrueNAS community creates and maintains numerous applications intended to expand system functionality far beyond what is typically expected from a NAS.
 
 By default, the TrueNAS application catalog includes the **stable** train.
