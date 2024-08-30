@@ -13,8 +13,6 @@ keywords:
 - software storage solutions
 ---
 
-
-
 The **stable** train populates the application catalog with the official applications.
 The **Discover** screen shows the **stable** train applications by default.
 
