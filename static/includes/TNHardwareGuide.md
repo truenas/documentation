@@ -188,6 +188,9 @@ You might also consider adding a hot-spare drive with any pool configuration, wh
 
 ### Storage Device Burn-In
 
+{{< hint type=important >}}
+**Warning:** After TrueNAS SCALE 22.10 (Bluefin), if you use "admin" for administrasive account to login Web-UI, add "sudo" in shell.
+{{< /hint >}}
 Spinning disk hard drives have moving parts that are highly sensitive to shock and vibration and wear out with use.
 Consider pre-flighting every storage device before putting it into production, especially:
 
