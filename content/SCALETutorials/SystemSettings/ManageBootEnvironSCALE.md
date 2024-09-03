@@ -77,8 +77,8 @@ For example, the TrueNAS update process automatically creates a snapshot of the 
 If anything goes wrong during the update, the system administrator can activate the snapshot of the pre-update environment and reboot TrueNAS to restore system functionality.
 
 Boot environments do not preserve or restore the state of any attached storage pools or apps, only the system **boot-pool**.
-Storage backups must be handled through the [ZFS snapshot]({{<relref "PeriodicSnapshotTasksSCALE.md" >}}) feature or other [backup options]({{< relref "/SCALE/SCALETutorials/DataProtection/_index.md" >}}).
-TrueNAS [applications]({{< relref "/content/TruenasApps/_index.md" >}}) also use separate upgrade and container image management methods to provide app update and rollback features.
+Storage backups must be handled through the [ZFS snapshot]({{<relref "PeriodicSnapshotTasksSCALE.md" >}}) feature or other [backup options]({{< relref "/SCALETutorials/DataProtection/_index.md" >}}).
+TrueNAS [applications](https://www.truenas.com/docs/truenasapps/) also use separate upgrade and container image management methods to provide app update and rollback features.
 
 To view the list of boot environments on the system, go to **System > Boot**.
 Each boot environment entry contains this information:

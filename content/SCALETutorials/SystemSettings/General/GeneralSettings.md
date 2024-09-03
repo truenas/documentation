@@ -58,7 +58,7 @@ To send failed HTTP request data which can include client and server IP addresse
 ### Sending Usage Statistics to iXsystems
 To send anonymous usage statistics to iXsystems, select the **Usage Collection** option.
 
-For more information about what usage data is collected, see the [TrueNAS Data Collection Statement]({{< relref "/SCALE/GettingStarted/UserAgreements/DataCollectionStatement.md" >}}).
+For more information about what usage data is collected, see the [TrueNAS Data Collection Statement]({{< relref "/GettingStarted/UserAgreements/DataCollectionStatement.md" >}}).
 
 ### Showing Console Messages
 To display console messages in real time at the bottom of the browser, select the **Show Console Messages** option.

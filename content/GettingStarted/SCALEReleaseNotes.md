@@ -29,7 +29,7 @@ The stable [24.04 (Dragonfish) release notes](https://www.truenas.com/docs/scale
 
 For adventurous users that want to experiment with the latest feature development, nightly build [.iso](https://download.truenas.com/truenas-scale-electriceel-nightly/) and [.update](https://update.sys.truenas.net/scale/TrueNAS-SCALE-ElectricEel-Nightlies/) files are available.
 
-More details are available from [Software Releases]({{< relref "/TrueNASUpgrades/_index.md" >}}).
+More details are available from [Software Releases](https://www.truenas.com/docs/softwarereleases/).
 
 ## Release Schedule
 
@@ -68,7 +68,7 @@ More details are available from [Software Releases]({{< relref "/TrueNASUpgrades
   * Custom apps are not supported for migration on 24.10-BETA.1.
   The **Custom App** installation screen is disabled.
   A redesigned screen, including Docker Compose support, is anticipated for the RC.1 version.
-  Users wishing to leverage Docker Compose in BETA can do so using the **Dockge** or **Portainer** apps, available from the [**Community**]({{< relref "/TruenasApps/CommunityApps/_index.md" >}}) train, or in a [**Sandbox**]({{< relref "Sandboxes.md" >}}).
+  Users wishing to leverage Docker Compose in BETA can do so using the **Dockge** or **Portainer** apps, available from the [**Community**](https://www.truenas.com/docs/truenasapps/communityapps/) train, or in a [**Sandbox**](https://www.truenas.com/docs/truenasapps/sandboxes/).
 
 * Starting in 24.10, TrueNAS does not install a default Nvidia driver.
   This allows for driver updates in between TrueNAS release versions.
@@ -113,7 +113,7 @@ When attempting to migrate from TrueNAS CORE, the general recommendation is to b
 After install, restore the system configuration and import the pools.
 
 Depending on the specific system configuration, this can be a straightforward or complicated process.
-See the [Migration articles]({{< relref "/SCALE/GettingStarted/Migrate/_index.md" >}}) for cautions and notes about differences between each software and the CORE to SCALE migration process.
+See the [Migration articles]({{< relref "/GettingStarted/Migrate/_index.md" >}}) for cautions and notes about differences between each software and the CORE to SCALE migration process.
 
 You must either clean install using an <file>iso</file> or use an upgrade file to migrate a TrueNAS CORE system to SCALE 24.10 (Electric Eel).
 Enterprise customers should [contact Support](https://www.truenas.com/docs/scale/gettingstarted/migrate/migratecorehatoscaleha/#expand-1-Enterprise%20HA%20Migrations) for assistance with transitioning from CORE to SCALE.

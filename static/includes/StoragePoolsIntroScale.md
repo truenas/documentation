@@ -20,4 +20,4 @@ We strongly recommend users review the available system resources and plan the s
 
 Determining your specific storage requirements is a critical step before creating a pool.
 
-You can use the [ZFS Capacity Calculator]({{< relref "/References/ZFSCapacityCalculator.md" >}}) and [ZFS Capacity Graph]({{< relref "/References/ZFSCapacityGraph.md" >}}) to compare configuration options.
+You can use the [ZFS Capacity Calculator](https://www.truenas.com/docs/references/zfscapacitycalculator/) and [ZFS Capacity Graph](https://www.truenas.com/docs/references/zfscapacitygraph/) to compare configuration options.

@@ -15,4 +15,4 @@ The [Alert Settings Screens]({{< relref "AlertSettingsScreen.md" >}}) article in
 {{< /enterprise >}}
 
 Select **Email** to configure the method for the system to send email reports and alerts.
-See [Setting Up System Email]({{< relref "/SCALE/SCALETutorials/SystemSettings/General/SettingUpSystemEmail.md" >}}) for information about configuring the system email service and alert emails.
+See [Setting Up System Email]({{< relref "/SCALETutorials/SystemSettings/General/SettingUpSystemEmail.md" >}}) for information about configuring the system email service and alert emails.

@@ -82,7 +82,7 @@ Use **Scrub** on the **ZFS Health** pool widget to start a pool data integrity c
 Click **Scrub** to open the **Scrub Pool** dialog.
 Select **Confirm**, then click **Start Scrub**.
 
-If TrueNAS detects problems during the scrub operation, it either corrects them or generates an [alert]({{< relref "/SCALE/SCALEUIReference/TopToolbar/Alerts/_index.md" >}}) in the web interface.
+If TrueNAS detects problems during the scrub operation, it either corrects them or generates an [alert]({{< relref "/SCALEUIReference/TopToolbar/Alerts/_index.md" >}}) in the web interface.
 
 By default, TrueNAS automatically checks every pool on a recurring scrub schedule.
 
@@ -106,7 +106,6 @@ There are a few  ways to increase the size of an existing pool:
 * Add one or more drives to an existing RAIDZ VDEV.
 * Add a new VDEV of the same type.
 * Replace all existing disks in the VDEV with larger disks.
-
 
 By default, a VDEV limits all disks to the usable capacity of the smallest attached device.
 SCALE automatically expands the usable capacity of the pool to fit all available space after replacing the smallest attached disk (see [Replacing Disks to Expand a Pool](#replacing-disks-to-expand-a-pool) below).
@@ -147,7 +146,7 @@ Extended VDEVs recover lost headroom as existing data is read and rewritten to t
 This can occur naturally over the lifetime of the pool as you modify or delete data.
 To manually recover capacity, simply replicate and rewrite the data to the extended pool.
 
-You can use the [RAIDZ Extension Calculator]({{< relref "/References/ExtensionCalculator.md" >}}) to visualize potential lost headroom and capacity available to recover by rewriting existing data.
+You can use the [RAIDZ Extension Calculator](https://www.truenas.com/docs/truenasapps/sandboxes/) to visualize potential lost headroom and capacity available to recover by rewriting existing data.
 
 For more information, see [Jim Salter's article](https://arstechnica.com/gadgets/2021/06/raidz-expansion-code-lands-in-openzfs-master/) at Ars Technica and the upstream [RAIDZ extension](https://github.com/openzfs/zfs/pull/15022) PR, sponsored by iXsystems, at OpenZFS.
 See also ["ZFS RAIDZ Expansion Is Awesome but Has a Small Caveat"](https://louwrentius.com/zfs-raidz-expansion-is-awesome-but-has-a-small-caveat.html) by Louwrentius for an in-depth discussion of lost capacity and recovering overhead.

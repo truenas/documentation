@@ -266,7 +266,7 @@ For fewer issues, select **Kill existing pods before creating new ones**.
 Settings only display if the system detects available GPU device(s).
 
 Select the number of devices to allocate from the **Select GPU** dropdown list of devices.
-See Allocating GPU]( relref "/content/truenasapps/_index.md#allocating-gpu"  for more information.
+See Allocating GPU relref "https://www.truenas.com/docs/truenasapps/#allocating-gpu"  for more information.
 
 ### Resource Limits Settings
 

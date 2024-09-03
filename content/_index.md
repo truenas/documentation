@@ -19,7 +19,7 @@ div.docs-read_mod {display: none;}
 h1 {display:none;}
 </style>
 
-{{< header logo="/images/tn-scale-logo.png" logo_alt="TrueNAS SCALE Logo" version="24.10 Electric Eel" icon="" icon_alt="Electric Eel Icon" >}}
+{{< header logo="/images/tn-scale-logo.png" logo_alt="TrueNAS SCALE Logo" version="24.10 Electric Eel" >}} <!-- icon="" icon_alt="Electric Eel Icon"-->
 
 {{< include file="/static/includes/24.10FeatureList.md" >}}
 
@@ -42,7 +42,7 @@ To view or search through documentation for previous TrueNAS SCALE major version
     <br><a href="/scale/scaletutorials/network/">Networking</a>
     <br><a href="/scale/scaletutorials/storage/">Storage Management</a>
     <br><a href="/scale/scaletutorials/dataprotection/">Data Protection</a>
-    <br><a href="/scale/scaletutorials/apps/">Apps</a>
+    <br><a href="https://www.truenas.com/docs/truenasapps/">Apps</a>
     </p>
     <p>
     <a href="/scale/scaleuireference/" style="font-size:18px;">UI Reference Guide</a>
