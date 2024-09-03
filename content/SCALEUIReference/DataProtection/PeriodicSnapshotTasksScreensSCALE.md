@@ -8,24 +8,24 @@ tags:
 - snapshot technology
 ---
 
-The **Data Protection** screen **Periodic Snapshot Task** widget displays periodic snapshot tasks created on the system. 
+The **Data Protection** screen **Periodic Snapshot Task** widget displays periodic snapshot tasks created on the system.
 A periodic snapshot task allows scheduling the creation of read only versions of pools and datasets at a given point in time.
 
-Periodic snapshot tasks display the machine time, browser time, or both depending on individual user timezone settings. Users can update timezone settings by utilizing the [General Settings Screen]({{< relref "GeneralSettingsScreens.md #localization-settings-screen" >}}).
+Periodic snapshot tasks display the machine time, browser time, or both depending on individual user timezone settings. Users can update timezone settings by utilizing the [General Settings Screen](https://www.truenas.com/docs/scale/scaleuireference/systemsettings/generalsettingsscreens/).
 
 ## Periodic Snapshot Task Widget
 
 The **Periodic Snapshot Task** widget displays a list of tasks configured on the system.
 
-![PeriodicSnapshotTasksWidget](/images/SCALE/DataProtection/PeriodicSnapshotTasksWidget.png "Periodic Snapshot Task Widget") 
+![PeriodicSnapshotTasksWidget](/images/SCALE/DataProtection/PeriodicSnapshotTasksWidget.png "Periodic Snapshot Task Widget")
 
 If a periodic snapshot task is not yet configured **No Periodic Snapshot Task configured** displays in the widget.
 
 ![PeriodicSnapshotTaskWidgetNoTasks](/images/SCALE/DataProtection/PeriodicSnapshotTaskWidgetNoTasks.png "No Periodic Snapshot Tasks")
 
-**Add** opens the **[Add Periodic Snapshot Task](#add-and-edit-periodic-snapshot-screens)** screen. 
+**Add** opens the **[Add Periodic Snapshot Task](#add-and-edit-periodic-snapshot-screens)** screen.
 
-**VMware Snapshot Integration** opens the **[VMware Snapshots]({{< relref "VMwareSnapshotsScreen.md" >}})** screen. 
+**VMware Snapshot Integration** opens the **[VMware Snapshots]({{< relref "VMwareSnapshotsScreen.md" >}})** screen.
 **Snapshots** opens the **[Snapshots]({{< relref "SnapshotsScreens.md" >}})** screen.
 
 Each task listed is a link that opens the **[Edit Periodic Snapshot Task](#add-and-edit-periodic-snapshot-screens)** screen populated with with the settings for that task. Click on the **Description**, **Frequency**, or **Next Run** column entry to open the edit task screen.
@@ -43,7 +43,7 @@ Click on the **Periodic Snapshot Task** header to open the **Data Protection > P
 
 ![DataProtectionPeriodicSnapshotTasksList](/images/SCALE/DataProtection/DataProtectionPeriodicSnapshotTasksList.png "Periodic Snapshot Task List")
 
-If a task is not added, the list view displays **Add Periodic Snapshot Tasks** which opens the **[Add Periodic Snapshot Task](#add-and-edit-periodic-snapshot-screens)** screen. 
+If a task is not added, the list view displays **Add Periodic Snapshot Tasks** which opens the **[Add Periodic Snapshot Task](#add-and-edit-periodic-snapshot-screens)** screen.
 
 ![DataProtectPeriodicSnapshotTasksDetailsNoTasks](/images/SCALE/DataProtection/DataProtectPeriodicSnapshotTasksDetailsNoTasks.png "Periodic Snapshot Task No Tasks")
 
@@ -57,7 +57,7 @@ Click the <span class="material-icons">expand_more</span> expand icon at the rig
 
 **Edit** opens the **[Edit Periodic Snapshot Task](#add-and-edit-periodic-snapshot-screens)** screen.
 
-**Delete** opens the delete dialog that removes the task from the system. 
+**Delete** opens the delete dialog that removes the task from the system.
 {{< /expand >}}
 ## Add and Edit Periodic Snapshot Screens
 
