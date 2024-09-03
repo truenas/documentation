@@ -68,7 +68,7 @@ The following section provides more detailed explanations of the settings in eac
 
 {{< include file="/static/includes/MinIOEnterpriseMinIOConfig.md" >}}
 
-#### MultiMode Configuration
+#### Multi-Mode Configuration
 Multi-mode installs the app in either a [MinIO Single-Node Multi-Drive (SNMD)](https://min.io/docs/minio/linux/operations/install-deploy-manage/deploy-minio-single-node-multi-drive.html) or [Multi-Node Multi-Drive (MNMD)](https://min.io/docs/minio/linux/operations/install-deploy-manage/deploy-minio-multi-node-multi-drive.html#minio-mnmd) cluster.
 MinIO recommends using MNMD for enterprise-grade performance and scalability.
 

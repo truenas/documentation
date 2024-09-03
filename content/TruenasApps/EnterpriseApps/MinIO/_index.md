@@ -77,7 +77,6 @@ To use an existing dataset, select **Host Path (Path that already exists on the 
 **Mount Path** populates with the default **/data1**.
 Enter the path or browse to and click on the **data1** dataset location to populate **Host Path**.
 
-
 {{< include file="/static/includes/MinIOEnterpriseConfig4.md" >}}
 
 ## Understanding MinIO Wizard Settings
@@ -91,7 +90,7 @@ The following section provides more detailed explanations of the settings in eac
 
 {{< include file="/static/includes/MinIOEnterpriseMinIOConfig.md" >}}
 
-#### MultiMode Configuration
+#### Multi-Mode Configuration
 Multi-mode installs the app in either a [MinIO Single-Node Multi-Drive (SNMD)](https://min.io/docs/minio/linux/operations/install-deploy-manage/deploy-minio-single-node-multi-drive.html) or [Multi-Node Multi-Drive (MNMD)](https://min.io/docs/minio/linux/operations/install-deploy-manage/deploy-minio-multi-node-multi-drive.html#minio-mnmd) cluster.
 MinIO recommends using MNMD for enterprise-grade performance and scalability.
 

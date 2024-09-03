@@ -16,4 +16,4 @@ Select **Anonymous** to hide sensitive information from logging, or **Quiet** to
 To configure a multi-mode deployment, select **Enabled**.
 MinIO recommends using MNMD for enterprise-grade performance and scalability.
 
-{{< trueimage src="/images/SCALE/Apps/InstallMinIOAddMultiModeSNMDorMNMD.png" alt="MinIO Enterprise MultiMode Configuration" id="MinIO Enterprise MultiMode Configuration" >}}
+{{< trueimage src="/images/SCALE/Apps/InstallMinIOAddMultiModeSNMDorMNMD.png" alt="MinIO Enterprise Multi-Mode Configuration" id="MinIO Enterprise Multi-Mode Configuration" >}}
