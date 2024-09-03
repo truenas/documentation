@@ -1,12 +1,6 @@
 ---
 title: "24.10 (Electric Eel) Version Notes"
 description: "Highlights, change log, and known issues for the latest SCALE nightly development version."
-aliases:
- - /scale/scalereleasenotes/
- - /scalenext-releasenotes/
- - /scale/scalenextversion/
- - /scale/scale22.12/
- - /scale/24.10/gettingstarted/scalereleasenotes/
 weight: 10
 related: false
 ---
