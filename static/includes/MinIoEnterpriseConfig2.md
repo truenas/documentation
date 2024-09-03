@@ -1,17 +1,19 @@
 &NewLine;
 
-Accept the default values in **Resources Configuration** or to customize the CPU and memory allocated to the container (pod) the Minio app uses, enter new values in the **CPU** and **Memory (in MB)** fields. 
-Tune these limits as needed to prevent the application from overconsuming system resources and introducing performance issues.
 
-By default, this application is limited to use no more than **2** CPU cores and **4096** megabytes available memory.
-The application might use considerably less system resources.
+Enter credentials to use as the MinIO administration user.
+If you have existing MinIO credentials, enter these or create new login credentials for the first time you log into MinIO.
+Enter a name for the MinIO administrator user in **Root User**, which is the equivalent of the MinIO access key.
+A username for the root user (MinIO access key), entered in **Root User**, is limited to five to 20 characters in length. For example *admin* or *admin1*.
 
-Click **Install** to complete the installation.
+Enter the administration user password in **Root Password**, which is the login password for that user or the MinIO secret key.
+The root user password (MinIO secret key), entered in **Root Password**, is limited to eight to 40 random characters. For example, *MySecr3tPa$$w0d4Min10*.
 
-The **Installed** applications screen opens showing the MinIO application in the **Deploying** state, then changes to **Running** when the application is ready to use. 
+{{< trueimage src="/images/SCALE/Apps/InstallMinIOEnterpriseMinioConfig.png" alt="MinIO Enterprise MinIO Configuration" id="MinIO Enterprise MinIO Configuration" >}}
 
-{{< trueimage src="/images/SCALE/Apps/MinIOEnterpriseInstalled.png" alt="MinIO App Installed" id="MinIO App Installed" >}}
+Select **Anonymous** to hide sensitive information from logging, or **Quiet** to disable startup information.
 
-Click **Web Portal** to open the MinIO sign-in screen.
+To configure a multi-mode deployment, select **Enabled**.
+MinIO recommends using MNMD for enterprise-grade performance and scalability.
 
-{{< trueimage src="/images/SCALE/Login/MinIOWebPortal.png" alt="MinIO Sign-In Screen" id="MinIO Sign-In Screen" >}}
+{{< trueimage src="/images/SCALE/Apps/InstallMinIOAddMultiModeSNMDorMNMD.png" alt="MinIO Enterprise MultiMode Configuration" id="MinIO Enterprise MultiMode Configuration" >}}
