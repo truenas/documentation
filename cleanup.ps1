@@ -12,6 +12,9 @@ $checkedFiles = 0
 $deletedFilesCount = 0
 $deletedFiles = @()
 
+# Get the current date and time
+$dateTime = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
+
 # Process started indicator
 Write-Output "Process started... Checking files."
 
@@ -47,9 +50,20 @@ Write-Output "Process completed!"
 Write-Output "$checkedFiles files checked."
 Write-Output "$deletedFilesCount files deleted."
 
+# Export deleted files to a text file with date and time
+$logFilePath = ".\cleanup_log.txt"
+$logContent = @()
+$logContent += "Process time: $dateTime"
+$logContent += ""
+$logContent += "$checkedFiles files checked."
+$logContent += "$deletedFilesCount files deleted."
+
 if ($deletedFilesCount -gt 0) {
-    Write-Output "The following files were deleted:"
-    $deletedFiles | ForEach-Object { Write-Output $_ }
+    $logContent += "The following files were deleted:"
+    $logContent += $deletedFiles
 } else {
-    Write-Output "No files were deleted."
+    $logContent += "No files were deleted."
 }
+
+$logContent | Out-File -FilePath $logFilePath
+Write-Output "Log file created: $logFilePath"
