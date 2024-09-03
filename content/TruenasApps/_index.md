@@ -25,6 +25,9 @@ keywords:
 
 
 TrueNAS applications allow for quick and easy integration of third-party software and TrueNAS.
+The TrueNAS applications backend changed in 24.10 to Docker images managed with Docker Compose.
+Earlier TrueNAS releases operated with Kubernetes K3 and Helm providing containers for applications.
+For more information on this change refer to the [24.10 Release Note]({{< relref "/Content/SCALE/GettingStarted/ScaleReleaseNotes.md" >}}).
 
 {{< include file="/static/includes/ProposeArticleChange.md" >}}
 
@@ -84,9 +87,6 @@ For stability, we also recommend using SSD storage for the applications pool.
 Select the pool and click **Save**. If you close the dialog to set the pool later, click **Settings > Choose Pool** to set the pool.
 
 {{< trueimage src="/images/SCALE/Apps/AppsSettingsChoosePool.png" alt="Choosing a Pool for Apps" id="Choosing a Pool for Apps" >}}
-
-TrueNAS creates an **ix-applications** dataset on the chosen pool and uses it to store all container-related data.
-The dataset is for internal use only.
 
 If you want to set up new datasets to store your application data in a location separate from other storage on your system, create the datasets before installing the application.
 For example, create the datasets for the Nextcloud app before installing the app.
@@ -223,6 +223,14 @@ Storage configuration can includes the primary data mount volume, a configuratio
 The primary mount volumes have two options:
 * **ixVolume** that creates a storage volume inside the **ix-apps** dataset. This is the default setting.
 * **Host Path** that allows you to select an existing dataset created for the application. Shows additional fields to select the path to the dataset and add the mount point.
+
+{{< hint type="information" title="ix-apps Dataset" >}}
+The **ix-apps** dataset is for internal use only.
+
+TrueNAS systems with applications deployed that upgrade from earlier releases to 24.10 continue to see the **ix-Applications** dataset on the pool chosen for applications to use.
+New installs or systems upgrading where applications are not deployed and a pool is not chosen for apps use the hidden **ix-apps** dataset.
+Choosing the pool for apps to use, creates this dataset to store all container-related data.
+{{< /hint >}}
 
 If adding an additional storage volume, click **Add** to configure additional storage volumes for the application to use in addition to the main storage volume (dataset).
 The three storage options are:
