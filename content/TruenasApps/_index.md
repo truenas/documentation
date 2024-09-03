@@ -52,7 +52,7 @@ You must choose a pool before you can install an application.
 
 {{< /expand >}}
 
-{{< expand "Docker Compose Settings" "v" >}}
+{{< expand "Apps General Settings" "v" >}}
 
 {{< include file="/static/includes/AppsDockerCompose.md" >}}
 
