@@ -48,7 +48,7 @@ The vCenter plugin supports many different TrueNAS software versions installed o
 | 24.04   | Yes (exception) |
 {{< /truetable >}}
 
-Exceptions
+**Exceptions**
 
 * TrueNAS 22.12, 23.10, and 24.04 do not support Fibre Channel for VMFS datastores.
 
@@ -57,7 +57,7 @@ Exceptions
 
 ### TrueNAS vCenter Plugin 3.6.0
 
-**August 29, 2024**
+**September 3, 2024**
 
 iXsystems is pleased to release TrueNAS vCenter Plugin version 3.6.0!
 This is a minor release to fix an issue with VMFS datastore management with TrueNAS 24.04 systems that have iSCSI ALUA enabled.
