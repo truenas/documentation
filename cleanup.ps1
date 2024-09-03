@@ -16,7 +16,7 @@ $deletedFiles = @()
 $dateTime = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
 
 # Process started indicator
-Write-Output "Process started... Checking files."
+Write-Output "Process started... Reviewing files."
 
 foreach ($targetFolder in $targetFolders) {
     # Get all files in the target folder and its subdirectories
@@ -41,13 +41,13 @@ foreach ($targetFolder in $targetFolders) {
         }
 
         # Update progress
-        Write-Progress -Activity "Checking files..." -Status "$checkedFiles of $totalFiles checked" -PercentComplete (($checkedFiles / $totalFiles) * 100)
+        Write-Progress -Activity "Reviewing files..." -Status "$checkedFiles of $totalFiles reviewed" -PercentComplete (($checkedFiles / $totalFiles) * 100)
     }
 }
 
 # Final output
 Write-Output "Process completed!"
-Write-Output "$checkedFiles files checked."
+Write-Output "$checkedFiles files reviewed."
 Write-Output "$deletedFilesCount files deleted."
 
 # Export deleted files to a text file with date and time
@@ -55,7 +55,7 @@ $logFilePath = ".\cleanup_log.txt"
 $logContent = @()
 $logContent += "Process time: $dateTime"
 $logContent += ""
-$logContent += "$checkedFiles files checked."
+$logContent += "$checkedFiles files reviewed."
 $logContent += "$deletedFilesCount files deleted."
 
 if ($deletedFilesCount -gt 0) {
