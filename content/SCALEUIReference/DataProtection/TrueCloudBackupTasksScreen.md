@@ -165,7 +165,7 @@ The **Remote** settings specify the TrueCloud credential and destination storage
 {{< /truetable >}}
 
 {{< expand "Advanced Scheduler" "v" >}}
-{{< include file="/static/includes/AdvancedScheduler.md" >}}
+{{< include file="/static/includes/SCALEAdvancedScheduler.md" >}}
 {{< /expand >}}
 
 ### Advanced Options Settings
