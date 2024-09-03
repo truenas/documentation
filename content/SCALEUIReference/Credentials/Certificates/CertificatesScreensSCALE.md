@@ -2,8 +2,6 @@
 title: "Certificates Screens"
 description: "Provides information on the Certificates screens and settings."
 weight: 10
-aliases:
- - /scale/scaleclireference/system/clicertificate/
 tags:
  - certificates
  - csr

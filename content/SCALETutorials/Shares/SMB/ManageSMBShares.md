@@ -2,7 +2,6 @@
 title: "Managing SMB Shares"
 description: "Provides instructions on managing existing SMB share and dataset ACL permissions."
 weight: 20
-aliases:
 tags:
 - smb
 - afp

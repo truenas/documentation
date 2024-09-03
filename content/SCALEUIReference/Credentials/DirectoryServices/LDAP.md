@@ -2,12 +2,6 @@
 title: "LDAP Screens"
 description: "Provides information on the **LDAP** screen and widget settings."
 weight: 20
-aliases:
-  - /scale/credentials/directoryservices/activedirectoryscale/
-  - /scale/credentials/directoryservices/ldapscale/
-  - /scale/credentials/directoryservices/idmapscale/
-  - /scale/credentials/directoryservices/kerberosscale/
-  - /scale/scaleclireference/directory-service/clildap/
 tags:
 - ldap
 - directoryservices

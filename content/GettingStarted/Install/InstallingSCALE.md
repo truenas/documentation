@@ -2,8 +2,6 @@
 title: "Installing SCALE"
 description: "Provides the SCALE iso file installation instructions for physical hardware and virtual machines. Describes the iso verification process using an OpenPGP encryption application."
 weight: 15
-aliases:
- - /scale/gettingstarted/installingscale/
 tags:
 - install
 - update

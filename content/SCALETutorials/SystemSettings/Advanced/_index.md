@@ -3,8 +3,6 @@ title: "Advanced Settings"
 description: "Tutorials for configuring advanced system settings in TrueNAS SCALE."
 geekdocCollapseSection: true
 weight: 30
-aliases:
- - /scale/scaletutorials/systemsettings/advanced/advancedsettings/
 tags:
  - settings
  - replication

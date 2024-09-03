@@ -2,8 +2,6 @@
 title: "Certificates"
 description: "Information about the Certificates screen and widgets."
 geekdocCollapseSection: true
-aliases: 
- - /scale/scaleclireference/system/clicertificate/
 weight: 50
 tags:
  - certificates

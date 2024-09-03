@@ -2,8 +2,6 @@
 title: "SLOG Over-Provisioning"
 description: "Provides information on the disk_resize command in TrueNAS SCALE."
 weight: 30
-aliases:
- - /scale/scaletutorials/storage/pools/slogoverprovisionscale/
 tags:
  - disks
  - pools

@@ -2,7 +2,6 @@
 title: "Managing Certificate Signing Requests"
 description: "Provides basic instructions on adding and managing certificate signing requests (CSRs) in SCALE."
 weight: 30
-aliases:
 tags:
  - certificates
  - csr

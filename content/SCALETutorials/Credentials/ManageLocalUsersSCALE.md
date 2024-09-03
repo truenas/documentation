@@ -2,7 +2,6 @@
 title: "Managing Users"
 description: "Provides instructions on adding and managing administrator and user accounts."
 weight: 10
-alias: /scale/scaleuireference/credentials/localusers/
 tags:
 - users
 - accounts

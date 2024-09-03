@@ -4,9 +4,6 @@ description: "Describes the TrueNAS SCALE task manager and how to use the task m
 weight: 40
 tags:
 - tasks
-alias:
- - /scale/scaleuireference/jobsscreens/
- - /scale/scaleuireference/toptoolbar/jobsscreens/
 ---
 
 The **Tasks** screens, accessed from the **Jobs** list after clicking **History**, displays all jobs executed on the system.

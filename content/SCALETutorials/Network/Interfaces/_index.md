@@ -3,8 +3,6 @@ title: "Interface Configurations"
 description: "Tutorials about configuring the various types of network interfaces available in TrueNAS SCALE."
 geekdocCollapseSection: true
 weight: 10
-aliases:
- - /scale/scaletutorials/network/interfaces/managinginterfaces/
 related: false
 tags:
  - network

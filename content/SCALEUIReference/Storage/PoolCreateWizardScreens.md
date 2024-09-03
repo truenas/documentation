@@ -2,9 +2,6 @@
 title: "Pool Creation Wizard"
 description: "Descriptions for settings and functions found in the Pool Creation Wizard."
 weight: 30
-aliases:
- - /scale/scaleuireference/storage/pools/poolcreatewizardscreens/
- - /scale/scaleclireference/storage/clipool/
 tags: 
 - pools
 - storage

@@ -2,7 +2,6 @@
 title: "Managing System Logging"
 description: "Provides information on setting up or changing the syslog server, the level of logging and the information included in the logs, and using TLS as the transport protocol."
 weight: 20
-aliases:
 tags:
  - alerts
  - settings

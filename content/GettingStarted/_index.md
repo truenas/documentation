@@ -7,8 +7,6 @@ cascade:
   - _target:
     book: "SCALEGettingStarted"
 related: false
-aliases:
- - /hub/gettingstarted/intro/
 ---
 
 This section guides you through installing TrueNAS SCALE, or migrating from CORE to SCALE, and using the UI to access and configure TrueNAS SCALE.

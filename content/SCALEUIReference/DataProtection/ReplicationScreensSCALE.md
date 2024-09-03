@@ -2,9 +2,6 @@
 title: "Replication Task Screens"
 description: "Provides information on the Replication screens, wizard, and settings used to add or edit replication tasks."
 weight: 100
-aliases:
- - /scale/scaleuireference/dataprotection/replicationscreensscale/
- - /scale/scaleclireference/task/clireplication/
 tags:
  - replication
  - backup

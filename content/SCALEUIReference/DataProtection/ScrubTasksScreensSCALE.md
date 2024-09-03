@@ -2,10 +2,6 @@
 title: "Scrub Tasks Screens"
 description: "Provides information on data protection Scrub Task screens and settings."
 weight: 10
-aliases:
- - /scale/scaleuireference/dataprotection/scrubtasksscreensscale/
- - /scale/scaleclireference/storage/cliresilver/
- - /scale/scaleclireference/storage/cliscrub/
 tags:
  - scrub
  - resilver

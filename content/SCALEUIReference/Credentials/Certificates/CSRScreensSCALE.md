@@ -2,7 +2,6 @@
 title: "Certificate Signing Requests Screens"
 description: "Provides information on the Certificates Signing Requests screens and settings."
 weight: 30
-aliases:
 tags:
  - csr
  - certificates

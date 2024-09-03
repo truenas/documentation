@@ -4,8 +4,6 @@ description: "Tutorials for configuring the system management options in the Sys
 geekdocCollapseSection: true
 weight: 14
 related: false
-aliases:
- - /scale/systemsettings/
 keywords:
 - enterprise storage solutions
 - nas storage solutions

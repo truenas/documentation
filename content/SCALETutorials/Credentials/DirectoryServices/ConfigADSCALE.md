@@ -2,7 +2,6 @@
 title: "Configuring Active Directory"
 description: "Provides instructions on configuring Active Directory (AD) in SCALE."
 weight: 10
-aliases:
 tags:
 - activedirectory
 - directoryservices

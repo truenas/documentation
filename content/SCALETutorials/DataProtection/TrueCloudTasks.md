@@ -10,8 +10,6 @@ keywords:
 - nas cloud storage
 - data protection
 - data backup and recovery
-aliases: 
-- cloudsynctasks/addstorjcloudsynctask
 ---
 
 TrueNAS can send, receive, or synchronize data with the cloud storage providers available in TrueNAS.

@@ -2,10 +2,6 @@
 title: "NFS Shares Screens"
 description: "Provides information on NFS Shares screens and settings."
 weight: 30
-aliases:
-- /scale/scaleuireference/shares/nfs/nfssharesscreens/
-- /scale/scaleuireference/shares/nfs/
-- /scale/scaleclireference/sharing/clinfs/
 tags:
 - nfs
 - shares

@@ -2,7 +2,6 @@
 title: "Setting Up a Remote Replication Task"
 description: "Provides instructions on adding a replication task with a remote system."
 weight: 30
-aliases:
 tags:
 - replication
 - backup

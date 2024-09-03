@@ -3,7 +3,6 @@ title: "Services"
 description: "Tutorials for TrueNAS SCALE services."
 geekdocCollapseSection: true
 weight: 50
-alias: /scale/scaletutorials/systemsettings/servicesscale/
 tags:
  - services
 related: false

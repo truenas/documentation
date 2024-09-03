@@ -3,11 +3,6 @@ title: "Datasets"
 description: "Provides information on the Datasets screens and settings."
 geekdocCollapseSection: true
 weight: 35
-aliases:
- - /scale/scaleuireference/storage/datasets/importdatascreenscale/
- - /scale/scaleuireference/storage/datasets/
- - /scale/scaleuireference/storage/datasets/datasetsscreensscale/
- - /scale/scaleclireference/storage/clidataset/
 tags: 
 - datasets
 - storage

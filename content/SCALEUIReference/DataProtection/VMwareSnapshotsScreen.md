@@ -2,9 +2,6 @@
 title: "VMWare Snapshots Screen"
 description: "Provides information on the VMWare-Snapshot Add screen settings and functions."
 weight: 55
-aliases:
- - /scale/scaleuireference/storage/vmwaresnapshotsscreen/
- - /scale/scaleclireference/storage/clivmware/
 tags:
 - snapshots
 - vm

@@ -2,8 +2,6 @@
 title: "ACME DNS-Authenticators Screens"
 description: "Provides information on the ACME DNS-Authenticators widget and settings."
 weight: 40
-aliases: 
- - /scale/scaleclireference/system/cliacme/
 tags:
  - certificates
  - acme
