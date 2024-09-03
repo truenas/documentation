@@ -19,17 +19,57 @@ aliases:
   - /solutions/integrations/vmware/truenasvcenterplugin/releasenotes/3.1.0/  
 ---
 
+{{< enterprise >}}
+This plugin is available to TrueNAS Enterprise customers.
+iXsystems Support staff are available to assist with deploying and upgrading the TrueNAS vCenter Plugin.
+Please contact iXsystems Support to learn more and schedule a time to deploy or upgrade the plugin.
+
+{{< expand "Contacting iXsystems Support" "v" >}}
+{{< include file="/static/includes/iXsystemsSupportContact.md" >}}
+{{< /expand >}}
+
+{{< /enterprise >}}
+
 [vCenter Server](https://www.vmware.com/products/vcenter-server.html) provides a web interface to manage physical and virtual machines.
-vCenter uses plugins to integrate server management into the vCenter application.
 The iXsystems TrueNAS vCenter Plugin activates management options for TrueNAS hardware attached to vCenter Server.
-This enables limited management of TrueNAS systems from a single interface.
+This enables limited TrueNAS system management from a single interface.
 
 The TrueNAS vCenter plugin is currently compatible with VMware vCenter Server versions [**8.0**](https://docs.vmware.com/en/VMware-vSphere/8.0/vsphere-vcenter-installation/GUID-8DC3866D-5087-40A2-8067-1361A2AF95BD.html), [**7.0**](https://docs.vmware.com/en/VMware-vSphere/7.0/com.vmware.vcenter.install.doc/GUID-8DC3866D-5087-40A2-8067-1361A2AF95BD.html), and [**6.7.0**](https://docs.vmware.com/en/VMware-vSphere/6.7/com.vmware.vcenter.install.doc/GUID-8DC3866D-5087-40A2-8067-1361A2AF95BD.html).
 
+The vCenter plugin supports many different TrueNAS software versions installed on TrueNAS Enterprise licensed hardware:
+
+{{< truetable >}}
+| Version | Supported |
+|---------|-----------|
+| 12.0    | Yes |
+| 13.0    | Yes |
+| 22.12   | Yes (exception) |
+| 23.10   | Yes (exception) |
+| 24.04   | Yes (exception) |
+{{< /truetable >}}
+
+**Exceptions**
+
+* TrueNAS 22.12, 23.10, and 24.04 do not support Fibre Channel for VMFS datastores.
+
+
 ## Plugin Release Notes
 
-### TrueNAS vCenter Plugin 3.5.0
+### TrueNAS vCenter Plugin 3.6.0
 
+**September 3, 2024**
+
+iXsystems is pleased to release TrueNAS vCenter Plugin version 3.6.0!
+This is a minor release to fix an issue with VMFS datastore management with TrueNAS 24.04 systems that have iSCSI ALUA enabled.
+
+#### Known Issues
+
+The TrueNAS vCenter Plugin deployment status can appear to be stuck in the vCenter activity panel.
+This is a cosmetic issue and the plugin deploys fully.
+
+### Previous Versions Release Notes
+
+{{< expand "3.5.0 (Click to expand)" "v" >}}
 **October 6, 2023**
 
 iXsystems is pleased to release TrueNAS vCenter Plugin version 3.5.0!
@@ -38,20 +78,18 @@ This is a minor release designed to make the plugin compatible with vCenter 7.0 
 TrueNAS CORE | Enterprise 13.0 systems are compatible with the 3.5.0 plugin.
 CORE 12.0 deployments connected to an earlier version of this plugin should upgrade to 13.0 before attempting to connect to the 3.5.0 version of the plugin.
 
-TrueNAS SCALE deployments are not compatible with the TrueNAS vCenter Plugin at this time.
-
 **Changelog**
 
 Individual tickets require an iXsystems Jira login to view.
 
-* https://ixsystems.atlassian.net/browse/VCP-89 - Plugin compatibility with vCenter 7.0 and 8.0
-* https://ixsystems.atlassian.net/browse/VCP-126 - Fix plugin UI behavior when VMFS and NFS datastore types are selected
-* https://ixsystems.atlassian.net/browse/VCP-138 - Plugin dependencies update
-* https://ixsystems.atlassian.net/browse/VCP-139 - Offline installer fix
+* Plugin compatibility with vCenter 7.0 and 8.0
+* Fix plugin UI behavior when VMFS and NFS datastore types are selected
+* Plugin dependencies update
+* Offline installer fix
 
-### Previous Versions Release Notes
+{{< /expand >}}
 
-* {{< expand "3.4.0 (Click to expand)" "v" >}}
+{{< expand "3.4.0 (Click to expand)" "v" >}}
   
   **September 2, 2021**
   
@@ -110,8 +148,9 @@ Individual tickets require an iXsystems Jira login to view.
   |  | The plugin replication feature has been removed due to numerous long-standing issues that could not be resolved for this version of the plugin. | Please continue to create replication tasks using the TrueNAS web interface. |
   | [VCP-113](https://ixsystems.atlassian.net/browse/VCP-113) | Cloned datastores always use the first listed interface. | To work around this issue, either ensure the original datastore is using the desired interface or create a new datastore instead of making a clone. |
   {{< /truetable >}}
-  {{< /expand >}}
-* {{< expand "3.3.0 (Click to expand)" "v" >}}
+{{< /expand >}}
+
+{{< expand "3.3.0 (Click to expand)" "v" >}}
 
   **November 24, 2020**
   
@@ -134,8 +173,9 @@ Individual tickets require an iXsystems Jira login to view.
   * Cloned datastores always use the first listed interface ([VCP-113](https://ixsystems.atlassian.net/projects/VCP/issues/VCP-113)). To work around this issue, either ensure the original datastore is using the desired interface or create a new datastore instead of making a clone.
   * Plugin deployment complains about logging system error ([VCP-114](https://ixsystems.atlassian.net/browse/VCP-114)). This is a cosmetic error based on initial plugin deployments creating an empty log file. There is no impact to installing or using the vCenter Plugin.
 
-  {{< /expand >}}
-* {{< expand "3.2.0 (Click to expand)" "v" >}}
+{{< /expand >}}
+
+{{< expand "3.2.0 (Click to expand)" "v" >}}
 
   **March 24, 2020**
 
@@ -151,8 +191,9 @@ Individual tickets require an iXsystems Jira login to view.
 
   For a detailed list of all vCenter plugin 3.2.0 changes, please see the completed [vCenter plugin 3.2.0 Jira tickets](https://ixsystems.atlassian.net/issues/?filter=-4&jql=fixVersion%20IN%20(10808)).
 
-  {{< /expand >}}
-* {{< expand "3.1.0 (Click to expand)" "v" >}}
+{{< /expand >}}
+
+{{< expand "3.1.0 (Click to expand)" "v" >}}
 
   **July 16, 2019**
 
@@ -187,16 +228,6 @@ Individual tickets require an iXsystems Jira login to view.
   + [NAS-102429] – Ensure text box for Hostname is read-only
   + [NAS-102455] – Warn user in documentation of maximum supported volumes limit
 
-  {{< /expand >}}
-
-## Getting and Deploying the Plugin
-
-Currently, the plugin is only available to TrueNAS Enterprise customers with TrueNAS CORE 12.0 and newer and TrueNAS SCALE 22.12.4 (Bluefin) and newer deployed.
-iXsystems Support staff are available to assist with deploying and upgrading the TrueNAS vCenter Plugin.
-Please contact iXsystems Support to learn more and schedule a time to deploy or upgrade the plugin.
-
-{{< expand "Contacting iXsystems Support" "v" >}}
-{{< include file="/static/includes/iXsystemsSupportContact.md" >}}
 {{< /expand >}}
 
 ## Using the Plugin
@@ -299,6 +330,8 @@ The volume must be large enough to contain the chosen datastore size.
 If you have a high availability NAS with a Fibre Channel license and a network configured to form a Fibre Channel fabric with the NAS and ESXi, you are also able to select a Fibre Channel port for the datastore.
 
 Selecting a Fibre Channel port enables that port with the datastore target on the NAS and creates a datastore with a corresponding Fibre Channel HBA on the ESXi.
+One target per port is supported.
+
 {{< /expand >}}
 {{< expand "NFS Datastore Configuration" >}}
 ![NFSDataStoreSettings](/images/vCenterPlugin/NFSDatastoreSettings.png "NFS Options")
