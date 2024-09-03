@@ -180,8 +180,8 @@ Use port forwarding to reroute container ports that default to the same port num
 ### Storage Settings
 
 The **Storage** settings specify persistent host paths and share data that separate from the lifecycle of the container.
-Create the storage volumes in SCALE and set the host path volume to a dataset and directory path.
-You can mount SCALE storage locations inside the container with host path volumes. Define the path to the system storage and the container internal path for the system storage location to appear.
+Create the storage volumes in TrueNAS and set the host path volume to a dataset and directory path.
+You can mount TrueNAS storage locations inside the container with host path volumes. Define the path to the system storage and the container internal path for the system storage location to appear.
 For more details, see the [Kubernetes HostPath documentation](https://kubernetes.io/docs/concepts/storage/volumes/#hostpath).
 
 Users can create additional Persistent Volumes (PVs) for storage within the container.
@@ -266,7 +266,7 @@ For fewer issues, select **Kill existing pods before creating new ones**.
 Settings only display if the system detects available GPU device(s).
 
 Select the number of devices to allocate from the **Select GPU** dropdown list of devices.
-See Allocating GPU]( relref "/scaletutorials/apps/_index.md#allocating-gpu"  for more information.
+See Allocating GPU]( relref "/content/truenasapps/_index.md#allocating-gpu"  for more information.
 
 ### Resource Limits Settings
 
@@ -288,7 +288,7 @@ See Allocating GPU]( relref "/scaletutorials/apps/_index.md#allocating-gpu"  for
 
 The **Portal Configuration** settings configure the web UI portal for the container.
 
-Select **Enable WebUI Portal (only supported in TrueNAS SCALE Bluefin)** to display the web portal configuration settings.
+Select **Enable WebUI Portal (only supported in TrueNAS Bluefin)** to display the web portal configuration settings.
 
 {{< trueimage src="/images/SCALE/Apps/InstallCustomAppAddPortalConfiguration.png" alt="Portal Configuration Settings" id="Portal Configuration Settings" >}}
 

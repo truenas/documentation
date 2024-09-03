@@ -1,7 +1,7 @@
 ---
 title: "Software Releases"
 description: "Centralized schedules and upgrade charts for software releases."
-weight: 25
+weight: 7
 related: false
 url: /softwarereleases/
 aliases:

@@ -228,7 +228,7 @@ If using SCALE on servers not provided by TrueNAS, the **System Information** wi
 ## Using Applications in SCALE
 SCALE provides a list of applications you can deploy on the **Apps > Discover** screen.
 
-See the [Apps tutorials]({{< relref "/SCALE/SCALETutorials/apps/_index.md" >}}) for procedures on generically deploying and managing apps, app catalogs and images, custom apps, and specific app deployments and notes.
+See the [Apps tutorials]({{< relref "/content/TruenasApps/_index.md" >}}) for procedures on generically deploying and managing apps, app catalogs and images, custom apps, and specific app deployments and notes.
 
 ## Updating SCALE
 You can update your system with an <file>iso</file> file using the system administration console or an update file installed through the SCALE UI.

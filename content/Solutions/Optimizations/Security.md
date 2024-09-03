@@ -150,7 +150,7 @@ iXsystems cannot resolve security vulnerabilities introduced from within user-de
 
 After configuring a VM ([CORE]({{< relref "/CORE/CORETutorials/JailsPluginsVMs/VirtualMachines/_index.md" >}}) | [SCALE]({{< relref "/SCALE/SCALETutorials/Virtualization/_index.md" >}})), disable any VNC or SPICE virtual machine display devices.
 
-Update plugins ([CORE]({{< relref "/CORE/CORETutorials/JailsPluginsVMs/Plugins/_index.md" >}})) or applications ([SCALE]({{< relref "/SCALE/SCALETutorials/Apps/_index.md" >}})) regularly.
+Update plugins ([CORE]({{< relref "/CORE/CORETutorials/JailsPluginsVMs/Plugins/_index.md" >}})) or applications ([SCALE]({{< relref "/content/TruenasApps/_index.md" >}})) regularly.
 TrueNAS SCALE monitors connected application catalogs and trains and displays available updates on the **Installed** applications screen.
 To upgrade an app to the latest version, click **Update** on the **Application Info** widget.
 To upgrade multiple apps, click the **Update All** button on the **Installed** applications header.
