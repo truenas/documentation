@@ -1,6 +1,6 @@
 ---
 title: "Apps"
-description: "Articles describing the TrueNAS SCALE Apps screens and fields."
+description: "Articles describing the TrueNAS Apps screens and fields."
 geekdocCollapseSection: true
 weight: 100
 aliases:
