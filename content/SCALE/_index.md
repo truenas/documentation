@@ -29,7 +29,7 @@ h1 {display:none;}
 
 <div class="noprint">
 
-## Nightly Featured Content
+## 25.04 Featured Content
 
 To view or search through documentation for previous TrueNAS SCALE major versions, use the **Version** dropdown at the top of this page.
 
