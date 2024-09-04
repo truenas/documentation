@@ -136,7 +136,6 @@ Notable changes:
 * Adds 23.12.2 version of openseachest to fix build issues in the 24.04.2.1 hot fix [NAS-130977](https://ixsystems.atlassian.net/browse/NAS-130977).
 
 Please use the 24.04.2 Jira filter links below to see the full changelog and known issues related to the 24.04.2 and 24.04.2.1 releases.
-{{< /expand >}}
 ## 24.04.2 Changelog
 
 **July 9, 2024**
