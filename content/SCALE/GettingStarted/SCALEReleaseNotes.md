@@ -10,11 +10,12 @@ aliases:
 weight: 10
 related: false
 ---
-{{< header logo="/images/tn-scale-logo.png" logo_alt="TrueNAS Logo" version="Nightly Development - 25.04 (Fangtooth)" icon="" icon_alt="" >}}
+{{< header logo="/images/tn-scale-logo.png" logo_alt="TrueNAS Logo" version="25.04 (Fangtooth)" icon="" icon_alt="" >}}
 
 {{< hint type="tip" title="25.04 Nightly Development Documentation" >}}
-This page tracks the latest development roadmap and release notes for the upcoming TrueNAS major version 25.04 (Fangtooth).
-The stable [24.04 (Dragonfish) release notes](https://www.truenas.com/docs/scale/24.04/gettingstarted/scalereleasenotes/) are available with documentation for that version.
+This page tracks the latest development roadmap and notes for the future TrueNAS major version 25.04 (Fangtooth).
+
+See the stable [24.04 (Dragonfish)](https://www.truenas.com/docs/scale/24.04/gettingstarted/scalereleasenotes/) or early development [24.10 (Electric Eel)](https://www.truenas.com/docs/scale/24.10/gettingstarted/scalereleasenotes/) release notes for information relating to that version.
 {{< /hint >}}
 
 ## Features
