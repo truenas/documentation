@@ -123,7 +123,6 @@ For more details on feature flags, see [OpenZFS Feature Flags](https://openzfs.g
 
 ## 24.04.2.1 Changelog
 
-{{< expand "Click to expand" "v" >}}
 
 **September 5, 2024**
 
