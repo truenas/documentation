@@ -8,15 +8,18 @@ $configFile = ".\config.toml"
 
 # Initialize counters
 $totalFiles = 0
-$checkedFiles = 0
+$reviewedFiles = 0
 $deletedFilesCount = 0
 $deletedFiles = @()
 
 # Get the current date and time
 $dateTime = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
 
+# Get the user who initiated the process
+$userName = (Get-ItemProperty "HKCU:\\Software\\Microsoft\\Office\\Common\\UserInfo\\").UserName
+
 # Process started indicator
-Write-Output "Process started... Reviewing files."
+Write-Output "Process started... Reviewing snippets and image files."
 
 foreach ($targetFolder in $targetFolders) {
     # Get all files in the target folder and its subdirectories
@@ -24,7 +27,7 @@ foreach ($targetFolder in $targetFolders) {
     $totalFiles += $files.Count
 
     foreach ($file in $files) {
-        $checkedFiles++
+        $reviewedFiles++
         $filename = $file.Name
         $foundInContent = Get-ChildItem -Path $contentDir -Recurse -File | Select-String -Pattern "\b$filename\b"
         $foundInIncludes = Get-ChildItem -Path $includesDir -Recurse -File | Select-String -Pattern "\b$filename\b"
@@ -41,29 +44,36 @@ foreach ($targetFolder in $targetFolders) {
         }
 
         # Update progress
-        Write-Progress -Activity "Reviewing files..." -Status "$checkedFiles of $totalFiles reviewed" -PercentComplete (($checkedFiles / $totalFiles) * 100)
+        Write-Progress -Activity "Reviewing files..." -Status "$reviewedFiles of $totalFiles reviewed" -PercentComplete (($reviewedFiles / $totalFiles) * 100)
     }
 }
 
-# Final output
-Write-Output "Process completed!"
-Write-Output "$checkedFiles files reviewed."
-Write-Output "$deletedFilesCount files deleted."
-
-# Export deleted files to a text file with date and time
+# Prepare log content
 $logFilePath = ".\cleanup_log.txt"
 $logContent = @()
 $logContent += "Process time: $dateTime"
+$logContent += "Initiated by: $userName"
 $logContent += ""
-$logContent += "$checkedFiles files reviewed."
+$logContent += "$reviewedFiles files reviewed."
 $logContent += "$deletedFilesCount files deleted."
 
 if ($deletedFilesCount -gt 0) {
     $logContent += "The following files were deleted:"
     $logContent += $deletedFiles
+    Write-Output "Log file updated: $logFilePath"
 } else {
-    $logContent += "No files were deleted."
+    $logContent += "All files currently in use."
+    Write-Output "All files currently in use."
+    Write-Output "Log file updated: $logFilePath"
 }
 
-$logContent | Out-File -FilePath $logFilePath
-Write-Output "Log file created: $logFilePath"
+$logContent += ""
+$logContent += "-" * 40  # Horizontal divider line
+
+# Append log content to the beginning of the file
+if (Test-Path $logFilePath) {
+    $existingContent = Get-Content $logFilePath
+    $logContent + $existingContent | Set-Content $logFilePath
+} else {
+    $logContent | Set-Content $logFilePath
+}
