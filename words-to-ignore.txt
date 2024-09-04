@@ -1959,3 +1959,5 @@ clicatalog
 cligroup
 cliuser
 cliftp
+failovers
+opensearchest
