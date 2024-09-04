@@ -132,7 +132,7 @@ This is a maintenance release and includes refinement and fixes for issues disco
 Notable changes:
 
 * Adds proactive support and auto-alerts for unscheduled failovers, reboots, and unexpected HA issues.
-  If licensed for HA and such an event occurs a Support ticket is generated with the corresponding support license notated. [NAS=130591](https://ixsystems.atlassian.net/browse/NAS-130591).
+  If licensed for HA and such an event occurs a Support ticket is generated with the corresponding support license notated [NAS-130591](https://ixsystems.atlassian.net/browse/NAS-130591).
 * Adds 23.12.2 version of openseachest to fix build issues in the 24.04.2.1 hot fix [NAS-130977](https://ixsystems.atlassian.net/browse/NAS-130977).
 
 Please use the 24.04.2 Jira filter links below to see the full changelog and known issues related to the 24.04.2 and 24.04.2.1 releases.
