@@ -44,8 +44,12 @@ foreach ($targetFolder in $targetFolders) {
         }
 
         # Update progress
-        Write-Progress -Activity "Reviewing files..." -Status "$reviewedFiles of $totalFiles reviewed" -PercentComplete (($reviewedFiles / $totalFiles) * 100)
+        Write-Progress -Activity "Reviewing files in $targetFolder" -Status "$reviewedFiles of $totalFiles reviewed" -PercentComplete (($reviewedFiles / $totalFiles) * 100)
     }
+
+    # Indicate completion for the current folder
+    Write-Progress -Activity "Reviewing files in $targetFolder" -Status "Done" -PercentComplete 100
+    Write-Output "Done processing $targetFolder"
 }
 
 # Prepare log content
@@ -60,11 +64,8 @@ $logContent += "$deletedFilesCount files deleted."
 if ($deletedFilesCount -gt 0) {
     $logContent += "The following files were deleted:"
     $logContent += $deletedFiles
-    Write-Output "Log file updated: $logFilePath"
 } else {
     $logContent += "All files currently in use."
-    Write-Output "All files currently in use."
-    Write-Output "Log file updated: $logFilePath"
 }
 
 $logContent += ""
@@ -77,3 +78,8 @@ if (Test-Path $logFilePath) {
 } else {
     $logContent | Set-Content $logFilePath
 }
+
+# Output final status
+Write-Output "$reviewedFiles files reviewed."
+Write-Output "$deletedFilesCount files deleted."
+Write-Output "Log file updated: $logFilePath"
