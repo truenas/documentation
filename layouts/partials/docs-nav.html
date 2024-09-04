@@ -151,7 +151,7 @@ function updateDropdownPlaceholderText() {
 	} else if (path.includes('/22.12/')) {
       versionButton.textContent = 'Archive';
     } else {
-	  versionButton.textContent = 'Nightly';
+	  versionButton.textContent = '25.04';
 	}
     versionUpdated = true;
   } else if (path.includes('/truecommand/')) {
@@ -224,7 +224,7 @@ updateDropdownPlaceholderText();
       `;
     } else if (product === 'TrueNAS SCALE') {
       versionDropdown.innerHTML = `
-        <div class="truenas-dropdown-item" onclick="selectVersion('scale-nightly')" id="scale-nightly">Nightly</div>
+        <div class="truenas-dropdown-item" onclick="selectVersion('scale-nightly')" id="scale-nightly">25.04</div>
         <div class="truenas-dropdown-item" onclick="selectVersion('24.10')" id="2410">24.10</div>
         <div class="truenas-dropdown-item" onclick="selectVersion('24.04')" id="2404">24.04</div>
         <div class="truenas-dropdown-item" onclick="selectVersion('23.10')" id="2310">23.10</div>
@@ -463,7 +463,7 @@ updateDropdownPlaceholderText();
 	  versionDropdown.style.display = 'none';
     } else if (productButton.textContent === 'TrueNAS SCALE ') {
       selectProduct('TrueNAS SCALE');
-      versionButton.innerHTML = currentPath.includes('/24.10/') ? '24.10 <i class="fa fa-angle-down"></i>' : currentPath.includes('/24.04/') ? '24.04 <i class="fa fa-angle-down"></i>' : currentPath.includes('/23.10/') ? '23.10 <i class="fa fa-angle-down"></i>' : currentPath.includes('/22.12/') ? '22.12 <i class="fa fa-angle-down"></i>' : 'Nightly <i class="fa fa-angle-down"></i>';
+      versionButton.innerHTML = currentPath.includes('/24.10/') ? '24.10 <i class="fa fa-angle-down"></i>' : currentPath.includes('/24.04/') ? '24.04 <i class="fa fa-angle-down"></i>' : currentPath.includes('/23.10/') ? '23.10 <i class="fa fa-angle-down"></i>' : currentPath.includes('/22.12/') ? '22.12 <i class="fa fa-angle-down"></i>' : '25.04 <i class="fa fa-angle-down"></i>';
 	  versionDropdown.style.display = 'none';
     } else if (productButton.textContent === 'TrueCommand ') {
       selectProduct('TrueCommand');
