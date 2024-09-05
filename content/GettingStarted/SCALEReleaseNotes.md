@@ -104,7 +104,7 @@ Click the component version number to see the latest release notes for that comp
 
 ### OpenZFS Feature Flags
 
-24.04.2 (Dragonfish) has the same [OpenZFS major version](https://www.truenas.com/docs/scale/23.10/gettingstarted/scalereleasenotes/#new-openzfs-feature-flags) as 23.10.1 (Cobia).
+24.04.2.1 (Dragonfish) has the same [OpenZFS major version](https://www.truenas.com/docs/scale/23.10/gettingstarted/scalereleasenotes/#new-openzfs-feature-flags) as 23.10.1 (Cobia).
 
 The items listed here represent new feature flags implemented since the previous update to the built-in OpenZFS version (2.1.11).
 
@@ -123,7 +123,6 @@ For more details on feature flags, see [OpenZFS Feature Flags](https://openzfs.g
 
 ## 24.04.2.1 Changelog
 
-
 **September 12, 2024**
 
 iXsystems is pleased to release TrueNAS SCALE 24.04.2.1!
@@ -136,6 +135,7 @@ Notable changes:
 * Adds 23.12.2 version of openseachest to fix build issues in the 24.04.2.1 hot fix [NAS-130977](https://ixsystems.atlassian.net/browse/NAS-130977).
 
 Please use the 24.04.2 Jira filter links below to see the full changelog and known issues related to the 24.04.2 and 24.04.2.1 releases.
+
 ## 24.04.2 Changelog
 
 **July 9, 2024**
