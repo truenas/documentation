@@ -10,7 +10,7 @@ aliases:
 weight: 10
 related: false
 ---
-{{< header logo="/images/tn-scale-logo.png" logo_alt="TrueNAS Logo" version="25.04 (Fangtooth)" icon="" icon_alt="" >}}
+{{< header logo="/images/tn-scale-logo.png" logo_alt="TrueNAS Logo" version="25.04 Fangtooth" icon="" icon_alt="" >}}
 
 {{< hint type="tip" title="25.04 Nightly Development Documentation" >}}
 This page tracks the latest development roadmap and notes for the future TrueNAS major version 25.04 (Fangtooth).
