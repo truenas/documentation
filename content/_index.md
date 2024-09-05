@@ -46,6 +46,7 @@ To view or search through documentation for previous TrueNAS SCALE major version
     </p>
     <p>
     <a href="/scaleuireference/" style="font-size:18px;">UI Reference Guide</a>
+    <br><a href="/scaleuireference/scaledashboard/">Dashboard</a>
     <br><a href="/scaleuireference/systemsettings/">System Settings</a>
     <br><a href="/scaleuireference/network/">Network</a>
     <br><a href="/scaleuireference/dataprotection/">Data Protection</a>
