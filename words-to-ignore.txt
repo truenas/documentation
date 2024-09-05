@@ -1960,4 +1960,4 @@ cligroup
 cliuser
 cliftp
 failovers
-opensearchest
+openseachest
