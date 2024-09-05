@@ -123,9 +123,8 @@ For more details on feature flags, see [OpenZFS Feature Flags](https://openzfs.g
 
 ## 24.04.2.1 Changelog
 
-{{< expand "Click to expand" "v" >}}
 
-**September 5, 2024**
+**September 12, 2024**
 
 iXsystems is pleased to release TrueNAS SCALE 24.04.2.1!
 This is a maintenance release and includes refinement and fixes for issues discovered after the 24.04.2 release.
@@ -133,11 +132,10 @@ This is a maintenance release and includes refinement and fixes for issues disco
 Notable changes:
 
 * Adds proactive support and auto-alerts for unscheduled failovers, reboots, and unexpected HA issues.
-  If licensed for HA and such an event occurs a Support ticket is generated with the corresponding support license notated. [NAS=130591](https://ixsystems.atlassian.net/browse/NAS-130591).
-* Adds 23.12.2 version of opensearchest to fix build issues in the 24.04.2.1 hot fix. [NAS-130977](https://ixsystems.atlassian.net/browse/NAS-130977).
+  If licensed for HA and such an event occurs a Support ticket is generated with the corresponding support license notated [NAS-130591](https://ixsystems.atlassian.net/browse/NAS-130591).
+* Adds 23.12.2 version of openseachest to fix build issues in the 24.04.2.1 hot fix [NAS-130977](https://ixsystems.atlassian.net/browse/NAS-130977).
 
-Please use the 24.04.2 Jira filter links below to see the full changelog and known issues related to the 24.04.21 and 24.04.2.1 releases.
-{{< /expand >}}
+Please use the 24.04.2 Jira filter links below to see the full changelog and known issues related to the 24.04.2 and 24.04.2.1 releases.
 ## 24.04.2 Changelog
 
 **July 9, 2024**
