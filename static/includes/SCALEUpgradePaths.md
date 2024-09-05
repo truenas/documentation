@@ -16,7 +16,7 @@
 		F["CORE 13.3-RELEASE"] --> |ISO install| E
         C["22.12.4.2 (Bluefin)"] -->|update| D
         D["23.10.2 (Cobia)"] -->|update| E
-        E["24.04.2 (Dragonfish)"]
+        E["24.04.2.1 (Dragonfish)"]
       {{< /mermaid >}}
     </div>
     <div class="upgrade-paths-container">
@@ -26,7 +26,7 @@
         A["CORE 13.0-U6.2"] -->|ISO install| D
         B["Current 23.10 (Cobia) release"] -->|update| C
         C["23.10.2 (Cobia)"] -->|update| D
-        D["24.04.2 (Dragonfish)"]
+        D["24.04.2.1 (Dragonfish)"]
       {{< /mermaid >}}
     </div>
 </div>
