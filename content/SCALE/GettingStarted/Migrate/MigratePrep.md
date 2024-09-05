@@ -26,15 +26,16 @@ For more information on using USB drives and devices in general, read the [CORE 
 If you must use a USB type device, verify you can access files on the device before you upgrade/migrate to SCALE.
 {{< /hint >}}
 {{< enterprise >}}
-CORE Enterprise customers are encouraged to contact Support for assistance with the process of moving from CORE to SCALE, especially customers with HA systems.
+Enterprise customers are encouraged to contact Support for assistance with the process of moving from 13.0 to 24.04, especially customers with HA systems.
 {{< /enterprise >}}
 
-1. Upgrade your CORE system to the most recent publicly-available CORE major maintenance release version.
-   TrueNAS systems on 12.0x or earlier should upgrade to the latest CORE 13.0 release (e.g 13.0-U6.1 or newer) prior to migrating to SCALE.
-   CORE systems at the latest 13.0 release can use the [iso upgrade](#migrating-using-an-iso-file-to-upgrade) method to migrate to SCALE.
+1. Upgrade your CORE system to either the latest 13.0 or 13.3 release.
+   TrueNAS Enterprise-licensed (or community systems that haven't switched to 13.3) systems on 12.0x or earlier should upgrade to the latest 13.0 release (e.g 13.0-U6.2 or newer) prior to migration.
+   Community users with 13.3 installed should update to the latest maintenance release of that version prior to migration.
+   Either major version can use the [iso upgrade](#migrating-using-an-iso-file-to-upgrade) method for migration.
 
 2. Migrate [GELI-encrypted pools](https://www.truenas.com/docs/core/coretutorials/storage/pools/storageencryption/#geli-pool-migrations) to a non-GELI-encrypted pool before upgrading from CORE 12.0x or earlier releases!
-   If you do not migrate from GELI to ZFS encryption before upgrading to CORE 13.0-Ux or migrating to SCALE you permanently lose access to the data in the GELI encrypted pool(s).
+   If you do not migrate from GELI to ZFS encryption before upgrading to CORE 13.0-U# or migrating to SCALE you permanently lose access to the data in the GELI encrypted pool(s).
 
 3. Verify the root user is not locked.
    Go to **Accounts > Users**, select the root user and click **Edit** to view current settings and confirm **Lock User** is not selected.
@@ -96,16 +97,17 @@ CORE Enterprise customers are encouraged to contact Support for assistance with 
    After updating to the latest publicly-available release of CORE and making any changes to CORE user accounts or any other settings download these files and keep them in a safe place and where you can access them if you need to revert to CORE with a clean install using the CORE <file>iso</file> file.
 
 After completing the steps that apply to your CORE system listed above, download the [SCALE ISO file](https://www.truenas.com/download-tn-scale/) and save it to your computer.
+See [Software Releases]({{< relref "TrueNASUpgrades/_index.md #upgrade-paths" >}}) for current recommended update paths to make sure you download and migrate to the correct SCALE version.
 Burn the iso to a USB drive (see **Installing on Physical Hardware** in [Installing SCALE]({{< relref "InstallingSCALE.md#installing-on-physical-hardware" >}})) when upgrading a physical system.
 
 ## Deprecated Services in SCALE
-The built-in services listed in this section are available in CORE, but deprecated in SCALE 22.12.3 (Bluefin) and removed in later SCALE releases.
-They require attention before attempting to migrate to SCALE.
+The built-in services listed in this section are available in 13.0, but deprecated in 22.12.3 (Bluefin) and removed in later TrueNAS releases.
+They require attention before attempting to migrate to 24.04.
 
-Each of the sections has information that can help you determine the best steps forward to secure any critical data before attempting to migrate from CORE to SCALE.
+Each of the sections has information that can help you determine the best steps forward to secure any critical data before attempting to migrate from 13.0 to 24.04.
 They provide details on transitioning from that service to an application with the functionality of the deprecated service.
 
-TrueNAS SCALE has [apps]({{< relref "/SCALE/SCALETutorials/Apps/_index.md" >}}) you can deploy as replacements for these services.
+TrueNAS SCALE has [apps]({{< relref "/content/TruenasApps/_index.md" >}}) you can deploy as replacements for these services.
 SCALE 24.04 provides the option to force an upgrade without converting deprecated services to apps.
 The force option is not recommended for the S3 service as forcing the upgrade results in losing access to and the ability to recover the MinIO S3 data.
 

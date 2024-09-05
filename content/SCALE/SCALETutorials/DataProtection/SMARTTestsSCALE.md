@@ -42,27 +42,27 @@ Select the disks you want to test using the checkboxes to the left of the disk n
 
 ![StorageDisksSelectedSCALE](/images/SCALE/Storage/StorageDisksSelectedSCALE.png "Storage Dashboard Disks Selected")
 
-Click **Manual Test**. The **Manual S.M.A.R.T. Test** dialog displays. 
-
-{{< hint type=note >}}
-Manual S.M.A.R.T. tests on NVMe devices is currently not supported.
-{{< /hint >}}
+Click **Manual Test**. The **Manual S.M.A.R.T. Test** dialog displays.
 
 ![StorageDisksManualTestSCALE](/images/SCALE/Storage/StorageDisksManualTestSCALE.png "Run Manual S.M.A.R.T. Test")
 
 Next, select the test type from the **Type** dropdown and then click **Start**.
 
-Test types differ based on the drive connection, ATA or SCSI. 
+Test types differ based on the drive connection, ATA or SCSI.
 Test duration varies based on the test type you chose.
 TrueNAS generates alerts when tests discover issues.
 
 ### ATA Drive Connection Test Types
+
 The ATA drive connection test type options are:
+
 * **Long** runs a S.M.A.R.T. Extended Self Test that scans the entire disk surface, which may take hours on large-volume disks.
 * **Short** runs a basic S.M.A.R.T. Short Self Test (usually under ten minutes) that varies by manufacturer.
 * **Conveyance** runs a S.M.A.R.T. Conveyance Self Test (usually only minutes) that identifies damage incurred while transporting the device.
 * **Offline** runs a S.M.A.R.T. Immediate Offline Test that updates the S.M.A.R.T. Attribute values. Errors will appear in the S.M.A.R.T. error log.
+
 ### SCSI Drive Connection Test Type
+
 * **Long** runs the "Background long" self-test.
 * **Short** runs the "Background short" self-test.
 * **Offline** runs the default self-test in the foreground, but doesn't place an entry in the self-test log.
@@ -111,6 +111,7 @@ The controller monitors S.M.A.R.T. separately and marks disks as a **Predictive 
 {{< /expand >}}
 
 ## Using Shell to View Scheduled Tests
+
 {{< expand "CLI" "v" >}}
 To verify the schedule is saved, you can open the [shell]({{< relref "UseSCALEShell.md" >}}) and enter `smartd -q showtests`.
 {{< /expand >}}

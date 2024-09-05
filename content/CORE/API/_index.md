@@ -1,6 +1,6 @@
 ---
-title: "CORE API Reference"
-description: "Describes how to access the API documentation in TrueNAS CORE."
+title: "API Reference"
+description: "Describes how to access the API documentation in TrueNAS 13."
 geekdocCollapseSection: true
 weight: 160
 aliases:
@@ -9,7 +9,7 @@ aliases:
 related: false
 ---
 
-TrueNAS CORE API documentation is available from the web interface by clicking **<i class="material-icons" aria-hidden="true" title="Settings">settings</i>&nbsp;> API Keys > DOCS**.
+TrueNAS API documentation is available from the web interface by clicking **<i class="material-icons" aria-hidden="true" title="Settings">settings</i>&nbsp;> API Keys > DOCS**.
 
 ![SettingsAPIKeys](/images/CORE/Settings/SettingsAPIKeysDocsButton.png "API Docs location")
 

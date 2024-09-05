@@ -17,16 +17,16 @@ keywords:
 - Enterprise NAS storage
 ---
 
-Users of TrueNAS SCALE 24.04 (Dragonfish) or newer can migrate data from a third-party NAS solution onto TrueNAS SCALE using the [Syncthing Enterprise application]({{< relref "/scale/scaletutorials/apps/enterpriseapps/syncthing.md" >}}).
+Users of TrueNAS 24.04 (Dragonfish) or newer can migrate data from a third-party NAS solution onto TrueNAS SCALE using the [Syncthing Enterprise application]({{< relref "/content/TruenasApps/enterpriseapps/syncthing.md" >}}).
 The Syncthing Enterprise application can mount remote SMB shares in a manner that preserves relevant metadata.
-TrueNAS SCALE 24.10 (Electric Eel) also adds migration support for SMB alternate data streams (ADS), used to store application-specific metadata.
+TrueNAS 24.10 (Electric Eel) also adds migration support for SMB alternate data streams (ADS), used to store application-specific metadata.
 
 {{< expand "Syncthing Overview" "v" >}}
 {{< include file="/static/includes/SyncthingOverview.md" >}}
 {{< /expand >}}
 
 {{< enterprise >}}
-Third-party data ingest is available to TrueNAS Enterprise customers with TrueNAS SCALE 24.04 (Dragonfish) and newer deployed, as well as the appropriate applications license.
+Third-party data ingest is available to TrueNAS Enterprise customers with TrueNAS 24.04 (Dragonfish) and newer deployed, as well as the appropriate applications license.
 iXsystems Support staff are available to assist with deploying the Syncthing Enterprise Application and migrating data.
 Please contact iXsystems Support to learn more and schedule a time to deploy the app and begin migration.
 

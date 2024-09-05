@@ -9,24 +9,26 @@ tags:
 - customapp
 ---
 
+{{< include file="/static/includes/CustomAppEE.md" >}}
+
+<!-- Existing content to be rewritten once Custom App redesign is complete -->
+
+<!--
 ## Install Custom App Screen
 
 The **Install Custom App** screen allows you to configure third-party applications using settings based on Kubernetes.
 Use the wizard to configure applications not included in the TRUENAS catalog.
-The **Install Custom** button on the **Discover** application screen opens the **Install Custom App** configuration wizard.
+The **Custom App** button on the **Discover** application screen opens the **Install Custom App** configuration wizard.
 
 {{< trueimage src="/images/SCALE/Apps/InstallCustomAppScreenNameAndImage.png" alt="Install Custom Application Screen" id="Install Custom Application Screen" >}}
 
-The breadcrumbs in the top header link to other screens.
-**Discover** closes the **Install Custom App** screen and opens the **Discover** screen.
-**ix-chart** closes the **Install Custom App** screen and opens the **Installed** screen.
 The panel on the right of the screen links to each setting area.
 Click on a heading or setting to jump to that area of the screen.
 Click in the **Search Input Fields** to see a list of setting links.
 
 {{< trueimage src="/images/SCALE/Apps/InstallCustomAppTOC.png" alt="Install Custom App Toc" id="Install Custom App ToC" >}}
 
-Settings are grouped into **Application Name**, **Container Images**, **Container Entrypoint**, **Container Environment Variables**, **Networking**, **Port Forwarding**, **Storage**, **Workload Details**, **Scaling/Upgrade Policy**, **Resource Limits**, and **Portal Configuration** sections.
+Settings are grouped into **Application Name**, **Container Images**, **Container Entrypoint**, **Container Environment Variables**, **Networking**, **Port Forwarding**, **Storage**, **Workload Details**, **Scaling/Upgrade Policy**, **Resource Reservation**, **Resource Limits**, and **Portal Configuration** sections.
 
 ### Application Name Settings
 
@@ -39,15 +41,15 @@ After completing the installation these settings are not editable.
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Application Name** | Enter a name for the application. The name must have lowercase alphanumeric characters, begin with an alphabet character, and can end with an alphanumeric character. The name can contain a hyphen (-) but not as the first or last character in the name. For example, using *chia-1* but not *-chia1* or *1chia-* as a valid name. |
-| **Version** | Displays the current version of the default application. Enter the version of the application you want to install.|
+| **Application Name** | Enter a name for the application. The name must have lowercase alphanumeric characters, begin with an alphabet character, and can end with an alphanumeric character. The name can contain a hyphen (-) but not as the first or last character in the name. For example, use *chia-1* but not *-chia1* or *1chia-* as a valid name. |
+| **Version** | Displays the current version of the iX applications chart. Accept the default number. |
 {{< /truetable >}}
 {{< /expand >}}
 
 ### Container Images Settings
 
 **Container Images** settings specify the container image details.
-They define the image tag, when TrueNAS pulls the image from the remote repository, how the container updates, and when a container automatically restarts.
+They define the image, tag, and when TrueNAS pulls the image from the remote repository.
 
 {{< trueimage src="/images/SCALE/Apps/InstallCustomAppContainerImages.png" alt="Container Images Settings" id="Container Images Settings" >}}
 
@@ -56,7 +58,7 @@ They define the image tag, when TrueNAS pulls the image from the remote reposito
 | Setting | Description |
 |---------|-------------|
 | **Image Repository** | Required. Enter the Docker image repository name. For example, *plexinc/pms-docker* for Plex.|
-| **Image Tag** | Enter the tag to use for the specified image. For example, *1.20.2.3402-0fec14d92* for Plex. |
+| **Image Tag** | Enter the tag to use for the specified image. For example, *public* for Plex. Or accept the default *latest*. |
 | **Image Pull Policy** | Select the Docker image pull policy from the dropdown list. Options are **Only pull image if not present on host** (default option), **Always pull image even if present on host**, and **Never pull image even if it's not present on host**. |
 {{< /truetable >}}
 {{< /expand >}}
@@ -74,7 +76,7 @@ Check the documentation for the application you want to install for entry point 
 | Setting | Description |
 |---------|-------------|
 | **Container CMD**| Click **Add** to display a **Command** field. |
-| **Command** | Enter a container command. For example, if adding MinIO, enter *SERVER*. |
+| **Command** | Enter a container command. For example, if adding MinIO, enter *server*. |
 | **Container Args** | Click **Add** to display an argument entry **Arg** field. Click again to add another argument. |
 | **Argument** | Enter an argument. For example, if adding MinIO, enter the IP and port string such as *http://0.0.0.0/9000/data*.|
 {{< /truetable >}}
@@ -102,7 +104,8 @@ Check the documentation for the image and add any required variables here.
 **Networking** settings specify network policy, addresses, and DNS services if the container needs a custom networking configuration.
 
 See the [Kubernetes documentation](https://kubernetes.io/docs/concepts/services-networking/) for more details on host networking.
-You can create additional network interfaces for the container or give static IP addresses and routes to a new interface.
+You can create additional network interfaces for the container or give static IP addresses and routes.
+
 By default, containers use the DNS settings from the host system.
 You can change the DNS policy and define separate nameservers and search domains.
 See the Kubernetes [DNS services documentation](https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/) for more details.
@@ -118,7 +121,9 @@ See the Kubernetes [DNS services documentation](https://kubernetes.io/docs/conce
 |---------|-------------|
 | **Add External Interfaces** | Click **Add** to display the **Host Interface** and **IP Address Management** settings. |
 | **Host Interface** | Required. Select a host interface configured on your system from the dropdown list. |
-| **IPAM Type** | Required. Select an **IP Address Management** option from the dropdown list. Options are **Use DHCP** or **Use Static IP**. <br>**Use Static IP** adds two settings, **Static IP Address** and **Static Routes**. Click **Add** to the right of **Static IP Addresses** to display the **Static IP** fields to specify the IP address and CIDR value. <br>Click **Add** to the right of **Static Routes** to add the **Destination** and **Gateway** fields.  |
+| **IPAM Type** | Required. Select an **IP Address Management** option from the dropdown list. Options are **Use DHCP** or **Use Static IP**. | 
+| **Static IP Address** | Displays when **Use Static IP** is selected. Click **Add** to display the **Static IP** fields to specify the IP address and CIDR value. |
+| **Static Routes** |  Displays when **Use Static IP** is selected. Click **Add** to the right of **Static Routes** to add the **Destination** and **Gateway** fields.  |
 {{< /truetable >}}
 
 {{< trueimage src="/images/SCALE/Apps/InstallCustomAppNetworkingDNSConfig.png" alt="Networking Add DNS Configuration" id="Networking Add DNS Configuration" >}}
@@ -154,8 +159,10 @@ For more information on DNS policies see the Kubernetes [Pod DNS Policy](https:/
 
 ### Port Forwarding Settings
 
-**Port Forwarding** settings specify the container and node ports, and the transfer protocol.
+**Port Forwarding** settings specify the container ports, node ports, and the transfer protocol.
 Choose the protocol and enter port numbers for both the container and node. You can define multiple port forwards.
+
+Use port forwarding to reroute container ports that default to the same port number used by another system service or container. See [Default Ports](https://www.truenas.com/docs/references/defaultports/) for a list of assigned ports in TrueNAS.
 
 {{< trueimage src="/images/SCALE/Apps/InstallCustomAppPortForwarding.png" alt="Port Forwarding Settings" id="Port Forwarding Settings" >}}
 
@@ -164,7 +171,7 @@ Choose the protocol and enter port numbers for both the container and node. You 
 | Setting | Description |
 |---------|-------------|
 | **Specify Node ports to forward to workload** | Use to specify one or more local ports to forward to a container (pod). Click **Add** to display a block of **Port Forwarding Configuration** settings. |
-| **Container Port** | Required. Do not enter the same port number used by another system service or container. See [Default Ports](https://www.truenas.com/docs/references/defaultports/) for a list of assigned ports in TrueNAS. |
+| **Container Port** | Required. Enter a port number in the container. <br> Refer to the application documentation for default port values. |
 | **Node Port** | Required. Enter a node port number over **9000**. |
 | **Protocol** | Select the protocol from the dropdown list. Options are **TCP Protocol** or **UDP Protocol**.  |
 {{< /truetable >}}
@@ -173,9 +180,10 @@ Choose the protocol and enter port numbers for both the container and node. You 
 ### Storage Settings
 
 The **Storage** settings specify persistent host paths and share data that separate from the lifecycle of the container.
-Create the storage volumes in SCALE and set the host path volume to a dataset and directory path.
-You can mount SCALE storage locations inside the container with host path volumes. Define the path to the system storage and the container internal path for the system storage location to appear.
+Create the storage volumes in TrueNAS and set the host path volume to a dataset and directory path.
+You can mount TrueNAS storage locations inside the container with host path volumes. Define the path to the system storage and the container internal path for the system storage location to appear.
 For more details, see the [Kubernetes HostPath documentation](https://kubernetes.io/docs/concepts/storage/volumes/#hostpath).
+
 Users can create additional Persistent Volumes (PVs) for storage within the container.
 PVs consume space from the pool chosen for application management. To do this, name each new dataset and define a path where that dataset appears inside the container.
 
@@ -258,7 +266,7 @@ For fewer issues, select **Kill existing pods before creating new ones**.
 Settings only display if the system detects available GPU device(s).
 
 Select the number of devices to allocate from the **Select GPU** dropdown list of devices.
-See [Allocating GPU]({{< relref "/scale/scaletutorials/apps/_index.md#allocating-gpu" >}}) for more information.
+See Allocating GPU]( relref "/content/truenasapps/_index.md#allocating-gpu"  for more information.
 
 ### Resource Limits Settings
 
@@ -280,7 +288,7 @@ See [Allocating GPU]({{< relref "/scale/scaletutorials/apps/_index.md#allocating
 
 The **Portal Configuration** settings configure the web UI portal for the container.
 
-Select **Enable WebUI Portal (only supported in TrueNAS SCALE Bluefin)** to display the web portal configuration settings.
+Select **Enable WebUI Portal (only supported in TrueNAS Bluefin)** to display the web portal configuration settings.
 
 {{< trueimage src="/images/SCALE/Apps/InstallCustomAppAddPortalConfiguration.png" alt="Portal Configuration Settings" id="Portal Configuration Settings" >}}
 
@@ -293,3 +301,4 @@ Select **Enable WebUI Portal (only supported in TrueNAS SCALE Bluefin)** to disp
 | **Port** | Enter the port number to use for portal access. The port number the app uses should be in the documentation provided by the application provider/developer. Check the port number against the list of [Default Ports](https://www.truenas.com/docs/references/defaultports/) to make sure TrueNAS is not using it for some other purpose. |
 {{< /truetable >}}
 {{< /expand >}}
+-->

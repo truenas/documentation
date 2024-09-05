@@ -1,5 +1,5 @@
 ---
-title: "TrueNAS Software Status"
+title: "Software Status"
 weight: 5
 related: false
 ---

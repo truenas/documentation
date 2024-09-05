@@ -19,6 +19,8 @@ To set up a LAGG, go to **Network**, click **Add** on the **Interfaces** widget 
    {{< trueimage src="/images/SCALE/Network/AddInterfacePanel.png" alt="Add Interface" id="Add Interface" >}}
 
 2. Enter a name for the interface using the format **bond*X***, where *X* is a number representing a non-parent interface.
+   Assing the first LAGG interface **bond0**.
+
    You cannot change the **Name** of the interface after clicking **Apply**.
 
 3. (Optional, but recommended) Enter any notes or reminders about this particular LAGG interface in **Description**.
@@ -44,7 +46,7 @@ To set up a LAGG, go to **Network**, click **Add** on the **Interfaces** widget 
    **FAST** sets the timeout rate at one per second even after synchronization. **FAST** allows for rapid detection of faults.
    {{< /expand >}}
    {{< expand "FAILOVER" "v" >}}
-   Select **FAILOVER** send traffic through the primary interface of the group. If the primary interface fails, traffic diverts to the next available interface in the LAGG.
+   Select **FAILOVER** to send traffic through the primary interface of the group. If the primary interface fails, traffic diverts to the next available interface in the LAGG.
    {{< /expand >}}
    {{< expand "LOADBALANCE" "v" >}}
    Select **LOADBALANCE** to accept traffic on any port of the LAGG group and balance the outgoing traffic on the active ports in the LAGG group.
@@ -58,3 +60,5 @@ To set up a LAGG, go to **Network**, click **Add** on the **Interfaces** widget 
 6. (Optional) Click **Add** to the right of **Aliases** to show additional IP address fields for each additional IP address to add to this LAGG interface.
 
 7. Click **Save** when finished.
+
+8. Test the network change when prompted.

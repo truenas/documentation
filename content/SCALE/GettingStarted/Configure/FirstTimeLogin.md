@@ -53,23 +53,22 @@ The browser used to access the SCALE UI can impact the quality of your user expe
 
 {{< include file="/static/includes/RootLoginWarnSCALE.md" >}}
 
-With the implementation of administrator accounts, the root user is no longer the default administrator username. 
+{{< include file="/static/includes/AdminAccountSecurity.md" >}}
 
-Based on the method used to install SCALE, you can be presented with different first-time login scenarios, each described below. 
+With the implementation of administrator accounts, the root user is no longer the default administrator username.
+
+Based on the method used to install SCALE, you can be presented with different first-time login scenarios, each described below.
 
 {{< expand "Clean Installing SCALE" "v" >}}
 When installing SCALE from an <file>iso</file> file, and based on the authentication method selected in step 4 of the SCALE [TrueNAS installer]({{< relref "InstallingScale.md#using-the-truenas-installer" >}}) process, you can see a different sign-in screen for the web UI and need to use different login credentials.
 
-* Selecting **1. Administrative user (admin)** opens the standard SCALE sign-in screen where you enter the new admin username and password created during installation.
+* Selecting **1. Administrative user (truenas_admin)** opens the standard SCALE sign-in screen where you enter the new **truenas_admin** username and password created during installation.
   The root user password is disabled by default. We recommend this option, as it creates the required administrative user and disables the root user password, and which brings the system into compliance with FIPS security hardening standards.
 
-  The root user still exists but with the password disabled by default, which means only the admin user can log into the system.
+  The root user still exists but with the password disabled by default, which means only the truenas_admin user can log into the system.
   You can activate the password for the root user for some limited uses, but you should return to a security-hardened operation by disabling the root password immediately after you finish with the limited use.
 
-* Selecting **2. Root user (not recommended)** opens the standard SCALE sign-in screen where you enter the root username and the root password created during installation.
-  {{< include file="/static/includes/CreateAdminDisableRoot.md" >}}
-
-* Selecting **3. Configure using Web UI** opens a SCALE sign-in screen with two options. Select the option to either create the admin or root user and password.
+* Selecting **2. Configure using Web UI** opens a SCALE sign-in screen with two options. Select the option to either create the admin or root user and password.
 
   If creating and logging in as the admin user, after logging in you must immediately disable the root user password to comply with FIPS security hardening standards.
   
@@ -103,8 +102,8 @@ If using the CORE **Update** UI option, log into SCALE with the CORE root user c
 {{< include file="/static/includes/CreateAdminDisableRoot.md" >}}
 {{< /expand >}}
 
-### Logging In as Admin
-After setting up the admin user from one of the scenarios documented above, enter **admin** and the password to log into SCALE.
+### Logging In as Truenas_Admin
+After setting up the truenas_admin user from one of the scenarios documented above, enter **truenas_admin** and the password to log into SCALE.
 
 {{< trueimage src="/images/SCALE/Login/LoginScreenSCALE.png" alt="TrueNAS SCALE Login Screen" id="TrueNAS SCALE Login Screen" >}}
 
@@ -115,11 +114,11 @@ For more information, see [Managing Users]({{< relref "ManageLocalUsersScale.md"
 If logging in with the root user credentials, enter root as the user and the root password.
 {{< include file="/static/includes/CreateAdminDisableRoot.md" >}}
 
-Follow the directions in [Managing Users]({{< relref "ManageLocalUsersScale.md" >}}) to create an admin user with all required settings.
+Follow the directions in [Managing Users]({{< relref "ManageLocalUsersScale.md" >}}) to create an administration user with all required settings.
 For environments requiring specific configurations, such as non-AD environments or those using LDAP, ensure that your admin user is properly set up to manage all aspects of the system.
 
 ### Creating an Administrator Account at First Log in
-If you selected the SCALE installation option **3. Configure using Web UI**, the sign-in screen shows two authentication methods.
+If you selected the SCALE installation option **2. Configure using Web UI**, the sign-in screen shows two authentication methods.
 One allows you to log in as root or you can create the administration account.
 
 {{< trueimage src="/images/SCALE/Login/FirstTimeLoginInstallOpt3SCALE.png" alt="SCALE Login Set Up Authentication Method" id="SCALE Login Set Up Authentication Method" >}}
@@ -132,7 +131,7 @@ After setting up the admin user, click on the root user and then click **Edit**.
 This brings the system into compliance with FIPS system security-hardening standards.
 
 ### Troubleshooting Accessing the Web UI
-If you cannot remember the administrator password to log in to the web interface, connect a keyboard and mouse to the TrueNAS system and open the [Console Setup menu]({{< relref "ConsoleSetupMenuScale.md#changing-the-root-password" >}}) to reset the admin account password.
+If you cannot remember the administrator password to log in to the web interface, connect a keyboard and mouse to the TrueNAS system and open the [Console Setup menu]({{< relref "ConsoleSetupMenuScale.md#changing-the-root-password" >}}) to reset the administrator account password.
 
 {{< expand "UI is not accessible by IP address" "V" >}}
 If the user interface is not accessible by IP address from a browser, check the following:
@@ -167,7 +166,7 @@ Click on the system image to open the **System Settings > [View Enclosure]({{< r
 The **Dashboard** for non-Enterprise systems displays the TrueNAS SCALE logo on the **System Information** widget.
 
 To [customize the dashboard ]({{< relref "/SCALE/SCALETutorials/Dashboard/_index.md" >}}), click **Configure** to put the **Dashboard** into configuration mode.
-Use the drag bar to move widget groups to new positions on the screen. 
+Use the drag bar to move widget groups to new positions on the screen.
 Click **Add** to create new widgets or the **Edit** option in the widget group to change the look or information included in a widget.
 
 {{< trueimage src="/images/SCALE/Dashboard/DashboardInConfigMode.png" alt="Dashboard in Configuration Mode" id="Dashboard in Configuration Mode" >}}

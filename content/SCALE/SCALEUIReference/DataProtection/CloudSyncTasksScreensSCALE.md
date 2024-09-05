@@ -25,7 +25,7 @@ The widget shows **No Cloud Sync Tasks configured** until cloud sync task are ad
 
 {{< trueimage src="/images/SCALE/DataProtection/CloudSyncTaskWidgetNoTasks.png" alt="No Cloud Sync Tasks" id="No Cloud Sync Tasks" >}}
 
-Click on the widegt header to open the [**Cloud Sync Task**](#cloud-sync-task-screen) screen that lists all tasks configured on the system.
+Click on the widget header to open the [**Cloud Sync Task**](#cloud-sync-task-screen) screen that lists all tasks configured on the system.
 
 **Add** on the widget and the **Cloud Sync Task** screen opens the **[Cloudsync Task Wizard](#cloudync-task-wizard)**.
 
@@ -173,7 +173,7 @@ The **Advanced Remote Options** settings are for advanced users to configure rem
 | Settings | Description |
 |----------|-------------|
 | **Remote Encryption** | Select to use [rclone crypt](https://rclone.org/crypt/) encryption during pull and push transfers. Selecting **PUSH** in **Direction** encrypts files before transfer and stores the encrypted files on the remote system. Files are encrypted using the encryption password and encryption salt values. Selecting **PULL** decrypts files stored on the remote system before the transfer. Transferring the encrypted files requires entering the same encryption password and encryption salt used to encrypt the files. Additional details about the encryption algorithm and key derivation are available in the [rclone crypt File formats documentation](https://rclone.org/crypt/#file-formats). |
-| **Filename Encryption** | Selected by default. When selected, the pull and push tranfers encrypt or decrypt file names with the rclone [Standard file name encryption mode](https://rclone.org/crypt//#file-name-encryption-modes). The original directory structure of the files is preserved. <br>When enabled, file names are encrypted, file names are limited to 143 characters, directory structure is visible, and files with identical names have identical uploaded names. File names can use sub-paths, single copy files, and shortcuts to shorten the directory recursion. <br>When disabled, encryption does not hide file names or directory structure, file names can be 246 characters long, use sub-paths, and copy single files. |
+| **Filename Encryption** | Selected by default. When selected, the pull and push transfers encrypt or decrypt file names with the rclone [Standard file name encryption mode](https://rclone.org/crypt//#file-name-encryption-modes). The original directory structure of the files is preserved. <br>When enabled, file names are encrypted, file names are limited to 143 characters, directory structure is visible, and files with identical names have identical uploaded names. File names can use sub-paths, single copy files, and shortcuts to shorten the directory recursion. <br>When disabled, encryption does not hide file names or directory structure, file names can be 246 characters long, use sub-paths, and copy single files. |
 | **Encryption Password** | Enter the password to encrypt and decrypt remote data.<br>Warning: Always securely back up this password! Losing the encryption password results in data loss. |
 | **Encryption Salt** | Enter a long string of random characters for use as salt for the encryption password.<br>Warning: Always securely back up the encryption salt value! Losing the salt value results in data loss. |
 | **Transfers** | Enter the number of simultaneous file transfers. Enter a number based on the available bandwidth and destination system performance. See [rclone --transfers](https://rclone.org/docs/#transfers-n). |

@@ -100,6 +100,9 @@ majorVersions:
     majorVersion: "24.10 (Electric Eel)"
     releaseName: "Electric Eel"
     releases:
+      - name: "24.10-BETA.1"
+        link: "https://download.truenas.com/truenas-scale-electriceel-BETA/24.10-BETA.1/"
+        date: "2024-08-29"
       - name: "24.10 (Electric Eel) Nightly .iso"
         link: "https://download.truenas.com/truenas-scale-electriceel-nightly/"
         date: ""

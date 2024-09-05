@@ -83,7 +83,7 @@ Major SMB client vendors are deprecating it, partly because signing and encrypti
 {{< /expand >}}
 {{< expand "What about LDAP users?" "v" >}}
 {{< hint type=important >}}
-Support for LDAP **Samba Schema** is deprecated in TrueNAS SCALE 22.02 (Angelfish) and removed in 24.10 (Electric Eel).
+Support for LDAP **Samba Schema** is deprecated in TrueNAS 22.02 (Angelfish) and removed in 24.10 (Electric Eel).
 Migrate legacy Samba domains to Active Directory before upgrading to 24.10 or later.
 {{< /hint >}}
 {{< /expand >}}
@@ -92,6 +92,8 @@ Migrate legacy Samba domains to Active Directory before upgrading to 24.10 or la
 
 You can create an SMB share while [creating a dataset on the **Add Dataset** screen]({{< relref "DatasetsSCALE.md" >}}) or create the dataset while creating the share on the **Add SMB Share** screen.
 This article covers adding the dataset on the **Add SMB Share** screen.
+
+{{< include file="/static/includes/AppsSMBErrorWarning.md" >}}
 
 {{< include file="/static/includes/ShareDatasetsNotPools.md" >}}
 
@@ -251,7 +253,7 @@ You can also start the service from the **Windows (SMB) Share** widget or on the
 
 From the **Sharing** screen, click on the **Windows (SMB) Shares** <span class="material-icons">more_vert</span> to display the service options, which are **Turn Off Service** if the service is running or **Turn On Service** if the service is not running.
 
-{{< trueimage src="/images/SCALE/Shares/SharingSMBServicesActionOptions.png" alt="SMB Service Options" id="SMB Service Options" >}}
+{{< trueimage src="/images/SCALE/Shares/SMBShareOptions.png" alt="SMB Service Options" id="SMB Service Options" >}}
 
 Each SMB share on the list also has a toggle to enable or disable the service for that share.
 

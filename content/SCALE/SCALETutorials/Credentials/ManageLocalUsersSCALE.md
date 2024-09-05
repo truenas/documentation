@@ -8,14 +8,12 @@ tags:
 - accounts
 keywords:
 - enterprise storage solution
-- nas storage 
+- nas storage
 ---
 
 In TrueNAS, user accounts allow flexibility for accessing shared data.
 Typically, administrators create users and assign them to [groups]({{< relref "ManageLocalGroups.md" >}}).
 Doing so makes tuning permissions for large numbers of users more efficient.
-
-{{< include file="/static/includes/RootToAdminUserAccount.md" >}}
 
 When the network uses a directory service, import the existing account information using the instructions in [Directory Services]({{< relref "/SCALE/SCALEUIReference/Credentials/DirectoryServices/_index.md" >}}).
 
@@ -29,9 +27,18 @@ TrueNAS hides all built-in users (except root) by default. Click the toggle **Sh
 
 {{<include file="/static/includes/addcolumnorganizer.md">}}
 
-## Creating an Admin User Account
+## Creating an Administrator User Account
 
 {{< include file="/static/includes/AddAdminUserAccount.md" >}}
+
+### Assigning Administrative Group Privileges
+
+SCALE 24.04 or newer supports administrator privileges for role-based administrator accounts.
+Users can create new administrator accounts with limited privileges based on their needs.
+Predefined administrator roles are read only, share admin, and the default full access local administrator account.
+See [Using Administrator Logins]({{< relref "adminroles.md" >}}) for more information.
+
+{{< include file="/static/includes/AddAdminGroup.md" >}}
 
 ## Creating User Accounts
 
@@ -78,18 +85,9 @@ Configure a home directory and permissions for the user. Some functions, such as
 {{< trueimage src="/images/SCALE/Credentials/AddUserHomeDirPermSCALE.png" alt="Add User Home Directory" id="Add User Home Directory" >}}
 
 When creating a user, the home directory path is set to <file>/var/empty</file>, which does not create a home directory for the user.
-To add a home directory, enter or browse to a path in **Home Directory**, then select **Create Home Directory**.
+This directory is an immutable directory shared by service accounts and accounts that should not have a full home directory.
 
-{{< hint type="important" title="Home Directory Known Impacts" >}}
-SCALE 24.04 changes the user home directory location from **/nonexistent**, a directory that should never exist, to **/var/empty**.
-This new directory is an immutable directory shared by service accounts and accounts that should not have a full home directory.
-Services impacted:
-
-* SMB if a home share is enabled
-* SSH
-* Shell access (edited)
-
-{{< expand "Why the change?" "v" >}}
+{{< expand "Why did this change in TrueNAS 24.04 (Dragonfish) and later?" "v" >}}
 TrueNAS uses the `pam_mkhomdir` PAM module in the pam_open_session configuration file to automatically create user home directories if they do not exist.
 `pam_mkhomedir` returns `PAM_PERM_DENIED` if it fails to create a home directory for a user, which eventually turns into a pam_open_session() failure.
 This does not impact other PAM API calls, for example, `pam_authenticate()`.
@@ -99,7 +97,8 @@ TrueNAS SCALE does include the customized version of `pam_mkhomedir` used in Tru
 Starting in SCALE 24.04 (Dragonfish), the root filesystem of TrueNAS is read-only, which prevents `pam_mkhomdir` from creating the `/nonexistent` directory in cases where it previously did.
 This results in a permissions error if `pam_open_session()` is called by an application for a user account that has **Home Directory** set to **/nonexistent**.
 {{< /expand >}}
-{{< /hint >}}
+
+To add a home directory, enter or browse to a path in **Home Directory**, then select **Create Home Directory**.
 
 {{< trueimage src="/images/SCALE/Credentials/AddUserHomeDirAuthSCALE.png" alt="Add User Home Directory and Authentication Settings" id="Add User Home Directory and Authentication Settings" >}}
 
@@ -115,7 +114,7 @@ Do *not* paste the private key.
 
 Always keep a backup of an SSH public key if you are using one.
 
-As of SCALE 24.04, users assigned to the **trueNAS_readonly_administrators** group cannot access the **Shell** screen.
+As of SCALE 24.04, the **Shell** setting defaults to **nologin** for read only and sharing administrators, which means they cannot access the **Shell** screen.
 
 Select the [shell]({{< relref "LocalUsersScreensSCALE.md" >}}) option for the admin user from the **Shell** dropdown list.
 Options are **nologin**, **TrueNAS CLI**, **TrueNAS Console**, **sh**, **bash**, **rbash**, **dash**, **tmux**, and **zsh**.
@@ -132,7 +131,7 @@ Enter each command as an absolute path to the ELF (Executable and Linkable Forma
 <file>/usr/bin/</file> is the default location for commands.
 Select **Allow all sudo commands** or **Allow all sudo commands with no password**.
 
-Leave **Samba Authentication** selected to allow using the account credentials to access data shared with [SMB]({{< relref "/SCALE/SCALEUIReference/Shares/_index.md" >}}).
+Leave **SMB User** selected to allow using the account credentials to access data shared with [SMB]({{< relref "/SCALE/SCALEUIReference/Shares/_index.md" >}}).
 
 Click **Save**.
 
