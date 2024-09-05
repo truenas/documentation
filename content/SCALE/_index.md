@@ -23,7 +23,7 @@ div.docs-read_mod {display: none;}
 h1 {display:none;}
 </style>
 
-{{< header logo="/images/tn-scale-logo.png" logo_alt="TrueNAS Logo" version="Nightly Development - 25.04 (Fangtooth)" icon="" icon_alt="" >}}
+{{< header logo="/images/tn-scale-logo.png" logo_alt="TrueNAS Logo" version="Nightly Development - 25.04 Fangtooth" icon="" icon_alt="" >}}
 
 {{< include file="/static/includes/25.04FeatureList.md" >}}
 
