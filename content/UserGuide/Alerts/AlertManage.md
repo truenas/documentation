@@ -104,7 +104,7 @@ To create a new rule:
 3. Click **SAVE ALERT RULE ** to finish creating the new alert rule. To start over, click **RESET**.
 
 ## Alert Services Screens and Functions
-{{< hint type=warning >}}
+{{< hint type=important >}}
 Configurable alert services are only available for local installations or containerized TrueCommand deployments.
 TrueCommand Cloud instances use email alerts by default sent through `mail.truecommand.io`; PagerDuty is not supported.
 {{< /hint >}}
@@ -147,7 +147,7 @@ To configure SMTP service:
    If configuring smtp.gmail.com, create an **App Password** in the Gmail account.
    Enter this password here to configure Gmail SMTP service authentication.
 
-   Enter the address that sends the email (i.e., no-reply@TrueCommand.io) or allows you to customize the sender field of the email in **From Address**
+   Enter the address that sends the email (i.e., no-reply@truecommand.io) or allows you to customize the sender field of the email in **From Address**
 
    Select **Enable TLS** to initiate a connection with TLS.
 
