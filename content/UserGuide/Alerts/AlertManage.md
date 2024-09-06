@@ -104,8 +104,10 @@ To create a new rule:
 3. Click **SAVE ALERT RULE ** to finish creating the new alert rule. To start over, click **RESET**.
 
 ## Alert Services Screens and Functions
+{{< hint type=warning >}}
 Configurable alert services are only available for local installations or containerized TrueCommand deployments.
-TrueCommand Cloud instances use email alerts by default; PagerDuty is not an option.
+TrueCommand Cloud instances use email alerts by default sent through `mail.truecommand.io`; PagerDuty is not supported.
+{{< /hint >}}
 
 TrueCommand uses different service plugins to expand how it communicates alerts to users or administrators.
 Individual user accounts can use service plugins to manage how TrueCommand notifies them of a system alert.  
@@ -125,8 +127,6 @@ Each plugin has three options:
 
 ### Configuring SMTP Email
 {{< hint type=note >}}
-Before proceeding, verify that the sending mail server has TLS enabled.
-TrueCommand cannot send emails through a mail server without TLS.
 The user profile page must have an email address to receive emails.
 {{< /hint >}}
 
@@ -139,7 +139,7 @@ To configure SMTP service:
    Enter the host name for the mail server in **Mailserver** (*smtp.gmail.com* for example).
 
    Enter the port number for the mail server in **Mailserver port**.
-   Use port *465* for best security with SSL/TLS encryption.
+   Use port *465* for best security with SSL/TLS encryption, as STARTTLS, usually provided through port *587*, is not supported.
 
    Enter the email address for plain authentication in **Username**, for example, *adminuser@yourmail.com*, and the password for plain authentication in **Password**.
    For a *No-Auth* SMTP configuration, leave the password field blank.
