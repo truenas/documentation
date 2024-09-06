@@ -9,10 +9,10 @@ tags:
 TrueCommand alerts provide visual warnings for monitored systems that require attention.
 Monitored TrueNAS systems and TrueCommand alert rules can both generate alerts.
 
-TrueCommand can discover and show TrueNAS system alerts created created in the last two months.
-Alerts older than this do not show in TrueCommand.
+TrueCommand can discover and show alerts that a TrueNAS system created in the last two months.
+Alerts older than two months do not show in TrueCommand.
 
-Administrator accounts can see all system alerts but non-administrator accounts can only see alerts on systems they are permitted to access.
+Administrator accounts can see all system alerts, but non-administrator accounts can only see alerts on systems they can access.
 
 TrueCommand provides three alert screen options:
 * **All Alerts** displays all alerts from systems that TrueCommand monitors.
@@ -99,14 +99,14 @@ To create a new rule:
 
    b. Select a comparison type in **Comparator** (**Greater Than**, **Less Than**, or **Not Equals**).
       The comparison type applies to the data source and comparison value.
-   c. Enter the comparison value by entering an integer appropriate for the selected options in the **Value** field.
+   c. Enter the comparison value using an integer appropriate for the selected options in the **Value** field.
       The integer acts as a threshold or limitation for when the rule generates an alert.
 3. Click **SAVE ALERT RULE ** to finish creating the new alert rule. To start over, click **RESET**.
 
 ## Alert Services Screens and Functions
 {{< hint type=important >}}
 Configurable alert services are only available for local installations or containerized TrueCommand deployments.
-TrueCommand Cloud instances use email alerts by default sent through `mail.truecommand.io`; PagerDuty is not supported.
+TrueCommand Cloud instances use email alerts sent through `mail.truecommand.io` by default and do not support PagerDuty.
 {{< /hint >}}
 
 TrueCommand uses different service plugins to expand how it communicates alerts to users or administrators.
@@ -139,7 +139,7 @@ To configure SMTP service:
    Enter the host name for the mail server in **Mailserver** (*smtp.gmail.com* for example).
 
    Enter the port number for the mail server in **Mailserver port**.
-   Use port *465* for best security with SSL/TLS encryption, as STARTTLS, usually provided through port *587*, is not supported.
+   Use port *465* for best security with SSL/TLS encryption. STARTTLS, which email services usually provide through port *587*, is not supported.
 
    Enter the email address for plain authentication in **Username**, for example, *adminuser@yourmail.com*, and the password for plain authentication in **Password**.
    For a *No-Auth* SMTP configuration, leave the password field blank.
@@ -147,11 +147,11 @@ To configure SMTP service:
    If configuring smtp.gmail.com, create an **App Password** in the Gmail account.
    Enter this password here to configure Gmail SMTP service authentication.
 
-   Enter the address that sends the email (i.e., no-reply@truecommand.io) or allows you to customize the sender field of the email in **From Address**
+   Enter the address that sends the email (i.e., no-reply@truecommand.io) or allows you to customize the sender field of the email in **From Address**.
 
    Select **Enable TLS** to initiate a connection with TLS.
 
-   Click **Test** on the **SMTP Email** configuration screen to verify that the configuration is correct.
+   Click **Test** on the **SMTP Email** configuration screen to verify the configuration is correct.
    If you do not receive a test alert email, check the values entered are accurate.
 
    The system displays pop-up messages to prompt you if the email address for the administration user account (root or admin user) is not added.
