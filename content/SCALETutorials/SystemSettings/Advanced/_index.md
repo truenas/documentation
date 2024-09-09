@@ -13,7 +13,7 @@ keywords:
 - software storage solutions
 ---
 
-Advanced Settings provides configuration options for the console, syslog, kernel, sysctl, replication, cron jobs, init/shutdown scripts, system dataset pool, isolated GPU device(s), self-encrypting drives, system access sessions, allowed IP addresses, audit logging, and global two-factor authentication.
+**Advanced Settings** provides configuration options for the console, syslog, kernel, sysctl, replication, cron jobs, init/shutdown scripts, system dataset pool, isolated GPU device(s), self-encrypting drives, system access sessions, allowed IP addresses, audit logging, and global two-factor authentication.
 
 {{< include file="/static/includes/AdvancedSettingsWarningSCALE.md" >}}
 
@@ -24,7 +24,7 @@ Advanced Settings provides configuration options for the console, syslog, kernel
 This article provides information on sysctl, system dataset pool, setting the maximum number of simultaneous replication tasks the system can perform, and managing sessions.
 
 ## Managing Allowed IP Addresses
-Use the **System > Advanced** screen **Allowed IP Addresses** configuration screen to restrict access to the TrueNAS SCALE web UI and API.
+Use the **System > Advanced Settings** screen **Allowed IP Addresses** configuration screen to restrict access to the TrueNAS SCALE web UI and API.
 
 Entering an IP address limits access to the system to only the address(es) entered here. To allow unrestricted access to all IP addresses, leave this list empty.
 

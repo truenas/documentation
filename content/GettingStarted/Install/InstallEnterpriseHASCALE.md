@@ -246,10 +246,10 @@ SCALE UI Enterprise customers see the End User License Agreement (EULA) screen t
 Sign the agreement to open the main SCALE **Dashboard**.
 Apply the system license next.
 
-Go to **System > General** and click **Add License** on the **Support** widget. Copy your license and paste it into the **License** field, then click **Save License**.
+Go to **System > General Settings** and click **Add License** on the **Support** widget. Copy your license and paste it into the **License** field, then click **Save License**.
 The **Reload** dialog opens. Click **Reload Now**. Controller 1 restarts, and displays the EULA for controller 2. Sign the EULA agreement for controller 2, and add the license.
 
-The controller 1 and 2 (or a and b) serial numbers display on the **Support** widget on the **System > General** screen.
+The controller 1 and 2 (or a and b) serial numbers display on the **Support** widget on the **System > General Settings** screen.
 
 ### Configuring Network Settings
 {{< include file="/static/includes/ConfigureController1Networking.md" >}}
