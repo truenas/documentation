@@ -1,19 +1,19 @@
 &NewLine;
 
-Scroll down to or click on **Storage Configuration** on the list of sections at the right of the screen.
-Click **Add** three times in the **Storage Configuration** section to add three more sets of storage volume settings.
-In the first set of storage volume settings, select **Host Path (Path that already exists on the system)** and accept the default **/data1** in **Mount Path**.
-Enter or browse to the data1 dataset to populate **Host Path** with the mount path. For example, */mnt/tank/apps/data1*.
+MinIO storage settings include the option to add storage volumes to use inside the container (pod).
+To allow TrueNAS to create a storage volume, leave **Type** set to the default **ixVolume *(Dataset created automatically by the system)**.
+This adds a storage volume for the application that can be found nested under the **ix-apps** dataset. To see this, create a recursive snapshot of the **ix-apps** dataset.
 
-{{< trueimage src="/images/SCALE/Apps/InstallMinIOSNMDStorageConfigData1andData2.png" alt="Add Storage Volumes /data1 And /data2" id="Add Storage Volumes /data1 And /data2" >}}
+{{< trueimage src="/images/SCALE/Apps/InstallMinIOEnterpriseStorageConfig.png" alt="MinIO Add Storage Volumes" id="MinIO Add Storage Volumes" >}}
 
-Scroll down to the next set of storage volume settings and select **Host Path (Path that already exists on the system)**.
-Change the **Mount Path** to **/data2**, and enter or browse to the location of the **data2** dataset to populate the **Host Path**.
+To use the **data1** existing dataset, select **Host Path (Path that already exists on the system)** from the **Type** dropdown list.
+The **Mount Path** field populates with **/data1** as the first storage volume for a basic installation.
+Enter the path or browse to select the **data1** dataset and populate the **Host Path** field.
 
-Scroll down to the next set of storage volume settings and select **Host Path (Path that already exists on the system)**.
-Change the **Mount Path** to **/data3**, and enter or browse to the location of the **data3** dataset to populate the **Host Path**.
+Click **Add** to the right of **Data Directories** to add the datasets created and representing drives in for multi-mode configurations.
+Click **Add** for each additional dataset (**data2**, **data3**, and **data4**).
+If you change the configuration of a basic installation or SNMD, you can use the **data1** dataset in the configuration and add the three additional datasets.
 
-{{< trueimage src="/images/SCALE/Apps/InstallMinIOSNMDStorageConfigData3andData4.png" alt="Add Storage Volumes /data3 And /data4" id="Add Storage Volumes /data3 And /data4" >}}
+Change the **Mount Path** to correspond to the dataset path entered or selected in **Host Path**.Additional mount points are **/data2**, **/data3**, or **/data4**.
 
-Scroll down to the last set of storage volume settings and select **Host Path (Path that already exists on the system)**. 
-Change the **Mount Path** to **/data4**, and enter or browse to the location of the **data4** dataset to populate the **Host Path**.
+When configuring MNMD, create the datasets and repeat the storage settings on each system (node) in the cluster.

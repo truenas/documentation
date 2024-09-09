@@ -25,6 +25,9 @@ keywords:
 
 
 TrueNAS applications allow for quick and easy integration of third-party software and TrueNAS.
+The TrueNAS applications backend changed in 24.10 to Docker images managed with Docker Compose.
+Earlier TrueNAS releases operated with Kubernetes K3 and Helm providing containers for applications.
+For more information on this change refer to the [24.10 Release Note]({{< relref "/Content/SCALE/GettingStarted/ScaleReleaseNotes.md" >}}).
 
 {{< include file="/static/includes/ProposeArticleChange.md" >}}
 
@@ -52,7 +55,7 @@ You must choose a pool before you can install an application.
 
 {{< /expand >}}
 
-{{< expand "Docker Compose Settings" "v" >}}
+{{< expand "Apps General Settings" "v" >}}
 
 {{< include file="/static/includes/AppsDockerCompose.md" >}}
 
@@ -85,9 +88,6 @@ Select the pool and click **Save**. If you close the dialog to set the pool late
 
 {{< trueimage src="/images/SCALE/Apps/AppsSettingsChoosePool.png" alt="Choosing a Pool for Apps" id="Choosing a Pool for Apps" >}}
 
-TrueNAS creates an **ix-applications** dataset on the chosen pool and uses it to store all container-related data.
-The dataset is for internal use only.
-
 If you want to set up new datasets to store your application data in a location separate from other storage on your system, create the datasets before installing the application.
 For example, create the datasets for the Nextcloud app before installing the app.
 
@@ -102,19 +102,19 @@ To select a different pool for apps to use, click **Settings > Unset Pool**. Thi
 TrueNAS applications are available in three catalogs (trains):
 
 * **stable** - Default train of official apps, vetted by iXsystems, chosen because of the features and functionality of the app, and how they integrate with TrueNAS. 
-* **enterprise** - Default train of apps, simplified and validated for for Enterprise users for Enterprise-licensed systems.
+* **enterprise** - Default train of apps, simplified and validated for Enterprise users for Enterprise-licensed systems.
 * **community** - Apps proposed and maintained by the community
 
 The default TrueNAS **Stable** catalog populates the **Discover** apps screen with apps.
 
 Some apps proposed by community members might be adopted as official **stable** train apps.
-Official apps are maintained by iXsystems for non-Enterprise and community users.
+iXsystems maintains official apps for non-Enterprise and community users.
 
 {{< trueimage src="/images/SCALE/Apps/AppsTrainSettingsScreen.png" alt="Train Settings Add Enterprise Train" id="Train Settings Add Enterprise Train" >}}
 
 Users can change apps on the **Discover** screen from the **Train Settings** screen.
-Click **Train Settings** on the **Settings** dropdown menu to open the **Train Settings** scree, then select the desired train(s).
-To show only the one train of apps, for example the **enterprise** train, after selecting **enterprise** deselect the **stable** checkbox and click **Save**. 
+Click **Train Settings** on the **Settings** dropdown menu to open the **Train Settings** screen, then select the desired train(s).
+To show only the one train of apps, for example, the **enterprise** train, after selecting **enterprise** deselect the **stable** checkbox and click **Save**. 
 
 For more information on trains, see [Managing App Trains]({{< relref "UsingTrains.md" >}}).
 
@@ -126,13 +126,13 @@ While on the **Installed** application screen, click **Settings** > **Manage Con
 
 {{< trueimage src="/images/SCALE/Apps/AppsManageContainerImages.png" alt="Apps Manage Container Images" id="Apps Manage Container Images" >}}
 
-Delete images or add new from this screen.
+Delete images or add new ones from this screen.
 
 Click **Pull Image** to download a specific custom image to TrueNAS.
 
 {{< trueimage src="/images/SCALE/Apps/AppsManageContainerImagesPullImage.png" alt="Pull a Container Image" id="Pull a Container Image" >}}
 
-To download a specific image, click the button and enter a valid path and tag to the image.
+To download a specific image, click the button, then enter a valid path and tag to the image.
 Enter the path using the format *registry*/*repository*/*image* to identify the specific image.
 The default **latest** tag downloads the most recent image version.
 
@@ -169,7 +169,7 @@ The **Installed** applications screen displays **Check Available Apps** before y
 
 Click **Check Available Apps** or **Discover Apps** to open the **[Discover](#using-the-discover-applications-screen)** screen.
 
-Search for the application widget, click on that widget to open the information screen for the app and to access the installation wizard.
+Search for the application widget, then click on that widget to open the information screen for the app and access the installation wizard.
 
 {{< include file="/static/includes/AppsSMBErrorWarning.md" >}}
 
@@ -188,7 +188,7 @@ Click **Discover** on the breadcrumb at the top of the installation wizard to ex
 All applications include these basic setting sections:
 
 {{< expand "Application Name and Version" "v" >}}
-**Application Name** shows the default name for the application (typically the app name, like *storj*) and **Version** shows the installed version.
+**Application Name** shows the default name for the application (typically the app name, like *storj*), and **Version** shows the installed version.
 
 If deploying more than one instance of the application, you must change the default name. For example, *storj2* or *storj-node1*.
 
@@ -201,10 +201,10 @@ Updating the app changes the version shown on the edit wizard for the applicatio
 ***Application* Configuration** shows required and optional settings for that app.
 For example, the MinIO app uses  **MinIO Configuration**.
 
-Typical settings include admin user credentials, environment variables, additional argument settings, name of the node, or even sizing parameters.
+Typical settings include admin user credentials, environment variables, additional argument settings, the name of the node, or even sizing parameters.
 
 Sometimes users show in a **Users and Group Configuration** section.
-If not using the default user and group, create the new user (and group) to manage the application before using the installation wizard.
+If not using the default user and group, create a new user (and group) to manage the application before using the installation wizard.
 {{< /expand >}}
 
 {{< expand "Network Configuration" "v" >}}
@@ -219,12 +219,20 @@ If a certificate is required for the application, create the certificate authori
 
 {{< expand "Storage Configuration" "v" >}}
 **Storage Configuration** shows options to configure storage for the application.
-Storage configuration can includes the primary data mount volume, a configuration volume, postgres volumes, and an option to add additional storage volumes.
+Storage configuration can include the primary data mount volume, a configuration volume, postgres volumes, and an option to add additional storage volumes.
 The primary mount volumes have two options:
 * **ixVolume** that creates a storage volume inside the **ix-apps** dataset. This is the default setting.
 * **Host Path** that allows you to select an existing dataset created for the application. Shows additional fields to select the path to the dataset and add the mount point.
 
-If adding an additional storage volume, click **Add** to configure additional storage volumes for the application to use in addition to the main storage volume (dataset).
+{{< hint type="information" title="ix-apps Dataset" >}}
+The **ix-apps** dataset is for internal use only.
+
+TrueNAS systems with applications deployed that upgrade from earlier releases to 24.10 continue to see the **ix-Applications** dataset on the pool chosen for applications to use.
+New installs or systems upgrading where applications are not deployed and a pool is not chosen for apps use the hidden **ix-apps** dataset.
+Choosing the pool for apps to use, creates this dataset to store all container-related data.
+{{< /hint >}}
+
+If adding additional storage volumes, click **Add** to configure additional storage volumes for the application to use in addition to the main storage volume (dataset).
 The three storage options are:
 * **ixVolume**
 * **Host path**
@@ -236,7 +244,7 @@ If the application requires specific datasets or you want to allow SMB share acc
 {{< /expand >}}
 
 {{< expand "Resource Configuration" "v" >}}
-**Resources Configuration** shows default CPU and memory settings for the container pod.
+**Resources Configuration** shows the default CPU and memory settings for the container pod.
 This section can also be named **Resource Limits**.
 In most cases, accept the default settings or change these settings to limit the system resources available to the application.
 {{< /expand >}}
@@ -245,13 +253,13 @@ After installing an application, the **Installed** applications screen opens sho
 It changes to **Running** when the application is ready to use.
 
 To modify installed application settings, click on the app row on the **Applications** table on the **Installed** screen, then click **Edit** on the **Application Info** widget.
-Make sure you have the right app row selected or you end up accessing the first app listed in the table of deployed apps.
+Ensure you have the right app row selected or you end up accessing the first app listed in the table of deployed apps.
 
 Refer to individual tutorials in the [Stable]({{< relref "/content/TruenasApps/StableApps/_index.md" >}}), [Community]({{< relref "/content/TruenasApps/CommunityApps/_index.md" >}}), or [Enterprise]({{< relref "/content/TruenasApps/EnterpriseApps/_index.md" >}}) sections of the Documentation Hub for more details on configuring application settings.
 
 #### Allocating GPU
 Users with compatible hardware can allocate one or more GPU devices to an application for use in hardware acceleration.
-This is an advanced process that could require significant troubleshooting depending on installed GPU device(s) and application-specific criteria.
+Allocating GPUs is an advanced process that could require significant troubleshooting depending on installed GPU device(s) and application-specific criteria.
 
 GPU devices can be available for the host operating system (OS) and applications or can be [isolated for use in a Virtual Machine (VM)]({{< relref "managegpuscale.md" >}}).
 A single GPU cannot be shared between the OS/applications and a VM.
@@ -261,7 +269,7 @@ Allocate GPU from the **Resources Configuration** section of the application ins
 {{< trueimage src="/images/SCALE/Apps/ResourcesConfiguration.png" alt="Resources Configuration" id="Resources Configuration" >}}
 
 Click the **GPU Resource** allocation row for the type of GPU (AMD, Intel, or NVIDIA) and select the number of GPU devices the application is allowed access to.
-It is not possible at this time to specify which available GPU device is allocated to the application and assigned devices can change on reboot.
+You cannot specify which available GPU device TrueNAS allocates to the application. Furthermore, assigned devices can change on reboot.
 
 {{< trueimage src="/images/SCALE/Apps/ResourcesConfigurationAllocateGPU.png" alt="Select GPU Allocation" id="Select GPU Allocation" >}}
 
@@ -315,7 +323,7 @@ To change the way app widgets show on the screen, click the down arrow to the ri
 
 To quickly locate a specific app, begin typing the name in the search field.
 
-To sort app widgets by category, click in **Categories**.
+To sort app widgets by category, click on **Categories**.
 To select multiple categories, click **Categories** again and select another category from the dropdown.
 
 {{< trueimage src="/images/SCALE/Apps/MinIOS3AppInfoScreen.png" alt="Application Information Screen Example" id="Application Information Screen Example" >}}
