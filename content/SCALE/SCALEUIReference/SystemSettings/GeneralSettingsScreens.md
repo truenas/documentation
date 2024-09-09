@@ -16,7 +16,7 @@ tags:
  - configuration files
 ---
 
-The TrueNAS SCALE **System > General** screen includes widgets for **[Support](#support-widget)**, **[GUI](#gui-settings-screen)**, **[Localization](#localization-settings-screen)**, **[NTP](#add-ntp-server-screen)**, and system [**Email**](#email-options-screen) functions. Each widget displays information about current settings and includes one or more buttons for related actions and configuration options.
+The **General Settings** screen includes widgets for **[Support](#support-widget)**, **[GUI](#gui-settings-screen)**, **[Localization](#localization-settings-screen)**, **[NTP](#add-ntp-server-screen)**, and system [**Email**](#email-options-screen) functions. Each widget displays information about current settings and includes one or more buttons for related actions and configuration options.
 
 {{< trueimage src="/images/SCALE/SystemSettings/SystemGeneralScreen.png" alt="System General Screen" id="System General Screen" >}}
 
@@ -87,10 +87,6 @@ The **Support** widget updates to display license and hardware information.
 
 Select **This is a production system** and click **Proceed** to send iXsystems email notification that the system is in production.
 {{< /expand >}}
-
-### Feedback Window
-
-{{< include file="/static/includes/FeedbackWindow.md" >}}
 
 ### Proactive Support Screen
 

@@ -18,7 +18,7 @@ Isolated GPU devices are unavailable to the OS and for [allocation to applicatio
 
 {{< include file="/static/includes/AdvancedSettingsWarningSCALE.md" >}}
 
-The **Isolated GPU Device(s)** widget on the **System > Advanced** screen shows configured isolated GPU device(s).
+The **Isolated GPU Device(s)** widget on the **System > Advanced Settings** screen shows configured isolated GPU device(s).
 
 {{< trueimage src="/images/SCALE/SystemSettings/AdvancedSettingIsolatedGPUDeviceWidget.png" alt="Isolated GPU Device(s) Widget" id="Isolated GPU Device(s) Widget" >}}
 

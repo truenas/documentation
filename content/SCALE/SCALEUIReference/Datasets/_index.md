@@ -200,7 +200,7 @@ A dataset with a POSIX ACL type, such as the ix-applications dataset, is only ed
 ### Roles Widget
 The **Roles** widget displays the dataset role or the service that uses it (i.e., a share, application, virtual machine, or the system dataset). 
 A parent dataset displays information on child datasets that a service uses. 
-If the dataset is also the system dataset, the widget includes a link to the **System > Advanced** screen where you can manage the system dataset.
+If the dataset is also the system dataset, the widget includes a link to the **System > Advanced Settings** screen where you can manage the system dataset.
 
 {{< trueimage src="/images/SCALE/Datasets/RolesWidgetRootDataset.png" alt="Roles Widget System Dataset" id="Roles Widget System Dataset" >}}
 

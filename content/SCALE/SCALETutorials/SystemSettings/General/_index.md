@@ -13,7 +13,7 @@ keywords:
 
 The TrueNAS SCALE General Settings section provides settings options for support, graphic user interface, localization, NTP servers, and system configuration.
 
-![GeneralSettingsSCALE](/images/SCALE/SystemSettings/GeneralSettingsSCALE.png "SCALE General Settings Screen")
+{{< trueimage src="/images/SCALE/SystemSettings/SystemGeneralScreen.png" alt="System General Screen" id="System General Screen" >}}
 
 <div class="noprint">
 

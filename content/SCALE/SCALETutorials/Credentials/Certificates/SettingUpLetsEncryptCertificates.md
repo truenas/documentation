@@ -57,7 +57,7 @@ You can create testing and staging certificates for your domain.
 
 ## Set the GUI SSL Certificate
 
-Go to **System > General** and click **Settings** in the GUI widget.
+Go to **System > General Settings** and click **Settings** in the GUI widget.
 
 Select the new ACME certificate you created from the **GUI SSL Certificate** dropdown, then click **Save**.
 

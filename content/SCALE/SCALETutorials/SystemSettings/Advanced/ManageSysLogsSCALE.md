@@ -16,7 +16,7 @@ keywords:
 {{< include file="/static/includes/AdvancedSettingsWarningSCALE.md" >}}
 
 By default, TrueNAS writes system logs to the system boot device.
-The **Syslog** widget on the **System > Advanced** screen allows users determine how and when the system sends log messages to a connected syslog server.
+The **Syslog** widget on the **System > Advanced Settings** screen allows users determine how and when the system sends log messages to a connected syslog server.
 The **Syslog** widget displays the existing system logging settings.
 
 {{< trueimage src="/images/SCALE/SystemSettings/AdvancedSystemSettingsSyslogWidget.png" alt="Syslog Widget" id="Syslog Widget" >}}

@@ -188,7 +188,7 @@ To configure Audit storage and retention settings, click **Audit Settings** on t
 {{< include file="/static/includes/ConfigureSystemAuditSCALE.md" >}}
 
 For example, to change the percent usage **warning** threshold for the storage allocated to the Audit database:
-1. Navigate to **System > Advanced** page.
+1. Navigate to **System > Advanced Settings** page.
 2. Select the **Configure** button on the **Audit** widget.
 3. In the Audit configuration popup, change the value in the **Quota Fill Warning** field to the desired percentage.
 4. Select the **Save** button to effect the change.

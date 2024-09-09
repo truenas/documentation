@@ -70,7 +70,7 @@ Also using Shell, check the network SRV records and verify DNS resolution enter 
 
 Active Directory relies on the time-sensitive [Kerberos](https://tools.ietf.org/html/rfc1510) protocol.
 TrueNAS adds the AD domain controller with the [PDC Emulator FSMO Role](https://support.microsoft.com/en-us/help/197132/active-directory-fsmo-roles-in-windows) as the preferred NTP server during the domain join process. 
-If your environment requires something different, go to **System > General** to add or edit a server in the **NTP Servers** window.
+If your environment requires something different, go to **System > General Settings** to add or edit a server in the **NTP Servers** window.
 
 Keep the local system time sync within five (5) minutes of the AD domain controller time in a default AD environment.
 
@@ -79,7 +79,7 @@ TrueNAS generates alerts if the system time gets out-of-sync with the AD domain 
 
 TrueNAS has a few options to ensure both systems are synchronized:
 
-1. Go to **System > General** and click **Settings** in the **Localization** window to select the **Timezone** that matches location of the AD domain controller.
+1. Go to **System > General Settings** and click **Settings** in the **Localization** window to select the **Timezone** that matches location of the AD domain controller.
 
 ![LocalizationSCALE](/images/SCALE/Credentials/LocalizationSCALE.png "Timezone Options")
 
