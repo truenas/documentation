@@ -2009,4 +2009,5 @@ AppsDiscoverScreen
 DiscoverAppsScreenFilterOptions
 managegpuscale
 TrueNASApps
+Fangtooth
 ScaleReleaseNotes
