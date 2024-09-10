@@ -1,5 +1,5 @@
 ---
-title: "Managing Local Groups"
+title: "Managing Groups"
 description: "Provides instructions on adding and managing groups."
 weight: 20
 tags:
@@ -18,16 +18,16 @@ If the network uses a directory service, import the existing account information
 
 ## View Existing Groups
 
-To see saved groups, go to **Credentials > Local Groups**.
+To see saved groups, go to **Credentials > Groups**.
 
-{{< trueimage src="/images/SCALE/Credentials/GroupsListedSCALE.png" alt="Local Groups Screen" id="Local Groups Screen" >}}
+{{< trueimage src="/images/SCALE/Credentials/GroupsListedSCALE.png" alt="Groups Screen" id="Groups Screen" >}}
 
 By default, TrueNAS hides the system built-in groups.
 To see built-in groups, click the **Show Built-In Groups** toggle. The toggle turns blue and all built-in groups display. Click the **Show Built-In Groups** toggle again to show only non-built-in groups on the system.
 
 ## Adding a New Group
 
-To create a group, go to **Credentials > Local Groups** and click **Add**.
+To create a group, go to **Credentials > Groups** and click **Add**.
 
 {{< trueimage src="/images/SCALE/Credentials/AddGroupGIDConfigSCALE.png" alt="Add Group Screen" id="Add Group Screen" >}}
 
@@ -62,7 +62,7 @@ Use [**Members**](#update-members) to manage membership and [**Edit**](#edit-gro
 
 ### Update Members
 
-To manage group membership, go to **Credentials > Local Groups**, expand the group entry, and click **Members** to open the **Update Members** screen.
+To manage group membership, go to **Credentials > Groups**, expand the group entry, and click **Members** to open the **Update Members** screen.
 
 {{< trueimage src="/images/SCALE/Credentials/GroupsManageMembersSCALE.png" alt="Update Members Screen" id="Update Members Screen" >}}
 
@@ -76,4 +76,4 @@ Click **Save**.
 
 ### Edit Group
 
-To edit an existing group, go to **Credentials > Local Groups**, expand the group entry, and click <i class="material-icons" aria-hidden="true" title="Edit">edit</i> **Edit** to open the **Edit Group** configuration screen. See [Local Group Screens]({{< relref "LocalGroupsScreens.md" >}}) for details on all settings.
+To edit an existing group, go to **Credentials > Groups**, expand the group entry, and click <i class="material-icons" aria-hidden="true" title="Edit">edit</i> **Edit** to open the **Edit Group** configuration screen. See [Groups Screens]({{< relref "LocalGroupsScreens.md" >}}) for details on all settings.

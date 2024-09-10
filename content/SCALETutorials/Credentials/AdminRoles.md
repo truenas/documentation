@@ -45,7 +45,7 @@ If all root and administrator account passwords become disabled at the same time
 {{< trueimage src="/images/SCALE/Login/ResetRootAccountPasswordSignIn.png" alt="Reset Root Password Sign-In Screen" id="Reset Root Password Sign-In Screen" >}}
 
 Enter and confirm a password to gain access to the UI.
-After logging in, immediately go to **Credentials > Local Users** to enable the password for an administrator account before the session times out again.
+After logging in, immediately go to **Credentials > Users** to enable the password for an administrator account before the session times out again.
 This temporary password is not saved as a new password and it does not enable the admin or root passwords, it only provides one-time access to the UI.
 
 When disabling a password for UI login, it is also disabled for SSH access.

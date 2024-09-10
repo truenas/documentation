@@ -64,7 +64,7 @@ Go to **Credentials > Backup Credentials** and use **SSH Connections** and **SSH
     Then create the SSH connection as above.
     Select the new key from the **Private Key** dropdown.
 
-5. Go to **Credentials > Local Users**, select the admin user, and click **Edit**.
+5. Go to **Credentials > Users**, select the admin user, and click **Edit**.
     Check **Authentication** to ensure the SSH public key is present.
     If needed, paste the public key in **Authorized Keys** or click **Choose File** then browse to and upload the public key file.
 

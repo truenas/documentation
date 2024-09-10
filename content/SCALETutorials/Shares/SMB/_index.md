@@ -65,14 +65,14 @@ After adding the share, [start the service](#starting-the-smb-service) and [moun
 
 {{< include file="/static/includes/LocalSMBUser.md" >}}
 
-To add users or edit users, go to **Credentials > Local Users** to add or edit the SMB share user(s).
+To add users or edit users, go to **Credentials > Users** to add or edit the SMB share user(s).
 Click **Add** to create a new or as many new user accounts as you need.
 
 Enter the values in each required field, verify **Samba Authentication** is selected, then click **Save**.
 For more information on the fields and adding users, see [Creating User Accounts]({{< relref "ManageLocalUsersScale.md" >}}).
 
-By default, all new local users are members of a built-in group called **builtin_users**.
-You can use a group to grant access to all local users on the server or add more groups to fine-tune permissions for large numbers of users.
+By default, all new users are members of a built-in group called **builtin_users**.
+You can use a group to grant access to all users on the server or add more groups to fine-tune permissions for large numbers of users.
 
 {{< expand "Why not just allow anonymous access to the share?" "v" >}}
 Anonymous or guest access to the share is possible, but it is a security vulnerability and not recommended for Enterprise or systems with more than one SMB share administrator account.
