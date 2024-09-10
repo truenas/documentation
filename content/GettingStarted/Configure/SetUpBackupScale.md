@@ -29,7 +29,7 @@ The first thing you should do after you set up TrueNAS is back up your system co
 
 ### Downloading the Initial System Debug File
 
-After saving the system configuration, go to **System > Advanced** and click **Save Debug**. After the download completes, save this initial debug file with your system configuration file.
+After saving the system configuration, go to **System > Advanced Settings** and click **Save Debug**. After the download completes, save this initial debug file with your system configuration file.
 
 ## Create a Boot Environment
 

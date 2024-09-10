@@ -36,7 +36,7 @@ Click on the widget header to open the [**Sharing > SMB** details](#sharing-smb-
 
 The <span class="material-icons">more_vert</span> icon displays four options available to SMB shares in general:
 * **Turn Off Service** what shows when the SMB service is enabled and that toggles to **Turn On Service** when the SMB service is disabled.
-* **Config Service** that opens the [**System Settings > SMB**]({{< relref "SMBServicesScreen.md" >}}).
+* **Config Service** that opens the [**SMB**]({{< relref "SMBServicesScreen.md" >}}) configuration screen.
 * **SMB Sessions** that opens the **SMB Status** screen with four tabs: **Sessions**, **Locks**, **Shares**, and **Notifications**.
 * **Audit Logs** that opens the [**Audit** screen]({{< relref "AuditingSCALE.md" >}}) with a predefined filter for and showing the SMB share logs.
 

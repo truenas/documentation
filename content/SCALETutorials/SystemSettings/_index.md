@@ -15,10 +15,10 @@ SCALE system management options are collected in this section of the UI and orga
 * **Update** controls when the system applies a new version.
   There are options to download and install an update, have the system check daily and stage updates, or apply a manual update file to the system.
 
-* **General** shows system details and has basic, less intrusive management options, including web interface access, localization, and NTP server connections.
+* **General Settings** shows system details and has basic, less intrusive management options, including web interface access, localization, and NTP server connections.
   This is also where users can input an Enterprise license or create a software bug ticket.
 
-* **Advanced** contains options that are more central to the system configuration or meant for advanced users.
+* **Advanced Settings** contains options that are more central to the system configuration or meant for advanced users.
   Specific options include configuring the system console, log, and dataset pool, managing sessions, adding custom system controls, kernel-level settings, scheduled scripting or commands, global two-factor authentication, and determining any isolated GPU devices.
   *Warning*: Advanced settings can be disruptive to system function if misconfigured.
 

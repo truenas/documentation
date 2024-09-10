@@ -33,14 +33,14 @@ After [logging into SCALE]({{< relref "FirstTimeLogin.md#logging-into-the-scale-
 {{< enterprise >}}
 ### Applying Enterprise Licenses
 TrueNAS SCALE Enterprise customers should contact iXsystems support to obtain license information for their TrueNAS system.
-To apply the license information, go to the **System > General** screen and use the **[Update License]({{< relref "AddLicenseProactiveSupport.md" >}})** option on the **Support** widget (system information card).
+To apply the license information, go to the **System > General Settings** screen and use the **[Update License]({{< relref "AddLicenseProactiveSupport.md" >}})** option on the **Support** widget (system information card).
 
 ### Setting up Proactive Support
 TrueNAS SCALE Enterprise customers with Silver or Gold Coverage support contracts can configure proactive support.
 
 Customers with appropriate support contracts can configure **[Proactive Support]({{< relref "AddLicenseProactiveSupport.md" >}})** after they apply their system license, and after acknowledging and signing the End User License Agreement (EULA).
 
-The **Support** widget on the **System > General** screen displays the **Proactive Support** option after entering your system license.
+The **Support** widget on the **System > General Settings** screen displays the **Proactive Support** option after entering your system license.
 {{< /enterprise >}}
 
 ## Setting Up Networking
@@ -145,7 +145,7 @@ After completing your initial system configuration and before you begin day-to-d
 1. Saving the [system configuration file]({{< relref "SetUpBackupSCALE.md" >}}).
 2. Saving or [creating a new boot environment]({{< relref "ManageBootEnvironSCALE.md" >}}) to use as a restore point if system issues cause you to lose access to the SCALE UI.
 3. Downloading a system debug to capture system information to use as a comparison against future debug files.
-  To download a system debug file, go to **System > Advanced** and click **Save Debug** to begin the download.
+  To download a system debug file, go to **System > Advanced Settings** and click **Save Debug** to begin the download.
 
 Keep both the system configuration file and the initial system debug file in a safe location where important files are regularly backed up.
 You can use the boot environment in an SSH session to restore your system to the point where you completed your system configuration, and then import data or pools to recover stored data.
