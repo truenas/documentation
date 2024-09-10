@@ -45,7 +45,7 @@ TrueNAS has several options that allow you to back up data:
 * [TrueCloud backup tasks](#using-truecloud-backup-or-cloud-sync)
 * [Cloud sync tasks]({{< relref "/ScaleTutorials/DataProtection/CloudSyncTasks/_index.md" >}})
 * [Replication tasks](#using-replication)
-* [Rsync tasks]({{< relref "RsyncTasksSCALE.md" >}})
+* [Rsync tasks]({{< relref "/SCALETutorials/DataProtection/RsyncTasksSCALE.md" >}})
 
 Both TrueCloud backup and cloud sync tasks require setting up a cloud service provider account and adding the credentials in TrueNAS before configuring and scheduling the tasks.
 
