@@ -16,7 +16,7 @@ Cron jobs allow users to configure jobs that run specific commands or scripts on
 
 {{< include file="/static/includes/AdvancedSettingsWarningSCALE.md" >}}
 
-The **Cron Jobs** widget on the **System > Advanced** screen displays **No Cron Jobs configured** until you add a cron job, and then it displays information on cron job(s) configured on the system.
+The **Cron Jobs** widget on the **System > Advanced Settings** screen displays **No Cron Jobs configured** until you add a cron job, and then it displays information on cron job(s) configured on the system.
 
 ![AdvancedSettingsCronJobWidget](/images/SCALE/SystemSettings/AdvancedSettingsCronJobWidget.png "SCALE Advanced Settings Cron Job Widget")
 
