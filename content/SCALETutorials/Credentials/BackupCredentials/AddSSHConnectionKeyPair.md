@@ -58,7 +58,7 @@ This procedure covers adding a public SSH key to the admin account on the TrueNA
 
 2. Add the public key to the admin account on the system where you want to register the public key.
 
-   Log into the TrueNAS system where you want to register the public key and go to **Credentials > Local Users**.
+   Log into the TrueNAS system where you want to register the public key and go to **Credentials > Users**.
 
    Edit the admin account.
    Click on the <span class="material-icons">expand_more</span> icon and then click **Edit** to open the **Edit User** screen.
