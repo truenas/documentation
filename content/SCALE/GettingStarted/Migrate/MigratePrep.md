@@ -56,7 +56,7 @@ Enterprise customers are encouraged to contact Support for assistance with the p
 
    <input type="checkbox"> Usernames beginning with (0-9) - Review local user account names and rename or replace these with a letter or underscore before migrating.
 
-   <input type="checkbox"> Tunables on CORE - SCALE does not use **Tunables** the way CORE does. SCALE allows adding script configurations on the **System > Advanced** screen, using the **Sysctl** widget.
+   <input type="checkbox"> Tunables on CORE - SCALE does not use **Tunables** the way CORE does. SCALE allows adding script configurations on the **System > Advanced Settings** screen, using the **Sysctl** widget.
 
    <input type="checkbox"> Init/shutdown scripts - If using init/shutdown scripts in CORE, copy them or take a screenshot to add them to SCALE.
 

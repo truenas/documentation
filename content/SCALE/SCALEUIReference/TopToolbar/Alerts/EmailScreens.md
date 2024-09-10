@@ -16,7 +16,7 @@ Select **Email** to go to the [**General**]({{< relref "GeneralSettingsScreens.m
 
 ## Email Widget
 
-The **Email** widget on the **General** settings screen displays information about current system mail settings.
+The **Email** widget on the **General Settings** screen displays information about current system mail settings.
 
 {{< trueimage src="/images/SCALE/Dashboard/EmailWidget.png" alt="Email Widget" id="Email Widget" >}}
 

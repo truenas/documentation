@@ -14,7 +14,7 @@ keywords:
 
 {{< include file="/static/includes/AdvancedSettingsWarningSCALE.md" >}}
 
-The **Self-Encrypting Drive(s)** widget on the **System > Advanced** screen allows you set the user and global SED password in SCALE.
+The **Self-Encrypting Drive(s)** widget on the **System > Advanced Settings** screen allows you set the user and global SED password in SCALE.
 
 ## Managing Self-Encrypting Drives
 

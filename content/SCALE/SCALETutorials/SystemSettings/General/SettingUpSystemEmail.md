@@ -44,7 +44,7 @@ Follow the directions in [Configuring the Admin User Email Address](#configuring
 After setting up the admin email address, you need to set up the send method for email service.
 
 There are two ways to access email configuration options.
-Go to the **Systems Settings > General** screen and locate the **Email** widget to view current configuration or click the **Alerts** <span class="iconify" data-icon="mdi:bell"></span> icon in the top right of the UI, then click the gear <span class="iconify" data-icon="mdi:cog"></span> icon, and select **Email** to open the **General** settings screen.
+Go to the **System > General Settings** screen and locate the **Email** widget to view current configuration or click the **Alerts** <span class="iconify" data-icon="mdi:bell"></span> icon in the top right of the UI, then click the gear <span class="iconify" data-icon="mdi:cog"></span> icon, and select **Email** to open the **General Settings** screen.
 Click **Settings** on the **Email Widget** to open the **Email Options** configuration screen.
 
 **Send Mail Method** shows two different options:
