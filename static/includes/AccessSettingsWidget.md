@@ -1,7 +1,6 @@
 &NewLine;
 
-The **Access** widget displays a list of all active sessions, including the user who initiated the session and what time it started.
-It also displays the **Token Lifetime** setting for your current session.
+The **Access** widget displays a list of all active sessions, including the user who initiated the session and what time it started, the **Token Lifetime** setting for your current session, and the UI **Login Banner**.
 It allows administrators to manage other active sessions and to configure the token lifetime for their account.
 
 {{< trueimage src="/images/SCALE/SystemSettings/AdvancedSystemSettingsAccessWidget.png" alt="Access Widget" id="Access Widget" >}}
@@ -22,21 +21,21 @@ If the configured token lifetime is exceeded, TrueNAS SCALE displays a **Logout*
 {{< trueimage src="/images/SCALE/SystemSettings/TimeoutDialog.png" alt="Logout Dialog" id="Logout Dialog" >}}
 
 Click **Extend Session** to reset the token counter.
-If the button is not clicked, the TrueNAS SCALE terminates the session automatically and returns to the log in screen.
+If the button is not clicked, the TrueNAS SCALE terminates the session automatically and returns to the log in screen.\
 
-Click **Configure** to open the **Token Settings** screen and configure **Token Lifetime** for the current account.
+**Login Banner** displays the custom text that TrueNAS displays before the login screen, if configured.
+
+Click **Configure** to open the **Access Settings** screen and configure **Token Lifetime** or **Login Banner**.
 
 {{< trueimage src="/images/SCALE/SystemSettings/TokenSettingsScreen.png" alt="Token Settings Screen" id="Token Settings Screen" >}}
 
 Select a value that fits user needs and security requirements.
 Enter the value in seconds.
 
-{{< hint type=tip >}}
-The default lifetime setting is 300 seconds, or five minutes.
+{{< hint type=tip title="Token Lifetime Requirements" >}}
+The default token lifetime setting is 300 seconds, or five minutes.
 
-The minimum value allowed is 30 seconds.
-
-The maximum is 2147482 seconds, or 20 hours, 31 minutes, and 22 seconds.
+The minimum value allowed is 30 seconds and the maximum is 2147482 seconds, or 20 hours, 31 minutes, and 22 seconds.
 {{< /hint >}}
 
 Click **Save**.
