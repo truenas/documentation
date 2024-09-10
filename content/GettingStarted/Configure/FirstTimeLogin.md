@@ -159,7 +159,7 @@ The dashboard includes configurable widgets that include a text-only **Custom** 
 {{< trueimage src="/images/SCALE/Dashboard/DashboardMainScreen.png" alt="TrueNAS SCALE Dashboard" id="TrueNAS SCALE Dashboard" >}}
 
 SCALE Enterprise users with an iXsystems-provided TrueNAS server also see an image of the system in the **System Information** widget.
-Click on the system image to open the **System Settings > [View Enclosure]({{< relref "EnclosureScreensSCALE.md" >}})** screen.
+Click on the system image to open the **System > [View Enclosure]({{< relref "EnclosureScreensSCALE.md" >}})** screen.
 
 The **Dashboard** for non-Enterprise systems displays the TrueNAS SCALE logo on the **System Information** widget.
 
@@ -179,7 +179,7 @@ The left-hand panel lists the main feature and functional areas and lets users n
 {{< include file="/static/includes/TopToolbar.md" >}}
 
 ## Managing Sessions
-To monitor and manage all active sessions, go to **System > Advanced** and locate the **Access** widget.
+To monitor and manage all active sessions, go to **System > Advanced Settings** and locate the **Access** widget.
 {{< include file="/static/includes/SessionsSettingsWidget.md" >}}
 
 ## Next Steps

@@ -18,7 +18,7 @@ An Uninterruptible Power Supply (UPS) is a power backup system that ensures cont
 
 ## Setting Up UPS Service
 
-Connect the TrueNAS system to the UPS device. To configure the UPS service, go to **System settings > Services**, finding **UPS**, and click <i class="material-icons" aria-hidden="true" title="Configure">edit</i>.
+Connect the TrueNAS system to the UPS device. To configure the UPS service, go to **System > Services**, finding **UPS**, and click <i class="material-icons" aria-hidden="true" title="Configure">edit</i>.
 
 See [UPS Service Screen]({{< relref "UPSServicesScreenSCALE.md" >}}) for details on the UPS service settings.
 
@@ -29,7 +29,7 @@ TrueNAS displays the issue in logs as a recurring error like **libusb_get_interr
 If you get an error, decrease the polling frequency by adding an entry to **Auxiliary Parameters (ups.conf)**: `pollinterval = 10`.
 
 {{< expand "How do I find a device name?" "v" >}}
-For USB devices, the easiest way to determine the correct device name is to set **Show console messages** in **System > Advanced**.
+For USB devices, the easiest way to determine the correct device name is to set **Show console messages** in **System > Advanced Settings**.
 Plug in the USB device and look for a <file>/dev/ugen</file> or <file>/dev/uhid</file> device name in the console messages.
 {{< /expand >}}
 
