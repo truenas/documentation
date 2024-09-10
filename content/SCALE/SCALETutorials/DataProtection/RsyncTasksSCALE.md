@@ -33,31 +33,34 @@ You can set up a new SSH connection on the **Credentials > Backup Credentials** 
 
 The following procedure provides instructions on setting up an SSH connection using the **New SSH Connection** screen.
 
-1. Enable SSH on both the local and remote systems.
+Enable SSH on both the local and remote systems.
+On the local TrueNAS host system, go to **System > Services** and toggle **SSH** to on, and enable the SSH service on the remote host system.
 
-   On the local TrueNAS host system, go to **System > Services** and toggle **SSH** to on, and enable the SSH service on the remote host system.
-
-2. Set up a home directory for the remote system administrator on the remote system.
-   Note the path to where home directories are stored to enter on the local host TrueNAS.
+Set up a home directory for the remote system administrator on the remote system.
+Note the path to where home directories are stored to enter on the local host TrueNAS.
    
-   If the remote system is also a TrueNAS, go to **Credentials**, select **Users** to see the list of users.
-   Select the administration user and click **Edit**.
+If the remote system is also a TrueNAS, go to **Credentials**, select **Users** to see the list of users.
+Select the administration user and click **Edit**.
 
-   If creating a new administration user, for rsync functions, click **Add**.
-   See [Managing Users]({{< relref "managelocalusersscale.md#creating-an-administrator-user-account" >}}) for more information.
-   Take note of the path to the home directory to use in setting up the connection.
+If creating a new administration user, for rsync functions, click **Add**.
+See [Managing Users]({{< relref "managelocalusersscale.md #creating-an-administrator-user-account" >}}) for more information.
+Take note of the path to the home directory to use in setting up the connection.
 
-3. Add an SSH connection for the remote server on the local TrueNAS host system. If the remote system is a TrueNAS:
-   
-   {{< include file="/static/includes/AddSSHConnection.md" >}}
+Add an SSH connection for the remote server on the local TrueNAS host system. 
 
-   You can add a connection to a non-TrueNAS remote host system.
+{{< expand "Adding a remote TrueNAS system" "v" >}}
 
-   {{< include file="/static/includes/AddManualSSHConnection.md" >}}
-    
-   The generated keypair shows on the **SSH Keypair** widget.
-   To download the public and private keypairs, click the <i class="material-icons" aria-hidden="true" title="Download">file_download</i> for the new keypair on the **SSH Keypairs** widget.
-   TrueNAS automatically adds the public key to **Authorized Keys** for the admin user.
+{{< include file="/static/includes/AddSSHConnection.md" >}}
+
+{{< /expand >}}
+
+{{< expand "Adding a connection to a non-TrueNAS remote host system" "v" >}}
+
+{{< include file="/static/includes/AddManualSSHConnection.md" >}}
+{{< /expand >}}
+
+The generated keypair shows on the **SSH Keypair** widget.
+To download the public and private keypairs, click the <i class="material-icons" aria-hidden="true" title="Download">file_download</i> for the new keypair on the **SSH Keypairs** widget.
 
 ### Adding an Rsync Task
 Enabled SSH on both the local host TrueNAS and the remote destination system.

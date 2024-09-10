@@ -140,14 +140,6 @@ Both replication to a remote server and rscyn tasks require configuring an SSH c
 When both systems are using IPv6 addresses and the protocol to communicate, you must enclose the IPv6 address in square brackets when defining the remote system URL in the **TrueNAS URL** field on the **New SSH Connection** configuration screen.
 <!-- 
 
-### Setting up Rsync Tasks
-
-Commenting out this section Until I can test rsync tasks using module and ssh modes.
-
-### Setting Up Cloud Sync Tasks  
-
-Commented out until we have Internet access over our IPv6 network so we can test. 
-
 ### Using IPv6 with Applications
 Commented out until we have Internet access over our IPv6 network so we can test. 
 
