@@ -10,6 +10,6 @@ Follow the principle of least privilege (PoLP) and assign the lowest permissions
 See [Security Recommendations]({{< relref "Security.md" >}}) for more information.
 
 After adding the admin user account and group privileges, login to confirm UI access then disable the root and/or default administrator user password(s).
-Go to **Credentials > Local Users**, click on the user, and select **Edit**.
+Go to **Credentials > Users**, click on the user, and select **Edit**.
 Click the **Disable Password** toggle to disable the password, then click **Save**.
 {{< /hint >}}

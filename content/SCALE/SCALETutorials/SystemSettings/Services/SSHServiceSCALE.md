@@ -59,7 +59,7 @@ Go to **System > Services**, find the **SSH** entry, and click the <i class="mat
 
 Select **Allow Password Authentication**.
 
-Go to **Credentials > Local Users**. Click anywhere on the row of the user you want to access SSH to expand the user entry, then click **Edit** to open the **Edit User** configuration screen. Make sure that **SSH password login enabled** is selected. See [Managing Users]({{< relref "managelocalusersscale.md" >}}) for more information.
+Go to **Credentials > Users**. Click anywhere on the row of the user you want to access SSH to expand the user entry, then click **Edit** to open the **Edit User** configuration screen. Make sure that **SSH password login enabled** is selected. See [Managing Users]({{< relref "managelocalusersscale.md" >}}) for more information.
 
 {{< hint type=danger title="Security Concern" >}}
 SSH with root is a security vulnerability. It allows users to fully control the NAS remotely with a terminal instead of providing SFTP transfer access.
