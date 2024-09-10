@@ -78,7 +78,6 @@ This procedure covers adding a public SSH key to the admin account on the TrueNA
 If you need to generate a new SSH key pair, see [Generating SSH Keypairs](#generating-ssh-keypairs).
 
 If the remote NAS is not a TrueNAS system, refer to the documentation for that system, and find their instructions on adding a public SSH key.
-{{< /expand >}}
 
 ## Generating SSH Keypairs
 TrueNAS generates and stores [RSA-encrypted](https://tools.ietf.org/html/rfc8017) SSH public and private key pairs on the **SSH Keypairs** widget found on the **Credentials > Backup Credentials** screen.
