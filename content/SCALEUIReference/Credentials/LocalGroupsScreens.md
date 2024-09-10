@@ -1,6 +1,6 @@
 ---
-title: "Local Groups Screens"
-description: "Provides information on the Local Groups screens and settings."
+title: "Groups Screens"
+description: "Provides information on the Groups screens and settings."
 weight: 20
 tags:
  - groups
@@ -8,14 +8,14 @@ tags:
 
 ## Groups Screen
 
-The **Credentials > Local Groups** screen displays a list of groups configured on the screen. By default, built-in groups are hidden until you make them visible.
+The **Credentials > Groups** screen displays a list of groups configured on the screen. By default, built-in groups are hidden until you make them visible.
 
-{{< trueimage src="/images/SCALE/Credentials/GroupsListedSCALE.png" alt="Local Groups Screen" id="Local Groups Screen" >}}
+{{< trueimage src="/images/SCALE/Credentials/GroupsListedSCALE.png" alt="Groups Screen" id="Groups Screen" >}}
 
 To see built-in groups, click the **Show Built-In Groups** toggle.
 The toggle turns blue and all built-in groups display. Click the **Show Built-In Groups** toggle again to show only non-built-in groups on the system.
 
-The **Credentials > Local Groups** screen displays the **No groups** screen if no groups other than built-in groups are configured on the system.
+The **Credentials > Groups** screen displays the **No groups** screen if no groups other than built-in groups are configured on the system.
 
 **Add** opens the **[Add Group](#add-group-screen)** configuration screen.
 
@@ -98,7 +98,7 @@ The new and edit privilege screens show the same settings but not all settings a
 | Setting | Description |
 |---------|-------------|
 | **Name** | Enter a name for the new privilege. Names can include the dash (-) or underscore(_) special characters, and upper and lowercase alphanumeric characters. Enter a descriptive name for the privilege.  |
-| **Local Groups** | Click in the field to see a dropdown list of available groups to apply the privilege to. ***Do not*** add the predefined administrator or builtin groups! Only select new user groups created if you experiment with this function. |
+| **Groups** | Click in the field to see a dropdown list of available groups to apply the privilege to. ***Do not*** add the predefined administrator or builtin groups! Only select new user groups created if you experiment with this function. |
 | **Directory Services Groups** | Click in the field to see a dropdown list of available groups to apply the privilege to. |
 | **Roles** | Click in the field to see a dropdown list of all available roles available to assign to the new privilege. |
 | **Web Shell Access** | Select to allow a user assign the new privilege access to the **System > Shell** screen.  |

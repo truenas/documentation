@@ -138,8 +138,8 @@ Each audit message JSON object includes:
 ## Accessing Auditing Screens
 Users have access to audit information from three locations in the SCALE UI:
 
-* **Credentials > Local Users** details screen through the **Audit Logs** option
-  * On the **Local Users** page, click **Audit Logs** on the **Users** details screen to open the **Audit** log screen with the **Search** field filtered to show events (authentication, changes to existing users, creating new users, etc.) specific to that user.  For more details see [Audit Screen](#audit-screen).
+* **Credentials > Users** details screen through the **Audit Logs** option
+  * On the **Users** page, click **Audit Logs** on the **Users** details screen to open the **Audit** log screen with the **Search** field filtered to show events (authentication, changes to existing users, creating new users, etc.) specific to that user.  For more details see [Audit Screen](#audit-screen).
 * **Shares > Window (SMB) Shares** details screen through the share edit **Audit Logging** option
   * On the **Sharing** page, click the <span class="material-icons">edit</span> **Edit** icon on the desired **SMB share** row where **Enable**, **watch** and **ignore** settings are available. For details see [Configuring SMB Auditing](#configuring-smb-auditing).
 * **System > Services > SMB** to view **SMB** audit logs

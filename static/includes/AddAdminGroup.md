@@ -1,6 +1,6 @@
 &NewLine;
 
-Go to **Credentials > Local Groups** and select the row for primary group of the admin user to expand it.
+Go to **Credentials > Groups** and select the row for primary group of the admin user to expand it.
 Click <i class="material-icons" aria-hidden="true" title="Edit">edit</i> **Edit**.
 
 {{< trueimage src="/images/SCALE/Credentials/EditGroup.png" alt="Edit Group Screen" id="Edit Group Screen" >}}

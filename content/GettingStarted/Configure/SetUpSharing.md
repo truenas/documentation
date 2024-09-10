@@ -31,14 +31,14 @@ Regardless of what type of share you create, you need to create the user and dat
 
 Share users are those with permissions to access the share. You can create the user before you create the share or after creating the share. Administrators can provision share users using a directory server such as Active Directory or LDAP.
 
-To add non-SMB share users or edit users, go to **Credentials > Local Users** to add or edit the user(s).
+To add non-SMB share users or edit users, go to **Credentials > Users** to add or edit the user(s).
 Click **Add** to create a new or as many new user accounts as you need.
 
 Enter the values in each required field, verify **Samba Authentication** is selected for SMB share users, then click **Save**.
 For more information on the fields and adding users, see [Creating User Accounts]({{< relref "ManageLocalUsersScale.md" >}}).
 
-By default, all new local users are members of a built-in group called **builtin_users**.
-You can use a group to grant access to all local users on the server or add more groups to fine-tune permissions for large numbers of users.
+By default, all new users are members of a built-in group called **builtin_users**.
+You can use a group to grant access to all users on the server or add more groups to fine-tune permissions for large numbers of users.
 This approach is particularly useful for high availability (HA) configurations and efficient data sharing across multiple users.
 
 {{< expand "Why not just allow anonymous access to the share?" "v" >}}
