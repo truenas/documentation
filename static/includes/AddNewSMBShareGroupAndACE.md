@@ -2,9 +2,9 @@
 
 To change the permission level for some share users, add a new group, reassign the user(s) to the new group, then modify the share dataset ACL to include this new group and the desired permissions.
 
-1. Go to **Local Groups**, click **Add** and create the new group.
+1. Go to **Groups**, click **Add** and create the new group.
 
-2. Go **Local Users**, select a user, click **Edit**, remove the **builtin-user** entry from **Auxiliary Groups** and add the new group.
+2. Go to **Users**, select a user, click **Edit**, remove the **builtin-user** entry from **Auxiliary Groups** and add the new group.
    Click **Save**. Repeat this step for each user or change the group assignment in the directory server to the new group.
 
 3. Edit the filesystem (dataset) permissions. Use one of the methods to access the **Edit ACL** screen for the share dataset.

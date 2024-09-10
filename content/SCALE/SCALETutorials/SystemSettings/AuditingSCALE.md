@@ -139,8 +139,9 @@ Each audit message JSON object includes:
 ## Accessing Auditing Screens
 Users have access to audit information from three locations in the SCALE UI:
 
-* **Credentials > Local Users** details screen through the **Audit Logs** option
-  * On the **Local Users** screen, click **Audit Logs** on the **Users** details screen to open the **Audit** log screen with the **Search** field filtered to show events (authentication, changes to existing users, creating new users, etc.) specific to that user.  For more details see [Audit Screen](#audit-screen).
+
+* **Credentials > Users** details screen through the **Audit Logs** option
+  * On the **Users** screen, click **Audit Logs** on the **Users** details screen to open the **Audit** log screen with the **Search** field filtered to show events (authentication, changes to existing users, creating new users, etc.) specific to that user.  For more details see [Audit Screen](#audit-screen).
 * **Shares > Window (SMB) Shares** details screen through the share edit **Audit Logging** option
   * On the **Sharing** screen, click the <span class="material-icons">edit</span> **Edit** icon on the desired **SMB share** row where **Enable**, **watch** and **ignore** settings are available. For details see [Configuring SMB Auditing](#configuring-smb-auditing).
 * **System > Services > SMB** to view **SMB** audit logs
@@ -188,7 +189,9 @@ To configure Audit storage and retention settings, click **Audit Settings** on t
 {{< include file="/static/includes/ConfigureSystemAuditSCALE.md" >}}
 
 For example, to change the percent usage **warning** threshold for the storage allocated to the Audit database:
-1. Navigate to **System > Advanced Settings** screen.
+
+1. Navigate to **System > Advanced** screen.
+
 2. Select the **Configure** button on the **Audit** widget.
 3. In the Audit configuration popup, change the value in the **Quota Fill Warning** field to the desired percentage.
 4. Select the **Save** button to effect the change.

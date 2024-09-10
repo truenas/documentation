@@ -30,7 +30,7 @@ You can also configure email addresses for additional user accounts as needed.
 
 Before configuring anything else, set the local administrator email address.
 {{< expand "Click here for instructions" "v" >}}
-Go to **Credentials > Local Users**, click on the admin user row to expand it. Select **Edit** to display the **Edit User** configuration screen.
+Go to **Credentials > Users**, click on the admin user row to expand it. Select **Edit** to display the **Edit User** configuration screen.
 In the **Email** field, enter a remote email address that the system administrator regularly monitors (like *admin@example.com*) and click **Save**.
 {{< /expand >}}
 

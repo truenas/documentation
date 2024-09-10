@@ -107,7 +107,7 @@ After setting up the truenas_admin user from one of the scenarios documented abo
 
 {{< trueimage src="/images/SCALE/Login/LoginScreenSCALE.png" alt="TrueNAS SCALE Login Screen" id="TrueNAS SCALE Login Screen" >}}
 
-To modify user credentials, go to **Credentials > Local Users**, click anywhere on the user row, then click **Edit**.
+To modify user credentials, go to **Credentials > Users**, click anywhere on the user row, then click **Edit**.
 For more information, see [Managing Users]({{< relref "ManageLocalUsersScale.md" >}}).
 
 ### Logging In as Root
@@ -125,7 +125,7 @@ One allows you to log in as root or you can create the administration account.
 
 Select either the **Administrative user** or **Root user (not recommended)** option, then enter the password to use with that user.
 
-If you choose **Root user (not recommended)** as the TrueNAS authentication method, go to the **Credentials > Local Users** screen and [create the admin account]({{< relref "ManageLocalUsersSCALE.md" >}}) immediately after you enter the UI.
+If you choose **Root user (not recommended)** as the TrueNAS authentication method, go to the **Credentials > Users** screen and [create the admin account]({{< relref "ManageLocalUsersSCALE.md" >}}) immediately after you enter the UI.
 Enter the admin user name and password, make sure the password is enabled, and click **Save**.
 After setting up the admin user, click on the root user and then click **Edit**. Disable the root user password and then click **Save**.
 This brings the system into compliance with FIPS system security-hardening standards.
