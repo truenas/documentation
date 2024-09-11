@@ -30,7 +30,7 @@ tags:
 
 {{< include file="/static/includes/AdvancedSettingsWarningSCALE.md" >}}
 
-The **Advanced** settings screen provides configuration options for the console, syslog, audit, kernel, sysctl, storage (system dataset pool), replication, WebSocket sessions, cron jobs, init/shutdown scripts, allowed IP addresses, isolated GPU device(s), self-encrypting drives, and global two-factor authentication.
+The **Advanced Settings** screen provides configuration options for the console, syslog, audit, kernel, sysctl, storage (system dataset pool), replication, WebSocket sessions, cron jobs, init/shutdown scripts, allowed IP addresses, isolated GPU device(s), self-encrypting drives, and global two-factor authentication.
 
 **Save Debug** saves a system debug file to the local machine.
 

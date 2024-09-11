@@ -50,7 +50,7 @@ This section provides keyboard navigation shortcuts you can use in Shell.
 
 ## Changing the Default Shell
 
-[zsh](https://www.zsh.org/) is the default shell, but you can change this by going to **Credentials > Local Users**.
+[zsh](https://www.zsh.org/) is the default shell, but you can change this by going to **Credentials > Users**.
 Select the admin or other user to expand it.
 Click **Edit** to open the **Edit User** screen.
 Scroll down to **Shell** and select a different option from the dropdown list.

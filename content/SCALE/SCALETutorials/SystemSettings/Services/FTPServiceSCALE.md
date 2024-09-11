@@ -27,7 +27,7 @@ FTP requires a new dataset and a local user account.
 
 Go to **Storage** to add a new [dataset]({{< relref "DatasetsSCALE.md" >}}) to use as storage for files.
 
-Next, add a new user. Go to **Credentials > Local Users**  and click **Add** to create a local user on the TrueNAS.
+Next, add a new user. Go to **Credentials > Users**  and click **Add** to create a local user on the TrueNAS.
 
 Assign a user name and password, and link the newly created FTP dataset as the user home directory.
 You can do this for every user or create a global account for FTP (for example, *OurOrgFTPaccnt*). Note, however, that you cannot create multiple accounts utilizing the same dataset as your home directory.
@@ -61,7 +61,7 @@ FTP requires a new dataset and a local user account.
 
 Go to **Storage** and add a new [dataset]]({{< relref "DatasetsSCALE.md" >}}).
 
-Next, add a new user. Go to **Credentials > Local Users**  and click **Add** to create a local user on the TrueNAS.
+Next, add a new user. Go to **Credentials > Users**  and click **Add** to create a local user on the TrueNAS.
 
 Assign a user name and password, and link the newly created FTP dataset as the user home directory. Then, add *ftp* to the **Auxiliary Groups** field and click *Save*.
 

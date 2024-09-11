@@ -19,7 +19,7 @@ When the network uses a directory service, import the existing account informati
 
 Using [Active Directory]({{< relref "/SCALE/SCALEUIReference/Credentials/DirectoryServices/_index.md" >}}) requires setting Windows user passwords in Windows.
 
-To see user accounts, go to **Credentials > Local Users**.
+To see user accounts, go to **Credentials > Users**.
 
 {{< trueimage src="/images/SCALE/Credentials/AllUsersScreenSCALE.png" alt="Local User non-Built-in Accounts" id="Local User non-Built-in Accounts" >}}
 
@@ -137,6 +137,6 @@ Click **Save**.
 
 ## Editing User Accounts
 
-To edit an existing user account, go to **Credentials > Local Users**.
+To edit an existing user account, go to **Credentials > Users**.
 Click anywhere on the user row to expand the user entry, then click **Edit** to open the **Edit User** configuration screen.
 See [Local User Screens]({{< relref "LocalUsersScreensScale.md" >}}) for details on all settings.

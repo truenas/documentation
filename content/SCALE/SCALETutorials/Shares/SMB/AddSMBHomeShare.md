@@ -27,17 +27,17 @@ Other options for configuring individual user directories include:
 * Create a single SMB share and configure the ACL so that users can create individual directories on the share that inherit write access for the user and grant read access the administrator.
 * Create an SMB share using the **Private SMB datasets and shares** preset that can create per-user datasets under the umbrella of a single share when users access the share.
 
-Creating an SMB home share requires configuring the system storage and provisioning local users or joining Active Directory.
+Creating an SMB home share requires configuring the system storage and provisioning users or joining Active Directory.
 
 ### Adding Local Share Users
-Go to **Credentials > Local Users** and click **Add**.
+Go to **Credentials > Users** and click **Add**.
 Create a new user name and password.
 
 By default, the user **Home Directory** title comes from the user account name and is added as a new subdirectory of **Home_Share_Dataset**.
 
 ![AddUserDirPermsAuthSettings](/images/SCALE/Credentials/AddUserDirPermsAuthSettings.png "Add User Directories, Permissions and Authentication Settings")
 
-If existing users require access to the home share, go to **Credentials > Local Users** and edit an existing account.
+If existing users require access to the home share, go to **Credentials > Users** and edit an existing account.
 
 Adjust the user home directory to the appropriate dataset and give it a name to create its own directory.
 
