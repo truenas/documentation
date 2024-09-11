@@ -126,13 +126,13 @@ For more details on feature flags, see [OpenZFS Feature Flags](https://openzfs.g
 **September 11, 2024**
 
 iXsystems is pleased to release TrueNAS SCALE 24.04.2.1!
-This is a maintenance release and includes refinement and fixes for issues discovered after the 24.04.2 release.
+This is a small maintenance release and includes refinement and fixes for issues discovered after the 24.04.2 release.
 
 Notable changes:
 
-* Adds proactive support and auto-alerts for unscheduled failovers, reboots, and unexpected HA issues.
-  If licensed for HA and such an event occurs a Support ticket is generated with the corresponding support license notated [NAS-130591](https://ixsystems.atlassian.net/browse/NAS-130591).
-* Adds 23.12.2 version of openseachest to fix build issues in the 24.04.2.1 hot fix [NAS-130977](https://ixsystems.atlassian.net/browse/NAS-130977).
+* Adds proactive support and auto-alerts for unscheduled failovers, reboots, and unexpected High Availability (HA) issues.
+  When licensed for HA and the Proactive Support feature is configured, failover events generate a Support ticket with the corresponding support license notated [NAS-130591](https://ixsystems.atlassian.net/browse/NAS-130591).
+* Fix bug with case preservation when MacOS clients access an SMB share [NAS-130743](https://ixsystems.atlassian.net/browse/NAS-130743).
 
 Please use the 24.04.2 Jira filter links below to see the full changelog and known issues related to the 24.04.2 and 24.04.2.1 releases.
 
