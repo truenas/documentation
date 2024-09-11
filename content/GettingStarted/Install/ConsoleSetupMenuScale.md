@@ -29,7 +29,7 @@ For network configuration options **1**, **2**, and **3**, we recommend using th
 
 * **1) Configure network interfaces**
 
-  Use this to configure the primary network interface with a static IP.
+  Use this to configure the primary network interface with a static IP address, also known as an 'alias' IP address.
   This is for switching away from the DHCP-assigned IP address TrueNAS provides when the system boots after installing SCALE.
   Also, use this to set up other network interfaces or to add alias IP addresses for the primary interface.
 
