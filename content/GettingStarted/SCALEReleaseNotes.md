@@ -104,7 +104,7 @@ Click the component version number to see the latest release notes for that comp
 
 ### OpenZFS Feature Flags
 
-24.04.2 (Dragonfish) has the same [OpenZFS major version](https://www.truenas.com/docs/scale/23.10/gettingstarted/scalereleasenotes/#new-openzfs-feature-flags) as 23.10.1 (Cobia).
+24.04.2.1 (Dragonfish) has the same [OpenZFS major version](https://www.truenas.com/docs/scale/23.10/gettingstarted/scalereleasenotes/#new-openzfs-feature-flags) as 23.10.1 (Cobia).
 
 The items listed here represent new feature flags implemented since the previous update to the built-in OpenZFS version (2.1.11).
 
@@ -120,6 +120,21 @@ The items listed here represent new feature flags implemented since the previous
 {{< /truetable >}}
 
 For more details on feature flags, see [OpenZFS Feature Flags](https://openzfs.github.io/openzfs-docs/Basic%20Concepts/Feature%20Flags.html) and [OpenZFS zpool-feature.7](https://openzfs.github.io/openzfs-docs/man/7/zpool-features.7.html).
+
+## 24.04.2.1 Changelog
+
+**September 11, 2024**
+
+iXsystems is pleased to release TrueNAS SCALE 24.04.2.1!
+This is a small maintenance release and includes refinement and fixes for issues discovered after the 24.04.2 release.
+
+Notable changes:
+
+* Adds proactive support and auto-alerts for unscheduled failovers, reboots, and unexpected High Availability (HA) issues.
+  When licensed for HA and the Proactive Support feature is configured, failover events generate a Support ticket with the corresponding support license notated [NAS-130591](https://ixsystems.atlassian.net/browse/NAS-130591).
+* Fix bug with case preservation when MacOS clients access an SMB share [NAS-130743](https://ixsystems.atlassian.net/browse/NAS-130743).
+
+Please use the 24.04.2 Jira filter links below to see the full changelog and known issues related to the 24.04.2 and 24.04.2.1 releases.
 
 ## 24.04.2 Changelog
 
