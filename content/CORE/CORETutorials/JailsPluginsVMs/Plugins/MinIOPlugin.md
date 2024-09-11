@@ -13,7 +13,7 @@ The **Minio** official plugin from the iXsystems catalog is a High-performance o
 S3 is an object storage protocol used by many major cloud providers, including Amazon Web Services™. You can view these files with a web browser. S3 is the de facto standard for cloud-based storage. Organizations or online application developers can use TrueNAS with the **Minio** plugin to manage S3 storage. This can replace or archive expensive cloud storage.
 {{< /expand >}}
 
-This tutorial describes how to install the **Minio** plugin on TrueNAS SCALE.
+This tutorial describes how to install the **Minio** plugin on TrueNAS.
 
 {{< expand "S3 Service Deprecation and Migration" "v" >}}
 {{< include file="/static/includes/S3Deprecation.md" >}}

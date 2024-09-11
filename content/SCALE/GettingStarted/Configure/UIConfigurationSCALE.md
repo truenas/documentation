@@ -22,7 +22,7 @@ iXsystems TrueNAS Enterprise customers should contact iXsystems Support after th
 {{< /expand >}}
 {{< /enterprise >}}
 
-TrueNAS SCALE users should follow the instructions provided below to complete the initial setup and configuration of their systems.
+TrueNAS users should follow the instructions provided below to complete the initial setup and configuration of their systems.
 
 Use the information mentioned in the [installation preparation instructions]({{< relref "/SCALE/GettingStarted/Install/_index.md" >}}) article for your SCALE installation type (Enterprise, non-Enterprise, or home use) to configure your network, SMTP, or directory service settings.
 
@@ -34,11 +34,11 @@ After [logging into SCALE]({{< relref "FirstTimeLogin.md#logging-into-the-scale-
 
 {{< enterprise >}}
 ### Applying Enterprise Licenses
-TrueNAS SCALE Enterprise customers should contact iXsystems support to obtain license information for their TrueNAS system.
+TrueNAS Enterprise customers should contact iXsystems support to obtain license information for their TrueNAS system.
 To apply the license information, go to the **System > General Settings** screen and use the **[Update License]({{< relref "AddLicenseProactiveSupport.md" >}})** option on the **Support** widget (system information card).
 
 ### Setting up Proactive Support
-TrueNAS SCALE Enterprise customers with Silver or Gold Coverage support contracts can configure proactive support.
+TrueNAS Enterprise customers with Silver or Gold Coverage support contracts can configure proactive support.
 
 Customers with appropriate support contracts can configure **[Proactive Support]({{< relref "AddLicenseProactiveSupport.md" >}})** after they apply their system license, and after acknowledging and signing the End User License Agreement (EULA).
 
@@ -78,7 +78,7 @@ You can configure a network interface with a static IP or add an alias IP addres
 For more information on when to use an alias or a static IP address, see [Managing Interfaces]({{< relref "/SCALE/SCALETutorials/Network/Interfaces/_index.md" >}}).
 
 ## Setting Up Storage
-TrueNAS SCALE requires at least one storage pool.
+TrueNAS requires at least one storage pool.
 We recommend you create the required pool and plan the rest of your storage needs before adding sharing, container applications, virtual machines, or data storage.
 When planning your data storage, consider the type of data sharing you want to do, any container applications you might want to deploy, and how you want to organize stored data.
 
@@ -196,7 +196,7 @@ The **Alert Settings** screen includes access to the Enterprise HA setting optio
 {{< /expand >}}
 
 ## Setting Up Directory Services
-TrueNAS SCALE allows you to configure an Active Directory or LDAP server to handle authentication and authorization services, domain, and other account settings.
+TrueNAS allows you to configure an Active Directory or LDAP server to handle authentication and authorization services, domain, and other account settings.
 SCALE allows configuring either directory server but not both.
 
 {{< hint type=warning >}}
@@ -215,7 +215,7 @@ Non-Enterprise users can find support for configuring directory services in the 
 
 ## Using Enclosure Management
 {{< enterprise >}}
-For TrueNAS Enterprise customers with compatible hardware, the TrueNAS SCALE main **Dashboard** displays an image of the TrueNAS system server on the **System Information** widget.
+For TrueNAS Enterprise customers with compatible hardware, the TrueNAS main **Dashboard** displays an image of the TrueNAS system server on the **System Information** widget.
 Click on the image to open the **[View Enclosure]({{< relref "EnclosureScreensSCALE" >}})** screen, or select the **System > Enclosure** option on the main menu navigation panel.
 
 The **View Enclosure** screen provides details on the system disks, the pools and VDEVs disks are in, the hardware details, and the disk status.
@@ -223,7 +223,7 @@ Click on a drive to view the disk details.
 If the TrueNAS system has an expansion shelf, the **Enclosure** screen also displays an image of the expansion shelf populated with disks.
 {{< /enterprise >}}
 
-If using SCALE on servers not provided by TrueNAS, the **System Information** widget on the **Dashboard** displays the TrueNAS SCALE logo, and the **System > Enclosure** option does not exist on the menu navigation panel.
+If using TrueNAS on hardware without enclosure management support, the **System Information** widget on the **Dashboard** displays the TrueNAS logo, and the **System > Enclosure** option does not exist on the menu navigation panel.
 
 ## Using Applications in SCALE
 SCALE provides a list of applications you can deploy on the **Apps > Discover** screen.
@@ -233,7 +233,7 @@ See the [Apps tutorials]({{< relref "/content/TruenasApps/_index.md" >}}) for pr
 ## Updating SCALE
 You can update your system with an <file>iso</file> file using the system administration console or an update file installed through the SCALE UI.
 
-There are a few ways to find available updates for your instance of TrueNAS SCALE:
+There are a few ways to find available updates for your instance of TrueNAS:
 
 * The main **Dashboard > System Information** widget alerts you when a SCALE update is available to download and install.
   Click the update option to open the **System > Updates** screen.

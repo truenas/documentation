@@ -34,7 +34,7 @@ If the app requires setting up a crypto wallet, include this information.
 Example of possible points to include in this section: (do not include the three backticks in the article)
 ```
 ```
-Prepare TrueNAS SCALE before installing the app by: 
+Prepare TrueNAS before installing the app by: 
    
 * [Creating datasets](#creating-the-storj-datasets-on-truenas-scale) for application storage. 
   Create a parent dataset, such as *appName*, and then the storage datasets (***config*** and ***data***) under it.

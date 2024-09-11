@@ -13,7 +13,7 @@ tags:
 We welcome community user contributions, issue reporting, and suggestions for new features and apps to create the best possible TrueNAS app user experience!
 
 ## App Updates and Releases
-Application maintenance is independent of TrueNAS SCALE version release cycles.
+Application maintenance is independent of TrueNAS version release cycles.
 App version information, features, configuration options, and installation behavior during access might vary from those in documented tutorials.
 
 SCALE apps show the **Update** button and a badge on any deployed application instance on the **Installed** application screen when a new version is available.

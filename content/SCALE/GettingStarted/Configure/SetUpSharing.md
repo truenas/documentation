@@ -1,6 +1,6 @@
 ---
 title: "Setting Up Data Sharing"
-description: "Provides general information on setting up basic data sharing on TrueNAS SCALE."
+description: "Provides general information on setting up basic data sharing on TrueNAS."
 weight: 50
 aliases:
  - /scale/gettingstarted/install/setupsharing/
@@ -19,13 +19,13 @@ There are several sharing solutions available on SCALE, but in this article we d
 
 ## Sharing Data Methods
 
-TrueNAS SCALE provides three types of sharing methods:
+TrueNAS provides three types of sharing methods:
 
 * SMB for Windows shares
 * NFS for Unix-like shares
 * ISCSi block shares
 
-For more information on TrueNAS SCALE shares, see the [Shares]({{< relref "/SCALE/SCALETutorials/Shares/_index.md" >}}) tutorials.
+For more information on TrueNAS shares, see the [Shares]({{< relref "/SCALE/SCALETutorials/Shares/_index.md" >}}) tutorials.
 
 Regardless of what type of share you create, you need to create the user and dataset for the share.
 

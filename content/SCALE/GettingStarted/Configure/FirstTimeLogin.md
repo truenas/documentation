@@ -1,6 +1,6 @@
 ---
-title: "Logging Into SCALE the First Time"
-description: "Describes the web interface, logging in to the TrueNAS SCALE web interface for the first time, changing from root to the admin user, and navigating through the UI."
+title: "Logging In for the First Time"
+description: "Describes the web interface, logging in to the TrueNAS web interface for the first time, changing from root to the admin user, and navigating through the UI."
 weight: 20
 aliases: 
  - /scale/gettingstarted/firsttimelogin/
@@ -13,7 +13,7 @@ keywords:
 - LDAP
 ---
 
-Now that you have installed TrueNAS SCALE or migrated from TrueNAS CORE to SCALE, you can log into the SCALE web user interface (UI) to complete your initial system configuration and begin managing data!
+Now that you have installed TrueNAS, or migrated from an earlier version, you can log into the web user interface (UI) to complete your initial system configuration and begin managing data!
 
 {{< hint type="important" title="Configuring TrueNAS from the Web Interface" >}}
 Use only the web user interface (UI) to make configuration changes to the system.
@@ -24,7 +24,7 @@ After a system restart, changes made in the CLI revert to the original database 
 ## Web Interface Access
 TrueNAS automatically creates several ways to access the UI, but you might need to adjust the default settings for your network environment.
 
-By default, a fresh install of TrueNAS SCALE provides a default address for logging in to the web interface.
+By default, a fresh install of TrueNAS provides a default address for logging in to the web interface.
 To view the web interface IP address or reconfigure web interface access, either connect a monitor and keyboard to your TrueNAS system or connect with IPMI for out-of-band system management.
 
 When powering on a TrueNAS system, the system attempts to connect to a DHCP server from all live interfaces to access the web UI.
@@ -36,8 +36,8 @@ To access the web interface using an IP address, either use the DHCP-assigned IP
 
 {{< enterprise >}}
 SCALE Enterprise (HA) systems have specific network configuration requirements.
-Installing TrueNAS SCALE on High Availability (HA) systems and configuring networking is complicated and should be guided by Enterprise-level support.
-Contact iXsystems Support for assistance whenever attempting to install TrueNAS SCALE on Enterprise HA hardware or configure network settings.
+Installing TrueNAS on High Availability (HA) systems and configuring networking is complicated and should be guided by Enterprise-level support.
+Contact iXsystems Support for assistance whenever attempting to install TrueNAS on Enterprise HA hardware or configure network settings.
 
 Refer to the [Preparing for SCALE UI Configuration (Enterprise)]({{< relref "InstallPrepEnterprise.md" >}}) and [Installing SCALE Enterprise (HA)]({{< relref "InstallEnterpriseHASCALE.md" >}}) for information on installing HA system and configuring networking.
 {{< expand "Contacting Support" "v" >}}
@@ -105,7 +105,7 @@ If using the CORE **Update** UI option, log into SCALE with the CORE root user c
 ### Logging In as Truenas_Admin
 After setting up the truenas_admin user from one of the scenarios documented above, enter **truenas_admin** and the password to log into SCALE.
 
-{{< trueimage src="/images/SCALE/Login/LoginScreenSCALE.png" alt="TrueNAS SCALE Login Screen" id="TrueNAS SCALE Login Screen" >}}
+{{< trueimage src="/images/SCALE/Login/LoginScreenSCALE.png" alt="TrueNAS Login Screen" id="TrueNAS Login Screen" >}}
 
 To modify user credentials, go to **Credentials > Users**, click anywhere on the user row, then click **Edit**.
 For more information, see [Managing Users]({{< relref "ManageLocalUsersScale.md" >}}).
@@ -158,12 +158,12 @@ After logging in for the first time, the main system **Dashboard** screen displa
 The **Dashboard** shows different system information cards (widgets) with basic information about the installed version, systems component usage, network traffic, and configured pools or storage usage.
 The dashboard includes configurable widgets that include a text-only **Custom** widget and an **Apps** widget you can configure to monitor your installed applications.
 
-{{< trueimage src="/images/SCALE/Dashboard/DashboardMainScreen.png" alt="TrueNAS SCALE Dashboard" id="TrueNAS SCALE Dashboard" >}}
+{{< trueimage src="/images/SCALE/Dashboard/DashboardMainScreen.png" alt="TrueNAS Dashboard" id="TrueNAS Dashboard" >}}
 
 SCALE Enterprise users with an iXsystems-provided TrueNAS server also see an image of the system in the **System Information** widget.
 Click on the system image to open the **System > [View Enclosure]({{< relref "EnclosureScreensSCALE.md" >}})** screen.
 
-The **Dashboard** for non-Enterprise systems displays the TrueNAS SCALE logo on the **System Information** widget.
+The **Dashboard** for non-Enterprise systems displays the TrueNAS logo on the **System Information** widget.
 
 To [customize the dashboard ]({{< relref "/SCALE/SCALETutorials/Dashboard/_index.md" >}}), click **Configure** to put the **Dashboard** into configuration mode.
 Use the drag bar to move widget groups to new positions on the screen.
@@ -185,4 +185,4 @@ To monitor and manage all active sessions, go to **System > Advanced Settings** 
 {{< include file="/static/includes/SessionsSettingsWidget.md" >}}
 
 ## Next Steps
-With access to the TrueNAS SCALE web interface and all the management options, you can begin [configuring your system]({{< relref "UIConfigurationSCALE.md" >}})!
+With access to the TrueNAS web interface and all the management options, you can begin [configuring your system]({{< relref "UIConfigurationSCALE.md" >}})!

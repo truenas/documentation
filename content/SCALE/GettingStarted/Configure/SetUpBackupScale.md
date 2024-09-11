@@ -97,7 +97,7 @@ To create the TrueCloud backup task using Storj:
    Click **Save**.
 {{< /expand >}}
 
-See [Adding Cloud Credentials]({{< relref "/scale/scaletutorials/credentials/backupcredentials/addcloudcredentials.md" >}}) for information on connecting TrueNAS SCALE to other cloud storage providers.
+See [Adding Cloud Credentials]({{< relref "/scale/scaletutorials/credentials/backupcredentials/addcloudcredentials.md" >}}) for information on connecting TrueNAS to other cloud storage providers.
 
 ### Using Replication
 Replication is the process of taking a moment-in-time snapshot of data and then copying that snapshot to another location.

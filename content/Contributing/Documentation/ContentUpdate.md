@@ -72,7 +72,7 @@ For example, make only content changes that apply to the advanced scheduler in t
 ##  Master and Version Branch Differences
 TrueNAS documentation uses branches to organize content related to specific software releases and updates, for example, the ***24.04*** and ***23.10*** SCALE branches of the Documentation Hub. 
 
-+ Content changes in the ***master*** branch result in changes to the TrueNAS SCALE Nightly Development Documentation content.
++ Content changes in the ***master*** branch result in changes to the TrueNAS Nightly Development Documentation content.
   To make changes in the ***master*** branch, *fork* this branch to create a simple copy of the main repository.
   Make changes in your forked *master* as the *base* for your changes.
   Do not make changes directly to the TrueNAS **master** branch of the Documentation Hub repository.

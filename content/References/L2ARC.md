@@ -59,7 +59,7 @@ When successful, the output reads: `vfs.zfs.l2arc.rebuild_enabled: 0 -> 1`
 {{< /expand >}}
 {{< /tab >}}
 {{< tab "SCALE" >}}
-TrueNAS SCALE enables persistent L2ARC by default. We do not recommend users disable it.
+TrueNAS enables persistent L2ARC by default. We do not recommend users disable it.
 {{< /tab >}}
 {{< /tabs >}}
 

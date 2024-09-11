@@ -1,12 +1,12 @@
 ---
-title: "SCALE API Reference"
-description: "Instructions to access built-in TrueNAS SCALE API documentation and links to static copies of the API documentation."
+title: "API Reference"
+description: "Instructions to access built-in TrueNAS API documentation and links to static copies of the API documentation."
 geekdocCollapseSection: true
 weight: 50
 related: false
 ---
 
-You can access TrueNAS SCALE API documentation in the web interface by clicking **<i class="material-icons" aria-hidden="true">account_circle</i> > API Keys > API Docs**.
+You can access TrueNAS API documentation in the web interface by clicking **<i class="material-icons" aria-hidden="true">account_circle</i> > API Keys > API Docs**.
 
 ![SCALEapidocs](/images/SCALE/Dashboard/APIKeysScreen.png "API Docs location")
 

@@ -6,5 +6,5 @@ aliases:
  - /scale/scaledeprecatedfeatures/
 ---
 
-This article tracks any TrueNAS SCALE features that are being deprecated in the latest nightly development versions.
+This article tracks any TrueNAS features that are being deprecated in the latest nightly development versions.
 Items are added and possibly removed as SCALE development continues to evolve.

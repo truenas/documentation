@@ -1,6 +1,6 @@
 ---
 title: "Getting Started"
-description: "This guide provides step-by-step tutorials to install and configure SCALE. An additional guide shows how to apply and configure SCALE Enterprise licensed systems."
+description: "This guide provides step-by-step tutorials to install and configure TrueNAS. An additional guide shows how to apply and configure TrueNAS Enterprise licensed systems."
 geekdocCollapseSection: true
 weight: 20
 cascade:
@@ -11,16 +11,16 @@ aliases:
  - /hub/gettingstarted/intro/
 ---
 
-This section guides you through installing TrueNAS SCALE, or migrating from CORE to SCALE, and using the UI to access and configure TrueNAS SCALE.
+This section guides you through installing TrueNAS, or migrating from a FreeBSD-based TrueNAS version to a Linux-based TrueNAS version, and using the UI to access and configure TrueNAS.
 Configuration includes setting up initial storage, backup, and data sharing, and expanding TrueNAS with different application solutions.
 
 {{< hint type=tip >}}
-The [SCALE Evaluation Guide](https://www.truenas.com/evaluating-truenas-scale/) also provides video tutorials for installing and exploring the full potential of TrueNAS SCALE.
+The [Evaluation Guide](https://www.truenas.com/evaluating-truenas-scale/) also provides video tutorials for installing and exploring the full potential of TrueNAS.
 {{< /hint >}}
 
 <div class="noprint">
 
-## TrueNAS SCALE Getting Started Contents
+## Contents
 
 {{< children depth="1" description="true" >}}
 
@@ -30,22 +30,22 @@ The [SCALE Evaluation Guide](https://www.truenas.com/evaluating-truenas-scale/) 
 This Table of Contents is a specific article arrangement that guides deploying TrueNAS Enterprise hardware purchased from iXsystems, inc.
 
 * [User Agreements]({{< relref "/SCALE/GettingStarted/UserAgreements/_index.md" >}})
-  * [TrueNAS SCALE EULA]({{< relref "SCALEEULA.md" >}})
+  * [TrueNAS EULA]({{< relref "SCALEEULA.md" >}})
   * [Software Development Life Cycle]({{< relref "/SCALE/GettingStarted/UserAgreements/SoftwareDevelopmentLifeCycleSCALE.md" >}})
   * [TrueNAS Data Collection Statement]({{< relref "/SCALE/GettingStarted/UserAgreements/DataCollectionStatement.md" >}})
 * [Installation Instructions]({{< relref "/SCALE/GettingStarted/Install/_index.md" >}})
-  * [Preparing for SCALE UI Configuration (Enterprise)]({{< relref "InstallPrepEnterprise.md" >}})
-  * [Installing SCALE]({{< relref "InstallingSCALE.md" >}})
+  * [Preparing for UI Configuration (Enterprise)]({{< relref "InstallPrepEnterprise.md" >}})
+  * [Installing]({{< relref "InstallingSCALE.md" >}})
   * [Using the Console Setup Menu]({{< relref "ConsoleSetupMenuSCALE.md" >}})
 * [Migrating Instructions]({{< relref "/SCALE/GettingStarted/Migrate/_index.md" >}})
   * [Migrating from TrueNAS CORE]({{< relref "/MigratingFromCORE.md" >}})
 * [Configuration Instructions]({{< relref "/SCALE/GettingStarted/Configure/_index.md" >}})
   * [First Time Login]({{< relref "FirstTimeLogin.md" >}})
-  * [Configuring SCALE Using the UI]({{< relref "UIConfigurationSCALE.md" >}})
+  * [Configuring using the UI]({{< relref "UIConfigurationSCALE.md" >}})
   * [Setting Up Storage]({{< relref "SetUpStorageSCALE.md" >}})
   * [Setting Up Data Sharing]({{< relref "SetUpSharing.md" >}})
   * [Backing Up TrueNAS]({{< relref "SetUpBackupSCALE.md" >}})
-  * [Configuring Virtualization and Apps in TrueNAS SCALE]({{< relref "VMandAppConfigSCALE.md" >}})
+  * [Configuring Virtualization and Apps]({{< relref "VMandAppConfigSCALE.md" >}})
 {{< /enterprise >}}
 
 </div>

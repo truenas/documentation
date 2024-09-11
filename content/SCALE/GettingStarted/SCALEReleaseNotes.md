@@ -42,7 +42,7 @@ Coming soon
 
 {{< include file="/static/includes/EarlyReleaseWarning.md" >}}
 
-25.04 (Fangtooth) early releases (BETA and RC) are available from the [TrueNAS SCALE download page](https://www.truenas.com/download-truenas-scale/).
+25.04 (Fangtooth) early releases (BETA and RC) are available from the [TrueNAS download page](https://www.truenas.com/download-truenas-scale/).
 
 For adventurous users that want to experiment with the latest feature development, nightly build [.iso](https://download.truenas.com/truenas-scale-electriceel-nightly/) and [.update](https://update.sys.truenas.net/scale/TrueNAS-SCALE-ElectricEel-Nightlies/) files are available.
 
@@ -50,7 +50,7 @@ More details are available from [Software Releases]({{< relref "/TrueNASUpgrades
 
 ## Upgrade Notes
 
-* TrueNAS SCALE is an appliance built from specific Linux packages.
+* TrueNAS is an appliance built from specific Linux packages.
   Attempting to update SCALE with `apt` or methods other than the SCALE web interface can result in a nonfunctional system.
 
 * All auxiliary parameters can experience changes between TrueNAS major versions due to security and development changes.
@@ -73,7 +73,7 @@ include file="/static/includes/SCALEUpgradePaths.md"
 {{< include file="/_includes/MigrateCOREtoSCALEWarning.md" >}}
 
 {{< enterprise >}}
-Enterprise customers with HA systems should contact iXsystems Support for assistance with migrating to TrueNAS SCALE.
+Enterprise customers with HA systems should contact iXsystems Support for assistance with migrating to TrueNAS.
 {{< expand "iXsystems Support" "v" >}}
 {{< include file="content/_includes/iXsystemsSupportContact.md" >}}
 {{< /expand >}}
@@ -134,5 +134,5 @@ Notable changes:
 
 * 
 
-<a href="https://ixsystems.atlassian.net/issues/?filter=_____" target="_blank">Click here to see the latest information</a> about public issues discovered in 25.04-BETA.1 that are being resolved in a future TrueNAS SCALE release.
+<a href="https://ixsystems.atlassian.net/issues/?filter=_____" target="_blank">Click here to see the latest information</a> about public issues discovered in 25.04-BETA.1 that are being resolved in a future TrueNAS release.
 -->

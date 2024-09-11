@@ -58,7 +58,7 @@ Allocate SSDs into this vdev according to your use case.
 Users can exercise an optional step to avoid data loss from device failure or any performance degradation by arranging the **Log VDev** as a mirror.
 The drives must be the same size.
 As stated earlier in the recommended drive size is 16 GB after over-provisioning.
-See the SLOG over-provisioning guide for [TrueNAS CORE]({{< relref "CORE/CORETutorials/Storage/Pools/SLOGOverprovision.md" >}}) or [TrueNAS SCALE]({{< relref "/SCALE/SCALETutorials/Storage/Disks/SLOGOverprovisionSCALE.md" >}}) over-provisioning procedures.
+See the [SLOG over-provisioning guide]({{< relref "/SCALE/SCALETutorials/Storage/Disks/SLOGOverprovisionSCALE.md" >}}) for more information.
 
 ## SLOG for Asynchronous Writes
 
@@ -68,7 +68,3 @@ To do this go to **Storage > Pools** and for the dataset/ZVOL click <i class="fa
 Set **Sync** to **Always** and click **SAVE**.
 
 ![SyncAlways](/images/CORE/Storage/StoragePoolsDatasetCreateSlogRecommends.png "Enabling a SLOG for Asynchronous Writes")
-
-## Resources
-
-* https://www.truenas.com/docs/core/storage/pools/slogoverprovision/
