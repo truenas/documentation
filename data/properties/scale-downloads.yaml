@@ -75,7 +75,7 @@ majorVersions:
     releases:
       - name: "24.04.2.1"
         link: "https://download.truenas.com/TrueNAS-SCALE-Dragonfish/24.04.2.1/"
-        date: "2024-09-12"
+        date: "2024-09-11"
       - name: "24.04.1.1"
         link: "https://download.truenas.com/TrueNAS-SCALE-Dragonfish/24.04.1.1/"
         date: "2024-05-29"
