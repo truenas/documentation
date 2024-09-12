@@ -15,7 +15,7 @@ keywords:
 - software storage solutions
 ---
 
-Advanced Settings provides configuration options for the console, syslog, kernel, sysctl, replication, cron jobs, init/shutdown scripts, system dataset pool, isolated GPU device(s), self-encrypting drives, system access sessions, allowed IP addresses, audit logging, and global two-factor authentication.
+**Advanced Settings** provides configuration options for the console, syslog, kernel, sysctl, replication, cron jobs, init/shutdown scripts, system dataset pool, isolated GPU device(s), self-encrypting drives, system access sessions, allowed IP addresses, audit logging, and global two-factor authentication.
 
 {{< include file="/static/includes/AdvancedSettingsWarningSCALE.md" >}}
 
@@ -23,14 +23,23 @@ Advanced Settings provides configuration options for the console, syslog, kernel
 
 {{< trueimage src="/images/SCALE/SystemSettings/SystemAdvancedScreen2.png" alt="SCALE Advanced Settings Screen" id="SCALE Advanced Settings Screen" >}}
 
+{{<include file="/static/includes/addcolumnorganizer.md">}}
+
 This article provides information on sysctl, system dataset pool, setting the maximum number of simultaneous replication tasks the system can perform, and managing sessions.
 
-## Managing Allowed IP Addresses
-Use the **System > Advanced** screen **Allowed IP Addresses** configuration screen to restrict access to the TrueNAS SCALE web UI and API.
+## Configuring System Auditing
 
-Entering an IP address limits access to the system to only the address(es) entered here. To allow unrestricted access to all IP addresses, leave this list empty.
+The **Audit** widget displays the current audit storage and retention policy settings. The public-facing API allows querying
+audit records, exporting audit reports, and configuring audit dataset settings and retention periods.
+
+{{< trueimage src="/images/SCALE/SystemSettings/SystemAdvancedAuditWidget.png" alt="Advanced System Setting Audit Widget" id="Advanced System Setting Audit Widget" >}}
+
+{{< include file="/static/includes/ConfigureSystemAuditSCALE.md" >}}
+
+Click **Configure** to open the **Audit** configuration screen and [manage storage and retention policies]({{< relref "AuditingSCALE.md#configuring-audit-storage-and-retention-policies" >}})
 
 ## Managing Sysctl Variables
+
 Use **Add** on the **Sysctl** widget to add a tunable that configures a kernel module parameter at runtime.
 
 ![AdvancedSysctlWidgetNoSysctl](/images/SCALE/SystemSettings/AdvancedSysctlWidget.png "SCALE Advanced Settings Sysctl Widget")
@@ -48,6 +57,7 @@ Enter a description and then select **Enabled**. To disable but not delete the v
 Click **Save**.
 
 ## Managing the System Dataset Pool
+
 **Storage** widget displays the pool configured as the system dataset pool and allows users to select the storage pool they want to hold the system dataset.
 The system dataset stores core files for debugging and keys for encrypted pools.
 It also stores Samba4 metadata, such as the user and group cache and share-level permissions.
@@ -79,13 +89,17 @@ Click **Configure** to open the **Replication** configuration screen.
 
 Enter a number for the maximum number of simultaneous replication tasks you want to allow the system to process and click **Save**.
 
+## Managing Allowed IP Addresses
+
+Use the **System > Advanced Settings** screen **Allowed IP Addresses** configuration screen to restrict access to the TrueNAS SCALE web UI and API.
+
+Entering an IP address limits access to the system to only the address(es) entered here. To allow unrestricted access to all IP addresses, leave this list empty.
+
 ## Managing Access (WebSocket Sessions)
 
 {{< include file="/static/includes/AccessSettingsWidget.md" >}}
 
 <div class="noprint">
-
-{{<include file="/static/includes/addcolumnorganizer.md">}}
 
 ## Contents
 

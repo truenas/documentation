@@ -57,7 +57,6 @@ Add an SSH connection for the remote server on the local TrueNAS host system.
 {{< expand "Adding a connection to a non-TrueNAS remote host system" "v" >}}
 
 {{< include file="/static/includes/AddManualSSHConnection.md" >}}
-{{< /expand >}}
 
 The generated keypair shows on the **SSH Keypair** widget.
 To download the public and private keypairs, click the <i class="material-icons" aria-hidden="true" title="Download">file_download</i> for the new keypair on the **SSH Keypairs** widget.

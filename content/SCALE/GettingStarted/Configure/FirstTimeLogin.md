@@ -107,7 +107,7 @@ After setting up the truenas_admin user from one of the scenarios documented abo
 
 {{< trueimage src="/images/SCALE/Login/LoginScreenSCALE.png" alt="TrueNAS SCALE Login Screen" id="TrueNAS SCALE Login Screen" >}}
 
-To modify user credentials, go to **Credentials > Local Users**, click anywhere on the user row, then click **Edit**.
+To modify user credentials, go to **Credentials > Users**, click anywhere on the user row, then click **Edit**.
 For more information, see [Managing Users]({{< relref "ManageLocalUsersScale.md" >}}).
 
 ### Logging In as Root
@@ -125,7 +125,7 @@ One allows you to log in as root or you can create the administration account.
 
 Select either the **Administrative user** or **Root user (not recommended)** option, then enter the password to use with that user.
 
-If you choose **Root user (not recommended)** as the TrueNAS authentication method, go to the **Credentials > Local Users** screen and [create the admin account]({{< relref "ManageLocalUsersSCALE.md" >}}) immediately after you enter the UI.
+If you choose **Root user (not recommended)** as the TrueNAS authentication method, go to the **Credentials > Users** screen and [create the admin account]({{< relref "ManageLocalUsersSCALE.md" >}}) immediately after you enter the UI.
 Enter the admin user name and password, make sure the password is enabled, and click **Save**.
 After setting up the admin user, click on the root user and then click **Edit**. Disable the root user password and then click **Save**.
 This brings the system into compliance with FIPS system security-hardening standards.
@@ -161,7 +161,7 @@ The dashboard includes configurable widgets that include a text-only **Custom** 
 {{< trueimage src="/images/SCALE/Dashboard/DashboardMainScreen.png" alt="TrueNAS SCALE Dashboard" id="TrueNAS SCALE Dashboard" >}}
 
 SCALE Enterprise users with an iXsystems-provided TrueNAS server also see an image of the system in the **System Information** widget.
-Click on the system image to open the **System Settings > [View Enclosure]({{< relref "EnclosureScreensSCALE.md" >}})** screen.
+Click on the system image to open the **System > [View Enclosure]({{< relref "EnclosureScreensSCALE.md" >}})** screen.
 
 The **Dashboard** for non-Enterprise systems displays the TrueNAS SCALE logo on the **System Information** widget.
 
@@ -181,7 +181,7 @@ The left-hand panel lists the main feature and functional areas and lets users n
 {{< include file="/static/includes/TopToolbar.md" >}}
 
 ## Managing Sessions
-To monitor and manage all active sessions, go to **System > Advanced** and locate the **Access** widget.
+To monitor and manage all active sessions, go to **System > Advanced Settings** and locate the **Access** widget.
 {{< include file="/static/includes/SessionsSettingsWidget.md" >}}
 
 ## Next Steps

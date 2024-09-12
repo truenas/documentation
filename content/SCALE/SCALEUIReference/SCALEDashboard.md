@@ -31,7 +31,7 @@ For example, clicking the <span class="iconify" data-icon="ic:baseline-assessmen
 
 {{< expand "System Information Widget" "v" >}} 
 The **System Information** widget shows general information about the SCALE system.
-The **Updates Available** button opens the **System Settings > Update** screen.
+The **Updates Available** button opens the **System > Update** screen.
 
 {{< trueimage src="/images/SCALE/Dashboard/DashboardSystemInfoWidgetGeneric.png" alt="System Information Widget" id="System Information Widget" >}}
 

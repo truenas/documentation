@@ -13,7 +13,7 @@ tags:
 The **Data Protection** screen **Periodic Snapshot Task** widget displays periodic snapshot tasks created on the system. 
 A periodic snapshot task allows scheduling the creation of read only versions of pools and datasets at a given point in time.
 
-Periodic snapshot tasks display the machine time, browser time, or both depending on individual user timezone settings. Users can update timezone settings by utilizing the [General Settings Screen]({{< relref "GeneralSettingsScreens.md #localization-settings-screen" >}}).
+Periodic snapshot tasks display the machine time, browser time, or both depending on individual user timezone settings. Users can update timezone settings by utilizing the [**General Settings**]({{< relref "GeneralSettingsScreens.md" >}}) screen.
 
 ## Periodic Snapshot Task Widget
 
