@@ -85,8 +85,8 @@ Using the **SSH Connections** configuration screen:
 
 {{< trueimage src="/images/SCALE/Credentials/NewSSHConnectAuthenticationManual.png" alt="Manual Authentication Settings" id="Manual Authentication Settings" >}}
 
-   a. Enter the host name or host IP address for the remote non-TrueNAS system as a valid URL.
-   An IP address example is *https://10.231.3.76*.
+   a. Enter the remote system host name or IP address.
+   An IP address example is *10.231.3.76*.
    This is a required field.
 
    b. Enter the port number of the remote system to use for the SSH connection.
