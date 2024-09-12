@@ -1,41 +1,44 @@
-&NewLine;
+---
+title: "Using the Advanced Scheduler"
+description: "Describes how to use the Advanced Scheduler on TrueNAS CORE."
+weight: 95
+tags:
+- advancedscheduler
+---
 
 ![Tasks Advanced Scheduler](/images/CORE/Tasks/TasksAdvancedScheduler.png "Tasks Advanced Scheduler")
 
-Choosing a **Presets** option populates the rest of the fields.
-To customize a schedule, enter [crontab](https://www.freebsd.org/cgi/man.cgi?crontab(5)) values for the `Minutes/Hours/Days`.
+Choosing a **Presets** option automatically populates all fields.
 
-These fields accept standard [cron](https://www.freebsd.org/cgi/man.cgi?query=cron) values.
+To customize a schedule, enter [crontab](https://www.freebsd.org/cgi/man.cgi?crontab(5)) values for the **Minutes**/**Hours**/**Days**.
+
 The simplest option is to enter a single number in the field.
 The task runs when the time value matches that number.
-For example, entering *10* means that the job runs when the time is ten minutes past the hour.
+Entering *10* runs the task when the time is ten minutes past the hour.
 
-An asterisk (`*`) means match all values.
+An asterisk (_*_) matches all values.
 
-Specific time ranges are set by entering hyphenated number values.
-For example, entering *30-35* in the **Minutes** field sets the task to run at minutes 30, 31, 32, 33, 34, and 35.
+Set specific time ranges by entering hyphenated number values.
+Entering *30-35* in the **Minutes** field runs the task at minutes 30, 31, 32, 33, 34, and 35.
 
-You can also enter lists of values.
-Enter individual values separated by a comma (`,`).
-For example, entering *1,14* in the **Hours** field means the task runs at 1:00 AM (0100) and 2:00 PM (1400).
+You can list individual values separated by a comma (*,*).
+Entering *1,14* in the **Hours** field runs the task at 1:00 AM (0100) and 2:00 PM (1400).
 
-A slash (`/`) designates a step value.
-For example, while entering `*` in **Days** means the task runs every day of the month, `*/2` means the task runs every other day.
+A slash (*/*) designates a step value.
+Entering _*_ in **Days** runs the task every day of the month, while _*/2_ runs it every other day.
 
-Combining all the above examples together creates a schedule running a task each minute from 1:30-1:35 AM and 2:30-2:35 PM every other day.
+Combining all the above examples creates a schedule running a task each minute from 1:30-1:35 AM and 2:30-2:35 PM every other day.
 
 There is an option to select which **Months** the task runs.
 Leaving each month unset is the same as selecting every month.
 
-The **Days of Week** schedules the task to run on specific days.
-This is in addition to any listed days.
-For example, entering *1* in **Days** and setting *Wed* for **Days of Week** creates a schedule that starts a task on the first day of the month *and* every Wednesday of the month.
+The **Days of Week** schedules the task to run on specific days plus any listed days.
+Entering *1* in **Days** and setting *Wed* for **Days of Week** creates a schedule that starts a task on the first day of the month *and* every Wednesday of the month.
 
 The **Schedule Preview** displays when the current settings mean the task runs.
 
-<h3>Examples of CRON syntax</h3>
-
-<table class="truetable">
+{{< expand "Examples of CRON syntax" "v" >}}
+<table>
 	<thead>
 		<tr>
 			<th>Syntax</th>
@@ -62,11 +65,11 @@ The **Schedule Preview** displays when the current settings mean the task runs.
 	</tbody>
 </table>
 
-Days can be specified as days of month, or days of week.
+You can specify days as days of the month or days of the week.
 
 With these options, you can create flexible schedules similar to these examples:
 
-<table class="truetable">
+<table>
 	<thead>
 		<tr>
 			<th>Desired schedule</th>
@@ -88,7 +91,8 @@ With these options, you can create flexible schedules similar to these examples:
 		</tr>
 		<tr>
 			<td>Every 15 minutes during the working week, which is 8am - 7pm (08:00 - 19:00) Monday to Friday</td>
-			<td>Note that this requires two tasks to achieve:<br/>(1) months=*; days=mon-fri; hours=8-18; minutes=*/15<br/>(2) months=*; days=mon-fri; hours=19; minutes=0<br/>We need the second scheduled item, to execute at 19:00, otherwise we would stop at 18:45. Another workaround would be to stop at 18:45 or 19:45 rather than 19:00.</td>
+			<td>Note that this requires two tasks to achieve:<br/>(1) months=*; days=mon-fri; hours=8-18; minutes=*/15<br/>(2) months=*; days=mon-fri; hours=19; minutes=0<br/>We need the second scheduled item, to execute at 19:00, otherwise we would stop at 18:45. Another workaround is to stop at 18:45 or 19:45 rather than 19:00.</td>
 		</tr>
 	</tbody>
 </table>
+{{< /expand >}}
