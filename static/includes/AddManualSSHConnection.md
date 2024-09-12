@@ -18,9 +18,9 @@ Click **Add** on the **SSH Connections** widget to open the configuration screen
 
    c. Enter a user name for logging into the remote system in **Username**.
 
-   c. Select the private key from the SSH key pair that you use to transfer the public key on the remote NAS from the **Private Key** dropdown.
+   d. Select the private key from the SSH key pair that you use to transfer the public key on the remote NAS from the **Private Key** dropdown.
 
-   d. Click **Discover Remote Host Key** after properly configuring all other fields to query the remote system and automatically populate the **Remote Host Key** field.
+   e. Click **Discover Remote Host Key** after properly configuring all other fields to query the remote system and automatically populate the **Remote Host Key** field.
 
 4. (Optional) Enter the number of seconds you want SCALE to wait for the remote TrueNAS system to connect in **Connect Timeout**.
 
