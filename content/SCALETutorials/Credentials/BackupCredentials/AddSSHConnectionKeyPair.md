@@ -85,19 +85,19 @@ Using the **SSH Connections** configuration screen:
 
 {{< trueimage src="/images/SCALE/Credentials/NewSSHConnectAuthenticationManual.png" alt="Manual Authentication Settings" id="Manual Authentication Settings" >}}
 
-   a. Enter a host name or host IP address for the remote non-TrueNAS system as a valid URL.
+   a. Enter the host name or host IP address for the remote non-TrueNAS system as a valid URL.
    An IP address example is *https://10.231.3.76*.
    This is a required field.
 
    b. Enter the port number of the remote system to use for the SSH connection.
 
-   c. Enter a user name for logging into the remote system in **Username**.
+   c. Enter the username of the remote system you wish to connect to in **Username**.
 
-   c. Select the private key from the SSH key pair that you use to transfer the public key on the remote NAS from the **Private Key** dropdown.
+   d. Select the private key from the SSH key pair that you use to transfer the public key on the remote NAS from the **Private Key** dropdown.
 
-   d. Click **Discover Remote Host Key** after properly configuring all other fields to query the remote system and automatically populate the **Remote Host Key** field.
+   e. Click **Discover Remote Host Key** after properly configuring all other fields to query the remote system and automatically populate the **Remote Host Key** field.
 
-4. (Optional) Enter the number of seconds you want SCALE to wait for the remote TrueNAS system to connect in **Connect Timeout**.
+1. (Optional) Enter the number of seconds you want SCALE to wait for the remote TrueNAS system to connect in **Connect Timeout**.
 
 {{< trueimage src="/images/SCALE/Credentials/NewSSHConnectMoreOptions.png" alt="Manual More Options" id="Manual More Options" >}}
 
