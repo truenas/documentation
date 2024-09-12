@@ -1,6 +1,6 @@
 ---
 title: "Getting Support"
-description: "Guides for getting assistance with TrueNAS SCALE issues."
+description: "Guides for getting assistance with TrueNAS issues."
 geekdocCollapseSection: true
 weight: 100
 aliases:
@@ -21,7 +21,7 @@ Enterprise SCALE hardware customers with support contracts can contact iXsystems
 {{< /expand >}}
 {{< /enterprise >}}
 
-TrueNAS SCALE users are welcome to report bugs, suggest new TrueNAS features, and vote for suggested improvements in the Jira project instance.
+TrueNAS users are welcome to report bugs, suggest new TrueNAS features, and vote for suggested improvements in the Jira project instance.
 Have questions? We recommend searching through the software documentation and community resources for answers.
 
 {{< trueimage src="/images/SCALE/SystemSettings/SystemGeneralSupportWidget.png" alt="Support Widget" id="Support Widget" >}}

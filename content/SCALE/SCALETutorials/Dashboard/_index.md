@@ -1,6 +1,6 @@
 ---
 title: Dashboard
-description: "Tutorials related to using the TrueNAS SCALE Dashboard. Includes instructions on customizing the Dashboard widgets."
+description: "Tutorials related to using the TrueNAS Dashboard. Includes instructions on customizing the Dashboard widgets."
 geekdocCollapseSection: true
 weight: 4
 tags:

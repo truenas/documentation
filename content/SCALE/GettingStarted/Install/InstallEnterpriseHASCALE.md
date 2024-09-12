@@ -18,11 +18,8 @@ keywords:
 ---
 
 {{< enterprise >}}
-TrueNAS SCALE Enterprise is generally available with the release of SCALE 22.12.2.
-Do not attempt to install Enterprise High Availability systems with TrueNAS SCALE until it becomes generally available, unless the deployment is experimental in nature.
-
-Installing TrueNAS SCALE on High Availability (HA) systems is complicated and should be guided by Enterprise-level support.
-Contact iXsystems Support for assistance whenever attempting to install TrueNAS SCALE on Enterprise HA hardware.
+Installing TrueNAS on High Availability (HA) systems is complicated and should be guided by Enterprise-level support.
+Contact iXsystems Support for assistance whenever attempting to install TrueNAS on Enterprise HA hardware.
 
 {{< expand "Contacting Support" "v" >}}
 {{< include file="/static/includes/iXsystemsSupportContact.md" >}}
@@ -128,7 +125,7 @@ These steps are nearly identical to the section above but controller 2 is either
 
 If you are remote to the system and are installing through an IPMI connection you do not need to save the <kbd>.iso</kbd> file to a USB flash drive.
 
-If you are physically present with the TrueNAS SCALE system, burn the <file>.iso</file> file to a USB flash drive and use that as the install media.
+If you are physically present with the TrueNAS system, burn the <file>.iso</file> file to a USB flash drive and use that as the install media.
 
 ### Using IPMI to Install the ISO on a Controller
 
@@ -157,7 +154,7 @@ Use this process to install the <file>iso</file> file on both controller 1 and c
    a. Type **8** to reboot controller 1 (also repeat for controller 2), and type **y** to confirm and reboot.
 
    b. As the system reboots, be prepared to hit the <kbd>F11</kbd> key when you first see the **TrueNAS Open Storage** splash screen.
-      Alternatively, you can start clicking on the **F11** key on the online keyboard until you see the TrueNAS SCALE Installer screen.
+      Alternatively, you can start clicking on the **F11** key on the online keyboard until you see the TrueNAS Installer screen.
 
    c. Select the **UEFI: ATEN Virtual CDROM** device from the boot list. The bootstrap loader begins. When it ends the SCALE installer opens.
 {{< /expand >}}
@@ -182,8 +179,8 @@ SCALE is now installed on controller 1 and repeated for controller 2 starting wi
 
 ### Configuring the Network with Console Setup Menu
 
-After installing the SCALE <file>.iso</file> file on both controller 1 and 2 and finishing the TrueNAS SCALE Installer process, use the Console setup menu to configure the required network settings on controller 1, so it can access the SCALE UI.
-TrueNAS SCALE single controller systems use the DHCP-assigned IP address for the primary network interface to access the SCALE UI to complete the rest of the network and other configuration settings.
+After installing the <file>.iso</file> file on both controller 1 and 2 and finishing the TrueNAS Installer process, use the Console setup menu to configure the required network settings on controller 1, so it can access the TrueNAS UI.
+TrueNAS single controller systems use the DHCP-assigned IP address for the primary network interface to access the UI to complete the rest of the network and other configuration settings.
 However, HA systems with dual controllers must use static IP addresses.
 
 To allow controller 1 to access the UI, you must disable DHCP and add the controller 1 static IP address and netmask as an alias on the primary network interface, and then enter the network settings for host name, domain name, default gateway, and the name servers (1 and 2).
@@ -191,7 +188,7 @@ You can configure the rest of the HA global network settings in the SCALE web UI
 
 To use the Console setup menu to configure required network settings on controller 1:
 
-{{< trueimage src="/images/SCALE/CLI/ConsoleSetupMenuSCALE.png" alt="TrueNAS SCALE Console Setup Menu" id="TrueNAS SCALE Console Setup Menu" >}}
+{{< trueimage src="/images/SCALE/CLI/ConsoleSetupMenuSCALE.png" alt="TrueNAS Console Setup Menu" id="TrueNAS Console Setup Menu" >}}
 
 1. Type <kbd>1</kbd> and then press <kbd>Enter</kbd> to open the **Network Interfaces** screen.
 

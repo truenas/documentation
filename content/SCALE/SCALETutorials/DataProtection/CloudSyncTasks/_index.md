@@ -104,7 +104,7 @@ The **Restore Cloud Sync Task** window opens.
 
 Enter a name in **Description** for this reversed task.
 
-Select the **Transfer Mode** and then define the path for a storage location on TrueNAS scale for the transferred data.
+Select the **Transfer Mode** and then define the path for a storage location on TrueNAS for the transferred data.
 
 Click **Restore**.
 

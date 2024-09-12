@@ -1,6 +1,6 @@
 ---
 title: "Enterprise HA Migrations"
-description: "Discusses migrating a TrueNAS CORE High Availability (HA) system to SCALE."
+description: "Discusses migrating a TrueNAS High Availability (HA) system from FreeBSD- to Linux-based TrueNAS."
 weight: 25
 aliases:
 tags:
@@ -13,7 +13,7 @@ keywords:
 - nas data storage
 ---
 
-**TrueNAS Enterprise customers should consult with iXsystems Support before attempting migrate to TrueNAS SCALE.**
+**TrueNAS Enterprise customers should consult with iXsystems Support before attempting to migrate.**
 
 The process requires:
 * Backing up critical data.

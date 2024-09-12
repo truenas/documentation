@@ -28,7 +28,7 @@ The iXsystems Support department provides assistance with the configuration area
 ## Required Access and Information
 
 Because there are many possible scenarios for network configurations, this section covers the basics of the access and information required to configure SCALE to work in your network environment.
-If you are the individual tasked with installing and configuring the TrueNAS SCALE server but are not responsible for network services in your company, contact your network administrator to request they provision and verify new IP address assignments and provide the other information for access.
+If you are the individual tasked with installing and configuring the TrueNAS server but are not responsible for network services in your company, contact your network administrator to request they provision and verify new IP address assignments and provide the other information for access.
 
 ## Physical Access
 
@@ -69,7 +69,7 @@ Have your network administrators provide the SMTP addresses to allow TrueNAS to 
 
 ### Directory Service Access
 
-TrueNAS SCALE works with either Active Directory or LDAP directory servers, and it can also work with Kerberos and IDmap.
+TrueNAS works with either Active Directory or LDAP directory servers, and it can also work with Kerberos and IDmap.
 Active Directory and LDAP configuration settings have similar requirements.
 Additionally, consider implementing two-factor authentication (2FA) for enhanced security when authenticating users against Active Directory or LDAP directory servers.
 

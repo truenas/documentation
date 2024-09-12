@@ -38,7 +38,7 @@ This UI bases metrics off your local system and browser time, which might be dif
 
 The Netdata UI opens in a new browser tab and automatically logs in.
 
-A **Netdata** dialog also opens in the TrueNAS SCALE UI.
+A **Netdata** dialog also opens in the TrueNAS UI.
 If automatic log in fails, use the generated password from this dialog to access the Netdata UI.
 
 {{< trueimage src="/images/SCALE/Reporting/NetdataCredentialsDialog.png" alt="Netdata Credentials" id="Netdata Credentials" >}}

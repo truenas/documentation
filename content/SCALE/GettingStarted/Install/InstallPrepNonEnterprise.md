@@ -28,7 +28,7 @@ An additional USB port is required when using a USB storage device to install Tr
 
 Intelligent Platform Management Interface (IPMI) servers provide access to servers and allow remote users to install software and configure or administrate systems at the console level, or as though you are in the room with the server when you are working remotely. Ensure IPMI is properly configured for secure remote management of TrueNAS servers.
 
-To provide for remote administration of your TrueNAS SCALE system, assign access through an IPMI server to the TrueNAS server.
+To provide for remote administration of your TrueNAS system, assign access through an IPMI server to the TrueNAS server.
 To make this possible assign an IP address to use for access and set up administrator credentials (user name and password) to access the TrueNAS IPMI connections.
 
 ## Network Access
@@ -47,7 +47,7 @@ If you do not know this information and do not have a network administrator in y
 
 This section does not apply to small companies with very few users or home deployments of SCALE.
 
-TrueNAS SCALE works with either Active Directory or LDAP directory servers, and it can also work with Kerberos and IDmap.
+TrueNAS works with either Active Directory or LDAP directory servers, and it can also work with Kerberos and IDmap.
 Active Directory and LDAP configuration settings have similar requirements.
 
 {{< include file="/static/includes/DirectoryServicesInstallRequirementsSCALE.md" >}}

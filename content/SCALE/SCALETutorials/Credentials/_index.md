@@ -1,6 +1,6 @@
 ---
 title: "Credentials"
-description: "Tutorials for configuring the different credentials needed for TrueNAS SCALE features."
+description: "Tutorials for configuring the different credentials needed for TrueNAS features."
 geekdocCollapseSection: true
 weight: 10
 related: false

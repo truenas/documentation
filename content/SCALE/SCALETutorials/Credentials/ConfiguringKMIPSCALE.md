@@ -1,6 +1,6 @@
 ---
 title: "Configuring KMIP"
-description: "Provides information on Key Management Interoperability Protocol (KMIP) in SCALE. Describes how to configure KMIP on TrueNAS SCALE Enterprise." 
+description: "Provides information on Key Management Interoperability Protocol (KMIP) in SCALE. Describes how to configure KMIP on TrueNAS Enterprise." 
 weight: 70
 tags:
 - kmip
@@ -11,14 +11,14 @@ keywords:
 ---
 
 {{< enterprise >}}
-KMIP is only available for TrueNAS SCALE Enterprise licensed systems.
+KMIP is only available for TrueNAS Enterprise licensed systems.
 Contact the [iXsystems Sales Team](mailto:sales@ixsystems.com) to inquire about purchasing TrueNAS Enterprise licenses.
 {{< /enterprise >}}
 
 
 
 The [Key Management Interoperability Protocol (KMIP)](https://docs.oasis-open.org/kmip/spec/v1.1/os/kmip-spec-v1.1-os.html) is an extensible client/server communication protocol for storing and maintaining keys, certificates, and secret objects.
-KMIP on TrueNAS SCALE Enterprise integrates the system within an existing centralized key management infrastructure and uses a single trusted source for creating, using, and destroying SED passwords and ZFS encryption keys.
+KMIP on TrueNAS Enterprise integrates the system within an existing centralized key management infrastructure and uses a single trusted source for creating, using, and destroying SED passwords and ZFS encryption keys.
 
 With KMIP, keys created on a single server are then retrieved by TrueNAS. 
 KMIP supports keys wrapped within keys, symmetric, and asymmetric keys.

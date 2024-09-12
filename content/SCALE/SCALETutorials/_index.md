@@ -16,7 +16,7 @@ keywords:
 
 <div class="noprint">
 
-## TrueNAS SCALE Tutorials
+## TrueNAS Tutorials
 
 {{< children depth="2" description="true" >}}
 

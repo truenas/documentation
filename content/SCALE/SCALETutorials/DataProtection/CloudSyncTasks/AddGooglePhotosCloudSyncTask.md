@@ -11,14 +11,14 @@ keywords:
 - data backup and recovery
 ---
 
-Google Photos cloud sync tasks in TrueNAS SCALE use the [rclone](https://rclone.org/) backend for the [Google Photos API](https://developers.google.com/photos) to authenticate credentials and transfer data.
+Google Photos cloud sync tasks in TrueNAS use the [rclone](https://rclone.org/) backend for the [Google Photos API](https://developers.google.com/photos) to authenticate credentials and transfer data.
 
 Configuring a Google Photos cloud sync task is a multi-part procedure where you:
 
 1. [Plan your deployment](#before-you-begin) and selecting a local dataset.
 2. [Generate Google API credentials](#creating-the-api-credentials) on the Google Cloud API dashboard.
 3. [Install rclone and generate a token](#configuring-rclone) on your remote client OS.
-4. [Add Google Photos cloud credentials](#adding-google-photos-cloud-credentials) on TrueNAS SCALE.
+4. [Add Google Photos cloud credentials](#adding-google-photos-cloud-credentials) on TrueNAS.
 5. [Configure the cloud sync task](#creating-the-cloud-sync-task) on SCALE.
 
 ## Before You Begin
@@ -31,7 +31,7 @@ Decide on the cloud sync task [direction and transfer mode](#choosing-a-sync-dir
 
 ### Choosing a Sync Direction and Mode
 
-A Google Photos cloud sync task can either pull files from Google Photos to a local dataset on TrueNAS SCALE or push local files to Google Photos.
+A Google Photos cloud sync task can either pull files from Google Photos to a local dataset on TrueNAS or push local files to Google Photos.
 Select the direction that best fits the way you intend to manage your media files.
 
 Choose to pull data from Google Photos if you prefer to manage media files via the Google Photos UI and use the local dataset as a backup target.
@@ -65,7 +65,7 @@ A cloud sync task cannot target the root level folder (<file>/</file>).
 
 ### Selecting the Dataset and Organizing Files
 
-Select TrueNAS SCALE local dataset or create a new one to use as the source or destination.
+Select TrueNAS local dataset or create a new one to use as the source or destination.
 
 {{< expand "Creating a Dataset" "v" >}}
 {{< include file="/static/includes/CreateDatasetSCALE.md" >}}

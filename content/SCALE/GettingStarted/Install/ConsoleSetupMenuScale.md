@@ -1,6 +1,6 @@
 ---
 title: "Using the Console Setup Menu"
-description: "Provides information on using the Console Setup menu after installing TrueNAS SCALE from the iso file to configure network settings."
+description: "Provides information on using the Console Setup menu after installing TrueNAS from the iso file to configure network settings."
 weight: 20
 aliases:
  - /scale/gettingstarted/post-installconfiguration/
@@ -25,7 +25,7 @@ The admin user, the root user (if enabled), or another user with administrator o
 
 The menu provides several options:
 
-{{< trueimage src="/images/SCALE/CLI/ConsoleSetupMenuSCALE.png" alt="TrueNAS SCALE Console Setup Menu" id="TrueNAS SCALE Console Setup Menu" >}}
+{{< trueimage src="/images/SCALE/CLI/ConsoleSetupMenuSCALE.png" alt="TrueNAS Console Setup Menu" id="TrueNAS Console Setup Menu" >}}
 
 For network configuration options **1**, **2**, and **3**, we recommend using the SCALE UI to configure network interfaces, as it has safeguards to prevent breaking network access to SCALE.
 
@@ -93,12 +93,12 @@ You can either use SCALE UI or the Console Setup menu to configure your network 
 
 Enter <kbd>1</kbd> to display the **Configure Network Interfaces** screen and select the interface settings.
 
-{{< trueimage src="/images/SCALE/CLI/CSMEditInterface.png" alt="TrueNAS SCALE Console Setup Menu Edit Interface" id="TrueNAS SCALE Console Setup Menu Edit Interface" >}}
+{{< trueimage src="/images/SCALE/CLI/CSMEditInterface.png" alt="TrueNAS Console Setup Menu Edit Interface" id="TrueNAS Console Setup Menu Edit Interface" >}}
 
 Follow the instructions on the screen to configure an IP for a network interface.
 Type <kbd>n</kbd> to open the new interface screen or press <kbd>Enter</kbd> to edit the existing interface.
 
-{{< trueimage src="/images/SCALE/CLI/CSMEditInterfaceSettings.png" alt="TrueNAS SCALE Console Setup Menu Edit Interface Settings" id="TrueNAS SCALE Console Setup Menu Edit Interface Settings" >}}
+{{< trueimage src="/images/SCALE/CLI/CSMEditInterfaceSettings.png" alt="TrueNAS Console Setup Menu Edit Interface Settings" id="TrueNAS Console Setup Menu Edit Interface Settings" >}}
 
 You can enter aliases for an interface when you create a new one or edit an existing interface.
 
@@ -108,11 +108,11 @@ Type <kbd>q</kbd> to return to the main Console Setup menu screen.
 
 Enter <kbd>2</kbd> to display the **Network Settings** screen to set up the host name, domain, default gateway and name servers. You can also add these settings using the web UI.
 
-{{< trueimage src="/images/SCALE/CLI/CSMEditNetworkSettings.png" alt="TrueNAS SCALE Console Setup Menu Edit Network Settings" id="TrueNAS SCALE Console Setup Menu Edit Network Settings" >}}
+{{< trueimage src="/images/SCALE/CLI/CSMEditNetworkSettings.png" alt="TrueNAS Console Setup Menu Edit Network Settings" id="TrueNAS Console Setup Menu Edit Network Settings" >}}
 
 Enter <kbd>3</kbd> to display the **Static Route Settings** screen to set up static routes. You can also add static routes in the web UI.
 
-{{< trueimage src="/images/SCALE/CLI/CSMEditStaticRoute.png" alt="TrueNAS SCALE Console Setup Menu Static Routes" id="TrueNAS SCALE Console Setup Menu Static Routes" >}}
+{{< trueimage src="/images/SCALE/CLI/CSMEditStaticRoute.png" alt="TrueNAS Console Setup Menu Static Routes" id="TrueNAS Console Setup Menu Static Routes" >}}
 
 {{< include file="/static/includes/AliasOrStaticIP.md" >}}
 
@@ -131,7 +131,7 @@ To configure network settings in the SCALE UI, enter the IP address displayed on
 Log in with the admin user name and password set for the administration user during the <file>iso</file> installation process, and then go to **Network** to edit an interface or global network configuration settings.
 
 #### Configuring Home User Network Settings
-Home users have a few options to allow Internet access using TrueNAS SCALE:
+Home users have a few options to allow Internet access using TrueNAS:
 
 * Use 8.8.8.8 as the DNS nameserver address
 * Use your ISP provider DNS servers (contact them for assistance with these addresses)
