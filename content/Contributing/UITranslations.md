@@ -6,7 +6,7 @@ tags:
 - contributing
 ---
 
-## How to Contribute CORE and SCALE Text String Translations
+## How to Contribute TrueNAS Text String Translations
 
 By default, TrueNAS is available in English.
 However, users can contribute text string translations for the TrueNAS web interface to help make TrueNAS available in many other languages!
