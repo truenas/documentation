@@ -104,4 +104,6 @@ Click **Enabled** under **Multi Mode (SNMD or MNMD) Configuration** to enable mu
 
 ### Resource Configuration
 
-{{< include file="/static/includes/SyncthingWizardResourceConfig.md" >}}
+{{< trueimage src="/images/SCALE/Apps/InstallMinIOEnterpriseResourcesConfig.png" alt="Syncthing Enterprise Resource Limits" id="Syncthing Enterprise Resource Limits" >}}
+
+{{< include file="/static/includes/AppInstallWizardResourceConfig.md" >}}
