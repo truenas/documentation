@@ -23,7 +23,7 @@ majorVersions:
         releaseDate: "2024-09-17"
         latest: true        
   - lifecycle: "Next"
-    name: "TrueNAS SCALE 24.10 - Electric Eel"
+    name: "TrueNAS 24.10 - Electric Eel"
     releaseName: "Electric Eel"
     releases:
       - name: "24.10-BETA.1"
