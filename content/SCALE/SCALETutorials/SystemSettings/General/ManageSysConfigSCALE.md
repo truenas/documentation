@@ -1,6 +1,6 @@
 ---
 title: "Managing the System Configuration"
-description: "Provides information on downloading your TrueNAS SCALE configuration to back up system settings, uploading a new configuration file, and resetting back to default settings."
+description: "Provides information on downloading your TrueNAS configuration to back up system settings, uploading a new configuration file, and resetting back to default settings."
 weight: 15
 aliases:
 tags:
@@ -14,7 +14,7 @@ keywords:
 - hybrid storage
 ---
 
-TrueNAS SCALE allows users to manage the system configuration by uploading or downloading configurations, or by resetting the system to the default configuration. 
+TrueNAS allows users to manage the system configuration by uploading or downloading configurations, or by resetting the system to the default configuration. 
 
 ## System Configuration Options
 The **Manage Configuration** option on the **System > General Settings** screen provides three options:
@@ -24,12 +24,12 @@ The **Manage Configuration** option on the **System > General Settings** screen 
 * **Reset to Defaults** that resets system configuration settings back to factory settings.
 
 ### Downloading the File
-The **Download File** option downloads your TrueNAS SCALE current configuration to the local machine.
+The **Download File** option downloads your TrueNAS current configuration to the local machine.
 
 {{< include file="/static/includes/DownloadSystemConfigFileSCALE.md" >}}
 
 ### Uploading the File
-The **Upload File** option gives users the ability to replace the current system configuration with any previously saved TrueNAS SCALE configuration file.
+The **Upload File** option gives users the ability to replace the current system configuration with any previously saved TrueNAS configuration file.
 
 {{< hint type=warning >}}
 All passwords are reset if the uploaded configuration file was saved without selecting **Save Password Secret Seed**.

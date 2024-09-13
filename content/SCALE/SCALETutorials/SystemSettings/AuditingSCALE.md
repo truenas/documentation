@@ -1,6 +1,6 @@
 ---
 title: "Audit Logs"
-description: "Provides information on the System and SMB Share auditing screens and function in TrueNAS SCALE."
+description: "Provides information on the System and SMB Share auditing screens and function in TrueNAS."
 weight: 90
 alias: 
 tags:
@@ -14,7 +14,7 @@ keywords:
 - nas storage solutions
 ---
 
-TrueNAS SCALE auditing and logs provide a trail of all actions performed by a session, user, or service (SMB, middleware).
+TrueNAS auditing and logs provide a trail of all actions performed by a session, user, or service (SMB, middleware).
 
 The audit function backends are both the syslog and the Samba debug library.
 Syslog sends audit messages via explicit syslog call with configurable priority (WARNING is the default) and facility (for example, USER).

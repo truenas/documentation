@@ -1,6 +1,6 @@
 ---
 title: "Advanced Settings"
-description: "Tutorials for configuring advanced system settings in TrueNAS SCALE."
+description: "Tutorials for configuring advanced system settings in TrueNAS."
 geekdocCollapseSection: true
 weight: 30
 aliases:
@@ -91,7 +91,7 @@ Enter a number for the maximum number of simultaneous replication tasks you want
 
 ## Managing Allowed IP Addresses
 
-Use the **System > Advanced Settings** screen **Allowed IP Addresses** configuration screen to restrict access to the TrueNAS SCALE web UI and API.
+Use the **System > Advanced Settings** screen **Allowed IP Addresses** configuration screen to restrict access to the TrueNAS web UI and API.
 
 Entering an IP address limits access to the system to only the address(es) entered here. To allow unrestricted access to all IP addresses, leave this list empty.
 

@@ -90,7 +90,7 @@ A manual setup allows a secure connection without a password prompt.
 
 ### SSH Keypairs Widget
 
-The **SSH Keypairs** widget on the **Backup Credentials** screen lists SSH key pairs added to the TrueNAS SCALE system.
+The **SSH Keypairs** widget on the **Backup Credentials** screen lists SSH key pairs added to the TrueNAS system.
 
 {{< trueimage src="/images/SCALE/Credentials/BackupCredentialsSSHKeypairsWidget.png" alt="SSH Keypairs Widgit" id="SSH Keypairs Widgit" >}}
 
@@ -110,7 +110,7 @@ The **SSH Keypairs** configuration screen displays the same settings for both ad
 | Name | Description |
 |------|-------------|
 | **Name** | Required. Enter a unique name for this SSH key pair. Automatically generated key pairs are named after the object that generated the key pair with **key** appended to the name. |
-|**Generate Keypair** | Click to have TrueNAS SCALE automatically generate a new key pair and populate the **Private Key** and **Public Keys** fields with these values. |
+|**Generate Keypair** | Click to have TrueNAS automatically generate a new key pair and populate the **Private Key** and **Public Keys** fields with these values. |
 | **Private Key** | See **Authentication** in [SSH/Authentication](https://man7.org/linux/man-pages/man1/ssh.1.html). |
 | **Public Key** | See **Authentication** in [SSH/Authentication](https://man7.org/linux/man-pages/man1/ssh.1.html) |
 {{< /truetable >}}

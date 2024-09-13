@@ -1,6 +1,6 @@
 ---
 title: "Replication Tasks"
-description: "Tutorials for configuring ZFS snapshot replication tasks in TrueNAS SCALE."
+description: "Tutorials for configuring ZFS snapshot replication tasks in TrueNAS."
 geekdocCollapseSection: true
 aliases:
  - /scale/scaletutorials/dataprotection/addreplicationscale/
@@ -13,7 +13,7 @@ keywords:
 - data protection
 ---
 
-TrueNAS SCALE replication allows users to create one-time or regularly scheduled snapshots of data stored in pools, datasets or zvols on their SCALE system as a way to back up stored data.
+TrueNAS replication allows users to create one-time or regularly scheduled snapshots of data stored in pools, datasets or zvols on their SCALE system as a way to back up stored data.
 When properly configured and scheduled, replication takes regular snapshots of storage pools or datasets and saves them in the destination location either on the same system or a different system.
 
 {{< include file="/static/includes/ReplicationIndexContentSCALE.md" >}}

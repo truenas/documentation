@@ -28,7 +28,7 @@ Go to **Network** and click **Settings** on the **Global Configuration** widget 
 2. Enter the system domain name in **Domain**. For example, *example.com*.
 
 3. Enter the IP addresses for your DNS name servers in the **Nameserver 1**, **Nameserver 2**, and/or **Nameserver 3** fields.
-   For home users, enter **8.8.8.8** in the **Nameserver 1** field so your TrueNAS SCALE can communicate externally with the Internet.
+   For home users, enter **8.8.8.8** in the **Nameserver 1** field so your TrueNAS can communicate externally with the Internet.
 
    {{< trueimage src="/images/SCALE/Network/GlobalConfigNameserverSettings.png" alt="Global Configuration Nameserver Settings" id="Global Configuration Nameserver Settings" >}}
 
@@ -39,7 +39,7 @@ Go to **Network** and click **Settings** on the **Global Configuration** widget 
 
    {{< trueimage src="/images/SCALE/Network/GlobalConfigOutboundSettings.png" alt="Global Configuration Outbound Settings" id="Global Configuration Outbound Settings" >}}
 
-   Select **Allow All** to permit all TrueNAS SCALE services that need external communication to do that or select **Deny All** to prevent that external communication. Select **Allow Specific** and then use the dropdown list to pick the services you want to allow to communicate externally.
+   Select **Allow All** to permit all TrueNAS services that need external communication to do that or select **Deny All** to prevent that external communication. Select **Allow Specific** and then use the dropdown list to pick the services you want to allow to communicate externally.
 
    {{< trueimage src="/images/SCALE/Network/GlobalConfigAllowSpecificServiceOptions.png" alt="Global Configuration Allow Specific Service Options" id="Global Configuration Allow Specific Service Options" >}}
 

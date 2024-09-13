@@ -1,6 +1,6 @@
 ---
 title: "Update Screens"
-description: "Provides information on functions and fields on the TrueNAS SCALE Update screens."
+description: "Provides information on functions and fields on the TrueNAS Update screens."
 weight: 10
 alias: 
  - /scale/scaleclireference/system/cliupdate/
@@ -9,7 +9,7 @@ tags:
 - configuration files
 ---
 
-The TrueNAS SCALE **Update** screen provides users with two different methods to update the system, automatic or manual. The screen can have up to four information panes:
+The TrueNAS **Update** screen provides users with two different methods to update the system, automatic or manual. The screen can have up to four information panes:
 
 * Current train
 * Upgrade operation and version (only when an update is detected)

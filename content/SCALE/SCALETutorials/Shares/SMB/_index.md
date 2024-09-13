@@ -282,7 +282,7 @@ If your share requires user credentials, add the switch `-o username=` with your
 {{< /expand >}}
 
 {{< expand "Mounting on a Windows System" "V" >}}
-To permanently mount the SMB share in Windows, map a drive letter in the computer for the user to the TrueNAS SCALE IP and share name. Select a drive letter from the bottom of the alphabet rather than from the top to avoid assigning a drive dedicated to some other device. The example below uses Z.
+To permanently mount the SMB share in Windows, map a drive letter in the computer for the user to the TrueNAS IP and share name. Select a drive letter from the bottom of the alphabet rather than from the top to avoid assigning a drive dedicated to some other device. The example below uses Z.
 Open the command line and run the following command with the appropriate drive letter, TrueNAS system name or IP address, and the share name.
 
 <code>net use <i>Z</i>: &bsol;&bsol;<i>TrueNAS_name</i>&bsol;<i>share_name</i> /PERSISTENT:YES</code>
@@ -322,7 +322,7 @@ This feature allows admins to connect to any of the TrueNAS systems with externa
 
 Create the SMB share on another SCALE server (for example, *system1*), as described in [Adding an SMB Share](#adding-an-smb-share) above.
 
-We recommend using Active Directory or LDAP when creating user accounts, but at a minimum synchronize user accounts between the system with the share (*system1*) and on the TrueNAS SCALE system where you set up the external share (for example, *system2*).
+We recommend using Active Directory or LDAP when creating user accounts, but at a minimum synchronize user accounts between the system with the share (*system1*) and on the TrueNAS system where you set up the external share (for example, *system2*).
 
 On *system2*, enter the hostname or IP address of the system hosting the SMB share (*system1*) and the name given the share on that system as **EXTERNAL:*ip address*&bsol;*sharename*** in **Path**, then change **Name** to EXTERNAL with no special characters.
 

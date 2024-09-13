@@ -16,7 +16,7 @@ The **Dashboard** is the first screen you see after logging into the web interfa
 It displays a set of default widgets with system, help, storage, and network information, but you can customize the display to suit your needs and preferences.
 **Dashboard** on the left side navigation panel returns to the main dashboard from any other screen in the UI.
 
-{{< trueimage src="/images/SCALE/Dashboard/DashboardMainScreen.png" alt="TrueNAS SCALE Dashboard" id="TrueNAS SCALE Dashboard" >}}
+{{< trueimage src="/images/SCALE/Dashboard/DashboardMainScreen.png" alt="TrueNAS Dashboard" id="TrueNAS Dashboard" >}}
 
 The **Configure** button at the top right of the **Dashboard** changes the screen to [configuration mode](#dashboard-in-configuration-mode) and allows you to turn widget displays on or off.
 
@@ -45,8 +45,8 @@ Click on the image to display the **View Enclosure** screen.
 {{< truetable >}}
 | Field | Description |
 |-------|-------------|
-| **Platform** | Shows as **Generic** for customer-provided server and hardware and displays the TrueNAS SCALE logo to the left of the **System Information** fields. The TrueNAS model number for the iXsystems-provided server and hardware and a picture of the server shows in the area to the left of the fields. |
-| **Version** | Shows the currently-installed software release of TrueNAS SCALE. Use the clipboard <span class="material-icons-outlined">assignment</span> icon to display the full name of the release installed and to copy the version to the clipboard. |
+| **Platform** | Shows as **Generic** for customer-provided server and hardware and displays the TrueNAS logo to the left of the **System Information** fields. The TrueNAS model number for the iXsystems-provided server and hardware and a picture of the server shows in the area to the left of the fields. |
+| **Version** | Shows the currently-installed software release of TrueNAS. Use the clipboard <span class="material-icons-outlined">assignment</span> icon to display the full name of the release installed and to copy the version to the clipboard. |
 | **Hostname** | Shows the host name for the TrueNAS system. Configure the host name on the **Network > Global Configuration** screen. |
 | **Uptime** | Shows the number of consecutive days, and hours and minutes the system of runtime since the last reboot. |
 | **Updates Available**<br>**Check for Updates** | Opens the **System Update** screen, or go to **System > Update** on the left-side main menu panel to open the **System Update** screen. **Updates Available** shows when systems updates are available for the current system release train. | 
@@ -146,7 +146,7 @@ Click on each link to open it in a new browser tab.
 
 {{< expand "App Widget" "v" >}}
 The **App** widget shows the app name, version, state (Deploying, Active, Stopped, etc.), release status, CPU usage in percentage, memory usage in MiB, network I/O traffic, and disk I/O traffic.
-The TrueNAS SCALE logo shows in the the top left corner of the widget if a logo image for the app is unavailable.
+The TrueNAS logo shows in the the top left corner of the widget if a logo image for the app is unavailable.
 
 {{< trueimage src="/images/SCALE/Dashboard/DashboardAppWidget.png" alt="App Widget" id="App Widget" >}}
 

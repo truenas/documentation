@@ -15,10 +15,10 @@ keywords:
 
 ## Using Remote Replication
 
-TrueNAS SCALE replication allows users to create one-time or regularly scheduled ZFS snapshots of data stored in pools, datasets or zvols on their SCALE system as a way to back up stored data.
+TrueNAS replication allows users to create one-time or regularly scheduled ZFS snapshots of data stored in pools, datasets or zvols on their SCALE system as a way to back up stored data.
 When properly configured and scheduled, remote replication takes regular snapshots of storage pools or datasets and saves them in the destination location on another system.
 
-Remote replication occurs between an originating TrueNAS SCALE system and another TrueNAS system (SCALE or CORE) that stores the replicated snapshots.
+Remote replication occurs between an originating TrueNAS system and another TrueNAS system (SCALE or CORE) that stores the replicated snapshots.
 
 With the implementation of the **Local Administrator** user and role-based permissions, setting up replication tasks as an admin user has a few differences than with setting up replication tasks when logged in as root.
 Setting up remote replication while logged in as the admin user requires selecting **Use Sudo For ZFS Commands**.
@@ -52,7 +52,7 @@ This saves some time when creating multiple replication tasks between the same t
 
    a. Select either **On this System** or **On a Different System** on the **Source Location** dropdown list.
       If your source is a remote system, select **On a Different System**. The **Destination Location** automatically changes to **On this System**.
-      If your source is the local TrueNAS SCALE system, you must select **On a Different System** from the **Destination Location** dropdown list to do remote replication.
+      If your source is the local TrueNAS system, you must select **On a Different System** from the **Destination Location** dropdown list to do remote replication.
 
       TrueNAS shows the number snapshots available for replication.
 

@@ -8,7 +8,7 @@
 
    {{< trueimage src="/images/SCALE/Install/SCALEInstallDriveScreen.png" alt="Destination Media Screen" id="Destination Media Screen" >}}
 
-   Select **Yes** to proceed with a clean installation of TrueNAS SCALE from the <file>.iso</file>.
+   Select **Yes** to proceed with a clean installation of TrueNAS from the <file>.iso</file>.
    This erases the contents of the selected drive!
 
    {{< trueimage src="/images/SCALE/Install/SCALEInstallWarningScreen.png" alt="Install Warning Screen" id="Install Warning Screen" >}}

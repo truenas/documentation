@@ -1,6 +1,6 @@
 ---
 title: "Using Install Custom App"
-description: "Provides information on using Install Custom App to configure custom or third-party applications in TrueNAS SCALE."
+description: "Provides information on using Install Custom App to configure custom or third-party applications in TrueNAS."
 weight: 50
 aliases:
  - /scale/scaletutorials/apps/docker/

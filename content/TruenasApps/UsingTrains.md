@@ -1,6 +1,6 @@
 ---
 title: "Managing App Trains"
-description: "Provides basic information on adding or managing application trains in TrueNAS SCALE."
+description: "Provides basic information on adding or managing application trains in TrueNAS."
 weight: 36
 aliases:
  - /scale/scaleuireference/apps/usingcatalogs/
@@ -15,7 +15,7 @@ keywords:
 - software storage solutions
 ---
 
-TrueNAS SCALE has a pre-built official catalog of available iXsystems-approved applications.
+TrueNAS has a pre-built official catalog of available iXsystems-approved applications.
 
 Users can configure and add catalog trains if they choose.
 The default train is **stable** which shows the apps found in the charts repository. Other available trains are **enterprise** and **community**.

@@ -18,7 +18,7 @@ keywords:
 - data provisioning
 ---
 
-TrueNAS SCALE provides basic permissions settings and an access control list (ACL) editor to define dataset permissions.
+TrueNAS provides basic permissions settings and an access control list (ACL) editor to define dataset permissions.
 ACL permissions control the actions users can perform on dataset contents and shares.
 
 {{< hint type=note >}}
@@ -27,8 +27,8 @@ TrueNAS uses ACLs to manage user interactions with shared datasets and creates t
 {{< /hint >}}
 
 ## ACL Types in SCALE
-TrueNAS SCALE offers two ACL types: POSIX and NFSv4.
-For a more in-depth explanation of ACLs and configurations in TrueNAS SCALE, see our [ACL Primer](https://www.truenas.com/docs/references/aclprimer/).
+TrueNAS offers two ACL types: POSIX and NFSv4.
+For a more in-depth explanation of ACLs and configurations in TrueNAS, see our [ACL Primer](https://www.truenas.com/docs/references/aclprimer/).
 
 The **Dataset Preset** setting on the **Add Dataset** screen determines the type of ACL for the dataset.
 To see the ACL type, click **Edit** on the **Dataset Details** widget to open the **Edit Dataset**.

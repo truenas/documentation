@@ -1,6 +1,6 @@
 ---
 title: "Managing SEDs"
-description: "Provides information on adding or modifying self-encrypting drive (SED) user and global passwords in TrueNAS SCALE."
+description: "Provides information on adding or modifying self-encrypting drive (SED) user and global passwords in TrueNAS."
 weight: 50
 aliases:
 tags:

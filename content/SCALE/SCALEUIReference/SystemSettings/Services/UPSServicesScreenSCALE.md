@@ -9,7 +9,7 @@ tags:
  - services
 ---
 
-The **Services > UPS** screen settings specify connection, shutdown and other settings to configure UPS service for servers running TrueNAS SCALE.
+The **Services > UPS** screen settings specify connection, shutdown and other settings to configure UPS service for servers running TrueNAS.
 
 {{< include file="/static/includes/NUTsupport.md" >}}
 

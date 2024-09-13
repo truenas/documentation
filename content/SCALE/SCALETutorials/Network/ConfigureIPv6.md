@@ -10,7 +10,7 @@ tags:
 - ipv6
 ---
 
-TrueNAS SCALE provides the option to configure network interfaces using either IPv4 or IPv6 addresses.
+TrueNAS provides the option to configure network interfaces using either IPv4 or IPv6 addresses.
 IPv4 networks cannot see or communicate with an IPv6 website or network unless a gateway or some other implementation is configured to allow it.
 See [Implementing IPv6](https://www.truenas.com/docs/references/IPv6/) for more information.
 

@@ -136,7 +136,7 @@ If an update is available, it also shows the **Update** button.
 
 **Web Portal** opens the application login or sign-up web page.
 
-**[Delete](#delete-apps)** opens the **Delete** dialog. Deletes the application deployment but does not remove it from the catalog or train in TrueNAS SCALE.
+**[Delete](#delete-apps)** opens the **Delete** dialog. Deletes the application deployment but does not remove it from the catalog or train in TrueNAS.
 
 **[Edit](#install-or-edit-app-wizards)** opens an **Edit *Application*** configuration screen populated with editable settings also found on the install wizard screen for the application.
 
@@ -151,7 +151,7 @@ The **Delete** dialog asks for confirmation to delete the selected application.
 
 #### Update Apps
 **Update** shows on the **Application Info** widget after clicking **Update All** on the **Installed** applications header.
-Both only show if TrueNAS SCALE detects an available update for an application.
+Both only show if TrueNAS detects an available update for an application.
 The application widget on the **Discover** screen also displays an update badge.
 
 **Update** opens an upgrade window for the application that includes the **Images (to be updated)** and **Changelog** options.

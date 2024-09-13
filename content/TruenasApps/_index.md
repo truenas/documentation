@@ -141,7 +141,7 @@ When downloading a private image, enter user account credentials that allow acce
 ### Upgrading Apps
 Apps display a yellow circle with an exclamation point that indicates an upgrade is available, and the **Installed** application screen banner displays an **Update** or **Update All** button when upgrades are available.
 To upgrade an app to the latest version, click **Update** on the **Application Info** widget or to upgrade multiple apps, click the **Update All** button on the **Installed** applications banner.
-Both buttons only display if TrueNAS SCALE detects an available update for installed applications.
+Both buttons only display if TrueNAS detects an available update for installed applications.
 
 **Update** opens an upgrade window that includes two selectable options, **Images (to be updated)** and **Changelog**.
 Click on the down arrow to see the options available for each.

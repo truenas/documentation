@@ -5,5 +5,5 @@ Root account logins are deprecated in SCALE Bluefin 22.12.0 or newer for securit
 All TrueNAS users should [create an administrator account]({{< relref "/SCALE/SCALETutorials/Credentials/ManageLocalUsersSCALE.md" >}}) with all required permissions and begin using it to access TrueNAS.
 When the root user password is disabled, only an administrative user account can log in to the TrueNAS web interface.
 
-TrueNAS SCALE plans to permanently disable *root* account access in a future release.
+TrueNAS plans to permanently disable *root* account access in a future release.
 {{< /hint >}}

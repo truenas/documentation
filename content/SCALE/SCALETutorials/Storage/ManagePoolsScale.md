@@ -1,6 +1,6 @@
 ---
 title: "Managing Pools"
-description: "Provides instructions on managing storage pools, VDEVs, and disks in TrueNAS SCALE."
+description: "Provides instructions on managing storage pools, VDEVs, and disks in TrueNAS."
 weight: 40
 aliases:
  - /scale/scaletutorials/storage/pools/managepoolsscale/
@@ -166,7 +166,7 @@ Select an available disk from the **New Disk** dropdown menu.
 Click **Extend**.
 
 A job progress window opens.
-TrueNAS SCALE returns to the ***Poolname* Devices** screen when complete.
+TrueNAS returns to the ***Poolname* Devices** screen when complete.
 
 ### Adding a VDEV to a Pool
 
@@ -268,7 +268,7 @@ Click anywhere on the VDEV to expand it and select one of the existing disks.
 Wait for the resilver to complete before replacing the next disk.
 Repeat steps 1-4 for all attached disks.
 
-TrueNAS SCALE automatically expands the usable capacity of the pool to fit all available space once the last attached disk is replaced.
+TrueNAS automatically expands the usable capacity of the pool to fit all available space once the last attached disk is replaced.
 
 ## Removing VDEVs
 

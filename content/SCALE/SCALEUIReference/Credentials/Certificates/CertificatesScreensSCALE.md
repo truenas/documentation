@@ -22,7 +22,7 @@ Each certificate listed on the widget is a link that opens the **[Edit Certifica
 **Add** opens the **[Add Certificate](#add-certificate-wizard)** wizard.
 
 ## Add Certificate Wizard
-The **Add Certificate** wizard screens guide users through configuring a new certificate on TrueNAS SCALE. 
+The **Add Certificate** wizard screens guide users through configuring a new certificate on TrueNAS. 
 The wizard has five different configuration screens, one for each step in the certificate configuration process:
 
 1 **[Identifier and Type](#identifier-and-type-options)**

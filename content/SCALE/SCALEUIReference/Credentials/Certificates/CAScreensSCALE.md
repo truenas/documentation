@@ -21,7 +21,7 @@ Each CA listed on the widget is a link that opens the **Edit CA** screen.
 **Add** opens the **[Add CA](#add-ca-wizard-screens)** wizard that steps you through setting up a certificate authority (CA) that certifies the ownership of a public key by the named subject of the certificate. 
 
 ## Add CA Wizard Screens
-The **Add CA** wizard screens step users through configuring a new certificate authority on TrueNAS SCALE. 
+The **Add CA** wizard screens step users through configuring a new certificate authority on TrueNAS. 
 The wizard has five different configuration screens, one for each step in the CA configuration process:
 
 1 **[Identifier and Type](#identifier-and-type-options)**

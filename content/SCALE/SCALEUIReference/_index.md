@@ -15,7 +15,7 @@ keywords:
 - nas uses
 ---
 
-Welcome to the TrueNAS SCALE UI Reference Guide!
+Welcome to the TrueNAS UI Reference Guide!
 
 {{< include file="/static/includes/UIReferenceIntro.md" >}}
 

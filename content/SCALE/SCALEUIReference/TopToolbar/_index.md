@@ -1,6 +1,6 @@
 ---
 title: Top Toolbar
-description: "All the icons and options contained in the TrueNAS SCALE top toolbar."
+description: "All the icons and options contained in the TrueNAS top toolbar."
 geekdocCollapseSection: true
 tags:
 - tasks
@@ -17,7 +17,7 @@ tags:
 
 The top toolbar icon buttons provide access to the iXsystems website, displays the status of TrueCommand and directory services configured on your system, and displays other configuration menu options.
 
-{{< trueimage src="/images/SCALE/Dashboard/TopToolbar.png" alt="TrueNAS SCALE Top Toolbar Icons" id="TrueNAS SCALE Top Toolbar Icons" >}}
+{{< trueimage src="/images/SCALE/Dashboard/TopToolbar.png" alt="TrueNAS Top Toolbar Icons" id="TrueNAS Top Toolbar Icons" >}}
 
 ## Toolbar Icons
 
@@ -39,7 +39,7 @@ The top toolbar icon buttons provide access to the iXsystems website, displays t
 
 ### Search UI
 
-The **Search UI** global search bar allows users to search for screens and elements within the TrueNAS SCALE UI or to redirect search terms to the TrueNAS Documentation Hub.
+The **Search UI** global search bar allows users to search for screens and elements within the TrueNAS UI or to redirect search terms to the TrueNAS Documentation Hub.
 
 {{< expand "Using Global Search" "v" >}}
 {{< include file="/static/includes/UsingGlobalSearch.md" >}}

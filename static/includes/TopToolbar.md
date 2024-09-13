@@ -6,10 +6,10 @@ It also shows the name of admin user currently logged into the system to the lef
 
 You can also collapse or expand the main function menu on the left side of the screen.
 
-{{< trueimage src="/images/SCALE/Dashboard/TopToolbar.png" alt="TrueNAS SCALE Top Toolbar" id="TrueNAS SCALE Top Toolbar" >}}
+{{< trueimage src="/images/SCALE/Dashboard/TopToolbar.png" alt="TrueNAS Top Toolbar" id="TrueNAS Top Toolbar" >}}
 
 {{< expand "Search UI" "v" >}}
-The **Search UI** global search bar allows users to search for screens and elements within the TrueNAS SCALE UI or to redirect search terms to the TrueNAS Documentation Hub.
+The **Search UI** global search bar allows users to search for screens and elements within the TrueNAS UI or to redirect search terms to the TrueNAS Documentation Hub.
 
 {{< include file="/static/includes/UsingGlobalSearch.md" >}}
 {{< /expand >}}
@@ -52,7 +52,7 @@ API keys identify an outside resource or application without a principal.
 For example, when adding a new system to TrueCommand if you are required to add an API key to authenticate the system.
 Use this function to create an API key for this purpose.
 
-Click **API Docs** to access the API documentation portal with information on TrueNAS SCALE API commands.
+Click **API Docs** to access the API documentation portal with information on TrueNAS API commands.
 
 See [API Keys]({{< relref "/SCALE/SCALEUIReference/TopToolbar/Settings/APIKeysScreen.md" >}}) for more information on adding or managing API keys.
 {{< /expand >}}

@@ -18,7 +18,7 @@ keywords:
 - data sharing
 ---
 
-TrueNAS SCALE offers ZFS encryption for your sensitive data in pools and datasets or Zvols.
+TrueNAS offers ZFS encryption for your sensitive data in pools and datasets or Zvols.
 
 {{< include file="/static/includes/EncryptionBackupKeys.md" >}}
 
@@ -29,7 +29,7 @@ Data-at-rest encryption is available with:
 
 The local TrueNAS system manages keys for data-at-rest.
 Users are responsible for storing and securing their keys.
-TrueNAS SCALE includes the [Key Management Interface Protocol (KMIP)](https://docs.oasis-open.org/kmip/spec/v1.1/os/kmip-spec-v1.1-os.html).
+TrueNAS includes the [Key Management Interface Protocol (KMIP)](https://docs.oasis-open.org/kmip/spec/v1.1/os/kmip-spec-v1.1-os.html).
 
 ## Pool and Dataset Encryption
 
@@ -280,6 +280,6 @@ A passphrase is a user-defined string at least eight characters long that is req
 The **pbkdf2iters** is the number of password-based key derivation function 2 ([PBKDF2](https://tools.ietf.org/html/rfc2898#appendix-A.2)) iterations to use for reducing vulnerability to brute-force attacks. Users must enter a number greater than *100000*.
 
 ## Unlocking a Replicated Encrypted Dataset or Zvol Without a Passphrase
-TrueNAS SCALE users should either replicate the dataset/Zvol without properties to disable encryption at the remote end or construct a special JSON manifest to unlock each child dataset/zvol with a unique key.
+TrueNAS users should either replicate the dataset/Zvol without properties to disable encryption at the remote end or construct a special JSON manifest to unlock each child dataset/zvol with a unique key.
 
 {{< include file="/static/includes/ReplicatedEncryptedUnlock.md" >}}

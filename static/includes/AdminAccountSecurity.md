@@ -1,7 +1,7 @@
 &NewLine;
 
 {{< hint type=important title="Administrator Account Security">}}
-The default SCALE administrator account name changes from **admin** to **truenas_admin** in TrueNAS SCALE 24.10 (Electric Eel) fresh installations.
+The default SCALE administrator account name changes from **admin** to **truenas_admin** in TrueNAS 24.10 (Electric Eel) fresh installations.
 Earlier releases of SCALE with the **admin** account retain this account when upgrading to 24.10 through the UI.
 
 To improve security and minimize username discoverability, create one or more administrator accounts with unique usernames and passwords and disable password access for default administrator accounts (**root**, **admin**, or **truenas_admin**).

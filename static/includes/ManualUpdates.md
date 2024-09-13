@@ -1,6 +1,6 @@
 &NewLine;
 
-SCALE Manual update files are available from the [TrueNAS SCALE Download page](https://www.truenas.com/download-truenas-scale/) website.
+SCALE Manual update files are available from the [TrueNAS Download page](https://www.truenas.com/download-truenas-scale/) website.
 
 Click **Install Manual Update File**.
 The **Save configuration settings from this machine before updating?** window opens.

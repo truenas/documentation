@@ -29,7 +29,7 @@ Some applications deploy as the **root** user for initial configuration before c
 Make sure the application is required for your specific use requirements and does not violate your security policies before installation.
 
 The tutorials in this section are for commonly used community-maintained applications.
-Some apps in this section replace deprecated services or functionality previously built into TrueNAS SCALE.
+Some apps in this section replace deprecated services or functionality previously built into TrueNAS.
 
 {{< include file="/static/includes/ProposeArticleChange.md" >}}
 

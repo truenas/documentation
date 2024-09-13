@@ -54,4 +54,4 @@ After creating your bucket, add S3 access for the new bucket(s) you want to use 
 6. Click **Close**.
 
 This completes the process of setting up Storj buckets and S3 access.
-Enter these keys in the **Authentication** fields in TrueNAS SCALE on the **[Cloud Credentials](#adding-storj-cloud-credentials)** screen to complete setting up the SCALE cloud credential.
+Enter these keys in the **Authentication** fields in TrueNAS on the **[Cloud Credentials](#adding-storj-cloud-credentials)** screen to complete setting up the SCALE cloud credential.

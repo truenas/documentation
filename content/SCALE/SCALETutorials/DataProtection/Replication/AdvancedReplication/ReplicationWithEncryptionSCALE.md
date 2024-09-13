@@ -12,7 +12,7 @@ tags:
 
 ## Using Encryption in Replication Tasks
 
-TrueNAS SCALE replication allows users to create replicated snapshots of data stored in encrypted pools, datasets or zvols that on their SCALE system as a way to back up stored data to a remote system. You can use encrypted datasets in a local replication.
+TrueNAS replication allows users to create replicated snapshots of data stored in encrypted pools, datasets or zvols that on their SCALE system as a way to back up stored data to a remote system. You can use encrypted datasets in a local replication.
 
 {{< hint type=important >}}
 You can set up a replication task for a dataset encrypted with a passphrase or a hex encryption key, but you must unlock the dataset before the task runs or the task fails.
@@ -68,7 +68,7 @@ This saves some time when creating multiple replication tasks between the same t
    {{< trueimage src="/images/SCALE/DataProtection/CreateRemoteReplicationTask.png" alt="New Remote Replication Task" id="New Remote Replication Task" >}}
    
    a. Select **On this System** on the **Source Location** dropdown list. 
-      If your source is the local TrueNAS SCALE system, you must select **On a Different System** from the **Destination Location** dropdown list to do remote replication. 
+      If your source is the local TrueNAS system, you must select **On a Different System** from the **Destination Location** dropdown list to do remote replication. 
 
       If your source is a remote system, create the replication task as the root user and select **On a Different System**. The **Destination Location** automatically changes to **On this System**. 
       

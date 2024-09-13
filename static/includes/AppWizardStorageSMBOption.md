@@ -12,4 +12,4 @@ Enter the server address for the SMB share in **Server**, the path to mount the 
 
 Permissions are currently limited to the permissions of the user that mounted the share.
 <!-- Commenting this out until I can get it verified with devs/solutions team 
-Alternate data streams (metadata), finder colors tags, previews, resource forks, and MacOS metadata is stripped from the share along with file system permissions, but this functionality is undergoing active development and implementation planned for a future TrueNAS SCALE release.-->
+Alternate data streams (metadata), finder colors tags, previews, resource forks, and MacOS metadata is stripped from the share along with file system permissions, but this functionality is undergoing active development and implementation planned for a future TrueNAS release.-->

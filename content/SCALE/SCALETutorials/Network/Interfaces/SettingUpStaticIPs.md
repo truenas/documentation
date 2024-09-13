@@ -23,7 +23,7 @@ Command line knowledge and physical access to the TrueNAS system are often requi
 {{< include file="/static/includes/MultipleInterfacesOnNetwork.md" >}}
 
 ## DHCP or Static IP?
-By default, during installation, TrueNAS SCALE configures the primary network interface for Dynamic Host Configuration Protocol (DHCP) IP address management.
+By default, during installation, TrueNAS configures the primary network interface for Dynamic Host Configuration Protocol (DHCP) IP address management.
 However, some administrators might choose to assign a static IP address to the primary network interface.
 This choice may be made if TrueNAS is deployed on a system that does not allow DHCP for security, stability, or other reasons.
 

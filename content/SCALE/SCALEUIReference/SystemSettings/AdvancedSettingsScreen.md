@@ -101,7 +101,7 @@ audit records, exporting audit reports, and configuring audit dataset settings a
 Click **Configure** to open the **Audit** configuration screen and [manage storage and retention policies]({{< relref "AuditingSCALE.md#configuring-audit-storage-and-retention-policies" >}})
 
 ## Kernel Widget
-The **Kernel** widget shows options for configuring the Linux kernel installed with TrueNAS SCALE.
+The **Kernel** widget shows options for configuring the Linux kernel installed with TrueNAS.
 
 {{< trueimage src="/images/SCALE/SystemSettings/SystemSettingsAdvancedKernel.png" alt="Kernel Widget" id="Kernel Widget" >}}
 
@@ -237,16 +237,16 @@ The logout button is inactive for your current session and active for all other 
 It cannot be used to terminate your current session.
 
 **Token Lifetime** displays the configured token duration for your current session (default five minutes).
-TrueNAS SCALE logs out user sessions that are inactive for longer than the configured token setting.
+TrueNAS logs out user sessions that are inactive for longer than the configured token setting.
 New activity resets the token counter.
 
-If the configured token lifetime is exceeded, TrueNAS SCALE displays a **Logout** dialog with the exceeded ticket lifetime value and the time that the session is scheduled to terminate.
+If the configured token lifetime is exceeded, TrueNAS displays a **Logout** dialog with the exceeded ticket lifetime value and the time that the session is scheduled to terminate.
 
 {{< expand "Logout Dialog" "v" >}}
 {{< trueimage src="/images/SCALE/SystemSettings/TimeoutDialog.png" alt="Logout Dialog" id="Logout Dialog" >}}
 
 **Extend Session** resets the token counter.
-If the button is not clicked, the TrueNAS SCALE terminates the session automatically and returns to the login screen.
+If the button is not clicked, the TrueNAS terminates the session automatically and returns to the login screen.
 {{< /expand >}}
 
  **Configure** opens the **Token Settings** screen.

@@ -26,7 +26,7 @@ Testers are encouraged to submit bug reports and debug files.
 For information on how to file an issue ticket see [Filing an Issue Ticket in SCALE]({{< relref "FileIssueSCALE.md" >}}).
 {{< /hint >}}
 
-The TrueNAS SCALE **Update** screen provides users with two different methods to update the system, automatic or manual.
+The TrueNAS **Update** screen provides users with two different methods to update the system, automatic or manual.
 
 We recommend updating SCALE when the system is idle (no clients connected, no disk activity, no ongoing S.M.A.R.T. tests, etc.).
 The system restarts after an upgrade.
@@ -53,7 +53,7 @@ The **Apply Pending Updates** window opens.
 {{< trueimage src="/images/SCALE/SystemSettings/ApplyPendingUdates.png" alt="Apply Pending Updates" id="Apply Pending Updates" >}}
 
 Click **Confirm**, then **Continue** to start the automatic installation process.
-TrueNAS SCALE downloads the configuration file and the update file, then starts the install.
+TrueNAS downloads the configuration file and the update file, then starts the install.
 
 {{< include file="/static/includes/UpgradeClearCache.md" >}}
 

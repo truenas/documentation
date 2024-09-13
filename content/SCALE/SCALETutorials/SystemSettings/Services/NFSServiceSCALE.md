@@ -1,6 +1,6 @@
 ---
 title: "NFS"
-description: "Provides information on configuring NFS service in TrueNAS SCALE."
+description: "Provides information on configuring NFS service in TrueNAS."
 weight: 25
 aliases: /scale/scaleuireference/shares/nfs/nfsservicescreen/
 tags:

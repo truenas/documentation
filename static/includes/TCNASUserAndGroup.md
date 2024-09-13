@@ -33,7 +33,7 @@ Enter or paste the optional public SSH key of the user for any key-based authent
 You can also allow users to authenticate with Samba, connect from a Windows machine with their Microsoft account, and use sudo commands. 
 
 Select **Locked** to prevent the user from logging in or using password-based services. 
-Locking an account is only possible when **Disable Password** is not selected in SCALE (Bluefin or Cobia) and a password is created for the user account on the TrueNAS SCALE system.
+Locking an account is only possible when **Disable Password** is not selected in SCALE (Bluefin or Cobia) and a password is created for the user account on the TrueNAS system.
 Click **NEXT** to open the **Create** confirmation wizard screen.
 
 ![NASUser4](/images/TrueCommand/Dashboard/NASUser4.png "Create NAS User Authentication Screen")
