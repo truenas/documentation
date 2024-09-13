@@ -1,6 +1,6 @@
 ---
 title: "Managing General Settings"
-description: "Provides information on configuring GUI options, localizing TrueNAS SCALE to your region and language, and adding NTP servers."
+description: "Provides information on configuring GUI options, localizing TrueNAS to your region and language, and adding NTP servers."
 weight: 20
 aliases:
 tags:
@@ -12,7 +12,7 @@ keywords:
 - configuration files
 ---
 
-The TrueNAS SCALE General Settings section provides settings options for support, graphic user interface, localization, NTP servers, and system configuration.
+The TrueNAS General Settings section provides settings options for support, graphic user interface, localization, NTP servers, and system configuration.
 
 {{< trueimage src="/images/SCALE/SystemSettings/SystemGeneralScreen.png" alt="General Settings Screen" id="General Settings Screen" >}}
 
@@ -30,7 +30,7 @@ Links to the open source documentation, community forums, and official Enterpris
 
 ## Configuring GUI Options
 
-The **GUI** widget allows users to configure the TrueNAS SCALE web interface address. Click **Settings** to open the **GUI Settings** configuration screen.
+The **GUI** widget allows users to configure the TrueNAS web interface address. Click **Settings** to open the **GUI Settings** configuration screen.
 
 ### Changing the GUI SSL Certificate
 
@@ -44,7 +44,7 @@ To set the WebUI IP address, if using IPv4 addresses, select a recent IP address
 
 To allow configuring a non-standard port to access the GUI over HTTPS, enter a port number in the **Web Interface HTTPS Port** field.
 
-Select the cryptographic protocols for securing client/server connections from the **HTTPS Protocols** dropdown list. Select the [Transport Layer Security (TLS)](https://en.wikipedia.org/wiki/Transport_Layer_Security) versions TrueNAS SCALE can use for connection security.
+Select the cryptographic protocols for securing client/server connections from the **HTTPS Protocols** dropdown list. Select the [Transport Layer Security (TLS)](https://en.wikipedia.org/wiki/Transport_Layer_Security) versions TrueNAS can use for connection security.
 
 To redirect HTTP connections to HTTPS, select **Web Interface HTTP -> HTTPS Redirect**. A GUI SSL Certificate is required for HTTPS.
 Activating this also sets the [HTTP Strict Transport Security (HSTS)](https://en.wikipedia.org/wiki/HTTP_Strict_Transport_Security) maximum age to 31536000 seconds (one year).
@@ -63,7 +63,7 @@ For more information about what usage data is collected, see the [TrueNAS Data C
 ### Showing Console Messages
 To display console messages in real time at the bottom of the browser, select the **Show Console Messages** option.
 
-## Localizing TrueNAS SCALE
+## Localizing TrueNAS
 
 To change the WebUI on-screen language and set the keyboard to work with the selected language, click **Settings** on the **System > General > Localization** widget. The **Localization Settings** configuration screen opens.
 
@@ -77,7 +77,7 @@ Click **Save**.
 
 The **NTP Servers** widget allows users to configure Network Time Protocol (NTP) servers.
 These sync the local system time with an accurate external reference.
-By default, new installations use several existing NTP servers. TrueNAS SCALE supports adding custom NTP servers.
+By default, new installations use several existing NTP servers. TrueNAS supports adding custom NTP servers.
 
 ## Setting Up System Email
 

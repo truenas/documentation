@@ -172,7 +172,7 @@ Note that hot-swapping PCIe NVMe devices is not currently supported.
 {{< /expand >}}
 
 {{< hint type=important >}}
-TrueNAS SCALE does not officially support T10-DIF drives. Users on our forums have developed [a workaround for using T10-DIF drives in TrueNAS SCALE](https://www.truenas.com/community/threads/troubleshooting-disk-format-warnings-in-bluefin.106051/), but using unsupported storage devices imposes data-loss risks.
+TrueNAS does not officially support T10-DIF drives. Users on our forums have developed [a workaround for using T10-DIF drives in TrueNAS](https://www.truenas.com/community/threads/troubleshooting-disk-format-warnings-in-bluefin.106051/), but using unsupported storage devices imposes data-loss risks.
 {{< /hint >}}
 
 ### Storage Device Sizing

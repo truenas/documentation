@@ -1,11 +1,11 @@
 ---
 id: "scale-schedule"
 img: "/images/truenas_scale-logo-full-color-rgb.png"
-product: "TrueNAS SCALE"
+product: "TrueNAS"
 title: "SCALE&trade; | Enterprise&trade;"
 majorVersions:
   - lifecycle: "Previous"
-    name: "TrueNAS SCALE 23.10 - Cobia"
+    name: "TrueNAS 23.10 - Cobia"
     releaseName: "Cobia"
     releases:
       - name: "23.10.2"
@@ -14,7 +14,7 @@ majorVersions:
         releaseDate: "2024-02-22"
         latest: true
   - lifecycle: "Current"
-    name: "TrueNAS SCALE 24.04 - Dragonfish"
+    name: "TrueNAS 24.04 - Dragonfish"
     releaseName: "Dragonfish"
     releases:
       - name: "24.04.2.2"

@@ -12,7 +12,6 @@ keywords:
 ---
 
 Follow these best practices to administer TrueNAS securely.
-These generally apply to either TrueNAS CORE or TrueNAS SCALE, but each software might place the related options in slightly different web interface locations.
 
 ## General Recommendations
 
@@ -31,7 +30,7 @@ Check back regularly for updates.
 
 Restrict new TrueNAS user accounts ([CORE]({{< relref "SettingUpUsersAndGroups.md" >}}) | [SCALE]({{< relref "ManageLocalUsersSCALE.md" >}})) to the most minimal set of storage ACL permissions and access possible.
 
-On TrueNAS SCALE, [create the administrator account]({{< relref "ManageLocalUsersSCALE.md#creating-an-admin-user-account" >}}) on install and disable root NAS administrative access.
+On TrueNAS, [create the administrator account]({{< relref "ManageLocalUsersSCALE.md#creating-an-admin-user-account" >}}) on install and disable root NAS administrative access.
 In TrueNAS 24.04 (Dragonfish) or later, use the **Credentials > Groups > Privileges** screen to define limited access administrative roles, such as read-only or share administrators.
 Assign users to those groups to grant partial NAS administrative access.
 Members of privilege groups can access the UI but cannot perform administrative tasks outside those defined by their role(s).
@@ -151,6 +150,6 @@ iXsystems cannot resolve security vulnerabilities introduced from within user-de
 After configuring a VM ([CORE]({{< relref "/CORE/CORETutorials/JailsPluginsVMs/VirtualMachines/_index.md" >}}) | [SCALE]({{< relref "/SCALE/SCALETutorials/Virtualization/_index.md" >}})), disable any VNC or SPICE virtual machine display devices.
 
 Update plugins ([CORE]({{< relref "/CORE/CORETutorials/JailsPluginsVMs/Plugins/_index.md" >}})) or applications ([SCALE]({{< relref "/content/TruenasApps/_index.md" >}})) regularly.
-TrueNAS SCALE monitors connected application catalogs and trains and displays available updates on the **Installed** applications screen.
+TrueNAS monitors connected application catalogs and trains and displays available updates on the **Installed** applications screen.
 To upgrade an app to the latest version, click **Update** on the **Application Info** widget.
 To upgrade multiple apps, click the **Update All** button on the **Installed** applications header.
