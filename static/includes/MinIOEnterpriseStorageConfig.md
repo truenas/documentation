@@ -14,6 +14,18 @@ Click **Add** to the right of **Data Directories** to add the datasets created a
 Click **Add** for each additional dataset (**data2**, **data3**, and **data4**).
 If you change the configuration of a basic installation or SNMD, you can use the **data1** dataset in the configuration and add the three additional datasets.
 
-Change the **Mount Path** to correspond to the dataset path entered or selected in **Host Path**.Additional mount points are **/data2**, **/data3**, or **/data4**.
+Change the **Mount Path** to correspond to the dataset path entered or selected in **Host Path**.
+Additional mount points are **/data2**, **/data3**, or **/data4**.
 
 When configuring MNMD, create the datasets and repeat the storage settings on each system (node) in the cluster.
+
+{{< hint type="warning" title="Changing Storage Volumes" >}}
+If you install MinIO using the default ixVolumes option, recommended when doing a quick deployment for testing purposes, and then decide to change to a dataset host path, the change does not move data from the ixVolume to the host path dataset.
+You can copy data from the ixVoume to the dataset but ACL permissions must be correctly set on the dataset to allow it.
+At this time, you must use the CLI to copy data from one storage volume to the other.
+
+If you set ACL permissions on an ixVolume, the permissions apply on every application start and only if the directory is empty.
+If ACLs are configured they are applied.
+
+If you switch from a dataset to an ixVolume, the permissions must be set correctly and the ixVolume empty.
+{{< /hint >}}
