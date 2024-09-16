@@ -1,6 +1,6 @@
 ---
 title: "OpenStack Cinder Driver"
-description: "Note about open source OpenStack Cinder driver for TrueNAS CORE."
+description: "Note about open source OpenStack Cinder driver for TrueNAS."
 weight: 30
 aliases:
   - /core/solutions/integrations/openstack/

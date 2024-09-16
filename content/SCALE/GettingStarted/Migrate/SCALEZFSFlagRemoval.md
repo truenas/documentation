@@ -15,7 +15,7 @@ On June 29, 2021, a new feature was merged into the TrueNAS fork of OpenZFS`[1]`
 `[1]`: https://github.com/truenas/zfs/pull/8</br>
 `[2]`: https://github.com/truenas/zfs/pull/16
 
-The new feature fixes a long-standing issue in ZFS on Linux, which had from its start encoded xattr names in a way that is incompatible with ZFS implementations for every other platform. As one of the planned features of TrueNAS is the easy migration of pools from TrueNAS CORE, we have been developing this and other missing features to improve feature parity and compatibility across all platforms in OpenZFS. A pull request`[3]` for the xattr compatibility feature was opened with a request for comments in OpenZFS on April 20, 2021.
+The new feature fixes a long-standing issue in ZFS on Linux, which had from its start encoded xattr names in a way that is incompatible with ZFS implementations for every other platform. As one of the planned features of TrueNAS is the easy migration of pools from prior TrueNAS versions, we have been developing this and other missing features to improve feature parity and compatibility across all platforms in OpenZFS. A pull request`[3]` for the xattr compatibility feature was opened with a request for comments in OpenZFS on April 20, 2021.
 
 `[3]`: https://github.com/openzfs/zfs/pull/11919
 

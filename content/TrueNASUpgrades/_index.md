@@ -34,7 +34,6 @@ Nightly builds also accept feedback and bug tickets.
 
 Nightly builds are automatically published when automated testing passes.
 **.iso** files are available to fresh install on disposable hardware or a virtual machine.
-Switching a disposable system from CORE to TrueNAS typically requires a fresh install using a nightly .iso file.
 
 **.update** files are also available for manually updating an existing experimental system to a nightly build.
 
@@ -69,7 +68,7 @@ See the [Documentation Archive](https://www.truenas.com/docs/archive/) for conte
 
 **The release names and dates provided here are tentative and can change at any time.**
 
-Development timelines for [TrueNAS](#scale-schedule-timeline), [TrueNAS CORE](#core-schedule-timeline), and [TrueCommand](#truecommand-schedule-timeline) are available below.
+Development timelines are available below.
 
 {{< columns >}}
 

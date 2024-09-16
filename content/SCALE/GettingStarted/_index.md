@@ -38,7 +38,7 @@ This Table of Contents is a specific article arrangement that guides deploying T
   * [Installing]({{< relref "InstallingSCALE.md" >}})
   * [Using the Console Setup Menu]({{< relref "ConsoleSetupMenuSCALE.md" >}})
 * [Migrating Instructions]({{< relref "/SCALE/GettingStarted/Migrate/_index.md" >}})
-  * [Migrating from TrueNAS CORE]({{< relref "/MigratingFromCORE.md" >}})
+  * [Migrating from TrueNAS 13.0]({{< relref "/MigratingFromCORE.md" >}})
 * [Configuration Instructions]({{< relref "/SCALE/GettingStarted/Configure/_index.md" >}})
   * [First Time Login]({{< relref "FirstTimeLogin.md" >}})
   * [Configuring using the UI]({{< relref "UIConfigurationSCALE.md" >}})

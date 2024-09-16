@@ -37,12 +37,12 @@ When Persistent L2ARC is enabled, a sysctl repopulates the cache device mapping 
 Persistent L2ARC preserves L2ARC performance even after a system reboot.
 
 However, persistent L2ARC for large data pools can drastically slow the reboot process, degrading middleware and web interface performance.
-Because of this, we have disabled persistent L2ARC by default in TrueNAS CORE, but you can manually activate it.
+Because of this, we have disabled persistent L2ARC by default in TrueNAS, but you can manually activate it.
 
 ### Activating Persistent L2ARC
 
 {{< tabs "L2ARC" >}}
-{{< tab "CORE" >}}
+{{< tab "TrueNAS 13.0" >}}
 Go to **System > Tunables** and click **ADD**.
 For the **Variable**, enter **vfs.zfs.l2arc.rebuild_enabled**. Set the **Value** to **1** and the **Type** to **sysctl**.
 We recommend noting in the **Description** that this is the persistent L2ARC activation.
@@ -52,13 +52,13 @@ Make sure **Enabled** is selected and click **SUBMIT**.
 
 {{< expand "CLI Instructions" "v" >}}
 {{< hint type=important >}}
-TrueNAS CORE does not write settings changed through the CLI to the configuration database. TrueNAS resets them on reboot.
+TrueNAS does not write settings changed through the CLI to the configuration database. TrueNAS resets them on reboot.
 {{< /hint >}}
 In a command line, enter `sysctl vfs.zfs.l2arc.rebuild_enabled=1`.
 When successful, the output reads: `vfs.zfs.l2arc.rebuild_enabled: 0 -> 1`
 {{< /expand >}}
 {{< /tab >}}
-{{< tab "SCALE" >}}
+{{< tab "TrueNAS 24.04 or later" >}}
 TrueNAS enables persistent L2ARC by default. We do not recommend users disable it.
 {{< /tab >}}
 {{< /tabs >}}

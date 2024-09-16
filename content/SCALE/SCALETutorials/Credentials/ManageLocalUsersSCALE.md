@@ -92,7 +92,7 @@ TrueNAS uses the `pam_mkhomdir` PAM module in the pam_open_session configuration
 `pam_mkhomedir` returns `PAM_PERM_DENIED` if it fails to create a home directory for a user, which eventually turns into a pam_open_session() failure.
 This does not impact other PAM API calls, for example, `pam_authenticate()`.
 
-TrueNAS does include the customized version of `pam_mkhomedir` used in TrueNAS CORE that specifically avoided trying to create the `/nonexistent` directory. This led to some circumstances where users could create the `/nonexistent` directory on TrueNAS versions before 24.04.
+TrueNAS 24.04 (or newer) does not include the customized version of `pam_mkhomedir` used in TrueNAS 13.0 that specifically avoided trying to create the `/nonexistent` directory. This led to some circumstances where users could create the `/nonexistent` directory on TrueNAS versions before 24.04.
 
 Starting in TrueNAS 24.04 (Dragonfish), the root filesystem of TrueNAS is read-only, which prevents `pam_mkhomdir` from creating the `/nonexistent` directory in cases where it previously did.
 This results in a permissions error if `pam_open_session()` is called by an application for a user account that has **Home Directory** set to **/nonexistent**.

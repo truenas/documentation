@@ -1,6 +1,6 @@
 ---
 title: "Nextcloud"
-description: "Guide for deploying the Nextcloud plugin with TrueNAS CORE."
+description: "Guide for deploying the Nextcloud plugin with TrueNAS."
 weight: 26
 aliases:
   - /core/solutions/integrations/nextcloud/

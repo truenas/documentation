@@ -22,7 +22,7 @@ keywords:
 Read this article before you attempt to migrate your FreeBSD-based system to a Linux-based TrueNAS version.
 {{< hint type="warning" title="Using USB Devices for Backups" >}}
 We strongly recommend not using USB flash drives or USB-attached drives for backups as these can have issues, including with recovering backed up files.
-For more information on using USB drives and devices in general, read the [CORE Hardware Guide](https://www.truenas.com/docs/core/gettingstarted/corehardwareguide/).
+For more information on using USB drives and devices in general, read the [Hardware Guide]({{< relref "scalehardwareguide.md" >}}).
 If you must use a USB type device, verify you can access files on the device before you migrate.
 {{< /hint >}}
 {{< enterprise >}}
@@ -34,7 +34,7 @@ Enterprise customers are encouraged to contact Support for assistance with the p
    Community users with 13.3 installed should update to the latest maintenance release of that version prior to migration.
    Either major version can use the [iso upgrade](#migrating-using-an-iso-file-to-upgrade) method for migration.
 
-2. Migrate [GELI-encrypted pools](https://www.truenas.com/docs/core/coretutorials/storage/pools/storageencryption/#geli-pool-migrations) to a non-GELI-encrypted pool before upgrading from CORE 12.0x or earlier releases!
+2. Migrate [GELI-encrypted pools](https://www.truenas.com/docs/core/13.0/coretutorials/storage/pools/storageencryption/#geli-pool-migrations) to a non-GELI-encrypted pool before upgrading from TrueNAS 12.0x or earlier releases!
    If you do not migrate from GELI to ZFS encryption before upgrading to 13.0-U6.2 (or newer) or migrating to TrueNAS 24.04, you permanently lose access to the data in the GELI encrypted pool(s).
 
 3. Verify the root user is not locked.
@@ -95,7 +95,7 @@ Enterprise customers are encouraged to contact Support for assistance with the p
 9. Download your [system configuration file](https://www.truenas.com/docs/core/coretutorials/systemconfiguration/usingconfigurationbackups/) and a [debug file](https://www.truenas.com/docs/core/uireference/system/advanced/).
    After updating to the latest publicly-available release of TrueNAS 13.0 (or 13.3 for community users) and making any changes to user accounts or any other settings, download these files and keep them in a safe place and where you can access them if you need to revert with a clean install using the TrueNAS 13.0 or 13.3 <file>iso</file> file.
 
-After completing the steps that apply to your CORE system listed above, download the latest [TrueNAS 24.04 ISO file](https://www.truenas.com/download-tn-scale/) and save it to your computer.
+After completing the steps listed above that apply to your existing system, download the latest [TrueNAS 24.04 ISO file](https://www.truenas.com/download-tn-scale/) and save it to your computer.
 See [Software Releases]({{< relref "TrueNASUpgrades/_index.md #upgrade-paths" >}}) for current recommended update paths to make sure you download and migrate to and from the correct TrueNAS versions.
 Burn the iso to a USB drive (see [**Installing on Physical Hardware**]({{< relref "InstallingSCALE.md#installing-on-physical-hardware" >}})) when upgrading a physical system.
 
@@ -145,7 +145,7 @@ Install a replacement application, such as **Rsyncd**, using the service setting
 You must migrate your S3 service and data before you migrate TrueNAS versions!
 
 If you have the S3 service configured, you must first [migrate to the MinIO plugin](https://www.truenas.com/docs/core/13.0/coretutorials/jailspluginsvms/plugins/minioplugin/#migrating-from-s3-service-to-minio-plugin).
-After migrating to TrueNAS 24.04 and then installing the [MinIO Enterprise app](https://www.truenas.com/docs/scale/scaletutorials/apps/enterpriseapps/minio/), you can import S3 data from the CORE plugin to the app.
+After migrating to TrueNAS 24.04 and then installing the [MinIO Enterprise app](https://www.truenas.com/docs/scale/scaletutorials/apps/enterpriseapps/minio/), you can import S3 data from the 13.0 plugin to the app.
 
 Review your S3 service settings.
 Take note of the credentials (**Access Key** and **Secret Key**), and data storage volume and host path.

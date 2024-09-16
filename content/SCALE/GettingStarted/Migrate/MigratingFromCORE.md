@@ -63,7 +63,7 @@ This method is only available for non-Enterprise community systems.
 5. After the system installs the update and reboots, log in and review the system configuration to ensure the migration was successful.
 
 ### Manual Update
-Some TrueNAS 13.0 or 13.3 releases can migrate using the CORE UI **Upgrade** function using a TrueNAS 24.04 update file downloaded from the website.
+Some TrueNAS 13.0 or 13.3 releases can migrate using the UI **Upgrade** function using a TrueNAS 24.04 update file downloaded from the website.
 To use this method, you must upgrade to the latest maintenance release.
 
 Earlier releases must upgrade to 13.0 and then the latest maintenance release (U6.2) to use this method.

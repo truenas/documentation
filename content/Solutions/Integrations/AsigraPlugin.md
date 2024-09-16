@@ -1,6 +1,6 @@
 ---
 title: "Asigra Plugin"
-description: "Guide for using Asigra with TrueNAS CORE."
+description: "Guide for using Asigra with TrueNAS 13.0."
 weight: 10
 aliases:
   - /core/solutions/integrations/asigraplugin/
@@ -11,8 +11,7 @@ The Asigra plugin connects TrueNAS to a third-party service and is subject to li
 TrueNAS must have a public static IP address for Asigra services to function.
 Please read the [Asigra Software License Agreement](https://www.asigra.com/legal/software-license-agreement) before using this plugin.
 
-Follow the instructions in the CORE plugins section to [install the Asigra plugin]({{< relref "CORE/CORETutorials/JailsPluginsVMs/Plugins/_index.md" >}}).
-Asigra also provides this installation guide for the [Asigra Backup Plugin for TrueNAS CORE](https://library.asigra.com/asigra-truenas-backup/guide-asigra-plug-in-for-truenas-core).
+Asigra also provides this installation guide for the [Asigra Backup Plugin for TrueNAS](https://library.asigra.com/asigra-truenas-backup/guide-asigra-plug-in-for-truenas-core).
 
 To begin using Asigra services after installing the plugin, expand the plugin options and click **Register**.
 A new browser tab opens to [register a user with Asigra](https://licenseportal.asigra.com/licenseportal/user-registration.do).

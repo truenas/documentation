@@ -21,7 +21,7 @@ This section provides information and instructions for FreeBSD-based TrueNAS (13
 
 Linux treats device names differently than FreeBSD, so please read [Component Naming]({{< relref "ComponentNaming.md" >}}) for more information.
 
-After migration, review each area of the UI that was previously configured in CORE.
+After migration, review each area of the UI that was previously configured.
 
 <div class="noprint">
 
