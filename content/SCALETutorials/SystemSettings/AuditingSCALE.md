@@ -2,7 +2,6 @@
 title: "Audit Logs"
 description: "Provides information on the System and SMB Share auditing screens and function in TrueNAS SCALE."
 weight: 90
-alias: 
 tags:
 - auditing
 - system
@@ -139,7 +138,6 @@ Each audit message JSON object includes:
 ## Accessing Auditing Screens
 Users have access to audit information from three locations in the SCALE UI:
 
-
 * **Credentials > Users** details screen through the **Audit Logs** option
   * On the **Users** screen, click **Audit Logs** on the **Users** details screen to open the **Audit** log screen with the **Search** field filtered to show events (authentication, changes to existing users, creating new users, etc.) specific to that user.  For more details see [Audit Screen](#audit-screen).
 * **Shares > Window (SMB) Shares** details screen through the share edit **Audit Logging** option
@@ -184,14 +182,12 @@ The <i class="material-icons" aria-hidden="true" title="Copy to Clipboard">assig
 
 ## Configuring Audit Storage and Retention Policies
 
-To configure Audit storage and retention settings, click **Audit Settings** on the **Audit** screen or go to **System > Advanced Settings**, then click **Configure** on the [**Audit**]({{< relref "/SCALE/SCALEUIReference/SystemSettings/AdvancedSettingsScreen.md#audit-widget" >}}) widget.
+To configure Audit storage and retention settings, click **Audit Settings** on the **Audit** screen or go to **System > Advanced Settings**, then click **Configure** on the [**Audit**]({{< relref "/SCALEUIReference/SystemSettings/AdvancedSettingsScreen.md#audit-widget" >}}) widget.
 
 {{< include file="/static/includes/ConfigureSystemAuditSCALE.md" >}}
 
 For example, to change the percent usage **warning** threshold for the storage allocated to the Audit database:
-
-1. Navigate to **System > Advanced** screen.
-
+1. Navigate to **System > Advanced Settings** screen.
 2. Select the **Configure** button on the **Audit** widget.
 3. In the Audit configuration popup, change the value in the **Quota Fill Warning** field to the desired percentage.
 4. Select the **Save** button to effect the change.
