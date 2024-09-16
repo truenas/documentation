@@ -40,7 +40,20 @@ iSCSI exports disk devices (zvols on TrueNAS) over a network that other iSCSI cl
 
   ![iSCSIInitiatorsTargets](/images/TrueNASCommon/iSCSIInitiatorsTargets.png "iSCSI Initiators and Targets Example")
 
-  The iSCSI protocol standards require that iSCSI initiators and targets is represented as iSCSI nodes. It also requires that each node is given a unique iSCSI name. To represent these unique nodes via their names, iSCSI requires the use of one of two naming conventions and formats, IQN or EUI. iSCSI also allows the use of iSCSI aliases which are not required to be unique and can help manage nodes.
+  The iSCSI protocol standards require that iSCSI initiators and targets is represented as iSCSI nodes.
+  It also requires that each node is given a unique iSCSI name.
+  To represent these unique nodes via their names, iSCSI requires the use of one of two naming conventions and formats, IQN or EUI.
+  
+  IQN names must follow these conventions for allowed characters, as described in [RFC-3722](https://www.rfc-editor.org/rfc/rfc3722):
+  
+  * dash (`-`)
+  * dot (`.`)
+  * colon (`:`)
+  * lower case characters (`a`...`z`).
+    Upper-case characters must be mapped to their related lower-case counterparts.
+  * digits (`0`...`9`)
+
+  iSCSI also allows the use of iSCSI aliases which are not required to be unique and can help manage nodes.
 
 * **Logical Unit Number (LUN)**: LUN represents a logical SCSI device. An initiator negotiates with a target to establish connectivity to a LUN. The result is an iSCSI connection that emulates a connection to a SCSI hard disk. Initiators treat iSCSI LUNs as if they were a raw SCSI or SATA hard drive. Rather than mounting remote directories, initiators format and directly manage filesystems on iSCSI LUNs. When configuring multiple iSCSI LUNs, create a new target for each LUN. Since iSCSI multiplexes a target with multiple LUNs over the same TCP connection, there can be TCP contention when more than one target accesses the same LUN. TrueNAS supports up to 1024 LUNs.
 
