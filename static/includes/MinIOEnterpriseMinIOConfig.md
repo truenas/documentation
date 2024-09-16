@@ -5,11 +5,11 @@ MinIO credentials establish the login credentials for the MinIO web portal and t
 {{< trueimage src="/images/SCALE/Apps/InstallMinIOEnterpriseMinioConfig.png" alt="MinIO Enterprise MinIO Configuration" id="MinIO Enterprise MinIO Configuration" >}}
 
 Enter existing MinIO credentials if you already have a MinIO account, or create new login credentials for the first time you log into MinIO.
-The **MinIO Root User** is the equivalent of the MinIO access key. The **MinIO Root Password** is the login password for that user or the MinIO secret key.
+The **Root User** is the equivalent of the MinIO access key. The **Root Password** is the login password for that user or the MinIO secret key.
 
-A username for the root user (MinIO access key), entered in **MinIO Root User**, is limited to five to 20 characters long. For example *admin* or *admin1*.
+A username for the root user (MinIO access key), entered in **Root User**, is limited to five to 20 characters long. For example *admin* or *admin1*.
 
-The root user password (MinIO secret key), entered in **MinIO Root Password**, is limited to eight to 40 random characters. For example, *MySecr3tPa$$w0d4Min10*.
+The root user password (MinIO secret key), entered in **Root Password**, is limited to eight to 40 random characters. For example, *MySecr3tPa$$w0d4Min10*.
 
 To configure a multi-mode deployment, select **Enabled**.
 MinIO recommends using MNMD for enterprise-grade performance and scalability. See the related MinIO articles listed below for SNMD and MNMD configuration tutorials.
@@ -22,4 +22,4 @@ Select **Anonymous** to hide sensitive information and not show it in the logs.
 
 (Optional) Click **Add** to the right of **Additional Environment Variables** to show the fields to enter the variable.
 The installation wizard configures all required environment variables, so only use this option to further customize your MinIO deployment.
-Refer to MinIO documentation for more information on environment variables.
+Refer to MinIO documentation for more information on environment variables they allow and use.

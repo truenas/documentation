@@ -1,10 +1,10 @@
 &NewLine;
 
-To install the MinIO app, go to **Apps**, click on **Discover Apps**, and then scroll down to locate the **stable** MinIO app widget, or search for it by typeing MinIO in the search field to show the app widget.
+Go to **Apps**, click on **Discover Apps**, locate the MinIO app widget by either scrolling down to it or begin typing MinIO into the search field.
 
 {{< trueimage src="/images/SCALE/Apps/AppsMinIOS3widget.png" alt="MinIO (S3) Application Widget" id="MinIO (S3) Application Widget" >}}
 
-Click on the widget to open the MinIO information screen.
+Click on the widget to open the MinIO application information screen.
 
 {{< trueimage src="/images/SCALE/Apps/MiniIOS3AppInfoScreen.png" alt="MinIO (S3) App Information Screen" id="MinIO (S3) App Information Screen" >}}
 
