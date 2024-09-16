@@ -25,7 +25,7 @@ Click **Save** or **Cancel** to close the configuration screen and return to the
 | Setting | Description |
 |---------|-------------|
 | **NetBIOS Name** | Automatically populates with the original system host name. Enter a name that is limited to 15 characters and cannot be the same as the **Workgroup** name. |
-| **NetBIOS Alias** | Enter any alias name up to 15 characters in length. If entering multiple aliases, separate alias names with a space between them. |
+| **NetBIOS Alias** | Enter any alias or static IP address name up to 15 characters in length. If entering multiple aliases, separate alias names with a space between them. |
 | **Workgroup** | Enter a name that matches the Windows workgroup name. If you do not configure a workgroup, and Active Directory or LDAP is active, TrueNAS detects and sets the correct workgroup from these services. |
 | **Description** | (Optional) Enter any notes or descriptive details about the service configuration. |
 | **Enable SMB1 support** | Select to allow legacy SMB1 clients to connect to the server (see caution below). SMB audit logging does not work when using SMB1. |

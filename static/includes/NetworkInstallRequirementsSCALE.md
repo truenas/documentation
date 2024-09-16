@@ -1,7 +1,7 @@
 &NewLine;
 
 TrueNAS uses DHCP to assign the IP address to the primary system network interface. DHCP only provisions one IP address.
-You can use this DHCP-provided address, or you can assign a static IP address.
+You can use this DHCP-provided address, or you can assign a static IP address (alias).
 You must assign an IP address to each network interface card (NIC) installed in your system if you want to communicate over your network using the interfaces.
 
 To configure your TrueNAS server to work with your network, you need:

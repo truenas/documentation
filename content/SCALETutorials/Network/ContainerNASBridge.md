@@ -33,7 +33,7 @@ If your system only has a single physical interface, complete these steps to cre
 
 3. If enabled, clear the **DHCP** checkbox.
    Note the IP address and mask under **Aliases**.
-   Click the **X** next to the listed alias to remove the IP address and mask.
+   Click the **X** next to the listed alias/static IP address to remove the IP address and mask.
    The **Aliases** field now reads **No items have been added yet**.
    Click **Save**.
 

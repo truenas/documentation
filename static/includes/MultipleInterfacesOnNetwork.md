@@ -19,7 +19,7 @@ While LACP is beneficial for larger deployments with many active clients, it mig
 It provides additional bandwidth or redundancy for critical networking situations.
 However LACP has limitations as it does not load balance packets.
 
-On the other hand, if you need multiple IP addresses on a single subnet, you can configure one or more static IP aliases for a single NIC.
+On the other hand, if you need multiple IP addresses on a single subnet, you can configure one or more static IP addresses, also known as 'aliases', for a single NIC.
 
 In summary, we recommend using LACP if you need multiple interfaces on a network.
 If you need multiple IP addresses, define aliases. Deviation from these practices might result in unexpected behavior.

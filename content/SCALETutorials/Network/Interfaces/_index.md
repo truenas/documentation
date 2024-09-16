@@ -96,7 +96,7 @@ You might need command line knowledge or physical access to the TrueNAS system t
 ## Adding Alias IP Addresses
 {{< include file="/static/includes/MultipleInterfacesOnNetwork.md" >}}
 
-To configure alias IPs to provide access to internal portions of the network, go to the **Network** screen:
+To configure aliases or static IPs to provide access to internal portions of the network, go to the **Network** screen:
 
 1. Click on the **Edit** icon for the interface to open the **Edit Interface** screen for the selected interface.
 

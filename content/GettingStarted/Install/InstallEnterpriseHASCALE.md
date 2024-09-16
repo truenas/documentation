@@ -185,7 +185,7 @@ After installing the SCALE <file>.iso</file> file on both controller 1 and 2 and
 TrueNAS SCALE single controller systems use the DHCP-assigned IP address for the primary network interface to access the SCALE UI to complete the rest of the network and other configuration settings.
 However, HA systems with dual controllers must use static IP addresses.
 
-To allow controller 1 to access the UI, you must disable DHCP and add the controller 1 static IP address and netmask as an alias on the primary network interface, and then enter the network settings for host name, domain name, default gateway, and the name servers (1 and 2).
+To allow controller 1 to access the UI, you must disable DHCP and add the controller 1 static IP address and netmask as an alias (static IP address) on the primary network interface, and then enter the network settings for host name, domain name, default gateway, and the name servers (1 and 2).
 You can configure the rest of the HA global network settings in the SCALE web UI.
 
 To use the Console setup menu to configure required network settings on controller 1:

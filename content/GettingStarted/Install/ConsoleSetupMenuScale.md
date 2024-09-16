@@ -31,7 +31,7 @@ For network configuration options **1**, **2**, and **3**, we recommend using th
 
   Use this to configure the primary network interface with a static IP address, also known as an 'alias' IP address.
   This is for switching away from the DHCP-assigned IP address TrueNAS provides when the system boots after installing SCALE.
-  Also, use this to set up other network interfaces or to add alias IP addresses for the primary interface.
+  Also, use this to set up other network interfaces or to add alias/static IP addresses for the primary interface.
 
 * **2) Configure network settings**
   
@@ -85,7 +85,7 @@ You might be able to access the web UI using a `hostname.domain` command at the 
 * Is on a network that supports Multicast DNS (mDNS).
 
 ## Console Setup Menu Network Settings
-You can either use SCALE UI or the Console Setup menu to configure your network settings for the primary network interface or other interfaces such as a link aggregate (LAGG) or virtual LAN (VLAN), or aliases for an interface, and to configure other network settings such as the default gateway, host name, domain, and the DNS name servers, or add static routes.
+You can either use SCALE UI or the Console Setup menu to configure your network settings for the primary network interface or other interfaces such as a link aggregate (LAGG) or virtual LAN (VLAN), or aliases/static IP addresses for an interface, and to configure other network settings such as the default gateway, host name, domain, and the DNS name servers, or add static routes.
 
 {{< include file="/static/includes/UsingConsoleSetupMenuSCALE.md" >}}
 
@@ -98,7 +98,7 @@ Type <kbd>n</kbd> to open the new interface screen or press <kbd>Enter</kbd> to 
 
 {{< trueimage src="/images/SCALE/CLI/CSMEditInterfaceSettings.png" alt="TrueNAS SCALE Console Setup Menu Edit Interface Settings" id="TrueNAS SCALE Console Setup Menu Edit Interface Settings" >}}
 
-You can enter aliases for an interface when you create a new one or edit an existing interface.
+You can enter aliases, also known as 'static IP addresses', for an interface when you create a new one or edit an existing interface.
 
 {{< include file="/static/includes/AliasOrStaticIP.md" >}}
 

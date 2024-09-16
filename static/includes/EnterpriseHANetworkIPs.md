@@ -1,6 +1,6 @@
 &NewLine;
 
-SCALE Enterprise (HA) systems use three static IP addresses for access to the UI:
+SCALE Enterprise (HA) systems use three static IP addresses, or 'aliases', for access to the UI:
 
 * VIP to provide UI access regardless of which controller is active.
   If your system fails over from controller 1 to 2, then fails over back to controller 1 later you might not know which controller is active.
