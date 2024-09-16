@@ -43,7 +43,7 @@
 
 <div class="section-box" id="scale-upgrade-paths" style="padding: 0 40px 40px 40px; margin-bottom: 20px;">
     <div class="upgrade-paths-container">
-      <img src="/images/tn-scale-logo.png" style="box-shadow: none; max-width: 225px; padding-bottom: 20px; padding-top: 40px;" title="TrueNAS" alt="TrueNAS">
+      <img src="/images/tn-openstorage-logo.png" style="box-shadow: none; max-width: 225px; padding-bottom: 20px; padding-top: 40px;" title="TrueNAS" alt="TrueNAS">
       <div class="scroll-container" id="scrollContainer1">
         <div class="chart-wrapper">
           {{< mermaid class="mermaid_sizing" >}}
