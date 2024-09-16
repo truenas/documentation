@@ -40,7 +40,7 @@ You can allow the app to create the storage volume, or use the recommended metho
 You can organize the dataset(s) under a parent dataset for MinIO to keep the storage datasets separated from the dataset for other potential applications.
 For example, create the *minio* dataset and nest **data1** under it.
 
-You can also mount other storage volumes inside the container pod using either the ixVolume or host path options, but these are not required.
+You can also mount other storage volumes inside the container pod using either the ixVolume or Host Path options, but these are not required.
 If mounting additional storage volumes with the host path option, create the dataset(s) before using the app installation wizard.
 
 Either use the default user and group IDs or [create a new user]({{< relref "ManageLocalUsersSCALE.md#creating-user-accounts" >}}) with **Create New Primary Group** selected.
@@ -118,9 +118,7 @@ For more information see:
 
 ### Resource Configuration
 
-{{< trueimage src="/images/SCALE/Apps/InstallMinIOEnterpriseResourcesConfig.png" alt="Syncthing Enterprise Resource Limits" id="Syncthing Enterprise Resource Limits" >}}
-
-{{< include file="/static/includes/AppInstallWizardResourceConfig.md" >}}
+{{< include file="/static/includes/SyncthingWizardResourceConfig.md" >}}
 
 <div class="noprint">
 

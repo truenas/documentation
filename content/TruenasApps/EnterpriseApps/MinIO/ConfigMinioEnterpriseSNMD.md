@@ -56,6 +56,7 @@ For optional settings, see [Understanding MinIO Wizard Settings](#understanding-
 
 {{< include file="/static/includes/MinIoEnterpriseConfig4.md" >}}
 
+
 ## Understanding MinIO Wizard Settings
 The following section provides more detailed explanations of the settings in each section of the **Install MinIO** configuration wizard.
 
@@ -89,6 +90,4 @@ Click **Enabled** under **Multi Mode (SNMD or MNMD) Configuration** to enable mu
 
 ### Resource Configuration
 
-{{< trueimage src="/images/SCALE/Apps/InstallMinIOEnterpriseResourcesConfig.png" alt="Syncthing Enterprise Resource Limits" id="Syncthing Enterprise Resource Limits" >}}
-
-{{< include file="/static/includes/AppInstallWizardResourceConfig.md" >}}
+{{< include file="/static/includes/SyncthingWizardResourceConfig.md" >}}
