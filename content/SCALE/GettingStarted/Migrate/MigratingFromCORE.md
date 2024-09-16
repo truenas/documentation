@@ -55,7 +55,7 @@ This method is only available for non-Enterprise community systems.
 
 2. From the **Train** dropdown, choose the latest stable TrueNAS release, 24.04 (Dragonfish) or newer.
 
-3. Review the SCALE migrations warning and verify the system is ready to migrate before confirming and continuing.
+3. Review the TrueNAS migrations warning and verify the system is ready to migrate before confirming and continuing.
 
 4. When the latest update for that chosen TrueNAS release is loaded, click **Apply Pending Update** or **Download Updates** to begin the update process documented in [Updating TrueNAS]({{< relref "UpdateSCALE.md#performing-an-automatic-update" >}}).
    It is strongly recommended to download the system configuration backup prior to starting the update.

@@ -14,7 +14,7 @@ related: false
 ## About TrueNAS Support
 
 {{< enterprise >}}
-Enterprise SCALE hardware customers with support contracts can contact iXsystems Support using either the **[Commercial Support](https://www.truenas.com/commercial-support/)** option on the top header of the TrueNAS Documentation Hub website, or through one of the contact options listed below.
+Enterprise TrueNAS hardware customers with support contracts can contact iXsystems Support using either the **[Commercial Support](https://www.truenas.com/commercial-support/)** option on the top header of the TrueNAS Documentation Hub website, or through one of the contact options listed below.
 
 {{< expand "Contacting iXsystems Support" "v" >}}
 {{< include file="/static/includes/iXsystemsSupportContact.md" >}}
@@ -26,7 +26,7 @@ Have questions? We recommend searching through the software documentation and co
 
 {{< trueimage src="/images/SCALE/SystemSettings/SystemGeneralSupportWidget.png" alt="Support Widget" id="Support Widget" >}}
 
-Non-Enterprise SCALE customers experiencing software bugs or instability can try to find answers in the various community forums, or they can file an issue ticket through the Jira ticket reporting system for TrueNAS ([details](https://www.truenas.com/docs/contributing/issuereporting/jiraissuereporting/)).
+Non-Enterprise TrueNAS customers experiencing software bugs or instability can try to find answers in the various community forums, or they can file an issue ticket through the Jira ticket reporting system for TrueNAS ([details](https://www.truenas.com/docs/contributing/issuereporting/jiraissuereporting/)).
 
 When reporting an issue, download a system debug file taken immediately following the issue occurrence.
 This captures the system configuration information and logs iXsystems needs to help resolve your issues.

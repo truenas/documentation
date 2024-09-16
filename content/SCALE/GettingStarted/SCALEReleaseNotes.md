@@ -51,7 +51,7 @@ More details are available from [Software Releases]({{< relref "/TrueNASUpgrades
 ## Upgrade Notes
 
 * TrueNAS is an appliance built from specific Linux packages.
-  Attempting to update SCALE with `apt` or methods other than the SCALE web interface can result in a nonfunctional system.
+  Attempting to update TrueNAS with `apt` or methods other than the TrueNAS web interface can result in a nonfunctional system.
 
 * All auxiliary parameters can experience changes between TrueNAS major versions due to security and development changes.
   We recommend removing all auxiliary parameters from TrueNAS configurations before upgrading as these settings can result in SMB share failures after an upgrade.
@@ -68,7 +68,7 @@ Update the system to the latest maintenance release of the installed major versi
 
 include file="/static/includes/SCALEUpgradePaths.md" 
 
-### CORE to SCALE Migrations
+### TrueNAS Migrations
 
 {{< include file="/_includes/MigrateCOREtoSCALEWarning.md" >}}
 
@@ -79,14 +79,14 @@ Enterprise customers with HA systems should contact iXsystems Support for assist
 {{< /expand >}}
 {{< /enterprise >}}
 
-When attempting to migrate from TrueNAS CORE, the general recommendation is to back up the system configuration file and use a SCALE **.iso** file to fresh install TrueNAS.
+When attempting to migrate from TrueNAS CORE, the general recommendation is to back up the system configuration file and use a TrueNAS **.iso** file to fresh install TrueNAS.
 After install, restore the system configuration and import the pools.
 
 Depending on the specific system configuration, this can be a straightforward or complicated process.
-See the [Migration articles]({{< relref "/SCALE/GettingStarted/Migrate/_index.md" >}}) for cautions and notes about differences between each software and the CORE to SCALE migration process.
+See the [Migration articles]({{< relref "/SCALE/GettingStarted/Migrate/_index.md" >}}) for cautions and notes about differences between each software and the migration process.
 
-You must either clean install using an <file>iso</file> or use an upgrade file to migrate a TrueNAS CORE system to SCALE 25.04 (Fangtooth).
-Enterprise customers should [contact Support](https://www.truenas.com/docs/scale/gettingstarted/migrate/migratecorehatoscaleha/#expand-1-Enterprise%20HA%20Migrations) for assistance with transitioning from CORE to SCALE.
+You must either clean install using an <file>iso</file> or use an upgrade file to migrate a TrueNAS CORE system to TrueNAS 25.04 (Fangtooth).
+Enterprise customers should [contact Support](https://www.truenas.com/docs/scale/gettingstarted/migrate/migratecorehatoscaleha/#expand-1-Enterprise%20HA%20Migrations) for assistance with migration.
 
 ## Component Versions
 Click the component version number to see the latest release notes for that component.

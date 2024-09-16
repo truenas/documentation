@@ -1,6 +1,6 @@
 ---
 title: "Third-Party Data Migration"
-description: "Provides data migration instructions for users wanting move data from a third-party NAS solution to the SCALE NAS system storage using the Syncthing Enterprise app."
+description: "Provides data migration instructions for users wanting move data from a third-party NAS solution to the TrueNAS system using the Syncthing Enterprise app."
 weight: 45
 draft: false
 slug: thirdpartymigration

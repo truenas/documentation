@@ -35,7 +35,7 @@ Enterprise customers are encouraged to contact Support for assistance with the p
    Either major version can use the [iso upgrade](#migrating-using-an-iso-file-to-upgrade) method for migration.
 
 2. Migrate [GELI-encrypted pools](https://www.truenas.com/docs/core/coretutorials/storage/pools/storageencryption/#geli-pool-migrations) to a non-GELI-encrypted pool before upgrading from CORE 12.0x or earlier releases!
-   If you do not migrate from GELI to ZFS encryption before upgrading to CORE 13.0-U# or migrating to SCALE you permanently lose access to the data in the GELI encrypted pool(s).
+   If you do not migrate from GELI to ZFS encryption before upgrading to 13.0-U6.2 (or newer) or migrating to TrueNAS 24.04, you permanently lose access to the data in the GELI encrypted pool(s).
 
 3. Verify the root user is not locked.
    Go to **Accounts > Users**, select the root user and click **Edit** to view current settings and confirm **Lock User** is not selected.

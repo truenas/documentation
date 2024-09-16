@@ -15,7 +15,7 @@ keywords:
 ---
 
 After setting up storage on your TrueNAS, it is time to begin sharing data!
-There are several sharing solutions available on SCALE, but in this article we discuss the most common.
+There are several sharing solutions available in TrueNAS, but in this article we discuss the most common.
 
 ## Sharing Data Methods
 
@@ -177,6 +177,6 @@ To set up NFS sharing:
 ## Setting up an iSCSI Block Share
 
 Setting up block sharing is a complicated scenario that requires detailed configuration steps and knowledge of your network environment.
-A simple configuration is beyond the scope of this getting started guide, but detailed articles are [available in the SCALE Tutorials section]({{< relref "/SCALE/SCALETutorials/Shares/iSCSI/_index.md" >}}).
+A simple configuration is beyond the scope of this getting started guide, but detailed articles are [available in the Tutorials section]({{< relref "/SCALE/SCALETutorials/Shares/iSCSI/_index.md" >}}).
 
 With simple sharing now set up, you can back up your configuration and set up data backup.

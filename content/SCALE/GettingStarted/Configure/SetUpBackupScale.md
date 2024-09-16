@@ -35,9 +35,9 @@ After saving the system configuration, go to **System > Advanced Settings** and 
 
 ## Create a Boot Environment
 
-After installing and completing your SCALE system configuration, [create a boot environment]({{< relref "ManageBootEnvironSCALE.md" >}}) to use as a restore point.
+After installing and completing your system configuration, [create a boot environment]({{< relref "ManageBootEnvironSCALE.md" >}}) to use as a restore point.
 
-If an issue occurs where you lose access to the SCALE UI, you can establish an SSH session and restore it from the boot environment.
+If an issue occurs where you lose access to the TrueNAS UI, you can establish an SSH session and restore it from the boot environment.
 You can clone the boot environment listed after the **initial-install** environment and rename the clone to something you recognize, such as the release number with date and time.
 
 ## Backing Up TrueNAS Storage Data
@@ -57,7 +57,7 @@ Replication requires setting up SSH credentials before configuring and schedulin
 
 {{< hint type=note title="3rd Party Account Required" >}}
 Cloud sync requires an account with a cloud storage provider and a storage location created with that provider, like an Amazon S3 bucket.
-SCALE supports major providers like Storj, Amazon S3, Google Cloud, Box, and Microsoft Azure, along with a variety of other vendors.
+TrueNAS supports major providers like Storj, Amazon S3, Google Cloud, Box, and Microsoft Azure, along with a variety of other vendors.
 These providers can charge fees for data transfer and storage, so please review the policies of your cloud storage provider before transferring your data.
 {{< /hint >}}
 
@@ -109,7 +109,7 @@ Replication needs an existing [periodic snapshot task]({{< relref "PeriodicSnaps
 You can define this before configuring the replication task or select the replication wizard **Replicate Custom Snapshots** option to have TrueNAS automatically create the task before running the replication task.
 
 1. Create a periodic snapshot task using the or use the replication wizard **Replicate Custom Snapshots** replication option.
-   If scheduling a task, SCALE creates the periodic snapshot task when it runs the replication task according to the scheduled time.
+   If scheduling a task, TrueNAS creates the periodic snapshot task when it runs the replication task according to the scheduled time.
 
 2. Create the replication task.
 

@@ -32,24 +32,24 @@ On networks that support Multicast Domain Name Services (mDNS), the system can u
 By default, TrueNAS uses the host name and domain **truenas.local**.
 To change the host name and domain in the web interface, go to **Network** and click **Settings** on the **Global Configuration** widget.
 
-To access the web interface using an IP address, either use the DHCP-assigned IP address displayed at the top of the Console Setup menu after installing SCALE or use the static IP address you assigned using the [Console Setup menu]({{< relref "/SCALE/GettingStarted/install/ConsoleSetupMenuSCALE.md" >}}).
+To access the web interface using an IP address, either use the DHCP-assigned IP address displayed at the top of the Console Setup menu after installing TrueNAS or use the static IP address you assigned using the [Console Setup menu]({{< relref "/SCALE/GettingStarted/install/ConsoleSetupMenuSCALE.md" >}}).
 
 {{< enterprise >}}
-SCALE Enterprise (HA) systems have specific network configuration requirements.
+TrueNAS Enterprise (HA) systems have specific network configuration requirements.
 Installing TrueNAS on High Availability (HA) systems and configuring networking is complicated and should be guided by Enterprise-level support.
 Contact iXsystems Support for assistance whenever attempting to install TrueNAS on Enterprise HA hardware or configure network settings.
 
-Refer to the [Preparing for SCALE UI Configuration (Enterprise)]({{< relref "InstallPrepEnterprise.md" >}}) and [Installing SCALE Enterprise (HA)]({{< relref "InstallEnterpriseHASCALE.md" >}}) for information on installing HA system and configuring networking.
+Refer to the [Preparing for TrueNAS UI Configuration (Enterprise)]({{< relref "InstallPrepEnterprise.md" >}}) and [Installing TrueNAS Enterprise (HA)]({{< relref "InstallEnterpriseHASCALE.md" >}}) for information on installing HA system and configuring networking.
 {{< expand "Contacting Support" "v" >}}
 {{< include file="/static/includes/iXsystemsSupportContact.md" >}}
 {{< /expand >}}
 {{< /enterprise >}}
 
-## Logging Into the SCALE UI
+## Logging Into the TrueNAS UI
 Use a computer with access to the same network as the TrueNAS system.
-Enter the host name and domain or IP address assigned to the primary network interface in a web browser to connect to the SCALE web interface.
+Enter the host name and domain or IP address assigned to the primary network interface in a web browser to connect to the TrueNAS web interface.
 
-The browser used to access the SCALE UI can impact the quality of your user experience. We generally recommend using Firefox, Edge, or Chrome.
+The browser used to access the TrueNAS UI can impact the quality of your user experience. We generally recommend using Firefox, Edge, or Chrome.
 
 {{< include file="/static/includes/RootLoginWarnSCALE.md" >}}
 
@@ -60,15 +60,15 @@ With the implementation of administrator accounts, the root user is no longer th
 Based on the method used to install SCALE, you can be presented with different first-time login scenarios, each described below.
 
 {{< expand "Clean Installing SCALE" "v" >}}
-When installing SCALE from an <file>iso</file> file, and based on the authentication method selected in step 4 of the SCALE [TrueNAS installer]({{< relref "InstallingScale.md#using-the-truenas-installer" >}}) process, you can see a different sign-in screen for the web UI and need to use different login credentials.
+When installing TrueNAS from an <file>iso</file> file, and based on the authentication method selected in step 4 of the [TrueNAS installer]({{< relref "InstallingScale.md#using-the-truenas-installer" >}}) process, you can see a different sign-in screen for the web UI and need to use different login credentials.
 
-* Selecting **1. Administrative user (truenas_admin)** opens the standard SCALE sign-in screen where you enter the new **truenas_admin** username and password created during installation.
+* Selecting **1. Administrative user (truenas_admin)** opens the standard TrueNAS sign-in screen where you enter the new **truenas_admin** username and password created during installation.
   The root user password is disabled by default. We recommend this option, as it creates the required administrative user and disables the root user password, and which brings the system into compliance with FIPS security hardening standards.
 
   The root user still exists but with the password disabled by default, which means only the truenas_admin user can log into the system.
   You can activate the password for the root user for some limited uses, but you should return to a security-hardened operation by disabling the root password immediately after you finish with the limited use.
 
-* Selecting **2. Configure using Web UI** opens a SCALE sign-in screen with two options. Select the option to either create the admin or root user and password.
+* Selecting **2. Configure using Web UI** opens a TrueNAS sign-in screen with two options. Select the option to either create the admin or root user and password.
 
   If creating and logging in as the admin user, after logging in you must immediately disable the root user password to comply with FIPS security hardening standards.
   
@@ -78,32 +78,32 @@ When installing SCALE from an <file>iso</file> file, and based on the authentica
   
 {{< /expand >}}
 
-{{< expand "Upgrading from SCALE Early Releases" "v" >}}
-Early releases of SCALE (Angelfish and pre-22.12.3 Bluefin release) use the root user credentials to log into the system.
+{{< expand "Upgrading from TrueNAS Early Releases" "v" >}}
+Early Linux-based releases of TrueNAS (Angelfish and pre-22.12.3 Bluefin release) use the root user credentials to log into the system.
 After upgrading from an earlier release, use the existing root user credentials to log into SCALE.
 {{< include file="/static/includes/CreateAdminDisableRoot.md" >}}
 {{< /expand >}}
 
-{{< expand "Migrating/Upgrading from CORE to SCALE" "v" >}}
+{{< expand "Migrating/Upgrading from FreeBSD- to Linux-based TrueNAS Versions" "v" >}}
 
 {{< enterprise >}}
 Customers with a TrueNAS Enterprise High Availability (HA) system should review [Migration Preparation]({{< relref "MigratePrep.md" >}}), [Enterprise HA Migrations]({{< relref "MigrateCOREHAToSCALEHA.md" >}}), and consult with iXsystems Support prior to migrating from TrueNAS CORE to SCALE.
 {{< /enterprise >}}
 For non-HA systems, there are two possible scenarios when migrating from CORE to SCALE:
 
-* Clean installing SCALE using the <file>iso</file> file and then uploading the CORE configuration file.
+* Clean installing TrueNAS using the <file>iso</file> file and then uploading the CORE configuration file.
 * Using the CORE **Update** UI option to upgrade to SCALE.
 
-If performing a clean install using the SCALE <file>iso</file> file, after installing SCALE and uploading the CORE configuration file, your SCALE network settings get overwritten by the CORE config file uploaded so you cannot use the new IP address and admin user to access to the web UI.
-Use the CORE IP address and root credentials to access the UI.
-See [Migrating CORE to SCALE]({{< relref "MigratingFromCORE.md" >}}) for instructions on recovering the new network settings and access to the UI, and recreating the administrator account.
+If performing a clean install using the TrueNAS <file>iso</file> file, after installing TrueNAS and uploading the configuration file, your network settings get overwritten by the config file, so you cannot use the new IP address and admin user to access to the web UI.
+Use the previous address and root credentials to access the UI.
+See [TrueNAS Migrations]({{< relref "MigratingFromCORE.md" >}}) for instructions on recovering the new network settings and access to the UI, and recreating the administrator account.
 
-If using the CORE **Update** UI option, log into SCALE with the CORE root user credentials.
+If using the **Update** UI option, log into TrueNAS with the existing root user credentials.
 {{< include file="/static/includes/CreateAdminDisableRoot.md" >}}
 {{< /expand >}}
 
 ### Logging In as Truenas_Admin
-After setting up the truenas_admin user from one of the scenarios documented above, enter **truenas_admin** and the password to log into SCALE.
+After setting up the truenas_admin user from one of the scenarios documented above, enter **truenas_admin** and the password to log in.
 
 {{< trueimage src="/images/SCALE/Login/LoginScreenSCALE.png" alt="TrueNAS Login Screen" id="TrueNAS Login Screen" >}}
 
@@ -118,10 +118,10 @@ Follow the directions in [Managing Users]({{< relref "ManageLocalUsersScale.md" 
 For environments requiring specific configurations, such as non-AD environments or those using LDAP, ensure that your admin user is properly set up to manage all aspects of the system.
 
 ### Creating an Administrator Account at First Log in
-If you selected the SCALE installation option **2. Configure using Web UI**, the sign-in screen shows two authentication methods.
+If you selected the installation option **2. Configure using Web UI**, the sign-in screen shows two authentication methods.
 One allows you to log in as root or you can create the administration account.
 
-{{< trueimage src="/images/SCALE/Login/FirstTimeLoginInstallOpt3SCALE.png" alt="SCALE Login Set Up Authentication Method" id="SCALE Login Set Up Authentication Method" >}}
+{{< trueimage src="/images/SCALE/Login/FirstTimeLoginInstallOpt3SCALE.png" alt="TrueNAS Login Set Up Authentication Method" id="TrueNAS Login Set Up Authentication Method" >}}
 
 Select either the **Administrative user** or **Root user (not recommended)** option, then enter the password to use with that user.
 
@@ -152,7 +152,7 @@ If the web interface displays but seems unresponsive or incomplete:
 If the UI becomes unresponsive after an upgrade or other system operation, clear the site data and refresh the browser (<kbd>Shift</kbd>+<kbd>F5</kbd>).
 {{< /expand >}}
 
-## Introducing the SCALE Dashboard
+## Introducing the TrueNAS Dashboard
 
 After logging in for the first time, the main system **Dashboard** screen displays.
 The **Dashboard** shows different system information cards (widgets) with basic information about the installed version, systems component usage, network traffic, and configured pools or storage usage.
@@ -160,7 +160,7 @@ The dashboard includes configurable widgets that include a text-only **Custom** 
 
 {{< trueimage src="/images/SCALE/Dashboard/DashboardMainScreen.png" alt="TrueNAS Dashboard" id="TrueNAS Dashboard" >}}
 
-SCALE Enterprise users with an iXsystems-provided TrueNAS server also see an image of the system in the **System Information** widget.
+TrueNAS Enterprise users with an iXsystems-provided TrueNAS server also see an image of the system in the **System Information** widget.
 Click on the system image to open the **System > [View Enclosure]({{< relref "EnclosureScreensSCALE.md" >}})** screen.
 
 The **Dashboard** for non-Enterprise systems displays the TrueNAS logo on the **System Information** widget.
@@ -171,7 +171,7 @@ Click **Add** to create new widgets or the **Edit** option in the widget group t
 
 {{< trueimage src="/images/SCALE/Dashboard/DashboardInConfigMode.png" alt="Dashboard in Configuration Mode" id="Dashboard in Configuration Mode" >}}
 
-## Introducing SCALE Navigation Options
+## Introducing TrueNAS Navigation Options
 
 The top row (toolbar) has links to outside resources and buttons to control the system.
 The left-hand panel lists the main feature and functional areas and lets users navigate to the various TrueNAS configuration screens.

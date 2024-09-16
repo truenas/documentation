@@ -1,6 +1,6 @@
 ---
-title: "Configuring SCALE Using the UI"
-description: "Provides a sequential process to complete the SCALE initial configuration using the SCALE NAS storage software UI."
+title: "Configuring TrueNAS Using the UI"
+description: "Provides a sequential process to complete the TrueNAS initial configuration using the TrueNAS NAS storage software UI."
 weight: 30
 aliases:
  - /scale/gettingstarted/install/uiconfigurationscale/
@@ -24,11 +24,11 @@ iXsystems TrueNAS Enterprise customers should contact iXsystems Support after th
 
 TrueNAS users should follow the instructions provided below to complete the initial setup and configuration of their systems.
 
-Use the information mentioned in the [installation preparation instructions]({{< relref "/SCALE/GettingStarted/Install/_index.md" >}}) article for your SCALE installation type (Enterprise, non-Enterprise, or home use) to configure your network, SMTP, or directory service settings.
+Use the information mentioned in the [installation preparation instructions]({{< relref "/SCALE/GettingStarted/Install/_index.md" >}}) article for your TrueNAS installation type (Enterprise, non-Enterprise, or home use) to configure your network, SMTP, or directory service settings.
 
 {{< include file="/static/includes/RootLoginWarnSCALE.md" >}}
 
-After [logging into SCALE]({{< relref "FirstTimeLogin.md#logging-into-the-scale-ui" >}}), you can begin configuring SCALE using the web interface.
+After [logging into SCALE]({{< relref "FirstTimeLogin.md#logging-into-the-scale-ui" >}}), you can begin configuring TrueNAS using the web interface.
 
 ## Enterprise Licenses and Proactive Support
 
@@ -53,7 +53,7 @@ The **Support** widget on the **System > General Settings** screen displays the 
 
 If you are unfamiliar with network services, devices, or configurations, you can find more information [here]({{< relref "/SCALE/SCALETutorials/Network/_index.md" >}}) to help guide you through this important and required configuration area.
 {{< enterprise >}}
-You must disable failover in the UI on SCALE Enterprise HA systems to [add or change any network setting]({{< relref "InstallEnterpriseHASCALE.md#configure-network-settings" >}}). Complete network changes and test them, then re-enable failover.
+You must disable failover in the UI on TrueNAS Enterprise HA systems to [add or change any network setting]({{< relref "InstallEnterpriseHASCALE.md#configure-network-settings" >}}). Complete network changes and test them, then re-enable failover.
 {{< /enterprise >}}
 
 ### Adding Network Interfaces
@@ -65,16 +65,16 @@ DHCP is available for only a single interface; any other physical interfaces mus
 
 You can also configure virtual network interfaces such as a [bridge]({{< relref "SettingUpBridge.md" >}}), link aggregate (LAGG), or virtual LAN (VLAN) interface.
 
-You can use the Console Setup menu or SCALE UI to configure network interfaces.
+You can use the Console Setup menu or TrueNAS UI to configure network interfaces.
 We recommend using the web UI the **Network** screen to [add or change network interfaces or aliases]({{< relref "/SCALE/SCALETutorials/Network/Interfaces/_index.md" >}}), set up link aggregate [LAGG]({{< relref "SettingUpLAGG.md" >}}) or virtual LAN [VLAN]({{< relref "SettingUpVLAN.md" >}}) interfaces, change or [configure global network settings]({{< relref "ManagingGlobalConfig.md" >}}), or set up [static IP addresses]({{< relref "SettingUpStaticIPs.md" >}}).
 
 ### Adding Aliases or Static IP Addresses
 Static IP addresses and aliases provide support for various network applications.
 {{< enterprise >}}
-SCALE Enterprise HA systems use a virtual IP (VIP) to maintain access to the UI if the system fails over to the standby controller.
+TrueNAS Enterprise HA systems use a virtual IP (VIP) to maintain access to the UI if the system fails over to the standby controller.
 This VIP address might experience a minor blip at failover, but you do not need to log in with the standby controller IP address to gain access to the UI after a failover.
 {{< /enterprise >}}
-You can configure a network interface with a static IP or add an alias IP address on the same screen in the SCALE UI.
+You can configure a network interface with a static IP or add an alias IP address on the same screen in the TrueNAS UI.
 For more information on when to use an alias or a static IP address, see [Managing Interfaces]({{< relref "/SCALE/SCALETutorials/Network/Interfaces/_index.md" >}}).
 
 ## Setting Up Storage
@@ -86,7 +86,7 @@ The storage creation process begins with creating a pool, then adding datasets o
 Creating your initial storage is [explained here]({{< relref "SetUpStorageScale.md" >}}).
 
 ### Setting the System Dataset
-SCALE assigns the root parent dataset of the first created pool as the system dataset.
+TrueNAS assigns the root parent dataset of the first created pool as the system dataset.
 If your system has enough disks to add more pools, you can [change the system dataset]({{< relref "/SCALE/SCALETutorials/SystemSettings/Advanced/_index.md" >}}) to a root dataset of different pool.
 
 ## Setting Up Shares
@@ -102,18 +102,18 @@ These articles provide more information on configuring data sharing and the thre
 {{< /truetable >}}
 
 ## Configuring System Services
-Configure and enable the services you need based on what you deploy on your SCALE system.
+Configure and enable the services you need based on what you deploy on your TrueNAS system.
 {{< enterprise >}}
-Enterprise or SCALE systems with large numbers of disks should enable SMART service and configure SMART testing.
-SCALE Enterprise HA systems should enable and configure the failover service.
+Enterprise or TrueNAS systems with large numbers of disks should enable SMART service and configure SMART testing.
+TrueNAS Enterprise HA systems should enable and configure the failover service.
 {{< /enterprise >}}
 {{< expand "Configuring Services" "v" >}}
-Configure and enable these services based on your SCALE system needs:
+Configure and enable these services based on your TrueNAS system needs:
 
 * [SSH service]({{< relref "SSHServiceSCALE.md" >}})
 
-  Set this service to allow SSH login for administration users (admin or, if also enabled, the root user) on all SCALE systems.
-  All SCALE systems that need SSH access should enable SSH service as part of the initial UI configuration, but this is an area of security vulnerability.
+  Set this service to allow SSH login for administration users (admin or, if also enabled, the root user) on all TrueNAS systems.
+  All TrueNAS systems that need SSH access should enable SSH service as part of the initial UI configuration, but this is an area of security vulnerability.
   For security hardening, do not enable SSH and leave it activated at all times.
   Turn on the service when SSH access is needed and then turn it back off until it is needed again.
 
@@ -122,7 +122,7 @@ Configure and enable these services based on your SCALE system needs:
   SMART service and tests are important for systems with large numbers of disks.
   Managing systems with large numbers of disks can present challenges when determining the disk with issues if SMART service and testing are not set up.
 
-* Failover service on SCALE Enterprise High Availability (HA) systems
+* Failover service on TrueNAS Enterprise High Availability (HA) systems
 
   The failover service enables an HA system to fail over to the standby system controller after a disruption to the primary controller.
   This service is not included on non-Enterprise and non-HA systems.
@@ -145,7 +145,7 @@ See [Managing SMART Tests]({{< relref "SmartTestsScale.md" >}}) for information 
 After completing your initial system configuration and before you begin day-to-day operations, we recommend configuring the system and data storage backup. Recommended backup options:
 
 1. Saving the [system configuration file]({{< relref "SetUpBackupSCALE.md" >}}).
-2. Saving or [creating a new boot environment]({{< relref "ManageBootEnvironSCALE.md" >}}) to use as a restore point if system issues cause you to lose access to the SCALE UI.
+2. Saving or [creating a new boot environment]({{< relref "ManageBootEnvironSCALE.md" >}}) to use as a restore point if system issues cause you to lose access to the TrueNAS UI.
 3. Downloading a system debug to capture system information to use as a comparison against future debug files.
   To download a system debug file, go to **System > Advanced Settings** and click **Save Debug** to begin the download.
 
@@ -155,7 +155,7 @@ You can use the boot environment in an SSH session to restore your system to the
 {{< enterprise >}}
 For Enterprise customers with High Availability (HA) systems, the HA restore process requires recovering both controllers.
 Contact iXsystems Support for assistance before attempting to recover your system.
-If you choose to restore access to controller 1 and the SCALE UI, contact iXsystems Support to get assistance with properly recovering your second controller.
+If you choose to restore access to controller 1 and the TrueNAS UI, contact iXsystems Support to get assistance with properly recovering your second controller.
 
 Enterprise HA customers should not start issuing CLI commands to recover the system!
 
@@ -173,15 +173,15 @@ After saving system configuration and debug files, we recommend setting up data 
 * Setting up replication to another system (remote replication)
 * Adding a cloud storage provider service and setting up a cloud sync task
 
-You can take single [snapshots]({{< relref "CreatingSnapshots.md" >}}) or [schedule periodic snapshot tasks]({{< relref "PeriodicSnapshotTasksSCALE.md" >}}) to capture changes to stored data without the storage overhead that comes with backing up through data replication, or you can use one of the [replication options]({{< relref "/SCALE/SCALETutorials/DataProtection/Replication/_index.md" >}}) SCALE provides.
+You can take single [snapshots]({{< relref "CreatingSnapshots.md" >}}) or [schedule periodic snapshot tasks]({{< relref "PeriodicSnapshotTasksSCALE.md" >}}) to capture changes to stored data without the storage overhead that comes with backing up through data replication, or you can use one of the [replication options]({{< relref "/SCALE/SCALETutorials/DataProtection/Replication/_index.md" >}}) TrueNAS provides.
 
-Another option is to create an account with a cloud storage service provider, then let SCALE manage the backups.
+Another option is to create an account with a cloud storage service provider, then let TrueNAS manage the backups.
 Use the **Backup Credentials** screen [**Cloud Credentials**]({{< relref "AddCloudCredentials.md" >}}) to add authentication credentials for a supported cloud service provider, and go to **Data Protection** to schedule a [**Cloud Sync Tasks**]({{< relref "/SCALE/SCALETutorials/DataProtection/CloudSynctasks/_index.md" >}}) that regularly backs up your storage data to the cloud.
 
 ## Checking System Alert Settings and Services
-You can view system alerts, configure an alert service, and enter an email account to receive alerts from SCALE through the **Alerts** icon found on the top toolbar.
+You can view system alerts, configure an alert service, and enter an email account to receive alerts from TrueNAS through the **Alerts** icon found on the top toolbar.
 {{< expand "Configuring Alerts" "v" >}}
-The alert icon on the [top toolbar]({{< relref "/SCALE/SCALEUIReference/toptoolbar/_index.md" >}}) displays a red circle with a number in it if SCALE encounters a configuration error or exceeds a threshold that you set (such as a temperature or a usage level).
+The alert icon on the [top toolbar]({{< relref "/SCALE/SCALEUIReference/toptoolbar/_index.md" >}}) displays a red circle with a number in it if TrueNAS encounters a configuration error or exceeds a threshold that you set (such as a temperature or a usage level).
 The number indicates how many new alerts have occurred.
 Click on the alert icon to open the **[Alerts]({{< relref "/SCALE/SCALEUIReference/toptoolbar/alerts/_index.md" >}})** panel.
 
@@ -197,18 +197,18 @@ The **Alert Settings** screen includes access to the Enterprise HA setting optio
 
 ## Setting Up Directory Services
 TrueNAS allows you to configure an Active Directory or LDAP server to handle authentication and authorization services, domain, and other account settings.
-SCALE allows configuring either directory server but not both.
+TrueNAS allows configuring either directory server but not both.
 
 {{< hint type=warning >}}
 We do not recommended that you switch between directory services. This can result in configuration issues that could disrupt your system!
 
 However, it is possible to change from either directory service to the other.
-If you want to migrate from LDAP to Active Directory, you must disable LDAP in SCALE and then remove the current directory server settings.
+If you want to migrate from LDAP to Active Directory, you must disable LDAP in TrueNAS and then remove the current directory server settings.
 To change from Active Directory to LDAP, use the **Leave Domain** option and then disable the service before attempting to configure and enable LDAP.
 {{< /hint >}}
 
 {{< enterprise >}}
-iXsystems Support can assist Enterprise customers with configuring directory service settings in SCALE with the [information customers provide]({{< relref "/SCALE/GettingStarted/Install/_index.md" >}}), but they cannot configure customer Active Directory system settings.
+iXsystems Support can assist Enterprise customers with configuring directory service settings in TrueNAS with the [information customers provide]({{< relref "/SCALE/GettingStarted/Install/_index.md" >}}), but they cannot configure customer Active Directory system settings.
 {{< /enterprise >}}
 
 Non-Enterprise users can find support for configuring directory services in the TrueNAS Documentation Hub tutorials or in the community forums.
@@ -226,20 +226,20 @@ If the TrueNAS system has an expansion shelf, the **Enclosure** screen also disp
 If using TrueNAS on hardware without enclosure management support, the **System Information** widget on the **Dashboard** displays the TrueNAS logo, and the **System > Enclosure** option does not exist on the menu navigation panel.
 
 ## Using Applications in SCALE
-SCALE provides a list of applications you can deploy on the **Apps > Discover** screen.
+TrueNAS provides a list of applications you can deploy on the **Apps > Discover** screen.
 
 See the [Apps tutorials]({{< relref "/content/TruenasApps/_index.md" >}}) for procedures on generically deploying and managing apps, app catalogs and images, custom apps, and specific app deployments and notes.
 
 ## Updating SCALE
-You can update your system with an <file>iso</file> file using the system administration console or an update file installed through the SCALE UI.
+You can update your system with an <file>iso</file> file using the system administration console or an update file installed through the TrueNAS UI.
 
 There are a few ways to find available updates for your instance of TrueNAS:
 
-* The main **Dashboard > System Information** widget alerts you when a SCALE update is available to download and install.
+* The main **Dashboard > System Information** widget alerts you when a TrueNAS update is available to download and install.
   Click the update option to open the **System > Updates** screen.
 * Go to **System > Updates** to check if an update is available.
 
-For all update options and procedures using the SCALE UI see **[Updating SCALE]({{< relref "UpdateSCALE.md" >}})**.
+For all update options and procedures using the TrueNAS UI see **[Updating SCALE]({{< relref "UpdateSCALE.md" >}})**.
 
 Always save the system configuration file and save a new boot environment for your current release and configuration before updating to a new incremental or full release.
 

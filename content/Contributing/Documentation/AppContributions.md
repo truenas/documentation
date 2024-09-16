@@ -16,7 +16,7 @@ We welcome community user contributions, issue reporting, and suggestions for ne
 Application maintenance is independent of TrueNAS version release cycles.
 App version information, features, configuration options, and installation behavior during access might vary from those in documented tutorials.
 
-SCALE apps show the **Update** button and a badge on any deployed application instance on the **Installed** application screen when a new version is available.
+TrueNAS apps show the **Update** button and a badge on any deployed application instance on the **Installed** application screen when a new version is available.
 Users can apply the update(s) individually or collectively and at a convenient time based on needs.
 
 ## Contributing to TrueNAS Application Catalogs

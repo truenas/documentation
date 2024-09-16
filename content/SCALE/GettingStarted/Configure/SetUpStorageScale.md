@@ -36,7 +36,7 @@ This approach leverages persistent storage for overall data protection.
 
 Your system must have at least one storage pool configured.
 
-After installing SCALE, enter the IP address assigned by DHCP (displayed in the Console Setup Menu) into a browser window to access the SCALE sign-in splash screen.
+After installing SCALE, enter the IP address assigned by DHCP (displayed in the Console Setup Menu) into a browser window to access the TrueNAS sign-in splash screen.
 Log in to SCALE.
 
 Begin by configuring your first storage pool.

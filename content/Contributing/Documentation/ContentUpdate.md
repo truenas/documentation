@@ -35,7 +35,7 @@ Images are located in the <file>/static/images/</file> directory and in the same
 [![ImageLocation](/images/Contribute/GitHubImagesLocation.png)](/images/Contribute/GitHubImagesLocation.png)
 
 Click **Upload files** and either drag and drop the new or replacement image into the file upload area or open the file browser to select your image.
-Naming the new image name the same as the old image automatically replaces the old image with the new one in every article that includes it. 
+Naming the new image name the same as the old image automatically replaces the old image with the new one in every article that includes it.
 
 If adding a new image to the article, give the PNG image a descriptive name, such as *Adding an SMB Share* or *Add SMB Share Advanced Settings* and save it in the appropriate <file>/static/images/</file> folder.
 Enter the path to the image and the image name to the image link in the article.
@@ -70,7 +70,7 @@ Make changes directly in the article that are specific to the article but not ap
 For example, make only content changes that apply to the advanced scheduler in the snippet, but do not include mentions about tasks that use the scheduler.
 
 ##  Master and Version Branch Differences
-TrueNAS documentation uses branches to organize content related to specific software releases and updates, for example, the ***24.04*** and ***23.10*** SCALE branches of the Documentation Hub. 
+TrueNAS documentation uses branches to organize content related to specific software releases and updates, for example, the ***24.04*** and ***23.10*** branches of the Documentation Hub.
 
 + Content changes in the ***master*** branch result in changes to the TrueNAS Nightly Development Documentation content.
   To make changes in the ***master*** branch, *fork* this branch to create a simple copy of the main repository.

@@ -1,6 +1,6 @@
 ---
 title: "Installing SCALE"
-description: "Provides the SCALE iso file installation instructions for physical hardware and virtual machines. Describes the iso verification process using an OpenPGP encryption application."
+description: "Provides the TrueNAS iso file installation instructions for physical hardware and virtual machines. Describes the iso verification process using an OpenPGP encryption application."
 weight: 15
 aliases:
  - /scale/gettingstarted/installingscale/
@@ -16,10 +16,10 @@ keywords:
 
 After you [download](https://www.truenas.com/download-tn-scale/) the <kbd>.iso</kbd> file, you can start installing TrueNAS!
 
-This article describes verifying the <kbd>.iso</kbd> file and installing SCALE using that file, and selecting the type of installation as either on [physical hardware](#installing-on-physical-hardware) or a [virtual machine (VM)](#installing-on-a-virtual-machine).
+This article describes verifying the <kbd>.iso</kbd> file and installing TrueNAS using that file, and selecting the type of installation as either on [physical hardware](#installing-on-physical-hardware) or a [virtual machine (VM)](#installing-on-a-virtual-machine).
 
 {{< enterprise >}}
-SCALE Enterprise customers should receive their systems already installed and ready for UI configuration. If there are any issues with SCALE that requires you to install or re-install SCALE on your TrueNAS server, contact iXsystems Support for assistance.
+TrueNAS Enterprise customers should receive their systems already installed and ready for UI configuration. If there are any issues with that require you to install or re-install TrueNAS, contact iXsystems Support for assistance.
 
 Enterprise customers with High Availability (HA) systems should not attempt to re-install their systems on their own. The dual controller install process is complicated and the risk of causing serious network issues is high. Contact iXsystems Support for assistance!
 
@@ -92,7 +92,7 @@ Different checksum values indicate a corrupted installer file that you should no
 {{< /expand >}}
 
 ## Installing SCALE
-You can install SCALE on either physical hardware or a virtual machine.
+You can install TrueNAS on either physical hardware or a virtual machine.
 
 {{< hint type=important >}}
 Prior to starting the update process, confirm that the system storage has enough space to handle the update.
@@ -101,7 +101,7 @@ The update stops if there is insufficient space to complete.
 
 ### Installing on Physical Hardware
 TrueNAS is very flexible and can run on any x86_64 compatible (Intel or AMD) processor.
-SCALE requires at least 8GB of RAM (more is better) and a 20GB Boot Device.
+TrueNAS requires at least 8GB of RAM (more is better) and a 20GB Boot Device.
 
 #### Preparing the Install File
 Physical hardware requires burning the TrueNAS installer to a device, typically a CD or removable USB device.
@@ -148,8 +148,8 @@ Slots available for boot differs by hardware. For optimal performance, consider 
 
 #### Using the TrueNAS Installer
 {{< hint type=important >}}
-If you are doing a clean install from the SCALE <kbd>.iso</kbd> file as part of migrating from a different TrueNAS version, or to recover from a serious issue that requires you to re-install SCALE from the <kbd>.iso</kbd>, have your network configuration information ready to use after the installation completes.
-Also have your SCALE system configuration file and data backups handy, so you can recover your system settings and import your data into the recovered SCALE clean-install system.
+If you are doing a clean install from the TrueNAS <kbd>.iso</kbd> file as part of migrating from a different TrueNAS version, or to recover from a serious issue that requires you to re-install TrueNAS from the <kbd>.iso</kbd>, have your network configuration information ready to use after the installation completes.
+Also have your TrueNAS system configuration file and data backups handy, so you can recover your system settings and import your data into the recovered TrueNAS clean-install system.
 {{< /hint >}}
 
 After the system boots into the installer, follow these steps.
@@ -255,7 +255,7 @@ Open VMware Player and click **Create a New Virtual Machine** to enter the New V
 {{< /expand >}}
 
 #### Adding Virtual Disks
-After installing SCALE on a virtual machine (VM), add virtual disks to the VM.
+After installing TrueNAS on a virtual machine (VM), add virtual disks to the VM.
 You need a minimum of two disks, 16 GB each.
 One disk is for the boot environment the other for data storage.
 
@@ -279,7 +279,7 @@ See [Pool Creation]({{< relref "CreatePoolWizard.md" >}}) for descriptions of th
 {{< /expand >}}
 
 #### Using the TrueNAS Installer
-Just as with installing SCALE on physical hardware, complete the installation in the VM by booting into the TrueNAS installer.
+Just as with installing TrueNAS on physical hardware, complete the installation in the VM by booting into the TrueNAS installer.
 
 {{< expand "Using the TrueNAS Installer in a Virtual Machine" "v" >}}
 Select the virtual machine from the list and click **Play virtual machine**.
@@ -293,6 +293,6 @@ The [Console Setup menu]({{< relref "ConsoleSetupMenuScale.md" >}}) displays whe
 
 Congratulations, TrueNAS is now installed!
 
-The next step is to configure SCALE network and general settings.
-Experienced users can use the [Console Setup Menu]({{< relref "ConsoleSetupMenuScale.md" >}}) to configure network settings, but if you are unfamiliar with the Console setup menu and how network configuration works, we recommend using the SCALE UI to [configure settings]({{< relref "UIConfigurationSCALE.md" >}}).
+The next step is to configure TrueNAS network and general settings.
+Experienced users can use the [Console Setup Menu]({{< relref "ConsoleSetupMenuScale.md" >}}) to configure network settings, but if you are unfamiliar with the Console setup menu and how network configuration works, we recommend using the TrueNAS UI to [configure settings]({{< relref "UIConfigurationSCALE.md" >}}).
 TrueNAS uses DHCP to assign an IP address to the primary system interface and displays it at the top of the Console Setup menu screen. Use this IP address to log into the web UI.

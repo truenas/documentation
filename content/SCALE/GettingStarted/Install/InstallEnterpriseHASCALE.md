@@ -1,6 +1,6 @@
 ---
-title: "Installing SCALE Enterprise (HA)"
-description: "Provides a sequential process to complete the installation of a SCALE Enterprise (HA) dual controller NAS system using an iso file and the SCALE UI."
+title: "Installing TrueNAS Enterprise (HA)"
+description: "Provides a sequential process to complete the installation of a TrueNAS Enterprise (HA) dual controller NAS system using an iso file and the TrueNAS UI."
 weight: 16
 aliases:
 tags:
@@ -25,30 +25,30 @@ Contact iXsystems Support for assistance whenever attempting to install TrueNAS 
 {{< include file="/static/includes/iXsystemsSupportContact.md" >}}
 {{< /expand >}}
 
-Do NOT use Linux or CLI commands to recover or clean-install the SCALE <kbd>iso</kbd> file or configure any initial configuration settings!
+Do NOT use Linux or CLI commands to recover or clean-install the TrueNAS <kbd>iso</kbd> file or configure any initial configuration settings!
 Incorrect use of CLI commands can further disrupt your system access and can potentially do greater damage to your system. Proceed at your own risk.
 {{< /enterprise >}}
 
-## Installing SCALE for an Enterprise (HA) System
+## Installing TrueNAS for an Enterprise (HA) System
 
-This article outlines a procedure to do a clean install of a SCALE Enterprise High Availability (HA) systems using an <file>iso</file> file.
+This article outlines a procedure to do a clean install of a TrueNAS Enterprise High Availability (HA) systems using an <file>iso</file> file.
 
 HA systems are dual controller systems with the primary controller referred to as controller 1 (sometimes also as controller A) and controller 2 (or controller B).
 {{< include file="/static/includes/HAControllerInstallBestPracticeSCALE.md" >}}
 
-SCALE includes features and functions to help with completing the configuration process after installing and getting access to the SCALE web interface. This includes utilizing numerous high availability (HA) features to ensure data integrity and availability.
+TrueNAS includes features and functions to help with completing the configuration process after installing and getting access to the TrueNAS web interface. This includes utilizing numerous high availability (HA) features to ensure data integrity and availability.
 
 ### Preparing for a Clean Install
 
-For a list of SCALE Enterprise (HA) preparation information, see [Preparing for SCALE UI Configuration (Enterprise)]({{< relref "InstallPrepEnterprise.md" >}}).
+For a list of TrueNAS Enterprise (HA) preparation information, see [Preparing for TrueNAS UI Configuration (Enterprise)]({{< relref "InstallPrepEnterprise.md" >}}).
 
 Have this information handy to complete this procedure:
 
 * All the assigned network addresses and host names (VIP, controller 1 and 2 IP addresses).
 * Other network information including domain name(s), and DNS server, default gateway, alias, or other static IP addresses.
 * The IPMI access addresses for each controller and the administration credentials for IPMI access to these addresses.
-* SCALE license file provided by iXsystems.
-* SCALE Storage Controller 1 (A) and 2 (B) serial numbers (refer to contracts or documentation provided with the system or contact iXsystems Support and provide your contract number).
+* TrueNAS license file provided by iXsystems.
+* TrueNAS Storage Controller 1 (A) and 2 (B) serial numbers (refer to contracts or documentation provided with the system or contact iXsystems Support and provide your contract number).
 
 {{< hint type=note >}}
 HA system controllers each have serial numbers, the lower number assigned is for controller 1 (e.g. of two controller serial numbers assigned *A1-12345* and *A1-12346*, the *A1-12345* is for controller 1 and *A1-12346* is for controller 2).
@@ -77,16 +77,16 @@ The sections in this article cover the primary steps as a simultaneous installat
 
 1. [Download](#downloading-the-scale-install-file) the <file>iso</file> file from the TrueNAS website and prepare the USB flash drives if not using IPMI for remote access.
 2. [Log into your IPMI](#using-ipmi-to-install-the-iso-on-a-controller) system using the network address assigned to controller 1, and then establish a second connection with controller 2 in a new browser session.
-3. [Install SCALE using the <file>iso</file> file](#using-ipmi-to-install-the-iso-on-a-controller) and select the **Fresh Install** option.
-   Install on controller 1, then immediately begin installing on controller 2 in the other IPMI session to simultaneously install SCALE on both controllers.
+3. [Install TrueNAS using the <file>iso</file> file](#using-ipmi-to-install-the-iso-on-a-controller) and select the **Fresh Install** option.
+   Install on controller 1, then immediately begin installing on controller 2 in the other IPMI session to simultaneously install TrueNAS on both controllers.
 
 4. Disable DHCP, then enter the network settings to controller 1 using the [Console Setup Menu](#configuring-the-network-with-console-setup-menu).
    Enter the IP address and netmask assigned to controller 1, then enter the global network settings for host name, domain name, and nameservers.
 
-   Use the SCALE UI for system configuration as it has safety mechanisms in place to prevent disrupting network access that could require you to repeat the clean install to access your system.
+   Use the TrueNAS UI for system configuration as it has safety mechanisms in place to prevent disrupting network access that could require you to repeat the clean install to access your system.
    However, if you are experienced with the Console Setup Menu and are using it to configure network settings you can configure the rest of the controller 1 network settings with the Console setup menu.
 
-5. [Log into the SCALE UI](#configuring-settings-in-the-scale-ui) for controller 1 to sign the EULA agreement and apply the system HA license.  
+5. [Log into the TrueNAS UI](#configuring-settings-in-the-scale-ui) for controller 1 to sign the EULA agreement and apply the system HA license.  
 6. Disable failover to configure the rest of the network settings and edit the primary network interface on controller 1, and then enable failover.
 7. Complete the minimum storage requirement by adding or importing one pool on controller 1.
 8. Sign in using the Virtual IP (VIP) address.
@@ -108,7 +108,7 @@ Or
 This section provides an overview of the alternative method to clean install an HA system with controller 2 powered off while installing and configuring controller 1.
 These steps are nearly identical to the section above but controller 2 is either powered off or not installed while you install and configure controller 1.
 
-1. Use either the prepared USB flash drive inserted into a USB port for controller 1 or log into an IPMI session and install SCALE on controller 1.
+1. Use either the prepared USB flash drive inserted into a USB port for controller 1 or log into an IPMI session and install TrueNAS on controller 1.
    Finish the installation and allow controller 1 to complete its first boot.
 2. Use either the prepared USB flash drives inserted into a USB port for controller 2 or log into an IPMI session for controller 2 to install SCALE.
    When the installation finishes, power down controller 2.  
@@ -119,7 +119,7 @@ These steps are nearly identical to the section above but controller 2 is either
 6. Log into controller 1, go to **System > Failover**, and click **Sync to Peer**.
    This synchronizes controller 2 with controller 1 and reboots controller 2. Controller 2 becomes the standby controller when it finishes rebooting.
 
-### Downloading the SCALE Install File
+### Downloading the TrueNAS Install File
 
 [Download](https://www.truenas.com/download-tn-scale/) the <file>.iso</file> file.
 
@@ -156,16 +156,16 @@ Use this process to install the <file>iso</file> file on both controller 1 and c
    b. As the system reboots, be prepared to hit the <kbd>F11</kbd> key when you first see the **TrueNAS Open Storage** splash screen.
       Alternatively, you can start clicking on the **F11** key on the online keyboard until you see the TrueNAS Installer screen.
 
-   c. Select the **UEFI: ATEN Virtual CDROM** device from the boot list. The bootstrap loader begins. When it ends the SCALE installer opens.
+   c. Select the **UEFI: ATEN Virtual CDROM** device from the boot list. The bootstrap loader begins. When it ends the TrueNAS installer opens.
 {{< /expand >}}
 
-### Using the SCALE Installer
+### Using the TrueNAS Installer
 
 {{< hint type=note >}}
-If you are doing a clean install from the SCALE <file>.iso</file> file to recover from an issue that requires you to re-install SCALE from the <file>.iso</file>, have your network configuration information ready to use for controller 1 after the installation completes. Do not configure network settings on controller 2.
-Also have your SCALE system configuration file and data backups handy, so you can recover your system settings and import your data into the recovered SCALE clean-install system.
+If you are doing a clean install from the TrueNAS <file>.iso</file> file to recover from an issue that requires you to re-install TrueNAS from the <file>.iso</file>, have your network configuration information ready to use for controller 1 after the installation completes. Do not configure network settings on controller 2.
+Also have your TrueNAS system configuration file and data backups handy, so you can recover your system settings and import your data into the recovered TrueNAS clean-install system.
 {{< /hint >}}
-{{< expand "SCALE Installer Steps" "v" >}}
+{{< expand "TrueNAS Installer Steps" "v" >}}
 {{< include file="/static/includes/SCALEInstallerProcedure.md" >}}
 
 6. Select **OK** after the **The TrueNAS installation on <nvme0n1> succeeded** displays. The Console setup menu screen displays.
@@ -173,7 +173,7 @@ Also have your SCALE system configuration file and data backups handy, so you ca
 7. Enter **3** to **Reboot System** and immediately return to the IPMI **Virtual Media > CD-ROM image** screen to click **Unmount**. Click **Save**.
    If you fail to unmount the <file>iso</file> image before the system completes the reboot, the bootstrap install continues in a boot loop.
 
-SCALE is now installed on controller 1 and repeated for controller 2 starting with [Using IPMI to Install the ISO on a Controller](#using-ipmi-to-install-the-iso-on-a-controller).
+TrueNAS is now installed on controller 1 and repeated for controller 2 starting with [Using IPMI to Install the ISO on a Controller](#using-ipmi-to-install-the-iso-on-a-controller).
 
 {{< /expand >}}
 
@@ -184,7 +184,7 @@ TrueNAS single controller systems use the DHCP-assigned IP address for the prima
 However, HA systems with dual controllers must use static IP addresses.
 
 To allow controller 1 to access the UI, you must disable DHCP and add the controller 1 static IP address and netmask as an alias on the primary network interface, and then enter the network settings for host name, domain name, default gateway, and the name servers (1 and 2).
-You can configure the rest of the HA global network settings in the SCALE web UI.
+You can configure the rest of the HA global network settings in the TrueNAS web UI.
 
 To use the Console setup menu to configure required network settings on controller 1:
 
@@ -225,13 +225,13 @@ To use the Console setup menu to configure required network settings on controll
 
 8. Use either <kbd>Tab</kbd> or the arrow keys to select **Save**, then type <kbd>q</kbd> to return to the main Console setup menu.
 
-### Configuring Settings in the SCALE UI
+### Configuring Settings in the TrueNAS UI
 
 {{< hint type=note >}}
 This section only applies to controller 1. Do not configure settings on controller 2.
 {{< /hint >}}
 
-Use the SCALE UI to:
+Use the TrueNAS UI to:
 
 1. [Apply the HA license](#applying-the-ha-license).
 2. [Complete the network settings](#configure-network-settings).
@@ -240,8 +240,8 @@ Use the SCALE UI to:
 
 ### Applying the HA License
 
-SCALE UI Enterprise customers see the End User License Agreement (EULA) screen the first time they log in.
-Sign the agreement to open the main SCALE **Dashboard**.
+TrueNAS UI Enterprise customers see the End User License Agreement (EULA) screen the first time they log in.
+Sign the agreement to open the main TrueNAS **Dashboard**.
 Apply the system license next.
 
 Go to **System > General Settings** and click **Add License** on the **Support** widget. Copy your license and paste it into the **License** field, then click **Save License**.
@@ -276,7 +276,7 @@ For more information on how to import a pool [click here]({{< relref "ImportPool
 
    {{< trueimage src="/images/SCALE/SystemSettings/FailoverSyncToPeerDialog.png" alt="Failover Sync To Peer" id="Failover Sync To Peer" >}}
 
-When the system comes back up, log into SCALE using the virtual IP address.
+When the system comes back up, log into TrueNAS using the virtual IP address.
 The main **Dashboard** displays two **System Information** widgets. In standard configurations by iXsystems, Controller 1 shows its serial number and a host name that includes the letter **a**. Controller 2 is labeled as **Standby Controller** and shows its serial number and a host name that includes the letter **b**.
 Take note of this information.
 
@@ -289,6 +289,6 @@ If controller 2 comes online as the primary and controller 1 as the standby, you
 
 2. Log back into the UI with the VIP address. Go to **System > Failover** and select **Default TrueNAS Controller** to make controller 1 the primary controller.
 
-3. Select **Sync to Peer**. SCALE makes controller 2 the standby controller and syncs the configuration on controller 1 to controller
+3. Select **Sync to Peer**. TrueNAS makes controller 2 the standby controller and syncs the configuration on controller 1 to controller
 
 4. Click **Save**.
