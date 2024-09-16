@@ -8,7 +8,7 @@ aliases:
  - /scale/credentials/
 ---
 
-SCALE Credential options are collected in this section of the UI and organized into a few different screens:
+TrueNAS Credential options are collected in this section of the UI and organized into a few different screens:
 
 * **Users** allows those with permissions to add, configure, and delete users on the system.
   There are options to search for keywords in usernames, display or hide user characteristics, and toggle whether the system shows built-in users.

@@ -1,6 +1,6 @@
 &NewLine;
 
-TrueNAS uses DHCP to assign the IP address required to access the SCALE UI and displays it on the Console Setup Menu screen, and it sets the host name to truenas.
+TrueNAS uses DHCP to assign the IP address required to access the TrueNAS UI and displays it on the Console Setup Menu screen, and it sets the host name to truenas.
 
 If you do not plan to use the DHCP-assigned network addresses provided by SCALE, identify your host and domain names, the static or fixed IP addresses you plan to assign to your network interface card(s), the default gateway, subnet mask(s), and the DNS name servers in your network. 
 {{< enterprise >}}

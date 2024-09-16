@@ -236,7 +236,7 @@ This procedure walks you through adding each configuration setting on the seven 
 
    b. Select the target from the **Target** dropdown list.
 
-   c. Select or enter **0**. The first LUN on SCALE must be zero (**0**). If adding additional LUNs, enter or select a value between 1 and 1023 for those additional LUNs.
+   c. Select or enter **0**. The first LUN on TrueNAS must be zero (**0**). If adding additional LUNs, enter or select a value between 1 and 1023 for those additional LUNs.
       Some initiators expect a value below 256. Leave this **LUN ID** blank to automatically assign the next available ID.
 
    d. Select an existing extent from the **Extent** dropdown.

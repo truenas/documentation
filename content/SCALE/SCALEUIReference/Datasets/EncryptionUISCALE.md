@@ -1,6 +1,6 @@
 ---
 title: "Encryption Settings"
-description: "Provides information on the settings and functions found on the SCALE storage encryption screens."
+description: "Provides information on the settings and functions found on the TrueNAS storage encryption screens."
 weight: 50
 aliases:
  - /scale/scaleuireference/storage/datasets/encryptionuiscale/

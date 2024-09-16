@@ -15,10 +15,10 @@ keywords:
 
 ## Using Remote Replication
 
-TrueNAS replication allows users to create one-time or regularly scheduled ZFS snapshots of data stored in pools, datasets or zvols on their SCALE system as a way to back up stored data.
+TrueNAS replication allows users to create one-time or regularly scheduled ZFS snapshots of data stored in pools, datasets or zvols on their TrueNAS system as a way to back up stored data.
 When properly configured and scheduled, remote replication takes regular snapshots of storage pools or datasets and saves them in the destination location on another system.
 
-Remote replication occurs between an originating TrueNAS system and another TrueNAS system (SCALE or CORE) that stores the replicated snapshots.
+Remote replication occurs between an originating TrueNAS system and another TrueNAS system that stores the replicated snapshots.
 
 With the implementation of the **Local Administrator** user and role-based permissions, setting up replication tasks as an admin user has a few differences than with setting up replication tasks when logged in as root.
 Setting up remote replication while logged in as the admin user requires selecting **Use Sudo For ZFS Commands**.
@@ -78,7 +78,7 @@ This saves some time when creating multiple replication tasks between the same t
       Enter the name and [strftime(3)](https://man7.org/linux/man-pages/man3/strftime.3.html) %Y, %m, %d, %H, and %M strings that match the snapshots to include in the replication. Separate entries by pressing <kbd>Enter</kbd>. The number of snapshots matching the patterns display.
 
    g. (Optional) Enter a name for the snapshot in **Task Name**.
-      SCALE populates this field with the default name using the source and destination paths separated by a hyphen, but this default can make locating the snapshot in destination dataset a challenge.
+      TrueNAS populates this field with the default name using the source and destination paths separated by a hyphen, but this default can make locating the snapshot in destination dataset a challenge.
       To make it easier to find the snapshot, give it name easy for you to identify. For example, a replicated task named *dailyfull* for a full file system snapshot taken daily.
 
 {{< include file="/static/includes/ReplicationScheduleAndRetentionSteps.md" >}}

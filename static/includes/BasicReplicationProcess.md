@@ -21,7 +21,7 @@ Replication tasks typically require a configured and active [periodic snapshot t
 
 3. Create a Periodic Snapshot task of the storage locations to be backed up.
 
-4. Create an SSH connection between the local SCALE system and the remote system for remote replication tasks. Local replication does not require an SSH connection.
+4. Create an SSH connection between the local TrueNAS system and the remote system for remote replication tasks. Local replication does not require an SSH connection.
    You can do this from either **Credentials > Backup Credentials > SSH Connection** and clicking **Add** or from the **Replication Task Wizard** using the **Generate New** option in the settings for the remote system.
 
 5. Go to **Data Protection > Replication Tasks** and click **Add** to open the **Replication Task Wizard** where you specify the settings for the replication task.

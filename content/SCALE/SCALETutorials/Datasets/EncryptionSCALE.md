@@ -1,6 +1,6 @@
 ---
 title: "Storage Encryption"
-description: "Provides information on SCALE storage encryption for pools, root datasets, datasets, and zvols."
+description: "Provides information on TrueNAS storage encryption for pools, root datasets, datasets, and zvols."
 weight: 50
 aliases:
  - /scale/storage/encryptionscale/
@@ -41,7 +41,7 @@ Because encryption is inherited from the parent, all data within that pool is en
 Selecting the **Encryption** option for the pool (root dataset) forces encryption for all datasets and zvols created within the root dataset.
 
 You cannot create an unencrypted dataset within an encrypted pool or dataset.
-This change does not affect existing datasets created in earlier releases of SCALE but does affect new datasets created in 22.12.3 and later releases.
+This change does not affect existing datasets created in earlier releases of TrueNAS but does affect new datasets created in 22.12.3 and later releases.
 
 Leave the **Encryption** option on the **Pool Creation Wizard** screen cleared to create an unencrypted pool.
 You can create both unencrypted and encrypted datasets within an unencrypted pool (root dataset).
@@ -67,7 +67,7 @@ If your system loses power or you reboot the system, the datasets, zvols, and al
 {{< /hint >}}
 
 ### Encryption Visual Cues
-SCALE uses lock icons to indicate the encryption state of a root, parent, or child dataset in the tree table on the **[Datasets]({{< relref "/SCALE/SCALEUIReference/Datasets/_index.md" >}})** screen.
+TrueNAS uses lock icons to indicate the encryption state of a root, parent, or child dataset in the tree table on the **[Datasets]({{< relref "/SCALE/SCALEUIReference/Datasets/_index.md" >}})** screen.
 Each icon shows a text label with the state of the dataset when you hover the mouse over the icon.
 
 {{< include file="/static/includes/EncryptionIconsSCALE.md" >}}

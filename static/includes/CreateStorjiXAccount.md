@@ -12,7 +12,7 @@ The Storj main dashboard opens.
 
 {{< trueimage src="/images/SCALE/DataProtection/StorjMainDashboard.png" alt="Storj Main Dashboard" id="Storj Main Dashboard" >}}
 
-Now you can add the storage bucket you want to use in your Storj iX account and SCALE TrueCloud Backup task.
+Now you can add the storage bucket you want to use in your Storj iX account and TrueNAS TrueCloud Backup task.
 
 From the Storj main dashboard:
 

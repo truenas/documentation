@@ -45,14 +45,14 @@ Each interface type displays new fields on the **Add Interface** panel.
 Links with more information on adding these specific types of interfaces are at the bottom of this article.
 
 ## Testing Network Interface Changes
-After adding a new interface or changing an existing interface that can impact access to the UI, SCALE displays a **Test Changes** dialog.
+After adding a new interface or changing an existing interface that can impact access to the UI, TrueNAS displays a **Test Changes** dialog.
 This function is intended to prevent changes that can break access to the UI.
 
 {{< trueimage src="/images/SCALE/Network/TestNetworkChanges.png" alt="Test Network Changes" id="Test Network Changes" >}}
 
 Click **Test Changes**. You have 60 seconds to test the change. Keep the browser session open, and open a new browser window.
 Enter the IP address in the URL field and press <kbd>Enter</kbd>.
-The SCALE login screen should display. Enter the administrator login credentials to access the system.
+The TrueNAS login screen should display. Enter the administrator login credentials to access the system.
 
 Go to **Network** in the new browser session and click **Save Changes**.
 

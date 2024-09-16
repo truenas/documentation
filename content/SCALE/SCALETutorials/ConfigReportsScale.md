@@ -1,6 +1,6 @@
 ---
 title: "Reporting"
-description: "Provides information on changing settings that control how SCALE displays report graphs, how to interact with graphs, and configuring reporting exporters."
+description: "Provides information on changing settings that control how TrueNAS displays report graphs, how to interact with graphs, and configuring reporting exporters."
 weight: 13
 aliases:
  - /scale/scaletutorials/reporting/configreportsscale/
@@ -54,7 +54,7 @@ See [Dashboards and Charts](https://learn.netdata.cloud/docs/dashboards-and-char
 You can configure TrueNAS to export Netdata information to any time-series database, reporting cloud service or application installed on a server.
 For example, Graphite, Grafana, etc., installed on a server or use their cloud service.
 
-Creating reporting exporters enables SCALE to send Netdata data reporting metrics, formatted as a JSON object, to another reporting entity.
+Creating reporting exporters enables TrueNAS to send Netdata data reporting metrics, formatted as a JSON object, to another reporting entity.
 
 For more information on exporting Netdata records to other servers or services, refer to the Netdata [exporting reference guide](https://learn.netdata.cloud/docs/exporting/exporting-reference).
 
@@ -110,7 +110,7 @@ To view the Graphite web UI, enter the *IPaddress:Port#* of the system hosting t
 
 {{< trueimage src="/images/SCALE/Reporting/GraphiteWebUIForReportingExporter.png" alt="Graphite Web UI" id="Graphite Web UI" >}}
 
-SCALE can now export the data records as Graphite-formatted JSON objects to the other report collection and processing application, service, or servers.
+TrueNAS can now export the data records as Graphite-formatted JSON objects to the other report collection and processing application, service, or servers.
 
-SCALE also populates the exporter screen with default settings.
+TrueNAS also populates the exporter screen with default settings.
 To view these settings, click **Edit** on the row for the exporter.

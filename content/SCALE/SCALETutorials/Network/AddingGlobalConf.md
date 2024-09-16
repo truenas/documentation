@@ -1,6 +1,6 @@
 ---
 title: "Adding Network Settings"
-description: "Provides instructions on adding network settings during initial SCALE installation or after a clean install of SCALE."
+description: "Provides instructions on adding network settings during TrueNAS installation."
 weight: 15
 tags:
 - network

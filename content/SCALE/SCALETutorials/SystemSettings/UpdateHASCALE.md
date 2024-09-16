@@ -1,6 +1,6 @@
 ---
-title: "Updating SCALE Enterprise HA"
-description: "Provides instructions on how to update SCALE releases on Enterprise (HA) systems."
+title: "Updating TrueNAS Enterprise HA"
+description: "Provides instructions on how to update TrueNAS releases on Enterprise (HA) systems."
 weight: 15
 aliases:
 tags:
@@ -14,7 +14,7 @@ keywords:
 ---
 
 {{<enterprise>}}
-This procedure only applies to SCALE Enterprise (HA) systems.
+This procedure only applies to TrueNAS Enterprise (HA) systems.
 If attempting to migrate from CORE to SCALE, see [Migrating from TrueNAS CORE]({{< relref "MigratingFromCORE.md" >}}).
 {{</enterprise>}}
 
@@ -23,7 +23,7 @@ If the system does not have an administrative user account, [create the admin us
 
 Take a screenshot of the license information found on the **Support** widget on the **System > General Settings** screen. You use this to verify the license after the update.
 
-To update your Enterprise (HA) system to the latest SCALE release, log into the SCALE UI using the virtual IP (VIP) address and then:
+To update your Enterprise (HA) system to the latest TrueNAS release, log into the TrueNAS UI using the virtual IP (VIP) address and then:
 
 1. Check for updates. Go to the main **Dashboard** and click **Check for Updates** on the **System Information** widget for the active controller.
    This opens the **System > Update** screen. If an update is available it displays on this screen.
@@ -35,7 +35,7 @@ To update your Enterprise (HA) system to the latest SCALE release, log into the 
    Click **Choose File** and select the <kbd>update</kbd> file downloaded to your system, then click **Apply Update** to start the update process.
    After the system to finishes updating it reboots.
 
-4. Sign into the SCALE UI. If using root to sign in, create the admin account now.
+4. Sign into the TrueNAS UI. If using root to sign in, create the admin account now.
    If using admin, continue to the next step.
 
 5. Verify the system license after the update. Go to **System > General Settings**.
@@ -52,7 +52,7 @@ To update your Enterprise (HA) system to the latest SCALE release, log into the 
 
    b. Enter the admin user credentials in the sign-in splash screen.
 
-8. After validating access to the SCALE UI using the admin credentials, disable the root user password.
+8. After validating access to the TrueNAS UI using the admin credentials, disable the root user password.
    Go to **Credentials > Local User** and edit the root user. Select **Disable Password** and click **Save**.
 
 Finish the update by saving your updated [system configuration file]({{< relref "SetUpBackUpSCALE.md" >}}) to a secure location and [create a new boot environment]({{< relref "ManageBootEnvironSCALE.md" >}}) to use as a restore point if it becomes necessary.

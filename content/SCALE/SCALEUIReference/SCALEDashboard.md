@@ -1,6 +1,6 @@
 ---
 title: Dashboard
-description: "Explains the main dashboard information cards (widgets) and provides basic information on synchronizing the system and SCALE server times, and on customizing the Dashboard display."
+description: "Explains the main dashboard information cards (widgets) and provides basic information on synchronizing the system and TrueNAS server times, and on customizing the Dashboard display."
 weight: 4
 tags:
 - dashboard
@@ -30,7 +30,7 @@ Click on the <span class="iconify" data-icon="ic:baseline-assessment"></span> **
 For example, clicking the <span class="iconify" data-icon="ic:baseline-assessment"></span> assessment icon on the **CPU** widget opens the **Reporting > CPU** screen. 
 
 {{< expand "System Information Widget" "v" >}} 
-The **System Information** widget shows general information about the SCALE system.
+The **System Information** widget shows general information about the TrueNAS system.
 The **Updates Available** button opens the **System > Update** screen.
 
 {{< trueimage src="/images/SCALE/Dashboard/DashboardSystemInfoWidgetGeneric.png" alt="System Information Widget" id="System Information Widget" >}}
@@ -212,7 +212,7 @@ Select an individual widget in a layout with multiple widgets to change the cate
 | Setting | Description |
 |---------|-------------|
 | **Layouts** | Click on the layout image to add one to four widgets in the group. Not all widget categories support all layouts. |
-| **Widget Category** | Select the information category from the dropdown list of options:<br><li>**Empty** - Default selection for a new widget. Use to fill a grouping of multiple widgets where only two are defined and the others are not.<br><li>**Network** - Use to to set up a network widget.<br><li>**Storage** - Use to set up a storage or single pool widget.<br><li>**Help** - Use to include the widget with links to SCALE resources.<br><li>**Memory** - Use to set up a memory-usage widget.<br><li>**Backup Tasks** - Use to set up a widget showing either configured data protection tasks or links to locations to configure tasks.<br><li>**CPU** - Use to set up a CPU usage widget.<br><li>**System Information** - Use to add one of four system information widget types. <br><li>**Custom** - Use to set up a text-only widget with whatever text-based information you want to include on the **Dashboard**.<br></li> The **Widget Type** field shows after selecting the category. |
+| **Widget Category** | Select the information category from the dropdown list of options:<br><li>**Empty** - Default selection for a new widget. Use to fill a grouping of multiple widgets where only two are defined and the others are not.<br><li>**Network** - Use to to set up a network widget.<br><li>**Storage** - Use to set up a storage or single pool widget.<br><li>**Help** - Use to include the widget with links to TrueNAS resources.<br><li>**Memory** - Use to set up a memory-usage widget.<br><li>**Backup Tasks** - Use to set up a widget showing either configured data protection tasks or links to locations to configure tasks.<br><li>**CPU** - Use to set up a CPU usage widget.<br><li>**System Information** - Use to add one of four system information widget types. <br><li>**Custom** - Use to set up a text-only widget with whatever text-based information you want to include on the **Dashboard**.<br></li> The **Widget Type** field shows after selecting the category. |
 | **Widget Type** | Select the type of information to show in the selected widget. Options change based on the selected **Widget Category**. See [Widget Type Options by Category](#widget-type-options-by-category) for information on the options by the category and type selected. |
 {{< /truetable >}}
 

@@ -1,6 +1,6 @@
 &NewLine;
 
-The SCALE top navigation top toolbar provides access to functional areas of the UI that you might want to directly access while on other screens in the UI.
+The TrueNAS top navigation top toolbar provides access to functional areas of the UI that you might want to directly access while on other screens in the UI.
 Icon buttons provide quick access to dropdown lists of options, dropdown panels with information on system alerts or tasks, and can include access to other information or configuration screens.
 It also shows the name of admin user currently logged into the system to the left of the **Settings** and **Power** icons.
 
@@ -41,7 +41,7 @@ Users can also use the iXsystems home page to access their customer portal and t
 {{< /expand >}}
 
 {{< expand "Settings" "v" >}}
-The **Settings** <span class="material-icons">account_circle</span> icon opens a dropdown list of options to change passwords, set up user two-factor authentication, create and manage API keys, access the TrueNAS API guide, see information on the system, and to logout of the SCALE UI.
+The **Settings** <span class="material-icons">account_circle</span> icon opens a dropdown list of options to change passwords, set up user two-factor authentication, create and manage API keys, access the TrueNAS API guide, see information on the system, and to logout of the TrueNAS UI.
 {{< expand "Change Password" >}}
 {{< include file="/static/includes/ChangeLoggedInUserPassword.md" >}}
 {{< /expand >}}
@@ -67,14 +67,14 @@ Click on **About** <span class="iconify" data-icon="ant-design:info-circle-outli
 {{< /expand >}}
 
 {{< expand "Log Out" "v" >}}
-**Log Out** logs the current user out of the SCALE UI, but does not power off the system. 
+**Log Out** logs the current user out of the TrueNAS UI, but does not power off the system. 
 The **Read-Only Admin** and **Sharing Admin** roles only have access to the **Log Out** option.
 {{< /expand >}}
 {{< /expand >}}
 
 {{< expand "Power Options" "v" >}}
 Click the **Power** <span class="material-icons">power_settings_new</span> button to open the dropdown list of power options.
-Options **Restart** which logs you out of the SCALE UI and restarts the server or **Shut Down** which logs you out of the SCALE UI and powers off the system as though you pressed the power button on the physical server.
+Options **Restart** which logs you out of the TrueNAS UI and restarts the server or **Shut Down** which logs you out of the TrueNAS UI and powers off the system as though you pressed the power button on the physical server.
 
 With the implementation of administrator roles, the power options are locked based on the level of privileges for the administrator role.
 The full administrator has access to both power options but readonly and sharing admin roles do not.

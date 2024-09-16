@@ -12,7 +12,7 @@ keywords:
 - software storage solutions
 ---
 
-SCALE system management options are collected in this section of the UI and organized into a few different screens:
+TrueNAS system management options are collected in this section of the UI and organized into a few different screens:
 
 * **Update** controls when the system applies a new version.
   There are options to download and install an update, have the system check daily and stage updates, or apply a manual update file to the system.
@@ -37,7 +37,7 @@ SCALE system management options are collected in this section of the UI and orga
 
 * **Audit** allows users to review auditing logs of all actions performed by a session, user, or service (SMB, middleware).
 
-* **Enclosure** appears when the system is attached to compatible SCALE hardware.
+* **Enclosure** appears when the system is attached to compatible TrueNAS hardware.
   This is a visual representation of the system with additional details about disks and other physical hardware components.
 
 <div class="noprint">

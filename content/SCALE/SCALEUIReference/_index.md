@@ -1,6 +1,6 @@
 ---
 title: UI Reference Guide
-description: "Documents each screen and field available in the SCALE interface. Articles are organized parallel to the SCALE interface layout."
+description: "Documents each screen and field available in the TrueNAS interface. Articles are organized parallel to the TrueNAS interface layout."
 weight: 40
 aliases: 
  - /scale/scaleclireference/
@@ -21,7 +21,7 @@ Welcome to the TrueNAS UI Reference Guide!
 
 <div class="noprint">
 
-## SCALE UI Reference Guide Sections
+## TrueNAS UI Reference Guide Sections
 
 {{< children depth="2" description="true" >}}
 

@@ -58,7 +58,7 @@ Saving changes to the configuration creates a new replication task without alter
       Browse to the location of the pool or dataset you want to use to store replicated snapshots and select to populate **Destination** with the path.
 
    c. (Optional) Enter a name for the snapshot in **Task Name**.
-      SCALE populates this field with the default name using the source and destination paths separated by a hyphen, but this default can make locating the snapshot in destination dataset a challenge.
+      TrueNAS populates this field with the default name using the source and destination paths separated by a hyphen, but this default can make locating the snapshot in destination dataset a challenge.
       To make it easier to find the snapshot, give it name easy for you to identify. For example, a replicated task named *dailyfull* for a full file system snapshot taken daily.
 
 {{< include file="/static/includes/ReplicationScheduleAndRetentionSteps.md" >}}

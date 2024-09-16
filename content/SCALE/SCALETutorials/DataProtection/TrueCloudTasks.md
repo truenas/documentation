@@ -19,7 +19,7 @@ TrueNAS can send, receive, or synchronize data with the cloud storage providers 
 TrueCloud backup tasks allow for single-time transfers or recurring transfers on a schedule.
 They are an effective method to back up data to a remote location.
 
-This article provides instructions on configuring a TrueCloud backup task using Storj and covers setting up both the Storj iX account and SCALE credential.
+This article provides instructions on configuring a TrueCloud backup task using Storj and covers setting up both the Storj iX account and TrueNAS credential.
 
 {{< hint type=important >}}
 To take advantage of the lower-cost benefits of the TrueCloud backup service, you must create your Storj iX account using the link provided on the **Add Cloud Credentials** screen.
@@ -37,9 +37,9 @@ You must have all system storage (pool and datasets or zvols) configured and rea
 
 To create a TrueCloud Backup task for a TrueCloud transfer:
 
-1. Create the SCALE [Storj cloud credential](#adding-storj-cloud-credentials).
+1. Create the TrueNAS [Storj cloud credential](#adding-storj-cloud-credentials).
 
-   Adding the Storj cloud credential in SCALE includes following the link to create the Storj iX account, creating a new bucket, and obtaining the S3 authentication credentials needed to complete the process in SCALE.
+   Adding the Storj cloud credential in TrueNAS includes following the link to create the Storj iX account, creating a new bucket, and obtaining the S3 authentication credentials needed to complete the process in SCALE.
 
 2. Create the [TrueCloud Backup task](#setting-up-the-truecloud-backup-task) for one bucket.
 

@@ -320,7 +320,7 @@ External SMB shares are essentially redirects to shares on other systems.
 Administrators might want to use this when managing multiple TrueNAS systems with SMB shares and if they don't want to keep track of which shares live on which boxes for clients.
 This feature allows admins to connect to any of the TrueNAS systems with external shares set up and see them all.
 
-Create the SMB share on another SCALE server (for example, *system1*), as described in [Adding an SMB Share](#adding-an-smb-share) above.
+Create the SMB share on another TrueNAS server (for example, *system1*), as described in [Adding an SMB Share](#adding-an-smb-share) above.
 
 We recommend using Active Directory or LDAP when creating user accounts, but at a minimum synchronize user accounts between the system with the share (*system1*) and on the TrueNAS system where you set up the external share (for example, *system2*).
 
@@ -332,7 +332,7 @@ Repeat the *system2* instructions above to add an external redirect (share) on *
 
 {{< trueimage src="/images/SCALE/Shares/SetUpExternalSMBShare.png" alt="Set Up Another External SMB Share" id="Set Up Another External SMB Share" >}}
 
-Repeat for each SCALE system with SMB shares you want added as an external redirect.
+Repeat for each TrueNAS system with SMB shares you want added as an external redirect.
 Change the auto-populated name to EXTERNAL2 or something to distinguish it from the SMB shares on the local system (*system1* in this case) and any other external shares added.
 
 <div class="noprint">

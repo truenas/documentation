@@ -8,7 +8,7 @@ Clicking **Signup** opens the TrueCommand sign-up page in a new tab.
 
 {{< trueimage src="/images/SCALE/Login/TrueCommandCloudLoginSCALE.png" alt="TrueCommand Log In/Sign Up" id="TrueCommand Log In/Sign Up" >}}
 
-After users sign up, they can click the **Connect** button and enter their API key to connect SCALE to TrueCommand Cloud.
+After users sign up, they can click the **Connect** button and enter their API key to connect TrueNAS to TrueCommand Cloud.
 
 {{< trueimage src="/images/SCALE/Dashboard/TrueCommandCloudConnectSCALE.png" alt="TrueCommand Cloud API Key" id="TrueCommand Cloud API Key" >}}
 

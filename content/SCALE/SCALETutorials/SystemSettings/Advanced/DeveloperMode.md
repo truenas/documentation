@@ -1,6 +1,6 @@
 ---
 title: "Developer Mode (Unsupported)"
-description: "Provides information on the unsupported SCALE developer mode and how to enable it."
+description: "Provides information on the unsupported TrueNAS developer mode and how to enable it."
 weight: 80
 alias:
 tags:

@@ -16,7 +16,7 @@ TrueNAS allows users to create and configure Windows SMB shares, Unix (NFS) shar
 
 Click **Shares** on the main navigation panel to display the **Sharing** screen, which displays options to access SMB, NFS, and iSCSI shares.
 
-{{< trueimage src="/images/SCALE/Shares/SharingDashboardNoShares.png" alt="SCALE Sharing Screen" id="SCALE Sharing Screen" >}}
+{{< trueimage src="/images/SCALE/Shares/SharingDashboardNoShares.png" alt="TrueNAS Sharing Screen" id="TrueNAS Sharing Screen" >}}
 
 <div class="noprint">
 

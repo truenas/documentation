@@ -14,7 +14,7 @@ keywords:
 TrueNAS has an [Open LDAP](https://www.openldap.org/) client for accessing the information on an LDAP server.
 An LDAP server provides directory services for finding network resources like users and their associated permissions.
 {{< hint type=note >}}
-You can have either Active Directory or LDAP configured on SCALE but not both.
+You can have either Active Directory or LDAP configured on TrueNAS but not both.
 {{< /hint >}}
 
 {{< expand "Does LDAP work with SMB?" "v" >}}
@@ -26,7 +26,7 @@ TrueNAS does not support non-CA certificates.
 
 ## Configuring LDAP
 
-To configure SCALE to use an LDAP directory server:
+To configure TrueNAS to use an LDAP directory server:
 
 1. Go to **Credentials > Directory Services** and click **Configure LDAP**.
 

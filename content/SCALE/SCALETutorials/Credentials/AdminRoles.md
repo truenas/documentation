@@ -17,18 +17,18 @@ keywords:
 
 {{< include file="/static/includes/AdminAccountSecurity.md" >}}
 
-Administrator accounts have roles and privileges that allow greater control over access to functions in SCALE and to further utilize FIPS-compliance.
-SCALE includes three predefined admin user account levels:
+Administrator accounts have roles and privileges that allow greater control over access to functions in TrueNAS and to further utilize FIPS-compliance.
+TrueNAS includes three predefined admin user account levels:
 
-* Full Admin - Assigned to the local administrator account created by the system when clean installing SCALE using an <file>iso</file> file.
-  Also assigned when manually creating an admin user if logged in as the root user account after upgrading from a pre-22.12.3 release of SCALE or migrating from CORE to SCALE.
+* Full Admin - Assigned to the local administrator account created by the system when clean installing TrueNAS using an <file>iso</file> file.
+  Also assigned when manually creating an admin user if logged in as the root user account after upgrading from a pre-22.12.3 release of TrueNAS or migrating from FreeBSD- to Linux-based TrueNAS releases.
 
 * Sharing Admin - Assigned to users responsible for only managing shares (SMB, NFS, iSCSI).
   This user can create shares and the datasets for shares, start/restart the share service, and modify the ACL for the share dataset.
 
 * Readonly Admin - Assigned to users that can monitor the system but not make changes to settings.
 
-For more information on the different administrator scenarios users can encounter, read [Logging Into SCALE the First Time]({{< relref "FirstTimeLogin.md" >}}).
+For more information on the different administrator scenarios users can encounter, read [Logging In for the First Time]({{< relref "FirstTimeLogin.md" >}}).
 
 ## Configuring Administrative Privileges
 

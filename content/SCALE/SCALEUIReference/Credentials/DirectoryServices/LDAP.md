@@ -20,7 +20,7 @@ Migrate legacy Samba domains to Active Directory before upgrading to 24.10 or la
 
 ## LDAP Widget
 
-The **LDAP** widget displays after you configure SCALE settings for your LDAP instance.
+The **LDAP** widget displays after you configure TrueNAS settings for your LDAP instance.
 The widget includes **Status**, and the **Hostname** and **Base DN** and **Bind DN** you configured.
 
 ![LDAPwidgett](/images/SCALE/Credentials/LDAPwidget.png "LDAP Widget")

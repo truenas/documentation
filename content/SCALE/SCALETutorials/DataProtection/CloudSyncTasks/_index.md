@@ -73,7 +73,7 @@ Instead, files are tagged with a version number or moved to a hidden state.
 To automatically delete old or unwanted files from the bucket, adjust the [Backblaze B2 Lifecycle Rules](https://www.backblaze.com/blog/backblaze-b2-lifecycle-rules/).
 
 {{< hint type=note >}}
-A directory, deleted in BackBlaze B2 and notated with an asterisk, do not display in the SCALE UI.
+A directory, deleted in BackBlaze B2 and notated with an asterisk, do not display in the TrueNAS UI.
 These folders are essentially empty directories and Backblaze API restricts them so they do not display.
 {{< /hint >}}
 #### Amazon S3 Issues

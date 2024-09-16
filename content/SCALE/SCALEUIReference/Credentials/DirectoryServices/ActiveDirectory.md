@@ -16,7 +16,7 @@ tags:
 
 ## Active Directory Widget
 
-The **Active Directory** widget displays after you configure SCALE settings for your Active Directory instance. 
+The **Active Directory** widget displays after you configure TrueNAS settings for your Active Directory instance. 
 The widget includes **Status**, and the **Domain Name** and **Domain Account Name** you configured.
 
 ![ActiveDirectoryWidget](/images/SCALE/Credentials/ActiveDirectoryWidget.png "Active Directory Widget")
@@ -43,8 +43,8 @@ The edit version of the **Basic Options** screen only includes the **Domain Name
 |---------|-------------|
 | **Domain Name** | (Required) Enter the Active Directory domain (example.com) or child domain (sales.example.com). Editable after save. |
 | **Domain Account Name** | (Required) Enter the Active Directory administrator account name. Not editable after you save. |
-| **Domain Account Password** | (Required) Password for the Active Directory administrator account. Required the first time you configure a domain. After initial configuration, the password is not needed to edit, start, or stop the service. After the initial configuration or joining, SCALE uses the **Kerberos Principal** instead of the password. |
-| **Enable (requires password or Kerberos principal)** | Select to enable the Active Directory service. Clear to disable Active Directory. After disabling Active Directory, the **[Directory Services]({{< relref "/SCALE/SCALEUIReference/Credentials/DirectoryServices/_index.md" >}})** screen returns to the default and provides the options to configure AD or LDAP. SCALE creates a Kerberos realm and keytab from what it detects in Active Directory, then populates the **Kerberos Realm** and **Kerberos Principal** settings on the **Advanced Options** screen. |
+| **Domain Account Password** | (Required) Password for the Active Directory administrator account. Required the first time you configure a domain. After initial configuration, the password is not needed to edit, start, or stop the service. After the initial configuration or joining, TrueNAS uses the **Kerberos Principal** instead of the password. |
+| **Enable (requires password or Kerberos principal)** | Select to enable the Active Directory service. Clear to disable Active Directory. After disabling Active Directory, the **[Directory Services]({{< relref "/SCALE/SCALEUIReference/Credentials/DirectoryServices/_index.md" >}})** screen returns to the default and provides the options to configure AD or LDAP. TrueNAS creates a Kerberos realm and keytab from what it detects in Active Directory, then populates the **Kerberos Realm** and **Kerberos Principal** settings on the **Advanced Options** screen. |
 {{< /truetable >}}
 {{< /expand >}}
 
@@ -60,9 +60,9 @@ On the edit screen, the **Advanced Options** displays the subset found on the **
 | Setting | Description |
 |---------|-------------|
 | **Site Name** | Enter the Relative Distinguished Name (RDN) of the site object in the AD server. This is the first component of the **distingishedName** in AD. For more info read [Configuring Active Directory]({{< relref "ConfigADSCALE.md" >}}). |
-| **Kerberos Realm** | Select an existing realm from the dropdown list of options. Options are those configured in **Kerberos Realms**. After selecting **Enable (requires password or Kerberos principal)**, SCALE populates the **Kerberos Realm** and **Kerberos Principal** fields with what it discovered in AD. |
-| **Kerberos Principal** | Select the location of the principal in the keytab created in **Directory Services > Kerberos Keytabs**. After selecting **Enable (requires password or Kerberos principal)**, SCALE populates the **Kerberos Realm** and **Kerberos Principal** fields with what it discovered in AD. |
-|**Enable (requires password or Kerberos principle)** | Select to enable AD service. The first time you select this option you must enter the password for the domain admin account. After selecting **Enable (requires password or Kerberos principal)**, SCALE populates the **Kerberos Realm** and **Kerberos Principal** fields with what it discovered in AD. |
+| **Kerberos Realm** | Select an existing realm from the dropdown list of options. Options are those configured in **Kerberos Realms**. After selecting **Enable (requires password or Kerberos principal)**, TrueNAS populates the **Kerberos Realm** and **Kerberos Principal** fields with what it discovered in AD. |
+| **Kerberos Principal** | Select the location of the principal in the keytab created in **Directory Services > Kerberos Keytabs**. After selecting **Enable (requires password or Kerberos principal)**, TrueNAS populates the **Kerberos Realm** and **Kerberos Principal** fields with what it discovered in AD. |
+|**Enable (requires password or Kerberos principle)** | Select to enable AD service. The first time you select this option you must enter the password for the domain admin account. After selecting **Enable (requires password or Kerberos principal)**, TrueNAS populates the **Kerberos Realm** and **Kerberos Principal** fields with what it discovered in AD. |
 | **Verbose Logging** | Select to log attempts to join the domain in <kbd>/var/log/messages</kbd>. |
 | **Allow Trusted Domains** | Select if you do not want the username to include a domain name. Leave cleared to force the domain names to be prepended to usernames. One possible reason to not select this is to prevent username collisions when this is selected and there are identical usernames across multiple domains. |
 | **Use Default Domain** | Select to prepend the domain name to the username. Leave clear to prevent name collisions when **Allow Trusted Domains** is selected and multiple domains use the same username. |

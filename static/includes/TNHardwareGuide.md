@@ -32,7 +32,7 @@ A properly-configured TrueNAS system can tolerate multiple storage device failur
 ### Storage Device Quantities
 
 TrueNAS can manage many storage devices as part of a single storage array.
-With more enterprise-level tuning in the mature 13.0 release and similar tuning in the upcoming SCALE Cobia release, TrueNAS can manage as many as 1,250 drives in a single storage array!
+With more enterprise-level tuning, TrueNAS can manage as many as 1,250 drives in a single storage array!
 
 ### Storage Media
 
@@ -197,7 +197,7 @@ Start a long HDD self-test (`smartctl -t long /dev/`). After the test completes 
 * Check pending sector reallocations (`smartctl -a /dev/ | grep Current_Pending_Sector`)
 * Check reallocated sector count (`smartctl -a /dev/ | grep Reallocated_Sector_Ct`)
 * Check the UDMA CRC errors (`smartctl -a /dev/ | grep UDMA_CRC_Error_Count`)
-* Check HDD and SSD write latency consistency (`diskinfo -wS ` for CORE or `iostat` or `fio` for SCALE systems) *Unformatted drives only!*
+* Check HDD and SSD write latency consistency (`diskinfo -wS ` for FreeBSD-based or `iostat` or `fio` for Linux-based TrueNAS systems) *Unformatted drives only!*
 * Check HDD and SSD hours (`smartctl -a /dev/ | grep Power_On_Hours`)
 * Check NVMe percentage used (`nvmecontrol logpage -p 2 nvme0 | grep “Percentage used”`)
 

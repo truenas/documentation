@@ -10,14 +10,14 @@
    {{< trueimage src="/images/SCALE/DataProtection/CreateReplicationTaskSetSchedule.png" alt="Set Replication Task Schedule" id="Set Replication Task Schedule" >}}
 
    b. Select the **Destination Snapshot Lifetime** radio button option you want to use.
-      This specifies how long SCALE should store copied snapshots in the destination dataset before SCALE deletes it.
+      This specifies how long TrueNAS should store copied snapshots in the destination dataset before TrueNAS deletes it.
       **Same as Source** is selected by default.
       Select **Never Delete** to keep all snapshots until you delete them manually.
       Select **Custom** to show two additional settings, then enter the number of the duration you select from the dropdown list. For example, *2 Weeks*.
   
 6. Click **START REPLICATION**.
    A dialog displays if this is the first snapshot taken using the destination dataset.
-   If SCALE does not find a replicated snapshot in the destination dataset to use to create an incremental snapshot, it deletes any existing snapshots found and creates a full copy of the day snapshot to use as a basis for the future scheduled incremental snapshots for this schedule task.
+   If TrueNAS does not find a replicated snapshot in the destination dataset to use to create an incremental snapshot, it deletes any existing snapshots found and creates a full copy of the day snapshot to use as a basis for the future scheduled incremental snapshots for this schedule task.
 
    This operation can delete important data, so ensure you can delete any existing snapshots or back them up in another location.
 

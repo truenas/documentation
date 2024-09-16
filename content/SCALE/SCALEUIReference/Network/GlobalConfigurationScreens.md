@@ -6,19 +6,13 @@ tags:
 - network
 ---
 
-The **Global Configuration** widget displays the general TrueNAS networking settings *not* specific to any interface. 
-
-{{< hint type=note >}}
-The SCALE information dislplayed the **Global Configuration** widget is the equivalent of the information displayed on the TrueNAS CORE **Network Summary** screen. **Global Configuration** settings configuration screens are similar in both SCALE and CORE but SCALE includes external communication settings.
-{{< /hint >}}
+The **Global Configuration** widget displays the general TrueNAS networking settings *not* specific to any interface.
 
 ![GlobalConfigurationSCALE](/images/SCALE/Network/GlobalConfiguration.png "Global Configuration")
 
 Use **Settings** to display the **Global Configuration** screen where you can add or change global network settings.
 
-{{< hint type=warning >}}
-**Disruptive Change**
-
+{{< hint type=warning title="Disruptive Change" >}}
 You can lose your TrueNAS connection if you change the network interface that the web interface uses!  
 You might need command line knowledge or physical access to the TrueNAS system to fix misconfigured network settings.
 {{< /hint >}}

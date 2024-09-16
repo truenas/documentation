@@ -34,7 +34,7 @@ Nightly builds also accept feedback and bug tickets.
 
 Nightly builds are automatically published when automated testing passes.
 **.iso** files are available to fresh install on disposable hardware or a virtual machine.
-Switching a disposable system from CORE to SCALE typically requires a fresh install using a nightly .iso file.
+Switching a disposable system from CORE to TrueNAS typically requires a fresh install using a nightly .iso file.
 
 **.update** files are also available for manually updating an existing experimental system to a nightly build.
 

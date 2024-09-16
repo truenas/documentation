@@ -11,10 +11,10 @@ tags:
 ---
 
 {{< enterprise >}}
-This article only applies to SCALE Enterprise (HA) systems.
+This article only applies to TrueNAS Enterprise (HA) systems.
 {{< /enterprise >}}
 
-The **System > Failover** screen displays settings used on SCALE Enterprise (HA) systems to turn the failover function on or off, sync the primary and standby controllers, and allow administrator users to configure failover. The main menu option and screen only display on Enterprise (HA) systems with the correct license applied.
+The **System > Failover** screen displays settings used on TrueNAS Enterprise (HA) systems to turn the failover function on or off, sync the primary and standby controllers, and allow administrator users to configure failover. The main menu option and screen only display on Enterprise (HA) systems with the correct license applied.
 
 ![FailoverScreen](/images/SCALE/SystemSettings/FailoverScreen.png "Failover Screen")
 
@@ -29,7 +29,7 @@ The **System > Failover** screen displays settings used on SCALE Enterprise (HA)
 {{< /truetable >}}
 
 ## Sync To or From Peer
-**Sync To Peer** and **Sync From Peer** buttons each open a confirmation dialog before SCALE performs the operation requested.
+**Sync To Peer** and **Sync From Peer** buttons each open a confirmation dialog before TrueNAS performs the operation requested.
 
 ![FailoverSyncToPeerDialog](/images/SCALE/SystemSettings/FailoverSyncToPeerDialog.png "Failover Sync To Peer Dialog")
 

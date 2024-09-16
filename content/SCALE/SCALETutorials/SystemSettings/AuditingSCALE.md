@@ -24,13 +24,13 @@ Debug sends audit messages from the Samba debug library and these messages have 
 The **System > Audit** screen lists all session, or user events, facilitating comprehensive monitoring.
 Logs include who performed the action, timestamp, event type, and a short string of the action performed (event data).
 
-SCALE includes a manual page with more information on the [VFS auditing functions](https://github.com/truenas/samba/blob/SCALE-v4-19-stable/docs-xml/manpages/vfs_truenas_audit.8.xml).
+TrueNAS includes a manual page with more information on the [VFS auditing functions](https://github.com/truenas/samba/blob/SCALE-v4-19-stable/docs-xml/manpages/vfs_truenas_audit.8.xml).
 
 ## Auditing Event Types
 
 ### Session and User Auditing Events
 {{< expand "Authentication Events" "v" >}}
-Audit message generated every time a client logs into the SCALE UI or an SSH session or makes changes to user credentials.
+Audit message generated every time a client logs into the TrueNAS UI or an SSH session or makes changes to user credentials.
 {{< /expand >}}
 {{< expand "Method Call Events" "v" >}}
 Audit message generated every time the currently logged in user creates a new user account or changes user credentials.
@@ -123,7 +123,7 @@ Each audit message JSON object includes:
 | Field | Description |
 |-------|-------------|
 | aid | GUID uniquely identifying the audit event. |
-| vers | JSON object containing version information of the audit event. Audit version identifiers represent the major and minor versions of the internal TrueNAS audit message. Major versions are not made outside a major SCALE release. Minor version changes indicate non-breaking changes to format, such as adding a new optional field. Major version changes can be renaming or removing an existing mandatory field. |
+| vers | JSON object containing version information of the audit event. Audit version identifiers represent the major and minor versions of the internal TrueNAS audit message. Major versions are not made outside a major TrueNAS release. Minor version changes indicate non-breaking changes to format, such as adding a new optional field. Major version changes can be renaming or removing an existing mandatory field. |
 | time | UTC timestamp indicating when the event occurs. |
 | addr | IPv4 or IPv6 address for the client generating the audit message. |
 | user | Username of either the user or client generating the audit message. If no username, could be the user ID prefixed with UID. |
@@ -137,7 +137,7 @@ Each audit message JSON object includes:
 {{< /expand >}}
 
 ## Accessing Auditing Screens
-Users have access to audit information from three locations in the SCALE UI:
+Users have access to audit information from three locations in the TrueNAS UI:
 
 
 * **Credentials > Users** details screen through the **Audit Logs** option

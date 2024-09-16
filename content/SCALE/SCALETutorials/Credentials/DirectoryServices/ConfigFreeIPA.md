@@ -12,7 +12,7 @@ keywords:
  - nas data storage 
 ---
 
-TrueNAS provides the option to configure a FreeIPA directory service client in SCALE using the **LDAP** configuration screen under **Credentials > Directory Services**.
+TrueNAS provides the option to configure a FreeIPA directory service client using the **LDAP** configuration screen under **Credentials > Directory Services**.
 
 {{< expand "Does LDAP work with SMB?" "v" >}}
 LDAP authentication for SMB shares is disabled unless you configured and populated the LDAP directory with Samba attributes.

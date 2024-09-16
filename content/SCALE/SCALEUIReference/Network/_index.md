@@ -9,10 +9,10 @@ tags:
 related: false
 ---
 
-The SCALE **Network** screen has network configuration and settings options, in widgets, for active interfaces, static routes, and the global configuration. 
+The TrueNAS **Network** screen has network configuration and settings options, in widgets, for active interfaces, static routes, and the global configuration. 
 The **Network** screen also displays OpenVPN information and IPMI channels. IPMI only displays on systems with physical hardware and not on virtual machine deployments.
 
-![Network](/images/SCALE/Network/Network.png "SCALE Network Page")
+![Network](/images/SCALE/Network/Network.png "TrueNAS Network Page")
 
 Click the buttons or on an existing widget entry to view configuration options on side panels.
 

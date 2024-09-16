@@ -11,8 +11,8 @@ The system options menu links to other tasks.
 * **Edit** opens the **Edit *system*** window for the TrueNAS connection. Only available for administrator users.
 * **Users and Groups** opens the [TrueNAS **Users**]({{< relref "NASUsersAndGroups.md" >}}) screen where you can add or manage TrueNAS users and groups.
 * **Update** opens the **Update NAS** window if updates are available for the TrueNAS system.
-* **Launch TrueNAS Interface** opens a new tab with the sign in screen for the TrueNAS Web UI (SCALE or CORE).
+* **Launch TrueNAS Interface** opens a new tab with the sign in screen for the TrueNAS Web UI.
 * **Services** opens the **Services** screen listing the services for the TrueNAS system.
-* **Config Backups** that opens the [**Config Backups**]({{< relref "ConfigBackups.md" >}}) screen. 
+* **Config Backups** that opens the [**Config Backups**]({{< relref "ConfigBackups.md" >}}) screen.
 * **Delete** opens the **Delete *system*** dialog used to remove the TrueNAS system from TrueCommand.
   

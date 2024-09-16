@@ -17,7 +17,7 @@ The TrueNAS **Update** screen provides users with two different methods to updat
 * Update options
 
 The screen displays the **Current Train** and a link to more information on the current train.
-**Check for Updates Daily and Download if Available** sets SCALE to check the update server daily for updates on the specified train.
+**Check for Updates Daily and Download if Available** sets TrueNAS to check the update server daily for updates on the specified train.
 When selected, the system automatically downloads an update if one is available.
 The refresh <span class="material-icons">refresh</span> button refreshes the information displayed on the screen.
 
@@ -52,7 +52,7 @@ The **Manual Update** screen displays after you either click **Save Configuratio
 
 {{< trueimage src="/images/SCALE/SystemSettings/ManualUpdateScreen.png" alt="System Manual Update SCALE" id="System Manual Update SCALE" >}}
 
-**Current Version** displays the SCALE release version running on your system.
+**Current Version** displays the TrueNAS release version running on your system.
 
 **Choose File** opens a browse window where you can locate the downloaded update configuration file.
 

@@ -9,7 +9,7 @@ All applications include these basic setting sections:
 * **Application Name** shows the default name for the application.
 
   If deploying more than one instance of the application, you must change the default name. Also includes the **version** number for the application.
-  Do not change the version number for official apps or those included in a SCALE catalog.
+  Do not change the version number for official apps or those included in a TrueNAS catalog.
   When a new version becomes available, the **Installed** application screen banner and application row displays an update alert, and the **Application Info** widget displays an update button> Updating the app changes the version shown on the edit wizard for the application.
 
 * ***Application* Configuration** shows settings that app requires to deploy.
@@ -19,7 +19,7 @@ All applications include these basic setting sections:
 
   If not using the default user and group provided, add the new user (and group) to manage the application before using the installation wizard.
 
-* **Network Configuration** shows network settings the app needs to communicate with SCALE and the Internet.
+* **Network Configuration** shows network settings the app needs to communicate with TrueNAS and the Internet.
   Settings include the default port assignment, host name, IP addresses, and other network settings.
 
   If changing the port number to something other than the default setting, refer to [Default Ports](https://www.truenas.com/docs/references/defaultports/) for a list of used and available port numbers.

@@ -94,7 +94,7 @@ To connect to Active Directory, in SCALE:
 2. Enter the domain name for the AD in  **Domain Name** and the account credentials in **Domain Account Name** and **Domain Account Password**.
 
 3. Select **Enable** to attempt to join the AD domain immediately after saving the configuration. 
-  SCALE populates the **Kerberos Realm** and **Kerberos Principal** fields on the **Advanced Options** settings screen.
+  TrueNAS populates the **Kerberos Realm** and **Kerberos Principal** fields on the **Advanced Options** settings screen.
 
   ![ActiveDirectoryBasicOptions](/images/SCALE/Credentials/ActiveDirectoryBasicOptions.png "Active Directory Basic Options")
 
@@ -121,7 +121,7 @@ When creating the entry, enter the TrueNAS hostname in the name field and make s
 ## Disabling Active Directory
 
 You can disable your AD server connection without deleting your configuration or leaving the AD domain. 
-Click **Settings** to open the **Active Directory** settings screen, then select the **Enable** checkbox to clear it, and click **Save** to disable SCALE AD service. 
+Click **Settings** to open the **Active Directory** settings screen, then select the **Enable** checkbox to clear it, and click **Save** to disable TrueNAS AD service. 
 This returns you to the main **Directory Services** screen where you see the two main directory services configuration options. 
 
 Click **Configure Active Directory** to open the **Active Directory** screen with your existing configuration settings. 
