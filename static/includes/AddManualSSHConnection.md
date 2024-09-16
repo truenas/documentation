@@ -10,13 +10,13 @@ Click **Add** on the **SSH Connections** widget to open the configuration screen
 
    {{< trueimage src="/images/SCALE/Credentials/NewSSHConnectAuthenticationManual.png" alt="Manual Authentication Settings" id="Manual Authentication Settings" >}}
 
-   a. Enter a host name or host IP address for the remote non-TrueNAS system as a valid URL.
+   a. Enter the remote system host name or IP address.
       An IP address example is *https://10.231.3.76*.
       This is a required field.
 
    b. Enter the port number of the remote system to use for the SSH connection.
 
-   c. Enter a user name for logging into the remote system in **Username**.
+   c. Enter the username of the remote system you wish to connect to in **Username**.
 
    d. Select the private key from the SSH key pair that you use to transfer the public key on the remote NAS from the **Private Key** dropdown.
 
