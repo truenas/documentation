@@ -28,7 +28,7 @@ Use the information mentioned in the [installation preparation instructions]({{<
 
 {{< include file="/static/includes/RootLoginWarnSCALE.md" >}}
 
-After [logging into SCALE]({{< relref "FirstTimeLogin.md#logging-into-the-scale-ui" >}}), you can begin configuring TrueNAS using the web interface.
+After [logging into TrueNAS]({{< relref "FirstTimeLogin.md#logging-into-the-scale-ui" >}}), you can begin configuring TrueNAS using the web interface.
 
 ## Enterprise Licenses and Proactive Support
 
@@ -60,7 +60,7 @@ You must disable failover in the UI on TrueNAS Enterprise HA systems to [add or 
 
 {{< include file="/static/includes/MultipleInterfacesOnNetwork.md" >}}
 
-If your system has more than one network interface card (NIC) connected to your internal network (wired to your router or Internet access point), you can add an interface in SCALE.
+If your system has more than one network interface card (NIC) connected to your internal network (wired to your router or Internet access point), you can add an interface in TrueNAS.
 DHCP is available for only a single interface; any other physical interfaces must be configured with static IP addresses.
 
 You can also configure virtual network interfaces such as a [bridge]({{< relref "SettingUpBridge.md" >}}), link aggregate (LAGG), or virtual LAN (VLAN) interface.
@@ -90,9 +90,9 @@ TrueNAS assigns the root parent dataset of the first created pool as the system 
 If your system has enough disks to add more pools, you can [change the system dataset]({{< relref "/SCALE/SCALETutorials/SystemSettings/Advanced/_index.md" >}}) to a root dataset of different pool.
 
 ## Setting Up Shares
-After setting up your system storage, you can [configure data sharing]({{< relref "SetUpSharing.md" >}}) using one of the sharing protocols available in SCALE.
+After setting up your system storage, you can [configure data sharing]({{< relref "SetUpSharing.md" >}}) using one of the sharing protocols available in TrueNAS.
 
-These articles provide more information on configuring data sharing and the three built-in share types available in SCALE:
+These articles provide more information on configuring data sharing and the three built-in share types available in TrueNAS:
 {{< truetable >}}
 | Share Type | Purpose |
 |-----------|-------------|
@@ -225,12 +225,12 @@ If the TrueNAS system has an expansion shelf, the **Enclosure** screen also disp
 
 If using TrueNAS on hardware without enclosure management support, the **System Information** widget on the **Dashboard** displays the TrueNAS logo, and the **System > Enclosure** option does not exist on the menu navigation panel.
 
-## Using Applications in SCALE
+## Using Applications in TrueNAS
 TrueNAS provides a list of applications you can deploy on the **Apps > Discover** screen.
 
 See the [Apps tutorials]({{< relref "/content/TruenasApps/_index.md" >}}) for procedures on generically deploying and managing apps, app catalogs and images, custom apps, and specific app deployments and notes.
 
-## Updating SCALE
+## Updating TrueNAS
 You can update your system with an <file>iso</file> file using the system administration console or an update file installed through the TrueNAS UI.
 
 There are a few ways to find available updates for your instance of TrueNAS:
@@ -239,7 +239,7 @@ There are a few ways to find available updates for your instance of TrueNAS:
   Click the update option to open the **System > Updates** screen.
 * Go to **System > Updates** to check if an update is available.
 
-For all update options and procedures using the TrueNAS UI see **[Updating SCALE]({{< relref "UpdateSCALE.md" >}})**.
+For all update options and procedures using the TrueNAS UI see **[Updating TrueNAS]({{< relref "UpdateSCALE.md" >}})**.
 
 Always save the system configuration file and save a new boot environment for your current release and configuration before updating to a new incremental or full release.
 

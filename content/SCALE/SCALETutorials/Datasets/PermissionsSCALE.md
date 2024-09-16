@@ -26,7 +26,7 @@ An Access Control List (ACL) is a set of account permissions associated with a d
 TrueNAS uses ACLs to manage user interactions with shared datasets and creates them when users add a dataset to a pool.
 {{< /hint >}}
 
-## ACL Types in SCALE
+## ACL Types in TrueNAS
 TrueNAS offers two ACL types: POSIX and NFSv4.
 For a more in-depth explanation of ACLs and configurations in TrueNAS, see our [ACL Primer](https://www.truenas.com/docs/references/aclprimer/).
 

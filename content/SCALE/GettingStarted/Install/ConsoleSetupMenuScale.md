@@ -27,12 +27,12 @@ The menu provides several options:
 
 {{< trueimage src="/images/SCALE/CLI/ConsoleSetupMenuSCALE.png" alt="TrueNAS Console Setup Menu" id="TrueNAS Console Setup Menu" >}}
 
-For network configuration options **1**, **2**, and **3**, we recommend using the TrueNAS UI to configure network interfaces, as it has safeguards to prevent breaking network access to SCALE.
+For network configuration options **1**, **2**, and **3**, we recommend using the TrueNAS UI to configure network interfaces, as it has safeguards to prevent breaking network access to TrueNAS.
 
 * **1) Configure network interfaces**
 
   Use this to configure the primary network interface with a static IP.
-  This is for switching away from the DHCP-assigned IP address TrueNAS provides when the system boots after installing SCALE.
+  This is for switching away from the DHCP-assigned IP address TrueNAS provides when the system boots after installing TrueNAS.
   Also, use this to set up other network interfaces or to add alias IP addresses, also referred to as static IP addresses, for the primary interface.
 
 * **2) Configure network settings**

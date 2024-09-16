@@ -45,7 +45,7 @@ If you do not know this information and do not have a network administrator in y
 
 ## Directory Service Access
 
-This section does not apply to small companies with very few users or home deployments of SCALE.
+This section does not apply to small companies with very few users or home deployments of TrueNAS.
 
 TrueNAS works with either Active Directory or LDAP directory servers, and it can also work with Kerberos and IDmap.
 Active Directory and LDAP configuration settings have similar requirements.

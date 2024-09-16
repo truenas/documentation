@@ -110,7 +110,7 @@ These steps are nearly identical to the section above but controller 2 is either
 
 1. Use either the prepared USB flash drive inserted into a USB port for controller 1 or log into an IPMI session and install TrueNAS on controller 1.
    Finish the installation and allow controller 1 to complete its first boot.
-2. Use either the prepared USB flash drives inserted into a USB port for controller 2 or log into an IPMI session for controller 2 to install SCALE.
+2. Use either the prepared USB flash drives inserted into a USB port for controller 2 or log into an IPMI session for controller 2 to install TrueNAS.
    When the installation finishes, power down controller 2.  
 3. Configure the required network settings on controller 1 with the [Console setup menu](#configuring-the-network-with-console-setup-menu).
 4. Log into controller 1 using the IP address assigned to controller 1.

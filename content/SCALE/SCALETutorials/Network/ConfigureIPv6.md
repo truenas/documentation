@@ -21,7 +21,7 @@ If setting TrueNAS up for the first time after a clean install, use the Console 
 
 
 ### Configuring an Interface Using the Console Setup Menu
-If configuring your network settings using the Console Setup menu for the first time after installing SCALE, first configure the interface address.
+If configuring your network settings using the Console Setup menu for the first time after installing TrueNAS, first configure the interface address.
 Type 1, then press <kbd>Enter</kbd>.
 Enter **eno1** in **name**, then the IPv6 address in **aliases**.
 
@@ -59,13 +59,13 @@ Dual stacking these two protocols allows TrueNAS to see and communicate with an 
 
 You must have IPv6 configured in your networking infrastructure.
 Add IPv6 to your network router to permit the incoming and outgoing traffic. This provides the required gateway to permit communication with this IP protocol.
-Assign a static IPv6 address and netmask, the network gateway address, and name servers to configure in SCALE.
+Assign a static IPv6 address and netmask, the network gateway address, and name servers to configure in TrueNAS.
 
 {{< hint type=info >}}
 When configuring dual stacking, the order in which you configure the two network IP protocols does not matter.
 {{< /hint >}}
 
-If IPv4 networking is already configured in SCALE, to set up dual stacking of IPv6 in the UI, go to **Network**:
+If IPv4 networking is already configured in TrueNAS, to set up dual stacking of IPv6 in the UI, go to **Network**:
 
 1. Add the IPv6 gateway information.
 

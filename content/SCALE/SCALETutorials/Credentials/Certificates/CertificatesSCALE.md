@@ -1,6 +1,6 @@
 ---
 title: "Managing Certificates"
-description: "Provides information on adding or managing certificates in SCALE."
+description: "Provides information on adding or managing certificates in TrueNAS."
 weight: 10
 aliases: 
 tags:

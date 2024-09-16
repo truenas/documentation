@@ -16,7 +16,7 @@ If you need to power down your TrueNAS Enterprise system with HA enabled, this i
 
 ## Shut Down From the TrueNAS Web UI
 
-![PowerButtonSCALE](/images/SCALE/Dashboard/PowerButtonSCALE.png "Power Button SCALE")
+![PowerButtonSCALE](/images/SCALE/Dashboard/PowerButtonSCALE.png "Power Button TrueNAS")
 
 While logged into the TrueNAS Web UI using the virtual IP (VIP), click the power button in the top right corner of the screen.
 

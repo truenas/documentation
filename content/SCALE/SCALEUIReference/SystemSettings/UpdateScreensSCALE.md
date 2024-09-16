@@ -50,7 +50,7 @@ Keep the configuration file in a safe place that is regularly backed up.
 ## Manual Update Screen
 The **Manual Update** screen displays after you either click **Save Configuration** or **Do Not Save** on the save configuration settings window.
 
-{{< trueimage src="/images/SCALE/SystemSettings/ManualUpdateScreen.png" alt="System Manual Update SCALE" id="System Manual Update SCALE" >}}
+{{< trueimage src="/images/SCALE/SystemSettings/ManualUpdateScreen.png" alt="System Manual Update" id="System Manual Update" >}}
 
 **Current Version** displays the TrueNAS release version running on your system.
 

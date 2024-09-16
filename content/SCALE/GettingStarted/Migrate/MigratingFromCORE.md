@@ -31,7 +31,7 @@ The process requires an extended maintenance window, requires executing steps in
 
 ## Migration Preparation
 
-**Review the [Migration Preparation article]({{< relref "MigratePrep.md" >}}) for detailed recommendations and preparation steps before attempting to migrate from CORE to SCALE.**
+**Review the [Migration Preparation article]({{< relref "MigratePrep.md" >}}) for detailed recommendations and preparation steps before attempting to migrate.**
 
 Depending on system configuration, migrating can be more or less complicated.
 

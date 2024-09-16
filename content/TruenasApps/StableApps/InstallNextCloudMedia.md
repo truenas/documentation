@@ -33,13 +33,13 @@ If you want to use a certificate for this application, create a new self-signed 
 
 Set up an account with Nextcloud if you do not already have one. Enter this user account in the application configuration.
 
-## Installing Nextcloud on SCALE
+## Installing Nextcloud on TrueNAS
 
 In this procedure you:
 
 1. Add the storage for Nextcloud to use.
 
-2. Install the Nextcloud app in SCALE.
+2. Install the Nextcloud app in TrueNAS.
 
 ### Adding Nextcloud Storage
 Nextcloud needs five datasets. A primary dataset for the application (**nextcloud**) with four child datasets.

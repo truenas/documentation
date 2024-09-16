@@ -22,7 +22,7 @@ Misconfiguration can impact system operation.
 
 ## Idmap Widget
 
-The **Idmap** widget in the **Advanced Settings** on the **Directory Services** screen displays idmaps added to SCALE.
+The **Idmap** widget in the **Advanced Settings** on the **Directory Services** screen displays idmaps added to TrueNAS.
 
 ![IdmapSCALE](/images/SCALE/Credentials/IdmapSCALE.png "Idmap Widget")
 

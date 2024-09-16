@@ -64,7 +64,7 @@ Netdata exports data reporting metrics to Graphite in the format *prefix*.*hostn
 For additional information, see the Netdata [Graphite exporting guide](https://learn.netdata.cloud/docs/exporting/graphite).
 
 ### Adding a Reporting Exporter
-To configure a reporting exporter in SCALE, you need the:
+To configure a reporting exporter in TrueNAS, you need the:
 
 * IP address of the reporting service or server.
   If using another TrueNAS system with a data reporting application, this is the IP address of the TrueNAS running the application.

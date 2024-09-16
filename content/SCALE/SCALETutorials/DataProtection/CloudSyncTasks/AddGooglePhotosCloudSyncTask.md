@@ -19,7 +19,7 @@ Configuring a Google Photos cloud sync task is a multi-part procedure where you:
 2. [Generate Google API credentials](#creating-the-api-credentials) on the Google Cloud API dashboard.
 3. [Install rclone and generate a token](#configuring-rclone) on your remote client OS.
 4. [Add Google Photos cloud credentials](#adding-google-photos-cloud-credentials) on TrueNAS.
-5. [Configure the cloud sync task](#creating-the-cloud-sync-task) on SCALE.
+5. [Configure the cloud sync task](#creating-the-cloud-sync-task) on TrueNAS.
 
 ## Before You Begin
 

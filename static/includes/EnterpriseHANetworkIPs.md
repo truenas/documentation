@@ -11,4 +11,4 @@ TrueNAS Enterprise (HA) systems use three static IP addresses for access to the 
 Have the list of network addresses, name sever and default gateway IP addresses, and host and domain names ready so you can complete the network configuration without disruption or system timeouts.
 
 TrueNAS safeguards allow a default of 60 seconds to test and save changes to a network interface before reverting changes.
-This is to prevent users from breaking their network connection in SCALE.
+This is to prevent users from breaking their network connection in TrueNAS.

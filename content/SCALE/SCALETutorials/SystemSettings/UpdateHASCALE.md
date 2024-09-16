@@ -15,7 +15,7 @@ keywords:
 
 {{<enterprise>}}
 This procedure only applies to TrueNAS Enterprise (HA) systems.
-If attempting to migrate from CORE to SCALE, see [Migrating from TrueNAS CORE]({{< relref "MigratingFromCORE.md" >}}).
+If attempting to migrate from FreeBSD- to Linux-based TrueNAS versions, see [TrueNAS Migrations]({{< relref "MigratingFromCORE.md" >}}).
 {{</enterprise>}}
 
 ## Updating Enterprise (HA) Systems

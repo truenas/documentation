@@ -57,9 +57,9 @@ The browser used to access the TrueNAS UI can impact the quality of your user ex
 
 With the implementation of administrator accounts, the root user is no longer the default administrator username.
 
-Based on the method used to install SCALE, you can be presented with different first-time login scenarios, each described below.
+Based on the method used to install TrueNAS, you can be presented with different first-time login scenarios, each described below.
 
-{{< expand "Clean Installing SCALE" "v" >}}
+{{< expand "Clean Installing TrueNAS" "v" >}}
 When installing TrueNAS from an <file>iso</file> file, and based on the authentication method selected in step 4 of the [TrueNAS installer]({{< relref "InstallingScale.md#using-the-truenas-installer" >}}) process, you can see a different sign-in screen for the web UI and need to use different login credentials.
 
 * Selecting **1. Administrative user (truenas_admin)** opens the standard TrueNAS sign-in screen where you enter the new **truenas_admin** username and password created during installation.
@@ -80,19 +80,19 @@ When installing TrueNAS from an <file>iso</file> file, and based on the authenti
 
 {{< expand "Upgrading from TrueNAS Early Releases" "v" >}}
 Early Linux-based releases of TrueNAS (Angelfish and pre-22.12.3 Bluefin release) use the root user credentials to log into the system.
-After upgrading from an earlier release, use the existing root user credentials to log into SCALE.
+After upgrading from an earlier release, use the existing root user credentials to log into TrueNAS.
 {{< include file="/static/includes/CreateAdminDisableRoot.md" >}}
 {{< /expand >}}
 
 {{< expand "Migrating/Upgrading from FreeBSD- to Linux-based TrueNAS Versions" "v" >}}
 
 {{< enterprise >}}
-Customers with a TrueNAS Enterprise High Availability (HA) system should review [Migration Preparation]({{< relref "MigratePrep.md" >}}), [Enterprise HA Migrations]({{< relref "MigrateCOREHAToSCALEHA.md" >}}), and consult with iXsystems Support prior to migrating from TrueNAS CORE to SCALE.
+Customers with a TrueNAS Enterprise High Availability (HA) system should review [Migration Preparation]({{< relref "MigratePrep.md" >}}), [Enterprise HA Migrations]({{< relref "MigrateCOREHAToSCALEHA.md" >}}), and consult with iXsystems Support prior to migrating.
 {{< /enterprise >}}
-For non-HA systems, there are two possible scenarios when migrating from CORE to SCALE:
+For non-HA systems, there are two possible scenarios when migrating:
 
-* Clean installing TrueNAS using the <file>iso</file> file and then uploading the CORE configuration file.
-* Using the CORE **Update** UI option to upgrade to SCALE.
+* Clean installing TrueNAS using the <file>iso</file> file and then uploading the previous configuration file.
+* Using the 13.0 (or 13.3 for community users) **Update** UI option to upgrade.
 
 If performing a clean install using the TrueNAS <file>iso</file> file, after installing TrueNAS and uploading the configuration file, your network settings get overwritten by the config file, so you cannot use the new IP address and admin user to access to the web UI.
 Use the previous address and root credentials to access the UI.

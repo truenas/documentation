@@ -177,7 +177,7 @@ The final step screen is the **Confirm Options** that displays the certificate *
 
 ![AddCertificateConfirmOptions](/images/SCALE/Credentials/AddCertificateConfirmOptions.png "Add Certificate Confirm Options")
 
-**Save** adds the certificate to SCALE. **Back** returns to previous screens to make changes before you save. **Next** advances to the next screen in the sequence to return to **Confirm Options**.
+**Save** adds the certificate to TrueNAS. **Back** returns to previous screens to make changes before you save. **Next** advances to the next screen in the sequence to return to **Confirm Options**.
 
 ## Edit Certificate Screen
 The certificate listed on the **Certificates** widget is a link that opens the **Edit Certificate** screen. 

@@ -1,5 +1,5 @@
 ---
-title: "Installing SCALE"
+title: "Installing TrueNAS"
 description: "Provides the TrueNAS iso file installation instructions for physical hardware and virtual machines. Describes the iso verification process using an OpenPGP encryption application."
 weight: 15
 aliases:
@@ -91,7 +91,7 @@ The value produced by running the command must match the value shown in the <kbd
 Different checksum values indicate a corrupted installer file that you should not use.
 {{< /expand >}}
 
-## Installing SCALE
+## Installing TrueNAS
 You can install TrueNAS on either physical hardware or a virtual machine.
 
 {{< hint type=important >}}

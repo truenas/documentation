@@ -1,6 +1,6 @@
 ---
 title: "Configuring Active Directory"
-description: "Provides instructions on configuring Active Directory (AD) in SCALE."
+description: "Provides instructions on configuring Active Directory (AD) in TrueNAS."
 weight: 10
 aliases:
 tags:
@@ -25,7 +25,7 @@ Users can configure AD services on Windows or Unix-like operating systems using 
 
 To configure an AD connection, you must know the AD controller domain and the AD system account credentials.
 
-### Preparing to Configure AD in SCALE
+### Preparing to Configure AD in TrueNAS
 
 Users can take a few steps before configuring Active Directory (AD) to ensure the connection process goes smoothly.
 
@@ -87,7 +87,7 @@ TrueNAS has a few options to ensure both systems are synchronized:
 
 ### Connecting to the Active Directory Domain
 
-To connect to Active Directory, in SCALE:
+To connect to Active Directory, in TrueNAS:
 
 1. Go to **Credentials > Directory Services** click **Configure Active Directory** to open the **Active Directory** configuration screen.
 

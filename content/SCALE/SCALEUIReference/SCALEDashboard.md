@@ -12,7 +12,7 @@ keywords:
 - storage provisioning
 ---
 
-The **Dashboard** is the first screen you see after logging into the web interface after installing SCALE.
+The **Dashboard** is the first screen you see after logging into the web interface after installing TrueNAS.
 It displays a set of default widgets with system, help, storage, and network information, but you can customize the display to suit your needs and preferences.
 **Dashboard** on the left side navigation panel returns to the main dashboard from any other screen in the UI.
 

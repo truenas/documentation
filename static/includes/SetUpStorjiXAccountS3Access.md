@@ -19,7 +19,7 @@ After creating your bucket, add S3 access for the new bucket(s) you want to use 
    {{< trueimage src="/images/SCALE/DataProtection/StorjCreateAccessSelectConfig.png" alt="Storj Access Permissions Window." id="Storj Access Permissions Window." >}}
 
    {{< hint type=note >}}
-   If you want to use the TrueNAS option to [add new buckets](#setting-up-the-truecloud-backup-task) in SCALE, set the access configuration to **Full Access**.
+   If you want to use the TrueNAS option to [add new buckets](#setting-up-the-truecloud-backup-task) in TrueNAS, set the access configuration to **Full Access**.
    {{< /hint >}}
 
 4. (Optional) If configuring advanced access options:

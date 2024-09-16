@@ -1,6 +1,6 @@
 ---
 title: "Configuring LDAP"
-description: "Provides instructions on configuring and managing LDAP configurations in SCALE."
+description: "Provides instructions on configuring and managing LDAP configurations in TrueNAS."
 weight: 20
 aliases:
 tags:
@@ -49,7 +49,7 @@ If you want to further modify the LDAP configuration, click **Advanced Options**
 To disable LDAP but not remove the configuration, clear the **Enable** checkbox. The main **Directory Services** screen returns to the default view showing the options to configure Active Directory or LDAP.
 To enable LDAP again, click **Configure LDAP** to open the **LDAP** screen with your saved configuration. Select **Enable** again to reactivate your LDAP directory server configuration.
 
-## Removing LDAP from SCALE
+## Removing LDAP from TrueNAS
 
 To remove the LDAP configuration, click **Settings** to open the **LDAP** screen.
 Clear all settings and click **Save**.
