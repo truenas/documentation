@@ -2,6 +2,9 @@
 title: "Groups Screens"
 description: "Provides information on the Groups screens and settings."
 weight: 20
+aliases:
+ - /scale/scaleclireference/account/cligroup/
+ - /scale/scaleclireference/auth/cliprivilege/
 tags:
  - groups
 ---
@@ -45,7 +48,7 @@ Click **Add** to open the **Add Group** configuration screen.
 | **Allow all sudo commands** | Select to give group members permission to use all [sudo](https://www.sudo.ws/) commands. Using sudo prompts the user for their account password. |
 | **Allowed sudo commands with no password** | Use to list specific [sudo](https://www.sudo.ws/) commands allowed for group members with no password required. Enter each command as an absolute path to the ELF (Executable and Linkable Format) executable file, for example */usr/bin/nano*. <file>/usr/bin/</file> is the default location for commands. <br> Grants limited root-like permissions for group members when using these commands. Exercise caution when allowing sudo commands without password prompts. It is recommended to limit this privilege to trusted users and specific commands to minimize security risks. |
 | **Allow all sudo commands with no password** | Not recommended. Select to give group members the ability to use all [sudo](https://www.sudo.ws/) commands with no password required. |
-| **Samba Authentication** | Select to allow this group to authenticate to and access data shares with [SMB]({{< relref "/SCALETutorials/Shares/_index.md" >}}) samba shares. |
+| **Samba Authentication** | Select to allow this group to authenticate to and access data shares with [SMB]({{< relref "/SCALE/SCALETutorials/Shares/_index.md" >}}) samba shares. |
 | **Allow Duplicate GIDs** | Not recommended. Select to allow more than one group to have the same group ID. Use only if absolutely necessary, as duplicate GIDs can lead to unexpected behavior. |
 {{< /truetable >}}
 
@@ -98,7 +101,7 @@ The new and edit privilege screens show the same settings but not all settings a
 | Setting | Description |
 |---------|-------------|
 | **Name** | Enter a name for the new privilege. Names can include the dash (-) or underscore(_) special characters, and upper and lowercase alphanumeric characters. Enter a descriptive name for the privilege.  |
-| **Groups** | Click in the field to see a dropdown list of available groups to apply the privilege to. ***Do not*** add the predefined administrator or builtin groups! Only select new user groups created if you experiment with this function. |
+| **Groups** | Click in the field to see a dropdown list of available groups to apply the privilege to. Do not add the predefined administrator or builtin groups! Only select new user groups created if you experiment with this function. |
 | **Directory Services Groups** | Click in the field to see a dropdown list of available groups to apply the privilege to. |
 | **Roles** | Click in the field to see a dropdown list of all available roles available to assign to the new privilege. |
 | **Web Shell Access** | Select to allow a user assign the new privilege access to the **System > Shell** screen.  |
