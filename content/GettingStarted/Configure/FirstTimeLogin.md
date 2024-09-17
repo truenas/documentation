@@ -30,7 +30,7 @@ On networks that support Multicast Domain Name Services (mDNS), the system can u
 By default, TrueNAS uses the host name and domain **truenas.local**.
 To change the host name and domain in the web interface, go to **Network** and click **Settings** on the **Global Configuration** widget.
 
-To access the web interface using an IP address, either use the DHCP-assigned IP address displayed at the top of the Console Setup menu after installing SCALE or use the static IP address/alias you assigned using the [Console Setup menu]({{< relref "/GettingStarted/install/ConsoleSetupMenuSCALE.md" >}}).
+To access the web interface using an IP address, either use the DHCP-assigned IP address displayed at the top of the Console Setup menu after installing SCALE or the static IP address/alias you assigned using the [Console Setup menu]({{< relref "/GettingStarted/install/ConsoleSetupMenuSCALE.md" >}}).
 
 {{< enterprise >}}
 SCALE Enterprise (HA) systems have specific network configuration requirements.
@@ -58,19 +58,19 @@ With the implementation of administrator accounts, the root user is no longer th
 Based on the method used to install SCALE, you can be presented with different first-time login scenarios, each described below.
 
 {{< expand "Clean Installing SCALE" "v" >}}
-When installing SCALE from an <file>iso</file> file, and based on the authentication method selected in step 4 of the SCALE [TrueNAS installer]({{< relref "InstallingScale.md#using-the-truenas-installer" >}}) process, you can see a different sign-in screen for the web UI and need to use different login credentials.
+When installing SCALE from an <file>iso</file> file, and based on the authentication method selected in step 4 of the SCALE [TrueNAS installer]({{< relref "InstallingScale.md#using-the-truenas-installer" >}}) process, you might see a different sign-in screen for the web UI and need to use different login credentials.
 
 * Selecting **1. Administrative user (truenas_admin)** opens the standard SCALE sign-in screen where you enter the new **truenas_admin** username and password created during installation.
-  The root user password is disabled by default. We recommend this option, as it creates the required administrative user and disables the root user password, and which brings the system into compliance with FIPS security hardening standards.
+  The root user password is disabled by default. We recommend this option, as it creates the required administrative user and disables the root user password, and brings the system into compliance with FIPS security hardening standards.
 
-  The root user still exists but with the password disabled by default, which means only the truenas_admin user can log into the system.
+  The root user still exists but with the password disabled by default, which means only the **truenas_admin** user can log into the system.
   You can activate the password for the root user for some limited uses, but you should return to a security-hardened operation by disabling the root password immediately after you finish with the limited use.
 
 * Selecting **2. Configure using Web UI** opens a SCALE sign-in screen with two options. Select the option to either create the admin or root user and password.
 
   If creating and logging in as the admin user, after logging in you must immediately disable the root user password to comply with FIPS security hardening standards.
   
-  If creating and logging in as the root user, after logging in you must create the admin user and then immediately disable the root user password to comply with FIPS security hardening standards.
+  If creating and logging in as the root user, after logging in you must create an admin user and then immediately disable the root user password to comply with FIPS security hardening standards.
   The root user still exists but with the password disabled by default, which means only the admin user can log into the system.
   You can activate the password for the root user for some limited uses, but you should return to a security-hardened operation by disabling the root password immediately after you finish with the limited use.
   
@@ -112,7 +112,11 @@ For more information, see [Managing Users]({{< relref "ManageLocalUsersScale.md"
 If logging in with the root user credentials, enter root as the user and the root password.
 {{< include file="/static/includes/CreateAdminDisableRoot.md" >}}
 
-Follow the directions in [Managing Users]({{< relref "ManageLocalUsersScale.md" >}}) to create an administration user with all required settings.
+After logging in as the root user, follow the directions in [Managing Users]({{< relref "ManageLocalUsersScale.md" >}}) to create an administration user with all required settings immediately after you enter the UI.
+Enter the admin user name and password, make sure the password is enabled, and click **Save**. Log out as root and in as the new admin user.
+Go to **Credentials > Users**, click on the root user and then click **Edit**. Disable the root user password and then click **Save**.
+This brings the system into compliance with FIPS system security-hardening standards.
+
 For environments requiring specific configurations, such as non-AD environments or those using LDAP, ensure that your admin user is properly set up to manage all aspects of the system.
 
 ### Creating an Administrator Account at First Log in
@@ -122,11 +126,6 @@ One allows you to log in as root or you can create the administration account.
 {{< trueimage src="/images/SCALE/Login/FirstTimeLoginInstallOpt3SCALE.png" alt="SCALE Login Set Up Authentication Method" id="SCALE Login Set Up Authentication Method" >}}
 
 Select either the **Administrative user** or **Root user (not recommended)** option, then enter the password to use with that user.
-
-If you choose **Root user (not recommended)** as the TrueNAS authentication method, go to the **Credentials > Users** screen and [create the admin account]({{< relref "ManageLocalUsersSCALE.md" >}}) immediately after you enter the UI.
-Enter the admin user name and password, make sure the password is enabled, and click **Save**.
-After setting up the admin user, click on the root user and then click **Edit**. Disable the root user password and then click **Save**.
-This brings the system into compliance with FIPS system security-hardening standards.
 
 ### Troubleshooting Accessing the Web UI
 If you cannot remember the administrator password to log in to the web interface, connect a keyboard and mouse to the TrueNAS system and open the [Console Setup menu]({{< relref "ConsoleSetupMenuScale.md#changing-the-root-password" >}}) to reset the administrator account password.
