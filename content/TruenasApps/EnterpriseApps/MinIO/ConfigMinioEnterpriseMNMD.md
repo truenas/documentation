@@ -60,10 +60,30 @@ Enter the same string in the **Multi Mode (SNMD or MNMD)** field in all four sys
 
 {{< include file="/static/includes/MinIOEnterpriseMultiModeConfig3.md" >}}
 
+Scroll down to or click on **Storage Configuration** on the list of wizard sections.
+
+{{< trueimage src="/images/SCALE/Apps/InstallMinIOEnterpriseStorageConfigSettings.png" alt="MinIO Enterprise Storage Configuration Settings" id="MinIO Enterprise Storage Configuration Settings" >}}
+
+Select the storage type you want to use.
+To allow TrueNAS to create the storage volume, set **Type** to **ixVolume (Dataset created automatically by the system)**, which is the default but not recommended storage type.
+
+To use the existing **data1** dataset, select **Host Path (Path that already exists on the system)** which is the recommended option for MinIO.
+**Mount Path** populates with the default **/data1**.
+Enter the path or browse to and click on the **data1** dataset location to populate **Host Path**.
+
+Select **Enable ACL** to show the host path settings and the ACE Entries option. After entering or browsing to the **data** dataset, click **Add** to the right of **ACE Entries**.
+
+{{< trueimage src="/images/SCALE/Apps/InstallMinIOEnterpriseACLAndACESettings.png" alt="MinIO Enterprise ACL and ACE Settings" id="MinIO Enterprise ACL and ACE Settings" >}} new image
+
+Set the **ACE Entry** user to the default user **568** or enter the UID for the user created in TrueNAS to serve as the MinIO app administrator, and set the permissions to **FULL_CONTROL**.
+
+Click **Add** to the right of **Data Directories** three times to add storage volume settings for the other three datasets, **data2**, **data3**, and **data4**.
+Repeat the storage settings for each of these datasets.
+Repeat all storage settings on each system in the cluster.
+
 {{< include file="/static/includes/MinIoEnterpriseConfig4.md" >}}
 
 ### Completing the MinIO Configuration
-
 After installing and getting the MinIO Enterprise application running in TrueNAS, log into the MinIO web portal and complete the MinIO setup.
 
 Go to **Monitoring > Metrics** to verify the servers match the total number of systems (nodes) you configured. 
@@ -101,6 +121,20 @@ Click **Enabled** under **Multi Mode (SNMD or MNMD) Configuration** to enable mu
 ### Storage Configuration
 
 {{< include file="/static/includes/MinIOEnterpriseStorageConfig.md" >}}
+
+#### ACL Configuration Settings
+To deploy the MinIO app, you must configure the ACL and ACE settings for both the **/data** host path storage volume(s) or the application does not deploy.
+
+If the storage volume is an ixVolume, permissions apply on every application start but only if the directory is empty (has no data), and if ACLs are not configured.
+Configured ACLs take precedence and are applied.
+
+Specify the default user UID **568** or the UID for the new user created in TrueNAS to serve as the MinIO app admin user.
+
+{{< trueimage src="/images/SCALE/Apps/InstallMinIOACLConfigSettings.png" alt="MinIO Enterprise ACL and ACE Settings" id=""MinIO Enterprise ACL and ACE Setting" >}} new image
+
+{{< include file="/static/includes/AppInstallWizardACLConfiguration.md" >}}
+
+Set ACL permissions for each dataset in the configuration, and on each system in the cluster.
 
 ### Resource Configuration
 
