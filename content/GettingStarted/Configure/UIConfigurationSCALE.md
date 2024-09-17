@@ -67,7 +67,7 @@ You can use the Console Setup menu or SCALE UI to configure network interfaces.
 We recommend using the web UI **Network** screen to [add or change network interfaces, static IP addresses, or aliases]({{< relref "/SCALETutorials/Network/Interfaces/_index.md" >}}), set up link aggregate [LAGG]({{< relref "SettingUpLAGG.md" >}}) or virtual LAN [VLAN]({{< relref "SettingUpVLAN.md" >}}) interfaces, change or [configure global network settings]({{< relref "ManagingGlobalConfig.md" >}}), or set up [static IP addresses]({{< relref "SettingUpStaticIPs.md" >}}).
 
 ### Adding Aliases or Static IP Addresses
-Static IP addresses, also known as 'aliases' provide support for various network applications.
+Static IP addresses, also known as aliases provide support for various network applications.
 {{< enterprise >}}
 SCALE Enterprise HA systems use a virtual IP (VIP) to maintain access to the UI if the system fails over to the standby controller.
 This VIP address might experience a minor blip at failover, but you do not need to log in with the standby controller IP address to gain access to the UI after a failover.
