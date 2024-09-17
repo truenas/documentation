@@ -133,7 +133,7 @@ Link aggregation settings only display after you select **VLAN** as the **Type**
 {{< /truetable >}}
 
 ### Aliases
-**Add** the right of **Aliases** shows fields to define an alias, also known as a 'static IP address' and netmask (CIDR) for the interface on the TrueNAS controller. The alias can be an IPv4 or IPv6 address.
+**Add** the right of **Aliases** shows fields to define an alias, also known as a static IP address and netmask (CIDR) for the interface on the TrueNAS controller. The alias can be an IPv4 or IPv6 address.
 
 ![AddInterfaceAliases](/images/SCALE/Network/AddInterfaceAliases.png "Interface Aliases")
 
