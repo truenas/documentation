@@ -123,7 +123,7 @@ For more details on feature flags, see [OpenZFS Feature Flags](https://openzfs.g
 
 ## 24.04.2.2 Changelog
 
-**September 16, 2024**
+**September 17, 2024**
 
 iXsystems is pleased to release TrueNAS SCALE 24.04.2.2!
 This is a hotpatch to address an issue in the previous 24.04.2.1 release where failover-related Proactive Support alerts were being triggered too often on some TrueNAS Enterprise platforms.
