@@ -4,7 +4,7 @@
 IBM and Cisco submitted the draft standards in March 2000. Since then, iSCSI has seen widespread adoption into enterprise IT environments.
 
 iSCSI functions through encapsulation. The *Open Systems Interconnection Model* (OSI) encapsulates SCSI commands and storage data within the session stack. The OSI further encapsulates the session stack within the transport stack, the transport stack within the network stack, and the network stack within the data stack.
-Transmitting data this way permits block-level access to storage devices over LANs, WANs, and even the Internet itself (although performance may suffer if your data traffic is traversing the Internet).
+Transmitting data this way permits block-level access to storage devices over LANs, WANs, and even the Internet itself (although performance could suffer if your data traffic is traversing the Internet).
 
 The table below shows where iSCSI sits in the OSI network stack:
 
@@ -62,7 +62,7 @@ iSCSI exports disk devices (zvols on TrueNAS) over a network that other iSCSI cl
   Administrative time is consumed configuring jumbo frames and troubleshooting if/when things go sideways.
   Some network switches might also have ASICs optimized for processing MTU 1500 frames while others might be optimized for larger frames.
   Systems administrators should also account for the impact on host CPU utilization.
-  Although jumbo frames are designed to increase data throughput, it may measurably increase latency (as is the case with some un-optimized switch ASICs); latency is typically more important than throughput in a VMware environment.
+  Although jumbo frames are designed to increase data throughput, it might measurably increase latency (as is the case with some un-optimized switch ASICs); latency is typically more important than throughput in a VMware environment.
   Some iSCSI applications might see a net benefit running jumbo frames despite possible increased latency.
   Systems administrators should test jumbo frames on their workload with lab infrastructure as much as possible before updating the MTU on their production network.
 
