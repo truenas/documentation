@@ -57,8 +57,8 @@
           (strings.Contains $path "/references/")
           (strings.Contains $path "/archive/")
   }}
-    {{/* Custom version for Core, Scale, and TrueCommand sections */}}
-    {{ if (or (eq (path.Base .RelPermalink) "core") (eq (path.Base .RelPermalink) "scale") (eq (path.Base .RelPermalink) "truecommand")) }}
+    {{/* Custom version for Scale and TrueCommand sections */}}
+    {{ if (or (eq (path.Base .RelPermalink) "scale") (eq (path.Base .RelPermalink) "truecommand")) }}
       <li>
         <input
           type="checkbox"
@@ -74,21 +74,16 @@
           </svg>
         </label>
         <ul class="gdoc-nav__list">
-          {{ if (eq (path.Base .RelPermalink) "core") }}
-            <li><a href="/core/" class="gdoc-nav__entry">Nightly</a></li>
-            <li><a href="https://www.truenas.com/docs/core/13.3/" class="gdoc-nav__entry">13.3</a></li>
-            <li><a href="https://www.truenas.com/docs/core/13.0/" class="gdoc-nav__entry">13.0</a></li>
-            <li><a href="/archive/" class="gdoc-nav__entry">Archive</a></li>
-          {{ else if (eq (path.Base .RelPermalink) "scale") }}
+          {{ if (eq (path.Base .RelPermalink) "scale") }}
             <li><a href="/scale/" class="gdoc-nav__entry">Nightly (25.04)</a></li>
             <li><a href="https://www.truenas.com/docs/scale/24.10/" class="gdoc-nav__entry">24.10</a></li>
             <li><a href="https://www.truenas.com/docs/scale/24.04/" class="gdoc-nav__entry">24.04</a></li>
             <li><a href="https://www.truenas.com/docs/scale/23.10/" class="gdoc-nav__entry">23.10</a></li>
+            <li><a href="https://www.truenas.com/docs/core/13.3/" class="gdoc-nav__entry">13.3</a></li>
+            <li><a href="https://www.truenas.com/docs/core/13.0/" class="gdoc-nav__entry">13.0</a></li>
             <li><a href="/archive/" class="gdoc-nav__entry">Archive</a></li>
           {{ else if (eq (path.Base .RelPermalink) "truecommand") }}
-            <li><a href="/truecommand/" class="gdoc-nav__entry">Nightly</a></li>
             <li><a href="https://www.truenas.com/docs/truecommand/3.0/" class="gdoc-nav__entry">3.0</a></li>
-            <li><a href="https://www.truenas.com/docs/truecommand/2.3/" class="gdoc-nav__entry">2.3</a></li>
             <li><a href="/archive/" class="gdoc-nav__entry">Archive</a></li>
           {{ end }}
         </ul>
