@@ -3,7 +3,7 @@
 {{< expand "One or More Aliases?" "v" >}}
 Static IP addresses set a fixed address for an interface that external devices or websites need to access or remember, such as for VPN access.
 
-Use aliases, also known as 'static IP addresses', to add multiple internal IP addresses, representing containers or applications hosted in a VM, to an existing network interface without having to define a separate network interface.
+Use aliases, also known as static IP addresses, to add multiple internal IP addresses, representing containers or applications hosted in a VM, to an existing network interface without having to define a separate network interface.
 
 In the UI, you can add aliases when adding or editing an existing interface using the **Add** button to the right of the **Aliases**.
 To add a static IP. Click **Add** again to add an additional alias.
