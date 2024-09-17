@@ -9,7 +9,7 @@ tags:
 - DHCP
 ---
 
-This article describes setting up a network interface with a static IP address, also referred to as an 'alias', or changing the main interface from a DHCP-assigned to a manually-entered static IP address.
+This article describes setting up a network interface with a static IP address, also referred to as an alias, or changing the main interface from a DHCP-assigned to a manually-entered static IP address.
 You must know the DNS name server and default gateway addresses for your IP address.
 
 {{< hint type=warning >}}
