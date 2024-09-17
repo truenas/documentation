@@ -31,7 +31,7 @@ Select **Start Automatically** to activate the NFS service when TrueNAS boots.
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Bind IP Addresses** | Select IP addresses to listen to for NFS requests. Leave empty for NFS to listen to all available addresses. You must configure static IPs, also referred to as 'aliases', on the interface to appear on the dropdown list. |
+| **Bind IP Addresses** | Select IP addresses to listen to for NFS requests. Leave empty for NFS to listen to all available addresses. You must configure static IPs, also referred to as aliases, on the interface to appear on the dropdown list. |
 | **Calculate number of threads dynamically** | Automatically sets the number of threads used by the kernel NFS server. |
 | **Specify number of threads manually** | Displays after deselecting **Calculate number of threads dynamically**. Enter an optimal number of threads used by the kernel NFS server. |
 {{< /truetable >}}
