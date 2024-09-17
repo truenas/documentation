@@ -29,7 +29,7 @@ For network configuration options **1**, **2**, and **3**, we recommend using th
 
 * **1) Configure network interfaces**
 
-  Use this to configure the primary network interface with a static IP address, also known as an 'alias' IP address.
+  Use this to configure the primary network interface with a static IP address, also known as an alias IP address.
   This is for switching away from the DHCP-assigned IP address TrueNAS provides when the system boots after installing SCALE.
   Also, use this to set up other network interfaces or to add alias/static IP addresses for the primary interface.
 
@@ -98,7 +98,7 @@ Type <kbd>n</kbd> to open the new interface screen or press <kbd>Enter</kbd> to 
 
 {{< trueimage src="/images/SCALE/CLI/CSMEditInterfaceSettings.png" alt="TrueNAS SCALE Console Setup Menu Edit Interface Settings" id="TrueNAS SCALE Console Setup Menu Edit Interface Settings" >}}
 
-You can enter aliases, also known as 'static IP addresses', for an interface when you create a new one or edit an existing interface.
+You can enter aliases, also known as static IP addresses, for an interface when you create a new one or edit an existing interface.
 
 {{< include file="/static/includes/AliasOrStaticIP.md" >}}
 
