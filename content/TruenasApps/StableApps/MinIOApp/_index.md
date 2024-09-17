@@ -143,7 +143,7 @@ Storage configuration uses both the default **/export** and **/data** data sets 
 #### ACL Configuration Settings
 To deploy the MinIO app, you must configure the ACL and ACE settings for both the **/export** and **/data** storage volumes.
 
-{{< trueimage src="/images/SCALE/Apps/InstallMinIOACLConfigSettings.png" alt="MinIO Enterprise Resource Limits" id="MinIO Enterprise Resource Limits" >}}
+{{< trueimage src="/images/SCALE/Apps/InstallMinIOACLConfigSettings.png" alt="MinIO Enterprise ACL Settings" id="MinIO Enterprise ACL Settings" >}}
 
 {{< include file="/static/includes/AppInstallWizardACLConfiguration.md" >}}
 

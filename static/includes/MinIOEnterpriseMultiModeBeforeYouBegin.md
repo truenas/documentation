@@ -8,15 +8,18 @@ The **Certificates** setting is not required for a basic configuration but is re
 If not already assigned, set a pool for applications to use.
 
 You can allow the app to create the storage volumes, or use the recommended method and create the required **data1**, **data2**, **data3**, and **data4** datasets to use with the host path option.
+These dataset represent each disk in the multi-disk configuration.
+
 [Create the datasets]({{< relref "DatasetsSCALE.md" >}}) before beginning the app installation process.
 You can organize the datasets under a parent dataset for MinIO to keep the storage datasets separated from the dataset for other potential applications.
-For example, create the *minio* dataset and nest **data1** under it.
+For example, create the *minio* dataset and nest **data1** and the other datasets under it.
 
 You can also mount other storage volumes inside the container pod using either the ixVolume or Host Path options, but these are not required.
 If mounting additional storage volumes with the host path option, create the dataset(s) before using the app installation wizard.
 
-Either use the default user and group IDs or [create a new user]({{< relref "ManageLocalUsersSCALE.md#creating-user-accounts" >}}) with **Create New Primary Group** selected.
-Note the UID/GID for the new user to add in the installation wizard.
+Either use the default user or add a new user to serve as the MinIO administrator.
+When you [create a new user]({{< relref "ManageLocalUsersSCALE.md#creating-user-accounts" >}}) select **Create New Primary Group**, and select the appropriate group in the **Auxilliary Group** for the type of user you want to create.
+Make note of the UID/GID for the new user to add in the installation wizard.
 
 If your system has active sharing configurations (SMB, NFS, iSCSI), disable them in **System > Services** before adding and configuring the MinIO application.
 Start any sharing services after MinIO completes the installation and starts.

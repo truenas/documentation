@@ -6,14 +6,16 @@ This adds a storage volume for the application that can be found nested under th
 
 {{< trueimage src="/images/SCALE/Apps/InstallMinIOEnterpriseStorageConfig.png" alt="MinIO Add Storage Volumes" id="MinIO Add Storage Volumes" >}}
 
-To use the **data1** existing dataset, select **Host Path (Path that already exists on the system)** from the **Type** dropdown list.
+To use the **data** existing dataset, select **Host Path (Path that already exists on the system)** from the **Type** dropdown list.
 The **Mount Path** field populates with **/data1** as the first storage volume for a basic installation.
 Enter the path or browse to select the **data1** dataset and populate the **Host Path** field.
 
 Click **Add** to the right of **Data Directories** to add the datasets created and representing drives in for multi-mode configurations.
-Click **Add** for each additional dataset (**data2**, **data3**, and **data4**).
-If you change the configuration of a basic installation or SNMD, you can use the **data1** dataset in the configuration and add the three additional datasets.
+Click **Add** for each dataset (**data1**, **data2**, **data3**, and **data4**).
 
-Change the **Mount Path** to correspond to the dataset path entered or selected in **Host Path**.Additional mount points are **/data2**, **/data3**, or **/data4**.
+If configuring either MNMD or SNMD, you must all all four datasets to each system in the cluster. These datasets represent the disk in the multi-disk configurations.
 
-When configuring MNMD, create the datasets and repeat the storage settings on each system (node) in the cluster.
+Change the **Mount Path** to correspond to the dataset path entered or selected in **Host Path**.
+Additional mount points are **/data2**, **/data3**, or **/data4**.
+
+You can select **Enable ACL** to modify dataset permissions and add ACL entries.
