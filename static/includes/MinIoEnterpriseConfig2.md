@@ -1,6 +1,5 @@
 &NewLine;
 
-
 Enter credentials to use as the MinIO administration user.
 If you have existing MinIO credentials, enter these or create new login credentials for the first time you log into MinIO.
 Enter a name for the MinIO administrator user in **Root User**, which is the equivalent of the MinIO access key.
