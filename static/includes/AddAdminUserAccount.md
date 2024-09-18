@@ -4,7 +4,7 @@
 
 {{< include file="/static/includes/AdminAccountSecurity.md" >}}
 
-Go to **Credentials > Local Users** and click **Add**.
+Go to **Credentials > Users** and click **Add**.
 
 {{< trueimage src="/images/SCALE/Credentials/AddUserIdentificationSettings.png" alt="Add User Identification Settings" id="Add User Identification Settings" >}}
 

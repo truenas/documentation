@@ -21,7 +21,7 @@ If attempting to migrate from CORE to SCALE, see [Migrating from TrueNAS CORE]({
 ## Updating Enterprise (HA) Systems
 If the system does not have an administrative user account, [create the admin user]({{< relref "ManageLocalUsersSCALE.md" >}}) as part of this procedure.
 
-Take a screenshot of the license information found on the **Support** widget on the **System > General** screen. You use this to verify the license after the update.
+Take a screenshot of the license information found on the **Support** widget on the **System > General Settings** screen. You use this to verify the license after the update.
 
 To update your Enterprise (HA) system to the latest SCALE release, log into the SCALE UI using the virtual IP (VIP) address and then:
 
@@ -38,7 +38,7 @@ To update your Enterprise (HA) system to the latest SCALE release, log into the 
 4. Sign into the SCALE UI. If using root to sign in, create the admin account now.
    If using admin, continue to the next step.
 
-5. Verify the system license after the update. Go to **System > General**.
+5. Verify the system license after the update. Go to **System > General Settings**.
    Verify the license information in the screenshot of the **Support** widget you took before the update matches the information on the **Support** widget after updating the system.  
 
 6. Verify the admin user settings, or if not created, [create the admin user]({{< relref "ManageLocalUsersSCALE.md" >}}) account now.

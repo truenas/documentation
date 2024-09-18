@@ -30,7 +30,7 @@ You can also configure email addresses for additional user accounts as needed.
 
 Before configuring anything else, set the local administrator email address.
 {{< expand "Click here for instructions" "v" >}}
-Go to **Credentials > Local Users**, click on the admin user row to expand it. Select **Edit** to display the **Edit User** configuration screen.
+Go to **Credentials > Users**, click on the admin user row to expand it. Select **Edit** to display the **Edit User** configuration screen.
 In the **Email** field, enter a remote email address that the system administrator regularly monitors (like *admin@example.com*) and click **Save**.
 {{< /expand >}}
 
@@ -44,7 +44,7 @@ Follow the directions in [Configuring the Admin User Email Address](#configuring
 After setting up the admin email address, you need to set up the send method for email service.
 
 There are two ways to access email configuration options.
-Go to the **Systems Settings > General** screen and locate the **Email** widget to view current configuration or click the **Alerts** <span class="iconify" data-icon="mdi:bell"></span> icon in the top right of the UI, then click the gear <span class="iconify" data-icon="mdi:cog"></span> icon, and select **Email** to open the **General** settings screen.
+Go to the **System > General Settings** screen and locate the **Email** widget to view current configuration or click the **Alerts** <span class="iconify" data-icon="mdi:bell"></span> icon in the top right of the UI, then click the gear <span class="iconify" data-icon="mdi:cog"></span> icon, and select **Email** to open the **General Settings** screen.
 Click **Settings** on the **Email Widget** to open the **Email Options** configuration screen.
 
 **Send Mail Method** shows two different options:
