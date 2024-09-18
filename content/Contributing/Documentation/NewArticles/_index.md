@@ -51,11 +51,11 @@ Be sure to have unique names for each image file.
 
 ## Uploading the Article Bundle
 
-Open the [User Recommendations]({{< ref "/CORE/CORETutorials/CommunityGuides/_index.md" >}}) section of the repository.
+Open the **User Recommendations** section of the repository.
 
 [![UploadImages](/images/Contribute/UploadingNewArticleBundle.png "Uploading Images")](/images/Contribute/UploadingNewArticleBundle.png)
 
-Click *Upload files* and drag and drop the article bundle directory into the repository.
+Click **Upload files** and drag and drop the article bundle directory into the repository.
 GitHub shows all the files to upload.
 
 [![AddNewArticlePhotosRepo](/images/Contribute/AddNewArticlePhotosRepo.png "Adding Images Repo")](/images/Contribute/AddNewArticlePhotosRepo.png)
@@ -67,7 +67,7 @@ GitHub shows all the files to upload.
 {{< /hint >}}
 
 Make sure all your files have been uploaded then scroll down to the **Commit changes** section and write a summary and description of your changes.
-Select *Create a new branch for this commit and start a pull request.* and click *Propose changes*.
+Select **Create a new branch for this commit and start a pull request.** and click **Propose changes**.
 GitHub can take a few moments to process the files.
 
 Make sure you're happy with the summary and description of your article, then click *Create pull request*.
