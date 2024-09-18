@@ -74,12 +74,12 @@ Select the storage type you want to use.
 To allow TrueNAS to create the storage volume, set **Type** to **ixVolume (Dataset created automatically by the system)**, which is the default but not recommended storage type.
 
 To use an existing dataset, select **Host Path (Path that already exists on the system)** which is the recommended option for MinIO.
-**Mount Path** populates with the default **/dat1a**.
+**Mount Path** populates with the default **/data1**.
 Enter the path or browse to and click on the **data1** dataset location to populate **Host Path**.
 
 Select **Enable ACL** to show the host path settings and the ACE Entries option. After entering or browsing to the **data** dataset, click **Add** to the right of **ACE Entries**.
 
-{{< trueimage src="/images/SCALE/Apps/InstallMinIOEnterpriseACLAndACESettings.png" alt="MinIO Enterprise ACL and ACE Settings" id="MinIO Enterprise ACL and ACE Settings" >}} new image
+{{< trueimage src="/images/SCALE/Apps/InstallMinIOEnterpriseACLAndACESettings.png" alt="MinIO Enterprise ACL and ACE Settings" id="MinIO Enterprise ACL and ACE Settings" >}} need new image
 
 Set the **ACE Entry** user to the default user **568** or enter the UID for the user created in TrueNAS to serve as the MinIO app administrator, and set the permissions to **FULL_CONTROL**.
 
@@ -132,7 +132,7 @@ Configured ACLs take precedence and are applied.
 
 Specify the default user UID **568** or the UID for the new user created in TrueNAS to serve as the MinIO app admin user.
 
-{{< trueimage src="/images/SCALE/Apps/InstallMinIOACLConfigSettings.png" alt="MinIO Enterprise ACL and ACE Settings" id=""MinIO Enterprise ACL and ACE Setting" >}} new image
+{{< trueimage src="/images/SCALE/Apps/InstallMinIOACLConfigSettings.png" alt="MinIO Enterprise ACL and ACE Settings" id="MinIO Enterprise ACL and ACE Setting" >}} new image
 
 {{< include file="/static/includes/AppInstallWizardACLConfiguration.md" >}}
 
