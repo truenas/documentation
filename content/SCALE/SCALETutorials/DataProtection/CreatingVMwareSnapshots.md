@@ -168,34 +168,13 @@ To revert a VM using a ZFS snapshot, first clone the snapshot as a new dataset i
 4. Resignature the snapshot so that it can be mounted.
 
     a. Access the ESXi host shell using SSH or a local console connection to resignature the snapshot
-  
-    b. Enter the command {{< cli >}} esxcli storage vmfs snapshot list {{< /cli >}} to view the unmounted snapshot.
-    Note the `VMFS UUID` value.
 
-    c. Enter the command {{< cli >}} esxcli storage vmfs snapshot resignature -u *VMFS-UUID*  {{< /cli >}}, where *VMFS-UUID* is the ID of the snapshot according to the previous command output.
-    ESXi resignatures the snapshot and automatically mounts the device.
-
-    {{< expand "Output Example" "v" >}}
-  ```
-  [root@localhost:~] esxcli storage vmfs snapshot list
-  65a58a71-c5ac3323-6306-d4ae52c1e78d
-    Volume Name: LUN1
-    VMFS UUID: 65a58a71-c5ac3323-6306-d4ae52c1e78d
-    Can mount: false
-    Reason for un-mountability: the original volume is still online
-    Can resignature: true
-    Reason for non-resignaturability:
-    Unresolved Extent Count: 1
-  [root@localhost:~] esxcli storage vmfs snapshot resignature -u 65a58a71-c5ac3323-6306-d4ae52c1e78d
-  ```
-    {{< /expand >}}
-
-    d. Go back to **Storage > Devices** in the ESXi Host Client UI and click **Refresh**.
+    b. Go back to **Storage > Devices** in the ESXi Host Client UI and click **Refresh**.
     The mounted snapshot appears in the list of devices.
 
       {{< trueimage src="/images/VMWareESXi/StorageDevicesClone.png" alt="Devices Screen with Snapshot" id="Devices Screen with Snapshot" >}}
 
-    e. Go to the **Datastores** tab.
+    c. Go to the **Datastores** tab.
     You might need to click **Refresh** again.
     A new datastore for the mounted snapshot appears in the list of datastores.
 
