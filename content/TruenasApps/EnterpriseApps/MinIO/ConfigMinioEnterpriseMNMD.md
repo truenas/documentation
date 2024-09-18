@@ -130,7 +130,7 @@ Configured ACLs take precedence and are applied.
 
 Specify the default user UID **568** or the UID for the new user created in TrueNAS to serve as the MinIO app admin user.
 
-{{< trueimage src="/images/SCALE/Apps/InstallMinIOACLConfigSettings.png" alt="MinIO Enterprise ACL and ACE Settings" id=""MinIO Enterprise ACL and ACE Setting" >}} new image
+{{< trueimage src="/images/SCALE/Apps/InstallMinIOACLConfigSettings.png" alt="MinIO Enterprise ACL and ACE Settings" id="MinIO Enterprise ACL and ACE Setting" >}} new image
 
 {{< include file="/static/includes/AppInstallWizardACLConfiguration.md" >}}
 
