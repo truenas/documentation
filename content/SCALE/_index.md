@@ -1,5 +1,5 @@
 ---
-title: "TrueNAS SCALE"
+title: "TrueNAS"
 geekdocCollapseSection: true
 weight: 20
 aliases:
