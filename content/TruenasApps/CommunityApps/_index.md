@@ -12,6 +12,7 @@ keywords:
 - software storage solutions
 ---
 
+
 {{< include file="/static/includes/ProposeArticleChange.md" >}}
 
 The TrueNAS community creates and maintains numerous applications intended to expand system functionality far beyond what is typically expected from a NAS.

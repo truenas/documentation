@@ -19,7 +19,8 @@ keywords:
 - object based storage
 ---
 
-{{< include file="/static/includes/AppsUnversioned.md" >}}
+
+{{< include file="/static/includes/ProposeArticleChange.md" >}}
 
 This section has tutorials for using the MinIO apps available for TrueNASE.
 
