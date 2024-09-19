@@ -58,7 +58,7 @@ Record this password and store it in a safe place!
 
 Go to **Storage > Disks**. Click the **>** next to an SED, then select **Edit**. Enter and confirm the password in the **SED Password** field.
 
-You must configure the SED to use the new password. Repeate this process for each SED and any SEDs added to the system in the future.
+You must configure the SED to use the new password. Repeat this process for each SED and any SEDs added to the system in the future.
 
 {{< hint type=warning >}}
 Remember SED passwords! If you lose the SED password, you cannot unlock SEDs or access their data.
