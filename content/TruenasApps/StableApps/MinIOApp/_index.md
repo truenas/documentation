@@ -20,6 +20,8 @@ keywords:
 ---
 
 
+{{< include file="/static/includes/ProposeArticleChange.md" >}}
+
 MinIO High Performance Object Storage, released under the Apache Licenses v2.0 is an open source Amazon S3 cloud storage compatible object storage solution.
 The TrueNAS MinIO applications allow users to build high performance infrastructure for machine learning, analytics, and application data workloads.
 
