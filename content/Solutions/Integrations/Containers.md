@@ -18,7 +18,6 @@ The democratic-csi focuses on providing storage using iSCSI, NFS, and SMB protoc
 
 - dynamically provisions/de-provision storage and shares it as appropriate for cluster usage
 - online resize operations to dynamically expand volumes as needed
-- snapshot support (using either `zfs send/receive` or `zfs snapshot`)
 - cross-architecture (amd64, armv7, arm64)
 
 # Installation
@@ -42,17 +41,6 @@ Go to **Storage > Pools** and create the pools to include in your container.
 Now you need to ensure that a supported shell is used by the user account that your container solution can use to SSH to TrueNAS.
 Go to **Accounts > Users** and set the desired user's *Shell* to either *bash* or *sh*, then click *SAVE*.
 
-{{< hint type=note >}}
- 
-To use a non-root user for the SSH operations, you can create a `csi` user and then run `visudo` directly from the console. Make sure the line for the `csi` user has `NOPASSWD` added (this can get reset by TrueNAS if you alter the user in the GUI later):
-
-```
-csi ALL=(ALL) NOPASSWD:ALL
-```
-
-With TrueNAS CORE version 12.0+, you can use an `apiKey` instead of the `root` password for the HTTP connection.
-{{< /hint >}}
-
 ### Set up NFS
 
 1. Go to **Services** and click the <i class="fa fa-pencil" aria-hidden="true" title="Configure"></i> next to *NFS* to edit its properties.
@@ -66,35 +54,10 @@ With TrueNAS CORE version 12.0+, you can use an `apiKey` instead of the `root` p
 4. In the *Initiators Groups* tab, click *ADD*. For ease of use, check the *Allow ALL Initiators*, then click *SAVE*. You can make restrictions later using the *Allowed Initiators (IQN)* function.
 5. Kubernetes will create Targets and Extents automatically.
 
-{{< hint type=note >}}
-
-When using the TrueNAS API concurrently, the `/etc/ctl.conf` file on the server can become invalid. There are sample scripts in the `contrib` directory to clean things up ie: copy the script to the server and directly and run - `./ctld-config-watchdog-db.sh | logger -t ctld-config-watchdog-db.sh &`. Please read the scripts and set the variables as appropriate for your server.
-  - Ensure you have preemptively created portals, initiator groups, and authorizations
-    - Make note of the respective IDs (the true ID may not reflect what is visible in the UI)
-    - You can make ID's visible by clicking the `Edit` link and finding the ID in the browser address bar
-    - Alternately, use these commands to retrieve appropriate IDs:
-      - `curl --header "Accept: application/json" --user root:<password> 'http(s)://<ip>/api/v2.0/iscsi/portal'`
-      - `curl --header "Accept: application/json" --user root:<password> 'http(s)://<ip>/api/v2.0/iscsi/initiator'`
-      - `curl --header "Accept: application/json" --user root:<password> 'http(s)://<ip>/api/v2.0/iscsi/auth'`
-{{< /hint >}}
-
 ## Prepare the Nodes
 
 Install and configure the requirements for both NFS and iSCSI.
 {{< tabs "NodePrep" >}}
-{{< tab "NFS" >}}
-### NFS
-
-#### RHEL / CentOS
-```
-sudo yum install -y nfs-utils
-```
-
-#### Ubuntu / Debian
-```
-sudo apt-get install -y nfs-common
-```
-{{< /tab >}}
 {{< tab "iSCSI" >}}
 ### iSCSI
 
@@ -103,63 +66,6 @@ Multipath is supported for the `iscsi`-based drivers. Configure multipath with m
 
 If you are running Kubernetes with rancher/rke, please see https://github.com/rancher/rke/issues/1846.
 {{< /hint >}}
-
-#### RHEL / CentOS
-Install these system packages:
-```
-sudo yum install -y lsscsi iscsi-initiator-utils sg3_utils device-mapper-multipath
-```
-
-Enable multipathing:
-```
-sudo mpathconf --enable --with_multipathd y
-```
-
-Ensure that `iscsid` and `multipathd` are running:
-```
-sudo systemctl enable iscsid multipathd
-
-sudo systemctl start iscsid multipathd
-```
-
-Start and enable iSCSI:
-```
-sudo systemctl enable iscsi
-
-sudo systemctl start iscsi
-```
-
-#### Ubuntu / Debian
-Install these system packages:
-```
-sudo apt-get install -y open-iscsi lsscsi sg3-utils multipath-tools scsitools
-```
-
-Enable multipathing:
-```
-sudo tee /etc/multipath.conf <<-'EOF'
-defaults {
-    user_friendly_names yes
-    find_multipaths yes
-}
-EOF
-
-sudo systemctl enable multipath-tools.service
-
-sudo service multipath-tools restart
-```
-
-Ensure that open-iscsi and multipath-tools are enabled and running:
-```
-sudo systemctl status multipath-tools
-
-sudo systemctl enable open-iscsi.service
-
-sudo service open-iscsi start
-
-sudo systemctl status open-iscsi
-
-```
 {{< /tab >}}
 {{< tab "SMB" >}}
 ### SMB
@@ -270,8 +176,6 @@ Install `democratic-csi` as usual with `volumeSnapshotClasses` defined as approp
 ```
 
 {{< /expand >}}
-* You can run the `kubectl get pods -n democratic-csi -o wide` command to make sure all the democratic-csi pods are running.
-* You can also run the `kubectl get sc` command to make sure your storage classes are present and set a default class.
 * Visit the [Kubectl Cheat Sheet](https://kubernetes.io/docs/reference/kubectl/cheatsheet/) or this [Kubernetes CSI guide](https://kubernetes-csi.github.io/docs/) for more Kubernetes deployment and configuration information.
 {{< /tab >}}
 {{< tab "Nomad" >}}
