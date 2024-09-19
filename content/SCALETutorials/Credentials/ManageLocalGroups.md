@@ -38,14 +38,9 @@ Enter a name for the group.
 The group name cannot begin with a hyphen (-) or contain a space, tab, or any of these characters: colon (:), plus (+), ampersand (&), hash (#), percent (%), carat (^), open or close parentheses ( ), exclamation mark (!), at symbol (@), tilde (~), asterisk (*), question mark (?) greater or less than (<) (>), equal (=).
 You can only use the dollar sign ($) as the last character in a group name.
 
-**Allowed sudo commands**, **Allow all sudo commands**, **Allowed sudo commands with no password** and **Allow all sudo commands with no password** grant members of the group limited root-like permissions using the [sudo](https://www.sudo.ws/) command.
-Use **Allowed sudo commands** or **Allowed sudo commands with no password** to list specific sudo commands allowed for group members.
-Enter each command as an absolute path to the ELF (Executable and Linkable Format) executable file, for example */usr/bin/nano*.
-<file>/usr/bin/</file> is the default location for commands.
-Or click **Allow all sudo commands** or **Allow all sudo commands with no password**.
+If required, set the [sudo](https://www.sudo.ws/) permissions to assign this group.
 
-Exercise caution when allowing sudo commands, especially without password prompts.
-We recommend limiting this privilege to trusted users and specific commands to minimize security risks.
+{{< include file="/static/includes/AdminSudo.md" >}}
 
 To allow Samba permissions and authentication to use this group, select **Samba Authentication**.
 
