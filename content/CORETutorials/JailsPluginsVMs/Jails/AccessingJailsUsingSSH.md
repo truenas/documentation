@@ -6,6 +6,10 @@ tags:
 - corejails
 ---
 
+{{< hint type=note title="Unsupported Feature" >}}
+{{< include file="/static/includes/COREFeatureSupport.md" >}}
+{{< /hint >}}
+
 {{< toc >}}
 
 ## Accessing a Jail Using SSH

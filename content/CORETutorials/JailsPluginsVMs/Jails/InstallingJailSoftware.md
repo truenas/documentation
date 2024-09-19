@@ -7,6 +7,10 @@ tags:
 - corejailspluginsvm
 ---
 
+{{< hint type=note title="Unsupported Feature" >}}
+{{< include file="/static/includes/COREFeatureSupport.md" >}}
+{{< /hint >}}
+
 {{< toc >}}
 
 A jail is created with no software aside from the core packages installed as part of the selected version of FreeBSD.

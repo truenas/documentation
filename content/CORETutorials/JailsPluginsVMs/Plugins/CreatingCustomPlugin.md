@@ -7,6 +7,10 @@ tags:
 - corejailspluginsvm
 ---
 
+{{< hint type=note title="Unsupported Feature" >}}
+{{< include file="/static/includes/COREFeatureSupport.md" >}}
+{{< /hint >}}
+
 {{< toc >}}
 
 Plugins are a technology for easily and securely deploying 3rd party applications directly on TrueNAS storage systems.

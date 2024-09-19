@@ -6,11 +6,11 @@ tags:
 - coreplugins
 ---
 
-{{< toc >}}
-
-{{< hint type=note >}}
+{{< hint type=note title="Unsupported Feature" >}}
 {{< include file="/static/includes/COREFeatureSupport.md" >}}
 {{< /hint >}}
+
+{{< toc >}}
 
 Plugins allow extending the built-in NAS services by installing additional software.
 A plugin is a pre-packaged application that is installed into a [FreeBSD Jail](https://docs.freebsd.org/en/books/handbook/jails/).

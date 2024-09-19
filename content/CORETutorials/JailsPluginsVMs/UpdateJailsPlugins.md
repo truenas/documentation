@@ -7,6 +7,10 @@ tags:
 - corejailspluginsvm
 ---
 
+{{< hint type=note title="Unsupported Feature" >}}
+{{< include file="/static/includes/COREFeatureSupport.md" >}}
+{{< /hint >}}
+
 {{< toc >}}
 
 The **Jails** screen displays a list of jails installed on your system.

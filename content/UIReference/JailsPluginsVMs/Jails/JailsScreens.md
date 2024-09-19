@@ -6,6 +6,10 @@ tags:
 - corejails
 ---
 
+{{< hint type=note title="Unsupported Feature" >}}
+{{< include file="/static/includes/COREFeatureSupport.md" >}}
+{{< /hint >}}
+
 The Jails screen displays a list of jails installed on your system. Use to add, edit or delete jails.
 
 ![JailsScreen](/images/CORE/13.0/JailsScreen.png "Jails Screen")
