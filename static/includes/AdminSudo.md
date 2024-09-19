@@ -2,7 +2,7 @@
 
 {{< hint type=tip title="Admin Accounts and Sudo Commands" >}}
 As a security hardening feature, administrator accounts in Linux-based TrueNAS releases (22.12.0 or newer) cannot by default execute certain root-level commands in a shell or SSH session.
-If a user attempts to execute one of these commands without root-level access, TrueNAS returns a `command not found` error.
+If a user attempts to execute one of these commands without root-level access, TrueNAS returns a **command not found** error.
 
 Administrative users who need to execute root-level commands to complete a task should temporarily enable sudo permissions for that user by going **Credentials** and editing the user or group to enable some or all sudo commands.
 For best security, enable only the required commands to perform the task and require password authentication, unless the task or app prevents it.
