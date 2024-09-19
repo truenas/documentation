@@ -8,6 +8,10 @@ tags:
 - corejailspluginsvm
 ---
 
+{{< hint type=note title="Unsupported Feature" >}}
+{{< include file="/static/includes/COREFeatureSupport.md" >}}
+{{< /hint >}}
+
 Use the **Plugins** screen to install and maintain 3rd party applications on your TrueNAS storage systems.
 
 ![PluginsScreen](/images/CORE/13.0/PluginsScreen.png "Plugins Screen")
