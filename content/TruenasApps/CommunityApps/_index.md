@@ -12,6 +12,8 @@ keywords:
 - software storage solutions
 ---
 
+{{< include file="/static/includes/ProposeArticleChange.md" >}}
+
 The TrueNAS community creates and maintains numerous applications intended to expand system functionality far beyond what is typically expected from a NAS.
 
 By default, the TrueNAS application catalog includes the **stable** train.
@@ -31,7 +33,9 @@ Make sure the application is required for your specific use requirements and doe
 The tutorials in this section are for commonly used community-maintained applications.
 Some apps in this section replace deprecated services or functionality previously built into TrueNAS SCALE.
 
-{{< include file="/static/includes/ProposeArticleChange.md" >}}
+## Understanding App Intall Wizard Settings
+
+{{< include file="/static/includes/AppsInstallWizardSettings.md" >}}
 
 <div class="noprint">
 

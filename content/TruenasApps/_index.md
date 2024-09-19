@@ -160,14 +160,14 @@ After the app status changes to stopped, click **Delete** on the **Application I
 Click **Confirm** then **Continue** to delete the application.
 
 ## Installing an Application
-The first time you go to **Apps**, choose the pool apps use before you can install applications.
-Select the pool in the [**Choosing the Application Pool**](#choosing-the-application-pool) for more information.
+The first time you go to **Apps**, you are prompted to choose the pool apps use. You must set the app pool before you can install applications.
+Select the pool as described in the [**Choosing the Application Pool**](#choosing-the-application-pool).
 
 The **Installed** applications screen displays **Check Available Apps** before you install the first application.
 
 {{< trueimage src="/images/SCALE/Apps/AppsInstalledAppsScreenNoApps.png" alt="Installed Applications Screen No Apps" id="Installed Applications Screen No Apps" >}}
 
-Click **Check Available Apps** or **Discover Apps** to open the **[Discover](#using-the-discover-applications-screen)** screen.
+Ether click on **Check Available Apps** or **Discover Apps** to open the **[Discover](#using-the-discover-applications-screen)** screen.
 
 Search for the application widget, then click on that widget to open the information screen for the app and access the installation wizard.
 
@@ -175,79 +175,23 @@ Search for the application widget, then click on that widget to open the informa
 
 If the application requires specific datasets, configure these before using the installation wizard.
 
-### Opening an App Installation Wizard
+### Using an App Installation Wizard
 After clicking on an app widget on the **Discover Apps** screen, the information screen for that app opens.
-From the application information screen, click **Install** to open the installation wizard for the application.
+Click **Install** to open the installation wizard for the application.
 
 {{< trueimage src="/images/SCALE/Apps/MinIOS3AppInfoScreen.png" alt="Application Information Screen Example" id="Application Information Screen Example" >}}
 
 The installation wizard configuration sections vary by application, with some including more configuration areas than others.
-Click **Install** to review settings ahead of time to check for required settings.
-Click **Discover** on the breadcrumb at the top of the installation wizard to exiting the screen without saving and until you are ready return and configure the app settings.
+Each application tutorial provides information on steps to take before launching an app installation wizard, but if a tutorial does not exist, click **Install** on the app information screen to open the wizard.
+Review settings ahead of time to check for required settings then exit the wizard to do the necessary steps before returning to install the application.
+Click **Discover** on the breadcrumb at the top of the app wizard screen to exiting the without saving.
 
-All applications include these basic setting sections:
-
-{{< expand "Application Name and Version" "v" >}}
-**Application Name** shows the default name for the application (typically the app name, like *storj*), and **Version** shows the installed version.
-
-If deploying more than one instance of the application, you must change the default name. For example, *storj2* or *storj-node1*.
-
-Do not change the version number for official apps or those included in a TrueNAS catalog.
-When a new version becomes available, an **Update** banner shows on the **Installed** application screen, the app row shows an update alert, and the **Application Info** widget  an update button.
-Updating the app changes the version shown on the edit wizard for the application.
-{{< /expand >}}
-
-{{< expand "Application Configuration" "v" >}}
-***Application* Configuration** shows required and optional settings for that app.
-For example, the MinIO app uses  **MinIO Configuration**.
-
-Typical settings include admin user credentials, environment variables, additional argument settings, the name of the node, or even sizing parameters.
-
-Sometimes users show in a **Users and Group Configuration** section.
-If not using the default user and group, create a new user (and group) to manage the application before using the installation wizard.
-{{< /expand >}}
-
-{{< expand "Network Configuration" "v" >}}
-**Network Configuration** shows network settings the app uses to communicate with TrueNAS and the Internet.
-Settings include the default port assignment, host name, IP addresses, and other network settings.
-
-If changing the port number to something other than the default setting, refer to [Default Ports](https://www.truenas.com/docs/references/defaultports/) for a list of used and available port numbers.
-
-Some network configuration settings include the option to add a certificate.
-If a certificate is required for the application, create the certificate authority and certificate before using the installation wizard.
-{{< /expand >}}
-
-{{< expand "Storage Configuration" "v" >}}
-**Storage Configuration** shows options to configure storage for the application.
-Storage configuration can include the primary data mount volume, a configuration volume, postgres volumes, and an option to add additional storage volumes.
-The primary mount volumes have two options:
-* **ixVolume** that creates a storage volume inside the **ix-apps** dataset. This is the default setting.
-* **Host Path** that allows you to select an existing dataset created for the application. Shows additional fields to select the path to the dataset and add the mount point.
-
-{{< hint type="information" title="ix-apps Dataset" >}}
-The **ix-apps** dataset is for internal use only.
-
-TrueNAS systems with applications deployed that upgrade from earlier releases to 24.10 continue to see the **ix-Applications** dataset on the pool chosen for applications to use.
-New installs or systems upgrading where applications are not deployed and a pool is not chosen for apps use the hidden **ix-apps** dataset.
-Choosing the pool for apps to use, creates this dataset to store all container-related data.
+{{< hint type="Information" title="Community Maintained Apps" >}}
+Apps submitted and maintained by community members using the **Custom App** option might not include an installation wizard.
+Refer to tutorials created and maintained by the community for more information on deploying and using these applications.
 {{< /hint >}}
 
-If adding additional storage volumes, click **Add** to configure additional storage volumes for the application to use in addition to the main storage volume (dataset).
-The three storage options are:
-* **ixVolume**
-* **Host path**
-* **SMB share** that allows you to create a storage volume used by an SMB share. 
-
-If the application requires specific datasets or you want to allow SMB share access, configure the dataset(s) and SMB share before using the installation wizard.
-
-{{< include file="/static/includes/FileExplorerFolderIcons.md" >}}
-{{< /expand >}}
-
-{{< expand "Resource Configuration" "v" >}}
-**Resources Configuration** shows the default CPU and memory settings for the container pod.
-This section can also be named **Resource Limits**.
-In most cases, accept the default settings or change these settings to limit the system resources available to the application.
-{{< /expand >}}
+{{< include file="/static/includes/AppsInstallWizardSettings.md" >}}
 
 After installing an application, the **Installed** applications screen opens showing the application in the **Deploying** state.
 It changes to **Running** when the application is ready to use.
@@ -277,7 +221,7 @@ You cannot specify which available GPU device TrueNAS allocates to the applicati
 If installed GPU devices do not populate as available for allocation in **GPU Configuration**:
 
 1. Ensure the GPU devices you want to allocate are not configured as isolated.
-   Go to **System > Advanced** and locate the **Isolated GPU Device(s)** widget.
+   Go to **System > Advanced Settings** and locate the **Isolated GPU Device(s)** widget.
    If necessary, click **Configure**, deselect the device(s) you want to allocate, and click **Save**.
 
 2. Ensure the GPU devices you want to allocate are not assigned to any existing VMs.
@@ -309,9 +253,6 @@ Use the **Discover** screen links to access other functions.
 
 **Manage Installed Apps** opens the **Installed** apps screen where you access the **Settings** menu to manage general application settings.
 
-<!-- commenting out until RC1 when this screen gets added back to the UI
-**Custom App** opens a wizard where you can configure an unofficial app or one not included in a TrueNAS catalog. -->
-
 ### Refreshing the Apps Catalog
 Click **Refresh Catalog** on the **Discover** screen to refresh the apps catalog.
 Refresh the apps catalog after adding or editing the trains on your system.
@@ -331,9 +272,11 @@ To select multiple categories, click **Categories** again and select another cat
 After installing an application, the **Installed** applications screen shows the app in the **Deploying** state.
 The status changes to **Running** when the application is fully deployed and ready to use.
 
-<!-- commenting out until the UI includes this in RC1
 ## Installing Custom Applications
+**Custom App** opens a screen where you can upload a yaml file for an unofficial app or one not included in a TrueNAS catalog.
 To deploy a custom application, go to **Discover** and click **Custom App** to open the **Install Custom App** screen.
+
+<!-- Commenting out until we have tutorials for created for this.
 See [Using Install Custom App]({{< relref "UsingCustomApp.md" >}}) for more information.
 
 ### Changing Custom Application Networking

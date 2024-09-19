@@ -17,6 +17,8 @@ related: false
 ---
 
 
+{{< include file="/static/includes/ProposeArticleChange.md" >}}
+
 {{< include file="/static/includes/SCALEEnterpriseApps.md" >}}
 
 TrueNAS is certified with leading hypervisors and backup solutions to streamline storage operations and ensure compatibility with your existing IT infrastructure.
@@ -59,7 +61,9 @@ iXsystems Support can assist Enterprise customers with configuring directory ser
 
 For more information on configuring general application functions and installation wizard screens, see [TrueNAS Apps]({{< relref "/content/TruenasApps/_index.md" >}}).
 
-{{< include file="/static/includes/ProposeArticleChange.md" >}}
+## Understanding App Intall Wizard Settings
+
+{{< include file="/static/includes/AppsInstallWizardSettings.md" >}}
 
 For information on adding to or changing the train for the apps catalog, see [Managing App Trains]({{< relref "UsingTrains.md" >}}).
 
