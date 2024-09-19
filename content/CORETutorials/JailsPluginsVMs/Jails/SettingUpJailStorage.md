@@ -7,6 +7,9 @@ tags:
 - corejailspluginsvm
 ---
 
+{{< hint type=note title="Unsupported Feature" >}}
+{{< include file="/static/includes/COREFeatureSupport.md" >}}
+{{< /hint >}}
 
 Jails can be given access to an area of storage outside of the jail that is configured on the TrueNAS system.
 It is possible to give a FreeBSD jail access to an area of storage on the TrueNAS system.
