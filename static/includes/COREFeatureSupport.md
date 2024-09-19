@@ -1,6 +1,7 @@
 &NewLine;
 
 As of TrueNAS CORE 13.3, this feature is untested and provided without support to the [TrueNAS Community](https://forums.truenas.com/).
+Note that breaking upstream changes or end-of-life designation in the FreeBSD OS or management software, such as pkg or iocage, can occur at any time, resulting in 13.3 containers becoming nonfunctional.
 <br>
 <br>
 Users with a critical need to use containers or virtualization solutions in production should migrate to the tested and supported virtualization features available in [TrueNAS SCALE](https://www.truenas.com/download-truenas-scale/).
