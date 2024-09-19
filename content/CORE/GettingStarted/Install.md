@@ -102,15 +102,6 @@ To reclaim the USB stick after installing TrueNAS, use Rufus to write a "Non boo
 To write the TrueNAS installer to a USB stick on Linux, plug the USB stick into the system and open a terminal.
 
 Start by making sure the USB stick connection path is correct.
-There are many ways to do this in Linux, but a quick option is to enter command `lsblk -po +vendor,model` and note the path to the USB stick.
-This shows in the **NAME** column of the `lsblk` output.
-
-Next, use `dd` to write the installer to the USB stick.
-{{< hint type=warning >}}
-Be very careful when using `dd`, as choosing the wrong `of=` device path can result in irretrievable data loss!
-{{< /hint >}}
-Enter `dd status=progress if=path/to/.iso of=path/to/USB` in the CLI.
-If this results in a **permission denied** error, use command `sudo dd` with the same parameters and enter the administrator password.
 
 ### Headless Install
 Systems with IPMI connectivity, like the TrueNAS Mini, can use the Virtual Media feature with an <file>.iso</file> to create a virtual boot device for installation.
@@ -302,7 +293,7 @@ The [Console Setup Menu]({{< relref "/CORE/GettingStarted/ConsoleSetupMenu.md" >
 {{< hint type="tip" title="VMWare post-install" >}}
 After installing TrueNAS in a VMware VM, it is recommended to configure and use the [vmx(4)](https://www.freebsd.org/cgi/man.cgi?query=vmx) drivers on TrueNAS.
 To load the VMX driver when TrueNAS boots, log in to the web interface and go to **System > Tunables**.
-Click *Add* and create a new tunable with the *Variable* `if_vmx_load`, *Value* `"YES"`, and *Type* `loader`, and save the tunable:
+Click *Add* and create a new tunable.
 
 ![SystemTunablesVmxload](/images/CORE/System/SystemTunablesVmxload.png "VMware Tunable in TrueNAS")
 {{< /hint >}}
