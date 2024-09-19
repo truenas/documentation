@@ -59,13 +59,12 @@ Scroll down to or click on **Storage Configuration** on the list of wizard secti
 {{< trueimage src="/images/SCALE/Apps/InstallMinIOEnterpriseStorageConfigSettings.png" alt="MinIO Enterprise Storage Configuration Settings" id="MinIO Enterprise Storage Configuration Settings" >}}
 
 Select the storage type you want to use.
-To allow TrueNAS to create the storage volume, set **Type** to **ixVolume (Dataset created automatically by the system)**, which is the default but not recommended storage type.
-
-To use the existing **data1** dataset, select **Host Path (Path that already exists on the system)** which is the recommended option for MinIO.
+To use an existing dataset, select **Host Path (Path that already exists on the system)** which is the recommended option for MinIO.
 **Mount Path** populates with the default **/data1**.
+Select **Enable ACL** to show the mount path and host path fields.
 Enter the path or browse to and click on the **data1** dataset location to populate **Host Path**.
 
-Select **Enable ACL** to show the host path settings and the ACE Entries option. After entering or browsing to the **data** dataset, click **Add** to the right of **ACE Entries**.
+Click **Add** to the right of **ACE Entries**.
 
 {{< trueimage src="/images/SCALE/Apps/InstallMinIOEnterpriseACLAndACESettings.png" alt="MinIO Enterprise ACL and ACE Settings" id="MinIO Enterprise ACL and ACE Settings" >}} new image
 
