@@ -86,30 +86,6 @@ Advanced users can write scripts that run immediately before or after the cloud 
 Use either the **Advanced Options** screen accessed from the **Cloudsync Task Wizard** or **Edit Cloud Sync Task** screen, scroll down to the **Advanced Options** to locate and then enter environment variables in either the **Pre-script** or **Post-script** fields.
 The **Post-script** field only runs when the cloud sync task succeeds.
 
-{{< expand "Click here for Environment Variables" "v" >}}
-#### General Environment Variables
-
-* `CLOUD_SYNC_ID`
-* `CLOUD_SYNC_DESCRIPTION`
-* `CLOUD_SYNC_DIRECTION`
-* `CLOUD_SYNC_TRANSFER_MODE`
-* `CLOUD_SYNC_ENCRYPTION`
-* `CLOUD_SYNC_FILENAME_ENCRYPTION`
-* `CLOUD_SYNC_ENCRYPTION_PASSWORD`
-* `CLOUD_SYNC_ENCRYPTION_SALT`
-* `CLOUD_SYNC_SNAPSHOT`
-
-#### Provider-Specific Variables
-There also are provider-specific variables like CLOUD_SYNC_CLIENT_ID or CLOUD_SYNC_TOKEN or CLOUD_SYNC_CHUNK_SIZE.
-
-Remote storage settings:
-* `CLOUD_SYNC_BUCKET`
-* `CLOUD_SYNC_FOLDER`
-
-Local storage settings:
-* `CLOUD_SYNC_PATH`
-{{< /expand >}}
-
 ## Running an Unscheduled Cloud Sync Task
 Saved tasks activate based on the schedule set for the task.
 Click **Run Now** on the **Cloud Sync Task** widget to run the sync task before the saved scheduled time. 
