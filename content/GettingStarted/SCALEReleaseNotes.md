@@ -1,13 +1,13 @@
 ---
 title: "24.10 (Electric Eel) Version Notes"
-description: "Highlights, change log, and known issues for the latest SCALE nightly development version."
+description: "Highlights, change log, and known issues for TrueNAS 24.10 release versions."
 weight: 10
 related: false
 ---
-{{< header logo="/images/tn-scale-logo.png" logo_alt="TrueNAS SCALE Logo" version="24.10 Electric Eel" icon="" icon_alt="" >}}
+{{< header logo="/images/tn-scale-logo.png" logo_alt="TrueNAS Logo" version="24.10 Electric Eel" icon="" icon_alt="" >}}
 
 {{< hint type="tip" title="24.10 Early Release Documentation" >}}
-This page tracks the latest development roadmap and release notes for the next upcoming TrueNAS SCALE major version, 24.10 (Electric Eel).
+This page tracks the latest development roadmap and release notes for the next upcoming TrueNAS major version, 24.10 (Electric Eel).
 The stable [24.04 (Dragonfish) release notes](https://www.truenas.com/docs/scale/24.04/gettingstarted/scalereleasenotes/) are available with documentation for that version.
 {{< /hint >}}
 
@@ -19,7 +19,7 @@ The stable [24.04 (Dragonfish) release notes](https://www.truenas.com/docs/scale
 
 {{< include file="/static/includes/EarlyReleaseWarning.md" >}}
 
-24.10 (Electric Eel) early releases (BETA and RC) are available from the [TrueNAS SCALE download page](https://www.truenas.com/download-truenas-scale/).
+24.10 (Electric Eel) early releases (BETA and RC) are available from the [TrueNAS download page](https://www.truenas.com/download-truenas-scale/).
 
 For adventurous users that want to experiment with the latest feature development, nightly build [.iso](https://download.truenas.com/truenas-scale-electriceel-nightly/) and [.update](https://update.sys.truenas.net/scale/TrueNAS-SCALE-ElectricEel-Nightlies/) files are available.
 
@@ -38,8 +38,8 @@ More details are available from [Software Releases](https://www.truenas.com/docs
 
 ## Upgrade Notes
 
-* TrueNAS SCALE is an appliance built from specific Linux packages.
-  Attempting to update SCALE with `apt` or methods other than the SCALE web interface can result in a nonfunctional system.
+* TrueNAS is an appliance built from specific Linux packages.
+  Attempting to update TrueNAS with `apt` or methods other than the web interface can result in a nonfunctional system.
 
 * All auxiliary parameters can experience changes between TrueNAS major versions due to security and development changes.
   We recommend removing all auxiliary parameters from TrueNAS configurations before upgrading as these settings can result in SMB share failures after an upgrade.
@@ -88,29 +88,29 @@ More details are available from [Software Releases](https://www.truenas.com/docs
 
 See the <a href="https://www.truenas.com/software-status/" target="_blank">TrueNAS Software Status</a> page for recommendations about which software version to use based on your user type.
 
-Update the system to the latest maintenance release of the installed major version before attempting to upgrade to a new TrueNAS SCALE major version.
+Update the system to the latest maintenance release of the installed major version before attempting to upgrade to a new TrueNAS major version.
 
 {{< include file="/static/includes/SCALEUpgradePaths.md" >}}
 
-### CORE to SCALE Migrations
+### TrueNAS Migrations
 
 {{< include file="/_includes/MigrateCOREtoSCALEWarning.md" >}}
 
 {{< enterprise >}}
-Enterprise customers with HA systems should contact iXsystems Support for assistance with migrating to TrueNAS SCALE.
+Enterprise customers with HA systems should contact iXsystems Support for assistance with migrating.
 {{< expand "iXsystems Support" "v" >}}
 {{< include file="content/_includes/iXsystemsSupportContact.md" >}}
 {{< /expand >}}
 {{< /enterprise >}}
 
-When attempting to migrate from TrueNAS CORE, the general recommendation is to back up the system configuration file and use a SCALE **.iso** file to fresh install TrueNAS.
+When attempting to migrate from TrueNAS CORE, the general recommendation is to back up the system configuration file and use an **.iso** file to fresh install TrueNAS.
 After install, restore the system configuration and import the pools.
 
 Depending on the specific system configuration, this can be a straightforward or complicated process.
-See the [Migration articles]({{< relref "/GettingStarted/Migrate/_index.md" >}}) for cautions and notes about differences between each software and the CORE to SCALE migration process.
+See the [Migration articles]({{< relref "/GettingStarted/Migrate/_index.md" >}}) for cautions and notes about differences between each software and the migration process.
 
-You must either clean install using an <file>iso</file> or use an upgrade file to migrate a TrueNAS CORE system to SCALE 24.10 (Electric Eel).
-Enterprise customers should [contact Support](https://www.truenas.com/docs/scale/gettingstarted/migrate/migratecorehatoscaleha/#expand-1-Enterprise%20HA%20Migrations) for assistance with transitioning from CORE to SCALE.
+You must either clean install using an <file>iso</file> or use an upgrade file to migrate a TrueNAS 13.0 (or 13.3 for community users) system to 24.10 (Electric Eel).
+Enterprise customers should [contact Support](https://www.truenas.com/docs/scale/gettingstarted/migrate/migratecorehatoscaleha/#expand-1-Enterprise%20HA%20Migrations) for assistance with migrating.
 
 ## Component Versions
 Click the component version number to see the latest release notes for that component.
@@ -142,6 +142,33 @@ Early releases are intended for testing and feedback purposes.
 Do not use early-release software for critical tasks.
 {{< /hint >}}
 
+**September , 2024**
+
+iXsystems is pleased to release TrueNAS 24.10-RC.1!
+This release candidate version has software component updates and new features that are in the polishing phase as well as fixes for issues discovered in 24.10-BETA.1.
+
+Notable changes:
+
+* 
+
+<a href="https://ixsystems.atlassian.net/issues/?filter=10887" target="_blank">Click here for the full changelog</a> of completed tickets that are included in the 24.10-RC.1 release.
+{{< include file="/static/includes/JiraFilterInstructions.md" >}}
+
+### 24.10-BETA.1 Known Issues
+
+*
+
+<a href="https://ixsystems.atlassian.net/issues/?filter=10886" target="_blank">Click here to see the latest information</a> about public issues discovered in 24.10-RC.1 that are being resolved in a future TrueNAS release.
+
+## 24.10-BETA.1 Changelog
+
+{{< expand "Click to Expand" "v" >}}
+
+{{< hint type=warning title="Early Release Software" >}}
+Early releases are intended for testing and feedback purposes.
+Do not use early-release software for critical tasks.
+{{< /hint >}}
+
 **August 29, 2024**
 
 iXsystems is pleased to release TrueNAS 24.10-BETA.1!
@@ -157,7 +184,7 @@ Notable changes:
 
 * [Extend a RAIDZ vdev]({{< relref "ManagePoolsScale.md #extending-a-raidz-vdev" >}}) with individual disks (OpenZFS feature sponsored by iXsystems) ([NAS-123548](https://ixsystems.atlassian.net/browse/NAS-123548)).
 
-* New [global search]({{< relref "GlobalSearch.md" >}}) for finding pages and settings in the SCALE UI ([NAS-127224](https://ixsystems.atlassian.net/browse/NAS-127224)).
+* New [global search]({{< relref "GlobalSearch.md" >}}) for finding pages and settings in the TrueNAS UI ([NAS-127224](https://ixsystems.atlassian.net/browse/NAS-127224)).
 
 * UI support for NVMe SMART tests [NAS-128116](https://ixsystems.atlassian.net/browse/NAS-128116)
 
@@ -212,4 +239,5 @@ Notable changes:
 
 * On the virtual machine creation screen, a validation error displays if a configured GPU device is not valid for use in the VM. However, in some cases it can be possible to continue and create the VM with an invalid GPU configuration ([NAS-130754](https://ixsystems.atlassian.net/browse/NAS-130754)). If you receive a GPU validation error during VM creation, remove or correct the invalid GPU before creating the VM.
 
-<a href="https://ixsystems.atlassian.net/issues/?filter=10588" target="_blank">Click here to see the latest information</a> about public issues discovered in 24.10-BETA.1 that are being resolved in a future TrueNAS SCALE release.
+<a href="https://ixsystems.atlassian.net/issues/?filter=10588" target="_blank">Click here to see the latest information</a> about public issues discovered in 24.10-BETA.1 that are being resolved in a future TrueNAS release.
+{{< /expand >}}
