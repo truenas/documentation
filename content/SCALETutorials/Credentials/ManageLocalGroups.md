@@ -38,8 +38,6 @@ Enter a name for the group.
 The group name cannot begin with a hyphen (-) or contain a space, tab, or any of these characters: colon (:), plus (+), ampersand (&), hash (#), percent (%), carat (^), open or close parentheses ( ), exclamation mark (!), at symbol (@), tilde (~), asterisk (*), question mark (?) greater or less than (<) (>), equal (=).
 You can only use the dollar sign ($) as the last character in a group name.
 
-If required, set the [sudo](https://www.sudo.ws/) permissions to assign this group.
-
 {{< include file="/static/includes/AdminSudo.md" >}}
 
 To allow Samba permissions and authentication to use this group, select **Samba Authentication**.
