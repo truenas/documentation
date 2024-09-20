@@ -135,7 +135,7 @@ Any new feature flags introduced since the previous OpenZFS version that was int
 
 For more details on feature flags, see [OpenZFS Feature Flags](https://openzfs.github.io/openzfs-docs/Basic%20Concepts/Feature%20Flags.html) and [OpenZFS zpool-feature.7](https://openzfs.github.io/openzfs-docs/man/7/zpool-features.7.html).
 
-## 24.10-BETA.1 Changelog
+## 24.10-RC.1 Changelog
 
 {{< hint type=warning title="Early Release Software" >}}
 Early releases are intended for testing and feedback purposes.
@@ -154,7 +154,7 @@ Notable changes:
 <a href="https://ixsystems.atlassian.net/issues/?filter=10887" target="_blank">Click here for the full changelog</a> of completed tickets that are included in the 24.10-RC.1 release.
 {{< include file="/static/includes/JiraFilterInstructions.md" >}}
 
-### 24.10-BETA.1 Known Issues
+### 24.10-RC.1 Known Issues
 
 *
 
