@@ -29,7 +29,7 @@ A pool can contain any mix of deduplicated data and non-deduplicated data, coexi
 Data is written using the DDT if deduplication is enabled at the time of writing, and is written non-deduplicated if deduplication is not enabled at the time of writing. Subsequently, the data remains as at the time it was written, until it is deleted.  
 
 The only way to convert existing current data to be all deduplicated or undeduplicated, or to change how it is deduplicated, is to create a new copy, while new settings are active. 
-This can be done by copying the data within a file system, or to a different file system, or replicating using `zfs send` and `zfs receive` or the Web UI replication functions. 
+This can be done by copying the data within a file system, or to a different file system, or replicating using the Web UI replication functions. 
 Data in snapshots is fixed, and can only be changed by replicating the snapshot to a different pool with different settings (which preserves its snapshot status), or copying its contents.
 
 It is possible to stipulate in a pool, to deduplicate only certain datasets and volumes. 
@@ -105,7 +105,7 @@ Deduplication is memory intensive. When the system does not contain sufficient R
 The RAM requirement depends on the size of the DDT and the amount of stored data to be added in the pool. 
 Also, the more duplicated the data, the fewer entries and smaller DDT. 
 Pools suitable for deduplication, with deduplication ratios of 3x or more (data can be reduced to a third or less in size), might only need 1-3 GB of RAM per 1 TB of data. 
-The actual DDT size can be estimated by deduplicating a limited amount of data in a temporary test pool, or by using `zdb -S` in a command line.
+The actual DDT size can be estimated by deduplicating a limited amount of data in a temporary test pool.
 
 Use the [tunable](https://www.truenas.com/docs/core/13.0/coretutorials/systemconfiguration/configuringtunables/) **vfs.zfs.arc.meta_min** (*type*=*LOADER*, *value*=*bytes*) to force ZFS to reserve no less than the given amount of RAM for metadata caching.
 
@@ -121,8 +121,6 @@ If deduplication is used in an inadequately built system, these symptoms might b
 {{< tab "RAM Starvation" >}}
 * **Cause**: Continuous DDT access is limiting the available RAM or RAM usage is generally very high RAM usage. 
   This can also slow memory access if the system uses swap space on disks to compensate.
-* **Diagnose**: Open the command line and enter `top`. 
-  The header indicates ARC and other memory usage statistics. Additional commands to investigate RAM or ARC usage performance are `arc_summary` and `arcstat`.
 * **Solutions**:
   * Install more RAM.
   * Add a new **System > Tunable**: **vfs.zfs.arc.meta_min** with **Type**=**LOADER** and **Value**=**bytes**. 
@@ -130,8 +128,6 @@ If deduplication is used in an inadequately built system, these symptoms might b
 {{< /tab >}}
 {{< tab "Disk I/O Slowdown" >}}
 * **Cause**: The system must perform disk I/O to fetch DDT entries, but these are usually 4K I/O and the underlying disk hardware is unable to cope in a timely manner.
-* **Diagnose**: Open the command line and enter `gstat` to show heavy I/O traffic for either DDT or a generic pool, although DDT traffic is more often the cause. 
-  `zpool iostat` is another option that can show unexpected or very high disk latencies. When networking slowdowns are also seen, `tcpdump` or a TCP monitor for an application can also show a low or zero TCP window over an extended duration.
 * **Solutions**: Add high quality SSDs as a special vdev and either move the data or rebuild the pool to use the new storage.
 {{< /tab >}}
 {{< tab "Unexpected Disconnections of Networked Resources" >}}
@@ -146,41 +142,12 @@ If deduplication is used in an inadequately built system, these symptoms might b
 * **Cause**: When ZFS has fast special vdev SSDs, sufficient RAM, and is not limited by disk I/O, then hash calculation becomes the next bottleneck. 
   Most of the ZFS CPU consumption is from attempting to keep hashing up to date with disk I/O.
   When the CPU is overburdened, the console becomes unresponsive and the web UI fails to connect. Other tasks might not run properly because of timeouts. 
-  This is often encountered with [pool scrubs](https://www.truenas.com/docs/core/13.0/coretutorials/tasks/creatingscrubtasks/) and it can be necessary to pause the scrub temporarily when other tasks are a priority.
-* **Diagnose**: An easily seen symptom is that console logins or prompts take several seconds to display. Using `top` can confirm the issue. 
+  This is often encountered with [pool scrubs]({{< relref "CORE/CORETutorials/Tasks/CreatingScrubTasks.md" >}}) and it can be necessary to pause the scrub temporarily when other tasks are a priority.
+* **Diagnose**: An easily seen symptom is that console logins or prompts take several seconds to display.
   Generally, multiple entries with command <code>kernel {z_rd_int_[<i>NUMBER</i>]}</code> can be seen using the CPU capacity, and the CPU is heavily (98%+) used with almost no idle.
 * **Solutions**: Changing to a higher performance CPU can help but might have limited benefit. 40 core CPUs have been observed to struggle as much as 4 or 8 core CPUs. 
   A usual workaround is to temporarily pause scrub and other background ZFS activities that generate large amounts of hashing. 
   It can also be possible to limit I/O using tunables that control disk queues and disk I/O ceilings, but this can impact general performance and is not recommended.
-{{< /tab >}}
-{{< /tabs >}}
-
-## Useful CLI Commands
-
-{{< tabs "Deduplication CLI Commands" >}}
-{{< tab "zpool status -D or -Dv" >}}
-Shows a summary of DDT statistics for each pool, or the specified pool.
-Typical output includes a line like this:
-<code>dedup: DDT entries 227317061, size 672B on disk, 217B in core</code>
-This means that the DDT contains 227 million blocks, and each block is using 672 bytes in the pool, and 217 bytes of RAM when cached in ARC. 
-The two values differ because ZFS uses different structures for DDT entries on disk and in RAM. 
-There is also a table, showing how many blocks (actual and referenced) are duplicated, summarized in bands (or buckets) of powers of 2, and their average actual and referenced sizes.
-{{< /tab >}}
-{{< tab "zdb -U /data/zfs/zpool.cache -S [POOL_NAME]" >}}
-Estimates the outcome and DDT table size if a pool were entirely deduplicated. Warning: this can take many hours to complete. The output table is similar to that of `zpool status -Dv`.
-{{< /tab >}}
-{{< tab "zpool list and zpool list -v" >}}
-These show core deduplication statistics for each pool. The `-v` option shows disk usage for each individual vdev, which helps confirm that DDT has not overflowed into other disks in the pool.
-{{< /tab >}}
-{{< tab "zpool iostat" >}}
-Provides detailed analysis and statistics for disk I/O latency. Healthy pool latencies are generally in the nanoseconds to tens of milliseconds range. 
-If latencies in the seconds or tens of seconds are seen, this indicates a problem with disk usage. This means that certain disks are unable to service commands at the speed needed and there is a large command backlog.
-{{< /tab >}}
-{{< tab "top, top -mio, and gstat" >}}
-These commands monitor RAM, CPU, and disk I/O.
-{{< /tab >}}
-{{< tab "arc_summary and arcstat" >}}
-These utilities provide much more information about RAM and memory caching systems and ZFS memory use.
 {{< /tab >}}
 {{< /tabs >}}
 
@@ -190,7 +157,6 @@ When a block exists with the same hash, then the block is not written and a new 
 Depending how the hash is calculated, there is a possibility that two different blocks could have the same hash and cause the file system to believe the blocks are the same. 
 When choosing a hash, choose one that is complex, like SHA 256, SHA 512, and Skein, to minimize this risk. 
 A SHA 512 checksum hash is recommended for 64-bit platforms. 
-To manually change at the time dedup is enabled on a pool, or any dataset/volume within a pool, use <code>zfs set checksum=sha512 <pool name></code>.
 {{< /expand >}}
 
 ## Additional Resources

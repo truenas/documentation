@@ -121,15 +121,9 @@ Options are **nologin**, **TrueNAS CLI**, **TrueNAS Console**, **sh**, **bash**,
 
 To disable all password-based functionality for the account, select **Lock User**. Clear to unlock the user.
 
-Set the sudo permissions you want to assign this user.
-Exercise caution when allowing sudo commands, especially without password prompts.
-We recommend limiting this privilege to trusted users and specific commands to minimize security risks.
+If required, set the [sudo](https://www.sudo.ws/) permissions to assign this user.
 
-**Allowed sudo commands**, **Allow all sudo commands**, **Allowed sudo commands with no password** and **Allow all sudo commands with no password** grant the account limited root-like permissions using the [sudo](https://www.sudo.ws/) command.
-If selecting **Allowed sudo commands** or **Allowed sudo commands with no password**, enter the specific sudo commands allowed for this user.
-Enter each command as an absolute path to the ELF (Executable and Linkable Format) executable file, for example, */usr/bin/nano*.
-<file>/usr/bin/</file> is the default location for commands.
-Select **Allow all sudo commands** or **Allow all sudo commands with no password**.
+{{< include file="/static/includes/AdminSudo.md" >}}
 
 Leave **SMB User** selected to allow using the account credentials to access data shared with [SMB]({{< relref "/SCALE/SCALEUIReference/Shares/_index.md" >}}).
 
