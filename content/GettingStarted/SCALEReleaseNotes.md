@@ -248,6 +248,33 @@ Early releases are intended for testing and feedback purposes.
 Do not use early-release software for critical tasks.
 {{< /hint >}}
 
+**September , 2024**
+
+iXsystems is pleased to release TrueNAS 24.10-RC.1!
+This release candidate version has software component updates and new features that are in the polishing phase as well as fixes for issues discovered in 24.10-BETA.1.
+
+Notable changes:
+
+* 
+
+<a href="https://ixsystems.atlassian.net/issues/?filter=10887" target="_blank">Click here for the full changelog</a> of completed tickets that are included in the 24.10-RC.1 release.
+{{< include file="/static/includes/JiraFilterInstructions.md" >}}
+
+### 24.10-BETA.1 Known Issues
+
+*
+
+<a href="https://ixsystems.atlassian.net/issues/?filter=10886" target="_blank">Click here to see the latest information</a> about public issues discovered in 24.10-RC.1 that are being resolved in a future TrueNAS release.
+
+## 24.10-BETA.1 Changelog
+
+{{< expand "Click to Expand" "v" >}}
+
+{{< hint type=warning title="Early Release Software" >}}
+Early releases are intended for testing and feedback purposes.
+Do not use early-release software for critical tasks.
+{{< /hint >}}
+
 **August 29, 2024**
 
 iXsystems is pleased to release TrueNAS 24.10-BETA.1!
