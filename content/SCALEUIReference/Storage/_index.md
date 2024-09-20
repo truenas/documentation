@@ -76,7 +76,7 @@ After adding pools, the dashboard shows [storage widgets](#storage-dashboard-wid
   Select **Expand Pool** to increase the pool size to match all available disk space.
   This is used as the final step to resize disk partitions when [expanding a pool capacity with disk replacements]({{< relref "ManagePoolsScale.md#replacing-disks-to-expand-a-pool" >}}).
   Also, users with pools of virtual disks use this option to resize these virtual disks apart from TrueNAS.
-  This is a permament action that can't be reverted.
+  This is a permament action that cannot be reverted.
 
   {{< trueimage src="/images/SCALE/Storage/ExpandPoolDialog.png" alt="Expand Pool Dialog" id="Expand Pool Dialog" >}}
 
