@@ -265,7 +265,9 @@ Click anywhere on the VDEV to expand it and select one of the existing disks.
 Wait for the resilver to complete before replacing the next disk.
 Repeat steps 1-4 for all attached disks.
 
-TrueNAS SCALE automatically expands the usable capacity of the pool to fit all available space once the last attached disk is replaced.
+When all disk replacements are finished, expand the pool to fill all available space.
+Go to the **Storage** page, click **Expand**, and confirm the action.
+This action is permanent and cannot be reverted.
 
 ## Removing VDEVs
 
