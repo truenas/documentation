@@ -35,19 +35,17 @@ Note the primary group assigned to that user.
 
 {{< include file="/static/includes/AddAdminGroup.md" >}}
 
-### Administrator Sudo Permissions
+### Allowing Sudo Commands
 
-{{< hint type=tip title="Allowing Sudo Commands" >}}
 As a security hardening feature, administrator accounts in Linux-based TrueNAS releases (22.12.0 or newer) cannot by default execute certain root-level commands in a shell or SSH session.
 If a user attempts to execute one of these commands without root-level access, TrueNAS returns a **command not found** error.
 
 Administrative users who need to execute root-level commands to complete a task should temporarily enable sudo permissions for that user by going **Credentials** and editing the user or group to enable some or all sudo commands.
 For best security, enable only the required commands to perform the task and require password authentication, unless the task or app prevents it.
 Disable sudo permissions when the task completes and they are no longer required.
-{{< /hint >}}
 
 **Allowed sudo commands**, **Allow all sudo commands**, **Allowed sudo commands with no password** and **Allow all sudo commands with no password** grant limited root-like permissions using the sudo command.
-Use **Allowed sudo commands** or **Allowed sudo commands with no password** to list specific sudo commands allowed for group members.
+Use **Allowed sudo commands** or **Allowed sudo commands with no password** to list specific sudo commands to allow.
 Enter each command as an absolute path to the ELF (Executable and Linkable Format) executable file, for example */usr/bin/nano*.
 <file>/usr/bin/</file> is the default location for commands.
 Press <kbd>Enter</kbd> after each command.
