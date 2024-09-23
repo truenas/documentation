@@ -50,7 +50,7 @@ More details are available from [Software Releases](https://www.truenas.com/docs
 
   * Supported catalog applications automatically migrate to Docker deployments on upgrade from from 24.04 (Dragonfish) to Electric Eel.
   
-    App migration is receiving active development in 24.10-BETA.1.
+    App migration is receiving active development.
     To see which applications currently support automatic migration, see the [Parity Status with truenas/charts](https://github.com/truenas/apps?tab=readme-ov-file#parity-status-with-truenascharts) chart from the /truenas/apps/ github repository.
     Applications that support migration display a green check (✅) in both **Added** and **Migrated** columns.
     Check back regularly and note the update history of the [README.md](https://github.com/truenas/apps/blob/master/README.md) file for the latest developments.
@@ -59,25 +59,27 @@ More details are available from [Software Releases](https://www.truenas.com/docs
     You can re-initiate migration of previously-installed Kubernetes apps to Docker at any time after upgrading to Electric Eel, for example to migrate an app that was not yet available for automatic migration upon upgrade but is now available.
     From a shell session enter {{< cli >}}midclt call -job k8s_to_docker.migrate *poolname*{{< /cli >}}, where *poolname* is the name of the applications pool.
 
-  * Custom apps are not supported for migration on 24.10-BETA.1.
-  The **Custom App** installation screen is disabled.
-  A redesigned screen, including Docker Compose support, is anticipated for the RC.1 version.
-  Users wishing to leverage Docker Compose in BETA can do so using the **Dockge** or **Portainer** apps, available from the [**Community**](https://www.truenas.com/docs/truenasapps/communityapps/) train, or in a [**Sandbox**](https://www.truenas.com/docs/truenasapps/sandboxes/).
+  * Custom application installs are enabled in 24.10-RC.1.
+    There are two options to install a custom application from the **Applications > Discover** screen.
+
+    Click **Custom App** to install an application using a Docker Compose YAML file.
+    Note: applications installed using the **Custom App** button are not editible via the TrueNAS UI in 24.10-RC.1 (see [Known Issues](#2410-rc1-known-issues) below).
+
+    Select the **Ix-app** card from the applications list and click **Install** to deploy a docker image with a simple installation wizard.
+    Applications installed using this option can be edited in the TrueNAS UI.
 
 * Starting in 24.10, TrueNAS does not install a default Nvidia driver.
   This allows for driver updates in between TrueNAS release versions.
   
-  A UI selectable option to install/update Nvidia drivers is planned for a future 24.10 development version.
-  Users needing Nvidia GPU support in 24.10.BETA.1 can enable this option from a shell session using the command {{< cli >}}midclt call -job docker.update '{"nvidia": true}'{{< /cli >}}.
+  Users can enable driver installation from the **Apps** screen.
+  Click **Configure** > **Settings** and select **Install NVIDIA Drivers**.
+  This option is only available for users with a compatible Nvidia GPU and no drivers installed or for users who have previously enabled the setting.
 
 * Support for the deprecated LDAP **Samba Schema** is removed in 24.10.
   Users with both LDAP and SMB shares configured should migrate legacy Samba domains to Active Directory before upgrading to 24.10.
 
 * Electric Eel introduces redesigns of the UI **Dashboard** and **View Enclosure** screens with numerous improvements to system and enclosure management.
-  24.10-BETA-1 includes both the new and legacy screen versions.
-  Legacy versions are identified as **(old)** in the navigation menu.
-
-  Removal of the legacy **Dashboard** and **View Enclosure** screens is anticipated in the RC.1 release version.
+  The legacy **Dashboard** and **View Enclosure** screens are removed in the RC.1 release version.
 
 * SMB audit log entries are omitted by default from the **System > Audit** screen.
   To view SMB audit results, go to **System > Services** and click <i class="material-icons" aria-hidden="true" title="Audit Logs">receipt_long</i> **Audit Logs** for the SMB service or use advanced search on the main **Audit** screen to query SMB events.
@@ -142,21 +144,62 @@ Early releases are intended for testing and feedback purposes.
 Do not use early-release software for critical tasks.
 {{< /hint >}}
 
-**September , 2024**
+**September 26, 2024**
 
 iXsystems is pleased to release TrueNAS 24.10-RC.1!
 This release candidate version has software component updates and new features that are in the polishing phase as well as fixes for issues discovered in 24.10-BETA.1.
 
 Notable changes:
 
-* 
+* Convert audit message_timestamp for sudo to UTC ([NAS-130373](https://ixsystems.atlassian.net/browse/NAS-130373)).
+
+* The previous **Dashboard** and **View Enclosure** UI screens are removed ([NAS-130582](https://ixsystems.atlassian.net/browse/NAS-130582)).
+
+* Fix issues with TrueCloud Backup restoration paths and scheduling ([NAS-130644](https://ixsystems.atlassian.net/browse/NAS-130644), [NAS-130794](https://ixsystems.atlassian.net/browse/NAS-130794), and [NAS-130320](https://ixsystems.atlassian.net/browse/NAS-130320)).
+
+* Prevent incorrect auto-populated portal group IDs on iSCSI target ([NAS-130656](https://ixsystems.atlassian.net/browse/NAS-130656)).
+
+* Add alert for every successful root, admin, or truenas_admin, login to the TrueNAS web UI ([NAS-127040](https://ixsystems.atlassian.net/browse/NAS-127040)).
+
+* Prevent systemd journal from producing duplicate audit entries on upgrade ([NAS-131125](https://ixsystems.atlassian.net/browse/NAS-131125)).
+
+* Ensure snapshot batch deletion targets only selected snapshots ([NAS-130874](https://ixsystems.atlassian.net/browse/NAS-130874)).
+
+* Remove acltype normalization for datasets ([NAS-130877](https://ixsystems.atlassian.net/browse/NAS-130877)).
+
+* Fix dRAID logic for number of children when creating a pool ([NAS-130678](https://ixsystems.atlassian.net/browse/NAS-130678)).
+
+* UI support for installing NVIDIA GPU drivers is added ([NAS-130588](https://ixsystems.atlassian.net/browse/NAS-130588)).
+
+* Improve handling for file renaming in case insensitive filesystems ([NAS-130743](https://ixsystems.atlassian.net/browse/NAS-130743)).
+
+* Prevent applications from running startup processes before acquiring the default interface ([NAS-130863](https://ixsystems.atlassian.net/browse/NAS-130863)).
+
+* Fix issues with user.update endpoint ([NAS-130696](https://ixsystems.atlassian.net/browse/NAS-130696)).
 
 <a href="https://ixsystems.atlassian.net/issues/?filter=10887" target="_blank">Click here for the full changelog</a> of completed tickets that are included in the 24.10-RC.1 release.
 {{< include file="/static/includes/JiraFilterInstructions.md" >}}
 
 ### 24.10-RC.1 Known Issues
 
-*
+* GPU passthrough issues can occur due to the UI passing malformed data to `system.advanced.update_gpu_pci_ids` ([NAS-130983](https://ixsystems.atlassian.net/browse/NAS-130983)).
+
+* Custom Docker Compose applications deployed via the **Custom App** button and YAML editor cannot be edited after deployment in 24.10-RC.1 ([NAS-131147](https://ixsystems.atlassian.net/browse/NAS-131147)).
+  A fix is expected in the 24.10.0 release.
+  RC.1 users can delete, edit the YAML file, and then redeploy custom applications to make changes.
+  Custom applications deployed via the **Ix-app** deployment wizard can be edited in the TrueNAS UI.
+
+* Docker applications do not at present support IPv6 ([NAS-131333](https://ixsystems.atlassian.net/browse/NAS-131333)).
+
+* A user reports errors restarting the Docker service on system reboot ([NAS-131328](https://ixsystems.atlassian.net/browse/NAS-131328)).
+
+* Applications with available updates display an option to view changelogs. These changelogs are at present not populated ([NAS-131297](https://ixsystems.atlassian.net/browse/NAS-131297)).
+
+* Some users have reported incomplete shutdown and reboot behavior ([NAS-130118](https://ixsystems.atlassian.net/browse/NAS-130118)). This issue has not been reported in iXsystems hardware.
+
+* Unexpected behavior can occur when unlocking a dataset with recursive set to false ([NAS-130329](https://ixsystems.atlassian.net/browse/NAS-130329)). Child datasets with inherited keys are also unlocked with the parent dataset.
+
+* Development of the new RAIDZ pool expansion feature is ongoing, with fixes for known issues expected in the 24.10.0 release ([NAS-131207](https://ixsystems.atlassian.net/browse/NAS-131207) and [NAS-131028](https://ixsystems.atlassian.net/browse/NAS-131028)).
 
 <a href="https://ixsystems.atlassian.net/issues/?filter=10886" target="_blank">Click here to see the latest information</a> about public issues discovered in 24.10-RC.1 that are being resolved in a future TrueNAS release.
 
