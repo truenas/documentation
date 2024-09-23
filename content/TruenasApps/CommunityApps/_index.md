@@ -36,7 +36,7 @@ Some apps in this section replace deprecated services or functionality previousl
 
 ## Understanding App Intall Wizard Settings
 
-{{< include file="/static/includes/AppsInstallWizardSettings.md" >}}
+{{< include file="/static/includes/apps/AppsInstallWizardSettings.md" >}}
 
 <div class="noprint">
 

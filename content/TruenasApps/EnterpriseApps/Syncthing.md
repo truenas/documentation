@@ -15,13 +15,13 @@ keywords:
 - enterprise data storage
 ---
 
-{{< include file="/static/includes/SCALEEnterpriseApps.md" >}}
+{{< include file="/static/includes/apps/SCALEEnterpriseApps.md" >}}
 
-{{< include file="/static/includes/SyncthingArticleIntro.md" >}}
+{{< include file="/static/includes/apps/SyncthingArticleIntro.md" >}}
 
 ## Syncthing Overview
 
-{{< include file="/static/includes/SyncthingOverview.md" >}}
+{{< include file="/static/includes/apps/SyncthingOverview.md" >}}
 
 Users migrating data from an existing third-party NAS solution to TrueNAS 24.04 (Dragonfish) or newer can use the Syncthing **enterprise** application to mount the source with a remote SMB share that preserves metadata.
 
@@ -29,10 +29,10 @@ See [Third-Party SMB Data Migration]({{< relref "DataMigrationSyncthing.md" >}})
 
 ## Before You Begin
 To install the Syncthing **enterprise** train app, first create a self-signed certificate for the Syncthing enterprise app.
-{{< include file="/static/includes/AddAppCertificate.md" >}}
+{{< include file="/static/includes/apps/AddAppCertificate.md" >}}
 
 Syncthing requires two storage volumes.
-{{< include file="/static/includes/SyncthingFirstSteps.md" >}}
+{{< include file="/static/includes/apps/SyncthingFirstSteps.md" >}}
 
 ## Installing the Syncthing Application
 You can have multiple Syncthing app deployments (for example two or more **stable**, two or more **enterprise**, or a combination of **stable** and **enterprise** trains, etc.).
@@ -106,7 +106,7 @@ Go to **Actions > Settings** and set a user password for the web UI.
 
 ### Using the Syncthing Web Portal for TrueNAS
 
-{{< include file="/static/includes/SyncthingWebPortalInfo.md" >}}
+{{< include file="/static/includes/apps/SyncthingWebPortalInfo.md" >}}
 
 ## Understanding TrueNAS Syncthing Wizard Settings
 
@@ -114,7 +114,7 @@ The following sections provide detailed explanations of the settings found in ea
 
 ### Application Name Settings
 
-{{< include file="/static/includes/AppsWizardAppNameAndVersion.md" >}}
+{{< include file="/static/includes/apps/AppsWizardAppNameAndVersion.md" >}}
 
 ### Configuration Setting
 Select the timezone where your TrueNAS system is located.
@@ -180,11 +180,13 @@ Set **Type** an **SMB/CIFS Share (Mounts a persistent volume claim to a SMB shar
 
 {{< trueimage src="/images/SCALE/Apps/InstallSyncthingEnterpriseStorageConfigSMBShare.png" alt="Syncthing Add SMB Share Option" id="Syncthing Add SMB Share Option" >}}
 
-{{< include file="/static/includes/AppWizardStorageSMBOption.md" >}}
+{{< include file="/static/includes/apps/AppWizardStorageSMBOption.md" >}}
 
 ### Resource Configuration Settings
 
-{{< include file="/static/includes/SyncthingWizardResourceConfig.md" >}}
+{{< trueimage src="/images/SCALE/Apps/InstallSyncthingEnterpriseResourcesConfig.png" alt="Syncthing Enterprise Resource Limits" id="Syncthing Enterprise Resource Limits" >}}
+
+{{< include file="/static/includes/apps/AppsInstallWizardResourceConfig.md" >}}
 
 ## Increasing inotify Watchers
 Syncthing uses [inotify](https://man7.org/linux/man-pages/man7/inotify.7.html) to monitor file system events, with one inotify watcher per monitored directory.

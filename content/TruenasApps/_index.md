@@ -45,31 +45,31 @@ You must choose a pool before you can install an application.
 
 {{< expand "App Pool Selection" "v" >}}
 
-{{< include file="/static/includes/AppsPoolOrDataset.md" >}}
+{{< include file="/static/includes/apps/AppsPoolOrDataset.md" >}}
 
 {{< /expand >}}
 
 {{< expand "App Dataset and File Sharing" "v" >}}
 
-{{< include file="/static/includes/AppsFileSharing.md" >}}
+{{< include file="/static/includes/apps/AppsFileSharing.md" >}}
 
 {{< /expand >}}
 
 {{< expand "Apps General Settings" "v" >}}
 
-{{< include file="/static/includes/AppsDockerCompose.md" >}}
+{{< include file="/static/includes/apps/AppsDockerCompose.md" >}}
 
 {{< /expand >}}
 
 {{< expand "Custom Apps" "v" >}}
 
-{{< include file="/static/includes/AppsCustomApp.md" >}}
+{{< include file="/static/includes/apps/AppsCustomApp.md" >}}
 
 {{< /expand >}}
 
 {{< expand "App Directory Services" "v" >}}
 
-{{< include file="/static/includes/AppsDirectoryService.md" >}}
+{{< include file="/static/includes/apps/AppsDirectoryService.md" >}}
 
 {{< /expand >}}
 
@@ -171,7 +171,7 @@ Ether click on **Check Available Apps** or **Discover Apps** to open the **[Disc
 
 Search for the application widget, then click on that widget to open the information screen for the app and access the installation wizard.
 
-{{< include file="/static/includes/AppsSMBErrorWarning.md" >}}
+{{< include file="/static/includes/apps/AppsSMBErrorWarning.md" >}}
 
 If the application requires specific datasets, configure these before using the installation wizard.
 
@@ -191,7 +191,7 @@ Apps submitted and maintained by community members using the **Custom App** opti
 Refer to tutorials created and maintained by the community for more information on deploying and using these applications.
 {{< /hint >}}
 
-{{< include file="/static/includes/AppsInstallWizardSettings.md" >}}
+{{< include file="/static/includes/apps/AppsInstallWizardSettings.md" >}}
 
 After installing an application, the **Installed** applications screen opens showing the application in the **Deploying** state.
 It changes to **Running** when the application is ready to use.
