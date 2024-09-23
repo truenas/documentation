@@ -22,37 +22,6 @@ To configure a connection, you need to know the following items:
 
 Preparing the following before configuring Active Directory helps ensure the connection process.
 
-### Verify Name Resolution
-Confirm that name resolution is functioning. Connect to shell and use `ping` to check the connection to the AD domain controller.
-
-```
-truenas# ping ad01.lab. ixsystems.com
-PING ad01. lab. ixsystems.com (10.215.5.200) : 56 data bytes
-64 bytes from 10.215.5.200: icmp_seq=0 ttl=126 time=0.800 ms
-64 bytes from 10.215.5.200: icmp_seq=1 ttl=126 time=0.933 ms
-64 bytes from 10.215.5.200: icmp_seq=2 ttl=126 time=0.810 ms
-64 bytes from 10.215.5.200: icmp_seq=3 ttl=126 time=0.876 ms
-^C
-ad01. lab. ixsystems.com ping statistics
-4 packets transmitted, 4 packets received, 0.0% packet loss
-round-trip min/avg/max/stddev = 0.800/0.855/0.933/0.054 ms
-```
-
-The ability to send and receive packets without loss verifies the connection.
-Press <kbd>Ctrl + C</kbd> to cancel the `ping`.
-
-Another option is to use the command `host -t srv _ldap._tcp.domainname.com`. This checks the network SRV records and verifies DNS resolution.
-
-{{< expand "The ping failed!" >}}
-If the ping fails, go to **Network > Global Configuration**.
-Update the **DNS Servers** and **Default Gateway** settings.
-Enter more than one value in **Nameserver** for the AD domain controllers.
-
-This helps DNS queries for the required SRV records succeed.
-Domain controllers are not always available.
-Using more than one name server helps maintain the AD connection in these instances.
-{{< /expand >}}
-
 ### Time Synchronization
 Active Directory relies on [Kerberos](https://tools.ietf.org/html/rfc1510), a time-sensitive protocol.
 During the domain join process, the AD domain controller with the [PDC Emulator FSMO Role](https://support.microsoft.com/en-us/help/197132/active-directory-fsmo-roles-in-windows) is added as the preferred NTP server. 
@@ -111,32 +80,3 @@ If you are using Windows Server with 2008 R2 or older, try the following options
 
 Create a **Computer** entry on the Windows server Organizational Unit (OU). When creating this entry, enter the TrueNAS host name in the name field. Make sure it is the same name as the one set in the **Hostname** field in **Network > Global Configuration**. Must match the **NetBIOS alias** from **Directory Services > Active Directory > Advanced Options**.
 
-{{< expand "Shell Commands" "v" >}}
-You can enter various shell commands to get more details about the AD connection and users:
-
-* AD current state: `midclt call activedirectory.get_state`.
-* Details about the currently connected Lightweight Directory Access Protocol (LDAP) server: `midclt call activedirectory.domain_info | jq`.
-  Example:
-  ```
-  truenas# midclt call activedirectory.domain_info | jq
-  {
-    "LDAP server": "192.168.1.125",
-    "LDAP server name": "DC01.HOMEDOM.FUN",
-    "Realm": "HOMEDOM.FUN",
-    "Bind Path": "dc=HOMEDOM,dc=FUN",
-    "LDAP port": 389,
-    "Server time": 1593026080,
-    "KDC server": "192.168.1.125",
-    "Server time offset": 5,
-    "Last machine account password change": 1592423446
-  }
-  ```
-* View AD users: `wbinfo -u`.
-  To see more details about a user, enter `getent passwd DOMAIN\\<user>`. Replace `<user>` with the desired user name. 
- With the TrueNAS cache enabled `wbinfo -u` can show more users than appear to be available when configuring permissions. Go to **Directory Services > Active Directory** and increase the *AD Timeout* value.
-* View AD groups: `wbinfo -g`.
-  To see more details, enter `getent group DOMAIN\\domain\ users`.
-* View domains: `wbinfo -m`.
-* Test AD connection: `wbinfo -t`. A successful test shows a message similar to `checking the trust secret for domain YOURDOMAIN via RPC calls succeeded`.
-* User connection test to an SMB share: `smbclient '//127.0.0.1/smbshare -U AD01.LAB.IXSYSTEMS.COM\ixuser`, replacing `127.0.0.1` with your server address, `smbshare` with the SMB share name, `AD01.LAB.IXSYSTEMS.COM` with your trusted domain, and `ixuser` with the user account name for authentication testing.
-{{< /expand >}}

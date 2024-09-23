@@ -71,12 +71,12 @@ To enable SSH to access the system as an admin user (or for root):
    If you want to SSH into the system as the root, you must enable a password for the root user.
    If the root password password is disabled in the UI you cannot use it to gain SSH access to the system.
 
-   To allow an admin user to issue commands in an ssh session, edit that admin user and select which sudo options are allowed.
-   Select **SSH password login enabled** to allow authenticating and logging into an SSH session.
+   To allow an admin user to issue commands in an SSH session, edit that user and select **SSH password login enabled** to allow authenticating and logging into an SSH session.
    Disable this after completing the SSH session to return to a security hardened system.
 
-   Select **Allow all sudo commands with no password**.
-   You to see a prompt in the ssh session to enter a password the first time you enter a sudo command but to not see this password prompt again in the same session.
+   If required, set the [sudo](https://www.sudo.ws/) permissions to assign this user.
+
+   {{< include file="/static/includes/AdminSudo.md" >}}
 
 ## Two-Factor Authentication (2FA) and Administrator Account Log In
 
