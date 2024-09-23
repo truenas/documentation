@@ -42,23 +42,23 @@ This basic procedure covers the required MinIO enterprise app settings.
 For optional settings, see [Understanding MinIO Wizard Settings](#understanding-minio-wizard-settings).
 {{< /hint >}}
 
-{{< include file="/static/includes/AddMultipleAppInstancesAndNaming.md" >}}
+{{< include file="/static/includes/apps/AddMultipleAppInstancesAndNaming.md" >}}
 
-{{< include file="/static/includes/MinIoEnterpriseConfig1.md" >}}
+{{< include file="/static/includes/apps/MinIoEnterpriseConfig1.md" >}}
 
-{{< include file="/static/includes/MinIOEnterpriseConfig2.md" >}}
+{{< include file="/static/includes/apps/MinIOEnterpriseConfig2.md" >}}
 
-{{< include file="/static/includes/MinIOEnterpriseMultiModeConfig2.md" >}}
+{{< include file="/static/includes/apps/MinIOEnterpriseMultiModeConfig2.md" >}}
 
-{{< include file="/static/includes/MinIOEnterpriseMultiModeConfigMNMD.md" >}}
+{{< include file="/static/includes/apps/MinIOEnterpriseMultiModeConfigMNMD.md" >}}
 
 Enter the same string in the **Multi Mode (SNMD or MNMD)** field in all four systems in the cluster! 
 
 {{< trueimage src="/images/SCALE/Apps/InstallMinIOAddMultiModeConfigExample.png" alt="Multi Mode MDN Command" id="Multi Mode MNDN Command" >}} 
 
-{{< include file="/static/includes/MinIOEnterpriseConfig3.md" >}}
+{{< include file="/static/includes/apps/MinIOEnterpriseConfig3.md" >}}
 
-{{< include file="/static/includes/MinIOEnterpriseMultiModeConfig3.md" >}}
+{{< include file="/static/includes/apps/MinIOEnterpriseMultiModeConfig3.md" >}}
 
 Scroll down to or click on **Storage Configuration** on the list of wizard sections.
 
@@ -80,7 +80,7 @@ Click **Add** to the right of **Data Directories** three times to add storage vo
 Repeat the storage settings for each of these datasets.
 Repeat all storage settings on each system in the cluster.
 
-{{< include file="/static/includes/MinIoEnterpriseConfig4.md" >}}
+{{< include file="/static/includes/apps/MinIoEnterpriseConfig4.md" >}}
 
 ### Completing the MinIO Configuration
 After installing and getting the MinIO Enterprise application running in TrueNAS, log into the MinIO web portal and complete the MinIO setup.
@@ -95,11 +95,11 @@ The following section provides more detailed explanations of the settings in eac
 
 ### Application Name Settings
 
-{{< include file="/static/includes/AppsWizardAppNameAndVersion.md" >}}
+{{< include file="/static/includes/apps/AppsWizardAppNameAndVersion.md" >}}
 
 ### MinIO Configuration Settings
 
-{{< include file="/static/includes/MinIOEnterpriseMinIOConfig.md" >}}
+{{< include file="/static/includes/apps/MinIOEnterpriseMinIOConfig.md" >}}
 
 #### MultiMode Configuration
 Multi-mode installs the app in either a [MinIO Single-Node Multi-Drive (SNMD)](https://min.io/docs/minio/linux/operations/install-deploy-manage/deploy-minio-single-node-multi-drive.html) or [Multi-Node Multi-Drive (MNMD)](https://min.io/docs/minio/linux/operations/install-deploy-manage/deploy-minio-multi-node-multi-drive.html#minio-mnmd) cluster.
@@ -107,19 +107,19 @@ MinIO recommends using MNMD for enterprise-grade performance and scalability.
 
 Click **Enabled** under **Multi Mode (SNMD or MNMD) Configuration** to enable multi-mode and show the **Multi Mode (SNMD or MNMD)** and **Add** option.
 
-{{< include file="/static/includes/MinIOEnterpriseMultiModeConfig.md" >}}
+{{< include file="/static/includes/apps/MinIOEnterpriseMultiModeConfig.md" >}}
 
 ### User and Group Configuration
 
-{{< include file="/static/includes/AppUserAndGroupConfig.md" >}}
+{{< include file="/static/includes/apps/AppUserAndGroupConfig.md" >}}
 
 ### Network Configuration
 
-{{< include file="/static/includes/MinIOEnterpriseNetworkConfig.md" >}}
+{{< include file="/static/includes/apps/MinIOEnterpriseNetworkConfig.md" >}}
 
 ### Storage Configuration
 
-{{< include file="/static/includes/MinIOEnterpriseStorageConfig.md" >}}
+{{< include file="/static/includes/apps/MinIOEnterpriseStorageConfig.md" >}}
 
 #### ACL Configuration Settings
 To deploy the MinIO app, you must configure the ACL and ACE settings for both the **/data** host path storage volume(s) or the application does not deploy.
@@ -131,7 +131,7 @@ Specify the default user UID **568** or the UID for the new user created in True
 
 {{< trueimage src="/images/SCALE/Apps/InstallMinIOACLConfigSettings.png" alt="MinIO Enterprise ACL and ACE Settings" id="MinIO Enterprise ACL and ACE Setting" >}} new image
 
-{{< include file="/static/includes/AppInstallWizardACLConfiguration.md" >}}
+{{< include file="/static/includes/apps/AppInstallWizardACLConfiguration.md" >}}
 
 Set ACL permissions for each dataset in the configuration, and on each system in the cluster.
 
@@ -139,4 +139,4 @@ Set ACL permissions for each dataset in the configuration, and on each system in
 
 {{< trueimage src="/images/SCALE/Apps/InstallMinIOEnterpriseResourcesConfig.png" alt="MinIO Enterprise Resource Limits" id="MinIO Enterprise Resource Limits" >}}
 
-{{< include file="/static/includes/SyncthingWizardResourceConfig.md" >}}
+{{< include file="/static/includes/apps/AppInstallWizardResourceConfig.md" >}}

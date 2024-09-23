@@ -3,7 +3,7 @@
 To install the MinIO **enterprise** train app, first create a self-signed certificate for the MinIO app.
 The **Certificates** setting is not required for a basic configuration but is required when setting up multi-mode configurations and when using MinIO as an immutable target for Veeam Backup and Replication.
 
-{{< include file="/static/includes/AddAppCertificate.md" >}}
+{{< include file="/static/includes/apps/AddAppCertificate.md" >}}
 
 If not already assigned, set a pool for applications to use.
 

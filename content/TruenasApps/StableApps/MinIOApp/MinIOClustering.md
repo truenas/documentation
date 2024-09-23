@@ -18,6 +18,9 @@ keywords:
 - object based storage
 ---
 
+
+{{< include file="/static/includes/ProposeArticleChange.md" >}}
+
 {{< hint info >}}
 This article applies to the public release of the S3 **MinIO** charts application in the TRUENAS catalog.
 {{< /hint >}}
@@ -36,7 +39,7 @@ For more information on MinIO distributed setups, refer to the [MinIO documentat
 
 ## Before You Begin
 
-{{< include file="/static/includes/MinIODatasetRequirements.md" >}}
+{{< include file="/static/includes/apps/MinIODatasetRequirements.md" >}}
 
 For a distributed configuration, repeat the above on all system nodes in advance.
 Take note of the system (node) IP addresses or host names and have them ready for configuration. Also, have your S3 user name and password ready for later.
@@ -49,23 +52,23 @@ For more information on app installation wizard settings see [Understanding MinI
 ## Configuring MinIO
 Begin on the first node (system) in your cluster.
 
-{{< include file="/static/includes/MinIOInstallAppNameAndVersion.md" >}}
+{{< include file="/static/includes/apps/MinIOInstallAppNameAndVersion.md" >}}
 
 Next, enter the **MinIO Configuration** settings.
 
-{{< include file="/static/includes/MinIOInstallArgAndEnvironVarSteps.md" >}}
+{{< include file="/static/includes/apps/MinIOInstallArgAndEnvironVarSteps.md" >}}
 
-{{< include file="/static/includes/MinIOPortsAndLogSearch.md" >}}
+{{< include file="/static/includes/apps/MinIOPortsAndLogSearch.md" >}}
 
 Next, enter the **MinIO Configuration** settings.
 
-{{< include file="/static/includes/MinIOEnableDistributedModeInfo.md" >}}
+{{< include file="/static/includes/apps/MinIOEnableDistributedModeInfo.md" >}}
 
 For a distributed cluster, ensure the values are identical between server nodes and have the same credentials.
 
 {{< trueimage src="/images/SCALE/Apps/InstallMinioDistributedModeAddStorage.png" alt="MinIO Distributed Mode Settings" id="MinIO Distributed Mode Settings" >}}
 
-{{< include file="/static/includes/MinIOStorageDataVolume.md" >}}
+{{< include file="/static/includes/apps/MinIOStorageDataVolume.md" >}}
 
 {{< trueimage src="/images/SCALE/Apps/InstallMinioStorageAddExtraVols.png" alt="MinIO Add Storage Volumes" id="MinIO Add Storage Volumes" >}}
 
@@ -74,7 +77,7 @@ Repeat for the **/data** storage volume.
 
 {{< trueimage src="/images/SCALE/Apps/MinIODistributedModeConfigExportAndDataACLACE.png" alt="Export and Data Host Path ACL and ACE Settings" id="Export and Data Host Path ACL and ACE Settings" >}}
 
-{{< include file="/static/includes/MinIODNSAndResourceLimits.md" >}}
+{{< include file="/static/includes/apps/MinIODNSAndResourceLimits.md" >}}
 
 Now that the first node is complete, configure any remaining nodes so they have identical settings and storage volumes.
 

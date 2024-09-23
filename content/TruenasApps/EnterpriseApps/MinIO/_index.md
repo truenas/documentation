@@ -56,15 +56,15 @@ This basic procedure covers the required MinIO enterprise app settings.
 For optional settings, see [Understanding MinIO Wizard Settings](#understanding-minio-wizard-settings).
 {{< /hint >}}
 
-{{< include file="/static/includes/AddMultipleAppInstancesAndNaming.md" >}}
+{{< include file="/static/includes/apps/AddMultipleAppInstancesAndNaming.md" >}}
 
-{{< include file="/static/includes/MinIoEnterpriseConfig1.md" >}}
+{{< include file="/static/includes/apps/MinIoEnterpriseConfig1.md" >}}
 
-{{< include file="/static/includes/MinIOEnterpriseConfig2.md" >}}
+{{< include file="/static/includes/apps/MinIOEnterpriseConfig2.md" >}}
 
 If setting up a cluster configuration, see [Multimode Configuration](#multimode-configuration) below for more information on settings.
 
-{{< include file="/static/includes/MinIOEnterpriseConfig3.md" >}}
+{{< include file="/static/includes/apps/MinIOEnterpriseConfig3.md" >}}
 
 Scroll down to or click on **Storage Configuration** on the list of wizard sections.
 
@@ -83,18 +83,18 @@ Click **Add** to the right of **ACE Entries**.
 
 Set the **ACE Entry** user to the default user **568** or enter the UID for the user created in TrueNAS to serve as the MinIO app administrator, and set the permissions to **FULL_CONTROL**.
 
-{{< include file="/static/includes/MinIOEnterpriseConfig4.md" >}}
+{{< include file="/static/includes/apps/MinIOEnterpriseConfig4.md" >}}
 
 ## Understanding MinIO Wizard Settings
 The following section provides more detailed explanations of the settings in each section of the **Install MinIO** configuration wizard.
 
 ### Application Name Settings
 
-{{< include file="/static/includes/AppsWizardAppNameAndVersion.md" >}}
+{{< include file="/static/includes/apps/AppsWizardAppNameAndVersion.md" >}}
 
 ### MinIO Configuration Settings
 
-{{< include file="/static/includes/MinIOEnterpriseMinIOConfig.md" >}}
+{{< include file="/static/includes/apps/MinIOEnterpriseMinIOConfig.md" >}}
 
 #### Multi-Mode Configuration
 If creating a multi-disk (SNMD) or MNMD cluster, create four datasets, **data1**, **data2**, **data3** and **data4** on each system (node) in the cluster configuration.
@@ -104,7 +104,7 @@ MinIO recommends using MNMD for enterprise-grade performance and scalability.
 
 Click **Enabled** under **Multi Mode (SNMD or MNMD) Configuration** to enable multi-mode and show the **Multi Mode (SNMD or MNMD)** and **Add** option.
 
-{{< include file="/static/includes/MinIOEnterpriseMultiModeConfig.md" >}}
+{{< include file="/static/includes/apps/MinIOEnterpriseMultiModeConfig.md" >}}
 
 For more information see:
 
@@ -114,15 +114,15 @@ For more information see:
 
 ### User and Group Configuration
 
-{{< include file="/static/includes/AppUserAndGroupConfig.md" >}}
+{{< include file="/static/includes/apps/AppUserAndGroupConfig.md" >}}
 
 ### Network Configuration
 
-{{< include file="/static/includes/MinIOEnterpriseNetworkConfig.md" >}}
+{{< include file="/static/includes/apps/MinIOEnterpriseNetworkConfig.md" >}}
 
 ### Storage Configuration
 
-{{< include file="/static/includes/MinIOEnterpriseStorageConfig.md" >}}
+{{< include file="/static/includes/apps/MinIOEnterpriseStorageConfig.md" >}}
 
 #### ACL Configuration Settings
 To deploy the MinIO app, you must configure the ACL and ACE settings for both the **/data** host path storage volume(s) or the application does not deploy.
@@ -132,13 +132,13 @@ Configured ACLs take precedence and are applied.
 
 {{< trueimage src="/images/SCALE/Apps/InstallMinIOEnterpriseACLAndACESettings.png" alt="MinIO Enterprise ACL and ACE Settings" id="MinIO Enterprise ACL and ACE Settings" >}}
 
-{{< include file="/static/includes/AppInstallWizardACLConfiguration.md" >}}
+{{< include file="/static/includes/apps/AppInstallWizardACLConfiguration.md" >}}
 
 ### Resource Configuration
 
 {{< trueimage src="/images/SCALE/Apps/InstallMinIOEnterpriseResourcesConfig.png" alt="MinIO Enterprise Resource Limits" id="MinIO Enterprise Resource Limits" >}}
 
-{{< include file="/static/includes/AppInstallWizardResourceConfig.md" >}}
+{{< include file="/static/includes/apps/AppInstallWizardResourceConfig.md" >}}
 
 <div class="noprint">
 
