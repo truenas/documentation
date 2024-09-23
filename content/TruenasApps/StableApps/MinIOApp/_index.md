@@ -33,7 +33,7 @@ Community members can install either version of this application.
 
 {{< expand "Adding the MinIO (Enterprise) App" "v" >}}
 To add the Enterprise MinIO application to the list of available applications: 
-{{< include file="/static/includes/AddEnterpriseTrain.md" >}}
+{{< include file="/static/includes/apps/AddEnterpriseTrain.md" >}}
 
 Both the **stable** and **enterprise** train versions of the MinIO app widget display on the **Discover** application screen.
 
@@ -48,33 +48,33 @@ Enterprise MinIO]({{< relref "/content/TruenasApps/EnterpriseApps/_index.md" >}}
 
 ### Before You Begin
 
-{{< include file="/static/includes/MinIODatasetRequirements.md" >}}
+{{< include file="/static/includes/apps/MinIODatasetRequirements.md" >}}
 
 If your system has active sharing configurations (SMB, NFS, iSCSI), disable them in **System > Services** before adding and configuring the MinIO application.
 Start any sharing services after MinIO completes the installation and starts.
 
 ### Configuring MinIO (S3) App
 
-{{< include file="/static/includes/MinIOInstallAppNameAndVersion.md" >}}
+{{< include file="/static/includes/apps/MinIOInstallAppNameAndVersion.md" >}}
 
 Next, enter the **MinIO Configuration** settings.
 
-{{< include file="/static/includes/MinIOInstallArgAndEnvironVarSteps.md" >}}
+{{< include file="/static/includes/apps/MinIOInstallArgAndEnvironVarSteps.md" >}}
 
-{{< include file="/static/includes/MinIOPortsAndLogSearch.md" >}}
+{{< include file="/static/includes/apps/MinIOPortsAndLogSearch.md" >}}
 
-{{< include file="/static/includes/MinIOStorageDataVolume.md" >}}
+{{< include file="/static/includes/apps/MinIOStorageDataVolume.md" >}}
 
-{{< trueimage src="/images/SCALE/Apps/InstallMinioStorageAddExtraHostPathVol.png" alt="Add Host Path Volume" id="Add Host Path Volume" >}}
+{{< trueimage src="/images/SCALE/aApps/InstallMinioStorageAddExtraHostPathVol.png" alt="Add Host Path Volume" id="Add Host Path Volume" >}}
 
 Select **Enable ACL** for the **/export** storage volume, enter **473** as the user and give it full permissions.
 Repeat for the **/data** storage volume.
 
-{{< trueimage src="/images/SCALE/Apps/MinIOConfigExportAndDataACLACESettings.png" alt="Export and Data Host Path ACL and ACE Settings" id="Export and Data Host Path ACL and ACE Settings" >}}
+{{< trueimage src="/images/SCALE/apps/MinIOConfigExportAndDataACLACESettings.png" alt="Export and Data Host Path ACL and ACE Settings" id="Export and Data Host Path ACL and ACE Settings" >}}
 
 See [Storage Configuration](#storage-configuration) for more information on setting ACLs in the installation wizard.
 
-{{< include file="/static/includes/MinIODNSAndResourceLimits.md" >}}
+{{< include file="/static/includes/apps/MinIODNSAndResourceLimits.md" >}}
 
 The **Installed** applications screen displays showing the MinIO application in the **Deploying** state.
 It changes to **Running** when the application is ready to use.
@@ -90,7 +90,7 @@ The following section provide more detailed explanations of the settings found i
 
 ### Application Name
 
-{{< include file="/static/includes/AppsWizardAppNameAndVersion.md" >}}
+{{< include file="/static/includes/apps/AppsWizardAppNameAndVersion.md" >}}
 
 ### MinIO Configuration
 MinIO credentials establish the login credentials for the MinIO web portal and the MinIO administration user, and to enter extra arguments, or environment variables to the deployment.
@@ -103,7 +103,7 @@ Enter a username for the root user (MinIO access key) in **MinIO Root User** tha
 
 Enter the root user password (MinIO secret key) in **MinIO Root Password** that is limited to eight to 40 random characters. For example, *MySecr3tPa$$w0d4Min10*.
 
-{{< include file="/static/includes/MinIOEnableDistributedModeInfo.md" >}}
+{{< include file="/static/includes/apps/MinIOEnableDistributedModeInfo.md" >}}
 
 The app is preconfigured with the arguments needed to deploy a container. Do not enter the **server** and URL argument earlier versions of the app required.
 
@@ -126,7 +126,7 @@ Before changing ports, refer to [Default Ports](https://www.truenas.com/docs/ref
 
 The **Certificates** setting is not required for a basic configuration but is required when setting up multi-mode configurations with the Enterprise version of the MinIO app and when using MinIO as an immutable target for Veeam Backup and Replication.
 
-{{< include file="/static/includes/AddAppCertificate.md" >}}
+{{< include file="/static/includes/apps/AddAppCertificate.md" >}}
 
 To add advanced DNS settings click **Add** to the right of **DNS Options**.
 
@@ -140,20 +140,20 @@ To see this, create a recursive snapshot of the **ix-apps** dataset.
 
 Storage configuration uses both the default **/export** and **/data** data sets and mount paths created in [First Steps](#before-you-begin) above.
 
-{{< include file="/static/includes/MinIOStorageDataVolume.md" >}}
+{{< include file="/static/includes/apps/MinIOStorageDataVolume.md" >}}
 
 #### ACL Configuration Settings
 To deploy the MinIO app, you must configure the ACL and ACE settings for both the **/export** and **/data** storage volumes.
 
-{{< trueimage src="/images/SCALE/Apps/InstallMinIOACLConfigSettings.png" alt="MinIO Enterprise ACL Settings" id="MinIO Enterprise ACL Settings" >}}
+{{< trueimage src="/images/SCALE/apps/InstallMinIOACLConfigSettings.png" alt="MinIO Enterprise ACL Settings" id="MinIO Enterprise ACL Settings" >}}
 
-{{< include file="/static/includes/AppInstallWizardACLConfiguration.md" >}}
+{{< include file="/static/includes/apps/AppInstallWizardACLConfiguration.md" >}}
 
 ### Resource Configuration
 
-{{< trueimage src="/images/SCALE/Apps/InstallMinIOEnterpriseResourcesConfig.png" alt="MinIO Enterprise Resource Limits" id="MinIO Enterprise Resource Limits" >}}
+{{< trueimage src="/images/SCALE/apps/InstallMinIOEnterpriseResourcesConfig.png" alt="MinIO Enterprise Resource Limits" id="MinIO Enterprise Resource Limits" >}}
 
-{{< include file="/static/includes/AppInstallWizardResourceConfig.md" >}}
+{{< include file="/static/includes/apps/AppInstallWizardResourceConfig.md" >}}
 
 <div class="noprint">
 
