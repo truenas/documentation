@@ -77,11 +77,15 @@ More details are available from [Software Releases](https://www.truenas.com/docs
   Users can enable driver installation from the **Apps** screen.
   Click **Configure** > **Settings** and select **Install NVIDIA Drivers**.
   This option is only available for users with a compatible Nvidia GPU and no drivers installed or for users who have previously enabled the setting.
+  Users can enable driver installation from the **Apps** screen.
+  Click **Configure** > **Settings** and select **Install NVIDIA Drivers**.
+  This option is only available for users with a compatible Nvidia GPU and no drivers installed or for users who have previously enabled the setting.
 
 * Support for the deprecated LDAP **Samba Schema** is removed in 24.10.
   Users with both LDAP and SMB shares configured should migrate legacy Samba domains to Active Directory before upgrading to 24.10.
 
 * Electric Eel introduces redesigns of the UI **Dashboard** and **View Enclosure** screens with numerous improvements to system and enclosure management.
+  The legacy **Dashboard** and **View Enclosure** screens are removed in the RC.1 release version.
   The legacy **Dashboard** and **View Enclosure** screens are removed in the RC.1 release version.
 
 * SMB audit log entries are omitted by default from the **System > Audit** screen.
@@ -221,31 +225,6 @@ Early releases are intended for testing and feedback purposes.
 Do not use early-release software for critical tasks.
 {{< /hint >}}
 
-**September , 2024**
-
-iXsystems is pleased to release TrueNAS 24.10-RC.1!
-This release candidate version has software component updates and new features that are in the polishing phase as well as fixes for issues discovered in 24.10-BETA.1.
-
-Notable changes:
-
-* 
-
-<a href="https://ixsystems.atlassian.net/issues/?filter=10887" target="_blank">Click here for the full changelog</a> of completed tickets that are included in the 24.10-RC.1 release.
-{{< include file="/static/includes/JiraFilterInstructions.md" >}}
-
-### 24.10-BETA.1 Known Issues
-
-*
-
-<a href="https://ixsystems.atlassian.net/issues/?filter=10886" target="_blank">Click here to see the latest information</a> about public issues discovered in 24.10-RC.1 that are being resolved in a future TrueNAS release.
-
-## 24.10-RC.1 Changelog
-
-{{< hint type=warning title="Early Release Software" >}}
-Early releases are intended for testing and feedback purposes.
-Do not use early-release software for critical tasks.
-{{< /hint >}}
-
 **September 26, 2024**
 
 iXsystems is pleased to release TrueNAS 24.10-RC.1!
@@ -308,6 +287,106 @@ Notable changes:
 * Unexpected behavior can occur when unlocking a dataset with recursive set to false ([NAS-130329](https://ixsystems.atlassian.net/browse/NAS-130329)). Child datasets with inherited keys are also unlocked with the parent dataset.
 
 * Development of the new RAIDZ pool expansion feature is ongoing, with fixes for known issues expected in the 24.10.0 release ([NAS-131207](https://ixsystems.atlassian.net/browse/NAS-131207) and [NAS-131028](https://ixsystems.atlassian.net/browse/NAS-131028)).
+
+<a href="https://ixsystems.atlassian.net/issues/?filter=10886" target="_blank">Click here to see the latest information</a> about public issues discovered in 24.10-RC.1 that are being resolved in a future TrueNAS release.
+
+## 24.10-BETA.1 Changelog
+
+{{< expand "Click to Expand" "v" >}}
+
+{{< hint type=warning title="Early Release Software" >}}
+Early releases are intended for testing and feedback purposes.
+Do not use early-release software for critical tasks.
+{{< /hint >}}
+
+**September 26, 2024**
+
+iXsystems is pleased to release TrueNAS 24.10-RC.1!
+This release candidate version has software component updates and new features that are in the polishing phase as well as fixes for issues discovered in 24.10-BETA.1.
+
+Notable changes:
+
+* Convert audit message_timestamp for sudo to UTC ([NAS-130373](https://ixsystems.atlassian.net/browse/NAS-130373)).
+
+* The previous **Dashboard** and **View Enclosure** UI screens are removed ([NAS-130582](https://ixsystems.atlassian.net/browse/NAS-130582)).
+
+* Fix issues with TrueCloud Backup restoration paths and scheduling ([NAS-130644](https://ixsystems.atlassian.net/browse/NAS-130644), [NAS-130794](https://ixsystems.atlassian.net/browse/NAS-130794), and [NAS-130320](https://ixsystems.atlassian.net/browse/NAS-130320)).
+
+* Prevent incorrect auto-populated portal group IDs on iSCSI target ([NAS-130656](https://ixsystems.atlassian.net/browse/NAS-130656)).
+
+* Add alert for every successful root, admin, or truenas_admin, login to the TrueNAS web UI ([NAS-127040](https://ixsystems.atlassian.net/browse/NAS-127040)).
+
+* Prevent systemd journal from producing duplicate audit entries on upgrade ([NAS-131125](https://ixsystems.atlassian.net/browse/NAS-131125)).
+
+* Ensure snapshot batch deletion targets only selected snapshots ([NAS-130874](https://ixsystems.atlassian.net/browse/NAS-130874)).
+
+* Remove acltype normalization for datasets ([NAS-130877](https://ixsystems.atlassian.net/browse/NAS-130877)).
+
+* Fix dRAID logic for number of children when creating a pool ([NAS-130678](https://ixsystems.atlassian.net/browse/NAS-130678)).
+
+* UI support for installing NVIDIA GPU drivers is added ([NAS-130588](https://ixsystems.atlassian.net/browse/NAS-130588)).
+
+* Improve handling for file renaming in case insensitive filesystems ([NAS-130743](https://ixsystems.atlassian.net/browse/NAS-130743)).
+
+* Prevent applications from running startup processes before acquiring the default interface ([NAS-130863](https://ixsystems.atlassian.net/browse/NAS-130863)).
+
+* Fix issues with user.update endpoint ([NAS-130696](https://ixsystems.atlassian.net/browse/NAS-130696)).
+
+<a href="https://ixsystems.atlassian.net/issues/?filter=10887" target="_blank">Click here for the full changelog</a> of completed tickets that are included in the 24.10-RC.1 release.
+{{< include file="/static/includes/JiraFilterInstructions.md" >}}
+
+### 24.10-BETA.1 Known Issues
+
+*
+
+<a href="https://ixsystems.atlassian.net/issues/?filter=10886" target="_blank">Click here to see the latest information</a> about public issues discovered in 24.10-RC.1 that are being resolved in a future TrueNAS release.
+
+## 24.10-RC.1 Changelog
+
+{{< hint type=warning title="Early Release Software" >}}
+Early releases are intended for testing and feedback purposes.
+Do not use early-release software for critical tasks.
+{{< /hint >}}
+
+**September 26, 2024**
+
+iXsystems is pleased to release TrueNAS 24.10-RC.1!
+This release candidate version has software component updates and new features that are in the polishing phase as well as fixes for issues discovered in 24.10-BETA.1.
+
+Notable changes:
+
+* Convert audit message_timestamp for sudo to UTC ([NAS-130373](https://ixsystems.atlassian.net/browse/NAS-130373)).
+
+* The previous **Dashboard** and **View Enclosure** UI screens are removed ([NAS-130582](https://ixsystems.atlassian.net/browse/NAS-130582)).
+
+* Fix issues with TrueCloud Backup restoration paths and scheduling ([NAS-130644](https://ixsystems.atlassian.net/browse/NAS-130644), [NAS-130794](https://ixsystems.atlassian.net/browse/NAS-130794), and [NAS-130320](https://ixsystems.atlassian.net/browse/NAS-130320)).
+
+* Prevent incorrect auto-populated portal group IDs on iSCSI target ([NAS-130656](https://ixsystems.atlassian.net/browse/NAS-130656)).
+
+* Add alert for every successful root, admin, or truenas_admin, login to the TrueNAS web UI ([NAS-127040](https://ixsystems.atlassian.net/browse/NAS-127040)).
+
+* Prevent systemd journal from producing duplicate audit entries on upgrade ([NAS-131125](https://ixsystems.atlassian.net/browse/NAS-131125)).
+
+* Ensure snapshot batch deletion targets only selected snapshots ([NAS-130874](https://ixsystems.atlassian.net/browse/NAS-130874)).
+
+* Remove acltype normalization for datasets ([NAS-130877](https://ixsystems.atlassian.net/browse/NAS-130877)).
+
+* Fix dRAID logic for number of children when creating a pool ([NAS-130678](https://ixsystems.atlassian.net/browse/NAS-130678)).
+
+* UI support for installing NVIDIA GPU drivers is added ([NAS-130588](https://ixsystems.atlassian.net/browse/NAS-130588)).
+
+* Improve handling for file renaming in case insensitive filesystems ([NAS-130743](https://ixsystems.atlassian.net/browse/NAS-130743)).
+
+* Prevent applications from running startup processes before acquiring the default interface ([NAS-130863](https://ixsystems.atlassian.net/browse/NAS-130863)).
+
+* Fix issues with user.update endpoint ([NAS-130696](https://ixsystems.atlassian.net/browse/NAS-130696)).
+
+<a href="https://ixsystems.atlassian.net/issues/?filter=10887" target="_blank">Click here for the full changelog</a> of completed tickets that are included in the 24.10-RC.1 release.
+{{< include file="/static/includes/JiraFilterInstructions.md" >}}
+
+### 24.10-RC.1 Known Issues
+
+*
 
 <a href="https://ixsystems.atlassian.net/issues/?filter=10886" target="_blank">Click here to see the latest information</a> about public issues discovered in 24.10-RC.1 that are being resolved in a future TrueNAS release.
 
