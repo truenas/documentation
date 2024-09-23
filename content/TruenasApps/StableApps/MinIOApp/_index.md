@@ -59,7 +59,11 @@ Enterprise MinIO]({{< relref "/content/TruenasApps/EnterpriseApps/_index.md" >}}
 
 ### Configuring MinIO (S3) Community App
 
-{{< include file="/static/includes/apps/MinIOInstallAppNameAndVersion.md" >}}
+{{< include file="/static/includes/apps/LocateAndOpenInstallWizard.md" >}}
+
+{{< trueimage src="/images/SCALE/Apps/InstallMinioS3Screen.png" alt="MinIO Install Wizard Screen" id="MinIO Install Wizard Screen" >}}
+
+{{< include file="/static/includes/apps/AppsWizardAppNameAndVersion.md" >}}
 
 Next, enter the **MinIO Configuration** settings.
 
@@ -67,22 +71,16 @@ Next, enter the **MinIO Configuration** settings.
 
 {{< include file="/static/includes/apps/MinIOPortsAndLogSearch.md" >}}
 
+MinIO uses two datasets and mount paths. Set the fist to **/export** with the host path set to the **export** dataset.
+The other mount point is **/data** with the host path set to the **data** dataset.
+
 {{< include file="/static/includes/apps/MinIOStorageDataVolume.md" >}}
 
 {{< trueimage src="/images/SCALE/Apps/InstallMinioStorageAddExtraHostPathVol.png" alt="Add Host Path Volume" id="Add Host Path Volume" >}}
 
-Click **Add** and to add the mount and host path fields for each additional dataset if you want to create volumes for postgres data and postgres backup.
+{{< trueimage src="/images/SCALE/apps/MinIOConfigExportAndDataACLACESettings.png" alt="Export and Data Host Path ACL and ACE Settings" id="Export and Data Host Path ACL and ACE Settings" >}}
 
-{{< include file="/static/includes/apps/MinIODNSAndResourceLimits.md" >}}
-
-The **Installed** applications screen displays showing the MinIO application in the **Deploying** state.
-It changes to **Running** when the application is ready to use.
-
-{{< trueimage src="/images/SCALE/Apps/MinIOAppInstalled.png" alt="MinIO App Installed" id="MinIO App Installed" >}}
-
-Click **Web Portal** to open the MinIO sign-in screen.
-
-{{< trueimage src="/images/SCALE/Login/MinIOWebPortal.png" alt="MinIO Sign-In Screen" id="MinIO Sign-In Screen" >}}
+{{< include file="/static/includes/apps/MinIOCompleteInstall.md" >}}
 
 ## Understanding MinIO Wizard Settings
 The following section provide more detailed explanations of the settings found in each section of the **Install MinIO** configuration screen.

@@ -2,7 +2,7 @@
 
 MinIO storage settings include the option to add storage volumes to use inside the container (pod).
 To allow TrueNAS to create a storage volume, leave **Type** set to the default **ixVolume *(Dataset created automatically by the system)**.
-This adds a storage volume for the application that can be found nested under the **ix-apps** dataset. To see this, create a recursive snapshot of the **ix-apps** dataset.
+This adds a storage volume for the application that can be found nested under the hidden **ix-apps** dataset. To see this, create a recursive snapshot of the **ix-apps** dataset.
 
 {{< trueimage src="/images/SCALE/Apps/InstallMinIOEnterpriseStorageConfig.png" alt="MinIO Add Storage Volumes" id="MinIO Add Storage Volumes" >}}
 
