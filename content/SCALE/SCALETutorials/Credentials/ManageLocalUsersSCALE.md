@@ -121,8 +121,6 @@ Options are **nologin**, **TrueNAS CLI**, **TrueNAS Console**, **sh**, **bash**,
 
 To disable all password-based functionality for the account, select **Lock User**. Clear to unlock the user.
 
-If required, set the [sudo](https://www.sudo.ws/) permissions to assign this user.
-
 {{< include file="/static/includes/AdminSudo.md" >}}
 
 Leave **SMB User** selected to allow using the account credentials to access data shared with [SMB]({{< relref "/SCALE/SCALEUIReference/Shares/_index.md" >}}).
