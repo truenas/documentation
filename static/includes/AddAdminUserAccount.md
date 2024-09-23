@@ -28,12 +28,11 @@ Select the **Read**, **Write**, and **Execute** permissions for **User**, **Grou
 Select the shell for this admin user from the **Shell** dropdown list.
 We recommend setting shell to **TrueNAS Console** as this provides access to the Console Setup menu and the Linux shell from the SCALE **Shell** screen.
 
-When required, select the sudo authorization permissions to allow the admin user.
-For administrator accounts generated during the initial installation process, TrueNAS SCALE sets authorization to **Allow all sudo commands**.
-For improved security, deny sudo permissions unless required for specific, recurring administrative tasks or allow sudo permissions only when needed to perform a discrete task and then deny again when finished.
-Do not allow sudo permissions for read-only administrators.
+{{< include file="/static/includes/AdminSudo.md" >}}
 
-Alternatively, accept default user sudo permissions and apply permissions to the group (see below).
+For administrator accounts generated during the initial installation process, TrueNAS SCALE sets authorization to **Allow all sudo commands**.
+
+Alternatively, accept default user sudo permissions and apply permissions to the group.
 
 Click **Save**.
 The system adds the user to the **builtin-users** group after clicking **Save**.
