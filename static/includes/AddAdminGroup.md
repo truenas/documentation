@@ -9,9 +9,9 @@ Alternatively, click **Add** to create a new group for administrative users, suc
 
 Use the **Privileges** dropdown to select assign permissions as **Local Administrator** to allow full administrative access or select **Read-Only Administrator** or **Sharing Administrator** to limit permissions.
 
-When required, select the sudo authorization permissions to allow the admin group.
-For improved security, deny sudo permissions unless required for specific, recurring administrative tasks or allow sudo permissions only when needed to perform a discrete task and then deny again when finished.
-Do not allow sudo permissions for read-only administrators.
+If required, set the [sudo](https://www.sudo.ws/) permissions to assign this group.
+
+{{< include file="/static/includes/AdminSudo.md" >}}
 
 Click **Save**.
 

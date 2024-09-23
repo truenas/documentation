@@ -52,13 +52,6 @@ Deleting a snapshot often increases the space that is unique and used in other s
 
 **REFERENCED** shows the amount of data accessible by this dataset. This could be shared with other datasets in the pool. New snapshots or clones reference the same amount of space as the file system it was created from, as the contents are identical.
 
-### Viewing Used Space with Shell
-
-Another method to view the space used by an individual snapshot is to go to the shell and enter command `zfs list -t snapshot`.
-
-The space used, available, or referenced does not account for pending changes.
-In general, pending changes update within a few seconds, but larger disk changes slow usage updates.
-
 ### Deleting a Snapshot
 
 {{< include file="/static/includes/DeletingSnapshots.md" >}}
