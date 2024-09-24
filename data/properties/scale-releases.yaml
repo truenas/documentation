@@ -22,7 +22,6 @@ majorVersions:
         link: "https://www.truenas.com/docs/scale/24.04/gettingstarted/scalereleasenotes/#240422-changelog"
         releaseDate: "2024-09-17"
         latest: true
-        
   - lifecycle: "Next"
     name: "TrueNAS SCALE 24.10 - Electric Eel"
     releaseName: "Electric Eel"
