@@ -48,9 +48,10 @@ More details are available from [Software Releases](https://www.truenas.com/docs
 
 * 24.10 moves the applications backend from Kubernetes to Docker ([announcement](https://forums.truenas.com/t/the-future-of-electric-eel-and-apps/5409)).
 
-  * Supported catalog applications automatically migrate to Docker deployments on upgrade from from 24.04 (Dragonfish) to Electric Eel.
+  * All applications available from official trains in 24.04 are available to install in 24.10.
+    Supported catalog applications automatically migrate to Docker deployments on upgrade from from 24.04 (Dragonfish) to Electric Eel.
   
-    App migration is receiving active development.
+    Automatic app migration on upgrade from 24.04 is receiving active development.
     To see which applications currently support automatic migration, see the [Parity Status with truenas/charts](https://github.com/truenas/apps?tab=readme-ov-file#parity-status-with-truenascharts) chart from the /truenas/apps/ github repository.
     Applications that support migration display a green check (✅) in both **Added** and **Migrated** columns.
     Check back regularly and note the update history of the [README.md](https://github.com/truenas/apps/blob/master/README.md) file for the latest developments.
@@ -182,7 +183,9 @@ Notable changes:
 
 ### 24.10-RC.1 Known Issues
 
-* GPU passthrough issues can occur due to the UI passing malformed data to `system.advanced.update_gpu_pci_ids` ([NAS-130983](https://ixsystems.atlassian.net/browse/NAS-130983)).
+* GPU passthrough issues can occur due to the UI passing malformed data to `system.advanced.update_gpu_pci_ids` resulting in an error dialog on VM creation ([NAS-130983](https://ixsystems.atlassian.net/browse/NAS-130983)).
+  Users who encounter this issue can simply close the dialog.
+  The VM should be created with the GPU attached, as expected.
 
 * Custom Docker Compose applications deployed via the **Custom App** button and YAML editor cannot be edited after deployment in 24.10-RC.1 ([NAS-131147](https://ixsystems.atlassian.net/browse/NAS-131147)).
   A fix is expected in the 24.10.0 release.
@@ -194,6 +197,10 @@ Notable changes:
 * A user reports errors restarting the Docker service on system reboot ([NAS-131328](https://ixsystems.atlassian.net/browse/NAS-131328)).
 
 * Applications with available updates display an option to view changelogs. These changelogs are at present not populated ([NAS-131297](https://ixsystems.atlassian.net/browse/NAS-131297)).
+
+* The SMB Share **Purpose** presets on the **Add SMB** screen do not adjust advanced options when set ([NAS-131374](https://ixsystems.atlassian.net/browse/NAS-131374)).
+  Users encountering this issue can manually set the required advanced options.
+  See [Advanced Options Presets]({{< relref "SMBSharesScreens.md #advanced-options-presets">}}) in the UI reference guide for more information.
 
 * Some users have reported incomplete shutdown and reboot behavior ([NAS-130118](https://ixsystems.atlassian.net/browse/NAS-130118)). This issue has not been reported in iXsystems hardware.
 
