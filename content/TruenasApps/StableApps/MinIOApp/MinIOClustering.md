@@ -70,7 +70,7 @@ For a distributed cluster, ensure the values are identical between server nodes 
 
 {{< include file="/static/includes/apps/MinIOPortsAndLogSearch.md" >}}
 
-MinIO uses two datasets and mount paths. Set the fist to **/export** with the host path set to the **export** dataset.
+MinIO uses two datasets and mount paths. Set the first to **/export** with the host path set to the **export** dataset.
 The other mount point is **/data** with the host path set to the **data** dataset.
 
 {{< include file="/static/includes/apps/MinIOStorageDataVolume.md" >}}

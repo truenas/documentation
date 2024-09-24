@@ -1,7 +1,6 @@
 &NewLine;
 
 Configure the storage volumes. 
-Accept the default ***value** in **Mount Path** under **MinIO Export Storage (Data)**, and leave **Type** set to **ixVolume (Dataset created automatically by the system)**.
 Accept the default value in **Mount Path** under **MinIO Export Storage (Data)**, and leave **Type** set to **ixVolume (Dataset created automatically by the system)**.
 This sets the first mount point to **/export**.
 
