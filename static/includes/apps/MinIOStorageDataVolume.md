@@ -1,23 +1,15 @@
 &NewLine;
 
-Configure the storage volumes. Scroll down to or click on **Storage Configuration** on the list of wizard sections.
 Configure the storage volumes. 
-Select the storage type you want to use.
-To allow TrueNAS to create the storage volume, set **Type** to **ixVolume (Dataset created automatically by the system)**, which is the default but not recommended storage type.
-
-Accept the default ***value** in **Mount Path** under **MinIO Export Storage (Data)**, which is **/export**.
-
-{{< trueimage src="/images/SCALE/Apps/InstallMinIOStorageConfig.png" alt="MinIO Storage Configuration Settings" id="MinIO Storage Configuration Settings" >}}
-
-To use an existing dataset, set **Type** to **Host Path (Path that already exists on the system)**, which is the recommended option for MinIO.
-**Mount Path** populates with the default **/export**.
-
-Accept the default **value** in **Mount Path** under **MinIO Export Storage (Data)**, and leave **Type** set to **ixVolume (Dataset created automatically by the system)**.
+Accept the default ***value** in **Mount Path** under **MinIO Export Storage (Data)**, and leave **Type** set to **ixVolume (Dataset created automatically by the system)**.
+Accept the default value in **Mount Path** under **MinIO Export Storage (Data)**, and leave **Type** set to **ixVolume (Dataset created automatically by the system)**.
+This sets the first mount point to **/export**.
 
 Click **Add** to the right of **Additional Storage**.
+Next set the **Mount Path** for the **data** dataset. Enter **/data** in **Mount Path** and enter or browse to select the host path to the **data** dataset.
 
-Enter the path or browse to and click on the **data1** dataset location to populate **Host Path**.
+Select **Host Path (Path that already exists on the system)** in **Type**, enter **/data** in **Mount Path** to add a data volume for the dataset and directory created above.
+Enter or browse to the path for the **data** dataset created in the First Steps to set the **Host Path** value.
 
-Set the **Type** to **Host Path (Path that already exists on the system)**, and enter **/data** in **Mount Path** to add a data volume for the dataset.
-
-You can select **Enable ACL** to modify dataset permissions and add ACL entries.
+You can select **Enable ACL** to modify dataset permissions here, or go to **Datasets**, select the row for the **/minio/dataset** and click **Edit** on the **Permissions** widget to open the **ACL Editor** screen and customize dataset permissions and add ACE entries.
+{{< include file="/static/includes/apps/InstallAppsStorageConfig.md" >}}

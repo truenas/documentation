@@ -52,13 +52,11 @@ For more information on app installation wizard settings see [Understanding MinI
 ## Configuring MinIO
 Begin on the first node (system) in your cluster.
 
-{{< include file="/static/includes/apps/MinIOInstallAppNameAndVersion.md" >}}
+{{< include file="/static/includes/apps/LocateAndOpenInstallWizard.md" >}}
 
-Next, enter the **MinIO Configuration** settings.
+{{< trueimage src="/images/SCALE/Apps/InstallMinioS3Screen.png" alt="MinIO Install Wizard Screen" id="MinIO Install Wizard Screen" >}}
 
-{{< include file="/static/includes/apps/MinIOInstallArgAndEnvironVarSteps.md" >}}
-
-{{< include file="/static/includes/apps/MinIOPortsAndLogSearch.md" >}}
+{{< include file="/static/includes/apps/AppsWizardAppNameAndVersion.md" >}}
 
 Next, enter the **MinIO Configuration** settings.
 
@@ -68,27 +66,19 @@ For a distributed cluster, ensure the values are identical between server nodes 
 
 {{< trueimage src="/images/SCALE/Apps/InstallMinioDistributedModeAddStorage.png" alt="MinIO Distributed Mode Settings" id="MinIO Distributed Mode Settings" >}}
 
+{{< include file="/static/includes/apps/MinIOInstallArgAndEnvironVarSteps.md" >}}
+
+{{< include file="/static/includes/apps/MinIOPortsAndLogSearch.md" >}}
+
+MinIO uses two datasets and mount paths. Set the fist to **/export** with the host path set to the **export** dataset.
+The other mount point is **/data** with the host path set to the **data** dataset.
+
 {{< include file="/static/includes/apps/MinIOStorageDataVolume.md" >}}
-
-{{< trueimage src="/images/SCALE/Apps/InstallMinioStorageAddExtraVols.png" alt="MinIO Add Storage Volumes" id="MinIO Add Storage Volumes" >}}
-
-Select **Enable ACL** for the **/export** storage volume, enter **473** as the user and give it full permissions.
-Repeat for the **/data** storage volume.
 
 {{< trueimage src="/images/SCALE/Apps/MinIODistributedModeConfigExportAndDataACLACE.png" alt="Export and Data Host Path ACL and ACE Settings" id="Export and Data Host Path ACL and ACE Settings" >}}
 
-{{< include file="/static/includes/apps/MinIODNSAndResourceLimits.md" >}}
+{{< include file="/static/includes/apps/MinIOCompleteInstall.md" >}}
 
-Now that the first node is complete, configure any remaining nodes so they have identical settings and storage volumes.
+Now that the first node is complete, configure any remaining nodes (including datasets and directories).
 
 After installing MinIO on all systems (nodes) in the cluster, start the MinIO applications.
-
-## Accessing the MinIO Setup
-
-After you create datasets, you can navigate to the TrueNAS address at port **:9000** to see the MinIO UI. After creating a distributed setup, you can see all your TrueNAS addresses.
-
-Log in with the MinIO administrator account credentials configured above.
-
-Click **Web Portal** to open the MinIO sign-in screen.
-
-{{< trueimage src="/images/SCALE/Login/MinIOWebPortal.png" alt="MinIO Sign-In Screen" id="MinIO Sign-In Screen" >}}
