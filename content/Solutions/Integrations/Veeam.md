@@ -43,7 +43,7 @@ When deploying TrueNAS with Veeam users should prepare the following:
 * Backup proxies as defined by Veeam - these can be virtual or physical machines or the backup server itself for low workloads
 * TrueNAS appliance configured with an S3 credential to use Veeam immutability and harden the server.
 
-[Update the TrueNAS CORE]({{< relref "/CORE/CORETutorials/UpdatingTrueNAS/_index.md" >}}) systems to the latest version before beginning deployment.
+[Update the TrueNAS CORE](https://www.truenas.com/docs/core/13.0/coretutorials/updatingtruenas/) systems to the latest version before beginning deployment.
 
 This ensures the appliance has the latest bug fixes, security updates, and software enhancements to ensure maximum performance and security.
 If deploying on a closed network (LAN) without access to the Internet, users can also obtain and apply an update manually.
@@ -157,8 +157,8 @@ Here are additional key features that are offered out-of-the-box at no extra cos
 ## Setting Up TrueNAS as a Veeam Repository
 
 Veeam Backup & Replication runs on a Windows operating system, typically Windows Server 2012 or newer, and can connect to a variety of storage systems.
-iXsystems recommends using [iSCSI on CORE]({{< relref "CORE/CORETutorials/Sharing/iSCSI/_index.md" >}}) with a [Veeam scale-out repository](https://bp.veeam.com/vbr/VBP/3_Build_structures/B_Veeam_Components/B_backup_repositories/scaleout.html) architecture.
-Users can also use [SMB]({{< relref "CORE/CORETutorials/Sharing/SMB/_index.md" >}}) to mount the volume to the backup server directly.
+iXsystems recommends using [iSCSI on CORE](https://www.truenas.com/docs/core/13.0/coretutorials/sharing/iscsi/) with a [Veeam scale-out repository](https://bp.veeam.com/vbr/VBP/3_Build_structures/B_Veeam_Components/B_backup_repositories/scaleout.html) architecture.
+Users can also use [SMB](https://www.truenas.com/docs/core/13.0/coretutorials/sharing/smb/) to mount the volume to the backup server directly.
 With support for SMB/CIFS, NFS, AFP, iSCSI, and FC, TrueNAS offers many ways to connect to Veeam backup servers.
 
 Veeam Backup & Replication provides [three tiers of immutability](https://helpcenter.veeam.com/docs/backup/vsphere/immutability_sobr.html) to temporarily prohibit deleting data from extents. 

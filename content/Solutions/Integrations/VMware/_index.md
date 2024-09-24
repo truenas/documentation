@@ -17,7 +17,7 @@ There are several configuration recommendations and troubleshooting tips when us
 {{< tabs "iSCSI Recommendations" >}}
 {{< tab "IQN" >}}
 
-[iSCSI]({{< relref "CORE/CORETutorials/Sharing/iSCSI/_index.md" >}}) IQN is an acronym that stands for “iSCSI Qualified Name”.  It is comprised of the following naming schema with a preamble, node name and unique identifier:
+[iSCSI](https://www.truenas.com/docs/core/13.0/coretutorials/sharing/iscsi/) IQN is an acronym that stands for “iSCSI Qualified Name”.  It is comprised of the following naming schema with a preamble, node name and unique identifier:
 
 ![iSCSIQualifiedName](/images/TrueNASCommon/iSCSIQualifiedName.png "iSCSI Qualified Name Components")
 
@@ -86,7 +86,7 @@ When using TrueNAS as a VMware datastore:
 ### VMware Snapshots on TrueNAS
 
 When TrueNAS is used as a VMware datastore, you can coordinate creating and using ZFS and VMware snapshots.
-See [VMware-Snapshots]({{< relref "CORE/CORETutorials/Storage/VMware-Snapshots.md" >}}) for details.
+See [VMware-Snapshots](https://www.truenas.com/docs/core/13.0/coretutorials/storage/vmware-snapshots/) for details.
 
 ## vStorage APIs for Array Integration (VAAI) for iSCSI
 

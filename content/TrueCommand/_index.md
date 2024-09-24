@@ -1,21 +1,14 @@
+
 ---
 title: "TrueCommand"
 description: "Public documentation for TrueCommand, the TrueNAS fleet monitoring and managing application."
 geekdocCollapseSection: true
 weight: 30
 aliases:
-cascade:
-  - _target:
-    volume: "True"
-  - _target:
-    volume: "Appendices"
-  - _target:
-    volume: "CORE"
-  - _target:
-    volume: "SCALE"
 related: false
 ---
 <style>
+aside.sidebar-right {display: none;}
 div.gdoc-page__header {display: none;}
 div.docs-read_mod {display: none;}
 h1 {display:none;}
@@ -35,34 +28,42 @@ TrueCommand also has the ability to create custom reports about individual syste
 
 <div class="noprint">
 
-## Nightly Development Featured Content
+<h3>TrueCommand 3.0 Featured Content</h3>
 
 <div class="docs-sections">
   <p>
 	Introductory Articles
-	<br><a href="/truecommand/tcreleasenotes/">Development Notes</a>
-	<br><a href="/truecommand/notices/">Software Agreements</a>
-	<br><a href="/truecommand/introduction/support/">Support Options</a>
+	<br><a href="https://www.truenas.com/docs/truecommand/3.0/tcgettingstarted/tcreleasenotes/">Development Notes</a>
+	<br><a href="https://www.truenas.com/docs/truecommand/3.0/truecommand/notices/">Software Agreements</a>
+	<br><a href="https://www.truenas.com/docs/truecommand/3.0/truecommand/introduction/support/">Support Options</a>
   </p>
   <p>
 	Getting Started Guide
-	<br><a href="/truecommand/tcgettingstarted/install/installtcdocker/">Container Installations</a>
-	<br><a href="/truecommand/tcgettingstarted/install/installtccloud/">Cloud Deployments</a>
-	<br><a href="/truecommand/tcgettingstarted/initialconfig/">Initial Configuration</a>
+	<br><a href="https://www.truenas.com/docs/truecommand/3.0/truecommand/tcgettingstarted/install/installtcdocker/">Container Installations</a>
+	<br><a href="https://www.truenas.com/docs/truecommand/3.0/truecommand/tcgettingstarted/install/installtccloud/">Cloud Deployments</a>
+	<br><a href="https://www.truenas.com/docs/truecommand/3.0/truecommand/tcgettingstarted/initialconfig/">Initial Configuration</a>
   </p>
   <p>
 	Administrator Guide
-	<br><a href="/truecommand/adminguide/systems/">Connecting to TrueNAS Systems</a>
-	<br><a href="/truecommand/adminguide/users/">TrueCommand Users and Permissions</a>
-	<br><a href="/truecommand/adminguide/admin/">TrueCommand Administration screen</a>
-	<br><a href="/truecommand/adminguide/api/">API Reference</a>
+	<br><a href="https://www.truenas.com/docs/truecommand/3.0/truecommand/adminguide/systems/">Connecting to TrueNAS Systems</a>
+	<br><a href="https://www.truenas.com/docs/truecommand/3.0/truecommand/adminguide/users/">TrueCommand Users and Permissions</a>
+	<br><a href="https://www.truenas.com/docs/truecommand/3.0/truecommand/adminguide/admin/">TrueCommand Administration screen</a>
+	<br><a href="https://www.truenas.com/docs/truecommand/3.0/truecommand/adminguide/api/">API Reference</a>
   </p>
   <p>
 	User Guide
-	<br><a href="/truecommand/userguide/fleetdashboard/">Fleet Dashboard</a>
-	<br><a href="/truecommand/userguide/systeminventory/">TrueNAS System Inventory</a>
-	<br><a href="/truecommand/userguide/systemmanagement/">TrueNAS System Management</a>
-	<br><a href="/truecommand/userguide/replicationmanagement/">TrueNAS Snapshot Replication</a>
+	<br><a href="https://www.truenas.com/docs/truecommand/3.0/truecommand/userguide/fleetdashboard/">Fleet Dashboard</a>
+	<br><a href="https://www.truenas.com/docs/truecommand/3.0/truecommand/userguide/systeminventory/">TrueNAS System Inventory</a>
+	<br><a href="https://www.truenas.com/docs/truecommand/3.0/truecommand/userguide/systemmanagement/">TrueNAS System Management</a>
+	<br><a href="https://www.truenas.com/docs/truecommand/3.0/truecommand/userguide/replicationmanagement/">TrueNAS Snapshot Replication</a>
   </p>
 </div>
+</div>
+
+<div class="latest-development-container" style="padding-top: 20px;">
+  <div style="display: flex; align-items: center;">
+    <i class="fas fa-archive fa-lg" style="color: #0095d5; padding-right: .75rem; max-width: 45px; max-height: 45px; align-self: flex-start;" title="Historical Documentation" aria-label="Archive Icon"></i>
+    <h3 style="margin: 0;">Historical Documentation</h3>
+  </div>
+  <p>To view documentation for past versions of TrueCommand, visit the <a href="/archive/">Documentation Archive</a>.</p>
 </div>
