@@ -72,12 +72,10 @@ The other mount point is **/data** with the host path set to the **data** datase
 
 {{< include file="/static/includes/apps/MinIOStorageDataVolume.md" >}}
 
-{{< trueimage src="/images/SCALE/aApps/InstallMinioStorageAddExtraHostPathVol.png" alt="Add Host Path Volume" id="Add Host Path Volume" >}}
-
 Select **Enable ACL** for the **/export** storage volume, enter **473** as the user and give it full permissions.
 Repeat for the **/data** storage volume.
 
-{{< trueimage src="/images/SCALE/apps/MinIOConfigExportAndDataACLACESettings.png" alt="Export and Data Host Path ACL and ACE Settings" id="Export and Data Host Path ACL and ACE Settings" >}}
+{{< trueimage src="/images/SCALE/Apps/MinIOConfigExportAndDataACLACESettings.png" alt="Export and Data Host Path ACL and ACE Settings" id="Export and Data Host Path ACL and ACE Settings" >}}
 
 {{< include file="/static/includes/apps/MinIOCompleteInstall.md" >}}
 
@@ -130,24 +128,14 @@ To add advanced DNS settings click **Add** to the right of **DNS Options**.
 
 ### Storage Configuration
 MinIO storage settings include the option to add storage volumes to use inside the container (pod).
-To allow TrueNAS to create a storage volume, leave **Type** set to the default **ixVolume *(Dataset created automatically by the system)**.
-This adds a storage volume for the application that can be found nested under the **ix-apps** dataset. 
-To see this, create a recursive snapshot of the **ix-apps** dataset.
 
-Storage configuration uses both the default **/export** and **/data** data sets and mount paths created in [First Steps](#before-you-begin) above.
+Storage configuration uses both the default **/export** and **/data** datasets and mount paths. See [First Steps](#before-you-begin) above for more information.
 
 {{< include file="/static/includes/apps/MinIOStorageDataVolume.md" >}}
 
-#### ACL Configuration Settings
-To deploy the MinIO app, you must configure the ACL and ACE settings for both the **/export** and **/data** storage volumes.
-
-{{< trueimage src="/images/SCALE/apps/InstallMinIOACLConfigSettings.png" alt="MinIO ACL Settings" id="MinIO ACL Settings" >}}
-
-{{< include file="/static/includes/apps/AppInstallWizardACLConfiguration.md" >}}
-
 ### Resource Configuration
 
-{{< trueimage src="/images/SCALE/apps/InstallMinIOEnterpriseResourcesConfig.png" alt="MinIO Resource Limits" id="MinIO Resource Limits" >}}
+{{< trueimage src="/images/SCALE/Apps/InstallMinIOResourcesConfig.png" alt="MinIO Resource Limits" id="MinIO Resource Limits" >}}
 
 {{< include file="/static/includes/apps/AppInstallWizardResourceConfig.md" >}}
 

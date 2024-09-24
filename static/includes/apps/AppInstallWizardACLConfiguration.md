@@ -1,8 +1,8 @@
 &NewLine;
 
-To set up permissions, select **Enable ACL** to show the ACL and ACE Entries options.
+Select **Enable ACL** to show the ACL and ACE Entries options.
 
-First set the dataset permissions. Enter or browse to select the dataset path. 
+Enter or browse to select the dataset path. 
 
 Next click **Add** to the right of **ACL Entries** to show the permissions settings.
 Set **ID Type** to **Entry is for a USER**.
