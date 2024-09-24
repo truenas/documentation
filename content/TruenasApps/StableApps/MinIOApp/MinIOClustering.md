@@ -75,7 +75,7 @@ For a distributed cluster, ensure the values are identical between server nodes 
 
 You can also configure a MinIO certificate.
 
-MinIO uses two datasets and mount paths. Set the fist to **/export** with the host path set to the **export** dataset.
+MinIO uses two datasets and mount paths. Set the first to **/export** with the host path set to the **export** dataset.
 The other mount point is **/data** with the host path set to the **data** dataset.
 
 {{< include file="/static/includes/apps/MinIOStorageDataVolume.md" >}}

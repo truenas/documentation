@@ -1,6 +1,6 @@
 &NewLine;
 
-Accept the default values in **Resourses Configuration**.
+Accept the default values in **Resources Configuration**.
 
 Click **Install**.
 

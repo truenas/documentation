@@ -71,16 +71,18 @@ Next, enter the **MinIO Configuration** settings.
 
 {{< include file="/static/includes/apps/MinIOPortsAndLogSearch.md" >}}
 
-MinIO uses two datasets and mount paths. Set the fist to **/export** with the host path set to the **export** dataset.
+MinIO uses two datasets and mount paths. Set the first to **/export** with the host path set to the **export** dataset.
 The other mount point is **/data** with the host path set to the **data** dataset.
 
 {{< include file="/static/includes/apps/MinIOStorageDataVolume.md" >}}
 
-{{< trueimage src="/images/SCALE/Apps/InstallMinioStorageAddExtraHostPathVol.png" alt="Add Host Path Volume" id="Add Host Path Volume" >}}
+Select **Enable ACL** for the **/export** storage volume, enter **473** as the user and give it full permissions.
+Repeat for the **/data** storage volume.
 
-{{< trueimage src="/images/SCALE/apps/MinIOConfigExportAndDataACLACESettings.png" alt="Export and Data Host Path ACL and ACE Settings" id="Export and Data Host Path ACL and ACE Settings" >}}
+{{< trueimage src="/images/SCALE/Apps/MinIOConfigExportAndDataACLACESettings.png" alt="Export and Data Host Path ACL and ACE Settings" id="Export and Data Host Path ACL and ACE Settings" >}}
 
 {{< include file="/static/includes/apps/MinIOCompleteInstall.md" >}}
+
 
 ## Understanding MinIO Wizard Settings
 The following section provide more detailed explanations of the settings found in each section of the **Install MinIO** configuration screen.
@@ -114,11 +116,9 @@ Accept the default settings or click **Add** to the right of **DNS Options** to 
 
 ### Storage Configuration
 MinIO storage settings include the option to add mount paths and storage volumes to use inside the container (pod).
-Storage configuration uses both the default **/export** and **/data** mount paths created in [First Steps](#before-you-begin) above.
+Storage configuration uses both the default **/export** and **/data** mount paths. See [First Steps](#before-you-begin) above for more information.
 
 {{< include file="/static/includes/apps/MinIOStorageDataVolume.md" >}}
-
-{{< trueimage src="/images/SCALE/Apps/InstallMinioStorageAddExtraHostPathVol.png" alt="Add Host Path Volume" id="Add Host Path Volume" >}}
 
 ### Resource Configuration
 By default, this application is limited to use no more than **4** CPU cores and **8** Gigabytes available memory.
