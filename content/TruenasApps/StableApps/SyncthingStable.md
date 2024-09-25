@@ -30,7 +30,7 @@ Before launching the app installation wizard, do the following:
 
 * Create the required dataset, **config** and an optional **data1**.
   
-  Syncthing stores configuration **congig** dataset, and to store app data in the **data1** dataset.
+  Syncthing stores configuration  information in the **config** dataset. You can use the **data1** dataset to store application data.
 
 {{< include file="/static/includes/apps/SyncthingFirstSteps.md" >}}
 
