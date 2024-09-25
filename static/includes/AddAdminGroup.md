@@ -9,8 +9,6 @@ Alternatively, click **Add** to create a new group for administrative users, suc
 
 Use the **Privileges** dropdown to select assign permissions as **Local Administrator** to allow full administrative access or select **Read-Only Administrator** or **Sharing Administrator** to limit permissions.
 
-If required, set the [sudo](https://www.sudo.ws/) permissions to assign this group.
-
 {{< include file="/static/includes/AdminSudo.md" >}}
 
 Click **Save**.
