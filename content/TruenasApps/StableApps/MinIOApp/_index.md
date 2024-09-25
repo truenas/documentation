@@ -58,6 +58,12 @@ Enterprise MinIO]({{< relref "/content/TruenasApps/EnterpriseApps/_index.md" >}}
 {{< include file="/static/includes/apps/MinIODatasetRequirements.md" >}}
 
 ### Configuring MinIO (S3) Community App
+{{< hint info >}}
+This basic procedure covers the required MinIO stable app settings.
+For optional settings, see [Understanding MinIO Wizard Settings](#understanding-minio-wizard-settings).
+{{< /hint >}}
+
+{{< include file="/static/includes/apps/AddMultipleAppInstancesAndNaming.md" >}}
 
 {{< include file="/static/includes/apps/LocateAndOpenInstallWizard.md" >}}
 
@@ -82,7 +88,6 @@ Repeat for the **/data** storage volume.
 {{< trueimage src="/images/SCALE/Apps/MinIOConfigExportAndDataACLACESettings.png" alt="Export and Data Host Path ACL and ACE Settings" id="Export and Data Host Path ACL and ACE Settings" >}}
 
 {{< include file="/static/includes/apps/MinIOCompleteInstall.md" >}}
-
 
 ## Understanding MinIO Wizard Settings
 The following section provide more detailed explanations of the settings found in each section of the **Install MinIO** configuration screen.
@@ -119,6 +124,11 @@ MinIO storage settings include the option to add mount paths and storage volumes
 Storage configuration uses both the default **/export** and **/data** mount paths. See [First Steps](#before-you-begin) above for more information.
 
 {{< include file="/static/includes/apps/MinIOStorageDataVolume.md" >}}
+
+#### Mounting an SMB Share
+The TrueNAS MinIO app includes the option to mount an SMB share inside the container pod.
+
+{{< include file="/static/includes/AppWizardStorageSMBOption.md" >}}
 
 ### Resource Configuration
 By default, this application is limited to use no more than **4** CPU cores and **8** Gigabytes available memory.

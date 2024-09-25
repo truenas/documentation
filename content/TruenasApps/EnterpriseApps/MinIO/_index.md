@@ -112,9 +112,16 @@ For more information see:
 
 {{< include file="/static/includes/apps/MinIOEnterpriseNetworkConfig.md" >}}
 
+{{< include file="/static/includes/apps/AppInstallWizardCertificateSettings.md" >}}
+
 ### Storage Configuration
 
 {{< include file="/static/includes/apps/MinIOEnterpriseStorageConfig.md" >}}
+
+#### Mounting an SMB Share
+The TrueNAS MinIO app includes the option to mount an SMB share inside the container pod.
+
+{{< include file="/static/includes/AppWizardStorageSMBOption.md" >}}
 
 ### Resource Configuration
 

@@ -5,5 +5,6 @@ The app app wizard is configured with all settings required to deploy the contai
 {{< trueimage src="/images/SCALE/Apps/InstallSyncthingEnterpirseAddEnvironmentVariables.png" alt="Add Syncthing Environment Variables" id="Add Syncthing Environment Variables" >}}
 
 Click **Add** to the right of **Environmental Variables** to show a set of fields to configure the application with additional.
-Click **Add** for each environmental variable you want to configure.
-Click here for more information on [Syncthing environmental variables](https://doc
+
+You can add environment variables to the app configuration after deploying it.
+Click **Edit** on the **Application Info** widget for the app found on the **Installed Application** screen to open the edit screen.

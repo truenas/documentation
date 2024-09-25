@@ -12,4 +12,4 @@ Either accept the default value in **Mount Path** or enter the correct mount pat
 If the app requires additional datasets, click **Add** to the right of **Additional Storage** to show the storage volume fields.
 Repeat the instructions above for each dataset to add.
 
-Click **Add** to show the mount and host path fields for each additional dataset and if creating storage volumes for postgres data and postgres backup.
+Click **Add** to show the mount and host path fields for each additional dataset, and if creating storage volumes for postgres data and postgres backup.

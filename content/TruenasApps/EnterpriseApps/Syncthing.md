@@ -28,10 +28,16 @@ Users migrating data from an existing third-party NAS solution to TrueNAS 24.04 
 See [Third-Party SMB Data Migration]({{< relref "DataMigrationSyncthing.md" >}}) for considerations and a full tutorial.
 
 ## Before You Begin
-To install the Syncthing **enterprise** train app, first create a self-signed certificate for the Syncthing enterprise app.
+Enterprise users with the appropriate licenese can see the apps in the **enterprise** train.
+Community users can access enterprise versions of apps by adding the **enterprise** train to their catalog. To change app train settings:
+{{< include file="/static/includes/apps/AddEnterpriseTrain.md" >}}
+
+Create a self-signed certificate for the Syncthing enterprise app.
 {{< include file="/static/includes/apps/AddAppCertificate.md" >}}
 
-Syncthing requires two storage volumes.
+Syncthing requires two storage volumes, **home** and **data1**.
+The **host** dataset stores configuration information and the **data1** dataset is the storage data volume.
+
 {{< include file="/static/includes/apps/SyncthingFirstSteps.md" >}}
 
 ## Installing the Syncthing Application
@@ -58,15 +64,15 @@ If created, select the certificate for Syncthing from the **Certificates** dropd
 See [Network Settings](#networking-settings) below for more information on network settings.
 
 Configure the storage settings.
-We recommend setting **Type** to **Host Path (Path that already exists on the system)**, and then entering or browsing to the **home** dataset to populate the **Host Path** field for the **Syncthing Home Storage** settings.
+Syncthing uses two datasets and mount paths. Set the first to **/home** with the host path set to the **home** dataset.
+The other mount point is **/data1** with the host path set to the **data1** dataset.
 
-{{< trueimage src="/images/SCALE/Apps/InstallSyncthingEnterpriseStorageConfigHomeHostPath.png" alt="Syncthing Home Storage Settings" id="Syncthing Home Storage Settings" >}}
+Select **Enable ACL** for the **/home** storage volume, enter **568** as the user and give it full permissions.
+Repeat for the **/data1** storage volume.
 
-Next, Click **add** to the right of **Additional Storage** to add the storage configuration settings for the **data1** volume.
+{{< trueimage src="/images/SCALE/Apps/InstallMinIOEnterpriseHomeAndData1ACLandACE.png" alt="Home and Data1 Host Path ACL and ACE Settings" id="Home and Data1 Host Path ACL and ACE Settings" >}}
 
-{{< trueimage src="/images/SCALE/Apps/InstallSyncthingEnterpriseStorageConfigData1HostPath.png" alt="Syncthing Data1 Storage Settings" id="Syncthing Data1 Storage Settings" >}}
-
-If migrating from some other NAS system, set **Type** to **SMB/CIFS Share (Mounts a persistent volume claim to a SMB share)** and select **Migrate Data**. 
+If migrating from some other NAS system, set **Type** to **SMB/CIFS Share (Mounts a persistent volume claim to a SMB share)**, and then select **Migrate Data**. 
 See [**Storage Settings**](#storage-settings) below for more information.
 
 {{< include file="/static/includes/apps/SyncthingCompleteInstall.md" >}}
@@ -74,8 +80,6 @@ See [**Storage Settings**](#storage-settings) below for more information.
 ### Securing the Syncthing Web UI
 After installing and starting the Syncthing application, launch the Syncthing web UI.
 Go to **Actions > Settings** and set a user password for the web UI.
-
-{{< trueimage src="/images/SCALE/apps/SyncthingUIActionsMenu.png" alt="Syncthing UI Actions Menu" id="Syncthing UI Actions Menu" >}}
 
 ### Using the Syncthing Web Portal for TrueNAS
 
@@ -108,15 +112,18 @@ The TrueNAS Syncthing enterprise app listens on port **8384**.
 
 {{< include file="/static/includes/apps/AppInstallWizardNetworkConfig.md" >}}
 
-If you clear the **Host Network** checkbox, the TCP and UDP port numbers show and the web UI listens on port **22000**. 
+Clearing the **Host Network** checkbox shows the TCP and UDP port numbers, and the web UI listens on port **22000**. 
+
+{{< include file="/static/includes/apps/AppInstallWizardCertificateSettings.md" >}}
 
 ### Storage Settings
-The Syncthing **enterprise** train app requires two storage volumes/datasets. Create on named **home** and the other **data1**.
-The **home** storage volume stores Syncthing configuration information, while the **data1** storage volume stores application data.
-
-{{< trueimage src="/images/SCALE/Apps/InstallSyncthingStorageConfigiXvolume.png" alt="Add ixVolume Storage Option" id="Add ixVolume Storage Option" >}}
+The Syncthing **enterprise** train app requires two storage volumes/datasets to store configuration data and app data storage. Create one named **home** and the other dataset named **data1**.
 
 {{< include file="/static/includes/apps/InstallAppsStorageConfig.md" >}}
+
+{{< trueimage src="/images/SCALE/Apps/InstallMinIOEnterpriseHomeAndData1ACLandACE.png" alt="Home and Data1 Host Path ACL and ACE Settings" id="Home and Data1 Host Path ACL and ACE Settings" >}}
+
+{{< include file="/static/includes/apps/AppInstallWizardACLConfiguration.md" >}}
 
 #### Mounting an SMB Share
 The TrueNAS Syncthing Enterprise app includes the option to mount an SMB share inside the container pod and to migrate data from some other NAS to TrueNAS.
@@ -124,12 +131,6 @@ The TrueNAS Syncthing Enterprise app includes the option to mount an SMB share i
 Selecting **Migrate Data** forces a read-only mount regardless of the **Read Only** checkbox selection.
 The SMB mount options are set to **vers=3.0**, **cifsacl**, and **noperm**.
 ACL preservation is not guaranteed if in a non-AD environment, or if the ACL or remote server contains local users.
-
-Use the SMB option to data synchronization between the share and the app.
-
-Set **Type** to **SMB/CIFS Share (Mounts a persistent volume claim to a SMB share)** when migrating third-party data using Syncthing.
-
-{{< trueimage src="/images/SCALE/Apps/InstallSyncthingEnterpriseStorageConfigSMBShare.png" alt="Syncthing Add SMB Share Option" id="Syncthing Add SMB Share Option" >}}
 
 {{< include file="/static/includes/apps/AppWizardStorageSMBOption.md" >}}
 
