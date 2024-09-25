@@ -125,6 +125,12 @@ Storage configuration uses both the default **/export** and **/data** mount path
 
 {{< include file="/static/includes/apps/MinIOStorageDataVolume.md" >}}
 
+#### ACL and ACE Configuration
+
+{{< trueimage src="/images/SCALE/Apps/MinIOConfigExportAndDataACLACESettings.png" alt="Export and Data Host Path ACL and ACE Settings" id="Export and Data Host Path ACL and ACE Settings" >}}
+
+{{< include file="/static/includes/apps/AppInstallWizardACLConfiguration.md" >}}
+
 #### Mounting an SMB Share
 The TrueNAS MinIO app includes the option to mount an SMB share inside the container pod.
 

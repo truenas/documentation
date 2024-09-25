@@ -27,16 +27,19 @@ Users migrating data from an existing third-party NAS solution to TrueNAS 24.04 
 
 See [Third-Party SMB Data Migration]({{< relref "DataMigrationSyncthing.md" >}}) for considerations and a full tutorial.
 
-## Before You Begin
 Enterprise users with the appropriate licenese can see the apps in the **enterprise** train.
 Community users can access enterprise versions of apps by adding the **enterprise** train to their catalog. To change app train settings:
 {{< include file="/static/includes/apps/AddEnterpriseTrain.md" >}}
 
-Create a self-signed certificate for the Syncthing enterprise app.
-{{< include file="/static/includes/apps/AddAppCertificate.md" >}}
+## Before You Begin
+Before launching the app installation wizard, do the following:
+* Create a self-signed certificate for the Syncthing enterprise app.
+  
+  {{< include file="/static/includes/apps/AddAppCertificate.md" >}}
 
-Syncthing requires two storage volumes, **home** and **data1**.
-The **host** dataset stores configuration information and the **data1** dataset is the storage data volume.
+* Create the required datasets, **home** and **data1**.
+  
+  Syncthing stores configuration **home** dataset and app data in the **data1** dataset.
 
 {{< include file="/static/includes/apps/SyncthingFirstSteps.md" >}}
 
@@ -50,7 +53,7 @@ The **host** dataset stores configuration information and the **data1** dataset 
 
 Next, enter the **Syncthing Configuration** settings.
 
-Select the timezone where the TrueNAS server is located from the **Timezone** dropdown list.
+{{< include file="/static/includes/apps/AppsInstallWizardTimezoneSetting.md" >}}
 
 Accept the default user and group IDs or enter the UID for any new TrueNAS user created to serve as the administrator for this app. See [User and Group Settings](#user-and-group-settings) below for more information.
 
@@ -120,6 +123,8 @@ Clearing the **Host Network** checkbox shows the TCP and UDP port numbers, and t
 The Syncthing **enterprise** train app requires two storage volumes/datasets to store configuration data and app data storage. Create one named **home** and the other dataset named **data1**.
 
 {{< include file="/static/includes/apps/InstallAppsStorageConfig.md" >}}
+
+#### ACL and ACE Sttings
 
 {{< trueimage src="/images/SCALE/Apps/InstallMinIOEnterpriseHomeAndData1ACLandACE.png" alt="Home and Data1 Host Path ACL and ACE Settings" id="Home and Data1 Host Path ACL and ACE Settings" >}}
 

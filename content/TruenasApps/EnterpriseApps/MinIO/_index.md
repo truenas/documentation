@@ -118,6 +118,12 @@ For more information see:
 
 {{< include file="/static/includes/apps/MinIOEnterpriseStorageConfig.md" >}}
 
+#### ACL and ACE Sttings
+
+{{< trueimage src="/images/SCALE/Apps/InstallMinIOEnterpriseHomeAndData1ACLandACE.png" alt="Home and Data1 Host Path ACL and ACE Settings" id="Home and Data1 Host Path ACL and ACE Settings" >}}
+
+{{< include file="/static/includes/apps/AppInstallWizardACLConfiguration.md" >}}
+
 #### Mounting an SMB Share
 The TrueNAS MinIO app includes the option to mount an SMB share inside the container pod.
 

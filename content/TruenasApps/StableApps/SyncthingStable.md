@@ -26,8 +26,13 @@ The **stables** and **enterprise** train versions of the Syncthing app widget di
 {{< /expand >}}
 
 ## Before Installing Syncthing
+Before launching the app installation wizard, do the following:
 
-{{< include file="/static/includes/SyncthingFirstSteps.md" >}}
+* Create the required dataset, **config** and an optional **data1**.
+  
+  Syncthing stores configuration **congig** dataset, and to store app data in the **data1** dataset.
+
+{{< include file="/static/includes/apps/SyncthingFirstSteps.md" >}}
 
 ## Installing the Syncthing Application
 {{< hint info >}}
@@ -76,7 +81,7 @@ The following sections provide more detail explanations of the settings found in
 
 ### Application Name Settings
 
-{{< include file="/static/includes/AppsWizardAppNameAndVersion.md" >}}
+{{< include file="/static/includes/apps/AppsWizardAppNameAndVersion.md" >}}
 
 ### Configuration Settings
 The Syncthing app wizard is configured with all settings required to deploy the container, but you can add additional settings if you want to further customize the app in TrueNAS.
@@ -98,10 +103,15 @@ The default TCP port is **20978** and the default UDP port is **20979**.
 
 {{< trueimage src="/images/SCALE/Apps/InstallSyncthingStableNetworking.png" alt="Syncthing (stable) Network Configuration" id="Syncthing (stable) Network Configuration" >}}
 
-We recommend not selecting **Host Network**. This binds to the host network.
+{{< include file="/static/includes/apps/AppInstallWizardNetworkConfig.md" >}}
+
 Clearing the **Host Network** checkbox shows the TCP and UDP port numbers, and the web UI listens on port **22000**. 
 
-Syncthing does not require advanced DNS options. If you want to add DNS options, see [Advanced DNS Settings](#advanced-dns-settings) below.
+#### Advanced DNS Settings
+
+{{< trueimage src="/images/SCALE/Apps/InstallSyncthingChartsAddAdvanceDNSOptions.png" alt="Syncthing Add Advanced DNS Options" id="Syncthing Add Advanced DNS Options" >}}
+
+{{< include file="/static/includes/apps/AppInstallWizardAdvancedDNSSettings.md" >}}
 
 ### Storage Settings
 The Syncthing **stable** train app requires one storage volume/dataset to store configuration data and you can use a second dataset for app data storage. Create one named **config** and the other dataset named **data1**.
@@ -117,11 +127,6 @@ The TrueNAS Syncthing app includes the option to mount an SMB share inside the c
 
 {{< include file="/static/includes/AppWizardStorageSMBOption.md" >}}
 
-### Advanced DNS Settings
-Syncthing does not require configuring advanced DNS options.
-Accept the default settings or click **Add** to the right of **DNS Options** to enter the option name and value.
-
-{{< trueimage src="/images/SCALE/Apps/InstallSyncthingChartsAddAdvanceDNSOptions.png" alt="Syncthing Add Advanced DNS Options" id="Syncthing Add Advanced DNS Options" >}}
 
 ### Resource Configuration Settings
 
