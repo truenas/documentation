@@ -66,7 +66,7 @@ Enter the path or browse to and click on the **data1** dataset location to popul
 
 Click **Add** to the right of **ACE Entries**.
 
-{{< trueimage src="/images/SCALE/Apps/InstallMinIOEnterpriseACLAndACESettings.png" alt="MinIO Enterprise ACL and ACE Settings" id="MinIO Enterprise ACL and ACE Settings" >}} new image
+{{< trueimage src="/images/SCALE/Apps/InstallMinIOEnterpriseData1ACLandACESettings.png" alt="MinIO Enterprise ACL and ACE Settings" id="MinIO Enterprise ACL and ACE Settings" >}}
 
 Set the **ACE Entry** user to the default user **568** or enter the UID for the user created in TrueNAS to serve as the MinIO app administrator, and set the permissions to **FULL_CONTROL**.
 
@@ -115,7 +115,7 @@ Configured ACLs take precedence and are applied.
 
 Specify the default user UID **568** or the UID for the new user created in TrueNAS to serve as the MinIO app admin user.
 
-{{< trueimage src="/images/SCALE/Apps/InstallMinIOACLConfigSettings.png" alt="MinIO Enterprise ACL and ACE Settings" id="MinIO Enterprise ACL and ACE Setting" >}} new image
+{{< trueimage src="/images/SCALE/Apps/InstallMinIOEnterpriseData1ACLandACESettings.png" alt="MinIO Enterprise ACL and ACE Settings" id="MinIO Enterprise ACL and ACE Setting" >}}
 
 {{< include file="/static/includes/apps/AppInstallWizardACLConfiguration.md" >}}
 

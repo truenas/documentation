@@ -79,7 +79,7 @@ Enter the path or browse to and click on the **data1** dataset location to popul
 
 Click **Add** to the right of **ACE Entries**.
 
-{{< trueimage src="/images/SCALE/Apps/InstallMinIOEnterpriseACLAndACESettings.png" alt="MinIO Enterprise ACL and ACE Settings" id="MinIO Enterprise ACL and ACE Settings" >}}
+{{< trueimage src="/images/SCALE/Apps/InstallMinIOEnterpriseData1ACLandACESettings.png" alt="MinIO Enterprise ACL and ACE Settings" id="MinIO Enterprise ACL and ACE Settings" >}}
 
 Set the **ACE Entry** user to the default user **568** or enter the UID for the user created in TrueNAS to serve as the MinIO app administrator, and set the permissions to **FULL_CONTROL**.
 
@@ -130,7 +130,7 @@ To deploy the MinIO app, you must configure the ACL and ACE settings for both th
 If the storage volume is an ixVolume, permissions apply on every application start but only if the directory is empty (has no data), and if ACLs are not configured.
 Configured ACLs take precedence and are applied.
 
-{{< trueimage src="/images/SCALE/Apps/InstallMinIOEnterpriseACLAndACESettings.png" alt="MinIO Enterprise ACL and ACE Settings" id="MinIO Enterprise ACL and ACE Settings" >}}
+{{< trueimage src="/images/SCALE/Apps/InstallMinIOEnterpriseData1ACLandACESettings.png" alt="MinIO Enterprise ACL and ACE Settings" id="MinIO Enterprise ACL and ACE Settings" >}}
 
 {{< include file="/static/includes/apps/AppInstallWizardACLConfiguration.md" >}}
 
