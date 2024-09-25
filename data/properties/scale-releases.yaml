@@ -39,7 +39,7 @@ majorVersions:
       - name: "24.10-RC.1"
         type: "Early"
         link: ""
-        releaseDate: "2024-09-24"
+        releaseDate: "2024-10-01"
         latest: false
       - name: "24.10.0"
         type: "Stable"
