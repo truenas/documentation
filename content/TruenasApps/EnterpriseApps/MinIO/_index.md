@@ -44,7 +44,7 @@ You can also mount other storage volumes inside the container pod using either t
 If mounting additional storage volumes with the host path option, create the dataset(s) before using the app installation wizard.
 
 Either use the default user or add a new user to serve as the MinIO administrator.
-When you [create a new user]({{< relref "ManageLocalUsersSCALE.md#creating-user-accounts" >}}) select **Create New Primary Group**, and select the appropriate group in the **Auxilliary Group** for the type of user you want to create.
+When you [create a new user]({{< relref "ManageLocalUsersSCALE.md#creating-user-accounts" >}}) select **Create New Primary Group**, and select the appropriate group in the **Auxiliary Group** for the type of user you want to create.
 Make note of the UID for the new user to add in the installation wizard.
 
 If your system has active sharing configurations (SMB, NFS, iSCSI), disable them in **System > Services** before adding and configuring the MinIO application.
@@ -62,7 +62,7 @@ For optional settings, see [Understanding MinIO Wizard Settings](#understanding-
 
 {{< include file="/static/includes/apps/MinIOEnterpriseConfig2.md" >}}
 
-If setting up a cluster configuration, see [Multimode Configuration](#multimode-configuration) below for more information on settings.
+If setting up a cluster configuration, see [Multi-Mode Configuration](#multi-mode-configuration) below for more information on settings.
 
 {{< include file="/static/includes/apps/MinIOEnterpriseConfig3.md" >}}
 
