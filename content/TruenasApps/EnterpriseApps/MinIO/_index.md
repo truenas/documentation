@@ -120,7 +120,7 @@ For more information see:
 
 #### ACL and ACE Sttings
 
-{{< trueimage src="/images/SCALE/Apps/InstallMinIOEnterpriseHomeAndData1ACLandACE.png" alt="Home and Data1 Host Path ACL and ACE Settings" id="Home and Data1 Host Path ACL and ACE Settings" >}}
+{{< trueimage src="/images/SCALE/Apps/InstallMinIOEnterpriseData1ACLandACESettings.png" alt="Home and Data1 Host Path ACL and ACE Settings" id="Home and Data1 Host Path ACL and ACE Settings" >}}
 
 {{< include file="/static/includes/apps/AppInstallWizardACLConfiguration.md" >}}
 
