@@ -1,7 +1,5 @@
 &NewLine;
 
-In general, all apps include the app name and version number, application-specific configuration, network, storage, and resource configuration settings but these section might not have the same settings in each section.
-
 The installation wizard configuration sections vary by application, with some including more configuration areas than others.
 Click **Install** to review settings ahead of time to check for required settings.
 Click **Discover** on the breadcrumb at the top of the installation wizard to exiting the screen without saving and until you are ready return and configure the app settings.

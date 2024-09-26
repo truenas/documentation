@@ -35,16 +35,17 @@ The **Certificates** setting is not required for a basic configuration but is re
 
 If not already assigned, set a pool for applications to use.
 
-You can allow the app to create the storage volume, or use the recommended method and create the required **data1** dataset to use with the host path option.
+You can allow the app to create the storage volume, or use the recommended method and create the required **data** dataset to use with the host path option.
 [Create the dataset(s)]({{< relref "DatasetsSCALE.md" >}}) before beginning the app installation process.
 You can organize the dataset(s) under a parent dataset for MinIO to keep the storage datasets separated from the dataset for other potential applications.
 For example, create the *minio* dataset and nest **data1** under it.
 
-You can also mount other storage volumes inside the container pod using either the ixVolume or Host Path options, but these are not required.
+You can also mount other storage volumes inside the container pod using either the ixVolume or host path options, but these are not required.
 If mounting additional storage volumes with the host path option, create the dataset(s) before using the app installation wizard.
 
-Either use the default user and group IDs or [create a new user]({{< relref "ManageLocalUsersSCALE.md#creating-user-accounts" >}}) with **Create New Primary Group** selected.
-Make note of the UID/GID for the new user to add in the installation wizard.
+Either use the default user or add a new user to serve as the MinIO administrator.
+When you [create a new user]({{< relref "ManageLocalUsersSCALE.md#creating-user-accounts" >}}) select **Create New Primary Group**, and select the appropriate group in the **Auxiliary Group** for the type of user you want to create.
+Make note of the UID for the new user to add in the installation wizard.
 
 If your system has active sharing configurations (SMB, NFS, iSCSI), disable them in **System > Services** before adding and configuring the MinIO application.
 Start any sharing services after MinIO completes the installation and starts.
@@ -61,8 +62,7 @@ For optional settings, see [Understanding MinIO Wizard Settings](#understanding-
 
 {{< include file="/static/includes/apps/MinIOEnterpriseConfig2.md" >}}
 
-If setting up a cluster configuration, select **Enabled** to show the multi-mode **Multi Mode (SNMD or MNMD Entries)** settings.
-See [Multimode Configuration](#multimode-configuration) below for more information on settings.
+If setting up a cluster configuration, see [Multi-Mode Configuration](#multi-mode-configuration) below for more information on settings.
 
 {{< include file="/static/includes/apps/MinIOEnterpriseConfig3.md" >}}
 
@@ -71,11 +71,17 @@ Scroll down to or click on **Storage Configuration** on the list of wizard secti
 {{< trueimage src="/images/SCALE/Apps/InstallMinIOEnterpriseStorageConfigSettings.png" alt="MinIO Enterprise Storage Configuration Settings" id="MinIO Enterprise Storage Configuration Settings" >}}
 
 Select the storage type you want to use.
-To allow TrueNAS to create the storage volume, set **Type** to **ixVolume (Dataset created automatically by the system)**, which is the default but not recommended storage type.
 
 To use an existing dataset, select **Host Path (Path that already exists on the system)** which is the recommended option for MinIO.
 **Mount Path** populates with the default **/data1**.
+Select **Enable ACL** to show the mount path and host path fields.
 Enter the path or browse to and click on the **data1** dataset location to populate **Host Path**.
+
+Click **Add** to the right of **ACE Entries**.
+
+{{< trueimage src="/images/SCALE/Apps/InstallMinIOEnterpriseData1ACLandACESettings.png" alt="MinIO Enterprise ACL and ACE Settings" id="MinIO Enterprise ACL and ACE Settings" >}}
+
+Set the **ACE Entry** user to the default user **568** or enter the UID for the user created in TrueNAS to serve as the MinIO app administrator, and set the permissions to **FULL_CONTROL**.
 
 {{< include file="/static/includes/apps/MinIOEnterpriseConfig4.md" >}}
 
@@ -91,6 +97,8 @@ The following section provides more detailed explanations of the settings in eac
 {{< include file="/static/includes/apps/MinIOEnterpriseMinIOConfig.md" >}}
 
 #### Multi-Mode Configuration
+If creating a multi-disk (SNMD) or MNMD cluster, create four datasets, **data1**, **data2**, **data3** and **data4** on each system (node) in the cluster configuration.
+
 Multi-mode installs the app in either a [MinIO Single-Node Multi-Drive (SNMD)](https://min.io/docs/minio/linux/operations/install-deploy-manage/deploy-minio-single-node-multi-drive.html) or [Multi-Node Multi-Drive (MNMD)](https://min.io/docs/minio/linux/operations/install-deploy-manage/deploy-minio-multi-node-multi-drive.html#minio-mnmd) cluster.
 MinIO recommends using MNMD for enterprise-grade performance and scalability.
 
@@ -128,6 +136,7 @@ For more information see:
 The TrueNAS MinIO app includes the option to mount an SMB share inside the container pod.
 
 {{< include file="/static/includes/AppWizardStorageSMBOption.md" >}}
+
 
 ### Resource Configuration
 

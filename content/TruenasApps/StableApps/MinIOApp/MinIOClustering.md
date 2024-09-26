@@ -18,41 +18,38 @@ keywords:
 - object based storage
 ---
 
+
+{{< include file="/static/includes/ProposeArticleChange.md" >}}
+
 {{< hint info >}}
 This article applies to the public release of the S3 **MinIO** charts application in the TRUENAS catalog.
 {{< /hint >}}
 
-{{< include file="/static/includes/AppsUnversioned.md" >}}
+TrueNAS 23.10 and later allows users to create a MinIO S3 distributed instance to scale out TrueNAS to handle individual node failures.
+A *node* is a single TrueNAS storage system in a cluster.
 
-On TrueNAS 23.10 and later, users can create a MinIO S3 distributed instance to TrueNAS out and handle individual node failures.
-A node is a single TrueNAS storage system in a cluster.
+The **stable** train version of MinIO supports [distributed mode](https://min.io/docs/minio/kubernetes/upstream/index.html?ref=docs-redirect).
+Distributed mode, allows pooling multiple drives, even on different systems, into a single object storage server.
+For information on configuring a distributed mode cluster in TrueNAS using MinIO, see [Setting Up MinIO Clustering]({{< relref "MinIOClustering.md" >}}).
+
+The **enterprise** train version of MinIO provides two options for clustering, Single Node Multi Disk (SNMD) and Multi Node Multi Disk (MNMD) configurations. See [MinIO Enterprise]({{< relref "/TruenasApps/EnterpriseApps/MinIO/_index.md" >}}) for more information.
 
 The examples below use four TrueNAS systems to create a distributed cluster.
 For more information on MinIO distributed setups, refer to the [MinIO documentation](https://docs.min.io/docs/distributed-minio-quickstart-guide.html).
 
 ## Before You Begin
 
-{{< include file="/static/includes/MinIODatasetRequirements.md" >}}
+{{< include file="/static/includes/apps/MinIODatasetRequirements.md" >}}
 
-For a distributed configuration, repeat this on all system nodes in advance.
-
+For a distributed configuration, repeat the above on all system nodes in advance.
 Take note of the system (node) IP addresses or host names and have them ready for configuration. Also, have your S3 user name and password ready for later.
-
-## Configuring MinIO
-
-Configure the MinIO application using the full version **Minio charts** widget.
-Go to **Apps**, click **Discover Apps** then
-
-We recommend using the **Install** option on the **MinIO** application widget.
 
 If your system has sharing (SMB, NFS, iSCSI) configured, disable the share service before adding and configuring a new MinIO deployment.
 After completing the installation and starting MinIO, enable the share service.
 
-If the dataset for the MinIO share has the same path as the MinIO application, disable host path validation before starting MinIO.
-To use host path validation, set up a new dataset for the application with a completely different path. For example, for the share */pool/shares/minio* and for the application */pool/apps/minio*.
+For more information on app installation wizard settings see [Understanding MinIO Wizard Settings]({{< relref "TruenasApps/StableApps/MinioApp/_index.md #understanding-minio-wizard-settings" >}})
 
-### Configuring MinIO Using Install
-
+## Configuring MinIO
 Begin on the first node (system) in your cluster.
 
 {{< include file="/static/includes/apps/LocateAndOpenInstallWizard.md" >}}
@@ -69,11 +66,9 @@ For a distributed cluster, ensure the values are identical between server nodes 
 
 {{< include file="/static/includes/MinIOInstallArgAndEnvironVarSteps.md" >}}
 
+{{< trueimage src="/images/SCALE/Apps/InstallMinioDistributedModeAddStorage.png" alt="MinIO Distributed Mode Settings" id="MinIO Distributed Mode Settings" >}}
+
 {{< include file="/static/includes/MinIOPortsAndLogSearch.md" >}}
-
-{{< trueimage src="/images/SCALE/Apps/InstallMinioConfigPortsAndLogSearch.png" alt="MinIO Port and LogSearch Settings" id="MinIO Port and LogSearch Settings" >}}
-
-You can also configure a MinIO certificate.
 
 MinIO uses two datasets and mount paths. Set the first to **/export** with the host path set to the **export** dataset.
 The other mount point is **/data** with the host path set to the **data** dataset.

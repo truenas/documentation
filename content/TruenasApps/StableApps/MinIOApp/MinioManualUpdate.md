@@ -19,7 +19,7 @@ keywords:
 This article applies to the public release of the S3 **MinIO** community application in the **stable** train for the application catalog.
 {{< /hint >}}
 
-{{< include file="/static/includes/AppsUnversioned.md" >}}
+{{< include file="/static/includes/ProposeArticleChange.md" >}}
 
 ## Manual Update Overview
 
