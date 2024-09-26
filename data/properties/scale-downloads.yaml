@@ -107,7 +107,7 @@ majorVersions:
     releases:
       - name: "24.10-RC.1"
         link: "https://download.truenas.com/truenas-scale-electriceel-RC/24.10-RC.1/"
-        date: "2024-09-26"
+        date: "2024-10-01"
       - name: "24.10-BETA.1"
         link: "https://download.truenas.com/truenas-scale-electriceel-BETA/24.10-BETA.1/"
         date: "2024-08-29"
