@@ -45,19 +45,19 @@ You must choose a pool before you can install an application.
 
 {{< expand "App Pool Selection" "v" >}}
 
-{{< include file="/static/includes/AppsPoolOrDataset.md" >}}
+{{< include file="/static/includes/apps/AppsPoolOrDataset.md" >}}
 
 {{< /expand >}}
 
 {{< expand "App Dataset and File Sharing" "v" >}}
 
-{{< include file="/static/includes/AppsFileSharing.md" >}}
+{{< include file="/static/includes/apps/AppsFileSharing.md" >}}
 
 {{< /expand >}}
 
 {{< expand "Apps General Settings" "v" >}}
 
-{{< include file="/static/includes/AppsDockerCompose.md" >}}
+{{< include file="/static/includes/apps/AppsDockerCompose.md" >}}
 
 {{< /expand >}}
 
@@ -171,7 +171,7 @@ Click **Check Available Apps** or **Discover Apps** to open the **[Discover](#us
 
 Search for the application widget, then click on that widget to open the information screen for the app and access the installation wizard.
 
-{{< include file="/static/includes/AppsSMBErrorWarning.md" >}}
+{{< include file="/static/includes/apps/AppsSMBErrorWarning.md" >}}
 
 If the application requires specific datasets, configure these before using the installation wizard.
 
