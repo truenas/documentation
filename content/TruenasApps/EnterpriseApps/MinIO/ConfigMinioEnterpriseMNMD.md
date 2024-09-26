@@ -32,8 +32,14 @@ Community members can add and use the MinIO Enterprise app or the default commun
 {{< include file="/static/includes/AddMinioEnterpriseTrain.md" >}}
 
 ## Before You Begin
+To install the MinIO **enterprise** train app, do the following:
 
+{{< include file="/static/includes/apps/AppsEnterprieseBeforeYouBegin.md" >}}
+  
 {{< include file="/static/includes/MinIOEnterpriseMultiModeBeforeYouBegin.md" >}}
+
+If your system has active sharing configurations (SMB, NFS, iSCSI), disable them in **System > Services** before adding and configuring the MinIO application.
+Start any sharing services after MinIO completes the installation and starts.
 
 ## Installing MinIO Enterprise
 

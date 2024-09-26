@@ -46,6 +46,8 @@ For optional settings, see [Understanding Syncthing Wizard Settings](#understand
 
 {{< include file="/static/includes/apps/AppsWizardAppNameAndVersion.md" >}}
 
+{{< include file="/static/includes/apps/AddMultipleAppInstancesAndNaming.md" >}}
+
 Accept the default user and group ID settings (**568**).
 If you created a user for this app, change these settings to the UID/GID for that new user.
 
@@ -94,7 +96,7 @@ The Syncthing app wizard is configured with all settings required to deploy the 
 Accept the user and group defaults settings in **User and Group Configuration**, or enter new user and group IDs for the user created to administer this app.
 The default value for **User Id** and **Group ID** is **568**.
 
-{{< trueimage src="/images/SCALE/Apps/InstallSyncthingWizardSyncthingUserAndGroup.png" alt="Syncthing User and Group Settings" id="Syncthing User and Group Setting" >}}
+{{< include file="/static/includes/apps/AppInstallWizardUserAndGroupConfig.md" >}}
 
 ### Networking Settings
 Accept the default port numbers in **Web Port for Syncthing**, **TCP Port for Syncthing** and **UDP Port for Syncthing**.
@@ -120,14 +122,13 @@ The Syncthing **stable** train app requires one storage volume/dataset to store 
 
 {{< trueimage src="/images/SCALE/Apps/InstallSyncthingConfigAndData1ACLandACESettings.png" alt="Config and Data1 Host Path ACL and ACE Settings" id="Config and Data1 Host Path ACL and ACE Settings" >}}
 
-{{< include file="/static/includes/apps/AppInstallWizardACLConfiguration.md" >}}
-
 #### Mounting an SMB Share
 The TrueNAS Syncthing app includes the option to mount an SMB share inside the container pod.
 
-{{< include file="/static/includes/AppWizardStorageSMBOption.md" >}}
-
+{{< include file="/static/includes/apps/AppWizardStorageSMBOption.md" >}}
 
 ### Resource Configuration Settings
 
-{{< include file="/static/includes/SyncthingWizardResourceConfig.md" >}}
+{{< trueimage src="/images/SCALE/Apps/InstallSyncthingEnterpriseResourcesConfig.png" alt="Syncthing Enterprise Resource Limits" id="Syncthing Enterprise Resource Limits" >}}
+
+{{< include file="/static/includes/apps/AppInstallWizardResourceConfig.md" >}}

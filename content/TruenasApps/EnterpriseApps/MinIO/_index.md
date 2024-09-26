@@ -25,27 +25,14 @@ The enterprise MinIO application is tested and verified as an immutable target f
 ## Adding MinIO Enterprise App
 Community members can add and use the MinIO Enterprise app or the default community version.
 
-{{< include file="/static/includes/apps/AddMinioEnterpriseTrain.md" >}}
+{{< include file="/static/includes/apps/AddEnterpriseTrain.md" >}}
 
 ## Before You Begin
-To install the MinIO **enterprise** train app, first create a self-signed certificate for the MinIO app.
-The **Certificates** setting is not required for a basic configuration but is required when setting up multi-mode configurations and when using MinIO as an immutable target for Veeam Backup and Replication.
+To install the MinIO **enterprise** train app, do the following:
 
-{{< include file="/static/includes/apps/AddAppCertificate.md" >}}
-
-If not already assigned, set a pool for applications to use.
-
-You can allow the app to create the storage volume, or use the recommended method and create the required **data** dataset to use with the host path option.
-[Create the dataset(s)]({{< relref "DatasetsSCALE.md" >}}) before beginning the app installation process.
-You can organize the dataset(s) under a parent dataset for MinIO to keep the storage datasets separated from the dataset for other potential applications.
-For example, create the *minio* dataset and nest **data1** under it.
-
-You can also mount other storage volumes inside the container pod using either the ixVolume or host path options, but these are not required.
-If mounting additional storage volumes with the host path option, create the dataset(s) before using the app installation wizard.
-
-Either use the default user or add a new user to serve as the MinIO administrator.
-When you [create a new user]({{< relref "ManageLocalUsersSCALE.md#creating-user-accounts" >}}) select **Create New Primary Group**, and select the appropriate group in the **Auxiliary Group** for the type of user you want to create.
-Make note of the UID for the new user to add in the installation wizard.
+{{< include file="/static/includes/apps/AppsEnterprieseBeforeYouBegin.md" >}}
+  
+{{< include file="/static/includes/apps/MinIODatasetRequirements.md" >}}
 
 If your system has active sharing configurations (SMB, NFS, iSCSI), disable them in **System > Services** before adding and configuring the MinIO application.
 Start any sharing services after MinIO completes the installation and starts.
@@ -114,7 +101,7 @@ For more information see:
 
 ### User and Group Configuration
 
-{{< include file="/static/includes/apps/AppUserAndGroupConfig.md" >}}
+{{< include file="/static/includes/apps/AppInstallWizardUserAndGroupConfig.md" >}}
 
 ### Network Configuration
 

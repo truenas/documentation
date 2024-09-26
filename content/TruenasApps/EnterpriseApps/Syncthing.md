@@ -124,11 +124,7 @@ The Syncthing **enterprise** train app requires two storage volumes/datasets to 
 
 {{< include file="/static/includes/apps/InstallAppsStorageConfig.md" >}}
 
-#### ACL and ACE Sttings
-
 {{< trueimage src="/images/SCALE/Apps/InstallMinIOEnterpriseHomeAndData1ACLandACE.png" alt="Home and Data1 Host Path ACL and ACE Settings" id="Home and Data1 Host Path ACL and ACE Settings" >}}
-
-{{< include file="/static/includes/apps/AppInstallWizardACLConfiguration.md" >}}
 
 #### Mounting an SMB Share
 The TrueNAS Syncthing Enterprise app includes the option to mount an SMB share inside the container pod and to migrate data from some other NAS to TrueNAS.
@@ -143,7 +139,7 @@ ACL preservation is not guaranteed if in a non-AD environment, or if the ACL or 
 
 {{< trueimage src="/images/SCALE/Apps/InstallSyncthingEnterpriseResourcesConfig.png" alt="Syncthing Enterprise Resource Limits" id="Syncthing Enterprise Resource Limits" >}}
 
-{{< include file="/static/includes/apps/AppsInstallWizardResourceConfig.md" >}}
+{{< include file="/static/includes/apps/AppInstallWizardResourceConfig.md" >}}
 
 ## Increasing inotify Watchers
 Syncthing uses [inotify](https://man7.org/linux/man-pages/man7/inotify.7.html) to monitor file system events, with one inotify watcher per monitored directory.

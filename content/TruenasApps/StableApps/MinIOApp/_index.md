@@ -22,8 +22,6 @@ keywords:
 
 {{< include file="/static/includes/ProposeArticleChange.md" >}}
 
-{{< include file="/static/includes/ProposeArticleChange.md" >}}
-
 MinIO High Performance Object Storage, released under the Apache Licenses v2.0 is an open source Amazon S3 cloud storage compatible object storage solution.
 The TrueNAS MinIO applications allow users to build high performance infrastructure for machine learning, analytics, and application data workloads.
 
@@ -49,8 +47,14 @@ For instructions on installing the Enterprise version of the MinIO application s
 Enterprise MinIO]({{< relref "/content/TruenasApps/EnterpriseApps/_index.md" >}}).
 
 ### Before You Begin
+Before you install the **stable** version of the MinIO app:
+
+{{< include file="/static/includes/apps/AppsStableBeforeYouBegin.md" >}}
 
 {{< include file="/static/includes/apps/MinIODatasetRequirements.md" >}}
+
+If your system has active sharing configurations (SMB, NFS, iSCSI), disable them in **System > Services** before adding and configuring the MinIO application.
+Start any sharing services after MinIO completes the installation and starts.
 
 ### Configuring MinIO (S3) Community App
 {{< hint info >}}
@@ -58,18 +62,13 @@ This basic procedure covers the required MinIO stable app settings.
 For optional settings, see [Understanding MinIO Wizard Settings](#understanding-minio-wizard-settings).
 {{< /hint >}}
 
-{{< include file="/static/includes/apps/AddMultipleAppInstancesAndNaming.md" >}}
-
-If your system has active sharing configurations (SMB, NFS, iSCSI), disable them in **System > Services** before adding and configuring the MinIO application.
-Start any sharing services after MinIO completes the installation and starts.
-
-### Configuring MinIO (S3) App
-
 {{< include file="/static/includes/apps/LocateAndOpenInstallWizard.md" >}}
 
 {{< trueimage src="/images/SCALE/Apps/InstallMinioS3Screen.png" alt="MinIO Install Wizard Screen" id="MinIO Install Wizard Screen" >}}
 
 {{< include file="/static/includes/apps/AppsWizardAppNameAndVersion.md" >}}
+
+{{< include file="/static/includes/apps/AddMultipleAppInstancesAndNaming.md" >}}
 
 Next, enter the **MinIO Configuration** settings.
 
@@ -142,11 +141,7 @@ Storage configuration uses both the default **/export** and **/data** mount path
 
 {{< include file="/static/includes/apps/MinIOStorageDataVolume.md" >}}
 
-#### ACL and ACE Configuration
-
 {{< trueimage src="/images/SCALE/Apps/MinIOConfigExportAndDataACLACESettings.png" alt="Export and Data Host Path ACL and ACE Settings" id="Export and Data Host Path ACL and ACE Settings" >}}
-
-{{< include file="/static/includes/apps/AppInstallWizardACLConfiguration.md" >}}
 
 #### Mounting an SMB Share
 The TrueNAS MinIO app includes the option to mount an SMB share inside the container pod.
