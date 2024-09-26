@@ -184,7 +184,9 @@ Set **Type** an **SMB/CIFS Share (Mounts a persistent volume claim to a SMB shar
 
 ### Resource Configuration Settings
 
-{{< include file="/static/includes/SyncthingWizardResourceConfig.md" >}}
+{{< trueimage src="/images/SCALE/Apps/InstallSyncthingEnterpriseResourcesConfig.png" alt="Syncthing Enterprise Resource Limits" id="Syncthing Enterprise Resource Limits" >}}
+
+{{< include file="/static/includes/apps/AppInstallWizardResourceConfig.md" >}}
 
 ## Increasing inotify Watchers
 Syncthing uses [inotify](https://man7.org/linux/man-pages/man7/inotify.7.html) to monitor file system events, with one inotify watcher per monitored directory.
