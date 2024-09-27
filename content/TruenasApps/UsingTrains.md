@@ -34,7 +34,7 @@ You can also click **Manage Installed Apps** at the top right of the **Discover*
 Users can change the catalog trains and show apps in those trains on the **Settings** screen.
 After making a change, go to the **Discover** screen and click on **Refresh Catalog** to pull the catalog from the repository and refresh it in SCALE.
 
-{{< trueimage src="/images/SCALE/Apps/AppsSettingsScreen.png" alt="Apps Train Settings Screen" id="Apps Train Settings Screen" >}}
+{{< trueimage src="/images/SCALE/Apps/AppsTrainSettingsScreen.png" alt="Apps Train Settings Screen" id="Apps Train Settings Screen" >}}
 
 To remove a train from the catalog, select the checkbox for the train on the **Settings** screen to clear the checkbox, then click **Save**.
 You must have one train selected.
