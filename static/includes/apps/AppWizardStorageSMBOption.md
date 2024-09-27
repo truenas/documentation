@@ -1,14 +1,17 @@
 &NewLine;
 
-Selecting this option shows the SMB share fields that allow you to configure the share server, path, and user authentication credentials while configuring the app.
+Use the SMB option to data synchronization between the share and the app.
+
+Set **Type** an **SMB/CIFS Share (Mounts a persistent volume claim to a SMB share)** to use add an SMB share storage volume.
+
+{{< trueimage src="/images/SCALE/Apps/InstallAppStorageConfigSMBOption.png" alt="SMB Share Option" id="SMB Share Option" >}}
 
 Select **Read Only** to make the storage volume read only.
 
 Enter the path inside the container to mount the storage for the share volume in **Mount Path**.
 
-Select **Migration Mode** if migrating third-party data.
 Enter the server address for the SMB share in **Server**, the path to mount the SMB share in **Path**, and the share authentication user credentials in **User** and **Password**.
-**domain** is an optional field for the share domain name.
+(Optional) enter the share domain name in **domain**.
 
 Permissions are currently limited to the permissions of the user that mounted the share.
 <!-- Commenting this out until I can get it verified with devs/solutions team 

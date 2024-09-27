@@ -60,20 +60,23 @@ Begin on the first node (system) in your cluster.
 
 Next, enter the **MinIO Configuration** settings.
 
-{{< include file="/static/includes/apps/MinIOEnableDistributedModeInfo.md" >}}
+{{< include file="/static/includes/MinIOEnableDistributedModeInfo.md" >}}
 
 For a distributed cluster, ensure the values are identical between server nodes and have the same credentials.
 
+{{< include file="/static/includes/MinIOInstallArgAndEnvironVarSteps.md" >}}
+
 {{< trueimage src="/images/SCALE/Apps/InstallMinioDistributedModeAddStorage.png" alt="MinIO Distributed Mode Settings" id="MinIO Distributed Mode Settings" >}}
 
-{{< include file="/static/includes/apps/MinIOInstallArgAndEnvironVarSteps.md" >}}
-
-{{< include file="/static/includes/apps/MinIOPortsAndLogSearch.md" >}}
+{{< include file="/static/includes/MinIOPortsAndLogSearch.md" >}}
 
 MinIO uses two datasets and mount paths. Set the first to **/export** with the host path set to the **export** dataset.
 The other mount point is **/data** with the host path set to the **data** dataset.
 
 {{< include file="/static/includes/apps/MinIOStorageDataVolume.md" >}}
+
+Select **Enable ACL** for the **/export** storage volume, enter **473** as the user and give it full permissions.
+Repeat for the **/data** storage volume.
 
 {{< trueimage src="/images/SCALE/Apps/MinIODistributedModeConfigExportAndDataACLACE.png" alt="Export and Data Host Path ACL and ACE Settings" id="Export and Data Host Path ACL and ACE Settings" >}}
 

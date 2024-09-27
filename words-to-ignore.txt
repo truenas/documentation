@@ -2011,5 +2011,7 @@ managegpuscale
 TrueNASApps
 Fangtooth
 ScaleReleaseNotes
+AppsInstallWizardSettings
+AppsSettingsScreen
 updatable
 lifecycles

@@ -47,19 +47,28 @@ For instructions on installing the Enterprise version of the MinIO application s
 Enterprise MinIO]({{< relref "/content/TruenasApps/EnterpriseApps/_index.md" >}}).
 
 ### Before You Begin
+Before you install the **stable** version of the MinIO app:
+
+{{< include file="/static/includes/apps/AppsStableBeforeYouBegin.md" >}}
 
 {{< include file="/static/includes/apps/MinIODatasetRequirements.md" >}}
 
 If your system has active sharing configurations (SMB, NFS, iSCSI), disable them in **System > Services** before adding and configuring the MinIO application.
 Start any sharing services after MinIO completes the installation and starts.
 
-### Configuring MinIO (S3) App
+### Configuring MinIO (S3) Community App
+{{< hint info >}}
+This basic procedure covers the required MinIO stable app settings.
+For optional settings, see [Understanding MinIO Wizard Settings](#understanding-minio-wizard-settings).
+{{< /hint >}}
 
 {{< include file="/static/includes/apps/LocateAndOpenInstallWizard.md" >}}
 
 {{< trueimage src="/images/SCALE/Apps/InstallMinioS3Screen.png" alt="MinIO Install Wizard Screen" id="MinIO Install Wizard Screen" >}}
 
 {{< include file="/static/includes/apps/AppsWizardAppNameAndVersion.md" >}}
+
+{{< include file="/static/includes/apps/AddMultipleAppInstancesAndNaming.md" >}}
 
 Next, enter the **MinIO Configuration** settings.
 
@@ -127,11 +136,17 @@ To add advanced DNS settings click **Add** to the right of **DNS Options**.
 {{< trueimage src="/images/SCALE/Apps/InstallMinIOACLConfigSettings.png" alt="ACL Configuration Settings" id="ACL Configuration Settings" >}}
 
 ### Storage Configuration
-MinIO storage settings include the option to add storage volumes to use inside the container (pod).
-
-Storage configuration uses both the default **/export** and **/data** datasets and mount paths. See [First Steps](#before-you-begin) above for more information.
+MinIO storage settings include the option to add mount paths and storage volumes to use inside the container (pod).
+Storage configuration uses both the default **/export** and **/data** mount paths. See [First Steps](#before-you-begin) above for more information.
 
 {{< include file="/static/includes/apps/MinIOStorageDataVolume.md" >}}
+
+{{< trueimage src="/images/SCALE/Apps/MinIOConfigExportAndDataACLACESettings.png" alt="Export and Data Host Path ACL and ACE Settings" id="Export and Data Host Path ACL and ACE Settings" >}}
+
+#### Mounting an SMB Share
+The TrueNAS MinIO app includes the option to mount an SMB share inside the container pod.
+
+{{< include file="/static/includes/AppWizardStorageSMBOption.md" >}}
 
 ### Resource Configuration
 
