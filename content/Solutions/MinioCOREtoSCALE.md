@@ -11,7 +11,7 @@ tags:
 
 {{< hint type="warning" title="Minio Plugin End of Life" >}}
 Due to the interaction between the TrueNAS, Minio, and FreeBSD software lifecycles, the Minio plugin does not generally deploy in TrueNAS 13.0 nor is full data migration of MinIO data from end of life (EoL) deployments of MinIO possible.
-Users are encourage to pursue a manual backup and restore strategy to move data into the fully maintained and updatable MinIO applications available with TrueNAS 24.04 and later.
+Users are encouraged to pursue a manual backup and restore strategy before attempting to move to TrueNAS 24.04 or newer. These versions provide fully maintained, and updatable MinIO [applications](https://www.truenas.com/docs/truenasapps/).
 
 Enterprise customers are encouraged to contact iX Support to discuss options for guided data migration from the EoL S3 service or Minio Plugin in TrueNAS 13.0 to the supported [MinIO Enterprise](https://www.truenas.com/docs/truenasapps/enterpriseapps/minio/) applications available in TrueNAS 24.04 and newer releases.
 
