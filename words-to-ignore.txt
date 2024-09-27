@@ -2012,3 +2012,4 @@ TrueNASApps
 Fangtooth
 ScaleReleaseNotes
 AppsInstallWizardSettings
+AppsSettingsScreen
