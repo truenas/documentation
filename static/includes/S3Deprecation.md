@@ -1,7 +1,7 @@
 &NewLine;
 
 {{< hint type=important title="Deprecation Notice" >}}
-Due to security vulnerabilities and maintainability issues, the S3 service is deprecated in TrueNAS 13.0 and removed in TrueNAS 24.04, 24.10, and newer versions.
+Due to security vulnerabilities and maintainability issues, the S3 service is deprecated in TrueNAS 13.0 and removed in TrueNAS 22.12 and newer versions.
 Beginning in CORE 13.0-U6, the CORE web interface generates an alert when the deprecated service is either actively running or is enabled to start on boot.
 
 {{< enterprise >}}
