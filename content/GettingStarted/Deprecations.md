@@ -12,7 +12,15 @@ Begin planning migrations from these features immediately and note the TrueNAS u
 
 ## S3 Service
 
-{{< include file="/static/includes/S3Deprecation.md" >}}
+Due to security vulnerabilities and maintainability issues, the S3 service is deprecated in TrueNAS CORE 13.0 and scheduled for removal in CORE 13.3.
+Beginning in CORE 13.0-U6, the CORE web interface generates an alert when the deprecated service is either actively running or is enabled to start on boot.
+
+{{< enterprise >}}
+Beginning in CORE 13.0-U6, Enterprise customers with the S3 service running or enabled are prevented from upgrading to 13.3.
+{{< /enterprise >}}
+
+Users should plan to migrate to a separately maintained MinIO application in TrueNAS 22.12 or newer or otherwise move any production data away from the S3 service storage location.
+Migrating from the built-in S3 service to the separately maintained application could result in an extended data migration window and potential disruption to S3 data access.
 
 ## SAS Multipath
 
