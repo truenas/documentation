@@ -108,13 +108,13 @@ Enterprise customers with HA systems should contact iXsystems Support for assist
 {{< /expand >}}
 {{< /enterprise >}}
 
-When attempting to migrate from TrueNAS CORE, the general recommendation is to back up the system configuration file and use an **.iso** file to fresh install TrueNAS.
+When attempting to migrate from TrueNAS 13.0 (or 13.3 for community members), the general recommendation is to back up the system configuration file and use an **.iso** file to fresh install TrueNAS.
 After install, restore the system configuration and import the pools.
 
 Depending on the specific system configuration, this can be a straightforward or complicated process.
 See the [Migration articles]({{< relref "/GettingStarted/Migrate/_index.md" >}}) for cautions and notes about differences between each software and the migration process.
 
-You must either clean install using an <file>iso</file> or use an upgrade file to migrate a TrueNAS 13.0 (or 13.3 for community users) system to 24.10 (Electric Eel).
+You must either clean install using an <file>iso</file> or use an upgrade file to migrate a TrueNAS 13.0 (or 13.3 for community users) system to 24.04 (Dragonfish) before upgrading to 24.10 (Electric Eel).
 Enterprise customers should [contact Support](https://www.truenas.com/docs/scale/gettingstarted/migrate/migratecorehatoscaleha/#expand-1-Enterprise%20HA%20Migrations) for assistance with migrating.
 
 ## Component Versions
