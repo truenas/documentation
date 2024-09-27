@@ -2013,3 +2013,5 @@ Fangtooth
 ScaleReleaseNotes
 AppsInstallWizardSettings
 AppsSettingsScreen
+updatable
+lifecycles
