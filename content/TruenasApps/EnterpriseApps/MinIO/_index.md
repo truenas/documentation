@@ -93,9 +93,9 @@ Click **Enabled** under **Multi Mode (SNMD or MNMD) Configuration** to enable mu
 
 For more information see:
 
-[SNMD]({{< relref "ConfigMinioEnterpriseSNMD.md" >}})
+* [SNMD]({{< relref "ConfigMinioEnterpriseSNMD.md" >}})
 
-[MNMD]({{< relref "ConfigMinioEnterpriseMNMD.md" >}})
+* [MNMD]({{< relref "ConfigMinioEnterpriseMNMD.md" >}})
 
 ### User and Group Configuration
 
