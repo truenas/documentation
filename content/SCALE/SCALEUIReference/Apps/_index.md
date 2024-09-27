@@ -90,7 +90,7 @@ Entering characters in the **<span class="iconify" data-icon="mdi:magnify"></spa
 ### Settings
 **Settings** opens the **Settings** screen showing the four application train options.
 
-{{< trueimage src="/images/SCALE/Apps/AppsTrainSettingsScreen.png" alt="Train Settings Add Enterprise Train" id="Train Settings Add Enterprise Train" >}}
+{{< trueimage src="/images/SCALE/Apps/AppsSettingsScreen.png" alt="Settings Add Enterprise Train" id="Settings Add Enterprise Train" >}}
 
 Select the checkbox to the left of the train name to add another train to the applications catalog.
 Train options:

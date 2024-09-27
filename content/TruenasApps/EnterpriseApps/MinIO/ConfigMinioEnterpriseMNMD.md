@@ -113,8 +113,6 @@ MinIO recommends using MNMD for enterprise-grade performance and scalability.
 
 Click **Enabled** under **Multi Mode (SNMD or MNMD) Configuration** to enable multi-mode and show the **Multi Mode (SNMD or MNMD)** and **Add** option.
 
-{{< include file="/static/includes/apps/MinIOEnterpriseMultiModeConfig.md" >}}
-
 ### User and Group Configuration
 
 {{< include file="/static/includes/apps/AppUserAndGroupConfig.md" >}}

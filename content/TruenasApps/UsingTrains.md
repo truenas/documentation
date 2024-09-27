@@ -26,17 +26,17 @@ TrueNAS uses outbound ports 80/443 to retrieve the TRUENAS catalog.
 
 ## Managing the Application Catalog
 Users can manage the catalog by changing the trains included in it.
-To add or remove a train, from the **Installed** application screen, click **Settings** then on **Train Settings** on the dropdown menu to open the **Train Settings** screen.
+To add or remove a train, from the **Installed** application screen, click **Configuration** then on **Settings** on the dropdown menu to open the **Settings** screen.
 You can also click **Manage Installed Apps** at the top right of the **Discover** screen to open the **Installed** screen.
 
 {{< trueimage src="/images/SCALE/Apps/AppsDiscoverScreen.png" alt="Applications Discover Screen" id="Applications Discover Screen" >}}
 
-Users can change the catalog trains and show apps in those trains on the **Train Settings** screen.
+Users can change the catalog trains and show apps in those trains on the **Settings** screen.
 After making a change, go to the **Discover** screen and click on **Refresh Catalog** to pull the catalog from the repository and refresh it in SCALE.
 
-{{< trueimage src="/images/SCALE/Apps/AppsTrainSettingsScreen.png" alt="Apps Train Settings Screen" id="Apps Train Settings Screen" >}}
+{{< trueimage src="/images/SCALE/Apps/AppsSettingsScreen.png" alt="Apps Train Settings Screen" id="Apps Train Settings Screen" >}}
 
-To remove a train from the catalog, select the checkbox for the train on the **Train Settings** screen to clear the checkbox, then click **Save**.
+To remove a train from the catalog, select the checkbox for the train on the **Settings** screen to clear the checkbox, then click **Save**.
 You must have one train selected.
 
 <!-- commenting out this section until we get confirmation of how to add a third-party catalog.
