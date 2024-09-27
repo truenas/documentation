@@ -278,7 +278,7 @@ The application information screen shows two widgets:
 * **Available Resources** that shows CPU and memory usage the app requires, the app pool, and available space in gigabits.
 * **Application Info** that includes the application version number, link to GitHub repository for the image, and date the image was last application updated.
 
-Some application might also include the **Run-As Content** and **Capabilities** widgets.
+Some applications might also include the **Run-As Content** and **Capabilities** widgets.
 
 The screen includes small screenshots of the application website that, when clicked, opens larger versions of the image.
 
@@ -287,7 +287,7 @@ The screen includes small screenshots of the application website that, when clic
 The bottom of the screen includes app widgets for similar applications found in the catalog.
 
 ### Application Install or Edit App Wizards
-The application **Install *Application*** wizard and **Edit *Application*** screens show the same settings, but setting you cannot edit are either not shown or are inactive to prevent edit attempts.
+The application **Install *Application*** wizard and **Edit *Application*** screens show the same settings, but un-editable settings are either not shown or are inactive to prevent edit attempts.
 The **Edit *Application*** screen opens populated with the current settings for the application.
 
 The install and edit wizard screens include a navigation panel on the right of the screen that lists and links to the setting sections.

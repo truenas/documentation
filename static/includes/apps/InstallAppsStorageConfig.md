@@ -1,7 +1,7 @@
 &NewLine;
 
 To allow TrueNAS to create the storage volume, leave **Type** set to **ixVolume (Dataset created automatically by the system)**.
-This is recommended for a test deplpoyment of an app but not for a full app deployment. 
+This is recommended for a test deployment of an app but not for a full app deployment. 
 
 To use an existing dataset, which is the recommended option, set **Type** to **Host Path (Path that already exists on the system)**.
 

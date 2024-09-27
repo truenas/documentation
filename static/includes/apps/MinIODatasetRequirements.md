@@ -15,4 +15,4 @@
   The MinIO enterprise app creates the **/export** mount point for you but you must add this in the stable MinIO app.
   Create the **/data** mount point in both the enterprise and stable versions of the MinIO app.
 
-If you want to also mount other storage volumes inside the container pod using the host path option create the dataset(s) before using the app installation wizard.
+If you want to also mount other storage volumes inside the container pod using the host path option, create the dataset(s) before using the app installation wizard.

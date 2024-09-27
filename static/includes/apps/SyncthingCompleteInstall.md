@@ -8,6 +8,6 @@ The **Installed** applications screen opens showing the application in the **Dep
 
 {{< trueimage src="/images/SCALE/Apps/SyncthingEnterpriseAppDeployed.png" alt="Syncthing Installed" id="Syncthing Installed" >}}
 
-Click **Web Portal** to open the MinIO sign-in screen.
+Click **Web Portal** to open the Syncthing admin interface.
 
 {{< trueimage src="/images/SCALE/Apps/SyncthingWebPortalForTrueNAS.png" alt="Syncthing Web Portal for TrueNAS" id="Syncthing Web Portal for TrueNaS" >}}

@@ -39,7 +39,7 @@ All apps in the **stable** train, some **community** train apps, and all apps in
 
   Host path add existing dataset(s) as the storage volumes. You must configure the datasets before beginning the app installation using the wizard.
 
-  {{< hint type="information" title="ix-apps Dataset" >}}
+  {{< hint type="note" title="ix-apps Dataset" >}}
   The **ix-apps** dataset is for internal use only.
 
   TrueNAS systems with applications deployed that upgrade from earlier releases to 24.10 continue to see the **ix-Applications** dataset on the pool chosen for applications to use.

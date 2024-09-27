@@ -1,6 +1,6 @@
 &NewLine;
 
-* Set a pool for applications to useI if not already assigned.
+* Set a pool for applications to use if not already assigned.
 
 * (Optional) Create a new TrueNAS user to serve as the administrator for the app.
   You can use the default user or add a new user.
