@@ -74,7 +74,7 @@ More details are available from [Software Releases](https://www.truenas.com/docs
 * Starting in 24.10, TrueNAS does not install a default Nvidia driver.
   This allows for driver updates in between TrueNAS release versions.
   
-  Users can enable driver installation from the **Apps** screen.
+  Users can enable driver installation from the **Installed** applications screen.
   Click **Configure** > **Settings** and select **Install NVIDIA Drivers**.
   This option is only available for users with a compatible Nvidia GPU and no drivers installed or for users who have previously enabled the setting.
 
