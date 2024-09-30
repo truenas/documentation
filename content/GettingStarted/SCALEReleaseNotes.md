@@ -195,11 +195,11 @@ Notable changes:
   RC.1 users can delete, edit the YAML file, and then redeploy custom applications to make changes.
   Custom applications deployed via the **Ix-app** deployment wizard can be edited in the TrueNAS UI.
 
-* Docker applications do not at present support IPv6 ([NAS-131333](https://ixsystems.atlassian.net/browse/NAS-131333)).
+* Docker applications do not support IPv6 at present ([NAS-131333](https://ixsystems.atlassian.net/browse/NAS-131333)).
 
 * A user reports errors restarting the Docker service on system reboot ([NAS-131328](https://ixsystems.atlassian.net/browse/NAS-131328)).
 
-* Applications with available updates display an option to view changelogs. These changelogs are at present not populated ([NAS-131297](https://ixsystems.atlassian.net/browse/NAS-131297)).
+* Applications with available updates display an option to view changelogs. These changelogs are not populated at present ([NAS-131297](https://ixsystems.atlassian.net/browse/NAS-131297)).
 
 * Application **Web UI** buttons, accessed from the **Application Info** widget, can default to a 0.0.0.0:*port* address after app install ([NAS-131308](https://ixsystems.atlassian.net/browse/NAS-131308)).
   Refresh the browser window, or manually access the port in the form *hostname or IP address*:*port*, to correct button function and access the app UI.
