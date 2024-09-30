@@ -66,7 +66,7 @@ More details are available from [Software Releases](https://www.truenas.com/docs
     Click **Custom App** to install an application using a Docker Compose YAML file.
     Note: applications installed using the **Custom App** button are not editable via the TrueNAS UI in 24.10-RC.1 (see [Known Issues](#2410-rc1-known-issues) below).
 
-    Select the **Ix-app** card from the applications list and click **Install** to deploy a docker image with a simple installation wizard.
+    Select the **Ix-app** application widget on the **Discover** screen, then click **Install** on the information screen to deploy a docker image with a simple installation wizard.
     Applications installed using this option can be edited in the TrueNAS UI.
 
     * Custom applications installed in 24.04 automatically migrate on upgrade to 24.10.
