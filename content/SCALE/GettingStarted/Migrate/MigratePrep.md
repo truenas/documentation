@@ -86,10 +86,9 @@ Enterprise customers are encouraged to contact Support for assistance with the p
    If there are issues after a clean install of SCALE from an <file>iso</file> file or you are not using DHCP for network and interface configuration, use the information from your CORE settings to configure your SCALE network settings and to reconfigure your static IPs or aliases.
       {{< include file="/static/includes/NetworkInstallRequirementsSCALE.md" >}}
 
-7. Migrate the deprecated S3 MinIO service (if in use). See [services deprecated in SCALE](#migrating-from-deprecated-services).
-   This is a lengthy process depending on the amount of data stored while using the S3 service.
-   Read and follow instructions in [Migrating MinIO Data from CORE to SCALE](https://www.truenas.com/docs/solutions/miniocoretoscale/)!
-   Make sure S3 MinIO data is backed up as a precaution. The migration process from the S3 service requires first [migrating to the MinIO plugin in TrueNAS CORE](https://www.truenas.com/docs/core/13.0/coretutorials/jailspluginsvms/plugins/minioplugin/#migrating-from-s3-service-to-minio-plugin), migrating from CORE to SCALE, then installing the SCALE MinIO app and importing S3 data.
+7. Offline the deprecated S3 MinIO service (if in use).
+   This might require a manual data backup and restore strategy.
+   Enterprise customers can contact iX Support to discuss migration and backup strategies.
 
 8. Back up any critical data.
 
@@ -143,22 +142,6 @@ When rsync is configured externally with SSH or using an rsync task in **Data Pr
 
 Install a replacement application such as **Rsync Daemon** using the CORE service settings from your notes.
 SCALE suggests other applications to consider other than the **Rsync Daemon** application.
-{{< /expand >}}
-
-{{< expand "Migrating from S3 MinIO" "v" >}}
-You must migrate your S3 service and data before you upgrade or migrate from CORE to SCALE!
-
-If you have the S3 service configured in CORE, you must first [migrate to the MinIO plugin](https://www.truenas.com/docs/core/13.0/coretutorials/jailspluginsvms/plugins/minioplugin/#migrating-from-s3-service-to-minio-plugin).
-After migrating from CORE to SCALE and then installing the [SCALE MinIO Enterprise app](https://www.truenas.com/docs/scale/scaletutorials/apps/enterpriseapps/minio/), you can import S3 data from the CORE plugin to the SCALE app.
-
-Review your S3 service settings.
-Take note of the credentials (**Access Key** and **Secret Key**), and data storage volume and host path.
-
-If a certificate other than the default **freenas_default** is used, take note.
-A certificate configured on CORE should migrate to SCALE, but as a precaution, record the certificate authority (CA) and certificate settings, especially any private and public keys the certificate uses.
-
-Follow the migration instructions provided in [Migrating MinIO Data from CORE to SCALE](https://www.truenas.com/docs/solutions/miniocoretoscale/).
-This is an involved and time-consuming process with specific requirements. The amount of data being migrated determines how long this process takes.
 {{< /expand >}}
 
 {{< expand "Migrating from TFTP Service" "v" >}}
