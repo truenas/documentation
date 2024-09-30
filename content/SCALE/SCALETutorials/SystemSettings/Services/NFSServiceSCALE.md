@@ -29,6 +29,7 @@ Select the IP address from the **Bind IP Addresses** dropdown list if you want t
 By default, TrueNAS dynamically calculates the number of threads the kernel NFS server uses. However, if you want to manually enter an optimal number of threads the kernel NFS server uses, clear **Calculate number of threads dynamically** and enter the number of threads you want in the **Specify number of threads manually** field.
 
 If using NFSv4, select **NFSv4** from **Enabled Protocols**. **NFSv3 ownership model for NFSv4** clears, allowing you to enable or leave it clear.
+Selecting **NFSv3 ownership model for NFSv4** deactivates the **Manage Group Server-side** option.
 
 If you want to force NFS shares to fail if the Kerberos ticket is unavailable, select **Require Kerberos for NFSv4**.
 

@@ -34,9 +34,9 @@ Select **Start Automatically** to activate the NFS service when TrueNAS boots.
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Bind IP Addresses** | Select IP addresses to listen to for NFS requests. Leave empty for NFS to listen to all available addresses. You must configure static IPs on the interface to appear on the dropdown list. |
+| **Bind IP Addresses** | Select IP addresses to listen to for NFS requests. Leave empty for NFS to listen to all available addresses. You must configure static IPs on the interface form them to appear on the dropdown list. |
 | **Calculate number of threads dynamically** | Automatically sets the number of threads used by the kernel NFS server. |
-| **Specify number of threads manually** | Displays after deselecting **Calculate number of threads dynamically**. Enter an optimal number of threads used by the kernel NFS server. |
+| **Specify number of threads manually** | Shows after deselecting **Calculate number of threads dynamically**. Enter an optimal number of threads used by the kernel NFS server. |
 {{< /truetable >}}
 
 ### NFSv4 Settings
@@ -45,7 +45,8 @@ Select **Start Automatically** to activate the NFS service when TrueNAS boots.
 | Setting | Description |
 |---------|-------------|
 | **Enabled Protocols** | Select NFSv3, NFSv4, or both. If NFSv4 is selected, **NFSv3 ownership model for NFSv4** clears, allowing you to select or leave it clear. |
-| **NFSv3 ownership model for NFSv4** | Becomes selectable after selecting **NFSv4**. Select when you need NFSv4 ACL support without requiring the client and the server to sync users and groups. |
+| **NFSv4 DNS Domain** | Select to use the value to override the default DNS domain name ofr NFSv4. Speicifies the domain idmapd.conf setting. |
+| **NFSv3 ownership model for NFSv4** | Becomes selectable after selecting **NFSv4**. Select when you need NFSv4 ACL support without requiring the client and the server to sync users and groups. Selecting this deactivates the **Manage Groups Server-side** option. |
 | **Require Kerberos for NFSv4** | Select to force NFS shares to fail if the Kerberos ticket is unavailable. |
 {{< /truetable >}}
 
