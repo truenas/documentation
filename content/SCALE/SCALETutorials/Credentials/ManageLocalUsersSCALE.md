@@ -87,6 +87,10 @@ When creating a user, the default home directory path is set to **/var/empty**.
 This directory is an immutable directory shared by service accounts and accounts that should not have a full home directory.
 If set to this path TrueNAS does not create a home directory for the user. You must change this to the path for the dataset created for home directories.
 
+To add a home directory, enter or browse to a path in **Home Directory**, then select **Create Home Directory**.
+Select **Read**, **Write**, and **Execute** for each role (**User**, **Group**, and **Other**) to set access control for the user home directory.
+Built-in users are read-only and can not modify these settings.
+
 {{< expand "Why did this change in TrueNAS 24.04 (Dragonfish) and later?" "v" >}}
 TrueNAS uses the `pam_mkhomdir` PAM module in the pam_open_session configuration file to automatically create user home directories if they do not exist.
 `pam_mkhomedir` returns `PAM_PERM_DENIED` if it fails to create a home directory for a user, which eventually turns into a pam_open_session() failure.
@@ -98,15 +102,10 @@ Starting in SCALE 24.04 (Dragonfish), the root filesystem of TrueNAS is read-onl
 This results in a permissions error if `pam_open_session()` is called by an application for a user account that has **Home Directory** set to **/nonexistent**.
 {{< /expand >}}
 
-To add a home directory, enter or browse to a path in **Home Directory**, then select **Create Home Directory**.
-
-{{< trueimage src="/images/SCALE/Credentials/AddUserHomeDirAuthSCALE.png" alt="Add User Home Directory and Authentication Settings" id="Add User Home Directory and Authentication Settings" >}}
-
-Select **Read**, **Write**, and **Execute** for each role (**User**, **Group**, and **Other**) to set access control for the user home directory.
-Built-in users are read-only and can not modify these settings.
-
 Assign a public SSH key to a user for key-based authentication by entering or pasting the public key into the **Authorized Keys** field.
 You can click **Choose File** under **Upload SSH Key** and browse to the location of an SSH key file.
+
+{{< trueimage src="/images/SCALE/Credentials/AddUserHomeDirAuth.png" alt="Add Authentication Settings" id="Add Authentication Settings" >}}
 
 {{< hint type=important >}}
 Do *not* paste the private key.
