@@ -48,8 +48,7 @@ When creating a user, you must:
 * Enter a **Username** or accept the generated user name.
 * Enter and enable a **Password**.
 * Specify or accept the default user ID (**UID**)
-* (Optional) Select the **Shell** the user has access to when they go to **System > Shell**.
-   Not all users can select a shell.
+* (Optional) Select the **Shell** the user has access to when they go to **System > Shell**. Not all users can select a shell.
 
 All other settings are optional.
 Click **Save** after configuring the user settings to add the user.
@@ -80,12 +79,13 @@ Leave the **Create New Primary Group** toggle enabled to allow TrueNAS to create
 To add the user to a different existing primary group, disable the **Create New Primary Group** toggle and search for a group in the **Primary Group** field.
 To add the user to more groups use the **Auxiliary Groups** dropdown list.
 
-Configure a home directory and permissions for the user. Some functions, such as replication tasks, require setting a home directory for the user configuring the task.
+[Configure a home directory](#adding-home-directories) and permissions for the user. Some functions, such as replication tasks, require setting a home directory for the user configuring the task.
 
 {{< trueimage src="/images/SCALE/Credentials/AddUserHomeDirPermSCALE.png" alt="Add User Home Directory" id="Add User Home Directory" >}}
 
-When creating a user, the home directory path is set to <file>/var/empty</file>, which does not create a home directory for the user.
+When creating a user, the default home directory path is set to **/var/empty**.
 This directory is an immutable directory shared by service accounts and accounts that should not have a full home directory.
+If set to this path TrueNAS does not create a home directory for the user. You must change this to the path for the dataset created for home directories.
 
 {{< expand "Why did this change in TrueNAS 24.04 (Dragonfish) and later?" "v" >}}
 TrueNAS uses the `pam_mkhomdir` PAM module in the pam_open_session configuration file to automatically create user home directories if they do not exist.
@@ -126,6 +126,18 @@ To disable all password-based functionality for the account, select **Lock User*
 Leave **SMB User** selected to allow using the account credentials to access data shared with [SMB]({{< relref "/SCALE/SCALEUIReference/Shares/_index.md" >}}).
 
 Click **Save**.
+
+### Adding Home Directories
+To add a home directory for a user account, first create a dataset to use for user home directories, for example a dataset named *homedirs*.
+
+Next, go to **Credentials > Users** and either click **Add** to add a new user and their home directory, or select an existing user, click **Edit**, and then add a home directory for the user.
+While on the user configuration screen:
+
+Enter the path to the new dataset for home directories in **Home Directory**. For example, change **/var/empty/** to the path to the new dataset */tank/homedirs*.
+
+Next select **Create Home Directory**, and select the level of permissions you want to apply. We recommend leaving the default selections, **Read/Write/Execute** selected for the user home directory.
+
+Click **Save**. TrueNAS creates the new home directory for the user.
 
 ## Editing User Accounts
 
