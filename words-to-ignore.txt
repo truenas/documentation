@@ -1994,6 +1994,7 @@ SystemSettingsGUISettingsSCALE
 UsingTrains
 AppsManageContainerImages
 AppsManageContainerImagesPullImage
+TrueCharts
 selectable
 AppUpdateWindow
 AppsDeleteAppDialog
