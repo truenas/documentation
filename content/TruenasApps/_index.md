@@ -212,7 +212,7 @@ Allocate GPU from the **Resources Configuration** section of the application ins
 
 {{< trueimage src="/images/SCALE/Apps/ResourcesConfiguration.png" alt="Resources Configuration" id="Resources Configuration" >}}
 
-Click the **GPU Resource** allocation row for the type of GPU (AMD, Intel, or Nvidia) and select the number of GPU devices the application is allowed access to.
+Click the **GPU Resource** allocation row for the type of GPU (AMD, Intel, or NVIDIA) and select the number of GPU devices the application is allowed access to.
 You cannot specify which available GPU device TrueNAS allocates to the application. Furthermore, assigned devices can change on reboot.
 
 {{< trueimage src="/images/SCALE/Apps/ResourcesConfigurationAllocateGPU.png" alt="Select GPU Allocation" id="Select GPU Allocation" >}}
@@ -235,18 +235,18 @@ If the GPU was previously isolated and/or assigned to a VM, a reboot could be re
 Restart the system then return to the **Resources Configuration** section of the application to see if expected devices are available.
 {{< /expand >}}
 
-## Installing Nvidia Drivers
-Beginning in TrueNAS 24.10, Nvidia drivers are no longer automatically installed. Users must instead manually install drivers from the TrueNAS UI.
+## Installing NVIDIA Drivers
+Beginning in TrueNAS 24.10, NVIDIA drivers are no longer automatically installed. Users must instead manually install drivers from the TrueNAS UI.
 
 1. If running TrueNAS version 24.10 or higher, go to **Apps > Installed** and locate the **Configuration** drop-down menu.
    
 2. Once you have selected the drop-down menu, click on the **Settings** option to open the **settings configuration panel.**
    
-3. Users with compatible GPUs now have an **Install Nvidia Drivers** checkbox available within the configuration panel.
+3. Users with compatible GPUs now have an **Install NVIDIA Drivers** checkbox available within the configuration panel.
    
-4. To complete installation, check the **Install Nvidia Drivers** checkbox, and click **Save.**
+4. To complete installation, check the **Install NVIDIA Drivers** checkbox, and click **Save.**
 
-{{< trueimage src="/images/SCALE/Apps/AppsInstallNvidiaDrivers.png" alt="Install Nvidia Drivers" id="Install Nvidia Drivers" >}}
+{{< trueimage src="/images/SCALE/Apps/AppsInstallNvidiaDrivers.png" alt="Install NVIDIA Drivers" id="Install NVIDIA Drivers" >}}
 
 
 ## Discover Screen Options
