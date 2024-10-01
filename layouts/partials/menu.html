@@ -3,7 +3,7 @@
   {{ partial "search-form" . }}
 
   <section class="gdoc-nav--main">
-    <h2>{{ i18n "nav_navigation" }}</h2>
+    <p>{{ i18n "nav_navigation" }}</p>
     {{ if .Site.Params.GeekdocMenuBundle }}
       {{ partial "menu-bundle" (dict "current" . "source" .Site.Data.menu.main.main) }}
     {{ else }}
