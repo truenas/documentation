@@ -148,7 +148,7 @@ Early releases are intended for testing and feedback purposes.
 Do not use early-release software for critical tasks.
 {{< /hint >}}
 
-**October 1, 2024**
+**October 2, 2024**
 
 iXsystems is pleased to release TrueNAS 24.10-RC.1!
 This release candidate version has software component updates and new features that are in the polishing phase as well as fixes for issues discovered in 24.10-BETA.1.
