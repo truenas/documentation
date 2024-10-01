@@ -47,7 +47,7 @@
             if (window.DocsBotAI.close) {
               window.DocsBotAI.close();  // Close the chatbot
               chatbotOpen = false;
-              
+
               // Change to book icon when closed
               iconElement.innerHTML = `
                 <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="book" class="svg-inline--fa fa-book" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" style="width: 20px; height: 20px;">
@@ -60,7 +60,7 @@
             if (window.DocsBotAI.open) {
               window.DocsBotAI.open();  // Open the chatbot
               chatbotOpen = true;
-              
+
               // Change to X icon when open
               iconElement.innerHTML = `
                 <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="xmark" class="svg-inline--fa fa-xmark" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" style="width: 20px; height: 20px;">
@@ -85,16 +85,21 @@
     options: {
       customCSS: `
       .docsbot-wrapper {
-        width: 600px;
-        max-width: 80% !important;
-        position: absolute; /* Position the widget absolutely */
-        left: 200px !important; /* Move the widget to the right of the button */
-        top: 280px !important; /* Align the top of the widget with the button */
-        margin-left: 10px; /* Add some space between the button and the widget */
+        width: 75%;
+        max-width: 750px;
+        position: fixed;
+        left: 35% !important;
+        top: 15% !important;
+        z-index: 1000 !important;
       }
       .floating-button {
         display: none !important;
       }
+      @media (max-width: 1200px) {
+        .docsbot-wrapper {
+          left: 15% !important;
+          top: 15% !important;
+        }
       `,
     }
   });
