@@ -83,7 +83,7 @@ The **Basic Options** settings display by default and also show in the **Advance
 | **Create Dataset** | Click to open the **Create Dataset** dialog. Enter a name to create a new dataset for the share. Click **Create** to add the dataset and populate the **Name** field on the **Add NFS** screen. |
 | **Description** | Enter any notes or reminders about the share. |
 | **Enabled** | Select to enable this NFS share. Clear the checkbox to disable this NFS share without deleting the configuration. |
-| **Add networks** | Click **Add** to display the **Authorized Networks** IP address and CIDR fields. Enter an allowed network IP and select the mask CIDR notation. Click **Add** for each network address and CIDR you want to define as an authorized network. Defining an authorized network restricts access to all other networks. Leave empty to allow all networks. |
+| **Networks** | Click **Add** to display the **Networks** IP address and CIDR fields. Enter an allowed network IP and select the mask CIDR notation. Click **Add** for each network address and CIDR you want to define as an authorized network. Defining an authorized network restricts access to all other networks. Leave empty to allow all networks. |
 | **Add hosts** | Click **Add** to display the **Authorized Hosts and IP addresses** field. Enter a host name or IP address to allow that system access to the NFS share. Click **Add** for each allowed system you want to define. Defining authorized systems restricts access to all other systems. Leave the field empty to allow all systems access to the share. |
 {{< /truetable >}}
 
