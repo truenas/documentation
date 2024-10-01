@@ -14,7 +14,8 @@ Creating a Network File System (NFS) share on TrueNAS makes a lot of data availa
 Depending on the share configuration, it can restrict users to read or write privileges.
 
 {{< hint type=note >}}
-NFS treats each dataset as its own file system. When creating the NFS share on the server, the specified dataset is the location that client accesses. If you choose a parent dataset as the NFS file share location, the client cannot access any nested or child datasets beneath the parent.
+NFS treats each dataset as its own file system. When creating the NFS share on the server, the specified dataset is the location that client accesses.
+If you choose a parent dataset as the NFS file share location, the client cannot access any nested or child datasets beneath the parent.
 
 If you need to create shares that include child datasets, SMB sharing is an option. Note that Windows NFS Client versions currently support only NFSv2 and NFSv3.
 {{< /hint >}}
@@ -30,7 +31,8 @@ If you need to create shares that include child datasets, SMB sharing is an opti
 {{< include file="/static/includes/ShareDatasetsNotPools.md" >}}
 You have the option to create the share and dataset at the same time from either the **Add Dataset** or **Add NFS** screens.
 
-If creating a dataset and share from the **Add Dataset** screen, we recommend creating a new dataset with the **Dataset Preset** set to **Generic** for the new NFS share. Or you can set it to **Multiprotocol** and select only the NFS share type.
+If creating a dataset and share from the **Add Dataset** screen, we recommend creating a new dataset with the **Dataset Preset** set to **Generic** for the new NFS share.
+Or you can set it to **Multiprotocol** and select only the NFS share type.
 {{< expand "Creating a Dataset Using Add Dataset" "v" >}}
 {{< include file="/static/includes/CreateDatasetSCALE.md" >}}
 {{< /expand >}}
@@ -77,7 +79,7 @@ Defining authorized systems restricts access to all other systems.
 Press the **X** to delete the field and allow all systems access to the share.
 
 ### Adjusting Access Permissions
-If you want to tune the NFS share access permissions or define authorized networks, click **Advanced Options**.
+To tune the NFS share access permissions or define authorized networks, click **Advanced Options**.
 
 {{< trueimage src="/images/SCALE/Shares/AddNFSAdvancedOptionsAccessSettings.png" alt="Advanced Options Access Settings" id="Advanced Options Access Settings" >}}
 
