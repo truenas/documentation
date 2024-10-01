@@ -76,12 +76,12 @@ More details are available from [Software Releases](https://www.truenas.com/docs
     Select the **Ix-app** application widget on the **Discover** screen, then click **Install** on the information screen to deploy a docker image with a simple installation wizard.
     Applications installed using this option can be edited in the TrueNAS UI.
 
-* Starting in 24.10, TrueNAS does not install a default Nvidia driver.
+* Starting in 24.10, TrueNAS does not install a default NVIDIA driver.
   This allows for driver updates in between TrueNAS release versions.
   
   Users can enable driver installation from the **Installed** applications screen.
   Click **Configure** > **Settings** and select **Install NVIDIA Drivers**.
-  This option is only available for users with a compatible Nvidia GPU and no drivers installed or for users who have previously enabled the setting.
+  This option is only available for users with a compatible NVIDIA GPU and no drivers installed or for users who have previously enabled the setting.
 
 * Support for the deprecated LDAP **Samba Schema** is removed in 24.10.
   Users with both LDAP and SMB shares configured should migrate legacy Samba domains to Active Directory before upgrading to 24.10.
