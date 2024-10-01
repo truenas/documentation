@@ -51,14 +51,21 @@ More details are available from [Software Releases](https://www.truenas.com/docs
   * All applications available from official trains in 24.04 are available to install in 24.10.
     Supported catalog applications automatically migrate to Docker deployments on upgrade from from 24.04 (Dragonfish) to Electric Eel.
   
-    Automatic app migration on upgrade from 24.04 is receiving active development.
-    To see which applications currently support automatic migration, see the [Parity Status with truenas/charts](https://github.com/truenas/apps?tab=readme-ov-file#parity-status-with-truenascharts) chart from the /truenas/apps/ github repository.
-    Applications that support migration display a green check (✅) in both **Added** and **Migrated** columns.
-    Check back regularly and note the update history of the [README.md](https://github.com/truenas/apps/blob/master/README.md) file for the latest developments.
+  * Automatic app migration on upgrade from 24.04 is generally at parity for all applications.
+    A few applications, such as home-assistant, might require manual migration steps, depending on the options enabled in 24.04.
+    See the [Parity Status with truenas/charts](https://github.com/truenas/apps?tab=readme-ov-file#parity-status-with-truenascharts) chart from the /truenas/apps/ github repository for more information.
 
-    Configuration data for applications that do not automatically migrate is retained in the ixapplications dataset.
-    You can re-initiate migration of previously-installed Kubernetes apps to Docker at any time after upgrading to Electric Eel, for example to migrate an app that was not yet available for automatic migration upon upgrade but is now available.
+    In the event of a migration failure, configuration data for applications that do not automatically migrate is retained in the ixapplications dataset.
+    You can re-initiate migration of previously-installed Kubernetes apps to Docker at any time after upgrading to Electric Eel.
     From a shell session enter {{< cli >}}midclt call -job k8s_to_docker.migrate *poolname*{{< /cli >}}, where *poolname* is the name of the applications pool.
+
+    * Custom applications installed using the TrueNAS UI in 24.04 automatically migrate on upgrade to 24.10.
+
+    * Applications from third-party catalogs, such as TrueCharts, do not support automatic migration to 24.10.
+      Migration of third-party applications generally requires manual data backup and redeployment.
+
+      Third-party catalogs are provided, maintained, and supported by individuals or organizations outside of iXsystems.
+      Refer to the catalog maintainer or the [TrueNAS Community forums](https://forums.truenas.com/) for migration support.
 
   * Custom application installs are enabled in 24.10-RC.1.
     There are two options to install a custom application from the **Applications > Discover** screen.
@@ -68,8 +75,6 @@ More details are available from [Software Releases](https://www.truenas.com/docs
 
     Select the **Ix-app** application widget on the **Discover** screen, then click **Install** on the information screen to deploy a docker image with a simple installation wizard.
     Applications installed using this option can be edited in the TrueNAS UI.
-
-    * Custom applications installed in 24.04 automatically migrate on upgrade to 24.10.
 
 * Starting in 24.10, TrueNAS does not install a default Nvidia driver.
   This allows for driver updates in between TrueNAS release versions.
