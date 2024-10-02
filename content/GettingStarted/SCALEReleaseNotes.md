@@ -79,11 +79,11 @@ More details are available from [Software Releases](https://www.truenas.com/docs
       Refer to the catalog maintainer or the [TrueNAS Community forums](https://forums.truenas.com/) for migration support.
 
   {{< hint type=important title="Migrating Apps with Host Path ACLs" >}}
-  Users with applications installed on 24.04 that using host path volume mounts and **ACL Entries** defined in the app configuration screen must go to the app edit screen and set the **Force Flag** checkbox under **ACL Options** prior to updating to 24.10. This ensures the app fully migrates and doesn't encounter issues when the mount point has existing data.
+  Users with applications installed on 24.04 using host path volume mounts and **ACL Entries** defined in the app configuration screen must go to the app edit screen and set the **Force Flag** checkbox under **ACL Options** before updating to 24.10. This ensures the app fully migrates and doesn't encounter issues when the mount point has existing data.
   {{< /hint >}}
 
 * Starting in 24.10, TrueNAS does not install a default NVIDIA driver.
-  This allows for driver updates in between TrueNAS release versions.
+  This allows for driver updates between TrueNAS release versions.
   
   Users can enable driver installation from the **Installed** applications screen.
   Click **Configure** > **Settings** and select **Install NVIDIA Drivers**.
