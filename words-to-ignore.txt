@@ -2015,3 +2015,4 @@ AppsInstallWizardSettings
 AppsSettingsScreen
 updatable
 lifecycles
+AppsInstallNvidiaDrivers
