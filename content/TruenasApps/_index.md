@@ -235,6 +235,21 @@ If the GPU was previously isolated and/or assigned to a VM, a reboot could be re
 Restart the system then return to the **Resources Configuration** section of the application to see if expected devices are available.
 {{< /expand >}}
 
+## Installing NVIDIA Drivers
+Beginning in TrueNAS 24.10, NVIDIA drivers are no longer automatically installed. Users must manually install drivers from the TrueNAS UI.
+
+If running TrueNAS 24.10 or higher:
+1. Go to **Apps > Installed** and click on the **Configuration**.
+   
+2. Click on **Settings** to open the **settings configuration panel.**
+   
+3. Select **Install NVIDIA Drivers**, which is available to users with compatible GPUs.
+
+{{< trueimage src="/images/SCALE/Apps/AppsInstallNvidiaDrivers.png" alt="Install NVIDIA Drivers" id="Install NVIDIA Drivers" >}}
+   
+4. Select **Install NVIDIA Drivers**, and click **Save.**
+
+
 ## Discover Screen Options
 The **Discover** screen shows application widgets based on the trains selected on the **Train Settings** screen.
 
