@@ -236,7 +236,7 @@ Restart the system then return to the **Resources Configuration** section of the
 {{< /expand >}}
 
 ## Installing NVIDIA Drivers
-Beginning in TrueNAS 24.10, NVIDIA drivers are no longer automatically installed. Users must instead manually install drivers from the TrueNAS UI.
+Beginning in TrueNAS 24.10, NVIDIA drivers are no longer automatically installed. Users must manually install drivers from the TrueNAS UI.
 
 1. If running TrueNAS version 24.10 or higher, go to **Apps > Installed** and locate the **Configuration** drop-down menu.
    
