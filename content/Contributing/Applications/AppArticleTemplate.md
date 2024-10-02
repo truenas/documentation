@@ -1,11 +1,17 @@
 ---
 title: "Community App Tutorial Template"
 description: "Provides an app tutorial template to customize for new community-maintained app tutorials."
-weight: 45
+weight: 10
 aliases:
+- /contributing/documentation/apparticletemplate/
 tags:
 - apps
 ---
+
+{{< hint type=note title="Work in Progress" >}}
+This partial template is awaiting further development.
+Check back for updates!
+{{< /hint >}}
 
 Use this template as a guideline when creating a new application tutorial.
 The shaded areas encompass standard article content but feel free to change by adding or removing sections to fit the app installation process.
