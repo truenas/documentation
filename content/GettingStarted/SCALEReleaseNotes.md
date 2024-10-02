@@ -50,6 +50,17 @@ More details are available from [Software Releases](https://www.truenas.com/docs
 
   * All applications available from official trains in 24.04 are available to install in 24.10.
     Supported catalog applications automatically migrate to Docker deployments on upgrade from from 24.04 (Dragonfish) to Electric Eel.
+
+  * Custom application installs are enabled in 24.10-RC.1.
+    There are two options to install a custom application from the **Applications > Discover** screen for the RC.1 release:
+
+    * Click **Custom App** to install an application using a Docker Compose YAML file.
+    Note: applications installed using the **Custom App** button are not editable via the TrueNAS UI in 24.10-RC.1 (see [Known Issues](#2410-rc1-known-issues) below).
+
+    * Select the **Ix-app** application widget on the **Discover** screen, then click **Install** on the information screen to deploy a docker image with a simple installation wizard.
+    Applications installed using this option can be edited in the TrueNAS UI.
+
+    Additional development for the 24.10.0 release version will simplify these options so that the **Custom App** button will open the install wizard and also contain a dropdown option to **Install via YAML**.
   
   * Automatic app migration on upgrade from 24.04 is generally at parity for all applications.
     A few applications, such as home-assistant, might require manual migration steps, depending on the options enabled in 24.04.
@@ -67,16 +78,9 @@ More details are available from [Software Releases](https://www.truenas.com/docs
       Third-party catalogs are provided, maintained, and supported by individuals or organizations outside of iXsystems.
       Refer to the catalog maintainer or the [TrueNAS Community forums](https://forums.truenas.com/) for migration support.
 
-  * Custom application installs are enabled in 24.10-RC.1.
-    There are two options to install a custom application from the **Applications > Discover** screen for the RC.1 release:
-
-    * Click **Custom App** to install an application using a Docker Compose YAML file.
-    Note: applications installed using the **Custom App** button are not editable via the TrueNAS UI in 24.10-RC.1 (see [Known Issues](#2410-rc1-known-issues) below).
-
-    * Select the **Ix-app** application widget on the **Discover** screen, then click **Install** on the information screen to deploy a docker image with a simple installation wizard.
-    Applications installed using this option can be edited in the TrueNAS UI.
-
-    Additional development for the 24.10.0 release version will simplify these options so that the **Custom App** button will open the install wizard and also contain a dropdown option to **Install via YAML**.
+  {{< hint type=important title="Migrating Apps with Host Path ACLs" >}}
+  Users with applications installed on 24.04 that using host path volume mounts and **ACL Entries** defined in the app configuration screen must go to the app edit screen and set the **Force Flag** checkbox under **ACL Options** prior to updating to 24.10. This ensures the app fully migrates and doesn't encounter issues when the mount point has existing data.
+  {{< /hint >}}
 
 * Starting in 24.10, TrueNAS does not install a default NVIDIA driver.
   This allows for driver updates in between TrueNAS release versions.
