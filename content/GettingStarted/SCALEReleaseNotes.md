@@ -68,13 +68,15 @@ More details are available from [Software Releases](https://www.truenas.com/docs
       Refer to the catalog maintainer or the [TrueNAS Community forums](https://forums.truenas.com/) for migration support.
 
   * Custom application installs are enabled in 24.10-RC.1.
-    There are two options to install a custom application from the **Applications > Discover** screen.
+    There are two options to install a custom application from the **Applications > Discover** screen for the RC.1 release:
 
-    Click **Custom App** to install an application using a Docker Compose YAML file.
+    * Click **Custom App** to install an application using a Docker Compose YAML file.
     Note: applications installed using the **Custom App** button are not editable via the TrueNAS UI in 24.10-RC.1 (see [Known Issues](#2410-rc1-known-issues) below).
 
-    Select the **Ix-app** application widget on the **Discover** screen, then click **Install** on the information screen to deploy a docker image with a simple installation wizard.
+    * Select the **Ix-app** application widget on the **Discover** screen, then click **Install** on the information screen to deploy a docker image with a simple installation wizard.
     Applications installed using this option can be edited in the TrueNAS UI.
+
+    Additional development for the 24.10.0 release version will simplify these options so that the **Custom App** button will open the install wizard and also contain a dropdown option to **Install via YAML**.
 
 * Starting in 24.10, TrueNAS does not install a default NVIDIA driver.
   This allows for driver updates in between TrueNAS release versions.
