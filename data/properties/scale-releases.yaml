@@ -22,26 +22,20 @@ majorVersions:
         link: "https://www.truenas.com/docs/scale/24.04/gettingstarted/scalereleasenotes/#240422-changelog"
         releaseDate: "2024-09-17"
         latest: true
-        
   - lifecycle: "Next"
     name: "TrueNAS SCALE 24.10 - Electric Eel"
     releaseName: "Electric Eel"
     releases:
-      - name: "24.10-BETA.1"
+      - name: "24.10-RC.1"
         type: "Early"
-        link: "https://www.truenas.com/docs/scale/24.10/gettingstarted/scalereleasenotes/#2410-beta1-changelog"
-        releaseDate: "2024-08-29"
+        link: "https://www.truenas.com/docs/scale/24.10/gettingstarted/scalereleasenotes/#2410-rc1-changelog"
+        releaseDate: "2024-10-02"
         latest: true
       - name: "24.10 Nightlies"
         type: "Experimental"
         link: "https://www.truenas.com/docs/scale/24.10/gettingstarted/scalereleasenotes/"
         releaseDate: "2024-01-23"
         latest: True
-      - name: "24.10-RC.1"
-        type: "Early"
-        link: ""
-        releaseDate: "2024-10-01"
-        latest: false
       - name: "24.10.0"
         type: "Stable"
         link: ""
