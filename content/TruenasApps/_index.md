@@ -244,10 +244,10 @@ If running TrueNAS 24.10 or higher:
 2. Click on **Settings** to open the **settings configuration panel.**
    
 3. Select **Install NVIDIA Drivers**, which is available to users with compatible GPUs.
-   
-4. Select **Install NVIDIA Drivers**, and click **Save.**
 
 {{< trueimage src="/images/SCALE/Apps/AppsInstallNvidiaDrivers.png" alt="Install NVIDIA Drivers" id="Install NVIDIA Drivers" >}}
+   
+4. Select **Install NVIDIA Drivers**, and click **Save.**
 
 
 ## Discover Screen Options
