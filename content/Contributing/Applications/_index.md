@@ -7,6 +7,8 @@ tags:
 - issues
 - support
 - apps
+aliases:
+- /contributing/documentation/appcontributions/
 ---
 
 
@@ -67,7 +69,7 @@ When submitting new tutorials or requesting changes to existing TrueNAS Document
      
     If submitting a new tutorial, add the new tutorial to the **CommunityApps** folder in your local copy of the repository.
     
-    Use the text editor of your choice to make changes to the [application tutorial template]({{< relref "/Contributing/Documentation/AppArticleTemplate.md" >}}) as the basis for your new article.
+    Use the text editor of your choice to make changes to the [application tutorial template]({{< relref "/Contributing/Applications/AppArticleTemplate.md" >}}) as the basis for your new article.
     Article content is written in Commonmark Markdown.
     
     (Optional) Save images in the **/documentation/static/scale/apps** folder of your local branch.
