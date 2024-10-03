@@ -162,7 +162,7 @@ Do not use early release software for critical tasks.
 **October 4, 2024**
 
 iXsystems is pleased to release TrueNAS 24.10-RC.2!
-This is a small hotfix to correct applications-related issues discovered after the release of 24.10-RC.1.
+This is a small hot fix to correct applications-related issues discovered after the release of 24.10-RC.1.
 
 Notable changes:
 
