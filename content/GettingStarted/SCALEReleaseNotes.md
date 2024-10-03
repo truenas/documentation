@@ -174,7 +174,8 @@ Notable changes:
 
 * Prevent incorrect auto-populated portal group IDs on iSCSI target ([NAS-130656](https://ixsystems.atlassian.net/browse/NAS-130656)).
 
-* Add alert for every successful root, admin, or truenas_admin, login to the TrueNAS web UI ([NAS-127040](https://ixsystems.atlassian.net/browse/NAS-127040)).
+* All administrators receive a daily alert for all login failures by any account to the TrueNAS UI or API ([NAS-127040](https://ixsystems.atlassian.net/browse/NAS-127040)).
+  Enterprise administrators also receive a daily alert for all successful logins by default administrator accounts (root / admin / truenas_admin).
 
 * Prevent systemd journal from producing duplicate audit entries on upgrade ([NAS-131125](https://ixsystems.atlassian.net/browse/NAS-131125)).
 
@@ -187,6 +188,7 @@ Notable changes:
 * UI support for installing NVIDIA GPU drivers is added ([NAS-130588](https://ixsystems.atlassian.net/browse/NAS-130588)).
 
 * Improve handling for file renaming in case insensitive filesystems ([NAS-130743](https://ixsystems.atlassian.net/browse/NAS-130743)).
+  This prevents name collision errors some MacOS users experience when trying to rename a file to change its case on a case-insensitive filesystem.
 
 * Prevent applications from running startup processes before acquiring the default interface ([NAS-130863](https://ixsystems.atlassian.net/browse/NAS-130863)).
 
@@ -196,6 +198,8 @@ Notable changes:
 {{< include file="/static/includes/JiraFilterInstructions.md" >}}
 
 ### 24.10-RC.1 Known Issues
+
+* Users with 15 or more applications installed can experience a network exhaustion error on upgrade to 24.10-RC.1, resulting in the apps service failing to initialize ([NAS-131485](https://ixsystems.atlassian.net/browse/NAS-131485)).
 
 * GPU passthrough issues can occur due to the UI passing malformed data to `system.advanced.update_gpu_pci_ids` resulting in an error dialog on VM creation ([NAS-130983](https://ixsystems.atlassian.net/browse/NAS-130983)).
   Users who encounter this issue can simply close the dialog.
