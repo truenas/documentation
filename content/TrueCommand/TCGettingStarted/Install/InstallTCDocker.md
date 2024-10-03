@@ -118,4 +118,8 @@ Database migration will be performed automatically if updating from 2.3.0, 2.3.1
 
 ## Obtaining a License
 
-TrueCommand is limited to managing a total of 50 disks across systems. A 60-day unlimited trial license can be downloaded from <a>https://portal.ixsystems.com</a>, provided a TrueCommand container is already running to supply the system ID, available on the Administration page. One-year licenses can be additional puchased from the Portal from 100 to 1000 disks. Other terms and disk counts are by request at <a>https://portal.ixsystems.com/portal/login/index.php?type=quote#email-request</a>. Licenses may be sent by support if purchased outside the portal, as long as a TrueCommand container has been created to provide a system ID.
+TrueCommand is limited to managing a total of 50 disks across systems.
+You can download a 60-day unlimited trial license from <a>https://portal.ixsystems.com</a>, provided a TrueCommand container is already running to supply the system ID, available on the **Administration** page.
+Purchase additional one-year licenses from the Portal from 100 to 1000 disks.
+Other terms and disk counts are by request at <a>https://portal.ixsystems.com/portal/login/index.php?type=quote#email-request</a>.
+Licenses can be sent by support if purchased outside the portal, as long as a TrueCommand container is created to provide a system ID.
