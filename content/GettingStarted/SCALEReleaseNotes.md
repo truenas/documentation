@@ -152,6 +152,24 @@ Any new feature flags introduced since the previous OpenZFS version that was int
 
 For more details on feature flags, see [OpenZFS Feature Flags](https://openzfs.github.io/openzfs-docs/Basic%20Concepts/Feature%20Flags.html) and [OpenZFS zpool-feature.7](https://openzfs.github.io/openzfs-docs/man/7/zpool-features.7.html).
 
+## 24.10-RC.2 Changelog
+
+{{< hint type=warning title="Early Release Software" >}}
+Early releases are intended for testing and feedback purposes.
+Do not use early release software for critical tasks.
+{{< /hint >}}
+
+**October 4, 2024**
+
+iXsystems is pleased to release TrueNAS 24.10-RC.2!
+This is a small hotfix to correct applications-related issues discovered after the release of 24.10-RC.1.
+
+Notable changes:
+
+* Revised Docker networking logic to prevent users with 15 or more applications installed encountering network exhaustion, which resulted in the apps service failing to initialize ([NAS-131485](https://ixsystems.atlassian.net/browse/NAS-131485)).
+
+Please use the 24.10-RC.1 Jira filter links below to see the full changelog and known issues related to the 24.10 release candidates.
+
 ## 24.10-RC.1 Changelog
 
 {{< hint type=warning title="Early Release Software" >}}
