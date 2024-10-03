@@ -41,7 +41,10 @@ After creating the new directory, fetch and run the TrueCommand image.
 
 Open a terminal and enter {{< cli >}}docker run --detach --name <i>container name, optional</i> -v "<i>hostdir</i>:/data" -p <i>port</i>:80 <i>sslport</i>:443 ghcr.io/ixsystems/truecommand:<i>v3.0.2</i>{{< /cli >}}.
 
-Where *hostdir* is a directory on the host machine for Docker container data, *port* is the TrueCommand HTTP web interface port, and *sslport* is the HTTPS port for secure web interface access. These po
+Where:
+* *hostdir* is a directory on the host machine for Docker container data
+* *port* is the TrueCommand HTTP web interface port
+* *sslport* is the HTTPS port for secure web interface access.
 
 To install the container with an earlier TrueCommand release, replace *v3.0.2* with the desired TrueCommand version tag.
 For example:
@@ -51,7 +54,8 @@ To preview the latest features in a non-production experimental environment, ins
 `docker run --detach -v "/DockerDir:/data" -p 9004:80 -p 9005:443 ghcr.io/ixsystems/truecommand:latest`
 
 {{< hint type=important >}}
-If the image is unavailable, ensure `ghcr.io` is not blocked by an internal firewall. Alternatively the image can be pulled from docker hub at <code>ixsystems/truecommand:<i>3.0.2</i></code>
+If the image is unavailable, ensure `ghcr.io` is not blocked by an internal firewall.
+Alternatively, you can pull the image from docker hub at <code>ixsystems/truecommand:<i>3.0.2</i></code>
 {{< /hint >}}
 
 Although Docker containers have several run methods, TrueCommand requires a bind mount or docker volume manage to keep the database consistent between runs.
