@@ -243,4 +243,20 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 <!-- End sticky main_navbar -->
+<!-- Add URI Checker for DocsBot Visibility -->
+<script>
+    // Function to get the value of a query parameter by name
+    function getSearchQueryParam(param) {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get(param);
+    }
 
+    // Event listener for window load
+    window.addEventListener('load', function() {
+        const paramValue = getSearchQueryParam('showsearch');
+        if (paramValue) {
+            window.DocsBotAI.open();
+        }
+    });
+</script>
+<!-- End URI Checker for DocsBot Visibility -->
