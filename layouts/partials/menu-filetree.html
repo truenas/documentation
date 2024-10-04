@@ -117,7 +117,9 @@
     window.addEventListener('load', function() {
         const paramValue = getSearchQueryParam('showsearch');
         if (paramValue) {
-            window.DocsBotAI.open();
+            const aibutton = document.getElementById("chatbot-button-icon");         
+            // Trigger a click event on the button
+            aibutton.click();
         }
     });
 </script>
