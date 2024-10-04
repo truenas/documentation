@@ -1,6 +1,6 @@
 ---
 title: "Stable Apps"
-description: "Notes about official TrueNAS/chart applications and individual tutorials for these applications."
+description: "Notes about TrueNAS stable train applications and individual tutorials for these applications."
 weight: 25
 aliases:
  - /scale/scaletutorials/apps/chartapps/
@@ -13,6 +13,9 @@ keywords:
 - software storage solutions
 ---
 
+
+{{< include file="/static/includes/ProposeArticleChange.md" >}}
+
 The **stable** train populates the application catalog with the official applications.
 The **Discover** screen shows the **stable** train applications by default.
 
@@ -23,7 +26,9 @@ The tutorials in this section are for the commonly-used **stable** train catalog
 
 For information on adding to or changing the train for the apps catalog, see [Managing App Trains]({{< relref "UsingTrains.md" >}}).
 
-{{< include file="/static/includes/ProposeArticleChange.md" >}}
+## Understanding App Install Wizard Settings
+
+{{< include file="/static/includesapps/AppsInstallWizardSettings.md" >}}
 
 <div class="noprint">
 

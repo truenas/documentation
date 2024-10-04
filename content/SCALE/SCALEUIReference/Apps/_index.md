@@ -39,13 +39,13 @@ The **Installed** applications screen displays **Check Available Apps** before y
 
 **Check Available Apps** or **Discover Apps** opens the **[Discover](#using-the-discover-applications-screen)** screen.
 
-## Settings Menu
-**Settings** on the **Installed** applications header displays global options that apply to all applications. 
+## Configuration Menu
+**Configuration** on the **Installed** applications header displays global settings that apply to all applications. 
 
 * **Choose Pool** opens the **[Choose a pool for Apps](#choose-a-pool-for-apps-dialog)** dialog.
 * **Unset Pool** shows after setting a pool for applications to use. It opens the **Unset Pool** dialog.
 * **Manage Container Images** opens the [**Manage Container Images**](#manage-container-images) screen.
-* **[Train Settings](#train-settings)** opens the **Train Settings** screen. Use to add or remove other trains to the **Stable** catalog of applications.
+* **[Settings](#settings)** opens the **Settings** screen with four train options. Use to add or remove other trains to the one catalog of applications.
 
 {{< trueimage src="/images/SCALE/Apps/AppsInstalledAppsSettingOptions.png" alt="Installed Applications Screen Settings" id="Installed Applications Screen Settings" >}}
 
@@ -87,20 +87,23 @@ Entering characters in the **<span class="iconify" data-icon="mdi:magnify"></spa
 | **Password** | User account password to access a private Docker image. |
 {{< /truetable >}} 
 
-### Train Settings
-**Train Settings** opens the **Train Settings** screen.
+### Settings
+**Settings** opens the **Settings** screen showing the four application train options.
 
-{{< trueimage src="/images/SCALE/Apps/AppsTrainSettingsScreen.png" alt="Train Settings Add Enterprise Train" id="Train Settings Add Enterprise Train" >}}
+{{< trueimage src="/images/SCALE/Apps/AppsTrainSettingsScreen.png" alt="Settings Add Enterprise Train" id="Settings Add Enterprise Train" >}}
 
 Select the checkbox to the left of the train name to add another train to the applications catalog.
 Train options:
 * **stable** the default train for official apps
 * **enterprise** for apps verified and simplified for Enterprise users, default for enterprise-licensed systems.
 * **community** for community proposed and maintained apps
+* **test** for application in development but not yet released in one of the other three trains.
+
 You must specify at least one train.
 
 ## Applications Table
-The **Applications** table on the **Installed** screen populates a row for each installed app that shows the current state, and the option to stop the app. Stopped apps show the option to start the app.
+The **Applications** table on the **Installed** screen populates a row for each installed app that shows the current state, and the option to stop the app.
+Stopped apps show the option to start the app.
 
 After installing an application, the **Installed** screen populates the **Applications** table.
 When returning to the **Installed** screen, the first application on the list is selected by default.
@@ -108,19 +111,31 @@ Each application row shows the name, status, and update information for the appl
 
 {{< trueimage src="/images/SCALE/Apps/InstalledAppsScreenWithApps.png" alt="Installed Applications Status" id="Installed Applications Status" >}}
 
+Click on **Application**, **Status**, or **Update** on the table heading row to sort the table in ascending or descending order.
+
 A yellow badge shows when an update is available. See [Update Apps](#update-apps) for more information on updating the application.
 
 **Search** above the **Applications** table allows entering the name of an app to locate an installed application.
 
 Selecting the checkbox to the left of **Applications** selects all installed apps and shows the [**Bulk Actions**](#bulk-actions) dropdown list.
-Selecting the checkbox on an app row also shows the **Bulk Actions)** dropdown list.
 
 ### Bulk Actions
 The **Bulk Action** dropdown list allows you to apply actions to one or more applications installed and running on your system.
+
+{{< trueimage src="/images/SCALE/Apps/InstalledAppsBulkActions.png" alt="Installed Applications Bulk Actions" id="Installed Applications Bulk Actions" >}}
+
 Select the checkbox to the left of **Applications** to show the **Bulk Actions** dropdown menu.
 Menu options are **Start All Selected**, **Stop All Selected**, **Upgrade All Selected**, and **Delete All Selected**.
 
-{{< trueimage src="/images/SCALE/Apps/InstalledAppsBulkActions.png" alt="Installed Applications Bulk Actions" id="Installed Applications Bulk Actions" >}}
+Performing a bulk action update opens a dialog listing the apps with available updates.
+
+{{< trueimage src="/images/SCALE/Apps/InstalledAppsBulkActionUpgradeDialog.png" alt="App Bulk Update Dialog" id="App Bulk Update Dialog" >}}
+
+Select the radio button to the left of a listed application to deselect or reselect an application to upgrade.
+
+Click the expand icon for listed app to show the **Version** dropdown and **Changelog** for the selected version.
+
+Upgrade begins updating the applications one at a time. Apps status changes to STOPPED before it is updated, and then returns to RUNNING after the upgrade completes.
 
 ## Application Widgets
 Installed application have a set of widgets on the **Installed** screen.
@@ -129,14 +144,14 @@ Information in the widgets change based on the app row selected in the **Applica
 
 ### Application Info Widget
 The **Application Info** widget shows the name, version number, date last updated, source link for the application, developer, catalog, and train name.
-It includes the **Edit**, **Delete**, and **Web Portal** buttons for the application.
+It includes the **Edit**, **Delete**, and **Web UI** buttons for the application.
 If an update is available, it also shows the **Update** button.
 
-{{< trueimage src="/images/SCALE/Apps/InstalledAppScreenApplicationInfoWidget.png" alt="Installed Application Info Widget" id="Installed Application Info Widget" >}}
+{{< trueimage src="/images/SCALE/Apps/ApplicationInfoWidget.png" alt="Application Info Widget" id="Application Info Widget" >}}
 
-**Web Portal** opens the application login or sign-up web page.
+**Web UI** opens the application login or sign-up web page.
 
-**[Delete](#delete-apps)** opens the **Delete** dialog. Deletes the application deployment but does not remove it from the catalog or train in TrueNAS SCALE.
+**[Delete](#delete-apps)** opens the **Delete** dialog. Deletes the application deployment but does not remove it from the catalog or train in TrueNAS.
 
 **[Edit](#install-or-edit-app-wizards)** opens an **Edit *Application*** configuration screen populated with editable settings also found on the install wizard screen for the application.
 
@@ -151,7 +166,7 @@ The **Delete** dialog asks for confirmation to delete the selected application.
 
 #### Update Apps
 **Update** shows on the **Application Info** widget after clicking **Update All** on the **Installed** applications header.
-Both only show if TrueNAS SCALE detects an available update for an application.
+Both only show if TrueNAS detects an available update for an application.
 The application widget on the **Discover** screen also displays an update badge.
 
 **Update** opens an upgrade window for the application that includes the **Images (to be updated)** and **Changelog** options.
@@ -207,18 +222,20 @@ The **Notes** widget shows information about the apps, location where TrueNAS Do
 
 {{< trueimage src="/images/SCALE/Apps/AppsNotesWidget.png" alt="Apps Notes Widget" id="Apps Notes Widget" >}}
 
-Click **View More** to show all notes, and **Collapse** to return the **Notes** widget to the default view length.
-
-### Application Metadata Widget
-The **Application Metadata** widget shows application capabilities unique to the application, and **Run As Content** showing the user and group IDs, the default user and group name, and brief description for the application. 
 **View More** expands the widget to show more information on application settings.
 **Collapse** hides the extra information.
 
+### Application Metadata Widget
+The **Application Metadata** widget shows application capabilities unique to the application, and **Run As Content** showing the user and group IDs, the default user and group name, and brief description for the application.
+
 {{< trueimage src="/images/SCALE/Apps/ApplicationMetadataWidget.png" alt="Application Metadata Widget" id="Application Metadata Widget" >}}
+
+**View More** expands the widget to show more information on application settings.
+**Collapse** hides the extra information.
 
 ## Discover Apps Screen
 The **Discover** screen displays application widgets for the official TrueNAS **stable** train by default.
-Users can add the **community** and **enterprise** train applications on the **[Train Settings](#train-settings-screen)** screen.
+Users can add the **community** and **enterprise**, or **test** train applications on the **[Settings](#settings-screen)** screen.
 
 {{< trueimage src="/images/SCALE/Apps/AppsDiscoverScreen.png" alt="Applications Discover Screen" id="Applications Discover Screen" >}}
 
@@ -252,25 +269,26 @@ See [Install Custom App Screens]({{< relref "InstallCustomAppScreens.md" >}}) fo
 
 ## Application Information Screens
 Each application widget on the **Discover** screen opens a information screen with details about that application, a few screenshot of web UI for the application, and the **Install** button.
-Application information shows the version, GitHub repository link for the image, and date the image was last updated.
+Application information shows the app version, GitHub repository link for the image, and date the image was last updated, keywords, the TrueNAS app train, and the app homepage location.
 
-{{< trueimage src="/images/SCALE/Apps/MinIOChartsAppInfoScreen.png" alt="Application Information Screen Example" id="Application Information Screen Example" >}}
+{{< trueimage src="/images/SCALE/Apps/CollaboraInfoScreen.png" alt="Application Information Screen Example" id="Application Information Screen Example" >}}
 
 The application information screen shows two widgets:
 
 * **Available Resources** that shows CPU and memory usage the app requires, the app pool, and available space in gigabits.
 * **Application Info** that includes the application version number, link to GitHub repository for the image, and date the image was last application updated.
 
-The screen includes small screenshots of the application website that when clicked open larger versions of the image.
+Some applications might also include the **Run-As Content** and **Capabilities** widgets.
+
+The screen includes small screenshots of the application website that, when clicked, opens larger versions of the image.
 
 **Install** opens the installation wizard for the application.
 
-The bottom of the screen includes widgets for similar applications found in the catalog.
+The bottom of the screen includes app widgets for similar applications found in the catalog.
 
 ### Application Install or Edit App Wizards
-The application **Install *Application*** wizard and **Edit *Application*** screens show the same settings.
+The application **Install *Application*** wizard and **Edit *Application*** screens show the same settings, but un-editable settings are either not shown or are inactive to prevent edit attempts.
 The **Edit *Application*** screen opens populated with the current settings for the application.
-Settings greyed out are cannot be edited.
 
 The install and edit wizard screens include a navigation panel on the right of the screen that lists and links to the setting sections.
 A red triangle with an exclamation point marks the sections with the required settings.
@@ -279,7 +297,7 @@ You can enter a new setting in fields that include a preprogrammed default.
 
 {{< trueimage src="/images/SCALE/Apps/AppsInstallWizardSectionTOC.png" alt="App Installation Wizard ToC" id="App Installation Wizard ToC" >}}
 
-{{< include file="/static/includes/AppsInstallWizardSettings.md" >}}
+{{< include file="/static/includes/apps/AppsInstallWizardSettings.md" >}}
 
 <div class="noprint">
 
