@@ -113,8 +113,8 @@
         return urlParams.get(param);
     }
 
-    // Event listener for window load
-    window.addEventListener('load', function() {
+    // Event listener after DocsBot Init
+    window.DocsBotAI.then(function() {
         const paramValue = getSearchQueryParam('showsearch');
         if (paramValue) {
             const aibutton = document.getElementById("chatbot-button-icon");         
