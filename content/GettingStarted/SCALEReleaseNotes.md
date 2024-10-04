@@ -234,7 +234,7 @@ Notable changes:
 
 * Applications with available updates display an option to view changelogs. These changelogs are not populated at present ([NAS-131297](https://ixsystems.atlassian.net/browse/NAS-131297)).
 
-* Application **Web UI** buttons, accessed from the **Application Info** widget, can default to a 0.0.0.0:*port* address after app install ([NAS-131308](https://ixsystems.atlassian.net/browse/NAS-131308)).
+* Application **Web UI** buttons, accessed from the **Application Info** widget, can default to a 0.0.0.0:*port* address after app install or restart ([NAS-131308](https://ixsystems.atlassian.net/browse/NAS-131308)).
   Refresh the browser window, or manually access the port in the form *hostname or IP address*:*port*, to correct button function and access the app UI.
 
 * The SMB Share **Purpose** presets on the **Add SMB** screen do not adjust advanced options when set ([NAS-131374](https://ixsystems.atlassian.net/browse/NAS-131374)).
