@@ -217,7 +217,7 @@ Notable changes:
 
 ### 24.10-RC.1 Known Issues
 
-* Nvidia GPU transcoding is not functioning with the Plex application [NAS-131591](https://ixsystems.atlassian.net/browse/NAS-131591).
+* Nvidia GPU transcoding is not functioning with the Plex application ([NAS-131591](https://ixsystems.atlassian.net/browse/NAS-131591)).
 
 * Mariadb-based applications require [additional steps to successfully migrate into 24.10](https://github.com/truenas/apps/issues/592#issuecomment-2391455422).
   
