@@ -28,57 +28,19 @@ Users can configure AD services on Windows or Unix-like operating systems using 
 ### Preparing to Configure AD in TrueNAS
 Before configuring Active Directory (AD) in TrueNAs:
 
-you must know the AD controller domain  name and the AD administration account credentials.
-You also need to know the hostname assigned to the TrueNAS system.
+You need to know the hostname assigned to the TrueNAS system. Default value is **truenas**.
 
-* Obtain the AD admin account name and password.  
+The **Domain Account Name** default is **Administrator**, or enter a name for TrueNAS to generate as the computer account upon domain join.
+Enter the password for this account.
 
-* [Verify name resolution](#verifying-name-resolution).
-  Go to **Network > Global Network Settings** to verify your TrueNAS network DNS name servers are configured to access the target domain controller you plan to add on the **Active Directory** screen.
+* Verify name resolution.
+  Go to **Network > Global Network Settings** to verify your TrueNAS network DNS name servers are configured with the target domain controller address that you plan to add on the **Active Directory** screen.
 
 * Change the default hostname of the system from **truenas** to the name assigned to the TrueNAS system.
 
 * [Set time synchronization](#setting-time-synchronization)
 
 After taking these actions, you can [connect to the Active Directory domain](#connecting-to-the-active-directory-domain).
-
-### Verifying Name Resolution
-<!-- Revisit **Shell** guidance as part of rework task -->
-{{< hint type="info" >}}
-The TrueNAS administrator account must have access to the Linux shell to perform this function.
-
-Go to **Credentials > Users**, locate the administrator account, click **Edit** and scroll down to the **Shell** setting.
-If not set to a shell option, select **TrueNAS Console**, and click **Save**.
-This opens the TrueNAS **Shell** screen showing the Console Setup menu. 
-
-Return to the **Shell** screen and enter the option to open the Linux shell and press <kbd>Enter</kbd>.
-{{< /hint >}}
-
-To confirm that name resolution is functioning, open the TrueNAS **Shell** and issue a `ping` command and then a command to check network SRV records and verify DNS resolution.
-
-To use `dig` to verify name resolution and return DNS information:
-
-1. Go to **System > Shell**, access the Linux shell, then type `dig` to check the connection to the AD domain controller. 
-   The domain controller manages or restricts access to domain resources by authenticating user identity from one domain to the other through login credentials, and it prevents unauthorized access to these resources. The domain controller applies security policies to request-for-access domain resources.
-
-   {{< trueimage src="/images/SCALE/CLI/DigCommandOutput.png" alt="Dig Command Output" id="Dig Command Output" >}}
-
-   When TrueNAS sends and receives packets without loss, the connection is verified.
-
-2. Press <kbd>Ctrl + C</kbd> to cancel the `ping`.
-
-{{< expand "The ping failed!" "v" >}}
-If the ping fails:
-
-1. Go to **Network** and click **Settings** in the **Global Configuration** window. 
-2. Update the **DNS Servers** and **Default Gateway** settings to the connection to your Active Directory Domain Controller. 
-   Use more than one **Nameserver** for the AD domain controllers so DNS queries for requisite SRV records can succeed. 
-   Using more than one name server helps maintain the AD connection whenever a domain controller becomes unavailable.
-{{< /expand >}}
-
-3. Check network SRV records and verify DNS resolution. Enter command:
-
-   `host -t srv <_ldap._tcp.domainname.com>` where <_ldap._tcp.domainname.com> is the domain name for the AD domain controller.
 
 ### Setting Time Synchronization
 Active Directory relies on the time-sensitive [Kerberos](https://tools.ietf.org/html/rfc1510) protocol.
@@ -102,11 +64,12 @@ Or
 
 ### Connecting to the Active Directory Domain
 
-To connectTrueNAS to Active Directory:
+To connect TrueNAS to Active Directory:
 
 1. Go to **Credentials > Directory Services** click **Configure Active Directory** to open the **Active Directory** configuration screen.
 
-2. Enter the domain name for the AD in  **Domain Name** and the account credentials in **Domain Account Name** and **Domain Account Password**.
+2. Enter the domain name for the AD in **Domain Name** and the bindname and bindpw account credentials in **Domain Account Name** and **Domain Account Password**.
+   Default **Domain Account Name** created for TrueNAs is **Administrator**.
 
 3. Enter the TrueNAS hostname in **NetBIOS Name**. The default is **TRUENAS**.
    Enter the TrueNAS host name that matches the information on the **Network > Global Configuration** screen in the **Hostname** field.
@@ -115,6 +78,8 @@ To connectTrueNAS to Active Directory:
    SCALE populates the **Kerberos Realm** and **Kerberos Principal** fields on the **Advanced Options** settings screen.
    
    {{< trueimage src="/images/SCALE/Credentials/ActiveDirectoryBasicOptions.png" alt="Active Directory Basic Options" id="Active Directory Basic Options" >}}
+
+   TrueNAS creates the default Kerberos realm and principal, and the **Computer Account OU** value **/computers/servers/NAS**.
 
    If you get a DNS server error, go to **Network > Global Configuration**, click **Settings** and verify the DNS nameserver IP addresses are correctly configured with addresses that permit access to the Active Directory domain controller.
    Correct any network configuration settings, then reconfigure the Active Directory settings.
