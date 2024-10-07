@@ -11,16 +11,16 @@ tags:
 
 {{< include file="/static/includes/CustomAppEE.md" >}}
 
-<!-- Existing content to be rewritten once Custom App redesign is complete -->
+The **Custom App** button on the [**Discover**]({{< relref "SCALE/SCALEUIReference/Apps/_index.md" >}}) applications screen opens the **[Install iX App](#install-ix-app-screen)** screen with a guided installation wizard.
+The <i class="material-icons" aria-hidden="true" title="more_vert">more_vert</i> > **Install via YAML** button opens the **[Custom App](#custom-app-screen)** screen with an advanced YAML editor for deploying apps using Docker Compose.
 
-<!--
-## Install Custom App Screen
+## Install iX App Screen
 
-The **Install Custom App** screen allows you to configure third-party applications using settings based on Kubernetes.
-Use the wizard to configure applications not included in the TRUENAS catalog.
-The **Custom App** button on the **Discover** application screen opens the **Install Custom App** configuration wizard.
+The **Install iX App** screen allows you to configure third-party applications using Docker settings.
+Use the wizard to configure applications not included in the official catalog.
+The **Custom App** button on the **Discover** application screen opens the **Install iX App** configuration wizard.
 
-{{< trueimage src="/images/SCALE/Apps/InstallCustomAppScreenNameAndImage.png" alt="Install Custom Application Screen" id="Install Custom Application Screen" >}}
+{{< trueimage src="/images/SCALE/Apps/InstallCustomAppScreenNameAndImage.png" alt="Install iX App Screen" id="Install iX App Screen" >}}
 
 The panel on the right of the screen links to each setting area.
 Click on a heading or setting to jump to that area of the screen.
@@ -28,7 +28,7 @@ Click in the **Search Input Fields** to see a list of setting links.
 
 {{< trueimage src="/images/SCALE/Apps/InstallCustomAppTOC.png" alt="Install Custom App Toc" id="Install Custom App ToC" >}}
 
-Settings are grouped into **Application Name**, **Container Images**, **Container Entrypoint**, **Container Environment Variables**, **Networking**, **Port Forwarding**, **Storage**, **Workload Details**, **Scaling/Upgrade Policy**, **Resource Reservation**, **Resource Limits**, and **Portal Configuration** sections.
+Settings are grouped into **Application Name**, **Image Configuration**, **Container Configuration**, **Security Context Configuration**, **Network Configuration**, **Portal Configuration**, **Storage Configuration**, and **Resources Configuration** sections.
 
 ### Application Name Settings
 
@@ -42,60 +42,49 @@ After completing the installation these settings are not editable.
 | Setting | Description |
 |---------|-------------|
 | **Application Name** | Enter a name for the application. The name must have lowercase alphanumeric characters, begin with an alphabet character, and can end with an alphanumeric character. The name can contain a hyphen (-) but not as the first or last character in the name. For example, use *chia-1* but not *-chia1* or *1chia-* as a valid name. |
-| **Version** | Displays the current version of the iX applications chart. Accept the default number. |
+| **Version** | Displays the current version of the iX-App chart. Accept the default number. |
 {{< /truetable >}}
 {{< /expand >}}
 
-### Container Images Settings
+### Image Configuration Settings
 
-**Container Images** settings specify the container image details.
+**Image Configuration** settings specify the container image details.
 They define the image, tag, and when TrueNAS pulls the image from the remote repository.
 
-{{< trueimage src="/images/SCALE/Apps/InstallCustomAppContainerImages.png" alt="Container Images Settings" id="Container Images Settings" >}}
+{{< trueimage src="/images/SCALE/Apps/InstallCustomAppContainerImages.png" alt="Image Configuration Settings" id="Image Configuration Settings" >}}
 
 {{< expand "Settings Information" "v" >}}
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Image Repository** | Required. Enter the Docker image repository name. For example, *plexinc/pms-docker* for Plex.|
-| **Image Tag** | Enter the tag to use for the specified image. For example, *public* for Plex. Or accept the default *latest*. |
-| **Image Pull Policy** | Select the Docker image pull policy from the dropdown list. Options are **Only pull image if not present on host** (default option), **Always pull image even if present on host**, and **Never pull image even if it's not present on host**. |
+| **Repository** | Required. Enter the Docker image repository name. For example, *plexinc/pms-docker* for Plex.|
+| **Tag** | Enter the tag to use for the specified image. For example, *public* for Plex. Or accept the default *latest*. |
+| **Pull Policy** | Select the Docker image pull policy from the dropdown list. Options are **Only pull image if not present on host** (default option), **Always pull image even if present on host**, and **Never pull image even if it's not present on host**. |
 {{< /truetable >}}
 {{< /expand >}}
 
-### Container Entrypoint Settings
+### Container Configuration Settings
 
-**Container Entrypoint** settings specify both [commands and arguments](https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/) to use for the image.
-These can override any existing commands stored in the image.
-Check the documentation for the application you want to install for entry point commands or arguments you need to enter.
+**Container Configuration** settings specify the [entrypoints](https://docs.docker.com/reference/dockerfile/#entrypoint), [commands](https://docs.docker.com/reference/dockerfile/#cmd), timezone, [environment variables](https://docs.docker.com/reference/dockerfile/#env), and restart policy to use for the image.
+These can override any existing variables stored in the image.
+Check the documentation for the application you want to install for entrypoints, commands, or variables you need to enter.
 
-{{< trueimage src="/images/SCALE/Apps/InstallCustomAppContainerEntrypoint.png" alt="Container Entrypoint Settings" id="Container Entrypoint Settings" >}}
-
-{{< expand "Settings Information" "v" >}}
-{{< truetable >}}
-| Setting | Description |
-|---------|-------------|
-| **Container CMD**| Click **Add** to display a **Command** field. |
-| **Command** | Enter a container command. For example, if adding MinIO, enter *server*. |
-| **Container Args** | Click **Add** to display an argument entry **Arg** field. Click again to add another argument. |
-| **Argument** | Enter an argument. For example, if adding MinIO, enter the IP and port string such as *http://0.0.0.0/9000/data*.|
-{{< /truetable >}}
-{{< /expand >}}
-
-### Container Environment Variables Settings
-
-**Container Environment Variables** settings [define additional environment variables](https://kubernetes.io/docs/tasks/inject-data-application/define-environment-variable-container/) for the container.
-Check the documentation for the image and add any required variables here.
-
-{{< trueimage src="/images/SCALE/Apps/InstallCustomAppContainerEnvironmentVariables.png" alt="Container Environment Variables Settings" id="Container Environment Variables Settings" >}}
+{{< trueimage src="/images/SCALE/Apps/InstallCustomAppContainerEntrypoint.png" alt="Container Configuration Settings" id="Container Configuration Settings" >}}
 
 {{< expand "Settings Information" "v" >}}
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Container Environment Variables** | Click **Add** to display a block of **Container Environment Variables**. Click again to add another set of environment variables. |
-| **Environment Variable Name** | Enter the environment variable name. For example, enter **TZ** for the timezone if installing Pi-Hole. |
-| **Environment Variable Value** | Enter the value for the variable specified in **Environment Variable Name**. For example, for the Pi-Hole timezone variable, enter *America/NewYork*. |
+| **Entrypoint** | Click **Add** to display a container entrypoint field. Enter an entrypoint in either the exec form, for example `ENTRYPOINT ["top", "-b"]`. Click **Add** again to enter another entrypoint variable. |
+| **Command** | Click **Add** to display a container command field. Enter an command in either the exec form, for example `CMD ["executable","param1","param2"]`. Click **Add** again to enter another command. |
+| **Timezone** | Use the dropdown to select a timezone setting for the container. |
+| **Environment Variables** | Click **Add** to display a block of **Container Environment Variables**. Click **Add** again to enter another set of environment variables. |
+| **Name** | Enter the environment variable name or key. For example, enter `MY_NAME`. |
+| **Value** | Enter the value for the variable specified in **Environment Variable Name**. For example, enter  `"John Doe"`, `John\ Doe`, or `John`. |
+| **Restart Policy** | Use the dropdown to select a restart policy to use for the container. Options are **No - Does not restart the container under any circumstances.**, **Unless Stopped - Restarts the container irrespective of the exit code but stops restarting when the service is stopped or removed.**, **On Failure - Restarts the container if the exit code indicates an error.**, and **Always - Restarts the container until its removal.**. |
+| **Disable Builtin Healthcheck** | Select to disable the built-in `HEALTHCHECK` defined in the image, for example to address performance or compatibility requirements. |
+| **TTY** | Select to enable a pseudo-TTY (or pseudo-terminal) for the container. |
+| **Stdin** | Select to keep the standard input (stdin) stream for the container open, for example for an interactive application that needs to remain ready to accept input. |
 {{< /truetable >}}
 {{< /expand >}}
 
@@ -121,7 +110,7 @@ See the Kubernetes [DNS services documentation](https://kubernetes.io/docs/conce
 |---------|-------------|
 | **Add External Interfaces** | Click **Add** to display the **Host Interface** and **IP Address Management** settings. |
 | **Host Interface** | Required. Select a host interface configured on your system from the dropdown list. |
-| **IPAM Type** | Required. Select an **IP Address Management** option from the dropdown list. Options are **Use DHCP** or **Use Static IP**. | 
+| **IPAM Type** | Required. Select an **IP Address Management** option from the dropdown list. Options are **Use DHCP** or **Use Static IP**. |
 | **Static IP Address** | Displays when **Use Static IP** is selected. Click **Add** to display the **Static IP** fields to specify the IP address and CIDR value. |
 | **Static Routes** |  Displays when **Use Static IP** is selected. Click **Add** to the right of **Static Routes** to add the **Destination** and **Gateway** fields.  |
 {{< /truetable >}}
@@ -301,4 +290,9 @@ Select **Enable WebUI Portal (only supported in TrueNAS Bluefin)** to display th
 | **Port** | Enter the port number to use for portal access. The port number the app uses should be in the documentation provided by the application provider/developer. Check the port number against the list of [Default Ports](https://www.truenas.com/docs/references/defaultports/) to make sure TrueNAS is not using it for some other purpose. |
 {{< /truetable >}}
 {{< /expand >}}
--->
+
+## Custom App Screen
+
+The **Custom App** screen allows you to configure third-party applications using Docker Compose YAML syntax.
+Use the YAML editor to configure applications not included in the official catalog.
+The <i class="material-icons" aria-hidden="true" title="more_vert">more_vert</i> > **Install via YAML** button opens the **Custom App** screen.
