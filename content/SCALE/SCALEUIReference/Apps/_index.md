@@ -244,8 +244,8 @@ The breadcrumbs at the top of the screen header show links to the previous or th
 
 {{< trueimage src="/images/SCALE/Apps/AppsDiscoverScreenHeaderAndSearch.png" alt="Apps Discover Screen Header and Search" id="Discover Screen Header and Search" >}}
 
-<!--
-**Custom App** opens the **[Install Custom App](#install-custom-app-screen)** screen. commenting out until added back into the UI in RC1 -->
+**Custom App** opens the **[Install iX App](#install-custom-app-screens)** screen with an install wizard.
+<i class="material-icons" aria-hidden="true" title="more_vert">more_vert</i> > **Install via YAML** opens the **Custom App** screen with an advanced YAML editor for deploying apps using Docker Compose.
 
 The **Discover** screen includes a search field, links to other application management screens, and filters to sort the application widgets displayed.
 **Show All** shows all application widgets in the trains added to the **Stable** catalog. The links are:
@@ -261,11 +261,13 @@ Filter information includes the **Category**, **App Name**, and **Updated Date**
 * **App Name** sorts app widgets alphabetically (A to Z).
 * **Updated Date** sorts the app widgets by date of update.
 
-<!-- commenting out until RC1 when this function is added back to the UI
-## Install Custom App Screen
+## Install Custom App Screens
 
-The **Install Custom App** screen displays the setting options needed to install a third-party application not included in the TRUENAS catalog.
-See [Install Custom App Screens]({{< relref "InstallCustomAppScreens.md" >}}) for more information. -->
+TrueNAS 24.10 or later provides two options for installing a third-party application not included in the TRUENAS catalog using a Docker image.
+**Custom App** opens the **[Install iX App](#install-custom-app-screens)** screen with a guided installation wizard.
+<i class="material-icons" aria-hidden="true" title="more_vert">more_vert</i> > **Install via YAML** opens the **Custom App** screen with an advanced YAML editor for deploying apps using Docker Compose.
+
+See [Install Custom App Screens]({{< relref "InstallCustomAppScreens.md" >}}) for more information.
 
 ## Application Information Screens
 Each application widget on the **Discover** screen opens a information screen with details about that application, a few screenshot of web UI for the application, and the **Install** button.
