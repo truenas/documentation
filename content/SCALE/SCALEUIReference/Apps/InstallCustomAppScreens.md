@@ -35,7 +35,7 @@ Settings are grouped into **Application Name**, **Image Configuration**, **Conta
 **Application Name** has two required settings, **Application Name** and **version**.
 After completing the installation these settings are not editable.
 
-{{< trueimage src="/images/SCALE/Apps/InstallCustomAppApplicationName.png" alt="Application Name" id="Application Name" >}}
+{{< trueimage src="/images/SCALE/Apps/InstallCustomAppApplicationName.png" alt="Application Name Settings" id="Application Name Settings" >}}
 
 {{< expand "Settings Information" "v" >}}
 {{< truetable >}}
@@ -85,6 +85,24 @@ Check the documentation for the application you want to install for entrypoints,
 | **Disable Builtin Healthcheck** | Select to disable the built-in `HEALTHCHECK` defined in the image, for example to address performance or compatibility requirements. |
 | **TTY** | Select to enable a pseudo-TTY (or pseudo-terminal) for the container. |
 | **Stdin** | Select to keep the standard input (stdin) stream for the container open, for example for an interactive application that needs to remain ready to accept input. |
+{{< /truetable >}}
+{{< /expand >}}
+
+## Security Context Configuration Settings
+
+**Security Context Configuration** settings allow you to run the container in [privileged mode](https://docs.docker.com/reference/cli/docker/container/run/#privileged), grant the container [Linux kernel capabilities](https://docs.docker.com/engine/containers/run/#runtime-privilege-and-linux-capabilities), or define a user to run the container.
+
+{{< trueimage src="/images/SCALE/Apps/InstallCustomAppSecurityContextConfiguration.png" alt="Security Context Configuration Settings" id="Security Context Configuration Settings" >}}
+
+{{< expand "Settings Information" "v" >}}
+{{< truetable >}}
+| Setting | Description |
+|---------|-------------|
+| **Privileged** | Select to run the container in privileged mode. NOTE: Be cautious if enabling privileged mode. A privileged container gives all Linux kernel capabilities to the container. A more secure solution is to use **Capabilities** to grant limited Linux capabilities as needed. |
+| **Capabilities** | Click **Add** to display a container capability field. Enter a [Linux capability](https://man7.org/linux/man-pages/man7/capabilities.7.html) to enable, for example, enter `CHOWN`. Click **Add** again to enter another capability. |
+| **Custom User** | Select to display the **User ID** and **Group ID** fields. |
+| **User ID** | Enter the ID of the user that runs the container. Defaults to 568 (apps). |
+| **Group ID** | Enter the ID of the group that runs the container. Defaults to 568 (apps). |
 {{< /truetable >}}
 {{< /expand >}}
 
