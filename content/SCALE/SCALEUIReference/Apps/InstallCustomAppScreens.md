@@ -88,7 +88,7 @@ Check the documentation for the application you want to install for entrypoints,
 {{< /truetable >}}
 {{< /expand >}}
 
-## Security Context Configuration Settings
+### Security Context Configuration Settings
 
 **Security Context Configuration** settings allow you to run the container in [privileged mode](https://docs.docker.com/reference/cli/docker/container/run/#privileged), grant the container [Linux kernel capabilities](https://docs.docker.com/engine/containers/run/#runtime-privilege-and-linux-capabilities), or define a user to run the container.
 
@@ -98,95 +98,81 @@ Check the documentation for the application you want to install for entrypoints,
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Privileged** | Select to run the container in privileged mode. NOTE: Be cautious if enabling privileged mode. A privileged container gives all Linux kernel capabilities to the container. A more secure solution is to use **Capabilities** to grant limited Linux capabilities as needed. |
+| **Privileged** | Select to run the container in privileged mode. <br> By default, a container cannot access any devices on the host. With **Privileged** enabled, the container has access to all devices on the host, which allows the container nearly all the same access as processes running on the host. Be cautious if enabling privileged mode. A more secure solution is to use **Capabilities** to grant limited access to system processes as needed. |
 | **Capabilities** | Click **Add** to display a container capability field. Enter a [Linux capability](https://man7.org/linux/man-pages/man7/capabilities.7.html) to enable, for example, enter `CHOWN`. Click **Add** again to enter another capability. |
 | **Custom User** | Select to display the **User ID** and **Group ID** fields. |
-| **User ID** | Enter the ID of the user that runs the container. Defaults to 568 (apps). |
-| **Group ID** | Enter the ID of the group that runs the container. Defaults to 568 (apps). |
+| **User ID** | Displays when **Custom User** is selected. Enter the numeric UID of the user that runs the container. Defaults to **568** (apps). |
+| **Group ID** | Displays when **Custom User** is selected. Enter the numeric GID of the group that runs the container. Defaults to **568** (apps). |
 {{< /truetable >}}
 {{< /expand >}}
 
-### Networking Settings
+### Network Configuration Settings
 
-**Networking** settings specify network policy, addresses, and DNS services if the container needs a custom networking configuration.
+**Network Configuration** settings specify network, ports, and DNS servers if the container needs a custom networking configuration.
 
-See the [Kubernetes documentation](https://kubernetes.io/docs/concepts/services-networking/) for more details on host networking.
-You can create additional network interfaces for the container or give static IP addresses and routes.
+See the [Docker documentation](https://docs.docker.com/engine/network/drivers/host/) for more details on host networking.
+
+Use port forwarding to reroute container ports that default to the same port number used by another system service or container.
+See [Default Ports](https://www.truenas.com/docs/references/defaultports/) for a list of assigned ports in TrueNAS.
+See the Docker [Container Discovery](https://docs.docker.com/engine/network/drivers/overlay/#container-discovery) documentation for more on overlaying ports.
 
 By default, containers use the DNS settings from the host system.
 You can change the DNS policy and define separate nameservers and search domains.
-See the Kubernetes [DNS services documentation](https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/) for more details.
+See the Docker [DNS services documentation](https://docs.docker.com/engine/network/#dns-services) for more details.
 
-{{< trueimage src="/images/SCALE/Apps/InstallCustomAppNetworking.png" alt="Networking Settings" id="Networking Settings" >}}
+{{< trueimage src="/images/SCALE/Apps/InstallCustomAppNetworking.png" alt="Network Configuration Settings" id="Network Configuration Settings" >}}
 
 {{< expand "Settings Information" "v" >}}
 
-{{< trueimage src="/images/SCALE/Apps/InstallCustomAppNetworkingAddExternalInterfaces.png" alt="Networking Add External Interfaces" id="Networking Add External Interfaces" >}}
-
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Add External Interfaces** | Click **Add** to display the **Host Interface** and **IP Address Management** settings. |
-| **Host Interface** | Required. Select a host interface configured on your system from the dropdown list. |
-| **IPAM Type** | Required. Select an **IP Address Management** option from the dropdown list. Options are **Use DHCP** or **Use Static IP**. |
-| **Static IP Address** | Displays when **Use Static IP** is selected. Click **Add** to display the **Static IP** fields to specify the IP address and CIDR value. |
-| **Static Routes** |  Displays when **Use Static IP** is selected. Click **Add** to the right of **Static Routes** to add the **Destination** and **Gateway** fields.  |
-{{< /truetable >}}
-
-{{< trueimage src="/images/SCALE/Apps/InstallCustomAppNetworkingDNSConfig.png" alt="Networking Add DNS Configuration" id="Networking Add DNS Configuration" >}}
-
-{{< truetable >}}
-| Setting | Description |
-|---------|-------------|
-| **DNS Policy** | Select the DNS policy option from the dropdown list. There are four options. See the table in [DNS Policy Setting Options](#dns-policy-setting-options) below. |
-| **DNS Configuration** | Specify custom DNS configuration to apply to the pod. Configuration fields are **Nameservers**, **Searches**, and **DNS Options**. For more information on Kubernetes DNS configuration see [Pod DNS Configuration](https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/#pod-dns-config). |
-| **Nameservers** | Use to add a list of IP addresses to use as DNS servers for the container (pod). Specify at least three nameserver IP addresses. If the DNS policy is set to **None** the list must contain at least one IP address. If not the DNS policy is set to something other than none, specifying nameservers is optional. Click **Add** to the right of **Nameservers** to display a **Nameserver** entry field. Click again to add another name server. |
+| **Host Network** | Select to bind the container to the TrueNAS host network. When bound to the host network, the container does not have a unique IP-address, so port-mapping is disabled. |
+| **Ports** | Click **Add** to display a block of port configuration fields to specify the port values and transfer protocol. Click again to add additional port mappings. |
+| **Container Port** | Enter a port number in the container. Refer to the application documentation for default port values. |
+| **Host Port** | Enter an open port number on the TrueNAS host. |
+| **Protocol** | Select the protocol from the dropdown list. Options are **TCP** or **UDP**. |
+| **Nameservers** | Use to add one or more IP addresses to use as DNS servers for the container. Click **Add** to the right of **Nameservers** to display a **Nameserver** entry field. Click again to add another name server. |
 | **Nameserver** | Enter the IP address of the name server. |
-| **Searches** | Optional. Use to add a list of DNS search domains for a host name lookup in the container (pod). The list cannot exceed 32 entries. When specified, the provided list is merged into the base search domain names generated from the chosen DNS policy. Kubernetes allows up to six search domains. Click **Add** to display a **Search Entry** field to enter the search value you want to configure. For more information on Kubernetes DNS search configuration see [DNS Search Domain List Limits](https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/#dns-search-domain-list-limits). |
-| **Search Entry** | Enter the search value you want to configure. For example, *ns1.svc.cluster-domain.example* or *my.dns.search.suffix*. |
-| **DNS Options** | Optional. Use to add a list of objects where each can have a name and a value property. These merge into the options generated from the specified DNS policy. Click **Add** to display a block of **Option Entry Configuration** settings. Click again to display another block of settings.  |
-| **Option Name** | Required. Enter the option name. For example, *ndots* or *edns0*. |
-| **Option Value** | Required. Enter the value for the option name. For example, *2* for *ndots*. |
-| **Provide access to node network namespace for the workload** | Select to allow the container to bind to any port. Some ports still require appropriate permissions. Unless needed, we recommend leaving this setting disabled because app containers might try to bind to arbitrary ports like 80 or 443, which the TrueNAS UI already uses.  |
-{{< /truetable >}}
-
-#### DNS Policy Setting Options
-
-For more information on DNS policies see the Kubernetes [Pod DNS Policy](https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/#pod-s-dns-policy) documentation.
-{{< truetable >}}
-| Option | Description |
-|--------|-------------|
-| **Use Default DNS Policy Where Pod Will Inherit The Name Resolution Configuration From The Node.**| This is the Kubernetes `default` dnsPolicy. With the `default` behavior, the pod inherits the name resolution configuration from the node that the pods run on. |
-| **"Kubernetes Internal DNS Will Be Prioritized And Resolved First. If The Domain Does Not Resolve With Internal Kubernetes DNS, The DNS Query Will Be Forwarded To The Upstream Nameserver Inherited From The Node. This Is Useful If The Workload Needs To Access Other Service(S)/Workload(S) Using Kubernetes Internal DNS."** | This is the Kubernetes `ClusterFirst` dnsPolicy. If no dnsPolicy is specified in Kubernetes, this becomes the default option. |
-| **For Pods Running With HostNetwork And Wanting To Prioritize Internal Kubernetes DNS Should Make Use Of This Policy.** | This is the Kubernetes `ClusterFirstWithHostNet` dnsPolicy. |
-| **Ignore DNS Settings From The Kubernetes Cluster** | This the the Kubernetes `none` dnsPolicy. With `none`, a pod can ignore DNS settings from the Kubernetes environment. |
-
+| **Search Domains** | Use to add one or more DNS search domains to search non-fully qualified hostnames. Click **Add** to display a **Search Domain** field to enter the domain you want to configure. Click again to add another search domain. See [search](https://www.man7.org/linux/man-pages/man5/resolv.conf.5.html) in the Linux documentation for more information. |
+| **Search Domain** | Enter the search domain you want to configure. For example, *mydomain.com*. |
+| **DNS Options** | Use to add one or more key-value pairs to control various aspects of query behavior DNS resolution. Click **Add** to display an **Option** field. Click again to add another option. See [options](https://www.man7.org/linux/man-pages/man5/resolv.conf.5.html) in the Linux documentation for more information. |
+| **Option** | Enter a key-value pair representing a DNS option and its value. For example, *ndots:2*. |
 {{< /truetable >}}
 {{< /expand >}}
 
-### Port Forwarding Settings
 
-**Port Forwarding** settings specify the container ports, node ports, and the transfer protocol.
-Choose the protocol and enter port numbers for both the container and node. You can define multiple port forwards.
 
-Use port forwarding to reroute container ports that default to the same port number used by another system service or container. See [Default Ports](https://www.truenas.com/docs/references/defaultports/) for a list of assigned ports in TrueNAS.
 
-{{< trueimage src="/images/SCALE/Apps/InstallCustomAppPortForwarding.png" alt="Port Forwarding Settings" id="Port Forwarding Settings" >}}
+
+
+
+
+
+
+
+
+### Portal Configuration Settings
+
+The **Portal Configuration** settings configure the web UI portal for the container.
+
+Select **Enable WebUI Portal (only supported in TrueNAS Bluefin)** to display the web portal configuration settings.
+
+{{< trueimage src="/images/SCALE/Apps/InstallCustomAppAddPortalConfiguration.png" alt="Portal Configuration Settings" id="Portal Configuration Settings" >}}
 
 {{< expand "Settings Information" "v" >}}
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Specify Node ports to forward to workload** | Use to specify one or more local ports to forward to a container (pod). Click **Add** to display a block of **Port Forwarding Configuration** settings. |
-| **Container Port** | Required. Enter a port number in the container. <br> Refer to the application documentation for default port values. |
-| **Node Port** | Required. Enter a node port number over **9000**. |
-| **Protocol** | Select the protocol from the dropdown list. Options are **TCP Protocol** or **UDP Protocol**.  |
+| **Portal Name** | Enter a UI portal name to use and display in the UI. For example, *MyAppLogin*. |
+| **Protocol for Portal** | Select the web protocol to use for the portal from the dropdown list. Options are **HTTP** or **HTTPS**. |
+| **Port** | Enter the port number to use for portal access. The port number the app uses should be in the documentation provided by the application provider/developer. Check the port number against the list of [Default Ports](https://www.truenas.com/docs/references/defaultports/) to make sure TrueNAS is not using it for some other purpose. |
 {{< /truetable >}}
 {{< /expand >}}
 
-### Storage Settings
+### Storage Configuration Settings
 
-The **Storage** settings specify persistent host paths and share data that separate from the lifecycle of the container.
+The **Storage Configuration** settings specify persistent host paths and share data that separate from the lifecycle of the container.
 Create the storage volumes in TrueNAS and set the host path volume to a dataset and directory path.
 You can mount TrueNAS storage locations inside the container with host path volumes. Define the path to the system storage and the container internal path for the system storage location to appear.
 For more details, see the [Kubernetes HostPath documentation](https://kubernetes.io/docs/concepts/storage/volumes/#hostpath).
@@ -194,7 +180,7 @@ For more details, see the [Kubernetes HostPath documentation](https://kubernetes
 Users can create additional Persistent Volumes (PVs) for storage within the container.
 PVs consume space from the pool chosen for application management. To do this, name each new dataset and define a path where that dataset appears inside the container.
 
-{{< trueimage src="/images/SCALE/Apps/InstallCustomAppScreenStorage.png" alt="Storage Settings" id="Storage Settings" >}}
+{{< trueimage src="/images/SCALE/Apps/InstallCustomAppScreenStorage.png" alt="Storage Configuration Settings" id="Storage Configuration Settings" >}}
 
 {{< expand "Settings Information" "v" >}}
 {{< trueimage src="/images/SCALE/Apps/InstallCustomAppAddHostPathVol.png" alt="Host Path Volume Settings" id="Host Path Volume Settings" >}}
@@ -230,42 +216,13 @@ PVs consume space from the pool chosen for application management. To do this, n
 
 {{< /expand >}}
 
-### Workload Details Settings
+### Resources Configuration Settings
 
-**Workload Details** settings specify how to deploy workloads in the container (pod).
-Kubernetes defines workloads as applications running in the pod.
-**Workload Details** settings specify if containers in a pod run with TTY or STDIN enabled, allow enabling any device on the host or configuring host capabilities, and if you run the container as a user or group.
 
-{{< trueimage src="/images/SCALE/Apps/InstallCustomAppAddWorkloadDetails.png" alt="Workload Details Settings" id="Workload Details Settings" >}}
 
-{{< expand "Settings Information" "v" >}}
-{{< truetable >}}
-| Setting | Description |
-|---------|-------------|
-| **Enable TTY** | Select to set containers in a pod to run with TTY (text typed) enabled. Disabled by default. |
-| **Enable STDIN** | Select to set containers in a pod to run with STDIN (standard input) enabled. Disabled by default. |
-| **Privileged Mode** | By default, a container cannot access any devices on the host. With **Privileged Mode** enabled, the container has access to all devices on the host, which allows the container nearly all the same access as processes running on the host. |
-| **Capabilities** | Click **Add** to display an **Add Capability** field. Click again to add another field. |
-| **Add Capability** | Enter a capability. |
-| **Configure Container User and Group ID** | Select to display the **Run Container as User** and **Run Container as Group** settings to add security context (`runAsUser` and `runAsGroup` variables). |
-| **Run Container As User** | Enter a numeric user ID for the container. Default is **568**. |
-| **Run Container as Group** | Enter a numeric group ID for the container. Default is **568**. |
-{{< /truetable >}}
-{{< /expand >}}
 
-### Scaling/Upgrade Strategy Settings
 
-**Scaling/Upgrade Strategy** settings configure how application upgrades replace pods.
 
-{{< trueimage src="/images/SCALE/Apps/InstallCustomAppScalingUpgradePolicy.png" alt="Scaling/Upgrade Strategy Settings" id="Scaling/Upgrade Strategy Settings" >}}
-
-Select **Create new pods and then kill the old ones** to recreate the container.
-This retains the existing configuration and container until the upgrade completes before removing it.
-
-Select **Kill existing pods before creating new ones** to do rolling upgrades.
-This removes the existing pod and start with a newly updated pod.
-Killing existing pods is useful if your old pod is not functioning properly.
-For fewer issues, select **Kill existing pods before creating new ones**.
 
 ### Resource Reservation Settings
 
@@ -290,24 +247,19 @@ See Allocating GPU]( relref "/content/truenasapps/_index.md#allocating-gpu"  for
 | **Memory Limit** | Enter the number of bytes you want to limit memory to. Follow the number with the quantity suffix, like E, P, T, G, M, k or Ei, Pi, Ti, Mi, Gi, Ki. For example, 129e6, 129m, 12897484800m, 123Mi, etc. |
 {{< /truetable >}}
 {{< /expand >}}
+### Scaling/Upgrade Strategy Settings
 
-### Portal Configuration Settings
+**Scaling/Upgrade Strategy** settings configure how application upgrades replace pods.
 
-The **Portal Configuration** settings configure the web UI portal for the container.
+{{< trueimage src="/images/SCALE/Apps/InstallCustomAppScalingUpgradePolicy.png" alt="Scaling/Upgrade Strategy Settings" id="Scaling/Upgrade Strategy Settings" >}}
 
-Select **Enable WebUI Portal (only supported in TrueNAS Bluefin)** to display the web portal configuration settings.
+Select **Create new pods and then kill the old ones** to recreate the container.
+This retains the existing configuration and container until the upgrade completes before removing it.
 
-{{< trueimage src="/images/SCALE/Apps/InstallCustomAppAddPortalConfiguration.png" alt="Portal Configuration Settings" id="Portal Configuration Settings" >}}
-
-{{< expand "Settings Information" "v" >}}
-{{< truetable >}}
-| Setting | Description |
-|---------|-------------|
-| **Portal Name** | Enter a UI portal name to use and display in the UI. For example, *MyAppLogin*. |
-| **Protocol for Portal** | Select the web protocol to use for the portal from the dropdown list. Options are **HTTP** or **HTTPS**. |
-| **Port** | Enter the port number to use for portal access. The port number the app uses should be in the documentation provided by the application provider/developer. Check the port number against the list of [Default Ports](https://www.truenas.com/docs/references/defaultports/) to make sure TrueNAS is not using it for some other purpose. |
-{{< /truetable >}}
-{{< /expand >}}
+Select **Kill existing pods before creating new ones** to do rolling upgrades.
+This removes the existing pod and start with a newly updated pod.
+Killing existing pods is useful if your old pod is not functioning properly.
+For fewer issues, select **Kill existing pods before creating new ones**.
 
 ## Custom App Screen
 
