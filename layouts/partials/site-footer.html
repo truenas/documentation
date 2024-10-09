@@ -1,3 +1,30 @@
+
+<!-- Check if we were passed the ?showsearch=true and need to display docsbot-->
+<script defer>
+    // Function to get the value of a query parameter by name
+    function getSearchQueryParam(param) {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get(param);
+    }
+
+    // Event listener after DocsBot Init
+    document.addEventListener('DOMContentLoaded', function() {
+      const paramValue = getSearchQueryParam('showsearch');
+      if (paramValue) {
+        setTimeout(function() {
+            // Find the button element
+            var aibutton = document.getElementById("chatbot-button-icon");
+
+            // Check if the button exists
+            if (aibutton) {
+              // Simulate a click on the button
+              aibutton.click();
+            }
+        }, 1000);
+      }
+    })
+</script>
+
 <!-- GeekDoc modified to mimic truenas.com and incorporate documentation license-->
 <footer class="container gdoc-footer">
 	<div class="container flex flex-wrap">

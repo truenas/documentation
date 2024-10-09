@@ -105,6 +105,26 @@
   });
 </script>
 
+<!-- Add URI Checker for DocsBot Visibility -->
+<script>
+    // Function to get the value of a query parameter by name
+    function getSearchQueryParam(param) {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get(param);
+    }
+
+    // Event listener after DocsBot Init
+    window.DocsBotAI.then(function() {
+        const paramValue = getSearchQueryParam('showsearch');
+        if (paramValue) {
+            const aibutton = document.getElementById("chatbot-button-icon");         
+            // Trigger a click event on the button
+            aibutton.click();
+        }
+    });
+</script>
+<!-- End URI Checker for DocsBot Visibility -->
+
 <!-- Navigation Menu -->
 {{ template "tree-nav" dict "sect" .Site.Home.Sections "current" $current "main_index_class" .Page.Params.main_index_class "path" .RelPermalink }}
 
