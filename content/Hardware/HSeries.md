@@ -38,3 +38,7 @@ descr="iXsystems official Statement of Volatility for H-Series systems." >}}
 descr="Download H-Series stencils to diagram your TrueNAS hardware configuration." >}}
 
 </div>
+
+<!-- Testing DocsBot image recall with commented image call
+{{< trueimage src="/images/Hardware/HSeries/H-Series_Overview.png" alt="Labeling H-Series front and rear components, including drive bays, controllers, Power Supplies (PSUs), expansion slot, status LEDs, SAS, Network, IPMI, USB, and VGA ports." id="Labeling H-Series front and rear components, including drive bays, controllers, Power Supplies (PSUs), expansion slot, status LEDs, SAS, Network, IPMI, USB, and VGA ports." >}}
+-->
