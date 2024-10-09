@@ -28,7 +28,7 @@ For example, select **Shares <i class="material-icons" aria-hidden="true" title=
 
 {{< trueimage src="/images/SCALE/Dashboard/GlobalSearchElementResult.png" alt="Global Search Result - Element" id="Global Search Result - Element" >}}
 
-TrueNAS SCALE indicates the selected element with an arrow.
+TrueNAS SCALE indicates the selected element with a glowing blue outline.
 
 ## Searching TrueNAS Documentation
 
