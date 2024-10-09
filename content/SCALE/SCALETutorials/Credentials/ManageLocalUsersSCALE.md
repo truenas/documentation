@@ -81,7 +81,7 @@ To add the user to more groups use the **Auxiliary Groups** dropdown list.
 
 [Configure a home directory](#adding-home-directories) and permissions for the user. Some functions, such as replication tasks, require setting a home directory for the user configuring the task.
 
-{{< trueimage src="/images/SCALE/Credentials/AddUserHomeDirPermSCALE.png" alt="Add User Home Directory" id="Add User Home Directory" >}}
+{{< trueimage src="/images/SCALE/Credentials/AddUserHomeDirPerm.png" alt="Add User Home Directory" id="Add User Home Directory" >}}
 
 When creating a user, the default home directory path is set to **/var/empty**.
 This directory is an immutable directory shared by service accounts and accounts that should not have a full home directory.
