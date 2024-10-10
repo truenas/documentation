@@ -18,7 +18,6 @@ The <i class="material-icons" aria-hidden="true" title="more_vert">more_vert</i>
 
 The **Install iX App** screen allows you to configure third-party applications using Docker settings.
 Use the wizard to configure applications not included in the official catalog.
-The **Custom App** button on the **Discover** application screen opens the **Install iX App** configuration wizard.
 
 {{< trueimage src="/images/SCALE/Apps/InstallCustomAppScreenNameAndImage.png" alt="Install iX App Screen" id="Install iX App Screen" >}}
 
@@ -270,7 +269,7 @@ Resource limits specify the CPU and memory limits to place on the container.
 
 **GPU Configuration** settings configure GPU device allocation for application processes.
 Settings only display if the system detects available GPU device(s).
-See [Allocating GPU]({{< relref "/content/truenasapps/_index.md#allocating-gpu" >}})  for more information.
+See [Allocating GPU](https://www.truenas.com/docs/truenasapps/#allocating-gpu) for more information.
 
 {{< trueimage src="/images/SCALE/Apps/InstallCustomAppAddResourceLimits.png" alt="Resources Configuration Settings" id="Resources Configuration Settings" >}}
 
@@ -291,4 +290,23 @@ See [Allocating GPU]({{< relref "/content/truenasapps/_index.md#allocating-gpu" 
 
 The **Custom App** screen allows you to configure third-party applications using Docker Compose YAML syntax.
 Use the YAML editor to configure applications not included in the official catalog.
-The <i class="material-icons" aria-hidden="true" title="more_vert">more_vert</i> > **Install via YAML** button opens the **Custom App** screen.
+See the [Docker Compose overview](https://docs.docker.com/compose/) from Docker for more information.
+
+{{< hint type=warning title="Advanced Feature" >}}
+Installing custom applications via YAML requires advanced knowledge of Docker and users should be prepared to debug their own installations.
+The [TrueNAS forums](https://forums.truenas.com/c/apps-virt) are available for community support.
+<br><br>
+TrueNAS applies basic YAML syntax validation to custom applications deployed via Docker Compose.
+TrueNAS does not apply additional validation of configuration parameters before executing the file as written.
+{{< /hint >}}
+
+{{< trueimage src="/images/SCALE/Apps/InstallCustomAppYAML.png" alt="Install Custom App via YAML" id="Install Custom App via YAML" >}}
+
+{{< truetable >}}
+| Setting | Description |
+|-----------|-------------|
+| Name | Enter a name for the custom application. |
+| Custom Config | Enter a Docker Compose YAML file for the application. |
+{{< /truetable >}}
+
+Click **Save** to initiate app deployment.
