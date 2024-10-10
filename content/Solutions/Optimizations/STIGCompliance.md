@@ -23,7 +23,7 @@ This article details customizable settings to accomplish a security-hardened sys
 ## Install TrueNAS
 Existing TrueNAS systems can upgrade to the latest release through the UI.
 Earlier releases of TrueNAS can upgrade by following the established migration paths, or might need to clean-install the latest release of SCALE using the <file>iso
-</file>. Refer to documentation on upgrading existing systems found [here]({{< relref "SoftwareReleases.md" >}}).
+</file>. Refer to documentation on upgrading existing systems found [here]({{< relref "/content/TrueNASUpgrades/_index.md" >}}).
 
 If side-grading (migrating) from an earlier release to the latest TrueNAS release, follow guidance in the [Preparing to Migrate]({{< relref "/SCALE/GettingStarted/Migrate/MigratePrep.md" >}}) article before beginning the migration.
 
@@ -43,7 +43,7 @@ Only enable the root user password when necessary to perform functions not avail
 
 If creating multiple administration user accounts for individuals that fill specific roles, limit privileges and access to what is minimally required to perform the system responsibilities.
 
-See [Using Administrator Logins]({{< relref "AdminRoldes.md" >}}) for more information on administration user accounts.
+See [Using Administrator Logins]({{< relref "AdminRoles.md" >}}) for more information on administration user accounts.
 
 ### Restrict Access to Roles
 TrueNAS allows for role-based access control (RBAC) through the privileges function such as the predefined, full control, readonly, and sharing_administrator roles.
@@ -57,13 +57,13 @@ Incorrectly configuring privileges can result in unintended consequences.
 Do not modify the default existing privileges!
 {{< /hint >}}
 
-See [Using Administrator Logins]({{< relref "AdminRoldes.md" >}}) for more information on administration user accounts.
+See [Using Administrator Logins]({{< relref "AdminRoles.md" >}}) for more information on administration user accounts.
 
 ### Restrict Access to SSH
 Enable SSH access only for the full-control administration user (Local Administrator) but do not leave the SSH service enabled when not in use. Disable the SSH service after completing the required tasks until access is needed again.
 
 Do not set the SSH service to start automatically if the system reboots to prevent starting and leaving SSH running when not needed.
-See [SSH Service]({{< relref "/SCALETutorials/SystemSettings/Services/SSHServiceSCALE.md" >}}) for more information.
+See [SSH Service]({{< relref "SSHServiceSCALE.md" >}}) for more information.
 
 If using multiple administration user accounts, limit SSH session access to only users that require this ability to communicate with TrueNAS at the command-line level.
 See [Restrict Access to Sudo Commands](#restrict-access-to-ssh) for more information.
@@ -76,7 +76,7 @@ Also limit `sudo` command entry by imposing the requirement to enter a password 
 
 If creating multiple administration users with permissions to perform specific tasks, do not enable `sudo` commands or configure limited access by entering only the specific commands they need to use to complete required tasks.
 
-See [Managing Users]({{< relref "ManageLocalUsersSCALE.md" >}}) and [Using Administrator Logins]({{< relref "AdminRoldes.md" >}}) for more information on creating users and allowing `sudo` command access.
+See [Managing Users]({{< relref "ManageLocalUsersSCALE.md" >}}) and [Using Administrator Logins]({{< relref "AdminRoles.md" >}}) for more information on creating users and allowing `sudo` command access.
 
 ### Restrict Access to Shell
 Configure access to the shell for only the main administration user with full control.
@@ -127,7 +127,7 @@ Two Factor Authentication adds a second level of security to log in access.
 TrueNAS provides the option to force two-factor authentication for all users wanting to log into the web UI.
 A separate option allows requiring two-factor authentication to log into an SSH session.
 
-See [Managing Global Two-Factor Authentication]({{< relref "MaageGlobal2faSCALE.md" >}}) for more information
+See [Managing Global Two-Factor Authentication]({{< relref "ManageGlobal2faSCALE.md" >}}) for more information
 
 
 ## Monitor System Activity
@@ -220,7 +220,7 @@ SMB share permit setting up permissions for just the share but not the dataset f
 See [Windows Shares]({{< relref "/content/SCALE/SCALETutorials/Shares/SMB/_index.md" >}}) for more information on SMB shares, creating shares, and configuring settings including permissions.
 
 NFS shares do not have the same setting options and rely on the dataset ACL settings.
-See [NFS Shares]({{< relref "/SCALETutorials/shares/AddingNFSShares.md" >}}) for more information.
+See [NFS Shares]({{< relref "AddingNFSShares.md" >}}) for more information.
 
 Apps installation wizards for apps in the **enterprise** and **stable** trains, and some **community** apps include the option to enable ACLs where you set the owner and permissions level by storage volume/dataset host path.
 
@@ -236,7 +236,7 @@ Datasets with encryption allow users to lock the datasets to prevent reading fro
 TrueNAS allows encryption on data transfers made through cloud sync and replication tasks.
 This adds a layer of encryption on top of dataset-level encryption whether the dataset is encrypted or not.
 
-See [Encrypting Cloud Sync Tasks]({{< relref "/SCALETutorials/DataProtection/CloudSyncTasks.md #encrypting-cloud-sync-tasks" >}}) for more information on encrypting cloud sync tasks, or [Adding Transfer Encryption]({{< relref "/SCALETutorials/DataProtection/Replication/Advanced Replication.md #adding-transfer-encryption" >}}) for information on adding encryption to remote replication tasks.
+See [Encrypting Cloud Sync Tasks]({{< relref "/SCALE/SCALETutorials/dataprotection/CloudSyncTasks/_index.md" >}}) for more information on encrypting cloud sync tasks, or [Adding Transfer Encryption]({{< relref "/scale/scaletutorials/dataprotection/replication/advancedreplication/_index.md" >}}) for information on adding encryption to remote replication tasks.
 
 ### Maintain SSH Connection Credentials
 TrueNAS uses SSH connection credentials for cloud backup tasks, cloud sync tasks, rsync tasks, and replication tasks.
