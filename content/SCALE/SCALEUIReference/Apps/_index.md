@@ -23,7 +23,7 @@ The **Installed** applications screen shows status of installed apps, provides a
 
 The **Discover** screen show widgets for the installed catalog of apps.
 The individual app widgets open app information screens with details about that application, and access to an installation wizard for the app.
-<!-- It also provides access to a [**Custom Apps**](#install-custom-app-screen) wizard that allows users to add an app not included in the catalog. commented out until RC1 release when the Custom App screen is added back to the UI -->
+It also includes options to install [third-party applications](#install-custom-app-screen) in Docker containers that allow users to deploy apps not included in the catalog.
 
 ## Installed Screen
 The first time you go to **Apps**, the **Installed** applications screen header shows an <i class="fa fa-cog" aria-hidden="true"></i> **Apps Service Not Configured** status and dialog opens prompting you to choose the pool for apps to use.
