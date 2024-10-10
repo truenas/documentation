@@ -121,6 +121,15 @@ The items listed here represent new feature flags implemented since the previous
 
 For more details on feature flags, see [OpenZFS Feature Flags](https://openzfs.github.io/openzfs-docs/Basic%20Concepts/Feature%20Flags.html) and [OpenZFS zpool-feature.7](https://openzfs.github.io/openzfs-docs/man/7/zpool-features.7.html).
 
+## 24.04.2.3 Changelog
+
+**October 10, 2024**
+
+iXsystems is pleased to release TrueNAS SCALE 24.04.2.3!
+This is a hotpatch to address two issues in the previous 24.04.2.2 release, primarily affecting some TrueNAS Enterprise customers with High Availability (HA) systems and failover enabled.
+
+Please use the 24.04.2 Jira filter links below to see the full changelog and known issues related to the 24.04.2, 24.04.2.1, 24.04.2.2, and 24.04.2.3 releases.
+
 ## 24.04.2.2 Changelog
 
 **September 17, 2024**
