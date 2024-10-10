@@ -1,5 +1,5 @@
 ---
-title: "Install Custom App Screen"
+title: "Custom App Screens"
 description: "Provides information on the Install Custom App screen and configuration settings."
 weight: 25
 aliases:
@@ -292,13 +292,7 @@ The **Custom App** screen allows you to configure third-party applications using
 Use the YAML editor to configure applications not included in the official catalog.
 See the [Docker Compose overview](https://docs.docker.com/compose/) from Docker for more information.
 
-{{< hint type=warning title="Advanced Feature" >}}
-Installing custom applications via YAML requires advanced knowledge of Docker and users should be prepared to debug their own installations.
-The [TrueNAS forums](https://forums.truenas.com/c/apps-virt) are available for community support.
-<br><br>
-TrueNAS applies basic YAML syntax validation to custom applications deployed via Docker Compose.
-TrueNAS does not apply additional validation of configuration parameters before executing the file as written.
-{{< /hint >}}
+{{< include file="/static/includes/YAMLWarning.md" >}}
 
 {{< trueimage src="/images/SCALE/Apps/InstallCustomAppYAML.png" alt="Install Custom App via YAML" id="Install Custom App via YAML" >}}
 
