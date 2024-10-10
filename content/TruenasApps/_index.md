@@ -288,17 +288,9 @@ After installing an application, the **Installed** applications screen shows the
 The status changes to **Running** when the application is fully deployed and ready to use.
 
 ## Installing Custom Applications
-**Custom App** opens a screen where you can upload a yaml file for an unofficial app or one not included in a TrueNAS catalog.
-To deploy a custom application, go to **Discover** and click **Custom App** to open the **Install Custom App** screen.
+{{< include file="/static/includes/CustomAppIntro.md" >}}
 
-<!-- Commenting out until we have tutorials for created for this.
-See [Using Install Custom App]({{< relref "UsingCustomApp.md" >}}) for more information.
-
-### Changing Custom Application Networking
-Custom applications use the system-level Kubernetes Node IP settings by default.
-
-You can assign an external interface to custom apps using  one of the **Networking** section  settings found on the **Install Custom App** screen.
--->
+See [Installing Custom Applications]({{< relref "UsingCustomApp.md" >}}) for more information.
 
 <div class="noprint">
 
