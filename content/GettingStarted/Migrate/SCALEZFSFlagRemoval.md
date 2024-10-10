@@ -1,5 +1,5 @@
 ---
-title: "ZFS Feature Flags Removed"
+title: "ZFS Feature Flags Removed (obsolete)"
 description: "(obsolete) Provides legacy information for users of a deprecated ZFS feature flag merged into TrueNAS SCALE 22.02 and removed in 22.12."
 weight: 40
 tags:
