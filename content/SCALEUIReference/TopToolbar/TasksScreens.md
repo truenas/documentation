@@ -25,3 +25,5 @@ The **Failed** screen displays the list of failed jobs.
 ![TasksFailed](/images/SCALE/Dashboard/TasksFailed.png "Failed Tasks")
 
 Use the **View** button to display the task log. The system error for this failed job displays at the bottom of the log file.
+
+{{< include file="/static/includes/TerminateActiveRunningJob.md" >}}
