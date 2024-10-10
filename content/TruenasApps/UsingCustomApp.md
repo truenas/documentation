@@ -17,22 +17,9 @@ keywords:
 
 {{< include file="/static/includes/CustomAppEE.md" >}}
 
-<!-- Existing content to be rewritten once Custom App redesign is complete -->
+{{< include file="/static/includes/CustomAppIntro.md" >}}
 
-<!--
-TrueNAS includes the ability to run third-party apps in containers (pods) using Kubernetes settings.
-
-{{< expand "What is Kubernetes?" "v" >}}
-Kubernetes (K8s) is an open-source system for automating deployment, scaling, and managing containerized applications.
-{{< /expand >}}
-
-Generally, any container that follows the [Open Container Initiative](https://opencontainers.org/) specifications can be deployed.
-
-Always read through the documentation page for the application container you are considering installing so that you know all of the settings that you need to configure.
-To set up a new container image, first, determine if you want the container to use additional TrueNAS datasets.
-If yes, [create a dataset]({{< relref "DatasetsSCALE.md" >}}) for host volume paths before you click **Custom App** on the **Discover** application screen.
-
-### Custom Docker Applications
+## Custom Docker Applications
 
 Custom Docker applications typically follow Open Container specifications and deploy in TrueNAS following the Custom Application deployment process described below.
 
@@ -48,7 +35,45 @@ If you are unsure about any configuration settings, review the [Install Custom A
 To create directories in a dataset on TrueNAS, before you begin installing the container, open the TrueNAS CLI and enter `storage filesystem mkdir path="/PATH/TO/DIRECTORY"`.
 {{< /hint >}}
 
-## Adding Custom Applications
+## Setting up App Storage
+
+To set up a new container image, first, determine if you want the container to use additional TrueNAS datasets.
+If yes, [create the dataset(s)]({{< relref "DatasetsSCALE.md" >}}) before you begin the app installation.
+
+The custom app installation wizard provides four options for mounting app storage, see below.
+When deploying a custom app via YAML, refer to the Docker [Storage](https://docs.docker.com/engine/storage/) documentation for guidance on mount options.
+
+### Defining Host Path Volumes
+
+
+
+
+
+
+
+
+
+You can mount TrueNAs storage locations inside the container.
+To mount TrueNAS storage, define the path to the system storage and the container internal path for the system storage location to appear.
+You can also mount the storage as read-only to prevent using the container to change any stored data.
+
+### Using ixVolumes
+
+### Defining Persistent Volumes
+
+Users can create additional Persistent Volumes (PVs) for storage within the container.
+PVs consume space from the pool chosen for application management.
+You need to name each new dataset and define a path where that dataset appears inside the container.
+
+To view created container datasets, go to **Datasets** and expand the dataset tree for the pool you use for applications.
+
+Users developing applications should be mindful that if an application uses Persistent Volume Claims (PVC), those datasets are not mounted on the host and therefore are not accessible within a file browser. Upstream zfs-localpv uses this behavior to manage PVC(s).
+
+If you want to consume or have file browser access to data that is present on the host, set up your custom application to use host path volumes.
+
+### Using Memory Backed Storage
+
+## Installing via Wizard
 
 When you are ready to create a container, go to **Apps**, click **Discover Apps**, then click **Custom App**.
 
@@ -149,37 +174,5 @@ When you are ready to create a container, go to **Apps**, click **Discover Apps*
 
     Click on the App card reveals details.
 
-## Setting up App Storage
+## Installing via YAML
 
-### Defining Host Path Volumes
-
-You can mount TrueNAs storage locations inside the container.
-To mount TrueNAS storage, define the path to the system storage and the container internal path for the system storage location to appear.
-You can also mount the storage as read-only to prevent using the container to change any stored data.
-For more details, see the [Kubernetes hostPath documentation](https://kubernetes.io/docs/concepts/storage/volumes/#hostpath).
-
-### Defining Other Volumes
-
-Users can create additional Persistent Volumes (PVs) for storage within the container.
-PVs consume space from the pool chosen for application management.
-You need to name each new dataset and define a path where that dataset appears inside the container.
-
-To view created container datasets, go to **Datasets** and expand the dataset tree for the pool you use for applications.
-
-### Setting Up Persistent Volume Access
-
-Users developing applications should be mindful that if an application uses Persistent Volume Claims (PVC), those datasets are not mounted on the host and therefore are not accessible within a file browser. Upstream zfs-localpv uses this behavior to manage PVC(s).
-
-If you want to consume or have file browser access to data that is present on the host, set up your custom application to use host path volumes.
-
-Alternatively, you can use the network to copy directories and files to and from the pod using `k3s kubectl` commands.
-
-To copy from a pod in a specific container:
-`k3s kubectl cp <file-spec-src> <file-spec-dest> -c <specific-container>`
-
-To copy a local file to the remote pod:
-`k3s kubectl cp /tmp/foo <some-namespace>/<some-pod>:/tmp/bar`
-
-To copy a remote pod file locally:
-`k3s kubectl cp <some-namespace>/<some-pod>:/tmp/foo /tmp/bar`
--->
