@@ -268,6 +268,6 @@ The opertating system must prevent the installation of patches, service packs, d
 {{< expand "SRG-OS-000477-GPOS-00222" "v" >}}
 The operating system must genrate audit records for all kernel module load, unload, and restart actions, and also for all program initiations.
 {{< /expand >}}
-{{< exapnd "SRG-OS-000278-GPOS-00108" "v" >}}
+{{< expand "SRG-OS-000278-GPOS-00108" "v" >}}
 Completion of compliance with this finding stating the operating system must use cryptographic mechanisims to protect the intergrity of audit tools.
 {{< /expand >}}
