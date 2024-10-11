@@ -17,8 +17,8 @@ TrueNAS falls into the category of an appliance with its own operating system as
 Through connection to Active Directory, TrueNAS also complies with the [Active Directory Domain Security Technical Implementation Guide SRG](https://www.stigviewer.com/stig/active_directory_domain/) findings related to authentication and access controls for user, group, and systems.
 
 ## Customizing TrueNAS Security Options for STIG Compliance
-Many areas of compliance with the STIG SGR findings are automatically addressed through the TrueNAS kernel and middleware, but some are optional settings and features in the TrueNAS UI administration users customize to suit individual use cases and security policies.
-This article details customizable settings to accomplish a security-hardened systems for STIG compliance.
+Many areas of compliance with the STIG SRG findings are automatically addressed through the TrueNAS kernel and middleware, but some are optional settings and features in the TrueNAS UI administration users customize to suit individual use cases and security policies.
+This article details customizable settings to accomplish a security-hardened systems for STIG and FIPS compliance.
 
 ## Install TrueNAS
 Existing TrueNAS systems can upgrade to the latest release through the UI.
@@ -39,7 +39,7 @@ After installing TrueNAS, users must complete the initial configuration of netwo
 TrueNAS creates the root user and an administration user at installation.
 Some releases of TrueNAS might only have **root** as the default administration user, while other releases have either the **admin** or **truenas_admin** as the default user.
 
-TrueNAS systems with the **root** user, or either the **admin** or **truenas_admin** user should create a new administration user with full control privileges and assign a complex password that you should change on a frequent basis.
+TrueNAS systems with the **root** user, or either the **admin** or **truenas_admin** user should create a new administration user with full control privileges and assign a complex password that follow current guidelines for managing passwords.
 
 After testing the login for the new administration user, disable both the **root** user password if not already disabled and the the default **admin** or **truenas_admin** user password to security-harden the system. 
 Only enable the root user password when necessary to perform functions not available to administration user, and when tasks are complete, disable the root user password again.
@@ -173,7 +173,7 @@ Consider setting the following alerts for STIG compliance:
 |  | **Audit Service Setup Failed** | Set alert level preference to send notifications when the auditing setup fails to correct the issue promptly and not lose audit logs. |
 | **Certificates** | <li>**Certificate is Expiring Soon**<br><li>**Certificate is Expiring**<br><li>**Certificate has Expired**</li>  | Set alert level preferences to send notifications when a certificate is about to or has expired to either renew or replace the certificate before functions relying on certificates are impacted, and to keep those functions protected. |
 |  | **Certificate Revoked** | Set alert preferences to send notifications when a certificate is revoked to promptly address the issue or obtain a new certificate. |
-|  | **WEeb UI HTTPS Certificate Setup Failed** | Set alert level preferences to send notifications when the web UI HTTPS certificate setup fails to promptly address issues that impact the security of HTTPS access to the TrueNAS web UI. |
+|  | **Web UI HTTPS Certificate Setup Failed** | Set alert level preferences to send notifications when the web UI HTTPS certificate setup fails to promptly address issues that impact the security of HTTPS access to the TrueNAS web UI. |
 | **Directory Services** | **Active Directory Domain Validation Failed** | Set the alert level preference to send notifications when Active Directory domain verification fails to promptly investigate and take corrective action. |
 | **Key Management Interoperability Protocol (KMIP)** | **Failed to Communicate with KMIP Server** | Set alert level preference to send notifications when a communication failure with the KMIP server occurs to promptly diagnose and correct issues. |
 |  | <li>**Failed to Sync SED Global Password with KMIP Server**<br><li>**Failed to sync SED Keys with KMIP Server**<br><li>**Failed to Sync ZFS Keys with KMIP Server**</li> | Set the alert level preference to send notifications when the SED global password fails to sync with the KMIP server to promptly diagnose and correct password and/or sync issues.|
@@ -260,7 +260,7 @@ This document does not cover the virtual machine envirnoments created by users.
 STIG compliance for these users-deployed environments is based on the operating system and applications deployed in these VMs.
 
 ## Future STIG Compliance
-TrueNAS does not comply with STIG for the following findings that are planned for a future release:
+TrueNAS does not comply with STIG SGR GPOS for the following findings that are planned for a future release:
 
 {{< expand " SRG-OS-00366-GPOS-10153" "v" >}}
 The opertating system must prevent the installation of patches, service packs, device drivers, or OS components without verification, and that are digitally signed using a certificate recognized and approved by the organization.
