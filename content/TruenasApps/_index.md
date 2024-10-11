@@ -63,6 +63,9 @@ You must choose a pool before you can install an application.
 
 {{< expand "Custom Apps" "v" >}}
 
+{{< include file="/static/includes/apps/CustomAppIntro.md" >}}
+
+
 {{< include file="/static/includes/apps/AppsCustomApp.md" >}}
 
 {{< /expand >}}
@@ -249,7 +252,6 @@ If running TrueNAS 24.10 or higher:
    
 4. Select **Install NVIDIA Drivers**, and click **Save.**
 
-
 ## Discover Screen Options
 The **Discover** screen shows application widgets based on the trains selected on the **Train Settings** screen.
 
@@ -288,7 +290,8 @@ After installing an application, the **Installed** applications screen shows the
 The status changes to **Running** when the application is fully deployed and ready to use.
 
 ## Installing Custom Applications
-{{< include file="/static/includes/CustomAppIntro.md" >}}
+{{< include file="/static/includes/apps/CustomAppIntro.md" >}}
+
 
 See [Installing Custom Applications]({{< relref "UsingCustomApp.md" >}}) for more information.
 
