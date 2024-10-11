@@ -9,7 +9,7 @@ tags:
 - customapp
 ---
 
-{{< include file="/static/includes/CustomAppEE.md" >}}
+{{< include file="/static/includes/apps/CustomAppEE.md" >}}
 
 The **Custom App** button on the [**Discover**]({{< relref "SCALE/SCALEUIReference/Apps/_index.md" >}}) applications screen opens the **[Install iX App](#install-ix-app-screen)** screen with a guided installation wizard.
 The <i class="material-icons" aria-hidden="true" title="more_vert">more_vert</i> > **Install via YAML** button opens the **[Custom App](#custom-app-screen)** screen with an advanced YAML editor for deploying apps using Docker Compose.
@@ -77,7 +77,7 @@ Check the documentation for the application you want to install for entrypoints,
 | **Entrypoint** | Click **Add** to display a container entrypoint field. Enter an entrypoint in either the exec form, for example `ENTRYPOINT ["top", "-b"]`. Click **Add** again to enter another entrypoint variable. |
 | **Command** | Click **Add** to display a container command field. Enter an command in either the exec form, for example `CMD ["executable","param1","param2"]`. Click **Add** again to enter another command. |
 | **Timezone** | Use the dropdown to select a timezone setting for the container. |
-| **Environment Variables** | Click **Add** to display a block of **Container Environment Variables**. Click **Add** again to enter another set of environment variables. |
+| **Environment Variables** | Click **Add** to display a block of environment variables. Click **Add** again to enter another set of environment variables. |
 | **Name** | Enter the environment variable name or key. For example, enter `MY_NAME`. |
 | **Value** | Enter the value for the variable specified in **Environment Variable Name**. For example, enter  `"John Doe"`, `John\ Doe`, or `John`. |
 | **Restart Policy** | Use the dropdown to select a restart policy to use for the container. Options are **No - Does not restart the container under any circumstances.**, **Unless Stopped - Restarts the container irrespective of the exit code but stops restarting when the service is stopped or removed.**, **On Failure - Restarts the container if the exit code indicates an error.**, and **Always - Restarts the container until its removal.**. |
@@ -133,9 +133,9 @@ See the Docker [DNS services documentation](https://docs.docker.com/engine/netwo
 | **Protocol** | Select the protocol from the dropdown list. Options are **TCP** or **UDP**. |
 | **Nameservers** | Use to add one or more IP addresses to use as DNS servers for the container. Click **Add** to the right of **Nameservers** to display a **Nameserver** entry field. Click again to add another name server. |
 | **Nameserver** | Enter the IP address of the name server. |
-| **Search Domains** | Use to add one or more DNS search domains to search non-fully qualified hostnames. Click **Add** to display a **Search Domain** field to enter the domain you want to configure. Click again to add another search domain. See [search](https://www.man7.org/linux/man-pages/man5/resolv.conf.5.html) in the Linux documentation for more information. |
+| **Search Domains** | Use to add one or more DNS domains to search non-fully qualified hostnames. Click **Add** to display a **Search Domain** field to enter the domain you want to configure. Click again to add another search domain. See the Linux [search](https://www.man7.org/linux/man-pages/man5/resolv.conf.5.html) documentation for more information. |
 | **Search Domain** | Enter the search domain you want to configure. For example, *mydomain.com*. |
-| **DNS Options** | Use to add one or more key-value pairs to control various aspects of query behavior DNS resolution. Click **Add** to display an **Option** field. Click again to add another option. See [options](https://www.man7.org/linux/man-pages/man5/resolv.conf.5.html) in the Linux documentation for more information. |
+| **DNS Options** | Use to add one or more key-value pairs to control various aspects of query behavior and DNS resolution. Click **Add** to display an **Option** field. Click again to add another option. See the Linux [options](https://www.man7.org/linux/man-pages/man5/resolv.conf.5.html) documentation for more information. |
 | **Option** | Enter a key-value pair representing a DNS option and its value. For example, *ndots:2*. |
 {{< /truetable >}}
 {{< /expand >}}
