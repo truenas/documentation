@@ -65,7 +65,6 @@ You must choose a pool before you can install an application.
 
 {{< include file="/static/includes/apps/CustomAppIntro.md" >}}
 
-
 {{< include file="/static/includes/apps/AppsCustomApp.md" >}}
 
 {{< /expand >}}
@@ -291,7 +290,6 @@ The status changes to **Running** when the application is fully deployed and rea
 
 ## Installing Custom Applications
 {{< include file="/static/includes/apps/CustomAppIntro.md" >}}
-
 
 See [Installing Custom Applications]({{< relref "UsingCustomApp.md" >}}) for more information.
 
