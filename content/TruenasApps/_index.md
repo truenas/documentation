@@ -157,6 +157,11 @@ After the app status changes to stopped, click **Delete** on the **Application I
 
 {{< trueimage src="/images/SCALE/Apps/AppsDeleteAppDialog.png" alt="Delete Application Dialog" id="Delete Application Dialog" >}}
 
+Select **Remove iX Volumes** to delete the ixVolume if the:
+* Installation of the app fails
+and
+* **Storage Configuration** for the app was set to ixVolumes
+
 Click **Confirm** then **Continue** to delete the application.
 
 ## Installing an Application
@@ -248,7 +253,6 @@ If running TrueNAS 24.10 or higher:
 {{< trueimage src="/images/SCALE/Apps/AppsInstallNvidiaDrivers.png" alt="Install NVIDIA Drivers" id="Install NVIDIA Drivers" >}}
    
 4. Select **Install NVIDIA Drivers**, and click **Save.**
-
 
 ## Discover Screen Options
 The **Discover** screen shows application widgets based on the trains selected on the **Train Settings** screen.
