@@ -19,7 +19,6 @@ keywords:
 
 {{< include file="/static/includes/apps/CustomAppIntro.md" >}}
 
-
 ## Custom Docker Applications
 
 Custom Docker applications typically follow Open Container specifications and deploy in TrueNAS following the Custom Application deployment process described below.
@@ -174,7 +173,7 @@ When you are ready to create a container, go to **Apps**, click **Discover Apps*
    Click again to add another option.
    See the Linux [options](https://www.man7.org/linux/man-pages/man5/resolv.conf.5.html) documentation for more information.
 
-6. Use the **Portal Configuration** settings to set up a web UI portal for the application.
+6. If the application includes a GUI, use the **Portal Configuration** settings to set up a web UI portal for the application.
 
 
 
