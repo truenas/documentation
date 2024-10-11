@@ -88,9 +88,10 @@ When you are ready to create a container, go to **Apps**, click **Discover Apps*
 
    {{< trueimage src="/images/SCALE/Apps/InstallCustomAppApplicationName.png" alt="Application Name" id="Application Name" >}}
 
-2. Enter the Docker Hub repository for the application you want to install in **Image Repository** using the format `maintainer/image`, for example *storjlabs/storagenode*, or `image`, such as *debian*, for Docker Official Images.
+2. Enter the Docker Hub repository for the application you want to install in **Image Configuration**.
+   Use the format `maintainer/image`, for example *storjlabs/storagenode*, or `image`, such as *debian*, for Docker Official Images.
 
-   If the application requires it, enter the correct value in **Image Tag** and select the **Pull Policy** to use.
+   If the application requires it, enter the correct value in **Tag** and select the **Pull Policy** to use.
 
    {{< trueimage src="/images/SCALE/Apps/InstallCustomAppContainerImages.png" alt="Container Images Settings" id="Container Images Settings" >}}
 
