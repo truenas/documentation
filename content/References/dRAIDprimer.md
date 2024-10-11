@@ -147,6 +147,8 @@ For example, setting up a single dRAID1 vdev layout with matching 1.82 TiB disks
 
 This formula does not account for additional metadata reservations, so the total estimated capacity is likely to be slightly lower.
 
+{{< include file="/static/includes/dRaidGroupLayout.md" >}}
+
 ## dRAID Visualizer
 
 See how dRAID lays out and shuffles data.

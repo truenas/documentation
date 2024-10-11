@@ -43,6 +43,8 @@ You can rename your enclosure on the [Enclosure Screen]({{< relref "EnclosureScr
    **dRAID** layouts do not show the **Manual Disk Selection** button but do show additional **Automated Disk Selection** fields.
    When configuring a **dRAID** data VDEV, first choose a **Disk Size** then select a **Data Devices** number.
    The remaining fields update based on the **Data Devices** and **dRAID** layout selections.
+   
+   {{< include file="/static/includes/dRaidGroupLayout.md" >}}
 
    Click **Save And Go To Review** if you do not want to add other VDEV types to the pool, or click **Next** to move to the next wizard screens.
 
