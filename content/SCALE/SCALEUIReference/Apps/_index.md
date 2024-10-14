@@ -245,7 +245,7 @@ The breadcrumbs at the top of the screen header show links to the previous or th
 {{< trueimage src="/images/SCALE/Apps/AppsDiscoverScreenHeaderAndSearch.png" alt="Apps Discover Screen Header and Search" id="Discover Screen Header and Search" >}}
 
 **Custom App** opens the **[Install iX App](#install-custom-app-screens)** screen with an install wizard.
-<i class="material-icons" aria-hidden="true" title="more_vert">more_vert</i> > **Install via YAML** opens the **Custom App** screen with an advanced YAML editor for deploying apps using Docker Compose.
+<i class="material-icons" aria-hidden="true" title="more_vert">more_vert</i> > **Install via YAML** opens the **Add Custom App** screen with an advanced YAML editor for deploying apps using Docker Compose.
 
 The **Discover** screen includes a search field, links to other application management screens, and filters to sort the application widgets displayed.
 **Show All** shows all application widgets in the trains added to the **Stable** catalog. The links are:
@@ -265,7 +265,7 @@ Filter information includes the **Category**, **App Name**, and **Updated Date**
 
 TrueNAS 24.10 or later provides two options for installing a third-party application not included in the official catalogs using a Docker image.
 **Custom App** opens the **[Install iX App](#install-custom-app-screens)** screen with a guided installation wizard.
-<i class="material-icons" aria-hidden="true" title="more_vert">more_vert</i> > **Install via YAML** opens the **Custom App** screen with an advanced YAML editor for deploying apps using Docker Compose.
+<i class="material-icons" aria-hidden="true" title="more_vert">more_vert</i> > **Install via YAML** opens the **Add Custom App** screen with an advanced YAML editor for deploying apps using Docker Compose.
 
 See [Install Custom App Screens]({{< relref "InstallCustomAppScreens.md" >}}) for more information.
 
