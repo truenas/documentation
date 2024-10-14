@@ -75,7 +75,7 @@ Repeat for the **/data1** storage volume.
 
 {{< trueimage src="/images/SCALE/Apps/InstallMinIOEnterpriseHomeAndData1ACLandACE.png" alt="Home and Data1 Host Path ACL and ACE Settings" id="Home and Data1 Host Path ACL and ACE Settings" >}}
 
-If migrating from some other NAS system, set **Type** to **SMB/CIFS Share (Mounts a persistent volume claim to a SMB share)**, and then select **Migrate Data**. 
+If migrating from some other NAS system, set **Type** to **SMB/CIFS Share (Mounts a volume to a SMB share)**, and then select **Migrate Data**. 
 See [**Storage Settings**](#storage-settings) below for more information.
 
 {{< include file="/static/includes/apps/SyncthingCompleteInstall.md" >}}
