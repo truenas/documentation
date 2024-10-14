@@ -67,11 +67,12 @@ The active controller widget shows the **Check for Updates** button.
 {{< /expand >}}
 
 {{< expand "CPU Widget" "v" >}}
-The **CPU** widget shows dynamic gauges and graphs with CPU usage and temperature readings for system cores updated in realtime.
+The **CPU** widgets show the CPU model, dynamic gauges and graphs with CPU usage and CPU recent usage, and CPU usage and temperature per system cores updated in realtime.
 
-{{< trueimage src="/images/SCALE/Dashboard/DashboardCPUWidget.png" alt="CPU Widget" id="CPU Widget" >}}
+{{< trueimage src="/images/SCALE/Dashboard/DashboardCPUWidget.png" alt="CPU Widgets" id="CPU Widgets" >}}
 
 The widget shows gauges and graphs showing CPU statistics:
+* **CPU Model** widget shows the CPU model.
 * **CPU Usage** gauge that shows the average percentage of usage for the CPU cores.
 * **CPU Recent Usage** gauge that shows recent CPU usage updated in realtime, and includes the CPU model number, number of cores and physical cores.
 * **CPU Usage per CORE** bar graph that shows CPU usage per core.
@@ -90,16 +91,12 @@ You can configure the memory widget as a one large (100%) or one long (50%) plus
 {{< /expand >}}
 
 {{< expand "Network and Interface Widgets" "v" >}}
-The **Network** widget shows the status the configured primary system interface(s), link status, network I/O traffic, primary interface IP address, and media type and subtype if known.
-It includes a dynamic graph showing the time of recorded traffic and the incoming (blue) and outgoing (orange) traffic in kbs.
+The **Network** widget shows two widgets, one with a dynamic bar graph showing the time of recorded traffic and the incoming (blue) and outgoing (orange) traffic in kbs, and shows the status the configured primary system interface(s), link status, network I/O traffic, and media type and subtype if known, and the other shows the primary interface IP address.
 
 {{< trueimage src="/images/SCALE/Dashboard/DashboardNetworkWidget.png" alt="Network Widget" id="Network Widget" >}}
 
-You can configure an individual network interface (NIC) widgets in addition to the **Network** widget.
+For systems with multiple interfaces, switch the widget to the **Interface** widget and set each to the interfaces on your system.
 An **Interface** widget shows traffic, link status, interface media type and subtype, and any VLANS and the IP Address and port number.
-
-{{< trueimage src="/images/SCALE/Dashboard/DashboardInterfaceWidget.png" alt="Interface Widget" id="Interface Widget" >}}
-
 {{< /expand >}}
 
 {{< expand "Storage and Pool Widgets" "v" >}}
@@ -109,6 +106,7 @@ It reports the number disks with errors, the total number of disks in the pool, 
 
 {{< trueimage src="/images/SCALE/Dashboard/DashboardStorageWidget.png" alt="Storage Widget" id="Storage Widget" >}}
 
+The **Storage** widget includes the **Create Pool** widget that when clicked, opens the **Pool Creation Wizard** screen.
 You can configure individual pool widgets that show the same information as the root pool in the **Storage** widget.
 
 {{< trueimage src="/images/SCALE/Dashboard/DashboardPoolWidget.png" alt="Pool Widget" id="Pool Widget" >}}
@@ -143,7 +141,7 @@ Links included are:
 
 Click on each link to open it in a new browser tab.
 {{< /expand >}}
-
+<!-- Commenting out as this widget category is not showing on the Widget Category list right now 
 {{< expand "App Widget" "v" >}}
 The **App** widget shows the app name, version, state (Deploying, Active, Stopped, etc.), release status, CPU usage in percentage, memory usage in MiB, network I/O traffic, and disk I/O traffic.
 The TrueNAS SCALE logo shows in the the top left corner of the widget if a logo image for the app is unavailable.
@@ -154,7 +152,7 @@ The widget includes three icon function buttons at the top left:
 * <span class="iconify" data-icon="mdi:web"></span> **Web Portal** to access the web portal for the app.
 * <span class="iconify" data-icon="mdi:restart"></span> **Restart** to restart the app.
 * <span class="iconify" data-icon="mdi:cog"></span> **App Details** to show the app settings.
-
+-->
 {{< /expand >}}
 <!-- Commenting out until this widget is completed by devs
 {{< expand "Custom Widget" "v" >}}
@@ -212,7 +210,7 @@ Select an individual widget in a layout with multiple widgets to change the cate
 | Setting | Description |
 |---------|-------------|
 | **Layouts** | Click on the layout image to add one to four widgets in the group. Not all widget categories support all layouts. |
-| **Widget Category** | Select the information category from the dropdown list of options:<br><li>**Empty** - Default selection for a new widget. Use to fill a grouping of multiple widgets where only two are defined and the others are not.<br><li>**Network** - Use to to set up a network widget.<br><li>**Storage** - Use to set up a storage or single pool widget.<br><li>**Help** - Use to include the widget with links to SCALE resources.<br><li>**Memory** - Use to set up a memory-usage widget.<br><li>**Backup Tasks** - Use to set up a widget showing either configured data protection tasks or links to locations to configure tasks.<br><li>**CPU** - Use to set up a CPU usage widget.<br><li>**System Information** - Use to add one of four system information widget types. <br><li>**Custom** - Use to set up a text-only widget with whatever text-based information you want to include on the **Dashboard**.<br></li> The **Widget Type** field shows after selecting the category. |
+| **Widget Category** | Select the information category from the dropdown list of options:<br><li>**Empty** - Default selection for a new widget. Use to fill a grouping of multiple widgets where only two are defined and the others are not.<br><li>**Storage** - Use to set up a storage or single pool widget.<br><li>**Network** - Use to to set up a network widget.<br><li>**Help** - Use to include the widget with links to SCALE resources.<br><li>**Memory** - Use to set up a memory-usage widget.<br><li>**Backup Tasks** - Use to set up a widget showing either configured data protection tasks or links to locations to configure tasks.<br><li>**CPU** - Use to set up a CPU usage widget.<br><li>**System Information** - Use to add one of four system information widget types. <br><li>**Custom** - Use to set up a text-only widget with whatever text-based information you want to include on the **Dashboard**.<br></li> The **Widget Type** field shows after selecting the category. |
 | **Widget Type** | Select the type of information to show in the selected widget. Options change based on the selected **Widget Category**. See [Widget Type Options by Category](#widget-type-options-by-category) for information on the options by the category and type selected. |
 {{< /truetable >}}
 
@@ -222,20 +220,21 @@ Select an individual widget in a layout with multiple widgets to change the cate
 There are four types available when **Widget Category** is set to **Network**.
 Selecting **Network**, **IPv4 Address** or **IPv6 Address** as the type adds the **Interfaces** field to the screen.
 
-**Hostname** can use a full, half, or quarter size widget. It does not add additional fields.
+**Interface** shows the interface ID, link state, I/O traffic, Media type and subtype, and IP address assigned to the interface, and the dynamic bar graph for the I/O traffic. 
+Can use a full or half size widget.
 
-**IPv4 Address** and **IPv6 Address** can use a full, half, or quarter size widget. Shows the **Interface** field.
-
-**Network** can use a full or half size widget with network information for a primary or other interface configured on the system. Shows the **Interface** field.
+**IPv4 Address** and **IPv6 Address** can use a full, half, or quarter size widget. Shows the IP address for the selected interface.
 
 Select the interface to show in the widget from the **Interface** dropdown field.
 {{< /expand >}}
 
 {{< expand "Widget Type Options for Storage" "v" >}}
-There are two widget types available when **Widget Category** is set to **Storage**: **Storage** and **Pool**.
+There are three widget categories available when **Widget Category** is set to **Storage**: **Storage**, **Pool**, and **Pool Usage**.
 The layout for the widget must be full size.
 
-Selecting either **Storage** or **Pool** as the type adds the **Pool** field to the screen.
+Selecting any of the **Storage** categories adds the **Pool** field to the screen.
+
+Selecting **Pool** as the category shows three options, **Pool Usage**, **Disks w/ZFS Errors**, and **Last Scan Errors**. Each of these three categories can be assigned to a quarter-size widget.
 {{< /expand >}}
 
 {{< expand "Widget Type Options for Help" "v" >}}
@@ -258,16 +257,18 @@ The **Backup Task** widget can only use a full size widget.
 {{< /expand >}}
 
 {{< expand "Widget Type Options for CPU" "v" >}}
-Only **CPU** is the available widget type when **Widget Category** is set to **CPU**.
+Only **CPU** is the available widget type when **Widget Category** is set to **CPU**. It has a total of six widgets shown in two widgets on the Dashboard.
 
-The **CPU** widget can only use a full size widget.
+The **CPU** widgets can use a full, half, or quarter size widgets.
+CPU **Widget Type** options are **CPU Model**, **CPU Recent Usage**, **CPU usage**.
+Select the two half-size layout to activate the option to add **CPU Temperature Per Core** and **CPU Usage Per Core**.
 {{< /expand >}}
 
 {{< expand "Widget Type Options for System Information" "v" >}}
-There are four widget types available when **Widget Category** is set to **System Information**: **System Information Active Node**, **OS Version**, **System Uptime**, and **System Image**.
+The**System Information** widget has six **Widget Type** options, **Hostname-Active**, **OS Version**, **Serial-Active**, and **System Image**, System Information-Active**, and **System Uptime**.
+HA systems, with two controllers and the HA license, show the **Hostname-Standby**, **Serial-Standby**, and **System Information-Standby** widget types.
 
-**System Information Active Node** shows system information for a single controller system in a full size widget.
-<!-- Commenting out until I can verify this on a system
+<!-- Commenting out until I can verify this on a dual controller system and one with an HA license
 {{< enterprise >}}
 If the system is an HA system with an Enterprise license, shows the active controller widget in a full size widget.
 If an HA system with dual controllers, the **HA** option displays as a **Widget Category**.
@@ -290,10 +291,7 @@ Either reconfigure or delete the app widget to remove the error message.
 {{< /expand >}} -->
 
 {{< expand "Widget Type Options for Custom" "v" >}}
-Only **Arbitrary Text** is the available widget type when **Widget Category** is set to **Custom**.
-
-There are three additional fields to enter text strings in a full, half, or quarter-size widget.
-Enter text in **Widget Title**, **Widget Text**, and **Widget Subtext** (if desired) that does not exceed the maximum character count.
-The maximum number of character for the **Custom** widget is 200 upper and lower case alpha-numeric or special characters.
+The **Custom** widget has only the **Arbitrary Text** for a widget type, but also shows the **Widget Title**, **Widget Text**, and **Widget Subtext** fields.
+Enter text that does not exceed the maximum character count for the **Custom** widget, which is 200 upper and lower case alpha-numeric or special characters.
 Spaces between characters count as characters.
 {{< /expand >}}
