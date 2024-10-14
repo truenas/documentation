@@ -110,7 +110,7 @@ The default TrueNAS **Stable** catalog populates the **Discover** apps screen wi
 Some apps proposed by community members might be adopted as official **stable** train apps.
 iXsystems maintains official apps for non-Enterprise and community users.
 
-{{< trueimage src="/images/SCALE/Apps/AppsSettingsScreen.png" alt="Apps Settings Screen" id=Apps Settings Screen" >}}
+{{< trueimage src="/images/SCALE/Apps/AppsSettingsScreen.png" alt="Apps Settings Screen" id="Apps Settings Screen" >}}
 
 Users can change apps on the **Discover** screen from the **Train Settings** screen.
 Click **Train Settings** on the **Settings** dropdown menu to open the **Train Settings** screen, then select the desired train(s).
