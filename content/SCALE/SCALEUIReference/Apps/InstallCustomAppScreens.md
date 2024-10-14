@@ -157,7 +157,7 @@ Click **Add** to display the web portal configuration settings.
 | **Use Node IP** | Select to use the TrueNAS node, or host, IP address to access the portal. Selected by default. |
 | **Host** | Displays when **Use Node IP** is not selected. Enter a hostname or an internal IP within your local network, for example *my-app-service.local* or an internal IP address. |
 | **Port** | Enter the port number to use for portal access. The port number the app uses should be in the documentation provided by the application provider/developer. Check the port number against the list of [Default Ports](https://www.truenas.com/docs/references/defaultports/) to make sure TrueNAS is not using it for some other purpose. |
-| **Path** | Enter the path for portal access, for example *admin*. Defaults to */*. The path is appended to the host IP and port, as in **truenas.local:15000/admin**. |
+| **Path** | Enter the path for portal access, for example */admin*. Defaults to */*. The path is appended to the host IP and port, as in **truenas.local:15000/admin**. |
 {{< /truetable >}}
 {{< /expand >}}
 
@@ -173,8 +173,8 @@ Alternatively, select **ixVolume** to allow TrueNAS to create a dataset on the a
 Both **Host Path** and **ixVolume** attach container storage as a bind mount.
 See Docker [Bind Mount](https://docs.docker.com/engine/storage/bind-mounts/) documentation for more information.
 
-Users can create additional persistent volume (PV) claims within the container to access an SMB share.
-PVs consume space from the pool chosen for application management.
+Users can create additional SMB share volume claims within the container to access an SMB share.
+Share volumes consume space from the pool chosen for application management.
 
 Finally, **Tmpfs** allows the container to utilize a temporary directory on the RAM.
 See the Docker [tmpfs](https://docs.docker.com/engine/storage/#tmpfs) documentation for more information.
@@ -189,7 +189,7 @@ Click again to mount an additional storage volume.
 Select an option from the **Type** dropdown:
 
 {{< expand "Host Path (Path that already exists on the system)" "v" >}}
-Use to configure a persistent host path volume.
+Use to configure a persistent host path.
 
 {{< trueimage src="/images/SCALE/Apps/InstallCustomAppAddHostPathVol.png" alt="Host Path Settings" id="Host Path Settings" >}}
 
@@ -228,8 +228,8 @@ Use to configure a storage mount for a system created dataset on the application
 {{< /truetable >}}
 {{< /expand >}}
 
-{{< expand "SMB/CIFS Share (Mounts a persistent volume claim to a SMB share)" "v" >}}
-Use to mount an SMB share with a persistent volume claim.
+{{< expand "SMB/CIFS Share (Mounts a volume to a SMB share)" "v" >}}
+Use to mount an SMB share with a Docker [volume](https://docs.docker.com/engine/storage/#volumes).
 
 {{< trueimage src="/images/SCALE/Apps/InstallCustomAppAddSMB.png" alt="SMB/CIFS Share Settings" id="SMB/CIFS Share Settings" >}}
 
@@ -237,26 +237,27 @@ Use to mount an SMB share with a persistent volume claim.
 | Setting | Description |
 |-----------|-------------|
 | **Read Only** | Select to make the mount path inside the container read-only and prevent the app from using the path to store data. |
-| **Mount Path** | Required. Enter the <file>**path/to/directory**</file> where the persistent volume mounts inside the container. |
-| **Server** | Enter the IP address for the SMB server, for example *192.168.1.100*. This can be the TrueNAS host. |
-| **Path** | Enter the name of the SMB share, for example *my-share*. |
-| **Username** | Enter the username of an account with permission to access the SMB share. |
-| **Password** | Enter the password for the account in **Username**. |
-| **Domain** | Optional. Enter the directory services domain here. This is only needed if the domain is something other than the TrueNAS default `WORKGROUP`, for example on systems with Active Directory configured.  |
+| **Mount Path** | Required. Enter the <file>**path/to/directory**</file> where the share volume mounts inside the container. |
+| **Server** | Required. Enter the IP address for the SMB server, for example *192.168.1.100*. This can be the TrueNAS host. |
+| **Path** | Required. Enter the name of the SMB share, for example *my-share*. |
+| **Username** | Required. Enter the username of an account with permission to access the SMB share. |
+| **Password** | Required. Enter the password for the account in **Username**. |
+| **Domain** | Enter the directory services domain here. This is only needed if the domain is something other than the TrueNAS default `WORKGROUP`, for example on systems with Active Directory configured.  |
 {{< /truetable >}}
 {{< /expand >}}
 
 {{< expand "Tmpfs (Temporary directory created on the RAM)" "v" >}}
-Use to configure
+Use to configure a memory-backed temporary directory.
+See the Docker [tmpfs](https://docs.docker.com/engine/storage/#tmpfs) documentation for more information.
 
 {{< trueimage src="/images/SCALE/Apps/InstallCustomAppAddMemoryBackedVol.png" alt="Tmpfs Settings" id="Tmpfs Settings" >}}
 
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Read Only** | Select to make the mount path inside the container read-only and prevent the app from using the path to store data. |
-| **Mount Path** | Required. Enter the path where the memory backed volume mounts inside the container. |
-| **Tmpfs Size Limit (in Mi)** | Optional. Enter the size of the volume, for example, *500*. |
+| **Read Only** | Select to make the mount path inside the container read-only and prevent the app from using the path to store data. Not recommended for memory-backed storage. |
+| **Mount Path** | Required. Enter the path where the memory-backed directory mounts inside the container. |
+| **Tmpfs Size Limit (in Mi)** | Required. Enter the maximum size of the temporary directory in mebibytes. Defaults to *500*. |
 {{< /truetable >}}
 {{< /expand >}}
 {{< /expand >}}
