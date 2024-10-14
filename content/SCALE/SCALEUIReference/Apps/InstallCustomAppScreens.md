@@ -12,7 +12,7 @@ tags:
 {{< include file="/static/includes/apps/CustomAppEE.md" >}}
 
 The **Custom App** button on the [**Discover**]({{< relref "SCALE/SCALEUIReference/Apps/_index.md" >}}) applications screen opens the **[Install iX App](#install-ix-app-screen)** screen with a guided installation wizard.
-The <i class="material-icons" aria-hidden="true" title="more_vert">more_vert</i> > **Install via YAML** button opens the **[Custom App](#custom-app-screen)** screen with an advanced YAML editor for deploying apps using Docker Compose.
+The <i class="material-icons" aria-hidden="true" title="more_vert">more_vert</i> > **Install via YAML** button opens the **[Add Custom App](#add-custom-app-screen)** screen with an advanced YAML editor for deploying apps using Docker Compose.
 
 ## Install iX App Screen
 
@@ -287,20 +287,20 @@ See [Allocating GPU](https://www.truenas.com/docs/truenasapps/#allocating-gpu) f
 {{< /truetable >}}
 {{< /expand >}}
 
-## Custom App Screen
+## Add Custom App Screen
 
-The **Custom App** screen allows you to configure third-party applications using Docker Compose YAML syntax.
+The **Add Custom App** screen allows you to configure third-party applications using Docker Compose YAML syntax.
 Use the YAML editor to configure applications not included in the official catalog.
 See the [Docker Compose overview](https://docs.docker.com/compose/) from Docker for more information.
 
-{{< include file="/static/includes/YAMLWarning.md" >}}
+{{< include file="/static/includes/apps/YAMLWarning.md" >}}
 
 {{< trueimage src="/images/SCALE/Apps/InstallCustomAppYAML.png" alt="Install Custom App via YAML" id="Install Custom App via YAML" >}}
 
 {{< truetable >}}
 | Setting | Description |
 |-----------|-------------|
-| Name | Enter a name for the custom application. |
+| Name | Enter a name for the application to be used in the TrueNAS UI. The name must use lowercase alphanumeric characters, start with an alphabetic character, and can end with alphanumeric character. A hyphen (`-`) is allowed but not as the first or last character, for example *abc123*, *abc*, *abcd-1232*, but not *-abcd*. |
 | Custom Config | Enter a Docker Compose YAML file for the application. |
 {{< /truetable >}}
 
