@@ -60,14 +60,9 @@ In most use cases, ixVolume storage is better suited to app testing, while host 
 
 ### Using SMB Shares
 
-Users can mount a persistent volume (PV) claim to an SMB share for storage within the container.
-PVs consume space from the pool chosen for application management.
-You need to define a path where that dataset appears inside the container.
-To view created container datasets, go to **Datasets** and expand the dataset tree for the pool you use for applications.
-
-Users developing applications should be mindful that if an application uses Persistent Volume Claims (PVC), those datasets are not mounted on the host and therefore are not accessible within a file browser.
-Upstream zfs-localpv uses this behavior to manage PVC(s).
-If you want to consume or have file browser access to data that is present on the host, set up your custom application to use host path volumes.
+Users can mount a an SMB share for storage within the container using Docker [volumes](https://docs.docker.com/engine/storage/#volumes).
+Volumes consume space from the pool chosen for application management.
+You need to define a path where the volume appears inside the container.
 
 ### Using Memory-Backed Storage
 
@@ -80,8 +75,6 @@ For security purposes, sensitive data like temporary credentials or data can be 
 ## Installing via Wizard
 
 When you are ready to create a container, go to **Apps**, click **Discover Apps**, then click **Custom App**.
-
-{{< trueimage src="/images/SCALE/Apps/AppsDiscoverScreen.png" alt="Applications Discover Screen" id="Applications Discover Screen" >}}
 
 1. Enter a name for the container in **Application Name**.
    Accept the default number in **Version**.
@@ -176,39 +169,90 @@ When you are ready to create a container, go to **Apps**, click **Discover Apps*
 
 6. If the application includes a GUI, use the **Portal Configuration** settings to set up a web UI portal for the application.
 
+   {{< trueimage src="/images/SCALE/Apps/InstallCustomAppAddPortalConfiguration.png" alt="Portal Configuration Settings" id="Portal Configuration Settings" >}}
 
+   Click **Add** to display a block of web portal configuration settings.
 
+   Enter a **Name** for the portal, for example *MyAppPortal*.
 
+   Select the web **Protocol** to use for the portal from the dropdown list. Options are **HTTP** or **HTTPS**.
 
+   Select **Use Node IP** to use the TrueNAS node, or host, IP address to access the portal or deselect to display the **Host** field.
+   Then enter a hostname or an internal IP within your local network, for example *my-app-service.local* or an internal IP address.
 
+   Enter the **Port** number to use for portal access.
+   The port number the app uses should be in the documentation provided by the application provider/developer.
+   Check the port number against the list of [Default Ports](https://www.truenas.com/docs/references/defaultports/) to make sure TrueNAS is not using it for some other purpose.
+   If needed, you can map the default container port to an open host port under **Network Configuration** (see above).
 
-
-
-
+   If needed, enter a custom **Path** for portal access, for example */admin*. Defaults to */*. The path is appended to the host IP and port, as in **truenas.local:15000/admin**.
 
 7. Add the **Storage** settings.
    Review the image documentation for required storage volumes.
-   See [Setting up Storage](#setting-up-app-storage) below for more information.
-
-   Click **Add** for each host path volume.
-   Enter or browse to select the **Host Path** for the dataset on TrueNAS.
-   Enter the **Mount Path** to mount the host path inside the container.
+   See [Setting up Storage](#setting-up-app-storage) above for more information.
 
    {{< trueimage src="/images/SCALE/Apps/InstallCustomAppScreenStorage.png" alt="Storage Settings" id="Storage Settings" >}}
 
-   Add any memory-backed or other volumes you need or want to use.
-   You can add more volumes to the container later, if needed.
+   Click **Add** to display a block of configuration settings for each storage mount.
+   You can edit to add additional storage to the container later, if needed.
 
-8. Enter any additional settings required for your application, such as workload details or adding container settings for your application.
+   Use the dropdown to select the storage **Type** you need to mount then configure the appropriate settings.
 
-9. Select the **Scaling/Upgrade Policy** to use.
-   The default is **Kill existing pods before creating new ones**.
+   {{< expand "ixVolume (Dataset created automatically by the system)" "v" >}}
+   To allow TrueNAS to create the storage volume, leave **Type** set to **ixVolume (Dataset created automatically by the system)**.
+   This is recommended for a test deployment of an app but not for a full app deployment.
 
-10. {{< include file="/static/includes/apps/AppInstallWizardResourceConfig.md" >}}
+   {{< trueimage src="/images/SCALE/Apps/InstallCustomAppAddixVolume.png" alt="IxVolume Settings" id="IxVolume Settings" >}}
 
-11. Use **GPU Configuration** to allocate GPU resources if available and required for the application.
+   Enter in **Mount Path** the <file>**path/to/directory**</file> where the iXvolume mounts inside the container.
 
-12. Click **Install** to deploy the container.
+   Select whether to mount the iXvolume as **Read Only** or to **Enable ACL** and configure settings as needed.
+   {{< /expand >}}
+
+   {{< expand "Host Path (Path that already exists on the system)" "v" >}}
+   To configure a persistent host path to an existing dataset, select **Host Path (Path that already exists on the system)**.
+   This is the recommended setting for on-disk storage in a production deployment.
+
+   {{< trueimage src="/images/SCALE/Apps/InstallCustomAppAddHostPathVol.png" alt="Host Path Settings" id="Host Path Settings" >}}
+
+   Enter in **Mount Path** the <file>**path/to/directory**</file> where the host path mounts inside the container.
+   Then define the **Host Path**. Enter a path or click <span class="material-icons">arrow_right</span> to the left of <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M5 21L3 9h18l-2 12zm5-6h4q.425 0 .713-.288T15 14t-.288-.712T14 13h-4q-.425 0-.712.288T9 14t.288.713T10 15M6 8q-.425 0-.712-.288T5 7t.288-.712T6 6h12q.425 0 .713.288T19 7t-.288.713T18 8zm2-3q-.425 0-.712-.288T7 4t.288-.712T8 3h8q.425 0 .713.288T17 4t-.288.713T16 5z"/></svg> **/mnt** to browse to the location of the dataset in TrueNAS.
+
+   Select whether to mount the host path as **Read Only** or to **Enable ACL** and configure settings as needed.
+   {{< /expand >}}
+
+   {{< expand "SMB/CIFS Share (Mounts a volume to a SMB share)" "v" >}}
+   To mount an existing SMB share as a Docker [volume](https://docs.docker.com/engine/storage/#volumes), select **SMB/CIFS Share (Mounts a volume to a SMB share)**.
+
+   {{< trueimage src="/images/SCALE/Apps/InstallCustomAppAddSMB.png" alt="SMB/CIFS Share Settings" id="SMB/CIFS Share Settings" >}}
+
+   Enter in **Mount Path** the <file>**path/to/directory**</file> where the iXvolume mounts inside the container.
+
+   Enter in **Server** the IP address for the SMB server, for example *192.168.1.100*.
+   This can be the TrueNAS host.
+
+   Enter the name of the SMB share in **Path**, for example *my-share*.
+
+   Enter the **Username** and **Password** of an account with permission to access the SMB share.
+
+   Select whether to mount the share volume as **Read Only** or enter a directory services **Domain** as needed.
+   {{< /expand >}}
+
+   {{< expand "Tmpfs (Temporary directory created on the RAM)" "v" >}}
+   To mount a temporary memory-backed storage directory, select **Tmpfs (Temporary directory created on the RAM)**.
+
+   {{< trueimage src="/images/SCALE/Apps/InstallCustomAppAddMemoryBackedVol.png" alt="Tmpfs Settings" id="Tmpfs Settings" >}}
+
+   Enter in **Mount Path** the <file>**path/to/directory**</file> where the iXvolume mounts inside the container.
+
+   Enter in **Tmpfs Size Limit (in Mi)** the maximum size of the temporary directory in mebibytes or accept the default of *500*.
+   {{< /expand >}}
+
+8. {{< include file="/static/includes/apps/AppInstallWizardResourceConfig.md" >}}
+
+9.  Use **GPU Configuration** to allocate GPU resources if available and required for the application.
+
+10. Click **Install** to deploy the container.
     If you correctly configured the app, the widget displays on the **Installed Applications** screen.
 
     When complete, the container becomes active.
