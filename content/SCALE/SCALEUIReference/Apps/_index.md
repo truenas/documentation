@@ -90,7 +90,7 @@ Entering characters in the **<span class="iconify" data-icon="mdi:magnify"></spa
 ### Settings
 **Settings** opens the **Settings** screen showing the four application train options, the option to add IP addresses, and check for Docker image updates.
 
-{{< trueimage src="/images/SCALE/Apps/AppsSettingsScreen.png" alt="Apps Settings Screen" id="Apps Settings Screen" >}}
+{{< trueimage src="/images/SCALE/Apps/AppsSettingScreen.png" alt="Apps Settings Screen" id="Apps Settings Screen" >}}
 
 Select the checkbox to the left of the train name to add another train to the applications catalog.
 Train options:
