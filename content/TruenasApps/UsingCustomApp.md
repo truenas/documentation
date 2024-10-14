@@ -341,12 +341,12 @@ services:
       NEXTCLOUD_ADMIN_USER: admin
       NEXTCLOUD_DATA_DIR: /var/www/html/data
       NEXTCLOUD_TRUSTED_DOMAINS: |
-        127.0.0.1 
+        127.0.0.1
         localhost
         nextcloud
         localhost:8080
         # HOSTNAME:8080  # Replace HOSTNAME with your system hostname
-        # IPADDR:8080    # Replace IPADDR with your system IP address 
+        # IPADDR:8080    # Replace IPADDR with your system IP address
       PHP_MEMORY_LIMIT: 512M
       PHP_UPLOAD_LIMIT: 3G
       POSTGRES_DB: nextcloud
@@ -443,12 +443,12 @@ services:
       NEXTCLOUD_ADMIN_USER: admin
       NEXTCLOUD_DATA_DIR: /var/www/html/data
       NEXTCLOUD_TRUSTED_DOMAINS: |
-        127.0.0.1 
+        127.0.0.1
         localhost
         nextcloud
         localhost:8080
         # HOSTNAME:8080  # Replace HOSTNAME with your system hostname
-        # IPADDR:8080    # Replace IPADDR with your system IP address 
+        # IPADDR:8080    # Replace IPADDR with your system IP address
       PHP_MEMORY_LIMIT: 512M
       PHP_UPLOAD_LIMIT: 3G
       POSTGRES_DB: nextcloud
