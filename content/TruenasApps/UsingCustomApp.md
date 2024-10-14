@@ -74,7 +74,7 @@ For security purposes, sensitive data like temporary credentials or data can be 
 
 ## Installing via Wizard
 
-When you are ready to create a container, go to **Apps**, click **Discover Apps**, then click **Custom App**.
+To deploy a third-party application using the **Install iX App** wizard, go to **Apps**, click **Discover Apps**, then click **Custom App**.
 
 1. Enter a name for the container in **Application Name**.
    Accept the default number in **Version**.
@@ -204,9 +204,9 @@ When you are ready to create a container, go to **Apps**, click **Discover Apps*
 
    {{< trueimage src="/images/SCALE/Apps/InstallCustomAppAddixVolume.png" alt="IxVolume Settings" id="IxVolume Settings" >}}
 
-   Enter in **Mount Path** the <file>**path/to/directory**</file> where the iXvolume mounts inside the container.
+   Enter in **Mount Path** the <file>**path/to/directory**</file> where the ixVolume mounts inside the container.
 
-   Select whether to mount the iXvolume as **Read Only** or to **Enable ACL** and configure settings as needed.
+   Select whether to mount the ixVolume as **Read Only** or to **Enable ACL** and configure settings as needed.
    {{< /expand >}}
 
    {{< expand "Host Path (Path that already exists on the system)" "v" >}}
@@ -226,7 +226,7 @@ When you are ready to create a container, go to **Apps**, click **Discover Apps*
 
    {{< trueimage src="/images/SCALE/Apps/InstallCustomAppAddSMB.png" alt="SMB/CIFS Share Settings" id="SMB/CIFS Share Settings" >}}
 
-   Enter in **Mount Path** the <file>**path/to/directory**</file> where the iXvolume mounts inside the container.
+   Enter in **Mount Path** the <file>**path/to/directory**</file> where the ixVolume mounts inside the container.
 
    Enter in **Server** the IP address for the SMB server, for example *192.168.1.100*.
    This can be the TrueNAS host.
@@ -262,5 +262,491 @@ When you are ready to create a container, go to **Apps**, click **Discover Apps*
 
 ## Installing via YAML
 
-{{< include file="/static/includes/YAMLWarning.md" >}}
+{{< include file="/static/includes/apps/YAMLWarning.md" >}}
 
+To install a third-party application using a Docker Compose YAML file, go to **Apps > Discover**.
+Click <i class="material-icons" aria-hidden="true" title="more_vert">more_vert</i> then select **Install via YAML** to open the **Add Custom App** screen.
+
+{{< trueimage src="/images/SCALE/Apps/InstallCustomAppYAML.png" alt="Install Custom App via YAML" id="Install Custom App via YAML" >}}
+
+The **Add Custom App** screen contains two fields.
+
+Enter a name for the application in **Name** using lowercase, alphanumeric characters.
+
+Enter the Compose YAML file in **Custom Config**.
+
+Ensure the Compose file begins with a top-level element, such as `name:` or `services:`.
+See the Docker [Compose file reference](https://docs.docker.com/reference/compose-file/) for more information.
+
+As Compose files can be complex and YAML relies on indentation and whitespace to define structure and hierarchy, we recommend writing the file in a stand-alone code editor before pasting the completed content into the **Custom Config** field.
+
+### YAML Deployment Examples
+
+The following examples represent some of the capabilities of Docker Compose and how it can be used to configure applications in TrueNAS.
+This is not an exhaustive collection of all capabilities, nor are the files below intended as production-ready deployment templates.
+
+#### Installing a Multi-Container App with GPU Support
+
+
+#### Installing a Multi-Container App Using an Inline Dockerfile
+
+This example deploys the Nextcloud application with multiple containers including redis and postgres.
+It uses `dockerfile_inline` to build the Nextcloud image locally, rather than pulling from a remote repository.
+
+Note that app storage in this file is configured using volumes, which are managed by the Docker engine.
+In a production deployment, you should configure host path mounts to TrueNAS storage locations.
+
+<pre style="max-height: 300px; overflow-y: auto;">
+name: ade25cf7c52e909aeef17c9aaee373aa
+services:
+  cron:
+    cap_add:
+      - CHOWN
+      - FOWNER
+      - DAC_OVERRIDE
+      - SETGID
+      - SETUID
+      - NET_BIND_SERVICE
+      - NET_RAW
+    cap_drop:
+      - ALL
+    command:
+      - |
+        echo "*/5 * * * * php -f /var/www/html/cron.php" > /var/spool/cron/crontabs/www-data || { echo "Failed to create crontab"; exit 1; }
+        /cron.sh || { echo "Failed to run cron"; exit 1; }
+    configs:
+      - source: occ
+        target: /usr/local/bin/occ
+        mode: 493
+      - source: limitrequestbody.conf
+        target: /etc/apache2/conf-enabled/limitrequestbody.conf
+      - source: php.ini
+        target: /usr/local/etc/php/conf.d/nextcloud-z-99.ini
+      - source: opcache.ini
+        target: /usr/local/etc/php/conf.d/opcache-z-99.ini
+    depends_on:
+      nextcloud:
+        condition: service_healthy
+        required: true
+    deploy:
+      resources:
+        limits:
+          cpus: "2"
+          memory: "4294967296"
+    entrypoint:
+      - /bin/sh
+      - -c
+    environment:
+      NEXTCLOUD_ADMIN_PASSWORD: password
+      NEXTCLOUD_ADMIN_USER: admin
+      NEXTCLOUD_DATA_DIR: /var/www/html/data
+      NEXTCLOUD_TRUSTED_DOMAINS: |
+        127.0.0.1 
+        localhost
+        nextcloud
+        localhost:8080
+        # HOSTNAME:8080  # Replace HOSTNAME with your system hostname
+        # IPADDR:8080    # Replace IPADDR with your system IP address 
+      PHP_MEMORY_LIMIT: 512M
+      PHP_UPLOAD_LIMIT: 3G
+      POSTGRES_DB: nextcloud
+      POSTGRES_HOST: postgres:5432
+      POSTGRES_PASSWORD: password
+      POSTGRES_USER: nextcloud
+      REDIS_HOST: redis
+      REDIS_HOST_PASSWORD: password
+      REDIS_HOST_PORT: "6379"
+      TZ: Etc/UTC
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - pidof busybox > /dev/null
+      timeout: 5s
+      interval: 10s
+      retries: 30
+      start_period: 10s
+    image: ix-nextcloud:30.0.0-bef6e27dfbd2ba4125af0ab54b52c55d8af6b760a2ae2c34dcb5ddc5dc643112
+    networks:
+      default: null
+    restart: unless-stopped
+    security_opt:
+      - no-new-privileges
+    user: "0:0"
+    volumes:
+      - type: volume
+        source: nextcloud-html
+        target: /var/www/html
+        volume: {}
+      - type: volume
+        source: nextcloud-data
+        target: /var/www/html/data
+        volume: {}
+      - type: volume
+        target: /tmp
+        volume: {}
+  nextcloud:
+    build:
+      dockerfile_inline: |-
+        FROM nextcloud:30.0.0
+        RUN apt update || { echo "Failed to update apt cache. Exiting."; exit 1; }
+        RUN apt install -y --no-install-recommends ffmpeg || { echo "Failed to install [ffmpeg]. Exiting."; exit 1; }
+        RUN apt install -y --no-install-recommends smbclient || { echo "Failed to install [smbclient]. Exiting."; exit 1; }
+        RUN apt install -y --no-install-recommends ocrmypdf || { echo "Failed to install [ocrmypdf]. Exiting."; exit 1; }
+        RUN apt install -y --no-install-recommends libsmbclient-dev
+        RUN pecl install smbclient
+        RUN docker-php-ext-enable smbclient
+        RUN ldd "$$(php -r 'echo ini_get("extension_dir");')"/smbclient.so
+        RUN apt install -y --no-install-recommends tesseract-ocr-eng || { echo "Failed to install [tesseract-ocr-eng]. Exiting."; exit 1; }
+        RUN apt install -y --no-install-recommends tesseract-ocr-chi-sim || { echo "Failed to install [tesseract-ocr-chi-sim]. Exiting."; exit 1; }
+      tags:
+        - ix-nextcloud:30.0.0-bef6e27dfbd2ba4125af0ab54b52c55d8af6b760a2ae2c34dcb5ddc5dc643112
+    cap_add:
+      - CHOWN
+      - FOWNER
+      - DAC_OVERRIDE
+      - SETGID
+      - SETUID
+      - NET_BIND_SERVICE
+      - NET_RAW
+    cap_drop:
+      - ALL
+    configs:
+      - source: occ
+        target: /usr/local/bin/occ
+        mode: 493
+      - source: limitrequestbody.conf
+        target: /etc/apache2/conf-enabled/limitrequestbody.conf
+      - source: php.ini
+        target: /usr/local/etc/php/conf.d/nextcloud-z-99.ini
+      - source: opcache.ini
+        target: /usr/local/etc/php/conf.d/opcache-z-99.ini
+      - source: ix-update-hosts-script.sh
+        target: /docker-entrypoint-hooks.d/before-starting/ix-update-hosts-script.sh
+        mode: 493
+    depends_on:
+      permissions:
+        condition: service_completed_successfully
+        required: true
+      postgres:
+        condition: service_healthy
+        required: true
+      redis:
+        condition: service_healthy
+        required: true
+    deploy:
+      resources:
+        limits:
+          cpus: "2"
+          memory: "4294967296"
+    environment:
+      NEXTCLOUD_ADMIN_PASSWORD: password
+      NEXTCLOUD_ADMIN_USER: admin
+      NEXTCLOUD_DATA_DIR: /var/www/html/data
+      NEXTCLOUD_TRUSTED_DOMAINS: |
+        127.0.0.1 
+        localhost
+        nextcloud
+        localhost:8080
+        # HOSTNAME:8080  # Replace HOSTNAME with your system hostname
+        # IPADDR:8080    # Replace IPADDR with your system IP address 
+      PHP_MEMORY_LIMIT: 512M
+      PHP_UPLOAD_LIMIT: 3G
+      POSTGRES_DB: nextcloud
+      POSTGRES_HOST: postgres:5432
+      POSTGRES_PASSWORD: password
+      POSTGRES_USER: nextcloud
+      REDIS_HOST: redis
+      REDIS_HOST_PASSWORD: password
+      REDIS_HOST_PORT: "6379"
+      TZ: Etc/UTC
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - 'curl --silent --output /dev/null --show-error --fail --header "Host: localhost" http://127.0.0.1:80/status.php'
+      timeout: 5s
+      interval: 10s
+      retries: 30
+      start_period: 10s
+    image: ix-nextcloud:30.0.0-bef6e27dfbd2ba4125af0ab54b52c55d8af6b760a2ae2c34dcb5ddc5dc643112
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        host_ip: 0.0.0.0
+        target: 80
+        published: "8080"
+        protocol: tcp
+    restart: unless-stopped
+    security_opt:
+      - no-new-privileges
+    user: "0:0"
+    volumes:
+      - type: volume
+        source: nextcloud-html
+        target: /var/www/html
+        volume: {}
+      - type: volume
+        source: nextcloud-data
+        target: /var/www/html/data
+        volume: {}
+      - type: volume
+        target: /tmp
+        volume: {}
+  permissions:
+    command:
+      - |2-
+        function process_dir() {
+            local dir=$$1
+            local mode=$$2
+            local uid=$$3
+            local gid=$$4
+            local chmod=$$5
+            local is_temporary=$$6
+
+            local fix_owner="false"
+            local fix_perms="false"
+
+            if [ -z "$$dir" ]; then
+                echo "Path is empty, skipping..."
+                exit 0
+            fi
+
+            if [ ! -d "$$dir" ]; then
+                echo "Path [$$dir] does is not a directory, skipping..."
+                exit 0
+            fi
+
+            if [ "$$is_temporary" = "true" ]; then
+                echo "Path [$$dir] is a temporary directory, ensuring it is empty..."
+                # Exclude the safe directory, where we can use to mount files temporarily
+                find "$$dir" -mindepth 1 -maxdepth 1 ! -name "ix-safe" -exec rm -rf {} +
+            fi
+
+            if [ "$$is_temporary" = "false" ] && [ -n "$$(ls -A $$dir)" ]; then
+                echo "Path [$$dir] is not empty, skipping..."
+                exit 0
+            fi
+
+            echo "Current Ownership and Permissions on [$$dir]:"
+            echo "chown: $$(stat -c "%u %g" "$$dir")"
+            echo "chmod: $$(stat -c "%a" "$$dir")"
+
+            if [ "$$mode" = "always" ]; then
+                fix_owner="true"
+                fix_perms="true"
+            fi
+
+            if [ "$$mode" = "check" ]; then
+                if [ $$(stat -c %u "$$dir") -eq $$uid ] && [ $$(stat -c %g "$$dir") -eq $$gid ]; then
+                    echo "Ownership is correct. Skipping..."
+                    fix_owner="false"
+                else
+                    echo "Ownership is incorrect. Fixing..."
+                    fix_owner="true"
+                fi
+
+                if [ "$$chmod" = "false" ]; then
+                    echo "Skipping permissions check, chmod is false"
+                elif [ -n "$$chmod" ]; then
+                    if [ $$(stat -c %a "$$dir") -eq $$chmod ]; then
+                        echo "Permissions are correct. Skipping..."
+                        fix_perms="false"
+                    else
+                        echo "Permissions are incorrect. Fixing..."
+                        fix_perms="true"
+                    fi
+                fi
+            fi
+
+            if [ "$$fix_owner" = "true" ]; then
+                echo "Changing ownership to $$uid:$$gid on: [$$dir]"
+                chown -R "$$uid:$$gid" "$$dir"
+                echo "Finished changing ownership"
+                echo "Ownership after changes:"
+                stat -c "%u %g" "$$dir"
+            fi
+
+            if [ -n "$$chmod" ] && [ "$$fix_perms" = "true" ]; then
+                echo "Changing permissions to $$chmod on: [$$dir]"
+                chmod -R "$$chmod" "$$dir"
+                echo "Finished changing permissions"
+                echo "Permissions after changes:"
+                stat -c "%a" "$$dir"
+            fi
+        }
+
+        process_dir /mnt/redis/tmp check 1001 0 false true
+        process_dir /mnt/redis/data check 1001 0 false true
+        process_dir /mnt/postgres/tmp check 999 999 false true
+        process_dir /mnt/postgres/data check 999 999 false false
+    deploy:
+      resources:
+        limits:
+          cpus: "1"
+          memory: "536870912"
+    entrypoint:
+      - bash
+      - -c
+    image: bash
+    networks:
+      default: null
+    user: root
+    volumes:
+      - type: volume
+        source: tmp
+        target: /mnt/redis/tmp
+        volume: {}
+      - type: volume
+        source: bitnami_redis_data
+        target: /mnt/redis/data
+        volume: {}
+      - type: volume
+        source: tmp
+        target: /mnt/postgres/tmp
+        volume: {}
+      - type: volume
+        source: nextcloud-postgres-data
+        target: /mnt/postgres/data
+        volume: {}
+  postgres:
+    cap_drop:
+      - ALL
+    depends_on:
+      permissions:
+        condition: service_completed_successfully
+        required: true
+    deploy:
+      resources:
+        limits:
+          cpus: "2"
+          memory: "4294967296"
+    environment:
+      POSTGRES_DB: nextcloud
+      POSTGRES_PASSWORD: password
+      POSTGRES_PORT: "5432"
+      POSTGRES_USER: nextcloud
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - pg_isready -h 127.0.0.1 -p 5432 -d nextcloud -U nextcloud
+      timeout: 5s
+      interval: 10s
+      retries: 30
+      start_period: 10s
+    image: postgres:13.16
+    networks:
+      default: null
+    restart: unless-stopped
+    security_opt:
+      - no-new-privileges
+    user: 999:999
+    volumes:
+      - type: volume
+        source: tmp
+        target: /tmp
+        volume: {}
+      - type: volume
+        source: nextcloud-postgres-data
+        target: /var/lib/postgresql/data
+        volume: {}
+  redis:
+    cap_drop:
+      - ALL
+    depends_on:
+      permissions:
+        condition: service_completed_successfully
+        required: true
+    deploy:
+      resources:
+        limits:
+          cpus: "2"
+          memory: "4294967296"
+    environment:
+      ALLOW_EMPTY_PASSWORD: "no"
+      REDIS_PASSWORD: password
+      REDIS_PORT_NUMBER: "6379"
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - redis-cli -h 127.0.0.1 -p 6379 -a $$REDIS_PASSWORD ping | grep -q PONG
+      timeout: 5s
+      interval: 10s
+      retries: 30
+      start_period: 10s
+    image: bitnami/redis:7.4.1
+    networks:
+      default: null
+    restart: unless-stopped
+    security_opt:
+      - no-new-privileges
+    user: "1001:0"
+    volumes:
+      - type: volume
+        source: tmp
+        target: /tmp
+        volume: {}
+      - type: volume
+        source: bitnami_redis_data
+        target: /bitnami/redis/data
+        volume: {}
+networks:
+  default:
+    name: ade25cf7c52e909aeef17c9aaee373aa_default
+volumes:
+  bitnami_redis_data:
+    name: ade25cf7c52e909aeef17c9aaee373aa_bitnami_redis_data
+  nextcloud-data:
+    name: ade25cf7c52e909aeef17c9aaee373aa_nextcloud-data
+  nextcloud-html:
+    name: ade25cf7c52e909aeef17c9aaee373aa_nextcloud-html
+  nextcloud-postgres-data:
+    name: ade25cf7c52e909aeef17c9aaee373aa_nextcloud-postgres-data
+  tmp:
+    name: ade25cf7c52e909aeef17c9aaee373aa_tmp
+configs:
+  ix-update-hosts-script.sh:
+    name: ade25cf7c52e909aeef17c9aaee373aa_ix-update-hosts-script.sh
+    content: |
+      #!/bin/bash
+      set -e
+      config_file="/var/www/html/config/config.php"
+
+      echo "Updating database and redis host in config.php"
+      sed -i "s/\('dbhost' => '\)[^']*postgres:5432',/\1postgres:5432',/" "$$config_file"
+      occ config:system:set redis host --value="redis"
+  limitrequestbody.conf:
+    name: ade25cf7c52e909aeef17c9aaee373aa_limitrequestbody.conf
+    content: |2
+      LimitRequestBody 3221225472
+  occ:
+    name: ade25cf7c52e909aeef17c9aaee373aa_occ
+    content: |
+      #!/bin/bash
+      uid="$$(id -u)"
+      gid="$$(id -g)"
+      if [ "$$uid" = '0' ]; then
+        user='www-data'
+        group='www-data'
+      else
+        user="$$uid"
+        group="$$gid"
+      fi
+      run_as() {
+        if [ "$$(id -u)" = 0 ]; then
+          su -p "$$user" -s /bin/bash -c "php /var/www/html/occ $$(printf '%q ' "$$@")"
+        else
+          /bin/bash -c "php /var/www/html/occ $$(printf '%q ' "$$@")"
+        fi
+      }
+      run_as "$$@"
+  opcache.ini:
+    name: ade25cf7c52e909aeef17c9aaee373aa_opcache.ini
+    content: |
+      opcache.memory_consumption=128
+  php.ini:
+    name: ade25cf7c52e909aeef17c9aaee373aa_php.ini
+    content: |
+      max_execution_time=30
+</pre>
+
+#### Installing Multiple Apps Joined to a Single Custom Network
