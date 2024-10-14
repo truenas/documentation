@@ -172,7 +172,7 @@ After the app status changes to stopped, click **Delete** on the **Application I
 
 {{< trueimage src="/images/SCALE/Apps/AppsDeleteAppDialog.png" alt="Delete Application Dialog" id="Delete Application Dialog" >}}
 
-Select **Remove iX Volumes** to delete the ixVolume if the:
+Select **Remove ixVolumes** to delete the ixVolume if the:
 * Installation of the app fails
 and
 * **Storage Configuration** for the app was set to ixVolumes
