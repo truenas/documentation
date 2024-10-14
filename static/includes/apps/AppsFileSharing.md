@@ -1,8 +1,8 @@
 &NewLine;
 
-SCALE provides two default storage options, iXvolumes and host path to a pre-existing dataset.
+SCALE provides two default storage options, ixVolumes and host path to a pre-existing dataset.
 
-Selecting the iXvolume allows SCALE to create the storage volume for the application.
+Selecting the ixVolume allows SCALE to create the storage volume for the application.
 If the application requires datasets with specific names, you must create them before launching the application installation wizard.
 
 {{< hint type=information >}}
