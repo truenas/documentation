@@ -243,7 +243,7 @@ When you are ready to create a container, go to **Apps**, click **Discover Apps*
 
    {{< trueimage src="/images/SCALE/Apps/InstallCustomAppAddMemoryBackedVol.png" alt="Tmpfs Settings" id="Tmpfs Settings" >}}
 
-   Enter in **Mount Path** the <file>**path/to/directory**</file> where the iXvolume mounts inside the container.
+   Enter in **Mount Path** the <file>**path/to/directory**</file> where the temporary directory mounts inside the container.
 
    Enter in **Tmpfs Size Limit (in Mi)** the maximum size of the temporary directory in mebibytes or accept the default of *500*.
    {{< /expand >}}
