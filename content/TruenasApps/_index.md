@@ -121,6 +121,21 @@ For more information on trains, see [Managing App Trains]({{< relref "UsingTrain
 Some applications deploy as the **root** user for initial configuration before operating as a non-root user.
 Keep these general best practices in mind when using applications with TrueNAS.
 
+## Changing Apps Network Settings
+Go to **Apps > Installed**, click **Configuration** and then on **Settings**.
+
+To add an additional range of IP addresses, click **Add** to the right of **Address Pools**, then select a range from the dropdown list of options, and enter the desired value in **Size**.
+
+**Base** shows the default IP address and subnet, and **Size** shows the network size of each docker network that is cut off from the base subnet.
+
+{{< hint type="info" title="Apps Networking Troubleshooting Tip!" >}}
+This setting replaces the Kubernetes Settings option for Bind Network in 24.04 and earlier.
+Use to resolve issues where apps experiences issues where TrueNAS device is not reachable from some networks.
+Select the network option, or add additional options to resolve the network connection issues.
+{{< /hint >}}
+
+**Check for docker image updates** sets TrueNAS to check for docker image updates (default setting). 
+
 ### Managing Container Images
 While on the **Installed** application screen, click **Settings** > **Manage Container Images** to open the **Manage Container Images** screen.
 
