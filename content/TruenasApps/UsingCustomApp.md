@@ -250,7 +250,7 @@ When you are ready to create a container, go to **Apps**, click **Discover Apps*
 
 8. {{< include file="/static/includes/apps/AppInstallWizardResourceConfig.md" >}}
 
-9.  Use **GPU Configuration** to allocate GPU resources if available and required for the application.
+9. Use **GPU Configuration** to allocate GPU resources if available and required for the application.
 
 10. Click **Install** to deploy the container.
     If you correctly configured the app, the widget displays on the **Installed Applications** screen.
@@ -263,3 +263,4 @@ When you are ready to create a container, go to **Apps**, click **Discover Apps*
 ## Installing via YAML
 
 {{< include file="/static/includes/YAMLWarning.md" >}}
+
