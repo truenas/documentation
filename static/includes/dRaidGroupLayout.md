@@ -5,7 +5,7 @@
    
    This layout has several advantages over requiring each row to contain whole number of groups:
    * Group count - Group count is not a relevant parameter when defining a dRAID layout. Only the group width is needed, and all groups have the desired size.
-   * Group widths - All possible group widths (<= physical disk count) can be supported.
+   * Group widths - All possible group widths (greater than or equal to physical disk count) can be supported.
 
    The logic within the dRAID is simplified when the group width is the same for all groups, although some of the logic around computer permutation numbers and drive offsets is more complicated.
    
