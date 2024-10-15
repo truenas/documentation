@@ -2,6 +2,8 @@
 title: "Managing SMB Shares"
 description: "Provides information on how to manage Server Message Block (SMB) shares on your TrueNAS."
 weight: 10
+aliases: 
+ - /core/13.0/coretutorials/sharing/smb/manag
 tags:
 - coresmb
 ---

@@ -2,6 +2,8 @@
 title: "Advanced"
 description: "Describes the System > Advanced screen on TrueNAS CORE."
 weight: 40
+aliases:
+ - /core/coretutorials/systemconfiguration/settingupsyslogserver/
 tags:
 - coreconfiguration
 - coresettings

@@ -2,6 +2,8 @@
 title: "Advanced Replication"
 description: "Describes how to configure advanced replication tasks on TrueNAS CORE."
 weight: 30
+aliases:
+ - /core/coretutorials/communityguides/legacyreplication/
 tags:
 - coreadvancedreplication
 - corereplication

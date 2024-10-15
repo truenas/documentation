@@ -2,6 +2,8 @@
 title: "Permissions"
 description: "This articled describes permissions configuration on TrueNAS CORE."
 weight: 22
+aliases:
+ - /core/coretutorials/communityguides/aclpermissionsjails/
 tags:
 - corepermissions
 - coredataset
