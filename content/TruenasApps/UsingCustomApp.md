@@ -287,17 +287,19 @@ Click **Save** to begin deployment of the app.
 The following examples represent some of the capabilities of Docker Compose and how it can be used to configure applications in TrueNAS.
 This is not an exhaustive collection of all capabilities, nor are the files below intended as production-ready deployment templates.
 
-#### Installing a Multi-Container App with GPU Support
+Note that app storage in these examples is configured using [volumes](https://docs.docker.com/engine/storage/#volumes), which are managed by the Docker engine.
+In a production deployment, you should configure [bind mounts](https://docs.docker.com/engine/storage/#bind-mounts) to TrueNAS storage locations.
 
+#### Installing a Multi-Container App with GPU Access
+This example deploys the Immich application with multiple containers, including pgvecto and redis.
+
+It also [enables GPU access](https://docs.docker.com/compose/how-tos/gpu-support/) for an NVIDIA GPU device.
 
 #### Installing a Multi-Container App with a Dockerfile
+This example deploys the Nextcloud application with multiple containers, including redis and postgres.
 
-This example deploys the Nextcloud application with multiple containers including redis and postgres.
 A [Dockerfile](https://docs.docker.com/reference/dockerfile/) builds the Nextcloud image locally, rather than pulling from a remote repository.
 You can use an existing Dockerfile or, as in the example, use [`dockerfile_inline`](https://docs.docker.com/reference/compose-file/build/#dockerfile_inline) to define the build commands as an inline string within the Compose file.
-
-Note that app storage in this example is configured using volumes, which are managed by the Docker engine.
-In a production deployment, you should configure host path mounts to TrueNAS storage locations.
 
 {{< codeblock language="yaml" >}}name: ade25cf7c52e909aeef17c9aaee373aa
 services:
@@ -740,11 +742,9 @@ configs:
     content: |
       max_execution_time=30{{< /codeblock >}}
 
-Alternatively, you can use [`dockerfile`](https://docs.docker.com/reference/compose-file/build/#dockerfile) to set an existing dockerfile.
+Alternatively, you can use [`dockerfile`](https://docs.docker.com/reference/compose-file/build/#dockerfile) to set an existing Dockerfile stored on your TrueNAS system.
 
-You can specify the absolute path to a dockerfile.
-
-Remove this `dockerfile_inline` section of the `build` element:
+To specify the absolute path to a Dockerfile, remove this `dockerfile_inline` section of the `build` element:
 
 {{< codeblock language="yaml" >}}nextcloud:
     build:
@@ -761,23 +761,116 @@ Remove this `dockerfile_inline` section of the `build` element:
         RUN apt install -y --no-install-recommends tesseract-ocr-eng || { echo "Failed to install [tesseract-ocr-eng]. Exiting."; exit 1; }
         RUN apt install -y --no-install-recommends tesseract-ocr-chi-sim || { echo "Failed to install [tesseract-ocr-chi-sim]. Exiting."; exit 1; }{{< /codeblock >}}
 
-Replace it with the absolute path to the dockerfile, for example:
+Replace it with the absolute path to the Dockerfile, for example:
 
 {{< codeblock language="yaml" >}}nextcloud:
     build:
       context: .
       dockerfile: /mnt/virtual/dockerfiles/nextcloud.dockerfile{{< /codeblock >}}
 
-Note that an application with an absolute path to a dockerfile is not portable without modification.
+Note: an application with an absolute path to a dockerfile is not portable without modification.
 
-#### Installing Multiple Apps Joined to a Single Custom Network
+#### Installing Multiple Apps on a Shared Custom Network
+These examples deploy two applications, Plex and Tautulli, as part of the same custom Docker [network](https://docs.docker.com/engine/network/).
+Grouping Docker applications offers advantages for organizing, securing, and optimizing communication between containers that interact.
+You can use Docker networks to isolate network segmentation, simplify communication between apps, configure networking properties, and more.
 
+**Plex**
+
+{{< codeblock language="yaml" >}}networks:
+  plex_net:
+    name: plex_net
+    driver: bridge
+    external: false
+
+services:
+  plex:
+    networks:
+     - plex_net
+    image: ghcr.io/onedr0p/plex:1.41.0.8994-f2c27da23@sha256:fe9ed1189617cd98106635c63ed39d40e4ec82535514e4a51a7c72e56b65c4dd
+    restart: always
+    user: "UID:GID" # UPDATE ME -- MAKE SURE USER HAS ACL PERMISSIONS FOR ALL STORAGE PATHS BELOW
+    environment:
+      NVIDIA_VISIBLE_DEVICES: void
+      # https://support.plex.tv/articles/201105343-advanced-hidden-server-settings/
+      PLEX_PREFERENCE_secureConnections: "secureConnections=0"
+      PLEX_PREFERENCE_LanNetworksBandwidth: "LanNetworksBandwidth=172.16.0.0/12,10.0.0.0/8,192.168.0.0/16"
+      PLEX_PREFERENCE_customConnections: "customConnections=https://10.20.30.254:32400"
+    ports:
+      - 32400:32400
+    volumes:
+      - /mnt/cache/appsdata/plex:/config
+      - /mnt/virtual/library/tv:/tv:ro #UPDATE LOCAL PATH
+      - /mnt/virtual/library/movies:/movies:ro #UPDATE LOCAL PATH
+    tmpfs:
+      - /transcode
+    healthcheck:
+      test: 'curl --silent --fail http://localhost:32400/identity'
+      interval: 15s
+      timeout: 5s
+      retries: 15
+      start_period: 60s{{< /codeblock >}}
+
+**Tautulli**
+
+{{< codeblock language="yaml" >}}networks:
+  plex_net:
+    name: plex_net
+    driver: bridge
+    external: true
+
+services:
+  tautulli:
+    image: tautulli/tautulli:v2.14.5@sha256:6017b491d8e9100a97391b639fff5824ad36a315c69aae3c9ed78407994a626e
+    restart: always
+    entrypoint:
+      - python
+      - Tautulli.py
+    command:
+      - --port
+      - "8989"
+      - --config
+      - /config/config.ini
+      - --datadir
+      - /config
+    networks:
+      - plex_net
+    volumes:
+      - /mnt/cache/appdata/tautulli:/config
+      - /mnt/cache/appdata/plex/Library/Application Support/Plex Media Server/Logs:/plexlogs:ro
+    ports:
+      8989:8989
+    healthcheck:
+      test: curl --silent --fail http://localhost:8989/status
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s{{< /codeblock >}}
 
 ## Managing Custom Apps
 
-### Accessing UI Portals
+Installed custom applications appear on the **Installed** applications screen.
+Many of the management options avaiable for catalog applications are also available for custom apps.
 
-### Editing Custom Apps
+TrueNAS monitors upstream images and alerts when an updated version is available.
+Update custom applications using the same [Upgrading Apps]({{< relref "/truenasapps/_index.md #upgrading-apps" >}}) procedure as catalog applications.
 
-### Updating Custom Apps
+{{< trueimage src="/images/SCALE/Apps/CustomAppDetails.png" alt="App Details Widgets" id="App Details Widgets" >}}
 
+Custom applications installed via YAML do not include the **Web Portal** button on the **Application Info** widget.
+To access the web UI for a custom app, navigate to the port on the TrueNAS system, for example *hostname.domain:8080*.
+
+Click **Edit** to edit and redeploy the application.
+
+Click **Delete** to remove the application.
+See [Deleting Apps]({{< relref "/truenasapps/_index.md #deleting-apps" >}}) for more information.
+
+The **Workloads** widget shows ports and container information.
+Each container includes buttons to access a container shell, view volume mounts, and view logs.
+
+Click <span class="iconify" data-icon="mdi:console" title="Shell">Shell</span> and enter an option in the **Choose Shell Details** window to access a container shell.
+
+Click <i class="material-icons" aria-hidden="true" title="Volume Mounts">folder_open</i> to view configured storage mounts for the contianer.
+
+Click <span class="iconify" data-icon="mdi:text-box" title="Logs">Logs</span> to open the **Container Logs** window.
+Select options in **Logs Details** and click **Connect** to view logs for the ccontainer.
