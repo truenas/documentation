@@ -280,6 +280,8 @@ See the Docker [Compose file reference](https://docs.docker.com/reference/compos
 
 As Compose files can be complex and YAML relies on indentation and whitespace to define structure and hierarchy, we recommend writing the file in a stand-alone code editor before pasting the completed content into the **Custom Config** field.
 
+Click **Save** to begin deployment of the app.
+
 ### YAML Deployment Examples
 
 The following examples represent some of the capabilities of Docker Compose and how it can be used to configure applications in TrueNAS.
@@ -288,16 +290,16 @@ This is not an exhaustive collection of all capabilities, nor are the files belo
 #### Installing a Multi-Container App with GPU Support
 
 
-#### Installing a Multi-Container App Using an Inline Dockerfile
+#### Installing a Multi-Container App with a Dockerfile
 
 This example deploys the Nextcloud application with multiple containers including redis and postgres.
-It uses `dockerfile_inline` to build the Nextcloud image locally, rather than pulling from a remote repository.
+A [Dockerfile](https://docs.docker.com/reference/dockerfile/) builds the Nextcloud image locally, rather than pulling from a remote repository.
+You can use an existing Dockerfile or, as in the example, use [`dockerfile_inline`](https://docs.docker.com/reference/compose-file/build/#dockerfile_inline) to define the build commands as an inline string within the Compose file.
 
-Note that app storage in this file is configured using volumes, which are managed by the Docker engine.
+Note that app storage in this example is configured using volumes, which are managed by the Docker engine.
 In a production deployment, you should configure host path mounts to TrueNAS storage locations.
 
-<pre style="max-height: 300px; overflow-y: auto;">
-name: ade25cf7c52e909aeef17c9aaee373aa
+{{< codeblock language="yaml" >}}name: ade25cf7c52e909aeef17c9aaee373aa
 services:
   cron:
     cap_add:
@@ -340,13 +342,8 @@ services:
       NEXTCLOUD_ADMIN_PASSWORD: password
       NEXTCLOUD_ADMIN_USER: admin
       NEXTCLOUD_DATA_DIR: /var/www/html/data
-      NEXTCLOUD_TRUSTED_DOMAINS: |
-        127.0.0.1
-        localhost
-        nextcloud
-        localhost:8080
-        # HOSTNAME:8080  # Replace HOSTNAME with your system hostname
-        # IPADDR:8080    # Replace IPADDR with your system IP address
+      # Replace HOSTNAME with your system hostname and IPADDR with your system IP address
+      NEXTCLOUD_TRUSTED_DOMAINS: 127.0.0.1 localhost nextcloud localhost:8080 #HOSTNAME:8080 #IPADDR:8080
       PHP_MEMORY_LIMIT: 512M
       PHP_UPLOAD_LIMIT: 3G
       POSTGRES_DB: nextcloud
@@ -442,13 +439,8 @@ services:
       NEXTCLOUD_ADMIN_PASSWORD: password
       NEXTCLOUD_ADMIN_USER: admin
       NEXTCLOUD_DATA_DIR: /var/www/html/data
-      NEXTCLOUD_TRUSTED_DOMAINS: |
-        127.0.0.1
-        localhost
-        nextcloud
-        localhost:8080
-        # HOSTNAME:8080  # Replace HOSTNAME with your system hostname
-        # IPADDR:8080    # Replace IPADDR with your system IP address
+      # Replace HOSTNAME with your system hostname and IPADDR with your system IP address
+      NEXTCLOUD_TRUSTED_DOMAINS: 127.0.0.1 localhost nextcloud localhost:8080 #HOSTNAME:8080 #IPADDR:8080
       PHP_MEMORY_LIMIT: 512M
       PHP_UPLOAD_LIMIT: 3G
       POSTGRES_DB: nextcloud
@@ -746,7 +738,46 @@ configs:
   php.ini:
     name: ade25cf7c52e909aeef17c9aaee373aa_php.ini
     content: |
-      max_execution_time=30
-</pre>
+      max_execution_time=30{{< /codeblock >}}
+
+Alternatively, you can use [`dockerfile`](https://docs.docker.com/reference/compose-file/build/#dockerfile) to set an existing dockerfile.
+
+You can specify the absolute path to a dockerfile.
+
+Remove this `dockerfile_inline` section of the `build` element:
+
+{{< codeblock language="yaml" >}}nextcloud:
+    build:
+      dockerfile_inline: |-
+        FROM nextcloud:30.0.0
+        RUN apt update || { echo "Failed to update apt cache. Exiting."; exit 1; }
+        RUN apt install -y --no-install-recommends ffmpeg || { echo "Failed to install [ffmpeg]. Exiting."; exit 1; }
+        RUN apt install -y --no-install-recommends smbclient || { echo "Failed to install [smbclient]. Exiting."; exit 1; }
+        RUN apt install -y --no-install-recommends ocrmypdf || { echo "Failed to install [ocrmypdf]. Exiting."; exit 1; }
+        RUN apt install -y --no-install-recommends libsmbclient-dev
+        RUN pecl install smbclient
+        RUN docker-php-ext-enable smbclient
+        RUN ldd "$$(php -r 'echo ini_get("extension_dir");')"/smbclient.so
+        RUN apt install -y --no-install-recommends tesseract-ocr-eng || { echo "Failed to install [tesseract-ocr-eng]. Exiting."; exit 1; }
+        RUN apt install -y --no-install-recommends tesseract-ocr-chi-sim || { echo "Failed to install [tesseract-ocr-chi-sim]. Exiting."; exit 1; }{{< /codeblock >}}
+
+Replace it with the absolute path to the dockerfile, for example:
+
+{{< codeblock language="yaml" >}}nextcloud:
+    build:
+      context: .
+      dockerfile: /mnt/virtual/dockerfiles/nextcloud.dockerfile{{< /codeblock >}}
+
+Note that an application with an absolute path to a dockerfile is not portable without modification.
 
 #### Installing Multiple Apps Joined to a Single Custom Network
+
+
+## Managing Custom Apps
+
+### Accessing UI Portals
+
+### Editing Custom Apps
+
+### Updating Custom Apps
+
