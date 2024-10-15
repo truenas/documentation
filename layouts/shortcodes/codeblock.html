@@ -1,0 +1,44 @@
+{{ $id := printf "code-%x" (sha1 .Inner) }}
+<div class="codeblock-wrapper" style="position: relative; max-height: 300px; overflow: auto;">
+  
+  <style>
+    .lnt {
+      display: none; /* Hides the line numbers */
+    }
+  </style>
+
+  {{- if .IsNamedParams }}
+    {{- $lang := .Get "language" | default "plaintext" }}
+    {{- $options := dict "linenos" "table" }}
+    {{- highlight .Inner $lang $options | safeHTML }}
+  {{- else }}
+    {{- highlight .Inner "plaintext" | safeHTML }}
+  {{- end }}
+</div>
+
+<script>
+document.querySelectorAll(".codeblock-wrapper").forEach(function (wrapper) {
+  const copyButton = wrapper.querySelector(".codeblock-copy");
+  const copyIcon = copyButton.querySelector(".copy-icon");
+  const checkmarkIcon = copyButton.querySelector(".checkmark-icon");
+
+  copyButton.addEventListener("click", function () {
+    const codeElement = wrapper.querySelector("pre");
+    const textToCopy = codeElement.textContent.trim();
+
+    const textarea = document.createElement("textarea");
+    textarea.value = textToCopy;
+    document.body.appendChild(textarea);
+    textarea.select();
+    document.execCommand("copy");
+    document.body.removeChild(textarea);
+
+    copyIcon.style.display = "none";
+    checkmarkIcon.style.display = "inline";
+    setTimeout(function () {
+      checkmarkIcon.style.display = "none";
+      copyIcon.style.display = "inline";
+    }, 1000);
+  });
+});
+</script>
