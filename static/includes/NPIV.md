@@ -25,6 +25,15 @@ Enter these options:
   The maximum number of target ports is 125 SCSI target ports, including all physical Fibre Channel ports, all virtual ports, and all configured combinations of iSCSI portals and targets.
 * **Type** - Select**loader**.
 
+{{< expand "Locating the Interface Number" "v" >}}
+To find the interface number to enter as the **Variable**, you can:
+* Use commands for the Operating System to list available host bus adapter (HBA).
+  In Linux use `lspci` or `systool -c fc_host -v` to get details on the fibre channel adapters.
+* Use tools like `cat /sys/class/fc_host/hostX/npiv` to list virtual interfaces on a Linux system.
+* Use management software fo the SAN, or vendor tools from VMWare, Cisco, or Brocade to locate the interface number
+* Use Windows **Device Manager** to find the HBA details and interface number.
+{{< /expand >}}
+
 ![SystemTunablesFibre](/images/CORE/11.3/SystemTunablesFibre.png "Virtual Ports for Fibre Channel")
 
 In the example shown:
