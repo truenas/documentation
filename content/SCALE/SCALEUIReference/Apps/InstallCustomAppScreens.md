@@ -212,7 +212,7 @@ Use to configure a persistent host path.
 {{< expand "ixVolume (Dataset created automatically by the system)" "v" >}}
 Use to configure a storage mount for a system created dataset on the applications pool.
 
-{{< trueimage src="/images/SCALE/Apps/InstallCustomAppAddixVolume.png" alt="IxVolume Settings" id="IxVolume Settings" >}}
+{{< trueimage src="/images/SCALE/Apps/InstallCustomAppAddixVolume.png" alt="ixVolume Settings" id="ixVolume Settings" >}}
 
 {{< truetable >}}
 | Setting | Description |
