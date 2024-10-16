@@ -265,7 +265,7 @@ Select the two half-size layout to activate the option to add **CPU Temperature 
 {{< /expand >}}
 
 {{< expand "Widget Type Options for System Information" "v" >}}
-The**System Information** widget has six **Widget Type** options, **Hostname-Active**, **OS Version**, **Serial-Active**, and **System Image**, System Information-Active**, and **System Uptime**.
+The **System Information** widget has six **Widget Type** options, **Hostname-Active**, **OS Version**, **Serial-Active**, and **System Image**, System Information-Active**, and **System Uptime**.
 HA systems, with two controllers and the HA license, show the **Hostname-Standby**, **Serial-Standby**, and **System Information-Standby** widget types.
 
 {{< enterprise >}}
