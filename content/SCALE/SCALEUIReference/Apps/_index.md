@@ -88,9 +88,9 @@ Entering characters in the **<span class="iconify" data-icon="mdi:magnify"></spa
 {{< /truetable >}} 
 
 ### Settings
-**Settings** opens the **Settings** screen showing the four application train options.
+**Settings** opens the **Settings** screen showing the four application train options, the option to add IP addresses, and check for Docker image updates.
 
-{{< trueimage src="/images/SCALE/Apps/AppsTrainSettingsScreen.png" alt="Settings Add Enterprise Train" id="Settings Add Enterprise Train" >}}
+{{< trueimage src="/images/SCALE/Apps/AppsSettingScreen.png" alt="Apps Settings Screen" id="Apps Settings Screen" >}}
 
 Select the checkbox to the left of the train name to add another train to the applications catalog.
 Train options:
@@ -100,6 +100,18 @@ Train options:
 * **test** for application in development but not yet released in one of the other three trains.
 
 You must specify at least one train.
+
+The **Address Pools** shows the current IP address and subnet mask for the network used by applications.
+**Base** shows the default IP address and subnet, and **Size** shows the network size of each docker network that is cut off from the base subnet.
+Select a predefined range from the dropdown list.
+
+{{< hint type="info" title="Apps Troubleshooting Tip!" >}}
+This setting replaces the Kubernetes Settings option for Bind Network in 24.04 and earlier.
+Use to resolve issues where apps experiences issues where TrueNAS device is not reachable from some networks.
+Select the network option, or add additional options to resolve the network connection issues.
+{{< /hint >}}
+
+**Check for docker image updates** sets TrueNAS to check for docker image updates (default setting). 
 
 ## Applications Table
 The **Applications** table on the **Installed** screen populates a row for each installed app that shows the current state, and the option to stop the app.
