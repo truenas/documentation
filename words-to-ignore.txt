@@ -2130,3 +2130,5 @@ appdata
 plexlogs
 CustomAppDetails
 AppsSettingScreen
+tautulli
+UsingCustomApp
