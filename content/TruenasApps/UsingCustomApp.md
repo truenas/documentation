@@ -1207,7 +1207,7 @@ services:
 ## Managing Custom Apps
 
 Installed custom applications appear on the **Installed** applications screen.
-Many of the management options avaiable for catalog applications are also available for custom apps.
+Many of the management options available for catalog applications are also available for custom apps.
 
 TrueNAS monitors upstream images and alerts when an updated version is available.
 Update custom applications using the same [Upgrading Apps]({{< relref "/truenasapps/_index.md #upgrading-apps" >}}) procedure as catalog applications.
@@ -1227,7 +1227,7 @@ Each container includes buttons to access a container shell, view volume mounts,
 
 Click <span class="iconify" data-icon="mdi:console" title="Shell">Shell</span> and enter an option in the **Choose Shell Details** window to access a container shell.
 
-Click <i class="material-icons" aria-hidden="true" title="Volume Mounts">folder_open</i> to view configured storage mounts for the contianer.
+Click <i class="material-icons" aria-hidden="true" title="Volume Mounts">folder_open</i> to view configured storage mounts for the container.
 
 Click <span class="iconify" data-icon="mdi:text-box" title="Logs">Logs</span> to open the **Container Logs** window.
-Select options in **Logs Details** and click **Connect** to view logs for the ccontainer.
+Select options in **Logs Details** and click **Connect** to view logs for the container.
