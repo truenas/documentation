@@ -202,7 +202,7 @@ To deploy a third-party application using the **Install iX App** wizard, go to *
    To allow TrueNAS to create the storage volume, leave **Type** set to **ixVolume (Dataset created automatically by the system)**.
    This is recommended for a test deployment of an app but not for a full app deployment.
 
-   {{< trueimage src="/images/SCALE/Apps/InstallCustomAppAddixVolume.png" alt="IxVolume Settings" id="IxVolume Settings" >}}
+   {{< trueimage src="/images/SCALE/Apps/InstallCustomAppAddixVolume.png" alt="ixVolume Settings" id="ixVolume Settings" >}}
 
    Enter in **Mount Path** the <file>**path/to/directory**</file> where the ixVolume mounts inside the container.
 
