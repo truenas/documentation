@@ -54,8 +54,8 @@ The following is a general guide on setting up NPIV with Fibre Channel in a Fibr
 * **Virtualization Platform** - If using a virtualization platform (like VMware vSphere, Microsoft Hyper-V, etc.), ensure it supports NPIV and is properly configured. 
 
 ### Configuring NPIV on the Fibre Channel Switch
-1. Enable NPIV. Access the switch management interface (CLI or GUI). 
-   a. Locate the NPIV settings, which are often found under port or global settings.
+1. Enable NPIV. Access the switch management interface (CLI or GUI). <br>
+   a. Locate the NPIV settings, which are often found under port or global settings. <br>
    b. Enable NPIV on the switch. This might be a global setting or per-port setting depending on the switch model.
 2. Configure zoning on the switch to include the WWNs of the virtual N_Ports.
    This is similar to how you would configure zoning for physical ports. Ensure that the zones include both the physical HBA port and the virtual WWNs.
@@ -78,4 +78,4 @@ Use monitoring tools to ensure that the NPIV setup is performing as expected and
 
 Refer to the documentation for your specific hardware and software for any additional configuration steps or troubleshooting tips.
 By following these steps, you should be able to set up NPIV with Fibre Channel successfully.
-If you encounter any specific issues, consulting the documentation for your hardware and software or reaching out to your vendor support for help.
+If you encounter any specific issues, consult the documentation for your hardware and software or reach out to your vendor support for help.
