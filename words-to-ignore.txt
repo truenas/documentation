@@ -2064,6 +2064,45 @@ nHost
 nConnection
 altran
 immich-machine-learning
+immich
+isready
+tensorchord
+postgresql
+bitnami
+DBINDEX
+immich-server
+nocopy
+Dockerfile
+ade
+aeef
+aaee
+aa
+CHOWN
+FOWNER
+SETGID
+SETUID
+php
+crontabs
+occ
+limitrequestbody
+apache
+opcache
+opcache-z
+IPADDR
+pidof
+busybox
+bef
+dfbd
+ae
+dcb
+ddc
+dockerfile
+ffmpeg
+smbclient
+ocrmypdf
+libsmbclient-dev
+pecl
+docker-php-ext-enable
 
 
 
