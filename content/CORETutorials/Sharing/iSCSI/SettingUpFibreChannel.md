@@ -21,7 +21,6 @@ Fibre Channel is a TrueNAS Enterprise feature. Only TrueNAS systems licensed for
 This procedure uses an example to illustrate each step. 
 {{< /hint >}}
 
-
 1. Add a zvol to use for the share. 
 
    a. Go to **Storage > Pools**.
@@ -77,5 +76,9 @@ This procedure uses an example to illustrate each step.
    d. Select the initiator you want to use and then click **Save**.
 
 4. Start the iSCSI service. Go to **Services** and click the **iSCSI** toggle until the **Running** status message displays.
+
+## What is N_Port ID Virtualization (NPIV)
+
+{{< include file="/static/includes/NPIV.md" >}}
 
 {{< taglist tag="coreiscsi" limit="10" >}}
