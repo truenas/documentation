@@ -291,12 +291,369 @@ Note that app storage in these examples is configured using [volumes](https://do
 In a production deployment, you should configure [bind mounts](https://docs.docker.com/engine/storage/#bind-mounts) to TrueNAS storage locations.
 
 #### Installing a Multi-Container App with GPU Access
-This example deploys the Immich application with multiple containers, including pgvecto and redis.
+This example deploys Immich with multiple containers, including pgvecto and redis.
 
 It also [enables GPU access](https://docs.docker.com/compose/how-tos/gpu-support/) for an NVIDIA GPU device.
 
+{{< codeblock language="yaml" >}}name: ad7a9839cdf6cde9e34b526956ba5f37
+services:
+  machine-learning:
+    cap_drop:
+      - ALL
+    depends_on:
+      permissions:
+        condition: service_completed_successfully
+        required: true
+    deploy:
+      resources:
+        limits:
+          cpus: "2"
+          memory: "4294967296"
+        reservations:
+          devices:
+            - capabilities:
+                - gpu
+              driver: nvidia
+              device_ids:
+                - GPU-UUID # REPLACE ME
+    environment:
+      IMMICH_LOG_LEVEL: log
+      IMMICH_PORT: "32002"
+      MACHINE_LEARNING_CACHE_FOLDER: /mlcache
+      NODE_ENV: production
+      NVIDIA_DRIVER_CAPABILITIES: all
+      NVIDIA_VISIBLE_DEVICES: GPU-UUID # REPLACE ME
+      TRANSFORMERS_CACHE: /mlcache
+      TZ: Etc/UTC
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - '/bin/bash -c ''exec {health_check_fd}<>/dev/tcp/127.0.0.1/32002 && echo -e "GET /ping HTTP/1.1\r\nHost: 127.0.0.1\r\nConnection: close\r\n\r\n" >&$${health_check_fd} && cat <&$${health_check_fd}'''
+      timeout: 5s
+      interval: 10s
+      retries: 30
+      start_period: 10s
+    image: altran1502/immich-machine-learning:v1.117.0
+    networks:
+      default: null
+    restart: unless-stopped
+    security_opt:
+      - no-new-privileges
+    volumes:
+      - type: volume
+        target: /tmp
+        volume: {}
+      - type: volume
+        target: /mlcache
+        volume: {}
+  permissions:
+    command:
+      - |2-
+        function process_dir() {
+            local dir=$$1
+            local mode=$$2
+            local uid=$$3
+            local gid=$$4
+            local chmod=$$5
+            local is_temporary=$$6
+
+            local fix_owner="false"
+            local fix_perms="false"
+
+            if [ -z "$$dir" ]; then
+                echo "Path is empty, skipping..."
+                exit 0
+            fi
+
+            if [ ! -d "$$dir" ]; then
+                echo "Path [$$dir] does is not a directory, skipping..."
+                exit 0
+            fi
+
+            if [ "$$is_temporary" = "true" ]; then
+                echo "Path [$$dir] is a temporary directory, ensuring it is empty..."
+                # Exclude the safe directory, where we can use to mount files temporarily
+                find "$$dir" -mindepth 1 -maxdepth 1 ! -name "ix-safe" -exec rm -rf {} +
+            fi
+
+            if [ "$$is_temporary" = "false" ] && [ -n "$$(ls -A $$dir)" ]; then
+                echo "Path [$$dir] is not empty, skipping..."
+                exit 0
+            fi
+
+            echo "Current Ownership and Permissions on [$$dir]:"
+            echo "chown: $$(stat -c "%u %g" "$$dir")"
+            echo "chmod: $$(stat -c "%a" "$$dir")"
+
+            if [ "$$mode" = "always" ]; then
+                fix_owner="true"
+                fix_perms="true"
+            fi
+
+            if [ "$$mode" = "check" ]; then
+                if [ $$(stat -c %u "$$dir") -eq $$uid ] && [ $$(stat -c %g "$$dir") -eq $$gid ]; then
+                    echo "Ownership is correct. Skipping..."
+                    fix_owner="false"
+                else
+                    echo "Ownership is incorrect. Fixing..."
+                    fix_owner="true"
+                fi
+
+                if [ "$$chmod" = "false" ]; then
+                    echo "Skipping permissions check, chmod is false"
+                elif [ -n "$$chmod" ]; then
+                    if [ $$(stat -c %a "$$dir") -eq $$chmod ]; then
+                        echo "Permissions are correct. Skipping..."
+                        fix_perms="false"
+                    else
+                        echo "Permissions are incorrect. Fixing..."
+                        fix_perms="true"
+                    fi
+                fi
+            fi
+
+            if [ "$$fix_owner" = "true" ]; then
+                echo "Changing ownership to $$uid:$$gid on: [$$dir]"
+                chown -R "$$uid:$$gid" "$$dir"
+                echo "Finished changing ownership"
+                echo "Ownership after changes:"
+                stat -c "%u %g" "$$dir"
+            fi
+
+            if [ -n "$$chmod" ] && [ "$$fix_perms" = "true" ]; then
+                echo "Changing permissions to $$chmod on: [$$dir]"
+                chmod -R "$$chmod" "$$dir"
+                echo "Finished changing permissions"
+                echo "Permissions after changes:"
+                stat -c "%a" "$$dir"
+            fi
+        }
+
+        process_dir /mnt/pgvecto/tmp check 999 999 false true
+        process_dir /mnt/postgres/data check 999 999 false false
+        process_dir /mnt/redis/tmp check 1001 0 false true
+    deploy:
+      resources:
+        limits:
+          cpus: "1"
+          memory: "536870912"
+    entrypoint:
+      - bash
+      - -c
+    image: bash
+    networks:
+      default: null
+    user: root
+    volumes:
+      - type: volume
+        source: tmp
+        target: /mnt/pgvecto/tmp
+        volume: {}
+      - type: volume
+        source: postgres-data
+        target: /mnt/postgres/data
+        volume: {}
+      - type: volume
+        source: tmp
+        target: /mnt/redis/tmp
+        volume: {}
+  pgvecto:
+    cap_drop:
+      - ALL
+    depends_on:
+      permissions:
+        condition: service_completed_successfully
+        required: true
+    deploy:
+      resources:
+        limits:
+          cpus: "2"
+          memory: "4294967296"
+    environment:
+      POSTGRES_DB: immich
+      POSTGRES_PASSWORD: immich
+      POSTGRES_PORT: "5432"
+      POSTGRES_USER: immich
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - pg_isready -h 127.0.0.1 -p 5432 -d immich -U immich
+      timeout: 5s
+      interval: 10s
+      retries: 30
+      start_period: 10s
+    image: tensorchord/pgvecto-rs:pg15-v0.2.0
+    networks:
+      default: null
+    restart: unless-stopped
+    security_opt:
+      - no-new-privileges
+    user: 999:999
+    volumes:
+      - type: volume
+        source: tmp
+        target: /tmp
+        volume: {}
+      - type: volume
+        source: postgres-data
+        target: /var/lib/postgresql/data
+        volume: {}
+  redis:
+    cap_drop:
+      - ALL
+    depends_on:
+      permissions:
+        condition: service_completed_successfully
+        required: true
+    deploy:
+      resources:
+        limits:
+          cpus: "2"
+          memory: "4294967296"
+    environment:
+      ALLOW_EMPTY_PASSWORD: "no"
+      REDIS_PASSWORD: immich
+      REDIS_PORT_NUMBER: "6379"
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - redis-cli -h 127.0.0.1 -p 6379 -a $$REDIS_PASSWORD ping | grep -q PONG
+      timeout: 5s
+      interval: 10s
+      retries: 30
+      start_period: 10s
+    image: bitnami/redis:7.4.1
+    networks:
+      default: null
+    restart: unless-stopped
+    security_opt:
+      - no-new-privileges
+    user: "1001:0"
+    volumes:
+      - type: volume
+        source: tmp
+        target: /tmp
+        volume: {}
+  server:
+    cap_drop:
+      - ALL
+    depends_on:
+      machine-learning:
+        condition: service_started
+        restart: true
+        required: true
+      permissions:
+        condition: service_completed_successfully
+        required: true
+      pgvecto:
+        condition: service_healthy
+        required: true
+      redis:
+        condition: service_healthy
+        required: true
+    deploy:
+      resources:
+        limits:
+          cpus: "2"
+          memory: "4294967296"
+        reservations:
+          devices:
+            - capabilities:
+                - gpu
+              driver: nvidia
+              device_ids:
+                - GPU-UUID # Replace me
+    environment:
+      DB_DATABASE_NAME: immich
+      DB_HOSTNAME: pgvecto
+      DB_PASSWORD: immich
+      DB_PORT: "5432"
+      DB_USERNAME: immich
+      IMMICH_LOG_LEVEL: log
+      IMMICH_MACHINE_LEARNING_ENABLED: "true"
+      IMMICH_MACHINE_LEARNING_URL: http://machine-learning:32002
+      IMMICH_PORT: "8080"
+      NODE_ENV: production
+      NVIDIA_DRIVER_CAPABILITIES: all
+      NVIDIA_VISIBLE_DEVICES: GPU-UUID # Replace me
+      REDIS_DBINDEX: "0"
+      REDIS_HOSTNAME: redis
+      REDIS_PASSWORD: immich
+      REDIS_PORT: "6379"
+      TZ: Etc/UTC
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - '/bin/bash -c ''exec {health_check_fd}<>/dev/tcp/127.0.0.1/8080 && echo -e "GET /api/server-info/ping HTTP/1.1\r\nHost: 127.0.0.1\r\nConnection: close\r\n\r\n" >&$${health_check_fd} && cat <&$${health_check_fd}'''
+      timeout: 5s
+      interval: 10s
+      retries: 30
+      start_period: 10s
+    image: altran1502/immich-server:v1.117.0
+    links:
+      - pgvecto
+      - redis
+      - machine-learning
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        host_ip: 0.0.0.0
+        target: 8080
+        published: "8080"
+        protocol: tcp
+    restart: unless-stopped
+    security_opt:
+      - no-new-privileges
+    volumes:
+      - type: volume
+        source: library
+        target: /usr/src/app/upload/library
+        volume: {}
+      - type: volume
+        source: uploads
+        target: /usr/src/app/upload/upload
+        volume: {}
+      - type: volume
+        source: thumbs
+        target: /usr/src/app/upload/thumbs
+        volume: {}
+      - type: volume
+        source: profile
+        target: /usr/src/app/upload/profile
+        volume: {}
+      - type: volume
+        source: video
+        target: /usr/src/app/upload/encoded-video
+        volume: {}
+      - type: volume
+        target: /tmp
+        volume: {}
+      - type: volume
+        target: /scratchpad
+        volume:
+          nocopy: true
+networks:
+  default:
+    name: ad7a9839cdf6cde9e34b526956ba5f37_default
+volumes:
+  library:
+    name: ad7a9839cdf6cde9e34b526956ba5f37_library
+  postgres-data:
+    name: ad7a9839cdf6cde9e34b526956ba5f37_postgres-data
+  profile:
+    name: ad7a9839cdf6cde9e34b526956ba5f37_profile
+  thumbs:
+    name: ad7a9839cdf6cde9e34b526956ba5f37_thumbs
+  tmp:
+    name: ad7a9839cdf6cde9e34b526956ba5f37_tmp
+  uploads:
+    name: ad7a9839cdf6cde9e34b526956ba5f37_uploads
+  video:
+    name: ad7a9839cdf6cde9e34b526956ba5f37_video{{< /codeblock >}}
+
 #### Installing a Multi-Container App with a Dockerfile
-This example deploys the Nextcloud application with multiple containers, including redis and postgres.
+This example deploys Nextcloud with multiple containers, including redis and postgres.
 
 A [Dockerfile](https://docs.docker.com/reference/dockerfile/) builds the Nextcloud image locally, rather than pulling from a remote repository.
 You can use an existing Dockerfile or, as in the example, use [`dockerfile_inline`](https://docs.docker.com/reference/compose-file/build/#dockerfile_inline) to define the build commands as an inline string within the Compose file.
