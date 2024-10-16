@@ -30,7 +30,7 @@ To find the interface number to enter as the **Variable**, you can:
 * Use commands for the Operating System to list available host bus adapter (HBA).
   In Linux use `lspci` or `systool -c fc_host -v` to get details on the fibre channel adapters.
 * Use tools like `cat /sys/class/fc_host/hostX/npiv` to list virtual interfaces on a Linux system.
-* Use management software fo the SAN, or vendor tools from VMWare, Cisco, or Brocade to locate the interface number
+* Use management software for the SAN, or vendor tools from VMWare, Cisco, or Brocade to locate the interface number
 * Use Windows **Device Manager** to find the HBA details and interface number.
 {{< /expand >}}
 
