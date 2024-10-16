@@ -112,7 +112,7 @@ The default TrueNAS **Stable** catalog populates the **Discover** apps screen wi
 Some apps proposed by community members might be adopted as official **stable** train apps.
 iXsystems maintains official apps for non-Enterprise and community users.
 
-{{< trueimage src="/images/SCALE/Apps/AppsTrainSettingsScreen.png" alt="Train Settings Add Enterprise Train" id="Train Settings Add Enterprise Train" >}}
+{{< trueimage src="/images/SCALE/Apps/AppsSettingsScreen.png" alt="Apps Settings Screen" id="Apps Settings Screen" >}}
 
 Users can change apps on the **Discover** screen from the **Train Settings** screen.
 Click **Train Settings** on the **Settings** dropdown menu to open the **Train Settings** screen, then select the desired train(s).
@@ -122,6 +122,21 @@ For more information on trains, see [Managing App Trains]({{< relref "UsingTrain
 
 Some applications deploy as the **root** user for initial configuration before operating as a non-root user.
 Keep these general best practices in mind when using applications with TrueNAS.
+
+## Changing Apps Network Settings
+Go to **Apps > Installed**, click **Configuration** and then on **Settings**.
+
+To add an additional range of IP addresses, click **Add** to the right of **Address Pools**, then select a range from the dropdown list of options, and enter the desired value in **Size**.
+
+**Base** shows the default IP address and subnet, and **Size** shows the network size of each docker network that is cut off from the base subnet.
+
+{{< hint type="info" title="Apps Networking Troubleshooting Tip!" >}}
+This setting replaces the Kubernetes Settings option for Bind Network in 24.04 and earlier.
+Use to resolve issues where apps experiences issues where TrueNAS device is not reachable from some networks.
+Select the network option, or add additional options to resolve the network connection issues.
+{{< /hint >}}
+
+**Check for docker image updates** sets TrueNAS to check for docker image updates (default setting). 
 
 ### Managing Container Images
 While on the **Installed** application screen, click **Settings** > **Manage Container Images** to open the **Manage Container Images** screen.
@@ -158,6 +173,11 @@ To delete an application, click <i class="fa fa-stop" aria-hidden="true"></i> **
 After the app status changes to stopped, click **Delete** on the **Application Info** widget for the selected application to open the **Delete** dialog.
 
 {{< trueimage src="/images/SCALE/Apps/AppsDeleteAppDialog.png" alt="Delete Application Dialog" id="Delete Application Dialog" >}}
+
+Select **Remove ixVolumes** to delete the ixVolume if the:
+* Installation of the app fails
+and
+* **Storage Configuration** for the app was set to ixVolumes
 
 Click **Confirm** then **Continue** to delete the application.
 

@@ -64,6 +64,8 @@ All apps in the **stable** train, some **community** train apps, and all apps in
   Enter the UID for either the default user assigned to the app or the UID for the TrueNAS user created to serve as the app administrator as the user in the ACE entry and set permissions to full control.
   Failing to enable host path ACLs prevents the app from deploying!
 
+  Select **Force** to allow TrueNAS to update the application to the next version. This allows updates and writing to the storage volume if it has data in it.
+  
 * **Resources Configuration** shows CPU and memory settings for the container pod.
    In most cases, you can accept the default settings, or you can change these settings to limit the system resources available to the application.
 
