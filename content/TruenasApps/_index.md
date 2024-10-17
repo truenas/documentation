@@ -78,7 +78,6 @@ You must choose a pool before you can install an application.
 For more information on screens and screen functions, refer to the UI Reference article on [Apps Screens]({{< relref "SCALE/SCALEUIReference/Apps/_index.md" >}}).
 
 ## Managing Apps Configuration
-
 Use the **Configuration** dropdown to access the **Choose Pool**, **Unset Pool**, **Manage Container Images**, and **Settings** options.
 
 ### Choosing the Application Pool
@@ -156,7 +155,6 @@ If running TrueNAS 24.10 or higher:
 4. Select **Install NVIDIA Drivers**, and click **Save.**
 
 #### Monitoring for Image Updates
-
 Select **Check for docker image updates** (selected by default) to enable TrueNAS to periodically check for Docker image updates.
 This applies to all Docker images present on the system for either catalog or custom applications.
 Disable to prevent TrueNAS from monitoring for upstream image updates.
@@ -168,31 +166,31 @@ While on the **Installed** application screen, click **Configuration** > **Manag
 
 Delete images or add new ones from this screen.
 
-Click **Pull Image** to download a specific custom image to TrueNAS.
+**Pull Image** downloads a specific custom image to TrueNAS.
 
 {{< trueimage src="/images/SCALE/Apps/AppsManageContainerImagesPullImage.png" alt="Pull a Container Image" id="Pull a Container Image" >}}
 
-To download a specific image, click the button, then enter a valid path and tag to the image.
+To download a specific image, click **Pull Image**, then enter a valid path and tag to the image.
 Enter the path using the format *registry*/*repository*/*image* to identify the specific image.
 The default **latest** tag downloads the most recent image version.
 
 When downloading a private image, enter user account credentials that allow access to the private registry.
 
 ## Installing an Application
-The first time you go to **Apps**, you are prompted to choose the pool apps use. You must set the app pool before you can install applications.
+The first time you go to **Apps**, a dialog prompts your to choose the pool apps use. You must set the app pool before you can install applications.
 Select the pool as described in the [**Choosing the Application Pool**](#choosing-the-application-pool).
 
 The **Installed** applications screen displays **Check Available Apps** before you install the first application.
 
 {{< trueimage src="/images/SCALE/Apps/AppsInstalledAppsScreenNoApps.png" alt="Installed Applications Screen No Apps" id="Installed Applications Screen No Apps" >}}
 
-Ether click on **Check Available Apps** or **Discover Apps** to open the **[Discover](#using-the-discover-applications-screen)** screen.
+Click either **Check Available Apps** or **Discover Apps** to open the **[Discover](#using-the-discover-applications-screen)** screen.
 
-Search for the application widget, then click on that widget to open the information screen for the app and access the installation wizard.
+Search for the application widget, then click on that widget to open the information screen for the app and to access the installation wizard.
 
 {{< include file="/static/includes/apps/AppsSMBErrorWarning.md" >}}
 
-If the application requires specific datasets, configure these before using the installation wizard.
+If an application requires specific datasets, configure them before launching the installation wizard.
 
 ### Using an App Installation Wizard
 After clicking on an app widget on the **Discover Apps** screen, the information screen for that app opens.
@@ -202,7 +200,7 @@ Click **Install** to open the installation wizard for the application.
 
 The installation wizard configuration sections vary by application, with some including more configuration areas than others.
 Each application tutorial provides information on steps to take before launching an app installation wizard, but if a tutorial does not exist, click **Install** on the app information screen to open the wizard.
-Review settings ahead of time to check for required settings then exit the wizard to do the necessary steps before returning to install the application.
+Review settings ahead of time to check for required settings and then exit the wizard to do the necessary steps before returning to install the application.
 Click **Discover** on the breadcrumb at the top of the app wizard screen to exiting the without saving.
 
 {{< hint type="info" title="Community Maintained Apps" >}}
@@ -212,22 +210,24 @@ Refer to tutorials created and maintained by the community for more information 
 
 {{< include file="/static/includes/apps/AppsInstallWizardSettings.md" >}}
 
-After installing an application, the **Installed** applications screen opens showing the application in the **Deploying** state.
-It changes to **Running** when the application is ready to use.
+After clicking **Install** on an application wizard screen, the **Installed** applications screen opens showing the application in the **Deploying** state before
+changing to **Running**. 
+Applications that crash show the **Crashed** status. Click **Stop** changes the status to **Stopping** before going to **Stopped**.
+Click **Start** to restart the application.
 
-To modify installed application settings, click on the app row on the **Applications** table on the **Installed** screen, then click **Edit** on the **Application Info** widget.
-Ensure you have the right app row selected or you end up accessing the first app listed in the table of deployed apps.
+The screen defaults to selecting the first app row listed on the **Applications** table and showing the application widgets that first app.
+To modify installed application settings, first click on the app row on the **Applications** table, then click **Edit** on the **Application Info** widget.
 
 Refer to individual tutorials in the [Stable]({{< relref "/content/TruenasApps/StableApps/_index.md" >}}), [Community]({{< relref "/content/TruenasApps/CommunityApps/_index.md" >}}), or [Enterprise]({{< relref "/content/TruenasApps/EnterpriseApps/_index.md" >}}) sections of the Documentation Hub for more details on configuring application settings.
 
 #### Allocating GPU
 Users with compatible hardware can allocate one or more GPU devices to an application for use in hardware acceleration.
-Allocating GPUs is an advanced process that could require significant troubleshooting depending on installed GPU device(s) and application-specific criteria.
+Allocating GPUs is an advanced process that could require significant troubleshooting depending on the installed GPU device(s) and application-specific criteria.
 
 GPU devices can be available for the host operating system (OS) and applications or can be [isolated for use in a Virtual Machine (VM)]({{< relref "managegpuscale.md" >}}).
 A single GPU cannot be shared between the OS/applications and a VM.
 
-Allocate GPU from the **Resources Configuration** section of the application installation wizard screen or the **Edit** screen for a deployed application.
+Allocate the GPU from the **Resources Configuration** section of the application installation wizard screen or the **Edit** screen for a deployed application.
 
 {{< trueimage src="/images/SCALE/Apps/ResourcesConfiguration.png" alt="Resources Configuration" id="Resources Configuration" >}}
 
@@ -250,7 +250,7 @@ If installed GPU devices do not populate as available for allocation in **GPU Co
    If necessary, deselect the device you want to allocate to applications.
    Repeat for any additional VMs on the system.
 
-If the GPU was previously isolated and/or assigned to a VM, a reboot could be required to free it up for app allocation.
+If the GPU was previously isolated and/or assigned to a VM, you might need to reboot to free it up for app allocation.
 Restart the system then return to the **Resources Configuration** section of the application to see if expected devices are available.
 {{< /expand >}}
 
@@ -260,9 +260,11 @@ Restart the system then return to the **Resources Configuration** section of the
 See [Installing Custom Applications]({{< relref "UsingCustomApp.md" >}}) for more information.
 
 ## Upgrading Apps
-Apps display a yellow circle with an exclamation point to indicate an upgrade is available, and the **Installed** application screen banner displays an **Update** or **Update All** button when upgrades are available.
-To upgrade an app to the latest version, click **Update** on the **Application Info** widget or to upgrade multiple apps, click the **Update All** button on the **Installed** applications banner.
-Both buttons only display if TrueNAS SCALE detects an available update for installed applications.
+Apps with available upgrades show a yellow circle with an exclamation point on the right side of the **Applications** table row, and the **Installed** application screen banner displays an **Update** or an **Update All** button.
+To upgrade an app, select the app row and click **Update** on the **Application Info** widget.
+To upgrade multiple apps, either click the **Update All** button on the **Installed** applications banner, or select the checkbox to the left of the application row to show the **Bulk Actions** button.
+Click **Bulk Actions** and select **Upgrade All** to upgrade the apps selected.
+Upgrade options only show if TrueNAS detects an available update for installed applications.
 
 **Update** opens an upgrade window that includes two selectable options, **Images (to be updated)** and **Changelog**.
 Click on the down arrow to see the options available for each.
@@ -286,30 +288,29 @@ Click **Confirm** then **Continue** to delete the application.
 The **Discover** screen shows application widgets based on the trains selected on the **Train Settings** screen.
 
 Non-Enterprise systems show the **stable** catalog of apps by default.
-These are official applications that are pre-configured and only require a name during deployment.
+These are official applications, pre-configured to only require a name during a test deployment, or some customization for a full deployment.
 
 Enterprise-licensed systems display the **enterprise** train of applications simplified and validated for Enterprise systems.
-Community users can add the **community** and **enterprise** trains on the [**Train Settings**](#changing-app-trains) screen.
+
+Community users can add the **community** and **enterprise** trains on the [**Settings**](#changing-app-trains) screen.
 
 {{< trueimage src="/images/SCALE/Apps/AppsDiscoverScreen.png" alt="Applications Discover Screen" id="Applications Discover Screen" >}}
 
 Use the **Discover** screen links to access other functions.
 
-* [**Refresh Catalog**](#refreshing-the-apps-catalog)
-* **Manage Installed Apps**
-
-**Manage Installed Apps** opens the **Installed** apps screen where you access the **Configuration** menu to manage general application settings.
+* [**Refresh Catalog**](#refreshing-the-apps-catalog) - Refreshes the list of app widgets after changing train settings or changes to the catalog.
+* **Manage Installed Apps** - Opens the **Installed** apps screen where you access the **Configuration** menu to manage general application settings.
 
 ### Refreshing the Apps Catalog
 Click **Refresh Catalog** on the **Discover** screen to refresh the apps catalog.
-Refresh the apps catalog after adding or editing the trains on your system.
+Refresh the apps catalog after adding or editing the app trains on your system.
 
 ### Using the Discover Screen Filters
-To change the way app widgets show on the screen, click the down arrow to the right of **Filters**, and select the filter option you want to use.
+To change how app widgets show on the screen, click the down arrow to the right of **Filters**, and select the filter option to use.
 
 {{< trueimage src="/images/SCALE/Apps/DiscoverAppsScreenFilterOptions.png" alt="Discover Apps Filter Options" id="Discover Apps Filter Options" >}}
 
-To quickly locate a specific app, begin typing the name in the search field.
+To quickly locate a specific app, begin typing the name in the search field. The screen shows apps matching the typed entry.
 
 To sort app widgets by category, click on **Categories**.
 To select multiple categories, click **Categories** again and select another category from the dropdown.

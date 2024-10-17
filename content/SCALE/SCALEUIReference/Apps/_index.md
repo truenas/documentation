@@ -59,6 +59,8 @@ The first time you open the **Installed** applications screen a dialog prompts y
 Select the pool from the dropdown list, then click **Save**. This starts the applications service.
 If you exit out of this dialog, to set the pool, click [**Settings > Choose Pool**](#choose-a-pool-for-apps-dialog) to select a storage pool for apps.
 
+If a pool is not chosen and you attempt to install an application, after clicking **Install** on an application information screen a dialog window prompts you to select a pool before the installation wizard shows.
+
 ### Unset Pool
 **Unset Pool** on the **Settings** menu opens the **Unset Pool** dialog. Click **Unset** to unset the pool and turn off the application service.
 When complete, a **Success** dialog displays.
@@ -88,7 +90,7 @@ Entering characters in the **<span class="iconify" data-icon="mdi:magnify"></spa
 {{< /truetable >}} 
 
 ### Settings
-**Settings** opens the **Settings** screen showing the four application train options, the option to add IP addresses, and check for Docker image updates.
+**Settings** opens the **Settings** screen showing four application train options, the option to add IP addresses and subnets for the application to use, and check for Docker image updates.
 
 {{< trueimage src="/images/SCALE/Apps/AppsSettingScreen.png" alt="Apps Settings Screen" id="Apps Settings Screen" >}}
 
@@ -194,7 +196,7 @@ The **Update** state on the application row on the **Installed** screen changes 
 The **Workloads** widget shows the container information for the selected application.
 Information includes the number of pods, used ports, number of deployments, stateful sets, and container information.
 It also shows the **Shell**, **Volume Mounts** and **View Log** icon buttons that provide access to the container pod shell and log screens and mount point windows.
-These options do not show for stopped apps.
+The option to access the log and the shell remain available for stopped applications for fully deployed application containers, and for applications in the crashed state.
 
 {{< trueimage src="/images/SCALE/Apps/InstalledAppsWorkloadsWidget.png" alt="Installed Apps Containers Widget" id="Installed Apps Containers Widget" >}}
 
