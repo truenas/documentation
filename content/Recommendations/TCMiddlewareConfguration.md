@@ -9,32 +9,65 @@ geekdocCollapseSection: true
 
 ## Configuration File
 
+Middleware contains a configuration file updated on runtime. The full configuration file, located at `/etc/config.yaml`, is provided below:
 
-## Syslog
+{{<highlight yaml "">}}
+logger:
+    console:
+        enabled: true
+    file:
+        enabled: true
+        path: /data/log
+        rotation:
+            enabled: true
+            max_age: 10
+            max_backups: 10
+            max_size: 100
+    log_level: info
+    remote:
+      enabled: false
+      log_level: error
+      host: 127.0.0.1
+      port: 6514
+      protocol: tcp
+      identifier: TrueCommand
+sys:
+    alert_email_threshold: 30m0s
+{{< / highlight >}}
+
+The full file could be copied from the docker container by `docker cp truecommand:/etc/middleware/config.yaml /DATA_DIR/config.yaml` or by pasting the contents above.
+
+Overwrite the TC_CONFIG_PATH environment variable by adding `-e TC_CONFIG_PATH=/data/config.yaml` to container creation or create an additional tied volume with `-v /etc/middleware/config.yaml:/CONFIG_DIR/config.yaml` to preserve changes.
+
+### Decrease Alert Frequency
+
+Change `alert_email_threshold` under `sys` to increase the time required to send the same set of alerts, for instance to `1d` to increase the duration from thirty minutes to one day. 
+
+### Change logging
+
+Console and file logging can be disabled, as well as the default log level changed. Options for level include "trace", "debug", "info", "warning", and "error". Rotation and storage options can be changed as well, for instance from /data/log to /etc/log to prevent log preservation across reboots.
+
+#### Enable Syslog
 
 Remote logging capabilities through syslog are available in TrueCommand version 2.3 or later.
 
 To enable, first edit the internal configuration file `/etc/config.yaml`.
-Overwrite the TC_CONFIG_PATH or create an additional tied volume for this file to preserve changes.
 
 {{< highlight yaml "" >}}
-logger:
-  remote_log:
-    enabled: false
-    log_level: error
-    host: 127.0.0.1           # rsyslog server address
-    port: 6514                # port based on the protocol
-    protocol: tcp             # tcp or udp
-    identifier: TrueCommand   # will be added as tag in the logs
+remote:
+  enabled: false
+  log_level: error
+  host: 127.0.0.1           # rsyslog server address
+  port: 6514                # port based on the protocol
+  protocol: tcp             # tcp or udp
+  identifier: TrueCommand   # will be added as tag in the logs
 {{< / highlight >}}
 
-Restart the container.
-
-### Server Setup
+#### Server Setup
 
 An Rsyslog server can easily be setup with Docker.
 
-#### rsyslog.conf
+##### rsyslog.conf
 
 ```
 $ModLoad imudp
@@ -46,7 +79,7 @@ $template RemoteStore, "/var/log/remote/%$year%/%$Month%/%$Day%.log"
 :source, isequal, "last" ~
 ```
 
-#### Dockerfile
+##### Dockerfile
 
 {{< highlight yaml "" >}}
 FROM ubuntu:latest
@@ -55,7 +88,7 @@ ADD rsyslog.conf /etc/.
 ENTRYPOINT ["rsyslogd", "-n"]
 {{< / highlight >}}
 
-#### Docker Build & Run
+##### Docker Build & Run
 
 ```
 joe@joe-minty:~$ docker build -t rsyslog-server
