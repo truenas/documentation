@@ -54,7 +54,7 @@ You can also mount the storage as read-only to prevent using the container to ch
 
 ### Using ixVolumes
 
-Using ixVolumes, you can allow TrueNAS to create a dataset on the apps storage pool.
+Use ixVolumes to allow TrueNAS to create a dataset on the apps storage pool.
 Like host paths, ixVolumes are mounted as Docker bind mounts and can be mounted read only.
 In most use cases, ixVolume storage is better suited to app testing, while host volumes are better for production deployments.
 
@@ -66,11 +66,11 @@ You need to define a path where the volume appears inside the container.
 
 ### Using Memory-Backed Storage
 
-Memory-backed [tmpfs](https://docs.docker.com/engine/storage/#tmpfs) storage provides temporary, in-memory filesystem for storing data that only needs to persist for the lifetime of the container.
+Memory-backed [tmpfs](https://docs.docker.com/engine/storage/#tmpfs) storage provides a temporary, in-memory file system for storing data that only needs to persist for the lifetime of the container.
 It is mounted directly in RAM and automatically cleared when the container stops.
 
-Memory-backed storage can be used to store ephemeral data, especially when performance speed is a concern, such as caching, processing data that doesn't need persistent storage, or storing session data.
-For security purposes, sensitive data like temporary credentials or data can be stored in tmpfs instead of writing to disk.
+Memory-backed storage can be used to store ephemeral data, especially when performance speed is a concern, such as caching, processing data that does not need persistent storage, or storing session data.
+For security purposes, you can store sensitive data like temporary credentials or data in tmpfs instead of writing to disk.
 
 ## Installing via Wizard
 
@@ -93,24 +93,28 @@ To deploy a third-party application using the **Install iX App** wizard, go to *
 
    {{< trueimage src="/images/SCALE/Apps/InstallCustomAppContainerEntrypoint.png" alt="Container Entrypoint Settings" id="Container Entrypoint Settings" >}}
 
-   Click **Add** for **Entrypoint** to display an entrypoint field.
-   Enter an entrypoint in either the exec form, for example `ENTRYPOINT ["top", "-b"]`.
-   Click **Add** again to enter another entrypoint variable.
+   Click **Add** to the right of **Entrypoint** to display an entrypoint field.
+   Each field is an item in the ENTRYPOINT list in exec format.
+   For example, to enter `ENTRYPOINT ["top", "-b"]`, enter `top` in the first **Entrypoint** field.
+   Click **Add** again.
+   Enter `-b` in the second field.
 
-   Click **Add** for **Command** to display a container command field.
-   Enter an command in either the exec form, for example `CMD ["executable","param1","param2"]`.
-   Click **Add** again to enter another command.
+   Click **Add** to the right of **Command** to display a container command field.
+   Each field is an item in the CMD list in exec format.
+   For example, to enter `CMD ["echo", "hello world"]`, enter `echo` in the first **Command** field.
+   Click **Add** again.
+   Enter `hello world` in the second field.
 
-   Select the appropriate **Timezone**.
+   Select the appropriate **Timezone** or begin typing the timezone to see a narrowed list of options to select from..
 
     Click **Add** for **Environment Variables** to display a block of variable fields.
     Enter the environment variable name or key in **Name**, for example `MY_NAME`.
     Enter the value for the variable in **Value** for example,  `"John Doe"`, `John\ Doe`, or `John`.
-    Click **Add** again to enter another set of environment variables.
+   If needed, select the options to disable health check built into the container, enable a pseudo-TTY (or pseudo-terminal) for the container, or to keep the standard input (stdin) stream for the container open, for example for an interactive application that needs to remain ready to accept input.
 
     Use the dropdown to select a **Restart Policy** to use for the container.
 
-   If needed, select the options to disable healthcheck built into the container, enable a pseudo-TTY (or pseudo-terminal) for the container, or to keep the standard input (stdin) stream for the container open, for example for an interactive application that needs to remain ready to accept input.
+   If needed, select the options to disable health check built into the container, enable a pseudo-TTY (or pseudo-terminal) for the container, or to keep the standard input (stdin) stream for the container open, for example for an interactive application that needs to remain ready to accept input.
 
 4. Enter any required settings in **Security Context Configuration**.
 
@@ -153,11 +157,11 @@ To deploy a third-party application using the **Install iX App** wizard, go to *
    You can change the DNS policy and define separate nameservers and search domains.
    See the Docker [DNS services documentation](https://docs.docker.com/engine/network/#dns-services) for more details.
 
-   Use **Nameservers** to add one or more IP addresses to use as DNS servers for the container.
+   Use **Search Domains** to add one or more DNS domains to search non-fully qualified host names.
    Click **Add** to display a **Nameserver** entry field and enter the IP address.
    Click again to add another name server.
 
-   Use **Search Domains** to add one or more DNS domains to search non-fully qualified hostnames.
+   Use **Search Domains** to add one or more DNS domains to search non-fully qualified host names.
    Click **Add** to display a **Search Domain** field and enter the domain you want to configure, for example, *mydomain.com*.
    Click again to add another search domain.
    See the Linux [search](https://www.man7.org/linux/man-pages/man5/resolv.conf.5.html) documentation for more information.
@@ -167,21 +171,21 @@ To deploy a third-party application using the **Install iX App** wizard, go to *
    Click again to add another option.
    See the Linux [options](https://www.man7.org/linux/man-pages/man5/resolv.conf.5.html) documentation for more information.
 
-6. If the application includes a GUI, use the **Portal Configuration** settings to set up a web UI portal for the application.
+6. Use the **Portal Configuration** settings to set up a web UI portal if the application includes a GUI.
 
    {{< trueimage src="/images/SCALE/Apps/InstallCustomAppAddPortalConfiguration.png" alt="Portal Configuration Settings" id="Portal Configuration Settings" >}}
 
    Click **Add** to display a block of web portal configuration settings.
 
    Enter a **Name** for the portal, for example *MyAppPortal*.
-
+   Then enter a host name or an internal IP within your local network, for example *my-app-service.local* or an internal IP address.
    Select the web **Protocol** to use for the portal from the dropdown list. Options are **HTTP** or **HTTPS**.
 
    Select **Use Node IP** to use the TrueNAS node, or host, IP address to access the portal or deselect to display the **Host** field.
-   Then enter a hostname or an internal IP within your local network, for example *my-app-service.local* or an internal IP address.
+   Then enter a host name or an internal IP within your local network, for example *my-app-service.local* or an internal IP address.
 
    Enter the **Port** number to use for portal access.
-   The port number the app uses should be in the documentation provided by the application provider/developer.
+   Refer to the documentation provided by the application provider/developer for the port number the app uses.
    Check the port number against the list of [Default Ports](https://www.truenas.com/docs/references/defaultports/) to make sure TrueNAS is not using it for some other purpose.
    If needed, you can map the default container port to an open host port under **Network Configuration** (see above).
 
@@ -196,7 +200,7 @@ To deploy a third-party application using the **Install iX App** wizard, go to *
    Click **Add** to display a block of configuration settings for each storage mount.
    You can edit to add additional storage to the container later, if needed.
 
-   Use the dropdown to select the storage **Type** you need to mount then configure the appropriate settings.
+   Select the storage option you need to mount on the **Type** dropdown list and then configure the appropriate settings.
 
    {{< expand "ixVolume (Dataset created automatically by the system)" "v" >}}
    To allow TrueNAS to create the storage volume, leave **Type** set to **ixVolume (Dataset created automatically by the system)**.
@@ -204,9 +208,22 @@ To deploy a third-party application using the **Install iX App** wizard, go to *
 
    {{< trueimage src="/images/SCALE/Apps/InstallCustomAppAddixVolume.png" alt="ixVolume Settings" id="ixVolume Settings" >}}
 
-   Enter in **Mount Path** the <file>**path/to/directory**</file> where the ixVolume mounts inside the container.
+   Enter the <file>**path/to/directory**</file> in **Mount Path** for the location where the ixVolume mounts inside the container.
 
-   Select whether to mount the ixVolume as **Read Only** or to **Enable ACL** and configure settings as needed.
+   Select whether to mount the ixVolume as **Read Only**.
+   This is not recommended for most use cases.
+
+   Select **Enable ACL** to show the ACL and ACE Entries options.
+
+   Enter a name for the ixVolume in **Dataset Name**.
+
+   Next click **Add** to the right of **ACL Entries** to show the permissions settings.
+
+   Set **ID Type** to **Entry is for a USER** or **Entry is for a Group**.
+
+   Enter the <file>**path/to/directory**</file> where the ixVolume mounts inside the container in **Mount Path**.
+
+   Select the permissions level from the **Access** dropdown list.
    {{< /expand >}}
 
    {{< expand "Host Path (Path that already exists on the system)" "v" >}}
@@ -218,7 +235,21 @@ To deploy a third-party application using the **Install iX App** wizard, go to *
    Enter in **Mount Path** the <file>**path/to/directory**</file> where the host path mounts inside the container.
    Then define the **Host Path**. Enter a path or click <span class="material-icons">arrow_right</span> to the left of <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M5 21L3 9h18l-2 12zm5-6h4q.425 0 .713-.288T15 14t-.288-.712T14 13h-4q-.425 0-.712.288T9 14t.288.713T10 15M6 8q-.425 0-.712-.288T5 7t.288-.712T6 6h12q.425 0 .713.288T19 7t-.288.713T18 8zm2-3q-.425 0-.712-.288T7 4t.288-.712T8 3h8q.425 0 .713.288T17 4t-.288.713T16 5z"/></svg> **/mnt** to browse to the location of the dataset in TrueNAS.
 
-   Select whether to mount the host path as **Read Only** or to **Enable ACL** and configure settings as needed.
+   Select whether to mount the host path as **Read Only**.
+
+   Select **Enable ACL** to show the ACL and ACE Entries options.
+
+   Enter or browse to select the dataset path.
+
+   Next click **Add** to the right of **ACL Entries** to show the permissions settings.
+
+   Set **ID Type** to **Entry is for a USER** or **Entry is for a Group**.
+
+   Enter the <file>**path/to/directory**</file> where the ixVolume mounts inside the container in **Mount Path**.
+
+   Select the permissions level from the **Access** dropdown list.
+
+   Select **Force Flag** to apply the ACL even if the path has existing data.
    {{< /expand >}}
 
    {{< expand "SMB/CIFS Share (Mounts a volume to a SMB share)" "v" >}}
@@ -228,12 +259,12 @@ To deploy a third-party application using the **Install iX App** wizard, go to *
 
    Enter in **Mount Path** the <file>**path/to/directory**</file> where the ixVolume mounts inside the container.
 
-   Enter in **Server** the IP address for the SMB server, for example *192.168.1.100*.
+   Enter the IP address for the SMB server in **Server**, for example *192.168.1.100*.
    This can be the TrueNAS host.
 
    Enter the name of the SMB share in **Path**, for example *my-share*.
 
-   Enter the **Username** and **Password** of an account with permission to access the SMB share.
+   Enter the username and password of an account with permission to access the SMB share.
 
    Select whether to mount the share volume as **Read Only** or enter a directory services **Domain** as needed.
    {{< /expand >}}
@@ -243,9 +274,9 @@ To deploy a third-party application using the **Install iX App** wizard, go to *
 
    {{< trueimage src="/images/SCALE/Apps/InstallCustomAppAddMemoryBackedVol.png" alt="Tmpfs Settings" id="Tmpfs Settings" >}}
 
-   Enter in **Mount Path** the <file>**path/to/directory**</file> where the temporary directory mounts inside the container.
+   Enter the <file>**path/to/directory**</file> in **Mount Path** for the location where the temporary directory mounts inside the container .
 
-   Enter in **Tmpfs Size Limit (in Mi)** the maximum size of the temporary directory in mebibytes or accept the default of *500*.
+   Enter the maximum size of the temporary directory in mebibytes in **Tmpfs Size Limit (in Mi)** or accept the default of *500*.
    {{< /expand >}}
 
 8. {{< include file="/static/includes/apps/AppInstallWizardResourceConfig.md" >}}
@@ -269,15 +300,13 @@ Click <i class="material-icons" aria-hidden="true" title="more_vert">more_vert</
 
 {{< trueimage src="/images/SCALE/Apps/InstallCustomAppYAML.png" alt="Install Custom App via YAML" id="Install Custom App via YAML" >}}
 
-The **Add Custom App** screen contains two fields.
-
-Enter a name for the application in **Name** using lowercase, alphanumeric characters.
+Enter a name for the application using lowercase, alphanumeric characters.
 
 Enter the Compose YAML file in **Custom Config**.
 
 Ensure the Compose file begins with a top-level element, such as `name:` or `services:`.
 See the Docker [Compose file reference](https://docs.docker.com/reference/compose-file/) for more information.
-
+Begin the Compose file with a top-level element, such as `name:` or `services:`.
 As Compose files can be complex and YAML relies on indentation and whitespace to define structure and hierarchy, we recommend writing the file in a stand-alone code editor before pasting the completed content into the **Custom Config** field.
 
 Click **Save** to begin deployment of the app.
@@ -290,7 +319,7 @@ This is not an exhaustive collection of all capabilities, nor are the files belo
 Note that app storage in these examples is configured using [volumes](https://docs.docker.com/engine/storage/#volumes), which are managed by the Docker engine.
 In a production deployment, you should configure [bind mounts](https://docs.docker.com/engine/storage/#bind-mounts) to TrueNAS storage locations.
 
-#### Installing a Multi-Container App with GPU Access
+In a production deployment, configure [bind mounts](https://docs.docker.com/engine/storage/#bind-mounts) to TrueNAS storage locations.
 This example deploys Immich with multiple containers, including pgvecto and redis.
 
 It also [enables GPU access](https://docs.docker.com/compose/how-tos/gpu-support/) for an NVIDIA GPU device.
@@ -1206,7 +1235,7 @@ services:
 
 ## Managing Custom Apps
 
-Installed custom applications appear on the **Installed** applications screen.
+Installed custom applications show on the **Installed** applications screen.
 Many of the management options available for catalog applications are also available for custom apps.
 
 TrueNAS monitors upstream images and alerts when an updated version is available.

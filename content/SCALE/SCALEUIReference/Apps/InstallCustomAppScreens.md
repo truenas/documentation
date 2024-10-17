@@ -11,8 +11,8 @@ tags:
 
 {{< include file="/static/includes/apps/CustomAppEE.md" >}}
 
-The **Custom App** button on the [**Discover**]({{< relref "SCALE/SCALEUIReference/Apps/_index.md" >}}) applications screen opens the **[Install iX App](#install-ix-app-screen)** screen with a guided installation wizard.
-The <i class="material-icons" aria-hidden="true" title="more_vert">more_vert</i> > **Install via YAML** button opens the **[Add Custom App](#add-custom-app-screen)** screen with an advanced YAML editor for deploying apps using Docker Compose.
+**Custom App** on the [**Discover**]({{< relref "SCALE/SCALEUIReference/Apps/_index.md" >}}) screen opens the **[Install iX App](#install-ix-app-screen)** guided installation wizard.
+<i class="material-icons" aria-hidden="true" title="more_vert">more_vert</i> > **Install via YAML** opens the **[Add Custom App](#add-custom-app-screen)** screen with an advanced YAML editor for deploying apps using Docker Compose.
 
 ## Install iX App Screen
 
@@ -41,7 +41,7 @@ After completing the installation these settings are not editable.
 | Setting | Description |
 |---------|-------------|
 | **Application Name** | Enter a name for the application. The name must have lowercase alphanumeric characters, begin with an alphabet character, and can end with an alphanumeric character. The name can contain a hyphen (-) but not as the first or last character in the name. For example, use *chia-1* but not *-chia1* or *1chia-* as a valid name. |
-| **Version** | Displays the current version of the iX-App chart. Accept the default number. |
+| **Version** | Displays the current version of iX-App. Accept the default number. |
 {{< /truetable >}}
 {{< /expand >}}
 
@@ -56,7 +56,7 @@ They define the image, tag, and when TrueNAS pulls the image from the remote rep
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Repository** | Required. Enter the Docker image repository name. For example, *plexinc/pms-docker* for Plex.|
+| **Repository** | (Required) Enter the Docker image repository name. For example, *plexinc/pms-docker* for Plex.|
 | **Tag** | Enter the tag to use for the specified image. For example, *public* for Plex. Or accept the default *latest*. |
 | **Pull Policy** | Select the Docker image pull policy from the dropdown list. Options are **Only pull image if not present on host** (default option), **Always pull image even if present on host**, and **Never pull image even if it's not present on host**. |
 {{< /truetable >}}
@@ -64,9 +64,9 @@ They define the image, tag, and when TrueNAS pulls the image from the remote rep
 
 ### Container Configuration Settings
 
-**Container Configuration** settings specify the [entrypoints](https://docs.docker.com/reference/dockerfile/#entrypoint), [commands](https://docs.docker.com/reference/dockerfile/#cmd), timezone, [environment variables](https://docs.docker.com/reference/dockerfile/#env), and restart policy to use for the image.
+**Container Configuration** settings specify the [entrypoint](https://docs.docker.com/reference/dockerfile/#entrypoint), [commands](https://docs.docker.com/reference/dockerfile/#cmd), timezone, [environment variables](https://docs.docker.com/reference/dockerfile/#env), and restart policy to use for the image.
 These can override any existing variables stored in the image.
-Check the documentation for the application you want to install for entrypoints, commands, or variables you need to enter.
+Check the documentation for the application you want to install for required entrypoints, commands, or variables.
 
 {{< trueimage src="/images/SCALE/Apps/InstallCustomAppContainerEntrypoint.png" alt="Container Configuration Settings" id="Container Configuration Settings" >}}
 
@@ -74,12 +74,12 @@ Check the documentation for the application you want to install for entrypoints,
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Entrypoint** | Click **Add** to display a container entrypoint field. Enter an entrypoint in either the exec form, for example `ENTRYPOINT ["top", "-b"]`. Click **Add** again to enter another entrypoint variable. |
-| **Command** | Click **Add** to display a container command field. Enter an command in either the exec form, for example `CMD ["executable","param1","param2"]`. Click **Add** again to enter another command. |
-| **Timezone** | Use the dropdown to select a timezone setting for the container. |
+| **Entrypoint** | Click **Add** to display a new field. Each field is an item in the ENTRYPOINT list in exec format. For example, to enter `ENTRYPOINT ["top", "-b"]`, enter `top` in the first **Entrypoint** field. Click **Add** again. Enter `-b` in the second field. |
+| **Command** | Click **Add** to display a new field. Each field is an item in the CMD list in exec format. For example, to enter `CMD ["echo", "hello world"]`, enter `echo` in the first **Command** field. Click **Add** again. Enter `hello world` in the second field. |
+| **Timezone** | Use the dropdown to select a timezone setting for the container or begin typing the timezone to see a narrowed list of options to select from. |
 | **Environment Variables** | Click **Add** to display a block of environment variables. Click **Add** again to enter another set of environment variables. |
 | **Name** | Enter the environment variable name or key. For example, enter `MY_NAME`. |
-| **Value** | Enter the value for the variable specified in **Environment Variable Name**. For example, enter  `"John Doe"`, `John\ Doe`, or `John`. |
+| **Value** | Enter the value for the variable specified in **Environment Variable Name**. For example, enter  `John Doe`, `John\ Doe`, or `John`. |
 | **Restart Policy** | Use the dropdown to select a restart policy to use for the container. Options are **No - Does not restart the container under any circumstances.**, **Unless Stopped - Restarts the container irrespective of the exit code but stops restarting when the service is stopped or removed.**, **On Failure - Restarts the container if the exit code indicates an error.**, and **Always - Restarts the container until its removal.**. |
 | **Disable Builtin Healthcheck** | Select to disable the built-in `HEALTHCHECK` defined in the image, for example to address performance or compatibility requirements. |
 | **TTY** | Select to enable a pseudo-TTY (or pseudo-terminal) for the container. |
@@ -133,7 +133,7 @@ See the Docker [DNS services documentation](https://docs.docker.com/engine/netwo
 | **Protocol** | Select the protocol from the dropdown list. Options are **TCP** or **UDP**. |
 | **Nameservers** | Use to add one or more IP addresses to use as DNS servers for the container. Click **Add** to the right of **Nameservers** to display a **Nameserver** entry field. Click again to add another name server. |
 | **Nameserver** | Enter the IP address of the name server. |
-| **Search Domains** | Use to add one or more DNS domains to search non-fully qualified hostnames. Click **Add** to display a **Search Domain** field to enter the domain you want to configure. Click again to add another search domain. See the Linux [search](https://www.man7.org/linux/man-pages/man5/resolv.conf.5.html) documentation for more information. |
+| **Search Domains** | Use to add one or more DNS domains to search non-fully qualified host names. Click **Add** to display a **Search Domain** field to enter the domain you want to configure. Click again to add another search domain. See the Linux [search](https://www.man7.org/linux/man-pages/man5/resolv.conf.5.html) documentation for more information. |
 | **Search Domain** | Enter the search domain you want to configure. For example, *mydomain.com*. |
 | **DNS Options** | Use to add one or more key-value pairs to control various aspects of query behavior and DNS resolution. Click **Add** to display an **Option** field. Click again to add another option. See the Linux [options](https://www.man7.org/linux/man-pages/man5/resolv.conf.5.html) documentation for more information. |
 | **Option** | Enter a key-value pair representing a DNS option and its value. For example, *ndots:2*. |
@@ -155,7 +155,7 @@ Click **Add** to display the web portal configuration settings.
 | **Name** | Enter a UI portal name to use and display in the UI. For example, *MyAppPortal*. |
 | **Protocol** | Select the web protocol to use for the portal from the dropdown list. Options are **HTTP** or **HTTPS**. |
 | **Use Node IP** | Select to use the TrueNAS node, or host, IP address to access the portal. Selected by default. |
-| **Host** | Displays when **Use Node IP** is not selected. Enter a hostname or an internal IP within your local network, for example *my-app-service.local* or an internal IP address. |
+| **Host** | Displays when **Use Node IP** is not selected. Enter a host name or an internal IP within your local network, for example *my-app-service.local* or an internal IP address. |
 | **Port** | Enter the port number to use for portal access. The port number the app uses should be in the documentation provided by the application provider/developer. Check the port number against the list of [Default Ports](https://www.truenas.com/docs/references/defaultports/) to make sure TrueNAS is not using it for some other purpose. |
 | **Path** | Enter the path for portal access, for example */admin*. Defaults to */*. The path is appended to the host IP and port, as in **truenas.local:15000/admin**. |
 {{< /truetable >}}
@@ -197,9 +197,9 @@ Use to configure a persistent host path.
 | Setting | Description |
 |---------|-------------|
 | **Read Only** | Select to make the mount path inside the container read-only and prevent the app from using the path to store data. |
-| **Mount Path** | Required. Enter the <file>**path/to/directory**</file> where the host path mounts inside the container. |
+| **Mount Path** | (Required) Enter the <file>**path/to/directory**</file> where the host path mounts inside the container. |
 | **Enable ACL** | Select to enable custom Access Control List (ACL) entries for the container mount and display ACL settings fields. |
-| **Host Path** | Required. Enter a path or click <span class="material-icons">arrow_right</span> to the left of <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M5 21L3 9h18l-2 12zm5-6h4q.425 0 .713-.288T15 14t-.288-.712T14 13h-4q-.425 0-.712.288T9 14t.288.713T10 15M6 8q-.425 0-.712-.288T5 7t.288-.712T6 6h12q.425 0 .713.288T19 7t-.288.713T18 8zm2-3q-.425 0-.712-.288T7 4t.288-.712T8 3h8q.425 0 .713.288T17 4t-.288.713T16 5z"/></svg> **/mnt** to browse to the location of the dataset to populate the **Host Path**. Click on the dataset to select and display it in the **Host Path** field. |
+| **Host Path** | (Required) Enter a path or click <span class="material-icons">arrow_right</span> to the left of <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M5 21L3 9h18l-2 12zm5-6h4q.425 0 .713-.288T15 14t-.288-.712T14 13h-4q-.425 0-.712.288T9 14t.288.713T10 15M6 8q-.425 0-.712-.288T5 7t.288-.712T6 6h12q.425 0 .713.288T19 7t-.288.713T18 8zm2-3q-.425 0-.712-.288T7 4t.288-.712T8 3h8q.425 0 .713.288T17 4t-.288.713T16 5z"/></svg> **/mnt** to browse to the location of the dataset to populate the **Host Path**. Click on the dataset to select and display it in the **Host Path** field. |
 | **ACL Entries** | Displays when **Enable ACL** is selected. <br> Click **Add** to display a block of ACL entry settings. |
 | **ID Type** | Displays when **Enable ACL** is selected and **Add** is clicked. <br> Select **Entry is for a USER** or **Entry is for a GROUP**. |
 | **ID** | Displays when **Enable ACL** is selected and **Add** is clicked. <br> Enter the numeric UID or GID, matching the selected **ID Type**. |
@@ -218,7 +218,7 @@ Use to configure a storage mount for a system created dataset on the application
 | Setting | Description |
 |-----------|-------------|
 | **Read Only** | Select to make the mount path inside the container read-only and prevent the app from using the path to store data. |
-| **Mount Path** | Required. Enter the <file>**path/to/directory**</file> where the ixVolume mounts inside the container. |
+| **Mount Path** | (Required) Enter the <file>**path/to/directory**</file> where the ixVolume mounts inside the container. |
 | **Enable ACL** | Select to enable custom Access Control List (ACL) entries for the container mount and display ACL settings fields. |
 | **Dataset Name** | Enter a name for the dataset that is created and used for storage. |
 | **ACL Entries** | Displays when **Enable ACL** is selected. <br> Click **Add** to display a block of ACL entry settings. |
@@ -237,12 +237,12 @@ Use to mount an SMB share with a Docker [volume](https://docs.docker.com/engine/
 | Setting | Description |
 |-----------|-------------|
 | **Read Only** | Select to make the mount path inside the container read-only and prevent the app from using the path to store data. |
-| **Mount Path** | Required. Enter the <file>**path/to/directory**</file> where the share volume mounts inside the container. |
-| **Server** | Required. Enter the IP address for the SMB server, for example *192.168.1.100*. This can be the TrueNAS host. |
-| **Path** | Required. Enter the name of the SMB share, for example *my-share*. |
-| **Username** | Required. Enter the username of an account with permission to access the SMB share. |
-| **Password** | Required. Enter the password for the account in **Username**. |
-| **Domain** | Enter the directory services domain here. This is only needed if the domain is something other than the TrueNAS default `WORKGROUP`, for example on systems with Active Directory configured.  |
+| **Mount Path** | (Required) Enter the <file>**path/to/directory**</file> where the share volume mounts inside the container. |
+| **Server** | (Required) Enter the IP address for the SMB server, for example *192.168.1.100*. This can be the TrueNAS host. |
+| **Path** | (Required) Enter the name of the SMB share, for example *my-share*. |
+| **Username** | (Required) Enter the username of an account with permission to access the SMB share. |
+| **Password** | (Required) Enter the password for the account in **Username**. |
+| **Domain** | Enter the directory services domain. Only required if the domain is something other than the TrueNAS default `WORKGROUP`, for example on systems with Active Directory configured.  |
 {{< /truetable >}}
 {{< /expand >}}
 
@@ -256,8 +256,8 @@ See the Docker [tmpfs](https://docs.docker.com/engine/storage/#tmpfs) documentat
 | Setting | Description |
 |---------|-------------|
 | **Read Only** | Select to make the mount path inside the container read-only and prevent the app from using the path to store data. Not recommended for memory-backed storage. |
-| **Mount Path** | Required. Enter the path where the memory-backed directory mounts inside the container. |
-| **Tmpfs Size Limit (in Mi)** | Required. Enter the maximum size of the temporary directory in mebibytes. Defaults to *500*. |
+| **Mount Path** | (Required) Enter the path where the memory-backed directory mounts inside the container. |
+| **Tmpfs Size Limit (in Mi)** | (Required) Enter the maximum size of the temporary directory in mebibytes. Defaults to *500*. |
 {{< /truetable >}}
 {{< /expand >}}
 {{< /expand >}}

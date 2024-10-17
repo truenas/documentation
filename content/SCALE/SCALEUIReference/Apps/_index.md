@@ -276,7 +276,7 @@ Filter information includes the **Category**, **App Name**, and **Updated Date**
 ## Install Custom App Screens
 
 TrueNAS 24.10 or later provides two options for installing a third-party application not included in the official catalogs using a Docker image.
-**Custom App** opens the **[Install iX App](#install-custom-app-screens)** screen with a guided installation wizard.
+**Custom App** opens the **[Install iX App](#install-custom-app-screens)** guided installation wizard.
 <i class="material-icons" aria-hidden="true" title="more_vert">more_vert</i> > **Install via YAML** opens the **Add Custom App** screen with an advanced YAML editor for deploying apps using Docker Compose.
 
 See [Install Custom App Screens]({{< relref "InstallCustomAppScreens.md" >}}) for more information.

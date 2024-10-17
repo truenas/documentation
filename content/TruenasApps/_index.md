@@ -122,7 +122,7 @@ The default TrueNAS **Stable** catalog populates the **Discover** apps screen wi
 Some apps proposed by community members might be adopted as official **stable** train apps.
 iXsystems maintains official apps for non-Enterprise and community users.
 
-Click **Settings** on the **Configuration** dropdown menu to open the **Train Settings** screen, then select the desired train(s).
+Click **Settings** on the **Configuration** dropdown menu to open the **Settings** screen, then select the desired train(s).
 To show only the one train of apps, for example, the **enterprise** train, after selecting **enterprise** deselect the **stable** checkbox and click **Save**.
 
 For more information on trains, see [Managing App Trains]({{< relref "UsingTrains.md" >}}).
@@ -158,7 +158,7 @@ If running TrueNAS 24.10 or higher:
 #### Monitoring for Image Updates
 
 Select **Check for docker image updates** (selected by default) to enable TrueNAS to periodically check for Docker image updates.
-This applies to all Docker images present on the system that may or may not for either catalog or custom applications.
+This applies to all Docker images present on the system for either catalog or custom applications.
 Disable to prevent TrueNAS from monitoring for upstream image updates.
 
 ### Managing Container Images
@@ -260,7 +260,7 @@ Restart the system then return to the **Resources Configuration** section of the
 See [Installing Custom Applications]({{< relref "UsingCustomApp.md" >}}) for more information.
 
 ## Upgrading Apps
-Apps display a yellow circle with an exclamation point that indicates an upgrade is available, and the **Installed** application screen banner displays an **Update** or **Update All** button when upgrades are available.
+Apps display a yellow circle with an exclamation point to indicate an upgrade is available, and the **Installed** application screen banner displays an **Update** or **Update All** button when upgrades are available.
 To upgrade an app to the latest version, click **Update** on the **Application Info** widget or to upgrade multiple apps, click the **Update All** button on the **Installed** applications banner.
 Both buttons only display if TrueNAS SCALE detects an available update for installed applications.
 
