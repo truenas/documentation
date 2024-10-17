@@ -63,6 +63,8 @@ You must choose a pool before you can install an application.
 
 {{< expand "Custom Apps" "v" >}}
 
+{{< include file="/static/includes/apps/CustomAppIntro.md" >}}
+
 {{< include file="/static/includes/apps/AppsCustomApp.md" >}}
 
 {{< /expand >}}
@@ -75,16 +77,20 @@ You must choose a pool before you can install an application.
 
 For more information on screens and screen functions, refer to the UI Reference article on [Apps Screens]({{< relref "SCALE/SCALEUIReference/Apps/_index.md" >}}).
 
-## Choosing the Application Pool
+## Managing Apps Configuration
+
+Use the **Configuration** dropdown to access the **Choose Pool**, **Unset Pool**, **Manage Container Images**, and **Settings** options.
+
+### Choosing the Application Pool
 You are prompted to [select the pool for apps](#choosing-the-apps-pool) the first time you click on **Apps**.
 You can exit out of this if you are not ready to deploy apps or do not have a pool configured for apps to use for storage.
-You must set the pool before you can add any application. 
+You must set the pool before you can add any application.
 
 We recommend keeping the application use case in mind when choosing a pool.
 Select a pool with enough space for all the applications you intend to use.
 For stability, we also recommend using SSD storage for the applications pool.
 
-Select the pool and click **Save**. If you close the dialog to set the pool later, click **Settings > Choose Pool** to set the pool.
+Select the pool and click **Save**. If you close the dialog to set the pool later, click **Configuration > Choose Pool** to set the pool.
 
 {{< trueimage src="/images/SCALE/Apps/AppsSettingsChoosePool.png" alt="Choosing a Pool for Apps" id="Choosing a Pool for Apps" >}}
 
@@ -96,12 +102,18 @@ For example, create the datasets for the Nextcloud app before installing the app
 {{< trueimage src="/images/SCALE/SystemSettings/SystemSettingsGUISettingsSCALE.png" alt="General System Settings" id="General System Settings" >}}
 
 ### Unsetting the Apps Pool
-To select a different pool for apps to use, click **Settings > Unset Pool**. This turns off the apps service until you choose another pool for apps to use.
+To select a different pool for apps to use, click **Configuration > Unset Pool**. This turns off the apps service until you choose another pool for apps to use.
 
-## Changing App Trains
+### Configuring Apps Settings
+
+Click **Configuration > Settings** to open the **Settings** screen, which contains options for setting apps trains, configuring app networking, installing NVIDIA drivers (if compatible hardware is present), and allowing TrueNAS to monitor for Docker image updates.
+
+{{< trueimage src="/images/SCALE/Apps/AppsSettingScreen.png" alt="Apps Settings Screen" id="Apps Settings Screen" >}}
+
+#### Changing App Trains
 TrueNAS applications are available in three catalogs (trains):
 
-* **stable** - Default train of official apps, vetted by iXsystems, chosen because of the features and functionality of the app, and how they integrate with TrueNAS. 
+* **stable** - Default train of official apps, vetted by iXsystems, chosen because of the features and functionality of the app, and how they integrate with TrueNAS.
 * **enterprise** - Default train of apps, simplified and validated for Enterprise users for Enterprise-licensed systems.
 * **community** - Apps proposed and maintained by the community
 
@@ -110,18 +122,15 @@ The default TrueNAS **Stable** catalog populates the **Discover** apps screen wi
 Some apps proposed by community members might be adopted as official **stable** train apps.
 iXsystems maintains official apps for non-Enterprise and community users.
 
-{{< trueimage src="/images/SCALE/Apps/AppsSettingsScreen.png" alt="Apps Settings Screen" id="Apps Settings Screen" >}}
-
-Users can change apps on the **Discover** screen from the **Train Settings** screen.
-Click **Train Settings** on the **Settings** dropdown menu to open the **Train Settings** screen, then select the desired train(s).
-To show only the one train of apps, for example, the **enterprise** train, after selecting **enterprise** deselect the **stable** checkbox and click **Save**. 
+Click **Settings** on the **Configuration** dropdown menu to open the **Settings** screen, then select the desired train(s).
+To show only the one train of apps, for example, the **enterprise** train, after selecting **enterprise** deselect the **stable** checkbox and click **Save**.
 
 For more information on trains, see [Managing App Trains]({{< relref "UsingTrains.md" >}}).
 
 Some applications deploy as the **root** user for initial configuration before operating as a non-root user.
 Keep these general best practices in mind when using applications with TrueNAS.
 
-## Changing Apps Network Settings
+#### Changing Apps Network Settings
 Go to **Apps > Installed**, click **Configuration** and then on **Settings**.
 
 To add an additional range of IP addresses, click **Add** to the right of **Address Pools**, then select a range from the dropdown list of options, and enter the desired value in **Size**.
@@ -134,10 +143,26 @@ Use to resolve issues where apps experiences issues where TrueNAS device is not 
 Select the network option, or add additional options to resolve the network connection issues.
 {{< /hint >}}
 
-**Check for docker image updates** sets TrueNAS to check for docker image updates (default setting). 
+#### Installing NVIDIA Drivers
+Beginning in TrueNAS 24.10, NVIDIA drivers are no longer automatically installed. Users must manually install drivers from the TrueNAS UI.
+
+If running TrueNAS 24.10 or higher:
+1. Go to **Apps > Installed** and click on the **Configuration**.
+
+2. Click on **Settings** to open the **Settings** configuration screen.
+
+3. Select **Install NVIDIA Drivers**, which is available to users with compatible GPUs.
+
+4. Select **Install NVIDIA Drivers**, and click **Save.**
+
+#### Monitoring for Image Updates
+
+Select **Check for docker image updates** (selected by default) to enable TrueNAS to periodically check for Docker image updates.
+This applies to all Docker images present on the system for either catalog or custom applications.
+Disable to prevent TrueNAS from monitoring for upstream image updates.
 
 ### Managing Container Images
-While on the **Installed** application screen, click **Settings** > **Manage Container Images** to open the **Manage Container Images** screen.
+While on the **Installed** application screen, click **Configuration** > **Manage Container Images** to open the **Manage Container Images** screen.
 
 {{< trueimage src="/images/SCALE/Apps/AppsManageContainerImages.png" alt="Apps Manage Container Images" id="Apps Manage Container Images" >}}
 
@@ -152,32 +177,6 @@ Enter the path using the format *registry*/*repository*/*image* to identify the 
 The default **latest** tag downloads the most recent image version.
 
 When downloading a private image, enter user account credentials that allow access to the private registry.
-
-### Upgrading Apps
-Apps display a yellow circle with an exclamation point that indicates an upgrade is available, and the **Installed** application screen banner displays an **Update** or **Update All** button when upgrades are available.
-To upgrade an app to the latest version, click **Update** on the **Application Info** widget or to upgrade multiple apps, click the **Update All** button on the **Installed** applications banner.
-Both buttons only display if TrueNAS SCALE detects an available update for installed applications.
-
-**Update** opens an upgrade window that includes two selectable options, **Images (to be updated)** and **Changelog**.
-Click on the down arrow to see the options available for each.
-
-{{< trueimage src="/images/SCALE/Apps/AppUpdateWindow.png" alt="Update Application Window" id="Update Application Window" >}}
-
-Click **Upgrade** to begin the process. A counter dialog opens showing the upgrade progress.
-When complete, the update badge and buttons disappear and the application **Update** state on the **Installed** screen changes from **Update Available** to **Up to date**.
-
-### Deleting Apps
-To delete an application, click <i class="fa fa-stop" aria-hidden="true"></i> **Stop** on the application row.
-After the app status changes to stopped, click **Delete** on the **Application Info** widget for the selected application to open the **Delete** dialog.
-
-{{< trueimage src="/images/SCALE/Apps/AppsDeleteAppDialog.png" alt="Delete Application Dialog" id="Delete Application Dialog" >}}
-
-Select **Remove ixVolumes** to delete the ixVolume if the:
-* Installation of the app fails
-and
-* **Storage Configuration** for the app was set to ixVolumes
-
-Click **Confirm** then **Continue** to delete the application.
 
 ## Installing an Application
 The first time you go to **Apps**, you are prompted to choose the pool apps use. You must set the app pool before you can install applications.
@@ -206,7 +205,7 @@ Each application tutorial provides information on steps to take before launching
 Review settings ahead of time to check for required settings then exit the wizard to do the necessary steps before returning to install the application.
 Click **Discover** on the breadcrumb at the top of the app wizard screen to exiting the without saving.
 
-{{< hint type="Information" title="Community Maintained Apps" >}}
+{{< hint type="info" title="Community Maintained Apps" >}}
 Apps submitted and maintained by community members using the **Custom App** option might not include an installation wizard.
 Refer to tutorials created and maintained by the community for more information on deploying and using these applications.
 {{< /hint >}}
@@ -255,19 +254,33 @@ If the GPU was previously isolated and/or assigned to a VM, a reboot could be re
 Restart the system then return to the **Resources Configuration** section of the application to see if expected devices are available.
 {{< /expand >}}
 
-## Installing NVIDIA Drivers
-Beginning in TrueNAS 24.10, NVIDIA drivers are no longer automatically installed. Users must manually install drivers from the TrueNAS UI.
+### Installing Custom Applications
+{{< include file="/static/includes/apps/CustomAppIntro.md" >}}
 
-If running TrueNAS 24.10 or higher:
-1. Go to **Apps > Installed** and click on the **Configuration**.
-   
-2. Click on **Settings** to open the **settings configuration panel.**
-   
-3. Select **Install NVIDIA Drivers**, which is available to users with compatible GPUs.
+See [Installing Custom Applications]({{< relref "UsingCustomApp.md" >}}) for more information.
 
-{{< trueimage src="/images/SCALE/Apps/AppsInstallNvidiaDrivers.png" alt="Install NVIDIA Drivers" id="Install NVIDIA Drivers" >}}
-   
-4. Select **Install NVIDIA Drivers**, and click **Save.**
+## Upgrading Apps
+Apps display a yellow circle with an exclamation point to indicate an upgrade is available, and the **Installed** application screen banner displays an **Update** or **Update All** button when upgrades are available.
+To upgrade an app to the latest version, click **Update** on the **Application Info** widget or to upgrade multiple apps, click the **Update All** button on the **Installed** applications banner.
+Both buttons only display if TrueNAS SCALE detects an available update for installed applications.
+
+**Update** opens an upgrade window that includes two selectable options, **Images (to be updated)** and **Changelog**.
+Click on the down arrow to see the options available for each.
+
+{{< trueimage src="/images/SCALE/Apps/AppUpdateWindow.png" alt="Update Application Window" id="Update Application Window" >}}
+
+Click **Upgrade** to begin the process. A counter dialog opens showing the upgrade progress.
+When complete, the update badge and buttons disappear and the application **Update** state on the **Installed** screen changes from **Update Available** to **Up to date**.
+
+## Deleting Apps
+To delete an application, click <i class="fa fa-stop" aria-hidden="true"></i> **Stop** on the application row.
+After the app status changes to stopped, click **Delete** on the **Application Info** widget for the selected application to open the **Delete** dialog.
+
+{{< trueimage src="/images/SCALE/Apps/AppsDeleteAppDialog.png" alt="Delete Application Dialog" id="Delete Application Dialog" >}}
+
+Select **Remove ixVolumes** to delete hidden app storage from the Apps pool.
+
+Click **Confirm** then **Continue** to delete the application.
 
 ## Discover Screen Options
 The **Discover** screen shows application widgets based on the trains selected on the **Train Settings** screen.
@@ -280,12 +293,12 @@ Community users can add the **community** and **enterprise** trains on the [**Tr
 
 {{< trueimage src="/images/SCALE/Apps/AppsDiscoverScreen.png" alt="Applications Discover Screen" id="Applications Discover Screen" >}}
 
-Use the **Discover** screen links to access other functions. 
+Use the **Discover** screen links to access other functions.
 
 * [**Refresh Catalog**](#refreshing-the-apps-catalog)
-* **Manage Installed Apps** 
+* **Manage Installed Apps**
 
-**Manage Installed Apps** opens the **Installed** apps screen where you access the **Settings** menu to manage general application settings.
+**Manage Installed Apps** opens the **Installed** apps screen where you access the **Configuration** menu to manage general application settings.
 
 ### Refreshing the Apps Catalog
 Click **Refresh Catalog** on the **Discover** screen to refresh the apps catalog.
@@ -305,19 +318,6 @@ To select multiple categories, click **Categories** again and select another cat
 
 After installing an application, the **Installed** applications screen shows the app in the **Deploying** state.
 The status changes to **Running** when the application is fully deployed and ready to use.
-
-## Installing Custom Applications
-**Custom App** opens a screen where you can upload a yaml file for an unofficial app or one not included in a TrueNAS catalog.
-To deploy a custom application, go to **Discover** and click **Custom App** to open the **Install Custom App** screen.
-
-<!-- Commenting out until we have tutorials for created for this.
-See [Using Install Custom App]({{< relref "UsingCustomApp.md" >}}) for more information.
-
-### Changing Custom Application Networking
-Custom applications use the system-level Kubernetes Node IP settings by default.
-
-You can assign an external interface to custom apps using  one of the **Networking** section  settings found on the **Install Custom App** screen.
--->
 
 <div class="noprint">
 

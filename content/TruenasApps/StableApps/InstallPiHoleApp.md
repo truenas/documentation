@@ -53,7 +53,7 @@ Enter **WEBPASSWORD** in **Name**, then a secure password like the example the o
 
 Scroll down to the **Storage** settings.
 Select **Enable Custom Host Path for Pihole Configuration Volume** to add the **Host Path for Pihole Configuration Volume** field and dataset browse option.
-Click the arrow to the left of **<span class="material-icons">folder</span> /mnt** and at each dataset to expand the tree and browse to the dataset and directory paths you created before beginning the container deployment.
+Click the arrow to the left of **<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M5 21L3 9h18l-2 12zm5-6h4q.425 0 .713-.288T15 14t-.288-.712T14 13h-4q-.425 0-.712.288T9 14t.288.713T10 15M6 8q-.425 0-.712-.288T5 7t.288-.712T6 6h12q.425 0 .713.288T19 7t-.288.713T18 8zm2-3q-.425 0-.712-.288T7 4t.288-.712T8 3h8q.425 0 .713.288T17 4t-.288.713T16 5z"/></svg> /mnt** and at each dataset to expand the tree and browse to the dataset and directory paths you created before beginning the container deployment.
 Pi-hole uses volumes store your data between container upgrades.
 
 {{< hint type=warning >}}  

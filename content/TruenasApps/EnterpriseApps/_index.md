@@ -47,6 +47,8 @@ Keep these general best practices in mind when using applications with TrueNAS:
 
 {{< expand "Custom Apps" "v" >}}
 
+{{< include file="/static/includes/apps/CustomAppIntro.md" >}}
+
 {{< include file="/static/includes/apps/AppsCustomApp.md" >}}
 
 {{< /expand >}}
