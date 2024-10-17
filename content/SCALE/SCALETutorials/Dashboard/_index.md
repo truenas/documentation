@@ -75,6 +75,6 @@ You can add new widgets to the dashboard or change existing widgets to a new lay
 ### Deleting a Widget
 To delete a widget from the **Dashboard** screen, click **Configure** to put the screen into configuration mode.
 
-Click the **Delete** icon in the widget group for the widget you want to delete. The widget no longer shows on the screen.
+Click the **Delete** icon in the widget group to delete the widget and remove it from the screen.
 
 Click **Save** at the top right of the screen. The screen exits configuration mode and the **Dashboard** no longer shows the widget.
