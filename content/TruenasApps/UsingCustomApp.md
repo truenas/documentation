@@ -1154,7 +1154,7 @@ Replace it with the absolute path to the Dockerfile, for example:
       context: .
       dockerfile: /mnt/virtual/dockerfiles/nextcloud.dockerfile{{< /codeblock >}}
 
-Note: an application with an absolute path to a dockerfile is not portable without modification.
+Note: an application with an absolute path to a Dockerfile is not portable without modification.
 
 #### Installing Multiple Apps on a Shared Custom Network
 These examples deploy two applications, Plex and Tautulli, as part of the same custom Docker [network](https://docs.docker.com/engine/network/).
