@@ -23,16 +23,16 @@ Enter these options:
 * **Variable** - Enter <code>input hint.isp.<i>X</i>.vports</code>, where *X* is the number of the physical interface.
 * **Value** - Enter the number of virtual ports to create. 
   The maximum number of target ports is 125 SCSI target ports, including all physical Fibre Channel ports, all virtual ports, and all configured combinations of iSCSI portals and targets.
-* **Type** - Select**loader**. Reboot each node in HA.
+* **Type** - Select **loader**. Reboot each node in HA.
 
 {{< expand "Locating the Interface Number" "v" >}}
 To find the interface number to enter as the **Variable**, you can:
 * Use commands for the Operating System to list available host bus adapter (HBA).
   In Linux use `lspci` or `systool -c fc_host -v` to get details on the fibre channel adapters.
 * Use tools like <code>cat /sys/class/fc_host/host<i>X/</i>npiv</code> to list virtual interfaces on a Linux system.
-  For virtual ports only use <code>find /sys/class/fc_vports/*/ -name port_name | xargs grep -aH ''</code>
-  For N_Ports and virtual interfaces use <code>find /sys/class/fc_host/*/ -name port_name | xargs grep -aH</code>
-* Use management software fo the SAN, or vendor tools from VMWare, Cisco, or Brocade to locate the interface number
+  For virtual ports only, use <code>find /sys/class/fc_vports/\*/ -name port_name | xargs grep -aH ''</code>
+  For N_Ports and virtual interfaces, use <code>find /sys/class/fc_host/\*/ -name port_name | xargs grep -aH</code>
+* Use management software for the SAN, or vendor tools from VMWare, Cisco, or Brocade to locate the interface number.
 * Use Windows **Device Manager** to find the HBA details and interface number.
 {{< /expand >}}
 
