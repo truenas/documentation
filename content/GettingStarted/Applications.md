@@ -2,6 +2,8 @@
 title: "Applications"
 description: "Describes how to install applications on TrueNAS CORE."
 weight: 90
+aliases:
+ - /core/coretutorials/jailspluginsvms/plugins/plexplugin/
 tags:
 - coregettingstarted
 - coreapplications
