@@ -1727,3 +1727,10 @@ dereference
 bugfix
 configuring-smtp-email
 userguide
+rsyslogd
+rsyslog
+ubuntu
+Dockerfile
+Rsyslog
+sys
+udp
