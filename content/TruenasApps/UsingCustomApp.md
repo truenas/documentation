@@ -107,14 +107,14 @@ To deploy a third-party application using the **Install iX App** wizard, go to *
 
    Select the appropriate **Timezone** or begin typing the timezone to see a narrowed list of options to select from..
 
-    Click **Add** for **Environment Variables** to display a block of variable fields.
-    Enter the environment variable name or key in **Name**, for example `MY_NAME`.
-    Enter the value for the variable in **Value** for example,  `"John Doe"`, `John\ Doe`, or `John`.
-   If needed, select the options to disable health check built into the container, enable a pseudo-TTY (or pseudo-terminal) for the container, or to keep the standard input (stdin) stream for the container open, for example for an interactive application that needs to remain ready to accept input.
+   Click **Add** for **Environment Variables** to display a block of variable fields.
+   Enter the environment variable name or key in **Name**, for example `MY_NAME`.
+   Enter the value for the variable in **Value** for example,  `"John Doe"`, `John\ Doe`, or `John`.
+   Click **Add** again to enter another set of environment variables.
 
-    Use the dropdown to select a **Restart Policy** to use for the container.
+   Use the dropdown to select a **Restart Policy** to use for the container.
 
-   If needed, select the options to disable health check built into the container, enable a pseudo-TTY (or pseudo-terminal) for the container, or to keep the standard input (stdin) stream for the container open, for example for an interactive application that needs to remain ready to accept input.
+  If needed, select the options to disable health check built into the container, enable a pseudo-TTY (or pseudo-terminal) for the container, or to keep the standard input (stdin) stream for the container open, for example for an interactive application that needs to remain ready to accept input.
 
 4. Enter any required settings in **Security Context Configuration**.
 
@@ -157,7 +157,7 @@ To deploy a third-party application using the **Install iX App** wizard, go to *
    You can change the DNS policy and define separate nameservers and search domains.
    See the Docker [DNS services documentation](https://docs.docker.com/engine/network/#dns-services) for more details.
 
-   Use **Search Domains** to add one or more DNS domains to search non-fully qualified host names.
+   Use **Nameservers** to add one or more IP addresses to use as DNS servers for the container.
    Click **Add** to display a **Nameserver** entry field and enter the IP address.
    Click again to add another name server.
 
@@ -178,7 +178,7 @@ To deploy a third-party application using the **Install iX App** wizard, go to *
    Click **Add** to display a block of web portal configuration settings.
 
    Enter a **Name** for the portal, for example *MyAppPortal*.
-   Then enter a host name or an internal IP within your local network, for example *my-app-service.local* or an internal IP address.
+
    Select the web **Protocol** to use for the portal from the dropdown list. Options are **HTTP** or **HTTPS**.
 
    Select **Use Node IP** to use the TrueNAS node, or host, IP address to access the portal or deselect to display the **Host** field.
@@ -307,9 +307,8 @@ Enter a name for the application using lowercase, alphanumeric characters.
 
 Enter the Compose YAML file in **Custom Config**.
 
-Ensure the Compose file begins with a top-level element, such as `name:` or `services:`.
-See the Docker [Compose file reference](https://docs.docker.com/reference/compose-file/) for more information.
 Begin the Compose file with a top-level element, such as `name:` or `services:`.
+See the Docker [Compose file reference](https://docs.docker.com/reference/compose-file/) for more information.
 As Compose files can be complex and YAML relies on indentation and whitespace to define structure and hierarchy, we recommend writing the file in a stand-alone code editor before pasting the completed content into the **Custom Config** field.
 
 Click **Save** to begin deployment of the app.
@@ -320,9 +319,10 @@ The following examples represent some of the capabilities of Docker Compose and 
 This is not an exhaustive collection of all capabilities, nor are the files below intended as production-ready deployment templates.
 
 Note that app storage in these examples is configured using [volumes](https://docs.docker.com/engine/storage/#volumes), which are managed by the Docker engine.
-In a production deployment, you should configure [bind mounts](https://docs.docker.com/engine/storage/#bind-mounts) to TrueNAS storage locations.
-
 In a production deployment, configure [bind mounts](https://docs.docker.com/engine/storage/#bind-mounts) to TrueNAS storage locations.
+
+#### Installing a Multi-Container App with GPU Access
+
 This example deploys Immich with multiple containers, including pgvecto and redis.
 
 It also [enables GPU access](https://docs.docker.com/compose/how-tos/gpu-support/) for an NVIDIA GPU device.
