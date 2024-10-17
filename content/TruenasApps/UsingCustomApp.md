@@ -220,8 +220,9 @@ To deploy a third-party application using the **Install iX App** wizard, go to *
    Next click **Add** to the right of **ACL Entries** to show the permissions settings.
 
    Set **ID Type** to **Entry is for a USER** or **Entry is for a Group**.
+   Enter the UID or GID for the run-as user.
 
-   Enter the <file>**path/to/directory**</file> where the ixVolume mounts inside the container in **Mount Path**.
+   If setting up postgres storage volumes, the default user id for these volumes is **999**.
 
    Select the permissions level from the **Access** dropdown list.
    {{< /expand >}}
@@ -232,20 +233,22 @@ To deploy a third-party application using the **Install iX App** wizard, go to *
 
    {{< trueimage src="/images/SCALE/Apps/InstallCustomAppAddHostPathVol.png" alt="Host Path Settings" id="Host Path Settings" >}}
 
-   Enter in **Mount Path** the <file>**path/to/directory**</file> where the host path mounts inside the container.
+   Enter the <file>**path/to/directory**</file> in **Mount Path** for the location where the host path mounts inside the container.
    Then define the **Host Path**. Enter a path or click <span class="material-icons">arrow_right</span> to the left of <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M5 21L3 9h18l-2 12zm5-6h4q.425 0 .713-.288T15 14t-.288-.712T14 13h-4q-.425 0-.712.288T9 14t.288.713T10 15M6 8q-.425 0-.712-.288T5 7t.288-.712T6 6h12q.425 0 .713.288T19 7t-.288.713T18 8zm2-3q-.425 0-.712-.288T7 4t.288-.712T8 3h8q.425 0 .713.288T17 4t-.288.713T16 5z"/></svg> **/mnt** to browse to the location of the dataset in TrueNAS.
 
    Select whether to mount the host path as **Read Only**.
 
    Select **Enable ACL** to show the ACL and ACE Entries options.
+   Alternatively, set read and write permissions for the run-as user on the dataset ACL.
 
    Enter or browse to select the dataset path.
 
-   Next click **Add** to the right of **ACL Entries** to show the permissions settings.
+   If needed, click **Add** to the right of **ACL Entries** to show the permissions settings.
 
    Set **ID Type** to **Entry is for a USER** or **Entry is for a Group**.
+   Enter the UID or GID for the run-as user.
 
-   Enter the <file>**path/to/directory**</file> where the ixVolume mounts inside the container in **Mount Path**.
+   If setting up postgres storage volumes, the default user id for these volumes is **999**.
 
    Select the permissions level from the **Access** dropdown list.
 
