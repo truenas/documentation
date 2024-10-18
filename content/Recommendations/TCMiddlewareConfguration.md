@@ -1,6 +1,6 @@
 ---
 title: "TrueCommand Middleware Configuration"
-description: "Steps for configuration syslog support and expiration"
+description: "Provides steps for configuration syslog support and expiration."
 weight: 10
 aliases:
   - /truecommand/recommendations/middleware_config/
@@ -35,7 +35,7 @@ sys:
     alert_email_threshold: 30m0s
 {{< / highlight >}}
 
-The full file could be copied from the docker container by `docker cp truecommand:/etc/middleware/config.yaml /DATA_DIR/config.yaml` or by pasting the contents above.
+The full file can be copied from the docker container using `docker cp truecommand:/etc/middleware/config.yaml /DATA_DIR/config.yaml` or by pasting the contents above.
 
 Overwrite the TC_CONFIG_PATH environment variable by adding `-e TC_CONFIG_PATH=/data/config.yaml` to container creation or create an additional tied volume with `-v /etc/middleware/config.yaml:/CONFIG_DIR/config.yaml` to preserve changes.
 
@@ -45,7 +45,7 @@ Change `alert_email_threshold` under `sys` to increase the time required to send
 
 ### Change logging
 
-Console and file logging can be disabled, as well as the default log level changed. Options for level include "trace", "debug", "info", "warning", and "error". Rotation and storage options can be changed as well, for instance from /data/log to /etc/log to prevent log preservation across reboots.
+Console and file logging can be disabled, and the default log level changed. Options for level include trace, debug, info, warning, and error. Rotation and storage options can be changed as well, for instance from /data/log to /etc/log to prevent log preservation across reboots.
 
 #### Enable Syslog
 
