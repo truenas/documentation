@@ -5,5 +5,5 @@ The **Directory Services** screen and widgets provide access to TrueNAS settings
 
 TrueNAS does not configure Active Directory domain controllers or LDAP directory servers, nor does it configure Kerberos authentication servers or ID mapping systems.
 
-Refer to documentation for these services and systems for information on how to configure each to suit your use cases.
+Refer to documentation for these services and systems for information on how to configure each to suit your use case.
 {{< /hint >}}

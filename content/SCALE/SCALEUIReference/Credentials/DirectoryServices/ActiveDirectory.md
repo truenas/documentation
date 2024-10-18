@@ -18,19 +18,19 @@ tags:
 {{< include file="/static/includes/DirectoryServiceAccessAdmonition.md" >}}
 
 ## Active Directory Widget
-The **Active Directory** widget displays after you configure TrueNAS to access your Active Directory domain controller. 
+The **Active Directory** widget displays after you configure TrueNAS to access your Active Directory domain controller.
 The widget shows **Status**, **Domain Name**, and **Domain Account Name**.
 
 {{< trueimage src="/images/SCALE/Credentials/ActiveDirectoryWidget.png" alt="Active Directory Widget" id="Active Directory Widget" >}}
 
-**Settings** opens the **Active Directory** edit screen showing the settings you can edit.
+**Settings** opens the **Active Directory** edit screen that shows the settings you can edit.
 
 ## Active Directory - Add and Edit Screens
 The **Active Directory** configuration screen opens showing the **Basic Options** as the default view.
-**Advanced Options** shows both basic and advanced setting options. 
-After configuring TrueNAS to access Active Directory, **Settings** opens the **Active Directory** screen showing the few basic options you can edit and the option to access advanced setting. 
+**Advanced Options** shows additional advanced setting options.
+After configuring TrueNAS to access Active Directory, **Settings** opens the **Active Directory** screen showing the few basic options you can edit and the option to access advanced setting.
 
-**Rebuild Directory Service Cache** resyncs the cache if it gets out of sync or if there are fewer users than expected available in the permissions editors. 
+**Rebuild Directory Service Cache** resyncs the cache if it gets out of sync or if there are fewer users than expected available in the permissions editors.
 
 **Leave Domain** shows after configuring Active Directory access, and disconnects the TrueNAS system from the Active Directory server.
 
@@ -46,10 +46,10 @@ The edit version of the **Basic Options** screen only shows options you can edit
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Domain Name** | (Required) Enter the Active Directory domain name (example.com) or child domain (sales.example.com) if configuring TrueNAS with access to a limited portion of your configuration. This is the name of the domain with all the user and group objects to give TrueNAS access to. Editable after saving. |
-| **Domain Account Name** | (Required) Enter the bindname TrueNAs should use as the account name. The default value is **Administrator**. TrueNAS creates this account after domain-join. Not editable after saving. |
+| **Domain Name** | (Required) Enter the Active Directory domain name (example.com) or child domain (sales.example.com) if configuring TrueNAS with access to a limited portion of your configuration. This is the name of the domain with all the user and group objects TrueNAS accesses. Editable after saving. |
+| **Domain Account Name** | (Required) Enter the bindname TrueNAS should use as the account name. The default value is **Administrator**. TrueNAS creates this account after domain-join. Not editable after saving. |
 | **Domain Account Password** | (Required) Enter the bindpw password for the account. Required the first time you configure a domain. After initial configuration, the password is not needed to edit, start, or stop the service. After the initial configuration or joining, TrueNAS uses the **Kerberos Principal** instead of the password. |
-| **NetBIOS Name** | Enter the hostname of the TrueNAS system, found on the **Edit Global Configuration** screen in the **Hostname** field. The default value is **TRUENAS**. The name must not exceed 15 characters including spaces, and must differ from the Workgroup name. The Workgroup name is a label used to identify a group of computers on a local network that share resources, and are part of a peer-to-peer networking model. |
+| **NetBIOS Name** | Enter the hostname of the TrueNAS system, found on the **Edit Global Configuration** screen in the **Hostname** field. The default value is **TRUENAS**. The name must not exceed 15 characters, including spaces, and must differ from the Workgroup name. The Workgroup name is a label used to identify a group of computers on a local network that share resources and are part of a peer-to-peer networking model. |
 | **Enable (requires password or Kerberos principal)** | Select to enable the Active Directory service in TrueNAS. TrueNAS populates the **Kerberos Realm** and **Kerberos Principal** fields with what it discovers in AD. Clear to disable Active Directory. After disabling Active Directory, the **[Directory Services]({{< relref "/SCALE/SCALEUIReference/Credentials/DirectoryServices/_index.md" >}})** screen returns to the default and shows the options to configure AD or LDAP. TrueNAS creates a Kerberos realm and keytab from what it detects in Active Directory, then populates the **Kerberos Realm** and **Kerberos Principal** settings on the **Advanced Options** screen. |
 {{< /truetable >}}
 {{< /expand >}}
@@ -63,7 +63,7 @@ The **Advanced Options** screen shows both the basic and advanced option setting
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Site Name** | Enter the relative distinguished name (RDN) of the site object in the AD server. This is the first component of the *distingishedName in AD. For more info read [Configuring Active Directory]({{< relref "ConfigADSCALE.md" >}}). |
+| **Site Name** | Enter the relative distinguished name (RDN) of the site object in the AD server. This is the first component of the distingished name in AD. For more info, read [Configuring Active Directory]({{< relref "ConfigADSCALE.md" >}}). |
 | **Kerberos Realm** | Select an existing realm from the dropdown list of options. Options are those configured in **Kerberos Realms**. After selecting **Enable (requires password or Kerberos principal)**, SCALE populates the **Kerberos Realm** and **Kerberos Principal** fields with what it discovered in AD. |
 | **Kerberos Principal** | Select the location of the principal in the keytab created in **Directory Services > Kerberos Keytabs**. After selecting **Enable (requires password or Kerberos principal)**, SCALE populates the **Kerberos Realm** and **Kerberos Principal** fields with what it discovered in AD. |
 | **Computer Account OU** | The organizational unit (OU) where new computer accounts are created. The OU string includes the distinguished name (DN) of the Computer Account OU that includes the hierarchical location of the OU within the directory structure. For example, *OU=Computers,DC=example,DC=com*. The OU string is read from top to bottom without relative distinguished names (RDNs). Slashes (/) are uses as delimiters, as in *Computers/Servers/NAS*. Backslashes (\) are used to escape characters but not as a separator. Backslashes are interpreted at multiple levels and might require doubling or even quadrupling to take effect. When this field is blank, new computer accounts are created in the Active Directory default OU. |

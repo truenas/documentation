@@ -21,7 +21,7 @@ tags:
 
 {{< include file="/static/includes/DirectoryServiceAccessAdmonition.md" >}}
 
-The **Directory Services** screen TrueNAS configuration options set up access to directory servers with domain and account settings, and can set up Id mapping or Kerberos authentication and authorization service.
+The **Directory Services** screen contains configuration options set up access to directory servers with domain and account settings, and can set up Id mapping or Kerberos authentication and authorization service.
 
 {{< trueimage src="/images/SCALE/Credentials/DirectoryServicesScreen.png" alt="Directory Services Screen" id="Directory Services Screen" >}}
 
@@ -44,7 +44,6 @@ After configuring Active Directory or LDAP, the **Directory Services** screen in
 **Continue** closes the dialog and then show the **Idmap**, **Kerberos Settings**, **Kerberos Realms**, and **Kerberos Keytabs** configuration widgets.
 
 {{< trueimage src="/images/SCALE/Credentials/DirServicesAdvancedSettingsWidgets.png" alt="Directory Services Advanced Settings" id="Directory Services Advanced Settings" >}}
-
 
 <div class="noprint">
 
