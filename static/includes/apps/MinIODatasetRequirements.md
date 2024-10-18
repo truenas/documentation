@@ -15,4 +15,8 @@
   The MinIO enterprise app creates the **/export** mount point for you but you must add this in the stable MinIO app.
   Create the **/data** mount point in both the enterprise and stable versions of the MinIO app.
 
+  You can configure ACL permissions for app datasets by either setting up ACL permissions when prompted as you add datasets or clicking by **Edit** on the **Permissions** widget to open the **Edit ACL** screen after adding all datasets.
+  Alternatively, you can configure ACL permissions while using the app installation wizard by selecting the **Enable ACL** option as you configure each app storage volume.
+  See information provided in the sections below for details on which user ID and permissions settings to configure.
+
 If you want to also mount other storage volumes inside the container pod using the host path option, create the dataset(s) before using the app installation wizard.
