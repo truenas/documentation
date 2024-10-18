@@ -28,7 +28,7 @@ For information on adding to or changing the train for the apps catalog, see [Ma
 
 ## Understanding App Install Wizard Settings
 
-{{< include file="/static/includesapps/AppsInstallWizardSettings.md" >}}
+{{< include file="/static/includesapps/apps/AppsInstallWizardSettings.md" >}}
 
 <div class="noprint">
 

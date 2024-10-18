@@ -13,7 +13,7 @@ Enter the UID as one of the following:
 If setting up postgres storage volumes, the default user id for these volumes is **999**.
 
 If there is run-as option defined in the wizard, enter this run-as UID when adding the user ACE entry.
-If not show in the UI, to find the run-as user ID, refer to the questions.yaml file in the GitHub repository for the application.
+If not shown in the UI, to find the run-as user ID, refer to the <file>questions.yaml</file> file in the GitHub repository for the application.
 
 Select the permissions level from the **Access** dropdown list. Enter the UID for the app administration user, and set the level to **FULL CONTROL**.
 

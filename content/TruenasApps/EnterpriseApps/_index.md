@@ -47,6 +47,8 @@ Keep these general best practices in mind when using applications with TrueNAS:
 
 {{< expand "Custom Apps" "v" >}}
 
+{{< include file="/static/includes/apps/CustomAppIntro.md" >}}
+
 {{< include file="/static/includes/apps/AppsCustomApp.md" >}}
 
 {{< /expand >}}
@@ -63,7 +65,7 @@ For more information on configuring general application functions and installati
 
 ## Understanding App Intall Wizard Settings
 
-{{< include file="/static/includes/AppsInstallWizardSettings.md" >}}
+{{< include file="/static/includes/apps/AppsInstallWizardSettings.md" >}}
 
 For information on adding to or changing the train for the apps catalog, see [Managing App Trains]({{< relref "UsingTrains.md" >}}).
 

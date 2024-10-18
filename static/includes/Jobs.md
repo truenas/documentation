@@ -9,11 +9,12 @@ Users can minimize a job/process by clicking the minus (-) at the top right corn
 
 Click on a running task to display a dialog for that running task.
 
-You can abort active jobs (for example, wiping a disk) by clicking the white circled X next to the active job.
+A running job shows a progress bar and a white circle with a square in the middle to the right of the job. Click on this to show the **Abort** dialog.
+Click **Abort** to stop the job and abort the process. 
 
 {{< trueimage src="/images/SCALE/Dashboard/JobsAbort.png" alt="Abort Job" id="Abort Job" >}}
 
-Click on **History** to open the **Tasks** screen with lists of all successful, active, and failed jobs.
+Click on **History** to open the **Tasks** screen with lists of all successful, active, failed and aborted jobs.
 Click on the **All**, **Active**, or **Failed** button at the top of the screen to show the log of jobs that fit that classification.
 
 Click **View** next to a task to see the log information and error message for that task.
