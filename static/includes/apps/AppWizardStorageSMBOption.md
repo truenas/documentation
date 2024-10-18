@@ -2,7 +2,7 @@
 
 Use the SMB option to data synchronization between the share and the app.
 
-Set **Type** an **SMB/CIFS Share (Mounts a persistent volume claim to a SMB share)** to use add an SMB share storage volume.
+Set **Type** an **SMB/CIFS Share (Mounts a volume to a SMB share)** to use add an SMB share storage volume.
 
 {{< trueimage src="/images/SCALE/Apps/InstallAppStorageConfigSMBOption.png" alt="SMB Share Option" id="SMB Share Option" >}}
 
