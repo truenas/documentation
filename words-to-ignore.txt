@@ -1728,9 +1728,11 @@ bugfix
 configuring-smtp-email
 userguide
 Grafana
+grafana
 grafana-oss
 grafana-storage
 cAdvisor
+cadvisor
 DOCKERHOST
 prometheus
 gcr
