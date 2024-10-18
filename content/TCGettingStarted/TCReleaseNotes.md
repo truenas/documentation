@@ -36,7 +36,7 @@ Please use caution when upgrading production TrueCommand systems.
 Self-hosted containers must be updated by a local TrueCommand administrator.
 As a best practice, TrueCommand administrators need to back up their instance data directory before deploying TrueCommand updates.
 Self-hosted containers are typically updated by backing up the container volume and pulling the latest available container version.
-See the [container update tutorial]({{< relref "UpdateDocker.md" >}}) for guidance.
+See the [container update tutorial]({{< relref "InstallTCDocker.md" >}}) for guidance.
 
 Updating from TrueCommand v1.3 to v2.0 or later involves a database migration process.
 This preserves all configuration data, but does not preserve old performance statistics.
