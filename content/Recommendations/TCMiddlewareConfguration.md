@@ -37,7 +37,7 @@ sys:
 
 The full file can be copied from the docker container using `docker cp truecommand:/etc/middleware/config.yaml /DATA_DIR/config.yaml` or by pasting the contents above.
 
-Overwrite the TC_CONFIG_PATH environment variable by adding `-e TC_CONFIG_PATH=/data/config.yaml` to container creation or create an additional tied volume with `-v /etc/middleware/config.yaml:/CONFIG_DIR/config.yaml` to preserve changes.
+Overwrite the TC_CONFIG_FILE_PATH environment variable by adding `-e TC_CONFIG_FILE_PATH=/data/config.yaml` to container creation or create an additional tied volume with `-v /CONFIG_DIR/config.yaml:/etc/middleware/config.yaml` to preserve changes.
 
 ### Decrease Alert Frequency
 
