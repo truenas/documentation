@@ -17,33 +17,33 @@ tags:
 - directoryservices
 ---
 
-The SCALE Directory Services section contains options to edit directory domain and account settings, set up Idmapping, and configure authentication and authorization services in TrueNAS SCALE.
 
-## Directory Services Screen
 
-The **Directory Services** screen opens with two options, **Active Directory** and **LDAP**. You can configure one or the other but not both.
+{{< include file="/static/includes/DirectoryServiceAccessAdmonition.md" >}}
 
-![DirectoryServicesScreen](/images/SCALE/Credentials/DirectoryServicesScreen.png "Directory Services")
+The **Directory Services** screen contains configuration options set up access to directory servers with domain and account settings, and can set up Id mapping or Kerberos authentication and authorization service.
 
-**Configure Active Directory** opens the **[Active Directory]({{< relref "ActiveDirectory.md" >}})** configuration screen.
+{{< trueimage src="/images/SCALE/Credentials/DirectoryServicesScreen.png" alt="Directory Services Screen" id="Directory Services Screen" >}}
 
-**Configure LDAP** opens the **LDAP** configuration screen.
+The screen shows the status of Active Directory and LDAP services when neither is configured, or if either is configured but disabled.
+Only one directory service can be configured at a time.
 
-After configuring Active Directory or LDAP, the **Directory Services** screen includes the widgets for each option.
+Three options show by default:
 
-![DirectoryServicesADandLDAPWidgets](/images/SCALE/Credentials/DirectoryServicesADandLDAPWidgets.png "Directory Services with Widgets")
+* **Configure Active Directory** opens the **[Active Directory]({{< relref "ActiveDirectory.md" >}})** configuration screen.
 
-**Show** to the right of **Advanced Settings** opens a dialog warning users of the risk incorrect configuration can cause.
-**Continue** closes the dialog and permits access to **Idmap**, **Kerberos Settings**, **Kerberos Realms**, and **Kerberos Keytabs** configuration widgets.
+* **Configure LDAP** opens the [**LDAP**]({{< relref "LDAP.md" >}}) configuration screen. Use to configure access to LDAP-based service such as FreeIPA.
 
-## Directory Services Advanced Settings 
-The **Advanced Settings** include the **Idmap**, **Kerberos Settings**, **Kerberos Realms,** and **Kerberos Keytab** widgets.
+* **Advanced Settings** opens a warning dialog before showing configuration options for [ID mapping] ({{< relref "Idmap.md" >}} and Kerberos.
 
-![DirServicesAdvancedSettingsScreen](/images/SCALE/Credentials/DirServicesAdvancedSettingsScreen.png "Directory Services Advanced Settings")
+After configuring Active Directory or LDAP, the **Directory Services** screen includes the widgets for each option, and adds the **Show** button to the right of **Advanced Settings**. **Show** opens the warning dialog stating incorrectly configuring advanced settings is dangerous.
 
-{{< hint type=warning >}}
-Changing Advanced settings can be dangerous if done incorrectly. Use caution before saving.
-{{< /hint >}}
+{{< trueimage src="/images/SCALE/Credentials/DirectoryServicesScreen.png" alt="Directory Services with Widgets" id="Directory Services with Widgets" >}}
+
+**Advanced Settings**, before configuring either Active Directory or LDAP, shows a warning dialog stating incorrectly configuring advanced settings is dangerous. 
+**Continue** closes the dialog and then show the **Idmap**, **Kerberos Settings**, **Kerberos Realms**, and **Kerberos Keytabs** configuration widgets.
+
+{{< trueimage src="/images/SCALE/Credentials/DirServicesAdvancedSettingsWidgets.png" alt="Directory Services Advanced Settings" id="Directory Services Advanced Settings" >}}
 
 <div class="noprint">
 
