@@ -1739,3 +1739,10 @@ rootfs
 userns
 seccomp
 tc-three-system-perf
+rsyslogd
+rsyslog
+ubuntu
+Dockerfile
+Rsyslog
+sys
+udp
