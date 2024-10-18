@@ -37,6 +37,8 @@ See the stable [24.04 (Dragonfish)](https://www.truenas.com/docs/scale/24.04/get
 
 Coming soon
 
+{{< include file="/static/includes/RESTAPIDeprecationNotice.md" >}}
+
 <!--
 ## Obtaining a Release
 
