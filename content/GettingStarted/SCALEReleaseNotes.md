@@ -4,7 +4,7 @@ description: "Highlights, change log, and known issues for TrueNAS 24.10 release
 weight: 10
 related: false
 ---
-{{< header logo="/images/tn-scale-logo.png" logo_alt="TrueNAS Logo" version="24.10 Electric Eel" icon="" icon_alt="" >}}
+{{< header logo="/images/tn-openstorage-logo.png" logo_alt="TrueNAS Logo" version="24.10 Electric Eel" icon="/images/SCALE_Electric_Eel_Icon.png" icon_alt="Electric Eel Icon" >}}
 
 {{< hint type="tip" title="24.10 Early Release Documentation" >}}
 This page tracks the latest development roadmap and release notes for the next upcoming TrueNAS major version, 24.10 (Electric Eel).
@@ -152,8 +152,35 @@ Any new feature flags introduced since the previous OpenZFS version that was int
 
 For more details on feature flags, see [OpenZFS Feature Flags](https://openzfs.github.io/openzfs-docs/Basic%20Concepts/Feature%20Flags.html) and [OpenZFS zpool-feature.7](https://openzfs.github.io/openzfs-docs/man/7/zpool-features.7.html).
 
+## 24.10.0 Changelog
+
+**October 29, 2024**
+
+iXsystems is pleased to release TrueNAS 24.10.0!
+This is the first stable release of TrueNAS SCALE 24.10 (Electric Eel).
+It includes numerous software component updates and polished features, as well as fixes for issues discovered in 24.10-RC.1 and 24.10-RC.2.
+
+Notable changes:
+
+*  
+* Documentation Hub Update: To reflect the continuing process of application maintenance and updates as separate from TrueNAS major version releases, all application Tutorials are moved from the Tutorials section in TrueNAS version documentation to a dedicated and unversioned [TrueNAS Apps](https://www.truenas.com/docs/truenasapps/) section.
+  
+  Community contributions to TrueNAS Apps documentation are highly encouraged!
+  The [Community Apps](https://www.truenas.com/docs/truenasapps/communityapps/) documentation is pre-populated with placeholder templates for each application available in the TrueNAS Community train.
+  See [Contributing to TrueNAS Application Documentation](https://www.truenas.com/docs/contributing/applications/#contributing-to-truenas-application-documentation) for more information.
+
+<a href="https://ixsystems.atlassian.net/issues/?filter=11052" target="_blank">Click here for the full changelog</a> of completed Jira tickets that are included in the 24.10.0 release.
+{{< include file="/static/includes/JiraFilterInstructions.md" >}}
+
+### 24.10.0 Known Issues
+
+* 
+
+<a href="https://ixsystems.atlassian.net/issues/?filter=11053" target="_blank">Click here to see the latest information on Jira</a> about public issues discovered in 24.10.0 that are being resolved in a future TrueNAS release.
+
 ## 24.10-RC.2 Changelog
 
+{{< expand "Click to expand" "v" >}}
 {{< hint type=warning title="Early Release Software" >}}
 Early releases are intended for testing and feedback purposes.
 Do not use early release software for critical tasks.
@@ -169,9 +196,11 @@ Notable changes:
 * Revised Docker networking logic to prevent users with 15 or more applications installed encountering network exhaustion, which resulted in the apps service failing to initialize ([NAS-131485](https://ixsystems.atlassian.net/browse/NAS-131485)).
 
 Please use the 24.10-RC.1 Jira filter links below to see the full changelog and known issues related to the 24.10 release candidates.
+{{< /expand >}}
 
 ## 24.10-RC.1 Changelog
 
+{{< expand "Click to expand" "v" >}}
 {{< hint type=warning title="Early Release Software" >}}
 Early releases are intended for testing and feedback purposes.
 Do not use early-release software for critical tasks.
@@ -212,7 +241,7 @@ Notable changes:
 
 * Fix issues with user.update endpoint ([NAS-130696](https://ixsystems.atlassian.net/browse/NAS-130696)).
 
-<a href="https://ixsystems.atlassian.net/issues/?filter=10887" target="_blank">Click here for the full changelog</a> of completed tickets that are included in the 24.10-RC.1 release.
+<a href="https://ixsystems.atlassian.net/issues/?filter=10887" target="_blank">Click here for the full changelog</a> of completed Jira tickets that are included in the 24.10-RC.1 release.
 {{< include file="/static/includes/JiraFilterInstructions.md" >}}
 
 ### 24.10-RC.1 Known Issues
@@ -251,7 +280,8 @@ Notable changes:
 
 * Development of the new RAIDZ pool expansion feature is ongoing, with fixes for known issues expected in the 24.10.0 release ([NAS-131207](https://ixsystems.atlassian.net/browse/NAS-131207) and [NAS-131028](https://ixsystems.atlassian.net/browse/NAS-131028)).
 
-<a href="https://ixsystems.atlassian.net/issues/?filter=10886" target="_blank">Click here to see the latest information</a> about public issues discovered in 24.10-RC.1 that are being resolved in a future TrueNAS release.
+<a href="https://ixsystems.atlassian.net/issues/?filter=10886" target="_blank">Click here to see the latest information on Jira</a> about public issues discovered in 24.10-RC.1 that are being resolved in a future TrueNAS release.
+{{< /expand >}}
 
 ## 24.10-BETA.1 Changelog
 
@@ -311,7 +341,7 @@ Notable changes:
 
 * Fix management of SNMPv3 user ([NAS-128335](https://ixsystems.atlassian.net/browse/NAS-128335)).
 
-<a href="https://ixsystems.atlassian.net/issues/?filter=10587" target="_blank">Click here for the full changelog</a> of completed tickets that are included in the 24.10-BETA.1 release.
+<a href="https://ixsystems.atlassian.net/issues/?filter=10587" target="_blank">Click here for the full changelog</a> of completed Jira tickets that are included in the 24.10-BETA.1 release.
 {{< include file="/static/includes/JiraFilterInstructions.md" >}}
 
 ### 24.10-BETA.1 Known Issues
@@ -332,5 +362,5 @@ Notable changes:
 
 * On the virtual machine creation screen, a validation error displays if a configured GPU device is not valid for use in the VM. However, in some cases it can be possible to continue and create the VM with an invalid GPU configuration ([NAS-130754](https://ixsystems.atlassian.net/browse/NAS-130754)). If you receive a GPU validation error during VM creation, remove or correct the invalid GPU before creating the VM.
 
-<a href="https://ixsystems.atlassian.net/issues/?filter=10588" target="_blank">Click here to see the latest information</a> about public issues discovered in 24.10-BETA.1 that are being resolved in a future TrueNAS release.
+<a href="https://ixsystems.atlassian.net/issues/?filter=10588" target="_blank">Click here to see the latest information on Jira</a> about public issues discovered in 24.10-BETA.1 that are being resolved in a future TrueNAS release.
 {{< /expand >}}
