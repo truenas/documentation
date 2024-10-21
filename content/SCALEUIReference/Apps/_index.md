@@ -15,7 +15,7 @@ The **Installed** applications screen shows status of installed apps, provides a
 
 The **Discover** screen show widgets for the installed catalog of apps.
 The individual app widgets open app information screens with details about that application, and access to an installation wizard for the app.
-<!-- It also provides access to a [**Custom Apps**](#install-custom-app-screen) wizard that allows users to add an app not included in the catalog. commented out until RC1 release when the Custom App screen is added back to the UI -->
+It also includes options to install [third-party applications](#install-custom-app-screen) in Docker containers that allow users to deploy apps not included in the catalog.
 
 ## Installed Screen
 The first time you go to **Apps**, the **Installed** applications screen header shows an <i class="fa fa-cog" aria-hidden="true"></i> **Apps Service Not Configured** status and dialog opens prompting you to choose the pool for apps to use.
@@ -51,6 +51,8 @@ The first time you open the **Installed** applications screen a dialog prompts y
 Select the pool from the dropdown list, then click **Save**. This starts the applications service.
 If you exit out of this dialog, to set the pool, click [**Settings > Choose Pool**](#choose-a-pool-for-apps-dialog) to select a storage pool for apps.
 
+If a pool is not chosen and you attempt to install an application, after clicking **Install** on an application information screen a dialog window prompts you to select a pool before the installation wizard shows.
+
 ### Unset Pool
 **Unset Pool** on the **Settings** menu opens the **Unset Pool** dialog. Click **Unset** to unset the pool and turn off the application service.
 When complete, a **Success** dialog displays.
@@ -79,8 +81,8 @@ Entering characters in the **<span class="iconify" data-icon="mdi:magnify"></spa
 | **Password** | User account password to access a private Docker image. |
 {{< /truetable >}} 
 
-### Train Settings
-**Train Settings** opens the **Train Settings** screen.
+### Settings
+**Settings** opens the **Settings** screen showing four application train options, the option to add IP addresses and subnets for the application to use, and check for Docker image updates.
 
 {{< trueimage src="/images/SCALE/Apps/AppsTrainSettingsScreen.png" alt="Train Settings Add Enterprise Train" id="Train Settings Add Enterprise Train" >}}
 
@@ -159,7 +161,7 @@ The **Update** state on the application row on the **Installed** screen changes 
 The **Workloads** widget shows the container information for the selected application.
 Information includes the number of pods, used ports, number of deployments, stateful sets, and container information.
 It also shows the **Shell**, **Volume Mounts** and **View Log** icon buttons that provide access to the container pod shell and log screens and mount point windows.
-These options do not show for stopped apps.
+The option to access the log and the shell remain available for stopped applications for fully deployed application containers, and for applications in the crashed state.
 
 {{< trueimage src="/images/SCALE/Apps/InstalledAppsWorkloadsWidget.png" alt="Installed Apps Containers Widget" id="Installed Apps Containers Widget" >}}
 
@@ -219,8 +221,8 @@ The breadcrumbs at the top of the screen header show links to the previous or th
 
 {{< trueimage src="/images/SCALE/Apps/AppsDiscoverScreenHeaderAndSearch.png" alt="Apps Discover Screen Header and Search" id="Discover Screen Header and Search" >}}
 
-<!--
-**Custom App** opens the **[Install Custom App](#install-custom-app-screen)** screen. commenting out until added back into the UI in RC1 -->
+**Custom App** opens the **[Install iX App](#install-custom-app-screens)** screen with an install wizard.
+<i class="material-icons" aria-hidden="true" title="more_vert">more_vert</i> > **Install via YAML** opens the **Add Custom App** screen with an advanced YAML editor for deploying apps using Docker Compose.
 
 The **Discover** screen includes a search field, links to other application management screens, and filters to sort the application widgets displayed.
 **Show All** shows all application widgets in the trains added to the **Stable** catalog. The links are:
@@ -236,11 +238,13 @@ Filter information includes the **Category**, **App Name**, and **Updated Date**
 * **App Name** sorts app widgets alphabetically (A to Z).
 * **Updated Date** sorts the app widgets by date of update.
 
-<!-- commenting out until RC1 when this function is added back to the UI
-## Install Custom App Screen
+## Install Custom App Screens
 
-The **Install Custom App** screen displays the setting options needed to install a third-party application not included in the TRUENAS catalog.
-See [Install Custom App Screens]({{< relref "InstallCustomAppScreens.md" >}}) for more information. -->
+TrueNAS 24.10 or later provides two options for installing a third-party application not included in the official catalogs using a Docker image.
+**Custom App** opens the **[Install iX App](#install-custom-app-screens)** guided installation wizard.
+<i class="material-icons" aria-hidden="true" title="more_vert">more_vert</i> > **Install via YAML** opens the **Add Custom App** screen with an advanced YAML editor for deploying apps using Docker Compose.
+
+See [Install Custom App Screens]({{< relref "InstallCustomAppScreens.md" >}}) for more information.
 
 ## Application Information Screens
 Each application widget on the **Discover** screen opens a information screen with details about that application, a few screenshot of web UI for the application, and the **Install** button.
