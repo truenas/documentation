@@ -50,7 +50,7 @@ To see a current list of apps, visit the [TrueNAS Apps repository](https://githu
 
 ## Contributing to TrueNAS Application Documentation
 Community members can submit change requests or add new tutorials to the Community Apps tutorials section of the Documentation Hub.
-For more information on submitting change requests, forking repos, and submitting PRs, see [Content Updates]({{< relref "/Contributing/Documentation/ContentUpdate.md" >}}).
+For more information on submitting change requests, forking repos, and submitting PRs, see [Updating Content]({{< relref "/Contributing/Documentation/ContentUpdate.md" >}}).
 
 When submitting new tutorials or requesting changes to existing TrueNAS Documentation Hub application tutorials:
   
