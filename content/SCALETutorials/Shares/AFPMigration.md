@@ -28,7 +28,7 @@ Do not clear the **Legacy AFP Compatibility** checkbox, as it impacts how data i
 Any other shares created to access these paths after the migration must also have **Legacy AFP Compatibility** selected.
 {{< /hint >}}
 
-Once you have [sidegraded from CORE to SCALE]({{< relref "MigratingFromCore.md" >}}), you can find your migrated AFP configuration in **Shares >** **Windows Shares (SMB)** with the prefix **AFP_**.
+Once you have [sidegraded from 13.0-U6.x to 24.04](https://www.truenas.com/docs/scale/24.04/gettingstarted/migrate/), you can find your migrated AFP configuration in **Shares >** **Windows Shares (SMB)** with the prefix **AFP_**.
 To make the migrated AFP share accessible, start the SMB service.
 
 ![MigratedAFPShareSCALE](/images/SCALE/Shares/MigratedAFPShareSCALE.png "Migrated AFP Share")
