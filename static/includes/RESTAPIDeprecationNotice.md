@@ -9,5 +9,5 @@ It provides the `midclt` command-line tool, and the means to easily communicate 
 The Golang API Client parallels the Python TrueNAS API client. Both API clients allow for better integration of TrueNAS into third-party solutions.
 Use these new API clients as a reference for projects that require direct TrueNAS integration.
 
-TrueNAS API documentation remains available in the UI and through the [TrueNAS Documentation Hub]({{< relref "/content/SCALE/api/_index.md" >}}).
+TrueNAS API documentation remains available in the UI and through the [TrueNAS Documentation Hub]({{< relref "/content/api/_index.md" >}}).
 {{< /hint >}}
