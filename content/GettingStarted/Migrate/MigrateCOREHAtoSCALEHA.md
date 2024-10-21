@@ -2,6 +2,9 @@
 title: "Enterprise HA Migrations"
 description: "Discusses migrating a TrueNAS CORE High Availability (HA) system to SCALE."
 weight: 25
+aliases:
+ - /scale/gettingstarted/migrate/migratecorehatoscaleha/
+ - /scale/24.10/gettingstarted/migrate/migratecorehatoscaleha/
 tags:
 - migrate
 - install
