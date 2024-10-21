@@ -41,7 +41,7 @@ Overwrite the TC_CONFIG_FILE_PATH environment variable by adding `-e TC_CONFIG_F
 
 ### Decrease Alert Frequency
 
-Change `alert_email_threshold` under `sys` to increase the time required to send the same set of alerts, for instance to `1d` to increase the duration from thirty minutes to one day. 
+Change `alert_email_threshold` under `sys` to increase the time required to send the same set of alerts, for instance to `24h` to increase the duration from thirty minutes to one day. 
 
 ### Change logging
 
