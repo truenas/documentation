@@ -1,5 +1,6 @@
 ---
 title: "TrueNAS CORE"
+geekDocHidden: true
 geekdocCollapseSection: true
 weight: 10
 aliases:

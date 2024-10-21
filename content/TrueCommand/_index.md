@@ -1,5 +1,6 @@
 ---
 title: "TrueCommand"
+geekDocHidden: true
 description: "Public documentation for TrueCommand, the TrueNAS fleet monitoring and managing application."
 geekdocCollapseSection: true
 weight: 30
