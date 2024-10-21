@@ -27,7 +27,7 @@ keywords:
 TrueNAS applications allow for quick and easy integration of third-party software and TrueNAS.
 The TrueNAS applications backend changed in 24.10 to Docker images managed with Docker Compose.
 Earlier TrueNAS releases operated with Kubernetes K3 and Helm providing containers for applications.
-For more information on this change refer to the [24.10 Release Note]({{< relref "/Content/SCALE/GettingStarted/ScaleReleaseNotes.md" >}}).
+For more information on this change refer to the [24.10 Release Note]({{< relref "/Content/GettingStarted/ScaleReleaseNotes.md" >}}).
 
 {{< include file="/static/includes/ProposeArticleChange.md" >}}
 
@@ -75,7 +75,7 @@ You must choose a pool before you can install an application.
 
 {{< /expand >}}
 
-For more information on screens and screen functions, refer to the UI Reference article on [Apps Screens]({{< relref "SCALE/SCALEUIReference/Apps/_index.md" >}}).
+For more information on screens and screen functions, refer to the UI Reference article on [Apps Screens]({{< relref "/content/SCALEUIReference/Apps/_index.md" >}}).
 
 ## Managing Apps Configuration
 Use the **Configuration** dropdown to access the **Choose Pool**, **Unset Pool**, **Manage Container Images**, and **Settings** options.
