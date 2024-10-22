@@ -108,6 +108,9 @@ majorVersions:
     majorVersion: "24.10 (Electric Eel)"
     releaseName: "Electric Eel"
     releases:
+      - name: "24.10.0"
+        link: "https://download.truenas.com/TrueNAS-ElectricEel-RC/24.10.0/"
+        date: "2024-10-29"
       - name: "24.10-RC.2"
         link: "https://download.truenas.com/TrueNAS-ElectricEel-RC/24.10-RC.2/"
         date: "2024-10-04"
