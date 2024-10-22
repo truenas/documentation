@@ -34,7 +34,7 @@ majorVersions:
       - name: "25.04 Nightlies"
         type: "Experimental"
         link: "https://www.truenas.com/docs/scale/25.04/gettingstarted/scalereleasenotes/"
-        releaseDate: "2024-12-18"
+        releaseDate: "2024-08-13"
         latest: true
       - name: "25.04-BETA.1"
         type: "Early"
