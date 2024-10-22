@@ -38,6 +38,7 @@ The **ZFS Info** widget for the VDEV shows a count of read, write, and checksum 
 **Remove** opens the **Remove device** dialog where you confirm you want to remove the selected VDEV.
 To remove a drive from the VDEV, select the drive then select **Detach** on the **[ZFS Info](#zfs-info-widget-drives)** widget to remove the drive from the VDEV (pool).
 
+
 ## Disk Widgets
 Each disk in a VDEV has a set of four widgets that show information for that disk.
 After selecting a disk, the widgets display on the right side of the screen in the **Details for *diskname*** area of the screen.
@@ -54,7 +55,8 @@ The **ZFS Info** widget for each device (disk drive) in the VDEV shows the name 
 
 {{< trueimage src="/images/SCALE/Storage/DeviceDiskDetachDialog.png" alt="Devices Disk Detach Dialog" id="Devices Disk Detach Dialog" >}}
 
-**Offline** opens a confirmation dialog and takes the selected drive to an offline state.
+**Offline** opens a confirmation dialog and takes the selected drive to an offline state so you can take the selected disk offline before replacing it. 
+Toggles to **Online** so you can bring a replacement disk online.
 After taking a drive offline you can remove or replace the physical drive.
 
 {{< trueimage src="/images/SCALE/Storage/DeviceDiskOfflineDialog.png" alt="Devices Disk Offline Dialog" id="Devices Disk Offline Dialog" >}}
@@ -72,12 +74,13 @@ The **Manage SED Password** link opens a **Manage SED Password** dialog where yo
 The **Manage Global SED Password** link opens the **[System Settings > Advanced]({{< relref "AdvancedSettingsScreen.md" >}})** screen where you can change the global SED password that overrides the disk passwords.
 
 ### S.M.A.R.T. Info for&nbsp;*Devicename*&nbsp;Widget
-The **S.M.A.R.T. Info for **devicename** widget, where *devicename* is the name of the disk, provides the number of **Completed S.M.A.R.T. Tests** and the number of **S.M.A.R.T. Tests** configured on the system.
-{{< expand "Click Here for More Information" "v" >}}
+The **S.M.A.R.T. Info for *devicename*** widget, where *devicename* is the name of the disk, provides the number of **Completed S.M.A.R.T. Tests** and the number of **S.M.A.R.T. Tests** configured on the system.
+The widget shows the status for the last short test performed.
 
 {{< trueimage src="/images/SCALE/Storage/DeviceDiskSMARTInfoWidget.png" alt="Devices Disk S.M.A.R.T. Info Widget" id="Devices Disk S.M.A.R.T. Info Widget" >}}
 
 The **Manage SMART Tasks** link opens the **[Data Protection > SMART Tests]({{< relref "SMARTTestsScreensSCALE.md" >}})** details screen where you find the list of SMART tests configured on your system.
+
 **Run Manual Test** opens the **Manual S.M.A.R.T. Test** dialog if the disk is compatible with SMART tests or opens an information dialog if it is not.
 
 {{< trueimage src="/images/SCALE/DataProtection/ManualSMARTTestDialog.png" alt="Devices Disk S.M.A.R.T. Test Dialog" id="Devices Disk S.M.A.R.T. Test Dialog" >}}
@@ -85,7 +88,6 @@ The **Manage SMART Tasks** link opens the **[Data Protection > SMART Tests]({{< 
 {{< trueimage src="/images/SCALE/DataProtection/ManualSMARTTestSupportDialog.png" alt="Devices Disk S.M.A.R.T. Test Support Dialog" id="Devices Disk S.M.A.R.T. Test Support Dialog" >}}
 
 The **Type** dropdown list includes the **LONG**, **SHORT**, **CONVEYANCE**, and **OFFLINE** options, and the **Cancel** and **Start** buttons.
-{{< /expand >}}
 
 ### Disk Info Widget
 The **Disk Info** widget shows the **Disk Size**, **Transfer Mode**, the **Serial** and **Model** numbers for the drive, the **Type** of drive it is, the **HDD Standby** setting, and any **Description** associated with the selected drive.
