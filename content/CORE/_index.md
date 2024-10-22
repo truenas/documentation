@@ -1,6 +1,7 @@
 ---
 title: "TrueNAS CORE"
-geekDocHidden: true
+#redirect: "https://www.truenas.com/docs/core/13.0/"
+geekDocHidden: false
 geekdocCollapseSection: true
 weight: 10
 aliases:

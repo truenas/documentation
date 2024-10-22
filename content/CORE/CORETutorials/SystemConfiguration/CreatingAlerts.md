@@ -1,5 +1,6 @@
 ---
 title: "Creating Alerts"
+redirect: "https://www.truenas.com/docs/core/13.0/coretutorials/systemconfiguration/creatingalerts/"
 description: "Describes how to create an alert on TrueNAS CORE."
 weight: 90
 aliases:

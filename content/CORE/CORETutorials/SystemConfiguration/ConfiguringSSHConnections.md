@@ -1,5 +1,6 @@
 ---
 title: "Configuring SSH Connections"
+redirect: "https://www.truenas.com/docs/core/13.0/coretutorials/systemconfiguration/configuringsshconnections/"
 description: "Provides information on how to configure Secure Socket Shell (SSH) connections on your TrueNAS."
 weight: 110
 aliases:
