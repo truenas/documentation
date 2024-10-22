@@ -55,26 +55,26 @@ More details are available from [Software Releases](https://www.truenas.com/docs
     See [Installing Custom Applications](https://www.truenas.com/docs/truenasapps/usingcustomapp/) for more information.
   
   * Automatic app migration on upgrade from 24.04 is at parity for all catalog applications.
-    A few applications, such as home-assistant, might require manual migration steps, depending on the options enabled in 24.04.
-    See the [Parity Status with truenas/charts](https://github.com/truenas/apps?tab=readme-ov-file#parity-status-with-truenascharts) chart from the /truenas/apps/ github repository for more information.
+    A few applications might require manual migration steps, depending on the options enabled in 24.04.
+    For more information, see the comments for [Home Assistant](https://github.com/truenas/apps/pull/492) and [Tailscale](https://github.com/truenas/apps/pull/641).
 
     In the event of a migration failure, configuration data for applications that do not automatically migrate is retained in the ixapplications dataset.
     You can re-initiate migration of previously-installed Kubernetes apps to Docker at any time after upgrading to Electric Eel.
     From a shell session enter {{< cli >}}midclt call -job k8s_to_docker.migrate *poolname*{{< /cli >}}, where *poolname* is the name of the applications pool.
 
-    * Custom applications installed using the TrueNAS UI in 24.04 automatically migrate on upgrade to 24.10.
+    Custom applications installed using the TrueNAS UI in 24.04 automatically migrate on upgrade to 24.10.
 
-    * Applications from third-party catalogs, such as TrueCharts, do not support automatic migration to 24.10.
-      Migration of third-party applications generally requires manual data backup and redeployment.
-
-      Third-party catalogs are provided, maintained, and supported by individuals or organizations outside of iXsystems.
-      Refer to the catalog maintainer or the [TrueNAS Community forums](https://forums.truenas.com/) for migration support.
+  * To prepare applications for migration, address the following configurations before upgrading to 24.10:  
   
-  {{< hint type=important title="Migrating Apps with Host Path ACLs" >}}
-  Users with applications installed on 24.04 using host path volume mounts and **ACL Entries** defined in the app configuration screen must go to the app edit screen and set the **Force Flag** checkbox under **ACL Options** before updating to 24.10. This ensures the app fully migrates and doesn't encounter issues when the mount point has existing data.
-  {{< /hint >}}
+    {{< truetable >}}
+  | Configuration | Action Needed |
+  |-----------|-------------|
+  | Host Path ACLs | Users with applications installed on 24.04 using host path volume mounts and **ACL Entries** defined in the app configuration screen must go to the app edit screen and set the **Force Flag** checkbox under **ACL Options** before updating to 24.10. This ensures the app fully migrates and doesn't encounter issues when the mount point has existing data. |
+  | Encrypted Root Dataset | Applications do not migrate to 24.10 if the ix-applications dataset is configured on a pool with an encrypted root dataset (see [NAS-131561](https://ixsystems.atlassian.net/browse/NAS-131561)). Relocate installed applications to an unencrypted pool on 24.04 before attempting to upgrade to 24.10. |
+  | Third Party Applications | Applications from third-party catalogs, such as TrueCharts, do not support automatic migration to 24.10. Migration of third-party applications generally requires manual data backup and redeployment.<br><br>Third-party catalogs are provided, maintained, and supported by individuals or organizations outside of iXsystems. Refer to the catalog maintainer or the [TrueNAS Community forums](https://forums.truenas.com/) for migration support. |
+    {{< /truetable >}}
 
-* Starting in 24.10, TrueNAS does not install a default NVIDIA driver.
+* Starting in 24.10, TrueNAS does not install a default NVIDIA GPU driver.
   This allows for driver updates between TrueNAS release versions.
   
   Users can enable driver installation from the **Installed** applications screen.
@@ -154,11 +154,11 @@ It includes numerous software component updates and polished features, as well a
 
 Notable changes:
 
-*  
+* When moving from an existing applications pool to a new pool, TrueNAS does not present the option to **Migrate applications to the new pool** because the underlying functionality is not present in the new Docker apps framework ([NAS-131610](https://ixsystems.atlassian.net/browse/NAS-131610)). Users who need to redeploy the applications pool can either choose to leave existing applications on the previous location, remove existing applications and reinstall on the new pool, or manually relocate and clean up data.
 * Documentation Hub Update: To reflect the continuing process of application maintenance and updates as separate from TrueNAS major version releases, all application Tutorials are moved from the Tutorials section in TrueNAS version documentation to a dedicated and unversioned [TrueNAS Apps](https://www.truenas.com/docs/truenasapps/) section.
   
   Community contributions to TrueNAS Apps documentation are highly encouraged!
-  The [Community Apps](https://www.truenas.com/docs/truenasapps/communityapps/) documentation is pre-populated with placeholder templates for each application available in the TrueNAS Community train.
+  The [Community Apps](https://www.truenas.com/docs/truenasapps/communityapps/) documentation is pre-populated with placeholder templates for each application available in the TrueNAS Community train and ready to accept Pull Requests.
   See [Contributing to TrueNAS Application Documentation](https://www.truenas.com/docs/contributing/applications/#contributing-to-truenas-application-documentation) for more information.
 
 <a href="https://ixsystems.atlassian.net/issues/?filter=11052" target="_blank">Click here for the full changelog</a> of completed Jira tickets that are included in the 24.10.0 release.
