@@ -156,7 +156,7 @@ See also ["ZFS RAIDZ Expansion Is Awesome but Has a Small Caveat"](https://louwr
 To extend a RAIDZ VDEV, go to **Storage**.
 Locate the pool and click **Manage Devices** on the **Topology** widget to open the ***Poolname* Devices** screen.
 
-{{< trueimage src="/images/SCALE/Storage/DevicesExtend.png" alt="Devices Screen" id="Devices Screen" >}}
+{{< trueimage src="/images/SCALE/Storage/DevicesMirrorVDEVSelected.png" alt="Devices Screen" id="Devices Screen" >}}
 
 Select the target VDEV and click **Extend** to open the **Extend Vdev** window.
 
