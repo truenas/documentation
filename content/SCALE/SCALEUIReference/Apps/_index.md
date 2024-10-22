@@ -90,7 +90,7 @@ Entering characters in the **<span class="iconify" data-icon="mdi:magnify"></spa
 {{< /truetable >}} 
 
 ### Settings
-**Settings** opens the **Settings** screen showing four application train options, the option to add IP addresses and subnets for the application to use, and check for Docker image updates.
+**Settings** opens the **Settings** screen showing four application train options, the option to add IP addresses and subnets for the application to use, check for Docker image updates, and if the system is equipped with a GPU, to enable TrueNAS to update drivers for that GPU.
 
 {{< trueimage src="/images/SCALE/Apps/AppsSettingScreen.png" alt="Apps Settings Screen" id="Apps Settings Screen" >}}
 
@@ -106,6 +106,9 @@ You must specify at least one train.
 The **Address Pools** shows the current IP address and subnet mask for the network used by applications.
 **Base** shows the default IP address and subnet, and **Size** shows the network size of each docker network that is cut off from the base subnet.
 Select a predefined range from the dropdown list.
+
+**Install NVIDIA Drivers** shows if the system has an NVIDIA GPU installed. Select to enable TrueNAS to manually install drivers for this device.
+Systems with non-NVIDIA GPU devices do not show this option, but they are selectable in the app installation wizards in the **Resources Configuration** section for the app.
 
 {{< hint type="info" title="Apps Troubleshooting Tip!" >}}
 This setting replaces the Kubernetes Settings option for Bind Network in 24.04 and earlier.
