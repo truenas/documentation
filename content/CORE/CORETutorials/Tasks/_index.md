@@ -1,5 +1,6 @@
 ---
 title: "Tasks"
+redirect: "https://www.truenas.com/docs/core/13.0/coretutorials/tasks/"
 description: "Tutorial articles about a wide variety of TrueNAS system tasks."
 geekdocCollapseSection: true
 weight: 70
