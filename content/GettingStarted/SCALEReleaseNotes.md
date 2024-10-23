@@ -128,6 +128,11 @@ For more details on feature flags, see [OpenZFS Feature Flags](https://openzfs.g
 iXsystems is pleased to release TrueNAS SCALE 24.04.2.3!
 This is a hotpatch to address two issues in the previous 24.04.2.2 release, primarily affecting some TrueNAS Enterprise customers with High Availability (HA) systems and failover enabled.
 
+### 24.04.2.3 Known Issues
+
+* An issue was discovered where the TrueNAS UI can send an improper payload for the Outboard Activity option when re-saving an edit to global network settings ([NAS-131787](https://ixsystems.atlassian.net/browse/NAS-131787)).
+  Users who encounter this issue can upgrade to 24.10.0 where the issue is corrected.
+
 Please use the 24.04.2 Jira filter links below to see the full changelog and known issues related to the 24.04.2, 24.04.2.1, 24.04.2.2, and 24.04.2.3 releases.
 
 ## 24.04.2.2 Changelog
