@@ -72,6 +72,7 @@ More details are available from [Software Releases](https://www.truenas.com/docs
   | Host Path ACLs | Users with applications installed on 24.04 using host path volume mounts and **ACL Entries** defined in the app configuration screen must go to the app edit screen and set the **Force Flag** checkbox under **ACL Options** before updating to 24.10. This ensures the app fully migrates and doesn't encounter issues when the mount point has existing data. |
   | Encrypted Root Dataset | Applications do not migrate to 24.10 if the ix-applications dataset is configured on a pool with an encrypted root dataset (see [NAS-131561](https://ixsystems.atlassian.net/browse/NAS-131561)). Relocate installed applications to an unencrypted pool on 24.04 before attempting to upgrade to 24.10. |
   | Third Party Applications | Applications from third-party catalogs, such as TrueCharts, do not support automatic migration to 24.10. Migration of third-party applications generally requires manual data backup and redeployment.<br><br>Third-party catalogs are provided, maintained, and supported by individuals or organizations outside of iXsystems. Refer to the catalog maintainer or the [TrueNAS Community forums](https://forums.truenas.com/) for migration support. |
+  | App-Dependent DNS Settings | Applications will not migrate if a client app on the TrueNAS host (such as Pi-hole) is also configured as the DNS gateway for the host system (see ([NAS-131553](https://ixsystems.atlassian.net/browse/NAS-131553)). This is a generally unsupported configuration and should be corrected. |
     {{< /truetable >}}
 
 * Starting in 24.10, TrueNAS does not install a default NVIDIA GPU driver.
@@ -112,13 +113,16 @@ Enterprise customers with HA systems should contact iXsystems Support for assist
 {{< /enterprise >}}
 
 When attempting to migrate from TrueNAS 13.0 (or 13.3 for community members), the general recommendation is to back up the system configuration file and use an **.iso** file to fresh install TrueNAS.
+Upgrade your system to the latest publicly-available 13.0-U6.2 (or later) release before attempting to migrate.
 After install, restore the system configuration and import the pools.
 
 Depending on the specific system configuration, this can be a straightforward or complicated process.
 See the [Migration articles]({{< relref "/GettingStarted/Migrate/_index.md" >}}) for cautions and notes about differences between each software and the migration process.
 
-You must either clean install using an <file>iso</file> or use an upgrade file to migrate a TrueNAS 13.0 (or 13.3 for community users) system to 24.04 (Dragonfish) before upgrading to 24.10 (Electric Eel).
-Enterprise customers should [contact Support](https://www.truenas.com/docs/scale/gettingstarted/migrate/migratecorehatoscaleha/#expand-1-Enterprise%20HA%20Migrations) for assistance with migrating.
+The only path to side-grade or migrate from 13.0-U6.2 or 13.3 is to install or upgrade to 24.04 (latest).
+TrueNAS 24.10 and later releases do not support migrations from 13.X. These migrations cannot be done, and either fail or result in error conditions that cannot be resolved.
+Download the <file>iso</file> for the latest maintenance release of TrueNAS 24.04 (see [Software Releases](https://www.truenas.com/docs/softwarereleases/)) and follow the instruction articles in this section.
+Enterprise customers should [contact Support](https://www.truenas.com/docs/scale/gettingstarted/migrate/migratecorehatoscaleha/) for assistance with migrating.
 
 ## Component Versions
 Click the component version number to see the latest release notes for that component.
@@ -154,6 +158,7 @@ It includes numerous software component updates and polished features, as well a
 
 Notable changes:
 
+* Prevent the TrueNAS UI from sending an improper payload for the Outboard Activity option when re-saving an edit to global network settings ([NAS-131787](https://ixsystems.atlassian.net/browse/NAS-131787)).
 * When moving from an existing applications pool to a new pool, TrueNAS does not present the option to **Migrate applications to the new pool** because the underlying functionality is not present in the new Docker apps framework ([NAS-131610](https://ixsystems.atlassian.net/browse/NAS-131610)). Users who need to redeploy the applications pool can either choose to leave existing applications on the previous location, remove existing applications and reinstall on the new pool, or manually relocate and clean up data.
 * Documentation Hub Update: To reflect the continuing process of application maintenance and updates as separate from TrueNAS major version releases, all application Tutorials are moved from the Tutorials section in TrueNAS version documentation to a dedicated and unversioned [TrueNAS Apps](https://www.truenas.com/docs/truenasapps/) section.
   
