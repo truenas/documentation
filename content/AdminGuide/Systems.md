@@ -24,6 +24,12 @@ If you make a mistake, you can reset the form by clicking **RESET**.
 
 ![Systems Add](/images/TrueCommand/Systems/SystemsAddNew.png "Systems Add")
 
+{{< hint type=note >}}
+TrueCommand will reconnect to systems after reboot or failover. In the event of "invalid auth credentials" after failover,
+reconnect after a few minutes by editing the system and reauthenticating. TrueCommand will not reconnect if it believes the credentials to be invalid, which
+is the case if it tries to connect too soon to the controller undergoing failover before the Virtual IP has migrated to the other controller.
+{{< /hint >}}
+
 If the system has alerts or alarms, a blue circle with the number of current alerts displays to the right of the system name.
 
 ### Adjusting Systems
