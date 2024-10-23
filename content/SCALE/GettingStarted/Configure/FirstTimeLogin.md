@@ -87,7 +87,7 @@ After upgrading from an earlier release, use the existing root user credentials 
 {{< expand "Migrating/Upgrading from CORE to SCALE" "v" >}}
 
 {{< enterprise >}}
-Customers with a TrueNAS Enterprise High Availability (HA) system should review 24.04 branch [Migration Preparation](https://www.truenas.com/docs/scale/24.04/gettingstarted/migrate/migratingfromcore/) or [Enterprise HA Migrations](https://www.truenas.com/docs/scale/24.04/gettingstarted/migrate/migratecorehatoscaleha/) articles, and consult with iXsystems Support prior to migrating from TrueNAS CORE to SCALE.
+Customers with a TrueNAS Enterprise High Availability (HA) system should review [Migration Preparation]({{< relref "MigratePrep.md" >}}), [Enterprise HA Migrations]({{< relref "MigrateCOREHAToSCALEHA.md" >}}), and consult with iXsystems Support prior to migrating from TrueNAS CORE to SCALE.
 {{< /enterprise >}}
 For non-HA systems, there are two possible scenarios when migrating from CORE to SCALE:
 
@@ -96,7 +96,7 @@ For non-HA systems, there are two possible scenarios when migrating from CORE to
 
 If performing a clean install using the SCALE <file>iso</file> file, after installing SCALE and uploading the CORE configuration file, your SCALE network settings get overwritten by the CORE config file uploaded so you cannot use the new IP address and admin user to access to the web UI.
 Use the CORE IP address and root credentials to access the UI.
-See the 24.04 branch [Migrating CORE to SCALE](https://www.truenas.com/docs/scale/24.04/gettingstarted/migrate/) article for instructions on recovering the new network settings and access to the UI, and recreating the administrator account.
+See [Migrating CORE to SCALE]({{< relref "MigratingFromCORE.md" >}}) for instructions on recovering the new network settings and access to the UI, and recreating the administrator account.
 
 If using the CORE **Update** UI option, log into SCALE with the CORE root user credentials.
 {{< include file="/static/includes/CreateAdminDisableRoot.md" >}}
