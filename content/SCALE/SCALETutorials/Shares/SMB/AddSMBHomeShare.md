@@ -1,6 +1,6 @@
 ---
 title: "Setting Up SMB Home Shares"
-description: "Provides instructions to set up SMB home shares."
+description: "Provides instructions on setting up the alternative to legacy SMB home shares."
 weight: 40
 aliases: 
 tags:
@@ -14,10 +14,12 @@ They are not recommended for new deployments.
 Future TrueNAS SCALE releases can introduce instability or require configuration changes affecting this legacy feature.
 {{< /hint >}}
 
-## Setting Up SMB Home Shares
-The **Use as Home Share** option, found in the **Add SMB** and **Edit SMB** screen **Advanced Options** settings in the **Other Options** section, is an available option for organizations or SMEs that want to use a single SMB share to provide a personal directory to every user account.
+## Replacing SMB Home Shares
+TrueNAS does not recommend setting up home shares using the **Use as Home Share** option, found in the **Add SMB** and **Edit SMB** screen **Advanced Options** settings in the **Other Options** section.
+This remains an option for organizations still using the legacy home shares option to use a single SMB share to provide a personal directory to every user account.
+See [Adding Private SMB Datasets and Shares]() for the recommended method to create private shares and datasets for users that require this type of share.
 
-With home shares, each user is given a personal home directory when connecting to the share.
+The legacy home shares proives each user a personal home directory when connecting to the share.
 These home directories are not accessible by other users.
 You can use only one share as the home share, but you can create as many non-home shares as you need or want.
 
