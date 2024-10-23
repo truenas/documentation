@@ -6,20 +6,13 @@ related: false
 ---
 {{< header logo="/images/tn-openstorage-logo.png" logo_alt="TrueNAS Logo" version="24.10 Electric Eel" icon="/images/SCALE_Electric_Eel_Icon.png" icon_alt="Electric Eel Icon" >}}
 
-{{< hint type="tip" title="24.10 Early Release Documentation" >}}
-This page tracks the latest development roadmap and release notes for the next upcoming TrueNAS major version, 24.10 (Electric Eel).
-The stable [24.04 (Dragonfish) release notes](https://www.truenas.com/docs/scale/24.04/gettingstarted/scalereleasenotes/) are available with documentation for that version.
-{{< /hint >}}
-
 ## Features
 
 {{< include file="/static/includes/24.10FeatureList.md" >}}
 
 ## Obtaining a Release
 
-{{< include file="/static/includes/EarlyReleaseWarning.md" >}}
-
-24.10 (Electric Eel) early releases (BETA and RC) are available from the [TrueNAS download page](https://www.truenas.com/download-truenas-scale/).
+24.10 (Electric Eel) is available from the [TrueNAS download page](https://www.truenas.com/download-truenas-scale/).
 
 For adventurous users that want to experiment with the latest feature development, nightly build [.iso](https://download.truenas.com/truenas-scale-electriceel-nightly/) and [.update](https://update.sys.truenas.net/scale/TrueNAS-SCALE-ElectricEel-Nightlies/) files are available.
 
@@ -158,9 +151,18 @@ It includes numerous software component updates and polished features, as well a
 
 Notable changes:
 
+* True Cloud Backup Tasks ([NAS-127165](https://ixsystems.atlassian.net/browse/NAS-127165)).
+* Replace nslcd with sssd ([NAS-127073](https://ixsystems.atlassian.net/browse/NAS-127073)).
+* Dashboard Improvements ([NAS-127217](https://ixsystems.atlassian.net/browse/NAS-127217)).
+* UI Table Improvements ([NAS-127222](https://ixsystems.atlassian.net/browse/NAS-127222)).
+* UI Global Search ([NAS-127224](https://ixsystems.atlassian.net/browse/NAS-127224)).
+* Rewrite enclosure plugin in 24.10 to match performance improvements in 13.3 ([NAS-123474](https://ixsystems.atlassian.net/browse/NAS-123474)).
+* Prevent phantom partitions that TrueNAS erroneously reported as disconnected pools ([NAS-131171](https://ixsystems.atlassian.net/browse/NAS-131171)).
+* Revised Docker networking logic for applications ([NAS-131617](https://ixsystems.atlassian.net/browse/NAS-131617)).
+* Enable editing of custom YAML applications ([NAS-131147](https://ixsystems.atlassian.net/browse/NAS-131147)).
 * Prevent the TrueNAS UI from sending an improper payload for the Outboard Activity option when re-saving an edit to global network settings ([NAS-131787](https://ixsystems.atlassian.net/browse/NAS-131787)).
 * When moving from an existing applications pool to a new pool, TrueNAS does not present the option to **Migrate applications to the new pool** because the underlying functionality is not present in the new Docker apps framework ([NAS-131610](https://ixsystems.atlassian.net/browse/NAS-131610)). Users who need to redeploy the applications pool can either choose to leave existing applications on the previous location, remove existing applications and reinstall on the new pool, or manually relocate and clean up data.
-* Documentation Hub Update: To reflect the continuing process of application maintenance and updates as separate from TrueNAS major version releases, all application Tutorials are moved from the Tutorials section in TrueNAS version documentation to a dedicated and unversioned [TrueNAS Apps](https://www.truenas.com/docs/truenasapps/) section.
+* **Documentation Hub Update**: To reflect the continuing process of application maintenance and updates as separate from TrueNAS major version releases, all application Tutorials are moved from the Tutorials section in TrueNAS version documentation to a dedicated and unversioned [TrueNAS Apps](https://www.truenas.com/docs/truenasapps/) section.
   
   Community contributions to TrueNAS Apps documentation are highly encouraged!
   The [Community Apps](https://www.truenas.com/docs/truenasapps/communityapps/) documentation is pre-populated with placeholder templates for each application available in the TrueNAS Community train and ready to accept Pull Requests.
@@ -171,7 +173,9 @@ Notable changes:
 
 ### 24.10.0 Known Issues
 
-* 
+<!-- * {{< enterprise >}}
+We are investigating an issue affecting drive identification lighting behavior on TrueNAS F-Series platforms.
+{{< /enterprise >}} -->
 
 <a href="https://ixsystems.atlassian.net/issues/?filter=11053" target="_blank">Click here to see the latest information on Jira</a> about public issues discovered in 24.10.0 that are being resolved in a future TrueNAS release.
 
