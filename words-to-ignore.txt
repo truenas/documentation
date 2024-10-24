@@ -1994,7 +1994,6 @@ SystemSettingsGUISettingsSCALE
 UsingTrains
 AppsManageContainerImages
 AppsManageContainerImagesPullImage
-TrueCharts
 selectable
 AppUpdateWindow
 AppsDeleteAppDialog
@@ -2049,11 +2048,3 @@ EarlyReleaseWarning
 thirdpartymigration
 acltype
 changelogs
-Mariadb-based
-transcoding
-CustomAppIntro
-AppsSettingScreen
-AppsInstallWizardSettings
-UsingCustomApp
-ixVolumes
-RESTAPIDeprecationNotice

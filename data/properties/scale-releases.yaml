@@ -26,10 +26,10 @@ majorVersions:
     name: "TrueNAS SCALE 24.10 - Electric Eel"
     releaseName: "Electric Eel"
     releases:
-      - name: "24.10-RC.2"
+      - name: "24.10-RC.1"
         type: "Early"
-        link: "https://www.truenas.com/docs/scale/24.10/gettingstarted/scalereleasenotes/#2410-rc2-changelog"
-        releaseDate: "2024-10-04"
+        link: "https://www.truenas.com/docs/scale/24.10/gettingstarted/scalereleasenotes/#2410-rc1-changelog"
+        releaseDate: "2024-09-26"
         latest: true
       - name: "24.10 Nightlies"
         type: "Experimental"
