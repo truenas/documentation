@@ -1,0 +1,67 @@
+{
+"ignorePatterns": [
+    {
+      "pattern": "ixsystems.com(.*)"
+    },
+    {
+      "pattern": "truecommand.io(.*)"
+    },
+    {
+      "pattern": "fastmail.com(.*)"
+    },
+    {
+      "pattern": "docs.aws.amazon.com(.*)"
+    },
+    {
+      "pattern": "blogs.oracle.com(.*)"
+    },
+    {
+      "pattern": "community.openvpn.net(.*)"
+    },
+    {
+      "pattern": "facebook.com(.*)"
+    },
+    {
+      "pattern": "mirbsd.org(.*)"
+    },
+    {
+      "pattern": "kb.vmware.com(.*)"
+    },
+    {
+      "pattern": "docs.vmware.com(.*)"
+    },
+    {
+      "pattern": "freebsd.org(.*)"
+    },
+    {
+      "pattern": "opsgenie.com(.*)"
+    },
+    {
+      "pattern": "10.231.3.76(.*)"
+    },
+    {
+      "pattern": "192.168.0.3(.*)"
+    },
+    {
+      "pattern": "linode.com(.*)"
+    }
+  ],
+"replacementPatterns": [
+    {
+      "pattern": "(?<=^\/(hub|hardware|truecommand)\/.+)\/$",
+      "replacement": ".md"
+    },
+    {
+      "pattern": "(?<=^\/(hub|hardware|truecommand)\/.+)\/#(?=.+)",
+      "replacement": ".md#"
+    },
+    {
+      "pattern": "^\/",
+      "replacement": "{{BASEURL}}/content/"
+    },
+    {
+      "pattern": "\/content/images/",
+      "replacement": "/images/"
+    }
+  ]
+}
