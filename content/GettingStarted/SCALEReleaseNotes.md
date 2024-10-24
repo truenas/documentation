@@ -44,7 +44,7 @@ More details are available from [Software Releases](https://www.truenas.com/docs
   * All applications available from official catalogs in 24.04 are available to install in 24.10.
     Supported catalog applications automatically migrate to Docker deployments on upgrade from from 24.04 (Dragonfish) to Electric Eel.
   
-  * Custom applications based on docker images can be installed using the installation wizard or a Docker Compose YAML file.
+  * Custom applications based on Docker images can be installed using the installation wizard or a Docker Compose YAML file.
     See [Installing Custom Applications](https://www.truenas.com/docs/truenasapps/usingcustomapp/) for more information.
   
   * Automatic app migration on upgrade from 24.04 is at parity for all catalog applications.
@@ -65,7 +65,7 @@ More details are available from [Software Releases](https://www.truenas.com/docs
   | Host Path ACLs | Users with applications installed on 24.04 using host path volume mounts and **ACL Entries** defined in the app configuration screen must go to the app edit screen and set the **Force Flag** checkbox under **ACL Options** before updating to 24.10. This ensures the app fully migrates and doesn't encounter issues when the mount point has existing data. |
   | Encrypted Root Dataset | Applications do not migrate to 24.10 if the ix-applications dataset is configured on a pool with an encrypted root dataset (see [NAS-131561](https://ixsystems.atlassian.net/browse/NAS-131561)). Relocate installed applications to an unencrypted pool on 24.04 before attempting to upgrade to 24.10. |
   | Third Party Applications | Applications from third-party catalogs, such as TrueCharts, do not support automatic migration to 24.10. Migration of third-party applications generally requires manual data backup and redeployment.<br><br>Third-party catalogs are provided, maintained, and supported by individuals or organizations outside of iXsystems. Refer to the catalog maintainer or the [TrueNAS Community forums](https://forums.truenas.com/) for migration support. |
-  | App-Dependent DNS Settings | Applications will not migrate if a client app on the TrueNAS host (such as Pi-hole) is also configured as the DNS gateway for the host system (see ([NAS-131553](https://ixsystems.atlassian.net/browse/NAS-131553)). This is a generally unsupported configuration and should be corrected. |
+  | Container Dependent Network Settings | Applications will not migrate if TrueNAS network settings are configured to depend on any client container or application hosted on the TrueNAS system, such as DNS services, proxy networks, firewalls, and routers (see [NAS-131553](https://ixsystems.atlassian.net/browse/NAS-131553)). This is an unsupported configuration because TrueNAS cannot access the necessary networks during boot if the client container has not started. |
     {{< /truetable >}}
 
 * Starting in 24.10, TrueNAS does not install a default NVIDIA GPU driver.
