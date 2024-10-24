@@ -173,9 +173,8 @@ Notable changes:
 
 ### 24.10.0 Known Issues
 
-<!-- * {{< enterprise >}}
-We are investigating an issue affecting drive identification lighting behavior on TrueNAS F-Series platforms.
-{{< /enterprise >}} -->
+* Some users report that after rebooting TrueNAS, the Installed applications screen does not display the apps that are installed and states **Applications are not running**.
+  Users encountering this issue can refresh the web page to correct it.  
 
 <a href="https://ixsystems.atlassian.net/issues/?filter=11053" target="_blank">Click here to see the latest information on Jira</a> about public issues discovered in 24.10.0 that are being resolved in a future TrueNAS release.
 
