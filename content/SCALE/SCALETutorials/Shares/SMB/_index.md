@@ -222,6 +222,7 @@ Use to set up an alternative to the legacy Home Shares function.
 
 Allow adding private datasets and shares for individual users. Useful as an alternate way to creating home shares for individual users.
 See [Setting Up SMB Home Shares]({{< relref "AddSMBHomeShares.md" >}}) for more information.
+{{< /expand >}}
 {{< expand "Enabling SMB Audit Logging" "v" >}}
 To enable SMB audit logging, from either the **Add SMB** or **Edit SMB** screens, click **Advanced Options**, scroll down to **Audit Logging** and select **Enable**.
 {{< /expand >}}
