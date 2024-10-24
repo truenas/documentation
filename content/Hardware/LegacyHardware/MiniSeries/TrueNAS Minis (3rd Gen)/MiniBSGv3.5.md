@@ -2,6 +2,7 @@
 title: "TrueNAS Mini Basic Setup Guide v.3.5"
 description: "Setup Guide for TrueNAS Mini Products, including some that are now end of life."
 weight: 10
+GeekdocHidden: true
 ---
 
 <object data="https://www.truenas.com/docs/files/MiniFamily3.5.pdf" type="application/pdf" width="95%" height="1000">
