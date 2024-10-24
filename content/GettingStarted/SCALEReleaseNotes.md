@@ -84,7 +84,7 @@ More details are available from [Software Releases](https://www.truenas.com/docs
 * SMB audit log entries are omitted by default from the **System > Audit** screen.
   To view SMB audit results, go to **System > Services** and click <i class="material-icons" aria-hidden="true" title="Audit Logs">receipt_long</i> **Audit Logs** for the SMB service or use advanced search on the main **Audit** screen to query SMB events.
   
-### Upgrade Paths (Anticipated)
+### Upgrade Paths
 
 {{< include file="/static/includes/24.10UpgradeMethods.md" >}}
 
