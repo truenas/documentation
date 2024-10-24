@@ -50,33 +50,44 @@ More details are available from [Software Releases](https://www.truenas.com/docs
 
   * All applications available from official trains in 24.04 are available to install in 24.10.
     Supported catalog applications automatically migrate to Docker deployments on upgrade from from 24.04 (Dragonfish) to Electric Eel.
-  
-    Automatic app migration on upgrade from 24.04 is receiving active development.
-    To see which applications currently support automatic migration, see the [Parity Status with truenas/charts](https://github.com/truenas/apps?tab=readme-ov-file#parity-status-with-truenascharts) chart from the /truenas/apps/ github repository.
-    Applications that support migration display a green check (✅) in both **Added** and **Migrated** columns.
-    Check back regularly and note the update history of the [README.md](https://github.com/truenas/apps/blob/master/README.md) file for the latest developments.
-
-    Configuration data for applications that do not automatically migrate is retained in the ixapplications dataset.
-    You can re-initiate migration of previously-installed Kubernetes apps to Docker at any time after upgrading to Electric Eel, for example to migrate an app that was not yet available for automatic migration upon upgrade but is now available.
-    From a shell session enter {{< cli >}}midclt call -job k8s_to_docker.migrate *poolname*{{< /cli >}}, where *poolname* is the name of the applications pool.
 
   * Custom application installs are enabled in 24.10-RC.1.
-    There are two options to install a custom application from the **Applications > Discover** screen.
+    There are two options to install a custom application from the **Applications > Discover** screen for the RC.1 release:
 
-    Click **Custom App** to install an application using a Docker Compose YAML file.
+    * Click **Custom App** to install an application using a Docker Compose YAML file.
     Note: applications installed using the **Custom App** button are not editable via the TrueNAS UI in 24.10-RC.1 (see [Known Issues](#2410-rc1-known-issues) below).
 
-    Select the **Ix-app** card from the applications list and click **Install** to deploy a docker image with a simple installation wizard.
+    * Select the **Ix-app** application widget on the **Discover** screen, then click **Install** on the information screen to deploy a docker image with a simple installation wizard.
     Applications installed using this option can be edited in the TrueNAS UI.
 
-    * Custom applications installed in 24.04 automatically migrate on upgrade to 24.10.
-
-* Starting in 24.10, TrueNAS does not install a default Nvidia driver.
-  This allows for driver updates in between TrueNAS release versions.
+    Additional development for the 24.10.0 release version will simplify these options so that the **Custom App** button will open the install wizard and also contain a dropdown option to **Install via YAML**.
   
-  Users can enable driver installation from the **Apps** screen.
+  * Automatic app migration on upgrade from 24.04 is generally at parity for all applications.
+    A few applications, such as home-assistant, might require manual migration steps, depending on the options enabled in 24.04.
+    See the [Parity Status with truenas/charts](https://github.com/truenas/apps?tab=readme-ov-file#parity-status-with-truenascharts) chart from the /truenas/apps/ github repository for more information.
+
+    In the event of a migration failure, configuration data for applications that do not automatically migrate is retained in the ixapplications dataset.
+    You can re-initiate migration of previously-installed Kubernetes apps to Docker at any time after upgrading to Electric Eel.
+    From a shell session enter {{< cli >}}midclt call -job k8s_to_docker.migrate *poolname*{{< /cli >}}, where *poolname* is the name of the applications pool.
+
+    * Custom applications installed using the TrueNAS UI in 24.04 automatically migrate on upgrade to 24.10.
+
+    * Applications from third-party catalogs, such as TrueCharts, do not support automatic migration to 24.10.
+      Migration of third-party applications generally requires manual data backup and redeployment.
+
+      Third-party catalogs are provided, maintained, and supported by individuals or organizations outside of iXsystems.
+      Refer to the catalog maintainer or the [TrueNAS Community forums](https://forums.truenas.com/) for migration support.
+
+  {{< hint type=important title="Migrating Apps with Host Path ACLs" >}}
+  Users with applications installed on 24.04 using host path volume mounts and **ACL Entries** defined in the app configuration screen must go to the app edit screen and set the **Force Flag** checkbox under **ACL Options** before updating to 24.10. This ensures the app fully migrates and doesn't encounter issues when the mount point has existing data.
+  {{< /hint >}}
+
+* Starting in 24.10, TrueNAS does not install a default NVIDIA driver.
+  This allows for driver updates between TrueNAS release versions.
+  
+  Users can enable driver installation from the **Installed** applications screen.
   Click **Configure** > **Settings** and select **Install NVIDIA Drivers**.
-  This option is only available for users with a compatible Nvidia GPU and no drivers installed or for users who have previously enabled the setting.
+  This option is only available for users with a compatible NVIDIA GPU and no drivers installed or for users who have previously enabled the setting.
 
 * Support for the deprecated LDAP **Samba Schema** is removed in 24.10.
   Users with both LDAP and SMB shares configured should migrate legacy Samba domains to Active Directory before upgrading to 24.10.
@@ -108,13 +119,13 @@ Enterprise customers with HA systems should contact iXsystems Support for assist
 {{< /expand >}}
 {{< /enterprise >}}
 
-When attempting to migrate from TrueNAS CORE, the general recommendation is to back up the system configuration file and use an **.iso** file to fresh install TrueNAS.
+When attempting to migrate from TrueNAS 13.0 (or 13.3 for community members), the general recommendation is to back up the system configuration file and use an **.iso** file to fresh install TrueNAS.
 After install, restore the system configuration and import the pools.
 
 Depending on the specific system configuration, this can be a straightforward or complicated process.
 See the [Migration articles]({{< relref "/GettingStarted/Migrate/_index.md" >}}) for cautions and notes about differences between each software and the migration process.
 
-You must either clean install using an <file>iso</file> or use an upgrade file to migrate a TrueNAS 13.0 (or 13.3 for community users) system to 24.10 (Electric Eel).
+You must either clean install using an <file>iso</file> or use an upgrade file to migrate a TrueNAS 13.0 (or 13.3 for community users) system to 24.04 (Dragonfish) before upgrading to 24.10 (Electric Eel).
 Enterprise customers should [contact Support](https://www.truenas.com/docs/scale/gettingstarted/migrate/migratecorehatoscaleha/#expand-1-Enterprise%20HA%20Migrations) for assistance with migrating.
 
 ## Component Versions
@@ -141,6 +152,24 @@ Any new feature flags introduced since the previous OpenZFS version that was int
 
 For more details on feature flags, see [OpenZFS Feature Flags](https://openzfs.github.io/openzfs-docs/Basic%20Concepts/Feature%20Flags.html) and [OpenZFS zpool-feature.7](https://openzfs.github.io/openzfs-docs/man/7/zpool-features.7.html).
 
+## 24.10-RC.2 Changelog
+
+{{< hint type=warning title="Early Release Software" >}}
+Early releases are intended for testing and feedback purposes.
+Do not use early release software for critical tasks.
+{{< /hint >}}
+
+**October 4, 2024**
+
+iXsystems is pleased to release TrueNAS 24.10-RC.2!
+This is a small hot fix to correct applications-related issues discovered after the release of 24.10-RC.1.
+
+Notable changes:
+
+* Revised Docker networking logic to prevent users with 15 or more applications installed encountering network exhaustion, which resulted in the apps service failing to initialize ([NAS-131485](https://ixsystems.atlassian.net/browse/NAS-131485)).
+
+Please use the 24.10-RC.1 Jira filter links below to see the full changelog and known issues related to the 24.10 release candidates.
+
 ## 24.10-RC.1 Changelog
 
 {{< hint type=warning title="Early Release Software" >}}
@@ -148,7 +177,7 @@ Early releases are intended for testing and feedback purposes.
 Do not use early-release software for critical tasks.
 {{< /hint >}}
 
-**September 26, 2024**
+**October 2, 2024**
 
 iXsystems is pleased to release TrueNAS 24.10-RC.1!
 This release candidate version has software component updates and new features that are in the polishing phase as well as fixes for issues discovered in 24.10-BETA.1.
@@ -163,7 +192,8 @@ Notable changes:
 
 * Prevent incorrect auto-populated portal group IDs on iSCSI target ([NAS-130656](https://ixsystems.atlassian.net/browse/NAS-130656)).
 
-* Add alert for every successful root, admin, or truenas_admin, login to the TrueNAS web UI ([NAS-127040](https://ixsystems.atlassian.net/browse/NAS-127040)).
+* All administrators receive a daily alert for all login failures by any account to the TrueNAS UI or API ([NAS-127040](https://ixsystems.atlassian.net/browse/NAS-127040)).
+  Enterprise administrators also receive a daily alert for all successful logins by default administrator accounts (root / admin / truenas_admin).
 
 * Prevent systemd journal from producing duplicate audit entries on upgrade ([NAS-131125](https://ixsystems.atlassian.net/browse/NAS-131125)).
 
@@ -176,6 +206,7 @@ Notable changes:
 * UI support for installing NVIDIA GPU drivers is added ([NAS-130588](https://ixsystems.atlassian.net/browse/NAS-130588)).
 
 * Improve handling for file renaming in case insensitive filesystems ([NAS-130743](https://ixsystems.atlassian.net/browse/NAS-130743)).
+  This prevents name collision errors some MacOS users experience when trying to rename a file to change its case on a case-insensitive filesystem.
 
 * Prevent applications from running startup processes before acquiring the default interface ([NAS-130863](https://ixsystems.atlassian.net/browse/NAS-130863)).
 
@@ -186,6 +217,12 @@ Notable changes:
 
 ### 24.10-RC.1 Known Issues
 
+* Nvidia GPU transcoding is not functioning with the Plex application ([NAS-131591](https://ixsystems.atlassian.net/browse/NAS-131591)).
+
+* Mariadb-based applications require [additional steps to successfully migrate into 24.10](https://github.com/truenas/apps/issues/592#issuecomment-2391455422).
+  
+* Users with 15 or more applications installed can experience a network exhaustion error on upgrade to 24.10-RC.1, resulting in the apps service failing to initialize ([NAS-131485](https://ixsystems.atlassian.net/browse/NAS-131485)).
+
 * GPU passthrough issues can occur due to the UI passing malformed data to `system.advanced.update_gpu_pci_ids` resulting in an error dialog on VM creation ([NAS-130983](https://ixsystems.atlassian.net/browse/NAS-130983)).
   Users who encounter this issue can simply close the dialog.
   The VM should be created with the GPU attached, as expected.
@@ -195,13 +232,13 @@ Notable changes:
   RC.1 users can delete, edit the YAML file, and then redeploy custom applications to make changes.
   Custom applications deployed via the **Ix-app** deployment wizard can be edited in the TrueNAS UI.
 
-* Docker applications do not at present support IPv6 ([NAS-131333](https://ixsystems.atlassian.net/browse/NAS-131333)).
+* Docker applications do not support IPv6 at present ([NAS-131333](https://ixsystems.atlassian.net/browse/NAS-131333)).
 
 * A user reports errors restarting the Docker service on system reboot ([NAS-131328](https://ixsystems.atlassian.net/browse/NAS-131328)).
 
-* Applications with available updates display an option to view changelogs. These changelogs are at present not populated ([NAS-131297](https://ixsystems.atlassian.net/browse/NAS-131297)).
+* Applications with available updates display an option to view changelogs. These changelogs are not populated at present ([NAS-131297](https://ixsystems.atlassian.net/browse/NAS-131297)).
 
-* Application **Web UI** buttons, accessed from the **Application Info** widget, can default to a 0.0.0.0:*port* address after app install ([NAS-131308](https://ixsystems.atlassian.net/browse/NAS-131308)).
+* Application **Web UI** buttons, accessed from the **Application Info** widget, can default to a 0.0.0.0:*port* address after app install or restart ([NAS-131308](https://ixsystems.atlassian.net/browse/NAS-131308)).
   Refresh the browser window, or manually access the port in the form *hostname or IP address*:*port*, to correct button function and access the app UI.
 
 * The SMB Share **Purpose** presets on the **Add SMB** screen do not adjust advanced options when set ([NAS-131374](https://ixsystems.atlassian.net/browse/NAS-131374)).
