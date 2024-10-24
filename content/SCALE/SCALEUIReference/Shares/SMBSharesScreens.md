@@ -166,6 +166,7 @@ The **Other Options** settings include improving Apple software compatibility, Z
 | **Enable SMB2/3 Durable Handles** | Select to allow using open file handles that can withstand short disconnections. Support for POSIX byte-range locks in Samba is also disabled. We do not recommend this option when configuring multi-protocol or local access to files. |
 | **Enable FSRVP** | Select to enable support for the File Server Remote VSS Protocol ([FSVRP](https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-fsrvp/dae107ec-8198-4778-a950-faa7edad125b)). This protocol allows remote procedure call (RPC) clients to manage snapshots for a specific SMB share. The share path must be a dataset mount point. Snapshots have the prefix `fss-` followed by a snapshot creation timestamp. A snapshot must have this prefix for an RPC user to delete it. |
 | **Path Suffix** | Appends a suffix to the share connection path. Use to provide individualized shares on a per-user, per-computer, or per-IP address basis. Suffixes can contain a macro. See the [smb.conf](https://www.samba.org/samba/docs/current/man-html/smb.conf.5.html) manual page for a list of supported macros. The connect path must be preset before a client connects. |
+| **Additional Parameters String** | Shows a string of parameters associated with the share preset selected, or if no preset, enter additional smb4.conf parameters not covered by the TrueNAS API. |
 {{< /truetable >}}
 
 #### Advanced Options Presets

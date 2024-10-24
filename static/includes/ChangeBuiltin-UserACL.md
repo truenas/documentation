@@ -16,5 +16,4 @@ To change permissions for the **builtin_users** group, go to **Datasets**, selec
 5. Select **Basic** in the **Permissions** area then select the level of access you want to assign in the **Permissions** field.
    For more granular control, select **Advanced** then select on each permission option to include.
 
-6. Click **Save Access Control List** to add the ACE item or save changes.
-7. 
+6. Click **Save Access Control List** to add the ACE item or save changes. 
