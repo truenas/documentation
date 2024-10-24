@@ -54,7 +54,7 @@ To add private shares and datasets for users that require home directories:
 
 You can use an existing dataset for the share or create a new dataset.
 You can either add a share when you [create the dataset]({{< relref "DatasetsSCALE.md" >}}) for the share on the **Add Dataset** screen, or create the dataset when you add the share on the **Add SMB** screen.
-If creating a simple SMB share and dataset use either method, or if customizing the dataset, use the [**Add Dataset** screen]({{< relref "CreateDatasetSCALE.md" >}}) to access dataset advanced setting options.
+If creating a simple SMB share and dataset use either method, or if customizing the dataset, use the [**Add Dataset** screen]({{< relref "DatasetsSCALE.md" >}}) to access dataset advanced setting options.
 To configure a customized SMB share, use the **Add SMB** share option that provides access to the advanced setting options for shares.
 This procedure covers creating the share and dataset from the **Add Share** screen.
 
