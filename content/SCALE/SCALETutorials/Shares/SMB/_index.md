@@ -145,7 +145,7 @@ To create a basic Windows SMB share and a dataset, go to **Shares**, then click 
    The preset selected locks or unlock pre-determined **Advanced Options** settings for the share.
    To retain control over all the share **Advanced Options** settings, select **No presets** or **Default share parameters**.
    To create an alternative to Home Shares, select **Private SMB Datasets and Shares**.
-   See [Setting Up SMB Home Shares]({{< relref "AddSMBHomeShare.md" >}}) for more information on replacing this legacy feature with private SMB shares and datasets.
+   See [Setting Up SMB Home Shares]({{< relref "/SCALETutorials/Shares/SMB/AddSMBHomeShare.md" >}}) for more information on replacing this legacy feature with private SMB shares and datasets.
 
 4. (Optional) Enter a **Description** to help explain the share purpose.
 
