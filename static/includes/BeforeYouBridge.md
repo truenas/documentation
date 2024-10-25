@@ -1,9 +1,11 @@
 &NewLine;
 
-Prepare the system for interface changes by stopping apps, VM NIC devices, and services that can cause conflicts.
+Stop apps, VM NIC devices, and services that can cause conflicts before making interface changes.
+Do the following before making network interface changes:
 
-1. Stop running apps before proceeding with network interface changes.
-2. Power off any running virtual machines (VMs) before making interface IP changes.
+1. Stop running apps.
+2. Power off running virtual machines (VMs).
 3. Remove active NIC devices for VMs.
 
-If you encounter issues with testing network changes, you might need to stop sharing services such as SMB, using the current IP address.
+Sharing services such as SMB that use the IP address(s) assigned to the primary interface might cause issues with testing network changes.
+To resolve issues, stop sharing services such as SMB, make the interface change and test the connection, and when complete restart the service.
