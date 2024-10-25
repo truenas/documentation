@@ -1,5 +1,6 @@
 ---
 title: "Configuring UPS"
+redirect: "https://www.truenas.com/docs/core/13.0/coretutorials/services/configuringups/"
 description: "Provides information on configuring UPS service on your TrueNAS."
 weight: 150
 alias: /core/services/ups/

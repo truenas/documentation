@@ -1,5 +1,6 @@
 ---
 title: "Configuring SSH"
+redirect: "https://www.truenas.com/docs/core/13.0/coretutorials/services/configuringssh/"
 description: "Provides instructions on configuring Secure Shell (SSH) on your TrueNAS."
 weight: 130
 tags:

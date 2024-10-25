@@ -1,5 +1,6 @@
 ---
 title: "Configuring FTP"
+redirect: "https://www.truenas.com/docs/core/13.0/coretutorials/services/configuringftp/"
 description: "Provides information on how to configure File Transfer Protocol (FTP) on your TrueNAS."
 weight: 30
 tags:
