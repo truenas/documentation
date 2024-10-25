@@ -1,4 +1,4 @@
-&newline
+&newline;
 
 Although TrueNAS attempts to keep most of your 13.0-U6.x configuration data when upgrading to TrueNAS 24.04 and later releases, some 13.0-specific items do not transfer.
 These are the items that do not migrate from 13.0-U6.x:
