@@ -23,6 +23,7 @@ These generally apply to either TrueNAS CORE or TrueNAS SCALE, but each software
 * Restrict the TrueNAS web UI, IPMI, and any other management interfaces to private subnets away from untrusted users.
 * Configure **Syslog** settings to send logs to an external server ([CORE]({{< relref "/core/uireference/system/advanced/_index.md" >}}) | [SCALE]({{< relref "managesyslogsscale.md" >}})).
 * In TrueNAS 24.04 (Dragonfish) or later, locally [monitor and review audit logs]({{< relref "auditingscale.md" >}}) using the **Audit** screen.
+* In the **System > Advanced Settings**, always keep **Show Text Console without Password Prompt** set to **Disabled**.
 
 Consult the [TrueNAS Security Advisories](https://security.truenas.com/) site for information about any identified security vulnerabilities in TrueNAS products.
 Check back regularly for updates.
