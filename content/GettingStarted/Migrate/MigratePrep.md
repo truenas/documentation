@@ -10,6 +10,10 @@ tags:
 ---
 
 
+{{< enterprise >}}
+CORE Enterprise customers are encouraged to contact Support for assistance with the process of moving from CORE to SCALE, especially customers with HA systems.
+{{< /enterprise >}}
+
 {{< include file="/static/includes/MigrateCOREtoSCALEWarning.md" >}}
 
 ## What can or cannot migrate?
@@ -17,18 +21,15 @@ tags:
 {{< include file="/static/includes/COREMigratesList.md" >}}
 
 ## Preparing for Migration
-Read this article before you attempt to migrate your CORE system to a SCALE major version.
+Read this article before you attempt to migrate your 13.0-U6.x system to a TrueNAS 24.10 or earlier release major version.
+
 {{< hint type="warning" title="Using USB Devices for Backups" >}}
 We strongly recommend not using USB flash drives or USB-attached drives for backups as these can have issues, including with recovering backed up files.
 For more information on using USB drives and devices in general, read the [CORE Hardware Guide](https://www.truenas.com/docs/core/gettingstarted/corehardwareguide/).
 If you must use a USB type device, verify you can access files on the device before you upgrade/migrate to SCALE.
 {{< /hint >}}
-{{< enterprise >}}
-CORE Enterprise customers are encouraged to contact Support for assistance with the process of moving from CORE to SCALE, especially customers with HA systems.
-{{< /enterprise >}}
 
 1. Upgrade your CORE system to the most recent publicly-available CORE major maintenance release version.
-   TrueNAS systems on 12.0x or earlier should upgrade to the latest CORE 13.0 release (e.g 13.0-U6.1 or newer) prior to migrating to SCALE.
    CORE systems at the latest 13.0 release can use the [iso upgrade](#migrating-using-an-iso-file-to-upgrade) method to migrate to SCALE.
 
 2. Migrate [GELI-encrypted pools](https://www.truenas.com/docs/core/coretutorials/storage/pools/storageencryption/#geli-pool-migrations) to a non-GELI-encrypted pool before upgrading from CORE 12.0x or earlier releases!
@@ -39,10 +40,10 @@ CORE Enterprise customers are encouraged to contact Support for assistance with 
 4. Write down, copy, or take screenshots of settings to use in the event of a post-upgrade/migration issue or to duplicate in SCALE.
    Use the checklist below to guide you through this step:
 
+   <input type="checkbox"> Check the release notes for each major release version - Release notes contain information on feature changes and deprecated services you need to be aware of. Record the settings for deprecated services, and take the steps documented in the release notes to deploy an alternate solution if you choose.
+
    <input type="checkbox"> System dataset - Identify your system dataset. If you want to use the same dataset for the system dataset in SCALE, note the pool and system dataset.
    When you set up the first required pool on SCALE import this pool first.
-
-   <input type="checkbox"> Deprecated services - Record the settings for [services deprecated in SCALE](#deprecated-services-in-scale).
 
    <input type="checkbox"> VMs - If you have virtual machines configured in CORE, write down or screenshot network and other setting information.
 
@@ -90,93 +91,3 @@ CORE Enterprise customers are encouraged to contact Support for assistance with 
 
 After completing the steps that apply to your CORE system listed above, download the [SCALE ISO file](https://www.truenas.com/download-tn-scale/) and save it to your computer.
 Burn the iso to a USB drive (see **Installing on Physical Hardware** in [Installing SCALE]({{< relref "InstallingSCALE.md#installing-on-physical-hardware" >}})) when upgrading a physical system.
-
-## Deprecated Services in SCALE
-The built-in services listed in this section are available in CORE, but deprecated in SCALE 22.12.3 (Bluefin) and removed in later SCALE releases.
-They require attention before attempting to migrate to SCALE.
-
-Each of the sections has information that can help you determine the best steps forward to secure any critical data before attempting to migrate from CORE to SCALE.
-They provide details on transitioning from that service to an application with the functionality of the deprecated service.
-
-TrueNAS SCALE has [apps]({{< relref "/SCALETutorials/Apps/_index.md" >}}) you can deploy as replacements for these services.
-SCALE 24.04 provides the option to force an upgrade without converting deprecated services to apps.
-The force option is not recommended for the S3 service as forcing the upgrade results in losing access to and the ability to recover the MinIO S3 data.
-
-See [SCALE Bluefin Deprecated Services](https://www.truenas.com/docs/scale/22.12/gettingstarted/scaledeprecatedfeatures/) for more information.
-
-{{< expand "Migrating from DDNS Service" "v" >}}
-Review and write down or take screenshots of your Dynamic DNS service provider, domain, IP address, port number, URL, and credential (username and password) settings to use when you reconfigure in a replacement app.
-If establishing a new provider, create the user account before proceeding. Otherwise, use the existing provider details.
-
-To grant access to a specific user (and group) other than using the default admin user UID and GID, add a new non-root administrative user.
-Note the UID and GID for this new user to enter in the application configuration screen.
-
-Install a replacement application such as **DDNS-Updater** using the CORE service settings from your notes.
-SCALE suggests other applications to consider other than **DDNS-Updater** application.
-{{< /expand >}}
-
-{{< expand "Migrating from OpenVPN Service" "v" >}}
-Review your OpenVPN client and server service settings.
-Take note of all certificate, device type, port, protocol, TLS crypt authentication, and additional parameter settings to use in a replacement app.
-
-A certificate configured on CORE should migrate to SCALE, but as a precaution, record the certificate authority (CA) and certificate settings, and make a copy of the the private and public keys the CA and certificate uses.
-
-Install a replacement application such as **WG Easy** using the CORE service settings from your notes.
-SCALE suggests other applications to consider other than the **WG Easy** VPN application.
-{{< /expand >}}
-
-{{< expand "Migrating from Rsync Service" "v" >}}
-Review your rsync and module service settings.
-Take note of all host path, access mode type, number of simultaneous connections, user and group IDs, allow and deny host addresses, and any auxiliary parameter settings.
-
-Before you configure a new rsync application like **Rsync Daemon** (Rsync-d), validate that it is needed.
-When rsync is configured externally with SSH or using an rsync task in **Data Protection > Rsync Tasks**, and when **Rsync Mode** is set to SSH, the deprecated rsync service is not used or necessary for rsync to function.
-
-Install a replacement application such as **Rsync Daemon** using the CORE service settings from your notes.
-SCALE suggests other applications to consider other than the **Rsync Daemon** application.
-{{< /expand >}}
-
-{{< expand "Migrating from S3 MinIO" "v" >}}
-You must migrate your S3 service and data before you upgrade or migrate from CORE to SCALE!
-
-If you have the S3 service configured in CORE, you must first [migrate to the MinIO plugin](https://www.truenas.com/docs/core/13.0/coretutorials/jailspluginsvms/plugins/minioplugin/#migrating-from-s3-service-to-minio-plugin).
-After migrating from CORE to SCALE and then installing the SCALE MinIO app, you can import S3 data from the CORE plugin to the SCALE app.
-
-Review your S3 service settings.
-Take note of the credentials (**Access Key** and **Secret Key**), and data storage volume and host path.
-
-If a certificate other than the default **freenas_default** is used, take note.
-A certificate configured on CORE should migrate to SCALE, but as a precaution, record the certificate authority (CA) and certificate settings, especially any private and public keys the certificate uses.
-
-Follow the migration instructions provided in [Migrating MinIO Data from CORE to SCALE](https://www.truenas.com/docs/solutions/miniocoretoscale/).
-This is an involved and time-consuming process with specific requirements. The amount of data being migrated determines how long this process takes.
-{{< /expand >}}
-
-{{< expand "Migrating from TFTP Service" "v" >}}
-Review your TFTP service settings.
-Take note of all directory, host, auxiliary parameter, permission, and credential (username and password) settings.
-
-To grant access to a specific user (and group) other than using the default admin user UID and GID, add the new non-root administrative user.
-Note the UID and GID for this new user to enter in the application configuration screen.
-
-To use a specific dataset or storage volume for files, create any new dataset in Bluefin before installing the application.
-Install the replacement application such as **TFTP Server** (TFTP-HPA) using the CORE service settings from your notes.
-SCALE suggests other applications to consider other than the **TFTP Server** (TFTP-HPA) application.
-{{< /expand >}}
-
-{{< expand "Migrating from WebDAV Service and Shares" "v" >}}
-Disable both the WebDAV share and service.
-Also disable the **Start Automatically** option to prevent the service from re-enabling after a system restart.
-
-Review any existing WebDAV service authentication settings.
-Take note of all IP addresses, port numbers, URLs and credentials (username and password).
-
-Remove any existing WebDAV shares. Go to **Shares > WebDAV** and use **Edit** to view any existing configurations.
-Take note of the share name, path, and read only settings. Delete the WebDAV share configuration.
-
-In SCALE Bluefin:
-To grant access to a specific user (and group) other than using the default admin user UID and GID, add a new non-root administrative user for the share(s).
-Note the UID and GID for this new user to enter in the application configuration screen.
-
-After disabling the WebDAV service and clearing any existing share configurations from the **Shares > WebDAV** screen in Bluefin, install the **WebDAV** application to recreate your shares using the CORE service settings from your notes. Use the **webdav** user and group in control, and the UID and GID (**666**) in the application.
-{{< /expand >}}
