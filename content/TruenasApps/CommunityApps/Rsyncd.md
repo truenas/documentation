@@ -1,6 +1,6 @@
 ---
 title: "Rsync Daemon"
-description: "Installation and basic usage instructions for the Rsync Daemon application."
+description: "Installation and basic usage instructions for the Rsync Daemon application in TrueNAS."
 weight:
 aliases:
  - /scale/scaletutorials/apps/rsyncd/

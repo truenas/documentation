@@ -1,6 +1,6 @@
 ---
 title: "WebDAV"
-description: "Instructions for installing and configuring the WebDAV app and sharing feature."
+description: "Instructions for installing and configuring the WebDAV app and sharing feature in TrueNAS."
 weight:
 aliases:
  - /scale/scaletutorials/apps/webdav/

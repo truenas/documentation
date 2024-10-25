@@ -1,6 +1,6 @@
 ---
 title: "Jellyfin"
-description: "Provides installation instructions for the Jellyfin application."
+description: "Provides installation instructions for the Jellyfin application in TrueNAS."
 weight: 
 aliases:
  - /scale/scaletutorials/apps/communityapps/jellyfin/

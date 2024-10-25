@@ -1,6 +1,6 @@
 ---
 title: "DDNS-Updater"
-description: "Provides basic configuration instructions for the DDNS-Updater application."
+description: "Provides basic configuration instructions for the DDNS-Updater application in TrueNAS."
 weight:
 aliases:
  - /scale/scaleuireference/systemsettings/services/ddnsservicescreenscale/

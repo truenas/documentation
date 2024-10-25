@@ -1,6 +1,6 @@
 ---
 title: "TFTP Server"
-description: "Provides instructions for installing the TFTP Server application." 
+description: "Provides instructions for installing the TFTP Server application in TrueNAS." 
 weight:
 aliases:
  - /scale/scaletutorials/apps/tftp-hpaapp/

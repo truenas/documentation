@@ -1,6 +1,6 @@
 ---
 title: "Immich"
-description: "Provides installation instructions for the Immich application."
+description: "Provides installation instructions for the Immich application in TrueNAS."
 weight: 
 aliases:
  - /scale/scaletutorials/apps/communityapps/immich/
