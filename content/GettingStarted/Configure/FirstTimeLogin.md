@@ -94,7 +94,7 @@ For non-HA systems, there are two possible scenarios when migrating from CORE to
 
 If performing a clean install using the SCALE <file>iso</file> file, after installing SCALE and uploading the CORE configuration file, your SCALE network settings get overwritten by the CORE config file uploaded so you cannot use the new IP address and admin user to access to the web UI.
 Use the CORE IP address and root credentials to access the UI.
-See the 24.04 branch [Migrating CORE to SCALE](https://www.truenas.com/docs/scale/24.04/gettingstarted/migrate/) article for instructions on recovering the new network settings and access to the UI, and recreating the administrator account.
+See [Migrating CORE to SCALE]({{< relref "MigratingFromCORE.md" >}}) for instructions on recovering the new network settings and access to the UI, and recreating the administrator account.
 
 If using the CORE **Update** UI option, log into SCALE with the CORE root user credentials.
 {{< include file="/static/includes/CreateAdminDisableRoot.md" >}}
