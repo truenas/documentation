@@ -18,7 +18,7 @@ CORE Enterprise customers are encouraged to contact Support for assistance with 
 
 ## What can or cannot migrate?
 
-{{< include file="/static/includes/COREMigratesList.md" >}}
+{{< include file="/static/includes/WhatDoesNotMigrate.md" >}}
 
 ## Preparing for Migration
 Read this article before you attempt to migrate your 13.0-U6.x system to a TrueNAS 24.10 or earlier release major version.
