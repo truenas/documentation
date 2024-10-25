@@ -34,7 +34,7 @@ Make sure the application is required for your specific use requirements and doe
 The tutorials in this section are for commonly used community-maintained applications.
 Some apps in this section replace deprecated services or functionality previously built into TrueNAS SCALE.
 
-## Understanding App Intall Wizard Settings
+## Understanding App Install Wizard Settings
 
 {{< include file="/static/includes/apps/AppsInstallWizardSettings.md" >}}
 
