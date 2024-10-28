@@ -1,6 +1,6 @@
 ---
 title: "SLOG Devices"
-description: "Provides general information on ZFS intent logs (ZIL) and separate intent logs (SLOG), their uses cases and implementation in TrueNAS."
+description: "Provides general information on ZFS intent logs (ZIL) and separate intent logs (SLOG), their use cases and implementation in TrueNAS."
 weight: 40
 tags:
  - slog
@@ -8,7 +8,7 @@ tags:
 
 To improve read performance, ZFS uses system memory as an Adaptive Replacement Cache (ARC).
 System memory stores the most frequent and recent ZFS pool data used.
-Layer 2 ARC ([L2ARC](/references/l2arc/)) is another option to extend the ARC to dedicated disks for dramatic improvement in read speeds verses slower data disks in the pool.
+Layer 2 ARC ([L2ARC](/references/l2arc/)) is another option to extend the ARC to dedicated disks for dramatic improvement in read speeds versus slower data disks in the pool.
 
 Another OpenZFS performance feature is the ZFS intent log (ZIL).
 The ZIL writes synchronous transactions to disk in special pre-allocated space so ZFS can confirm that data is on non-volatile storage, providing lower latency for synchronous writes.
@@ -57,7 +57,7 @@ Allocate SSDs into this vdev according to your use case.
 
 Users can exercise an optional step to avoid data loss from device failure or any performance degradation by arranging the **Log VDev** as a mirror.
 The drives must be the same size.
-As stated earlier in the recommended drive size is 16 GB after over-provisioning.
+As stated earlier, the recommended drive size is 16 GB after over-provisioning.
 See the SLOG over-provisioning guide for [TrueNAS CORE]({{< relref "CORE/CORETutorials/Storage/Pools/SLOGOverprovision.md" >}}) or [TrueNAS SCALE]({{< relref "/SCALE/SCALETutorials/Storage/Disks/SLOGOverprovisionSCALE.md" >}}) over-provisioning procedures.
 
 ## SLOG for Asynchronous Writes
