@@ -25,7 +25,7 @@ For information on configuring IPv6 addresses, see [Configuring IPv6]({{< relref
 
 You must know the DNS name server and default gateway addresses for your IP address.
 
-{{< expand "Static IP or DHCP-Assigned? "v" >}}
+{{< expand "Static IP or DHCP-Assigned?" "v" >}}
 By default, TrueNAS SCALE configures the primary network interface for Dynamic Host Configuration Protocol (DHCP) IP address management during installation.
 However, some administrators might choose to assign a static IP address to the primary network interface.
 This choice can be made if TrueNAS is deployed on a system that does not allow DHCP for security, stability, or other reasons.
@@ -106,7 +106,6 @@ The **Edit Interface** and **Add Interface** settings are identical but the **Ty
 If you make a mistake with either and clicked **Save**, the only option to change either setting is to delete the interface and create a new one with the desired name and type.
 
 To change from a DHCP-provided IP address to a static IP, you must also add the new default gateway and DNS name servers that work with the new IP address.
-See [Setting Up a Static IP]({{< relref "SettingUpStaticIPs.md" >}}) for more information.
 
 Click **Save** after making all changes.
 
@@ -144,11 +143,9 @@ To configure IP addresses as aliases that provide access to internal portions of
 
    {{< trueimage src="/images/SCALE/Network/EditInterfaceNicDeviceSCALE.png" alt="Add Alias" id="Add Alias" >}}
 
-2. Clear the **DHCP** checkbox to show the **Aliases** fields. Click **Add** for each alias to add to this interface.
+2. Clear the **DHCP** checkbox to show the **Aliases** fields. 
 
-3. Enter the IP address and CIDR values for each alias.
-
-4. Select **DHCP** to control the primary IP for the interface.
+3. Click **Add** for each alias to add to this interface. Enter the IP address and CIDR values for each alias.
 
 5. Click **Save**.
 
@@ -182,12 +179,12 @@ To change an interface from using DHCP to a static IP address:
 
    For home users, use **8.8.8.8** for a DNS name server address so you can communicate with external networks.
 
-   Emter the IP address for the default gateway in the appropriate field.   
+   Enter the IP address for the default gateway in the appropriate field.   
    If the static network is IPv4 enter the gateway in **IPv4 Default Gateway**, if the static network is IPv6 use **IPv6 Default Gateway**.
 
    Click **Save**.
 
-5. Click **Test Changes** to verify the change does not interfere with UI access
+5. Click [**Test Changes**](#testing-network-interface-changes) to verify the change does not interfere with UI access
 
 ### Returning to a DHCP-Assigned IP Address
 Only one interface can use DHCP to assign the IP address and that is likely the primary network interface.
