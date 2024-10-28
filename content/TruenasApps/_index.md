@@ -228,11 +228,12 @@ A single GPU cannot be shared between the OS/applications and a VM.
 
 The GPU passthrough option shows in the **Resources Configuration** section of the application installation wizard screen or the **Edit** screen for a deployed application.
 
-{{< trueimage src="/images/SCALE/Apps/ResourcesConfiguration.png" alt="Resources Configuration" id="Resources Configuration" >}}
-
-Click **Passthrough available GPU** for the type of GPU (AMD, Intel, or the  NVIDIA) to have TrueNAS pass the GPU to the application.
-
 {{< trueimage src="/images/SCALE/Apps/InstallAppResourceConfigurationGPU.png" alt="Select GPU Passthrough" id="Select GPU Passthrough" >}}
+
+Click **Passthrough available (non-NVIDIA) GPUs** to have TrueNAS pass an AMD or Intel GPU to the application.
+
+**Select MVIDIA GPU(s)** displays if an NVIDIA GPU is available, with [installed drivers](#installing-nvidia-drivers).
+Click **Use this GPU** to pass that GPU to the application.
 
 ### Installing Custom Applications
 {{< include file="/static/includes/apps/CustomAppIntro.md" >}}
