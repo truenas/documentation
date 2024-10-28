@@ -15,6 +15,9 @@ tags:
  - apps
 ---
 
+<!--Comment or remove the following line if your PR changes provide a complete, up-to-date, and working installation tutorial -->
+{{< include file=\"/static/includes/apps/CommunityPleaseImprove.md\" >}}
+
 The WebDAV application is a set of extensions to the HTTP protocol that allows users to collaboratively edit and manage files on remote web servers.
 It serves as the replacement for the built-in TrueNAS WebDAV feature.
 

@@ -12,6 +12,9 @@ tags:
 - apps
 ---
 
+<!--Comment or remove the following line if your PR changes provide a complete, up-to-date, and working installation tutorial -->
+{{< include file=\"/static/includes/apps/CommunityPleaseImprove.md\" >}}
+
 The new **TFTP Server** application provides Trivial File Transfer Protocol (TFTP) server functions.
 The TFTP Server application is a lightweight TFTP-server container in TrueNAS. It is not intended for use as a standalone container.
 

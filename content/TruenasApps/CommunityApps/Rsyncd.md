@@ -16,6 +16,9 @@ keywords:
 - backup and recovery
 ---
 
+<!--Comment or remove the following line if your PR changes provide a complete, up-to-date, and working installation tutorial -->
+{{< include file=\"/static/includes/apps/CommunityPleaseImprove.md\" >}}
+
 {{< hint type="important" >}}
 This application in not needed when rsync is configured externally with SSH or with the [TrueNAS built-in rsync task in SSH mode]({{< relref "RsyncTasksSCALE.md" >}}).
 It is always recommended to use rsync with SSH as a security best practice.
