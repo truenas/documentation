@@ -18,7 +18,7 @@ We welcome community user contributions, issue reporting, and suggestions for ne
 Application maintenance is independent of TrueNAS SCALE version release cycles.
 App version information, features, configuration options, and installation behavior during access might vary from those in documented tutorials.
 
-SCALE apps show the **Update** button and a badge on any deployed application instance on the **Installed** application screen when a new version is available.
+TrueNAS apps show the **Update** badge and button on any deployed application instance on the **Installed** application screen when a new version is available.
 Users can apply the update(s) individually or collectively and at a convenient time based on needs.
 
 ## Contributing to TrueNAS Application Catalogs
@@ -27,7 +27,7 @@ Users can submit changes to an existing application catalogs through:
 * GitHub Contributions
 
   {{< hint type=note title="Coming Soon" >}}
-  We are actively working on making the core library more user-friendly. This process may involve breaking changes to the API. Therefore, please wait for an update on when we will start accepting pull requests.
+  We are actively working on making the core application library more user-friendly. This process might involve breaking changes to the API. Therefore, please wait for an update on when you can start submitting pull requests.
 
   Thank you for your understanding.
   {{< /hint >}}
