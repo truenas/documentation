@@ -13,7 +13,7 @@ These are the items that do not migrate from 13.0-U6.x:
 * System tunables.
 * ZFS boot environments.
 * SMB auxiliary parameters. As of TrueNAS 23.10 (Cobia), the **Auxiliary Parameters** option is no longer available in the UI as a configurable option.
-  We recommend removing any auxiliary parameter settings in 13.-U6.x before migrating to TrueNAS 24.10 or earlier.
+  We recommend removing any auxiliary parameter settings in 13.-U6.x before migrating to TrueNAS 24.10.
 * AFP shares also do not transfer, but migrate into an SMB share with AFP compatibility enabled.
 * 13.0-U6.x `netcli` utility. A new CLI utility is used for the Console Setup Menu and other commands issued in a CLI.
   By default, any TrueNAS user account with `netcli` as the chosen Shell updates to use the `nologin` option instead.
