@@ -14,7 +14,7 @@ keywords:
 
 {{<enterprise>}}
 This procedure only applies to SCALE Enterprise (HA) systems.
-If attempting to migrate from CORE to SCALE, see the 24.04 branch [Migrating from TrueNAS CORE](https://www.truenas.com/docs/scale/24.04/gettingstarted/migrate/) article.
+If attempting to migrate from CORE to SCALE, see [Migrating from TrueNAS CORE]({{< relref "MigratingFromCORE.md" >}}).
 {{</enterprise>}}
 
 ## Updating Enterprise (HA) Systems
