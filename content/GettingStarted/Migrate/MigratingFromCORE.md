@@ -41,7 +41,7 @@ With a clean install, you need to review any settings imported from your configu
 Follow the instructions in the [Install]({{< relref "InstallingSCALE.md" >}}) articles.
 
 After TrueNAS boots, you might need to [use the Console Setup menu to reconfigure networking interfaces]({{< relref "ConsoleSetupMenuScale.md" >}}) to enable GUI accessibility.
-After logging in to the TrueNAS UI with the **truenas_admin** administrator account, go to **System Settings > General** and [upload the 13.0-U6.x system config file]({{< relref "ManageSysConfigSCALE.md#uploading-the-file" >}}).
+After logging in to the TrueNAS UI with the **truenas_admin** administrator account, go to **System > General Settings** and [upload the 13.0-U6.x system config file]({{< relref "ManageSysConfigSCALE.md#uploading-the-file" >}}).
 This migrates your settings, imports your pools, shares, etc. into 24.10.
 
 After uploading the config file, TrueNAS reboots.
