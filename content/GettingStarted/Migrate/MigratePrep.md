@@ -3,15 +3,16 @@ title: "Preparing to Migrate"
 description: "Guides CORE users through preparation elements and steps before beginning the one-way CORE to SCALE migration process."
 weight: 10
 aliases:
- - /scale/gettingstarted/migrate/migrateprep/
- - /scale/24.10/gettingstarted/migrate/migrateprep/
 tags:
 - migrate
 ---
 
-
 {{< enterprise >}}
-CORE Enterprise customers are encouraged to contact Support for assistance with the process of moving from CORE to SCALE, especially customers with HA systems.
+CORE Enterprise customers should contact iXsystems Support for assistance with the process of moving from CORE to SCALE, especially customers with HA systems.
+
+{{< expand "Contacting Support" "v" >}}
+{{< include file="/static/includes/iXsystemsSupportContact.md" >}}
+{{< /expand >}}
 {{< /enterprise >}}
 
 {{< include file="/static/includes/MigrateCOREtoSCALEWarning.md" >}}
@@ -21,7 +22,8 @@ CORE Enterprise customers are encouraged to contact Support for assistance with 
 {{< include file="/static/includes/WhatDoesNotMigrate.md" >}}
 
 ## Preparing for Migration
-Read this article before you attempt to migrate your 13.0-U6.x system to a TrueNAS 24.10 or earlier release major version.
+
+Read this article before you attempt to migrate your 13.0-U6.x system to TrueNAS 24.10.
 
 {{< hint type="warning" title="Using USB Devices for Backups" >}}
 We strongly recommend not using USB flash drives or USB-attached drives for backups as these can have issues, including with recovering backed up files.
@@ -40,7 +42,7 @@ If you must use a USB type device, verify you can access files on the device bef
 4. Write down, copy, or take screenshots of settings to use in the event of a post-upgrade/migration issue or to duplicate in SCALE.
    Use the checklist below to guide you through this step:
 
-   <input type="checkbox"> Check the release notes for each major release version - Release notes contain information on feature changes and deprecated services you need to be aware of. Record the settings for deprecated services, and take the steps documented in the release notes to deploy an alternate solution if you choose.
+   <input type="checkbox"> Check the release notes for each major release version. Release notes contain information on feature changes and deprecated services you need to be aware of. Record the settings for deprecated services, and take the steps documented in the release notes to deploy an alternate solution if you choose.
 
    <input type="checkbox"> System dataset - Identify your system dataset. If you want to use the same dataset for the system dataset in SCALE, note the pool and system dataset.
    When you set up the first required pool on SCALE import this pool first.
