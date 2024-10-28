@@ -56,14 +56,14 @@ When submitting new tutorials or requesting changes to existing TrueNAS Document
   
 * Create the PR against a forked copy of the [TrueNAS Documentation Hub public repository](https://github.com/truenas/documentation/tree/master).
 
-  In your local forked repository, open the existing article file in either the **CommunityApps** or the **ChartApps** folder of the **/content/SCALE/SCALETutorials/Apps/** directory.
+  In your local forked repository, open the existing article file in either the **CommunityApps** or the **StableApps** folder of the **/content/TrueNASApps/** directory.
 
   If submitting a new tutorial, add the new tutorial to the **CommunityApps** folder in your local copy of the repository.
 
   Use the text editor of your choice to make changes to the [application tutorial template]({{< relref "/Contributing/Applications/AppArticleTemplate.md" >}}) as the basis for your new article.
   Article content is written in Commonmark Markdown.
 
-  (Optional) Save images in the **/documentation/static/scale/apps** folder of your local branch.
+  (Optional) Save images in the **/documentation/static/images/scale/apps** folder of your local branch.
 
   Submit the PR against the **Master** branch.
 
