@@ -63,7 +63,7 @@ iXsystems Support can assist Enterprise customers with configuring directory ser
 
 For more information on configuring general application functions and installation wizard screens, see [TrueNAS Apps]({{< relref "/content/TruenasApps/_index.md" >}}).
 
-## Understanding App Intall Wizard Settings
+## Understanding App Install Wizard Settings
 
 {{< include file="/static/includes/apps/AppsInstallWizardSettings.md" >}}
 

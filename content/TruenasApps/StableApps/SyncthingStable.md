@@ -1,7 +1,7 @@
 ---
 title: "Syncthing (Stable)"
 description: "Provides general information, guidelines, installation instructions, and use scenarios for the offical version of Syncthing in the stable app train."
-weight: 90
+weight: 
 aliases:
  - /scale/scaletutorials/apps/chartapps/syncthingcharts/
  - /scale/scaletutorials/apps/stableapps/syncthingcharts/
