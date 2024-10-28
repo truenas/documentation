@@ -1,7 +1,6 @@
 &NewLine;
 
-Stop apps, VM NIC devices, and services that can cause conflicts before making interface changes.
-Do the following before making network interface changes:
+Before making network interface changes:
 
 1. Stop running apps.
 2. Power off running virtual machines (VMs).
