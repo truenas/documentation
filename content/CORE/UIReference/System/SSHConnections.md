@@ -1,5 +1,6 @@
 ---
 title: "SSH Connections"
+redirect: "https://www.truenas.com/docs/core/13.0/uireference/system/sshconnections/"
 description: "Describes the SSH screen fields on TrueNAS CORE."
 weight: 110
 tags:
