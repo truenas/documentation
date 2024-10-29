@@ -173,10 +173,12 @@ Notable changes:
 
 ### 24.10.0 Known Issues
 
+* If TrueNAS is updated to 24.10.0 from a previous 24.10 release candidate version and the **Install Nvidia Drivers** option is selected, TrueNAS downloads and installs drivers to the upgraded OS in the background before starting the Applications service ([NAS-132070](https://ixsystems.atlassian.net/browse/NAS-132070)).
+  This can be a lengthy process with no UI progress feedback.
+  If a network interruption on boot prevents driver installation, TrueNAS does not retry and a manual workaround is required (see linked NAS issue for steps).
 * {{< enterprise >}}
   There is a known issue with the ES24 expansion shelf not displaying on the Enclosure Management screen in 24.10.0. A fix is anticipated in the next 24.10 release. In the meantime, customers with an ES24 shelf connected to their TrueNAS appliance should plan their 24.10 upgrade time frame for the first maintenance release, 24.10.1.
-  {{< /enterprise >}}
-  
+  {{< /enterprise >}} 
 * Replication task (and possibly other Backup Task) logs aren't properly downloading for non-full admin users ([NAS-132031](https://ixsystems.atlassian.net/browse/NAS-132031)).
   A full admin user can download these task logs and a fix for admin users with fewer permissions is pending in the 24.10.1 release.
 * Some users report that after rebooting TrueNAS, the Installed applications screen does not display the apps that are installed and states **Applications are not running**.
