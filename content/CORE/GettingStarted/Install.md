@@ -1,5 +1,6 @@
 ---
 title: "Install"
+redirect: "https://www.truenas.com/docs/core/13.0/gettingstarted/install/"
 description: "Provides installation instructions for TrueNAS CORE."
 weight: 30
 tags:
