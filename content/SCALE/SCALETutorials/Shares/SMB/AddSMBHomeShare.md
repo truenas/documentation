@@ -15,7 +15,7 @@ Future TrueNAS SCALE releases can introduce instability or require configuration
 {{< /hint >}}
 
 ## Replacing SMB Home Shares
-TrueNAS does not recommend setting up home shares with the **Use as Home Share** option, found in the **Add SMB** and **Edit SMB** screen **Advanced Options** settings in the **Other Options** section.
+TrueNAS does not recommend setting up home shares with the **Use as Home Share** option, found in the **Add SMB** and **Edit SMB** screen **Advanced Options** settings, in the **Other Options** section.
 This option is for organizations still using the legacy home shares option to use a single SMB share to provide a personal directory to every user account.
 
 Users wanting to create the equivalent of home shares should use the intructions in the [Adding Private SMB Datasets and Shares](#adding-private-smb-datasets-and-shares) section below for the recommended method for creating private shares and datasets for users with this requirement.
