@@ -258,7 +258,7 @@ See [Permissions]({{< relref "PermissionsScale.md" >}}) for more information on 
 
 {{< include file="/static/includes/UsingTraversePermission.md" >}}
 
-## Starting the SMB 
+## Starting the SMB Service
 To connect to an SMB share, start the SMB service.
 
 After adding a new share TrueNAS prompts you to either start, or restart the SMB service.
