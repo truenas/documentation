@@ -68,7 +68,7 @@ More details are available from [Software Releases](https://www.truenas.com/docs
   | Container Dependent Network Settings | Applications will not migrate if TrueNAS network settings are configured to depend on any client container or application hosted on the TrueNAS system, such as DNS services, proxy networks, firewalls, and routers (see [NAS-131553](https://ixsystems.atlassian.net/browse/NAS-131553)). This is an unsupported configuration because TrueNAS cannot access the necessary networks during boot if the client container has not started. |
     {{< /truetable >}}
 
-* Starting in 24.10, TrueNAS does not install a default NVIDIA GPU driver.
+* Starting in 24.10, TrueNAS does not include a default NVIDIA GPU driver and instead provides a simple NVIDIA driver download option in the web interface.
   This allows for driver updates between TrueNAS release versions.
   
   Users can enable driver installation from the **Installed** applications screen.
