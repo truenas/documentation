@@ -147,6 +147,10 @@ To create a basic Windows SMB share and a dataset, go to **Shares**, then click 
    To create an alternative to Home Shares, select **Private SMB Datasets and Shares**.
    See [Setting Up SMB Home Shares]({{< relref "AddSMBHomeShare.md" >}}) for more information on replacing this legacy feature with private SMB shares and datasets.
 
+   {{< expand "SMP Purpose Options" "v" >}}
+   {{< include file="/static/includes/SMBPurposePresets.md" >}}
+   {{< /expand >}}
+
 4. (Optional) Enter a **Description** to help explain the share purpose.
 
 5. Select **Enabled** to allow sharing of this path when the SMB service is activated.
