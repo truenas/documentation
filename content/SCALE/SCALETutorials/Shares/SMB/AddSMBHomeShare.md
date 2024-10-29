@@ -20,7 +20,7 @@ This option is for organizations still using the legacy home shares option to us
 
 Users wanting to create the equivalent of home shares should use the intructions in the [Adding Private SMB Datasets and Shares](#adding-private-smb-datasets-and-shares) section below for the recommended method for creating private shares and datasets.
 
-The legacy home shares provides each user a personal home directory when connecting to the share.
+The legacy home shares provide each user a personal home directory when connecting to the share.
 These home directories are not accessible by other users.
 You can use only one share as the home share, but you can create as many non-home shares as you need or want.
 
