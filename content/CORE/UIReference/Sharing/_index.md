@@ -1,5 +1,6 @@
 ---
 title: "Sharing"
+redirect: "https://www.truenas.com/docs/core/13.0/uireference/sharing/"
 description: "Reference documentation for all screens within the Sharing menu option."
 geekdocCollapseSection: true
 weight: 110

@@ -1,5 +1,6 @@
 ---
 title: "Active Directory Screen"
+redirect: "https://www.truenas.com/docs/core/13.0/uireference/directoryservices/adscreen/"
 description: "Use the AD screen to configure Active Directory (AD) on TrueNAS CORE."
 weight: 10
 tags:

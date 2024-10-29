@@ -1,5 +1,6 @@
 ---
 title: "Kerberos Screens"
+redirect: "https://www.truenas.com/docs/core/13.0/uireference/directoryservices/kerberosscreens/"
 description: "Use the Kerberos screen to configure to configure Kerberos realms and keytabs on TrueNAS CORE."
 weight: 40
 tags:

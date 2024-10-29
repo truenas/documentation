@@ -1,5 +1,6 @@
 ---
 title: "Network Summary Screen"
+redirect: "https://www.truenas.com/docs/core/13.0/uireference/network/networksummaryscreen/"
 description: "Describes the fields in the Network Summary screen in TrueNAS CORE."
 weight: 10
 aliases: 

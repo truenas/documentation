@@ -1,5 +1,6 @@
 ---
 title: "S3 Screen"
+redirect: "https://www.truenas.com/docs/core/13.0/uireference/services/s3screen/"
 description: "Describes the S3 screen in TrueNAS CORE."
 weight: 100
 tags:
