@@ -82,7 +82,7 @@ To create an alternative to the legacy SMB home share:
 
    {{< trueimage src="/images/SCALE/Shares/AddPrivateSMBShareAdvancedOptions.png" alt="Add Share Advanced Options" id="Add Share Advanced Options" >}}
 
-4. (Optional) Select Enable for auding logging.
+4. (Optional) Select Enable for audit logging.
    
 5. Scroll down to **Other Options** and select **Export Recycle Bin** to allow moving files deleted in the share to a recycle bin in that dataset.
    Files are renamed to a per-user subdirectory within <file>.recycle</file> directory at the root of the SMB share if the path is the same dataset as the share.
