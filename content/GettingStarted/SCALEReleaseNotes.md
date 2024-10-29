@@ -173,6 +173,8 @@ Notable changes:
 
 ### 24.10.0 Known Issues
 
+* Replication task (and possibly other Backup Task) logs aren't properly downloading for non-full admin users ([NAS-132031](https://ixsystems.atlassian.net/browse/NAS-132031)).
+  A full admin user can download these task logs and a fix for admin users with fewer permissions is pending in the 24.10.1 release.
 * Some users report that after rebooting TrueNAS, the Installed applications screen does not display the apps that are installed and states **Applications are not running**.
   Users encountering this issue can refresh the web page to correct it.  
 
