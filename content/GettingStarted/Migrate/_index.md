@@ -11,7 +11,7 @@ related: false
 
 This section provides information and instructions for TrueNAS CORE users wanting to migrate to SCALE.
 
-{{< include file="/static/includes/MigrateCOREtoSCALEWarning.md" >}}
+{{< include file="/static/includes/MigrateCOREtoSCALE24_04.md" >}}
 
 {{< include file="/static/includes/MigrateCoreServicesToCobiaEnterprise.md" >}}
 
