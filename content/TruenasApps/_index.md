@@ -27,7 +27,7 @@ keywords:
 TrueNAS applications allow for quick and easy integration of third-party software and TrueNAS.
 The TrueNAS applications backend changed in 24.10 to Docker images managed with Docker Compose.
 Earlier TrueNAS releases operated with Kubernetes K3 and Helm providing containers for applications.
-For more information on this change refer to the [24.10 Release Note]({{< relref "/Content/SCALE/GettingStarted/ScaleReleaseNotes.md" >}}).
+For more information on this change refer to the [24.10 Release Notes](https://www.truenas.com/docs/scale/24.10/gettingstarted/scalereleasenotes/).
 
 {{< include file="/static/includes/ProposeArticleChange.md" >}} 
 <!-- Update to an app specific snippet -->

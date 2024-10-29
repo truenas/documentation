@@ -15,8 +15,6 @@ keywords:
 - software storage solutions
 ---
 
-{{< include file="/static/includes/apps/CustomAppEE.md" >}}
-
 {{< include file="/static/includes/apps/CustomAppIntro.md" >}}
 
 ## Custom Docker Applications
