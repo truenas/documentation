@@ -2060,4 +2060,5 @@ RESTAPIDeprecationNotice
 tn-openstorage-logo
 Tailscale
 CMD
+ExpandedVdevReporting
 InstallAppResourceConfigurationGPU
