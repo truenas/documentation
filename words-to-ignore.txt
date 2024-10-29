@@ -2059,3 +2059,5 @@ ixVolumes
 RESTAPIDeprecationNotice
 tn-openstorage-logo
 Tailscale
+CMD
+InstallAppResourceConfigurationGPU
