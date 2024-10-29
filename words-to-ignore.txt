@@ -2134,3 +2134,4 @@ tautulli
 UsingCustomApp
 CMD
 ExpandedVdevReporting
+InstallAppResourceConfigurationGPU
