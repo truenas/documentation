@@ -125,7 +125,7 @@ Next, add the users that need a private dataset and share.
 Go to **Credentials > Users** and click **Add**.
 Create a new user name and password. For home directories, make the username all lowercase.
 
-Adding and configure permissions for the user the private share is for to allow log in access to the share and the ability see a folder matching their username.
+Add and configure permissions for the user the private share is for to allow log in access to the share and the ability see a folder matching their username.
 
 By default, the user **Home Directory** is set to **/var/empty**.
 You must change this to the path for the new parent dataset created for home directories.
