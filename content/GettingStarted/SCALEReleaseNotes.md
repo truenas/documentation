@@ -173,10 +173,14 @@ Notable changes:
 
 ### 24.10.0 Known Issues
 
+* {{< enterprise >}}
+  There is a known issue with the ES24 expansion shelf not displaying on the Enclosure Management screen in 24.10.0. A fix is anticipated in the next 24.10 release. In the meantime, customers with an ES24 shelf connected to their TrueNAS appliance should plan their 24.10 upgrade time frame for the first maintenance release, 24.10.1.
+  {{< /enterprise >}}
+  
 * Replication task (and possibly other Backup Task) logs aren't properly downloading for non-full admin users ([NAS-132031](https://ixsystems.atlassian.net/browse/NAS-132031)).
   A full admin user can download these task logs and a fix for admin users with fewer permissions is pending in the 24.10.1 release.
 * Some users report that after rebooting TrueNAS, the Installed applications screen does not display the apps that are installed and states **Applications are not running**.
-  Users encountering this issue can refresh the web page to correct it.  
+  Users encountering this issue can refresh the web page to correct it.
 
 <a href="https://ixsystems.atlassian.net/issues/?filter=11053" target="_blank">Click here to see the latest information on Jira</a> about public issues discovered in 24.10.0 that are being resolved in a future TrueNAS release.
 
