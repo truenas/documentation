@@ -148,9 +148,7 @@ To manually recover capacity, simply replicate and rewrite the data to the exten
 
 You can use the [RAIDZ Extension Calculator]({{< relref "/References/ExtensionCalculator.md" >}}) to visualize potential lost headroom and capacity available to recover by rewriting existing data.
 
-Note: While this process can recover the actual lost capacity, reported capacity continues to rely on the old data-to-parity ratio.
-An expanded vdev can continue to report a lower than expected capacity, even after rewriting old data to the new parity ratio.
-This accounting inconsistency does not impact the actual available capacity of the vdev.
+{{< include file="/static/includes/ExpandedVdevReporting.md" >}}
 
 For more information, see [Jim Salter's article](https://arstechnica.com/gadgets/2021/06/raidz-expansion-code-lands-in-openzfs-master/) at Ars Technica and the upstream [RAIDZ extension](https://github.com/openzfs/zfs/pull/15022) PR, sponsored by iXsystems, at OpenZFS.
 See also ["ZFS RAIDZ Expansion Is Awesome but Has a Small Caveat"](https://louwrentius.com/zfs-raidz-expansion-is-awesome-but-has-a-small-caveat.html) by Louwrentius for an in-depth discussion of lost capacity and recovering overhead.
