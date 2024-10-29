@@ -1,5 +1,6 @@
 ---
 title: "Setting Up Jail Storage"
+redirect: "https://www.truenas.com/docs/core/13.0/coretutorials/jailspluginsvms/jails/settingupjailstorage/"
 description: "Describes how to set up jail storage in TrueNAS CORE."
 weight: 30
 aliases: /core/applications/jails/storage/

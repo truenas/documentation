@@ -1,5 +1,6 @@
 ---
 title: "Managing Jails"
+redirect: "https://www.truenas.com/docs/core/13.0/coretutorials/jailspluginsvms/jails/managingjails/"
 description: "Describes how to manage Jails in TrueNAS CORE."
 weight: 10
 aliases: /core/applications/jails/manage/
