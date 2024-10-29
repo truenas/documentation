@@ -18,10 +18,7 @@ Because of this overhead, an extended RAIDZ VDEV can report a lower total capaci
 Extended VDEVs recover lost headroom as existing data is read and rewritten to the new parity ratio.
 This can occur naturally over the lifetime of the pool as you modify or delete data.
 To manually recover capacity, simply replicate and rewrite the data to the extended pool.
-
-Note: While this process can recover the actual lost capacity, reported capacity continues to rely on the old data-to-parity ratio.
-An expanded vdev can continue to report a lower than expected capacity, even after rewriting old data to the new parity ratio.
-This accounting inconsistency does not impact the actual available capacity of the vdev.
+{{< include file="/static/includes/ExpandedVdevReporting.md" >}}
 
 See [Extending a RAIDZ VDEV]({{< relref "ManagePoolsSCALE.md #extending-a-raidz-vdev" >}}) for more information, including a detailed overview, considerations, and a tutorial.
 
