@@ -1,6 +1,6 @@
 ---
 title: "Immich"
-description: "Provides installation instructions for the Immich application."
+description: "Provides installation instructions for the Immich application in TrueNAS."
 weight: 
 aliases:
  - /scale/scaletutorials/apps/communityapps/immich/
@@ -12,7 +12,12 @@ keywords:
 - software storage solutions
 ---
 
-Immich is a self-hosted photo and video backup tool.
+{{< include file="/static/includes/apps/CommunityApp.md" >}}
+
+<!--Comment or remove the following line if your PR changes provide a complete, up-to-date, and working installation tutorial -->
+{{< include file=\"/static/includes/apps/CommunityPleaseImprove.md\" >}}
+
+[Immich](https://immich.app) is a self-hosted photo and video backup tool.
 
 Immich integrates photo and video storage with a web portal and mobile app.
 It includes features such as libraries, automatic backup, bulk upload, partner sharing, Typesense search, facial recognition, and reverse geocoding.

@@ -2133,3 +2133,4 @@ AppsSettingScreen
 tautulli
 UsingCustomApp
 CMD
+InstallAppResourceConfigurationGPU

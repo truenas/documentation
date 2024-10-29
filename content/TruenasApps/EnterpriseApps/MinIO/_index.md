@@ -2,7 +2,7 @@
 title: "MinIO Enterprise"
 description: "Tutorials for installing and configuring the MinIO Enterprise application in an Enterprise-licensed deployment."
 geekdocCollapseSection: true
-weight: 20
+weight: 
 aliases: 
  - /scale/scaletutorials/apps/enterpriseapps/configminioenterprise/
 tags:

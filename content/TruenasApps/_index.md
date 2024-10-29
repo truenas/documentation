@@ -29,7 +29,8 @@ The TrueNAS applications backend changed in 24.10 to Docker images managed with 
 Earlier TrueNAS releases operated with Kubernetes K3 and Helm providing containers for applications.
 For more information on this change refer to the [24.10 Release Note]({{< relref "/Content/SCALE/GettingStarted/ScaleReleaseNotes.md" >}}).
 
-{{< include file="/static/includes/ProposeArticleChange.md" >}}
+{{< include file="/static/includes/ProposeArticleChange.md" >}} 
+<!-- Update to an app specific snippet -->
 
 TrueNAS is certified with leading hypervisors and backup solutions to streamline storage operations and ensure compatibility with your existing IT infrastructure.
 TrueNAS delivers a wide range of features and scalability for virtualization and private cloud environments, with the ability to create off-site backups with scheduled sync and replication features.
@@ -220,39 +221,20 @@ To modify installed application settings, first click on the app row on the **Ap
 
 Refer to individual tutorials in the [Stable]({{< relref "/content/TruenasApps/StableApps/_index.md" >}}), [Community]({{< relref "/content/TruenasApps/CommunityApps/_index.md" >}}), or [Enterprise]({{< relref "/content/TruenasApps/EnterpriseApps/_index.md" >}}) sections of the Documentation Hub for more details on configuring application settings.
 
-#### Allocating GPU
-Users with compatible hardware can allocate one or more GPU devices to an application for use in hardware acceleration.
-Allocating GPUs is an advanced process that could require significant troubleshooting depending on the installed GPU device(s) and application-specific criteria.
+#### GPU Passthrough
+Users with compatible hardware can passthrough a GPU device to an application for use in hardware acceleration.
 
 GPU devices can be available for the host operating system (OS) and applications or can be [isolated for use in a Virtual Machine (VM)]({{< relref "managegpuscale.md" >}}).
 A single GPU cannot be shared between the OS/applications and a VM.
 
-Allocate the GPU from the **Resources Configuration** section of the application installation wizard screen or the **Edit** screen for a deployed application.
+The GPU passthrough option shows in the **Resources Configuration** section of the application installation wizard screen or the **Edit** screen for a deployed application.
 
-{{< trueimage src="/images/SCALE/Apps/ResourcesConfiguration.png" alt="Resources Configuration" id="Resources Configuration" >}}
+{{< trueimage src="/images/SCALE/Apps/InstallAppResourceConfigurationGPU.png" alt="Select GPU Passthrough" id="Select GPU Passthrough" >}}
 
-Click the **GPU Resource** allocation row for the type of GPU (AMD, Intel, or NVIDIA) and select the number of GPU devices the application is allowed access to.
-You cannot specify which available GPU device TrueNAS allocates to the application. Furthermore, assigned devices can change on reboot.
+Click **Passthrough available (non-NVIDIA) GPUs** to have TrueNAS pass an AMD or Intel GPU to the application.
 
-{{< trueimage src="/images/SCALE/Apps/ResourcesConfigurationAllocateGPU.png" alt="Select GPU Allocation" id="Select GPU Allocation" >}}
-
-{{< expand "Troubleshooting GPU Allocation" "v" >}}
-If installed GPU devices do not populate as available for allocation in **GPU Configuration**:
-
-1. Ensure the GPU devices you want to allocate are not configured as isolated.
-   Go to **System > Advanced Settings** and locate the **Isolated GPU Device(s)** widget.
-   If necessary, click **Configure**, deselect the device(s) you want to allocate, and click **Save**.
-
-2. Ensure the GPU devices you want to allocate are not assigned to any existing VMs.
-   Go to **Virtualization**.
-   Select an existing VM and click on that row to expand it, then click **Edit**.
-   Scroll down to **GPU** and review configured devices.
-   If necessary, deselect the device you want to allocate to applications.
-   Repeat for any additional VMs on the system.
-
-If the GPU was previously isolated and/or assigned to a VM, you might need to reboot to free it up for app allocation.
-Restart the system then return to the **Resources Configuration** section of the application to see if expected devices are available.
-{{< /expand >}}
+**Select MVIDIA GPU(s)** displays if an NVIDIA GPU is available, with [installed drivers](#installing-nvidia-drivers).
+Click **Use this GPU** to pass that GPU to the application.
 
 ### Installing Custom Applications
 {{< include file="/static/includes/apps/CustomAppIntro.md" >}}
