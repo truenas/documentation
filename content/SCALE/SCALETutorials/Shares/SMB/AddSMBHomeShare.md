@@ -16,7 +16,7 @@ Future TrueNAS SCALE releases can introduce instability or require configuration
 
 ## Replacing SMB Home Shares
 TrueNAS does not recommend setting up home shares with the **Use as Home Share** option, found in the **Add SMB** and **Edit SMB** screen **Advanced Options** settings, in the **Other Options** section.
-This option is for organizations still using the legacy home shares option to use a single SMB share to provide a personal directory to every user account.
+This option is for organizations still using the legacy home shares option of adding a single SMB share to provide a personal directory for every user account.
 
 Users wanting to create the equivalent of home shares should use the intructions in the [Adding Private SMB Datasets and Shares](#adding-private-smb-datasets-and-shares) section below for the recommended method for creating private shares and datasets.
 
@@ -75,7 +75,7 @@ To create an alternative to the legacy SMB home share:
    * [Files and directories](https://learn.microsoft.com/en-us/windows/win32/fileio/naming-a-file#naming-conventions)
    * [Share names](https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-fscc/dc9978d7-6299-4c5a-a22d-a039cdc716ea)
 
-   By default, the dataset name populates the share **Name** field and becomes the share name, and it updates the **Path** automatically.
+   By default, the dataset name populates the share **Name** field and becomes the share name. The share and dataset must have the same name. It also updates the **Path** automatically.
 
 3. Set **Purpose** to the **Private SMB Dataset and Share** preset and click **Advanced Options** to show the additional settings.
    Configure the options you want to use.
