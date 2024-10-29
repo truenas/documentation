@@ -21,7 +21,8 @@ CORE Enterprise customers are encouraged to contact Support for assistance with 
 {{< include file="/static/includes/WhatDoesNotMigrate.md" >}}
 
 ## Preparing for Migration
-Read this article before you attempt to migrate your 13.0-U6.x system to a TrueNAS 24.10 or earlier release major version.
+
+Read this article before you attempt to migrate your 13.0-U6.x system to a TrueNAS 24.04 or earlier release major version.
 
 {{< hint type="warning" title="Using USB Devices for Backups" >}}
 We strongly recommend not using USB flash drives or USB-attached drives for backups as these can have issues, including with recovering backed up files.
