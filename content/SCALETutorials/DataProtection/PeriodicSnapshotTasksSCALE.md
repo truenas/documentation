@@ -93,3 +93,16 @@ For example, you have two schedules created where one schedule takes a snapshot 
 Each has an hourly snapshot taken.
 After a week, snapshots created at *01.00* through *23.00* get deleted, but you keep snapshots timed at *00.00* because they are necessary for the second periodic task. 
 These snapshots get destroyed at the end of 3 years.
+
+### Configuring Snapshot Granularity
+
+Heightened snapshot granularity is directly linked to an increase in the rate of snapshots taken. Raising the overall snapshot granularity often leads to the need for lower retention times, as this configuration routinely takes up more space. Similarly, a high level of snapshot granularity tends to decrease system performance overtime due to a raise in processing and indexing needs. Provided this, configuring your system with high snapshot granularity is typically only recommended to users who need detailed recovery options for vital system data.
+
+Comparatively, lowering snapshot granularity is done by decreasing the rate that your system takes snapshots. By employing this configuration, less system storage is utilized by the snapshot tasks and overall snapshot retention increases; however, the amount of reliable recovery options becomes limited.
+
+### Using Replication Tasks for Cloud Targets
+
+If users intend to utilize a cloud sync task to upload snapshots to a cloud storage provider, decreasing snapshot granularity can provide a method to reduce costs associated with data transfer and cloud storage. 
+
+By opting for local snapshot storage, users have a more optimum environment for periodic snapshot tasks with high levels of granularity, as local storage tends to have lower latency and faster access speeds. It is generally recommended that users configure snapshot replication tasks with lower RTO requirements for rapid recovery when implementing local storage.
+
