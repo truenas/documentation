@@ -1,6 +1,6 @@
 ---
 title: "WebDAV"
-description: "Instructions for installing and configuring the WebDAV app and sharing feature."
+description: "Instructions for installing and configuring the WebDAV app and sharing feature in TrueNAS."
 weight:
 aliases:
  - /scale/scaletutorials/apps/webdav/
@@ -14,6 +14,11 @@ tags:
  - shares
  - apps
 ---
+
+{{< include file="/static/includes/apps/CommunityApp.md" >}}
+
+<!--Comment or remove the following line if your PR changes provide a complete, up-to-date, and working installation tutorial -->
+{{< include file=\"/static/includes/apps/CommunityPleaseImprove.md\" >}}
 
 The WebDAV application is a set of extensions to the HTTP protocol that allows users to collaboratively edit and manage files on remote web servers.
 It serves as the replacement for the built-in TrueNAS WebDAV feature.

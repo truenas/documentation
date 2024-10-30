@@ -1,7 +1,7 @@
 ---
 title: "Syncthing (Enterprise)"
 description: "Provides general information, guidelines, installation instructions, and use scenarios for the Enterprise version of the Syncthing app."
-weight: 100
+weight: 
 aliases:
  - /scale/scaletutorials/apps/syncthing/
  - /scale/scaletutorials/apps/enterpriseapps/syncthing/
