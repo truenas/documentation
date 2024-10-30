@@ -12,13 +12,7 @@ tags:
 This article describes setting up a network interface with a static IP address or changing the main interface from a DHCP-assigned to a manually-entered static IP address.
 You must know the DNS name server and default gateway addresses for your IP address.
 
-{{< hint type=warning >}}
-**Disruptive Change!**
-
-You can lose your TrueNAS connection if you change the network interface that the web interface uses!
-
-Command line knowledge and physical access to the TrueNAS system are often required to fix misconfigured network settings.
-{{< /hint >}}
+{{< include file="/static/includes/NetworkWarn.md" >}}
 
 {{< include file="/static/includes/MultipleInterfacesOnNetwork.md" >}}
 
