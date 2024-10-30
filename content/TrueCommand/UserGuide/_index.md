@@ -1,5 +1,6 @@
 ---
 title: "User Guide"
+redirect: "https://www.truenas.com/docs/truecommand/3.0/userguide/"
 description: "How to find and use TrueCommand features that are available to any user account."
 weight: 15
 aliases:

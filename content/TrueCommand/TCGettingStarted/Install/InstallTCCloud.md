@@ -1,5 +1,6 @@
 ---
 title: "Installing TrueCommand Cloud"
+redirect: "https://www.truenas.com/docs/truecommand/3.0/tcgettingstarted/install/installtccloud/"
 description: "Describes the steps for installing TrueCommand Cloud."
 weight: 10
 tags:

@@ -1,5 +1,6 @@
 ---
 title: "NAS Users and Groups"
+redirect: "https://www.truenas.com/docs/truecommand/3.0/adminguide/nasusersandgroups/"
 description: "How to bulk create user and group accounts across many connected TrueNAS systems."
 aliases:
  - /truecommand/systemmanagement/nasusersandgroups/

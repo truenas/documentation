@@ -1,5 +1,6 @@
 ---
 title: "Creating User Accounts"
+redirect: "https://www.truenas.com/docs/truecommand/3.0/tcgettingstarted/useraccounts/"
 description: "Describes creating and managing user accounts, system permissions, and user two-factor authentication in TrueCommand."
 weight: 45
 description: "Describes how to create user accounts in TrueCommand."
