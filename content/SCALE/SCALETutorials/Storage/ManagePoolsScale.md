@@ -107,7 +107,6 @@ There are a few  ways to increase the size of an existing pool:
 * Add a new VDEV of the same type.
 * Replace all existing disks in the VDEV with larger disks.
 
-
 By default, a VDEV limits all disks to the usable capacity of the smallest attached device.
 SCALE automatically expands the usable capacity of the pool to fit all available space after replacing the smallest attached disk (see [Replacing Disks to Expand a Pool](#replacing-disks-to-expand-a-pool) below).
 If a pool is not automatically expanded, for example when resizing virtual disks in a hypervisor apart from TrueNAS, click **Expand** on the **Storage Dashboard** to manually increase the pool size to match all available disk space.
@@ -132,8 +131,8 @@ If you reboot or export/import the pool, the expansion resumes from where it lef
 
 After the expansion, the extra space becomes available for use.
 
-The fault tolerance level of the RAIDZ array remains unchanged.
-For example, a RAIDZ2 stays a RAIDZ2 even after adding more disks.
+The fault-tolerance level of the RAIDZ array remains unchanged.
+For example, a four disk wide RAIDZ2 expanded to a six wide RAIDZ2 still cannot lose more than two disks at a time.
 
 You can expand a RAIDZ vdev multiple times.
 
@@ -148,6 +147,8 @@ This can occur naturally over the lifetime of the pool as you modify or delete d
 To manually recover capacity, simply replicate and rewrite the data to the extended pool.
 
 You can use the [RAIDZ Extension Calculator]({{< relref "/References/ExtensionCalculator.md" >}}) to visualize potential lost headroom and capacity available to recover by rewriting existing data.
+
+{{< include file="/static/includes/ExpandedVdevReporting.md" >}}
 
 For more information, see [Jim Salter's article](https://arstechnica.com/gadgets/2021/06/raidz-expansion-code-lands-in-openzfs-master/) at Ars Technica and the upstream [RAIDZ extension](https://github.com/openzfs/zfs/pull/15022) PR, sponsored by iXsystems, at OpenZFS.
 See also ["ZFS RAIDZ Expansion Is Awesome but Has a Small Caveat"](https://louwrentius.com/zfs-raidz-expansion-is-awesome-but-has-a-small-caveat.html) by Louwrentius for an in-depth discussion of lost capacity and recovering overhead.
