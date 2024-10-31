@@ -77,7 +77,7 @@ To add the TrueCloud backup task, go to **Data Protection > TrueCloud Backup Tas
 
 4. Select the the Storj bucket to use from the **Bucket** dropdown list.
 
-   If you have not previously created a TrueNAS compatible Storj bucket, select **Add New** and follow the procedure in [Creating a TrueNAS Storj Bucket](#creating-a-truenas-storj-bucket)
+   If you have not previously created a TrueNAS compatible Storj bucket, select **Add New** and follow the procedure in [Creating a TrueNAS Storj Bucket](#creating-a-truenas-storj-bucket).
 
    Click the arrow icon for the **Folder** field to expand the dropdown list and select the desired folder in the Storj bucket or enter a folder path.
    Enter `/name`, where *name* is a folder that does not exist, to create a new folder in the Storj bucket.
