@@ -13,6 +13,10 @@ keywords:
 The **Certificates** screen widgets display information for certificates, certificate signing requests (CSRs), certificate authorities(CAs), and ACME DNS-authenticators configured on the system, and provide the ability to add new ones.
 TrueNAS comes equipped with an internal, self-signed certificate that enables encrypted access to the web interface, but users can make custom certificates for authentication and validation while sharing data.
 
+{{< hint type=important >}}
+Note that before creating a self-signed certificate in the system, users should first create a certificate authority. This is a necessary step in the self-signed certificate creation process, as it provides a trust anchor for the certificate in question.
+{{< /hint >}}
+
 ![CredentialsCertificatesScreen](/images/SCALE/Credentials/CredentialsCertificatesScreen.png "Credentials Certificates Screen")
 
 ## Adding Certificates
