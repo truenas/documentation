@@ -1,8 +1,5 @@
 &NewLine;
 
-The instructions in this section cover adding the Storj iX account and configuring the cloud service credentials in TrueNAS and Storj.
-The process includes going to Storj to create a new Storj iX account and returning to TrueNAS to enter the S3 credentials provided by Storj.
-
 Go to **Credentials > Backup Credentials** and click **Add** on the **Cloud Credentials** widget.
 The **Cloud Credentials** screen opens with Storj displayed as the default provider in the **Provider** field.
 
