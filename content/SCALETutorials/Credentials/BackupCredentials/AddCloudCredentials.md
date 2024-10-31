@@ -45,9 +45,9 @@ To add a cloud credential:
 
 3. Enter the required authentication credentials, such as access token, access key and/or secret keys, and user credentials for the account into the appropriate fields.
 
-3. Click **Verify Credentials** to test the entered credentials and verify they work.
+4. Click **Verify Credentials** to test the entered credentials and verify they work.
 
-4. Click **Save**.
+5. Click **Save**.
 
 ## Adding Storj Cloud Credentials
 Storj iX is the default cloud storage provider in TrueNAS.
@@ -58,9 +58,13 @@ Storj iX is the default cloud storage provider in TrueNAS.
 
 {{< include file="/static/includes/CreateStorjiXAccount.md" >}}
 
-### Adding Storj Account S3 Access
+### Setting Up S3 Access
 
 {{< include file="/static/includes/SetUpStorjiXAccountS3Access.md" >}}
+
+### Creating a TrueNAS Storj Bucket
+
+{{< include file="/static/includes/StorjBucket.md" >}}
 
 ## Adding Amazon S3 Cloud Credentials
 When adding an Amazon S3 cloud credential, you can either use the default authentication settings or advanced settings if you want to include endpoint settings.
