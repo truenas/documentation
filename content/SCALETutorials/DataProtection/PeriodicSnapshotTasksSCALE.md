@@ -98,11 +98,13 @@ These snapshots get destroyed at the end of 3 years.
 
 Snapshot granularity refers to the frequency and detail of snapshots, and directly impacts the recovery precision and storage efficiency of a system. Heightened snapshot granularity is directly linked to an increase in the rate of snapshots taken. Raising the overall snapshot granularity often leads to the need for lower retention times, as this configuration routinely takes up more space. Similarly, a high level of snapshot granularity tends to decrease system performance overtime due to a raise in processing and indexing needs. Provided this, configuring your system with high snapshot granularity is typically recommended to users who need detailed recovery options for vital system data.
 
-Comparatively, lowering snapshot granularity is done by decreasing the rate that your system takes snapshots. By employing this configuration, less system storage is utilized by the snapshot tasks and overall snapshot retention increases; however, the amount of reliable recovery options becomes limited.
+To lower snapshot granularity decrease the rate the system takes snapshots. 
+With this configuration the snapshots tasks use less system storage and overall snapshot retention increases; however, this does limit the amount of reliable recovery options.
 
 ### Cloud and Local Snapshot Storage
 
-Snapshot granularity refers to the frequency and detail of snapshots, and directly impacts the recovery precision and storage efficiency of a system. If users intend to utilize a cloud sync task to upload snapshots to a cloud storage provider, decreasing snapshot granularity can provide a method to reduce costs associated with data transfer and cloud storage. 
+Using a cloud sync task to upload snapshots to a cloud storage provider decreases snapshot granularity and can provide a way to reduce costs associated with data transfer and cloud storage. 
 
-By opting for local snapshot storage, users have a more optimum environment for periodic snapshot tasks with high levels of granularity, as local storage tends to have lower latency and faster access speeds. It is generally recommended that users configure snapshot replication tasks with lower recovery time objective (RTO) requirements for rapid recovery when implementing local storage.
+Using local snapshot storage provides a more optimum environment for periodic snapshot tasks with high levels of granularity, as local storage tends to have lower latency and faster access speeds.
+We generally recommend configuring snapshot replication tasks with lower RTO requirements for rapid recovery when implementing local storage.
 
