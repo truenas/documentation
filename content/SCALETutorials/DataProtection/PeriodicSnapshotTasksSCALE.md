@@ -103,8 +103,8 @@ With this configuration the snapshots tasks use less system storage and overall 
 
 ### Cloud and Local Snapshot Storage
 
-Using a cloud sync task to upload snapshots to a cloud storage provider decreases snapshot granularity and can provide a way to reduce costs associated with data transfer and cloud storage. 
+Snapshot granularity refers to the frequency and detail of snapshots, and directly impacts the recovery precision and storage efficiency of a system. Using a cloud sync task to upload snapshots to a cloud storage provider decreases snapshot granularity and can provide a way to reduce costs associated with data transfer and cloud storage. 
 
 Using local snapshot storage provides a more optimum environment for periodic snapshot tasks with high levels of granularity, as local storage tends to have lower latency and faster access speeds.
-We generally recommend configuring snapshot replication tasks with lower RTO requirements for rapid recovery when implementing local storage.
+We generally recommend configuring snapshot replication tasks with lower recovery time objective (RTO) requirements for rapid recovery when implementing local storage.
 
