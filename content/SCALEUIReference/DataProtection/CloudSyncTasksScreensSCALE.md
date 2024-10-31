@@ -126,9 +126,23 @@ The **Manage Credentials** link opens the **Backup Credentials** screen where yo
 | Settings | Description |
 |----------|-------------|
 | **Credential** | Select an exiting backup cloud storage provider credential from the dropdown list. A **Bucket** setting displays after selecting a credential that uses S3, like **Amazon S3**. TrueNAS automatically validates the selected credential. |
-| **Bucket** | Select the pre-defined bucket S3 to use. |
+| **Bucket** | Select the pre-defined bucket S3 to use. For Storj-iX credentials, select **Add New** to open the **Add Bucket** screen and create new bucket on your Storj account from the TrueNAS UI. |
 | **Folder** | Enter or click the <span class="material-icons">arrow_right</span> arrow to the left of the folder icon and at each dataset or directory to reach the storage location to use for this task. |
 {{< /truetable >}}
+
+#### Add Bucket Screen
+
+The **Add Bucket** screen opens when **Add New** is selected from the **Bucket** dropdown in **Remote Settings**.
+It is only available for Storj-iX provider credentials.
+
+{{< trueimage src="static/images/SCALE/DataProtection/AddCloudSyncTaskNewBucket.png" alt="Add Bucket Screen" id="Add Bucket Screen" >}}
+
+| Settings | Description |
+|----------|-------------|
+| **Bucket Name** | Enter a name for the new bucket |
+{{< /truetable >}}
+
+Click **Save** on the **Add bucket** screen to create the remote bucket on Storj and then return to the **Cloud Sync Task Wizard**.
 
 ### Control Settings
 **Control** settings establish a schedule for when the cloud sync task occurs.
