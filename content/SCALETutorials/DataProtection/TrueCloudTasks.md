@@ -47,10 +47,6 @@ To create a TrueCloud Backup task:
 
 After completing this configuration form, you can set up the [TrueCloud Backup task](#setting-up-the-truecloud-backup-task).
 
-#### Creating the Storj iX Account
-
-{{< include file="/static/includes/CreateStorjiXAccount.md" >}}
-
 #### Setting up S3 Access
 
 {{< include file="/static/includes/SetUpStorjiXAccountS3Access.md" >}}
