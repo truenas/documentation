@@ -137,6 +137,7 @@ It is only available for Storj-iX provider credentials.
 
 {{< trueimage src="static/images/SCALE/DataProtection/AddCloudSyncTaskNewBucket.png" alt="Add Bucket Screen" id="Add Bucket Screen" >}}
 
+{{< truetable >}}
 | Settings | Description |
 |----------|-------------|
 | **Bucket Name** | Enter a name for the new bucket |
