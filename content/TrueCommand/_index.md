@@ -1,7 +1,7 @@
 ---
 title: "TrueCommand"
-#redirect: "https://www.truenas.com/docs/truecommand/3.0/"
-geekDocHidden: false
+redirect: "https://www.truenas.com/docs/truecommand/3.0/"
+geekDocHidden: true
 description: "Public documentation for TrueCommand, the TrueNAS fleet monitoring and managing application."
 geekdocCollapseSection: true
 weight: 30
