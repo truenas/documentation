@@ -178,7 +178,7 @@ Notable changes:
 * Some users who have upgraded to 24.10.0 with applications that have NVIDIA GPU allocations report an error: `Expected [uuid] to be set for GPU in slot [<some pci slot>] in [nvidia_gpu_selection])`.
   A fix for this bug is targeted fir the 24.10.1 maintenance release.
 
-  Users experienceing this error should follow the steps below for a one time fix that should not need to be repeated.
+  Users experiencing this error should follow the steps below for a one time fix that should not need to be repeated.
 
   Connect to a shell session and retrieve the UUID for each GPU with the command `midclt call app.gpu_choices | jq`.
 
