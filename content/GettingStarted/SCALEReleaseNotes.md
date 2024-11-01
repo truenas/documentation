@@ -186,7 +186,7 @@ Notable changes:
   Where:
     * `APP_NAME` is the name you entered in the application, for example “plex”.
     * `PCI_SLOT` is the pci slot identified in the error, for example "0000:2d:00.0”.
-    * `GPU_UUID` is the uuid matching the pci slot that you retrieved from the command above.
+    * `GPU_UUID` is the UUID matching the pci slot that you retrieved with the above command.
 * Drives that have been formatted with previous TrueNAS versions can show exported pools in the TrueNAS UI ([NAS-131890](https://ixsystems.atlassian.net/browse/NAS-131890)). This is typically due to obsolete filesystem labels in the boot drives still being detected by TrueNAS. The underlying bug is fixed in 24.10.0-RC.2 and newer, but these labels can remain on boot drives used with previous TrueNAS releases. Removing these labels from the boot drives requires backing up your TrueNAS configuration, reinstalling 24.10.0 fresh on the boot drives, then restoring the TrueNAS configuration.
 * If TrueNAS is updated to 24.10.0 from a previous 24.10 release candidate version and the **Install Nvidia Drivers** option is selected, TrueNAS downloads and installs drivers to the upgraded OS in the background before starting the Applications service ([NAS-132070](https://ixsystems.atlassian.net/browse/NAS-132070)).
   This can be a lengthy process with no UI progress feedback.
