@@ -175,8 +175,7 @@ Notable changes:
 
 ### 24.10.0 Known Issues
 
-* Some users who have upgraded to 24.10.0 with applications that have NVIDIA GPU allocations report an error: `Expected [uuid] to be set for GPU in slot [<some pci slot>] in [nvidia_gpu_selection])`.
-  A fix for this bug is targeted fir the 24.10.1 maintenance release.
+* Some users who have upgraded to 24.10.0 from an earlier 24.10 development version, and who have applications with have NVIDIA GPU allocations, report the error `Expected [uuid] to be set for GPU inslot [<some pci slot>] in [nvidia_gpu_selection])` (see [NAS-132086](https://ixsystems.atlassian.net/browse/NAS-132086)).
 
   Users experiencing this error should follow the steps below for a one time fix that should not need to be repeated.
 
