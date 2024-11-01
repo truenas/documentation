@@ -1,6 +1,6 @@
 ---
 title: "Nextcloud"
-description: "Provides instructions to configure TrueNAS and install Nextcloud to support hosting a wider variety of media file previews such as HEIC, Mp4 and MOV files."
+description: "Provides instructions to configure TrueNAS and install Nextcloud to support hosting a wider variety of media file previews such as HEIC, Mp4, and MOV files."
 weight:
 alias:
  - /scale/scaleuireference/apps/nextcloudscale/
@@ -15,9 +15,9 @@ keywords:
 - software storage solutions
 ---
 
-Nextcloud is a drop-in replacement for many popular cloud services, including file sharing, calendar, groupware and more.
+Nextcloud is a drop-in replacement for many popular cloud services, including file sharing, calendar, groupware, and more.
 One of its more common uses for the home environment is serving as a media backup, and organizing and sharing service.
-This procedure demonstrates how to set up Nextcloud on TrueNAS, and configure it to support hosting a wider variety of media file previews, including High Efficiency Image Container (HEIC), MP4 and MOV files.
+This procedure demonstrates how to set up Nextcloud on TrueNAS, and configure it to support hosting a wider variety of media file previews, including High Efficiency Image Container (HEIC), MP4, and MOV files.
 The instructions in this article apply to TrueNAS 22.10.0 and later.
 
 {{< include file="/static/includes/AppsUnversioned.md" >}}
@@ -32,23 +32,23 @@ Before you install the Nextcloud app:
 <p style="margin-left: 33px">Adding a certificate is optional but if you want to use a certificate for this application, either create a new self-signed CA and certificate or import an existing CA and create the certificate for Nextcloud. A certificate is not required to deploy the application.</p>
 
 * Go to **Datasets** and select the pool or dataset where you want to place the Nextcloud dataset.
-  For example, */tank/apps/nextcloud* or */tank/nextcloud*.
-  You can use either an existing pool or [create a new one]({{< relref "CreatePoolWizard.md" >}}).
+ For example, */tank/apps/nextcloud* or */tank/nextcloud*.
+ You can use either an existing pool or [create a new one]({{< relref "CreatePoolWizard.md" >}}).
 
-  [Create the three dataset(s)]({{< relref "DatasetsSCALE.md" >}}) before beginning the app installation process.
-  Nextcloud uses **html** for app data, **data** for app data, and **postgres_data** for the postgres storage volume.
-  You can organize these dataset(s) under a parent dataset app to keep the storage datasets separated from the dataset for other potential applications.
-  For example, create the *nextcloud* dataset and nest each dataset under it.
-  
-  Configure dataset ACL permissions for the parent dataset when prompted after adding the dataset or by clicking by **Edit** on the **Permissions** widget to open the **Edit ACL** screen.
-  Add an ACE entry for the **netdata** user, giving it full permissions.
-  You can configure ACL permissions for all Nextcloud datasets when prompted or configure them in the app installation wizard by selecting the **Enable ACL** option as you configure each app storage volume.
-  See information provided in the sections below for details on which user ID and permissions settings to configure.
+ [Create the three dataset(s)]({{< relref "DatasetsSCALE.md" >}}) before beginning the app installation process.
+ Nextcloud uses **html** for app data, **data** for app data, and **postgres_data** for the postgres storage volume.
+ You can organize these dataset(s) under a parent dataset app to keep the storage datasets separated from the dataset for other potential applications.
+ For example, create the *nextcloud* dataset and nest each dataset under it.
+  
+ Configure dataset ACL permissions for the parent dataset when prompted after adding the dataset or by clicking **Edit** on the **Permissions** widget to open the **Edit ACL** screen.
+ Add an ACE entry for the **netdata** user, giving it full permissions.
+ You can configure ACL permissions for all Nextcloud datasets when prompted or configure them in the app installation wizard by selecting the **Enable ACL** option as you configure each app storage volume.
+ See the sections below for details on which user ID and permissions settings to configure.
 
-  Earlier versions of the Nextcloud app relied on four datasets.
-  If upgrading with an existing deployment of this application the app is migrated to the new configuration.
+ Earlier versions of the Nextcloud app relied on four datasets.
+ If upgrading with an existing deployment of this application the app is migrated to the new configuration.
 
-  If you want to mount other storage volumes inside the container pod using the host path option, create the dataset(s) before using the app installation wizard.
+ If you want to mount other storage volumes inside the container pod using the host path option, create the dataset(s) before using the app installation wizard.
 
 {{< include file="/static/includes/apps/AppBeforeYouBeginNewUser.md" >}}
 
@@ -70,7 +70,7 @@ For optional settings, see [Understanding App Installation Wizard Settings](#und
 
 Next, enter the **Nextcloud Configuration** settings.
 {{< expand "Entering Nextcloud Configuration Settings" "v" >}}
-For a basic installation you can accept default values, but enter the following values:
+For a basic installation, you can accept default values, but enter the following values:
 Enter the name of the administration user in **Admin User** and **Admin Password**.
 If using an existing Nextcloud account, enter the administration credentials for that account or enter new to create new Nextcloud user account credentials.
 
@@ -95,7 +95,7 @@ NextCloud cron jobs only run while the app is running. If you stop the app, the 
 For more information on formatting and using cron jobs, see [Managing Cron Jobs]({{< relref "ManageCronJobsSCALE.md" >}}).
 {{< /expand >}}
 
-The TrueNAS app is configured with all the required environment variables, but if you want to further customize you container, click **Add** to the right of **Additional Environment Variables** for each to enter the variable(s) and values(s).
+The TrueNAS app is configured with all the required environment variables, but if you want to further customize the container, click **Add** to the right of **Additional Environment Variables** for each to enter the variable(s) and values(s).
 {{< /expand >}}
 Enter the network configuration settings. 
 Enter the default port **30027** in **WebUI Port**.
@@ -106,7 +106,7 @@ Enter the storage settings for each of the datasets created for the Nextcloud ap
 {{< expand "Configuring Nextcloud Storage" "v" >}}
 Do not select **DEPRECATED: Old Storage Structure** if you are deploying Nextcloud for the first time as this slows down the installation and is not necessary.
 If you are upgrading where your Nextcloud deployment in TrueNAS was a 1.x.x release, select this option.
-  
+  
 Set **Host Path (Path that already exists on the system)** in **Type** for **Nextcloud AppData Storage**.
 Select **Enable ACL**, and then either enter or browse to and select the **html** dataset to populate the **Host Path** field.
 
@@ -142,7 +142,7 @@ The following section provides more detailed explanations of the settings in eac
 {{< include file="/static/includes/apps/AppsWizardAppNameAndVersion.md" >}}
 
 ### Configuration Settings
-Nextcloud configuration settings include setting up credentials, ACT packages previously referred to as the commands, the host IP and port, data directory path, upload limits, execution times, memory limits and cache memory consuption, and adding a cron job with schedule, or adding additional environment variables.
+Nextcloud configuration settings include setting up credentials, ACT packages previously referred to as the commands, the host IP and port, data directory path, upload limits, execution times, memory limits and cache memory consumption, and adding a cron job with schedule, or adding additional environment variables.
 
 If you have an existing Nextcloud account add the credentials for that account in the **Admin User** and **Admin Password** fields.
 If you do not have an existing account enter the name and password you want to use to create the Nextcloud login credentials.
@@ -163,12 +163,12 @@ To configure the host, enter the IP address for the TrueNAS system where you ins
 **30027** is the default port assigned to the TrueNAS Nextcloud app deployment. See [Network Configuration](#network-configuration) for more information on this port assignment and how to change it if so desired.
 
 **Data Directory Path** shows the data directory where Nextcloud stores all files from the users.
-It is prepopulated with the default path inside the containter, which is **/var/www/html/data**. We recommend not changing this path.
+It is prepopulated with **/var/www/html/data**  which is the default path inside the container. We recommend not changing this path.
 
 Nextcloud Redis requires a password for access. If you have an existing Nextcloud account with Redis configured, enter that existing password here but if not, enter a password to use for Redis in Nextcloud.
 Nextcloud also requires a password to secure access to the database.
 If you have an existing Nextcloud account database with a password configured, enter it **Database Password**. If you do not have an existing database password enter a new password for the database. The default value is **nextcloud**.
-The TrueNAS Nextcloud app passes these password to Nextcloud.
+The TrueNAS Nextcloud app passes these passwords to Nextcloud.
 
 The **PHP Upload Limit (in GB)** applies a timeout to the client_max_body size in nginx, and the post_max_size and upload_max_filesize in PHP. Accept the default.
 
@@ -178,7 +178,7 @@ The **PHP Memory Limit (in MB)** sets a memory limit on PHP. The default is **51
 
 The **OP Cache Memory Consumption (in MB)** sets the size of the memory cache consumption. The default is **128**, with a range of 128 to 1024.
 
-If enabled, **Cron** shows the **Schedule** option. The default value is <b>*/5 * * * *</b>. Enter the schedule values to replace the astericks based upon your desired schedule.
+If enabled, **Cron** shows the **Schedule** option. The default value is <b>*/5 * * * *</b>. Enter the schedule values to replace the asterisks based on your desired schedule.
 
 {{< trueimage src="/images/SCALE/Apps/InstallNextcloudConfigCronSettings.png" alt="Configure Nextcloud Cron Settings" id="Configure Nextcloud Cron Settings" >}}
 
@@ -193,13 +193,13 @@ The default web port for Nextcloud is **30027**.
 {{< include file="/static/includes/apps/AppInstallWizardCertificateSettings.md" >}}
 
 **Nginx Configuration** setting, **Proxy Timeout**, applies the time out (in seconds) to proxy connection, and proxy send and receive.
-Default value is **60** with a miniumum of 30 seconds.
-Enable **Use different port for URL rewrites** to show the **External Port** setting. When enabled, the URL write uses the access port instead of the node port (default 9001).
+The default value is **60** with a minimum of 30 seconds.
+Enable **Use a different port for URL rewrites** to show the **External Port** setting. When enabled, the URL write uses the access port instead of the node port (default 9001).
 **External Port** default port is **443**.
 Nextcloud continues to listen on the node port.
 
 ### Storage Configuration
-TrueNAS provides two options for storage volumes, ixVolumes and host paths.
+TrueNAS provides two options for storage volumes: ixVolumes and host paths.
 
 {{< include file="/static/includes/apps/InstallAppsStorageConfig.md" >}}
 
@@ -228,11 +228,11 @@ Upgrading to 24.10 migrates earlier Nextcloud Kubernetes app deployments to the 
 To create the Nextcloud app datasets, go to **Datasets**, select the dataset you want to use as the parent dataset, then click **Add Dataset** to [add a dataset]({{< relref "DatasetsScale.md" >}}).
 In this example, we create the Nextcloud datasets under the root parent dataset **tank**.
 
-Enter **nextcloud** in **Name**, select **Apps** as the **Dataset Preset**.
+Enter **nextcloud** in **Name**, and select **Apps** as the **Dataset Preset**.
 Click **Advanced Options** if you want to make any other setting changes. Click **Save**.
 When prompted, select **Return to Pool List** to configure permissions later after adding the other three datasets, or open the ACL editor to edit ACL permissions immediately after adding the dataset.
 
-Next, select the **nextcloud** dataset, click **Add Dataset** to add the first child dataset.
+Next, select the **nextcloud** dataset, and click **Add Dataset** to add the first child dataset.
 Enter **html** in **Name** and select **Apps** as the **Dataset Preset**.
 Click **Advanced Options** if you want to make any other setting changes. Click **Save**.
 
@@ -250,7 +250,7 @@ When finished you should have the **nextcloud** parent dataset with three child 
 {{< include file="/static/includes/apps/AppInstallWizardACLConfiguration.md" >}}
 
 #### Mounting an SMB Share
-TrueNAS **Additional Storage** options includes the ability to mount an SMB share inside the container pod.
+TrueNAS **Additional Storage** options include the ability to mount an SMB share inside the container pod.
 
 {{< include file="/static/includes/apps/AppWizardStorageSMBOption.md" >}}
 
@@ -293,6 +293,3 @@ To do this:
 
 Finally, add the user **netdata** and group **docker** (999:999) to the **Postgres Data** and **Postgres Backup** datasets, following the same process.
 Within the Nextcloud container, the user and group 999 map to **postgres**.
-
-
-
