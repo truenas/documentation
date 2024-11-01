@@ -2133,3 +2133,5 @@ AppsSettingScreen
 tautulli
 UsingCustomApp
 CMD
+ExpandedVdevReporting
+InstallAppResourceConfigurationGPU
