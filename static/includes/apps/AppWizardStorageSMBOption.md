@@ -1,7 +1,5 @@
 &NewLine;
 
-Use the SMB option to data synchronization between the share and the app.
-
 Set **Type** an **SMB/CIFS Share (Mounts a volume to a SMB share)** to use add an SMB share storage volume.
 
 {{< trueimage src="/images/SCALE/Apps/InstallAppStorageConfigSMBOption.png" alt="SMB Share Option" id="SMB Share Option" >}}
@@ -14,5 +12,7 @@ Enter the server address for the SMB share in **Server**, the path to mount the 
 (Optional) enter the share domain name in **domain**.
 
 Permissions are currently limited to the permissions of the user that mounted the share.
+
+Use the SMB option to data synchronization between a share and the app if the option shows on the screen. A present, only the Syncthing app includes this option.
 <!-- Commenting this out until I can get it verified with devs/solutions team 
 Alternate data streams (metadata), finder colors tags, previews, resource forks, and MacOS metadata is stripped from the share along with file system permissions, but this functionality is undergoing active development and implementation planned for a future TrueNAS SCALE release.-->
