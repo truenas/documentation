@@ -53,7 +53,7 @@
             C["22.12.4.2 (Bluefin)"] -->|update| D
             D["23.10.2 (Cobia)"] -->|update| E
             E["24.04.2.3 (Dragonfish)"] -->|update| H
-            H["24.10.0 (Electric Eel)"]
+            H["24.10.0.1 (Electric Eel)"]
           {{< /mermaid >}}
         </div>
       </div>
@@ -68,7 +68,7 @@
             B["Current 23.10 (Cobia) release"] -->|update| C
             C["23.10.2 (Cobia)"] -->|update| D
             D["24.04.2.3 (Dragonfish)"]  -->|update| E
-            E["24.10.0 (Electric Eel)"]
+            E["24.10.0.1 (Electric Eel)"]
           {{< /mermaid >}}
         </div>
       </div>
