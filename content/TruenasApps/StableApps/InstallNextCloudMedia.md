@@ -32,27 +32,48 @@ Before you install the Nextcloud app:
 <p style="margin-left: 33px">Adding a certificate is optional but if you want to use a certificate for this application, either create a new self-signed CA and certificate or import an existing CA and create the certificate for Nextcloud. A certificate is not required to deploy the application.</p>
 
 * Go to **Datasets** and select the pool or dataset where you want to place the Nextcloud dataset.
- For example, */tank/apps/nextcloud* or */tank/nextcloud*.
- You can use either an existing pool or [create a new one]({{< relref "CreatePoolWizard.md" >}}).
+  For example, */tank/apps/nextcloud* or */tank/nextcloud*.
+  You can use either an existing pool or [create a new one]({{< relref "CreatePoolWizard.md" >}}).
 
- [Create the three dataset(s)]({{< relref "DatasetsSCALE.md" >}}) before beginning the app installation process.
- Nextcloud uses **html** for app data, **data** for app data, and **postgres_data** for the postgres storage volume.
- You can organize these dataset(s) under a parent dataset app to keep the storage datasets separated from the dataset for other potential applications.
- For example, create the *nextcloud* dataset and nest each dataset under it.
-  
- Configure dataset ACL permissions for the parent dataset when prompted after adding the dataset or by clicking **Edit** on the **Permissions** widget to open the **Edit ACL** screen.
- Add an ACE entry for the **netdata** user, giving it full permissions.
- You can configure ACL permissions for all Nextcloud datasets when prompted or configure them in the app installation wizard by selecting the **Enable ACL** option as you configure each app storage volume.
- See the sections below for details on which user ID and permissions settings to configure.
+  [Create the three dataset(s)]({{< relref "DatasetsSCALE.md" >}}) before beginning the app installation process.
+  Nextcloud uses **html** for app data, **data** for app data, and **postgres_data** for the postgres storage volume.
+  You can organize these datasets under a parent dataset to keep them separated from datasets for other potential applications.
+  For example, create the *nextcloud* dataset and nest each dataset under it.
+  If you organize the Nexcloud required datasets under a parent dataset you must configure ACL permissions for it.
+  When you add the **postgres_data** dataset, it must have a **POSIX** ACL.
 
- Earlier versions of the Nextcloud app relied on four datasets.
- If upgrading with an existing deployment of this application the app is migrated to the new configuration.
+  {{< expand "Configure Nextcoud Dataset ACLs" "v" >}}
+  You must configure the ACLs permissions for two datasets while on the **Datasets** screen: the parent dataset (i.e., the *nextcloud* dataset) and the **postgres_data** dataset.
+  You can configure ACL permissions for the Nextcloud **html** and **data** datasets when prompted or configure them in the app installation wizard as described in the installation section.
 
- If you want to mount other storage volumes inside the container pod using the host path option, create the dataset(s) before using the app installation wizard.
+  To configure the dataset ACL permissions from the **Datasets** screen, either select the **Set ACL for this dataset** option when prompted after adding the dataset or select the dataset row, and then click **Edit** on the **Permissions** widget to open the **Edit ACL** screen.
+
+  For the parent dataset, set the **owner** and **group** to **admin** or the name of your administration user account and click **Apply User** and **Apply Group**.
+  Next add an ACE entry for the **netdata** user and give it full permissions.
+
+  {{< trueimage src="/images/SCALE/Apps/AddNextcloudParentDatasetNetdataUserACL.png" alt="Add Nextcloud Parent Dataset ACL Permissions" id="Add Nextcloud Parent Dataset ACL Permissions" >}}
+
+  When adding the **postgres_data** dataset, enter the dataset name and then click **Advanced Options** to show the advanced dataset settings.
+  Scroll down to the **ACL Type** and select **POSIX** from the dropdown list, and then click **Save**.
+  Only the **postgres_data** dataset requires the POSIX ACL type setting.
+
+  {{< trueimage src="/images/SCALE/Apps/SetPostgres_dataACLtoPOSIX.png" alt="Set postgres_data Dataset ACL Type" id="Set postgres_data Dataset ACL Type" >}}
+
+  Click **Set ACL for this dataset** to open the **Edit ACL** screen.
+  Set the **owner** and **group** to **netdata** and click **Apply Owner** and **Apply Group**, and then with that ACL entry highlighted, assign full control permissions before you save the ACL.
+
+  {{< trueimage src="/images/SCALE/Apps/AddPostgres_DataACLPermissions.png" alt="Add Nextcloud postgres_data Dataset ACL Permissions" id="Add Nextcloud postgres_data Dataset ACL Permissions" >}}
+
+  {{< /expand >}}
+
+  Earlier versions of the Nextcloud app relied on four datasets.
+  If upgrading with an existing deployment of this application the app is migrated to the new configuration.
 
 {{< include file="/static/includes/apps/AppBeforeYouBeginNewUser.md" >}}
 
-* Set up an account with Nextcloud if you do not have one, and enter the credentials for this user account in the application install wizard as indicated below.
+* Set up a Nextcloud account.
+  If you have an existing Nextcloud account, you enter the credentials for that users in the installation wizard.
+  If do not have an existing Nextcloud account you can create the account from the application install wizard.
 
 ### Installing the Nextcoud App
 {{< hint info >}}
@@ -112,18 +133,18 @@ Select **Enable ACL**, and then either enter or browse to and select the **html*
 
 {{< trueimage src="/images/SCALE/Apps/InstallNextcloudStorageAppDataACLandACESettings.png" alt="Add Nextcloud Storage for AppData" id="Add Nextcloud Storage for AppData" >}}
 
-Select **Add** to the right of **ACL Entries** to add the **1001** user, listed as **netdata** on the **User** screen after selecting to show builtin-users, and give it **FULL_CONTROL Access**.
+Select **Add** to the right of **ACL Entries**, add the **1001** user, and give it **FULL_CONTROL Access**.
 
 Repeat this step for the **Nextcloud User Data Storage** storage volume.
 After setting **Type** to **Host Path (Path that already exists on the system)** and selecting **Enable ACL**, enter or browse to and select the **data** dataset.
-Select **Add** to the right of **ACL Entries** to add the **1001** user, listed as **netdata** on the **User** screen after selecting to show builtin-users, and give it **FULL_CONTROL Access**.
+Select **Add** to the right of **ACL Entries** to add the **1001** user, and give it **FULL_CONTROL Access**.
 
 {{< trueimage src="/images/SCALE/Apps/InstallNextcloudStorageDataACLandACESettings.png" alt="Add Nextcloud Storage Volumes" id="Add Nextcloud Storage Volumes" >}}
 
-Finally, set **Type** to **Host Path (Path that already exists on the system)** under **Nextcloud Postgres Data Storage**, select **Enable ACL**, and then either enter or browse to and select the **postgres_data** dataset to populate the **Host Path** field.
-Select **Add** to the right of **ACL Entries** to add the **999** user, listed as **netdata** on the **User** screen after selecting to show builtin-users, and give it **FULL_CONTROL Access**.
-
-{{< trueimage src="/images/SCALE/Apps/InstallNextcloudStoragePGDataACLandACESettings.png" alt="Add Nextcloud Storage for Postgres Data" id="Add Nextcloud Storage for Postgres Data" >}}
+Finally, set **Type** to **Host Path (Path that already exists on the system)** under **Nextcloud Postgres Data Storage**.
+Do not select **Enable ACL**!
+Either enter or browse to and select the **postgres_data** dataset to populate the **Host Path** field. Do not add an ACE entry for this dataset using the app installation wizard.
+ACL permissions are set for this dataset in the [Before You Begin](#before-you-begin) section in the **Configure Nextcoud Dataset ACLs** expandable section.
 {{< /expand >}}
 Accept the defaults in **Resources Configuration**, and select the GPU option if your system has a GPU installed.
 
@@ -210,7 +231,11 @@ Nextcloud needs three datasets for host path storage volume configurations:
 
 If you group these datasets under a parent dataset named *nextcloud*, configure the [ACL permissions]({{< relref "PermissionsSCALE.md" >}}) for this parent dataset and add an ACE entry for the **netdata** user.
 
-{{< trueimage src="/images/SCALE/Apps/AddNextcloudDatasetNetdataUserACL.png" alt="Configure Nextcloud Dataset ACL" id="Configure Nextcloud Dataset ACL" >}}
+The app installation wizard cannot set up the ACL type or correctly add user permissions for the postgres storage volume.
+You must configure these outside the install wizard using the **Add Dataset** and **Edit ACL** screens.
+When adding the **postgres_data** dataset set it up with a POSIX ACL, and add the **netdata** user as the owner user and group with full control permissions.
+
+See the instructions provided in the [Before You Begin](#before-you-begin) section for instructions on creating both the parent and postgres_data datasets and configuring the ACL permissions for each.
 
 {{< expand "Earlier Nextcloud Deployment Datasets" "v" >}}
 Earlier deployments of the Nextcloud app used five datasets, the parent dataset for the application (**nextcloud**) and the four child datasets:
