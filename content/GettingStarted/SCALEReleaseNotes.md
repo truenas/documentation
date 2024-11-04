@@ -52,11 +52,17 @@ More details are available from [Software Releases](https://www.truenas.com/docs
     A few applications might require manual migration steps, depending on the options enabled in 24.04.
     For more information, see the comments for [Home Assistant](https://github.com/truenas/apps/pull/492) and [Tailscale](https://github.com/truenas/apps/pull/641).
 
-    In the event of a migration failure, configuration data for applications that do not automatically migrate is retained in the ixapplications dataset.
-    You can re-initiate migration of previously-installed Kubernetes apps to Docker at any time after upgrading to Electric Eel.
-    From a shell session enter {{< cli >}}midclt call -job k8s_to_docker.migrate *poolname*{{< /cli >}}, where *poolname* is the name of the applications pool.
+    During the migration process, 24.10 takes a snapshot of the existing ix-applications dataset and clones it to a hidden dataset that is mounted at <file>/mnt/.ix-apps</file>.
+    The cloned dataset is then manipulated to convert the existing Kubernetes data to Docker syntax.
+
+    Because the previous ix-applications dataset is automatically cloned and retained, 24.10 maintains the ability to roll back to your previous Dragonfish installation.
+
+    You can re-initiate a failed migration of any previously-installed Kubernetes apps to Docker at any time after upgrading to Electric Eel.
+    From a shell session enter {{< cli >}}midclt call -job k8s_to_docker.migrate *poolname*{{< /cli >}}, where *poolname* is the name of the applications pool, for example *tank*.
 
     Custom applications installed using the TrueNAS UI in 24.04 automatically migrate on upgrade to 24.10.
+    Custom applications with nonstandard networking, such as an external interface attached, will migrate, but the interface configuration is discarded.
+    Users can either use the base networking as is or configure custom Docker networking using a YAML custom app deployment, Dockge, or Portainer.  
 
   * To prepare applications for migration, address the following configurations before upgrading to 24.10:  
   
@@ -143,6 +149,22 @@ Any new feature flags introduced since the previous OpenZFS version that was int
 
 For more details on feature flags, see [OpenZFS Feature Flags](https://openzfs.github.io/openzfs-docs/Basic%20Concepts/Feature%20Flags.html) and [OpenZFS zpool-feature.7](https://openzfs.github.io/openzfs-docs/man/7/zpool-features.7.html).
 
+## 24.10.0.1 Changelog
+
+**November 7, 2024**
+
+iXsystems is pleased to release TrueNAS 24.10.0.1!
+This is a hotpatch to address critical issues discovered in the 24.10.0 release, primarily affecting some TrueNAS Enterprise customers.
+
+Notable Changes:
+
+* Prevent empty critical bond interfaces on TrueNAS Enterprise HA systems ([NAS-132187](https://ixsystems.atlassian.net/browse/NAS-132187)).
+* 
+
+### 24.10.0.1 Known Issues
+
+Please see the 24.10.0 changelog below and use the Jira filter links to see the full changelog and known issues related to the 24.10.0 and 24.10.0.1 releases.
+
 ## 24.10.0 Changelog
 
 **October 29, 2024**
@@ -175,6 +197,8 @@ Notable changes:
 
 ### 24.10.0 Known Issues
 
+* Application **Update Available** tooltips display the current installed version as the available update version ([NAS-131747](https://ixsystems.atlassian.net/browse/NAS-131747)). A fix for this issue is expected in the 24.04.1 release version.
+* Installed custom applications do not alert for available updates in the TrueNAS UI ([NAS-132202](https://ixsystems.atlassian.net/browse/NAS-132202)). A fix for this issue is expected in the 24.04.1 release version.
 * Some users who have upgraded to 24.10.0 from a previous version, and who have applications with have NVIDIA GPU allocations, report the error `Expected [uuid] to be set for GPU inslot [<some pci slot>] in [nvidia_gpu_selection])` (see [NAS-132086](https://ixsystems.atlassian.net/browse/NAS-132086)).
 
   Users experiencing this error should follow the steps below for a one time fix that should not need to be repeated.
