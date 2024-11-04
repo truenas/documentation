@@ -43,11 +43,12 @@ More details are available from [Software Releases](https://www.truenas.com/docs
 
   * All applications available from official catalogs in 24.04 are available to install in 24.10.
     Supported catalog applications automatically migrate to Docker deployments on upgrade from from 24.04 (Dragonfish) to Electric Eel.
+    See the chart below for guidance concerning applications from third-party catalogs, such as TrueCharts.
   
   * Custom applications based on Docker images can be installed using the installation wizard or a Docker Compose YAML file.
     See [Installing Custom Applications](https://www.truenas.com/docs/truenasapps/usingcustomapp/) for more information.
   
-  * Automatic app migration on upgrade from 24.04 is at parity for all catalog applications.
+  * Automatic app migration on upgrade from 24.04 is at parity for all official catalog applications.
     A few applications might require manual migration steps, depending on the options enabled in 24.04.
     For more information, see the comments for [Home Assistant](https://github.com/truenas/apps/pull/492) and [Tailscale](https://github.com/truenas/apps/pull/641).
 
@@ -62,6 +63,7 @@ More details are available from [Software Releases](https://www.truenas.com/docs
     {{< truetable >}}
   | Configuration | Action Needed |
   |-----------|-------------|
+  | Outdated Applications | Update all applications to the latest available version in the TrueNAS catalog before migrating. |
   | Host Path ACLs | Users with applications installed on 24.04 using host path volume mounts and **ACL Entries** defined in the app configuration screen must go to the app edit screen and set the **Force Flag** checkbox under **ACL Options** before updating to 24.10. This ensures the app fully migrates and doesn't encounter issues when the mount point has existing data. |
   | Encrypted Root Dataset | Applications do not migrate to 24.10 if the ix-applications dataset is configured on a pool with an encrypted root dataset (see [NAS-131561](https://ixsystems.atlassian.net/browse/NAS-131561)). Relocate installed applications to an unencrypted pool on 24.04 before attempting to upgrade to 24.10. |
   | Third Party Applications | Applications from third-party catalogs, such as TrueCharts, do not support automatic migration to 24.10. Migration of third-party applications generally requires manual data backup and redeployment.<br><br>Third-party catalogs are provided, maintained, and supported by individuals or organizations outside of iXsystems. Refer to the catalog maintainer or the [TrueNAS Community forums](https://forums.truenas.com/) for migration support. |
@@ -173,6 +175,17 @@ Notable changes:
 
 ### 24.10.0 Known Issues
 
+* Some users who have upgraded to 24.10.0 from a previous version, and who have applications with have NVIDIA GPU allocations, report the error `Expected [uuid] to be set for GPU inslot [<some pci slot>] in [nvidia_gpu_selection])` (see [NAS-132086](https://ixsystems.atlassian.net/browse/NAS-132086)).
+
+  Users experiencing this error should follow the steps below for a one time fix that should not need to be repeated.
+
+  Connect to a shell session and retrieve the UUID for each GPU with the command `midclt call app.gpu_choices | jq`.
+
+  For each application that experiences the error, run `midclt call -job app.update APP_NAME '{"values": {"resources": {"gpus": {"use_all_gpus": false, "nvidia_gpu_selection": {"PCI_SLOT": {"use_gpu": true, "uuid": "GPU_UUID"}}}}}}'`
+  Where:
+    * `APP_NAME` is the name you entered in the application, for example “plex”.
+    * `PCI_SLOT` is the pci slot identified in the error, for example "0000:2d:00.0”.
+    * `GPU_UUID` is the UUID matching the pci slot that you retrieved with the above command.
 * Drives that have been formatted with previous TrueNAS versions can show exported pools in the TrueNAS UI ([NAS-131890](https://ixsystems.atlassian.net/browse/NAS-131890)). This is typically due to obsolete filesystem labels in the boot drives still being detected by TrueNAS. The underlying bug is fixed in 24.10.0-RC.2 and newer, but these labels can remain on boot drives used with previous TrueNAS releases. Removing these labels from the boot drives requires backing up your TrueNAS configuration, reinstalling 24.10.0 fresh on the boot drives, then restoring the TrueNAS configuration.
 * If TrueNAS is updated to 24.10.0 from a previous 24.10 release candidate version and the **Install Nvidia Drivers** option is selected, TrueNAS downloads and installs drivers to the upgraded OS in the background before starting the Applications service ([NAS-132070](https://ixsystems.atlassian.net/browse/NAS-132070)).
   This can be a lengthy process with no UI progress feedback.
