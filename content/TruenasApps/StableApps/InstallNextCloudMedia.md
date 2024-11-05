@@ -37,19 +37,23 @@ Before you install the Nextcloud app:
 
   [Create the three dataset(s)]({{< relref "DatasetsSCALE.md" >}}) before beginning the app installation process.
   Nextcloud uses **html** for app data, **data** for app data, and **postgres_data** for the postgres storage volume.
+  Earlier versions of the Nextcloud app relied on four datasets.
+  If upgrading with an existing deployment of this application the app is migrated to the new configuration.
+  
   You can organize these datasets under a parent dataset to keep them separated from datasets for other potential applications.
   For example, create the *nextcloud* dataset and nest each dataset under it.
-  If you organize the Nexcloud required datasets under a parent dataset you must configure ACL permissions for it.
+  If you organize the Nextcloud required datasets under a parent dataset you must configure ACL permissions for it.
   When you add the **postgres_data** dataset, it must have a **POSIX** ACL.
 
-  {{< expand "Configure Nextcoud Dataset ACLs" "v" >}}
+  {{< expand "Configure Nextcloud Dataset ACLs" "v" >}}
   You must configure the ACLs permissions for two datasets while on the **Datasets** screen: the parent dataset (i.e., the *nextcloud* dataset) and the **postgres_data** dataset.
   You can configure ACL permissions for the Nextcloud **html** and **data** datasets when prompted or configure them in the app installation wizard as described in the installation section.
 
   To configure the dataset ACL permissions from the **Datasets** screen, either select the **Set ACL for this dataset** option when prompted after adding the dataset or select the dataset row, and then click **Edit** on the **Permissions** widget to open the **Edit ACL** screen.
 
-  For the parent dataset, set the **owner** and **group** to **admin** or the name of your administration user account and click **Apply User** and **Apply Group**.
+  For the parent dataset, set the **owner** and **group** to **admin** or the name of your administration user account and click **Apply Owner** and **Apply Group**.
   Next add an ACE entry for the **netdata** user and give it full permissions.
+  Click **Save Access Control List**.
 
   {{< trueimage src="/images/SCALE/Apps/AddNextcloudParentDatasetNetdataUserACL.png" alt="Add Nextcloud Parent Dataset ACL Permissions" id="Add Nextcloud Parent Dataset ACL Permissions" >}}
 
@@ -61,13 +65,12 @@ Before you install the Nextcloud app:
 
   Click **Set ACL for this dataset** to open the **Edit ACL** screen.
   Set the **owner** and **group** to **netdata** and click **Apply Owner** and **Apply Group**, and then with that ACL entry highlighted, assign full control permissions before you save the ACL.
+  Click **Save Access Control List**.
 
   {{< trueimage src="/images/SCALE/Apps/AddPostgres_DataACLPermissions.png" alt="Add Nextcloud postgres_data Dataset ACL Permissions" id="Add Nextcloud postgres_data Dataset ACL Permissions" >}}
 
   {{< /expand >}}
 
-  Earlier versions of the Nextcloud app relied on four datasets.
-  If upgrading with an existing deployment of this application the app is migrated to the new configuration.
 
 {{< include file="/static/includes/apps/AppBeforeYouBeginNewUser.md" >}}
 
@@ -75,7 +78,7 @@ Before you install the Nextcloud app:
   If you have an existing Nextcloud account, you enter the credentials for that users in the installation wizard.
   If do not have an existing Nextcloud account you can create the account from the application install wizard.
 
-### Installing the Nextcoud App
+### Installing the Nextcloud App
 {{< hint info >}}
 This basic procedure covers the required Nextcloud app settings.
 For optional settings, see [Understanding App Installation Wizard Settings](#understanding-app-installation-wizard-settings).
@@ -119,9 +122,10 @@ For more information on formatting and using cron jobs, see [Managing Cron Jobs]
 The TrueNAS app is configured with all the required environment variables, but if you want to further customize the container, click **Add** to the right of **Additional Environment Variables** for each to enter the variable(s) and values(s).
 {{< /expand >}}
 Enter the network configuration settings. 
-Enter the default port **30027** in **WebUI Port**.
+Enter an open port number or accept the default port, **30027**, in **WebUI Port**.
+This port must match the one used in **Host** above.
 
-If you configured a certificate, select it in **Certificate ID**. A certificate is required if you want to select a different external port.
+If you configured a certificate, select it in **Certificate ID**. A certificate is required if you want to select an external port other than the default **30027**.
 
 Enter the storage settings for each of the datasets created for the Nextcloud app.
 {{< expand "Configuring Nextcloud Storage" "v" >}}
@@ -144,9 +148,9 @@ Select **Add** to the right of **ACL Entries** to add the **1001** user, and giv
 Finally, set **Type** to **Host Path (Path that already exists on the system)** under **Nextcloud Postgres Data Storage**.
 Do not select **Enable ACL**!
 Either enter or browse to and select the **postgres_data** dataset to populate the **Host Path** field. Do not add an ACE entry for this dataset using the app installation wizard.
-ACL permissions are set for this dataset in the [Before You Begin](#before-you-begin) section in the **Configure Nextcoud Dataset ACLs** expandable section.
+ACL permissions are set for this dataset in the [Before You Begin](#before-you-begin) section in the **Configure Nextcloud Dataset ACLs** expandable section.
 {{< /expand >}}
-Accept the defaults in **Resources Configuration**, and select the GPU option if your system has a GPU installed.
+Accept the defaults in **Resources Configuration**, and select the GPU option if applicable.
 
 Click **Install**. A progress dialog displays before switching to the **Installed** applications screen.
 The **Installed** screen displays with the **nextcloud** app in the **Deploying** state. Status changes to **Running** when ready to use.
@@ -163,7 +167,7 @@ The following section provides more detailed explanations of the settings in eac
 {{< include file="/static/includes/apps/AppsWizardAppNameAndVersion.md" >}}
 
 ### Configuration Settings
-Nextcloud configuration settings include setting up credentials, ACT packages previously referred to as the commands, the host IP and port, data directory path, upload limits, execution times, memory limits and cache memory consumption, and adding a cron job with schedule, or adding additional environment variables.
+Nextcloud configuration settings include setting up credentials, ACT packages (previously referred to as the commands), the host IP and port, data directory path, upload limits, execution times, memory limits and cache memory consumption, adding a cron job with schedule, and adding additional environment variables.
 
 If you have an existing Nextcloud account add the credentials for that account in the **Admin User** and **Admin Password** fields.
 If you do not have an existing account enter the name and password you want to use to create the Nextcloud login credentials.
@@ -238,7 +242,7 @@ When adding the **postgres_data** dataset set it up with a POSIX ACL, and add th
 See the instructions provided in the [Before You Begin](#before-you-begin) section for instructions on creating both the parent and postgres_data datasets and configuring the ACL permissions for each.
 
 {{< expand "Earlier Nextcloud Deployment Datasets" "v" >}}
-Earlier deployments of the Nextcloud app used five datasets, the parent dataset for the application (**nextcloud**) and the four child datasets:
+Earlier deployments of the Nextcloud app use five datasets, the parent dataset for the application (**nextcloud**) and the four child datasets:
 * **appdata** that contains HTML, apps, custom_themes, config, etc.
 * **userdata** that contains the actual files uploaded by the user
 * **pgdata** that contains the database files.
