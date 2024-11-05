@@ -71,7 +71,7 @@ The **Shares** screen also provides options to add an SMB or NFS share and creat
 
 {{< hint type="warning" title="Sharing the Root Dataset" >}}
 Do not set up sharing on the root dataset!
-Creating a share that uses the root dataset causes all sorts of problems with permissions, and is not a best practice.
+Creating a share that uses the root dataset causes all types of problems with permissions, and is not a best practice.
 Rather, create or select a dataset that is a child of the root dataset and that is specifically created to share.
 {{< /hint >}}
 
