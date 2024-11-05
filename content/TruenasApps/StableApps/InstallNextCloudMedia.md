@@ -247,7 +247,7 @@ Earlier deployments of the Nextcloud app used five datasets, the parent dataset 
 Upgrading to 24.10 migrates earlier Nextcloud Kubernetes app deployments to the current Docker Compose configuration.
 {{< /expand >}}
 {{< include file="/static/includes/apps/InstallAppsStorageConfig2.md" >}}
-<p style="margin-left: 18px">See **Mounting an SMB Share** below for details.</p>
+See **Mounting an SMB Share** below for details.
 
 {{< expand "Creating App Datasets" "v" >}}
 To create the Nextcloud app datasets, go to **Datasets**, select the dataset you want to use as the parent dataset, then click **Add Dataset** to [add a dataset]({{< relref "DatasetsScale.md" >}}).

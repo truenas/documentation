@@ -1,6 +1,6 @@
 &NewLine;
 
-The app app wizard is configured with all settings required to deploy the container, but you can add additional settings if you want to further customize the app in TrueNAS.
+The app wizard is configured with all settings required to deploy the container, but you can add additional settings if you want to further customize the app in TrueNAS.
 
 {{< trueimage src="/images/SCALE/Apps/InstallSyncthingEnterpirseAddEnvironmentVariables.png" alt="Add Syncthing Environment Variables" id="Add Syncthing Environment Variables" >}}
 
