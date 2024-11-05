@@ -1,6 +1,6 @@
 ---
 title: "Jellyfin"
-description: "Provides installation instructions for the Jellyfin application."
+description: "Provides installation instructions for the Jellyfin application in TrueNAS."
 weight: 
 aliases:
  - /scale/scaletutorials/apps/communityapps/jellyfin/
@@ -12,6 +12,11 @@ keywords:
 - software storage solutions
 - flash storage
 ---
+
+{{< include file="/static/includes/apps/CommunityApp.md" >}}
+
+<!--Comment or remove the following line if your PR changes provide a complete, up-to-date, and working installation tutorial -->
+{{< include file=\"/static/includes/apps/CommunityPleaseImprove.md\" >}}
 
 [Jellyfin](https://jellyfin.org/) is a volunteer-built media solution that puts you in control of managing and streaming your media.
 
