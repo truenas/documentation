@@ -91,12 +91,12 @@ To prepare applications for migration from Kubernetes to Docker, address the fol
 | Configuration | Action Needed |
 |-----------|-------------|
 | Outdated Applications | Update all applications to the latest available version in the TrueNAS catalog before migrating. |
-| Host Path ACLs | Users with applications installed on 24.04 using host path volume mounts and **ACL Entries** defined in the app configuration screen must go to the app edit screen and set the **Force Flag** checkbox under **ACL Options** before updating to 24.10. This ensures the app fully migrates and doesn't encounter issues when the mount point has existing data. |
+| Host Path ACLs | Users with applications installed on 24.04 using host path volume mounts with **Enable ACL** selected and **ACL Entries** defined in the app configuration, must go to the **Edit *Application*** screen and set the [**Force Flag** checkbox under **ACL Options**](https://www.truenas.com/docs/scale/24.04/scaletutorials/apps/#storage-configuration-settings) before updating to 24.10. This ensures the app fully migrates and doesn't encounter issues when the mount point has existing data. |
 | Encrypted Root Dataset | Applications do not migrate to 24.10 if the ix-applications dataset is configured on a pool with an encrypted root dataset (see [NAS-131561](https://ixsystems.atlassian.net/browse/NAS-131561)). Relocate installed applications to an unencrypted pool on 24.04 before attempting to upgrade to 24.10. |
 | Third Party Applications | Applications from third-party catalogs, such as TrueCharts, do not support automatic migration to 24.10. Migration of third-party applications generally requires manual data backup and redeployment.<br><br>Third-party catalogs are provided, maintained, and supported by individuals or organizations outside of iXsystems. Refer to the catalog maintainer or the [TrueNAS Community forums](https://forums.truenas.com/) for migration support. |
 | Container Dependent Network Settings | Applications will not migrate if TrueNAS network settings are configured to depend on any client container or application hosted on the TrueNAS system, such as DNS services, proxy networks, firewalls, and routers (see [NAS-131553](https://ixsystems.atlassian.net/browse/NAS-131553)). This is an unsupported configuration because TrueNAS cannot access the necessary networks during boot if the client container has not started. |
 {{< /truetable >}}
-  
+
 ### Upgrade Paths
 
 {{< include file="/static/includes/24.10UpgradeMethods.md" >}}
@@ -163,8 +163,13 @@ This is a hotpatch release to address a small number of critical issues discover
 
 Notable Changes:
 
+* Fix memory consumption related to SMB AIO reads ([NAS-132166](https://ixsystems.atlassian.net/browse/NAS-132166)).
+* Fix disk.sync_all edge-case crash ([NAS-132177](https://ixsystems.atlassian.net/browse/NAS-132177)).
+* Fix libzfs errors in py-libzfs in electric eel are out of sync with libzfs ([NAS-132126](https://ixsystems.atlassian.net/browse/NAS-132126)).
 * Prevent empty critical bond interfaces on TrueNAS Enterprise HA systems ([NAS-132187](https://ixsystems.atlassian.net/browse/NAS-132187)).
-* 
+* Fix HA logic bug to ensure marked critical interfaces are treated as critical ([NAS-132115](https://ixsystems.atlassian.net/browse/NAS-132115)).
+* Prevent SED Pool Degraded after Power Loss ([NAS-129366](https://ixsystems.atlassian.net/browse/NAS-129366)).
+* Fix TrueNAS ES24 enclosure management bug ([NAS-132067](https://ixsystems.atlassian.net/browse/NAS-132067)).
 
 ### 24.10.0.1 Known Issues
 
