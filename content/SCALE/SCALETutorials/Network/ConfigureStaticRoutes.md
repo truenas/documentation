@@ -7,7 +7,7 @@ tags:
 - staticroutes
 ---
 
-TrueNAS does not pre-defined static routes by default but TrueNAS administrators can manually add static routes if they want or need to enter routes to a router to send packets to a destination network.
+TrueNAS does not pre-define static routes by default, but TrueNAS administrators can manually add static routes if they want or need to enter routes to a router to send packets to a destination network.
 
 Static routes are not aliases, they are fixed IP addresses assigned as alternative routes for network traffic sent to a specific destination (server, device) in the network.
 
