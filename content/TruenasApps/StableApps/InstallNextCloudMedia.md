@@ -102,16 +102,18 @@ If using an existing Nextcloud account, enter the administration credentials for
 
 Select the APT packages you want to use. Nextcloud requires ffmpeg and smbclient. Click **Add** to the right of **APT Packages** twice to add two sets of **Package** fields.
 Select **ffmpeg** in one, and **smbclient** in the other.
-If also selecting **ocrmypdf**, also select the **Tesseract Language Codes** option you want to use. Click **Add** to show the **Language** field then select either **chi-sim** for simplified Chinese or **eng** for English.
+If also selecting **ocrmypdf**, also set the **Tesseract Language Codes** option to use.
+Click **Add** to show the **Language** field then enter either **chi-sim** for simplified Chinese or **eng** for English.
 
-Enter the IP address and port for your TrueNAS system in **Host** as* ##.###.###.##:port#*. The **Data Directory Path** is pre-populated with the correct path.
+Enter either the fully qualified domain name or the IP address and port for your TrueNAS system in **Host** as *##.###.###.##:port#* or *my.domain.com:port#*.
+The **Data Directory Path** is pre-populated with the correct path.
 
 {{< trueimage src="/images/SCALE/Apps/InstallNextcloudConfig2.png" alt="Enter Host and Other Config Settings" id="Enter Host and Other Config Settings" >}}
 
 Enter a password in **Redis Password** to create a new credential or enter the existing password if you already have Redis configured in your Nextcloud account.
 Enter a password in **Database Password** to create a new credential for the Nextcloud database or enter the existing password if you already have the Nextcloud account database configured.
 
-Accept the remaining defaults, and if setting up a cron job schedule, select **Enabled** under **Cron** to show the settings to allow you to schedule a cron job.
+Accept the remaining defaults in the **Nextcloud Configuration** section, but if setting up a cron job schedule, select **Enabled** under **Cron** to show the settings to allow you to schedule a cron job.
 
 {{< expand "Nextcloud Cron Jobs" "v" >}}
 NextCloud cron jobs only run while the app is running. If you stop the app, the cron job(s) do not run until you start the app again.
@@ -122,7 +124,8 @@ For more information on formatting and using cron jobs, see [Managing Cron Jobs]
 The TrueNAS app is configured with all the required environment variables, but if you want to further customize the container, click **Add** to the right of **Additional Environment Variables** for each to enter the variable(s) and values(s).
 {{< /expand >}}
 Enter the network configuration settings. 
-Enter an open port number or accept the default port, **30027**, in **WebUI Port**.
+Enter the default port, **30027**, in **WebUI Port**, or enter an available port number of your choice.
+See [Network Configuration](#network-configuration) below for more information on changing the default port.
 This port must match the one used in **Host** above.
 
 If you configured a certificate, select it in **Certificate ID**. A certificate is required if you want to select an external port other than the default **30027**.
@@ -138,10 +141,11 @@ Select **Enable ACL**, and then either enter or browse to and select the **html*
 {{< trueimage src="/images/SCALE/Apps/InstallNextcloudStorageAppDataACLandACESettings.png" alt="Add Nextcloud Storage for AppData" id="Add Nextcloud Storage for AppData" >}}
 
 Select **Add** to the right of **ACL Entries**, add the **1001** user, and give it **FULL_CONTROL Access**.
+Select **Force Flag**.
 
 Repeat this step for the **Nextcloud User Data Storage** storage volume.
 After setting **Type** to **Host Path (Path that already exists on the system)** and selecting **Enable ACL**, enter or browse to and select the **data** dataset.
-Select **Add** to the right of **ACL Entries** to add the **1001** user, and give it **FULL_CONTROL Access**.
+Select **Add** to the right of **ACL Entries** to add the **1001** user, and give it **FULL_CONTROL Access**. Select **Force Flag**
 
 {{< trueimage src="/images/SCALE/Apps/InstallNextcloudStorageDataACLandACESettings.png" alt="Add Nextcloud Storage Volumes" id="Add Nextcloud Storage Volumes" >}}
 
