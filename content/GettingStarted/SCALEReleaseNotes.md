@@ -43,7 +43,8 @@ More details are available from [Software Releases](https://www.truenas.com/docs
 
   * All applications available from official catalogs in 24.04 are available to install in 24.10.
     Supported catalog applications automatically migrate to Docker deployments on upgrade from from 24.04 (Dragonfish) to Electric Eel.
-    See the chart below for guidance concerning applications from third-party catalogs, such as TrueCharts.
+    Applications from third-party catalogs, such as TrueCharts, do not automatically migrate to 24.10.
+    See [Preparing for App Migration](#preparing-for-app-migration) below for more information.
   
   * Custom applications based on Docker images can be installed using the installation wizard or a Docker Compose YAML file.
     See [Installing Custom Applications](https://www.truenas.com/docs/truenasapps/usingcustomapp/) for more information.
@@ -52,10 +53,12 @@ More details are available from [Software Releases](https://www.truenas.com/docs
     A few applications might require manual migration steps, depending on the options enabled in 24.04.
     For more information, see the comments for [Home Assistant](https://github.com/truenas/apps/pull/492) and [Tailscale](https://github.com/truenas/apps/pull/641).
 
-    During the migration process, 24.10 takes a snapshot of the existing ix-applications dataset and clones it to a hidden dataset that is mounted at <file>/mnt/.ix-apps</file>.
-    The cloned dataset is then manipulated to convert the existing Kubernetes data to Docker syntax.
+    During the migration process, 24.10 creates a hidden Docker dataset on the apps pool that is mounted at <file>/mnt/.ix-apps</file>.
+    TrueNAS then reads the stored Kubernetes app data in the previous <file>ix-applications</file> dataset, ports them to Docker, and saves them in the new Docker dataset.
 
-    Because the previous ix-applications dataset is automatically cloned and retained, 24.10 maintains the ability to roll back to your previous Dragonfish installation.
+    App storage ix-volumes present in ix-applications are cloned under the new Docker dataset and promoted.
+
+    Because the previous ix-applications dataset is retained as is, 24.10 maintains the ability to roll back to your previous Dragonfish installation.
 
     You can re-initiate a failed migration of any previously-installed Kubernetes apps to Docker at any time after upgrading to Electric Eel.
     From a shell session enter {{< cli >}}midclt call -job k8s_to_docker.migrate *poolname*{{< /cli >}}, where *poolname* is the name of the applications pool, for example *tank*.
@@ -63,18 +66,6 @@ More details are available from [Software Releases](https://www.truenas.com/docs
     Custom applications installed using the TrueNAS UI in 24.04 automatically migrate on upgrade to 24.10.
     Custom applications with nonstandard networking, such as an external interface attached, will migrate, but the interface configuration is discarded.
     Users can either use the base networking as is or configure custom Docker networking using a YAML custom app deployment, Dockge, or Portainer.  
-
-  * To prepare applications for migration, address the following configurations before upgrading to 24.10:  
-  
-    {{< truetable >}}
-  | Configuration | Action Needed |
-  |-----------|-------------|
-  | Outdated Applications | Update all applications to the latest available version in the TrueNAS catalog before migrating. |
-  | Host Path ACLs | Users with applications installed on 24.04 using host path volume mounts and **ACL Entries** defined in the app configuration screen must go to the app edit screen and set the **Force Flag** checkbox under **ACL Options** before updating to 24.10. This ensures the app fully migrates and doesn't encounter issues when the mount point has existing data. |
-  | Encrypted Root Dataset | Applications do not migrate to 24.10 if the ix-applications dataset is configured on a pool with an encrypted root dataset (see [NAS-131561](https://ixsystems.atlassian.net/browse/NAS-131561)). Relocate installed applications to an unencrypted pool on 24.04 before attempting to upgrade to 24.10. |
-  | Third Party Applications | Applications from third-party catalogs, such as TrueCharts, do not support automatic migration to 24.10. Migration of third-party applications generally requires manual data backup and redeployment.<br><br>Third-party catalogs are provided, maintained, and supported by individuals or organizations outside of iXsystems. Refer to the catalog maintainer or the [TrueNAS Community forums](https://forums.truenas.com/) for migration support. |
-  | Container Dependent Network Settings | Applications will not migrate if TrueNAS network settings are configured to depend on any client container or application hosted on the TrueNAS system, such as DNS services, proxy networks, firewalls, and routers (see [NAS-131553](https://ixsystems.atlassian.net/browse/NAS-131553)). This is an unsupported configuration because TrueNAS cannot access the necessary networks during boot if the client container has not started. |
-    {{< /truetable >}}
 
 * Starting in 24.10, TrueNAS does not include a default NVIDIA GPU driver and instead provides a simple NVIDIA driver download option in the web interface.
   This allows for driver updates between TrueNAS release versions.
@@ -91,6 +82,20 @@ More details are available from [Software Releases](https://www.truenas.com/docs
 
 * SMB audit log entries are omitted by default from the **System > Audit** screen.
   To view SMB audit results, go to **System > Services** and click <i class="material-icons" aria-hidden="true" title="Audit Logs">receipt_long</i> **Audit Logs** for the SMB service or use advanced search on the main **Audit** screen to query SMB events.
+
+### Preparing for App Migration
+
+To prepare applications for migration from Kubernetes to Docker, address the following configurations before upgrading to 24.10:  
+  
+{{< truetable >}}
+| Configuration | Action Needed |
+|-----------|-------------|
+| Outdated Applications | Update all applications to the latest available version in the TrueNAS catalog before migrating. |
+| Host Path ACLs | Users with applications installed on 24.04 using host path volume mounts and **ACL Entries** defined in the app configuration screen must go to the app edit screen and set the **Force Flag** checkbox under **ACL Options** before updating to 24.10. This ensures the app fully migrates and doesn't encounter issues when the mount point has existing data. |
+| Encrypted Root Dataset | Applications do not migrate to 24.10 if the ix-applications dataset is configured on a pool with an encrypted root dataset (see [NAS-131561](https://ixsystems.atlassian.net/browse/NAS-131561)). Relocate installed applications to an unencrypted pool on 24.04 before attempting to upgrade to 24.10. |
+| Third Party Applications | Applications from third-party catalogs, such as TrueCharts, do not support automatic migration to 24.10. Migration of third-party applications generally requires manual data backup and redeployment.<br><br>Third-party catalogs are provided, maintained, and supported by individuals or organizations outside of iXsystems. Refer to the catalog maintainer or the [TrueNAS Community forums](https://forums.truenas.com/) for migration support. |
+| Container Dependent Network Settings | Applications will not migrate if TrueNAS network settings are configured to depend on any client container or application hosted on the TrueNAS system, such as DNS services, proxy networks, firewalls, and routers (see [NAS-131553](https://ixsystems.atlassian.net/browse/NAS-131553)). This is an unsupported configuration because TrueNAS cannot access the necessary networks during boot if the client container has not started. |
+{{< /truetable >}}
   
 ### Upgrade Paths
 
@@ -154,7 +159,7 @@ For more details on feature flags, see [OpenZFS Feature Flags](https://openzfs.g
 **November 7, 2024**
 
 iXsystems is pleased to release TrueNAS 24.10.0.1!
-This is a hotpatch to address critical issues discovered in the 24.10.0 release, primarily affecting some TrueNAS Enterprise customers.
+This is a hotpatch release to address a small number of critical issues discovered in the 24.10.0 release.
 
 Notable Changes:
 
