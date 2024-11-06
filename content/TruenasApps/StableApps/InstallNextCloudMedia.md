@@ -172,7 +172,7 @@ The following section provides more detailed explanations of the settings in eac
 {{< include file="/static/includes/apps/AppsWizardAppNameAndVersion.md" >}}
 
 ### Nextcloud Configuration Settings
-Nextcloud configuration settings include setting up credentials, ACT packages (previously referred to as the commands), the host IP and port, data directory path, upload limits, execution times, memory limits and cache memory consumption, adding a cron job with schedule, and adding additional environment variables.
+Nextcloud configuration settings include setting up credentials, APT packages (previously referred to as the commands), the host IP and port, data directory path, upload limits, execution times, memory limits and cache memory consumption, adding a cron job with schedule, and adding additional environment variables.
 
 If you have an existing Nextcloud account add the credentials for that account in the **Admin User** and **Admin Password** fields.
 If you do not have an existing account enter the name and password you want to use to create the Nextcloud login credentials.
