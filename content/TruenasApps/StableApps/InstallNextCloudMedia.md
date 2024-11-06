@@ -141,12 +141,12 @@ Select **Enable ACL**, and then either enter or browse to and select the **html*
 
 {{< trueimage src="/images/SCALE/Apps/InstallNextcloudStorageAppDataACLandACESettings.png" alt="Add Nextcloud Storage for AppData" id="Add Nextcloud Storage for AppData" >}}
 
-Select **Add** to the right of **ACL Entries**, add the **1001** user, and give it **FULL_CONTROL Access**.
+Select **Add** to the right of **ACL Entries**, add the **33** user, and give it **FULL_CONTROL Access**.
 Select **Force Flag**.
 
 Repeat this step for the **Nextcloud User Data Storage** storage volume.
 After setting **Type** to **Host Path (Path that already exists on the system)** and selecting **Enable ACL**, enter or browse to and select the **data** dataset.
-Select **Add** to the right of **ACL Entries** to add the **1001** user, and give it **FULL_CONTROL Access**. Select **Force Flag**
+Select **Add** to the right of **ACL Entries** to add the **33** user, and give it **FULL_CONTROL Access**. Select **Force Flag**
 
 {{< trueimage src="/images/SCALE/Apps/InstallNextcloudStorageDataACLandACESettings.png" alt="Add Nextcloud Storage Volumes" id="Add Nextcloud Storage Volumes" >}}
 
