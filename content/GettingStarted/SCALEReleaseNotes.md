@@ -207,8 +207,8 @@ Notable changes:
 
 ### 24.10.0 Known Issues
 
-* Application **Update Available** tooltips display the current installed version as the available update version ([NAS-131747](https://ixsystems.atlassian.net/browse/NAS-131747)). A fix for this issue is expected in the 24.04.1 release version.
-* Installed custom applications do not alert for available updates in the TrueNAS UI ([NAS-132202](https://ixsystems.atlassian.net/browse/NAS-132202)). A fix for this issue is expected in the 24.04.1 release version.
+* Application **Update Available** tooltips display the current installed version as the available update version ([NAS-131747](https://ixsystems.atlassian.net/browse/NAS-131747)). A fix for this issue is expected in the 24.10.1 release version.
+* Installed custom applications do not alert for available updates in the TrueNAS UI ([NAS-132202](https://ixsystems.atlassian.net/browse/NAS-132202)). A fix for this issue is expected in the 24.10.1 release version.
 * Some users who have upgraded to 24.10.0 from a previous version, and who have applications with have NVIDIA GPU allocations, report the error `Expected [uuid] to be set for GPU inslot [<some pci slot>] in [nvidia_gpu_selection])` (see [NAS-132086](https://ixsystems.atlassian.net/browse/NAS-132086)).
 
   Users experiencing this error should follow the steps below for a one time fix that should not need to be repeated.
