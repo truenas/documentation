@@ -1,6 +1,6 @@
 ---
 title: "Rsync Daemon"
-description: "Installation and basic usage instructions for the Rsync Daemon application."
+description: "Installation and basic usage instructions for the Rsync Daemon application in TrueNAS."
 weight:
 aliases:
  - /scale/scaletutorials/apps/rsyncd/
@@ -15,6 +15,11 @@ keywords:
 - software storage solutions
 - backup and recovery
 ---
+
+{{< include file="/static/includes/apps/CommunityApp.md" >}}
+
+<!--Comment or remove the following line if your PR changes provide a complete, up-to-date, and working installation tutorial -->
+{{< include file=\"/static/includes/apps/CommunityPleaseImprove.md\" >}}
 
 {{< hint type="important" >}}
 This application in not needed when rsync is configured externally with SSH or with the [TrueNAS built-in rsync task in SSH mode]({{< relref "RsyncTasksSCALE.md" >}}).

@@ -78,11 +78,7 @@ After making the changes, click **Save**.
 
 Test the change as described in [Testing Network Interface Changes](#testing-network-interface-changes).
 
-{{< hint type=warning >}}
-If you delete the primary network interface you can lose your TrueNAS connection and the ability to communicate with the TrueNAS through the web interface!
-
-If you save the changes you lose access to the UI, you might need command line knowledge or physical access to the TrueNAS system to fix misconfigured network settings.
-{{< /hint >}}
+{{< include file="/static/includes/NetworkWarn.md" >}}
 
 ## Deleting an Interface
 Click the <i class="material-icons" aria-hidden="true" title="delete">delete</i> icon for the interface.
