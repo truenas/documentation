@@ -104,6 +104,7 @@ Select the APT packages you want to use. Nextcloud requires ffmpeg and smbclient
 Select **ffmpeg** in one, and **smbclient** in the other.
 If also selecting **ocrmypdf**, also set the **Tesseract Language Codes** option to use.
 Click **Add** to show the **Language** field then enter either **chi-sim** for simplified Chinese or **eng** for English.
+See [Nextcloud Configuration Settings](#nextcloud-configuration-settings) below for more information.
 
 Enter either the fully qualified domain name or the IP address and port for your TrueNAS system in **Host** as *##.###.###.##:port#* or *my.domain.com:port#*.
 The **Data Directory Path** is pre-populated with the correct path.
@@ -170,7 +171,7 @@ The following section provides more detailed explanations of the settings in eac
 
 {{< include file="/static/includes/apps/AppsWizardAppNameAndVersion.md" >}}
 
-### Configuration Settings
+### Nextcloud Configuration Settings
 Nextcloud configuration settings include setting up credentials, ACT packages (previously referred to as the commands), the host IP and port, data directory path, upload limits, execution times, memory limits and cache memory consumption, adding a cron job with schedule, and adding additional environment variables.
 
 If you have an existing Nextcloud account add the credentials for that account in the **Admin User** and **Admin Password** fields.
@@ -185,7 +186,10 @@ Nextcloud has three APT package options:
 {{< trueimage src="/images/SCALE/Apps/InstallNextcloudConfigAPTPackageOptions.png" alt="Configure Nextcloud APT Packages" id="Configure Nextcloud APT Packages" >}}
 
 You must add both the **ffmpeg** and **smbclient** packages to deploy this app.
+
 You can use **ocrmypdf** as well if needed, but you must also select the **Tesseract Language Code** to use. Options are **chi-sim** for Simplified Chinese or **eng** for English.
+For more information on tesseract languages to install for OCRmypdf, see [here](https://tesseract-ocr.github.io/tessdoc/Data-Files-in-different-versions.html) for a list of language codes. Typing a wrong language code blocks the container from starting. Only takes effect if ocrmypdf is selected.
+
 Click **Add** to the right of **APT Packages** for each option you want or need to add.
 {{< /expand >}}
 To configure the host, enter the IP address for the TrueNAS system where you install the Nextcloud app and the web port number separated by a colon. For example, <i>12.123.12.3</i><b>:30027</b>.
