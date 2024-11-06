@@ -124,13 +124,12 @@ Click the <i class="material-icons" aria-hidden="true" title="delete">delete</i>
 A delete interface confirmation dialog opens.
 
 ## Adding Static or Alias IP Addresses
-TrueNAS allows adding static IP addresses to an interface and using them as aliases.
+TrueNAS allows assigning static IP addresses to an interface when not using a DHCP-assigned address, and adding static IP addresses as aliases.
 Static IP addresses set a fixed address for an interface that external devices or websites need to access or remember, such as for VPN access.
 An *alias* is an additional IP address assigned to a network interface configured with another primary IP address.
-Aliases are often used for running multiple services or applications hosted in a VM that need different IP addresses, defining addresses for an existing network interface without having to add a separate network interface, or to achieve high availability and network load balancing.
 
 {{< hint type="info" >}}
-The **Aliases** option on the **Add Interface** and **Edit Interface** screens is used to enter a non-DHCP-assigned IP address to an interface whether it is the primary fixed IP address or additional alias addresses for other purposes.
+Use the **Aliases** option on the **Add Interface** and **Edit Interface** screens to enter a non-DHCP-assigned IP address to an interface whether it is the primary fixed IP address or additional alias addresses for other purposes.
 {{< /hint >}}
 
 From the [Console Setup menu]({{< relref "ConsoleSetupMenuSCALE.md" >}}), select option 1 to configure network settings or add alias IP addresses.
