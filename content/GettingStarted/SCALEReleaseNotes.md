@@ -168,7 +168,7 @@ Notable Changes:
 * Fix libzfs errors in py-libzfs in electric eel are out of sync with libzfs ([NAS-132126](https://ixsystems.atlassian.net/browse/NAS-132126)).
 * Prevent empty critical bond interfaces on TrueNAS Enterprise HA systems ([NAS-132187](https://ixsystems.atlassian.net/browse/NAS-132187)).
 * Fix HA logic bug to ensure marked critical interfaces are treated as critical ([NAS-132115](https://ixsystems.atlassian.net/browse/NAS-132115)).
-* Prevent SED Pool Degraded after Power Loss ([NAS-129366](https://ixsystems.atlassian.net/browse/NAS-129366)).
+* Prevent SED pool degradation after power loss ([NAS-129366](https://ixsystems.atlassian.net/browse/NAS-129366)).
 * Fix TrueNAS ES24 enclosure management bug ([NAS-132067](https://ixsystems.atlassian.net/browse/NAS-132067)).
 
 ### 24.10.0.1 Known Issues
