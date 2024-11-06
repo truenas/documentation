@@ -159,7 +159,7 @@ For more details on feature flags, see [OpenZFS Feature Flags](https://openzfs.g
 **November 7, 2024**
 
 iXsystems is pleased to release TrueNAS 24.10.0.1!
-This is a hotpatch release to address a small number of critical issues discovered in the 24.10.0 release.
+This is a hotpatch release to address a small number of issues discovered in the 24.10.0 release.
 
 Notable Changes:
 
