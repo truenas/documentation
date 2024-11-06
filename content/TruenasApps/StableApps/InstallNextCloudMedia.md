@@ -299,34 +299,17 @@ TrueNAS **Additional Storage** options include the ability to mount an SMB share
 {{< include file="/static/includes/apps/AppsInstallWizardGPUPassthrough.md" >}}
 
 ## Troubleshooting Tips
-{{< hint type=info title="Update pre v. 2.0.4 Nextcloud Installations">}}
-There are known issues with Nextcloud app releases earlier than 2.0.4.
-Use the **Upgrade** option in the TrueNAS UI to update your Nextcloud release to 2.0.4.
-For more information on known issues, click [here](https://github.com/truenas/charts/issues/2444).
-
-For information on Nextcloud fixes involving TrueNAS apps, see [PR 2447 nextcloud:fixes](https://github.com/truenas/charts/pull/2447).
-{{< /hint >}}
-
-Nextcloud stability issues often result from misconfigured data ownership.
-Review logs for denied permissions and correct any apparent errors.
-To do this:
-1. Go to **Apps** and select Nextcloud from the installed applications screen.
-2. Click <i class="material-icons" aria-hidden="true" title="View Logs">article</i> **View Logs** to open a **Choose Pod** window.
-
-{{< trueimage src="/images/SCALE/Apps/NextcloudLogsChoosePod.png" alt="Choose Pod Window" id="Choose Pod Window" >}}
-
-3. Select the pod and container to review, enter a number of **Tail Lines** to view or accept the default 500, and click **Choose** to open the **Pod Logs** screen.
 
 ### App Sticks in Deploying State
-If the app does not deploy, try adding the **www-data** user and group (33:33) to the **/nextcloud** dataset but do not set recursive.
+If the app does not deploy, try adding the **www-data** user and group (33:33) to the *nextcloud* dataset but do not set recursive.
 Stop the app before editing the ACL permissions for the datasets.
 
-Next, add the **www-data** user and group to the **appdata** and **userdata** datasets. You can set this to recursive, but it is not necessary.
+Next, add the **www-data** user and group to the **html** and **data** datasets. You can set this to recursive, but it is not necessary.
 To do this:
 1. Select the dataset, scroll down to the **Permissions** widget, click **Edit** to open the **ACL Editor** screen.
 2. Click **Add Item**, select **User** in **Who** and **www-data** in the **User** field, and select **Full Control** in **Permissions**.
 3. Add an entry for the group by repeating the above steps but select **Group**.
 4. Click **Save Access Control List**.
 
-Finally, add the user **netdata** and group **docker** (999:999) to the **Postgres Data** and **Postgres Backup** datasets, following the same process.
+Finally, add the user **netdata** and group **docker** (999:999) to the **Postgres Data** dataset, following the same process.
 Within the Nextcloud container, the user and group 999 map to **postgres**.
