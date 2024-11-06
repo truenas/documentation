@@ -36,7 +36,7 @@ Before you install the Nextcloud app:
   You can use either an existing pool or [create a new one]({{< relref "CreatePoolWizard.md" >}}).
 
   [Create the three dataset(s)]({{< relref "DatasetsSCALE.md" >}}) before beginning the app installation process.
-  Nextcloud uses **html** for app data, **data** for app data, and **postgres_data** for the postgres storage volume.
+  Nextcloud uses **html** for app data, **data** for user data, and **postgres_data** for the postgres storage volume.
   Earlier versions of the Nextcloud app relied on four datasets.
   If upgrading with an existing deployment of this application the app is migrated to the new configuration.
   
