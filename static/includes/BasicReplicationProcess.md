@@ -1,8 +1,7 @@
 &NewLine;
 
 ### Prerequisites
-
-Before setting up a replication task, you must configure the [admin user]({{< relref "ManageLocalUsersSCALE.md" >}}) with the **Home Directory** set to something other than **/var/empty** and **Auxiliary Groups** set to include the **builtin_administrators** group.
+Before setting up a replication task, you must configure an [admin user]({{< relref "ManageLocalUsersSCALE.md" >}}) with the **Home Directory** set to something other than **/var/empty**.
 
 **Allow all sudo commands with no password** must be selected to enable SSH+NETCAT remote replication.
 
@@ -19,9 +18,10 @@ Replication tasks typically require a configured and active [periodic snapshot t
 
 2. Make sure the admin user is correctly configured.
 
-3. Create a Periodic Snapshot task of the storage locations to be backed up.
+3. Create a periodic snapshot task of the storage locations to back up.
 
-4. Create an SSH connection between the local SCALE system and the remote system for remote replication tasks. Local replication does not require an SSH connection.
+4. Create an SSH connection between the local TrueNAS system and the remote system for remote replication tasks.
+   Local replication does not require an SSH connection.
    You can do this from either **Credentials > Backup Credentials > SSH Connection** and clicking **Add** or from the **Replication Task Wizard** using the **Generate New** option in the settings for the remote system.
 
 5. Go to **Data Protection > Replication Tasks** and click **Add** to open the **Replication Task Wizard** where you specify the settings for the replication task.
