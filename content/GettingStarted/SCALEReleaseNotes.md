@@ -23,7 +23,7 @@ More details are available from [Software Releases](https://www.truenas.com/docs
 
 {{< include file="/static/includes/ReleaseScheduleWarning.md" >}}
 
-{{< releaselist name=scale-releases defaultTab=2 >}}
+{{< releaselist name=scale-releases defaultTab=1 >}}
 
 {{< expand "Software Lifecycle" "v" >}}
 {{< include file="/static/includes/LifecycleTable.md" >}}
@@ -120,6 +120,23 @@ The items listed here represent new feature flags implemented since the previous
 {{< /truetable >}}
 
 For more details on feature flags, see [OpenZFS Feature Flags](https://openzfs.github.io/openzfs-docs/Basic%20Concepts/Feature%20Flags.html) and [OpenZFS zpool-feature.7](https://openzfs.github.io/openzfs-docs/man/7/zpool-features.7.html).
+
+## 24.04.2.4 Changelog
+
+**November 7, 2024**
+
+iXsystems is pleased to release TrueNAS 24.04.2.4!
+This is a release to address a small number of issues discovered in the 24.04.2.3 release.
+
+Notable Changes:
+
+* Fix memory consumption related to SMB AIO reads ([NAS-132166](https://ixsystems.atlassian.net/browse/NAS-132166)).
+* Fix HA logic bug to ensure marked critical interfaces are treated as critical ([NAS-132115](https://ixsystems.atlassian.net/browse/NAS-132115)).
+* Prevent SED pool degradation after power loss ([NAS-129366](https://ixsystems.atlassian.net/browse/NAS-129366)).
+
+### 24.04.2.4 Known Issues
+
+Please see the 24.10.0 changelog below and use the Jira filter links to see the full changelog and known issues related to the 24.10.0 and 24.10.0.1 releases.
 
 ## 24.04.2.3 Changelog
 
