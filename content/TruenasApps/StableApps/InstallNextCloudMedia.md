@@ -43,7 +43,7 @@ Before you install the Nextcloud app:
   You can organize these datasets under a parent dataset to keep them separated from datasets for other potential applications.
   For example, create the *nextcloud* dataset and nest each dataset under it.
   If you organize the Nextcloud required datasets under a parent dataset you must configure ACL permissions for it.
-  Do not use a dataset preset when creating the parent dataset!
+  Use the **Generic** dataset preset when creating the parent dataset!
   When you add the **postgres_data** dataset, it must have a **POSIX** ACL.
 
   {{< expand "Configure Nextcloud Datasets and ACLs" "v" >}}
@@ -52,7 +52,7 @@ Before you install the Nextcloud app:
 
   To configure the dataset ACL permissions from the **Datasets** screen, either select the **Set ACL for this dataset** option when prompted after adding the dataset or select the dataset row, and then click **Edit** on the **Permissions** widget to open the **Edit ACL** screen.
 
-  When adding the parent dataset, after entering the name, click **Advanced Options**, scroll down to **ACL Type** and select **POSIX**.
+  When adding the parent dataset, after entering the name, select the **Generic** dataset preset.
   Select the option to edit the ACL, set the **owner** and **group** to **admin** or the name of your administration user account and click **Apply Owner** and **Apply Group**.
   Next add an ACE entries for the **netdata** and **www-data** users and give them full permissions.
   Click **Save Access Control List**.
