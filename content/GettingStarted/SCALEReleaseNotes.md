@@ -64,7 +64,7 @@ More details are available from [Software Releases](https://www.truenas.com/docs
     From a shell session enter {{< cli >}}midclt call -job k8s_to_docker.migrate *poolname*{{< /cli >}}, where *poolname* is the name of the applications pool, for example *tank*.
 
     Custom applications installed using the TrueNAS UI in 24.04 automatically migrate on upgrade to 24.10.
-    Custom applications with nonstandard networking, such as an external interface attached, will migrate, but the interface configuration is discarded.
+    Custom applications with nonstandard networking, such as an external interface attached, migrate, but the interface configuration is discarded.
     Users can either use the base networking as is or configure custom Docker networking using a YAML custom app deployment, Dockge, or Portainer.  
 
 * Starting in 24.10, TrueNAS does not include a default NVIDIA GPU driver and instead provides a simple NVIDIA driver download option in the web interface.
@@ -91,10 +91,10 @@ To prepare applications for migration from Kubernetes to Docker, address the fol
 | Configuration | Action Needed |
 |-----------|-------------|
 | Outdated Applications | Update all applications to the latest available version in the TrueNAS catalog before migrating. |
-| Host Path ACLs | Users with applications installed on 24.04 using host path volume mounts with **Enable ACL** selected and **ACL Entries** defined in the app configuration, must go to the **Edit *Application*** screen and set the [**Force Flag** checkbox under **ACL Options**](https://www.truenas.com/docs/scale/24.04/scaletutorials/apps/#storage-configuration-settings) before updating to 24.10. This ensures the app fully migrates and doesn't encounter issues when the mount point has existing data. |
+| Host Path ACLs | Users with applications installed on 24.04 using host path volume mounts with **Enable ACL** selected and **ACL Entries** defined in the app configuration, must go to the **Edit *Application*** screen and set the [**Force Flag** checkbox under **ACL Options**](https://www.truenas.com/docs/scale/24.04/scaletutorials/apps/#storage-configuration-settings) before updating to 24.10. This ensures the app fully migrates and does not encounter issues when the mount point has existing data. |
 | Encrypted Root Dataset | Applications do not migrate to 24.10 if the ix-applications dataset is configured on a pool with an encrypted root dataset (see [NAS-131561](https://ixsystems.atlassian.net/browse/NAS-131561)). Relocate installed applications to an unencrypted pool on 24.04 before attempting to upgrade to 24.10. |
 | Third Party Applications | Applications from third-party catalogs, such as TrueCharts, do not support automatic migration to 24.10. Migration of third-party applications generally requires manual data backup and redeployment.<br><br>Third-party catalogs are provided, maintained, and supported by individuals or organizations outside of iXsystems. Refer to the catalog maintainer or the [TrueNAS Community forums](https://forums.truenas.com/) for migration support. |
-| Container Dependent Network Settings | Applications will not migrate if TrueNAS network settings are configured to depend on any client container or application hosted on the TrueNAS system, such as DNS services, proxy networks, firewalls, and routers (see [NAS-131553](https://ixsystems.atlassian.net/browse/NAS-131553)). This is an unsupported configuration because TrueNAS cannot access the necessary networks during boot if the client container has not started. |
+| Container Dependent Network Settings | Applications do not migrate if TrueNAS network settings are configured to depend on any client container or application hosted on the TrueNAS system, such as DNS services, proxy networks, firewalls, and routers (see [NAS-131553](https://ixsystems.atlassian.net/browse/NAS-131553)). This is an unsupported configuration because TrueNAS cannot access the necessary networks during boot if the client container has not started. |
 {{< /truetable >}}
 
 ### Upgrade Paths
