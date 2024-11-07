@@ -133,8 +133,10 @@ If you configured a certificate, select it in **Certificate ID**. A certificate 
 
 Enter the storage settings for each of the datasets created for the Nextcloud app.
 {{< expand "Configuring Nextcloud Storage" "v" >}}
+{{< hint type=info >}}
 Do not select **DEPRECATED: Old Storage Structure** if you are deploying Nextcloud for the first time as this slows down the installation and is not necessary.
 If you are upgrading where your Nextcloud deployment in TrueNAS was a 1.x.x release, select this option.
+{{< /hint >}}
   
 Set **Host Path (Path that already exists on the system)** in **Type** for **Nextcloud AppData Storage**.
 Select **Enable ACL**, and then either enter or browse to and select the **html** dataset to populate the **Host Path** field.
