@@ -106,7 +106,7 @@ If also selecting **ocrmypdf**, also set the **Tesseract Language Codes** option
 Click **Add** to show the **Language** field then enter either **chi-sim** for simplified Chinese or **eng** for English.
 See [Nextcloud Configuration Settings](#nextcloud-configuration-settings) below for more information.
 
-Enter either the fully qualified domain name or the IP address and port for your TrueNAS system in **Host** as *##.###.###.##:port#* or *my.domain.com:port#*.
+Enter either the fully qualified domain name or the IP address and port for your TrueNAS system in **Host** as *##.###.###.##:port* or *my.domain.com:port*.
 The **Data Directory Path** is pre-populated with the correct path.
 
 {{< trueimage src="/images/SCALE/Apps/InstallNextcloudConfig2.png" alt="Enter Host and Other Config Settings" id="Enter Host and Other Config Settings" >}}
