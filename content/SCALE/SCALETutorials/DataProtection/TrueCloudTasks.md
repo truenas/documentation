@@ -19,7 +19,7 @@ TrueNAS can send, receive, or synchronize data with the cloud storage providers 
 TrueCloud backup tasks allow for single-time transfers or recurring transfers on a schedule.
 They are an effective method to back up data to a remote location.
 
-This article provides instructions on configuring a TrueCloud backup task using Storj and covers setting up both the Storj iX account and SCALE credential.
+This article provides instructions on configuring a TrueCloud backup task using Storj and covers setting up both the Storj iX account and TrueNAS credential.
 
 {{< hint type=important >}}
 To take advantage of the lower-cost benefits of the TrueCloud backup service, you must create your Storj iX account using the link provided on the **Add Cloud Credentials** screen.
@@ -35,14 +35,13 @@ You must have all system storage (pool and datasets or zvols) configured and rea
 
 ## Creating a TrueCloud Backup Task
 
-To create a TrueCloud Backup task for a TrueCloud transfer:
+To create a TrueCloud Backup task:
 
-1. Create the SCALE [Storj cloud credential](#adding-storj-cloud-credentials).
+1. Create the TrueNAS [Storj cloud credential](#adding-storj-cloud-credentials).
 
-   Adding the Storj cloud credential in SCALE includes following the link to create the Storj iX account, creating a new bucket, and obtaining the S3 authentication credentials needed to complete the process in SCALE.
+   Adding the Storj cloud credential in TrueNAS includes following the link to create the Storj iX account, creating a new bucket, and obtaining the S3 authentication credentials needed to complete the process in SCALE.
 
 2. Create the [TrueCloud Backup task](#setting-up-the-truecloud-backup-task) for one bucket.
-
 
 ### Adding Storj Cloud Credentials
 
@@ -50,13 +49,13 @@ To create a TrueCloud Backup task for a TrueCloud transfer:
 
 After completing this configuration form, you can set up the [TrueCloud Backup task](#setting-up-the-truecloud-backup-task).
 
-### Creating the Storj iX Account
-
-{{< include file="/static/includes/CreateStorjiXAccount.md" >}}
-
-#### Setting up S3 Access to the Bucket
+#### Setting up S3 Access
 
 {{< include file="/static/includes/SetUpStorjiXAccountS3Access.md" >}}
+
+#### Creating a TrueNAS Storj Bucket
+
+{{< include file="/static/includes/StorjBucket.md" >}}
 
 ### Adding a Storj TrueCloud Backup Task
 
@@ -72,10 +71,9 @@ To add the TrueCloud backup task, go to **Data Protection > TrueCloud Backup Tas
 3. Select the Storj credential on the **Credentials** dropdown list.
    You can select **Add New** to create the Storj credential if you skipped the instructions above.
 
-4. Select the bucket you created in Storj from the **Bucket** dropdown list.
+4. Select the the Storj bucket to use from the **Bucket** dropdown list.
 
-   If you set the Storj S3 access to only apply to the [new bucket created in Storj](#adding-the-storj-truenas-bucket), you can only use that bucket, selecting **Add New** results in an error.
-   If you set the Storj S3 **Bucket** access to **All**, you can select the new bucket you created in Storj or **Add New** to create a new Storj bucket.
+   If you have not previously created a TrueNAS compatible Storj bucket, select **Add New** and follow the procedure in [Creating a TrueNAS Storj Bucket](#creating-a-truenas-storj-bucket).
 
    Click the arrow icon for the **Folder** field to expand the dropdown list and select the desired folder in the Storj bucket or enter a folder path.
    Enter `/name`, where *name* is a folder that does not exist, to create a new folder in the Storj bucket.

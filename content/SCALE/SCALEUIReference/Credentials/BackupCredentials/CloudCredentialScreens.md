@@ -25,10 +25,10 @@ Before adding cloud credentials for a cloud storage provider, the **Cloud Creden
 
 {{< trueimage src="/images/SCALE/Credentials/CloudCredentialsNoCredentials.png" alt="Cloud Credentials Widget No Credentials" id="Cloud Credentials Widget No Credentials" >}}
 
-**Add** opens the **[Cloud Credentials](#cloud-credentials-screen)** configuration screen. 
+**Add** opens the **[Cloud Credentials](#cloud-credentials-screen)** configuration screen.
 
 ## Cloud Credentials Screen
-The **Cloud Credentials** configuration screen opens prepopulated with Storj-iX as the provider.
+The **Cloud Credentials** configuration screen opens pre-populated with Storj-iX as the provider.
 It shows settings to add or edit cloud credentials TrueNAS uses to integrate with cloud storage providers.
 
 {{< trueimage src="/images/SCALE/Credentials/CloudCredentialsAdd.png" alt="Cloud Credentials Configuration Screen" id="Cloud Credentials Configuration Screen" >}}
