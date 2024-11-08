@@ -188,6 +188,9 @@ Notable Changes:
 
 ### 24.10.0.1 Known Issues
 
+* Users have reported an issue with SMB memory management under heavy SMB loads.
+  A fix for this issue is in the 24.10.0.2 release version.
+
 Please see the 24.10.0 changelog below and use the Jira filter links to see the full changelog and known issues related to the 24.10.0 and 24.10.0.1 releases.
 
 ## 24.10.0 Changelog
