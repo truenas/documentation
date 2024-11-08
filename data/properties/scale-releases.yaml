@@ -10,7 +10,7 @@ majorVersions:
     releases:
       - name: "24.04.2.5"
         type: "Maintenance"
-        link: "https://www.truenas.com/docs/scale/24.04/gettingstarted/scalereleasenotes/#240424-changelog"
+        link: "https://www.truenas.com/docs/scale/24.04/gettingstarted/scalereleasenotes/#240425-changelog"
         releaseDate: "2024-11-08"
         latest: true
   - lifecycle: "Current"
