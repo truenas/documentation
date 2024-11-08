@@ -267,7 +267,7 @@ These settings display for all three **Transport** options.
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Allow Blocks Larger than 128KB** | Inactive by default and if the system does not support large block transfers. Allows replication to send large data blocks. The destination system must also support large blocks. This setting cannot be changed after is enabled and the replication task is created. See [sfs(8)](https://linux.die.net/man/8/zfs) for more information. |
+| **Allow Blocks Larger than 128KB** | Inactive by default and if the system does not support large block transfers. Allows replication to send large data blocks. The destination system must also support large blocks. This setting cannot be changed after it is enabled and the replication task is created. See [sfs(8)](https://linux.die.net/man/8/zfs) for more information. |
 | **Allow Compressed WRITE Records** | Selected by default. If enabled, allows using compressed write records to make the stream more efficient. The destination system must also support compressed write records. See [zfs(8)](https://linux.die.net/man/8/zfs). |
 {{< /truetable >}}
 {{< /expand >}}
