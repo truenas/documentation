@@ -75,6 +75,9 @@ majorVersions:
     majorVersion: "24.04 (Dragonfish)"
     releaseName: "Dragonfish"
     releases:
+      - name: "24.04.2.4"
+        link: "https://download.truenas.com/TrueNAS-SCALE-Dragonfish/24.04.2.4/"
+        date: "2024-11-07"
       - name: "24.04.2.3"
         link: "https://download.truenas.com/TrueNAS-SCALE-Dragonfish/24.04.2.3/"
         date: "2024-10-10"
@@ -109,8 +112,11 @@ majorVersions:
     majorVersion: "24.10 (Electric Eel)"
     releaseName: "Electric Eel"
     releases:
+      - name: "24.10.0.1"
+        link: "https://download.truenas.com/TrueNAS-SCALE-ElectricEel/24.10.0.1/"
+        date: "2024-11-07"
       - name: "24.10.0"
-        link: "https://download.truenas.com/TrueNAS-ElectricEel-RC/24.10.0/"
+        link: "https://download.truenas.com/TrueNAS-SCALE-ElectricEel/24.10.0/"
         date: "2024-10-29"
       - name: "24.10-RC.2"
         link: "https://download.truenas.com/TrueNAS-ElectricEel-RC/24.10-RC.2/"
