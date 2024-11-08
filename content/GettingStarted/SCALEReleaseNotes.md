@@ -154,6 +154,21 @@ Any new feature flags introduced since the previous OpenZFS version that was int
 
 For more details on feature flags, see [OpenZFS Feature Flags](https://openzfs.github.io/openzfs-docs/Basic%20Concepts/Feature%20Flags.html) and [OpenZFS zpool-feature.7](https://openzfs.github.io/openzfs-docs/man/7/zpool-features.7.html).
 
+## 24.10.0.2 Changelog
+
+**November 8, 2024**
+
+iXsystems is pleased to release TrueNAS 24.10.0.2!
+This is a release to address another high-impact issue discovered with SMB memory management.
+
+* Fix Management of SMB AIO read buffers ([NAS-132365](https://ixsystems.atlassian.net/browse/NAS-132365)).
+
+Users with 24.10.0.1 installed and SMB shares in use are encouraged to upgrade to this release immediately.
+
+### 24.10.0.2 Known Issues
+
+Please see the 24.10.0 changelog below and use the Jira filter links to see the full changelog and known issues related to the 24.10.0, 24.10.0.1, and 24.10.0.2 releases.
+
 ## 24.10.0.1 Changelog
 
 **November 7, 2024**
