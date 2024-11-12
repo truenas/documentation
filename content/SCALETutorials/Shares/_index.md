@@ -15,6 +15,16 @@ TrueNAS SCALE allows users to create and configure Windows SMB shares, Unix (NFS
 When creating zvols for shares, avoid giving them names with capital letters or spaces since they can cause problems and failures with iSCSI and NFS shares.
 {{< /hint >}}
 
+{{< enterprise >}}
+iXsystems TrueNAS Enterprise customers should contact iXsystems Support to receive additional guidance on system configuration.
+
+{{< expand "Contacting Support" "v" >}}
+{{< include file="/static/includes/iXsystemsSupportContact.md" >}}
+{{< /expand >}}
+
+{{< include file="/static/includes/DisruptiveActionslist.md" >}}
+{{< /enterprise >}}
+
 <div class="noprint">
 
 ## Contents
