@@ -16,7 +16,7 @@ Unless a specific setting is needed or configuring for a specific network enviro
 {{< truetable >}}
 | Name | Description |
 |----------|-------------|
-| **NetBIOS Name** | Populates with the original host name of the system **truenas**. Limited to 15 characters and cannot be the same name in **Workgroup**. |
+| **NetBIOS Name** | Populates with the original host name of the system **truenas**. Enter a name that does not exceed 15 characters and is not the same name in **Workgroup**. |
 | **NetBIOS Alias** | Enter any aliases, separated by spaces. Each alias can be up to 15 characters long. |
 | **Workgroup** | Value must match Windows workgroup name. If unconfigured, TrueNAS uses Active Directory or LDAP to detect and select the correct workgroup. Active Directory or LDAP must be active for TrueNAS to do this. |
 | **Description** | Optional. Enter a server description. |
@@ -38,8 +38,8 @@ Unless a specific setting is needed or configuring for a specific network enviro
 | **Enable Apple SMB2/3 Protocol Extensions** | Select to allow macOS to use these [protocol extensions](https://support.apple.com/en-us/HT210803). Improves the performance and behavioral characteristics of SMB shares. Required for Apple Time Machine support. |
 | **Administrators Group** | Select an option from the dropdown list. Members of this group are local admins. Local admins have privileges to take ownership of any file in the SMB share. They can reset permissions. Local admins can administer the SMB server through the Computer Management MMC snap-in. |
 | **Guest Account** | Select an account to use for guest access from the dropdown list. Default is **nobody**. The selected account must have permissions to the shared pool or dataset. To adjust permissions, edit the dataset Access Control List (ACL). Add a new entry for the selected guest account, and configure the permissions in that entry. Deleting the selected user in **Guest Account** resets the field to **nobody**. |
-| **File Mask** | Overrides default file creation mask of **0666**. File creation mask **0666** creates files with read and write access for everybody. |
-| **Directory Mask** | Overrides default directory creation mask of **0777**. Directory creation mask **0777** grants directory read, write and execute access for everybody. |
+| **File Mask** | Overrides default file creation mask of **0644**. File creation mask **0644** creates files with read and write access for everybody. |
+| **Directory Mask** | Overrides default directory creation mask of **0755**. Directory creation mask **0755** grants directory read, write and execute access for everybody. |
 | **Bind IP Addresses** | Select from the dropdown list. These are the static IP addresses which SMB listens on for connections. If not selected, defaults to listen on all active interfaces. |
 | **Auxiliary Parameters** | Enter additional smb.conf options. See the [Samba Guide](http://www.oreilly.com/openbook/samba/book/appb_02.html) for more information on these settings. To log more details when a client attempts to authenticate to the share, add *log level = 1, auth_audit:5*. |
 {{< /truetable >}}
