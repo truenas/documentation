@@ -17,7 +17,7 @@ keywords:
 
 {{< include file="/static/includes/AdminAccountSecurity.md" >}}
 
-Administrator accounts have roles and privileges that allow greater control over access to functions in SCALE and to further utilize FIPS-compliance.
+Administrator accounts have roles and privileges that allow greater control over access to functions in SCALE and to further utilize FIPS compliance.
 SCALE includes three predefined admin user account levels:
 
 * Full Admin - Assigned to the local administrator account created by the system when clean installing SCALE using an <file>iso</file> file.
@@ -47,19 +47,19 @@ Note the primary group assigned to that user.
 As a security hardening feature, administrator accounts in Linux-based TrueNAS releases (22.12.0 or newer) cannot by default execute certain root-level commands in a shell or SSH session.
 If a user attempts to execute one of these commands without root-level access, TrueNAS returns a **command not found** error.
 
-Administrative users who need to execute root-level commands to complete a task should temporarily enable sudo permissions for that user by going **Credentials** and editing the user or group to enable some or all sudo commands.
+Administrative users who need to execute root-level commands to complete a task should temporarily enable sudo permissions for that user by going to **Credentials** and editing the user or group to enable some or all sudo commands.
 For best security, enable only the required commands to perform the task and require password authentication, unless the task or app prevents it.
 Disable sudo permissions when the task completes and they are no longer required.
 
-**Allowed sudo commands**, **Allow all sudo commands**, **Allowed sudo commands with no password** and **Allow all sudo commands with no password** grant limited root-like permissions using the sudo command.
+**Allowed sudo commands**, **Allow all sudo commands**, **Allowed sudo commands with no password**, and **Allow all sudo commands with no password** grant limited root-like permissions using the sudo command.
 Use **Allowed sudo commands** or **Allowed sudo commands with no password** to list specific sudo commands to allow.
-Enter each command as an absolute path to the ELF (Executable and Linkable Format) executable file, for example */usr/bin/nano*.
+Enter each command as an absolute path to the ELF (Executable and Linkable Format) executable file, for example, */usr/bin/nano*.
 <file>/usr/bin/</file> is the default location for commands.
 Press <kbd>Enter</kbd> after each command.
 
 To allow full access to sudo commands, select either **Allow all sudo commands** or **Allow all sudo commands with no password**.
 If sudo commands are allowed with password protection, the user is prompted for a password the first time a sudo command is entered, but not again in the same session.
-Disable these settings after completing the task to return to a security hardened system.
+Disable these settings after completing the task to return to a security-hardened system.
 
 Do not allow sudo permissions for read-only administrators.
 
@@ -98,7 +98,7 @@ To enable SSH to access the system as an admin user (or for root):
    If the root password password is disabled in the UI you cannot use it to gain SSH access to the system.
 
    To allow an admin user to issue commands in an SSH session, edit that user and select **SSH password login enabled** to allow authenticating and logging into an SSH session.
-   Disable this after completing the SSH session to return to a security hardened system.
+   Disable this after completing the SSH session to return to a security-hardened system.
 
 ## Two-Factor Authentication (2FA) and Administrator Account Log In
 
