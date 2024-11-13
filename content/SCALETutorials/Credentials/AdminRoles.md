@@ -28,6 +28,11 @@ SCALE includes three predefined admin user account levels:
 
 For more information on the different administrator scenarios users can encounter, read [Logging Into SCALE the First Time]({{< relref "FirstTimeLogin.md" >}}).
 
+## Changing Administrator Account Passwords
+Adminstrator passwords can be changed on the **Edit User** screen, or if currently logged in, by clicking the **Settings** <span class="material-icons">account_circle</span> icon on the top toolbar and clicking **Change Password**.
+
+{{< include file="/static/includes/ChangeLoggedInUserPassword.md" >}}
+
 ## Configuring Administrative Privileges
 
 [Create a new administrator]({{< relref "managelocalusersscale.md #creating-an-administrator-user-account" >}}) account or select an existing account to grant administrative privileges.
