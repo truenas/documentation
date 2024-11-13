@@ -10,7 +10,7 @@ The Apple Filing Protocol (AFP) is a network protocol that allows file sharing o
 It is like SMB and NFS, but it is for Apple systems.
 
 {{< hint type=important >}}
-Apple began using the SMB sharing protocol as the default option for file sharing in 2013. At that time Apple ceased development of the AFP sharing protocol. The recommendation is to use SMB sharing instead of AFP. AFP sharing is still used if files are being shared with legacy Apple products. Please see https://developer.apple.com/library/archive/documentation/FileManagement/Conceptual/APFS_Guide/FAQ/FAQ.html
+Apple began using the SMB sharing protocol as the default option for file sharing in 2013. At that time Apple ceased development of the AFP sharing protocol. The recommendation is to use SMB sharing instead of AFP. AFP sharing is still used if files are being shared with legacy Apple products. Please see https://en.wikipedia.org/wiki/Apple_Filing_Protocol and https://appleinsider.com/articles/13/06/11/apple-shifts-from-afp-file-sharing-to-smb2-in-os-x-109-mavericks
 {{< /hint >}}
 
 Use the **Services AFP** screen to configure Apple Filing Protocol (AFP) service on your TrueNAS.
