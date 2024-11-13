@@ -1,6 +1,6 @@
 ---
 title: "Installing Software"
-redirect: "https://www.truenas.com/docs/core/13.0/coretutorials/jailspluginsvms/jails/installingsoftware/"
+redirect: "https://www.truenas.com/docs/core/13.0/coretutorials/jailspluginsvms/jails/installingjailsoftware/"
 description: "Describes how to install software using Jails in TrueNAS CORE."
 weight: 20
 Aliases: /core/applications/jails/software/

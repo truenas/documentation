@@ -1,6 +1,6 @@
 ---
 title: "Disks Screens"
-redirect: "https://www.truenas.com/docs/core/13.0/uireference/storage/pools/disksscreens/"
+redirect: "https://www.truenas.com/docs/core/13.0/uireference/storage/disksscreens/"
 description: "Describes the fields in the Disk Screens in TrueNAS CORE."
 weight: 40
 aliases:

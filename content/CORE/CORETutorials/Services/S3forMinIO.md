@@ -1,6 +1,6 @@
 ---
 title: "S3 for MinIO"
-redirect: "https://www.truenas.com/docs/core/13.0/coretutorials/services/configurings3forminio/"
+redirect: "https://www.truenas.com/docs/core/13.0/coretutorials/services/s3forminio/"
 description: "Provides information on how to configure S3 for MinIO on your TrueNAS."
 weight: 105
 tags:

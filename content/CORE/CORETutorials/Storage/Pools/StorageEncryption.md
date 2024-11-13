@@ -1,6 +1,6 @@
 ---
 title: "Storage Encryption"
-redirect: "https://www.truenas.com/docs/core/13.0/coretutorials/storage/storageencryption/"
+redirect: "https://www.truenas.com/docs/core/13.0/coretutorials/storage/pools/storageencryption/"
 description: "Describes how to encrypt a storage pool in TrueNAS CORE."
 weight: 25
 aliases: /core/storage/pools/storageencryption/

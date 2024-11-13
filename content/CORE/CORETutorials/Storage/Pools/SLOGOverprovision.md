@@ -1,6 +1,6 @@
 ---
 title: "SLOG Overprovisioning"
-redirect: "https://www.truenas.com/docs/core/13.0/coretutorials/storage/slogoverprovision/"
+redirect: "https://www.truenas.com/docs/core/13.0/coretutorials/storage/pools/slogoverprovision/"
 description: "Describes how to configure SLOG over-provisioning on TrueNAS CORE."
 weight: 50
 aliases: /core/storage/pools/slogoverprovision/
