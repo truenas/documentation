@@ -211,7 +211,7 @@ These settings configure new ACL entries for the selected SMB share and apply th
 
 ## Edit Filesystem ACL Screen
 The **Edit Filesystem ACL** option opens the **Edit ACL** screen for the dataset the share uses.
-See [**Edit ACL Screen]({{< relref "EditACLScreens.md" >}}) more information on the settings found on this screen.
+See [**Edit ACL Screen**]({{< relref "EditACLScreens.md" >}}) more information on the settings found on this screen.
 
 {{< trueimage src="/images/SCALE/Shares/SMBACLEditor.png" alt="SMB ACL Editor" id="SMB ACL Editor" >}}
 
