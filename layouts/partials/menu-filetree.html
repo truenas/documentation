@@ -1,7 +1,7 @@
 {{ $current := . }}
 <!-- Static chatbot button -->
 <div style="margin-top: 15px; margin-bottom: 10px;">
-  <button id="chatbot-open-button" style="padding: 10px 20px; background-color: #0095d5; color: white; border: none; cursor: pointer; border-radius: 20px; display: flex; align-items: center; gap: 10px; transition: opacity 0.3s;">
+  <button id="chatbot-open-button" style="padding: 10px 20px; background-color: #0095d5; color: white; border: none; cursor: pointer; border-radius: 15px; display: flex; align-items: center; gap: 10px; transition: opacity 0.3s;">
     <span id="chatbot-button-icon" style="display: flex; vertical-align: middle;">
       <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="book" class="svg-inline--fa fa-book" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" style="width: 20px; height: 20px;">
         <path fill="currentColor" d="M96 0C43 0 0 43 0 96V416c0 53 43 96 96 96H384h32c17.7 0 32-14.3 32-32s-14.3-32-32-32V384c17.7 0 32-14.3 32-32V32c0-17.7-14.3-32-32-32H384 96zm0 384H352v64H96c-17.7 0-32-14.3-32-32s14.3-32 32-32zm32-240c0-8.8 7.2-16 16-16H336c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16zm16 48H336c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16s7.2-16 16-16z"></path>
@@ -20,7 +20,6 @@
 <!-- Chatbot Initialization Script -->
 <script type="text/javascript">
   window.DocsBotAI = window.DocsBotAI || {};
-  let chatbotOpen = false;  // Track the open/close state of the chatbot
 
   DocsBotAI.init = function(c) {
     return new Promise(function(e, o) {
@@ -39,36 +38,12 @@
           signature: c.signature
         });
 
-        // Attach the click event to the static button to toggle open/close
+        // Attach the click event to the static button to open the chatbot
         document.getElementById("chatbot-open-button").addEventListener("click", function() {
-          const iconElement = document.getElementById("chatbot-button-icon");
-
-          if (chatbotOpen) {
-            if (window.DocsBotAI.close) {
-              window.DocsBotAI.close();  // Close the chatbot
-              chatbotOpen = false;
-
-              // Change to book icon when closed
-              iconElement.innerHTML = `
-                <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="book" class="svg-inline--fa fa-book" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" style="width: 20px; height: 20px;">
-                  <path fill="currentColor" d="M96 0C43 0 0 43 0 96V416c0 53 43 96 96 96H384h32c17.7 0 32-14.3 32-32s-14.3-32-32-32V384c17.7 0 32-14.3 32-32V32c0-17.7-14.3-32-32-32H384 96zm0 384H352v64H96c-17.7 0-32-14.3-32-32s14.3-32 32-32zm32-240c0-8.8 7.2-16 16-16H336c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16zm16 48H336c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16s7.2-16 16-16z"></path>
-                </svg>`;
-            } else {
-              console.error("Chatbot close method not available.");
-            }
+          if (window.DocsBotAI.open) {
+            window.DocsBotAI.open();  // Open the chatbot without toggling or changing icons
           } else {
-            if (window.DocsBotAI.open) {
-              window.DocsBotAI.open();  // Open the chatbot
-              chatbotOpen = true;
-
-              // Change to X icon when open
-              iconElement.innerHTML = `
-                <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="xmark" class="svg-inline--fa fa-xmark" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" style="width: 20px; height: 20px;">
-                  <path fill="currentColor" d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"></path>
-                </svg>`;
-            } else {
-              console.error("Chatbot open method not available.");
-            }
+            console.error("Chatbot open method not available.");
           }
         });
 
@@ -84,25 +59,85 @@
     id: "c6l7vGyugnoP9SSSoNXy/h6qDF4J2h3xfHKO9Nm6r",
     options: {
       customCSS: `
-      .docsbot-wrapper {
-        width: 75%;
-        max-width: 750px;
-        position: fixed;
-        left: 35% !important;
-        top: 15% !important;
-        z-index: 1000 !important;
-      }
-      .floating-button {
-        display: none !important;
-      }
-      @media (max-width: 1200px) {
         .docsbot-wrapper {
-          left: 15% !important;
-          top: 15% !important;
+          display: flex;
+          flex-direction: column;
+          width: 75%;
+          max-width: 750px;
+          max-height: 75vh;
+          position: fixed;
+          left: 35% !important;
+          top: 10% !important;
+          z-index: 1000 !important;
+          box-sizing: border-box;
         }
+        .docsbot-content {
+          flex: 1 1 auto;
+          overflow-y: auto;
+        }
+        .docsbot-input {
+          flex-shrink: 0;
+          padding: 10px;
+          box-sizing: border-box;
+        }
+        .floating-button {
+          display: none !important;
+        }
+        .docsbot-chat-header {
+          display: flex;
+          align-items: center;
+          padding: 5px 10px;
+          transition: height 0.3s ease, padding 0.3s ease;
+        }
+        .docsbot-chat-header-content {
+          text-align: center;
+          transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+        
+        /* Minimize header when viewport height is below 600px */
+        @media (max-height: 600px) {
+          .docsbot-chat-header {
+            height: 50px; /* Minimized height */
+            padding: 2px 5px;
+          }
+          .docsbot-chat-header-content h1 {
+            font-size: 14px;
+          }
+          .docsbot-chat-header-content span {
+            display: none; /* Hides the description text */
+          }
+        }
+        
+        /* Adjust layout for smaller screens (optional adjustments) */
+        @media (max-width: 1200px) {
+          .docsbot-wrapper {
+            left: 10% !important;
+            top: 10% !important;
+          }
+        }
+
+        .mobile-close-button {
+          display: flex !important; /* Forces the button to be visible */
+          background: #0095d5;
+          align-items: center;
+          padding: 5px 10px;
+          justify-content: center;
+          border-radius: inherit;
+          position: fixed;
+          box-shadow: none;
+        }
+
+        .mobile-close-button:hover {
+          cursor: pointer;
+        }
+
+        .mobile-close-button:hover svg {
+          transform: scale(1.2);
+        }
+
       `,
     }
-  });
+  });    
 </script>
 
 <!-- Add URI Checker for DocsBot Visibility -->
