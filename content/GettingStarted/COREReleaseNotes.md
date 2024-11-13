@@ -80,9 +80,9 @@ For more details on feature flags see [OpenZFS Feature Flags](https://openzfs.gi
 
 iXsystems is pleased to release TrueNAS 13.3-U1!
 
-This is a minor maintenance release to address a single issue:
+This is a maintenance release to address a single issue:
 
-* Resolve a vulnerability involving python deserialization ([CVE-2020-22083](https://github.com/advisories/GHSA-j66q-qmrc-89rx))
+* Resolve a vulnerability involving python deserialization ([CVE-2020-22083](https://github.com/advisories/GHSA-j66q-qmrc-89rx)).
 
 For other known issues in 13.3 releases, please see the <a href="https://ixsystems.atlassian.net/issues/?filter=10583" target="_blank">13.3-RELEASE Ongoing Issues</a> list available from Jira.
 
