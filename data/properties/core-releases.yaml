@@ -5,44 +5,29 @@ product: "TrueNAS CORE"
 title: "CORE&trade; | Enterprise&trade;"
 majorVersions:
   - lifecycle: "Previous"
-    name: "TrueNAS CORE 12.0"
-    releaseName: "12.0"
-    releases:
-      - name: "12.0-U2"
-        type: "Maintenance"
-        link: "https://www.truenas.com/docs/files/CORE12.0Docs.pdf"
-        releaseDate: "2021-02-09"
-        latest: true
-  - lifecycle: "Current"
-    name: "TrueNAS CORE 13.0"
+    name: "TrueNAS 13.0"
     releaseName: "13.0"
     releases:
-      - name: "13.0-U6.2"
+      - name: "13.0-U6.3"
         type: "Maintenance"
         link: "https://www.truenas.com/docs/core/13.0/gettingstarted/corereleasenotes/"
-        releaseDate: "2024-07-03"
+        releaseDate: "2024-11-14"
         latest: true
-  - lifecycle: "Next"
-    name: "TrueNAS CORE 13.3"
+  - lifecycle: "Current"
+    name: "TrueNAS 13.3"
     releaseName: "13.3"
     releases:
-      - name: "13.3-RELEASE"
+      - name: "13.3-U1"
         type: "Stable"
-        link: "https://www.truenas.com/docs/core/13.3/gettingstarted/corereleasenotes/#133-release-changelog"
-        releaseDate: "2024-08-13"
+        link: "https://www.truenas.com/docs/core/13.3/gettingstarted/corereleasenotes/#133-u1-changelog"
+        releaseDate: "2024-11-14"
         latest: true
-      - name: "13.3-BETA2"
-        type: "Early"
-        link: "https://www.truenas.com/docs/core/13.3/gettingstarted/corereleasenotes/#133-beta2-changelog"
-        releaseDate: "2024-06-04"
-        latest: false
-      - name: "13.3-BETA1"
-        type: "Early"
-        link: "https://www.truenas.com/docs/core/13.3/gettingstarted/corereleasenotes/#133-beta1-changelog"
-        releaseDate: "2024-05-07"
-        latest: false        
-      - name: "13.3 Nightlies"
+  - lifecycle: "Next"
+    name: "TBD"
+    releaseName: "TBD"
+    releases:
+      - name: "TBD"
         type: "Experimental"
-        link: "https://www.truenas.com/docs/core/13.3/gettingstarted/corereleasenotes/"
-        releaseDate: "2024-01-01"
-        latest: false
+        link: ""
+        releaseDate: ""
+        latest: true
