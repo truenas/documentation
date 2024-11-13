@@ -133,7 +133,7 @@ If you have not yet added a virtual machine to your system, click **Add Virtual 
    The **VirtIO** network interface requires a guest OS that supports VirtIO para-virtualized network drivers.
 
    {{< hint type="note" title="Supported GPUs" >}}
-    iXsystems does not have a list of approved GPUs at this time but does have drivers and basic support for the list of [NVIDIA Supported Products](https://www.nvidia.com/Download/driverResults.aspx/191961/en-us/).
+    As of TrueNAS 24.10, NVIDIA drivers are no longer installed automatically. Instead, users must manually install drivers from the TrueNAS UI. For detailed instructions, see (https://www.truenas.com/docs/truenasapps/#installing-nvidia-drivers).
    {{< /hint >}}
 
 8. Confirm your VM settings, then click **Save**.
