@@ -1,5 +1,6 @@
 ---
 title: "Using Two-Factor Authentication"
+redirect: "https://www.truenas.com/docs/core/13.0/coretutorials/systemconfiguration/usingtwofactorauthentication/"
 description: "Describes how to use two-factor authentication on TrueNAS CORE."
 weight: 180
 aliases:

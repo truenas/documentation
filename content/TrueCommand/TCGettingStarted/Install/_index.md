@@ -1,5 +1,6 @@
 ---
 title: "Installing or Updating"
+redirect: "https://www.truenas.com/docs/truecommand/3.0/tcgettingstarted/install/"
 description: "Guides to install or update TrueCommand."
 weight: 10
 geekdocCollapseSection: true

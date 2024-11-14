@@ -2,7 +2,7 @@
 title: "MinIO Enterprise"
 description: "Tutorials for installing and configuring the MinIO Enterprise application in an Enterprise-licensed deployment."
 geekdocCollapseSection: true
-weight: 20
+weight: 
 aliases: 
  - /scale/scaletutorials/apps/enterpriseapps/configminioenterprise/
 tags:
@@ -47,15 +47,13 @@ For optional settings, see [Understanding MinIO Wizard Settings](#understanding-
 
 {{< include file="/static/includes/apps/MinIoEnterpriseConfig1.md" >}}
 
-{{< include file="/static/includes/apps/MinIOEnterpriseConfig2.md" >}}
+{{< include file="/static/includes/apps/MinIoEnterpriseConfig2.md" >}}
 
 If setting up a cluster configuration, see [Multi-Mode Configuration](#multi-mode-configuration) below for more information on settings.
 
 {{< include file="/static/includes/apps/MinIOEnterpriseConfig3.md" >}}
 
 Scroll down to or click on **Storage Configuration** on the list of wizard sections.
-
-{{< trueimage src="/images/SCALE/Apps/InstallMinIOEnterpriseStorageConfigSettings.png" alt="MinIO Enterprise Storage Configuration Settings" id="MinIO Enterprise Storage Configuration Settings" >}}
 
 Select the storage type you want to use.
 
@@ -69,6 +67,8 @@ Click **Add** to the right of **ACE Entries**.
 {{< trueimage src="/images/SCALE/Apps/InstallMinIOEnterpriseData1ACLandACESettings.png" alt="MinIO Enterprise ACL and ACE Settings" id="MinIO Enterprise ACL and ACE Settings" >}}
 
 Set the **ACE Entry** user to the default user **568** or enter the UID for the user created in TrueNAS to serve as the MinIO app administrator, and set the permissions to **FULL_CONTROL**.
+
+Select **Force** to allow TrueNAS to update the application to the next version. This allows updates and writing to the storage volume if it has data in it.
 
 {{< include file="/static/includes/apps/MinIOEnterpriseConfig4.md" >}}
 

@@ -1,5 +1,6 @@
 ---
 title: "Advanced Scheduler"
+redirect: "https://www.truenas.com/docs/core/13.0/uireference/tasks/advancedscheduler/"
 description: "Describes the fields in the Advanced Scheduler in TrueNAS CORE."
 weight: 100
 tags:

@@ -46,7 +46,7 @@ Go to **Shares > Unix (NFS) Shares** and click **Add** to open the **Add NFS Sha
 
 {{< trueimage src="/images/SCALE/Shares/AddNFSScreen.png" alt="Add NFS Basic Options" id="Add NFS Basic Options" >}}
 
-Enter the path or use the <span class="material-icons">arrow_right</span> icon to the left of **<span class="material-icons">folder</span>/mnt** to locate the dataset and populate the path.
+Enter the path or use the <span class="material-icons">arrow_right</span> icon to the left of **<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M5 21L3 9h18l-2 12zm5-6h4q.425 0 .713-.288T15 14t-.288-.712T14 13h-4q-.425 0-.712.288T9 14t.288.713T10 15M6 8q-.425 0-.712-.288T5 7t.288-.712T6 6h12q.425 0 .713.288T19 7t-.288.713T18 8zm2-3q-.425 0-.712-.288T7 4t.288-.712T8 3h8q.425 0 .713.288T17 4t-.288.713T16 5z"/></svg>/mnt** to locate the dataset and populate the path.
 
 {{< include file="/static/includes/FileExplorerFolderIcons.md" >}}
 

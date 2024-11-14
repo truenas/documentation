@@ -1,5 +1,6 @@
 ---
 title: "Creating VMware-Snapshots"
+redirect: "https://www.truenas.com/docs/core/13.0/coretutorials/storage/vmware-snapshots/"
 description: "Describes how to create a VMWare snapshot on TrueNAS CORE."
 weight: 30
 aliases:

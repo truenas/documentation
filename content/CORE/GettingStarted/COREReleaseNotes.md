@@ -1,5 +1,6 @@
 ---
 title: Nightly Version Notes
+redirect: "https://www.truenas.com/docs/core/13.0/gettingstarted/corereleasenotes/"
 description: "Highlights and development notes for the latest TrueNAS CORE nightly builds."
 weight: 3
 aliases:

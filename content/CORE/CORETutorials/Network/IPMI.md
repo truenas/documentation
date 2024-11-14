@@ -1,5 +1,6 @@
 ---
 title: "IPMI"
+redirect: "https://www.truenas.com/docs/core/13.0/coretutorials/network/ipmi/"
 description: "Provides instructions on setting up Intelligent Platform Management Interface (IPMI) on TrueNAS CORE."
 weight: 50
 aliases: /core/network/ipmi/

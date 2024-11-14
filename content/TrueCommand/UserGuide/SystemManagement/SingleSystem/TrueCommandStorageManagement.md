@@ -1,5 +1,6 @@
 ---
 title: "TrueCommand Storage Management"
+redirect: "https://www.truenas.com/docs/truecommand/3.0/userguide/systemmanagement/singlesystem/truecommandstoragemanagement/"
 description: "How to manage TrueNAS storage within TrueCommand."
 weight: 30
 aliases:

@@ -1,5 +1,6 @@
 ---
 title: "Configuring TFTP"
+redirect: "https://www.truenas.com/docs/core/13.0/coretutorials/services/configuringtftp/"
 description: "Configuring Trivial File Transfer Protocol (TFTP) on your TrueNAS."
 weight: 140
 tags:

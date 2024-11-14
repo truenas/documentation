@@ -1,5 +1,6 @@
 ---
 title: "Managing SMB Shares"
+redirect: "https://www.truenas.com/docs/core/13.0/coretutorials/sharing/smb/managingsmbshares/"
 description: "Provides information on how to manage Server Message Block (SMB) shares on your TrueNAS."
 weight: 10
 tags:

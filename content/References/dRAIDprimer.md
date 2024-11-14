@@ -160,6 +160,8 @@ Specify any valid dRAID layout and see it both in a pre-shuffled and a post-shuf
 
 ## Caveats
 
+{{< include file="/static/includes/dRaidGroupLayout.md" >}}
+
 dRAID layouts require more testing before we make layout recommendations on the number of spares or parity levels.
 When using dRAID, consider these factors:
 

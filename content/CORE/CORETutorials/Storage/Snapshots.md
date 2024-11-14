@@ -1,5 +1,6 @@
 ---
 title: "Creating Snapshots"
+redirect: "https://www.truenas.com/docs/core/13.0/coretutorials/storage/snapshots/"
 description: "Describes how to create snapshots on TrueNAS CORE."
 weight: 20
 aliases:

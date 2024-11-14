@@ -1,7 +1,7 @@
 ---
 title: "Syncthing (Enterprise)"
 description: "Provides general information, guidelines, installation instructions, and use scenarios for the Enterprise version of the Syncthing app."
-weight: 100
+weight: 
 aliases:
  - /scale/scaletutorials/apps/syncthing/
  - /scale/scaletutorials/apps/enterpriseapps/syncthing/
@@ -75,7 +75,7 @@ Repeat for the **/data1** storage volume.
 
 {{< trueimage src="/images/SCALE/Apps/InstallMinIOEnterpriseHomeAndData1ACLandACE.png" alt="Home and Data1 Host Path ACL and ACE Settings" id="Home and Data1 Host Path ACL and ACE Settings" >}}
 
-If migrating from some other NAS system, set **Type** to **SMB/CIFS Share (Mounts a persistent volume claim to a SMB share)**, and then select **Migrate Data**. 
+If migrating from some other NAS system, set **Type** to **SMB/CIFS Share (Mounts a volume to a SMB share)**, and then select **Migrate Data**.
 See [**Storage Settings**](#storage-settings) below for more information.
 
 {{< include file="/static/includes/apps/SyncthingCompleteInstall.md" >}}
@@ -115,7 +115,7 @@ The TrueNAS Syncthing enterprise app listens on port **8384**.
 
 {{< include file="/static/includes/apps/AppInstallWizardNetworkConfig.md" >}}
 
-Clearing the **Host Network** checkbox shows the TCP and UDP port numbers, and the web UI listens on port **22000**. 
+Clearing the **Host Network** checkbox shows the TCP and UDP port numbers, and the web UI listens on port **22000**.
 
 {{< include file="/static/includes/apps/AppInstallWizardCertificateSettings.md" >}}
 

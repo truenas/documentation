@@ -1,5 +1,6 @@
 ---
 title: "LDAP Servers"
+redirect: "https://www.truenas.com/docs/truecommand/3.0/adminguide/admin/ldapservers/"
 description: "Describes how to configure LDAP servers for TrueCommand."
 aliases:
  - /truecommand/administration/admin/ldapservers/

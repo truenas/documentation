@@ -1,5 +1,6 @@
 ---
 title: "Setting Up a Network VLAN"
+redirect: "https://www.truenas.com/docs/core/13.0/coretutorials/network/interfaces/vlancreate/"
 description: "Provides instructions on setting up a network VLAN interface on TrueNAS CORE."
 weight: 30
 tags:

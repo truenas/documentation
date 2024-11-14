@@ -1,5 +1,6 @@
 ---
 title: "Jails, Plugins and Virtual Machines"
+redirect: "https://www.truenas.com/docs/core/13.0/uireference/jailspluginsvms/"
 description: "Reference documentation for the Jails, Plugins, and Virtual Machines screens."
 geekdocCollapseSection: true
 weight: 130

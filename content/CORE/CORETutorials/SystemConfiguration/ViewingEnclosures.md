@@ -1,5 +1,6 @@
 ---
 title: "Managing Enclosures"
+redirect: "https://www.truenas.com/docs/core/13.0/coretutorials/systemconfiguration/viewingenclosures/"
 description: "Provides information about hardware and expansion shelves on TrueNAS CORE."
 weight: 50
 aliases:

@@ -1,5 +1,6 @@
 ---
 title: System Inventory
+redirect: "https://www.truenas.com/docs/truecommand/3.0/userguide/systeminventory/"
 description: "Overview and usage notes of the TrueCommand System Inventory screen."
 weight: 20
 ---

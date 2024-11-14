@@ -1,5 +1,6 @@
 ---
 title: "TrueCommand Performance Specification"
+redirect: "https://www.truenas.com/docs/truecommand/3.0/recommendations/performance/"
 description: "Performance data for a self-hosted TrueCommand container."
 weight: 10
 aliases:

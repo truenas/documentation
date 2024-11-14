@@ -1,5 +1,6 @@
 ---
 title: "Managing Single Systems"
+redirect: "https://www.truenas.com/docs/truecommand/3.0/userguide/systemmanagement/singlesystem/singlesystemsettings/"
 description: "Provides instructions on adding and managing individual TrueNAS systems in TrueCommand."
 weight: 10
 aliases:

@@ -1,5 +1,6 @@
 ---
 title: "SAML Tutorials"
+redirect: "https://www.truenas.com/docs/truecommand/3.0/adminguide/admin/saml/"
 description: "Provides SAML tutorials for TrueCommand SAML configurations."
 weight: 10
 aliases: 

@@ -1,5 +1,6 @@
 ---
 title: "Using the iSCSI Share"
+redirect: "https://www.truenas.com/docs/core/13.0/coretutorials/sharing/iscsi/usingiscsishare/"
 description: "Describes how to use the iSCSI share in TrueNAS CORE."
 weight: 10
 tags:

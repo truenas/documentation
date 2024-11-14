@@ -47,6 +47,8 @@ Keep these general best practices in mind when using applications with TrueNAS:
 
 {{< expand "Custom Apps" "v" >}}
 
+{{< include file="/static/includes/apps/CustomAppIntro.md" >}}
+
 {{< include file="/static/includes/apps/AppsCustomApp.md" >}}
 
 {{< /expand >}}
@@ -61,9 +63,9 @@ iXsystems Support can assist Enterprise customers with configuring directory ser
 
 For more information on configuring general application functions and installation wizard screens, see [TrueNAS Apps]({{< relref "/content/TruenasApps/_index.md" >}}).
 
-## Understanding App Intall Wizard Settings
+## Understanding App Install Wizard Settings
 
-{{< include file="/static/includes/AppsInstallWizardSettings.md" >}}
+{{< include file="/static/includes/apps/AppsInstallWizardSettings.md" >}}
 
 For information on adding to or changing the train for the apps catalog, see [Managing App Trains]({{< relref "UsingTrains.md" >}}).
 

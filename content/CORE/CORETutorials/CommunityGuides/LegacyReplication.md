@@ -1,5 +1,6 @@
 ---
 title: "Legacy Engine (11.3) Replication"
+redirect: "https://www.ixsystems.com/documentation/freenas/11.3-U5/FreeNAS-11.3-U5-User-Guide_screen.pdf"
 description: "Describes legacy replication on FreeNAS or TrueNAS 11.3."
 weight: 10
 tags:
