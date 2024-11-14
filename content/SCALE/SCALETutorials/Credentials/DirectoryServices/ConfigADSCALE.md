@@ -75,7 +75,7 @@ To connect TrueNAS to Active Directory:
    Enter the TrueNAS host name that matches the information on the **Network > Global Configuration** screen in the **Hostname** field.
 
 4. Select **Enable** to attempt to join the AD domain immediately after saving the configuration.
-   SCALE populates the **Kerberos Realm** and **Kerberos Principal** fields on the **Advanced Options** settings screen.
+   TrueNAS populates the **Kerberos Realm** and **Kerberos Principal** fields on the **Advanced Options** settings screen.
 
    {{< trueimage src="/images/SCALE/Credentials/ActiveDirectoryBasicOptions.png" alt="Active Directory Basic Options" id="Active Directory Basic Options" >}}
 

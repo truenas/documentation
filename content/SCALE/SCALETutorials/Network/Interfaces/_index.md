@@ -26,7 +26,7 @@ For information on configuring IPv6 addresses, see [Configuring IPv6]({{< relref
 You must know the DNS name server and default gateway addresses for your IP address.
 
 {{< expand "Static IP or DHCP-Assigned?" "v" >}}
-By default, TrueNAS SCALE configures the primary network interface for Dynamic Host Configuration Protocol (DHCP) IP address management during installation.
+By default, TrueNAS configures the primary network interface for Dynamic Host Configuration Protocol (DHCP) IP address management during installation.
 However, some administrators might choose to assign a static IP address to the primary network interface.
 This choice can be made if TrueNAS is deployed on a system that does not allow DHCP for security, stability, or other reasons.
 

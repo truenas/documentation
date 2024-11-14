@@ -30,7 +30,7 @@ We recommend setting shell to **TrueNAS Console** as this provides access to the
 
 {{< include file="/static/includes/AdminSudo.md" >}}
 
-For administrator accounts generated during the initial installation process, TrueNAS SCALE sets authorization to **Allow all sudo commands**.
+For administrator accounts generated during the initial installation process, TrueNAS sets authorization to **Allow all sudo commands**.
 For improved security, deny sudo permissions unless required for specific, recurring administrative tasks or allow sudo permissions only when needed to perform a discrete task and then deny again when finished.
 Do not allow sudo permissions for read-only administrators.
 

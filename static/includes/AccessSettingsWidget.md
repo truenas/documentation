@@ -13,7 +13,7 @@ The logout icon is inactive for the currently logged in administrator session an
 It cannot be used to terminate the currently logged in active administrator session.
 
 **Session Timeout** displays the configured token duration for the current session (default five minutes).
-TrueNAS SCALE logs out user sessions that are inactive for longer than that configured token setting for the user.
+TrueNAS logs out user sessions that are inactive for longer than that configured token setting for the user.
 New activity resets the token counter.
 
 If the configured session timeout is exceeded, TrueNAS displays a **Logout** dialog with the exceeded ticket lifetime value and the time that the session is scheduled to terminate.

@@ -39,7 +39,7 @@ To create a TrueCloud Backup task:
 
 1. Create the TrueNAS [Storj cloud credential](#adding-storj-cloud-credentials).
 
-   Adding the Storj cloud credential in TrueNAS includes following the link to create the Storj iX account, creating a new bucket, and obtaining the S3 authentication credentials needed to complete the process in SCALE.
+   Adding the Storj cloud credential in TrueNAS includes following the link to create the Storj iX account, creating a new bucket, and obtaining the S3 authentication credentials needed to complete the process in TrueNAS.
 
 2. Create the [TrueCloud Backup task](#setting-up-the-truecloud-backup-task) for one bucket.
 

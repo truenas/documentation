@@ -66,7 +66,7 @@ Cloud sync and TrueCloud backup tasks can be configured to send, receive, or syn
 The simplest way to set up a TrueCloud backup task is using a Storj iX account.
 See [Managing TrueCloud Backup Tasks]({{< relref "TrueCloudTasks.md" >}}) for a full tutorial.
 
-See [Adding Cloud Credentials]({{< relref "/SCALE/SCALETutorials/Credentials/BackupCredentials/AddCloudCredentials.md" >}}) for information on connecting TrueNAS SCALE to other cloud storage providers.
+See [Adding Cloud Credentials]({{< relref "/SCALE/SCALETutorials/Credentials/BackupCredentials/AddCloudCredentials.md" >}}) for information on connecting TrueNAS to other cloud storage providers.
 
 ### Using Replication
 Replication is the process of taking a moment-in-time snapshot of data and then copying that snapshot to another location.
