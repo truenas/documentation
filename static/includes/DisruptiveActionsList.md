@@ -5,7 +5,7 @@ When adding new or changing existing functions and services, plan maintenance wi
 
 {{< expand "Actions that Cause Disruptions" "v" >}}
 The following administrator actions  result in disruptions to services and client connections.
-Durtation of the disruptions depends on system and service configurations, number of users accessing shares and services, network interfaces, and configuration methods (directory service provisioned verses manually configured).
+Duration of the disruptions depends on system and service configurations, number of users accessing shares and services, network interfaces, and configuration methods (directory service provisioned versus manually configured).
 {{< truetable >}}
 | Service | Function | Action Description |
 |---------|----------|-------------|
