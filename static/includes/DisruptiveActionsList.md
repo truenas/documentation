@@ -9,7 +9,7 @@ Duration of the disruptions depends on system and service configurations, number
 {{< truetable >}}
 | Service | Function | Action Description |
 |---------|----------|-------------|
-| Network |  | Changing any network setting such as adding or modifying an interface, making a general network change, etc., disrupts network services. An improperly configured network interface can result in lost access to the web UI if changing the primary interface address. Improperly configured general network settings such as DNS name servers, default gateway, host name, or domain name can result in broken network connectivity. |
+| Network |  | Changing any network setting, such as adding or modifying an interface, making a general network change, etc., disrupts network services. An improperly configured network interface can result in lost access to the web UI. Improperly configured general network settings, such as DNS name servers, default gateway, host name, or domain name, can result in broken connectivity. |
 | Directory Services |  | Changing Active Directory or LDAP services can result in issues with user access, domain access, etc. TrueNAS alerts users when changes cause breakage in affected areas. |
 | SMB service | `smb.update` | Updating all SMB clients disrupts access. Before making changes, the service must be stopped and then restarted when complete. Stopping the service disrupts clients relying on the service. |
 | NFS service | `nfs.update` | Updating all NFS clients disrupts access. Before making changes, the service must be stopped and then restarted when complete. Stopping the service disrupts clients relying on the service. |
