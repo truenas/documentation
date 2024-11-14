@@ -46,12 +46,10 @@ Go to **Network**, and click **Settings** on the **Global Configuration** widget
 4. Enter the IP address for your default gateway into the **IPv4 Default Gateway** if you are using IPv4 IP addresses.
    Enter the IPv6 address in the **IPv6 Default Gateway** if you are using IPv6 addresses.
 
-5. Select **Outbound Network** for outbound service capability.
+5. Select **Allow All** for **Outbound Network**  to permit external communication for all TrueNAS services or select **Deny All** to prevent external communication.
+   Select **Allow Specific** and then use the dropdown list to pick a limited set of services to allow external communication.
 
    {{< trueimage src="/images/SCALE/Network/GlobalConfigOutboundSettings.png" alt="Global Configuration Outbound Settings" id="Global Configuration Outbound Settings" >}}
-
-   Select **Allow All** to permit external communication for all TrueNAS services or select **Deny All** to prevent that external communication.
-   Select **Allow Specific** and then use the dropdown list to pick the services to allow external communication.
 
    {{< trueimage src="/images/SCALE/Network/GlobalConfigAllowSpecificServiceOptions.png" alt="Global Configuration Allow Specific Service Options" id="Global Configuration Allow Specific Service Options" >}}
 
