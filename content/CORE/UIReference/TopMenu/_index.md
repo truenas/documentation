@@ -1,5 +1,6 @@
 ---
 title: Top Menu
+redirect: "https://www.truenas.com/docs/core/13.0/uireference/topmenu/"
 description: "Reference documentation for the options panel that displays at the top of the TrueNAS UI."
 weight: 2
 geekdocCollapseSection: true

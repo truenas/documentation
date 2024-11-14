@@ -1,5 +1,6 @@
 ---
 title: "CAs"
+redirect: "https://www.truenas.com/docs/core/13.0/uireference/system/cas/"
 description: "Describes the Certificate Authorities screen settings and functions."
 weight: 155
 tags:

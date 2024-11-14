@@ -1,5 +1,6 @@
 ---
 title: "Running S.M.A.R.T. Tests"
+redirect: "https://www.truenas.com/docs/core/13.0/coretutorials/tasks/runningsmarttests/"
 description: "Provides information on how to run Self-Monitoring, Analysis and Reporting Technology (S.M.A.R.T.) tests on your TrueNAS."
 weight: 40
 aliases:

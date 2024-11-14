@@ -1,5 +1,6 @@
 ---
 title: "Alert Notifications"
+redirect: "https://www.truenas.com/docs/core/13.0/uireference/topmenu/alerts/"
 description: "Displays system alerts and provides options to dismiss or reopen dismissed alerts on your TrueNAS."
 weight: 20
 tags:

@@ -1,5 +1,6 @@
 ---
 title: "S.M.A.R.T. Screen"
+redirect: "https://www.truenas.com/docs/core/13.0/uireference/services/smartscreen/"
 description: "Describes the S.M.A.R.T. screen in TrueNAS CORE."
 weight: 100
 tags:

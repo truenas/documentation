@@ -1,5 +1,6 @@
 ---
 title: "Interface Overview"
+redirect: "https://www.truenas.com/docs/truecommand/3.0/tcgettingstarted/interfaceoverview/"
 description: "Defines the icons, provides links to articles for each function, and explains where to access alerts on the TrueCommand interface."
 weight: 20
 aliases: 

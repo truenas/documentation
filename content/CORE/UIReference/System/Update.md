@@ -1,5 +1,6 @@
 ---
 title: "Update"
+redirect: "https://www.truenas.com/docs/core/13.0/uireference/system/update/"
 description: "Describes the fields in the Update screen in TrueNAS CORE."
 geekdocCollapseSection: true
 weight: 150

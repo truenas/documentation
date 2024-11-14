@@ -1,5 +1,6 @@
 ---
 title: "Jails"
+redirect: "https://www.truenas.com/docs/core/13.0/coretutorials/jailspluginsvms/jails/creatingjails/"
 description: "Information on creating jails, and articles related to jails, plugins and virtual machines in TrueNAS CORE."
 geekdocCollapseSection: true
 aliases:

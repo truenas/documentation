@@ -1,5 +1,6 @@
 ---
 title: "System"
+redirect: "https://www.truenas.com/docs/core/13.0/uireference/system/"
 description: "Reference documentation for the screens within the System menu option."
 geekdocCollapseSection: true
 weight: 60

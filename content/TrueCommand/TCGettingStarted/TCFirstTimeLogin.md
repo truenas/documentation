@@ -1,5 +1,6 @@
 ---
 title: "Creating the Admin Account"
+redirect: "https://www.truenas.com/docs/truecommand/3.0/tcgettingstarted/tcfirsttimelogin/"
 description: "Describes how to create the administrator account in TrueCommand."
 aliases:
  - /docs/truecommand/tcgettingstarted/adminaccounts/

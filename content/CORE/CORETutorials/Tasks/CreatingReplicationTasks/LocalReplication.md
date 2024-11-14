@@ -1,5 +1,6 @@
 ---
 title: "Local Replication"
+redirect: "https://www.truenas.com/docs/core/13.0/coretutorials/tasks/creatingreplicationtasks/localreplication/"
 description: "Describes how to create local replication tasks on TrueNAS CORE."
 weight: 10
 aliases:

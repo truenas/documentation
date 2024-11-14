@@ -1,5 +1,6 @@
 ---
 title: "Wiping a Disk"
+redirect: "https://www.truenas.com/docs/core/13.0/coretutorials/storage/disks/diskwipe/"
 description: "Describes how to wipe a disk in TrueNAS CORE."
 weight: 10
 aliases: /core/storage/disks/diskwipe/

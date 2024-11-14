@@ -1,5 +1,6 @@
 ---
 title: "Administration"
+redirect: "https://www.truenas.com/docs/truecommand/3.0/adminguide/admin/"
 description: "Section with guides to configure and administer TrueCommand."
 weight: 40
 aliases: 

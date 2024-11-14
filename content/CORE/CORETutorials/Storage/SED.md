@@ -1,5 +1,6 @@
 ---
 title: "Self-Encrypting Drives"
+redirect: "https://www.truenas.com/docs/core/13.0/coretutorials/storage/sed/"
 description: "Describes Self-Encrypting Drive (SED) support on TrueNAS CORE."
 weight: 40
 aliases: /core/storage/sed/

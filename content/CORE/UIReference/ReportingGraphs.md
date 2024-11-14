@@ -1,5 +1,6 @@
 ---
 title: "Reporting"
+redirect: "https://www.truenas.com/docs/core/13.0/uireference/reportinggraphs/"
 description: "Contains information about the graphs displayed on the Reporting screen in TrueNAS CORE."
 weight: 135
 Aliases: /core/system/reporting/
