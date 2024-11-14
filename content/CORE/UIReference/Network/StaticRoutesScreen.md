@@ -1,5 +1,6 @@
 ---
 title: "Static Routes Screen"
+redirect: "https://www.truenas.com/docs/core/13.0/uireference/network/staticroutesscreen/"
 description: "Describes the Static Routes screen in TrueNAS CORE."
 weight: 40
 tags:

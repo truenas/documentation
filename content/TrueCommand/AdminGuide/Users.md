@@ -1,5 +1,6 @@
 ---
 title: "Users and Teams"
+redirect: "https://www.truenas.com/docs/truecommand/3.0/adminguide/users/"
 description: "Describes the Users and Teams screens and has usage notes for administering TrueCommand user accounts."
 weight: 20
 aliases:

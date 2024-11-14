@@ -1,5 +1,6 @@
 ---
 title: "IPMI Screen"
+redirect: "https://www.truenas.com/docs/core/13.0/uireference/network/ipmiscreen/"
 description: "Describes the fields on the IPMI screen in TrueNAS CORE."
 weight: 50
 tags:

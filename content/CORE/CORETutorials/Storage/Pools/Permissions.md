@@ -1,5 +1,6 @@
 ---
 title: "Permissions"
+redirect: "https://www.truenas.com/docs/core/13.0/coretutorials/storage/pools/permissions/"
 description: "This articled describes permissions configuration on TrueNAS CORE."
 weight: 22
 aliases: /core/storage/pools/permissions/

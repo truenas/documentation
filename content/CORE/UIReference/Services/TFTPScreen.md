@@ -1,5 +1,6 @@
 ---
 title: "TFTP Screen"
+redirect: "https://www.truenas.com/docs/core/13.0/uireference/services/tftpscreen/"
 description: "Describes the TFTP screen in TrueNAS CORE."
 weight: 140
 tags:

@@ -1,5 +1,6 @@
 ---
 title: "Boot"
+redirect: "https://www.truenas.com/docs/core/13.0/uireference/system/bootscreen/"
 description: "Provides information about the Boot screen for the TrueNAS CORE."
 weight: 30
 aliases:

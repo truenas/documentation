@@ -1,5 +1,6 @@
 ---
 title: "Creating Cron Jobs"
+redirect: "https://www.truenas.com/docs/core/13.0/coretutorials/tasks/creatingcronjobs/"
 description: "Describes how to create a cron job on TrueNAS CORE." 
 weight: 10
 aliases:

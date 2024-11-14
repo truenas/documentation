@@ -1,5 +1,6 @@
 ---
 title: "Reporting"
+redirect: "https://www.truenas.com/docs/core/13.0/uireference/system/reporting/"
 description: "Contains information about the Reporting screen on TrueNAS CORE."
 weight: 70
 aliases: /core/administration/reporting/

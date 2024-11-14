@@ -1,5 +1,6 @@
 ---
 title: "Installing the TrueCommand Container using Docker on Linux."
+redirect: "https://www.truenas.com/docs/truecommand/3.0/tcgettingstarted/install/installtcdocker/"
 description: "Describes the steps to install the TrueCommand container in Docker on Linux."
 weight: 40
 tags:

@@ -1,5 +1,6 @@
 ---
 title: "SSH Screen"
+redirect: "https://www.truenas.com/docs/core/13.0/uireference/services/servicesssh/"
 description: "Describes the SSH screen in TrueNAS CORE."
 weight: 130
 aliases:

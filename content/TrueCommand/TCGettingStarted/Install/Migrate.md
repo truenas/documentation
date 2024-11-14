@@ -1,5 +1,6 @@
 ---
 title: "Migrate Legacy to 1.2+"
+redirect: "https://www.truenas.com/docs/truecommand/3.0/tcgettingstarted/install/migrate/"
 description: "Describes how to migrate legacy versions of TrueCommand."
 weight: 60
 tags:

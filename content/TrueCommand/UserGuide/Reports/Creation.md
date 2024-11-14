@@ -1,5 +1,6 @@
 ---
 title: "Creating a Report"
+redirect: "https://www.truenas.com/docs/truecommand/3.0/userguide/reports/creation/"
 description: "How to create a custom metrics report in TrueCommand."
 weight: 10
 aliases:

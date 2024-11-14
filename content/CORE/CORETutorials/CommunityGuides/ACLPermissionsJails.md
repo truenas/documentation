@@ -1,5 +1,6 @@
 ---
 title: "Setting ACL Permissions for Jailed Applications"
+redirect: "https://www.truenas.com/docs/core/13.3/coretutorials/communityguides/aclpermissionsjails/"
 description: "Describes how to configure ACL permissions for jailed applications on TrueNAS CORE."
 geekdocCollapseSection: true
 weight: 20
