@@ -1,5 +1,6 @@
 ---
 title: "WebDAV Screen"
+redirect: "https://www.truenas.com/docs/core/13.0/uireference/sharing/webdavsharescreen/"
 description: "Use the Sharing WebDAV screen to configure Web Distributed Authoring and Versioning (WebDAV) on your TrueNAS."
 weight: 40
 aliases:

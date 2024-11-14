@@ -1,5 +1,6 @@
 ---
 title: "Services"
+redirect: "https://www.truenas.com/docs/core/13.0/uireference/services/"
 description: "Provides information on the Services screen and lists other services UI reference articles."
 geekdocCollapseSection: true
 weight: 120

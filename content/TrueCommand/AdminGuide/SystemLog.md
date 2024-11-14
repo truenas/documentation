@@ -1,5 +1,6 @@
 ---
 title: "Logs"
+redirect: "https://www.truenas.com/docs/truecommand/3.0/adminguide/systemlog/"
 description: "Provides information on system logs."
 weight: 30
 aliases:

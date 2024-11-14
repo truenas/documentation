@@ -1,5 +1,6 @@
 ---
 title: "Importing Pools"
+redirect: "https://www.truenas.com/docs/core/13.0/coretutorials/storage/pools/poolimport/"
 description: "Describes how to import storage pools on TrueNAS CORE."
 weight: 15
 Aliases: /core/storage/pools/poolimport/

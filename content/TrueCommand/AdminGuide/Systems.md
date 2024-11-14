@@ -1,5 +1,6 @@
 ---
 title: "Systems"
+redirect: "https://www.truenas.com/docs/truecommand/3.0/adminguide/systems/"
 description: "Provides information on the System screens, settings, and options."
 weight: 10
 aliases:

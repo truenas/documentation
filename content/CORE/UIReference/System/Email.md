@@ -1,5 +1,6 @@
 ---
 title: "Email"
+redirect: "https://www.truenas.com/docs/core/13.0/uireference/system/email/"
 description: "Describes the Email screen and settings on TrueNAS CORE."
 weight: 50
 tags:

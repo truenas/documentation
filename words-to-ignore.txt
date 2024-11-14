@@ -2135,3 +2135,6 @@ UsingCustomApp
 CMD
 ExpandedVdevReporting
 InstallAppResourceConfigurationGPU
+geekDocHidden
+printview
+coretutorials

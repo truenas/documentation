@@ -1,5 +1,6 @@
 ---
 title: "Support"
+redirect: "https://www.truenas.com/docs/core/13.0/uireference/system/support/"
 description: "Describes the Support screen on TrueNAS CORE."
 weight: 180
 tags:

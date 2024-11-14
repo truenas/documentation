@@ -1,5 +1,6 @@
 ---
 title: "Interfaces Screen"
+redirect: "https://www.truenas.com/docs/core/13.0/uireference/network/interfacesscreen/"
 description: "Describes the fields in the Network Interface screen on TrueNAS CORE."
 weight: 10
 tags:

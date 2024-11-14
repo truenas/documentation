@@ -1,5 +1,6 @@
 ---
 title: "Home Shares"
+redirect: "https://www.truenas.com/docs/core/13.0/coretutorials/sharing/smb/homeshare/"
 description: "Describes how to configure a Home Share on TrueNAS CORE."
 weight: 20
 aliases: /core/sharing/smb/homeshare/

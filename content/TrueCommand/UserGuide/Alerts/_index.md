@@ -1,5 +1,6 @@
 ---
 title: Alerts
+redirect: "https://www.truenas.com/docs/truecommand/3.0/userguide/alerts/"
 description: "Guides to configure the TrueCommand Alert system."
 weight: 50
 aliases: 

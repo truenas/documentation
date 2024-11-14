@@ -1,5 +1,6 @@
 ---
 title: "FTP, SFTP, and TFTP"
+redirect: "https://www.truenas.com/docs/core/13.0/coretutorials/services/ftptftp/"
 description: "Configuring FTP, SFTP and TFTP on your TrueNAS."
 weight: 160
 aliases: /core/services/ftptftp/

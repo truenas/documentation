@@ -1,5 +1,6 @@
 ---
 title: "Getting Support"
+redirect: "https://www.truenas.com/docs/core/13.0/coretutorials/getting-support/"
 description: "Describes different options for getting support for TrueNAS CORE."
 weight: 16
 aliases:

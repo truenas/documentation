@@ -1,5 +1,6 @@
 ---
 title: "Logging In"
+redirect: "https://www.truenas.com/docs/core/13.0/gettingstarted/loggingin/"
 description: "Describes how the logging in process works on TrueNAS CORE."
 weight: 50
 tags:

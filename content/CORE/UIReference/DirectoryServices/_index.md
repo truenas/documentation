@@ -1,5 +1,6 @@
 ---
 title: "Directory Services"
+redirect: "https://www.truenas.com/docs/core/13.0/uireference/directoryservices/"
 description: "Reference documentation of the Directory Services screens."
 geekdocCollapseSection: true
 weight: 100

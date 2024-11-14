@@ -1,5 +1,6 @@
 ---
 title: "Windows Shares (SMB)"
+redirect: "https://www.truenas.com/docs/core/13.0/coretutorials/sharing/smb/smbshare/"
 description: "Tutorials for SMB sharing scenarios."
 geekdocCollapseSection: true
 weight: 50

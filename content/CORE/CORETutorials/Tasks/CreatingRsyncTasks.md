@@ -1,5 +1,6 @@
 ---
 title: "Creating Rsync Tasks"
+redirect: "https://www.truenas.com/docs/core/13.0/coretutorials/tasks/creatingrsynctasks/"
 description: "Provides information on how to create a remote sync (rsync) task on your TrueNAS."
 weight: 30
 aliases:

@@ -1,5 +1,6 @@
 ---
 title: "Rsync Tasks"
+redirect: "https://www.truenas.com/docs/core/13.0/uireference/tasks/rsync/"
 description: "Provides information about the Rsync Tasks screen on TrueNAS CORE."
 weight: 30
 tags:

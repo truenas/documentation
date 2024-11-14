@@ -1,5 +1,6 @@
 ---
 title: "Adding Certificates or CSRs"
+redirect: "https://www.truenas.com/docs/core/13.0/coretutorials/systemconfiguration/creatingcasandcertificates/creatingcertificates/"
 description: "Provides instructions on adding or importing certificates and certificate signing requests (CSRs) in TrueNAS CORE."
 weight: 20
 aliases:
