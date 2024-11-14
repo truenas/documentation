@@ -92,7 +92,7 @@ To prepare applications for migration from Kubernetes to Docker, address the fol
 |-----------|-------------|
 | Outdated Applications | Update all applications to the latest available version in the TrueNAS catalog before migrating. |
 | Host Path ACLs | Users with applications installed on 24.04 using host path volume mounts with **Enable ACL** selected and **ACL Entries** defined in the app configuration, must go to the **Edit *Application*** screen and set the [**Force Flag** checkbox under **ACL Options**](https://www.truenas.com/docs/scale/24.04/scaletutorials/apps/#storage-configuration-settings) before updating to 24.10. This ensures the app fully migrates and does not encounter issues when the mount point has existing data. |
-| Encrypted Root Dataset | Applications do not migrate to 24.10 if the ix-applications dataset is configured on a pool with an encrypted root dataset (see [NAS-131561](https://ixsystems.atlassian.net/browse/NAS-131561)). Relocate installed applications to an unencrypted pool on 24.04 before attempting to upgrade to 24.10. |
+| Encrypted Dataset | TrueNAS shows a warning and explains that applications do not migrate to 24.10 when the ix-applications dataset is configured on a pool with an encrypted dataset (see [NAS-131561](https://ixsystems.atlassian.net/browse/NAS-131561)). Relocate installed applications to an unencrypted pool on 24.04 before attempting to upgrade to 24.10. TrueNAS does attempt to migrate predefined encrypted host mount paths. |
 | Third Party Applications | Applications from third-party catalogs, such as TrueCharts, do not support automatic migration to 24.10. Migration of third-party applications generally requires manual data backup and redeployment.<br><br>Third-party catalogs are provided, maintained, and supported by individuals or organizations outside of iXsystems. Refer to the catalog maintainer or the [TrueNAS Community forums](https://forums.truenas.com/) for migration support. |
 | Container Dependent Network Settings | Applications do not migrate if TrueNAS network settings are configured to depend on any client container or application hosted on the TrueNAS system, such as DNS services, proxy networks, firewalls, and routers (see [NAS-131553](https://ixsystems.atlassian.net/browse/NAS-131553)). This is an unsupported configuration because TrueNAS cannot access the necessary networks during boot if the client container has not started. |
 {{< /truetable >}}
@@ -225,6 +225,8 @@ Notable changes:
 
 ### 24.10.0 Known Issues
 
+* A [bug with sudo v1.9.13](https://bugzilla.sudo.ws/show_bug.cgi?id=1050) causes commands like `sudo su -` and `sudo su` before starting tmux to break in TrueNAS 24.10.
+  Sudo v1.9.14 fixes this issue and is planned for inclusion in a future TrueNAS release.
 * Application **Update Available** tooltips display the current installed version as the available update version ([NAS-131747](https://ixsystems.atlassian.net/browse/NAS-131747)). A fix for this issue is expected in the 24.10.1 release version.
 * Installed custom applications do not alert for available updates in the TrueNAS UI ([NAS-132202](https://ixsystems.atlassian.net/browse/NAS-132202)). A fix for this issue is expected in the 24.10.1 release version.
 * Some users who have upgraded to 24.10.0 from a previous version, and who have applications with have NVIDIA GPU allocations, report the error `Expected [uuid] to be set for GPU inslot [<some pci slot>] in [nvidia_gpu_selection])` (see [NAS-132086](https://ixsystems.atlassian.net/browse/NAS-132086)).

@@ -217,7 +217,6 @@ updateDropdownPlaceholderText();
   
     if (product === 'TrueNAS CORE') {
       versionDropdown.innerHTML = `
-        <div class="truenas-dropdown-item" onclick="selectVersion('core-nightly')" id="core-nightly">Nightly</div>
         <div class="truenas-dropdown-item" onclick="selectVersion('13.3')" id="13.3">13.3</div>
         <div class="truenas-dropdown-item" onclick="selectVersion('13.0')" id="13">13.0</div>
         <div class="truenas-dropdown-item" onclick="selectVersion('Archive')" id="Archive">Archive</div>
@@ -232,9 +231,8 @@ updateDropdownPlaceholderText();
       `;
     } else if (product === 'TrueCommand') {
       versionDropdown.innerHTML = `
-        <div class="truenas-dropdown-item" onclick="selectVersion('tc-nightly')" id="tc-nightly">Nightly</div>
 		<div class="truenas-dropdown-item" onclick="selectVersion('3.0')" id="30">3.0</div>
-    <div class="truenas-dropdown-item" onclick="selectVersion('Archive')" id="Archive">Archive</div>
+        <div class="truenas-dropdown-item" onclick="selectVersion('Archive')" id="Archive">Archive</div>
       `;
     }
 
