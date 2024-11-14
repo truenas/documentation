@@ -80,7 +80,7 @@ Select the setting that matches your preferred system services allowed to commun
 |---------|-------------|
 | **Allow All** | Select to allow any system service to communicate externally. |
 | **Deny All** | Select to restrict this system so it cannot communicate externally. |
-| **Allow Specific** | Select to specify system services to allowed to communicate externally. All other external traffic is restricted. If selected, a dropdown list shows where you select the services to allowed to communicate externally. |
+| **Allow Specific** | Select to specify a limited set of system services to allow to communicate externally. All other external traffic is restricted. If selected, a dropdown list shows where you select the services to allowed to communicate externally. |
 {{< /truetable >}}
 {{< truetable >}}
 | Setting | Description |
