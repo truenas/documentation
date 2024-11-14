@@ -23,7 +23,7 @@ Consider assigning a static IP address for increased network stability and commu
 
 {{< include file="/static/includes/AliasOrStaticIP.md" >}}
 
-See [Setting Up Static IPs]({{< relref "settingupstaticips.md" >}}) for more information.
+See [Setting Up Static IPs]({{< relref "/SCALE/SCALETutorials/Network/Interfaces/_index.md" >}}) for more information.
 
 ## Interfaces
 
@@ -115,7 +115,7 @@ Implement Quality of Service policies to prioritize storage traffic over other n
 As your network grows, isolating the NAS onto its own subnet provides a scalable solution.
 It allows you to maintain control and security even as you add more devices and services to the network.
 
-See [Managing Interfaces]({{< relref "/SCALE/SCALETutorials/Network/Interfaces/_index.md" >}}) and [Setting Up Static IPs]({{< relref "settingupstaticips.md" >}}) for more information.
+See [Managing Interfaces]({{< relref "/SCALE/SCALETutorials/Network/Interfaces/_index.md" >}}).
 
 ## iSCSI
 

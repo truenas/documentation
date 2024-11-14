@@ -1,5 +1,6 @@
 ---
 title: "Configuring TrueCommand SAML Service for Active Directory"
+redirect: "https://www.truenas.com/docs/truecommand/3.0/adminguide/admin/saml/samlad/"
 description: "Provides detailed instructions on setting up SAML service in TrueCommand and Active Directory."
 weight: 20
 aliases:

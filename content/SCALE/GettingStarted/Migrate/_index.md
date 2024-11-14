@@ -4,6 +4,11 @@ description: "Instructions for migrating from FreeBSD to Linux-based TrueNAS ver
 geekdocCollapseSection: true
 weight: 40
 aliases:
+ - /scale/gettingstarted/migrate/scalezfsflagremoval/
+ - /scale/gettingstarted/migrate/componentnaming/
+ - /scale/gettingstarted/migrate/migratecorehatoscaleha/
+ - /scale/gettingstarted/migrate/migratingfromcore/
+ - /scale/gettingstarted/migrate/migrateprep/
 tags:
 - migrate
 related: false
@@ -15,18 +20,7 @@ keywords:
 - data migration
 ---
 
-This section provides information and instructions for FreeBSD-based TrueNAS (13.0 or 13.3) users wanting to migrate to Linux-Based TrueNAS versions.
 
-{{< include file="/static/includes/MigrateCOREtoSCALEWarning.md" >}}
-
-Linux treats device names differently than FreeBSD, so please read [Component Naming]({{< relref "ComponentNaming.md" >}}) for more information.
-
-After migration, review each area of the UI that was previously configured.
-
-<div class="noprint">
-
-## Migration Articles
-
-{{< children depth="2" description="true" >}}
+{{< include file="/static/includes/MigrateCOREtoSCALE24_04.md" >}}
 
 </div>

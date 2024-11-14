@@ -1,5 +1,6 @@
 ---
 title: "Replication"
+redirect: "https://www.truenas.com/docs/truecommand/3.0/userguide/replicationmanagement/"
 description: "Describes the Replication screen and replication management feature for creating and viewing replication tasks in TrueCommand for TrueNAS systems."
 weight: 50
 aliases:

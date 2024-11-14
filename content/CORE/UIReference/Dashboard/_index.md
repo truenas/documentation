@@ -1,5 +1,6 @@
 ---
 title: Dashboard
+redirect: "https://www.truenas.com/docs/core/13.0/uireference/dashboard/"
 description: "CORE Dashboard reference."
 weight: 5
 geekdocCollapseSection: true

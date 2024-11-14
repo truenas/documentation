@@ -1,5 +1,6 @@
 ---
 title: "Sharing Storage"
+redirect: "https://www.truenas.com/docs/core/13.0/gettingstarted/sharingstorage/"
 description: "Describes sharing configurations on TrueNAS CORE."
 geekdocCollapseSection: true
 weight: 70

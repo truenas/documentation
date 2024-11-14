@@ -1,5 +1,6 @@
 ---
 title: "Changing the Default Shell"
+redirect: "https://www.truenas.com/docs/core/13.0/coretutorials/changingdefaultshell/"
 description: "Describes how to change the default shell on TrueNAS CORE."
 weight: 30
 Aliases:

@@ -85,10 +85,9 @@ Enterprise customers are encouraged to contact Support for assistance with the p
    If there are issues after a clean install from an <file>iso</file> file, or if you are not using DHCP for network and interface configuration, use the recorded information from your previous settings to configure your network settings and reconfigure your static IPs or aliases after migrating.
       {{< include file="/static/includes/NetworkInstallRequirementsSCALE.md" >}}
 
-7. Migrate the deprecated S3 MinIO service (if in use). See [deprecated services](#deprecated-services).
-   This is a lengthy process depending on the amount of data stored while using the S3 service.
-   Read and follow instructions in [Migrating MinIO Data](https://www.truenas.com/docs/solutions/miniocoretoscale/)!
-   Make sure S3 MinIO data is backed up as a precaution. The migration process from the S3 service requires first [migrating to the MinIO plugin in TrueNAS 13.0 or 13.3](https://www.truenas.com/docs/core/13.0/coretutorials/jailspluginsvms/plugins/minioplugin/#migrating-from-s3-service-to-minio-plugin), migrating from TrueNAS versions, then installing the MinIO app and importing S3 data.
+7. Offline the deprecated S3 MinIO service (if in use).
+   This might require a manual data backup and restore strategy.
+   Enterprise customers can contact iX Support to discuss migration and backup strategies.
 
 8. Back up any critical data.
 
@@ -138,24 +137,8 @@ Take note of all host path, access mode type, number of simultaneous connections
 Before you configure a new rsync application like **Rsyncd**, validate that it is needed.
 When rsync is configured externally with SSH or using an rsync task in **Data Protection > Rsync Tasks**, and when **Rsync Mode** is set to SSH, the deprecated rsync service is not used or necessary for rsync to function.
 
-Install a replacement application, such as **Rsyncd**, using the service settings from your notes.
-{{< /expand >}}
-
-{{< expand "Migrating from S3 MinIO" "v" >}}
-You must migrate your S3 service and data before you migrate TrueNAS versions!
-
-If you have the S3 service configured, you must first [migrate to the MinIO plugin](https://www.truenas.com/docs/core/13.0/coretutorials/jailspluginsvms/plugins/minioplugin/#migrating-from-s3-service-to-minio-plugin).
-After migrating to TrueNAS 24.04 and then installing the [MinIO Enterprise app](https://www.truenas.com/docs/scale/scaletutorials/apps/enterpriseapps/minio/), you can import S3 data from the 13.0 plugin to the app.
-
-Review your S3 service settings.
-Take note of the credentials (**Access Key** and **Secret Key**), and data storage volume and host path.
-
-If a certificate other than the default **freenas_default** is used, take note.
-A configured certificate migrate, but as a precaution, record the certificate authority (CA) and certificate settings, especially any private and public keys the certificate uses.
-
-Follow the migration instructions provided in [Migrating MinIO Data](https://www.truenas.com/docs/solutions/miniocoretoscale/).
-This is an involved and time-consuming process with specific requirements.
-The amount of data being migrated determines how long this process takes.
+Install a replacement application such as **Rsync Daemon** using the 13.0 service settings from your notes.
+TrueNAS 24.10 suggests other applications to consider other than the **Rsync Daemon** application.
 {{< /expand >}}
 
 {{< expand "Migrating from TFTP Service" "v" >}}

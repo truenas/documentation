@@ -1,5 +1,6 @@
 ---
 title: "Configuring SNMP"
+redirect: "https://www.truenas.com/docs/core/13.0/coretutorials/services/configuringsnmp/"
 description: "Provides information on how to configure Simple Network Management Protocol (SNMP) on your TrueNAS."
 weight: 120
 aliases: /core/services/snmp/

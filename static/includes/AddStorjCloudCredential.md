@@ -1,27 +1,27 @@
 &NewLine;
 
-The instructions in this section cover adding the Storj iX account and configuring the cloud service credentials in TrueNAS and Storj.
-The process includes going to Storj to create a new Storj iX account and returning to TrueNAS to enter the S3 credentials provided by Storj.
-
 Go to **Credentials > Backup Credentials** and click **Add** on the **Cloud Credentials** widget.
 The **Cloud Credentials** screen opens with Storj displayed as the default provider in the **Provider** field.
 
 {{< trueimage src="/images/SCALE/Credentials/AddingStorjCloudCredential.png" alt="Adding Storj Cloud Credentials" id="Adding Storj Cloud Credentials" >}}
 
-1. Enter a descriptive name to identify the credential in the **Name** field.
+Enter a descriptive name to identify the credential in the **Name** field.
 
-2. Click **Signup for account** to create your Storj iX account. This opens the Storj new account screen for TrueNAS.
+You can create your Storj iX cloud service account using two methods:
 
-   {{< hint type=important >}}
-   You must use this link to create your Storj account to take advantage of the benefits of the Storj iX pricing!
-   {{< /hint >}}
+* Go to the [TrueNAS Storj web page](https://www.truenas.com/ix-storj/) and click **Sign Up & Log in - iX-Storj**.
+* Go to **Credentials > Backup Credentials** and click **Add**.
+   Select **Storj iX** as the **Provider** on the **Cloud Credentials** screen, then click **Sign up for account**.
 
-   After setting up your Storj iX account, [create your Storj bucket](#adding-the-storj-truenas-bucket) and the [Storj S3 access](#setting-up-s3-access-to-the-bucket) for the new bucket.
+The [Storj Create your Storj account](https://us1.storj.io/signup?partner=ix-storj-1) web page opens.
 
-3. Enter the authentication information provided by Storj in the **Access Key ID** and **Secret Access Key** fields.
+{{< hint type=important >}}
+You must use this link to create your Storj account to take advantage of the benefits of the Storj iX pricing!
+{{< /hint >}}
 
-4. Click **Verify Credentials** and wait for the system to verify the credentials.
+Enter your information in the fields, select the **I agree to the Terms of Service and Privacy Policy**, and click the button at the bottom of the screen.
+The Storj main dashboard opens.
 
-   {{< trueimage src="/images/SCALE/Credentials/CloudCredentialsVerified.png" alt="Verify Cloud Credentials" id="Verify Cloud Credentials" >}}
+{{< trueimage src="/images/SCALE/DataProtection/StorjMainDashboard.png" alt="Storj Main Dashboard" id="Storj Main Dashboard" >}}
 
-5. Click **Save**.
+After setting up your Storj iX account, set up [Storj S3 access](#setting-up-s3-access) and [create your Storj bucket](#creating-a-truenas-storj-bucket).

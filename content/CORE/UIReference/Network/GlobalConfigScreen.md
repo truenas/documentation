@@ -1,5 +1,6 @@
 ---
 title: "Global Configuration Screen"
+redirect: "https://www.truenas.com/docs/core/13.0/uireference/network/globalconfigscreen/"
 description: "Describes how to use the Global Configuration screen in TrueNAS CORE."
 weight: 20
 aliases: /core/network/globalconfig/

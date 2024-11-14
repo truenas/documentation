@@ -1,5 +1,6 @@
 ---
 title: "Configuring SFTP"
+redirect: "https://www.truenas.com/docs/core/13.0/coretutorials/services/configuringsftp/"
 description: "Configuring SSH File Transfer Protocol (SFTP) service on your TrueNAS."
 weight: 20
 aliases:

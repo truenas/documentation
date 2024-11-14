@@ -1,5 +1,6 @@
 ---
 title: "UPS Screen"
+redirect: "https://www.truenas.com/docs/core/13.0/uireference/services/upsscreen/"
 description: "Describes the UPS screen in TrueNAS CORE."
 weight: 150
 aliases:

@@ -224,8 +224,8 @@ Enter a number for the maximum number of simultaneous replication tasks you want
 
 ## Access Widget
 The **Access** widget displays a list of all active sessions, including the user who initiated the session and what time it started.
-It also displays the **Token Lifetime** setting for your current session.
-It allows administrators to manage other active sessions and to configure the token lifetime for their account.
+It also displays the **Session Timeout** setting for your current session.
+It allows administrators to manage other active sessions and to configure the session timeout for their account.
 
 {{< trueimage src="/images/SCALE/SystemSettings/AdvancedSystemSettingsAccessWidget.png" alt="Access Widget" id="Access Widget" >}}
 
@@ -236,11 +236,11 @@ You must check a confirmation box before the system allows you to end sessions.
 The logout button is inactive for your current session and active for all other current sessions.
 It cannot be used to terminate your current session.
 
-**Token Lifetime** displays the configured token duration for your current session (default five minutes).
+**Session Timeout** displays the configured token duration for your current session (default five minutes).
 TrueNAS logs out user sessions that are inactive for longer than the configured token setting.
 New activity resets the token counter.
 
-If the configured token lifetime is exceeded, TrueNAS displays a **Logout** dialog with the exceeded ticket lifetime value and the time that the session is scheduled to terminate.
+If the configured session timeout is exceeded, TrueNAS displays a **Logout** dialog with the exceeded ticket lifetime value and the time that the session is scheduled to terminate.
 
 {{< expand "Logout Dialog" "v" >}}
 {{< trueimage src="/images/SCALE/SystemSettings/TimeoutDialog.png" alt="Logout Dialog" id="Logout Dialog" >}}
@@ -252,7 +252,7 @@ If the button is not clicked, the TrueNAS terminates the session automatically a
  **Configure** opens the **Token Settings** screen.
 
 ### Token Settings Screen
-The **Token Settings** screen allows users to configure the **Token Lifetime** for the current account.
+The **Token Settings** screen allows users to configure the **Session Timeout** for the current account.
 
 {{< trueimage src="/images/SCALE/SystemSettings/TokenSettingsScreen.png" alt="Token Settings Screen" id="Token Settings Screen" >}}
 

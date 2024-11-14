@@ -1,5 +1,6 @@
 ---
 title: "Pools"
+redirect: "https://www.truenas.com/docs/core/13.0/coretutorials/storage/pools/"
 description: "Provides instructions on creating and pool, and lists other pool and storage articles in TrueNAS CORE."
 geekdocCollapseSection: true
 weight: 10

@@ -1,5 +1,6 @@
 ---
 title: "Updating CORE"
+redirect: "https://www.truenas.com/docs/core/13.0/coretutorials/updatingtruenas/updatingcore/"
 description: "Tutorials for updating or upgrading a TrueNAS CORE system."
 geekdocCollapseSection: true
 weight: 900

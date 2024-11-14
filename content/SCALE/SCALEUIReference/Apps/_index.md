@@ -23,7 +23,7 @@ The **Installed** applications screen shows status of installed apps, provides a
 
 The **Discover** screen show widgets for the installed catalog of apps.
 The individual app widgets open app information screens with details about that application, and access to an installation wizard for the app.
-<!-- It also provides access to a [**Custom Apps**](#install-custom-app-screen) wizard that allows users to add an app not included in the catalog. commented out until RC1 release when the Custom App screen is added back to the UI -->
+It also includes options to install [third-party applications](#install-custom-app-screen) in Docker containers that allow users to deploy apps not included in the catalog.
 
 ## Installed Screen
 The first time you go to **Apps**, the **Installed** applications screen header shows an <i class="fa fa-cog" aria-hidden="true"></i> **Apps Service Not Configured** status and dialog opens prompting you to choose the pool for apps to use.
@@ -39,13 +39,13 @@ The **Installed** applications screen displays **Check Available Apps** before y
 
 **Check Available Apps** or **Discover Apps** opens the **[Discover](#using-the-discover-applications-screen)** screen.
 
-## Settings Menu
-**Settings** on the **Installed** applications header displays global options that apply to all applications. 
+## Configuration Menu
+**Configuration** on the **Installed** applications header displays global settings that apply to all applications. 
 
 * **Choose Pool** opens the **[Choose a pool for Apps](#choose-a-pool-for-apps-dialog)** dialog.
 * **Unset Pool** shows after setting a pool for applications to use. It opens the **Unset Pool** dialog.
 * **Manage Container Images** opens the [**Manage Container Images**](#manage-container-images) screen.
-* **[Train Settings](#train-settings)** opens the **Train Settings** screen. Use to add or remove other trains to the **Stable** catalog of applications.
+* **[Settings](#settings)** opens the **Settings** screen with four train options. Use to add or remove other trains to the one catalog of applications.
 
 {{< trueimage src="/images/SCALE/Apps/AppsInstalledAppsSettingOptions.png" alt="Installed Applications Screen Settings" id="Installed Applications Screen Settings" >}}
 
@@ -58,6 +58,8 @@ The **Installed** applications screen displays **Check Available Apps** before y
 The first time you open the **Installed** applications screen a dialog prompts you to choose the pool for apps to use for storage.
 Select the pool from the dropdown list, then click **Save**. This starts the applications service.
 If you exit out of this dialog, to set the pool, click [**Settings > Choose Pool**](#choose-a-pool-for-apps-dialog) to select a storage pool for apps.
+
+If a pool is not chosen and you attempt to install an application, after clicking **Install** on an application information screen a dialog window prompts you to select a pool before the installation wizard shows.
 
 ### Unset Pool
 **Unset Pool** on the **Settings** menu opens the **Unset Pool** dialog. Click **Unset** to unset the pool and turn off the application service.
@@ -87,20 +89,38 @@ Entering characters in the **<span class="iconify" data-icon="mdi:magnify"></spa
 | **Password** | User account password to access a private Docker image. |
 {{< /truetable >}} 
 
-### Train Settings
-**Train Settings** opens the **Train Settings** screen.
+### Settings
+**Settings** opens the **Settings** screen showing four application train options, the option to add IP addresses and subnets for the application to use, check for Docker image updates, and if the system is equipped with a GPU, to enable TrueNAS to update drivers for that GPU.
 
-{{< trueimage src="/images/SCALE/Apps/AppsTrainSettingsScreen.png" alt="Train Settings Add Enterprise Train" id="Train Settings Add Enterprise Train" >}}
+{{< trueimage src="/images/SCALE/Apps/AppsSettingScreen.png" alt="Apps Settings Screen" id="Apps Settings Screen" >}}
 
 Select the checkbox to the left of the train name to add another train to the applications catalog.
 Train options:
 * **stable** the default train for official apps
 * **enterprise** for apps verified and simplified for Enterprise users, default for enterprise-licensed systems.
 * **community** for community proposed and maintained apps
+* **test** for application in development but not yet released in one of the other three trains.
+
 You must specify at least one train.
 
+The **Address Pools** shows the current IP address and subnet mask for the network used by applications.
+**Base** shows the default IP address and subnet, and **Size** shows the network size of each docker network that is cut off from the base subnet.
+Select a predefined range from the dropdown list.
+
+**Install NVIDIA Drivers** shows if the system has an NVIDIA GPU installed. Select to enable TrueNAS to manually install drivers for this device.
+Systems with non-NVIDIA GPU devices do not show this option, but they are selectable in the app installation wizards in the **Resources Configuration** section for the app.
+
+{{< hint type="info" title="Apps Troubleshooting Tip!" >}}
+This setting replaces the Kubernetes Settings option for Bind Network in 24.04 and earlier.
+Use to resolve issues where apps experiences issues where TrueNAS device is not reachable from some networks.
+Select the network option, or add additional options to resolve the network connection issues.
+{{< /hint >}}
+
+**Check for docker image updates** sets TrueNAS to check for docker image updates (default setting). 
+
 ## Applications Table
-The **Applications** table on the **Installed** screen populates a row for each installed app that shows the current state, and the option to stop the app. Stopped apps show the option to start the app.
+The **Applications** table on the **Installed** screen populates a row for each installed app that shows the current state, and the option to stop the app.
+Stopped apps show the option to start the app.
 
 After installing an application, the **Installed** screen populates the **Applications** table.
 When returning to the **Installed** screen, the first application on the list is selected by default.
@@ -108,19 +128,31 @@ Each application row shows the name, status, and update information for the appl
 
 {{< trueimage src="/images/SCALE/Apps/InstalledAppsScreenWithApps.png" alt="Installed Applications Status" id="Installed Applications Status" >}}
 
+Click on **Application**, **Status**, or **Update** on the table heading row to sort the table in ascending or descending order.
+
 A yellow badge shows when an update is available. See [Update Apps](#update-apps) for more information on updating the application.
 
 **Search** above the **Applications** table allows entering the name of an app to locate an installed application.
 
 Selecting the checkbox to the left of **Applications** selects all installed apps and shows the [**Bulk Actions**](#bulk-actions) dropdown list.
-Selecting the checkbox on an app row also shows the **Bulk Actions)** dropdown list.
 
 ### Bulk Actions
 The **Bulk Action** dropdown list allows you to apply actions to one or more applications installed and running on your system.
+
+{{< trueimage src="/images/SCALE/Apps/InstalledAppsBulkActions.png" alt="Installed Applications Bulk Actions" id="Installed Applications Bulk Actions" >}}
+
 Select the checkbox to the left of **Applications** to show the **Bulk Actions** dropdown menu.
 Menu options are **Start All Selected**, **Stop All Selected**, **Upgrade All Selected**, and **Delete All Selected**.
 
-{{< trueimage src="/images/SCALE/Apps/InstalledAppsBulkActions.png" alt="Installed Applications Bulk Actions" id="Installed Applications Bulk Actions" >}}
+Performing a bulk action update opens a dialog listing the apps with available updates.
+
+{{< trueimage src="/images/SCALE/Apps/InstalledAppsBulkActionUpgradeDialog.png" alt="App Bulk Update Dialog" id="App Bulk Update Dialog" >}}
+
+Select the radio button to the left of a listed application to deselect or reselect an application to upgrade.
+
+Click the expand icon for listed app to show the **Version** dropdown and **Changelog** for the selected version.
+
+Upgrade begins updating the applications one at a time. Apps status changes to STOPPED before it is updated, and then returns to RUNNING after the upgrade completes.
 
 ## Application Widgets
 Installed application have a set of widgets on the **Installed** screen.
@@ -129,12 +161,12 @@ Information in the widgets change based on the app row selected in the **Applica
 
 ### Application Info Widget
 The **Application Info** widget shows the name, version number, date last updated, source link for the application, developer, catalog, and train name.
-It includes the **Edit**, **Delete**, and **Web Portal** buttons for the application.
+It includes the **Edit**, **Delete**, and **Web UI** buttons for the application.
 If an update is available, it also shows the **Update** button.
 
-{{< trueimage src="/images/SCALE/Apps/InstalledAppScreenApplicationInfoWidget.png" alt="Installed Application Info Widget" id="Installed Application Info Widget" >}}
+{{< trueimage src="/images/SCALE/Apps/ApplicationInfoWidget.png" alt="Application Info Widget" id="Application Info Widget" >}}
 
-**Web Portal** opens the application login or sign-up web page.
+**Web UI** opens the application login or sign-up web page.
 
 **[Delete](#delete-apps)** opens the **Delete** dialog. Deletes the application deployment but does not remove it from the catalog or train in TrueNAS.
 
@@ -167,7 +199,7 @@ The **Update** state on the application row on the **Installed** screen changes 
 The **Workloads** widget shows the container information for the selected application.
 Information includes the number of pods, used ports, number of deployments, stateful sets, and container information.
 It also shows the **Shell**, **Volume Mounts** and **View Log** icon buttons that provide access to the container pod shell and log screens and mount point windows.
-These options do not show for stopped apps.
+The option to access the log and the shell remain available for stopped applications for fully deployed application containers, and for applications in the crashed state.
 
 {{< trueimage src="/images/SCALE/Apps/InstalledAppsWorkloadsWidget.png" alt="Installed Apps Containers Widget" id="Installed Apps Containers Widget" >}}
 
@@ -207,18 +239,20 @@ The **Notes** widget shows information about the apps, location where TrueNAS Do
 
 {{< trueimage src="/images/SCALE/Apps/AppsNotesWidget.png" alt="Apps Notes Widget" id="Apps Notes Widget" >}}
 
-Click **View More** to show all notes, and **Collapse** to return the **Notes** widget to the default view length.
-
-### Application Metadata Widget
-The **Application Metadata** widget shows application capabilities unique to the application, and **Run As Content** showing the user and group IDs, the default user and group name, and brief description for the application. 
 **View More** expands the widget to show more information on application settings.
 **Collapse** hides the extra information.
 
+### Application Metadata Widget
+The **Application Metadata** widget shows application capabilities unique to the application, and **Run As Content** showing the user and group IDs, the default user and group name, and brief description for the application.
+
 {{< trueimage src="/images/SCALE/Apps/ApplicationMetadataWidget.png" alt="Application Metadata Widget" id="Application Metadata Widget" >}}
+
+**View More** expands the widget to show more information on application settings.
+**Collapse** hides the extra information.
 
 ## Discover Apps Screen
 The **Discover** screen displays application widgets for the official TrueNAS **stable** train by default.
-Users can add the **community** and **enterprise** train applications on the **[Train Settings](#train-settings-screen)** screen.
+Users can add the **community** and **enterprise**, or **test** train applications on the **[Settings](#settings-screen)** screen.
 
 {{< trueimage src="/images/SCALE/Apps/AppsDiscoverScreen.png" alt="Applications Discover Screen" id="Applications Discover Screen" >}}
 
@@ -227,8 +261,8 @@ The breadcrumbs at the top of the screen header show links to the previous or th
 
 {{< trueimage src="/images/SCALE/Apps/AppsDiscoverScreenHeaderAndSearch.png" alt="Apps Discover Screen Header and Search" id="Discover Screen Header and Search" >}}
 
-<!--
-**Custom App** opens the **[Install Custom App](#install-custom-app-screen)** screen. commenting out until added back into the UI in RC1 -->
+**Custom App** opens the **[Install iX App](#install-custom-app-screens)** screen with an install wizard.
+<i class="material-icons" aria-hidden="true" title="more_vert">more_vert</i> > **Install via YAML** opens the **Add Custom App** screen with an advanced YAML editor for deploying apps using Docker Compose.
 
 The **Discover** screen includes a search field, links to other application management screens, and filters to sort the application widgets displayed.
 **Show All** shows all application widgets in the trains added to the **Stable** catalog. The links are:
@@ -244,33 +278,36 @@ Filter information includes the **Category**, **App Name**, and **Updated Date**
 * **App Name** sorts app widgets alphabetically (A to Z).
 * **Updated Date** sorts the app widgets by date of update.
 
-<!-- commenting out until RC1 when this function is added back to the UI
-## Install Custom App Screen
+## Install Custom App Screens
 
-The **Install Custom App** screen displays the setting options needed to install a third-party application not included in the TRUENAS catalog.
-See [Install Custom App Screens]({{< relref "InstallCustomAppScreens.md" >}}) for more information. -->
+TrueNAS 24.10 or later provides two options for installing a third-party application not included in the official catalogs using a Docker image.
+**Custom App** opens the **[Install iX App](#install-custom-app-screens)** guided installation wizard.
+<i class="material-icons" aria-hidden="true" title="more_vert">more_vert</i> > **Install via YAML** opens the **Add Custom App** screen with an advanced YAML editor for deploying apps using Docker Compose.
+
+See [Install Custom App Screens]({{< relref "InstallCustomAppScreens.md" >}}) for more information.
 
 ## Application Information Screens
 Each application widget on the **Discover** screen opens a information screen with details about that application, a few screenshot of web UI for the application, and the **Install** button.
-Application information shows the version, GitHub repository link for the image, and date the image was last updated.
+Application information shows the app version, GitHub repository link for the image, and date the image was last updated, keywords, the TrueNAS app train, and the app homepage location.
 
-{{< trueimage src="/images/SCALE/Apps/MinIOChartsAppInfoScreen.png" alt="Application Information Screen Example" id="Application Information Screen Example" >}}
+{{< trueimage src="/images/SCALE/Apps/CollaboraInfoScreen.png" alt="Application Information Screen Example" id="Application Information Screen Example" >}}
 
 The application information screen shows two widgets:
 
 * **Available Resources** that shows CPU and memory usage the app requires, the app pool, and available space in gigabits.
 * **Application Info** that includes the application version number, link to GitHub repository for the image, and date the image was last application updated.
 
-The screen includes small screenshots of the application website that when clicked open larger versions of the image.
+Some applications might also include the **Run-As Content** and **Capabilities** widgets.
+
+The screen includes small screenshots of the application website that, when clicked, opens larger versions of the image.
 
 **Install** opens the installation wizard for the application.
 
-The bottom of the screen includes widgets for similar applications found in the catalog.
+The bottom of the screen includes app widgets for similar applications found in the catalog.
 
 ### Application Install or Edit App Wizards
-The application **Install *Application*** wizard and **Edit *Application*** screens show the same settings.
+The application **Install *Application*** wizard and **Edit *Application*** screens show the same settings, but un-editable settings are either not shown or are inactive to prevent edit attempts.
 The **Edit *Application*** screen opens populated with the current settings for the application.
-Settings greyed out are cannot be edited.
 
 The install and edit wizard screens include a navigation panel on the right of the screen that lists and links to the setting sections.
 A red triangle with an exclamation point marks the sections with the required settings.
@@ -279,7 +316,7 @@ You can enter a new setting in fields that include a preprogrammed default.
 
 {{< trueimage src="/images/SCALE/Apps/AppsInstallWizardSectionTOC.png" alt="App Installation Wizard ToC" id="App Installation Wizard ToC" >}}
 
-{{< include file="/static/includes/AppsInstallWizardSettings.md" >}}
+{{< include file="/static/includes/apps/AppsInstallWizardSettings.md" >}}
 
 <div class="noprint">
 

@@ -17,6 +17,8 @@ related: false
 ---
 
 
+{{< include file="/static/includes/ProposeArticleChange.md" >}}
+
 {{< include file="/static/includes/SCALEEnterpriseApps.md" >}}
 
 TrueNAS is certified with leading hypervisors and backup solutions to streamline storage operations and ensure compatibility with your existing IT infrastructure.
@@ -27,31 +29,33 @@ Keep these general best practices in mind when using applications with TrueNAS:
 
 {{< expand "App Pool Selection" "v" >}}
 
-{{< include file="/static/includes/AppsPoolOrDataset.md" >}}
+{{< include file="/static/includes/apps/AppsPoolOrDataset.md" >}}
 
 {{< /expand >}}
 
 {{< expand "App Dataset and File Sharing" "v" >}}
 
-{{< include file="/static/includes/AppsFileSharing.md" >}}
+{{< include file="/static/includes/apps/AppsFileSharing.md" >}}
 
 {{< /expand >}}
 
 {{< expand "Docker Compose Settings" "v" >}}
 
-{{< include file="/static/includes/AppsDockerCompose.md" >}}
+{{< include file="/static/includes/apps/AppsDockerCompose.md" >}}
 
 {{< /expand >}}
 
 {{< expand "Custom Apps" "v" >}}
 
-{{< include file="/static/includes/AppsCustomApp.md" >}}
+{{< include file="/static/includes/apps/CustomAppIntro.md" >}}
+
+{{< include file="/static/includes/apps/AppsCustomApp.md" >}}
 
 {{< /expand >}}
 
 {{< expand "App Directory Services" "v" >}}
 
-{{< include file="/static/includes/AppsDirectoryService.md" >}}
+{{< include file="/static/includes/apps/AppsDirectoryService.md" >}}
 
 iXsystems Support can assist Enterprise customers with configuring directory service settings in TrueNAS with the [information customers provide]({{< relref "/SCALE/GettingStarted/Install/_index.md" >}}), but they do not configure customer Active Directory system settings.
 
@@ -59,7 +63,9 @@ iXsystems Support can assist Enterprise customers with configuring directory ser
 
 For more information on configuring general application functions and installation wizard screens, see [TrueNAS Apps]({{< relref "/content/TruenasApps/_index.md" >}}).
 
-{{< include file="/static/includes/ProposeArticleChange.md" >}}
+## Understanding App Install Wizard Settings
+
+{{< include file="/static/includes/apps/AppsInstallWizardSettings.md" >}}
 
 For information on adding to or changing the train for the apps catalog, see [Managing App Trains]({{< relref "UsingTrains.md" >}}).
 

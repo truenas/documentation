@@ -1,5 +1,6 @@
 ---
 title: "TrueCommand Support"
+redirect: "https://www.truenas.com/docs/truecommand/3.0/tcgettingstarted/support/"
 description: "List of portals and options for support with TrueCommand."
 weight: 100
 aliases:

@@ -1,5 +1,6 @@
 ---
 title: System Management
+redirect: "https://www.truenas.com/docs/truecommand/3.0/userguide/systemmanagement/"
 description: "TrueCommand Dashboard overview and TrueNAS management options descriptions."
 weight: 17
 aliases: 

@@ -1,5 +1,6 @@
 ---
 title: "Remote Replication"
+redirect: "https://www.truenas.com/docs/core/13.0/coretutorials/tasks/creatingreplicationtasks/remotereplication/"
 description: "Describes how to create a remote replication task on TrueNAS CORE."
 weight: 20
 aliases:

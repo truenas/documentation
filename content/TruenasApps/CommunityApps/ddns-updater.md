@@ -1,6 +1,6 @@
 ---
 title: "DDNS-Updater"
-description: "Provides basic configuration instructions for the DDNS-Updater application."
+description: "Provides basic configuration instructions for the DDNS-Updater application in TrueNAS."
 weight:
 aliases:
  - /scale/scaleuireference/systemsettings/services/ddnsservicescreenscale/
@@ -14,6 +14,11 @@ keywords:
 - nas data storage
 - software storage solutions
 ---
+
+{{< include file="/static/includes/apps/CommunityApp.md" >}}
+
+<!--Comment or remove the following line if your PR changes provide a complete, up-to-date, and working installation tutorial -->
+{{< include file=\"/static/includes/apps/CommunityPleaseImprove.md\" >}}
 
 The DDNS-Updater application is a lightweight universal dynamic DNS (DDNS) updater with web UI.
 When installed, a container launches with root privileges in order to apply the correct permissions to the DDNS-Updater directories.

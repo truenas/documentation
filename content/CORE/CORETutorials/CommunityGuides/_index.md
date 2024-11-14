@@ -1,5 +1,6 @@
 ---
 title: "Community Guides"
+redirect: "https://www.truenas.com/docs/core/13.0/coretutorials/communityguides/"
 description: "Additional tutorials written by the TrueNAS Community about TrueNAS CORE configuration and use cases."
 geekdocCollapseSection: true
 weight: 30

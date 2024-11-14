@@ -1,5 +1,6 @@
 ---
 title: "SSH Keypairs"
+redirect: "https://www.truenas.com/docs/core/13.0/uireference/system/sshkeypairs/"
 description: "Describes the SSH Keypair screen on TrueNAS CORE."
 weight: 120
 aliases:

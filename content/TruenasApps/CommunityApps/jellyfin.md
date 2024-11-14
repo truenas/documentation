@@ -1,6 +1,6 @@
 ---
 title: "Jellyfin"
-description: "Provides installation instructions for the Jellyfin application."
+description: "Provides installation instructions for the Jellyfin application in TrueNAS."
 weight: 
 aliases:
  - /scale/scaletutorials/apps/communityapps/jellyfin/
@@ -12,6 +12,11 @@ keywords:
 - software storage solutions
 - flash storage
 ---
+
+{{< include file="/static/includes/apps/CommunityApp.md" >}}
+
+<!--Comment or remove the following line if your PR changes provide a complete, up-to-date, and working installation tutorial -->
+{{< include file=\"/static/includes/apps/CommunityPleaseImprove.md\" >}}
 
 [Jellyfin](https://jellyfin.org/) is a volunteer-built media solution that puts you in control of managing and streaming your media.
 
@@ -164,7 +169,7 @@ Click **Add** next to **Additional Storage** to add the media storage path(s) on
 {{< trueimage src="/images/SCALE/Apps/InstallJellyfinAdditionalStorage.png" alt="Jellyfin Additional Storage" id="Jellyfin Additional Storage" >}}
 
 Select **Host Path (Path that already exists on the system)** or **SMB Share (Mounts a persistent volume claim to a SMB share)** in **Type**.
-You can select **iXvolume (dataset created automatically by the system)** to create a new library dataset, but this is not recommended.
+You can select **ixVolume (dataset created automatically by the system)** to create a new library dataset, but this is not recommended.
 
 Mounting an SMB share allows data synchronization between the share and the app.
 The SMB share mount does not include ACL protections at this time. Permissions are currently limited to the permissions of the user that mounted the share. Alternate data streams (metadata), finder colors tags, previews, resource forks, and MacOS metadata is stripped from the share along with filesystem permissions, but this functionality is undergoing active development and implementation planned for a future TrueNAS release.

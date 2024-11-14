@@ -1,5 +1,6 @@
 ---
 title: "Shadow Copies"
+redirect: "https://www.truenas.com/docs/core/13.0/coretutorials/sharing/smb/shadowcopies/"
 description: "Describes how to configure shadow copies on TrueNAS CORE."
 weight: 30
 aliases: /core/sharing/smb/shadowcopies/

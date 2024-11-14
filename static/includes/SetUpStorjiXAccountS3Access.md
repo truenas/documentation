@@ -1,6 +1,6 @@
 &NewLine;
 
-After creating your bucket, add S3 access for the new bucket(s) you want to use in your Storj iX account and the TrueNAS TrueCloud Backup task.
+After creating your Storj iX account, add S3 access credentials.
 
 1. Click **Access Keys** to open the **Access Keys** dashboard, then click **New Access Key**.
 
@@ -19,7 +19,7 @@ After creating your bucket, add S3 access for the new bucket(s) you want to use 
    {{< trueimage src="/images/SCALE/DataProtection/StorjCreateAccessSelectConfig.png" alt="Storj Access Permissions Window." id="Storj Access Permissions Window." >}}
 
    {{< hint type=note >}}
-   If you want to use the TrueNAS option to [add new buckets](#setting-up-the-truecloud-backup-task) in TrueNAS, set the access configuration to **Full Access**.
+   To enable TrueNAS to [create new Storj buckets](#setting-up-the-truecloud-backup-task), set the access configuration to **Full Access**.
    {{< /hint >}}
 
 4. (Optional) If configuring advanced access options:
@@ -53,5 +53,12 @@ After creating your bucket, add S3 access for the new bucket(s) you want to use 
 
 6. Click **Close**.
 
-This completes the process of setting up Storj buckets and S3 access.
-Enter these keys in the **Authentication** fields in TrueNAS on the **[Cloud Credentials](#adding-storj-cloud-credentials)** screen to complete setting up the TrueNAS cloud credential.
+Enter these keys in the **Authentication** fields in TrueNAS on the **[Cloud Credentials](#adding-storj-cloud-credentials)** screen to complete setting up the cloud credential.
+
+1. Enter the authentication information provided by Storj in the **Access Key ID** and **Secret Access Key** fields.
+
+2. Click **Verify Credentials** and wait for the system to verify the credentials.
+
+   {{< trueimage src="/images/SCALE/Credentials/CloudCredentialsVerified.png" alt="Verify Cloud Credentials" id="Verify Cloud Credentials" >}}
+
+3. Click **Save**.

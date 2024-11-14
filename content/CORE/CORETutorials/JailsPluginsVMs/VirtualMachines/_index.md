@@ -1,5 +1,6 @@
 ---
 title: "Virtual Machines"
+redirect: "https://www.truenas.com/docs/core/13.0/coretutorials/jailspluginsvms/virtualmachines/creatingbasicvm/"
 description: "Provides instructions on creating and managing a basic virtual machine, and lists other tutorials about virtual machines in TrueNAS CORE."
 geekdocCollapseSection: true
 weight: 30

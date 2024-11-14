@@ -37,6 +37,27 @@ Note the primary group assigned to that user.
 
 {{< include file="/static/includes/AddAdminGroup.md" >}}
 
+### Allowing Sudo Commands
+
+As a security hardening feature, administrator accounts in Linux-based TrueNAS releases (22.12.0 or newer) cannot by default execute certain root-level commands in a shell or SSH session.
+If a user attempts to execute one of these commands without root-level access, TrueNAS returns a **command not found** error.
+
+Administrative users who need to execute root-level commands to complete a task should temporarily enable sudo permissions for that user by going **Credentials** and editing the user or group to enable some or all sudo commands.
+For best security, enable only the required commands to perform the task and require password authentication, unless the task or app prevents it.
+Disable sudo permissions when the task completes and they are no longer required.
+
+**Allowed sudo commands**, **Allow all sudo commands**, **Allowed sudo commands with no password** and **Allow all sudo commands with no password** grant limited root-like permissions using the sudo command.
+Use **Allowed sudo commands** or **Allowed sudo commands with no password** to list specific sudo commands to allow.
+Enter each command as an absolute path to the ELF (Executable and Linkable Format) executable file, for example */usr/bin/nano*.
+<file>/usr/bin/</file> is the default location for commands.
+Press <kbd>Enter</kbd> after each command.
+
+To allow full access to sudo commands, select either **Allow all sudo commands** or **Allow all sudo commands with no password**.
+If sudo commands are allowed with password protection, the user is prompted for a password the first time a sudo command is entered, but not again in the same session.
+Disable these settings after completing the task to return to a security hardened system.
+
+Do not allow sudo permissions for read-only administrators.
+
 ## Disabling Root and Admin User Passwords
 
 As a security measure, the root user is no longer the default account and the password is disabled when you create the truenas_admin or admin user during installation.
@@ -73,10 +94,6 @@ To enable SSH to access the system as an admin user (or for root):
 
    To allow an admin user to issue commands in an SSH session, edit that user and select **SSH password login enabled** to allow authenticating and logging into an SSH session.
    Disable this after completing the SSH session to return to a security hardened system.
-
-   If required, set the [sudo](https://www.sudo.ws/) permissions to assign this user.
-
-   {{< include file="/static/includes/AdminSudo.md" >}}
 
 ## Two-Factor Authentication (2FA) and Administrator Account Log In
 

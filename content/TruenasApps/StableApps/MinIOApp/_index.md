@@ -19,115 +19,140 @@ keywords:
 - object based storage
 ---
 
-{{< include file="/static/includes/AppsUnversioned.md" >}}
 
-This section has tutorials for using the MinIO apps available for TrueNASE.
+{{< include file="/static/includes/ProposeArticleChange.md" >}}
 
-TrueNAS has two version of the MinIO application.
-The stable train version of the MinIO S3 application is found in the **stable** train that includes the applications in GitHub TrueNAS/charts repository.
-The smaller MinIO Enterprise version of the application, tested and polished for a safe and supportable experience for TrueNAS Enterprise customers, is found in the **enterprise** train.
+MinIO High Performance Object Storage, released under the Apache Licenses v2.0 is an open source Amazon S3 cloud storage compatible object storage solution.
+The TrueNAS MinIO applications allow users to build high performance infrastructure for machine learning, analytics, and application data workloads.
+
+TrueNAS has two version of the MinIO application, a **stable** and **enterprise** train version.
+The tutorials in this section cover installing the TrueNAS **stable** train version of the MinIO.
+
+The smaller MinIO **enterprise** train version of the application is tested and polished for a safe and supportable experience for TrueNAS Enterprise customers.
 Community members can install either version of this application.
 
 {{< expand "Adding the MinIO (Enterprise) App" "v" >}}
 To add the Enterprise MinIO application to the list of available applications: 
-{{< include file="/static/includes/AddEnterpriseTrain.md" >}}
+{{< include file="/static/includes/apps/AddEnterpriseTrain.md" >}}
 
 Both the **stable** and **enterprise** train versions of the MinIO app widget display on the **Discover** application screen.
 
-![DiscoverScreenMinIOAppWidgets](/images/SCALE/Apps/DiscoverScreenMinIOAppWidgets.png "MinioApp Widgets")
+![DiscoverScreenMinIOAppWidgets](/images/SCALE/Apps/DiscoverScreenMinIOAppWidgets.png "Minio App Widgets")
 
 {{< /expand >}}
-MinIO High Performance Object Storage, released under the Apache Licenses v2.0 is an open source Amazon S3 cloud storage compatible object storage solution.
 
-The Minio applications, **stable** and **enterprise** train versions, allow users to build high performance infrastructure for machine learning, analytics, and application data workloads.
-
-MinIO supports [distributed mode](https://min.io/docs/minio/kubernetes/upstream/index.html?ref=docs-redirect).
-Distributed mode, allows pooling multiple drives, even on different systems, into a single object storage server.
-For information on configuring a distributed mode cluster in TrueNAS using MinIO, see [Setting Up MinIO Clustering]({{< relref "MinIOClustering.md" >}}).
-
-For information on installing and configuring MinIO Enterprise, see [Installing MinIO Enterprise]({{< relref "/content/TruenasApps/EnterpriseApps/MinIO/_index.md" >}}).
-
-## Installing MinIO (S3) Community App
-This procedure covers the basic requirements and instruction on installing and configuring the non-enterprise version of the MinIO application in the **stable** train.
+## Installing MinIO (S3) App
+This procedure covers the basic requirements and instruction on installing and configuring the MinIO application in the **stable** train.
 For instructions on installing the Enterprise version of the MinIO application see [Configuring
 Enterprise MinIO]({{< relref "/content/TruenasApps/EnterpriseApps/_index.md" >}}).
 
 ### Before You Begin
+Before you install the **stable** version of the MinIO app:
 
-{{< include file="/static/includes/MinIODatasetRequirements.md" >}}
+{{< include file="/static/includes/apps/AppsStableBeforeYouBegin.md" >}}
+
+{{< include file="/static/includes/apps/MinIODatasetRequirements.md" >}}
+
+If your system has active sharing configurations (SMB, NFS, iSCSI), disable them in **System > Services** before adding and configuring the MinIO application.
+Start any sharing services after MinIO completes the installation and starts.
 
 ### Configuring MinIO (S3) Community App
+{{< hint info >}}
+This basic procedure covers the required MinIO stable app settings.
+For optional settings, see [Understanding MinIO Wizard Settings](#understanding-minio-wizard-settings).
+{{< /hint >}}
 
-{{< include file="/static/includes/MinIOInstallAppNameAndVersion.md" >}}
+{{< include file="/static/includes/apps/LocateAndOpenInstallWizard.md" >}}
+
+{{< trueimage src="/images/SCALE/Apps/InstallMinioS3Screen.png" alt="MinIO Install Wizard Screen" id="MinIO Install Wizard Screen" >}}
+
+{{< include file="/static/includes/apps/AppsWizardAppNameAndVersion.md" >}}
+
+{{< include file="/static/includes/apps/AddMultipleAppInstancesAndNaming.md" >}}
 
 Next, enter the **MinIO Configuration** settings.
 
-{{< include file="/static/includes/MinIOInstallArgAndEnvironVarSteps.md" >}}
+{{< include file="/static/includes/apps/MinIOInstallArgAndEnvironVarSteps.md" >}}
 
-{{< include file="/static/includes/MinIOPortsAndLogSearch.md" >}}
+{{< include file="/static/includes/apps/MinIOPortsAndLogSearch.md" >}}
 
-{{< include file="/static/includes/MinIOStorageDataVolume.md" >}}
+MinIO uses two datasets and mount paths. Set the first to **/export** with the host path set to the **export** dataset.
+The other mount point is **/data** with the host path set to the **data** dataset.
 
-{{< trueimage src="/images/SCALE/Apps/InstallMinioStorageAddExtraHostPathVol.png" alt="Add Host Path Volume" id="Add Host Path Volume" >}}
+{{< include file="/static/includes/apps/MinIOStorageDataVolume.md" >}}
 
-Click **Add** and to add the mount and host path fields for each additional dataset if you want to create volumes for postgres data and postgres backup.
+Select **Enable ACL** for the **/export** storage volume, enter **473** as the user and give it full permissions.
+Repeat for the **/data** storage volume.
 
-{{< include file="/static/includes/MinIODNSAndResourceLimits.md" >}}
+{{< trueimage src="/images/SCALE/Apps/MinIOConfigExportAndDataACLACESettings.png" alt="Export and Data Host Path ACL and ACE Settings" id="Export and Data Host Path ACL and ACE Settings" >}}
 
-The **Installed** applications screen displays showing the MinIO application in the **Deploying** state.
-It changes to **Running** when the application is ready to use.
-
-{{< trueimage src="/images/SCALE/Apps/MinIOAppInstalled.png" alt="MinIO App Installed" id="MinIO App Installed" >}}
-
-Click **Web Portal** to open the MinIO sign-in screen.
-
-{{< trueimage src="/images/SCALE/Login/MinIOWebPortal.png" alt="MinIO Sign-In Screen" id="MinIO Sign-In Screen" >}}
+{{< include file="/static/includes/apps/MinIOCompleteInstall.md" >}}
 
 ## Understanding MinIO Wizard Settings
 The following section provide more detailed explanations of the settings found in each section of the **Install MinIO** configuration screen.
 
 ### Application Name
 
-{{< include file="/static/includes/AppsWizardAppNameAndVersion.md" >}}
+{{< include file="/static/includes/apps/AppsWizardAppNameAndVersion.md" >}}
 
 ### MinIO Configuration
-The **MinIO Configuration** section provides options to set up a cluster, add arguments, credentials, and environment variables to the deployment.
+MinIO credentials establish the login credentials for the MinIO web portal and the MinIO administration user, and to enter extra arguments, or environment variables to the deployment.
 
-{{< include file="/static/includes/MinIOEnableDistributedModeInfo.md" >}}
+{{< trueimage src="/images/SCALE/Apps/InstallMinIOConfigSettings.png" alt="MinIO Configuration Settings" id="MinIO Configuration Settings" >}}
+
+Enter existing MinIO credentials if you already have a MinIO account, or create new login credentials for the first time you log into MinIO.
+
+Enter a username for the root user (MinIO access key) in **MinIO Root User** that is limited to five to 20 characters long. For example *admin* or *admin1*.
+
+Enter the root user password (MinIO secret key) in **MinIO Root Password** that is limited to eight to 40 random characters. For example, *MySecr3tPa$$w0d4Min10*.
+
+{{< include file="/static/includes/apps/MinIOEnableDistributedModeInfo.md" >}}
 
 The app is preconfigured with the arguments needed to deploy a container. Do not enter the **server** and URL argument earlier versions of the app required.
 
-Enter the name for the root user (MinIO access key) in **Root User**. Enter a name of five to 20 characters in length. For example *admin* or *admin1*.
-Next enter the root user password (MinIO secret key) in **Root Password**. Enter eight to 40 random characters. For example *MySecr3tPa$$w0d4Min10*.
+Refer to [MinIO User Management](https://docs.min.io/minio/baremetal/security/minio-identity-management/user-management.html) for more information.
 
-The **Extra Arguments** and **Extra Environment Variables** settings are not required to deploy the application.
+{{< hint type=warning >}}
+Keep all passwords and credentials secured and backed up.
+{{< /hint >}}
+
+The **Extra Arguments** and **Extra Environment Variables** settings are not required to deploy the application as the app is preconfigured with the arguments needed to deploy a container.
+Do not enter the **server** and URL argument required in earlier versions of the app.
 
 ### Network Configuration
+Network configuration settings set the port number to access the MinIO API and console port.
+
 Accept the default port settings in **Network Configuration**.
 Before changing ports, refer to [Default Ports](https://www.truenas.com/docs/references/defaultports/).
 
-{{< trueimage src="/images/SCALE/Apps/InstallMinioConfigPortsAndLogSearch.png" alt="Network Configuration Settings" id="Network Configuration Settings" >}}
+{{< trueimage src="/images/SCALE/Apps/InstallMinIONetworkConfigSettings.png" alt="Network Configuration Settings" id="Network Configuration Settings" >}}
 
-MinIO does not require adding a certificate or configuring DNS options.
-Accept the default settings or click **Add** to the right of **DNS Options** to show the **Name** and **Value** fields for a DNS option.
+The **Certificates** setting is not required for a basic configuration but is required when setting up multi-mode configurations with the Enterprise version of the MinIO app and when using MinIO as an immutable target for Veeam Backup and Replication.
 
-{{< trueimage src="/images/SCALE/Apps/InstallMinioAdvancedDNSSettings.png" alt="MinIO Advanced DNS Settings" id="MinIO Advanced DNS Settings" >}}
+{{< include file="/static/includes/apps/AddAppCertificate.md" >}}
+
+To add advanced DNS settings click **Add** to the right of **DNS Options**.
+
+{{< trueimage src="/images/SCALE/Apps/InstallMinIOACLConfigSettings.png" alt="ACL Configuration Settings" id="ACL Configuration Settings" >}}
 
 ### Storage Configuration
 MinIO storage settings include the option to add mount paths and storage volumes to use inside the container (pod).
-Storage configuration uses both the default **/export** and **/data** mount paths created in [First Steps](#before-you-begin) above.
+Storage configuration uses both the default **/export** and **/data** mount paths. See [First Steps](#before-you-begin) above for more information.
 
-{{< include file="/static/includes/MinIOStorageDataVolume.md" >}}
+{{< include file="/static/includes/apps/MinIOStorageDataVolume.md" >}}
 
-{{< trueimage src="/images/SCALE/Apps/InstallMinioStorageAddExtraHostPathVol.png" alt="Add Host Path Volume" id="Add Host Path Volume" >}}
+{{< trueimage src="/images/SCALE/Apps/MinIOConfigExportAndDataACLACESettings.png" alt="Export and Data Host Path ACL and ACE Settings" id="Export and Data Host Path ACL and ACE Settings" >}}
+
+#### Mounting an SMB Share
+The TrueNAS MinIO app includes the option to mount an SMB share inside the container pod.
+
+{{< include file="/static/includes/AppWizardStorageSMBOption.md" >}}
 
 ### Resource Configuration
-By default, this application is limited to use no more than **4** CPU cores and **8** Gigabytes available memory.
-The application might use considerably less system resources.
 
-{{< trueimage src="/images/SCALE/Apps/InstallMinioAddResourceLimits.png" alt="MinIO Resource Configuration" id="MinIO Resource Configuration" >}}
+{{< trueimage src="/images/SCALE/Apps/InstallMinIOResourcesConfig.png" alt="MinIO Resource Limits" id="MinIO Resource Limits" >}}
 
-To customize the CPU and memory allocated to the container (pod) the MinIO app uses, tune thwa limits as needed to prevent the application from overconsuming system resources and introducing performance issues.
+{{< include file="/static/includes/apps/AppInstallWizardResourceConfig.md" >}}
 
 <div class="noprint">
 

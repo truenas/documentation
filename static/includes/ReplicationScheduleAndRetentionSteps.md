@@ -4,7 +4,7 @@
 
 5. Select the schedule and snapshot retention life time.
 
-   a. Select the **Replication Schedule** radio button you want to use. Select **Run Once** to set up a replication task you run one time.
+   a. Select **Replication Schedule** to use. Select **Run Once** to set up a replication task you run one time.
       Select **Run On a Schedule** then select when from the **Schedule** dropdown list.
 
    {{< trueimage src="/images/SCALE/DataProtection/CreateReplicationTaskSetSchedule.png" alt="Set Replication Task Schedule" id="Set Replication Task Schedule" >}}

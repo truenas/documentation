@@ -1,5 +1,6 @@
 ---
 title: "Idmap Screen"
+redirect: "https://www.truenas.com/docs/core/13.0/uireference/directoryservices/idmapscreen/"
 description: "Use the Idmap screen to configure Identity Mapping (Idmap) on TrueNAS CORE."
 weight: 10
 tags:

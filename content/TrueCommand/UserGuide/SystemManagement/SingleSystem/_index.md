@@ -1,5 +1,6 @@
 ---
 title: Single System Screens
+redirect: "https://www.truenas.com/docs/truecommand/3.0/userguide/systemmanagement/singlesystem/"
 description: "How to use access information on individual systems TrueCommand manages."
 weight: 20
 geekdocCollapseSection: true

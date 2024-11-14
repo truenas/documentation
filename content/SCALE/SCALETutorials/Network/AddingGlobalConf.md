@@ -10,12 +10,7 @@ Use the **Global Configuration Settings** screen to add general network settings
 
 To add new or change existing network interfaces see [Managing Interfaces]({{< relref "/SCALE/SCALETutorials/Network/Interfaces/_index.md" >}}).
 
-{{< hint type=warning >}}
-**Disruptive Change**
-
-You can lose your TrueNAS connection if you change the network interface that the web interface uses!
-You might need command line knowledge or physical access to the TrueNAS system to fix misconfigured network settings.
-{{< /hint >}}
+{{< include file="/static/includes/NetworkWarn.md" >}}
 
 ## Adding Network Settings
 

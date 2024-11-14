@@ -1,5 +1,6 @@
 ---
 title: "Managing Multiple Systems"
+redirect: "https://www.truenas.com/docs/truecommand/3.0/userguide/systemmanagement/multisystems/"
 description: "How to find and use TrueNAS fleet management features in TrueCommand."
 weight: 30
 aliases: 
