@@ -38,7 +38,7 @@ Some fields only display in the **Global Configuration** screen when the appropr
 | **Inherit domain from DHCP** | When selected, the domain is inherited from DHCP. |
 | **Hostname (TrueNAS Controller 2)** | System host name for a second controller that shows only for High Availability (HA) systems where there is a second TrueNAS controller. A name can consist of upper and lower case alphanumeric and allowed special characters dot (.) and/or dash (-). |
 | **Hostname (Virtual)** | Virtual host name that shows when using a virtual host. Also used as the Kerberos principal name. Enter the fully qualified host name plus the domain name. A name can consist of upper and lower case alphanumeric and allowed special characters dot (.) and/or dash (-). |
-| **Domain** | Enter a system domain name, for example, 4* example.com*. |
+| **Domain** | Enter a system domain name, for example, *example.com*. |
 | **Additional Domains** | Enter additional domains to search. Separate entries by pressing <kbd>Enter</kbd>. Adding search domains can cause slow DNS lookups. |
 {{< /truetable >}}
 
