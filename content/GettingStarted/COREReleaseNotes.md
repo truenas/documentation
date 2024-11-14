@@ -80,9 +80,12 @@ For more details on feature flags see [OpenZFS Feature Flags](https://openzfs.gi
 
 iXsystems is pleased to release TrueNAS 13.3-U1!
 
-This is a maintenance release to address a single issue:
+This is a maintenance release to address a security vulnerability and fix a few issues:
 
 * Resolve a vulnerability involving python deserialization ([CVE-2020-22083](https://github.com/advisories/GHSA-j66q-qmrc-89rx)).
+* Sync truenas/zfs-2.2-release with upstream zfs-2.2.5 ([NAS-130547](https://ixsystems.atlassian.net/browse/NAS-130547)).
+* Case preservation on SMB share and macOS clients ([NAS-130743](https://ixsystems.atlassian.net/browse/NAS-130743)).
+* Scrub task threshold days are being ignored ([NAS-131087](https://ixsystems.atlassian.net/browse/NAS-131087)).
 
 For other known issues in 13.3 releases, please see the <a href="https://ixsystems.atlassian.net/issues/?filter=10583" target="_blank">13.3-RELEASE Ongoing Issues</a> list available from Jira.
 
