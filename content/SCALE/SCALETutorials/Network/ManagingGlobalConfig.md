@@ -29,7 +29,6 @@ Use the **Global Configuration Settings** screen to add general network settings
 
 To add new or change existing network interfaces see [Interface Configurations]({{< relref "/SCALE/SCALETutorials/Network/Interfaces/_index.md" >}}).
 
-{{< include file="/static/includes/NetworkWarn.md" >}}
 
 Go to **Network**, and click **Settings** on the **Global Configuration** widget to open the **Edit Global Configuration** screen.
 
