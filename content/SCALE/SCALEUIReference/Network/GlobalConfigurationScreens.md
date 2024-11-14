@@ -23,7 +23,7 @@ Use **Settings** to display the **Global Configuration** screen where you can ad
 ## Hostname and Domain Settings
 Many of these fields have default values, but users can change them to meet local network requirements.
 
-TrueNAS displays the **Hostname** and **Domain** in the **Dashboard** **System Information** widgets. 
+TrueNAS displays the **Hostname** and **Domain** in the **Dashboard** **System Information** widget. 
 
 {{< hint type=note >}}
 Some fields only display in the **Global Configuration** screen when the appropriate hardware is present.
