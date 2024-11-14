@@ -13,7 +13,7 @@
       </p>
 
       {{- if .majorVersions }}
-        <div class="section-tabs">
+        <div class="section-tabs" style="margin-bottom: 1rem;">
           {{- range $index, $majorVersion := .majorVersions }}
             <div class="section-tab {{ $name }}-section-tab" onclick="showMajorVersion('{{ $name }}', '{{ $majorVersion.lifecycle }}')">{{ $majorVersion.lifecycle }}</div>
           {{- end }}
@@ -21,35 +21,74 @@
 
         {{- range $index, $majorVersion := .majorVersions }}
           <div class="major-version-content {{ $name }}-major-version-content" id="{{ $name }}-majorVersion{{ $majorVersion.lifecycle }}" style="padding-left: 1.5rem; padding-right: 1.5rem; display: {{ if eq $index $defaultTab }}block{{ else }}none{{ end }};">
-            <b>{{ $majorVersion.majorVersion }}</b>
+            {{- if eq $majorVersion.lifecycle "Archive" }}
+              {{- range $majorVersion.majorVersions }}
+              <div style="padding-bottom: 0.5rem;">
+                <b>{{ .majorVersion }}</b>
+              </div>
 
-            {{- range $majorVersion.releases }}
-              <dt class="flex flex-wrap align-center gdoc-props__meta" style="margin-left: .5rem;">
-                {{- if and (.link) (.name) }}
-                  <a href="{{ .link }}" class="gdoc-props__title">{{ .name }}</a>
-                {{- else }}
-                  <span class="gdoc-props__title">{{ .name }}</span>
-                {{- end }}
-
-                {{- with .type }}
-                  <span class="gdoc-props__tag note" style="margin-left: 0.5rem;">{{ . }}</span>
-                {{- end }}
-
-                {{- if .date }}
-                  <span class="gdoc-props__tag"style="margin-left: 0.5rem;">{{ if eq .date "" }}TBD{{ else }}{{ dateFormat "2 January 2006" .date }}{{ end }}</span>
-                {{- end }}
-              </dt>
-              <dd style="margin-left: .5rem;">
-                <div class="gdoc-props__description">
-                  {{- with .description }}
-                    {{- $desc := . }}
-                    {{- if reflect.IsMap $desc }}
-                      {{- $desc = (index $desc $.Site.Language.Lang) }}
+                {{- range .releases }}
+                  <dt class="flex flex-wrap align-center gdoc-props__meta" style="margin-left: .5rem;">
+                    {{- if and (.link) (.name) }}
+                      <a href="{{ .link }}" class="gdoc-props__title">{{ .name }}</a>
+                    {{- else }}
+                      <span class="gdoc-props__title">{{ .name }}</span>
                     {{- end }}
-                    {{ $desc | $.Page.RenderString }}
+
+                    {{- with .type }}
+                      <span class="gdoc-props__tag note" style="margin-left: 0.5rem;">{{ . }}</span>
+                    {{- end }}
+
+                    {{- if .date }}
+                      <span class="gdoc-props__tag" style="margin-left: 0.5rem;">{{ if eq .date "" }}TBD{{ else }}{{ dateFormat "2 January 2006" .date }}{{ end }}</span>
+                    {{- end }}
+                  </dt>
+                  <dd style="margin-left: .5rem;">
+                    <div class="gdoc-props__description">
+                      {{- with .description }}
+                        {{- $desc := . }}
+                        {{- if reflect.IsMap $desc }}
+                          {{- $desc = (index $desc $.Site.Language.Lang) }}
+                        {{- end }}
+                        {{ $desc | $.Page.RenderString }}
+                      {{- end }}
+                    </div>
+                  </dd>
+                {{- end }}
+              {{- end }}
+            {{- else }}
+              <div style="padding-bottom: 0.5rem;">
+                <b>{{ .majorVersion }}</b>
+              </div>
+              
+              {{- range $majorVersion.releases }}
+                <dt class="flex flex-wrap align-center gdoc-props__meta" style="margin-left: .5rem;">
+                  {{- if and (.link) (.name) }}
+                    <a href="{{ .link }}" class="gdoc-props__title">{{ .name }}</a>
+                  {{- else }}
+                    <span class="gdoc-props__title">{{ .name }}</span>
                   {{- end }}
-                </div>
-              </dd>
+
+                  {{- with .type }}
+                    <span class="gdoc-props__tag note" style="margin-left: 0.5rem;">{{ . }}</span>
+                  {{- end }}
+
+                  {{- if .date }}
+                    <span class="gdoc-props__tag" style="margin-left: 0.5rem;">{{ if eq .date "" }}TBD{{ else }}{{ dateFormat "2 January 2006" .date }}{{ end }}</span>
+                  {{- end }}
+                </dt>
+                <dd style="margin-left: .5rem;">
+                  <div class="gdoc-props__description">
+                    {{- with .description }}
+                      {{- $desc := . }}
+                      {{- if reflect.IsMap $desc }}
+                        {{- $desc = (index $desc $.Site.Language.Lang) }}
+                      {{- end }}
+                      {{ $desc | $.Page.RenderString }}
+                    {{- end }}
+                  </div>
+                </dd>
+              {{- end }}
             {{- end }}
           </div>
         {{- end }}

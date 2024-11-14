@@ -129,8 +129,8 @@ If you reboot or export/import the pool, the expansion resumes from where it lef
 
 After the expansion, the extra space becomes available for use.
 
-The fault tolerance level of the RAIDZ array remains unchanged.
-For example, a RAIDZ2 stays a RAIDZ2 even after adding more disks.
+The fault-tolerance level of the RAIDZ array remains unchanged.
+For example, a four disk wide RAIDZ2 expanded to a six wide RAIDZ2 still cannot lose more than two disks at a time.
 
 You can expand a RAIDZ vdev multiple times.
 
@@ -146,6 +146,8 @@ To manually recover capacity, simply replicate and rewrite the data to the exten
 
 You can use the [RAIDZ Extension Calculator](https://www.truenas.com/docs/truenasapps/sandboxes/) to visualize potential lost headroom and capacity available to recover by rewriting existing data.
 
+{{< include file="/static/includes/ExpandedVdevReporting.md" >}}
+
 For more information, see [Jim Salter's article](https://arstechnica.com/gadgets/2021/06/raidz-expansion-code-lands-in-openzfs-master/) at Ars Technica and the upstream [RAIDZ extension](https://github.com/openzfs/zfs/pull/15022) PR, sponsored by iXsystems, at OpenZFS.
 See also ["ZFS RAIDZ Expansion Is Awesome but Has a Small Caveat"](https://louwrentius.com/zfs-raidz-expansion-is-awesome-but-has-a-small-caveat.html) by Louwrentius for an in-depth discussion of lost capacity and recovering overhead.
 {{< /expand >}}
@@ -153,7 +155,7 @@ See also ["ZFS RAIDZ Expansion Is Awesome but Has a Small Caveat"](https://louwr
 To extend a RAIDZ VDEV, go to **Storage**.
 Locate the pool and click **Manage Devices** on the **Topology** widget to open the ***Poolname* Devices** screen.
 
-{{< trueimage src="/images/SCALE/Storage/DevicesExtend.png" alt="Devices Screen" id="Devices Screen" >}}
+{{< trueimage src="/images/SCALE/Storage/DevicesMirrorVDEVSelected.png" alt="Devices Screen" id="Devices Screen" >}}
 
 Select the target VDEV and click **Extend** to open the **Extend Vdev** window.
 

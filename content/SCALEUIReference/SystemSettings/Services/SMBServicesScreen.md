@@ -24,8 +24,8 @@ Click **Save** or **Cancel** to close the configuration screen and return to the
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **NetBIOS Name** | Automatically populates with the original system host name. Enter a name that is limited to 15 characters and cannot be the same as the **Workgroup** name. |
-| **NetBIOS Alias** | Enter any alias name up to 15 characters in length. If entering multiple aliases, separate alias names with a space between them. |
+| **NetBIOS Name** | Automatically populates with the original system host name. Enter a name that does not exceed 15 characters that is not the same as the **Workgroup** name. |
+| **NetBIOS Alias** | Enter any alias name that does not exceed 15 characters in length. If entering multiple aliases, separate alias names with a space between them. |
 | **Workgroup** | Enter a name that matches the Windows workgroup name. If you do not configure a workgroup, and Active Directory or LDAP is active, TrueNAS detects and sets the correct workgroup from these services. |
 | **Description** | (Optional) Enter any notes or descriptive details about the service configuration. |
 | **Enable SMB1 support** | Select to allow legacy SMB1 clients to connect to the server (see caution below). SMB audit logging does not work when using SMB1. |
@@ -57,7 +57,7 @@ Click **Save** or **Cancel** to close the configuration screen and return to the
 |---------|-------------|
 | **Administrators Group** | Enter or select members from the dropdown list. Members of this group are local administrators and automatically have privileges to take ownership of any file in an SMB share, reset permissions, and administer the SMB server through the Computer Management MMC snap-in. |
 | **Guest Account** | Select the account for guest access from the dropdown list. The default is **nobody**. The selected account must have permission for the shared pool or dataset. To adjust permissions, edit the dataset Access Control List (ACL), add a new entry for the chosen guest account, and configure the permissions in that entry. If you delete the selected **Guest Account**, the field resets to **nobody**. |
-| **File Mask** | Overrides default **0666** file creation mask, which creates files with read and write access for everybody. |
-| **Directory Mask** | Overrides default directory creation mask of **0777**, which grants everyone directory read, write, and execute access. |
+| **File Mask** | Overrides default **0664** file creation mask, which creates files with read and write access for everybody. |
+| **Directory Mask** | Overrides default directory creation mask of **0775**, which grants everyone directory read, write, and execute access. |
 | **Bind IP Addresses** | Select static IP addresses that SMB listens on for connections from the dropdown list. Leaving all unselected defaults to listening on all active interfaces. |
 {{< /truetable >}}

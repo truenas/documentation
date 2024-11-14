@@ -2057,3 +2057,9 @@ AppsInstallWizardSettings
 UsingCustomApp
 ixVolumes
 RESTAPIDeprecationNotice
+tn-openstorage-logo
+Tailscale
+CMD
+ExpandedVdevReporting
+InstallAppResourceConfigurationGPU
+atlassian
