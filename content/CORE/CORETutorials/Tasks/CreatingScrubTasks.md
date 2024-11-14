@@ -1,5 +1,6 @@
 ---
 title: "Creating Scrub Tasks"
+redirect: "https://www.truenas.com/docs/core/13.0/coretutorials/tasks/creatingscrubtasks/"
 description: "Describes how to create scrub tasks on TrueNAS CORE."
 weight: 80
 aliases:

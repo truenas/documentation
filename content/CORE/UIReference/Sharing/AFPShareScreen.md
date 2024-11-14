@@ -1,5 +1,6 @@
 ---
 title: "AFP Share Screen"
+redirect: "https://www.truenas.com/docs/core/13.0/uireference/sharing/afpsharescreen/"
 description: "Provides information about the AFP Share screen in TrueNAS CORE."
 weight: 10
 aliases:

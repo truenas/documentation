@@ -1,5 +1,6 @@
 ---
 title: "TrueNAS Configuration File Management"
+redirect: "https://www.truenas.com/docs/truecommand/3.0/userguide/systemmanagement/truenasconfigmanage/"
 description: "How to find and use TrueNAS system configuration files within TrueCommand."
 weight: 25
 aliases:

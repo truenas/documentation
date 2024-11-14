@@ -1,5 +1,6 @@
 ---
 title: "Setting Up Users and Groups"
+redirect: "https://www.truenas.com/docs/core/13.0/coretutorials/settingupusersandgroups/"
 description: "Describes how to set up users and groups in TrueNAS CORE."
 weight: 19
 aliases:

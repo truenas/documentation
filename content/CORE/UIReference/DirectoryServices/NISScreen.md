@@ -1,5 +1,6 @@
 ---
 title: "NIS Screen"
+redirect: "https://www.truenas.com/docs/core/13.0/uireference/directoryservices/nisscreen/"
 description: "Use the NIS screen to configure Network Information System (NIS) on TrueNAS CORE."
 weight: 30
 tags:

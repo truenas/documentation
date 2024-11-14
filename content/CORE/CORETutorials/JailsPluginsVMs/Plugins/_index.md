@@ -1,5 +1,6 @@
 ---
 title: "Plugins"
+redirect: "https://www.truenas.com/docs/core/13.0/coretutorials/jailspluginsvms/plugins/managingplugins/"
 description: "How to install plugins in TrueNAS CORE, and more articles."
 geekdocCollapseSection: true
 weight: 20 

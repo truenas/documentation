@@ -1,5 +1,6 @@
 ---
 title: "NFS Screen"
+redirect: "https://www.truenas.com/docs/core/13.0/uireference/services/nfsscreen/"
 description: "Describes the NFS screen in TrueNAS CORE."
 weight: 60
 tags:

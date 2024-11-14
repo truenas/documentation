@@ -1,5 +1,6 @@
 ---
 title: "Managing Pools"
+redirect: "https://www.truenas.com/docs/core/13.0/coretutorials/storage/pools/managingpools/"
 description: "Describes how to manage storage pools on TrueNAS CORE."
 weight: 16
 Aliases: /core/storage/pools/managingpools/

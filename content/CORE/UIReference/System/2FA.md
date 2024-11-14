@@ -1,5 +1,6 @@
 ---
 title: "2FA (Two-Factor Authentication)"
+redirect: "https://www.truenas.com/docs/core/13.0/uireference/system/2fa/"
 description: "Describes the Two-Factor Authentication User Settings screen on TrueNAS CORE."
 weight: 190
 tags:

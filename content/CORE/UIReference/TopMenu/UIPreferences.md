@@ -1,5 +1,6 @@
 ---
 title: "Interface Preferences"
+redirect: "https://www.truenas.com/docs/core/13.0/uireference/topmenu/uipreferences/"
 description: "Displays a list of general preferences for your TrueNAS."
 weight: 30
 aliases: /core/administration/uipreferences/

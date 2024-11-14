@@ -1,5 +1,6 @@
 ---
 title: "Updating Jails and Plugins"
+redirect: "https://www.truenas.com/docs/core/13.0/coretutorials/jailspluginsvms/updatejailsplugins/"
 description: "Describes how to update jails and plugins in TrueNAS CORE."
 weight: 25
 tags:

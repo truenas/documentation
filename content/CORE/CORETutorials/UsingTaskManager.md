@@ -1,5 +1,6 @@
 ---
 title: "Task Manager"
+redirect: "https://www.truenas.com/docs/core/13.0/coretutorials/usingtaskmanager/"
 description: "Use the Task Manager screen to display a list of tasks performed by your TrueNAS and to view logs related to system tasks."
 weight: 14
 aliases: [/administration/taskmanager/]

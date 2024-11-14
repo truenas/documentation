@@ -1,5 +1,6 @@
 ---
 title: "TrueCommand Snapshots"
+redirect: "https://www.truenas.com/docs/truecommand/3.0/userguide/systemmanagement/singlesystem/truecommandsnapshots/"
 description: "Provides instructions on setting up and running TrueNAS storage snapshots in TrueCommand."
 weight: 40
 aliases:

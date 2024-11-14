@@ -1,5 +1,6 @@
 ---
 title: "Config Backups"
+redirect: "https://www.truenas.com/docs/truecommand/3.0/userguide/systemmanagement/singlesystem/configbackups/"
 description: "Instructions for TrueNAS system configuration backups, backing up, restoring from, and deleting backups."
 weight: 20
 aliases:

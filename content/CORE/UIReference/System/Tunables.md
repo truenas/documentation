@@ -1,5 +1,6 @@
 ---
 title: "Tunables"
+redirect: "https://www.truenas.com/docs/core/13.0/uireference/system/tunables/"
 description: "Describes the Tunable screen fields on TrueNAS CORE."
 weight: 140
 tags:

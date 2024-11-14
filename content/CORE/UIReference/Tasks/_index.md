@@ -1,5 +1,6 @@
 ---
 title: "Tasks"
+redirect: "https://www.truenas.com/docs/core/13.0/uireference/tasks/"
 description: "Reference documentation of screens within the Tasks menu option."
 geekdocCollapseSection: true
 weight: 70

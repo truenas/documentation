@@ -1,5 +1,6 @@
 ---
 title: "Advanced"
+redirect: "https://www.truenas.com/docs/core/13.0/uireference/system/advanced/"
 description: "Describes the System > Advanced screen on TrueNAS CORE."
 weight: 40
 tags:
