@@ -10,7 +10,7 @@ These users do not need to enter their current password to change the password.
 The Sharing Admin and Readonly Admin users see the **Change Password** dialog with the **Current Password**, **New Password**, and **Confirm Password** fields.
 These users must enter the current password to validate the user account before changing the password.
 
-{{< trueimage src="/images/SCALE/Dashboard/ChangeLoggedInUserPasswordShare&ReadonlyAdmin.png" alt="Change Password Share and Readonly Admins" id="Change Password Share and Readonly Admins" >}}
+{{< trueimage src="/images/SCALE/Dashboard/ChangeLoggedInUserPasswordShare&ReadonlyAdmin.png" alt="Change Password - Share and Readonly Admins" id="Change Password - Share and Readonly Admins" >}}
 
 Click on the <span class="material-icons">visibility_off</span> icon to display entered passwords.
 To stop displaying the password, click on the <span class="material-icons">visibility</span> icon.
