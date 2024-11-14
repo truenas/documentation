@@ -1,5 +1,6 @@
 ---
 title: "Creating Datasets"
+redirect: "https://www.truenas.com/docs/core/13.0/coretutorials/storage/pools/datasets/"
 description: "Describes how to create and configure a dataset on TrueNAS CORE."
 weight: 17
 aliases: /core/storage/pools/datasets/

@@ -6,6 +6,9 @@
 >
 <head>
     {{ partial "head/meta" . }}
+	{{ if .Params.redirect }}
+	<meta http-equiv="Refresh" content="0; url='{{ .Params.redirect }}'" />
+	{{ end }}
     <title>
       {{- if eq .Kind "home" -}}
         TrueNAS Documentation Hub
@@ -22,6 +25,7 @@
 </head>
 
 <body itemscope itemtype="https://schema.org/WebPage">
+ {{ if not .Params.redirect }}
     <!-- Define feature image for search results or linking -->
     <a href="#" style="display: none;" class="image featured">{{ with .Site.Params.featured_image }}<img src="{{ . }}"></img>{{end}}</a>
     <!-- Google Tag Manager (noscript) -->
@@ -67,7 +71,6 @@
                 {{ partial "toc-panel" . }}
             </aside>
         </main>
-
         {{ partial "site-footer" . }}
     </div>
     {{ partial "foot" . }}
@@ -77,6 +80,7 @@
     <script src="/js/figurenumber.js"></script>
     <!-- Scroll padding so anchor links are not hidden by the stickymenu -->
     <script src="/js/anchorpad.js"></script>
+ {{ end }}
 </body>
 </html>
 

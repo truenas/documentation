@@ -1,5 +1,6 @@
 ---
 title: "Datasets Screens"
+redirect: "https://www.truenas.com/docs/core/13.0/uireference/storage/pools/datasetsscreen/"
 description: "Describes how to configure a dataset on TrueNAS CORE."
 weight: 17
 tags:

@@ -1,5 +1,6 @@
 ---
 title: "Setting Up Link Aggregations"
+redirect: "https://www.truenas.com/docs/core/13.0/coretutorials/network/interfaces/laggcreate/"
 description: "Provides instructions on setting up a network link aggregation (LAGG) interface on TrueNAS CORE."
 weight: 20
 tags:

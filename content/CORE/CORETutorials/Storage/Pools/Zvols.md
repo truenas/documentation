@@ -1,5 +1,6 @@
 ---
 title: "Adding Zvols"
+redirect: "https://www.truenas.com/docs/core/13.0/coretutorials/storage/pools/zvols/"
 description: "Describes how to create a Zvol on TrueNAS CORE."
 weight: 19
 aliases: /core/storage/pools/zvols/

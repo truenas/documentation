@@ -1,5 +1,6 @@
 ---
 title: "Plugins Screens"
+redirect: "https://www.truenas.com/docs/core/13.0/uireference/jailspluginsvms/plugins/pluginsscreens/"
 description: "Describes how to install and maintain 3rd party applications on TrueNAS CORE."
 weight: 20
 tags:

@@ -1,5 +1,6 @@
 ---
 title: "Jails, Plugins, and VMs"
+redirect: "https://www.truenas.com/docs/core/13.0/coretutorials/jailspluginsvms/"
 description: "Tutorials about configuring TrueNAS CORE jails, specialized jails called plugins, and virtual machines for full operating system deployments."
 geekdocCollapseSection: true
 weight: 130

@@ -1,5 +1,6 @@
 ---
 title: "KMIP"
+redirect: "https://www.truenas.com/docs/core/13.0/uireference/system/kmip/"
 description: "Describes the fields in the KMIP Key Status screen on TrueNAS CORE Enterprise."
 weight: 175
 aliases:

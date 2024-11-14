@@ -1,5 +1,6 @@
 ---
 title: "TrueNAS Enterprise EULA"
+redirect: "https://www.truenas.com/docs/core/13.0/gettingstarted/useragreements/enterpriseeula/"
 description: "TrueNAS Enterprise End User License Agreement."
 weight: 2
 aliases:

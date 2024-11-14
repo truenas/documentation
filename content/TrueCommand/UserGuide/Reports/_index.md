@@ -1,5 +1,6 @@
 ---
 title: Reports
+redirect: "https://www.truenas.com/docs/truecommand/3.0/userguide/reports/"
 description: "Overview and tutorials for the TrueNAS system statistics collation and presentation feature in TrueCommand."
 weight: 40
 aliases: 

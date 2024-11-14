@@ -1,5 +1,6 @@
 ---
 title: "SMB Share Screen"
+redirect: "https://www.truenas.com/docs/core/13.0/uireference/sharing/smbsharescreen/"
 description: "Desctibes the SMB sharing screen in TrueNAS CORE"
 weight: 50
 aliases:

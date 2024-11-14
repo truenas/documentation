@@ -1,5 +1,6 @@
 ---
 title: "General"
+redirect: "https://www.truenas.com/docs/core/13.0/uireference/system/general/"
 description: "Describes the fields for the general system settings for TrueNAS CORE."
 weight: 10
 aliases:

@@ -1,5 +1,6 @@
 ---
 title: "Managing Alerts"
+redirect: "https://www.truenas.com/docs/truecommand/3.0/userguide/alerts/alertmanage/"
 description: "Provides information on the alert screens and functions in TrueCommand. It also provides instructions on managing alerts, alert rules, and setting up alert services."
 weight: 10
 aliases:

@@ -1,5 +1,6 @@
 --- 
 title: "OpenVPN Screen"
+redirect: "https://www.truenas.com/docs/core/13.0/uireference/services/openvpnscreen/"
 description: "Describes the OpenVPN screen in TrueNAS CORE."
 weight: 70
 tags:

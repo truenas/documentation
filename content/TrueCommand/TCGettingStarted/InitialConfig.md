@@ -1,5 +1,6 @@
 ---
 title: "Completing the Initial Configuration"
+redirect: "https://www.truenas.com/docs/truecommand/3.0/tcgettingstarted/initialconfig/"
 description: "Describes how to initially configure TrueCommand and provides information on the Administration screen to add certificates, licenses, configure LDAP, SSL, and alert settings."
 weight: 25
 aliases:

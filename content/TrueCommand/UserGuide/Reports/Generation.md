@@ -1,5 +1,6 @@
 ---
 title: "Generating a System Report"
+redirect: "https://www.truenas.com/docs/truecommand/3.0/userguide/reports/generation/"
 description: "How to use a custom report to create visual representations of collected system metrics."
 weight: 20
 aliases: 

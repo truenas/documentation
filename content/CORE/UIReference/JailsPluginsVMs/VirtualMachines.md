@@ -1,5 +1,6 @@
 ---
 title: "Virtual Machines"
+redirect: "https://www.truenas.com/docs/core/13.0/uireference/jailspluginsvms/virtualmachines/virtualmachines/"
 description: "Describes the fields in the Virtual Machines screen in TrueNAS CORE."
 weight: 10
 tags:

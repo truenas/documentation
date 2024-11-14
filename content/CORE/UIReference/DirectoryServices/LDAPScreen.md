@@ -1,5 +1,6 @@
 ---
 title: "LDAP Screen"
+redirect: "https://www.truenas.com/docs/core/13.0/uireference/directoryservices/ldapscreen/"
 description: "Use the LDAP screen to configure Lightweight Directory Access Protocol (LDAP) server settings on TrueNAS CORE."
 weight: 20
 tags:
