@@ -85,19 +85,3 @@ Select **Allow Specific** to permit external communication for the services you 
 Click on all that apply. A checkmark displays next to a selected service, and these services display in the field separated by a comma (,).
 
 Click **Save** when finished.
-
-## Setting Up Netwait
-Use Netwait to prevent starting all network services until the network is ready.
-Netwait sends a [ping](https://manpages.debian.org/unstable/inetutils-ping/ping.1.en.html) to each of the specified IP addresses until one responds.
-
-Services start after Netwait receives a response.
-
-To set up Netwait, from the **Network** screen:
-
-1. Click on **Settings** in the **Global Configuration** widget to open the **Edit Global Configuration** screen.
-
-2. Select **Enable Netwait Feature**. **Netwait IP List** shows on the screen.
-
-3. Enter the list of IP addresses to ping. To enter multiple addresses, press <kbd>Enter</kbd> after entering each IP address.
-
-4. Click **Save** when finished.
