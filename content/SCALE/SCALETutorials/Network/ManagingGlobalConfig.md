@@ -39,7 +39,7 @@ Go to **Network**, and click **Settings** on the **Global Configuration** widget
 2. Enter the system domain name in **Domain**. For example, *example.com*.
 
 3. Enter the IP addresses for your DNS name servers in **Nameserver 1**, **Nameserver 2**, and/or **Nameserver 3**.
-   For home users, enter **8.8.8.8** in the **Nameserver 1** field so your TrueNASE can communicate externally with the Internet.
+   For home users, enter **8.8.8.8** in the **Nameserver 1** field so your TrueNAS can communicate externally with the Internet.
 
    {{< trueimage src="/images/SCALE/Network/GlobalConfigNameserverSettings.png" alt="Global Configuration Nameserver Settings" id="Global Configuration Nameserver Settings" >}}
 
