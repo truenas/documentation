@@ -55,6 +55,8 @@ Go to **Network**, and click **Settings** on the **Global Configuration** widget
 
    Click as many services as desired to permit external communications. Unchecked services cannot communicate externally.
 
+See [below](#setting-up-external-communication-for-services) for more information.
+
 6. Click **Save**. The **Global Configuration** widget on the **Network** screen updates to show the new settings.
 
 ## Setting Up External Communication for Services
