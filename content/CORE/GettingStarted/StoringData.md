@@ -1,5 +1,6 @@
 ---
 title: "Storage Configuration"
+redirect: "https://www.truenas.com/docs/core/13.0/gettingstarted/storingdata/"
 description: "Describes how to configure storage on TrueNAS CORE."
 weight: 60
 tags:

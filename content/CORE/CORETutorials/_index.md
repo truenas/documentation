@@ -1,5 +1,6 @@
 ---
 title: CORE Tutorials
+redirect: "https://www.truenas.com/docs/core/13.0/coretutorials/"
 description: "Standalone tutorials. Tutorials are organized parallel to the CORE interface layout."
 geekdocCollapseSection: true
 weight: 40

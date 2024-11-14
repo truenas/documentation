@@ -1,5 +1,6 @@
 ---
 title: "TrueNAS CORE EULA"
+redirect: "https://www.truenas.com/docs/core/13.0/gettingstarted/useragreements/coreeula/"
 description: "End User License Agreement for TrueNAS CORE."
 weight: 1
 aliases:

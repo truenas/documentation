@@ -1,9 +1,9 @@
 ---
 title: "TrueCommand Syslog Configuration"
+redirect: "https://www.truenas.com/docs/truecommand/3.0/recommendations/tcmiddlewareconfguration/"
 description: "Steps for sending TrueCommand logs via the syslog protocol."
 weight: 10
 aliases:
-  - /truecommand/recommendations/syslog/
 geekdocCollapseSection: true
 ---
 

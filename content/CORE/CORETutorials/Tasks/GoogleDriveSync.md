@@ -1,5 +1,6 @@
 ---
 title: "Backing Up Google Drive to TrueNAS"
+redirect: "https://www.truenas.com/docs/core/13.0/coretutorials/tasks/googledrivesync/"
 description: "Describes how to back up Google Drive to TrueNAS CORE."
 weight: 100
 tags:

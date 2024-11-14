@@ -1,5 +1,6 @@
 ---
 title: "Setting Up a Remote Syslog Server"
+redirect: "https://www.truenas.com/docs/core/13.3/coretutorials/systemconfiguration/settingupsyslogserver/"
 description: "Describes setting up a remote syslog server in TrueNAS CORE."
 weight: 75
 tags:

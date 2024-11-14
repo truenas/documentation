@@ -1,5 +1,6 @@
 ---
 title: "Feature Deprecations"
+redirect: "https://www.truenas.com/docs/core/13.0/gettingstarted/deprecations/"
 description: "Notes about CORE features that are deprecated and either receive no further updates or are scheduled for removal from TrueNAS."
 weight: 4
 related: false

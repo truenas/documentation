@@ -1,5 +1,6 @@
 ---
 title: "TrueCommand Sharing"
+redirect: "https://www.truenas.com/docs/truecommand/3.0/userguide/systemmanagement/singlesystem/truecommandsharing/"
 description: "How to view and manage data sharing for a connected TrueNAS system."
 weight: 50
 aliases:

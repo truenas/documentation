@@ -1,5 +1,6 @@
 ---
 title: "ACME DNS"
+redirect: "https://www.truenas.com/docs/core/13.0/uireference/system/acmedns/"
 description: "Describes the fields in the Add ACME DNS Authenticators screen on TrueNAS CORE." 
 weight: 170
 tags:

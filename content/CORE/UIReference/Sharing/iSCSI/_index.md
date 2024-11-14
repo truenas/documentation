@@ -1,5 +1,6 @@
 ---
 title: "Block Shares (iSCSI)"
+redirect: "https://www.truenas.com/docs/core/13.0/uireference/sharing/iscsi/"
 description: "Provides information about iSCSI terminology and configuration for TrueNAS CORE."
 geekdocCollapseSection: true
 weight: 20

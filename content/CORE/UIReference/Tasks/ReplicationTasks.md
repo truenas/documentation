@@ -1,5 +1,6 @@
 ---
 title: "Replication Tasks"
+redirect: "https://www.truenas.com/docs/core/13.0/uireference/tasks/replicationtasks/"
 description: "Decribes the fields on the Replication Tasks screen for TrueNAS CORE."
 geekdocCollapseSection: true
 weight: 60

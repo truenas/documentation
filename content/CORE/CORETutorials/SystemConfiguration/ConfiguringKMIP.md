@@ -1,5 +1,6 @@
 ---
 title: "Configuring KMIP"
+redirect: "https://www.truenas.com/docs/core/13.0/coretutorials/systemconfiguration/configuringkmip/"
 description: "Describes how to configure KMIP on TrueNAS CORE Enterprise." 
 weight: 170
 tags:

@@ -1,5 +1,6 @@
 ---
 title: Fleet Dashboard
+redirect: "https://www.truenas.com/docs/truecommand/3.0/userguide/fleetdashboard/"
 description: "Overview and usage notes for the Fleet Dashboard Screen."
 weight: 15
 tags:

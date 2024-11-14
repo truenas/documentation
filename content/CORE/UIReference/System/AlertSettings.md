@@ -1,5 +1,6 @@
 ---
 title: "Alert Settings"
+redirect: "https://www.truenas.com/docs/core/13.0/uireference/system/alertsettings/"
 description: "Describes the Alert Settings screen on TrueNAS CORE."
 weight: 90
 tags:

@@ -1,5 +1,6 @@
 ---
 title: "TrueCommand Cloud Security"
+redirect: "https://www.truenas.com/docs/truecommand/3.0/recommendations/tccloudsecurity/"
 description: "Descriptions for the security solutions used for the iX Portal and TrueCommand Cloud."
 weight: 10
 aliases:

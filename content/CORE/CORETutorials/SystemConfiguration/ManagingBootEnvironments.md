@@ -1,5 +1,6 @@
 ---
 title: "Managing Boot Environments"
+redirect: "https://www.truenas.com/docs/core/13.0/coretutorials/systemconfiguration/managingbootenvironments/"
 description: "Provides information about managing boot environments on TrueNAS CORE."
 weight: 30
 aliases:

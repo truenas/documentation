@@ -1,5 +1,6 @@
 ---
 title: "Setting SMB ACLs on Legacy FreeNAS systems"
+redirect: "https://www.ixsystems.com/documentation/freenas/11.3-U5/FreeNAS-11.3-U5-User-Guide_screen.pdf"
 description: "Describes how to configure SMB ACLs on legacy FreeNAS or TrueNAS released before 12.0."
 weight: 20
 tags:

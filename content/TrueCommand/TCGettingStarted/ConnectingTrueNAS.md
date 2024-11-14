@@ -1,5 +1,6 @@
 ---
 title: "Connecting the First TrueNAS System"
+redirect: "https://www.truenas.com/docs/truecommand/3.0/tcgettingstarted/connectingtruenas/"
 description: "Provides instruction on connecting the first TrueNAS system in TrueCommand and adding, managing, and deleting systems and system groups."
 weight: 40
 aliases: 

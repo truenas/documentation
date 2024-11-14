@@ -1,5 +1,6 @@
 ---
 title: "Setting Up LDAP"
+redirect: "https://www.truenas.com/docs/core/13.0/coretutorials/directoryservices/ldap/"
 description: "Use the LDAP screen to configure Lightweight Directory Access Protocol (LDAP) server settings on your TrueNAS."
 weight: 20
 aliases: /core/directoryservices/ldap/

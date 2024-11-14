@@ -1,5 +1,6 @@
 ---
 title: "Creating Certificate Authorities (CAs)"
+redirect: "https://www.truenas.com/docs/core/13.0/coretutorials/systemconfiguration/creatingcasandcertificates/creatingcertificateauthorities/"
 description: "Describes how to create or import certificates using TrueNAS CORE."
 weight: 10
 aliases:

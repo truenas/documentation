@@ -1,5 +1,6 @@
 ---
 title: "Getting Started"
+redirect: "https://www.truenas.com/docs/truecommand/3.0/tcgettingstarted/"
 description: "Deployment requirements and installation steps for TrueCommand."
 weight: 10
 geekdocCollapseSection: true

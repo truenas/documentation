@@ -1,5 +1,6 @@
 ---
 title: "Mirroring the Boot Pool"
+redirect: "https://www.truenas.com/docs/core/13.0/coretutorials/systemconfiguration/mirroringthebootpool/"
 description: "Provides information on how to mirror the boot pool on TrueNAS CORE."
 weight: 35
 tags:
