@@ -101,7 +101,7 @@ Recommended sizing:
 | TrueNAS M60 | No | 303600 | 100 GbE | 15.8 PB |
 {{< /truetable >}}
 
-* Backup Only? Assumes using the storage only as a backup repository.
+* **Backup Only?** assumes using the storage only as a backup repository.
   This can be understood as a recommendation, not a rule.
   The number of VMs is based upon conservative throughput estimates with an average VM size set as 100GB and a backup window of eight hours running full backups.
   All other requirements for the number of Veeam backup proxies, and networking dependencies also apply.
