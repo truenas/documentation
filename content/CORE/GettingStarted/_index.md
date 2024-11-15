@@ -1,5 +1,6 @@
 ---
 title: "Getting Started"
+redirect: "https://www.truenas.com/docs/core/13.0/gettingstarted/"
 description: "This configuration guide provides step-by-step tutorials for installing and setting up TrueNAS CORE."
 geekdocCollapseSection: true
 weight: 10

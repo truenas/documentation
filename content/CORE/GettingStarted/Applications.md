@@ -1,5 +1,6 @@
 ---
 title: "Applications"
+redirect: "https://www.truenas.com/docs/core/13.0/gettingstarted/applications/"
 description: "Describes how to install applications on TrueNAS CORE."
 weight: 90
 tags:

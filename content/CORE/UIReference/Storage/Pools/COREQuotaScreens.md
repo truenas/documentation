@@ -1,5 +1,6 @@
 ---
-title: "User and Group Quota Screens "
+title: "User and Group Quota Screens"
+redirect: "https://www.truenas.com/docs/core/13.0/uireference/storage/pools/corequotascreens/"
 description: "Describes CORE Dataset User and Group Quota screen settings and functions."
 weight: 18
 tags: 

@@ -1,5 +1,6 @@
 ---
 title: "Creating Init/Shutdown Scripts"
+redirect: "https://www.truenas.com/docs/core/13.0/coretutorials/tasks/creatinginitshutdownscripts/"
 description: "Explains how to create scheduled scripts on TrueNAS CORE."
 weight: 20
 aliases:

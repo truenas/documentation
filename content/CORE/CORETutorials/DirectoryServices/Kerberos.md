@@ -1,5 +1,6 @@
 ---
 title: "Setting Up Kerberos"
+redirect: "https://www.truenas.com/docs/core/13.0/coretutorials/directoryservices/kerberos/"
 description: "Use the Kerberos screen to configure Kerberos realms and keytabs on your TrueNAS."
 weight: 40
 aliases: /core/directoryservices/kerberos/

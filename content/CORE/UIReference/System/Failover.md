@@ -1,5 +1,6 @@
 ---
 title: "Failover (HA)"
+redirect: "https://www.truenas.com/docs/core/13.0/uireference/system/failover/"
 description: "Describes the fields in the Failover Configuration screen on TrueNAS CORE."
 weight: 178
 tags:

@@ -1,5 +1,6 @@
 ---
 title: "Configuring LLDP"
+redirect: "https://www.truenas.com/docs/core/13.0/coretutorials/services/configuringlldp/"
 description: "Provides information on how to configure Link Layer Discovery Protocol (LLDP) on your TrueNAS."
 weight: 50
 aliases: /core/services/lldp/

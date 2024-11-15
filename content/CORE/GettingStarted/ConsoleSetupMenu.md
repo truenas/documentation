@@ -1,5 +1,6 @@
 ---
 title: "Console Setup Menu"
+redirect: "https://www.truenas.com/docs/core/13.0/gettingstarted/consolesetupmenu/"
 description: "Describes the Console Setup menu of TrueNAS CORE."
 weight: 40
 tags:

@@ -1,5 +1,6 @@
 ---
 title: "Administrator Guide"
+redirect: "https://www.truenas.com/docs/truecommand/3.0/adminguide/"
 description: "How to find and use TrueCommand features that are restricted to administrator accounts."
 weight: 20
 aliases: 

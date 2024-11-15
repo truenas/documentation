@@ -1,5 +1,6 @@
 ---
 title: "TrueNAS Data Collection Statement"
+redirect: "https://www.truenas.com/docs/core/13.0/gettingstarted/useragreements/datacollectionstatement/"
 description: "TrueNAS CORE Data Collection Statement."
 weight: 5
 ---

@@ -1,5 +1,6 @@
 ---
 title: "Cloud Credentials"
+redirect: "https://www.truenas.com/docs/core/13.0/uireference/system/cloudcredentials/"
 description: "Describes the fields in the Cloud Credentials screen in TrueNAS CORE."
 weight: 100
 tags:

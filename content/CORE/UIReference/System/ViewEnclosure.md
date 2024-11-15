@@ -1,5 +1,6 @@
 ---
 title: "View Enclosure"
+redirect: "https://www.truenas.com/docs/core/13.0/uireference/system/viewenclosure/"
 description: "Provides information about the View Enclosure screen on TrueNAS CORE."
 weight: 45
 tags:

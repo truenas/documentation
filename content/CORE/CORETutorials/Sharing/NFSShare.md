@@ -1,5 +1,6 @@
 ---
 title: "NFS Share Creation"
+redirect: "https://www.truenas.com/docs/core/13.0/coretutorials/sharing/nfsshare/"
 description: "Provides information on how to create a Network File Share (NFS) on your TrueNAS."
 weight: 30
 aliases:

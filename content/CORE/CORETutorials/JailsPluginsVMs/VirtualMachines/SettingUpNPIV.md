@@ -1,5 +1,6 @@
 ---
 title: "Setting Up NPIV"
+redirect: "https://www.truenas.com/docs/core/13.0/coretutorials/jailspluginsvms/virtualmachines/settingupnpiv/"
 description: "Describes how to configure NPIV on TrueNAS CORE."
 weight: 20
 tags:

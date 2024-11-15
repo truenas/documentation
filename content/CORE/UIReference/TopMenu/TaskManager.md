@@ -1,5 +1,6 @@
 ---
 title: "Task Manager"
+redirect: "https://www.truenas.com/docs/core/13.0/uireference/topmenu/taskmanager/"
 description: "Displays a list of tasks performed by your TrueNAS."
 weight: 10
 tags:

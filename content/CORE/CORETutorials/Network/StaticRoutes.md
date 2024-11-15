@@ -1,5 +1,6 @@
 ---
 title: "Define Static Routes"
+redirect: "https://www.truenas.com/docs/core/13.0/coretutorials/network/staticroutes/"
 description: "Provides instructions on setting up static routes on TrueNAS CORE."
 weight: 40
 tags:

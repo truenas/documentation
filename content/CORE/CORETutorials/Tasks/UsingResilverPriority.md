@@ -1,5 +1,6 @@
 ---
 title: "Using Resilver Priority"
+redirect: "https://www.truenas.com/docs/core/13.0/coretutorials/tasks/usingresilverpriority/"
 description: "Describes how to configure resilver priority tasks on TrueNAS CORE."
 weight: 70
 tags:

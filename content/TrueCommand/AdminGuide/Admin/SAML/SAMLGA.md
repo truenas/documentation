@@ -1,5 +1,6 @@
 ---
 title: "Configuring TrueCommand SAML Service for Google Admin"
+redirect: "https://www.truenas.com/docs/truecommand/3.0/adminguide/admin/saml/samlga/"
 description: "Provides detailed instructions on setting up SAML service in TrueCommand and Google Admin."
 weight: 30
 aliases:

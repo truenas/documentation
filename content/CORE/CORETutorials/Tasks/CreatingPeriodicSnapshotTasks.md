@@ -1,5 +1,6 @@
 ---
 title: "Periodic Snapshot Tasks"
+redirect: "https://www.truenas.com/docs/core/13.0/coretutorials/tasks/creatingperiodicsnapshottasks/"
 description: "Describes how to create periodic snapshot tasks on TrueNAS CORE."
 weight: 50
 tags:

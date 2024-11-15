@@ -1,5 +1,6 @@
 ---
 title: "SNMP Screen"
+redirect: "https://www.truenas.com/docs/core/13.0/uireference/services/snmpscreen/"
 description: "Describes the SNMP screen in TrueNAS CORE."
 weight: 120
 aliases: /core/services/snmp/

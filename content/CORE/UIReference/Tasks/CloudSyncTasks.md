@@ -1,5 +1,6 @@
 ---
 title: "Cloud Sync Tasks"
+redirect: "https://www.truenas.com/docs/core/13.0/uireference/tasks/cloudsynctasks/"
 description: "Describes the Cloud Sync Tasks screen on TrueNAS CORE."
 weight: 90
 tags:

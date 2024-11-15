@@ -1,5 +1,6 @@
 ---
 title: "Troubleshooting Tips"
+redirect: "https://www.truenas.com/docs/core/13.0/coretutorials/tasks/creatingreplicationtasks/troubleshootingtips/"
 description: "Provides troubleshooting tips for replication tasks on TrueNAS CORE."
 weight: 40
 aliases:

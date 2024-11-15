@@ -1,5 +1,6 @@
 ---
 title: "Import Disk"
+redirect: "https://www.truenas.com/docs/core/13.0/coretutorials/storage/importdisk/"
 description: "Describes how to import a disk on TrueNAS CORE."
 weight: 50
 aliases: /core/storage/importdisk/

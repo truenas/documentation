@@ -1,5 +1,6 @@
 ---
 title: "Plex Plugin"
+redirect: "https://www.truenas.com/docs/core/13.3/coretutorials/jailspluginsvms/plugins/plexplugin/"
 description: "Describes how to install the Plex application as a plugin on TrueNAS CORE."
 weight: 20
 tags:
