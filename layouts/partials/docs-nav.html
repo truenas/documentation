@@ -236,13 +236,18 @@
     function selectVersion(version) {
       var versionButton = document.getElementById('versionButton');
       versionButton.dataset.versionId = version.toLowerCase().replace(/\s/g, '');
-    
       var displayVersion = version.toLowerCase().includes('nightly') ? 'Nightly' : version;
-    
       versionButton.textContent = displayVersion;
-      
+    
       var base_url = 'https://www.truenas.com';
       var currentPath = getCurrentPath();
+    
+      // Add this section for the redirection from scale 24.04 apps tutorials
+      if (currentPath.startsWith('/docs/scale/24.04/scaletutorials/apps/') && version !== '24.04') {
+        var newPath = currentPath.replace('/scale/24.04/scaletutorials/apps/', '/truenasapps/');
+        window.location.href = base_url + newPath;
+        return; // Exit the function after redirection
+      }    
     
       function getProductFromPath(path) {
         if (path.includes('/core/') || path.includes('/scale/')) {
