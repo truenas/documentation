@@ -14,6 +14,10 @@ tags:
 {{< include file="/static/includes/RootLevelDatasetShareWarning.md" >}}
 
 ## About Windows (SMB) Shares
+
+{{< include file="/static/includes/RootLevelDatasetShareWarning.md" >}}
+
+## About Windows (SMB) Shares
 SMB (also known as CIFS) is the native file-sharing system in Windows.
 SMB shares can connect to most operating systems, including Windows, MacOS, and Linux.
 TrueNAS can use SMB to share files among single or multiple users or devices.
