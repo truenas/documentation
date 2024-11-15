@@ -76,7 +76,7 @@ The items listed here represent new feature flags implemented since the previous
 For more details on feature flags see [OpenZFS Feature Flags](https://openzfs.github.io/openzfs-docs/Basic%20Concepts/Feature%20Flags.html) and [OpenZFS zpool-feature.7](https://openzfs.github.io/openzfs-docs/man/7/zpool-features.7.html).
 
 ## 13.3-U1 Changelog
-**November 14, 2024**
+**November 19, 2024**
 
 iXsystems is pleased to release TrueNAS 13.3-U1!
 
