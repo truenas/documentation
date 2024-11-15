@@ -1,6 +1,6 @@
 ---
 title: "Using Shell"
-description: "Provides information on using the TrueNAS Shell."
+description: "Provides information on using the TrueNAS shell."
 weight: 60
 alias: /scale/scaleuireference/systemsettings/shellscale/
 tags:

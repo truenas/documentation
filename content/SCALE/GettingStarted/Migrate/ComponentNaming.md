@@ -8,8 +8,8 @@ tags:
  - migrate
 ---
 
-The Linux-based TrueNAS incorporates all the major FreeBSD-based TrueNAS storage and sharing features with a web interface based on Debian GNU/Linux.
-Because the Linux-based TrueNAS shares the same UI as the FreeBSD-based TrueNAS, users might notice similarities.
+The Linux-based TrueNAS OS incorporates all the major FreeBSD-based TrueNAS storage and sharing features with a web interface based on Debian GNU/Linux.
+Users might notice similarities between the Linux-based TrueNAS UI and the FreeBSD-based TrueNAS UI.
 However, the switch from FreeBSD to Linux results in some differences, primarily in component naming.
 
 {{< hint type=info title="Component Descriptions" >}}

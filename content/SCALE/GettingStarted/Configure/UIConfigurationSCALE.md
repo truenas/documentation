@@ -1,6 +1,6 @@
 ---
 title: "Configuring TrueNAS Using the UI"
-description: "Provides a sequential process to complete the TrueNAS initial configuration using the TrueNAS NAS storage software UI."
+description: "Provides a sequential process to complete the initial configuration using the TrueNAS UI."
 weight: 30
 aliases:
  - /scale/gettingstarted/install/uiconfigurationscale/
@@ -223,7 +223,7 @@ Click on a drive to view the disk details.
 If the TrueNAS system has an expansion shelf, the **Enclosure** screen also displays an image of the expansion shelf populated with disks.
 {{< /enterprise >}}
 
-If using TrueNAS on hardware without enclosure management support, the **System Information** widget on the **Dashboard** displays the TrueNAS logo, and the **System > Enclosure** option does not exist on the menu navigation panel.
+If using TrueNAS on hardware not provided by iXsystems, the **System Information** widget on the **Dashboard** displays the TrueNAS logo, and the **System > Enclosure** option does not exist on the menu navigation panel.
 
 ## Using Applications in TrueNAS
 TrueNAS provides a list of applications you can deploy on the **Apps > Discover** screen.
