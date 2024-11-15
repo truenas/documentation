@@ -2,7 +2,7 @@
 title: "SSH"
 description: "Provides information on configuring the SSH service in TrueNAS SCALE and using an SFTP connection."
 weight: 60
-alias: 
+aliases: 
 tags:
  - ssh
  - sftp

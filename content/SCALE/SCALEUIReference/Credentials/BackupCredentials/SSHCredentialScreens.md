@@ -2,7 +2,7 @@ BackupCredentialsAllCloudSSH---
 title: "SSH Screens"
 description: "Provides information on the SSH Connections and SSH Keypairs screens, widgets, and settings."
 weight: 20
-alias:
+aliases:
  - /scale/scaleclireference/system/clikeychaincredential/
  - /scale/scaleclireference/task/cloudsync/clicredential/
 tags:

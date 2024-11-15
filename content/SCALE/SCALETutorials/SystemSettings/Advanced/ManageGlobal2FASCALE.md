@@ -2,7 +2,7 @@
 title: "Managing Global 2FA (Two-Factor Authentication)"
 description: "Provides information on setting up and managing global two-factor authentication, and logging in with it enabled."
 weight: 70
-alias:
+aliases:
  - /scale/scaletutorials/credentials/2fascale
 tags:
  - 2fa

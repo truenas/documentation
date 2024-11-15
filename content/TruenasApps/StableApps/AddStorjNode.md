@@ -6,6 +6,7 @@ aliases:
  - /scale/scaletutorials/apps/addstorjnode/
  - /scale/scaletutorials/apps/chartapps/addstorjnode/
  - /scale/scaletutorials/apps/stableapps/addstorjnode/
+ - /truenasapps/communityapps/addstorjnode/
 tags:
 - apps
 - crypto

@@ -2,7 +2,7 @@
 title: "FTP"
 description: "Provides instructions on configuring the FTP service including storage, user, and access permissions."
 weight: 10
-alias: 
+aliases: 
 tags:
  - services
  - ftp
