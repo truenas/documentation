@@ -106,7 +106,7 @@ Recommended sizing:
   The number of VMs is based upon conservative throughput estimates with an average VM size set as 100GB and a backup window of eight hours running full backups.
   All other requirements for the number of Veeam backup proxies, and networking dependencies also apply.
 
-* Number of VMs Backed Up.
+* Number of VMs backed up.
   Numbers are based on max capacity and estimate 100GB per VM and a 2:1 optimal compression ratio.
   Compression and deduplication settings can radically change the estimates, and Veeam allows for fine-tuning.
 
