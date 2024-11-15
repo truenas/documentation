@@ -2,7 +2,7 @@
 title: "Boot Pool Management"
 description: "Provides instructions on managing the boot pool and boot environments in SCALE."
 weight: 40
-alias: /scale/scaleuireference/systemsettings/bootenvironment/
+aliases: /scale/scaleuireference/systemsettings/bootenvironment/
 tags:
  - boot
  - settings

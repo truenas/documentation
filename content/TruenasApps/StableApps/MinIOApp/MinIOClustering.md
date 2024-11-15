@@ -8,6 +8,7 @@ aliases:
  - /scale/scaletutorials/apps/communityapps/minioclustersscale/minioclustering/
  - /scale/scaletutorials/apps/chartapps/minioapp/minioclustering/
  - /scale/scaletutorials/apps/stableapps/minioapp/minioclustering/
+ - /truenasapps/communityapps/minioapp/minioclustering/
 tags:
 - s3
 - apps

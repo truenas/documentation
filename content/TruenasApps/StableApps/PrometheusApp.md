@@ -5,6 +5,7 @@ weight:
 aliases:
  - /scale/scaletutorials/apps/chartapps/prometheusapp/
  - /scale/scaletutorials/apps/stableapps/prometheusapp/
+ - /truenasapps/communityapps/prometheusapp/
 tags:
 - apps
 - reporting

@@ -6,6 +6,7 @@ aliases:
  - /scale/scaletutorials/apps/installpiholeapp/
  - /scale/scaletutorials/apps/chartapps/installpiholeapp/
  - /scale/scaletutorials/apps/stableapps/installpiholeapp/
+ - /truenasapps/communityapps/installpiholeapp/
 tags:
 - apps
 - dns
