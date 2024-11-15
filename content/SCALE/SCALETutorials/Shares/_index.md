@@ -28,6 +28,8 @@ iXsystems TrueNAS Enterprise customers should contact iXsystems Support to recei
 {{< include file="/static/includes/DisruptiveActionslist.md" >}}
 {{< /enterprise >}}
 
+{{< include file="/static/includes/RootLevelDatasetShareWarning.md" >}}
+
 <div class="noprint">
 
 ## Contents
