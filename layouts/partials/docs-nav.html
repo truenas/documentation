@@ -326,8 +326,17 @@
     }
         
     function constructFallbackUrl(path, version) {
+      // Determine the product based on the current path
       var product = getProductFromPath(path).toLowerCase().replace(/\s+/g, '');
     
+      // Add logic to determine product based on version
+      if (version === '13.0' || version === '13.3') {
+        product = 'truenascore';
+      } else if (parseFloat(version) > 20) {
+        product = 'truenasscale';
+      }
+    
+      // Return the appropriate URL based on the determined product
       if (product === 'truenascore') {
         return `${base_url}/docs/core/${version}/`;
       } else if (product === 'truenasscale') {
@@ -335,10 +344,10 @@
       } else if (product === 'truecommand') {
         return `${base_url}/docs/truecommand/${version}/`;
       } else {
-        // Default fallback, though this case should ideally be handled by specific product checks
+        // Default fallback
         return `${base_url}/docs/${version}/`;
       }
-    }
+    }    
         
     if (selectedProduct === currentProduct.toLowerCase()) {
       var newPath;
