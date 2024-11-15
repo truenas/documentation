@@ -9,7 +9,7 @@ tags:
 
 Every NAS user has a unique storage setup and requirements. The following are general recommendations and options for migrating data into TrueNAS from third party storage solutions.
 
-## SMB Migration using Syncthing
+## SMB Migration Using Syncthing
 
 Users migrating data from an existing third-party NAS solution to TrueNAS 24.04 (Dragonfish) can do so using the [Syncthing Enterprise application]({{< relref "/content/truenasapps/enterpriseapps/syncthing.md" >}}) to mount the source with a remote SMB share that preserves metadata.
 

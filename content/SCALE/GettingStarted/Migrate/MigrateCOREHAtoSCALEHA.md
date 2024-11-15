@@ -1,6 +1,6 @@
 ---
 title: "Enterprise HA Migrations"
-description: "Discusses migrating a TrueNAS High Availability (HA) system from FreeBSD- to Linux-based TrueNAS."
+description: "Discusses migrating a TrueNAS High Availability (HA) system from FreeBSD- to Linux-based TrueNAS software."
 weight: 25
 aliases:
 tags:

@@ -160,7 +160,7 @@ The dashboard includes configurable widgets that include a text-only **Custom** 
 
 {{< trueimage src="/images/SCALE/Dashboard/DashboardMainScreen.png" alt="TrueNAS Dashboard" id="TrueNAS Dashboard" >}}
 
-TrueNAS Enterprise users with an iXsystems-provided TrueNAS server also see an image of the system in the **System Information** widget.
+TrueNAS Enterprise users with an iXsystems-provided server also see an image of the system in the **System Information** widget.
 Click on the system image to open the **System > [View Enclosure]({{< relref "EnclosureScreensSCALE.md" >}})** screen.
 
 The **Dashboard** for non-Enterprise systems displays the TrueNAS logo on the **System Information** widget.

@@ -55,8 +55,7 @@ For assistance, please contact TrueNAS support.
 
 ## Sizing Considerations
 
-When planning sizing, you must consider the TrueNAS storage appliances range from entry-level to high-end, and the user system current usage scenario and
-backup demands.
+When planning sizing, you must consider the TrueNAS storage appliances range from entry-level to high-end, and the user system current usage scenario and backup demands.
 
 ### Defining Your Storage Usage
 
@@ -102,12 +101,12 @@ Recommended sizing:
 | TrueNAS M60 | No | 303600 | 100 GbE | 15.8 PB |
 {{< /truetable >}}
 
-* Backup Only? Assumes using the storage only as a backup repository.
+* **Backup Only?** assumes using the storage only as a backup repository.
   This can be understood as a recommendation, not a rule.
   The number of VMs is based upon conservative throughput estimates with an average VM size set as 100GB and a backup window of eight hours running full backups.
   All other requirements for the number of Veeam backup proxies, and networking dependencies also apply.
 
-* Number of VMs Backed Up.
+* Number of VMs backed up.
   Numbers are based on max capacity and estimate 100GB per VM and a 2:1 optimal compression ratio.
   Compression and deduplication settings can radically change the estimates, and Veeam allows for fine-tuning.
 
