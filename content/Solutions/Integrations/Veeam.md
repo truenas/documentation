@@ -55,8 +55,7 @@ For assistance, please contact TrueNAS support.
 
 ## Sizing Considerations
 
-When planning sizing, you must consider the TrueNAS storage appliances range from entry-level to high-end, and the user system current usage scenario and
-backup demands.
+When planning sizing, you must consider the TrueNAS storage appliances range from entry-level to high-end, and the user system current usage scenario and backup demands.
 
 ### Defining Your Storage Usage
 
