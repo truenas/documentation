@@ -20,6 +20,7 @@ iXsystems TrueNAS Enterprise customers should contact iXsystems Support after th
 {{< expand "Contacting Support" "v" >}}
 {{< include file="/static/includes/iXsystemsSupportContact.md" >}}
 {{< /expand >}}
+{{< include file="/static/includes/DisruptiveActionslist.md" >}}
 {{< /enterprise >}}
 
 TrueNAS users should follow the instructions provided below to complete the initial setup and configuration of their systems.

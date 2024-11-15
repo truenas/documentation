@@ -2,7 +2,7 @@
 title: "Cloud Credentials Screens"
 description: "Provides information on the Cloud Credentials screens and settings."
 weight: 10
-alias: 
+aliases: 
  - /scale/scaleclireference/task/cloudsync/clicredential/
 tags:
 - cloud

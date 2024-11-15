@@ -17,6 +17,8 @@ keywords:
 After setting up storage on your TrueNAS, it is time to begin sharing data!
 There are several sharing solutions available in TrueNAS, but in this article we discuss the options to create the share and dataset from the **Shares** screens.
 
+{{< include file="/static/includes/RootLevelDatasetShareWarning.md" >}}
+
 ## Sharing Data Methods
 
 TrueNAS provides three types of sharing methods:

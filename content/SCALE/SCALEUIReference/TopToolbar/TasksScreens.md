@@ -4,7 +4,7 @@ description: "Describes the TrueNAS task manager and how to use the task manager
 weight: 40
 tags:
 - tasks
-alias:
+aliases:
  - /scale/scaleuireference/jobsscreens/
  - /scale/scaleuireference/toptoolbar/jobsscreens/
 ---

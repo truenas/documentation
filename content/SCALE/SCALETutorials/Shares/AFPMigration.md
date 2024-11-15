@@ -12,6 +12,8 @@ tags:
  - migrate
 ---
 
+{{< include file="/static/includes/RootLevelDatasetShareWarning.md" >}}
+
 Since the Apple Filing Protocol (AFP) for shares is deprecated and no longer receives updates, it is not present in TrueNAS.
 
 However, users can sidegrade AFP configurations into TrueNAS 24.04 to migrate previously-saved AFP configurations into SMB configurations.

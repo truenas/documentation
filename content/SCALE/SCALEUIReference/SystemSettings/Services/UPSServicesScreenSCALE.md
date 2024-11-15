@@ -2,7 +2,7 @@
 title: "UPS Services Screen"
 description: "Provides information on the UPS service screen settings."
 weight: 70
-alias: 
+aliases: 
  - /scale/scaleclireference/service/cliups/
 tags:
  - ups

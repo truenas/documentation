@@ -2,7 +2,7 @@
 title: "SNMP Service Screen"
 description: "Provides information on SNMP service screen settings."
 weight: 55
-alias: 
+aliases: 
  - /scale/scaleclireference/service/clisnmp/
 tags:
  - snmp
