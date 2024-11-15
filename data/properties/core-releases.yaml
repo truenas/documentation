@@ -11,7 +11,7 @@ majorVersions:
       - name: "13.0-U6.3"
         type: "Enterprise"
         link: "https://www.truenas.com/docs/core/13.0/gettingstarted/corereleasenotes/"
-        releaseDate: "2024-11-14"
+        releaseDate: "2024-11-19"
         latest: true
   - lifecycle: "Current"
     name: "TrueNAS CORE 13.3"
@@ -20,7 +20,7 @@ majorVersions:
       - name: "13.3-U1"
         type: "Community"
         link: "https://www.truenas.com/docs/core/13.3/gettingstarted/corereleasenotes/#133-u1-changelog"
-        releaseDate: "2024-11-14"
+        releaseDate: "2024-11-19"
         latest: true
   - lifecycle: "Next"
     name: "TBD"
