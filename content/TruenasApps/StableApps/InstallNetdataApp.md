@@ -6,6 +6,7 @@ aliases:
  - /scale/scaletutorials/apps/installnetdataapp/
  - /scale/scaletutorials/apps/chartapps/installnetdataapp/
  - /scale/scaletutorials/apps/stableapps/installnetdataapp/
+ - /truenasapps/communityapps/installnetdataapp/
 tags:
 - apps
 - reporting
