@@ -27,7 +27,7 @@ Users can configure AD services on Windows or Unix-like operating systems using 
 ### Preparing to Configure AD in TrueNAS
 Before configuring Active Directory (AD) in TrueNAs:
 
-You need to know the hostname assigned to the TrueNAS system. Default value is **truenas**.
+You need to know the hostname assigned to the TrueNAS system. The default value is **truenas**.
 
 The **Domain Account Name** default is **Administrator**, or enter a name for TrueNAS to generate as the computer account upon domain join.
 Enter the password for this account.
@@ -49,11 +49,11 @@ If your environment requires something different, go to **System > General Setti
 Keep the local system time sync within five (5) minutes of the AD domain controller time in a default AD environment.
 
 Use an external time source when configuring a virtualized domain controller.
-TrueNAS generates alerts if the system time gets out-of-sync with the AD domain controller time.
+TrueNAS generates alerts if the system time gets out of sync with the AD domain controller time.
 
 TrueNAS has a few options to ensure both systems are synchronized. Either:
 
-* Go to **System > General Settings**, click **Settings** in the **Localization** widget, and set **Timezone** to the value that matches location of the AD domain controller.
+* Go to **System > General Settings**, click **Settings** in the **Localization** widget, and set **Timezone** to the value that matches the location of the AD domain controller.
 
   {{< trueimage src="/images/SCALE/SystemSettings/LocalizationSettingsScreen.png" alt="Timezone Options" id="Timezone Options" >}}
 
@@ -113,7 +113,7 @@ Click **Configure Active Directory** to open the **Active Directory** screen wit
 Select **Enable** again, and click **Save** to reactivate your connection to your AD server.
 
 ## Leaving Active Directory
-TrueNAS requires users to cleanly leave an Active Directory if you want to delete the configuration.
+TrueNAS requires users to cleanly leave an Active Directory to delete the configuration.
 To cleanly leave AD, click **Leave Domain** on the **Active Directory Advanced Settings** screen to remove the AD object.
 Remove the computer account and associated DNS records from the Active Directory.
 

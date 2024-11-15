@@ -8,6 +8,8 @@ tags:
  - migrate
 ---
 
+{{< include file="/static/includes/RootLevelDatasetShareWarning.md" >}}
+
 Since the Apple Filing Protocol (AFP) for shares is deprecated and no longer receives updates, it is not in TrueNAS SCALE.
 
 However, users can sidegrade a TrueNAS CORE configuration into SCALE, so TrueNAS SCALE migrates previously-saved AFP configurations into SMB configurations.

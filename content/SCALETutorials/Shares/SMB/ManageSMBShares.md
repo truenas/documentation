@@ -8,6 +8,9 @@ tags:
 - acl
 ---
 
+
+{{< include file="/static/includes/RootLevelDatasetShareWarning.md" >}}
+
 To access SMB share management options, go to **Shares** screen with the **Windows (SMB) Shares** widget.
 The widget lists SMB shares configured on but is not the full list.
 Each share listed includes four icons that open other screens or dialogs that provide access to share settings.
