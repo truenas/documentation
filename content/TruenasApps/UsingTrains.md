@@ -7,6 +7,7 @@ aliases:
  - /scale/apps/usingcatalogs/
  - /scale/scaletutorials/apps/usingcatalogs/
  - /scale/scaletutorials/apps/
+ - /truenasapps/usingcatalogs/
 tags:
 - apps
 - customapp

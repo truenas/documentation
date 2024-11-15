@@ -6,6 +6,7 @@ aliases:
  - /scale/scaletutorials/apps/chartapps/syncthingcharts/
  - /scale/scaletutorials/apps/stableapps/syncthingcharts/
  - /scale/scaletutorials/apps/stableapps/syncthingstable/
+ - /truenasapps/communityapps/syncthingcharts/
 tags:
 - apps
 - syncthing

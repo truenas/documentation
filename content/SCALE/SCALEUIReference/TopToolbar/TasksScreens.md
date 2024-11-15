@@ -4,7 +4,7 @@ description: "Describes the TrueNAS SCALE task manager and how to use the task m
 weight: 40
 tags:
 - tasks
-alias:
+aliases:
  - /scale/scaleuireference/jobsscreens/
  - /scale/scaleuireference/toptoolbar/jobsscreens/
 ---
