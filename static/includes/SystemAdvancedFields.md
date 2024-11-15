@@ -17,7 +17,6 @@
 {{< truetable >}}
 | Name | Description |
 |------|-------------|
-| **Swap Size in GiB** | (CORE only) By default, all data disks are created with the amount of swap specified. Changing the value does not affect the amount of swap on existing disks, only disks added after the change. Does not affect log or cache devices as they are created without swap. Setting to 0 disables swap creation completely. **STRONGLY DISCOURAGED** |
 | **LOG (Write Cache) Overprovision Size in GiB** | Overprovisioning a ZFS Log SSD can increase its performance and lifespan by distributing writes and erases across more drive flash blocks. Defining a number of GiB here overprovisions ZFS Log disks during pool creation or extension. Examples: 50 GiB, 10g, 5GB |
 {{< /truetable >}}
 

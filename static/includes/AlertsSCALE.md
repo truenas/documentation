@@ -11,7 +11,7 @@ Select **Alert Settings** to add or edit existing system alert services and conf
 See [Alerts Settings Screens]({{< relref "AlertSettingsScreen.md" >}}) for more information.
 
 {{< enterprise >}}
-The [Alert Settings Screens]({{< relref "AlertSettingsScreen.md" >}}) article includes information about the SCALE Enterprise high availability (HA) alert settings.
+The [Alert Settings Screens]({{< relref "AlertSettingsScreen.md" >}}) article includes information about the TrueNAS Enterprise high availability (HA) alert settings.
 {{< /enterprise >}}
 
 Select **Email** to configure the method for the system to send email reports and alerts.

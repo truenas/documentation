@@ -34,12 +34,12 @@ This approach leverages persistent storage for overall data protection.
 ## Setting Up Storage
 Your system must have at least one storage pool configured.
 
-After installing SCALE, enter the IP address assigned by DHCP (displayed in the Console Setup Menu) into a browser window to access the SCALE sign-in splash screen.
-Log in to SCALE.
+After installing TrueNAS, enter the IP address assigned by DHCP (displayed in the Console Setup Menu) into a browser window to access the TrueNAS sign-in splash screen.
+Log in to TrueNAS.
 
 Begin by configuring your first storage pool.
 
-See [Creating Storage Pools]({{< relref "CreatePoolWizard.md" >}}) for more information on how to plan for and create pools in SCALE.
+See [Creating Storage Pools]({{< relref "CreatePoolWizard.md" >}}) for more information on how to plan for and create pools in TrueNAS.
 If you want to create additional pools with other disks not assigned to a pool, you can do that now or as you have a need for them.
 
 ### Creating a Storage Pool

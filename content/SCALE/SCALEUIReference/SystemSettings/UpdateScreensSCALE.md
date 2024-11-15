@@ -1,6 +1,6 @@
 ---
 title: "Update Screens"
-description: "Provides information on functions and fields on the TrueNAS SCALE Update screens."
+description: "Provides information on functions and fields on the TrueNAS Update screens."
 weight: 10
 aliases: 
  - /scale/scaleclireference/system/cliupdate/
@@ -9,7 +9,7 @@ tags:
 - configuration files
 ---
 
-The TrueNAS SCALE **Update** screen provides users with two different methods to update the system, automatic or manual. The screen can have up to four information panes:
+The TrueNAS **Update** screen provides users with two different methods to update the system, automatic or manual. The screen can have up to four information panes:
 
 * Current train
 * Upgrade operation and version (only when an update is detected)
@@ -17,7 +17,7 @@ The TrueNAS SCALE **Update** screen provides users with two different methods to
 * Update options
 
 The screen displays the **Current Train** and a link to more information on the current train.
-**Check for Updates Daily and Download if Available** sets SCALE to check the update server daily for updates on the specified train.
+**Check for Updates Daily and Download if Available** sets TrueNAS to check the update server daily for updates on the specified train.
 When selected, the system automatically downloads an update if one is available.
 The refresh <span class="material-icons">refresh</span> button refreshes the information displayed on the screen.
 
@@ -50,9 +50,9 @@ Keep the configuration file in a safe place that is regularly backed up.
 ## Manual Update Screen
 The **Manual Update** screen displays after you either click **Save Configuration** or **Do Not Save** on the save configuration settings window.
 
-{{< trueimage src="/images/SCALE/SystemSettings/ManualUpdateScreen.png" alt="System Manual Update SCALE" id="System Manual Update SCALE" >}}
+{{< trueimage src="/images/SCALE/SystemSettings/ManualUpdateScreen.png" alt="System Manual Update" id="System Manual Update" >}}
 
-**Current Version** displays the SCALE release version running on your system.
+**Current Version** displays the TrueNAS release version running on your system.
 
 **Choose File** opens a browse window where you can locate the downloaded update configuration file.
 

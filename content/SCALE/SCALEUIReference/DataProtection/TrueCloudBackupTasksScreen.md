@@ -12,7 +12,7 @@ keywords:
 - data backup and recovery
 ---
 
-The **TrueCloud Backup Tasks** widget on the **Data Protection** screen shows configured TrueCloud tasks, and provides access to configuration screens to add or schedule recurring transfers between TrueNAS SCALE and a cloud storage provider account like Storj iX.
+The **TrueCloud Backup Tasks** widget on the **Data Protection** screen shows configured TrueCloud tasks, and provides access to configuration screens to add or schedule recurring transfers between TrueNAS and a cloud storage provider account like Storj iX.
 
 TrueCloud backup tasks are an effective method to back up data to a remote location, restore snapshots, or perform cloud-storage-migration.
 

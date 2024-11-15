@@ -22,11 +22,11 @@ Click **Add** on the **SSH Connections** widget to open the configuration screen
 
    e. Click **Discover Remote Host Key** after properly configuring all other fields to query the remote system and automatically populate the **Remote Host Key** field.
 
-4. (Optional) Enter the number of seconds you want SCALE to wait for the remote TrueNAS system to connect in **Connect Timeout**.
+3. (Optional) Enter the number of seconds you want to wait for the remote TrueNAS system to connect in **Connect Timeout**.
 
    {{< trueimage src="/images/SCALE/Credentials/NewSSHConnectMoreOptions.png" alt="Manual More Options" id="Manual More Options" >}}
 
-5. Click **Save**. 
+4. Click **Save**. 
 
    Saving a new connection automatically opens a connection to the remote TrueNAS and exchanges SSH keys.
    The new SSH connection displays on the **SSH Connection** widget.

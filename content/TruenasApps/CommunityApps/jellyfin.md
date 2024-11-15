@@ -145,7 +145,7 @@ Otherwise, leave **Host Network** unselected.
 {{< trueimage src="/images/SCALE/Apps/InstallJellyfinNetworkConfig.png" alt="Jellyfin Networking" id="Jellyfin Networking" >}}
 
 Accept the default port numbers in **Web Port**.
-The SCALE Jellyfin app listens on port **30013**.
+The TrueNAS Jellyfin app listens on port **30013**.
 
 Refer to the TrueNAS [default port list](https://www.truenas.com/docs/references/defaultports/) for a list of assigned port numbers.
 To change the port numbers, enter a number within the range 9000-65535.

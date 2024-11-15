@@ -171,7 +171,7 @@ Your DNS server needs to be capable of providing name resolution for these more 
 Specific network topology and configuration instructions and recommendations are outside the scope of this article.
 Consult with your IT network administrator or service provider for how to equip your network to allow communication between both IP protocols.
   
-You can dual-stack IPv4 and IPv6 in SCALE.
+You can dual-stack IPv4 and IPv6.
 {{< /expand >}}
 
 {{< expand "What type of IPv6 address do you want to assign?" "v" >}}

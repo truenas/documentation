@@ -1,6 +1,6 @@
 ---
 title: "Configuring FreeIPA"
-description: "Provides information and configuration instructions for adding FreeIPA directory service in SCALE."
+description: "Provides information and configuration instructions for adding FreeIPA directory service in TrueNAS."
 weight: 25
 aliases:
 tags:
@@ -12,7 +12,7 @@ keywords:
  - nas data storage 
 ---
 
-TrueNAS provides the option to configure a FreeIPA directory service client in SCALE using the **LDAP** configuration screen under **Credentials > Directory Services**.
+TrueNAS provides the option to configure a FreeIPA directory service client using the **LDAP** configuration screen under **Credentials > Directory Services**.
 
 {{< expand "Does LDAP work with SMB?" "v" >}}
 LDAP authentication for SMB shares is disabled unless you configured and populated the LDAP directory with Samba attributes.
@@ -22,7 +22,7 @@ TrueNAS does not support non-CA certificates.
 {{< /expand >}}
 
 {{< hint type=note >}}
-You can have either Active Directory or LDAP configured on SCALE, but not both.
+You can have either Active Directory or LDAP configured on TrueNAS, but not both.
 {{< /hint >}}
 
 ## Before You Begin
@@ -87,7 +87,7 @@ The main **Directory Services** screen returns to the default view showing the o
 To enable again, click **Configure LDAP** to open the **LDAP** screen with your saved configuration.
 Select **Enable** again to reactivate your IPA directory server configuration.
 
-## Removing LDAP from SCALE
+## Removing LDAP from TrueNAS
 
 To remove the LDAP configuration, click **Settings** to open the **LDAP** screen.
 Clear all settings and click **Save**.

@@ -24,7 +24,7 @@ Each CSR listed on the widget is a link that opens the **Edit CSR** screen.
 The **Certificate Signing Requests** section allows users to configure the message(s) the system sends to a registration authority of the public key infrastructure to apply for a digital identity certificate.
 
 ## Add CSR Wizard Screens
-The **Add CSR** wizard screens step users through configuring a new certificate signing request (CSR) on TrueNAS SCALE.
+The **Add CSR** wizard screens step users through configuring a new certificate signing request (CSR) on TrueNAS.
 The wizard has five different configuration screens, one for each step in the CA configuration process:
 
 1 **[Identifier and Type](#identifier-and-type-options)**
@@ -150,4 +150,4 @@ For **Import Certificate Signing Request** type, the screen displays **Type**, *
 
 ![AddCSRConfirmOptions](/images/SCALE/Credentials/AddCSRConfirmOptions.png "Add CSR Confirm Options")
 
-**Save** adds the certificate to SCALE. **Back** returns to previous screens to make changes before you save. **Next** advances to the next screen in the sequence to return to **Confirm Options**.
+**Save** adds the certificate to TrueNAS. **Back** returns to previous screens to make changes before you save. **Next** advances to the next screen in the sequence to return to **Confirm Options**.

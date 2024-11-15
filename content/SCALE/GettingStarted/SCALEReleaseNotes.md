@@ -10,7 +10,7 @@ aliases:
 weight: 10
 related: false
 ---
-{{< header logo="/images/tn-scale-logo.png" logo_alt="TrueNAS Logo" version="25.04 Fangtooth" icon="" icon_alt="" >}}
+{{< header logo="/images/tn-openstorage-logo.png" logo_alt="TrueNAS Logo" version="25.04 Fangtooth" icon="" icon_alt="" >}}
 
 {{< hint type="tip" title="25.04 Nightly Development Documentation" >}}
 This page tracks the latest development roadmap and notes for the future TrueNAS major version 25.04 (Fangtooth).
@@ -44,7 +44,7 @@ Coming soon
 
 {{< include file="/static/includes/EarlyReleaseWarning.md" >}}
 
-25.04 (Fangtooth) early releases (BETA and RC) are available from the [TrueNAS SCALE download page](https://www.truenas.com/download-truenas-scale/).
+25.04 (Fangtooth) early releases (BETA and RC) are available from the [TrueNAS download page](https://www.truenas.com/download-truenas-scale/).
 
 For adventurous users that want to experiment with the latest feature development, nightly build [.iso](https://download.truenas.com/truenas-scale-electriceel-nightly/) and [.update](https://update.sys.truenas.net/scale/TrueNAS-SCALE-ElectricEel-Nightlies/) files are available.
 
@@ -52,8 +52,8 @@ More details are available from [Software Releases]({{< relref "/TrueNASUpgrades
 
 ## Upgrade Notes
 
-* TrueNAS SCALE is an appliance built from specific Linux packages.
-  Attempting to update SCALE with `apt` or methods other than the SCALE web interface can result in a nonfunctional system.
+* TrueNAS is an appliance built from specific Linux packages.
+  Attempting to update TrueNAS with `apt` or methods other than the TrueNAS web interface can result in a nonfunctional system.
 
 * All auxiliary parameters can experience changes between TrueNAS major versions due to security and development changes.
   We recommend removing all auxiliary parameters from TrueNAS configurations before upgrading as these settings can result in SMB share failures after an upgrade.
@@ -70,25 +70,25 @@ Update the system to the latest maintenance release of the installed major versi
 
 include file="/static/includes/SCALEUpgradePaths.md" 
 
-### CORE to SCALE Migrations
+### TrueNAS Migrations
 
 {{< include file="/_includes/MigrateCOREtoSCALEWarning.md" >}}
 
 {{< enterprise >}}
-Enterprise customers with HA systems should contact iXsystems Support for assistance with migrating to TrueNAS SCALE.
+Enterprise customers with HA systems should contact iXsystems Support for assistance with migrating to TrueNAS.
 {{< expand "iXsystems Support" "v" >}}
 {{< include file="content/_includes/iXsystemsSupportContact.md" >}}
 {{< /expand >}}
 {{< /enterprise >}}
 
-When attempting to migrate from TrueNAS CORE, the general recommendation is to back up the system configuration file and use a SCALE **.iso** file to fresh install TrueNAS.
+When attempting to migrate from a FreeBSD-based TrueNAS version, the general recommendation is to back up the system configuration file and use a TrueNAS **.iso** file to fresh install TrueNAS.
 After install, restore the system configuration and import the pools.
 
 Depending on the specific system configuration, this can be a straightforward or complicated process.
-See the [Migration articles]({{< relref "/SCALE/GettingStarted/Migrate/_index.md" >}}) for cautions and notes about differences between each software and the CORE to SCALE migration process.
+See the [Migration articles]({{< relref "/SCALE/GettingStarted/Migrate/_index.md" >}}) for cautions and notes about differences between each software and the migration process.
 
-You must either clean install using an <file>iso</file> or use an upgrade file to migrate a TrueNAS CORE system to SCALE 25.04 (Fangtooth).
-Enterprise customers should [contact Support](https://www.truenas.com/docs/scale/gettingstarted/migrate/migratecorehatoscaleha/#expand-1-Enterprise%20HA%20Migrations) for assistance with transitioning from CORE to SCALE.
+You must either clean install using an <file>iso</file> or use an upgrade file to migrate a FreeBSD-based TrueNAS system to TrueNAS 25.04 (Fangtooth).
+Enterprise customers should [contact Support](https://www.truenas.com/docs/scale/gettingstarted/migrate/migratecorehatoscaleha/#expand-1-Enterprise%20HA%20Migrations) for assistance with migration.
 
 ## Component Versions
 Click the component version number to see the latest release notes for that component.
@@ -136,5 +136,5 @@ Notable changes:
 
 * 
 
-<a href="https://ixsystems.atlassian.net/issues/?filter=_____" target="_blank">Click here to see the latest information</a> about public issues discovered in 25.04-BETA.1 that are being resolved in a future TrueNAS SCALE release.
+<a href="https://ixsystems.atlassian.net/issues/?filter=_____" target="_blank">Click here to see the latest information</a> about public issues discovered in 25.04-BETA.1 that are being resolved in a future TrueNAS release.
 -->
