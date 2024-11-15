@@ -17,8 +17,6 @@ When creating zvols for shares, avoid giving them names with capital letters or 
 
 {{< include file="/static/includes/RootLevelDatasetShareWarning.md" >}}
 
-<div class="noprint">
-
 ## Contents
 
 {{< children depth="2" description="true" >}}
