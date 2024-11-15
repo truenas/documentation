@@ -2,6 +2,8 @@
 title: "Managing Network Global Configurations"
 description: "Provides instructions on configuring or managing global configuration settings."
 weight: 20
+aliases:
+ - /scaletutorials/network/addingglobalconf/
 tags:
 - network
 ---
@@ -22,8 +24,43 @@ Users can configure many of the interface, DNS, and gateway options using the [C
 Be sure to check both locations when troubleshooting network connectivity issues.
 {{< /expand >}}
 
+## Adding Network Settings
+Use the **Global Configuration Settings** screen to add general network settings like the default gateway and DNS name servers to allow external communication.
+
+To add new or change existing network interfaces see [Interface Configurations]({{< relref "/SCALETutorials/Network/Interfaces/_index.md" >}}).
+
+
+Go to **Network**, and click **Settings** on the **Global Configuration** widget to open the **Edit Global Configuration** screen.
+
+1. Enter the host name for your TrueNAS in **Hostname**. For example, replace the default value *truenas* with something like *localnas*.
+
+   {{< trueimage src="/images/SCALE/Network/GlobalConfigHostAndDomainNameSettings.png" alt="Global Configuration Host and Domain Name Settings" id="Global Configuration Host and Domain Name Settings" >}}
+
+2. Enter the system domain name in **Domain**. For example, *example.com*.
+
+3. Enter the IP addresses for your DNS name servers in **Nameserver 1**, **Nameserver 2**, and/or **Nameserver 3**.
+   For home users, enter **8.8.8.8** in the **Nameserver 1** field so your TrueNAS can communicate externally with the Internet.
+
+   {{< trueimage src="/images/SCALE/Network/GlobalConfigNameserverSettings.png" alt="Global Configuration Nameserver Settings" id="Global Configuration Nameserver Settings" >}}
+
+4. Enter the IP address for your default gateway into the **IPv4 Default Gateway** if you are using IPv4 IP addresses.
+   Enter the IPv6 address in the **IPv6 Default Gateway** if you are using IPv6 addresses.
+
+5. Select **Allow All** for **Outbound Network**  to permit external communication for all TrueNAS services or select **Deny All** to prevent external communication.
+   Select **Allow Specific** and then use the dropdown list to pick a limited set of services to allow external communication.
+
+   {{< trueimage src="/images/SCALE/Network/GlobalConfigOutboundSettings.png" alt="Global Configuration Outbound Settings" id="Global Configuration Outbound Settings" >}}
+
+   {{< trueimage src="/images/SCALE/Network/GlobalConfigAllowSpecificServiceOptions.png" alt="Global Configuration Allow Specific Service Options" id="Global Configuration Allow Specific Service Options" >}}
+
+   Click as many services as desired to permit external communications. Unchecked services cannot communicate externally.
+
+See [below](#setting-up-external-communication-for-services) for more information.
+
+6. Click **Save**. The **Global Configuration** widget on the **Network** screen updates to show the new settings.
+
 ## Setting Up External Communication for Services
-Use the **Global Configuration Outbound Network** radio buttons to set up services for external communication capability.
+Use the **Global Configuration Outbound Network** settings to add services for external communication capability.
 
 These services use external communication:
 * ACME DNS-Authenticators
@@ -48,17 +85,3 @@ Select **Allow Specific** to permit external communication for the services you 
 Click on all that apply. A checkmark displays next to a selected service, and these services display in the field separated by a comma (,).
 
 Click **Save** when finished.
-
-## Setting Up Netwait
-Use Netwait to prevent starting all network services until the network is ready.
-Netwait sends a [ping](https://manpages.debian.org/unstable/inetutils-ping/ping.1.en.html) to each of the IP addresses you specify until one responds, and after receiving the response then services can start.
-
-To set up Netwait, from the **Network** screen:
-
-1. Click on **Settings** in the **Global Configuration** widget to open the **Global Configuration** screen.
-
-2. Select **Enable Netwait Feature**. The **Netwait IP List** field displays.
-
-3. Enter your list of IP addresses to ping. To enter multiple addresses, press <kbd>Enter</kbd> after entering each IP address.
-
-4. Click **Save** when finished.
