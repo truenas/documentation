@@ -26,7 +26,7 @@ majorVersions:
     releases:
       - name: "13.0-U6.3"
         link: "https://download-core.sys.truenas.net/13.0/STABLE/U6.3/"
-        date: "2024-11-14"
+        date: "2024-11-19"
       - name: "13.0-U6.2"
         link: "https://download-core.sys.truenas.net/13.0/STABLE/U6.2/"
         date: "2024-07-03"
@@ -75,7 +75,7 @@ majorVersions:
     releases:
       - name: "13.3-U1"
         link: "https://download-core.sys.truenas.net/13.3/STABLE/U1/"
-        date: "2024-11-14"
+        date: "2024-11-19"
       - name: "13.3-RELEASE"
         link: "https://download-core.sys.truenas.net/13.3/STABLE/RELEASE/"
         date: "2024-08-13"
