@@ -23,7 +23,7 @@ weight: 3
 {{< /truetable >}}
 
 ## 13.0-U6.3
-**November 14, 2024**
+**November 19, 2024**
 
 iXsystems is pleased to release TrueNAS CORE 13.0-U6.3!
 
