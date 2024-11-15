@@ -2,7 +2,7 @@
 title: "Accessing NAS from a VM or Apps"
 description: "Provides instructions on how to create a bridge interface for virtual machines or applications and provides Linux and Windows examples."
 weight: 60
-alias: 
+aliases: 
 - /scale/scaleuireference/virtualization/accessingnasfromvm/
 - /scale/scaletutorials/virtualization/accessingnasfromvm/
 tags:

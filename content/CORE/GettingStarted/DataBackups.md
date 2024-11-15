@@ -1,5 +1,6 @@
 ---
 title: "Data Backups"
+redirect: "https://www.truenas.com/docs/core/13.0/gettingstarted/databackups/"
 description: "Describes how to configure data backups on TrueNAS CORE."
 geekdocCollapseSection: true
 weight: 80

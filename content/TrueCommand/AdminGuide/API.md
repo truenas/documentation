@@ -1,5 +1,6 @@
 ---
 title: "API Interface"
+redirect: "https://www.truenas.com/docs/truecommand/3.0/adminguide/api/"
 description: "Guide to access the built-in TrueCommand API Interface and link to a static API documentation copy."
 weight: "90"
 geekdocCollapseSection: true

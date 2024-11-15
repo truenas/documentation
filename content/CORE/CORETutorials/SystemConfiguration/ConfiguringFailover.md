@@ -1,5 +1,6 @@
 ---
 title: "Configuring Failover (HA)"
+redirect: "https://www.truenas.com/docs/core/13.0/coretutorials/systemconfiguration/configuringfailover/"
 description: "Describes how to configure failover on TrueNAS CORE Enterprise."
 weight: 150
 aliases:

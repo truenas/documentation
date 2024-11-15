@@ -1,5 +1,6 @@
 ---
 title: "FTP Screen"
+redirect: "https://www.truenas.com/docs/core/13.0/uireference/services/ftpscreen/"
 description: "Describes the FTP screen in TrueNAS CORE."
 weight: 30
 tags:

@@ -1,5 +1,6 @@
 ---
 title: "Configuring S.M.A.R.T."
+redirect: "https://www.truenas.com/docs/core/13.0/coretutorials/services/configuringsmart/"
 description: "Configurinng Self-Monitoring, Analysis and Reporting Technology (S.M.A.R.T.) on your TrueNAS."
 weight: 90
 aliases: /core/services/smart/

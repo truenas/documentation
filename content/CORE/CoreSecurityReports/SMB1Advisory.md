@@ -1,5 +1,6 @@
 ---
 title: "SMB1 Security Advisory"
+redirect: "https://www.truenas.com/docs/core/13.0/coresecurityreports/smb1advisory/"
 description: "Contains advisory information on the deprecated SMB1 file-sharing protocol."
 weight: 10
 ---

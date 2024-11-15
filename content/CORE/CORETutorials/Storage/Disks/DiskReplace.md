@@ -1,5 +1,6 @@
 ---
 title: "Disk Replacement"
+redirect: "https://www.truenas.com/docs/core/13.0/coretutorials/storage/disks/diskreplace/"
 description: "Describes how to replace a disk and restore the hot spare in TrueNAS CORE."
 weight: 20
 aliases: /core/storage/disks/diskreplace/

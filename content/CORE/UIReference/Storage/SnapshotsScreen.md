@@ -1,5 +1,6 @@
 ---
 title: "Snapshots Screens"
+redirect: "https://www.truenas.com/docs/core/13.0/uireference/storage/snapshotsscreen/"
 description: "Describes the Snapshots screens on TrueNAS CORE."
 weight: 20
 tags:

@@ -1,5 +1,5 @@
 ---
-title: "TrueNAS SCALE"
+title: "TrueNAS 25.04 (Early)"
 geekdocCollapseSection: true
 weight: 20
 aliases:
@@ -29,9 +29,9 @@ h1 {display:none;}
 
 <div class="noprint">
 
-## 25.04 Featured Content
-
 To view or search through documentation for previous TrueNAS SCALE major versions, use the **Version** dropdown at the top of this page.
+
+## 25.04 Featured Content
 
   <div class="docs-sections">
     <p>

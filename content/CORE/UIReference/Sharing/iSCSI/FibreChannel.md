@@ -1,8 +1,9 @@
 ---
 title: "Fibre Channel"
+redirect: "https://www.truenas.com/docs/core/13.0/uireference/sharing/iscsi/fibrechannel/"
 description: "Provides information about using Fibre Channel with TrueNAS CORE."
 weight: 20
-alias: /core/sharing/iscsi/fibrechannel/
+aliases: /core/sharing/iscsi/fibrechannel/
 tags:
 - iscsi
 ---

@@ -1,5 +1,6 @@
 ---
 title: Development Notes
+redirect: "https://www.truenas.com/docs/truecommand/3.0/tcgettingstarted/tcreleasenotes/"
 description: "Notes about the latest TrueCommand development."
 weight: 5
 aliases:

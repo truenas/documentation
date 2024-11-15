@@ -1,5 +1,6 @@
 ---
 title: "Managing TLS Ciphers"
+redirect: "https://www.truenas.com/docs/core/13.0/coretutorials/managingtlsciphers/"
 description: "Describes how to manage TLS ciphers on TrueNAS CORE." 
 weight: 30
 aliases:

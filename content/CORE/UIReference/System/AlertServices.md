@@ -1,5 +1,6 @@
 ---
 title: "Alert Services"
+redirect: "https://www.truenas.com/docs/core/13.0/uireference/system/alertservices/"
 description: "Describes the fields on the Alert Services screen on TrueNAS CORE."
 weight: 80
 tags:

@@ -1,5 +1,6 @@
 ---
 title: "Configuring Tunables"
+redirect: "https://www.truenas.com/docs/core/13.0/coretutorials/systemconfiguration/configuringtunables/"
 description: "Describes how to add or edit tunables on TrueNAS CORE."
 weight: 120
 tags:

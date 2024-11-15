@@ -1,5 +1,6 @@
 ---
 title: "Setting up NIS"
+redirect: "https://www.truenas.com/docs/core/13.0/coretutorials/directoryservices/nis/"
 description: "Use the NIS screen to configure Network Information System (NIS) on your TrueNAS."
 weight: 30
 aliases: /core/directoryservices/nis/

@@ -7,6 +7,7 @@ aliases:
  - /scale/scaletutorials/apps/collabora/
  - /scale/scaletutorials/apps/chartapps/collabora/
  - /scale/scaletutorials/apps/stableapps/collabora/
+ - /truenasapps/communityapps/collabora/
 tags:
  - apps
  - cloud

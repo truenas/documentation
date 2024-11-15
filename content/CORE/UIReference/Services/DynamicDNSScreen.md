@@ -1,5 +1,6 @@
 ---
 title: "Dynamic DNS Screen"
+redirect: "https://www.truenas.com/docs/core/13.0/uireference/services/dynamicdnsscreen/"
 description: "Describes the DDNS screen in TrueNAS CORE."
 weight: 20
 aliases: core/services/dynamicdns/

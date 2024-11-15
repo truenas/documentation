@@ -1,5 +1,6 @@
 ---
 title: "Configuring OpenVPN"
+redirect: "https://www.truenas.com/docs/core/13.0/coretutorials/services/configuringopenvpn/"
 description: "Provices information on how to configure Open Virtual Private Network (OpenVPN) services on your TrueNAS."
 weight: 70
 aliases: /core/services/openvpn/
