@@ -11,6 +11,7 @@ aliases:
  - /scale/scaletutorials/apps/chartapps/minioapp/
  - /scale/scaletutorials/apps/stableapps/minioapp/
  - /truenasapps/communityapps/minioapp/
+ - /truenasapps/stableapps/minioapp/miniomanualupdate/
 tags:
 - s3
 - apps
