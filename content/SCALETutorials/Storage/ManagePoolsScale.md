@@ -106,7 +106,6 @@ There are a few  ways to increase the size of an existing pool:
 * Replace all existing disks in the VDEV with larger disks.
 
 By default, a VDEV limits all disks to the usable capacity of the smallest attached device.
-SCALE automatically expands the usable capacity of the pool to fit all available space after replacing the smallest attached disk (see [Replacing Disks to Expand a Pool](#replacing-disks-to-expand-a-pool) below).
 If a pool is not automatically expanded, for example when resizing virtual disks in a hypervisor apart from TrueNAS, click **Expand** on the **Storage Dashboard** to manually increase the pool size to match all available disk space.
 
 ### Extending a RAIDZ VDEV
