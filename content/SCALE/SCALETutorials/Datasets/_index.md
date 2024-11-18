@@ -1,6 +1,6 @@
 ---
 title: "Datasets"
-description: "Tutorials for creating and managing datasets in TrueNAS SCALE."
+description: "Tutorials for creating and managing datasets in TrueNAS."
 geekdocCollapseSection: true
 weight: 6
 aliases:

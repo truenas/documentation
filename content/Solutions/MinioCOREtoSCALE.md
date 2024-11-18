@@ -1,6 +1,6 @@
 ---
-title: "Migrating MinIO Data from CORE to SCALE (Deprecated)"
-description: "Provides instructions for migrating S3 data from the TrueNAS CORE MinIO plugin to the TrueNAS SCALE MinIO app. Deprecated and no longer usable."
+title: "Migrating MinIO Data from Previous TrueNAS Versions (Deprecated)"
+description: "Provides instructions for migrating S3 data from the FreeBSD-based TrueNAS MinIO plugin to the Linux-based TrueNAS MinIO app. Deprecated and no longer usable."
 weight: 10
 tags:
 - gettingstarted

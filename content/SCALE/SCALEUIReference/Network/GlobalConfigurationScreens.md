@@ -1,16 +1,12 @@
 ---
 title: "Global Configuration Screens"
-description: "The Global Configuration widget displays the general TrueNAS SCALE network settings not specific to any interface."
+description: "The Global Configuration widget displays the general TrueNAS network settings not specific to any interface."
 weight: 20
 tags:
 - network
 ---
 
-The **Global Configuration** widget displays the general TrueNAS networking settings *not* specific to any interface. 
-
-{{< hint type=note >}}
-The SCALE information dislplayed on the **Global Configuration** widget is the equivalent of the information displayed on the TrueNAS CORE **Network Summary** screen. **Global Configuration** settings configuration screens are similar in both SCALE and CORE but SCALE includes external communication settings.
-{{< /hint >}}
+The **Global Configuration** widget displays the general TrueNAS networking settings *not* specific to any interface.
 
 ![GlobalConfigurationSCALE](/images/SCALE/Network/GlobalConfiguration.png "Global Configuration")
 

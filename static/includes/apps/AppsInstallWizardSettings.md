@@ -21,7 +21,7 @@ All apps in the **stable** train, some **community** train apps, and all apps in
   If not using a default user and group provided, add a new user to manage the application before using the installation wizard, then enter the UID in both the user and group fields.
   This section is not always included in app installation wizards.
 
-* **Network Configuration** shows network settings the app needs to communicate with SCALE and the Internet.
+* **Network Configuration** shows network settings the app needs to communicate with TrueNAS and the Internet.
   Settings include the default port assignment, host name, IP addresses, and other network settings.
 
   If changing the port number to something other than the default setting, refer to [Default Ports](https://www.truenas.com/docs/references/defaultports/) for a list of used and available port numbers.

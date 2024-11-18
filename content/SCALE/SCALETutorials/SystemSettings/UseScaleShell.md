@@ -1,6 +1,6 @@
 ---
 title: "Using Shell"
-description: "Provides information on using the TrueNAS SCALE Shell."
+description: "Provides information on using the TrueNAS shell."
 weight: 60
 aliases: /scale/scaleuireference/systemsettings/shellscale/
 tags:
@@ -10,7 +10,7 @@ keywords:
 - nas data storage
 ---
 
-The SCALE **Shell** is convenient for running command line tools, configuring different system settings, or finding log files and debug information.
+The TrueNAS **Shell** is convenient for running command line tools, configuring different system settings, or finding log files and debug information.
 
 {{< hint type=warning >}}
 Warning! The supported mechanisms for making configuration changes are the TrueNAS WebUI and API exclusively.
@@ -59,7 +59,7 @@ Click **Save**.
 
 Admin users can set the Shell to default to the TrueNAS Console by selecting **TrueNAS Console** in **Shell** on the **Edit User** screen.
 
-Clicking other SCALE UI menus options closes the shell session and stops commands running in the **Shell** screen.
+Clicking other TrueNAS UI menus options closes the shell session and stops commands running in the **Shell** screen.
 
 [Tmux](https://github.com/tmux/tmux/wiki/) allows you to detach sessions in **Shell** and then reattach them later.
 Commands continue to run in a detached session.

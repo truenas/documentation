@@ -1,6 +1,6 @@
 ---
 title: "Managing Network Settings (Enterprise HA)"
-description: "Provides instructions on how to make changes to network settings on SCALE Enterprise (HA) systems."
+description: "Provides instructions on how to make changes to network settings on TrueNAS Enterprise (HA) systems."
 weight: 25
 aliases:
 tags:
@@ -10,7 +10,7 @@ tags:
 ---
 
 {{< enterprise >}}
-The instructions in the article only apply to SCALE Enterprise (HA) systems.
+The instructions in the article only apply to TrueNAS Enterprise (HA) systems.
 {{< /enterprise >}}
 
 ## Configuring Enterprise (HA) Network Settings
@@ -22,6 +22,6 @@ The instructions in the article only apply to SCALE Enterprise (HA) systems.
    The system might reboot.
    Monitor the status of controller 2 and wait until the controller is back up and running, then click **Sync To Peer**.
    Select **Reboot standby TrueNAS controller** and **Confirm**, then click **Proceed** to start the sync operation.
-   The controller reboots, and SCALE syncs controller 2 with controller 1, which adds the network settings and pool to controller 2.
+   The controller reboots, and TrueNAS syncs controller 2 with controller 1, which adds the network settings and pool to controller 2.
 
    {{< trueimage src="/images/SCALE/SystemSettings/FailoverSyncToPeerDialog.png" alt="Failover Sync To Peer" id="Failover Sync To Peer" >}}

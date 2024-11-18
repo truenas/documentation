@@ -1,6 +1,6 @@
 ---
-title: "Preparing for SCALE UI Configuration (Home Users)"
-description: "Provides information on what home users need to complete the SCALE configuration using the SCALE UI."
+title: "Preparing for TrueNAS UI Configuration (Home Users)"
+description: "Provides information on what home users need to complete the TrueNAS configuration using the TrueNAS UI."
 weight: 7
 aliases:
 tags:
@@ -12,9 +12,9 @@ keywords:
 - two-factor authentication (2FA)
 ---
 
-SCALE users installing and configuring SCALE on their home server should follow the instructions in this article to prepare for their SCALE system deployment.
+Users installing and configuring TrueNAS on their home server should follow the instructions in this article to prepare for their deployment.
 
-For SCALE support or assistance refer to the [TrueNAS community forums](https://forums.truenas.com/), [Discord](https://discord.com/invite/Q3St5fPETd), or the tutorials included in the TrueNAS Documentation Hub.
+For support or assistance refer to the [TrueNAS community forums](https://forums.truenas.com/), [Discord](https://discord.com/invite/Q3St5fPETd), or the tutorials included in the TrueNAS Documentation Hub.
 
 ### Physical Access
 
@@ -41,7 +41,7 @@ Home users obtaining network equipment and Internet service access from either a
 ### SMTP Access
 
 Simple Mail Transfer Protocol (SMTP) service or servers allow for the transfer of electronic mail across an Internet connection.
-TrueNAS uses either SMTP to send mail from SCALE to either the administrator or designated individual email addresses for system alert notifications.
+TrueNAS uses SMTP to send mail from TrueNAS to either the administrator or designated individual email addresses for system alert notifications.
 
 Contact your Internet or cable service provider to obtain the SMTP addresses to allow TrueNAS to send emails from your network.
-Consider utilizing two-factor authentication (2FA) for enhanced security when accessing SMTP servers for email delivery from SCALE.
+Consider utilizing two-factor authentication (2FA) for enhanced security when accessing SMTP servers for email delivery from TrueNAS.

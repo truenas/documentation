@@ -1,6 +1,6 @@
 ---
 title: "Third-Party Data Migration"
-description: "Provides data migration instructions for users wanting move data from a third-party NAS solution to the SCALE NAS system storage using the Syncthing Enterprise app."
+description: "Provides data migration instructions for users wanting move data from a third-party NAS solution to the TrueNAS system using the Syncthing Enterprise app."
 weight: 45
 draft: false
 slug: thirdpartymigration
@@ -17,7 +17,7 @@ keywords:
 - Enterprise NAS storage
 ---
 
-Users of TrueNAS 24.04 (Dragonfish) or newer can migrate data from a third-party NAS solution onto TrueNAS SCALE using the [Syncthing Enterprise application]({{< relref "/content/TruenasApps/enterpriseapps/syncthing.md" >}}).
+Users of TrueNAS 24.04 (Dragonfish) or newer can migrate data from a third-party NAS solution onto TrueNAS using the [Syncthing Enterprise application]({{< relref "/content/TruenasApps/enterpriseapps/syncthing.md" >}}).
 The Syncthing Enterprise application can mount remote SMB shares in a manner that preserves relevant metadata.
 TrueNAS 24.10 (Electric Eel) also adds migration support for SMB alternate data streams (ADS), used to store application-specific metadata.
 
@@ -37,12 +37,12 @@ Please contact iXsystems Support to learn more and schedule a time to deploy the
 
 ## Before You Begin
 
-Data migration from a third-party NAS requires advanced configuration of both the remote source and TrueNAS SCALE target.
+Data migration from a third-party NAS requires advanced configuration of both the remote source and TrueNAS target.
 
 1. Ensure the source NAS supports the SMB protocol version 3 or newer.
    Older versions of the SMB protocol are not supported.
 
-2. Plan for one-way migration of data from the source to the TrueNAS SCALE target.
+2. Plan for one-way migration of data from the source to the TrueNAS target.
    Remote shares must be mounted read-only.
    Read-write configuration or bidirectional synchronization is not supported.
 
@@ -57,16 +57,16 @@ Data migration from a third-party NAS requires advanced configuration of both th
 
 ## Process Overview
 
-The process of setting up data migration from an external NAS to TrueNAS SCALE consists of:
+The process of setting up data migration from an external NAS to TrueNAS consists of:
 
 * Installing two instances of the Syncthing Enterprise app, configuring the first instance to ingest data from the external source and the second instance to write data to a local dataset on the target system.
-* Creating the target dataset for the data ingest on TrueNAS SCALE.
+* Creating the target dataset for the data ingest on TrueNAS.
 * Configuring a Syncthing marker folder on the remote source.
 * Connecting the two Syncthing instances and initiating data sync.
 
 ## Setting Up Data Migration
 
-1. Install the first instance of the Syncthing Enterprise app on TrueNAS SCALE.
+1. Install the first instance of the Syncthing Enterprise app on TrueNAS.
 
     a. Go to **Apps > Discover Apps**, locate the **Syncthing** enterprise app widget.
 
@@ -139,12 +139,12 @@ The process of setting up data migration from an external NAS to TrueNAS SCALE c
 
    Enter a clear identifying name, such as *INGEST*, and click **Save**.
 
-3. [Create a new dataset]({{< relref "datasetsscale.md" >}}) on TrueNAS SCALE to be the target for the data ingest, for example, */mnt/tank/ingest*.
+3. [Create a new dataset]({{< relref "datasetsscale.md" >}}) on TrueNAS to be the target for the data ingest, for example, */mnt/tank/ingest*.
 
     Click **Advanced Options** and set **ACL Type** to **SMB/NFSv4**.
     Set **ACL Mode** to **Restricted**.
 
-4. Install the second instance of the Syncthing Enterprise app on TrueNAS SCALE.
+4. Install the second instance of the Syncthing Enterprise app on TrueNAS.
 
     a. Go to **Apps > Discover Apps**, locate the **Syncthing** enterprise app widget.
     Ensure the widget reflects the Enterprise train version of the app.
@@ -232,4 +232,4 @@ The process of setting up data migration from an external NAS to TrueNAS SCALE c
 
    Click **Sharing** and select the migrate instance. Click **Save**.
 
-   Syncthing begins syncing data from the remote source to the ingest dataset on TrueNAS SCALE.
+   Syncthing begins syncing data from the remote source to the ingest dataset on TrueNAS.

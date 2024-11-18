@@ -1,6 +1,6 @@
 ---
-title: "Configuring Virtualization and Apps in TrueNAS SCALE"
-description: "Provides general information on setting up virtual machines and applications on TrueNAS SCALE."
+title: "Configuring Virtualization and Apps"
+description: "Provides general information on setting up virtual machines and applications in TrueNAS."
 weight: 80
 aliases:
  - /scale/gettingstarted/vmandappconfigscale/
@@ -14,16 +14,16 @@ keywords:
 - data sharing
 ---
 
-Configuring TrueNAS SCALE to work with virtualized features, such as virtual machines (VMs) and applications, is part of the setup process that, when optimized, takes advantage of the network storage capabilities that SCALE offers.
+Configuring TrueNAS to work with virtualized features, such as virtual machines (VMs) and applications, is part of the setup process that, when optimized, takes advantage of the network storage capabilities that TrueNAS offers.
 
 ## Before You Begin
 
-This article assumes you have the latest release version of TrueNAS SCALE installed on your system.
+This article assumes you have the latest release version of TrueNAS installed on your system.
 The following steps are a list of configuration prerequisites you have completed and are familiar with before beginning VM and application installations.
 
 ### Network Configuration
 
-The primary network interface is configured as part of the SCALE installation process.
+The primary network interface is configured as part of the installation process.
 Go to **Network > Global Configuration** screen in the TrueNAS web UI to determine if the default gateway, host name, domain, and DNS name servers have been configured correctly.
 See [Console Setup Menu Configuration]({{< relref "ConsoleSetupMenuScale.md" >}}) for more information on network settings.
 
@@ -39,7 +39,7 @@ See [Setting Up a Network VLAN]({{< relref "SettingUpVLAN.md" >}}) for more info
 
 ### Storage Configuration
 
-Storage pool creation is part of the initial process of setting up storage for SCALE.
+Storage pool creation is part of the initial process of setting up storage.
 A TrueNAS dataset is a file system within a data storage pool.
 See [Setting Up Storage]({{< relref "SetUpStorageScale.md" >}}) to review storage pool creation and [Adding and Managing Datasets]({{< relref "DatasetsSCALE.md" >}}) for information on dataset configuration.
 
@@ -49,7 +49,7 @@ After creating the pool and datasets, set up shares to enable data access and sh
 Different types of data sharing methods are discussed in [Setting Up Data Sharing]({{< relref "SetUpSharing.md" >}}).
 You should investigate more specific coverage of each share based on your use case.
 
-[SMB Shares Screens]({{< relref "SMBSharesScreens.md" >}}) and [Setting Up SMB Home Shares]({{< relref "AddSMBHomeShare.md" >}}) provide a good introduction as to how TrueNAS SCALE handles SMB shares.
+[SMB Shares Screens]({{< relref "SMBSharesScreens.md" >}}) and [Setting Up SMB Home Shares]({{< relref "AddSMBHomeShare.md" >}}) provide a good introduction as to how TrueNAS handles SMB shares.
 
 See [Adding NFS Shares]({{< relref "AddingNFSShares.md" >}}) for information on creating a basic NFS share.
 Adjust access permissions using the advanced options.
@@ -63,9 +63,9 @@ For LDAP best practices see [Configuring LDAP]({{< relref "ConfigLDAPSCALE.md" >
 ## Virtualization Configuration
 
 To run a virtual machine (VM), hardware requirements include an x86 machine running a recent Linux kernel using either an Intel processor with VT extensions or an AMD processor with SVM extensions (AMD-V).
-To install a VM on SCALE, first research the minimum and recommended specifications for the OS you plan to use and your full use case for that VM.
-Allocating too many resources to a VM can cause performance on the TrueNAS SCALE system to suffer.
-We recommend you plan for and ensure your SCALE system has the resources to run itself and a full VM deployment effectively, taking into account the need for high availability (HA) and persistent storage.
+To install a VM, first research the minimum and recommended specifications for the OS you plan to use and your full use case for that VM.
+Allocating too many resources to a VM can cause performance on the TrueNAS system to suffer.
+We recommend you plan for and ensure your system has the resources to run itself and a full VM deployment effectively, taking into account the need for high availability (HA) and persistent storage.
 
 Software requirements include an installer for the OS you intend to install on the VM.
 

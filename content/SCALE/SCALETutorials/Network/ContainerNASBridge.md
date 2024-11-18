@@ -13,7 +13,7 @@ keywords:
 - storage container virtualization
 ---
 
-If you want to access your TrueNAS SCALE directories from a VM or within an app container, you have multiple options:
+If you want to access your TrueNAS directories from a VM or within an app container, you have multiple options:
 
 * If you have only one physical interface, you must create a bridge interface.
 * If your system has more than one physical interface you can assign your VMs to a NIC other than the primary one your TrueNAS server uses.

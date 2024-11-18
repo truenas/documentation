@@ -32,8 +32,6 @@ Standard configurations of Windows XP and some configurations of later clients l
 [Security guidance for NTLMv1 and LM network authentication](https://support.microsoft.com/en-us/help/2793313/security-guidance-for-ntlmv1-and-lm-network-authentication) has information about the security implications and ways to enable NTLMv2 on those clients.
 If changing the client configuration is not possible, enable NTLMv1 authentication by selecting the **NTLMv1 auth** option in the SMB service configuration screen.
 
-To view all active SMB connections and users, open an SSH or local console shell in CORE.
-
 Most configuration scenarios require each user to have their own user account and to authenticate before accessing the share.
 This allows the administrator to control access to data, provide appropriate permissions to that data, and to determine who accesses and modifies stored data.
 A Windows domain controller is not needed for authenticated SMB shares, which means that additional licensing costs are not required.

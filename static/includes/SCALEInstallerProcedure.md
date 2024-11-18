@@ -8,13 +8,13 @@
 
    {{< trueimage src="/images/SCALE/Install/SCALEInstallDriveScreen.png" alt="Destination Media Screen" id="Destination Media Screen" >}}
 
-   Select **Yes** to proceed with a clean installation of TrueNAS SCALE from the <file>.iso</file>.
+   Select **Yes** to proceed with a clean installation of TrueNAS from the <file>.iso</file>.
    This erases the contents of the selected drive!
 
    {{< trueimage src="/images/SCALE/Install/SCALEInstallWarningScreen.png" alt="Install Warning Screen" id="Install Warning Screen" >}}
 
-3. Select option **1 Administrative user (truenas_admin)** then **OK** to install SCALE and create the **truenas_admin** user account and password.
-   SCALE has implemented an administrator login as a replacement for the root user login as a security hardening measure.
+3. Select option **1 Administrative user (truenas_admin)** then **OK** to install TrueNAS and create the **truenas_admin** user account and password.
+   TrueNAS has implemented an administrator login as a replacement for the root user login as a security hardening measure.
    The system retains root as a fallback, but it is no longer the default.
    The *truenas_admin* account has full control over TrueNAS and is used to log in to the web interface.
    

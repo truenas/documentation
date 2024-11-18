@@ -16,7 +16,7 @@ related: false
 
 **System > Services** displays each system component that runs continuously in the background. These typically control data-sharing or other external access to the system. Individual services have configuration screens and activation toggles, and you can set them to run automatically.
 
-{{< trueimage src="/images/SCALE/SystemSettings/ServicesSCALE.png" alt="SCALE Services Screen" id="SCALE Services Screen" >}}
+{{< trueimage src="/images/SCALE/SystemSettings/ServicesSCALE.png" alt="TrueNAS Services Screen" id="TrueNAS Services Screen" >}}
 
 The <span class="material-icons">edit</span> **Configure** icon opens the service configuration screen.
 

@@ -1,6 +1,6 @@
 ---
 title: "Configuring Static Routes"
-description: "Provides instructions on configuring a static route using the SCALE web UI."
+description: "Provides instructions on configuring a static route using the TrueNAS web UI."
 weight: 35
 tags:
 - network

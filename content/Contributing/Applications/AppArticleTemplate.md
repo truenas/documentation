@@ -40,13 +40,13 @@ If the app requires setting up a crypto wallet, include this information.
 Example of possible points to include in this section: (do not include the three backticks in the article)
 ```
 ```
-Prepare TrueNAS SCALE before installing the app by: 
+Prepare TrueNAS before installing the app by: 
    
 * [Creating datasets](#creating-the-storj-datasets-on-truenas-scale) for application storage. 
   Create a parent dataset, such as *appName*, and then the storage datasets (***config*** and ***data***) under it.
   Select **apps** as the **Dataset Preset** for these datasets. You can modify the dataset ACLs at the time of creation, or modify them later when adding them in the app.
 
-* Add a new SCALE user account if not using the default apps user and group (568).
+* Add a new TrueNAS user account if not using the default apps user and group (568).
   Go to **Credentials > Local User**, click **Add** and create the new user.
   Make sure the user has read/write/execute privileges. If you have an existing admin user on your system with the right permissions, you make that user the app user.
 
@@ -79,7 +79,7 @@ Accept the default name or enter a new name for your application if you prefer.
 Enter a name that consists of, and begins or ends with lowercase alphanumeric characters.
 Do not use a hyphen as the first or last character. For example, *appName*, or *app-name*, but not *-appName* or *appName-*.
 
-Do not change the **Version**. SCALE alerts you when a new version is available for deployed apps, and allows you to update through the click of a button on the **Installed** application screen.
+Do not change the **Version**. TrueNAS alerts you when a new version is available for deployed apps, and allows you to update through the click of a button on the **Installed** application screen.
 
 1. Enter the ***AppName* Configuration** settings:
 
@@ -101,7 +101,7 @@ Do not change the **Version**. SCALE alerts you when a new version is available 
    Leave **Host Network** unselected.
 
 5. Configure the **Storage Configuration** settings.
-   You can use the default **ixVolume** option to allow SCALE to create a data storage volume or select **Host Path** to select the path to the new datasets created earlier in this document.
+   You can use the default **ixVolume** option to allow TrueNAS to create a data storage volume or select **Host Path** to select the path to the new datasets created earlier in this document.
 
    {{\< trueimage src="/images/SCALE/Apps/InstallAppNameStorage.png" alt="Add Datasets" id="Add Datasets" >}}
 

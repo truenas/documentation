@@ -38,7 +38,7 @@ The buttons at the top right of the **Storage Dashboard** screen provide access 
   These are ZFS storage pools previously created and stored on disks connected to the TrueNAS system.
   TrueNAS detects these as present on the system but not yet connected in TrueNAS.
 
-  **Import** starts the process of connecting the pool in TrueNAS and bringing it into SCALE.
+  **Import** starts the process of connecting the pool and bringing it into TrueNAS.
   {{< /expand >}}
 
 * **Disks** opens the **[Disks]({{< relref "DisksScreen.md" >}})** screen.

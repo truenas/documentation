@@ -16,7 +16,7 @@ keywords:
 
 ## Using Local Replication
 
-A local replication creates a zfs snapshot and saves it to another location on the same TrueNAS SCALE system either using a different pool, or dataset or zvol.
+A local replication creates a zfs snapshot and saves it to another location on the same TrueNAS system either using a different pool, or dataset or zvol.
 This allows users with only one system to take quick data backups or snapshots of their data when they have only one system.
 In this scenario, create a dataset on the same pool to store the replication snapshots. You can create and use a zvol for this purpose.
 If configuring local replication on a system with more than one pool, create a dataset to use for the replicated snapshots on one of those pools.
@@ -58,7 +58,7 @@ Saving changes to the configuration creates a new replication task without alter
       Browse to the location of the pool or dataset you want to use to store replicated snapshots and select to populate **Destination** with the path.
 
    c. (Optional) Enter a name for the snapshot in **Task Name**.
-      SCALE populates this field with the default name using the source and destination paths separated by a hyphen, but this default can make locating the snapshot in destination dataset a challenge.
+      TrueNAS populates this field with the default name using the source and destination paths separated by a hyphen, but this default can make locating the snapshot in destination dataset a challenge.
       To make it easier to find the snapshot, give it name easy for you to identify. For example, a replicated task named *dailyfull* for a full file system snapshot taken daily.
 
 {{< include file="/static/includes/ReplicationScheduleAndRetentionSteps.md" >}}

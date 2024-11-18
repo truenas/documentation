@@ -1,6 +1,6 @@
 ---
 title: "Certificates"
-description: "Information about adding and managing certificates, CSRs, CAs, and ACME DNS-Authenticators in TrueNAS SCALE."
+description: "Information about adding and managing certificates, CSRs, CAs, and ACME DNS-Authenticators in TrueNAS."
 geekdocCollapseSection: true
 aliases:
  - /scale/scaleclireference/system/clicertificate/

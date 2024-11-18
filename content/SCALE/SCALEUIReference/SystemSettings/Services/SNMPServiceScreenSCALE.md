@@ -15,7 +15,7 @@ Click the <i class="material-icons" aria-hidden="true" title="Configure">edit</i
 
 ### General Options
 
-![SCALESNMPOptions](/images/SCALE/SystemSettings/SCALESNMPOptions.png "SCALE SNMP Service Options")
+![SCALESNMPOptions](/images/SCALE/SystemSettings/SCALESNMPOptions.png "TrueNAS SNMP Service Options")
 
 ### SNMP v3 Options
 
@@ -29,7 +29,7 @@ Click the <i class="material-icons" aria-hidden="true" title="Configure">edit</i
 
 ### SNMP v3 Support Options
 
-![SNMPServiceSettingsV3Options](/images/SCALE/SystemSettings/SNMPServiceSettingsV3Options.png "SCALE SNMP Service SNMP v3 Options")
+![SNMPServiceSettingsV3Options](/images/SCALE/SystemSettings/SNMPServiceSettingsV3Options.png "TrueNAS SNMP Service SNMP v3 Options")
 
 {{< truetable >}}
 | Setting | Description |

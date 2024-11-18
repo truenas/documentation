@@ -3,7 +3,6 @@ See the repository README to learn more about content specifications and technol
 
 ## Content Needs
 
-The content in this repository attempts to document the latest version of TrueNAS CORE, TrueNAS SCALE, and TrueCommand.
 It is very easy for content to become out of date or syntax and typographical errors to creep in.
 Contributions that resolve a discovered content issue are extremely helpful!
 

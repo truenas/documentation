@@ -1,6 +1,6 @@
 ---
 title: "KMIP Screen"
-description: "Describes the fields in the KMIP Key Status screen on TrueNAS SCALE Enterprise."
+description: "Describes the fields in the KMIP Key Status screen on TrueNAS Enterprise."
 weight: 75
 aliases:
  - /scale/scaleclireference/system/clikmip/
@@ -10,7 +10,7 @@ tags:
 ---
 
 {{< enterprise >}}
-KMIP on TrueNAS SCALE Enterprise is used to integrate the system within an existing centralized key management infrastructure and use a single trusted source for creating, using, and destroying SED passwords and ZFS encryption keys.
+KMIP on TrueNAS Enterprise is used to integrate the system within an existing centralized key management infrastructure and use a single trusted source for creating, using, and destroying SED passwords and ZFS encryption keys.
 {{< /enterprise >}}
 The **KMIP** screen has two areas, **KMIP Key Status** that displays keys synced between a KMIP server and TrueNAS database and **KMIP Server** with the KMIP configuration settings.
 
