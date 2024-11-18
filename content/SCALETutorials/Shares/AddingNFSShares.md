@@ -8,6 +8,9 @@ tags:
 - Linux
 ---
 
+
+{{< include file="/static/includes/RootLevelDatasetShareWarning.md" >}}
+
 ## About UNIX (NFS) Shares
 
 Creating a Network File System (NFS) share on TrueNAS makes a lot of data available for anyone with share access.

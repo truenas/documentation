@@ -2062,5 +2062,6 @@ Tailscale
 CMD
 ExpandedVdevReporting
 InstallAppResourceConfigurationGPU
+Atlassian
 atlassian
 tmux
