@@ -23,13 +23,13 @@ div.docs-read_mod {display: none;}
 h1 {display:none;}
 </style>
 
-{{< header logo="/images/tn-scale-logo.png" logo_alt="TrueNAS Logo" version="Nightly Development - 25.04 Fangtooth" icon="" icon_alt="" >}}
+{{< header logo="/images/tn-openstorage-logo.png" logo_alt="TrueNAS Logo" version="Nightly Development - 25.04 Fangtooth" icon="" icon_alt="" >}}
 
 {{< include file="/static/includes/25.04FeatureList.md" >}}
 
 <div class="noprint">
 
-To view or search through documentation for previous TrueNAS SCALE major versions, use the **Version** dropdown at the top of this page.
+To view or search through documentation for previous TrueNAS major versions, use the **Version** dropdown at the top of this page.
 
 ## 25.04 Featured Content
 
@@ -39,7 +39,7 @@ To view or search through documentation for previous TrueNAS SCALE major version
     <br><a href="/scale/gettingstarted/scalereleasenotes/">Development Notes</a>
     <br><a href="/scale/gettingstarted/scalehardwareguide/">Community Hardware Guide</a>
     <br><a href="/scale/gettingstarted/install/">Software Install</a>
-    <br><a href="/scale/gettingstarted/migrate/">CORE to SCALE Migrations</a>
+    <br><a href="/scale/gettingstarted/migrate/">TrueNAS Migrations</a>
     </p>
     <p>
     <a href="/scale/scaletutorials/" style="font-size:18px;">Tutorials</a>

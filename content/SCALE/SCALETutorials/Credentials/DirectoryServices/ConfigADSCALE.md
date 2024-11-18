@@ -1,6 +1,6 @@
 ---
 title: "Configuring Active Directory"
-description: "Provides instructions on configuring Active Directory (AD) in SCALE."
+description: "Provides instructions on configuring Active Directory (AD) in TrueNAS."
 weight: 10
 aliases:
 tags:
@@ -75,7 +75,7 @@ To connect TrueNAS to Active Directory:
    Enter the TrueNAS host name that matches the information on the **Network > Global Configuration** screen in the **Hostname** field.
 
 4. Select **Enable** to attempt to join the AD domain immediately after saving the configuration.
-   SCALE populates the **Kerberos Realm** and **Kerberos Principal** fields on the **Advanced Options** settings screen.
+   TrueNAS populates the **Kerberos Realm** and **Kerberos Principal** fields on the **Advanced Options** settings screen.
 
    {{< trueimage src="/images/SCALE/Credentials/ActiveDirectoryBasicOptions.png" alt="Active Directory Basic Options" id="Active Directory Basic Options" >}}
 
@@ -108,7 +108,7 @@ The name in **NetBIOS Name** should match the name in **Hostname** on the **Glob
 To disable your AD server connection without deleting your configuration or leaving the AD domain, click **Settings** to open the **Active Directory** settings screen.
 Select the **Enable** checkbox to clear it and click **Save** to disable the AD service.
 
-This returns you to the main **Directory Services** screen now showing the two main directory services configuration options.
+This returns you to the main **Directory Services** screen, now showing the two main directory services configuration options.
 
 Click **Configure Active Directory** to open the **Active Directory** screen with your existing configuration settings.
 Select **Enable** again, and click **Save** to reactivate your connection to your AD server.

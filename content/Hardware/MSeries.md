@@ -37,7 +37,7 @@ descr="Comprehensive User Manual for TrueNAS M-Series systems." >}}
 descr="Additional cabling examples for High Availability M-Series systems." >}}
 
 {{< imagecard image="/images/Hardware/NetworkPortID.png" title="Network Port IDs" link="https://www.truenas.com/docs/files/MSeriesNetworkPortID.pdf"
-descr="TrueNAS SCALE identifications list of TrueNAS M-Series systems network ports." >}}
+descr="Identifications list of TrueNAS M-Series systems network ports." >}}
 
 {{< imagecard image="/images/Hardware/MSeries/MSeriesOOBM.png" title="Out-of-Band Management" link="https://www.truenas.com/docs/files/MSeriesOOBM.pdf"
 descr="BIOS configuration instructions for TrueNAS M-Series systems." >}}

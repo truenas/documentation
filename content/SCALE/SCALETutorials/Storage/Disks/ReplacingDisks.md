@@ -30,7 +30,7 @@ Disk replacement automatically triggers a pool resilver.
 
 ## Replacing a Failed Disk
 
-If you configure your main SCALE **Dashboard** to include individual **Pool** or the **Storage** widgets they show the status of your system pools as on or offline, degraded, or in an error condition.
+If you configure your main TrueNAS **Dashboard** to include individual **Pool** or the **Storage** widgets they show the status of your system pools as on or offline, degraded, or in an error condition.
 
 {{< trueimage src="/images/SCALE/Storage/MainDashboardPoolAndStorageWidgetsDegraded.png" alt="Main Dashboard Pool and Storage Widgets Degraded" id="Main Dashboard Pool and Storage Widgets Degraded" >}}
 

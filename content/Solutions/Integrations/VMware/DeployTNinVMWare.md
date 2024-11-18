@@ -1,13 +1,13 @@
 ---
 title: TrueNAS Virtualized with ESXi
-description: "Guide to deploy TrueNAS SCALE or CORE as a VM in a VMWare ESXi environment."
+description: "Guide to deploy TrueNAS as a VM in a VMWare ESXi environment."
 weight: 3
 tags:
 - vmware
 - console
 ---
 
-This article describes deploying a TrueNAS SCALE or CORE virtual machine (VM) in a VMWare ESXi environment.
+This article describes deploying a TrueNAS virtual machine (VM) in a VMWare ESXi environment.
 ESXi version 8 is shown in this article.
 
 ## Before You Begin
@@ -17,17 +17,17 @@ Before starting configuration work in VMWare:
 * Allocate a drive or a few drives in your server cluster for the TrueNAS virtual machine.
   The anticipated storage needs for your deployment determines the size and number of drives you need.
 
-* Download the <file>.iso</file> file from the TrueNAS.com downloads page for TrueNAS [SCALE](https://www.truenas.com/download-truenas-scale/) or [CORE](https://www.truenas.com/download-truenas-core/).
+* Download the <file>.iso</file> file from the [TrueNAS.com downloads page](https://www.truenas.com/download-truenas-scale/).
 
-* Visit the TrueNAS [SCALE]({{< relref "/SCALE/GettingStarted/Configure/SetUpStorageScale.md" >}}) or [CORE]({{< relref "/core/gettingstarted/corehardwareguide.md" >}}) Hardware Guide and take note of the minimal system requirements.
-  Also note the information in the **Memory** and **Storage Device Sizing** sections.
+* Visit the TrueNAS [hardware guide]({{< relref "/scale/gettingstarted/scalehardwareguide.md" >}}) and take note of the minimum system requirements.
+  Note the information in the **Memory** and **Storage Device Sizing** sections.
 
   The hardware guide provides guidance on how much memory, the number of CPUs, and drive size you need to configure.
 
 * Determine your data storage requirements. Consider the number of storage pools and the type of storage you need for your deployment or how you plan to use the TrueNAS.
-  See the SCALE [Setting Up Storage]({{< relref "/CORE/GettingStarted/StoringData.md" >}}) or CORE [Storage Configuration]({{< relref "/CORE/GettingStarted/StoringData.md" >}}) for information on pool layouts.
+  See [Setting Up Storage]({{< relref "/SCALE/GettingStarted/Configure/SetUpStorageScale.md" >}}) for information on pool layouts.
 
-  These articles provide guidance on the number of virtual hard drives (vmdks) you want to create when setting up your virtual machine.
+  Determine the number of virtual hard drives (vmdks) you want to create when setting up your virtual machine.
   For example, if you want a mirror layout you need to add a minimum of three drives, one for the boot drive and two for the mirrored storage.
   If you want a mirror with a hot spare, you need to add a minimum of four drives, one for the boot drive, two for the mirrored storage and one for the hot spare.
 
@@ -56,7 +56,7 @@ Set up the storage needed for the new VM. First click on **Storage** and then th
    {{< trueimage src="/images/VMWareESXi/NameNewDirectory.png" alt="New Directory" id="New Directory" >}}
 
    Add two directories.
-   The first directory is for the TrueNAS CORE storage needs the other for the TrueNAS-CORE <file>.iso</file> file you downloaded.
+   The first directory is for TrueNAS storage needs the other for the TrueNAS <file>.iso</file> file you downloaded.
    Choose a name that is easy to identify on a list of virtual machines.
    The example uses *truenas 1* as the directory name for the storage needs.
    Click **Create directory** in the **New directory** dialog to create the directory.
@@ -69,7 +69,7 @@ Set up the storage needed for the new VM. First click on **Storage** and then th
 {{< /expand >}}
 
 ### Uploading the TrueNAS ISO
-After creating the ISO directory upload the TrueNAS CORE <file>.iso</file> file to the **ISO** directory.
+After creating the ISO directory, upload the TrueNAS <file>.iso</file> file to the **ISO** directory.
 
 Select the directory created for the <file>.iso</file> file and then click **Upload**.
 
@@ -85,9 +85,7 @@ Select **Virtual Machines** on the navigation panel on the left side of the scre
 Select the storage drive for the TrueNAS VM and then click **Create/Register VM**. The **New virtual machine** creation wizard displays.
 Use these settings:
 
-* On the **Select a name and guest OS** wizard screen:
-  * To create a SCALE VM, select **Linux** for **Guest OS family** and then **Debian GNU/Linux 6 (64-bit)** on the **Guest OS Version** dropdown list.
-  * To create a CORE VM, select **Other** for **Guest OS family** and then **FreeBSD 13 (64-bit)** on the **Guest OS Version** dropdown list.
+* On the **Select a name and guest OS** wizard screen, select **Linux** for **Guest OS family** and then **Debian GNU/Linux 6 (64-bit)** on the **Guest OS Version** dropdown list.
 
 * On the **Customize settings** wizard screen set **CPU** to **2**, set **Memory** to **16 GB**, and **Hard disk 1** to **16 GB**.
 
@@ -108,8 +106,7 @@ To create the virtual machine for your TrueNAS, from the **Virtual Machines** sc
 
    {{< trueimage src="/images/VMWareESXi/VMWizardSelectNameAndGuestOS.png" alt="Select Name and Guest OS" id="Select Name and Guest OS" >}}
 
-   * For SCALE: select **Linux** for **Guest OS family** and then **Debian GNU/Linux 6 (64-bit)** on the **Guest OS Version** dropdown list.
-   * For CORE: select **Other** for **Guest OS family** and then **FreeBSD 13 (64-bit)** on the **Guest OS Version** dropdown list.
+   Select **Linux** for **Guest OS family** and then **Debian GNU/Linux 6 (64-bit)** on the **Guest OS Version** dropdown list.
 
    Click **Next**
 
@@ -153,9 +150,9 @@ To create the virtual machine for your TrueNAS, from the **Virtual Machines** sc
    Click **Next** to finish creating the VM. You can use the **Edit** option later to add more drives to support your TrueNAS deployment.
 
    Each storage layout has different disk minimum disk requirements.
-   See the SCALE [Setting Up Storage]({{< relref "/CORE/GettingStarted/StoringData.md" >}}) or CORE [Storage Configuration]({{< relref "/CORE/GettingStarted/StoringData.md" >}}) for information on pool layouts.
+   See [Setting Up Storage]({{< relref "/SCALE/GettingStarted/Configure/SetUpStorageScale.md" >}}) for information on pool layouts.
 
-6. Review the **Ready to Complete** screen to verify the settings are correct for your deployment.
+4. Review the **Ready to Complete** screen to verify the settings are correct for your deployment.
 
    {{< trueimage src="/images/VMWareESXi/VMWizardReadyToComplete.png" alt="Ready to Complete" id="Ready to Complete" >}}
 
@@ -179,7 +176,7 @@ When the console opens, it displays the TrueNAS Console Setup screen.
 
 {{< trueimage src="/images/VMWareESXi/TrueNASConsoleSetup.png" alt="TrueNAS Console Setup" id="TrueNAS Console Setup" >}}
 
-Follow the installation instructions documented for [SCALE]({{< relref "/SCALE/GettingStarted/Install/InstallingSCALE.md#using-the-truenas-installer" >}}) or [CORE]({{< relref "/CORE/GettingStarted/Install.md#install-process" >}}) to complete the installation of TrueNAS.
+Follow the [installation instructions]({{< relref "/SCALE/GettingStarted/Install/InstallingSCALE.md#using-the-truenas-installer" >}}) to complete the installation of TrueNAS.
 
 ## Editing the Virtual Machine
 

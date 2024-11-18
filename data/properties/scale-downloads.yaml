@@ -1,7 +1,7 @@
 ---
 id: "scale-downloads"
 img: "/images/truenas_scale-logo-full-color-rgb.png"
-product: "TrueNAS SCALE"
+product: "TrueNAS"
 title: "SCALE&trade; | Enterprise&trade;"
 majorVersions:
   - lifecycle: "Archive"

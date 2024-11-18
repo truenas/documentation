@@ -24,7 +24,7 @@ The **[Manage Configuration](#manage-configuration)** dropdown provides three op
 
 ## Manage Configuration
 
-TrueNAS SCALE allows users to manage the system configuration via uploading/downloading configurations, or resetting the system to the default configuration.
+TrueNAS allows users to manage the system configuration via uploading/downloading configurations, or resetting the system to the default configuration.
 
 ### Download File
 
@@ -38,7 +38,7 @@ Users must physically secure configuration file backups containing the seed to p
 
 ### Upload File
 
-The **Upload File** option opens the **Upload Config** dialog, which allows users to choose a previously saved TrueNAS SCALE configuration to replace the current system configuration.
+The **Upload File** option opens the **Upload Config** dialog, which allows users to choose a previously saved TrueNAS configuration to replace the current system configuration.
 
 {{< trueimage src="/images/SCALE/SystemSettings/SystemGeneralUploadConfig.png" alt="Upload Config" id="Upload Config" >}}
 
@@ -103,7 +103,7 @@ Complete all available fields, and check the **Enable iXsystems Proactive Suppor
 
 ## GUI Settings Screen
 
-Click **Settings** on the **GUI** widget to open the **GUI Settings** screen that allows users to configure the TrueNAS SCALE web interface address.
+Click **Settings** on the **GUI** widget to open the **GUI Settings** screen that allows users to configure the TrueNAS web interface address.
 
 {{< expand "Click Here for More Information" "v" >}}
 Click **Settings** to open the **GUI Settings** screen.
@@ -119,7 +119,7 @@ Click **Settings** to open the **GUI Settings** screen.
 | **Web Interface IPv6 Address** | Select a recent IPv6 address from the dropdown list to limit the usage when accessing the administrative GUI. The built-in HTTP server binds to the wildcard address of **0.0.0.0** (any address) and issues an alert if the specified address becomes unavailable. |
 | **Web Interface HTTP Port** | Enter a port number for an HTTP connection to the web interface. Allow configuring a non-standard port to access the GUI over HTTP. Changing this setting might require changing a [Firefox configuration setting](https://support.mozilla.org/en-US/questions/1083282). |
 | **Web Interface HTTPS Port** | Enter a port number for an HTTPS connection to the web interface. This field allows configuring a non-standard port to access the GUI over HTTPS. |
-| **HTTPS Protocols** | Select the [Transport Layer Security (TLS)](https://en.wikipedia.org/wiki/Transport_Layer_Security) versions TrueNAS SCALE can use for connection security from the dropdown list. Cryptographic protocol for securing client/server connections. |
+| **HTTPS Protocols** | Select the [Transport Layer Security (TLS)](https://en.wikipedia.org/wiki/Transport_Layer_Security) versions TrueNAS can use for connection security from the dropdown list. Cryptographic protocol for securing client/server connections. |
 | **Web Interface HTTP -> HTTPS Redirect** | Select to redirect HTTP connections to HTTPS. A GUI SSL Certificate is required for HTTPS. Activating this also sets the [HTTP Strict Transport Security (HSTS)](https://en.wikipedia.org/wiki/HTTP_Strict_Transport_Security) maximum age to 31536000 seconds (one year). This means that after a browser connects to the web interface for the first time, the browser continues to use HTTPS and renews this setting every year. |
 | **Usage Collection** | Select to enable sending anonymous usage statistics to iXsystems. For more information about what usage data is collected, see the [TrueNAS Data Collection Statement]({{< relref "/SCALE/GettingStarted/UserAgreements/DataCollectionStatement.md" >}}). |
 | **Show Console Messages** | Select to display console messages in real-time at the bottom of the browser. |
@@ -151,7 +151,7 @@ Click **Settings** to open the **Localization Settings** screen.
 Click **Add** on the **NTP Servers** widget to open the **Add NTP Server** screen that allows users to configure Network Time Protocol (NTP) servers, which sync the local system time with an accurate external reference.
 
 {{< expand "Click Here for More Information" "v" >}}
-By default, new installations use several existing NTP servers. TrueNAS SCALE supports adding custom NTP servers. Click **Add** to open the **Add NTP Server** screen.
+By default, new installations use several existing NTP servers. TrueNAS supports adding custom NTP servers. Click **Add** to open the **Add NTP Server** screen.
 
 {{< trueimage src="/images/SCALE/SystemSettings/SystemGeneralAddNTPServer.png" alt="Add NTP Server Screen" id="Add NTP Server Screen" >}}
 

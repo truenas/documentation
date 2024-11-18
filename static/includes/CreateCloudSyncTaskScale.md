@@ -16,7 +16,7 @@ To add a cloud sync task, go to **Data Protection > Cloud Sync Tasks** and click
 
    {{< trueimage src="/images/SCALE/DataProtection/CloudSyncTaskWizardWhatandWhenScreen.png" alt="Cloud Sync Task Wizard What and When" id="Cloud Sync Task Wizard - What and When" >}}
 
-3. Select the dataset location in **Directory/Files**. Browse to the dataset to use on SCALE for data storage.
+3. Select the dataset location in **Directory/Files**. Browse to the dataset to use on TrueNAS for data storage.
    Click the arrow to the left of the name to expand it, then click on the name to select it.
 
    If **Direction** is set to **PUSH**, click on the folder icon to add **/** to the **Folder** field.

@@ -1,6 +1,6 @@
 ---
 title: "AWS Images (Obsolete)"
-description: "Guide for deploying TrueNAS CORE virtualized with Amazon Web Services."
+description: "Guide for deploying TrueNAS 13.0 virtualized with Amazon Web Services."
 weight: 5
 aliases:
   - /core/solutions/integrations/awsdeploy/
@@ -11,7 +11,7 @@ This content is obsolete and is not functional for Amazon AMI creation.
 See Amazon's Knowledge Center for guidance on [creating custom Amazon Machine Images (AMIs)](https://repost.aws/knowledge-center/ecs-create-custom-amis).
 {{< /hint >}}
 
-{{< expand "Obsolete TrueNAS CORE AMI Creation Steps" >}}
+{{< expand "Obsolete TrueNAS 13.0 AMI Creation Steps" >}}
 
 ## Process Summary
 
@@ -42,7 +42,7 @@ See Amazon's Knowledge Center for guidance on [creating custom Amazon Machine Im
 * Wait for AWS to finish status checks
 * Paste Public DNS or Public IP link in browser to access TrueNAS web interface
 
-## Using Virtualized TrueNAS CORE with Amazon Web Services (AWS)
+## Using Virtualized TrueNAS 13.0 with Amazon Web Services (AWS)
 
 These instructions demonstrate how to create a virtualized TrueNAS image on FreeBSD, configure it with Amazon Elastic Compute Cloud (EC2), and access the TrueNAS web interface.
 There are a few things that must be prepared before building the image.

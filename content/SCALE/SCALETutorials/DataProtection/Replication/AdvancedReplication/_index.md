@@ -1,6 +1,6 @@
 ---
 title: "Advanced Replication Tasks"
-description: "Provides instructions on configuring advanced ZFS snapshot replication tasks in TrueNAS SCALE."
+description: "Provides instructions on configuring advanced ZFS snapshot replication tasks in TrueNAS."
 geekdocCollapseSection: true
 aliases:
  - /scale/scaletutorials/dataprotection/replication/useadvancedreplicationscale/
@@ -17,7 +17,7 @@ keywords:
 - data backup and recovery
 ---
 
-TrueNAS SCALE advanced replication allows users to create one-time or regularly scheduled snapshots of data stored in pools, datasets or zvols on their SCALE system as a way to back up stored data.
+TrueNAS advanced replication allows users to create one-time or regularly scheduled snapshots of data stored in pools, datasets or zvols on their TrueNAS system as a way to back up stored data.
 When properly configured and scheduled, local or remote replication using the **Advanced Replication Creation** option takes regular snapshots of storage pools or datasets and saves them in the destination location on the same or another system.
 
 {{< include file="/static/includes/ReplicationIndexContentSCALE.md" >}}

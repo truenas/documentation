@@ -1,6 +1,6 @@
 ---
-title: "CORE to SCALE Migrations"
-description: "TrueNAS CORE to TrueNAS SCALE migrations."
+title: "TrueNAS Migrations"
+description: "Instructions for migrating from FreeBSD to Linux-based TrueNAS versions."
 geekdocCollapseSection: true
 weight: 40
 aliases:

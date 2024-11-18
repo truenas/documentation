@@ -5,7 +5,7 @@ Both controllers must be powered on and ready before you configure network setti
 
 You must disable the failover service before you can configure network settings!
 
-Only configure network settings on controller 1! When ready to sync to peer, SCALE applies settings to controller 2 at that time.
+Only configure network settings on controller 1! When ready to sync to peer, TrueNAS applies settings to controller 2 at that time.
 {{< /hint >}}
 
 {{< include file="/static/includes/EnterpriseHANetworkIPs.md" >}}

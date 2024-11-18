@@ -33,7 +33,7 @@ TrueNAS hides all built-in users (except root) by default. Click the toggle **Sh
 
 ### Assigning Administrative Group Privileges
 
-SCALE 24.04 or newer supports administrator privileges for role-based administrator accounts.
+TrueNAS 24.04 or newer supports administrator privileges for role-based administrator accounts.
 Users can create new administrator accounts with limited privileges based on their needs.
 Predefined administrator roles are read only, share admin, and the default full access local administrator account.
 See [Using Administrator Logins]({{< relref "adminroles.md" >}}) for more information.
@@ -96,9 +96,9 @@ TrueNAS uses the `pam_mkhomdir` PAM module in the pam_open_session configuration
 `pam_mkhomedir` returns `PAM_PERM_DENIED` if it fails to create a home directory for a user, which eventually turns into a pam_open_session() failure.
 This does not impact other PAM API calls, for example, `pam_authenticate()`.
 
-TrueNAS SCALE does include the customized version of `pam_mkhomedir` used in TrueNAS CORE that specifically avoided trying to create the `/nonexistent` directory. This led to some circumstances where users could create the `/nonexistent` directory on SCALE versions before 24.04.
+TrueNAS 24.04 (or newer) does not include the customized version of `pam_mkhomedir` used in TrueNAS 13.0 that specifically avoided trying to create the `/nonexistent` directory. This led to some circumstances where users could create the `/nonexistent` directory on TrueNAS versions before 24.04.
 
-Starting in SCALE 24.04 (Dragonfish), the root filesystem of TrueNAS is read-only, which prevents `pam_mkhomdir` from creating the `/nonexistent` directory in cases where it previously did.
+Starting in TrueNAS 24.04 (Dragonfish), the root filesystem of TrueNAS is read-only, which prevents `pam_mkhomdir` from creating the `/nonexistent` directory in cases where it previously did.
 This results in a permissions error if `pam_open_session()` is called by an application for a user account that has **Home Directory** set to **/nonexistent**.
 {{< /expand >}}
 
@@ -113,7 +113,7 @@ Do *not* paste the private key.
 
 Always keep a backup of an SSH public key if you are using one.
 
-As of SCALE 24.04, the **Shell** setting defaults to **nologin** for read only and sharing administrators, which means they cannot access the **Shell** screen.
+As of TrueNAS 24.04, the **Shell** setting defaults to **nologin** for read only and sharing administrators, which means they cannot access the **Shell** screen.
 
 Select the [shell]({{< relref "LocalUsersScreensSCALE.md" >}}) option for the admin user from the **Shell** dropdown list.
 Options are **nologin**, **TrueNAS CLI**, **TrueNAS Console**, **sh**, **bash**, **rbash**, **dash**, **tmux**, and **zsh**.

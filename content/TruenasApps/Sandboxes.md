@@ -26,7 +26,7 @@ Do not mix the two features unless you are capable of self-supporting and resolv
 {{< /hint >}}
 
 Beginning with 24.04 (Dragonfish), TrueNAS includes the systemd-nspawn containerization program in the base system.
-This allows using tools like the open-source [Jailmaker](https://github.com/Jip-Hop/jailmaker) to build and run containers that are very similar to Jails from TrueNAS CORE or LXC containers on Linux.
+This allows using tools like the open-source [Jailmaker](https://github.com/Jip-Hop/jailmaker) to build and run containers that are very similar to Jails from FreeBSD-based TrueNAS releases or LXC containers on Linux.
 Using the Jailmaker tool allows deploying these containers without modifying the base TrueNAS system.
 These containers persist across upgrades in 24.04 (Dragonfish) and later TrueNAS major versions.
 
