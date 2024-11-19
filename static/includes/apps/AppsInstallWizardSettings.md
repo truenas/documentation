@@ -47,9 +47,9 @@ All apps in the **stable** train, some **community** train apps, and all apps in
   The three storage options are:
   * **ixVolume**
   * **Host path**
-  * **SMB share** that allows you to create a storage volume used by an SMB share.
+  * **SMB share** that allows you to mount an SMB share as a Docker storage volume.
   
-  An SMB share option allows you to mount a persistent claim top an SMB share for the application to use.
+  An SMB share option allows you to mount an SMB share as a Docker volume for the application to use.
   If the application requires specific datasets or you want to allow SMB share access, configure the dataset(s) and SMB share before using the installation wizard.
 
   ixVolumes do not require setting up an ACL and ACE entry but host paths do.
