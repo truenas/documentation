@@ -1501,3 +1501,4 @@ coretutorials
 jailspluginsvms
 plexplugin
 deserialization
+COREFeatureSupport
