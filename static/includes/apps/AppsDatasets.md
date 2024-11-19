@@ -3,7 +3,12 @@
 **ix-apps Dataset**
 
 TrueNAS 24.10 and newer creates a hidden **ix-apps** dataset, mounted at <file>/mnt/.ix-apps</file>, to store Docker configuration, catalog data, and app metadata.
+<!-- 
 The ix-apps dataset is for internal use only.
+
+I think the sentence should probably highlight that it has apps but the dataset is managed by iX and any tampering with it will result in unintended consequences etc (edited) 
+-->
+
 
 <!--
 1- Is there anything we want to/can say about why the ix-apps dataset was hidden and/or what the advantage of doing so is?
