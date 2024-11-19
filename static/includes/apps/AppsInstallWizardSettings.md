@@ -31,32 +31,25 @@ All apps in the **stable** train, some **community** train apps, and all apps in
 * **Storage Configuration** shows options to configure storage for the application.
   Storage configuration can include the primary data mount volume, a configuration volume, postgres volumes, and an option to add additional storage volumes.
   The primary mount volumes have two options:
-* **ixVolume** that creates a storage volume inside the hidden **ix-apps** dataset. This is the default setting.
-* **Host Path** that allows you to select an existing dataset created for the application. Shows additional fields to select the path to the dataset and add the mount point.
+  * **ixVolume** creates a storage volume inside the hidden **ix-apps** dataset. This is the default setting.
+  * **Host Path** allows you to select an existing dataset created for the application. Shows additional fields to select the path to the dataset and add the mount point.
 
   ixVolumes are not recommended for permanent storage volumes, they are intended for use as rapid storage for a test deployment of the container.
   We recommend adding datasets and configuring the container storage volumes with the host path option.
 
-  Host path add existing dataset(s) as the storage volumes. You must configure the datasets before beginning the app installation using the wizard.
+  Host paths add existing dataset(s) as the storage volumes.
+  You must configure the datasets before beginning the app installation using the wizard.
 
-  {{< hint type="note" title="ix-apps Dataset" >}}
-  The **ix-apps** dataset is for internal use only.
-
-  TrueNAS systems with applications deployed that upgrade from earlier releases to 24.10 continue to see the **ix-Applications** dataset on the pool chosen for applications to use.
-  New installs or systems upgrading where applications are not deployed and a pool is not chosen for apps use the hidden **ix-apps** dataset.
-  Choosing the pool for apps to use, creates this dataset to store all container-related data.
-  To expose storage volumes found in the **ix-applications** dataset, take a recursive snapshot.
-  {{< /hint >}}
-
-  Some applications require specific storage volumes for configuration and other data. Apps with these requirements might indicate this in the wizard UI but refer to tutorials for specifics. 
-  After configuring required storage volumes you can add storage volumes.
+  Some applications require specific storage volumes for configuration and other data.
+  Apps with these requirements might indicate this in the wizard UI but refer to tutorials for specifics.
+  After configuring required storage volumes you can add additional storage volumes if needed.
   Click **Add** to select the type of storage and configure additional storage volumes for the application.
   The three storage options are:
   * **ixVolume**
   * **Host path**
-  * **SMB share** that allows you to create a storage volume used by an SMB share. 
+  * **SMB share** that allows you to create a storage volume used by an SMB share.
   
-  An SMB share option allows you to configure a share for the application to use.
+  An SMB share option allows you to mount a persistent claim top an SMB share for the application to use.
   If the application requires specific datasets or you want to allow SMB share access, configure the dataset(s) and SMB share before using the installation wizard.
 
   ixVolumes do not require setting up an ACL and ACE entry but host paths do.
