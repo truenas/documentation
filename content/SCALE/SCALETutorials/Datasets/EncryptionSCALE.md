@@ -1,6 +1,6 @@
 ---
 title: "Storage Encryption"
-description: "Provides information on SCALE storage encryption for pools, root datasets, datasets, and zvols."
+description: "Provides information on TrueNAS storage encryption for pools, root datasets, datasets, and zvols."
 weight: 50
 aliases:
  - /scale/storage/encryptionscale/
@@ -18,7 +18,7 @@ keywords:
 - data sharing
 ---
 
-TrueNAS SCALE offers ZFS encryption for your sensitive data in pools and datasets or Zvols.
+TrueNAS offers ZFS encryption for your sensitive data in pools and datasets or Zvols.
 
 {{< include file="/static/includes/EncryptionBackupKeys.md" >}}
 
@@ -29,7 +29,7 @@ Data-at-rest encryption is available with:
 
 The local TrueNAS system manages keys for data-at-rest.
 Users are responsible for storing and securing their keys.
-TrueNAS SCALE includes the [Key Management Interface Protocol (KMIP)](https://docs.oasis-open.org/kmip/spec/v1.1/os/kmip-spec-v1.1-os.html).
+TrueNAS includes the [Key Management Interface Protocol (KMIP)](https://docs.oasis-open.org/kmip/spec/v1.1/os/kmip-spec-v1.1-os.html).
 
 ## Pool and Dataset Encryption
 
@@ -41,7 +41,7 @@ Because encryption is inherited from the parent, all data within that pool is en
 Selecting the **Encryption** option for the pool (root dataset) forces encryption for all datasets and zvols created within the root dataset.
 
 You cannot create an unencrypted dataset within an encrypted pool or dataset.
-This change does not affect existing datasets created in earlier releases of SCALE but does affect new datasets created in 22.12.3 and later releases.
+This change does not affect existing datasets created in earlier releases of TrueNAS but does affect new datasets created in 22.12.3 and later releases.
 
 Leave the **Encryption** option on the **Pool Creation Wizard** screen cleared to create an unencrypted pool.
 You can create both unencrypted and encrypted datasets within an unencrypted pool (root dataset).
@@ -67,7 +67,7 @@ If your system loses power or you reboot the system, the datasets, zvols, and al
 {{< /hint >}}
 
 ### Encryption Visual Cues
-SCALE uses lock icons to indicate the encryption state of a root, parent, or child dataset in the tree table on the **[Datasets]({{< relref "/SCALE/SCALEUIReference/Datasets/_index.md" >}})** screen.
+TrueNAS uses lock icons to indicate the encryption state of a root, parent, or child dataset in the tree table on the **[Datasets]({{< relref "/SCALE/SCALEUIReference/Datasets/_index.md" >}})** screen.
 Each icon shows a text label with the state of the dataset when you hover the mouse over the icon.
 
 {{< include file="/static/includes/EncryptionIconsSCALE.md" >}}
@@ -280,6 +280,6 @@ A passphrase is a user-defined string at least eight characters long that is req
 The **pbkdf2iters** is the number of password-based key derivation function 2 ([PBKDF2](https://tools.ietf.org/html/rfc2898#appendix-A.2)) iterations to use for reducing vulnerability to brute-force attacks. Users must enter a number greater than *100000*.
 
 ## Unlocking a Replicated Encrypted Dataset or Zvol Without a Passphrase
-TrueNAS SCALE users should either replicate the dataset/Zvol without properties to disable encryption at the remote end or construct a special JSON manifest to unlock each child dataset/zvol with a unique key.
+TrueNAS users should either replicate the dataset/Zvol without properties to disable encryption at the remote end or construct a special JSON manifest to unlock each child dataset/zvol with a unique key.
 
 {{< include file="/static/includes/ReplicatedEncryptedUnlock.md" >}}

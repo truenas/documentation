@@ -23,7 +23,7 @@ This short tutorial video demonstrates basic steps to set up an iSCSI share conf
 
 ## Adding an iSCSI Block Share
 
-TrueNAS SCALE offers two methods to add an iSCSI block share: the setup wizard or the manual steps using the screen tabs.
+TrueNAS offers two methods to add an iSCSI block share: the setup wizard or the manual steps using the screen tabs.
 Both methods cover the same basic steps but have some differences.
 
 The setup wizard requires you to enter some settings before you can move on to the next screen or step in the setup process.
@@ -236,7 +236,7 @@ This procedure walks you through adding each configuration setting on the seven 
 
    b. Select the target from the **Target** dropdown list.
 
-   c. Select or enter **0**. The first LUN on SCALE must be zero (**0**). If adding additional LUNs, enter or select a value between 1 and 1023 for those additional LUNs.
+   c. Select or enter **0**. The first LUN on TrueNAS must be zero (**0**). If adding additional LUNs, enter or select a value between 1 and 1023 for those additional LUNs.
       Some initiators expect a value below 256. Leave this **LUN ID** blank to automatically assign the next available ID.
 
    d. Select an existing extent from the **Extent** dropdown.
@@ -245,7 +245,7 @@ This procedure walks you through adding each configuration setting on the seven 
 {{< /expand >}}
 
 ## Creating a Quick iSCSI Target
-TrueNAS SCALE allows users to add iSCSI targets without having to set up another share.
+TrueNAS allows users to add iSCSI targets without having to set up another share.
 {{< expand "Click here for more information" "v" >}}
 Go to **Shares** and click the **Block (iSCSI) Shares Targets** widget.
 

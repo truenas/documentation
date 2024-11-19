@@ -14,11 +14,11 @@ keywords:
 - VMWare storage profiles
 ---
 
-Use this procedure to create ZFS snapshots when using TrueNAS SCALE as a VMWare datastore.
+Use this procedure to create ZFS snapshots when using TrueNAS as a VMWare datastore.
 
 {{< hint type=note >}}
-You must have a paid edition of VMWare ESXi to use the TrueNAS SCALE VMWare Snapshots feature.
-ESXi free has a locked (read-only) API that prevents using TrueNAS SCALE VMWare Snapshots.
+You must have a paid edition of VMWare ESXi to use the TrueNAS VMWare Snapshots feature.
+ESXi free has a locked (read-only) API that prevents using TrueNAS VMWare Snapshots.
 
 This tutorial uses ESXi version 8.
 {{< /hint >}}
@@ -44,7 +44,7 @@ Please contact iXsystems Support to learn more and schedule a time to deploy or 
 
 ## Before You Begin
 
-Before using TrueNAS SCALE to create VMWare snapshots, configure TrueNAS to present a VMFS datastore or NFS export to your ESXi host(s) (this tutorial uses iSCSI) and then create and start your VM(s) in ESXi.
+Before using TrueNAS to create VMWare snapshots, configure TrueNAS to present a VMFS datastore or NFS export to your ESXi host(s) (this tutorial uses iSCSI) and then create and start your VM(s) in ESXi.
 Virtual machines must be running for TrueNAS to include them in VMWare snapshots, because powered-off virtual machines are already in a consistent state
 
 1. Go to **Datasets** and click **Add Zvol** to [create a dedicated zvol]({{< relref "addmanagezvols.md" >}}) for VMWare.  
@@ -69,7 +69,7 @@ Virtual machines must be running for TrueNAS to include them in VMWare snapshots
 
     a. Configure CHAP authentication if needed or leave set to **Do not use CHAP**.
 
-    b. Click **Add dynamic target**, enter the IP address for the TrueNAS SCALE system, and click **Save Configuration** to return to the **Adapters** screen.
+    b. Click **Add dynamic target**, enter the IP address for the TrueNAS system, and click **Save Configuration** to return to the **Adapters** screen.
 
       {{< trueimage src="/images/VMWareESXi/StorageAdapters.png" alt="Adapters Screen" id="Adapters Screen" >}}
 
@@ -86,7 +86,7 @@ Virtual machines must be running for TrueNAS to include them in VMWare snapshots
 
 ## Creating a VMWare Snapshot
 
-To configure TrueNAS SCALE to create VMWare snapshots, go to **Data Protection** and click the **VMware Snapshot Integration** button in the **Periodic Snapshot Tasks** widget to open the **VMWare Snapshots** screen.
+To configure TrueNAS to create VMWare snapshots, go to **Data Protection** and click the **VMware Snapshot Integration** button in the **Periodic Snapshot Tasks** widget to open the **VMWare Snapshots** screen.
 
 Note that you can organize information in the columns of the table(s) below by clicking on each column title. This allows you to toggle the information between a descending an ascending order.
 
@@ -108,10 +108,10 @@ If you click in *ZFS Filestore** or **Datastores** before you click **Fetch Data
 2. Enter the user credentials on the VMware host with 'Create Snapshot' and 'Remove Snapshot' permissions in VMware.
   See [Virtual Machine Snapshot Management Privileges](https://docs.vmware.com/en/VMware-vSphere/8.0/vsphere-security/GUID-222FE721-0968-4E9E-9F98-7CB03E7185E8.html) from VMware for more information.
 
-3. Click **Fetch Datastores**. This connects TrueNAS SCALE to the VMWare host and populates the **ZFS Filesystem** and **Datastore** dropdown fields.
+3. Click **Fetch Datastores**. This connects TrueNAS to the VMWare host and populates the **ZFS Filesystem** and **Datastore** dropdown fields.
    Make sure the correct TrueNAS ZFS dataset or zvol matching the VMware datastore is populated.
 
-4. Select the TrueNAS SCALE dataset from the **ZFS Filesystem** dropdown list of options.
+4. Select the TrueNAS dataset from the **ZFS Filesystem** dropdown list of options.
 
 5. Select the VMFS datastore from the **Datastore** dropdown list of options.
 
@@ -129,7 +129,7 @@ If you click in *ZFS Filestore** or **Datastores** before you click **Fetch Data
 
 ## Reverting to a ZFS Snapshot in VMWare ESXi
 
-To revert a VM using a ZFS snapshot, first clone the snapshot as a new dataset in TrueNAS SCALE, present the cloned dataset to ESXi as a new LUN, resignature the snapshot to create a new datastore, then stop the old VM and re-register the existing machine from the new datastore.
+To revert a VM using a ZFS snapshot, first clone the snapshot as a new dataset in TrueNAS, present the cloned dataset to ESXi as a new LUN, resignature the snapshot to create a new datastore, then stop the old VM and re-register the existing machine from the new datastore.
 
 1. Clone the snapshot to a new dataset.
 

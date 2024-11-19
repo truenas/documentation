@@ -138,7 +138,7 @@ Google Cloud Storage uses a service account JSON file to authenticate credential
 
 Open the **Cloud Credentials** screen, select **Google Cloud Storage** in **Provider**, enter a name and then:
 
-1. Go to your Google Cloud Storage website to download this file to the TrueNAS SCALE server.
+1. Go to your Google Cloud Storage website to download this file to the TrueNAS server.
    The [Google Cloud Platform Console](https://console.cloud.google.com/apis/credentials) creates the file.
 
 2. Click **Choose File** to browse the server to locate the downloaded JSON file and upload it. The file populates **Preview JSON Service Account Key** 

@@ -1,6 +1,6 @@
 ---
 title: "Managing API Keys"
-description: "This tutorial shows how to add, create, or edit an API key in TrueNAS SCALE."
+description: "This tutorial shows how to add, create, or edit an API key in TrueNAS."
 weight: 30
 aliases:
  - /scale/scaleclireference/auth/cliapikey/

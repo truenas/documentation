@@ -1,6 +1,6 @@
 ---
 title: "API Keys Screen"
-description: "Describes how the API keys screen in TrueNAS SCALE."
+description: "Describes how the API keys screen in TrueNAS."
 weight: 20
 aliases: 
  - /scale/scaleclireference/auth/cliapikey/
@@ -10,7 +10,7 @@ tags:
 ---
 
 The **API Keys** option on the top toolbar **Settings** dropdown menu displays the **API Keys** screen.
-This screen displays a list of TrueNAS SCALE API keys on your system and allows you to add, edit, or delete keys.
+This screen displays a list of TrueNAS API keys on your system and allows you to add, edit, or delete keys.
 
 {{< trueimage src="/images/SCALE/Dashboard/APIKeysScreen.png" alt="API Keys Screen" id="API Keys Screen" >}}
 

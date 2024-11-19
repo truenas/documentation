@@ -1,6 +1,6 @@
 ---
 title: "Using the Console Setup Menu"
-description: "Provides information on using the Console Setup menu after installing TrueNAS SCALE from the iso file to configure network settings."
+description: "Provides information on using the Console Setup menu after installing TrueNAS from the iso file to configure network settings."
 weight: 20
 aliases:
  - /scale/gettingstarted/post-installconfiguration/
@@ -25,14 +25,14 @@ The admin user, the root user (if enabled), or another user with administrator o
 
 The menu provides several options:
 
-{{< trueimage src="/images/SCALE/CLI/ConsoleSetupMenuSCALE.png" alt="TrueNAS SCALE Console Setup Menu" id="TrueNAS SCALE Console Setup Menu" >}}
+{{< trueimage src="/images/SCALE/CLI/ConsoleSetupMenuSCALE.png" alt="TrueNAS Console Setup Menu" id="TrueNAS Console Setup Menu" >}}
 
-For network configuration options **1**, **2**, and **3**, we recommend using the SCALE UI to configure network interfaces, as it has safeguards to prevent breaking network access to SCALE.
+For network configuration options **1**, **2**, and **3**, we recommend using the TrueNAS UI to configure network interfaces, as it has safeguards to prevent breaking network access to TrueNAS.
 
 * **1) Configure network interfaces**
 
   Use this to configure the primary network interface with a static IP.
-  This is for switching away from the DHCP-assigned IP address TrueNAS provides when the system boots after installing SCALE.
+  This is for switching away from the DHCP-assigned IP address TrueNAS provides when the system boots after installing TrueNAS.
   Also, use this to set up other network interfaces or to add alias IP addresses, also referred to as static IP addresses, for the primary interface.
 
 * **2) Configure network settings**
@@ -48,7 +48,7 @@ For network configuration options **1**, **2**, and **3**, we recommend using th
   
   Use to change the administrator user password.
   If you selected option 1 on the iso installer menu, you have already configured the **truenas_admin** user and password.
-  You can use this to change the admin password before you log into the SCALE UI.
+  You can use this to change the admin password before you log into the TrueNAS UI.
   {{< hint type=note >}}
   This is not the password for the root user in the CLI or the root user login password for the web UI.
   The [root user password]({{< relref "AdminRoles.md" >}}) is disabled by default as part of security hardening.
@@ -61,7 +61,7 @@ For network configuration options **1**, **2**, and **3**, we recommend using th
 
 * **6) Open TrueNAS CLI Shell**
 
-  Use to start a shell for running TrueNAS commands, or use the SCALE UI **[System Settings > Shell]({{< relref "UseScaleShell.md" >}})**.
+  Use to start a shell for running TrueNAS commands, or use the TrueNAS UI **[System Settings > Shell]({{< relref "UseScaleShell.md" >}})**.
   Type `exit` to leave the shell.
 
 * **7) Open Linux Shell**
@@ -79,7 +79,7 @@ For network configuration options **1**, **2**, and **3**, we recommend using th
   Use to power down the system.
 
 During the first boot, TrueNAS attempts to connect to a DHCP server from all live interfaces.
-If it receives an IP address, the Console Setup menu displays it under **The web user interface is at:** so you can access the SCALE web UI.
+If it receives an IP address, the Console Setup menu displays it under **The web user interface is at:** so you can access the TrueNAS web UI.
 
 You might be able to access the web UI using a `hostname.domain` command at the prompt (default is `truenas.local`) if your system:
 
@@ -87,18 +87,18 @@ You might be able to access the web UI using a `hostname.domain` command at the 
 * Is on a network that supports Multicast DNS (mDNS).
 
 ## Console Setup Menu Network Settings
-You can either use SCALE UI or the Console Setup menu to configure your network settings for the primary network interface or other interfaces such as a link aggregate (LAGG) or virtual LAN (VLAN), or aliases for an interface, and to configure other network settings such as the default gateway, host name, domain, and the DNS name servers, or add static routes.
+You can either use TrueNAS UI or the Console Setup menu to configure your network settings for the primary network interface or other interfaces such as a link aggregate (LAGG) or virtual LAN (VLAN), or aliases for an interface, and to configure other network settings such as the default gateway, host name, domain, and the DNS name servers, or add static routes.
 
 {{< include file="/static/includes/UsingConsoleSetupMenuSCALE.md" >}}
 
 Enter <kbd>1</kbd> to display the **Configure Network Interfaces** screen and select the interface settings.
 
-{{< trueimage src="/images/SCALE/CLI/CSMEditInterface.png" alt="TrueNAS SCALE Console Setup Menu Edit Interface" id="TrueNAS SCALE Console Setup Menu Edit Interface" >}}
+{{< trueimage src="/images/SCALE/CLI/CSMEditInterface.png" alt="TrueNAS Console Setup Menu Edit Interface" id="TrueNAS Console Setup Menu Edit Interface" >}}
 
 Follow the instructions on the screen to configure an IP for a network interface.
 Type <kbd>n</kbd> to open the new interface screen or press <kbd>Enter</kbd> to edit the existing interface.
 
-{{< trueimage src="/images/SCALE/CLI/CSMEditInterfaceSettings.png" alt="TrueNAS SCALE Console Setup Menu Edit Interface Settings" id="TrueNAS SCALE Console Setup Menu Edit Interface Settings" >}}
+{{< trueimage src="/images/SCALE/CLI/CSMEditInterfaceSettings.png" alt="TrueNAS Console Setup Menu Edit Interface Settings" id="TrueNAS Console Setup Menu Edit Interface Settings" >}}
 
 You can enter aliases for an interface when you create a new one or edit an existing interface.
 
@@ -108,11 +108,11 @@ Type <kbd>q</kbd> to return to the main Console Setup menu screen.
 
 Enter <kbd>2</kbd> to display the **Network Settings** screen to set up the host name, domain, default gateway and name servers. You can also add these settings using the web UI.
 
-{{< trueimage src="/images/SCALE/CLI/CSMEditNetworkSettings.png" alt="TrueNAS SCALE Console Setup Menu Edit Network Settings" id="TrueNAS SCALE Console Setup Menu Edit Network Settings" >}}
+{{< trueimage src="/images/SCALE/CLI/CSMEditNetworkSettings.png" alt="TrueNAS Console Setup Menu Edit Network Settings" id="TrueNAS Console Setup Menu Edit Network Settings" >}}
 
 Enter <kbd>3</kbd> to display the **Static Route Settings** screen to set up static routes. You can also add static routes in the web UI.
 
-{{< trueimage src="/images/SCALE/CLI/CSMEditStaticRoute.png" alt="TrueNAS SCALE Console Setup Menu Static Routes" id="TrueNAS SCALE Console Setup Menu Static Routes" >}}
+{{< trueimage src="/images/SCALE/CLI/CSMEditStaticRoute.png" alt="TrueNAS Console Setup Menu Static Routes" id="TrueNAS Console Setup Menu Static Routes" >}}
 
 {{< include file="/static/includes/AliasOrStaticIP.md" >}}
 
@@ -127,11 +127,11 @@ After saving, enter <kbd>q</kbd> to return to the main Console Setup menu.
 
 To configure the default gateway, host name, domain and DNS name severs using the Console Setup menu type <kbd>2</kbd> and then press <kbd>Enter</kbd> to open the **Network Settings** screen.
 
-To configure network settings in the SCALE UI, enter the IP address displayed on the Console Setup menu screen in a browser URL field and press <kbd>Enter</kbd>.
+To configure network settings in the TrueNAS UI, enter the IP address displayed on the Console Setup menu screen in a browser URL field and press <kbd>Enter</kbd>.
 Log in with the admin user name and password set for the administration user during the <file>iso</file> installation process, and then go to **Network** to edit an interface or global network configuration settings.
 
 #### Configuring Home User Network Settings
-Home users have a few options to allow Internet access using TrueNAS SCALE:
+Home users have a few options to allow Internet access using TrueNAS:
 
 * Use 8.8.8.8 as the DNS nameserver address
 * Use your ISP provider DNS servers (contact them for assistance with these addresses)
@@ -139,12 +139,12 @@ Home users have a few options to allow Internet access using TrueNAS SCALE:
 * Use 9.9.9.9 for [Quad9](https://www.quad9.net/)
 
 ## Changing the Administrator Password
-SCALE has implemented administrator account logins as replacements for the root user.
+TrueNAS has implemented administrator account logins as replacements for the root user.
 The truenas_admin user account is the default account, and the root password is now disabled by default.
-If you migrate from CORE to SCALE and need to upload the CORE system configuration file, the root user password is not disabled but you must recreate the truenas_admin (or an admin) user account and disable the root password to comply with FIPS-compliance standards and security hardening practices.
+If you migrate from FreeBSD- to Linux-based TrueNAS releases and need to upload the previous system configuration file, the root user password is not disabled but you must recreate the truenas_admin (or an admin) user account and disable the root password to comply with FIPS-compliance standards and security hardening practices.
 
-Existing SCALE systems migrating from earlier SCALE release with the **admin** user retain this administrator account.
-Only a clean install using a SCALE 24.10 <file>iso</file> creates the **truenas_admin** administrator account.
+Existing TrueNAS systems migrating from earlier TrueNAS release with the **admin** user retain this administrator account.
+Only a clean install using a TrueNAS 24.10 <file>iso</file> creates the **truenas_admin** administrator account.
 Both the earlier **admin** and new **truenas_admin** accounts have the same permissions and privileges.
 You can change the admin user password in the UI or from the Console Setup menu.
 You can set and enable the root user password in the UI, but for security hardening, we recommend leaving it disabled.
@@ -153,7 +153,7 @@ Changing an admin user (or root if you have not created the admin user) password
 
 {{< hint type=important >}}
 Disabling a password in the UI prevents the user from logging in with it.
-If both the root and local admin user passwords are disabled and the web interface session times out with these passwords disabled, SCALE provides a temporary sign-in screen to allow logging into the UI.
+If both the root and local admin user passwords are disabled and the web interface session times out with these passwords disabled, TrueNAS provides a temporary sign-in screen to allow logging into the UI.
 Immediately go to the **Credentials > Local User** screen, select the admin user, click **Edit** and re-enable the password.
 {{< /hint >}}
 

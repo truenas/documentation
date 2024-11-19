@@ -6,7 +6,7 @@ tags:
  - permissions
 ---
 
-[TrueNAS SCALE brings full Access Control List (ACL) compatibility]({{< relref "PermissionsSCALE.md" >}}) between Windows and Linux with NFSv4 ACLs on ZFS and eases the challenges of integrating Unix servers in Windows environments.
+[TrueNAS provides for full Access Control List (ACL) compatibility]({{< relref "PermissionsSCALE.md" >}}) between Windows and Linux with NFSv4 ACLs on ZFS and eases the challenges of integrating Unix servers in Windows environments.
 
 ## ACL Overview
 
@@ -40,9 +40,9 @@ Advanced flags give further control of how an ACE applies to a dataset's files a
 
 For example, advanced flags allow an administrator to apply the ACL to new directories within a dataset, but not new files.
 
-### NFSV4.1 Support in TrueNAS SCALE
+### NFSV4.1 Support in TrueNAS
 
-SCALE 24.04 NFSv4.1 adds support to the NFS Linux client and brings support for higher ACL types to the filesystem NFS and SMB clients.
+TrueNAS 24.04 and later includes NFSv4.1 support to the NFS Linux client and brings support for higher ACL types to the filesystem NFS and SMB clients.
 
 It also enhances the SMB client to present the Windows NT security descriptor as xattr in our system.
 This security descriptor is a list containing the discretionary access control lists (DACLs) entries that grant or deny access to users or groups.
@@ -79,16 +79,16 @@ In general, NFSv4.1 adds these new features:
 
 To properly configure ACLs on SMB shares, users should consider how they intend to access the dataset/share with other devices and services on the network.
 
-Even though TrueNAS SCALE NFSv4 ACL support provides the best possible compatibility with a Windows file system security model, it is not the best choice for every situation.
+Even though TrueNAS NFSv4 ACL support provides the best possible compatibility with a Windows file system security model, it is not the best choice for every situation.
 
 ### When to use NFSv4 ACLs
 
 TrueNAS administrators should use NFSv4 ACLs to cleanly migrate Windows-style ACLs across Active Directory domains (or stand-alone servers) that use ACL models richer than POSIX.
 
-Since POSIX ACLs are a Linux-specific ZFS feature, administrators should use NFSv4 to maintain compatibility with TrueNAS CORE, FreeBSD, or other non-Linux ZFS implementations.
+Since POSIX ACLs are a Linux-specific ZFS feature, administrators should use NFSv4 to maintain compatibility with FreeBSD-based TrueNAS versions, FreeBSD, or other non-Linux ZFS implementations.
 
 {{< hint type=warning >}}
-Administrators *must* use NFSv4 if they intend to replicate data from TrueNAS SCALE to a TrueNAS CORE disaster recovery target.
+Administrators *must* use NFSv4 if they intend to replicate data from Linux-based TrueNAS to a FreeBSD-based TrueNAS disaster recovery target.
 {{< /hint >}}
 
 TrueNAS administrators should also use NFSv4 ACLs if their organization requires advanced NFSv4 ACL features.
@@ -116,4 +116,4 @@ Using POSIX ACLs preserves POSIX.1e ACLs from client systems.
 
 TrueNAS administrators should also use POSIX ACLs if they wish to replicate SMB datasets to other non-TrueNAS Linux servers with ZFS, especially when the Linux server should seamlessly take over serving files during disaster recovery.
 
-TrueNAS SCALE creates a POSIX.1e ACL for datasets created when the **Dataset Preset** (ACL Type) is set to **Generic**.
+TrueNAS creates a POSIX.1e ACL for datasets created when the **Dataset Preset** (ACL Type) is set to **Generic**.

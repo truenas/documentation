@@ -1,6 +1,6 @@
 ---
 title: Alerts
-description: "Describes the TrueNAS SCALE alert system."
+description: "Describes the TrueNAS alert system."
 geekdocCollapseSection: true
 weight: 2
 related: false

@@ -1,6 +1,6 @@
 ---
 title: "Virtualization"
-description: "Provides information on the screens and settings to add virtual machines (VMs) and devices to your TrueNAS SCALE system."
+description: "Provides information on the screens and settings to add virtual machines (VMs) and devices to your TrueNAS system."
 weight: 80
 aliases:
 - /scale/scaleuireference/virtualization/
@@ -19,7 +19,7 @@ The **No Virtual Machines** screen displays if there are no VMs configured on th
 
 **Add Virtual Machines** and **Add** at the top right of the screen opens the **[Create Virtual Machine](#create-virtual-machine-wizard-screens)** wizard.
 
-The screen displays a list of VMs configured on the TrueNAS SCALE system.
+The screen displays a list of VMs configured on the TrueNAS system.
 The **State** toggle displays and changes the state of the VM.
 **Autostart**, when selected, automatically starts the VM if the system reboots, otherwise you must manually start the VM.
 
@@ -47,7 +47,7 @@ The **Operating System** settings specify the VM operating system type, the time
 | **Enable Hyper-V Enlightenments** |Only displays when **Guest Operating System** is set to **Windows**. This emulates a Hyper-V-compatible hypervisor for the Windows guest operating system and makes some Hyper-V-specific features available. |
 | **Name** | Required. Enter an alphanumeric name for the virtual machine. |
 | **Description** | (Optional) Enter a description of your choosing. For example, the type of OS for the VM or the VM use. |
-| **System Clock** | Select the method to use to set the system the VM from the dropdown list. Options are **Local** which uses the TrueNAS SCALE system clock setting, or **UTC** to use the Coordinated Universal Time clock. The default is **Local**. |
+| **System Clock** | Select the method to use to set the system the VM from the dropdown list. Options are **Local** which uses the TrueNAS system clock setting, or **UTC** to use the Coordinated Universal Time clock. The default is **Local**. |
 | **Boot Method** | Select the boot method option from the dropdown list. Options are **UEFI** for newer operating systems or **Legacy BIOS** for older operating systems that only support BIOS booting. |
 | **Shutdown Timeout** | Enter the time in seconds the system waits for the VM to cleanly shut down. During system shutdown, the system initiates power-off for the VM after the shutdown timeout entered expires. |
 | **Start on Boot** | Select to start the VM when the system boots. Selected by default. |

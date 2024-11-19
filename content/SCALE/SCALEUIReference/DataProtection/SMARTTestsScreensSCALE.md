@@ -1,6 +1,6 @@
 ---
 title: "S.M.A.R.T. Tests Screens"
-description: "Describes the TrueNAS SCALE S.M.A.R.T. tests screens and fields."
+description: "Describes the TrueNAS S.M.A.R.T. tests screens and fields."
 weight: 60
 aliases:
  - /scale/scaleuireference/dataprotection/smarttestsscreensscale/

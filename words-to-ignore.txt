@@ -2138,3 +2138,4 @@ InstallAppResourceConfigurationGPU
 geekDocHidden
 printview
 coretutorials
+tn-openstorage-logo

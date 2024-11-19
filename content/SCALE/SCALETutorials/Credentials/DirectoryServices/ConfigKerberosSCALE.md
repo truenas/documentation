@@ -1,6 +1,6 @@
 ---
 title: "Configuring Kerberos"
-description: "Provides instructions on configuring and managing Kerberos realms and keytabs in SCALE."
+description: "Provides instructions on configuring and managing Kerberos realms and keytabs in TrueNAS."
 weight: 25
 aliases:
 tags:
@@ -17,7 +17,7 @@ A Kerberos realm is an authorized domain that a Kerberos server can use to authe
 By default, TrueNAS creates a Kerberos realm for the local system.
 A [keytab ("key table")](https://web.mit.edu/kerberos/krb5-devel/doc/basic/keytab_def.html) is a file that stores encryption keys for authentication.
 
-TrueNAS SCALE allows users to configure general Kerberos settings, as well as realms and keytabs.
+TrueNAS allows users to configure general Kerberos settings, as well as realms and keytabs.
 
 ## Kerberos Realms
 {{< hint type=note >}}

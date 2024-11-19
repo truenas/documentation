@@ -61,20 +61,18 @@ All documentation provided here is end-of-life (EoL), intended for reference onl
 Software releases after TrueNAS 22.12 (Bluefin) are available as navigable website branches.
 Earlier releases are available only in PDF.
 
-## TrueNAS SCALE
+## TrueNAS
 
 {{< expand "TrueNAS 22.12 (Bluefin)" "v" >}}
 [TrueNAS 22.12 (Bluefin)](https://www.truenas.com/docs/scale/22.12/)
 
-Release notes for each minor release of 22.12 are available in the [SCALE 22.12 Bluefin Release Notes](https://www.truenas.com/docs/scale/22.12/gettingstarted/scalereleasenotes/).
+Release notes for each minor release of 22.12 are available in the [22.12 Bluefin Release Notes](https://www.truenas.com/docs/scale/22.12/gettingstarted/scalereleasenotes/).
 {{< /expand >}}
 
 {{< expand "TrueNAS 22.02 (Angelfish)" "v" >}}
 Release notes for each minor release of 22.02 Angelfish are included in the archived docs.
 <a href="https://www.truenas.com/docs/files/SCALE22.02Docs.pdf">TrueNAS 22.02 (Angelfish)</a>
 {{< /expand >}}
-
-## TrueNAS CORE
 
 {{< hint type=important >}}
 **12.0 NVDIMM Alert**

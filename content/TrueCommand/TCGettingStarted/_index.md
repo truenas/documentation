@@ -40,7 +40,7 @@ Due to the changes in integrating with the TrueNAS middleware, the minimum versi
 
   We recommend upgrading to the latest publicly available release of CORE to migrate from deprecated services and features and access improvements in the CORE platform.
 
-* TrueNAS 21.03+ - Fully Supported (SCALE-20.12+ is supported excluding cluster functionality). We recommend upgrading to the latest publicly available release of SCALE.
+* TrueNAS 21.03+ - Fully Supported (20.12+ is supported excluding cluster functionality). We recommend upgrading to the latest publicly available release of TrueNAS.
 
   Due to changes in supported services and features, upgrade to Bluefin (22.12.4 latest release) to migrate from deprecated services, then upgrade to Cobia (23.10.0).
 

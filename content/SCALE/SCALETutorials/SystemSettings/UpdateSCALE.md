@@ -1,6 +1,6 @@
 ---
-title: "Updating SCALE"
-description: "Provides instructions on updating SCALE releases in the UI."
+title: "Updating TrueNAS"
+description: "Provides instructions on updating TrueNAS releases in the UI."
 weight: 10
 aliases: /scale/scaleuireference/systemsettings/updatescale/
 tags:
@@ -11,10 +11,10 @@ keywords:
 - software storage solutions
 ---
 
-TrueNAS has several software branches (linear update paths) known as trains. If SCALE is in a prerelease train it can have various preview/early build releases of the software.
+TrueNAS has several software branches (linear update paths) known as trains. If TrueNAS is in a prerelease train it can have various preview/early build releases of the software.
 
 The **Update Screen** only displays the current train.
-When looking to upgrade SCALE to a new major version, make sure to upgrade SCALE along the path of major versions until the system is on the desired major version release.
+When looking to upgrade TrueNAS to a new major version, make sure to upgrade TrueNAS along the path of major versions until the system is on the desired major version release.
 For more information on other available trains and the upgrade path from one version to the next, see [Software Releases](https://www.truenas.com/docs/truenasupgrades/).
 
 {{< hint type=warning >}}
@@ -23,12 +23,12 @@ Do not change to a prerelease or nightly release unless the system is intended t
 
 If you are using a non-production train, be prepared to experience bugs or other problems.
 Testers are encouraged to submit bug reports and debug files.
-For information on how to file an issue ticket see [Filing an Issue Ticket in SCALE]({{< relref "FileIssueSCALE.md" >}}).
+For information on how to file an issue ticket see [Filing an Issue Ticket in TrueNAS]({{< relref "FileIssueSCALE.md" >}}).
 {{< /hint >}}
 
-The TrueNAS SCALE **Update** screen provides users with two different methods to update the system, automatic or manual.
+The TrueNAS **Update** screen provides users with two different methods to update the system, automatic or manual.
 
-We recommend updating SCALE when the system is idle (no clients connected, no disk activity, no ongoing S.M.A.R.T. tests, etc.).
+We recommend updating TrueNAS when the system is idle (no clients connected, no disk activity, no ongoing S.M.A.R.T. tests, etc.).
 The system restarts after an upgrade.
 Update during scheduled maintenance times to avoid disrupting user activities.
 
@@ -53,7 +53,7 @@ The **Apply Pending Updates** window opens.
 {{< trueimage src="/images/SCALE/SystemSettings/ApplyPendingUdates.png" alt="Apply Pending Updates" id="Apply Pending Updates" >}}
 
 Click **Confirm**, then **Continue** to start the automatic installation process.
-TrueNAS SCALE downloads the configuration file and the update file, then starts the install.
+TrueNAS downloads the configuration file and the update file, then starts the install.
 
 {{< include file="/static/includes/UpgradeClearCache.md" >}}
 

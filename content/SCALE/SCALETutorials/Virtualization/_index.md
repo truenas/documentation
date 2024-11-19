@@ -1,6 +1,6 @@
 ---
 title: "Virtualization"
-description: "Tutorials for configuring TrueNAS SCALE virtualization features and creating virtual machines."
+description: "Tutorials for configuring TrueNAS virtualization features and creating virtual machines."
 geekdocCollapseSection: true
 aliases:
  - /scale/scaleuireference/virtualization/creatingmanagingvmsscale/
@@ -17,7 +17,7 @@ The **Virtualization** section allows users to set up Virtual Machines (VMs) to 
 Enterprise licensed High Availability (HA) systems do not support virtual machines.
 
 Delegating processes to VMs reduces the load on the physical system, which means users can utilize additional hardware resources.
-Users can customize six different segments of a VM when creating one in TrueNAS SCALE.
+Users can customize six different segments of a VM when creating one in TrueNAS.
 
 {{< expand "What system resources do VMs require?" "v" >}}
 {{< include file="/static/includes/ScaleVMReqResources.md" >}}
@@ -350,7 +350,7 @@ Confirm the ping is successful.
 
 ### Accessing TrueNAS Storage From a VM
 By default, VMs are unable to communicate directly with the host NAS.
-If you want to access your TrueNAS SCALE directories from a VM, to connect to a TrueNAS data share, for example, you have multiple options.
+If you want to access your TrueNAS directories from a VM, to connect to a TrueNAS data share, for example, you have multiple options.
 
 If your system has more than one physical interface, you can assign your VMs to a NIC other than the primary one your TrueNAS server uses. This method makes communication more flexible but does not offer the potential speed of a bridge.
 

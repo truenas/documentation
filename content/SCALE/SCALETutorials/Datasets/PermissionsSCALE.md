@@ -18,7 +18,7 @@ keywords:
 - data provisioning
 ---
 
-TrueNAS SCALE provides basic permissions settings and an access control list (ACL) editor to define dataset permissions.
+TrueNAS provides basic permissions settings and an access control list (ACL) editor to define dataset permissions.
 ACL permissions control the actions users can perform on dataset contents and shares.
 
 {{< hint type=note >}}
@@ -26,9 +26,9 @@ An Access Control List (ACL) is a set of account permissions associated with a d
 TrueNAS uses ACLs to manage user interactions with shared datasets and creates them when users add a dataset to a pool.
 {{< /hint >}}
 
-## ACL Types in SCALE
-TrueNAS SCALE offers two ACL types: POSIX and NFSv4.
-For a more in-depth explanation of ACLs and configurations in TrueNAS SCALE, see our [ACL Primer](https://www.truenas.com/docs/references/aclprimer/).
+## ACL Types in TrueNAS
+TrueNAS offers two ACL types: POSIX and NFSv4.
+For a more in-depth explanation of ACLs and configurations in TrueNAS, see our [ACL Primer](https://www.truenas.com/docs/references/aclprimer/).
 
 The **Dataset Preset** setting on the **Add Dataset** screen determines the type of ACL for the dataset.
 To see the ACL type, click **Edit** on the **Dataset Details** widget to open the **Edit Dataset**.
@@ -36,7 +36,7 @@ Click on the **Advanced Options** screen and scroll down to the **ACL Type** fie
 Preset options are:
 {{< include file="/static/includes/DatasetPresetOptions.md" >}}
 
-SCALE POSIX or NFSv4 [ACL types](https://www.truenas.com/docs/references/aclprimer/), show different options on the **ACL Editor** screen.
+TrueNAS POSIX or NFSv4 [ACL types](https://www.truenas.com/docs/references/aclprimer/), show different options on the **ACL Editor** screen.
 Both the POSIX and NFSv4 **ACL Editors** screens allow you to define the owner user and group, and add ACL entries (ACEs) for individual user accounts or groups to customize the permissions for the selected dataset.
 
 The owner user and group should remain set to either **root** or the admin account with full privileges.
