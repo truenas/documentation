@@ -50,7 +50,7 @@ You must choose a pool before you can install an application.
 
 {{< /expand >}}
 
-{{< expand "App Datasets" "v" >}}
+{{< expand "App Dataset Types" "v" >}}
 
 {{< include file="/static/includes/apps/AppsDatasets.md" >}}
 
