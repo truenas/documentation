@@ -33,7 +33,7 @@ Keep these general best practices in mind when using applications with TrueNAS:
 
 {{< /expand >}}
 
-{{< expand "App Datasets" "v" >}}
+{{< expand "App Dataset Types" "v" >}}
 
 {{< include file="/static/includes/apps/AppsDatasets.md" >}}
 
