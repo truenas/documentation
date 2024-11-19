@@ -50,9 +50,9 @@ You must choose a pool before you can install an application.
 
 {{< /expand >}}
 
-{{< expand "App Dataset and File Sharing" "v" >}}
+{{< expand "App Datasets" "v" >}}
 
-{{< include file="/static/includes/apps/AppsFileSharing.md" >}}
+{{< include file="/static/includes/apps/AppsDatasets.md" >}}
 
 {{< /expand >}}
 
@@ -88,7 +88,7 @@ You must set the pool before you can add any application.
 
 We recommend keeping the application use case in mind when choosing a pool.
 Select a pool with enough space for all the applications you intend to use.
-For stability, we also recommend using SSD storage for the applications pool.
+For stability, we recommend using SSD storage for the applications pool.
 
 Select the pool and click **Save**. If you close the dialog to set the pool later, click **Configuration > Choose Pool** to set the pool.
 
