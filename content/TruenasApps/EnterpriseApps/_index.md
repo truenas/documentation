@@ -33,9 +33,9 @@ Keep these general best practices in mind when using applications with TrueNAS:
 
 {{< /expand >}}
 
-{{< expand "App Dataset and File Sharing" "v" >}}
+{{< expand "App Datasets" "v" >}}
 
-{{< include file="/static/includes/apps/AppsFileSharing.md" >}}
+{{< include file="/static/includes/apps/AppsDatasets.md" >}}
 
 {{< /expand >}}
 
