@@ -1,15 +1,27 @@
 ---
-title: "Jails, Plugins and Virtual Machines"
-description: "Tutorials about configuring TrueNAS CORE jails, specialized jails called plugins, and virtual machines for full operating system deployments."
+title: "Virtualization (Obsolete)"
+description: "Notice about obsolete features in TrueNAS 13.0"
 geekdocCollapseSection: true
 weight: 130
+aliases:
+ - /gettingstarted/applications/
+ - /coretutorials/jailspluginsvms/
+ - /coretutorials/jailspluginsvms/jails/creatingjails/
+ - /coretutorials/jailspluginsvms/jails/managingjails/
+ - /coretutorials/jailspluginsvms/jails/accessingjailsusingssh/
+ - /coretutorials/jailspluginsvms/jails/installingjailsoftware/
+ - /coretutorials/jailspluginsvms/jails/settingupjailstorage/
+ - /coretutorials/jailspluginsvms/plugins/
+ - /coretutorials/jailspluginsvms/plugins/managingplugins/
+ - /coretutorials/jailspluginsvms/plugins/minioplugin/
+ - /coretutorials/jailspluginsvms/plugins/creatingcustomplugin/
+ - /coretutorials/jailspluginsvms/updatejailsplugins/
+ - /coretutorials/jailspluginsvms/virtualmachines/
+ - /coretutorials/jailspluginsvms/virtualmachines/creatingbasicvm/
+ - /coretutorials/jailspluginsvms/virtualmachines/settingupnpiv/
+ - /coretutorials/jailspluginsvms/plugins/plexplugin/
 ---
 
-{{< hint type=note title="Unsupported Feature" >}}
+{{< hint type=danger title="Obsolete Features" >}}
 {{< include file="/static/includes/COREFeatureSupport.md" >}}
 {{< /hint >}}
-
-TrueNAS CORE has a number of different features for deploying or using supplemental software on top of the CORE operating system.
-The articles contained here describe and guide through deploying and using these features.
-
-{{< children depth="2" description="true" >}}
