@@ -1,16 +1,16 @@
 ---
-title: "Jails, Plugins and Virtual Machines"
-description: "Reference documentation for the Jails, Plugins, and Virtual Machines screens."
+title: "Jails, Plugins and Virtual Machines (Obsolete)"
+description: "Reference documentation for the obsolete Jails, Plugins, and Virtual Machines screens."
 geekdocCollapseSection: true
 weight: 130
 related: false
 ---
 
-{{< hint type=important title="Unsupported Feature" >}}
+{{< hint type=danger title="Obsolete Features" >}}
 {{< include file="/static/includes/COREFeatureSupport.md" >}}
 {{< /hint >}}
 
-This section describes the various screens and options available for deploying resource-minimal FreeBSD jails or fully virtualized operating systems.
+This section describes the different screens related to the obsolete virtualization features in TrueNAS 13.3.
 
 <div class="noprint">
 

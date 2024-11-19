@@ -1,12 +1,12 @@
 ---
-title: "Jails Screens"
-description: "Describes the fields in the Jails screen in TrueNAS CORE."
+title: "Jails Screens (Obsolete)"
+description: "Describes the fields in the obsolete Jails screen in TrueNAS 13.3."
 weight: 10
 tags:
 - jails
 ---
 
-{{< hint type=important title="Unsupported Feature" >}}
+{{< hint type=danger title="Obsolete Features" >}}
 {{< include file="/static/includes/COREFeatureSupport.md" >}}
 {{< /hint >}}
 
