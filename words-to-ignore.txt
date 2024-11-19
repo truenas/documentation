@@ -2040,3 +2040,4 @@ configuringkmip
 systemconfiguration
 configuringfailover
 deserialization
+COREFeatureSupport
