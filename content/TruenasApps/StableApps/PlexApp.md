@@ -22,7 +22,7 @@ Before you install the Plex app:
 
 * Set up a Plex account.
 
-  After installing the Plex app and logging into Plex through the link in TrueNAS, if you have not already configured your Plex account media server, Plex shows the configuration screens to set up the media server, add libraries, and customize your Plex account.
+  After installing the Plex app and logging into Plex through the **Web Portal** button in TrueNAS, if you have not already configured your Plex account media server, Plex shows the configuration screens to set up the media server, add libraries, and customize your Plex account.
 
 {{< include file="/static/includes/apps/AppsStableBeforeYouBegin.md" >}}
 
@@ -39,7 +39,7 @@ Before you install the Plex app:
 
   When creating the above datasets, select the **apps** dataset preset.
 
-  You can set up the ACLs for these datasets after adding them or use the app installation wizard to configure the ACLs and ACL entries.
+  You can set up the permissions (ACLs) for these datasets after adding them using the **Edit ACL** screen, or wait and use the **Install Plex** wizard ACL settings to add  permissions. You can also edit permissions after using either method.
   
 ### Installing the Plex App
 {{< hint info >}}
@@ -138,8 +138,9 @@ When the host network is not enabled, the server subnet is the network for Docke
 Therefore, all connections from other clients are considered to be on the external network.
 If set, all other IP addresses are considered to be external to your local network.
 
-#### Adding Devices
-Plex allows you to add and manage devices allowed to access your media server through the local network and remotely from external network connections.
+#### Adding Devices in the Container
+Plex account settings allow you to add and manage devices that connect to your media server, both on the local network you define and remotely from external network connections.
+Adding devices in the TrueNAS Plex app passes the devices through to your Plex account.
 Click **Add** to the right of **Devices** in the **Install Plex** wizard for each device to add.
 
 {{< trueimage src="/images/SCALE/Apps/InstallPlexConfigAddDevice.png" alt="Install Plex Add Device" id="Install Plex Add Device" >}}
@@ -174,9 +175,9 @@ Logs and transcode data can use these same storage options or you can create dir
 Both logs and transcode data are not intended for persistent data storage. 
 
 Logs and transcode data can be stored in the **temporary** directory option that creates a Docker volume in the hidden **ix-apps** dataset.
-This directory is cleaned up on every container restart, which means the data is only available for the period before the container restart.
 
-Transcode data chunks are streamed to a player and meant to be discarded after use, like notes on a scratchpad. This makes the **tmpfs** directory option a better choice as it creates a Linux temporary filesystem type in RAM.
+Transcode data chunks are streamed to a player and meant to be discarded after use, like notes on a scratchpad.
+This makes the **tmpfs** directory option a better choice as it creates a Linux temporary filesystem type in RAM.
 
 Neither directory storage option provides easy access to stored data, so if you want to store and access log data, create a dataset called **logs**.
 
@@ -249,7 +250,7 @@ If the app still does not start, try clearing your screen cache. This can someti
 If Plex reports issues with drivers you might have to delete the app and recreate a fresh app container using the same datasets.
 Also, check **Apps > Configuration > Settings** to make sure the NVIDIA driver option is selected.
 
-Search the TrueNAS forum for Plex discussion threads for other tips and suggestions.
+Search the [TrueNAS forum](https://forums.truenas.com/) for Plex discussion threads for other tips and suggestions.
 
 ### Cannot Access Libraries or Media Files
 Check the dataset permissions, and verify the user accessing these files has the correct permissions.
