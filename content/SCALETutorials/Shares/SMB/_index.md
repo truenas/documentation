@@ -10,6 +10,9 @@ tags:
 - shares
 ---
 
+
+{{< include file="/static/includes/RootLevelDatasetShareWarning.md" >}}
+
 ## About Windows (SMB) Shares
 SMB (also known as CIFS) is the native file-sharing system in Windows.
 SMB shares can connect to most operating systems, including Windows, MacOS, and Linux.

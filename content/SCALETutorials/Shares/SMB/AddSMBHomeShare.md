@@ -7,6 +7,9 @@ tags:
 - smb
 ---
 
+
+{{< include file="/static/includes/RootLevelDatasetShareWarning.md" >}}
+
 {{< hint type=important title="Legacy Feature" >}}
 SMB Home Shares are a legacy feature for organizations looking to maintain existing SMB configurations.
 They are not recommended for new deployments.
