@@ -9,10 +9,11 @@ tags:
 keywords:
 - nas data storage
 - software storage solutions
+- TrueNAS media applications
 ---
 
 
-Plex is a media server that allows you to stream your media (music, movies, live TV, etc.) to any Plex client.
+Plex is a media server that allows you to manage and stream your media (music, movies, live TV, etc.) to any Plex client.
 
 {{< include file="/static/includes/AppsUnversioned.md" >}}
 
@@ -21,7 +22,7 @@ Before you install the Plex app:
 
 * Set up a Plex account.
 
-  After installing the Plex app and logging into Plex through the link in TrueNAS, if you have not already configured your Plex account media server, Plex shows the configuration screens to set up the media server, add libraries, and customize your Plext account.
+  After installing the Plex app and logging into Plex through the link in TrueNAS, if you have not already configured your Plex account media server, Plex shows the configuration screens to set up the media server, add libraries, and customize your Plex account.
 
 {{< include file="/static/includes/apps/AppsStableBeforeYouBegin.md" >}}
 
@@ -34,9 +35,9 @@ Before you install the Plex app:
   * **config** for Plex application configuration storage.
 
   You can create a dataset for log data or use a temporary directory option for log data.
-  Transcode data is not useful or meant for persistent storage, so using a temporary directory option is a better option.
+  Transcode data is not useful or meant for persistent storage, so using a temporary directory is a better option.
 
-  When creating the above datasets select the **apps** dataset preset.
+  When creating the above datasets, select the **apps** dataset preset.
 
   You can set up the ACLs for these datasets after adding them or use the app installation wizard to configure the ACLs and ACL entries.
   
@@ -66,12 +67,12 @@ While logged into your Plex account, go to the [Plex **Claim Code** web page](ht
 Next, either accept the default values shown or enter the IP addresses for local network connections (Ethernet or WiFi routers) you want in your Plex network.
 See [Setting Up Local Network](#setting-up-local-network) below for more information.
 
-You can add devices and/or additional environment variables but these are not necessary to deploy the app.
-For more information see [Adding Devices](#adding-devicess) below for more information on adding these.
+You can add devices and/or additional environment variables, but these are not necessary to deploy the app.
+For more information on adding these, see [Adding Devices](#adding-devicess) below.
 
 Accept the default values in both **User and Group Configuration** and **Network Configurations**.
 (Optional) If you created a new user to administer apps, enter that user ID in the user and group fields.
-See [User and Group Configuration](#user-and-group-configuration) and [Network Configuration](#network-configuration) below for more information on these settings.
+See [User and Group Configuration](#user-and-group-configuration) and [Network Configuration](#network-configuration) for more details.
 
 Add your **Storage Configuration** settings.
 {{< expand "Configuring Plex Storage" "v" >}}
@@ -81,19 +82,19 @@ Select **Enable ACL**, and then either enter or browse to and select the **data*
 {{< trueimage src="/images/SCALE/Apps/InstallPlexStorageConfigDataACLandACE.png" alt="Add Plex Data Storage" id="Add Plex Data Storage" >}}
 
 Select **Add** to the right of **ACL Entries** for each user or group entry you want to add.
-or example, add the **568** user and **0**, and give each **FULL_CONTROL Access**.
+For example, add the **568** user and **0**, and give each **FULL_CONTROL Access**.
 
 Select **Force Flag**.
 
-Repeat the storage steps above for the **Plex Configuration** and, if using a dataset for logs, for the **Plex Logs** storage volumes.
-Create a dataset for log storage if you want to save and easily access log data.
+Repeat the storage steps above for the **Plex Configuration** and, when using a dataset for logs, for the **Plex Logs** storage volumes.
+Create a dataset for log storage to save and easily access log data.
 If not, set the storage volume type to either **temporary** or **tmpfs** for both **Logs** and **Transcode** storage.
 {{< /expand >}}
 
-Add any labels you want to use to group or organize your media files.
+Add any labels you want to use to organize your media files.
 For example, labeling video files as *movies* or *sports*, etc. Labels allow creating custom groupings or classifications beyond the default metadata provided by Plex.
 
-Accept the defaults in **Resources Configuration**, and select the GPU option if applicable.
+Accept the defaults in **Resources Configuration** and select the GPU option if you have a compatible GPU installed in the system and you want to use it for hardware-accelerated transcoding.
 
 Click **Install**. A progress dialog opens before switching to the **Installed** applications screen.
 The **Installed** screen shows the **plex** app in the **Deploying** state until fully installed and then the status changes to **Running** when ready to use.
@@ -102,7 +103,7 @@ Click **Web Portal** on the **Application Info** widget to open the Plex web por
 
 {{< trueimage src="/images/SCALE/Apps/PlexAppWebPortalSignInScreen.png" alt="Plex Sign In Screen" id="Plex Sign In Screen" >}}
 
-After signing in, Plex steps you through several initial media server configuration screens if this is a new account, or shows your default Plex media screen for your existing configured account.
+After signing in, Plex guides you through several initial media server configuration screens if this is a new account or shows your default Plex media screen for your existing configured account.
 
 ## Understanding App Installation Wizard Settings
 The following section provides more detailed explanations of the settings in each section of the **Install** installation wizard.
@@ -114,7 +115,7 @@ The following section provides more detailed explanations of the settings in eac
 ### Plex Configuration Settings
 Plex configuration settings include setting up the server timezone, authentication to the Plex account, location of the Plex container image, local network settings, and adding devices or additional environment variables to apply to the container.
 
-{{< trueimage src="/images/SCALE/Apps/InstallPlexConfig1.png" alt="Instll Plex Configuration Settings" id="Install Plex Configuration Settings" >}}
+{{< trueimage src="/images/SCALE/Apps/InstallPlexConfig1.png" alt="Install Plex Configuration Settings" id="Install Plex Configuration Settings" >}}
 
 {{< include file="/static/includes/apps/AppsInstallWizardTimezoneSetting.md" >}}
 
@@ -170,12 +171,12 @@ The default web port for Plex is **32400**.
 ### Storage Configuration
 TrueNAS provides options for data and configuration storage volumes: ixVolumes and host paths.
 Logs and transcode data can use these same storage options or you can create directories to hold log and/or transcode data.
-Both logs and transcode data is not intended for persistent data storage. 
+Both logs and transcode data are not intended for persistent data storage. 
 
 Logs and transcode data can be stored in the **temporary** directory option that creates a Docker volume in the hidden **ix-apps** dataset.
 This directory is cleaned up on every container restart, which means the data is only available for the period before the container restart.
 
-Transcode data chunks are streamed to a player and meant to be throw-away data after it is streamed, like data on a scratchpad, this makes the **tmpfs** directory option a better choice as it creates a Linux temporary filesystem type in RAM.
+Transcode data chunks are streamed to a player and meant to be discarded after use, like notes on a scratchpad. This makes the **tmpfs** directory option a better choice as it creates a Linux temporary filesystem type in RAM.
 
 Neither directory storage option provides easy access to stored data, so if you want to store and access log data, create a dataset called **logs**.
 
@@ -242,7 +243,7 @@ Refer to the Plex support website and documentation for assistance with your Ple
 ### App Sticks in Deploying State
 You must get a claim token from Plex and add it to the app or Plex does not deploy. If your app is not deploying, try obtaining a fresh claim token from Plex. Stop the Plex app, then edit the TrueNAS Plex app settings to paste the new token into the **Claim Token** field. Save the change. Restart the app.
 
-If the app still does not start, try clearing your screen cache which sometimes prevents showing the app as fully deployed.
+If the app still does not start, try clearing your screen cache. This can sometimes prevent showing the app as fully deployed.
 
 ### Plex App NVIDIA GPU Driver Issues
 If Plex reports issues with drivers you might have to delete the app and recreate a fresh app container using the same datasets.
