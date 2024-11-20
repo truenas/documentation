@@ -11,6 +11,8 @@ TrueNAS uses [Samba](https://www.samba.org/) to share pools using Microsoft SMB 
 SMB is built into the Windows and macOS operating systems and most Linux and BSD systems pre-install an SMB
 client to provide support for the SMB protocol.
 
+The maximum file size for a write request is determined from [MS-FSA section 2.1.5.4 (Server Requests a Write)](https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-fsa/fbf656c3-b897-4b9c-abfd-7c8d876d77a1) and translates to just under 16 (15.999999) TiB.
+
 The SMB protocol supports many different types of configuration scenarios, ranging from the simple to complex.
 The complexity of the scenario depends upon the types and versions of the client operating systems that connects to the share, whether the network has a Windows server, and whether Active Directory is used.
 Depending on the authentication requirements, it might be necessary to create or import users and groups.
