@@ -4,7 +4,7 @@
 To allow TrueNAS to create the storage volume, leave **Type** set to **ixVolume (Dataset created automatically by the system)**.
 This adds a storage volume for the application that can be found nested under the hidden **ix-apps** dataset, located on the pool selected as the apps pool.
 This is recommended for a test deployment of an app but not for a full app deployment as data does not persist for these volumes after deleting the app where a dataset does.
-Datasets make recovering, transfering, and accessing app configuration, user, or other data possible where ixVolumes do not. 
+Datasets make recovering, transferring, and accessing app configuration, user, or other data possible where ixVolumes do not. 
 
 To use an existing dataset, which is the recommended option, set **Type** to **Host Path (Path that already exists on the system)**.
 
