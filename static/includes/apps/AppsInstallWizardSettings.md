@@ -52,12 +52,20 @@ All apps in the **stable** train, some **community** train apps, and all apps in
   An SMB share option allows you to mount an SMB share as a Docker volume for the application to use.
   If the application requires specific datasets or you want to allow SMB share access, configure the dataset(s) and SMB share before using the installation wizard.
 
-  ixVolumes do not require setting up an ACL and ACE entry but host paths do.
-  After entering the dataset name as the mount point, select **Enable ACL** to browse to or enter the path to the dataset.
-  Enter the UID for either the default user assigned to the app or the UID for the TrueNAS user created to serve as the app administrator as the user in the ACE entry and set permissions to full control.
-  Failing to enable host path ACLs prevents the app from deploying!
+  ixVolumes do not require setting up an Access Control List (ACL) and Access Control Entry (ACE) in the app configuration settings, but host paths do.
+  After entering the path inside the container in **Mount Path**, select **Enable ACL**.
+  Browse to or enter the path to the dataset in **Host Path**.
+  Click **Add** next to **ACL Entries** to display a set of ACE fields.
+  Use **ID Type** to select whether the ACE is for a user or a group.
+  Enter the UID or GID in **ID** and adjust the permissions level in **Access**.
+  
+  Refer to the app **Run As Context** on the app details screen for default ID requirements.
+  A user or group ID does not need to exist locally on TrueNAS or match the name configured in the container to grant an ACE.
+  Failing to configure host path ACLs prevents the app from deploying!
 
-  Select **Force** to allow TrueNAS to update the application to the next version. This allows updates and writing to the storage volume if it has data in it.
+  Select **Force Flag** in **ACL Options**.
+  This allows TrueNAS to write ACL entries to the storage volume if it has existing data in it.
+  **Force Flag** is required to edit or update an existing application.
   
 * **Resources Configuration** shows CPU and memory settings for the container pod.
    In most cases, you can accept the default settings, or you can change these settings to limit the system resources available to the application.
