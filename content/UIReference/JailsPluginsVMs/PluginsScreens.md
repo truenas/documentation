@@ -1,13 +1,13 @@
 ---
-title: "Plugins Screens"
-description: "Describes how to install and maintain 3rd party applications on TrueNAS CORE."
+title: "Plugins Screens (Obsolete)"
+description: "Describes the obsolete Plugins screen in TrueNAS 13.3."
 weight: 20
 tags:
 - apps
 - plugins
 ---
 
-{{< hint type=important title="Unsupported Feature" >}}
+{{< hint type=danger title="Obsolete Features" >}}
 {{< include file="/static/includes/COREFeatureSupport.md" >}}
 {{< /hint >}}
 
