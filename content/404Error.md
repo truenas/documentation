@@ -1,5 +1,6 @@
 ---
-title: ""
+title: "404 Error"
+noindex: true
 ---
 
 <div class="flex align-center justify-center">
