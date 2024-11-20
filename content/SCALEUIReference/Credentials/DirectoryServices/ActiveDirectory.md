@@ -53,7 +53,7 @@ On the edit screen, the **Advanced Options** displays the subset found on the **
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Site Name** | Enter the Relative Distinguished Name (RDN) of the site object in the AD server. This is the first component of the **distingishedName** in AD. For more info read [Configuring Active Directory]({{< relref "ConfigADSCALE.md" >}}). |
+| **Site Name** | Enter the Relative Distinguished Name (RDN) of the site object in the AD server. This is the first component of the **distingishedName** in AD. For more info read [Configuring Active Directory]({{< relref "/SCALETutorials/Credentials/DirectoryServices/ConfigADSCALE.md" >}}). |
 | **Kerberos Realm** | Select an existing realm from the dropdown list of options. Options are those configured in **Kerberos Realms**. After selecting **Enable (requires password or Kerberos principal)**, SCALE populates the **Kerberos Realm** and **Kerberos Principal** fields with what it discovered in AD. |
 | **Kerberos Principal** | Select the location of the principal in the keytab created in **Directory Services > Kerberos Keytabs**. After selecting **Enable (requires password or Kerberos principal)**, SCALE populates the **Kerberos Realm** and **Kerberos Principal** fields with what it discovered in AD. |
 |**Enable (requires password or Kerberos principle)** | Select to enable AD service. The first time you select this option you must enter the password for the domain admin account. After selecting **Enable (requires password or Kerberos principal)**, SCALE populates the **Kerberos Realm** and **Kerberos Principal** fields with what it discovered in AD. |
