@@ -44,37 +44,7 @@ Make sure the application is required for your specific use requirements and doe
 
 You must choose a pool before you can install an application.
 
-{{< expand "App Pool Selection" "v" >}}
-
-{{< include file="/static/includes/apps/AppsPoolOrDataset.md" >}}
-
-{{< /expand >}}
-
-{{< expand "App Dataset Types" "v" >}}
-
-{{< include file="/static/includes/apps/AppsDatasets.md" >}}
-
-{{< /expand >}}
-
-{{< expand "Apps General Settings" "v" >}}
-
-{{< include file="/static/includes/apps/AppsDockerCompose.md" >}}
-
-{{< /expand >}}
-
-{{< expand "Custom Apps" "v" >}}
-
-{{< include file="/static/includes/apps/CustomAppIntro.md" >}}
-
-{{< include file="/static/includes/apps/AppsCustomApp.md" >}}
-
-{{< /expand >}}
-
-{{< expand "App Directory Services" "v" >}}
-
-{{< include file="/static/includes/apps/AppsDirectoryService.md" >}}
-
-{{< /expand >}}
+{{< include file="/static/includes/apps/AppsBestPractices.md" >}}
 
 For more information on screens and screen functions, refer to the UI Reference article on [Apps Screens]({{< relref "SCALE/SCALEUIReference/Apps/_index.md" >}}).
 
