@@ -19,7 +19,7 @@ App storage ixVolumes present in ix-applications are cloned under the ix-apps da
 
 The app data retained in ix-applications enables TrueNAS to revert to 24.04 with functional applications.
 TrueNAS 24.10 or newer does not use app data in the ix-applications dataset.
-It can be safely removed after fully migrating to 24.10, but apps will not function if reverted to 24.04 without the ix-applications dataset.
+It can be safely removed after fully migrating to 24.10, but apps do not function if reverted to 24.04 without the ix-applications dataset.
 {{< /hint >}}
 
 **ixVolume Datasets**
