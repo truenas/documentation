@@ -1,13 +1,13 @@
 ---
-title: "Virtual Machines"
-description: "Describes the fields in the Virtual Machines screen in TrueNAS CORE."
+title: "Virtual Machines (Obsolete)"
+description: "Describes the fields in the obsolete Virtual Machines screen in TrueNAS 13.3."
 weight: 10
 tags:
 - vm
 - plugins
 ---
 
-{{< hint type=important title="Unsupported Feature" >}}
+{{< hint type=danger title="Obsolete Features" >}}
 {{< include file="/static/includes/COREFeatureSupport.md" >}}
 {{< /hint >}}
 

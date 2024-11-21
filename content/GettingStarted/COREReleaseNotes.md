@@ -21,7 +21,7 @@ aliases:
 
 {{< include file="/static/includes/ReleaseScheduleWarning.md" >}}
 
-{{< releaselist name=core-releases defaultTab=3 >}}
+{{< releaselist name=core-releases defaultTab=2 >}}
 
 ## Upgrade Notes
 
@@ -74,6 +74,20 @@ The items listed here represent new feature flags implemented since the previous
 {{< /truetable >}}
 
 For more details on feature flags see [OpenZFS Feature Flags](https://openzfs.github.io/openzfs-docs/Basic%20Concepts/Feature%20Flags.html) and [OpenZFS zpool-feature.7](https://openzfs.github.io/openzfs-docs/man/7/zpool-features.7.html).
+
+## 13.3-U1 Changelog
+
+**November 21, 2024**
+
+iXsystems is pleased to release TrueNAS 13.3-U1!
+
+This is a maintenance release to address a few security concerns:
+
+* Resolve a vulnerability involving python deserialization ([CVE-2020-22083](https://github.com/advisories/GHSA-j66q-qmrc-89rx)).
+
+* Address a security vulnerability with the jails system (iocage).
+
+For other known issues in 13.3 releases, please see the <a href="https://ixsystems.atlassian.net/issues/?filter=10583" target="_blank">13.3-RELEASE Ongoing Issues</a> list available from Jira.
 
 ## 13.3-RELEASE Changelog
 
