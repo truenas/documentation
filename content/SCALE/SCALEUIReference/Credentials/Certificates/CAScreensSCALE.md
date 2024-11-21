@@ -8,7 +8,7 @@ tags:
  - certificates
 ---
 
-The **Certificate Authorities** widget on the **Credentials > Certificates** screen displays certificate authorities(CAs) added to SCALE, and allows you to add new CAs, or download, delete, or edit the name of an existing CA. 
+The **Certificate Authorities** widget on the **Credentials > Certificates** screen displays certificate authorities(CAs) added to TrueNAS, and allows you to add new CAs, or download, delete, or edit the name of an existing CA. 
 
 ![CertificateAuthoritiesWidgetNoCAs](/images/SCALE/Credentials/CertificateAuthoritiesWidgetNoCAs.png "Certificate Authorities Widget No CAs")
 
@@ -21,7 +21,7 @@ Each CA listed on the widget is a link that opens the **Edit CA** screen.
 **Add** opens the **[Add CA](#add-ca-wizard-screens)** wizard that steps you through setting up a certificate authority (CA) that certifies the ownership of a public key by the named subject of the certificate. 
 
 ## Add CA Wizard Screens
-The **Add CA** wizard screens step users through configuring a new certificate authority on TrueNAS SCALE. 
+The **Add CA** wizard screens step users through configuring a new certificate authority on TrueNAS. 
 The wizard has five different configuration screens, one for each step in the CA configuration process:
 
 1 **[Identifier and Type](#identifier-and-type-options)**
@@ -149,4 +149,4 @@ For **Import CA** type, the screen displays **Type** and **Certificate**.
 
 ![AddCAConfirmOptions](/images/SCALE/Credentials/AddCAConfirmOptions.png "Add CA Confirm Options")
 
-**Save** adds the certificate to SCALE. **Back** returns to previous screens to make changes before you save. **Next** advances to the next screen in the sequence to return to **Confirm Options**.
+**Save** adds the certificate to TrueNAS. **Back** returns to previous screens to make changes before you save. **Next** advances to the next screen in the sequence to return to **Confirm Options**.

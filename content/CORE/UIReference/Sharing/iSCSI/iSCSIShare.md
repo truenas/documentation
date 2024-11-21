@@ -3,7 +3,7 @@ title: "iSCSI Shares"
 redirect: "https://www.truenas.com/docs/core/13.0/uireference/sharing/iscsi/iscsishare/"
 description: "Describes how to configure iSCSI block share on TrueNAS CORE."
 weight: 10
-alias: /core/sharing/iscsi/iscsishare/
+aliases: /core/sharing/iscsi/iscsishare/
 tags:
 - iscsi
 ---

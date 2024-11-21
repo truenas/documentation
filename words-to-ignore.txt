@@ -2138,3 +2138,5 @@ InstallAppResourceConfigurationGPU
 geekDocHidden
 printview
 coretutorials
+tn-openstorage-logo
+MS-FSA

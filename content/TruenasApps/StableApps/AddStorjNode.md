@@ -1,11 +1,12 @@
 ---
 title: "Storj"
-description: "Provides information on setting up the Storj node app on your TrueNAS SCALE system."
+description: "Provides information on setting up the Storj node app on your TrueNAS system."
 weight: 
 aliases:
  - /scale/scaletutorials/apps/addstorjnode/
  - /scale/scaletutorials/apps/chartapps/addstorjnode/
  - /scale/scaletutorials/apps/stableapps/addstorjnode/
+ - /truenasapps/communityapps/addstorjnode/
 tags:
 - apps
 - crypto

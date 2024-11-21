@@ -34,7 +34,7 @@ Include system debug and screenshot files to also speed up the issue resolution.
 {{< enterprise >}}
 When an Enterprise license is applied to the system, the **Report a bug** tab has additional environment and contact information fields for sending bug reports directly to iXsystems.
 
-{{< trueimage src="/images/SCALE/Dashboard/FeedbackWindowEnterpriseBugReport.png" alt="SCALE Enterprise Bug Report Form" id="SCALE Enterprise Bug Report Form" >}}
+{{< trueimage src="/images/SCALE/Dashboard/FeedbackWindowEnterpriseBugReport.png" alt="TrueNAS Enterprise Bug Report Form" id="TrueNAS Enterprise Bug Report Form" >}}
 
 Filling out the entire form with precise details and accurate contact information ensures a prompt response from the iXsystems Customer Support team.
 {{< /enterprise >}}

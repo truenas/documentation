@@ -1,6 +1,6 @@
 ---
 title: "Managing Certificate Authorities"
-description: "Provides basic instructions on adding and managing certificate authorities (CAs) in SCALE."
+description: "Provides basic instructions on adding and managing certificate authorities (CAs) in TrueNAS."
 weight: 20
 aliases:
 tags:

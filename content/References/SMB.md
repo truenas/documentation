@@ -11,6 +11,8 @@ TrueNAS uses [Samba](https://www.samba.org/) to share pools using Microsoft SMB 
 SMB is built into the Windows and macOS operating systems and most Linux and BSD systems pre-install an SMB
 client to provide support for the SMB protocol.
 
+The maximum file size for a write request is determined from [MS-FSA section 2.1.5.4 (Server Requests a Write)](https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-fsa/fbf656c3-b897-4b9c-abfd-7c8d876d77a1) and translates to just under 16 (15.999999) TiB.
+
 The SMB protocol supports many different types of configuration scenarios, ranging from the simple to complex.
 The complexity of the scenario depends upon the types and versions of the client operating systems that connects to the share, whether the network has a Windows server, and whether Active Directory is used.
 Depending on the authentication requirements, it might be necessary to create or import users and groups.
@@ -31,8 +33,6 @@ By default, Samba disables NTLMv1 authentication for security.
 Standard configurations of Windows XP and some configurations of later clients like Windows 7 are not able to connect with NTLMv1 disabled.
 [Security guidance for NTLMv1 and LM network authentication](https://support.microsoft.com/en-us/help/2793313/security-guidance-for-ntlmv1-and-lm-network-authentication) has information about the security implications and ways to enable NTLMv2 on those clients.
 If changing the client configuration is not possible, enable NTLMv1 authentication by selecting the **NTLMv1 auth** option in the SMB service configuration screen.
-
-To view all active SMB connections and users, open an SSH or local console shell in CORE.
 
 Most configuration scenarios require each user to have their own user account and to authenticate before accessing the share.
 This allows the administrator to control access to data, provide appropriate permissions to that data, and to determine who accesses and modifies stored data.

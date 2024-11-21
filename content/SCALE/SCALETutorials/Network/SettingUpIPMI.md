@@ -1,6 +1,6 @@
 ---
 title: "Setting Up IPMI"
-description: "Guides you through setting up Intelligent Platform Management Interface (IPMI) on TrueNAS SCALE."
+description: "Guides you through setting up Intelligent Platform Management Interface (IPMI) on TrueNAS."
 weight: 50
 tags:
 - network
@@ -34,6 +34,6 @@ We recommend setting a strong IPMI password. IPMI passwords must include at leas
 ## IPMI Alerts
 
 Use the [Alert Settings Screen]({{< relref "AlertsSettingsServiceScreen.md" >}}) under the **Hardware** category to adjust IPMI alerts.
-Configure the minimum warning level and frequency to display IPMI alerts in the TrueNAS SCALE UI.
+Configure the minimum warning level and frequency to display IPMI alerts in the TrueNAS UI.
 
 {{< include file="/static/includes/IPMISELAlert.md" >}}

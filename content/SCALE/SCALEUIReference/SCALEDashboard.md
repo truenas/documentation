@@ -1,6 +1,6 @@
 ---
 title: Dashboard
-description: "Explains the main dashboard information cards (widgets) and provides basic information on synchronizing the system and SCALE server times, and on customizing the Dashboard display."
+description: "Explains the main dashboard information cards (widgets) and provides basic information on synchronizing the system and TrueNAS server times, and on customizing the Dashboard display."
 weight: 4
 tags:
 - dashboard
@@ -75,7 +75,7 @@ The widget shows gauges and graphs showing CPU statistics:
 * **CPU Model** widget shows the CPU model.
 * **CPU Usage** gauge that shows the average percentage of usage for the CPU cores.
 * **CPU Recent Usage** gauge that shows recent CPU usage updated in realtime, and includes the CPU model number, number of cores and physical cores.
-* **CPU Usage per CORE** bar graph that shows CPU usage per core.
+* **CPU Usage per Core** bar graph that shows CPU usage per core.
 * **CPU Temperature per Core** bar graph that shows CPU **Usage** in blue and **Temperature** in orange.
 {{< /expand >}}
 

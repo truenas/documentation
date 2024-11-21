@@ -27,7 +27,7 @@ The **Kerberos Keytab** widget header opens the **Kerberos Keytabs** screen.
 
 ## Kerberos Keytab Screen
 
-The **Kerberos Realms** screen displays a list view of realms configured on your SCALE system.
+The **Kerberos Realms** screen displays a list view of realms configured on your TrueNAS system.
 
 ![KerberosKeytabsScreen](/images/SCALE/Credentials/KerberosKeytabsScreen.png "Kerberos Keytabs Screen")
 
@@ -47,6 +47,6 @@ The settings found on the **Add Kerberos Keytab** and **Edit Kerberos Keytab** s
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Name** | Enter a name for this Keytab. If configured, SCALE populates this field with what it detects in Active Directory. |
+| **Name** | Enter a name for this Keytab. If configured, TrueNAS populates this field with what it detects in Active Directory. |
 | **Kerberos Keytab** | Browse to the keytab file to upload. |
 {{< /truetable >}}

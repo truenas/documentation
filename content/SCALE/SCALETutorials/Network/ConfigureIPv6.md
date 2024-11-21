@@ -10,22 +10,22 @@ tags:
 - ipv6
 ---
 
-TrueNAS SCALE provides the option to configure network interfaces using either IPv4 or IPv6 addresses.
+TrueNAS provides the option to configure network interfaces using either IPv4 or IPv6 addresses.
 IPv4 networks cannot see or communicate with an IPv6 website or network unless a gateway or some other implementation is configured to allow it.
 See [Implementing IPv6](https://www.truenas.com/docs/references/IPv6/) for more information.
 
 ## Configuring IPv6 Addresses
-After configuring your network infrastructure for IPv6, assign the IP addresses for your SCALE system.
-Use the SCALE UI to configure your network settings.
-If setting SCALE up for the first time after a clean install, use the Console Setup menu to enter IPv6 addresses.
+After configuring your network infrastructure for IPv6, assign the IP addresses for your TrueNAS system.
+Use the TrueNAS UI to configure your network settings.
+If setting TrueNAS up for the first time after a clean install, use the Console Setup menu to enter IPv6 addresses.
 
 
 ### Configuring an Interface Using the Console Setup Menu
-If configuring your network settings using the Console Setup menu for the first time after installing SCALE, first configure the interface address.
+If configuring your network settings using the Console Setup menu for the first time after installing TrueNAS, first configure the interface address.
 Type 1, then press <kbd>Enter</kbd>.
 Enter **eno1** in **name**, then the IPv6 address in **aliases**.
 
-{{< trueimage src="/images/SCALE/Network/ConfigureIPv6InterfaceWithConsoleSetupMenu.png" alt="SCALE Console Setup Menu Edit Interface" id="SCALE Console Setup Menu Edit Interface" >}}
+{{< trueimage src="/images/SCALE/Network/ConfigureIPv6InterfaceWithConsoleSetupMenu.png" alt="TrueNAS Console Setup Menu Edit Interface" id="TrueNAS Console Setup Menu Edit Interface" >}}
 
 Save, then select **a** to apply and **p** to make it persist. Type **q** to return to the Console Setup menu.
 
@@ -53,19 +53,19 @@ To access the UI after configuring an IPv6 address, enter the IPv6 address insid
 You cannot access the UI with the assigned host name when the system is configured on an IPv6 network.
 
 ### Configuring Dual Stacking
-SCALE supports dual-stacking IPv4 and IPv6 addresses in the same interface.
+TrueNAS supports dual-stacking IPv4 and IPv6 addresses in the same interface.
 An IPv4 network cannot see or communicate with an IPv6 network unless some gateway is configured to allow IPv6 communication.
-Dual stacking these two protocols allows SCALE to see and communicate with an all IPv6 address or website.
+Dual stacking these two protocols allows TrueNAS to see and communicate with an all IPv6 address or website.
 
 You must have IPv6 configured in your networking infrastructure.
 Add IPv6 to your network router to permit the incoming and outgoing traffic. This provides the required gateway to permit communication with this IP protocol.
-Assign a static IPv6 address and netmask, the network gateway address, and name servers to configure in SCALE.
+Assign a static IPv6 address and netmask, the network gateway address, and name servers to configure in TrueNAS.
 
 {{< hint type=info >}}
 When configuring dual stacking, the order in which you configure the two network IP protocols does not matter.
 {{< /hint >}}
 
-If IPv4 networking is already configured in SCALE, to set up dual stacking of IPv6 in the UI, go to **Network**:
+If IPv4 networking is already configured in TrueNAS, to set up dual stacking of IPv6 in the UI, go to **Network**:
 
 1. Add the IPv6 gateway information.
 
@@ -93,13 +93,13 @@ If IPv4 networking is already configured in SCALE, to set up dual stacking of IP
    Log out of that browser session, return to your other UI session.
    Both IPv4 and IPv6 addresses should show on the screen for the primary interface.
 
-After installing SCALE and using the Console Setup menu to configure system networking and set up dual stacking, add the name servers and both IP protocol default gateways in general network settings (option 2 on the menu), then add both IP address, with netmasks as aliases, on the primary network interface (option 1 on the menu).
+After installing TrueNAS and using the Console Setup menu to configure system networking and set up dual stacking, add the name servers and both IP protocol default gateways in general network settings (option 2 on the menu), then add both IP address, with netmasks as aliases, on the primary network interface (option 1 on the menu).
 
 If using the Console Setup menu to set up IPv6 on an already IPv4-configured system, add the v6 default gateway in general network, then add the IPv6 IP address with netmask as an alias on the primary interface.
 
 ### Connecting to the UI IPv6 Address
 Unlike IPv4, you must enter the IPv6 address with a square bracket preceding and following the address.
-You cannot enter the host name assigned to the SCALE system to access the UI.
+You cannot enter the host name assigned to the TrueNAS system to access the UI.
 For example, enter <code>[<i>ffff:ff:59f8:100::12</i>]</code> into the URL field of the browser window to access the UI.
 
 ## Using IPv6 with Sharing Protocols

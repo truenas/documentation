@@ -1,6 +1,6 @@
 ---
 title: "Setting Up System Email"
-description: "Provides instructions on configuring email using SMTP or GMail OAuth and setting up the email alert service in SCALE."
+description: "Provides instructions on configuring email using SMTP or GMail OAuth and setting up the email alert service in TrueNAS."
 weight: 30
 tags:
  - email
@@ -90,7 +90,7 @@ Click **Save**.
 
 ### Configuring Email Using GMail OAuth
 
-To set up the system email using **Gmail OAuth**, you need to log in to your Gmail account through the TrueNAS SCALE web UI.
+To set up the system email using **Gmail OAuth**, you need to log in to your Gmail account through the TrueNAS web UI.
 
 {{< expand "Click here for more information" "v" >}}
 Click the **GMail OAuth** radio button.

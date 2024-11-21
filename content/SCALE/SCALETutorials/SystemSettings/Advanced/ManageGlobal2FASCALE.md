@@ -2,7 +2,7 @@
 title: "Managing Global 2FA (Two-Factor Authentication)"
 description: "Provides information on setting up and managing global two-factor authentication, and logging in with it enabled."
 weight: 70
-alias:
+aliases:
  - /scale/scaletutorials/credentials/2fascale
 tags:
  - 2fa
@@ -20,7 +20,7 @@ TrueNAS offers global 2FA to ensure that entities cannot use a compromised admin
 
 {{< include file="/static/includes/AdvancedSettingsWarningSCALE.md" >}}
 
-## About SCALE 2FA
+## About TrueNAS 2FA
 To use 2FA, you need a mobile device with the current time and date, and an authenticator app installed.
 We recommend Google Authenticator.
 You can use other authenticator applications, but you must confirm the settings and QR codes generated in TrueNAS are compatible with your particular app before permanently activating 2FA.

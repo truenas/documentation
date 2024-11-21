@@ -5,7 +5,7 @@ Both controllers must be powered on and ready before you configure network setti
 
 You must disable the failover service before you can configure network settings!
 
-Only configure network settings on controller 1! When ready to sync to peer, SCALE applies settings to controller 2 at that time.
+Only configure network settings on controller 1! When ready to sync to peer, TrueNAS applies settings to controller 2 at that time.
 {{< /hint >}}
 
 {{< include file="/static/includes/EnterpriseHANetworkIPs.md" >}}
@@ -16,7 +16,7 @@ To configure network settings on controller 1:
    Go to **System > Services** locate the **Failover** service and click edit.
    Select **Disable Failover** and click **Save**.
 
-2. [Edit the global network settings]({{< relref "AddingGlobalConf.md" >}}) to add the controller and virtual hostnames and update any other network settings.
+2. [Edit the global network settings]({{< relref "ManagingGlobalConfig.md" >}}) to add the controller and virtual hostnames and update any other network settings.
 
 3. Edit the primary network interface to add failover settings.
    Go to **Network** and click on the primary interface **eno1** to open the **Edit Interface** screen for this interface.

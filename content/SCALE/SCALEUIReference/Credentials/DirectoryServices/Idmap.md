@@ -22,7 +22,7 @@ Misconfiguration can impact system operation.
 
 ## Idmap Widget
 
-The **Idmap** widget in the **Advanced Settings** on the **Directory Services** screen displays idmaps added to SCALE.
+The **Idmap** widget in the **Advanced Settings** on the **Directory Services** screen displays idmaps added to TrueNAS.
 
 ![IdmapSCALE](/images/SCALE/Credentials/IdmapSCALE.png "Idmap Widget")
 
@@ -34,7 +34,7 @@ The **Idmap** widget header opens the **Idmap** screen.
 
 ## Idmap Screen
 
-The **Idmap** screen displays a list view of idmaps configured on your SCALE system.
+The **Idmap** screen displays a list view of idmaps configured on your TrueNAS system.
 
 ![IdmapScreen](/images/SCALE/Credentials/IdmapScreen.png "Idmap Screen")
 
@@ -138,7 +138,7 @@ The **Add Idmap** screen with **Name** set to **Custom Value** and **Idmap Backe
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Certificate** | Select the certificate of the Active Directory server if SSL connections are used. When no certificates are available, move to the Active Directory server and create a Certificate Authority and certificate. Import the certificate to SCALE using the **Credentials > Certificates** screen widgets. |
+| **Certificate** | Select the certificate of the Active Directory server if SSL connections are used. When no certificates are available, move to the Active Directory server and create a Certificate Authority and certificate. Import the certificate to TrueNAS using the **Credentials > Certificates** screen widgets. |
 | **Manage Certificates** | Opens the **Credentials > Certificates** screen. When finished on the **Certificates** screen, navigate back to **Directory Services**, click **Show** and confirm to display the **Idmap** widget again. Click **Add** to begin the configuration again. |
 {{< /truetable >}}
 

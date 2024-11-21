@@ -32,7 +32,7 @@ A properly-configured TrueNAS system can tolerate multiple storage device failur
 ### Storage Device Quantities
 
 TrueNAS can manage many storage devices as part of a single storage array.
-With more enterprise-level tuning in the mature 13.0 release and similar tuning in the upcoming SCALE Cobia release, TrueNAS can manage as many as 1,250 drives in a single storage array!
+With more enterprise-level tuning, TrueNAS can manage as many as 1,250 drives in a single storage array!
 
 ### Storage Media
 
@@ -162,7 +162,7 @@ The recommended size for the TrueNAS boot volume is 8 GB, but 16 or 32 GB (or a 
 TrueNAS systems come in all shapes and sizes.
 Many users want external access to all storage devices for efficient replacement if issues occur.
 Most hot-swap drive bays need a proprietary drive tray into which you install each drive.
-These bay and tray combinations often include convenient features like activity and identification lights to visualize activity and illuminate a failed drive with sesutil(8) [for CORE](https://www.freebsd.org/cgi/man.cgi?query=sesutil&sektion=8) or [for SCALE](https://manpages.debian.org/testing/sg3-utils/sg3_utils.8.en.html).
+These bay and tray combinations often include convenient features like activity and identification lights to visualize activity and illuminate a failed drive with sesutil(8) [for FreeBSD-based TrueNAS versions](https://www.freebsd.org/cgi/man.cgi?query=sesutil&sektion=8) or [for Linux-based TrueNAS versions](https://manpages.debian.org/testing/sg3-utils/sg3_utils.8.en.html).
 TrueNAS Mini systems ship with four or more hot-swap bays.
 TrueNAS R-Series systems can support dozens of drives in their head units and external expansion shelves.
 Pre-owned or repurposed hardware is popular among TrueNAS users.  
@@ -172,7 +172,7 @@ Note that hot-swapping PCIe NVMe devices is not currently supported.
 {{< /expand >}}
 
 {{< hint type=important >}}
-TrueNAS SCALE does not officially support T10-DIF drives. Users on our forums have developed [a workaround for using T10-DIF drives in TrueNAS SCALE](https://www.truenas.com/community/threads/troubleshooting-disk-format-warnings-in-bluefin.106051/), but using unsupported storage devices imposes data-loss risks.
+TrueNAS does not officially support T10-DIF drives. Users on our forums have developed [a workaround for using T10-DIF drives in TrueNAS](https://www.truenas.com/community/threads/troubleshooting-disk-format-warnings-in-bluefin.106051/), but using unsupported storage devices imposes data-loss risks.
 {{< /hint >}}
 
 ### Storage Device Sizing
@@ -197,7 +197,7 @@ Start a long HDD self-test (`smartctl -t long /dev/`). After the test completes 
 * Check pending sector reallocations (`smartctl -a /dev/ | grep Current_Pending_Sector`)
 * Check reallocated sector count (`smartctl -a /dev/ | grep Reallocated_Sector_Ct`)
 * Check the UDMA CRC errors (`smartctl -a /dev/ | grep UDMA_CRC_Error_Count`)
-* Check HDD and SSD write latency consistency (`diskinfo -wS ` for CORE or `iostat` or `fio` for SCALE systems) *Unformatted drives only!*
+* Check HDD and SSD write latency consistency (`diskinfo -wS ` for FreeBSD-based or `iostat` or `fio` for Linux-based TrueNAS systems) *Unformatted drives only!*
 * Check HDD and SSD hours (`smartctl -a /dev/ | grep Power_On_Hours`)
 * Check NVMe percentage used (`nvmecontrol logpage -p 2 nvme0 | grep “Percentage used”`)
 
@@ -259,7 +259,7 @@ In general, try to keep drive temperatures below the drive specification provide
 
 ### Memory Sizing
 
-TrueNAS has higher memory requirements than many Network Attached Storage solutions for good reason: it shares [dynamic random-access memory](https://en.wikipedia.org/wiki/Dynamic_random-access_memory) (DRAM or simply RAM) between sharing services, add-on plugins and/or jails (in CORE) or apps (in SCALE), virtual machines, and sophisticated read caching.
+TrueNAS has higher memory requirements than many Network Attached Storage solutions for good reason: it shares [dynamic random-access memory](https://en.wikipedia.org/wiki/Dynamic_random-access_memory) (DRAM or simply RAM) between sharing services, jails or apps, virtual machines, and sophisticated read caching.
 RAM rarely goes unused on a TrueNAS system, and enough RAM is vital to maintaining peak performance.
 You should have 8 GB of RAM for basic TrueNAS operations with up to eight drives. Other use cases each have distinct RAM requirements:
 

@@ -1,6 +1,6 @@
 ---
 title: "Advanced Settings"
-description: "Tutorials for configuring advanced system settings in TrueNAS SCALE."
+description: "Tutorials for configuring advanced system settings in TrueNAS."
 geekdocCollapseSection: true
 weight: 30
 aliases:
@@ -19,9 +19,9 @@ keywords:
 
 {{< include file="/static/includes/AdvancedSettingsWarningSCALE.md" >}}
 
-{{< trueimage src="/images/SCALE/SystemSettings/SystemAdvancedScreen.png" alt="SCALE Advanced Settings Screen" id="SCALE Advanced Settings Screen" >}}
+{{< trueimage src="/images/SCALE/SystemSettings/SystemAdvancedScreen.png" alt="TrueNAS Advanced Settings Screen" id="TrueNAS Advanced Settings Screen" >}}
 
-{{< trueimage src="/images/SCALE/SystemSettings/SystemAdvancedScreen2.png" alt="SCALE Advanced Settings Screen" id="SCALE Advanced Settings Screen" >}}
+{{< trueimage src="/images/SCALE/SystemSettings/SystemAdvancedScreen2.png" alt="TrueNAS Advanced Settings Screen" id="TrueNAS Advanced Settings Screen" >}}
 
 {{<include file="/static/includes/addcolumnorganizer.md">}}
 
@@ -42,11 +42,11 @@ Click **Configure** to open the **Audit** configuration screen and [manage stora
 
 Use **Add** on the **Sysctl** widget to add a tunable that configures a kernel module parameter at runtime.
 
-![AdvancedSysctlWidgetNoSysctl](/images/SCALE/SystemSettings/AdvancedSysctlWidget.png "SCALE Advanced Settings Sysctl Widget")
+![AdvancedSysctlWidgetNoSysctl](/images/SCALE/SystemSettings/AdvancedSysctlWidget.png "TrueNAS Advanced Settings Sysctl Widget")
 
 The **Add Sysctl** or **Edit Sysctl** configuration screens display the settings.
 
-![AddSysctlConfigScreens](/images/SCALE/SystemSettings/AddSysctlConfigScreen.png "SCALE Add Sysctl Screen")
+![AddSysctlConfigScreens](/images/SCALE/SystemSettings/AddSysctlConfigScreen.png "TrueNAS Add Sysctl Screen")
 
 Enter the sysctl variable name in **Variable**. Sysctl tunables configure kernel module parameters while the system runs and generally take effect immediately.
 
@@ -62,7 +62,7 @@ Click **Save**.
 The system dataset stores core files for debugging and keys for encrypted pools.
 It also stores Samba4 metadata, such as the user and group cache and share-level permissions.
 
-![AdvancedSystemStorageWidget](/images/SCALE/SystemSettings/AdvancedSystemStorageWidget.png "SCALE Advanced System Dataset Pool Widget")
+![AdvancedSystemStorageWidget](/images/SCALE/SystemSettings/AdvancedSystemStorageWidget.png "TrueNAS Advanced System Dataset Pool Widget")
 
 **Configure** opens the **Storage Settings** configuration screen.
 
@@ -72,7 +72,7 @@ If the system has one pool, TrueNAS configures that pool as the system dataset p
 If your system has more than one pool, you can set the system dataset pool using the **Select Pool** dropdown.
 Users can move the system dataset to an unencrypted pool, or an encrypted pool without passphrases.
 
-![SystemDatasetPoolConfigScreen](/images/SCALE/SystemSettings/SystemStorageConfigScreen.png "SCALE Advanced Settings System Dataset Pool Screen")
+![SystemDatasetPoolConfigScreen](/images/SCALE/SystemSettings/SystemStorageConfigScreen.png "TrueNAS Advanced Settings System Dataset Pool Screen")
 
 Users can move the system dataset to a key-encrypted pool, but cannot change the pool encryption type afterward.
 If the encrypted pool already has a passphrase set, you cannot move the system dataset to that pool.
@@ -81,17 +81,17 @@ If the encrypted pool already has a passphrase set, you cannot move the system d
 
 The **Replication** widget displays the number of replication tasks that can execute simultaneously on the system. It allows users to adjust the maximum number of replication tasks the system can execute simultaneously.
 
-![SystemAdvancedSettingsReplicationWidget](/images/SCALE/SystemSettings/SystemAdvancedSettingsReplicationWidget.png "SCALE Advanced Settings Replication Widget")
+![SystemAdvancedSettingsReplicationWidget](/images/SCALE/SystemSettings/SystemAdvancedSettingsReplicationWidget.png "TrueNAS Advanced Settings Replication Widget")
 
 Click **Configure** to open the **Replication** configuration screen.
 
-![AdvancedSettingsReplicationConfigScreen](/images/SCALE/SystemSettings/AdvancedSettingsReplicationConfigScreen.png "SCALE Advanced Settings Replication Screen")
+![AdvancedSettingsReplicationConfigScreen](/images/SCALE/SystemSettings/AdvancedSettingsReplicationConfigScreen.png "TrueNAS Advanced Settings Replication Screen")
 
 Enter a number for the maximum number of simultaneous replication tasks you want to allow the system to process and click **Save**.
 
 ## Managing Allowed IP Addresses
 
-Use the **System > Advanced Settings** screen **Allowed IP Addresses** configuration screen to restrict access to the TrueNAS SCALE web UI and API.
+Use the **System > Advanced Settings** screen **Allowed IP Addresses** configuration screen to restrict access to the TrueNAS web UI and API.
 
 Entering an IP address limits access to the system to only the address(es) entered here. To allow unrestricted access to all IP addresses, leave this list empty.
 

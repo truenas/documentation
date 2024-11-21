@@ -5,6 +5,7 @@ weight:
 aliases:
  - /scale/scaletutorials/apps/chartapps/prometheusapp/
  - /scale/scaletutorials/apps/stableapps/prometheusapp/
+ - /truenasapps/communityapps/prometheusapp/
 tags:
 - apps
 - reporting
@@ -27,7 +28,7 @@ TrueNAS makes installing Prometheus easy, but you must use the Prometheus web po
 
 ## Before You Begin
 The TrueNAS Prometheus app installs, completes the initial configuration, then starts the Prometheus Rule Manager.
-When updates become available, SCALE alerts and provides easy updates.
+When updates become available, TrueNAS alerts and provides easy updates.
 
 Before installing the TrueNAS Prometheus app, review the [Prometheus Configuration documentation](https://prometheus.io/docs/prometheus/latest/configuration/configuration/) and list of feature flags and environment variables to see if you want to include any during installation.
 You can configure environment variables at any time after deploying the application.
@@ -108,7 +109,7 @@ Select **WAL Compression** to enable compressing the write-ahead log.
 
 {{< trueimage src="/images/SCALE/Apps/InstallPrometheusConfigAddArgEnvVar.png" alt="Add Argument or Environment Variable" id="Add Argument or Environment Variable" >}}
 
-Add Prometheus environment variables in SCALE using the **Additional Environment Variables** option.
+Add Prometheus environment variables in TrueNAS using the **Additional Environment Variables** option.
 Click **Add** for each variable you want to add.
 Enter the Prometheus flag in **Name** and desired value in **Value**. For a complete list see Prometheus documentation on [Feature Flags](https://prometheus.io/docs/prometheus/latest/feature_flags/).
 

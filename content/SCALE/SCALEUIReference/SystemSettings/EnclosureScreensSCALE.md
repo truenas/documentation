@@ -99,7 +99,7 @@ Disk drive information includes the system pool, disk status, hardware details, 
 {{< trueimage src="/images/SCALE/SystemSettings/ViewEnclosureDiskInfo.png" alt="View Enclosure Disk Information" id="View Enclosure Disk Information" >}}
 
 **Identify** on disk detail screens turns on the LED indicator located on a physical drive bay in the system server.
-This helps to identify the physical drive bay that corresponds to the SCALE identification number for that drive.
+This helps to identify the physical drive bay that corresponds to the TrueNAS identification number for that drive.
 Select the drive on the image and then click **Identify**.
 Go to the location of the system server to locate the drive bay with the LED indication turned on, then check the drive location on the **View Enclosure** screen.
 

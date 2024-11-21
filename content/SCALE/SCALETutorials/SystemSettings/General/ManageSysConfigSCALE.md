@@ -1,6 +1,6 @@
 ---
 title: "Managing the System Configuration"
-description: "Provides information on downloading your TrueNAS SCALE configuration to back up system settings, uploading a new configuration file, and resetting back to default settings."
+description: "Provides information on downloading your TrueNAS configuration to back up system settings, uploading a new configuration file, and resetting back to default settings."
 weight: 15
 aliases:
 tags:
@@ -14,7 +14,7 @@ keywords:
 - hybrid storage
 ---
 
-TrueNAS SCALE allows users to manage the system configuration by uploading or downloading configurations, or by resetting the system to the default configuration. 
+TrueNAS allows users to manage the system configuration by uploading or downloading configurations, or by resetting the system to the default configuration. 
 
 ## System Configuration Options
 The **Manage Configuration** option on the **System > General Settings** screen provides three options:
@@ -24,12 +24,12 @@ The **Manage Configuration** option on the **System > General Settings** screen 
 * **Reset to Defaults** that resets system configuration settings back to factory settings.
 
 ### Downloading the File
-The **Download File** option downloads your TrueNAS SCALE current configuration to the local machine.
+The **Download File** option downloads your TrueNAS current configuration to the local machine.
 
 {{< include file="/static/includes/DownloadSystemConfigFileSCALE.md" >}}
 
 ### Uploading the File
-The **Upload File** option gives users the ability to replace the current system configuration with any previously saved TrueNAS SCALE configuration file.
+The **Upload File** option gives users the ability to replace the current system configuration with any previously saved TrueNAS configuration file.
 
 {{< hint type=warning >}}
 All passwords are reset if the uploaded configuration file was saved without selecting **Save Password Secret Seed**.
@@ -53,11 +53,11 @@ The **Reset to Defaults** option resets the system configuration to factory sett
 After the configuration resets, the system restarts and users must set a new login password.
 
 ### Backing Up the Config File
-SCALE does not automatically back up the system configuration file to the system dataset.
+TrueNAS does not automatically back up the system configuration file to the system dataset.
 
 Users who want to schedule an automatic backup of the system configuration file should:
 1. [Set up TrueCommand](https://www.truenas.com/docs/truecommand/tcgettingstarted/install/).
-2. [Add their SCALE system](https://www.truenas.com/docs/truecommand/tcgettingstarted/connectingtruenas/).
+2. [Add their TrueNAS system](https://www.truenas.com/docs/truecommand/tcgettingstarted/connectingtruenas/).
 3. Create and schedule the [configuration file backup](https://www.truenas.com/docs/truecommand/userguide/systemmanagement/truenasconfigmanage/#create-a-config-backup).
 
-Users can manually back up the SCALE config file by downloading and saving the file to a location that is automatically backed up.
+Users can manually back up the TrueNAS config file by downloading and saving the file to a location that is automatically backed up.

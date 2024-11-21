@@ -8,6 +8,7 @@ aliases:
  - /scale/scaleuireference/network/openvpn/
  - /scale/scaletutorials/apps/chartapps/installwgeasyapp/
  - /scale/scaletutorials/apps/stableapps/installwgeasyapp/
+ - /truenasapps/communityapps/installwgeasyapp/
 tags:
 - vpn
 - apps
