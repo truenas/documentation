@@ -2,6 +2,7 @@
 title: "Feature Deprecations"
 description: "Notes about CORE features that are deprecated and either receive no further updates or are scheduled for removal from TrueNAS."
 weight: 4
+aliases:
 ---
 
 As part of security hardening and improving feature maintainability, there are occasions when TrueNAS features must be deprecated.
@@ -18,13 +19,14 @@ Beginning in CORE 13.0-U6, the CORE web interface generates an alert when the de
 Beginning in CORE 13.0-U6, Enterprise customers with the S3 service running or enabled are prevented from upgrading to the next major version.
 {{< /enterprise >}}
 
-Users should plan to migrate to a separately maintained MinIO application in TrueNAS 22.12 or newer or otherwise move any production data away from the S3 service storage location.
-Migrating from the built-in S3 service to the separately maintained application could result in an extended data migration window and potential disruption to S3 data access.
-
-See the [MinIO Plugin]({{< relref "MinIOPlugin.md" >}}) tutorial for detailed migration instructions.
+Users should plan to move any production data away from the S3 service storage location.
 
 ## SAS Multipath
 
 SAS Multipath is supported *as-is* and receives no further maintenance updates.
 While multipath situations might be detected and be generally functional in TrueNAS CORE, there is a possibility this is not available in a future TrueNAS CORE major version.
 Users should avoid creating and managing SAS multipath scenarios with TrueNAS.
+
+## Virtualization
+
+{{< include file="/static/includes/COREFeatureSupport.md" >}}

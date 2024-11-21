@@ -22,6 +22,17 @@ weight: 3
 | TBD     |                  |                      |
 {{< /truetable >}}
 
+## 13.0-U6.3
+**November 21, 2024**
+
+iXsystems is pleased to release TrueNAS CORE 13.0-U6.3!
+
+This is a maintenance release to address a few security concerns:
+
+* Resolve a vulnerability involving python deserialization ([CVE-2020-22083](https://github.com/advisories/GHSA-j66q-qmrc-89rx)).
+
+* Address a security vulnerability with the jails system (iocage).
+
 ## 13.0-U6.2
 **July 3, 2024**
 

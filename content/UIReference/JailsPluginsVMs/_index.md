@@ -1,11 +1,11 @@
 ---
-title: "Jails, Plugins and Virtual Machines"
-description: "Reference documentation for the Jails, Plugins, and Virtual Machines screens."
+title: "Jails, Plugins and Virtual Machines (Obsolete)"
+description: "Reference documentation for the obsolete Jails, Plugins, and Virtual Machines screens."
 geekdocCollapseSection: true
 weight: 130
 ---
 
-{{< hint type=note title="Unsupported Feature" >}}
+{{< hint type=danger title="Obsolete Features" >}}
 {{< include file="/static/includes/COREFeatureSupport.md" >}}
 {{< /hint >}}
 

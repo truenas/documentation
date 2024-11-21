@@ -1500,4 +1500,6 @@ regreSSHion
 coretutorials
 jailspluginsvms
 plexplugin
+deserialization
+COREFeatureSupport
 tmux
