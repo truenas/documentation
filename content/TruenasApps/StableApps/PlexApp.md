@@ -139,8 +139,8 @@ Therefore, all connections from other clients are considered to be on the extern
 If set, all other IP addresses are considered to be external to your local network.
 
 #### Adding Devices in the Container
-Plex account settings allow you to add and manage devices that connect to your media server, both on the local network you define and remotely from external network connections.
-Adding devices in the TrueNAS Plex app passes the devices through to your Plex account.
+Plex account settings allow you to add and manage devices, such as a USB TV Tunner or other similar hardware, that connect to your media server, both on the local network you define and remotely from external network connections.
+Adding devices in the TrueNAS Plex app passes devices through to your Plex account.
 Click **Add** to the right of **Devices** in the **Install Plex** wizard for each device to add.
 
 {{< trueimage src="/images/SCALE/Apps/InstallPlexConfigAddDevice.png" alt="Install Plex Add Device" id="Install Plex Add Device" >}}
