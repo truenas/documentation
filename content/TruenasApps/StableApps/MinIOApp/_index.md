@@ -51,7 +51,7 @@ Enterprise MinIO]({{< relref "/content/TruenasApps/EnterpriseApps/_index.md" >}}
 ### Before You Begin
 Before you install the **stable** version of the MinIO app:
 
-{{< include file="/static/includes/apps/AppsStableBeforeYouBegin.md" >}}
+{{< include file="/static/includes/apps/BeforeYouBeginStableApps.md" >}}
 
 {{< include file="/static/includes/apps/MinIODatasetRequirements.md" >}}
 
@@ -68,9 +68,9 @@ For optional settings, see [Understanding MinIO Wizard Settings](#understanding-
 
 {{< trueimage src="/images/SCALE/Apps/InstallMinioS3Screen.png" alt="MinIO Install Wizard Screen" id="MinIO Install Wizard Screen" >}}
 
-{{< include file="/static/includes/apps/AppsWizardAppNameAndVersion.md" >}}
+{{< include file="/static/includes/apps/InstallWizardAppNameAndVersion.md" >}}
 
-{{< include file="/static/includes/apps/AddMultipleAppInstancesAndNaming.md" >}}
+{{< include file="/static/includes/apps/MultipleAppInstancesAndNaming.md" >}}
 
 Next, enter the **MinIO Configuration** settings.
 
@@ -95,7 +95,7 @@ The following section provide more detailed explanations of the settings found i
 
 ### Application Name
 
-{{< include file="/static/includes/apps/AppsWizardAppNameAndVersion.md" >}}
+{{< include file="/static/includes/apps/InstallWizardAppNameAndVersion.md" >}}
 
 ### MinIO Configuration
 MinIO credentials establish the login credentials for the MinIO web portal and the MinIO administration user, and to enter extra arguments, or environment variables to the deployment.
@@ -131,7 +131,7 @@ Before changing ports, refer to [Default Ports](https://www.truenas.com/docs/ref
 
 The **Certificates** setting is not required for a basic configuration but is required when setting up multi-mode configurations with the Enterprise version of the MinIO app and when using MinIO as an immutable target for Veeam Backup and Replication.
 
-{{< include file="/static/includes/apps/AddAppCertificate.md" >}}
+{{< include file="/static/includes/apps/AddingAppCertificate.md" >}}
 
 To add advanced DNS settings click **Add** to the right of **DNS Options**.
 
@@ -148,7 +148,7 @@ Storage configuration uses both the default **/export** and **/data** mount path
 #### Mounting an SMB Share
 The TrueNAS MinIO app includes the option to mount an SMB share inside the container pod.
 
-{{< include file="/static/includes/AppWizardStorageSMBOption.md" >}}
+{{< include file="/static/includes/InstallWizardStorageSMBOption.md" >}}
 
 ### Resource Configuration
 

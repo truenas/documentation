@@ -45,16 +45,17 @@ All apps in the **stable** train, some **community** train apps, and all apps in
   TrueNAS systems with applications deployed that upgrade from earlier releases to 24.10 continue to see the **ix-Applications** dataset on the pool chosen for applications to use.
   New installs or systems upgrading where applications are not deployed and a pool is not chosen for apps use the hidden **ix-apps** dataset.
   Choosing the pool for apps to use, creates this dataset to store all container-related data.
-  To expose storage volumes found in the **ix-applications** dataset, take a recursive snapshot.
+  To expose storage volumes found in the ix-applications dataset, take a recursive snapshot.
   {{< /hint >}}
 
-  Some applications require specific storage volumes for configuration and other data. Apps with these requirements might indicate this in the wizard UI but refer to tutorials for specifics. 
+  Some applications require specific storage volumes for configuration and other data.
+  Apps with these requirements might indicate this in the wizard UI but refer to tutorials for specifics. 
   After configuring required storage volumes you can add storage volumes.
-  Click **Add** to select the type of storage and configure additional storage volumes for the application.
+  To configure additional storage volumes for the application, click **Add** to select the type of storage to configure.
   The three storage options are:
   * **ixVolume**
   * **Host path**
-  * **SMB share** that allows you to create a storage volume used by an SMB share. 
+  * **SMB share**
   
   An SMB share option allows you to configure a share for the application to use.
   If the application requires specific datasets or you want to allow SMB share access, configure the dataset(s) and SMB share before using the installation wizard.
@@ -64,7 +65,8 @@ All apps in the **stable** train, some **community** train apps, and all apps in
   Enter the UID for either the default user assigned to the app or the UID for the TrueNAS user created to serve as the app administrator as the user in the ACE entry and set permissions to full control.
   Failing to enable host path ACLs prevents the app from deploying!
 
-  Select **Force** to allow TrueNAS to update the application to the next version. This allows updates and writing to the storage volume if it has data in it.
+  Select **Force Flag** to allow TrueNAS to update the application to the next version.
+  This allows updates and writing to the storage volume if it has data in it.
   
 * **Resources Configuration** shows CPU and memory settings for the container pod.
    In most cases, you can accept the default settings, or you can change these settings to limit the system resources available to the application.

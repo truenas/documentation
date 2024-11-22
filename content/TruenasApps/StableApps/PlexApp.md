@@ -24,7 +24,7 @@ Before you install the Plex app:
 
   After installing the Plex app and logging into Plex through the **Web Portal** button in TrueNAS, if you have not already configured your Plex account media server, Plex shows the configuration screens to set up the media server, add libraries, and customize your Plex account.
 
-{{< include file="/static/includes/apps/AppsStableBeforeYouBegin.md" >}}
+{{< include file="/static/includes/apps/BeforeYouBeginStableApps.md" >}}
 
 * Go to **Datasets**, and select the pool or dataset where you want to add the Plex datasets.
   For example, */tank/apps/plex* or */tank/plex*.
@@ -47,18 +47,18 @@ This basic procedure covers the required Plex app settings.
 For optional settings, see [Understanding App Installation Wizard Settings](#understanding-app-installation-wizard-settings).
 {{< /hint >}}
 
-{{< include file="/static/includes/apps/AddMultipleAppInstancesAndNaming.md" >}}
+{{< include file="/static/includes/apps/MultipleAppInstancesAndNaming.md" >}}
 
 {{< include file="/static/includes/apps/LocateAndOpenInstallWizard.md" >}}
 
 {{< trueimage src="/images/SCALE/Apps/InstallPlexScreen.png" alt="Install Plex Screen" id="Install Plex Screen" >}}
 
-{{< include file="/static/includes/apps/AppsWizardAppNameAndVersion.md" >}}
+{{< include file="/static/includes/apps/InstallWizardAppNameAndVersion.md" >}}
 
 Next, enter the **Plex Configuration** settings.
 For a basic installation, you can accept the default values.
 
-{{< include file="/static/includes/apps/AppsInstallWizardTimezoneSetting.md" >}}
+{{< include file="/static/includes/apps/InstallWizardTimezoneSetting.md" >}}
 
 While logged into your Plex account, go to the [Plex **Claim Code** web page](https://www.plex.tv/claim/) to copy the **Claim Code** string provided by Plex, and then paste it into the TrueNAS **Install Plex** wizard **Claim Token** field. This authentication token provides TrueNAS access to your Plex account.
 
@@ -110,14 +110,14 @@ The following section provides more detailed explanations of the settings in eac
 
 ### Application Name Settings
 
-{{< include file="/static/includes/apps/AppsWizardAppNameAndVersion.md" >}}
+{{< include file="/static/includes/apps/InstallWizardAppNameAndVersion.md" >}}
 
 ### Plex Configuration Settings
 Plex configuration settings include setting up the server timezone, authentication to the Plex account, location of the Plex container image, local network settings, and adding devices or additional environment variables to apply to the container.
 
 {{< trueimage src="/images/SCALE/Apps/InstallPlexConfig1.png" alt="Install Plex Configuration Settings" id="Install Plex Configuration Settings" >}}
 
-{{< include file="/static/includes/apps/AppsInstallWizardTimezoneSetting.md" >}}
+{{< include file="/static/includes/apps/InstallWizardTimezoneSetting.md" >}}
 
 Authentication to the Plex account is accomplished through a [claim token provided by Plex](https://www.plex.tv/claim/).
 While signed into your Plex account, copy the token provided by Plex into the **Claim Token** field.
@@ -167,7 +167,7 @@ The default web port for Plex is **32400**.
 
 {{< include file="/static/includes/apps/AppInstallWizardNetworkConfig.md" >}}
 
-{{< include file="/static/includes/apps/AppsInstallWizardAdvancedDNSSettings.md" >}}
+{{< include file="/static/includes/apps/InstallWizardAdvancedDNSSettings.md" >}}
 
 ### Storage Configuration
 TrueNAS provides options for data and configuration storage volumes: ixVolumes and host paths.
@@ -222,19 +222,19 @@ When finished you should have the **plex** parent dataset with the child dataset
 
 #### ACL and ACE Settings
 
-{{< include file="/static/includes/apps/AppInstallWizardACLConfiguration.md" >}}
+{{< include file="/static/includes/apps/InstallWizardStorageACLConfig.md" >}}
 
 #### Mounting an SMB Share
 TrueNAS **Additional Storage** options include the ability to mount an SMB share inside the container pod.
 
-{{< include file="/static/includes/apps/AppWizardStorageSMBOption.md" >}}
+{{< include file="/static/includes/apps/InstallWizardStorageSMBOption.md" >}}
 
 ### Resource Configuration
 
 {{< trueimage src="/images/SCALE/Apps/InstallPlexResourcesConfiguration.png" alt="Resources Configuration Settings" id="Resources Configuration Settings" >}}
 
-{{< include file="/static/includes/apps/AppInstallWizardResourceConfig.md" >}}
-{{< include file="/static/includes/apps/AppsInstallWizardGPUPassthrough.md" >}}
+{{< include file="/static/includes/apps/InstallWizardResourceConfig.md" >}}
+{{< include file="/static/includes/apps/InstallWizardGPUPassthrough.md" >}}
 
 ## Troubleshooting Tips
 Before editing Plex app settings, first stop the app, and then edit settings. After saving changes, restart the app.

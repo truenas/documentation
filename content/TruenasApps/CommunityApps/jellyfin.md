@@ -116,7 +116,7 @@ The following sections provide more detailed explanations of the settings found 
 
 ### Application Name Settings
 
-{{< include file="/static/includes/AppsWizardAppNameAndVersion.md" >}}
+{{< include file="/static/includes/InstallWizardAppNameAndVersion.md" >}}
 
 ### Jellyfin Configuration Settings
 
