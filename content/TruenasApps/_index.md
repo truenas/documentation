@@ -44,37 +44,7 @@ Make sure the application is required for your specific use requirements and doe
 
 You must choose a pool before you can install an application.
 
-{{< expand "App Pool Selection" "v" >}}
-
-{{< include file="/static/includes/apps/AppsPoolOrDataset.md" >}}
-
-{{< /expand >}}
-
-{{< expand "App Dataset and File Sharing" "v" >}}
-
-{{< include file="/static/includes/apps/AppsFileSharing.md" >}}
-
-{{< /expand >}}
-
-{{< expand "Apps General Settings" "v" >}}
-
-{{< include file="/static/includes/apps/AppsDockerCompose.md" >}}
-
-{{< /expand >}}
-
-{{< expand "Custom Apps" "v" >}}
-
-{{< include file="/static/includes/apps/CustomAppIntro.md" >}}
-
-{{< include file="/static/includes/apps/AppsCustomApp.md" >}}
-
-{{< /expand >}}
-
-{{< expand "App Directory Services" "v" >}}
-
-{{< include file="/static/includes/apps/AppsDirectoryService.md" >}}
-
-{{< /expand >}}
+{{< include file="/static/includes/apps/AppsBestPractices.md" >}}
 
 For more information on screens and screen functions, refer to the UI Reference article on [Apps Screens]({{< relref "SCALE/SCALEUIReference/Apps/_index.md" >}}).
 
@@ -88,7 +58,7 @@ You must set the pool before you can add any application.
 
 We recommend keeping the application use case in mind when choosing a pool.
 Select a pool with enough space for all the applications you intend to use.
-For stability, we also recommend using SSD storage for the applications pool.
+For stability, we recommend using SSD storage for the applications pool.
 
 Select the pool and click **Save**. If you close the dialog to set the pool later, click **Configuration > Choose Pool** to set the pool.
 
