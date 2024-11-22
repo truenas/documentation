@@ -31,7 +31,7 @@ Before you install the Plex app:
   You can use either an existing pool or [create a new one]({{< relref "CreatePoolWizard.md" >}})
 
   Create the two datasets Plex uses for storage volumes:
-  * **data** for user media data storage
+  * **data** to use as the Plex data directory for database and metadata storage
   * **config** for Plex application configuration storage.
 
   You can create a dataset for log data or use a temporary directory option for log data.
@@ -182,7 +182,7 @@ This makes the **tmpfs** directory option a better choice as it creates a Linux 
 Neither directory storage option provides easy access to stored data, so if you want to store and access log data, create a dataset called **logs**.
 
 If opting to use datasets for all Plex storage volumes, create datasets to use with the host path option:
-* **data** to use as the media data storage volume.
+* **data** to use as the Plex data directory for database and metadata storage.
 * **config** to use as the Plex app configuration storage volume.
 * **logs** if you want to save and have easy access to log data.
 
