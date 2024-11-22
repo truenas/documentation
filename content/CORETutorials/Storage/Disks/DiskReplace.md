@@ -104,6 +104,8 @@ When the resilver completes, the pool status screen updates to show the new disk
 
 ## Replacing a Failed Disk with a Hot Spare
 
+{{< include file="/static/includes/HotSpareVdev.md" >}}
+
 To replace a disk in a pool with a hot spare:
 
 1. [Detach the failed disc](#detaching-a-failed-disc) to promote the hot spare.
