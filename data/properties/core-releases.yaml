@@ -8,19 +8,19 @@ majorVersions:
     name: "TrueNAS CORE 13.0"
     releaseName: "13.0"
     releases:
-      - name: "13.0-U6.2"
+      - name: "13.0-U6.3"
         type: "Enterprise"
         link: "https://www.truenas.com/docs/core/13.0/gettingstarted/corereleasenotes/"
-        releaseDate: "2024-07-03"
+        releaseDate: "2024-11-21"
         latest: true
   - lifecycle: "Current"
     name: "TrueNAS CORE 13.3"
     releaseName: "13.3"
     releases:
-      - name: "13.3-RELEASE"
+      - name: "13.3-U1"
         type: "Community"
-        link: "https://www.truenas.com/docs/core/13.3/gettingstarted/corereleasenotes/#133-release-changelog"
-        releaseDate: "2024-08-13"
+        link: "https://www.truenas.com/docs/core/13.3/gettingstarted/corereleasenotes/#133-u1-changelog"
+        releaseDate: "2024-11-21"
         latest: true
   - lifecycle: "Next"
     name: "TBD"
