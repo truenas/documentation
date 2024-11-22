@@ -26,7 +26,7 @@ Most writes are sequential, and old versions of files are not unlinked until it 
 
 ZFS has direct access to disks and bundles multiple read and write requests into transactions.
 Most file systems cannot do this, as they only have access to disk blocks.
-A transaction either completes or fails, meaning there are never [write-holes](https://blogs.oracle.com/bonwick/raid-z). A *write-hole* is a traditional parity RAID failure that applies to any stripe plus parity RAID layout like RAID4, RAID5, etc.
+A transaction either completes or fails, meaning there are never write holes. A *write-hole* is a traditional parity RAID failure that applies to any stripe plus parity RAID layout like RAID4, RAID5, etc.
 
 With ZFS, you do not need file system checker utilities.
 Because of the transactional design, any storage capacity you add immediately becomes available for writes.
