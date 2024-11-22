@@ -6,22 +6,27 @@ tags:
 - disks
 ---
 
-Hard drives or solid-state drives (SSDs) have a finite lifetime and can fail unexpectedly.
-When a disk fails in a Stripe (RAID0) pool, the entire pool has to be recreated and all data restored from backups.
-Creating non-stripe storage pools that have disk redundancy is always recommended.
+Hard drives and solid-state drives (SSDs) have a finite lifetime and can fail unexpectedly.
+When a disk fails in a Stripe (RAID0) pool, you must recreate the entire pool and restore all data backups.
+We always recommend creating non-stripe storage pools that have disk redundancy.
 
-To prevent further loss of redundancy or eventual data loss, always replace a failed disk as soon as possible!
-TrueNAS integrates new disks into a pool to restore the pool to full functionality.
+To prevent further redundancy loss or eventual data loss, always replace a failed disk as soon as possible!
+TrueNAS integrates new disks into a pool to restore it to full functionality.
 
-## Replacing a Disk
+{{< hint type=important >}}
+TrueNAS requires you to replace a disk with another disk of the same or greater capacity as a failed disk.
+You must install the disk in the TrueNAS system.
+It should not be part of an existing storage pool.
+TrueNAS wipes the data on the replacement disk as part of the process.
 
-Another disk of the same or greater capacity is required to replace a failed disk.
-This disk must be installed in the TrueNAS system, not part of an existing storage pool, and available to use as a replacement.
-The replacement process wipes any data on the replacement disk.
+Disk replacement automatically triggers a pool resilver.
+{{< /hint >}}
 
 {{< expand "Can I replace a disk in a GELI-encrypted (Legacy) pool?" "v" >}}
 Although GELI encryption is deprecated, TrueNAS implements GELI encryption during a "GELI-Encrypted (Legacy) pool" disk replacement. TrueNAS uses GELI encryption for the lifetime of that pool, even after replacement.
 {{< /expand >}}
+
+## Replacing a Failed Disk
 
 The TrueNAS **Pool** widget on the main **Dashboard** shows when a disk failure degrades a pool.
 
@@ -29,11 +34,14 @@ The TrueNAS **Pool** widget on the main **Dashboard** shows when a disk failure 
 
 Click the <i class="material-icons" aria-hidden="true" title="Settings">settings</i> on the pool card to go to the **Storage > Pools > Pool Status** screen to locate the failed disk.
 
-To replace a disk:
-1. Take the disk offline.
-2. Remove, or replace the disk.
+{{< expand "My disk is faulted. Should I replace it?" "v" >}}
+If a disk shows a faulted state, TrueNAS has detected an issue with that disk and you should replace it.
+{{< /expand >}}
+
+To replace a disk in a pool without a hot spare available:
+1. [Take the disk offline](#taking-a-failed-disk-offline).
+2. [Replace the disk](#replacing-a-failed-disk).
 3. Refresh the screen.
-4. Bring the disk online.
 
 ### Taking a Failed Disk Offline
 
@@ -66,7 +74,7 @@ When the disk status shows as **Offline**, physically remove the disk from the s
 
 {{< trueimage src="/images/CORE/Storage/StoragePoolsStatusOffline.png" alt="Offline Disk" id="Pool Status disk offline" >}}
 
-### Replacing a Disk
+### Replacing a Failed Disk
 
 If the replacement disk is not already physically added to the system, add it now.
 
@@ -90,13 +98,19 @@ When the disk wipe completes and TrueNAS starts replacing the failed disk, the *
 TrueNAS resilvers the pool during the replacement process.
 For pools with large amounts of data, resilvering can take a long time.
 
-### Bringing a New Disk Online
-
 When the resilver completes, the pool status screen updates to show the new disk, and the pool status returns to **Online**.
 
 {{< trueimage src="/images/CORE/Storage/StoragePoolsStatusReplaceComplete.png" alt="Replacement Complete" id="Pool Status disk replacement complete" >}}
 
-During the failed disk replacement process, take these actions after removing and replacing the physical disk to make that replacement disk available:
-1. Go to **Disks** and locate the offline disk
-2. Click the <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> icon for the offline disk
-3. Click **Online**.
+## Replacing a Failed Disk with a Hot Spare
+
+To replace a disk in a pool with a hot spare:
+
+1. [Detach the failed disc](#detaching-a-failed-disc) to promote the hot spare.
+2. Refresh the screen.
+3. [Recreate the hot spare VDEV](#recreating-the-hot-spare).
+
+### Detaching a Failed Disc
+
+
+### Recreating the Hot Spare
