@@ -90,12 +90,7 @@ You can add or remove this after creating the pool.
 You can add or remove this after creating the pool.
 {{< /expand >}}
 {{< expand "Hot Spare" >}}
-**Hot Spare** sets up drives as reserved to insert into **Data** vdevs when an active drive fails.
-Hot spares are temporarily used as replacements for failed drives to prevent larger pool and data loss scenarios.
-
-When a failed drive is replaced with a new drive, the hot spare reverts to an inactive state and is available again as a hot spare.
-
-When the failed drive is only detached from the pool, the temporary hot spare is promoted to a full data vdev member and is no longer available as a hot spare.
+{{< include file="/static/includes/HotSpareVdev.md" >}}
 {{< /expand >}}
 {{< expand "Metadata" >}}
 Metadata vdevs are a special allocation class used to create [Fusion Pools]({{< relref "FusionPool.md" >}}) for increased metadata and small block I/O performance.
