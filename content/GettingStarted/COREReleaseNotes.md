@@ -21,7 +21,7 @@ aliases:
 
 {{< include file="/static/includes/ReleaseScheduleWarning.md" >}}
 
-{{< releaselist name=core-releases defaultTab=3 >}}
+{{< releaselist name=core-releases defaultTab=2 >}}
 
 ## Upgrade Notes
 
@@ -74,6 +74,33 @@ The items listed here represent new feature flags implemented since the previous
 {{< /truetable >}}
 
 For more details on feature flags see [OpenZFS Feature Flags](https://openzfs.github.io/openzfs-docs/Basic%20Concepts/Feature%20Flags.html) and [OpenZFS zpool-feature.7](https://openzfs.github.io/openzfs-docs/man/7/zpool-features.7.html).
+
+## 13.3-U1 Changelog
+
+**November 21, 2024**
+
+iXsystems is pleased to release TrueNAS 13.3-U1!
+
+This is a maintenance release with important security updates.
+It is recommended for all users of CORE and Enterprise running 13.x or previous software versions.
+TrueNAS SCALE & SCALE Enterprise systems are not impacted.
+
+* Resolve a vulnerability involving python deserialization ([CVE-2020-22083](https://github.com/advisories/GHSA-j66q-qmrc-89rx)).
+
+* Address a security vulnerability with the jails system (iocage).
+
+In addition to the included fixes included, additional vulnerabilities are identified related to iocage (A FreeBSD jail manager), which is the infrastructure component that operates both the Jails and the Plugins system on CORE.
+This update includes a mitigation that ensures any systems not running jails or plugins are safe from the iocage vulnerability impact.
+
+Because these vulnerabilities are architectural in nature and the iocage application has not been under active development for many years, it is unlikely to receive fixes related to these vulnerabilities.
+Systems running Jails or Plugins are still be exposed to the iocage vulnerabilities.
+
+Users who run 3rd party applications on TrueNAS are highly encouraged to upgrade to SCALE, which is actively supported and not impacted by any known vulnerabilities at this time.
+As always, users are encouraged to follow [security best-practices](https://www.truenas.com/docs/solutions/optimizations/security/) to minimize the risk to your system and important data.
+
+TrueNAS Enterprise 13.x users should schedule an update with [TrueNAS Support](https://www.ixsystems.com/support/truenas-arrays/).
+
+For other known issues in 13.3 releases, please see the <a href="https://ixsystems.atlassian.net/issues/?filter=10583" target="_blank">13.3-RELEASE Ongoing Issues</a> list available from Jira.
 
 ## 13.3-RELEASE Changelog
 

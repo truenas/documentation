@@ -2039,4 +2039,6 @@ coretutorials
 configuringkmip
 systemconfiguration
 configuringfailover
+deserialization
+COREFeatureSupport
 tmux

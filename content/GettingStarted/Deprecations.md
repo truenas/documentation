@@ -30,10 +30,9 @@ Users should avoid creating and managing SAS multipath scenarios with TrueNAS.
 
 ## Virtualization
 
-The Plugins, Jails, and Virtual Machines features are untested and provided without support to the TrueNAS Community.
-Users with a critical need to use containers or virtualization solutions in production should migrate to the tested and supported virtualization features available in [TrueNAS SCALE](https://www.truenas.com/download-truenas-scale/).
-[TrueNAS Enterprise customers](https://www.truenas.com/truenas-enterprise/) can contact iXsystems to schedule a TrueNAS SCALE deployment.
-See [CORE to SCALE Migrations](https://www.truenas.com/docs/scale/gettingstarted/migrate/) for more information.
+{{< hint type=danger title="Obsolete Features" >}}
+{{< include file="/static/includes/COREFeatureSupport.md" >}}
+{{< /hint >}}
 
 ## Web Shell
 
