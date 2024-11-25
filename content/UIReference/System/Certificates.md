@@ -10,7 +10,9 @@ tags:
 {{< toc >}}
 
 {{< hint type=important >}}
-After you create or import a new certificate, bind it to the relevant service. For HTTPS binding, Go to **System > General** and select the certificate you want to bind in the **GUI SSL Certificate** field. For other services, such as SMB for FTP, bind the certificate within the **Services** screen. Here, select the service you want to bind with and select your certificate within the **Configure** page for the aligned service.
+After you create or import a new certificate, bind it to the relevant service. For HTTPS binding, go to **System > General** and select the certificate you want to bind in the **GUI SSL Certificate** field. 
+
+For other services, such as SMB or FTP, bind the certificate within the **Services** screen. Click the **Configure** button next to the service you want to bind to, then select the certificate within the **Certificate** field.
 {{< /hint >}}
 
 ![CAInternalIntermediate](/images/CORE/13.0/CAInternalIntermediate.png "CA Internal and Intermediate")
