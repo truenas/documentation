@@ -100,7 +100,8 @@ After physically replacing the failed disc, create a new hot spare vdev to reser
 
 Alternately, after physically replacing the failed disc, click **Replace** on the failed drive to activate the new drive
 The hot spare reverts to an inactive state and is available again as a hot spare.
-We do not recommend this method, because it requires a second resilver for the new drive.
+We do not recommend this method, because it causes two resilver events: one when activating the hot spare and again when replacing the failed disk.
+Resilvering degrades system performance until completed and causes unnecessary strain on the disk.
 {{< /expand >}}
 {{< expand "Metadata" >}}
 Metadata vdevs are a special allocation class used to create [Fusion Pools]({{< relref "FusionPool.md" >}}) for increased metadata and small block I/O performance.
