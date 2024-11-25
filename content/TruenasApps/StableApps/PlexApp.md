@@ -31,10 +31,10 @@ Before you install the Plex app:
   You can use either an existing pool or [create a new one]({{< relref "CreatePoolWizard.md" >}})
 
   Create the two datasets Plex uses for storage volumes:
-  * **data** for user media data storage
+  * **data** to use as the Plex data directory for database and metadata storage
   * **config** for Plex application configuration storage.
 
-  You can create a dataset for log data or use a temporary directory option for log data.
+  You can create a dataset or use a temporary directory option for log data.
   Transcode data is not useful or meant for persistent storage, so using a temporary directory is a better option.
 
   When creating the above datasets, select the **apps** dataset preset.
@@ -92,9 +92,9 @@ If not, set the storage volume type to either **temporary** or **tmpfs** for bot
 {{< /expand >}}
 
 Add any labels you want to use to organize your media files.
-For example, labeling video files as *movies* or *sports*, etc. Labels allow creating custom groupings or classifications beyond the default metadata provided by Plex.
+For example, labeling video files as *movies* or *sports*, etc. Labels allow you to create custom groupings or classifications beyond the default metadata provided by Plex.
 
-Accept the defaults in **Resources Configuration** and select the GPU option if you have a compatible GPU installed in the system and you want to use it for hardware-accelerated transcoding.
+Accept the defaults in **Resources Configuration** and select the GPU option if you have a compatible GPU installed in the system and want to use it for hardware-accelerated transcoding.
 
 Click **Install**. A progress dialog opens before switching to the **Installed** applications screen.
 The **Installed** screen shows the **plex** app in the **Deploying** state until fully installed and then the status changes to **Running** when ready to use.
@@ -119,7 +119,7 @@ Plex configuration settings include setting up the server timezone, authenticati
 
 {{< include file="/static/includes/apps/AppsInstallWizardTimezoneSetting.md" >}}
 
-Authentication to the Plex account is accomplished through a [claim token provided by Plex](https://www.plex.tv/claim/).
+TrueNAS authenticates to the Plex account using a [Plex claim token](https://www.plex.tv/claim/).
 While signed into your Plex account, copy the token provided by Plex into the **Claim Token** field.
 The Plex app does not deploy if you do not include this token.
 
@@ -182,7 +182,7 @@ This makes the **tmpfs** directory option a better choice as it creates a Linux 
 Neither directory storage option provides easy access to stored data, so if you want to store and access log data, create a dataset called **logs**.
 
 If opting to use datasets for all Plex storage volumes, create datasets to use with the host path option:
-* **data** to use as the media data storage volume.
+* **data** to use as the Plex data directory for database and metadata storage.
 * **config** to use as the Plex app configuration storage volume.
 * **logs** if you want to save and have easy access to log data.
 
