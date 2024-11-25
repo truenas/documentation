@@ -22,6 +22,19 @@ weight: 3
 | TBD     |                  |                      |
 {{< /truetable >}}
 
+## Upgrade Notes
+
+* Due to security vulnerabilities and maintainability issues, the S3 service is deprecated in TrueNAS CORE 13.0 and removed in CORE 13.3 ([NAS-127694](https://ixsystems.atlassian.net/browse/NAS-127694)).
+  Beginning in CORE 13.0-U6, the CORE web interface generates an alert when the deprecated service is either actively running or enabled to start on boot.
+  Users should move any production data away from the S3 service storage location before migrating to TrueNAS 24.04 or newer, which has MinIO applications available.
+  See also [Feature Deprecations]({{< relref "Deprecations.md" >}}).
+
+* SAS Multipath is supported *as-is* and receives no further maintenance updates.
+  While multipath situations might be detected and be generally functional in TrueNAS CORE, there is a possibility this is not available in a future TrueNAS CORE major version.
+  Users should avoid creating and managing SAS multipath scenarios with TrueNAS.
+
+* {{< include file="/static/includes/COREFeatureSupport.md" >}}
+
 ## 13.0-U6.3
 **November 21, 2024**
 
@@ -35,13 +48,13 @@ TrueNAS SCALE & SCALE Enterprise systems are not impacted.
 
 * Address a security vulnerability with the jails system (iocage).
 
-In addition to the included fixes included, additional vulnerabilities are identified related to iocage (A FreeBSD jail manager), which is the infrastructure component that operates both the Jails and the Plugins system on CORE.
+In addition to the included fixes included, additional vulnerabilities are identified related to iocage (a FreeBSD jail manager), which is the infrastructure component that operates both the Jails and the Plugins system on CORE.
 This update includes a mitigation that ensures any systems not running jails or plugins are safe from the iocage vulnerability impact.
 
 Because these vulnerabilities are architectural in nature and the iocage application has not been under active development for many years, it is unlikely to receive fixes related to these vulnerabilities.
 Systems running Jails or Plugins are still be exposed to the iocage vulnerabilities.
 
-Users who run 3rd party applications on TrueNAS are highly encouraged to upgrade to SCALE, which is actively supported and not impacted by any known vulnerabilities at this time.
+We highly encourage users who run 3rd party applications on TrueNAS to upgrade to SCALE, which is actively supported and not impacted by any known vulnerabilities.
 As always, users are encouraged to follow [security best-practices](https://www.truenas.com/docs/solutions/optimizations/security/) to minimize the risk to your system and important data.
 
 TrueNAS Enterprise 13.x users should schedule an update with [TrueNAS Support](https://www.ixsystems.com/support/truenas-arrays/).
@@ -116,7 +129,7 @@ This is a small hotpatch to address a ZFS issue that appears in specific circums
 When the replication source system is updated to SCALE 22.12.3, a mismatch in indirect block size (IBS) values can cause kernel panics when an encrypted replication task attempts to receive ZFS snapshots to the destination system.
 See [OpenZFS 2.1 Pull Request #15073](https://github.com/openzfs/zfs/pull/15073) for more details.
 
-Users are encouraged to update any TrueNAS CORE system used as replication destination to 13.0-U5.3 to avoid this issue.
+Users are encouraged to update any TrueNAS CORE system used as a replication destination to 13.0-U5.3 to avoid this issue.
 It is also recommended to update any ZFS-based systems currently used as a replication destination.
 
 * [NAS-122583](https://ixsystems.atlassian.net/browse/NAS-122583) Crash on ZFS replication receive with different indirect block size
