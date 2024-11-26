@@ -225,6 +225,7 @@ Notable changes:
 
 ### 24.10.0 Known Issues
 
+* SED devices are not consistently unlocking on system restart ([NAS-132518](https://ixsystems.atlassian.net/browse/NAS-132518)). Users are cautioned to avoid using SED devices in 24.10 or attempting to migrate a functional SED environment from TrueNAS 13.0-U6.3 (Enterprise) or TrueNAS 13.3-U1 (Community) until this issue is resolved.
 * A [bug with sudo v1.9.13](https://bugzilla.sudo.ws/show_bug.cgi?id=1050) causes commands like `sudo su -` and `sudo su` before starting tmux to break in TrueNAS 24.10.
   Sudo v1.9.14 fixes this issue and is planned for inclusion in a future TrueNAS release.
 * Application **Update Available** tooltips display the current installed version as the available update version ([NAS-131747](https://ixsystems.atlassian.net/browse/NAS-131747)). A fix for this issue is expected in the 24.10.1 release version.
