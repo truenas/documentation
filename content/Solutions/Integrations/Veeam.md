@@ -156,7 +156,7 @@ Here are additional key features that are offered out-of-the-box at no extra cos
 ## Setting Up TrueNAS as a Veeam Repository
 
 Veeam Backup & Replication runs on a Windows operating system, typically Windows Server 2012 or newer, and can connect to a variety of storage systems.
-iXsystems recommends using [iSCSI on TrueNAS 13.0]([{{< relref "CORE/CORETutorials/Sharing/iSCSI/_index.md" >}}](https://www.truenas.com/docs/core/13.0/coretutorials/sharing/iscsi/)) with a [Veeam scale-out repository](https://bp.veeam.com/vbr/VBP/3_Build_structures/B_Veeam_Components/B_backup_repositories/scaleout.html) architecture.
+iXsystems recommends using iSCSI on TrueNAS 13.0 with a [Veeam scale-out repository](https://bp.veeam.com/vbr/VBP/3_Build_structures/B_Veeam_Components/B_backup_repositories/scaleout.html) architecture.
 Users can also use [SMB]({{< relref "CORE/CORETutorials/Sharing/SMB/_index.md" >}}) to mount the volume to the backup server directly.
 With support for SMB/CIFS, NFS, AFP, iSCSI, and FC, TrueNAS offers many ways to connect to Veeam backup servers.
 
