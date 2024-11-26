@@ -90,8 +90,8 @@ You can add or remove this after creating the pool.
 You can add or remove this after creating the pool.
 {{< /expand >}}
 {{< expand "Hot Spare" >}}
-A **Hot Spare** vdev sets up drives as reserved to prevent larger pool and data loss scenarios
-TrueNAS automatically inserts an available hot spare into a **Data** vdev when an active drive fails.
+A hot spare vdev sets up drives as reserved to prevent larger pool and data loss scenarios
+TrueNAS automatically inserts an available hot spare into a data vdev when an active drive fails.
 The pool resilvers once the hot spare is activated.
 
 Click **Detach** to remove the failed drive from the pool
