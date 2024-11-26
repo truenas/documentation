@@ -8,6 +8,8 @@ Any modification of it can result in instability and loss of app functionality.
 
 Do not include the ix-apps dataset inside of an SMB or NFS share.
 
+The ix-apps dataset does not inherit encryption if an encrypted pool is selected as the pool for applications.
+
 Back up and restore functionality as well as migration of the ix-apps dataset from one apps pool to another are not currently supported by the TrueNAS interface.
 Support for these features is planned for a future TrueNAS release version.
 
