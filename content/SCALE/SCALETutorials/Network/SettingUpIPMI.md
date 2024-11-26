@@ -9,7 +9,7 @@ tags:
 
 {{< include file="/static/includes/IPMICompatibility.md" >}}
 
-Many [TrueNAS systems](https://www.truenas.com/docs/hardware/) have a built-in out-of-band management port that provides side-band management should the system become unavailable through the web interface.
+Many [TrueNAS systems](https://www.truenas.com/docs/hardware/) include a built-in out-of-band management port, enabling system access even when the web interface is unavailable.
 
 Intelligent Platform Management Interface (IPMI) allows users to check the log, access the BIOS setup, and boot the system without physical access.
 IPMI also enables users to remotely access the system to assist with configuration or troubleshooting issues.
