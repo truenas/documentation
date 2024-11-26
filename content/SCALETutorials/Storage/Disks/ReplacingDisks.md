@@ -74,7 +74,7 @@ Click anywhere on the VDEV to expand it and look for the disk with the **REMOVED
 
 {{< trueimage src="/images/SCALE/Storage/DevicesDiskDegraded.png" alt="Devices Disk Failed" id="Devices Disk Failed" >}}
 
-Click **Offline** on the **ZFS Info** widget to take the disk offline.
+Click on the failed disk, then click **Offline** in the **ZFS Info** widget to take the disk offline.
 The disk status changes to **OFFLINE**.
 
 {{< expand "The offline failed?" "v" >}}
@@ -87,7 +87,7 @@ When the scrub operation finishes, return to the **Devices** screen, click on th
 
 ## Replacing a Failed Disk
 
-If replacing the failed disk that you have taken offline and removed, insert the replacement disk now.
+If you are replacing the failed disk you took offline and removed, insert the replacement disk now.
 The new disk must have the same or greater capacity as the failed disk.
 If replacing a failed disk with an available disk in the system, proceed to the next step.
 
