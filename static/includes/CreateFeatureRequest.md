@@ -14,11 +14,11 @@ The body of the post populates a template.
 Describe the **Problem/Justification**, **Impact**, and provide **User Story** for your request.
 Click **<i class="fa fa-plus" aria-hidden="true"></i> Create Topic** to submit the request.
 
-{{< trueimage src="/images/Contribute/FeatureRequest.png" alt="Submit a Feature Request" id="Submit a Feature Request" >}}
+{{< trueimage src="/images/SCALE/FeatureRequest.png" alt="Submit a Feature Request" id="Submit a Feature Request" >}}
 
 To vote for a feature request, open that thread then click **Vote** at the top left corner, next to the title.
 
-{{< trueimage src="/images/Contribute/FeatureRequestVote.png" alt="Vote for a Feature Request" id="Vote for a Feature Request" >}}
+{{< trueimage src="/images/SCALE/FeatureRequestVote.png" alt="Vote for a Feature Request" id="Vote for a Feature Request" >}}
 
 Each forum user can cast a limited number of votes for items at any given time.
 The higher your trust level, the more votes you can cast.
