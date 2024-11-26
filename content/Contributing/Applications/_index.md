@@ -107,7 +107,7 @@ These snippets are maintained by the Technical Documentation team, but you can s
 
 The tutorial template includes the shortcode that calls these files into the app wizard sections of the Stable Apps and Enterprise Apps tutorials in the Documentation Hub.
 To use snippets where the template does not have one, enter the include file shortcode where you want to call another snippet.
-The shortcode to call snippet files is <file>{{< include file="/static/includes/apps/<i>snippetFileName.md</i>" >}}</file> where *snippetFileName.md* is the name of the snippet file.
+The shortcode to call snippet files is <file>include file="/static/includes/apps/snippetFileName.md"</file> enclosed in two curly brackets and one angle bracket preceding and following the string, and where *snippetFileName.md* is the name of the snippet file.
 
 The following table shows the current list of snippet files.
 {{< expand "App Tutorial Snippet Files" "v" >}}
@@ -134,8 +134,6 @@ Open and read snippet files to determine where to use them in your tutorial.
  MultipleAppInstancesAndNaming.md | Describes adding more than one instance of the same app and naming it. For example, adding two stable or community app instances, or an enterprise and stable train version of the same app. |
 | Configuring the app | InstallWizardEnvironVariablesSettings.md | Details the Environment Variable settings. Can use this if the procedure requires adding environment variables, or leave the snippet in the Understanding App Install Wizard section and refer to it for more information. |
 | InstallWizardAdvancedDNSSettings.md | Details the Advanced DNS setting options that might be included as part of the app configuration or network configuration settings.
-|  |  |
-|  |  |
 {{< /truetable >}}
 
 **Understanding App Install Wizard Settings**
