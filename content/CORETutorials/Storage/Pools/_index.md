@@ -90,12 +90,18 @@ You can add or remove this after creating the pool.
 You can add or remove this after creating the pool.
 {{< /expand >}}
 {{< expand "Hot Spare" >}}
-**Hot Spare** sets up drives as reserved to insert into **Data** vdevs when an active drive fails.
-Hot spares are temporarily used as replacements for failed drives to prevent larger pool and data loss scenarios.
+A hot spare vdev sets up drives as reserved to prevent larger pool and data loss scenarios
+TrueNAS automatically inserts an available hot spare into a data vdev when an active drive fails.
+The pool resilvers once the hot spare is activated.
 
-When a failed drive is replaced with a new drive, the hot spare reverts to an inactive state and is available again as a hot spare.
+Click **Detach** to remove the failed drive from the pool
+The activated hot spare is promoted to a full data vdev member and is no longer available as a hot spare.
+After physically replacing the failed disc, create a new hot spare vdev to reserve the replacement disc.
 
-When the failed drive is only detached from the pool, the temporary hot spare is promoted to a full data vdev member and is no longer available as a hot spare.
+Alternately, after physically replacing the failed disc, click **Replace** on the failed drive to activate the new drive
+The hot spare reverts to an inactive state and is available again as a hot spare.
+We do not recommend this method, because it causes two resilver events: one when activating the hot spare and again when replacing the failed disk.
+Resilvering degrades system performance until completed and causes unnecessary strain on the disk.
 {{< /expand >}}
 {{< expand "Metadata" >}}
 Metadata vdevs are a special allocation class used to create [Fusion Pools]({{< relref "FusionPool.md" >}}) for increased metadata and small block I/O performance.
