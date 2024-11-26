@@ -70,7 +70,7 @@ Off-lining a disk removes the device from the pool and can prevent swap issues.
 To offline a disk:
 
 Go to the **Storage Dashboard** and click **Manage Devices** on the **Topology** widget for the degraded pool to open the **Devices** screen for that pool.
-Click anywhere on the VDEV to expand it and look for the disk with the **REMOVED** status.
+Click <span class="iconify" data-icon="mdi:keyboard-arrow-right"></span> next to the VDEV to expand it, then look for the disk with the **REMOVED** status.
 
 {{< trueimage src="/images/SCALE/Storage/DevicesDiskDegraded.png" alt="Devices Disk Failed" id="Devices Disk Failed" >}}
 
@@ -82,7 +82,7 @@ If the off-line operation fails with a **Disk offline failed - no valid replicas
 
 {{< trueimage src="/images/SCALE/Storage/StorageZFSHealthScrub.png" alt="Storage ZFS Health Scrub Pool" id="Storage ZFS Health Scrub Pool" >}}
 
-When the scrub operation finishes, return to the **Devices** screen, click on the VDEV and then the disk, and try to off-line it again.
+When the scrub operation finishes, return to the **Devices** screen, expand the VDEV, then click the disk, and try to off-line it again.
 {{< /expand >}}
 
 ## Replacing a Failed Disk
@@ -125,7 +125,7 @@ To replace a disk in a pool with a hot spare:
 ### Detaching a Failed Disk
 
 Go to the **Storage Dashboard** and click **Manage Devices** on the **Topology** widget for the degraded pool to open the **Devices** screen for that pool.
-Click anywhere on the VDEV to expand it and look for the disk with the **REMOVED** status.
+Click <span class="iconify" data-icon="mdi:keyboard-arrow-right"></span> next to the VDEV to expand it, then look for the disk with the **REMOVED** status.
 
 {{< trueimage src="/images/SCALE/Storage/DevicesDiskDegradedHotSpare.png" alt="Devices Disk Failed - Hot Spare Active" id="Devices Disk Failed - Hot Spare Active" >}}
 
