@@ -32,7 +32,6 @@ The [23.10 release notes article]({{< relref "SCALEReleaseNotes.md" >}}) has add
   <p>
 	<a href="/scaletutorials/" style="font-size:18px;">Tutorials</a>
 	<br><a href="/scaletutorials/storage/pools/createpoolwizard/">Pool Creation Wizard</a>
-	<br><a href="/scaletutorials/apps/communityapps/">Community Apps Guides</a>
 	<br><a href="/scaletutorials/network/">Networking</a>
   </p>
   <p>
