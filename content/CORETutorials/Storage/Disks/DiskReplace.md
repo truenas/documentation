@@ -60,13 +60,13 @@ Go to the **Storage > Pools** screen, click on the <i class="material-icons" ari
 
 Click the <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> icon for the disk you plan to remove and then click **Offline**.
 
-{{< trueimage src="/images/CORE/Storage/StoragePoolsStatusDiskFailedOptions.png" alt="Disk Options" id="Pool Status disk options" >}}
+{{< trueimage src="/images/CORE/13.0/StoragePoolsStatusDiskFailedOptions.png" alt="Disk Options" id="Pool Status disk options" >}}
 
 Select **Confirm**, then click **OFFLINE**.
 
 When the disk status shows as **Offline**, physically remove the disk from the system.
 
-{{< trueimage src="/images/CORE/Storage/StoragePoolsStatusOffline.png" alt="Offline Disk" id="Pool Status disk offline" >}}
+{{< trueimage src="/images/CORE/13.0/StoragePoolsStatusOffline.png" alt="Offline Disk" id="Pool Status disk offline" >}}
 
 {{< expand "The offline failed?" "v" >}}
 If the offline operation fails with a **Disk offline failed - no valid replicas** message, go to **Storage > Pools**, click the <i class="material-icons" aria-hidden="true" title="Settings">settings</i> for the degraded pool, and select **Scrub Pool**.
@@ -116,7 +116,7 @@ Go to the **Storage > Pools** screen, click on the <i class="material-icons" ari
 
 After taking the failed disk offline and removing it from the system, the disk status changes to **REMOVED** and the disk name displays the gptid.
 
-{{< trueimage src="/images/CORE/Storage/StoragePoolsStatusHotSpareActive.png" alt="Disk Removed - Hot Spare Active" id="Disk Removed - Hot Spare Active" >}}
+{{< trueimage src="/images/CORE/13.0/StoragePoolsStatusHotSpareActive.png" alt="Disk Removed - Hot Spare Active" id="Disk Removed - Hot Spare Active" >}}
 
 Click the <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> icon for the removed disk and then click **Detach**.
 
@@ -143,7 +143,7 @@ Go to the **Storage > Pools** screen, click on the <i class="material-icons" ari
 
 Click **ADD VDEV** and select **Hot Spare**.
 
-{{< trueimage src="/images/CORE/Storage/AddVdevsScreenHotSpare.png" alt="Add Vdev Hot Spare" id="Add Vdev Hot Spare" >}}
+{{< trueimage src="/images/CORE/13.0/AddVdevsScreenHotSpare.png" alt="Add Vdev Hot Spare" id="Add Vdev Hot Spare" >}}
 
 Select an available disk and click <i class="fa fa-arrow-right" aria-hidden="true" title="Right Arrow"></i> to add it to the **Spare VDev**.
 
