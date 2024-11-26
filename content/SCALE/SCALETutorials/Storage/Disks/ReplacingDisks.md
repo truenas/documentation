@@ -113,8 +113,9 @@ When the resilver process completes, the pool status returns to **Online** on th
 
 ## Replacing a Failed Disk with a Hot Spare
 
-A **Hot Spare** vdev sets up drives as reserved to prevent larger pool and data loss scenarios TrueNAS automatically inserts an available hot spare into a **Data** vdev when an active drive fails.
-TrueNAS resilvers the pool when the hot spare is activated.
+A **Hot Spare** vdev sets up drives as reserved to prevent larger pool and data loss scenarios.
+TrueNAS automatically inserts an available hot spare into a **Data** vdev when an active drive fails.
+TrueNAS resilvers the pool after the hot spare is activated.
 
 To replace a disk in a pool with a hot spare:
 
