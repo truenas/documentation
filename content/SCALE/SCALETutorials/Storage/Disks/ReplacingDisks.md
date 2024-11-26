@@ -38,52 +38,11 @@ The **Storage Dashboard** pool widgets also show the status of each of your pool
 
 {{< trueimage src="/images/SCALE/Storage/StoragePoolWidgetsDegradedState.png" alt="Storage Pool Widgets in Degraded State" id="Storage Pool Widgets in Degraded State" >}}
 
-From the main Dashboard, you can click the <i class="fa fa-database" aria-hidden="true" title="Pool Status"></i> on either the **Pool** or **Storage** widget to go to the **Storage Dashboard** screen, or you can click **Storage** on the main navigation menu to open the **Storage Dashboard** and locate the pool in the degraded state.
+From the main Dashboard, you can click the <i class="fa fa-database" aria-hidden="true" title="Pool Status"></i> on either the **Pool** or **Storage** widget or you can click **Storage** on the main navigation menu to open the **Storage Dashboard** screen and locate the pool in the degraded state.
 
 {{< expand "My disk is faulted. Should I replace it?" "v" >}}
 If a disk shows a faulted state, TrueNAS has detected an issue with that disk and you should replace it.
 {{< /expand >}}
-
-To replace a failed disk:
-
-1. Locate the failed drive.
-
-   a. Go to the **Storage Dashboard** and click **Manage Devices** on the **Topology** widget for the degraded pool to open the **Devices** screen for that pool.
-
-   b. Click anywhere on the VDEV to expand it and look for the drive with the Offline status.
-
-2. Take the disk offline.
-
-   {{< trueimage src="/images/SCALE/Storage/DevicesDiskWidgets.png" alt="Devices Disk Widgets" id="Devices Disk Widgets" >}}
-
-   Click **Offline** on the **ZFS Info** widget to take the disk offline. The button toggles to **Online**.
-
-3. Pull the disk from your system and replace it with a disk of at least the same or greater capacity as the failed disk.
-
-   {{< trueimage src="/images/SCALE/Storage/ReplaceDiskAndOnline.png" alt="Replace and Online a Disk" id="Replace and Online a Disk" >}}
-
-   a. Click **Replace** on the **Disk Info** widget on the **Devices** screen for the disk you off-lined.
-
-   b. Select the new drive from the **Member Disk** dropdown list on the **Replacing disk *diskname*** dialog.
-
-   {{< trueimage src="/images/SCALE/Storage/ReplacingDiskDialog.png" alt="Replacing Disk Dialog" id="Replacing Disk Dialog" >}}
-
-4. Add the new disk to the existing VDEV. Click **Replace Disk** to add the new disk to the VDEV and bring it online.
-
-   Disk replacement fails when the selected disk has partitions or data present.
-   To destroy any data on the replacement disk and allow the replacement to continue, select the **Force** option.
-
-   {{< trueimage src="/images/SCALE/Storage/ReplacingDiskStatusDialog.png" alt="Replacing Disk Status" id="Replacing Disk Status" >}}
-
-   When the disk wipe completes, TrueNAS starts replacing the failed disk.
-   TrueNAS resilvers the pool during the replacement process.
-   For pools with large amounts of data, this can take a long time.
-   When the resilver process completes, the pool status returns to **Online** status on the **Devices** screen.
-
-### Taking a Disk Offline
-
-We recommend users off-line a disk before starting the physical disk replacement.
-Off-lining a disk removes the device from the pool and can prevent swap issues.
 
 {{< expand "Can I use a disk that is failing but still active?" "v" >}}
 There are situations where you can leave a disk that has not completely failed online to provide additional redundancy during the replacement procedure.
@@ -93,27 +52,122 @@ We do not recommend leaving failed disks online unless you know the exact condit
 Attempting to replace a heavily degraded disk without off-lining it significantly slows down the replacement process.
 {{< /expand >}}
 
+To replace a disk in a pool without a hot spare available:
+
+1. [Take the disk offline](#taking-a-failed-disk-offline).
+2. [Replace the disk](#replacing-a-failed-disk).
+3. Refresh the screen.
+
+To replace a disk in a pool with a hot spare:
+
+1. [Take the disk offline](#taking-a-failed-disk-offline).
+2. [Detach the failed disk](#detaching-a-failed-disk) to promote the hot spare.
+3. Refresh the screen.
+4. [Recreate the hot spare VDEV](#recreating-the-hot-spare).
+
+## Taking a Failed Disk Offline
+
+We recommend users off-line a disk before starting the physical disk replacement.
+Off-lining a disk removes the device from the pool and can prevent swap issues.
+To offline a disk:
+
+Go to the **Storage Dashboard** and click **Manage Devices** on the **Topology** widget for the degraded pool to open the **Devices** screen for that pool.
+Click <span class="iconify" data-icon="mdi:keyboard-arrow-right"></span> next to the VDEV to expand it, then look for the disk with the **REMOVED** status.
+
+{{< trueimage src="/images/SCALE/Storage/DevicesDiskDegraded.png" alt="Devices Disk Failed" id="Devices Disk Failed" >}}
+
+Click on the failed disk, then click **Offline** in the **ZFS Info** widget to take the disk offline.
+The disk status changes to **OFFLINE**.
+
 {{< expand "The offline failed?" "v" >}}
 If the off-line operation fails with a **Disk offline failed - no valid replicas** message, go to **Storage Dashboard** and click **Scrub** on the **ZFS Health** widget for the pool with the degraded disk. The **Scrub Pool** confirmation dialog opens. Select **Confirm** and then click **Start Scrub**.
 
 {{< trueimage src="/images/SCALE/Storage/StorageZFSHealthScrub.png" alt="Storage ZFS Health Scrub Pool" id="Storage ZFS Health Scrub Pool" >}}
 
-When the scrub operation finishes, return to the **Devices** screen, click on the VDEV and then the disk, and try to off-line it again.
+When the scrub operation finishes, return to the **Devices** screen, expand the VDEV, then click the disk, and try to off-line it again.
 {{< /expand >}}
 
-1. Click on **Manage Devices** to open the **Devices** screen, click anywhere on the VDEV to expand VDEV and show the drives in the VDEV.
+## Replacing a Failed Disk
 
-2. Click **Offline** on the **ZFS Info** widget. A confirmation dialog displays. Click **Confirm** and then **Offline**.
-   The system begins the process to take the disk offline. When complete, the disk displays the status of the failed disk as **Offline**.
-   The button toggles to **Online**.
+If you are replacing the failed disk you took offline and removed, insert the replacement disk now.
+The new disk must have the same or greater capacity as the failed disk.
+If replacing a failed disk with an available disk in the system, proceed to the next step.
 
-{{< trueimage src="/images/SCALE/Storage/ReplaceDiskAndOnline.png" alt="Off-Lining A Disk" id="Off-Lining A Disk" >}}
+Click **Replace** on the **Disk Info** widget on the **Devices** screen for the disk you off-lined.
 
-3. You can physically remove the disk from the system when the disk status is **Offline**.
-   If the replacement disk is not already physically installed in the system, do it now.
+Select the new drive from the **Member Disk** dropdown list on the **Replacing disk** dialog.
 
-Use **[Replace](#replacing-a-failed-disk)** to bring the new disk online in the same VDEV.
+   {{< trueimage src="/images/SCALE/Storage/ReplacingDiskDialog.png" alt="Replacing Disk Dialog" id="Replacing Disk Dialog" >}}
 
-### Restoring the Hot Spare
+Click **Replace Disk** to add the new disk to the VDEV and bring it online.
 
-{{< include file="/static/includes/RestoreHotSpare.md" >}}
+Disk replacement fails when the selected disk has partitions or data present.
+To destroy any data on the replacement disk and allow the replacement to continue, select the **Force** option.
+
+   {{< trueimage src="/images/SCALE/Storage/ReplacingDiskStatusDialog.png" alt="Replacing Disk Status" id="Replacing Disk Status" >}}
+
+When the disk wipe completes, TrueNAS starts replacing the failed disk.
+TrueNAS resilvers the pool during the replacement process.
+For pools with large amounts of data, this can take a long time.
+When the resilver process completes, the pool status returns to **Online** on the **Devices** screen.
+
+## Replacing a Failed Disk with a Hot Spare
+
+A **Hot Spare** vdev sets up drives as reserved to prevent larger pool and data loss scenarios.
+TrueNAS automatically inserts an available hot spare into a **Data** vdev when an active drive fails.
+TrueNAS resilvers the pool after the hot spare is activated.
+
+To replace a disk in a pool with a hot spare:
+
+1. [Take the disk offline](#taking-a-failed-disk-offline).
+2. [Detach the failed disk](#detaching-a-failed-disk) to promote the hot spare.
+3. Refresh the screen.
+4. [Recreate the hot spare VDEV](#recreating-the-hot-spare).
+
+### Detaching a Failed Disk
+
+Go to the **Storage Dashboard** and click **Manage Devices** on the **Topology** widget for the degraded pool to open the **Devices** screen for that pool.
+Click <span class="iconify" data-icon="mdi:keyboard-arrow-right"></span> next to the VDEV to expand it, then look for the disk with the **REMOVED** status.
+
+{{< trueimage src="/images/SCALE/Storage/DevicesDiskDegradedHotSpare.png" alt="Devices Disk Failed - Hot Spare Active" id="Devices Disk Failed - Hot Spare Active" >}}
+
+Click **Detach** on the **ZFS Info** widget on the **Devices** screen for the disk you off-lined.
+
+Select **Confirm**, then click **Detach**.
+TrueNAS detaches the disk from the pool and promotes the hot spare disk to a full member of the pool.
+
+### Recreating the Hot Spare
+
+After promoting the hot spare, recreate the **Spare** vdev and assign a disk to it.
+
+{{< expand "Do I really need to promote the hot spare and then recreate the spare vdev?" "v" >}}
+If you have a hot spare inserted into the pool and then follow the instructions in [Replacing a Failed Disk](#replacing-a-failed-disk), TrueNAS automatically returns the hot spare disk to the existing **Spare** vdev and **ONLINE** status.
+
+However, we do not recommend this method, because it causes two resilver events: one when activating the hot spare and again when replacing the failed disk.
+Resilvering degrades system performance until completed and causes unnecessary strain on the disk.
+
+To avoid unnecessary resilvers, [promote the hot spare](#detaching-a-failed-disk) then recreate the hot spare vdev.
+{{< /expand >}}
+
+If recreating the spare with a replacement in place of the failed disk, insert the replacement disk now.
+The new disk must have the same or greater capacity as the failed disk.
+If recreating the spare with an available disk in the system, proceed to the next step.
+
+Go to the **Storage Dashboard** and click **Manage Devices** on the **Topology** widget for the degraded pool to open the **Devices** screen for that pool.
+
+Click **Add VDEV** to open the **Add Vdevs to Pool** screen.
+
+Click the **Spare (Optional)** row to expand it.
+
+{{< trueimage src="/images/SCALE/Storage/AddVdevToPoolSpareScreen.png" alt="Add Vdev Spare" id="Add Vdev Spare" >}}
+
+Select a disk size equal to or greater than the failed disk or click **Manual Disk Selection** to choose the replacement disk.
+Click **Save And Go To Review**.
+
+{{< trueimage src="/images/SCALE/Storage/AddVdevToPoolReviewScreen.png" alt="Review Screen" id="Review Screen" >}}
+
+Review changes then click **Update Pool**.
+Select **Confirm**, then click **Continue**.
+
+After completing the job, TrueNAS returns to the **Storage Dashboard** screen.
+Review **Spare VDEVs** on the **Topology** widget to confirm the hot spare is added.
