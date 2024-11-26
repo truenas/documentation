@@ -23,8 +23,6 @@ Clustering is considered experimental and should not be used in a production env
 
 TrueNAS SCALE provides a few options for setting up system clustering:
 
-* [MinIO-created distributed clustering of TrueNAS SCALE systems](https://www.truenas.com/docs/scale/scaletutorials/apps/communityapps/minioapp/minioclustering/).
-
 * [Clustering and sharing SCALE volumes with TrueCommand](https://www.truenas.com/docs/solutions/integrations/smbclustering/).
 
 {{< taglist tag="scaleclustering" limit="10" title="Related Clustering Articles" >}}
