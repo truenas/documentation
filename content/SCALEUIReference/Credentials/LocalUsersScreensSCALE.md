@@ -81,7 +81,7 @@ Built-in users (except the **root** user) do not include the **Home Directory Pe
 ### Directories and Permissions settings
 **Directory and Permissions** settings specify the user home directory and the permissions for that home directory.
 
-{{< trueimage src="/images/SCALE/Credentials/AddUserHomeDirPermSCALE.png" alt="Directories and Permissions Settings" id="Directories and Permissions Settings" >}}
+{{< trueimage src="/images/SCALE/Credentials/AddUserHomeDirPerm.png" alt="Directories and Permissions Settings" id="Directories and Permissions Settings" >}}
 
 {{< expand "Directories and Permissions Settings" "v" >}}
 {{< truetable >}}
@@ -98,7 +98,7 @@ Built-in users (except the **root** user) do not include the **Home Directory Pe
 **Authentication** settings specify authentication methods, the public SSH key, user administration access, and enable/disable password authentication.
 The add and edit user screens grant access to a shell option, but the [privilege screen **Web Shell Access** setting]({{< relref "LocalGroupsScreens.md#PrivilegesScreen" >}}) determines the ability to see the **System > Shell** screen.
 
-{{< trueimage src="/images/SCALE/Credentials/AddUserHomeDirAuthSCALE.png" alt="Authentication Settings" id="Authentication Settings" >}}
+{{< trueimage src="/images/SCALE/Credentials/AddUserHomeDirAuth.png" alt="Authentication Settings" id="Authentication Settings" >}}
 
 {{< expand "Click Here for More Information" "v" >}}
 {{< truetable >}}
