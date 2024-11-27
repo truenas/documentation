@@ -203,7 +203,7 @@ The GPU passthrough option shows in the **Resources Configuration** section of t
 
 Click **Passthrough available (non-NVIDIA) GPUs** to have TrueNAS pass an AMD or Intel GPU to the application.
 
-**Select MVIDIA GPU(s)** displays if an NVIDIA GPU is available, with [installed drivers](#installing-nvidia-drivers).
+**Select NVIDIA GPU(s)** displays if an NVIDIA GPU is available, with [installed drivers](#installing-nvidia-drivers).
 Click **Use this GPU** to pass that GPU to the application.
 
 ### Installing Custom Applications
