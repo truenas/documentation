@@ -43,8 +43,12 @@ Applications are provided "as-is" and can introduce system stability or security
 Make sure the application is required for your specific use requirements and does not violate your security policies before installation.
 
 You must choose a pool before you can install an application.
+See [Advanced Guidance](#advanced-guidance) below for more information about apps pool selection.
 
-{{< include file="/static/includes/apps/AppsBestPractices.md" >}}
+As of 24.10, TrueNAS apps use Docker containers and Docker Compose for deployment.
+Docker is an open-source software that manages images and container deployments.
+
+The default system-level settings are found in **Apps > Settings**.
 
 For more information on screens and screen functions, refer to the UI Reference article on [Apps Screens]({{< relref "SCALE/SCALEUIReference/Apps/_index.md" >}}).
 
@@ -60,15 +64,6 @@ We recommend keeping the application use case in mind when choosing a pool.
 Select a pool with enough space for all the applications you intend to use.
 For stability, we recommend using SSD storage for the applications pool.
 
-{{< hint type=tip title="Encrypted Pool Apps Pool" >}}
-Choosing an encrypted pool as the apps pool can introduce issues with apps not deploying when the pool is locked, result in apps failing to migrate after a manual upgrade and reboot, or produce a host path error if the pool is passphrase-encrypted.
-For these reasons, we do not recommend choosing an encrypted pool for apps.
-Apps configured to use datasets created on an encrypted pool are also encrypted and can have the same deployment issues as the apps pool.
-If your system does not have an unencrypted pool available, forcing you to use an encrypted pool for app storage, you need to unlock the pool and datasets after manual system upgrades.
-If migration fails due to a locked pool or dataset, you must unlock these storage options and re-initiate migration.
-The best practice is to create and use an unencrypted pool for apps and app dataset storage volumes.
-{{< /hint >}}
-
 Select the pool and click **Save**. If you close the dialog to set the pool later, click **Configuration > Choose Pool** to set the pool.
 
 {{< trueimage src="/images/SCALE/Apps/AppsSettingsChoosePool.png" alt="Choosing a Pool for Apps" id="Choosing a Pool for Apps" >}}
@@ -79,6 +74,8 @@ For example, create the datasets for the Nextcloud app before installing the app
 {{< include file="/static/includes/AppsVMsNoHTTPS.md" >}}
 
 {{< trueimage src="/images/SCALE/SystemSettings/SystemSettingsGUISettingsSCALE.png" alt="General System Settings" id="General System Settings" >}}
+
+See [Advanced Guidance](#advanced-guidance) below for more information about apps pool selection and datasets.
 
 ### Unsetting the Apps Pool
 To select a different pool for apps to use, click **Configuration > Unset Pool**. This turns off the apps service until you choose another pool for apps to use.
@@ -110,7 +107,7 @@ Some applications deploy as the **root** user for initial configuration before o
 Keep these general best practices in mind when using applications with TrueNAS.
 
 #### Changing Apps Network Settings
-Go to **Apps > Installed**, click **Configuration**, and then on **Settings**.
+Go to **Apps > Installed**, click **Configuration**, and select **Settings**.
 
 To add another range of IP addresses, click **Add** to the right of **Address Pools**, then select a range from the dropdown list of options, and enter the desired value in **Size**.
 
@@ -254,7 +251,7 @@ Click **Confirm** then **Continue** to delete the application.
 Apps on the **Installed** screen, showing either the **Deploying** or **Running** status, can be stopped using the stop button on the **Applications** table row for the app.
 
 Apps stuck in a deploying state can result from various configuration problems.
-To check  the logs for information on deployment issues encountered, click **View Logs**on the **Workloads** widget for the app.
+To check the logs for information on deployment issues encountered, click **View Logs**on the **Workloads** widget for the app.
 
 ## Discover Screen Options
 The **Discover** screen shows application widgets based on the trains selected on the **Train Settings** screen.
@@ -291,6 +288,28 @@ To select multiple categories, click **Categories** again and select another cat
 
 After installing an application, the **Installed** applications screen shows the app in the **Deploying** state.
 The status changes to **Running** when the application is fully deployed and ready to use.
+
+## Advanced Guidance
+
+Below, you'll find additional details about TrueNAS apps administration, including best practices and in-depth insights.
+
+### App Pool Selection
+
+{{< include file="/static/includes/apps/AppsPool.md" >}}
+
+### App Dataset Types
+
+{{< include file="/static/includes/apps/AppsDatasets.md" >}}
+
+### Custom Apps
+
+{{< include file="/static/includes/apps/CustomAppIntro.md" >}}
+
+{{< include file="/static/includes/apps/AppsCustomApp.md" >}}
+
+### App Directory Services
+
+{{< include file="/static/includes/apps/AppsDirectoryService.md" >}}
 
 <div class="noprint">
 

@@ -1,22 +1,16 @@
 &NewLine;
 
-Keep these general best practices in mind when using applications with TrueNAS:
+Below, you'll find additional details about TrueNAS apps administration, including best practices and in-depth insights.
 
 {{< expand "App Pool Selection" "v" >}}
 
-{{< include file="/static/includes/apps/AppsPoolOrDataset.md" >}}
+{{< include file="/static/includes/apps/AppsPool.md" >}}
 
 {{< /expand >}}
 
 {{< expand "App Dataset Types" "v" >}}
 
 {{< include file="/static/includes/apps/AppsDatasets.md" >}}
-
-{{< /expand >}}
-
-{{< expand "Apps General Settings" "v" >}}
-
-{{< include file="/static/includes/apps/AppsDockerCompose.md" >}}
 
 {{< /expand >}}
 
@@ -31,7 +25,5 @@ Keep these general best practices in mind when using applications with TrueNAS:
 {{< expand "App Directory Services" "v" >}}
 
 {{< include file="/static/includes/apps/AppsDirectoryService.md" >}}
-
-iXsystems Support can assist Enterprise customers with configuring directory service settings in TrueNAS with the [information customers provide]({{< relref "/SCALE/GettingStarted/Install/_index.md" >}}), but they do not configure customer Active Directory system settings.
 
 {{< /expand >}}
