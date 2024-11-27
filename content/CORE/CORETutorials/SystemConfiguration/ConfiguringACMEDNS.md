@@ -1,5 +1,6 @@
 ---
 title: "Configuring ACME DNS"
+redirect: "https://www.truenas.com/docs/core/13.0/coretutorials/systemconfiguration/configuringacmedns/"
 description: "Describes how to configure ACME on the open-source supported TrueNAS CORE."
 weight: 160
 aliases:

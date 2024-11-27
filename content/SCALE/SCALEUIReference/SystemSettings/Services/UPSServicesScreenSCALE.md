@@ -2,14 +2,14 @@
 title: "UPS Services Screen"
 description: "Provides information on the UPS service screen settings."
 weight: 70
-alias: 
+aliases: 
  - /scale/scaleclireference/service/cliups/
 tags:
  - ups
  - services
 ---
 
-The **Services > UPS** screen settings specify connection, shutdown and other settings to configure UPS service for servers running TrueNAS SCALE.
+The **Services > UPS** screen settings specify connection, shutdown and other settings to configure UPS service for servers running TrueNAS.
 
 {{< include file="/static/includes/NUTsupport.md" >}}
 

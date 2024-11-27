@@ -28,12 +28,12 @@ For example, select **Shares <i class="material-icons" aria-hidden="true" title=
 
 {{< trueimage src="/images/SCALE/Dashboard/GlobalSearchElementResult.png" alt="Global Search Result - Element" id="Global Search Result - Element" >}}
 
-TrueNAS SCALE indicates the selected element with an arrow.
+TrueNAS indicates the selected element with an arrow.
 
 ## Searching TrueNAS Documentation
 
 Click **Search Documentation for <<*query*>>** to redirect the search to the TrueNAS Documentation Hub.
-TrueNAS SCALE opens a new browser tab to display documentation search results for the query.
+TrueNAS opens a new browser tab to display documentation search results for the query.
 
 <!-- Update  image with results from the 24.10 branch, after branching for 24.10 has been completed and the redirect is updated away from master/nightlies-->
 {{< trueimage src="/images/SCALE/Dashboard/GlobalSearchDocs.png" alt="Search Documentation Results" id="Search Documentation Results" style="border:1px solid #0095d5" >}}

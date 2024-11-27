@@ -1,7 +1,7 @@
 &NewLine;
 
 {{< hint type=important title= "Third Party App Catalogs"  >}}
-For best stability during upgrades to future major versions of TrueNAS SCALE, use applications provided by the default TRUENAS catalog.
+For best stability during upgrades to future major versions of TrueNAS, use applications provided by the default TRUENAS catalog.
 
 Third-party app catalogs available for TrueNAS are provided and maintained by individuals or organizations outside of iXsystems.
 iXsystems does not provide support for third-party applications, nor can we guarantee app updates and consistent functionality over time.

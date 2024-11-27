@@ -1,6 +1,6 @@
 ---
 title: "Setting Up Data Sharing"
-description: "Provides general information on setting up basic data sharing on TrueNAS SCALE."
+description: "Provides general information on setting up basic data sharing on TrueNAS."
 weight: 50
 aliases:
  - /scale/gettingstarted/install/setupsharing/
@@ -15,16 +15,19 @@ keywords:
 ---
 
 After setting up storage on your TrueNAS, it is time to begin sharing data!
-There are several sharing solutions available on SCALE, but in this article we discuss the options to create the share and dataset from the **Shares** screens.
+There are several sharing solutions available in TrueNAS, but in this article we discuss the options to create the share and dataset from the **Shares** screens.
+
+{{< include file="/static/includes/RootLevelDatasetShareWarning.md" >}}
 
 ## Sharing Data Methods
-TrueNAS SCALE provides three types of sharing methods:
+
+TrueNAS provides three types of sharing methods:
 
 * SMB for Windows shares
 * NFS for Unix-like shares
 * ISCSi block shares
 
-For more information on TrueNAS SCALE shares, see the [Shares]({{< relref "/SCALE/SCALETutorials/Shares/_index.md" >}}) tutorials.
+For more information on TrueNAS shares, see the [Shares]({{< relref "/SCALE/SCALETutorials/Shares/_index.md" >}}) tutorials.
 
 Regardless of what type of share you create, you need to create the user and dataset for the share.
 
@@ -187,6 +190,6 @@ To set up NFS sharing from the **Add NFS** screen:
 ## Setting up an iSCSI Block Share
 
 Setting up block sharing is a complicated scenario that requires detailed configuration steps and knowledge of your network environment.
-A simple configuration is beyond the scope of this getting started guide, but detailed articles are [available in the SCALE Tutorials section]({{< relref "/SCALE/SCALETutorials/Shares/iSCSI/_index.md" >}}).
+A simple configuration is beyond the scope of this getting started guide, but detailed articles are [available in the Tutorials section]({{< relref "/SCALE/SCALETutorials/Shares/iSCSI/_index.md" >}}).
 
 With simple sharing now set up, you can back up your configuration and set up data backup.

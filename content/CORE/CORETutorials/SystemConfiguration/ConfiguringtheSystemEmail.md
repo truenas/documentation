@@ -1,5 +1,6 @@
 ---
 title: "Configuring the System Email"
+redirect: "https://www.truenas.com/docs/core/13.0/coretutorials/systemconfiguration/configuringthesystememail/"
 description: "Provides information on how to set up system email on TrueNAS CORE."
 weight: 60
 aliases:

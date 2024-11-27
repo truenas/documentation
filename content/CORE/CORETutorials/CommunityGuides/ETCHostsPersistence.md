@@ -1,5 +1,6 @@
 ---
 title: "/etc/hosts IP Persistence"
+redirect: "https://www.truenas.com/docs/core/13.0/coretutorials/communityguides/etchostspersistence/"
 description: "Describes the process of mapping host or domain names on TrueNAS CORE."
 weight: 5
 tags:

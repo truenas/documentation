@@ -73,16 +73,6 @@ You can customize alert settings for when disk(s) format with the data integrity
 You can customize alert settings for when the system fails to communicate, sync the SED global password, and sync keys with the KMIP server.
 {{< /expand >}}
 
-### Plugins
-
-**Plugins** alert settings apply to plugins installed on your TrueNAS.
-{{< expand "Click here for more information" >}}
-
-![AlertSettingsPlugins](/images/SCALE/SystemSettings/AlertSettingsPlugins.png "Plugin Alert Settings")
-
-You can customize the alert setting for when plugin updates are available.
-{{< /expand >}}
-
 ### Network
 
 **Network** alert settings apply to network interfaces configured on your TrueNAS.

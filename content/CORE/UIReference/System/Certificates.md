@@ -1,5 +1,6 @@
 ---
 title: "Certificates"
+redirect: "https://www.truenas.com/docs/core/13.0/uireference/system/certificates/"
 description: "Explains the fields located on the Certificates screen in TrueNAS CORE."
 weight: 160
 tags:

@@ -1,5 +1,6 @@
 ---
 title: "Updating CORE Enterprise"
+redirect: "https://www.truenas.com/docs/core/13.0/coretutorials/updatingtruenas/updatingenterprise/"
 description: "Describes how to update Enterprise-licensed TrueNAS CORE deployments."
 geekdocCollapseSection: true
 weight: 20

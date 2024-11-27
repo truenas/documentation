@@ -13,6 +13,8 @@ tags:
 ---
 
 
+{{< include file="/static/includes/RootLevelDatasetShareWarning.md" >}}
+
 ## About Windows (SMB) Shares
 SMB (also known as CIFS) is the native file-sharing system in Windows.
 SMB shares can connect to most operating systems, including Windows, MacOS, and Linux.
@@ -321,6 +323,9 @@ Open **Finder > Go > Connect To Server**
 Enter the SMB address as follows: <code>smb://<i>192.168.1.111</i></code>.
 
 Input the username and password for the user assigned to that pool or guest if the share has guest access.
+
+For further tuning in macOS, Apple provides some enterprise-specific pointers in their [Adjust SMB browsing behavior in macOS](https://support.apple.com/en-us/102064) article.
+
 {{< /expand >}}
 
 {{< expand "Mounting on a FreeBSD System" "v" >}}

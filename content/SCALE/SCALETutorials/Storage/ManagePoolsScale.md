@@ -1,6 +1,6 @@
 ---
 title: "Managing Pools"
-description: "Provides instructions on managing storage pools, VDEVs, and disks in TrueNAS SCALE."
+description: "Provides instructions on managing storage pools, VDEVs, and disks in TrueNAS."
 weight: 40
 aliases:
  - /scale/scaletutorials/storage/pools/managepoolsscale/
@@ -16,7 +16,7 @@ keywords:
 ---
 
 The **Storage Dashboard** widgets provide enhanced storage provisioning capabilities and access to pool management options to keep the pool and disks healthy, upgrade pools and VDEVs, open datasets, snapshots, data protection screens, and manage S.M.A.R.T. tests.
-This article provides instructions on pool management functions available in the SCALE UI.
+This article provides instructions on pool management functions available in the TrueNAS UI.
 
 {{< trueimage src="/images/SCALE/Storage/StorageDashboardWithPool.png" alt="Storage Dashboard with Pool" id="Storage Dashboard with Pool" >}}
 
@@ -60,7 +60,7 @@ Click **Export/Disconnect**. A confirmation dialog displays when the export/disc
 
 Upgrading a storage pool is typically not required unless the new OpenZFS feature flags are deemed necessary for required or improved system operation.
 
-Do not do a pool-wide ZFS upgrade until you are ready to commit to this SCALE major version! You can not undo a pool upgrade, and you lose the ability to roll back to an earlier major version!
+Do not do a pool-wide ZFS upgrade until you are ready to commit to this TrueNAS major version! You can not undo a pool upgrade, and you lose the ability to roll back to an earlier major version!
 
 The **Upgrade** button displays on the **Storage Dashboard** for existing pools after an upgrade to a new TrueNAS major version that includes new [OpenZFS feature flags]({{< relref "SCALEReleaseNotes.md#component-versions" >}}).
 Newly created pools are always up to date with the OpenZFS feature flags available in the installed TrueNAS version.
@@ -108,7 +108,6 @@ There are a few  ways to increase the size of an existing pool:
 * Replace all existing disks in the VDEV with larger disks.
 
 By default, a VDEV limits all disks to the usable capacity of the smallest attached device.
-SCALE automatically expands the usable capacity of the pool to fit all available space after replacing the smallest attached disk (see [Replacing Disks to Expand a Pool](#replacing-disks-to-expand-a-pool) below).
 If a pool is not automatically expanded, for example when resizing virtual disks in a hypervisor apart from TrueNAS, click **Expand** on the **Storage Dashboard** to manually increase the pool size to match all available disk space.
 
 ### Extending a RAIDZ VDEV
@@ -117,10 +116,10 @@ Extend a RAIDZ VDEV to add additional disks one at a time, expanding capacity in
 This is useful for small pools (typically with only one RAID-Z VDEV), where there is not enough hardware capacity to add a second VDEV, doubling the number of disks.
 
 {{< expand "Overview and Considerations" "v" >}}
-SCALE 24.10 (Electric Eel) introduces RAIDZ extension to allow incremental expansion of an existing RAIDZ VDEV using one more disks.
+TrueNAS 24.10 (Electric Eel) introduces RAIDZ extension to allow incremental expansion of an existing RAIDZ VDEV using one more disks.
 RAIDZ extension allows resource- or hardware-limited home lab and small enterprise users to expand storage capacity with lower upfront costs compared to traditional ZFS expansion methods.
 
-To expand a RAIDZ array, SCALE reads data from the current disks and rewrites it onto the new configuration, including any additional disks.
+To expand a RAIDZ array, TrueNAS reads data from the current disks and rewrites it onto the new configuration, including any additional disks.
 
 Data redundancy is maintained.
 Make sure the pool is healthy before beginning the expansion process.
@@ -167,7 +166,7 @@ Select an available disk from the **New Disk** dropdown menu.
 Click **Extend**.
 
 A job progress window opens.
-TrueNAS SCALE returns to the ***Poolname* Devices** screen when complete.
+TrueNAS returns to the ***Poolname* Devices** screen when complete.
 
 ### Adding a VDEV to a Pool
 
@@ -269,7 +268,7 @@ Click anywhere on the VDEV to expand it and select one of the existing disks.
 Wait for the resilver to complete before replacing the next disk.
 Repeat steps 1-4 for all attached disks.
 
-TrueNAS SCALE automatically expands the usable capacity of the pool to fit all available space once the last attached disk is replaced.
+TrueNAS automatically expands the usable capacity of the pool to fit all available space once the last attached disk is replaced.
 
 ## Removing VDEVs
 
@@ -280,7 +279,7 @@ In addition, you can remove a data VDEV from an existing pool under specific cir
 This process preserves data integrity but has multiple requirements:
 
 * The pool must be upgraded to a ZFS version that includes the `device_removal` feature flag.
-  The system shows the [**Upgrade** button](#upgrading-a-pool) after upgrading SCALE when new ZFS feature flags are available.
+  The system shows the [**Upgrade** button](#upgrading-a-pool) after upgrading TrueNAS when new ZFS feature flags are available.
 * All top-level VDEVs in the pool must be *only* mirrors or stripes.
 * Special VDEVs cannot be removed when RAIDZ data VDEVs are present.
 * All top-level VDEVs in the pool must use the same basic allocation unit size (`ashift`).

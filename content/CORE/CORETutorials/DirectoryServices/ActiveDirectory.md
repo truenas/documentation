@@ -1,5 +1,6 @@
 ---
 title: "Setting Up Active Directory"
+redirect: "https://www.truenas.com/docs/core/13.0/coretutorials/directoryservices/activedirectory/"
 description: "Provides information on how to configure Active Directory (AD) on your TrueNAS."
 weight: 10
 aliases: /core/directoryservices/activedirectory/

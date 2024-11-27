@@ -1,5 +1,6 @@
 ---
 title: "Configuring IDP SAML as SSO for TrueCommand SAML Service"
+redirect: "https://www.truenas.com/docs/truecommand/3.0/adminguide/admin/saml/configidpsamlsso/"
 description: "Provides information on setting up an identity provider (IDP) SAML provider as SSO for TrueCommand SAML service."
 weight: 40
 aliases:

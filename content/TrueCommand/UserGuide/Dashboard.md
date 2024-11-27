@@ -1,5 +1,6 @@
 ---
 title: Dashboard
+redirect: "https://www.truenas.com/docs/truecommand/3.0/userguide/dashboard/"
 description: "Overview and usage notes for the main TrueCommand Dashboard."
 weight: 10
 tags:

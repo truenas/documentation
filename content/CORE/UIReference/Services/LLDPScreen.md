@@ -1,5 +1,6 @@
 ---
 title: "LLDP Screen"
+redirect: "https://www.truenas.com/docs/core/13.0/uireference/services/lldpscreen/"
 description: "Describes the LLDP screen in TrueNAS CORE."
 weight: 50
 tags:

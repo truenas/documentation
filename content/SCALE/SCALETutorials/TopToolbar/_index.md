@@ -1,6 +1,6 @@
 ---
 title: Top Toolbar
-description: "Tutorials about options available from the TrueNAS SCALE top toolbar."
+description: "Tutorials about options available from the TrueNAS top toolbar."
 geekdocCollapseSection: true
 weight: 3
 tags:

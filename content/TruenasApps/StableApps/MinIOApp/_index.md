@@ -1,6 +1,6 @@
 ---
 title: "MinIO"
-description: "Tutorials for installing and using the MinIO charts application available in the stable train in TrueNAS SCALE."
+description: "Tutorials for installing and using the MinIO charts application available in the stable train in TrueNAS."
 geekdocCollapseSection: true
 weight:
 aliases: 
@@ -10,6 +10,8 @@ aliases:
  - /scale/scaleuireference/systemsettings/services/s3servicescreen/
  - /scale/scaletutorials/apps/chartapps/minioapp/
  - /scale/scaletutorials/apps/stableapps/minioapp/
+ - /truenasapps/communityapps/minioapp/
+ - /truenasapps/stableapps/minioapp/miniomanualupdate/
 tags:
 - s3
 - apps

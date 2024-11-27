@@ -1,5 +1,6 @@
 ---
 title: "Groups"
+redirect: "https://www.truenas.com/docs/core/13.0/uireference/accounts/groups/"
 description: "Describes the fields on the Groups screen in TrueNAS CORE." 
 weight: 10
 tags:

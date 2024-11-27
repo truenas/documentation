@@ -1,6 +1,6 @@
 ---
 title: "⎙ Download or Print"
-description: "View all SCALE Getting Started articles as a single page for download or print."
+description: "View all TrueNAS Getting Started articles as a single page for download or print."
 weight: 1
 no_print: "true"
 related: false

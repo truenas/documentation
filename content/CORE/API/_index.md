@@ -1,5 +1,6 @@
 ---
 title: "API Reference"
+redirect: "https://www.truenas.com/docs/core/13.0/api/"
 description: "Describes how to access the API documentation in TrueNAS 13."
 geekdocCollapseSection: true
 weight: 160

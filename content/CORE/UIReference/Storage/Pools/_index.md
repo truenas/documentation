@@ -1,5 +1,6 @@
 ---
 title: "Pools"
+redirect: "https://www.truenas.com/docs/core/13.0/uireference/storage/pools/poolsscreens/"
 description: "Lists the screens related to Pools in TrueNAS CORE."
 geekdocCollapseSection: true
 weight: 10

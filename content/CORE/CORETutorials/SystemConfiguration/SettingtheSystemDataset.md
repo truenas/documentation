@@ -1,5 +1,6 @@
 ---
 title: "Setting the System Dataset"
+redirect: "https://www.truenas.com/docs/core/13.0/coretutorials/systemconfiguration/settingthesystemdataset/"
 description: "Describes how to configure the system dataset on TrueNAS CORE."
 weight: 70
 aliases:

@@ -1,39 +1,60 @@
 ---
 title: "Setting Up IPMI"
-description: "Guides you through setting up Intelligent Platform Management Interface (IPMI) on TrueNAS SCALE."
+description: "Guides you through setting up Intelligent Platform Management Interface (IPMI) on TrueNAS."
 weight: 50
 tags:
 - network
 - ipmi
 ---
 
-{{< hint type=note >}}
-IPMI requires compatible hardware! Refer to your hardware documentation to determine if the TrueNAS web interface has IPMI options.
-{{< /hint >}}
+{{< include file="/static/includes/IPMICompatibility.md" >}}
 
-Many [TrueNAS Storage Arrays](https://www.truenas.com/docs/hardware/) have a built-in out-of-band management port that provides side-band management should the system become unavailable through the web interface.
+Many [TrueNAS systems](https://www.truenas.com/docs/hardware/) include a built-in out-of-band management port, enabling system access even when the web interface is unavailable.
 
-Intelligent Platform Management Interface (IPMI) allows users to check the log, access the BIOS setup, and boot the system without physical access. IPMI also enables users to remotely access the system to assist with configuration or troubleshooting issues.
+Intelligent Platform Management Interface (IPMI) allows users to check the log, access the BIOS setup, and boot the system without physical access.
+IPMI also enables users to remotely access the system to assist with configuration or troubleshooting issues.
 
-{{< hint type=note >}}
-Some IPMI implementations require updates to work with newer versions of Java. See [here](https://forums.freenas.org/index.php?threads/psa-java-8-update-131-breaks-asrocks-ipmi-virtual-console.53911/) for more information.
-{{< /hint >}}
+The **IPMI** widget on the **Network** screen shows the available IPMI channels and gives access to IPMI configuration and event logs.
 
-IPMI is configured in **Network > IPMI**. The IPMI configuration screen provides a shortcut to the most basic IPMI configuration.
+{{< trueimage src="/images/SCALE/Network/NetworkIPMIWidget.png" alt="IPMI Widget" id="IPMI Widget" >}}
 
-![NetworkIPMIWidget](/images/SCALE/Network/NetworkIPMIWidget.png "IPMI widget")
+## Configuring IPMI
 
-## IPMI Options
+Click <i class="material-icons" aria-hidden="true" title="Edit">edit</i> on the channel you wish to edit to open the **IPMI** configuration screen.
 
-After saving the configuration, users can access the IPMI interface using a web browser and the IP address specified in **Network > IPMI**. The management interface prompts for login credentials. Refer to your IPMI device documentation to learn the default administrator account credentials.
+{{< trueimage src="/images/SCALE/Network/IPMIConfigurationScreen.png" alt="IPMI Configuration Screen" id="IPMI Configuration Screen." >}}
 
-After logging in to the management interface, users can change the default administrative user name and create additional IPMI users. IPMI utility appearance and available functions vary by hardware.
+To configure a static IPv4 connection for IPMI, do not select **DHCP**.
 
-We recommend setting a strong IPMI password. IPMI passwords must include at least one upper case letter, one lower case letter, one digit, and one special character (punctuation, e.g. ! # $ %, etc.). The IPMI password must also be 8-16 characters long. Document your password in a secure location.
+Enter the IPv4 address for the IPMI web interface.
+Enter the IPv4 address subnet mask in **IPv4 Netmask**, such as *255.255.240.0*.
+Enter the IPv4 connection default gateway.
+
+If needed, enter the VLAN identifier of the IPMI interface in **VLAN ID**.
+We recommend configuring IPMI on a separate VLAN that is isolated from the main TrueNAS network.
+This allows for IPMI access even if the main network is down.
+
+Click **Save** to update IPMI configuration.
+
+After saving the configuration, access the IPMI interface using a web browser and the IP address specified in **Network > IPMI** or click <span class="iconify" data-icon="ic:round-launch" title="Open"></span> to open the IPMI manager in a new browser tab.
+The management interface prompts for login credentials.
+IPMI utility appearance and available functions vary by hardware.
+Refer to your IPMI device documentation to learn the default administrator account credentials.
+
+After logging in to the management interface, change the default administrative user name.
+We recommend setting a strong IPMI password.
+Refer to your IPMI device documentation for password requirements.
+Document your password in a secure location.
+
+Alternately, enter a new password in **IPMI Password Reset** on the **IPMI** configuration screen.
 
 ## IPMI Alerts
 
+Click **Show Events** on the **IPMI** widget to show the **IPMI Events** log.
+
+{{< trueimage src="/images/SCALE/Network/IPMIEvents.png" alt="IPMI Events" id="IPMI Events" >}}
+
 Use the [Alert Settings Screen]({{< relref "AlertsSettingsServiceScreen.md" >}}) under the **Hardware** category to adjust IPMI alerts.
-Configure the minimum warning level and frequency to display IPMI alerts in the TrueNAS SCALE UI.
+Configure the minimum warning level and frequency to display IPMI alerts in the TrueNAS UI.
 
 {{< include file="/static/includes/IPMISELAlert.md" >}}

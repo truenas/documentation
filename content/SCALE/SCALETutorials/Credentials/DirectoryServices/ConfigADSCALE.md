@@ -1,6 +1,6 @@
 ---
 title: "Configuring Active Directory"
-description: "Provides instructions on configuring Active Directory (AD) in SCALE."
+description: "Provides instructions on configuring Active Directory (AD) in TrueNAS."
 weight: 10
 aliases:
 tags:
@@ -28,7 +28,7 @@ Users can configure AD services on Windows or Unix-like operating systems using 
 ### Preparing to Configure AD in TrueNAS
 Before configuring Active Directory (AD) in TrueNAs:
 
-You need to know the hostname assigned to the TrueNAS system. Default value is **truenas**.
+You need to know the hostname assigned to the TrueNAS system. The default value is **truenas**.
 
 The **Domain Account Name** default is **Administrator**, or enter a name for TrueNAS to generate as the computer account upon domain join.
 Enter the password for this account.
@@ -50,11 +50,11 @@ If your environment requires something different, go to **System > General Setti
 Keep the local system time sync within five (5) minutes of the AD domain controller time in a default AD environment.
 
 Use an external time source when configuring a virtualized domain controller.
-TrueNAS generates alerts if the system time gets out-of-sync with the AD domain controller time.
+TrueNAS generates alerts if the system time gets out of sync with the AD domain controller time.
 
 TrueNAS has a few options to ensure both systems are synchronized. Either:
 
-* Go to **System > General Settings**, click **Settings** in the **Localization** widget, and set **Timezone** to the value that matches location of the AD domain controller.
+* Go to **System > General Settings**, click **Settings** in the **Localization** widget, and set **Timezone** to the value that matches the location of the AD domain controller.
 
   {{< trueimage src="/images/SCALE/SystemSettings/LocalizationSettingsScreen.png" alt="Timezone Options" id="Timezone Options" >}}
 
@@ -75,7 +75,7 @@ To connect TrueNAS to Active Directory:
    Enter the TrueNAS host name that matches the information on the **Network > Global Configuration** screen in the **Hostname** field.
 
 4. Select **Enable** to attempt to join the AD domain immediately after saving the configuration.
-   SCALE populates the **Kerberos Realm** and **Kerberos Principal** fields on the **Advanced Options** settings screen.
+   TrueNAS populates the **Kerberos Realm** and **Kerberos Principal** fields on the **Advanced Options** settings screen.
 
    {{< trueimage src="/images/SCALE/Credentials/ActiveDirectoryBasicOptions.png" alt="Active Directory Basic Options" id="Active Directory Basic Options" >}}
 
@@ -108,13 +108,13 @@ The name in **NetBIOS Name** should match the name in **Hostname** on the **Glob
 To disable your AD server connection without deleting your configuration or leaving the AD domain, click **Settings** to open the **Active Directory** settings screen.
 Select the **Enable** checkbox to clear it and click **Save** to disable the AD service.
 
-This returns you to the main **Directory Services** screen now showing the two main directory services configuration options.
+This returns you to the main **Directory Services** screen, now showing the two main directory services configuration options.
 
 Click **Configure Active Directory** to open the **Active Directory** screen with your existing configuration settings.
 Select **Enable** again, and click **Save** to reactivate your connection to your AD server.
 
 ## Leaving Active Directory
-TrueNAS requires users to cleanly leave an Active Directory if you want to delete the configuration.
+TrueNAS requires users to cleanly leave an Active Directory to delete the configuration.
 To cleanly leave AD, click **Leave Domain** on the **Active Directory Advanced Settings** screen to remove the AD object.
 Remove the computer account and associated DNS records from the Active Directory.
 

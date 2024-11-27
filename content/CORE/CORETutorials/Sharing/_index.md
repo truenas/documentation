@@ -1,5 +1,6 @@
 ---
 title: "Sharing"
+redirect: "https://www.truenas.com/docs/core/13.0/coretutorials/sharing/"
 description: "Tutorials for configuring different storage sharing protocols in TrueNAS."
 geekdocCollapseSection: true
 weight: 110

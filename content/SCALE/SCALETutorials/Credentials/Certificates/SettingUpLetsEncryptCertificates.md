@@ -1,6 +1,6 @@
 ---
 title: "Creating ACME Certificates"
-description: "Provides information on generating ACME certificates in TrueNAS SCALE using Let's Encrypt."
+description: "Provides information on generating ACME certificates in TrueNAS using Let's Encrypt."
 geekdocCollapseSection: true
 weight: 50
 tags:
@@ -10,13 +10,13 @@ keywords:
 - nas data storage 
 ---
 
-TrueNAS SCALE allows users to automatically generate custom domain certificates using [Let's Encrypt](https://letsencrypt.org/). 
+TrueNAS allows users to automatically generate custom domain certificates using [Let's Encrypt](https://letsencrypt.org/). 
 
 ## Requirements
 
-* An email address for your TrueNAS SCALE admin user.
+* An email address for your TrueNAS admin user.
 * A custom domain that uses Cloudflare, AWS Route 53, or OVH.
-* A DNS server that does not cache for your TrueNAS SCALE system.
+* A DNS server that does not cache for your TrueNAS system.
 
 ## Create an ACME DNS-Authenticator
 

@@ -1,5 +1,6 @@
 ---
 title: "Adding an iSCSI Share"
+redirect: "https://www.truenas.com/docs/core/13.0/coretutorials/sharing/iscsi/addingiscsishare/"
 description: "Describes how to add an iSCSI share on TrueNAS CORE."
 weight: 10
 aliases: /core/sharing/iscsi/iscsishare/

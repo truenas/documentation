@@ -1,6 +1,6 @@
 ---
 title: "Configuring LDAP"
-description: "Provides instructions on configuring and managing LDAP configurations in SCALE."
+description: "Provides instructions on configuring and managing LDAP configurations in TrueNAS."
 weight: 20
 aliases:
 tags:
@@ -14,7 +14,7 @@ keywords:
 TrueNAS has an [Open LDAP](https://www.openldap.org/) client for accessing the information on an LDAP server.
 An LDAP server provides directory services for finding network resources like users and their associated permissions.
 {{< hint type=note >}}
-You can have either Active Directory or LDAP configured on SCALE but not both.
+You can have either Active Directory or LDAP configured on TrueNAS but not both.
 {{< /hint >}}
 
 {{< expand "Does LDAP work with SMB?" "v" >}}
@@ -26,7 +26,7 @@ TrueNAS does not support non-CA certificates.
 
 ## Configuring LDAP
 
-To configure SCALE to use an LDAP directory server:
+To configure TrueNAS to use an LDAP directory server:
 
 1. Go to **Credentials > Directory Services** and click **Configure LDAP**.
 
@@ -49,7 +49,7 @@ If you want to further modify the LDAP configuration, click **Advanced Options**
 To disable LDAP but not remove the configuration, clear the **Enable** checkbox. The main **Directory Services** screen returns to the default view showing the options to configure Active Directory or LDAP.
 To enable LDAP again, click **Configure LDAP** to open the **LDAP** screen with your saved configuration. Select **Enable** again to reactivate your LDAP directory server configuration.
 
-## Removing LDAP from SCALE
+## Removing LDAP from TrueNAS
 
 To remove the LDAP configuration, click **Settings** to open the **LDAP** screen.
 Clear all settings and click **Save**.

@@ -1,5 +1,6 @@
 ---
 title: "Setting Up a Network Bridge"
+redirect: "https://www.truenas.com/docs/core/13.0/coretutorials/network/interfaces/bridgecreate/"
 description: "Provides instructions on setting up a network bridge interface on TrueNAS CORE."
 weight: 10
 tags:

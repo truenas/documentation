@@ -2,7 +2,7 @@
 title: "Adding SSH Credentials"
 description: "Provides information on adding SSH connections, generating SSH key pairs, and adding the SSH public key to the root user."
 weight: 20
-alias:
+aliases:
 tags:
  - ssh
  - credentials
@@ -46,7 +46,7 @@ A manual setup allows a secure connection without a password prompt.
 {{< include file="/static/includes/AddManualSSHConnection.md" >}}
 
 ### Adding a Public SSH Key to an Admin User Account
-This procedure covers adding a public SSH key to the admin account on the TrueNAS SCALE system and generating a new SSH Keypair to add to the remote system (TrueNAS or other).
+This procedure covers adding a public SSH key to the admin account on the TrueNAS system and generating a new SSH Keypair to add to the remote system (TrueNAS or other).
 
 1. Copy the SSH public key text or download it to a text file:
 

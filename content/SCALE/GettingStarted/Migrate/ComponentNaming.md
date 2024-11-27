@@ -1,6 +1,6 @@
 ---
 title: "Component Naming"
-description: "Provides information on disk and interface naming changes related to the change from FreeBSD storage and sharing in CORE to Linux in TrueNAS SCALE."
+description: "Provides information on disk and interface naming changes related to the change from FreeBSD to Linux-based storage and sharing in TrueNAS."
 weight: 35
 aliases:
  - /scale/gettingstarted/componentnaming/
@@ -8,9 +8,9 @@ tags:
  - migrate
 ---
 
-TrueNAS SCALE incorporates all the major TrueNAS CORE storage and sharing features with a web interface based on Debian GNU/Linux.
-Because SCALE shares the same UI as the FreeBSD-based TrueNAS CORE, users might notice there are similarities.
-However, SCALE does incorporate some differences, primarily in component naming.
+The Linux-based TrueNAS OS incorporates all the major FreeBSD-based TrueNAS storage and sharing features with a web interface based on Debian GNU/Linux.
+Users might notice similarities between the Linux-based TrueNAS UI and the FreeBSD-based TrueNAS UI.
+However, the switch from FreeBSD to Linux results in some differences, primarily in component naming.
 
 {{< hint type=info title="Component Descriptions" >}}
 {{< include file="/static/includes/MigratingDescriptions.md" >}}
@@ -18,24 +18,24 @@ However, SCALE does incorporate some differences, primarily in component naming.
 
 ## Disks
 
-TrueNAS Core utilizes a numerical listing of drives in a system.
+TrueNAS 13.3 or earlier utilizes a numerical listing of drives in a system.
 
 ![ComponentNamingDrivesCore](/images/SCALE/Storage/ComponentNamingDrivesCore.png "TrueNAS Core Drive Listing")
 
-TrueNAS SCALE uses a lettered format for drive identification.  
+TrueNAS 22.12 or newer uses a lettered format for drive identification.  
 
-![ComponentNamingDrivesSCALE](/images/SCALE/Storage/ComponentNamingDrivesSCALE.png "TrueNAS SCALE Drive Listing")
+![ComponentNamingDrivesSCALE](/images/SCALE/Storage/ComponentNamingDrivesSCALE.png "TrueNAS Drive Listing")
 
 {{< hint type=note >}}
-SCALE still labels NVMe drives with a numeric value.
+TrueNAS 22.12 or newer still labels NVMe drives with a numeric value.
 {{< /hint >}}
 
 ## Interfaces
 
 {{< include file="/static/includes/NetworkPortIdentifications.md" >}}
 
-TrueNAS CORE identifies bonded interfaces or link aggregations with **lagg** followed by a number (lagg1).
-TrueNAS SCALE uses **bond** followed by a number (bond1).
+TrueNAS 13.3 or earlier identifies bonded interfaces or link aggregations with **lagg** followed by a number (lagg1).
+TrueNAS 22.12 or newer uses **bond** followed by a number (bond1).
 
 {{<include file="/static/includes/addcolumnorganizer.md">}}
 

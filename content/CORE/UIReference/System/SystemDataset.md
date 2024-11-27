@@ -1,5 +1,6 @@
 ---
 title: "System Dataset"
+redirect: "https://www.truenas.com/docs/core/13.0/uireference/system/systemdataset/"
 description: "Describes the System Dataset screen on TrueNAS CORE."
 weight: 60
 tags:

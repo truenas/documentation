@@ -1,5 +1,6 @@
 ---
 title: "Custom Plugins"
+redirect: "https://www.truenas.com/docs/core/13.0/coretutorials/jailspluginsvms/plugins/creatingcustomplugin/"
 description: "Describes how to configure plugins on TrueNAS CORE."
 weight: 30
 Aliases: /core/applications/plugins/createplugin/

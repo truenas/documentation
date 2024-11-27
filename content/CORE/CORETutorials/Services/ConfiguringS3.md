@@ -1,5 +1,6 @@
 ---
 title: "Configuring S3"
+redirect: "https://www.truenas.com/docs/core/13.0/coretutorials/services/configurings3/"
 description: "Provides information on how to start a local S3 service on your TrueNAS."
 weight: 100
 aliases: /core/services/s3/

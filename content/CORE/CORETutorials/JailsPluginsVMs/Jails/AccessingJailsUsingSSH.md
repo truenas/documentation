@@ -1,5 +1,6 @@
 ---
 title: "Accessing Jails Using SSH"
+redirect: "https://www.truenas.com/docs/core/13.0/coretutorials/jailspluginsvms/jails/accessingjailsusingssh/"
 description: "Describes how to access Jails using SSH in TrueNAS CORE."
 weight: 20
 tags:

@@ -1,6 +1,6 @@
 ---
 title: "Configuration Instructions"
-description: "Configuring TrueNAS SCALE after install."
+description: "Configuring TrueNAS after install."
 geekdocCollapseSection: true
 weight: 50
 related: false
@@ -9,17 +9,17 @@ keywords:
 - data storage solution
 ---
 
-This section provides instructions for users that are configuring TrueNAS SCALE for the first time.
+This section provides instructions for users that are configuring TrueNAS for the first time.
 
 {{< enterprise >}}
-TrueNAS SCALE Enterprise customers should contact iXsystems Support for assistance with the initial set up and configuration of their systems.
+TrueNAS Enterprise customers should contact iXsystems Support for assistance with the initial set up and configuration of their systems.
 
 {{< expand "Contacting iX Support" >}}
 {{< include file="/static/includes/iXsystemsSupportContact.md" >}}
 {{< /expand >}}
 {{< /enterprise >}}
 
-After completing the installation process, you can either use the [Console setup menu]({{< relref "ConsoleSetupMenuSCALE.md" >}}) to reconfigure the primary network interface with a static IP address or use the SCALE UI to make network changes and complete the initial configuration.
+After completing the installation process, you can either use the [Console setup menu]({{< relref "ConsoleSetupMenuSCALE.md" >}}) to reconfigure the primary network interface with a static IP address or use the TrueNAS UI to make network changes and complete the initial configuration.
 
 Configuring your system includes:
 

@@ -1,5 +1,6 @@
 ---
 title: "Creating Cloud Sync Tasks"
+redirect: "https://www.truenas.com/docs/core/13.0/coretutorials/tasks/creatingcloudsynctasks/"
 description: "Describes how to configure cloud storage backup tasks in TrueNAS CORE."
 weight: 90
 aliases:

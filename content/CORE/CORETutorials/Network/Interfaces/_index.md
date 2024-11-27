@@ -1,5 +1,6 @@
 ---
 title: "Interfaces"
+redirect: "https://www.truenas.com/docs/core/13.0/coretutorials/network/interfaces/"
 description: "Provides instructions on how to edit a network physical interface and a list of other TrueNAS CORE network interface tutorials."
 geekdocCollapseSection: true
 weight: 30

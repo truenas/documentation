@@ -2,7 +2,7 @@
 title: "Cloud Credentials Screens"
 description: "Provides information on the Cloud Credentials screens and settings."
 weight: 10
-alias: 
+aliases: 
  - /scale/scaleclireference/task/cloudsync/clicredential/
 tags:
 - cloud
@@ -51,7 +51,7 @@ The selection in **Provider** changes the **Authentication** settings.
 
 ### Storj iX Credential
 Storj authentication includes going to the Storj iX sign-in screen to either create a new Storj iX account or log into an existing Storj iX account.
-After configuring the Storj account in the Storj-iX portal return to SCALE to enter the S3 credentials provided by Storj.
+After configuring the Storj account in the Storj-iX portal return to TrueNAS to enter the S3 credentials provided by Storj.
 
 {{< trueimage src="/images/SCALE/Credentials/CloudCredentialsAdd.png" alt="Cloud Credentials Storj iX" id="Cloud Credentials Storj iX" >}}
 

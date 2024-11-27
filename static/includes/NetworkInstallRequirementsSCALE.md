@@ -7,10 +7,10 @@ You must assign an IP address to each network interface card (NIC) installed in 
 To configure your TrueNAS server to work with your network, you need:
 
 * DHCP broadcast messages enabled on the network or the subnet(s) in your network where TrueNAS is installed.
-* DNS name sever IP addresses in your network (SCALE can accommodate up to three name server IP addresses).
+* DNS name sever IP addresses in your network (TrueNAS can accommodate up to three name server IP addresses).
 * IP address for the Network Time Protocol (NTP) server you use to synchronize time across your servers and network.
-* Main domain name or the domain name for the portion of your network where the TrueNAS SCALE server is deployed.
-* Host name you want to use if not using the default-assigned host name in SCALE (**truenas** is the default host name in SCALE).
+* Main domain name or the domain name for the portion of your network where the TrueNAS server is deployed.
+* Host name you want to use if not using the default-assigned host name in TrueNAS (**truenas**).
 * IP address for each additional network interface added in your system and connected to your network (static IP not provided by DHCP).
 * IP address assigned to the controller.
   Either allow DHCP to assign the IP address or assign a static IP.

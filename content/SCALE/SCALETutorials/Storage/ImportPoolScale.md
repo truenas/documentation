@@ -1,6 +1,6 @@
 ---
 title: "Import Pool"
-description: "Provides information on ZFS importing for storage pools in TrueNAS SCALE. It also addresses GELI-encrypted pools."
+description: "Provides information on ZFS importing for storage pools in TrueNAS. It also addresses GELI-encrypted pools."
 weight: 10
 aliases:
  - /scale/scaletutorials/storage/datasets/importpoolscale/
@@ -40,8 +40,8 @@ TrueNAS detects the pools that are present but not connected and adds them to th
 Select a pool from the **Pool** dropdown list, then click **Import**.
 
 {{< expand "Can I import GELI-encrypted pools?" "v" >}}
-GELI encryption is specific to FreeBSD so TrueNAS SCALE cannot import GELI-encrypted pools. 
-See the **GELI Pool Migrations** section in the CORE [Storage Encryption](https://www.truenas.com/docs/core/coretutorials/storage/pools/storageencryption/#geli-pool-migrations) article.
+GELI encryption is specific to FreeBSD so Linux-based TrueNAS cannot import GELI-encrypted pools.
+See the **GELI Pool Migrations** section in the TrueNAS 13.0 [Storage Encryption](https://www.truenas.com/docs/core/13.0/coretutorials/storage/pools/storageencryption/#geli-pool-migrations) article.
 
-The [Preparing to Migrate]({{< relref "MigratePrep.md" >}}) article provides information on what you can and cannot migrate and a checklist of actions to take before migrating from CORE with GELI-encrypted pools to SCALE.
+The [Preparing to Migrate]({{< relref "MigratePrep.md" >}}) article provides information on what you can and cannot migrate and a checklist of actions to take before migrating from TrueNAS 13.0 (or 13.3 for community users) with GELI-encrypted pools to 24.04.
 {{< /expand >}}

@@ -1,5 +1,6 @@
 ---
 title: "SMB Service Screen"
+redirect: "https://www.truenas.com/docs/core/13.0/uireference/services/smbscreen/"
 description: "Describes the SMB screen in TrueNAS CORE."
 weight: 110
 tags:

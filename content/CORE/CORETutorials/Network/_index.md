@@ -1,5 +1,6 @@
 ---
 title: "Network"
+redirect: "https://www.truenas.com/docs/core/13.0/coretutorials/network/"
 description: "Provides information on using the Network Summary screen and lists other tutorials related to configuring CORE networking."
 geekdocCollapseSection: true
 weight: 80
