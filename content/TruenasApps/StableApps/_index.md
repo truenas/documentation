@@ -26,6 +26,8 @@ The tutorials in this section are for the commonly-used **stable** train catalog
 
 For information on adding to or changing the train for the apps catalog, see [Managing App Trains]({{< relref "UsingTrains.md" >}}).
 
+{{< include file="/static/includes/apps/AppsBestPractices.md" >}}
+
 ## Understanding App Install Wizard Settings
 
 {{< include file="/static/includes/apps/AppsInstallWizardSettings.md" >}}
