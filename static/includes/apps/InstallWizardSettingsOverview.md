@@ -2,7 +2,7 @@
 
 The installation wizard configuration sections vary by application, with some including more configuration areas than others.
 Click **Install** to review settings ahead of time to check for required settings.
-Click **Discover** on the breadcrumb at the top of the installation wizard to exiting the screen without saving and until you are ready return and configure the app settings.
+Click **Discover** on the breadcrumb at the top of the installation wizard to exit the screen without saving and until you are ready return and configure the app settings.
 
 All apps in the **stable** train, some **community** train apps, and all apps in the **enterprise** train generally include these basic setting sections:
 
@@ -12,10 +12,10 @@ All apps in the **stable** train, some **community** train apps, and all apps in
 
   Do not change the **Version** number for official apps or those included in a TrueNAS catalog.
   When a new version becomes available, the **Installed** application screen shows an update alert, and the **Application Info** widget shows an **Update** button.
-  Updating the app changes the version to the currently-available release.
+  Updating the app changes the version to the currently available release.
 
 * ***Application* Configuration** shows required and optional settings for the app.
-    Typical settings include user credentials, environment variables, additional argument settings, name of the node, or even sizing parameters.
+    Typical settings include user credentials, environment variables, additional argument settings, the name of the node, or even sizing parameters.
 
 * **User and Group Configuration** shows the user and group ID for the default user assigned to the app.
   If not using a default user and group provided, add a new user to manage the application before using the installation wizard, then enter the UID in both the user and group fields.
@@ -32,9 +32,9 @@ All apps in the **stable** train, some **community** train apps, and all apps in
   Storage configuration can include the primary data mount volume, a configuration volume, postgres volumes, and an option to add additional storage volumes.
   The primary mount volumes have two options:
   * **ixVolume** creates a storage volume inside the hidden **ix-apps** dataset. This is the default setting.
-  * **Host Path** allows you to select an existing dataset created for the application. Shows additional fields to select the path to the dataset and add the mount point.
+  * **Host Path** allows you to select an existing dataset created for the application. It shows additional fields for selecting the path to the dataset and adding the mount point.
 
-  ixVolumes are not recommended for permanent storage volumes, they are intended for use as rapid storage for a test deployment of the container.
+  ixVolumes are not recommended for permanent storage volumes, they are intended for rapid storage for a test deployment of the container.
   We recommend adding datasets and configuring the container storage volumes with the host path option.
 
   Host paths add existing dataset(s) as the storage volumes.
