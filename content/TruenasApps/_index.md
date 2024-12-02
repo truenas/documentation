@@ -43,8 +43,12 @@ Applications are provided "as-is" and can introduce system stability or security
 Make sure the application is required for your specific use requirements and does not violate your security policies before installation.
 
 You must choose a pool before you can install an application.
+See [Advanced Guidance](#advanced-guidance) below for more information about apps pool selection.
 
-{{< include file="/static/includes/apps/AppsBestPractices.md" >}}
+As of 24.10, TrueNAS apps use Docker containers and Docker Compose for deployment.
+Docker is an open-source software that manages images and container deployments.
+
+The default system-level settings are found in **Apps > Settings**.
 
 For more information on screens and screen functions, refer to the UI Reference article on [Apps Screens]({{< relref "SCALE/SCALEUIReference/Apps/_index.md" >}}).
 
@@ -71,12 +75,14 @@ For example, create the datasets for the Nextcloud app before installing the app
 
 {{< trueimage src="/images/SCALE/SystemSettings/SystemSettingsGUISettingsSCALE.png" alt="General System Settings" id="General System Settings" >}}
 
+See [Advanced Guidance](#advanced-guidance) below for more information about apps pool selection and datasets.
+
 ### Unsetting the Apps Pool
 To select a different pool for apps to use, click **Configuration > Unset Pool**. This turns off the apps service until you choose another pool for apps to use.
 
 ### Configuring Apps Settings
 
-Click **Configuration > Settings** to open the **Settings** screen, which contains options for setting apps trains, configuring app networking, installing NVIDIA drivers (if compatible hardware is present), and allowing TrueNAS to monitor for Docker image updates.
+Click **Configuration > Settings** to open the **Settings** screen, which contains options for setting app trains, configuring app networking, installing NVIDIA drivers (if compatible hardware is present), and allowing TrueNAS to monitor for Docker image updates.
 
 {{< trueimage src="/images/SCALE/Apps/AppsSettingScreen.png" alt="Apps Settings Screen" id="Apps Settings Screen" >}}
 
@@ -101,15 +107,15 @@ Some applications deploy as the **root** user for initial configuration before o
 Keep these general best practices in mind when using applications with TrueNAS.
 
 #### Changing Apps Network Settings
-Go to **Apps > Installed**, click **Configuration** and then on **Settings**.
+Go to **Apps > Installed**, click **Configuration**, and select **Settings**.
 
-To add an additional range of IP addresses, click **Add** to the right of **Address Pools**, then select a range from the dropdown list of options, and enter the desired value in **Size**.
+To add another range of IP addresses, click **Add** to the right of **Address Pools**, then select a range from the dropdown list of options, and enter the desired value in **Size**.
 
 **Base** shows the default IP address and subnet, and **Size** shows the network size of each docker network that is cut off from the base subnet.
 
 {{< hint type="info" title="Apps Networking Troubleshooting Tip!" >}}
-This setting replaces the Kubernetes Settings option for Bind Network in 24.04 and earlier.
-Use to resolve issues where apps experiences issues where TrueNAS device is not reachable from some networks.
+This setting replaces the **Kubernetes Settings** option for **Bind Network** in 24.04 and earlier.
+Use to resolve issues where apps experience issues where TrueNAS device is not reachable from some networks.
 Select the network option, or add additional options to resolve the network connection issues.
 {{< /hint >}}
 
@@ -148,7 +154,7 @@ The default **latest** tag downloads the most recent image version.
 When downloading a private image, enter user account credentials that allow access to the private registry.
 
 ## Installing an Application
-The first time you go to **Apps**, a dialog prompts your to choose the pool apps use. You must set the app pool before you can install applications.
+The first time you go to **Apps**, a dialog prompts you to choose the pool for apps to use. You must set the app pool before you can install applications.
 Select the pool as described in the [**Choosing the Application Pool**](#choosing-the-application-pool).
 
 The **Installed** applications screen displays **Check Available Apps** before you install the first application.
@@ -157,11 +163,16 @@ The **Installed** applications screen displays **Check Available Apps** before y
 
 Click either **Check Available Apps** or **Discover Apps** to open the **[Discover](#using-the-discover-applications-screen)** screen.
 
-Search for the application widget, then click on that widget to open the information screen for the app and to access the installation wizard.
+Search for the application widget, then click on that widget to open the information screen for the app and access the installation wizard.
 
 {{< include file="/static/includes/apps/AppsSMBErrorWarning.md" >}}
 
 If an application requires specific datasets, configure them before launching the installation wizard.
+
+### App Version Verses Version
+The **Application Info** widget on the **Installed** applications screen shows the **App Version**, which is the main container version, and is provided for information purposes.
+This **App Version** also shows on the upgrade dialog, and the application details screen just above the **Version**. 
+The **Version** information is the basis for app updates in TrueNAS, and is found on the app widget, and in the app Install wizard.
 
 ### Using an App Installation Wizard
 After clicking on an app widget on the **Discover Apps** screen, the information screen for that app opens.
@@ -172,7 +183,7 @@ Click **Install** to open the installation wizard for the application.
 The installation wizard configuration sections vary by application, with some including more configuration areas than others.
 Each application tutorial provides information on steps to take before launching an app installation wizard, but if a tutorial does not exist, click **Install** on the app information screen to open the wizard.
 Review settings ahead of time to check for required settings and then exit the wizard to do the necessary steps before returning to install the application.
-Click **Discover** on the breadcrumb at the top of the app wizard screen to exiting the without saving.
+Click **Discover** on the breadcrumb at the top of the app wizard screen to exit without saving.
 
 {{< hint type="info" title="Community Maintained Apps" >}}
 Apps submitted and maintained by community members using the **Custom App** option might not include an installation wizard.
@@ -183,16 +194,16 @@ Refer to tutorials created and maintained by the community for more information 
 
 After clicking **Install** on an application wizard screen, the **Installed** applications screen opens showing the application in the **Deploying** state before
 changing to **Running**. 
-Applications that crash show the **Crashed** status. Click **Stop** changes the status to **Stopping** before going to **Stopped**.
+Applications that crash show the **Crashed** status. Clicking **Stop** changes the status to **Stopping** before going to **Stopped**.
 Click **Start** to restart the application.
 
 The screen defaults to selecting the first app row listed on the **Applications** table and showing the application widgets that first app.
-To modify installed application settings, first click on the app row on the **Applications** table, then click **Edit** on the **Application Info** widget.
+To modify installed application settings, first, click on the app row on the **Applications** table, then click **Edit** on the **Application Info** widget.
 
 Refer to individual tutorials in the [Stable]({{< relref "/content/TruenasApps/StableApps/_index.md" >}}), [Community]({{< relref "/content/TruenasApps/CommunityApps/_index.md" >}}), or [Enterprise]({{< relref "/content/TruenasApps/EnterpriseApps/_index.md" >}}) sections of the Documentation Hub for more details on configuring application settings.
 
 #### GPU Passthrough
-Users with compatible hardware can passthrough a GPU device to an application for use in hardware acceleration.
+Users with compatible hardware can pass through a GPU device to an application for use in hardware acceleration.
 
 GPU devices can be available for the host operating system (OS) and applications or can be [isolated for use in a Virtual Machine (VM)]({{< relref "managegpuscale.md" >}}).
 A single GPU cannot be shared between the OS/applications and a VM.
@@ -203,7 +214,7 @@ The GPU passthrough option shows in the **Resources Configuration** section of t
 
 Click **Passthrough available (non-NVIDIA) GPUs** to have TrueNAS pass an AMD or Intel GPU to the application.
 
-**Select MVIDIA GPU(s)** displays if an NVIDIA GPU is available, with [installed drivers](#installing-nvidia-drivers).
+**Select NVIDIA GPU(s)** displays if an NVIDIA GPU is available, with [installed drivers](#installing-nvidia-drivers).
 Click **Use this GPU** to pass that GPU to the application.
 
 ### Installing Custom Applications
@@ -214,7 +225,7 @@ See [Installing Custom Applications]({{< relref "UsingCustomApp.md" >}}) for mor
 ## Upgrading Apps
 Apps with available upgrades show a yellow circle with an exclamation point on the right side of the **Applications** table row, and the **Installed** application screen banner displays an **Update** or an **Update All** button.
 To upgrade an app, select the app row and click **Update** on the **Application Info** widget.
-To upgrade multiple apps, either click the **Update All** button on the **Installed** applications banner, or select the checkbox to the left of the application row to show the **Bulk Actions** button.
+To upgrade multiple apps, either click the **Update All** button on the **Installed** applications banner or select the checkbox to the left of the application row to show the **Bulk Actions** button.
 Click **Bulk Actions** and select **Upgrade All** to upgrade the apps selected.
 Upgrade options only show if TrueNAS detects an available update for installed applications.
 
@@ -236,6 +247,12 @@ Select **Remove ixVolumes** to delete hidden app storage from the Apps pool.
 
 Click **Confirm** then **Continue** to delete the application.
 
+## Stopping Apps
+Apps on the **Installed** screen, showing either the **Deploying** or **Running** status, can be stopped using the stop button on the **Applications** table row for the app.
+
+Apps stuck in a deploying state can result from various configuration problems.
+To check the logs for information on deployment issues encountered, click **View Logs**on the **Workloads** widget for the app.
+
 ## Discover Screen Options
 The **Discover** screen shows application widgets based on the trains selected on the **Train Settings** screen.
 
@@ -254,8 +271,8 @@ Use the **Discover** screen links to access other functions.
 * **Manage Installed Apps** - Opens the **Installed** apps screen where you access the **Configuration** menu to manage general application settings.
 
 ### Refreshing the Apps Catalog
-Click **Refresh Catalog** on the **Discover** screen to refresh the apps catalog.
-Refresh the apps catalog after adding or editing the app trains on your system.
+Click **Refresh Catalog** on the **Discover** screen to refresh the app catalog.
+Refresh the app catalog after adding or editing the app trains on your system.
 
 ### Using the Discover Screen Filters
 To change how app widgets show on the screen, click the down arrow to the right of **Filters**, and select the filter option to use.
@@ -271,6 +288,28 @@ To select multiple categories, click **Categories** again and select another cat
 
 After installing an application, the **Installed** applications screen shows the app in the **Deploying** state.
 The status changes to **Running** when the application is fully deployed and ready to use.
+
+## Advanced Guidance
+
+Below, you'll find additional details about TrueNAS apps administration, including best practices and in-depth insights.
+
+### App Pool Selection
+
+{{< include file="/static/includes/apps/AppsPool.md" >}}
+
+### App Dataset Types
+
+{{< include file="/static/includes/apps/AppsDatasets.md" >}}
+
+### Custom Apps
+
+{{< include file="/static/includes/apps/CustomAppIntro.md" >}}
+
+{{< include file="/static/includes/apps/AppsCustomApp.md" >}}
+
+### App Directory Services
+
+{{< include file="/static/includes/apps/AppsDirectoryService.md" >}}
 
 <div class="noprint">
 
