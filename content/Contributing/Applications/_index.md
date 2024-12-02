@@ -70,10 +70,11 @@ When submitting new tutorials or requesting changes to existing TrueNAS Document
 6. Submit the PR against the **Master** branch.
 
 ### Using the App Tutorial Template
-Upon opening the app tutorial template Markdown file, delete the commented-out sections that provide instructions for using it.
 Feel free to change standard article content by adding or removing sections to fit the app installation process.
 Change the front matter <file>description:</file> parameter at the top of the article to suit the subject and content of the new tutorial.
-The <file> description:</file> text must not exceed 160 alphanumeric or special characters, including spaces between characters. 
+Description text must not exceed 160 alphanumeric or special characters, including spaces between characters.
+After updating content, delete commented-out sections providing instructions for using this template when they are no longer needed.
+When documenting a **Community** train app, not delete any of the commented-out instructions in the COMMUNITY APP INTRO SNIPPETS section.
 
 #### Formatting Tips for Content Development
 Standard text emphasis:
@@ -83,23 +84,23 @@ Standard text emphasis:
 
 * Apply *Italics* to any variable.
   Use single asterisks preceding and following the name or text string to make it italics.
-  If using a variable in a code example, use the HTML tags <i></i> and not the Markdown tags.
+  If using a variable in a code example, use the HTML tags (\<i>\</i>) and not the Markdown tags.
 
-* Apply HTML file tags <file></file> when entering a path to a file or file name, for example <file>iso</file>.
+* Apply HTML file tags (<code>\<file>\</file></code>) when entering a path to a file or file name, for example <code>\<file>iso\</file></code>, which renders as <file>iso</file>.
 
-* Apply HTML keyboard tags <kbd></kbd> to keys on a keyboard, such as <kbd>Enter</kbd>.
+* Apply HTML keyboard tags (<code>\<kbd>\</kbd></code>) to keys on a keyboard, for example <code>\<kbd>Enter\</kbd></code>, which renders as <kbd>Enter</kbd>.
 
 When entering commands, command strings, or code blocks:
 
-* Apply backticks(`) or HTML <code></code> tags to format command strings or output.
+* Apply backticks(<code>\`\`</code>) or HTML <code>\<code>\</code></code> tags to format command strings or output, for example <code>\`string\`</code> or <code>\<code>string\</code></code>, which render as <code>string</code>.
   
-* Apply HTML <code></code> tags to strings with variables.
+* Apply HTML <code>\<code>\</code></code> tags to strings with variables.
 
   * Do not enclose variables in angle or square brackets as these can also be part of command syntax.
 
   * Do not enter variables in all caps unless the command requires entering the value in all caps.
 
-To create a code block, either use three backticks on the line before and after the content block, or use the HTML code tags.
+To create a code block, either use three backticks (<code>```</code>) on the line before and after the content block, or use the HTML code tags.
 
 #### Using the Apps Snippet Library
 When creating your articles you can use the library of snippets that contain explanations of settings and configuration instructions for the various app Install Wizard settings in your submitted content.
@@ -107,7 +108,7 @@ These snippets are maintained by the Technical Documentation team, but you can s
 
 The tutorial template includes the shortcode that calls these files into the app wizard sections of the Stable Apps and Enterprise Apps tutorials in the Documentation Hub.
 To use snippets where the template does not have one, enter the include file shortcode where you want to call another snippet.
-The shortcode to call snippet files is <file>include file="/static/includes/apps/snippetFileName.md"</file> enclosed in two curly brackets and one angle bracket preceding and following the string, and where *snippetFileName.md* is the name of the snippet file.
+The shortcode to call snippet files is <code>{{\<include&nbsp;file="/static/includes/apps/snippetFileName.md">}}</code>, where *snippetFileName.md* is the name of the snippet file.
 
 The following table shows the current list of snippet files.
 {{< expand "App Tutorial Snippet Files" "v" >}}
@@ -116,7 +117,7 @@ Not all snippet files in this folder apply to tutorial content.
 Refer to the tables below for a list of snippet files with content about tutorial sections.
 Open and read snippet files to determine where to use them in your tutorial.
 
-**Before You Beging Snippets**
+**Before You Begin Snippets**
 {{< truetable >}}
 | File Name | Snippet Use and Content |
 |-----------|-------------------------|
@@ -131,9 +132,9 @@ Open and read snippet files to determine where to use them in your tutorial.
 | File Name | Snippet Use and Content |
 |-----------|---------------------|
 | LocateAndOpenInstallWizard.md | Describes locating the app widget, and opening the install wizard for the app. |
- MultipleAppInstancesAndNaming.md | Describes adding more than one instance of the same app and naming it. For example, adding two stable or community app instances, or an enterprise and stable train version of the same app. |
+| MultipleAppInstancesAndNaming.md | Describes adding more than one instance of the same app and naming it. For example, adding two stable or community app instances, or an enterprise and stable train version of the same app. |
 | Configuring the app | InstallWizardEnvironVariablesSettings.md | Details the Environment Variable settings. Can use this if the procedure requires adding environment variables, or leave the snippet in the Understanding App Install Wizard section and refer to it for more information. |
-| InstallWizardAdvancedDNSSettings.md | Details the Advanced DNS setting options that might be included as part of the app configuration or network configuration settings.
+| InstallWizardAdvancedDNSSettings.md | Details the Advanced DNS setting options that might be included as part of the app configuration or network configuration settings. |
 {{< /truetable >}}
 
 **Understanding App Install Wizard Settings**
@@ -158,7 +159,7 @@ Open and read snippet files to determine where to use them in your tutorial.
 {{< /truetable >}}
 {{< /expand >}}
 
-### Requesting Edits to Existing Articles
-Click **Edit Article** at the top of the Documentation Hub article to request changes to an existing article.
+### Suggesting Edits to Existing Articles
+Click **Edit Article** at the top of the Documentation Hub article to suggest changes to an existing article.
 
 Refer to the [Content Updates]({{< relref "/Contributing/Documentation/ContentUpdate.md" >}}) article for more details.
