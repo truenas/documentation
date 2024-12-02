@@ -32,7 +32,7 @@ Community members can add and use the MinIO Enterprise app or the default commun
 ## Before You Begin
 To install the MinIO **enterprise** train app, do the following:
 
-{{< include file="/static/includes/apps/AppsEnterprieseBeforeYouBegin.md" >}}
+{{< include file="/static/includes/apps/BeforeYouBeginEnterpriseApps.md" >}}
   
 {{< include file="/static/includes/MinIOEnterpriseMultiModeBeforeYouBegin.md" >}}
 
@@ -46,7 +46,7 @@ This basic procedure covers the required MinIO enterprise app settings.
 For optional settings, see [Understanding MinIO Wizard Settings](#understanding-minio-wizard-settings).
 {{< /hint >}}
 
-{{< include file="/static/includes/apps/AddMultipleAppInstancesAndNaming.md" >}}
+{{< include file="/static/includes/apps/MultipleAppInstancesAndNaming.md" >}}
 
 {{< include file="/static/includes/apps/MinIoEnterpriseConfig1.md" >}}
 
@@ -87,7 +87,7 @@ The following section provides more detailed explanations of the settings in eac
 
 ### Application Name Settings
 
-{{< include file="/static/includes/apps/AppsWizardAppNameAndVersion.md" >}}
+{{< include file="/static/includes/apps/InstallWizardAppNameAndVersion.md" >}}
 
 ### MinIO Configuration Settings
 
@@ -101,7 +101,7 @@ Click **Enabled** under **Multi Mode (SNMD or MNMD) Configuration** to enable mu
 
 ### User and Group Configuration
 
-{{< include file="/static/includes/apps/AppUserAndGroupConfig.md" >}}
+{{< include file="/static/includes/apps/InstallWizardUserAndGroupConfig.md" >}}
 
 ### Network Configuration
 
@@ -121,7 +121,7 @@ Specify the default user UID **568** or the UID for the new user created in True
 
 {{< trueimage src="/images/SCALE/Apps/InstallMinIOEnterpriseData1ACLandACESettings.png" alt="MinIO Enterprise ACL and ACE Settings" id="MinIO Enterprise ACL and ACE Setting" >}}
 
-{{< include file="/static/includes/apps/AppInstallWizardACLConfiguration.md" >}}
+{{< include file="/static/includes/apps/InstallWizardStorageACLConfig.md" >}}
 
 Set ACL permissions for each dataset in the configuration.
 

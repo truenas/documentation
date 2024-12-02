@@ -53,7 +53,7 @@ The following sections provide more detail explanations of the settings found in
 
 ### Application Name Settings
 
-{{< include file="/static/includes/AppsWizardAppNameAndVersion.md" >}}
+{{< include file="/static/includes/InstallWizardAppNameAndVersion.md" >}}
 
 ### Configuration Settings
 You can accept the defaults in the **Configuration** settings, or enter the configuration settings you want to use.

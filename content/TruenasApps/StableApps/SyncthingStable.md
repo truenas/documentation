@@ -45,9 +45,9 @@ For optional settings, see [Understanding Syncthing Wizard Settings](#understand
 
 {{< trueimage src="/images/SCALE/Apps/InstallSyncthingEnterpriseScreen.png" alt="Install Syncthing Enterprise Screen" id="Install Syncthing Enterprise Screen" >}}
 
-{{< include file="/static/includes/apps/AppsWizardAppNameAndVersion.md" >}}
+{{< include file="/static/includes/apps/InstallWizardAppNameAndVersion.md" >}}
 
-{{< include file="/static/includes/apps/AddMultipleAppInstancesAndNaming.md" >}}
+{{< include file="/static/includes/apps/MultipleAppInstancesAndNaming.md" >}}
 
 Accept the default user and group ID settings (**568**).
 If you created a user for this app, change these settings to the UID/GID for that new user.
@@ -63,7 +63,7 @@ An additional storage volumes such as a *data* or *data1* dataset can store data
 
 {{< trueimage src="/images/SCALE/Apps/InstallSyncthingConfigAndData1ACLandACESettings.png" alt="Syncthing Storage and ACL Settings" id="Syncthing Storage and ACL Settings" >}}
 
-{{< include file="/static/includes/apps/AppInstallWizardACLConfiguration.md" >}}
+{{< include file="/static/includes/apps/InstallWizardStorageACLConfig.md" >}}
 
 See [**Storage Settings**](#storage-settings) below for more information.
 
@@ -84,7 +84,7 @@ The following sections provide more detail explanations of the settings found in
 
 ### Application Name Settings
 
-{{< include file="/static/includes/apps/AppsWizardAppNameAndVersion.md" >}}
+{{< include file="/static/includes/apps/InstallWizardAppNameAndVersion.md" >}}
 
 ### Configuration Settings
 The Syncthing app wizard is configured with all settings required to deploy the container, but you can add additional settings if you want to further customize the app in TrueNAS.
@@ -100,7 +100,7 @@ The default value for **User Id** and **Group ID** is **568**.
 {{< include file="/static/includes/apps/AppInstallWizardUserAndGroupConfig.md" >}}
 
 ### Networking Settings
-Accept the default port numbers in **Web Port for Syncthing**, **TCP Port for Syncthing** and **UDP Port for Syncthing**.
+Accept the default port numbers in **Web Port for Syncthing**, **TCP Port for Syncthing**, and **UDP Port for Syncthing**.
 The TrueNAS Syncthing stable app listens on port **20910**.
 The default TCP port is **20978** and the default UDP port is **20979**.
 
@@ -114,7 +114,7 @@ Clearing the **Host Network** checkbox shows the TCP and UDP port numbers, and t
 
 {{< trueimage src="/images/SCALE/Apps/InstallSyncthingChartsAddAdvanceDNSOptions.png" alt="Syncthing Add Advanced DNS Options" id="Syncthing Add Advanced DNS Options" >}}
 
-{{< include file="/static/includes/apps/AppInstallWizardAdvancedDNSSettings.md" >}}
+{{< include file="/static/includes/apps/InstallWizardAdvancedDNSSettings.md" >}}
 
 ### Storage Settings
 The Syncthing **stable** train app requires one storage volume/dataset to store configuration data and you can use a second dataset for app data storage. Create one named **config** and the other dataset named **data1**.
@@ -126,7 +126,7 @@ The Syncthing **stable** train app requires one storage volume/dataset to store 
 #### Mounting an SMB Share
 The TrueNAS Syncthing app includes the option to mount an SMB share inside the container pod.
 
-{{< include file="/static/includes/apps/AppWizardStorageSMBOption.md" >}}
+{{< include file="/static/includes/apps/InstallWizardStorageSMBOption.md" >}}
 
 ### Resource Configuration Settings
 
