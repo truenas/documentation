@@ -21,7 +21,7 @@ For the Linux Debian-based app instructions, see [Nextcloud]({{< relref "/conten
 
 {{< expand "Before You Begin" "v" >}}
 Before installing the Nextcloud plugin:
-* Create or use a [data pool]({{< relref "CORE/CORETutorials/Storage/Pools/_index.md" >}}) for plugin storage.
+* Create a new or use an existing [data pool]({{< relref "CORE/CORETutorials/Storage/Pools/_index.md" >}}) to use for plugin storage.
 * Connect the system to the Internet.
   Go to **Network > Interfaces**, edit the intended plugin interface, and set **Disable Hardware Offloading**.
 {{< /expand >}}
