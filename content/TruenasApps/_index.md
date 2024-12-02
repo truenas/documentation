@@ -190,7 +190,7 @@ Apps submitted and maintained by community members using the **Custom App** opti
 Refer to tutorials created and maintained by the community for more information on deploying and using these applications.
 {{< /hint >}}
 
-{{< include file="/static/includes/apps/AppsInstallWizardSettings.md" >}}
+{{< include file="/static/includes/apps/InstallWizardSettingsOverview.md" >}}
 
 After clicking **Install** on an application wizard screen, the **Installed** applications screen opens showing the application in the **Deploying** state before
 changing to **Running**. 

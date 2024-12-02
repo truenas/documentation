@@ -31,7 +31,7 @@ For more information on configuring general application functions and installati
 
 ## Understanding App Install Wizard Settings
 
-{{< include file="/static/includes/apps/AppsInstallWizardSettings.md" >}}
+{{< include file="/static/includes/apps/InstallWizardSettingsOverview.md" >}}
 
 For information on adding to or changing the train for the apps catalog, see [Managing App Trains]({{< relref "UsingTrains.md" >}}).
 

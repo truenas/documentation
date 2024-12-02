@@ -26,9 +26,9 @@ The instructions in this article apply to TrueNAS 22.10.0 and later.
 ## Before You Begin
 Before you install the Nextcloud app:
 
-{{< include file="/static/includes/apps/AppsStableBeforeYouBegin.md" >}}
+{{< include file="/static/includes/apps/BeforeYouBeginStableApps.md" >}}
 
-{{< include file="/static/includes/apps/AppsBeforeYouBeginCertificate.md" >}}
+{{< include file="/static/includes/apps/BeforeYouBeginAddAppCertificate.md" >}}
 
 <p style="margin-left: 33px">Adding a certificate is optional but if you want to use a certificate for this application, either create a new self-signed CA and certificate or import an existing CA and create the certificate for Nextcloud. A certificate is not required to deploy the application.</p>
 
@@ -75,7 +75,7 @@ Before you install the Nextcloud app:
   {{< /expand >}}
 
 
-{{< include file="/static/includes/apps/AppBeforeYouBeginNewUser.md" >}}
+{{< include file="/static/includes/apps/BeforeYouBeginAddNewAppUser.md" >}}
 
 * Set up a Nextcloud account.
   If you have an existing Nextcloud account, you enter the credentials for that users in the installation wizard.
@@ -87,13 +87,13 @@ This basic procedure covers the required Nextcloud app settings.
 For optional settings, see [Understanding App Installation Wizard Settings](#understanding-app-installation-wizard-settings).
 {{< /hint >}}
 
-{{< include file="/static/includes/apps/AddMultipleAppInstancesAndNaming.md" >}}
+{{< include file="/static/includes/apps/MultipleAppInstancesAndNaming.md" >}}
 
 {{< include file="/static/includes/apps/LocateAndOpenInstallWizard.md" >}}
 
 {{< trueimage src="/images/SCALE/Apps/InstallNextcloudScreen.png" alt="Install Nextcloud Screen" id="Install Nextcloud Screen" >}}
 
-{{< include file="/static/includes/apps/AppsWizardAppNameAndVersion.md" >}}
+{{< include file="/static/includes/apps/InstallWizardAppNameAndVersion.md" >}}
 
 Next, enter the **Nextcloud Configuration** settings.
 {{< expand "Entering Nextcloud Configuration Settings" "v" >}}
@@ -174,7 +174,7 @@ The following section provides more detailed explanations of the settings in eac
 
 ### Application Name Settings
 
-{{< include file="/static/includes/apps/AppsWizardAppNameAndVersion.md" >}}
+{{< include file="/static/includes/apps/InstallWizardAppNameAndVersion.md" >}}
 
 ### Nextcloud Configuration Settings
 Nextcloud configuration settings include setting up credentials, APT packages (previously referred to as the commands), the host IP and port, data directory path, upload limits, execution times, memory limits and cache memory consumption, adding a cron job with schedule, and adding additional environment variables.
@@ -226,9 +226,9 @@ Refer to Nextcloud documentation for more information on environment variables.
 ### Network Configuration
 The default web port for Nextcloud is **30027**.
 
-{{< include file="/static/includes/apps/AppsInstallWizardDefaultPorts.md" >}}
-{{< include file="/static/includes/apps/AppsInstallWizardAdvancedDNSSettings.md" >}}
-{{< include file="/static/includes/apps/AppInstallWizardCertificateSettings.md" >}}
+{{< include file="/static/includes/apps/InstallWizardDefaultPorts.md" >}}
+{{< include file="/static/includes/apps/InstallWizardAdvancedDNSSettings.md" >}}
+{{< include file="/static/includes/apps/InstallWizardCertificateSettings.md" >}}
 
 **Nginx Configuration** setting, **Proxy Timeout**, applies the time out (in seconds) to proxy connection, and proxy send and receive.
 The default value is **60** with a minimum of 30 seconds.
@@ -289,19 +289,19 @@ When finished you should have the **nextcloud** parent dataset with three child 
 
 #### ACL and ACE Settings
 
-{{< include file="/static/includes/apps/AppInstallWizardACLConfiguration.md" >}}
+{{< include file="/static/includes/apps/InstallWizardStorageACLConfig.md" >}}
 
 #### Mounting an SMB Share
 TrueNAS **Additional Storage** options include the ability to mount an SMB share inside the container pod.
 
-{{< include file="/static/includes/apps/AppWizardStorageSMBOption.md" >}}
+{{< include file="/static/includes/apps/InstallWizardStorageSMBOption.md" >}}
 
 ### Resource Configuration
 
 {{< trueimage src="/images/SCALE/Apps/InstallNextcloudResourcesConfig.png" alt="Resources Configuration Settings" id="Resources Configuration Settings" >}}
 
-{{< include file="/static/includes/apps/AppInstallWizardResourceConfig.md" >}}
-{{< include file="/static/includes/apps/AppsInstallWizardGPUPassthrough.md" >}}
+{{< include file="/static/includes/apps/InstallWizardResourceConfig.md" >}}
+{{< include file="/static/includes/apps/InstallWizardGPUPassthrough.md" >}}
 
 ## Troubleshooting Tips
 

@@ -175,7 +175,7 @@ The following sections provide more details on the settings found in each sectio
 
 ### Application Name Settings
 
-{{< include file="/static/includes/AppsWizardAppNameAndVersion.md" >}}
+{{< include file="/static/includes/InstallWizardAppNameAndVersion.md" >}}
 
 ### Chia Configuration
 The **Chia Configuration** section includes four settings: **Timezone**, **Chia Service Node**, **Full Node Peer**, and **Additional Environments**.

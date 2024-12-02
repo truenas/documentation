@@ -35,7 +35,7 @@ Community users can access enterprise versions of apps by adding the **enterpris
 Before launching the app installation wizard, do the following:
 * Create a self-signed certificate for the Syncthing enterprise app.
   
-  {{< include file="/static/includes/apps/AddAppCertificate.md" >}}
+  {{< include file="/static/includes/apps/AddingAppCertificate.md" >}}
 
 * Create the required datasets, **home** and **data1**.
   
@@ -49,11 +49,11 @@ Before launching the app installation wizard, do the following:
 
 {{< trueimage src="/images/SCALE/Apps/InstallSyncthingEnterpriseScreen.png" alt="Install Syncthing Enterprise Screen" id="Install Syncthing Enterprise Screen" >}}
 
-{{< include file="/static/includes/apps/AppsWizardAppNameAndVersion.md" >}}
+{{< include file="/static/includes/apps/InstallWizardAppNameAndVersion.md" >}}
 
 Next, enter the **Syncthing Configuration** settings.
 
-{{< include file="/static/includes/apps/AppsInstallWizardTimezoneSetting.md" >}}
+{{< include file="/static/includes/apps/InstallWizardTimezoneSetting.md" >}}
 
 Accept the default user and group IDs or enter the UID for any new TrueNAS user created to serve as the administrator for this app. See [User and Group Settings](#user-and-group-settings) below for more information.
 
@@ -94,10 +94,10 @@ The following sections provide detailed explanations of the settings found in ea
 
 ### Application Name Settings
 
-{{< include file="/static/includes/Apps/AppsWizardAppNameAndVersion.md" >}}
+{{< include file="/static/includes/Apps/InstallWizardAppNameAndVersion.md" >}}
 
 ### Configuration Setting
-{{< include file="/static/includes/apps/AppsInstallWizardTimezoneSetting.md" >}}
+{{< include file="/static/includes/apps/InstallWizardTimezoneSetting.md" >}}
 
 {{< include file="/static/includes/apps/AppInstallWizardEnvironVariablesSettings.md" >}}
 
@@ -133,7 +133,7 @@ Selecting **Migrate Data** forces a read-only mount regardless of the **Read Onl
 The SMB mount options are set to **vers=3.0**, **cifsacl**, and **noperm**.
 ACL preservation is not guaranteed if in a non-AD environment, or if the ACL or remote server contains local users.
 
-{{< include file="/static/includes/apps/AppWizardStorageSMBOption.md" >}}
+{{< include file="/static/includes/apps/InstallWizardStorageSMBOption.md" >}}
 
 ### Resource Configuration Settings
 
