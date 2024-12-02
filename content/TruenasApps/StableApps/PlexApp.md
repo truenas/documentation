@@ -26,20 +26,16 @@ Before you install the Plex app:
 
 {{< include file="/static/includes/apps/BeforeYouBeginStableApps.md" >}}
 
-* Go to **Datasets**, and select the pool or dataset where you want to add the Plex datasets.
-  For example, */tank/apps/plex* or */tank/plex*.
-  You can use either an existing pool or [create a new one]({{< relref "CreatePoolWizard.md" >}})
+{{< include file="/static/includes/apps/BeforeYouBeginAddAppDatasets.md" >}}
 
-  Create the two datasets Plex uses for storage volumes:
-  * **data** to use as the Plex data directory for database and metadata storage
-  * **config** for Plex application configuration storage.
+<p style="margin-left: 33px">Create the two datasets Plex uses for storage volumes: <b>data</b> to use as the Plex data directory for database and metadata storage, and <b>config</b> for Plex application configuration storage.</li></p>
 
-  You can create a dataset or use a temporary directory option for log data.
-  Transcode data is not useful or meant for persistent storage, so using a temporary directory is a better option.
+<p style="margin-left: 33px">You can create a dataset or use a temporary directory option for log data.
+  Transcode data is not useful or meant for persistent storage, so using a temporary directory is a better option.</p>
 
-  When creating the above datasets, select the **apps** dataset preset.
+<p style="margin-left: 33px">When creating the above datasets, select the <b>apps</b> dataset preset.
 
-  You can set up the permissions (ACLs) for these datasets after adding them using the **Edit ACL** screen, or wait and use the **Install Plex** wizard ACL settings to add  permissions. You can also edit permissions after using either method.
+<p style="margin-left: 33px">You can set up the permissions (ACLs) for these datasets after adding them using the <b>Edit ACL</b> screen, or wait and use the <b>Install Plex</b> wizard ACL settings to add  permissions. You can also edit permissions after using either method.</p>
   
 ### Installing the Plex App
 {{< hint info >}}
