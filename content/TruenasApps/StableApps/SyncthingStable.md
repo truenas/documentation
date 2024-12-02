@@ -100,7 +100,7 @@ The default value for **User Id** and **Group ID** is **568**.
 {{< include file="/static/includes/apps/AppInstallWizardUserAndGroupConfig.md" >}}
 
 ### Networking Settings
-Accept the default port numbers in **Web Port for Syncthing**, **TCP Port for Syncthing** and **UDP Port for Syncthing**.
+Accept the default port numbers in **Web Port for Syncthing**, **TCP Port for Syncthing**, and **UDP Port for Syncthing**.
 The TrueNAS Syncthing stable app listens on port **20910**.
 The default TCP port is **20978** and the default UDP port is **20979**.
 
