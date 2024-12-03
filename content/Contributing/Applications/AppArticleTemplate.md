@@ -157,7 +157,7 @@ See [User and Group Configuration](#user-and-group-configuration) and [Network C
 
 Leave **Host Network** unselected.-->
 
- *AppName* app.Add your **Storage Configuration** settings.
+Add your **Storage Configuration** settings.
 
 Set **Host Path (Path that already exists on the system)** in **Type** for ***Data Storage***.
 Select **Enable ACL**, and then enter or browse to and select the **data** dataset to populate the **Host Path** field.
