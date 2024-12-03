@@ -44,7 +44,7 @@ Note the primary group assigned to that user.
 
 ### Allowing Sudo Commands
 
-As a security hardening feature, administrator accounts in Linux-based TrueNAS releases (22.12.0 or newer) cannot by default execute certain root-level commands in a shell or SSH session.
+As a security hardening feature, administrator accounts in Linux-based TrueNAS releases (22.12.0 or newer) cannot execute certain root-level commands in a shell or SSH session by default.
 If a user attempts to execute one of these commands without root-level access, TrueNAS returns a **command not found** error.
 
 Administrative users who need to execute root-level commands to complete a task should temporarily enable sudo permissions for that user by going to **Credentials** and editing the user or group to enable some or all sudo commands.
@@ -90,8 +90,7 @@ To enable SSH access to the system as an admin user (or root user), you must fir
 
 4. Click **Save** and restart the SSH service.
 
-
-Now you must verify the user configuration options allow SSH access.
+Now you must verify the user configuration options to allow SSH access.
 
 If you want to SSH into the system as the root: 
 
