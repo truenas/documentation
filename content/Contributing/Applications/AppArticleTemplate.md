@@ -13,12 +13,13 @@ We are actively developing and improving this template.
 Check back for updates!
 {{< /hint >}}
 
-{{< hint type=note title="How to Use this Template" >}}
-To use this template, click **Edit Page** above or locate the Markdown file at [/Contributing/Applications/AppArticleTemplate.md](https://github.com/truenas/documentation/blob/master/content/Contributing/Applications/AppArticleTemplate.md) on the documentation [Github Repository](https://github.com/truenas/documentation).
-Copy the template content to your target app tutorial to begin writing.
+## How to Use this Template
+
+Click **Edit Page** above or locate the Markdown file at [/Contributing/Applications/AppArticleTemplate.md](https://github.com/truenas/documentation/blob/master/content/Contributing/Applications/AppArticleTemplate.md) on the documentation [Github Repository](https://github.com/truenas/documentation).
+
+Copy the template content to an existing [Community Apps]({{< relref "communityapps.md" >}}) placeholder article or create a new one if needed to begin writing.
 
 Detailed template instructions are commented out of the rendered copy of this template but show in the Markdown file.
-{{< /hint >}}
 
 <!-- BEGIN GENERAL INSTRUCTIONS -->
 <!-- Use this template as a guide when creating a new application tutorial.
@@ -59,6 +60,25 @@ Refer to the [Contributing to Apps]({{< relref "/content/contributing/applicatio
 <!-- /END GENERAL INSTRUCTIONS -->
 ---
 <!-- BEGIN TEMPLATE -->
+
+<!-- BEGIN FRONTMATTER -->
+<!-- If creating a new app tutorial instead of modifying an existing one, uncomment and include the following frontmatter, including the three hyphens (---) before and after the text.
+Modify AppName and keywords to reflect the app you're documenting.
+Leave weight undefined to allow for alphabetical sorting. -->
+<!--
+---
+title: "AppName"
+description: "Provides installation instructions for the AppName application in TrueNAS."
+weight:
+aliases:
+tags:
+- apps
+keywords:
+- keyword1
+- keyword2
+---
+-->
+<!-- /END FRONTMATTER -->
 
 <!-- BEGIN COMMUNITY APP INTRO SNIPPETS -->
 <!-- Include the following snippets and commented out instructions in all **Community** train app tutorials.
