@@ -154,6 +154,33 @@ Any new feature flags introduced since the previous OpenZFS version that was int
 
 For more details on feature flags, see [OpenZFS Feature Flags](https://openzfs.github.io/openzfs-docs/Basic%20Concepts/Feature%20Flags.html) and [OpenZFS zpool-feature.7](https://openzfs.github.io/openzfs-docs/man/7/zpool-features.7.html).
 
+## 24.10.1 Changelog
+
+**December 12, 2024**
+
+iXsystems is pleased to release TrueNAS 24.10.1!
+This is a maintenance release and includes refinement and fixes for issues discovered after the 24.10.0 and 24.10.0.X releases.
+
+* Prevent incorrect translation of LDAP basedn to kerberos realm ([NAS-132192](https://ixsystems.atlassian.net/browse/NAS-132192)).
+* Increase the maximum permitted Samba (SMB) ACL size from 64 to 1024 entries ([NAS-132344](https://ixsystems.atlassian.net/browse/NAS-132344)).
+* Fixed bug: Applications service fails after upgrade if app requires GPU, seemingly due to missing Nvidia Drivers ([NAS-132070](https://ixsystems.atlassian.net/browse/NAS-132070) and [NAS-132131](https://ixsystems.atlassian.net/browse/NAS-132131)).
+* Cache installed Nvidia kernel modules on upgrades within the same release train (i.e. 24.10.0, 24.10.1, etc.) so they do not need to be reinstalled and compiled ([NAS-132359](https://ixsystems.atlassian.net/browse/NAS-132359)).
+* Allow limited administrative users to view and download logs of certain jobs, even if they did not initiate the job ([NAS-132031](https://ixsystems.atlassian.net/browse/NAS-132031)).
+* Ensure installed apps are shown correctly after system reset ([NAS-131913](https://ixsystems.atlassian.net/browse/NAS-131913)).
+* Prevent `KeyError: 'pool_name'` resulting from pool name collision in zpool.status ([NAS-132742](https://ixsystems.atlassian.net/browse/NAS-132742)).
+* Allow unsetting/changing the apps pool in cases where the ix-apps dataset no longer exists ([NAS-132065](https://ixsystems.atlassian.net/browse/NAS-132065)).
+* Allow removing ix-volumes of apps that were migrated from 24.04 ([NAS-131911](https://ixsystems.atlassian.net/browse/NAS-131911)). This fix prevents `Failed to delete dataset: cannot destroy 'Tank/ix-apps/app_mounts/AppName': filesystem has dependent clones` errors.
+* 
+
+<a href="https://ixsystems.atlassian.net/issues/?filter=11216" target="_blank">Click here for the full changelog</a> of completed Jira tickets that are included in the 24.10.1 release.
+{{< include file="/static/includes/JiraFilterInstructions.md" >}}
+
+### 24.10.1 Known Issues
+
+* OAuth support for Microsoft Outlook is no longer supported in 24.10 due to Microsoft removal of username and password authentication to their email server. Restoration of Outlook OAuth support is anticipated in 25.04 ([NAS-132807](https://ixsystems.atlassian.net/browse/NAS-132807)).
+
+<a href="https://ixsystems.atlassian.net/issues/?filter=11217" target="_blank">Click here to see the latest information on Jira</a> about public issues discovered in 24.10.1 that are being resolved in a future TrueNAS release.
+
 ## 24.10.0.2 Changelog
 
 **November 8, 2024**
