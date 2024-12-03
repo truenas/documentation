@@ -121,7 +121,8 @@ Open and read snippet files to determine where to use them in your tutorial.
 {{< truetable >}}
 | File Name | Snippet Use and Content |
 |-----------|-------------------------|
-| BeforeYouBeginStableApps.md | Bullet point for adding the apps pool, adding a new user for the app administrator, and adding datasets. Does does not include details on adding datasets as these vary by app. |
+| BeforeYouBeginStableApps.md | Bullet point for adding the apps pool. |
+| BeforeYouBegigAddAppDatasets.md | Bullet point for adding datasets for the app. Does does not include details on adding datasets as these vary by app. 
 | BeforeYouBeginAddAppCertificate.md | Bullet point for adding a certificate if required for the app. Also include the AddingAppCertificate.md snippet with detailed instructions on adding a self-signed certificate. |
 | AddingAppCertificate.md | Detailed set procedure on adding a self-signed certificate authority (CA) and certificate. |
 | BeforeYouBeginAddNewUser.md | Single bullet point and procedure for adding a new user as a TrueNAS app administrator. |
