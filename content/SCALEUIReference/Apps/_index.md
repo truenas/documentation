@@ -87,7 +87,6 @@ Select **Migrate applications to the new pool** when changing the applications p
 | **Enable Container Image Updates** | Select to enable container image updates. |
 | **Enable GPU support** | Select to enable GPU support. The maximum number of apps that can use an Intel GPU is five. |
 | **Enable Integrated Loadbalancer** | Select to enable the integrated loadbalancer. The default uses servicelb. When disabled, you can use metallb and specify any IP from the local network.  |
-| **Enable Host Path Safety Checks** | Enabled by default. Select to enable TrueNAS SCALE to perform safety checks to ensure app host path volumes are secure. |
 {{< /truetable >}}
 
 **Settings Requiring Re-Initialization**
