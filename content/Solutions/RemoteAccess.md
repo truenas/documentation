@@ -38,7 +38,7 @@ Usability: Tailscale focuses on simplicity and ease of setup. It uses a centrali
 
 Before installing Tailscale in TrueNAS, create an [Auth Key](https://login.tailscale.com/admin/settings/keys) through your Tailscale account. [More Information](https://tailscale.com/kb/1085/auth-keys)
 
-Once your Auth Key has been created, you can navigate to the TrueNAS Apps Catalog and install Tailscale:
+After creating your Auth Key you can navigate to the TrueNAS Apps Catalog and install Tailscale:
 
 Apps -> Discover Apps -> (Search for Tailscale) -> Install
 
