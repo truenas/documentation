@@ -34,7 +34,7 @@ Pricing: Free / Paid Tier
 Difficulty: Easy to Moderate
 Usability: Tailscale focuses on simplicity and ease of setup. It uses a centralized control plane and integrates with identity providers like Google or Microsoft for authentication. It is ideal for users with limited networking knowledge.
 
-### Installing Tailscale on TrueNAS:
+### Installing Tailscale in TrueNAS:
 
 Before you install Tailscale on TrueNAS, you will need to create an [Auth Key](https://login.tailscale.com/admin/settings/keys) via your Tailscale account. [More Information](https://tailscale.com/kb/1085/auth-keys)
 
