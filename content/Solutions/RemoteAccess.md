@@ -13,11 +13,10 @@ tags:
 
 TrueNAS is fundamentally a storage appliance, so we recommend that you always run it not directly exposed to the internet.
 
-However, there are many instances in which a user will need to access their storage data or services remotely. In most corporate
-environments this is controlled by having access to a corporate VPN service where proper auditing and security best practices
-can be enforced. For the small business or home lab where a corporate VPN isn't available, there are many easier to deploy and
-manage services that can be used to give yourself or your clients access to your storage services and applications. This guide
-will introduce you to several of these and provide a basic walk-through of how to enable remote access to your TrueNAS.
+However, there are many instances where a user needs to access their storage data or services remotely. 
+In most corporate environments, a corporate VPN service controls internal and external access, performs proper auditing, and applies and enforces security best practices. 
+For the small business or home lab, where a corporate VPN is not an option, you can choose from many easy-to-deploy and manage services that give you or your clients access to your storage services and applications. 
+This guide introduces several access options and provides a basic walk-through enabling remote access to your TrueNAS.
 
 In TrueNAS 24.10 and later, there are several VPN technologies to choose from, each with their own strengths and weaknesses that
 may make them suitable for your particular environment. We will focus on three of them, all of which are available via the 
