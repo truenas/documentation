@@ -1,6 +1,6 @@
 ---
 title: "Accessing TrueNAS Remotely"
-description: "Basic information on the variety of ways TrueNAS can be accessed remotely"
+description: "Provides basic information on the variety of ways to access TrueNAS remotely"
 weight: 10
 tags:
 - gettingstarted
