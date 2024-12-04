@@ -11,7 +11,7 @@ tags:
 
 ## Overview
 
-TrueNAS is fundamentally a storage appliance, and as such it is recommended to always be run not directly exposed to the internet.
+TrueNAS is fundamentally a storage appliance, so we recommend that you always run it not directly exposed to the internet.
 
 However, there are many instances in which a user will need to access their storage data or services remotely. In most corporate
 environments this is controlled by having access to a corporate VPN service where proper auditing and security best practices
