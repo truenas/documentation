@@ -46,7 +46,7 @@ On the Installation page, scroll down to the **AuthKey** field, and paste the pr
 
 After the installation completes and you see the app status as **Running** you can navigate back to your [Tailscale Machines](https://login.tailscale.com/admin/machines) list to see your TrueNAS system listed.
 
-Using the `Addresses` listed for TrueNAS, you can now reach your TrueNAS host, including Shares, Apps and other services from your other [Tailscale clients](https://tailscale.com/download) anywhere in the world. 
+Using the **Addresses**  listed for TrueNAS, you can now reach your TrueNAS host, including shares, apps, and other services from your other [Tailscale clients](https://tailscale.com/download) anywhere in the world. 
 
 
 
