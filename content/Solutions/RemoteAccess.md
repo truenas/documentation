@@ -42,7 +42,7 @@ After creating your Auth Key you can navigate to the TrueNAS Apps Catalog and in
 
 **Apps -> Discover Apps ->** (Search for Tailscale) **-> Install**
 
-On the Installation page, scroll down to the `AuthKey` field, paste in the key you created previously. Leave all other options at their defaults, then scroll down and click `Install`.
+On the Installation page, scroll down to the **AuthKey** field, and paste the previously created key. Accept all other default settings, and then scroll down and click **Install**.
 
 Once the installation completes and you see the App status as "Running" you can navigate back to your [Tailscale Machines](https://login.tailscale.com/admin/machines) list and you will see your TrueNAS system listed.
 
