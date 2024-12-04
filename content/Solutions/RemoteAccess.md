@@ -30,8 +30,11 @@ This guide focuses on three options available through the TrueNAS App catalog fo
 ## Tailscale
 
 Website: [Tailscale](https://www.tailscale.com/)
+
 Pricing: Free / Paid Tier
+
 Difficulty: Easy to Moderate
+
 Usability: Tailscale focuses on simplicity and ease of setup. It uses a centralized control plane and integrates with identity providers like Google or Microsoft for authentication. It is ideal for users with limited networking knowledge.
 
 ### Installing Tailscale in TrueNAS:
@@ -53,8 +56,11 @@ Using the **Addresses**  listed for TrueNAS, you can now reach your TrueNAS host
 ## ZeroTier
 
 Website: [ZeroTier](https://www.zerotier.com/)
+
 Pricing: Free / Paid Tier
+
 Difficulty: Moderate to Hard
+
 Usability: User-friendly ZeroTier offers more advanced configuration options, such as managing multiple networks, IP ranges, and multicast settings. This makes it better suited for users with technical expertise.
 
 ### Installing ZeroTier on TrueNAS:
@@ -79,8 +85,11 @@ Using the **Addresses** listed for TrueNAS, you can reach your TrueNAS host, inc
 ## Wireguard
 
 Website: [WireGuard](https://www.wireguard.com)
+
 Pricing: Free
+
 Difficulty: Hard
+
 Usability: Wireguard requires manual setup and configuration. You need to manage keys, IPs, and routing yourself.
 
 ### Installing Wireguard on TrueNAS:
