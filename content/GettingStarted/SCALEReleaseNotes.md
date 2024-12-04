@@ -171,6 +171,7 @@ This is a maintenance release and includes refinement and fixes for issues disco
 * Allow unsetting/changing the apps pool in cases where the ix-apps dataset no longer exists ([NAS-132065](https://ixsystems.atlassian.net/browse/NAS-132065)).
 * Allow removing ix-volumes of apps that were migrated from 24.04 ([NAS-131911](https://ixsystems.atlassian.net/browse/NAS-131911)). This fix prevents `Failed to delete dataset: cannot destroy 'Tank/ix-apps/app_mounts/AppName': filesystem has dependent clones` errors.
 * Fix memory context for IPC read allocations to prevent potential Use After Free (UAF) corruption ([NAS-132685](https://ixsystems.atlassian.net/browse/NAS-132685)).
+* Make sure helm secret is safely serialized when listing App backups to migrate ([NAS-132077](https://ixsystems.atlassian.net/browse/NAS-132077)). This fix prevents a Unicode decode error, `Failed to list backups: 'utf-8' codec can't decode byte 0xa6 in position 0: invalid start byte`, that prevented some users from migrating apps from 24.04 to 24.10.0.X versions.
 
 <a href="https://ixsystems.atlassian.net/issues/?filter=11216" target="_blank">Click here for the full changelog</a> of completed Jira tickets that are included in the 24.10.1 release.
 {{< include file="/static/includes/JiraFilterInstructions.md" >}}
