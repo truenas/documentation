@@ -55,7 +55,7 @@ Using the **Addresses**  listed for TrueNAS, you can now reach your TrueNAS host
 Website: [ZeroTier](https://www.zerotier.com/)
 Pricing: Free / Paid Tier
 Difficulty: Moderate to Hard
-Usability: While still being user-friendly, ZeroTier offers more advanced configuration options, such as managing multiple networks, IP ranges, and multicast settings. This makes it better suited for users with technical expertise.
+Usability: User-friendly ZeroTier offers more advanced configuration options, such as managing multiple networks, IP ranges, and multicast settings. This makes it better suited for users with technical expertise.
 
 ### Installing ZeroTier on TrueNAS:
 
