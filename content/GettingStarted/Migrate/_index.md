@@ -3,6 +3,7 @@ title: "CORE to SCALE Migrations"
 description: "TrueNAS CORE to TrueNAS SCALE migrations."
 geekdocCollapseSection: true
 weight: 40
+aliases:
 tags:
 - migrate
 related: false
@@ -14,9 +15,10 @@ keywords:
 - data migration
 ---
 
+
 This section provides information and instructions for TrueNAS CORE users wanting to migrate to SCALE.
 
-{{< include file="/static/includes/MigrateCOREtoSCALEWarning.md" >}}
+{{< include file="/static/includes/MigrateCOREtoSCALE24_04.md" >}}
 
 Linux treats device names differently than FreeBSD so please read [Component Naming]({{< relref "ComponentNaming.md" >}}) for more information.
 

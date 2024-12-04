@@ -64,37 +64,6 @@ Cloud sync and TrueCloud backup tasks can be configured to send, receive, or syn
 The simplest way to set up a TrueCloud backup task is using a Storj iX account.
 See [Managing TrueCloud Backup Tasks]({{< relref "TrueCloudTasks.md" >}}) for a full tutorial.
 
-{{< expand "TrueCloud Backup Quickstart with a Storj Account" "v" >}}
-TrueNAS allows you to create a Storj cloud credential in TrueNAS, and set up a Storj account, from the **Backup Task** widget on the main **Dashboard**, the **Add TrueCloud Backup Task** screen,  or from the **Add Cloud Credentials** screen accessed from on the **Credentials > Backup Credentials** screens.
-
-To create the TrueCloud backup task using Storj:
-
-1. Create the TrueCloud backup task and set up the Storj iX account.
-
-   From the TrueNAS **Dashboard**, find the **Backup Tasks** widget and click **Cloud Sync to Storj or similar provider** to open the **Cloud Sync Task Wizard**.
-
-   Select **Add New** on the **Credentials** dropdown list. The **Cloud Credentials** screen opens with **Storj iX** prepopulated in the **Provider** field.
-
-   Click **Signup for account** to open the **Storj + iX** browser tab. Register an account, select a plan, and activate the Storj iX account.
-
-   After creating the Storj iX account, log into the Storj portal to create a new bucket and new S3 access credentials ([details]({{< relref "TrueCloudTasks.md#adding-storj-cloud-credentials" >}})).
-   Download the **Access Key** and **Secret Key** provided while creating the new S3 credentials. Copy and paste each string into the TrueNAS **Access Key ID** and **Secret Access Key** fields, respectively.
-
-   Click **Save**.
-
-2. Define the backup targets and schedule.
-
-   To add the TrueCloud backup task, go to **Data Protection > TrueCloud Backup Tasks** and click **Add** to open the **Add TrueCloud Backup Task** screen.
-
-   Review the fields in the **Local**, **Remote**, **Task Settings**, and **Control** sections.
-
-   Select the created Storj **Credentials** and **Bucket** before choosing a **Folder**.
-
-   Set the desired schedule using any of the predefined schedules, or select **Custom** to define your own.
-
-   Click **Save**.
-{{< /expand >}}
-
 See [Adding Cloud Credentials]({{< relref "/scaletutorials/credentials/backupcredentials/addcloudcredentials.md" >}}) for information on connecting TrueNAS SCALE to other cloud storage providers.
 
 ### Using Replication

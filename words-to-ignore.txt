@@ -2059,3 +2059,9 @@ ixVolumes
 RESTAPIDeprecationNotice
 tn-openstorage-logo
 Tailscale
+CMD
+ExpandedVdevReporting
+InstallAppResourceConfigurationGPU
+Atlassian
+atlassian
+tmux
