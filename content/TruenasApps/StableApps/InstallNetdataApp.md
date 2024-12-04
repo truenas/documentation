@@ -30,11 +30,11 @@ Prepare TrueNAS before installing the app by:
 
 {{< include file="/static/includes/apps/BeforeYouBeginAddAppDatasets.md" >}}
 
-  <div style="margin-left: 33px">Netdata uses three datasets: <b>config</b>, <b>lib</b>, and <b>cache</b>.
+  Netdata uses three datasets: <b>config</b>, <b>lib</b>, and <b>cache</b>.
 
   {{< include file="/static/includes/apps/BeforeYouBeginAddAppDatasetsProcedure.md" >}}
 
-  </div>
+
 * (Optional) Create a Netdata account.
   The app install wizard allows you to create a new Netdata account when configuring the app in TrueNAS, or to configure it to use a preexisting account.
 
