@@ -44,7 +44,7 @@ After creating your Auth Key you can navigate to the TrueNAS Apps Catalog and in
 
 On the Installation page, scroll down to the **AuthKey** field, and paste the previously created key. Accept all other default settings, and then scroll down and click **Install**.
 
-Once the installation completes and you see the App status as "Running" you can navigate back to your [Tailscale Machines](https://login.tailscale.com/admin/machines) list and you will see your TrueNAS system listed.
+After the installation completes and you see the app status as **Running** you can navigate back to your [Tailscale Machines](https://login.tailscale.com/admin/machines) list to see your TrueNAS system listed.
 
 Using the `Addresses` listed for TrueNAS, you can now reach your TrueNAS host, including Shares, Apps and other services from your other [Tailscale clients](https://tailscale.com/download) anywhere in the world. 
 
