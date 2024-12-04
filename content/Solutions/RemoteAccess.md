@@ -65,7 +65,8 @@ After creating the Network, copy the **Network ID** and then navigate to the Tru
 
 **Apps -> Discover Apps ->** (Search for ZeroTier) **-> Install**
 
-On the Installation page, scroll down to the `ZeroTier Configuration -> Networks` field. Click to add a network and paste in the network key you copied previously. Leave all other options at their defaults, then scroll down and click `Install`.
+On the installation screen, scroll down to the **ZeroTier Configuration -> Networks** field.
+Click to add a network and paste in the network key you copied previously. Accept all other default settings, and then scroll down to click **Install**.
 
 After the installation completes and the App status changes to "Running", you can navigate back to your [ZeroTier Networks](https://my.zerotier.com/networks) list, and click on your network to see your TrueNAS system waiting for approval.
 
