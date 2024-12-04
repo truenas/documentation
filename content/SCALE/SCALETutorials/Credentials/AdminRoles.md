@@ -114,7 +114,7 @@ To allow an admin user to issue commands in an SSH session:
 ## Two-Factor Authentication (2FA) and Administrator Account Log In
 
 To use two-factor authentication with an administrator account, configure and enable SSH service to allow SSH access, then [configure two-factor authentication]({{< relref "ManageGlobal2FASCALE.md" >}}).
-If you have the root user configured with a password and enable it, you can SSH into the system as the root user.
+If you have the root user configured with a password and it is enabled, you can SSH into the system as the root user.
 Disable the root user password and only use a local administrator account for more security.
 
 ## Administrator Logins and TrueCommand
