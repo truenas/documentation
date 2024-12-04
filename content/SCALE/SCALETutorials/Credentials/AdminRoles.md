@@ -17,8 +17,9 @@ keywords:
 
 {{< include file="/static/includes/AdminAccountSecurity.md" >}}
 
-Administrator accounts have roles and privileges that allow greater control over access to functions in TrueNAS and to further utilize FIPS compliance.
-TrueNAS includes three predefined admin user account levels:
+Administrator accounts have roles and privileges that are FIPS compliant and allow more control over access to TrueNAS functions.
+
+TrueNAS has three predefined admin user account levels:
 
 * Full Admin - Assigned to the local administrator account created by the system when clean installing TrueNAS using an <file>iso</file> file.
   Also assigned when manually creating an admin user if logged in as the root user account after upgrading from a pre-22.12.3 release of TrueNAS or migrating from FreeBSD- to Linux-based TrueNAS releases.
@@ -47,9 +48,9 @@ Note the primary group assigned to that user.
 As a security hardening feature, administrator accounts in Linux-based TrueNAS releases (22.12.0 or newer) cannot execute certain root-level commands in a shell or SSH session by default.
 If a user attempts to execute one of these commands without root-level access, TrueNAS returns a **command not found** error.
 
-Administrative users who need to execute root-level commands to complete a task should temporarily enable sudo permissions for that user by going to **Credentials** and editing the user or group to enable some or all sudo commands.
+Administrative users who need to execute root-level commands to complete a task should temporarily enable sudo permissions for that user by going to **Credentials** and editing the user or group to allow some or all sudo commands.
 For best security, enable only the required commands to perform the task and require password authentication, unless the task or app prevents it.
-Disable sudo permissions when the task completes and they are no longer required.
+Disable sudo permissions when the task completes and you no longer need them.
 
 **Allowed sudo commands**, **Allow all sudo commands**, **Allowed sudo commands with no password**, and **Allow all sudo commands with no password** grant limited root-like permissions using the sudo command.
 Use **Allowed sudo commands** or **Allowed sudo commands with no password** to list specific sudo commands to allow.
@@ -58,14 +59,14 @@ Enter each command as an absolute path to the ELF (Executable and Linkable Forma
 Press <kbd>Enter</kbd> after each command.
 
 To allow full access to sudo commands, select either **Allow all sudo commands** or **Allow all sudo commands with no password**.
-If sudo commands are allowed with password protection, the user is prompted for a password the first time a sudo command is entered, but not again in the same session.
+If you allow sudo commands with password protection, TrueNAS prompts you for a password the first time you enter a sudo command, but not again in the same session.
 Disable these settings after completing the task to return to a security-hardened system.
 
 Do not allow sudo permissions for read-only administrators.
 
 ## Disabling Root and Admin User Passwords
 
-As a security measure, the root user is no longer the default account and the password is disabled when you create the truenas_admin or admin user during installation.
+As a security measure, the root user is no longer the default account and TrueNAS disables the root password when you create the truenas_admin or admin user during installation.
 
 Do not disable the default admin account, root, and any custom admin account passwords at the same time.
 If all root and administrator account passwords become disabled at the same time and the web interface session times out, a one-time sign-in screen allows access to the system.
@@ -74,9 +75,9 @@ If all root and administrator account passwords become disabled at the same time
 
 Enter and confirm a password to gain access to the UI.
 After logging in, immediately go to **Credentials > Users** to enable the password for an administrator account before the session times out again.
-This temporary password is not saved as a new password and it does not enable the admin or root passwords, it only provides one-time access to the UI.
+TrueNAS does not save the temporary password as a new password or enable the admin or root passwords. It only provides one-time access to the UI.
 
-When disabling a password for UI login, it is also disabled for SSH access.
+Disabling a password for UI login also disables it for SSH access.
 
 ## Accessing the System Through an SSH Session
 
@@ -84,7 +85,7 @@ To enable SSH access to the system as an admin user (or root user), you must fir
 
 1. Go to **System > Services**, then click <span class="iconify" data-icon="mdi:pencil"></span> (**Edit**) for the SSH service.
 
-2.  Enter the groups (**truenas_admin**, **root**, etc.)  you want to enable for password authentication in the **Password Login Groups** field.
+2. Enter the groups (**truenas_admin**, **root**, etc.) you want to enable for password authentication in the **Password Login Groups** field.
 
 3. Enable **Allow Password Authentication**.
 
@@ -112,10 +113,10 @@ To allow an admin user to issue commands in an SSH session:
 
 ## Two-Factor Authentication (2FA) and Administrator Account Log In
 
-To use two-factor authentication with an administrator account, first configure and enable SSH service to allow SSH access, then [configure two-factor authentication]({{< relref "ManageGlobal2FASCALE.md" >}}).
-If you have the root user configured with a password and enable it, you can SSH into the system with the root user.
-Security best practice is to disable the root user password and only use a local administrator account.
+To use two-factor authentication with an administrator account, configure and enable SSH service to allow SSH access, then [configure two-factor authentication]({{< relref "ManageGlobal2FASCALE.md" >}}).
+If you have the root user configured with a password and enable it, you can SSH into the system as the root user.
+Disable the root user password and only use a local administrator account for more security.
 
 ## Administrator Logins and TrueCommand
 
-At present, administrator logins work with TrueCommand but you need to set up the TrueNAS connection using an [API key]({{< relref "ManagingAPIKeys.md" >}}).
+Administrator logins work with TrueCommand, but you need to set up the TrueNAS connection using an [API key]({{< relref "ManagingAPIKeys.md" >}}).
