@@ -61,7 +61,7 @@ Usability: User-friendly ZeroTier offers more advanced configuration options, su
 
 Before installing ZeroTier on TrueNAS, create a [Network](https://my.zerotier.com/network) through your ZeroTier account. [More Information](https://docs.zerotier.com/start)
 
-Once your Network has been created, copy the `Network ID` and then you can navigate to the TrueNAS Apps Catalog to install ZeroTier:
+After creating the Network, copy the **Network ID** and then navigate to the TrueNAS Apps Catalog to install ZeroTier:
 
 Apps -> Discover Apps -> (Search for ZeroTier) -> Install
 
