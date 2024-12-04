@@ -44,7 +44,7 @@ Once your Auth Key has been created, you can navigate to the TrueNAS Apps Catalo
 
 Apps -> Discover Apps -> (Search for Tailscale) -> Install
 
-On the Installation page, scroll down to the AuthKey field, paste in the key you created previously. Leave all other options at their defaults, then scroll down and click `Install`.
+On the Installation page, scroll down to the `AuthKey` field, paste in the key you created previously. Leave all other options at their defaults, then scroll down and click `Install`.
 
 Once the installation completes and you see the App status as "Running" you can navigate back to your [Tailscale Machines](https://login.tailscale.com/admin/machines) list and you will see your TrueNAS system listed.
 
@@ -71,7 +71,7 @@ On the Installation page, scroll down to the `ZeroTier Configuration -> Networks
 
 Once the installation completes and you see the App status as "Running" you can navigate back to your [ZeroTier Networks](https://my.zerotier.com/networks) list, click your network and you will see your TrueNAS system waiting for approval.
 
-Click to authorize TrueNAS and you will have successfully finished joined your TruenAS system to a ZeroTier network.
+Click to authorize TrueNAS and you will have successfully finished joined your TrueNAS system to a ZeroTier network.
 
 Using the `Addresses` listed for TrueNAS, you can now reach your TrueNAS host, including Shares, Apps and other services from your other [ZeroTier clients](https://www.zerotier.com/download/) anywhere in the world. 
 
