@@ -82,7 +82,7 @@ To enable SSH access to the system as an admin user (or root user), you must fir
 
 1. Go to **System > Services**, then click <span class="iconify" data-icon="mdi:pencil"></span> (**Edit**) for the SSH service.
 
-2. In the **Password Login Groups** field, enter the groups you want to enable for password authentication (**truenas_admin**, **root**, etc.).
+2.  Enter the groups (**truenas_admin**, **root**, etc.)  you want to enable for password authentication in the **Password Login Groups** field.
 
 3. Enable **Allow Password Authentication**.
 
