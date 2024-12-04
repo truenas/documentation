@@ -18,9 +18,8 @@ In most corporate environments, a corporate VPN service controls internal and ex
 For the small business or home lab, where a corporate VPN is not an option, you can choose from many easy-to-deploy and manage services that give you or your clients access to your storage services and applications. 
 This guide introduces several access options and provides a basic walk-through enabling remote access to your TrueNAS.
 
-In TrueNAS 24.10 and later, there are several VPN technologies to choose from, each with their own strengths and weaknesses that
-may make them suitable for your particular environment. We will focus on three of them, all of which are available via the 
-TrueNAS App catalog for rapid deployment. 
+In TrueNAS 24.10 and later, there are several VPN technologies to choose from, each with strengths and weaknesses that make them suitable for particular environments. 
+This guide focuses on three options available through the TrueNAS App catalog for rapid deployment. 
 
 - Tailscale
 
