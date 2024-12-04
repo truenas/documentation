@@ -30,10 +30,10 @@ Prepare TrueNAS before installing the app by:
 
 {{< include file="/static/includes/apps/BeforeYouBeginAddAppDatasets.md" >}}
 
-  Netdata uses three datasets: <b>config</b>, <b>lib</b>, and <b>cache</b>.
+<p style="margin-left: 33px">Netdata uses three datasets: <b>config</b>, <b>lib</b>, and <b>cache</b>.</p>
 
-  {{< include file="/static/includes/apps/BeforeYouBeginAddAppDatasetsProcedure.md" >}}
-
+<div style="margin-left: 33px">{{< include file="/static/includes/apps/BeforeYouBeginAddAppDatasetsProcedure.md" >}}
+</div>
 
 * (Optional) Create a Netdata account.
   The app install wizard allows you to create a new Netdata account when configuring the app in TrueNAS, or to configure it to use a preexisting account.
@@ -47,9 +47,6 @@ For optional settings, see [Understanding App Installation Wizard Settings](#und
 {{< include file="static/includes/apps/MultipleAppInstancesAndNaming.md" >}}
 
 {{< include file="/static/includes/apps/LocateAndOpenInstallWizard.md" >}}
-
-{{< trueimage src="/images/SCALE/Apps/NetdataAppDetailsScreen.png" alt="Netdata App Details Screen" id="Netdata App Details Screen" >}}
-
 Click **Install** to open the **Install Netdata** screen.
 
 {{< trueimage src="/images/SCALE/Apps/InstallNetdataScreen.png" alt="Install Netdata Screen" id="Install Netdata Screen" >}}
@@ -62,7 +59,7 @@ See [Netdata Configuration](#netdata-configuration-settings) below for more info
 Accept the default values in **Network Configurations**. 
 The TrueNAS Netdata app uses the default port **20489** to communicate with Netdata and show the Netdata local dashboard.
 Accept the default settings in **Advanced DNS Settings**.
-See [Network Configuration](#) below for more information.
+See [Network Configuration](#network-configuration-settings) below for more information.
 
 Add your **Storage Configuration** settings.
 Set **Type** for **Netdata Config Storage** to **Host Path (Path that already exists on the system)**.
@@ -99,7 +96,7 @@ The following section provides more detailed explanations of the settings in eac
 
 ### Application Name Settings
 
-{{< include file="/static/includes/InstallWizardAppNameAndVersion.md" >}}
+{{< include file="/static/includes/apps/InstallWizardAppNameAndVersion.md" >}}
 
 ### Netdata Configuration Settings
 Accept defaults in the **Netdata Configuration** settings, or to customize the container deployment click **Add** to the right of **Additional Environment Variables** to show the **Name** and **Value** fields used to enter variables.
@@ -144,6 +141,8 @@ Change the **@owner** and **@group** values from **root** to the administrative 
 Next, add an ACL entry for the run-as user.
 For Netdata, the run-as users is **0** for **root**. Add a user entry for this user.
 Save the ACL before leaving the screen.
+
+See [Setting Up Permissions]({{< relref "PermissionsSCALE.md" >}}) and [Edit ACL Screen]({{< relref "EditACLScreens.md" >}}) for more information.
 {{< /expand >}}
 
 #### Mounting an SMB Share

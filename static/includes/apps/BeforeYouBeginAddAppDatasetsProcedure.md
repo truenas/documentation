@@ -1,10 +1,5 @@
 &NewLine;
 
-* Create datasets for the storage volumes for the app.
-
-  Go to **Datasets** and select the pool or dataset where you want to place the dataset(s) for the app.
-  For example, */tank/apps/appName*.
-
   {{< expand "Creating Datasets for Apps" "v" >}}
   When creating datasets for apps follow these steps:
   1. Go to **Datasets**, select the location for the parent dataset if organizing required datasets under a parent dataset, then click **Add Dataset**.
