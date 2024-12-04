@@ -40,7 +40,7 @@ Before installing Tailscale in TrueNAS, create an [Auth Key](https://login.tails
 
 After creating your Auth Key you can navigate to the TrueNAS Apps Catalog and install Tailscale:
 
-Apps -> Discover Apps -> (Search for Tailscale) -> Install
+**Apps -> Discover Apps ->** (Search for Tailscale) **-> Install**
 
 On the Installation page, scroll down to the `AuthKey` field, paste in the key you created previously. Leave all other options at their defaults, then scroll down and click `Install`.
 
