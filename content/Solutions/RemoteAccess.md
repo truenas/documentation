@@ -69,9 +69,9 @@ On the Installation page, scroll down to the `ZeroTier Configuration -> Networks
 
 After the installation completes and the App status changes to "Running", you can navigate back to your [ZeroTier Networks](https://my.zerotier.com/networks) list, and click on your network to see your TrueNAS system waiting for approval.
 
-Click to authorize TrueNAS and you will have successfully finished joined your TrueNAS system to a ZeroTier network.
+Click to authorize TrueNAS and you have successfully finished and joined your TrueNAS system to a ZeroTier network.
 
-Using the `Addresses` listed for TrueNAS, you can now reach your TrueNAS host, including Shares, Apps and other services from your other [ZeroTier clients](https://www.zerotier.com/download/) anywhere in the world. 
+Using the **Addresses** listed for TrueNAS, you can reach your TrueNAS host, including shares, apps, and other services from your other [ZeroTier clients](https://www.zerotier.com/download/) anywhere in the world. 
 
 
 
@@ -84,4 +84,4 @@ Usability: Wireguard requires manual setup and configuration. You need to manage
 
 ### Installing Wireguard on TrueNAS:
 
-Wireguard can be setup and configured by installing the `WG Easy` Application in the TrueNAS app catalog. [Click Here](https://www.truenas.com/docs/truenasapps/stableapps/installwgeasyapp/) for more detailed information on how to setup and configure.
+Wireguard can be setup and configured by installing the **WG Easy** application in the TrueNAS app catalog. [Click here](https://www.truenas.com/docs/truenasapps/stableapps/installwgeasyapp/) for more detailed information on  setting up and configuring the app.
