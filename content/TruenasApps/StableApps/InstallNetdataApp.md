@@ -84,7 +84,7 @@ The following sections provide more detail explanations of the settings found in
 
 ### Application Name Settings
 
-{{< include file="/static/includes/AppsWizardAppNameAndVersion.md" >}}
+{{< include file="/static/includes/InstallWizardAppNameAndVersion.md" >}}
 
 ### Netdata Configuration Settings
 You can accept the defaults in the **Netdata Configuration** settings or enter the settings you want to use.

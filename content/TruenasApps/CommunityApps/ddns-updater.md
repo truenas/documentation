@@ -97,7 +97,7 @@ Find specific fields or skip to a particular section with the navigation box in 
 
 ### Application Name
 
-{{< include file="/static/includes/AppsWizardAppNameAndVersion.md" >}}
+{{< include file="/static/includes/InstallWizardAppNameAndVersion.md" >}}
 
 ### DDNS Updater Configuration
 

@@ -30,7 +30,7 @@ Community members can add and use the MinIO Enterprise app or the default commun
 ## Before You Begin
 To install the MinIO **enterprise** train app, do the following:
 
-{{< include file="/static/includes/apps/AppsEnterprieseBeforeYouBegin.md" >}}
+{{< include file="/static/includes/apps/BeforeYouBeginEnterpriseApps.md" >}}
   
 {{< include file="/static/includes/apps/MinIODatasetRequirements.md" >}}
 
@@ -43,7 +43,7 @@ This basic procedure covers the required MinIO enterprise app settings.
 For optional settings, see [Understanding MinIO Wizard Settings](#understanding-minio-wizard-settings).
 {{< /hint >}}
 
-{{< include file="/static/includes/apps/AddMultipleAppInstancesAndNaming.md" >}}
+{{< include file="/static/includes/apps/MultipleAppInstancesAndNaming.md" >}}
 
 {{< include file="/static/includes/apps/MinIoEnterpriseConfig1.md" >}}
 
@@ -77,7 +77,7 @@ The following section provides more detailed explanations of the settings in eac
 
 ### Application Name Settings
 
-{{< include file="/static/includes/apps/AppsWizardAppNameAndVersion.md" >}}
+{{< include file="/static/includes/apps/InstallWizardAppNameAndVersion.md" >}}
 
 ### MinIO Configuration Settings
 
@@ -99,13 +99,13 @@ For more information see:
 
 ### User and Group Configuration
 
-{{< include file="/static/includes/apps/AppInstallWizardUserAndGroupConfig.md" >}}
+{{< include file="/static/includes/apps/InstallWizardUserAndGroupConfig.md" >}}
 
 ### Network Configuration
 
 {{< include file="/static/includes/apps/MinIOEnterpriseNetworkConfig.md" >}}
 
-{{< include file="/static/includes/apps/AppInstallWizardCertificateSettings.md" >}}
+{{< include file="/static/includes/apps/InstallWizardCertificateSettings.md" >}}
 
 ### Storage Configuration
 
@@ -115,19 +115,19 @@ For more information see:
 
 {{< trueimage src="/images/SCALE/Apps/InstallMinIOEnterpriseData1ACLandACESettings.png" alt="Home and Data1 Host Path ACL and ACE Settings" id="Home and Data1 Host Path ACL and ACE Settings" >}}
 
-{{< include file="/static/includes/apps/AppInstallWizardACLConfiguration.md" >}}
+{{< include file="/static/includes/InstallWizardStorageACLConfig.md" >}}
 
 #### Mounting an SMB Share
 The TrueNAS MinIO app includes the option to mount an SMB share inside the container pod.
 
-{{< include file="/static/includes/AppWizardStorageSMBOption.md" >}}
+{{< include file="/static/includes/InstallWizardStorageSMBOption.md" >}}
 
 
 ### Resource Configuration
 
 {{< trueimage src="/images/SCALE/Apps/InstallMinIOEnterpriseResourcesConfig.png" alt="MinIO Enterprise Resource Limits" id="MinIO Enterprise Resource Limits" >}}
 
-{{< include file="/static/includes/apps/AppInstallWizardResourceConfig.md" >}}
+{{< include file="/static/includes/apps/InstallWizardResourceConfig.md" >}}
 
 <div class="noprint">
 

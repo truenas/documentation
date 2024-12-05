@@ -27,6 +27,8 @@ Go to the **Discover** screen and click **Refresh Catalog**, to the right of the
 
 For more information on adding to or changing the train for the apps catalog, see [Managing App Trains]({{< relref "UsingTrains.md" >}}).
 
+{{< include file="/static/includes/apps/AppsBestPractices.md" >}}
+
 Applications are provided "as-is" and can introduce system stability or security issues when installed.
 
 Some applications deploy as the **root** user for initial configuration before changing to operate as a non-root user.
@@ -37,7 +39,7 @@ Some apps in this section replace deprecated services or functionality previousl
 
 ## Understanding App Install Wizard Settings
 
-{{< include file="/static/includes/apps/AppsInstallWizardSettings.md" >}}
+{{< include file="/static/includes/apps/InstallWizardSettingsOverview.md" >}}
 
 <div class="noprint">
 
