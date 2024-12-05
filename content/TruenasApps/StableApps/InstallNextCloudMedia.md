@@ -32,6 +32,11 @@ For more information on the FreeBSD-based Nextcloud plugin, see [Nextcloud]({{< 
 Before you install the Nextcloud app:
 
 {{< include file="/static/includes/apps/BeforeYouBeginStableApps.md" >}}
+{{< include file="/static/includes/apps/BeforeYouBeginRunAsUser.md" >}}
+
+<div style="margin-left: 33px">{{< trueimage src="/images/SCALE/Apps/NextcloudDetailsScreen.png" alt="Nextcloud App Details Screen" id="Nextcloud App Details Screen" >}}</div>
+
+{{< include file="/static/includes/apps/BeforeYouBeginAddNewAppUser.md" >}}
 
 {{< include file="/static/includes/apps/BeforeYouBeginAddAppDatasets.md" >}}
 
@@ -77,8 +82,6 @@ Before you install the Nextcloud app:
 
 <p style="margin-left: 33px">Adding a certificate is optional but if you want to use a certificate for this application, either create a new self-signed CA and certificate or import an existing CA and create the certificate for Nextcloud. A certificate is not required to deploy the application.</p>
 
-{{< include file="/static/includes/apps/BeforeYouBeginAddNewAppUser.md" >}}
-
 * Set up a Nextcloud account.
   If you have an existing Nextcloud account, you enter the credentials for that user in the installation wizard.
   If do not have an existing Nextcloud account you can create the account from the application install wizard.
@@ -90,7 +93,6 @@ For optional settings, see [Understanding App Installation Wizard Settings](#und
 {{< /hint >}}
 
 {{< include file="/static/includes/apps/MultipleAppInstancesAndNaming.md" >}}
-
 {{< include file="/static/includes/apps/LocateAndOpenInstallWizard.md" >}}
 
 {{< trueimage src="/images/SCALE/Apps/InstallNextcloudScreen.png" alt="Install Nextcloud Screen" id="Install Nextcloud Screen" >}}
@@ -129,6 +131,7 @@ For more information on formatting and using cron jobs, see [Managing Cron Jobs]
 
 The TrueNAS app is configured with all the required environment variables, but if you want to further customize the container, click **Add** to the right of **Additional Environment Variables** for each to enter the variable(s) and values(s).
 {{< /expand >}}
+
 Enter the network configuration settings. 
 Enter the default port, **30027**, in **WebUI Port**, or enter an available port number of your choice.
 See [Network Configuration](#network-configuration) below for more information on changing the default port.
