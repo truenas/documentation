@@ -48,12 +48,16 @@
         <div class="chart-wrapper">
           {{< mermaid class="mermaid_sizing" >}}
           flowchart LR
-            A["22.02.4 (Angelfish)"] -->|update| C
-            B["13.0-U6.2<br><br>13.3-RELEASE"] -->|ISO install| E
-            C["22.12.4.2 (Bluefin)"] -->|update| D
-            D["23.10.2 (Cobia)"] -->|update| E
-            E["24.04.2.5 (Dragonfish)"] -->|update| H
-            H["24.10.0.2 (Electric Eel)"]
+            A["11.3-U5"] -->|update| B["12.0-U8.1"]
+            B -->|update| C["13.0-U6.3"]
+            C -->|manual update| E
+            C -->|ISO install| I
+            D["22.02.4 (Angelfish)"] -->|update| F
+            E["13.3-U1"] -->|ISO install| I
+            F["22.12.4.2 (Bluefin)"] -->|update| G
+            G["23.10.2 (Cobia)"] -->|update| H
+            H["24.04.2.5 (Dragonfish)"] -->|update| I
+            I["24.10.0.2 (Electric Eel)"]
           {{< /mermaid >}}
         </div>
       </div>
@@ -64,11 +68,12 @@
         <div class="chart-wrapper">
           {{< mermaid class="mermaid_sizing" >}}
           flowchart LR
-            A["13.0-U6.2"] -->|ISO install| D
-            B["Current 23.10 (Cobia) release"] -->|update| C
-            C["23.10.2 (Cobia)"] -->|update| D
-            D["24.04.2.5 (Dragonfish)"]  -->|"(anticipated)"| E
-            E["24.10.0.2 (Electric Eel)"]
+            A["11.3-U5"] -->|update| B
+            B["12.0-U8.1"] -->|update| C
+            C["13.0-U6.3"] -->|"ISO install (anticipated)"| F
+            D["23.10.2 (Cobia)"] -->|update| E
+            E["24.04.2.5 (Dragonfish)"]  -->|"update (anticipated)"| F
+            F["24.10.0.2 (Electric Eel)"]
           {{< /mermaid >}}
         </div>
       </div>
