@@ -15,8 +15,5 @@ Populating the **Host Path** with the dataset location and then selecting **Enab
 
 {{< include file="/static/includes/apps/AppInstallWizardACLConfiguration.md" >}}
 
-When the app requires additional datasets, repeat the host path setting for each required dataset.
-When adding additional storage volumes inside the container, click **Add** to the right of **Additional Storage** to show the storage volume fields.
-
-Click **Add** to show the mount and host path fields for each additional dataset and if creating storage volumes for postgres data and postgres backup.
+Repeat the above for each required dataset.
 {{< /expand >}}

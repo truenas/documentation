@@ -14,8 +14,6 @@ Click **Confirm** then **Agree** to close the dialog and open the application de
 {{< /expand >}}
 If not the first time installing apps the dialog does not show, click on the widget to open the app information screen.
 
-{{< trueimage src="/images/SCALE/Apps/MiniIOS3AppInfoScreen.png" alt="Example of an App Information Screen" id="Example of an App Information Screen" >}}
-
 Click **Install** to open the app installation wizard.
 
 Application configuration settings are grouped into several sections, each explained below in **Understanding App Installation Wizard Settings**.
