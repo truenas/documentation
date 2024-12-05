@@ -125,7 +125,7 @@ For more details on feature flags, see [OpenZFS Feature Flags](https://openzfs.g
 
 **November 8, 2024**
 
-iXsystems is pleased to release TrueNAS 24.10.0.2!
+iXsystems is pleased to release TrueNAS 24.04.2.5!
 This is a release to address another high-impact issue discovered with SMB memory management.
 
 * Fix Management of SMB AIO read buffers ([NAS-132365](https://ixsystems.atlassian.net/browse/NAS-132365)).
