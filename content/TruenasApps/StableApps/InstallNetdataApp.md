@@ -28,6 +28,9 @@ Prepare TrueNAS before installing the app by:
 
 {{< include file="/static/includes/apps/BeforeYouBeginStableApps.md" >}}
 {{< include file="/static/includes/apps/BeforeYouBeginRunAsUser.md" >}}
+
+<div style="margin-left: 33px">{{< trueimage src="/images/SCALE/Apps/NetdataAppDetailsScreen.png" alt="Netdata Information Screen" id="Netdata Information Screen" >}}</div>
+
 {{< include file="/static/includes/apps/BeforeYouBeginAddAppDatasets.md" >}}
 
 <p style="margin-left: 33px">Netdata uses three datasets: <b>config</b>, <b>lib</b>, and <b>cache</b>.
