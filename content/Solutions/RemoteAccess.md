@@ -63,7 +63,7 @@ Difficulty: Moderate to Hard
 
 Usability: User-friendly ZeroTier offers more advanced configuration options, such as managing multiple networks, IP ranges, and multicast settings. This makes it better suited for users with technical expertise.
 
-### Installing ZeroTier on TrueNAS:
+### Installing ZeroTier in TrueNAS:
 
 Before installing ZeroTier on TrueNAS, create a [Network](https://my.zerotier.com/network) through your ZeroTier account. [More Information](https://docs.zerotier.com/start)
 
@@ -92,6 +92,6 @@ Difficulty: Hard
 
 Usability: Wireguard requires manual setup and configuration. You need to manage keys, IPs, and routing yourself.
 
-### Installing Wireguard on TrueNAS:
+### Installing Wireguard in TrueNAS:
 
 Wireguard can be setup and configured by installing the **WG Easy** application in the TrueNAS app catalog. [Click here](https://www.truenas.com/docs/truenasapps/stableapps/installwgeasyapp/) for more detailed information on  setting up and configuring the app.
