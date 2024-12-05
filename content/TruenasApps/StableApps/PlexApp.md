@@ -25,17 +25,21 @@ Before you install the Plex app:
   After installing the Plex app and logging into Plex through the **Web Portal** button in TrueNAS, if you have not already configured your Plex account media server, Plex shows the configuration screens to set up the media server, add libraries, and customize your Plex account.
 
 {{< include file="/static/includes/apps/BeforeYouBeginStableApps.md" >}}
+{{< include file="/static/includes/apps/BeforeYouBeginRunAsUser.md" >}}
+
+<div style="margin-left: 33px">{{< trueimage src="/images/SCALE/Apps/PlexDetailsScreen.png" alt="Plex App Details Screen" id="Plex App Details Screen" >}}</div>
 
 {{< include file="/static/includes/apps/BeforeYouBeginAddAppDatasets.md" >}}
 
-<p style="margin-left: 33px">Create the two datasets Plex uses for storage volumes: <b>data</b> to use as the Plex data directory for database and metadata storage, and <b>config</b> for Plex application configuration storage.</li></p>
+<div style="margin-left: 33px">Plex uses for storage volumes: <b>data</b> to use as the Plex data directory for database and metadata storage, and <b>config</b> for Plex application configuration storage.
 
-<p style="margin-left: 33px">You can create a dataset or use a temporary directory option for log data.
+  You can create a dataset or use a temporary directory option for log data.
   Transcode data is not useful or meant for persistent storage, so using a temporary directory is a better option.</p>
+   
+  {{< include file="/static/includes/apps/BeforeYouBeginAddAppDatasetsProcedure.md" >}}
 
-<p style="margin-left: 33px">When creating the above datasets, select the <b>apps</b> dataset preset.
-
-<p style="margin-left: 33px">You can set up the permissions (ACLs) for these datasets after adding them using the <b>Edit ACL</b> screen, or wait and use the <b>Install Plex</b> wizard ACL settings to add  permissions. You can also edit permissions after using either method.</p>
+  You can set up the permissions (ACLs) for these datasets after adding them using the <b>Edit ACL</b> screen, or wait and use the <b>Install Plex</b> wizard ACL settings to add permissions.
+  You can also edit permissions after using either method.</div>
   
 ### Installing the Plex App
 {{< hint info >}}
@@ -63,28 +67,22 @@ While logged into your Plex account, go to the [Plex **Claim Code** web page](ht
 Next, either accept the default values shown or enter the IP addresses for local network connections (Ethernet or WiFi routers) you want in your Plex network.
 See [Setting Up Local Network](#setting-up-local-network) below for more information.
 
-You can add devices and/or additional environment variables, but these are not necessary to deploy the app.
-For more information on adding these, see [Adding Devices](#adding-devicess) below.
+You can add devices and additional environment variables, but this is not required to deploy the app.
+For more information,  see [Adding Devices](#adding-devicess) below.
 
-Accept the default values in both **User and Group Configuration** and **Network Configurations**.
+Accept the default values in **User and Group Configuration** and **Network Configurations**.
 (Optional) If you created a new user to administer apps, enter that user ID in the user and group fields.
 See [User and Group Configuration](#user-and-group-configuration) and [Network Configuration](#network-configuration) for more details.
 
 Add your **Storage Configuration** settings.
 {{< expand "Configuring Plex Storage" "v" >}}
-Set **Host Path (Path that already exists on the system)** in **Type** for **Plex Data Storage**.
-Select **Enable ACL**, and then either enter or browse to and select the **data** dataset to populate the **Host Path** field.
-
-{{< trueimage src="/images/SCALE/Apps/InstallPlexStorageConfigDataACLandACE.png" alt="Add Plex Data Storage" id="Add Plex Data Storage" >}}
-
 Select **Add** to the right of **ACL Entries** for each user or group entry you want to add.
-For example, add the **568** user and **0**, and give each **FULL_CONTROL Access**.
+For example, add the **568** user and **0**, and set the permission level to **FULL_CONTROL Access**.
 
 Select **Force Flag**.
 
-Repeat the storage steps above for the **Plex Configuration** and, when using a dataset for logs, for the **Plex Logs** storage volumes.
-Create a dataset for log storage to save and easily access log data.
-If not, set the storage volume type to either **temporary** or **tmpfs** for both **Logs** and **Transcode** storage.
+Repeat the steps above for the **Plex Configuration**.
+Repeat the same steps when creating and using a dataset for the **Plex Logs** storage volumes, but if not, set the storage volume type to either **temporary** or **tmpfs** for both **Logs** and **Transcode** storage volumes.
 {{< /expand >}}
 
 Add any labels you want to use to organize your media files.
@@ -125,23 +123,23 @@ Accept the default value in **Image** to use the container image for the TrueNAS
 TrueNAS shows the default IP addresses detected for your system.
 If these address fields are not shown in the wizard, your network is considered to be on the external network.
 
-Either accept the default values or enter the IP addresses for local network connections (Ethernet or WiFi routers) you want in your Plex local network.
+Accept the default values or enter IP addresses for local network connections (Ethernet or WiFi routers) you want to add to your Plex local network.
 These addresses define how Plex interacts with devices and services on your network and can optimize how your Plex media server communicates with devices in your home.
 
-Specified addresses are considered to be on the local network when enforcing bandwidth restrictions.
+Specified addresses are considered on the local network when enforcing bandwidth restrictions.
 If left blank, only the subnet for the server is considered to be on your local network.
 When the host network is not enabled, the server subnet is the network for Docker.
 Therefore, all connections from other clients are considered to be on the external network.
 If set, all other IP addresses are considered to be external to your local network.
 
 #### Adding Devices in the Container
-Plex account settings allow you to add and manage devices, such as a USB TV Tunner or other similar hardware, that connect to your media server, both on the local network you define and remotely from external network connections.
+Plex account settings allow you to add and manage devices, such as a USB TV tuner or similar hardware, that connect to your media server, both on the local network you define and remotely from external network connections.
 Adding devices in the TrueNAS Plex app passes devices through to your Plex account.
 Click **Add** to the right of **Devices** in the **Install Plex** wizard for each device to add.
 
 {{< trueimage src="/images/SCALE/Apps/InstallPlexConfigAddDevice.png" alt="Install Plex Add Device" id="Install Plex Add Device" >}}
 
-Enter the name of the device in the **Host Device** and in the **Container Device** fields. For example, device */dev/dvb*.
+Enter the device name in **Host Device** and **Container Device**. For example, device */dev/dvb*.
 
 #### Adding Environment Variables
 {{< include file="/static/includes/apps/AppInstallWizardEnvironVariablesSettings.md" >}}
@@ -154,10 +152,6 @@ Refer to Plex documentation for more information on [environment variables](http
 
 {{< include file="/static/includes/apps/AppInstallWizardUserAndGroupConfig.md" >}}
 
-The run-as user information is found on the Plex app details screen in the **Run-As Content** widget.
-
-{{< trueimage src="/images/SCALE/Apps/PlexDetailsScreen.png" alt="Plex App Details Screen" id="Plex App Details Screen" >}}
-
 ### Network Configuration
 The default web port for Plex is **32400**.
 
@@ -167,60 +161,44 @@ The default web port for Plex is **32400**.
 
 ### Storage Configuration
 TrueNAS provides options for data and configuration storage volumes: ixVolumes and host paths.
-Logs and transcode data can use these same storage options or you can create directories to hold log and/or transcode data.
+Logs and transcode data can use these storage options or you can create directories to hold log and transcode data.
 Both logs and transcode data are not intended for persistent data storage. 
 
-Logs and transcode data can be stored in the **temporary** directory option that creates a Docker volume in the hidden **ix-apps** dataset.
+Logs and transcode data can use the **temporary** directory option that creates a Docker volume in the hidden **ix-apps** dataset.
 
 Transcode data chunks are streamed to a player and meant to be discarded after use, like notes on a scratchpad.
-This makes the **tmpfs** directory option a better choice as it creates a Linux temporary filesystem type in RAM.
+This makes the **tmpfs** directory option a better choice for this transcode data as it creates a Linux temporary filesystem type in RAM.
 
 Neither directory storage option provides easy access to stored data, so if you want to store and access log data, create a dataset called **logs**.
 
-If opting to use datasets for all Plex storage volumes, create datasets to use with the host path option:
+Plex required host path storage volumes:
 * **data** to use as the Plex data directory for database and metadata storage.
 * **config** to use as the Plex app configuration storage volume.
-* **logs** if you want to save and have easy access to log data.
+* **logs** optional if you want to save and have easy access to log data.
 
-If you group these datasets under a parent dataset named *plex*, configure the [ACL permissions]({{< relref "PermissionsSCALE.md" >}}) for this parent dataset and add an ACE entry for the run-as (root or **0**) or assigned user (**568**).
+If organizing datasets under a parent dataset named *plex*, configure the [ACL permissions]({{< relref "PermissionsSCALE.md" >}}) for this parent dataset and add an ACE entry for the run-as (root or **0**) or assigned user (**568**).
 
-You can create the ACL permission using the app installation wizard or using the **Add Dataset** and **Edit ACL** screens.
+See [Before You Begin](#before-you-begin) for more information on creating app datasets.
 
 {{< include file="/static/includes/apps/InstallAppsStorageConfig.md" >}}
 
 {{< include file="/static/includes/apps/AppInstallWizardTemporaryAndTmpfsDirectories.md" >}}
 
-You can also create additional storage volumes inside the containers.
-Additional storage options include the same options and the option to set up an SMB share inside the container.
-See **Mounting an SMB Share** below for details.
-
-{{< expand "Creating App Datasets" "v" >}}
-To create the Plex app datasets, go to **Datasets**, select the dataset you want to use as the parent dataset, then click **Add Dataset** to [add a dataset]({{< relref "DatasetsScale.md" >}}).
-In this example, we create the Plex datasets under the parent dataset **plex**.
-
-Enter **plex** in **Name**, and select **Apps** as the **Dataset Preset**.
-Click **Advanced Options** if you want to make any other setting changes. Click **Save**.
-When prompted, select **Return to Pool List** to configure permissions later after adding the other three datasets, or open the ACL editor to edit ACL permissions immediately after adding the dataset.
-
-Next, select the **plex** dataset, and then click **Add Dataset** to add the first child dataset.
-Enter **data** in **Name** and select **Apps** as the **Dataset Preset**.
-Click **Advanced Options** if you want to make any other setting changes. Click **Save**.
-
-Repeat this to add the **config** dataset, and if desired, also create datasets for **logs** if you want to have easy access to and recovery of log files.
-Use the option to add a temporary directory on disk or in RAM for transcode data (and logs if not creating a dataset) storage rather than adding datasets.
-When finished you should have the **plex** parent dataset with the child datasets under it. Our example paths are:
-* */mnt/tank/plex/***data**
-* */mnt/tank/plex/***config**
-* */mnt/tank/plex/***logs**
-
-{{< trueimage src="/images/SCALE/Apps/AddPlexAppDatasets.png" alt="Add Plex Dataset Storage" id="Add Plex Dataset Storage" >}}
-{{< /expand >}}
-
-#### ACL and ACE Settings
+#### Setting Dataset ACL Permissions
+You can configure ACL permissions for the required dataset in the **Install Plex** wizard, or from the **Datasets** screen any time after adding the datasets.
 
 {{< include file="/static/includes/apps/InstallWizardStorageACLConfig.md" >}}
 
-#### Mounting an SMB Share
+{{< expand "Adding ACL Permissions from the Datasets Screen" "v">}}
+First, select the dataset row, scroll down to the **Permissions** widget, and then click **Edit** to open the **Edit ACL** screen.
+Change the **@owner** and **@group** values from **root** to the administrative user for your TrueNAS system, and click apply for each.
+Next, add an ACL entry for the run-as user.
+For Plex, the run-as users are **0** for **root** and **568**. Add a user entry for these users.
+Save the ACL before leaving the screen.
+See [Setting Up Permissions]({{< relref "PermissionsSCALE.md" >}}) and [Edit ACL Screen]({{< relref "EditACLScreens.md" >}}) for more information.
+{{< /expand >}}
+
+#### Mounting an SMB Share Storage Volume
 TrueNAS **Additional Storage** options include the ability to mount an SMB share inside the container pod.
 
 {{< include file="/static/includes/apps/InstallWizardStorageSMBOption.md" >}}
@@ -233,7 +211,7 @@ TrueNAS **Additional Storage** options include the ability to mount an SMB share
 {{< include file="/static/includes/apps/InstallWizardGPUPassthrough.md" >}}
 
 ## Troubleshooting Tips
-Before editing Plex app settings, first stop the app, and then edit settings. After saving changes, restart the app.
+Before editing Plex app settings, stop the app, and then edit settings. After saving changes, restart the app.
 
 Refer to the Plex support website and documentation for assistance with your Plex media server issues.
 
@@ -250,9 +228,11 @@ Search the [TrueNAS forum](https://forums.truenas.com/) for Plex discussion thre
 
 ### Cannot Access Libraries or Media Files
 Check the dataset permissions, and verify the user accessing these files has the correct permissions.
-You can edit dataset permissions by using the **Edit** button on the **Permissions** widget on the **Datasets** screen.
+You can edit dataset permissions using the **Edit** button on the **Permissions** widget on the **Datasets** screen.
 Select the dataset, scroll down to the **Permissions** widget, and click **Edit** to open the **Edit ACL** screen.
-Check the ACL entries list for the user accessing the files. If not present, click **Add ACL Entry**, select **User**, and then locate the user name on the **User** dropdown list. Assign the level of permissions you want to assign, then save the ACL changes.
+Check the ACL entries list for the user accessing the files.
+If not present, click **Add ACL Entry**, select **User**, and locate the user name on the **User** dropdown list.
+Assign the level of permissions you want to assign, then save the ACL changes.
 
 You can also add the user in the Plex app settings.
 Click on the Plex app row on the **Installed** application table. Stop the app, then click **Edit**.
