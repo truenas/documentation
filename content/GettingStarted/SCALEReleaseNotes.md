@@ -107,12 +107,12 @@ Update the system to the latest maintenance release of the installed major versi
 
 {{< include file="/static/includes/SCALEUpgradePaths.md" >}}
 
-### TrueNAS Migrations
+### Migrating from TrueNAS CORE
 
 {{< include file="/_includes/MigrateCOREtoSCALEWarning.md" >}}
 
 {{< enterprise >}}
-Enterprise customers with HA systems should contact iXsystems Support for assistance with migrating.
+Enterprise customers should contact iXsystems Support for assistance with migrating.
 {{< expand "iXsystems Support" "v" >}}
 {{< include file="content/_includes/iXsystemsSupportContact.md" >}}
 {{< /expand >}}
