@@ -62,9 +62,11 @@ Refer to the [Contributing to Apps]({{< relref "/content/contributing/applicatio
 <!-- BEGIN TEMPLATE -->
 
 <!-- BEGIN FRONTMATTER -->
-<!-- If creating a new app tutorial instead of modifying an existing one, uncomment and include the following frontmatter, including the three hyphens (---) before and after the text.
-Modify AppName and keywords to reflect the app you're documenting.
-Leave weight undefined to allow for alphabetical sorting. -->
+<!-- If creating a new app tutorial instead of modifying the existing frontmatter at the top of this template article, uncomment and include the following frontmatter, including the three hyphens (---) before and after the text.
+Modify AppName and keywords to reflect the app you are documenting. Replace AppName with the name of the app you are documenting.
+Leave weight undefined to allow for alphabetical sorting.
+tags are search tags for internal Docs Hub searches.
+keywords are search tags for the article to assist with Internet searches. -->
 <!--
 ---
 title: "AppName"
@@ -114,10 +116,20 @@ Example of possible points to include in this section you can modify to suit pre
 Prepare TrueNAS before installing the app by:
 
 {{< include file="/static/includes/apps/BeforeYouBeginStableApps.md" >}}
+{{< include file="/static/includes/apps/BeforeYouBeginRunAsUser.md" >}}
+<!-- replace the image path and name
+<div style="margin-left: 33px>{{< trueimage src="/images/SCALE/Apps/PlexDetailsScreen.png" alt="Plex App Details Screen" id="Plex App Details Screen" >}}</div>
+-->
 
-<!-- Include this paragraph to detail the datasets for host path storage volumes. Change the names of the datasets to suit what is expected for the app. NOTE: Include the HTML styling to align the indented paragraph with the bullet list in the snippet above. -->
+{{< include file="/static/includes/apps/BeforeYouBeginAddAppDatasets.md" >}}
+
+<!-- Include this paragraph to detail the datasets for host path storage volumes. Change the names of the datasets to suit what is expected for the app.
+NOTE: Include the HTML styling to align the indented paragraph with the bullet list in the snippet above. If only indenting one line or paragraph you can use the <p>paragraph</p> tabs with the indent information. If adding several paragraphs, and image code or expand section use the <div>sectionIndent</div> with the indent information -->
   <p style="margin-left: 33px">Create a parent dataset, such as <i>appName</i>, and then the storage datasets (<b><i>config</i></b> and <b><i>data</i></b>) under it.
   Select <b>apps</b> as the <b>Dataset Preset</b> for these datasets. You can modify the dataset ACLs at the time of creation, or modify them later when adding them in the app.</p>
+
+<!-- Use the <div></div> tags for this snippet to indent the snippet in the rendered article. -->
+<div style="margin-left: 33px">{{< include file="/static/includes/apps/BeforeYouBeginAddAppDatasetsProcedure.md" >}}</div>
 
 <!-- Include this snippet and a modified version of the indented text if the app requires setting up a certificate. 
 {{< include file="/static/includes/apps/BeforeYouBeginAddAppCertificate.md" >}} 
@@ -139,8 +151,8 @@ For optional settings, see [Understanding App Installation Wizard Settings](#und
 {{< include file="static/includes/apps/MultipleAppInstancesAndNaming.md" >}}
 
 {{< include file="/static/includes/apps/LocateAndOpenInstallWizard.md" >}}
-<!-- Change the name of the image in the path below to include the screenshot, if including this image:
-{{< trueimage src="/images/SCALE/Apps/AppNameDetailsScreen.png" alt="*AppName* Information Screen" id="*AppName* Information Screen" >}} -->
+<!-- Change the name of the image in the path below to include the screenshot, if including the image of the Install AppName scree showing the Application Name section and the wizard ToC on the right side of the screen:
+{{< trueimage src="/images/SCALE/Apps/InstallAppNameScreen.png" alt="Install *AppName* Screen" id="Install *AppName* Screen" >}} -->
 
 {{< include file="/static/includes/apps/InstallWizardAppNameAndVersion.md" >}}
 
@@ -205,32 +217,26 @@ If you do not have an existing account, enter the name and password you want to 
 Refer to [*AppName* documentation](URL for environment variables documentation provided in the app provider) for more information on environment variables.
 
 <!-- Not all apps include the following section. If it does, include the following, customized for the app requirements. -->
-### User and Group Configuration
+### User and Group Configuration <!-- Optional section, include only if the Install Wizard has this section -->
 <!-- replace the image path and name:
 {{< trueimage src="/images/SCALE/Apps/InstallPlexUserAndGroupConfig.png" alt="Plex User and Group Configuration Settings" id="Plex User and Group Configuration Settings" >}} -->
 
 {{< include file="/static/includes/apps/InstallWizardUserAndGroupConfig.md" >}}
 
-The run-as user information is found on the *AppName* app details screen in the **Run-As Content** widget.
-<!-- replace the image path and name
-{{< trueimage src="/images/SCALE/Apps/PlexDetailsScreen.png" alt="Plex App Details Screen" id="Plex App Details Screen" >}}
--->
-
 ### Network Configuration
-
 The default web port for *AppName* is ***30027***.
 <!-- include the snippets that apply. Remove those that do not apply to the settings in the app Network Configuration section. -->
 {{< include file="static/includes/apps/InstallWizardHostNetworkSettings.md" >}}
 {{< include file="/static/includes/apps/InstallWizardDefaultPorts.md" >}}
 {{< include file="/static/includes/apps/InstallWizardAdvancedDNSSettings.md" >}}
+<!-- include the certificate snippet where the Install wizard shows it, which is most likely in the Network Configuratin section but could be in the AppName Configuration section in other tutorials -->
 {{< include file="/static/includes/apps/InstallWizardCertificateSettings.md" >}}
 
 ### Storage Configuration
-
 TrueNAS provides two options for storage volumes: ixVolumes and host paths.
 
 {{< include file="/static/includes/apps/InstallAppsStorageConfig.md" >}}
-<!-- replace this content with what applies to the app, if the app requires creating specific datasets.
+<!-- replace this content with what applies to the app, if the app requires creating specific datasets, and if the app uses postgres dataset storage that might require special handling.
 
 *AppName* needs *three* datasets for host path storage volume configurations:
 * ***config*** to use as the ***Configuration*** storage volume.
@@ -246,49 +252,34 @@ When adding the ***postgresdata*** dataset set it up with a POSIX ACL, and add t
 If you have a postgres dataset, also include information in the Before You Begin section about adding the dataset and permissions.
 
 See the instructions in the [Before You Begin](#before-you-begin) section for more on creating both the parent and postgres_data datasets and configuring the ACL permissions for each.-->
+You can add extra storage volumes at the time of installation or edit the application after it deploys. Stop the app before editing settings.
+{{< include file="/static/includes/apps/InstallAppStorageConfig2.md" >}}
 
-{{< include file="/static/includes/apps/InstallAppsStorageConfig2.md" >}}
-
-See **Mounting an SMB Share** below for details.
-
-{{< expand "Creating App Datasets" "v" >}}
-To create the *AppName* app datasets, go to **Datasets**, select the dataset you want to use as the parent dataset, then click **Add Dataset** to [add a dataset]({{< relref "DatasetsScale.md" >}}).
-In this example, we create the *AppName* datasets under the root parent dataset ***tank***.
-
-Enter ***AppName*** in **Name**, and select **Apps** as the **Dataset Preset**.
-Click **Advanced Options** if you want to make any other setting changes. Click **Save**.
-When prompted, select **Return to Pool List** to configure permissions later after adding the other three datasets, or open the ACL editor to edit ACL permissions immediately after adding the dataset.
-
-Next, select the ***AppName*** dataset, and click **Add Dataset** to add the first child dataset.
-Enter ***config*** in **Name** and select **Apps** as the **Dataset Preset**.
-Click **Advanced Options** if you want to make any other setting changes. Click **Save**.
-
-Repeat this to add the other child datasets to the ***AppName*** parent dataset.
-When finished you should have the ***AppName*** parent dataset with *three* child datasets under it. Our example paths are:
-* */mnt/tank/appname/****config***
-* */mnt/tank/appname/****data***
-* */mnt/tank/appname/****postgresdata***
-<!-- replace the image with one for the app, or eliminate the image if there is no reason to show it:
-
-{{< trueimage src="/images/SCALE/Apps/AppsAddNextcloudDatasets.png" alt="Add Nextcloud Storage" id="Add Nextcloud Storage" >}}
--->
-{{< /expand >}}
-
-#### ACL and ACE Settings
+#### Setting Dataset ACL Permissions
+You can configure ACL permissions for the required dataset in the **Install Netdata** wizard, or from the **Datasets** screen any time after adding the datasets.
 
 {{< include file="/static/includes/apps/InstallWizardStorageACLConfig.md" >}}
+<!-- replace the UIDs in the section below with the user IDs or run as user ID -->
+{{< expand "Adding ACL Permissions from the Datasets Screen" "v">}}
+First select the dataset row, and scroll down to the **Permissions** widget, and then click **Edit** to open the **Edit ACL** screen.
+Change the **@owner** and **@group** values from **root** to the administrative user for your TrueNAS system, and click apply for each.
+Next, add an ACL entry for the run-as user.
+For Netdata, the run-as users is **0** for **root**. Add a user entry for this user.
+Save the ACL before leaving the screen.
 
-#### Mounting an SMB Share
+#### Mounting an SMB Share Storage Volume
 
 TrueNAS **Additional Storage** options include the ability to mount an SMB share inside the container pod.
+{{< include file="/static/includes/apps/InstallAppsStorageConfig2.md" >}}
 
 {{< include file="/static/includes/apps/InstallWizardStorageSMBOption.md" >}}
 
-### Resource Configuration
+### Resources Configuration
 <!-- replace the image with one for the app
 {{< trueimage src="/images/SCALE/Apps/InstallNextcloudResourcesConfig.png" alt="Resources Configuration Settings" id="Resources Configuration Settings" >}} -->
 
 {{< include file="/static/includes/apps/InstallWizardResourceConfig.md" >}}
+<!-- include this snippet if the app Install wizard includes the GPU settings -->
 {{< include file="/static/includes/apps/InstallWizardGPUPassthrough.md" >}}
 
 ## Troubleshooting Tips
