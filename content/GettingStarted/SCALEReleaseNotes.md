@@ -161,9 +161,9 @@ For more details on feature flags, see [OpenZFS Feature Flags](https://openzfs.g
 iXsystems is pleased to release TrueNAS 24.10.1!
 This is a maintenance release and includes refinement and fixes for issues discovered after the 24.10.0 and 24.10.0.X releases.
 
-* Prevent incorrect translation of LDAP basedn to kerberos realm ([NAS-132192](https://ixsystems.atlassian.net/browse/NAS-132192)).
+* Prevent incorrect translation of LDAP Base DN to kerberos realm ([NAS-132192](https://ixsystems.atlassian.net/browse/NAS-132192)).
 * Increase the maximum permitted Samba (SMB) ACL size from 64 to 1024 entries ([NAS-132344](https://ixsystems.atlassian.net/browse/NAS-132344)).
-* Fixed bug: Applications service fails after upgrade if app requires GPU, seemingly due to missing Nvidia Drivers ([NAS-132070](https://ixsystems.atlassian.net/browse/NAS-132070) and [NAS-132131](https://ixsystems.atlassian.net/browse/NAS-132131)).
+* Prevent applications service failing after upgrade if an app requires an Nvidia GPU ([NAS-132070](https://ixsystems.atlassian.net/browse/NAS-132070) and [NAS-132131](https://ixsystems.atlassian.net/browse/NAS-132131)).
 * Cache installed Nvidia kernel modules on upgrades within the same release train (i.e. 24.10.0, 24.10.1, etc.) so they do not need to be reinstalled and compiled ([NAS-132359](https://ixsystems.atlassian.net/browse/NAS-132359)).
 * Allow limited administrative users to view and download logs of certain jobs, even if they did not initiate the job ([NAS-132031](https://ixsystems.atlassian.net/browse/NAS-132031)).
 * Ensure installed apps are shown correctly after system reset ([NAS-131913](https://ixsystems.atlassian.net/browse/NAS-131913)).
@@ -178,8 +178,9 @@ This is a maintenance release and includes refinement and fixes for issues disco
 
 ### 24.10.1 Known Issues
 
-* An issue was discovered with restoration of ZFS snapshots via TrueCloud back up tasks ([NAS-132608 ](https://ixsystems.atlassian.net/browse/NAS-132608)). The **Take Snapshot** option for TrueCloud back up tasks is disabled in 24.10.1 until the underlying issue is addressed in a future TrueNAS release.
+* An issue was discovered with restoration of ZFS snapshots via TrueCloud back up tasks ([NAS-132608](https://ixsystems.atlassian.net/browse/NAS-132608)). The **Take Snapshot** option for TrueCloud back up tasks is disabled in 24.10.1 until the underlying issue is addressed in a future TrueNAS release.
 * OAuth support for Microsoft Outlook is no longer supported in 24.10 due to Microsoft removal of username and password authentication to their email server. Restoration of Outlook OAuth support is anticipated in the 25.04 release version ([NAS-132807](https://ixsystems.atlassian.net/browse/NAS-132807)).
+* An issue has been discovered for cloud sync tasks configured with **Filename Encryption**, which is available in **Advanced Remote Options** ([NAS-132472](https://ixsystems.atlassian.net/browse/NAS-132472)). As this is an upstream issue in rclone, we recommend that users should not create new cloud sync tasks with **Filename Encryption** enabled. Existing users of this feature must leave it enabled for existing cloud sync tasks to be able to recover backups.
 
 <a href="https://ixsystems.atlassian.net/issues/?filter=11217" target="_blank">Click here to see the latest information on Jira</a> about public issues discovered in 24.10.1 that are being resolved in a future TrueNAS release.
 
