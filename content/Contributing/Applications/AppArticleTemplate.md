@@ -266,6 +266,7 @@ Change the **@owner** and **@group** values from **root** to the administrative 
 Next, add an ACL entry for the run-as user.
 For Netdata, the run-as users is **0** for **root**. Add a user entry for this user.
 Save the ACL before leaving the screen.
+{{< /expand >}}
 
 #### Mounting an SMB Share Storage Volume
 
