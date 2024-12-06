@@ -117,12 +117,23 @@ Not all snippet files in this folder apply to tutorial content.
 Refer to the tables below for a list of snippet files with content about tutorial sections.
 Open and read snippet files to determine where to use them in your tutorial.
 
+**Community Apps General Snippets**
+{{< truetable >}}
+| File Name | Snippet Use and Content |
+|-----------|-------------------------|
+| CommunityApp.md | Introduces Community Apps section tutorials, and contributing content. |
+| CommunityPleaseExpand.md | States the tutorial is incomplete or a placeholder needing further development. Use if you are proposing a partial expansion of the content, but further work is needed. | 
+| CommunityPleaseImprove.md | States the tutorial content is suspected to be out of date or inaccurate. Use if you suspect the Community app documentation is out of date, inaccurate, or needs further improvement. |
+{{< /truetable >}}
+
 **Before You Begin Snippets**
 {{< truetable >}}
 | File Name | Snippet Use and Content |
 |-----------|-------------------------|
-| BeforeYouBeginStableApps.md | Bullet point for adding the apps pool. |
-| BeforeYouBegigAddAppDatasets.md | Bullet point for adding datasets for the app. Does does not include details on adding datasets as these vary by app. 
+| BeforeYouBeginStableApps.md | Bullet point for adding the apps pool. Includes warning about choosing an encrypted pool for apps. |
+| BeforeYouBeginRunAsUser.md | Bullet point describing where to find the run as user information, and includes a screenshot of the app information screen for the app being documented. |
+| BeforeYouBegigAddAppDatasets.md | Bullet point for adding datasets for the app. Does does not include details on adding datasets as these vary by app. |
+| BeforeYouBeginAddAppDatasetsProcedure.md | Procedure for correctly creating datasets for apps in an expand/collapse area. |
 | BeforeYouBeginAddAppCertificate.md | Bullet point for adding a certificate if required for the app. Also include the AddingAppCertificate.md snippet with detailed instructions on adding a self-signed certificate. |
 | AddingAppCertificate.md | Detailed set procedure on adding a self-signed certificate authority (CA) and certificate. |
 | BeforeYouBeginAddNewUser.md | Single bullet point and procedure for adding a new user as a TrueNAS app administrator. |
