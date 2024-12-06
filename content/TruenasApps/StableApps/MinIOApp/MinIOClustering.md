@@ -5,6 +5,7 @@ weight: 20
 aliases:
  - /scale/scaleuireference/apps/minioclustersscale/
  - /scale/scaletutorials/apps/minioclustersscale/minioclustering/
+ - /scale/scaletutorials/apps/communityapps/minioapp/minioclustering/
  - /scale/scaletutorials/apps/communityapps/minioclustersscale/minioclustering/
  - /scale/scaletutorials/apps/chartapps/minioapp/minioclustering/
  - /scale/scaletutorials/apps/stableapps/minioapp/minioclustering/

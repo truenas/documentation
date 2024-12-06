@@ -7,6 +7,7 @@ aliases:
  - /scale/scalenextversion/
  - /scale/scale22.12/
  - /scale/25.04/gettingstarted/scalereleasenotes/
+ - /releasenotes/
 weight: 10
 related: false
 ---
