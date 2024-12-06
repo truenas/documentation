@@ -2027,10 +2027,12 @@ pre.gdoc-mermaid.mermaid.mermaid_sizing {
 }
 :root[color-theme='dark'] {
   --enterprise-title: rgb(52, 58, 64); /* Define --enterprise-title for the dark theme */
+  --body-font-color: #f0f3f5;
 }
 @media (prefers-color-scheme: dark) {
   :root {
     --enterprise-title: rgb(52, 58, 64); /* Define --enterprise-title for devices preferring dark mode */
+	--body-font-color: #f0f3f5;
   }
 }
 @media (prefers-color-scheme: light) {
