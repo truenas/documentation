@@ -52,12 +52,14 @@
             B -->|update| C["13.0-U6.3"]
             C -->|manual update| E
             C -->|ISO install| I
+            C -->|"(anticipated)"| J
             D["22.02.4 (Angelfish)"] -->|update| F
             E["13.3-U1"] -->|ISO install| I
             F["22.12.4.2 (Bluefin)"] -->|update| G
             G["23.10.2 (Cobia)"] -->|update| H
             H["24.04.2.5 (Dragonfish)"] -->|update| I
-            I["24.10.0.2 (Electric Eel)"]
+            I["24.10.0.2 (Electric Eel)"] -->|"(anticipated)"| J
+            J["25.04.0 (Fangtooth)"]
           {{< /mermaid >}}
         </div>
       </div>
@@ -70,10 +72,12 @@
           flowchart LR
             A["11.3-U5"] -->|update| B
             B["12.0-U8.1"] -->|update| C
-            C["13.0-U6.3"] -->|"ISO install (anticipated)"| F
+            C["13.0-U6.3"] -->|"(anticipated)"| F
+            C["13.0-U6.3"] -->|"(anticipated)"| G
             D["23.10.2 (Cobia)"] -->|update| E
-            E["24.04.2.5 (Dragonfish)"]  -->|"update (anticipated)"| F
-            F["24.10.0.2 (Electric Eel)"]
+            E["24.04.2.5 (Dragonfish)"]  -->|"(anticipated)"| F
+            F["24.10.0.2 (Electric Eel)"] -->|"(anticipated)"| G
+            G["25.04.0 (Fangtooth)"]
           {{< /mermaid >}}
         </div>
       </div>
