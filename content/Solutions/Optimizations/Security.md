@@ -20,7 +20,7 @@ Follow these best practices to administer TrueNAS securely.
 * Upgrade to new major releases promptly consistent with the deployment use case.
 * Disable any network services not in use.
 * Restrict the TrueNAS web UI, IPMI, and any other management interfaces to private subnets away from untrusted users, or keep disconnected when not in active use.
-* Configure **Syslog** settings to send logs to an external server ([CORE]({{< relref "/core/uireference/system/advanced/_index.md" >}}) | [SCALE]({{< relref "managesyslogsscale.md" >}})).
+* Configure **Syslog** settings to send logs to an external server ([CORE](https://www.truenas.com/docs/core/13.0/uireference/system/advanced/) | [SCALE]({{< relref "managesyslogsscale.md" >}})).
 * In TrueNAS 24.04 (Dragonfish) or later, locally [monitor and review audit logs]({{< relref "auditingscale.md" >}}) using the **Audit** screen.
 * In the **System > Advanced Settings**, always keep **Show Text Console without Password Prompt** set to **Disabled**.
 
@@ -133,7 +133,7 @@ SSH key pair overwrites are permanent.
 
 Root account logins using SSH are never recommended.
 Create TrueNAS user accounts with limited permissions and log in to these when using SSH.
-If a critical situation requires root login, first set up two-factor authentication ([CORE]({{< relref "UsingTwoFactorAuthentication.md" >}}) | [SCALE]({{< relref "ManageGlobal2FASCALE" >}})) as an extra layer of security.
+If a critical situation requires root login, first set up two-factor authentication ([CORE](https://www.truenas.com/docs/core/13.0/coretutorials/systemconfiguration/usingtwofactorauthentication/) | [SCALE]({{< relref "ManageGlobal2FASCALE" >}})) as an extra layer of security.
 Disable the **Log in as Root with Password** setting as soon as the situation is resolved.
 
 Unless required, do not set **Allow TCP Port Forwarding**.

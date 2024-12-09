@@ -2147,3 +2147,8 @@ VPN
 Tailscale
 tailscale
 AuthKey
+ScrubTasksSCALE
+FusionPoolsScale
+CloudSyncTasks
+CreatingSnapshots
+AddManageZvols
