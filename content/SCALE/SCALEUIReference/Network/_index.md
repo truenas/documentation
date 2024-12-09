@@ -9,8 +9,8 @@ tags:
 related: false
 ---
 
-The TrueNAS **Network** screen has network configuration and settings options, in widgets, for active interfaces, static routes, and the global configuration. 
-The **Network** screen also displays OpenVPN information and IPMI channels. IPMI only displays on systems with physical hardware and not on virtual machine deployments.
+The TrueNAS **Network** screen has network configuration and settings options, in widgets, for active interfaces, static routes, and the global configuration.
+The **Network** screen also displays IPMI channels. IPMI only displays on systems with physical hardware and not on virtual machine deployments.
 
 ![Network](/images/SCALE/Network/Network.png "TrueNAS Network Page")
 
