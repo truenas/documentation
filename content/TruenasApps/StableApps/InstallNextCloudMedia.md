@@ -18,7 +18,7 @@ keywords:
 
 Nextcloud is a drop-in replacement for many popular cloud services, including file sharing, calendar, groupware, and more.
 One of its more common uses for the home environment is serving as a media backup, and organizing and sharing service.
-This procedure demonstrates how to set up Nextcloud on TrueNAS, and configure it to support hosting a wider variety of media file previews, including High Efficiency Image Container (HEIC), MP4, and MOV files.
+This procedure demonstrates how to set up Nextcloud on TrueNAS and configure it to support hosting a wider variety of media file previews, including High-Efficiency Image Container (HEIC), MP4, and MOV files.
 
 TrueNAS offers one deployment option for setting up Nextcloud, a Linux Debian-based TrueNAS version application available in TrueNAS releases 24.10 and later.
 The instructions in this article apply to these TrueNAS 24.10 and later releases.
@@ -55,9 +55,9 @@ Before you install the Nextcloud app:
   You must configure the ACLs permissions for two datasets while on the <b>>Datasets</b> screen: the parent dataset (i.e., the <i>nextcloud</i> dataset) and the <b>postgres_data</b> dataset.
   You can configure ACL permissions for the Nextcloud <b>html</b> and <b>data</b> datasets when prompted or configure them in the app installation wizard as described in the installation section.
 
-  To configure the dataset ACL permissions from the <b>Datasets</b> screen, either select the <b>Set ACL for this dataset</b> option when prompted after adding the dataset or select the dataset row, and then click <b>Edit</b> on the <b>Permissions</b> widget to open the <b>Edit ACL</b> screen.
+  To configure the dataset ACL permissions from the <b>Datasets</b> screen, either select the <b>Set ACL for this dataset</b> option when prompted after adding the dataset or select the dataset row and then click <b>Edit</b> on the <b>Permissions</b> widget to open the <b>Edit ACL</b> screen.
 
-  When adding the parent dataset, after entering the name, select the <b>Generic</b> dataset preset.
+  When adding the parent dataset, select the <b>Generic</b> dataset preset after entering the name.
   Select the option to edit the ACL, set the <b>owner</b> and <b>group</b> to <b>admin</b> or the name of your administration user account, and click <b>Apply Owner</b> and <b>Apply Group</b>.
   Next, add an ACE entry for the <b>netdata</b> and <b>www-dat</b> users and give them full permissions.
   Click <b>Save Access Control List</b>.
@@ -84,7 +84,7 @@ Before you install the Nextcloud app:
 
 * Set up a Nextcloud account.
   If you have an existing Nextcloud account, you enter the credentials for that user in the installation wizard.
-  If do not have an existing Nextcloud account you can create the account from the application install wizard.
+  If you do not have an existing Nextcloud account, you can create one using the application install wizard.
 
 ### Installing the Nextcloud App
 {{< hint info >}}
@@ -121,7 +121,7 @@ The **Data Directory Path** is pre-populated with the correct path.
 Enter a password in **Redis Password** to create a new credential or enter the existing password if you already have Redis configured in your Nextcloud account.
 Enter a password in **Database Password** to create a new credential for the Nextcloud database or enter the existing password if you already have the Nextcloud account database configured. Nextcloud does not URL encode in some places so do not use the ampersand (&), at (@), hashtag (#), or percent (%) characters in the Redis password.
 
-Accept the remaining defaults in the **Nextcloud Configuration** section, but if setting up a cron job schedule, select **Enabled** under **Cron** to show the settings to allow you to schedule a cron job.
+Accept the remaining defaults in the **Nextcloud Configuration** section. However, if you are setting up a cron job schedule, select **Enabled** under **Cron** to show the settings that allow you to schedule a cron job.
 
 {{< expand "Nextcloud Cron Jobs" "v" >}}
 NextCloud cron jobs only run while the app is running. If you stop the app, the cron job(s) do not run until you start the app again.
@@ -139,7 +139,7 @@ This port must match the one used in **Host** above.
 
 If you configured a certificate, select it in **Certificate ID**. A certificate is required if you want to select an external port other than the default **30027**.
 
-Enter the storage settings for each of the datasets created for the Nextcloud app.
+Enter the storage settings for each dataset you created for the Nextcloud app.
 {{< expand "Configuring Nextcloud Storage" "v" >}}
 {{< hint type=info >}}
 Do not select **DEPRECATED: Old Storage Structure** if you are deploying Nextcloud for the first time as this slows down the installation and is not necessary.
@@ -197,7 +197,7 @@ Nextcloud has three APT package options:
 
 You must add both the **ffmpeg** and **smbclient** packages to deploy this app.
 
-You can use **ocrmypdf** as well if needed, but you must also select the **Tesseract Language Code** to use. Options are **chi-sim** for Simplified Chinese or **eng** for English.
+You can also use **ocrmypdf** if needed, but you must select the **Tesseract Language Code** to use. Options are **chi-sim** for Simplified Chinese or **eng** for English.
 For more information on tesseract languages to install for OCRmypdf, see [here](https://tesseract-ocr.github.io/tessdoc/Data-Files-in-different-versions.html) for a list of language codes. Typing the wrong language code blocks the container from starting. Only takes effect if ocrmypdf is selected.
 
 Click **Add** to the right of **APT Packages** for each option you want or need to add.
