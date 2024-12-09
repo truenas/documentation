@@ -50,8 +50,9 @@ This requires entering the same password used to encrypt data in both **Encrypti
 With **Push** selected as the **Transfer Direction**, data is encrypted before it is transferred and stored on the remote system.
 This also requires entering the same password used to encrypt data in both **Encryption Password** and **Encryption Salt**.
 
-**Filename Encryption** is selected by default.
-When selected, the pull and push transfers encrypt or decrypt file names with the rclone [Standard file name encryption mode](https://rclone.org/crypt//#file-name-encryption-modes).
+{{< include file="/static/includes/FilenameEncryption.md" >}}
+
+When **Filename Encryption** is selected, transfers encrypt and decrypt file names with the rclone [Standard file name encryption mode](https://rclone.org/crypt//#file-name-encryption-modes).
 The original directory structure of the files is preserved.
 When disabled, encryption does not hide file names or directory structure, file names can be 246 characters long, use sub-paths, and copy single files.
 When enabled, file names are encrypted, file names are limited to 143 characters, directory structure is visible, and files with identical names have identical uploaded names.
