@@ -7,6 +7,7 @@ aliases:
  - /scale/scaletutorials/apps/installnextcloudmedia/
  - /scale/scaletutorials/apps/chartapps/installnextcloudmedia/
  - /scale/scaletutorials/apps/stableapps/installnextcloudmedia/
+ - /scale/scaletutorials/apps/communityapps/installnextcloudmedia/
  - /truenasapps/communityapps/installnextcloudmedia/
 tags:
 - apps
