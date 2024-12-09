@@ -743,6 +743,7 @@ svg.gdoc-icon {
   @media screen and (prefers-color-scheme: dark) {
     :root {
       --color-scheme: dark;
+      --body-font-color: #f0f3f5;
     }
     .truetable {
       background-color: #212529;
