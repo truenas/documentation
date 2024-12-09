@@ -94,17 +94,7 @@ The **Basic Options** settings in this section also display in the **Advanced Op
 #### Purpose Setting Options
 This table details the options found on the **Purpose** dropdown list.
 
-{{< truetable >}}
-| Setting | Description |
-|---------|-------------|
-| **No presets** | Select  to retain control over all **Advanced Options** settings.|
-| **Default share parameters** | The default option when you open the **Add SMB** screen and to use for any basic SMB share. |
-| **Basic time machine share** | Select to set up a basic time machine share. |
-| **Multi-User time machine** | Select to set up a multi-user time machine share. |
-|  **Multi-Protocol (NFSv3/SMB) shares**| Select for multi-protocol (NFSv3/SMB) shares. |
-| **Private SMB Datasets and Shares** | Select to use private SMB datasets and shares. |
-| **SMB WORM. Files become read-only via SMB after 5 minutes** | The **SMB WORM** preset only impacts writes over the SMB protocol. Before deploying this option in a production environment, the user should determine whether the feature meets their requirements. |
-{{< /truetable >}}
+{{< include file="/static/includes/SMBPurposePresets.md" >}}
 
 ### Advanced Options Settings
 Click **Advanced Options** to display settings made available or locked based on the option selected in **Purpose**.
@@ -157,6 +147,7 @@ The **Other Options** settings include improving Apple software compatibility, Z
 | **Enable SMB2/3 Durable Handles** | Select to allow using open file handles that can withstand short disconnections. Support for POSIX byte-range locks in Samba is also disabled. We do not recommend this option when configuring multi-protocol or local access to files. |
 | **Enable FSRVP** | Select to enable support for the File Server Remote VSS Protocol ([FSVRP](https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-fsrvp/dae107ec-8198-4778-a950-faa7edad125b)). This protocol allows remote procedure call (RPC) clients to manage snapshots for a specific SMB share. The share path must be a dataset mount point. Snapshots have the prefix `fss-` followed by a snapshot creation timestamp. A snapshot must have this prefix for an RPC user to delete it. |
 | **Path Suffix** | Appends a suffix to the share connection path. Use to provide individualized shares on a per-user, per-computer, or per-IP address basis. Suffixes can contain a macro. See the [smb.conf](https://www.samba.org/samba/docs/current/man-html/smb.conf.5.html) manual page for a list of supported macros. The connect path must be preset before a client connects. |
+| **Additional Parameters String** | Shows a string of parameters associated with the share preset selected, or if no preset, enter additional smb4.conf parameters not covered by the TrueNAS API. |
 {{< /truetable >}}
 
 #### Advanced Options Presets
@@ -211,7 +202,7 @@ These settings configure new ACL entries for the selected SMB share and apply th
 
 ## Edit Filesystem ACL Screen
 The **Edit Filesystem ACL** option opens the **Edit ACL** screen for the dataset the share uses.
-See [**Edit ACL Screen]({{< relref "EditACLScreens.md" >}}) more information on the settings found on this screen.
+See [**Edit ACL Screen**]({{< relref "EditACLScreens.md" >}}) more information on the settings found on this screen.
 
 {{< trueimage src="/images/SCALE/Shares/SMBACLEditor.png" alt="SMB ACL Editor" id="SMB ACL Editor" >}}
 
@@ -234,4 +225,7 @@ The **SMB Status** screen has four tabs with information related to SMB shares:
 **Column** displays a dropdown list of options for the selected tab to customize the information included on the screen.
 
 Click **Sharing** or **SBM** on the top breadcrumb to open the selected screen.
-The breadcrumb displays when you access the SMB Status screen from the **System Settings > Services SMB** row.
+
+The breadcrumb displays when you access the SMB Status screen from the **System > Services SMB** row.
+
+{{< include file="/static/includes/addcolumnorganizer.md" >}}
