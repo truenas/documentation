@@ -5,7 +5,7 @@
   {{< hint type=warning title="Encrypted Pools" >}}
    Do not select an encrypted pool as the app pool!
   Selecting an encrypted pool can cause app issues after upgrading the system when pools and any datasets in the pool are locked.
-  If using the encrypted root dataset of the pool, the dataset for the containers do not mount, and the containers do not start.
+  If using the encrypted root dataset of the pool, the dataset for the containers does not mount, and the containers do not start.
   To resolve issues, unlock the dataset(s) by entering the passphrase/key to allow all nested datasets to mount and start.
   {{< /hint >}}
   
