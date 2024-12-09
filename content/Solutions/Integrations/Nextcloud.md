@@ -59,7 +59,7 @@ Enter a name in **Jail Name** and click **SAVE**.
 
 ![NextcloudJailName](/images/Solutions/SolutionsIntegrationsNextcloudJailName.png "Nextcloud Jail Name")
 
-After Nextcloud installs successfully, you can manage your instance of the plugin.  
+After Nextcloud installs successfully, you can manage your plugin instance.  
 
 ![NextcloudPostInstall](/images/Solutions/SolutionsIntegrationsNextcloudPostInstall.png "Nextcloud Post Install")
 
