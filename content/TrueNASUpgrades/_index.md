@@ -62,8 +62,6 @@ See the [Documentation Archive](https://www.truenas.com/docs/archive/) for conte
 
 {{< include file="/static/includes/SCALEUpgradePaths.md" >}}
 
-{{< include file="/static/includes/COREUpgradePaths.md" >}}
-
 ## Release Schedules
 
 **The release names and dates provided here are tentative and can change at any time.**
