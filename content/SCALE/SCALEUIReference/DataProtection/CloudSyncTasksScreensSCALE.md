@@ -138,7 +138,7 @@ The **Manage Credentials** link opens the **Backup Credentials** screen where yo
 The **Add Bucket** screen opens when **Add New** is selected from the **Bucket** dropdown in **Remote Settings**.
 It is only available for Storj-iX provider credentials.
 
-{{< trueimage src="static/images/SCALE/DataProtection/AddCloudSyncTaskNewBucket.png" alt="Add Bucket Screen" id="Add Bucket Screen" >}}
+{{< trueimage src="/images/SCALE/DataProtection/AddCloudSyncTaskNewBucket.png" alt="Add Bucket Screen" id="Add Bucket Screen" >}}
 
 {{< truetable >}}
 | Settings | Description |
