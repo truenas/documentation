@@ -181,7 +181,7 @@ For example, add the **568** user and **0**, and give each **FULL_CONTROL Access
 
 Select **Force Flag**.
 
-Repeat the storage steps above each additional storage volume.
+Repeat the storage steps above each additional storage volume. See [Storage Configuration Settings](#storage-configuration-settings) below for more information.
 
 Accept the defaults in **Resources Configuration**, and select the GPU option if applicable.
 
@@ -253,6 +253,8 @@ If you have a postgres dataset, also include information in the Before You Begin
 
 See the instructions in the [Before You Begin](#before-you-begin) section for more on creating both the parent and postgres_data datasets and configuring the ACL permissions for each.-->
 You can add extra storage volumes at the time of installation or edit the application after it deploys. Stop the app before editing settings.
+
+<!-- replace the snippet with the text in the snippet if the additional storage options include temporary directory options or other storage choices. We might need to create a new snippet for those instances if they are the same in other app install wizards. -->
 {{< include file="/static/includes/apps/InstallAppStorageConfig2.md" >}}
 
 #### Setting Dataset ACL Permissions
