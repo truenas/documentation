@@ -41,6 +41,17 @@
 }
 </style>
 
+The chart below shows recommended paths for upgrading from earlier TrueNAS versions.
+Update the system to the latest maintenance release of the installed major version before attempting to upgrade to a new major version.
+
+Permitted upgrade methods are:
+* **update**: apply an automatic update using the **Update** screen in the TrueNAS UI or install a manual update file.
+* **ISO install**: save a current TrueNAS configuration file, perform a fresh install using an .iso file for the target version, and then upload the previously-saved configuration.
+
+Users can skip major versions with a fresh ISO install followed by a configuration file upload.
+However users migrating from an earlier version should carefully review release notes for each skipped major version, noting any service deprecations or significant changes that impact aspects of the previous configuration.
+Consider stopping at major versions with significant impact to address changes before continuing to upgrade or expect to manually reconfigure incompatibilities on the latest target version.
+
 <div class="section-box" id="scale-upgrade-paths" style="padding: 0 40px 40px 40px; margin-bottom: 20px;">
     <div class="upgrade-paths-container">
       <img src="/images/tn-openstorage-logo.png" style="box-shadow: none; max-width: 225px; padding-bottom: 20px; padding-top: 40px;" title="TrueNAS" alt="TrueNAS">
