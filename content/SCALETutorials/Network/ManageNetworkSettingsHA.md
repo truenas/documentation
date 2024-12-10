@@ -40,7 +40,7 @@ To configure network settings:
 
    b. Add the failover settings. Select **Critical**, and then select **1** on the **Failover Group** dropdown list.
    
-      ![EditInterfaceFailoveSettingsrHA](/images/SCALE/22.12/EditInterfaceFailoveSettingsrHA.png "Edit Network Interface Failover Settings")
+      ![EditInterfaceFailoveSettingsrHA](/images/SCALE/22.12/EditInterfaceFailoverSettingsHA.png "Edit Network Interface Failover Settings")
 
    c. Add the virtual IP (VIP) and controller 2 IP. Click **Add** for **Aliases** to display the additional IP address fields. 
       
