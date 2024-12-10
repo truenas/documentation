@@ -115,7 +115,10 @@ For more details on feature flags, see [OpenZFS Feature Flags](https://openzfs.g
 ## 25.04 Nightly Development Changelog
 
 * The TrueNAS REST API is deprecated in TrueNAS 25.04 and replaced by the TrueNAS API Client. Full removal of the REST API is planned for a future release.
-* The default libvirt account UID & GID is changed to a less common value to avoid clashing with user created UID/GIDs. See Upgrade Notes above for more information.
+* The default libvirt account UID & GID is changed to a less common value to avoid clashing with user created UID/GIDs. See Upgrade Notes above for more information ([NAS-131695](https://ixsystems.atlassian.net/browse/NAS-131695)).
+* Improved API key mechanism with support for user-linked API keys ([NAS-131396](https://ixsystems.atlassian.net/browse/NAS-131396)).
+  Existing API keys created via the TrueNAS API (not UI or TrueCommand) that specify an allowlist with whitelisted API methods are revoked on upgrade because there is no clean way to migrate to new system.
+  Legacy API keys from TrueNAS 24.10 or earlier migrate to the root, admin, or truenas_admin account, depending on server configuration
 
 <!--
 
