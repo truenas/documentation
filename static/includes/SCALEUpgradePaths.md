@@ -49,17 +49,15 @@
           {{< mermaid class="mermaid_sizing" >}}
           flowchart LR
             A["11.3-U5"] -->|update| B["12.0-U8.1"]
-            B -->|update| C["13.0-U6.3"]
-            C -->|manual update| E
-            C -->|ISO install| I
-            C -->|"(anticipated)"| J
-            D["22.02.4 (Angelfish)"] -->|update| F
-            E["13.3-U1"] -->|ISO install| I
-            F["22.12.4.2 (Bluefin)"] -->|update| G
-            G["23.10.2 (Cobia)"] -->|update| H
-            H["24.04.2.5 (Dragonfish)"] -->|update| I
-            I["24.10.0.2 (Electric Eel)"] -->|"(anticipated)"| J
-            J["25.04.0 (Fangtooth)"]
+            B -->|update| C["13.0-U6.3 <br> 13.3-U1"]
+            C -->|ISO install| H
+            C -->|"(anticipated)"| I
+            D["22.02.4 (Angelfish)"] -->|update| E
+            E["22.12.4.2 (Bluefin)"] -->|update| F
+            F["23.10.2 (Cobia)"] -->|update| G
+            G["24.04.2.5 (Dragonfish)"] -->|update| H
+            H["24.10.0.2 (Electric Eel)"] -->|"(anticipated)"| I
+            I["25.04.0 (Fangtooth)"]
           {{< /mermaid >}}
         </div>
       </div>
