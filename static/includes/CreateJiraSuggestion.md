@@ -1,15 +1,47 @@
 &NewLine;
 
 Want to see a new feature added to TrueNAS?
-You can see and vote for community-proposed features in the TrueNAS Jira project and make your feature suggestions [here](https://ixsystems.atlassian.net/issues/?jql=issuetype%20%3D%20Suggestion%20AND%20status%20%3D%20%22Gathering%20Interest%22).
-If you find a suggestion that you want to see implemented, open that ticket and click **Vote for this issue** in the **People** section.
+You can see and vote for community-proposed features in the TrueNAS Community Forum [Feature Requests](https://forums.truenas.com/c/features/) category.
+This is the place to suggest improvements and feature functionality to be considered for addition to the TrueNAS development roadmap.
 
-![JiraSuggestionVote](/images/Contribute/JiraSuggestionVote.png "Voting for a Suggestion")
+## Submitting and Voting for Requests
+A TrueNAS forums account is required to submit or vote for feature suggestions.
 
-To suggest a new feature, go to https://ixsystems.atlassian.net/projects/NAS/, log in to your Jira account, and click **Create**.
+To submit a new feature request, click **<i class="fa fa-plus" aria-hidden="true"></i> New Topic** in the top right of any forum screen
+Enter a title that describes the requested improvement or new functionality.
+Change the category tag to **Feature Requests**.
+The body of the post populates a template.
+Describe the **Problem/Justification**, **Impact**, and provide **User Story** for your request.
+Click **<i class="fa fa-plus" aria-hidden="true"></i> Create Topic** to submit the request.
 
-![JiraSuggestionCreate](/images/Contribute/JiraSuggestionCreate.png "Creating a new Suggestion")
+{{< trueimage src="/images/Contribute/FeatureRequest.png" alt="Submit a Feature Request" id="Submit a Feature Request" >}}
 
-Briefly describe the new feature you would like to see added in the **Summary** section.
-After creating your feature suggestion, it moves to the **Gathering Interest** stage, where the community can review and vote for the feature.
-After gathering enough interest, the TrueNAS Release Council reviews the suggestion for feasibility and determines where to add the feature in the software roadmap.
+To vote for a feature request, open that thread then click **Vote** at the top left corner, next to the title.
+
+{{< trueimage src="/images/Contribute/FeatureRequestVote.png" alt="Vote for a Feature Request" id="Vote for a Feature Request" >}}
+
+Each forum user can cast a limited number of votes for items at any given time.
+The higher your trust level, the more votes you can cast.
+The number of votes based on trust level is as follows:
+
+{{< truetable >}}
+| Trust Level | Votes |
+|-----------|-------------|
+| 0 | 2 |
+| 1 | 4 |
+| 2 | 6 |
+| 3 | 8 |
+| 4 | 10 |
+{{< /truetable >}}
+
+Votes on a topic are kept until either you remove the vote manually or the topic is closed.
+Topics are closed periodically after they are reviewed and either accepted or rejected based on their merit and feasibility.
+
+## What is a good feature request?
+
+Before creating a new feature request, it is important to take some time to think through the implementation and user story.
+A good feature request includes details about the functionality requested, if it involves a UI component, and a detailed user story describing how a TrueNAS user might interact with the proposed feature.
+
+## What is a bad feature request?
+
+Items which are completely unrealistic (i.e. Can you base TrueNAS on Windows) or feature requests which are outside of the scope of typical NAS functionality (i.e. I want a full desktop with Gnome on TrueNAS).

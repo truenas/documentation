@@ -11,13 +11,10 @@ tags:
 There are several options to get support for your TrueNAS installation.
 TrueNAS CORE users can engage with the TrueNAS community to answer questions and resolve issues. TrueNAS Enterprise hardware customers can also access the fast and effective support directly provided by iXsystems.
 
-
 ## TrueNAS CORE
-{{< expand "" "v" >}}
+
 TrueNAS CORE users are welcome to report bugs and vote for or suggest new TrueNAS features in the project Jira instance.
 Have questions? We recommend searching through the software documentation and community resources for answers.
-
-
 
 ### Reporting a Bug
 
@@ -67,11 +64,9 @@ You are always welcome to network with other TrueNAS users using the various soc
 * [Twitter](https://twitter.com/TrueNAS)
 * [LinkedIn](https://www.linkedin.com/groups/3903140/)
 * [Facebook](https://www.facebook.com/truenascommunity)
-{{< /expand >}}
 
 ## TrueNAS Enterprise
 
-{{< expand "" "v" >}}
 In addition to all the TrueNAS CORE support options, TrueNAS Enterprise customers who purchase hardware from iXsystems can receive assistance from iXsystems if an issue occurs.
 
 Silver and Gold level Support customers can also enable Proactive Support on their hardware to automatically notify iXsystems if an issue occurs.
@@ -115,7 +110,6 @@ After the creating the new ticket, TrueNAS displays the ticket URL for viewing o
 You must have an [iXsystems Support](https://support.ixsystems.com/) account to view the ticket.
 Click the URL to log in or register with the support portal.
 Use the same email address submitted with the ticket when registering.
-{{< /expand >}}
 
 ## Contacting iXsystems Support
 
