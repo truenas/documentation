@@ -42,6 +42,7 @@
 </style>
 
 The chart below shows recommended paths for upgrading from earlier TrueNAS versions.
+
 Update the system to the latest maintenance release of the installed major version before attempting to upgrade to a new major version.
 
 Permitted upgrade methods are:
