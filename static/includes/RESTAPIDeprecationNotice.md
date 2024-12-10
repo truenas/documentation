@@ -1,7 +1,7 @@
 &NewLine;
 
 {{< hint type="info" title="REST API Deprecation Notice" >}}
-The TrueNAS REST API is deprecated in TrueNAS 25.04 and replaced by the [TrueNAS API Client](https://github.com/truenas/api_client).
+The TrueNAS REST API is deprecated in TrueNAS 25.04 and replaced by the [TrueNAS websocket client](https://github.com/truenas/api_client).
 Full removal of the REST API is planned for a future release.
 
 This new API Client is not the deprecated TrueNAS CLI (midcli).
