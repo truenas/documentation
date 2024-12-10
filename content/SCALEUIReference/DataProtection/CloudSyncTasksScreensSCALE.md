@@ -142,7 +142,7 @@ The **Manage Credentials** link opens the **Backup Credentials** screen where yo
 {{< /truetable >}}
 
 {{< expand "Advanced Scheduler" "v" >}}
-{{< include file="/static/includes/AdvancedScheduler.md" >}}
+{{< include file="/static/includes/SCALEAdvancedScheduler.md" >}}
 {{< /expand >}}
 
 ### Advanced Options Settings

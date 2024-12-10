@@ -34,36 +34,52 @@ The **Schedule Preview** displays when the current settings mean the task runs.
 
 ### Examples of CRON syntax
 
+TrueNAS lets users create flexible schedules using the advanced cron syntax.
+The tables below have some examples:
+
 <table class="truetable">
-	<thead>
-		<tr>
-			<th>Syntax</th>
-			<th>Meaning</th>
-			<th>Examples</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<td> * </td>
-			<td>Every item.</td>
-			<td>* (minutes) = every minute of the hour.<br/>* (days) = every day.</td>
-		</tr>
-		<tr>
-			<td> */N </td>
-			<td>Every N<sup>th</sup> item.</td>
-			<td>*/15 (minutes) = every 15th minute of the hour.<br/>*/3 (days) = every 3rd day.<br/>*/3 (months) = every 3rd month.</td>
-		</tr>
-		<tr>
-			<td>Comma and hyphen/dash</td>
-			<td>Each stated item (comma)<br/>Each item in a range (hyphen/dash).</td>
-			<td>1,31 (minutes) = on the 1st and 31st minute of the hour.<br/>1-3,31 (minutes) = on the 1st to 3rd minutes inclusive, and the  31st minute, of the hour.<br/>mon-fri (days) = every Monday to Friday inclusive (every weekday).<br/>mar,jun,sep,dec (months) = every March, June, September, December.</td>
-		</tr>
-	</tbody>
+  <thead>
+      <tr>
+          <th>Syntax</th>
+          <th>Meaning</th>
+          <th>Examples</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>*</td>
+          <td>Every item.</td>
+          <td>
+              * (minutes) = every minute of the hour.<br />
+              * (days) = every day.
+          </td>
+      </tr>
+      <tr>
+          <td>*/N</td>
+          <td>Every N<sup>th</sup> item.</td>
+          <td>
+              */15 (minutes) = every 15th minute of the hour.<br />
+              */3 (days) = every 3rd day.<br />
+              */3 (months) = every 3rd month.
+          </td>
+      </tr>
+      <tr>
+          <td>Comma and hyphen/dash</td>
+          <td>
+              Each stated item (comma)<br />
+              Each item in a range (hyphen/dash).
+          </td>
+          <td>
+              1,31 (minutes) = on the 1st and 31st minute of the hour.<br />
+              1-3,31 (minutes) = on the 1st to 3rd minutes inclusive, and the 31st minute, of the hour.<br />
+              mon-fri (days) = every Monday to Friday inclusive (every weekday).<br />
+              mar,jun,sep,dec (months) = every March, June, September, December.
+          </td>
+      </tr>
+  </tbody>
 </table>
 
 You can specify days of the month or days of the week.
-
-TrueNAS lets users create flexible schedules using the available options. The table below has some examples:
 
 <table class="truetable">
 	<thead>
