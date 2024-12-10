@@ -47,7 +47,7 @@ The selection in **Type** changes setting options on this screen, the **Certific
 |---------|-------------|
 | **Name** | Required. Enter a descriptive identifier for this certificate authority(CA). |
 | **Type** | Select the type of CA from the dropdown list. Options are **Internal CA**, **Intermediate CA**, and **Import CA**. **Internal CA** functions like a publicly trusted CA to sign certificates for an internal network. They are not trusted outside the private network. **Intermediate CA** lives between the root and end entity certificates and its main purpose is to define and authorize the types of certificates you can request from the root CA. **Import CA** allows you to import an existing CA onto the system. For more information see [What are Subordinate CAs and Why Would You Want Your Own?](https://www.globalsign.com/en/blog/what-is-an-intermediate-or-subordinate-certificate-authority). |
-| **Profiles** | Displays if **Internal CA** or **Intermediate CA** are set in **Type**. Select a predefined certificate extension from the dropdown list. Choose a profile that best matches your certificate usage scenario. Options are **Openvpn Root CA** and **CA**. |
+| **Profiles** | Displays if **Internal CA** or **Intermediate CA** are set in **Type**. Select a predefined certificate extension from the dropdown list. |
 {{< /truetable >}}
 {{< /expand >}}
 
