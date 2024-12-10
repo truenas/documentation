@@ -2,7 +2,6 @@
 
 * Set a pool for applications to use if not already assigned.
   
-  Go to **Apps**. If prompted, set the pool for apps.
   TrueNAS creates the **ix-apps** (hidden) dataset in the pool set as the application pool.
   This dataset is internally managed, so you cannot use this as the parent when you create required application datasets.
 
