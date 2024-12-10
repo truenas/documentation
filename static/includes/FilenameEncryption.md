@@ -6,5 +6,5 @@ In some cases, this can prevent backup jobs from completing or being restored.
 
 We do not recommend enabling **Filename Encryption** for any cloud sync tasks that did not previously have it enabled.
 Users with existing cloud sync tasks that have this setting enabled must leave it enabled on those tasks to be able to restore those existing backups.
-Do not enable file name encryption on new cloud sync tasks
+Do not enable file name encryption on new cloud sync tasks!
 {{< /hint >}}
