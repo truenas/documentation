@@ -61,8 +61,6 @@ More details are available from [Software Releases]({{< relref "/TrueNASUpgrades
 {{< include file="/static/includes/25.04UpgradeMethods.md" >}}
 
 See the <a href="https://www.truenas.com/software-status/" target="_blank">TrueNAS Software Status</a> page for recommendations about which software version to use based on your user type.
-
-Update the system to the latest maintenance release of the installed major version before attempting to upgrade to a new TrueNAS major version.
 -->
 
 {{< include file="/static/includes/SCALEUpgradePaths.md" >}}
