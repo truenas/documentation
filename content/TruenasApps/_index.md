@@ -37,6 +37,7 @@ TrueNAS delivers a wide range of features and scalability for virtualization and
 TrueNAS applications expand the capabilities of your system by adding third-party software, but they can add significant risk to system stability and security.
 
 ## Getting Started
+
 All applications added to TrueNAS are intended to expand system functionality far beyond what is typically expected from a NAS.
 
 Applications are provided "as-is" and can introduce system stability or security issues when installed.
@@ -52,33 +53,32 @@ The default system-level settings are found in **Apps > Settings**.
 
 For more information on screens and screen functions, refer to the UI Reference article on [Apps Screens]({{< relref "SCALE/SCALEUIReference/Apps/_index.md" >}}).
 
-## Managing Apps Configuration
+## Setting Up the Apps Service
+
 Use the **Configuration** dropdown to access the **Choose Pool**, **Unset Pool**, **Manage Container Images**, and **Settings** options.
 
-### Choosing the Application Pool
-You are prompted to [select the pool for apps](#choosing-the-apps-pool) the first time you click on **Apps**.
+### Choosing the Apps Pool
+
+You are prompted to select the pool for apps the first time you click on **Apps**.
 You can exit out of this if you are not ready to deploy apps or do not have a pool configured for apps to use for storage.
 You must set the pool before you can add any application.
-
-We recommend keeping the application use case in mind when choosing a pool.
-Select a pool with enough space for all the applications you intend to use.
-For stability, we recommend using SSD storage for the applications pool.
 
 Select the pool and click **Save**. If you close the dialog to set the pool later, click **Configuration > Choose Pool** to set the pool.
 
 {{< trueimage src="/images/SCALE/Apps/AppsSettingsChoosePool.png" alt="Choosing a Pool for Apps" id="Choosing a Pool for Apps" >}}
 
-If you want to set up new datasets to store your application data in a location separate from other storage on your system, create the datasets before installing the application.
-For example, create the datasets for the Nextcloud app before installing the app.
-
-{{< include file="/static/includes/AppsVMsNoHTTPS.md" >}}
-
-{{< trueimage src="/images/SCALE/SystemSettings/SystemSettingsGUISettingsSCALE.png" alt="General System Settings" id="General System Settings" >}}
-
-See [Advanced Guidance](#advanced-guidance) below for more information about apps pool selection and datasets.
+{{< include file="/static/includes/apps/AppsPool.md" >}}
 
 ### Unsetting the Apps Pool
+
 To select a different pool for apps to use, click **Configuration > Unset Pool**. This turns off the apps service until you choose another pool for apps to use.
+
+### Understanding App Storage Volumes
+
+The **ix-apps** dataset is the base-level storage volume for app data.
+Additionally, configuration options for individual apps include one or more of the following storage types: ixVolume datasets, host path datasets, SMB share volumes, and Tmpfs.
+
+{{< include file="/static/includes/apps/AppsDatasets.md" >}}
 
 ### Configuring Apps Settings
 
@@ -87,6 +87,7 @@ Click **Configuration > Settings** to open the **Settings** screen, which contai
 {{< trueimage src="/images/SCALE/Apps/AppsSettingScreen.png" alt="Apps Settings Screen" id="Apps Settings Screen" >}}
 
 #### Changing App Trains
+
 TrueNAS applications are available in three catalogs (trains):
 
 * **stable** - Default train of official apps, vetted by iXsystems, chosen because of the features and functionality of the app, and how they integrate with TrueNAS.
@@ -107,6 +108,7 @@ Some applications deploy as the **root** user for initial configuration before o
 Keep these general best practices in mind when using applications with TrueNAS.
 
 #### Changing Apps Network Settings
+
 Go to **Apps > Installed**, click **Configuration**, and select **Settings**.
 
 To add another range of IP addresses, click **Add** to the right of **Address Pools**, then select a range from the dropdown list of options, and enter the desired value in **Size**.
@@ -119,7 +121,14 @@ Use to resolve issues where apps experience issues where TrueNAS device is not r
 Select the network option, or add additional options to resolve the network connection issues.
 {{< /hint >}}
 
+{{< include file="/static/includes/apps/AppsVMsNoHTTPS.md" >}}
+
+#### App Directory Services
+
+{{< include file="/static/includes/apps/AppsDirectoryService.md" >}}
+
 #### Installing NVIDIA Drivers
+
 Beginning in TrueNAS 24.10, NVIDIA drivers are no longer automatically installed. Users must manually install drivers from the TrueNAS UI.
 
 If running TrueNAS 24.10 or higher:
@@ -132,30 +141,66 @@ If running TrueNAS 24.10 or higher:
 4. Select **Install NVIDIA Drivers**, and click **Save.**
 
 #### Monitoring for Image Updates
+
 Select **Check for docker image updates** (selected by default) to enable TrueNAS to periodically check for Docker image updates.
 This applies to all Docker images present on the system for either catalog or custom applications.
 Disable to prevent TrueNAS from monitoring for upstream image updates.
 
-### Managing Container Images
-While on the **Installed** application screen, click **Configuration** > **Manage Container Images** to open the **Manage Container Images** screen.
+## Discovering Applications
 
-{{< trueimage src="/images/SCALE/Apps/AppsManageContainerImages.png" alt="Apps Manage Container Images" id="Apps Manage Container Images" >}}
+The **Discover** screen shows application widgets based on the trains selected on the **Train Settings** screen.
 
-Delete images or add new ones from this screen.
+Non-Enterprise systems show the **stable** catalog of apps by default.
+These are official applications, pre-configured to only require a name during a test deployment, or some customization for a full deployment.
 
-**Pull Image** downloads a specific custom image to TrueNAS.
+Enterprise-licensed systems display the **enterprise** train of applications simplified and validated for Enterprise systems.
 
-{{< trueimage src="/images/SCALE/Apps/AppsManageContainerImagesPullImage.png" alt="Pull a Container Image" id="Pull a Container Image" >}}
+Community users can add the **community** and **enterprise** trains on the [**Settings**](#changing-app-trains) screen.
 
-To download a specific image, click **Pull Image**, then enter a valid path and tag to the image.
-Enter the path using the format *registry*/*repository*/*image* to identify the specific image.
-The default **latest** tag downloads the most recent image version.
+{{< trueimage src="/images/SCALE/Apps/AppsDiscoverScreen.png" alt="Applications Discover Screen" id="Applications Discover Screen" >}}
 
-When downloading a private image, enter user account credentials that allow access to the private registry.
+Use the **Discover** screen links to access other functions.
 
-## Installing an Application
+* [**Refresh Catalog**](#refreshing-the-apps-catalog) - Refreshes the list of app widgets after changing train settings or changes to the catalog.
+* **Manage Installed Apps** - Opens the **Installed** apps screen where you access the **Configuration** menu to manage general application settings.
+
+Click on an app widget to open the app information screen with details about the selected application.
+
+{{< trueimage src="/images/SCALE/Apps/CollaboraInfoScreen.png" alt="Application Information Screen Example" id="Application Information Screen Example" >}}
+
+### App Versions
+
+The information screen includes two version numbers for the selected application: **App Version** and **Version**.
+**App Version** is the version of the upstream Docker image for the app, such as *24.04.10.2.1* for Collabora.
+**Version** is the revision number of the app in the [TrueNAS app train](https://github.com/truenas/apps/tree/master/trains), for example *1.2.2*.
+The **Version** is the number used to identify app updates in TrueNAS.
+These values also appear in the **Application Info** widget on the **Installed** applications screen.
+
+### Refreshing the Apps Catalog
+
+Click **Refresh Catalog** on the **Discover** screen to refresh the app catalog.
+Refresh the app catalog after adding or editing the app trains on your system.
+
+### Using the Discover Screen Filters
+
+To change how app widgets show on the screen, click the down arrow to the right of **Filters**, and select the filter option to use.
+
+{{< trueimage src="/images/SCALE/Apps/DiscoverAppsScreenFilterOptions.png" alt="Discover Apps Filter Options" id="Discover Apps Filter Options" >}}
+
+To quickly locate a specific app, begin typing the name in the search field. The screen shows apps matching the typed entry.
+
+To sort app widgets by category, click on **Categories**.
+To select multiple categories, click **Categories** again and select another category from the dropdown.
+
+{{< trueimage src="/images/SCALE/Apps/MinIOS3AppInfoScreen.png" alt="Application Information Screen Example" id="Application Information Screen Example" >}}
+
+After installing an application, the **Installed** applications screen shows the app in the **Deploying** state.
+The status changes to **Running** when the application is fully deployed and ready to use.
+
+## Installing Applications
+
 The first time you go to **Apps**, a dialog prompts you to choose the pool for apps to use. You must set the app pool before you can install applications.
-Select the pool as described in the [**Choosing the Application Pool**](#choosing-the-application-pool).
+Select the pool as described in the [**Choosing the Apps Pool**](#choosing-the-apps-pool).
 
 The **Installed** applications screen displays **Check Available Apps** before you install the first application.
 
@@ -167,14 +212,12 @@ Search for the application widget, then click on that widget to open the informa
 
 {{< include file="/static/includes/apps/AppsSMBErrorWarning.md" >}}
 
-If an application requires specific datasets, configure them before launching the installation wizard.
-
-### App Version Verses Version
-The **Application Info** widget on the **Installed** applications screen shows the **App Version**, which is the main container version, and is provided for information purposes.
-This **App Version** also shows on the upgrade dialog, and the application details screen just above the **Version**. 
-The **Version** information is the basis for app updates in TrueNAS, and is found on the app widget, and in the app Install wizard.
+If an application requires specific host path datasets, create the datasets before installing the application.
+For example, create the datasets for the Nextcloud app before installing the app.
+See [Understanding App Storage Volumes](#understanding-app-storage-volumes) and individual app tutorials for more information.
 
 ### Using an App Installation Wizard
+
 After clicking on an app widget on the **Discover Apps** screen, the information screen for that app opens.
 Click **Install** to open the installation wizard for the application.
 
@@ -203,6 +246,7 @@ To modify installed application settings, first, click on the app row on the **A
 Refer to individual tutorials in the [Stable]({{< relref "/content/TruenasApps/StableApps/_index.md" >}}), [Community]({{< relref "/content/TruenasApps/CommunityApps/_index.md" >}}), or [Enterprise]({{< relref "/content/TruenasApps/EnterpriseApps/_index.md" >}}) sections of the Documentation Hub for more details on configuring application settings.
 
 #### GPU Passthrough
+
 Users with compatible hardware can pass through a GPU device to an application for use in hardware acceleration.
 
 GPU devices can be available for the host operating system (OS) and applications or can be [isolated for use in a Virtual Machine (VM)]({{< relref "managegpuscale.md" >}}).
@@ -217,12 +261,28 @@ Click **Passthrough available (non-NVIDIA) GPUs** to have TrueNAS pass an AMD or
 **Select NVIDIA GPU(s)** displays if an NVIDIA GPU is available, with [installed drivers](#installing-nvidia-drivers).
 Click **Use this GPU** to pass that GPU to the application.
 
+### Viewing App Logs
+
+Apps stuck in a deploying state can result from various configuration problems.
+To check the logs for information on deployment issues encountered, click <span class="iconify" data-icon="mdi:text-box" title="Logs">Logs</span> **View Logs** on the **Workloads** widget for the app.
+
 ### Installing Custom Applications
+
 {{< include file="/static/includes/apps/CustomAppIntro.md" >}}
+
+{{< include file="/static/includes/apps/AppsCustomApp.md" >}}
 
 See [Installing Custom Applications]({{< relref "UsingCustomApp.md" >}}) for more information.
 
-## Upgrading Apps
+## Managing Installed Applications
+
+Installed applications appear on the **Installed** applications screen.
+Click on an app row to view **Details**, including the **Application Info**, **Workloads**, **Notes**, and **Application Metadata** widgets.
+
+{{< trueimage src="/images/SCALE/Apps/InstalledAppsScreenWithApps.png" alt="" id="" >}}
+
+### Upgrading Apps
+
 Apps with available upgrades show a yellow circle with an exclamation point on the right side of the **Applications** table row, and the **Installed** application screen banner displays an **Update** or an **Update All** button.
 To upgrade an app, select the app row and click **Update** on the **Application Info** widget.
 To upgrade multiple apps, either click the **Update All** button on the **Installed** applications banner or select the checkbox to the left of the application row to show the **Bulk Actions** button.
@@ -237,7 +297,8 @@ Click on the down arrow to see the options available for each.
 Click **Upgrade** to begin the process. A counter dialog opens showing the upgrade progress.
 When complete, the update badge and buttons disappear and the application **Update** state on the **Installed** screen changes from **Update Available** to **Up to date**.
 
-## Deleting Apps
+### Deleting Apps
+
 To delete an application, click <i class="fa fa-stop" aria-hidden="true"></i> **Stop** on the application row.
 After the app status changes to stopped, click **Delete** on the **Application Info** widget for the selected application to open the **Delete** dialog.
 
@@ -247,69 +308,27 @@ Select **Remove ixVolumes** to delete hidden app storage from the Apps pool.
 
 Click **Confirm** then **Continue** to delete the application.
 
-## Stopping Apps
+### Stopping Apps
+
 Apps on the **Installed** screen, showing either the **Deploying** or **Running** status, can be stopped using the stop button on the **Applications** table row for the app.
 
-Apps stuck in a deploying state can result from various configuration problems.
-To check the logs for information on deployment issues encountered, click **View Logs**on the **Workloads** widget for the app.
+### Managing Container Images
 
-## Discover Screen Options
-The **Discover** screen shows application widgets based on the trains selected on the **Train Settings** screen.
+While on the **Installed** application screen, click **Configuration** > **Manage Container Images** to open the **Manage Container Images** screen.
 
-Non-Enterprise systems show the **stable** catalog of apps by default.
-These are official applications, pre-configured to only require a name during a test deployment, or some customization for a full deployment.
+{{< trueimage src="/images/SCALE/Apps/AppsManageContainerImages.png" alt="Apps Manage Container Images" id="Apps Manage Container Images" >}}
 
-Enterprise-licensed systems display the **enterprise** train of applications simplified and validated for Enterprise systems.
+Delete images or add new ones from this screen.
 
-Community users can add the **community** and **enterprise** trains on the [**Settings**](#changing-app-trains) screen.
+**Pull Image** downloads a specific custom image to TrueNAS.
 
-{{< trueimage src="/images/SCALE/Apps/AppsDiscoverScreen.png" alt="Applications Discover Screen" id="Applications Discover Screen" >}}
+{{< trueimage src="/images/SCALE/Apps/AppsManageContainerImagesPullImage.png" alt="Pull a Container Image" id="Pull a Container Image" >}}
 
-Use the **Discover** screen links to access other functions.
+To download a specific image, click **Pull Image**, then enter a valid path and tag to the image.
+Enter the path using the format *registry*/*repository*/*image* to identify the specific image.
+The default **latest** tag downloads the most recent image version.
 
-* [**Refresh Catalog**](#refreshing-the-apps-catalog) - Refreshes the list of app widgets after changing train settings or changes to the catalog.
-* **Manage Installed Apps** - Opens the **Installed** apps screen where you access the **Configuration** menu to manage general application settings.
-
-### Refreshing the Apps Catalog
-Click **Refresh Catalog** on the **Discover** screen to refresh the app catalog.
-Refresh the app catalog after adding or editing the app trains on your system.
-
-### Using the Discover Screen Filters
-To change how app widgets show on the screen, click the down arrow to the right of **Filters**, and select the filter option to use.
-
-{{< trueimage src="/images/SCALE/Apps/DiscoverAppsScreenFilterOptions.png" alt="Discover Apps Filter Options" id="Discover Apps Filter Options" >}}
-
-To quickly locate a specific app, begin typing the name in the search field. The screen shows apps matching the typed entry.
-
-To sort app widgets by category, click on **Categories**.
-To select multiple categories, click **Categories** again and select another category from the dropdown.
-
-{{< trueimage src="/images/SCALE/Apps/MinIOS3AppInfoScreen.png" alt="Application Information Screen Example" id="Application Information Screen Example" >}}
-
-After installing an application, the **Installed** applications screen shows the app in the **Deploying** state.
-The status changes to **Running** when the application is fully deployed and ready to use.
-
-## Advanced Guidance
-
-Below, you'll find additional details about TrueNAS apps administration, including best practices and in-depth insights.
-
-### App Pool Selection
-
-{{< include file="/static/includes/apps/AppsPool.md" >}}
-
-### App Dataset Types
-
-{{< include file="/static/includes/apps/AppsDatasets.md" >}}
-
-### Custom Apps
-
-{{< include file="/static/includes/apps/CustomAppIntro.md" >}}
-
-{{< include file="/static/includes/apps/AppsCustomApp.md" >}}
-
-### App Directory Services
-
-{{< include file="/static/includes/apps/AppsDirectoryService.md" >}}
+When downloading a private image, enter user account credentials that allow access to the private registry.
 
 <div class="noprint">
 
