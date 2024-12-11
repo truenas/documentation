@@ -90,7 +90,7 @@ The **More Options** specify other settings related to when and how the rsync oc
 {{< /expand >}}
 
 {{< expand "Advanced Scheduler" "v" >}}
-{{< include file="/static/includes/AdvancedScheduler.md" >}}
+{{< include file="/static/includes/SCALEAdvancedScheduler.md" >}}
 {{< /expand >}}
 
 {{< expand "More Options Settings" "v" >}}
