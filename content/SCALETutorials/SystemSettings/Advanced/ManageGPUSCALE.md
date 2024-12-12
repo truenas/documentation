@@ -39,3 +39,9 @@ Select the GPU device(s) to isolate from the dropdown list.
 {{< trueimage src="/images/SCALE/SystemSettings/IsolatedGPUPCIIDsSelect.png" alt="Select Devices" id="Select Devices" >}}
 
 Click **Save**.
+
+{{< hint type=tip title="Reboot Required" >}}
+A system restart is often needed to fully update the device state after isolating a GPU or removing one from isolation.
+
+Some systems support a PCIe hotplug transition state to reinit the card after changes, but this is hardware dependent.
+{{< /hint >}}
