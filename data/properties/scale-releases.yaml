@@ -1,8 +1,8 @@
 ---
 id: "scale-schedule"
-img: "/images/truenas_scale-logo-full-color-rgb.png"
+img: "/images/tn-openstorage-logo.png"
 product: "TrueNAS"
-title: "TrueNAS&trade; | Enterprise&trade;"
+title: "TrueNAS<sup>&reg;</sup> | Enterprise&trade;"
 majorVersions:
   - lifecycle: "Previous"
     name: "TrueNAS 24.04 - Dragonfish"
@@ -20,7 +20,7 @@ majorVersions:
       - name: "24.10.1"
         type: "Maintenance"
         link: "https://www.truenas.com/docs/scale/24.10/gettingstarted/scalereleasenotes/#24101-changelog"
-        releaseDate: "2024-12-12"
+        releaseDate: "2024-12-17"
         latest: true
       - name: "24.10.2"
         type: "Maintenance"
