@@ -25,7 +25,7 @@ majorVersions:
       - name: "24.10.1"
         type: "Maintenance"
         link: ""
-        releaseDate: "2024-12-12"
+        releaseDate: "2024-12-17"
         latest: false
   - lifecycle: "Next"
     name: "TrueNAS 25.04 - Fangtooth"
