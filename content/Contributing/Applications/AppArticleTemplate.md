@@ -277,6 +277,14 @@ TrueNAS **Additional Storage** options include the ability to mount an SMB share
 
 {{< include file="/static/includes/apps/InstallWizardStorageSMBOption.md" >}}
 
+### Labels Configuration <!-- Optional section. Remove if not included in the install wizard. change the name of the app, and add any information about the apps use of tags if that is the case.  -->
+*Emby* uses metadata to add information to media files, such as where media files are saved, the language used, and parental controls.
+*Emby* uses tags to add identification information to media files.
+
+{{< include file="/static/includes/apps/InstallWizardLabelsConfiguration.md" >}}
+<!-- replace the image with on for the app being documented 
+{{< trueimage src="/images/SCALE/Apps/InstallEmbyLabelsConfig.png" alt="Labels Configuration Settings" id="Labels Configuration Settings" >}}-->
+
 ### Resources Configuration
 <!-- replace the image with one for the app
 {{< trueimage src="/images/SCALE/Apps/InstallNextcloudResourcesConfig.png" alt="Resources Configuration Settings" id="Resources Configuration Settings" >}} -->
