@@ -151,6 +151,10 @@ Any new feature flags introduced since the previous OpenZFS version that was int
 {{< /truetable >}}
 
 For more details on feature flags, see [OpenZFS Feature Flags](https://openzfs.github.io/openzfs-docs/Basic%20Concepts/Feature%20Flags.html) and [OpenZFS zpool-feature.7](https://openzfs.github.io/openzfs-docs/man/7/zpool-features.7.html).
+<!--## 24.10.2 Changelog
+
+Remove midclt call from 24.10.1 known issues if [NAS-132914](https://ixsystems.atlassian.net/browse/NAS-132914) is complete -->
+
 
 ## 24.10.1 Changelog
 
@@ -167,7 +171,6 @@ This is a maintenance release and includes refinement and fixes for issues disco
 * Ensure installed apps are shown correctly after system reset ([NAS-131913](https://ixsystems.atlassian.net/browse/NAS-131913)).
 * Prevent `KeyError: 'pool_name'` resulting from pool name collision in zpool.status ([NAS-132742](https://ixsystems.atlassian.net/browse/NAS-132742)).
 * Allow unsetting/changing the apps pool in cases where the ix-apps dataset no longer exists ([NAS-132065](https://ixsystems.atlassian.net/browse/NAS-132065)).
-* Allow removing ix-volumes of apps that were migrated from 24.04 ([NAS-131911](https://ixsystems.atlassian.net/browse/NAS-131911)). This fix prevents `Failed to delete dataset: cannot destroy 'Tank/ix-apps/app_mounts/AppName': filesystem has dependent clones` errors.
 * Fix memory context for IPC read allocations to prevent potential Use After Free (UAF) corruption ([NAS-132685](https://ixsystems.atlassian.net/browse/NAS-132685)).
 * Make sure helm secret is safely serialized when listing App backups to migrate ([NAS-132077](https://ixsystems.atlassian.net/browse/NAS-132077)). This fix prevents a Unicode decode error, `Failed to list backups: 'utf-8' codec can't decode byte 0xa6 in position 0: invalid start byte`, that prevented some users from migrating apps from 24.04 to 24.10.0.X versions.
 
@@ -179,6 +182,9 @@ This is a maintenance release and includes refinement and fixes for issues disco
 * An issue was discovered with restoration of ZFS snapshots via TrueCloud back up tasks ([NAS-132608](https://ixsystems.atlassian.net/browse/NAS-132608)). The **Take Snapshot** option for TrueCloud back up tasks is disabled in 24.10.1 until the underlying issue is addressed in a future TrueNAS release.
 * OAuth support for Microsoft Outlook is no longer supported in 24.10 due to Microsoft removal of username and password authentication to their email server. Restoration of Outlook OAuth support is anticipated in the 25.04 release version ([NAS-132807](https://ixsystems.atlassian.net/browse/NAS-132807)).
 * An issue has been discovered for cloud sync tasks configured with **Filename Encryption**, which is available in **Advanced Remote Options** ([NAS-132472](https://ixsystems.atlassian.net/browse/NAS-132472)). As this is an upstream issue in rclone, we recommend that users should not create new cloud sync tasks with **Filename Encryption** enabled. Existing users of this feature must leave it enabled for existing cloud sync tasks to be able to recover backups.
+* Some users report an error when trying to delete applications that previously migrated from 24.04 to 24.10 and are configured with iXvolumes ([NAS-131911](https://ixsystems.atlassian.net/browse/NAS-131911)). Attempting to delete an affected app returns the error `Failed to delete dataset: cannot destroy 'POOL/ix-apps/app_mounts/APPNAME': filesystem has dependent clones`. A fix is expected in the 24.10.2 release ([NAS-132914](https://ixsystems.atlassian.net/browse/NAS-132914)).
+
+  Users experiencing this error in 24.10.1 can delete the affected application by forcing removal of iXvolumes. Connect to a TrueNAS shell session and enter `midclt call --job app.delete APP_NAME_HERE '{"remove_ix_volumes": true, "force_remove_ix_volumes": true}'`.
 
 <a href="https://ixsystems.atlassian.net/issues/?filter=11217" target="_blank">Click here to see the latest information on Jira</a> about public issues discovered in 24.10.1 that are being resolved in a future TrueNAS release.
 
