@@ -50,7 +50,7 @@ Next, select the test type from the **Type** dropdown and then click **Start**.
 
 After starting a S.M.A.R.T. test a loading bar shows next to the chosen disks.
 Refer to this loading bar for the status of your running tests, as it updates in accordance with test completion rates.
-If your disks that cannot support S.M.A.R.T. tests, the dialog window lists those beneath the loading bar.
+If your disks that cannot support S.M.A.R.T. tests, the dialog window lists the incompatible disks beneath the loading bar.
 
 Test types differ based on the drive connection, ATA or SCSI.
 Test duration varies based on the test type you chose.
