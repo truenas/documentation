@@ -1,6 +1,6 @@
 ---
-title: "Migrating TrueNAS"
-description: "Provides instructions on migrating from FreeBSD- to Linux-based TrueNAS versions. Migration methods include using an ISO or manual update file."
+title: "Community Migrations"
+description: "Provides instructions for TrueNAS community users to migrate from FreeBSD- to Linux-based TrueNAS versions. Migration methods include using an ISO or manual update file."
 weight: 15
 aliases:
  - /scale/gettingstarted/migratingfromcore/
@@ -13,6 +13,7 @@ keywords:
 - nas data storage
 - RAIDz
 - spinning disk
+slug: migrate-community
 ---
 
 ## Migration Overview
