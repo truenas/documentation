@@ -146,7 +146,7 @@ Select **Check for docker image updates** (selected by default) to enable TrueNA
 This applies to all Docker images present on the system for either catalog or custom applications.
 Disable to prevent TrueNAS from monitoring for upstream image updates.
 
-## Discovering Applications
+## Discovering Apps
 
 The **Discover** screen shows application widgets based on the trains selected on the **Train Settings** screen.
 
@@ -198,7 +198,7 @@ To select multiple categories, click **Categories** again and select another cat
 After installing an application, the **Installed** applications screen shows the app in the **Deploying** state.
 The status changes to **Running** when the application is fully deployed and ready to use.
 
-## Installing Applications
+## Installing Apps
 
 The first time you go to **Apps**, a dialog prompts you to choose the pool for apps to use. You must set the app pool before you can install applications.
 Select the pool as described in the [**Choosing the Apps Pool**](#choosing-the-apps-pool).
@@ -214,8 +214,9 @@ Search for the application widget, then click on that widget to open the informa
 {{< include file="/static/includes/apps/AppsSMBErrorWarning.md" >}}
 
 If an application requires specific host path datasets, create the datasets before installing the application.
-For example, create the datasets for the Nextcloud app before installing the app.
-See [Understanding App Storage Volumes](#understanding-app-storage-volumes) and individual app tutorials for more information.
+For example, the [Nextcloud]({{< relref "InstallNextCloudMedia.md" >}}) app requires three datasets: **html** for app data, **data** for user data, and **postgres_data** for the database data storage volume.
+[Create these datasets]({{< relref "DatasetsSCALE.md" >}}) before installing the app.
+See [Understanding App Storage Volumes](#understanding-app-storage-volumes), individual app information screens, and app tutorials for more information.
 
 ### Using an App Installation Wizard
 
@@ -267,7 +268,7 @@ Click **Use this GPU** to pass that GPU to the application.
 Apps stuck in a deploying state can result from various configuration problems.
 To check the logs for information on deployment issues encountered, click <span class="iconify" data-icon="mdi:text-box" title="Logs">Logs</span> **View Logs** on the **Workloads** widget for the app.
 
-### Installing Custom Applications
+### Installing Custom Apps
 
 {{< include file="/static/includes/apps/CustomAppIntro.md" >}}
 
@@ -275,7 +276,7 @@ To check the logs for information on deployment issues encountered, click <span 
 
 See [Installing Custom Applications]({{< relref "UsingCustomApp.md" >}}) for more information.
 
-## Managing Installed Applications
+## Managing Installed Apps
 
 Installed applications appear on the **Installed** applications screen.
 Click on an app row to view **Details**, including the **Application Info**, **Workloads**, **Notes**, and **Application Metadata** widgets.
