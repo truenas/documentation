@@ -51,7 +51,7 @@ Be sure to have unique names for each image file.
 
 ## Uploading the Article Bundle
 
-Open the [User Recommendations]({{< ref "/CORE/CORETutorials/CommunityGuides/_index.md" >}}) section of the repository.
+Open the appropriate repository section for the new content article.
 
 [![UploadImages](/images/Contribute/UploadingNewArticleBundle.png "Uploading Images")](/images/Contribute/UploadingNewArticleBundle.png)
 
