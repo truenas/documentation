@@ -177,10 +177,9 @@ If adding an SMB share as an additional storage volume, create the SMB dataset a
 Emby uses metadata to add information to media files, such as where media files are saved, the language used, and parental controls.
 Emby uses tags to add identification information to media files.
 
-The TrueNAS Emby app wizard allows administrative users to create and add [labels](https://docs.docker.com/reference/compose-file/services/#labels) to add metadata to containers.
-Use the **Key** and **Value** fields to define the label. Then select the container (*emby*) from the **Containers** dropdown list.
+{{< include file="/static/includes/apps/InstallWizardLabelsConfiguration.md" >}}
 
-{{< trueimage src="/images/SCALE/Apps/InstallEmbyResourcesConfig.png" alt="Resources Configuration Settings" id="Labels Configuration Settings" >}}
+{{< trueimage src="/images/SCALE/Apps/InstallEmbyLabelsConfig.png" alt="Labels Configuration Settings" id="Labels Configuration Settings" >}}
 
 ### Resources Configuration
 
