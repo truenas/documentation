@@ -168,8 +168,7 @@ If adding an SMB share as an additional storage volume, create the SMB dataset a
 ### Labels Configuration
 Diskover uses tags to add information to file metadata.
 
-The TrueNAS Diskover Data app wizard allows administrative users to create and add [labels](https://docs.docker.com/reference/compose-file/services/#labels) to add metadata to containers.
-Use the **Key** and **Value** fields to define the label. Then select the container (*diskoverdata*) from the **Containers** dropdown list.
+{{< include file="/static/includes/apps/InstallWizardLabelsConfiguration.md" >}}
 
 {{< trueimage src="/images/SCALE/Apps/InstallDiskoverLabelConfig.png" alt="Labels Configuration Settings" id="Labels Configuration Settings" >}}
 
