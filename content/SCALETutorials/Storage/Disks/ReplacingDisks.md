@@ -147,6 +147,8 @@ Resilvering degrades system performance until completed and causes unnecessary s
 To avoid unnecessary resilvers, [promote the hot spare](#detaching-a-failed-disk) then recreate the hot spare vdev.
 {{< /expand >}}
 
+WHAT IF I DO NOT HAVE A HOT SPARE/A SYSTEM WHICH DOES NOT SUPPORT HOT SWAPPING? <<< Offline/reboot process described here >>>
+
 If recreating the spare with a replacement in place of the failed disk, insert the replacement disk now.
 The new disk must have the same or greater capacity as the failed disk.
 If recreating the spare with an available disk in the system, proceed to the next step.
