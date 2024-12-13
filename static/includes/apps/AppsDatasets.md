@@ -63,3 +63,9 @@ This allows TrueNAS to write ACL entries to the storage volume if it has existin
 
 Some app storage configurations include the **SMB/CIFS Share** option.
 Use this option to mount an existing SMB share using a Docker [volume](https://docs.docker.com/engine/storage/#volumes).
+
+#### Tmpfs Directories
+
+Some app storage configurations include the **Tmpfs (Temporary directory created on the RAM)** option.
+Use this option to configure a memory-backed temporary directory, such as for transcoding.
+See the Docker [tmpfs](https://docs.docker.com/engine/storage/#tmpfs) documentation for more information.
