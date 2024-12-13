@@ -155,7 +155,6 @@ For more details on feature flags, see [OpenZFS Feature Flags](https://openzfs.g
 
 Remove midclt call from 24.10.1 known issues if [NAS-132914](https://ixsystems.atlassian.net/browse/NAS-132914) is complete -->
 
-
 ## 24.10.1 Changelog
 
 **December 12, 2024**
@@ -185,6 +184,15 @@ This is a maintenance release and includes refinement and fixes for issues disco
 * Some users report an error when trying to delete applications that previously migrated from 24.04 to 24.10 and are configured with ixVolumes ([NAS-131911](https://ixsystems.atlassian.net/browse/NAS-131911)). Attempting to delete an affected app returns the error `Failed to delete dataset: cannot destroy 'POOL/ix-apps/app_mounts/APPNAME': filesystem has dependent clones`. A fix is expected in the 24.10.2 release ([NAS-132914](https://ixsystems.atlassian.net/browse/NAS-132914)).
 
   Users experiencing this error in 24.10.1 can delete the affected application by forcing removal of ixVolumes. Connect to a TrueNAS shell session and enter `midclt call --job app.delete APP_NAME_HERE '{"remove_ix_volumes": true, "force_remove_ix_volumes": true}'`.
+* If an SMB or NFS bind IP address is set and an administrator changes the host system IP without first removing the current NFS and/or SMB bind IP, the UI does not display the current NFS and/or SMB bind ip address(es) and provides no mechanism for unsetting the bad IP address ([NAS-133049](https://ixsystems.atlassian.net/browse/NAS-133049)). This breaks functionality of the NFS and/or SMB service.
+
+  Users who encounter this bug can manually remove the existing bind IP address(es) and then use the TrueNAS UI to reconfigure bind IP addresses.
+  Connect to a TrueNAS shell session and enter one or both of these command(s), as needed:
+
+  * `midclt call smb.update '{"bindip": []}'` to clear the SMB bind address(es)
+  * `midclt call nfs.update '{"bindip": []}'` to clear the NFS bind address(es)
+
+  A UI fix for this issue is expected in a future release.
 
 <a href="https://ixsystems.atlassian.net/issues/?filter=11217" target="_blank">Click here to see the latest information on Jira</a> about public issues discovered in 24.10.1 that are being resolved in a future TrueNAS release.
 
