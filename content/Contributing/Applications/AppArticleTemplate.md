@@ -117,6 +117,8 @@ Prepare TrueNAS before installing the app by:
 
 {{< include file="/static/includes/apps/BeforeYouBeginStableApps.md" >}}
 {{< include file="/static/includes/apps/BeforeYouBeginRunAsUser.md" >}}
+
+<!-- Use the style="margin-left: 33px" tags for this and other indicated elements to indent them in line with the indented snippet text in the rendered article. -->
 <!-- replace the image path and name
 <div style="margin-left: 33px">{{< trueimage src="/images/SCALE/Apps/PlexDetailsScreen.png" alt="Plex App Details Screen" id="Plex App Details Screen" >}}</div>
 -->
@@ -128,7 +130,6 @@ NOTE: Include the HTML styling to align the indented paragraph with the bullet l
   <p style="margin-left: 33px">Create a parent dataset, such as <i>appName</i>, and then the storage datasets (<b><i>config</i></b> and <b><i>data</i></b>) under it.
   Select <b>apps</b> as the <b>Dataset Preset</b> for these datasets. You can modify the dataset ACLs at the time of creation, or modify them later when adding them in the app.</p>
 
-<!-- Use the <div></div> tags for this snippet to indent the snippet in the rendered article. -->
 <div style="margin-left: 33px">{{< include file="/static/includes/apps/BeforeYouBeginAddAppDatasetsProcedure.md" >}}</div>
 
 <!-- Include this snippet and a modified version of the indented text if the app requires setting up a certificate. 
