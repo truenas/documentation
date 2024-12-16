@@ -118,7 +118,7 @@ Prepare TrueNAS before installing the app by:
 {{< include file="/static/includes/apps/BeforeYouBeginStableApps.md" >}}
 {{< include file="/static/includes/apps/BeforeYouBeginRunAsUser.md" >}}
 <!-- replace the image path and name
-<div style="margin-left: 33px>{{< trueimage src="/images/SCALE/Apps/PlexDetailsScreen.png" alt="Plex App Details Screen" id="Plex App Details Screen" >}}</div>
+<div style="margin-left: 33px">{{< trueimage src="/images/SCALE/Apps/PlexDetailsScreen.png" alt="Plex App Details Screen" id="Plex App Details Screen" >}}</div>
 -->
 
 {{< include file="/static/includes/apps/BeforeYouBeginAddAppDatasets.md" >}}
