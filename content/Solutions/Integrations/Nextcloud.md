@@ -1,21 +1,30 @@
 ---
 title: "Nextcloud"
-description: "Guide for deploying the Nextcloud plugin with TrueNAS."
+description: "Guide for deploying Nextcloud in TrueNAS."
 weight: 26
 aliases:
   - /core/solutions/integrations/nextcloud/
 ---
 
-## Nextcloud Plugin
+## Nextcloud in TrueNAS
 
-The [Nextcloud](https://nextcloud.com/) plugin is a suite of client-server software for creating and using file hosting services. 
+[Nextcloud](https://nextcloud.com/) is a suite of client-server software for creating and using file hosting services.
 
-### Plugins Catalog
+TrueNAS offers one deployment option for setting up Nextcloud, a Linux Debian-based TrueNAS version application available in TrueNAS releases 24.10 and later.
+For the Linux Debian-based app instructions, see [Nextcloud]({{< relref "/content/TruenasApps/StableApps/InstallNextCloudMedia.md" >}}).
 
-{{< expand "Before getting started..." "v" >}}
-* You must have a [data pool]({{< relref "CORE/CORETutorials/Storage/Pools/_index.md" >}}) available for plugin storage.
-* You must connect the system to the internet.
-Go to **Network > Interfaces**, edit the intended plugin interface, and set **Disable Hardware Offloading**.
+TrueNAS offered a FreeBSD-based TrueNAS Nextcloud plugin in releases 13.0 and earlier, and 13.3, but it is no longer available in TrueNAS 13.0 because of changes in FreeBSD, and it is soon to be unavailable in 13.3.
+Refer to release notes for more information on upcoming and current changes.
+
+This article provides instructions for the FreeBSD-based Nextcloud plugin.
+
+## Plugin Catalogs
+
+{{< expand "Before You Begin" "v" >}}
+Before installing the Nextcloud plugin:
+* Create a new or use an existing data pool to use for plugin storage.
+* Connect the system to the Internet.
+  Go to **Network > Interfaces**, edit the intended plugin interface, and set **Disable Hardware Offloading**.
 {{< /expand >}}
 
 To see the plugin catalog, go to the **Plugins** screen.
@@ -24,10 +33,10 @@ To see the plugin catalog, go to the **Plugins** screen.
 {{< /expand >}}
 
 ![PluginsList](/images/CORE/Plugins/PluginsList.png "Plugins Catalog")
-{{< expand "I don't see anything!" "v" >}}
-If the catalog doesn't load:
+{{< expand "I do not see anything!" "v" >}}
+If the catalog does not load:
 * Go to **Network > Global Configuration** and confirm the **Default Gateway** and **DNS Servers** addresses are correct.
-* Open the **Shell** and `ping` an Internet address. 
+* Open the **Shell** and enter the `ping` command and an Internet address. 
 The output confirms the system is connected to the Internet.
 {{< /expand >}}
 
@@ -39,19 +48,18 @@ TrueNAS organizes plugins into two **Collections**:
 By default, TrueNAS shows the iXsystems-supported plugins.
 To see the community plugins, open **Browse a Collection** and select **Community**.
 
-### Installation
-
-{{< tabs "Install Types" >}}
-{{< tab "Basic Install" >}}
+### Installing a Plugin
+You have two plugin installation options:
+{{< expand "Basic Install" "v" >}}
 Go to **Plugins** and select **Nextcloud**, then click **INSTALL**.
 
 ![NextcloudInstall](/images/Solutions/SolutionsIntegrationsNextcloudInstall.png "Nextcloud Install")
 
-Type a **Jail Name** and click **SAVE**.
+Enter a name in **Jail Name** and click **SAVE**.
 
 ![NextcloudJailName](/images/Solutions/SolutionsIntegrationsNextcloudJailName.png "Nextcloud Jail Name")
 
-After Nextcloud installs successfully, you can manage your instance of the plugin.  
+After Nextcloud installs successfully, you can manage your plugin instance.  
 
 ![NextcloudPostInstall](/images/Solutions/SolutionsIntegrationsNextcloudPostInstall.png "Nextcloud Post Install")
 
@@ -63,14 +71,14 @@ Click **MANAGE** to access the Nextcloud login page within your browser.
 Enter the credentials from **POST INSTALL NOTES** and click **Log in** to access the Nextcloud Hub.
 
 ![NextcloudHub](/images/Solutions/SolutionsIntegrationsNextcloudLogin.png "Nextcloud Hub")
-{{< /tab >}}
+{{< /expand >}}
 
-{{< tab "Static IP Install" >}}
+{{< expand "Static IP Install" "v" >}}
 Go to **Plugins** and select **Nextcloud**, then click **INSTALL**.
 
 ![NextcloudInstall](/images/Solutions/SolutionsIntegrationsNextcloudInstall.png "Nextcloud Install")
 
-Type a **Jail Name**, then disable the **NAT** checkbox and enter an available IP in the **IPv4 Address** field. 
+Enter a name in **Jail Name**, then select the **NAT** checkbox to clear it, and then enter an available IP in the **IPv4 Address** field. 
 Select an **IPv4 Netmask** (iX recommends 24), then click **SAVE**.
 
 ![NextcloudStatic1](/images/Solutions/NextcloudStatic1.png "Nextcloud Static Setup")
@@ -87,14 +95,15 @@ Scroll to the `trusted_domains` section and type your Nextcloud IP as a new line
 
 Type <kdb>CTRL+C</kdb> to close the editor, then type **exit** to close the config file.
 
-Go back to **Plugins** and expand your Nextcloud instance. 
-Click **POST INSTALL NOTES** to obtain your Nextcloud admin user and Nextcloud admin password information. Click **MANAGE** to access the Nextcloud login page within your browser.
+Go back to **Plugins** and expand your Nextcloud instance.
+
+Click **POST INSTALL NOTES** to obtain your Nextcloud admin user and Nextcloud admin password information.
+Click **MANAGE** to access the Nextcloud login page within your browser.
 
 ![NextcloudLogin](/images/Solutions/SolutionsIntegrationsNextcloudLogin.png "Nextcloud Login")
 
 Enter the credentials from **POST INSTALL NOTES** and click **Log in**.  You are directed to the Nextcloud Hub.
-{{< /tab >}}
-{{< /tabs >}}
+{{< /expand >}}
 
 Refer to the Nextcloud documentation for details about using the Nextcloud platform:
 
