@@ -59,7 +59,7 @@ You do not need to add the **oper** user in TrueNAS as a user account.
 
 <div style="margin-left: 33px"><a href="https://www.truenas.com/docs/scale/scaletutorials/datasets/datasetsscale/">Create the dataset(s)</a> before beginning the app installation process.
 Asigra expects two host path dataset storage volumes, <b>data</b> and <b>postgres_data</b>.
-You can create more datasets if you want additional storage volumes for the app, but these are not required and added after installing the app.</div>
+You can create more datasets if you want additional storage volumes for the app, but these are not required. You can add datasets and storage volumes after installing the app.</div>
 
 <div style="margin-left: 33px">{{< include file="/static/includes/apps/BeforeYouBeginAddAppDatasetsProcedure.md" >}}</div>
 
@@ -114,7 +114,6 @@ Select **Automatic Permissions** to set the permissions for this dataset and for
 See [Storage Configuration Settings](#storage-configuration-settings) below for more information.
 
 Accept the defaults in **Resources Configuration**, and select the GPU option if applicable.
-Select the GPU passthrough checkbox if your system has a GPU.
 
 Click **Install**. A progress dialog displays before switching to the **Installed** applications screen.
 The **Installed** screen displays with the **Asigra DS-System** app in the **Deploying** state. Status changes to **Running** when ready to use.
@@ -277,4 +276,3 @@ If adding an SMB share as an additional storage volume, create the SMB dataset a
 {{< trueimage src="/images/SCALE/Apps/InstallAsigraResourcesConfig.png" alt="Resources Configuration Settings" id="Resources Configuration Settings" >}}
 
 {{< include file="/static/includes/apps/InstallWizardResourceConfig.md" >}}
-{{< include file="/static/includes/apps/InstallWizardGPUPassthrough.md" >}}
