@@ -157,7 +157,7 @@ Remove midclt call from 24.10.1 known issues if [NAS-132914](https://ixsystems.a
 
 ## 24.10.1 Changelog
 
-**December 12, 2024**
+**December 17, 2024**
 
 iXsystems is pleased to release TrueNAS 24.10.1!
 This is a maintenance release and includes refinement and fixes for issues discovered after the 24.10.0 and 24.10.0.X releases.
