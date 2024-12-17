@@ -164,7 +164,7 @@ Enter the ***App* Configuration** settings.
 <!--Only describe the required app configuration settings. Refer to the [*App* Configuration](#appname-configuration-settings) section below for more information.  -->
 The TrueNAS app is configured with all the required environment variables, but if you want to further customize the container, click **Add** to the right of **Additional Environment Variables** for each to enter the variable(s) and values(s).
 <!-- example text for app configuration sections: 
-Accept the default values in both **User and Group Configuration** and **Network Configurations**.
+Accept the default values in both **User and Group Configuration** and **Network Configuration**.
 (Optional) If you created a new user to administer apps, enter that user ID in the user and group fields.
 See [User and Group Configuration](#user-and-group-configuration) and [Network Configuration](#network-configuration) for more details.
 
