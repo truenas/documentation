@@ -16,12 +16,6 @@ weight: 3
 
 {{< include file="/static/includes/ReleaseScheduleWarning.md" >}}
 
-{{< truetable >}}
-| Version | Checkpoint       | Scheduled Date       |
-|---------|------------------|----------------------|
-| TBD     |                  |                      |
-{{< /truetable >}}
-
 ## Upgrade Notes
 
 * Due to security vulnerabilities and maintainability issues, the S3 service is deprecated in TrueNAS CORE 13.0 and removed in CORE 13.3 ([NAS-127694](https://ixsystems.atlassian.net/browse/NAS-127694)).
@@ -34,6 +28,16 @@ weight: 3
   Users should avoid creating and managing SAS multipath scenarios with TrueNAS.
 
 * {{< include file="/static/includes/COREFeatureSupport.md" >}}
+
+## 13.0-U6.4
+
+**December 17, 2024**
+
+iXsystems is pleased to release TrueNAS CORE 13.0-U6.4!
+
+This is a maintenance release with a single fix for Enterprise-licensed systems that use iSCSI Fibre Channel.
+
+* Fix how initiator-driven command abort requests are handled ([NAS-132969](https://ixsystems.atlassian.net/browse/NAS-132969)).
 
 ## 13.0-U6.3
 **November 21, 2024**
