@@ -42,7 +42,7 @@ Note the primary group assigned to that user.
 
 ### Allowing Sudo Commands
 
-As a security hardening feature, administrator accounts in Linux-based TrueNAS releases (22.12.0 or newer) cannot by default execute certain root-level commands in a shell or SSH session.
+As a security hardening feature, administrator accounts in Linux-based TrueNAS releases (22.12.0 or newer) cannot execute certain root-level commands in a shell or SSH session by default.
 If a user attempts to execute one of these commands without root-level access, TrueNAS returns a **command not found** error.
 
 Administrative users who need to execute root-level commands to complete a task should temporarily enable sudo permissions for that user by going to **Credentials** and editing the user or group to enable some or all sudo commands.
@@ -78,25 +78,35 @@ When disabling a password for UI login, it is also disabled for SSH access.
 
 ## Accessing the System Through an SSH Session
 
-To enable SSH to access the system as an admin user (or for root):
+To enable SSH access to the system as an admin user (or root user), you must first configure the SSH service.
 
-1. Configure the SSH service.
+1. Go to **System > Services**, then click <span class="iconify" data-icon="mdi:pencil"></span> (**Edit**) for the SSH service.
 
-   a. Go to **System > Services**, then select **Configure** for the SSH service.
+2.  Enter the groups (**truenas_admin**, **root**, etc.)  you want to enable for password authentication in the **Password Login Groups** field.
 
-   b. Select **Log in as Root with Password** to enable the user to sign in as root.
+3. Enable **Allow Password Authentication**.
 
-      Select **Log in as Admin with Password** and **Allow Password Authentication** to enable an admin user to sign in as admin. Select both options.
+4. Click **Save** and restart the SSH service.
 
-   c. Click **Save** and restart the SSH service.
+Now you must verify the user configuration options to allow SSH access.
 
-2. Configure or verify the user configuration options to allow SSH access.
+If you want to SSH into the system as the root: 
 
-   If you want to SSH into the system as the root, you must enable a password for the root user.
-   If the root password password is disabled in the UI you cannot use it to gain SSH access to the system.
+1. Go to **Credentials > Users** and click the root user, then click <span class="iconify" data-icon="mdi:pencil"></span> (**Edit**).
 
-   To allow an admin user to issue commands in an SSH session, edit that user and select **SSH password login enabled** to allow authenticating and logging into an SSH session.
-   Disable this after completing the SSH session to return to a security-hardened system.
+2. Make sure **Disable Pasword** is disabled. If the root user has **Disable Password** enabled, you cannot use it to gain SSH access to the system.
+
+3. Click **Save**.
+
+To allow an admin user to issue commands in an SSH session:
+
+1. Go to **Credentials > Users**, click the admin user, then click <span class="iconify" data-icon="mdi:pencil"></span> (**Edit**).
+
+2. Enable **SSH password login enabled** under **Authentication**.
+
+3. Click **Save**. 
+
+4. Disable this after completing the SSH session to return to a security-hardened system.
 
 ## Two-Factor Authentication (2FA) and Administrator Account Log In
 
