@@ -5,5 +5,6 @@ Disallow: /book/*
 Disallow: /archive/*
 Disallow: /volume/*
 Disallow: /includes/*
+Disallow: /images/*
 
 Sitemap: {{ "sitemap.xml" | absURL }}
