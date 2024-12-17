@@ -23,7 +23,7 @@ We recommend users store the log information on the system dataset when the syst
 Set **Syslog** to store the system log on the system dataset.
 Leave unset to store the system log in <file>/var</file> on the operating system device.
 
-## Change System Dataset
+## Move System Dataset
 
 Select an existing pool from the **System Dataset Pool** dropdown.
 
@@ -32,6 +32,8 @@ You can move the system dataset to unencrypted pools or encrypted pools that do 
 Moving the system dataset to an encrypted pool disables that volume's passphrase capability.
 
 You cannot move the system dataset to a passphrase-encrypted or read-only pool.
+
+When the system dataset is moved, a new dataset is created and set active. The old dataset is intentionally not deleted by the system because the move might be temporary or the information in the old dataset might be useful for later recovery.
 
 {{< hint type=important >}}
 **Reboots Required**
