@@ -68,7 +68,7 @@ Consider stopping at major versions with significant impacts to address changes 
             E["22.12.4.2 (Bluefin)"] -->|update| F
             F["23.10.2 (Cobia)"] -->|update| G
             G["24.04.2.5 (Dragonfish)"] -->|update| H
-            H["24.10.0.2 (Electric Eel)"] -->|"(anticipated)"| I
+            H["24.10.1 (Electric Eel)"] -->|"(anticipated)"| I
             I["25.04.0 (Fangtooth)"]
           {{< /mermaid >}}
         </div>
@@ -86,7 +86,7 @@ Consider stopping at major versions with significant impacts to address changes 
             C["13.0-U6.4"] -->|"(anticipated)"| G
             D["23.10.2 (Cobia)"] -->|update| E
             E["24.04.2.5 (Dragonfish)"]  -->|"(anticipated)"| F
-            F["24.10.0.2 (Electric Eel)"] -->|"(anticipated)"| G
+            F["24.10.1 (Electric Eel)"] -->|"(anticipated)"| G
             G["25.04.0 (Fangtooth)"]
           {{< /mermaid >}}
         </div>
