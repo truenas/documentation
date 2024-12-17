@@ -26,6 +26,21 @@ TrueNAS wipes the data on the replacement disk as part of the process.
 Disk replacement automatically triggers a pool resilver.
 {{< /hint >}}
 
+This tutorial includes instructions for replacing a failed disk in TrueNAS systems with and without an available hot spare.
+
+To replace a disk in a pool without a hot spare available:
+
+1. [Take the disk offline](#taking-a-failed-disk-offline).
+2. [Replace the disk](#replacing-a-failed-disk-without-a-hot-spare).
+3. Refresh the screen.
+
+To replace a disk in a pool with a hot spare:
+
+1. [Take the disk offline](#taking-a-failed-disk-offline).
+2. [Detach the failed disk](#detaching-a-failed-disk) to promote the hot spare.
+3. Refresh the screen.
+4. [Recreate the hot spare VDEV](#recreating-a-hot-spare).
+
 ## Replacing a Failed Disk
 
 If you configure your main SCALE **Dashboard** to include individual **Pool** or the **Storage** widgets they show the status of your system pools as on or offline, degraded, or in an error condition.
@@ -50,20 +65,7 @@ We do not recommend leaving failed disks online unless you know the exact condit
 Attempting to replace a heavily degraded disk without off-lining it significantly slows down the replacement process.
 {{< /expand >}}
 
-To replace a disk in a pool without a hot spare available:
-
-1. [Take the disk offline](#taking-a-failed-disk-offline).
-2. [Replace the disk](#replacing-a-failed-disk).
-3. Refresh the screen.
-
-To replace a disk in a pool with a hot spare:
-
-1. [Take the disk offline](#taking-a-failed-disk-offline).
-2. [Detach the failed disk](#detaching-a-failed-disk) to promote the hot spare.
-3. Refresh the screen.
-4. [Recreate the hot spare VDEV](#recreating-the-hot-spare).
-
-## Taking a Failed Disk Offline
+### Taking a Failed Disk Offline
 
 We recommend users off-line a disk before starting the physical disk replacement.
 Off-lining a disk removes the device from the pool and can prevent swap issues.
@@ -85,9 +87,11 @@ If the off-line operation fails with a **Disk offline failed - no valid replicas
 When the scrub operation finishes, return to the **Devices** screen, expand the VDEV, then click the disk, and try to off-line it again.
 {{< /expand >}}
 
-## Replacing a Failed Disk
+After offlining the failed disk, physically remove it from the system.
 
-If you are replacing the failed disk you took offline and removed, insert the replacement disk now.
+### Replacing a Failed Disk Without a Hot Spare
+
+After [taking the failed disk offline](#taking-a-failed-disk-offline) and physically removing it from the system, insert the replacement disk now.
 The new disk must have the same or greater capacity as the failed disk.
 If replacing a failed disk with an available disk in the system, proceed to the next step.
 
@@ -109,22 +113,17 @@ TrueNAS resilvers the pool during the replacement process.
 For pools with large amounts of data, this can take a long time.
 When the resilver process completes, the pool status returns to **Online** on the **Devices** screen.
 
-## Replacing a Failed Disk with a Hot Spare
+Refresh the screen to ensure the replacement disk appears in the pool as expected.
+
+### Replacing a Failed Disk With a Hot Spare
 
 A **Hot Spare** vdev sets up drives as reserved to prevent larger pool and data loss scenarios.
 TrueNAS automatically inserts an available hot spare into a **Data** vdev when an active drive fails.
 TrueNAS resilvers the pool after the hot spare is activated.
 
-To replace a disk in a pool with a hot spare:
+#### Detaching a Failed Disk
 
-1. [Take the disk offline](#taking-a-failed-disk-offline).
-2. [Detach the failed disk](#detaching-a-failed-disk) to promote the hot spare.
-3. Refresh the screen.
-4. [Recreate the hot spare VDEV](#recreating-the-hot-spare).
-
-### Detaching a Failed Disk
-
-Go to the **Storage Dashboard** and click **Manage Devices** on the **Topology** widget for the degraded pool to open the **Devices** screen for that pool.
+After [taking the failed disk offline](#taking-a-failed-disk-offline) and physically removing it from the system, go to the **Storage Dashboard** and click **Manage Devices** on the **Topology** widget for the degraded pool to open the **Devices** screen for that pool.
 Click <span class="iconify" data-icon="mdi:keyboard-arrow-right"></span> next to the VDEV to expand it, then look for the disk with the **REMOVED** status.
 
 {{< trueimage src="/images/SCALE/Storage/DevicesDiskDegradedHotSpare.png" alt="Devices Disk Failed - Hot Spare Active" id="Devices Disk Failed - Hot Spare Active" >}}
@@ -134,17 +133,19 @@ Click **Detach** on the **ZFS Info** widget on the **Devices** screen for the di
 Select **Confirm**, then click **Detach**.
 TrueNAS detaches the disk from the pool and promotes the hot spare disk to a full member of the pool.
 
-### Recreating the Hot Spare
+Refresh the screen to ensure the promoted hot spare appears in the pool as expected.
+
+#### Recreating a Hot Spare
 
 After promoting the hot spare, recreate the **Spare** vdev and assign a disk to it.
 
 {{< expand "Do I really need to promote the hot spare and then recreate the spare vdev?" "v" >}}
-If you have a hot spare inserted into the pool and then follow the instructions in [Replacing a Failed Disk](#replacing-a-failed-disk), TrueNAS automatically returns the hot spare disk to the existing **Spare** vdev and **ONLINE** status.
+If you have a hot spare inserted into the pool and then follow the instructions in [Replacing a Failed Disk Without a Hot Spare](#replacing-a-failed-disk-without-a-hot-spare), TrueNAS automatically returns the hot spare disk to the existing **Spare** vdev and **ONLINE** status.
 
 However, we do not recommend this method, because it causes two resilver events: one when activating the hot spare and again when replacing the failed disk.
 Resilvering degrades system performance until completed and causes unnecessary strain on the disk.
 
-To avoid unnecessary resilvers, [promote the hot spare](#detaching-a-failed-disk) then recreate the hot spare vdev.
+To avoid unnecessary resilvers, promote the hot spare by [detaching the failed disk]](#detaching-a-failed-disk) then recreate the hot spare vdev.
 {{< /expand >}}
 
 If recreating the spare with a replacement in place of the failed disk, insert the replacement disk now.
