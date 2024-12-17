@@ -134,7 +134,7 @@ Users with 24.04.2.4 installed and SMB shares in use are encouraged to upgrade t
 
 ### 24.04.2.5 Known Issues
 
-* An issue has been discovered for cloud sync tasks configured with **Filename Encryption**, which is available in **Advanced Remote Options** ([NAS-132472](https://ixsystems.atlassian.net/browse/NAS-132472)). As this is an upstream issue in rclone, we recommend that users should not create new cloud sync tasks with **Filename Encryption** enabled. Existing users of this feature must leave it enabled for existing cloud sync tasks to be able to recover backups.
+* An issue has been discovered for cloud sync tasks configured with file name encryption, which is available in **Advanced Remote Options** ([NAS-132472](https://ixsystems.atlassian.net/browse/NAS-132472)). As this is an upstream issue in rclone, we recommend that users should not create new cloud sync tasks with the **Filename Encryption** setting enabled. Existing users of this feature must leave it enabled for existing cloud sync tasks to be able to recover backups.
 
 Please see the 24.04.2 changelog below and use the Jira filter links to see the full changelog and known issues related to the 24.04.2 > 24.04.2.5 releases.
 
