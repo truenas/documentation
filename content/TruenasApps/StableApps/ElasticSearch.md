@@ -1,6 +1,6 @@
 ---
 title: "Elastic Search"
-description: "Provides installation instructions for the AppName application in TrueNAS."
+description: "Provides installation instructions for the Elastic Search application in TrueNAS."
 weight:
 aliases:
 tags:
@@ -14,20 +14,12 @@ keywords:
 ---
 
 Elastic Search is the distributed, RESTful search and analytics engine at the heart of the [Elastic Stack](https://www.elastic.co/guide/en/starting-with-the-elasticsearch-platform-and-its-solutions/current/stack-components.html).
-The TrueNAS Elastic Search app allows you to configure and deploy an Elasticsearch node.
-Elastic provides a basic primer, [What is Elasticsearch](https://www.elastic.co/guide/en/elasticsearch/reference/master/elasticsearch-intro-what-is-es.html) with further information about the app and its place within the Elastic Stack.
+The TrueNAS Elastic Search app allows you to configure and deploy a single Elasticsearch node.
+You can install multiple instances to deploy additional nodes, however you must configure a [Custom App]({{< relref "/TruenasApps/UsingCustomApp.md" >}}) with the **Install via YAML** option to deploy a [multi-node cluster](https://www.elastic.co/guide/en/elasticsearch/reference/master/docker.html#docker-compose-file).
+
+Elastic provides a basic primer, [What is Elasticsearch](https://www.elastic.co/guide/en/elasticsearch/reference/master/elasticsearch-intro-what-is-es.html), with further information about the app and its place within the Elastic Stack.
 
 ## Before You Begin
-<!-- Enter information about the configuration or preparation steps required before beginning the installation process.
-For example, creating a certificate, adding a third-party account if the app requires this before installing it, and creating TrueNAS datasets for the application to use.
-
-Include names of datasets if required or strongly recommended. For example, a dataset named ***data***, or ***config***, etc.
-
-Specify system resources the app requires to operate properly, such as CPU or memory resources, and/or additional network interface or router configuration.
-
-If the app requires setting up additional resources or credentials, such as a crypto wallet, include this information.
-
-Example of possible points to include in this section you can modify to suit prerequisite for installing the app you are documenting: -->
 
 Prepare TrueNAS before installing the app by:
 
@@ -38,7 +30,7 @@ Prepare TrueNAS before installing the app by:
 
 {{< include file="/static/includes/apps/BeforeYouBeginAddAppDatasets.md" >}}
 
-  <p style="margin-left: 33px">Create a storage dataset for Elastic Search Data Storage with a name such as (<b><i>elastic</i></b> or <b><i>data</i></b>).
+  <p style="margin-left: 33px">Create a storage dataset for Elastic Search Data Storage with a name such as <b><i>data</i></b>).
   Select <b>apps</b> as the <b>Dataset Preset</b> for this dataset.
   You can modify the dataset ACLs at the time of creation, or modify them later when adding them in the app.</p>
 
@@ -51,58 +43,65 @@ Prepare TrueNAS before installing the app by:
 ## Installing the Application
 
 {{< hint info >}}
-This basic procedure covers the required *Elastic Search* app settings.
+This basic procedure covers the required Elastic Search app settings.
 For optional settings, see [Understanding App Installation Wizard Settings](#understanding-app-installation-wizard-settings).
 {{< /hint >}}
 
 {{< include file="static/includes/apps/MultipleAppInstancesAndNaming.md" >}}
 
 {{< include file="/static/includes/apps/LocateAndOpenInstallWizard.md" >}}
-<!-- Change the name of the image in the path below to include the screenshot, if including the image of the Install AppName scree showing the Application Name section and the wizard ToC on the right side of the screen:
-{{< trueimage src="/images/SCALE/Apps/InstallAppNameScreen.png" alt="Install *AppName* Screen" id="Install *AppName* Screen" >}} -->
+
+{{< trueimage src="/images/SCALE/Apps/InstallElasticSearchScreen.png" alt="Install Elastic Search Screen" id="Install Elastic Search Screen" >}}
 
 {{< include file="/static/includes/apps/InstallWizardAppNameAndVersion.md" >}}
 
-<!-- Enter the required steps/instructions to configure the app. You can use a numbered procedure or paragraph conversational style procedure to convey the instructions the reader needs to follow. 
-Enter settings in the order the reader encounters them or the order settings should be entered.
-If following the default Install Wizard, enter the required App Configuration, Network Configuration, Storage Configuration, and Resource Configuration steps. -->
-Enter the ***App* Configuration** settings.
-<!--Only describe the required app configuration settings. Refer to the [*App* Configuration](#appname-configuration-settings) section below for more information.  -->
-The TrueNAS app is configured with all the required environment variables, but if you want to further customize the container, click **Add** to the right of **Additional Environment Variables** for each to enter the variable(s) and values(s).
-<!-- example text for app configuration sections: 
-Accept the default values in both **User and Group Configuration** and **Network Configurations**.
-(Optional) If you created a new user to administer apps, enter that user ID in the user and group fields.
-See [User and Group Configuration](#user-and-group-configuration) and [Network Configuration](#network-configuration) for more details.
+Enter the **Elastic Search Configuration** settings.
 
-Leave **Host Network** unselected.-->
+Enter a password to use for the built-in `elastic` user.
+Passwords must be at least six characters long.
+
+Accept the default or enter a value in **Heap Size**.
+[Elastic documentation](https://www.elastic.co/guide/en/elasticsearch/reference/8.15/advanced-configuration.html#set-jvm-heap-size) recommends setting the heap size to no more than 50% of the total memory visible to the container.
+
+Accept the default value in **Node Name**.
+
+The TrueNAS app is configured with all the required environment variables, but if you want to further customize the container, click **Add** to the right of **Additional Environment Variables** for each to enter the variable(s) and values(s).
+
+Accept the default values in **Network Configuration**.
+See [Network Configuration](#network-configuration) for more details.
+
+Leave **Host Network** unselected.
 
 Add your **Storage Configuration** settings.
 
-Set **Host Path (Path that already exists on the system)** in **Type** for ***Data Storage***.
-Select **Enable ACL**, and then enter or browse to and select the **data** dataset to populate the **Host Path** field.
-<!-- replace image with the path to the image you want to add:
-{{< trueimage src="/images/SCALE/Apps/InstallPlexStorageConfigDataACLandACE.png" alt="Add Plex Data Storage" id="Add Plex Data Storage" >}}-->
+Set **Host Path (Path that already exists on the system)** in **Type** for **Elastic Search Data Storage**.
+Select **Enable ACL**, and then enter or browse to and select the **data** dataset created above to populate the **Host Path** field.
+
+{{< trueimage src="/images/SCALE/Apps/InstallElasticSearchStorageDataACLandACE.png" alt="Add Elastic Search Data Storage" id="Add Elastic Search Data Storage" >}}
 
 Select **Add** to the right of **ACL Entries** for each user or group entry you want to add.
-For example, add the **568** user and **0**, and give each **FULL_CONTROL Access**.
+Add the user and group ID **1000**, and give each **FULL_CONTROL Access**.
 
 Select **Force Flag**.
 
-Repeat the storage steps above each additional storage volume. See [Storage Configuration Settings](#storage-configuration-settings) below for more information.
+Repeat the storage steps above each additional storage volume.
+See [Storage Configuration Settings](#storage-configuration-settings) below for more information.
 
-Accept the defaults in **Resources Configuration**, and select the GPU option if applicable.
+Accept the defaults in **Resources Configuration**.
 
-Click **Install**. A progress dialog displays before switching to the **Installed** applications screen.
-The **Installed** screen displays with the **nextcloud** app in the **Deploying** state. Status changes to **Running** when ready to use.
+Click **Install**.
+A progress dialog displays before switching to the **Installed** applications screen.
+The **Installed** screen displays with the **elastic-search** app in the **Deploying** state.
+Status changes to **Running** when ready to use.
 
-Click **Web Portal** on the **Application Info** widget to open the *AppName* web portal sign-in screen.
-<!-- replace image with the path to the image you want to add 
-{{< trueimage src="/images/SCALE/Apps/NextcloudSignInScreen.png" alt="Nextcloud Sign In Screen" id="Nextcloud Sign In Screen" >}}
--->
+Click **Web UI** on the **Application Info** widget to open the Elastic Search web portal screen, which displays information about the configured node.
+This is the equivalent of running a `curl` check on the app port.
+
+{{< trueimage src="/images/SCALE/Apps/ElasticSearchWebPortal.png" alt="Elastic Search Web Portal" id="Elastic Search Web Portal" >}}
 
 ## Understanding App Installation Wizard Settings
 
-The following section provides more detailed explanations of the settings in each section of the **Install *Appname*** installation wizard.
+The following section provides more detailed explanations of the settings in each section of the **Install Elastic Search** installation wizard.
 <!-- Customize these sections by adding all settings in each configuration section, and providing details on the settings including expected values to enter. 
 Replace the *variables* with the appropriate name for the app, setting(s), dataset name(s), etc., in the following sections.
 Refer to other updated tutorials for more examples of completing these sections. -->
@@ -111,17 +110,17 @@ Refer to other updated tutorials for more examples of completing these sections.
 
 {{< include file="/static/includes/apps/InstallWizardAppNameAndVersion.md" >}}
 
-### AppName Configuration Settings
+### Elastic Search Configuration Settings
 <!-- Customize this section with the settings in the configuration section, and details on values to enter for each setting. -->
-*AppName* configuration settings include setting up credentials, *APT packages* (previously referred to as the commands), the *host IP and port, data directory path, upload limits, execution times, memory limits and cache memory consumption, adding a cron job with schedule, and adding additional environment variables*.
+Elastic Search configuration settings include setting up credentials, *APT packages* (previously referred to as the commands), the *host IP and port, data directory path, upload limits, execution times, memory limits and cache memory consumption, adding a cron job with schedule, and adding additional environment variables*.
 
-If you have an existing *AppName* account, add the credentials for that account in the **Admin User** and **Admin Password** fields.
-If you do not have an existing account, enter the name and password you want to use to create the *AppName* login credentials.
+If you have an existing Elastic Search account, add the credentials for that account in the **Admin User** and **Admin Password** fields.
+If you do not have an existing account, enter the name and password you want to use to create the Elastic Search login credentials.
 
 #### Adding Environment Variables
 
 {{< include file="/static/includes/apps/InstallWizardEnvironVariablesSettings.md" >}}
-Refer to [*AppName* documentation](URL for environment variables documentation provided in the app provider) for more information on environment variables.
+Refer to [Elastic Search documentation](URL for environment variables documentation provided in the app provider) for more information on environment variables.
 
 <!-- Not all apps include the following section. If it does, include the following, customized for the app requirements. -->
 ### User and Group Configuration <!-- Optional section, include only if the Install Wizard has this section -->
@@ -131,12 +130,12 @@ Refer to [*AppName* documentation](URL for environment variables documentation p
 {{< include file="/static/includes/apps/InstallWizardUserAndGroupConfig.md" >}}
 
 ### Network Configuration
-The default web port for *AppName* is ***30027***.
+The default web port for Elastic Search is ***30027***.
 <!-- include the snippets that apply. Remove those that do not apply to the settings in the app Network Configuration section. -->
 {{< include file="static/includes/apps/InstallWizardHostNetworkSettings.md" >}}
 {{< include file="/static/includes/apps/InstallWizardDefaultPorts.md" >}}
 {{< include file="/static/includes/apps/InstallWizardAdvancedDNSSettings.md" >}}
-<!-- include the certificate snippet where the Install wizard shows it, which is most likely in the Network Configuratin section but could be in the AppName Configuration section in other tutorials -->
+<!-- include the certificate snippet where the Install wizard shows it, which is most likely in the Network Configuratin section but could be in the Elastic Search Configuration section in other tutorials -->
 {{< include file="/static/includes/apps/InstallWizardCertificateSettings.md" >}}
 
 ### Storage Configuration
@@ -145,12 +144,12 @@ TrueNAS provides two options for storage volumes: ixVolumes and host paths.
 {{< include file="/static/includes/apps/InstallAppsStorageConfig.md" >}}
 <!-- replace this content with what applies to the app, if the app requires creating specific datasets, and if the app uses postgres dataset storage that might require special handling.
 
-*AppName* needs *three* datasets for host path storage volume configurations:
+Elastic Search needs *three* datasets for host path storage volume configurations:
 * ***config*** to use as the ***Configuration*** storage volume.
 * ***data*** to use as the ***User Data*** storage volume.
 * ***postgresdata*** to use as the ***Postgres Data*** storage volume.
 
-If you group these datasets under a parent dataset named *AppName*, configure the [ACL permissions]({{< relref "PermissionsSCALE.md" >}}) for this parent dataset and add an ACE entry for the ***netdata*** user.
+If you group these datasets under a parent dataset named Elastic Search, configure the [ACL permissions]({{< relref "PermissionsSCALE.md" >}}) for this parent dataset and add an ACE entry for the ***netdata*** user.
 If the app includes postgres storage volumes, include the following information 
 If the app installation wizard cannot set up the ACL type or correctly add user permissions for the postgres storage volume,
 you must configure these outside the install wizard using the **Add Dataset** and **Edit ACL** screens.
