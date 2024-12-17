@@ -35,7 +35,7 @@ weight: 3
 
 iXsystems is pleased to release TrueNAS CORE 13.0-U6.4!
 
-This is a maintenance release with a single fix for Enterprise-licensed systems that use iSCSI Fibre Channel.
+This is a maintenance release with a single fix for Enterprise-licensed systems that use Fibre Channel.
 
 * Fix how initiator-driven command abort requests are handled ([NAS-132969](https://ixsystems.atlassian.net/browse/NAS-132969)).
 
