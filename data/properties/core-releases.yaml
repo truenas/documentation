@@ -8,10 +8,10 @@ majorVersions:
     name: "TrueNAS CORE 13.0"
     releaseName: "13.0"
     releases:
-      - name: "13.0-U6.3"
+      - name: "13.0-U6.4"
         type: "Enterprise"
         link: "https://www.truenas.com/docs/core/13.0/gettingstarted/corereleasenotes/"
-        releaseDate: "2024-11-21"
+        releaseDate: "2024-12-17"
         latest: true
   - lifecycle: "Current"
     name: "TrueNAS CORE 13.3"
