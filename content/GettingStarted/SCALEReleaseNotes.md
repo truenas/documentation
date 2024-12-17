@@ -194,9 +194,9 @@ This is a maintenance release and includes refinement and fixes for issues disco
 
   A UI fix for this issue is expected in a future release.
 
-  * {{< enterprise >}}
-    An issue was found with configuring Chelsio T580 NICs in different modes with TrueNAS 24.10.1. This is under investigation and a fix is forthcoming in a future 24.10 maintenance release.
-    {{< /enterprise >}}
+* {{< enterprise >}}
+  An issue was found with configuring Chelsio T580 NICs in different modes with TrueNAS 24.10.1. This is under investigation and a fix is forthcoming in a future 24.10 maintenance release.
+  {{< /enterprise >}}
 
 <a href="https://ixsystems.atlassian.net/issues/?filter=11217" target="_blank">Click here to see the latest information on Jira</a> about public issues discovered in 24.10.1 that are being resolved in a future TrueNAS release.
 
