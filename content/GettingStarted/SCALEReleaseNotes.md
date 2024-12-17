@@ -103,16 +103,14 @@ To prepare applications for migration from Kubernetes to Docker, address the fol
 
 See the <a href="https://www.truenas.com/software-status/" target="_blank">TrueNAS Software Status</a> page for recommendations about which software version to use based on your user type.
 
-Update the system to the latest maintenance release of the installed major version before attempting to upgrade to a new TrueNAS major version.
-
 {{< include file="/static/includes/SCALEUpgradePaths.md" >}}
 
-### TrueNAS Migrations
+### Migrating from TrueNAS CORE
 
 {{< include file="/_includes/MigrateCOREtoSCALEWarning.md" >}}
 
 {{< enterprise >}}
-Enterprise customers with HA systems should contact iXsystems Support for assistance with migrating.
+Enterprise customers should contact iXsystems Support for assistance with migrating.
 {{< expand "iXsystems Support" "v" >}}
 {{< include file="content/_includes/iXsystemsSupportContact.md" >}}
 {{< /expand >}}
@@ -153,9 +151,58 @@ Any new feature flags introduced since the previous OpenZFS version that was int
 {{< /truetable >}}
 
 For more details on feature flags, see [OpenZFS Feature Flags](https://openzfs.github.io/openzfs-docs/Basic%20Concepts/Feature%20Flags.html) and [OpenZFS zpool-feature.7](https://openzfs.github.io/openzfs-docs/man/7/zpool-features.7.html).
+<!--## 24.10.2 Changelog
+
+Remove midclt call from 24.10.1 known issues if [NAS-132914](https://ixsystems.atlassian.net/browse/NAS-132914) is complete -->
+
+## 24.10.1 Changelog
+
+**December 12, 2024**
+
+iXsystems is pleased to release TrueNAS 24.10.1!
+This is a maintenance release and includes refinement and fixes for issues discovered after the 24.10.0 and 24.10.0.X releases.
+
+* Prevent incorrect translation of LDAP Base DN to kerberos realm ([NAS-132192](https://ixsystems.atlassian.net/browse/NAS-132192)).
+* Increase the maximum permitted Samba (SMB) ACL size from 64 to 1024 entries ([NAS-132344](https://ixsystems.atlassian.net/browse/NAS-132344)).
+* Prevent applications service failing after upgrade if an app requires an Nvidia GPU ([NAS-132070](https://ixsystems.atlassian.net/browse/NAS-132070) and [NAS-132131](https://ixsystems.atlassian.net/browse/NAS-132131)).
+* Cache installed Nvidia kernel modules on upgrades within the same release train (i.e. 24.10.0, 24.10.1, etc.) so they do not need to be reinstalled and compiled ([NAS-132359](https://ixsystems.atlassian.net/browse/NAS-132359)).
+* Allow limited administrative users to view and download logs of certain jobs, even if they did not initiate the job ([NAS-132031](https://ixsystems.atlassian.net/browse/NAS-132031)).
+* Ensure installed apps are shown correctly after system reset ([NAS-131913](https://ixsystems.atlassian.net/browse/NAS-131913)).
+* Prevent `KeyError: 'pool_name'` resulting from pool name collision in zpool.status ([NAS-132742](https://ixsystems.atlassian.net/browse/NAS-132742)).
+* Allow unsetting/changing the apps pool in cases where the ix-apps dataset no longer exists ([NAS-132065](https://ixsystems.atlassian.net/browse/NAS-132065)).
+* Fix memory context for IPC read allocations to prevent potential Use After Free (UAF) corruption ([NAS-132685](https://ixsystems.atlassian.net/browse/NAS-132685)).
+* Make sure helm secret is safely serialized when listing App backups to migrate ([NAS-132077](https://ixsystems.atlassian.net/browse/NAS-132077)). This fix prevents a Unicode decode error, `Failed to list backups: 'utf-8' codec can't decode byte 0xa6 in position 0: invalid start byte`, that prevented some users from migrating apps from 24.04 to 24.10.0.X versions.
+
+<a href="https://ixsystems.atlassian.net/issues/?filter=11216" target="_blank">Click here for the full changelog</a> of completed Jira tickets that are included in the 24.10.1 release.
+{{< include file="/static/includes/JiraFilterInstructions.md" >}}
+
+### 24.10.1 Known Issues
+
+* An issue was discovered with restoration of ZFS snapshots via TrueCloud back up tasks ([NAS-132608](https://ixsystems.atlassian.net/browse/NAS-132608)). The **Take Snapshot** option for TrueCloud back up tasks is disabled in 24.10.1 until the underlying issue is addressed in a future TrueNAS release.
+* OAuth support for Microsoft Outlook is no longer supported in 24.10 due to Microsoft removal of username and password authentication to their email server. Restoration of Outlook OAuth support is anticipated in the 25.04 release version ([NAS-132807](https://ixsystems.atlassian.net/browse/NAS-132807)).
+* An issue has been discovered for cloud sync tasks configured with **Filename Encryption**, which is available in **Advanced Remote Options** ([NAS-132472](https://ixsystems.atlassian.net/browse/NAS-132472)). As this is an upstream issue in rclone, we recommend that users should not create new cloud sync tasks with **Filename Encryption** enabled. Existing users of this feature must leave it enabled for existing cloud sync tasks to be able to recover backups.
+* Some users report an error when trying to delete applications that previously migrated from 24.04 to 24.10 and are configured with ixVolumes ([NAS-131911](https://ixsystems.atlassian.net/browse/NAS-131911)). Attempting to delete an affected app returns the error `Failed to delete dataset: cannot destroy 'POOL/ix-apps/app_mounts/APPNAME': filesystem has dependent clones`. A fix is expected in the 24.10.2 release ([NAS-132914](https://ixsystems.atlassian.net/browse/NAS-132914)).
+
+  Users experiencing this error in 24.10.1 can delete the affected application by forcing removal of ixVolumes. Connect to a TrueNAS shell session and enter `midclt call --job app.delete APP_NAME_HERE '{"remove_ix_volumes": true, "force_remove_ix_volumes": true}'`.
+* If an SMB or NFS bind IP address is set and an administrator changes the host system IP without first removing the current NFS and/or SMB bind IP, the UI does not display the current NFS and/or SMB bind ip address(es) and provides no mechanism for unsetting the bad IP address ([NAS-133049](https://ixsystems.atlassian.net/browse/NAS-133049)). This breaks functionality of the NFS and/or SMB service.
+
+  Users who encounter this bug can manually remove the existing bind IP address(es) and then use the TrueNAS UI to reconfigure bind IP addresses.
+  Connect to a TrueNAS shell session and enter one or both of these command(s), as needed:
+
+  * `midclt call smb.update '{"bindip": []}'` to clear the SMB bind address(es)
+  * `midclt call nfs.update '{"bindip": []}'` to clear the NFS bind address(es)
+
+  A UI fix for this issue is expected in a future release.
+
+* {{< enterprise >}}
+  An issue was found with configuring Chelsio T580 NICs in different modes with TrueNAS 24.10.1. This is under investigation and a fix is forthcoming in a future 24.10 maintenance release.
+  {{< /enterprise >}}
+
+<a href="https://ixsystems.atlassian.net/issues/?filter=11217" target="_blank">Click here to see the latest information on Jira</a> about public issues discovered in 24.10.1 that are being resolved in a future TrueNAS release.
 
 ## 24.10.0.2 Changelog
 
+{{< expand "Click to expand" "v" >}}
 **November 8, 2024**
 
 iXsystems is pleased to release TrueNAS 24.10.0.2!
@@ -168,9 +215,11 @@ Users with 24.10.0.1 installed and SMB shares in use are encouraged to upgrade t
 ### 24.10.0.2 Known Issues
 
 Please see the 24.10.0 changelog below and use the Jira filter links to see the full changelog and known issues related to the 24.10.0, 24.10.0.1, and 24.10.0.2 releases.
+{{< /expand >}}
 
 ## 24.10.0.1 Changelog
 
+{{< expand "Click to expand" "v" >}}
 **November 7, 2024**
 
 iXsystems is pleased to release TrueNAS 24.10.0.1!
@@ -192,9 +241,11 @@ Notable Changes:
   A fix for this issue is in the 24.10.0.2 release version.
 
 Please see the 24.10.0 changelog below and use the Jira filter links to see the full changelog and known issues related to the 24.10.0 and 24.10.0.1 releases.
+{{< /expand >}}
 
 ## 24.10.0 Changelog
 
+{{< expand "Click to expand" "v" >}}
 **October 29, 2024**
 
 iXsystems is pleased to release TrueNAS 24.10.0!
@@ -254,6 +305,7 @@ Notable changes:
   Users encountering this issue can refresh the web page to correct it.
 
 <a href="https://ixsystems.atlassian.net/issues/?filter=11053" target="_blank">Click here to see the latest information on Jira</a> about public issues discovered in 24.10.0 that are being resolved in a future TrueNAS release.
+{{< /expand >}}
 
 ## 24.10-RC.2 Changelog
 
