@@ -96,7 +96,7 @@ Leave **Host Network** unselected.
 Add your **Storage Configuration** settings.
 
 For **Asigra DS-System Configuration Storage**, set the **Type** to **Host Path (Path that already exists on the system)**.
-Select **Enable ACL**, then enter or browse to and select the **config** dataset to populate the **Host Path** field.
+Select **Enable ACL**, then enter or browse to and select the **data** dataset to populate the **Host Path** field.
 
 {{< trueimage src="/images/SCALE/Apps/InstallAsigraStorageDataACLandACESettings.png" alt="Add Config Asigra Data ACL and ACE Settings" id="Add Asigra Data ACL and ACE Settings" >}}
 
@@ -121,16 +121,16 @@ The **Installed** screen displays with the **Asigra DS-System** app in the **Dep
 
 {{< trueimage src="/images/SCALE/Apps/AsigraAppRunning.png" alt="Asigra DS-System App Installed and Running" id="Asigra DS-System App Installed and Running" >}}
 
-Click **Register** to start the account creation process, or go to the Asigra sign-in screen to log in with your account credentials.
 
-{{< trueimage src="/images/SCALE/Apps/AsigraNewCustomerInfoScreen.png" alt="Asigra New Customer Information Screen" id="Asigra New Customer Information Screen" >}}
-
-Launch the DS-Operator, and sign in as the default Asigra user **oper** with the password entered in **Operator Password**.
 See **Setting Up the DS-System in DS-Operator** below for the next steps.
 
 ## Setting Up DS-System in DS-Operator
-After installing the Asigra application in TrueNAS, either click **Register** open the Asigra screen to register your company with Asigra, but if you already have a registered account use the link provided by Asigra to download and extract the DS-Operator GUI program.
-Asigra provides your valid license and the license server IP address or URL to use when adding the license for your service.
+After installing the Asigra application in TrueNAS, either click **Register** to open the Asigra New Account screen to register your company with Asigra.
+If you already have a registered account, use the link provided by Asigra to download and extract the DS-Operator GUI program.
+
+{{< trueimage src="/images/SCALE/Apps/AsigraNewCustomerInfoScreen.png" alt="Asigra New Customer Information Screen" id="Asigra New Customer Information Screen" >}}
+
+Asigra provides your valid license and the license server IP address or URL> Enter the IP address when adding the license server for your service.
 It also provides the link to where you download a zip file with the DS-Operator.
 
 Install the DS-Operator on a local network with access to the TrueNAS system hosting the Asigra DS-System.
@@ -149,7 +149,7 @@ The following instructions cover a Windows OS-based DS-Operator initial configur
 2. Launch the DS-Operator GUI. Either double-click on the **dsoper** file in the File Explorer **Downloads** folder or right-click and select **Open**.
    
 3. Log in as the default **oper** user and enter the password entered in the **Operator Password** field in the **Install Asigra DS-System** wizard.
-   The TrueNAS Asigra app default user **oper** is preconfigured with all administration roles, but if you add some other user account to serve as the administration user you must assign the user the **Data Operator**, **Account Manager** and **Export CRI** roles.
+   The TrueNAS Asigra app default user **oper** is preconfigured with all administration roles, but if you add some other user account to serve as the administration user you must assign the user the **Data Operator**, **Account Manager**, and **Export CRI** roles.
    Refer to the [Asigra DS-System User Guide](https://asigra-documentation.s3.amazonaws.com/Guides/Cloud+Backup/v14.2/DS-System_User_Guide.pdf) for more information.
 
    {{< trueimage src="/images/SCALE/Apps/AsigraConnectToDS-Operator.png" alt="Connect to Asigra DS-Operator" id="Connect to Asigra DS-Operator" >}}
