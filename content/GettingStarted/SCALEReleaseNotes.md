@@ -162,6 +162,7 @@ Remove midclt call from 24.10.1 known issues if [NAS-132914](https://ixsystems.a
 iXsystems is pleased to release TrueNAS 24.10.1!
 This is a maintenance release and includes refinement and fixes for issues discovered after the 24.10.0 and 24.10.0.X releases.
 
+* Rework Dashboard CPU widgets to show metrics per physical core ([NAS-131839](https://ixsystems.atlassian.net/browse/NAS-131839)).
 * Prevent incorrect translation of LDAP Base DN to kerberos realm ([NAS-132192](https://ixsystems.atlassian.net/browse/NAS-132192)).
 * Increase the maximum permitted Samba (SMB) ACL size from 64 to 1024 entries ([NAS-132344](https://ixsystems.atlassian.net/browse/NAS-132344)).
 * Prevent applications service failing after upgrade if an app requires an Nvidia GPU ([NAS-132070](https://ixsystems.atlassian.net/browse/NAS-132070) and [NAS-132131](https://ixsystems.atlassian.net/browse/NAS-132131)).
