@@ -174,10 +174,11 @@ The **Remote** settings specify the TrueCloud credential and destination storage
 
 {{< trueimage src="/images/SCALE/DataProtection/AddTrueCloudTaskAdvancedOptions.png" alt="Add TrueCloud Backup Task - Advanced Options" id="Add TrueCloud Backup Task - Advanced Options" >}}
 
+<!-- <to be re-added to the table at a later date> | **Take Snapshot** | Select to take a snapshot before transferring data to the specified cloud provider like Storj. This option is not available to datasets with child datasets. |-->
+
 {{< truetable >}}
 | Settings | Description |
 |----------|-------------|
-| **Take Snapshot** | Select to take a snapshot before transferring data to the specified cloud provider like Storj. This option is not available to datasets with child datasets. |
 | **Pre-Script** | (For advanced users only) Enter a script to execute before running the task. See the [Managing TrueCloud Backup Tasks tutorial]({{< relref "TrueCloudTasks.md #using-advanced-options" >}}) for more information. |
 | **Post-Script** | (For advanced users only) Enter a script to execute after running the task. See the [Managing TrueCloud Backup Tasks tutorial]({{< relref "TrueCloudTasks.md #using-advanced-options" >}}) for more information. |
 | **Exclude** | Enter a list of files and directories to exclude from the backup. Separate entries by pressing <kbd>Enter</kbd>. See [rclone filtering](https://rclone.org/filtering/) for more details about the `--exclude` option and proper syntax. |
