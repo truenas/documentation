@@ -103,6 +103,10 @@ The task status changes to **SUCCESS** when complete.
 
 {{< trueimage src="/images/SCALE/DataProtection/AddTrueCloudTaskAdvancedOptions.png" alt="Add TrueCloud Backup Task Advanced Options" id="Add TrueCloud Backup Task Advanced Options" >}}
 
+<!-- <to be re-added at a later date> To take a snapshot before transferring data to Storj, select **Take Snapshot**.
+This option is not available for datasets with child datasets.
+-->
+
 Advanced users can write scripts that run immediately before or after the TrueCloud backup task.
 Enter environment variables in either the **Pre-script** or **Post-script** fields.
 The **Post-script** field only runs when the TrueCloud backup task succeeds.
