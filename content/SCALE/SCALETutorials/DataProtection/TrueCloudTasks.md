@@ -101,8 +101,9 @@ The task status changes to **SUCCESS** when complete.
 
 **Advanced Options** and **Advanced Remote Options** contain additional settings for advanced users.
 
-To take a snapshot before transferring data to Storj, select **Take Snapshot**.
+<!-- <to be readded at a later date> To take a snapshot before transferring data to Storj, select **Take Snapshot**.
 This option is not available for datasets with child datasets.
+-->
 
 Advanced users can write scripts that run immediately before or after the TrueCloud backup task.
 Enter environment variables in either the **Pre-script** or **Post-script** fields.
