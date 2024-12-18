@@ -189,15 +189,15 @@ The **Remote** settings specify the TrueCloud credential and destination storage
 
 {{< expand "Script Environment Variables" "v" >}}
 The following environment variables can be used in pre and post-scripts.
-CLOUD_BACKUP_ID
-CLOUD_BACKUP_DESCRITPION
-CLOUD_BACKUP_PASSWORD
-CLOUD_BACKUP_KEEP_LAST
-CLOUD_BACKUP_TRANSFER_SETTING
-CLOUD_BACKUP_ACCESS_KEY_ID
-CLOUD_BACKUP_FOLDER
-CLOUD_BACKUP_BUCKET
-CLOUD_BACKUP_FAST_LIST (always zero (0) for false, planned removal in Fangtooth)
+<li>CLOUD_BACKUP_ID
+<li>CLOUD_BACKUP_DESCRITPION
+<li>CLOUD_BACKUP_PASSWORD
+<li>CLOUD_BACKUP_KEEP_LAST
+<li>CLOUD_BACKUP_TRANSFER_SETTING
+<li>CLOUD_BACKUP_ACCESS_KEY_ID
+<li>CLOUD_BACKUP_FOLDER
+<li>CLOUD_BACKUP_BUCKET
+<li>CLOUD_BACKUP_FAST_LIST (always zero (0) for false, planned removal in Fangtooth)</li>
 {{< /expand >}}
 
 ### Advanced Remote Options
