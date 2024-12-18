@@ -17,6 +17,8 @@ Elastic Search is the distributed, RESTful search and analytics engine at the he
 The TrueNAS Elastic Search app allows you to configure and deploy a single Elasticsearch node.
 You can install multiple instances to deploy additional nodes, however you must configure a [Custom App]({{< relref "/TruenasApps/UsingCustomApp.md" >}}) with the **Install via YAML** option to deploy a [multi-node cluster](https://www.elastic.co/guide/en/elasticsearch/reference/master/docker.html#docker-compose-file).
 
+This tutorial covers installing the TrueNAS Elastic Search app to deploy a node.
+It does not detail management of the node or integrating it with other containers.
 Elastic provides a basic primer, [What is Elasticsearch](https://www.elastic.co/guide/en/elasticsearch/reference/master/elasticsearch-intro-what-is-es.html), with further information about the app and its place within the Elastic Stack.
 
 ## Before You Begin
@@ -102,17 +104,14 @@ This is the equivalent of running a `curl` check on the app port.
 ## Understanding App Installation Wizard Settings
 
 The following section provides more detailed explanations of the settings in each section of the **Install Elastic Search** installation wizard.
-<!-- Customize these sections by adding all settings in each configuration section, and providing details on the settings including expected values to enter. 
-Replace the *variables* with the appropriate name for the app, setting(s), dataset name(s), etc., in the following sections.
-Refer to other updated tutorials for more examples of completing these sections. -->
 
 ### Application Name Settings
 
 {{< include file="/static/includes/apps/InstallWizardAppNameAndVersion.md" >}}
 
 ### Elastic Search Configuration Settings
-<!-- Customize this section with the settings in the configuration section, and details on values to enter for each setting. -->
-Elastic Search configuration settings include setting up credentials, *APT packages* (previously referred to as the commands), the *host IP and port, data directory path, upload limits, execution times, memory limits and cache memory consumption, adding a cron job with schedule, and adding additional environment variables*.
+
+Elastic Search configuration settings include setting up credentials, naming the node, and setting the [heap size](https://www.elastic.co/guide/en/elasticsearch/guide/current/heap-sizing.html), networking configuration, storage configuration, configuring labels and setting resource limits for the container.
 
 If you have an existing Elastic Search account, add the credentials for that account in the **Admin User** and **Admin Password** fields.
 If you do not have an existing account, enter the name and password you want to use to create the Elastic Search login credentials.
@@ -183,13 +182,9 @@ TrueNAS **Additional Storage** options include the ability to mount an SMB share
 
 {{< include file="/static/includes/apps/InstallWizardStorageSMBOption.md" >}}
 
-### Labels Configuration <!-- Optional section. Remove if not included in the install wizard. change the name of the app, and add any information about the apps use of tags if that is the case.  -->
-*Emby* uses metadata to add information to media files, such as where media files are saved, the language used, and parental controls.
-*Emby* uses tags to add identification information to media files.
+### Labels Configuration
 
 {{< include file="/static/includes/apps/InstallWizardLabelsConfiguration.md" >}}
-<!-- replace the image with on for the app being documented 
-{{< trueimage src="/images/SCALE/Apps/InstallEmbyLabelsConfig.png" alt="Labels Configuration Settings" id="Labels Configuration Settings" >}}-->
 
 ### Resources Configuration
 <!-- replace the image with one for the app
