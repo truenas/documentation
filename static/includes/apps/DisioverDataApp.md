@@ -166,11 +166,8 @@ If adding an SMB share as an additional storage volume, create the SMB dataset a
 {{< include file="/static/includes/apps/InstallWizardStorageSMBOption.md" >}}
 
 ### Labels Configuration
-Diskover uses tags to add information to file metadata.
 
 {{< include file="/static/includes/apps/InstallWizardLabelsConfiguration.md" >}}
-
-{{< trueimage src="/images/SCALE/Apps/InstallDiskoverLabelConfig.png" alt="Labels Configuration Settings" id="Labels Configuration Settings" >}}
 
 ### Resources Configuration
 
