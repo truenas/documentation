@@ -119,59 +119,48 @@ If you do not have an existing account, enter the name and password you want to 
 #### Adding Environment Variables
 
 {{< include file="/static/includes/apps/InstallWizardEnvironVariablesSettings.md" >}}
-Refer to [Elastic Search documentation](URL for environment variables documentation provided in the app provider) for more information on environment variables.
+Refer to [Elastic Search documentation](https://www.elastic.co/guide/en/elasticsearch/reference/current/settings.html) for more information on environment variables.
 
-<!-- Not all apps include the following section. If it does, include the following, customized for the app requirements. -->
-### User and Group Configuration <!-- Optional section, include only if the Install Wizard has this section -->
-<!-- replace the image path and name:
-{{< trueimage src="/images/SCALE/Apps/InstallPlexUserAndGroupConfig.png" alt="Plex User and Group Configuration Settings" id="Plex User and Group Configuration Settings" >}} -->
+Enter variables using [Elastic Search with Docker](https://www.elastic.co/guide/en/elasticsearch/reference/master/docker.html#docker-configuration-methods) syntax.
 
-{{< include file="/static/includes/apps/InstallWizardUserAndGroupConfig.md" >}}
+1. Change the setting name to uppercase
+2. Prefix it with `ES_SETTING_`
+3. Escape any underscores (`_`) by duplicating them
+4. Convert all periods (`.`) to underscores (`_`)
+
+For example, to set `bootstrap.memory_lock=true`, enter *ES_SETTING_BOOTSTRAP_MEMORY__LOCK* for **Name** and *true* for **Value**.
 
 ### Network Configuration
-The default web port for Elastic Search is ***30027***.
-<!-- include the snippets that apply. Remove those that do not apply to the settings in the app Network Configuration section. -->
+The default web port for Elastic Search is **30003**.
 {{< include file="static/includes/apps/InstallWizardHostNetworkSettings.md" >}}
 {{< include file="/static/includes/apps/InstallWizardDefaultPorts.md" >}}
-{{< include file="/static/includes/apps/InstallWizardAdvancedDNSSettings.md" >}}
-<!-- include the certificate snippet where the Install wizard shows it, which is most likely in the Network Configuratin section but could be in the Elastic Search Configuration section in other tutorials -->
 {{< include file="/static/includes/apps/InstallWizardCertificateSettings.md" >}}
 
 ### Storage Configuration
 TrueNAS provides two options for storage volumes: ixVolumes and host paths.
 
 {{< include file="/static/includes/apps/InstallAppsStorageConfig.md" >}}
-<!-- replace this content with what applies to the app, if the app requires creating specific datasets, and if the app uses postgres dataset storage that might require special handling.
 
-Elastic Search needs *three* datasets for host path storage volume configurations:
-* ***config*** to use as the ***Configuration*** storage volume.
-* ***data*** to use as the ***User Data*** storage volume.
-* ***postgresdata*** to use as the ***Postgres Data*** storage volume.
+Elastic Search needs one dataset for host path storage volume configuration, with a name such as **data**, to use as the **Elastic Search Data Storage** volume.
+Create this dataset before beginning the app installation wizard, as described in [Before You Begin](#before-you-begin).
 
-If you group these datasets under a parent dataset named Elastic Search, configure the [ACL permissions]({{< relref "PermissionsSCALE.md" >}}) for this parent dataset and add an ACE entry for the ***netdata*** user.
-If the app includes postgres storage volumes, include the following information 
-If the app installation wizard cannot set up the ACL type or correctly add user permissions for the postgres storage volume,
-you must configure these outside the install wizard using the **Add Dataset** and **Edit ACL** screens.
-When adding the ***postgresdata*** dataset set it up with a POSIX ACL, and add the ***netdata*** user as the owner user and group with full control permissions. 
+If needed, you can add extra storage volumes at the time of installation or edit the application after it deploys.
+Stop the app before editing settings.
 
-If you have a postgres dataset, also include information in the Before You Begin section about adding the dataset and permissions.
-
-See the instructions in the [Before You Begin](#before-you-begin) section for more on creating both the parent and postgres_data datasets and configuring the ACL permissions for each.-->
-You can add extra storage volumes at the time of installation or edit the application after it deploys. Stop the app before editing settings.
-
-<!-- replace the snippet with the text in the snippet if the additional storage options include temporary directory options or other storage choices. We might need to create a new snippet for those instances if they are the same in other app install wizards. -->
-{{< include file="/static/includes/apps/InstallAppStorageConfig2.md" >}}
+{{< include file="/static/includes/apps/InstallAppsStorageConfig2.md" >}}
 
 #### Setting Dataset ACL Permissions
-You can configure ACL permissions for the required dataset in the **Install Netdata** wizard, or from the **Datasets** screen any time after adding the datasets.
+You can configure ACL permissions for the required dataset in the **Install Elastic Search** wizard, or from the **Datasets** screen any time after adding the datasets.
+Elastic search
 
 {{< include file="/static/includes/apps/InstallWizardStorageACLConfig.md" >}}
-<!-- replace the UIDs in the section below with the user IDs or run as user ID -->
+
 {{< expand "Adding ACL Permissions from the Datasets Screen" "v">}}
 First select the dataset row, and scroll down to the **Permissions** widget, and then click **Edit** to open the **Edit ACL** screen.
 Change the **@owner** and **@group** values from **root** to the administrative user for your TrueNAS system, and click apply for each.
 Next, add an ACL entry for the run-as user.
-For Netdata, the run-as users is **0** for **root**. Add a user entry for this user.
+For Elastic Search, the run-as user is **1000**.
+Add a user entry for this user.
 Save the ACL before leaving the screen.
 {{< /expand >}}
 
@@ -187,14 +176,6 @@ TrueNAS **Additional Storage** options include the ability to mount an SMB share
 {{< include file="/static/includes/apps/InstallWizardLabelsConfiguration.md" >}}
 
 ### Resources Configuration
-<!-- replace the image with one for the app
-{{< trueimage src="/images/SCALE/Apps/InstallNextcloudResourcesConfig.png" alt="Resources Configuration Settings" id="Resources Configuration Settings" >}} -->
+{{< trueimage src="/images/SCALE/Apps/InstallElasticSearchResourcesConfig.png" alt="Resources Configuration Settings" id="Resources Configuration Settings" >}}
 
 {{< include file="/static/includes/apps/InstallWizardResourceConfig.md" >}}
-<!-- include this snippet if the app Install wizard includes the GPU settings -->
-{{< include file="/static/includes/apps/InstallWizardGPUPassthrough.md" >}}
-
-## Troubleshooting Tips
-<!-- include this section if you want to include tips to resolve known deployment issues -->
-
-<!-- /END TEMPLATE -->
