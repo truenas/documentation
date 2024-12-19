@@ -1,6 +1,7 @@
 &NewLine;
 
 Select **Enable ACL** to show the ACL and **ACE Entries** options.
+Configure ACE entries for each UID and/or GID you recorded from the **Run As Context** widget in [Before You Begin](#before-you-begin).
 
 {{< expand "Configuring ACE Entries" "v" >}}
 Enter or browse to select the dataset and populate **Host Path**.
@@ -11,7 +12,7 @@ Next, click **Add** to the right of **ACL Entries** to show the permissions sett
 Set **ID Type** to **Entry is for a USER** or **Entry is for a GROUP**.
 If you configured a group in TrueNAS that you want to give access to instead of a single user, set the ID to the group option and enter the GID for that group.
 
-Enter the UID as one of the following:
+Enter the UID and/or GID as one of the following:
 * The default app user:
   * **568** for apps in all trains if the app can run as any non-root user.
   * **999** for all postgres storage volumes.
