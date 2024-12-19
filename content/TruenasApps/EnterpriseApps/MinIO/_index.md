@@ -22,30 +22,59 @@ This article applies to the TrueNAS MinIO application in the **enterprise** trai
 This smaller version of MinIO is tested and polished for a safe and supportable experience for TrueNAS Enterprise customers.
 The enterprise MinIO application is tested and verified as an immutable target for Veeam Backup and Replication.
 
-## Adding MinIO Enterprise App
-Community members can add and use the MinIO Enterprise app or the default community version.
-
-{{< include file="/static/includes/apps/AddEnterpriseTrain.md" >}}
-
 ## Before You Begin
 To install the MinIO **enterprise** train app, do the following:
 
-{{< include file="/static/includes/apps/BeforeYouBeginEnterpriseApps.md" >}}
-  
-{{< include file="/static/includes/apps/MinIODatasetRequirements.md" >}}
+{{< include file="/static/includes/apps/BeforeYouBeginStableApps.md" >}}
+{{< include file="/static/includes/apps/BeforeYouBeginRunAsUser.md" >}}
 
-If your system has active sharing configurations (SMB, NFS, iSCSI), disable them in **System > Services** before adding and configuring the MinIO application.
-Start any sharing services after MinIO completes the installation and starts.
+<div style="margin-left: 33px">{{< trueimage src="/images/SCALE/Apps/MinIOEnterpriseDetailsScreen.png" alt="MinIO Enterprise App Details Screen" id="MinIO Enterprise App Details Screen" >}}</div>
+
+{{< include file="/static/includes/apps/BeforeYouBeginAddNewAppUser.md" >}}
+
+* Create a self-signed certificate for the app.
+  The **Certificates** setting is not required for a basic configuration but is required when setting up multi-mode configurations and when using MinIO as an immutable target for Veeam Backup and Replication.
+  
+  {{< include file="/static/includes/apps/AddAppCertificate.md" >}}
+
+{{< include file="/static/includes/apps/BeforeYouBeginAddAppDatasets.md" >}}
+
+<div style="margin-left: 33px"><a href="https://www.truenas.com/docs/scale/scaletutorials/datasets/datasetsscale/">Create the dataset(s)</a> before beginning the app installation process.
+MinIO enterprise train requires one dataset, <b>data</b>.
+
+Follow the instruction below in **Creating Datasets for Apps** to correctly create dataset(s).
+You can organize dataset(s) under a parent dataset to keep them separated from datasets for other potential applications.
+For example, create the <i>minio</i> dataset and nest each dataset under it.
+If you organize the MinIO app required dataset(s) under a parent dataset, it requires ACL permissions.
+Use the <b>Enable ACL</b> option in the <b>Install MinIO</b> wizard to configure permissions for the <b>data</b> dataset.</div>
+
+<div style="margin-left: 33px">{{< include file="/static/includes/apps/BeforeYouBeginAddAppDatasetsProcedure.md" >}}
+</div>
+
+<div style="margin-left: 33px">{{< expand "Configuring Parent Dataset Permissions" "v" >}} 
+On the <b>Edit ACL</b> screen, set the <b>owner</b> and <b>group</b> to <b>admin</b> or the name of your administration user account, and click <b>Apply Owner</b> and <b>Apply Group</b>.
+
+Next, add an ACE entry for the <b>MinIO</b> run as user for the app, <b>568</b>.
+You might need to add another userif you receive an error message when you try to install the app, such as <b>www-data</b>. The error message shows the user name to add. Give both users full permissions.
+
+See [Setting Up Permissions]({{< relref "PermissionsSCALE.md" >}}) and [Edit ACL Screen]({{< relref "EditACLScreens.md" >}}) for more information.
+{{< /expand >}}</div>
+
+<div style="margin-left: 33px">If planning to deploy an additional storage volume as an SMB Share, disable the service in **System > Services** before adding and configuring the MinIO application.
+Start any sharing services after MinIO completes the installation and starts.</div>
 
 ## Installing the MinIO Application
 {{< hint info >}}
-This basic procedure covers the required MinIO enterprise app settings.
-For optional settings, see [Understanding MinIO Wizard Settings](#understanding-minio-wizard-settings).
+This basic procedure covers the required MinIO app settings.
+For optional settings, see [Understanding App Installation Wizard Settings](#understanding-app-installation-wizard-settings).
 {{< /hint >}}
 
 {{< include file="/static/includes/apps/MultipleAppInstancesAndNaming.md" >}}
+{{< include file="/static/includes/apps/LocateAndOpenInstallWizard.md" >}}
 
-{{< include file="/static/includes/apps/MinIoEnterpriseConfig1.md" >}}
+{{< trueimage src="/images/SCALE/Apps/InstallMinIOEnterprise.png" alt="Install MinIO Enterprise Screen" id="Install MinIO Enterprise Screen" >}}
+
+{{< include file="/static/includes/apps/InstallWizardAppNameAndVersion.md" >}}
 
 {{< include file="/static/includes/apps/MinIoEnterpriseConfig2.md" >}}
 
@@ -55,25 +84,23 @@ If setting up a cluster configuration, see [Multi-Mode Configuration](#multi-mod
 
 Scroll down to or click on **Storage Configuration** on the list of wizard sections.
 
-Select the storage type you want to use.
+Set **Type** to **Host Path (Path that already exists on the system)** for the **data** storage volume. The default setting in **Mount Point** is **/data1**.
 
-To use an existing dataset, select **Host Path (Path that already exists on the system)** which is the recommended option for MinIO.
-**Mount Path** populates with the default **/data1**.
 Select **Enable ACL** to show the mount path and host path fields.
-Enter the path or browse to and click on the **data1** dataset location to populate **Host Path**.
+Enter or browse to select the **data** dataset and populate the **Host Path**.
 
 Click **Add** to the right of **ACE Entries**.
 
-{{< trueimage src="/images/SCALE/Apps/InstallMinIOEnterpriseData1ACLandACESettings.png" alt="MinIO Enterprise ACL and ACE Settings" id="MinIO Enterprise ACL and ACE Settings" >}}
+{{< trueimage src="/images/SCALE/Apps/InstallMinIOEnterpriseData1ACLandACESettings.png" alt="MinIO Enterprise Data ACL and ACE Settings" id="MinIO Enterprise Data ACL and ACE Settings" >}}
 
 Set the **ACE Entry** user to the default user **568** or enter the UID for the user created in TrueNAS to serve as the MinIO app administrator, and set the permissions to **FULL_CONTROL**.
 
-Select **Force** to allow TrueNAS to update the application to the next version. This allows updates and writing to the storage volume if it has data in it.
+Select **Force Flag** to allow TrueNAS to update the application to the next version. This allows updates and writing to the storage volume if it has data in it.
 
 {{< include file="/static/includes/apps/MinIOEnterpriseConfig4.md" >}}
 
-## Understanding MinIO Wizard Settings
-The following section provides more detailed explanations of the settings in each section of the **Install MinIO** configuration wizard.
+## Understanding App Installation Wizard Settings
+The following section provides more detailed explanations of the settings in each section of the **Install** installation wizard.
 
 ### Application Name Settings
 
@@ -111,17 +138,29 @@ For more information see:
 
 {{< include file="/static/includes/apps/MinIOEnterpriseStorageConfig.md" >}}
 
-#### ACL and ACE Sttings
+You can add extra storage volumes at the time of installation or edit the application after it deploys. Stop the app before editing settings.
 
-{{< trueimage src="/images/SCALE/Apps/InstallMinIOEnterpriseData1ACLandACESettings.png" alt="Home and Data1 Host Path ACL and ACE Settings" id="Home and Data1 Host Path ACL and ACE Settings" >}}
+{{< include file="/static/includes/apps/InstallAppStorageConfig2.md" >}}
 
-{{< include file="/static/includes/InstallWizardStorageACLConfig.md" >}}
+#### Setting Dataset ACL Permissions
+You can configure ACL permissions for the required dataset in the **Install MinIO** wizard, or from the **Datasets** screen any time after adding the datasets.
 
-#### Mounting an SMB Share
-The TrueNAS MinIO app includes the option to mount an SMB share inside the container pod.
+{{< include file="/static/includes/apps/InstallWizardStorageACLConfig.md" >}}
 
-{{< include file="/static/includes/InstallWizardStorageSMBOption.md" >}}
+{{< expand "Adding ACL Permissions from the Datasets Screen" "v">}}
+First select the dataset row, and scroll down to the **Permissions** widget, and then click **Edit** to open the **Edit ACL** screen.
+Change the **@owner** and **@group** values from **root** to the administrative user for your TrueNAS system, and click apply for each.
+Next, add an ACL entry for the run-as user.
+For MinIO, the run-as users is **568**. Add a user entry for this user.
+Save the ACL before leaving the screen.
 
+See [Setting Up Permissions]({{< relref "PermissionsSCALE.md" >}}) and [Edit ACL Screen]({{< relref "EditACLScreens.md" >}}) for more information.
+{{< /expand >}}
+
+#### Mounting an SMB Share Storage Volume
+TrueNAS **Additional Storage** options include the ability to mount an SMB share inside the container pod.
+
+{{< include file="/static/includes/apps/InstallWizardStorageSMBOption.md" >}}
 
 ### Resource Configuration
 
