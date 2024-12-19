@@ -9,7 +9,7 @@ tags:
 
 {{< toc >}}
 
-The system dataset stores debugging core files, encryption keys for encrypted pools, and Samba4 metadata such as the user and group cache and share level permissions.
+The system dataset stores debugging core files, encryption keys for encrypted pools, and Samba4 metadata such as the user and group cache and share-level permissions.
 
 To view the current location of the system dataset, go to **System > System Dataset**.
 
@@ -23,7 +23,7 @@ We recommend users store the log information on the system dataset when the syst
 Set **Syslog** to store the system log on the system dataset.
 Leave unset to store the system log in <file>/var</file> on the operating system device.
 
-## Change System Dataset
+## Move System Dataset
 
 Select an existing pool from the **System Dataset Pool** dropdown.
 
@@ -32,6 +32,8 @@ You can move the system dataset to unencrypted pools or encrypted pools that do 
 Moving the system dataset to an encrypted pool disables that volume's passphrase capability.
 
 You cannot move the system dataset to a passphrase-encrypted or read-only pool.
+
+When moving the system dataset, TrueNAS creates a new dataset and sets it as active. TrueNAS does not delete the old dataset in case you moved the system dataset temporarily or need to recover the data from it.
 
 {{< hint type=important >}}
 **Reboots Required**
