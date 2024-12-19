@@ -230,7 +230,7 @@ The default web port for *AppName* is ***30027***.
 {{< include file="static/includes/apps/InstallWizardHostNetworkSettings.md" >}}
 {{< include file="/static/includes/apps/InstallWizardDefaultPorts.md" >}}
 {{< include file="/static/includes/apps/InstallWizardAdvancedDNSSettings.md" >}}
-<!-- include the certificate snippet where the Install wizard shows it, which is most likely in the Network Configuratin section but could be in the AppName Configuration section in other tutorials -->
+<!-- include the certificate snippet where the Install wizard shows it, which is most likely in the Network Configuration section but could be in the AppName Configuration section in other tutorials -->
 {{< include file="/static/includes/apps/InstallWizardCertificateSettings.md" >}}
 
 ### Storage Configuration
