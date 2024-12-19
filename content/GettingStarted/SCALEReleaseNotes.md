@@ -163,7 +163,7 @@ iXsystems is pleased to release TrueNAS 24.10.1!
 This is a maintenance release and includes refinement and fixes for issues discovered after the 24.10.0 and 24.10.0.X releases.
 
 * The `sendmail` command is removed for security reasons ([NAS-133174](https://ixsystems.atlassian.net/browse/NAS-133174)). Users previously using sendmail as part of their custom scripting should use `exim` instead.
-* The boot pool is now properly enforcing the default `setuid` and `noexec` options ([NAS-127825](https://ixsystems.atlassian.net/browse/NAS-127825)). This restores the default boot pool behavior to be restricted from general use.
+* The boot pool is now properly enforcing the default `setuid` and `noexec` options ([NAS-127825](https://ixsystems.atlassian.net/browse/NAS-127825)). This restores the default boot pool behavior to be restricted from general use. Users that are currently attempting to exec scripts from a `/home` or other boot pool location should move these to a data pool location.
 * Fix issue with zpl_get_name ([NAS-132930](https://ixsystems.atlassian.net/browse/NAS-132930)). This can improve performance in some specific NFS workloads with large directories (see the [commit](https://github.com/truenas/zfs/commit/c3513aeac5da5f3ce3e8da52e85a47ec0627e0b0) for more details).
 * Rework Dashboard CPU widgets to show metrics per physical core ([NAS-131839](https://ixsystems.atlassian.net/browse/NAS-131839)).
 * Prevent incorrect translation of LDAP Base DN to kerberos realm ([NAS-132192](https://ixsystems.atlassian.net/browse/NAS-132192)).
