@@ -256,7 +256,7 @@ See the instructions in the [Before You Begin](#before-you-begin) section for mo
 You can add extra storage volumes at the time of installation or edit the application after it deploys. Stop the app before editing settings.
 
 <!-- replace the snippet with the text in the snippet if the additional storage options include temporary directory options or other storage choices. We might need to create a new snippet for those instances if they are the same in other app install wizards. -->
-{{< include file="/static/includes/apps/InstallAppStorageConfig2.md" >}}
+{{< include file="/static/includes/apps/InstallAppsStorageConfig2.md" >}}
 
 #### Setting Dataset ACL Permissions
 You can configure ACL permissions for the required dataset in the **Install Netdata** wizard, or from the **Datasets** screen any time after adding the datasets.
