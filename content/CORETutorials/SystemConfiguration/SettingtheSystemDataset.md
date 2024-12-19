@@ -33,7 +33,7 @@ Moving the system dataset to an encrypted pool disables that volume's passphrase
 
 You cannot move the system dataset to a passphrase-encrypted or read-only pool.
 
-When moving the system dataset, TrueNAS replicates the data to a new dataset and sets it as active. TrueNAS does not delete the old dataset in case you moved the system dataset temporarily or need to recover the data from it.
+When moving the system dataset, TrueNAS replicates the existing dataset and activates the new dataset. TrueNAS does not delete the old dataset in case you moved the system dataset temporarily or need to recover the data from it.
 
 {{< hint type=important >}}
 **Reboots Required**
