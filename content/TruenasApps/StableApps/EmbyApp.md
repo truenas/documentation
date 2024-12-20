@@ -183,7 +183,7 @@ Emby uses tags to add identification information to media files.
 
 ### Resources Configuration
 
-{{< trueimage src="/images/SCALE/Apps/InstallEmbyLabelsConfig.png" alt="Labels Configuration Settings" id="Resources Configuration Settings" >}}
+{{< trueimage src="/images/SCALE/Apps/InstallEmbyResourcesConfig.png" alt="Resources Configuration Settings" id="Resources Configuration Settings" >}}
 
 {{< include file="/static/includes/apps/InstallWizardResourceConfig.md" >}}
 {{< include file="/static/includes/apps/InstallWizardGPUPassthrough.md" >}}
