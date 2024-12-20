@@ -19,7 +19,7 @@ Click **Add** again to configure additional labels.
 
 Tips for Labels:
 
-* Docker [recommends](https://docs.docker.com/reference/compose-file/services/#labels) using reverse-DNS notation to prevent conflicts with other objects.
+* Use reverse-DNS notation to prevent conflicts with other objects, as [recommended by Docker](https://docs.docker.com/reference/compose-file/services/#labels).
 * Use a consistent naming convention for labels applied across all containers, for example, *com.example.owner=team-a*, *com.example.owner=team-b*, *com.example.env=production*, *com.example.env=testing*.
 * Use in groupings, for example, when applying configuration changes where labels define or group related database resources (*com.example.role=db*).
 * Combine labels for more granular control, for example, using *com.example.env=prod* and *com.example.tier=frontend* to distinguish frontend from backend services in production environments.

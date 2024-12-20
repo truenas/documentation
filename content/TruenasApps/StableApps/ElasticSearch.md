@@ -59,7 +59,7 @@ For optional settings, see [Understanding App Installation Wizard Settings](#und
 
 Enter the **Elastic Search Configuration** settings.
 
-Enter a password to use for the built-in `elastic` user.
+Enter a password to use for the built-in **elastic** user.
 Passwords must be at least six characters long.
 
 Accept the default or enter a value in **Heap Size**.
@@ -72,7 +72,7 @@ The TrueNAS app is configured with all the required environment variables, but i
 Accept the default values in **Network Configuration**.
 See [Network Configuration](#network-configuration) for more details.
 
-Leave **Host Network** unselected.
+Do not select **Host Network**.
 
 Add your **Storage Configuration** settings.
 
@@ -81,8 +81,8 @@ Select **Enable ACL**, and then enter or browse to and select the **data** datas
 
 {{< trueimage src="/images/SCALE/Apps/InstallElasticSearchStorageDataACLandACE.png" alt="Add Elastic Search Data Storage" id="Add Elastic Search Data Storage" >}}
 
-Select **Add** to the right of **ACL Entries** for each user or group entry you want to add.
-Add the user and group ID **1000**, and give each **FULL_CONTROL Access**.
+Click **Add** to the right of **ACL Entries** for each user or group entry you want to add.
+Enter the user and group ID **1000** and give each **FULL_CONTROL Access**.
 
 Select **Force Flag**.
 
@@ -151,7 +151,6 @@ Stop the app before editing settings.
 
 #### Setting Dataset ACL Permissions
 You can configure ACL permissions for the required dataset in the **Install Elastic Search** wizard, or from the **Datasets** screen any time after adding the datasets.
-Elastic search
 
 {{< include file="/static/includes/apps/InstallWizardStorageACLConfig.md" >}}
 
