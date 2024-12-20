@@ -20,8 +20,6 @@ Prepare TrueNAS before installing *Photoprism* by:
 {{< include file="/static/includes/apps/BeforeYouBeginStableApps.md" >}}
 {{< include file="/static/includes/apps/BeforeYouBeginRunAsUser.md" >}}
 
-Click **Check Available Apps** and search for or find Photoprism, then select it.
-
 <div style="margin-left: 33px">{{< trueimage src="/images/SCALE/Apps/PhotoprismAppDetailsScreen.png" alt="Photoprism Information Screen" id="Photoprism Information Screen" >}}</div>
 
 <p style="margin-left: 33px">Photoprism uses three datasets: <b>import</b>, <b>storage</b>, and <b>originals</b>. Ensure that your <b>import</b> dataset is configured with a functioning SMB share, as this is the dataset Photoprism uses to access and import your desired photos.
