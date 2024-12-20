@@ -23,7 +23,7 @@ Prepare TrueNAS before installing *Photoprism* by:
 <div style="margin-left: 33px">{{< trueimage src="/images/SCALE/Apps/PhotoprismAppDetailsScreen.png" alt="Photoprism Information Screen" id="Photoprism Information Screen" >}}</div>
 
 <p style="margin-left: 33px">Photoprism uses three datasets: <b>import</b>, <b>storage</b>, and <b>originals</b>. Ensure that your <b>import</b> dataset is configured with a functioning SMB share, as this is the dataset Photoprism uses to access and import your desired photos.
-Follow the instruction below in **Creating Datasets for Apps** to correctly set up these datasets.</p>
+Follow the instructions below in **Creating Datasets for Apps** to correctly set up these datasets.</p>
 
 <div style="margin-left: 33px">{{< include file="/static/includes/apps/BeforeYouBeginAddAppDatasetsProcedure.md" >}}
 </div>
@@ -158,7 +158,7 @@ If the install wizard shows a **Mount Path**, either accept the default value or
 
 During this step, ensure that the ***import*** dataset is configured with an SMB share and selected as the host path for the ***Photoprism Import Storage*** **Type**, as this is the dataset *Photoprism* utilizes for the import process.
 
-Select **Enable ACL** to define ACL permissions and to populate the **Host Path** field by either entering or browsing to and selecting the location of the dataset.
+Select **Enable ACL** to define ACL permissions and populate the **Host Path** field by either entering or browsing to and selecting the dataset location.
 Populating the **Host Path** with the dataset location and then selecting **Enable ACL** clears the values, so we recommend selecting **Enable ACL** before entering the host path.
 
 {{< include file="/static/includes/apps/AppInstallWizardACLConfiguration.md" >}}
@@ -175,7 +175,7 @@ You can configure ACL permissions for the required dataset in the **Install Phot
 
 {{< include file="/static/includes/apps/InstallWizardStorageACLConfig.md" >}}
 {{< expand "Adding ACL Permissions from the Datasets Screen" "v">}}
-First select the dataset row, and scroll down to the **Permissions** widget, and then click **Edit** to open the **Edit ACL** screen.
+First, select the dataset row, and scroll down to the **Permissions** widget, and then click **Edit** to open the **Edit ACL** screen.
 Change the **@owner** and **@group** values from **root** to the administrative user for your TrueNAS system, and click apply for each.
 Next, add an ACL entry for the run-as user.
 Save the ACL before leaving the screen.
