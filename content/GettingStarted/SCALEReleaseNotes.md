@@ -182,6 +182,7 @@ This is a maintenance release and includes refinement and fixes for issues disco
 
 ### 24.10.1 Known Issues
 
+* The Dashboard CPU widgets have an issue displaying metrics for some types of hyper-threaded CPUs ([NAS-133128](https://ixsystems.atlassian.net/browse/NAS-133128)). This is being addressed in future 24.10 maintenance releases.
 * An issue was discovered with restoration of ZFS snapshots via TrueCloud back up tasks ([NAS-132608](https://ixsystems.atlassian.net/browse/NAS-132608)). The **Take Snapshot** option for TrueCloud back up tasks is disabled in 24.10.1 until the underlying issue is addressed in a future TrueNAS release.
 * OAuth support for Microsoft Outlook is no longer supported in 24.10 due to Microsoft removal of username and password authentication to their email server. Restoration of Outlook OAuth support is anticipated in the 25.04 release version ([NAS-132807](https://ixsystems.atlassian.net/browse/NAS-132807)).
 * An issue has been discovered for cloud sync tasks configured with **Filename Encryption**, which is available in **Advanced Remote Options** ([NAS-132472](https://ixsystems.atlassian.net/browse/NAS-132472)). As this is an upstream issue in rclone, we recommend that users should not create new cloud sync tasks with **Filename Encryption** enabled. Existing users of this feature must leave it enabled for existing cloud sync tasks to be able to recover backups.
