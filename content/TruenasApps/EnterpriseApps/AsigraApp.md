@@ -49,7 +49,7 @@ Before you install the Asigra app:
 <div style="margin-left: 33px">{{< trueimage src="/images/SCALE/Apps/AsigraAppDetailsScreen.png" alt="Asigra App Details Screen" id="Asigra App Details Screen" >}}</div>
 
 {{< include file="/static/includes/apps/BeforeYouBeginAddNewAppUser.md" >}}
-<div style="margin-left: 33px">The Asigra has two run-as user IDs, <b>0</b> for the root users and <b>999</b> for the postgres data user.
+<div style="margin-left: 33px">Asigra has two run-as user IDs, <b>0</b> for the root users and <b>999</b> for the postgres data user.
 The Asigra and TrueNAS default user <b>oper</b> serves as the DS-Operator user with administration roles.
 Log into the DS-Operator GUI with this user and the password entered as the **Operator Password** in the wizard after deploying the app.
 You do not need to add the **oper** user in TrueNAS as a user account.
