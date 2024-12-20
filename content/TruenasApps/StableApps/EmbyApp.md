@@ -24,7 +24,7 @@ Emby naming conventions for media files are important. Pay close attention to th
 Before you install the Emby app:
 
 * Read the [Emby Support documentation](https://emby.media/support/articles/Home.html).
-  Emby instructions in the **Media Preparation** and [**Library Setup**](https://emby.media/support/articles/Library-Setup.html) sections, influence how you set up storage volume types and labels used in the TrueNAS **Install Emby** app wizard.
+  Emby instructions in the **Media Preparation** and [**Library Setup**](https://emby.media/support/articles/Library-Setup.html) sections influence how you set up storage volume types and labels used in the TrueNAS **Install Emby** app wizard.
   Organize media files into folders by type, movies, photos, music, etc.
   Emby instructions say to include the release date of movies in the folder name as follows, *movieName (year)*.
 
