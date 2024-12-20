@@ -124,8 +124,7 @@ The **Installed** screen displays with the **Asigra DS-System** app in the **Dep
 See **Setting Up the DS-System in DS-Operator** below for the next steps.
 
 ## Setting Up DS-System in DS-Operator
-After installing the Asigra application in TrueNAS, either click **Register** to open the Asigra New Account screen to register your company with Asigra.
-If you already have a registered account, use the link provided by Asigra to download and extract the DS-Operator GUI program.
+After installing the Asigra application in TrueNAS, either click **Register** to open the Asigra New Account screen to register your company with Asigra, or if you already have a registered account, use the link provided by Asigra to download and extract the DS-Operator GUI program.
 
 {{< trueimage src="/images/SCALE/Apps/AsigraNewCustomerInfoScreen.png" alt="Asigra New Customer Information Screen" id="Asigra New Customer Information Screen" >}}
 
