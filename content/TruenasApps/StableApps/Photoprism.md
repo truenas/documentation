@@ -64,7 +64,7 @@ To find specific fields begin typing in the **Search Input Fields** search field
 
 {{< include file="/static/includes/apps/InstallWizardAppNameAndVersion.md" >}}
 
-Enter the **Photoprism Configuration** settings.
+Enter the **Photoprism Configuration** settings and enter an **Admin Password**.
 
 The TrueNAS app is configured with all the required environment variables, but if you want to further customize the container, click **Add** to the right of **Additional Environment Variables** for each to enter the variable(s) and values(s).
 
