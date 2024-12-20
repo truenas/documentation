@@ -83,7 +83,7 @@ Select **Enable ACL**, and then enter or browse to select the **import** dataset
 Select **Add** to the right of **ACL Entries** for each user or group entry you want to add.
 For example, add the **568** user and **0**, and give each **FULL_CONTROL Access**.
 
-Repeat the above storage configuration steps for the **Photoprism Storage** and **Photoprism Originals Storage** options, ensuring that your **storage** and **originals** datasets are set as the **Host Path (Path that already exists on the system)** for each individual configuration.
+Repeat the above storage configuration steps for the **Photoprism Storage** and **Photoprism Originals Storage** options, ensuring that your **storage** and **originals** datasets are set as the **Host Path (Path that already exists on the system)** for each configuration.
 
 Select **Force Flag**.
 
@@ -96,7 +96,9 @@ The **Installed** screen displays with the **nextcloud** app in the **Deploying*
 
 {{< trueimage src="/images/SCALE/Apps/PhotoprismInstalled.png" alt="Photoprism Installed" id="Photoprism Installed" >}}
 
-Click **Web Portal** on the **Application Info** widget to open the Photoprism web portal sign-in screen.
+Click **Web UI** on the **Application Info** widget to open the Photoprism web portal sign-in screen. 
+
+Sign in using the **admin** username and the password you set when configuring Photoprism.
 
 {{< trueimage src="/images/SCALE/Apps/PhotoprismSignInScreen.png" alt="Photoprism Sign In Screen" id="Photoprism Sign In Screen" >}}
 
@@ -114,7 +116,7 @@ The following section provides more detailed explanations of the settings in eac
 
 Photoprism configuration settings include setting up credentials, *APT packages* (previously referred to as the commands), the *host IP and port, data directory path, upload limits, execution times, memory limits and cache memory consumption, adding a cron job with schedule, and adding additional environment variables*.
 
-If you have an existing Photoprism account, add the credentials for that account in the **Admin User** and **Admin Password** fields.
+If you have an existing Photoprism account, add the credential for that account in the **Admin Password** field.
 If you do not have an existing account, enter the name and password you want to use to create the Photoprism login credentials.
 
 #### Adding Environment Variables
