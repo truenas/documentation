@@ -12,10 +12,10 @@ keywords:
 - TrueNAS photo applications
 ---
 
-The TrueNAS Photoprism app provides an efficent way to install, manage, and utilize the various capabilities of Photoprism. TrueNAS deploys the Photoprism app in a Docker container using Docker Compose. After successfully deploying the app, you can access the Photoprism web interface from TrueNAS. The Photoprism interface allows you to organize, search, and share your photos with advanced features like AI-based image classification, facial recognition, and geotagging. You can also manage photo collections, create albums, and utilize powerful search tools to find specific images based on metadata and tags.
+The TrueNAS Photoprism app provides an efficient way to install, manage, and utilize the various capabilities of Photoprism. TrueNAS deploys the Photoprism app in a Docker container using Docker Compose. After successfully deploying the app, you can access the Photoprism web interface from TrueNAS. The Photoprism interface allows you to organize, search, and share your photos with advanced features like AI-based image classification, facial recognition, and geotagging. You can also manage photo collections, create albums, and utilize powerful search tools to find specific images based on metadata and tags.
 
 ## Before You Begin
-Prepare TrueNAS before installing *Photoprism* by:
+Prepare TrueNAS before installing Photoprism by:
 
 {{< include file="/static/includes/apps/BeforeYouBeginStableApps.md" >}}
 {{< include file="/static/includes/apps/BeforeYouBeginRunAsUser.md" >}}
@@ -25,8 +25,7 @@ Prepare TrueNAS before installing *Photoprism* by:
 <p style="margin-left: 33px">Photoprism uses three datasets: <b>import</b>, <b>storage</b>, and <b>originals</b>. Ensure that your <b>import</b> dataset is configured with a functioning SMB share, as this is the dataset Photoprism uses to access and import your desired photos.
 Follow the instructions below in **Creating Datasets for Apps** to correctly set up these datasets.</p>
 
-<div style="margin-left: 33px">{{< include file="/static/includes/apps/BeforeYouBeginAddAppDatasetsProcedure.md" >}}
-</div>
+{{< include file="/static/includes/apps/BeforeYouBeginAddAppDatasets.md" >}}
 
   <p style="margin-left: 33px">Create a parent dataset, such as <i>appName</i>, and then the storage datasets (<b><i>config</i></b> and <b><i>data</i></b>) under it.
   Select <b>apps</b> as the <b>Dataset Preset</b> for these datasets. You can modify the dataset ACLs at the time of creation, or modify them later when adding them in the app.</p>
@@ -36,14 +35,14 @@ Follow the instructions below in **Creating Datasets for Apps** to correctly set
 ## Installing the Application
 
 {{< hint info >}}
-This basic procedure covers the required *Photoprism* app settings.
+This basic procedure covers the required Photoprism app settings.
 For optional settings, see [Understanding App Installation Wizard Settings](#understanding-app-installation-wizard-settings).
 {{< /hint >}}
 
 {{< include file="static/includes/apps/MultipleAppInstancesAndNaming.md" >}}
 
-Go to **Apps**, click on **Discover Apps**, and locate the *Photoprism* widget by either scrolling down to it or begin typing the name into the search field.
-To locate the Photoprism app widget, begin typing *Photoprism* into the search field to show app widgets matching the search input.
+Go to **Apps**, click on **Discover Apps**, and locate the Photoprism widget by either scrolling down to it or begin typing the name into the search field.
+To locate the Photoprism app widget, begin typing Photoprism into the search field to show app widgets matching the search input.
 
 {{< trueimage src="/images/SCALE/Apps/DiscoverScreenLocatePhotoprism.png" alt="Example of Locating an App Widget" id="Example of Locating an App Widget" >}}
 
@@ -56,16 +55,16 @@ Click **Confirm** then **Agree** to close the dialog and open the application de
 {{< /expand >}}
 If not the first time installing apps the dialog does not show, click on the widget to open the app information screen.
 
-Click **Install** to open the *Photoprism* installation wizard.
+Click **Install** to open the Photoprism installation wizard.
 
 Application configuration settings are grouped into several sections, each explained below in **Understanding App Installation Wizard Settings**.
 To find specific fields begin typing in the **Search Input Fields** search field to show the section or field, scroll down to a particular section, or click on the section heading in the list of sections on the upper-right of the wizard screen.
 
-{{< trueimage src="/images/SCALE/Apps/InstallPhotoprismScreen.png" alt="Install *Photoprism* Screen" id="Install Photoprism Screen" >}}
+{{< trueimage src="/images/SCALE/Apps/InstallPhotoprismScreen.png" alt="Install Photoprism Screen" id="Install Photoprism Screen" >}}
 
 {{< include file="/static/includes/apps/InstallWizardAppNameAndVersion.md" >}}
 
-Enter the ***Photoprism* Configuration** settings.
+Enter the **Photoprism Configuration** settings.
 
 The TrueNAS app is configured with all the required environment variables, but if you want to further customize the container, click **Add** to the right of **Additional Environment Variables** for each to enter the variable(s) and values(s).
 
@@ -76,7 +75,7 @@ Leave **Host Network** unselected.
 
 Add your **Storage Configuration** settings.
 
-Set **Host Path (Path that already exists on the system)** in **Type** for ***Photoprism Import Storage***.
+Set **Host Path (Path that already exists on the system)** in **Type** for **Photoprism Import Storage**.
 Select **Enable ACL**, and then enter or browse to select the **import** dataset to populate the **Host Path** field. This is the dataset that should have a usable SMB share configured.
 
 {{< trueimage src="/images/SCALE/Apps/InstallPhotoprismStorageConfigDataACLandACE.png" alt="Add Photoprism Data Storage" id="Add Photoprism Data Storage" >}}
@@ -84,7 +83,7 @@ Select **Enable ACL**, and then enter or browse to select the **import** dataset
 Select **Add** to the right of **ACL Entries** for each user or group entry you want to add.
 For example, add the **568** user and **0**, and give each **FULL_CONTROL Access**.
 
-Repeat the above storage configuration steps for the ***Photoprism Storage*** and ***Photoprism Originals Storage*** options, ensuring that your **storage** and **originals** datasets are set as the **Host Path (Path that already exists on the system)** for each individual configuration.
+Repeat the above storage configuration steps for the **Photoprism Storage** and **Photoprism Originals Storage** options, ensuring that your **storage** and **originals** datasets are set as the **Host Path (Path that already exists on the system)** for each individual configuration.
 
 Select **Force Flag**.
 
@@ -97,7 +96,7 @@ The **Installed** screen displays with the **nextcloud** app in the **Deploying*
 
 {{< trueimage src="/images/SCALE/Apps/PhotoprismInstalled.png" alt="Photoprism Installed" id="Photoprism Installed" >}}
 
-Click **Web Portal** on the **Application Info** widget to open the *Photoprism* web portal sign-in screen.
+Click **Web Portal** on the **Application Info** widget to open the Photoprism web portal sign-in screen.
 
 {{< trueimage src="/images/SCALE/Apps/PhotoprismSignInScreen.png" alt="Photoprism Sign In Screen" id="Photoprism Sign In Screen" >}}
 
@@ -105,7 +104,7 @@ Click **Web Portal** on the **Application Info** widget to open the *Photoprism*
 
 ## Understanding App Installation Wizard Settings
 
-The following section provides more detailed explanations of the settings in each section of the **Install *Photoprism*** installation wizard.
+The following section provides more detailed explanations of the settings in each section of the **Install Photoprism** installation wizard.
 
 ### Application Name Settings
 
@@ -113,15 +112,15 @@ The following section provides more detailed explanations of the settings in eac
 
 ### Photoprism Configuration Settings
 
-*Photoprism* configuration settings include setting up credentials, *APT packages* (previously referred to as the commands), the *host IP and port, data directory path, upload limits, execution times, memory limits and cache memory consumption, adding a cron job with schedule, and adding additional environment variables*.
+Photoprism configuration settings include setting up credentials, *APT packages* (previously referred to as the commands), the *host IP and port, data directory path, upload limits, execution times, memory limits and cache memory consumption, adding a cron job with schedule, and adding additional environment variables*.
 
-If you have an existing *Photoprism* account, add the credentials for that account in the **Admin User** and **Admin Password** fields.
-If you do not have an existing account, enter the name and password you want to use to create the *Photoprism* login credentials.
+If you have an existing Photoprism account, add the credentials for that account in the **Admin User** and **Admin Password** fields.
+If you do not have an existing account, enter the name and password you want to use to create the Photoprism login credentials.
 
 #### Adding Environment Variables
 
 {{< include file="/static/includes/apps/InstallWizardEnvironVariablesSettings.md" >}}
-Refer to [*Photoprism* documentation](https://docs.photoprism.app/getting-started/config-options/) for more information on environment variables.
+Refer to [Photoprism documentation](https://docs.photoprism.app/getting-started/config-options/) for more information on environment variables.
 
 ### User and Group Configuration
 
@@ -137,7 +136,7 @@ Create any app administrator user before installing the application, and take no
 Enter this user ID when configuring the user for the app and as the user when setting up storage volume permissions.
 
 ### Network Configuration
-The default web port for *Photoprism* is ***20800***.
+The default web port for Photoprism is **20800**.
 {{< include file="static/includes/apps/InstallWizardHostNetworkSettings.md" >}}
 {{< include file="/static/includes/apps/InstallWizardDefaultPorts.md" >}}
 {{< include file="/static/includes/apps/InstallWizardAdvancedDNSSettings.md" >}}
@@ -150,13 +149,13 @@ TrueNAS provides two options for storage volumes: ixVolumes and host paths.
 To allow TrueNAS to create the storage volume, leave **Type** set to **ixVolume (Dataset created automatically by the system)**.
 This adds a storage volume for the application nested in the hidden **ix-apps** dataset, located on the pool selected as the apps pool.
 Using ixVolume is intended for a test deployment of an app but not for a full app deployment, as data does not persist for these volumes after deleting the app where a dataset does.
-Datasets make recovering, transferring, and accessing app configuration, user, or other data possible where ixVolumes do not. 
+Datasets make recovering, transferring, and accessing app configuration, user, or other data possible where ixVolumes do not.
 
 To use an existing dataset, which is the recommended option, set **Type** to **Host Path (Path that already exists on the system)**.
 
-If the install wizard shows a **Mount Path**, either accept the default value or enter the correct mount path. For example, if the dataset name is *data*, enter */data* as the mount path. 
+If the install wizard shows a **Mount Path**, either accept the default value or enter the correct mount path. For example, if the dataset name is *data*, enter */data* as the mount path.
 
-During this step, ensure that the ***import*** dataset is configured with an SMB share and selected as the host path for the ***Photoprism Import Storage*** **Type**, as this is the dataset *Photoprism* utilizes for the import process.
+During this step, ensure that the **import** dataset is configured with an SMB share and selected as the host path for the **Photoprism Import Storage** **Type**, as this is the dataset Photoprism utilizes for the import process.
 
 Select **Enable ACL** to define ACL permissions and populate the **Host Path** field by either entering or browsing to and selecting the dataset location.
 Populating the **Host Path** with the dataset location and then selecting **Enable ACL** clears the values, so we recommend selecting **Enable ACL** before entering the host path.
@@ -183,7 +182,7 @@ Save the ACL before leaving the screen.
 
 #### Mounting an SMB Share Storage Volume
 
-TrueNAS **Additional Storage** options include the ability to mount an SMB share inside the container pod. The SMB share on your ***import*** dataset from prior steps does not require further configuration in this step.
+TrueNAS **Additional Storage** options include the ability to mount an SMB share inside the container pod. The SMB share on your **import** dataset from prior steps does not require further configuration in this step.
 {{< include file="/static/includes/apps/InstallAppsStorageConfig2.md" >}}
 
 {{< include file="/static/includes/apps/InstallWizardStorageSMBOption.md" >}}
