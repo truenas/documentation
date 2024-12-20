@@ -44,7 +44,7 @@ Applications are provided "as-is" and can introduce system stability or security
 Make sure the application is required for your specific use requirements and does not violate your security policies before installation.
 
 You must choose a pool before you can install an application.
-See [Advanced Guidance](#advanced-guidance) below for more information about apps pool selection.
+See [Choosing the Apps Pool](#choosing-the-apps-pool) below for more information about apps pool selection.
 
 As of 24.10, TrueNAS apps use Docker containers and Docker Compose for deployment.
 Docker is an open-source software that manages images and container deployments.
