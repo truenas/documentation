@@ -40,3 +40,7 @@ Select the GPU device(s) to isolate from the dropdown list.
 {{< trueimage src="/images/SCALE/SystemSettings/IsolatedGPUPCIIDsSelect.png" alt="Select Devices" id="Select Devices" >}}
 
 Click **Save**.
+
+{{< hint type=info title="Reboot Required" >}}
+Reboot the system after adding or removing a GPU from isolation to ensure the device isolation status is fully updated.
+{{< /hint >}}
