@@ -6,7 +6,6 @@ weight: 40
 aliases:
  - /scale/gettingstarted/migrate/scalezfsflagremoval/
  - /scale/gettingstarted/migrate/componentnaming/
- - /scale/gettingstarted/migrate/migratecorehatoscaleha/
  - /scale/gettingstarted/migrate/migratingfromcore/
  - /scale/gettingstarted/migrate/migrateprep/
 tags:
