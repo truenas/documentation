@@ -34,7 +34,7 @@ Before you install the Emby app:
 <div style="margin-left: 33px">{{< trueimage src="/images/SCALE/Apps/EmbyDetailsScreen.png" alt="Nextcloud App Details Screen" id="Nextcloud App Details Screen" >}}</div>
 
 {{< include file="/static/includes/apps/BeforeYouBeginAddNewAppUser.md" >}}
-<div style="margin-left: 33px">The Emby run-as user ID is **0**. The app also includes the default **apps** user ID **568**.
+<div style="margin-left: 33px">The Emby run-as user ID is <b>0</b>. The app also includes the default <b>apps</b> user ID <b>568</b>.
 If you create a new TrueNAS user to serve as the administrator for the app, make note of the UID, and add it to the ACL permissions for each dataset created for and used by the app.</div>
 
 {{< include file="/static/includes/apps/BeforeYouBeginAddAppDatasets.md" >}}
