@@ -166,7 +166,7 @@ Open and read snippet files to determine where to use them in your tutorial.
 | Additional Storage SMB Option | InstallWizardStorageSMBOption.md | Details on the Additional Storage volume SMB share option. |
 | Storage Temporary and tmpfs directories | InstallWizardStorageTemporaryAndTmpfs.md | Details on the **Temporary** and **Tmpfs** directory storage options that are available as primary and/or additional storage volume types, and when to use each. |
 | Users and Groups | InstallWizardUserAndGroupConfig.md | Details user and group setting options. |
-| Labels Configuration | InstallWizardLabelsConfiguration.md | Details on using label-based configuration. |
+| Labels Configuration | InstallWizardLabelsConfiguration.md | Details on using Docker label-based configuration. |
 | Resource Configuration | InstallWizardResourceConfig.md | Details CPU and memory setting options for all apps. If the app includes GPU passthrough, use with the InstallWizardGPUPassthrough.md snippet. |
 | GPU Passthrough | InstallWizardGPUPassthrough.md | Details information on GPU settings if the app includes the GPU passthrough settings. Not present if the app does not detect a GPU device. |
 {{< /truetable >}}

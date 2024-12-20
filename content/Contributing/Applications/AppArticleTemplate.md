@@ -118,7 +118,8 @@ Prepare TrueNAS before installing the app by:
 {{< include file="/static/includes/apps/BeforeYouBeginStableApps.md" >}}
 {{< include file="/static/includes/apps/BeforeYouBeginRunAsUser.md" >}}
 
-<!-- Use the style="margin-left: 33px" tags for this and other indicated elements to indent them in line with the indented snippet text in the rendered article. -->
+<!-- Use the style="margin-left: 33px" tags for this and other indicated elements to indent them in line with the indented snippet text in the rendered article.
+Replace Markdown tags with html tags as Markdown tags do not render if you use the <div></div> and <p></p> tags. -->
 <!-- replace the image path and name
 <div style="margin-left: 33px">{{< trueimage src="/images/SCALE/Apps/PlexDetailsScreen.png" alt="Plex App Details Screen" id="Plex App Details Screen" >}}</div>
 -->
@@ -132,10 +133,11 @@ NOTE: Include the HTML styling to align the indented paragraph with the bullet l
 
 <div style="margin-left: 33px">{{< include file="/static/includes/apps/BeforeYouBeginAddAppDatasetsProcedure.md" >}}</div>
 
-<!-- Include this snippet and a modified version of the indented text if the app requires setting up a certificate. 
+<!-- Include this snippet and a modified version of the indented text if the app requires setting up a certificate.
+If the Install wizard does not include the certificate field, do not include this snippet or content. -->
 {{< include file="/static/includes/apps/BeforeYouBeginAddAppCertificate.md" >}} 
 
-  <p style="margin-left: 33px">Adding a certificate is optional but if you want to use a certificate for this application, either create a new self-signed CA and certificate or import an existing CA and create the certificate for Nextcloud. A certificate is not required to deploy the application.</p> -->
+  <p style="margin-left: 33px">Adding a certificate is optional but if you want to use a certificate for this application, either create a new self-signed CA and certificate or import an existing CA and create the certificate for Nextcloud. A certificate is not required to deploy the application.</p>
 
 <!-- Include this snippet if the app requires setting up a new TrueNAS user account before installing the app in TrueNAS, if not remove the snippet. -->
 {{< include file="/static/includes/apps/BeforeYouBeginAddNewAppUser.md" >}}
@@ -168,16 +170,16 @@ Accept the default values in both **User and Group Configuration** and **Network
 (Optional) If you created a new user to administer apps, enter that user ID in the user and group fields.
 See [User and Group Configuration](#user-and-group-configuration) and [Network Configuration](#network-configuration) for more details.
 
-Leave **Host Network** unselected.-->
+Do not select **Host Network** if it is not selected. If checkmarked, select to clear it.-->
 
 Add your **Storage Configuration** settings.
 
 Set **Host Path (Path that already exists on the system)** in **Type** for ***Data Storage***.
-Select **Enable ACL**, and then enter or browse to and select the **data** dataset to populate the **Host Path** field.
+Select **Enable ACL**, and then enter or browse to select the ***data*** dataset to populate the **Host Path** field.
 <!-- replace image with the path to the image you want to add:
 {{< trueimage src="/images/SCALE/Apps/InstallPlexStorageConfigDataACLandACE.png" alt="Add Plex Data Storage" id="Add Plex Data Storage" >}}-->
 
-Select **Add** to the right of **ACL Entries** for each user or group entry you want to add.
+Click **Add** to the right of **ACL Entries** for each user or group entry you want to add.
 For example, add the **568** user and **0**, and give each **FULL_CONTROL Access**.
 
 Select **Force Flag**.
@@ -262,12 +264,12 @@ You can add extra storage volumes at the time of installation or edit the applic
 You can configure ACL permissions for the required dataset in the **Install Netdata** wizard, or from the **Datasets** screen any time after adding the datasets.
 
 {{< include file="/static/includes/apps/InstallWizardStorageACLConfig.md" >}}
-<!-- replace the UIDs in the section below with the user IDs or run as user ID -->
+<!-- replace the UIDs in the section below with the user IDs or run as user ID. Include any other app specific user information.This might become a snippet. -->
 {{< expand "Adding ACL Permissions from the Datasets Screen" "v">}}
-First select the dataset row, and scroll down to the **Permissions** widget, and then click **Edit** to open the **Edit ACL** screen.
+First, select the dataset row, then scroll down to the **Permissions** widget, and then click **Edit** to open the **Edit ACL** screen.
 Change the **@owner** and **@group** values from **root** to the administrative user for your TrueNAS system, and click apply for each.
 Next, add an ACL entry for the run-as user.
-For Netdata, the run-as users is **0** for **root**. Add a user entry for this user.
+For *Netdata*, the run-as users is **0** for **root**. Add a user entry for this user.
 Save the ACL before leaving the screen.
 {{< /expand >}}
 
