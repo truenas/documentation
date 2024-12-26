@@ -47,7 +47,7 @@ Open the **Reports** page and click <i class="material-icons" aria-hidden="true"
 
 ## Share Report
 
-By default, user-created reports are available only to that user.
+By default, user-created reports are only available to that user.
 To share a report with other users or teams, open the **Reports** page and click the <mat-icon _ngcontent-fxr-c199="" role="img" class="mat-icon notranslate material-icons mat-icon-no-color" aria-hidden="true">share</mat-icon> icon for the chart.
 
 ![ReportsSharing](/images/TrueCommand/Reports/ReportsShareReport.png "Reports Sharing")
