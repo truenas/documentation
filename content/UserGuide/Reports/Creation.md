@@ -54,7 +54,7 @@ Fill in the following options when adding a custom chart:
 * General settings: Enter a Title, Subtitle (optional), Axis label (optional), Point size, Line size, Y min (optional), and Y max (optional) for the chart.
   You can set `Stack the values` to bring data points on the chart closer together.
   `Stack the values` is helpful for charts with many different data points at the max Y value.
-* Data sources: Add data sources (like disk read and write IOPs) to the chart by expanding a category and selecting which sources you want.
+* Data sources: Add data sources (like disk read and write IOPs) to the chart by clicking the **Data sources** dropdown and selecting which sources you want.
   You can add multiple data sources to one chart.
 * Summary: This step shows all chosen values.
   Click **SAVE** to add the custom chart to the report. Click **BACK** to change a setting or data source.
