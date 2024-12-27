@@ -47,6 +47,22 @@ The end-of-support date for TrueNAS Mini E systems is November 7, 2025.
 * <a href="https://www.truenas.com/docs/files/MiniEHUG.pdf" download>Mini E Hardware Upgrades Guide</a>: Instructions for replacing or adding components inside a TrueNAS Mini E system.
 * <a href="https://www.truenas.com/docs/files/MiniEOOBM.pdf" download>Mini E Out-of-Band Management</a>: Instructions for configuring the BIOS in a TrueNAS Mini E system.
 
+#### TrueNAS Mini X
+
+The TrueNAS Mini X was designated end-of-life (EOL) by iXsystems on December 31, 2024.
+The end-of-support date for TrueNAS Mini X systems is October 10, 2029.
+
+* <a href="https://www.truenas.com/docs/files/TrueNAS%20Mini%20X%20EOL.pdf" download>TrueNAS Mini X EOL December 2024</a>: Official iXsystems EoL for the TrueNAS Mini X system.
+* <a href="https://www.truenas.com/docs/files/MiniFamily3.7.pdf" download>NAS Mini Basic Setup Guide v.3.7</a>: Setup Guide for TrueNAS Mini Products, including some that are now end of life.
+* <a href="https://www.truenas.com/docs/files/MiniXHardwareUpgradesGuide1.0.pdf" download>Mini X Hardware Upgrades Guide</a>: Instructions for replacing or adding components inside a TrueNAS Mini X system.
+* <a href="https://www.truenas.com/docs/files/MiniXOOBM1.3.pdf" download>Mini X Out-of-Band Management</a>: Instructions for configuring the BIOS in a TrueNAS Mini X system.
+
+#### TrueNAS Mini XL+
+
+* <a href="https://www.truenas.com/docs/files/MiniFamily3.7.pdf" download>NAS Mini Basic Setup Guide v.3.7</a>: Setup Guide for TrueNAS Mini Products, including some that are now end of life.
+* <a href="https://www.truenas.com/docs/files/MiniXL+HardwareUpgradesGuide1.2.pdf" download>Mini XL+ Hardware Upgrades Guide</a>: Instructions for replacing or adding components inside a TrueNAS Mini XL+ system.
+* <a href="https://www.truenas.com/docs/files/MiniX+XL+OOBM1.2.pdf" download>Mini XL+ Out-of-Band Management</a>: Instructions for configuring the BIOS in a TrueNAS Mini XL+ system.
+
 ### FreeNAS Minis (Gen 2)
 
 The FreeNAS Mini and Mini XL (Gen 2) were designated end-of-life (EOL) by iXsystems on February 25, 2020.
