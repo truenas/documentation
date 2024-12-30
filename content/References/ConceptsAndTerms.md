@@ -1,6 +1,6 @@
 ---
 title: "Concepts and Terminology"
-description: "Provides a glossary of terms and definitions used in TrueNAS and general network attach storage (NAS) software."
+description: "Provides a glossary of terms and definitions used in TrueNAS and general network attached storage (NAS) software."
 weight: 10
 ---
 
