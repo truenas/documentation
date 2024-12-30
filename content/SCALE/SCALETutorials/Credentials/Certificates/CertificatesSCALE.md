@@ -1,6 +1,6 @@
 ---
 title: "Managing Certificates"
-description: "Provides information on adding or managing certificates in SCALE."
+description: "Provides information on adding or managing certificates in TrueNAS."
 weight: 10
 aliases: 
 tags:
@@ -55,7 +55,7 @@ Click **Save** to add the certificate.
 
 To import a certificate, first select **Import Certificate** as the **Type** and name the certificate.
 
-Next, if the CSR exists on your SCALE system, select **CSR exists on this system** and then select the CSR.
+Next, if the CSR exists on your TrueNAS system, select **CSR exists on this system** and then select the CSR.
 
 Copy/paste the certificate and private Keys into their fields, and enter and confirm the passphrase for the certificate if one exists.
 

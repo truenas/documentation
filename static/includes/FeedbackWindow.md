@@ -3,7 +3,7 @@
 The **Send Feedback** ![FeedbackIcon](/images/SCALE/Dashboard/FeedbackIcon.png "Feedback Icon") icon opens a feedback window.
 Alternately, go to **System** > **General**, find the **Support** widget, and click **File Ticket** to see the feedback window.
 
-The feedback window allows users to send page ratings, comments, and report issues or suggest improvements directly to the TrueNAS development team.
+The feedback window allows users to send page ratings, comments, vote for new features on the community forum, report issues, or suggest improvements directly to the TrueNAS development team.
 Submitting a bug report requires a free [Atlassian account](https://id.atlassian.com/signup).
 
 {{< trueimage src="/images/SCALE/Dashboard/FeedbackWindow.png" alt="Send Feedback Window" id="Send Feedback Window" >}}
@@ -34,7 +34,7 @@ Include system debug and screenshot files to also speed up the issue resolution.
 {{< enterprise >}}
 When an Enterprise license is applied to the system, the **Report a bug** tab has additional environment and contact information fields for sending bug reports directly to iXsystems.
 
-{{< trueimage src="/images/SCALE/Dashboard/FeedbackWindowEnterpriseBugReport.png" alt="SCALE Enterprise Bug Report Form" id="SCALE Enterprise Bug Report Form" >}}
+{{< trueimage src="/images/SCALE/Dashboard/FeedbackWindowEnterpriseBugReport.png" alt="TrueNAS Enterprise Bug Report Form" id="TrueNAS Enterprise Bug Report Form" >}}
 
 Filling out the entire form with precise details and accurate contact information ensures a prompt response from the iXsystems Customer Support team.
 {{< /enterprise >}}

@@ -1,6 +1,6 @@
 ---
 title: "Users Screens"
-description: "Provides information on the Users screens and settings and information on settings for the TrueNAS SCALE Shell screen."
+description: "Provides information on the Users screens and settings in TrueNAS."
 weight: 10
 aliases: 
  - /scale/scaleclireference/account/
@@ -85,7 +85,7 @@ Built-in users (except the **root** user) do not include the **Home Directory Pe
 ### Directories and Permissions settings
 **Directory and Permissions** settings specify the user home directory and the permissions for that home directory.
 
-{{< trueimage src="/images/SCALE/Credentials/AddUserHomeDirPermSCALE.png" alt="Directories and Permissions Settings" id="Directories and Permissions Settings" >}}
+{{< trueimage src="/images/SCALE/Credentials/AddUserHomeDirPerm.png" alt="Directories and Permissions Settings" id="Directories and Permissions Settings" >}}
 
 {{< expand "Directories and Permissions Settings" "v" >}}
 {{< truetable >}}
@@ -102,7 +102,7 @@ Built-in users (except the **root** user) do not include the **Home Directory Pe
 **Authentication** settings specify authentication methods, the public SSH key, user administration access, and enable/disable password authentication.
 The add and edit user screens grant access to a shell option, but the [privilege screen **Web Shell Access** setting]({{< relref "LocalGroupsScreens.md#PrivilegesScreen" >}}) determines the ability to see the **System > Shell** screen.
 
-{{< trueimage src="/images/SCALE/Credentials/AddUserHomeDirAuthSCALE.png" alt="Authentication Settings" id="Authentication Settings" >}}
+{{< trueimage src="/images/SCALE/Credentials/AddUserHomeDirAuth.png" alt="Authentication Settings" id="Authentication Settings" >}}
 
 {{< expand "Click Here for More Information" "v" >}}
 {{< truetable >}}
@@ -126,7 +126,7 @@ You can set a specific [shell]({{< relref "UseScaleShell.md" >}}) for the user f
 {{< truetable >}}
 | Shell | Description |
 |-------|-------------|
-| **nologin** | Use when creating a system account or to create a user account that can authenticate with shares but that cannot log in to the TrueNAS system using SSH. In rare cases where a CORE user has `/etc/netcli` set as the user shell, then migrates to SCALE the user shell changes to `/user/sbin/nologin` as the default. |
+| **nologin** | Use when creating a system account or to create a user account that can authenticate with shares but that cannot log in to the TrueNAS system using SSH. In rare cases where a TrueNAS 13.0 user has `/etc/netcli` set as the user shell then migrates to TrueNAS 24.04, the user shell changes to `/user/sbin/nologin` as the default. |
 | **bash** | [Bourne Again shell](https://www.gnu.org/software/bash/manual/bash.html) for the GNU operating system. |
 | **rbash** | [Restricted bash](https://www.gnu.org/software/bash/manual/html_node/The-Restricted-Shell.html) |
 | **dash** | [Debian Almquist shell](https://man7.org/linux/man-pages/man1/dash.1.html) |

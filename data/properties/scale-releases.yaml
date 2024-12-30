@@ -1,11 +1,11 @@
 ---
 id: "scale-schedule"
-img: "/images/truenas_scale-logo-full-color-rgb.png"
-product: "TrueNAS SCALE"
-title: "SCALE&trade; | Enterprise&trade;"
+img: "/images/tn-openstorage-logo.png"
+product: "TrueNAS"
+title: "TrueNAS<sup>&reg;</sup> | Enterprise&trade;"
 majorVersions:
   - lifecycle: "Previous"
-    name: "TrueNAS SCALE 24.04 - Dragonfish"
+    name: "TrueNAS 24.04 - Dragonfish"
     releaseName: "Dragonfish"
     releases:
       - name: "24.04.2.5"
@@ -14,21 +14,21 @@ majorVersions:
         releaseDate: "2024-11-08"
         latest: true
   - lifecycle: "Current"
-    name: "TrueNAS SCALE 24.10 - Electric Eel"
+    name: "TrueNAS 24.10 - Electric Eel"
     releaseName: "Electric Eel"
     releases:
-      - name: "24.10.0.2"
-        type: "Maintenance"
-        link: "https://www.truenas.com/docs/scale/24.10/gettingstarted/scalereleasenotes/#241002-changelog"
-        releaseDate: "2024-11-08"
-        latest: true
       - name: "24.10.1"
         type: "Maintenance"
+        link: "https://www.truenas.com/docs/scale/24.10/gettingstarted/scalereleasenotes/#24101-changelog"
+        releaseDate: "2024-12-17"
+        latest: true
+      - name: "24.10.2"
+        type: "Maintenance"
         link: ""
-        releaseDate: "2024-12-12"
+        releaseDate: "2025-01-28"
         latest: false
   - lifecycle: "Next"
-    name: "TrueNAS SCALE 25.04 - Fangtooth"
+    name: "TrueNAS 25.04 - Fangtooth"
     releaseName: "Fangtooth"
     releases:
       - name: "25.04 Nightlies"

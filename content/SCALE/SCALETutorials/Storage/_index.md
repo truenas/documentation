@@ -1,6 +1,6 @@
 ---
 title: "Storage"
-description: "Tutorials for configuring the various features contained within the Storage area of the TrueNAS SCALE web interface."
+description: "Tutorials for configuring the various features contained within the Storage area of the TrueNAS web interface."
 geekdocCollapseSection: true
 weight: 5
 aliases:
@@ -14,12 +14,12 @@ keywords:
 - nas data storage
 ---
 
-The SCALE Storage section has controls for pools, snapshots, and disk management.
+The TrueNAS Storage section has controls for pools, snapshots, and disk management.
 This section also provides access to datasets, zvols, quotas, and permissions.
 
 ## Storage Overview
 
-{{< trueimage src="/images/SCALE/Storage/StorageDashboardWithPool.png" alt="SCALE Storage Daashboard" id="SCALE Storage Dashboard" >}}
+{{< trueimage src="/images/SCALE/Storage/StorageDashboardWithPool.png" alt="TrueNAS Storage Daashboard" id="TrueNAS Storage Dashboard" >}}
 
 Use the **Import Pool** button to reconnect pools exported/disconnected from the current system or created on another system.
 This also reconnects pools after users reinstall or upgrade the TrueNAS system.

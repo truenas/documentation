@@ -64,7 +64,7 @@ You can also link directly just by typing the URL with no additional markup: `ww
 HTML linking syntax is also allowed: `<a href="www.example.com">Example Site</a>`
 
 You can also use the `relref` shortcode to link to documents on the TrueNAS Documentation Hub website.
-For example, linking to an existing article such as a SCALE tutorial [Dashboard]({{ relref "/SCALE/SCALETutorials/Dashboard.md" }}).
+For example, linking to an existing article such as a TrueNAS tutorial [Dashboard]({{ relref "/SCALE/SCALETutorials/Dashboard.md" }}).
 
 To link to another section of the **same** article, use an anchor (`#`) to refer to that section header.
 The header title needs to be in lower case and spaces replaced with dashes (-): `[Escape Characters](#escape-characters)`

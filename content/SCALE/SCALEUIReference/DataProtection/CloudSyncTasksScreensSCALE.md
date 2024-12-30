@@ -11,7 +11,7 @@ tags:
 - cloud-storage-migration
 ---
 
-The **Cloud Sync Tasks** widget on the **Data Protection** screen shows configured cloud sync tasks, and provides access to configuration screens to add single-time or scheduled recurring transfers between TrueNAS SCALE and a cloud storage provider.
+The **Cloud Sync Tasks** widget on the **Data Protection** screen shows configured cloud sync tasks, and provides access to configuration screens to add single-time or scheduled recurring transfers between TrueNAS and a cloud storage provider.
 Cloud sync tasks are an effective method to back up data to a remote location, or to perform cloud-storage-migration through a  provider.
 
 {{< include file="/static/includes/CloudServiceProvidersSCALE.md" >}}
@@ -138,7 +138,7 @@ The **Manage Credentials** link opens the **Backup Credentials** screen where yo
 The **Add Bucket** screen opens when **Add New** is selected from the **Bucket** dropdown in **Remote Settings**.
 It is only available for Storj-iX provider credentials.
 
-{{< trueimage src="static/images/SCALE/DataProtection/AddCloudSyncTaskNewBucket.png" alt="Add Bucket Screen" id="Add Bucket Screen" >}}
+{{< trueimage src="/images/SCALE/DataProtection/AddCloudSyncTaskNewBucket.png" alt="Add Bucket Screen" id="Add Bucket Screen" >}}
 
 {{< truetable >}}
 | Settings | Description |
@@ -188,9 +188,11 @@ The **Advanced Remote Options** settings are for advanced users to configure rem
 | Settings | Description |
 |----------|-------------|
 | **Remote Encryption** | Select to use [rclone crypt](https://rclone.org/crypt/) encryption during pull and push transfers. Selecting **PUSH** in **Direction** encrypts files before transfer and stores the encrypted files on the remote system. Files are encrypted using the encryption password and encryption salt values. Selecting **PULL** decrypts files stored on the remote system before the transfer. Transferring the encrypted files requires entering the same encryption password and encryption salt used to encrypt the files. Additional details about the encryption algorithm and key derivation are available in the [rclone crypt File formats documentation](https://rclone.org/crypt/#file-formats). |
-| **Filename Encryption** | Selected by default. When selected, the pull and push transfers encrypt or decrypt file names with the rclone [Standard file name encryption mode](https://rclone.org/crypt//#file-name-encryption-modes). The original directory structure of the files is preserved. <br>When enabled, file names are encrypted, file names are limited to 143 characters, directory structure is visible, and files with identical names have identical uploaded names. File names can use sub-paths, single copy files, and shortcuts to shorten the directory recursion. <br>When disabled, encryption does not hide file names or directory structure, file names can be 246 characters long, use sub-paths, and copy single files. |
+| **Filename Encryption** | **Not recommended** (see below). When selected, transfers encrypt and decrypt file names with the rclone [Standard file name encryption mode](https://rclone.org/crypt//#file-name-encryption-modes). The original directory structure of the files is preserved. <br>When enabled, file names are encrypted, file names are limited to 143 characters, directory structure is visible, and files with identical names have identical uploaded names. File names can use sub-paths, single copy files, and shortcuts to shorten the directory recursion. <br>When disabled, encryption does not hide file names or directory structure, file names can be 246 characters long, use sub-paths, and copy single files. |
 | **Encryption Password** | Enter the password to encrypt and decrypt remote data.<br>Warning: Always securely back up this password! Losing the encryption password results in data loss. |
 | **Encryption Salt** | Enter a long string of random characters for use as salt for the encryption password.<br>Warning: Always securely back up the encryption salt value! Losing the salt value results in data loss. |
 | **Transfers** | Enter the number of simultaneous file transfers. Enter a number based on the available bandwidth and destination system performance. See [rclone --transfers](https://rclone.org/docs/#transfers-n). |
-| **Bandwidth limit** | Enter a single bandwidth limit or bandwidth limit schedule in rclone format. Separate entries by pressing <kbdEnter</kbd>. Example: *08:00,512 12:00,10MB 13:00,512 18:00,30MB 23:00,off*. You can specify units with the beginning letter **b**, **k** (default), **M**, or **G**. See [rclone --bwlimit](https://rclone.org/docs/#bwlimit-bandwidth-spec). |
+| **Bandwidth limit** | Enter a single bandwidth limit or bandwidth limit schedule in rclone format. For example: *08:00,512 12:00,10MB 13:00,512 18:00,30MB 23:00,off*. Separate entries by pressing <kbd>Enter</kbd>. You can specify units with the beginning letter **b**, **k** (default), **M**, or **G**. See [rclone --bwlimit](https://rclone.org/docs/#bwlimit-bandwidth-spec). |
 {{< /truetable >}}
+
+{{< include file="/static/includes/FilenameEncryption.md" >}}

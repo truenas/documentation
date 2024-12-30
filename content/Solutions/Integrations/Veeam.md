@@ -1,6 +1,6 @@
 ---
 title: "Veeam"
-description: "Guide for deploying TrueNAS CORE systems as a Veeam backup solution."
+description: "Guide for deploying TrueNAS systems as a Veeam backup solution."
 weight: 40
 aliases:
   - /core/solutions/integrations/veeam/
@@ -43,7 +43,7 @@ When deploying TrueNAS with Veeam users should prepare the following:
 * Backup proxies as defined by Veeam - these can be virtual or physical machines or the backup server itself for low workloads
 * TrueNAS appliance configured with an S3 credential to use Veeam immutability and harden the server.
 
-[Update the TrueNAS CORE]({{< relref "/CORE/CORETutorials/UpdatingTrueNAS/_index.md" >}}) systems to the latest version before beginning deployment.
+Update the TrueNAS systems to the latest version before beginning deployment.
 
 This ensures the appliance has the latest bug fixes, security updates, and software enhancements to ensure maximum performance and security.
 If deploying on a closed network (LAN) without access to the Internet, users can also obtain and apply an update manually.
@@ -55,8 +55,7 @@ For assistance, please contact TrueNAS support.
 
 ## Sizing Considerations
 
-When planning sizing, you must consider the TrueNAS storage appliances range from entry-level to high-end, and the user system current usage scenario and 
-backup demands.
+When planning sizing, you must consider the TrueNAS storage appliances range from entry-level to high-end, and the user system current usage scenario and backup demands.
 
 ### Defining Your Storage Usage
 
@@ -87,7 +86,7 @@ However, bandwidth can be greatly reduced if users can accept incremental and st
 For example, run an incremental backup on all VMs each day, and a full backup on 100 VMs per night, rotating a different 100 VMs each night.
 This strategy provides a 5X increase to the  maximum number of VMs and reduces costs by 75%.
 
-### Choosing a TrueNAS Model 
+### Choosing a TrueNAS Model
 
 TrueNAS systems are excellent for backup and archiving, but must be correctly sized.
 Recommended sizing:
@@ -102,12 +101,12 @@ Recommended sizing:
 | TrueNAS M60 | No | 303600 | 100 GbE | 15.8 PB |
 {{< /truetable >}}
 
-* Backup Only? Assumes using the storage only as a backup repository.
+* **Backup Only?** assumes using the storage only as a backup repository.
   This can be understood as a recommendation, not a rule.
   The number of VMs is based upon conservative throughput estimates with an average VM size set as 100GB and a backup window of eight hours running full backups.
   All other requirements for the number of Veeam backup proxies, and networking dependencies also apply.
 
-* Number of VMs Backed Up. 
+* Number of VMs backed up.
   Numbers are based on max capacity and estimate 100GB per VM and a 2:1 optimal compression ratio.
   Compression and deduplication settings can radically change the estimates, and Veeam allows for fine-tuning.
 
@@ -121,16 +120,16 @@ Detailed configurations can be discussed with iXsystems sales representatives an
 
 ### Planning Storage Lifecycle
 
-TrueNAS storage pools can be expanded online to the maximum size supported by a particular TrueNAS system. 
-Storage pools can be expanded one vdev (RAID group) at a time so long as each vdev shares the same type. 
-When deploying an iSCSI share requiring a zvol (LUN), users should consider [thin provisioning]({{< relref "thinprovisioning.md" >}}) using the [sparse option](https://www.truenas.com/docs/core/storage/pools/zvols/#options) during setup.
+TrueNAS storage pools can be expanded online to the maximum size supported by a particular TrueNAS system.
+Storage pools can be expanded one vdev (RAID group) at a time so long as each vdev shares the same type.
+When deploying an iSCSI share requiring a zvol (LUN), users should consider [thin provisioning]({{< relref "thinprovisioning.md" >}}) using the sparse option during setup.
 
 ## Other Considerations
 
-In addition to the above considerations, you can use the many tools, forums, and other discussion groups to help verify the amount of storage you need for Veeam backup. 
-In many sites, Veeam compression or deduplication is around 1.5x to 2x, which is more of a reference than a rule. 
-Backup types, applications, and the diversity of VMs can all factor into the amount of storage you need. 
-You must also consider capacity alongside desired performance, as a smaller quantity of large drives often does not yield the same performance as a larger number of small drives. 
+In addition to the above considerations, you can use the many tools, forums, and other discussion groups to help verify the amount of storage you need for Veeam backup.
+In many sites, Veeam compression or deduplication is around 1.5x to 2x, which is more of a reference than a rule.
+Backup types, applications, and the diversity of VMs can all factor into the amount of storage you need.
+You must also consider capacity alongside desired performance, as a smaller quantity of large drives often does not yield the same performance as a larger number of small drives.
 For rough calculations, additional resources are listed below.
 
 * [Veeam Backup Capacity Calculator](https://calculator.veeam.com/)
@@ -157,11 +156,11 @@ Here are additional key features that are offered out-of-the-box at no extra cos
 ## Setting Up TrueNAS as a Veeam Repository
 
 Veeam Backup & Replication runs on a Windows operating system, typically Windows Server 2012 or newer, and can connect to a variety of storage systems.
-iXsystems recommends using [iSCSI on CORE]({{< relref "CORE/CORETutorials/Sharing/iSCSI/_index.md" >}}) with a [Veeam scale-out repository](https://bp.veeam.com/vbr/VBP/3_Build_structures/B_Veeam_Components/B_backup_repositories/scaleout.html) architecture.
-Users can also use [SMB]({{< relref "CORE/CORETutorials/Sharing/SMB/_index.md" >}}) to mount the volume to the backup server directly.
+iXsystems recommends using iSCSI on TrueNAS 13.0 with a [Veeam scale-out repository](https://bp.veeam.com/vbr/VBP/3_Build_structures/B_Veeam_Components/B_backup_repositories/scaleout.html) architecture.
+Users can also use [SMB](https://www.truenas.com/docs/core/13.0/coretutorials/sharing/smb/smbshare/) to mount the volume to the backup server directly.
 With support for SMB/CIFS, NFS, AFP, iSCSI, and FC, TrueNAS offers many ways to connect to Veeam backup servers.
 
-Veeam Backup & Replication provides [three tiers of immutability](https://helpcenter.veeam.com/docs/backup/vsphere/immutability_sobr.html) to temporarily prohibit deleting data from extents. 
+Veeam Backup & Replication provides [three tiers of immutability](https://helpcenter.veeam.com/docs/backup/vsphere/immutability_sobr.html) to temporarily prohibit deleting data from extents.
 [To use this immutability](https://helpcenter.veeam.com/docs/backup/vsphere/immutability_sobr.html?ver=120#preparing-to-use-immutability):
 
 * Enable S3 on the bucket you create. You can use Amazon S3 storage or another S3-compatible storage provider.

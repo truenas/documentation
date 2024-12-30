@@ -53,8 +53,9 @@ This requires entering the same password used to encrypt data in both **Encrypti
 With **Push** selected as the **Transfer Direction**, data is encrypted before it is transferred and stored on the remote system.
 This also requires entering the same password used to encrypt data in both **Encryption Password** and **Encryption Salt**.
 
-**Filename Encryption** is selected by default.
-When selected, the pull and push transfers encrypt or decrypt file names with the rclone [Standard file name encryption mode](https://rclone.org/crypt//#file-name-encryption-modes).
+{{< include file="/static/includes/FilenameEncryption.md" >}}
+
+When **Filename Encryption** is selected, transfers encrypt and decrypt file names with the rclone [Standard file name encryption mode](https://rclone.org/crypt//#file-name-encryption-modes).
 The original directory structure of the files is preserved.
 When disabled, encryption does not hide file names or directory structure, file names can be 246 characters long, use sub-paths, and copy single files.
 When enabled, file names are encrypted, file names are limited to 143 characters, directory structure is visible, and files with identical names have identical uploaded names.
@@ -73,7 +74,7 @@ Instead, files are tagged with a version number or moved to a hidden state.
 To automatically delete old or unwanted files from the bucket, adjust the [Backblaze B2 Lifecycle Rules](https://www.backblaze.com/blog/backblaze-b2-lifecycle-rules/).
 
 {{< hint type=note >}}
-A directory, deleted in BackBlaze B2 and notated with an asterisk, do not display in the SCALE UI.
+A directory, deleted in BackBlaze B2 and notated with an asterisk, do not display in the TrueNAS UI.
 These folders are essentially empty directories and Backblaze API restricts them so they do not display.
 {{< /hint >}}
 #### Amazon S3 Issues
@@ -104,7 +105,7 @@ The **Restore Cloud Sync Task** window opens.
 
 Enter a name in **Description** for this reversed task.
 
-Select the **Transfer Mode** and then define the path for a storage location on TrueNAS scale for the transferred data.
+Select the **Transfer Mode** and then define the path for a storage location on TrueNAS for the transferred data.
 
 Click **Restore**.
 

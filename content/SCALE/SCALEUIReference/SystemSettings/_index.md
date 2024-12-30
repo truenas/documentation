@@ -1,6 +1,6 @@
 ---
 title: "System Settings"
-description: "Articles describing the various screens and fields contained within the TrueNAS SCALE System Settings section."
+description: "Articles describing the various screens and fields contained within the TrueNAS System Settings section."
 geekdocCollapseSection: true
 aliases: /scale/scaleclireference/system/clicore/
 weight: 120

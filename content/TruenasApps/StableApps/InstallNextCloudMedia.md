@@ -2,11 +2,13 @@
 title: "Nextcloud"
 description: "Provides instructions to configure TrueNAS and install Nextcloud to support hosting a wider variety of media file previews such as HEIC, Mp4, and MOV files."
 weight:
-alias:
+aliases:
  - /scale/scaleuireference/apps/nextcloudscale/
  - /scale/scaletutorials/apps/installnextcloudmedia/
  - /scale/scaletutorials/apps/chartapps/installnextcloudmedia/
  - /scale/scaletutorials/apps/stableapps/installnextcloudmedia/
+ - /scale/scaletutorials/apps/communityapps/installnextcloudmedia/
+ - /truenasapps/communityapps/installnextcloudmedia/
 tags:
 - apps
 - media
@@ -17,68 +19,73 @@ keywords:
 
 Nextcloud is a drop-in replacement for many popular cloud services, including file sharing, calendar, groupware, and more.
 One of its more common uses for the home environment is serving as a media backup, and organizing and sharing service.
-This procedure demonstrates how to set up Nextcloud on TrueNAS, and configure it to support hosting a wider variety of media file previews, including High Efficiency Image Container (HEIC), MP4, and MOV files.
-The instructions in this article apply to TrueNAS 22.10.0 and later.
+This procedure demonstrates how to set up Nextcloud on TrueNAS and configure it to support hosting a wider variety of media file previews, including High-Efficiency Image Container (HEIC), MP4, and MOV files.
+
+TrueNAS offers one deployment option for setting up Nextcloud, a Linux Debian-based TrueNAS version application available in TrueNAS releases 24.10 and later.
+The instructions in this article apply to these TrueNAS 24.10 and later releases.
+
+TrueNAS offered a FreeBSD-based TrueNAS Nextcloud plugin in releases 13.0 and 13, but it is no longer available in TrueNAS 13.0 and is soon to be unavailable in 13.3. Refer to release notes for more information on upcoming and current changes.
+For more information on the FreeBSD-based Nextcloud plugin, see [Nextcloud]({{< relref "/content/solutions/integrations/nextcloud.md" >}}).
 
 {{< include file="/static/includes/AppsUnversioned.md" >}}
 
 ## Before You Begin
 Before you install the Nextcloud app:
 
-{{< include file="/static/includes/apps/AppsStableBeforeYouBegin.md" >}}
+{{< include file="/static/includes/apps/BeforeYouBeginStableApps.md" >}}
+{{< include file="/static/includes/apps/BeforeYouBeginRunAsUser.md" >}}
 
-{{< include file="/static/includes/apps/AppsBeforeYouBeginCertificate.md" >}}
+<div style="margin-left: 33px">{{< trueimage src="/images/SCALE/Apps/NextcloudDetailsScreen.png" alt="Nextcloud App Details Screen" id="Nextcloud App Details Screen" >}}</div>
 
-<p style="margin-left: 33px">Adding a certificate is optional but if you want to use a certificate for this application, either create a new self-signed CA and certificate or import an existing CA and create the certificate for Nextcloud. A certificate is not required to deploy the application.</p>
+{{< include file="/static/includes/apps/BeforeYouBeginAddNewAppUser.md" >}}
 
-* Go to **Datasets** and select the pool or dataset where you want to place the Nextcloud dataset.
-  For example, */tank/apps/nextcloud* or */tank/nextcloud*.
-  You can use either an existing pool or [create a new one]({{< relref "CreatePoolWizard.md" >}}).
+{{< include file="/static/includes/apps/BeforeYouBeginAddAppDatasets.md" >}}
 
-  [Create the three dataset(s)]({{< relref "DatasetsSCALE.md" >}}) before beginning the app installation process.
-  Nextcloud uses **html** for app data, **data** for user data, and **postgres_data** for the database data storage volume.
+<div style="margin-left: 33px"><a href="https://www.truenas.com/docs/scale/scaletutorials/datasets/datasetsscale/">Create the three dataset(s)</a> before beginning the app installation process.
+  Nextcloud uses <b>html</b> for app data, <b>data</b> for user data, and <b>postgres_data</b> for the database data storage volume.
   Earlier versions of the Nextcloud app relied on four datasets.
   If upgrading with an existing deployment of this application the app is migrated to the new configuration.
   
   You can organize these datasets under a parent dataset to keep them separated from datasets for other potential applications.
-  For example, create the *nextcloud* dataset and nest each dataset under it.
+  For example, create the <i>nextcloud</i> dataset and nest each dataset under it.
   If you organize the Nextcloud required datasets under a parent dataset you must configure ACL permissions for it.
-  Use the **Generic** dataset preset when creating the parent dataset!
-  When you add the **postgres_data** dataset, it must have a **POSIX** ACL.
+  Use the <b>Generic</b> dataset preset when creating the parent dataset!
+  When you add the <b>postgres_data</b> dataset, it must have a <b>POSIX</b> ACL.</div>
 
-  {{< expand "Configure Nextcloud Datasets and ACLs" "v" >}}
-  You must configure the ACLs permissions for two datasets while on the **Datasets** screen: the parent dataset (i.e., the *nextcloud* dataset) and the **postgres_data** dataset.
-  You can configure ACL permissions for the Nextcloud **html** and **data** datasets when prompted or configure them in the app installation wizard as described in the installation section.
+<div style="margin-left: 33px">{{< expand "Configure Nextcloud Datasets and ACLs" "v" >}}
+  You must configure the ACLs permissions for two datasets while on the <b>>Datasets</b> screen: the parent dataset (i.e., the <i>nextcloud</i> dataset) and the <b>postgres_data</b> dataset.
+  You can configure ACL permissions for the Nextcloud <b>html</b> and <b>data</b> datasets when prompted or configure them in the app installation wizard as described in the installation section.
 
-  To configure the dataset ACL permissions from the **Datasets** screen, either select the **Set ACL for this dataset** option when prompted after adding the dataset or select the dataset row, and then click **Edit** on the **Permissions** widget to open the **Edit ACL** screen.
+  To configure the dataset ACL permissions from the <b>Datasets</b> screen, either select the <b>Set ACL for this dataset</b> option when prompted after adding the dataset or select the dataset row and then click <b>Edit</b> on the <b>Permissions</b> widget to open the <b>Edit ACL</b> screen.
 
-  When adding the parent dataset, after entering the name, select the **Generic** dataset preset.
-  Select the option to edit the ACL, set the **owner** and **group** to **admin** or the name of your administration user account and click **Apply Owner** and **Apply Group**.
-  Next add an ACE entries for the **netdata** and **www-data** users and give them full permissions.
-  Click **Save Access Control List**.
+  When adding the parent dataset, select the <b>Generic</b> dataset preset after entering the name.
+  Select the option to edit the ACL, set the <b>owner</b> and <b>group</b> to <b>admin</b> or the name of your administration user account, and click <b>Apply Owner</b> and <b>Apply Group</b>.
+  Next, add an ACE entry for the <b>netdata</b> and <b>www-dat</b> users and give them full permissions.
+  Click <b>Save Access Control List</b>.
 
   {{< trueimage src="/images/SCALE/Apps/AddNextcloudParentDatasetNetdataUserACL.png" alt="Add Nextcloud Parent Dataset ACL Permissions" id="Add Nextcloud Parent Dataset ACL Permissions" >}}
 
-  When adding the **postgres_data** dataset, enter the dataset name and then click **Advanced Options** to show the advanced dataset settings.
-  Scroll down to the **ACL Type** and select **POSIX** from the dropdown list, and then click **Save**.
-  Only the **postgres_data** dataset requires the POSIX ACL type setting.
+  When adding the <b>postgres_data</b> dataset, enter the dataset name and then click <b>Advanced Options</b> to show the advanced dataset settings.
+  Scroll down to the <b>ACL Type</b> and select <b>POSIX</b> from the dropdown list, and then click <b>Save</b>.
+  Only the <b>postgres_data</b> dataset requires the POSIX ACL type setting.
 
   {{< trueimage src="/images/SCALE/Apps/SetPostgres_dataACLtoPOSIX.png" alt="Set postgres_data Dataset ACL Type" id="Set postgres_data Dataset ACL Type" >}}
 
-  Click **Set ACL for this dataset** to open the **Edit ACL** screen.
-  Set the **owner** and **group** to **netdata** and click **Apply Owner** and **Apply Group**, and then with that ACL entry highlighted, assign full control permissions before you save the ACL.
-  Click **Save Access Control List**.
+  Click <b>Set ACL for this dataset</b> to open the <b>Edit ACL</b> screen.
+  Set the <b>owner</b> and <b>group</b> to <b>netdata</b> and click <b>Apply Owner</b> and <b>Apply Group</b>, and then with that ACL entry highlighted, assign full control permissions before you save the ACL.
+  Click <b>Save Access Control List</b>.
 
   {{< trueimage src="/images/SCALE/Apps/AddPostgres_DataACLPermissions.png" alt="Add Nextcloud postgres_data Dataset ACL Permissions" id="Add Nextcloud postgres_data Dataset ACL Permissions" >}}
 
-  {{< /expand >}}
+  {{< /expand >}}</div>
 
+{{< include file="/static/includes/apps/BeforeYouBeginAddAppCertificate.md" >}}
 
-{{< include file="/static/includes/apps/AppBeforeYouBeginNewUser.md" >}}
+<p style="margin-left: 33px">Adding a certificate is optional but if you want to use a certificate for this application, either create a new self-signed CA and certificate or import an existing CA and create the certificate for Nextcloud. A certificate is not required to deploy the application.</p>
 
 * Set up a Nextcloud account.
-  If you have an existing Nextcloud account, you enter the credentials for that users in the installation wizard.
-  If do not have an existing Nextcloud account you can create the account from the application install wizard.
+  If you have an existing Nextcloud account, you enter the credentials for that user in the installation wizard.
+  If you do not have an existing Nextcloud account, you can create one using the application install wizard.
 
 ### Installing the Nextcloud App
 {{< hint info >}}
@@ -86,13 +93,12 @@ This basic procedure covers the required Nextcloud app settings.
 For optional settings, see [Understanding App Installation Wizard Settings](#understanding-app-installation-wizard-settings).
 {{< /hint >}}
 
-{{< include file="/static/includes/apps/AddMultipleAppInstancesAndNaming.md" >}}
-
+{{< include file="/static/includes/apps/MultipleAppInstancesAndNaming.md" >}}
 {{< include file="/static/includes/apps/LocateAndOpenInstallWizard.md" >}}
 
 {{< trueimage src="/images/SCALE/Apps/InstallNextcloudScreen.png" alt="Install Nextcloud Screen" id="Install Nextcloud Screen" >}}
 
-{{< include file="/static/includes/apps/AppsWizardAppNameAndVersion.md" >}}
+{{< include file="/static/includes/apps/InstallWizardAppNameAndVersion.md" >}}
 
 Next, enter the **Nextcloud Configuration** settings.
 {{< expand "Entering Nextcloud Configuration Settings" "v" >}}
@@ -114,9 +120,9 @@ The **Data Directory Path** is pre-populated with the correct path.
 {{< trueimage src="/images/SCALE/Apps/InstallNextcloudConfig2.png" alt="Enter Host and Other Config Settings" id="Enter Host and Other Config Settings" >}}
 
 Enter a password in **Redis Password** to create a new credential or enter the existing password if you already have Redis configured in your Nextcloud account.
-Enter a password in **Database Password** to create a new credential for the Nextcloud database or enter the existing password if you already have the Nextcloud account database configured.
+Enter a password in **Database Password** to create a new credential for the Nextcloud database or enter the existing password if you already have the Nextcloud account database configured. Nextcloud does not URL encode in some places so do not use the ampersand (&), at (@), hashtag (#), or percent (%) characters in the Redis password.
 
-Accept the remaining defaults in the **Nextcloud Configuration** section, but if setting up a cron job schedule, select **Enabled** under **Cron** to show the settings to allow you to schedule a cron job.
+Accept the remaining defaults in the **Nextcloud Configuration** section. However, if you are setting up a cron job schedule, select **Enabled** under **Cron** to show the settings that allow you to schedule a cron job.
 
 {{< expand "Nextcloud Cron Jobs" "v" >}}
 NextCloud cron jobs only run while the app is running. If you stop the app, the cron job(s) do not run until you start the app again.
@@ -126,6 +132,7 @@ For more information on formatting and using cron jobs, see [Managing Cron Jobs]
 
 The TrueNAS app is configured with all the required environment variables, but if you want to further customize the container, click **Add** to the right of **Additional Environment Variables** for each to enter the variable(s) and values(s).
 {{< /expand >}}
+
 Enter the network configuration settings. 
 Enter the default port, **30027**, in **WebUI Port**, or enter an available port number of your choice.
 See [Network Configuration](#network-configuration) below for more information on changing the default port.
@@ -133,7 +140,7 @@ This port must match the one used in **Host** above.
 
 If you configured a certificate, select it in **Certificate ID**. A certificate is required if you want to select an external port other than the default **30027**.
 
-Enter the storage settings for each of the datasets created for the Nextcloud app.
+Enter the storage settings for each dataset you created for the Nextcloud app.
 {{< expand "Configuring Nextcloud Storage" "v" >}}
 {{< hint type=info >}}
 Do not select **DEPRECATED: Old Storage Structure** if you are deploying Nextcloud for the first time as this slows down the installation and is not necessary.
@@ -145,12 +152,12 @@ Select **Enable ACL**, and then either enter or browse to and select the **html*
 
 {{< trueimage src="/images/SCALE/Apps/InstallNextcloudStorageAppDataACLandACESettings.png" alt="Add Nextcloud Storage for AppData" id="Add Nextcloud Storage for AppData" >}}
 
-Select **Add** to the right of **ACL Entries**, add the **33** user, and give it **FULL_CONTROL Access**.
+Select **Add** to the right of **ACL Entries**, add the **33** user ID, and give it **FULL_CONTROL Access**.
 Select **Force Flag**.
 
 Repeat this step for the **Nextcloud User Data Storage** storage volume.
 After setting **Type** to **Host Path (Path that already exists on the system)** and selecting **Enable ACL**, enter or browse to and select the **data** dataset.
-Select **Add** to the right of **ACL Entries** to add the **33** user, and give it **FULL_CONTROL Access**. Select **Force Flag**
+Select **Add** to the right of **ACL Entries** to add the **33** user ID, and give it **FULL_CONTROL Access**. Select **Force Flag**
 
 {{< trueimage src="/images/SCALE/Apps/InstallNextcloudStorageDataACLandACESettings.png" alt="Add Nextcloud Storage Volumes" id="Add Nextcloud Storage Volumes" >}}
 
@@ -173,7 +180,7 @@ The following section provides more detailed explanations of the settings in eac
 
 ### Application Name Settings
 
-{{< include file="/static/includes/apps/AppsWizardAppNameAndVersion.md" >}}
+{{< include file="/static/includes/apps/InstallWizardAppNameAndVersion.md" >}}
 
 ### Nextcloud Configuration Settings
 Nextcloud configuration settings include setting up credentials, APT packages (previously referred to as the commands), the host IP and port, data directory path, upload limits, execution times, memory limits and cache memory consumption, adding a cron job with schedule, and adding additional environment variables.
@@ -191,8 +198,8 @@ Nextcloud has three APT package options:
 
 You must add both the **ffmpeg** and **smbclient** packages to deploy this app.
 
-You can use **ocrmypdf** as well if needed, but you must also select the **Tesseract Language Code** to use. Options are **chi-sim** for Simplified Chinese or **eng** for English.
-For more information on tesseract languages to install for OCRmypdf, see [here](https://tesseract-ocr.github.io/tessdoc/Data-Files-in-different-versions.html) for a list of language codes. Typing a wrong language code blocks the container from starting. Only takes effect if ocrmypdf is selected.
+You can also use **ocrmypdf** if needed, but you must select the **Tesseract Language Code** to use. Options are **chi-sim** for Simplified Chinese or **eng** for English.
+For more information on tesseract languages to install for OCRmypdf, see [here](https://tesseract-ocr.github.io/tessdoc/Data-Files-in-different-versions.html) for a list of language codes. Typing the wrong language code blocks the container from starting. Only takes effect if ocrmypdf is selected.
 
 Click **Add** to the right of **APT Packages** for each option you want or need to add.
 {{< /expand >}}
@@ -225,9 +232,9 @@ Refer to Nextcloud documentation for more information on environment variables.
 ### Network Configuration
 The default web port for Nextcloud is **30027**.
 
-{{< include file="/static/includes/apps/AppsInstallWizardDefaultPorts.md" >}}
-{{< include file="/static/includes/apps/AppsInstallWizardAdvancedDNSSettings.md" >}}
-{{< include file="/static/includes/apps/AppInstallWizardCertificateSettings.md" >}}
+{{< include file="/static/includes/apps/InstallWizardDefaultPorts.md" >}}
+{{< include file="/static/includes/apps/InstallWizardAdvancedDNSSettings.md" >}}
+{{< include file="/static/includes/apps/InstallWizardCertificateSettings.md" >}}
 
 **Nginx Configuration** setting, **Proxy Timeout**, applies the time out (in seconds) to proxy connection, and proxy send and receive.
 The default value is **60** with a minimum of 30 seconds.
@@ -288,19 +295,19 @@ When finished you should have the **nextcloud** parent dataset with three child 
 
 #### ACL and ACE Settings
 
-{{< include file="/static/includes/apps/AppInstallWizardACLConfiguration.md" >}}
+{{< include file="/static/includes/apps/InstallWizardStorageACLConfig.md" >}}
 
 #### Mounting an SMB Share
 TrueNAS **Additional Storage** options include the ability to mount an SMB share inside the container pod.
 
-{{< include file="/static/includes/apps/AppWizardStorageSMBOption.md" >}}
+{{< include file="/static/includes/apps/InstallWizardStorageSMBOption.md" >}}
 
 ### Resource Configuration
 
 {{< trueimage src="/images/SCALE/Apps/InstallNextcloudResourcesConfig.png" alt="Resources Configuration Settings" id="Resources Configuration Settings" >}}
 
-{{< include file="/static/includes/apps/AppInstallWizardResourceConfig.md" >}}
-{{< include file="/static/includes/apps/AppsInstallWizardGPUPassthrough.md" >}}
+{{< include file="/static/includes/apps/InstallWizardResourceConfig.md" >}}
+{{< include file="/static/includes/apps/InstallWizardGPUPassthrough.md" >}}
 
 ## Troubleshooting Tips
 

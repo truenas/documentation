@@ -28,7 +28,7 @@ This command returns the same statistics that are transmitted to iXsystems when 
 {{< /expand >}}
 
 TrueNAS does not collect any user-defined names for servers, pools, datasets, shares, files, applications/jails, processes, and similar.
-In TrueNAS SCALE, applications do transmit chart release names for deployed applications (e.g. “minio/2.0.6”) but not user-defined names.
+Applications do transmit chart release names for deployed applications (e.g. “minio/2.0.6”) but not user-defined names.
 
 {{< hint type=important title="Debug files do contain sensitive user data" >}}
 While usage collection gathers only non-sensitive system data, sensitive user data is included in a TrueNAS-generated [debug file](https://www.truenas.com/docs/contributing/issuereporting/jiraissuereporting/#downloading-a-debug-file), such as those requested for a bug report, feature request, or other troubleshooting.

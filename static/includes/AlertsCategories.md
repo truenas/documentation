@@ -73,16 +73,6 @@ You can customize alert settings for when disk(s) format with the data integrity
 You can customize alert settings for when the system fails to communicate, sync the SED global password, and sync keys with the KMIP server.
 {{< /expand >}}
 
-### Plugins
-
-**Plugins** alert settings apply to plugins installed on your TrueNAS.
-{{< expand "Click here for more information" >}}
-
-![AlertSettingsPlugins](/images/SCALE/SystemSettings/AlertSettingsPlugins.png "Plugin Alert Settings")
-
-You can customize the alert setting for when plugin updates are available.
-{{< /expand >}}
-
 ### Network
 
 **Network** alert settings apply to network interfaces configured on your TrueNAS.
@@ -108,7 +98,9 @@ You can customize alert settings for when netdata has critical alerts and warnin
 **Sharing** alert settings apply to iSCSI, NFS, or SMB shares and connections configured on your TrueNAS.
 {{< expand "Click here for more information" >}}
 
-![AlertSettingsSharing](/images/SCALE/SystemSettings/AlertSettingsSharing.png "Sharing Alert Settings")
+![AlertSettingsSharing1](/images/SCALE/SystemSettings/AlertSettingsSharing1.png "Sharing Alert Settings")
+
+![AlertSettingsSharing2](/images/SCALE/SystemSettings/AlertSettingsSharing2.png "Sharing Alert Settings")
 
 You can customize alert settings for when a deprecated service is running, IP addresses bound to an iSCSI portal are not found, NFS services cannot bind to specific IP addresses using 0.0.0.0, and the system cannot resolve NFS share references hosts.
 
@@ -120,9 +112,7 @@ You can also customize alerts for when NTLMv1 attempts authentication in the las
 **Storage** alert settings apply to quotas, pools, snapshots, and scrub processes on your TrueNAS.
 {{< expand "Click here for more information" >}}
 
-![AlertSettingsStorage1](/images/SCALE/SystemSettings/AlertSettingsStorage1.png "Storage Alert Settings 1")
-
-![AlertSettingsStorage2](/images/SCALE/SystemSettings/AlertSettingsStorage2.png "Storage Alert Settings 2")
+![AlertSettingsStorage](/images/SCALE/SystemSettings/AlertSettingsStorage.png "Storage Alert Settings")
 
 You can customize alert settings for when a dataset exceeds standard and critical quotas, a pool has new available feature flags, pool space usage exceeds 70, 80, or 90 percent, and pool status is not healthy.
 

@@ -8,6 +8,8 @@ tags:
 - nfs
 ---
 
+{{< include file="/static/includes/RootLevelDatasetShareWarning.md" >}}
+
 ## About Multiprotocol Shares
 A multiprotocol or mixed-mode NFS and SMB share supports both NFS and SMB protocols for sharing data.
 Multiprotocol shares allow clients to use either protocol to access the same data.
@@ -67,7 +69,7 @@ Click **Yes** when prompted to add a Service Principal Name (SPN) entry.
 Enter the AD domain administrator user name and password in **Name** and **Password**.
 
 {{< hint type=tip >}}
-TrueNAS SCALE automatically applies SPN credentials if the NFS service is enabled with **Require Kerberos for NFSv4** selected before joining Active Directory.
+TrueNAS automatically applies SPN credentials if the NFS service is enabled with **Require Kerberos for NFSv4** selected before joining Active Directory.
 {{< /hint >}}
 
 Click **Save** again, then start the NFS service.

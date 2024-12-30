@@ -34,12 +34,11 @@ Nightly builds also accept feedback and bug tickets.
 
 Nightly builds are automatically published when automated testing passes.
 **.iso** files are available to fresh install on disposable hardware or a virtual machine.
-Switching a disposable system from CORE to SCALE typically requires a fresh install using a nightly .iso file.
 
 **.update** files are also available for manually updating an existing experimental system to a nightly build.
 
 Your testing and feedback is always welcome!
-TrueNAS SCALE nightlies have an [option in the top panel](https://www.truenas.com/docs/scale/scaleuireference/toptoolbar/#how-would-you-rate-this-page?) to submit feedback directly to the development team.
+TrueNAS nightlies have an [option in the top panel](https://www.truenas.com/docs/scale/scaleuireference/toptoolbar/#how-would-you-rate-this-page?) to submit feedback directly to the development team.
 Let us know what is working well and what can be improved!
 
 ### Legacy Releases
@@ -63,13 +62,11 @@ See the [Documentation Archive](https://www.truenas.com/docs/archive/) for conte
 
 {{< include file="/static/includes/SCALEUpgradePaths.md" >}}
 
-{{< include file="/static/includes/COREUpgradePaths.md" >}}
-
 ## Release Schedules
 
 **The release names and dates provided here are tentative and can change at any time.**
 
-Development timelines for [TrueNAS SCALE](#scale-schedule-timeline), [TrueNAS CORE](#core-schedule-timeline), and [TrueCommand](#truecommand-schedule-timeline) are available below.
+Development timelines are available below.
 
 {{< columns >}}
 

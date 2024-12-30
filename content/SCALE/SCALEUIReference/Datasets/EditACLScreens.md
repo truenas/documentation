@@ -12,8 +12,8 @@ tags:
  - permissions
 ---
 
-TrueNAS SCALE offers two Access Control List (ACL) types: POSIX (the SCALE default) and NFSv4.
-For a more in-depth explanation of ACLs and configurations in TrueNAS SCALE, see our [ACL Primer](https://www.truenas.com/docs/references/aclprimer/).
+TrueNAS offers two Access Control List (ACL) types: POSIX (the TrueNAS default) and NFSv4.
+For a more in-depth explanation of ACLs and configurations in TrueNAS, see our [ACL Primer](https://www.truenas.com/docs/references/aclprimer/).
 
 The **Dataset Preset** option on the **Add Dataset** screen sets the ACL type applied for SMB shares, apps, multi-protocol shares, and general-use datasets.
 

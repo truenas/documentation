@@ -1,6 +1,6 @@
 ---
 title: "Reporting"
-description: "Provides information on TrueNAS SCALE reporting graph screens and settings."
+description: "Provides information on TrueNAS reporting graph screens and settings."
 weight: 110
 aliases:
 - /scale/scaleuireference/reporting/
@@ -130,7 +130,7 @@ ZFS graphs show compressed physical ARC size, hit ratio, demand data, demand met
 ## Reporting Exporters Screen
 **Exporter** on the **Reporting** screen opens the **Reporting Exporter** screen.
 The **Reporting Exporters** screen displays reporting exporters configured on the system.
-Exporting enables TrueNAS SCALE to send Netdata reporting metrics to another time-series database.
+Exporting enables TrueNAS to send Netdata reporting metrics to another time-series database.
 Exporters send Netdata reporting records as JSON objects to third-party reporting collection cloud services or applications installed on servers.
 For more information, see the Netdata [exporting reference guide](https://learn.netdata.cloud/docs/exporting/exporting-reference).
 

@@ -1,6 +1,6 @@
 ---
 title: "Directory Services Screens"
-description: "Describes the screens and fields in the TrueNAS SCALE Directory Services section."
+description: "Describes the screens and fields in the TrueNAS Directory Services section."
 geekdocCollapseSection: true
 weight: 30
 aliases:

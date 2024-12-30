@@ -4,12 +4,16 @@ description: "Provides general information on SMB protocol and shares, shadow co
 weight: 50
 ---
 
-Server Message Block shares, also known as Common Internet File System (CIFS) shares, are accessible by Windows, macOS, Linux, and BSD computers.
+Server Message Block (SMB) shares, also known as Common Internet File System (CIFS) shares, are accessible by Windows, macOS, Linux, and BSD computers.
 SMB provides more configuration options than NFS and is a good choice on a network for Windows or Mac systems.
 
 TrueNAS uses [Samba](https://www.samba.org/) to share pools using Microsoft SMB protocol.
 SMB is built into the Windows and macOS operating systems and most Linux and BSD systems pre-install an SMB
 client to provide support for the SMB protocol.
+
+The maximum file size for a write request is determined from [MS-FSA section 2.1.5.4 (Server Requests a Write)](https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-fsa/fbf656c3-b897-4b9c-abfd-7c8d876d77a1).
+The maximum file size in TrueNAS 24.10.1 and later versions is 64 TiB.
+24.10.0.2 and earlier versions limit file size to 16 TiB.
 
 The SMB protocol supports many different types of configuration scenarios, ranging from the simple to complex.
 The complexity of the scenario depends upon the types and versions of the client operating systems that connects to the share, whether the network has a Windows server, and whether Active Directory is used.
@@ -25,14 +29,12 @@ Another helpful reference is [Methods For Fine-Tuning Samba Permissions](https:/
 
 {{< include file="/static/includes/SMBShareMSDOSalert.md" >}}
 
-Note: the [SMB1 protocol is disabled by default]({{< relref "/CORE/CORESecurityReports/SMB1Advisory.md" >}}).
+Note: the [SMB1 protocol is disabled by default](https://www.truenas.com/docs/core/13.0/coresecurityreports/smb1advisory/).
 
 By default, Samba disables NTLMv1 authentication for security.
 Standard configurations of Windows XP and some configurations of later clients like Windows 7 are not able to connect with NTLMv1 disabled.
 [Security guidance for NTLMv1 and LM network authentication](https://support.microsoft.com/en-us/help/2793313/security-guidance-for-ntlmv1-and-lm-network-authentication) has information about the security implications and ways to enable NTLMv2 on those clients.
 If changing the client configuration is not possible, enable NTLMv1 authentication by selecting the **NTLMv1 auth** option in the SMB service configuration screen.
-
-To view all active SMB connections and users, open an SSH or local console shell in CORE.
 
 Most configuration scenarios require each user to have their own user account and to authenticate before accessing the share.
 This allows the administrator to control access to data, provide appropriate permissions to that data, and to determine who accesses and modifies stored data.

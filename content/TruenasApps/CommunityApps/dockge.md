@@ -19,6 +19,6 @@ keywords:
 <!-- Uncomment the following line if you suspect this Community app documentation is out of date, inaccurate, or needs further improvement -->
 <!--{{< include file="/static/includes/apps/CommunityPleaseImprove.md" >}}-->
 
-[Dockge](dockge.kuma.pet) <!-- is a [description of the application] -->
+[Dockge](https://dockge.kuma.pet) <!-- is a [description of the application] -->
 
 {{< include file="/static/includes/ProposeArticleChange.md" >}}

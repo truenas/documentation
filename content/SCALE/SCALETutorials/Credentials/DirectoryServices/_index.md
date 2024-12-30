@@ -14,7 +14,7 @@ keywords:
 - nas data storage 
 ---
 
-The SCALE Directory Services tutorials contain options to edit directory domain and account settings, set up ID mapping, and configure authentication and authorization services in TrueNAS SCALE.
+The TrueNAS Directory Services tutorials contain options to edit directory domain and account settings, set up ID mapping, and configure authentication and authorization services in TrueNAS.
 
 ## Choosing Active Directory or LDAP
 

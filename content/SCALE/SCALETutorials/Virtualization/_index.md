@@ -1,6 +1,6 @@
 ---
 title: "Virtualization"
-description: "Tutorials for configuring TrueNAS SCALE virtualization features and creating virtual machines."
+description: "Tutorials for configuring TrueNAS virtualization features and creating virtual machines."
 geekdocCollapseSection: true
 aliases:
  - /scale/scaleuireference/virtualization/creatingmanagingvmsscale/
@@ -17,7 +17,7 @@ The **Virtualization** section allows users to set up Virtual Machines (VMs) to 
 Enterprise licensed High Availability (HA) systems do not support virtual machines.
 
 Delegating processes to VMs reduces the load on the physical system, which means users can utilize additional hardware resources.
-Users can customize six different segments of a VM when creating one in TrueNAS SCALE.
+Users can customize six different segments of a VM when creating one in TrueNAS.
 
 {{< expand "What system resources do VMs require?" "v" >}}
 {{< include file="/static/includes/ScaleVMReqResources.md" >}}
@@ -133,10 +133,9 @@ If you have not yet added a virtual machine to your system, click **Add Virtual 
 
    {{< trueimage src="/images/SCALE/Virtualization/AddVMGPU.png" alt="GPU Screen" id="GPU Screen" >}}
 
-   The **VirtIO** network interface requires a guest OS that supports VirtIO para-virtualized network drivers.
-
    {{< hint type="note" title="Supported GPUs" >}}
-   iXsystems does not have a list of approved GPUs at this time but does have drivers and basic support for the list of [NVIDIA Supported Products](https://www.nvidia.com/Download/driverResults.aspx/191961/en-us/).
+    iXsystems does not have a list of approved GPUs at this time but TrueNAS does support various GPU from Nvidia, Intel, and AMD.
+    As of 24.10, TrueNAS does not automatically install NVIDIA drivers. Instead, users must manually install drivers from the UI. For detailed instructions, see (https://www.truenas.com/docs/truenasapps/#installing-nvidia-drivers).
    {{< /hint >}}
 
 8. Confirm your VM settings, then click **Save**.
@@ -349,7 +348,7 @@ Confirm the ping is successful.
 
 ### Accessing TrueNAS Storage From a VM
 By default, VMs are unable to communicate directly with the host NAS.
-If you want to access your TrueNAS SCALE directories from a VM, to connect to a TrueNAS data share, for example, you have multiple options.
+If you want to access your TrueNAS directories from a VM, to connect to a TrueNAS data share, for example, you have multiple options.
 
 If your system has more than one physical interface, you can assign your VMs to a NIC other than the primary one your TrueNAS server uses. This method makes communication more flexible but does not offer the potential speed of a bridge.
 

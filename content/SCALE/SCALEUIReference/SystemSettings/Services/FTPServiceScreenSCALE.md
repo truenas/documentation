@@ -2,7 +2,7 @@
 title: "FTP Service Screen"
 description: "Provides information on the FTP services screens and settings."
 weight: 10
-alias: 
+aliases: 
  - /scale/scaleclireference/service/cliftp/
 tags:
  - services

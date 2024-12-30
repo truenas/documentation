@@ -1,8 +1,8 @@
 ---
-id: "scale-downloads"
-img: "/images/truenas_scale-logo-full-color-rgb.png"
-product: "TrueNAS SCALE"
-title: "SCALE&trade; | Enterprise&trade;"
+id: "truenas-downloads"
+img: "/images/tn-openstorage-logo.png"
+product: "TrueNAS"
+title: "TrueNAS<sup>&reg;</sup> | Enterprise&trade;"
 majorVersions:
   - lifecycle: "Archive"
     majorVersions: 
@@ -115,6 +115,9 @@ majorVersions:
     majorVersion: "24.10 (Electric Eel)"
     releaseName: "Electric Eel"
     releases:
+      - name: "24.10.1"
+        link: "https://download.truenas.com/TrueNAS-SCALE-ElectricEel/24.10.1/"
+        date: "2024-12-17"
       - name: "24.10.0.2"
         link: "https://download.truenas.com/TrueNAS-SCALE-ElectricEel/24.10.0.2/"
         date: "2024-11-08"

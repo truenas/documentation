@@ -1,11 +1,12 @@
 ---
 title: "Netdata"
-description: "Provides information on installing and configuring the Netdata app on TrueNAS SCALE."
+description: "Provides information on installing and configuring the Netdata app on TrueNAS."
 weight:
 aliases:
  - /scale/scaletutorials/apps/installnetdataapp/
  - /scale/scaletutorials/apps/chartapps/installnetdataapp/
  - /scale/scaletutorials/apps/stableapps/installnetdataapp/
+ - /truenasapps/communityapps/installnetdataapp/
 tags:
 - apps
 - reporting
@@ -15,7 +16,7 @@ keywords:
 ---
 
 The TrueNAS Netdata app provides an easy way to install and access the Netdata infrastructure monitoring solution.
-TrueNAS deploys the Netdata app in a Kubernetes container using the Helm package manager.
+TrueNAS deploys the Netdata app in a Docker container using Docker Compose.
 After successfully deploying the app, you can access the Netdata web portal from TrueNAS.
 The Netdata web portal opens on the local dashboard, and where you can create new dashboards, add plugins, metric databases, physical and virtual systems, containers, and other cloud deployments you want to monitor.
 The portal also provides access to the Netdata Cloud sign-in screen.
@@ -23,119 +24,140 @@ The portal also provides access to the Netdata Cloud sign-in screen.
 {{< include file="/static/includes/AppsUnversioned.md" >}}
 
 ## Before You Begin
-The TrueNAS Netdata app does not require advance preparation.
+Prepare TrueNAS before installing the app by:
 
-You can allow TrueNAS to automatically create storage volumes for the Netdata app or you can create specific datasets to use for configuration, cache, and library storage and extra storage volumes in the container pod.
-If using specific datasets, create these before beginning the app installation.
+{{< include file="/static/includes/apps/BeforeYouBeginStableApps.md" >}}
+{{< include file="/static/includes/apps/BeforeYouBeginRunAsUser.md" >}}
 
-The administrator account must have sudo permissions enabled.
-To verify, go to **Credentials > Local User**.
-Click on the administrator user (e.g., admin), then click **Edit**. Scroll down to the sudo permissions.
-Select either **Allow all sudo commands** to permit changes after entering a password (not recommended in this instance) or **Allow all sudo commands with not password** to permit changes without requiring a password.
-If you upgraded from Angelfish or early releases of Bluefin that do not have an admin user account, see [Creating an Admin User Account]({{< relref "ManageLocalUsersSCALE.md" >}}) for instructions on correctly creating an administrator account with the required permissions.
+<div style="margin-left: 33px">{{< trueimage src="/images/SCALE/Apps/NetdataAppDetailsScreen.png" alt="Netdata Information Screen" id="Netdata Information Screen" >}}</div>
 
-You can create a Netdata account before or after installing and deploying the Netdata app.
+{{< include file="/static/includes/apps/BeforeYouBeginAddAppDatasets.md" >}}
 
-## Installing Netdata on TrueNAS
-To install the **Netdata** application, go to **Apps**, click on **Discover Apps**, then either scroll down to the **Netdata** app widget or begin typing Netdata in the search field to filter the list to find the Netdata app widget.
+<p style="margin-left: 33px">Netdata uses three datasets: <b>config</b>, <b>lib</b>, and <b>cache</b>.
+Follow the instruction below in **Creating Datasets for Apps** to correctly set up these datasets.</p>
 
-{{< trueimage src="/images/SCALE/Apps/NetdataWidget.png" alt="Netdata App Widget" id="Netdata App Widget" >}}
+<div style="margin-left: 33px">{{< include file="/static/includes/apps/BeforeYouBeginAddAppDatasetsProcedure.md" >}}
+</div>
 
-Click on the widget to open the **Netdata** application details screen.
+* (Optional) Create a Netdata account.
+  The app install wizard allows you to create a new Netdata account when configuring the app in TrueNAS, or to configure it to use a preexisting account.
 
-{{< trueimage src="/images/SCALE/Apps/NetdataAppDetailsScreen.png" alt="Netdata App Details Screen" id="Netdata App Details Screen" >}}
+## Installing Netdata in TrueNAS
+{{< hint info >}}
+This basic procedure covers the required Netdata app settings.
+For optional settings, see [Understanding App Installation Wizard Settings](#understanding-app-installation-wizard-settings).
+{{< /hint >}}
 
-Click **Install** to open the **Install Netdata** screen.
+{{< include file="static/includes/apps/MultipleAppInstancesAndNaming.md" >}}
+
+{{< include file="/static/includes/apps/LocateAndOpenInstallWizard.md" >}}
 
 {{< trueimage src="/images/SCALE/Apps/InstallNetdataScreen.png" alt="Install Netdata Screen" id="Install Netdata Screen" >}}
 
-Application configuration settings presented in several sections, are explained in [Understanding Netdata Settings](#understanding-netdata-wizard-settings) below.
-To find specific fields click in the **Search Input Fields** search field, scroll down to a particular section or click on the section heading on the navigation area in the upper-right corner.
+{{< include file="/static/includes/apps/InstallWizardAppNameAndVersion.md" >}}
 
-Accept the default values in **Application Name** and **Version**.
+The TrueNAS app is configured with all the required environment variables, but if you want to further customize the container, click **Add** to the right of **Additional Environment Variables** for each to enter the variable(s) and values(s).
+See [Netdata Configuration](#netdata-configuration-settings) below for more information.
 
-Accept the default settings in **Netdata Configuration** and the default port in **Node Port to use for Netdata UI**.
+Accept the default values in **Network Configurations**. 
 The TrueNAS Netdata app uses the default port **20489** to communicate with Netdata and show the Netdata local dashboard.
-
-Make no changes in the **Storage** section to allow TrueNAS to create the storage volumes for the app, or to use datasets created for Netdata configuration storage, select **Enable Host Path for Netdata** to show the **Host Path for Netdata Configuration** settings.
-
-{{< trueimage src="/images/SCALE/Apps/InstallNetdataStorageEnableHostPath.png" alt="Install Netdata Storage Enable Host Path" id="Install Netdata Storage Enable Host Path" >}}
-
-Enter or browse to select the dataset created for Netdata configuration storage to populate the mount path.
-If using datasets created for cache and library storage, enable these options, then enter or browse to the datasets for each.
-
 Accept the default settings in **Advanced DNS Settings**.
+See [Network Configuration](#network-configuration-settings) below for more information.
 
-Accept the default values in **Resources Limits** or select **Enable Pod Resource limits** to show resource configuration options for CPU and memory and enter new values to suit your use case.
+Add your **Storage Configuration** settings.
+Set **Type** for **Netdata Config Storage** to **Host Path (Path that already exists on the system)**.
+Select **Enable ACL**, and then enter or browse to and select the **config** dataset to populate the **Host Path** field.
 
-Click **Install**.
+{{< trueimage src="/images/SCALE/Apps/InstallNetdataStorageConfigACLandACE.png" alt="Add Netdata Config Storage ACL and ACE Settings" id="Add Netdata Config Storage ACL and ACE Settings" >}}
+
+Click **Add** to the right of **ACL Entries** to show the block of permissions settings.
+Change **ID Type** to user, enter **0** in **ID**, and set **Access** to full control.
+
+Next, select **Force Flag**.
+
+Repeat the above for the **lib** and **cache** storage volumes.
+
+Accept the defaults in **Resources Configuration**.
+
+Click **Install**. A progress dialog displays before switching to the **Installed** applications screen.
 The system opens the **Installed Applications** screen with the Netdata app in the **Deploying** state.
 When the installation completes it changes to **Running**.
 
 {{< trueimage src="/images/SCALE/Apps/NetdataInstalled.png" alt="Netdata Installed" id="Netdata Installed" >}}
 
+{{< trueimage src="/images/SCALE/Apps/NetdataSignInScreen.png" alt="Nextcloud Sign In Screen" id="Nextcloud Sign In Screen" >}}
+
 Click **Web Portal** on the **Application Info** widget to open the Netdata web interface showing the local dashboard.
 
 {{< trueimage src="/images/SCALE/Apps/NetdataWebPortalLocalDashboard.png" alt="Netdata Web Portal Local Dashboard" id="Netdata Web Portal Local Dashboard" >}}
 
-## Understanding Netdata Wizard Settings
-The following sections provide more detail explanations of the settings found in each section of the **Install Netdata** screen.
+Refer to Netdata user guides and documentation for more information on configuring Netdata dashboards.
+
+## Understanding App Installation Wizard Settings
+
+The following section provides more detailed explanations of the settings in each section of the **Install Netdata** wizard.
 
 ### Application Name Settings
 
-{{< include file="/static/includes/AppsWizardAppNameAndVersion.md" >}}
+{{< include file="/static/includes/apps/InstallWizardAppNameAndVersion.md" >}}
 
 ### Netdata Configuration Settings
-You can accept the defaults in the **Netdata Configuration** settings or enter the settings you want to use.
-
-Click **Add** to the right of **Netdata image environment** to display the environment variable **Name** and **Value** fields.
+Accept defaults in the **Netdata Configuration** settings, or to customize the container deployment click **Add** to the right of **Additional Environment Variables** to show the **Name** and **Value** fields used to enter variables.
 Netdata does not require using environment variables to deploy the application but you can enter any you want to use to customize your container.
 
 {{< trueimage src="/images/SCALE/Apps/InstallNetdataConfigAddEnvironmentVariable.png" alt="Netdata Configuration Add Environment Variable" id="Netdata Configuration Add Environment Variable" >}}
 
+Refer to Netdata user guides and documentation for information on configuring and customizing your app.
+Guides include [GitHub Install Netdata with Docker](https://github.com/netdata/netdata/blob/master/packaging/docker/README.md), and [Netdaa Deployment Guides](https://learn.netdata.cloud/docs/deployment-guides/).
+Netdata provides assistance through their community forums and [Support site](https://www.netdata.cloud/support/).
+
+### Network Configuration Settings
 The TrueNAS Netdata app uses port **20489** to communicate with Netdata and open the web portal.
 Netdata documentation states it uses **19999** as the default port, but it recommends restricting access to this for security reasons.
-Refer to the TrueNAS [default port list](https://www.truenas.com/docs/references/defaultports/) for a list of assigned port numbers.
-To change the port numbers, enter a number within the range 9000-65535.
 
-### Netdata Storage Settings
-TrueNAS defaults to automatically creating storage volumes for Netdata without enabling the host path options.
+{{< include file="/static/includes/apps/InstallWizardDefaultPorts.md" >}}
+{{< include file="static/includes/apps/InstallWizardHostNetworkSettings.md" >}}
+{{< include file="/static/includes/apps/InstallWizardAdvancedDNSSettings.md" >}}
 
-To create and use datasets for the Netdata configuration, cache, and library storage or extra storage volumes inside the container pod, first create these datasets.
-Go to **Datasets** and create the datasets before you begin the app installation process.
-See [Add Datasets]({{< relref "DatasetsScale.md" >}}) for more information.
-Select **Enable Host Path for Netdata** to show the volume mount path field to add the configuration storage dataset.
+### Storage Configuration Settings
+TrueNAS provides two options for storage volumes: ixVolumes and host paths.
 
-{{< trueimage src="/images/SCALE/Apps/InstallNetdataStorageEnableHostPath.png" alt="Install Netdata Storage Enable Host Path" id="Install Netdata Storage Enable Host Path" >}}
+Netdata needs three datasets:
+* **config**
+* **lib**
+* **cache**
 
-Enter or browse to select the dataset and populate the mount path field.
-To use datasets created for cache and library storage volumes, first enable each option and then enter or browse to select the datasets tp populate the mount path fields for each.
-
-If you want to add storage volumes inside the container pod for other storage, click **Add** to the right of **Extra Host Path Volumes** for each storage volume (dataset) you want to add.
-
-{{< trueimage src="/images/SCALE/Apps/InstallNetdataStorageExtraHostPath.png" alt="Install Netdata Storage Add Extra Host Path" id="Install Netdata Storage Add Extra Host Path" >}}
+Create datasets before beginning the app installation process. Set the **Dataset Preset** to **Apps** before saving the datasets. 
+If you group the required datasets under a parent dataset, for example, a dataset named *netdata*, set the **Dataset Preset** to **Apps** to avoid permissions error messages and issues that can block fully deploying the app. See [Before You Begin](#before-you-begin) for more information on adding these datasets.
 
 You can add extra storage volumes at the time of installation or edit the application after it deploys. Stop the app before editing settings.
+{{< include file="/static/includes/apps/InstallAppStorageConfig2.md" >}}
 
-### Advanced DNS Settings
-The default **DNS Configuration** is sufficient for a basic installation.
-To specify additional DNS options, click **Add** to the right of **DNS Options** to add the DNS **Option Name** and **Option Value** fields.
+#### Setting Dataset ACL Permissions
+You can configure ACL permissions for the required dataset in the **Install Netdata** wizard, or from the **Datasets** screen any time after adding the datasets.
 
-{{< trueimage src="/images/SCALE/Apps/InstallNetdataAdvancedDNSOptions.png" alt="Install Netdata Advanced DNS Options" id="Install Netdata Advanced DNS Options" >}}
+{{< include file="/static/includes/apps/InstallWizardStorageACLConfig.md" >}}
 
-### Resource Limits Settings
-Accept the default values in **Resources Limits** or select **Enable Pod Resource limits** to show CPU and memory resource configuration options.
+{{< expand "Adding ACL Permissions from the Datasets Screen" "v">}}
+First select the dataset row, and scroll down to the **Permissions** widget, and then click **Edit** to open the **Edit ACL** screen.
+Change the **@owner** and **@group** values from **root** to the administrative user for your TrueNAS system, and click apply for each.
+Next, add an ACL entry for the run-as user.
+For Netdata, the run-as users is **0** for **root**. Add a user entry for this user.
+Save the ACL before leaving the screen.
 
-By default, the application is limited to use no more than four CPU cores and eight gigabytes available memory.
-The application might use considerably less system resources.
+See [Setting Up Permissions]({{< relref "PermissionsSCALE.md" >}}) and [Edit ACL Screen]({{< relref "EditACLScreens.md" >}}) for more information.
+{{< /expand >}}
+
+#### Mounting an SMB Share Storage Volume
+TrueNAS **Additional Storage** options include the ability to mount an SMB share inside the container pod.
+
+{{< include file="/static/includes/apps/InstallWizardStorageSMBOption.md" >}}
+
+### Resources Configuration Settings
 
 {{< trueimage src="/images/SCALE/Apps/InstallNetdataResourceLimitsEnablePod.png" alt="Install Netdata Resource Limits" id="Install Netdata Resource Limits" >}}
 
-To customize the CPU and memory allocated to the container (pod) Netdata uses, enter new CPU values as a plain integer value followed by the suffix m (milli).
-Default is 4000m.
-
-Accept the default value 8Gi allocated memory or enter a new limit in bytes.
-Enter a plain integer followed by the measurement suffix, for example 129M or 123Mi.
+{{< include file="/static/includes/apps/InstallWizardResourceConfig.md" >}}
 
 ## Using the Netdata Web Portal
 After deploying the TrueNAS Netdata app click on **Web Portal** to open the Netdata agent local dashboard.

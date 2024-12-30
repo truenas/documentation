@@ -9,7 +9,6 @@ tags:
 ---
 
 Follow these best practices for a stable and performant network.
-These generally apply to either TrueNAS CORE or TrueNAS SCALE, unless specified, but each software might place the related options in slightly different web interface locations.
 
 {{< hint type=tip >}}
 iXsystems welcomes contributions from members of the TrueNAS community!
@@ -19,7 +18,7 @@ Use the **Feedback** button on the right side or click <svg class="gdoc-icon gdo
 
 ## Static IP Address
 
-By default, TrueNAS SCALE configures the primary network interface for Dynamic Host Configuration Protocol (DHCP) IP address management.
+By default, TrueNAS configures the primary network interface for Dynamic Host Configuration Protocol (DHCP) IP address management.
 Consider assigning a static IP address for increased network stability and communication between devices.
 
 {{< include file="/static/includes/AliasOrStaticIP.md" >}}
@@ -47,11 +46,6 @@ LACP does not provide a performance benefit for single-user TrueNAS systems.
 We do not recommend using LACP/LAGG for iSCSI traffic. [See below](#iscsi) for more information.
 
 ### SMB Multichannel
-
-{{< hint type=note title="TrueNAS SCALE" >}}
-SMB Multichannel is supported in TrueNAS SCALE versions 22.12.3 (Bluefin) and later.
-It is not currently supported in TrueNAS CORE.
-{{< /hint >}}
 
 Depending on the requirements of your intended use case, SMB Multichannel (L3+) can offer certain advantages over LACP (L2).
 
@@ -231,7 +225,7 @@ The increased bandwidth of 100G networks has the potential to expose performance
 This means that optimization practices, such as record size tuning, can have a significant impact on network performance.
 
 You should ensure that the record size for each dataset is in alignment with its I/O workload.
-To adjust record size in TrueNAS SCALE or CORE, go to Advanced/Other Options on the **Add** or **Edit Dataset** screen.
+To adjust record size, go to Advanced/Other Options on the **Add** or **Edit Dataset** screen.
 
 For a detailed discussion of record size tuning, see [Tuning Recordsize in OpenZFS](https://klarasystems.com/articles/tuning-recordsize-in-openzfs/) from Klara.
 

@@ -2,7 +2,7 @@
 title: "SSH Service Screen"
 description: "Provides information on the SSH service screens and settings."
 weight: 60
-alias: 
+aliases: 
  - /scale/scaleclireference/service/clissh/
 tags:
  - ssh
@@ -10,7 +10,7 @@ tags:
  - backup
 ---
 
-The **System > Services > SSH** screen allows you to set up SSH service on TrueNAS SCALE.
+The **System > Services > SSH** screen allows you to set up SSH service on TrueNAS.
 
 Click <i class="material-icons" aria-hidden="true" title="Configure">edit</i> to open the **Services > SSH** configuration screen.
 

@@ -1,6 +1,6 @@
 ---
 title: "Adding Periodic Snapshot Tasks"
-description: "Provides instructions on creating periodic snapshot tasks in TrueNAS SCALE."
+description: "Provides instructions on creating periodic snapshot tasks in TrueNAS."
 weight: 50
 aliases:
 tags:
@@ -13,7 +13,7 @@ keywords:
 - data backup and recovery
 ---
 
-Periodic snapshot tasks allow you to schedule creating read-only versions of pools and datasets at a given point in time. You can also access VMWare snapshot integration and TrueNAS SCALE storage snapshots from the **Periodic Snapshot Tasks** widget.
+Periodic snapshot tasks allow you to schedule creating read-only versions of pools and datasets at a given point in time. You can also access VMWare snapshot integration and TrueNAS storage snapshots from the **Periodic Snapshot Tasks** widget.
 
 {{< expand "How should I use snapshots?" "v" >}}
 Snapshots do not make not copies of the data so creating one is quick and if little data changed, they take very little space.

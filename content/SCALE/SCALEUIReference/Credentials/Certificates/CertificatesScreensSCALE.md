@@ -9,7 +9,7 @@ tags:
  - csr
 ---
 
-The **Certificates** widget on the **Credentials > Certificates** screen displays certificates added to SCALE and allows you to add new certificates, or download, delete, or edit the name of an existing certificate. Each TrueNAS has an internal, self-signed certificate that enables encrypted access to the web interface.
+The **Certificates** widget on the **Credentials > Certificates** screen displays certificates added to TrueNAS and allows you to add new certificates, or download, delete, or edit the name of an existing certificate. Each TrueNAS has an internal, self-signed certificate that enables encrypted access to the web interface.
 
 ![CertificatesWidget](/images/SCALE/Credentials/CertificatesWidget.png "Certificates Widget")
 
@@ -22,7 +22,7 @@ Each certificate listed on the widget is a link that opens the **[Edit Certifica
 **Add** opens the **[Add Certificate](#add-certificate-wizard)** wizard.
 
 ## Add Certificate Wizard
-The **Add Certificate** wizard screens guide users through configuring a new certificate on TrueNAS SCALE. 
+The **Add Certificate** wizard screens guide users through configuring a new certificate on TrueNAS. 
 The wizard has five different configuration screens, one for each step in the certificate configuration process:
 
 1 **[Identifier and Type](#identifier-and-type-options)**
@@ -177,7 +177,7 @@ The final step screen is the **Confirm Options** that displays the certificate *
 
 ![AddCertificateConfirmOptions](/images/SCALE/Credentials/AddCertificateConfirmOptions.png "Add Certificate Confirm Options")
 
-**Save** adds the certificate to SCALE. **Back** returns to previous screens to make changes before you save. **Next** advances to the next screen in the sequence to return to **Confirm Options**.
+**Save** adds the certificate to TrueNAS. **Back** returns to previous screens to make changes before you save. **Next** advances to the next screen in the sequence to return to **Confirm Options**.
 
 ## Edit Certificate Screen
 The certificate listed on the **Certificates** widget is a link that opens the **Edit Certificate** screen. 
