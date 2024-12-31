@@ -2152,3 +2152,5 @@ FusionPoolsScale
 CloudSyncTasks
 CreatingSnapshots
 AddManageZvols
+SOV
+MiniNetworkPortID
