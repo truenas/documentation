@@ -288,7 +288,7 @@ mark {
     background: #000000;
 	border-bottom-width: 20px;
 	border-bottom-color: #0095d5;
-    padding: .5rem 1rem 1rem 1rem;
+    padding: 1rem 1rem 1rem 1rem;
 	border-bottom-width: 0px;
 }
 
@@ -317,13 +317,14 @@ mark {
     display: none;
     position: absolute;
     background-color: #000000;
+    border-radius: 20px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 10;
 }
 .truenas-menudropdown a {
     font-family: "din-2014";
 	font-size: 16px;
-    font-weight: 500;
+    font-weight: 600;
     color: white;
     padding: 12px 16px;
     text-decoration: none;
@@ -346,11 +347,14 @@ mark {
 .truenas-menuitem{
 	position: relative;
 }
-.truenas-menudropdown a:hover {color: #bbb;}
+.truenas-menudropdown a:hover {color: #0095D5;}
 .truenas-menuitem:hover .truenas-menudropdown {display: block;}
-.truenas-menuitem:hover .truenas-menubutton {background-color: #000000;color:#31beec;}
+.truenas-menuitem:hover .truenas-menubutton {background-color: #000000;color:#0095D5;}
 .truenas-menuitem:hover .truenasdownload-menudropdown {display: block;}
-.truenasdownload-menudropdown a:hover {color: #DFDFDF;}
+.truenasdownload-menudropdown a:hover {color: #0095D5;}
+.truenas-menuitem:hover .truenas-downloadbutton {
+    color: #0095D5;
+}
 .truenas-downloadbutton {
     background-color: #000000;
     color: #71bf44;
@@ -358,10 +362,10 @@ mark {
     border: none;
     font-family: "din-2014";
 	font-size: 16px;
-    font-weight: 400;
+    font-weight: 600;
  }
 .truenas-downloadbutton:hover {
-    color: rgb(0, 149, 213);
+    color: #0095D5;
 }
 .truenas-downloadbutton a {
     font-family: "din-2014";
@@ -374,14 +378,15 @@ mark {
     text-decoration: none;
 }
 .truenas-supportbutton {
-    background:rgb(0, 149, 213);
+    background:#0095D5;
     color: white;
-    padding: 13px;
+    padding: 13px 30px 10px 30px;
     border: none;
     border-radius: 15px;
+    margin-left: 5px;
     font-family: "din-2014";
 	font-size: 16px;
-    font-weight: 400;
+    font-weight: 600;
  }
 .truenas-supportbutton:hover {
     background-color: #71bf44;
@@ -400,6 +405,7 @@ mark {
     display: none;
     position: absolute;
     background-color: #000000;
+    border-radius: 20px;
     min-width: max-content;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 10;
@@ -439,6 +445,139 @@ mark {
     text-decoration: none;
     display: block;
 }
+/* Link container styling */
+.truenas-menuitem-link {
+    display: flex !important; /* Ensures the image and text are in a horizontal row */
+    align-items: center; /* Vertically aligns items */
+    gap: 1rem; /* Adds spacing between image and text */
+    text-decoration: none; /* Removes underline for links */
+    color: inherit; /* Keeps text color consistent with parent */
+    max-width: 400px; /* Sets maximum width for wrapping */
+    line-height: 1.5; /* Improves text readability */
+}
+
+/* Icon/image styling */
+.truenas-menuitem-link img {
+    width: 2.5rem; /* Sets a fixed width for the image */
+    height: auto; /* Maintains the image's aspect ratio */
+    flex-shrink: 0; /* Prevents the image from resizing */
+    vertical-align: middle; /* Aligns image with the text */
+    margin-right: 1rem; /* Adds spacing between image and text */
+}
+
+/* Text container styling */
+.truenas-menuitem-text {
+    flex: 1; /* Allows the text container to take remaining space */
+    overflow-wrap: break-word; /* Wraps text to prevent overflow */
+}
+
+/* Bold text styling */
+.truenas-menuitem-text b {
+    font-size: 1rem; /* Adjust bold text size */
+    margin-bottom: 0.25rem; /* Adds spacing below bold text */
+    display: block; /* Makes the bold text a block-level element */
+}
+
+/* Paragraph text styling */
+.truenas-menuitem-text p {
+    font-size: 0.9rem; /* Adjusts paragraph text size */
+    line-height: 1.4; /* Enhances readability */
+    margin: 0; /* Removes default margin */
+}
+/* Parent Columns: two main columns */
+.truenas-menuitem-columns {
+    display: flex; /* Make the left and right columns appear side by side */
+    gap: 2rem; /* Space between the two main columns */
+}
+
+/* Each Column */
+.truenas-menuitem-column {
+    flex: 1; /* Allow each column to take equal width */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Sub-columns: dividing each column into two */
+.truenas-sub-columns {
+    display: flex; /* Align sub-columns side by side */
+    gap: 2rem; /* Space between the two sub-columns */
+}
+
+/* Each Sub-column */
+.truenas-sub-column {
+    flex: 1; /* Make sure each sub-column takes equal space */
+}
+
+/* Optional: Styling the links inside sub-columns */
+.truenas-sub-column a {
+    display: block;
+    color: white;
+    text-decoration: none;
+}
+
+.truenas-sub-column a:hover {
+    color: #0095d5; /* Optional: Hover color */
+}
+
+/* Optional: Styling for hr */
+.truenas-menudropdown-hr {
+    border: 0;
+    border-top: 1px solid white;
+}
+
+
+.truenas-menuitem-link {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+    text-decoration: none;
+    color: inherit;
+}
+
+.truenas-menuitem-link img {
+    width: 2.5rem;
+    height: auto;
+    flex-shrink: 0;
+}
+
+.truenas-menuitem-text {
+    max-width: calc(100%);
+    overflow-wrap: break-word;
+}
+
+.truenas-menudropdown {
+    display: none;
+    position: absolute;
+    background-color: #000000;
+    padding: 1rem;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+}
+
+.truenas-menuitem:hover .truenas-menudropdown {
+    display: block;
+}
+/* Horizontal Rule Styling */
+.truenas-menudropdown-hr {
+    border: 0;
+    border-top: 1px solid #ccc; /* Customize the color of the horizontal rule */
+    margin: 1rem 0; /* Add spacing above and below the rule */
+}
+
+/* Maintain existing styles for columns */
+.truenas-menuitem-columns {
+    display: flex;
+    gap: 2rem; /* Space between columns */
+}
+
+.truenas-menuitem-column {
+    flex: 1; /* Equal width for columns */
+    display: flex;
+    flex-direction: column;
+    gap: 1rem; /* Space between items in each column */
+}
+
 /* Adjust breadcrumb header sizing */
 .gdoc-page__header {
 	font-size: small;
