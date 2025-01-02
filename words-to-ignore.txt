@@ -2155,3 +2155,5 @@ AddManageZvols
 AppsAddCatalogScreen
 TrueNASStencilsPreview
 MiniFamilyFront
+SOV
+MiniNetworkPortID
