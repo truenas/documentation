@@ -73,7 +73,7 @@ Remember to enable the SSH service in **System > Services** after making changes
 
 Create and store SSH connections and keypairs to allow SSH access in **Credentials > Backup Credentials** or by editing an administrative user account. See [Adding SSH Credentials]({{< relref "AddSSHConnectionKeyPair.md" >}}) for more information.
 
-Note that TrueNAS shows an error if users active Global 2FA (Two-Factor Authentication) and attempt to enable a password-based SSH authentication witout a 2FA token.
+TrueNAS shows an error if users activate Global 2FA (Two-Factor Authentication) and attempt to enable password-based SSH authentication without a 2FA token.
 
 ### Using SFTP Connections
 
