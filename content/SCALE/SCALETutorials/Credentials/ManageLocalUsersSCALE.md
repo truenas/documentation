@@ -2,7 +2,9 @@
 title: "Managing Users"
 description: "Provides instructions on adding and managing administrator and user accounts."
 weight: 10
-aliases: /scale/scaleuireference/credentials/localusers/
+aliases:
+- /scale/scaleuireference/credentials/localusers/
+- /images/CORE/13.0/AddUserNamedCORE.png
 tags:
 - users
 - accounts
