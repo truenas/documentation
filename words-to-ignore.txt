@@ -2152,3 +2152,8 @@ FusionPoolsScale
 CloudSyncTasks
 CreatingSnapshots
 AddManageZvols
+AppsAddCatalogScreen
+TrueNASStencilsPreview
+MiniFamilyFront
+SOV
+MiniNetworkPortID
