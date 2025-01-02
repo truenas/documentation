@@ -4,6 +4,7 @@ description: "Provides the TrueNAS iso file installation instructions for physic
 weight: 15
 aliases:
  - /scale/gettingstarted/installingscale/
+ - /images/SCALE/Install/SCALEInstallPartitionScreen.png
 tags:
 - install
 - update
