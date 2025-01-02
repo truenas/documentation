@@ -1,11 +1,12 @@
 ---
 title: "TrueNAS Mini"
+description: "Professional-grade office ZFS NAS storage solution with up to 250TB fusion or 90TB all-flash capacity. Suited for small/home office, file sharing, VMs, and plugins."
 weight: 50
 geekdocFlatSection: true
 aliases:
  - /hardware/mini/
  - /hardware/mini/minibsg/
-description: "Professional-grade office ZFS NAS storage solution with up to 250TB fusion or 90TB all-flash capacity. Suited for small/home office, file sharing, VMs, and plugins."
+ - /images/Hardware/MiniFamilyFront.png
 keyword:
  - scalable storage systems
  - data storage system

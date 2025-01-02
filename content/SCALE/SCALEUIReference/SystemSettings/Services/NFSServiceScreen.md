@@ -5,6 +5,7 @@ weight: 25
 aliases:
  - /scale/scaleuireference/shares/nfs/nfsservicescreen/
  - /scale/scaleclireference/service/clinfs/
+ - /images/CORE/13.0/NFSServicesScreen.png
 tags:
  - nfs
  - services
