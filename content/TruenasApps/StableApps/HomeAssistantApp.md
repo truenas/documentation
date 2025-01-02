@@ -104,13 +104,17 @@ The following section provides more detailed explanations of the settings in eac
 
 {{< include file="/static/includes/apps/InstallWizardAppNameAndVersion.md" >}}
 
-### AppName Configuration Settings
+### Home Assistant Configuration Settings
 
 *Home Assistant* configuration settings include setting up credentials, *APT packages* (previously referred to as the commands), the *host IP and port, data directory path, upload limits, execution times, memory limits and cache memory consumption, adding a cron job with schedule*, and *adding additional environment variables*.
 
 The **Home Assistant Configuration** section contains a **Database Password** field. This is where you set the password Home Assistant uses to securely connect to your TrueNAS system. This is *not* the field where you enter your current Home Assistant password or the password you intend to use to login to the app. 
 
 Upon deployment, users can set the desired Home Assistant login credentials or log in to an existing account from the Home Assistant UI.
+
+{{< trueimage src="/images/SCALE/Apps/HomeAssistantAddDevices.png" alt="Home Assistant Add Devices Option" id="Home Assistant Add Devices" >}}
+
+Users can select the **Add Devices** drop-down menu to configure device settings for any Home Assistant-compatible devices that they currently own. Users do not have to own any devices prior to installing the app, and can leave this section blank if not applicable.
 
 #### Adding Environment Variables
 
