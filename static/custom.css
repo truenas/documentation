@@ -249,7 +249,8 @@ mark {
 @media screen and (max-width: 68rem) {
     .gdoc-nav {
         margin-left:-18rem;
-        font-size: 16px
+        font-size: 16px;
+        margin-top: 2em;
     }
     .gdoc-nav__control {
         display: inline-block
