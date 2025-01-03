@@ -28,7 +28,7 @@ mark {
 }
 /* Site header */
 .gdoc-brand__img {
-    max-width: 7em;
+    max-width: 8em;
     width: auto;
     height: auto;
 }
@@ -239,6 +239,7 @@ mark {
 .truenas-column-header {
 	color: #0095D5;
 	font-weight: bold;
+    margin-bottom: 0;
 }
 /* End sticky top menu */
 /* Adjust Nav sidebar */
@@ -582,6 +583,7 @@ mark {
     gap: 1rem; /* Space between items in each column */
 }
 
+
 /* Adjust breadcrumb header sizing */
 .gdoc-page__header {
 	font-size: small;
@@ -680,21 +682,179 @@ mark {
 .gdoc-footer {
     max-width: 100%;
     font-family: "Inter", sans-serif;
-    font-weight: 600;
+    font-weight: 400;
     font-size: 14px;
-    background-color: #151515;
-    color: #666;
-	padding: 1% 0;
+    background-color: #000000;
+    color: white;
+    padding: 3rem 15%;
     margin-top: auto;
 }
+
 .gdoc-footer__link {
-    color: #23afe4;
+    color: white;
 }
+
 .gdoc-footer__link:visited {
-    color: #23afe4;
+    color: white;
 }
-.gdoc-footer__item{
-    padding-left: .5rem;
+
+.gdoc-footer .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; 
+    align-items: center;
+    text-align: center; 
+    width: 100%;
+}
+
+.gdoc-footer__item {
+    padding-top: 1rem;
+    padding-left: 0.5rem;
+    font-size: 12px;
+}
+
+.footer-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    position: relative;
+}
+
+.footer-column {
+    flex: 1;
+    max-width: 25%;
+    padding: 0 2rem;
+    border-right: 2px solid #0095d5;
+}
+
+.footer-column:last-child {
+    border-right: none;
+}
+
+.footer-button {
+    display: inline-flex;
+    background-color: #0095d5;
+    color: white !important;
+    width: 90%;
+    padding: 10px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.footer-button:hover {
+    background-color: white;
+    color: #0095d5 !important;
+    text-decoration: none;
+}
+
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+    color: white;
+    max-width: 100%;
+    flex-wrap: wrap;
+}
+
+.social-links a i,
+.social-links a img,
+.social-links a span.iconify {
+    width: 20px;
+    height: 20px;
+    color: white;
+    fill: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.social-links a {
+    text-decoration: none;
+    color: white;
+}
+
+.social-links a:visited {
+    color: white;
+}
+
+.footer-logo {
+    max-width: 70%;
+    margin-bottom: 1.5rem;
+}
+
+.footer-column h2 {
+    font-weight: 500;
+    margin-left: 0;
+    margin-bottom: 2rem;
+}
+
+.footer-column h3 {
+    font-weight: 500;
+    margin-left: 0;
+    margin-bottom: 1rem;
+}
+
+.footer-list {
+    list-style: none;
+    line-height: 2em;
+    margin: 0;
+    padding: 0;
+    margin-left: 0;
+}
+
+.footer-list li {
+    margin-left: 0;
+}
+
+.footer-list a, 
+.gdoc-footer__link {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-list a:visited, 
+.gdoc-footer__link:visited {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-list a:hover, 
+.gdoc-footer__link:hover {
+    color: #666;
+    text-decoration: none;
+}
+
+@media (max-width: 980px) {
+    .footer-row {
+        flex-direction: column;  /* Stack the columns vertically */
+        align-items: left;  /* Center the columns horizontally */
+    }
+
+    .footer-column {
+        max-width: 100%;  /* Allow each column to take up the full width */
+        padding: 1rem;  /* Adjust padding for better spacing */
+        border-right: none;  /* Remove border between columns */
+    }
+
+    .footer-column h2, 
+    .footer-column h3 {
+        text-align: center;  /* Center align the headers */
+    }
+
+    .gdoc-footer .container {
+        padding-left: 0;  /* Remove the left padding */
+        padding-right: 0;  /* Remove the right padding */
+    }
+
+    .footer-button {
+        width: 50%;
+    }
+    
+    .footer-logo {
+        display: inline-flex;
+        width: 75%;
+    }
+
 }
 
 /* End site footer */
