@@ -1,12 +1,13 @@
 ---
 title: "R-Series"
+description: "High rack-density, Enterprise-grade, fusion or all-flash, performance NAS storage. Suited for workgroup projects, file sharing, backups, plugins, and Kubernetes."
 geekdocFlatSection: true
 weight: 30
 aliases:
  - /hardware/rseries/rseriesbsg/
  - /hardware/rseries/rseriesoobm/
  - /hardware/rseries/rseriessov/
-description: "High rack-density, Enterprise-grade, fusion or all-flash, performance NAS storage. Suited for workgroup projects, file sharing, backups, plugins, and Kubernetes."
+ - /images/Hardware/R40R50Front.png
 keyword:
  - enterprise storage solution
  - scalable storage systems

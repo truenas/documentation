@@ -5,6 +5,7 @@ weight: 25
 aliases:
  - /scale/scaleuireference/shares/nfs/nfsservicescreen/
  - /scale/scaleclireference/service/clinfs/
+ - /images/CORE/13.0/NFSServicesScreen.png
 tags:
  - nfs
  - services
@@ -65,7 +66,7 @@ Select **Start Automatically** to activate the NFS service when TrueNAS boots.
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Serve UDP NFS clients** | Select if NFS clients need to use the User Datagram Protocol (UDP). |
+| **Enable NFS over RDMA** | Select to improve NFS performance and reduce CPU overhead. This setting requires an Enterprise licensed system with an RDMA capable NIC. |
 | **Allow non-root mount** | Only select if required by the NFS client to allow serving non-root mount requests. |
 | **Manage Groups Server-side** | This option allows the server to determine group IDs based on server-side lookups rather than relying solely on the information provided by the NFS client. This can support more than 16 groups and provide more accurate group memberships. Equivalent to the `--manage-gids` flag for [rpc.mountd](https://linux.die.net/man/8/rpc.mountd). |
 {{< /truetable >}}

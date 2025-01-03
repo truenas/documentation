@@ -5,6 +5,7 @@ geekdocCollapseSection: true
 weight: 30
 aliases:
  - /scale/scaletutorials/systemsettings/advanced/advancedsettings/
+ - /_includes/createdebugcore/
 tags:
  - settings
  - replication
