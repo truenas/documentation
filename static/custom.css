@@ -608,6 +608,7 @@ mark {
 	padding: 1rem 1rem 1rem 0rem;
 	font-size: 14px;
 	background-color: var(--body-background);
+    scrollbar-width: thin;
 }
 @media screen and (max-width: 68rem) {
   .sidebar-right {
@@ -686,8 +687,9 @@ mark {
     font-size: 14px;
     background-color: #000000;
     color: white;
-    padding: 3rem 15%;
+    padding: 2rem 15%;
     margin-top: auto;
+    z-index: 2;
 }
 
 .gdoc-footer__link {
