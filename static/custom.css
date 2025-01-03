@@ -236,6 +236,10 @@ mark {
 	color: rgba(128, 128, 128, 0.5);
 	pointer-events: none;
 }
+.truenas-column-header {
+	color: #0095D5;
+	font-weight: bold;
+}
 /* End sticky top menu */
 /* Adjust Nav sidebar */
 .gdoc-nav {
