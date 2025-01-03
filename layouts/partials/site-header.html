@@ -1,22 +1,23 @@
 <header class="gdoc-header" id="TrueNASHeader">
   <div class="container linksrow" style="padding-top:.5rem">
 		<div class="truenas-mediamenu">
-            <button class="truenas-menubutton"><img src="/favicon/TN-favicon-32x32.png"> TrueNAS Directory <i class="fa fa-angle-down"></i></button>
+            <button class="truenas-menubutton"><i class="fa fa-bars"></i></button>&emsp;<img src="{{ (default "brand.svg" .Root.Site.Params.GeekdocLogo) | relURL }}" alt="TrueNAS Open Storage Logo" style="max-width: 50%;">
             <div class="truenas-menudropdown">
                 <a href="https://www.truenas.com">TrueNAS.com</a>
-                <a href="https://www.truenas.com/help-me-choose/">Software</a>
-                <a href="https://www.truenas.com/systems-overview/">Systems</a>
-                <a href="https://www.ixsystems.com">Company</a>
-                <a href="https://forums.truenas.com/">Community</a>
-                <a href="https://security.truenas.com">Security</a>
-                <a href="https://portal.ixsystems.com/portal/login/index.php">iX Portal</a>
-                <a href="https://www.truenas.com/download-truenas-core/">Download</a>
+                <a href="https://www.truenas.com/truenas-enterprise/#Systems">Products</a>
+                <a href="https://www.ixsystems.com/support/">Enterprise Support</a>
+                <a href="https://forums.truenas.com/">Community Support</a>
+                <a href="https://security.truenas.com">Truenas Security</a>
+                <a href="https://www.truenas.com/truenas-enterprise/">Get TrueNAS Enterprise</a>
+                <a href="https://www.truenas.com/truenas-community-edition/">Download TrueNAS Community Edition</a>
+                <a href="https://www.ixsystems.com/about-us/">About TrueNAS</a>
+                <a href="https://www.ixsystems.com/careers/">Careers</a>
             </div>
         </div>
 	    <div class="container truerow">
 			<a class="gdoc-brand gdoc-header__link" href="https://www.truenas.com">
 				<span class="flex align-center">
-				<img class="gdoc-brand__img" style="display:flex;float:left" src="{{ (default "brand.svg" .Root.Site.Params.GeekdocLogo) | relURL }}" alt=""/>
+				<img class="gdoc-brand__img" style="display:flex;float:left" src="{{ (default "brand.svg" .Root.Site.Params.GeekdocLogo) | relURL }}" alt="TrueNAS Open Storage Logo"/>
 				<span class="gdoc-brand__title">{{ .Root.Site.Title }}</span>
 				</span>
 			</a>
