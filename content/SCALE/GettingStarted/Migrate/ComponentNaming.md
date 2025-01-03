@@ -39,6 +39,6 @@ TrueNAS 22.12 or newer uses **bond** followed by a number (bond1).
 
 {{<include file="/static/includes/addcolumnorganizer.md">}}
 
-See the [TrueNAS Systems](https://www.truenas.com/docs/hardware/) section for lists of the default port names for each platform.
+See the [Products](https://www.truenas.com/docs/hardware/) section for lists of the default port names for each platform.
 
 

@@ -1,5 +1,5 @@
 ---
-title: "TrueNAS Systems"
+title: "Products"
 geekdocCollapseSection: true
 weight: 40
 aliases:
