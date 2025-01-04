@@ -30,7 +30,7 @@ TrueNAS displays the issue in logs as a recurring error like **libusb_get_interr
 If you get an error, decrease the polling frequency by adding an entry to **Auxiliary Parameters (ups.conf)**: `pollinterval = 10`.
 
 {{< expand "How do I find a device name?" "v" >}}
-For USB devices, the easiest way to determine the correct device name is to set **Show console messages** in **System > Advanced Settings**.
+For USB devices, the easiest way to determine the correct device name is to turn on **Show console messages**. Navigate to the **System > General Settings** screen, find the **GUI** widget, and click **Settings**. It is the last option on the page under **Other Options**.
 Plug in the USB device and look for a <file>/dev/ugen</file> or <file>/dev/uhid</file> device name in the console messages.
 {{< /expand >}}
 
