@@ -9,6 +9,7 @@ aliases:
  - /scale/apps/usingapps/
  - /scale/scaleclireference/app/
  - /scale/scaletutorials/apps/
+ - /images/SCALE/Apps/AppsAddCatalogScreen.png
 cascade:
   - _target:
     book: "TrueNASApps"
