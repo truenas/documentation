@@ -252,6 +252,9 @@ mark {
         font-size: 16px;
         margin-top: 2em;
     }
+    .toc-panel {
+        margin-top: 4em;
+    }
     .gdoc-nav__control {
         display: inline-block
     }
