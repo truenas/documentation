@@ -97,17 +97,17 @@ The **Address Pools** shows the current IP address and subnet mask for the netwo
 **Base** shows the default IP address and subnet, and **Size** shows the network size of each docker network that is cut off from the base subnet.
 Select a predefined range from the dropdown list.
 
-**Install NVIDIA Drivers** shows if the system has an NVIDIA GPU installed.
-Select to enable TrueNAS to manually install drivers for this device.
-When the TrueNAS Debug Kernel is enabled, NVIDIA drivers are disabled.
-
-Systems with non-NVIDIA GPU devices do not show this option, but these GPUs are selectable in the app installation wizards in the **Resources Configuration** section for the app.
-
 {{< hint type="info" title="Apps Troubleshooting Tip!" >}}
 This setting replaces the Kubernetes Settings option for Bind Network in 24.04 and earlier.
 Use to resolve issues where apps experiences issues where TrueNAS device is not reachable from some networks.
 Select the network option, or add additional options to resolve the network connection issues.
 {{< /hint >}}
+
+**Install NVIDIA Drivers** shows if the system has an NVIDIA GPU installed.
+Select to enable TrueNAS to manually install drivers for this device.
+When the TrueNAS Debug Kernel is enabled, NVIDIA drivers are disabled.
+
+Systems with non-NVIDIA GPU devices do not show this option, but these GPUs are selectable in the app installation wizards in the **Resources Configuration** section for the app.
 
 **Check for docker image updates** sets TrueNAS to check for docker image updates (default setting). 
 
