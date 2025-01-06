@@ -505,7 +505,17 @@ mark {
     display: flex;
     flex-direction: column;
 }
+/* Media query for narrower screens */
+@media (max-width: 1180px) {
+    .truenas-menuitem-columns {
+        flex-direction: column; /* Stack the columns vertically */
+    }
 
+    .truenas-menuitem-column {
+        flex: none; /* Remove equal width restriction for stacking */
+        width: 100%; /* Ensure each column takes full width */
+    }
+}
 /* Sub-columns: dividing each column into two */
 .truenas-sub-columns {
     display: flex; /* Align sub-columns side by side */
