@@ -1,37 +1,180 @@
 <!-- GeekDoc modified to mimic truenas.com and incorporate documentation license-->
 <footer class="container gdoc-footer">
-	<div class="container flex flex-wrap">
-			<span class="gdoc-footer__item" >
-			© iXsystems, Inc. <script>document.write(new Date().getFullYear())</script>&nbsp; All rights reserved. |
-			</span>
-	<span class="gdoc-footer__item">
-	<a href="https://www.truenas.com/careers/" class="gdoc-footer__link">Careers</a> |
-	</span>
-	{{ with .Site.Params.GeekdocPrivacyPolicy }}
-			<span class="gdoc-footer__item">
-					<a href="{{ . | absURL }}" class="gdoc-footer__link">Privacy Policy</a> |
-			</span>
-			{{ end }}
-    <span class="gdoc-footer__item">
-        Documentation distributed under <a href="https://github.com/freenas/documentation/blob/master/LICENSE.md" class="gdoc-footer__link">CC BY NC SA 4.0</a>.
-        </span>            
+	<div class="footer-row">
+			<!-- Column 1: Logo and Newsletter -->
+			<div class="footer-column">
+					<img src="/images/truenas-logo-mark.png" alt="TrueNAS Logo" class="footer-logo">
+					<a href="https://www.truenas.com/newsletter/" class="footer-button">Subscribe to our newsletter</a>
+					<h3 class="footer-column-title">Find us on Social</h3>
+					<nav class="social-links" style="align-items: end;">
+							<a href="https://www.linkedin.com/company/ixsystems/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+							<a href="https://www.youtube.com/user/freenasteam?sub_confirmation=1" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+							<a href="https://twitter.com/TrueNAS" target="_blank" title="X (Formerly Twitter)"><span class="iconify" data-icon="akar-icons:x-fill"></span></a>
+							<a href="https://www.facebook.com/truenascommunity" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
+							<a href="https://discord.com/invite/Q3St5fPETd" target="_blank" title="Discord"><img src="/favicon/Discord-Logo-White.png" alt="Discord"></a>
+							<a href="https://github.com/truenas" target="_blank" title="GitHub"><img src="/favicon/github.png" alt="GitHub"></a>
+							<a href="https://www.vendop.com/vendor/ixsystems-inc/reviews/" target="_blank" title="Vend Op"><img src='/favicon/VendOp_Icon_15x15px.png' alt="Vend Op"></a>
+					</nav>
+			</div>
 
-	<span class="gdoc-footer__item" style="flex:1;display:flex;justify-content:flex-end;align-items:flex-end;">
-		<a href="https://www.linkedin.com/company/ixsystems/" target="_blank" title="iXsystems LinkedIn"style="color:white;padding-left:3rem;padding-right:1rem;display:flex;align-self:center;"><i class="ubermenu-icon fab fa-linkedin-in" title="Linkedin"></i></a>
-		<a href="https://www.youtube.com/user/freenasteam?sub_confirmation=1" target="_blank" title="TrueNAS Youtube"style="color:white;padding-right:1rem;display:flex;align-self:center;"><i class="ubermenu-icon fab fa-youtube" title="Youtube"></i></a>
-		<a href="https://twitter.com/TrueNAS" target="_blank" title="TrueNAS X (Formerly Twitter)"style="color:white;padding-right:1rem;display:flex;align-self:center;"><span class="iconify" data-icon="akar-icons:x-fill" title="TrueNAS X (Formerly Twitter)"></span></a>
-		<a href="https://www.facebook.com/truenascommunity" target="_blank" title="TrueNAS Community (Facebook)"style="color:white;padding-right:1rem;display:flex;align-self:center;"><i class="ubermenu-icon fab fa-facebook" title="Facebook"></i></a>
-		<a href="https://discord.com/invite/Q3St5fPETd" target="_blank" title="TrueNAS Discord"style="color:white;padding-right:1rem;display:flex;align-self:center;"><img src="/favicon/Discord-Logo-White.png" width="15" height="17" alt="TrueNAS Discord"></a>
-		<a href="https://github.com/truenas" target="_blank" title="TrueNAS Github"style="color:white;padding-right:1rem;display:flex;align-self:center;"><img src="/favicon/github.png" width="15" height="17" alt="TrueNAS Discord"></a>
-		<a href="https://www.vendop.com/vendor/ixsystems-inc/reviews/" target="_blank" title="iXsystems VendOp Reviews" style="display:flex;align-self:center;padding-right:3rem;"><img class="ubermenu-image ubermenu-image-size-full" src='/favicon/VendOp_Icon_15x15px.png' width="15" height="15" alt="VendOp_Icon_15x15px"></a>
-	</span>
-    </div>
-    <div class="container flex flex-wrap">
-	{{ with .Site.Params.GeekdocLegalNotice }}
-	<span class="gdoc-footer__item">
-		All trademarks appearing herein are subject to the terms of the 
-		<a href="https://www.ixsystems.com/trademarks/" class="gdoc-footer__link">iXsystems, Inc. Trademark Policy</a>
-	</span>
-	{{ end }}
+			<!-- Column 2: Useful Links -->
+			<div class="footer-column">
+					<h2 class="footer-column-title">Useful Links</h2>
+					<ul class="footer-list">
+							<li><a href="https://www.truenas.com/careers/">Careers</a></li>
+							<li><a href="https://www.ixsystems.com/about-us/">About Us</a></li>
+							<li><a href="https://www.truenas.com/blog/">Blog</a></li>
+							<li><a href="https://www.ixsystems.com/newsroom/">News & Articles</a></li>
+							<li><a href="https://www.truenas.com/truenas-core/">TrueNAS CORE</a></li>
+							<li><a href="https://www.truenas.com/truenas-scale/">TrueNAS SCALE</a></li>
+							<li><a href="https://www.truenas.com/freenas/">FreeNAS</a></li>
+							<li><a href="https://www.truenas.com/software-status/">Software Status</a></li>
+					</ul>
+			</div>
+
+			<!-- Column 3: Support -->
+			<div class="footer-column">
+					<h2 class="footer-column-title">Support</h2>
+					<ul class="footer-list">
+							<li><a href="https://www.ixsystems.com/support/">Enterprise Support</a></li>
+							<li><a href="https://forums.truenas.com/">Community Support</a></li>
+							<li><a href="https://forums.truenas.com/">Forums</a></li>
+							<li><a href="https://www.truenas.com/faq/">FAQs</a></li>
+					</ul>
+			</div>
+
+			<!-- Column 4: Contact -->
+			<div class="footer-column">
+					<h2 class="footer-column-title">Contact</h2>
+					<ul class="footer-list">
+						<li><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp;<a href="mailto:info@ixsystems.com" target="_blank">info@ixsystems.com</a></li>
+						<li><i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp;521 Division St</li>
+							<li>Campbell, CA 95008</li>
+							<li>USA</li>
+					</ul>
+			</div>
+	</div>
+
+	<div class="container flex flex-wrap">
+			<span class="gdoc-footer__item">© Copyright <script>document.write(new Date().getFullYear())</script> iXsystems, Inc. All rights reserved. |</span>
+			{{ with .Site.Params.GeekdocPrivacyPolicy }}
+			<span class="gdoc-footer__item"><a href="{{ . | absURL }}" class="gdoc-footer__link">Privacy Policy</a> |</span>
+			{{ end }}
+			{{ with .Site.Params.GeekdocLegalNotice }}
+			<span class="gdoc-footer__item"><a href="https://www.ixsystems.com/trademarks/" class="gdoc-footer__link">Trademark Policy</a> |</span>
+			<span class="gdoc-footer__item">Documentation distributed under <a href="https://github.com/freenas/documentation/blob/master/LICENSE.md" class="gdoc-footer__link">CC BY NC SA 4.0</a>.</span>
+			{{ end }}
 	</div>
 </footer>
+
+
+<!-- Script to prevent footer overlapping with side nav elements -->
+<script>
+	var options = {
+		root: null, // Use the viewport as the root
+		rootMargin: "0px",
+		threshold: 0, // When 0% of the element is visible
+	};
+	
+	var observer = new IntersectionObserver(callback, options);
+	var linksrow = document.querySelector(".linksrow");
+	var nav = document.getElementById("sitenav");
+	var isSticky = false; // Track if the element is sticky
+	
+	observer.observe(linksrow);
+	
+	function callback(entries, observer) {
+		entries.forEach((entry) => {
+			if (entry.isIntersecting) {
+				// The .linksrow element is in view, so remove sticky
+				if (isSticky) {
+					nav.classList.remove("sticky");
+					isSticky = false;
+				}
+			} else {
+				// The .linksrow element is out of view, so make it sticky
+				if (!isSticky) {
+					nav.classList.add("sticky");
+					isSticky = true;
+				}
+			}
+		});
+	}
+	
+	// New observer for detecting the footer visibility
+	var footerObserver = new IntersectionObserver(function(entries, observer) {
+			entries.forEach(entry => {
+					var sidebarFixed = document.querySelector('.sidebar-fixed');
+					var tocPanel = document.querySelector('.toc-panel');
+	
+					if (entry.isIntersecting) {
+							// Footer is visible, shrink side nav and allow scroll
+							sidebarFixed.style.height = '40vh';
+							tocPanel.style.height = '40vh';
+							sidebarFixed.style.overflowY = 'auto';
+							tocPanel.style.overflowY = 'auto';
+					} else {
+							// Footer is not visible, restore normal side nav behavior
+							sidebarFixed.style.height = ''; // Reset height
+							tocPanel.style.height = ''; // Reset height
+							sidebarFixed.style.overflowY = ''; // Reset scroll behavior
+							tocPanel.style.overflowY = ''; // Reset scroll behavior
+					}
+			});
+	}, {
+			root: null,
+			rootMargin: '0px',
+			threshold: 0
+	});
+	
+	// Observe the footer
+	var footer = document.querySelector('.gdoc-footer'); // Adjust this to the correct footer class/ID
+	footerObserver.observe(footer);
+	
+	// Existing behavior for right-side TOC panel on small screens
+	document.addEventListener('DOMContentLoaded', function() {
+			var sidebarRight = document.querySelector('.sidebar-right');
+			var sidebarControl = document.getElementById('sidebar-right__control');
+			var menuControl = document.getElementById('menu-control');
+			var gdocPage = document.querySelector('.gdoc-page');
+			var gdocNav = document.querySelector('.gdoc-nav');
+	
+			sidebarControl.addEventListener('click', function() {
+					if (!sidebarControl.checked) {
+							menuControl.checked = false;
+							sidebarRight.style.transition = 'transform 0.3s ease';
+							gdocPage.style.transition = 'margin-right 0.3s ease, opacity 0.3s ease';
+	
+							sidebarRight.style.transform = 'translateX(100%)';
+							gdocPage.style.opacity = '1';
+							gdocPage.style.marginRight = '0'; // Set margin-right to fill the space
+							sidebarRight.style.display = 'none'; // Hide the sidebar
+					} else {
+							sidebarRight.style.transition = 'transform 0.3s ease';
+							sidebarRight.style.transform = 'translateX(-3rem)';
+							sidebarRight.style.display = 'block'; // Show the sidebar
+					}
+			});
+	
+			menuControl.addEventListener('click', function() {
+					if (menuControl.checked) {
+							gdocPage.style.transition = 'opacity 0.3s ease';
+	
+							if (!sidebarControl.checked) {
+									gdocPage.style.opacity = '0.25';
+							} else {
+									sidebarRight.style.transition = 'transform 0.3s ease';
+									gdocPage.style.opacity = '0.25';
+									sidebarRight.style.transform = 'translateX(100%)';
+									sidebarRight.style.display = 'none'; // Hide the sidebar
+							}
+							sidebarControl.checked = false;
+					} else {
+							gdocPage.style.transition = 'opacity 0.3s ease';
+							gdocPage.style.opacity = '1';
+					}
+			});
+	});
+	</script>
+	
+	
