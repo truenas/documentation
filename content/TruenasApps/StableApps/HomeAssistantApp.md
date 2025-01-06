@@ -90,7 +90,7 @@ Accept the defaults in **Resources Configuration**, and select the GPU option if
 Click **Install**. A progress dialog displays before switching to the **Installed** applications screen.
 The **Installed** screen displays with the **nextcloud** app in the **Deploying** state. Status changes to **Running** when ready to use.
 
-Click **Web Portal** on the **Application Info** widget to open the *Home Assistant* web portal sign-up screen.
+Click **Web UI** on the **Application Info** widget to open the *Home Assistant* web portal sign-up screen.
 
 {{< trueimage src="/images/SCALE/Apps/HomeAssistantSignUpScreen.png" alt="Home Assistant Sign Up Screen" id="Home Assistant Sign Up Screen" >}}
 
