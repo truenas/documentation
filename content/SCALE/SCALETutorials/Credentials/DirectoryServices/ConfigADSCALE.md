@@ -26,7 +26,7 @@ Joining an AD domain also configures the Privileged Access Manager (PAM) to let 
 Users can configure AD services on Windows or Unix-like operating systems using [Samba version 4](https://wiki.samba.org/index.php/Setting_up_Samba_as_an_Active_Directory_Domain_Controller#Provisioning_a_Samba_Active_Directory).
 
 ### Preparing to Configure AD in TrueNAS
-Before configuring Active Directory (AD) in TrueNAs:
+Before configuring Active Directory (AD) in TrueNAS:
 
 You need to know the hostname assigned to the TrueNAS system. The default value is **truenas**.
 
