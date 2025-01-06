@@ -11,7 +11,7 @@ keywords:
 - assistant
 ---
 
-The TrueNAS Home Assistant app provides a streamlined way to install, manage, and leverage the powerful capabilities of Home Assistant. TrueNAS deploys the Home Assistant app in a Docker container using Docker Compose. Once the app is successfully deployed, you can access the Home Assistant web interface directly from TrueNAS. The Home Assistant interface enables you to control, automate, and monitor a wide range of smart home devices. With support for thousands of integrations, Home Assistant allows you to customize automations, create detailed dashboards, and manage your smart home setup with ease. 
+The TrueNAS Home Assistant app provides a streamlined way to install, manage, and leverage the powerful capabilities of Home Assistant. TrueNAS deploys the Home Assistant app in a Docker container using Docker Compose. Once the app is successfully deployed, you can access the Home Assistant web interface directly from TrueNAS. The Home Assistant interface lets you control, automate, and monitor various smart home devices. With support for thousands of integrations, you can customize automations, create detailed dashboards, and easily manage your smart home setup. 
 
 Home Assistant provides a [Quickstart Setup Guide](https://www.home-assistant.io/getting-started/) with step-by-step instructions to help users get started.
 
@@ -24,7 +24,7 @@ Prepare TrueNAS before installing Home Assistant by:
 
 {{< include file="/static/includes/apps/BeforeYouBeginAddAppDatasets.md" >}}
 
-  <p style="margin-left: 33px">Create a parent dataset, such as <i>HomeAssistant</i>, within your apps pool. Home Assistant uses three datasets: <b>config-storage</b>, <b>media-storage</b>, and <b>data-storage</b>. Ensure that the necessary datasets are created prior to the installation of the app, as they are needed to properly configure Home Assistant. Select <b>apps</b> as the <b>Dataset Preset</b> for these datasets. You can modify the dataset ACLs at the time of creation, or modify them later when adding them in the app.</p>
+  <p style="margin-left: 33px">Create a parent dataset, such as <i>HomeAssistant</i>, within your apps pool. Home Assistant uses three datasets: <b>config-storage</b>, <b>media-storage</b>, and <b>data-storage</b>. Ensure you create the necessary datasets before you install the app since Home Assistant needs them to configure properly. Select <b>apps</b> as the <b>Dataset Preset</b> for these datasets. You can modify the dataset ACLs at the time of creation, or modify them later when adding them in the app.</p>
 
 <p style="margin-left: 33px">Follow the instructions below in <b>Creating Datasets for Apps</b> to correctly set up these datasets.
 
@@ -41,12 +41,12 @@ For optional settings, see [Understanding App Installation Wizard Settings](#und
 
 {{< include file="static/includes/apps/MultipleAppInstancesAndNaming.md" >}}
 
-Go to **Apps**, click on **Discover Apps**, and locate the app widget by either scrolling down to it or begin typing the name into the search field.
+Go to **Apps**, click on **Discover Apps**, and locate the app widget by either scrolling down to it or typing the name into the search field.
 For example, to locate the Home Assistant app widget, begin typing *Home Assistant* into the search field to show app widgets matching the search input.
 
 {{< trueimage src="/images/SCALE/Apps/DiscoverScreenHomeAssistant.png" alt="Example of Locating an App Widget" id="Example of Locating an App Widget" >}}
 
-If this is the first application installed, TrueNAS displays a dialog about configuring apps.
+If this is the first application you are installing, TrueNAS displays a dialog about configuring apps.
 
 {{< expand "Configuring Apps Dialog" "v" >}}
 {{< trueimage src="/images/SCALE/Apps/AppsInformationDialog.png" alt="Apps Information Dialog" id="Apps Information Dialog" >}}
@@ -108,13 +108,13 @@ The following section provides more detailed explanations of the settings in eac
 
 *Home Assistant* configuration settings include setting up credentials, *APT packages* (previously referred to as the commands), the *host IP and port, data directory path, upload limits, execution times, memory limits and cache memory consumption, adding a cron job with schedule*, and *adding additional environment variables*.
 
-The **Home Assistant Configuration** section contains a **Database Password** field. This is where you set the password Home Assistant uses to securely connect to your TrueNAS system. This is *not* the field where you enter your current Home Assistant password or the password you intend to use to login to the app. 
+The **Home Assistant Configuration** section contains a **Database Password** field. This is where you set the password Home Assistant uses to securely connect to your TrueNAS system. This is *not* the field where you enter your current Home Assistant password or the password you intend to use to log into the app. 
 
 Upon deployment, users can set the desired Home Assistant login credentials or log in to an existing account from the Home Assistant UI.
 
 {{< trueimage src="/images/SCALE/Apps/HomeAssistantAddDevices.png" alt="Home Assistant Add Devices Option" id="Home Assistant Add Devices" >}}
 
-Users can select the **Add Devices** drop-down menu to configure device settings for any Home Assistant-compatible devices that they currently own. Users do not have to own any devices prior to installing the app, and can leave this section blank if not applicable.
+Users can select the **Add Devices** drop-down menu to configure device settings for any Home Assistant-compatible devices that they currently own. Users do not have to own any devices before installing the app and can leave this section blank if not applicable.
 
 #### Adding Environment Variables
 
