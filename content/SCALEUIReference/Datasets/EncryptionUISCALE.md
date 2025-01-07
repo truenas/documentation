@@ -16,7 +16,7 @@ Datasets, root, non-root parent, and child, or zvols with encryption include the
 
 {{< include file="/static/includes/EncryptionIconsSCALE.md" >}}
 
-## Pool Encryption
+## Pool Encryption <!-- Change to Dataset Encryption? -->
 The **Encryption** option on the **[Pool Manager]({{< relref "PoolCreateWizardScreens.md" >}})** screen sets encryption for the pool and root dataset.
 The **Download Encryption Key** warning window displays when you create the pool.
 It downloads a JSON file to your downloads folder.
