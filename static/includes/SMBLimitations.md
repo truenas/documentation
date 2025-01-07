@@ -3,36 +3,43 @@
 {{< expand "SMB Limitations" "v" >}}
 
 #### Windows, Linux, and MacOS Client SMB Limitations 
+
 {{< truetable >}}
 |  | Windows | Linux (Ext4) | Linux (XFS) | MacOS |
 |--|---------|--------------|-------------|-------|
 | Maximum file name length (characters) | 255 | 255 | 255 | 255 |
 | Maximum share name length (characters) | 255 | 255 | 255 | 255 |
-| Maximum length for path (characters) | 260* | 4096 | 4096 | 255*** |
+| Maximum length for path (characters) | 260<sup>1</sup> | 4096 | 4096 | 255<sup>3</sup> |
 | Invalid characters | angle brackets < ><br>colon :<br>asterick *<br>slashes / \<br>pipe | | NULL (?0)<br>slash (/) | NULL (?0)<br>slash (/) | slash /<br>colon :<br> |
 | Case sensitivity | Yes | No | No | Yes |
-| Single file size/write size** | 16 TB | 16 TB | 8 EB | # |
+| Single file size/write size<sup>2</sup> | 16 TB | 16 TB | 8 EB | <sup>4</sup> |
 | Maximum volume size | 256 TB | 1 EB | 8 EB | # |
 | Available file descriptors | 1024 | 1024 | 1024 | 256 |
 | File permissions: ACL entries (ACEs) per ACL, per file or directory | 1025 | 32 | 1000+ | 64 |
 | Maximum file descriptors simultaneously opened by a process | set limit | 1024+ | 1024+ | 256 |
 {{< /truetable >}}
 
-* * Maximum number of characters in the path length includes the drive letter, colon (:), and slashes in the path.
-* ** Maximum file size is limited by both disk size and storage volume capacity, and SMB protocol version.
-* *** Maximum path length in a MacOS client is limited by the SMB version and OS configuration. Path includes server name, share name, and file/folder path.
+
+<sup>1</sup> Maximum number of characters in the path length includes the drive letter, colon (:), and slashes in the path.
+
+<sup>2</sup> Maximum file size is limited by both disk size and storage volume capacity, and SMB protocol version
+
+<sup>3</sup> Maximum path length in a MacOS client is limited by the SMB version and OS configuration. Path includes server name, share name, and file/folder path.
+
+<sup>4 </sup> Maximum file size for MacOS clients is determined by the SMB protocol version.
+
 * File and share name character lengths include spaces (spaces in names are not recommended).
 * Trailing and preceding spaces in names are not allowed by Windows clients. Trailing spaces are stripped by the Windows client.
 * Linux clients allow trailing spaces, but they cause problems when accessing files with a Windows client.
 * Linux characters in file, share, and path names are case-sensitive, but Windows names are not case-sensitive.
 * Maximum number of files is tied to the volume size and intern file system structure.
-* /# Maximum file size for MacOS clients is determined by the SMB protocol version.
   Apple File System (APFS) supports up to 8 EB, HFS supports up to 8 TB. In theory, based on SMB prtocol and configuration, can be up to 16 EB.
 * File permission limits are influenced and limited by internal SMB protocol versions and the underlying operating file system.
 * File descriptors available for SMB processes are a limiting factor.
   Operating systems have a limit on the number of simultaneous file descriptors opened by a process.
   Set network and file descriptor limits to allow SMB to operate optimally in Windows clients.
   Change the system limits in Linux <file>limits.conf</file> file to increase the default number of file descriptors allowed.
+
 
 #### Samba SMB Limitations
 Samba SMB is not designed to work well in distributed file systems like Ceph or GlusterFS without careful configuration.
@@ -54,7 +61,7 @@ The Samba SMB server might need heavy optimization or to be scaled horizontally 
 | Large file and volume size support | No | 16 EB | 16 EB |
 {{< /truetable >}}
 
-* *SMB1 is deprecated
+\ *SMB1 is deprecated
 
 #### File Caching and Data Consistency Limitations
 Samba SMB relies heavily on local file system caches to speed up file access.
