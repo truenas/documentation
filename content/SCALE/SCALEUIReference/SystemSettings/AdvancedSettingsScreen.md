@@ -110,7 +110,7 @@ The **Kernel** widget shows options for configuring the Linux kernel installed w
 {{< truetable >}}
 | Settings | Description |
 |----------|-------------|
-| **Enable Debug Kernel** | Set to boot a debug kernel after the next system reboot. |
+| **Enable Debug Kernel** | Set to boot a debug kernel after the next system reboot. This is intended for troubleshooting scenarios only and should typically remain disabled. Enabling this option disables any Nvidia drivers present on the system. |
 {{< /truetable >}}
 {{< /expand >}}
 
