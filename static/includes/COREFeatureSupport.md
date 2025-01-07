@@ -1,6 +1,6 @@
 &NewLine;
 
-As of TrueNAS 13.3, these features are obsolete and provided without support to the [TrueNAS Community](https://forums.truenas.com/).
+As of TrueNAS 13.3, virtualization features (plugins, jails, and virtual machines) are obsolete and provided without support to the [TrueNAS Community](https://forums.truenas.com/).
 
 Users with a critical need to use containers or virtualization solutions in production should migrate to the tested and supported virtualization features available in [TrueNAS SCALE](https://www.truenas.com/download-truenas-scale/).
 
