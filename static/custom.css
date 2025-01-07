@@ -112,27 +112,25 @@ p,h1,h2,h3,h4,th,td,a,body {
 .sticky {
     position: fixed;
     top: 0;
-    left: 50%;
-        -ms-transform: translateX(-50%);
-        -moz-transform: translateX(-50%);
-        -webkit-transform: translateX(-50%);
-    transform: translateX(-50%);
     z-index: 5;
     margin: 0 auto;
-    max-width: 100% !important;
     padding: .5rem 1rem .5rem 1rem;
 	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+	background: white;
+	min-width: -webkit-fill-available;
 }
 .stickyelement {
-    background: white;
-	padding-top: 1rem;
+    max-width: 100rem;
+	margin: 0 auto;
+	padding: .5rem 1rem 0rem 1rem;
 }
 .truerow {
 	display: block;
 }
 .stickybackground {
 	z-index: 1;
-	width: 100%
+	max-width: 100rem;
+	margin: 0 auto;
 	background: white;
 }
 .gdoc-header__link {
@@ -161,7 +159,6 @@ p,h1,h2,h3,h4,th,td,a,body {
 	.google_translate_element {
 	}
 }
-/* Remove stickybar for small screens and use default GeekDoc menu */
 @media screen and (max-width:46rem) {
 	.container.truerow {
         display: none;
@@ -178,7 +175,6 @@ p,h1,h2,h3,h4,th,td,a,body {
 	padding-top:.5rem;
 	justify-content:center;
 	align-items:center;
-	width: 85%;
 	margin: 0 auto;
 }
 .truenas-docsnav-menubutton {
