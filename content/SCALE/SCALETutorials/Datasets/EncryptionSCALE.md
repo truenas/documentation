@@ -18,7 +18,7 @@ keywords:
 - data sharing
 ---
 
-TrueNAS offers ZFS encryption for your sensitive data in pools and datasets or Zvols.
+TrueNAS offers ZFS encryption for your sensitive data in datasets and zvols.
 
 {{< include file="/static/includes/EncryptionBackupKeys.md" >}}
 
@@ -232,26 +232,18 @@ Click **CLOSE**.
 TrueNAS displays the dataset with the unlocked icon.
 
 ## Encrypting a Zvol
-Encryption is for securing sensitive data.
-
-{{< hint type=note >}}
-You can only encrypt a Zvol if you create the Zvol from a dataset with encryption.
-{{< /hint >}}
 
 {{< include file="/static/includes/EncryptionBackupKeys.md" >}}
 
-Zvols inherit encryption settings from the parent dataset.
+To encrypt a Zvol, select a parent dataset and then [create a new Zvol]({{< relref "AddManageZvols.md" >}}).
+If the parent dataset is encrypted, select **Inherit (encrypted)** under **Encryption Options**.
+If the parent dataset is not encrypted, deselect **Inherit (non-encrypted)**, select **Encryption**, and then configure the **Encryption Type** and related settings.
 
-To encrypt a Zvol, select a dataset configured with encryption and then [create a new Zvol]({{< relref "AddManageZvols.md" >}}).
-Next, go to **Datasets** and click on the Zvol.
+Next, go to **Datasets** and click on the Zvol and locate the **ZFS Encryption** widget.
 
 {{< trueimage src="/images/SCALE/Datasets/ZFSEncryptionWidgetRootDataset.png" alt="ZFS Encryption Widget Root Dataset" id="ZFS Encryption Widget" >}}
 
-If you do not see the **ZFS Encryption** widget, you created the Zvol from an unencrypted dataset. Delete the Zvol and start over.
-
-The Zvol is encrypted with settings inherited from the parent dataset.
-
-To change inherited encryption properties from passphrase to key, or enter a new key or passphrase, select the zvol, then click **Edit** on the **ZFS Encryption** widget.
+To change encryption properties from passphrase to key or enter a new key or passphrase, select the zvol, then click **Edit** on the **ZFS Encryption** widget.
 
 {{< trueimage src="/images/SCALE/Datasets/EditEncryptionDialogForZvol.png" alt="Edit Zvol Encryption" id="Edit Zvol Encryption" >}}
 
