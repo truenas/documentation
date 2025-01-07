@@ -22,3 +22,4 @@ These are the items that do not migrate from 13.0-U6.x:
 * TrueNAS 13 account names beginning with a number are not supported in TrueNAS 24.04 and later.
   Usernames in 24.04 and later must begin with a letter or an underscore. Before attempting a migration, review the local user accounts and rename or replace any accounts that begin with a numeric character (0-9).
 * VM storage and its basic configuration transfer over during a migration, but you need to double-check the VM configuration and the network interface settings specifically before starting the VM.
+* SED drive configurations. Due to differences between master password management between FreeBSD-based TrueNAS releases (13.0, 13.3) and Linux-based TrueNAS releases (24.10 and previous), configured SED drives do not migrate to 24.10. This is anticipated to change in TrueNAS 25.04 and future releases.
