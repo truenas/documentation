@@ -182,6 +182,7 @@ This is a maintenance release and includes refinement and fixes for issues disco
 
 ### 24.10.1 Known Issues
 
+* The Plex app doesn't show Nvidia GPUs being passed to the app and transcode stops working ([NAS-133250](https://ixsystems.atlassian.net/browse/NAS-133250)). A fix is anticipated in a future release and the linked Jira ticket has a workaround for the 24.10.1 release.
 * Configured SED drives do not migrate from FreeBSD-based TrueNAS releases to 24.10 (or earlier) releases, due to differences in how FreeBSD-based and Linux-based TrueNAS releases manage SED configurations. A fix to allow cleaner migrations of SED configurations is anticipated in TrueNAS 25.04.
 * The Dashboard CPU widgets have an issue displaying metrics for some types of hyper-threaded CPUs ([NAS-133128](https://ixsystems.atlassian.net/browse/NAS-133128)). This is being addressed in future 24.10 maintenance releases.
 * An issue was discovered with restoration of ZFS snapshots via TrueCloud back up tasks ([NAS-132608](https://ixsystems.atlassian.net/browse/NAS-132608)). The **Take Snapshot** option for TrueCloud back up tasks is disabled in 24.10.1 until the underlying issue is addressed in a future TrueNAS release.
