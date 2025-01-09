@@ -263,7 +263,7 @@ To configure network settings on controller 1:
 
    b. Add the failover settings. Select **Critical**, and then select **1** on the **Failover Group** dropdown list.
    
-   {{< trueimage src="/images/SCALE/22.12/EditInterfaceFailoveSettingsHA.png" alt="Edit Network Interface Failover Settings" id="Edit Network Interface Failover Settings" >}}
+   {{< trueimage src="/images/SCALE/22.12/EditInterfaceFailoverSettingsHA.png" alt="Edit Network Interface Failover Settings" id="Edit Network Interface Failover Settings" >}}
 
    c. Add the virtual IP (VIP) and controller 2 IP. Click **Add** for **Aliases** to display the additional IP address fields. 
 
