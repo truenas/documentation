@@ -36,8 +36,8 @@ TrueNAS includes the [Key Management Interface Protocol (KMIP)](https://docs.oas
 {{< include file="/static/includes/EncryptionWarning.md" >}}
 
 TrueNAS automatically generates a root dataset when you create a pool.
-Select **Encryption** on the **[Pool Creation Wizard]({{< relref "PoolCreateWizardScreens.md" >}})** screen when you create the pool to encrypt this root dataset.
-The TrueNAS UI forces encryption for all child datasets and zvols created within an encrypted root or parent dataset.
+Select **Encryption** on the **[Pool Creation Wizard]({{< relref "PoolCreateWizardScreens.md" >}})** screen when you create the pool to encrypt the root dataset.
+The TrueNAS forces encryption for all child datasets and zvols within an encrypted root or parent dataset that are created using the TrueNAS UI.
 By default, child datasets inherit encryption settings from the parent.
 Deselect **Inherit (encrypted)** under **Advanced Options** to modify encryption configuration for the child dataset.
 
@@ -89,7 +89,7 @@ If your system does not have enough disks to allow you to create a second storag
 All pool-level encryption is key-based encryption. When prompted, download the encryption key and keep it stored in a safe place where you can back up the file.
 You cannot use passphrase encryption at the pool level.
 
-{{< hint type=warning >}}
+{{< hint type=important >}}
 You cannot change an existing dataset from encrypted to non-encrypted.
 You can only change the dataset encryption type (key or passphrase).
 After saving a dataset with encryption, if the encryption type is set to passphrase you can change it to key type, but you cannot change from key type to passphrase.
