@@ -36,20 +36,21 @@ The **General Info** area includes two default settings, **Name** and **Encrypti
 
 {{< trueimage src="/images/SCALE/Storage/PoolCreationWizardGeneralInfo.png" alt="Pool Creation Wizard General Info" id="Pool Creation Wizard General Info" >}}
 
-**Name** is a required field. 
+**Name** is a required field.
 Enter a pool name of up to 50 characters in length that follows [ZFS naming conventions](https://docs.oracle.com/cd/E23824_01/html/821-1448/gbcpt.html).
 Use lower-case alpha characters to avoid potential problems with sharing protocols.
 Names can include numbers and special characters such as underscore (_), hyphen (-), colon (:), or a period (.).
 
 **Encryption** applies key-type encryption to the pool.
-Select to enable [ZFS encryption](https://zfsonlinux.org/manpages/0.8.3/man8/zfs.8.html) for the pool and all datasets (or zvols) created within the pool.
-See [Storage Encryption]({{< relref "EncryptionScale.md" >}}) for more information on using SCALE storage encryption.
+
+{{< include file="/static/includes/EncryptionRootLevel.md" >}}
+
+Select to enable [ZFS encryption](https://zfsonlinux.org/manpages/0.8.3/man8/zfs.8.html) for the pool and all datasets (or zvols) within the pool created using the TrueNAS UI.
+See [Storage Encryption]({{< relref "EncryptionScale.md" >}}) for more information on using TrueNAS storage encryption.
 An encryption warning dialog displays with a **Confirm** checkbox.
 Select to enable the **I Understand** button. **I Understand** allows you to continue adding the pool with encryption applied.
 
 {{< hint type="Warning" >}}
-Applying encryption at the pool level also encrypts all datasets (and zvols) within the pool.
-
 Keep the encryption key file in a safe location where you perform regular backups. Losing the encryption key file results in lost data you cannot recover.
 {{< /hint >}}
 
@@ -103,7 +104,7 @@ Use the **Log** wizard screen to configure a log VDEV. ZFS log devices can impro
 {{< trueimage src="/images/SCALE/Storage/PoolCreationWizardLogScreen.png" alt="Pool Creation Wizard Log Screen" id="Pool Creation Wizard Log Screen" >}}
 
 {{< expand "Common Pool Creation Wizard Settings" "v" >}}
-The **Layout** dropdown list includes the **Stripe** or **Mirror** types. 
+The **Layout** dropdown list includes the **Stripe** or **Mirror** types.
 
 {{< include file="/static/includes/PoolCreationWizardCommonSettings.md" >}}
 {{< /expand >}}

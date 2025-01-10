@@ -21,7 +21,7 @@ You can rename your enclosure on the [Enclosure Screen]({{< relref "EnclosureScr
    {{< /hint >}}
 
 2. (Enterprise systems only) Select the **Enclosure Option** to apply the dispersal strategy of your choice. Only shows for iXsystems-provided systems with expansion shelves.
-   
+
    {{< trueimage src="/images/SCALE/Storage/PoolCreationWizardEnclosureOptionsScreen.png" alt="Pool Creation Wizard Enclosure Options" id="Pool Creation Wizard Enclosure Options" >}}
 
    **No Enclosure Dispersal Strategy** does not apply a dispersal strategy in how the system adds disks by size and type to the pool VDEVs created when using the **Automated Disk Selection** option.
@@ -43,6 +43,8 @@ You can rename your enclosure on the [Enclosure Screen]({{< relref "EnclosureScr
    **dRAID** layouts do not show the **Manual Disk Selection** button but do show additional **Automated Disk Selection** fields.
    When configuring a **dRAID** data VDEV, first choose a **Disk Size** then select a **Data Devices** number.
    The remaining fields update based on the **Data Devices** and **dRAID** layout selections.
+
+   {{< include file="/static/includes/dRaidGroupLayout.md" >}}
 
    Click **Save And Go To Review** if you do not want to add other VDEV types to the pool, or click **Next** to move to the next wizard screens.
 
