@@ -4,6 +4,7 @@ description: "Provides advanced users information on deploying custom FreeBSD ja
 weight: 60
 aliases:
  - /scale/scaletutorials/apps/sandboxes/
+ - /scale/scaletutorials/apps/sandboxes/)
 tags:
 - customapp
 - apps

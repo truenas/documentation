@@ -4,6 +4,7 @@ description: "Provides instructions on managing storage pools, VDEVs, and disks 
 weight: 40
 aliases:
  - /scale/scaletutorials/storage/pools/managepoolsscale/
+ - /images/CORE/13.0/StorageAllPoolsDataset.png
 tags: 
 - pools
 - storage
