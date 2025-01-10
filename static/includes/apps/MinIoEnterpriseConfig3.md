@@ -11,7 +11,7 @@ Do not select **Host Network**.
 Select the certificate you created for MinIO from the **Certificates** dropdown list.
 
 Enter the TrueNAS server IP address and the API port number 30000 as a URL in **MinIO Server URL (API**). For example, **http://*ipaddress*:30000**.
-Use **https://** only if your system is configured to use it to log into the system or you are configuring MinIO in a cluster.
+Use **https://** only if your system is configured to use https to log into the system, or if you are configuring MinIO in a cluster.
 
 Enter the TrueNAS server IP address and the web UI browser redirect port number 30001 as a URL in **MinIO Browser Redirect URL**. For example, **http://*ipaddress*:30001**.
 
