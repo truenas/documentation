@@ -131,7 +131,7 @@ When Samba SMB is used in cross-platform, environments such as a Windows client,
 Windows and Linux systems use different mechanisms for managing file locks. Lock types might not perfectly map, leading to inconsistent behavior between the OS and Samba SMB.
 
 In high-availability environments or failover configurations, Samba SMB handling of lock leases can be problematic.
-If the server fails or a network partition occurs, locks can improperly release or not be properly cleaned up leading to stale locks or other clients being blocked. This is especially problematic in clustered or HA configurations where failovers are expected to occur.
+If the server fails or a network partition occurs, locks can improperly release or not be properly cleaned up, leading to stale locks or other clients being blocked. This is especially problematic in clustered or HA configurations where failovers are expected to occur.
 
 Samba SMB has limited support for heavy locking requirements, rather it is designed for simpler file-sharing needs. Applications that require frequent or complex locking can face significant problems with the Samba SMB locking mechanism.
 
