@@ -10,7 +10,8 @@ tags:
 ---
 
 The <i class="material-icons" aria-hidden="true" title="laptop" style="vertical-align: top;">laptop</i> **My API Keys** option on the top right toolbar **Settings** (user icon) dropdown menu displays the **User API Keys** screen.
-This screen displays a list of API keys added to your system and allows you to add, edit, or delete keys.
+This screen displays a list of API keys added to your system and allows you to add, search, edit, or delete keys.
+Click **API Docs** to view [API Documentation](#api-documentation)
 
 {{< trueimage src="/images/SCALE/Dashboard/APIKeysScreen.png" alt="API Keys Screen" id="API Keys Screen" >}}
 
@@ -44,21 +45,29 @@ Click **Copy to Clipboard** and save the API key string in a secure location.
 {{< include file="/static/includes/APIKeyWarn.md" >}}
 
 Click **Close** to return to the **User API Keys** screen.
-<!-- Continue -->
-## Editing or Deleting an API Key
 
-Select the <span class="iconify" data-icon="eva:more-vertical-outline"></span> icon for any API key on the list to display options to manage that API key. Options are **Edit** or **Delete**.
+## Managing API Keys
+
+### Editing an API Key
+
+Click <i class="material-icons" aria-hidden="true" title="Edit">edit</i> edit for any API key on the list to open the **Edit API Key** window and modify that key.
 
 {{< trueimage src="/images/SCALE/Dashboard/APIKeysEdit.png" alt="Edit API Key" id="Edit API Key" >}}
 
-Select the **Reset** to remove the existing API key and generate a new random key. The dialog displays the new key and the **Copy to Clipboard** option to copy the key to the clipboard.
+Select the **Reset** to remove the existing API key and generate a new random key. The dialog displays the new key and the **Copy to Clipboard** option.
+Click to copy the new API key string then save it in a secure location.
 
 {{< include file="/static/includes/APIKeyWarn.md" >}}
 
-To delete, select **Confirm** on the delete dialog to activate the **Delete** button.
+### Deleting an API Key
+
+Click <i class="material-icons" aria-hidden="true" title="Delete">delete</i> delete for any API key on the list to remove that key.
+TrueNAS opens a **Delete API Key** dialog
 
 {{< trueimage src="/images/SCALE/Dashboard/APIKeysDelete.png" alt="Delete API Key" id="Delete API Key" >}}
 
-## API Key Documentation
+Select **Confirm** then click **Delete**.
 
-Click **API Docs** to access API documentation that is built into the system.
+## API Documentation
+
+Click **API Docs** to access the TrueNAS API documentation that is built into the system.
