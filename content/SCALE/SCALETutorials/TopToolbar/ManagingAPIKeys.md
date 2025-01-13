@@ -11,7 +11,7 @@ tags:
 
 The <i class="material-icons" aria-hidden="true" title="laptop" style="vertical-align: top;">laptop</i> **My API Keys** option on the top right toolbar **Settings** (user icon) dropdown menu displays the **User API Keys** screen.
 This screen displays a list of API keys added to your system and allows you to add, search, edit, or delete keys.
-Click **API Docs** to view [API Documentation](#api-documentation)
+Click **API Docs** to view [API Documentation](#api-documentation).
 
 {{< trueimage src="/images/SCALE/Dashboard/APIKeysScreen.png" alt="API Keys Screen" id="API Keys Screen" >}}
 
@@ -54,7 +54,8 @@ Click <i class="material-icons" aria-hidden="true" title="Edit">edit</i> edit fo
 
 {{< trueimage src="/images/SCALE/Dashboard/APIKeysEdit.png" alt="Edit API Key" id="Edit API Key" >}}
 
-Select the **Reset** to remove the existing API key and generate a new random key. The dialog displays the new key and the **Copy to Clipboard** option.
+Select the **Reset** to remove the existing API key and generate a new random key.
+The dialog displays the new key and the **Copy to Clipboard** option.
 Click to copy the new API key string then save it in a secure location.
 
 {{< include file="/static/includes/APIKeyWarn.md" >}}
