@@ -116,7 +116,8 @@ Advisory locks do not force other processes to respect locks, it merely notifies
 This can lead to situations where a client ignores a lock and the potential for conflicts or data corruption if multiple clients access the file without proper coordination.
 Not all clients handle file locks consistently or correctly respect advisory locks.
 
-Samba does not provide mandatory file locking, enforcing locks when the client does not cooperate. This means some applications might not behave as expected if they are designed to rely on mandatory locking.
+Samba does not have mandatory file locking, it enforces locks when the client does not cooperate.
+This means some applications might not behave as expected if they are designed to rely on mandatory locking.
 Samba might struggle to maintain consistent locks if the clients access files through different protocols, like NFS clients accessing the same files as SMB clients.
 File locks across platforms can lead to conflicts and unpredictable behaviours because of how each protocol manages locks - how locks are granted, released, or honored.
 
