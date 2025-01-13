@@ -18,30 +18,42 @@ Datasets, root, non-root parent, and child, or zvols with encryption include the
 
 {{< include file="/static/includes/EncryptionIconsSCALE.md" >}}
 
-## Pool Encryption
+## Dataset Encryption
+
 The **Encryption** option on the **[Pool Manager]({{< relref "PoolCreateWizardScreens.md" >}})** screen sets encryption for the pool and root dataset.
+
+{{< include file="/static/includes/EncryptionRootLevel.md" >}}
+
 The **Download Encryption Key** warning window displays when you create the pool.
 It downloads a JSON file to your downloads folder.
 
 {{< trueimage src="/images/SCALE/Storage/DownloadPoolEncryptionKey.png" alt="Download Pool Encryption Key" id="Download Pool Encryption Key" >}}
 
+The [**Encryption Options** settings]({{< relref "/scale/scaleuireference/datasets/_index.md #encryption-options-section" >}}) under **Advanced Options** on the **Add Dataset** screen configure encryption for that dataset.
+
+{{< trueimage src="/images/SCALE/Datasets/AddDatasetBasicEncryptionAndOtherOptions.png" alt="Add Dataset Encryption Options Key" id="Add Dataset Encryption Options Key" >}}
+
 ## Export Key Options
+
 The **ZFS Encryption** widget for root datasets with encryption includes the **Export All Keys** and **Export Key** options. It does not include the **Lock** option.
 
 If a dataset is encrypted using a key, the **ZFS Encryption** widget for that dataset includes the **Export Key** option.
 
 ### Export All Keys Dialog
+
 **Export All Keys** opens a confirmation dialog with the **Download Keys** option that exports a JSON file of all encryption keys to the system download folder.
 
 {{< trueimage src="/images/SCALE/Datasets/ExportAllKeysDialog.png" alt="Export All Keys" id="Export All Keys" >}}
 
 ### Export Key Dialog
+
 **Export Key** opens a dialog with the key for the selected dataset and the **Download Key** option that exports a JSON file with the encryption key to your system download folder.
 
 {{< trueimage src="/images/SCALE/Datasets/ExportKeyDialog.png" alt="Export Key" id="Export Key" >}}
 
 ## Edit Encryption Options Window
-Encryption type and options are set for a dataset when it is first created and are inherited from the root dataset.
+
+Encryption type and options are set for a dataset when it is first created or are inherited from the root dataset.
 The **Edit Encryption Options for *datasetname*** displays the current encryption option settings for the selected encrypted dataset.
 Use to change the encryption type from or to key or passphrase, and the related settings.
 
@@ -55,6 +67,7 @@ The encryption settings options are the same as those on **Add Dataset > Encrypt
 {{< /expand >}}
 
 ## Lock Dataset Dialog
+
 **Lock** displays on encrypted non-root parent or child datasets **ZFS Encryption** widgets.
 An encrypted child that inherits encryption from a non-root parent does not see the **Lock** option on its **ZFS Encryption** widget because the lock state is controlled by the parent dataset for that child dataset.
 The locked icon for child datasets that inherit encryption is the locked by ancestor icon.
@@ -67,6 +80,7 @@ The locked icon for child datasets that inherit encryption is the locked by ance
 After locking a dataset, the **ZFS Encryption** screen displays **Locked** as the **Current State** and adds the **Unlock** option.
 
 ## Unlock Datasets Screen
+
 **Unlock** on the **ZFS Encryption** widget displays for locked datasets that are not child datasets that inherit encryption from the parent dataset.
 **Unlock** opens the **Unlock Datasets** screen, which allows you to unlock the selected dataset and child datasets simultaneously.
 

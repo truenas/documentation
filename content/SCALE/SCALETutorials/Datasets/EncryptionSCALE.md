@@ -18,7 +18,7 @@ keywords:
 - data sharing
 ---
 
-TrueNAS offers ZFS encryption for your sensitive data in pools and datasets or Zvols.
+TrueNAS offers ZFS encryption for your sensitive data in datasets and zvols.
 
 {{< include file="/static/includes/EncryptionBackupKeys.md" >}}
 
@@ -36,20 +36,20 @@ TrueNAS includes the [Key Management Interface Protocol (KMIP)](https://docs.oas
 {{< include file="/static/includes/EncryptionWarning.md" >}}
 
 TrueNAS automatically generates a root dataset when you create a pool.
-This root dataset inherits the encryption state of the pool through the **Encryption** option on the **[Pool Creation Wizard]({{< relref "PoolCreateWizardScreens.md" >}})** screen when you create the pool.
-Because encryption is inherited from the parent, all data within that pool is encrypted.
-Selecting the **Encryption** option for the pool (root dataset) forces encryption for all datasets and zvols created within the root dataset.
+Select **Encryption** on the **[Pool Creation Wizard]({{< relref "PoolCreateWizardScreens.md" >}})** screen when you create the pool to encrypt the root dataset.
+The TrueNAS forces encryption for all child datasets and zvols within an encrypted root or parent dataset that are created using the TrueNAS UI.
+By default, child datasets inherit encryption settings from the parent.
+Deselect **Inherit (encrypted)** under **Advanced Options** to modify encryption configuration for the child dataset.
 
-You cannot create an unencrypted dataset within an encrypted pool or dataset.
-This change does not affect existing datasets created in earlier releases of TrueNAS but does affect new datasets created in 22.12.3 and later releases.
+In TrueNAS 22.12.3 or later, you cannot create an unencrypted dataset within an encrypted pool or dataset using the TrueNAS UI.
+However, datasets created outside of the UI, such as those created programmatically or manually via shell access, might not inherit encryption unless properly configured.
+For example, the [ix-apps dataset]({{< relref "/content/TrueNASApps/_index.md #ix-apps-dataset" >}}) on the pool selected for applications does not inherit encryption settings.
 
-Leave the **Encryption** option on the **Pool Creation Wizard** screen cleared to create an unencrypted pool.
+For more granular control, we recommend users do not configure pool-level encryption.
+Leave **Encryption** unselected on the **Pool Creation Wizard** screen to create a pool with an unencrypted root dataset.
 You can create both unencrypted and encrypted datasets within an unencrypted pool (root dataset).
-If you create an encrypted dataset within an unencrypted dataset, all datasets or zvol created within that encrypted dataset are automatically encrypted.
 
-Using encryption ensures secure data sharing and storage.
-
-If you have only one pool on your system, do not select the **Encryption** option for this pool.
+If you have only one pool on your system, do not use pool-level encryption for this pool.
 
 {{< expand "Can I change dataset encryption?" "v" >}}
 Before you save a new dataset, you can change the type of encryption of an encrypted dataset to key to passphrase.
@@ -63,10 +63,11 @@ You can also move data from an unencrypted pool or dataset to an encrypted datas
 {{< /expand >}}
 
 {{< hint type=important >}}
-If your system loses power or you reboot the system, the datasets, zvols, and all data in an encrypted pool automatically lock to protect the data in that encrypted pool.
+If your system loses power or you reboot the system, all encrypted datasets and zvols lock automatically to protect data.
 {{< /hint >}}
 
 ### Encryption Visual Cues
+
 TrueNAS uses lock icons to indicate the encryption state of a root, parent, or child dataset in the tree table on the **[Datasets]({{< relref "/SCALE/SCALEUIReference/Datasets/_index.md" >}})** screen.
 Each icon shows a text label with the state of the dataset when you hover the mouse over the icon.
 
@@ -80,18 +81,24 @@ The dataset encryption state is unlocked until you lock it using the **Lock** bu
 After locking the dataset, the icon on the tree table changes to locked, and the **Unlock** button appears on the **ZFS Encryption** widget.
 
 ## Implementing Encryption
-Before creating a pool with encryption decide if you want to encrypt all datasets, zvols, and data stored on the pool.
 
-{{< hint type=warning >}}
-You cannot change a pool from encrypted to non-encrypted. You can only change the dataset encryption type (key or passphrase) for the encrypted pool.
-{{< /hint >}}
+Before creating a encrypted pool (root dataset) or dataset, decide if you want to encrypt all child datasets, zvols, and data stored on that dataset.
+
 If your system does not have enough disks to allow you to create a second storage pool, we recommend that you not use encryption at the pool level. Instead, apply encryption at the dataset level to non-root parent or child datasets.
-{{< hint type=important >}}
+
 All pool-level encryption is key-based encryption. When prompted, download the encryption key and keep it stored in a safe place where you can back up the file.
 You cannot use passphrase encryption at the pool level.
 
+{{< hint type=important >}}
+You cannot change an existing dataset from encrypted to non-encrypted.
+You can only change the dataset encryption type (key or passphrase).
+After saving a dataset with encryption, if the encryption type is set to passphrase you can change it to key type, but you cannot change from key type to passphrase.
 {{< /hint >}}
+
 ### Adding Encryption to a New Pool
+
+{{< include file="/static/includes/EncryptionRootLevel.md" >}}
+
 Go to **Storage** and click **Create Pool** on the **Storage Dashboard** screen.
 You can also click **Add to Pool** on the **Unassigned Disks** widget and select the **Add to New** to open the **Pool Creation Wizard**.
 
@@ -110,6 +117,7 @@ Move the encryption key to safe location where you can back up the file.
 Add any other VDEVS to the pool you want to include, then click **Save** to create the pool with encryption.
 
 ### Adding Encryption to a New Dataset
+
 To add an encrypted dataset, go to **Datasets**.
 
 Select dataset on the tree table where you want to add a new dataset.
@@ -124,27 +132,21 @@ Select the **Dataset Preset** option you want to use. Options are:
 {{< include file="/static/includes/DatasetPresetOptions.md" >}}
 
 To add encryption to a dataset, scroll down to **Encryption Options** and select the inherit checkbox to clear the checkmark.
-If the parent dataset is unencrypted and you want to encrypt the dataset, clear the checkmark to show the **Encryption** option.
-If the parent dataset is encrypted and you want to change the type, clearing the checkmark shows the other encryption options.
-To keep the dataset encryption settings from the parent, leave inherited checkmarked.
+If the parent dataset is unencrypted and you want to encrypt the dataset, deselect **Inherit (non-encrypted)** to show the **Encryption** option.
+If the parent dataset is encrypted and you want to change the type, deselect **Inherit (encrypted)** to configure encryption options.
+To keep the dataset encryption settings from the parent, leave inherit selected.
 
 {{< trueimage src="/images/SCALE/Datasets/AddDatasetEncryptionOptionsInheritCleared.png" alt="Add Dataset Encryption Options Clear Inherit" id="Add Dataset Encryption Options Clear Inherit" >}}
 
 Decide if you want to use the default key type encryption and if you want to let the system generate the encryption key.
-To use key encryption and your key, clear the **Generate key** checkbox to display the **Key** field. Enter your key in this field.
+To use key encryption and an existing key, deselect **Generate Key** to display the **Key** field.
+Enter the existing key in this field.
 
 {{< trueimage src="/images/SCALE/Datasets/AddDatasetEncryptionKeyfromNonEncrypted.png" alt="Add Key Encryption" id="Add Key Encryption" >}}
 
-To change to passphrase encryption, click the down arrow and select **Passphrase** from the **Encryption Type** dropdown.
+To change to passphrase encryption, select **Passphrase** from the **Encryption Type** dropdown.
 
 {{< trueimage src="/images/SCALE/Datasets/AddDatasetEncryptionOptionsPassphrase.png" alt="Add Passphrase Encryption" id="Add Passphrase Encryption" >}}
-
-You can select the encryption algorithm to use from the **Encryption Standard** dropdown list of options or use the recommended default.
-Leave the default selection if you do not have a particular encryption standard you want to use.  
-{{< expand "What are these options?" "v" >}}
-TrueNAS supports AES [Galois Counter Mode (GCM)](https://csrc.nist.gov/publications/detail/sp/800-38d/final) and [Counter with CBC-MAC (CCM)](https://tools.ietf.org/html/rfc3610) algorithms for encryption.
-These algorithms provide authenticated encryption with block ciphers.
-{{< /expand >}}
 
 {{< hint type=note >}}
 The passphrase must be longer than 8 and less than 512 characters.
@@ -155,7 +157,15 @@ Keep encryption keys and/or passphrases safeguarded in a secure and protected pl
 Losing encryption keys or passphrases can result in permanent data loss!
 {{< /hint >}}
 
+You can select the encryption algorithm to use from **Algorithm** or use the recommended default.
+Leave the default selection if you do not have a particular encryption standard you want to use.  
+{{< expand "What are these options?" "v" >}}
+TrueNAS supports AES [Galois Counter Mode (GCM)](https://csrc.nist.gov/publications/detail/sp/800-38d/final) and [Counter with CBC-MAC (CCM)](https://tools.ietf.org/html/rfc3610) algorithms for encryption.
+These algorithms provide authenticated encryption with block ciphers.
+{{< /expand >}}
+
 ### Changing Dataset (or Zvol) Encryption
+
 You cannot add encryption to an existing dataset.
 You can change the encryption type for an already encrypted dataset using the **Edit** option on the **ZFS Encryption** widget for the dataset.
 
@@ -192,12 +202,14 @@ Leave the other settings at default, then click **Confirm** to activate **Save**
 Click **Save** to close the window and update the **ZFS Encryption** widget to reflect the changes made.
 
 ## Locking and Unlocking Datasets
+
 {{< hint type=important >}}
 You can only lock and unlock an encrypted dataset if it is secured with a passphrase instead of a key file.
 Before locking a dataset, verify that it is not currently in use.
 {{< /hint >}}
 
 ### Locking a Dataset
+
 Select the encrypted dataset on the tree table, then click **Lock** on the **ZFS Encryption** widget to open the **Lock Dataset** dialog with the dataset full path name.
 
 {{< trueimage src="/images/SCALE/Datasets/LockDatasetDialog.png" alt="Lock Dataset" id="Lock Dataset" >}}
@@ -211,6 +223,7 @@ You *cannot* use locked datasets.
 {{< /hint >}}
 
 ### Unlocking a Dataset
+
 To unlock a dataset, go to **Datasets** then select the locked dataset on the tree table.
 Click **Unlock** on the **ZFS Encryption** widget to open the **Unlock Dataset** screen.
 
@@ -232,26 +245,18 @@ Click **CLOSE**.
 TrueNAS displays the dataset with the unlocked icon.
 
 ## Encrypting a Zvol
-Encryption is for securing sensitive data.
-
-{{< hint type=note >}}
-You can only encrypt a Zvol if you create the Zvol from a dataset with encryption.
-{{< /hint >}}
 
 {{< include file="/static/includes/EncryptionBackupKeys.md" >}}
 
-Zvols inherit encryption settings from the parent dataset.
+To encrypt a Zvol, select a parent dataset and then [create a new Zvol]({{< relref "AddManageZvols.md" >}}).
+If the parent dataset is encrypted, select **Inherit (encrypted)** under **Encryption Options**.
+If the parent dataset is not encrypted, deselect **Inherit (non-encrypted)**, select **Encryption**, and then configure the **Encryption Type** and related settings.
 
-To encrypt a Zvol, select a dataset configured with encryption and then [create a new Zvol]({{< relref "AddManageZvols.md" >}}).
-Next, go to **Datasets** and click on the Zvol.
+Next, go to **Datasets** and click on the Zvol and locate the **ZFS Encryption** widget.
 
 {{< trueimage src="/images/SCALE/Datasets/ZFSEncryptionWidgetRootDataset.png" alt="ZFS Encryption Widget Root Dataset" id="ZFS Encryption Widget" >}}
 
-If you do not see the **ZFS Encryption** widget, you created the Zvol from an unencrypted dataset. Delete the Zvol and start over.
-
-The Zvol is encrypted with settings inherited from the parent dataset.
-
-To change inherited encryption properties from passphrase to key, or enter a new key or passphrase, select the zvol, then click **Edit** on the **ZFS Encryption** widget.
+To change encryption properties from passphrase to key or enter a new key or passphrase, select the zvol, then click **Edit** on the **ZFS Encryption** widget.
 
 {{< trueimage src="/images/SCALE/Datasets/EditEncryptionDialogForZvol.png" alt="Edit Zvol Encryption" id="Edit Zvol Encryption" >}}
 
@@ -264,6 +269,7 @@ Save any change to the encryption key or passphrase, update your saved passcodes
 {{< /hint >}}
 
 ## Managing Encryption Credentials
+
 There are two ways to manage the encryption credentials, with a key file or passphrase.
 Creating a new encrypted pool automatically generates a new key file and prompts users to download it.
 
@@ -280,6 +286,7 @@ A passphrase is a user-defined string at least eight characters long that is req
 The **pbkdf2iters** is the number of password-based key derivation function 2 ([PBKDF2](https://tools.ietf.org/html/rfc2898#appendix-A.2)) iterations to use for reducing vulnerability to brute-force attacks. Users must enter a number greater than *100000*.
 
 ## Unlocking a Replicated Encrypted Dataset or Zvol Without a Passphrase
+
 TrueNAS users should either replicate the dataset/Zvol without properties to disable encryption at the remote end or construct a special JSON manifest to unlock each child dataset/zvol with a unique key.
 
 {{< include file="/static/includes/ReplicatedEncryptedUnlock.md" >}}
