@@ -72,7 +72,7 @@ It might delay cache invalidation to improve performance, which leads to one cli
 
 Directory listing caching speeds up access to files.
 After an initial listing, the cache might serve subsequent requests for the same directory rather than queries to the file system.
-This introduces a delay in reflecting changes made to the directory by other clients. Metadata changes might not immediately reflect across all clients, which leads to outdated views of a file or directory..
+This introduces a delay in reflecting changes made to the directory by other clients. Metadata changes might not immediately reflect across all clients, which leads to outdated views of a file or directory.
 
 Buffered I/O improves read/write performance by reading and writing in larger chunks, which reduces the number of I/O operations needed.
 This can lead to problems in environments where data consistency and immediate visibility of changes are crucial.
