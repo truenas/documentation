@@ -33,6 +33,9 @@ We strongly recommend that you review your available system resources and plan y
 * Maximizing pool performance entails installing and allocating high-speed SSD drives to a pool.
 
 Security requirements can mean the pool must be created with [ZFS encryption]({{< relref "EncryptionSCALE.md" >}}).
+However, we recommend that users create pools as unencrypted and then encrypt some or all of of the child datasets, as needed.
+
+{{< include file="/static/includes/EncryptionRootLevel.md" >}}
 
 RAIDz pool layouts are well-suited for general use cases and especially smaller (<10) data VDEVS or storage scenarios that involve storing multitudes of small data blocks.
 
