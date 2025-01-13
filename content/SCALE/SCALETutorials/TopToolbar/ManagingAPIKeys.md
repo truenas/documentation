@@ -26,11 +26,11 @@ Click **Add** to open the **Add API Key** screen.
 Type a descriptive name for the key.
 Use the **Username** dropdown to select an administrative user to associate with this key.
 
-Accept the default **Non-epiring** to create a token with no expiration date.
+Accept the default **Non-expiring** to create a token with no expiration date.
 A non-expiring key remains active until it is manually revoked or updated.
 
-To create a key with a set expiration date and time, click to clear the **Non-expiring** checkbox.
-Click on the **Expires at** field and use the calendar to select the expiration date.
+To create a key with a scheduled expiration, click to clear the **Non-expiring** checkbox.
+Click on the **Expires at** field and use the calendar dropdown to select the expiration date.
 
 {{< trueimage src="/images/SCALE/Dashboard/APIKeyExpires.png" alt="Key Expiration Settings" id="Key Expiration Settings" >}}
 
