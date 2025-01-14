@@ -54,6 +54,11 @@ More details are available from [Software Releases]({{< relref "/TrueNASUpgrades
 
 * {{< include file="/static/includes/RESTAPIDeprecationNotice.md" >}}
 
+  {{< include file="/static/includes/APIDocs.md" >}}
+
+  You can access TrueNAS API documentation in the web interface by clicking <i class="material-icons" aria-hidden="true" title="laptop" style="vertical-align: top;">laptop</i> **My API Keys** on the top right toolbar <i class="material-icons" aria-hidden="true">account_circle</i> user settings dropdown menu to open the **User API Keys** screen.
+  Click **API Docs** to view API documentation.
+
 * The default libvirt account UID and GID is changed to to avoid possible clashes with user created Active Directory (AD) users. TrueNAS automatically updates libvirt UID and GIDs when upgraded to 25.04. Users attempting revert to 24.10 or an earlier release must manually review and update libvirt-qemu user and group IDs back to the values that were default in that version (64055:64055 for 24.10).
 
    
