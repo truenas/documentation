@@ -10,6 +10,7 @@ tags:
 ---
 
 <i class="material-icons" aria-hidden="true" title="laptop" style="vertical-align: top;">laptop</i> **My API Keys** on the top right toolbar <i class="material-icons" aria-hidden="true">account_circle</i> user settings dropdown menu to opens the **User API Keys** screen.
+
 This screen displays a list of API keys added to your system and allows you to add, search, edit, or delete keys.
 **API Docs** opens the [API Documentation](#api-documentation).
 
