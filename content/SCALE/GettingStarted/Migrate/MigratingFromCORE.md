@@ -116,7 +116,7 @@ After uploading the config file, review each area of the UI previously configure
 See [Component Naming]({{< relref "ComponentNaming.md" >}}) for more information.
 {{< /hint >}}
 
-Use the information gathered during your preparation to migrate to restore settings, tasks, VMs configured using the UEFI bootloader, credentials, etc. not present after uploading the config file.
+Use the information gathered during your preparation to migrate to restore settings, tasks, VMs configured using the GRUB bootloader, credentials, etc. not present after uploading the config file.
 
 ## Recreating the Admin User Account
 
