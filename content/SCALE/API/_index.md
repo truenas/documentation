@@ -17,6 +17,3 @@ Click **API Docs** to view API documentation.
 Alternatively, append `/api/docs/` to your TrueNAS host name or IP address in a browser to access the API documentation.
 
 {{< include file="/static/includes/APIDocs.md" >}}
-
-For convenience, we store static builds of the current 2.0 API documentation on the Docs Hub:
-* [Websocket Protocol](/api/scale_websocket_api.html)
