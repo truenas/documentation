@@ -28,7 +28,9 @@ These are the items that do not migrate:
   Usernames must begin with a letter or an underscore.
   Before attempting migration, review the local user accounts and rename or replace any accounts that begin with a numeric character (`0`-`9`).
 
-VM storage and its basic configuration transfer over during a migration, but you need to double-check the VM configuration and the network interface settings specifically before starting the VM.
+CORE VMs support UEFI and GRUB bootloaders. VMs configured with the UEFI bootloader can migrate from CORE to SCALE; however, SCALE does not support the GRUB bootloader, so users should note that VMs configured on CORE with the GRUB bootloader are thus unable to migrate to SCALE. 
+
+It is important for all users to double-check the VM configuration and network interface settings before starting the VM.
 
 {{< hint type=info title="VM Networking" >}}
 {{< include file="static/includes/ABridgeToSellYou.md" >}}
