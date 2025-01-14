@@ -52,6 +52,7 @@ This is not used for SMB authentication or determining the user session token or
 Click **Save**.
 
 ## Managing Groups
+
 Click anywhere on a row to expand that group and show the group management buttons.
 
 {{< trueimage src="/images/SCALE/Credentials/GroupsListedExpandedSCALE.png" alt="Expanded Group Screen" id="Expanded Group Screen" >}}
