@@ -28,7 +28,10 @@ These are the items that do not migrate:
   Usernames must begin with a letter or an underscore.
   Before attempting migration, review the local user accounts and rename or replace any accounts that begin with a numeric character (`0`-`9`).
 
-CORE VMs support UEFI and GRUB bootloaders. VMs configured with the UEFI bootloader can migrate from CORE to SCALE; however, SCALE does not support the GRUB bootloader, so users should note that VMs configured on CORE with the GRUB bootloader are thus unable to migrate to SCALE. 
+TrueNAS 13.X and earlier support VMs with UEFI and GRUB bootloaders.
+TrueNAS 22.02 and later does not support the GRUB bootloader.
+VMs configured with the UEFI bootloader can migrate.
+VMs configured with the GRUB bootloader are unable to migrate. 
 
 It is important for all users to double-check the VM configuration and network interface settings before starting the VM.
 
