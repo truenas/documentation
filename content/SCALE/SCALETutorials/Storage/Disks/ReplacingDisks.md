@@ -103,6 +103,13 @@ Select the new drive from the **Member Disk** dropdown list on the **Replacing d
 
    {{< trueimage src="/images/SCALE/Storage/ReplacingDiskDialog.png" alt="Replacing Disk Dialog" id="Replacing Disk Dialog" >}}
 
+
+**Force** overrides the safety check and adds the disk to the pool. Selecting this option erases any data stored on the disk!
+
+**Preserve Power Management and S.M.A.R.T. settings** transfers all power management and S.M.A.R.T. test configurations from the original disk to your replacement disk. The dialog window automatically selects this option, but you can uncheck it if you wish to reset your configurations.
+
+**Preserve disk description** maintains any descriptions associated with the original disk, which prevents you from needing to copy descriptors to the new disk manually. The dialog window automatically selects this option, but you can uncheck it if you want the replacement disk to use descriptors which differ from those attached to the original disk.
+
 Click **Replace Disk** to add the new disk to the VDEV and bring it online.
 
 Disk replacement fails when the selected disk has partitions or data present.
