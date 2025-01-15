@@ -31,13 +31,14 @@ Accept the default **Non-expiring** to create a token with no expiration date.
 A non-expiring key remains active until it is manually revoked or updated.
 
 To create a key with a scheduled expiration, click to clear the **Non-expiring** checkbox.
-Click on the **Expires at** field and use the calendar dropdown to select the expiration date.
+Click on the **Expires On** field and use the calendar dropdown to select the expiration date.
 
 {{< trueimage src="/images/SCALE/Dashboard/APIKeyExpires.png" alt="Key Expiration Settings" id="Key Expiration Settings" >}}
 
 Click **Save** to generate the key.
 
-TrueNAS displays an **API Key** dialog containing the generated key value.
+TrueNAS displays an **API Key** dialog containing the generated key string.
+TrueNAS API key strings are 64 characters long and randomly generated.
 
 {{< trueimage src="/images/SCALE/Dashboard/APIKeyCopy.png" alt="API Key Success Dialog" id="API Key Success Dialog" >}}
 
@@ -55,11 +56,9 @@ Click <i class="material-icons" aria-hidden="true" title="Edit">edit</i> edit fo
 
 {{< trueimage src="/images/SCALE/Dashboard/APIKeysEdit.png" alt="Edit API Key" id="Edit API Key" >}}
 
-Select the **Reset** to remove the existing API key and generate a new random key.
+Select **Reset** to remove the existing API key string and generate a new random key.
 The dialog displays the new key and the **Copy to Clipboard** option.
 Click to copy the new API key string then save it in a secure location.
-
-{{< include file="/static/includes/APIKeyWarn.md" >}}
 
 ### Deleting an API Key
 
