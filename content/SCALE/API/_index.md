@@ -17,3 +17,7 @@ Click **API Docs** to view API documentation.
 Alternatively, append `/api/docs/` to your TrueNAS host name or IP address in a browser to access the API documentation.
 
 {{< include file="/static/includes/APIDocs.md" >}}
+
+{{< include file="/static/includes/APIKeyWarn.md" >}}
+
+See [Managing API Keys]({{< relref "/scale/scaletutorials/toptoolbar/managingapikeys.md" >}}) for more information.
