@@ -108,7 +108,7 @@ Select the new drive from the **Member Disk** dropdown list on the **Replacing d
 
 **Preserve Power Management and S.M.A.R.T. settings** transfers all power management and S.M.A.R.T. test configurations from the original disk to your replacement disk. This option is enabled by default. Select to clear the checkmark so you can reset your configurations.
 
-**Preserve disk description** maintains any descriptions associated with the original disk, which prevents you from needing to copy descriptors to the new disk manually. The dialog window automatically selects this option, but you can uncheck it if you want the replacement disk to use descriptors which differ from those attached to the original disk.
+**Preserve disk description** maintains any descriptions associated with the original disk, which prevents you from needing to copy descriptors to the new disk manually. This option is enable by default. Select to clear the checkmark  if you want the replacement disk to use descriptors that differ from those attached to the original disk.
 
 Click **Replace Disk** to add the new disk to the VDEV and bring it online.
 
