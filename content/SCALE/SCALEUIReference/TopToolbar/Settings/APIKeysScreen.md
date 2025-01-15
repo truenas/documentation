@@ -22,7 +22,7 @@ This screen displays a list of API keys added to your system and allows you to a
 
 {{< include file="/static/includes/APIKeyWarn.md" >}}
 
-<i class="material-icons" aria-hidden="true" title="Edit">edit</i> edit for any API key on the list openss the **Edit API Key** window to modify that key.
+<i class="material-icons" aria-hidden="true" title="Edit">edit</i> edit for any API key on the list opens the **Edit API Key** window to modify that key.
 
 {{< trueimage src="/images/SCALE/Dashboard/APIKeysEdit.png" alt="Edit API Key" id="Edit API Key" >}}
 
