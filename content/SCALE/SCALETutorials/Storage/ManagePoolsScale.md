@@ -106,13 +106,13 @@ See [Replacing Disks]({{< relref "ReplacingDisks.md" >}}) for more information o
 There are a few  ways to increase the size of an existing pool:
 * Add one or more drives to an existing RAIDZ VDEV.
 * Add a new VDEV of the same type.
+* Add a new VDEV of a different type.
 * Replace all existing disks in the VDEV with larger disks.
 
 By default, a VDEV limits all disks to the usable capacity of the smallest attached device.
 If a pool is not automatically expanded, for example when resizing virtual disks in a hypervisor apart from TrueNAS, click **Expand** on the **Storage Dashboard** to manually increase the pool size to match all available disk space.
 
 ### Extending a RAIDZ VDEV
-
 Extend a RAIDZ VDEV to add additional disks one at a time, expanding capacity incrementally.
 This is useful for small pools (typically with only one RAID-Z VDEV), where there is not enough hardware capacity to add a second VDEV, doubling the number of disks.
 
@@ -170,7 +170,6 @@ A job progress window opens.
 TrueNAS returns to the ***Poolname* Devices** screen when complete.
 
 ### Adding a VDEV to a Pool
-
 ZFS supports adding VDEVs to an existing ZFS pool to increase the capacity or performance of the pool.
 To extend a pool by mirroring, you must add a data VDEV of the same type as existing VDEVs.
 
@@ -183,6 +182,7 @@ You cannot change the original encryption or data VDEV configuration.
   For example, you start with ten available drives. Begin by creating a mirror of two drives, and then extending the mirror by adding another mirror of two drives. Repeat this three more times until you add all ten drives.
 * To make a stripe of two 3-drive RAIDZ1 VDEVs (similar to RAID 50 on a hardware controller), add another three drives as a new RAIDZ1 VDEV to existing single 3-drive RAIDZ1 VDEV pool.
 * To make a stripe of two 6-disk RAIDZ2 VDEVs (similar to RAID 60 on a hardware controller), add another six drives as a new RAIDZ2 VDEV to existing single 6-drive RAIDZ2 VDEV pool.
+* To add a deduplication VDEV, create the VDEV when you first create the pool. The deduplication VDEV stores the deduplication tables (DDTs).
 {{< /expand >}}
 
 To add a VDEV to a pool:
@@ -196,7 +196,11 @@ Click on the type of vdev you want to add, for example, to add a spare, click on
 
 {{< trueimage src="/images/SCALE/Storage/AddVdevToPoolSpareScreen.png" alt="Add VDEVs to Pool Spare Example" id="Add VDEVs to Pool Spare Example" >}}
 
-To use the automated option, select the disk size from the **Automated Disk Selection > Disk Size** dropdown list, then select the number of vdevs to add from the **Width** dropdown.
+Select the layout, mirror or striped.
+
+To use the **Automated Disk Selection** option, select the disk size. The **Width** and **Number of VDEVs** fields populate with default values based on the layout and disk size selected. To change this, select new values from the dropdown lists.
+
+{{< expand "Adding a VDEV Manually" "v" >}}
 To add the vdev manually, click **Manual Disk Selection** to open the **Manual Selection** screen.
 
 {{< trueimage src="/images/SCALE/Storage/AddVdevToPoolManualSelectionScreen.png" alt="Add Vdev Manual Selection Screen" id="Add Vdev Manual Selection Screen" >}}
@@ -212,6 +216,7 @@ The **Manual Selection** screen closes and returns to the **Add Vdev to Pool** w
 
 {{< trueimage src="/images/SCALE/Storage/AddVdevToPoolSpareWithVdevAdded.png" alt="Add Vdev to Pool Spare with Vdev Added" id="Add Vdev to Pool Spare with Vdev Added" >}}
 
+{{< /expand >}}
 You have the option to accept the change or click **Edit Manual Disk Selection** to change the disk added to the strip vdev for the spare, or click **Reset Step** to clear the strip vdev from the spare completely.
 Click either **Next** or a numbered item to add another type of vdev to this pool.
 
@@ -225,18 +230,39 @@ To make changes, click either **Back** or the vdev option (i.e., **Log**, **Cach
 To clear all changes, click **Start Over**.
 Select **Confirm** then click **Start Over** to clear all changes.
 
-To save changes click **Update Pool**.
+Click **Update Pool** to save changes.
+
+#### Adding a Deduplication VDEV
+You can add a deduplication VDEV to an existing pool, but files in the pool do not have deduplication applied to them.
+Adding deduplication to a dataset with existing data does not apply deduplication to existing files. Only new data files are subjected to deduplication.
+
+After adding a deduplication VDEV to a pool, and when duplicated files are added to the pool, the **ZFS Health** widget on the **Storage Dashboard** shows two links, **Prune** and **Set Quota**. These links do not show if duplicated files do not exist in the pool.
+
+Use **Prune** to set the parameters used to prune the deduplication table (DDT). Select the measurement used, percentage or age, when pruning the table size.
+
+{{< trueimage src="/images/SCALE/Storage/DedupPruneDialog.png" alt="Prune Deduplication Table Dialog" id="Prune Deduplication Table Dialog" >}}
+
+Use **Set Quota** to set the DDT quota that determines the maximum table size allowed.
+The default setting, **Auto**, allows the system to determine the quota based on the size of a dedicated dedup vdev when setting the quota limit.
+This property works for both legacy and fast dedup tables.
+
+{{< trueimage src="/images/SCALE/Storage/DedupQutoaDialog.png" alt="Deduplication Quota Dialog" id="Deduplication Quota Dialog" >}}
+
+Change to **Custom** to set the quota to your preference.
+
+Click **Save** to save and close the dialogs.
 
 ### Replacing Disks to Expand a Pool
+To expand a pool by replacing disks with a higher capacity disk, follow the same procedure as in [Replacing Disks]({{< relref "ReplacingDisks.md" >}}).
 
-To expand a pool by replacing disks, replace each with a higher capacity disk following the same procedure as in [Replacing Disks]({{< relref "ReplacingDisks.md" >}}).
-Insert the new disk into an empty enclosure slot and remove the old disk only after the replace operation is completed.
-If an empty slot is not available, you can offline the existing disk and replace it in place, but redundancy is reduced during the process. 
+Insert a new disk into an empty enclosure slot. Remove the old disk only after completing the replace operation.
+If an empty slot is not available, you can offline the existing disk and replace it in the same slot, but this reduces redundancy during the process.
 
-1. Go to the **Storage Dashboard** and click **Manage Devices** on the **Topology** widget for the pool to open the ***Poolname* Devices** screen.
-Click anywhere on the VDEV to expand it and select one of the existing disks.
+Go to the **Storage Dashboard** and click **Manage Devices** on the **Topology** widget for the pool to open the ***Poolname* Devices** screen.
 
-2. (Optional) If replacing disks in place, take one existing disk offline.
+1. Click anywhere on the VDEV to expand it and select one of the existing disks.
+
+2. (Optional) If replacing disks in the same slot, take one existing disk offline.
 
    {{< trueimage src="/images/SCALE/Storage/DevicesDiskWidgets.png" alt="Devices Disk Widgets" id="Devices Disk Widgets" >}}
 
@@ -244,7 +270,7 @@ Click anywhere on the VDEV to expand it and select one of the existing disks.
    
    Remove the disk from the system.
 
-3. Insert a larger capacity disk into an open enclosure slot.
+3. Insert a larger capacity disk into an open enclosure slot (or if no empty slots, the slot of the off-lined disk being replaced).
 
    {{< trueimage src="/images/SCALE/Storage/ReplaceDiskAndOnline.png" alt="Replace and Online a Disk" id="Replace and Online a Disk" >}}
 
@@ -261,7 +287,7 @@ Click anywhere on the VDEV to expand it and select one of the existing disks.
 
    {{< trueimage src="/images/SCALE/Storage/ReplacingDiskStatusDialog.png" alt="Replacing Disk Status" id="Replacing Disk Status" >}}
 
-   When the disk wipe completes, TrueNAS starts replacing the failed disk.
+   After the disk wipe completes, TrueNAS starts replacing the failed disk.
    TrueNAS resilvers the pool during the replacement process.
    For pools with large amounts of data, this can take a long time.
    When the resilver process completes, the pool status returns to **Online** status on the ***Poolname* Devices** screen.
@@ -269,12 +295,11 @@ Click anywhere on the VDEV to expand it and select one of the existing disks.
 Wait for the resilver to complete before replacing the next disk.
 Repeat steps 1-4 for all attached disks.
 
-TrueNAS automatically expands the usable capacity of the pool to fit all available space once the last attached disk is replaced.
+TrueNAS automatically expands the usable capacity of the pool to fit all available space after replacing the last attached disk.
 
 ## Removing VDEVs
-
 You can always remove the L2ARC (cache) and SLOG (log) VDEVs from an existing pool, regardless of topology or VDEV type.
-Removing these devices does not impact data integrity, but can significantly impact performance for reads and writes.
+Removing these devices does not impact data integrity, but it can significantly impact performance for reads and writes.
 
 In addition, you can remove a data VDEV from an existing pool under specific circumstances.
 This process preserves data integrity but has multiple requirements:
@@ -290,7 +315,7 @@ When a RAIDZ data VDEV is present, it is generally not possible to remove a devi
 
 To remove a VDEV from a pool:
 1. Click **Manage Devices** on the **Topology** widget to open the ***Poolname* Devices** screen.
-2. Click the device or drive to remove, then click the **Remove** button in the **ZFS Info** pane.
+2. Click the device or drive to remove, then click the **Remove** button in the **ZFS Info** widget.
    If the **Remove** button is not visible, check that all conditions for VDEV removal listed above are correct.
 3. Confirm the removal operation and click the **Remove** button.
 
