@@ -27,6 +27,8 @@ Click **Add** to open the **Add API Key** screen.
 Type a descriptive name for the key.
 Use the **Username** dropdown to select an administrative user to associate with this key.
 
+{{< include file="/static/includes/API_AD.md" >}}
+
 Accept the default **Non-expiring** to create a token with no expiration date.
 A non-expiring key remains active until it is manually revoked or updated.
 
