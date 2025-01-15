@@ -33,3 +33,7 @@ The **Email** widget on the **General Settings** screen displays information abo
 ### Gmail OAuth
 
 {{< include file="/static/includes/EmailOptionsGmail.md" >}}
+
+### Outlook OAuth
+
+{{< include file="/static/includes/EmailOptionsOutlook.md" >}}

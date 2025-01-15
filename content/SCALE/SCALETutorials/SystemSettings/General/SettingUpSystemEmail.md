@@ -127,6 +127,39 @@ Click **Save**.
 
 {{< /expand >}}
 
+### Configuring Email Using Outlook OAuth
+
+To set up the system email using **Outlook OAuth**, you need to log in to your Outlook account through the TrueNAS web UI.
+
+{{< expand "Click here for more information" "v" >}}
+Click the **Outlook OAuth** radio button.
+
+{{< trueimage src="/images/SCALE/SystemSettings/EmailOptionsOutlookOAuth.png" alt="Outlook OAuth Login" id="Outlook OAuth Login" >}}
+
+Click on **Log In To Outlook**.
+
+The Outlook **Authorization** window opens.
+
+{{< trueimage src="/images/SCALE/SystemSettings/EmailOutlookAuthorization.png" alt="Outlook Authorization Screen" id="Outlook Authorization Screen" >}}
+
+Click **Proceed** to open the **Sign in** window.
+
+{{< trueimage src="/images/SCALE/SystemSettings/EmailOutlookSignIn.png" alt="Outlook Sign In Screen" id="Outlook Sign In Screen" >}}
+
+Enter the email, phone number, or Skype username associated with your Outlook account, then click **Next** to enter your password.
+
+When the **TrueNAS wants to access your Outlook Account** window displays, you can scroll down and click **Allow** to complete the set up or **Cancel** to cancel the set up process.
+
+After setting up Outlook OAuth authentication, the **Email Options** screen displays **Outlook credentials have been applied** and the button changes to **Logged In To Outlook**.
+
+{{< trueimage src="/images/SCALE/SystemSettings/EmailOptionsOutlookOAuthApplied.png" alt="Outlook Credentials Applied" id="Outlook Credentials Applied" >}}
+
+Click **Send Test Email** to verify you receive an email.
+
+Click **Save**.
+
+{{< /expand >}}
+
 ## Setting Up the Email Alert Service
 
 If the system email send method is configured, the admin email receives a system health email every night/morning.
