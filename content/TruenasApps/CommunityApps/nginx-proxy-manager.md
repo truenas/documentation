@@ -28,7 +28,7 @@ The log in credentials on a fresh install are:
 * pass: changeme
 
 <!-- Comment out the following line if your suggested changes to this Community app documentation provide a complete installation tutorial. Leave exposed if you are proposing a partial expansion of the content, but further work is needed. -->
-<!-- {{< include file="/static/includes/apps/CommunityPleaseExpand.md" >}} -->
+{{< include file="/static/includes/apps/CommunityPleaseExpand.md" >}}
 
 <!-- Uncomment the following line if you suspect this Community app documentation is out of date, inaccurate, or needs further improvement -->
 <!--{{< include file="/static/includes/apps/CommunityPleaseImprove.md" >}}-->
