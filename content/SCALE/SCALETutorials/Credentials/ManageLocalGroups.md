@@ -30,7 +30,7 @@ To see built-in groups, click the **Show Built-In Groups** toggle. The toggle tu
 
 To create a group, go to **Credentials > Groups** and click **Add**.
 
-{{< trueimage src="/images/SCALE/Credentials/AddGroupGIDConfigSCALE.png" alt="Add Group Screen" id="Add Group Screen" >}}
+{{< trueimage src="/images/SCALE/Credentials/AddGroupScreen.png" alt="Add Group Screen" id="Add Group Screen" >}}
 
 Enter a unique number for the group ID in **GID** that TrueNAS uses to identify a Unix group.
 Enter a number above 3000 for a group with user accounts or enter the default port number as the GID for a system service.
@@ -46,8 +46,12 @@ To allow Samba permissions and authentication to use this group, select **Samba 
 To allow more than one group to have the same group ID (not recommended), select **Allow Duplicate GIDs**.
 Use only if absolutely necessary, as duplicate GIDs can lead to unexpected behavior.
 
-## Managing Groups
+Select **SMB Group** to make this group available for permissions editors over SMB protocol, and add the share ACL Editor.
+This is not used for SMB authentication or determining the user session token or internal permissions checks.
 
+Click **Save**.
+
+## Managing Groups
 Click anywhere on a row to expand that group and show the group management buttons.
 
 {{< trueimage src="/images/SCALE/Credentials/GroupsListedExpandedSCALE.png" alt="Expanded Group Screen" id="Expanded Group Screen" >}}

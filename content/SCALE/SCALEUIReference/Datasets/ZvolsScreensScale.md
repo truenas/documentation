@@ -9,22 +9,22 @@ tags:
  - storage
 ---
 
-The zvol screens and widgets, accessed from the **Datasets** screen, allow you to add or edit a zvol and manage the volume storage. 
+The zvol screens and widgets, accessed from the **Datasets** screen, allow you to add or edit a zvol and manage the volume storage.
 Zvols are listed on the **Datasets** screen tree table.
 
 {{< trueimage src="/images/SCALE/Datasets/DatasetsScreenWithZvolWidgets.png" alt="Dataset Tree Table and Zvol Widgets" id="Dataset Tree Table and Zvol Widgets" >}}
 
-The tree table includes storage space used and available for that zvol (or dataset), encryption status (locked, unlocked, or unencrypted), and the role of that zvol or dataset or what service uses it (i.e., the system dataset, a share, virtual machine, or application). 
+The tree table includes storage space used and available for that zvol (or dataset), encryption status (locked, unlocked, or unencrypted), and the role of that zvol or dataset or what service uses it (i.e., the system dataset, a share, virtual machine, or application).
 
 **Add Zvol** displays after you select a root, non-root parent, or child dataset. It does not display if you select an existing zvol.  
 Click on any root or non-root parent dataset to expand the tree table.
 Click on any zvol to select it and display the widgets for that zvol.
 
 ## Zvol Widgets
-Each zvol has a set of information cards (widgets) that display in the **Details for *zvolname*** area of the screen and provide information grouped by functional areas. 
-**Add Zvol** opens the **Add Zvol** screen. 
+Each zvol has a set of information cards (widgets) that display in the **Details for *zvolname*** area of the screen and provide information grouped by functional areas.
+**Add Zvol** opens the **Add Zvol** screen.
 Dataset widgets are:
-* **[Zvol Details](#zvol-details-widget)** 
+* **[Zvol Details](#zvol-details-widget)**
 * **[Zvol Space Management](#zvol-space-management-widget)**
 * **[Data Protection](#data-protection-widget)**
 * **[ZFS Encryption](#zfs-encryption-widget)**
@@ -37,12 +37,12 @@ The **Zvol Details** widget lists information on volume type, and the sync, comp
 
 **Edit** opens the **[Edit Zvol](#add-and-edit-zvol-screens)** screen for the selected zvol.
 
-**[Delete](#delete-dataset)** opens the **Delete zvol** dialog. 
+**[Delete](#delete-dataset)** opens the **Delete zvol** dialog.
 
 #### Delete Zvol
-The **Delete Zvol** dialog shows information about other options or services that use the zvol. It also shows the services child datasets use. 
+The **Delete Zvol** dialog shows information about other options or services that use the zvol. It also shows the services child datasets use.
 This includes information about snapshots, shares, or if used, other services such as Kubernetes or VMs that use the dataset.
-Parent and child datasets include the **Delete** button. 
+Parent and child datasets include the **Delete** button.
 
 {{< trueimage src="/images/SCALE/Datasets/DeleteZvolWindow.png" alt="Delete Zvol" id="Delete Zvol" >}}
 
@@ -50,9 +50,9 @@ The window includes a field where you type the path for the zvol, and a **Confir
 
 ### Zvol Space Management Widget
 The **Zvol Space Management** widget displays space allocation (reserved, used, available) for the zvol.  
-The widget displays after unlocking encrypted zvols. 
-The widget donut graph provides at-a-glance information and numeric values for the space allocated and used in the selected zvol. 
-This includes data written and space allocated to child datasets of this dataset. 
+The widget displays after unlocking encrypted zvols.
+The widget donut graph provides at-a-glance information and numeric values for the space allocated and used in the selected zvol.
+This includes data written and space allocated to child datasets of this dataset.
 It provides access to quota configuration options for the parent dataset and the child dataset of the parent, and for users and groups with access to the dataset.
 
 {{< trueimage src="/images/SCALE/Datasets/ZvolSpaceManagementWidget.png" alt="Zvol Space Management Widget" id="Zvol Space Management Widget" >}}
@@ -74,9 +74,9 @@ The **Export Key** option displays if the zvol uses key encryption.
 For more details on encryption windows and functions see [Encryption Settings]({{< relref "EncryptionUISCALE.md" >}}).
 
 ### Data Protection Widget
-The **Data Protection** widget displays for all datasets or zvols. 
-It shows information for the number of snapshots and other data protection-related scheduled tasks (replication, cloud sync, rsync, and snapshots) configured on the system. 
-It provides access to the tasks found on the **Data Protection** screen through links. 
+The **Data Protection** widget displays for all datasets or zvols.
+It shows information for the number of snapshots and other data protection-related scheduled tasks (replication, cloud sync, rsync, and snapshots) configured on the system.
+It provides access to the tasks found on the **Data Protection** screen through links.
 
 {{< trueimage src="/images/SCALE/Datasets/DataProtectionWidget.png" alt="Data Protection Widget" id="Data Protection Widget" >}}
 
@@ -94,9 +94,9 @@ It provides access to the tasks found on the **Data Protection** screen through 
 
 ## Add and Edit Zvol Screens
 The **Add Zvol** and **Edit Zvol** screens allow admin users with the right permission level to create and modify zvols.
-Both screens include the same settings but you cannot change the zvol name, **Block Size**, or select the **Sparse** option after you click **Save** on the **Add Zvol** screen. 
+Both screens include the same settings but you cannot change the zvol name, **Block Size**, or select the **Sparse** option after you click **Save** on the **Add Zvol** screen.
 
-After adding a zvol, click **Edit** on the **Zvol Details** widget to open the **Edit Zvol** screen. 
+After adding a zvol, click **Edit** on the **Zvol Details** widget to open the **Edit Zvol** screen.
 To edit encryption options, click **Edit** on the **ZFS Encryption** widget.
 
 {{< trueimage src="/images/SCALE/Datasets/AddZvolScreen.png" alt="Add Zvol Screen" id="Add Zvol Screen" >}}
@@ -127,7 +127,7 @@ This table shows the minimum recommended volume block size values by configurati
 Use this table to change the **Block size** value.
 
 {{< truetable >}}
-| Configuration | Number of Drives | Optimal Block Size | 
+| Configuration | Number of Drives | Optimal Block Size |
 |---------------|------------------|--------------------|
 | Mirror | N/A | 16k |
 | Raidz-1 | 3 | 16k |
@@ -153,11 +153,11 @@ See the OpenZFS handbook [workload tuning chapter](https://openzfs.github.io/ope
 {{< include file="/static/includes/StorageCompressionLevelsScale.md" >}}
 
 ### Encryption Options
-**Encryption Options** only display on the **Add Zvol** screen. 
+**Encryption Options** only display on the **Add Zvol** screen.
 To change encryption settings, use the **Edit** button on the **ZFS Encryption** widget.
 
-The default setting is **Inherit**. Clearing the checkbox displays the key encryption options. 
-Clear the **Inherit(*non-encrypted*)** checkbox to display additional settings.
+The default setting is **Inherit**. Clearing the checkbox displays the encryption options.
+Clear the **Inherit (*non-encrypted*)** checkbox to display additional settings.
 
 {{< trueimage src="/images/SCALE/Datasets/AddZvolEncryptionOptionsKey.png" alt="Add Zvol Encryption Options Clear Inherit" id="Add Zvol Encryption Options Clear Inherit" >}}
 
