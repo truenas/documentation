@@ -158,18 +158,18 @@ For example, a system with 18,446,744,073,709,551,615 bytes reports the number a
 The **ZFS Health** widget shows information on the health of the pool.
 
  Widget details include:
-* **Pool Status** shows pool status as either online or offline.
+* **Pool Status** shows the pool status as either online or offline.
 * **Total ZFS Errors** shows the number of ZFS errors detected for this pool.
-* **Scheduled Scrub Task** shows status of the next scrub task as set or not.
+* **Scheduled Scrub Task** shows the status of the next scrub task as set or not.
 * **Auto TRIM** shows the auto trim feature as on or off.
-* **Last Scan** shows date and time of the last completed scrub.
+* **Last Scan** shows the date and time of the last completed scrub.
 * **Last Scan Errors** shows the number of errors detected during the last scrub.
-* **Last Scan Duration** shows the time in minutes and seconds the last scrub ran.
-* **Deduplication Table** shows with the size of the deduplication table only if a dedup VDEV is added to the pool.
+* **Last Scan Duration** shows the time, in minutes and seconds the last scrub ran.
+* **Deduplication Table** shows the size of the deduplication table only if a dedup VDEV is added to the pool.
   
 {{< trueimage src="/images/SCALE/Storage/StorageDashboardZFSHealthWidgetWithDedup.png" alt="ZFS Health Widget" id="ZFS Health Widget" >}}
 
-**Scrub** opens the Scrub Pool dialog. From this you can run a check on pool data integrity.
+**Scrub** opens the Scrub Pool dialog. From this, you run a check on the data integrity of the pool.
 
 **View all Scrub Tasks** opens the **[Data Protections > Scrub Tasks]({{< relref "ScrubTasksScreensSCALE.md" >}})** details screen.
 This lists all scheduled scrub tasks and allows you to add a new or edit an existing task.
@@ -202,14 +202,15 @@ This lists all scheduled scrub tasks and allows you to add a new or edit an exis
   {{< /expand >}}
 
 * {{< expand "Prune Deduplication Table Dialog" "v" >}}
-  The **Prune Deduplication Table** dialog shows pruning measurement options to use when pruning the deduplication table (DDT).
-  Options are **Precentage** and **Age**.
+  The **Prune Deduplication Table** dialog shows pruning measurement options the system should use when pruning the deduplication table (DDT).
+  Options are **Percentage** and **Age**.
   
-  **Percentage** shows a slider to set the size (storage) precentage threshold the DDT is filled before it reaches maxium size. When reached the system prunes the table. 
+  **Percentage** shows a slider to set the size (maximum amount of storage) percentage threshold the DDT is filled before it reaches the maximum size.
+  When reached the system prunes the table. 
 
   {{< trueimage src="/images/SCALE/Storage/DedupPruneDialog.png" alt="Prune Deduplication Table - Percentage" id="Prune Deduplication Table - Percentage" >}}
 
-  **Age** shows the **Age (in days)** field to specify the number of days between pruning processes the system waits before automatically pruneing the DDT.
+  **Age** shows the **Age (in days)** field where you enter the number of days between pruning processes the system waits before automatically pruning the DDT.
 
   {{< trueimage src="/images/SCALE/Storage/DedupPruneDialogAge.png" alt="Prune Deduplication Table - Age" id="Prune Deduplication Table - Age" >}}
 
@@ -217,16 +218,17 @@ This lists all scheduled scrub tasks and allows you to add a new or edit an exis
 
 * {{< expand "Deduplication Qutoa Dialog" "v" >}}
   The **Deduplication Quota for *poolname*** shows the **Quota** dropdown list with three options for setting the maximum size limit the deduplication table can reach.
-  **Auto** is the default option, and allows the system to set the quota and the size of a dedicated dedup VDEV. This property works for both legacy and fast dedup tables.
+  **Auto** is the default option, which allows the system to set the quota and the size of a dedicated dedup VDEV. This property works for both legacy and fast dedup tables.
   
   {{< trueimage src="/images/SCALE/Storage/DedupQutoaDialog.png" alt="Deduplication Qutoa for Pool Dialog" id="Prune Deduplication Table Dialog" >}}
 
-  **Custom** shows the **Custom Qutoa** field where you enter a maximum size of the DDT (quota).
+  **Custom** shows the **Custom Qutoa** field where you enter the maximum size of the DDT (quota).
 
   {{< trueimage src="/images/SCALE/Storage/DedupQutoaDialogCustom.png" alt="Deduplication Qutoa for Pool - Custom" id="Prune Deduplication Table - Custom" >}}
 
   **None** disables the quota.
 {{< /expand >}}
+
 ### Disk Health Widget
 The **Disk Health** widget shows information on the health of the disks in a pool.
 The details on the widget include the non-dismissed disk temperature alerts for highest, lowest, and average temperature, and failed S.M.A.R.T. tests.
