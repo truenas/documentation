@@ -2157,3 +2157,15 @@ TrueNASStencilsPreview
 MiniFamilyFront
 SOV
 MiniNetworkPortID
+StorageDashboardZFSHealthWidgetWithDedup
+DedupQutoaDialog
+DedupQutoaDialogCustom
+DedupPruneDialogAge
+DedupPruneDialog
+DedupWarningDialog
+DDT
+ddt
+DDTs
+ddts
+ZAP
+ARC
