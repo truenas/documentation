@@ -47,10 +47,11 @@ There are two ways to access email configuration options.
 Go to the **System > General Settings** screen and locate the **Email** widget to view the current configuration or click the **Alerts** <span class="iconify" data-icon="mdi:bell"></span> icon in the top right of the UI, then click the gear <span class="iconify" data-icon="mdi:cog"></span> icon, and select **Email** to open the **General Settings** screen.
 Click **Settings** on the **Email Widget** to open the **Email Options** configuration screen.
 
-**Send Mail Method** shows two different options:
+**Send Mail Method** shows three different options:
 
-* [**SMTP**](#setting-up-email-using-smtp)
-* [**GMail OAuth**](#setting-up-email-using-gmail-oauth)
+* [**SMTP**](#configuring-email-using-smtp)
+* [**GMail OAuth**](#configuring-email-using-gmail-oauth)
+* [**Outlook OAuth**](#configuring-email-using-outlook-oauth)
 
 The configuration options change based on the selected method.
 
