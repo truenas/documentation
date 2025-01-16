@@ -12,6 +12,8 @@ keywords:
 - storage container virtualization
 ---
 
+{{< include file="/static/includes/25.04Virtualization.md" >}}
+
 ## Managing Devices
 After creating a VM, the next step is to add virtual devices for that VM.
 Using the Create Virtual Machine wizard configures at least one disk, NIC, and the display as part of the process.
