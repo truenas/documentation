@@ -13,6 +13,8 @@ keywords:
 - storage container virtualization
 ---
 
+{{< include file="/static/includes/25.04Virtualization.md" >}}
+
 The **Virtualization** section allows users to set up Virtual Machines (VMs) to run alongside TrueNAS.
 Enterprise licensed High Availability (HA) systems do not support virtual machines.
 
