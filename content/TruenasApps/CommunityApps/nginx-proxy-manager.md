@@ -17,7 +17,7 @@ keywords:
 
 ## Installation
 
-There is a notice when you install the app that it needs run as the `root` user.
+There is a notice when you install the app that it needs to run as the `root` user.
 What this means practically is that when you are installing the app you will need to set the `User ID` to `0` (instead of `568` or whatever it is on your system).
 
 Nginx Proxy Manager takes a few minutes to install.
