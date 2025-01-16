@@ -13,6 +13,19 @@ keywords:
 
 {{< include file="/static/includes/apps/CommunityApp.md" >}}
 
+## Installation
+
+There is a notice when you install the app that it needs to be run as the `root` user.
+What this means practically is that when you are installing the app you will need to set the `User ID` to `0` (instead of `568` or whatever it is on your system).
+
+Nginx Proxy Manager takes a few minutes to install.
+When it's running, click on `Nginx Proxy Manager` to go to the details page, then click on the `web portal` button to go to the Nginx Proxy Manager app itself.
+
+It asks you to log in.
+The log in credentials on a fresh install are:
+* user: admin@example.com
+* pass: changeme
+
 <!-- Comment out the following line if your suggested changes to this Community app documentation provide a complete installation tutorial. Leave exposed if you are proposing a partial expansion of the content, but further work is needed. -->
 {{< include file="/static/includes/apps/CommunityPleaseExpand.md" >}}
 
