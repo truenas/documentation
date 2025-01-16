@@ -57,7 +57,7 @@ The configuration options change based on the selected method.
 
 After configuring the send method, click **Send Test Mail** to verify the configured email settings are working.
 If the test email fails, verify that the **Email** field is correctly configured for the admin user.
-Return to **Credentials > Users** to edit the [admin user](#configuring-the-administration-user-email-address).
+Return to **Credentials > Users** to edit the [admin user](#configuring-the-admin-user-email-address).
 
 **Save** stores the email configuration and closes the **Email Options** screen.
 
