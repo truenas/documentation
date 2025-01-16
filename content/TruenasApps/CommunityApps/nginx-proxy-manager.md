@@ -13,6 +13,12 @@ keywords:
 
 {{< include file="/static/includes/apps/CommunityApp.md" >}}
 
+<!-- Comment out the following line if your suggested changes to this Community app documentation provide a complete installation tutorial. Leave exposed if you are proposing a partial expansion of the content, but further work is needed. -->
+{{< include file="/static/includes/apps/CommunityPleaseExpand.md" >}}
+
+<!-- Uncomment the following line if you suspect this Community app documentation is out of date, inaccurate, or needs further improvement -->
+<!--{{< include file="/static/includes/apps/CommunityPleaseImprove.md" >}}-->
+
 [Nginx Proxy Manager](https://nginxproxymanager.com) <!-- is a [description of the application] -->
 
 ## Installation
@@ -26,11 +32,5 @@ When it's running, click on `Nginx Proxy Manager` to go to the details page, the
 The log in credentials on a fresh install are:
 * user: admin@example.com
 * pass: changeme
-
-<!-- Comment out the following line if your suggested changes to this Community app documentation provide a complete installation tutorial. Leave exposed if you are proposing a partial expansion of the content, but further work is needed. -->
-{{< include file="/static/includes/apps/CommunityPleaseExpand.md" >}}
-
-<!-- Uncomment the following line if you suspect this Community app documentation is out of date, inaccurate, or needs further improvement -->
-<!--{{< include file="/static/includes/apps/CommunityPleaseImprove.md" >}}-->
 
 {{< include file="/static/includes/ProposeArticleChange.md" >}}
