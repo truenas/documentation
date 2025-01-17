@@ -58,6 +58,8 @@ More details are available from [Software Releases]({{< relref "/TrueNASUpgrades
 
 ### Migrating Virtual Machines
 
+{{< include file="/static/includes/Incus.md" >}}
+
 {{< include file="/static/includes/MigratingVMs.md" >}}
 
 ### Upgrade Paths (Anticipated)
