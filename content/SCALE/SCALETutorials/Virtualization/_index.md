@@ -21,19 +21,6 @@ Enterprise licensed High Availability (HA) systems do not support virtual machin
 Delegating processes to VMs reduces the load on the physical system, which means users can utilize additional hardware resources.
 Users can customize six different segments of a VM when creating one in TrueNAS.
 
-{{< expand "What system resources do VMs require?" "v" >}}
-{{< include file="/static/includes/ScaleVMReqResources.md" >}}
-{{< /expand >}}
-
-A *virtual machine (VM)* is an environment on a host computer that you can use as if it is a separate, physical computer.
-Users can use VMs to run multiple operating systems simultaneously on a single computer.
-Operating systems running inside a VM see emulated virtual hardware rather than the host computer physical hardware.
-VMs provide more isolation than Jails but also consume more system resources.
-
-{{< expand "What system resources do VMs require?" "v" >}}
-{{< include file="/static/includes/ScaleVMReqResources.md" >}}
-{{< /expand >}}
-
 A *virtual machine (VM)* is an environment on a host computer that you can use as if it is a separate, physical computer.
 Users can use VMs to run multiple operating systems simultaneously on a single computer.
 Operating systems running inside a VM see emulated virtual hardware rather than the host computer physical hardware.
