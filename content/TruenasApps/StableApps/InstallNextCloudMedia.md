@@ -39,6 +39,8 @@ Before you install the Nextcloud app:
 
 {{< include file="/static/includes/apps/BeforeYouBeginAddNewAppUser.md" >}}
 
+Nextcloud has different databases to choose from, as well as countless different configurations for end users. This installation guide assumes PostgresSQL will be used as the database. See Nextcloud's installation documentaion (add link to official nextcloud documentation site) for more information on alternative deployments.
+
 {{< include file="/static/includes/apps/BeforeYouBeginAddAppDatasets.md" >}}
 
 <div style="margin-left: 33px"><a href="https://www.truenas.com/docs/scale/scaletutorials/datasets/datasetsscale/">Create the three dataset(s)</a> before beginning the app installation process.
@@ -83,9 +85,34 @@ Before you install the Nextcloud app:
 
 <p style="margin-left: 33px">Adding a certificate is optional but if you want to use a certificate for this application, either create a new self-signed CA and certificate or import an existing CA and create the certificate for Nextcloud. A certificate is not required to deploy the application.</p>
 
-* Set up a Nextcloud account.
-  If you have an existing Nextcloud account, you enter the credentials for that user in the installation wizard.
-  If you do not have an existing Nextcloud account, you can create one using the application install wizard.
+### Installing the Postgres App
+
+If you have not done so already, enable the Community train under Configuration > Settings on the Apps screen. Search for and install the app postgres (add link to postgres docs in truenas docs). 
+{{< include file="/static/includes/apps/MultipleAppInstancesAndNaming.md" >}}
+
+{{< include file="/static/includes/apps/InstallWizardAppNameAndVersion.md" >}}
+
+Select the image you would like to use for your postgres database. **For user and databse you must put "nextcloud", anything else will cause the app to fail to fully install at the installation wizard. These are the defaults assumed by the docker container for nextcloud.** Enter a password to be used for your database, this same password will be entered later when installing the nextcloud app.
+
+You can leave the default network configuration settings, with host network unchecked.
+
+For storage, navigate to and select the dataset created earlier for postgres_data, you do not neet to enable ACL, the permissions were already configured.
+
+Click **Install**. After installing, the postgres app should deploy and create your database with the above settings. **Note: you cannot change the database properties from the web UI after the database has been created, the database would need to be deleted or moved for another database to be created with new settings**. Within the postgres container, the user and group **netdata** map to **postgres**.
+
+### Installing the Redis App
+
+If you have not done so already, enable the Community train under Configuration > Settings on the Apps screen. Search for and install the app redis (add link to redis docs in truenas docs).
+
+{{< include file="/static/includes/apps/InstallWizardAppNameAndVersion.md" >}}
+
+Enter a password to be used with your redis database, this same password will be entered later when installing the nextcloud app. Nextcloud does not URL encode in some places so do not use the ampersand (&), at (@), hashtag (#), or percent (%) characters in the Redis password.
+
+You can leave the default network configuration settings, with host network unchecked.
+
+For storage you can leave the default IxVolume dataset or select a dataset you created for redis.
+
+Click **Install**.
 
 ### Installing the Nextcloud App
 {{< hint info >}}
@@ -93,8 +120,7 @@ This basic procedure covers the required Nextcloud app settings.
 For optional settings, see [Understanding App Installation Wizard Settings](#understanding-app-installation-wizard-settings).
 {{< /hint >}}
 
-{{< include file="/static/includes/apps/MultipleAppInstancesAndNaming.md" >}}
-{{< include file="/static/includes/apps/LocateAndOpenInstallWizard.md" >}}
+Search for and install the stable app **nextcloud**.
 
 {{< trueimage src="/images/SCALE/Apps/InstallNextcloudScreen.png" alt="Install Nextcloud Screen" id="Install Nextcloud Screen" >}}
 
@@ -119,8 +145,7 @@ The **Data Directory Path** is pre-populated with the correct path.
 
 {{< trueimage src="/images/SCALE/Apps/InstallNextcloudConfig2.png" alt="Enter Host and Other Config Settings" id="Enter Host and Other Config Settings" >}}
 
-Enter a password in **Redis Password** to create a new credential or enter the existing password if you already have Redis configured in your Nextcloud account.
-Enter a password in **Database Password** to create a new credential for the Nextcloud database or enter the existing password if you already have the Nextcloud account database configured. Nextcloud does not URL encode in some places so do not use the ampersand (&), at (@), hashtag (#), or percent (%) characters in the Redis password.
+Enter the redis password created earlier in **Redis Password**. Enter the postgres password created earlier in **Database Password**. 
 
 Accept the remaining defaults in the **Nextcloud Configuration** section. However, if you are setting up a cron job schedule, select **Enabled** under **Cron** to show the settings that allow you to schedule a cron job.
 
@@ -138,7 +163,7 @@ Enter the default port, **30027**, in **WebUI Port**, or enter an available port
 See [Network Configuration](#network-configuration) below for more information on changing the default port.
 This port must match the one used in **Host** above.
 
-If you configured a certificate, select it in **Certificate ID**. A certificate is required if you want to select an external port other than the default **30027**.
+If you configured a certificate, select it in **Certificate ID**. If not, you can select the 'truenas_default' certifcate. A certificate is required if you want to select an external port other than the default **30027**.
 
 Enter the storage settings for each dataset you created for the Nextcloud app.
 {{< expand "Configuring Nextcloud Storage" "v" >}}
@@ -152,12 +177,12 @@ Select **Enable ACL**, and then either enter or browse to and select the **html*
 
 {{< trueimage src="/images/SCALE/Apps/InstallNextcloudStorageAppDataACLandACESettings.png" alt="Add Nextcloud Storage for AppData" id="Add Nextcloud Storage for AppData" >}}
 
-Select **Add** to the right of **ACL Entries**, add the **33** user ID, and give it **FULL_CONTROL Access**.
+Select **Add** to the right of **ACL Entries**, add the user ID for redis, and give it **FULL_CONTROL Access**.
 Select **Force Flag**.
 
 Repeat this step for the **Nextcloud User Data Storage** storage volume.
 After setting **Type** to **Host Path (Path that already exists on the system)** and selecting **Enable ACL**, enter or browse to and select the **data** dataset.
-Select **Add** to the right of **ACL Entries** to add the **33** user ID, and give it **FULL_CONTROL Access**. Select **Force Flag**
+Select **Add** to the right of **ACL Entries** to add the user ID for redis, and give it **FULL_CONTROL Access**. Select **Force Flag**
 
 {{< trueimage src="/images/SCALE/Apps/InstallNextcloudStorageDataACLandACESettings.png" alt="Add Nextcloud Storage Volumes" id="Add Nextcloud Storage Volumes" >}}
 
@@ -171,12 +196,12 @@ Accept the defaults in **Resources Configuration**, and select the GPU option if
 Click **Install**. A progress dialog displays before switching to the **Installed** applications screen.
 The **Installed** screen displays with the **nextcloud** app in the **Deploying** state. Status changes to **Running** when ready to use.
 
-Click **Web Portal** on the **Application Info** widget to open the Nextcloud web portal sign-in screen.
+Click **Web Portal** on the **Application Info** widget to open the Nextcloud web portal sign-in screen. Enter the admin username and password you created earlier and click **Install**.
 
 {{< trueimage src="/images/SCALE/Apps/NextcloudSignInScreen.png" alt="Nextcloud Sign In Screen" id="Nextcloud Sign In Screen" >}}
 
 ## Understanding App Installation Wizard Settings
-The following section provides more detailed explanations of the settings in each section of the **Install** installation wizard.
+The following section provides more detailed explanations of some of the settings in each section of the **Install** installation wizard, in case an alternative deployment is desired.
 
 ### Application Name Settings
 
@@ -184,9 +209,6 @@ The following section provides more detailed explanations of the settings in eac
 
 ### Nextcloud Configuration Settings
 Nextcloud configuration settings include setting up credentials, APT packages (previously referred to as the commands), the host IP and port, data directory path, upload limits, execution times, memory limits and cache memory consumption, adding a cron job with schedule, and adding additional environment variables.
-
-If you have an existing Nextcloud account add the credentials for that account in the **Admin User** and **Admin Password** fields.
-If you do not have an existing account enter the name and password you want to use to create the Nextcloud login credentials.
 
 {{< expand "Adding APT Packages" "v" >}}
 Nextcloud has three APT package options:
