@@ -129,17 +129,21 @@ Download the <file>iso</file> for the latest maintenance release of TrueNAS 24.0
 Enterprise customers should [contact Support](https://www.truenas.com/docs/scale/gettingstarted/migrate/migratecorehatoscaleha/) for assistance with migrating.
 
 ## Component Versions
+
+Component version numbers below are current as of the latest TrueNAS 24.10 release.
 Click the component version number to see the latest release notes for that component.
 
 {{< truetable >}}
 | Component | Version |
 |-----------|-------------|
 | Linux Kernel | [6.6.44](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/tag/?h=v6.6.44) |
-| OpenZFS | [2.2.99-2](https://github.com/openzfs/zfs/tree/zfs-2.2.99) |
-| Docker Engine | [27.1.1](https://docs.docker.com/engine/release-notes/27/#2711) |
+| OpenZFS | [2.2.99-1](https://github.com/openzfs/zfs/tree/zfs-2.2.99) |
+| Docker Engine | [27.5.0](https://docs.docker.com/engine/release-notes/27/#2750) |
+| Nvidia Driver | [550.142](https://www.nvidia.com/en-us/drivers/details/237853/) |
 {{< /truetable >}}
 
 ### OpenZFS Feature Flags
+
 TrueNAS integrates many features provided by the upstream [OpenZFS project](https://openzfs.org/wiki/Main_Page).
 Any new feature flags introduced since the previous OpenZFS version that was integrated into TrueNAS (OpenZFS 2.1.11) are listed below:
 
