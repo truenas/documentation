@@ -75,7 +75,7 @@ Select the group name from the dropdown list, set the read/write/execute permiss
 To prevent errors, TrueNAS only submits changes after the apply option is selected.
 
 {{< hint type=important >}}
-A common misconfiguration is removing the **Execute** permission from a dataset that is a parent to other child datasets. A common misconfiguration is not adding or removing the **Execute** permission from a dataset that is a parent to other child datasets. Removing this permission results in lost access to the path.
+A common misconfiguration is not adding or removing the **Execute** permission from a dataset that is a parent to other child datasets. Removing this permission results in lost access to the path.
 {{< /hint >}}
 
 To apply ACL settings to all child datasets, select **Apply permissions recursively**.
