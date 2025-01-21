@@ -5,7 +5,7 @@ The MinIO Enterprise app uses host paths as the storage volume type. Only use ix
 MinIO uses the default ixVolume for the /export mount path and storage volume by default.
 Create the **data** dataset to use as a host path storage volume, and accept the default **/data** as the mount path for this storage volume.
 
-Set **Type** set to the default **ixVolume *(Dataset created automatically by the system)** to allow TrueNAS to create a storage volume.
+Set **Type** set to the default **ixVolume (Dataset created automatically by the system)** to allow TrueNAS to create a storage volume.
 This storage volume can be found nested under the hidden **ix-apps** dataset. This is not the recommended storage option except for the /export option.
 
 {{< trueimage src="/images/SCALE/Apps/InstallMinIOEnterpriseStorageConfig.png" alt="MinIO Add Storage Volumes" id="MinIO Add Storage Volumes" >}}
