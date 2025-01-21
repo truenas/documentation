@@ -24,6 +24,7 @@ The enterprise MinIO application is tested and verified as an immutable target f
 
 ## Before You Begin
 To install the MinIO **enterprise** train app, do the following:
+* Acquire and apply the Enterprise VM & Apps license to the Enterprise system.
 
 {{< include file="/static/includes/apps/BeforeYouBeginStableApps.md" >}}
 {{< include file="/static/includes/apps/BeforeYouBeginRunAsUser.md" >}}
@@ -34,14 +35,14 @@ To install the MinIO **enterprise** train app, do the following:
 
 {{< include file="/static/includes/apps/BeforeYouBegingAddAppCertificate.md" >}}
 
-<p style="margin-left: 33px">The **Certificates** setting is optional for a basic configuration but is required when setting up multi-mode configurations and when using MinIO as an immutable target for Veeam Backup and Replication.</p>
+<p style="margin-left: 33px">The <b>Certificates</b> setting is optional for a basic app configuration but is required when setting up multi-mode configurations, and when using MinIO as an S3 storage object target for Veeam Backup and Replication Immutability</p>
 
 {{< include file="/static/includes/apps/BeforeYouBeginAddAppDatasets.md" >}}
 
 <div style="margin-left: 33px"><a href="https://www.truenas.com/docs/scale/scaletutorials/datasets/datasetsscale/">Create the dataset(s)</a> before beginning the app installation process.
 MinIO enterprise train app requires one dataset, <b>data</b>. The default mount path is <b>/data1</b>.
 
-Follow the instructions below in **Creating Datasets for Apps** to correctly create the dataset(s).
+Follow the instructions below in <b>Creating Datasets for Apps</b> to correctly create the dataset(s).
 You can organize the app dataset(s) under a parent dataset to keep them separated from datasets for other applications.
 For example, create a <i>minio</i> parent dataset with each dataset nested under it.
 If you organize the MinIO app required dataset(s) under a parent dataset, set up the required ACL permissions for the parent dataset before using the app installation wizard to avoid receiving installation wizard errors.
@@ -59,10 +60,7 @@ You might need to add another user, such as <b>www-data</b> if you receive an er
 The error message shows the user name to add. Give both users full permissions.
 
 See [Setting Up Permissions]({{< relref "PermissionsSCALE.md" >}}) and [Edit ACL Screen]({{< relref "EditACLScreens.md" >}}) for more information.
-{{< /expand >}}
-
-If planning to deploy an additional storage volume as an SMB Share, disable the service in <b>System > Services</b> before adding and configuring the MinIO application.
-Start any sharing services after MinIO completes the installation and starts.</div>
+{{< /expand >}}</div>
 
 ## Installing the MinIO Application
 {{< hint info >}}
