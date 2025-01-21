@@ -27,24 +27,56 @@ Users migrating data from an existing third-party NAS solution to TrueNAS 24.04 
 
 See [Third-Party SMB Data Migration]({{< relref "DataMigrationSyncthing.md" >}}) for considerations and a full tutorial.
 
-Enterprise users with the appropriate licenese can see the apps in the **enterprise** train.
+Enterprise users with the appropriate license can see the apps in the **enterprise** train.
 Community users can access enterprise versions of apps by adding the **enterprise** train to their catalog. To change app train settings:
 {{< include file="/static/includes/apps/AddEnterpriseTrain.md" >}}
 
 ## Before You Begin
-Before launching the app installation wizard, do the following:
-* Create a self-signed certificate for the Syncthing enterprise app.
-  
-  {{< include file="/static/includes/apps/AddingAppCertificate.md" >}}
+To install the Syncthing **enterprise** train app, do the following:
 
-* Create the required datasets, **home** and **data1**.
-  
-  Syncthing stores configuration **home** dataset and app data in the **data1** dataset.
+* Acquire and apply the Enterprise VM & Apps license to the Enterprise system.
 
-{{< include file="/static/includes/apps/SyncthingFirstSteps.md" >}}
+{{< include file="/static/includes/apps/BeforeYouBeginStableApps.md" >}}
+{{< include file="/static/includes/apps/BeforeYouBeginRunAsUser.md" >}}
+
+<div style="margin-left: 33px">{{< trueimage src="/images/SCALE/Apps/SyncthingEnterpriseDetailsScreen.png" alt="MinIO Enterprise App Details Screen" id="MinIO Enterprise App Details Screen" >}}</div>
+
+{{< include file="/static/includes/apps/BeforeYouBeginAddNewAppUser.md" >}}
+
+{{< include file="/static/includes/apps/BeforeYouBegingAddAppCertificate.md" >}}
+
+{{< include file="/static/includes/apps/BeforeYouBegingAddNewAppUser.md" >}}
+
+{{< include file="/static/includes/apps/BeforeYouBeginAddAppDatasets.md" >}}
+
+<div style="margin-left: 33px"><a href="https://www.truenas.com/docs/scale/scaletutorials/datasets/datasetsscale/">Create the dataset(s)</a> before beginning the app installation process.
+Syncthing enterprise train app requires two datasets, <b>home</b> to store configuration data and <b>data1</b> to store app data.
+
+Follow the instructions below in <b>Creating Datasets for Apps</b> to correctly create the dataset(s).
+You can organize the app dataset(s) under a parent dataset to keep them separated from datasets for other applications.
+For example, create a <i>syncthing</i> parent dataset with these datasets nested under it.
+If you organize the required dataset(s) under a parent dataset, set up the required ACL permissions for the parent dataset before using the app installation wizard to avoid receiving installation wizard errors.
+Use the <b>Enable ACL</b> option in the <b>Install Sycnting</b> wizard to configure permissions for the <b>home</b> and <b>data1</b> datasets.</div>
+
+<div style="margin-left: 33px">{{< include file="/static/includes/apps/BeforeYouBeginAddAppDatasetsProcedure.md" >}}
+</div>
+
+<div style="margin-left: 33px">{{< expand "Configuring Parent Dataset Permissions" "v" >}} 
+Select the parent dataset row on the **Datasets** screen tree table, scroll down to the **Permissions** widget, and click **Edit** to open the <b>Edit ACL</b> screen.
+Set the <b>@owner</b> and <b>@group</b> to <b>admin</b> or the name of your TrueNAS administration user account, and click <b>Apply Owner</b> and <b>Apply Group</b>.
+
+Next, click **Add Item** to add an ACE entry for the <b>Syncthing</b> run as user, <b>0</b>. Give the user full permissions.
+
+See [Setting Up Permissions]({{< relref "PermissionsSCALE.md" >}}) and [Edit ACL Screen]({{< relref "EditACLScreens.md" >}}) for more information.
+{{< /expand >}}</div>
 
 ## Installing the Syncthing Application
+{{< hint info >}}
+This basic procedure covers the required Syncthing app settings.
+For optional settings, see [Understanding App Installation Wizard Settings](#understanding-app-installation-wizard-settings).
+{{< /hint >}}
 
+{{< include file="/static/includes/apps/MultipleAppInstancesAndNaming.md" >}}
 {{< include file="/static/includes/apps/LocateAndOpenInstallWizard.md" >}}
 
 {{< trueimage src="/images/SCALE/Apps/InstallSyncthingEnterpriseScreen.png" alt="Install Syncthing Enterprise Screen" id="Install Syncthing Enterprise Screen" >}}
@@ -67,15 +99,22 @@ If created, select the certificate for Syncthing from the **Certificates** dropd
 See [Network Settings](#networking-settings) below for more information on network settings.
 
 Configure the storage settings.
-Syncthing uses two datasets and mount paths. Set the first to **/home** with the host path set to the **home** dataset.
+Syncthing uses two datasets. Set **Type** to **Host Path (Path that already exists on the system)**
+Select **Enable ACL**, then either enter or browse to select the **home** dataset.
 The other mount point is **/data1** with the host path set to the **data1** dataset.
+Click **Add** to the right of **ACL Entries**.
+Set **ID** to **Entry is for a USER**, enter **0** in **ID**, and then give the user full control permissions.
 
-Select **Enable ACL** for the **/home** storage volume, enter **568** as the user and give it full permissions.
-Repeat for the **/data1** storage volume.
+Select **Force Flag** to allow upgrading the app. This allows writing to the dataset when there is exisiting data.
 
-{{< trueimage src="/images/SCALE/Apps/InstallMinIOEnterpriseHomeAndData1ACLandACE.png" alt="Home and Data1 Host Path ACL and ACE Settings" id="Home and Data1 Host Path ACL and ACE Settings" >}}
+{{< trueimage src="/images/SCALE/Apps/InstallSyncthingStorageHomeACLandACESettings.png" alt="Home Host Path ACL and ACE Settings" id="Home Host Path ACL and ACE Settings" >}}
 
-If migrating from some other NAS system, set **Type** to **SMB/CIFS Share (Mounts a volume to a SMB share)**, and then select **Migrate Data**.
+Repeat for the **/data1** storage volume. Click **Add** to the right of **Additional Storage** to show the storage settings.
+
+Set **Type** to **Host Path**.
+Select **Enable ACL**, then enter or browse to select the path to the **data1** dataset. Add the run as user, **0** as an ACE entry with full control permissions.
+
+If migrating from some other NAS system, set **Type** to **SMB/CIFS Share (Mounts a volume to an SMB share)**, and then select **Migrate Data**.
 See [**Storage Settings**](#storage-settings) below for more information.
 
 {{< include file="/static/includes/apps/SyncthingCompleteInstall.md" >}}
@@ -88,7 +127,7 @@ Go to **Actions > Settings** and set a user password for the web UI.
 
 {{< include file="/static/includes/apps/SyncthingWebPortalInfo.md" >}}
 
-## Understanding TrueNAS Syncthing Wizard Settings
+## Understanding App Installation Wizard Settings
 
 The following sections provide detailed explanations of the settings found in each section of the Enterprise train **Install Syncthing** screen.
 
@@ -98,6 +137,8 @@ The following sections provide detailed explanations of the settings found in ea
 
 ### Configuration Setting
 {{< include file="/static/includes/apps/InstallWizardTimezoneSetting.md" >}}
+
+#### Adding Environmental Variables
 
 {{< include file="/static/includes/apps/AppInstallWizardEnvironVariablesSettings.md" >}}
 
@@ -115,16 +156,42 @@ The TrueNAS Syncthing enterprise app listens on port **8384**.
 
 {{< include file="/static/includes/apps/AppInstallWizardNetworkConfig.md" >}}
 
-Clearing the **Host Network** checkbox shows the TCP and UDP port numbers, and the web UI listens on port **22000**.
+Disabling **Host Network** shows the TCP and UDP port numbers, and sets the web UI to listen on port **22000**.
 
 {{< include file="/static/includes/apps/AppInstallWizardCertificateSettings.md" >}}
 
 ### Storage Settings
+TrueNAS provides two storage options for storage volumes: ixVolumes and host paths.
+
+To allow TrueNAS to create the storage volume, leave **Type** set to **ixVolume (Dataset created automatically by the system)**.
+This adds a storage volume for the application nested in the hidden **ix-apps** dataset, located on the pool selected as the apps pool.
+Using ixVolume is intended for a test deployment of an app but not for a full app deployment, as data does not persist for these volumes after deleting the app where a dataset does.
+Datasets make recovering, transferring, and accessing app configuration, user, or other data possible where ixVolumes do not.
+
+To use an existing dataset, which is the recommended option, set **Type** to **Host Path (Path that already exists on the system**).
+
 The Syncthing **enterprise** train app requires two storage volumes/datasets to store configuration data and app data storage. Create one named **home** and the other dataset named **data1**.
 
 {{< include file="/static/includes/apps/InstallAppsStorageConfig.md" >}}
 
-{{< trueimage src="/images/SCALE/Apps/InstallMinIOEnterpriseHomeAndData1ACLandACE.png" alt="Home and Data1 Host Path ACL and ACE Settings" id="Home and Data1 Host Path ACL and ACE Settings" >}}
+If you organize the config dataset under a parent dataset named *syncthing*, configure the ACL permissions for this parent dataset and add an ACE entry for the root user.
+
+You can add extra storage volumes during the app installation, or edit the application after it deploys. Stop the app before editing settings.
+
+#### Setting Dataset ACL Permissions
+You can configure ACL permissions for the required dataset in the **Install Syncthing** wizard, or from the **Datasets** screen any time after adding the datasets.
+
+{{< include file="/static/includes/apps/InstallWizardStorageACLConfig.md" >}}
+
+{{< expand "Adding ACL Permissions from the Datasets Screen" "v">}}
+First, select the dataset row, scroll down to the **Permissions** widget, and click **Edit** to open the **Edit ACL** screen.
+Change the **@owner** and **@group** values from **root** to the administrative user for your TrueNAS system, and click apply for each.
+Next, add an ACL entry for the run-as user.
+For Syncthing, the run-as user is **0**. Add a user entry for this user.
+Save the ACL before leaving the screen.
+
+See [Setting Up Permissions]({{< relref "PermissionsSCALE.md" >}}) and [Edit ACL Screen]({{< relref "EditACLScreens.md" >}}) for more information.
+{{< /expand >}}
 
 #### Mounting an SMB Share
 The TrueNAS Syncthing Enterprise app includes the option to mount an SMB share inside the container pod and to migrate data from some other NAS to TrueNAS.
