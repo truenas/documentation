@@ -31,15 +31,15 @@ The **Installed** applications screen displays **Check Available Apps** before y
 
 **Check Available Apps** or **Discover Apps** opens the **[Discover](#using-the-discover-applications-screen)** screen.
 
-## Settings Menu
-**Settings** on the **Installed** applications header displays global options that apply to all applications. 
+## Configuration Menu
+**Configuration** on the **Installed** applications header displays global options that apply to all applications. 
 
 * **Choose Pool** opens the **[Choose a pool for Apps](#choose-a-pool-for-apps-dialog)** dialog.
 * **Unset Pool** shows after setting a pool for applications to use. It opens the **Unset Pool** dialog.
 * **Manage Container Images** opens the [**Manage Container Images**](#manage-container-images) screen.
-* **[Train Settings](#train-settings)** opens the **Train Settings** screen. Use to add or remove other trains to the **Stable** catalog of applications.
+* **[Settings](#settings)** opens the **Settings** screen. Use to add or remove other trains to the **Stable** catalog of applications, adjust address pools, download nvidia drivers (with compatible hardware), and control whether to automatically check for docker image updates.
 
-{{< trueimage src="/images/SCALE/Apps/AppsInstalledAppsSettingOptions.png" alt="Installed Applications Screen Settings" id="Installed Applications Screen Settings" >}}
+{{< trueimage src="/images/SCALE/Apps/AppsInstalledAppsSettingOptions.png" alt="Installed Applications Screen Configuration" id="Installed Applications Screen Configuration" >}}
 
 ### Choose a Pool for Apps
 **Choose Pool**  opens the **Choose a pool for apps** dialog. The **Pool** dropdown list shows a list of available pools on the system.
@@ -54,7 +54,8 @@ If you exit out of this dialog, to set the pool, click [**Settings > Choose Pool
 If a pool is not chosen and you attempt to install an application, after clicking **Install** on an application information screen a dialog window prompts you to select a pool before the installation wizard shows.
 
 ### Unset Pool
-**Unset Pool** on the **Settings** menu opens the **Unset Pool** dialog. Click **Unset** to unset the pool and turn off the application service.
+**Unset Pool** on the **Configuration** menu opens the **Unset Pool** dialog.
+Click **Unset** to unset the pool and turn off the application service.
 When complete, a **Success** dialog displays.
 
 {{< trueimage src="/images/SCALE/Apps/AppsUnsetPoolDialog.png" alt="Apps Unset Pool" id="Apps Unset Pool" >}}
@@ -84,7 +85,7 @@ Entering characters in the **<span class="iconify" data-icon="mdi:magnify"></spa
 ### Settings
 **Settings** opens the **Settings** screen showing four application train options, the option to add IP addresses and subnets for the application to use, check for Docker image updates, and if the system is equipped with a GPU, to enable TrueNAS to update drivers for that GPU.
 
-{{< trueimage src="/images/SCALE/Apps/AppsTrainSettingsScreen.png" alt="Train Settings Add Enterprise Train" id="Train Settings Add Enterprise Train" >}}
+{{< trueimage src="/images/SCALE/Apps/AppsSettingScreen.png" alt="TrueNAS Applications Settings screen. Image shows options to activate different application groups, known as trains, for display in the available apps screen. The image also shows options to set different address pools, download nvidia drivers, and automatically check for docker image updates." id="App Setting Screen" >}}
 
 Select the checkbox to the left of the train name to add another train to the applications catalog.
 Train options:
@@ -230,7 +231,7 @@ The **Application Metadata** widget shows application capabilities unique to the
 
 ## Discover Apps Screen
 The **Discover** screen displays application widgets for the official TrueNAS **stable** train by default.
-Users can add the **community** and **enterprise** train applications on the **[Train Settings](#train-settings-screen)** screen.
+Users can add the **community** and **enterprise** train applications on the **[Settings](#settings)** screen.
 
 {{< trueimage src="/images/SCALE/Apps/AppsDiscoverScreen.png" alt="Applications Discover Screen" id="Applications Discover Screen" >}}
 
