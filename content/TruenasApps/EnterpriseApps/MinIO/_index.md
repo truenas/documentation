@@ -75,28 +75,31 @@ For optional settings, see [Understanding App Installation Wizard Settings](#und
 
 {{< include file="/static/includes/apps/InstallWizardAppNameAndVersion.md" >}}
 
-{{< include file="/static/includes/apps/MinIoEnterpriseConfig2.md" >}}
+{{< include file="/static/includes/apps/MinIoEnterpriseConfigSettings.md" >}}
 
 If setting up a cluster configuration, see [Multi-Mode Configuration](#multi-mode-configuration) below for more information on these settings.
 
-{{< include file="/static/includes/apps/MinIOEnterpriseConfig3.md" >}}
+{{< include file="/static/includes/apps/InstallWizardUserAndGroupConfig.md" >}}
+
+{{< include file="/static/includes/apps/MinIOEnterpriseNetworkConfig.md" >}}
 
 Scroll down to or click on **Storage Configuration** on the list of wizard sections.
 
-Set **Type** to **Host Path (Path that already exists on the system)** for the **data** storage volume. Accept the default setting in **Mount Point**, **/data1**.
+Scroll down to or click on **Storage Configuration** on the list of wizard sections.
 
-Select **Enable ACL** to show the host path fields.
-Enter or browse to select the **data** dataset to populate the **Host Path** field.
+Leave **Type** set to the default **ixVolume** for the **/export** mount point. A host path dataset is not required for this storage volume.
 
-Click **Add** to the right of **ACE Entries**.
+{{< trueimage src="/images/SCALE/Apps/InstallMinIOEnterpriseStorageConfigSettings.png" alt="MinIO Enterprise Storage Configuration Settings" id="MinIO Enterprise Storage Configuration Settings" >}}
 
-{{< trueimage src="/images/SCALE/Apps/InstallMinIOEnterpriseData1ACLandACESettings.png" alt="MinIO Enterprise Data ACL and ACE Settings" id="MinIO Enterprise Data ACL and ACE Settings" >}}
+Set **Type** to **Host Path (Path that already exists on the system)** which is the recommended option for MinIO.
+**Mount Path** populates with the default **/data1**.
+Click **Enable ACL**.
+Enter or browse to select the **data1** dataset and populate **Host Path**.
+Click **Add** to the right of **Add Entries**, then select **Entry is for a USER** in **ID Type**, enter the run as user ID in **ID**, and give it full control permissions.
 
-Set the **ACE Entry** user to the default user **568** or enter the UID for the user created in TrueNAS to serve as the MinIO app administrator, and set the permissions to **FULL_CONTROL**.
+Select **Force Flag** to allow upgrading the app. This allows writing to the dataset when there is exsiting data.
 
-Select **Force Flag** to allow TrueNAS to update the application to the next version. **Force Flag** allows updates and writing to a storage volume with existing data.
-
-{{< include file="/static/includes/apps/MinIOEnterpriseConfig4.md" >}}
+{{< include file="/static/includes/apps/MinIoEnterpriseFinishConfig.md" >}}
 
 ## Understanding App Installation Wizard Settings
 The following section provides more detailed explanations of the settings in each section of the **Install** installation wizard.

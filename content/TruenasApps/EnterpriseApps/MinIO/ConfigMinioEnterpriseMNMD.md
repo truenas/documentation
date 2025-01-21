@@ -109,25 +109,21 @@ For optional settings, see [Understanding App Installation Wizard Settings](#und
 
 {{< include file="/static/includes/apps/InstallWizardAppNameAndVersion.md" >}}
 
-{{< include file="/static/includes/apps/MinIoEnterpriseConfig2.md" >}}
-
-{{< include file="/static/includes/apps/MinIOEnterpriseMultiModeConfig2.md" >}}
+{{< include file="/static/includes/apps/MinIoEnterpriseConfigSettings.md" >}}
 
 {{< include file="/static/includes/apps/MinIOEnterpriseMultiModeConfigMNMD.md" >}}
 
-Enter the same string in **Multi Mode (SNMD or MNMD)** in all four systems in the cluster!
+{{< include file="/static/includes/apps/InstallWizardUserAndGroupConfig.md" >}}
 
-{{< trueimage src="/images/SCALE/Apps/InstallMinIOAddMultiModeConfigExample.png" alt="Multi Mode MDN Command" id="Multi Mode MNDN Command" >}} 
+{{< include file="/static/includes/apps/MinIOEnterpriseNetworkConfig.md" >}}
 
-{{< include file="/static/includes/apps/MinIOEnterpriseConfig3.md" >}}
+{{< include file="/static/includes/apps/MinIOEnterpriseMultiModeStorageConfig.md" >}}
 
-{{< include file="/static/includes/apps/MinIOEnterpriseMultiModeConfig3.md" >}}
-
-{{< include file="/static/includes/apps/MinIoEnterpriseConfig4.md" >}}
+{{< include file="/static/includes/apps/MinIoEnterpriseFinishConfig.md" >}}
 
 Log into the MinIO web portal, and go to **Monitoring > Metrics**. The MinIO UI should show four servers and 12 drives.
 
-## Understanding MinIO Wizard Settings
+## Understanding App Installation Wizard Settings
 The following section provides more detailed explanations of the settings in each section of the **Install MinIO** configuration wizard.
 
 ### Application Name Settings
@@ -135,7 +131,6 @@ The following section provides more detailed explanations of the settings in eac
 {{< include file="/static/includes/apps/InstallWizardAppNameAndVersion.md" >}}
 
 ### MinIO Configuration Settings
-
 {{< include file="/static/includes/apps/MinIOEnterpriseMinIOConfig.md" >}}
 
 #### MultiMode Configuration
@@ -143,6 +138,14 @@ Multi-mode installs the app in either a [MinIO Single-Node Multi-Drive (SNMD)](h
 MinIO recommends using MNMD for enterprise-grade performance and scalability.
 
 Click **Enabled** under **Multi Mode (SNMD or MNMD) Configuration** to enable multi-mode and show the **Multi Mode (SNMD or MNMD)** and **Add** options.
+
+When installing and configuring multi-mode SNMD or MNMD you must create a self-signed certificate.
+
+A SNMD configuration can use the same self-signed certificate created for MNMD.
+An MNMD configuration cannot use the certificate for an SNMD configuration because that certificate only includes the IP address for one system.
+Create this same self-signed certificate for the MNMD cluster on each system (node) in the cluster! 
+
+{{< include file="/static/includes/apps/InstallWizardCertificateSettings.md" >}}
 
 #### Adding Environment Variables
 
