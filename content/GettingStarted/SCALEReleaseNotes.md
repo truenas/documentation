@@ -101,8 +101,6 @@ To prepare applications for migration from Kubernetes to Docker, address the fol
 
 {{< include file="/static/includes/24.10UpgradeMethods.md" >}}
 
-See the <a href="https://www.truenas.com/software-status/" target="_blank">TrueNAS Software Status</a> page for recommendations about which software version to use based on your user type.
-
 {{< include file="/static/includes/SCALEUpgradePaths.md" >}}
 
 ### Migrating from TrueNAS CORE
@@ -163,10 +161,7 @@ For more details on feature flags, see [OpenZFS Feature Flags](https://openzfs.g
 iXsystems is pleased to release TrueNAS 24.10.2!
 This is a maintenance release and includes refinement and fixes for issues discovered or outstanding after the 24.10.1 release.
 
-* Fix SED disk unlock at boot ([NAS-132518](https://ixsystems.atlassian.net/browse/NAS-132518)).
-* Do not retrieve hidden zpool properties in `py-libzfs` by default ([NAS-132988](https://ixsystems.atlassian.net/browse/NAS-132988)). These properties include name, tname, maxblocksize, maxdnodesize, dedupditto and dedupcached. Users needing these properties can see the linked ticket for the `zpool` command to retrieve them.
-* ([NAS-133429](https://ixsystems.atlassian.net/browse/NAS-133429)).
-* Expose **Force Remove iXVolumes** checkbox on app deletion ([NAS-132914](https://ixsystems.atlassian.net/browse/NAS-132914)).
+* Do not retrieve hidden zpool properties in `py-libzfs` by default ([NAS-132988](https://ixsystems.atlassian.net/browse/NAS-132988)). These properties include name, tname, maxblocksize, maxdnodesize, dedupditto and dedupcached. Users needing these properties can see the linked ticket for the `zpool` command to retrieve them. <!-- * Expose **Force Remove iXVolumes** checkbox on app deletion ([NAS-132914](https://ixsystems.atlassian.net/browse/NAS-132914)). -->
 * New cloud backup option: **Use Absolute Paths** ([NAS-132920](https://ixsystems.atlassian.net/browse/NAS-132920)).
 * Fix loading the `nvidia_drm` kernel module to populate the `/dev/dri` directory for NVIDIA GPU availability in apps like Plex ([NAS-133250](https://ixsystems.atlassian.net/browse/NAS-133250)).
 * Fix `netbiosname` validation logic if AD enabled ([NAS-133167](https://ixsystems.atlassian.net/browse/NAS-133167)).
@@ -188,12 +183,14 @@ This is a maintenance release and includes refinement and fixes for issues disco
 
 ### 24.10.2 Known Issues
 
-* 
+* We are aware of an issue affecting SED disk unlock at boot, particularly for systems configured with per-disk SED passwords.
+  A fix is expected in the TrueNAS 25.04 release.
 
 <a href="https://ixsystems.atlassian.net/issues/?filter=11415" target="_blank">Click here to see the latest information on Jira</a> about public issues discovered in 24.10.2 that are being resolved in a future TrueNAS release.
 
 ## 24.10.1 Changelog
 
+{{< expand "Click to expand" "v" >}}
 **December 17, 2024**
 
 iXsystems is pleased to release TrueNAS 24.10.1!
@@ -242,6 +239,8 @@ This is a maintenance release and includes refinement and fixes for issues disco
   {{< /enterprise >}}
 
 <a href="https://ixsystems.atlassian.net/issues/?filter=11217" target="_blank">Click here to see the latest information on Jira</a> about public issues discovered in 24.10.1 that are being resolved in a future TrueNAS release.
+
+{{< /expand >}}
 
 ## 24.10.0.2 Changelog
 
