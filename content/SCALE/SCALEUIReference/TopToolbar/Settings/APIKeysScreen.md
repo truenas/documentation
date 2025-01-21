@@ -1,6 +1,6 @@
 ---
-title: "API Keys Screen"
-description: "Describes how the API keys screen in TrueNAS."
+title: "User API Keys Screen"
+description: "Describes how the User API Keys screen in TrueNAS and access API Documentation"
 weight: 20
 aliases: 
  - /scale/scaleclireference/auth/cliapikey/
@@ -9,17 +9,28 @@ tags:
 - toolbar
 ---
 
-The **API Keys** option on the top toolbar **Settings** dropdown menu displays the **API Keys** screen.
-This screen displays a list of TrueNAS API keys on your system and allows you to add, edit, or delete keys.
+The <i class="material-icons" aria-hidden="true" title="laptop" style="vertical-align: top;">laptop</i> **My API Keys** option on the top right toolbar **Settings** (user icon) dropdown menu displays the **User API Keys** screen.
+This screen displays a list of API keys added to your system and allows you to add, search, edit, or delete keys.
+**API Docs** opens the [API Documentation](#api-documentation).
 
 {{< trueimage src="/images/SCALE/Dashboard/APIKeysScreen.png" alt="API Keys Screen" id="API Keys Screen" >}}
 
-Click the <span class="iconify" data-icon="eva:more-vertical-outline"></span> icon to the right of an API key to display options for that key. API key options are **Edit** and **Delete**.
+**Add** opens the **Add API Key** screen.
 
-Use **Add** to add a new API key to your TrueNAS.
+{{< trueimage src="/images/SCALE/Dashboard/APIKeysAdd.png" alt="Add API Key" id="Add API Key" >}}
 
 {{< include file="/static/includes/APIKeyWarn.md" >}}
 
-## API Key Documentation
+<i class="material-icons" aria-hidden="true" title="Edit">edit</i> edit for any API key on the list openss the **Edit API Key** window to modify that key.
 
-Click **API Docs** to access API documentation for your system.
+{{< trueimage src="/images/SCALE/Dashboard/APIKeysEdit.png" alt="Edit API Key" id="Edit API Key" >}}
+
+**Reset** removes the existing API key and generates a new random key.
+
+<i class="material-icons" aria-hidden="true" title="Delete">delete</i> delete for any API key on the list opens a **Delete API Key** dialog to remove that key.
+
+{{< trueimage src="/images/SCALE/Dashboard/APIKeysDelete.png" alt="Delete API Key" id="Delete API Key" >}}
+
+## API Documentation
+
+**API Docs** opens the TrueNAS API documentation that is built into the system.

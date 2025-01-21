@@ -48,7 +48,7 @@ Enterprise customers are encouraged to contact Support for assistance with the p
 
    <input type="checkbox"> Deprecated services - Record the settings for [services deprecated in newer TrueNAS versions](#deprecated-services).
 
-   <input type="checkbox"> VMs - If you have virtual machines configured, write down or screenshot network and other setting information.
+   <input type="checkbox"> VMs - If you have virtual machines configured, write down or screenshot network, bootloader, and other setting information.
 
    <input type="checkbox"> Plugins or jails - Plugins and jails do not migrate. Record settings for each plugin/jail and back up the data associated with each.
 
