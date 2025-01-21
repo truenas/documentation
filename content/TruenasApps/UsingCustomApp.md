@@ -112,7 +112,7 @@ To deploy a third-party application using the **Install iX App** wizard, go to *
 
    Use the dropdown to select a **Restart Policy** to use for the container.
 
-  If needed, select the options to disable health check built into the container, enable a pseudo-TTY (or pseudo-terminal) for the container, or to keep the standard input (stdin) stream for the container open, for example for an interactive application that needs to remain ready to accept input.
+   If needed, select the options to disable health check built into the container, enable a pseudo-TTY (or pseudo-terminal) for the container, or to keep the standard input (stdin) stream for the container open, for example for an interactive application that needs to remain ready to accept input.
 
 4. Enter any required settings in **Security Context Configuration**.
 
