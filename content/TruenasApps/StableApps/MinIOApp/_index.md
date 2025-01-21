@@ -93,7 +93,6 @@ Next, enter the **MinIO Configuration** settings.
 Add your **Storage Configuration** settings.
 
 Select **Enable Distributed Mode** if you are setting up MinIO in a cluster configuration.
-If setting up a cluster you might want to use the enterprise train version of the MinIO application. See [MinIO Configuration Settings](#minio-configuration) below for more information.
 
 MinIO uses one dataset and one ixVolume, and two mount paths.
 Leave the **MinIO Export Storage (Data)** set to the defaults, with **Type** set to **ixVolume** and the mount path **/export**.
