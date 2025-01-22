@@ -33,6 +33,8 @@ Options are **[cloudflare](https://www.cloudflare.com)**, Amazon **[route53](htt
 
 If you select **cloudflare** as the authenticator, you must enter your Cloudflare account email address, API key, and API token.
 
+If you select **digitalocean** as the authenticator, you must enter your DigitalOcean Token.
+
 If you select **route53** as the authenticator, you must enter your Route53 Access key ID and secret access key.
 
 If you select **OVH** as the authenticator, you must enter your OVH application key, application secret, consumer key, and endpoint.  
