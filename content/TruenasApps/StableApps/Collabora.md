@@ -29,7 +29,7 @@ Prepare TrueNAS before installing Collabora by:
 
 {{< include file="/static/includes/apps/BeforeYouBeginAddAppDatasets.md" >}}
 
-  <p style="margin-left: 33px">Create a parent dataset, such as <i>Collabora</i>, within your apps pool. Collabora is designed to store data internally within the containerized environment, and therefore does not require any additional datasets. If you wish to create optional storage for persistent data on TrueNAS, you must create those datasets before you install the app. If you create any elective datasets, select <b>apps</b> as the <b>Dataset Preset</b> for these datasets. You can modify the dataset ACLs at the time of creation, or modify them later when adding them in the app.</p>
+  <p style="margin-left: 33px">Create a parent dataset, such as <i>Collabora</i>, within your apps pool. Collabora is designed to store data internally within the containerized environment and therefore does not require any additional datasets. If you wish to create optional storage for persistent data on TrueNAS, you must create those datasets before you install the app. If you create any elective datasets, select <b>apps</b> as the <b>Dataset Preset</b> for these datasets. You can modify the dataset ACLs at the time of creation, or modify them later when adding them to the app.</p>
 
 <p style="margin-left: 33px">Follow the instructions below in <b>Creating Datasets for Apps</b> to correctly set up these datasets.
 
@@ -65,7 +65,7 @@ If not the first time installing apps the dialog does not show, click on the wid
 
 Click **Install** to open the app installation wizard.
 
-Application configuration settings are grouped into several sections, each explained below in **Understanding App Installation Wizard Settings**.
+Application configuration settings are grouped into sections. Each section is explained below in **Understanding App Installation Wizard Settings**.
 To find specific fields begin typing in the **Search Input Fields** search field to show the section or field, scroll down to a particular section, or click on the section heading in the list of sections on the upper-right of the wizard screen.
 
 {{< trueimage src="/images/SCALE/Apps/InstallCollaboraScreen.png" alt="Collabora Install Screen" id="Collabora Install Screen" >}}
@@ -74,7 +74,7 @@ To find specific fields begin typing in the **Search Input Fields** search field
 
 Enter the ***Collabora* Configuration** settings.
 
-Note that the username and password you select during configuration will be the used to sign in to the Collabora dashboard.
+Note that the username and password you select during configuration are used to sign in to the Collabora dashboard.
 
 The TrueNAS app is configured with all the required environment variables, but if you want to further customize the container, click **Add** to the right of **Additional Environment Variables** for each to enter the variable(s) and values(s).
 
@@ -82,8 +82,8 @@ Add your **Storage Configuration** settings.
 
 {{< trueimage src="/images/SCALE/Apps/CollaboraInstallStorage.png" alt="Storage Configuration" id="Storage Configuration" >}}
 
-For example, if you decide to create an optional dataset named ***data-storage***, set **Host Path (Path that already exists on the system)** in **Type**.
-Select **Enable ACL**, and then enter or browse to select the ***data-storage*** dataset to populate the **Host Path** field.
+For example, if you create an optional dataset named ***data-storage***, set **Host Path (Path that already exists on the system)** in **Type**.
+Select **Enable ACL**, then enter or browse to select the ***data-storage*** dataset to populate the **Host Path** field.
 
 Click **Add** to the right of **ACL Entries** for each user or group entry you want to add.
 For example, add the **568** user and **0**, and give each **FULL_CONTROL Access**.
@@ -119,7 +119,7 @@ The **Collabora Configuration** section contains a **Database Password** field. 
 
 Upon deployment, users can set the desired Collabora login credentials or log in to an existing account from the Collabora UI.
 
-Users can select the **Add Devices** drop-down menu to configure device settings for any Collabora-compatible devices that they currently own. Users do not have to own any devices before installing the app and can leave this section blank if not applicable.
+Users can select the **Add Devices** drop-down menu to configure device settings for any Collabora-compatible devices they currently own. Users do not have to own devices before installing the app and can leave this section blank if not applicable.
 
 {{< trueimage src="/images/SCALE/Apps/CollaboraInstallDictionaries.png" alt="Collabora Dictionaries" id="Collabora Dictionaries" >}}
 
@@ -127,7 +127,7 @@ Collabora offers users the option to configure multiple dictionaries. The **Dict
 
 {{< trueimage src="/images/SCALE/Apps/CollaboraInstallExtraParameters.png" alt="Collabora Extra Parameters" id="Collabora Extra Parameters" >}}
 
-Users can utilize the **Extra Parameters** settings to further customize the behavior of the Collabora UI. These parameters are passed directly to Collabora as command-line arguments when the container is started. Users are welcome to accept the default parameters if no additional customization is desired.
+You can utilize the **Extra Parameters** settings to further customize the behavior of the Collabora UI. These parameters are passed directly to Collabora as command-line arguments when the container is started. Users can accept the default parameters if no additional customization is desired.
 
 #### Adding Environment Variables
 
@@ -136,7 +136,7 @@ Refer to [*Collabora* documentation](https://www.home-assistant.io/docs/configur
 
 ### User and Group Configuration 
 
-It is recommended to make a **user** and **group** for the Collabora app. If you choose to follow the recommendation, ensure that the user and group have full access to the config-storage, media-storage, and data-storage datasets.
+We recommend making a **user** and **group** for the Collabora app. If you follow the recommendation, give the user and group full access to the config-storage, media-storage, and data-storage datasets.
 
 {{< include file="/static/includes/apps/InstallWizardUserAndGroupConfig.md" >}}
 
@@ -152,9 +152,9 @@ TrueNAS provides two options for storage volumes: ixVolumes and host paths.
 
 {{< include file="/static/includes/apps/InstallAppsStorageConfig.md" >}}
 
-*Collabora* does not require users to create additional datasets for installation. It is generally recommended to create a parent dataset for every installed application, but this step is not necessary in the Collabora app unless users want to store persistant data on TrueNAS.
+*Collabora* does not require users to create additional datasets for installation. We recommend creating a parent dataset for every installed application, but the Collabora app does not require this step unless users want to store persistent data on TrueNAS.
 
-If you choose to create datasets within TrueNAS for the Collabora app, set **Type** to **Host Path (Path that already exists on the system)**, and select your elective datasets in the **Host Path** field.
+If you create datasets within TrueNAS for the Collabora app, set **Type** to **Host Path (Path that already exists on the system)**, and select your elective datasets in the **Host Path** field.
 
 If you group these datasets under a parent dataset named *Collabora*, configure the [ACL permissions]({{< relref "PermissionsSCALE.md" >}}) for this parent dataset and add an ACE entry for the ***Collabora*** user.
 If the app includes postgres storage volumes, include the following information 
@@ -164,8 +164,8 @@ When adding the ***postgresdata*** dataset set it up with a POSIX ACL, and add t
 
 If you have a postgres dataset, also include information in the Before You Begin section about adding the dataset and permissions.
 
-See the instructions in the [Before You Begin](#before-you-begin) section for more on creating both the parent and postgres_data datasets and configuring the ACL permissions for each.
-You can add extra storage volumes at the time of installation or edit the application after it deploys. Stop the app before editing settings.
+See the instructions in the [Before You Begin](#before-you-begin) section for more on creating both the parent and postgres_data datasets and configuring their ACL permissions.
+You can add extra storage volumes during installation or edit the application after it deploys. Stop the app before editing settings.
 
 {{< include file="/static/includes/apps/InstallAppsStorageConfig2.md" >}}
 
@@ -175,7 +175,7 @@ You can configure ACL permissions for the required dataset in the **Install Coll
 {{< include file="/static/includes/apps/InstallWizardStorageACLConfig.md" >}}
 
 {{< expand "Adding ACL Permissions from the Datasets Screen" "v">}}
-First, select the dataset row, then scroll down to the **Permissions** widget, and then click **Edit** to open the **Edit ACL** screen.
+First, select the dataset row, then scroll down to the **Permissions** widget and click **Edit** to open the **Edit ACL** screen.
 Change the **@owner** and **@group** values from **root** to the administrative user for your TrueNAS system, and click apply for each.
 Next, add an ACL entry for the run-as user.
 For *Collabora*, the run-as users is **0** for **root**. Add a user entry for this user.
@@ -184,7 +184,7 @@ Save the ACL before leaving the screen.
 
 #### Mounting an SMB Share Storage Volume
 
-TrueNAS **Additional Storage** options include the ability to mount an SMB share inside the container pod.
+TrueNAS **Additional Storage** options include mounting an SMB share inside the container pod.
 
 {{< include file="/static/includes/apps/InstallWizardStorageSMBOption.md" >}}
 
