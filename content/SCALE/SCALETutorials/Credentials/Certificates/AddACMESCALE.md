@@ -28,7 +28,7 @@ Click **Add** on the **ACME DNS-Authenticator** widget to open the **Add DNS Aut
 {{< trueimage src="/images/SCALE/Credentials/AddDNSAuthenticatorCloudflare.png" alt="Add DNS Authenticator" id="Add DNS Authenticator" >}}
 
 Enter a name, and select the authenticator you want to configure.
-Options are **[cloudflare](https://www.cloudflare.com)**, Amazon **[route53](https://aws.amazon.com/route53/)**, [**OVH**](https://www.ovhcloud.com/en/domains/), and **shell**.
+Supported authenticator options are [Cloudflare](https://www.cloudflare.com), [DigitalOcean](https://www.digitalocean.com/), [Amazon Route 53](https://aws.amazon.com/route53/), [OVHcloud](https://www.ovhcloud.com/en/domains/), and **shell**.
 **Authenticator** selection changes the configuration fields.
 
 If you select **cloudflare** as the authenticator, you must enter your Cloudflare account email address, API key, and API token.
