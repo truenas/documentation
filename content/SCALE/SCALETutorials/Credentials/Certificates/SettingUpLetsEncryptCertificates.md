@@ -15,7 +15,7 @@ TrueNAS allows users to automatically generate custom domain certificates using 
 ## Requirements
 
 * An email address for your TrueNAS admin user.
-* A custom domain that uses Cloudflare, DigitalOcean, AWS Route 53, or OVH.
+* A custom domain that uses Cloudflare, DigitalOcean, Amazon Route 53, or OVHcloud.
 * A DNS server that does not cache for your TrueNAS system.
 
 ## Create an ACME DNS-Authenticator
