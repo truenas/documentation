@@ -174,15 +174,17 @@ Do not select **Host Network** if it is not selected. If checkmarked, select to 
 
 Add your **Storage Configuration** settings.
 
-Set **Host Path (Path that already exists on the system)** in **Type** for ***Data Storage***.
+Set **Type** to **Host Path (Path that already exists on the system)** for ***Data Storage***.
 Select **Enable ACL**, and then enter or browse to select the ***data*** dataset to populate the **Host Path** field.
 <!-- replace image with the path to the image you want to add:
 {{< trueimage src="/images/SCALE/Apps/InstallPlexStorageConfigDataACLandACE.png" alt="Add Plex Data Storage" id="Add Plex Data Storage" >}}-->
 
 Click **Add** to the right of **ACL Entries** for each user or group entry you want to add.
-For example, add the **568** user and **0**, and give each **FULL_CONTROL Access**.
+Set **ID Type** to **Entry is for a USER**, enter the ***0*** in **ID**, and give it full control permissions.
+For example, add the ***0*** user, and give each **FULL_CONTROL Access**.
+<!-- if there are more than one user IDs, include "Click **Add** again to enter the user information for the next user.">
 
-Select **Force Flag**.
+Select **Force Flag** to allow upgrading the app when the dataset has exsiting data.
 
 Repeat the storage steps above each additional storage volume. See [Storage Configuration Settings](#storage-configuration-settings) below for more information.
 
@@ -236,8 +238,7 @@ The default web port for *AppName* is ***30027***.
 {{< include file="/static/includes/apps/InstallWizardCertificateSettings.md" >}}
 
 ### Storage Configuration
-TrueNAS provides two options for storage volumes: ixVolumes and host paths.
-
+TrueNAS provides two options for storage volumes: ixVolumes and host paths. 
 {{< include file="/static/includes/apps/InstallAppsStorageConfig.md" >}}
 <!-- replace this content with what applies to the app, if the app requires creating specific datasets, and if the app uses postgres dataset storage that might require special handling.
 
