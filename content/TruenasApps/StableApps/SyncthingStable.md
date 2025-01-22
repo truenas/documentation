@@ -63,6 +63,7 @@ Next, click **Add Item** to add an ACE entry for the <b>Syncthing</b> run as use
 
 See [Setting Up Permissions]({{< relref "PermissionsSCALE.md" >}}) and [Edit ACL Screen]({{< relref "EditACLScreens.md" >}}) for more information.
 {{< /expand >}}</div>
+
 ## Installing the Syncthing Application
 {{< hint info >}}
 This basic procedure covers the required Syncthing app settings.
@@ -141,7 +142,7 @@ The default TCP port is **20978** and the default UDP port is **20979**.
 
 Disabling **Host Network** shows the TCP and UDP port numbers, and sets the web UI to listen on port **22000**.
 
-{{< include file="/static/includes/apps/InstallWizardAdvancedDNSSettings.md" >}
+{{< include file="/static/includes/apps/InstallWizardAdvancedDNSSettings.md" >}}
 
 ### Storage Settings
 TrueNAS provides two storage options for storage volumes: ixVolumes and host paths.

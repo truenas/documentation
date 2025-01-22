@@ -315,6 +315,11 @@ Click **Confirm** then **Continue** to delete the application.
 
 Apps on the **Installed** screen, showing either the **Deploying** or **Running** status, can be stopped using the stop button on the **Applications** table row for the app.
 
+### Restarting Apps
+
+Running apps show the restart icon button that allows you to stop then restart the application.
+Click the <span class="material-icons">restart_alt</span> icon button to stop then automatically restart the app.
+
 ### Managing Container Images
 
 While on the **Installed** application screen, click **Configuration** > **Manage Container Images** to open the **Manage Container Images** screen.
