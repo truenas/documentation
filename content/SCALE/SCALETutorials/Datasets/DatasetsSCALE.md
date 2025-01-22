@@ -7,6 +7,7 @@ aliases:
  - /scale/scaletutorials/storage/pools/datasetsscale/
  - /scale/scaletutorials/storage/datasets/datasetsscale/
  - /_includes/storagecompressionlevelsscale/
+ - /images/CORE/13.0/StoragePoolsAddDataset2.png
 tags:
  - datasets
  - storage
@@ -23,8 +24,8 @@ A TrueNAS *dataset* is a file system within a data storage pool.
 Datasets can contain files, directories, and child datasets, and have individual permissions or flags.
 
 Datasets can also be [encrypted]({{< relref "EncryptionSCALE.md" >}}).
-TrueNAS automatically encrypts datasets created in encrypted pools, but you can change the encryption type from key to passphrase.
-You can create an encrypted dataset if the pool is not encrypted and set the type as either key or passphrase.
+In TrueNAS 22.12.3 or later, the TrueNAS UI requires encryption for child datasets created in encrypted parent datasets, but you can change the encryption type from key to passphrase.
+You can create an encrypted dataset if the parent is not encrypted and set the type as either key or passphrase.
 
 We recommend organizing your pool with datasets before configuring [data sharing]({{< relref "/SCALE/SCALEUIReference/Shares/_index.md" >}}), as this allows for more fine-tuning of access permissions and using different sharing protocols.
 

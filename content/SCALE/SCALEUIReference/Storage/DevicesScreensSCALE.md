@@ -4,6 +4,7 @@ description: "Provides information on settings and functions found on the Device
 weight: 35
 aliases:
  - /scale/scaleuireference/storage/pools/devicesscreensscale/
+ - /images/SCALE/Storage/DevicesSLOG.png
 tags:
 - smart
 - disks

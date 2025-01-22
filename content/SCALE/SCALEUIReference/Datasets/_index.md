@@ -302,7 +302,7 @@ Encryption setting options display on the **Advanced Options** of the **Add Data
 To edit encryption settings, click **Edit** on the [**ZFS Encryption** widget](#zfs-encryption-widget).
 This opens the **Edit Encryption Options for *datasetName*** window where you can change encryption settings for an existing dataset.
 
-{{< trueimage src="/images/SCALE/Datasets/AddDatasetBasicEncryptionAndOtherOptions.png" alt="Add Dataset Encryption Options Clear Inherit" id="Add Dataset Encryption Options Clear Inherit" >}}
+{{< trueimage src="/images/SCALE/Datasets/AddDatasetBasicEncryptionAndOtherOptions.png" alt="Add Dataset Encryption Options Key" id="Add Dataset Encryption Options Key" >}}
 
 If you create an unencrypted dataset, the default setting is **Inherit (Non-Encrypted)**, and you can create encrypted or unencrypted child datasets under it.
 If you create an encrypted dataset, the default setting is **Inherit (Encryption)**, and all child datasets created under it are encrypted.
@@ -311,7 +311,7 @@ The default **Inherit** option is pre-selected.
 Clear the **Encryption** option (pre-selected) checkbox to show the key type encryption settings.
 Select **Passphrase** in **Encryption Type** to show other settings.
 
-{{< trueimage src="/images/SCALE/Datasets/AddDatasetEncryptionPassphrase.png" alt="Add Dataset Encryption Passphrase" id="Add Dataset Encryption Passphrase" >}}
+{{< trueimage src="/images/SCALE/Datasets/AddDatasetEncryptionPassphrase.png" alt="Add Dataset Encryption Options Passphrase" id="Add Dataset Encryption Options Passphrase" >}}
 
 {{< expand "Encryption Settings" "v" >}}
 {{< truetable >}}

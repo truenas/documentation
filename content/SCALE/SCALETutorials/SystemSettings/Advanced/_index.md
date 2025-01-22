@@ -5,6 +5,7 @@ geekdocCollapseSection: true
 weight: 30
 aliases:
  - /scale/scaletutorials/systemsettings/advanced/advancedsettings/
+ - /_includes/createdebugcore/
 tags:
  - settings
  - replication
@@ -70,7 +71,7 @@ It also stores Samba4 metadata, such as the user and group cache and share-level
 
 If the system has one pool, TrueNAS configures that pool as the system dataset pool.
 If your system has more than one pool, you can set the system dataset pool using the **Select Pool** dropdown.
-Users can move the system dataset to an unencrypted pool, or an encrypted pool without passphrases.
+Users can move the system dataset to an unencrypted pool or a key-encrypted pool.
 
 ![SystemDatasetPoolConfigScreen](/images/SCALE/SystemSettings/SystemStorageConfigScreen.png "TrueNAS Advanced Settings System Dataset Pool Screen")
 
