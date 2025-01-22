@@ -39,7 +39,7 @@ To install the Syncthing **enterprise** train app, do the following:
 {{< include file="/static/includes/apps/BeforeYouBeginStableApps.md" >}}
 {{< include file="/static/includes/apps/BeforeYouBeginRunAsUser.md" >}}
 
-<div style="margin-left: 33px">{{< trueimage src="/images/SCALE/Apps/SyncthingEnterpriseDetailsScreen.png" alt="MinIO Enterprise App Details Screen" id="MinIO Enterprise App Details Screen" >}}</div>
+<div style="margin-left: 33px">{{< trueimage src="/images/SCALE/Apps/SyncthingEnterpriseDetailsScreen.png" alt="Syncthing Enterprise App Details Screen" id="Syncthing Enterprise App Details Screen" >}}</div>
 
 {{< include file="/static/includes/apps/BeforeYouBeginAddNewAppUser.md" >}}
 
@@ -96,7 +96,7 @@ Select **Host Network** to bind to the default host settings programmed for Sync
 Accept the default web port **8384**. Before changing ports, see [Default Ports](https://www.truenas.com/docs/references/defaultports/) for a list of assigned port numbers.
 
 If created, select the certificate for Syncthing from the **Certificates** dropdown list.
-See [Network Settings](#networking-settings) below for more information on network settings.
+For more information, see [Network Settings](#networking-settings) below.
 
 Configure the storage settings.
 Syncthing uses two datasets. Set **Type** to **Host Path (Path that already exists on the system)**
@@ -105,7 +105,7 @@ The other mount point is **/data1** with the host path set to the **data1** data
 Click **Add** to the right of **ACL Entries**.
 Set **ID** to **Entry is for a USER**, enter **0** in **ID**, and then give the user full control permissions.
 
-Select **Force Flag** to allow upgrading the app. This allows writing to the dataset when there is exisiting data.
+Select **Force Flag** to allow upgrading the app. This allows writing to the dataset when there is existing data.
 
 {{< trueimage src="/images/SCALE/Apps/InstallSyncthingStorageHomeACLandACESettings.png" alt="Home Host Path ACL and ACE Settings" id="Home Host Path ACL and ACE Settings" >}}
 
@@ -114,8 +114,8 @@ Repeat for the **/data1** storage volume. Click **Add** to the right of **Additi
 Set **Type** to **Host Path**.
 Select **Enable ACL**, then enter or browse to select the path to the **data1** dataset. Add the run as user, **0** as an ACE entry with full control permissions.
 
-If migrating from some other NAS system, set **Type** to **SMB/CIFS Share (Mounts a volume to an SMB share)**, and then select **Migrate Data**.
-See [**Storage Settings**](#storage-settings) below for more information.
+If migrating from another NAS system, set **Type** to **SMB/CIFS Share (Mounts a volume to an SMB share)**, and then select **Migrate Data**.
+For more information, see [**Mounting an SMB Share Storage Volume**](#mounting-an-smb-share-storage-volume) below.
 
 {{< include file="/static/includes/apps/SyncthingCompleteInstall.md" >}}
 
@@ -140,25 +140,28 @@ The following sections provide detailed explanations of the settings found in ea
 
 #### Adding Environmental Variables
 
-{{< include file="/static/includes/apps/AppInstallWizardEnvironVariablesSettings.md" >}}
+{{< include file="/static/includes/apps/InstallWizardEnvironVariablesSettings.md" >}}
 
 Click here for more information on [Syncthing environmental variables](https://docs.syncthing.net/v1.22.0/users/syncthing.html)
+
 ### User and Group Settings
 
 {{< trueimage src="/images/SCALE/Apps/InstallSyncthingEnterpriseUserAndGroupConfig.png" alt="Syncthing Enterprise User and Group IDs" id="Syncthing Enterprise User and Group IDs" >}}
 
-{{< include file="/static/includes/apps/AppInstallWizardUserAndGroupConfig.md" >}}
+{{< include file="/static/includes/apps/InstallWizardUserAndGroupConfig.md" >}}
 
 ### Networking Settings
-The TrueNAS Syncthing enterprise app listens on port **8384**.
+The Syncthing enterprise app listens on port **8384**.
 
 {{< trueimage src="/images/SCALE/Apps/InstallSyncthingEnterpriseNetworkSettings.png" alt="Syncthing Enterprise Network Settings" id="Syncthing Enterprise Network Settings" >}}
 
-{{< include file="/static/includes/apps/AppInstallWizardNetworkConfig.md" >}}
+{{< include file="/static/includes/apps/InstallWizardDefaultPorts.md" >}}
+
+{{< include file="/static/includes/apps/InstallWizardHostNetworkConfig.md" >}}
 
 Disabling **Host Network** shows the TCP and UDP port numbers, and sets the web UI to listen on port **22000**.
 
-{{< include file="/static/includes/apps/AppInstallWizardCertificateSettings.md" >}}
+{{< include file="/static/includes/apps/InstallWizardCertificateSettings.md" >}}
 
 ### Storage Settings
 TrueNAS provides two storage options for storage volumes: ixVolumes and host paths.
@@ -168,9 +171,9 @@ This adds a storage volume for the application nested in the hidden **ix-apps** 
 Using ixVolume is intended for a test deployment of an app but not for a full app deployment, as data does not persist for these volumes after deleting the app where a dataset does.
 Datasets make recovering, transferring, and accessing app configuration, user, or other data possible where ixVolumes do not.
 
-To use an existing dataset, which is the recommended option, set **Type** to **Host Path (Path that already exists on the system**).
+To use an existing dataset (recommended option), set **Type** to **Host Path (Path that already exists on the system**).
 
-The Syncthing **enterprise** train app requires two storage volumes/datasets to store configuration data and app data storage. Create one named **home** and the other dataset named **data1**.
+The Syncthing **enterprise** train app requires two storage volumes/datasets to store configuration data and app data storage. Create one named **home** and another dataset named **data1**.
 
 {{< include file="/static/includes/apps/InstallAppsStorageConfig.md" >}}
 
@@ -179,7 +182,7 @@ If you organize the config dataset under a parent dataset named *syncthing*, con
 You can add extra storage volumes during the app installation, or edit the application after it deploys. Stop the app before editing settings.
 
 #### Setting Dataset ACL Permissions
-You can configure ACL permissions for the required dataset in the **Install Syncthing** wizard, or from the **Datasets** screen any time after adding the datasets.
+You can configure ACL permissions for the required dataset in the **Install Syncthing** wizard, or from the **Datasets** screen after adding the datasets.
 
 {{< include file="/static/includes/apps/InstallWizardStorageACLConfig.md" >}}
 
@@ -190,11 +193,11 @@ Next, add an ACL entry for the run-as user.
 For Syncthing, the run-as user is **0**. Add a user entry for this user.
 Save the ACL before leaving the screen.
 
-See [Setting Up Permissions]({{< relref "PermissionsSCALE.md" >}}) and [Edit ACL Screen]({{< relref "EditACLScreens.md" >}}) for more information.
+For more infomration, see [Setting Up Permissions]({{< relref "PermissionsSCALE.md" >}}) and [Edit ACL Screen]({{< relref "EditACLScreens.md" >}}).
 {{< /expand >}}
 
-#### Mounting an SMB Share
-The TrueNAS Syncthing Enterprise app includes the option to mount an SMB share inside the container pod and to migrate data from some other NAS to TrueNAS.
+#### Mounting an SMB Share Storage Volume
+The TrueNAS Syncthing Enterprise app includes the option to mount an SMB share inside the container pod and to migrate data from another NAS to TrueNAS.
 
 Selecting **Migrate Data** forces a read-only mount regardless of the **Read Only** checkbox selection.
 The SMB mount options are set to **vers=3.0**, **cifsacl**, and **noperm**.
@@ -206,7 +209,7 @@ ACL preservation is not guaranteed if in a non-AD environment, or if the ACL or 
 
 {{< trueimage src="/images/SCALE/Apps/InstallSyncthingEnterpriseResourcesConfig.png" alt="Syncthing Enterprise Resource Limits" id="Syncthing Enterprise Resource Limits" >}}
 
-{{< include file="/static/includes/apps/AppInstallWizardResourceConfig.md" >}}
+{{< include file="/static/includes/apps/InstallWizardResourceConfig.md" >}}
 
 ## Increasing inotify Watchers
 Syncthing uses [inotify](https://man7.org/linux/man-pages/man7/inotify.7.html) to monitor file system events, with one inotify watcher per monitored directory.
@@ -227,7 +230,7 @@ Click **Add** to open the **Add Sysctl** screen.
 Enter **fs.inotify.max_user_watches** in **Variable**.
 
 Enter a **Value** larger than the number of directories monitored by Syncthing.
-There is a small memory impact for each inotify watcher of 1080 bytes, so it is best to start with a lower number, we suggest 204800 and increase if needed.
+There is a small memory impact of 1080 bytes for each inotify watcher, so it is best to start with a lower number, we suggest 204800 and increase if needed.
 
 Enter a **Description** for the variable, such as *Increase inotify limit*.
 
