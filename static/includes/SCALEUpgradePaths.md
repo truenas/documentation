@@ -61,7 +61,7 @@ Visit the <a href="https://www.truenas.com/software-status/" target="_blank">Tru
 
 <div class="section-box" id="scale-upgrade-paths" style="padding: 0 40px 40px 40px; margin-bottom: 20px;">
     <div class="upgrade-paths-container">
-      <img src="/images/tn-scale-logo.png" style="box-shadow: none; max-width: 225px; padding-bottom: 20px; padding-top: 40px;" title="TrueNAS SCALE" alt="TrueNAS SCALE">
+      <img src="/images/TrueNAS_Community_Edition.png" style="box-shadow: none; max-width: 225px; padding-bottom: 20px; padding-top: 40px;" title="TrueNAS Community Edition" alt="TrueNAS Community Edition">
       <div class="scroll-container" id="scrollContainer1">
         <div class="chart-wrapper">
           {{< mermaid class="mermaid_sizing" >}}
@@ -81,7 +81,7 @@ Visit the <a href="https://www.truenas.com/software-status/" target="_blank">Tru
       </div>
     </div>
     <div class="upgrade-paths-container">
-      <img src="/images/tn-enterprise-logo.png" style="box-shadow: none; max-width: 225px; padding-bottom: 20px; padding-top: 40px;" title="TrueNAS SCALE Enterprise" alt="TrueNAS SCALE Enterprise">
+      <img src="/images/TrueNAS_Enterprise.png" style="box-shadow: none; max-width: 225px; padding-bottom: 20px; padding-top: 40px;" title="TrueNAS Enterprise" alt="TrueNAS Enterprise">
       <div class="scroll-container" id="scrollContainer2">
         <div class="chart-wrapper">
           {{< mermaid class="mermaid_sizing" >}}
