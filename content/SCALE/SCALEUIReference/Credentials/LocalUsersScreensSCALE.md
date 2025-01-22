@@ -137,3 +137,28 @@ You can set a specific [shell]({{< relref "UseScaleShell.md" >}}) for the user f
 | **TrueNAS Console** |Use to open **Shell** in the Console Setup menu. Eliminates the need to enter `menu`. Displays the console setup menu options. This option provides the user with access to the Linux and TrueNAS CLI shells. |
 {{< /truetable >}}
 {{< /expand >}}
+
+## Utilizing API Keys Feature
+
+{{< trueimage src="/images/SCALE/Credentials/UsersAPIKeysButton.png" alt="Users API Keys Option" id="Users API Keys Option" >}}
+
+To view API keys that are linked to different user accounts, visit **Credentials > Users** and click the **API Keys** button on the right side of the screen.
+
+{{< trueimage src="/images/SCALE/Credentials/UsersAPIKeysMenu.png" alt="Users API Keys Menu" id="Users API Keys Menu" >}}
+
+The **API Keys** selection takes users to the **Users API Keys** page, which provides a table of all API keys linked to user accounts on your TrueNAS.
+
+{{< truetable >}}
+| Value | Description |
+|------------------|-----------------|
+| Name  | The name given to the API key when it was created.  |
+| Username  | The username of the TrueNAS user associated with the API key.  |
+| Local  | Indication of whether the API key is for a local TrueNAS user account.  |
+| Revoked  | Indication of whether the API key has been revoked and is no longer valid.  |
+| Created Date  | The date and time when the API key was created.  |
+| Expires  | The expiration date of the API key.  |
+{{< /truetable >}}
+
+* Click <i class="material-icons" aria-hidden="true" title="Edit">edit</i> **Edit** to edit an API key
+* Click <i class="material-icons" aria-hidden="true" title="Delete">delete</i> **Delete** to delete an API key
+

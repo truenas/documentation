@@ -145,3 +145,26 @@ Click **Save**. TrueNAS creates the new home directory for the user.
 To edit an existing user account, go to **Credentials > Users**.
 Click anywhere on the user row to expand the user entry, then click **Edit** to open the **Edit User** configuration screen.
 See [Local User Screens]({{< relref "LocalUsersScreensScale.md" >}}) for details on all settings.
+
+## Utilizing API Keys Feature
+
+{{< trueimage src="/images/SCALE/Credentials/UsersAPIKeysButton.png" alt="Users API Keys Option" id="Users API Keys Option" >}}
+
+To view API keys that are linked to different user accounts, you can visit **Credentials > Users** and click the **API Keys** button on the right side of the screen.
+
+{{< trueimage src="/images/SCALE/Credentials/UsersAPIKeysMenu.png" alt="Users API Keys Menu" id="Users API Keys Menu" >}}
+
+The **API Keys** selection takes users to the **Users API Keys** page, which provides a table of all API keys linked to user accounts on your TrueNAS. Information in this table includes the **Name**, **Username**, **Local** status, **Revoked** status, **Created Date**, and **Expires** status.
+
+{{< truetable >}}
+| Value | Description |
+|------------------|-----------------|
+| Name  | The name given to the API key when it was created.  |
+| Username  | The username of the TrueNAS user associated with the API key.  |
+| Local  | Indication of whether the API key is for a local TrueNAS user account.  |
+| Revoked  | Indication of whether the API key has been revoked and is no longer valid.  |
+| Created Date  | The date and time when the API key was created.  |
+| Expires  | The expiration date of the API key.  |
+{{< /truetable >}}
+
+To utilize the **User API Keys** screen to delete and edit your API keys, click <i class="material-icons" aria-hidden="true" title="Edit">edit</i> **Edit** to open the **Edit API Key** screen. To delete an API key, click <i class="material-icons" aria-hidden="true" title="Delete">delete</i> **Delete**.
