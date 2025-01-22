@@ -66,6 +66,7 @@ Click <i class="material-icons" aria-hidden="true" title="Edit">edit</i> edit fo
 Select **Reset** to remove the existing API key string and generate a new random key.
 The dialog displays the new key and the **Copy to Clipboard** option.
 Click to copy the new API key string then save it in a secure location.
+Update any clients using the reset API Key with the new key string.
 
 ### Deleting an API Key
 
