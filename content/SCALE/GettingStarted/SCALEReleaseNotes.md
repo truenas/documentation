@@ -56,7 +56,12 @@ More details are available from [Software Releases]({{< relref "/TrueNASUpgrades
 
 * The default libvirt account UID and GID is changed to to avoid possible clashes with user created Active Directory (AD) users. TrueNAS automatically updates libvirt UID and GIDs when upgraded to 25.04. Users attempting revert to 24.10 or an earlier release must manually review and update libvirt-qemu user and group IDs back to the values that were default in that version (64055:64055 for 24.10).
 
-   
+### Migrating Virtual Machines
+
+{{< include file="/static/includes/Incus.md" >}}
+
+{{< include file="/static/includes/MigratingVMs.md" >}}
+
 ### Upgrade Paths (Anticipated)
 <!--
 {{< include file="/static/includes/25.04UpgradeMethods.md" >}}
