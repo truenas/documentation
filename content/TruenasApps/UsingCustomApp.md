@@ -279,8 +279,8 @@ To deploy a third-party application using the **Install iX App** wizard, go to *
 
    Enter the maximum size of the temporary directory in mebibytes in **Tmpfs Size Limit (in Mi)** or accept the default of *500*.
    {{< /expand >}}
-
-8. {{< include file="/static/includes/apps/AppInstallWizardResourceConfig.md" >}}
+                                           
+8. {{< include file="/static/includes/apps/InstallWizardResourceConfig.md" >}}
 
 9. Use **GPU Configuration** to allocate GPU resources if available and required for the application.
 
