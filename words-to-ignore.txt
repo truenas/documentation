@@ -2157,3 +2157,4 @@ TrueNASStencilsPreview
 MiniFamilyFront
 SOV
 MiniNetworkPortID
+InstallWizardResourceConfig
