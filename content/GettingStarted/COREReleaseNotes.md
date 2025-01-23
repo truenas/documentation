@@ -29,6 +29,18 @@ weight: 3
 
 * {{< include file="/static/includes/COREFeatureSupport.md" >}}
 
+## 13.0-U6.6
+**January 23, 2025**
+
+iXsystems is pleased to release TrueNAS 13.0-U6.6!
+
+This is a high-priority security release that also incorporates a fix from the unreleased 13.0-U6.5 version:
+
+* Fix for Fibre Channel command executions getting stuck and negatively impacting system functionality or performance.
+
+* Updates to the rsync daemon mode to address recent CVEs ([NAS-133561](https://ixsystems.atlassian.net/browse/NAS-133561)).
+  See the [TrueNAS Security Advisories](https://security.truenas.com/) for more details about the CVEs, including the iXsystems response.
+
 ## 13.0-U6.4
 
 **December 17, 2024**
