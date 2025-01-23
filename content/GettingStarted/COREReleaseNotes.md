@@ -29,12 +29,13 @@ weight: 3
 
 * {{< include file="/static/includes/COREFeatureSupport.md" >}}
 
-## 13.0-U6.6
+## 13.0-U6.7
 **January 24, 2025**
 
 iXsystems is pleased to release TrueNAS 13.0-U6.7!
 
-This is a small maintenance release that incorporates an upstream regression fix for the security-patched rsync daemon <NAS-TBD>.
+This is a small maintenance release that incorporates another upstream fix for the just-patched rsync daemon ([NAS-133755](https://ixsystems.atlassian.net/browse/NAS-133755)).
+Users that update to 13.0-U6.6 and encounter issues with an existing rsync task are encouraged to update to 13.0-U6.7.
 
 ## 13.0-U6.6
 **January 23, 2025**
