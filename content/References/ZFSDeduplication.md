@@ -214,7 +214,7 @@ If deduplication is used in an inadequately built system, these symptoms might b
 
 {{< expand "Hashing Note" "v" >}}
 Deduplication hashes (calculates a digital signature) for the data in each block to be written to disk and checking to see if data already exists in the pool with the same hash.
-When a block exists with the same hash, the block is not written and a new pointer is written to the DDT, saving that space. 
+When a block exists with the same hash, the block is not written and a reference count is incremented in the DDT, saving that space. 
 Depending on how the hash is calculated, there is a possibility that two different blocks could have the same hash and cause the file system to believe the blocks are the same. 
 To minimize this risk, choose a complex hash like SHA 256, SHA 512, and Skein. 
 A SHA 512 checksum hash is recommended for 64-bit platforms. 
