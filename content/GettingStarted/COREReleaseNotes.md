@@ -38,8 +38,8 @@ This is a high-priority security release that also incorporates a fix from the u
 
 * Fix for Fibre Channel command executions getting stuck and negatively impacting system functionality or performance.
 
-* Updates to the rsync feature designed to address recent CVEs.
-  See the TrueNAS Security Hub [rsync CVE notices](<TBD>) for more details.
+* Updates to the rsync daemon mode to address recent CVEs ([NAS-133561](https://ixsystems.atlassian.net/browse/NAS-133561)).
+  See the [TrueNAS Security Advisories](https://security.truenas.com/) for more details about the CVEs, including the iXsystems response.
 
 ## 13.0-U6.4
 
