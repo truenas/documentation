@@ -8,16 +8,17 @@ tags:
 - toolbar
 ---
 
-The <span class="material-icons">account_circle</span> **Settings** icon button displays a menu of general system settings options. 
-The options are **Change Password**, **Preferences**, **API Keys**, **Guide** and **About**.
+The <span class="material-icons">account_circle</span> **Settings** icon button displays a menu of general system settings options.
+The options are **Change Password**, **Preferences**, **My API Keys**, **Guide** and **About**.
 
 ## Change Password
 
 {{< include file="/static/includes/ChangeLoggedInUserPassword.md" >}}
 
-## API Keys
+## My API Keys
 
-Click on <span class="material-icons">laptop</span> **API Keys** to display the **API Keys** screen where you can add new or manage existing API keys on your system.
+Click on <span class="material-icons">laptop</span> **My API Keys** to display the **User API Keys** screen where you can add or manage API keys on your system.
+Click **API Docs** on the **User API Keys** screen to view API documentation.
 
 ## Guide
 
