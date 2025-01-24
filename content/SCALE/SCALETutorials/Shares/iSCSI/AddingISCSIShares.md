@@ -43,13 +43,18 @@ Have the following ready before you begin adding your iSCSI block share:
 ## iSCSI Wizard
 This section walks you through the setup process using the wizard screens.
 
-{{< expand "Click here for more information" "v" >}}
-To use the setup wizard,
+To use the setup wizard:
 1. Click **Wizard** to open the Target screen. Click **Create New**.
 
    {{< trueimage src="/images/SCALE/Shares/iSCSIWizardTargetScreen.png" alt="iSCSI Wizard Target Screen" id="iSCSI Wizard Target Screen" >}}
 
 2. Add the extent.
+
+   {{< columns >}}
+   {{< trueimage src="/images/SCALE/Shares/iSCSIWizardExtentCreateNewDevice.png" alt="iSCSI Wizard Extent Screen Devices Settings" id="iSCSI Wizard Extent Screen Device Settings" >}}
+   <--->
+   {{< trueimage src="/images/SCALE/Shares/iSCSIWizardExtendFileType.png" alt="iSCSI Wizard Extent Screen File Settings" id="iSCSI Wizard Extent Screen File Settings" >}}
+   {{< /columns >}}
 
    Enter a name using up to 64 lowercase alphanumeric and special characters. Allowed characters are dot (.), dash (-), and colon (:). A name longer than 64 characters is not allowed.
 
@@ -72,6 +77,8 @@ To use the setup wizard,
    Select the sharing platform, then click **Next**.
 
 3. Create the portal.
+   
+   {{< trueimage src="/images/SCALE/Shares/iSCSIWizardProtocolOptionsCreateNewPortal.png" alt="iSCSI Wizard Protocol Options Screen Portal Settings" id="iSCSI Wizard Protocol Options Screen Portal Settings" >}}
 
    Select a portal from the dropdown list or click **Create New** to add a new portal.
    If you create a new portal, click **Add** to enter an IP address and netmask (CIDR) for the portal. To add another, click **Add** again.
@@ -80,7 +87,6 @@ To use the setup wizard,
       select a **Discovery Authentication Method** from the dropdown list.
 
 4. click **Save**.
-{{< /expand >}}
 
 ## iSCSI Manual Setup
 This procedure guides you through adding an iSCSI share using the individual configuration screens.
@@ -111,7 +117,7 @@ Click on the **Block (iSCSI) Share Targets** widget header to open the individua
       
       Select the authentication method from the dropdown list.
       **None** allows anonymous discovery. **CHAP** uses one-way authentication. **Mutual CHAP** uses two-way authentication.
-      For more information on authentication methods, see [iSCSI Screens]({{< relref "iSCSIScreens.md" >}}).
+      For more information on authentication methods, see [iSCSI Screens]({{< relref "iSCSISharesScreens.md" >}}).
 
       Select a portal ID from the **Initiator Group ID** dropdown list.
 
@@ -213,7 +219,7 @@ Go to **Shares** and click the **Block (iSCSI) Shares Targets** widget header to
       
    Select the authentication method from the dropdown list.
    **None** allows anonymous discovery. **CHAP** uses one-way authentication. **Mutual CHAP** uses two-way authentication.
-   For more information on authentication methods, see [iSCSI Screens]({{< relref "iSCSIScreens.md" >}}).
+   For more information on authentication methods, see [iSCSI Screens]({{< relref "iSCSISharesScreens.md" >}}).
 
    Select a portal ID from the **Initiator Group ID** dropdown list.
 
