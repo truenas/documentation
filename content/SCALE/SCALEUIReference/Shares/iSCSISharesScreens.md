@@ -64,6 +64,7 @@ The iSCSI wizard **Extent** screen shows settings to name the share, set the typ
 {{< trueimage src="/images/SCALE/Shares/iSCSIWizardExtendFileType.png" alt="iSCSI Wizard Extent Screen File Settings" id="iSCSI Wizard Extent Screen File Settings" >}}
 {{< /columns >}}
 
+{{< expand "Wizard Extent Settings" "v" >}}
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
@@ -76,18 +77,22 @@ The iSCSI wizard **Extent** screen shows settings to name the share, set the typ
 | **Filesize** | Shows if the **Extent Type** is set to **File**. Enter the size for the directory. Leaving this set to **0** ues the actual file size and requires that the file already exists. Otherwise, specify the file size for the new file. |
 | **Sharing Platform** | Shows for both options. Select the platform that matches your use case. Options are:<br><li>**VMware: Extent block size 512b, TCP enabled, no Zen compat mode, SSD speed**<br><li>**Xen: Extent block size 512b, TCP enabled, Xen compat mode enabled, SSD speed**<br><li>**Legacy OS: Extent block size 512b, TCP enabled, no Xen compat mode, SSD speed**<br><li>**Modern OS: Extent block size 4k, TCP enabled, no Xen compat mode, SSD speed**</li> |
 {{< /truetable >}}
+{{< /expand >}}
  
 ### iSCSI Wizard Protocol Options Screen
 The iSCSI wizard **Protocol Options** screen shows settings to add a portal and initiators. If a portal does not exist, create one by selecting **Create New**.
 
 {{< trueimage src="/images/SCALE/Shares/iSCSIWizardProtocolOptionsCreateNewPortal.png" alt="iSCSI Wizard Protocol Options Screen Portal Settings" id="iSCSI Wizard Protocol Options Screen Portal Settings" >}}
 
+{{< expand "Wizard Portal Settings" "v" >}}
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Portal** | Select an exiting portal from the dropdown list or select **Create New** to show the **IP Address** field and **Add** button. **Add** shows another **IP Address** field each time it is clicked to allow adding multiple portals. |
 | **IP Address**  | Shows several options to select from for setting up a portal. Options are:<br><li>**0.0.0.0** - Select to listen on all IPv4 addresses.<br><li>**::** - Select to listen on all IPv6 addresses. <br><li>TrueNAS server IP address - Select to use the IP address assigned to the primary network interface for the TrueNAS server being configured.</li>|
 | **Initiators** | Leave blank to allow all or enter a list of initiator host names. Separate each host name by pressing <kbd>Enter</kbd> after entering each host name. Initiators send commands over the TCP/IP network to the target and receive responses from the target. |
+{{< /truetable >}}
+{{< /expand >}}
 
 ## Shares iSCSI Screens
 iSCSI share screen opens after clicking on the iSCSI widget header.
@@ -168,7 +173,6 @@ The **Add Target** and **Edit Target** screens shows the same configuration sett
 {{< /columns >}}
 
 {{< expand "Target Basic Info Settings" "v" >}}
-
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
@@ -178,6 +182,7 @@ The **Add Target** and **Edit Target** screens shows the same configuration sett
 | **Network** | Shows after clicking **Add** to the right of **Authorized Networks**. Enter the IP address for the network and select the netmask (CIDR) from the dropdown list. Adds the network address to the authorized network list. |
 {{< /truetable >}}
 {{< /expand >}}
+
 {{< expand "Target iSCSI Group Settings" "v" >}}
 {{< truetable >}}
 | Setting | Description |
@@ -222,7 +227,7 @@ The **Add Extent** and **Edit Extent** screens shows the same configuration sett
 |---------|-------------|
 | **Name** | Enter a name for the extent. An **Extent** where the size is not **0**, cannot be an existing file within the pool or dataset. |
 | **Description** | Enter any notes about this extent. |
-| **Enabled** | Select to enable the iSCSI extent |
+| **Enabled** | Select to enable the iSCSI extent. |
 {{< /truetable >}}
 {{< /expand >}}
 
@@ -281,11 +286,7 @@ The **Initiators Groups** screen shows after clicking the **Initiator** tab. It 
 **Edit** opens the **Add Initiator** edit screen showing two options: **Allow All Initiators** and **Description**.
 **Save** saves changes and closes the screen. **Cancel** closes the screen without saving changes.
 
-{{< trueimage src="/images/SCALE/Shares/EditInitiatorScreene.png" alt="Edit Initiator Screen" id="Edit Initiator Screen" >}}
-
-### Target Global Configuration Screen
-
-{{< include file="/static/includes/iscsiTargetGlobalConfig.md" >}}
+{{< trueimage src="/images/SCALE/Shares/EditInitiatorScreen.png" alt="Edit Initiator Screen" id="Edit Initiator Screen" >}}
 
 ### Portals Screens
 The configuration tabs **Portals** screen displays a list of portal ID groups on the TrueNAS system.
@@ -335,11 +336,7 @@ The **Add** and **Edit** screens display the same settings. Both screens have th
 #### Add or Edit Authorized Access Screens
 The **Add Target** and **Edit Target** screens shows the same configuration settings.
 
-{{< columns >}}
-{{< trueimage src="/images/SCALE/Shares/AddAuthorizedAccessScreenn.png" alt="Add Authorized Access Screen" id="Add Authorized Access Screen" >}}
-<--->
-{{< trueimage src="/images/SCALE/Shares/EditPortalScreen.png" alt="Edit Portal Screen" id="Edit Portal Screen" >}}
-{{< /columns >}}
+{{< trueimage src="/images/SCALE/Shares/AddAuthorizedAccessScreen.png" alt="Add Authorized Access Screen" id="Add Authorized Access Screen" >}}
 
 {{< expand "Authentication Method and Group Settings" "v" >}}
 {{< truetable >}}
@@ -355,7 +352,7 @@ The **Add Target** and **Edit Target** screens shows the same configuration sett
 | Setting | Description |
 |---------|-------------|
 | **User** | User account to create CHAP authentication with the user on the remote system. Many initiators use the initiator name as the user name. |
-| **Secret** | Enter the user password. Secret must be at least 12 and no more than 16 characters long. The screen displays a "password does not match" error until you enter the same password in **Secret (Confirm)**. |
+| **Secret** | Enter the user password. Secret must be at least 12 and no more than 16 characters long. The screen displays a **Password does not match** error until you enter the same password in **Secret (Confirm)**. |
 | **Secret (Confirm)** | Enter the same password to confirm the user password. |
 {{< /truetable >}}
 {{< /expand >}}
