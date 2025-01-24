@@ -43,7 +43,7 @@ To install the MinIO **enterprise** train app, do the following:
 MinIO enterprise train app requires one dataset, <b>data</b>. The default mount path is <b>/data1</b>.
 
 Follow the instructions below in <b>Creating Datasets for Apps</b> to correctly create the dataset(s).
-You can organize the app dataset(s) under a parent dataset to keep them separated from datasets for other applications.
+You can organize the app dataset(s) under a parent dataset to separate them from datasets for other applications.
 For example, create a <i>minio</i> parent dataset with each dataset nested under it.
 If you organize the MinIO app required dataset(s) under a parent dataset, set up the required ACL permissions for the parent dataset before using the app installation wizard to avoid receiving installation wizard errors.
 Use the <b>Enable ACL</b> option in the <b>Install MinIO</b> wizard to configure permissions for the <b>data</b> dataset.</div>
@@ -97,7 +97,7 @@ Click **Enable ACL**.
 Enter or browse to select the **data1** dataset and populate **Host Path**.
 Click **Add** to the right of **Add Entries**, then select **Entry is for a USER** in **ID Type**, enter the run as user ID in **ID**, and give it full control permissions.
 
-Select **Force Flag** to allow upgrading the app. This allows writing to the dataset when there is exsiting data.
+Select **Force Flag** to allow upgrading the app. This allows writing to the dataset when there is existing data.
 
 {{< include file="/static/includes/apps/MinIoEnterpriseFinishConfig.md" >}}
 
@@ -140,7 +140,7 @@ For more information see:
 MinIO does not require a certificate for a basic configuration and installation of MinIO Enterprise.
 If installing and configuring multi-mode SNMD or MNMD you must create a self-signed certificate.
 
-A SNMD configuration can use the same self-signed certificate created for MNMD.
+An SNMD configuration can use the same self-signed certificate created for MNMD.
 An MNMD configuration cannot use the certificate for an SNMD configuration because that certificate only includes the IP address for one system.
 Create this same self-signed certificate for the MNMD cluster on each system (node) in the cluster! 
 
