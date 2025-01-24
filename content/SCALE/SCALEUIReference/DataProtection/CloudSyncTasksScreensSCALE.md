@@ -183,11 +183,11 @@ Selecting **Push** in **Direction** adds the **Take Snapshot** option in **Advan
 The **Advanced Remote Options** settings are for advanced users to configure remote encryption (if selected), transfer bandwidth speed, and bandwidth limit.
 The **Edit Cloud Sync Task** screen **Advanced Remote Options** screen has an additional setting not found on the **Add Cloud Sync Task** screen.
 
-{{< column >}}
+{{< columns >}}
 {{< trueimage src="/images/SCALE/DataProtection/AddCloudSyncTaskPushControlAdvancedEncrypt.png" alt="Advanced Remote Encryption Options" id="Advanced Remote Encryption Options" >}}
-<---->
-{{< trueimage src="/images/SCALE/DataProtection/EditCloudSyncTaskControlAdvanced.png" alt="Advanced Remote Options" id="Advanced Remote Options" >}}
-{{< /column >}}
+<--->
+{{< trueimage src="/images/SCALE/DataProtection/EditCloudSyncTaskControlAdvanced.png" alt="Edit Screen Advanced Remote Options" id="Edit Screen Advanced Remote Options" >}}
+{{< /columns >}}
 
 {{< truetable >}}
 | Settings | Description |
