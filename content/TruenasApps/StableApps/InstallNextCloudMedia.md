@@ -309,6 +309,18 @@ TrueNAS **Additional Storage** options include the ability to mount an SMB share
 {{< include file="/static/includes/apps/InstallWizardResourceConfig.md" >}}
 {{< include file="/static/includes/apps/InstallWizardGPUPassthrough.md" >}}
 
+### Integrating Nextcloud and Collabora
+
+Users often utilize Collabora and Nextcloud together, as Collabora allows users to open and edit documents stored in their Nextcloud account. This integration enables users to edit a document simultaneously, while providing live comments, suggestions, and version histories.
+
+Users who download the Collabora and Nextcloud applicaiton on TrueNAS can access the **Apps** section in the Nextcloud UI to find the **Collabora Online** application.
+
+After installing Collabora Online, users should navigate to the **Collabora Online** tab in Nextcloud and enter their Collabora server address in the **Collabora Online server** field.
+
+This successfully integrates Collabora and Nextcloud accounts, enhancing document access and editing capabilities.
+
+For more details on installing Collabora, visit the [Collabora TrueNAS tutorial](https://www.truenas.com/docs/truenasapps/stableapps/collabora/).
+
 ## Troubleshooting Tips
 
 ### App Sticks in Deploying State
