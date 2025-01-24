@@ -53,7 +53,7 @@ To install the Syncthing **enterprise** train app, do the following:
 Syncthing enterprise train app requires two datasets, <b>home</b> to store configuration data and <b>data1</b> to store app data.
 
 Follow the instructions below in <b>Creating Datasets for Apps</b> to correctly create the dataset(s).
-You can organize the app dataset(s) under a parent dataset to keep them separated from datasets for other applications.
+You can organize the app dataset(s) under a parent dataset to separate them from datasets for other applications.
 For example, create a <i>syncthing</i> parent dataset with these datasets nested under it.
 If you organize the required dataset(s) under a parent dataset, set up the required ACL permissions for the parent dataset before using the app installation wizard to avoid receiving installation wizard errors.
 Use the <b>Enable ACL</b> option in the <b>Install Sycnting</b> wizard to configure permissions for the <b>home</b> and <b>data1</b> datasets.</div>
@@ -214,7 +214,7 @@ ACL preservation is not guaranteed if in a non-AD environment, or if the ACL or 
 ## Increasing inotify Watchers
 Syncthing uses [inotify](https://man7.org/linux/man-pages/man7/inotify.7.html) to monitor file system events, with one inotify watcher per monitored directory.
 Linux defaults to a maximum of 8192 inotify watchers.
-Using the Syncthing Enterprise app to sync directories with greater than 8191 subdirectories (possibly lower if other services are also utilizing inotify) produces errors that prevent automatic monitoring of file system changes.
+Using the Syncthing Enterprise app to sync directories with greater than 8191 subdirectories (possibly lower if other services are also using inotify) produces errors that prevent automatic monitoring of file system changes.
 
 Increase inotify values to allow Syncthing to monitor all sync directories.
 Add a sysctl variable to ensure changes persist through reboot.
