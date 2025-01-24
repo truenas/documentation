@@ -5,7 +5,7 @@ The MinIO Enterprise app uses host paths as the storage volume type. Only use ix
 MinIO uses the default ixVolume for the /export mount path and storage volume by default.
 Create the **data** dataset to use as a host path storage volume, and accept the default **/data** as the mount path for this storage volume.
 
-Set **Type** set to the default **ixVolume (Dataset created automatically by the system)** to allow TrueNAS to create a storage volume.
+Set **Type** to the default **ixVolume (Dataset created automatically by the system)** to allow TrueNAS to create a storage volume.
 This storage volume can be found nested under the hidden **ix-apps** dataset. This is not the recommended storage option except for the /export option.
 
 {{< trueimage src="/images/SCALE/Apps/InstallMinIOEnterpriseStorageConfig.png" alt="MinIO Add Storage Volumes" id="MinIO Add Storage Volumes" >}}
@@ -18,12 +18,12 @@ Enter or browse to select the **data** dataset and populate the **Host Path** fi
 
 Click **Add** to the right of **Add Entries**, then select **Entry is for a USER** in **ID Type**, enter the run as user ID in **ID**, and give it full control permissions.
 
-Select **Force Flag** to allow upgrading the app. This allows writing to the dataset when there is exsiting data.
+Select **Force Flag** to allow upgrading the app. This allows writing to the dataset when there is existing data.
 
-If configuring either MNMD or SNMD, you must all all four datasets to each system in the cluster. These datasets represent the disk in the multi-disk configurations.
+If configuring either MNMD or SNMD, you must assign all four datasets to each system in the cluster. These datasets represent the disk in the multi-disk configurations.
 
 To add additional datasets as host paths, click **Add** to the right of **Data Directories** to show the storage fields.
-Click **Add** to the right of **Data Directories** to add additional datasets created and representing drives in for multi-mode configurations.
+Click **Add** to the right of **Data Directories** to add additional datasets created and representing drives for multi-mode configurations.
 Click **Add** for each dataset (**data1**, **data2**, **data3**, and **data4**).
 
 Change the **Mount Path** to correspond to the dataset path entered or selected in **Host Path**.
