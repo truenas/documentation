@@ -16,12 +16,11 @@ By default built-in users, except for **root**, are hidden until you make them v
 
 {{< trueimage src="/images/SCALE/Credentials/AllUsersScreenSCALE.png" alt="Local User non-Built-in Accounts" id="Local User non-Built-in Accounts" >}}
 
-**Toggle Build-In Users** displays either the **Show Built-In Users** or **Hide Built-in Users** dialogs based on the current **Users** list view.
-If hidden, the **Show Built-in Users** dialog opens. Click **Show** to display the list of users.
+The **Show Built-in Users** toggle shows or hides built-in users. Enable it to display the list of built-in users.
 
 {{< trueimage src="/images/SCALE/Credentials/AllUsersScreenBuiltInSCALE.png" alt="Local User Built-in Accounts" id="Local User Built-in Accounts" >}}
 
-To hide built-in users, click **Toggle Built-In Users** again to open the **Hide Built-in Users** dialog. Click **Hide** to display only non-built-in users again.
+To hide built-in users, disable **Show Built-in Users**.
 
 The **Users** screen shows the pre-defined administrator role assigned to the user.
 
