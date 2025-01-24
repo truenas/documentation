@@ -54,7 +54,7 @@ Before you install the **stable** version of the MinIO app:
 {{< include file="/static/includes/apps/BeforeYouBeginAddAppDatasets.md" >}}
 
 <div style="margin-left: 33px">Create a parent dataset, such as <i>minio</i>, and then the storage dataset(s) (<b><i>data</i></b>, etc.) under it.
-  Select <b>apps</b> as the <b>Dataset Preset</b> for these datasets. You can modify the dataset ACLs at the time of creation, or modify them later when adding them in the app.</div>
+  Select <b>apps</b> as the <b>Dataset Preset</b> for these datasets. You can modify the dataset ACLs at the time of creation, or modify them later when adding them to the app.</div>
 
 <div style="margin-left: 33px">{{< include file="/static/includes/apps/BeforeYouBeginAddAppDatasetsProcedure.md" >}}
 
@@ -63,10 +63,10 @@ Start any sharing services after MinIO completes the installation and starts.</d
 
 {{< include file="/static/includes/apps/BeforeYouBeginAddAppCertificate.md" >}} 
 
-<div style="margin-left: 33px">Adding a certificate is optional but if you want to use a certificate for this application, either create a new self-signed CA and certificate or import an existing CA and create the certificate for MinIO. A certificate is not required to deploy the stable train MinIO application.</div>
+<div style="margin-left: 33px">Adding a certificate is optional, but if you want to use a certificate for this application, either create a new self-signed CA and certificate or import an existing CA and create the certificate for MinIO. A certificate is not required to deploy the stable train MinIO application.</div>
 
 ## Installing MinIO (S3) App
-This procedure covers the basic requirements, and installation and configuration instructions for the **stable** train version of the MinIO application.
+This procedure covers the basic requirements and installation and configuration instructions for the **stable** train version of the MinIO application.
 For instructions on installing the Enterprise version of the MinIO application see [Configuring
 Enterprise MinIO]({{< relref "/content/TruenasApps/EnterpriseApps/_index.md" >}}).
 {{< hint info >}}
@@ -94,7 +94,7 @@ Add your **Storage Configuration** settings.
 
 Select **Enable Distributed Mode** if you are setting up MinIO in a cluster configuration.
 
-MinIO uses one dataset and one ixVolume, and two mount paths.
+MinIO uses one dataset, one ixVolume, and two mount paths.
 Leave the **MinIO Export Storage (Data)** set to the defaults, with **Type** set to **ixVolume** and the mount path **/export**.
 You can create a dataset for this and use the host path option but it is not necessary for this storage volume.
 
@@ -127,7 +127,7 @@ Enter existing MinIO credentials if you already have a MinIO account, or create 
 
 Enter a username for the root user (MinIO access key) in **MinIO Root User** that is limited to five to 20 characters long. For example *admin* or *admin1*.
 
-Enter the root user password (MinIO secret key) in **MinIO Root Password**. The password limited to eight to 40 random characters. For example, *MySecr3tPa$$w0d4Min10*.
+Enter the root user password (MinIO secret key) in **MinIO Root Password**. The password is limited to eight to 40 random characters. For example, *MySecr3tPa$$w0d4Min10*.
 
 
 Refer to [MinIO User Management](https://docs.min.io/minio/baremetal/security/minio-identity-management/user-management.html) for more information.
