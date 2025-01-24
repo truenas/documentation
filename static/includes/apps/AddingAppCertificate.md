@@ -9,7 +9,7 @@
       Accept the defaults for **Type** and **Profile**, then click **Next**.
 
    b. Accept the defaults on **Certificate Options** unless you want to set an expiration on the certificate. 
-      Enter a new value in **Lifetime** to impose an expiration time period, then click **Next**. 
+      Enter a new value in **Lifetime** to impose an expiration time, then click **Next**. 
 
    c. Enter location and organization values for your installation in the **Certificate Subject** fields. 
       Enter the email address you want to receive system notifications.
@@ -28,7 +28,7 @@
 
    b. Select the newly-created CA in **Signing Certificate Authority**.
       Accept the rest of the defaults unless you want to set an expiration on the certificate. 
-      Enter a new value in **Lifetime** to impose an expiration time period, then click **Next**.
+      Enter a new value in **Lifetime** to impose an expiration time, then click **Next**.
 
    c. Enter location and organization values for your installation in the **Certificate Subject** fields. 
       Enter the email address you want to receive system notifications.
@@ -47,7 +47,7 @@
       If prompted to keep, click **Keep** for both the .crt and .key files.
       When complete, open these files in a File Explorer window.
 
-   b. Right click on the certificate.crt file, click **Open**, then click **Install Certificate** to open the **Certificate Import Wizard**.
+   b. Right-click on the certificate.crt file, click **Open**, then click **Install Certificate** to open the **Certificate Import Wizard**.
    
    ![CertificateOpenCertificateWindow](/images/SCALE/Credentials/CertificateOpenCertificateWindow.png "Open Certificate Window")
 
@@ -55,7 +55,7 @@
    
    ![CertificateImportWizardSelectLocalMachine](/images/SCALE/Credentials/CertificateImportWizardSelectLocalMachine.png "Select Local Machine Install")
 
-     If on a Windows systems, allow changes to be made.
+     If on a Windows system, allow changes to be made.
 
    d. Select **Place all certificates in the following store**, then select **Trusted Root Certificate Authorities** and click **OK**. 
    
