@@ -179,7 +179,7 @@ The **Sysctl** widget displays either **No Sysctl configured** or the existing s
 **Add** to add a tunable that configures a kernel module parameter at runtime.
 
 ### Add or Edit Sysctl Configuration Screen
-The **Add Sysctl** or **Edit Sysctl** configuration screen settings let users set up tunables that configure kernel parameters at runtime.
+The **Add Sysctl** or **Edit Sysctl** configuration screen settings let users set up tunables to configure kernel parameters at runtime.
 
 {{< trueimage src="/images/SCALE/SystemSettings/AddSysctlConfigScreen.png" alt="Sysctl Config Screen" id="Sysctl Config Screen" >}}
 
@@ -233,11 +233,12 @@ It allows administrators to manage other active sessions and to configure the se
 **Terminate Other Sessions** ends all sessions except for the one you are currently using.
 You can also end individual sessions by clicking the logout <span class="iconify" data-icon="PH:arrow-square-right"></span> icon next to that session if it is not the admin user session.
 You must check a confirmation box before the system allows you to end sessions.
+TrueNAS terminates inactive sessions when the it reaches the specified timeout limit. If a new session is initiated within a five-minute period, TrueNAS logs the user in as the previously login session. If the log in occurs outside the five-minute period TrueNAS initiates a new websocket session. This activity shows in the audit logs for sessions.
 
 The logout button is inactive for your current session and active for all other current sessions.
 It cannot be used to terminate your current session.
 
-**Session Timeout** displays the configured token duration for your current session (default five minutes).
+**Session Timeout** displays the configured token duration for your current session (default is five minutes).
 TrueNAS logs out user sessions that are inactive for longer than the configured token setting.
 New activity resets the token counter.
 
@@ -276,7 +277,7 @@ The **Allowed IP Addresses** widget displays IP addresses and networks added to 
 {{< hint type="warning" >}}
 Entering an IP address to the allowed IP address list denies access to the UI or API for all other IP addresses not listed.
 
-Use only if you want to limit system access to a single or limited number of IP addresses. Leave the list blank to allow all IP addresses.
+Use only to limit system access to a single or limited number of IP addresses. Leave the list blank to allow all IP addresses.
 {{< /hint >}}
 
 Click **Add** next to **Allowed IP Addresses** to add an entry to the allowed IP Addresses list.
