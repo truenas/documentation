@@ -4,7 +4,7 @@ MinIO credentials establish the login credentials for the MinIO web portal and t
 
 {{< trueimage src="/images/SCALE/Apps/InstallMinIOEnterpriseMinioConfig.png" alt="MinIO Enterprise MinIO Configuration" id="MinIO Enterprise MinIO Configuration" >}}
 
-Enter existing MinIO credentials if you already have a MinIO account, or create new login credentials for the first time you log into MinIO. If configuring a MNMD cluster, use the same credentials in all four systems in the cluster. 
+Enter existing MinIO credentials if you already have a MinIO account, or create new login credentials for the first time you log into MinIO. If you are configuring an MNMD cluster, use the same credentials in all four systems in the cluster. 
 
 The **Root User** is the equivalent of the MinIO access key. The **Root Password** is the login password for that user or the MinIO secret key.
 
