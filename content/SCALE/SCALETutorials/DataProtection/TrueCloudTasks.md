@@ -24,7 +24,7 @@ This article provides instructions on configuring a TrueCloud backup task using 
 {{< hint type=important >}}
 To take advantage of the lower-cost benefits of the TrueCloud backup service, you must create your Storj iX account using the link provided on the **Add Cloud Credentials** screen.
 
-You must also create and authorize the storage buckets on Storj for TrueNAS to useS.
+You must also create and authorize the storage buckets on Storj for TrueNAS to use.
 
 iXsystems is not responsible for charges incurred using a third-party vendor with the TrueCloud backup feature.
 {{< /hint >}}
