@@ -51,7 +51,7 @@ To install the MinIO **enterprise** train app, do the following for each of the 
 MinIO enterprise train app in an MNMD cluster requires four datasets, <b>data1</b>, <b>data2</b>, <b>data3</b>, and <b>data4</b>. The default mount path follows the dataset naming, <b>data1</b>, <b>data2</b>, <b>data3</b>, and <b>data4</b>. These datasets represent the disks in the MNMD configuration. Repeat this in each of the three remaining systems in the cluster.
 
 Follow the instructions below in **Creating Datasets for Apps** to correctly create the datasets.
-You can organize the app dataset(s) under a parent dataset to keep them separated from datasets for other applications.
+You can organize the app dataset(s) under a parent dataset to separate them from datasets for other applications.
 For example, create a <i>minio</i> parent dataset with each dataset nested under it.
 If you organize the MinIO app required datasets under a parent dataset, set up the required ACL permissions for the parent dataset before using the app installation wizard to avoid receiving installation wizard errors.
 Use the <b>Enable ACL</b> option in the <b>Install MinIO</b> wizard to configure permissions for the four datasets.
@@ -114,7 +114,7 @@ The following section provides more detailed explanations of the settings in eac
 Multi-mode installs the app in either a [MinIO Single-Node Multi-Drive (SNMD)](https://min.io/docs/minio/linux/operations/install-deploy-manage/deploy-minio-single-node-multi-drive.html) or [Multi-Node Multi-Drive (MNMD)](https://min.io/docs/minio/linux/operations/install-deploy-manage/deploy-minio-multi-node-multi-drive.html#minio-mnmd) cluster.
 MinIO recommends using MNMD for enterprise-grade performance and scalability.
 
-Click **Enabled** under **Multi Mode (SNMD or MNMD) Configuration** to enable multi-mode and show the **Multi Mode (SNMD or MNMD)** and **Add** option.
+Click **Enabled** under **Multi Mode (SNMD or MNMD) Configuration** to enable multi-mode and show the **Multi Mode (SNMD or MNMD)** and **Add** options.
 
 #### Adding Environment Variables
 {{< include file="/static/includes/apps/InstallWizardEnvironVariablesSettings.md" >}}
@@ -129,7 +129,7 @@ Click **Enabled** under **Multi Mode (SNMD or MNMD) Configuration** to enable mu
 
 When installing and configuring multi-mode SNMD or MNMD you must create a self-signed certificate.
 
-A SNMD configuration can use the same self-signed certificate created for MNMD.
+An SNMD configuration can use the same self-signed certificate created for MNMD.
 An MNMD configuration cannot use the certificate for an SNMD configuration because that certificate only includes the IP address for one system.
 Create this same self-signed certificate for the MNMD cluster on each system (node) in the cluster! 
 
