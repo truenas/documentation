@@ -130,14 +130,14 @@ Click **Save**.
 
 ### Configuring Email Using Outlook OAuth
 
-To set up the system email using **Outlook OAuth**, you need to log in to your Outlook account through the TrueNAS web UI.
+To set up the system email using **Outlook OAuth**, log in to your Outlook account through the TrueNAS web UI.
 
 {{< expand "Click here for more information" "v" >}}
 Click the **Outlook OAuth** radio button.
 
 {{< trueimage src="/images/SCALE/SystemSettings/EmailOptionsOutlookOAuth.png" alt="Outlook OAuth Login" id="Outlook OAuth Login" >}}
 
-Click on **Log In To Outlook**.
+Click **Log In To Outlook**.
 
 The Outlook **Authorization** window opens.
 
