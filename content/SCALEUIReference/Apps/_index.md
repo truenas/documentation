@@ -11,9 +11,9 @@ related: false
 {{< include file="/static/includes/ProposeArticleChange.md" >}}
 
 There are two main application screens, [**Installed**](#installed-screen) and [**Discover**](#discover-screen).
-The **Installed** applications screen shows status of installed apps, provides access to [pod shell and logs screens](#workloads-widget) and a web portal for the app (if available), and the ability to edit deployed app settings.
+The **Installed** applications screen shows the status of installed apps, provides access to [pod shell and logs screens](#workloads-widget) and a web portal for the app (if available), and the ability to edit deployed app settings.
 
-The **Discover** screen show widgets for the installed catalog of apps.
+The **Discover** screen shows widgets for the installed catalog of apps.
 The individual app widgets open app information screens with details about that application, and access to an installation wizard for the app.
 It also includes options to install [third-party applications](#install-custom-app-screen) in Docker containers that allow users to deploy apps not included in the catalog.
 
@@ -31,15 +31,15 @@ The **Installed** applications screen displays **Check Available Apps** before y
 
 **Check Available Apps** or **Discover Apps** opens the **[Discover](#using-the-discover-applications-screen)** screen.
 
-## Settings Menu
-**Settings** on the **Installed** applications header displays global options that apply to all applications. 
+## Configuration Menu
+**Configuration** on the **Installed** applications header displays global options that apply to all applications. 
 
 * **Choose Pool** opens the **[Choose a pool for Apps](#choose-a-pool-for-apps-dialog)** dialog.
 * **Unset Pool** shows after setting a pool for applications to use. It opens the **Unset Pool** dialog.
 * **Manage Container Images** opens the [**Manage Container Images**](#manage-container-images) screen.
-* **[Train Settings](#train-settings)** opens the **Train Settings** screen. Use to add or remove other trains to the **Stable** catalog of applications.
+* **[Settings](#settings)** opens the **Settings** screen. Use to add or remove other trains to the **Stable** catalog of applications, adjust address pools, download NVIDIA drivers (with compatible hardware), and control whether to automatically check for docker image updates.
 
-{{< trueimage src="/images/SCALE/Apps/AppsInstalledAppsSettingOptions.png" alt="Installed Applications Screen Settings" id="Installed Applications Screen Settings" >}}
+{{< trueimage src="/images/SCALE/Apps/AppsInstalledAppsSettingOptions.png" alt="Installed Applications Screen Configuration" id="Installed Applications Screen Configuration" >}}
 
 ### Choose a Pool for Apps
 **Choose Pool**  opens the **Choose a pool for apps** dialog. The **Pool** dropdown list shows a list of available pools on the system.
@@ -54,7 +54,8 @@ If you exit out of this dialog, to set the pool, click [**Settings > Choose Pool
 If a pool is not chosen and you attempt to install an application, after clicking **Install** on an application information screen a dialog window prompts you to select a pool before the installation wizard shows.
 
 ### Unset Pool
-**Unset Pool** on the **Settings** menu opens the **Unset Pool** dialog. Click **Unset** to unset the pool and turn off the application service.
+**Unset Pool** on the **Configuration** menu opens the **Unset Pool** dialog.
+Click **Unset** to unset the pool and turn off the application service.
 When complete, a **Success** dialog displays.
 
 {{< trueimage src="/images/SCALE/Apps/AppsUnsetPoolDialog.png" alt="Apps Unset Pool" id="Apps Unset Pool" >}}
@@ -82,15 +83,15 @@ Entering characters in the **<span class="iconify" data-icon="mdi:magnify"></spa
 {{< /truetable >}} 
 
 ### Settings
-**Settings** opens the **Settings** screen showing four application train options, the option to add IP addresses and subnets for the application to use, check for Docker image updates, and if the system is equipped with a GPU, to enable TrueNAS to update drivers for that GPU.
+**Settings** opens the **Settings** screen showing four application train options: the option to add IP addresses and subnets for the application to use, the option to check for Docker image updates, and if the system is equipped with a GPU, the option to enable TrueNAS to update drivers for that GPU.
 
-{{< trueimage src="/images/SCALE/Apps/AppsTrainSettingsScreen.png" alt="Train Settings Add Enterprise Train" id="Train Settings Add Enterprise Train" >}}
+{{< trueimage src="/images/SCALE/Apps/AppsSettingScreen.png" alt="TrueNAS Applications Settings screen. The image shows options to activate different application groups, known as trains, for display in the available apps screen. The image also shows options to set different address pools, download NVIDIA drivers, and automatically check for docker image updates." id="App Setting Screen" >}}
 
 Select the checkbox to the left of the train name to add another train to the applications catalog.
 Train options:
 * **stable** the default train for official apps
-* **enterprise** for apps verified and simplified for Enterprise users, default for enterprise-licensed systems.
-* **community** for community proposed and maintained apps
+* **enterprise** for apps verified and simplified for Enterprise users, the default for enterprise-licensed systems.
+* **community** for community-proposed and maintained apps
 You must specify at least one train.
 
 The **Address Pools** shows the current IP address and subnet mask for the network used by applications.
@@ -99,7 +100,7 @@ Select a predefined range from the dropdown list.
 
 {{< hint type="info" title="Apps Troubleshooting Tip!" >}}
 This setting replaces the Kubernetes Settings option for Bind Network in 24.04 and earlier.
-Use to resolve issues where apps experiences issues where TrueNAS device is not reachable from some networks.
+Use to resolve issues where apps experience issues where TrueNAS device is not reachable from some networks.
 Select the network option, or add additional options to resolve the network connection issues.
 {{< /hint >}}
 
@@ -135,9 +136,9 @@ Menu options are **Start All Selected**, **Stop All Selected**, **Upgrade All Se
 {{< trueimage src="/images/SCALE/Apps/InstalledAppsBulkActions.png" alt="Installed Applications Bulk Actions" id="Installed Applications Bulk Actions" >}}
 
 ## Application Widgets
-Installed application have a set of widgets on the **Installed** screen.
+Installed applications have a set of widgets on the **Installed** screen.
 Select an application row to view the information widgets for that application.
-Information in the widgets change based on the app row selected in the **Applications** table.
+Information in the widgets changes based on the app row selected in the **Applications** table.
 
 ### Application Info Widget
 The **Application Info** widget shows the name, version number, date last updated, source link for the application, developer, catalog, and train name.
@@ -178,8 +179,8 @@ The **Update** state on the application row on the **Installed** screen changes 
 ### Workloads Widget
 The **Workloads** widget shows the container information for the selected application.
 Information includes the number of pods, used ports, number of deployments, stateful sets, and container information.
-It also shows the **Shell**, **Volume Mounts** and **View Log** icon buttons that provide access to the container pod shell and log screens and mount point windows.
-The option to access the log and the shell remain available for stopped applications for fully deployed application containers, and for applications in the crashed state.
+It also shows the **Shell**, **Volume Mounts**, and **View Log** icon buttons that provide access to the container pod shell and log screens, and mount point windows.
+The option to access the log and the shell remains available for stopped applications for fully deployed application containers and applications in the crashed state.
 
 {{< trueimage src="/images/SCALE/Apps/InstalledAppsWorkloadsWidget.png" alt="Installed Apps Containers Widget" id="Installed Apps Containers Widget" >}}
 
@@ -191,7 +192,7 @@ The **Volume Mounts** <span class="material-icons">folder_open</span> button ope
 The **View Logs** <span class="iconify" data-icon="mdi:text-box" title="Logs">Logs</span> button also opens the **Pod Logs** screen for the app.
 
 #### Choose Shell Details
-The **Choose Shell Details** dialog allows you to enter a shell command to open the **Pod Shell** screen. You can accept the default value in **Command** or specify another.
+The **Choose Shell Details** dialog lets you enter a shell command to open the **Pod Shell** screen. You can accept the default value in **Command** or specify another.
 
 {{< trueimage src="/images/SCALE/Apps/ChooseShellDetailsDialog.png" alt="Choose Shell Details" id="Choose Shell Details" >}}
 
@@ -215,14 +216,14 @@ Each **Pod Log** screen includes a banner with the **Application Name**, **Pod N
 Use the logs to help troubleshoot problems with your container pods.
 
 ### Notes Widget
-The **Notes** widget shows information about the apps, location where TrueNAS Documentation Hub articles are found, and links to file bug reports through Jira or GitHub, and where to make feature requests.
+The **Notes** widget shows information about the apps, the location where TrueNAS Documentation Hub articles are found, and links to file bug reports and feature requests through Jira or GitHub.
 
 {{< trueimage src="/images/SCALE/Apps/AppsNotesWidget.png" alt="Apps Notes Widget" id="Apps Notes Widget" >}}
 
 Click **View More** to show all notes, and **Collapse** to return the **Notes** widget to the default view length.
 
 ### Application Metadata Widget
-The **Application Metadata** widget shows application capabilities unique to the application, and **Run As Content** showing the user and group IDs, the default user and group name, and brief description for the application. 
+The **Application Metadata** widget shows application capabilities unique to the application, and **Run As Content** shows the user and group IDs, the default user and group name, and a brief description of the application. 
 **View More** expands the widget to show more information on application settings.
 **Collapse** hides the extra information.
 
@@ -230,7 +231,7 @@ The **Application Metadata** widget shows application capabilities unique to the
 
 ## Discover Apps Screen
 The **Discover** screen displays application widgets for the official TrueNAS **stable** train by default.
-Users can add the **community** and **enterprise** train applications on the **[Train Settings](#train-settings-screen)** screen.
+Users can add the **community** and **enterprise** train applications on the **[Settings](#settings)** screen.
 
 {{< trueimage src="/images/SCALE/Apps/AppsDiscoverScreen.png" alt="Applications Discover Screen" id="Applications Discover Screen" >}}
 
@@ -245,8 +246,8 @@ The breadcrumbs at the top of the screen header show links to the previous or th
 The **Discover** screen includes a search field, links to other application management screens, and filters to sort the application widgets displayed.
 **Show All** shows all application widgets in the trains added to the **Stable** catalog. The links are:
 
-* **Refresh Charts** that executes a job to refresh the catalog applications.
-* **Manage Installed Apps** that opens **[Installed](#installed-apllications-screen)** applications screen.
+* **Refresh Charts** executes a job to refresh the catalog applications.
+* **Manage Installed Apps** opens **[Installed](#installed-apllications-screen)** applications screen.
 
 **Filters** shows a list of sort categories that alter which application widgets show. Click on a category to select and filter app widgets.
 Filter information includes the **Category**, **App Name**, and **Updated Date**. 
@@ -265,8 +266,8 @@ TrueNAS 24.10 or later provides two options for installing a third-party applica
 See [Install Custom App Screens]({{< relref "InstallCustomAppScreens.md" >}}) for more information.
 
 ## Application Information Screens
-Each application widget on the **Discover** screen opens a information screen with details about that application, a few screenshot of web UI for the application, and the **Install** button.
-Application information shows the version, GitHub repository link for the image, and date the image was last updated.
+Each application widget on the **Discover** screen opens an information screen with details about that application, a few screenshots of the web UI for the application, and the **Install** button.
+Application information shows the version, the GitHub repository link for the image, and the date the image was last updated.
 
 {{< trueimage src="/images/SCALE/Apps/MinIOChartsAppInfoScreen.png" alt="Application Information Screen Example" id="Application Information Screen Example" >}}
 
@@ -275,7 +276,7 @@ The application information screen shows two widgets:
 * **Available Resources** that shows CPU and memory usage the app requires, the app pool, and available space in gigabits.
 * **Application Info** that includes the application version number, link to GitHub repository for the image, and date the image was last application updated.
 
-The screen includes small screenshots of the application website that when clicked open larger versions of the image.
+The screen includes small screenshots of the application website that, when clicked, open larger versions of the image.
 
 **Install** opens the installation wizard for the application.
 
@@ -284,7 +285,7 @@ The bottom of the screen includes widgets for similar applications found in the 
 ### Application Install or Edit App Wizards
 The application **Install *Application*** wizard and **Edit *Application*** screens show the same settings.
 The **Edit *Application*** screen opens populated with the current settings for the application.
-Settings greyed out are cannot be edited.
+Settings greyed out cannot be edited.
 
 The install and edit wizard screens include a navigation panel on the right of the screen that lists and links to the setting sections.
 A red triangle with an exclamation point marks the sections with the required settings.
