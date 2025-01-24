@@ -33,17 +33,17 @@ Each task includes five icons for various functions:
 
 * The <span class="material-icons">edit</span> **Edit** icon opens the **[Edit Cloud Sync Task](#advanced-options-and-edit-cloud-sync-task-screens)** screen populated with with the settings for that task.
 
-* The <i class="material-icons" aria-hidden="true" title="Run Now">play_arrow</i> **Run Now** icon starts the cloud sync, running it outside of the scheduled time. 
+* The <span class="material-icons">play_circle_filled</span> **Run Now** icon starts the cloud sync, running it outside of the scheduled time. 
 
 * The <span class="material-icons">loop</span> **Dry Run** icon performs the same function as the **Dry Run** button on the add and edit configuration screens. It performs a test of the configured settings.
-  When doing a dry run, you can close the window and monitor the task using the **Jobs** option on the top toolbar.
+  During a dry run, you can close the window and monitor the task using the **Jobs** option on the top toolbar.
 
 * The <span class="material-icons">restore</span> **Restore** icon creates a new cloud sync task from an existing task.
   The new task has the same settings but reverses the data transfer.
 
 * The <span class="material-icons">delete</span> **Delete** icon opens a confirmation dialog before the system deletes the task.
 
-**State** displays the status of the next cloud sync task as **SUCCESS** for completed tasks, **FAILED** if the task fails to complete the sync, and **PENDING** for tasks that have not run yet.
+**State** displays the status of the next cloud sync task as **SUCCESS** for completed tasks, **FAILED** if the task fails to complete the sync, and **PENDING** for tasks not run yet.
 Click on the state oval to open the **Logs** dialog for that task. **Download Logs** saves a copy of the current task logs.
 
 {{< trueimage src="/images/SCALE/DataProtection/CloudSyncTaskStateLogDialog.png" alt="Cloud Sync Task State Log" id="Cloud Sync Task State Log" >}}
@@ -80,7 +80,7 @@ It includes two screens, **Provider** and **What and When**.
 
 ### Provider Wizard Screen
 The **Provider** wizard screen allows you to select the cloud sync provider with the **Credentials** dropdown.
-Select the provider from the dropdown list to show the additional credential settings that the provider requires to establish a connection.
+Select the provider from the dropdown list to show the additional required credential settings for the selected provider to establish a connection.
 
 {{< trueimage src="/images/SCALE/DataProtection/CloudSyncTaskWizardProviderScreen.png" alt="Cloudsync Task Wizard Provider Screen" id="Cloudsync Task Wizard Provider Screen" >}}
 
@@ -92,7 +92,7 @@ Select **Add New** to open the **Cloud Credentials** screen. This is the same co
 
 ### What and When Wizard Screen
 The **What and When** screen sets the direction (PUSH or PULL), transfer mode (move, copy, or sync), the datasets or directories source and destination, and sets the schedule for the transfer.
-The **Bucket** field displays for providers that use buckets to hold transferred files, folders, etc.
+**Bucket** shows for providers that use buckets to hold transferred files, folders, etc.
 
 {{< trueimage src="/images/SCALE/DataProtection/CloudSyncTaskWizardWhatandWhenScreen.png" alt="Cloudsync Task Wizard Provider Screen" id="Cloudsync Task Wizard Provider Screen" >}}
 
@@ -117,7 +117,7 @@ The **Manage Credentials** link opens the [Backup Credentials]({{< relref "/SCAL
 | **Description** | Enter a description of the cloud sync task. |
 | **Direction** | Select a direction option from the dropdown list. **PUSH** sends data to cloud storage. **PULL** receives data from cloud storage and is the default setting. |
 | **Transfer Mode** | Select the transfer mode type from the dropdown list. There are three options:<br><li>**COPY** - Select to duplicate each source file into the destination. If files with the same names are present on the destination, they are overwritten.<br><li>**MOVE** - Select to transfer files from the source to the destination and delete source files. Copies files from the source to the destination and then deletes them from the source. Files with the same names on the destination are overwritten.<br><li>**SYNC** - Select to change files on the destination to match those on the source. If a file does not exist on the source, it is also deleted from the destination.</li> |
-| **Directory/Files** | Enter or click the <span class="material-icons">arrow_right</span> arrow to the left of **/mnt** folder to expand and show datasets and directories within that folder. When you locate the dataset or directory location to send to the cloud for push syncs, or as the destination to write to for pull syncs. Be cautious with pull destinations to avoid overwriting existing files. Click the <span class="material-icons">arrow_right</span> arrow to the left of **/mnt** folder again to collapse the directory tree. |
+| **Directory/Files** | Enter or click the <span class="material-icons">arrow_right</span> arrow to the left of **/mnt** folder to expand and show datasets and directories within that folder. When you locate the dataset or directory location to send to the cloud for push syncs, or as the destination to write to for pull syncs. Be cautious with pull destinations to avoid overwriting existing files. Click the <span class="material-icons">arrow_right</span> arrow to the left of **/mnt** folder again to collapse the directory tree. Note: Clear the checkmark to the left of **/mnt**. Not clearing this checkmark can result in an **All selected directories must be at the same level** error message. |
 {{< /truetable >}}
 
 ### Remote Settings
@@ -171,7 +171,7 @@ Selecting **Push** in **Direction** adds the **Take Snapshot** option in **Advan
 {{< truetable >}}
 | Settings | Description |
 |----------|-------------|
-| **Take Snapshot** | Displays if **Direction** is set to **Push**. Select to take a snapshot before transferring data to the cloud storage provider. |
+|**Use Snapshot** | This option ensures data consistency by creating a snapshot at the start of the backup or synchronization task. The process involves the following steps:<br>1. Snapshot Creation: A snapshot of the current state is taken when the task is initiated.<br>2. Backup/sync operation: The task utilizes the snapshot contents to perform the backup or synchronization, ensuring that the data remains consistent and unchanged during the operation.<br>3. Snapshot removal: After the task completes, the snapshot is automatically removed to save storage space.<br>This mechanism guarantees that the backup or synchronization task captures an exact state of your data at the start, even if changes occur during the process. |
 | **Create empty source dirs on destination after sync** | Select to create an empty source directory in the cloud storage provider folder when pushing data to the cloud provider location, or in TrueNAS if pulling data from the cloud storage provider. |
 | **Follow Symlinks** | Select to follow symbolic links (symlinks) and copy the items to which they link. |
 | **Pre-Script** | For advanced users. Enter a script to execute before running sync. See the [Cloud Sync tutorial]({{< relref "/SCALE/SCALETutorials/DataProtection/CloudSyncTasks/_index.md" >}}) for more information. |
@@ -180,17 +180,24 @@ Selecting **Push** in **Direction** adds the **Take Snapshot** option in **Advan
 {{< /truetable >}}
 
 ### Advanced Remote Options
-The **Advanced Remote Options** settings are for advanced users to configure remote encryption and transfer bandwidth speed and limit.
+The **Advanced Remote Options** settings are for advanced users to configure remote encryption (if selected), transfer bandwidth speed, and bandwidth limit.
+The **Edit Cloud Sync Task** screen **Advanced Remote Options** screen has an additional setting not found on the **Add Cloud Sync Task** screen.
 
+{{< columns >}}
 {{< trueimage src="/images/SCALE/DataProtection/AddCloudSyncTaskPushControlAdvancedEncrypt.png" alt="Advanced Remote Encryption Options" id="Advanced Remote Encryption Options" >}}
+<--->
+{{< trueimage src="/images/SCALE/DataProtection/EditCloudSyncTaskControlAdvanced.png" alt="Edit Screen Advanced Remote Options" id="Edit Screen Advanced Remote Options" >}}
+{{< /columns >}}
 
 {{< truetable >}}
 | Settings | Description |
 |----------|-------------|
+| **Storage Class** | Shown on the **Edit Cloud Sync Task** screen. Select the AWS [Storage Class](https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html) from the dropdown list. Choose the storage classifications for each S3 object based on the specific use case or performance requirements. Options are:<br><li>**Standard** the AWS default storage class. Assigned if a storage class is not specified. Helps optimize costs between S3 Standard and S3 Standard-IA.<br><li>**Reduced Redundancy** is designed for non-critical, reproducible data that can be stored with less redundancy than the S3 Standard storage class. <br><li>**Standard-IA** Use for primary, or only copy of data that cannot be recreated. Amazon S3 stores the object data redundantly across multiple geographicallyseparated availability zones. Objects are resilient to the loss of an availability zone.<br><li>**One Zone-IA** Use if you can recreate the data if the availability zone fails, for object replicas when configuring cros-region replication (CRR). Also for data residency and isolation. Amazon S3 stores the object dat in only one availability zone, making it less expensive than S3 Standard-IA. Data is not resilient to the physical loss of the availability zone resulting from disasters such as earthquakes and floods.<br><li>**Intelligent-Teiring** is designed to optimize storage costs by automatically moving data to the most cost-effective access tier, without performance impact or operational overhead. Delivers automatic cost savings by moving data on a granular object level between access tiers when access patterns change. Ideal when optimizing storage costs for data with unknown or changing access patterns.<br><li>**Glacier** Use for long-term data that is rarely accessed, and requires milliseconds retrieval. Data is available for real-time access.<br><li>**Glacier Deep Archive** Use for archiving data rarely accessed. Data is archived, and not available for real-time access.</li>. |
+| **Use --fast-list** | Select to use fewer transactions in exchange for more RAM. (https://rclone.org/docs/\#fast-list) This can also speed up or slow down the transfer. |
 | **Remote Encryption** | Select to use [rclone crypt](https://rclone.org/crypt/) encryption during pull and push transfers. Selecting **PUSH** in **Direction** encrypts files before transfer and stores the encrypted files on the remote system. Files are encrypted using the encryption password and encryption salt values. Selecting **PULL** decrypts files stored on the remote system before the transfer. Transferring the encrypted files requires entering the same encryption password and encryption salt used to encrypt the files. Additional details about the encryption algorithm and key derivation are available in the [rclone crypt File formats documentation](https://rclone.org/crypt/#file-formats). Selecting **Remote Encryption** shows the **Filename Encryption**, **Encryption Password**, and **Encryption Salt** settings. |
-| **Filename Encryption** | **Not recommended** (see below). Shows after selecting **Remote Encryption**. When selected, transfers encrypt and decrypt file names with the rclone [Standard file name encryption mode](https://rclone.org/crypt//#file-name-encryption-modes). The original directory structure of the files is preserved. <br>When enabled, file names are encrypted, file names are limited to 143 characters, directory structure is visible, and files with identical names have identical uploaded names. File names can use sub-paths, single-copy files, and shortcuts to shorten the directory recursion. <br>When disabled, encryption does not hide file names or directory structure, file names can be 246 characters long, and you can use sub-paths, and copy single files. |
+| **Filename Encryption** | **Not recommended** (see below). Shows after selecting **Remote Encryption**. When selected, transfers encrypt and decrypt file names with the rclone [standard file name encryption mode](https://rclone.org/crypt//#file-name-encryption-modes). The original directory structure of the files is preserved. <br>When enabled, file names are encrypted, file names are limited to 143 characters, directory structure is visible, and files with identical names have identical uploaded names. File names can use sub-paths, single-copy files, and shortcuts to shorten the directory recursion. <br>When disabled, encryption does not hide file names or directory structure, file names can be 246 characters long, and you can use sub-paths, and copy single files. |
 | **Encryption Password** | Shows after selecting **Remote Encryption**. Enter the password to encrypt and decrypt remote data.<br>Warning: Always securely back up this password! Losing the encryption password results in data loss. |
-| **Encryption Salt** | Shows after selecting **Remote Encryption**. Enter a long string of random characters for use as salt for the encryption password.<br>Warning: Always securely back up the encryption salt value! Losing the salt value results in data loss. |
+| **Encryption Salt** | Shows after selecting **Remote Encryption**. Enter a long string of random characters as salt for the encryption password.<br>Warning: Always securely back up the encryption salt value! Losing the salt value results in data loss. |
 | **Transfers** | Select the option for the number of simultaneous file transfers based on the available bandwidth and destination system performance from the dropdown list. Options: **Low Bandwidth(4)**, **Medium Bandwidth (8)**, **High Bandwidth(16)**, and **Custom**. See [rclone --transfers](https://rclone.org/docs/#transfers-n). |
 | **Bandwidth limit** | Enter a single bandwidth limit or bandwidth limit schedule in rclone format. For example: *08:00,512 12:00,10MB 13:00,512 18:00,30MB 23:00,off*. Separate entries by pressing <kbd>Enter</kbd>. You can specify units with the beginning letter **b**, **k** (default), **M**, or **G**. See [rclone --bwlimit](https://rclone.org/docs/#bwlimit-bandwidth-spec). |
 {{< /truetable >}}

@@ -29,7 +29,7 @@ Cloud sync tasks allow for single-time transfers or recurring transfers on a sch
 Using the cloud means data can go to a third-party commercial vendor not directly affiliated with iXsystems.
 You should fully understand vendor pricing policies and services before using them for cloud sync tasks.
 
-iXsystems is not responsible for any charges incurred from using third-party vendors with the cloud sync feature.
+iXsystems is not responsible for any charges incurred using third-party vendors with the cloud sync feature.
 {{< /hint >}}
 
 ## Cloud Sync Task Requirements
@@ -49,18 +49,18 @@ The option to encrypt data transferred to or from a cloud storage provider is av
 
 Select **Remote Encryption** to use [rclone crypt](https://rclone.org/crypt/) encryption during pull and push transfers.
 With **Pull** selected as the **Transfer Direction**, the **Remote Encryption** decrypts files stored on the remote system before the transfer.
-This requires entering the same password used to encrypt data in both **Encryption Password** and **Encryption Salt**.
+This requires entering the same password to encrypt data in both **Encryption Password** and **Encryption Salt**.
 
 With **Push** selected as the **Transfer Direction**, data is encrypted before it is transferred and stored on the remote system.
-This also requires entering the same password used to encrypt data in both **Encryption Password** and **Encryption Salt**.
+This also requires entering the same password to encrypt data in both **Encryption Password** and **Encryption Salt**.
 
 {{< include file="/static/includes/FilenameEncryption.md" >}}
 
-When **Filename Encryption** is selected, transfers encrypt and decrypt file names with the rclone [Standard file name encryption mode](https://rclone.org/crypt//#file-name-encryption-modes).
+When selecting **Filename Encryption** transfers encrypt and decrypt file names with the rclone [Standard file name encryption mode](https://rclone.org/crypt//#file-name-encryption-modes).
 The original directory structure of the files is preserved.
 When disabled, encryption does not hide file names or directory structure, file names can be 246 characters long, use sub-paths, and copy single files.
-When enabled, file names are encrypted, file names are limited to 143 characters, directory structure is visible, and files with identical names have identical uploaded names.
-File names can use sub-paths, single copy files, and shortcuts to shorten the directory recursion.
+When enabled, file names are encrypted, file names are limited to 143 characters, the directory structure is visible, and files with identical names have identical uploaded names.
+File names can use sub-paths, single-copy files, and shortcuts to shorten the directory recursion.
 
 ### Troubleshooting Transfer Mode Problems
 **Sync** keeps all the files identical between the two storage locations.
