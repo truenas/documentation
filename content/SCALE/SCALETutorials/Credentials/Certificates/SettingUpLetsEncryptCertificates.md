@@ -15,7 +15,7 @@ TrueNAS allows users to automatically generate custom domain certificates using 
 ## Requirements
 
 * An email address for your TrueNAS admin user.
-* A custom domain that uses Cloudflare, AWS Route 53, or OVH.
+* A custom domain that uses Cloudflare, DigitalOcean, Amazon Route 53, or OVHcloud.
 * A DNS server that does not cache for your TrueNAS system.
 
 ## Create an ACME DNS-Authenticator
@@ -28,6 +28,8 @@ Enter the required fields depending on your provider, then click **Save**.
 
 For Cloudflare, enter either your **Cloudflare Email** and **API Key**, or enter an **API Token**.
 If you create an [API Token](https://dash.cloudflare.com/profile/api-tokens), make sure to give the token the permission **Zone.DNS:Edit**, as it's [required by certbot](https://certbot-dns-cloudflare.readthedocs.io/en/stable/).
+
+For DigitalOcean, enter your **Digitalocean Token**.
 
 For Route53, enter your **Access Key ID** and **Secret Access Key**. The associated IAM user must have permission to perform the Route53 actions `ListHostedZones`, `ChangeResourceRecordSets`, and `GetChange`.
 

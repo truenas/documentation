@@ -12,6 +12,8 @@ tags:
  - storage provisioning
 ---
 
+{{< include file="/static/includes/25.04Virtualization.md" >}}
+
 The **Virtual Machines** screen allows users to add, edit, or manage virtual machines (VMs) and VM devices.
 The **No Virtual Machines** screen displays if there are no VMs configured on the system or if you delete all VMs on the system.
 
