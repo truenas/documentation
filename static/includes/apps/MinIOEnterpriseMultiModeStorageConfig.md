@@ -18,7 +18,7 @@ If you change the configuration of a basic installation or SNMD, you can use the
 
 Change the **Mount Path** to match each dataset path in **Host Path**. For example, for **data2** enter **/data2** in the **Mount Point** field.
 
-Select **Force Flag** to allow upgrading the app. This allows writing to the dataset when there is exsiting data.
+Select **Force Flag** to allow upgrading the app. This allows writing to the dataset when there is existing data.
 
 Repeat these storage instructions to add all four storage volumes and mount points.
-When finsihed you should have four storage volumes and mount points configured.
+When finished you should have four storage volumes and mount points configured.
