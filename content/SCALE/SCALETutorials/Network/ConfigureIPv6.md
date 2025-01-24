@@ -12,7 +12,7 @@ tags:
 
 TrueNAS provides the option to configure network interfaces using either IPv4 or IPv6 addresses.
 IPv4 networks cannot see or communicate with an IPv6 website or network unless a gateway or some other implementation is configured to allow it.
-See [Implementing IPv6](https://www.truenas.com/docs/references/IPv6/) for more information.
+See [Understanding IPv6](https://www.truenas.com/docs/references/ipv6/) for more information.
 
 ## Configuring IPv6 Addresses
 After configuring your network infrastructure for IPv6, assign the IP addresses for your TrueNAS system.
