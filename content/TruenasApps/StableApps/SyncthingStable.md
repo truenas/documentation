@@ -1,6 +1,6 @@
 ---
 title: "Syncthing (Stable)"
-description: "Provides general information, guidelines, installation instructions, and use scenarios for the offical version of Syncthing in the stable app train."
+description: "Provides general information, guidelines, installation instructions, and use scenarios for the official version of Syncthing in the stable app train."
 weight: 
 aliases:
  - /scale/scaletutorials/apps/chartapps/syncthingcharts/
@@ -47,7 +47,7 @@ To install the Syncthing **stable** train app, do the following:
 Syncthing enterprise train app requires two datasets, <b>config</b> to store configuration data and <b>data1</b> to store app data.
 
 Follow the instructions below in <b>Creating Datasets for Apps</b> to correctly create the dataset(s).
-You can organize the app dataset(s) under a parent dataset to keep them separated from datasets for other applications.
+You can organize the app dataset(s) under a parent dataset to separate them from datasets for other applications.
 For example, create a <i>syncthing</i> parent dataset with these datasets nested under it.
 If you organize the required dataset(s) under a parent dataset, set up the required ACL permissions for the parent dataset before using the app installation wizard to avoid receiving installation wizard errors.
 Use the <b>Enable ACL</b> option in the <b>Install Sycnting</b> wizard to configure permissions for the <b>home</b> and <b>data1</b> datasets.</div>
@@ -88,7 +88,7 @@ Select **Enable ACL**.
 Enter or browse to select the **config** with the host path set to the **config** dataset.
 Click **Add** to the right of **ACL Entries**. Set **ID type** to **Entry is for a USER**, enter **0** in **ID** and give this full control permissions.
 
-Select **Force Flag** to allow upgrading the app. This allows writing to the dataset when there is exsiting data.
+Select **Force Flag** to allow upgrading the app. This allows writing to the dataset when there is existing data.
 
 Click **Add** to the right of **Additional Storage** to add another set of storage settings.
 Repeat the instructions above to add the storage volume for the  **data1** dataset.
@@ -111,7 +111,7 @@ Go to **Actions > Settings** and set a user password for the web UI.
 {{< include file="/static/includes/SyncthingWebPortalInfo.md" >}}
 
 ## Understanding App Installation Wizard Settings
-The following sections provide more detail explanations of the settings found in each section of the **Install Syncthing** screen.
+The following sections provide more detailed explanations of the settings in each section of the **Install Syncthing** screen.
 
 ### Application Name Settings
 
@@ -165,7 +165,7 @@ If you organize the config dataset under a parent dataset named *syncthing*, con
 You can add extra storage volumes during the app installation, or edit the application after it deploys. Stop the app before editing settings.
 
 #### Setting Dataset ACL Permissions
-You can configure ACL permissions for the required dataset in the **Install Syncthing** wizard, or from the **Datasets** screen after adding the datasets.
+You can configure ACL permissions for the required dataset in the **Install Syncthing** wizard or from the **Datasets** screen after adding the datasets.
 
 {{< include file="/static/includes/apps/InstallWizardStorageACLConfig.md" >}}
 
