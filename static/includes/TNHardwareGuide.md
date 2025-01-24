@@ -26,8 +26,8 @@ For help building a system according to your unique performance, storage, and ne
 
 The heart of any storage system is the symbiotic pairing of the file system and physical storage devices.
 The ZFS file system in TrueNAS provides the [best available data protection of any file system at any cost](https://www.ixsystems.com/blog/openzfs-vs-the-competition/) and makes effective use of both spinning-disk and all-flash storage or a mix of the two.
-ZFS is prepared for the eventual failure of storage devices, and is highly configurable to achieve the perfect balance of redundancy and performance to meet any storage goal.
-A properly-configured TrueNAS system can tolerate multiple storage device failures and recreate its boot media with a copy of the [configuration file]({{< relref "ManageSysConfigSCALE.md" >}}).
+ZFS is prepared for the eventual failure of storage devices and is highly configurable to achieve the perfect balance of redundancy and performance to meet any storage goal.
+A properly configured TrueNAS system can tolerate multiple storage device failures and recreate its boot media with a copy of the [configuration file]({{< relref "ManageSysConfigSCALE.md" >}}).
 
 ### Storage Device Quantities
 
@@ -107,7 +107,7 @@ The new U.2 interface offers a universal solution that includes the 2.5" drive f
 NVMe devices can run quite hot and might need dedicated heat sinks.
 
 {{< hint type=note >}}
-Manual S.M.A.R.T. tests on NVMe devices is currently not supported.
+Manual S.M.A.R.T. tests on NVMe devices are currently not supported.
 {{< /hint >}}
 {{< /expand >}}
 
@@ -378,7 +378,7 @@ If several SSDs experience simultaneous power loss, it could cause total pool fa
 
 ### Ethernet Networking
 
-The network in Network Attached Storage is as important as storage, but the topic reduces to a few key points:
+The network in Network Attached Storage is as important as storage, but the topic has a few key points:
 
 * Simplicity - Simplicity is often the secret to reliability with network configurations.
 * Individual interfaces - Faster individual interfaces such as 10/25/40/100GbE are preferable to aggregating slower interfaces.
@@ -410,7 +410,7 @@ At the heart of the TrueNAS design is OpenZFS. OpenZFS works best with physical 
 
 TrueNAS developers [virtualize TrueNAS every day](https://www.ixsystems.com/blog/yes-you-can-virtualize-freenas/) as part of their work, and it is intended only for use as a development environment.
 {{< hint type=important >}}
-While possible to deploy TrueNAS in a virtual environment, we do not recommend doing so for regular deployment of TrueNAS when storing production or critical data.
+While you can deploy TrueNAS in a virtual environment, we do not recommend doing so for regular deployment of TrueNAS when storing production or critical data.
 Virtualizing TrueNAS and using virtual disks for your pool is fine for ad hoc proof-of-concept, but it is not a supported configuration and might result in data corruption.
 {{< /hint >}}
 
