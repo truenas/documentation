@@ -64,7 +64,7 @@ After creating a certificate authority and certificate on one system in the MNMD
    c. Select <b>Add To Trusted Store</b>, then click <b>Next</b>.
    d. Paste the certificate into the <b>Certificate</b> field (do not include the header from the text file), then paste the key. Click <b>Next</b>.
 4. Confirm the information and click <b>Save</b>.
-5. Repeat step 2 and 3 in each of the other systems in the cluster.
+5. Repeat steps 2 and 3 in each of the other systems in the cluster.
    
 When finished, all four systems have the same certificate.
 {{< /expand >}}</div>
@@ -75,7 +75,7 @@ When finished, all four systems have the same certificate.
 MinIO enterprise train app in an MNMD cluster requires four datasets, <b>data1</b>, <b>data2</b>, <b>data3</b>, and <b>data4</b>. The default mount path follows the dataset naming, <b>data1</b>, <b>data2</b>, <b>data3</b>, and <b>data4</b>. These datasets represent the disks in the MNMD configuration. Repeat this in each of the three remaining systems in the cluster.
 
 Follow the instructions below in **Creating Datasets for Apps** to correctly create the datasets.
-You can organize the app dataset(s) under a parent dataset to keep them separated from datasets for other applications.
+You can organize the app dataset(s) under a parent dataset to separate them from datasets for other applications.
 For example, create a <i>minio</i> parent dataset with each dataset nested under it.
 If you organize the MinIO app required datasets under a parent dataset, set up the required ACL permissions for the parent dataset before using the app installation wizard to avoid receiving installation wizard errors.
 Use the <b>Enable ACL</b> option in the <b>Install MinIO</b> wizard to configure permissions for the four datasets.
@@ -141,7 +141,7 @@ Click **Enabled** under **Multi Mode (SNMD or MNMD) Configuration** to enable mu
 
 When installing and configuring multi-mode SNMD or MNMD you must create a self-signed certificate.
 
-A SNMD configuration can use the same self-signed certificate created for MNMD.
+An SNMD configuration can use the same self-signed certificate created for MNMD.
 An MNMD configuration cannot use the certificate for an SNMD configuration because that certificate only includes the IP address for one system.
 Create this same self-signed certificate for the MNMD cluster on each system (node) in the cluster! 
 
@@ -161,7 +161,7 @@ Create this same self-signed certificate for the MNMD cluster on each system (no
 
 When installing and configuring multi-mode SNMD or MNMD you must create a self-signed certificate.
 
-A SNMD configuration can use the same self-signed certificate created for MNMD.
+An SNMD configuration can use the same self-signed certificate created for MNMD.
 An MNMD configuration cannot use the certificate for an SNMD configuration because that certificate only includes the IP address for one system.
 Create this same self-signed certificate for the MNMD cluster on each system (node) in the cluster! 
 
