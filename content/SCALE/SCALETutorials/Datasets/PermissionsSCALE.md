@@ -75,7 +75,7 @@ Select the group name from the dropdown list, set the read/write/execute permiss
 To prevent errors, TrueNAS only submits changes after the apply option is selected.
 
 {{< hint type=important >}}
-A common misconfiguration is removing the **Execute** permission from a dataset that is a parent to other child datasets. A common misconfiguration is not adding or removing the **Execute** permission from a dataset that is a parent to other child datasets. Removing this permission results in lost access to the path.
+A common misconfiguration is not adding or removing the **Execute** permission from a dataset that is a parent to other child datasets. Removing this permission results in lost access to the path.
 {{< /hint >}}
 
 To apply ACL settings to all child datasets, select **Apply permissions recursively**.
@@ -135,8 +135,6 @@ An NFS4 ACL preset loads pre-configured permissions to match general permissions
 Changing the ACL type affects how TrueNAS writes and reads on-disk ZFS ACL.
 
 When the ACL type changes from NFSv4 to POSIX, native ZFS ACLs do not convert to POSIX1e extended attributes, but ZFS uses the native ACL for access checks.
-
-When the ACL type changes from NFSv4 to POSIX, native ZFS ACLs do not convert to POSIX1e extended attributes, but ZFS will use the native ACL for access checks.
 
 To prevent unexpected permissions behavior, you must manually set new dataset ACLs recursively after changing the ACL type.
 

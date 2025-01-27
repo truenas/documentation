@@ -62,6 +62,8 @@ For LDAP best practices see [Configuring LDAP]({{< relref "ConfigLDAPSCALE.md" >
 
 ## Virtualization Configuration
 
+{{< include file="/static/includes/25.04Virtualization.md" >}}
+
 To run a virtual machine (VM), hardware requirements include an x86 machine running a recent Linux kernel using either an Intel processor with VT extensions or an AMD processor with SVM extensions (AMD-V).
 To install a VM, first research the minimum and recommended specifications for the OS you plan to use and your full use case for that VM.
 Allocating too many resources to a VM can cause performance on the TrueNAS system to suffer.
