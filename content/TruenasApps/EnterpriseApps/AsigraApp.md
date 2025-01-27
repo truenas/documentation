@@ -11,6 +11,8 @@ keywords:
 - software storage solutions
 ---
 
+{{< include file="/static/includes/apps/EnterpriseApps.md" >}}
+
 The Asigra DS-System app enables you to offer a robust, scalable service to multiple customers.
 Agentless architecture, where customers only need to install the DS-Client on one LAN computer, eliminates the need to install software on each target backup/restore computer.
 

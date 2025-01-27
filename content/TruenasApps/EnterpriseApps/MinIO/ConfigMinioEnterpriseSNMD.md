@@ -15,6 +15,7 @@ keywords:
 - enterprise data storage
 ---
 
+{{< include file="/static/includes/apps/EnterpriseApps.md" >}}
 
 The instructions in this article apply to the TrueNAS MinIO Enterprise application installed in a Single-Node Multi-Disk (SNMD) multi-mode configuration.
 

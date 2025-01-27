@@ -16,7 +16,7 @@ keywords:
 - enterprise data storage
 ---
 
-{{< include file="/static/includes/apps/SCALEEnterpriseApps.md" >}}
+{{< include file="/static/includes/apps/EnterpriseApps.md" >}}
 
 This article applies to the TrueNAS MinIO application in the **enterprise** train.
 This smaller version of MinIO is tested and polished for a safe and supportable experience for TrueNAS Enterprise customers.
