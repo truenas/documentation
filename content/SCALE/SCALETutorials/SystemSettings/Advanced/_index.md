@@ -102,6 +102,26 @@ Entering an IP address limits access to the system to only the address(es) enter
 
 <div class="noprint">
 
+## Setting Up FIPS and STIG
+{{< enterprise >}}
+Only Enterprise-licensed systems show the **Secuirty** widget and have access to FIPS and STIG settings.
+{{< /enterprise >}}
+
+To configure FIPS or STIG compliance on a TrueNAS server, you must first configure two-factor authentication for an admin user with full permissions.
+
+After configuring two-factor authentication, go to **System > Advanced** and locate the **Security** widget.
+
+Click **Settings** to open the **System Security** configuration screen.
+
+![SystemSecurityScreen](/images/SCALE/SystemSettings/SystemSecurityScreen.png "System Security Screen")
+
+Select the toggle to enable FIPS and STIG, then click **Save**. You must enable FIPS with STIG!
+The system prompts you to reboot.
+
+![SecurityFIPSSTIGRebootDialog](/images/SCALE/SystemSettings/SecurityFIPSSTIGRebootDialog.png "Reboot Require Dialog")
+
+The system reboot takes several minutes to complete before showing the login screen.
+
 ## Contents
 
 {{< children depth="2" description="true" >}}
