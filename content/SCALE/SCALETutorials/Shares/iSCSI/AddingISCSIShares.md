@@ -27,10 +27,10 @@ TrueNAS offers two methods to add an iSCSI block share: the setup wizard or the 
 Both methods cover the same basic steps but have some differences.
 
 The setup wizard requires you to enter some settings before you can move on to the next screen or step in the setup process.
-It is designed to ensure you configure the iSCSI share completely, so it can be used immediately.
+It is designed to ensure you configure the iSCSI share completely so it can be used immediately.
 
 The manual process has more configuration screens over the wizard and allows you to configure the block share in any order.
-Use this process to customize your share for special uses cases.
+Use this process to customize your share for special use cases.
 It is designed to give you additional flexibility to build or tune a share to your exact requirements.
 
 ### Before you Begin
@@ -83,14 +83,14 @@ To use the setup wizard:
    Select a portal from the dropdown list or click **Create New** to add a new portal.
    If you create a new portal, click **Add** to enter an IP address and netmask (CIDR) for the portal. To add another, click **Add** again.
    
-   Leave **Initiator** blank to all all, or enter a host name. To enter more than one host name, press <kbd>Enter</kbd> after each to separate each entry.
+   Leave **Initiator** blank to allow all, or enter a host name. To enter more than one host name, press <kbd>Enter</kbd> after each to separate each entry.
       select a **Discovery Authentication Method** from the dropdown list.
 
 4. click **Save**.
 
 ## iSCSI Manual Setup
 This procedure guides you through adding an iSCSI share using the individual configuration screens.
-While the procedure places each screen in order, you can select tab screens to in any order.
+While the procedure places each screen in order, you can select tab screens in any order.
 
 Click on the **Block (iSCSI) Share Targets** widget header to open the individual share screens. The **Targets** screen opens by default.
 
@@ -107,13 +107,13 @@ Click on the **Block (iSCSI) Share Targets** widget header to open the individua
 
       You can enter a common name for the target in **Target Alias** but this is not required.
 
-   c. Add authorized networks. Click **Add** to show the **Network** fields to enter an IP addresses and netmask (CIDR).
+   c. Add authorized networks. Click **Add** to show the **Network** fields to enter an IP address and netmask (CIDR).
       This allows communication between client computers and the iSCSI target. Click **Add** for each address you want to add.
       Addresses are added to the authorized networks list.
 
    d. Click **Add** to the right of **Add Groups** to enter portal settings.
 
-      Select an target with a number assignment from the dropdown list in **Portal ID**.   
+      Select a target with a number assignment from the dropdown list in **Portal ID**.   
       
       Select the authentication method from the dropdown list.
       **None** allows anonymous discovery. **CHAP** uses one-way authentication. **Mutual CHAP** uses two-way authentication.
@@ -134,13 +134,13 @@ Click on the **Block (iSCSI) Share Targets** widget header to open the individua
    {{< trueimage src="/images/SCALE/Shares/AddExtentScreenFileType.png" alt="Edit iSCSI Extent File Type" id="Edit iSCSI Extent File type" >}}
    {{< /columns >}}
       
-   a.  Enter an name.
+   a.  Enter a name.
 
    b. Add a description about the extent if you want but this is not required.
 
    c. Select **Enabled** to enable the extent.
 
-   d. Leave **Enable TCP** selected, or to disable it select to clear the checkbox.
+   d. Leave **Enable TCP** selected. To disable it, clear the checkbox.
       Select *Xen initiator compat mode** if required for your share.
 
    e. Set the device type as **Device** or **File**.
@@ -178,7 +178,7 @@ Click on the **Block (iSCSI) Share Targets** widget header to open the individua
 
    b. Click **Add** to show the **IP Address** field. Enter the IP address and netmask (CIDR) for the portal. Click **Add** for each IP address to add.
 
-      Enter **0.0.0.0** to listen on all IPv4 address, **::** to listen on all IPv6 addresses, or enter the IP address of the server.
+      Enter **0.0.0.0** to listen on all IPv4 addresses, **::** to listen on all IPv6 addresses, or enter the server IP address.
    
    c. Click **Save**.
 
@@ -209,7 +209,7 @@ Go to **Shares** and click the **Block (iSCSI) Shares Targets** widget header to
 
 3. (Optional) Enter a user-friendly name in **Target Alias**.
 
-4. Add authorized networks. Click **Add** to show the **Network** fields where you can enter an IP addresses and netmask (CIDR).
+4. Add authorized networks. Click **Add** to show the **Network** fields where you can enter an IP address and netmask (CIDR).
    This allows communication between client computers and the iSCSI target. Click **Add** for each address you want to add.
    Addresses are added to the authorized networks list.
 
@@ -229,7 +229,7 @@ Go to **Shares** and click the **Block (iSCSI) Shares Targets** widget header to
 6. Click **Save**.
 
 ## Starting the iSCSI Service
-After adding a share with the iSCSI wizard or manual entry screens, the system shows a dialog prompting you to start the service or to restart the service.
+After adding a share with the iSCSI wizard or manual entry screens, the system shows a dialog prompting you to start or restart the service.
 
 You can also start the service by clicking on the <span class="material-icons">more_vert</span> on the **Block (iSCSI) Shares Targets** widget and selecting **Turn On Service**.
 You can also go to **System > Services**, locate **iSCSI** on the service list, and click the **Running** toggle to start the service.
