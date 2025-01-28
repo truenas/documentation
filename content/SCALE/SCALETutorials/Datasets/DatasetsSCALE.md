@@ -89,8 +89,8 @@ Best practice is to add deduplication when you first create the dataset.
 You can add deduplication to an existing dataset but existing files do not have deduplication applied to them.
 Adding deduplication to an existing dataset only applies deduplication to duplicate files added after you enable the function.
 
-When adding deduplication to a dataset that does not have a deduplication VDEV added to the pool, the deduplication table (DDT) is stored in the dataset with the feature enabled. This decreases the amount of available storage in the dataset.
-To store the DDT in the dedup VDEV and outside of the dataset, add a deduplicaiton VDEV to the pool.
+When enabling deduplication for a dataset of a pool that does not have a deduplication or special VDEV, the deduplication table (DDT) is stored on a regular VDEVs of the pool.
+To store the DDT outside of the regular VDEVs, add a deduplication or special VDEV to the pool.
 {{< /hint >}}
 To add deduplication to a new dataset, after entering the name and selecting the dataset preset, click **Advanced Settings**.
 
