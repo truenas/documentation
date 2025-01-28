@@ -210,7 +210,7 @@ Users can move the system dataset to an unencrypted pool, or an encrypted pool w
 {{< trueimage src="/images/SCALE/SystemSettings/SystemStorageConfigScreen.png" alt="System Dataset Pool Config Screen" id="System Dataset Pool Config Screen" >}}
 
 Users can move the system dataset to a key-encrypted pool, but cannot change the pool encryption type afterward.
-You cannot move the system dataset to an encrypted pool that already has a passphrase set.
+You cannot move the system dataset to an encrypted pool with a passphrase set.
 
 ## Replication Widget
 The **Replication** widget displays the number of replication tasks that can execute simultaneously on the system. It allows users to adjust the maximum number of replication tasks the system can perform simultaneously.
@@ -224,9 +224,9 @@ Click **Configure** to open the **Replication** configuration screen.
 Enter a number for the maximum number of simultaneous replication tasks you want to allow the system to process and click **Save**.
 
 ## Access Widget
-The **Access** widget displays a list of all active sessions, including the user who initiated them and the time they started.
+The **Access** widget lists all active sessions, including the user who initiated them and when they started.
 It also displays the **Session Timeout** setting for your current session.
-It allows administrators to manage other active sessions and configure the their session timeout.
+It allows administrators to manage other active sessions and configure the session timeout.
 
 {{< trueimage src="/images/SCALE/SystemSettings/AdvancedSystemSettingsAccessWidget.png" alt="Access Widget" id="Access Widget" >}}
 
@@ -268,7 +268,7 @@ The maximum is 2147482 seconds, or 24 days, 20 hours, 31 minutes, and 22 seconds
 
 The **Login Banner** field allows specifying a text message the system shows before the TrueNAS login splash screen displays.
 **Continue** on the banner screen closes the screen, then shows the login splash screen.
-Maximum length of the banner text is 4096 characters including spaces. Long text wraps and banner text can use carriage returns to break up long messages to improve readability.
+The maximum length of the banner text is 4096 characters including spaces. Long text wraps and banner text can use carriage returns to break up long messages to improve readability.
 Leave **Login Banner** empty to show just the login screen without interruption by a banner screen.
 
 ## Allowed IP Addresses Widget
