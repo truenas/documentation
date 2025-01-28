@@ -7,63 +7,60 @@ tags:
 - storage
 ---
 
-ZFS supports deduplication as a feature. Deduplication means that identical data is only stored once, and this can greatly reduce storage size. 
+ZFS supports deduplication as a feature. Deduplication means that identical data is only stored once, which can significantly reduce storage size. 
 However, deduplication is a compromise and balance between many factors, including cost, speed, and resource needs. 
-It must be considered exceedingly carefully and the implications understood, before being used in a pool.
+Consider and understand the implications of using deduplication before adding it to a pool.
 
 ## Deduplication on ZFS
 
 Deduplication is one technique ZFS can use to store file and other data in a pool. 
-If several files contain the same pieces (blocks) of data, or any other pool data occurs more than once in the pool, ZFS stores just one copy of it. 
-In effect instead of storing many copies of a book, it stores one copy and an arbitrary number of pointers to that one copy.
-Only when no file uses that data, is the data deleted. 
+If several files contain the same pieces (blocks) of data or any other pool data occurs more than once in the pool, ZFS stores just one copy of it. 
+Instead of storing many copies of a book it stores one copy and an arbitrary number of pointers to that one copy.
+Only when no file uses the data is the data deleted. 
 ZFS keeps a reference table that links files and pool data to the actual storage blocks containing their data. This is the deduplication table (DDT).
 
-The DDT is a fundamental ZFS structure. It is treated as part of the metadata or the pool. 
+The DDT is a fundamental ZFS structure and is part of the metadata or the pool. 
 If a pool (or any dataset in the pool) has ever contained deduplicated data, the pool contains a DDT, and that DDT is as fundamental to the pool data as any of its other file system tables. 
 Like any other metadata, DDT contents might be temporarily held in the ARC (RAM/memory cache) or [L2ARC]({{< relref "/references/L2ARC.md" >}}) (disk cache) for speed and repeated use, but the DDT is not a disk cache. 
-It is a fundamental part of the ZFS pool structure, how ZFS organizes pool data on its disks. 
-Therefore like any other pool data, if DDT data is lost, the pool is likely to become unreadable. So it is important it is stored on redundant devices. 
+It is a fundamental part of the ZFS pool structure and how ZFS organizes pool data on its disks. 
+Therefore, like any other pool data, if DDT data is lost, the pool is likely to become unreadable. So, it is important to store on redundant devices. 
 
-A pool can contain any mix of deduplicated data and non-deduplicated data, coexisting. 
-Data is written using the DDT if deduplication is enabled at the time of writing, and is written non-deduplicated if deduplication is not enabled at the time of writing. Subsequently, the data remains as at the time it was written until it is deleted.  
+A pool can contain any coexisting mix of deduplicated data and non-deduplicated data. 
+If deduplication is enabled at the time of writing, the DDT is used to write data.
+It writes non-deduplicated if deduplication is not enabled at the time of writing. Subsequently, the data remains as at the time it was written until it is deleted.  
 
-The only way to convert existing current data to be all deduplicated or not deduplicated, or to change how it is deduplicated, is to create a new copy, while new settings are active. 
-This can be done by copying the data within a file system, or to a different file system, or replicating using the Web UI replication functions. 
-Data in snapshots is fixed, and can only be changed by replicating the snapshot to a different pool with different settings (which preserves its snapshot status) or copying its contents.
+The only way to convert existing current data to all deduplicated or not deduplicated or to change how it is deduplicated is to create a new copy while new settings are active.  
+Copy the data within a file system or to a different file system, or replicate it using the Web UI replication functions. 
+Data in snapshots is fixed and can only be changed by replicating the snapshot to a different pool with different settings (which preserves its snapshot status) or copying its contents.
 
-It is possible to stipulate in a pool, to deduplicate only certain datasets and volumes. 
-The DDT encompasses the entire pool, but only data in those locations is deduplicated when written. 
-Other data that is not deduplicated well or where deduplication is inappropriate, is not be deduplicated when written, saving resources.
+It is possible to stipulate deduplicating only specified datasets and volumes in a pool. 
+The DDT encompasses the entire poo, but only data in these locations is deduplicated when written. 
+Other data not well deduplicated or where deduplication is not appropriate, is not deduplicated when written, saving resources.
 
 ## Fast Deduplication on ZFS
 Fast deduplication is a feature included in OpenZFS 2.3.0, that makes backend changes to legacy deduplication in ZFS that improves performance and can improve latency in some use cases.
 These improvements speed up I/O processes, look-ups, and reclaim storage space, and in situations where pools are handling reasonable workloads, improve latency over legacy dedup.
 Fast deduplication accomplishes these improvements through three new functions: prefetch, pruning, and a quota that limits writes to the deduplication tables (DDTs) that fall outside the specified quota range.
 
-Prefetch implements a cache by loading deduplication tables into the system memory (ARC).
+Prefetch fills the ARC cache by loading deduplication tables into it.
 Loading the DDT into memory speeds up operations by reducing on-demand disk reads for every record the system processes.
-Caching the DDT is particularly important in systems with large deduplication tables (DDTs) where the process of loading the table can take up to 72 hours.
+The prefetch is particularly important in systems with large deduplication tables (DDTs) where the process of loading the table on demand can take days after an import/reboot.
 The cache of the DDT might also reload portions of a DDT flushed due to inactivity.
 
 Pruning cleans up old, non-duplicated records in the deduplication table (DDT) to reclaim storage and improve performance in ZFS when the DDT becomes too large.
 Reclaiming available space is a prerequisite to the deduplication table (DDT) quota and pruning functions.
 
 {{< expand "How does pruning work?" "v" >}}
-Pruning reclaims available space by collapsing empty sibling leaf blocks, removing unused unique entries, and shrinking the size of the DDTs to make updates more efficient.
-
-Pruning executes zero-allocation pointer (ZAP) record shrinking.
-It changes the addresses of deleted ZAP records or the markers that identify a particular data entry as already processed and as a duplicated data entry.
-It identifies sibling leaf blocks by checking the first and last entries in the range corresponding to the sibling leaf.
-When an entire leaf block of the ZAP object is emptied, fast deduplication collapses them into a single empty block, thereby reducing the total number of spaces in the ZAP object, but the block is not reclaimed.
-It allows directories and other users of ZAP to shrink when a large number of objects are removed.
-Each leaf has a single range of entries (block pointers) in the ZAP object.
-If two leaves are siblings, their ranges are adjacent and contain the same number of entries.
-The prefix length is the same in siblings, and the prefixes differ only by the least significant sibling bit.
-ZAP shrinks by the recursive removal of empty leaves with a sibling, but both siblings must be empty.
-This eliminates the need to rehash the non-empty remaining leaf.
-After removing one of two empty siblings, the pointer table entries of the removed leaf point to the remaining leaf.
-The prefix of the remaining leave is decremented, has a new prefix, and might have a new sibling.
+Pruning reduces the size of the dedup table (DDT) by removing unique entries, created more than a specified time ago.
+It assumes that if some block has no duplicates since that time, it might never have them in the future, and so tracking this wastes resources.
+Since the blocks with DDT entries removed can never be deduplicated again, this might reduce deduplication efficiency if the assumptions appear false.
+So pruning should be used reasonably, either if the DDT size becomes too big for the system to manage, or if we are sure that we know that for the workload of a specific system, the older blocks likely remain unique forever.
+To free up more space and improve efficiency, DDT pruning works in combination with ZAP shrinking.
+ZFS Attribute Processor is a data structure used to store directories and a number of other tables, including DDT.
+ZAP consists of a hash table and a (large) number of leaf blocks, each storing the entries for a range of hash table prefixes.
+When ZAP detects two empty adjacent leaf blocks, it frees one of them, making its sibling handle both of their prefixes.
+In case of massive entry removals, the process might be repeated multiple times.
+If more entries are added some of the remaining blocks get overflowed later, the new sibling for it is allocated and the entries are split between them by dividing the hash prefix.
 {{< /expand >}}
 
 Quota manages the deduplication table (DDT) by keeping it from unbounded growth that can hurt RAM and performance. 
@@ -179,14 +176,6 @@ Deduplication consumes extensive CPU resources and it is recommended to use a hi
 If deduplication is used in an inadequately built system, these symptoms might be seen:
 
 {{< tabs "Hardware Symptoms" >}}
-{{< tab "RAM Starvation" >}}
-* **Cause**: Continuous DDT access is limiting the available RAM or RAM usage is generally very high RAM usage. 
- This can also slow memory access if the system uses swap space on disks to compensate.
-* **Solutions**:
-  * Install more RAM.
-  * Add a new **System > Tunable**: **vfs.zfs.arc.meta_min** with **Type**=**LOADER** and **Value**=**bytes**. 
- This specifies the minimum RAM that is reserved for metadata use and cannot be evicted from RAM when new file data is cached.
-{{< /tab >}}
 {{< tab "Disk I/O Slowdown" >}}
 * **Cause**: The system must perform disk I/O to fetch DDT entries, but these are usually 4K I/O and the underlying disk hardware is unable to cope in a timely manner.
 * **Solutions**: Add high-quality SSDs as a special vdev and either move the data or rebuild the pool to use the new storage.
