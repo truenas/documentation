@@ -1,10 +1,7 @@
 &NewLine;
 
-Accept the default values in **Resources Configuration** or to customize the CPU and memory allocated to the container (pod) the Minio app uses, enter new values in the **CPU** and **Memory (in MB)** fields. 
-Tune these limits as needed to prevent the application from overconsuming system resources and introducing performance issues.
-
-By default, this application is limited to use no more than **2** CPU cores and **4096** megabytes available memory.
-The application might use considerably less system resources.
+Accept the default values in **Resources Configuration**.
+See **Resources Configuration** below for more information on customizing the CPU and memory allocated to the container (pod) the Minio app uses.
 
 Click **Install** to complete the installation.
 
