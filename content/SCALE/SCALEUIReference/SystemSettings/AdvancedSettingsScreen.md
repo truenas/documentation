@@ -370,7 +370,7 @@ High Availability (HA) systems reboot the standby controller and then show a pro
 
 **Settings** opens the **System Security** configuration screen.
 
-{{< trueimage src="/images/SCALE/SystemSettings/SystemdSecurityScreen.png" alt="System Security Screen" id="System Security Screen" >}}
+{{< trueimage src="/images/SCALE/SystemSettings/SystemSecurityScreen.png" alt="System Security Screen" id="System Security Screen" >}}
 
 The **Enable FIPS** toggle enables or disables enforcement.
 The **Enable General Purpose OS STIG compatibility mode** toggle enables or disables the STIG compliance implementation. Requires two-factor authentication for an admin user with full permissions before enabling STIG compatibility.
