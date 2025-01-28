@@ -53,9 +53,15 @@ Users can skip major versions with a fresh ISO install followed by a configurati
 Carefully review release notes for each skipped major version before upgrading, noting any service deprecations or significant changes that impact the previous configuration.
 Consider stopping at major versions with significant impacts to address changes before continuing the upgrade path or be prepared to manually reconfigure incompatibilities on the latest target version.
 
+{{< hint type=note >}}
+This chart shows the basic update path to and from the latest release of each TrueNAS major version.
+Depending on your use case and risk tolerance, some users may prefer to remain on an earlier minor or major version for a period of time before updating.
+Visit the <a href="https://www.truenas.com/software-status/" target="_blank">TrueNAS Software Status</a> page for recommendations on which software version to use, tailored to user types ranging from Developer to Mission Critical.
+{{< /hint >}}
+
 <div class="section-box" id="scale-upgrade-paths" style="padding: 0 40px 40px 40px; margin-bottom: 20px;">
     <div class="upgrade-paths-container">
-      <img src="/images/tn-openstorage-logo.png" style="box-shadow: none; max-width: 225px; padding-bottom: 20px; padding-top: 40px;" title="TrueNAS" alt="TrueNAS">
+      <img src="/images/TrueNAS_Community_Edition.png" style="box-shadow: none; max-width: 225px; padding-bottom: 20px; padding-top: 40px;" title="TrueNAS Community Edition" alt="TrueNAS Community Edition">
       <div class="scroll-container" id="scrollContainer1">
         <div class="chart-wrapper">
           {{< mermaid class="mermaid_sizing" >}}
@@ -68,25 +74,25 @@ Consider stopping at major versions with significant impacts to address changes 
             E["22.12.4.2 (Bluefin)"] -->|update| F
             F["23.10.2 (Cobia)"] -->|update| G
             G["24.04.2.5 (Dragonfish)"] -->|update| H
-            H["24.10.1 (Electric Eel)"] -->|"(anticipated)"| I
+            H["24.10.2 (Electric Eel)"] -->|"(anticipated)"| I
             I["25.04.0 (Fangtooth)"]
           {{< /mermaid >}}
         </div>
       </div>
     </div>
     <div class="upgrade-paths-container">
-      <img src="/images/tn-enterprise-logo.png" style="box-shadow: none; max-width: 225px; padding-bottom: 20px; padding-top: 40px;" title="TrueNAS Enterprise" alt="TrueNAS Enterprise">
+      <img src="/images/TrueNAS_Enterprise.png" style="box-shadow: none; max-width: 225px; padding-bottom: 20px; padding-top: 40px;" title="TrueNAS Enterprise" alt="TrueNAS Enterprise">
       <div class="scroll-container" id="scrollContainer2">
         <div class="chart-wrapper">
           {{< mermaid class="mermaid_sizing" >}}
           flowchart LR
             A["11.3-U5"] -->|update| B
             B["12.0-U8.1"] -->|update| C
-            C["13.0-U6.4"] -->|"(anticipated)"| F
+            C["13.0-U6.4"] -->|ISO install| F
             C["13.0-U6.4"] -->|"(anticipated)"| G
             D["23.10.2 (Cobia)"] -->|update| E
-            E["24.04.2.5 (Dragonfish)"]  -->|"(anticipated)"| F
-            F["24.10.1 (Electric Eel)"] -->|"(anticipated)"| G
+            E["24.04.2.5 (Dragonfish)"]  -->|update| F
+            F["24.10.2 (Electric Eel)"] -->|"(anticipated)"| G
             G["25.04.0 (Fangtooth)"]
           {{< /mermaid >}}
         </div>
