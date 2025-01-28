@@ -84,8 +84,6 @@ More details are available from [Software Releases]({{< relref "/TrueNASUpgrades
 ### Upgrade Paths (Anticipated)
 <!--
 {{< include file="/static/includes/25.04UpgradeMethods.md" >}}
-
-See the <a href="https://www.truenas.com/software-status/" target="_blank">TrueNAS Software Status</a> page for recommendations about which software version to use based on your user type.
 -->
 
 {{< include file="/static/includes/SCALEUpgradePaths.md" >}}
@@ -113,7 +111,8 @@ Enterprise customers should [contact Support](https://www.truenas.com/docs/scale
 -->
 
 ## Component Versions
-Click the component version number to see the latest release notes for that component.
+Component version numbers below are updated to reflect the latest TrueNAS 24.05 release.
+Click the component version number to see release notes for that component.
 
 {{< truetable >}}
 | Component | Version |

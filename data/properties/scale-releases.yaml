@@ -17,16 +17,11 @@ majorVersions:
     name: "TrueNAS 24.10 - Electric Eel"
     releaseName: "Electric Eel"
     releases:
-      - name: "24.10.1"
-        type: "Maintenance"
-        link: "https://www.truenas.com/docs/scale/24.10/gettingstarted/scalereleasenotes/#24101-changelog"
-        releaseDate: "2024-12-17"
-        latest: true
       - name: "24.10.2"
         type: "Maintenance"
-        link: ""
+        link: "https://www.truenas.com/docs/scale/24.10/gettingstarted/scalereleasenotes/#24102-changelog"
         releaseDate: "2025-01-28"
-        latest: false
+        latest: true
   - lifecycle: "Next"
     name: "TrueNAS 25.04 - Fangtooth"
     releaseName: "Fangtooth"
@@ -39,7 +34,7 @@ majorVersions:
       - name: "25.04-BETA.1"
         type: "Early"
         link: ""
-        releaseDate: "2025-02-11"
+        releaseDate: "2025-02-13"
         latest: false
       - name: "25.04-RC.1"
         type: "Early"
