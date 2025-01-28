@@ -9,7 +9,8 @@ tags:
 - toolbar
 ---
 
-The <i class="material-icons" aria-hidden="true" title="laptop" style="vertical-align: top;">laptop</i> **My API Keys** option on the top right toolbar **Settings** (user icon) dropdown menu displays the **User API Keys** screen.
+<i class="material-icons" aria-hidden="true" title="laptop" style="vertical-align: top;">laptop</i> **My API Keys** on the top right toolbar <i class="material-icons" aria-hidden="true">account_circle</i> user settings dropdown menu to opens the **User API Keys** screen.
+
 This screen displays a list of API keys added to your system and allows you to add, search, edit, or delete keys.
 **API Docs** opens the [API Documentation](#api-documentation).
 
@@ -21,7 +22,7 @@ This screen displays a list of API keys added to your system and allows you to a
 
 {{< include file="/static/includes/APIKeyWarn.md" >}}
 
-<i class="material-icons" aria-hidden="true" title="Edit">edit</i> edit for any API key on the list openss the **Edit API Key** window to modify that key.
+<i class="material-icons" aria-hidden="true" title="Edit">edit</i> edit for any API key on the list opens the **Edit API Key** window to modify that key.
 
 {{< trueimage src="/images/SCALE/Dashboard/APIKeysEdit.png" alt="Edit API Key" id="Edit API Key" >}}
 
@@ -34,3 +35,5 @@ This screen displays a list of API keys added to your system and allows you to a
 ## API Documentation
 
 **API Docs** opens the TrueNAS API documentation that is built into the system.
+
+{{< include file="/static/includes/APIDocs.md" >}}
