@@ -21,6 +21,7 @@ Each CA listed on the widget is a link that opens the **Edit CA** screen.
 **Add** opens the **[Add CA](#add-ca-wizard-screens)** wizard that steps you through setting up a certificate authority (CA) that certifies the ownership of a public key by the named subject of the certificate. 
 
 ## Add CA Wizard Screens
+
 The **Add CA** wizard screens step users through configuring a new certificate authority on TrueNAS. 
 The wizard has five different configuration screens, one for each step in the CA configuration process:
 
@@ -48,6 +49,7 @@ The selection in **Type** changes setting options on this screen, the **Certific
 | **Name** | Required. Enter a descriptive identifier for this certificate authority(CA). |
 | **Type** | Select the type of CA from the dropdown list. Options are **Internal CA**, **Intermediate CA**, and **Import CA**. **Internal CA** functions like a publicly trusted CA to sign certificates for an internal network. They are not trusted outside the private network. **Intermediate CA** lives between the root and end entity certificates and its main purpose is to define and authorize the types of certificates you can request from the root CA. **Import CA** allows you to import an existing CA onto the system. For more information see [What are Subordinate CAs and Why Would You Want Your Own?](https://www.globalsign.com/en/blog/what-is-an-intermediate-or-subordinate-certificate-authority). |
 | **Profiles** | Displays if **Internal CA** or **Intermediate CA** are set in **Type**. Select a predefined certificate extension from the dropdown list. |
+| **Add To Trusted Store** | Check this option if you want to add the CA to the TrueNAS trusted certificate store. Services on TrueNAS automatically trust CAs with this option enabled. |
 {{< /truetable >}}
 {{< /expand >}}
 

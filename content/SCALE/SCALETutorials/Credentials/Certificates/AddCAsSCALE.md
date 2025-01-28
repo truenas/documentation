@@ -13,11 +13,15 @@ keywords:
 
 The **Certificate Authorities** widget lets users set up a certificate authority (CA) that certifies the ownership of a public key by the named subject of the certificate.
 
+{{< trueimage src="/images/SCALE/Credentials/AddCertificateAuthorityScreen.png" alt="Add Certificate Authority Screen" id="Add Certificate Authority Screen" >}}
+
 To add a new CA:
 
 First, add the name and select the type of CA.
 The **Identifier and Type** step lets users name the CA and choose whether to create a new CA or import an existing CA.     
 Users can also select a predefined certificate extension from the **Profiles** drop-down list.
+
+Users can check **Add To Trusted Store** to add the CA to the TrueNAS trusted certificate store. Services on TrueNAS automatically recognize and trust CAs with this option enabled. This feature simplifies certificate management for environments with multiple services relying on the same CA, reducing repeated manual configuration. Users with strict certificate management requirements or a preference for manually controlling trusted CAs may benefit from leaving this option disabled.
 
 Next, enter the certificate options. Select the key type. The **Key Type** selection changes the settings displayed.
 The **Certificate Options** step provides options for choosing what type of private key to use (as well as the number of bits in the key used by the cryptographic algorithm), the cryptographic algorithm the CA uses, and how many days the CA lasts.
