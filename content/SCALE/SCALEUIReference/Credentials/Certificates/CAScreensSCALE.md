@@ -8,7 +8,7 @@ tags:
  - certificates
 ---
 
-The **Certificate Authorities** widget on the **Credentials > Certificates** screen displays certificate authorities(CAs) added to TrueNAS, and allows you to add new CAs, or download, delete, or edit the name of an existing CA. 
+The **Certificate Authorities** widget on the **Credentials > Certificates** screen displays certificate authorities(CAs) added to TrueNAS and allows you to add new CAs, or download, delete, or edit the name of an existing CA. 
 
 ![CertificateAuthoritiesWidgetNoCAs](/images/SCALE/Credentials/CertificateAuthoritiesWidgetNoCAs.png "Certificate Authorities Widget No CAs")
 
@@ -75,7 +75,7 @@ The **Key Type** selection changes fields displayed. **RSA** is the default sett
 {{< /expand >}}
 
 ### Certificate Subject Options
-The **Certificate Subject** settings define the location, name, and email for the organization using the certificate.    
+The **Certificate Subject** settings define the location, name, and email of the organization using the certificate.    
 Users can also enter the system [fully-qualified hostname (FQDN)](https://kb.iu.edu/d/aiuv) and any additional domains for multi-domain support.
 
 The **Certificate Subject** settings do not display if **Type** on the **Identifier and Type** screen is set to **Import CA**.
@@ -99,15 +99,15 @@ The **Certificate Subject** settings do not display if **Type** on the **Identif
 
 ### Extra Constraints Options
 The **Extra Constraints** options contain certificate extension options.
-* **Basic Constraints** that when enabled limits the path length for a certificate chain.
-* **Authority Key Identifier** that when enabled provides a means of identifying the public key corresponding to the private key used to sign a certificate.
-* **Key Usage** that when enable defines the purpose of the public key contained in a certificate.
-* **Extended Key Usage** that when enable to further refines key usage extensions.
+* **Basic Constraints** limits the path length for a certificate chain.
+* **Authority Key Identifier** provides a means of identifying the public key corresponding to the private key used to sign a certificate.
+* **Key Usage** defines the purpose of the public key contained in a certificate.
+* **Extended Key Usage** further refines key usage extensions.
 
 The **Extra Constraints** settings change based on the selection in **Type** on the **Identifier and Type** screen. 
 
 #### Extra Constraints - Internal or Intermediate CA
-After selecting **Basic Constraints**, **Authority Key Identifier**, **Extended Key Usage**, or **Key Usage**, each displays more settings that option needs.
+After selecting **Basic Constraints**, **Authority Key Identifier**, **Extended Key Usage**, or **Key Usage**, each displays more settings that the option needs.
 {{< expand "Click Here for More Information" "v" >}}
 
 ![AddCAExtraConstraintsAllExpanded](/images/SCALE/Credentials/AddCAExtraConstraintsAllExpanded.png "Add CA Internal Certificate") 
