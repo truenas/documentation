@@ -56,12 +56,15 @@ More details are available from [Software Releases]({{< relref "/TrueNASUpgrades
 
 * The default libvirt account UID and GID is changed to to avoid possible clashes with user created Active Directory (AD) users. TrueNAS automatically updates libvirt UID and GIDs when upgraded to 25.04. Users attempting revert to 24.10 or an earlier release must manually review and update libvirt-qemu user and group IDs back to the values that were default in that version (64055:64055 for 24.10).
 
-   
+### Migrating Virtual Machines
+
+{{< include file="/static/includes/Incus.md" >}}
+
+{{< include file="/static/includes/MigratingVMs.md" >}}
+
 ### Upgrade Paths (Anticipated)
 <!--
 {{< include file="/static/includes/25.04UpgradeMethods.md" >}}
-
-See the <a href="https://www.truenas.com/software-status/" target="_blank">TrueNAS Software Status</a> page for recommendations about which software version to use based on your user type.
 -->
 
 {{< include file="/static/includes/SCALEUpgradePaths.md" >}}
@@ -89,7 +92,8 @@ Enterprise customers should [contact Support](https://www.truenas.com/docs/scale
 -->
 
 ## Component Versions
-Click the component version number to see the latest release notes for that component.
+Component version numbers below are updated to reflect the latest TrueNAS 24.05 release.
+Click the component version number to see release notes for that component.
 
 {{< truetable >}}
 | Component | Version |
