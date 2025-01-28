@@ -53,6 +53,7 @@ Click **Add** to open the **Add Group** configuration screen.
 {{< /truetable >}}
 
 ## Edit Group Screen
+
 Click **Edit** on an expanded group in the **Groups** screen to open the **Edit Group** screen.
 
 {{< trueimage src="/images/SCALE/Credentials/EditGroup.png" alt="Edit Group Screen" id="Edit Group Screen" >}}
