@@ -104,4 +104,7 @@ The system prevents losing existing data by stopping the add operation for the n
 
 **Force** overrides the safety check and adds the disk to the pool. Selecting this option erases any data stored on the disk!
 
+**Preserve Power Management and S.M.A.R.T. settings** transfers all power management and S.M.A.R.T. test configurations from the original disk to your replacement disk. Selected by default. Disable to reset your configuration. 
+
+**Preserve disk description** maintains any descriptions associated with the original disk. Selected by default. Disable to change the replacement disk descriptors attached to the original disk.
 **Replace Disk** adds the new disk to the pool.

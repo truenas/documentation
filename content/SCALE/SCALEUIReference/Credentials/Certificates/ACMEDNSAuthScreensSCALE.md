@@ -54,6 +54,18 @@ Fields change based on **Authenticator** selection.
 | **API Token** | Enter the API token. |
 {{< /truetable >}}
 
+### DigitalOcean
+
+**digitalocean** activates the **Digitalocean Token** field.
+
+{{< trueimage src="/images/SCALE/Credentials/AddDNSAuthenticatorDigitalocean.png" alt="Add DNS Authenticator - DigitalOcean" id="Add DNS Authenticator - DigitalOcean" >}}
+
+{{< truetable >}}
+| Setting | Description |
+|-----------|-------------|
+| **Digitalocean Token** | Enter the DigitalOcean Token. |
+{{< /truetable >}}
+
 ### Route 53
 
 **route53** activates the **Access Key Id** and **Secret Access Key** fields.
