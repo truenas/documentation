@@ -136,8 +136,6 @@ Changing the ACL type affects how TrueNAS writes and reads on-disk ZFS ACL.
 
 When the ACL type changes from NFSv4 to POSIX, native ZFS ACLs do not convert to POSIX1e extended attributes, but ZFS uses the native ACL for access checks.
 
-When the ACL type changes from NFSv4 to POSIX, native ZFS ACLs do not convert to POSIX1e extended attributes, but ZFS will use the native ACL for access checks.
-
 To prevent unexpected permissions behavior, you must manually set new dataset ACLs recursively after changing the ACL type.
 
 **Setting new ACLs recursively is destructive.**
