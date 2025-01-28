@@ -161,7 +161,8 @@ For more details on feature flags, see [OpenZFS Feature Flags](https://openzfs.g
 iXsystems is pleased to release TrueNAS 24.10.2!
 This is a maintenance release and includes refinement and fixes for issues discovered or outstanding after the 24.10.1 release.
 
-* Do not retrieve hidden zpool properties in `py-libzfs` by default ([NAS-132988](https://ixsystems.atlassian.net/browse/NAS-132988)). These properties include name, tname, maxblocksize, maxdnodesize, dedupditto and dedupcached. Users needing these properties can see the linked ticket for the `zpool` command to retrieve them. <!-- * Expose **Force Remove iXVolumes** checkbox on app deletion ([NAS-132914](https://ixsystems.atlassian.net/browse/NAS-132914)). -->
+* Do not retrieve hidden zpool properties in `py-libzfs` by default ([NAS-132988](https://ixsystems.atlassian.net/browse/NAS-132988)). These properties include name, tname, maxblocksize, maxdnodesize, dedupditto and dedupcached. Users needing these properties can see the linked ticket for the `zpool` command to retrieve them.
+* A **Force Remove iXVolumes** checkbox is exposed on app deletion for any apps migrated from 24.04 that were unable to be deleted due to a "dependent clones" error ([NAS-132914](https://ixsystems.atlassian.net/browse/NAS-132914)).
 * New cloud backup option: **Use Absolute Paths** ([NAS-132920](https://ixsystems.atlassian.net/browse/NAS-132920)).
 * Fix loading the `nvidia_drm` kernel module to populate the `/dev/dri` directory for NVIDIA GPU availability in apps like Plex ([NAS-133250](https://ixsystems.atlassian.net/browse/NAS-133250)).
 * Fix `netbiosname` validation logic if AD enabled ([NAS-133167](https://ixsystems.atlassian.net/browse/NAS-133167)).
