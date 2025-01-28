@@ -96,7 +96,7 @@ To add deduplication to a new dataset, after entering the name and selecting the
 
 To add deduplication to an existing dataset, select the dataset on the **Dataset** screen tree table, click **Edit** on the **Dataset Details** widget to open the **Edit Dataset** screen. Click **Advanced Settings**.
 
-Scroll down to the **ZFS Deduplication** setting, then change **Inherit (ON)** to **On**. **Inherit (ON)** means it is already enabled in the parent dataset
+Scroll down to the **ZFS Deduplication** setting, then change to **On**.
 A warning dialog opens and states that deduplication is an experimental and not fully supported feature.
 
 {{< trueimage src="/images/SCALE/Storage/DedupWarningDialog.png" alt="Deduplication Warning" id="Deduplication Warning" >}}
