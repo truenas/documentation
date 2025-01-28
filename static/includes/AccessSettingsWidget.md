@@ -10,7 +10,7 @@ You can also end individual sessions by clicking the logout <span class="iconify
 You must check a confirmation box before the system allows you to end sessions.
 
 The logout icon is inactive for the currently logged-in administrator session and active for any other current sessions.
-It cannot be used to terminate the currently-logged in active administrator session.
+It cannot be used to terminate the currently logged-in active administrator session.
 
 **Session Timeout** displays the configured token duration for the current session (default five minutes).
 TrueNAS logs out user sessions that are inactive for longer than the configured token setting for the user.
