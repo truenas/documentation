@@ -71,7 +71,7 @@ It also stores Samba4 metadata, such as the user and group cache and share-level
 
 If the system has one pool, TrueNAS configures that pool as the system dataset pool.
 If your system has more than one pool, you can set the system dataset pool using the **Select Pool** dropdown.
-Users can move the system dataset to an unencrypted pool or a key-encrypted pool.
+Users can move the system dataset to an unencrypted or key-encrypted pool.
 
 ![SystemDatasetPoolConfigScreen](/images/SCALE/SystemSettings/SystemStorageConfigScreen.png "TrueNAS Advanced Settings System Dataset Pool Screen")
 
@@ -104,7 +104,7 @@ Entering an IP address limits access to the system to only the address(es) enter
 
 ## Setting Up FIPS and STIG
 {{< enterprise >}}
-Only Enterprise-licensed systems show the **Secuirty** widget and have access to FIPS and STIG settings.
+Only Enterprise-licensed systems show the **Security** widget and have access to FIPS and STIG settings.
 {{< /enterprise >}}
 
 To configure FIPS or STIG compliance on a TrueNAS server, you must first configure two-factor authentication for an admin user with full permissions.
