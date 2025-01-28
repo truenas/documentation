@@ -44,7 +44,7 @@ The **Wizard** button opens the iSCSI wizard on the **Targets** screen. The wiza
 * **Extent**
 * **Protocol Options**
 
-The individual iSCSI screens accessed by clicking on the iSCSI widget header an alternative to the **iSCSI Wizard**.
+The individual iSCSI screens are accessed by clicking on the iSCSI widget header an alternative to the **iSCSI Wizard**.
 The **Targets** screen opens by default.
 For more information on iSCSI screens and settings, see [**iSCSI Screens**]() below. 
 
