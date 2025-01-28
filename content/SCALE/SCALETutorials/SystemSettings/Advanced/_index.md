@@ -109,7 +109,7 @@ Only Enterprise-licensed systems show the **Security** widget and have access to
 
 To configure FIPS or STIG compliance on a TrueNAS server, you must first configure two-factor authentication for an admin user with full permissions.
 
-After configuring two-factor authentication, go to **System > Advanced** and locate the **Security** widget.
+After configuring two-factor authentication, go to **System > Advanced Settings** and locate the **Security** widget.
 
 Click **Settings** to open the **System Security** configuration screen.
 
