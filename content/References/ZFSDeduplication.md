@@ -47,7 +47,7 @@ Loading the DDT into memory speeds up operations by reducing on-demand disk read
 The prefetch is particularly important in systems with large deduplication tables (DDTs) where the process of loading the table on demand can take days after an import/reboot.
 The cache of the DDT might also reload portions of a DDT flushed due to inactivity.
 
-Pruning cleans up old, non-duplicated records in the deduplication table (DDT) to reclaim storage and improve performance in ZFS when the DDT becomes too large.
+Pruning cleans up old, non-duplicate (unique) records in the deduplication table (DDT) to reclaim storage and improve performance in ZFS when the DDT becomes too large.
 Reclaiming available space is a prerequisite to the deduplication table (DDT) quota and pruning functions.
 
 {{< expand "How does pruning work?" "v" >}}
