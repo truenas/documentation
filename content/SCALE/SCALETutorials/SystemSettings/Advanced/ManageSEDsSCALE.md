@@ -14,7 +14,7 @@ keywords:
 
 {{< include file="/static/includes/AdvancedSettingsWarningSCALE.md" >}}
 
-{{< include file="/static/includes/SEDEnterprise.md" >}}
+{{< include file="/static/includes/SEDEnterpriseAdmonition.md" >}}
 
 The **Self-Encrypting Drive(s)** widget on the **System > Advanced Settings** screen allows you set the user and global SED password in TrueNAS.
 
