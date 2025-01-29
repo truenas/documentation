@@ -42,16 +42,6 @@ Windows clients use [WS-Discovery](https://docs.oasis-open.org/ws-dd/ns/discover
 Discoverability through broadcast protocols is a convenience feature and is not required to access an SMB server.
 {{< /hint >}}
 
-### SMB Share Limitations
-Sharing protocols have file-related limitations such as name and path lengths, permitted characters, file or volume size, permissions through access control lists (ACLs), and ACL entries based on the underlying client operating system (Windows, Linux, MacOS).
-SMB protocol version limits are based on the version (SMB1, SMB2, SMB3).
-
-There are limitations and issues related to using third-party file managers instead of native tools.
-
-For more on limits, click below.
-
-{{< include file="/static/includes/SMBLimitations.md" >}}
-
 ## Sharing Administrator Access
 
 {{< include file="/static/includes/SharingAdminRole.md" >}}
