@@ -42,6 +42,7 @@ Fast deduplication is a feature included in OpenZFS 2.3.0. It makes backend chan
 These improvements speed up I/O processes, look-ups, and reclaim storage space, and in situations where pools are handling reasonable workloads, improve latency over legacy dedup.
 Fast deduplication accomplishes these improvements through three new functions: prefetch, pruning, and a quota that limits writes to the deduplication tables (DDTs) that fall outside the specified quota range. 
 Instead of writing DDT entries in random order as they arrive, which causes excessive write inflation, and since single DDT record writes might require a whole ZAP leaf block, fast dedup temporarily writes them into a log, flushing it into actual DDT ZAP only after sorting.
+Improving write locality allows aggregating multiple DDT entry writes into one ZAP leaf write.
 
 Prefetch fills the ARC cache by loading deduplication tables into it.
 Loading the DDT into memory speeds up operations by reducing on-demand disk reads for every record the system processes.
