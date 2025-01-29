@@ -34,7 +34,7 @@ Copy the data within a file system or to a different file system, or replicate i
 Data in snapshots is fixed and can only be changed by replicating the snapshot to a different pool with different settings (which preserves its snapshot status) or copying its contents.
 
 It is possible to stipulate deduplicating only specified datasets and volumes in a pool. 
-The DDT encompasses the entire poo, but only data in these locations is deduplicated when written. 
+The DDT encompasses the entire pool, but only data in these locations is deduplicated when written. 
 Other data not well deduplicated or where deduplication is not appropriate, is not deduplicated when written, saving resources.
 
 ## Fast Deduplication on ZFS
