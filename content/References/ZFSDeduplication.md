@@ -40,8 +40,8 @@ Other data not well deduplicated or where deduplication is not appropriate, is n
 ## Fast Deduplication on ZFS
 Fast deduplication is a feature included in OpenZFS 2.3.0. It makes backend changes to legacy deduplication in ZFS that improve performance and can reduce latency in some use cases.
 These improvements speed up I/O processes, look-ups, and reclaim storage space, and in situations where pools are handling reasonable workloads, improve latency over legacy dedup.
-Fast deduplication accomplishes these improvements through three new functions: prefetch, pruning, and a quota that limits writes to the deduplication tables (DDTs) that fall outside the specified quota range.
-Fast deduplication introduces a DDT log. Instead of writing DDT entries in random order as they arrive, which causing excessive write inflation since sungke DDT record writes might require whole ZAP only after sorting, improved write locality allows aggregation of multiple DDT entry writes into one ZAP leaf write.
+Fast deduplication accomplishes these improvements through three new functions: prefetch, pruning, and a quota that limits writes to the deduplication tables (DDTs) that fall outside the specified quota range. 
+Instead of writing DDT entries in random order as they arrive, which causes excessive write inflation, and since single DDT record writes might require a whole ZAP leaf block, fast dedup temporarily writes them into a log, flushing it into actual DDT ZAP only after sorting.
 
 Prefetch fills the ARC cache by loading deduplication tables into it.
 Loading the DDT into memory speeds up operations by reducing on-demand disk reads for every record the system processes.
@@ -64,12 +64,12 @@ In case of massive entry removals, the process might be repeated multiple times.
 If more entries are added some of the remaining blocks get overflowed later, the new sibling for it is allocated and the entries are split between them by dividing the hash prefix.
 {{< /expand >}}
 
-Quota manages the deduplication table (DDT) by keeping it from unbounded growth that can hurt RAM and performance. 
+Quota manages the deduplication table (DDT) by keeping it from unbounded growth that can hurt RAM and performance.
 Setting a quota for the on-disk DDT effectively disables new entries for blocks if the allotted space reaches the upper limit.
+It works for both legacy and fast dedup tables.
 
 There are three quota options: Auto, Custom, and None.
 Auto is the default option that allows the system to determine the quota, and the size of a dedicated dedup vdev is used as the quota limit.
-This property works for both legacy and fast dedup tables.
 Custom allows administrators to set a quota.
 None leaves the DDT unrestricted and disables the quota.
 
@@ -83,13 +83,8 @@ Updating existing entries is allowed because this reuses space rather than requi
 
 Quota options determine the behavior.
 Auto sets quota based on the size of the devices backing the dedup allocation class. This makes it possible to limit the DDTs to the size of a dedup vdev only.
-When the device fills, no new blocks are deduplicated. Automatic limits the size of the dedicated dedup VDEV. 
+When the device fills, no new blocks are deduplicated.
 If the quota is set to zero, it translates to None.
-
-The table quota property sets a limit (maximum size) on the on-disk size of the dedup table for a pool.
-If the pool is at or over the quota limit, DDT lookups only return entries for existing blocks.
-Updates are still possible but new entries are not created or added to the table.
-The DDT write stage removes the Dbit on the block and reissues the IO as a regular write. The block is not deduplicated. Note, this is based on the on-disk size of the dedup store. 
 
 If a dedup table already exists and is larger than this size, it is not removed as part of setting a quota.
 Existing entry reference counts are still updated.
