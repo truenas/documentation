@@ -23,7 +23,7 @@ The DDT is a fundamental ZFS structure and is part of the metadata or the pool.
 If a pool (or any dataset in the pool) has ever contained deduplicated data, the pool contains a DDT, and that DDT is as fundamental to the pool data as any of its other file system tables. 
 Like any other metadata, DDT contents might be temporarily held in the ARC (RAM/memory cache) or [L2ARC]({{< relref "/references/L2ARC.md" >}}) (disk cache) for speed and repeated use, but the DDT is not a disk cache. 
 It is a fundamental part of the ZFS pool structure and how ZFS organizes pool data on its disks. 
-Therefore, like any other pool data, if DDT data is lost, the pool is likely to become unreadable. So, it is important to store on redundant devices. 
+Therefore, like any other pool data, if DDT data is lost, the pool is likely to become unreadable. DDT is not needed for reads, but any writes or deletions of deduplicated blocks. So, it is important to store on redundant devices. 
 
 A pool can contain any coexisting mix of deduplicated data and non-deduplicated data. 
 If deduplication is enabled at the time of writing, the DDT is used to write data.
@@ -34,18 +34,19 @@ Copy the data within a file system or to a different file system, or replicate i
 Data in snapshots is fixed and can only be changed by replicating the snapshot to a different pool with different settings (which preserves its snapshot status) or copying its contents.
 
 It is possible to stipulate deduplicating only specified datasets and volumes in a pool. 
-The DDT encompasses the entire poo, but only data in these locations is deduplicated when written. 
+The DDT encompasses the entire pool, but only data in these locations is deduplicated when written. 
 Other data not well deduplicated or where deduplication is not appropriate, is not deduplicated when written, saving resources.
 
 ## Fast Deduplication on ZFS
-Fast deduplication is a feature included in OpenZFS 2.3.0, that makes backend changes to legacy deduplication in ZFS that improves performance and can improve latency in some use cases.
+Fast deduplication is a feature included in OpenZFS 2.3.0. It makes backend changes to legacy deduplication in ZFS that improve performance and can reduce latency in some use cases.
 These improvements speed up I/O processes, look-ups, and reclaim storage space, and in situations where pools are handling reasonable workloads, improve latency over legacy dedup.
 Fast deduplication accomplishes these improvements through three new functions: prefetch, pruning, and a quota that limits writes to the deduplication tables (DDTs) that fall outside the specified quota range.
+Fast deduplication introduces a DDT log. Instead of writing DDT entries in random order as they arrive, which causing excessive write inflation since sungke DDT record writes might require whole ZAP only after sorting, improved write locality allows aggregation of multiple DDT entry writes into one ZAP leaf write.
 
 Prefetch fills the ARC cache by loading deduplication tables into it.
 Loading the DDT into memory speeds up operations by reducing on-demand disk reads for every record the system processes.
-The prefetch is particularly important in systems with large deduplication tables (DDTs) where the process of loading the table on demand can take days after an import/reboot.
-The cache of the DDT might also reload portions of a DDT flushed due to inactivity.
+The prefetch is particularly important in systems with large deduplication tables (DDTs) where loading the table on demand can take days after an import/reboot.
+The prefetch might also be used to reload portions of a DDT evicted due to inactivity into the ARC.
 
 Pruning cleans up old, non-duplicate (unique) records in the deduplication table (DDT) to reclaim storage and improve performance in ZFS when the DDT becomes too large.
 Reclaiming available space is a prerequisite to the deduplication table (DDT) quota and pruning functions.
