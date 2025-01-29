@@ -41,44 +41,33 @@ You can configure a SED before or after assigning the device to a pool.
 
 By default, SEDs are not locked until the administrator takes ownership of them.
 Ownership is taken by explicitly configuring a global or per-device password in the web interface and adding the password to the SEDs.
-Adding SED passwords in the web interface also allows TrueNAS to automatically unlock SEDs.
+Adding SED passwords in the web interface also allows TrueNAS to automatically unlock SEDs on boot.
+
+<!-- {{< hint type=info title="SEDs Unlock on Boot" >}}
+TrueNAS automatically unlocks SEDs on boot after a system restart or other shutdown event.
+
+TrueNAS Enterprise High Availability (HA) systems only unlock SEDs on the active controller.
+SEDs do not unlock on failover and must be manually unlocked using sedutil-cli.
+{{< /hint >}} -->
 
 A password-protected SED protects the data stored on the device when the device is physically removed from the system.
 This allows secure disposal of the device without having to first wipe the contents.
-Repurposing a SED on another system requires the SED password or a full cryptographic erase with [PSID revert](https://github.com/truenas/sedutil/blob/22ecc4f56e84239f780856b56185267e4b225d43/docs/sedutil-cli.8#L86C1-L87C1).
-
-{{< hint type=note >}}
-For TrueNAS High Availability (HA) systems, SED drives only unlock on the active controller!
-{{< /hint >}}
+Repurposing a SED on another system requires the SED password or a full cryptographic erase with [PSID revert](https://github.com/truenas/sedutil/blob/22ecc4f56e84239f780856b56185267e4b225d43/docs/sedutil-cli.8#L68).
 
 ## Deploying SEDs
 
 TrueNAS supports setting a global password for all detected SEDs or setting individual passwords for each SED.
 Using a global password for all SEDs is strongly recommended to simplify deployment and avoid maintaining separate passwords for each SED.
 
-### Setting a Global Password for SEDs
+SED passwords are used during initial set up and for unlocking SEDs.
 
-Go to **System > Advanced > Self-Encrypting Drive** and click **Configure**.
-A warning displays stating **Changing Advanced settings can be dangerous when done incorrectly. Please use caution before saving.**
-Click **Close** to display the settings form.
-Enter the password in **SED Password** and **Confirm SED Password** and click **Save**.
+### Configuring Global SED Settings
 
-{{< hint type=warning >}}
-Record this password and store it in a safe place!
-{{< /hint >}}
+{{< include file="/static/includes/SEDGlobalPW.md" >}}
 
-### Creating Separate Passwords for Each SED
+### Configuring Individual SED Passwords
 
-Go to **Storage** click the **Disks** dropdown in the top right of the screen and select **Disks**.
-From the **Disks** screen, click the <span class="material-icons">expand_more</span> for the confirmed SED, then **Edit**.
-Enter and confirm the password in the **SED Password** fields to override the global SED password.
-
-Repeat this process for each SED and any SEDs added to the system in the future.
-
-{{< hint type=warning >}}
-Remember SED passwords! If you lose the SED password, you cannot unlock SEDs or access their data.
-After configuring or modifying SED passwords, always record and store them in a secure place!
-{{< /hint >}}
+{{< include file="/static/includes/SEDIndividualPWs.md" >}}
 
 ## Check SED Functionality
 
@@ -90,13 +79,18 @@ Devices without a device-specific password are unlocked using the global passwor
 
 ## Managing SED Disks and Data
 
-Additional SED management options are available using a shell session and the sedutil-cli utility.
-Enter `sedutil-cli -h` or see [the sedutil-cli.8 man page](https://github.com/truenas/sedutil/blob/master/docs/sedutil-cli.8) for more information.
-
-Most SEDs are TCG-E (Enterprise) or TCG-Opal.
-Commands are different for the different drive types, so the first step is to identify the type in use.
-
-{{< hint type=important >}}
+{{< hint type=warning >}}
 Improper use of the sedutil-cli can be destructive to data and passwords.
 Keep backups and use with caution.
 {{< /hint >}}
+
+Additional SED management options are available using a shell session and the sedutil-cli utility.
+Enter `sedutil-cli -h` or see [the sedutil-cli.8 man page](https://github.com/truenas/sedutil/blob/master/docs/sedutil-cli.8) for more information.
+
+{{< enterprise >}}
+TrueNAS Enterprise customers should contact iXsystems Support for assistance with the initial set up and management of SEDs using sedutil-cli.
+
+{{< expand "Contacting iX Support" >}}
+{{< include file="/static/includes/iXsystemsSupportContact.md" >}}
+{{< /expand >}}
+{{< /enterprise >}}
