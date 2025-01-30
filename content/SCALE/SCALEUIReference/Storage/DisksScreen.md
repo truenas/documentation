@@ -172,7 +172,7 @@ Click **Edit Disk** on the **[Devices]({{< relref "DevicesScreensSCALE.md" >}})*
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **HDD Standby** | Select a value from the dropdown list of options or leave it set to the default **Always On**. This specifies the minutes of inactivity before the drive enters standby mode. This [forum post](https://www.truenas.com/community/threads/how-to-find-out-if-a-drive-is-spinning-down-properly.2068/) describes identifying spun-down drives. Temperature monitoring is disabled for standby disks. |
+| **HDD Standby** | Select a value from the dropdown list of options or leave it set to the default **Always On**. This specifies the minutes of inactivity before the drive enters standby mode. For information on identifying spun-down drives, see this [forum post](https://www.truenas.com/community/threads/how-to-find-out-if-a-drive-is-spinning-down-properly.2068/). Temperature monitoring is disabled for standby disks. |
 | **Advanced Power Management** | Select a power management profile from the dropdown list of options that include **Disabled** (the default setting), **Level 1 - Minimum power usage with Standby (spindown)**, **Level 64 - Intermediate power usage with Standby**, **Level 127 - Maximum power usage with Standby**, **Level 128 - Minimum power usage without Standby (no spindown)**, **Level 192 - Intermediate power usage without Standby**, or **Level 254 - Maximum performance, maximum power usage**. |
 {{< /truetable >}}
 
