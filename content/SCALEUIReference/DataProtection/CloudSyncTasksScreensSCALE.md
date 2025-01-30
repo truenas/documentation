@@ -97,7 +97,7 @@ The **Advanced Options** button shows at the bottom of this screen as well.
 
 ## Advanced Options and Edit Cloud Sync Task Screens
 The **Advanced Options** accessed from the **Cloudsync Task Wizard** and **Edit Cloud Sync Task** display the same settings.
-Settings are grouped into the **Transfer**, **Remote**, **Control**, and **Advanced Options** for advanced users.
+Settings are grouped into **Transfer**, **Remote**, **Control**, and **Advanced Options**.
 
 The **Manage Credentials** link opens the [Backup Credentials]({{< relref "/SCALEUIReference/Credentials/BackupCredentials/_index.md" >}}) screen.
 
