@@ -31,6 +31,8 @@ TrueNAS includes a manual page with more information on the [VFS auditing functi
 ### Session and User Auditing Events
 {{< expand "Authentication Events" "v" >}}
 Audit message generated every time a client logs into the TrueNAS UI or an SSH session or makes changes to user credentials.
+
+TrueNAS terminates inactive sessions when it reaches the specified timeout limit. If a new session is initiated within a five-minute period, TrueNAS logs the user in as the previously logged in session. If the log in occurs outside the five-minute period TrueNAS initiates a new websocket session.
 {{< /expand >}}
 {{< expand "Method Call Events" "v" >}}
 Audit message generated every time the currently logged in user creates a new user account or changes user credentials.
