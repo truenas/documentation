@@ -232,7 +232,7 @@ It allows administrators to manage other active sessions and configure the sessi
 **Terminate Other Sessions** ends all sessions except the active session for the logged-in admin user.
 You can also end individual sessions by clicking the logout <span class="iconify" data-icon="PH:arrow-square-right"></span> icon next to that session if it is not the admin user session.
 You must check a confirmation box before the system allows you to end sessions.
-TrueNAS terminates inactive sessions when the it reaches the specified timeout limit. If a new session is initiated within a five-minute period, TrueNAS logs the user in as the previously login session. If the log in occurs outside the five-minute period TrueNAS initiates a new websocket session. This activity shows in the audit logs for sessions.
+TrueNAS terminates inactive sessions when the it reaches the specified timeout limit. If a new session is initiated within a five-minute period, TrueNAS logs the user in as the previously login session. If the log in occurs outside the five-minute period TrueNAS initiates a new websocket session.
 
 The logout button is inactive for your current session and active for all other current sessions.
 It cannot be used to terminate your current session.
