@@ -38,17 +38,22 @@ The DDT encompasses the entire pool, but only data in these locations is dedupli
 Other data not well deduplicated or where deduplication is not appropriate, is not deduplicated when written, saving resources.
 
 ## Fast Deduplication on ZFS
-Fast deduplication is a feature included in OpenZFS 2.3.0. It makes backend changes to legacy deduplication in ZFS that improve performance and can reduce latency in some use cases.
+Fast deduplication is a feature included in OpenZFS 2.3.0.
+It makes backend changes to legacy deduplication in ZFS that improve performance and can reduce latency in some use cases.
 These improvements speed up I/O processes, look-ups, and reclaim storage space, and in situations where pools are handling reasonable workloads, improve latency over legacy dedup.
-Fast deduplication accomplishes these improvements through three new functions: prefetch, pruning, and a quota that limits writes to the deduplication tables (DDTs) that fall outside the specified quota range. 
+Fast deduplication accomplishes these improvements through four new functions: DDT log, prefetch, pruning, and a quota that limits writes to the deduplication tables (DDTs) that fall outside the specified quota range. 
+
+### DDT Log
 Instead of writing DDT entries in random order as they arrive, which causes excessive write inflation, and since single DDT record writes might require a whole ZAP leaf block, fast dedup temporarily writes them into a log, flushing it into actual DDT ZAP only after sorting.
 Improving write locality allows aggregating multiple DDT entry writes into one ZAP leaf write.
 
+### Prefetch
 Prefetch fills the ARC cache by loading deduplication tables into it.
 Loading the DDT into memory speeds up operations by reducing on-demand disk reads for every record the system processes.
 The prefetch is particularly important in systems with large deduplication tables (DDTs) where loading the table on demand can take days after an import/reboot.
 The prefetch might also be used to reload portions of a DDT evicted due to inactivity into the ARC.
 
+### Pruning
 Pruning cleans up old, non-duplicate (unique) records in the deduplication table (DDT) to reclaim storage and improve performance in ZFS when the DDT becomes too large.
 Reclaiming available space is a prerequisite to the deduplication table (DDT) quota and pruning functions.
 
@@ -65,6 +70,7 @@ In case of massive entry removals, the process might be repeated multiple times.
 If more entries are added some of the remaining blocks get overflowed later, the new sibling for it is allocated and the entries are split between them by dividing the hash prefix.
 {{< /expand >}}
 
+### Quota
 Quota manages the deduplication table (DDT) by keeping it from unbounded growth that can hurt RAM and performance.
 Setting a quota for the on-disk DDT effectively disables new entries for blocks if the allotted space reaches the upper limit.
 It works for both legacy and fast dedup tables.
