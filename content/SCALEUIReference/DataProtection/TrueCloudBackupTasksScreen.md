@@ -92,7 +92,7 @@ Additional settings show depending on the **Include/Exclude** selection.
 | Settings | Description |
 |----------|-------------|
 | **Include Everything** | Select to restore all backed-up data from the remote snapshot to the selected local path. |
-| **Include from subfolder** | Select to restore data from a subfolder within the backed-up data.  |
+| **Include from subfolder** | Select to restore data from a subfolder within the backed-up data. |
 | **Subfolder** | Shows when **Include from subfolder** is selected. Enter or browse to the subfolder within the snapshot with the data to restore. |
 | **Included Paths** | Shows when **Include from subfolder** is selected. Select files and directories to include from the backup. Leave empty to include everything in the selected subfolder. |
 | **Select paths to exclude** | Select to exclude only certain paths from the data to restore. |
