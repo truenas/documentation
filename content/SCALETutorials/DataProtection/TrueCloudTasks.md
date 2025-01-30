@@ -29,7 +29,7 @@ iXsystems is not responsible for charges incurred using a third-party vendor wit
 
 ## TrueCloud Backup Task Requirements
 
-You must configure all system storage (pool and datasets or zvols) and have then ready to receive or send data.
+You must configure all system storage (pool and datasets or zvols) and have them ready to receive or send data.
 
 ## Creating a TrueCloud Backup Task
 
