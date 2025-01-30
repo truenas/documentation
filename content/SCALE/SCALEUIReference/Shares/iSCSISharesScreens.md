@@ -17,85 +17,352 @@ The **Sharing** screen opens after you click **Shares** on the main navigation p
 
 ## Block (iSCSI) Shares Targets Widget
 
-The **Block (iSCSI) Shares Targets** widget displays the widget toolbar with the status of the iSCSI service. 
-Click **Configure** to open the **iSCSI** screen on the **[Target Global Configuration](#target-global-configuration-screen)** tab. 
-Click **Wizard** to open the **Wizard iSCSI** screen.
+The **Block (iSCSI) Shares Targets** widget header shows the status of the iSCSI service, the **Wizard** button, and the <span class="material-icons">more_vert</span> icon button. 
+**Wizard** opens the **Wizard iSCSI** wizard on the **Target** screen. See []() below.
 
-![iSCSIBlockSharesWidget](/images/SCALE/Shares/iSCSIBlockSharesWidget.png "Block (iSCSI) Share Target Widget Toolbar")
+{{< trueimage src="/images/SCALE/Shares/iSCSIBlockSharesWidget.png" alt="Block (iSCSI) Share Target Widget Toolbar" id="Block (iSCSI) Share Target Widget Toolbar" >}}
 
-After adding an iSCSI target or share, the widget toolbar displays the **STOPPED** service status in red and includes the share below.
+The <span class="material-icons">more_vert</span> shows two options: a toggle for **Turn On Service**/**Turn Off Service** and **Config Service**.
+**Config Service** opens the ***[iSCSI Global Configuration](#target-global-configuration-screen)** screen. 
 
-Before you add your first iSCSI block share, click anywhere on **Block (iSCSI) Shares Targets <span class="material-icons">launch</span>** to open the **Sharing > iSCSI** screen with the **Targets** iSCSI configuration tab displayed.
-Click **Add** in the top right or **Add Target** in the middle of the screen to open the **[Add ISCSI Target](#add-and-edit-iscsi-target-screens)** screen. 
-Click **Wizard** to open the **Wizard iSCSI** screen. After adding a block share, the widget displays shares below the toolbar.
-The **No Targets** screen opens only when the system does not have an iSCSI target configured on the system.  
+The **Start iSCSI Service** dialog shows after adding the first share. It includes an **Enable this service to start automatically** toggle and two buttons: **Start** and **No**.
+**Start** starts the service and changes the status on the iSCSI widget toolbar from **STOPPED** (in red)  to **RUNNING** (in blue).
 
+{{< trueimage src="/images/SCALE/Shares/StartiCSIServicedialog.png" alt="Start iSCSI Service Dialog" id="Start iSCSI Service Dialog" >}}
 
-![iSCSINoTargetsScreen](/images/SCALE/Shares/iSCSINoTargetsScreen.png "iSCSI No Targets screen")
+Click anywhere on **Block (iSCSI) Shares Targets <span class="material-icons">launch</span>** header to open the **Sharing > iSCSI > Targets** screen.
 
-The <span class="material-icons">more_vert</span> on the toolbar displays options to turn the iSCSI service on or off. 
-**Turn Off Service** displays if the service is running. Otherwise, **Turn On Service** displays. 
-The **Config Service** option opens the configuration tabs **[Target Global Configuration](#target-global-configuration-screen)** screen.
+{{< trueimage src="/images/SCALE/Shares/iSCSITargetsScreen.png" alt="iSCSI Target Screen" id="iSCSI Target Screen" >}}
 
-If you have other share types added to your TrueNAS system, the widget displays as a card on the **Sharing** screen.
+**Add** opens the **[Add ISCSI Target](#add-and-edit-iscsi-target-screens)** screen.
+**Edit** opens the **[Edit iSCSI Target]()** screen.
 
-![SharingScreenWithiSCSIShareAdded](/images/SCALE/Shares/SharingScreenWithiSCSIShareAdded.png "Sharing Screen with iSCSI Share")
+## iSCSI Wizard Screens
+The **Wizard** button opens the iSCSI wizard on the **Targets** screen. The wizard has three screens:
 
-**View Details** also opens the iSCSI configuration tabs. Each tab includes details on the block shares added to the system.
+* **Target**
+* **Extent**
+* **Protocol Options**
 
-### Basic Info Settings
+The individual iSCSI screens are accessed by clicking on the iSCSI widget header an alternative to the **iSCSI Wizard**.
+The **Targets** screen opens by default.
+For more information on iSCSI screens and settings, see [**iSCSI Screens**]() below. 
 
-![iSCSIManualAddTargets](/images/SCALE/Shares/iSCSIManualAddTargets.png "Add iSCSI Target Screen")
+### iSCSI Wizard Target Screen
+The **iSCSI Wizard** opens showing the **Target** screen.
 
+The **Target** dropdown shows the default **Create New**. Select to create a new target, or select an existing target from the dropdown list to edit it.
+
+{{< trueimage src="/images/SCALE/Shares/iSCSIWizardTargetScreen.png" alt="iSCSI Wizard Target Screen" id="iSCSI Wizard Target Screen" >}}
+
+### iSCSI Wizard Extent Screen
+The iSCSI wizard **Extent** screen shows settings to name the share, set the type of extent devices, and the sharing platform for the device.
+
+{{< columns >}}
+{{< trueimage src="/images/SCALE/Shares/iSCSIWizardExtentCreateNewDevice.png" alt="iSCSI Wizard Extent Screen Devices Settings" id="iSCSI Wizard Extent Screen Device Settings" >}}
+<--->
+{{< trueimage src="/images/SCALE/Shares/iSCSIWizardExtendFileType.png" alt="iSCSI Wizard Extent Screen File Settings" id="iSCSI Wizard Extent Screen File Settings" >}}
+{{< /columns >}}
+
+{{< expand "Wizard Extent Settings" "v" >}}
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Target Name** | Required. Enter a name using up to 64 lowercase alphanumeric and special characters. Allowed characters are dot (.), dash (-), and colon (:). A name longer than 64 characters is not allowed. See the "Constructing iSCSI names using the iqn.format" section of [RFC3721](https://tools.ietf.org/html/rfc3721.html). The base name (**from Target Global Configuration**) is automatically prepended if the target name does not start with **iqn**. |
+| **Name** | The name given to the iSCSI block share. Enter a name using up to 64 lowercase alphanumeric and special characters. Allowed characters are dot (.), dash (-), and colon (:). A name longer than 64 characters is not allowed. See the "Constructing iSCSI names using the iqn.format" section of [RFC3721](https://tools.ietf.org/html/rfc3721.html). The base name (**from Target Global Configuration**) is automatically prepended if the target name does not start with **iqn**. |
+| **Extent Type** | Has two options: **Device** and **File**. Select an option to show other settings for each option. |
+| **Device**  | Shows if **Extent Type** is set to **Device**. Shows **Create New** or a list of iSCSI devices added to the system. **Create New** shows additional settings. |
+| **Pool/Dataset** | Shows after selecting **Create New** in **Device**. Enter or browse to select the path to the mount point. Browsing to select the dataset activates the **Create Dataset** option. Click to open the **Create Dataset** dialog, which creates a zvol. | 
+| **Size** | Shows after clicking **Create New** in **Device** and after adding the mount point in **Pool/Dataset**. Enter a numerical value and suffix to specify the size of the zvol you are creating. |
+| **Path to the Extent** | Shows if **Extent Type** is set to **File**. Enter or browse to select the mount point for the directory the extent uses. If a directory does not exist, after selecting the dataset where you want to add the directory, then enter a **/** followed by the name to add the directory to the dataset. |
+| **Filesize** | Shows if the **Extent Type** is set to **File**. Enter the size for the directory. Leaving this set to **0** uses the actual file size and requires the file to exist. Otherwise, specify the file size for the new file. |
+| **Sharing Platform** | Shows for both options. Select the platform that matches your use case. Options are:<br><li>**VMware: Extent block size 512b, TCP enabled, no Zen compat mode, SSD speed**<br><li>**Xen: Extent block size 512b, TCP enabled, Xen compat mode enabled, SSD speed**<br><li>**Legacy OS: Extent block size 512b, TCP enabled, no Xen compat mode, SSD speed**<br><li>**Modern OS: Extent block size 4k, TCP enabled, no Xen compat mode, SSD speed**</li> |
+{{< /truetable >}}
+{{< /expand >}}
+ 
+### iSCSI Wizard Protocol Options Screen
+The iSCSI wizard **Protocol Options** screen shows settings to add a portal and initiators. If a portal does not exist, create one by selecting **Create New**.
+
+{{< trueimage src="/images/SCALE/Shares/iSCSIWizardProtocolOptionsCreateNewPortal.png" alt="iSCSI Wizard Protocol Options Screen Portal Settings" id="iSCSI Wizard Protocol Options Screen Portal Settings" >}}
+
+{{< expand "Wizard Portal Settings" "v" >}}
+{{< truetable >}}
+| Setting | Description |
+|---------|-------------|
+| **Portal** | Select an exiting portal from the dropdown list or select **Create New** to show the **IP Address** field and **Add** button. **Add** shows another **IP Address** field each time it is clicked to allow adding multiple portals. |
+| **IP Address**  | Shows several options for setting up a portal. Select from these options:<br><li>**0.0.0.0** - Select to listen on all IPv4 addresses.<br><li>**::** - Select to listen on all IPv6 addresses. <br><li>TrueNAS server IP address - Select to use the IP address assigned to the primary network interface for the TrueNAS server being configured.</li>|
+| **Initiators** | Leave blank to allow all or enter a list of initiator host names. Separate each host name by pressing <kbd>Enter</kbd> after entering each host name. Initiators send commands over the TCP/IP network to the target and receive responses from the target. |
+{{< /truetable >}}
+{{< /expand >}}
+
+## Shares iSCSI Screens
+iSCSI share screens open after clicking on the iSCSI widget header.
+The **Global Target Configuration** opens the iSCSI service configuration screen.
+**Wizard** opens the iSCSI wizard configuration screens.
+
+It shows five tabs: *Targets**, **Extents**, **Initiators**, **Portals**, and **Authorized Access**.  Each provides access to the iSCSI configuration information, and access to the add and edit configuration screens for each functional area.
+
+The **Sharing > iSCSI** screen opens with the **Targets** tab showing.
+
+### iSCSI Global Configuration Screen
+The **iSCSI Global Configuration** screen opens when you click **Edit** on the **iSCSI Service** row of the **System > Services** screen, and the **Global Target Configuration** button at the top of all iSCSI share screens.
+
+{{< trueimage src="/images/SCALE/Shares/iSCSIGlobalConfigurationScreen.png" alt="iSCSI Global Configuration Screen" id="iSCSI Global Configuration Screen" >}}
+
+{{< expand "Global Configuration Settings" "v" >}}
+{{< truetable >}}
+| Setting | Description |
+|---------|-------------|
+| **Base Name** | Enter a name using lowercase alphanumeric characters. Allowed special characters are dot (.), dash (-), and colon (:). See the "Constructing iSCSI names using the iqn.format" section [RFC3721](https://tools.ietf.org/html/rfc3721.html) for more information. |
+| **ISNS Servers** | Enter host names or IP addresses of the ISNS servers to be registered with the iSCSI targets and portals of the system. Press <kbd>Enter</kbd> to separate each entry. |
+| **Pool Available Space Threshold (%)** | Generate an alert when the pool reaches this percentage of space remaining. This is typically configured at the pool level when using zvols or at the extent level for both file and device-based extents. |
+| **iSCSI listen port** | TCP port used to access the iSCSI target. The default is **3260**. |
+{{< /truetable >}}
+{{< /expand >}}
+
+### Targets Screens
+The **iSCSI Targets** screen shows a list of targets configured in the system and provides access to the add and edit configuration screens. Select a target to see details about that item.
+
+{{< trueimage src="/images/SCALE/Shares/iSCSITargetsScreen.png" alt="iSCSI Targets Screen" id="iSCSI Wizard Targets Screen" >}}
+
+**Add** and **Edit** open the configuration screen for the selected target.
+**Delete** opens a dialog with delete options.
+
+#### Details for Target
+The screen shows three widgets on the right side of the screen for the selected target: **iSCSI Authorized Networks**, **Extents**, and **iSCSI Connections**.
+
+**iSCSI Authorized Networks** shows a list of authorized networks configured when you create the target. Edit the target to add networks to an existing target. 
+
+**Extents** shows a list of LUNs, and includes two options: [**Associate** button](#associate-dialog) and a [**Remove Extent Association**](#remove-extent-association) <span class="material-icons">link_off</span> icon.
+
+**iSCSI Connections** shows a list of the connections configured on the system.
+
+#### Delete Target Dialog
+**Delete** opens a confiration dialog with two options: **Delete *1* associated extent** and **Force Delete**. Select the options to include in the delete operation.
+
+{{< trueimage src="/images/SCALE/Shares/DeleteiSCSITargetdialog.png" alt="iSCSI Target Delete Dialog" id="iSCSI Target Delete Dialog" >}}
+
+**Delete *1* associated extent** shows the number of associated extend for the selected target.
+
+**Force Delete** deletes the target even if the share is still in use.
+
+**Cancel** closes the dialog without deleting.
+**Delete** deletes the target but does not delete the iSCSI volumes associated with the extents.
+
+#### Remove Extent Association Dialog
+The **Remove Extent Association** <span class="material-icons">link_off</span> icon opens the **Remove extent association** dialog that shows the LUN link association and two buttons: **Cancel** and **Remove**. Removing the association activates the **Associate** button on the widget.
+
+{{< trueimage src="/images/SCALE/Shares/RemoveExtentAssociationDialog.png" alt="Remove Extent Association Dialog" id="Remove Extent Association Dialog" >}}
+
+#### Associate Dialog
+The **Associate** button is inactive when the extent is associated with a LUN. Removing the association activates the button. Clicking the button opens the **Associate *target*** dialog. 
+
+{{< trueimage src="/images/SCALE/Shares/ISCSIExtentAssociateDialog.png" alt="Extent Associate Dialog" id="Extent Associate Dialog" >}}
+
+Enter a LUN ID between 0 and 1023 into **LUN ID**. SCALE requires at least one LUN 0.
+Some initiators expect a value between 0 and 256. Leaving this field blank automatically assigns the next available ID.
+
+Select the target on the **Extent** dropdown list.
+
+#### Add or Edit Target Screens
+The **Add Target** and **Edit Target** screens show the same configuration settings.
+
+{{< columns >}}
+{{< trueimage src="/images/SCALE/Shares/AddiSCSITargetScreen.png" alt="Add iSCSI Target Screen" id="Add iSCSI Target Screen" >}}
+<--->
+{{< trueimage src="/images/SCALE/Shares/EditISCSITargetScreen.png" alt="Edit iSCSI Target Screen" id="Edit iSCSI Target Screen" >}}
+{{< /columns >}}
+
+{{< expand "Target Basic Info Settings" "v" >}}
+{{< truetable >}}
+| Setting | Description |
+|---------|-------------|
+| **Target Name** | Enter the name for the target using up to 64 lowercase alphanumeric and special characters. Allowed characters are dot (.), dash (-), and colon (:). A name longer than 64 characters is not allowed. See the “Constructing iSCSI names using the iqn.format” section of [RFC3721](https://tools.ietf.org/html/rfc3721.html). The base name (from Target Global Configuration) is automatically prepended if the target name does not start with iqn. |
 | **Target Alias** | Enter an optional user-friendly name. |
+| **Authorized Networks** | Authorized networks allow communication between initiators (client computers) and iSCSI targets (storage devices) over the IP network. **Add** shows the **Network** field. |
+| **Network** | Shows after clicking **Add** to the right of **Authorized Networks**. Enter the IP address for the network and select the netmask (CIDR) from the dropdown list. Adds the network address to the authorized network list. |
 {{< /truetable >}}
+{{< /expand >}}
 
-### iSCSI Group Settings
-
-To display the **iSCSI Group** settings, click **Add**.
+{{< expand "Target iSCSI Group Settings" "v" >}}
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Portal Group ID** | Required if specifying an iSCSI Group. Select the number of the existing portal to use. This is the portal group ID created in **Portals**. |
-| **Initiator Group ID** | Select the existing initiator group ID that has access to the target from the dropdown list of options. When initiator groups exist, the dropdown populates with options to select a created group by ID, allow all groups, or allow no groups. |
-| **Authentication Method** | Select the method from the dropdown list of options. **None**, **CHAP** or **Mutual Chap**. iSCSI supports multiple authentication methods that targets can use to discover valid devices. **None** allows anonymous discovery. If set to **None** you can leave **Discovery Authentication Group** set to **None** or empty. If set to **CHAP** or **Mutual CHAP** you must enter or create a new group in **Discovery Authentication Group**. |
-| **Authentication Group Number** | Select the option from the dropdown list. This is the group ID created in **Authorized Access**. Required when the **Discovery Authentication Method** is set to **CHAP** or **Mutual CHAP**. Select **None** or the value representing the number of the existing authorized accesses. |
+| **Add Groups** | Adds a collection of network interfaces, IP addresses, and TCP ports, on a storage device that an iSCSI initiator can connect to. Groups are also known as target portal groups. **Add** shows a group configuration field each time it is clicked.  |
+| **Portal Group ID** | Select the ID from the dropdown list. Shows a group for each iSCSI share added to the system with a number assignment, for example, *1 (test2)* for the test2 target/share. Portal groups are created on the **Add Portal** screen. |
+| **Initiator Group ID** | Select the group ID from the dropdown list. Shows a group for each portal ID configured on the system, for example, *1 (ALL Initiators Allowed). Initiator groups have access to the target. |
+| **Authentication Method** | Select the authentication method from the dropdown list of options. Options are:<br><li>**None** - Select to allow anonymous discovery. When set to **None** you can leave **Discovery Authentication Group** set to **None** or empty.<br><li>**CHAP** - Select to use the Challenge Handshake Authentication Protocol (CHAP) method. CHAP verifies the identity of an iSCSI initiator (device trying to access storage) by sending a challenge that only the authentic initiator can correctly respond to. This prevents unauthorized access to the storage target. Think of it like a password-based authentication system for iSCSI connections. When set to CHAP you must enter or create a new group in **Discovery Authentication** on the **Add** or **Edit Authorized Access** screen.<br><li>**Mutual CHAP**- Select to use CHAP where both the iSCSI initiator (client) and target server mutually authenticate each other using the CHAP method. Each side verifies the identity of the other before establishing a connection. This provides a higher level of security compared to one-way CHAP. When set to mutual CHAP you must enter or create a new group in **Discovery Authentication** on the **Add** or **Edit Authorized Access** screen.</li> |
+| **Authentication Group Number** | Select the group from the dropdown list. An authentication group is configured on the **Add Authorized Access** screen. Required when the **Discovery Authentication Method** is set to **CHAP** or **Mutual CHAP**. Select **None** or the value representing the number of the existing authorized accesses. |
 {{< /truetable >}}
+{{< /expand >}}
 
-## iSCSI Configuration Screens
+### Extents Screens
+The **Extents** screen shows a table listing extents configured on the system. Extents are shared storage units.
 
-{{< include file="/static/includes/iSCSIConfigurationScreens.md" >}}
+{{< trueimage src="/images/SCALE/Shares/iSCSIExtentsScreen.png" alt="iSCSI Extents Screen" id="iSCSI Extents Screen" >}}
 
-### Target Global Configuration Screen
+**Add** and **Edit** open the configuration screen for the selected target.
+**Delete** opens a dialog with delete options.
 
-{{< include file="/static/includes/iscsiTargetGlobalConfig.md" >}}
+#### Delete Extend Dialog
+The **Delete iSCSI Extent *name*** deletes the specified extend. The name of the extent shows in the dialog title.
 
-### Portals Screens
+{{< trueimage src="/images/SCALE/Shares/DelteExtentDialog.png" alt="Delete iSCSI Extent Dialog" id="Deleted iSCSI Extent Dialog" >}}
 
-{{< include file="/static/includes/iscsiPortals.md" >}}
+**Force** allows deleting the extend even if the share is active.
+
+**Delete** deletes the extent and closes the dialog. **Cancel** closes the dialog without deleting the extent.
+
+#### Add or Edit Extent Screens
+The **Add Extent** and **Edit Extent** screens show the same configuration settings.
+
+{{< columns >}}
+{{< trueimage src="/images/SCALE/Shares/AddExtentScreenDeviceType.png" alt="Add iSCSI Extent Device Type" id="Add iSCSI Extent Device Type" >}}
+<--->
+{{< trueimage src="/images/SCALE/Shares/AddExtentScreenFileType.png" alt="Edit iSCSI Extent File Type" id="Edit iSCSI Extent File type" >}}
+{{< /columns >}}
+
+{{< expand "Extent Basic Info Settings" "v" >}}
+{{< truetable >}}
+| Setting | Description |
+|---------|-------------|
+| **Name** | Enter a name for the extent. An **Extent** where the size is not **0**, cannot be an existing file within the pool or dataset. |
+| **Description** | Enter any notes about this extent. |
+| **Enabled** | Select to enable the iSCSI extent. |
+{{< /truetable >}}
+{{< /expand >}}
+
+{{< expand "Extent Compatibility Settings" "v" >}}
+{{< truetable >}}
+| Setting | Description |
+|---------|-------------|
+| **Enable TCP** | Select to allow an initiator to bypass normal access control and access any scannable target. This allows [xcopy](https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/cc771254(v=ws.11)) operations that are otherwise blocked by access control. |
+| **Xen initiator compat mode** | Select when using Xen as the iSCSI initiator. |
+| **LUN RPM** | Select the option from the dropdown list. Options are **UNKNOWN**, **SSD**, **5400**, **7200**, **10000** or **15000**. Do *not* change this setting when using Windows as the initiator. Only change LUN RPM in large environments where the number of systems using a specific RPM is needed for accurate reporting statistics. |
+| **Read-only** | Select to prevent the initiator from initializing this LUN. |
+{{< /truetable >}}
+{{< /expand >}}
+
+{{< expand "Extent Type Settings" "v" >}}
+{{< truetable >}}
+| Setting | Description |
+|---------|-------------|
+| **Extent Type** | Provides virtual storage access to zvols, zvol snapshots, or physical devices. Select the extent (zvol) option from the dropdown list. Dropdown options:<br><li>**Device** - Select to specify a device (default option). **Device** provides virtual storage access to zvols, zvol snapshots, or physical devices. Shows the **Device** field.<br><li>**File** - Select to specify a path to a file. **File** provides virtual storage access to a single file. Shows the **Path to the Extent** and **Filesize** fields. </li> |
+| **Device** | Shows after specifying **Device** in **Extent Type**. Select the unused zvol or zvol snapshot from the dropdown list. |
+| **Path to the Extent** | Enter or browse to select the path to an existing file. Enter a slash (/) followed by a file name to create a file in a dataset and append the file name to the path (/*filename.ext*). |
+| **Filesize** | Enter 0 to use the actual file size of an existing file, or specify the file size for the new file added in **Path to the Extent**. |
+| **Logical Block Size** | Shows the default **512** size. If the initiator requires a different block size, enter the numerical value. |
+| **Disable Physical Block Size Reporting** | Select if the initiator does not support physical block size values over 4K (MS SQL). |
+{{< /truetable >}}
+{{< /expand >}}
 
 ### Initiators Groups Screen
+The **Initiators Groups** screen shows after clicking the **Initiator** tab. It shows a table listing initiator groups configured on the system.
 
-{{< include file="/static/includes/iscsiInitiatorsGroups.md" >}}
+{{< trueimage src="/images/SCALE/Shares/iSCSIInitiatorsScreen.png" alt="iSCSI Initiator Screen" id="iSCSI Initiator Screen" >}}
 
-### Authorized Access Screen
+**Add** opens the **Add Initiator** screen.
+**Edit** opens a version of the **Add Initiator** screen with only two fields.
+**Delete** opens a dialog to delete an initiator group.
 
-{{< include file="/static/includes/iscsiAuthorizedAccess.md" >}}
+#### Add Initiator Screen
+**Add** opens the **Add Initiator** screen showing the settings to create new authorized access client groups or edit existing ones in the list.
 
-### Targets Screen
+{{< trueimage src="/images/SCALE/Shares/AddInitiatorScreen.png" alt="Add Initiator Screen" id="Add Initiator Screen" >}}
 
-{{< include file="/static/includes/iscsiTargets.md" >}}
+{{< expand "Add Initiator Group Settings" "v" >}}
+{{< truetable >}}
+| Setting | Description |
+|---------|-------------|
+| **Allow All Initiators** | Select to allows all initiators. |
+| **Allowed Initiators (IQN)** | Enter initiators allowed access to this system. Enter an [iSCSI Qualified Name (IQN)](https://tools.ietf.org/html/rfc3720#section-3.2.6) and click **+** to add it to the list. Example: *iqn.1994-09.org.freebsd:freenas.local*. |
+| **Description** | Enter any notes about the initiators. |
+| **Connected Initiators** | Shows the list of connected initiators on the system. |
+| **Allowed Initiators** | Shows the list of allowed initiators on the system. |
+| **Refresh** | Updates the screen. |
+{{< /truetable >}}
+{{< /expand >}}
 
-### Extents Screen
+#### Edit Initiator Screen
+**Edit** opens the **Add Initiator** edit screen showing two options: **Allow All Initiators** and **Description**.
+**Save** saves changes and closes the screen. **Cancel** closes the screen without saving changes.
 
-{{< include file="/static/includes/iscsiExtents.md" >}}
+{{< trueimage src="/images/SCALE/Shares/EditInitiatorScreen.png" alt="Edit Initiator Screen" id="Edit Initiator Screen" >}}
 
-### Associated Targets Screen
+### Portals Screens
+The configuration tabs **Portals** screen displays a list of portal ID groups on the TrueNAS system.
 
-{{< include file="/static/includes/iscsiAssociatedTargets.md" >}}
+{{< trueimage src="/images/SCALE/Shares/iSCSIPortalsScreen.png" alt="iSCSI Portals Screen" id="iSCSI Portals Screen" >}}
 
-{{<include file="/static/includes/addcolumnorganizer.md">}}
+**Delete** opens the **Delete** dialog for the selected portal ID. Click **Confirm** and then **Delete** to delete the selected portal.
+
+**Add** opens the **Add Portal** screen. **Edit** opens the **Edit Portal** screen. Both screens have the same setting options.
+
+#### Add or Edit Target Screens
+The **Add Target** and **Edit Target** screens show the same configuration settings.
+
+{{< columns >}}
+{{< trueimage src="/images/SCALE/Shares/AddPortalScreen.png" alt="Add Portal Screen" id="Add Portal Screen" >}}
+<--->
+{{< trueimage src="/images/SCALE/Shares/EditPortalScreen.png" alt="Edit Portal Screen" id="Edit Portal Screen" >}}
+{{< /columns >}}
+
+{{< expand "Portal Basic Info Settings" "v" >}}
+{{< truetable >}}
+| Setting | Description |
+|---------|-------------|
+| **Description** | Enter an optional description. Portals are automatically assigned a numeric group. |
+| **Add Listen** | Click **Add** to show the **IP Address** field where you add the IP address and netmask (CIDR) for the portal. |
+| **IP Address**  | Shows several options for setting up a portal. Select from these options:<br><li>**0.0.0.0** - Select to listen on all IPv4 addresses.<br><li>**::** - Select to listen on all IPv6 addresses. <br><li>TrueNAS server IP address - Select to use the IPv4 address assigned to the primary network interface for the TrueNAS server being configured.<br><li>IPv6 address assigned to the system.</li> |
+{{< /truetable >}}
+{{< /expand >}}
+
+### Authorized Access Screens
+The **Authorized Access** screen displays settings to create new authorized access networks or edit existing ones in the list.
+
+If you have not set up authorized access yet, the **No Authorized Access** screen displays with the **Add Authorized Access** button in the center of the screen. **Add Authorized Access** or **Add** at the top of the screen opens the **Add Authorized Access** screen.
+
+{{< trueimage src="/images/SCALE/Shares/iSCSAuthorizedAccessScreen.png" alt="iSCSI Authorized Access Screen" id="iSCSI Authorized Access Screen" >}}
+
+After adding authorized access to the system, the **Authorized Access** screen displays a list of users.
+**Delete** opens the **Delete** dialog for the selected portal ID. **Confirm** enables the delete option. 
+**Delete** deletes the selected portal and closes the dialog.
+
+**Add** opens the **Add Authorized Access** screen.
+
+**Edit** opens the **Edit Authorized Access** screen. **Delete** opens a dialog to delete the authorized access for the selected user.
+
+The **Add** and **Edit** screens display the same settings. Both screens have the same setting options.
+
+#### Add or Edit Authorized Access Screens
+The **Add Target** and **Edit Target** screens show the same configuration settings.
+
+{{< trueimage src="/images/SCALE/Shares/AddAuthorizedAccessScreen.png" alt="Add Authorized Access Screen" id="Add Authorized Access Screen" >}}
+
+{{< expand "Authentication Method and Group Settings" "v" >}}
+{{< truetable >}}
+| Setting | Description |
+|---------|-------------|
+| **Group ID** | Enter a number. Allows configuring different groups with different authentication profiles. For example, all users with a group ID of *1* inherit the authentication profile associated with *Group 1*. |
+| **Discover Authentication** | Select the discovery method for authentication from the dropdown list. iSCSI supports multiple authentication methods that targets use to discover valid devices. Options are: <br><li>**None** - Select to allow anonymous discovery. When set to **None**, you can leave an iSCSI Group **Authentication Method** set to **None** or empty.<br><li>**CHAP** - Select to use CHAP as the authentication method. If set to **CHAP** enter or create a new group on the **Add iSCSI Target**screen. |
+{{< /truetable >}}
+{{< /expand >}}
+
+{{< expand "User Settings" "v" >}}
+{{< truetable >}}
+| Setting | Description |
+|---------|-------------|
+| **User** | User account to create CHAP authentication with the user on the remote system. Many initiators use the initiator name as the user name. |
+| **Secret** | Enter the user password. Secret must be at least 12 and no more than 16 characters long. The screen displays a **Password does not match** error until you enter the same password in **Secret (Confirm)**. |
+| **Secret (Confirm)** | Enter the same password to confirm the user password. |
+{{< /truetable >}}
+{{< /expand >}}
+
+{{< expand "Peer Settings" "v" >}}
+{{< truetable >}}
+| Setting | Description |
+|---------|-------------|
+| **Peer User** | (Optional) Enter only when configuring mutual CHAP. Usually the same value as **User**. |
+| **Peer Secret** | Enter the mutual secret password. Required if entering a **Peer User**. Peer user must use a different password than the password in **Secret**. |
+| **Peer Secret (Confirm)** | Enter the same password to confirm the mutual secret password. |
+{{< /truetable >}}
+{{< /expand >}}

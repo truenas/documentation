@@ -89,15 +89,13 @@ There are also options to configure a remote syslog server for recording system 
 | **Syslog Server** | Enter the remote syslog server DNS hostname or IP address. Add a colon and the port number to the hostname to use non-standard port numbers, like *mysyslogserver:1928*. Log entries are written to local logs and sent to the remote syslog server. |
 | **Syslog Transport** | Enter the [transport protocol](https://tools.ietf.org/html/rfc8095) for the remote system log server connection. Selecting Transport Layer Security (TLS) displays the **Syslog TLS Certificate** and **Syslog TSL Certificate Authority** fields. This setting requires preconfiguring both the server system certificate and the certificate authority (CA). |
 | **Syslog TLS Certificate** | Displays after selecting **TLS** in **Syslog Transport**. Select the [transport protocol](https://tools.ietf.org/html/rfc8095) for the remote system log server TLS certificate from the dropdown list. Select the default or add the certificate and CA for the server using the **Credentials > Certificates** screen **Certificates** widget. |
-| **Syslog TLS Certificate Authority** | Displays after selecting **TLS** in **Syslog Transport**. Select the TLS CA for the TLS server from the dropdown list. If not using the default, create the CA for the systlog server TLS certificate on the **Credentials > Certificates > Certificate Authorities** screen. |
+| **Syslog TLS Certificate Authority** | Displays after selecting **TLS** in **Syslog Transport**. Select the TLS CA for the TLS server from the dropdown list. If not using the default, create the CA for the syslog server TLS certificate on the **Credentials > Certificates > Certificate Authorities** screen. |
 | **Include Audit Logs** | Select to enable audit logging.  |
 {{< /truetable >}}
 {{< /expand >}}
 
 ## Audit Widget
-
-The **Audit** widget displays the current audit storage and retention policy settings. The public-facing API allows querying
-audit records, exporting audit reports, and configuring audit dataset settings and retention periods.
+The **Audit** widget displays the current audit storage and retention policy settings. The public-facing [TrueNAS API]({{< relref "/SCALE/API/_index.md" >}}) allows querying audit records, exporting audit reports, and configuring audit dataset settings and retention periods.
 
 {{< trueimage src="/images/SCALE/SystemSettings/SystemAdvancedAuditWidget.png" alt="Advanced System Setting Audit Widget" id="Advanced System Setting Audit Widget" >}}
 
@@ -225,7 +223,7 @@ Users can move the system dataset to an unencrypted pool, or an encrypted pool w
 {{< trueimage src="/images/SCALE/SystemSettings/SystemStorageConfigScreen.png" alt="System Dataset Pool Config Screen" id="System Dataset Pool Config Screen" >}}
 
 Users can move the system dataset to a key-encrypted pool, but cannot change the pool encryption type afterward.
-If the encrypted pool already has a passphrase set, you cannot move the system dataset to that pool.
+You cannot move the system dataset to an encrypted pool with a passphrase set.
 
 ## Replication Widget
 
@@ -240,14 +238,13 @@ Click **Configure** to open the **Replication** configuration screen.
 Enter a number for the maximum number of simultaneous replication tasks you want to allow the system to process and click **Save**.
 
 ## Access Widget
-
-The **Access** widget displays a list of all active sessions, including the user who initiated the session and what time it started.
+The **Access** widget lists all active sessions, including the user who initiated them and when they started.
 It also displays the **Session Timeout** setting for your current session.
-It allows administrators to manage other active sessions and to configure the session timeout for their account.
+It allows administrators to manage other active sessions and configure the session timeout.
 
 {{< trueimage src="/images/SCALE/SystemSettings/AdvancedSystemSettingsAccessWidget.png" alt="Access Widget" id="Access Widget" >}}
 
-**Terminate Other Sessions** ends all sessions except for the one you are currently using.
+**Terminate Other Sessions** ends all sessions except the active session for the logged-in admin user.
 You can also end individual sessions by clicking the logout <span class="iconify" data-icon="PH:arrow-square-right"></span> icon next to that session if it is not the admin user session.
 You must check a confirmation box before the system allows you to end sessions.
 
@@ -258,7 +255,7 @@ It cannot be used to terminate your current session.
 TrueNAS logs out user sessions that are inactive for longer than the configured token setting.
 New activity resets the token counter.
 
-If the configured session timeout is exceeded, TrueNAS displays a **Logout** dialog with the exceeded ticket lifetime value and the time that the session is scheduled to terminate.
+If the configured session timeout is exceeded, TrueNAS displays a **Logout** dialog with the exceeded ticket lifetime value and the time the session is scheduled to terminate.
 
 {{< expand "Logout Dialog" "v" >}}
 {{< trueimage src="/images/SCALE/SystemSettings/TimeoutDialog.png" alt="Logout Dialog" id="Logout Dialog" >}}
@@ -267,13 +264,12 @@ If the configured session timeout is exceeded, TrueNAS displays a **Logout** dia
 If the button is not clicked, the TrueNAS terminates the session automatically and returns to the login screen.
 {{< /expand >}}
 
- **Configure** opens the **Token Settings** screen.
+ **Configure** opens the **Access Settings** screen.
 
-### Token Settings Screen
+### Access Settings Screen
+The **Access Settings** screen allows users to configure the **Session Timeout** for the current account.
 
-The **Token Settings** screen allows users to configure the **Session Timeout** for the current account.
-
-{{< trueimage src="/images/SCALE/SystemSettings/TokenSettingsScreen.png" alt="Token Settings Screen" id="Token Settings Screen" >}}
+{{< trueimage src="/images/SCALE/SystemSettings/AccessSettingsScreen.png" alt="Access Settings Screen" id="Access Settings Screen" >}}
 
 Select a value that fits your needs and security requirements.
 Enter the value in seconds.
@@ -283,6 +279,11 @@ The default lifetime setting is 300 seconds or five minutes.
 
 The maximum is 2147482 seconds, or 24 days, 20 hours, 31 minutes, and 22 seconds.
 {{< /hint >}}
+
+The **Login Banner** field allows specifying a text message the system shows before the TrueNAS login splash screen displays.
+**Continue** on the banner screen closes the screen, then shows the login splash screen.
+The maximum length of the banner text is 4096 characters including spaces. Long text wraps and banner text can use carriage returns to break up long messages to improve readability.
+Leave **Login Banner** empty to show just the login screen without interruption by a banner screen.
 
 ## Allowed IP Addresses Widget
 
@@ -295,7 +296,7 @@ The **Allowed IP Addresses** widget displays IP addresses and networks added to 
 {{< hint type="warning" >}}
 Entering an IP address to the allowed IP address list denies access to the UI or API for all other IP addresses not listed.
 
-Use only if you want to limit system access to a single or limited number of IP addresses. Leave the list blank to allow all IP addresses.
+Use only if limiting system access to a single or limited number of IP addresses. Leave the list blank to allow all IP addresses.
 {{< /hint >}}
 
 Click **Add** next to **Allowed IP Addresses** to add an entry to the allowed IP Addresses list.
@@ -383,14 +384,19 @@ The **Global Two Factor Authentication** widget allows you to set up two-factor 
 ## System Security Widget
 
 {{< enterprise >}}
-The **System Security** widget allows administrators of Enterprise-licensed systems to enable or disable FIPS 140-2 compliant algorithms.
-This requires a system reboot to apply the settings.
-High Availability (HA) systems reboot the standby controller and then prompt to failover and reboot the primary controller.
+The **System Security** widget allows administrators of Enterprise-licensed systems to enable or disable FIPS 140-2 compliant algorithms, and general-purpose OS STIG compliance.
+Changing FIPS or STIG settings requires a system reboot to apply setting changes.
 
-{{< trueimage src="/images/SCALE/SystemSettings/AdvancedSystemSecurityWidget.png" alt="System Security Widget" id="System Security Widget" >}}
+High Availability (HA) systems reboot the standby controller and then show a prompt to failover and reboot the primary controller.
+
+{{< trueimage src="/images/SCALE/SystemSettings/SystemAdvancedSecurityWidget.png" alt="System Security Widget" id="System Security Widget" >}}
 
 **Settings** opens the **System Security** configuration screen.
 
-Click the **Enable FIPS** toggle to enable or disable enforcement, then click **Save**.
+{{< trueimage src="/images/SCALE/SystemSettings/SystemSecurityScreen.png" alt="System Security Screen" id="System Security Screen" >}}
+
+The **Enable FIPS** toggle enables or disables enforcement.
+The **Enable General Purpose OS STIG compatibility mode** toggle enables or disables the STIG compliance implementation. Requires two-factor authentication for an admin user with full permissions before enabling STIG compatibility.
+**Save**.
 The system prompts to reboot (or failover for HA systems) to apply the settings.
 {{< /enterprise >}}

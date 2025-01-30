@@ -30,8 +30,7 @@ This article provides information on sysctl, system dataset pool, setting the ma
 
 ## Configuring System Auditing
 
-The **Audit** widget displays the current audit storage and retention policy settings. The public-facing API allows querying
-audit records, exporting audit reports, and configuring audit dataset settings and retention periods.
+The **Audit** widget displays the current audit storage and retention policy settings. The public-facing [TrueNAS API]({{< relref "/SCALE/API/_index.md" >}}) allows querying audit records, exporting audit reports, and configuring audit dataset settings and retention periods.
 
 {{< trueimage src="/images/SCALE/SystemSettings/SystemAdvancedAuditWidget.png" alt="Advanced System Setting Audit Widget" id="Advanced System Setting Audit Widget" >}}
 
@@ -71,7 +70,7 @@ It also stores Samba4 metadata, such as the user and group cache and share-level
 
 If the system has one pool, TrueNAS configures that pool as the system dataset pool.
 If your system has more than one pool, you can set the system dataset pool using the **Select Pool** dropdown.
-Users can move the system dataset to an unencrypted pool or a key-encrypted pool.
+Users can move the system dataset to an unencrypted or key-encrypted pool.
 
 ![SystemDatasetPoolConfigScreen](/images/SCALE/SystemSettings/SystemStorageConfigScreen.png "TrueNAS Advanced Settings System Dataset Pool Screen")
 
@@ -101,6 +100,26 @@ Entering an IP address limits access to the system to only the address(es) enter
 {{< include file="/static/includes/AccessSettingsWidget.md" >}}
 
 <div class="noprint">
+
+## Setting Up FIPS and STIG
+{{< enterprise >}}
+Only Enterprise-licensed systems show the **Security** widget and have access to FIPS and STIG settings.
+{{< /enterprise >}}
+
+To configure FIPS or STIG compliance on a TrueNAS server, you must first configure two-factor authentication for an admin user with full permissions.
+
+After configuring two-factor authentication, go to **System > Advanced Settings** and locate the **Security** widget.
+
+Click **Settings** to open the **System Security** configuration screen.
+
+![SystemSecurityScreen](/images/SCALE/SystemSettings/SystemSecurityScreen.png "System Security Screen")
+
+Select the toggle to enable FIPS and STIG, then click **Save**. You must enable FIPS with STIG!
+The system prompts you to reboot.
+
+![SecurityFIPSSTIGRebootDialog](/images/SCALE/SystemSettings/SecurityFIPSSTIGRebootDialog.png "Reboot Require Dialog")
+
+The system reboot takes several minutes to complete before showing the login screen.
 
 ## Contents
 

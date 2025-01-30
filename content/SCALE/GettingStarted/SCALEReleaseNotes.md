@@ -54,6 +54,25 @@ More details are available from [Software Releases]({{< relref "/TrueNASUpgrades
 
 * {{< include file="/static/includes/RESTAPIDeprecationNotice.md" >}}
 
+  {{< include file="/static/includes/APIDocs.md" >}}
+
+  You can access TrueNAS API documentation in the web interface by clicking <i class="material-icons" aria-hidden="true" title="laptop" style="vertical-align: top;">laptop</i> **My API Keys** on the top right toolbar <i class="material-icons" aria-hidden="true">account_circle</i> user settings dropdown menu to open the **User API Keys** screen.
+  Click **API Docs** to view API documentation.
+
+* 25.04 also introduces user-linked API access keys, allowing administrators to configure per-user access to the TrueNAS API.
+  Keys are revokable and can be configured to automatically expire on a preset date.
+  
+  {{< include file="/static/includes/API_AD.md" >}}
+
+  User-linked API keys allow for better integration of TrueNAS into third-party solutions.
+  Use this as a reference for projects that require direct TrueNAS integration.
+
+  {{< include file="/static/includes/APIKeyWarn.md" >}}
+
+  See [Managing API Keys]({{< relref "/scale/scaletutorials/toptoolbar/managingapikeys.md" >}}) for more information.
+
+  * {{< include file="/static/includes/APIKeyMigrate.md" >}}
+
 * The default libvirt account UID and GID is changed to to avoid possible clashes with user created Active Directory (AD) users. TrueNAS automatically updates libvirt UID and GIDs when upgraded to 25.04. Users attempting revert to 24.10 or an earlier release must manually review and update libvirt-qemu user and group IDs back to the values that were default in that version (64055:64055 for 24.10).
 
 ### Migrating Virtual Machines
@@ -117,11 +136,9 @@ For more details on feature flags, see [OpenZFS Feature Flags](https://openzfs.g
 
 ## 25.04 Nightly Development Changelog
 
-* The TrueNAS REST API is deprecated in TrueNAS 25.04 and replaced by the [TrueNAS websocket client](https://github.com/truenas/api_client). Full removal of the REST API is planned for a future release.
-* The default libvirt account UID & GID is changed to a less common value to avoid clashing with user created UID/GIDs. See Upgrade Notes above for more information ([NAS-131695](https://ixsystems.atlassian.net/browse/NAS-131695)).
+* The TrueNAS REST API is deprecated in TrueNAS 25.04 and replaced with a versioned JSON-RPC 2.0 over WebSocket API ([API Reference]({{< relref "/scale/api/_index.md" >}})). Full removal of the REST API is planned for a future release.
 * Improved API key mechanism with support for user-linked API keys ([NAS-131396](https://ixsystems.atlassian.net/browse/NAS-131396)).
-  Existing API keys created via the TrueNAS API (not UI or TrueCommand) that specify an allow list with white-listed API methods are revoked upon upgrade because there is no clean way to migrate to the new system.
-  Legacy API keys from TrueNAS 24.10 or earlier migrate to the root, admin, or truenas_admin account, depending on server configuration
+* The default libvirt account UID & GID is changed to a less common value to avoid clashing with user created UID/GIDs. See Upgrade Notes above for more information ([NAS-131695](https://ixsystems.atlassian.net/browse/NAS-131695)).
 
 <!--
 
