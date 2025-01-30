@@ -2069,3 +2069,11 @@ basedn
 UAF
 sendmail
 transcode
+Reolink
+OCI
+dedupcached
+dedupditto
+maxdnodesize
+maxblocksize
+tname
+iXVolumes
