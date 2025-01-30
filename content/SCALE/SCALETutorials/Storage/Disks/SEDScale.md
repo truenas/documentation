@@ -43,13 +43,6 @@ By default, SEDs are not locked until the administrator takes ownership of them.
 Ownership is taken by explicitly configuring a global or per-device password in the web interface and adding the password to the SEDs.
 Adding SED passwords in the web interface also allows TrueNAS to automatically unlock SEDs on boot.
 
-<!-- {{< hint type=info title="SEDs Unlock on Boot" >}}
-TrueNAS automatically unlocks SEDs on boot after a system restart or other shutdown event.
-
-TrueNAS Enterprise High Availability (HA) systems only unlock SEDs on the active controller.
-SEDs do not unlock on failover and must be manually unlocked using sedutil-cli.
-{{< /hint >}} -->
-
 A password-protected SED protects the data stored on the device when the device is physically removed from the system.
 This allows secure disposal of the device without having to first wipe the contents.
 Repurposing a SED on another system requires the SED password or a full cryptographic erase with [PSID revert](https://github.com/truenas/sedutil/blob/22ecc4f56e84239f780856b56185267e4b225d43/docs/sedutil-cli.8#L68).
