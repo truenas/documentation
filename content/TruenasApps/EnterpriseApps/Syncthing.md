@@ -15,7 +15,7 @@ keywords:
 - enterprise data storage
 ---
 
-{{< include file="/static/includes/apps/SCALEEnterpriseApps.md" >}}
+{{< include file="/static/includes/apps/EnterpriseApps.md" >}}
 
 {{< include file="/static/includes/apps/SyncthingArticleIntro.md" >}}
 
