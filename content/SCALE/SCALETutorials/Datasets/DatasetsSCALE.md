@@ -80,6 +80,34 @@ To change any setting that datasets inherit from the parent, select an available
 ### Setting Datasets Access Controls
 For information on ACL settings see [Setting Up Permissions]({{< relref "PermissionsSCALE.md" >}}).
 
+### Adding Deduplication
+Deduplication is found on the **Add Datasets Advanced Settings** screen.
+
+{{< hint type=info >}}
+Best practice is to add deduplication when you first create the dataset.
+
+You can add deduplication to an existing dataset but existing files do not have deduplication applied to them.
+Adding deduplication to an existing dataset only applies deduplication to data written after you enable the function.
+
+When enabling deduplication for a dataset of a pool that does not have a deduplication or special VDEV, the deduplication table (DDT) is stored on a regular VDEVs of the pool.
+To store the DDT outside of the regular VDEVs, add a deduplication or special VDEV to the pool.
+{{< /hint >}}
+To add deduplication to a new dataset, after entering the name and selecting the dataset preset, click **Advanced Settings**.
+
+To add deduplication to an existing dataset, select the dataset on the **Dataset** screen tree table, click **Edit** on the **Dataset Details** widget to open the **Edit Dataset** screen. Click **Advanced Settings**.
+
+Scroll down to the **ZFS Deduplication** setting, then change to **On**.
+A warning dialog opens and states that deduplication is an experimental and not fully supported feature.
+
+{{< trueimage src="/images/SCALE/Storage/DedupWarningDialog.png" alt="Deduplication Warning" id="Deduplication Warning" >}}
+
+Click **Continue**.
+
+Change **Checksum** to **SHA512**.
+
+Complete any other setting changes you want to make, then click **Save**.
+
+
 ## Creating a Dataset for a Fusion Pool
 First, add the [pool with a Metadata VDEV]({{< relref "FusionPoolsSCALE.md" >}}).
 
