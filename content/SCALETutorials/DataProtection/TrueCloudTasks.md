@@ -24,12 +24,12 @@ To take advantage of the lower-cost benefits of the TrueCloud backup service, yo
 
 You must also create and authorize the storage buckets on Storj for use by SCALE.
 
-iXsystems is not responsible for any charges incurred using a third-party vendor with the TrueCloud backup feature.
+iXsystems is not responsible for charges incurred using a third-party vendor with the TrueCloud backup feature.
 {{< /hint >}}
 
 ## TrueCloud Backup Task Requirements
 
-You must have all system storage (pool and datasets or zvols) configured and ready to receive or send data.
+You must configure all system storage (pool and datasets or zvols) and have them ready to receive or send data.
 
 ## Creating a TrueCloud Backup Task
 
@@ -61,7 +61,7 @@ To add the TrueCloud backup task, go to **Data Protection > TrueCloud Backup Tas
 
 1. Click **Add** to open the **Add TrueCloud Backup Task** screen.
 
-   {{< trueimage src="/images/SCALE/DataProtection/AddTrueCloudTask.png" alt="Add TrueCloud Backup Task" id="Add TrueCloud Backup Task" >}}
+   {{< trueimage src="/images/SCALE/DataProtection/AddTrueCloudTaskBasicOptions.png" alt="Add TrueCloud Backup Task" id="Add TrueCloud Backup Task" >}}
 
 2. Enter or browse to select the local **Source Path** to the directories or files you want sent to the cloud for backup.
    Click the arrow to the left of the name to expand it, then click on the name to select it.
@@ -69,11 +69,11 @@ To add the TrueCloud backup task, go to **Data Protection > TrueCloud Backup Tas
 3. Select the Storj credential on the **Credentials** dropdown list.
    You can select **Add New** to create the Storj credential if you skipped the instructions above.
 
-4. Select the the Storj bucket to use from the **Bucket** dropdown list.
+4. Select the Storj bucket to use from the **Bucket** dropdown list.
 
    If you have not previously created a TrueNAS compatible Storj bucket, select **Add New** and follow the procedure in [Creating a TrueNAS Storj Bucket](#creating-a-truenas-storj-bucket).
 
-   Click the arrow icon for the **Folder** field to expand the dropdown list and select the desired folder in the Storj bucket or enter a folder path.
+   Click the arrow icon for the **Folder** field to expand the dropdown list and select the desired folder in the Storj bucket, or enter a folder path.
    Enter `/name`, where *name* is a folder that does not exist, to create a new folder in the Storj bucket.
 
 5. Enter a name for the task under **Task Settings**.
@@ -99,18 +99,20 @@ The task status changes to **SUCCESS** when complete.
 
 **Advanced Options** and **Advanced Remote Options** contain additional settings for advanced users.
 
-To take a snapshot before transferring data to Storj, select **Take Snapshot**.
+<!-- <to be readded at a later date> To take a snapshot before transferring data to Storj, select **Take Snapshot**.
 This option is not available for datasets with child datasets.
+-->
 
 Advanced users can write scripts that run immediately before or after the TrueCloud backup task.
 Enter environment variables in either the **Pre-script** or **Post-script** fields.
 The **Post-script** field only runs when the TrueCloud backup task succeeds.
+See [TrueCloud Backup Tasks Screens]({{< relref "truecloudbackuptasksscreen.md #advanced-options-settings" >}}) for information on available environment variables.
 
 Use **Exclude** to enter a list of files and directories to exclude from sync.
-Separate entries by pressing <kbd>Enter</kbd>.
+Press <kbd>Enter</kbd> to separate entries.
 See [TrueCloud Backup Tasks Screens]({{< relref "truecloudbackuptasksscreen.md #advanced-options-settings" >}}) for syntax examples.
 
-Use **Transfers** and **Bandwidth Limit** to prevent excess resource consumption and set a bandwidth availability schedule.
+Use **Transfer Settings** to prevent excess resource consumption by setting the pack size and read concurrency.
 
 ## Managing TrueCloud Tasks
 

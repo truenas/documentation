@@ -18,7 +18,7 @@ The **Cloud Sync Task** widget shows a list of tasks configured on the system.
 
 {{< trueimage src="/images/SCALE/DataProtection/CloudSyncTaskWidget.png" alt="Cloud Sync Task Widget" id="Cloud Sync Task Widget" >}}
 
-The widget shows **No Cloud Sync Tasks configured** until cloud sync task are added.
+The widget shows **No Cloud Sync Tasks configured** until cloud sync tasks are added.
 
 {{< trueimage src="/images/SCALE/DataProtection/CloudSyncTaskWidgetNoTasks.png" alt="No Cloud Sync Tasks" id="No Cloud Sync Tasks" >}}
 
@@ -50,7 +50,7 @@ The **Cloud Sync Task** screen lists all tasks configured on the system.
 
 {{< trueimage src="/images/SCALE/DataProtection/CloudSyncTasksScreen.png" alt="Cloud Sync Task Screen" id="Cloud Sync Task Screen" >}}
 
-Expand any task to see details on the configured task, such as the cloud sync provider, direction, transfer mode, path to the dataset or directories and other options for that task.
+Expand any task to see details on the configured task, such as the cloud sync provider, direction, transfer mode, path to the dataset or directories, and other options for that task.
 
 {{< trueimage src="/images/SCALE/DataProtection/CloudSyncTasksScreenTaskDetails.png" alt="Cloud Sync Task Details" id="Cloud Sync Task Details" >}}
 
@@ -77,7 +77,7 @@ It includes two screens, **Provider** and **What and When**.
 
 ### Provider Wizard Screen
 The **Provider** wizard screen allows you to select the cloud sync provider with the **Credentials** dropdown.
-Select the provider from the dropdown list to show the additional credential settings that provider requires to establish a connection.
+Select the provider from the dropdown list to show the additional credential settings that the provider requires to establish a connection.
 
 {{< trueimage src="/images/SCALE/DataProtection/CloudSyncTaskWizardProviderScreen.png" alt="Cloudsync Task Wizard Provider Screen" id="Cloudsync Task Wizard Provider Screen" >}}
 
@@ -97,12 +97,12 @@ The **Advanced Options** button shows at the bottom of this screen as well.
 
 ## Advanced Options and Edit Cloud Sync Task Screens
 The **Advanced Options** accessed from the **Cloudsync Task Wizard** and **Edit Cloud Sync Task** display the same settings.
-Settings are grouped into the the **Transfer**, **Remote**, **Control**, and **Advanced Options** for advanced users.
+Settings are grouped into **Transfer**, **Remote**, **Control**, and **Advanced Options**.
 
 The **Manage Credentials** link opens the [Backup Credentials]({{< relref "/SCALEUIReference/Credentials/BackupCredentials/_index.md" >}}) screen.
 
 ###  Transfer Settings
-**Transfer** settings change the cloud sync task direction (**PUSH** or **PULL**), data transfer method (**COPY**, **MOVE**, or **SYNC**), and allows selecting the dataset or directory to use in the task. Selecting the dataset or file populates the **Directory/Files** field.
+**Transfer** settings change the cloud sync task direction (**PUSH** or **PULL**), data transfer method (**COPY**, **MOVE**, or **SYNC**), and allow selecting the dataset or directory to use in the task. Selecting the dataset or file populates the **Directory/Files** field.
 
 {{< trueimage src="/images/SCALE/DataProtection/AddCloudSyncTaskPushTransferRemote.png" alt="Add Cloud Sync Task Remote Settings" id="Add Cloud Sync Task Remote Settings" >}}
 
@@ -125,8 +125,8 @@ The **Manage Credentials** link opens the **Backup Credentials** screen where yo
 {{< truetable >}}
 | Settings | Description |
 |----------|-------------|
-| **Credential** | Select an exiting backup cloud storage provider credential from the dropdown list. A **Bucket** setting displays after selecting a credential that uses S3, like **Amazon S3**. TrueNAS automatically validates the selected credential. |
-| **Bucket** | Select the pre-defined bucket S3 to use. For Storj-iX credentials, select **Add New** to open the **Add Bucket** screen and create new bucket on your Storj account from the TrueNAS UI. |
+| **Credential** | Select an existing backup cloud storage provider credential from the dropdown list. A **Bucket** setting displays after selecting a credential that uses S3, like **Amazon S3**. TrueNAS automatically validates the selected credential. |
+| **Bucket** | Select the pre-defined bucket S3 to use. For Storj-iX credentials, select **Add New** to open the **Add Bucket** screen and create a new bucket on your Storj account from the TrueNAS UI. |
 | **Folder** | Enter or click the <span class="material-icons">arrow_right</span> arrow to the left of the folder icon and at each dataset or directory to reach the storage location to use for this task. |
 {{< /truetable >}}
 
@@ -184,11 +184,11 @@ The **Advanced Remote Options** settings are for advanced users to configure rem
 {{< truetable >}}
 | Settings | Description |
 |----------|-------------|
-| **Remote Encryption** | Select to use [rclone crypt](https://rclone.org/crypt/) encryption during pull and push transfers. Selecting **PUSH** in **Direction** encrypts files before transfer and stores the encrypted files on the remote system. Files are encrypted using the encryption password and encryption salt values. Selecting **PULL** decrypts files stored on the remote system before the transfer. Transferring the encrypted files requires entering the same encryption password and encryption salt used to encrypt the files. Additional details about the encryption algorithm and key derivation are available in the [rclone crypt File formats documentation](https://rclone.org/crypt/#file-formats). |
-| **Filename Encryption** | **Not recommended** (see below). When selected, transfers encrypt and decrypt file names with the rclone [Standard file name encryption mode](https://rclone.org/crypt//#file-name-encryption-modes). The original directory structure of the files is preserved. <br>When enabled, file names are encrypted, file names are limited to 143 characters, directory structure is visible, and files with identical names have identical uploaded names. File names can use sub-paths, single copy files, and shortcuts to shorten the directory recursion. <br>When disabled, encryption does not hide file names or directory structure, file names can be 246 characters long, use sub-paths, and copy single files. |
-| **Encryption Password** | Enter the password to encrypt and decrypt remote data.<br>Warning: Always securely back up this password! Losing the encryption password results in data loss. |
-| **Encryption Salt** | Enter a long string of random characters for use as salt for the encryption password.<br>Warning: Always securely back up the encryption salt value! Losing the salt value results in data loss. |
-| **Transfers** | Enter the number of simultaneous file transfers. Enter a number based on the available bandwidth and destination system performance. See [rclone --transfers](https://rclone.org/docs/#transfers-n). |
+| **Remote Encryption** | Select to use [rclone crypt](https://rclone.org/crypt/) encryption during pull and push transfers. Selecting **PUSH** in **Direction** encrypts files before transfer and stores the encrypted files on the remote system. Files are encrypted using the encryption password and encryption salt values. Selecting **PULL** decrypts files stored on the remote system before the transfer. Transferring the encrypted files requires entering the same encryption password and encryption salt used to encrypt the files. Additional details about the encryption algorithm and key derivation are available in the [rclone crypt File formats documentation](https://rclone.org/crypt/#file-formats). Selecting **Remote Encryption** shows the **Filename Encryption**, **Encryption Password**, and **Encryption Salt** settings. |
+| **Filename Encryption** | **Not recommended** (see below). Shows after selecting **Remote Encryption**. When selected, transfers encrypt and decrypt file names with the rclone [Standard file name encryption mode](https://rclone.org/crypt//#file-name-encryption-modes). The original directory structure of the files is preserved. <br>When enabled, file names are encrypted, file names are limited to 143 characters, directory structure is visible, and files with identical names have identical uploaded names. File names can use sub-paths, single-copy files, and shortcuts to shorten the directory recursion. <br>When disabled, encryption does not hide file names or directory structure, file names can be 246 characters long, and you can use sub-paths, and copy single files. |
+| **Encryption Password** | Shows after selecting **Remote Encryption**. Enter the password to encrypt and decrypt remote data.<br>Warning: Always securely back up this password! Losing the encryption password results in data loss. |
+| **Encryption Salt** | Shows after selecting **Remote Encryption**. Enter a long string of random characters for use as salt for the encryption password.<br>Warning: Always securely back up the encryption salt value! Losing the salt value results in data loss. |
+| **Transfers** | Select the option for the number of simultaneous file transfers based on the available bandwidth and destination system performance from the dropdown list. Options: **Low Bandwidth(4)**, **Medium Bandwidth (8)**, **High Bandwidth(16)**, and **Custom**. See [rclone --transfers](https://rclone.org/docs/#transfers-n). |
 | **Bandwidth limit** | Enter a single bandwidth limit or bandwidth limit schedule in rclone format. For example: *08:00,512 12:00,10MB 13:00,512 18:00,30MB 23:00,off*. Separate entries by pressing <kbd>Enter</kbd>. You can specify units with the beginning letter **b**, **k** (default), **M**, or **G**. See [rclone --bwlimit](https://rclone.org/docs/#bwlimit-bandwidth-spec). |
 {{< /truetable >}}
 
