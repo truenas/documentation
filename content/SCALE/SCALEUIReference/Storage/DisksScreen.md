@@ -164,7 +164,7 @@ Click **Edit Disk** on the **[Devices]({{< relref "DevicesScreensSCALE.md" >}})*
 | Setting | Description |
 |---------|-------------|
 | **Critical** | Enter a threshold temperature in Celsius. If the drive temperature is higher than this value, TrueNAS creates a LOG_CRIT level log entry and sends an email to the address entered in the [Alerts]({{< relref "/SCALE/SCALEUIReference/TopToolbar/Alerts/EmailScreens.md" >}}). Enter **0** to disable this check. |
-| **Difference** | Enter a value in degrees Celsius that triggers a report if the temperature of a drive changes by this value since the last report. Enter **0** to disable this check. |
+| **Difference** | Enter a value in degrees Celsius that triggers a report if the drvie temperature changes by this value since the last report. Enter **0** to disable this check. |
 | **Informational** | Enter a value in degrees Celsius that triggers a report if the drive temperature is at or above this temperature. Enter **0** to disable this check. |
 {{< /truetable >}}
 
