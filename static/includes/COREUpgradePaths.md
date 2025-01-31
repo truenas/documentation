@@ -12,7 +12,7 @@
       {{< mermaid class="mermaid_sizing" >}}
       flowchart LR
       A["11.3-U5"] -->|update| B["12.0-U8.1"]
-      B -->|update| C["13.0-U6.3"]
+      B -->|update| C["13.0-U6.7"]
       C -->|update| D["13.3-U1.1"]
       {{< /mermaid >}}
     </div>
@@ -21,7 +21,7 @@
       {{< mermaid class="mermaid_sizing" >}}
       flowchart LR
       A["11.3-U5"] -->|update| B["12.0-U8.1"]
-      B -->|update| C["13.0-U6.3"]
+      B -->|update| C["13.0-U6.7"]
       {{< /mermaid >}}
     </div>
 </div>

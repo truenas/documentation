@@ -8,10 +8,10 @@ majorVersions:
     name: "TrueNAS 13.0"
     releaseName: "13.0"
     releases:
-      - name: "13.0-U6.3"
+      - name: "13.0-U6.7"
         type: "Maintenance"
         link: "https://www.truenas.com/docs/core/13.0/gettingstarted/corereleasenotes/"
-        releaseDate: "2024-11-21"
+        releaseDate: "2025-01-24"
         latest: true
   - lifecycle: "Current"
     name: "TrueNAS 13.3"
