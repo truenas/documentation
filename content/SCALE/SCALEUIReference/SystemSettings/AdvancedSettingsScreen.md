@@ -40,6 +40,7 @@ The **Advanced Settings** screen provides configuration options for the console,
 {{< trueimage src="/images/SCALE/SystemSettings/SystemAdvancedScreen2.png" alt="TrueNAS Advanced Settings Screen" id="TrueNAS Advanced Settings Screen" >}}
 
 ## Console Widget
+
 The **Console** widget displays the current console settings for TrueNAS.
 
 {{< trueimage src="/images/SCALE/SystemSettings/AdvancedSystemSettingsConsoleWidget.png" alt="Console Widget" id="Console Widget" >}}
@@ -47,6 +48,7 @@ The **Console** widget displays the current console settings for TrueNAS.
 **Configure** opens the **[Console](#console-configuration-screen)** configuration screen.
 
 ### Console Configuration Screen
+
 **Console** settings configure how the [Console Setup menu]({{< relref "ConsoleSetupMenuSCALE.md" >}}) displays, the serial port it uses and the port speed, and the banner users see when accessing it.
 
 {{< trueimage src="/images/SCALE/SystemSettings/ConsoleConfigScreen.png" alt="Console Config Screen" id="Console Config Screen" >}}
@@ -64,6 +66,7 @@ The **Console** widget displays the current console settings for TrueNAS.
 {{< /expand >}}
 
 ## Syslog Widget
+
 The **Syslog** widget displays the existing system logging settings that specify how and when the system sends log messages to the syslog server.
 
 {{< trueimage src="/images/SCALE/SystemSettings/AdvancedSystemSettingsSyslogWidget.png" alt="Syslog Widget" id="Syslog Widget" >}}
@@ -71,6 +74,7 @@ The **Syslog** widget displays the existing system logging settings that specify
 **Configure** opens the **[Syslog](#syslog-configuration-screen)** configuration screen.
 
 ### Syslog Configuration Screen
+
 The **Syslog** settings specify the logging level the system uses to record system events to the boot device.
 There are also options to configure a remote syslog server for recording system events.
 
@@ -96,11 +100,13 @@ The **Audit** widget displays the current audit storage and retention policy set
 {{< trueimage src="/images/SCALE/SystemSettings/SystemAdvancedAuditWidget.png" alt="Advanced System Setting Audit Widget" id="Advanced System Setting Audit Widget" >}}
 
 ### Configure Auditing
+
 {{< include file="/static/includes/ConfigureSystemAuditSCALE.md" >}}
 
 Click **Configure** to open the **Audit** configuration screen and [manage storage and retention policies]({{< relref "AuditingSCALE.md#configuring-audit-storage-and-retention-policies" >}})
 
 ## Kernel Widget
+
 The **Kernel** widget shows options for configuring the Linux kernel installed with TrueNAS.
 
 {{< trueimage src="/images/SCALE/SystemSettings/SystemSettingsAdvancedKernel.png" alt="Kernel Widget" id="Kernel Widget" >}}
@@ -114,6 +120,7 @@ The **Kernel** widget shows options for configuring the Linux kernel installed w
 {{< /expand >}}
 
 ## Cron Jobs Widget
+
 The **Cron Jobs** widget displays **No Cron Jobs configured** until you add a cron job, then it shows the information on cron job(s) configured on the system.
 
 {{< trueimage src="/images/SCALE/SystemSettings/AdvancedSettingsCronJobWidget.png" alt="Cron Job Widget" id="Cron Job Widget" >}}
@@ -123,6 +130,7 @@ The **Cron Jobs** widget displays **No Cron Jobs configured** until you add a cr
 Click on any job listed in the widget to open the **[Edit Cron Jobs](#add-or-edit-cron-job-configuration-screen)** configuration screen populated with the settings for that cron job.
 
 ### Add or Edit Cron Job Configuration Screen
+
 The **Add Cron Job** and **Edit Cron Job** configuration screens display the same settings.
 
 **Cron Jobs** lets users configure jobs that run specific commands or scripts on a regular schedule using [cron(8)](https://manpages.debian.org/testing/cron/cron.8.en.html "Cron Man Page"). Cron jobs help users run repetitive tasks.
@@ -144,6 +152,7 @@ The **Add Cron Job** and **Edit Cron Job** configuration screens display the sam
 {{< /expand >}}
 
 ## Init/Shutdown Scripts Widget
+
 The **Init/Shutdown Scripts** widget displays **No Init/Shutdown Scripts configured** until you add either a command or script, then the widget lists the scrips configured on the system.
 
 {{< trueimage src="/images/SCALE/SystemSettings/AdvancedSystemInitShutdownScriptWidget.png" alt="Init/Shutdown Scripts Widget" id="Init/Shutdown Scripts Widget" >}}
@@ -152,6 +161,7 @@ The **Init/Shutdown Scripts** widget displays **No Init/Shutdown Scripts configu
 Any script listed is a link that opens the **[Edit Init/Shutdown Script](#add-or-edit-initshutdown-script-configuration-screens)** configuration screen populated with the settings for that script.
 
 ### Add or Edit Init/Shutdown Script Configuration Screens
+
 **Init/Shutdown Scripts** lets users schedule commands or scripts to run at system startup or shutdown.
 
 {{< trueimage src="/images/SCALE/SystemSettings/AddInitShutdownScriptConfigScreen.png" alt="Add Init/Shutdown Scripts" id="Add Init/Shutdown Scripts" >}}
@@ -171,6 +181,7 @@ Any script listed is a link that opens the **[Edit Init/Shutdown Script](#add-or
 {{< /expand >}}
 
 ## Sysctl Widget
+
 The **Sysctl** widget displays either **No Sysctl configured** or the existing sysctl settings on the system.
 
 {{< trueimage src="/images/SCALE/SystemSettings/AdvancedSysctlWidget.png" alt="Sysctl Widget" id="Sysctl Widget" >}}
@@ -194,6 +205,7 @@ The **Add Sysctl** or **Edit Sysctl** configuration screen settings let users se
 {{< /expand >}}
 
 ## Storage Widget
+
 **Storage** widget displays the pool configured as the system dataset pool and allows users to select the storage pool they want to hold the system dataset.
 The system dataset stores core files for debugging and keys for encrypted pools. It also stores Samba4 metadata, such as the user and group cache and share-level permissions.
 
@@ -202,6 +214,7 @@ The system dataset stores core files for debugging and keys for encrypted pools.
 **Configure** opens the **Storage Settings** configuration screen.
 
 ### Storage Settings Configuration Screen
+
 If the system has one pool, TrueNAS configures that pool as the system dataset pool.
 If your system has more than one pool, you can set the system dataset pool using the **Select Pool** dropdown.
 Users can move the system dataset to an unencrypted pool, or an encrypted pool without passphrases.
@@ -212,6 +225,7 @@ Users can move the system dataset to a key-encrypted pool, but cannot change the
 You cannot move the system dataset to an encrypted pool with a passphrase set.
 
 ## Replication Widget
+
 The **Replication** widget displays the number of replication tasks that can execute simultaneously on the system. It allows users to adjust the maximum number of replication tasks the system can perform simultaneously.
 
 {{< trueimage src="/images/SCALE/SystemSettings/SystemAdvancedSettingsReplicationWidget.png" alt="Replication Widget" id="Replication Widget" >}}
@@ -272,6 +286,7 @@ The maximum length of the banner text is 4096 characters including spaces. Long 
 Leave **Login Banner** empty to show just the login screen without interruption by a banner screen.
 
 ## Allowed IP Addresses Widget
+
 The **Allowed IP Addresses** widget displays IP addresses and networks added to the system that are allowed to use the API and UI. If this list is empty, then all IP addresses are allowed to use API and UI.
 
 {{< trueimage src="/images/SCALE/SystemSettings/AdvancedSystemAllowedIPAddressesWidget.png" alt="Allowed IP Addresses Widget" id="Allowed IP Addresses Widget" >}}
@@ -296,6 +311,9 @@ A **Restart Web Service** dialog opens.
 Select **Confirm** and then **Continue** to restart the web UI and apply changes.
 
 ## Self-Encrypting Drive Widget
+
+{{< include file="/static/includes/SEDEnterpriseAdmonition.md" >}}
+
 The **Self-Encrypting Drive** (SED) widget displays the system ATA security user and password.
 
 {{< trueimage src="/images/SCALE/SystemSettings/AdvancedSystemSEDWidget.png" alt="Self-Encrypting Drive Widget" id="Self-Encrypting Drive Widget" >}}
@@ -303,6 +321,7 @@ The **Self-Encrypting Drive** (SED) widget displays the system ATA security user
 **Configure** opens the **[Self-Encrypting Drive](#self-encrypting-drive-configuration-screen)** configuration screen.
 
 ### Self-Encrypting Drive Configuration Screen
+
 The **Self-Encrypting Drive** configuration screen allows users to set the ATA security user and create a SED global password.
 
 {{< trueimage src="/images/SCALE/SystemSettings/AdvancedSystemSelfEncryptingDriveConfigScreen.png" alt="Self-Encrypting Drive Config Screen" id="Self-Encrypting Drive Config Screen" >}}
@@ -311,13 +330,14 @@ The **Self-Encrypting Drive** configuration screen allows users to set the ATA s
 {{< truetable >}}
 | Settings | Description |
 |----------|-------------|
-| **ATA Security User** | Select the user passed to `camcontrol security -u` to unlock SEDs from the dropdown list. Options are **USER** or **MASTER**. |
+| **ATA Security User** | Select the user to unlock SEDs from the dropdown list. Options are **USER** or **MASTER**. |
 | **SED Password** | Enter the global password to unlock SEDs. |
 | **Confirm SED Password** | Re-enter the global password to unlock SEDs. |
 {{< /truetable >}}
 {{< /expand >}}
 
 ## Isolated GPU Device(s) Widget
+
 The **Isolated GPU Device(s)** widget displays any isolated graphics processing unit (GPU) device(s) configured on your system.
 
 {{< trueimage src="/images/SCALE/SystemSettings/AdvancedSettingIsolatedGPUDeviceWidget.png" alt="Isolated GPU Device Widget" id="Isolated GPU Device Widget" >}}
@@ -325,6 +345,7 @@ The **Isolated GPU Device(s)** widget displays any isolated graphics processing 
 **Configure** opens the **Isolated GPU PCI Ids** screen, which allows users to isolate additional GPU devices.
 
 ### Isolated GPU PCI IDs Configuration Screen
+
 The **Isolate GPU PCI IDs** configuration screen allows you to isolate GPU devices for a virtual machine (VM).
 
 To isolate a GPU, you must have at least two in your system; one allocated to the host system for system functions and/or applications, and the other available to isolate for use by a VM.
@@ -339,6 +360,7 @@ To allocate an isolated GPU device, select it while creating or editing the VM c
 When allocated to a VM, the isolated GPU connects to the VM as if it were physically installed in that VM and becomes unavailable for any other allocations.
 
 ## Global Two Factor Authentication Widget
+
 The **Global Two Factor Authentication** widget allows you to set up two-factor authentication (2FA) for your system.
 
 {{< trueimage src="/images/SCALE/SystemSettings/GlobalTwoFactorAuthenticationWidget.png" alt="Global Two Factor Authentication Widget" id="Global Two Factor Authentication Settings Widget" >}}
@@ -360,6 +382,7 @@ The **Global Two Factor Authentication** widget allows you to set up two-factor 
 {{< /expand >}}
 
 ## System Security Widget
+
 {{< enterprise >}}
 The **System Security** widget allows administrators of Enterprise-licensed systems to enable or disable FIPS 140-2 compliant algorithms, and general-purpose OS STIG compliance.
 Changing FIPS or STIG settings requires a system reboot to apply setting changes.
