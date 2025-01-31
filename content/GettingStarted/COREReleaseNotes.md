@@ -75,6 +75,19 @@ The items listed here represent new feature flags implemented since the previous
 
 For more details on feature flags see [OpenZFS Feature Flags](https://openzfs.github.io/openzfs-docs/Basic%20Concepts/Feature%20Flags.html) and [OpenZFS zpool-feature.7](https://openzfs.github.io/openzfs-docs/man/7/zpool-features.7.html).
 
+## 13.3-U1.1 Changelog
+
+**January 31, 2025**
+
+iXsystems is pleased to release TrueNAS 13.3-U1.1!
+
+This is a maintenance release with important updates for the rsync service.
+
+* Updates to the rsync daemon mode to address recent CVEs ([NAS-133561](https://ixsystems.atlassian.net/browse/NAS-133561)).
+  See the [TrueNAS Security Advisories](https://security.truenas.com/) for more details about the CVEs, including the iXsystems response.
+
+* Port additional upstream fix for the rsync daemon ([NAS-133755](https://ixsystems.atlassian.net/browse/NAS-133755)).
+
 ## 13.3-U1 Changelog
 
 **November 21, 2024**

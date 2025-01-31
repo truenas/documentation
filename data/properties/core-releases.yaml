@@ -17,10 +17,10 @@ majorVersions:
     name: "TrueNAS 13.3"
     releaseName: "13.3"
     releases:
-      - name: "13.3-U1"
+      - name: "13.3-U1.1"
         type: "Stable"
-        link: "https://www.truenas.com/docs/core/13.3/gettingstarted/corereleasenotes/#133-u1-changelog"
-        releaseDate: "2024-11-21"
+        link: "https://www.truenas.com/docs/core/13.3/gettingstarted/corereleasenotes/"
+        releaseDate: "2025-01-31"
         latest: true
   - lifecycle: "Next"
     name: "TBD"
