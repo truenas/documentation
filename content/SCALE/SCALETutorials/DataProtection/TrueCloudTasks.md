@@ -103,7 +103,7 @@ The task status changes to **SUCCESS** when complete.
 
 {{< trueimage src="/images/SCALE/DataProtection/AddTrueCloudTaskAdvancedOptions.png" alt="Add TrueCloud Backup Task Advanced Options" id="Add TrueCloud Backup Task Advanced Options" >}}
 
-<!-- <to be re-added at a later date> <!-- <to be readded at a later date> To take a snapshot before transferring data to Storj, select **Take Snapshot**.
+<!-- <to be re-added at a later date> To take a snapshot before transferring data to Storj, select **Take Snapshot**.
 This option is not available for datasets with child datasets.
 -->
 
