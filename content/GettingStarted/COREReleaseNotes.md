@@ -77,7 +77,7 @@ For more details on feature flags see [OpenZFS Feature Flags](https://openzfs.gi
 
 ## 13.3-U1.1 Changelog
 
-**January 28, 2025**
+**January 31, 2025**
 
 iXsystems is pleased to release TrueNAS 13.3-U1.1!
 
