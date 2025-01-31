@@ -20,7 +20,7 @@ majorVersions:
       - name: "13.3-U1.1"
         type: "Stable"
         link: "https://www.truenas.com/docs/core/13.3/gettingstarted/corereleasenotes/"
-        releaseDate: "2025-01-28"
+        releaseDate: "2025-01-31"
         latest: true
   - lifecycle: "Next"
     name: "TBD"
