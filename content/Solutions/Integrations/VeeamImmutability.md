@@ -30,7 +30,7 @@ For more detailed information on Veeam Immutability, see [How Immutability Works
 * Deploy the MinIO Enterprise app in an MNMD configuration.
   Cluster consists of four systems (nodes), each with four datasets (representing drives in the cluster configuration).
 * Verify the MinIO service shows the correct number of nodes and drives, indicating it received the TrueNAS MinIO app deployment configuration.
-* Set up and configure Veeam Immutatbility. Configuring a new bucket and the immutability settings to use the MinIO app in TrueNAS as the S3-compatible object storage.
+* Set up and configure Veeam Immutability. Configuring a new bucket and the immutability settings to use the MinIO app in TrueNAS as the S3-compatible object storage.
 
 
 ## Configuring TrueNAS and the MinIO Enterprise App
