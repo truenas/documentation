@@ -14,7 +14,7 @@ TrueNAS Enterprise systems can act as S3-compatible object storage for Veeam Bac
 Immutability is a feature of Veeam Backup & Replication. When configured with storage solutions such as TrueNAS, it prevents modifying or deleting data for a specified period of time.
 Set the the immutability period based on your needs. After this period expires, backed up data can be modified or deleted again.
 
-The immuntability feature increases data security, protects data from losses incured through malware, attacks, or other harmful actions by bad actors. It can be used to protect configuration backups.
+The immutability feature increases data security, protects data from losses incurred through malware, attacks, or other harmful actions by bad actors, and can protect configuration backups.
 Veeam makes this feature available to work with a number of storage options such as S3 or S3-compatible object repositories.
 
 ## How does Veeam Immutability work?
