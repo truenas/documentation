@@ -82,7 +82,7 @@ If setting up a cluster configuration, see [Multi-Mode Configuration](#multi-mod
 {{< include file="/static/includes/apps/InstallWizardUserAndGroupConfig.md" >}}
 
 {{< include file="/static/includes/apps/MinIOEnterpriseNetworkConfig.md" >}}
-If using MinIO for S3 object storage for Veeam Immutability, add the certificate.
+If using MinIO for Veeam Immutability S3 object storage, add the certificate.
 
 Scroll down to or click on **Storage Configuration** on the list of wizard sections.
 

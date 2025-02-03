@@ -32,7 +32,6 @@ For more detailed information on Veeam Immutability, see [How Immutability Works
 * Verify the MinIO service shows the correct number of nodes and drives, indicating it received the TrueNAS MinIO app deployment configuration.
 * Set up and configure Veeam Immutability. Configuring a new bucket and the immutability settings to use the MinIO app in TrueNAS as the S3-compatible object storage.
 
-
 ## Configuring TrueNAS and the MinIO Enterprise App
 This guide describes the process to configure a Veeam Immutability solution.
 
@@ -59,16 +58,16 @@ Browse to select the certificate used for MinIO in the TrueNAS server cluster.
 Select the connection type in **Connection Mode**. Select **Direct** to instantly move data of processed VMs to object storage repositories. This requires specifying access permissions.
 Select **Through gateway server** to have Veeam Backup & Replication use a gateway server to transfer data from processed VMs or file share to object storage repositories (default setting).
 
-**Credentials** should show the certificate for the TrueNAS system. If TrueNAS uses a self-signed certificate a certificate security alert dialog opens. Click **Continue** to close the dialog. Click**Next**.
+**Credentials** should show the certificate for the TrueNAS system. If TrueNAS uses a self-signed certificate, a certificate security alert dialog opens. Click **Continue** to close the dialog. Click**Next**.
 
 Select the bucket where you want to store backup data. This bucket is created for this repository. Add a new folder to the bucket. You must add at least one folder.
-Optionally, select **Limit object storage consumption to*x* TB** and/or **Make recent backups immtabile for *x* days** to enable them, and set the measurement for each option.
+Optionally, select **Limit object storage consumption to *x* TB** and/or **Make recent backups immutable for *x* days** to enable them and set the measurement for each option.
 Click **Next**.
 
 If not already shown, specify the server you want to us as the mount server. Veeam uses this during restore operations to mount VM disks directly from objects located in the object storage repositories.
 If not listed, click **Add New**. See [Adding Windows Servers](https://helpcenter.veeam.com/docs/backup/vsphere/add_windows_server.html) for instructions.
 Select the folder to keep the cache created during mount operations from the **Instant recovery write cache folder** dropdown list.
-Enter the NFS service settings if desired, and enter the ports Veeam should suer for the NFS service. See [Specifying Mount Server Settings](https://helpcenter.veeam.com/docs/backup/vsphere/compatible_mount_server.html?ver=120#specifying-mount-server-settings) for more information.
+Enter the NFS service settings if desired and enter the ports Veeam should suer for the NFS service. See [Specifying Mount Server Settings](https://helpcenter.veeam.com/docs/backup/vsphere/compatible_mount_server.html?ver=120#specifying-mount-server-settings) for more information.
 
 Veeam automatically installs additional components if needed. Click **Next**, review the configuration, and then click **Finish**.
 
