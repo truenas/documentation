@@ -159,29 +159,38 @@ Click **Edit Disk** on the **[Devices]({{< relref "DevicesScreensSCALE.md" >}})*
 | **Description** | Enter notes about this disk. |
 {{< /truetable >}}
 
-### Power Management Settings
-{{< truetable >}}
-| Setting | Description |
-|---------|-------------|
-| **HDD Standby** | Select a value from the dropdown list of options or leave it set to the default **Always On**. This specifies the minutes of inactivity before the drive enters standby mode. This [forum post](https://www.truenas.com/community/threads/how-to-find-out-if-a-drive-is-spinning-down-properly.2068/) describes identifying spun-down drives. Temperature monitoring is disabled for standby disks. |
-| **Advanced Power Management** | Select a power management profile from the dropdown list of options that include **Disabled** (the default setting), **Level 1 - Minimum power usage with Standby (spindown)**, **Level 64 - Intermediate power usage with Standby**, **Level 127 - Maximum power usage with Standby**, **Level 128 - Minimum power usage without Standby (no spindown)**, **Level 192 - Intermediate power usage without Standby**, or **Level 254 - Maximum performance, maximum power usage**. |
-{{< /truetable >}}
-
 ### Temperature Alerts Settings
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Critical** | Enter a threshold temperature in Celsius. If the drive temperature is higher than this value, it creates a LOG_CRIT level log entry and sends an email to the address entered in the [Alerts]({{< relref "/SCALE/SCALEUIReference/TopToolbar/Alerts/EmailScreens.md" >}}). Enter **0** to disable this check. |
-| **Difference** | Enter a value in degrees Celsius that triggers a report if the temperature of a drive changes by this value since the last report. Enter **0** to disable this check. |
+| **Critical** | Enter a threshold temperature in Celsius. If the drive temperature is higher than this value, TrueNAS creates a LOG_CRIT level log entry and sends an email to the address entered in the [Alerts]({{< relref "/SCALE/SCALEUIReference/TopToolbar/Alerts/EmailScreens.md" >}}). Enter **0** to disable this check. |
+| **Difference** | Enter a value in degrees Celsius that triggers a report if the drvie temperature changes by this value since the last report. Enter **0** to disable this check. |
 | **Informational** | Enter a value in degrees Celsius that triggers a report if the drive temperature is at or above this temperature. Enter **0** to disable this check. |
 {{< /truetable >}}
 
-#### S.M.A.R.T./SED Settings
+### Power Management Settings
+{{< truetable >}}
+| Setting | Description |
+|---------|-------------|
+| **HDD Standby** | Select a value from the dropdown list of options or leave it set to the default **Always On**. This specifies the minutes of inactivity before the drive enters standby mode. For information on identifying spun-down drives, see this [forum post](https://www.truenas.com/community/threads/how-to-find-out-if-a-drive-is-spinning-down-properly.2068/). Temperature monitoring is disabled for standby disks. |
+| **Advanced Power Management** | Select a power management profile from the dropdown list of options that include **Disabled** (the default setting), **Level 1 - Minimum power usage with Standby (spindown)**, **Level 64 - Intermediate power usage with Standby**, **Level 127 - Maximum power usage with Standby**, **Level 128 - Minimum power usage without Standby (no spindown)**, **Level 192 - Intermediate power usage without Standby**, or **Level 254 - Maximum performance, maximum power usage**. |
+{{< /truetable >}}
+
+### S.M.A.R.T. Settings
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Enable S.M.A.R.T.** | Select to enable the system to conduct periodic [S.M.A.R.T. tests]({{< relref "SMARTTestsSCALE.md" >}}). |
 | **S.M.A.R.T. extra options** | Enter additional [smartctl(8)](https://www.unix.com/man-page/suse/8/smartctl/) options. |
-| **SED Password** | Enter a password to set or change the password of the SED for this disk and to use instead of the global SED password. |
+{{< /truetable >}}
+
+### SED Settings
+
+{{< include file="/static/includes/SEDEnterpriseAdmonition.md" >}}
+
+{{< truetable >}}
+| Setting | Description |
+|-----------|-------------|
+| **SED Password** | Enter a password to set or change for this individual Self-Encrypting Disk (SED). If both an individual and global SED password are present, the individual SED password overrides the global password for the disk it is configured on. |
 | **Clear SED Password** | Select to clear the SED password for this disk. |
 {{< /truetable >}}
