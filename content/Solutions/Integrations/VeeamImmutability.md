@@ -9,7 +9,7 @@ tags:
  - backup solution 
 ---
 
-TrueNAS Enterprise systems can be used as an S3-compatiable object storage for Veeam Backup & Replciation Immutability.
+TrueNAS Enterprise systems can act as S3-compatible object storage for Veeam Backup & Replication Immutability.
 
 Immutability is a feature of Veeam Backup & Replication. When configured with storage solutions such as TrueNAS, it prevents modifying or deleting data for a specified period of time.
 Set the the immutability period based on your needs. After this period expires, backed up data can be modified or deleted again.
