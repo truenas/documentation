@@ -82,9 +82,8 @@ More details are available from [Software Releases]({{< relref "/TrueNASUpgrades
 {{< include file="/static/includes/MigratingVMs.md" >}}
 
 ### Upgrade Paths (Anticipated)
-<!--
+
 {{< include file="/static/includes/25.04UpgradeMethods.md" >}}
--->
 
 {{< include file="/static/includes/SCALEUpgradePaths.md" >}}
 
@@ -134,14 +133,6 @@ Any new feature flags introduced since the previous OpenZFS version that was int
 
 For more details on feature flags, see [OpenZFS Feature Flags](https://openzfs.github.io/openzfs-docs/Basic%20Concepts/Feature%20Flags.html) and [OpenZFS zpool-feature.7](https://openzfs.github.io/openzfs-docs/man/7/zpool-features.7.html).
 
-## 25.04 Nightly Development Changelog
-
-* The TrueNAS REST API is deprecated in TrueNAS 25.04 and replaced with a versioned JSON-RPC 2.0 over WebSocket API ([API Reference]({{< relref "/scale/api/_index.md" >}})). Full removal of the REST API is planned for a future release.
-* Improved API key mechanism with support for user-linked API keys ([NAS-131396](https://ixsystems.atlassian.net/browse/NAS-131396)).
-* The default libvirt account UID & GID is changed to a less common value to avoid clashing with user created UID/GIDs. See Upgrade Notes above for more information ([NAS-131695](https://ixsystems.atlassian.net/browse/NAS-131695)).
-
-<!--
-
 ## 25.04-BETA.1 Changelog
 
 {{< hint type=warning title="Early Release Software" >}}
@@ -149,14 +140,16 @@ Early releases are intended for testing and feedback purposes.
 Do not use early-release software for critical tasks.
 {{< /hint >}}
 
-**Month Day, 2025**
+**February 13, 2025**
 
 iXsystems is pleased to release TrueNAS 25.04-BETA.1!
-This has software component updates and new features that are in the polishing phase.
+This first public release version of TrueNAS 25.04 (Fangtooth) has software component updates and new features that are in the polishing phase.
 
 Notable changes:
 
-* 
+* The TrueNAS REST API is deprecated in TrueNAS 25.04 and replaced with a versioned JSON-RPC 2.0 over WebSocket API ([API Reference]({{< relref "/scale/api/_index.md" >}})). Full removal of the REST API is planned for a future release.
+* Improved API key mechanism with support for user-linked API keys ([NAS-131396](https://ixsystems.atlassian.net/browse/NAS-131396)).
+* The default libvirt account UID & GID is changed to a less common value to avoid clashing with user created UID/GIDs. See Upgrade Notes above for more information ([NAS-131695](https://ixsystems.atlassian.net/browse/NAS-131695)).
 
 <a href="https://ixsystems.atlassian.net/issues/?filter=_____" target="_blank">Click here for the full changelog</a> of completed tickets that are included in the 25.04-BETA.1 release.
 {{< include file="/static/includes/JiraFilterInstructions.md" >}}
@@ -166,4 +159,3 @@ Notable changes:
 * An issue has been discovered for cloud sync tasks configured with file name encryption, which is available in **Advanced Remote Options** ([NAS-132472](https://ixsystems.atlassian.net/browse/NAS-132472)). As this is an upstream issue in rclone, we recommend that users should not create new cloud sync tasks with the **Filename Encryption** setting enabled. Existing users of this feature must leave it enabled for existing cloud sync tasks to be able to recover backups.
 
 <a href="https://ixsystems.atlassian.net/issues/?filter=_____" target="_blank">Click here to see the latest information</a> about public issues discovered in 25.04-BETA.1 that are being resolved in a future TrueNAS release.
--->
