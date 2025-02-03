@@ -18,7 +18,7 @@ The **Sharing** screen opens after you click **Shares** on the main navigation p
 ## Block (iSCSI) Shares Targets Widget
 
 The **Block (iSCSI) Shares Targets** widget header shows the status of the iSCSI service, the **Wizard** button, and the <span class="material-icons">more_vert</span> icon button. 
-**Wizard** opens the **Wizard iSCSI** wizard on the **Target** screen. See []() below.
+**Wizard** opens the **Wizard iSCSI** wizard on the **Target** screen. See [Target Screens](#targets-screens) below.
 
 {{< trueimage src="/images/SCALE/Shares/iSCSIBlockSharesWidget.png" alt="Block (iSCSI) Share Target Widget Toolbar" id="Block (iSCSI) Share Target Widget Toolbar" >}}
 
@@ -44,47 +44,28 @@ The **Wizard** button opens the iSCSI wizard on the **Targets** screen. The wiza
 * **Extent**
 * **Protocol Options**
 
-The individual iSCSI screens are accessed by clicking on the iSCSI widget header an alternative to the **iSCSI Wizard**.
+The individual iSCSI screens are accessed by clicking on the iSCSI widget header.
 The **Targets** screen opens by default.
-For more information on iSCSI screens and settings, see [**iSCSI Screens**]() below. 
+For more information on iSCSI screens and settings, see [**Shares iSCSI Screens**](#shares-iscsi-screens) below.
+
+**Next** advances to the next wizard screen. **Back** shows the previous wizard screen. **Save** creates the iSCSI share.
 
 ### iSCSI Wizard Target Screen
 The **iSCSI Wizard** opens showing the **Target** screen.
 
-The **Target** dropdown shows the default **Create New**. Select to create a new target, or select an existing target from the dropdown list to edit it.
-
 {{< trueimage src="/images/SCALE/Shares/iSCSIWizardTargetScreen.png" alt="iSCSI Wizard Target Screen" id="iSCSI Wizard Target Screen" >}}
 
+The **Target** dropdown shows the default **Create New**. Selecting **Create New** creates a share, or selecting an existing target from the dropdown list allows you to edit it.
 ### iSCSI Wizard Extent Screen
-The iSCSI wizard **Extent** screen shows settings to name the share, set the type of extent devices, and the sharing platform for the device.
 
-{{< columns >}}
-{{< trueimage src="/images/SCALE/Shares/iSCSIWizardExtentCreateNewDevice.png" alt="iSCSI Wizard Extent Screen Devices Settings" id="iSCSI Wizard Extent Screen Device Settings" >}}
-<--->
-{{< trueimage src="/images/SCALE/Shares/iSCSIWizardExtendFileType.png" alt="iSCSI Wizard Extent Screen File Settings" id="iSCSI Wizard Extent Screen File Settings" >}}
-{{< /columns >}}
+{{< include file="/static/includes/iSCSIWizardExtentScreen.md" >}}
 
-{{< expand "Wizard Extent Settings" "v" >}}
-{{< truetable >}}
-| Setting | Description |
-|---------|-------------|
-| **Name** | The name given to the iSCSI block share. Enter a name using up to 64 lowercase alphanumeric and special characters. Allowed characters are dot (.), dash (-), and colon (:). A name longer than 64 characters is not allowed. See the "Constructing iSCSI names using the iqn.format" section of [RFC3721](https://tools.ietf.org/html/rfc3721.html). The base name (**from Target Global Configuration**) is automatically prepended if the target name does not start with **iqn**. |
-| **Extent Type** | Has two options: **Device** and **File**. Select an option to show other settings for each option. |
-| **Device**  | Shows if **Extent Type** is set to **Device**. Shows **Create New** or a list of iSCSI devices added to the system. **Create New** shows additional settings. |
-| **Pool/Dataset** | Shows after selecting **Create New** in **Device**. Enter or browse to select the path to the mount point. Browsing to select the dataset activates the **Create Dataset** option. Click to open the **Create Dataset** dialog, which creates a zvol. | 
-| **Size** | Shows after clicking **Create New** in **Device** and after adding the mount point in **Pool/Dataset**. Enter a numerical value and suffix to specify the size of the zvol you are creating. |
-| **Path to the Extent** | Shows if **Extent Type** is set to **File**. Enter or browse to select the mount point for the directory the extent uses. If a directory does not exist, after selecting the dataset where you want to add the directory, then enter a **/** followed by the name to add the directory to the dataset. |
-| **Filesize** | Shows if the **Extent Type** is set to **File**. Enter the size for the directory. Leaving this set to **0** uses the actual file size and requires the file to exist. Otherwise, specify the file size for the new file. |
-| **Sharing Platform** | Shows for both options. Select the platform that matches your use case. Options are:<br><li>**VMware: Extent block size 512b, TCP enabled, no Zen compat mode, SSD speed**<br><li>**Xen: Extent block size 512b, TCP enabled, Xen compat mode enabled, SSD speed**<br><li>**Legacy OS: Extent block size 512b, TCP enabled, no Xen compat mode, SSD speed**<br><li>**Modern OS: Extent block size 4k, TCP enabled, no Xen compat mode, SSD speed**</li> |
-{{< /truetable >}}
-{{< /expand >}}
- 
 ### iSCSI Wizard Protocol Options Screen
 The iSCSI wizard **Protocol Options** screen shows settings to add a portal and initiators. If a portal does not exist, create one by selecting **Create New**.
 
 {{< trueimage src="/images/SCALE/Shares/iSCSIWizardProtocolOptionsCreateNewPortal.png" alt="iSCSI Wizard Protocol Options Screen Portal Settings" id="iSCSI Wizard Protocol Options Screen Portal Settings" >}}
 
-{{< expand "Wizard Portal Settings" "v" >}}
+{{< expand "Wizard Protocol Options Settings" "v" >}}
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
@@ -95,29 +76,19 @@ The iSCSI wizard **Protocol Options** screen shows settings to add a portal and 
 {{< /expand >}}
 
 ## Shares iSCSI Screens
-iSCSI share screens open after clicking on the iSCSI widget header.
-The **Global Target Configuration** opens the iSCSI service configuration screen.
+
+Clicking on the iSCSI widget header opens the iSCSI share screens.
+
+**Global Target Configuration** opens the iSCSI service configuration screen.
+
 **Wizard** opens the iSCSI wizard configuration screens.
 
-It shows five tabs: *Targets**, **Extents**, **Initiators**, **Portals**, and **Authorized Access**.  Each provides access to the iSCSI configuration information, and access to the add and edit configuration screens for each functional area.
-
-The **Sharing > iSCSI** screen opens with the **Targets** tab showing.
+The iSCSI shares screens opens showing **Targets** by default.
+It shows five tabs: *Targets**, **Extents**, **Initiators**, **Portals**, and **Authorized Access**. Each provides access to the iSCSI configuration information, and access to the add and edit configuration screens for each functional area.
 
 ### iSCSI Global Configuration Screen
-The **iSCSI Global Configuration** screen opens when you click **Edit** on the **iSCSI Service** row of the **System > Services** screen, and the **Global Target Configuration** button at the top of all iSCSI share screens.
 
-{{< trueimage src="/images/SCALE/Shares/iSCSIGlobalConfigurationScreen.png" alt="iSCSI Global Configuration Screen" id="iSCSI Global Configuration Screen" >}}
-
-{{< expand "Global Configuration Settings" "v" >}}
-{{< truetable >}}
-| Setting | Description |
-|---------|-------------|
-| **Base Name** | Enter a name using lowercase alphanumeric characters. Allowed special characters are dot (.), dash (-), and colon (:). See the "Constructing iSCSI names using the iqn.format" section [RFC3721](https://tools.ietf.org/html/rfc3721.html) for more information. |
-| **ISNS Servers** | Enter host names or IP addresses of the ISNS servers to be registered with the iSCSI targets and portals of the system. Press <kbd>Enter</kbd> to separate each entry. |
-| **Pool Available Space Threshold (%)** | Generate an alert when the pool reaches this percentage of space remaining. This is typically configured at the pool level when using zvols or at the extent level for both file and device-based extents. |
-| **iSCSI listen port** | TCP port used to access the iSCSI target. The default is **3260**. |
-{{< /truetable >}}
-{{< /expand >}}
+{{< include file="/static/includes/iSCSIGlobalConfigurationScreen.md" >}}
 
 ### Targets Screens
 The **iSCSI Targets** screen shows a list of targets configured in the system and provides access to the add and edit configuration screens. Select a target to see details about that item.
@@ -183,17 +154,7 @@ The **Add Target** and **Edit Target** screens show the same configuration setti
 {{< /truetable >}}
 {{< /expand >}}
 
-{{< expand "Target iSCSI Group Settings" "v" >}}
-{{< truetable >}}
-| Setting | Description |
-|---------|-------------|
-| **Add Groups** | Adds a collection of network interfaces, IP addresses, and TCP ports, on a storage device that an iSCSI initiator can connect to. Groups are also known as target portal groups. **Add** shows a group configuration field each time it is clicked.  |
-| **Portal Group ID** | Select the ID from the dropdown list. Shows a group for each iSCSI share added to the system with a number assignment, for example, *1 (test2)* for the test2 target/share. Portal groups are created on the **Add Portal** screen. |
-| **Initiator Group ID** | Select the group ID from the dropdown list. Shows a group for each portal ID configured on the system, for example, *1 (ALL Initiators Allowed). Initiator groups have access to the target. |
-| **Authentication Method** | Select the authentication method from the dropdown list of options. Options are:<br><li>**None** - Select to allow anonymous discovery. When set to **None** you can leave **Discovery Authentication Group** set to **None** or empty.<br><li>**CHAP** - Select to use the Challenge Handshake Authentication Protocol (CHAP) method. CHAP verifies the identity of an iSCSI initiator (device trying to access storage) by sending a challenge that only the authentic initiator can correctly respond to. This prevents unauthorized access to the storage target. Think of it like a password-based authentication system for iSCSI connections. When set to CHAP you must enter or create a new group in **Discovery Authentication** on the **Add** or **Edit Authorized Access** screen.<br><li>**Mutual CHAP**- Select to use CHAP where both the iSCSI initiator (client) and target server mutually authenticate each other using the CHAP method. Each side verifies the identity of the other before establishing a connection. This provides a higher level of security compared to one-way CHAP. When set to mutual CHAP you must enter or create a new group in **Discovery Authentication** on the **Add** or **Edit Authorized Access** screen.</li> |
-| **Authentication Group Number** | Select the group from the dropdown list. An authentication group is configured on the **Add Authorized Access** screen. Required when the **Discovery Authentication Method** is set to **CHAP** or **Mutual CHAP**. Select **None** or the value representing the number of the existing authorized accesses. |
-{{< /truetable >}}
-{{< /expand >}}
+{{< include file="/static/includes/TargetiSCSIGroupSettings.md" >}}
 
 ### Extents Screens
 The **Extents** screen shows a table listing extents configured on the system. Extents are shared storage units.
