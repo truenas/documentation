@@ -43,7 +43,7 @@ Deselect **Inherit (encrypted)** under **Advanced Options** to modify encryption
 
 In TrueNAS 22.12.3 or later, you cannot create an unencrypted dataset within an encrypted pool or dataset using the TrueNAS UI.
 However, datasets created outside of the UI, such as those created programmatically or manually via shell access, might not inherit encryption unless properly configured.
-For example, the [ix-apps dataset]({{< relref "/content/TrueNASApps/_index.md #ix-apps-dataset" >}}) on the pool selected for applications does not inherit encryption settings.
+For example, the [ix-apps dataset](https://www.truenas.com/docs/truenasapps/#ix-apps-dataset) on the pool selected for applications does not inherit encryption settings.
 
 For more granular control, we recommend users do not configure pool-level encryption.
 Leave **Encryption** unselected on the **Pool Creation Wizard** screen to create a pool with an unencrypted root dataset.
@@ -68,7 +68,7 @@ If your system loses power or you reboot the system, all encrypted datasets and 
 
 ### Encryption Visual Cues
 
-TrueNAS uses lock icons to indicate the encryption state of a root, parent, or child dataset in the tree table on the **[Datasets]({{< relref "/SCALE/SCALEUIReference/Datasets/_index.md" >}})** screen.
+TrueNAS uses lock icons to indicate the encryption state of a root, parent, or child dataset in the tree table on the **[Datasets]({{< relref "/SCALEUIReference/Datasets/_index.md" >}})** screen.
 Each icon shows a text label with the state of the dataset when you hover the mouse over the icon.
 
 {{< include file="/static/includes/EncryptionIconsSCALE.md" >}}

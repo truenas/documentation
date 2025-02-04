@@ -105,7 +105,7 @@ This option promotes the cloned child dataset and allows users to delete the par
 Otherwise, you cannot delete a clone while the original volume still exists. See [zfs-promote.8](https://openzfs.github.io/openzfs-docs/man/8/zfs-promote.8.html).
 
 Non-root parent and child dataset versions of the card include the **[Delete](#delete-dataset)** button.
-To delete a root dataset, use the **Disconnect/Export** option on the **[Storage Dashboard]({{< relref "/SCALE/SCALEUIReference/Storage/_index.md" >}})** screen.
+To delete a root dataset, use the **Disconnect/Export** option on the **[Storage Dashboard]({{< relref "/SCALEUIReference/Storage/_index.md" >}})** screen.
 
 **Delete** opens a window that includes information about other options or services that use the dataset, for example a parent to other datasets and the services the child datasets of a parent dataset uses.
 Non-root parent and child datasets include the **Delete** button.
@@ -214,7 +214,7 @@ The **Roles** widget for a dataset with no share shows two links, one to create 
 | Role | Link Included | Description |
 |------|---------------|-------------|
 | System dataset | [Manage Advanced Settings]({{< relref "AdvancedSettingsScreen.md" >}}) | Select the option to configure the **System Dataset** |
-| Apps | [Manage Apps Settings]({{< relref "/SCALE/SCALEUIReference/Apps/_index.md" >}}) | Displays Kubernetes is using the dataset. Select the option to **Choose Pool** from the **Settings** dropdown list on the **Applications** screen. |
+| Apps | [Manage Apps Settings]({{< relref "/SCALEUIReference/Apps/_index.md" >}}) | Displays Kubernetes is using the dataset. Select the option to **Choose Pool** from the **Settings** dropdown list on the **Applications** screen. |
 | Dataset with no share | [Create SMB Share]({{< relref "SMBSharesScreens.md" >}})<br>[Create NFS Share]({{< relref "NFSSharesScreens.md" >}}) | Opens either the **Add SMB** or **Add NFS** share screen to configure the share. |
 | SMB share | [Manage SMB Shares]({{< relref "SMBSharesScreens.md" >}}) | Displays the name of the SMB share using the dataset. Select the snare on the **Sharing SMB** screen to edit it. |
 | Other share | Link to the share type screen | Displays the name of the share using the dataset. Select the on the share screen (NFS or iSCSI) to edit it. |

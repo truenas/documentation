@@ -95,7 +95,7 @@ Enterprise customers are encouraged to contact Support for assistance with the p
    After updating to the latest publicly-available release of TrueNAS 13.0 (or 13.3 for community users) and making any changes to user accounts or any other settings, download these files and keep them in a safe place and where you can access them if you need to revert with a clean install using the TrueNAS 13.0 or 13.3 <file>iso</file> file.
 
 After completing the steps listed above that apply to your existing system, download the latest [TrueNAS 24.04 ISO file](https://www.truenas.com/download-tn-scale/) and save it to your computer.
-See [Software Releases]({{< relref "TrueNASUpgrades/_index.md #upgrade-paths" >}}) for current recommended update paths to make sure you download and migrate to and from the correct TrueNAS versions.
+See [Software Releases](https://www.truenas.com/docs/softwarereleases/#upgrade-paths) for current recommended update paths to make sure you download and migrate to and from the correct TrueNAS versions.
 Burn the iso to a USB drive (see [**Installing on Physical Hardware**]({{< relref "InstallingSCALE.md#installing-on-physical-hardware" >}})) when upgrading a physical system.
 
 ## Deprecated Services
@@ -105,7 +105,7 @@ They require attention before attempting to migrate to 24.04.
 Each of the sections has information that can help you determine the best steps forward to secure any critical data before attempting to migrate from 13.0 to 24.04.
 They provide details on transitioning from that service to an application with the functionality of the deprecated service.
 
-TrueNAS has [apps]({{< relref "/content/TruenasApps/_index.md" >}}) you can deploy as replacements for these services.
+TrueNAS has [apps](https://www.truenas.com/docs/truenasapps/) you can deploy as replacements for these services.
 24.04 provides the option to force an upgrade without converting deprecated services to apps.
 The force option is not recommended for the S3 service as forcing the upgrade results in losing access to and the ability to recover the MinIO S3 data.
 

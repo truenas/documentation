@@ -45,7 +45,7 @@ You can clone the boot environment listed after the **initial-install** environm
 TrueNAS has several options that allow you to back up data:
 
 * [TrueCloud backup tasks](#using-truecloud-backup-or-cloud-sync)
-* [Cloud sync tasks]({{< relref "/Scale/ScaleTutorials/DataProtection/CloudSyncTasks/_index.md" >}})
+* [Cloud sync tasks]({{< relref "/ScaleTutorials/DataProtection/CloudSyncTasks/_index.md" >}})
 * [Replication tasks](#using-replication)
 * [Rsync tasks]({{< relref "RsyncTasksSCALE.md" >}})
 
@@ -66,7 +66,7 @@ Cloud sync and TrueCloud backup tasks can be configured to send, receive, or syn
 The simplest way to set up a TrueCloud backup task is using a Storj iX account.
 See [Managing TrueCloud Backup Tasks]({{< relref "TrueCloudTasks.md" >}}) for a full tutorial.
 
-See [Adding Cloud Credentials]({{< relref "/SCALE/SCALETutorials/Credentials/BackupCredentials/AddCloudCredentials.md" >}}) for information on connecting TrueNAS to other cloud storage providers.
+See [Adding Cloud Credentials]({{< relref "/SCALETutorials/Credentials/BackupCredentials/AddCloudCredentials.md" >}}) for information on connecting TrueNAS to other cloud storage providers.
 
 ### Using Replication
 Replication is the process of taking a moment-in-time snapshot of data and then copying that snapshot to another location.

@@ -25,7 +25,7 @@ iXsystems TrueNAS Enterprise customers should contact iXsystems Support after th
 
 TrueNAS users should follow the instructions provided below to complete the initial setup and configuration of their systems.
 
-Use the information mentioned in the [installation preparation instructions]({{< relref "/SCALE/GettingStarted/Install/_index.md" >}}) article for your TrueNAS installation type (Enterprise, non-Enterprise, or home use) to configure your network, SMTP, or directory service settings.
+Use the information mentioned in the [installation preparation instructions]({{< relref "/GettingStarted/Install/_index.md" >}}) article for your TrueNAS installation type (Enterprise, non-Enterprise, or home use) to configure your network, SMTP, or directory service settings.
 
 {{< include file="/static/includes/RootLoginWarnSCALE.md" >}}
 
@@ -52,7 +52,7 @@ The **Support** widget on the **System > General Settings** screen displays the 
 
 {{< include file="/static/includes/UsingConsoleSetupMenuSCALE.md" >}}
 
-If you are unfamiliar with network services, devices, or configurations, you can find more information [here]({{< relref "/SCALE/SCALETutorials/Network/_index.md" >}}) to help guide you through this important and required configuration area.
+If you are unfamiliar with network services, devices, or configurations, you can find more information [here]({{< relref "/SCALETutorials/Network/_index.md" >}}) to help guide you through this important and required configuration area.
 {{< enterprise >}}
 You must disable failover in the UI on TrueNAS Enterprise HA systems to [add or change any network setting]({{< relref "InstallEnterpriseHASCALE.md#configure-network-settings" >}}). Complete network changes and test them, then re-enable failover.
 {{< /enterprise >}}
@@ -67,7 +67,7 @@ DHCP is available for only a single interface; any other physical interfaces mus
 You can also configure virtual network interfaces such as a [bridge]({{< relref "SettingUpBridge.md" >}}), link aggregate (LAGG), or virtual LAN (VLAN) interface.
 
 You can use the Console Setup menu or TrueNAS UI to configure network interfaces.
-We recommend using the web UI the **Network** screen to [add or change network interfaces or aliases]({{< relref "/SCALE/SCALETutorials/Network/Interfaces/_index.md" >}}), set up link aggregate [LAGG]({{< relref "SettingUpLAGG.md" >}}) or virtual LAN [VLAN]({{< relref "SettingUpVLAN.md" >}}) interfaces, and change or [configure global network settings]({{< relref "ManagingGlobalConfig.md" >}}).
+We recommend using the web UI the **Network** screen to [add or change network interfaces or aliases]({{< relref "/SCALETutorials/Network/Interfaces/_index.md" >}}), set up link aggregate [LAGG]({{< relref "SettingUpLAGG.md" >}}) or virtual LAN [VLAN]({{< relref "SettingUpVLAN.md" >}}) interfaces, and change or [configure global network settings]({{< relref "ManagingGlobalConfig.md" >}}).
 
 ### Adding Aliases or Static IP Addresses
 Static IP addresses and aliases provide support for various network applications.
@@ -76,7 +76,7 @@ TrueNAS Enterprise HA systems use a virtual IP (VIP) to maintain access to the U
 This VIP address might experience a minor blip at failover, but you do not need to log in with the standby controller IP address to gain access to the UI after a failover.
 {{< /enterprise >}}
 You can configure a network interface with a static IP or add an alias IP address on the same screen in the TrueNAS UI.
-For more information on when to use an alias or a static IP address, see [Managing Interfaces]({{< relref "/SCALE/SCALETutorials/Network/Interfaces/_index.md" >}}).
+For more information on when to use an alias or a static IP address, see [Managing Interfaces]({{< relref "/SCALETutorials/Network/Interfaces/_index.md" >}}).
 
 ## Setting Up Storage
 TrueNAS requires at least one storage pool.
@@ -88,7 +88,7 @@ Creating your initial storage is [explained here]({{< relref "SetUpStorageScale.
 
 ### Setting the System Dataset
 TrueNAS assigns the root parent dataset of the first created pool as the system dataset.
-If your system has enough disks to add more pools, you can [change the system dataset]({{< relref "/SCALE/SCALETutorials/SystemSettings/Advanced/_index.md" >}}) to a root dataset of different pool.
+If your system has enough disks to add more pools, you can [change the system dataset]({{< relref "/SCALETutorials/SystemSettings/Advanced/_index.md" >}}) to a root dataset of different pool.
 
 ## Setting Up Shares
 After setting up your system storage, you can [configure data sharing]({{< relref "SetUpSharing.md" >}}) using one of the sharing protocols available in TrueNAS.
@@ -97,9 +97,9 @@ These articles provide more information on configuring data sharing and the thre
 {{< truetable >}}
 | Share Type | Purpose |
 |-----------|-------------|
-| [SMB shares]({{< relref "/SCALE/SCALETutorials/Shares/SMB/_index.md" >}}) | Used for Windows shares and also to set up deprecated AFP sharing. |
+| [SMB shares]({{< relref "/SCALETutorials/Shares/SMB/_index.md" >}}) | Used for Windows shares and also to set up deprecated AFP sharing. |
 | [NFS shares]({{< relref "AddingNFSShares.md" >}}) | Used for Linux-based shares. |
-| [iSCSI shares]({{< relref "/SCALE/SCALETutorials/Shares/iSCSI/_index.md" >}}) | Used for block shares. |
+| [iSCSI shares]({{< relref "/SCALETutorials/Shares/iSCSI/_index.md" >}}) | Used for block shares. |
 {{< /truetable >}}
 
 ## Configuring System Services
@@ -140,7 +140,7 @@ If your installation includes a UPS, configure and enable the UPS service.
 All systems can take advantage of the SMART service and testing with compatible attached disks.
 Disks that do not support SMART testing do not display the option to set up testing.
 
-See [Managing SMART Tests]({{< relref "SmartTestsScale.md" >}}) for information on running or managing scheduled SMART tests or [Managing Disks]({{< relref "/SCALE/SCALETutorials/Storage/Disks/_index.md" >}}) for more information on running a manual test from a selected disk.
+See [Managing SMART Tests]({{< relref "SmartTestsScale.md" >}}) for information on running or managing scheduled SMART tests or [Managing Disks]({{< relref "/SCALETutorials/Storage/Disks/_index.md" >}}) for more information on running a manual test from a selected disk.
 
 ## Setting Up Backup Solutions
 After completing your initial system configuration and before you begin day-to-day operations, we recommend configuring the system and data storage backup. Recommended backup options:
@@ -174,17 +174,17 @@ After saving system configuration and debug files, we recommend setting up data 
 * Setting up replication to another system (remote replication)
 * Adding a cloud storage provider service and setting up a cloud sync task
 
-You can take single [snapshots]({{< relref "CreatingSnapshots.md" >}}) or [schedule periodic snapshot tasks]({{< relref "PeriodicSnapshotTasksSCALE.md" >}}) to capture changes to stored data without the storage overhead that comes with backing up through data replication, or you can use one of the [replication options]({{< relref "/SCALE/SCALETutorials/DataProtection/Replication/_index.md" >}}) TrueNAS provides.
+You can take single [snapshots]({{< relref "CreatingSnapshots.md" >}}) or [schedule periodic snapshot tasks]({{< relref "PeriodicSnapshotTasksSCALE.md" >}}) to capture changes to stored data without the storage overhead that comes with backing up through data replication, or you can use one of the [replication options]({{< relref "/SCALETutorials/DataProtection/Replication/_index.md" >}}) TrueNAS provides.
 
 Another option is to create an account with a cloud storage service provider, then let TrueNAS manage the backups.
-Use the **Backup Credentials** screen [**Cloud Credentials**]({{< relref "AddCloudCredentials.md" >}}) to add authentication credentials for a supported cloud service provider, and go to **Data Protection** to schedule a [**Cloud Sync Tasks**]({{< relref "/SCALE/SCALETutorials/DataProtection/CloudSynctasks/_index.md" >}}) that regularly backs up your storage data to the cloud.
+Use the **Backup Credentials** screen [**Cloud Credentials**]({{< relref "AddCloudCredentials.md" >}}) to add authentication credentials for a supported cloud service provider, and go to **Data Protection** to schedule a [**Cloud Sync Tasks**]({{< relref "/SCALETutorials/DataProtection/CloudSynctasks/_index.md" >}}) that regularly backs up your storage data to the cloud.
 
 ## Checking System Alert Settings and Services
 You can view system alerts, configure an alert service, and enter an email account to receive alerts from TrueNAS through the **Alerts** icon found on the top toolbar.
 {{< expand "Configuring Alerts" "v" >}}
-The alert icon on the [top toolbar]({{< relref "/SCALE/SCALEUIReference/toptoolbar/_index.md" >}}) displays a red circle with a number in it if TrueNAS encounters a configuration error or exceeds a threshold that you set (such as a temperature or a usage level).
+The alert icon on the [top toolbar]({{< relref "/SCALEUIReference/toptoolbar/_index.md" >}}) displays a red circle with a number in it if TrueNAS encounters a configuration error or exceeds a threshold that you set (such as a temperature or a usage level).
 The number indicates how many new alerts have occurred.
-Click on the alert icon to open the **[Alerts]({{< relref "/SCALE/SCALEUIReference/toptoolbar/alerts/_index.md" >}})** panel.
+Click on the alert icon to open the **[Alerts]({{< relref "/SCALEUIReference/toptoolbar/alerts/_index.md" >}})** panel.
 
 The **Alerts** panel includes the **Settings** (gear) icon that provides access to the alert settings screen where you configure alert types and thresholds, and a system email option that opens a configuration screen where you enter an address to receive messages for a system event triggered by an alert.
 
@@ -209,7 +209,7 @@ To change from Active Directory to LDAP, use the **Leave Domain** option and the
 {{< /hint >}}
 
 {{< enterprise >}}
-iXsystems Support can assist Enterprise customers with configuring directory service settings in TrueNAS with the [information customers provide]({{< relref "/SCALE/GettingStarted/Install/_index.md" >}}), but they cannot configure customer Active Directory system settings.
+iXsystems Support can assist Enterprise customers with configuring directory service settings in TrueNAS with the [information customers provide]({{< relref "/GettingStarted/Install/_index.md" >}}), but they cannot configure customer Active Directory system settings.
 {{< /enterprise >}}
 
 Non-Enterprise users can find support for configuring directory services in the TrueNAS Documentation Hub tutorials or in the community forums.
@@ -229,7 +229,7 @@ If using TrueNAS on hardware not provided by iXsystems, the **System Information
 ## Using Applications in TrueNAS
 TrueNAS provides a list of applications you can deploy on the **Apps > Discover** screen.
 
-See the [Apps tutorials]({{< relref "/content/TruenasApps/_index.md" >}}) for procedures on generically deploying and managing apps, app catalogs and images, custom apps, and specific app deployments and notes.
+See the [Apps tutorials](https://www.truenas.com/docs/truenasapps/) for procedures on generically deploying and managing apps, app catalogs and images, custom apps, and specific app deployments and notes.
 
 ## Updating TrueNAS
 You can update your system with an <file>iso</file> file using the system administration console or an update file installed through the TrueNAS UI.

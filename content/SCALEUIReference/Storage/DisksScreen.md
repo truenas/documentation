@@ -26,7 +26,7 @@ Each option displays the information you enter in the **Edit Disk** screen or wh
 Select the checkbox to the left of a disk to display the **[Batch Operations](#batch-operations)** options.
 The checkbox at the top of the table selects all disks in the system. Select again to clear the checkboxes.
 
-**Storage** in the breadcrumb at the top of the screen returns to the **[Storage Dashboard]({{< relref "/SCALE/SCALEUIReference/Storage/_index.md" >}})**.
+**Storage** in the breadcrumb at the top of the screen returns to the **[Storage Dashboard]({{< relref "/SCALEUIReference/Storage/_index.md" >}})**.
 
 ## Disks Screen - Expanded Disk
 Click anywhere on a disk row to expand it and show the traits specific to that disk and available options.
@@ -163,7 +163,7 @@ Click **Edit Disk** on the **[Devices]({{< relref "DevicesScreensSCALE.md" >}})*
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Critical** | Enter a threshold temperature in Celsius. If the drive temperature is higher than this value, TrueNAS creates a LOG_CRIT level log entry and sends an email to the address entered in the [Alerts]({{< relref "/SCALE/SCALEUIReference/TopToolbar/Alerts/EmailScreens.md" >}}). Enter **0** to disable this check. |
+| **Critical** | Enter a threshold temperature in Celsius. If the drive temperature is higher than this value, TrueNAS creates a LOG_CRIT level log entry and sends an email to the address entered in the [Alerts]({{< relref "/SCALEUIReference/TopToolbar/Alerts/EmailScreens.md" >}}). Enter **0** to disable this check. |
 | **Difference** | Enter a value in degrees Celsius that triggers a report if the drvie temperature changes by this value since the last report. Enter **0** to disable this check. |
 | **Informational** | Enter a value in degrees Celsius that triggers a report if the drive temperature is at or above this temperature. Enter **0** to disable this check. |
 {{< /truetable >}}

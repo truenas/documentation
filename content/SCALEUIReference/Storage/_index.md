@@ -152,7 +152,7 @@ Storage configurations with more than 9,007,199,254,740,992 bytes round the last
 For example, a system with 18,446,744,073,709,551,615 bytes reports the number as 18,446,744,073,709,552,000 bytes.
 {{< /hint >}}
 
-**Manage Datasets** opens the **[Datasets]({{< relref "/SCALE/SCALEUIReference/Datasets/_index.md" >}})** screen.
+**Manage Datasets** opens the **[Datasets]({{< relref "/SCALEUIReference/Datasets/_index.md" >}})** screen.
 
 ### ZFS Health Widget
 The **ZFS Health** widget shows information on the health of the pool.

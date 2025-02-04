@@ -29,17 +29,17 @@ The [Evaluation Guide](https://www.truenas.com/evaluating-truenas-scale/) also p
 {{< enterprise >}}
 This Table of Contents is a specific article arrangement that guides deploying TrueNAS Enterprise hardware purchased from iXsystems, inc.
 
-* [User Agreements]({{< relref "/SCALE/GettingStarted/UserAgreements/_index.md" >}})
+* [User Agreements]({{< relref "/GettingStarted/UserAgreements/_index.md" >}})
   * [TrueNAS EULA]({{< relref "SCALEEULA.md" >}})
-  * [Software Development Life Cycle]({{< relref "/SCALE/GettingStarted/UserAgreements/SoftwareDevelopmentLifeCycleSCALE.md" >}})
-  * [TrueNAS Data Collection Statement]({{< relref "/SCALE/GettingStarted/UserAgreements/DataCollectionStatement.md" >}})
-* [Installation Instructions]({{< relref "/SCALE/GettingStarted/Install/_index.md" >}})
+  * [Software Development Life Cycle]({{< relref "/GettingStarted/UserAgreements/SoftwareDevelopmentLifeCycleSCALE.md" >}})
+  * [TrueNAS Data Collection Statement]({{< relref "/GettingStarted/UserAgreements/DataCollectionStatement.md" >}})
+* [Installation Instructions]({{< relref "/GettingStarted/Install/_index.md" >}})
   * [Preparing for UI Configuration (Enterprise)]({{< relref "InstallPrepEnterprise.md" >}})
   * [Installing]({{< relref "InstallingSCALE.md" >}})
   * [Using the Console Setup Menu]({{< relref "ConsoleSetupMenuSCALE.md" >}})
-* [Migrating Instructions]({{< relref "/SCALE/GettingStarted/Migrate/_index.md" >}})
+* [Migrating Instructions]({{< relref "/GettingStarted/Migrate/_index.md" >}})
   * [Migrating from TrueNAS 13.0]({{< relref "/MigratingFromCORE.md" >}})
-* [Configuration Instructions]({{< relref "/SCALE/GettingStarted/Configure/_index.md" >}})
+* [Configuration Instructions]({{< relref "/GettingStarted/Configure/_index.md" >}})
   * [First Time Login]({{< relref "FirstTimeLogin.md" >}})
   * [Configuring using the UI]({{< relref "UIConfigurationSCALE.md" >}})
   * [Setting Up Storage]({{< relref "SetUpStorageSCALE.md" >}})

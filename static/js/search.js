@@ -52,7 +52,7 @@ async function displaySearchResults(query, page) {
                 let tcIcon = '<img src="https://www.truenas.com/docs/favicon/TC-favicon-32x32.png" alt="TrueCommand" title="TrueCommand" class="icon">';
 
                 let linkText = result.url.includes("/core/") ? `${coreIcon}`
-                    : result.url.includes("/scale/") ? `${scaleIcon}`
+                    : result.url.includes("/") ? `${scaleIcon}`
                     : result.url.includes("/truecommand/") ? `${tcIcon}`
                     : result.url.includes("/solutions/") ? `Solutions:`
                     : result.url.includes("/hardware/") ? `TrueNAS Systems:`

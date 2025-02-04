@@ -17,9 +17,9 @@ In TrueNAS, user accounts allow flexibility for accessing shared data.
 Typically, administrators create users and assign them to [groups]({{< relref "ManageLocalGroups.md" >}}).
 Doing so makes tuning permissions for large numbers of users more efficient.
 
-When the network uses a directory service, import the existing account information using the instructions in [Directory Services]({{< relref "/SCALE/SCALEUIReference/Credentials/DirectoryServices/_index.md" >}}).
+When the network uses a directory service, import the existing account information using the instructions in [Directory Services]({{< relref "/SCALEUIReference/Credentials/DirectoryServices/_index.md" >}}).
 
-Using [Active Directory]({{< relref "/SCALE/SCALEUIReference/Credentials/DirectoryServices/_index.md" >}}) requires setting Windows user passwords in Windows.
+Using [Active Directory]({{< relref "/SCALEUIReference/Credentials/DirectoryServices/_index.md" >}}) requires setting Windows user passwords in Windows.
 
 To see user accounts, go to **Credentials > Users**.
 
@@ -124,7 +124,7 @@ To disable all password-based functionality for the account, select **Lock User*
 
 {{< include file="/static/includes/AdminSudo.md" >}}
 
-Leave **SMB User** selected to allow using the account credentials to access data shared with [SMB]({{< relref "/SCALE/SCALEUIReference/Shares/_index.md" >}}).
+Leave **SMB User** selected to allow using the account credentials to access data shared with [SMB]({{< relref "/SCALEUIReference/Shares/_index.md" >}}).
 
 Click **Save**.
 

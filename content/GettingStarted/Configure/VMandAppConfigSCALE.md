@@ -57,7 +57,7 @@ Adjust access permissions using the advanced options.
 ### Directory Services Configuration
 
 Certain directory services must be set up as part of SMB and NFS share configuration.
-See [Active Directory Screen]({{< relref "/SCALE/SCALEUIReference/credentials/directoryservices/ActiveDirectory.md" >}}) for a better understanding of how to configure Active Directory and [Configuring Kerberos]({{< relref "ConfigKerberosSCALE.md" >}}) for an outline of required Kerberos information.
+See [Active Directory Screen]({{< relref "/SCALEUIReference/credentials/directoryservices/ActiveDirectory.md" >}}) for a better understanding of how to configure Active Directory and [Configuring Kerberos]({{< relref "ConfigKerberosSCALE.md" >}}) for an outline of required Kerberos information.
 For LDAP best practices see [Configuring LDAP]({{< relref "ConfigLDAPSCALE.md" >}}).
 
 ## Virtualization Configuration
@@ -75,7 +75,7 @@ A TrueNAS storage pool is required.
 We recommend you create additional datasets beneath the storage pool to organize your VM data further.
 
 Review [Virtualization Screens]({{< relref "VirtualizationScreens.md" >}}) to determine requirements for VM installation.
-See [Adding and Managing VMs]({{< relref "/SCALE/SCALETutorials/Virtualization/_index.md" >}}) for more information on adding or managing VMs.
+See [Adding and Managing VMs]({{< relref "/SCALETutorials/Virtualization/_index.md" >}}) for more information on adding or managing VMs.
 
 ## Application Configuration
 
@@ -90,7 +90,7 @@ Set up a new dataset before installing your applications if you want to store yo
 After an Apps storage pool is configured, the status changes to <span class="iconify" data-icon="mdi:check-circle" color=#71BF44></span> **Apps Service Running**.
 
 Use **Discover Apps** to view available applications.
-See [Apps tutorials]({{< relref "/content/TruenasApps/_index.md" >}}) and [Apps reference guide]({{< relref "/SCALE/SCALEUIReference/Apps/_index.md" >}}) for more information.
+See [Apps tutorials](https://www.truenas.com/docs/truenasapps/) and [Apps reference guide]({{< relref "/SCALEUIReference/Apps/_index.md" >}}) for more information.
 
 For custom applications, [Install Custom App]({{< relref "InstallCustomAppScreens.md" >}}) details each field on the **Install Custom App** screen.
 Before beginning a custom application installation, determine the following information:

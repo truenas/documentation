@@ -20,11 +20,11 @@ The **Cloud Credentials** screen, accessed from the **Backup Credentials** scree
 {{< include file="/static/includes/CloudServiceProvidersSCALE.md" >}}
 
 To maximize security, TrueNAS encrypts cloud credentials when saving them.
-However, this means that to restore any cloud credentials from a TrueNAS configuration file, you must enable **Export Password Secret Seed** when generating that [configuration backup]({{< relref "/SCALE/SCALETutorials/SystemSettings/General/ManageSysConfigSCALE.md" >}}).
+However, this means that to restore any cloud credentials from a TrueNAS configuration file, you must enable **Export Password Secret Seed** when generating that [configuration backup]({{< relref "/SCALETutorials/SystemSettings/General/ManageSysConfigSCALE.md" >}}).
 Remember to protect any downloaded TrueNAS configuration files.
 
 Authentication methods for each provider could differ based on the provider security requirements.
-You can add credentials for many of the supported cloud storage providers from the information on the [Cloud Credentials Screens]({{< relref "/SCALE/SCALEUIReference/Credentials/BackupCredentials/CloudCredentialScreens.md" >}}).
+You can add credentials for many of the supported cloud storage providers from the information on the [Cloud Credentials Screens]({{< relref "/SCALEUIReference/Credentials/BackupCredentials/CloudCredentialScreens.md" >}}).
 This article provides instructions for the more involved providers.
 
 ## Adding a Cloud Credential
@@ -40,7 +40,7 @@ To add a cloud credential:
 
 1. Select the cloud service from the **Provider** dropdown list. The provider required authentication option settings display.
 
-   For details on each provider authentication settings see [Cloud Credentials Screens]({{< relref "/SCALE/SCALEUIReference/Credentials/BackupCredentials/CloudCredentialScreens.md" >}}).
+   For details on each provider authentication settings see [Cloud Credentials Screens]({{< relref "/SCALEUIReference/Credentials/BackupCredentials/CloudCredentialScreens.md" >}}).
 
 2. Enter a name for the credential.
 
@@ -65,7 +65,7 @@ Storj iX is the default cloud storage provider in TrueNAS.
 
 ### Creating a TrueNAS Storj Bucket
 
-You can either create a TrueNAS compatible Storj bucket while configuring cloud credentials or wait to do so while configuring a [TrueCloud back up]({{< relref "TrueCloudTasks.md" >}}) or [Cloud Sync]({{< relref "/SCALE/SCALETutorials/DataProtection/CloudSyncTasks/_index.md" >}}) task.
+You can either create a TrueNAS compatible Storj bucket while configuring cloud credentials or wait to do so while configuring a [TrueCloud back up]({{< relref "TrueCloudTasks.md" >}}) or [Cloud Sync]({{< relref "/SCALETutorials/DataProtection/CloudSyncTasks/_index.md" >}}) task.
 
 {{< include file="/static/includes/StorjBucket.md" >}}
 

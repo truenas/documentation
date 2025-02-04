@@ -29,7 +29,7 @@ See the stable [24.10 (Electric Eel)](https://www.truenas.com/docs/scale/24.10/g
 
 For adventurous users that want to experiment with the latest feature development, 25.04 (Fangtooth) nightly images are available from the [the TrueNAS downloads server](https://download.truenas.com/truenas-scale-fangtooth-nightly/).
 
-More details are available from [Software Releases]({{< relref "/TrueNASUpgrades/_index.md" >}}).
+More details are available from [Software Releases](https://www.truenas.com/docs/softwarereleases/).
 
 ## Release Schedule
 
@@ -69,7 +69,7 @@ More details are available from [Software Releases]({{< relref "/TrueNASUpgrades
 
   {{< include file="/static/includes/APIKeyWarn.md" >}}
 
-  See [Managing API Keys]({{< relref "/scale/scaletutorials/toptoolbar/managingapikeys.md" >}}) for more information.
+  See [Managing API Keys]({{< relref "/scaletutorials/toptoolbar/managingapikeys.md" >}}) for more information.
 
   * {{< include file="/static/includes/APIKeyMigrate.md" >}}
 
@@ -104,7 +104,7 @@ When attempting to migrate from a FreeBSD-based TrueNAS version, the general rec
 After install, restore the system configuration and import the pools.
 
 Depending on the specific system configuration, this can be a straightforward or complicated process.
-See the [Migration articles]({{< relref "/SCALE/GettingStarted/Migrate/_index.md" >}}) for cautions and notes about differences between each software and the migration process.
+See the [Migration articles]({{< relref "/GettingStarted/Migrate/_index.md" >}}) for cautions and notes about differences between each software and the migration process.
 
 You must either clean install using an <file>iso</file> or use an upgrade file to migrate a FreeBSD-based TrueNAS system to TrueNAS 25.04 (Fangtooth).
 Enterprise customers should [contact Support](https://www.truenas.com/docs/scale/gettingstarted/migrate/migratecorehatoscaleha/#expand-1-Enterprise%20HA%20Migrations) for assistance with migration.
@@ -136,7 +136,7 @@ For more details on feature flags, see [OpenZFS Feature Flags](https://openzfs.g
 
 ## 25.04 Nightly Development Changelog
 
-* The TrueNAS REST API is deprecated in TrueNAS 25.04 and replaced with a versioned JSON-RPC 2.0 over WebSocket API ([API Reference]({{< relref "/scale/api/_index.md" >}})). Full removal of the REST API is planned for a future release.
+* The TrueNAS REST API is deprecated in TrueNAS 25.04 and replaced with a versioned JSON-RPC 2.0 over WebSocket API ([API Reference]({{< relref "/api/_index.md" >}})). Full removal of the REST API is planned for a future release.
 * Improved API key mechanism with support for user-linked API keys ([NAS-131396](https://ixsystems.atlassian.net/browse/NAS-131396)).
 * The default libvirt account UID & GID is changed to a less common value to avoid clashing with user created UID/GIDs. See Upgrade Notes above for more information ([NAS-131695](https://ixsystems.atlassian.net/browse/NAS-131695)).
 
