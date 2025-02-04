@@ -24,6 +24,8 @@ Follow these best practices to administer TrueNAS securely.
 * In TrueNAS 24.04 (Dragonfish) or later, locally [monitor and review audit logs]({{< relref "auditingscale.md" >}}) using the **Audit** screen.
 * In the **System > Advanced Settings**, always keep **Show Text Console without Password Prompt** set to **Disabled**.
 
+{{<include file="/static/includes/CustomScriptWarning.md">}}
+
 Consult the [TrueNAS Security Advisories](https://security.truenas.com/) site for information about any identified security vulnerabilities in TrueNAS products.
 Check back regularly for updates.
 
