@@ -35,6 +35,8 @@ The **Advanced Settings** screen provides configuration options for the console,
 
 **Save Debug** saves a system debug file to the local machine.
 
+{{<include file="/static/includes/CustomScriptWarning.md">}}
+
 {{< trueimage src="/images/SCALE/SystemSettings/SystemAdvancedScreen.png" alt="TrueNAS Advanced Settings Screen" id="TrueNAS Advanced Settings Screen" >}}
 
 {{< trueimage src="/images/SCALE/SystemSettings/SystemAdvancedScreen2.png" alt="TrueNAS Advanced Settings Screen" id="TrueNAS Advanced Settings Screen" >}}
