@@ -1,38 +1,40 @@
-<nav class="toc-panel">
-  <b>Page Sections:</b>
-  <ul class="toc-list" style="list-style: none; padding-left: 0;">
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        var tocList = document.querySelector('.toc-list');
-        var headers = document.querySelectorAll('.gdoc-page h2, .gdoc-page h3, .gdoc-page h4');
-        
-        headers.forEach(function(header) {
-          // Ignore headers within <details> elements
-          if (!header.closest('details')) {
-            var level = header.tagName.toLowerCase().replace('h', '');
-            var text = header.innerText;
-            var anchor = text.toLowerCase().replace(/[^\w\s-]/g, '').replace(/\s/g, '-');
+<nav class="toc-panel" style="direction: rtl; text-align: left;">
+  <div class="toc-container" style="direction: ltr; padding: 1em;">
+    <b>Page Sections:</b>
+    <ul class="toc-list" style="list-style: none; padding-left: 0;">
+      <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          var tocList = document.querySelector('.toc-list');
+          var headers = document.querySelectorAll('.gdoc-page h2, .gdoc-page h3, .gdoc-page h4');
+          
+          headers.forEach(function(header) {
+            // Ignore headers within <details> elements
+            if (!header.closest('details')) {
+              var level = header.tagName.toLowerCase().replace('h', '');
+              var text = header.innerText;
+              var anchor = text.toLowerCase().replace(/[^\w\s-]/g, '').replace(/\s/g, '-');
 
-            var tocItem = document.createElement('li');
-            var tocLink = document.createElement('a');
-            tocLink.textContent = text;
-            tocLink.href = '#' + anchor;
+              var tocItem = document.createElement('li');
+              var tocLink = document.createElement('a');
+              tocLink.textContent = text;
+              tocLink.href = '#' + anchor;
 
-            tocItem.appendChild(tocLink);
-            tocList.appendChild(tocItem);
-            header.id = anchor;
+              tocItem.appendChild(tocLink);
+              tocList.appendChild(tocItem);
+              header.id = anchor;
 
-            tocItem.id = 'toc-' + level + '-' + anchor; // Unique ID based on header level
-            tocItem.style.marginLeft = (level === '3') ? '1em' : (level === '4') ? '2em' : '0';
-            tocItem.style.fontSize = (level === '3') ? '13px' : (level === '4') ? '12px' : 'inherit';
+              tocItem.id = 'toc-' + level + '-' + anchor; // Unique ID based on header level
+              tocItem.style.marginLeft = (level === '3') ? '1em' : (level === '4') ? '2em' : '0';
+              tocItem.style.fontSize = (level === '3') ? '13px' : (level === '4') ? '12px' : 'inherit';
+            }
+          });
+
+          var sidebarRight = document.querySelector('.sidebar-right');
+          if (document.querySelectorAll('.toc-list li').length < 2) {
+            sidebarRight.style.display = 'none';
           }
         });
-
-        var sidebarRight = document.querySelector('.sidebar-right');
-        if (document.querySelectorAll('.toc-list li').length < 2) {
-          sidebarRight.style.display = 'none';
-        }
-      });
-    </script>
-  </ul>
+      </script>
+    </ul>
+  </div>
 </nav>
