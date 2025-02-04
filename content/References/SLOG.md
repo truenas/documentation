@@ -17,7 +17,7 @@ The data is then written to disk in a normal transaction group (TXG) which allow
 ZIL is often referred to as a *log* whose main purpose is data integrity.
 The ZIL exists to track in-progress, synchronous write operations.
 If the system crashes or loses power, the ZIL can replay the operation.
-While you lose a standard system cache on power failure, a ZIL persists through system reboots.
+While you lose a standard system cache on power failure, a ZIL persists through system restarts.
 
 By default, ZIL does not handle asynchronous writes.
 System memory handles these like any standard caching method.

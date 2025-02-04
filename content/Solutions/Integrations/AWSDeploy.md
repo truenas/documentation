@@ -137,7 +137,7 @@ sh /usr/share/examples/bhyve/vmrun.sh -c 2 -m 4GB -t tap0 -d {TRUENAS}.img -i -I
 When the TrueNAS installer opens, make sure *boot with BIOS* is chosen and start the installation.
 Power off the device when the installation is done.
 
-{{< expand "Why can't I just reboot?" "v" >}}
+{{< expand "Why can't I just restart?" "v" >}}
 Do not load the completed image into bhyve and boot after installation as TrueNAS will create invalid network settings.
 If network issues occur, boot the image and create a DHCP interface manually named `xn0`.
 {{< /expand >}}

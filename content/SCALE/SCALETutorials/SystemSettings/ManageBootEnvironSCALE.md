@@ -70,11 +70,11 @@ TrueNAS supports a ZFS feature known as boot environments.
 These are snapshot clones of the TrueNAS **boot-pool** install location that TrueNAS boots into.
 Only one boot environment is used for booting at a time.
 
-A boot environment allows rebooting into a specific point in time and greatly simplifies recovering from system misconfigurations or other potential system failures.
+A boot environment allows restarting into a specific point in time and greatly simplifies recovering from system misconfigurations or other potential system failures.
 With multiple boot environments, the process of updating the operating system becomes a low-risk operation.
 
 For example, the TrueNAS update process automatically creates a snapshot of the current boot environment and adds it to the boot menu before applying the update.
-If anything goes wrong during the update, the system administrator can activate the snapshot of the pre-update environment and reboot TrueNAS to restore system functionality.
+If anything goes wrong during the update, the system administrator can activate the snapshot of the pre-update environment and restart TrueNAS to restore system functionality.
 
 Boot environments do not preserve or restore the state of any attached storage pools or apps, only the system **boot-pool**.
 Storage backups must be handled through the [ZFS snapshot]({{<relref "PeriodicSnapshotTasksSCALE.md" >}}) feature or other [backup options]({{< relref "/SCALE/SCALETutorials/DataProtection/_index.md" >}}).

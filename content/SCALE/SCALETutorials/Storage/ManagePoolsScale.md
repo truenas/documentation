@@ -127,7 +127,7 @@ Make sure the pool is healthy before beginning the expansion process.
 If a disk fails mid-expansion, the process pauses until the RAIDZ virtual device (vdev) is healthy again, typically by replacing the failed disk and waiting for the system to rebuild.
 
 The storage pool remains accessible throughout the expansion.
-If you reboot or export/import the pool, the expansion resumes from where it left off.
+If you restart or export/import the pool, the expansion resumes from where it left off.
 
 After the expansion, the extra space becomes available for use.
 

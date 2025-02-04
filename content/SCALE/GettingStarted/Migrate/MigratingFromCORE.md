@@ -61,7 +61,7 @@ This method is only available for non-Enterprise community systems.
 4. When the latest update for that chosen TrueNAS release is loaded, click **Apply Pending Update** or **Download Updates** to begin the update process documented in [Updating TrueNAS]({{< relref "UpdateSCALE.md#performing-an-automatic-update" >}}).
    It is strongly recommended to download the system configuration backup prior to starting the update.
 
-5. After the system installs the update and reboots, log in and review the system configuration to ensure the migration was successful.
+5. After the system installs the update and restarts, log in and review the system configuration to ensure the migration was successful.
 
 ### Manual Update
 Some TrueNAS 13.0 or 13.3 releases can migrate using the UI **Upgrade** function using a TrueNAS 24.04 update file downloaded from the website.
@@ -93,19 +93,19 @@ If this process fails, retry using the iso file method above.
 
    Then click **APPLY UPDATE**.
 
-7. After the update completes, reboot the system if it does not reboot automatically.
+7. After the update completes, restart the system if it does not restart automatically.
 
-   {{< trueimage src="/images/SCALE/SystemSettings/SidegradeRestart.png" alt="Reboot to Finish" id="Reboot to Finish" >}}
+   {{< trueimage src="/images/SCALE/SystemSettings/SidegradeRestart.png" alt="restart to Finish" id="restart to Finish" >}}
 
-After TrueNAS reboots, you might need to [use the Console Setup menu to configure the primary networking interfaces]({{< relref "ConsoleSetupMenuScale.md" >}}) to enable GUI accessibility.
+After TrueNAS restarts, you might need to [use the Console Setup menu to configure the primary networking interfaces]({{< relref "ConsoleSetupMenuScale.md" >}}) to enable GUI accessibility.
 
 After gaining access to the UI, sign in with the admin user credentials created during installation.
 
 Go to **System > General Settings** and [upload the system config file](/scale/scaletutorials/systemsettings/general/managesysconfigscale/#uploading-the-file).
 This migrates your settings, imports your pools, shares, etc.
-The system reboots to apply the uploaded configuration.
+The system restarts to apply the uploaded configuration.
 
-After TrueNAS reboots, sign in with the root user credentials from the previous configuration.
+After TrueNAS restarts, sign in with the root user credentials from the previous configuration.
 Uploading the config file deletes the **truenas_admin** user account created during a clean install and therefore requires you to [recreate an administrative user](#recreating-the-admin-user-account).
 
 After uploading the config file, review each area of the UI previously configured to validate pools imported and settings migrated correctly. Begin with your network settings.

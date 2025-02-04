@@ -99,7 +99,7 @@ The sections that follow describe these steps in detail.
 This process of installing each controller sequentially has two methods:
 
 * Install and configure controller 1 up to the point where you are ready to sync to controller 2.
-  When complete, install controller 2 and reboot. After the console setup menu displays, switch back to controller 1 and sync to peer.
+  When complete, install controller 2 and restart. After the console setup menu displays, switch back to controller 1 and sync to peer.
   This synchronizes the completed configuration from controller 1 to controller 2 and keeps controller 1 designated as the primary controller.
 Or
 * Begin installing controller 2 immediately after installing controller 1. When controller 2 finishes installing, power it off and keep it powered down.
@@ -117,7 +117,7 @@ These steps are nearly identical to the section above but controller 2 is either
    Apply the HA license, sign the EULA, and [complete the UI configuration](#configuring-settings-in-the-scale-ui) to the point where you are ready to sync to peer on controller 1, but do not sync yet.
 5. Power up controller 2 and wait for it to complete the boot process.
 6. Log into controller 1, go to **System > Failover**, and click **Sync to Peer**.
-   This synchronizes controller 2 with controller 1 and reboots controller 2. Controller 2 becomes the standby controller when it finishes rebooting.
+   This synchronizes controller 2 with controller 1 and restarts controller 2. Controller 2 becomes the standby controller when it finishes restarting.
 
 ### Downloading the TrueNAS Install File
 
@@ -151,9 +151,9 @@ Use this process to install the <file>iso</file> file on both controller 1 and c
 
 3. Return to the **Remote Control > iKVM/HTML5** window opened in step 2. Either use your keyboard or open the keyboard in the window then:
 
-   a. Type **8** to reboot controller 1 (also repeat for controller 2), and type **y** to confirm and reboot.
+   a. Type **8** to restart controller 1 (also repeat for controller 2), and type **y** to confirm and restart.
 
-   b. As the system reboots, be prepared to hit the <kbd>F11</kbd> key when you first see the **TrueNAS Open Storage** splash screen.
+   b. As the system restarts, be prepared to hit the <kbd>F11</kbd> key when you first see the **TrueNAS Open Storage** splash screen.
       Alternatively, you can start clicking on the **F11** key on the online keyboard until you see the TrueNAS Installer screen.
 
    c. Select the **UEFI: ATEN Virtual CDROM** device from the boot list. The bootstrap loader begins. When it ends the TrueNAS installer opens.
@@ -171,7 +171,7 @@ Also have your TrueNAS system configuration file and data backups handy, so you 
 6. Select **OK** after the **The TrueNAS installation on <nvme0n1> succeeded** displays. The Console setup menu screen displays.
 
 7. Enter **3** to **Reboot System** and immediately return to the IPMI **Virtual Media > CD-ROM image** screen to click **Unmount**. Click **Save**.
-   If you fail to unmount the <file>iso</file> image before the system completes the reboot, the bootstrap install continues in a boot loop.
+   If you fail to unmount the <file>iso</file> image before the system completes the restart, the bootstrap install continues in a boot loop.
 
 TrueNAS is now installed on controller 1 and repeated for controller 2 starting with [Using IPMI to Install the ISO on a Controller](#using-ipmi-to-install-the-iso-on-a-controller).
 
@@ -265,7 +265,7 @@ For more information on how to import a pool [click here]({{< relref "ImportPool
 1. Turn the failover service back on. Go to **System > Services** locate the **Failover** service and click edit.
 
 2. Select **Disable Failover** to clear the checkmark and turn failover back on, then click **Save**.
-   The system might reboot. Use IPMI to monitor the status of controller 2 and wait until the controller is back up and running.
+   The system might restart. Use IPMI to monitor the status of controller 2 and wait until the controller is back up and running.
 
 3. Log out of the controller 1 UI, and log in using the VIP address.
 
@@ -285,7 +285,7 @@ Take note of this information.
 ### Troubleshooting HA Installation
 
 If controller 2 comes online as the primary and controller 1 as the standby, you installed and configured the controllers incorrectly.
-1. Go to **System > Failover**, clear the **Default TrueNAS Controller** option, and click **Save**. The system reboots and fails over to the current standby controller (in this case, to controller 1).
+1. Go to **System > Failover**, clear the **Default TrueNAS Controller** option, and click **Save**. The system restarts and fails over to the current standby controller (in this case, to controller 1).
 
 2. Log back into the UI with the VIP address. Go to **System > Failover** and select **Default TrueNAS Controller** to make controller 1 the primary controller.
 

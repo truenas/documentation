@@ -48,7 +48,7 @@ If a static address is desired, the following configuration methods are availabl
 **How do I perform firmware updates?**
 
 Remote management firmware can be upgraded using two methods: the firmware update in the maintenance menu of the web interface or a DOS utility run on the host. 
-The host must be rebooted after the update for the sensors to begin recording data again. 
+The host must be restarted after the update for the sensors to begin recording data again. 
 In most cases the update should be run without saving the existing configuration, though it can be saved if there is extensive network and user configuration already present that would take time to reconfigure.
 
 **What is the ipmitool and how do I get it?**
@@ -90,7 +90,7 @@ Servers can be grouped for speedy administration of multiple servers at once and
 
 In rare circumstances, remote management can malfunction and require a reset. 
 To reset remote management, log in to the web interface and select **Reset Controller** from the **Maintenance** menu. 
-Wait approximately two minutes before logging in to the web interface again. It might be necessary to reboot the host to allow the sensors to repopulate afterward.
+Wait approximately two minutes before logging in to the web interface again. It might be necessary to restart the host to allow the sensors to repopulate afterward.
 
 If the procedure above does not address the issue, remote management might need to be power-cycled by shutting down and unplugging the server for approximately 30 seconds, then reconnecting and powering up the server. This causes remote management to re-initialize itself upon the next boot.
 

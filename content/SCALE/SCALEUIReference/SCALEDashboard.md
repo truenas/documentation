@@ -48,7 +48,7 @@ Click on the image to display the **View Enclosure** screen.
 | **Platform** | Shows as **Generic** for customer-provided server and hardware and displays the TrueNAS logo to the left of the **System Information** fields. The TrueNAS model number for the iXsystems-provided server and hardware and a picture of the server shows in the area to the left of the fields. |
 | **Version** | Shows the currently-installed software release of TrueNAS. Use the clipboard <span class="material-icons-outlined">assignment</span> icon to display the full name of the release installed and to copy the version to the clipboard. |
 | **Hostname** | Shows the host name for the TrueNAS system. Configure the host name on the **Network > Global Configuration** screen. |
-| **Uptime** | Shows the number of consecutive days, and hours and minutes the system of runtime since the last reboot. |
+| **Uptime** | Shows the number of consecutive days, and hours and minutes the system of runtime since the last restart. |
 | **Updates Available**<br>**Check for Updates** | Opens the **System Update** screen, or go to **System > Update** on the left-side main menu panel to open the **System Update** screen. **Updates Available** shows when systems updates are available for the current system release train. | 
 {{< /truetable >}}
 {{< /expand >}}

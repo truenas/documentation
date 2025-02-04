@@ -277,7 +277,7 @@ When a specific keyboard key or key combination is used, use the `<kbd>` HTML co
 Do not use the following in your articles:
 
 * The word *will*. It either does or does not do something. Use active voice and present tense when writing content.
-  For example, do not type "The system will reboot." Instead, use "The system reboots."
+  For example, do not type "The system will restart." Instead, use "The system restarts."
 
 * The word *may*. We all say it but we are not giving permission to do something, we are saying it *might* do something.
   You can also replace *may* with *can* or *should* if these words better describe the situation. Only use *may* when granting permission to do something.
