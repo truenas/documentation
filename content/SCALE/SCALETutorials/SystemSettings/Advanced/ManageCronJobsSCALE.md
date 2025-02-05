@@ -51,3 +51,5 @@ To hide error output (stderr) from the command, select **Hide Standard Error**. 
 Select **Enabled** to enable this cron job. Leave this checkbox cleared to disable the cron job without deleting it.
 
 Click **Save**.
+
+{{<include file="/static/includes/CustomScriptWarning.md">}}
