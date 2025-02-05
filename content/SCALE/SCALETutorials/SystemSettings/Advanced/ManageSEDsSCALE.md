@@ -1,5 +1,5 @@
 ---
-title: "Managing SEDs"
+title: "Configuring SED Settings"
 description: "Provides information on adding or modifying self-encrypting drive (SED) user and global passwords in TrueNAS."
 weight: 50
 aliases:
@@ -14,21 +14,14 @@ keywords:
 
 {{< include file="/static/includes/AdvancedSettingsWarningSCALE.md" >}}
 
-The **Self-Encrypting Drive(s)** widget on the **System > Advanced Settings** screen allows you set the user and global SED password in TrueNAS.
+{{< include file="/static/includes/SEDEnterpriseAdmonition.md" >}}
 
-## Managing Self-Encrypting Drives
+## Configuring Global SED Settings
 
-The **Self-Encrypting Drive** (SED) widget displays the ATA security user and password configured on the system. 
+{{< include file="/static/includes/SEDGlobalPW.md" >}}
 
-![AdvancedSystemSEDWidget](/images/SCALE/SystemSettings/AdvancedSystemSEDWidget.png "TrueNAS Advanced Settings Self-Encrypting Drive Widget") 
+## Configuring Individual SED Passwords
 
-Click **Configure** to open the **Self-Encrypting Drive** configuration screen. 
-The **Self-Encrypting Drive** configuration screen allows users set the ATA security user and create a SED global password.
+{{< include file="/static/includes/SEDIndividualPWs.md" >}}
 
-![AdvancedSystemSelfEncryptingDriveConfigScreen](/images/SCALE/SystemSettings/AdvancedSystemSelfEncryptingDriveConfigScreen.png "TrueNAS Advanced Settings Self-Encrypting Drive screen") 
-
-Select the user passed to *camcontrol security -u* to unlock SEDs from the **ATA Security User** dropdown list. Options are **USER** or **MASTER**.
-
-Enter the global password to unlock SEDs in **SED Password** and in **Confirm SED Password**.
-
-Click **Save**.
+See [Managing Self-Encrypting Drives (SED)]({{< relref "/SCALE/SCALETutorials/Storage/Disks/SEDScale.md" >}}) for more information.

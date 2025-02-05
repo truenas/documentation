@@ -37,7 +37,7 @@ TrueNAS hides all built-in users (except root) by default. Click the toggle **Sh
 
 TrueNAS 24.04 or newer supports administrator privileges for role-based administrator accounts.
 Users can create new administrator accounts with limited privileges based on their needs.
-Predefined administrator roles are read only, share admin, and the default full access local administrator account.
+Predefined administrator roles are read-only, share admin, and the default full access local administrator account.
 See [Using Administrator Logins]({{< relref "adminroles.md" >}}) for more information.
 
 {{< include file="/static/includes/AddAdminGroup.md" >}}
@@ -115,7 +115,7 @@ Do *not* paste the private key.
 
 Always keep a backup of an SSH public key if you are using one.
 
-As of TrueNAS 24.04, the **Shell** setting defaults to **nologin** for read only and sharing administrators, which means they cannot access the **Shell** screen.
+As of TrueNAS 24.04, the **Shell** setting defaults to **nologin** for read-only and sharing administrators, which means they cannot access the **Shell** screen.
 
 Select the [shell]({{< relref "LocalUsersScreensSCALE.md" >}}) option for the admin user from the **Shell** dropdown list.
 Options are **nologin**, **TrueNAS CLI**, **TrueNAS Console**, **sh**, **bash**, **rbash**, **dash**, **tmux**, and **zsh**.
@@ -136,12 +136,35 @@ While on the user configuration screen:
 
 Enter the path to the new dataset for home directories in **Home Directory**. For example, change **/var/empty/** to the path to the new dataset */tank/homedirs*.
 
-Next select **Create Home Directory**, and select the level of permissions you want to apply. We recommend leaving the default selections, **Read/Write/Execute** selected for the user home directory.
+Next, select **Create Home Directory**, and select the level of permissions you want to apply. We recommend leaving the default selections, **Read/Write/Execute** selected for the user home directory.
 
-Click **Save**. TrueNAS creates the new home directory for the user.
+Click **Save**. TrueNAS creates a new home directory for the user.
 
 ## Editing User Accounts
 
 To edit an existing user account, go to **Credentials > Users**.
 Click anywhere on the user row to expand the user entry, then click **Edit** to open the **Edit User** configuration screen.
 See [Local User Screens]({{< relref "LocalUsersScreensScale.md" >}}) for details on all settings.
+
+## Utilizing API Keys Feature
+
+{{< trueimage src="/images/SCALE/Credentials/UsersAPIKeysButton.png" alt="Users API Keys Option" id="Users API Keys Option" >}}
+
+To view API keys that are linked to different user accounts, you can visit **Credentials > Users** and click the **API Keys** button on the right side of the screen.
+
+{{< trueimage src="/images/SCALE/Credentials/UsersAPIKeysMenu.png" alt="Users API Keys Menu" id="Users API Keys Menu" >}}
+
+The **API Keys** selection takes users to the **Users API Keys** page, which provides a table of all API keys linked to user accounts on your TrueNAS. Information in this table includes the **Name**, **Username**, **Local** status, **Revoked** status, **Created Date**, and **Expires** status.
+
+{{< truetable >}}
+| Value | Description |
+|------------------|-----------------|
+| Name  | The name given to the API key when it was created.  |
+| Username  | The username of the TrueNAS user associated with the API key.  |
+| Local  | Indication of whether the API key is for a local TrueNAS user account.  |
+| Revoked  | Indication of whether the API key has been revoked and is no longer valid.  |
+| Created Date  | The date and time when the API key was created.  |
+| Expires  | The expiration date of the API key.  |
+{{< /truetable >}}
+
+You can edit or delete your API keys in the **User API Keys** screen. Click <i class="material-icons" aria-hidden="true" title="Edit">edit</i> **Edit** to open the **Edit API Key** screen. Click <i class="material-icons" aria-hidden="true" title="Delete">delete</i> **Delete** to delete an API key.

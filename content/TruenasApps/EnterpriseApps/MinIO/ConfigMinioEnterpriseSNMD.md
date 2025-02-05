@@ -15,6 +15,7 @@ keywords:
 - enterprise data storage
 ---
 
+{{< include file="/static/includes/apps/EnterpriseApps.md" >}}
 
 The instructions in this article apply to the TrueNAS MinIO Enterprise application installed in a Single-Node Multi-Disk (SNMD) multi-mode configuration.
 
@@ -30,59 +31,76 @@ Community members can add and use the MinIO Enterprise app or the default commun
 {{< include file="/static/includes/apps/AddMinioEnterpriseTrain.md" >}}
 
 ## Before You Begin
-To install the MinIO **enterprise** train app, do the following:
+To install the MinIO **enterprise** train app, do the following for each of the four Enterprise systems in the multi-node cluster:
+* Acquire and apply the Enterprise VM & Apps license to the system. 
 
-{{< include file="/static/includes/apps/BeforeYouBeginEnterpriseApps.md" >}}
-  
-{{< include file="/static/includes/MinIOEnterpriseMultiModeBeforeYouBegin.md" >}}
+{{< include file="/static/includes/apps/BeforeYouBeginStableApps.md" >}}
+{{< include file="/static/includes/apps/BeforeYouBeginRunAsUser.md" >}}
 
-If your system has active sharing configurations (SMB, NFS, iSCSI), disable them in **System > Services** before adding and configuring the MinIO application.
-Start any sharing services after MinIO completes the installation and starts.
+<div style="margin-left: 33px">{{< trueimage src="/images/SCALE/Apps/MinIOEnterpriseDetailsScreen.png" alt="MinIO Enterprise App Details Screen" id="MinIO Enterprise App Details Screen" >}}</div>
 
+{{< include file="/static/includes/apps/BeforeYouBeginAddNewAppUser.md" >}}
+
+{{< include file="/static/includes/apps/BeforeYouBegingAddAppCertificate.md" >}}
+
+<div style="margin-left: 33px">The <b>Certificates</b> setting is optional for a basic app configuration, but it is required when setting up single node (SNMD) and multi-mode (MNMD) configurations.
+</div>
+
+{{< include file="/static/includes/apps/BeforeYouBeginAddAppDatasets.md" >}}
+
+<div style="margin-left: 33px"><a href="https://www.truenas.com/docs/scale/scaletutorials/datasets/datasetsscale/">Create the dataset(s)</a> before beginning the app installation process.
+MinIO enterprise train app in an MNMD cluster requires four datasets, <b>data1</b>, <b>data2</b>, <b>data3</b>, and <b>data4</b>. The default mount path follows the dataset naming, <b>data1</b>, <b>data2</b>, <b>data3</b>, and <b>data4</b>. These datasets represent the disks in the MNMD configuration. Repeat this in each of the three remaining systems in the cluster.
+
+Follow the instructions below in **Creating Datasets for Apps** to correctly create the datasets.
+You can organize the app dataset(s) under a parent dataset to separate them from datasets for other applications.
+For example, create a <i>minio</i> parent dataset with each dataset nested under it.
+If you organize the MinIO app required datasets under a parent dataset, set up the required ACL permissions for the parent dataset before using the app installation wizard to avoid receiving installation wizard errors.
+Use the <b>Enable ACL</b> option in the <b>Install MinIO</b> wizard to configure permissions for the four datasets.
+MinIO object files on disk range from five MiB to five MiB, files smaller than 5 MiB are written in a single part.
+</div>
+
+<div style="margin-left: 33px">{{< include file="/static/includes/apps/BeforeYouBeginAddAppDatasetsProcedure.md" >}}
+</div>
+
+<div style="margin-left: 33px">{{< expand "Configuring Parent Dataset Permissions" "v" >}} 
+Select the parent dataset row on the <b>Datasets</b> screen tree table, scroll down to the <b>Permissions</b> widget, and click <b>Edit</b> to open the <b>Edit ACL</b> screen.
+Set the <b>@owner</b> and <b>@group</b> to <b>admin</b> or the name of your TrueNAS administration user account, then click <b>Apply Owner</b> and <b>Apply Group</b>.
+
+Next, click <b>Add Item</b> to add an ACE entry for the <b>MinIO</b> run as user, <b>568</b>.
+You might need to add another user, such as <b>www-data</b> if you receive an error message when installing the app.
+The error message shows the user name to add. Give both users full permissions.
+
+See [Setting Up Permissions]({{< relref "PermissionsSCALE.md" >}}) and [Edit ACL Screen]({{< relref "EditACLScreens.md" >}}) for more information.
+{{< /expand >}}</div>
+ 
 ## Installing MinIO Enterprise
-
 {{< hint info >}}
-This basic procedure covers the required MinIO enterprise app settings.
-For optional settings, see [Understanding MinIO Wizard Settings](#understanding-minio-wizard-settings).
+This basic procedure covers the required MinIO app settings.
+For optional settings, see [Understanding App Installation Wizard Settings](#understanding-app-installation-wizard-settings).
 {{< /hint >}}
 
 {{< include file="/static/includes/apps/MultipleAppInstancesAndNaming.md" >}}
+{{< include file="/static/includes/apps/LocateAndOpenInstallWizard.md" >}}
 
-{{< include file="/static/includes/apps/MinIoEnterpriseConfig1.md" >}}
+{{< trueimage src="/images/SCALE/Apps/InstallMinIOEnterprise.png" alt="Install MinIO Enterprise Screen" id="Install MinIO Enterprise Screen" >}}
 
-{{< include file="/static/includes/apps/MinIoEnterpriseConfig2.md" >}}
+{{< include file="/static/includes/apps/InstallWizardAppNameAndVersion.md" >}}
 
-{{< include file="/static/includes/apps/MinIOEnterpriseMultiModeConfig2.md" >}}
+{{< include file="/static/includes/apps/MinIoEnterpriseConfigSettings.md" >}}
 
-{{< trueimage src="/images/SCALE/Apps/InstallMinIOAddMultiModeSNMD.png" alt="Multi Mode SNDN Command" id="Multi Mode SNDN Command" >}}
+{{< include file="/static/includes/apps/MinIOEnterpriseMultiModeSNMDConfig.md" >}}
 
-{{< include file="/static/includes/apps/MinIOEnterpriseConfig3.md" >}}
+{{< include file="/static/includes/apps/InstallWizardUserAndGroupConfig.md" >}}
 
-{{< include file="/static/includes/apps/MinIOEnterpriseMultiModeConfig3.md" >}}
+{{< include file="/static/includes/apps/MinIOEnterpriseNetworkConfig.md" >}}
 
-Scroll down to or click on **Storage Configuration** on the list of wizard sections.
+{{< include file="/static/includes/apps/MinIOEnterpriseMultiModeStorageConfig.md" >}}
 
-Select the storage type you want to use.
-To use an existing dataset, select **Host Path (Path that already exists on the system)** which is the recommended option for MinIO.
-**Mount Path** populates with the default **/data1**.
-Select **Enable ACL** to show the mount path and host path fields.
-Enter the path or browse to and click on the **data1** dataset location to populate **Host Path**.
+{{< include file="/static/includes/apps/MinIoEnterpriseFinishConfig.md" >}}
 
-Click **Add** to the right of **ACE Entries**.
+Log into the MinIO web portal, and go to **Monitoring > Metrics**. The MinIO UI should show 4 drives.
 
-{{< trueimage src="/images/SCALE/Apps/InstallMinIOEnterpriseData1ACLandACESettings.png" alt="MinIO Enterprise ACL and ACE Settings" id="MinIO Enterprise ACL and ACE Settings" >}}
-
-Set the **ACE Entry** user to the default user **568** or enter the UID for the user created in TrueNAS to serve as the MinIO app administrator, and set the permissions to **FULL_CONTROL**.
-
-Select **Force** to allow TrueNAS to update the application to the next version. This allows updates and writing to the storage volume if it has data in it.
-
-Click **Add** to the right of **Data Directories** three times to add storage volume settings for the other three datasets, **data2**, **data3**, and **data4**.
-
-Repeat the storage settings for each of these datasets.
-
-{{< include file="/static/includes/apps/MinIoEnterpriseConfig4.md" >}}
-
-## Understanding MinIO Wizard Settings
+## Understanding App Installation Wizard Settings
 The following section provides more detailed explanations of the settings in each section of the **Install MinIO** configuration wizard.
 
 ### Application Name Settings
@@ -93,11 +111,14 @@ The following section provides more detailed explanations of the settings in eac
 
 {{< include file="/static/includes/apps/MinIOEnterpriseMinIOConfig.md" >}}
 
-#### Multi-Mode Configuration
+#### MultiMode Configuration
 Multi-mode installs the app in either a [MinIO Single-Node Multi-Drive (SNMD)](https://min.io/docs/minio/linux/operations/install-deploy-manage/deploy-minio-single-node-multi-drive.html) or [Multi-Node Multi-Drive (MNMD)](https://min.io/docs/minio/linux/operations/install-deploy-manage/deploy-minio-multi-node-multi-drive.html#minio-mnmd) cluster.
 MinIO recommends using MNMD for enterprise-grade performance and scalability.
 
-Click **Enabled** under **Multi Mode (SNMD or MNMD) Configuration** to enable multi-mode and show the **Multi Mode (SNMD or MNMD)** and **Add** option.
+Click **Enabled** under **Multi Mode (SNMD or MNMD) Configuration** to enable multi-mode and show the **Multi Mode (SNMD or MNMD)** and **Add** options.
+
+#### Adding Environment Variables
+{{< include file="/static/includes/apps/InstallWizardEnvironVariablesSettings.md" >}}
 
 ### User and Group Configuration
 
@@ -107,23 +128,34 @@ Click **Enabled** under **Multi Mode (SNMD or MNMD) Configuration** to enable mu
 
 {{< include file="/static/includes/apps/MinIOEnterpriseNetworkConfig.md" >}}
 
+When installing and configuring multi-mode SNMD or MNMD you must create a self-signed certificate.
+
+An SNMD configuration can use the same self-signed certificate created for MNMD.
+An MNMD configuration cannot use the certificate for an SNMD configuration because that certificate only includes the IP address for one system.
+Create this same self-signed certificate for the MNMD cluster on each system (node) in the cluster! 
+
+{{< include file="/static/includes/apps/InstallWizardCertificateSettings.md" >}}
+
 ### Storage Configuration
 
 {{< include file="/static/includes/apps/MinIOEnterpriseStorageConfig.md" >}}
 
-#### ACL Configuration Settings
-To deploy the MinIO app, you must configure the ACL and ACE settings for both the **/data** host path storage volume(s) or the application does not deploy.
-
-If the storage volume is an ixVolume, permissions apply on every application start but only if the directory is empty (has no data), and if ACLs are not configured.
-Configured ACLs take precedence and are applied.
-
-Specify the default user UID **568** or the UID for the new user created in TrueNAS to serve as the MinIO app admin user.
-
-{{< trueimage src="/images/SCALE/Apps/InstallMinIOEnterpriseData1ACLandACESettings.png" alt="MinIO Enterprise ACL and ACE Settings" id="MinIO Enterprise ACL and ACE Setting" >}}
+#### Setting Dataset ACL Permissions
+You can configure ACL permissions for the required dataset in the **Install MinIO** wizard, or from the **Datasets** screen any time after adding the datasets.
 
 {{< include file="/static/includes/apps/InstallWizardStorageACLConfig.md" >}}
 
-Set ACL permissions for each dataset in the configuration.
+{{< expand "Adding ACL Permissions from the Datasets Screen" "v">}}
+First, select the dataset row, scroll down to the **Permissions** widget, and click **Edit** to open the **Edit ACL** screen.
+Change the **@owner** and **@group** values from **root** to the administrative user for your TrueNAS system, and click apply for each.
+Next, add an ACL entry for the run-as user.
+For MinIO, the run-as users is **568**. Add a user entry for this user.
+Save the ACL before leaving the screen.
+
+See [Setting Up Permissions]({{< relref "PermissionsSCALE.md" >}}) and [Edit ACL Screen]({{< relref "EditACLScreens.md" >}}) for more information.
+{{< /expand >}}
+
+Set ACL permissions for each dataset in the configuration, and on each system in the cluster.
 
 ### Resource Configuration
 

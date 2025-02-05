@@ -110,7 +110,7 @@ Select an option from the **Security** dropdown. If you select **KRB5** security
 {{< /expand >}}
 
 ## Editing an NFS Share
-To edit an existing NFS share, go to **Shares > Unix Shares (NFS)** and click the share you want to edit.
+To edit an existing NFS share, go to **Shares > Unix (NFS) Shares** and click the share you want to edit.
 The **Edit NFS** screen settings are identical to the share creation options, but you cannot create a new dataset.
 
 ## Starting the NFS Service
@@ -128,15 +128,33 @@ Select **Start Automatically** if you want NFS to activate when TrueNAS boots.
 The NFS service does not automatically start on boot if all NFS shares are encrypted and locked.
 {{< /hint >}}
 
-### Configuring NFS Service
-You can configure the NFS service from either the **System > Services** or the **Shares > Unix Shares (NFS)** widget.
+### Configuring the NFS Service
+You can configure the NFS service from either the **System > Services** screen or the **Shares > Unix (NFS) Shares** widget.
 
 To configure NFS service settings from the **Services** screen, click <i class="material-icons" aria-hidden="true" title="Configure">edit</i> on the **System > Services** screen to open the **NFS** service screen.
 
-To configure NFS service settings from the **Shares > Unix Shares (NFS)** widget, click the **Config Service** from the <span class="material-icons">more_vert</span> dropdown menu on the widget header to open the **NFS** service screen.
+To configure NFS service settings from the **Shares > Unix (NFS) Shares** widget, click the **Config Service** from the <span class="material-icons">more_vert</span> dropdown menu on the widget header to open the **NFS** service screen.
+
+{{< trueimage src="/images/SCALE/SystemSettings/ServicesNFSSettingsScreen.png" alt="NFS Service Settings" id="NFS Service Settings" >}}
+
 Unless you need specific settings, we recommend using the default NFS settings.
 
 When TrueNAS is already connected to [Active Directory]({{< relref "/SCALE/SCALEUIReference/Credentials/DirectoryServices/_index.md" >}}), setting **NFSv4** and **Require Kerberos for NFSv4** also requires a [Kerberos Keytab]({{< relref "/SCALE/SCALEUIReference/Credentials/DirectoryServices/_index.md" >}}).
+
+{{< enterprise >}}
+<b>NFS over RDMA</b>
+
+TrueNAS Enterprise customers utilizing NFS shares with compatible hardware can enable NFS over RDMA to improve NFS performance and efficiency.
+Remote Direct Memory Access (RDMA) lets a client system transfer data directly from a server’s memory to its own, improving speed, reducing latency, and lowering CPU usage.
+
+NFS over RDMA support requires an active Enterprise license and RDMA capable network interface cards (NICs) in both the TrueNAS host and client systems.
+Interested customers should contact Enterprise Support for assistance.
+
+{{< expand "Contacting Support" "v" >}}
+{{< include file="static\includes\iXsystemsSupportContact.md" >}}
+{{< /expand >}}
+
+{{< /enterprise >}}
 
 ## Connecting to the NFS Share
 Although you can connect to an NFS share with various operating systems, we recommend using a Linux/Unix OS.

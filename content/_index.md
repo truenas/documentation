@@ -27,7 +27,7 @@ While browsing, switch to a different version of the same product to see the cor
     <img src="/images/Software_Status_Icon_2.png" alt="Engineering Icon" title="Development Preview" style="padding-right: .75rem; max-width: 45px; max-height: 45px; align-self: flex-start;">
     <h3 style="margin: 0;">Development Preview</h3>
   </div>
-  <p>To stay up to date with the most recent developments, including anticipated features and improvements, choose a <strong>Nighly</strong> option from the <strong>Version</strong> dropdown.<br>
+  <p>To stay up to date with the most recent developments, including anticipated features and improvements, choose a <strong>Nightly</strong> option from the <strong>Version</strong> dropdown.<br>
   See <a href="/truenasupgrades/">Software Releases</a> to download releases or view upgrade paths, release schedules, and development timelines.</p>
 </div>
 

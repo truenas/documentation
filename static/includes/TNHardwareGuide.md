@@ -26,8 +26,8 @@ For help building a system according to your unique performance, storage, and ne
 
 The heart of any storage system is the symbiotic pairing of the file system and physical storage devices.
 The ZFS file system in TrueNAS provides the [best available data protection of any file system at any cost](https://www.ixsystems.com/blog/openzfs-vs-the-competition/) and makes effective use of both spinning-disk and all-flash storage or a mix of the two.
-ZFS is prepared for the eventual failure of storage devices, and is highly configurable to achieve the perfect balance of redundancy and performance to meet any storage goal.
-A properly-configured TrueNAS system can tolerate multiple storage device failures and recreate its boot media with a copy of the [configuration file]({{< relref "ManageSysConfigSCALE.md" >}}).
+ZFS is prepared for the eventual failure of storage devices and is highly configurable to achieve the perfect balance of redundancy and performance to meet any storage goal.
+A properly configured TrueNAS system can tolerate multiple storage device failures and recreate its boot media with a copy of the [configuration file]({{< relref "ManageSysConfigSCALE.md" >}}).
 
 ### Storage Device Quantities
 
@@ -52,11 +52,21 @@ Enterprise SATA disks address the always-on factor, vibration tolerance, and dri
 However, the price gap between desktop and enterprise SATA drives is so vast that many users push their consumer drives into 24/7 service pursuing cost savings.
 
 Drive vendors, likely tired of honoring warranties for failed desktop drives used in incorrect applications, responded to this gap in the market by producing NAS drives.
-NAS drives achieved fame from the original Western Digital (WD) Red™ drives with CMR/PMR technology (now called WD Red Plus).
+NAS drives achieved fame from the original Western Digital (WD) Red™ drives with [Conventional Magnetic Recording (CMR)](https://en.wikipedia.org/wiki/Perpendicular_recording) technology (now called WD Red Plus).
 Western Digital designed the WD Red™ Plus NAS drives (non-SMR) for systems with up to 8 hard drives, the [WD Red™ Pro](https://www.westerndigital.com/products/internal-drives/wd-red-pro-sata-hdd) for systems with up to 16 drives, and the [WD UltraStar™](https://www.westerndigital.com/products/data-center-platforms) for systems beyond 16 drives.
 
 The iXsystems Community Forum prefers WD drives for TrueNAS builds due to their exceptional quality and reliability.
 All TrueNAS Minis ship with WD Red™ Plus drives unless requested otherwise.
+
+{{< hint type=warning title="TrueNAS and SMR Drives" >}}  
+Drive manufacturers produce SATA NAS disks that use either CMR or [Shingled Magnetic Recording (SMR)](https://en.wikipedia.org/wiki/Shingled_magnetic_recording) technology.  
+SMR drives offer greater storage density compared to their CMR equivalents.
+However, due to slower write and overwrite performance (rewriting over existing data) and the potential for instability or even data loss during resilver operations, iXsystems [does not recommend]({{< relref "/hardware/notices/wdsmr.md" >}}) using SMR drives with TrueNAS or ZFS in general.  
+See also: [WD Red SMR vs CMR Tested: Avoid Red SMR](https://www.servethehome.com/wd-red-smr-vs-cmr-tested-avoid-red-smr/) and [We put Western Digital’s dreaded SMR Red drive to the test](https://arstechnica.com/gadgets/2020/06/western-digitals-smr-disks-arent-great-but-theyre-not-garbage/).  
+
+Consult your drive manufacturer, such as [Western Digital](https://support-en.wd.com/app/answers/detailweb/a_id/50697/~/steps-to-determine-if-an-internal-drive-uses-cmr-or-smr-technology) or [Seagate](https://www.seagate.com/products/cmr-smr-list/), to determine whether a disk uses CMR or SMR technology.  
+{{< /hint >}}
+
 {{< /expand >}}
 
 {{< expand "Nearline SAS Disks" "v" >}}
@@ -97,7 +107,7 @@ The new U.2 interface offers a universal solution that includes the 2.5" drive f
 NVMe devices can run quite hot and might need dedicated heat sinks.
 
 {{< hint type=note >}}
-Manual S.M.A.R.T. tests on NVMe devices is currently not supported.
+Manual S.M.A.R.T. tests on NVMe devices are currently not supported.
 {{< /hint >}}
 {{< /expand >}}
 
@@ -368,7 +378,7 @@ If several SSDs experience simultaneous power loss, it could cause total pool fa
 
 ### Ethernet Networking
 
-The network in Network Attached Storage is as important as storage, but the topic reduces to a few key points:
+The network in Network Attached Storage is as important as storage, but the topic has a few key points:
 
 * Simplicity - Simplicity is often the secret to reliability with network configurations.
 * Individual interfaces - Faster individual interfaces such as 10/25/40/100GbE are preferable to aggregating slower interfaces.
@@ -400,7 +410,7 @@ At the heart of the TrueNAS design is OpenZFS. OpenZFS works best with physical 
 
 TrueNAS developers [virtualize TrueNAS every day](https://www.ixsystems.com/blog/yes-you-can-virtualize-freenas/) as part of their work, and it is intended only for use as a development environment.
 {{< hint type=important >}}
-While possible to deploy TrueNAS in a virtual environment, we do not recommend doing so for regular deployment of TrueNAS when storing production or critical data.
+While you can deploy TrueNAS in a virtual environment, we do not recommend doing so for regular deployment of TrueNAS when storing production or critical data.
 Virtualizing TrueNAS and using virtual disks for your pool is fine for ad hoc proof-of-concept, but it is not a supported configuration and might result in data corruption.
 {{< /hint >}}
 

@@ -244,7 +244,7 @@ Applications that crash show the **Crashed** status. Clicking **Stop** changes t
 Click **Start** to restart the application.
 
 The screen defaults to selecting the first app row listed on the **Applications** table and showing the application widgets that first app.
-To modify installed application settings, first, click on the app row on the **Applications** table, then click **Edit** on the **Application Info** widget.
+To modify installed application settings, click on the app row in the **Applications** table, then click **Edit** on the **Application Info** widget.
 
 Refer to individual tutorials in the [Stable]({{< relref "/content/TruenasApps/StableApps/_index.md" >}}), [Community]({{< relref "/content/TruenasApps/CommunityApps/_index.md" >}}), or [Enterprise]({{< relref "/content/TruenasApps/EnterpriseApps/_index.md" >}}) sections of the Documentation Hub for more details on configuring application settings.
 
@@ -314,6 +314,11 @@ Click **Confirm** then **Continue** to delete the application.
 ### Stopping Apps
 
 Apps on the **Installed** screen, showing either the **Deploying** or **Running** status, can be stopped using the stop button on the **Applications** table row for the app.
+
+### Restarting Apps
+
+Running apps show the restart icon button that allows you to stop and then restart the application.
+Click the <span class="material-icons">restart_alt</span> icon button to stop then automatically restart the app.
 
 ### Managing Container Images
 

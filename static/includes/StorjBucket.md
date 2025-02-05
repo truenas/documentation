@@ -27,7 +27,7 @@ If using the [Add TrueCloud Backup Task]({{< relref "truecloudbackuptasksscreen.
 If using the [Cloud Sync Task Wizard]({{< relref "cloudsynctasksscreensscale.md" >}}):
 
 1. Select the stored Storj cloud credential from the **Provider > Credentials** dropdown.
- Do this as part of setting up a task, or use the wizard to create the bucket without saving a configured task.
+ Do this as part of setting up a task or use the wizard to create the bucket without saving a configured task.
 
 2. Click **Verify Credential** for verification, then click **Next** to go to the **What and When** screen.
 

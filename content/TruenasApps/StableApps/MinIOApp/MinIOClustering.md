@@ -24,7 +24,7 @@ keywords:
 {{< include file="/static/includes/ProposeArticleChange.md" >}}
 
 {{< hint info >}}
-This article applies to the public release of the S3 **MinIO** charts application in the TRUENAS catalog.
+This article applies to the public release of the TrueNAS S3 **MinIO** stable train application configured in a distributed mode cluster.
 {{< /hint >}}
 
 TrueNAS 23.10 and later allows users to create a MinIO S3 distributed instance to scale out TrueNAS to handle individual node failures.
@@ -34,24 +34,34 @@ The **stable** train version of MinIO supports [distributed mode](https://min.io
 Distributed mode, allows pooling multiple drives, even on different systems, into a single object storage server.
 For information on configuring a distributed mode cluster in TrueNAS using MinIO, see [Setting Up MinIO Clustering]({{< relref "MinIOClustering.md" >}}).
 
-The **enterprise** train version of MinIO provides two options for clustering, Single Node Multi Disk (SNMD) and Multi Node Multi Disk (MNMD) configurations. See [MinIO Enterprise]({{< relref "/TruenasApps/EnterpriseApps/MinIO/_index.md" >}}) for more information.
+The **enterprise** train version of MinIO provides two options for clustering, Single Node Multi-Disk (SNMD) and Multi-Node Multi-Disk (MNMD) configurations. See [MinIO Enterprise]({{< relref "/TruenasApps/EnterpriseApps/MinIO/_index.md" >}}) for more information.
 
 The examples below use four TrueNAS systems to create a distributed cluster.
 For more information on MinIO distributed setups, refer to the [MinIO documentation](https://docs.min.io/docs/distributed-minio-quickstart-guide.html).
 
 ## Before You Begin
+Before you install the **stable** version of the MinIO app:
 
-{{< include file="/static/includes/apps/MinIODatasetRequirements.md" >}}
+{{< include file="/static/includes/apps/BeforeYouBeginStableApps.md" >}}
+{{< include file="/static/includes/apps/BeforeYouBeginRunAsUser.md" >}}
 
-For a distributed configuration, repeat the above on all system nodes in advance.
-Take note of the system (node) IP addresses or host names and have them ready for configuration. Also, have your S3 user name and password ready for later.
+<div style="margin-left: 33px">{{< trueimage src="/images/SCALE/Apps/MinIOS3AppInfoScreen.png" alt="Plex App Details Screen" id="Plex App Details Screen" >}}</div>
 
-If your system has sharing (SMB, NFS, iSCSI) configured, disable the share service before adding and configuring a new MinIO deployment.
-After completing the installation and starting MinIO, enable the share service.
+{{< include file="/static/includes/apps/BeforeYouBeginAddAppDatasets.md" >}}
 
-For more information on app installation wizard settings see [Understanding MinIO Wizard Settings]({{< relref "TruenasApps/StableApps/MinioApp/_index.md #understanding-minio-wizard-settings" >}})
+<div style="margin-left: 33px">Create a parent dataset, such as <i>minio</i>, and then the storage dataset(s) (<b><i>data</i></b>, etc.) under it.
+  Select <b>apps</b> as the <b>Dataset Preset</b> for these datasets. You can modify the dataset ACLs at the time of creation, or modify them later when adding them to the app.</div>
 
-## Configuring MinIO
+<div style="margin-left: 33px">{{< include file="/static/includes/apps/BeforeYouBeginAddAppDatasetsProcedure.md" >}}
+
+If your system has active sharing configurations (SMB, NFS, iSCSI), disable them in **System > Services** before adding and configuring the MinIO application.
+Start any sharing services after MinIO completes the installation and starts.</div>
+
+{{< include file="/static/includes/apps/BeforeYouBeginAddAppCertificate.md" >}} 
+
+<div style="margin-left: 33px">Adding a certificate is optional, but if you want to use a certificate for this application, either create a new self-signed CA and certificate or import an existing CA and create the certificate for MinIO. A certificate is not required to deploy the stable train MinIO application.</div>
+
+## Configuring MinIO in a Cluster
 Begin on the first node (system) in your cluster.
 
 {{< include file="/static/includes/apps/LocateAndOpenInstallWizard.md" >}}
@@ -60,30 +70,40 @@ Begin on the first node (system) in your cluster.
 
 {{< include file="/static/includes/apps/InstallWizardAppNameAndVersion.md" >}}
 
+{{< include file="/static/includes/apps/MultipleAppInstancesAndNaming.md" >}}
+
 Next, enter the **MinIO Configuration** settings.
 
-{{< include file="/static/includes/MinIOEnableDistributedModeInfo.md" >}}
+{{< include file="/static/includes/apps/MinIOInstallArgAndEnvironVarSteps.md" >}}
 
-For a distributed cluster, ensure the values are identical between server nodes and have the same credentials.
-
-{{< include file="/static/includes/MinIOInstallArgAndEnvironVarSteps.md" >}}
-
-{{< trueimage src="/images/SCALE/Apps/InstallMinioDistributedModeAddStorage.png" alt="MinIO Distributed Mode Settings" id="MinIO Distributed Mode Settings" >}}
+{{< include file="/static/includes/apps/MinIOPortsAndLogSearch.md" >}}
 
 {{< include file="/static/includes/MinIOPortsAndLogSearch.md" >}}
 
-MinIO uses two datasets and mount paths. Set the first to **/export** with the host path set to the **export** dataset.
-The other mount point is **/data** with the host path set to the **data** dataset.
+Add your **Storage Configuration** settings.
 
-{{< include file="/static/includes/apps/MinIOStorageDataVolume.md" >}}
+{{< include file="/static/includes/MinIOEnableDistributedModeInfo.md" >}}
 
-Select **Enable ACL** for the **/export** storage volume, enter **473** as the user and give it full permissions.
+For a distributed cluster, ensure the values are identical between server nodes and that they have the same credentials.
+
+{{< trueimage src="/images/SCALE/Apps/InstallMinioDistributedModeAddStorage.png" alt="MinIO Distributed Mode Settings" id="MinIO Distributed Mode Settings" >}}
+
+MinIO uses one dataset, one ixVolume, and two mount paths.
+Leave the **MinIO Export Storage (Data)** set to the defaults, with **Type** set to **ixVolume** and the mount path **/export**.
+You can create a dataset for this and use the host path option but it is not necessary for this storage volume.
+
+Add the storage volume for MinIO data storage. Click **Add** to the right of **Additional Storage**.
+Set **Type** to **Host Path (Path that already exists on the system)**.
+Enter **/data** in **Mount Path**, select **Enable ACL**, then enter **data** in **Dataset Name**.
+
+Click **Add** to the right of **ACL Entries** to show the permissions fields.
+Set **Id Type** to **Entry is for a USER**, enter **473** in **ID**, and give it full permissions.
 Repeat for the **/data** storage volume.
 
-{{< trueimage src="/images/SCALE/Apps/MinIODistributedModeConfigExportAndDataACLACE.png" alt="Export and Data Host Path ACL and ACE Settings" id="Export and Data Host Path ACL and ACE Settings" >}}
+{{< trueimage src="/images/SCALE/Apps/InstallMinIOAddDataHostPathACLandACESettings.png" alt="Data Host Path ACL and ACE Settings" id="Data Host Path ACL and ACE Settings" >}}
 
 {{< include file="/static/includes/apps/MinIOCompleteInstall.md" >}}
 
-Now that the first node is complete, configure any remaining nodes (including datasets and directories).
+After completing the first node, begin configuring the remaining system nodes in the cluster (including datasets and directories).
 
 After installing MinIO on all systems (nodes) in the cluster, start the MinIO applications.

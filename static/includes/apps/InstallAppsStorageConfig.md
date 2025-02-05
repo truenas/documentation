@@ -10,6 +10,9 @@ To use an existing dataset, which is the recommended option, set **Type** to **H
 
 If the install wizard shows a **Mount Path**, either accept the default value or enter the correct mount path. For example, if the dataset name is *data*, enter */data* as the mount path. 
 
+To create a dataset while in the app installation wizard, with **Type** set to the host path option, go to the **Host Path** field, click into the pool or a dataset in the pool to activate the **Create Dataset** option. Click on **Create Dataset** to open the dialog.
+Enter the name for the dataset, then click **Create**. TrueNAS creates the dataset in the location selected.
+
 Select **Enable ACL** to define ACL permissions and to populate the **Host Path** field by either entering or browsing to and selecting the location of the dataset.
 Populating the **Host Path** with the dataset location and then selecting **Enable ACL** clears the values, so we recommend selecting **Enable ACL** before entering the host path.
 

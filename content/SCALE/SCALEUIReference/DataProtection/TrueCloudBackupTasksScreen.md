@@ -92,7 +92,7 @@ Additional settings show depending on the **Include/Exclude** selection.
 | Settings | Description |
 |----------|-------------|
 | **Include Everything** | Select to restore all backed-up data from the remote snapshot to the selected local path. |
-| **Include from subfolder** | Select to restore data from a subfolder within the backed-up data.  |
+| **Include from subfolder** | Select to restore data from a subfolder within the backed-up data. |
 | **Subfolder** | Shows when **Include from subfolder** is selected. Enter or browse to the subfolder within the snapshot with the data to restore. |
 | **Included Paths** | Shows when **Include from subfolder** is selected. Select files and directories to include from the backup. Leave empty to include everything in the selected subfolder. |
 | **Select paths to exclude** | Select to exclude only certain paths from the data to restore. |
@@ -179,9 +179,8 @@ The **Remote** settings specify the TrueCloud credential and destination storage
 {{< truetable >}}
 | Settings | Description |
 |----------|-------------|
-| **Pre-Script** | (For advanced users only) Enter a script to execute before running the task. See **Script Environment Variables** list below for variables you can use in scripts. See the [Managing TrueCloud Backup Tasks tutorial]({{< relref "TrueCloudTasks.md #using-advanced-options" >}}) for more information. |
-| **Post-Script** | (For advanced users only) Enter a script to execute after running the task. See **Script Environment Variables** list below for variables you can use in scripts. See the [Managing TrueCloud Backup Tasks tutorial]({{< relref "TrueCloudTasks.md #using-advanced-options" >}}) for more information. |
-| **Exclude** | Enter a list of files and directories to exclude from backup. Separate entries by pressing <kbdEnter</kbd>. See [restic exclude patterns](https://restic.readthedocs.io/en/latest/040_backup.html#excluding-files) for more details about the `--exclude option`. |
+| **Take Snapshot** | Select to set the TrueCloud Backup Task to take a snapshot of the dataset before a push. |
+| **Use Absolute Paths** | Select to ensure that restic backups will contain absolute paths. If you don't check this box, the restic backup will contain relative paths. |
 | **Pre-Script** | (For advanced users only) Enter a script to execute before running the task. See the [Managing TrueCloud Backup Tasks tutorial]({{< relref "TrueCloudTasks.md #using-advanced-options" >}}) for more information. See **Script Environment Variables** below for a list of variables for scripts. |
 | **Post-Script** | (For advanced users only) Enter a script to execute after running the task. See the [Managing TrueCloud Backup Tasks tutorial]({{< relref "TrueCloudTasks.md #using-advanced-options" >}}) for more information. See **Script Environment Variables** below for a list of variables for scripts. |
 | **Exclude** | Enter a list of files and directories to exclude from the backup. Separate entries by pressing <kbd>Enter</kbd>. See [restic exclude patterns](https://restic.readthedocs.io/en/latest/040_backup.html#excluding-files) for more information about the `--exclude` option and proper syntax. |
