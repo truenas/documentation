@@ -1,8 +1,0 @@
-/scale/25.04 public/scale/25.04
-/scale/24.10 public/scale/24.10
-
-/core/13.3 public/core/13.3
-/core/13.0 public/core/13.0
-
-/truecommand/3.0 public/truecommand/3.0
-/truecommand/2.3 public/truecommand/2.3
