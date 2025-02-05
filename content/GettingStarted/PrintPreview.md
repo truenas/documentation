@@ -6,4 +6,4 @@ no_print: "true"
 related: false
 ---
 
-<meta http-equiv="Refresh" content="0; url='/25.04/gettingstarted/printview/'" />
+<meta http-equiv="Refresh" content="0; url='/gettingstarted/printview/'" />
