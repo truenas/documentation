@@ -154,12 +154,14 @@ Any new feature flags introduced since the previous OpenZFS version that was int
 
 For more details on feature flags, see [OpenZFS Feature Flags](https://openzfs.github.io/openzfs-docs/Basic%20Concepts/Feature%20Flags.html) and [OpenZFS zpool-feature.7](https://openzfs.github.io/openzfs-docs/man/7/zpool-features.7.html).
 
-## 24.10.2 Changelog
+## 24.10.2
 
 **January 28, 2025**
 
 iXsystems is pleased to release TrueNAS 24.10.2!
 This is a maintenance release and includes refinement and fixes for issues discovered or outstanding after the 24.10.1 release.
+
+### Notable Changes
 
 * Do not retrieve hidden zpool properties in `py-libzfs` by default ([NAS-132988](https://ixsystems.atlassian.net/browse/NAS-132988)). These properties include name, tname, maxblocksize, maxdnodesize, dedupditto and dedupcached. Users needing these properties can see the linked ticket for the `zpool` command to retrieve them.
 * A **Force Remove iXVolumes** checkbox is exposed on app deletion for any apps migrated from 24.04 that were unable to be deleted due to a "dependent clones" error ([NAS-132914](https://ixsystems.atlassian.net/browse/NAS-132914)).
@@ -182,20 +184,22 @@ This is a maintenance release and includes refinement and fixes for issues disco
 <a href="https://ixsystems.atlassian.net/issues/?filter=11414" target="_blank">Click here for the full changelog</a> of completed Jira tickets that are included in the 24.10.2 release.
 {{< include file="/static/includes/JiraFilterInstructions.md" >}}
 
-### 24.10.2 Known Issues
+### Known Issues
 
 * We are aware of an issue affecting SED disk unlock at boot, particularly for systems configured with per-disk SED passwords.
   A fix is expected in the TrueNAS 25.04 release.
 
 <a href="https://ixsystems.atlassian.net/issues/?filter=11415" target="_blank">Click here to see the latest information on Jira</a> about public issues discovered in 24.10.2 that are being resolved in a future TrueNAS release.
 
-## 24.10.1 Changelog
+## 24.10.1
 
 {{< expand "Click to expand" "v" >}}
 **December 17, 2024**
 
 iXsystems is pleased to release TrueNAS 24.10.1!
 This is a maintenance release and includes refinement and fixes for issues discovered after the 24.10.0 and 24.10.0.X releases.
+
+### Notable Changes
 
 * The `sendmail` command is removed for security reasons ([NAS-133174](https://ixsystems.atlassian.net/browse/NAS-133174)). Users previously using sendmail as part of their custom scripting should use `exim` instead.
 * The boot pool is now properly enforcing the default `setuid` and `noexec` options ([NAS-127825](https://ixsystems.atlassian.net/browse/NAS-127825)). This restores the default boot pool behavior to be restricted from general use. Users that are currently attempting to exec scripts from a `/home` or other boot pool location should move these to a data pool location.
@@ -215,7 +219,7 @@ This is a maintenance release and includes refinement and fixes for issues disco
 <a href="https://ixsystems.atlassian.net/issues/?filter=11216" target="_blank">Click here for the full changelog</a> of completed Jira tickets that are included in the 24.10.1 release.
 {{< include file="/static/includes/JiraFilterInstructions.md" >}}
 
-### 24.10.1 Known Issues
+### Known Issues
 
 * The Plex app doesn't show Nvidia GPUs being passed to the app and transcode stops working ([NAS-133250](https://ixsystems.atlassian.net/browse/NAS-133250)). A fix is anticipated in a future release and the linked Jira ticket has a workaround for the 24.10.1 release.
 * Configured SED drives do not migrate from FreeBSD-based TrueNAS releases to 24.10 (or earlier) releases, due to differences in how FreeBSD-based and Linux-based TrueNAS releases manage SED configurations. A fix to allow cleaner migrations of SED configurations is anticipated in TrueNAS 25.04.
@@ -243,7 +247,7 @@ This is a maintenance release and includes refinement and fixes for issues disco
 
 {{< /expand >}}
 
-## 24.10.0.2 Changelog
+## 24.10.0.2
 
 {{< expand "Click to expand" "v" >}}
 **November 8, 2024**
@@ -255,7 +259,7 @@ This is a release to address another high-impact issue discovered with SMB memor
 
 Users with 24.10.0.1 installed and SMB shares in use are encouraged to upgrade to this release immediately.
 
-### 24.10.0.2 Known Issues
+### Known Issues
 
 Please see the 24.10.0 changelog below and use the Jira filter links to see the full changelog and known issues related to the 24.10.0, 24.10.0.1, and 24.10.0.2 releases.
 {{< /expand >}}
@@ -268,7 +272,7 @@ Please see the 24.10.0 changelog below and use the Jira filter links to see the 
 iXsystems is pleased to release TrueNAS 24.10.0.1!
 This is a release to address a small number of issues discovered in the 24.10.0 release.
 
-Notable Changes:
+### Notable Changes
 
 * Fix memory consumption related to SMB AIO reads ([NAS-132166](https://ixsystems.atlassian.net/browse/NAS-132166)).
 * Fix disk.sync_all edge-case crash ([NAS-132177](https://ixsystems.atlassian.net/browse/NAS-132177)).
@@ -278,7 +282,7 @@ Notable Changes:
 * Prevent SED pool degradation after power loss ([NAS-129366](https://ixsystems.atlassian.net/browse/NAS-129366)).
 * Fix TrueNAS ES24 enclosure management bug ([NAS-132067](https://ixsystems.atlassian.net/browse/NAS-132067)).
 
-### 24.10.0.1 Known Issues
+### Known Issues
 
 * Users have reported an issue with SMB memory management under heavy SMB loads.
   A fix for this issue is in the 24.10.0.2 release version.
@@ -286,7 +290,7 @@ Notable Changes:
 Please see the 24.10.0 changelog below and use the Jira filter links to see the full changelog and known issues related to the 24.10.0 and 24.10.0.1 releases.
 {{< /expand >}}
 
-## 24.10.0 Changelog
+## 24.10.0
 
 {{< expand "Click to expand" "v" >}}
 **October 29, 2024**
@@ -295,7 +299,7 @@ iXsystems is pleased to release TrueNAS 24.10.0!
 This is the first stable release of TrueNAS SCALE 24.10 (Electric Eel).
 It includes numerous software component updates and polished features, as well as fixes for issues discovered in 24.10-RC.1 and 24.10-RC.2.
 
-Notable changes:
+### Notable Changes
 
 * True Cloud Backup Tasks ([NAS-127165](https://ixsystems.atlassian.net/browse/NAS-127165)).
 * Replace nslcd with sssd ([NAS-127073](https://ixsystems.atlassian.net/browse/NAS-127073)).
@@ -317,7 +321,7 @@ Notable changes:
 <a href="https://ixsystems.atlassian.net/issues/?filter=11052" target="_blank">Click here for the full changelog</a> of completed Jira tickets that are included in the 24.10.0 release.
 {{< include file="/static/includes/JiraFilterInstructions.md" >}}
 
-### 24.10.0 Known Issues
+### Known Issues
 
 * SED devices are not consistently unlocking on system restart ([NAS-132518](https://ixsystems.atlassian.net/browse/NAS-132518)). Users are cautioned to avoid using SED devices in 24.10 or attempting to migrate a functional SED environment from TrueNAS 13.0-U6.3 (Enterprise) or TrueNAS 13.3-U1 (Community) until this issue is resolved.
 * A [bug with sudo v1.9.13](https://bugzilla.sudo.ws/show_bug.cgi?id=1050) causes commands like `sudo su -` and `sudo su` before starting tmux to break in TrueNAS 24.10.
@@ -350,7 +354,7 @@ Notable changes:
 <a href="https://ixsystems.atlassian.net/issues/?filter=11053" target="_blank">Click here to see the latest information on Jira</a> about public issues discovered in 24.10.0 that are being resolved in a future TrueNAS release.
 {{< /expand >}}
 
-## 24.10-RC.2 Changelog
+## 24.10-RC.2
 
 {{< expand "Click to expand" "v" >}}
 {{< hint type=warning title="Early Release Software" >}}
@@ -363,14 +367,14 @@ Do not use early release software for critical tasks.
 iXsystems is pleased to release TrueNAS 24.10-RC.2!
 This is a small hot fix to correct applications-related issues discovered after the release of 24.10-RC.1.
 
-Notable changes:
+### Notable Changes
 
 * Revised Docker networking logic to prevent users with 15 or more applications installed encountering network exhaustion, which resulted in the apps service failing to initialize ([NAS-131485](https://ixsystems.atlassian.net/browse/NAS-131485)).
 
 Please use the 24.10-RC.1 Jira filter links below to see the full changelog and known issues related to the 24.10 release candidates.
 {{< /expand >}}
 
-## 24.10-RC.1 Changelog
+## 24.10-RC.1
 
 {{< expand "Click to expand" "v" >}}
 {{< hint type=warning title="Early Release Software" >}}
@@ -383,7 +387,7 @@ Do not use early-release software for critical tasks.
 iXsystems is pleased to release TrueNAS 24.10-RC.1!
 This release candidate version has software component updates and new features that are in the polishing phase as well as fixes for issues discovered in 24.10-BETA.1.
 
-Notable changes:
+### Notable Changes
 
 * Convert audit message_timestamp for sudo to UTC ([NAS-130373](https://ixsystems.atlassian.net/browse/NAS-130373)).
 
@@ -416,7 +420,7 @@ Notable changes:
 <a href="https://ixsystems.atlassian.net/issues/?filter=10887" target="_blank">Click here for the full changelog</a> of completed Jira tickets that are included in the 24.10-RC.1 release.
 {{< include file="/static/includes/JiraFilterInstructions.md" >}}
 
-### 24.10-RC.1 Known Issues
+### Known Issues
 
 * Nvidia GPU transcoding is not functioning with the Plex application ([NAS-131591](https://ixsystems.atlassian.net/browse/NAS-131591)).
 
@@ -455,7 +459,7 @@ Notable changes:
 <a href="https://ixsystems.atlassian.net/issues/?filter=10886" target="_blank">Click here to see the latest information on Jira</a> about public issues discovered in 24.10-RC.1 that are being resolved in a future TrueNAS release.
 {{< /expand >}}
 
-## 24.10-BETA.1 Changelog
+## 24.10-BETA.1
 
 {{< expand "Click to Expand" "v" >}}
 
@@ -469,7 +473,7 @@ Do not use early-release software for critical tasks.
 iXsystems is pleased to release TrueNAS 24.10-BETA.1!
 This has software component updates and new features that are in the polishing phase.
 
-Notable changes:
+### Notable Changes
 
 * Dashboard reworked with more widgets, data reporting, and customization ([NAS-127217](https://ixsystems.atlassian.net/browse/NAS-127217)).
 
@@ -516,7 +520,7 @@ Notable changes:
 <a href="https://ixsystems.atlassian.net/issues/?filter=10587" target="_blank">Click here for the full changelog</a> of completed Jira tickets that are included in the 24.10-BETA.1 release.
 {{< include file="/static/includes/JiraFilterInstructions.md" >}}
 
-### 24.10-BETA.1 Known Issues
+### Known Issues
 
 * The **System > Audit** screen can display different values for **Timestamp** in the entries list and **Localtime** in **Event Data**, depending on the local timezone of the system ([NAS-130373](https://ixsystems.atlassian.net/browse/NAS-130373)).
   
