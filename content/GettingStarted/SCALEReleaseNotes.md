@@ -121,58 +121,60 @@ The items listed here represent new feature flags implemented since the previous
 
 For more details on feature flags, see [OpenZFS Feature Flags](https://openzfs.github.io/openzfs-docs/Basic%20Concepts/Feature%20Flags.html) and [OpenZFS zpool-feature.7](https://openzfs.github.io/openzfs-docs/man/7/zpool-features.7.html).
 
-## 24.04.2.5 Changelog
+## 24.04.2.5
 
 **November 8, 2024**
 
 iXsystems is pleased to release TrueNAS 24.04.2.5!
 This is a release to address another high-impact issue discovered with SMB memory management.
 
+### Notable Changes
+
 * Fix Management of SMB AIO read buffers ([NAS-132365](https://ixsystems.atlassian.net/browse/NAS-132365)).
 
 Users with 24.04.2.4 installed and SMB shares in use are encouraged to upgrade to this release immediately.
 
-### 24.04.2.5 Known Issues
+### Known Issues
 
 * An issue has been discovered for cloud sync tasks configured with file name encryption, which is available in **Advanced Remote Options** ([NAS-132472](https://ixsystems.atlassian.net/browse/NAS-132472)). As this is an upstream issue in rclone, we recommend that users should not create new cloud sync tasks with the **Filename Encryption** setting enabled. Existing users of this feature must leave it enabled for existing cloud sync tasks to be able to recover backups.
 
 Please see the 24.04.2 changelog below and use the Jira filter links to see the full changelog and known issues related to the 24.04.2 > 24.04.2.5 releases.
 
-## 24.04.2.4 Changelog
+## 24.04.2.4
 
 **November 7, 2024**
 
 iXsystems is pleased to release TrueNAS 24.04.2.4!
 This is a release to address a small number of issues discovered in the 24.04.2.3 release.
 
-Notable Changes:
+### Notable Changes
 
 * Fix memory consumption related to SMB AIO reads ([NAS-132166](https://ixsystems.atlassian.net/browse/NAS-132166)).
 * Fix HA logic bug to ensure marked critical interfaces are treated as critical ([NAS-132115](https://ixsystems.atlassian.net/browse/NAS-132115)).
 * Prevent SED pool degradation after power loss ([NAS-129366](https://ixsystems.atlassian.net/browse/NAS-129366)).
 
-### 24.04.2.4 Known Issues
+### Known Issues
 
 * Users have reported an issue with SMB memory management under heavy SMB loads.
   A fix for this issue is in the 24.04.2.5 release version.
 
-Please see the 24.04.2 changelog below and use the Jira filter links to see the full changelog and known issues related to the 24.04.2 > 24.04.2.4 releases.
+Please see the 24.04.2 Jira changelog below and use the Jira filter links to see the full changelog and known issues related to the 24.04.2 > 24.04.2.4 releases.
 
-## 24.04.2.3 Changelog
+## 24.04.2.3
 
 **October 10, 2024**
 
 iXsystems is pleased to release TrueNAS SCALE 24.04.2.3!
 This is a hotpatch to address two issues in the previous 24.04.2.2 release, primarily affecting some TrueNAS Enterprise customers with High Availability (HA) systems and failover enabled.
 
-### 24.04.2.3 Known Issues
+### Known Issues
 
 * An issue was discovered where the TrueNAS UI can send an improper payload for the Outboard Activity option when re-saving an edit to global network settings ([NAS-131787](https://ixsystems.atlassian.net/browse/NAS-131787)).
   Users who encounter this issue can upgrade to 24.10.0 where the issue is corrected.
 
 Please use the 24.04.2 Jira filter links below to see the full changelog and known issues related to the 24.04.2, 24.04.2.1, 24.04.2.2, and 24.04.2.3 releases.
 
-## 24.04.2.2 Changelog
+## 24.04.2.2
 
 **September 17, 2024**
 
@@ -181,14 +183,14 @@ This is a hotpatch to address an issue in the previous 24.04.2.1 release where f
 
 Please use the 24.04.2 Jira filter links below to see the full changelog and known issues related to the 24.04.2, 24.04.2.1, and 24.04.2.2 releases.
 
-## 24.04.2.1 Changelog
+## 24.04.2.1
 
 **September 11, 2024**
 
 iXsystems is pleased to release TrueNAS SCALE 24.04.2.1!
 This is a small maintenance release and includes refinement and fixes for issues discovered after the 24.04.2 release.
 
-Notable changes:
+### Notable Changes
 
 * Adds proactive support and auto-alerts for unscheduled failovers, reboots, and unexpected High Availability (HA) issues.
   When licensed for HA and the Proactive Support feature is configured, failover events generate a Support ticket with the corresponding support license notated [NAS-130591](https://ixsystems.atlassian.net/browse/NAS-130591).
@@ -196,14 +198,14 @@ Notable changes:
 
 Please use the 24.04.2 Jira filter links below to see the full changelog and known issues related to the 24.04.2 and 24.04.2.1 releases.
 
-## 24.04.2 Changelog
+## 24.04.2
 
 **July 9, 2024**
 
 iXsystems is pleased to release TrueNAS SCALE 24.04.2!
 This is a maintenance release and includes refinement and fixes for issues discovered after the 24.04.1 and 24.04.1.1 releases.
 
-Notable changes:
+### Notable Changes
 
 * Fixes implemented for CVE-2024-6387, noted as the "regreSSHion" vulnerability. Additional details and links to the technical discussion and analysis of the vulnerability are available from [NAS-129828](https://ixsystems.atlassian.net/jira/software/c/projects/NAS/issues/NAS-129828).
 
@@ -227,7 +229,7 @@ Notable changes:
 <a href="https://ixsystems.atlassian.net/issues/?filter=10572" target="_blank">Click here for the full changelog</a> of completed tickets that are included in the 24.04.2 release.
 {{< include file="/static/includes/JiraFilterInstructions.md" >}}
 
-### 24.04.2 Known Issues
+### Known Issues
 
 * Systems migrating from 13.0-U6.2 that have storage pools with cache and spare devices can show, post-upgrade to 24.04.2, pools as having unavailable devices and other disk detection errors ([NAS-130825](https://ixsystems.atlassian.net/browse/NAS-130825)).
   This is caused by a difference between how CORE and SCALE identify devices for pool import. To work around this issue, use the TrueNAS UI to export the affected pool and then re-import it.
@@ -237,7 +239,7 @@ Notable changes:
 
 <a href="https://ixsystems.atlassian.net/issues/?filter=10573" target="_blank">Click here to see the latest information</a> about public issues discovered in 24.04.2 that are being resolved in a future TrueNAS SCALE release.
 
-## 24.04.1.1 Changelog
+## 24.04.1.1
 
 {{< expand "Click to expand" "v" >}}
 
@@ -245,10 +247,12 @@ Notable changes:
 iXsystems is pleased to release TrueNAS SCALE 24.04.1.1!
 This is a maintenance release focused on two high-impact issues found in the previous 24.04.1 release:
 
+### Notable Changes
+
 * Apps Service (Kubernetes) times out waiting for network interface ([NAS-129150](https://ixsystems.atlassian.net/browse/NAS-129150)).
 * Apps menu selected by a Read-only Admin user fails with traceback ([NAS-129187](https://ixsystems.atlassian.net/browse/NAS-129187)).
 
-Known issue seen in 24.04.1.1:
+### Known Issues
 
 * Apps have network connectivity issues or are showing as unreachable ([TNCHARTS-1092](https://ixsystems.atlassian.net/browse/TNCHARTS-1092)).
   Please go to **Apps** > **Settings** > **Advanced Settings** and verify the **Route v4 Gateway** and **Route v4 Interface** fields are populated with functional settings.
@@ -256,7 +260,7 @@ Known issue seen in 24.04.1.1:
 Please use the 24.04.1 Jira filter links below to see the full changelog and known issues related to the 24.04.1 and 24.04.1.1 releases.
 {{< /expand >}}
 
-## 24.04.1 Changelog
+## 24.04.1
 
 {{< expand "Click to expand" "v" >}}
 **May 28, 2024**
@@ -264,7 +268,7 @@ Please use the 24.04.1 Jira filter links below to see the full changelog and kno
 iXsystems is pleased to release TrueNAS SCALE 24.04.1!
 This is a maintenance release and includes improvements and fixes for issues discovered after the release of 24.04.0.
 
-Notable changes:
+### Notable Changes
 
 * Linux kernel updated to version 6.6.29 ([NAS-128478](https://ixsystems.atlassian.net/browse/NAS-128478)).
 * Samba updated to 4.19.6 ([NAS-128729](https://ixsystems.atlassian.net/browse/NAS-128729), [NAS-128410](https://ixsystems.atlassian.net/browse/NAS-128410)).
@@ -287,14 +291,14 @@ Notable changes:
 <a href="https://ixsystems.atlassian.net/issues/?filter=10558" target="_blank">Click here for the full changelog</a> of completed tickets that are included in the 24.04.1 and 24.04.1.1 releases.
 {{< include file="/static/includes/JiraFilterInstructions.md" >}}
 
-### 24.04.1 Known Issues
+### Known Issues
 
 * Apps Service (Kubernetes) failing to start after upgrade to 24.04.1 ([NAS-129150](https://ixsystems.atlassian.net/browse/NAS-129150])). An initial investigation found that a saved network interface description string causes the service to time out. If you encounter an error with Apps services not starting after upgrading to 24.04.1, please try going to the **Network** screen and clearing any saved **Description** values from interfaces that are also used in the **Apps** > **Settings** > **Advanced Settings** form. This is also resolved in the 24.04.1.1 hotpatch.
 
 <a href="https://ixsystems.atlassian.net/issues/?filter=10559" target="_blank">Click here to see the latest information</a> about public issues discovered in 24.04.1 and 24.04.1.1 that are being resolved in a future TrueNAS SCALE release.
 {{< /expand >}}
 
-## 24.04.0 Changelog
+## 24.04.0
 
 {{< expand "Click to expand" "v" >}}
 **April 23, 2024**
@@ -302,7 +306,7 @@ Notable changes:
 iXsystems is pleased to release TrueNAS SCALE 24.04.0!
 This is the first stable release of TrueNAS SCALE 24.04 Dragonfish. It includes numerous software component updates and polished features, as well as fixes for issues discovered in 24.04-RC.1.
 
-Notable changes:
+### Notable Changes
 
 * Users migrating data from an existing third-party NAS solution to TrueNAS SCALE 24.04 can use the Syncthing Enterprise application to mount the source with a remote SMB share that preserves metadata.
   See [Third-Party SMB Data Migration]({{< relref "DataMigrationSyncthing.md" >}}) for considerations and a full tutorial.
@@ -323,7 +327,7 @@ Notable changes:
 <a href="https://ixsystems.atlassian.net/issues/?filter=10541" target="_blank">Click here for the full changelog</a> of completed tickets that are included in the 24.04.0 release.
 {{< include file="/static/includes/JiraFilterInstructions.md" >}}
 
-### 24.04.0 Known Issues
+### Known Issues
 
 * An issue was discovered after 24.04.0 released involving ZFS ARC memory and excessive swap space usage.
   Community members who have experienced this issue report excessive RAM consumption leading to decreased middleware performance, web UI slowdowns, and UI inaccessibility.
@@ -340,7 +344,7 @@ Notable changes:
 <a href="https://ixsystems.atlassian.net/issues/?filter=10542" target="_blank">Click here to see the latest information</a> about public issues discovered in 24.04.0 that are being resolved in a future TrueNAS SCALE release.
 {{< /expand >}}
 
-## 24.04-RC.1 Changelog
+## 24.04-RC.1
 
 {{< expand "Click to Expand" "v" >}}
 {{< hint type=warning title="Early Release Software" >}}
@@ -353,7 +357,7 @@ Do not use early-release software for critical tasks.
 iXsystems is pleased to release TrueNAS SCALE 24.04-RC.1!
 This release candidate version has software component updates and new features that are in the polishing phase as well as fixes for issues discovered in 24.04-BETA.1.
 
-Notable changes:
+### Notable Changes
 
 * New privilege levels for TrueNAS [administrative users]({{< relref "AdminRoles.md" >}}) for greater system security hardening ([NAS-123416](https://ixsystems.atlassian.net/browse/NAS-123416)).
 * UPS graphs are added to **Reporting** screens ([NAS-125159](https://ixsystems.atlassian.net/browse/NAS-125159)).
@@ -373,7 +377,7 @@ Notable changes:
 <a href="https://ixsystems.atlassian.net/issues/?filter=10526" target="_blank">Click here for the full changelog</a> of completed tickets that are included in the 24.04-RC.1 release.
 {{< include file="/static/includes/JiraFilterInstructions.md" >}}
 
-### 24.04-RC.1 Known Issues
+### Known Issues
 
 * Users upgrading from TrueNAS SCALE 23.10 (Cobia) to 24.04 (Dragonfish) who import a Cobia configuration file might find that some services are not automatically enabled as expected.
 After uploading the configuration file and rebooting the system, review **System Settings > Services**.
@@ -383,7 +387,7 @@ For services that should be enabled, set it to **Running** and **Start Automatic
 <a href="https://ixsystems.atlassian.net/issues/?filter=10527" target="_blank">Click here to see the latest information</a> about public issues discovered in 24.04-RC.1 that are being resolved in a future TrueNAS SCALE release.
 {{< /expand >}}
 
-## 24.04-BETA.1 Changelog
+## 24.04-BETA.1
 
 {{< expand "Click to Expand" "v" >}}
 {{< hint type=warning title="Early Release Software" >}}
@@ -396,7 +400,7 @@ Do not use early-release software for critical tasks.
 iXsystems is pleased to release TrueNAS SCALE 24.04-BETA.1!
 This has software component updates and new features that are in the polishing phase.
 
-Notable changes:
+### Notable Changes
 
 * New audit logging framework added with initial support for SMB and other TrueNAS UI account and authorization activity ([NAS-123447](https://ixsystems.atlassian.net/browse/NAS-123447)), including SMB activity ([NAS-123371](https://ixsystems.atlassian.net/browse/NAS-123371)).
   An [Auditing screen]({{< relref "AuditingSCALE.md" >}}) manages this feature in the UI.
@@ -443,7 +447,7 @@ Notable changes:
 <a href="https://ixsystems.atlassian.net/issues/?filter=10486" target="_blank">Click here for the full changelog</a> of completed tickets that are included in the 24.04-BETA.1 release.
 {{< include file="/static/includes/JiraFilterInstructions.md" >}}
 
-### 24.04-BETA.1 Known Issues
+### Known Issues
 
 * The administrator account privileges feature is still under development and further bugfixes and enhancements are anticipated in future 24.04 (Dragonfish) releases.
   Issues that are currently being resolved as part of finishing the feature:
