@@ -23,7 +23,7 @@ div.docs-read_mod {display: none;}
 h1 {display:none;}
 </style>
 
-{{< header logo="/images/tn-openstorage-logo.png" logo_alt="TrueNAS Logo" version="Nightly Development - 25.04 Fangtooth" icon="" icon_alt="" >}}
+{{< header logo="/images/tn-openstorage-logo.png" logo_alt="TrueNAS Logo" version="25.04 - Fangtooth" icon="" icon_alt="" >}}
 
 {{< include file="/static/includes/25.04FeatureList.md" >}}
 
@@ -36,7 +36,7 @@ To view or search through documentation for previous TrueNAS major versions, use
   <div class="docs-sections">
     <p>
     <a href="/gettingstarted/" style="font-size:18px;">Getting Started Guide</a>
-    <br><a href="/gettingstarted/scalereleasenotes/">Development Notes</a>
+    <br><a href="/gettingstarted/scalereleasenotes/">Release Notes</a>
     <br><a href="/gettingstarted/scalehardwareguide/">Community Hardware Guide</a>
     <br><a href="/gettingstarted/install/">Software Install</a>
     <br><a href="/gettingstarted/migrate/">TrueNAS Migrations</a>
@@ -46,7 +46,7 @@ To view or search through documentation for previous TrueNAS major versions, use
     <br><a href="/scaletutorials/network/">Networking</a>
     <br><a href="/scaletutorials/storage/">Storage Management</a>
     <br><a href="/scaletutorials/dataprotection/">Data Protection</a>
-    <br><a href="https://www.truenas.com/docs/truenasapps/">Apps</a>
+    <br><a href="https://www.truenas.com/docs/truenasapps/">TrueNAS Apps</a>
     </p>
     <p>
     <a href="/scaleuireference/" style="font-size:18px;">UI Reference Guide</a>
