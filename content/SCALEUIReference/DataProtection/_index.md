@@ -3,8 +3,6 @@ title: "Data Protection"
 description: "Describes the screens and options contained within the Data Protection section in TrueNAS."
 geekdocCollapseSection: true
 weight: 50
-aliases:
- - /scale/scaleclireference/task/
 related: false
 ---
 

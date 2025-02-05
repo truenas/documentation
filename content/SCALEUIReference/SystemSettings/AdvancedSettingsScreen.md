@@ -2,17 +2,6 @@
 title: "Advanced Settings Screen"
 description: "Provides information on the System Settings > Advanced screen, widgets, and configuration screen settings."
 weight: 30
-aliases: 
- - /scale/scaleuireference/systemsettings/advancedsettings/
- - /scale/scaleclireference/auth
- - /scale/scaleclireference/system/cliadvanced/
- - /scale/scaleclireference/system/clicore/
- - /scale/scaleclireference/system/clidevice/
- - /scale/scaleclireference/system/cliinitshutdownscript/
- - /scale/scaleclireference/system/clisystemdataset/
- - /scale/scaleclireference/system/clitunable/
- - /scale/scaleclireference/task/clicronjob/
- - /images/SCALE/22.02/AdvancedSystemSettingsSyslogWidget.png
 tags:
  - settings
  - pools

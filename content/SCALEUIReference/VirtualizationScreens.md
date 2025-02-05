@@ -2,10 +2,6 @@
 title: "Virtualization"
 description: "Provides information on the screens and settings to add virtual machines (VMs) and devices to your TrueNAS system."
 weight: 80
-aliases:
-- /scale/scaleuireference/virtualization/
-- /scale/scaleuireference/virtualization/virtualizationscreens/
-- /scale/scaleclireference/service/clivm/
 tags:
  - vm
  - gpu

@@ -2,10 +2,6 @@
 title: "Cloud Credentials Screens"
 description: "Provides information on the Cloud Credentials screens and settings."
 weight: 10
-aliases: 
- - /scale/scaleclireference/task/cloudsync/clicredential/
- - /images/CORE/12.0/SystemCloudCredentialsOAuthLogin.png
- - /images/CORE/12.0/CloudCredentialsAddCredentials.png
 tags:
 - cloud
 - credentials

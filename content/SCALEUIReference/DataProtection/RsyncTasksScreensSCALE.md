@@ -2,10 +2,6 @@
 title: "Rsync Tasks Screens"
 description: "Provides information on the Rsync Tasks screens and settings."
 weight: 30
-aliases:
- - /scale/scaleclireference/task/clirsync/
- - /images/SCALE/22.12/ServicesRsyncConf.png
- - /images/CORE/13.0/RsyncConfigure.png
 tags:
  - rsync
  - ssh

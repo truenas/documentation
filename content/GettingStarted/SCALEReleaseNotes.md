@@ -1,13 +1,6 @@
 ---
 title: "25.04 (Fangtooth) Development Notes"
 description: "Highlights, change log, and known issues for the latest TrueNAS nightly development version."
-aliases:
- - /scale/scalereleasenotes/
- - /scalenext-releasenotes/
- - /scale/scalenextversion/
- - /scale/scale22.12/
- - /scale/25.04/gettingstarted/scalereleasenotes/
- - /releasenotes/
 weight: 10
 related: false
 ---

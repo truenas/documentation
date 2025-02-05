@@ -2,9 +2,6 @@
 title: "Logging In for the First Time"
 description: "Describes the web interface, logging in to the TrueNAS web interface for the first time, changing from root to the admin user, and navigating through the UI."
 weight: 20
-aliases: 
- - /scale/gettingstarted/firsttimelogin/
- - /images/SCALE/Dashboard/DashboardMainScreenSCALE.png
 tags:
 - dashboard
 keywords:

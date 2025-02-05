@@ -2,9 +2,6 @@
 title: "TrueNAS 25.04 (Early)"
 geekdocCollapseSection: true
 weight: 20
-aliases:
- - /scale/devnotes/
- - /scale/introduction/
 cascade:
   - _target:
     volume: "SCALE"

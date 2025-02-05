@@ -3,9 +3,6 @@ title: "Network"
 description: "Tutorials for configuring network interfaces and connections in TrueNAS."
 geekdocCollapseSection: true
 weight: 9
-aliases:
- - /scale/network/
- - /scale/scaleclireference/network/cliconfiguration/
 related: false
 ---
 

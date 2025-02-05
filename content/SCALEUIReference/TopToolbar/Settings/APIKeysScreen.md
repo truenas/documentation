@@ -2,8 +2,6 @@
 title: "User API Keys Screen"
 description: "Describes how the User API Keys screen in TrueNAS and access API Documentation"
 weight: 20
-aliases: 
- - /scale/scaleclireference/auth/cliapikey/
 tags:
 - apikeys
 - toolbar

@@ -2,7 +2,6 @@
 title: "Shell Screen"
 description: "Provides information on the TrueNAS Shell screen, buttons, and slider."
 weight: 60
-aliases: /scale/scaleclireference/
 tags:
 - shell
 ---

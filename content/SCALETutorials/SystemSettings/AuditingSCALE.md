@@ -2,7 +2,6 @@
 title: "Audit Logs"
 description: "Provides information on the System and SMB Share auditing screens and function in TrueNAS."
 weight: 90
-aliases: 
 tags:
 - auditing
 - system

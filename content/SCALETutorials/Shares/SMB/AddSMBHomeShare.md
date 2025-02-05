@@ -2,7 +2,6 @@
 title: "Setting Up SMB Home Shares"
 description: "Provides instructions on setting up private SMB datasets and shares as an alternative to legacy SMB home shares."
 weight: 40
-aliases: 
 tags:
 - smb
 ---

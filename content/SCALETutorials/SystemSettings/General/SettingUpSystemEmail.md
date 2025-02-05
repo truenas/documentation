@@ -9,9 +9,6 @@ keywords:
 - enterprise storage solutions
 - nas storage solutions
 - software storage solutions
-aliases:
- - /scale/gettingstarted/scalesystememail/
- - /scale/scaletutorials/toptoolbar/settingupsystememail/
 ---
 
 An automatic script sends a nightly email to the administrator account containing important information such as disk health.

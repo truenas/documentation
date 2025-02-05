@@ -2,7 +2,6 @@
 title: "Certificates Authorities Screens"
 description: "Provides information on the Certificate Authorities widget and settings."
 weight: 20
-aliases:
 tags:
  - csr
  - certificates

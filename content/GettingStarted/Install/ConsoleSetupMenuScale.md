@@ -2,9 +2,6 @@
 title: "Using the Console Setup Menu"
 description: "Provides information on using the Console Setup menu after installing TrueNAS from the iso file to configure network settings."
 weight: 20
-aliases:
- - /scale/gettingstarted/post-installconfiguration/
- - /images/SCALE/22.12/ConsoleSetupMenuSCALE.png
 tags:
 - install
 - network

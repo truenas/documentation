@@ -2,8 +2,6 @@
 title: "Managing S.M.A.R.T. Tests"
 description: "Provides instructions on running S.M.A.R.T. tests manually or automatically, using Shell to view the list of tests, and configuring the S.M.A.R.T. test service."
 weight: 60
-aliases:
- - /scale/dataprotection/smarttestsscale/
 tags:
 - smart
 - disks

@@ -2,9 +2,6 @@
 title: "Devices"
 description: "Provides information on settings and functions found on the Devices screens and widget."
 weight: 35
-aliases:
- - /scale/scaleuireference/storage/pools/devicesscreensscale/
- - /images/SCALE/Storage/DevicesSLOG.png
 tags:
 - smart
 - disks

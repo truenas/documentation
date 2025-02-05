@@ -2,10 +2,6 @@
 title: "Users Screens"
 description: "Provides information on the Users screens and settings in TrueNAS."
 weight: 10
-aliases: 
- - /scale/scaleclireference/account/
- - /scale/scaleclireference/account/cliuser/
- - /scale/scaleuireference/credentials/localusers/
 tags:
 - users
 - accounts

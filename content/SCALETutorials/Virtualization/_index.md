@@ -2,9 +2,6 @@
 title: "Virtualization"
 description: "Tutorials for configuring TrueNAS virtualization features and creating virtual machines."
 geekdocCollapseSection: true
-aliases:
- - /scale/scaleuireference/virtualization/creatingmanagingvmsscale/
- - /scale/scaletutorials/virtualization/creatingmanagingvmsscale/
 weight: 11
 related: false
 keywords:

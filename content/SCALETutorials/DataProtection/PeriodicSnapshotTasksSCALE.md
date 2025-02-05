@@ -2,7 +2,6 @@
 title: "Adding Periodic Snapshot Tasks"
 description: "Provides instructions on creating periodic snapshot tasks in TrueNAS."
 weight: 50
-aliases:
 tags:
 - snapshots
 - replication
