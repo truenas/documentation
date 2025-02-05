@@ -167,14 +167,14 @@ The items listed here represent new feature flags implemented since the previous
 
 For more details on feature flags see [OpenZFS Feature Flags](https://openzfs.github.io/openzfs-docs/Basic%20Concepts/Feature%20Flags.html) and [OpenZFS zpool-feature.7](https://openzfs.github.io/openzfs-docs/man/7/zpool-features.7.html).
 
-## 23.10.2 Changelog
+## 23.10.2
 
 **February 22, 2024**
 
 iXsystems is pleased to release TrueNAS SCALE 23.10.2!
 This is a maintenance release to address community reported bugs in SCALE 23.10.1 and improve stability.
 
-Notable changes:
+### Notable Changes
 
 * Linux Kernel is updated to v. [6.1.74](https://lwn.net/Articles/958863/) ([NAS-126897](https://ixsystems.atlassian.net/browse/NAS-126897)).
 * OpenZFS is updated to an early release version of v. [2.2.3](https://github.com/openzfs/zfs/pull/15836). OpenZFS feature flags are not changed.
@@ -191,7 +191,7 @@ Notable changes:
 <a href="https://ixsystems.atlassian.net/issues/?filter=10500" target="_blank">Click here for the full changelog</a> of completed tickets that are included in the 23.10.2 release.
 {{< include file="/static/includes/JiraFilterInstructions.md" >}}
 
-### 23.10.2 Ongoing Issues
+### Known Issues
 
 {{< enterprise >}}
 Some TrueNAS Enterprise HA systems can experience a panic if the admin configures iSCSI extents while the passive controller is in the process of setting up ALUA configuration.
@@ -202,13 +202,15 @@ When setting up new deployments with many targets, fully configure all iSCSI ext
 
 <a href="https://ixsystems.atlassian.net/issues/?filter=10501" target="_blank">Click here to see the latest information</a> about issues discovered in 23.10.2 that are being resolved in a future TrueNAS SCALE release.
 
-## 23.10.1.3 Changelog
+## 23.10.1.3
 
 {{< expand "Click to Expand" "v" >}}
 **January 24, 2024**
 
 iXsystems is pleased to release TrueNAS SCALE 23.10.1.3!
 This is a small hotpatch with fixes for network interfaces, including related fixes for TrueNAS Enterprise High-Availability (HA) platforms.
+
+### Notable Changes
 
 * [NAS-125862](https://ixsystems.atlassian.net/browse/NAS-125862) - bond (link aggregation) physical interface constraint failure during database migration.
 
@@ -219,7 +221,7 @@ Community users are not impacted.
 * [NAS-126722](https://ixsystems.atlassian.net/browse/NAS-126722) - Treat interface FAULT event messages as BACKUP.
 * [NAS-126922](https://ixsystems.atlassian.net/browse/NAS-126922) - Fix HA Virtual IP (VIP) error when interfaces have a null vrrp_config key.
 
-Known Issue:
+### Known Issues
 
 {{< include file="/static/includes/SCALEHADisableSTP.md" >}}
 {{< /enterprise >}}
@@ -229,7 +231,7 @@ Known Issue:
 
 This hotpatch was not released in favor of making and releasing a new build versioned as **23.10.1.3**.
 
-## 23.10.1.1 Changelog
+## 23.10.1.1
 
 {{< expand "Click to Expand" "v" >}}
 **January 16, 2024**
@@ -238,7 +240,7 @@ iXsystems is pleased to release TrueNAS SCALE 23.10.1.1!
 This is a small hotpatch with fixes for web interface issues discovered after the 23.10.1 release.
 The full 23.10.2 maintenance release is anticipated later in February.
 
-Changes:
+### Notable Changes
 
 * Fix non-physical interface (Link Aggregation, VLAN, Bridge) link address writing into the database when it is updated ([NAS-125932](https://ixsystems.atlassian.net/browse/NAS-125932)).
 * Fix network interface speed reporting ([NAS-125832](https://ixsystems.atlassian.net/browse/NAS-125832)).
@@ -255,7 +257,7 @@ After updating to 23.10.2, ALUA can be re-enabled.
 See the [**23.10.1 Ongoing Issues**](#23101-ongoing-issues) list below for any additional details about issues discovered after the 23.10.1 release.
 {{< /expand >}}
 
-## 23.10.1 Changelog
+## 23.10.1
 
 {{< expand "Click to Expand" "v" >}}
 **December 19, 2023**
@@ -263,7 +265,7 @@ See the [**23.10.1 Ongoing Issues**](#23101-ongoing-issues) list below for any a
 iXsystems is pleased to release TrueNAS SCALE 23.10.1!
 This is a maintenance release to address community reported bugs in SCALE 23.10 (Cobia) and improve stability.
 
-Notable changes:
+### Notable Changes
 
 * Reported issues involving cached Web UI artifacts are addressed in 23.10.1 ([NAS-124602](https://ixsystems.atlassian.net/browse/NAS-124602)).
 
@@ -287,7 +289,7 @@ Notable changes:
 <a href="https://ixsystems.atlassian.net/issues/?filter=10435" target="_blank">Click here for the full changelog</a> of completed tickets that are included in the 23.10.1 release.
 {{< include file="/static/includes/JiraFilterInstructions.md" >}}
 
-### 23.10.1 Ongoing Issues
+### Known Issues
 
 * Non-physical network interface addresses (Link Aggregation, VLAN, Bridge) improperly write into the database during interface configuration changes and cause these interfaces to stop functioning.
   Users with critical virtualized network interfaces on 23.10.0 should wait to update until the 23.10.1.1 release is available.
@@ -308,7 +310,7 @@ Notable changes:
 <a href="https://ixsystems.atlassian.net/issues/?filter=10436" target="_blank">Click here to see the latest information</a> about issues discovered in 23.10.1 that are being resolved in a future TrueNAS SCALE release.
 {{< /expand >}}
 
-## 23.10.0.1 Changelog
+## 23.10.0.1
 
 {{< expand "Click to Expand" "v" >}}
 **October 31, 2023**
@@ -316,7 +318,7 @@ Notable changes:
 iXsystems is pleased to release TrueNAS SCALE 23.10.0.1!
 This is a small hotpatch to address issues reported by the community after the 23.10.0 release.
 
-Changes:
+### Notable Changes
 
 * Fix for TrueNAS SCALE application deployment being stuck when the pool used for application management is encrypted ([NAS-124776](https://ixsystems.atlassian.net/browse/NAS-124776)).
 
@@ -325,14 +327,14 @@ Changes:
 See the **23.10.0 Ongoing Issues** list below for any additional details about issues discovered after the 23.10.0 release.
 {{< /expand >}}
 
-## 23.10.0 Changelog
+## 23.10.0
 
 {{< expand "Click to Expand" "v" >}}
 **October 24, 2023**
 
 iXsystems is pleased to release TrueNAS SCALE 23.10.0!
 
-Notable changes:
+### Notable Changes
 
 * [SMB/NFSv4 multiprotocol sharing]({{< relref "MixedModeShares.md" >}}) of the same dataset is now supported.
 * Apps screens improvements. [NAS-124339](https://ixsystems.atlassian.net/browse/NAS-124339) and [NAS-124335](https://ixsystems.atlassian.net/browse/NAS-124335)
@@ -341,7 +343,7 @@ Notable changes:
 <a href="https://ixsystems.atlassian.net/issues/?filter=10398" target="_blank">Click here for the full changelog</a> of completed tickets that are included in the 23.10.0 release.
 {{< include file="/static/includes/JiraFilterInstructions.md" >}}
 
-### 23.10.0 Ongoing Issues
+### Known Issues
 
 * Some TrueNAS Enterprise system NICs experience a name change when upgrading from TrueNAS SCALE Bluefin to TrueNAS SCALE Cobia, preventing the NIC configuration from functioning ([NAS-124679](https://ixsystems.atlassian.net/browse/NAS-124679)).
   <br>**Workaround:** If this occurs when upgrading to SCALE 23.10 (Cobia), use the SCALE web interface to manually port the configuration from the nonfunctional NIC to the entry for the newly named NIC.
@@ -350,7 +352,7 @@ Notable changes:
 <a href="https://ixsystems.atlassian.net/issues/?filter=10399" target="_blank">Click here to see the latest information</a> about issues discovered in 23.10.0 that are being resolved in a future TrueNAS SCALE release.
 {{< /expand >}}
 
-## 23.10-RC.1 Changelog
+## 23.10-RC.1
 
 {{< expand "Click to Expand" "v" >}}
 {{< hint type=warning title="Early Release Software" >}}
@@ -360,7 +362,7 @@ Do not use early release software for critical tasks.
 
 **September 19, 2023**
 
-Notable changes:
+### Notable Changes
 
 * The legacy pool creation screens are removed and the new pool creation wizard is the primary UI screen for creating new storage pools [NAS-123697](https://ixsystems.atlassian.net/browse/NAS-123697)
 * **Apps > Settings** adds the **Manager Container Images** option for downloading, updating, or deleting specific container images from TrueNAS.
@@ -372,7 +374,7 @@ Notable changes:
 To switch between detail and list views for the changelog, press `t`.
 Open the changelog in Jira to see the <span class="iconify" data-icon="mdi:export-variant"></span> **Export** menu to print or download the changelog in various file formats.
 
-### 23.10-RC.1 Ongoing Issues
+### Known Issues
 
 Notes:
 
@@ -382,7 +384,7 @@ Notes:
 <a href="https://ixsystems.atlassian.net/issues/?filter=10380" target="_blank">Click here to see the latest information</a> about issues discovered in 23.10-RC.1 that are being resolved in a future TrueNAS SCALE release.
 {{< /expand >}}
 
-## 23.10-BETA.1 Changelog
+## 23.10-BETA.1
 
 {{< expand "Click to expand" "v" >}}
 {{< hint type=warning title="Early Release Software" >}}
@@ -393,7 +395,7 @@ Do not use early release software for critical tasks.
 
 {{< include file="/static/includes/23.10FeatureList.md" >}}
 
-Other notable changes:
+### Notable Changes
 
 * The advanced **Auxiliary Parameters** field is removed from both **Shares > SMB > Add** and **System Settings > Services > SMB** screens ([NAS-120530](https://ixsystems.atlassian.net/browse/NAS-120530)). Previously configured auxiliary parameters do remain on upgrade, but further changes must be done through CLI or API.
 * As part of the system reporting and debug improvements, system logs now exclusively write to the TrueNAS boot device.
@@ -402,7 +404,7 @@ Other notable changes:
 To switch between detail and list views for the changelog, press `t`.
 Open the changelog in Jira to see the <span class="iconify" data-icon="mdi:export-variant"></span> **Export** menu to print or download the changelog in various file formats.
 
-### 23.10-BETA.1 Ongoing Issues
+### Known Issues
 
 <a href="https://ixsystems.atlassian.net/issues/?filter=10361&atlOrigin=eyJpIjoiN2ExNTQ5YmE0NmNkNGQyN2FiMTJmYmJlOWIwZWI0ZjIiLCJwIjoiaiJ9" target="_blank">Click here to see the latest information</a> about issues discovered in 23.10-BETA.1 that are being resolved in a future TrueNAS SCALE release.
 {{< /expand >}}
