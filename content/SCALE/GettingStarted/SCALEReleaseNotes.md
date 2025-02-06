@@ -134,7 +134,7 @@ Any new feature flags introduced since the previous OpenZFS version that was int
 
 For more details on feature flags, see [OpenZFS Feature Flags](https://openzfs.github.io/openzfs-docs/Basic%20Concepts/Feature%20Flags.html) and [OpenZFS zpool-feature.7](https://openzfs.github.io/openzfs-docs/man/7/zpool-features.7.html).
 
-## 25.04 Nightly Development Changelog
+## 25.04 Nightly Development
 
 * The TrueNAS REST API is deprecated in TrueNAS 25.04 and replaced with a versioned JSON-RPC 2.0 over WebSocket API ([API Reference]({{< relref "/scale/api/_index.md" >}})). Full removal of the REST API is planned for a future release.
 * Improved API key mechanism with support for user-linked API keys ([NAS-131396](https://ixsystems.atlassian.net/browse/NAS-131396)).
@@ -142,7 +142,7 @@ For more details on feature flags, see [OpenZFS Feature Flags](https://openzfs.g
 
 <!--
 
-## 25.04-BETA.1 Changelog
+## 25.04-BETA.1
 
 {{< hint type=warning title="Early Release Software" >}}
 Early releases are intended for testing and feedback purposes.
