@@ -2,7 +2,7 @@
 id: "scale-schedule"
 img: "/images/tn-openstorage-logo.png"
 product: "TrueNAS"
-title: "TrueNAS<sup>&reg;</sup> | Enterprise&trade;"
+title: '<img src="/images/Community_Edition.png" class="edition-logo" alt="TrueNAS Community Edition"> | <img src="/images/Enterprise.png" class="edition-logo" alt="TrueNAS Enterprise">'
 majorVersions:
   - lifecycle: "Previous"
     name: "TrueNAS 24.04 - Dragonfish"
