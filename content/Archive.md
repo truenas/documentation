@@ -7,6 +7,7 @@ aliases:
   - /releasenotes/scale/22.02.1/
   - /releasenotes/scale/22.02.0.1/
   - /releasenotes/scale/22.02.0/
+  - /scale/scale22.12/
   - /releasenotes/scale/22.02-rc.2/
   - /releasenotes/scale/22.02-rc.1-2/
   - /releasenotes/scale/22.02-rc.1-1/

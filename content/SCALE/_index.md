@@ -1,5 +1,5 @@
 ---
-title: "TrueNAS 25.04 (Early)"
+title: "TrueNAS 25.10 (Early)"
 geekdocCollapseSection: true
 weight: 20
 aliases:
@@ -25,7 +25,7 @@ h1 {display:none;}
 
 {{< header logo="/images/tn-openstorage-logo.png" logo_alt="TrueNAS Logo" version="Nightly Development - 25.04 Fangtooth" icon="" icon_alt="" >}}
 
-{{< include file="/static/includes/25.04FeatureList.md" >}}
+{{< include file="/static/includes/25.10FeatureList.md" >}}
 
 <div class="noprint">
 
