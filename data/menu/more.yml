@@ -1,6 +1,7 @@
 #available icons: https://github.com/thegeeklab/hugo-geekdoc/tree/master/src/icons
 ---
 more:
+  - name: ""
   - name: "TrueNAS Apps"
     ref: "https://www.truenas.com/docs/truenasapps/"
     external: true
@@ -27,11 +28,11 @@ more:
     external: true
     icon: "gdoc_shield"
   - name: "Documentation Archive"
-    ref: "/docs/archive"
+    ref: "https://www.truenas.com/docs/archive/"
     external: true
     icon: "gdoc_bookmark"
   - name: "View Source"
-    ref: "https://github.com/truenas/documentation"
+    ref: "https://github.com/truenas/documentation/blob/24.10/"
     external: true
     icon: "gdoc_github"
   - name: "RSS Feed"
