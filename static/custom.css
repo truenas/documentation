@@ -2403,3 +2403,9 @@ pre.gdoc-mermaid.mermaid.mermaid_sizing {
     text-align: center;
 }
 /* End style for Logo and Icon*/
+
+.edition-logo {
+    height: 24px !important;
+    vertical-align: middle !important;
+  }
+  
