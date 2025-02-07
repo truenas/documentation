@@ -48,7 +48,7 @@ If a static address is desired, the following configuration methods are availabl
 **How do I perform firmware updates?**
 
 Remote management firmware can be upgraded using two methods: the firmware update in the maintenance menu of the web interface or a DOS utility run on the host. 
-The host must be restarted after the update for the sensors to begin recording data again. 
+For the sensors to begin recording data again, restart the host after the update . 
 In most cases the update should be run without saving the existing configuration, though it can be saved if there is extensive network and user configuration already present that would take time to reconfigure.
 
 **What is the ipmitool and how do I get it?**
