@@ -138,8 +138,8 @@ When the TrueNAS installer opens, make sure *boot with BIOS* is chosen and start
 Power off the device when the installation is done.
 
 {{< expand "Why can't I just restart?" "v" >}}
-Do not load the completed image into bhyve and boot after installation as TrueNAS will create invalid network settings.
-If network issues occur, boot the image and create a DHCP interface manually named `xn0`.
+Do not load the completed image into bhyve and boot after installation as TrueNAS creates invalid network settings.
+If network issues occur, boot the image and create a DHCP interface manually named *xn0*.
 {{< /expand >}}
 
 ### Upload TrueNAS Image to EC2

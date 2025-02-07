@@ -95,9 +95,9 @@ If this process fails, retry using the iso file method above.
 
 7. After the update completes, restart the system if it does not restart automatically.
 
-   {{< trueimage src="/images/SCALE/SystemSettings/SidegradeRestart.png" alt="restart to Finish" id="restart to Finish" >}}
+   {{< trueimage src="/images/SCALE/SystemSettings/SidegradeRestart.png" alt="Restart to Finish" id="Restart to Finish" >}}
 
-After TrueNAS restarts, you might need to [use the Console Setup menu to configure the primary networking interfaces]({{< relref "ConsoleSetupMenuScale.md" >}}) to enable GUI accessibility.
+After TrueNAS restarts, to enable GUI accessibility, you might need to use the [Console Setup menu]({{< relref "ConsoleSetupMenuScale.md" >}}) to configure the primary networking interfaces.
 
 After gaining access to the UI, sign in with the admin user credentials created during installation.
 
