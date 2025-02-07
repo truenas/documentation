@@ -11,7 +11,6 @@ tags:
 ---
 
 
-
 {{< enterprise >}}
 Fibre Channel is a TrueNAS Enterprise feature. Only TrueNAS systems licensed for Fibre Channel show iSCSI Fibre Channel screens and settings found by going to **Sharing > Block Shares (iSCSI)**.
 {{< /enterprise >}}
@@ -139,9 +138,9 @@ The **Add Target** and **Edit Target** screens show the same configuration setti
 | **Mode** | **Mode** shows three options for a target:<br><li>**iSCSI** - Select to create a standard iSCSI share target.<br><li>**Fibre Channel** - Select to configure an iSCSI target that includes fibre channel.<br><li>**Both** - Select to use both modes.</li> |
 | **Authorized Networks** | Authorized networks allow communication between initiators (client computers) and iSCSI targets (storage devices) over the IP network. **Add** shows the **Network** field. |
 | **Network** | Shows after clicking **Add** to the right of **Authorized Networks**. Enter the IP address for the network and select the netmask (CIDR) from the dropdown list. Adds the network address to the authorized network list. |
-| **Do not connect to a fibre channel port** | Select to set the target to not connect to a fibre channel port. Use for a standard iSCSI share target. |
-| **Use an existing port** | Select to use an existing iSCSI port already configured on the system. Shows a dropdown list where you select the port. |
-| **Create new virtual port** | Select to create a new virtual iSCSI port for fibre channel configuration. Shows the **Create a new virtual port** field. Select from the options on the dropdown list. |
+| **Do not connect to a fibre channel port** | Select to create an iSCSI share and target withoug fibre channel. |
+| **Use an existing port** | Select to use an existing iSCSI port(s) already configured on the system. Select when migrating an existing TrueNAS FreeBSD-based iSCSI fibre channel configuration to a later TruenNAS Debian Linux-based release. Shows a dropdown list with existing ports. |
+| **Create new virtual port** | Select to create a new virtual iSCSI port for fibre channel configuration. Use when setting up a new iSCSI share target and fibre channel ports. Shows the **Create a new virtual port** field. Select from the options on the dropdown list. |
 {{< /truetable >}}
 {{< /expand >}}
 
@@ -220,7 +219,7 @@ The **Add** and **Edit** screens display the same settings.
 
 ### Fibre Channel Ports Screens
 
-The **Fibre Channel Ports** screen shows a table listing fibre channels configured on the system.
+The **Fibre Channel Ports** screen shows a table listing fibre channels configured on the system. Virtual ports show as child elements to phyical ports.
 
 {{< trueimage src="/images/SCALE/Shares/iSCSIFibreChannelPortsScreen.png" alt="iSCSI Fibre Channel Ports Screen" id="iSCSI Fibre Channel Ports Screen" >}}
 
