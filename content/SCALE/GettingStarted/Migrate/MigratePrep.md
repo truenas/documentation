@@ -94,7 +94,12 @@ Enterprise customers are encouraged to contact Support for assistance with the p
 9. Download your [system configuration file](https://www.truenas.com/docs/core/coretutorials/systemconfiguration/usingconfigurationbackups/) and a [debug file](https://www.truenas.com/docs/core/uireference/system/advanced/).
    After updating to the latest publicly-available release of TrueNAS 13.0 (or 13.3 for community users) and making any changes to user accounts or any other settings, download these files and keep them in a safe place and where you can access them if you need to revert with a clean install using the TrueNAS 13.0 or 13.3 <file>iso</file> file.
 
-After completing the steps listed above that apply to your existing system, download the latest [TrueNAS 24.04 ISO file](https://www.truenas.com/download-tn-scale/) and save it to your computer.
+{{< enterprise >}}
+Enterprise customers using iSCSI with ALUA or fibre channel ports should contact Support for assistance with migrating their systems.
+These features require careful configuration to avoid data corruption or loss of data.
+{{< /enterprise>}}
+
+After completing the steps listed above that apply to your existing system, download the latest [TrueNAS ISO file](https://www.truenas.com/download-tn-scale/) and save it to your computer.
 See [Software Releases]({{< relref "TrueNASUpgrades/_index.md #upgrade-paths" >}}) for current recommended update paths to make sure you download and migrate to and from the correct TrueNAS versions.
 Burn the iso to a USB drive (see [**Installing on Physical Hardware**]({{< relref "InstallingSCALE.md#installing-on-physical-hardware" >}})) when upgrading a physical system.
 
