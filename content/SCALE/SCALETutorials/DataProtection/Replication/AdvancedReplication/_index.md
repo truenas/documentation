@@ -116,7 +116,7 @@ The **Add Replication Task** configuration screen opens.
    Select **Schedule** to display scheduling options for this replication task and To automate the task according to its own schedule.
 
    Selecting **Schedule** allows scheduling the replication to run at a separate time.
-   Choose a time frame that gives the replication task enough time to succeed and is during a time of day when network traffic for both source and destination systems is minimal.
+   Choose a time frame that gives the replication task enough time to finish and is during a time of day when network traffic for both source and destination systems is minimal.
    Use the custom scheduler (recommended) when you need to fine-tune an exact time or day for the replication.
    
    {{< expand "Advanced Scheduler" "v" >}}
