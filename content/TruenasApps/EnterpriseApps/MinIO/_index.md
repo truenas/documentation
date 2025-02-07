@@ -33,7 +33,7 @@ To install the MinIO **enterprise** train app, do the following:
 
 {{< include file="/static/includes/apps/BeforeYouBeginAddNewAppUser.md" >}}
 
-{{< include file="/static/includes/apps/BeforeYouBegingAddAppCertificate.md" >}}
+{{< include file="/static/includes/apps/BeforeYouBeginAddAppCertificate.md" >}}
 
 <p style="margin-left: 33px">The <b>Certificates</b> setting is optional for a basic app configuration but is required when setting up multi-mode configurations, and when using MinIO as an S3 storage object target for Veeam Backup and Replication Immutability</p>
 
@@ -82,6 +82,7 @@ If setting up a cluster configuration, see [Multi-Mode Configuration](#multi-mod
 {{< include file="/static/includes/apps/InstallWizardUserAndGroupConfig.md" >}}
 
 {{< include file="/static/includes/apps/MinIOEnterpriseNetworkConfig.md" >}}
+If using MinIO for Veeam Immutability S3 object storage, add the certificate.
 
 Scroll down to or click on **Storage Configuration** on the list of wizard sections.
 
