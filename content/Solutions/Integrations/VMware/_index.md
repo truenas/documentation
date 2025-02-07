@@ -71,7 +71,7 @@ When an VMFS (iSCSI) datastore is created using the plugin, the TrueNAS systems 
 
 When using TrueNAS as a VMware datastore:
 
-* Make sure guest VMs have the latest version of `vmware-tools` installed.
+* Make sure guest VMs have the latest version of vmware-tools installed.
   VMware provides instructions to [install VMware Tools](https://www.vmware.com/support/ws5/doc/new_guest_tools_ws.html) on different guest operating systems.
 
 * Increase the VM disk timeouts to better survive long restarts or other delayed disk operations. 
@@ -81,7 +81,7 @@ When using TrueNAS as a VMware datastore:
   * Windows guest operating system: https://docs.vmware.com/en/VMware-vSphere/6.7/com.vmware.vsphere.storage.doc/GUID-EA1E1AAD-7130-457F-8894-70A63BD0623A.html
   * Linux guests running kernel version 2.6: https://kb.vmware.com/s/article/1009465
 
-  NOTE: Restarts or failovers will typically complete much faster than 300 seconds and Disk IO will resume automatically when finished.
+  NOTE: Restarts or failovers typically complete much faster than 300 seconds and Disk IO resumes automatically when finished.
 
 ### VMware Snapshots on TrueNAS
 
