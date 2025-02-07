@@ -56,61 +56,16 @@
     </div>
   {{ end }}
 </div>
-{{ if in .Section "CORE" }}
 <article class="gdoc-markdown">
-<blockquote class="gdoc-hint warning version-note" style="margin-bottom:1rem;">
-  <div class="gdoc-hint__title flex align-center vnote-title">
-    <img src="/favicon/TN-favicon-32x32.png" alt="TrueNAS CORE" title="CORE Nightly Development Documentation" style="padding-right:.75rem;"></img>TrueNAS CORE Nightly Development Documentation
-  </div>
-  <div class="gdoc-hint__text" style="font-size:smaller;">
-    This content follows experimental early release software. Pre-release software is intended for testing purposes only.<br>Use the <b>Product</b> and <b>Version</b> selectors above to view content specific to a stable software release.
-  </div>
-</blockquote>
-</article>
-{{ else if hasPrefix .RelPermalink "/truenasapps/" }}
-<article class="gdoc-markdown">
-<blockquote class="gdoc-hint caution">
-  <div class="gdoc-hint__title flex align-center">
-    <img src="/favicon/TNScale-favicon-32x32.png" alt="TrueNAS Apps" title="TrueNAS Apps" style="padding-right:.75rem;"></img>TrueNAS Apps: Tutorials
-  </div>
-  <div class="gdoc-hint__text" style="font-size:smaller;">
-    Application maintenance is independent from TrueNAS version release cycles.<br>
-    App versions, features, options, and installation behavior at time of access might vary from documented tutorials and <a href="/scale/scaleuireference/apps/">UI reference</a>.
-  </div>
-</blockquote>
-</article>
-{{ else if and (in .Section "SCALE") (hasPrefix .RelPermalink "/scale/scaleuireference/apps/") }}
-<article class="gdoc-markdown">
-<blockquote class="gdoc-hint caution">
-  <div class="gdoc-hint__title flex align-center">
-    <img src="/favicon/TNScale-favicon-32x32.png" alt="TrueNAS Apps: UI Reference" title="TrueNAS Apps: UI Reference" style="padding-right:.75rem;"></img>TrueNAS Apps: UI Reference
-  </div>
-  <div class="gdoc-hint__text" style="font-size:smaller;">
-    Application maintenance is independent from TrueNAS version release cycles.<br>
-    App versions, features, options, and installation behavior at time of access might vary from documented <a href="/truenasapps/">tutorials</a> and UI reference.
-  </div>
-</blockquote>
-</article>
-{{ else if in .Section "SCALE" }}
-<article class="gdoc-markdown">
-<blockquote class="gdoc-hint caution">
-  <div class="gdoc-hint__title flex align-center">
-    <img src="/favicon/TNScale-favicon-32x32.png" alt="TrueNAS" title="TrueNAS Nightly Development Documentation" style="padding-right:.75rem;"></img>TrueNAS Nightly Development Documentation
-  </div>
-  <div class="gdoc-hint__text" style="font-size:smaller;">
-    This content follows experimental nightly development software. Pre-release software is intended for testing purposes only.<br>Use the <b>Product</b> and <b>Version</b> selectors above to view content specific to a stable software release.
-  </div>
-</blockquote>
-</article>
-{{ else if in .Section "TrueCommand" }}
-<article class="gdoc-markdown">
-<blockquote class="gdoc-hint warning version-note">
-  <div class="gdoc-hint__title flex align-center vnote-title">
-    <img src="/favicon/TC-favicon-32x32.png" alt="TrueCommand" title="TrueCommand Nightly Development Documentation" style="padding-right:.75rem;"></img>TrueCommand Nightly Development Documentation
-  </div>
-  <div class="gdoc-hint__text" style="font-size:smaller;">
-    This content follows experimental early release software. Pre-release software is intended for testing purposes only.<br>Use the <b>Product</b> and <b>Version</b> selectors above to view content specific to a stable software release.
-  </div>
-</blockquote>
-</article>
-{{ end }}
+  <blockquote class="gdoc-hint caution">
+    <div class="gdoc-hint__title flex align-center">
+      <img src="/favicon/TN-favicon-32x32.png" alt="TrueNAS" title="TrueNAS" style="padding-right:.75rem;"></img>
+      TrueNAS Pre-Release Documentation
+    </div>
+    <div class="gdoc-hint__text" style="font-size:smaller;">
+      This content follows early development versions of TrueNAS 25.04 (Fangtooth). Pre-release software is intended for testing purposes only.
+      <br>
+      Use the <b>Product</b> and <b>Version</b> selectors above to view content specific to a different software release.
+    </div>
+  </blockquote>
+  </article>
