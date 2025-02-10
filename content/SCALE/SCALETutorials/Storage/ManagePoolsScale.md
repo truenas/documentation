@@ -78,7 +78,7 @@ It is not necessary to stop sharing services to upgrade the pool.
 
 Use **Scrub** on the **ZFS Health** pool widget to start a pool data integrity check.
 
-{{< trueimage src="/images/SCALE/Storage/StorageDashboardZFSHealthWidget.png" alt="ZFS Health Widget" id="ZFS Health Widget" >}}
+{{< trueimage src="/images/SCALE/Storage/StorageDashboardZFSHealthWidgetWithDedup.png" alt="ZFS Health Widget" id="ZFS Health Widget" >}}
 
 Click **Scrub** to open the **Scrub Pool** dialog.
 Select **Confirm**, then click **Start Scrub**.
