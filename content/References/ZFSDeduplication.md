@@ -13,7 +13,7 @@ Consider and understand the implications of using deduplication before adding it
 
 ## Deduplication on ZFS
 
-Deduplication is one technique ZFS can use to store file and other data in a pool. 
+Deduplication is one technique ZFS can use to store files and other data in a pool. 
 If several files contain the same pieces (blocks) of data or any other pool data occurs more than once in the pool, ZFS stores just one copy of it. 
 Instead of storing many copies of a book it stores one copy and an arbitrary number of pointers to that one copy.
 Only when no file uses the data is the data deleted. 
