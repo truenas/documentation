@@ -58,7 +58,7 @@ Pruning cleans up old, non-duplicate (unique) records in the deduplication table
 Reclaiming available space is a prerequisite to the deduplication table (DDT) quota and pruning functions.
 
 {{< expand "How does pruning work?" "v" >}}
-Pruning reduces the size of the dedup table (DDT) by removing unique entries, created more than a specified time ago.
+Pruning reduces the size of the deduplication table (DDT) by removing unique entries created more than a specified time ago.
 It assumes that if some block has no duplicates since that time, it might never have them in the future, and so tracking this wastes resources.
 Since the blocks with DDT entries removed can never be deduplicated again, this might reduce deduplication efficiency if the assumptions appear false.
 So pruning should be used reasonably, either if the DDT size becomes too big for the system to manage, or if we are sure that we know that for the workload of a specific system, the older blocks likely remain unique forever.
