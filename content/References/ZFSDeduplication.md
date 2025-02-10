@@ -115,7 +115,7 @@ So the trade-off with deduplication is reduced server RAM/CPU/SSD performance an
 {{< expand "Reduced I/O" "v" >}}
 Deduplication requires almost immediate access to the DDT. In a deduplicated pool, every block potentially needs DDT access. 
 The number of small I/Os can be colossal; copying a 300 GB file could require tens, perhaps hundreds of millions of 4K I/O to the DDT. 
-This is extremely punishing and slow. RAM must be large enough to store the entire DDT and any other metadata and the pool almost always is configured using fast, high-quality SSDs allocated as special vdevs for metadata. 
+This is extremely punishing and slow. RAM must be large enough to store the entire DDT and any other metadata and the pool is commonly is configured using fast, high-quality SSDs allocated as special vdevs for metadata. 
 Data rates of 50,000-300,000 4K I/O per second (IOPS) have been reported by the TrueNAS community for SSDs handling DDT. 
 When the available RAM is insufficient, the pool runs extremely slowly. 
 When the SSDs are unreliable or slow under mixed sustained loads, the pool can also slow down or even lose data if enough SSDs fail.
