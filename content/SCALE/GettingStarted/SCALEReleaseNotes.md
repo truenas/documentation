@@ -87,18 +87,13 @@ Enterprise customers should [contact Support](https://www.truenas.com/docs/scale
 -->
 
 ## Component Versions
-Component version numbers below are updated to reflect the latest TrueNAS 25.10 release.
+
 Click the component version number to see release notes for that component.
 
-{{< truetable >}}
-| Component | Version |
-|-----------|-------------|
-| Linux Kernel | [](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/tag/?h=v6.12) |
-| OpenZFS | [](https://github.com/openzfs/zfs/tree/zfs-2.3.0-rc3) |
-| Docker Engine | [](https://docs.docker.com/engine/release-notes/27/#2731) |
-{{< /truetable >}}
+{{< component-versions "25.10" >}}
 
 ### OpenZFS Feature Flags
+
 TrueNAS integrates many features provided by the upstream [OpenZFS project](https://openzfs.org/wiki/Main_Page).
 Any new feature flags introduced since the previous OpenZFS version that was integrated into TrueNAS (OpenZFS 2.2.99) are listed below:
 
