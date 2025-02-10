@@ -8,6 +8,30 @@
 # Insert new major or minor version release data above existing entries.
 
 major_version:
+  "25.10":
+    release_order: # list minor version releases in order, starting with the latest
+      - "25.10-BETA.1"
+    component_order: # list components in the order they should appear in the left column
+      - "linux_kernel"
+      - "openzfs"
+      - "docker_engine"
+      - "nvidia_driver"
+    release: # include each release with component versions and links 
+      "25.10-BETA.1":
+        components:
+          linux_kernel:
+            version: "TBD"
+            link: ""
+          openzfs:
+            version: "TBD"
+            link: ""
+          docker_engine:
+            version: "TBD"
+            link: ""
+          nvidia_driver:
+            version: "TBD"
+            link: ""
+
   "25.04":
     release_order: # list minor version releases in order, starting with the latest
       - "25.04-BETA.1"
