@@ -29,7 +29,7 @@ A pool can contain any coexisting mix of deduplicated data and non-deduplicated 
 If deduplication is enabled at the time of writing, the DDT is used to write data.
 It writes non-deduplicated data if deduplication is not enabled at the time of writing. Subsequently, the data remains as at the time it was written until it is deleted.  
 
-The only way to convert existing current data to all deduplicated or not deduplicated or to change how it is deduplicated is to create a new copy while new settings are active.  
+The only way to convert existing current data to all deduplicated or non-deduplicated or to change how it is deduplicated is to create a new copy while new settings are active.  
 Copy the data within a file system or to a different file system, or replicate it using the Web UI replication functions. 
 Data in snapshots is fixed and can only be changed by replicating the snapshot to a different pool with different settings (which preserves its snapshot status) or copying its contents.
 
