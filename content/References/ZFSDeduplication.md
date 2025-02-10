@@ -27,7 +27,7 @@ Therefore, like any other pool data, if DDT data is lost, the pool is likely to 
 
 A pool can contain any coexisting mix of deduplicated data and non-deduplicated data. 
 If deduplication is enabled at the time of writing, the DDT is used to write data.
-It writes non-deduplicated if deduplication is not enabled at the time of writing. Subsequently, the data remains as at the time it was written until it is deleted.  
+It writes non-deduplicated data if deduplication is not enabled at the time of writing. Subsequently, the data remains as at the time it was written until it is deleted.  
 
 The only way to convert existing current data to all deduplicated or not deduplicated or to change how it is deduplicated is to create a new copy while new settings are active.  
 Copy the data within a file system or to a different file system, or replicate it using the Web UI replication functions. 
