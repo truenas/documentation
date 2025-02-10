@@ -18,10 +18,16 @@
         <tr>
           <td>{{ index $componentNames $componentName }}</td> <!-- Human-readable name -->
           {{- range $releaseVersion := $versionData.release_order }}
+            {{- $componentData := index (index $versionData.release $releaseVersion) "components" $componentName -}}
+            {{- $componentVersion := index $componentData "version" -}}
+            {{- $componentLink := index $componentData "link" | default "" -}} <!-- Ensure link is set -->
+
             <td>
-              <a href="{{ index (index $versionData.release $releaseVersion) "components" $componentName "link" }}">
-                {{ index (index $versionData.release $releaseVersion) "components" $componentName "version" }}
-              </a>
+              {{- if and $componentLink (ne $componentLink "") -}}
+                <a href="{{ $componentLink }}">{{ $componentVersion }}</a>
+              {{- else -}}
+                {{ $componentVersion }}
+              {{- end -}}
             </td>
           {{- end }}
         </tr>
