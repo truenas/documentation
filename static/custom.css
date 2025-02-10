@@ -1868,6 +1868,24 @@ table.graph-inputs select.ydata {
 
 /* End Style for capacity graph "graph-inputs" */
 
+/* Style for the container of tables with class "component-versions-table" */
+/* Set background color for the top row and left column */
+.component-versions-table th,
+.component-versions-table td:first-child {
+  background-color: #0095d5;
+  color: white;
+  font-weight: 600;
+}
+
+/* Exclude the first cell (top-left) from the background color */
+.component-versions-table th:first-child {
+  background-color: var(--body-background);
+  border-top: none;
+  border-left: none;
+}
+
+/* end style for the container of tables with class "component-versions-table" */
+
 /* Style for draid visualizer */
 div.draid-grid-container {
 	display: grid;
@@ -2404,6 +2422,7 @@ pre.gdoc-mermaid.mermaid.mermaid_sizing {
 }
 /* End style for Logo and Icon*/
 
+/* Styling for Community Edition and Enterprise logos */
 .edition-logo {
     height: 24px !important;
     vertical-align: middle !important;
