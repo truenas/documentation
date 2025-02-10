@@ -110,7 +110,7 @@ When data is read or written, it is also possible that a large block read or wri
 
 The deduplication process is very demanding! 
 There are four main costs to using deduplication: large amounts of RAM, requiring fast SSDs, CPU resources, and a general performance reduction. 
-So the trade-off with deduplication is reduced server RAM/CPU/SSD performance and loss of top-end I/O speeds in exchange for saving storage size and pool expenditures.
+The trade-off with deduplication is reduced server RAM/CPU/SSD performance and loss of top-end I/O speeds in exchange for saving storage size and pool expenditures.
 
 {{< expand "Reduced I/O" "v" >}}
 Deduplication requires almost immediate access to the DDT. In a deduplicated pool, every block potentially needs DDT access. 
