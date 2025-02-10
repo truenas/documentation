@@ -103,12 +103,13 @@ Enterprise customers should [contact Support](https://www.truenas.com/docs/scale
 -->
 
 ## Component Versions
-Component version numbers below are updated to reflect the latest TrueNAS 24.05 release.
+
 Click the component version number to see release notes for that component.
 
 {{< component-versions "25.04" >}}
 
 ### OpenZFS Feature Flags
+
 TrueNAS integrates many features provided by the upstream [OpenZFS project](https://openzfs.org/wiki/Main_Page).
 Any new feature flags introduced since the previous OpenZFS version that was integrated into TrueNAS (OpenZFS 2.2.99) are listed below:
 
