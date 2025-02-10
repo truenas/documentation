@@ -27,7 +27,7 @@ Therefore, like any other pool data, if DDT data is lost, the pool is likely to 
 
 A pool can contain any coexisting mix of deduplicated data and non-deduplicated data. 
 If deduplication is enabled at the time of writing, the DDT is used to write data.
-It writes non-deduplicated data if deduplication is not enabled at the time of writing. Subsequently, the data remains as at the time it was written until it is deleted.  
+It writes non-deduplicated data if deduplication is not enabled at the time of writing. Subsequently, the data remains the same as it was at the time it was written until it is deleted.  
 
 The only way to convert existing current data to all deduplicated or non-deduplicated or to change how it is deduplicated is to create a new copy while new settings are active.  
 Copy the data within a file system or to a different file system, or replicate it using the Web UI replication functions. 
@@ -44,7 +44,7 @@ These improvements speed up I/O processes, look-ups, and reclaim storage space, 
 Fast deduplication accomplishes these improvements through four new functions: DDT log, prefetch, pruning, and a quota. 
 
 ### DDT Log
-Instead of writing DDT entries in random order as they arrive, which causes excessive write inflation, and since single DDT record writes might require a whole ZAP leaf block, fast dedup temporarily writes them into a log, flushing it into actual DDT ZAP only after sorting.
+Instead of writing DDT entries in random order as they arrive, which causes excessive write inflation, and since single DDT record writes might require a whole ZFS attribute processor (ZAP) leaf block, fast dedup temporarily writes them into a log, flushing it into actual DDT ZAP only after sorting.
 Improving write locality allows aggregating multiple DDT entry writes into one ZAP leaf write.
 
 ### Prefetch
