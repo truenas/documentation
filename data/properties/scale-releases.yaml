@@ -45,4 +45,4 @@ majorVersions:
         type: "Experimental"
         link: "https://www.truenas.com/docs/scale/25.04/gettingstarted/scalereleasenotes/"
         releaseDate: "2024-08-13"
-        latest: false 
+        latest: false
