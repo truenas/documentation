@@ -91,10 +91,10 @@ Click the component version number to see release notes for that component.
 TrueNAS integrates many features provided by the upstream [OpenZFS project](https://openzfs.org/wiki/Main_Page).
 Any new feature flags introduced since the previous OpenZFS version that was integrated into TrueNAS (OpenZFS 2.2.99) are listed below:
 
-{{< truetable >}}
+{{< truetable class="tn-blue" >}}
 | Feature Flag | GUID | Notes |
 |--------------|------|-------|
-|  | [](https://openzfs.github.io/openzfs-docs/man/master/7/zpool-features.7.html#fast_dedup) |  |
+|  | [](https://openzfs.github.io/openzfs-docs/man/master/7/zpool-features.7.html#FLAG) |  |
 {{< /truetable >}}
 
 For more details on feature flags, see [OpenZFS Feature Flags](https://openzfs.github.io/openzfs-docs/Basic%20Concepts/Feature%20Flags.html) and [OpenZFS zpool-feature.7](https://openzfs.github.io/openzfs-docs/man/7/zpool-features.7.html).
