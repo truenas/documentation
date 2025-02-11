@@ -89,7 +89,7 @@ Click the component version number to see release notes for that component.
 ### OpenZFS Feature Flags
 
 TrueNAS integrates many features provided by the upstream [OpenZFS project](https://openzfs.org/wiki/Main_Page).
-Any new feature flags introduced since the previous OpenZFS version that was integrated into TrueNAS (OpenZFS 2.2.99) are listed below:
+Any new feature flags introduced since the previous OpenZFS version that was integrated into TrueNAS (OpenZFS 2.3.0) are listed below:
 
 {{< truetable class="tn-blue" >}}
 | Feature Flag | GUID | Notes |
