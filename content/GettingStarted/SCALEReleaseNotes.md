@@ -47,7 +47,7 @@ More details are available from [Software Releases](https://www.truenas.com/docs
   Click **API Docs** to view API documentation.
 
 * 25.04 also introduces user-linked API access keys, allowing administrators to configure per-user access to the TrueNAS API.
-  Keys are revokable and can be configured to automatically expire on a preset date.
+  Keys are revocable and can be configured to automatically expire on a preset date.
   
   {{< include file="/static/includes/API_AD.md" >}}
 
