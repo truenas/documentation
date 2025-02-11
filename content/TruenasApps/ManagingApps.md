@@ -1,6 +1,7 @@
+---
 title: "Managing TrueNAS Apps"
 description: "Provides instructions on managing TrueNAS applications."
-weight: 25
+weight: 35
 aliases:
 tags:
 ---
@@ -15,6 +16,8 @@ Click on **Configuration** at the top right of the screen to expand the dropdown
 Configuration settings allow setting up multiple IP addresses and directory service authentication.
 
 {{< trueimage src="/images/SCALE/Apps/AppsSettingScreen.png" alt="Apps Settings Screen" id="Apps Settings Screen" >}}
+
+For information on managing trains, see [Managing App Trains]({{< relref "UsingTrains.md" >}}).
 
 ### Managing the Apps Pool
 
