@@ -25,7 +25,7 @@ Alternatively, append `/api/docs/` to your TrueNAS host name or IP address in a 
 ## API Access
 
 User-linked API access keys allow administrators to configure per-user access to the TrueNAS API.
-Keys are revokable and can be configured to automatically expire on a preset date.
+Keys are revocable and can be configured to automatically expire on a preset date.
   
 {{< include file="/static/includes/API_AD.md" >}}
 
