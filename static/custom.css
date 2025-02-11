@@ -1522,6 +1522,15 @@ pre.chroma {
 .section-box:hover {
 	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
+
+.section-divider {
+    width: 80px;
+    height: 2px;
+    background-color: #0095d5 !important;
+    border: none;
+    margin: .5rem auto;
+  }
+  
 /* Adjust section-box for TrueNAS Systems page cards */
 .ixprods {
 	color: var(--body-font-color);
