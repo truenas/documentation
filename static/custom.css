@@ -1278,6 +1278,17 @@ pre.chroma {
   border-left: none;
 }
 
+/* Apply border styles to match truetable */
+.component-versions-table {
+  border-collapse: collapse;
+}
+
+.component-versions-table td,
+.component-versions-table th {
+  border: .5px solid var(--accent-color);
+  padding: .5rem;
+}
+
 /* Highlight individual cells (excluding first column and header row) on hover */
 .component-versions-table td:not(:first-child):hover {
   background-color: var(--accent-color);
