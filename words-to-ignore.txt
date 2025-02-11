@@ -2158,3 +2158,8 @@ MiniFamilyFront
 SOV
 MiniNetworkPortID
 InstallWizardResourceConfig
+AppsPool
+appName
+InstalledAppsScreenWithApps
+AppsPool
+InstalledAppsScreenWithApps
