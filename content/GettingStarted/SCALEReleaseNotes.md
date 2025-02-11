@@ -132,6 +132,18 @@ This first public release version of TrueNAS 25.04 (Fangtooth) has software comp
 * The TrueNAS REST API is deprecated in TrueNAS 25.04 and replaced with a versioned JSON-RPC 2.0 over WebSocket API ([API Reference]({{< relref "/api/_index.md" >}})). Full removal of the REST API is planned for a future release.
 * Improved API key mechanism with support for user-linked API keys ([NAS-131396](https://ixsystems.atlassian.net/browse/NAS-131396)).
 * The default libvirt account UID & GID is changed to a less common value to avoid clashing with user created UID/GIDs. See Upgrade Notes above for more information ([NAS-131695](https://ixsystems.atlassian.net/browse/NAS-131695)).
+* UI login experience improvements ([NAS-130810](https://ixsystems.atlassian.net/browse/NAS-130810)).
+* NFS over RDMA support - Enterprise Feature ([NAS-131784](https://ixsystems.atlassian.net/browse/NAS-131784)).
+* iSCSI Extensions for RDMA (iSER) support ([NAS-106190](https://ixsystems.atlassian.net/browse/NAS-106190)).
+* ZFS Fast deduplication support ([NAS-127088](https://ixsystems.atlassian.net/browse/NAS-127088)).
+* Incus Container & VM Support - Experimental Community Feature ([NAS-130251](https://ixsystems.atlassian.net/browse/NAS-130251)).
+* Hide SED related options in the UI for non-Enterprise users ([NAS-133442](https://ixsystems.atlassian.net/browse/NAS-133442)).
+* Bump nvidia driver version ([NAS-133575](https://ixsystems.atlassian.net/browse/NAS-133575)).
+* Remove integrated Netdata web portal from the TrueNAS UI and middleware ([NAS-133629](https://ixsystems.atlassian.net/browse/NAS-133629)).
+  Default Netdata integration is removed due to STIG security requirements.
+  Users who want to continue using Netdata monitoring can install Netdata from the TrueNAS Apps catalog.
+* Bugfix: "Cache and Spare disks are not recognized post upgrade from 13.0 U6.2 to 24.04.2" ([NAS-130825](https://ixsystems.atlassian.net/browse/NAS-130825)).
+* Bugfix: "Unable to start a VM due to insufficient memory" ([NAS-128544](https://ixsystems.atlassian.net/browse/NAS-128544)).
 
 <a href="https://ixsystems.atlassian.net/issues/?filter=11744" target="_blank">Click here for the full changelog</a> of completed tickets that are included in the 25.04-BETA.1 release.
 {{< include file="/static/includes/JiraFilterInstructions.md" >}}
@@ -139,5 +151,6 @@ This first public release version of TrueNAS 25.04 (Fangtooth) has software comp
 ### Known Issues
 
 * An issue has been discovered for cloud sync tasks configured with file name encryption, which is available in **Advanced Remote Options** ([NAS-132472](https://ixsystems.atlassian.net/browse/NAS-132472)). As this is an upstream issue in rclone, we recommend that users should not create new cloud sync tasks with the **Filename Encryption** setting enabled. Existing users of this feature must leave it enabled for existing cloud sync tasks to be able to recover backups.
+* Unable to Create dataset under disks while configuring a new virtualization Instance ([NAS-134151](https://ixsystems.atlassian.net/browse/NAS-134151)).
 
 <a href="https://ixsystems.atlassian.net/issues/?filter=11745" target="_blank">Click here to see the latest information</a> about public issues discovered in 25.04-BETA.1 that are being resolved in a future TrueNAS release.
