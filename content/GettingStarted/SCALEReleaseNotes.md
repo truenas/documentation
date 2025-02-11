@@ -136,6 +136,7 @@ This first public release version of TrueNAS 25.04 (Fangtooth) has software comp
 * NFS over RDMA support - Enterprise Feature ([NAS-131784](https://ixsystems.atlassian.net/browse/NAS-131784)).
 * iSCSI Extensions for RDMA (iSER) support ([NAS-106190](https://ixsystems.atlassian.net/browse/NAS-106190)).
 * ZFS Fast deduplication support ([NAS-127088](https://ixsystems.atlassian.net/browse/NAS-127088)).
+* iSCSI and ZVOL block cloning support ([NAS-130017](ixsystems.atlassian.net/browse/NAS-130017)).
 * Incus Container & VM Support - Experimental Community Feature ([NAS-130251](https://ixsystems.atlassian.net/browse/NAS-130251)).
 * Hide SED related options in the UI for non-Enterprise users ([NAS-133442](https://ixsystems.atlassian.net/browse/NAS-133442)).
 * Bump nvidia driver version ([NAS-133575](https://ixsystems.atlassian.net/browse/NAS-133575)).
