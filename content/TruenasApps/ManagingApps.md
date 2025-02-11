@@ -66,7 +66,7 @@ Select the network option, or add additional options to resolve the network conn
 
 TrueNAS can monitor the GitHub repository for the docker image for updates if the **Check for docker image updates** option on the **Settings** screen is enabled.
 Go to the **Installed** applications screen, click on **Configuration**, and then click on **Settings** to open the screen.
-Scroll down to check this option. If checkmarked it is enabled. Select to clear the checkbox to disable it.
+Scroll down to check this option. If check-marked it is enabled. Select to clear the checkbox to disable it.
 
 Click **Save** after making a change.
 
@@ -106,7 +106,7 @@ When downloading a private image, enter user account credentials that allow acce
 ## Managing Installed Apps
 
 Installed applications show on the **Installed** applications screen in the **Applications** table.
-Select an app row to view the widgets for the app in the **Details**area. Widgets include **Application Info**, **Workloads**, **Notes**, and **Application Metadata**.
+Select an app row to view the widgets for the app in the **Details** area. Widgets include **Application Info**, **Workloads**, **Notes**, and **Application Metadata**.
 
 {{< trueimage src="/images/SCALE/Apps/InstalledAppsScreenWithApps.png" alt="" id="" >}}
 
