@@ -2192,3 +2192,4 @@ WidgetEditorAddNew
 WidgetEditorExistingWidget  
 scrollbars  
 DashboardMainHAScreen
+Jellyfin
