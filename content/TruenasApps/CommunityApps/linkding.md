@@ -19,6 +19,8 @@ keywords:
 <!-- Uncomment the following line if you suspect this Community app documentation is out of date, inaccurate, or needs further improvement -->
 <!--{{< include file="/static/includes/apps/CommunityPleaseImprove.md" >}}-->
 
+{{< include file="/static/includes/ProposeArticleChange.md" >}}
+
 [Linkding](https://github.com/sissbruecker/linkding) is a web bookmarking application supporting tags, search, multi-users, page snapshots, and more.
 
 ## Before you begin
@@ -41,6 +43,5 @@ See [Understanding App Storage Volumes]({{< relref "truenasapps/_index.md#unders
 If setting a custom host path for Linkding Data Storage (e.g. for storing page snapshots to a zfs pool), you'll likely want to select **Enable ACL** and then within **ACL Entries** set ID type (e.g. for user), ID (e.g. 568, or whatever is set as the User and Group for Linkding on the same settings page) and Access (FULL_CONTROL) appropriately.
 Failure to set up ACL appropriately when using a custom host path causes Linkding to not run (i.e. return an Internal Server Error).
 
-You might also need to setup a way to securely host the service, using guides such as [HOWTO: Host a Service privately on TrueNAS with a valid SSL Certificate](https://forums.truenas.com/t/howto-host-a-service-privately-on-truenas-with-a-valid-ssl-certificate/15243).
+You might also need to set up a way to securely host the service, using guides such as [HOWTO: Host a Service privately on TrueNAS with a valid SSL Certificate](https://forums.truenas.com/t/howto-host-a-service-privately-on-truenas-with-a-valid-ssl-certificate/15243).
 
-{{< include file="/static/includes/ProposeArticleChange.md" >}}
