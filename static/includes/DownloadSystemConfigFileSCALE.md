@@ -1,5 +1,9 @@
 &NewLine;
 
+{{< hint type=info title="System Admin Required" >}}
+{{< include file="/static/includes/ConfigRestrictions.md" >}}
+{{< /hint >}}
+
 When you download the configuration (config) file, you have the option to include encrypted passwords in the config file. Select **Export Password Secret Seed** to download this file.
 Downloading both the config file and the secret seed file allows you to restore the system to a different operating system device where the decryption seed is not already present.
 
