@@ -1,13 +1,13 @@
 ---
-title: "25.04 (Fangtooth) Development Notes"
-description: "Highlights, change log, and known issues for the latest TrueNAS nightly development version."
+title: "25.04 (Fangtooth) Version Notes"
+description: "Highlights, change log, and known issues for TrueNAS 25.04 release versions."
 weight: 10
 related: false
 ---
 {{< header logo="/images/tn-openstorage-logo.png" logo_alt="TrueNAS Logo" version="25.04 Fangtooth" icon="" icon_alt="" >}}
 
-{{< hint type="tip" title="25.04 Nightly Development Documentation" >}}
-This page tracks the latest development roadmap and notes for the future TrueNAS major version 25.04 (Fangtooth).
+{{< hint type="tip" title="25.04 Early Release Documentation" >}}
+This page tracks the latest development roadmap and early release notes for the future TrueNAS major version 25.04 (Fangtooth).
 
 See the stable [24.10 (Electric Eel)](https://www.truenas.com/docs/scale/24.10/gettingstarted/scalereleasenotes/) release notes for information relating to that version.
 {{< /hint >}}
