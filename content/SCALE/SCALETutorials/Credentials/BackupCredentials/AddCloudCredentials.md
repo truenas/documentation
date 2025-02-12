@@ -200,6 +200,23 @@ Open the **Cloud Credentials** screen, select **OpenStack Swift Cloud** in **Pro
 
 5. Click **Save**.
 
+## Adding Microsoft OneDrive Credentials
+Microsoft OneDrive uses OAuth authentication to connect TrueNAS to your cloud account.
+
+Open the **Cloud Credentials** screen, select **Microsoft OneDrive** in **Provider**, enter a name and then:
+
+1. Click **Log In To provider** to open the Microsoft sign-in page in a new window. You can confirm the intended authorization in the new window.
+
+2. Confirm the authorization to enter your Microsoft login information. After logging in to your account, Microsoft prompts you to choose to give TrueNAS access to your Microsoft information.
+
+3. Give TrueNAS access to your Microsoft account and close the pop-up window. Your **Cloud Credentials** wizard should now say **Logged In To Provider** and have populated **OAuth Client ID**, **OAuth Client Secret**, **Access Token**, and **Drive Account Type** fields.
+
+4. (Optional) Select an entry from the **Drives List** drop-down menu. This will also populate the **Drive ID** field.
+
+5. Choose a drive from your OneDrive account and enter the ID in this field. If you chose to select an entry for **Drives List**, this field should already be populated with a valid ID.
+
+6. Click **Save**.
+
 ## Using Automatic Authentication
 Some providers can automatically populate the required authentication strings by logging in to the account.
 
