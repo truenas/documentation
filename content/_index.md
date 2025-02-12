@@ -36,7 +36,7 @@ To view or search through documentation for previous TrueNAS major versions, use
     <br><a href="/gettingstarted/scalereleasenotes/">Release Notes</a>
     <br><a href="/gettingstarted/scalehardwareguide/">Community Hardware Guide</a>
     <br><a href="/gettingstarted/install/">Software Install</a>
-    <br><a href="/gettingstarted/migrate/">TrueNAS Migrations</a>
+    <br><a href="/gettingstarted/migrate/">Migrating from CORE</a>
     </p>
     <p>
     <a href="/scaletutorials/" style="font-size:18px;">Tutorials</a>
