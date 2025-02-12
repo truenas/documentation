@@ -153,5 +153,17 @@ This first public release version of TrueNAS 25.04 (Fangtooth) has software comp
 
 * An issue has been discovered for cloud sync tasks configured with file name encryption, which is available in **Advanced Remote Options** ([NAS-132472](https://ixsystems.atlassian.net/browse/NAS-132472)). As this is an upstream issue in rclone, we recommend that users should not create new cloud sync tasks with the **Filename Encryption** setting enabled. Existing users of this feature must leave it enabled for existing cloud sync tasks to be able to recover backups.
 * Unable to Create dataset under disks while configuring a new virtualization Instance ([NAS-134151](https://ixsystems.atlassian.net/browse/NAS-134151)).
+* UUID related traceback when activating NVIDIA GPU for Jellyfin app: `base_v2_1_14.error.RenderError: Expected [uuid] to be set for GPU in slot [0000:01:00.0] in [nvidia_gpu_selection]` ([NAS-134152](https://ixsystems.atlassian.net/browse/NAS-134152)).
+
+  Users experiencing this error should follow the steps below for a one time fix that should not need to be repeated.
+
+  Connect to a shell session and retrieve the UUID for each GPU with the command `midclt call app.gpu_choices | jq`.
+
+  For each application that experiences the error, run `midclt call -job app.update APP_NAME '{"values": {"resources": {"gpus": {"use_all_gpus": false, "nvidia_gpu_selection": {"PCI_SLOT": {"use_gpu": true, "uuid": "GPU_UUID"}}}}}}'`
+  Where:
+    * `APP_NAME` is the name you entered in the application, for example “plex”.
+    * `PCI_SLOT` is the pci slot identified in the error, for example "0000:2d:00.0”.
+    * `GPU_UUID` is the UUID matching the pci slot that you retrieved with the above command.
+
 
 <a href="https://ixsystems.atlassian.net/issues/?filter=11745" target="_blank">Click here to see the latest information</a> about public issues discovered in 25.04-BETA.1 that are being resolved in a future TrueNAS release.
