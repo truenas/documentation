@@ -280,3 +280,19 @@ WebDAV uses a URL, service type and user credentials to authenticate account clo
 | **Password** | (Required) Enter the WebDAV account password. |
 {{< /truetable >}}
 {{< /expand >}}
+
+### Microsoft OneDrive Credential
+Microsoft OneDrive uses several required settings to authenticate credential accounts.
+
+{{< trueimage src="/images/SCALE/Credentials/CloudCredentialsMicrosoftOneDrive.png" alt="Microsoft OneDrive Cloud Credentials" id="Microsoft OneDrive Cloud Credentials" >}}
+
+{{< expand "Microsoft OneDrive Authentication Settings" "v" >}}
+{{< truetable >}}
+| Setting | Description |
+|---------|-------------|
+| **Access Token** | (Required) Enter the OneDrive access token found in your Microsoft account. |
+| **Drives List** | Enter the drives and IDs registered to your Microsoft account. Entering a value in this field also fills out the **Drive ID** field. |
+| **Drive Account Type** | (Required) Select the type of OneDrive account you are authorizing. This is automatically selected when you log in to your Microsoft account. |
+| **Drive ID**| Enter a unique drive identifier or keep the auto-filled entry that appeared when you filled out the **Drives List** field above. |
+{{< /truetable >}}
+{{< /expand >}}
