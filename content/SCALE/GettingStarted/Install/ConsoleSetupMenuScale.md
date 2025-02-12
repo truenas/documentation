@@ -58,7 +58,7 @@ For network configuration options **1**, **2**, and **3**, we recommend using th
 
 * **5) Create one-time password for "root"**
 
-  Use to create a one-time password for the "root" user. This is intended for quick authentication to the web interface to further set up secure logins.
+  Use to create a one-time password for the "root" user. This is intended for quick authentication to the web interface to further set up secure log ins.
 
 
 * **6) Reset configuration to defaults**
