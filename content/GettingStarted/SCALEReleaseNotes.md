@@ -264,7 +264,7 @@ Users with 24.10.0.1 installed and SMB shares in use are encouraged to upgrade t
 Please see the 24.10.0 changelog below and use the Jira filter links to see the full changelog and known issues related to the 24.10.0, 24.10.0.1, and 24.10.0.2 releases.
 {{< /expand >}}
 
-## 24.10.0.1 Changelog
+## 24.10.0.1
 
 {{< expand "Click to expand" "v" >}}
 **November 7, 2024**
