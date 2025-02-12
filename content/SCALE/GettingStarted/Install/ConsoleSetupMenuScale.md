@@ -73,7 +73,7 @@ For network configuration options **1**, **2**, and **3**, we recommend using th
 * **8) Open Linux Shell**
 
   Use to start a shell window for running Linux CLI commands.
-  Configuration changes made here are not written to the database and are reset on each system boot.
+  Configuration changes made do not write to the database and reset on each system boot.
   We do not recommend using the Linux shell unless you are an advanced user. Type `exit` to leave the shell.
 
 * **9) Reboot**
