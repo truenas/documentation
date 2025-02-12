@@ -10,33 +10,34 @@ To set up a bridge interface, go to **Network**, click **Add** on the **Interfac
 2. Enter a name for the interface.
    Use the correct format based on the interface type:
    
-   ***bond*X*** for a LAGG interface
-   **vlan*X*** for a VLAN interface
-   **br*x*** for a bridge interface
+   - **bond*X*** for a LAGG interface
+   - **vlan*X*** for a VLAN interface
+   - **br*x*** for a bridge interface
    
-   Where *X* is a number representing a non-parent interface. Assing the first bridge interface **br0**.
+   Where *X* is a number representing a non-parent interface.
+   For example, **br0**.
 
    You cannot change the **Name** of the interface after clicking **Save**.
 
-3. (Optional but recommended) Enter any notes or reminders about this particular bridge in **Description**.
+4. (Optional but recommended) Enter any notes or reminders about this particular bridge in **Description**.
 
-4. Select the interfaces on the **Bridge Members** dropdown list.
+5. Select the interfaces on the **Bridge Members** dropdown list.
 
-5. Click **Add** to the right of **Aliases** to show the IP address fields, and enter the IP address for this bridge interface.
+6. Click **Add** to the right of **Aliases** to show the IP address fields, and enter the IP address for this bridge interface.
    Click **Add** again to show additional IP address fields for each additional IP address you want to add.
 
    {{< trueimage src="/images/SCALE/Network/AddInterfaceNicDeviceOtherSettingsSCALE.png" alt="Add IP and Subnet Mask" id="Add IP and Subnet Mask" >}}
 
-6. Click **Save** when finished. The created bridge shows in **Interfaces** with its associated IP address information.
+7. Click **Save** when finished. The created bridge shows in **Interfaces** with its associated IP address information.
 
    {{< trueimage src="/images/SCALE/Network/NetworkInterfacesBridgeSCALE.png" alt="Network Interfaces with Bridge" id="Network Interfaces with Bridge" >}}
 
-7. Click **Test Changes** to determine if network changes are successful.
+8. Click **Test Changes** to determine if network changes are successful.
    See [Testing Network Interface Changes]({{< relref "/SCALE/SCALETutorials/Network/Interfaces/_index.md#Testing-Network-Interface-Changes">}})
 
    {{< trueimage src="/images/SCALE/Virtualization/VMTestNetworkChanges.png" alt="Test Network Changes" id="Test Network Changes" >}}
 
-8. After TrueNAS finishes testing the interface, click **Save Changes** to keep the changes.
+9. After TrueNAS finishes testing the interface, click **Save Changes** to keep the changes.
    Click **Revert Changes** to discard the changes and return to the previous configuration.
 
 {{< trueimage src="/images/SCALE/Virtualization/VMSaveNetworkChanges.png" alt="Save Network Changes" id="Save Network Changes" >}}
