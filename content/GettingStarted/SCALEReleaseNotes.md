@@ -167,5 +167,4 @@ This first public release version of TrueNAS 25.04 (Fangtooth) has software comp
     * `PCI_SLOT` is the pci slot identified in the error, for example "0000:2d:00.0”.
     * `GPU_UUID` is the UUID matching the pci slot that you retrieved with the above command.
 
-
 <a href="https://ixsystems.atlassian.net/issues/?filter=11745" target="_blank">Click here to see the latest information</a> about public issues discovered in 25.04-BETA.1 that are being resolved in a future TrueNAS release.
