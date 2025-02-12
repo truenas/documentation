@@ -8,5 +8,5 @@
 
 * {{< include file="/static/includes/UpgradeClearCache.md" >}}
 
-* Application maintenance, including version updates, features, and configuration options, is independent from TrueNAS version release cycles.
+* Application maintenance, including version updates, features, and configuration options, is independent of TrueNAS version release cycles.
   See the [TrueNAS Apps](https://www.truenas.com/docs/truenasapps/) documentation and the [truenas/apps](https://github.com/truenas/apps/issues) repository for more information.
