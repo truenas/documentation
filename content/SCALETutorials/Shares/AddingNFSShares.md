@@ -148,7 +148,7 @@ NFS over RDMA support requires an active Enterprise license and RDMA capable net
 Interested customers should contact Enterprise Support for assistance.
 
 {{< expand "Contacting Support" "v" >}}
-{{< include file="static\includes\iXsystemsSupportContact.md" >}}
+{{< include file="/static/includes/iXsystemsSupportContact.md" >}}
 {{< /expand >}}
 
 {{< /enterprise >}}

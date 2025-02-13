@@ -144,9 +144,13 @@ See [Managing SMART Tests]({{< relref "SmartTestsScale.md" >}}) for information 
 After completing your initial system configuration and before you begin day-to-day operations, we recommend configuring the system and data storage backup. Recommended backup options:
 
 1. Saving the [system configuration file]({{< relref "SetUpBackupSCALE.md" >}}).
-2. Saving or [creating a new boot environment]({{< relref "ManageBootEnvironSCALE.md" >}}) to use as a restore point if system issues cause you to lose access to the TrueNAS UI.
-3. Downloading a system debug to capture system information to use as a comparison against future debug files.
-  To download a system debug file, go to **System > Advanced Settings** and click **Save Debug** to begin the download.
+   {{< expand "Downloading a system config file" "v" >}}
+   {{< include file="/static/includes/DownloadSystemConfigFileSCALE.md" >}}
+   {{< /expand >}}
+3. Saving or [creating a new boot environment]({{< relref "ManageBootEnvironSCALE.md" >}}) to use as a restore point if system issues cause you to lose access to the TrueNAS UI.
+4. Downloading a system debug to capture system information to use as a comparison against future debug files.
+   To download a system debug file, go to **System > Advanced Settings** and click **Save Debug** to begin the download.
+  
 
 Keep both the system configuration file and the initial system debug file in a safe location where important files are regularly backed up.
 You can use the boot environment in an SSH session to restore your system to the point where you completed your system configuration, and then import data or pools to recover stored data.
