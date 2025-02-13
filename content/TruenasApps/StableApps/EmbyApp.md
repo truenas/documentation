@@ -92,7 +92,7 @@ Accept the defaults in **Resources Configuration**, and select the GPU option if
 Click **Install**. A progress dialog displays before switching to the **Installed** applications screen.
 The **Installed** screen displays with the **Emby** app in the **Deploying** state. Status changes to **Running** when ready to use.
 
-{{\< trueimage src="/images/SCALE/Apps/EmbyAppRunning.png" alt="Emby App Installed and Running" id="Emby App Installed and Running" >}}
+{{< trueimage src="/images/SCALE/Apps/EmbyAppRunning.png" alt="Emby App Installed and Running" id="Emby App Installed and Running" >}}
 
 Select the Emby app row, and click **Web Portal** on the **Application Info** widget to open the Emby web portal sign-in screen or if adding a new Emby account, to show the Emby account creation screens.
 

@@ -23,7 +23,7 @@ This table describes the differences:
 {{< /truetable >}}
 
 {{< expand "Reviewing Usage Collection" "v" >}}
-To review system usage data collected by TrueNAS, access the system shell via SSH or the console.
+To review system usage data collected by TrueNAS, access the system shell via SSH or the console and enter `midclt call usage.gather`.
 This command returns the same statistics that are transmitted to iXsystems when **Usage collection** is enabled.
 {{< /expand >}}
 
