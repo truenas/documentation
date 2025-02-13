@@ -10,11 +10,12 @@ To set up a bridge interface, go to **Network**, click **Add** on the **Interfac
 2. Enter a name for the interface.
    Use the correct format based on the interface type:
    
-   ***bond*X*** for a LAGG interface
-   **vlan*X*** for a VLAN interface
-   **br*x*** for a bridge interface
+   - **bond*X*** for a LAGG interface
+   - **vlan*X*** for a VLAN interface
+   - **br*x*** for a bridge interface
    
-   Where *X* is a number representing a non-parent interface. Assing the first bridge interface **br0**.
+   Where *X* is a number representing a non-parent interface.
+   For example, **br0**.
 
    You cannot change the **Name** of the interface after clicking **Save**.
 
