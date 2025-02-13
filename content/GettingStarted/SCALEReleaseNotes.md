@@ -136,7 +136,7 @@ This first public release version of TrueNAS 25.04 (Fangtooth) has software comp
 * The default libvirt account UID & GID is changed to a less common value to avoid clashing with user created UID/GIDs. See Upgrade Notes above for more information ([NAS-131695](https://ixsystems.atlassian.net/browse/NAS-131695)).
 * UI login experience improvements ([NAS-130810](https://ixsystems.atlassian.net/browse/NAS-130810)).
 * NFS over RDMA support - Enterprise Feature ([NAS-131784](https://ixsystems.atlassian.net/browse/NAS-131784)).
-* iSCSI Extensions for RDMA (iSER) support ([NAS-106190](https://ixsystems.atlassian.net/browse/NAS-106190)).
+* iSCSI Extensions for RDMA (iSER) support - Enterprise Feature ([NAS-106190](https://ixsystems.atlassian.net/browse/NAS-106190)).
 * ZFS Fast deduplication support ([NAS-127088](https://ixsystems.atlassian.net/browse/NAS-127088)).
 * iSCSI and ZVOL block cloning support ([NAS-130017](ixsystems.atlassian.net/browse/NAS-130017)).
 * Incus Container & VM Support - Experimental Community Feature ([NAS-130251](https://ixsystems.atlassian.net/browse/NAS-130251)).
