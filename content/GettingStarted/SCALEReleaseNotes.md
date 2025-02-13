@@ -62,8 +62,6 @@ More details are available from [Software Releases](https://www.truenas.com/docs
 
 * {{< include file="/static/includes/ConfigRestrictions.md" >}}
 
-* The default libvirt account UID and GID is changed to to avoid possible clashes with user created Active Directory (AD) users. TrueNAS automatically updates libvirt UID and GIDs when upgraded to 25.04. Users attempting revert to 24.10 or an earlier release must manually review and update libvirt-qemu user and group IDs back to the values that were default in that version (64055:64055 for 24.10).
-
 ### Migrating Virtual Machines
 
 {{< include file="/static/includes/Incus.md" >}}
@@ -133,7 +131,6 @@ This first public release version of TrueNAS 25.04 (Fangtooth) has software comp
 
 * The TrueNAS REST API is deprecated in TrueNAS 25.04 and replaced with a versioned JSON-RPC 2.0 over WebSocket API ([API Reference]({{< relref "/api/_index.md" >}})). Full removal of the REST API is planned for a future release.
 * Improved API key mechanism with support for user-linked API keys ([NAS-131396](https://ixsystems.atlassian.net/browse/NAS-131396)).
-* The default libvirt account UID & GID is changed to a less common value to avoid clashing with user created UID/GIDs. See Upgrade Notes above for more information ([NAS-131695](https://ixsystems.atlassian.net/browse/NAS-131695)).
 * UI login experience improvements ([NAS-130810](https://ixsystems.atlassian.net/browse/NAS-130810)).
 * NFS over RDMA support - Enterprise Feature ([NAS-131784](https://ixsystems.atlassian.net/browse/NAS-131784)).
 * iSCSI Extensions for RDMA (iSER) support - Enterprise Feature ([NAS-106190](https://ixsystems.atlassian.net/browse/NAS-106190)).
