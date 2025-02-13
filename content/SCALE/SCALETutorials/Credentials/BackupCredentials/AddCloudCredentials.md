@@ -28,7 +28,7 @@ You can add credentials for many of the supported cloud storage providers from t
 This article provides instructions for the more involved providers.
 
 ## Adding a Cloud Credential
-We recommend users open another browser tab to open and log into the cloud storage provider account you intend to link with TrueNAS.
+We recommend you open another browser tab and log into the cloud storage provider account you intend to link with TrueNAS.
 
 Some TrueNAS providers credentials require entering additional information generated while creating the provider account.
 For example, the Storj iX account produces an access and secret key that must be entered in the **Cloud Credential** screen to create the credential.
@@ -46,7 +46,7 @@ To add a cloud credential:
 
 3. Enter the required authentication credentials, such as access token, access key and/or secret keys, and user credentials for the account into the appropriate fields.
 
-4. Click **Verify Credentials** to test the entered credentials and verify they work.
+4. Click **Verify Credentials** to verify the entered credentials work.
 
 5. Click **Save**.
 
@@ -207,13 +207,13 @@ Open the **Cloud Credentials** screen, select **Microsoft OneDrive** in **Provid
 
 1. Click **Log In To provider** to open the Microsoft sign-in page in a new window. You can confirm the intended authorization in the new window.
 
-2. Confirm the authorization to enter your Microsoft login information. After logging in to your account, Microsoft prompts you to choose to give TrueNAS access to your Microsoft information.
+2. Confirm the authorization to enter your Microsoft login information. After logging in to your account, Microsoft prompts you to give TrueNAS access to your Microsoft information.
 
 3. Give TrueNAS access to your Microsoft account and close the pop-up window. Your **Cloud Credentials** wizard should now say **Logged In To Provider** and have populated **OAuth Client ID**, **OAuth Client Secret**, **Access Token**, and **Drive Account Type** fields.
 
 4. (Optional) Select an entry from the **Drives List** drop-down menu. This will also populate the **Drive ID** field.
 
-5. Choose a drive from your OneDrive account and enter the ID in this field. If you chose to select an entry for **Drives List**, this field should already be populated with a valid ID.
+5. Choose a drive from your OneDrive account and enter the ID in this field. If you selected an entry for **Drives List**, this field should already be populated with a valid ID.
 
 6. Click **Save**.
 
