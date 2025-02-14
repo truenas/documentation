@@ -15,6 +15,7 @@ keywords:
 The TrueNAS Photoprism app provides an efficient way to install, manage, and utilize the various capabilities of Photoprism. TrueNAS deploys the Photoprism app in a Docker container using Docker Compose. After successfully deploying the app, you can access the Photoprism web interface from TrueNAS. The Photoprism interface allows you to organize, search, and share your photos with advanced features like AI-based image classification, facial recognition, and geotagging. You can also manage photo collections, create albums, and utilize powerful search tools to find specific images based on metadata and tags.
 
 ## Before You Begin
+
 Prepare TrueNAS before installing Photoprism by:
 
 {{< include file="/static/includes/apps/BeforeYouBeginStableApps.md" >}}
@@ -138,6 +139,7 @@ Create any app administrator user before installing the application, and take no
 Enter this user ID when configuring the user for the app and as the user when setting up storage volume permissions.
 
 ### Network Configuration
+
 The default web port for Photoprism is **20800**.
 {{< include file="static/includes/apps/InstallWizardHostNetworkSettings.md" >}}
 {{< include file="/static/includes/apps/InstallWizardDefaultPorts.md" >}}
@@ -145,6 +147,7 @@ The default web port for Photoprism is **20800**.
 {{< include file="/static/includes/apps/InstallWizardCertificateSettings.md" >}}
 
 ### Storage Configuration
+
 TrueNAS provides two options for storage volumes: ixVolumes and host paths.
 
 {{< expand "Setting the Storage Volume Type" "v" >}}
@@ -172,6 +175,7 @@ You can add extra storage volumes at the time of installation or edit the applic
 {{< include file="/static/includes/apps/InstallAppStorageConfig2.md" >}}
 
 #### Setting Dataset ACL Permissions
+
 You can configure ACL permissions for the required dataset in the **Install Photoprism** wizard, or from the **Datasets** screen any time after adding the datasets.
 
 {{< include file="/static/includes/apps/InstallWizardStorageACLConfig.md" >}}
