@@ -4,7 +4,7 @@ import re
 import requests
 
 # Paths to documentation directories
-# Update these paths if they differ on your local filesystem
+# ***Update these paths if they differ on your local filesystem***
 output_dirs = {
     "Enterprise": r"C:\Users\iXUser\Documents\GitHub\documentation\content\TruenasApps\EnterpriseApps",
     "Stable": r"C:\Users\iXUser\Documents\GitHub\documentation\content\TruenasApps\StableApps",
