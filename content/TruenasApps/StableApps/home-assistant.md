@@ -1,7 +1,7 @@
 ---
 title: "Home Assistant"
 description: "Provides installation instructions for the Home Assistant application in TrueNAS."
-weight: 0
+weight:
 aliases:
 tags:
 - apps
@@ -11,7 +11,7 @@ keywords:
 - assistant
 ---
 
-The TrueNAS Home Assistant app provides a streamlined way to install, manage, and leverage the powerful capabilities of Home Assistant. TrueNAS deploys the Home Assistant app in a Docker container using Docker Compose. Once the app is successfully deployed, you can access the Home Assistant web interface directly from TrueNAS. The Home Assistant interface lets you control, automate, and monitor various smart home devices. With support for thousands of integrations, you can customize automations, create detailed dashboards, and easily manage your smart home setup. 
+The TrueNAS Home Assistant app provides a streamlined way to install, manage, and leverage the powerful capabilities of Home Assistant. TrueNAS deploys the Home Assistant app in a Docker container using Docker Compose. Once the app is successfully deployed, you can access the Home Assistant web interface directly from TrueNAS. The Home Assistant interface lets you control, automate, and monitor various smart home devices. With support for thousands of integrations, you can customize automations, create detailed dashboards, and easily manage your smart home setup.
 
 Home Assistant provides a [Quickstart Setup Guide](https://www.home-assistant.io/getting-started/) with step-by-step instructions to help users get started.
 
@@ -108,7 +108,7 @@ The following section provides more detailed explanations of the settings in eac
 
 *Home Assistant* configuration settings include setting up credentials, *APT packages* (previously referred to as the commands), the *host IP and port, data directory path, upload limits, execution times, memory limits and cache memory consumption, adding a cron job with schedule*, and *adding additional environment variables*.
 
-The **Home Assistant Configuration** section contains a **Database Password** field. This is where you set the password Home Assistant uses to securely connect to your TrueNAS system. This is *not* the field where you enter your current Home Assistant password or the password you intend to use to log into the app. 
+The **Home Assistant Configuration** section contains a **Database Password** field. This is where you set the password Home Assistant uses to securely connect to your TrueNAS system. This is *not* the field where you enter your current Home Assistant password or the password you intend to use to log into the app.
 
 Upon deployment, users can set the desired Home Assistant login credentials or log in to an existing account from the Home Assistant UI.
 
@@ -121,13 +121,14 @@ Users can select the **Add Devices** drop-down menu to configure device settings
 {{< include file="/static/includes/apps/InstallWizardEnvironVariablesSettings.md" >}}
 Refer to [*Home Assistant* documentation](https://www.home-assistant.io/docs/configuration/yaml/) for more information on environment variables.
 
-### User and Group Configuration 
+### User and Group Configuration
 
 It is recommended to make a **user** and **group** for the Home Assistant app. If you choose to follow the recommendation, ensure that the user and group have full access to the config-storage, media-storage, and data-storage datasets.
 
 {{< include file="/static/includes/apps/InstallWizardUserAndGroupConfig.md" >}}
 
 ### Network Configuration
+
 The default web port for *Home Assistant* is ***30027***.
 
 {{< include file="/static/includes/apps/InstallWizardDefaultPorts.md" >}}
@@ -135,20 +136,22 @@ The default web port for *Home Assistant* is ***30027***.
 {{< include file="/static/includes/apps/InstallWizardCertificateSettings.md" >}}
 
 ### Storage Configuration
+
 TrueNAS provides two options for storage volumes: ixVolumes and host paths.
 
 {{< include file="/static/includes/apps/InstallAppsStorageConfig.md" >}}
 
 *Home Assistant* needs *three* datasets for host path storage volume configurations:
+
 * ***config-storage*** to use as the ***Configuration*** storage volume.
 * ***data-storage*** to use as the ***User Data*** storage volume.
 * ***media-storage*** to use as the ***Media Data*** storage volume.
 
 If you group these datasets under a parent dataset named *Home Assistant*, configure the [ACL permissions]({{< relref "PermissionsSCALE.md" >}}) for this parent dataset and add an ACE entry for the ***Home Assistant*** user.
-If the app includes postgres storage volumes, include the following information 
+If the app includes postgres storage volumes, include the following information
 If the app installation wizard cannot set up the ACL type or correctly add user permissions for the postgres storage volume,
 you must configure these outside the install wizard using the **Add Dataset** and **Edit ACL** screens.
-When adding the ***postgresdata*** dataset set it up with a POSIX ACL, and add the ***Home Assistant*** user as the owner user and group with full control permissions. 
+When adding the ***postgresdata*** dataset set it up with a POSIX ACL, and add the ***Home Assistant*** user as the owner user and group with full control permissions.
 
 If you have a postgres dataset, also include information in the Before You Begin section about adding the dataset and permissions.
 
@@ -158,6 +161,7 @@ You can add extra storage volumes at the time of installation or edit the applic
 {{< include file="/static/includes/apps/InstallAppsStorageConfig2.md" >}}
 
 #### Setting Dataset ACL Permissions
+
 You can configure ACL permissions for the required dataset in the **Install Home Assistant** wizard, or from the **Datasets** screen any time after adding the datasets.
 
 {{< include file="/static/includes/apps/InstallWizardStorageACLConfig.md" >}}
