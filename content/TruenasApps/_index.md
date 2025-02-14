@@ -64,7 +64,7 @@ Some applications deploy as the **root** user for initial configuration before o
 
 The **Configuration** button provides access to app settings that globally apply to apps, for example, the app pool, container images, app trains (catalogs), and if the system has an NVIDIA GPU, the option to update the NVIDIA drivers.
 These settings are not accessible from the individual app installation wizards.
-The pool management options are**Choose Pool** and **Unset Pool**
+The pool management options are **Choose Pool** and **Unset Pool**
 
 To manage container images in TrueNAS apps, use **Manage Container Images**
 
