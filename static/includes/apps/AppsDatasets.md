@@ -15,7 +15,7 @@ Back up and restore functionality as well as migration of the ix-apps dataset fr
 Support for these features is planned for a future TrueNAS release version.
 
 {{< hint type="note" title="ix-Applications Dataset" >}}
-TrueNAS 24.04 and earlier versions stored applications data in an **ix-applications** dataset on the configured apps pool.
+TrueNAS 24.04 and earlier versions stored application data in an **ix-applications** dataset on the configured apps pool.
 Systems with applications deployed that upgrade from earlier releases to 24.10 retain the ix-applications dataset.
 During the migration process, 24.10 reads the stored Kubernetes app data in the ix-applications dataset, ports them to Docker, and saves them in the new ix-apps dataset.
 App storage ixVolumes present in ix-applications are cloned under the ix-apps dataset and promoted.
@@ -43,22 +43,14 @@ Create the TrueNAS dataset(s) before assigning them as host paths within the app
 
 Mounting a host path does not automatically configure appropriate permissions to deploy the application.
 Use **Enable ACL** in **Storage Configuration** to configure ACL entries for each host path.
-
-{{< expand "Configuring Host Path ACL Entries" "v" >}}
-After entering the path inside the container in **Mount Path**, select **Enable ACL**.
-Browse to or enter the path to the dataset in **Host Path**.
-Click **Add** next to **ACL Entries** to display a set of ACE fields.
-Use **ID Type** to select whether the ACE is for a user or a group.
-Enter the UID or GID in **ID** and adjust the permissions level in **Access**.
+Configuring host path dataset permissions is documented in the individual app tutorials.
 
 Refer to the app **Run As Context** on the app details screen for default ID requirements.
 A user or group ID does not need to exist locally on TrueNAS or match the name configured in the container to grant an ACE.
 Failing to configure host path ACLs prevents the app from deploying!
 
-Select **Force Flag** in **ACL Options**.
-This allows TrueNAS to write ACL entries to the storage volume if it has existing data in it.
+Select **Force Flag** to allow TrueNAS to write ACL entries to the storage volume if it has existing data in it.
 **Force Flag** is required to edit or update an existing application.
-{{< /expand >}}
 
 #### SMB Share Volumes
 
@@ -67,6 +59,6 @@ Use this option to mount an existing SMB share using a Docker [volume](https://d
 
 #### Tmpfs Directories
 
-Some app storage configurations include the **Tmpfs (Temporary directory created on the RAM)** option.
+Some app storage configurations include the **Tmpfs (Temporary directory created on the RAM)** option or might include other temporary directory options.
 Use this option to configure a memory-backed temporary directory, such as for transcoding.
 See the Docker [tmpfs](https://docs.docker.com/engine/storage/#tmpfs) documentation for more information.

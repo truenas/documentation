@@ -2196,4 +2196,9 @@ UsingCustomApp
 UsingTrains.md
 UsingTrains
 InstallWizardResourceConfig
+AppsPool
+appName
+InstalledAppsScreenWithApps
+AppsPool
+InstalledAppsScreenWithApps
 Goldeye
