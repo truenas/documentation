@@ -3,6 +3,7 @@ title: "Home Assistant"
 description: "Provides installation instructions for the Home Assistant application in TrueNAS."
 weight:
 aliases:
+ - /TruenasApps/StableApps/HomeAssistantApp/
 tags:
 - apps
 keywords:
