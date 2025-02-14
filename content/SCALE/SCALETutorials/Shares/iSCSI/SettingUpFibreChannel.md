@@ -37,13 +37,13 @@ If the system is a High Availability (HA) system, turn on ALUA.
 
 Click on the iSCSI widget header to open the **Sharing iSCSI** screens. Click on **Global Target Configuration**. Scroll down and select **Asynchronous Logic Unit Access (ALUA)**, then click **Save**.
 
-{{< trueimage src="/images/SCALE/Shares/GlobalTargetConfigurationScreeninHA.png" alt="iSCSI Global Target Configuration Screenl" id="iSCSI Global Target Configuration Screen" >}
+{{< trueimage src="/images/SCALE/Shares/GlobalTargetConfigurationScreeninHA.png" alt="iSCSI Global Target Configuration Screenl" id="iSCSI Global Target Configuration Screen" >}}
 
 Next and for all systems, go to **Shares** and click **Wizard** on the iSCSI widget to open the wizard.
 
 1. Select **Fibre Channel** as the target mode, then select **Create New** in **Target**. Click **Next** to show the **Extents** screen.
 
-   {{< trueimage src="/images/SCALE/Shares/iSCSIWizardTargetScreenFC.png" alt="iSCSI Wizard Target Screen - Fibre Channel" id="iSCSI Wizard Target Screen - Fibre Channel" >}
+   {{< trueimage src="/images/SCALE/Shares/iSCSIWizardTargetScreenFC.png" alt="iSCSI Wizard Target Screen - Fibre Channel" id="iSCSI Wizard Target Screen - Fibre Channel" >}}
 
 2. Configure the extent.
 
