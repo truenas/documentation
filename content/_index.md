@@ -1,6 +1,6 @@
 ---
-title: "TrueNAS SCALE 23.10"
-description: "Documentation for the SCALE 23.10 major version."
+title: "TrueNAS SCALE 23.10 (Archived)"
+description: "Documentation for the TrueNAS 23.10 major version. This documentation is end of life and preserved for reference only."
 geekdocCollapseSection: true
 weight: 20
 aliases:
@@ -11,7 +11,10 @@ aliases:
 {{< columns size="small" >}}
 <img src="/images/SCALE_Cobia_Icon.png" alt="TrueNAS SCALE 23.10 Logo" style="margin: 1rem 0 0 2rem;">
 <--->
-iXsystems is pleased to introduce TrueNAS SCALE 23.10 (Cobia)!
+
+iXsystems released TrueNAS 23.10 (Cobia) on October 24, 2023.
+This version received its final update on January 24, 2024.
+The terminal Cobia version is 23.10.1.3.
 
 {{< /columns >}}
 
