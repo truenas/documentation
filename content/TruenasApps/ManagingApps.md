@@ -7,7 +7,7 @@ tags:
 ---
 
 
-To manage individual apps use the functional buttons and settings found on the individual app widgets.
+To manage individual apps use the functional buttons and settings found on each app widget.
 To manage global application settings, use the options on the **Configuration** dropdown list.
 
 ## Setting Up the Apps Service
