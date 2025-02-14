@@ -72,15 +72,19 @@ $app_readme
 }
 
 # URL to catalog.json
-catalog_url = "https://raw.githubusercontent.com/truenas/apps/refs/heads/master/catalog.json"
+catalog_url = "https://raw.githubusercontent.com/truenas/apps/master/catalog.json"
 
 # Fetch the catalog data from the remote URL
 response = requests.get(catalog_url)
 if response.status_code == 200:
-    catalog = response.json()
+    try:
+        catalog = response.json()
+    except json.JSONDecodeError:
+        print("Error: Received invalid JSON from catalog.")
+        exit(1)
 else:
     print(f"Failed to retrieve catalog from {catalog_url}. Status code: {response.status_code}")
-    exit()
+    exit(1)
 
 enterprise_added = []
 stable_added = []
@@ -101,8 +105,9 @@ for train, apps in catalog.items():
         home = app_details.get("home", "#")
         app_readme = app_details.get("app_readme", "")
 
-        # Extract the <p> section after removing the <h1> header
-        app_readme = re.sub(r"<h1>.*?</h1>", "", app_readme, flags=re.DOTALL).strip()
+        # Extract only the first <p> section
+        match = re.search(r"<p>(.*?)</p>", app_readme, re.DOTALL)
+        app_readme = match.group(1).strip() if match else ""
 
         md_file_path = os.path.join(output_dir, f"{app_name}.md")
 
@@ -116,6 +121,8 @@ for train, apps in catalog.items():
         # Write the new markdown file
         with open(md_file_path, "w", encoding="utf-8") as md_file:
             md_file.write(content)
+
+        print(f"Generated: {md_file_path}")
 
         # Track newly added files in Enterprise or Stable
         if train_name == "Enterprise":
