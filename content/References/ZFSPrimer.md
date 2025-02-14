@@ -86,9 +86,9 @@ This design means that the ZFS pool on the receiving end does not need to be ide
 ZFS boot environments allow you to recover from a failed upgrade.
 TrueNAS automatically takes a snapshot of the dataset the operating system resides on before upgrading or updating a system.
 TrueNAS automatically saves the boot environment to the GRUB boot loader.
-If the upgrade or configuration change fails, reboot and select the previous boot environment from the boot menu.
+If the upgrade or configuration change fails, restart and select the previous boot environment from the boot menu.
 Users can also create boot environments in TrueNAS as needed, such as before making configuration changes.
-This way, you can reboot the system into a snapshot of the system that did not include the new configuration changes.
+This way, you can restart the system into a snapshot of the system that did not include the new configuration changes.
 
 ### ZFS Write Cache
 

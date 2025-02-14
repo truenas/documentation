@@ -33,7 +33,7 @@ To update your Enterprise (HA) system to the latest TrueNAS release, log into th
 
 3. Select the update file and start the process.
    Click **Choose File** and select the <kbd>update</kbd> file downloaded to your system, then click **Apply Update** to start the update process.
-   After the system to finishes updating it reboots.
+   After the system to finishes updating it restarts.
 
 4. Sign into the TrueNAS UI. If using root to sign in, create the admin account now.
    If using admin, continue to the next step.

@@ -100,7 +100,7 @@ Saved schedules appear in the **S.M.A.R.T. Tests** window.
 S.M.A.R.T. tests can offline disks! Avoid scheduling S.M.A.R.T. tests simultaneously with scrub or other data protection tasks.
 {{< /hint >}}
 
-Start the S.M.A.R.T. service. Go to **System > Services** and scroll down to the **S.M.A.R.T.** service. If not running, click the toggle to turn the service on. Select **Start Automatically** to have this service start after after the system reboots.
+Start the S.M.A.R.T. service. Go to **System > Services** and scroll down to the **S.M.A.R.T.** service. If not running, click the toggle to turn the service on. Select **Start Automatically** to have this service start after after the system restarts.
 
 ![SMARTSystemServicesSCALE](/images/SCALE/SystemSettings/SMARTSystemServicesSCALE.png "System Services S.M.A.R.T. Test")
 

@@ -162,7 +162,7 @@ To enable jumbo frames, go to the **Network** screen and edit the parent interfa
 Set the **MTU** (Maximum Transmission Unit) to 9000.
 Click **SAVE**.
 
-Reboot the system and restart the iSCSI share to inherit.
+Restart the system and restart the iSCSI share to inherit.
 
 #### ALUA
 

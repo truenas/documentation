@@ -37,7 +37,7 @@ See [Creating a Dataset]({{< relref "DatasetsSCALE.md" >}}) for information on c
 ## Installing the TrueNAS Chia App
 To install the TrueNAS Chia app you:
 1. [Configure and deploy the TrueNAS Chia app](#deploying-the-truenas-chia-app) in the Kubernetes container.
-2. [Obtain the authentication keys](#obtaining-and-preserving-keys) from Chia and make the keys persist across container reboots.
+2. [Obtain the authentication keys](#obtaining-and-preserving-keys) from Chia and make the keys persist across container restarts.
 3. [Add the keys to the TrueNAS Chia app](#adding-keys-to-the-truenas-chia-app).
 3. Setup the [Chia GUI](#setting-up-the-chia-gui) or Chia command line (CLI) to configure Chia and start farming.
 

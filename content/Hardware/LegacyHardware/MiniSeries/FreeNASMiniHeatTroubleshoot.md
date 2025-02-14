@@ -28,7 +28,7 @@ Multiple measures can be taken to fix or prevent overheating issues.
 
 Follow these steps to adjust the BIOS fan settings for the Mini.
 
-1. Power on or reboot the system.
+1. Power on or restart the system.
 
 2. At the start of the boot process, press the <kbd>F2</kbd> or <kbd>Delete</kbd> key several times until the `BIOS Main menu` appears:
 

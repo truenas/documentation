@@ -313,7 +313,7 @@ Where:
 * *share_name* is the name given to the SMB share
 
 To temporarily connect to a share, open a Windows File Explorer window, type <code>&bsol;&bsol;<i>TrueNAS_name</i>&bsol;<i>share_name</i></code> and then enter the user credentials to authenticate with to connect to the share.
-Windows remembers the user credentials so each time you connect it uses the same authentication credentials unless you reboot the system, then you are prompted to enter the authentication credentials again.
+Windows remembers the user credentials so each time you connect it uses the same authentication credentials unless you restart the system, then you are prompted to enter the authentication credentials again.
 {{< /expand >}}
 
 {{< expand "Mounting on an Apple System" "v" >}}

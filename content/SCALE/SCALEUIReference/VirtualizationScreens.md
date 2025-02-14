@@ -23,7 +23,7 @@ The **No Virtual Machines** screen displays if there are no VMs configured on th
 
 The screen displays a list of VMs configured on the TrueNAS system.
 The **State** toggle displays and changes the state of the VM.
-**Autostart**, when selected, automatically starts the VM if the system reboots, otherwise you must manually start the VM.
+**Autostart**, when selected, automatically starts the VM if the system restarts, otherwise manually start the VM.
 
 {{< trueimage src="/images/SCALE/Virtualization/VirtualMachinesScreenwithVM.png" alt="Virtual Machine Screen" id="Virtual Machine Screen" >}}
 

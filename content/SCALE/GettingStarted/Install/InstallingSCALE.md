@@ -134,7 +134,7 @@ Before you begin:
 
 With the installer added to a device (CD or USB), you can now install TrueNAS onto the desired system using the TrueNAS installer.
 
-Insert the install media and reboot or boot the system.
+Insert the install media and restart or boot the system.
 At the motherboard splash screen, use the hotkey defined by your motherboard manufacturer to boot into the motherboard UEFI/BIOS.
 
 Choose to boot in **UEFI mode** or **legacy CSM/BIOS mode**.
@@ -143,7 +143,7 @@ For Intel chipsets manufactured in 2020 or later, UEFI is likely the only option
 
 If your system supports SecureBoot, and you have not disabled it or set it to **Other OS**, do it now, so you can boot the install media.
 
-Select the install device as the boot drive, exit, and reboot the system.
+Select the install device as the boot drive, exit, and restart the system.
 If the USB stick is not shown as a boot option, try a different USB slot.
 Slots available for boot differs by hardware. For optimal performance, consider using NVMe S.M.A.R.T. tests to ensure the reliability of your storage devices before installation.
 
@@ -158,7 +158,7 @@ After the system boots into the installer, follow these steps.
 {{< expand "TrueNAS Installer Instructions" "v" >}}
 {{< include file="/static/includes/SCALEInstallerProcedure.md" >}}
 
-After following the steps to install, reboot the system and remove the install media.
+After following the steps to install, restart the system and remove the install media.
 
 {{< expand "Troubleshooting" "v">}}
 If the system does not boot into TrueNAS, there are several things you can check to resolve the situation:
@@ -218,9 +218,9 @@ The procedure for creating a TrueNAS VM is the same for most hypervisors.
 
 2. Boot the VM and install TrueNAS as usual.
 
-3. After the installation completes, shut down the VM instead of rebooting, and disconnect the CD/DVD from the VM before rebooting the VM.
+3. After the installation completes, shut down the VM instead of restarting, and disconnect the CD/DVD from the VM before restarting the VM.
 
-4. After rebooting into TrueNAS, install VM tools if applicable for your VM, and if they exist for Debian 11, or ensure they loaded on boot.
+4. After restarting into TrueNAS, install VM tools if applicable for your VM, and if they exist for Debian 11, or ensure they loaded on boot.
 {{< /expand >}}
 
 #### Installing Using VMWare Player 15.5
