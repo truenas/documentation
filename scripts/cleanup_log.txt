@@ -1,3 +1,89 @@
+Process time: 2025-02-14 17:04:00
+Initiated by: Dan Pizappi
+
+303 files reviewed.
+78 files deleted.
+The following files were deleted:
+C:\Users\iXUser\Documents\GitHub\documentation\static\includes\ClusterDeprecated.md
+C:\Users\iXUser\Documents\GitHub\documentation\static\includes\ClusterTypes.md
+C:\Users\iXUser\Documents\GitHub\documentation\static\includes\TC3.0ClusterCompatWarning.md
+C:\Users\iXUser\Documents\GitHub\documentation\static\includes\General\LifecycleTable.html.part
+C:\Users\iXUser\Documents\GitHub\documentation\static\includes\General\MenuNav.md.part
+C:\Users\iXUser\Documents\GitHub\documentation\static\includes\General\TNQualityLifecycle.html.part
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\tn-enterprise-logo.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\TrueNAS_Open_Enterprise_Storage.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\truenas_open_storage-logo-full-color-rgb.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SAML\EditPropertiesEndpointsEnterTrustedURLSLOCropped.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SAML\GAAddCustomSAMLAppAddServiceProviderDetailsCropped.jpg
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SAML\GAAddCustomSAMLAppAddServiceProviderDetailsCropped.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SAML\GAAddCustomSAMLAppAttributeMappingCropped.jpg
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SAML\GAAddCustomSAMLAppDetailsAddedCropped.jpg
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SAML\GAAddCustomSAMLAppDetailsCropped.jpg
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SAML\GAAddCustomSAMLAppDownloadMetaDataWindowCropped.jpg
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SAML\GAAddCustomSAMLAppTrueCommandSAMLTestCropped.jpg
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SAML\GAClickAddApp.jpg
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SAML\GASAMLAppClickViewDetailsCropped.jpg
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SAML\GASAMLAppDownloadMetadataCropped.jpg
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SAML\GASAMLAppSetServiceStatusOnForEveryoneCropped.jpg
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SAML\GASelectWebandMobileApps.jpg
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SAML\OpenPowershellTypeInvokeCommand.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\TrueCommand\WindowsFileExplorereAccessClusterShare.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\TrueCommand\WindowsServerDNSManagerReverseLookupZones.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\TrueCommand\WindowsServerDNSManagerReverseLookupZonesPointers.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\TrueCommand\WindowsServerDNSManagerReverseLookupZonesPointersAdd.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\TrueCommand\WindowsServerManagerToolsDNS.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\TrueCommand\Alerts\AllAlertDetails.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\TrueCommand\Alerts\SystemResolveAlertNotice.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\TrueCommand\Cloud\PortalCloudSubscriptionSelected (1).png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\TrueCommand\Clusters\ClusterCard.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\TrueCommand\Clusters\ClusterCardwithVolume.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\TrueCommand\Clusters\ClustersClusterVolumeExpanded.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\TrueCommand\Clusters\ClustersClusterVolumeExpandedCreateShare.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\TrueCommand\Clusters\ClustersClusterVolumeExpandedShareOptions.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\TrueCommand\Clusters\ClustersCreateVolumeConfirmation.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\TrueCommand\Clusters\ClustersCreateVolumeDetails.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\TrueCommand\Clusters\ClustersScreen.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\TrueCommand\Clusters\ConfigureClusterActiveDirectory.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\TrueCommand\Clusters\ConfigureClusterAssociateVIPs.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\TrueCommand\Clusters\ConfigureClusterReview.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\TrueCommand\Clusters\ConfigureClusterSMBNetwork.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\TrueCommand\Clusters\CreateClusterReview.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\TrueCommand\Clusters\CreateClusterSystems.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\TrueCommand\Clusters\CreateClusterSystemsNetwork.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\TrueCommand\Dashboard\DashboardSystemAlerts.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\TrueCommand\Dashboard\FleetDashboardSystemsCard.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\TrueCommand\Dashboard\NASUser5.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\TrueCommand\Dashboard\NASUsersAndGroups1.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\TrueCommand\Dashboard\RestoreDatabaseSelectSystem.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\TrueCommand\Dashboard\RestoreDatabaseSystemSelected.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\TrueCommand\Dashboard\SystemSettingsEditUser.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\TrueCommand\Dashboard\SystemSettingsEditUserSave.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\TrueCommand\Dashboard\SystemSettingsiSCSI.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\TrueCommand\Dashboard\TC20TrueCommandConfigBackups.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\TrueCommand\Dashboard\TC20TrueCommandDeleteBackups.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\TrueCommand\Dashboard\TC20TrueCommandRestoreDatabase.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\TrueCommand\Dashboard\TrueCommand231AddNewSystem.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\TrueCommand\Dashboard\TrueCommandIcon.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\TrueCommand\Dashboard\TrueCommandSystemSettingsEdit.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\TrueCommand\Dashboard\TrueCommandSystemSettingsMenu.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\TrueCommand\iSCSIManager\DeleteBlockVolumeOptions.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\TrueCommand\iSCSIManager\iSCSICreateScreenSystemPortals.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\TrueCommand\iSCSIManager\iSCSIManagerPage.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\TrueCommand\iSCSIManager\iSCSIManagerWithAddedVolume.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\TrueCommand\iSCSIManager\iSCSIWizardAddBlockDeviceGroup.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\TrueCommand\iSCSIManager\iSCSIWizardAddInitiatorDialog.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\TrueCommand\iSCSIManager\iSCSIWizardAddTargetDialog.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\TrueCommand\iSCSIManager\iSCSIWizardAddTargetSelectCheckbox.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\TrueCommand\iSCSIManager\iSCSIWizardAddVolumeSelectPool.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\TrueCommand\iSCSIManager\iSCSIWizardReviewAndCreate.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\TrueCommand\SystemInventory\SystemInventoryMenu.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\TrueCommand\Systems\MainDashboardSelectUngroupedSystem.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\TrueCommand\Systems\SystemInformationCardDetails.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\TrueCommand\Systems\SystemsiSCSIoption.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\TrueCommand\Systems\SystemsList.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\TrueCommand\Systems\SystemsUpdateNAS.png
+
+----------------------------------------
 Process time: 2024-09-04 09:32:50
 Initiated by: Dan Pizappi
 
