@@ -138,16 +138,19 @@ for train, apps in catalog.items():
         elif train_name == "Community":
             community_added.append((title, f"{app_name}.md"))
 
-print("Markdown files generation completed.")
+print("\nMarkdown file generation completed.\n")
 if community_added:
     print("New Community articles added:")
     for app, filename in community_added:
         print(f"- {app} ({filename})")
+    print()
 if stable_added:
     print("New Stable articles added:")
     for app, filename in stable_added:
         print(f"- {app} ({filename} - Please create a Product Documentation ticket.)")
+    print()
 if enterprise_added:
     print("New Enterprise articles added:")
     for app, filename in enterprise_added:
         print(f"- {app} ({filename} - Please create a Product Documentation ticket.)")
+    print()
