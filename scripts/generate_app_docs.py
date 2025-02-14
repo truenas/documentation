@@ -11,6 +11,9 @@ output_dirs = {
     "Community": r"C:\Users\iXUser\Documents\GitHub\documentation\content\TruenasApps\CommunityApps",
 }
 
+# Apps to ignore during processing
+ignored_apps = {"minio", "ix-app"}
+
 # Templates for each train
 templates = {
     "Enterprise": """---
@@ -103,6 +106,9 @@ for train, apps in catalog.items():
 
     # Process each app in the train
     for app_name, app_details in apps.items():
+        if app_name in ignored_apps:
+            continue  # Skip ignored apps
+
         title = app_details.get("title", app_name)
         home = app_details.get("home", "#")
         app_readme = app_details.get("app_readme", "")
