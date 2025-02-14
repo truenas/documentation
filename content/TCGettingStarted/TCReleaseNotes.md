@@ -60,10 +60,11 @@ After updating, clear the browser cache (CTRL+F5) before logging in to TrueComma
 
 TrueCommand 3.0 is tested and compatible with these TrueNAS versions:
 
-* CORE 13.0
-* SCALE 22.12
-* SCALE 23.10
-* SCALE 24.04
+* 13.0
+* 22.12
+* 23.10
+* 24.04
+* 24.10
 
 ### Paths
 
