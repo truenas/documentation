@@ -12,7 +12,7 @@ tags:
 TrueNAS 25.04 and later uses a versioned JSON-RPC 2.0 over WebSocket API with support for user-linked API access keys ([API Reference]({{< relref "/scale/api/_index.md" >}})).
 
 User-linked API keys allow administrators to configure per-user access to the TrueNAS API.
-Keys are revokable and can be configured to automatically expire on a preset date.
+Keys are revocable and can be configured to automatically expire on a preset date.
 
 Click <i class="material-icons" aria-hidden="true" title="laptop" style="vertical-align: top;">laptop</i> **My API Keys** on the top right toolbar <i class="material-icons" aria-hidden="true">account_circle</i> user settings dropdown menu to open the **User API Keys** screen.
 

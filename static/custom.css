@@ -1235,6 +1235,11 @@ pre.chroma {
 }
 .truetable tr:hover {background-color: var(--accent-color);}
 .truetable tr:nth-child(even):hover {background-color: var(--accent-color)!important;}
+
+.truetable thead tr:hover {
+    background-color: transparent;  /* Remove hover effect from header */
+  }
+  
 /* Adjust for tables inside Enterprise shortcode */
 .gdoc-hint.note .truenas-enterprise__text .truetable tr {background-color: rgba(134,142,150,.05);}
 .gdoc-hint.note .truenas-enterprise__text .truetable tr:hover {background-color: #e6e6e6!important;}
@@ -1248,7 +1253,54 @@ pre.chroma {
 	width: unset;
 }
 /* End Adjust to prevent tables in expand elements overflowing container */
+
+/* Adjust for additional class tn-blue */
+.tn-blue table thead {
+    background-color: #0095d5;
+    color: white;
+}
 /* End standardized table styling */
+
+/* Style for the container of tables with class "component-versions-table" */
+
+/* Set background color for the top row and left column */
+.component-versions-table th,
+.component-versions-table td:first-child {
+  background-color: #0095d5;
+  color: white;
+  font-weight: 600;
+}
+
+/* Exclude the first cell (top-left) from the background color */
+.component-versions-table th:first-child {
+  background-color: var(--body-background);
+  border-top: none;
+  border-left: none;
+}
+
+/* Apply border styles to match truetable */
+.component-versions-table {
+  border-collapse: collapse;
+}
+
+.component-versions-table td,
+.component-versions-table th {
+  border: .5px solid var(--accent-color);
+  padding: .5rem;
+}
+
+/* Highlight individual cells (excluding first column and header row) on hover */
+.component-versions-table td:not(:first-child):hover {
+  background-color: var(--accent-color);
+  color: white;
+}
+
+/* Prevent header row from being highlighted on hover */
+.component-versions-table thead tr:hover {
+  background-color: transparent; /* Ensure header row stays unaffected */
+}
+
+/* End style for the container of tables with class "component-versions-table" */
 
 /* Standardize image styling */
 .trueimg {
@@ -1470,6 +1522,15 @@ pre.chroma {
 .section-box:hover {
 	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
+
+.section-divider {
+    width: 80px;
+    height: 2px;
+    background-color: #0095d5 !important;
+    border: none;
+    margin: .5rem auto;
+  }
+  
 /* Adjust section-box for TrueNAS Systems page cards */
 .ixprods {
 	color: var(--body-font-color);
@@ -2403,3 +2464,10 @@ pre.gdoc-mermaid.mermaid.mermaid_sizing {
     text-align: center;
 }
 /* End style for Logo and Icon*/
+
+/* Styling for Community Edition and Enterprise logos */
+.edition-logo {
+    height: 24px !important;
+    vertical-align: middle !important;
+  }
+  

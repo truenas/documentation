@@ -48,7 +48,7 @@ async function displaySearchResults(query, page) {
 
                 // Add section marker in front of the <a>
                 let coreIcon = '<img src="https://www.truenas.com/docs/favicon/TN-favicon-32x32.png" alt="TrueNAS CORE" title="TrueNAS CORE" class="icon">';
-                let scaleIcon = '<img src="https://www.truenas.com/docs/favicon/TNScale-favicon-32x32.png" alt="TrueNAS" title="TrueNAS" class="icon">';
+                let scaleIcon = '<img src="https://www.truenas.com/docs/favicon/TN-favicon-32x32.png" alt="TrueNAS" title="TrueNAS" class="icon">';
                 let tcIcon = '<img src="https://www.truenas.com/docs/favicon/TC-favicon-32x32.png" alt="TrueCommand" title="TrueCommand" class="icon">';
 
                 let linkText = result.url.includes("/core/") ? `${coreIcon}`

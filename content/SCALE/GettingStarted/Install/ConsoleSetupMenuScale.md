@@ -56,26 +56,31 @@ For network configuration options **1**, **2**, and **3**, we recommend using th
   Activating the root user is not recommended.
   {{< /hint >}}
 
-* **5) Reset configuration to defaults**
+* **5) Create one-time password for "root"**
+
+  Use to create a one-time password for the root user. This is intended for quick authentication to the web interface to further set up secure log ins.
+
+
+* **6) Reset configuration to defaults**
 
   Use to wipe all system configuration settings and return the system to a fresh install state.
 
-* **6) Open TrueNAS CLI Shell**
+* **7) Open TrueNAS CLI Shell**
 
   Use to start a shell for running TrueNAS commands, or use the TrueNAS UI **[System Settings > Shell]({{< relref "UseScaleShell.md" >}})**.
   Type `exit` to leave the shell.
 
-* **7) Open Linux Shell**
+* **8) Open Linux Shell**
 
   Use to start a shell window for running Linux CLI commands.
-  Configuration changes made here are not written to the database and are reset on each system boot.
+  Configuration changes made do not write to the database and reset on each system boot.
   We do not recommend using the Linux shell unless you are an advanced user. Type `exit` to leave the shell.
 
-* **8) Reboot**
+* **9) Reboot**
 
   Restart the system by powering down and then automatically powering on the system.
 
-* **9) Shut down**
+* **10) Shut down**
 
   Use to power down the system.
 
