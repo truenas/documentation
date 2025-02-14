@@ -4,6 +4,7 @@ import re
 import requests
 
 # Paths to documentation directories
+# Update these paths if they differ on your local filesystem
 output_dirs = {
     "Enterprise": r"C:\Users\iXUser\Documents\GitHub\documentation\content\TruenasApps\EnterpriseApps",
     "Stable": r"C:\Users\iXUser\Documents\GitHub\documentation\content\TruenasApps\StableApps",
@@ -88,6 +89,7 @@ else:
 
 enterprise_added = []
 stable_added = []
+community_added = []
 
 # Iterate through each train
 for train, apps in catalog.items():
@@ -122,20 +124,24 @@ for train, apps in catalog.items():
         with open(md_file_path, "w", encoding="utf-8") as md_file:
             md_file.write(content)
 
-        print(f"Generated: {md_file_path}")
-
-        # Track newly added files in Enterprise or Stable
+        # Track newly added files in Enterprise, Stable, and Community
         if train_name == "Enterprise":
-            enterprise_added.append(title)
+            enterprise_added.append((title, f"{app_name}.md"))
         elif train_name == "Stable":
-            stable_added.append(title)
+            stable_added.append((title, f"{app_name}.md"))
+        elif train_name == "Community":
+            community_added.append((title, f"{app_name}.md"))
 
 print("Markdown files generation completed.")
-if enterprise_added:
-    print("New Enterprise articles added:")
-    for app in enterprise_added:
-        print(f"- {app} (Please create a Product Documentation ticket.)")
+if community_added:
+    print("New Community articles added:")
+    for app, filename in community_added:
+        print(f"- {app} ({filename})")
 if stable_added:
     print("New Stable articles added:")
-    for app in stable_added:
-        print(f"- {app} (Please create a Product Documentation ticket.)")
+    for app, filename in stable_added:
+        print(f"- {app} ({filename} - Please create a Product Documentation ticket.)")
+if enterprise_added:
+    print("New Enterprise articles added:")
+    for app, filename in enterprise_added:
+        print(f"- {app} ({filename} - Please create a Product Documentation ticket.)")
