@@ -7,6 +7,7 @@ aliases:
   - /releasenotes/scale/22.02.1/
   - /releasenotes/scale/22.02.0.1/
   - /releasenotes/scale/22.02.0/
+  - /scale/scale22.12/
   - /releasenotes/scale/22.02-rc.2/
   - /releasenotes/scale/22.02-rc.1-2/
   - /releasenotes/scale/22.02-rc.1-1/
@@ -62,6 +63,12 @@ Software releases after TrueNAS 22.12 (Bluefin) are available as navigable websi
 Earlier releases are available only in PDF.
 
 ## TrueNAS
+
+{{< expand "TrueNAS 23.10 (Cobia)" "v" >}}
+[TrueNAS 23.10 (Cobia)](https://www.truenas.com/docs/scale/23.10/)
+
+Release notes for each minor release of 23.10 are available in the [23.10 Cobia Release Notes](https://www.truenas.com/docs/scale/23.10/gettingstarted/scalereleasenotes/).
+{{< /expand >}}
 
 {{< expand "TrueNAS 22.12 (Bluefin)" "v" >}}
 [TrueNAS 22.12 (Bluefin)](https://www.truenas.com/docs/scale/22.12/)
