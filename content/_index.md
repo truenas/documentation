@@ -1,6 +1,6 @@
 ---
-title: "TrueNAS SCALE 23.10"
-description: "Documentation for the SCALE 23.10 major version."
+title: "TrueNAS SCALE 23.10 (Archived)"
+description: "Documentation for the TrueNAS 23.10 major version. This documentation is end of life and preserved for reference only."
 geekdocCollapseSection: true
 weight: 20
 aliases:
@@ -11,7 +11,10 @@ aliases:
 {{< columns size="small" >}}
 <img src="/images/SCALE_Cobia_Icon.png" alt="TrueNAS SCALE 23.10 Logo" style="margin: 1rem 0 0 2rem;">
 <--->
-iXsystems is pleased to introduce TrueNAS SCALE 23.10 (Cobia)!
+
+iXsystems released TrueNAS 23.10 (Cobia) on October 24, 2023.
+This version received its final update on January 24, 2024.
+The terminal Cobia version is 23.10.1.3.
 
 {{< /columns >}}
 
@@ -46,3 +49,13 @@ The [23.10 release notes article]({{< relref "SCALEReleaseNotes.md" >}}) has add
 	<br><a href="/scalesecurityreports/">Security Reports</a>
   </p>
 </div>
+
+## Documentation End of Life (EOL)
+
+**23.10 (Cobia) Documentation EOL: 02-14-2025**
+
+iXsystems employees maintain documentation and provide regular updates for current and in development (future) versions of TrueNAS software.
+For documentation purposes, current and future releases are those recommended by the TrueNAS [Software Status page](https://www.truenas.com/software-status/) for one or more user type.
+
+Documentation for previous releases, that are no longer recommended for any user type, is archived and unmaintained.
+All documentation provided here is end-of-life (EOL), intended for reference only, and no longer receives *any* updates.
