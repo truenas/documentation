@@ -1,14 +1,17 @@
 ---
-title: "Asigra"
-description: "Provides instructions to configure TrueNAS and install the Asigra DS-System app."
-weight:
+title: "Asigra DS-System"
+description: "Provides basic installation instructions for the TrueNAS Enterprise Asigra DS-System application."
+weight: 
 aliases:
+  - /truenasapps/enterpriseapps/asigraapp/
 tags:
+- asigra-ds-system
 - apps
-- media
+- enterprise
 keywords:
 - nas data storage
 - software storage solutions
+- enterprise data storage
 ---
 
 {{< include file="/static/includes/apps/EnterpriseApps.md" >}}
@@ -34,16 +37,17 @@ See [Setting Up Asigra in the DS Operator](#setting-up-asigra-in-the-ds-operator
 {{< include file="/static/includes/AppsUnversioned.md" >}}
 
 ## Before You Begin
+
 Before you install the Asigra app:
 
-* Read the [Asigra DS-System User Guide](https://asigra-documentation.s3.amazonaws.com/Guides/Cloud+Backup/v14.2/DS-System_User_Guide.pdf).
+- Read the [Asigra DS-System User Guide](https://asigra-documentation.s3.amazonaws.com/Guides/Cloud+Backup/v14.2/DS-System_User_Guide.pdf).
   
   For information on the DS-License Server, see Section 2.1 in the Asigra DS-System User Guide.
 
   For information on creating customer accounts and DS-Client, see Section 3.1 in the Asigra DS-System User Guide.
 
   For more information on DS-Client accounts, see Section 4.1 in the Asigra DS-System User Guide.
-    
+
 {{< include file="/static/includes/apps/BeforeYouBeginStableApps.md" >}}
 
 {{< include file="/static/includes/apps/BeforeYouBeginRunAsUser.md" >}}
@@ -66,6 +70,7 @@ You can create more datasets if you want additional storage volumes for the app,
 <div style="margin-left: 33px">{{< include file="/static/includes/apps/BeforeYouBeginAddAppDatasetsProcedure.md" >}}</div>
 
 ## Installing the Application
+
 {{< hint info >}}
 This basic procedure covers the required Asigra app settings.
 For optional settings, see [Understanding App Installation Wizard Settings](#understanding-app-installation-wizard-settings).
@@ -109,7 +114,7 @@ Select **Force Flag**.
 
 Next, for **Asigra DS-System Postgres Data Storage**, set **Type** to **Host Path (Path that already exists on the system)**.
 Enter or browse to select the **postgres_data** dataset to populate the **Host Path** field. Do not click **Edit ACL**!
-Select **Automatic Permissions** to set the permissions for this dataset and for the parent dataset if storage volume datasets are nested under a parent dataset. 
+Select **Automatic Permissions** to set the permissions for this dataset and for the parent dataset if storage volume datasets are nested under a parent dataset.
 
 {{< trueimage src="/images/SCALE/Apps/InstallAsigraStorageConfigPostgresDataAutoPerms.png" alt="Add Config Asigra Postgres_Data Automatic Permissions" id="Add Asigra Postgres_Data Automatic Permissions" >}}
 
@@ -126,6 +131,7 @@ The **Installed** screen displays with the **Asigra DS-System** app in the **Dep
 See **Setting Up the DS-System in DS-Operator** below for the next steps.
 
 ## Setting Up DS-System in DS-Operator
+
 After installing the Asigra application in TrueNAS, either click **Register** to open the Asigra New Account screen to register your company with Asigra, or if you already have a registered account, use the link provided by Asigra to download and extract the DS-Operator GUI program.
 
 {{< trueimage src="/images/SCALE/Apps/AsigraNewCustomerInfoScreen.png" alt="Asigra New Customer Information Screen" id="Asigra New Customer Information Screen" >}}
@@ -147,14 +153,14 @@ The following instructions cover a Windows OS-based DS-Operator initial configur
    Double-click on the extracted file in your **Downloads** File Explorer folder to launch the DS-Operator GUI program.
 
 2. Launch the DS-Operator GUI. Either double-click on the **dsoper** file in the File Explorer **Downloads** folder or right-click and select **Open**.
-   
+
 3. Log in as the default **oper** user and enter the password entered in the **Operator Password** field in the **Install Asigra DS-System** wizard.
    The TrueNAS Asigra app default user **oper** is preconfigured with all administration roles, but if you add some other user account to serve as the administration user you must assign the user the **Data Operator**, **Account Manager**, and **Export CRI** roles.
    Refer to the [Asigra DS-System User Guide](https://asigra-documentation.s3.amazonaws.com/Guides/Cloud+Backup/v14.2/DS-System_User_Guide.pdf) for more information.
 
    {{< trueimage src="/images/SCALE/Apps/AsigraConnectToDS-Operator.png" alt="Connect to Asigra DS-Operator" id="Connect to Asigra DS-Operator" >}}
 
-   If you receive authentication errors, you might need to add the oper user to your Windows system. 
+   If you receive authentication errors, you might need to add the oper user to your Windows system.
    {{< expand "Adding a User in Windows" "v" >}}
    If you need to create the Asigra DS-Operator user on your Windows system:
    1. Enter **Computer Management** in the **Start** menu search field, then open the **Computer Management** program.
@@ -164,14 +170,14 @@ The following instructions cover a Windows OS-based DS-Operator initial configur
    5. Select **Password never expires**.
    6. Click **Create**.
    {{< /expand >}}
-   
+
 4. Set up the TrueNAS DS-Server using the DS-Operator GUI.
    Click **Setup** on the top toolbar, then click **Initialization** to open the **DS-Operator Initialization** window.
-   
+
    {{< trueimage src="/images/SCALE/Apps/DS-OperatorInitializationOption.png" alt="Asigra DS-Operator Initializaton" id="Asigra DS-Operator Initialization" >}}
-   
+
    Click **Add** to open the **Add a DS-System** window. Enter the IP address for your TrueNAS server running the Asigra DS-System app, then click **OK**.
-   
+
    {{< trueimage src="/images/SCALE/Apps/AsigraDS-OperatorAddaDS-SystemWindow.png" alt="Asigra DS-Operator Add a DS-System" id="Asigra DS-Operator Add a DS-System" >}}
 
    Click **Refresh** at the bottom left of the window to change the default IP address to the name of your DS-System.
@@ -184,16 +190,18 @@ The following instructions cover a Windows OS-based DS-Operator initial configur
    Enter the license server URL provided by Asigra, for example, *rlm.asigra.com*, verify the port number is **4417** or the port number Asigra provides with the license, then click **Add**.
 
 You can now add your customer and DS-Client accounts. For more information refer to:
-* Adding customer accounts for each customer backing up data to the DS-System.
+
+- Adding customer accounts for each customer backing up data to the DS-System.
   Refer to Section 3 in the [DS-System User Guide](https://asigra-documentation.s3.amazonaws.com/Guides/Cloud+Backup/v14.2/DS-System_User_Guide.pdf).
 
-* Adding DS-Client accounts for your customers.
+- Adding DS-Client accounts for your customers.
   Refer to Section 4 in the [DS-System User Guide](https://asigra-documentation.s3.amazonaws.com/Guides/Cloud+Backup/v14.2/DS-System_User_Guide.pdf).
   
-* Customizing your DS-Sever to suit your use case using the DS-Operator GUI.
+- Customizing your DS-Sever to suit your use case using the DS-Operator GUI.
   Refer to the [DS-System User Guide](https://asigra-documentation.s3.amazonaws.com/Guides/Cloud+Backup/v14.2/DS-System_User_Guide.pdf).
 
 ## Understanding App Installation Wizard Settings
+
 The following section provides more detailed explanations of the settings in each section of the **Install Asigra DS-System** installation wizard.
 
 ### Application Name Settings
@@ -205,10 +213,11 @@ The following section provides more detailed explanations of the settings in eac
 {{< include file="/static/includes/apps/InstallWizardTimezoneSetting.md" >}}
 
 The app includes three passwords:
-* **Database Password** - Sets a password for the DS-System database.
-* **Root Password** - Set a password for the root run-as user. Allowed to connect to the DS-Operator GUI but is not assigned the administration roles.
+
+- **Database Password** - Sets a password for the DS-System database.
+- **Root Password** - Set a password for the root run-as user. Allowed to connect to the DS-Operator GUI but is not assigned the administration roles.
   The root user can create a new user in the DS-Operator and assign administration roles to the new user. Refer to Asigra documentation for more information on assigning administration roles.
-* **Operator Password** - Sets the password for the default DS-Operator administration user account **oper**.
+- **Operator Password** - Sets the password for the default DS-Operator administration user account **oper**.
   This user is preassigned the administration roles. Connect to the DS-Operator with this account and password.
 
 Select the language for the DS-Operator. This sets the on-screen language for the DS-Operator UI. The default is English.
@@ -221,17 +230,19 @@ Asigra provides information on environment variables you can add through their D
 For more information on these variables, see Sections 5.18.2 and 5.21.2 in the [DS-Client User Guide](https://asigra-documentation.s3.amazonaws.com/Guides/Cloud+Backup/v14.2/DS-Client_User_Guide.pdf).
 
 ### Network Configuration Settings
+
 The TrueNAS Asigra DS-System app has three default ports:
 
-* **4401** assigned to and exposes the DS-Client
-* **4404** assigned to and exposes the DS-Operator admin interface
-* **4409** assigned to and exposes the DS-System replication interface
+- **4401** assigned to and exposes the DS-Client
+- **4404** assigned to and exposes the DS-Operator admin interface
+- **4409** assigned to and exposes the DS-System replication interface
 
 {{< include file="/static/includes/apps/InstallWizardDefaultPorts.md" >}}
 {{< include file="/static/includes/apps/InstallWizardHostNetworkSettings.md" >}}
 {{< include file="/static/includes/apps/InstallWisardAdvancedDNSSettings.md" >}}
 
 ### Storage Configuration Settings
+
 TrueNAS provides two options for storage volumes: ixVolumes and host paths.
 Asigra DS-System expects two host path storage volumes, **data** to hold app DS-System data and **postgres_data** for postgres database storage.
 
@@ -244,6 +255,7 @@ You can add extra storage volumes during the app installation or edit the applic
 {{< include file="/static/includes/apps/InstallAppStorageConfig2.md" >}}
 
 #### Setting Dataset ACL Permissions
+
 You can configure ACL permissions for a dataset through the **Install Asigra DS-System** wizard or from the **Datasets** screen after adding the datasets.
 We recommend using the **Automatic Permissions** option found in the **Asigra DS-System Postgres Data Storage** section to set the permissions for the postgres and parent datasets.
 Setting permissions from the **Datasets** screen requires several adjustments that, if not correctly set, prevent the app from deploying.
@@ -269,6 +281,7 @@ TrueNAS **Additional Storage** options include the ability to mount an SMB share
 {{< include file="/static/includes/apps/InstallWizardStorageConfig2.md" >}}
 
 #### Mounting an SMB Share Storage Volume
+
 If adding an SMB share as an additional storage volume, create the SMB dataset and share user(s), and add the user ID for the share user(s) to the dataset ACL.
 {{< include file="/static/includes/apps/InstallWizardStorageSMBOption.md" >}}
 
