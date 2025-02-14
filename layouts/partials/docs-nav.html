@@ -150,7 +150,7 @@
         versionButton.textContent = 'Archive';
       } else {
         // Default version if no specific path is matched
-        versionButton.textContent = '25.04';
+        versionButton.textContent = '25.10';
       }
       versionUpdated = true;  
     } else if (path.includes('/truecommand/')) {
@@ -212,7 +212,8 @@
     
       if (product === 'TrueNAS') {
         versionDropdown.innerHTML = `
-          <div class="truenas-dropdown-item" onclick="selectVersion('scale-nightly')" id="scale-nightly">25.04</div>
+          <div class="truenas-dropdown-item" onclick="selectVersion('scale-nightly')" id="scale-nightly">25.10</div>
+          <div class="truenas-dropdown-item" onclick="selectVersion('25.04')" id="2504">25.04</div>
           <div class="truenas-dropdown-item" onclick="selectVersion('24.10')" id="2410">24.10</div>
           <div class="truenas-dropdown-item" onclick="selectVersion('24.04')" id="2404">24.04</div>
           <div class="truenas-dropdown-item" onclick="selectVersion('23.10')" id="2310">23.10</div>
@@ -476,7 +477,7 @@
         versionButton.innerHTML = '22.12 <i class="fa fa-angle-down"></i>';
       } else {
         // Default to latest version if no specific path is matched
-        versionButton.innerHTML = '25.04 <i class="fa fa-angle-down"></i>';
+        versionButton.innerHTML = '25.10 <i class="fa fa-angle-down"></i>';
       }
       
       versionDropdown.style.display = 'none';    
