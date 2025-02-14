@@ -49,3 +49,13 @@ The [23.10 release notes article]({{< relref "SCALEReleaseNotes.md" >}}) has add
 	<br><a href="/scalesecurityreports/">Security Reports</a>
   </p>
 </div>
+
+## Documentation End of Life (EOL)
+
+**23.10 (Cobia) Documentation EOL: 02-14-2025**
+
+iXsystems employees maintain documentation and provide regular updates for current and in development (future) versions of TrueNAS software.
+For documentation purposes, current and future releases are those recommended by the TrueNAS [Software Status page](https://www.truenas.com/software-status/) for one or more user type.
+
+Documentation for previous releases, that are no longer recommended for any user type, is archived and unmaintained.
+All documentation provided here is end-of-life (EOL), intended for reference only, and no longer receives *any* updates.
