@@ -1,7 +1,7 @@
 ---
 title: "Managing TrueNAS Apps"
 description: "Provides instructions on managing TrueNAS applications."
-weight: 35
+weight: 10
 aliases:
 tags:
 ---
