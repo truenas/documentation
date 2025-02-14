@@ -8,7 +8,7 @@ Click **Create Pool** to open the **Pool Creation Wizard**.
 
 **Enclosure Option** only shows for iXsystems-provided systems with expansion shelves.
 
-{{< hint type="information" >}}
+{{< hint type=info >}}
 You can rename your enclosure on the [Enclosure Screen]({{< relref "EnclosureScreensSCALE.md" >}}) to include the rack and U number in the name, which helps identify the physical location while in the pool creation screen.
 {{< /hint >}}
 
