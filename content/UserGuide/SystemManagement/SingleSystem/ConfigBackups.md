@@ -20,4 +20,4 @@ The **Config Backups** screen lists configuration backup files for the selected 
 
 To delete a backup config, from the **Config Backups** screen, select the backup(s), then click **Delete Selected**.
 
-![DeleteConfigBackup(/images/TrueCommand/Dashboard/DeleteConfigBackup.png "Delete Config Backups")
+![DeleteConfigBackup](/images/TrueCommand/Dashboard/DeleteConfigBackup.png "Delete Config Backups")
