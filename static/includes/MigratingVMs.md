@@ -14,13 +14,13 @@ After updating to 25.04, use the configuration details gathered above to [recrea
 
 * Screenshot or record existing VM configuration(s).
 
-  Go to **Virtualization** and click on a VM to expand that row.
+  Go to **Instances** and click on a VM to expand that row.
   Click <span class="iconify" data-icon="mdi:pencil"></span> **Edit** to open the **Edit VM** screen and note the existing configuration.
   Save your configuration settings in an external location to reference later.
   These settings do not migrate and must be recreated after upgrading to 25.04.
 * Record the existing zvol storage location and virtual device configuration.
 
-  Go to **Virtualization** and click on a VM to expand that row.
+  Go to **Instances** and click on a VM to expand that row.
   Click <i class="material-icons" aria-hidden="true" title="Devices">device_hub</i> **Devices**.
   Click <i class="material-icons" aria-hidden="true" title="System Update">more_vert</i> in the **Disk** row and select **Edit**.
   Note the configured path in **Zvol** as well as the storage **Mode** and the **Disk Sector Size**.
@@ -36,7 +36,7 @@ After updating to 25.04, use the configuration details gathered above to [recrea
 
 #### Recreating VMs in 25.04
 
-* After upgrading to 25.04, go to **Virtualization** and click **Select Pool** to open the virtualization **Global Settings** screen.
+* After upgrading to 25.04, go to **Instances** and click **Select Pool** to open the virtualization **Global Settings** screen.
   Use the **Pool** dropdown to select a pool for virtualization service storage.
   Accept default networking settings or modify as needed, then click **Save**.
 * Click **Create New Instance** and recreate previous VM configuration(s).
