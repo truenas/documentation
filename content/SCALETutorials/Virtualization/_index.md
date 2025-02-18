@@ -12,7 +12,7 @@ keywords:
 
 {{< include file="/static/includes/25.04Virtualization.md" >}}
 
-The **Virtualization** section allows users to set up Virtual Machines (VMs) to run alongside TrueNAS.
+The **Instances** section allows users to set up Virtual Machines (VMs) to run alongside TrueNAS.
 Enterprise licensed High Availability (HA) systems do not support virtual machines.
 
 Delegating processes to VMs reduces the load on the physical system, which means users can utilize additional hardware resources.
@@ -33,7 +33,7 @@ Before creating a VM, obtain an installer <file>.iso</file> or image file for th
 If the VM needs to access local NAS storage, you need to create a network bridge to allow communication.
 See [Accessing TrueNAS Storage from a VM](#accessing-truenas-storage-from-a-vm) below for more information.
 
-To create a new VM, go to **Virtualization** and click **Add** to open the **Create Virtual Machine** configuration screen.
+To create a new VM, go to **Instances** and click **Add** to open the **Create Virtual Machine** configuration screen.
 If you have not yet added a virtual machine to your system, click **Add Virtual Machines** to open the same screen.
 
 1. Select the operating system you want to use from the **Guest Operating System** dropdown list.
@@ -178,7 +178,7 @@ Upload the Debian <file>.iso</file> to the TrueNAS system and attach it to the V
 This example uses Debian 12 and basic configuration recommendations.
 Modify settings as needed to suit your use case.
 
-1. Click **Virtualization**, then **ADD** to use the VM wizard.
+1. Click **Instances**, then **ADD** to use the VM wizard.
    The table below lists the settings used in this example.
 
    {{< trueimage src="/images/SCALE/Virtualization/ScaleDebianVMOsSystem.png" alt="Add Debian VM" id="Add Debian VM" >}}
