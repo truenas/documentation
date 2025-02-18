@@ -7,7 +7,7 @@ To access the **Administration** screen, click the gear <i class="material-icons
 ![AdministrationScreen](/images/TrueCommand/Administration/AdministrationScreen.png "Administration Screen")
 
 The screen has seven widgets:
-* **[About](#about-widget)** - Shows TrueCommand system information, iXsystems Support Contact information, and TrueCommand licenses.
+* **[About](#about-widget)** - Shows TrueCommand system information, TrueNAS Support Contact information, and TrueCommand licenses.
 * **[Certificates](#certificates-widget)** - Allows you to upload or reset certificates.
 * **[Certificate Authorities](#certificate-authorities-widget)** - Allows you import certificate authorities into TrueCommand.
 * **[Configuration](#configuration-widget)** - Provides access to general, SSL, alert, LDAP and SAML service, and Telemetry settings.
@@ -17,7 +17,7 @@ The screen has seven widgets:
 
 ## About Widget
 
-The **About** widget displays the current TrueCommand system ID and version, iXsystems Support contact information, and license details.
+The **About** widget displays the current TrueCommand system ID and version, TrueNAS Support contact information, and license details.
 
 ![AdministrationAboutWidget](/images/TrueCommand/Administration/AdministrationAboutWidget.png "Administration About Widget")
 
@@ -27,9 +27,9 @@ Click **View Open Source Licenses** to see a list of open-source licenses TrueCo
 
 ### Updating Licenses
 
-You can expand TrueCommand to monitor more disks by upgrading or purchasing a license from iXsystems.
+You can expand TrueCommand to monitor more disks by upgrading or purchasing an Enterprise license.
 Click **GET A LICENSE** to open a new browser tab to purchase a TrueCommand license.
-You can also contact iXsystems to upgrade the current license.
+You can also contact the TrueNAS Support team to upgrade the current license.
 
 After you upgrade or purchase a new license, upload it to TrueCommand.
 Click **Browse** to open a file browser on your local system.
@@ -110,7 +110,7 @@ The SAML service is an experimental feature that allows users to configure TrueC
 
 ### Telemetry
 
-TrueCommand reports some anonymous basic usage telemetry to iXsystems for product improvement analysis.
+TrueCommand reports some anonymous basic usage telemetry to the development team for product improvement analysis.
 
 ![AdministrationConfigTelemetry](/images/TrueCommand/Administration/AdministrationConfigTelemetry.png "Configuration Telemetry Settings")
 

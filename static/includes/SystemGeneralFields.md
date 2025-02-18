@@ -32,7 +32,7 @@
 | Name | Description |
 |------|-------------|
 | Crash reporting | Send failed HTTP request data which can include client and server IP addresses, failed method call tracebacks, and middleware log file contents to iXsystems. |
-| Usage collection | Enable sending anonymous usage statistics to iXsystems. For more information about what usage data is collected, see the [TrueNAS Data Collection Statement]({{< relref "/CORE/GettingStarted/UserAgreements/DataCollectionStatement.md" >}}). |
+| Usage collection | Enable sending anonymous usage statistics to the TrueNAS development team. For more information about what usage data is collected, see the [TrueNAS Data Collection Statement]({{< relref "/CORE/GettingStarted/UserAgreements/DataCollectionStatement.md" >}}). |
 {{< /truetable >}}
 
 **SAVE CONFIG**: Saves a backup copy of the current configuration database in the format *hostname-version-architecture*.

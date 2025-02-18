@@ -12,7 +12,8 @@ From repurposed systems to highly custom builds, the fundamental freedom of True
 
 The TrueNAS installer recommends 8 GB of RAM.
 TrueNAS installs, runs, and operates jails (in TrueNAS 13).
-It also hosts SMB shares and replicates TBs of data with less. iXsystems recommends the above for better performance and fewer issues.
+It also hosts SMB shares and replicates TBs of data with less.
+The TrueNAS team recommends the above for better performance and fewer issues.
 
 You do not need an SSD boot device, but we discourage using a spinner or a USB stick.
 We do not recommend installing TrueNAS on a single disk or striped pool unless you have a good reason to do so.
@@ -55,7 +56,7 @@ Drive vendors, likely tired of honoring warranties for failed desktop drives use
 NAS drives achieved fame from the original Western Digital (WD) Red™ drives with [Conventional Magnetic Recording (CMR)](https://en.wikipedia.org/wiki/Perpendicular_recording) technology (now called WD Red Plus).
 Western Digital designed the WD Red™ Plus NAS drives (non-SMR) for systems with up to 8 hard drives, the [WD Red™ Pro](https://www.westerndigital.com/products/internal-drives/wd-red-pro-sata-hdd) for systems with up to 16 drives, and the [WD UltraStar™](https://www.westerndigital.com/products/data-center-platforms) for systems beyond 16 drives.
 
-The iXsystems Community Forum prefers WD drives for TrueNAS builds due to their exceptional quality and reliability.
+The TrueNAS Community prefers WD drives for TrueNAS builds due to their exceptional quality and reliability.
 All TrueNAS Minis ship with WD Red™ Plus drives unless requested otherwise.
 
 {{< hint type=warning title="TrueNAS and SMR Drives" >}}  
@@ -216,7 +217,7 @@ Subject it to as close to a real-world workload as possible to reveal individual
 Be cautious of used drives, as vendors might not be honest or informed about their age and health.
 Verify vendors have not recertified drives by checking the hours using `smartctl(8)` for all new drives.
 A drive vendor might also zero the hours of a drive during recertification, masking the drive age.
-iXsystems tests all storage devices it sells for at least 48 hours before shipment.
+The TrueNAS team tests all storage devices it sells for at least 48 hours before shipment.
 
 ### Storage Controllers
 
@@ -391,7 +392,7 @@ The network in Network Attached Storage is as important as storage, but the topi
 Higher-band hardware is becoming more accessible as the hardware development pace increases and enterprises upgrade more quickly.
 Home labs can now deploy and use 40 GB and higher networking components. Home users are now discovering the same issues and problems with these higher speeds found by Enterprise customers.
 
-iXsystems recommends using optical fiber over *direct attached copper* (DAC) cables for the high-speed interconnects listed below:
+Use optical fiber over *direct attached copper* (DAC) cables for the high-speed interconnects listed below:
 
 * 10Gb NICs: SFP+ connectors
 * 25Gb NICs: SFP28 connectors
@@ -400,7 +401,7 @@ iXsystems recommends using optical fiber over *direct attached copper* (DAC) cab
 * 200Gb NICs: QSFP56 connectors
 * 400Gb NICs: QSFP-DD connectors
 
-iXsystems also recommends using optical fiber for any transceiver form factors mentioned when using fiber channels.
+Use optical fiber for any transceiver form factors mentioned when using fiber channels.
 Direct attached copper (DAC) cables can create interoperability issues between the NIC, cable, and switch.
 
 ## Virtualized TrueNAS

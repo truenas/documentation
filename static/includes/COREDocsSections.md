@@ -8,7 +8,7 @@ Each major section of TrueNAS 13/Enterprise documentation is organized as a stan
   * Installation tutorials.
   * First-time software configuration instructions.
 
-* [Configuration Tutorials](/core/coretutorials) have many community and iXsystems -provided procedural how-tos for specific software use-cases.
+* [Configuration Tutorials](/core/coretutorials) have many community and TrueNAS team -provided procedural how-tos for specific software use-cases.
 
 * The [UI Reference Guide](/core/uireference) describes each section of the CORE web interface, including descriptions for each configuration option.
 
