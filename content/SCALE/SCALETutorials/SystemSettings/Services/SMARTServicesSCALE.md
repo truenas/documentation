@@ -13,7 +13,7 @@ keywords:
 ---
 
 {{< hint type=note >}}
-There is a special consideration when installing TrueNAS in a Virtual Machine (VM), as S.M.A.R.T services monitor actual physical devices, which are abstracted in a VM. After the installation of TrueNAS completes on the VM, go to **System** > **Services** > and click the blue toggle button on the S.M.A.R.T. service to stop the service from running. Clear the **Start Automatically** checkbox so the service does not automatically start when the system reboots.
+There is a special consideration when installing TrueNAS in a Virtual Machine (VM), as S.M.A.R.T services monitor actual physical devices, which are abstracted in a VM. After the installation of TrueNAS completes on the VM, go to **System** > **Services** and click the blue toggle on the S.M.A.R.T. service to stop the service from running. Clear the **Start Automatically** checkbox so the service does not automatically start when the system restarts.
 {{< /hint >}}
 
 Note that the table(s) below can be reorganized by clicking on the column titles. This allows you to reorganize the information in each column by togglnig between a descending and ascending order.

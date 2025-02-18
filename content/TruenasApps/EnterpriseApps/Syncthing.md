@@ -217,7 +217,7 @@ Linux defaults to a maximum of 8192 inotify watchers.
 Using the Syncthing Enterprise app to sync directories with greater than 8191 subdirectories (possibly lower if other services are also using inotify) produces errors that prevent automatic monitoring of file system changes.
 
 Increase inotify values to allow Syncthing to monitor all sync directories.
-Add a sysctl variable to ensure changes persist through reboot.
+Add a sysctl variable to ensure changes persist through restart.
 
 Go to **System > Advanced** and locate the [**Sysctl** widget]({{< relref "/scale/scaletutorials/systemsettings/advanced/_index.md #managing-sysctl-variables" >}}).
 
