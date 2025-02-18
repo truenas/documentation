@@ -58,7 +58,6 @@ App general setting are described in [Configuring App General Settings](#configu
 Access the default system-level settings through the **Configuration** button at the top right of the **Installed** applications screen.
 
 For more information on app screens and functions, see [Apps Screens]({{< relref "SCALE/SCALEUIReference/Apps/_index.md" >}}).
-For general instructions on installing and managing TrueNAS apps, see [Managing TrueNAS Apps]({{< relref "ManagingApps.md" >}})
 
 TrueNAS apps have a **Run as** user. This user shows on each app information screen, and after installed and running, on the **Application Metadata** widget for the app.
 Some applications deploy as the **root** user for initial configuration before operating as a non-root user.
@@ -124,7 +123,6 @@ To show only one train of apps, for example, the **enterprise** train, after sel
 Refresh the catalog after making changes to update what the **Discover** screen shows.
 
 Users can add any train to their default option.
-For more information on adding and managing trains, see [Managing TrueNAS Apps]({{< relref "ManagingApps.md #managing-app-trains" >}}).
 
 ### App Network Settings
 
@@ -370,7 +368,7 @@ Search for the application widget, then click on that widget to open the informa
 
 There are two primary app installation methods: the app installation wizard or the custom install option.
 
-TrueNAS uses the app installation wizards for apps in the [**enteprise**]({{< relref "/content/TruenasApps/Enterprise/_index.md" >}}) and [**stable**] ({{< relref "/content/TruenasApps/Stable/_index.md" >}}) trains.
+TrueNAS uses the app installation wizards for apps in the [**enteprise**]({{< relref "/content/TruenasApps/EnterpriseApps/_index.md" >}}) and [**stable**]({{< relref "/content/TruenasApps/StableApps/_index.md" >}}) trains.
 These introductory articles describe the sections in the installation wizards and show links to existing app tutorials for these trains.
 
 The [Installing Custom Applications]({{< relref "UsingCustomApp.md" >}}) article describes installing apps that are not included in any of the TrueNAS application trains.
