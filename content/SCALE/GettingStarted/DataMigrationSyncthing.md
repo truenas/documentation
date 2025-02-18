@@ -30,7 +30,7 @@ Third-party data ingest is available to TrueNAS Enterprise customers with TrueNA
 iXsystems Support staff are available to assist with deploying the Syncthing Enterprise Application and migrating data.
 Please contact iXsystems Support to learn more and schedule a time to deploy the app and begin migration.
 
-{{< expand "Contacting iXsystems Support" "v" >}}
+{{< expand "Contacting TrueNAS Enterprise Support" "v" >}}
 {{< include file="/static/includes/iXsystemsSupportContact.md" >}}
 {{< /expand >}}
 {{< /enterprise >}}

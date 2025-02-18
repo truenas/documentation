@@ -36,7 +36,7 @@ TrueNAS Enterprise customers with TrueNAS 12.0 and newer and TrueNAS 22.12.4 (Bl
 This activates management options for TrueNAS hardware attached to vCenter Server and enables limited management of TrueNAS systems from a single interface.
 
 Please contact iXsystems Support to learn more and schedule a time to deploy or upgrade the plugin.
-{{< expand "Contacting iXsystems Support" "v" >}}
+{{< expand "Contacting TrueNAS Enterprise Support" "v" >}}
 {{< include file="/static/includes/iXsystemsSupportContact.md" >}}
 {{< /expand >}}
 

@@ -24,7 +24,7 @@ keyword:
 icon1="IconTrueNAS.png" cell1title="Wide Range of Capacity Options" cell1text="12 to 102 drive capacity. Multiple form factors."
 icon2="IconGraph.png" cell2title="Seamless Scaling" cell2text="Add storage to your datacenter without hassle or downtime."
 icon3="IconHA.png" cell3title="Dual Controller" cell3text="Highly available storage expansion."
-icon4="IconEnterprise.png" cell4title="Meets any Expansion Requirements" cell4text="Whether you need a few drives or hundreds, iXsystems offers customizable solutions to fit any of your storage requirements." >}}
+icon4="IconEnterprise.png" cell4title="Meets any Expansion Requirements" cell4text="Whether you need a few drives or hundreds, TrueNAS Enterprise products offer customizable solutions to fit any of your storage requirements." >}}
 
 ## General Resources
 

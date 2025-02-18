@@ -26,7 +26,7 @@ Visit the [F Series product page](https://www.truenas.com/f-series/) for more de
 descr="Comprehensive User Manual for TrueNAS F-Series systems." >}}
 
 {{< imagecard image="/images/Hardware/FSeries/FSeriesSOV.png" title="Statement of Volatility" link="https://www.truenas.com/docs/files/FSeriesSOV.pdf"
-descr="iXsystems official Statement of Volatility for F-Series systems." >}}
+descr="TrueNAS official Statement of Volatility for F-Series systems." >}}
 
 {{< imagecard image="/images/Hardware/FSeries/FSeriesStencil.png" title="Hardware Stencils" link="https://www.truenas.com/docs/files/fseriesstencil.vssx"
 descr="Download F-Series stencils to diagram your TrueNAS hardware configuration." >}}
