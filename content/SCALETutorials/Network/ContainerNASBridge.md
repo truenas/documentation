@@ -16,6 +16,7 @@ keywords:
 
 If you want to access your TrueNAS directories from within a virtual machine, Linux container, or app hosted on the system, you have multiple options:
 
+<!--* Select **Use default network settings** ? -->
 * If you have only one physical interface, you must create a bridge interface.
 * If your system has more than one physical interface you can assign your containers to a NIC other than the primary one your TrueNAS server uses.
   This method makes communication more flexible but does not offer the potential speed of a bridge.
@@ -30,33 +31,30 @@ If your system only has a single physical interface, complete these steps to cre
 
 <!-- Not Validated in 25.04 Instances -->
 
-12. To assign the bridge to a VM or container, go to **Instances**, expand the VM you want to use to access TrueNAS storage, and click **Devices**.
-   Click <i class="material-icons" aria-hidden="true" title="System Update">more_vert</i> in the **NIC** row and select **Edit**.
-   Select the new bridge interface from the **NIC to Attach** dropdown list, then click **Save**.
+12. To assign the bridge to a VM or container, go to **Instances**, select the instance you want to use to access TrueNAS storage, and locate the **NIC** widget.
+   Click **Add** and select the new bridge interface from the dropdown list.
 
-   {{< trueimage src="/images/SCALE/Virtualization/VMEditDeviceNIC.png" alt="Edit NIC Device" id="Edit NIC Device" >}}
+   {{< trueimage src="/images/SCALE/Virtualization/InstanceAddNIC.png" alt="Add NIC" id="Add NIC" >}}
 
 You can now access your TrueNAS storage from the container.
 You might have to set up [shares]({{< relref "/SCALEUIReference/Shares/_index.md" >}}) or [users]({{< relref "ManageLocalUsersSCALE.md" >}}) with home directories to access certain files.
 
 ## Assigning a Secondary NIC: Multiple Physical Interfaces
 
-If you have more than one NIC on your system, you can assign VM traffic to a secondary NIC.
-Configure the secondary interface as described in [Managing Interfaces]({{< relref "/SCALETutorials/Network/Interfaces/_index.md" >}}) before attaching it to a VM.
+If you have more than one NIC on your system, you can assign container traffic to a secondary NIC.
+Configure the secondary interface as described in [Managing Interfaces]({{< relref "/SCALETutorials/Network/Interfaces/_index.md" >}}) before attaching it to a instance.
 
-If you are creating a new VM, use the **Attach NIC** dropdown menu under **Network Interface** to select the secondary NIC.
+If you are creating a new instance, use the **Network** settings to deselect **Use default network Settings** and select the secondary NIC.
+
+{{< trueimage src="/images/SCALE/Virtualization/InstancesNetworkNonDefault.png" alt="Network Settings" id="Network Settings" >}}
 
 To edit the NIC attached to an existing VM:
 
-1. Go to **Instances**, expand the VM or container you want to use to access TrueNAS storage, and click **Devices**.
+1. Go to **Instances**, select the instance you want to use to access TrueNAS storage, and locate the **NIC** widget.
 
-   {{< trueimage src="/images/SCALE/Virtualization/VMDevicesListed.png" alt="Virtual Machine Devices" id="Virtual Machine Devices" >}}
+2. Click **Add** and select the new bridge interface from the dropdown list.
 
-2. Click <i class="material-icons" aria-hidden="true" title="System Update">more_vert</i> in the **NIC** row and select **Edit**.
-
-   {{< trueimage src="/images/SCALE/Virtualization/VMEditDeviceSecondaryNIC.png" alt="Attach Secondary NIC Device" id="Attach Secondary NIC Device" >}}
-
-3. Select the secondary interface from the **NIC to Attach** dropdown list, then click **Save**.
+   {{< trueimage src="/images/SCALE/Virtualization/InstanceAddNIC.png" alt="Add NIC" id="Add NIC" >}}
 
 ## VM Access Examples
 
@@ -79,5 +77,3 @@ The example below shows the Windows VM accessing an SMB share on TrueNAS.
 
 {{< trueimage src="/images/SCALE/AccessNASfromVM9.png" alt="SMB Share" id="SMB Share" >}}
 {{< /expand >}}
-
-{{<include file="/static/includes/addcolumnorganizer.md">}}
