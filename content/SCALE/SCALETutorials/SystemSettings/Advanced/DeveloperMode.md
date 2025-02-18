@@ -38,3 +38,5 @@ Run the `install-dev-tools` command.
 
 Running `install-dev-tools` removes the default TrueNAS read-only protections and installs a variety of tools needed for development environments on TrueNAS.
 These changes do not persist across updates and `install-dev-tools` must be re-run after every system update.
+
+Note: `install-dev-tools` will fail if the boot environment has been renamed from default
