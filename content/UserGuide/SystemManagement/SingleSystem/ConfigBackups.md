@@ -21,3 +21,5 @@ The **Config Backups** screen lists configuration backup files for the selected 
 To delete a backup config, from the **Config Backups** screen, select the backup(s), then click **Delete Selected**.
 
 ![DeleteConfigBackup](/images/TrueCommand/Dashboard/DeleteConfigBackup.png "Delete Config Backups")
+
+Backups are pruned daily based off the threshold configured on the Administration page. By default backups older than seven (7) days wil be removed. This value can be increased to at most 30 or set to 0 to disable backup retention.
