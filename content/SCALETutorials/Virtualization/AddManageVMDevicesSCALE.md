@@ -14,6 +14,7 @@ keywords:
 {{< include file="/static/includes/25.04Virtualization.md" >}}
 
 ## Managing Devices
+
 After creating a VM, the next step is to add virtual devices for that VM.
 Using the Create Virtual Machine wizard configures at least one disk, NIC, and the display as part of the process.
 To add devices, from the **Virtual Machines** screen, click anywhere on a VM entry to expand it and show the options for the VM.
@@ -38,14 +39,16 @@ Before adding, editing, or deleting a VM device, stop the VM if it is running.
 Click the **State** toggle to stop or restart a VM, or use the **Stop** and **Restart** buttons.
 
 ### Editing a Device
+
 Select **Edit** to open the **Edit Device** screen.
 You can change the type of virtual hard disk, the storage volume to use, or change the device boot order.
 
 To edit a VM device:
+
 1. Stop the VM if it is running, then click **Devices** to open the list of devices for the selected VM.
 2. Click on the <span class="material-icons">more_vert</span> icon at the right of the listed device you want to edit, then select **Edit** to open the **Edit Device** screen.
 
-{{< trueimage src="/images/SCALE/Virtualization/EditDeviceDiskScreen.png" alt="Edit Device VM Disk" id="Edit Device VM Disk" >}}
+   {{< trueimage src="/images/SCALE/Virtualization/EditDeviceDiskScreen.png" alt="Edit Device VM Disk" id="Edit Device VM Disk" >}}
 
 3. Select the path to the zvol created when setting up the VM on the **Zvol** dropdown list.
 4. Select the type of hard disk emulation from the **Mode** dropdown list.
@@ -59,9 +62,11 @@ To edit a VM device:
 8. Restart the VM.
 
 ### Deleting a Disk Device
+
 Deleting a device removes it from the list of available devices for the selected VM.
 
 To delete a VM device:
+
 1. Stop the VM if it is running, then click **Devices** to open the list of devices for the selected VM.
 2. Click on the <span class="material-icons">more_vert</span> icon at the right of the listed device you want to edit, then select **Delete**.
    The **Delete Virtual Machine** dialog opens.
@@ -73,6 +78,7 @@ To delete a VM device:
 4. Click **Delete Device**.
 
 ### Changing the Device Order
+
 1. Stop the VM if it is running, then click **Devices** to open the list of devices for the selected VM
 2. Click **Edit**.
 3. Enter the number that represents where in the boot sequence you want this device to boot in the **Devices Order** field.
@@ -81,6 +87,7 @@ To delete a VM device:
 5. Restart the VM.
 
 ### Adding a CD-ROM Device
+
 Select **CD-ROM** as the **Device Type** on the **Add Device** screen and set a boot order.
 
 1. Stop the VM if it is running, then click **Devices**.
@@ -95,6 +102,7 @@ Select **CD-ROM** as the **Device Type** on the **Add Device** screen and set a 
 6. Restart the VM.
 
 ### Adding a NIC Device Type
+
 Select **NIC** in the **Device Type** on the **Add Device** screen to add a network interface card for the VM to use.
 
 1. Stop the VM if it is running, then click **Devices**.
@@ -116,6 +124,7 @@ Select **NIC** in the **Device Type** on the **Add Device** screen to add a netw
 8. Restart the VM
 
 ### Add a Disk Device Type
+
 Select **Disk** in **Device Type** on the **Add Device** screen to configure a new disk location, drive type and disk sector size, and boot order.
 
 1. Stop the VM if it is running, then click **Devices**.
@@ -134,6 +143,7 @@ Select **Disk** in **Device Type** on the **Add Device** screen to configure a n
 9. Restart the VM.
 
 ### Adding a PCI Passthrough Device
+
 Select **PCI Passthrough Device** in the **Device Type** on the **Add Device** screen to configure the PCI passthrough device and boot order.
 {{< hint type=important >}}
 Depending upon the type of device installed in your system, you might see a warning: PCI device does not have a reset mechanism defined.
@@ -152,6 +162,7 @@ Determine if you want to proceed with this action in such an instance.
 6. Restart the VM.
 
 ### Adding a USB Passthrough Device
+
 Select **USB Passthrough Device** as the **Device Type** on the **Add Device** screen to configure the USB passthrough device, and set a boot order.
 
 1. Stop the VM if it is running, then click **Devices**.
@@ -167,6 +178,7 @@ Select **USB Passthrough Device** as the **Device Type** on the **Add Device** s
 7. Restart the VM.
 
 ### Adding a Display Device
+
 Select **Display** as **Device Type** on the **Add Device** screen to configure a new display device.
 
 1. Stop the VM if it is running, then click **Devices**.
