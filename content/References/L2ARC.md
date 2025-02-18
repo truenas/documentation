@@ -32,11 +32,11 @@ A cache device failure does not affect the integrity of the pool, but it might i
 
 ### Persistent L2ARC in TrueNAS
 
-By default, the L2ARC cache empties when the system reboots.
-When Persistent L2ARC is enabled, a sysctl repopulates the cache device mapping during the reboot process.
-Persistent L2ARC preserves L2ARC performance even after a system reboot.
+By default, the L2ARC cache empties when the system restarts.
+When Persistent L2ARC is enabled, a sysctl repopulates the cache device mapping during the restarts process.
+Persistent L2ARC preserves L2ARC performance even after a system restarts.
 
-However, persistent L2ARC for large data pools can drastically slow the reboot process, degrading middleware and web interface performance.
+However, persistent L2ARC for large data pools can drastically slow the restarts process, degrading middleware and web interface performance.
 Because of this, we have disabled persistent L2ARC by default in TrueNAS, but you can manually activate it.
 
 ### Activating Persistent L2ARC
@@ -52,7 +52,7 @@ Make sure **Enabled** is selected and click **SUBMIT**.
 
 {{< expand "CLI Instructions" "v" >}}
 {{< hint type=important >}}
-TrueNAS does not write settings changed through the CLI to the configuration database. TrueNAS resets them on reboot.
+TrueNAS does not write settings changed through the CLI to the configuration database. TrueNAS resets them on restarts.
 {{< /hint >}}
 In a command line, enter `sysctl vfs.zfs.l2arc.rebuild_enabled=1`.
 When successful, the output reads: `vfs.zfs.l2arc.rebuild_enabled: 0 -> 1`

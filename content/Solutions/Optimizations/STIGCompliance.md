@@ -65,7 +65,7 @@ See [Using Administrator Logins]({{< relref "AdminRoles.md" >}}) for more inform
 #### Restrict Access to SSH
 Enable SSH access only for the full-control administration user (Local Administrator) but do not leave the SSH service enabled when not in use. Disable the SSH service after completing the required tasks until access is needed again.
 
-Do not set the SSH service to start automatically if the system reboots to prevent starting and leaving SSH running when not needed.
+Do not set the SSH service to start automatically if the system restarts to prevent starting and leaving SSH running when not needed.
 See [SSH Service]({{< relref "SSHServiceSCALE.md" >}}) for more information.
 
 If using multiple administration user accounts, limit SSH session access to only users that require this ability to communicate with TrueNAS at the command-line level.
