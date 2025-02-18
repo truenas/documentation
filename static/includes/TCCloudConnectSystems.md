@@ -10,7 +10,7 @@ Log into a TrueNAS system and click the TrueCommand icon in the upper right.
 
 ![SystemsAddFirstSystemTCButton](/images/TrueCommand/Systems/SystemsAddFirstSystemTCButton.png "Connecting from TrueNAS")
 
-Paste the TrueCommand API key copied from the TrueNAS Account Portal into the TrueNAS dialog window. 
+Paste the TrueCommand API key copied from the TrueNAS Account Portal into the TrueNAS dialog window.
 
 ![TrueCommandCloudConnectAPIKey](/images/SCALE/Dashboard/TrueCommandCloudConnectAPIKey.png "Connecting TrueNAS to TrueCommand Cloud")
 
