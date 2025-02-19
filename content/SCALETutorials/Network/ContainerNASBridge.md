@@ -1,5 +1,5 @@
 ---
-title: "Accessing NAS from Containers"
+title: "Accessing NAS from VMs and Containers"
 description: "Provides instructions on how to create a bridge interface for virtual machines or applications and provides Linux and Windows examples."
 weight: 60
 tags:
@@ -16,20 +16,29 @@ keywords:
 
 If you want to access your TrueNAS directories from within a virtual machine, Linux container, or app hosted on the system, you have multiple options:
 
-<!--* Select **Use default network settings** ? -->
-* If you have only one physical interface, you must create a bridge interface.
-* If your system has more than one physical interface you can assign your containers to a NIC other than the primary one your TrueNAS server uses.
+* Allow TrueNAS to create an automatic bridge (default)
+* If you have only one physical interface, you can manually create a bridge interface.
+* If your system has more than one physical interface, you can assign containers to a NIC other than the primary one your TrueNAS server uses.
   This method makes communication more flexible but does not offer the potential speed of a bridge.
+
+{{< hint type=note title="Container and Host Communication" >}}
+A MACVLAN NIC on the same physical interface as the TrueNAS host cannot directly communicate with the host. MACVLAN sends traffic directly to the external network without passing through the host’s network stack. The host does not recognize MACVLAN packets as local, so any traffic between them must be routed through an external switch, use a separate NIC, or use a network bridge.
+{{< /hint >}}
+
+## Using Default Network Settings
+
+Leave **Use default network settings** selected while creating a new instance to allow TrueNAS to automatically assign the default network bridge.
+This is the simplest way to allow communication between containers and the TrueNAS host.
+
+{{< trueimage src="/images/SCALE/Virtualization/InstancesNetworkDefault.png" alt="Default Network Settings" id="Default Network Settings" >}}
 
 ## Creating a Bridge: Single Physical Interface
 
-If your system only has a single physical interface, complete these steps to create a network bridge.
+If your system only has a single physical interface, and you prefer to manually configure a network bridge, complete these steps.
 
 {{< include file="/static/includes/BeforeYouBridge.md" >}}
 
 {{< include file="/static/includes/NetworkBridgeSCALE.md" >}}
-
-<!-- Not Validated in 25.04 Instances -->
 
 12. To assign the bridge to a VM or container, go to **Instances**, select the instance you want to use to access TrueNAS storage, and locate the **NIC** widget.
    Click **Add** and select the new bridge interface from the dropdown list.
@@ -46,13 +55,13 @@ Configure the secondary interface as described in [Managing Interfaces]({{< relr
 
 If you are creating a new instance, use the **Network** settings to deselect **Use default network Settings** and select the secondary NIC.
 
-{{< trueimage src="/images/SCALE/Virtualization/InstancesNetworkNonDefault.png" alt="Network Settings" id="Network Settings" >}}
+{{< trueimage src="/images/SCALE/Virtualization/InstancesNetworkNonDefault.png" alt="Non-Default Network Settings" id="Non-Default Network Settings" >}}
 
 To edit the NIC attached to an existing VM:
 
 1. Go to **Instances**, select the instance you want to use to access TrueNAS storage, and locate the **NIC** widget.
 
-2. Click **Add** and select the new bridge interface from the dropdown list.
+2. Click **Add** and select the secondary interface from the **MAC VLAN** dropdown list.
 
    {{< trueimage src="/images/SCALE/Virtualization/InstanceAddNIC.png" alt="Add NIC" id="Add NIC" >}}
 
