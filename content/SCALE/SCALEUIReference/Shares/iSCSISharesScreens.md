@@ -168,7 +168,7 @@ The **Extents** screen shows a table listing extents configured on the system. E
 {{< include file="/static/includes/iSCSIAddEditExtentSettings.md" >}}
 
 ### Initiators Groups Screen
-The **Initiators Groups** screen shows after clicking the **Initiator** tab. It table shows a listing initiator groups configured on the system.
+The **Initiators Groups** screen shows after clicking the **Initiator** tab. The table lists initiator groups configured on the system.
 
 {{< trueimage src="/images/SCALE/Shares/iSCSIInitiatorsScreen.png" alt="iSCSI Initiator Screen" id="iSCSI Initiator Screen" >}}
 
