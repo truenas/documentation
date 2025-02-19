@@ -1,3 +1,55 @@
+Process time: 2025-02-14 16:53:16
+Initiated by: Dan Pizappi
+
+1091 files reviewed.
+44 files deleted.
+The following files were deleted:
+C:\Users\iXUser\Documents\GitHub\documentation\static\includes\CustomAppEE.md
+C:\Users\iXUser\Documents\GitHub\documentation\static\includes\EarlyReleaseWarning.md
+C:\Users\iXUser\Documents\GitHub\documentation\static\includes\apps\AppInstallWizardACLConfiguration.md
+C:\Users\iXUser\Documents\GitHub\documentation\static\includes\apps\AppsBestPractices.md
+C:\Users\iXUser\Documents\GitHub\documentation\static\includes\apps\AppsCustomApp.md
+C:\Users\iXUser\Documents\GitHub\documentation\static\includes\apps\AppsDatasets.md
+C:\Users\iXUser\Documents\GitHub\documentation\static\includes\apps\AppsPool.md
+C:\Users\iXUser\Documents\GitHub\documentation\static\includes\apps\AppWizardStorageSMBOption.md
+C:\Users\iXUser\Documents\GitHub\documentation\static\includes\apps\MinIODatasetRequirements.md
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\CORE\Storage\StoragePoolsOptionsEditPermissionsACLPresetHome.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\ZFSFeatureFlagsRemovalExample1.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\ZFSFeatureFlagsRemovalExample2.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\ZFSFeatureFlagsRemovalExample3.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\ZFSFeatureFlagsRemovalExample4.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Apps\AddTrueCloudTaskAdvancedOption.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Apps\AppsInstallNvidiaDrivers.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Apps\CustomAppDetails.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Apps\InstallAppResourceConfigurationGPU.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Apps\InstallAppStorageConfigSMBOption.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Apps\InstallCustomAppAddStorageVolumes.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Apps\InstallCustomAppAddWorkloadDetails.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Apps\InstallCustomAppContainerEnvironmentVariables.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Apps\InstallCustomAppNetworkingAddExternalInterfaces.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Apps\InstallCustomAppNetworkingDNSConfig.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Apps\InstallCustomAppPortForwarding.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Apps\InstallCustomAppScalingUpgradePolicy.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\CLI\DigCommandOutput.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Credentials\DigCommandOutput.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Credentials\DirectoryServicesADandLDAPWidgets.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Credentials\DirServicesAdvancedSettingsScreen.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Credentials\LocalizationSCALE.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Credentials\SelelectCertificateStore.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\DataProtection\AddTrueCloudTask.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\DataProtection\AdvancedAddReplicationTaskGeneralTransportSSH+NETCAT.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\DataProtection\StorjAddBucket.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\DataProtection\StorjBucketAdded.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\DataProtection\StorjCreateABucketScreen.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\DataProtection\StorjEncryptYourBucketScreen.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Datasets\StoragePoolsOptionsEditPermissionsACLPresetHome.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Storage\DevicesExtend.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\SystemSettings\SidegradeInstallManualUpdate.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\SystemSettings\SidegradeRestart.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\SystemSettings\SidegradeSaveConfig.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\SystemSettings\SidegradeSetInstallFile.png
+
+----------------------------------------
 Process time: 2024-09-04 09:32:50
 Initiated by: Dan Pizappi
 
