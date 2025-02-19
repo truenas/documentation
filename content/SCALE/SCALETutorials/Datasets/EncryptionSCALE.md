@@ -63,7 +63,7 @@ You can also move data from an unencrypted pool or dataset to an encrypted datas
 {{< /expand >}}
 
 {{< hint type=important >}}
-If your system loses power or you reboot the system, all encrypted datasets and zvols lock automatically to protect data.
+If your system loses power or you restart the system, all encrypted datasets and zvols lock automatically to protect data.
 {{< /hint >}}
 
 ### Encryption Visual Cues

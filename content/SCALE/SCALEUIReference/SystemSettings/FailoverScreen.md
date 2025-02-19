@@ -36,7 +36,7 @@ The **System > Failover** screen displays settings used on TrueNAS Enterprise (H
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Reboot standby TrueNAS controller** | Select to cause the standby controller to reboot after the sync operation completes. |
+| **Reboot standby TrueNAS controller** | Select to cause the standby controller to restart after the sync operation completes. |
 | **Confirm** | Select to confirm you want to perform the sync-to-peer operation. |
 | **Proceed** | Begins the sync operation. |
 {{< /truetable >}}

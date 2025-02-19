@@ -117,7 +117,7 @@ The **Kernel** widget shows options for configuring the Linux kernel installed w
 {{< truetable >}}
 | Settings | Description |
 |----------|-------------|
-| **Enable Debug Kernel** | Set to boot a debug kernel after the next system reboot. This is intended for troubleshooting scenarios only and should typically remain disabled. Enabling this option disables any Nvidia drivers present on the system. |
+| **Enable Debug Kernel** | Set to boot a debug kernel after the next system restart. This is intended for troubleshooting scenarios only and should typically remain disabled. Enabling this option disables any Nvidia drivers present on the system. |
 {{< /truetable >}}
 {{< /expand >}}
 
@@ -387,9 +387,9 @@ The **Global Two Factor Authentication** widget allows you to set up two-factor 
 
 {{< enterprise >}}
 The **System Security** widget allows administrators of Enterprise-licensed systems to enable or disable FIPS 140-2 compliant algorithms, and general-purpose OS STIG compliance.
-Changing FIPS or STIG settings requires a system reboot to apply setting changes.
+Changing FIPS or STIG settings requires a system restart to apply setting changes.
 
-High Availability (HA) systems reboot the standby controller and then show a prompt to failover and reboot the primary controller.
+High Availability (HA) systems restart the standby controller and then show a prompt to failover and restart the primary controller.
 
 {{< trueimage src="/images/SCALE/SystemSettings/SystemAdvancedSecurityWidget.png" alt="System Security Widget" id="System Security Widget" >}}
 
@@ -400,5 +400,5 @@ High Availability (HA) systems reboot the standby controller and then show a pro
 The **Enable FIPS** toggle enables or disables enforcement.
 The **Enable General Purpose OS STIG compatibility mode** toggle enables or disables the STIG compliance implementation. Requires two-factor authentication for an admin user with full permissions before enabling STIG compatibility.
 **Save**.
-The system prompts to reboot (or failover for HA systems) to apply the settings.
+The system prompts to restart (or failover for HA systems) to apply the settings.
 {{< /enterprise >}}
