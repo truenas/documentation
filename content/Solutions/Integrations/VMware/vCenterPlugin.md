@@ -21,8 +21,8 @@ aliases:
 
 {{< enterprise >}}
 This plugin is available to TrueNAS Enterprise customers.
-iXsystems Support staff are available to assist with deploying and upgrading the TrueNAS vCenter Plugin.
-Please contact iXsystems Support to learn more and schedule a time to deploy or upgrade the plugin.
+TrueNAS Enterprise Support staff are available to assist with deploying and upgrading the TrueNAS vCenter Plugin.
+Please contact TrueNAS Enterprise Support to learn more and schedule a time to deploy or upgrade the plugin.
 
 {{< expand "Contacting TrueNAS Enterprise Support" "v" >}}
 {{< include file="/static/includes/iXsystemsSupportContact.md" >}}

@@ -1,6 +1,6 @@
 ---
 title: "Remote Assist"
-description: "Provides general information and use scenarios for the TrueNAS Enterprise Remote Assist app, which allows iXsystems support personnel remote access to TrueNAS Enterprise systems."
+description: "Provides general information and use scenarios for the TrueNAS Enterprise Remote Assist app, which allows TrueNAS Enterprise Support personnel remote access to TrueNAS Enterprise systems."
 weight: 
 tags:
 - support
@@ -15,16 +15,16 @@ keywords:
 {{< include file="/static/includes/apps/EnterpriseApps.md" >}}
 
 {{< hint type=important title="TrueNAS Enterprise Use Only" >}}
-The Remote Assist app is intended for use by TrueNAS Enterprise customers with active support contracts and iXsystems support staff only.
+The Remote Assist app is intended for use by TrueNAS Enterprise customers with active support contracts and TrueNAS Enterprise Support staff only.
 TrueNAS community use of Remote assist for any reason is outside of the intended purposes and not supported.
 {{< /hint >}}
 
 The Remote Assist app allows TrueNAS Enterprise support personnel remote access to customer systems to assist with deploying or troubleshooting an environment.
 Remote Assist uses Tailscale to create secure connections between support staff and customers.
-Authentication is established with a one-time use authentication key, provided by iXsystems support and used for the duration of the active deployment or support case.
+Authentication is established with a one-time use authentication key, provided by TrueNAS Enterprise Support and used for the duration of the active deployment or support case.
 
 We recommend that customers create a [restricted admin account]({{< relref "/scale/scaletutorials/credentials/adminroles.md #configuring-administrative-privileges" >}}) and [enable auditing]({{< relref "/scale/scaletutorials/systemsettings/auditingscale.md" >}}) for remote assistance sessions.
-This ensures that production passwords are not shared with iXsystems and retains a log of the actions taken by the support personnel during the session.
+This ensures that production passwords are not shared with the TrueNAS team and retains a log of the actions taken by the support personnel during the session.
 Support personnel can guide you through configuration.
 
 After the remote assistance session completes, delete the Remote Assist application from the TrueNAS system.
@@ -50,8 +50,8 @@ Click **Install** to open the app installation wizard.
 
 {{< include file="/static/includes/apps/InstallWizardAppNameAndVersion.md" >}}
 
-Enter the label provided by iXsystems support in **System Identifier**.
+Enter the label provided by TrueNAS Enterprise Support in **System Identifier**.
 
-Enter the one-time authentication key provided by iXsystems support in **Auth Key**.
+Enter the one-time authentication key provided by TrueNAS Enterprise Support in **Auth Key**.
 
 Click **Install**.

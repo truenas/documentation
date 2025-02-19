@@ -8,7 +8,7 @@ aliases:
 
 **How do I connect to Remote Management?**
 
-iXsystems servers provide two modes for connecting the remote management (IPMI) features to the network. The first method is a dedicated connection via a separate Ethernet jack on the back panel of the system. 
+TrueNAS Enterprise systems provide two modes for connecting the remote management (IPMI) features to the network. The first method is a dedicated connection via a separate Ethernet jack on the back panel of the system.
 On most servers, this jack is located above the USB ports near the keyboard and mouse port on the rear I/O panel. 
 This port runs at 100Mb/s and has a link status and speed/traffic lights.
 
@@ -55,7 +55,7 @@ In most cases the update should be run without saving the existing configuration
 
 ipmitool is the industry standard open source CLI tool for viewing and configuring IPMI systems. 
 Originally written by Sun Microsystems, it has grown independently to support any IPMI-compliant system. 
-iXsystems remote management is IPMI v2.0 compliant and `ipmitool` can make use of most of its capabilities.
+TrueNAS Enterprise remote management is IPMI v2.0 compliant and `ipmitool` can make use of most of its capabilities.
 
 For most operating systems, `ipmitool` is generally available in third-party package repositories. 
 It can also be downloaded from its [GitHub Repository](https://github.com/ipmitool/ipmitool). 
@@ -74,7 +74,7 @@ Some common `ipmitool` commands are:
 
 `ipmitool sensor list` – displays sensors, their readings, state, and thresholds
 
-When opening a support ticket with iXsystems in regards to troubleshooting remote management exceptions, include the output of `ipmitool sel elist` and `ipmitool sensor list`. The output of these commands helps us determine the specific issue.
+When opening a TrueNAS Enterprise support ticket in regards to troubleshooting remote management exceptions, include the output of `ipmitool sel elist` and `ipmitool sensor list`. The output of these commands helps us determine the specific issue.
 
 **What is IPMIView?**
 
@@ -103,7 +103,7 @@ Refer to the instructions included in the readme associated with the remote mana
 Serial Over LAN (SOL) provides the redirection of a virtual serial port to remote management. 
 The virtual serial port acts like a standard PC serial port and the operating system generally attaches its serial port driver automatically. 
 In server environments, serial ports are used for the operating system console, which can then be logged to disk or accessed remotely via out-of-band means in the event of failure. 
-On iXsystems servers, the SOL virtual port can appear as **COM2** or **COM3** depending on the system, as the virtual port is numbered after the physical serial ports and some systems have one physical port and others have two. 
+On TrueNAS Enterprise systems, the SOL virtual port can appear as **COM2** or **COM3** depending on the system, as the virtual port is numbered after the physical serial ports and some systems have one physical port and others have two. 
 The virtual serial port settings can be configured in the BIOS Setup. 
 By default, the BIOS is configured to copy its screen output to the virtual serial port so the BIOS can be manipulated via SOL. 
 The SOL serial port can be connected to and viewed using IPMI SOL-compliant tools such as `ipmitool` or by an applet in the web GUI. 

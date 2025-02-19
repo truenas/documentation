@@ -27,8 +27,8 @@ TrueNAS 24.10 (Electric Eel) also adds migration support for SMB alternate data 
 
 {{< enterprise >}}
 Third-party data ingest is available to TrueNAS Enterprise customers with TrueNAS 24.04 (Dragonfish) and newer deployed, as well as the appropriate applications license.
-iXsystems Support staff are available to assist with deploying the Syncthing Enterprise Application and migrating data.
-Please contact iXsystems Support to learn more and schedule a time to deploy the app and begin migration.
+TrueNAS Enterprise Support staff are available to assist with deploying the Syncthing Enterprise Application and migrating data.
+Please contact TrueNAS Enterprise Support to learn more and schedule a time to deploy the app and begin migration.
 
 {{< expand "Contacting TrueNAS Enterprise Support" "v" >}}
 {{< include file="/static/includes/iXsystemsSupportContact.md" >}}

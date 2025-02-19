@@ -1,10 +1,10 @@
 ---
 title: "Copyrights and Trademarks"
-description: "Provides a list of copyrights and trademarks, and related logos registered as trademarks of iXsystems."
+description: "Provides a list of copyrights and trademarks, and related logos registered as trademarks of iXsystems, dba TrueNAS."
 weight: 1
 ---
 
-FreeNAS®, TrueNAS®, TrueNAS® SCALE, TrueCommand, and all related logos are registered trademarks of [iXsystems](https://www.ixsystems.com/).
+FreeNAS®, TrueNAS®, TrueNAS® SCALE, TrueCommand, and all related logos are registered trademarks of [iXsystems, dba TrueNAS](https://www.ixsystems.com/).
 
 **These trademarks and copyrights are owned by their respective Companies or Foundations:**
 

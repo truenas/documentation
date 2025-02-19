@@ -19,7 +19,7 @@ keywords:
 The **stable** train populates the application catalog with the official applications.
 The **Discover** screen shows the **stable** train applications by default.
 
-Applications in the **stable** catalog are added and maintained by iXsystems and are intended to expand system functionality far beyond what is typically expected from a NAS.
+Applications in the **stable** catalog are added and maintained by the TrueNAS team and are intended to expand system functionality far beyond what is typically expected from a NAS.
 Some apps replace deprecated services or functionality previously built into TrueNAS.
 
 The tutorials in this section are for the commonly-used **stable** train catalog.

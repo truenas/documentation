@@ -91,14 +91,14 @@ Click **Configuration > Settings** to open the **Settings** screen, which contai
 
 TrueNAS applications are available in three catalogs (trains):
 
-* **stable** - Default train of official apps, vetted by iXsystems, chosen because of the features and functionality of the app, and how they integrate with TrueNAS.
-* **enterprise** - Default train of apps, simplified and validated for Enterprise users for Enterprise-licensed systems.
+* **stable** - Default train of official apps, vetted by the TrueNAS team, chosen because of the features and functionality of the app, and how they integrate with TrueNAS.
+* **enterprise** - Default train of apps, simplified and validated for Enterprise users for TrueNAS Enterprise-licensed systems.
 * **community** - Apps proposed and maintained by the community
 
 The default TrueNAS **Stable** catalog populates the **Discover** apps screen with apps.
 
 Some apps proposed by community members might be adopted as official **stable** train apps.
-iXsystems maintains official apps for non-Enterprise and community users.
+The TrueNAS team maintains official apps for non-Enterprise and community users.
 
 Click **Settings** on the **Configuration** dropdown menu to open the **Settings** screen, then select the desired train(s).
 To show only the one train of apps, for example, the **enterprise** train, after selecting **enterprise** deselect the **stable** checkbox and click **Save**.

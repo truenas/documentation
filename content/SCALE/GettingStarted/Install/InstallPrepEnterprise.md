@@ -17,7 +17,7 @@ keywords:
 {{< enterprise >}}
 TrueNAS Enterprise customers, or those that purchased systems and service contracts from iXsystems, should use the information in this article to prepare for their TrueNAS system deployments.
 
-The iXsystems Support department provides assistance with the configuration areas documented in this section.
+The TrueNAS Enterprise Support department provides assistance with the configuration areas documented in this section.
 
 {{< expand "Contacting Support" "v" >}}
 {{< include file="/static/includes/iXsystemsSupportContact.md" >}}
@@ -58,7 +58,7 @@ If you have an HA system with two controllers, you must assign a total of three 
 * An IP address for the primary network port on controller A
 * An IP address for the primary network port on controller B
 
-iXsystems Support can assist you with any questions you have with these network requirements.
+TrueNAS Enterprise Support can assist you with any questions you have with these network requirements.
 Provide the information listed to iXsystems when requested to expedite configuring your system network settings.
 
 ### SMTP Access

@@ -39,9 +39,9 @@ All passwords are reset if the uploaded configuration file was saved without sel
 
 {{< enterprise >}}
 Enterprise High Availability (HA) systems should never reset their system configuration to defaults.
-Contact iXsystems Support if a system configuration reset is required.
+Contact TrueNAS Enterprise Support if a system configuration reset is required.
 
-{{< expand "iXsystems Support" "v" >}}
+{{< expand "TrueNAS Enterprise Support" "v" >}}
 {{< include file="/static/includes/iXsystemsSupportContact.md" >}}
 {{< /expand >}}
 {{< /enterprise >}}
