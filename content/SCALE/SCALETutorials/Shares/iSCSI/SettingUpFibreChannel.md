@@ -18,20 +18,20 @@ The Fibre Channel feature is available to Enterprise-licensed High Availability 
 Any Enterprise system, equipped with the required fibre channel hardware can implement this feature.
 
 This article provides instructions for VMware VCenter ESXi.
-If using another platform for your block share backups, use documentation for that platform for alternative instructions for the ESXi process documented in this tutorial.
+If you are using a different platform for your block share backups, use the documentation for that platform for alternative instructions for the ESXi process documented in this tutorial.
 .
 ## Before You Begin
 
 When setting up iSCSI fibre channel for the first time:
 
-* (Optional) Create a zvol for each fibre channel port with a network interface assoicated with it.
+* (Optional) Create a zvol for each fibre channel port with a network interface associated with it.
 
-  The wizard provide an option to create a dataset on the **Extents** screen, when adding the device.
+  The wizard provides an option to create a dataset on the **Extents** screen when adding the device.
   Selecting this option creates a dataset for organizational purposes and a zvol of the same name for block storage.
 
-## Configuring Fibre Channel - First Time Install
+## Configuring Fibre Channel - First-Time Install
 
-We recommend using the iSCSI wizard to create your target, the extents, and set up fibre channel ports.
+We recommend using the iSCSI wizard to create your target, create the extents, and set up fibre channel ports.
 
 If the system is a High Availability (HA) system, turn on ALUA.
 
@@ -51,7 +51,7 @@ Next and for all systems, go to **Shares** and click **Wizard** on the iSCSI wid
 
    b. Select **Device** in **Extent Type**, then select **Create New** on the **Device** dropdown list.
      When selecting **Create New**, the **Pool/Dataset** and **/mnt** fields display.
-     Navigate through the pool and datasets to select the zvol and to populate the **/mnt** field with the path.
+     Navigate through the pool and datasets to select the zvol and populate the **/mnt** field with the path.
 
    {{< trueimage src="/images/SCALE/Shares/iSCSIWizardExtentScreenFCAddNew.png" alt="iSCSI Extents Screen - Fibre Channel" id="iSCSI Extents Screen - Fibre Channel" >}}
     
