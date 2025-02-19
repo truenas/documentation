@@ -17,7 +17,7 @@ Fibre Channel is a TrueNAS Enterprise feature. Only TrueNAS systems licensed for
 
 Enterprise systems with fibre channel hardware can access fibre channel settings and screens through various iSCSI wizard and share screens.
 
-## iSCSI Wizard Screens - Fibre Channel
+## iSCSI Wizard Screens - Fibre Channel.
 
 The **Block (iSCSI) Shares Targets** widget shows iSCSI shares configured for fibre channels.
 The **Wizard** button on the header opens the **Wizard iSCSI** wizard on the **Target** screen. See [Target Screens - Fibre Channel](#iscsi-wizard-target-screen---fibre-channel) below.
@@ -47,7 +47,7 @@ The **iSCSI Wizard** opens showing the **Target** screen with the **Fibre Channe
 
 {{< trueimage src="/images/SCALE/Shares/iSCSIWizardTargetScreenFC.png" alt="iSCSI Wizard Target Screen - Fibre Channel" id="iSCSI Wizard Target Screen - Fibre Channel" >}}
 
-The **Target** dropdown shows the default **Create New**. Selecting **Create New** creates a share, or selecting an existing target from the dropdown list allows you to edit it.
+The **Target** dropdown shows the default **Create New**. Selecting **Create New** creates a share. Selecting an existing target from the dropdown list allows you to edit that target.
 
 ### iSCSI Wizard Extent Screen - Fibre Channel
 
@@ -219,7 +219,7 @@ The **Add** and **Edit** screens display the same settings.
 
 ### Fibre Channel Ports Screens
 
-The **Fibre Channel Ports** screen shows a table listing fibre channels configured on the system. Virtual ports show as child elements to phyical ports.
+The **Fibre Channel Ports** screen shows a table listing fibre channels configured on the system. Virtual ports show as child elements to physical ports.
 
 {{< trueimage src="/images/SCALE/Shares/iSCSIFibreChannelPortsScreen.png" alt="iSCSI Fibre Channel Ports Screen" id="iSCSI Fibre Channel Ports Screen" >}}
 
