@@ -35,7 +35,7 @@
 | Name | Description |
 |------|-------------|
 | **Enable Autotune** | Activates a tuning script which attempts to optimize the system depending on the installed hardware. Warning: Autotuning is only used as a temporary measure and is not a permanent fix for system hardware issues. |
-| **Enable Debug Kernel** | Set to boot a debug kernel after the next system reboot. |
+| **Enable Debug Kernel** | Set to boot a debug kernel after the next system restart. |
 {{< /truetable >}}
 
 **Self-Encrypting Drive**

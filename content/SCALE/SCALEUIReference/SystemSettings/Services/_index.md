@@ -26,7 +26,7 @@ The **SMB** service row has two additional icons that link to other screens:
 * <span class="iconify" data-icon="material-symbols:receipt-long"></span> **Audit Logs** opens the **Audit** screen.
 * <span class="iconify" data-icon="material-symbols:list"></span> **SMB Sessions** opens the [**SMB Status** screen]({{< relref "SMBSharesScreens.md" >}}).
 
-Select **Start Automatically** to set the service to start after the system reboots.
+Select **Start Automatically** to set the service to start after the system restarts.
 
 Click on the **Running** toggle to start the service or to stop it if it is running. Stop services before changing configuration settings.
 

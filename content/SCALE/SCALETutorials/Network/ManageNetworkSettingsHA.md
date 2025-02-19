@@ -19,9 +19,9 @@ The instructions in the article only apply to TrueNAS Enterprise (HA) systems.
 6. Turn failover back on.
    Go to **System > Failover** and select **Disable Failover** to clear the checkmark and turn failover back on, then click **Save**.
 
-   The system might reboot.
+   The system might restart.
    Monitor the status of controller 2 and wait until the controller is back up and running, then click **Sync To Peer**.
    Select **Reboot standby TrueNAS controller** and **Confirm**, then click **Proceed** to start the sync operation.
-   The controller reboots, and TrueNAS syncs controller 2 with controller 1, which adds the network settings and pool to controller 2.
+   The controller restarts, and TrueNAS syncs controller 2 with controller 1, which adds the network settings and pool to controller 2.
 
    {{< trueimage src="/images/SCALE/SystemSettings/FailoverSyncToPeerDialog.png" alt="Failover Sync To Peer" id="Failover Sync To Peer" >}}

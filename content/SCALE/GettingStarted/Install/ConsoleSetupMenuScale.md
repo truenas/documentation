@@ -78,7 +78,7 @@ For network configuration options **1**, **2**, and **3**, we recommend using th
 
 * **9) Reboot**
 
-  Use to restart the system by powering down and then automatically powering on the system.
+  Restart the system by powering down and then automatically powering on the system.
 
 * **10) Shut down**
 
@@ -168,10 +168,10 @@ Immediately go to the **Credentials > Local User** screen, select the admin user
 **Caution!**
 Resetting the configuration deletes all settings and reverts TrueNAS to default settings.
 Before resetting the system, back up all data and encryption keys/passphrases!
-After the system resets and reboots, you can go to **Storage** and click **Import Pool** to re-import pools.
+After the system resets and restarts, you can go to **Storage** and click **Import Pool** to re-import pools.
 {{< /hint >}}
 
-Enter **5** in the Console Setup menu, then enter <kbd>y</kbd> to reset the system configuration. The system reboots and reverts to default settings.
+Enter **5** in the Console Setup menu, then enter <kbd>y</kbd> to reset the system configuration. The system restarts and reverts to default settings.
 
 ## Completing your System Setup
 After setting up network requirements, log into the web UI to complete your system setup by:
