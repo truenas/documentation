@@ -23,20 +23,20 @@ keywords:
 {{< include file=\"/static/includes/apps/CommunityPleaseImprove.md\" >}}
 
 {{< hint type="important" >}}
-This application in not needed when rsync is configured externally with SSH or with the [TrueNAS built-in rsync task in SSH mode]({{< relref "RsyncTasksSCALE.md" >}}).
-It is always recommended to use rsync with SSH as a security best practice.
+This application is not needed when rsync is configured externally with SSH or with the [TrueNAS built-in rsync task in SSH mode]({{< relref "RsyncTasksSCALE.md" >}}).
+We always recommend using rsync with SSH as a security best practice.
 
 You do not need this application to schedule or run rsync tasks from the **Data Protections** screen using the **Rsync Task** widget.
 {{< /hint >}}
 
-This application is an open source server that provides fast incremental file transfers.
+This application is an open-source server that provides fast incremental file transfers.
 When installed, the Rsync Daemon application provides the server function to rsync clients given the server information and ability to connect.
 
 {{< include file="/static/includes/ProposeArticleChange.md" >}}
 
 ## Installing the Rsync Daemon Application
 
-The before installing the Rsync Daemon application (rsyncd) add a dataset the application can use for storage.
+Before installing the Rsync Daemon application (rsyncd), add a dataset the application can use for storage.
 
 To install this application, go to **Apps**, click on **Discover Apps**, then either begin typing rsync into the search field or scroll down to locate the **Rsync Daemon** application widget.
 
@@ -85,7 +85,7 @@ The **Application Name** section includes only the **Application Name** setting.
 
 ### Rsync Configuration
 
-The **Rysnc Configuration** section **Auxiliary Parameters** allow you to customize the rsync server deployment.
+The **Rysnc Configuration** section **Auxiliary Parameters** allows you to customize the rsync server deployment.
 Enter rsync [global or module parameters](https://www.samba.org/ftp/rsync/rsyncd.conf.html) using the **Auxiliary Parameters** fields.
 
 {{< trueimage src="/images/SCALE/Apps/InstallRsyncDAddAuxParameters.png" alt="Add Auxiliary Parameters" id="Add Auxiliary Parameters" >}}
@@ -99,7 +99,7 @@ The **Network Configuration** section includes the **Host Network** and **Rsync 
 
 {{< trueimage src="/images/SCALE/Apps/InstallRsyncDNetworkConfig.png" alt="Network Configuration Settings" id="Network Configuration Settings" >}}
 
-Accept the default port number 30026 which is the port the Rsync app listens on.
+Accept the default port number 30026, which is the port the Rsync app listens on.
 Before changing the port number refer to [Default Ports](https://www.truenas.com/docs/references/defaultports/) to verify the port is not already assigned. Enter a new port number in **Rsync Port**.
 
 We recommend that you leave **Host Network** unselected.
@@ -114,13 +114,13 @@ Click **Add** for each module to add.
 There are seven required settings to add a module and four optional settings.
 
 **Module Name** is whatever name you want to give the module and is an alias for access to the server storage path.
-A name can include upper and lowercase letters, numbers, and the special characters underscore (_), hyphen (-) and dot (.).
+A name can include upper and lowercase letters, numbers, and the special characters underscore (_), hyphen (-), and dot (.).
 Do not begin or end the name with a special character.
 
-**Enable Module**, selected by default, allows the list client IP addresses added to connect to the server after the app is installed and started.
+**Enable Module**, selected by default, allows the list of client IP addresses added to connect to the server after the app is installed and started.
 
 Use optional **Comment** to enter a description that displays next to the module name when clients obtain a list of available modules.
-Default is to leave this field blank.
+The default is to leave this field blank.
 
 Enter or browse to the location of the dataset to use for storage for this module on the rsync server in **Host Path**.
 
@@ -132,7 +132,7 @@ Accept the **UID** (user ID) and **GID** (group ID) default 568. If you create a
 
 {{< trueimage src="/images/SCALE/Apps/InstallRsyncDAddAllowDenyHostsAuxParams.png" alt="Add Module Allow or Deny Hosts" id="Add Module Allow or Deny Hosts" >}}
 
-Use **Hosts Allow** and **Hosts Deny** to specify IP addresses for client systems that can to connect to the rsync server through this module.
+Use **Hosts Allow** and **Hosts Deny** to specify IP addresses for client systems that can connect to the rsync server through this module.
 Enter multiple IP addresses separated by a comma and space between entries in the field.
 Leave blank to allow all or deny hosts.
 
@@ -143,10 +143,10 @@ You can specify rsync [global or module parameters](https://www.samba.org/ftp/rs
 ### Authentication
 
 By default, the rsync daemon will allow access to everything within the dataset that has been specified for each module, without authentication.
-In order to set up password authentication you needs to add two auxiliary parameters for the module:
+To set up password authentication, you need to add two auxiliary parameters for the module:
 
 Parameter: "auth users"
-Value: comma separated list of usernames, [more details can be found here.](https://www.samba.org/ftp/rsync/rsyncd.conf.html#auth_users)
+Value: comma-separated list of usernames, [more details can be found here.](https://www.samba.org/ftp/rsync/rsyncd.conf.html#auth_users)
 
 Parameter: "secrets file"
 Value: path to the rsyncd.secrets file
@@ -155,14 +155,14 @@ You will have to place the file inside your module dataset and use the value: `/
 
 The file will have to be chmod 600 and owned by root:root in order for the rsync daemon to accept it for authentication.
 
-The file should contain list of username:password in plaintext, one user per line:
+The file should contain a list of username:password in plaintext, one user per line:
 admin:password1234
 user:password5678
 
 ### Resource Configuration
 
 The **Resources Configuration** section allows you to limit the amount of CPU and memory the application can use.
-By default, this application is limited to use no more than **4** CPU cores and **8** Gibibytes available memory.
+By default, this application cannot use more than **4** CPU cores and **8** Gibibytes available memory.
 The application might use considerably less system resources.
 
 {{< trueimage src="/images/SCALE/Apps/RsyncdResourceConfig.png" alt="Resources Configuration" id="Resources Configuration" >}}
