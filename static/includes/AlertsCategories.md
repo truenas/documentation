@@ -121,7 +121,7 @@ You can change alert settings for when a pool consumes USB disks, a scrub pauses
 
 ### System
 
-**System** alert settings apply to system processes, the system dataset, TrueCommand API Key, SSH logins, system reboots, updates, and the web interface.
+**System** alert settings apply to system processes, the system dataset, TrueCommand API Key, SSH logins, system restarts, updates, and the web interface.
 {{< expand "Click here for more information" >}}
 
 ![AlertSettingsSystem1](/images/SCALE/SystemSettings/AlertSettingsSystem1.png "System Alert Settings 1")
@@ -130,7 +130,7 @@ You can change alert settings for when a pool consumes USB disks, a scrub pauses
 
 You can customize alert settings for when the admin user is overridden, the boot pool is unhealthy, the system dataset has core files, a device slows down pool I/O, NTP health checks fail, and TrueCommand API keys are disabled or need confirmation.
 
-You can also change alert settings for when SSH logins fail, the system is not ready for Kdump, the web UI cannot bind to a configured address, TrueCommand fails health checks, the system reboots off schedule, and update are available, failed, or not applied.
+You can also change alert settings for when SSH logins fail, the system is not ready for Kdump, the web UI cannot bind to a configured address, TrueCommand fails health checks, the system restarts off schedule, and update are available, failed, or not applied.
 {{< /expand >}}
 
 ### Tasks

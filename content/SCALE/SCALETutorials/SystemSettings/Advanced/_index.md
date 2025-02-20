@@ -115,11 +115,11 @@ Click **Settings** to open the **System Security** configuration screen.
 ![SystemSecurityScreen](/images/SCALE/SystemSettings/SystemSecurityScreen.png "System Security Screen")
 
 Select the toggle to enable FIPS and STIG, then click **Save**. You must enable FIPS with STIG!
-The system prompts you to reboot.
+The system prompts you to restart.
 
-![SecurityFIPSSTIGRebootDialog](/images/SCALE/SystemSettings/SecurityFIPSSTIGRebootDialog.png "Reboot Require Dialog")
+![SecurityFIPSSTIGRestartDialog](/images/SCALE/SystemSettings/SecurityFIPSSTIGRestartDialog.png "Restart Require Dialog")
 
-The system reboot takes several minutes to complete before showing the login screen.
+The system restart takes several minutes to complete before showing the login screen.
 
 ## Contents
 

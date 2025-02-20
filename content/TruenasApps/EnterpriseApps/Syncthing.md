@@ -32,6 +32,7 @@ Community users can access enterprise versions of apps by adding the **enterpris
 {{< include file="/static/includes/apps/AddEnterpriseTrain.md" >}}
 
 ## Before You Begin
+
 To install the Syncthing **enterprise** train app, do the following:
 
 * Acquire and apply the Enterprise VM & Apps license to the Enterprise system.
@@ -71,6 +72,7 @@ See [Setting Up Permissions]({{< relref "PermissionsSCALE.md" >}}) and [Edit ACL
 {{< /expand >}}</div>
 
 ## Installing the Syncthing Application
+
 {{< hint info >}}
 This basic procedure covers the required Syncthing app settings.
 For optional settings, see [Understanding App Installation Wizard Settings](#understanding-app-installation-wizard-settings).
@@ -120,6 +122,7 @@ For more information, see [**Mounting an SMB Share Storage Volume**](#mounting-a
 {{< include file="/static/includes/apps/SyncthingCompleteInstall.md" >}}
 
 ### Securing the Syncthing Web UI
+
 After installing and starting the Syncthing application, launch the Syncthing web UI.
 Go to **Actions > Settings** and set a user password for the web UI.
 
@@ -136,6 +139,7 @@ The following sections provide detailed explanations of the settings found in ea
 {{< include file="/static/includes/Apps/InstallWizardAppNameAndVersion.md" >}}
 
 ### Configuration Setting
+
 {{< include file="/static/includes/apps/InstallWizardTimezoneSetting.md" >}}
 
 #### Adding Environmental Variables
@@ -151,6 +155,7 @@ Click here for more information on [Syncthing environmental variables](https://d
 {{< include file="/static/includes/apps/InstallWizardUserAndGroupConfig.md" >}}
 
 ### Networking Settings
+
 The Syncthing enterprise app listens on port **8384**.
 
 {{< trueimage src="/images/SCALE/Apps/InstallSyncthingEnterpriseNetworkSettings.png" alt="Syncthing Enterprise Network Settings" id="Syncthing Enterprise Network Settings" >}}
@@ -164,6 +169,7 @@ Disabling **Host Network** shows the TCP and UDP port numbers, and sets the web 
 {{< include file="/static/includes/apps/InstallWizardCertificateSettings.md" >}}
 
 ### Storage Settings
+
 TrueNAS provides two storage options for storage volumes: ixVolumes and host paths.
 
 To allow TrueNAS to create the storage volume, leave **Type** set to **ixVolume (Dataset created automatically by the system)**.
@@ -182,6 +188,7 @@ If you organize the config dataset under a parent dataset named *syncthing*, con
 You can add extra storage volumes during the app installation, or edit the application after it deploys. Stop the app before editing settings.
 
 #### Setting Dataset ACL Permissions
+
 You can configure ACL permissions for the required dataset in the **Install Syncthing** wizard, or from the **Datasets** screen after adding the datasets.
 
 {{< include file="/static/includes/apps/InstallWizardStorageACLConfig.md" >}}
@@ -197,6 +204,7 @@ For more infomration, see [Setting Up Permissions]({{< relref "PermissionsSCALE.
 {{< /expand >}}
 
 #### Mounting an SMB Share Storage Volume
+
 The TrueNAS Syncthing Enterprise app includes the option to mount an SMB share inside the container pod and to migrate data from another NAS to TrueNAS.
 
 Selecting **Migrate Data** forces a read-only mount regardless of the **Read Only** checkbox selection.
@@ -212,12 +220,13 @@ ACL preservation is not guaranteed if in a non-AD environment, or if the ACL or 
 {{< include file="/static/includes/apps/InstallWizardResourceConfig.md" >}}
 
 ## Increasing inotify Watchers
+
 Syncthing uses [inotify](https://man7.org/linux/man-pages/man7/inotify.7.html) to monitor file system events, with one inotify watcher per monitored directory.
 Linux defaults to a maximum of 8192 inotify watchers.
 Using the Syncthing Enterprise app to sync directories with greater than 8191 subdirectories (possibly lower if other services are also using inotify) produces errors that prevent automatic monitoring of file system changes.
 
 Increase inotify values to allow Syncthing to monitor all sync directories.
-Add a sysctl variable to ensure changes persist through reboot.
+Add a sysctl variable to ensure changes persist through restart.
 
 Go to **System > Advanced** and locate the [**Sysctl** widget]({{< relref "/scale/scaletutorials/systemsettings/advanced/_index.md #managing-sysctl-variables" >}}).
 

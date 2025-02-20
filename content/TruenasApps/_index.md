@@ -30,7 +30,7 @@ The TrueNAS applications backend changed in 24.10 to Docker images managed with 
 Earlier TrueNAS releases operated with Kubernetes K3 and Helm providing containers for applications.
 For more information on this change refer to the [24.10 Release Notes](https://www.truenas.com/docs/scale/24.10/gettingstarted/scalereleasenotes/).
 
-{{< include file="/static/includes/ProposeArticleChange.md" >}} 
+{{< include file="/static/includes/ProposeArticleChange.md" >}}
 <!-- Update to an app specific snippet -->
 
 TrueNAS is certified with leading hypervisors and backup solutions to streamline storage operations and ensure compatibility with your existing IT infrastructure.
@@ -215,7 +215,7 @@ Search for the application widget, then click on that widget to open the informa
 {{< include file="/static/includes/apps/AppsSMBErrorWarning.md" >}}
 
 If an application requires specific host path datasets, create the datasets before installing the application.
-For example, the [Nextcloud]({{< relref "InstallNextCloudMedia.md" >}}) app requires three datasets: **html** for app data, **data** for user data, and **postgres_data** for the database data storage volume.
+For example, the [Nextcloud]({{< relref "/truenasapps/stableapps/nextcloud.md" >}}) app requires three datasets: **html** for app data, **data** for user data, and **postgres_data** for the database data storage volume.
 [Create these datasets]({{< relref "DatasetsSCALE.md" >}}) before installing the app.
 See [Understanding App Storage Volumes](#understanding-app-storage-volumes), individual app information screens, and app tutorials for more information.
 
@@ -239,7 +239,7 @@ Refer to tutorials created and maintained by the community for more information 
 {{< include file="/static/includes/apps/InstallWizardSettingsOverview.md" >}}
 
 After clicking **Install** on an application wizard screen, the **Installed** applications screen opens showing the application in the **Deploying** state before
-changing to **Running**. 
+changing to **Running**.
 Applications that crash show the **Crashed** status. Clicking **Stop** changes the status to **Stopping** before going to **Stopped**.
 Click **Start** to restart the application.
 
