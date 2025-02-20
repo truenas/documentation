@@ -11,7 +11,7 @@ This section provides instructions for users that are installing TrueNAS the fir
 {{< enterprise >}}
 TrueNAS Enterprise customers should contact TrueNAS Enterprise Support for assistance with the initial set up and configuration of their systems.
 
-{{< expand "Contacting iX Support" >}}
+{{< expand "Contacting TrueNAS Enterprise Support" >}}
 {{< include file="/static/includes/iXsystemsSupportContact.md" >}}
 {{< /expand >}}
 {{< /enterprise >}}
