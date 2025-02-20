@@ -12,29 +12,99 @@ tags:
 
 {{< include file="/static/includes/25.04Virtualization.md" >}}
 
-The **Virtual Machines** screen allows users to add, edit, or manage virtual machines (VMs) and VM devices.
-The **No Virtual Machines** screen displays if there are no VMs configured on the system or if you delete all VMs on the system.
+The **Instances** screen allows users to add, edit, or manage virtual machines (VMs) and Linux containers.
 
-{{< trueimage src="/images/SCALE/Virtualization/AddVMNoVMs.png" alt="No Virtual Machines" id="No Virtual Machines" >}}
+The first time you go to **Instances**, the screen header shows a <i class="fa fa-cog" aria-hidden="true"></i> **Pool is not selected** status.
+You must choose the pool instances use before you can create an instance. See [**Global Settings**](#global-settings) for more information.
 
-**Add Virtual Machines** and **Add** at the top right of the screen opens the **[Create Virtual Machine](#create-virtual-machine-wizard-screens)** wizard.
+{{< trueimage src="/images/SCALE/Virtualization/InstancesPoolNotSelected.png" alt="Pool Is Not Selected" id="Pool Is Not Selected" >}}
+
+After setting the pool, <i class="fa fa-check" aria-hidden="true" title="Check"></i> **Initialized** shows on the screen header.
+
+The **Instances** screen displays **No Instances** before you create the first instance.
+
+{{< trueimage src="/images/SCALE/Virtualization/InstancesScreenNoInstances.png" alt="Instances Screen No Instances" id="Instances Screen No Instances" >}}
+
+The **Configuration** dropdown menu includes **[Global Settings](#global-settings-screen)** and **[Manage Volumes](#manage-volumes-screen)**.
+
+**Create New Instance** at the top right of the screen opens the **[Create Instance](#create-instance-wizard-screens)** wizard.
 
 The screen displays a list of VMs configured on the TrueNAS system.
 The **State** toggle displays and changes the state of the VM.
 **Autostart**, when selected, automatically starts the VM if the system reboots, otherwise you must manually start the VM.
 
-{{< trueimage src="/images/SCALE/Virtualization/VirtualMachinesScreenwithVM.png" alt="Virtual Machine Screen" id="Virtual Machine Screen" >}}
+{{< trueimage src="/images/SCALE/Virtualization/InstancesScreenWithInstances.png" alt="Instances Screen" id="Instances Screen" >}}
 
-Click on a VM to expand it and open the [details screen](#virtual-machine-details-screen) with details on that VM and options for a VM.
-Click **Start** to start the VM and show additional options.
+Click on an instance to populate the **Details for *Instance*** widgets with information and configuration options for that instance.
+Click <i class="material-icons" aria-hidden="true" title="Restart">restart_alt</i> to restart or <i class="material-icons" aria-hidden="true" title="Stop">stop_circle</i> to stop a running instance.
+Click <i class="material-icons" aria-hidden="true" title="Start">play_circle</i> to start a stopped instance.
 
+## Configuration Menu
+
+**Configuration** on the **Instances** screen header displays service-level settings that apply to all instances.
+
+* **Global Settings** opens the **[Global Settings](#global-settings)** screen.
+* **Manage Volumes** opens the [**Volumes**](#volumes) screen.
+
+{{< trueimage src="/images/SCALE/Virtualization/InstancesConfigurationMenu.png" alt="Configuration Menu" id="Configuration Menu" >}}
+
+### Global Settings
+
+**Global Settings** opens the **Global Settings** screen showing global options that apply to all instance, including selecting the storage pool for instances and network settings.
+
+{{< trueimage src="/images/SCALE/Virtualization/InstancesGlobalSettingsScreen.png" alt="Global Settings Screen" id="Global Settings Screen" >}}
+
+#### Storage Settings
+
+The **Pool** dropdown list shows a list of available pools on the system.
+Select a pool for instances.
+
+The first time you open the **Instances** screen, the header shows a <i class="fa fa-cog" aria-hidden="true"></i> **Pool is not selected** status.
+**Select Pool** at the top right of the screen opens the **Global Settings** screen.
+Select the pool from the dropdown list, then click **Save**.
+This starts the instances service.
+
+To unset an active pool and stop the instances service, click **Configuration > Global Settings** and select **[Disabled]** from the **Pool** dropdown list.
+ on the **Settings** menu opens the **Unset Pool** dialog. Click **Unset** to unset the pool and turn off the application service.
+Click **Save**.
+When complete, the **Instances** screen displays the **No instances** and <i class="fa fa-cog" aria-hidden="true"></i> **Pool is not selected** statuses.
+
+#### Network Settings
+
+{{< truetable >}}
+| Setting | Description |
+|-----------|-------------|
+| Bridge | Select **Automatic** to use the default network bridge for communication between instances and the TrueNAS host or use the dropdown list to select an existing bridge. See [Accessing NAS from VMs and Containers]({{< relref "/ScaleTutorials/Network/ContainerNASBridge.md" >}}) for more information. |
+| **IPv4 Network** | Displays when **Automatic** is selected for **Bridge**. Enter the IPv4 address and subnet to use for the bridge or leave empty to allow TrueNAS to use the default address. |
+| **IPv6 Network** | Displays when **Automatic** is selected for **Bridge**. Enter the IPv6 address and subnet to use for the bridge or leave empty to allow TrueNAS to use the default address. |
+{{< /truetable >}}
+
+### Volumes
+
+The **Volumes** screen lists all <file>.iso</file> images currently uploaded to the instances service.
+
+{{< trueimage src="/images/SCALE/Virtualization/InstancesVolumesScreen.png" alt="Volumes Screen" id="Volumes Screen" >}}
+
+**Upload New Image** opens a file browser to select an image from the client computer and upload it to TrueNAS for use in instances.
+Select the image and then open it.
+An **Uploading Image** dialog displays.
+When complete, the new image displays on the **Volumes** list.
+
+Click <i class="material-icons" aria-hidden="true" title="Delete">delete</i> on an existing image row to delete that image.
+A **Delete volume** dialog displays.
+Select **Confirm** and then click **Continue** to delete the image.
+
+{{< trueimage src="/images/SCALE/Virtualization/InstancesDeleteVolume.png" alt="Delete Volume Dialog" id="Delete Volume Dialog" >}}
+<!--
 ## Create Virtual Machine Wizard Screens
+
 The **Create Virtual Machine** configuration wizard displays all settings to set up a new virtual machine.
 
 Use **Next** and **Back** to advance to the next or return to the previous screen to change a setting.
-Use **Save** to close the wizard screens and add the new VM to the **Virtual Machines** screen.
+Use **Save** to close the wizard screens and add the new VM to the **Instances** screen.
 
 ### Operating System Screen
+
 The **Operating System** settings specify the VM operating system type, the time the VM system clock uses, the boot method, and  display type.
 
 {{< trueimage src="/images/SCALE/Virtualization/AddVMOperSys.png" alt="Operating System" id="Operating System" >}}
@@ -58,6 +128,7 @@ The **Operating System** settings specify the VM operating system type, the time
 {{< /expand >}}
 
 ### CPU and Memory Screen
+
 The **CPU and Memory** settings specify the CPU mode, model, and memory size. They also let you specify the number of virtual CPUs to allocate to the virtual machine, the number of cores per virtual CPU socket, and the number of threads per core.
 
 {{< trueimage src="/images/SCALE/Virtualization/AddVMMemory.png" alt="CPU and Memory" id="CPU and Memory" >}}
@@ -65,6 +136,7 @@ The **CPU and Memory** settings specify the CPU mode, model, and memory size. Th
 {{< include file="/static/includes/VMCPUandMemorySettings.md" >}}
 
 ### Disks Screen
+
 The **Disks** settings allow specifying how virtual disks are added. Options are to create a new zvol on an existing dataset for a disk image or use an existing zvol or file for the VM. You also specify the disk type, zvol location, and size.
 
 {{< trueimage src="/images/SCALE/Virtualization/CreateVirtualMachineDisks.png" alt="Disks" id="Disks" >}}
@@ -83,6 +155,7 @@ The **Disks** settings allow specifying how virtual disks are added. Options are
 {{< /expand >}}
 
 ### Network Interface Screen
+
 The **Network Interface** settings specify the network adapter type, mac address, and physical network interface card associated with the VM.
 
 {{< trueimage src="/images/SCALE/Virtualization/AddVMNetwork.png" alt="Network Interface" id="Network Interface" >}}
@@ -99,6 +172,7 @@ The **Network Interface** settings specify the network adapter type, mac address
 {{< /expand >}}
 
 ### Installation Media Screen
+
 The **Installation Media** settings specify the operation system installation media image on a dataset or upload one from the local machine.
 
 {{< trueimage src="/images/SCALE/Virtualization/AddVMInstallMedia.png" alt="Installation Media" id="Installation Media" >}}
@@ -123,6 +197,7 @@ The **Installation Media** settings specify the operation system installation me
 {{< /expand >}}
 
 ### GPU Screen
+
 The **GPU** settings specify the graphic processing unit (GPU) for the VM. It also provides the option to hide the VM from the Microsoft Reserved Partition (MSR) on Windows systems.
 
 {{< trueimage src="/images/SCALE/Virtualization/AddVMGPU.png" alt="GPU" id="GPU" >}}
@@ -130,12 +205,14 @@ The **GPU** settings specify the graphic processing unit (GPU) for the VM. It al
 {{< include file="/static/includes/VMGPUSettings.md" >}}
 
 ### Confirm Options Screen
+
 The **Confirm Options** screen displays a summary of settings for the VM. It shows the number of CPUs, cores, threads, memory, name of the VM, and the disk size.
 
-Click **Save** to add the VM to the **Virtual Machines** screen. Click **Back** to return to the previous screens to make changes.
+Click **Save** to add the VM to the **Instances** screen. Click **Back** to return to the previous screens to make changes.
 
 ## Virtual Machine Details Screen
-Expand any VM on the **Virtual Machines** screen to show the details and options for a VM.
+
+Expand any VM on the **Instances** screen to show the details and options for a VM.
 Details include the basic information on the number of virtual CPUs, cores, and threads, the amount of memory, boot load and system clock types, the display port number, and the shutdown timeout in seconds.
 
 {{< trueimage src="/images/SCALE/Virtualization/VirtualMachinesScreenwithVMDetails.png" alt="VM Details" id="VM Details" >}}
@@ -161,6 +238,7 @@ Starting the VM shows additional options for the VM.
 {{< /expand >}}
 
 ### Delete Virtual Machine Dialog
+
 **Delete** removes the VM configuration from your system.
 
 {{< trueimage src="/images/SCALE/Virtualization/DeleteVirtualMachine.png" alt="Delete Virtual Machine" id="Delete Virtual Machine" >}}
@@ -176,26 +254,30 @@ Starting the VM shows additional options for the VM.
 {{< /expand >}}
 
 ### Clone Virtual Machine Window
+
 The **Clone** dialog allows you to create an exact duplicate of the VM using the name entered.
 
 {{< trueimage src="/images/SCALE/Virtualization/CloneVMDialog.png" alt="Clone Virtual Machine" id="Clone Virtual Machine" >}}
 
-Naming the clone VM is optional. The cloned VM displays on the **Virtual Machines** list with the extension **_clone0**.
+Naming the clone VM is optional. The cloned VM displays on the **Instances** list with the extension **_clone0**.
 If you clone the same VM again the extension for the second clone is **clone1**.
 
 ### VM Serial Shell Screen
+
 Click **Serial Shell** to open the **VM Serial Shell** screen where you can enter commands for the selected virtual machine.
 
 {{< trueimage src="/images/SCALE/Virtualization/VMSerialShellScreen.png" alt="Serial Shell" id="Serial Shell" >}}
 
-Click **Virtual Machines** in the header to return to the **Virtual Machine** screen.
+Click **Instances** in the header to return to the **Virtual Machine** screen.
 
 ## Edit Virtual Machine Screen
+
 The **Edit VM** screen settings are a subset of those found on the **[Create Virtual Machine](#create-virtual-machine-wizard-screens)** screens.
 It only includes the general settings found on the wizard **Operating System** screen, **CPU and Memory**, and **GPUs** screen settings.
 To edit disks, network, or display settings, click [**Devices**](#virtual-machine-details-screen) on the expanded view of the VM to open the [**Devices**](#devices-screens) screen.
 
 ### Edit General Settings
+
 The **Edit** screen **General Settings** specify the basic settings for the VM. Unlike the **Create Virtual Machine** wizard, you cannot change the **Enable** or **Start on Boot** status or change the display type or bind address for a saved VM from this screen.
 
 {{< trueimage src="/images/SCALE/Virtualization/EditVMGeneralSettings.png" alt="Edit General Settings" id="Edit General Settings" >}}
@@ -216,13 +298,14 @@ The **Edit** screen **General Settings** specify the basic settings for the VM. 
 
 {{< expand "To edit display type or bind address after VM creation (click to expand)" "v" >}}
 Go to **Virtualization > Virtual Machines** and locate the VM you want to modify.
-Click anywhere on the VM entry on the **Virtual Machines** widget to expand it.
+Click anywhere on the VM entry on the **Instances** widget to expand it.
 Click <i class="material-icons" aria-hidden="true" title="Devices">device_hub</i> **Devices** to open the devices screen associated with the VM.
 From this screen, click the <span class="material-icons">more_vert</span> icon at the right of the display device and select **Edit** to open the **Edit Display Device** screen.
 Use the **Bind** dropdown to select a new IP address.
 {{< /expand >}}
 
 ### Edit CPU and Memory Settings
+
 The **CPU and Memory** settings on the **Edit VM** screen are the same as those in the **Create Virtual Machine** wizard.
 
 {{< trueimage src="/images/SCALE/Virtualization/EditVMCPUandMemory.png" alt="Edit CPU and Memory" id="Edit CPU and Memory" >}}
@@ -230,6 +313,7 @@ The **CPU and Memory** settings on the **Edit VM** screen are the same as those 
 {{< include file="/static/includes/VMCPUandMemorySettings.md" >}}
 
 ### Edit GPU Settings
+
 The **GPU** settings on the **Edit** screen are the same as those in the **Create Virtual Machine** wizard.
 
 {{< trueimage src="/images/SCALE/Virtualization/EditVMGpuSettings.png" alt="Edit GPU" id="Edit GPU" >}}
@@ -237,6 +321,7 @@ The **GPU** settings on the **Edit** screen are the same as those in the **Creat
 {{< include file="/static/includes/VMGPUSettings.md" >}}
 
 ## Devices Screens
+
 The **Devices** screen displays a list of VM devices configured on your system.
 By default, every VM displays three devices: **Disks**, **NIC**, and **Display**.
 
@@ -247,6 +332,7 @@ By default, every VM displays three devices: **Disks**, **NIC**, and **Display**
 {{<include file="/static/includes/addcolumnorganizer.md">}}
 
 ### Device Actions
+
 Each device listed on the **Devices** screen has the same three options, accessed by clicking the <span class="material-icons">more_vert</span> at the right of the device row:
 
 * **Edit** opens the **Edit *type* Device** screen where *type* is the device type selected.
@@ -259,6 +345,7 @@ Each device listed on the **Devices** screen has the same three options, accesse
   Click **Close** to close the dialog.
 
 ## Devices Add Screens
+
 The **Add Device** screen displays different settings based on the **Device Type** selected.
 
 {{< expand "Add CD-ROM Device Type Settings" "v" >}}
