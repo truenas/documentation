@@ -90,7 +90,7 @@ Each shows what is configured on the system, and provides access to the add and 
 
 The **iSCSI Targets** screen shows a list of targets configured in the system and provides access to the add and edit configuration screens. Select a target to see details about that item.
 
-{{< trueimage src="/images/SCALE/Shares/iSCSITargetsScreenwFC.png" alt="iSCSI Targets Screen - Fibre Channel" id="iSCSI Wizard Targets Screen - Fibre Channel" >}}
+{{< trueimage src="/images/SCALE/Shares/iSCSITargetsScreensFC.png" alt="iSCSI Targets Screen - Fibre Channel" id="iSCSI Wizard Targets Screen - Fibre Channel" >}}
 
 **Add** and **Edit** open the configuration screen for the selected target.
 **Delete** opens a dialog with delete options.
@@ -201,7 +201,7 @@ The **Authorized Access** screen displays settings to create new authorized acce
 
 If you have not set up authorized access yet, the **No Authorized Access** screen displays with the **Add Authorized Access** button in the center of the screen. **Add Authorized Access** or **Add** at the top of the screen opens the **Add Authorized Access** screen.
 
-{{< trueimage src="/images/SCALE/Shares/iSCSAuthorizedAccessScreenFC.png" alt="iSCSI Authorized Access Screen - Fibre Channel" id="iSCSI Authorized Access Screen - Fibre Channel" >}}
+{{< trueimage src="/images/SCALE/Shares/iSCSIAuthorizedAccessScreenFC.png" alt="iSCSI Authorized Access Screen - Fibre Channel" id="iSCSI Authorized Access Screen - Fibre Channel" >}}
 
 After adding authorized access to the system, the **Authorized Access** screen displays a list of users.
 **Delete** opens the **Delete** dialog for the selected portal ID. **Confirm** enables the delete option. 
