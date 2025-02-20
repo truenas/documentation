@@ -171,7 +171,7 @@ The default web port for Plex is **32400**.
 
 TrueNAS provides options for data and configuration storage volumes: ixVolumes and host paths.
 Logs and transcode data can use these storage options or you can create directories to hold log and transcode data.
-Both logs and transcode data are not intended for persistent data storage.
+Neither logs nor transcode data are intended for persistent data storage.
 
 Logs and transcode data can use the **temporary** directory option that creates a Docker volume in the hidden **ix-apps** dataset.
 
