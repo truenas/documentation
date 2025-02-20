@@ -3,6 +3,7 @@ title: "Elastic Search"
 description: "Provides installation instructions for the Elastic Search application in TrueNAS."
 weight:
 aliases:
+ - /truenasapps/stableapps/elasticsearch/
 tags:
 - apps
 keywords:
@@ -131,12 +132,14 @@ Enter variables using [Elastic Search with Docker](https://www.elastic.co/guide/
 For example, to set `bootstrap.memory_lock=true`, enter *ES_SETTING_BOOTSTRAP_MEMORY__LOCK* for **Name** and *true* for **Value**.
 
 ### Network Configuration
+
 The default web port for Elastic Search is **30003**.
 {{< include file="static/includes/apps/InstallWizardHostNetworkSettings.md" >}}
 {{< include file="/static/includes/apps/InstallWizardDefaultPorts.md" >}}
 {{< include file="/static/includes/apps/InstallWizardCertificateSettings.md" >}}
 
 ### Storage Configuration
+
 TrueNAS provides two options for storage volumes: ixVolumes and host paths.
 
 {{< include file="/static/includes/apps/InstallAppsStorageConfig.md" >}}
@@ -150,6 +153,7 @@ Stop the app before editing settings.
 {{< include file="/static/includes/apps/InstallAppsStorageConfig2.md" >}}
 
 #### Setting Dataset ACL Permissions
+
 You can configure ACL permissions for the required dataset in the **Install Elastic Search** wizard, or from the **Datasets** screen any time after adding the datasets.
 
 {{< include file="/static/includes/apps/InstallWizardStorageACLConfig.md" >}}
@@ -175,6 +179,7 @@ TrueNAS **Additional Storage** options include the ability to mount an SMB share
 {{< include file="/static/includes/apps/InstallWizardLabelsConfiguration.md" >}}
 
 ### Resources Configuration
+
 {{< trueimage src="/images/SCALE/Apps/InstallElasticSearchResourcesConfig.png" alt="Resources Configuration Settings" id="Resources Configuration Settings" >}}
 
 {{< include file="/static/includes/apps/InstallWizardResourceConfig.md" >}}

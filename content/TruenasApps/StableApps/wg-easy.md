@@ -9,6 +9,7 @@ aliases:
  - /scale/scaletutorials/apps/chartapps/installwgeasyapp/
  - /scale/scaletutorials/apps/stableapps/installwgeasyapp/
  - /truenasapps/communityapps/installwgeasyapp/
+ - /truenasapps/stableapps/installwgeasyapp/
 tags:
 - vpn
 - apps
@@ -26,6 +27,7 @@ This app provides a pre-configured environment with all the necessary components
 {{< include file="/static/includes/ProposeArticleChange.md" >}}
 
 ## Installing the WG Easy Application
+
 WG Easy does not require advanced preparation before installing the application.
 
 To install the **WG Easy** application, go to **Apps**, click **Discover Apps**, then either begin typing WG Easy into the search field or scroll down to locate the **WG Easy** application widget.
@@ -49,6 +51,7 @@ Click **Web PortaL** on the **Application Info** widget to open the WG Easy web 
 {{< trueimage src="/images/SCALE/Apps/WGEasyWebPortal.png" alt="WG Easy Web Portal" id="WG Easy Web Portal" >}}
 
 ## Understanding TrueNAS WG Easy Wizard Settings
+
 The following sections provide more detail explanations of the settings found in each section of the **Install WG Easy** screen.
 
 ### Application Name Settings
@@ -56,6 +59,7 @@ The following sections provide more detail explanations of the settings found in
 {{< include file="/static/includes/InstallWizardAppNameAndVersion.md" >}}
 
 ### Configuration Settings
+
 You can accept the defaults in the **Configuration** settings, or enter the configuration settings you want to use.
 
 {{< trueimage src="/images/SCALE/Apps/WGEasyAppConfigSettings.png" alt="WG Easy Configuration Settings" id="WG Easy Configuration Settings" >}}
@@ -89,6 +93,7 @@ To specify environment variables, click **Add** to the right of **WG Easy Enviro
 {{< /expand >}}
 
 ### Storage Settings
+
 You can install WG Easy using the default settings or enter your own values to customize the storage settings.
 
 Select **Enable Custom Host Path for WG-Easy Configuration Volume** to add the **Host Path for WG-Easy Configuration Volume** field.
@@ -104,6 +109,7 @@ Enter the path in **Mount Path in Pod** where you want to mount the volume insid
 Enter or browse to the host path for the WG Easy application dataset.
 
 ### Networking Settings
+
 Accept the default port numbers in **WireGuard UDP Node Port for WG-Easy** and **WebUI Node Port for WG-Easy**.
 WireGuard always listens on 51820 inside the Docker container.
 Refer to the TrueNAS [default port list](https://www.truenas.com/docs/references/defaultports/) for a list of assigned port numbers.
@@ -112,12 +118,14 @@ To change the port numbers, enter a number within the range 9000-65535.
 {{< trueimage src="/images/SCALE/Apps/WGEasyInstallAppNetworking.png" alt="WG Easy Networking" id="WG Easy Networking" >}}
 
 ### Advanced DNS Settings
+
 WG Easy does not require configuring advanced DNS options.
 Accept the default settings or click **Add** to the right of **DNS Options** to show the fields for option name and value.
 
 {{< trueimage src="/images/SCALE/Apps/WGEasyInstallAddDNSOptions.png" alt="WG Easy Add DNS Options" id="WG Easy Add DNS Options" >}}
 
 ### Resource Configuration Settings
+
 Accept the default values in **Resources Configuration** or select **Enable Pod resource limits** to show the fields to enter new CPU and memory values for the destination system.
 
 {{< trueimage src="/images/SCALE/Apps/WGEasyInstallAddResourceLimits.png" alt="WG Easy Enable Resource Limits" id="WG Easy Enable Resource Limits" >}}

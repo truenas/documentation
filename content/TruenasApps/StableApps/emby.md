@@ -1,14 +1,16 @@
 ---
-title: "Emby"
-description: "Provides instructions to configure TrueNAS and install Emby media server app for movie, TV shows, books, photos, music, and other media files."
+title: "Emby Server"
+description: "Provides instructions to configure TrueNAS and install Emby Server for movies, TV shows, books, photos, music, and other media files."
 weight:
 aliases:
+ - /truenasapps/stableapps/embyapp/
 tags:
 - apps
 - media
 keywords:
 - nas data storage
 - software storage solutions
+
 ---
 
 Emby manages personal media libraries of home videos, movies, TV shows, photos, books, and music files.
@@ -21,9 +23,10 @@ Emby naming conventions for media files are important. Pay close attention to th
 {{< include file="/static/includes/AppsUnversioned.md" >}}
 
 ## Before You Begin
+
 Before you install the Emby app:
 
-* Read the [Emby Support documentation](https://emby.media/support/articles/Home.html).
+- Read the [Emby Support documentation](https://emby.media/support/articles/Home.html).
   Emby instructions in the **Media Preparation** and [**Library Setup**](https://emby.media/support/articles/Library-Setup.html) sections influence how you set up storage volume types and labels used in the TrueNAS **Install Emby** app wizard.
   Organize media files into folders by type, movies, photos, music, etc.
   Emby instructions say to include the release date of movies in the folder name as follows, *movieName (year)*.
@@ -48,6 +51,7 @@ These extra storage volumes are not required and can be added after installing t
 {{< include file="/static/includes/apps/BeforeYouBeginAddNewAppUser.md" >}}
 
 ## Installing the Application
+
 {{< hint info >}}
 This basic procedure covers the required Emby app settings.
 For optional settings, see [Understanding App Installation Wizard Settings](#understanding-app-installation-wizard-settings).
@@ -109,6 +113,7 @@ Click **Next** to show the Emby **Setup Libraries Screen** where you can add you
 Click **Next** to continue setting up your Emby server account. Advance through the setup screens until complete, then click **Finish**.
 
 ## Understanding App Installation Wizard Settings
+
 The following section provides more detailed explanations of the settings in each section of the **Install Emby** installation wizard.
 
 ### Application Name Settings
@@ -116,9 +121,11 @@ The following section provides more detailed explanations of the settings in eac
 {{< include file="/static/includes/apps/InstallWizardAppNameAndVersion.md" >}}
 
 ### Emby Configuration Settings
+
 {{< include file="/static/includes/apps/InstallWizardTimezoneSetting.md" >}}
 
 #### Adding Environment Variables
+
 Emby does not use environment variables to customize client or server settings in their Web UI.
 The TrueNAS Emby app is preconfigured with all environment variables required to deploy the application.
 
@@ -127,6 +134,7 @@ The TrueNAS Emby app is preconfigured with all environment variables required to
 {{< include file="/static/includes/apps/InstallWizardUserAndGroupConfig.md" >}}
 
 ### Network Configuration Settings
+
 The default web port for the TrueNAS Emby app is **9096**.
 Emby automatically maps port number assignments that do not match their port numbers, **8096** for HTTP, and **8920** for HTTPS usage and connections.
 
@@ -135,6 +143,7 @@ Emby automatically maps port number assignments that do not match their port num
 {{< include file="/static/includes/apps/InstallWizardAdvancedDNSSettings.md" >}}
 
 ### Storage Configuration Settings
+
 TrueNAS provides two options for storage volumes: ixVolumes and host paths.
 Emby only expects one host path storage volume, **config** to hold app configuration data, but you can add additional storage volumes for media library, or log storage if you choose.
 
@@ -146,6 +155,7 @@ You can add extra storage volumes during the app installation, or edit the appli
 {{< include file="/static/includes/apps/InstallAppStorageConfig2.md" >}}
 
 #### Setting Dataset ACL Permissions
+
 You can configure ACL permissions for the required dataset in the **Install Emby** wizard, or from the **Datasets** screen any time after adding the datasets.
 
 {{< include file="/static/includes/apps/InstallWizardStorageACLConfig.md" >}}
@@ -159,21 +169,24 @@ Save the ACL before leaving the screen.
 {{< /expand >}}
 
 #### Mounting an SMB Share Storage Volume
+
 TrueNAS **Additional Storage** options include the ability to mount an SMB share inside the container pod.
 {{< expand "Configuring Additional Storage Volumes" "v" >}}
 If you choose to configure additional storage volumes, click **Add** to the right of **Additional Storage** to show the **Type** field with three options:
-* **HostPath (Path that already exists on the system)** requires an existing dataset.
-* **ixVolume (Dataset created automatically by the system)** creates a storage volume in the hidden **ix-apps** dataset.
-* **SMB/CIFS Share (Mounts a volume to a SMB share)** shows settings to create an SMB share storage volume.
+
+- **HostPath (Path that already exists on the system)** requires an existing dataset.
+- **ixVolume (Dataset created automatically by the system)** creates a storage volume in the hidden **ix-apps** dataset.
+- **SMB/CIFS Share (Mounts a volume to a SMB share)** shows settings to create an SMB share storage volume.
   You must create the SMB share user and share dataset before adding this type.
-* **Anonymous (Temporary directory created on the disk)** creates a temporary directory in the hidden **ix-apps** dataset.
-* **Tmpfs (Temporary directory created on the RAM)** creates a temporary directory in RAM.
+- **Anonymous (Temporary directory created on the disk)** creates a temporary directory in the hidden **ix-apps** dataset.
+- **Tmpfs (Temporary directory created on the RAM)** creates a temporary directory in RAM.
 {{< /expand >}}
 
 If adding an SMB share as an additional storage volume, create the SMB dataset and share user(s), and add the user ID for the share user(s) to the dataset ACL.
 {{< include file="/static/includes/apps/InstallWizardStorageSMBOption.md" >}}
 
 ### Labels Configuration
+
 Emby uses metadata to add information to media files, such as where media files are saved, the language used, and parental controls.
 Emby uses tags to add identification information to media files.
 

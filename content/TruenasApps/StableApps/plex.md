@@ -3,6 +3,7 @@ title: "Plex"
 description: "Provides installation instructions to configure and deploy the Plex app in TrueNAS."
 weight:
 aliases:
+ - /truenasapps/stableapps/plexapp/
 tags:
 - apps
 - media
@@ -12,12 +13,12 @@ keywords:
 - TrueNAS media applications
 ---
 
-
 Plex is a media server that allows you to manage and stream your media (music, movies, live TV, etc.) to any Plex client.
 
 {{< include file="/static/includes/AppsUnversioned.md" >}}
 
 ## Before You Begin
+
 Before you install the Plex app:
 
 * Set up a Plex account.
@@ -35,13 +36,14 @@ Before you install the Plex app:
 
   You can create a dataset or use a temporary directory option for log data.
   Transcode data is not useful or meant for persistent storage, so using a temporary directory is a better option.</p>
-   
+
   {{< include file="/static/includes/apps/BeforeYouBeginAddAppDatasetsProcedure.md" >}}
 
   You can set up the permissions (ACLs) for these datasets after adding them using the <b>Edit ACL</b> screen, or wait and use the <b>Install Plex</b> wizard ACL settings to add permissions.
   You can also edit permissions after using either method.</div>
   
 ### Installing the Plex App
+
 {{< hint info >}}
 This basic procedure covers the required Plex app settings.
 For optional settings, see [Understanding App Installation Wizard Settings](#understanding-app-installation-wizard-settings).
@@ -100,6 +102,7 @@ Click **Web Portal** on the **Application Info** widget to open the Plex web por
 After signing in, Plex guides you through several initial media server configuration screens if this is a new account or shows your default Plex media screen for your existing configured account.
 
 ## Understanding App Installation Wizard Settings
+
 The following section provides more detailed explanations of the settings in each section of the **Install** installation wizard.
 
 ### Application Name Settings
@@ -107,6 +110,7 @@ The following section provides more detailed explanations of the settings in eac
 {{< include file="/static/includes/apps/InstallWizardAppNameAndVersion.md" >}}
 
 ### Plex Configuration Settings
+
 Plex configuration settings include setting up the server timezone, authentication to the Plex account, location of the Plex container image, local network settings, and adding devices or additional environment variables to apply to the container.
 
 {{< trueimage src="/images/SCALE/Apps/InstallPlexConfig1.png" alt="Install Plex Configuration Settings" id="Install Plex Configuration Settings" >}}
@@ -120,6 +124,7 @@ The Plex app does not deploy if you do not include this token.
 Accept the default value in **Image** to use the container image for the TrueNAS app.
 
 #### Setting Up Local Network
+
 TrueNAS shows the default IP addresses detected for your system.
 If these address fields are not shown in the wizard, your network is considered to be on the external network.
 
@@ -133,6 +138,7 @@ Therefore, all connections from other clients are considered to be on the extern
 If set, all other IP addresses are considered to be external to your local network.
 
 #### Adding Devices in the Container
+
 Plex account settings allow you to add and manage devices, such as a USB TV tuner or similar hardware, that connect to your media server, both on the local network you define and remotely from external network connections.
 Adding devices in the TrueNAS Plex app passes devices through to your Plex account.
 Click **Add** to the right of **Devices** in the **Install Plex** wizard for each device to add.
@@ -142,6 +148,7 @@ Click **Add** to the right of **Devices** in the **Install Plex** wizard for eac
 Enter the device name in **Host Device** and **Container Device**. For example, device */dev/dvb*.
 
 #### Adding Environment Variables
+
 {{< include file="/static/includes/apps/AppInstallWizardEnvironVariablesSettings.md" >}}
 
 Refer to Plex documentation for more information on [environment variables](https://support.plex.tv/articles/201105343-advanced-hidden-server-settings/) they provide to customize your app deployment.
@@ -153,6 +160,7 @@ Refer to Plex documentation for more information on [environment variables](http
 {{< include file="/static/includes/apps/AppInstallWizardUserAndGroupConfig.md" >}}
 
 ### Network Configuration
+
 The default web port for Plex is **32400**.
 
 {{< include file="/static/includes/apps/AppInstallWizardNetworkConfig.md" >}}
@@ -160,9 +168,10 @@ The default web port for Plex is **32400**.
 {{< include file="/static/includes/apps/InstallWizardAdvancedDNSSettings.md" >}}
 
 ### Storage Configuration
+
 TrueNAS provides options for data and configuration storage volumes: ixVolumes and host paths.
 Logs and transcode data can use these storage options or you can create directories to hold log and transcode data.
-Both logs and transcode data are not intended for persistent data storage. 
+Both logs and transcode data are not intended for persistent data storage.
 
 Logs and transcode data can use the **temporary** directory option that creates a Docker volume in the hidden **ix-apps** dataset.
 
@@ -172,6 +181,7 @@ This makes the **tmpfs** directory option a better choice for this transcode dat
 Neither directory storage option provides easy access to stored data, so if you want to store and access log data, create a dataset called **logs**.
 
 Plex required host path storage volumes:
+
 * **data** to use as the Plex data directory for database and metadata storage.
 * **config** to use as the Plex app configuration storage volume.
 * **logs** optional if you want to save and have easy access to log data.
@@ -185,6 +195,7 @@ See [Before You Begin](#before-you-begin) for more information on creating app d
 {{< include file="/static/includes/apps/AppInstallWizardTemporaryAndTmpfsDirectories.md" >}}
 
 #### Setting Dataset ACL Permissions
+
 You can configure ACL permissions for the required dataset in the **Install Plex** wizard, or from the **Datasets** screen any time after adding the datasets.
 
 {{< include file="/static/includes/apps/InstallWizardStorageACLConfig.md" >}}
@@ -199,6 +210,7 @@ See [Setting Up Permissions]({{< relref "PermissionsSCALE.md" >}}) and [Edit ACL
 {{< /expand >}}
 
 #### Mounting an SMB Share Storage Volume
+
 TrueNAS **Additional Storage** options include the ability to mount an SMB share inside the container pod.
 
 {{< include file="/static/includes/apps/InstallWizardStorageSMBOption.md" >}}
@@ -211,22 +223,26 @@ TrueNAS **Additional Storage** options include the ability to mount an SMB share
 {{< include file="/static/includes/apps/InstallWizardGPUPassthrough.md" >}}
 
 ## Troubleshooting Tips
+
 Before editing Plex app settings, stop the app, and then edit settings. After saving changes, restart the app.
 
 Refer to the Plex support website and documentation for assistance with your Plex media server issues.
 
 ### App Sticks in Deploying State
+
 You must get a claim token from Plex and add it to the app or Plex does not deploy. If your app is not deploying, try obtaining a fresh claim token from Plex. Stop the Plex app, then edit the TrueNAS Plex app settings to paste the new token into the **Claim Token** field. Save the change. Restart the app.
 
 If the app still does not start, try clearing your screen cache. This can sometimes prevent showing the app as fully deployed.
 
 ### Plex App NVIDIA GPU Driver Issues
+
 If Plex reports issues with drivers you might have to delete the app and recreate a fresh app container using the same datasets.
 Also, check **Apps > Configuration > Settings** to make sure the NVIDIA driver option is selected.
 
 Search the [TrueNAS forum](https://forums.truenas.com/) for Plex discussion threads for other tips and suggestions.
 
 ### Cannot Access Libraries or Media Files
+
 Check the dataset permissions, and verify the user accessing these files has the correct permissions.
 You can edit dataset permissions using the **Edit** button on the **Permissions** widget on the **Datasets** screen.
 Select the dataset, scroll down to the **Permissions** widget, and click **Edit** to open the **Edit ACL** screen.
@@ -236,6 +252,6 @@ Assign the level of permissions you want to assign, then save the ACL changes.
 
 You can also add the user in the Plex app settings.
 Click on the Plex app row on the **Installed** application table. Stop the app, then click **Edit**.
-Scroll down to the storage volume for **Data**, click **Add** to the right of **ACL Entries**. 
+Scroll down to the storage volume for **Data**, click **Add** to the right of **ACL Entries**.
 Select **Entry is for a USER** as the **ID Type**, enter the user ID number, and then select the level of permission you want to allow.
 Save the changes, then restart the app.

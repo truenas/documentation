@@ -1,5 +1,5 @@
 ---
-title: "Pi-Hole"
+title: "Pi-hole"
 description: "Provides information on installing Pi-hole to support network-level advertisement and internet tracker blocking."
 weight: 
 aliases: 
@@ -7,6 +7,7 @@ aliases:
  - /scale/scaletutorials/apps/chartapps/installpiholeapp/
  - /scale/scaletutorials/apps/stableapps/installpiholeapp/
  - /truenasapps/communityapps/installpiholeapp/
+ - /truenasapps/stableapps/installpiholeapp/
 tags:
 - apps
 - dns

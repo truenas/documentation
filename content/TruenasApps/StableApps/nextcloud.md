@@ -9,6 +9,7 @@ aliases:
  - /scale/scaletutorials/apps/stableapps/installnextcloudmedia/
  - /scale/scaletutorials/apps/communityapps/installnextcloudmedia/
  - /truenasapps/communityapps/installnextcloudmedia/
+ - /truenasapps/stableapps/installnextcloudmedia/
 tags:
 - apps
 - media
@@ -30,6 +31,7 @@ For more information on the FreeBSD-based Nextcloud plugin, see [Nextcloud]({{< 
 {{< include file="/static/includes/AppsUnversioned.md" >}}
 
 ## Before You Begin
+
 Before you install the Nextcloud app:
 
 {{< include file="/static/includes/apps/BeforeYouBeginStableApps.md" >}}
@@ -88,6 +90,7 @@ Before you install the Nextcloud app:
   If you do not have an existing Nextcloud account, you can create one using the application install wizard.
 
 ### Installing the Nextcloud App
+
 {{< hint info >}}
 This basic procedure covers the required Nextcloud app settings.
 For optional settings, see [Understanding App Installation Wizard Settings](#understanding-app-installation-wizard-settings).
@@ -176,6 +179,7 @@ Click **Web Portal** on the **Application Info** widget to open the Nextcloud we
 {{< trueimage src="/images/SCALE/Apps/NextcloudSignInScreen.png" alt="Nextcloud Sign In Screen" id="Nextcloud Sign In Screen" >}}
 
 ## Understanding App Installation Wizard Settings
+
 The following section provides more detailed explanations of the settings in each section of the **Install** installation wizard.
 
 ### Application Name Settings
@@ -183,6 +187,7 @@ The following section provides more detailed explanations of the settings in eac
 {{< include file="/static/includes/apps/InstallWizardAppNameAndVersion.md" >}}
 
 ### Nextcloud Configuration Settings
+
 Nextcloud configuration settings include setting up credentials, APT packages (previously referred to as the commands), the host IP and port, data directory path, upload limits, execution times, memory limits and cache memory consumption, adding a cron job with schedule, and adding additional environment variables.
 
 If you have an existing Nextcloud account add the credentials for that account in the **Admin User** and **Admin Password** fields.
@@ -190,6 +195,7 @@ If you do not have an existing account enter the name and password you want to u
 
 {{< expand "Adding APT Packages" "v" >}}
 Nextcloud has three APT package options:
+
 * **ffmpeg**
 * **smbclient**
 * **ocrmypdf**
@@ -230,6 +236,7 @@ If enabled, **Cron** shows the **Schedule** option. The default value is <b>*/5 
 Refer to Nextcloud documentation for more information on environment variables.
 
 ### Network Configuration
+
 The default web port for Nextcloud is **30027**.
 
 {{< include file="/static/includes/apps/InstallWizardDefaultPorts.md" >}}
@@ -243,11 +250,13 @@ Enable **Use a different port for URL rewrites** to show the **External Port** s
 Nextcloud continues to listen on the node port.
 
 ### Storage Configuration
+
 TrueNAS provides two options for storage volumes: ixVolumes and host paths.
 
 {{< include file="/static/includes/apps/InstallAppsStorageConfig.md" >}}
 
 Nextcloud needs three datasets for host path storage volume configurations:
+
 * **html** to use as the **AppData** storage volume.
 * **data** to use as the **User Data** storage volume.
 * **postgres_data** to use as the **Postgres Data** storage volume.
@@ -262,6 +271,7 @@ See the instructions provided in the [Before You Begin](#before-you-begin) secti
 
 {{< expand "Earlier Nextcloud Deployment Datasets" "v" >}}
 Earlier deployments of the Nextcloud app use five datasets, the parent dataset for the application (**nextcloud**) and the four child datasets:
+
 * **appdata** that contains HTML, apps, custom_themes, config, etc.
 * **userdata** that contains the actual files uploaded by the user
 * **pgdata** that contains the database files.
@@ -286,6 +296,7 @@ Click **Advanced Options** if you want to make any other setting changes. Click 
 
 Repeat this two more times to add the other child datasets to the **nextcloud** parent dataset.
 When finished you should have the **nextcloud** parent dataset with three child datasets under it. Our example paths are:
+
 * */mnt/tank/nextcloud/***html**
 * */mnt/tank/nextcloud/***data**
 * */mnt/tank/nextcloud/***postgres_data**
@@ -298,6 +309,7 @@ When finished you should have the **nextcloud** parent dataset with three child 
 {{< include file="/static/includes/apps/InstallWizardStorageACLConfig.md" >}}
 
 #### Mounting an SMB Share
+
 TrueNAS **Additional Storage** options include the ability to mount an SMB share inside the container pod.
 
 {{< include file="/static/includes/apps/InstallWizardStorageSMBOption.md" >}}
@@ -324,11 +336,13 @@ For more details on installing Collabora, visit the [Collabora TrueNAS tutorial]
 ## Troubleshooting Tips
 
 ### App Sticks in Deploying State
+
 If the app does not deploy, try adding the **www-data** user and group (33:33) to the *nextcloud* dataset but do not set recursive.
 Stop the app before editing the ACL permissions for the datasets.
 
 Next, add the **www-data** user and group to the **html** and **data** datasets. You can set this to recursive, but it is not necessary.
 To do this:
+
 1. Select the dataset, scroll down to the **Permissions** widget, click **Edit** to open the **ACL Editor** screen.
 2. Click **Add Item**, select **User** in **Who** and **www-data** in the **User** field, and select **Full Control** in **Permissions**.
 3. Add an entry for the group by repeating the above steps but select **Group**.

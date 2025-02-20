@@ -115,7 +115,7 @@ The following section provides more detailed explanations of the settings in eac
 
 *Collabora* configuration settings include setting up credentials, *APT packages* (previously referred to as the commands), the *host IP and port, data directory path, upload limits, execution times, memory limits and cache memory consumption, adding a cron job with schedule*, and *adding additional environment variables*.
 
-The **Collabora Configuration** section contains a **Database Password** field. This is where you set the password Collabora uses to securely connect to your TrueNAS system. This is *not* the field where you enter your current Collabora password or the password you intend to use to log into the app. 
+The **Collabora Configuration** section contains a **Database Password** field. This is where you set the password Collabora uses to securely connect to your TrueNAS system. This is *not* the field where you enter your current Collabora password or the password you intend to use to log into the app.
 
 Upon deployment, users can set the desired Collabora login credentials or log in to an existing account from the Collabora UI.
 
@@ -134,13 +134,14 @@ You can utilize the **Extra Parameters** settings to further customize the behav
 {{< include file="/static/includes/apps/InstallWizardEnvironVariablesSettings.md" >}}
 Refer to [*Collabora* documentation](https://www.home-assistant.io/docs/configuration/yaml/) for more information on environment variables.
 
-### User and Group Configuration 
+### User and Group Configuration
 
 We recommend making a **user** and **group** for the Collabora app. If you follow the recommendation, give the user and group full access to the config-storage, media-storage, and data-storage datasets.
 
 {{< include file="/static/includes/apps/InstallWizardUserAndGroupConfig.md" >}}
 
 ### Network Configuration
+
 The default web port for *Collabora* is ***9980***.
 
 {{< include file="/static/includes/apps/InstallWizardDefaultPorts.md" >}}
@@ -148,6 +149,7 @@ The default web port for *Collabora* is ***9980***.
 {{< include file="/static/includes/apps/InstallWizardCertificateSettings.md" >}}
 
 ### Storage Configuration
+
 TrueNAS provides two options for storage volumes: ixVolumes and host paths.
 
 {{< include file="/static/includes/apps/InstallAppsStorageConfig.md" >}}
@@ -157,10 +159,10 @@ TrueNAS provides two options for storage volumes: ixVolumes and host paths.
 If you create datasets within TrueNAS for the Collabora app, set **Type** to **Host Path (Path that already exists on the system)**, and select your elective datasets in the **Host Path** field.
 
 If you group these datasets under a parent dataset named *Collabora*, configure the [ACL permissions]({{< relref "PermissionsSCALE.md" >}}) for this parent dataset and add an ACE entry for the ***Collabora*** user.
-If the app includes postgres storage volumes, include the following information 
+If the app includes postgres storage volumes, include the following information
 If the app installation wizard cannot set up the ACL type or correctly add user permissions for the postgres storage volume,
 you must configure these outside the install wizard using the **Add Dataset** and **Edit ACL** screens.
-When adding the ***postgresdata*** dataset set it up with a POSIX ACL, and add the ***Collabora*** user as the owner user and group with full control permissions. 
+When adding the ***postgresdata*** dataset set it up with a POSIX ACL, and add the ***Collabora*** user as the owner user and group with full control permissions.
 
 If you have a postgres dataset, also include information in the Before You Begin section about adding the dataset and permissions.
 
@@ -170,6 +172,7 @@ You can add extra storage volumes during installation or edit the application af
 {{< include file="/static/includes/apps/InstallAppsStorageConfig2.md" >}}
 
 #### Setting Dataset ACL Permissions
+
 You can configure ACL permissions for the required dataset in the **Install Collabora** wizard, or from the **Datasets** screen any time after adding the datasets.
 
 {{< include file="/static/includes/apps/InstallWizardStorageACLConfig.md" >}}
