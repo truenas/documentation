@@ -152,7 +152,7 @@ If you group these datasets under a parent dataset named *Home Assistant*, confi
 If the app includes postgres storage volumes, include the following information
 If the app installation wizard cannot set up the ACL type or correctly add user permissions for the postgres storage volume,
 you must configure these outside the install wizard using the **Add Dataset** and **Edit ACL** screens.
-When adding the ***postgresdata*** dataset set it up with a POSIX ACL, and add the ***Home Assistant*** user as the owner user and group with full control permissions.
+When adding the ***postgresdata*** dataset, set it up with a POSIX ACL and add the ***Home Assistant*** user as the owner user and group with full control permissions.
 
 If you have a postgres dataset, also include information in the Before You Begin section about adding the dataset and permissions.
 
