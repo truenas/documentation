@@ -90,11 +90,14 @@ Select the image and then open it.
 An **Uploading Image** dialog displays.
 When complete, the new image displays on the **Volumes** list.
 
-Click <i class="material-icons" aria-hidden="true" title="Delete">delete</i> on an existing image row to delete that image.
+Click <i class="material-icons" aria-hidden="true" title="Delete">delete</i> on an image row to delete that image.
 A **Delete volume** dialog displays.
-Select **Confirm** and then click **Continue** to delete the image.
 
 {{< trueimage src="/images/SCALE/Virtualization/InstancesDeleteVolume.png" alt="Delete Volume Dialog" id="Delete Volume Dialog" >}}
+
+Select **Confirm** and then click **Continue** to delete the image.
+To prevent accidental deletion of an in-use image, the delete icon is not selectable for active images.
+
 <!--
 ## Create Virtual Machine Wizard Screens
 
