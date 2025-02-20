@@ -1749,7 +1749,6 @@ MigrateCOREtoSCALEWarning
 klarasystems
 AdminRoles
 Autoextend
-JiraFilterInstructions
 systemd-nspawn
 conformant
 SCALEGettingStarted
