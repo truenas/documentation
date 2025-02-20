@@ -7,12 +7,14 @@ aliases:
  - /scale/scaletutorials/apps/stableapps/syncthingcharts/
  - /scale/scaletutorials/apps/stableapps/syncthingstable/
  - /truenasapps/communityapps/syncthingcharts/
+ - /truenasapps/stableapps/syncthingstable/
 tags:
 - apps
 - syncthing
 ---
 
 ## Syncthing Overview
+
 {{< include file="/static/includes/SyncthingOverview.md" >}}
 
 {{< include file="/static/includes/SyncthingArticleIntro.md" >}}
@@ -27,6 +29,7 @@ The **stables** and **enterprise** train versions of the Syncthing app widget di
 {{< /expand >}}
 
 ## Before Installing Syncthing
+
 Before launching the app installation wizard, do the following:
 
 {{< include file="/static/includes/apps/SyncthingFirstSteps.md" >}}
@@ -65,6 +68,7 @@ See [Setting Up Permissions]({{< relref "PermissionsSCALE.md" >}}) and [Edit ACL
 {{< /expand >}}</div>
 
 ## Installing the Syncthing Application
+
 {{< hint info >}}
 This basic procedure covers the required Syncthing app settings.
 For optional settings, see [Understanding App Installation Wizard Settings](#understanding-app-installation-wizard-settings).
@@ -101,6 +105,7 @@ For more information on storage settings, see [**Storage Settings**](#storage-se
 {{< include file="/static/includes/apps/SyncthingCompleteInstall.md" >}}
 
 ### Securing the Syncthing Web UI
+
 After installing and starting the Syncthing application, launch the Syncthing web UI.
 Go to **Actions > Settings** and set a user password for the web UI.
 
@@ -111,6 +116,7 @@ Go to **Actions > Settings** and set a user password for the web UI.
 {{< include file="/static/includes/SyncthingWebPortalInfo.md" >}}
 
 ## Understanding App Installation Wizard Settings
+
 The following sections provide more detailed explanations of the settings in each section of the **Install Syncthing** screen.
 
 ### Application Name Settings
@@ -130,6 +136,7 @@ Click here for more information on [Syncthing environmental variables](https://d
 {{< include file="/static/includes/apps/InstallWizardUserAndGroupConfig.md" >}}
 
 ### Networking Settings
+
 Accept the default port numbers in **Web Port for Syncthing**, **TCP Port for Syncthing**, and **UDP Port for Syncthing**.
 The TrueNAS Syncthing stable app listens on port **20910**.
 The default TCP port is **20978** and the default UDP port is **20979**.
@@ -145,6 +152,7 @@ Disabling **Host Network** shows the TCP and UDP port numbers, and sets the web 
 {{< include file="/static/includes/apps/InstallWizardAdvancedDNSSettings.md" >}}
 
 ### Storage Settings
+
 TrueNAS provides two storage options for storage volumes: ixVolumes and host paths.
 
 {{< trueimage src="/images/SCALE/Apps/InstallSyncthingStorageConfigACLandACESettings.png" alt="Syncthing Config Dataset ACL and ACE Settings" id="Syncthing Config Dataset ACL and ACE Settings" >}}
@@ -165,6 +173,7 @@ If you organize the config dataset under a parent dataset named *syncthing*, con
 You can add extra storage volumes during the app installation, or edit the application after it deploys. Stop the app before editing settings.
 
 #### Setting Dataset ACL Permissions
+
 You can configure ACL permissions for the required dataset in the **Install Syncthing** wizard or from the **Datasets** screen after adding the datasets.
 
 {{< include file="/static/includes/apps/InstallWizardStorageACLConfig.md" >}}
@@ -180,6 +189,7 @@ For more infomration, see [Setting Up Permissions]({{< relref "PermissionsSCALE.
 {{< /expand >}}
 
 #### Mounting an SMB Share Storage Volume
+
 The TrueNAS Syncthing app includes the option to mount an SMB share inside the container pod.
 
 {{< include file="/static/includes/apps/InstallWizardStorageSMBOption.md" >}}

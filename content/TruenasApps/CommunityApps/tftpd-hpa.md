@@ -7,6 +7,7 @@ aliases:
  - /scale/scaletutorials/systemsettings/services/tftpservicescale/
  - /scale/scaleuireference/systemsettings/services/tftpservicescreen/
  - /scale/scaletutorials/apps/communityapps/tftp-hpaapp/
+ - /truenasapps/communityapps/tftp-hpaapp/
 tags:
 - tftp
 - apps
@@ -62,10 +63,12 @@ The TFTP Server application displays on the **Installed** applications screen wh
 {{< trueimage src="/images/SCALE/Apps/TFTPServerAppInstalled.png" alt="TFTP Server App Installed" id="TFTP Server App Installed" >}}
 
 ### Application Name Settings
+
 Accept the default values or enter a name in **Application Name**.
 Accept the default **Version**.
 
 ### TFTP Configuration Settings
+
 Select the location of the TrueNAS server in **Timezone**.
 
 {{< trueimage src="/images/SCALE/Apps/InstallTFTPServerAddTFTPConfigEnvironVariables.png" alt="TFTP Configuration Add Environment Variables" id="TFTP Configuration Add Environment Variables" >}}

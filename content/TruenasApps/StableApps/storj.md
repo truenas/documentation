@@ -7,6 +7,7 @@ aliases:
  - /scale/scaletutorials/apps/chartapps/addstorjnode/
  - /scale/scaletutorials/apps/stableapps/addstorjnode/
  - /truenasapps/communityapps/addstorjnode/
+ - /truenasapps/stableapps/addstorjnode/
 tags:
 - apps
 - crypto
@@ -53,7 +54,7 @@ Before you can configure your system to act as a Storj node:
   This can take a long time and consume system resources while it generates one.
 
 * Prepare TrueNAS for the app installation by [creating the datasets](#creating-the-storj-datasets-on-truenas) for the application storage, and a new user if not using the default apps user.
-   
+
    Create a parent dataset, such as *storj-node* and then the two storage datasets (**identity** and **data**) under it.
    Select **apps** as the **Dataset Preset** for these datasets. You can modify the dataset ACLs at the time of creation, or modify them later when adding them in the app.
 
@@ -71,6 +72,7 @@ Before you can configure your system to act as a Storj node:
 Storj provides a [Quickstart Node Setup Guide](https://docs.storj.io/node/setup) with step-by-step instructions to help users create a Storj node.
 
 ## Getting a Wallet Address
+
 Create a wallet address using any crypto wallet provider such as kraken.com, coinbase.com, Bitcoin Wallet, etc.
 If you already have a wallet for another crypto-currency application, you can use the existing wallet.
 
@@ -79,6 +81,7 @@ See [Storj Wallet Configuration](https://support.storj.io/hc/en-us/articles/3600
 Special considerations regarding how to protect and manage a wallet are outside the scope of this article.
 
 ## Obtaining an Authentication Token for Storj
+
 Open a browser window and go to Storj [Get an Authorization Token](https://docs.storj.io/node/get-started/auth-token).
 Enter an email address, select **I'm not a robot**, then click **Continue**.
 
@@ -87,6 +90,7 @@ Enter an email address, select **I'm not a robot**, then click **Continue**.
 Copy the auth token to use later in this procedure. Keep the token in a secure location.
 
 ## Configuring the Router and Firewall
+
 To allow the Storj application to communicate with Storj and other nodes, configure your router with port forwarding and the firewall to allow these ports to communicate externally:
 
 1. Add a new port forwarding rule to your router for:
@@ -107,6 +111,7 @@ This enables QUIC, a protocol based on UDP that provides more efficient internet
 Alternatively, use a dynamic DNS (DDNS) service such as NoIP to [create a host name](#creating-a-ddns-host-name) if you do not have a static IP address for the system nodes.
 
 ## Creating a DDNS Host Name
+
 Create a DDNS host name that points to your router WAN IP address, and provide a domain name to use for accessing the Storj application.
 You can use a dynamic DNS service that allows you to set up a DDNS host name.
 You can use a service such as NoIP to create a domain name (i.e., *name.ddns.net*) and then point it at the WAN IP address of your router.
@@ -114,6 +119,7 @@ You can use a service such as NoIP to create a domain name (i.e., *name.ddns.net
 To verify it works, use <code>nslookup <i>name.ddns.net</i></code> where <code><i>name.ddns.net</i></code> is your DDNS host name.
 
 ## Creating the Storj Datasets on TrueNAS
+
 [Create three new datasets]({{< relref "datasetsscale.md#creating-a-dataset" >}}), one parent with two child datasets nested under it.
 
 Log into TrueNAS then go to **Datasets** and click **Add Dataset** to open the **Add Dataset** screen.
@@ -133,12 +139,14 @@ Log into TrueNAS then go to **Datasets** and click **Add Dataset** to open the *
 The **Datasets** screen displays two nested datasets **data** and **identity** underneath the **storj-node** dataset.
 
 ### Setting the Dataset ACL
+
 After adding each dataset you might be prompted to change the ACL permissions or to return to the **Datasets** screen.
 You can modify the dataset permissions now, or wait to modify permissions when you add the dataset as a storage volume in the **Storage Configuration** section of the **Install Storj** wizard.
 
 See [Setting Up Permissions]({{< relref "PermissionsSCALE.md" >}}) for more information on changing permissions in TrueNAS.
 
 ## Installing the Storj App
+
 Go to **Apps**, click on **Discover Apps**.
 Either scroll down to the **Storj** application or begin typing **Storj** into the search field to locate the widget.
 
@@ -190,7 +198,7 @@ TrueNAS alerts you when a new version is available for deployed apps, and allows
 
    {{< trueimage src="/images/SCALE/Apps/InstallStorjNetworkConfig.png" alt="Storj Network Settings" id="Storj Network Settings" >}}
 
-4. Accept the default **Network Configuration** settings. 
+4. Accept the default **Network Configuration** settings.
    If you want to use different ports, check the [Default Ports]({{< relref "/References/DefaultPorts.md" >}}) for a list of available or unavailable port numbers.
    Leave **Host Network** unselected.
 
@@ -228,6 +236,7 @@ TrueNAS alerts you when a new version is available for deployed apps, and allows
    When the installation completes it changes to **Running**.
 
 ### Using the Web Portal
+
 Click **Web Portal** on the **Application Info** widget to open the Storj web interface.
 
 The time required to install the Storj App varies depending on your hardware and network configuration.

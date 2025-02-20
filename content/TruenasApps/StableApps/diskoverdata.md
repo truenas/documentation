@@ -3,6 +3,7 @@ title: "Diskover Data"
 description: "Provides instructions to configure TrueNAS and install Diskover Data ."
 weight:
 aliases:
+ - /truenasapps/stableapps/diskoverdataapp/
 tags:
 - apps
 - media
@@ -27,6 +28,7 @@ The app provides storage for Diskover Data and the Elasticsearch component. Read
 {{< include file="/static/includes/AppsUnversioned.md" >}}
 
 ## Before You Begin
+
 Before you install the Diskover Data app:
 
 * Read the [Diskover Support documentation](https://docs.diskoverdata.com/)
@@ -54,6 +56,7 @@ You can create more datasets if you want to add additional storage volumes for t
 {{< include file="/static/includes/apps/BeforeYouBeginAddNewAppUser.md" >}}
 
 ## Installing the Application
+
 {{< hint info >}}
 This basic procedure covers the required Diskover Data app settings.
 For optional settings, see [Understanding App Installation Wizard Settings](#understanding-app-installation-wizard-settings).
@@ -90,7 +93,7 @@ For Diskover Data, click twice to add the **568** and **0** user IDs. For the El
 
 Select **Force Flag**.
 
-Repeat the steps above for each storage volume, **data** for Diskover Data data storage, and **data** for the Elasitcsearch component data storage.
+Repeat the steps above for each storage volume, **data** for Diskover Data data storage, and **data** for the Elasticsearch component data storage.
 See [Storage Configuration Settings](#storage-configuration-settings) below for more information.
 
 Accept the defaults in **Resources Configuration**, and select the GPU option if applicable.
@@ -100,12 +103,12 @@ The **Installed** screen displays with the **Diskover Data** app in the **Deploy
 
 {{\< trueimage src="/images/SCALE/Apps/DiskoverAppRunning.png" alt="Diskover Data App Installed and Running" id="Diskover Data App Installed and Running" >}}
 
-
 Log in with your Diskover account credentials.
 
 {{< trueimage src="/images/SCALE/Apps/DiskoverSignInScreen.png" alt="Diskover Data Sign-In Screen" id="Diskover Data Sign-In Screen" >}}
 
 ## Understanding App Installation Wizard Settings
+
 The following section provides more detailed explanations of the settings in each section of the **Install Diskover Data** installation wizard.
 
 ### Application Name Settings
@@ -113,9 +116,11 @@ The following section provides more detailed explanations of the settings in eac
 {{< include file="/static/includes/apps/InstallWizardAppNameAndVersion.md" >}}
 
 ### Diskover Data Configuration Settings
+
 {{< include file="/static/includes/apps/InstallWizardTimezoneSetting.md" >}}
 
 #### Adding Environment Variables
+
 The TrueNAS Diskover Data app is pre-configured with all environment variables required to deploy the application.
 
 Diskover provides a list of environment variables you can add through their CLI to customize paths or tasks performed at runtime.
@@ -128,6 +133,7 @@ For more information on these variables, see [Alternate Configuration Invocation
 {{< include file="/static/includes/apps/InstallWizardUserAndGroupConfig.md" >}}
 
 ### Network Configuration Settings
+
 The default web port for the TrueNAS Diskover Data app is **30027**.
 
 {{< include file="/static/includes/apps/InstallWizardDefaultPorts.md" >}}
@@ -135,6 +141,7 @@ The default web port for the TrueNAS Diskover Data app is **30027**.
 {{< include file="/static/includes/apps/InstallWizardAdvancedDNSSettings.md" >}}
 
 ### Storage Configuration Settings
+
 TrueNAS provides two options for storage volumes: ixVolumes and host paths.
 Diskover Data only expects one host path storage volume, **config** to hold app configuration data, **data** for data storage, and a second **data** dataset for Elasticsearch data.
 
@@ -146,6 +153,7 @@ You can add extra storage volumes during the app installation or edit the applic
 {{< include file="/static/includes/apps/InstallAppStorageConfig2.md" >}}
 
 #### Setting Dataset ACL Permissions
+
 You can configure ACL permissions for a dataset through the **Install Diskover Data** wizard or from the **Datasets** screen after adding the datasets.
 
 {{< include file="/static/includes/apps/InstallWizardStorageACLConfig.md" >}}
@@ -162,6 +170,7 @@ TrueNAS **Additional Storage** options include the ability to mount an SMB share
 {{< include file="/static/includes/apps/InstallWizardStorageConfig2.md" >}}
 
 #### Mounting an SMB Share Storage Volume
+
 If adding an SMB share as an additional storage volume, create the SMB dataset and share user(s), and add the user ID for the share user(s) to the dataset ACL.
 {{< include file="/static/includes/apps/InstallWizardStorageSMBOption.md" >}}
 

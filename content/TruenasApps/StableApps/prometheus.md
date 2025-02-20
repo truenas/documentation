@@ -6,6 +6,7 @@ aliases:
  - /scale/scaletutorials/apps/chartapps/prometheusapp/
  - /scale/scaletutorials/apps/stableapps/prometheusapp/
  - /truenasapps/communityapps/prometheusapp/
+ - /truenasapps/stableapps/prometheusapp/
 tags:
 - apps
 - reporting
@@ -27,6 +28,7 @@ TrueNAS makes installing Prometheus easy, but you must use the Prometheus web po
 {{< include file="/static/includes/AppsUnversioned.md" >}}
 
 ## Before You Begin
+
 The TrueNAS Prometheus app installs, completes the initial configuration, then starts the Prometheus Rule Manager.
 When updates become available, TrueNAS alerts and provides easy updates.
 
@@ -41,6 +43,7 @@ You can allow TrueNAS to create the two datasets Prometheus requires automatical
 Or before beginning app installation, [create the datasets]({{< relref "DatasetsSCALE.md" >}}) named **data** and **config** to use in the **Storage Configuration** section during installation.
 
 ## Installing the Prometheus Application
+
 To install the **Prometheus** application, go to **Apps**, click **Discover Apps**, either begin typing Prometheus into the search field or scroll down to locate the **Prometheus** application widget.
 
 {{< trueimage src="/images/SCALE/Apps/PrometheusWidget.png" alt="Prometheus App Widget" id="Prometheus App Widget" >}}
@@ -89,6 +92,7 @@ Click **Web Portal** on the **Application Info** widget to open the Prometheus w
 {{< trueimage src="/images/SCALE/Login/PrometheusWebPortal.png" alt="Prometheus Web Portal" id="Prometheus Web Portal" >}}
 
 ## Understanding TrueNAS Prometheus Wizard Settings
+
 The following sections provide more detailed explanations of the settings found in each section of the **Install Prometheus** screen.
 
 ### Application Name Settings
@@ -96,6 +100,7 @@ The following sections provide more detailed explanations of the settings found 
 {{< include file="/static/includes/InstallWizardAppNameAndVersion.md" >}}
 
 ### Prometheus Configuration Settings
+
 You can accept the defaults in the **Prometheus Configuration** settings, or enter the settings you want to use.
 
 {{< trueimage src="/images/SCALE/Apps/InstallPrometheusConfigSettings.png" alt="Prometheus Configuration Settings" id="Prometheus Configuration Settings" >}}
@@ -126,6 +131,7 @@ To change the port numbers, enter a number within the range 9000-65535.
 We recommend not selecting **Host Network**. This binds to the host network.
 
 ### Storage Settings
+
 You can install Prometheus using the default setting **ixVolume (dataset created automatically by the system)** or use the host path option with the two datasets created before installing the app.
 
 {{< trueimage src="/images/SCALE/Apps/InstallPrometheusStorageConfigixVolume.png" alt="Prometheus Configure Storage ixVolumes" id="Prometheus Configure Storage ixVolumes" >}}
@@ -136,6 +142,7 @@ Set **Prometheus Data Storage** to the **data** dataset path, and **Prometheus C
 {{< trueimage src="/images/SCALE/Apps/InstallPrometheusStorageConfigHostPath.png" alt="Prometheus Host Paths" id="Prometheus Host Paths" >}}
 
 ### Resource Configuration Settings
+
 Accept the default values in **Resources Configuration** or enter new CPU and memory values
 By default, this application is limited to use no more than 4 CPU cores and 8 Gigabytes available memory. The application might use considerably less system resources.
 
