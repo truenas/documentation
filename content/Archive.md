@@ -64,6 +64,12 @@ Earlier releases are available only in PDF.
 
 ## TrueNAS
 
+{{< expand "TrueNAS 23.10 (Cobia)" "v" >}}
+[TrueNAS 23.10 (Cobia)](https://www.truenas.com/docs/scale/23.10/)
+
+Release notes for each minor release of 23.10 are available in the [23.10 Cobia Release Notes](https://www.truenas.com/docs/scale/23.10/gettingstarted/scalereleasenotes/).
+{{< /expand >}}
+
 {{< expand "TrueNAS 22.12 (Bluefin)" "v" >}}
 [TrueNAS 22.12 (Bluefin)](https://www.truenas.com/docs/scale/22.12/)
 

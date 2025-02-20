@@ -6,7 +6,7 @@ aliases:
   - /hardware/notices/componentarticles/1300wpowersupply/
 ---
 
-The TrueNAS 1300W Power Supply Unit (PSU) with A05 firmware has a significant reliability issue that causes the PSU to overheat and forces a system reboot.
+The TrueNAS 1300W Power Supply Unit (PSU) with A05 firmware has a significant reliability issue that causes the PSU to overheat and forces a system restart.
 
 {{< hint type=note >}}
 The 1300W PSUs with A05 firmware are in all TrueNAS M40, M50, and R50 platforms shipped before April 11, 2022.
