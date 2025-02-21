@@ -14,7 +14,7 @@ Developer mode is for developers only.
 Users that enable this functionality will not receive support on any issues submitted to iXsystems.
 
 Only enable when you are comfortable with debugging and resolving all issues encountered on the system.
-Never enable on a system that has production storage and workloads.
+Never enable it on a system that has production storage and workloads.
 {{< /hint >}}
 
 TrueNAS is an Open Source Storage appliance, not a standard Linux operating system (OS) that allows customization of the OS environment.
@@ -33,6 +33,10 @@ Connect to the system using SSH or a physically connected monitor and keyboard b
 
 To enable developer mode, log into the system as the root account and access the Linux shell.
 Run the `install-dev-tools` command.
+
+{{< hint type=note >}}
+`install-dev-tools` is a developer-focused option that might not work in scenarios beyond those intended by TrueNAS developers, such as modified installations or deployments that use non-default settings.
+{{< /hint >}}
 
 {{< trueimage src="/images/SCALE/CLI/ShellEnableDeveloperMode.png" alt="Enable TrueNAS Developer Mode" id="Enable TrueNAS Developer Mode" >}}
 
