@@ -13,7 +13,7 @@ The **Network** menu option has several screens that enable configuring network 
 The tutorials in this section guide with the various screens and configuration forms contained within this menu item.
 
 {{< enterprise >}}
-iXsystems TrueNAS Enterprise customers should contact iXsystems Support to receive additional guidance on system configuration.
+iXsystems TrueNAS Enterprise customers should contact TrueNAS Enterprise Support to receive additional guidance on system configuration.
 
 {{< expand "Contacting Support" "v" >}}
 {{< include file="/static/includes/iXsystemsSupportContact.md" >}}

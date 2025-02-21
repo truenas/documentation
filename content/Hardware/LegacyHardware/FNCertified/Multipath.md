@@ -42,6 +42,6 @@ The existing multipathing software within TrueNAS CORE (and FreeBSD) is unchange
 
 If any existing FNC customers have questions about this issue, please discuss in the [forums](https://forums.truenas.com/) or contact us.
 
-{{< expand "Contacting iXsystems Support" "v" >}}
+{{< expand "Contacting TrueNAS Enterprise Support" "v" >}}
 {{< include file="/static/includes/iXsystemsSupportContact.md" >}}
 {{< /expand >}}

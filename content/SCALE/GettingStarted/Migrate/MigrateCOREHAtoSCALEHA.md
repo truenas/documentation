@@ -15,7 +15,7 @@ keywords:
 slug: migrate-enterprise
 ---
 
-**TrueNAS Enterprise customers should consult with iXsystems Support before attempting to migrate.**
+**TrueNAS Enterprise customers should consult with TrueNAS Enterprise Support before attempting to migrate.**
 
 The process requires:
 * Backing up critical data.

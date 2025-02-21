@@ -23,7 +23,7 @@ aliases:
 {{< /columns >}}
 
 Each listed release links to download files for that release.
-For the latest deployment and update recommendations from iXsystems, see the [Software Status page](https://www.truenas.com/software-status/).
+For the latest deployment and update recommendations from the TrueNAS team, see the [Software Status page](https://www.truenas.com/software-status/).
 
 Bug tickets are typically accepted for the latest release of the current stable version.
 Nightly builds also accept feedback and bug tickets.
@@ -52,7 +52,7 @@ Legacy releases can only be used by downloading the .iso file and freshly instal
 ## Documentation Lifecycle
 
 This website is a repository of all documentation for TrueNAS projects and related products.
-iXsystems employees maintain this documentation and provide regular updates for current and in development (future) versions of TrueNAS software.
+The TrueNAS team maintains this documentation and provides regular updates for current and in development (future) versions of TrueNAS software.
 For documentation purposes, current and future releases are those recommended by the TrueNAS [Software Status page](https://www.truenas.com/software-status/) for one or more user type.
 
 Documentation for previous releases, that are no longer recommended for any user type, is archived and unmaintained.

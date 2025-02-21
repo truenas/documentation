@@ -50,7 +50,7 @@ aliases:
 
 Welcome to the Documentation Archive!
 
-iXsystems employees maintain documentation and provide regular updates for current and in development (future) versions of TrueNAS software.
+The TrueNAS team maintains documentation content and provide regular updates for current and in development (future) versions of TrueNAS software.
 For documentation purposes, current and future releases are those recommended by the TrueNAS [Software Status page](https://www.truenas.com/software-status/) for one or more user type.
 
 Documentation for previous releases, that are no longer recommended for any user type, is archived and unmaintained.
@@ -90,8 +90,8 @@ Some TrueNAS M-Series systems installed with 12.0 releases with some 16GB 2666mh
 
 This can be a false positive that has been fixed in TrueNAS 13.0-U1 (see [NAS-116986](https://ixsystems.atlassian.net/browse/NAS-116986)).
 Upgrading to an Enterprise-recommended release of TrueNAS 13.0 resolves this alert.
-To help determine if the deployment is ready to upgrade to TrueNAS 13.0, please refer to the current TrueNAS [Software Status](https://www.truenas.com/software-status/) and, when your use case matches a recommended 13.0 release, contact iXsystems Support to schedule an upgrade.
-{{< expand "Contacting iX Support" >}}
+To help determine if the deployment is ready to upgrade to TrueNAS 13.0, please refer to the current TrueNAS [Software Status](https://www.truenas.com/software-status/) and, when your use case matches a recommended 13.0 release, contact TrueNAS Support to schedule an upgrade.
+{{< expand "Contacting TrueNAS Enterprise Support" >}}
 {{< include file="/static/includes/iXsystemsSupportContact.md" >}}
 {{< /expand >}}
 {{< /hint >}}

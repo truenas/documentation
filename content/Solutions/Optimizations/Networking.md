@@ -11,7 +11,7 @@ tags:
 Follow these best practices for a stable and performant network.
 
 {{< hint type=tip >}}
-iXsystems welcomes contributions from members of the TrueNAS community!
+The TrueNAS team welcomes contributions from members of the TrueNAS community!
 
 Use the **Feedback** button on the right side or click <svg class="gdoc-icon gdoc_code"><use xlink:href="#gdoc_code"></svg>**Edit Page** at the top right of this page to suggest your own networking tips and tricks.
 {{< /hint >}}
@@ -176,7 +176,7 @@ For example, the disks are directly connected to the primary computer and provid
 
 To enable ALUA, select **Enable iSCSI ALUA** from the **Target Global Configuration** tab on the **iSCSI** screen.
 
-Enterprise customers should contact iXsystems Support to validate network design changes.
+Enterprise customers should contact TrueNAS Enterprise Support to validate network design changes.
 
 {{< expand "Contacting Support" "v" >}}
 {{< include file="/static/includes/iXsystemsSupportContact.md" >}}

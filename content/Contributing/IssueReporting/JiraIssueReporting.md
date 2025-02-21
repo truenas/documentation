@@ -11,7 +11,7 @@ tags:
 We encourage all users to help us make TrueNAS the best NAS by reporting issues, requesting potentially helpful features, and relaying security vulnerabilities.  
 
 ## Issue Reporting in Jira
-iXsystems uses [Jira](https://www.atlassian.com/software/jira) to track bugs and develop features.
+TrueNAS uses [Jira](https://www.atlassian.com/software/jira) to track bugs and develop features.
 You can view public issues without logging in, but you must create an Atlassian account to report bugs.
 
 ![TrueNAS Jira Project](/images/Contribute/Jira.png "TrueNAS Jira Project")
@@ -86,7 +86,7 @@ Jira provides a public-facing area for files that do not require privacy.
 If you are not concerned about data privacy, attach the debug, core, log, or other files to the Jira ticket.
 Debug files attached directly to a Jira issue ticket are visible to other users searching and reading Jira issue tickets.
 
-For users concerned about data privacy, iXsystems provides a link to a secure file attachment ticket where you can upload files with sensitive information like a system debug or screenshot of network connections.
+For users concerned about data privacy, TrueNAS provides a link to a secure file attachment ticket where you can upload files with sensitive information like a system debug or screenshot of network connections.
 
 After submitting a bug report, Jira sends a confirmation email with a link to your Jira issue ticket.
 The Jira issue ticket includes a link to the **TrueNAS Private File Attachments** area where you can upload the debug file and any other images or logs you kept private. 
@@ -94,7 +94,7 @@ Link the private file upload ticket to your Jira issue report before you save th
 
 Only authorized individuals can access files attached to private file upload tickets!
 
-Jira tickets with debugs directly attached are marked private, limiting access to only the ticket creator and authorized iXsystems personnel. 
+Jira tickets with debugs directly attached are marked private, limiting access to only the ticket creator and authorized TrueNAS team members.
 Using the private file attachment tickets keeps issue tickets public so others can see the reports and track progress while still protecting private data.
 
 ### Attaching Files to New Tickets

@@ -41,10 +41,10 @@ Users can submit changes to an existing application catalogs through:
   Click **Create Topic** to add your suggestion to the list of topics.
 
   Users vote and comment on these suggestions.
-  iXsystems actively monitors this channel and discusses the feasibility of each request both internally and in the forum posts.
+  TrueNAS team members actively monitor this channel and discusses the feasibility of each request both internally and in the forum posts.
 
   If approved and requested to submit a PR to add the new application, submit a PR against the [TrueNAS/Community](https://github.com/truenas/charts/tree/master/community) repository.
-  Include the relevant files in the PR, including a ReadMe.txt file with any installation notes for iXsystems developers.
+  Include the relevant files in the PR, including a ReadMe.txt file with any installation notes for TrueNAS developers.
 
 To see a current list of apps, visit the [TrueNAS Apps repository](https://github.com/truenas/apps) on GitHub.
 

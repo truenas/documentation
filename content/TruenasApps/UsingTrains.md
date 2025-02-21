@@ -16,7 +16,7 @@ keywords:
 - software storage solutions
 ---
 
-TrueNAS has a pre-built official catalog of available iXsystems-approved applications.
+TrueNAS has a pre-built official catalog of available TrueNAS-approved applications.
 
 Users can configure and add catalog trains if they choose.
 The default train is **stable** which shows the apps found in the charts repository. Other available trains are **enterprise** and **community**.

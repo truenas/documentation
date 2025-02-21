@@ -6,7 +6,7 @@ Click **Create Pool** to open the **Pool Creation Wizard**.
 {{< include file="/static/includes/PoolCreationWizardCommonSettings.md" >}}
 {{< /expand >}}
 
-**Enclosure Option** only shows for iXsystems-provided systems with expansion shelves.
+**Enclosure Option** only shows for TrueNAS Enterprise systems with connected expansion shelves.
 
 {{< hint type=info >}}
 You can rename your enclosure on the [Enclosure Screen]({{< relref "EnclosureScreensSCALE.md" >}}) to include the rack and U number in the name, which helps identify the physical location while in the pool creation screen.
@@ -20,7 +20,7 @@ You can rename your enclosure on the [Enclosure Screen]({{< relref "EnclosureScr
    You cannot change the pool name after creation.
    {{< /hint >}}
 
-2. (Enterprise systems only) Select the **Enclosure Option** to apply the dispersal strategy of your choice. Only shows for iXsystems-provided systems with expansion shelves.
+2. (Enterprise systems only) Select the **Enclosure Option** to apply the dispersal strategy of your choice. Only shows for TrueNAS Enterprise systems with connected expansion shelves.
 
    {{< trueimage src="/images/SCALE/Storage/PoolCreationWizardEnclosureOptionsScreen.png" alt="Pool Creation Wizard Enclosure Options" id="Pool Creation Wizard Enclosure Options" >}}
 

@@ -9,9 +9,9 @@ related: false
 This section provides instructions for users that are installing TrueNAS the first time on their own system hardware and for users that need to do a clean install of TrueNAS.
 
 {{< enterprise >}}
-TrueNAS Enterprise customers should contact iXsystems Support for assistance with the initial set up and configuration of their systems.
+TrueNAS Enterprise customers should contact TrueNAS Enterprise Support for assistance with the initial set up and configuration of their systems.
 
-{{< expand "Contacting iX Support" >}}
+{{< expand "Contacting TrueNAS Enterprise Support" >}}
 {{< include file="/static/includes/iXsystemsSupportContact.md" >}}
 {{< /expand >}}
 {{< /enterprise >}}

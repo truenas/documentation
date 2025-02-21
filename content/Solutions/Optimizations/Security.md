@@ -151,7 +151,7 @@ Block both the **CBC** and **Arcfour** ciphers by going to **Services > SSH > Ed
 {{< include file="/static/includes/COREFeatureSupport.md" >}}
 
 Review any application or virtual machine (VM) deployment scenario for additional security exposure or vulnerabilities.
-iXsystems cannot resolve security vulnerabilities introduced from within user-deployed virtualized environments.
+The TrueNAS team cannot resolve security vulnerabilities introduced from within user-deployed virtualized environments.
 
 After [configuring a VM]({{< relref "/SCALE/SCALETutorials/Virtualization/_index.md" >}}), disable any VNC or SPICE virtual machine display devices.
 

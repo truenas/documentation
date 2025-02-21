@@ -26,7 +26,7 @@ The system information updates to reflect the licensing specifics for the system
 ![GeneralSettingsSCALESupportLicenseComplete](/images/SCALE/SystemSettings/GeneralSettingsSCALESupportLicenseComplete.png "TrueNAS General Settings Support License Entry Complete")
 
 Silver and Gold level Support customers can also enable Proactive Support on their hardware to automatically notify iXsystems if an issue occurs.
-To find more details about the different Warranty and Service Level Agreement (SLA) options available, see [iXsystems Support](https://www.ixsystems.com/support/).
+To find more details about the different Warranty and Service Level Agreement (SLA) options available, see [TrueNAS Enterprise Support](https://www.ixsystems.com/support/).
 
 When the system is ready to be in production, update the status by selecting **This is a production system** and then click the **Proceed** button.
 This sends an email to iXsystems declaring that the system is in production.

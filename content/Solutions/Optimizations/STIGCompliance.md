@@ -30,7 +30,7 @@ If side-grading (migrating) from an earlier release to the latest TrueNAS releas
 If clean-installing TrueNAS for the first time, follow guidance in the [Installation Instructions]({{< relref "/content/SCALE/GettingStarted/Install/_index.md" >}}) articles.
 
 ### Prerequisites
-If you are installing TrueNAS on servers other than iXsystems-provided systems, you should read and follow guidance in the [TrueNAS Hardware Guide]({{< relref "SCALEHardwareGuide.md" >}}).
+If you are installing TrueNAS on servers other than licensed TrueNAS Enterprise systems, you should read and follow guidance in the [TrueNAS Hardware Guide]({{< relref "SCALEHardwareGuide.md" >}}).
 
 ## Configuring TrueNAS
 After installing TrueNAS, users must configure network, storage, users, sharing, and data backup solutions. See [Configuration Instructions]({{< relref "/SCALE/gettingstarted/configure/_index.md" >}}) for more information.

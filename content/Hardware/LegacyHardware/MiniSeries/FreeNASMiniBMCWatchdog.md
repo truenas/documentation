@@ -62,6 +62,6 @@ Contact iXsystems Customer Support and we will be glad to assist you!
 
 Thank you for your loyalty as an iXsystems customer. We stand behind the FreeNAS Mini and the FreeNAS Mini XL and will continue to support our customers.
 
-{{< expand "Contacting iXsystems Support" "v" >}}
+{{< expand "Contacting TrueNAS Enterprise Support" "v" >}}
 {{< include file="/static/includes/iXsystemsSupportContact.md" >}}
 {{< /expand >}}

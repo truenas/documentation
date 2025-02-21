@@ -44,10 +44,10 @@ Disk latency and write endurance capability are the primary concern for slog dev
 You might need multiple striped slog devices to reach write endurance and the synchronous write throughput needs of each slog device.
 Combined SLOG write throughput should be higher than the planned synchronous write throughput of the pool.
 
-The iXsystems current recommendation is a 16 GB SLOG device over-provisioned from larger SSDs to increase the write endurance and throughput of an individual SSD, though this is not the only usable size for SLOG devices.
+The current TrueNAS project recommendation is a 16 GB SLOG device over-provisioned from larger SSDs to increase the write endurance and throughput of an individual SSD, though this is not the only usable size for SLOG devices.
 This 16 GB size recommendation is based on performance characteristics of typical HDD pools with SSD SLOGs and capped by the value of the tunable <code>vfs.zfs.dirty_data_max_max</code>.
 
-TrueNAS Enterprise appliances from iXsystems might have an additional platform specific auto-tuning set and are built with SLOG devices specifically set up for the performance of that appliance.
+TrueNAS Enterprise appliances might have an additional platform specific auto-tuning set and are built with SLOG devices specifically set up for the performance of that appliance.
 
 ## TrueNAS Implementation
 

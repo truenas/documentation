@@ -20,9 +20,9 @@ After you [download](https://www.truenas.com/download-tn-scale/) the <kbd>.iso</
 This article describes verifying the <kbd>.iso</kbd> file and installing TrueNAS using that file, and selecting the type of installation as either on [physical hardware](#installing-on-physical-hardware) or a [virtual machine (VM)](#installing-on-a-virtual-machine).
 
 {{< enterprise >}}
-TrueNAS Enterprise customers should receive their systems already installed and ready for UI configuration. If there are any issues with that require you to install or re-install TrueNAS, contact iXsystems Support for assistance.
+TrueNAS Enterprise customers should receive their systems already installed and ready for UI configuration. If there are any issues with that require you to install or re-install TrueNAS, contact TrueNAS Enterprise Support for assistance.
 
-Enterprise customers with High Availability (HA) systems should not attempt to re-install their systems on their own. The dual controller install process is complicated and the risk of causing serious network issues is high. Contact iXsystems Support for assistance!
+Enterprise customers with High Availability (HA) systems should not attempt to re-install their systems on their own. The dual controller install process is complicated and the risk of causing serious network issues is high. Contact TrueNAS Enterprise Support for assistance!
 
 {{< expand "Contacting Support" "v" >}}
 {{< include file="/static/includes/iXsystemsSupportContact.md" >}}

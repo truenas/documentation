@@ -64,8 +64,8 @@ More details are available from [Software Releases]({{< relref "/TrueNASUpgrades
 {{< include file="/_includes/MigrateCOREtoSCALEWarning.md" >}}
 
 {{< enterprise >}}
-Enterprise customers with HA systems should contact iXsystems Support for assistance with migrating to TrueNAS.
-{{< expand "iXsystems Support" "v" >}}
+Enterprise customers with HA systems should contact TrueNAS Enterprise Support for assistance with migrating to TrueNAS.
+{{< expand "TrueNAS Enterprise Support" "v" >}}
 {{< include file="content/_includes/iXsystemsSupportContact.md" >}}
 {{< /expand >}}
 {{< /enterprise >}}
