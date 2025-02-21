@@ -351,7 +351,7 @@ This removes any permissions issues with the deleted datasets.
 You can also try to reset all permissions on the original datasets until the app installs without errors.
 Stop the app before editing the ACL permissions for the datasets.
 
-Add the **www-data** user and group, or the one specified in the traceback, to the parent, **html**, and **data** datasets. Do not set the parent dataset to recurssive.
+Add the **www-data** user and group, or the one specified in the traceback, to the parent, **html**, and **data** datasets. Do not set the parent dataset to recursive.
 You can set recursive on the **data** and **html** datasets, but it is unnecessary.
 To do this:
 
