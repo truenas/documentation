@@ -13,8 +13,9 @@ Discontinued TrueNAS R-Series Documents
 
 ### TrueNAS R10 and R40
 
-{{< imagecard image="/images/Hardware/RSeries/RSeriesBSG.png" title="Basic Setup Guide" link="https://www.truenas.com/docs/files/RSeriesBSG1.32.pdf"
-descr="Deployment guide for TrueNAS R10, R20, R40, and R50 systems." >}}
+This document has an overview of the R10 and R40 chassis, racking instructions, and drive tray instructions. Please refer to the [R-Series Resources]({{< relref "/Hardware/RSeries/_index.md" >}}) for any other R-Series instructions.
+
+* <a href="https://www.truenas.com/docs/files/RSeriesBSG1.32.pdf" download>TrueNAS R20A Basic Setup Guide</a>: Deployment guide for TrueNAS R10, R20, R40, and R50 systems.
 
 ### TrueNAS R20A
 
