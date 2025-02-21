@@ -1,6 +1,6 @@
 ---
 title: "Issue Reporting"
-description: "Provides information on how to report issues to iXsystems."
+description: "Provides information on how to report issues to the TrueNAS project."
 geekdocCollapseSection: true
 weight: 10
 aliases:

@@ -54,7 +54,7 @@ After initial configuration of the domain:
 
     Entra ID domain services uses hard-coded network addresses and a bundled DNS server, so a VPN is needed to ensure proper DNS resolution.
     There are numerous possible solutions for this purpose.
-    iXsystems does not suggest or support a specific third-party VPN service.
+    The TrueNAS team does not suggest or support a specific third-party VPN service.
     For one option, see [Tutorial: Create a site-to-site VPN connection in the Azure portal](https://learn.microsoft.com/en-us/azure/vpn-gateway/tutorial-site-to-site-portal) from Microsoft.
 
 ## Configuring TrueNAS

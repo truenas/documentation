@@ -136,14 +136,14 @@ Use **Hosts Allow** and **Hosts Deny** to specify IP addresses for client system
 Enter multiple IP addresses separated by a comma and space between entries in the field.
 Leave blank to allow all or deny hosts.
 
-Use the **Auxiliary Parameters** to enter parameters and their values to further custiize the module.
+Use the **Auxiliary Parameters** to enter parameters and their values to further customize the module.
 Do not enter parameters already available as the settings included in this section.
 You can specify rsync [global or module parameters](https://www.samba.org/ftp/rsync/rsyncd.conf.html) using the module **Auxiliary Parameters** fields.
 
 ### Authentication
 
 By default, the rsync daemon will allow access to everything within the dataset that has been specified for each module, without authentication.
-In order to set up password authentication you needs to add two auxilary parameters for the module:
+In order to set up password authentication you needs to add two auxiliary parameters for the module:
 
 Parameter: "auth users"
 Value: comma separated list of usernames, [more details can be found here.](https://www.samba.org/ftp/rsync/rsyncd.conf.html#auth_users)
@@ -167,4 +167,4 @@ The application might use considerably less system resources.
 
 {{< trueimage src="/images/SCALE/Apps/RsyncdResourceConfig.png" alt="Resources Configuration" id="Resources Configuration" >}}
 
-Tune these limits as needed to prevent the application from overconsuming system resources and introducing performance issues.
+Tune these limits as needed to prevent the application from over-consuming system resources and introducing performance issues.

@@ -49,7 +49,7 @@ This ensures the appliance has the latest bug fixes, security updates, and softw
 If deploying on a closed network (LAN) without access to the Internet, users can also obtain and apply an update manually.
 For assistance, please contact TrueNAS support.
 
-{{< expand "Contacting iXsystems Support" "v" >}}
+{{< expand "Contacting TrueNAS Enterprise Support" "v" >}}
 {{< include file="/static/includes/iXsystemsSupportContact.md" >}}
 {{< /expand >}}
 

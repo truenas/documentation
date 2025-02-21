@@ -23,7 +23,7 @@ list or "enumerate" them.
 Starting in Dragonfish 24.04 and later, the meta-data performance of directory listings over SMB is greatly improved.
 Depending on your SMB client, it is possible to support a single directory with anywhere from 100,000 to 1,000,000 files on flash systems with decent load times.
 
-iXsystems has done some very preliminary testing to provide guidance on the approximate time ranges that are possible.
+The TrueNAS team has done some very preliminary testing to provide guidance on the approximate time ranges that are possible.
 Users should understand that as directory file counts increase, listing times increase too.
 
 {{< hint type="note" title="Hardware Limitations" >}}

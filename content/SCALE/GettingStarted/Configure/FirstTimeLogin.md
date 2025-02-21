@@ -38,7 +38,7 @@ To access the web interface using an IP address, either use the DHCP-assigned IP
 {{< enterprise >}}
 TrueNAS Enterprise (HA) systems have specific network configuration requirements.
 Installing TrueNAS on High Availability (HA) systems and configuring networking is complicated and should be guided by Enterprise-level support.
-Contact iXsystems Support for assistance whenever attempting to install TrueNAS on Enterprise HA hardware or configure network settings.
+Contact TrueNAS Enterprise Support for assistance whenever attempting to install TrueNAS on Enterprise HA hardware or configure network settings.
 
 Refer to the [Preparing for TrueNAS UI Configuration (Enterprise)]({{< relref "InstallPrepEnterprise.md" >}}) and [Installing TrueNAS Enterprise (HA)]({{< relref "InstallEnterpriseHASCALE.md" >}}) for information on installing HA system and configuring networking.
 {{< expand "Contacting Support" "v" >}}
@@ -88,7 +88,7 @@ After upgrading from an earlier release, use the existing root user credentials 
 {{< expand "Migrating/Upgrading from FreeBSD- to Linux-based TrueNAS Versions" "v" >}}
 
 {{< enterprise >}}
-Customers with a TrueNAS Enterprise High Availability (HA) system should review [Migration Preparation]({{< relref "MigratePrep.md" >}}), [Enterprise HA Migrations]({{< relref "MigrateCOREHAToSCALEHA.md" >}}), and consult with iXsystems Support prior to migrating.
+Customers with a TrueNAS Enterprise High Availability (HA) system should review [Migration Preparation]({{< relref "MigratePrep.md" >}}), [Enterprise HA Migrations]({{< relref "MigrateCOREHAToSCALEHA.md" >}}), and consult with TrueNAS Enterprise Support prior to migrating.
 {{< /enterprise >}}
 For non-HA systems, there are two possible scenarios when migrating:
 

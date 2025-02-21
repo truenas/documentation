@@ -19,7 +19,7 @@ keywords:
 ---
 
 {{< hint type="warning" title="Unsupported Feature for Advanced Users" >}}
-TrueNAS Sandboxes and Jailmaker are not supported by iXsystems.
+TrueNAS Sandboxes and Jailmaker are not supported by the TrueNAS team.
 This is provided solely for users with advanced command-line, containerization, and networking experience.
 
 There is a significant risk that using Jailmaker causes conflicts with the built-in Apps framework within TrueNAS.

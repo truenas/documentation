@@ -1,6 +1,6 @@
 ---
 title: "Discontinued Expansion Shelves"
-description: "Archived documents for discontinued Expansion Shelves from iXsystems."
+description: "Archived documents for discontinued TrueNAS Enterprise Expansion Shelves."
 geekdocCollapseSection: true
 weight: 50
 ---

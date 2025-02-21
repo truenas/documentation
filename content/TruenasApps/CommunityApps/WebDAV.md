@@ -80,10 +80,12 @@ After the installation completes, the application displays on the **Installed** 
 The WebDAV widget on the **Discover** and **WebDAV** information screens includes the **Installed** badge.
 
 ### Application Name Settings
+
 Accept the default values in **Application Name** and **Version**.
 If you want to change the application name, enter a new name.
 
 ### WebDAV Configuration Settings
+
 WebDAV configuration settings include the type of share authentication to use, none or basic.
 **No Authentication** means any system can discover TrueNAS and access the data shared by the WebDAV application share, so this is not recommended.
 **Basic Authentication** adds the **Username** and **Password** fields and provides some basic security.
@@ -99,16 +101,18 @@ You can use the Docker container environment variables listed in the table below
 |----------|-------------|
 | WEBDRIVE_URL | Use to specify a URL where you find the WebDAV resource other than the default. The default URL is http://*webdav-ip*:*webdav-port*/share1 where *webdav-ip* is the IP address for the TrueNAS system and *webdav-port* is 30034. If enabling HTTPS the URL is https://*webdav-ip*:*webdav-port*/share1 where the *webdav-ip* is the IP address for the TrueNAS system and *webdav-port* is 30035. |
 | WEBDRIVE_PASSWORD_FILE | Use to specify a file that contains the password instead of using the **Password** field. Use when **Authentication Type** is set to **Basic Authorization**. |
-| WEBDRIVE_MOUNT | Use to specify the location within the container where to mount the WebDAV resource (drive) into the container. This defaults to /mnt/webdrive and is not meant to be changed. |
+| WEBDRIVE_MOUNT | Use to specify the location within the container where to mount the WebDAV resource (drive) into the container. This defaults to `/mnt/webdrive` and is not meant to be changed. |
 {{< /truetable >}}
 {{< /expand >}}
 
 ### User and Group Configuration Settings
+
 The default user and group for WebDAV is 666. To specify a different user, create the user and group before installing the application, then enter the user ID (UID) and group ID (GID) in the fields for these settings.
 
 {{< trueimage src="/images/SCALE/Apps/InstallWebDAVUserAndGroupConfig.png" alt="User And Group Configuration" id="User And Group Configuration" >}}
 
 ### Network Configuration Settings
+
 The container for the WebDAV app has **Enable HTTP** selected by default. The port for HTTP is 30034.
 
 {{< trueimage src="/images/SCALE/Apps/InstallWebDAVAppNetworkConfig.png" alt="WebDAV Network Configuration for HTTP" id="WebDAV Network Configuration for HTTP" >}}
@@ -121,6 +125,7 @@ This changes the default port in **HTTPS Port** to 30035, and adds a system **Ce
 The default certificate is 0. You can use the default as the **Certificate** if no other specific certificate is available.
 
 ### Storage Configuration Settings
+
 Create one or more shares in the **Storage Configuration** section. For the application to work, create at least one share.
 Click **Add** for each share you want to create.
 Each share must have a unique name.
@@ -153,12 +158,13 @@ It is recommended to only share newly created datasets that have the **Share Typ
 {{< /hint >}}
 
 ### Resources Configuration Settings
+
 By default, this application is limited to use no more than **4** CPU cores and **8** Gibibytes available memory.
 The application might use considerably less system resources.
 
 {{< trueimage src="/images/SCALE/Apps/InstallWebDAVResourcesConfig.png" alt="WebDAV Resource Configuration" id="WebDAV Resource Configuration" >}}
 
-Tune these limits as needed to prevent the application from overconsuming system resources and introducing performance issues.
+Tune these limits as needed to prevent the application from over-consuming system resources and introducing performance issues.
 
 ## Testing the Share
 
