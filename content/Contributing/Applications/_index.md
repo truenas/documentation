@@ -134,6 +134,7 @@ Open and read snippet files to determine where to use them in your tutorial.
 | BeforeYouBeginRunAsUser.md | Bullet point describing where to find the run as user information, and includes a screenshot of the app information screen for the app being documented. |
 | BeforeYouBegigAddAppDatasets.md | Bullet point for adding datasets for the app. Does does not include details on adding datasets as these vary by app. |
 | BeforeYouBeginAddAppDatasetsProcedure.md | Procedure for correctly creating datasets for apps in an expand/collapse area. |
+| InstallWizardPostgresStorageAutomaticPermissions | Information on configuring postgres and parent dataset permissions, added in the Before You Begin section but can also be added in the Understanding Application Wizard Settings. |
 | BeforeYouBeginAddAppCertificate.md | Bullet point for adding a certificate if required for the app. Also include the AddingAppCertificate.md snippet with detailed instructions on adding a self-signed certificate. |
 | AddingAppCertificate.md | Detailed set procedure on adding a self-signed certificate authority (CA) and certificate. |
 | BeforeYouBeginAddNewUser.md | Single bullet point and procedure for adding a new user as a TrueNAS app administrator. |
