@@ -51,7 +51,7 @@ Clicking **APPS** (SCALE) or **Jails** (CORE 12.x) allows users to start/stop ap
 The *Options* menu has several shortcuts to simple tasks.
 
 * <span class="iconify" data-icon="mdi:pencil"></span> **Edit** opens the edit window for the TrueNAS connection details and nickname.
-* <span class="iconify" data-icon="mdi:account-group"></span> **Users and Groups** lets users manage NAS users and groups.
+* <span class="iconify" data-icon="mdi:account-group"></span> **Users and Groups** lets users manage NAS users and groups (Experimental feature, not for production use).
 * <span class="iconify" data-icon="mdi:update"></span> **Update** updates the TrueNAS system.
 * <span class="iconify" data-icon="mdi:monitor-screenshot"></span> **Launch TrueNAS Interface** opens a new tab for the full TrueNAS Web UI.
 * <span class="iconify" data-icon="mdi:toolbox-outline"></span> **Services** lets users see service statuses and control service actions.
