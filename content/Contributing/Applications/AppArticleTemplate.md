@@ -162,7 +162,7 @@ For optional settings, see [Understanding App Installation Wizard Settings](#und
 {{< include file="static/includes/apps/MultipleAppInstancesAndNaming.md" >}}
 
 {{< include file="/static/includes/apps/LocateAndOpenInstallWizard.md" >}}
-<!-- Change the name of the image in the path below to include the screenshot, if including the image of the Install AppName scree showing the Application Name section and the wizard ToC on the right side of the screen:
+<!-- Change the name of the image in the path below to include the screenshot, if including the image of the Install AppName screen showing the Application Name section and the wizard ToC on the right side of the screen:
 {{< trueimage src="/images/SCALE/Apps/InstallAppNameScreen.png" alt="Install *AppName* Screen" id="Install *AppName* Screen" >}} -->
 
 {{< include file="/static/includes/apps/InstallWizardAppNameAndVersion.md" >}}
@@ -192,7 +192,7 @@ Set **ID Type** to **Entry is for a USER**, enter the ***0*** in **ID**, and giv
 For example, add the ***0*** user, and give each **FULL_CONTROL Access**.
 <!-- if there are more than one user IDs, include "Click **Add** again to enter the user information for the next user.">
 
-Select **Force Flag** to allow upgrading the app when the dataset has exsiting data.
+Select **Force Flag** to allow upgrading the app when the dataset has existing data.
 
 Repeat the storage steps above each additional storage volume.
 
@@ -277,7 +277,7 @@ You can add extra storage volumes at the time of installation or edit the applic
 You can configure ACL permissions for the required dataset in the **Install *App*** wizard, or from the **Datasets** screen any time after adding the datasets.
 
 {{< include file="/static/includes/apps/InstallWizardStorageACLConfig.md" >}}
-<!-- replace the UIDs in the section below with the user IDs or run as user ID. Include any other app specific user information.This might become a snippet. -->
+<!-- replace the UIDs in the section below with the user IDs or run as user ID. Include any other app-specific user information. This might become a snippet. -->
 {{< expand "Adding ACL Permissions from the Datasets Screen" "v">}}
 First, select the dataset row, then scroll down to the **Permissions** widget, and then click **Edit** to open the **Edit ACL** screen.
 Change the **@owner** and **@group** values from **root** to the administrative user for your TrueNAS system, and click apply for each.
