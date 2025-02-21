@@ -163,7 +163,7 @@ Accept the defaults in **Resources Configuration**, and select the GPU option if
 Click **Install**. A progress dialog displays before switching to the **Installed** applications screen.
 The **Installed** screen displays with the **nextcloud** app in the **Deploying** state. Status changes to **Running** when ready to use.
 
-Click **Web Portal** on the **Application Info** widget to open the Nextcloud web portal sign-in screen.
+Click **Web UI** on the **Application Info** widget to open the Nextcloud web portal sign-in screen.
 
 {{< trueimage src="/images/SCALE/Apps/NextcloudSignInScreen.png" alt="Nextcloud Sign In Screen" id="Nextcloud Sign In Screen" >}}
 
