@@ -9,6 +9,10 @@ weight: 30
 
 <div class="docs-sections">
 
+{{< imagecard image="/images/Hardware/Notices.png" title="TrueNAS R10 EOL January 2025" link="https://www.truenas.com/docs/files/TrueNAS%20R10%20EOL.pdf" descr="Official iXsystems EoL for TrueNAS R10 systems." >}}
+
+{{< imagecard image="/images/Hardware/Notices.png" title="TrueNAS R40 EOL January 2025" link="https://www.truenas.com/docs/files/TrueNAS%20R40%20EOL.pdf" descr="Official iXsystems EoL for TrueNAS R40 systems." >}}
+
 {{< imagecard image="/images/Hardware/Notices.png" title="TrueNAS Mini X EOL December 2024" link="https://www.truenas.com/docs/files/TrueNAS%20Mini%20X%20EOL.pdf" descr="Official iXsystems EoL for TrueNAS Mini X systems." >}}
 
 {{< imagecard image="/images/Hardware/Notices.png" title="TrueNAS X-Series EOL March 2024" link="https://www.truenas.com/docs/files/XSeriesEOL.pdf" descr="Official iXsystems EoL for TrueNAS X-Series systems." >}}
