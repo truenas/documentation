@@ -1,3 +1,24 @@
+Process time: 2025-02-14 16:48:52
+Initiated by: Dan Pizappi
+
+1089 files reviewed.
+13 files deleted.
+The following files were deleted:
+C:\Users\iXUser\Documents\GitHub\documentation\static\includes\MakeDirectory.md
+C:\Users\iXUser\Documents\GitHub\documentation\static\includes\apps\InstallWizardDefaultPorts.md
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\CORE\Accounts\AddUserNamedCORE.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\CORE\DirectoryServices\DirectoryServicesNIS.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\CORE\Services\NFSServicesScreen.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\CORE\Sharing\SharingSMBAdvancedOptions.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\CORE\Storage\StorageAllPoolsDataset.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\CORE\Storage\StoragePoolsAddDataset2.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\CORE\System\CloudCredentialsAddCredentials.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\CORE\System\SystemCloudCredentialsOAuthLogin.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\CORE\System\SystemNTPServersAdd.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\CORE\Tasks\RsyncConfigure.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\CORE\Tasks\TasksCloudSyncAdd.png
+
+----------------------------------------
 Process time: 2025-02-05 12:20:27
 Initiated by: Dan Pizappi
 
