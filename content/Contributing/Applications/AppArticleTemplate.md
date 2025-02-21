@@ -133,8 +133,16 @@ NOTE: Include the HTML styling to align the indented paragraph with the bullet l
 
 <div style="margin-left: 33px">{{< include file="/static/includes/apps/BeforeYouBeginAddAppDatasetsProcedure.md" >}}</div>
 
+<!-- if the app uses postgres storage volumes, include this content
+<div style="margin-left: 33px">You can modify dataset ACLs at the time of creation, or later in the app.
+  Adding ACL permissions in the installation wizard is the recommended method.
+
+  {{< include file="/static/includes/apps/InstallWizardPostgresStorageAutomaticPermissions.md" >}}</div>
+ -->
+ 
 <!-- Include this snippet and a modified version of the indented text if the app requires setting up a certificate.
 If the Install wizard does not include the certificate field, do not include this snippet or content. -->
+
 {{< include file="/static/includes/apps/BeforeYouBeginAddAppCertificate.md" >}} 
 
   <p style="margin-left: 33px">Adding a certificate is optional but if you want to use a certificate for this application, either create a new self-signed CA and certificate or import an existing CA and create the certificate for Nextcloud. A certificate is not required to deploy the application.</p>
@@ -154,7 +162,7 @@ For optional settings, see [Understanding App Installation Wizard Settings](#und
 {{< include file="static/includes/apps/MultipleAppInstancesAndNaming.md" >}}
 
 {{< include file="/static/includes/apps/LocateAndOpenInstallWizard.md" >}}
-<!-- Change the name of the image in the path below to include the screenshot, if including the image of the Install AppName scree showing the Application Name section and the wizard ToC on the right side of the screen:
+<!-- Change the name of the image in the path below to include the screenshot, if including the image of the Install AppName screen showing the Application Name section and the wizard ToC on the right side of the screen:
 {{< trueimage src="/images/SCALE/Apps/InstallAppNameScreen.png" alt="Install *AppName* Screen" id="Install *AppName* Screen" >}} -->
 
 {{< include file="/static/includes/apps/InstallWizardAppNameAndVersion.md" >}}
@@ -184,9 +192,17 @@ Set **ID Type** to **Entry is for a USER**, enter the ***0*** in **ID**, and giv
 For example, add the ***0*** user, and give each **FULL_CONTROL Access**.
 <!-- if there are more than one user IDs, include "Click **Add** again to enter the user information for the next user.">
 
-Select **Force Flag** to allow upgrading the app when the dataset has exsiting data.
+Select **Force Flag** to allow upgrading the app when the dataset has existing data.
 
-Repeat the storage steps above each additional storage volume. See [Storage Configuration Settings](#storage-configuration-settings) below for more information.
+Repeat the storage steps above each additional storage volume.
+
+To configure the ***appName* Postgres Data Storage** host path, do not select **Enable ACL**!
+Set **Type** to **Host Path (Path that already exists on the system)**, then enter or browse to select the **postgres_data** dataset to populate the **Host Path** field.
+Select **Automatic Permissions**. This does not show if you selected **Edit ACL**.
+
+{{< trueimage src="/images/SCALE/Apps/InstallWizardPostgresDatasetAutomaticPermissions.png" alt="Postgres Storage Automatic Permissions" id="Postgres Storage Automatic Permissions" >}}
+
+See [Storage Configuration Settings](#storage-configuration-settings) below for more information.
 
 Accept the defaults in **Resources Configuration**, and select the GPU option if applicable.
 
@@ -247,13 +263,9 @@ TrueNAS provides two options for storage volumes: ixVolumes and host paths.
 * ***data*** to use as the ***User Data*** storage volume.
 * ***postgresdata*** to use as the ***Postgres Data*** storage volume.
 
-If you group these datasets under a parent dataset named *AppName*, configure the [ACL permissions]({{< relref "PermissionsSCALE.md" >}}) for this parent dataset and add an ACE entry for the ***netdata*** user.
-If the app includes postgres storage volumes, include the following information 
-If the app installation wizard cannot set up the ACL type or correctly add user permissions for the postgres storage volume,
-you must configure these outside the install wizard using the **Add Dataset** and **Edit ACL** screens.
-When adding the ***postgresdata*** dataset set it up with a POSIX ACL, and add the ***netdata*** user as the owner user and group with full control permissions. 
-
-If you have a postgres dataset, also include information in the Before You Begin section about adding the dataset and permissions.
+If you nest these datasets under a parent dataset named *nextcloud*, you can create this nextcloud dataset with the **Dataset Preset** set to **Generic** or **Apps**.
+You can configure the ACL for this dataset from the **Permissions** widget on the **Datasets** screen.
+If the app has postgres storage volumes, the process is easier and less prone to permissions errors if you use the **Automatic Permissions** option in the postgres storage volume section of the install Wizard. 
 
 See the instructions in the [Before You Begin](#before-you-begin) section for more on creating both the parent and postgres_data datasets and configuring the ACL permissions for each.-->
 You can add extra storage volumes at the time of installation or edit the application after it deploys. Stop the app before editing settings.
@@ -262,10 +274,10 @@ You can add extra storage volumes at the time of installation or edit the applic
 {{< include file="/static/includes/apps/InstallAppsStorageConfig2.md" >}}
 
 #### Setting Dataset ACL Permissions
-You can configure ACL permissions for the required dataset in the **Install Netdata** wizard, or from the **Datasets** screen any time after adding the datasets.
+You can configure ACL permissions for the required dataset in the **Install *App*** wizard, or from the **Datasets** screen any time after adding the datasets.
 
 {{< include file="/static/includes/apps/InstallWizardStorageACLConfig.md" >}}
-<!-- replace the UIDs in the section below with the user IDs or run as user ID. Include any other app specific user information.This might become a snippet. -->
+<!-- replace the UIDs in the section below with the user IDs or run as user ID. Include any other app-specific user information. This might become a snippet. -->
 {{< expand "Adding ACL Permissions from the Datasets Screen" "v">}}
 First, select the dataset row, then scroll down to the **Permissions** widget, and then click **Edit** to open the **Edit ACL** screen.
 Change the **@owner** and **@group** values from **root** to the administrative user for your TrueNAS system, and click apply for each.
