@@ -104,7 +104,7 @@ To create a code block, either use three backticks (<code>```</code>) on the lin
 
 #### Using the Apps Snippet Library
 When creating your articles you can use the library of snippets that contain explanations of settings and configuration instructions for the various app Install Wizard settings in your submitted content.
-These snippets are maintained by the Technical Documentation team, but you can submit change requests for these files just as with full articles if you find content that needs updating or changing.
+The Technical Documentation team maintains these snippets, but you can submit change requests for these files just as with full articles if you find content that needs updating or changing.
 
 The tutorial template includes the shortcode that calls these files into the app wizard sections of the Stable Apps and Enterprise Apps tutorials in the Documentation Hub.
 To use snippets where the template does not have one, enter the include file shortcode where you want to call another snippet.
