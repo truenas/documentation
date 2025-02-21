@@ -30,8 +30,8 @@ Visit the [R Series product page](https://www.truenas.com/r-series/) for more de
 
 <div class="docs-sections">
 
-{{< imagecard image="/images/Hardware/RSeries/RSeriesBSG.png" title="Basic Setup Guide" link="https://www.truenas.com/docs/files/RSeriesBSG1.32.pdf"
-descr="Deployment guide for TrueNAS R10, R20, R40, and R50 systems." >}}
+{{< imagecard image="/images/Hardware/RSeries/R20PUM.png" title="R20 User Manual" link="https://www.truenas.com/docs/files/R20PUM.pdf"
+descr="User Manual for the TrueNAS R20." >}}
 
 {{< imagecard image="/images/Hardware/RSeries/R30BSG.png" title="R30 Basic Setup Guide" link="https://www.truenas.com/docs/files/R30BSG1.0.pdf"
 descr="Deployment Guide for TrueNAS R30 systems." >}}
