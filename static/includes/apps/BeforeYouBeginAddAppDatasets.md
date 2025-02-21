@@ -10,7 +10,7 @@
   {{< /hint >}}
 
   You can create required datasets before or after launching the installation wizard.
-  The install wizard includes the **Create Dataset** option for host path storage volumes, but if organizing required datasets under a parent you must create that dataset before launching the app installation wizard.
+  The install wizard includes the **Create Dataset** option for host path storage volumes, but if you are organizing required datasets under a parent you must create that dataset before launching the app installation wizard.
 
   Go to **Datasets** and select the pool or dataset where you want to place the dataset(s) for the app.
   For example, */tank/apps/appName*.
