@@ -8,6 +8,17 @@ weight: 50
 
 Discontinued Expansion Shelf Documents
 
+### ES12 Expansion Shelf
+
+The ES12 Expansion Shelf was designated end-of-life (EOL) by iXsystems on January 31, 2025.
+The end-of-support date for ES12 Expansion Shelf systems is January 31, 2030.
+
+Click below to download archival documents for legacy ES12 Expansion Shelf systems.
+
+* <a href="https://www.truenas.com/docs/files/TrueNAS%20ES12%20EOL.pdf" download>ES12 EOL January 2025</a>: Official iXsystems EoL for the TrueNAS ES12 Expansion Shelf.
+
+* <a href="https://www.truenas.com/docs/files/ES12BSG1.81.pdf" download>ES12 Basic Setup Guide</a>: Deployment guide for TrueNAS ES12 Expansion Shelf.
+
 ### ES60 Expansion Shelf
 
 The ES60 Expansion Shelf was designated end-of-life (EOL) by iXsystems on February 27, 2024.

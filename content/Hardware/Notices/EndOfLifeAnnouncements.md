@@ -9,6 +9,8 @@ weight: 30
 
 <div class="docs-sections">
 
+{{< imagecard image="/images/Hardware/Notices.png" title="TrueNAS ES12 January 2025" link="https://www.truenas.com/docs/files/TrueNAS%20ES12%20EOL.pdf" descr="Official iXsystems EoL for TrueNAS ES12 expansion shelf." >}}
+
 {{< imagecard image="/images/Hardware/Notices.png" title="TrueNAS R10 EOL January 2025" link="https://www.truenas.com/docs/files/TrueNAS%20R10%20EOL.pdf" descr="Official iXsystems EoL for TrueNAS R10 systems." >}}
 
 {{< imagecard image="/images/Hardware/Notices.png" title="TrueNAS R40 EOL January 2025" link="https://www.truenas.com/docs/files/TrueNAS%20R40%20EOL.pdf" descr="Official iXsystems EoL for TrueNAS R40 systems." >}}
