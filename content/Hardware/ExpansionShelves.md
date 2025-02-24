@@ -30,9 +30,6 @@ icon4="IconEnterprise.png" cell4title="Meets any Expansion Requirements" cell4te
 
 <div class="docs-sections">
 
-{{< imagecard image="/images/Hardware/ExpansionShelves/ES12BSG.png" title="ES12 Basic Setup Guide" link="https://www.truenas.com/docs/files/ES12BSG1.81.pdf"
-descr="Deployment guide for TrueNAS ES12 Expansion Shelf." >}}
-
 {{< imagecard image="/images/Hardware/ExpansionShelves/ES24BSG.png" title="ES24 Basic Setup Guide" link="https://www.truenas.com/docs/files/ES24BSG1.12.pdf"
 descr="Deployment guide for TrueNAS ES24 Expansion Shelf." >}}
 
