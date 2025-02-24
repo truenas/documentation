@@ -79,7 +79,7 @@ Additional SED management options are available using a shell session and the se
 Enter `sedutil-cli -h` or see [the sedutil-cli.8 man page](https://github.com/truenas/sedutil/blob/master/docs/sedutil-cli.8) for more information.
 
 {{< enterprise >}}
-TrueNAS Enterprise customers should contact iXsystems Support for assistance with the initial set up and management of SEDs using sedutil-cli.
+TrueNAS Enterprise customers should contact TrueNAS Enterprise Support for assistance with the initial set up and management of SEDs using sedutil-cli.
 
 {{< expand "Contacting iX Support" >}}
 {{< include file="/static/includes/iXsystemsSupportContact.md" >}}

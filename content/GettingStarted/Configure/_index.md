@@ -12,7 +12,7 @@ keywords:
 This section provides instructions for users that are configuring TrueNAS for the first time.
 
 {{< enterprise >}}
-TrueNAS Enterprise customers should contact iXsystems Support for assistance with the initial set up and configuration of their systems.
+TrueNAS Enterprise customers should contact TrueNAS Enterprise Support for assistance with the initial set up and configuration of their systems.
 
 {{< expand "Contacting iX Support" >}}
 {{< include file="/static/includes/iXsystemsSupportContact.md" >}}

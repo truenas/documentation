@@ -24,7 +24,7 @@ To take advantage of the lower-cost benefits of the TrueCloud backup service, yo
 
 You must also create and authorize the storage buckets on Storj for TrueNAS to use.
 
-iXsystems is not responsible for charges incurred using a third-party vendor with the TrueCloud backup feature.
+TrueNAS is not responsible for charges incurred using a third-party vendor with the TrueCloud backup feature.
 {{< /hint >}}
 
 ## TrueCloud Backup Task Requirements
