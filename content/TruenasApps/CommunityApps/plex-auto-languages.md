@@ -19,6 +19,6 @@ keywords:
 <!-- Uncomment the following line if you suspect this Community app documentation is out of date, inaccurate, or needs further improvement -->
 <!--{{< include file="/static/includes/apps/CommunityPleaseImprove.md" >}}-->
 
-[Plex Auto Languages](https://github.com/RemiRigal/Plex-Auto-Languages) <!-- is a [description of the application] -->
+[Plex Auto Languages](https://github.com/JourneyDocker/Plex-Auto-Languages) <!-- is a [description of the application] -->
 
 {{< include file="/static/includes/ProposeArticleChange.md" >}}
