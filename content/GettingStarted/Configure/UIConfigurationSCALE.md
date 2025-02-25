@@ -13,7 +13,7 @@ keywords:
 ---
 
 {{< enterprise >}}
-iXsystems TrueNAS Enterprise customers should contact iXsystems Support after their systems arrive to receive additional guidance on their next steps.
+TrueNAS Enterprise customers should contact TrueNAS Enterprise Support after their systems arrive to receive additional guidance on their next steps.
 
 {{< expand "Contacting Support" "v" >}}
 {{< include file="/static/includes/iXsystemsSupportContact.md" >}}
@@ -33,7 +33,7 @@ After [logging into TrueNAS]({{< relref "FirstTimeLogin.md#logging-into-the-scal
 
 {{< enterprise >}}
 ### Applying Enterprise Licenses
-TrueNAS Enterprise customers should contact iXsystems support to obtain license information for their TrueNAS system.
+TrueNAS Enterprise customers should contact TrueNAS Support to obtain license information for their TrueNAS system.
 To apply the license information, go to the **System > General Settings** screen and use the **[Update License]({{< relref "AddLicenseProactiveSupport.md" >}})** option on the **Support** widget (system information card).
 
 ### Setting up Proactive Support
@@ -127,7 +127,7 @@ Configure and enable these services based on your TrueNAS system needs:
   This service is not included on non-Enterprise and non-HA systems.
 
   Enterprise customers should not make changes to failover settings or the service on their own except when disabling failover to make changes to network settings.
-  Contact iXsystems Support for assistance before making any changes to other failover settings.
+  Contact TrueNAS Enterprise Support for assistance before making any changes to other failover settings.
 
 When you add data sharing, the system prompts you to enable the appropriate sharing service as part of the configuration and setup process.
 
@@ -157,14 +157,14 @@ You can use the boot environment in an SSH session to restore your system to the
 
 {{< enterprise >}}
 For Enterprise customers with High Availability (HA) systems, the HA restore process requires recovering both controllers.
-Contact iXsystems Support for assistance before attempting to recover your system.
-If you choose to restore access to controller 1 and the TrueNAS UI, contact iXsystems Support to get assistance with properly recovering your second controller.
+Contact TrueNAS Enterprise Support for assistance before attempting to recover your system.
+If you choose to restore access to controller 1 and the TrueNAS UI, contact TrueNAS Enterprise Support to get assistance with properly recovering your second controller.
 
 Enterprise HA customers should not start issuing CLI commands to recover the system!
 
-Contact iXsystems Support after you restore access to controller 1 to request further assistance and before taking actions that can disrupt or damage system access further and result in requiring a complete reinstall to recover.
+Contact TrueNAS Enterprise Support after you restore access to controller 1 to request further assistance and before taking actions that can disrupt or damage system access further and result in requiring a complete reinstall to recover.
 
-{{< expand "Contact iXsystems Support" "v" >}}
+{{< expand "Contact TrueNAS Enterprise Support" "v" >}}
 {{< include file="/static/includes/iXsystemsSupportContact.md" >}}
 {{< /expand >}}
 {{< /enterprise >}}
@@ -211,7 +211,7 @@ To change from Active Directory to LDAP, use the **Leave Domain** option and the
 {{< /hint >}}
 
 {{< enterprise >}}
-iXsystems Support can assist Enterprise customers with configuring directory service settings in TrueNAS with the [information customers provide]({{< relref "/GettingStarted/Install/_index.md" >}}), but they cannot configure customer Active Directory system settings.
+TrueNAS Enterprise Support can assist Enterprise customers with configuring directory service settings in TrueNAS with the [information customers provide]({{< relref "/GettingStarted/Install/_index.md" >}}), but they cannot configure customer Active Directory system settings.
 {{< /enterprise >}}
 
 Non-Enterprise users can find support for configuring directory services in the TrueNAS Documentation Hub tutorials or in the community forums.
@@ -226,7 +226,7 @@ Click on a drive to view the disk details.
 If the TrueNAS system has an expansion shelf, the **Enclosure** screen also displays an image of the expansion shelf populated with disks.
 {{< /enterprise >}}
 
-If using TrueNAS on hardware not provided by iXsystems, the **System Information** widget on the **Dashboard** displays the TrueNAS logo, and the **System > Enclosure** option does not exist on the menu navigation panel.
+When using TrueNAS on unlicensed hardware, the **System Information** widget on the **Dashboard** displays the TrueNAS logo, and the **System > Enclosure** option does not exist on the menu navigation panel.
 
 ## Using Applications in TrueNAS
 TrueNAS provides a list of applications you can deploy on the **Apps > Discover** screen.

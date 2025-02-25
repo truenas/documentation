@@ -4,6 +4,6 @@ TrueNAS uses DHCP to assign the IP address required to access the TrueNAS UI and
 
 If you do not plan to use the DHCP-assigned network addresses provided by TrueNAS, identify your host and domain names, the static or fixed IP addresses you plan to assign to your network interface card(s), the default gateway, subnet mask(s), and the DNS name servers in your network. 
 {{< enterprise >}}
-For Enterprise systems, have your network information ready to provide iXsystems Support when they guide you through your configuration. 
+For Enterprise systems, have your network information ready to provide to TrueNAS Support when they guide you through your configuration.
 {{< /enterprise >}}
 All other users should have their network information ready before starting to configure network settings. This makes the process go faster and reduces the risk of issues when you configure TrueNAS. 

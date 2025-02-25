@@ -10,7 +10,7 @@ keywords:
 
 {{< hint type="warning" title="Unsupported Feature" >}}
 Developer mode is for developers only.
-Users that enable this functionality will not receive support on any issues submitted to iXsystems.
+Users that enable this functionality will not receive support on any issues submitted to the TrueNAS team.
 
 Only enable when you are comfortable with debugging and resolving all issues encountered on the system.
 Never enable on a system that has production storage and workloads.

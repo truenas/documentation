@@ -22,10 +22,10 @@ Cloud sync tasks allow for single-time transfers or recurring transfers on a sch
 {{< include file="/static/includes/CloudServiceProvidersSCALE.md" >}}
 
 {{< hint type=important >}}
-Using the cloud means data can go to a third-party commercial vendor not directly affiliated with iXsystems.
+Using the cloud means data can go to a third-party commercial vendor not directly affiliated with TrueNAS.
 You should fully understand vendor pricing policies and services before using them for cloud sync tasks.
 
-iXsystems is not responsible for any charges incurred using third-party vendors with the cloud sync feature.
+TrueNAS is not responsible for any charges incurred using third-party vendors with the cloud sync feature.
 {{< /hint >}}
 
 ## Cloud Sync Task Requirements

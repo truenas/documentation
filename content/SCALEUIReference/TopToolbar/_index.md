@@ -12,7 +12,7 @@ tags:
 - enterprise storage system
 ---
 
-The top toolbar icon buttons provide access to the iXsystems website, displays the status of TrueCommand and directory services configured on your system, and displays other configuration menu options.
+The top toolbar icon buttons display the status of TrueCommand, directory services configured on your system, and other configuration menu options.
 
 {{< trueimage src="/images/SCALE/Dashboard/TopToolbar.png" alt="TrueNAS Top Toolbar Icons" id="TrueNAS Top Toolbar Icons" >}}
 
@@ -23,7 +23,6 @@ The top toolbar icon buttons provide access to the iXsystems website, displays t
 |------|------|-------------|
 | <span class="iconify" data-icon="bytesize:menu"></span> | Toggle collapse | Click to expand or collapse the main menu panel on the left side of the screen. |
 | ![SearchUI](/images/SCALE/Dashboard/GlobalSearchSelected.png "Search UI") | Search UI | Searches UI screens and elements or redirects queries to the TrueNAS Documentation Hub. |
-| ![iXsystemsLogo](/images/SCALE/Dashboard/iXsystemsLogo.png "iXsystems Logo") | iXsystems | Opens the [iXsystems home page](https://www.ixsystems.com/) website where users can find information about storage and server systems. Users can also use the iXsystems home page to access their customer portal and community section for support. |
 | ![FeedbackIcon](/images/SCALE/Dashboard/FeedbackIcon.png "Feedback Icon") | Send Feedback | Opens the **Send Feedback** feedback window for sending UI ratings and bug reports to the TrueNAS developers. |
 | ![TrueCommandIcon](/images/SCALE/Dashboard/TrueCommandIcon.png "TrueCommand Icon") | Status of TrueCommand | Displays either the status of a TrueCommand cloud connection or a dialog that allows users to [sign up for a new TrueCommand cloud connection](https://portal.ixsystems.com/portal/signin/#login). |
 | <span class="iconify" data-icon="ic:sharp-system-update-alt" style="font-size:150%;"></span> | Update Status | Shows the system update progress and which user account started the update. Only appears in the top bar when a TrueNAS system update starts. |
@@ -75,7 +74,7 @@ The <span class="material-icons">laptop</span> **API Keys** icon button displays
 
 The <span class="material-icons">library_books</span> **Guide** icon button opens the TrueNAS Documentation Hub website in a new browser tab.
 
-The <span class="material-icons-outlined">info</span> **About** icon button displays a window with links to the TrueNAS Documentation Hub, the TrueNAS Community Forums, the FreeNAS Open Source Storage Appliance GitHub repository, and the iXsystems home page. Use the **Close** button to close the window.
+The <span class="material-icons-outlined">info</span> **About** icon button displays a window with links to the TrueNAS Documentation Hub, the TrueNAS Community Forums, the FreeNAS Open Source Storage Appliance GitHub repository, and the TrueNAS home page. Use the **Close** button to close the window.
 
 {{< trueimage src="/images/SCALE/Dashboard/AboutWindow.png" alt="About Window" id="About Window" >}}
 

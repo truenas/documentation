@@ -18,7 +18,7 @@ The TrueNAS General Settings section provides settings options for support, grap
 ## Support
 
 The **Support** widget shows information about the TrueNAS version and system hardware.
-Links to the open source documentation, community forums, and official Enterprise licensing from iXsystems are also provided.
+Links to the open source documentation, community forums, and official TrueNAS Enterprise licensing are also provided.
 
 **Add License** opens the sidebar with a field to paste a TrueNAS Enterprise license ([details]({{< relref "AddLicenseProactiveSupport.md" >}})).
 
@@ -52,10 +52,10 @@ A warning displays when setting this function.
 
 {{< include file="/static/includes/AppsVMsNoHTTPS.md" >}}
 
-To send failed HTTP request data which can include client and server IP addresses, failed method call tracebacks, and middleware log file contents to iXsystems, select **Crash Reporting**.
+To send failed HTTP request data which can include client and server IP addresses, failed method call tracebacks, and middleware log file contents to the TrueNAS team, select **Crash Reporting**.
 
-### Sending Usage Statistics to iXsystems
-To send anonymous usage statistics to iXsystems, select the **Usage Collection** option.
+### Sending Usage Statistics to TrueNAS
+To send anonymous usage statistics to the TrueNAS team, select the **Usage Collection** option.
 
 For more information about what usage data is collected, see the [TrueNAS Data Collection Statement]({{< relref "/GettingStarted/UserAgreements/DataCollectionStatement.md" >}}).
 

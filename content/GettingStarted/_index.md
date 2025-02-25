@@ -25,7 +25,7 @@ The [Evaluation Guide](https://www.truenas.com/evaluating-truenas-scale/) also p
 ## Enterprise Deployment Guide
 
 {{< enterprise >}}
-This Table of Contents is a specific article arrangement that guides deploying TrueNAS Enterprise hardware purchased from iXsystems, inc.
+This Table of Contents is a specific article arrangement that guides deploying TrueNAS Enterprise hardware.
 
 * [User Agreements]({{< relref "/GettingStarted/UserAgreements/_index.md" >}})
   * [TrueNAS EULA]({{< relref "SCALEEULA.md" >}})

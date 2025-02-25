@@ -61,7 +61,7 @@ These providers can charge fees for data transfer and storage, so please review 
 
 Cloud sync and TrueCloud backup tasks can be configured to send, receive, or synchronize data with a cloud storage provider.
 
-The simplest way to set up a TrueCloud backup task is using a Storj iX account.
+The simplest way to set up a TrueCloud backup task is using a Storj TrueNAS account.
 See [Managing TrueCloud Backup Tasks]({{< relref "TrueCloudTasks.md" >}}) for a full tutorial.
 
 See [Adding Cloud Credentials]({{< relref "/SCALETutorials/Credentials/BackupCredentials/AddCloudCredentials.md" >}}) for information on connecting TrueNAS to other cloud storage providers.

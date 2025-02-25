@@ -20,7 +20,7 @@ copyright = "Documentation distributed under CC BY NC SA 4.0"
 timeout = "30s"
 
 [author]
-name = "iXsystems and TrueNAS Users"
+name = "The TrueNAS development team and TrueNAS users"
 
 [outputs]
 section = ["HTML","RSS","print"]

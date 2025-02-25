@@ -147,7 +147,7 @@ You can use the [RAIDZ Extension Calculator](https://www.truenas.com/docs/refere
 
 {{< include file="/static/includes/ExpandedVdevReporting.md" >}}
 
-For more information, see [Jim Salter's article](https://arstechnica.com/gadgets/2021/06/raidz-expansion-code-lands-in-openzfs-master/) at Ars Technica and the upstream [RAIDZ extension](https://github.com/openzfs/zfs/pull/15022) PR, sponsored by iXsystems, at OpenZFS.
+For more information, see [Jim Salter's article](https://arstechnica.com/gadgets/2021/06/raidz-expansion-code-lands-in-openzfs-master/) at Ars Technica and the upstream [RAIDZ extension](https://github.com/openzfs/zfs/pull/15022) PR, sponsored by TrueNAS, at OpenZFS.
 See also ["ZFS RAIDZ Expansion Is Awesome but Has a Small Caveat"](https://louwrentius.com/zfs-raidz-expansion-is-awesome-but-has-a-small-caveat.html) by Louwrentius for an in-depth discussion of lost capacity and recovering overhead.
 {{< /expand >}}
 

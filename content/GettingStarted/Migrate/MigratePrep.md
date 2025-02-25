@@ -79,7 +79,7 @@ Enterprise customers are encouraged to contact Support for assistance with the p
    Because of the difference, network settings can either get lost or not transfer which means you have no network connectivity.
    See [Component Naming]({{< relref "ComponentNaming.md" >}}) for more information.
 
-   When using a TrueNAS Enterprise system from iXsystems, refer to the network port ID manuals of your [TrueNAS Systems](https://www.truenas.com/docs/hardware/) to find the network port assignments in TrueNAS.
+   When using a TrueNAS Enterprise system, refer to the network port ID manuals of your [TrueNAS Systems](https://www.truenas.com/docs/hardware/) to find the network port assignments in TrueNAS.
    When using custom hardware for TrueNAS, refer to the manual or documentation provided with your system or locate this information on your server hardware and take note of it.
 
    If there are issues after a clean install from an <file>iso</file> file, or if you are not using DHCP for network and interface configuration, use the recorded information from your previous settings to configure your network settings and reconfigure your static IPs or aliases after migrating.

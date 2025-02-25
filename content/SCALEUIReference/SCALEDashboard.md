@@ -37,10 +37,10 @@ The **Updates Available** button opens the **System > Update** screen.
 
 If installed on a customer-provided server, the widget shows a generic TrueNAS image.
 
-If installed on iXsystems-provided hardware, the widget shows a picture of the system.
+If installed on TrueNAS Enterprise hardware, the widget shows a picture of the system.
 Click on the image to display the **View Enclosure** screen.
 
-{{< trueimage src="/images/SCALE/Dashboard/DashboardSystemInfoWidget.png" alt="System Information Widget for iX Systems" id="System Information Widget for iX Systems" >}}
+{{< trueimage src="/images/SCALE/Dashboard/DashboardSystemInfoWidget.png" alt="System Information Widget for TrueNAS Systems" id="System Information Widget for TrueNAS Systems" >}}
 
 {{< truetable >}}
 | Field | Description |
@@ -136,8 +136,8 @@ Links included are:
 * [TrueNAS Documentation Site](https://www.truenas.com/docs/)
 * [TrueNAS Community Forums](https://forums.truenas.com/)
 * [TrueNAS Open Source software](https://github.com/truenas/)
-* [iXsystems home page](https://www.ixsystems.com/) where users can access the GitHub web page.
 * [TrueNAS Newsletter](https://www.truenas.com/newsletter/) where users can sign up for the newsletter.
+* [TrueNAS Website](https://www.truenas.com)
 
 Click on each link to open it in a new browser tab.
 {{< /expand >}}

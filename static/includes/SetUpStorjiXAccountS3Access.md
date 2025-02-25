@@ -1,6 +1,6 @@
 &NewLine;
 
-After creating your Storj iX account, add S3 access credentials.
+After creating your Storj TrueNAS account, add S3 access credentials.
 
 1. Click **Access Keys** to open the **Access Keys** dashboard, then click **New Access Key**.
 

@@ -18,7 +18,7 @@ keywords:
 
 {{< enterprise >}}
 Installing TrueNAS on High Availability (HA) systems is complicated and should be guided by Enterprise-level support.
-Contact iXsystems Support for assistance whenever attempting to install TrueNAS on Enterprise HA hardware.
+Contact TrueNAS Enterprise Support for assistance whenever attempting to install TrueNAS on Enterprise HA hardware.
 
 {{< expand "Contacting Support" "v" >}}
 {{< include file="/static/includes/iXsystemsSupportContact.md" >}}
@@ -46,8 +46,8 @@ Have this information handy to complete this procedure:
 * All the assigned network addresses and host names (VIP, controller 1 and 2 IP addresses).
 * Other network information including domain name(s), and DNS server, default gateway, alias, or other static IP addresses.
 * The IPMI access addresses for each controller and the administration credentials for IPMI access to these addresses.
-* TrueNAS license file provided by iXsystems.
-* TrueNAS Storage Controller 1 (A) and 2 (B) serial numbers (refer to contracts or documentation provided with the system or contact iXsystems Support and provide your contract number).
+* TrueNAS license file provided by the TrueNAS Enterprise team.
+* TrueNAS Storage Controller 1 (A) and 2 (B) serial numbers (refer to contracts or documentation provided with the system or contact TrueNAS Enterprise Support and provide your contract number).
 
 {{< hint type=note >}}
 HA system controllers each have serial numbers, the lower number assigned is for controller 1 (e.g. of two controller serial numbers assigned *A1-12345* and *A1-12346*, the *A1-12345* is for controller 1 and *A1-12346* is for controller 2).
@@ -276,7 +276,7 @@ For more information on how to import a pool [click here]({{< relref "ImportPool
    {{< trueimage src="/images/SCALE/SystemSettings/FailoverSyncToPeerDialog.png" alt="Failover Sync To Peer" id="Failover Sync To Peer" >}}
 
 When the system comes back up, log into TrueNAS using the virtual IP address.
-The main **Dashboard** displays two **System Information** widgets. In standard configurations by iXsystems, Controller 1 shows its serial number and a host name that includes the letter **a**. Controller 2 is labeled as **Standby Controller** and shows its serial number and a host name that includes the letter **b**.
+The main **Dashboard** displays two **System Information** widgets. In standard TrueNAS Enterprise configurations, Controller 1 shows its serial number and a host name that includes the letter **a**. Controller 2 is labeled as **Standby Controller** and shows its serial number and a host name that includes the letter **b**.
 Take note of this information.
 
 {{< trueimage src="/images/SCALE/Dashboard/HAMainDashboard.png" alt="Main Dashboard for HA Systems" id="Main Dashboard for HA Systems" >}}

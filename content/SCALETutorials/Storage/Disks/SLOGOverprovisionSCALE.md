@@ -18,7 +18,7 @@ https://www.seagate.com/blog/ssd-over-provisioning-benefits-master-ti/.
 
 For more general information on SLOG disks, see [SLOG Devices](https://www.truenas.com/docs/references/slog/).
 
-Because this is a potentially disruptive procedure, contact iXsystems Support to review your overprovisioning needs and schedule a maintenance window.
+Because this is a potentially disruptive procedure, contact TrueNAS Enterprise Support to review your overprovisioning needs and schedule a maintenance window.
 
 {{< include file="/static/includes/iXsystemsSupportContact.md" >}}
 

@@ -70,7 +70,7 @@ These services use external communication:
 * Replication
 * Rsync
 * Support
-* TrueCommand iX portal
+* TrueCommand-TrueNAS portal
 * Updates
 * VMWare snapshots
 
