@@ -144,8 +144,6 @@ Device notes:
 * A **CD-ROM** device allows booting a VM from a CD-ROM image like an installation CD.
   The CD image must be available in the system storage.
 
-See [Adding and Managing VM Devices]({{< relref "AddManageVMDevicesSCALE.md" >}}) for more information.
-
 <!-- 
 ## Managing Devices
 
