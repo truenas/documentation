@@ -81,7 +81,7 @@ Enter `sedutil-cli -h` or see [the sedutil-cli.8 man page](https://github.com/tr
 {{< enterprise >}}
 TrueNAS Enterprise customers should contact TrueNAS Enterprise Support for assistance with the initial set up and management of SEDs using sedutil-cli.
 
-{{< expand "Contacting iX Support" >}}
+{{< expand "Contacting TrueNAS Support" >}}
 {{< include file="/static/includes/iXsystemsSupportContact.md" >}}
 {{< /expand >}}
 {{< /enterprise >}}

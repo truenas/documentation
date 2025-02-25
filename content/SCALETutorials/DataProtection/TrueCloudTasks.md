@@ -1,6 +1,6 @@
 ---
 title: "Managing TrueCloud Backup Tasks"
-description: "Provides instructions on setting up a TrueCloud backup task and configuring a Storj iX account to work with TrueNAS."
+description: "Provides instructions on setting up a TrueCloud backup task and configuring a Storj TrueNAS account to work with TrueNAS."
 weight: 5
 tags:
 - TrueCloud
@@ -17,10 +17,10 @@ TrueNAS can send, receive, or synchronize data with the cloud storage providers 
 TrueCloud backup tasks allow for single-time transfers or recurring transfers on a schedule.
 They are an effective method to back up data to a remote location.
 
-This article provides instructions on configuring a TrueCloud backup task using Storj and covers setting up both the Storj iX account and TrueNAS credential.
+This article provides instructions on configuring a TrueCloud backup task using Storj and covers setting up both the Storj TrueNAS account and TrueNAS credential.
 
 {{< hint type=important >}}
-To take advantage of the lower-cost benefits of the TrueCloud backup service, you must create your Storj iX account using the link provided on the **Add Cloud Credentials** screen.
+To take advantage of the lower-cost benefits of the TrueCloud backup service, you must create your Storj TrueNAS account using the link provided on the **Add Cloud Credentials** screen.
 
 You must also create and authorize the storage buckets on Storj for TrueNAS to use.
 
