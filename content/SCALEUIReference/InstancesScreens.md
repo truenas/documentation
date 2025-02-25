@@ -98,45 +98,48 @@ A **Delete volume** dialog displays.
 Select **Confirm** and then click **Continue** to delete the image.
 To prevent accidental deletion of an in-use image, the delete icon is not selectable for active images.
 
-<!--
-## Create Virtual Machine Wizard Screens
+## Create Instance Wizard
 
-The **Create Virtual Machine** configuration wizard displays all settings to set up a new virtual machine.
+The **Create Instance** configuration wizard displays all settings to set up a new container or virtual machine.
 
-Use **Next** and **Back** to advance to the next or return to the previous screen to change a setting.
-Use **Save** to close the wizard screens and add the new VM to the **Instances** screen.
+### Instance Configuration
 
-### Operating System Screen
+The **Instance Configuration** settings specify the instance name, virtualization method or type, and operating system image.
 
-The **Operating System** settings specify the VM operating system type, the time the VM system clock uses, the boot method, and  display type.
+{{< trueimage src="/images/SCALE/Virtualization/InstanceConfigurationContainer.png" alt="Instance Configuration - Container" id="Instance Configuration - Container" >}}
 
-{{< trueimage src="/images/SCALE/Virtualization/AddVMOperSys.png" alt="Operating System" id="Operating System" >}}
-
-{{< expand "Operating System Settings" "v" >}}
+{{< expand "Instance Configuration Settings - Container" "v" >}}
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Guest Operating System** | Required. Select the VM operating system type from the dropdown list. Options are **Windows** which adds the **Enable Hyper-V Enlightenments** option. **Linux**, and **FreeBSD**. |
-| **Enable Hyper-V Enlightenments** |Only displays when **Guest Operating System** is set to **Windows**. This emulates a Hyper-V-compatible hypervisor for the Windows guest operating system and makes some Hyper-V-specific features available. |
-| **Name** | Required. Enter an alphanumeric name for the virtual machine. |
-| **Description** | (Optional) Enter a description of your choosing. For example, the type of OS for the VM or the VM use. |
-| **System Clock** | Select the method to use to set the system the VM from the dropdown list. Options are **Local** which uses the TrueNAS system clock setting, or **UTC** to use the Coordinated Universal Time clock. The default is **Local**. |
-| **Boot Method** | Select the boot method option from the dropdown list. Options are **UEFI** for newer operating systems or **Legacy BIOS** for older operating systems that only support BIOS booting. |
-| **Shutdown Timeout** | Enter the time in seconds the system waits for the VM to cleanly shut down. During system shutdown, the system initiates power-off for the VM after the shutdown timeout entered expires. |
-| **Start on Boot** | Select to start the VM when the system boots. Selected by default. |
-| **Enable Display** | Enables a display (Virtual Network Computing) remote connection. Requires UEFI booting. Selected by default. |
-| **Bind** | Displays when **Enable Display** is selected. Select an IP address to use for remote VNC sessions. Note that this setting only applies if you are using a VNC client other than the TrueNAS WebUI. |
-| **Password** | Displays when **Enable Display** is selected. Enter a password for the VNC display to use to securely access the VM. |
+| **Name** | Required. Enter an alphanumeric name for the instance. |
+| **Virtualization Method** | Required. Select **Container** to create a lightweight Linux container that shares the TrueNAS OS kernel. |
+| **Image** | **Browse Catalog** opens the **Select Image** screen with available Linux image choices from [linuxcontainers.org](https://linuxcontainers.org/). Search or browse to locate your desired image and click **Select**. |
 {{< /truetable >}}
 {{< /expand >}}
 
-### CPU and Memory Screen
+{{< expand "Instance Configuration Settings - VM" "v" >}}
+{{< truetable >}}
+| Setting | Description |
+|---------|-------------|
+| **Name** | Required. Enter an alphanumeric name for the instance. |
+| **Virtualization Method** | Required. Select **VM** to create a fully isolated virtual machine using any operating system. |
+| **VM Image Options** | (Shows when **Virtualization Method** is set to **VM**)  |
+| **Use a Linux image** | Select to choose a Linux image from [linuxcontainers.org](https://linuxcontainers.org/). **Browse Catalog** opens the **Select Image** screen with available image choices. Search or browse to locate your desired image and click **Select**. |
+| **Use an ISO image** | Select to use ISO image previously uploaded to the instances service or to upload a new one. **Select ISO** opens the **Volumes** screen. Locate your desired image and click **Select** or use **Upload New Image**. See [Volumes](#volumes) for more information. |
+| **Use zvol with previously installed OS** | Select to create a new instance using an existing VM storage volume. Enter or browse to select the zvol on the TrueNAS system.<br><br>Use this option to migrate a previously configured VM, such as after updating from TrueNAS 24.10. See [Migrating Virtual Machines](https://www.truenas.com/docs/scale/25.04/gettingstarted/scalereleasenotes/#migrating-virtual-machines) from the 25.04 release notes for more information. |
+{{< /truetable >}}
+{{< /expand >}}
 
-The **CPU and Memory** settings specify the CPU mode, model, and memory size. They also let you specify the number of virtual CPUs to allocate to the virtual machine, the number of cores per virtual CPU socket, and the number of threads per core.
+### CPU & Memory
 
-{{< trueimage src="/images/SCALE/Virtualization/AddVMMemory.png" alt="CPU and Memory" id="CPU and Memory" >}}
+The **CPU & Memory** settings specify the number of virtual CPU cores to allocate to the virtual machine and memory size.
+
+{{< trueimage src="/images/SCALE/Virtualization/CreateInstanceCPUandMemory.png" alt="CPU & Memory" id="CPU & Memory" >}}
 
 {{< include file="/static/includes/VMCPUandMemorySettings.md" >}}
+
+<!--
 
 ### Disks Screen
 
@@ -276,7 +279,7 @@ Click **Instances** in the header to return to the **Virtual Machine** screen.
 ## Edit Virtual Machine Screen
 
 The **Edit VM** screen settings are a subset of those found on the **[Create Virtual Machine](#create-virtual-machine-wizard-screens)** screens.
-It only includes the general settings found on the wizard **Operating System** screen, **CPU and Memory**, and **GPUs** screen settings.
+It only includes the general settings found on the wizard **Operating System** screen, **CPU & Memory**, and **GPUs** screen settings.
 To edit disks, network, or display settings, click [**Devices**](#virtual-machine-details-screen) on the expanded view of the VM to open the [**Devices**](#devices-screens) screen.
 
 ### Edit General Settings
@@ -307,11 +310,11 @@ From this screen, click the <span class="material-icons">more_vert</span> icon a
 Use the **Bind** dropdown to select a new IP address.
 {{< /expand >}}
 
-### Edit CPU and Memory Settings
+### Edit CPU & Memory Settings
 
-The **CPU and Memory** settings on the **Edit VM** screen are the same as those in the **Create Virtual Machine** wizard.
+The **CPU & Memory** settings on the **Edit VM** screen are the same as those in the **Create Virtual Machine** wizard.
 
-{{< trueimage src="/images/SCALE/Virtualization/EditVMCPUandMemory.png" alt="Edit CPU and Memory" id="Edit CPU and Memory" >}}
+{{< trueimage src="/images/SCALE/Virtualization/EditVMCPUandMemory.png" alt="Edit CPU & Memory" id="Edit CPU & Memory" >}}
 
 {{< include file="/static/includes/VMCPUandMemorySettings.md" >}}
 
