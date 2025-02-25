@@ -24,7 +24,7 @@ See [additional security considerations](#additional-security-considerations) be
 
 Review the [Nextcloud documentation](https://docs.nextcloud.com/server/latest/admin_manual/configuration_server/reverse_proxy_configuration.html) to get a better understanding of the security implications before proceeding.
 
-{{< include file="/static/includes/AppsUnversioned.md" >}}
+
 
 ## Setting Up Cloudflare
 

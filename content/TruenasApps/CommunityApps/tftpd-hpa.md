@@ -28,7 +28,7 @@ If it finds a mismatch, the container applies the correct permissions to the TFT
 If **Allow Create** is selected, the container also checks and chmods TFTP directories to 757 or to 555 if not checked.
 Afterwards, the TFTP container runs as root user, dropping privileges to the tftp (9069) user for the TFTP service.
 
-{{< include file="/static/includes/AppsUnversioned.md" >}}
+
 
 ## First Steps
 

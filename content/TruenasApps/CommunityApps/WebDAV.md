@@ -26,7 +26,7 @@ It serves as the replacement for the built-in TrueNAS WebDAV feature.
 
 When installed and configured with at least one share, a container launches with temporary root privileges to configure the shares and activate the service.
 
-{{< include file="/static/includes/AppsUnversioned.md" >}}
+
 
 ## First Steps
 

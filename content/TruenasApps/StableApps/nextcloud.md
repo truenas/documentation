@@ -39,7 +39,7 @@ The instructions in this article apply to these TrueNAS 24.10 and later releases
 TrueNAS offered a FreeBSD-based TrueNAS Nextcloud plugin in releases 13.0 and 13, but it is no longer available in TrueNAS 13.0 and is soon to be unavailable in 13.3. Refer to release notes for more information on upcoming and current changes.
 For more information on the FreeBSD-based Nextcloud plugin, see [Nextcloud]({{< relref "/content/solutions/integrations/nextcloud.md" >}}).
 
-{{< include file="/static/includes/AppsUnversioned.md" >}}
+
 
 ## Before You Begin
 

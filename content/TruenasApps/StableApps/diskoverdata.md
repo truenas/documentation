@@ -25,7 +25,7 @@ It supports crawling local file systems, NFS and SMB, cloud storage, and plugins
 This TrueNAS Diskover Data communitity edition app provides effective search and file organization functions. System administrators can manage storage infrastructure, monitor storage and usage reports, use the information to provision storage, and make effective decisions about new infrastructure purchases.
 The app provides storage for Diskover Data and the Elasticsearch component. Read Diskover Data documentation to become familiar with the functions and configuration options in the Diskover Data web interface.
 
-{{< include file="/static/includes/AppsUnversioned.md" >}}
+
 
 ## Before You Begin
 

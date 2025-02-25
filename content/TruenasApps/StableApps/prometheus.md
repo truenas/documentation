@@ -25,7 +25,7 @@ Also use it to diagnose problems with the monitored endpoints when there is a sy
 
 TrueNAS makes installing Prometheus easy, but you must use the Prometheus web portal to configure targets, labels, alerts, and queries.
 
-{{< include file="/static/includes/AppsUnversioned.md" >}}
+
 
 ## Before You Begin
 
