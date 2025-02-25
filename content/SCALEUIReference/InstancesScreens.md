@@ -119,6 +119,9 @@ The **Instance Configuration** settings specify the instance name, virtualizatio
 {{< /expand >}}
 
 {{< expand "Instance Configuration Settings - VM" "v" >}}
+
+{{< trueimage src="/images/SCALE/Virtualization/InstanceConfigurationVM.png" alt="Instance Configuration - VM" id="Instance Configuration - VM" >}}
+
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
@@ -139,27 +142,65 @@ The **CPU & Memory** settings specify the number of virtual CPU cores to allocat
 
 {{< include file="/static/includes/VMCPUandMemorySettings.md" >}}
 
-<!--
+## Environment
 
-### Disks Screen
+The Environment settings allow you to configure optional additional environment variables for a Linux container to run on boot or execute.
+Environment variables are not supported for VMs.
 
-The **Disks** settings allow specifying how virtual disks are added. Options are to create a new zvol on an existing dataset for a disk image or use an existing zvol or file for the VM. You also specify the disk type, zvol location, and size.
+Click Add to display a set of environment fields.
 
-{{< trueimage src="/images/SCALE/Virtualization/CreateVirtualMachineDisks.png" alt="Disks" id="Disks" >}}
+{{< trueimage src="/images/SCALE/Virtualization/CreateInstanceEnvironment.png" alt="Environment" id="Environment" >}}
+
+{{< expand "Environment Settings" "v" >}}
+{{< truetable >}}
+| Setting | Description |
+|-----------|-------------|
+| Name | Enter the name of the environment variable to set (e.g., `LANG`). |
+| Value | Enter the value to assign to the environment variable (e.g., `en_US.UTF-8`). |
+{{< /truetable >}}
+{{< /expand >}}
+
+### Disks
+
+The **Disks** settings allow mounting storage volumes to an instance.
+Options are to create a new zvol on an existing dataset or to use an existing zvol.
+For VMs, you can also specify the size of the root disk.
+
+Click **Add** to configure to create or mount a disk.
+Click **Add** again to create or mount additional disks.
+
+{{< trueimage src="/images/SCALE/Virtualization/CreateInstanceDisksVM.png" alt="Disks - VM" id="Disks - VM" >}}
 
 {{< expand "Disks Settings" "v" >}}
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Create new disk image** | Select to create a new zvol on an existing dataset to use as a virtual hard drive for the VM. |
-| **Use existing disk image** | Select to use an existing zvol or file for the VM. Displays the **Select Disk Type** and **Select Existing Zvol** dropdown list fields. |
-| **Select Disk Type** | Displays after selecting **Use existing disk image**. Select the desired disk type. Options are **AHCI** or **VirtIO**. Select **AHCI** for Windows VMs. **VirtIO** requires a guest OS that supports VirtIO paravirtualized network drivers. |
-| **Select Existing Zvol** | (Required) Displays after selecting **Use existing disk image**. Select an existing zvol from the dropdown list. |
-| **Zvol Location** | (Required) Displays after selecting **Use existing disk image**. Select a dataset for the new zvol from the dropdown list of datasets on the system. |
-| **Size** | (Required) Displays after selecting **Use existing disk image**. Allocate space for the new zvol. (Examples: 500 KiB, 500M, 2 TB). Units smaller than MiB are not allowed. |
+| **Root Disk Size (in GiB)** | (Required for VMs only) Enter a plain integer to configure the size of the VM root disk (default 10). |
+| **Source** | (Required) Displays after clicking **Add** in **Disks**. To create a new zvol, enter a path or browse to select a parent dataset from the dropdown list of datasets on the system. Then click **Create Dataset**, enter a name for the new zvol in the **Create Dataset** window, and click **Create**. <br><br> To use an existing zvol, select an existing zvol from the dropdown list under <file>/dev/zvol/</file>. |
+| **Destination** | (Required for containers only) Enter the filesystem path to mount the disk at in the container. |
 {{< /truetable >}}
 {{< /expand >}}
 
+### Proxies
+
+The **Proxies** settings allow you to forward network connections between the host and the instance. This enables traffic directed to a specific address on the host to be routed to an address inside the instance, or vice versa, allowing the instance to connect externally through the host.
+
+Click **Add** to display a set of proxy configuration settings.
+
+{{< trueimage src="/images/SCALE/Virtualization/CreateInstanceProxies.png" alt="Proxies" id="Proxies" >}}
+
+{{< expand "Proxies Settings" "v" >}}
+{{< truetable >}}
+| Setting | Description |
+|---------|-------------|
+| **Host Protocol** | Select the connection protocol for the TrueNAS host. Options are **TCP** or **UDP**. |
+| **Host Port** | Enter the TrueNAS host port to map to the instance port on the container or VM, for example *3600*. |
+| **Instance Protocol** | Select the connection protocol for the container or VM. Options are **TCP** or **UDP**. |
+| **Instance Port** | Enter the port number within the container or VM, for example *80*. |
+{{< /truetable >}}
+{{< /expand >}}
+
+<!--
 ### Network Interface Screen
 
 The **Network Interface** settings specify the network adapter type, mac address, and physical network interface card associated with the VM.
