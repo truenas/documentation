@@ -12,6 +12,8 @@ tags:
 
 {{< include file="/static/includes/25.04Virtualization.md" >}}
 
+## Instances Screen
+
 The **Instances** screen allows users to add, edit, or manage virtual machines (VMs) and Linux containers.
 
 The first time you go to **Instances**, the screen header shows a <i class="fa fa-cog" aria-hidden="true"></i> **Pool is not selected** status.
@@ -28,16 +30,6 @@ The **Instances** screen displays **No Instances** before you create the first i
 The **Configuration** dropdown menu includes **[Global Settings](#global-settings-screen)** and **[Manage Volumes](#manage-volumes-screen)**.
 
 **Create New Instance** at the top right of the screen opens the **[Create Instance](#create-instance-wizard-screens)** wizard.
-
-The screen displays a list of VMs configured on the TrueNAS system.
-The **State** toggle displays and changes the state of the VM.
-**Autostart**, when selected, automatically starts the VM if the system reboots, otherwise you must manually start the VM.
-
-{{< trueimage src="/images/SCALE/Virtualization/InstancesScreenWithInstances.png" alt="Instances Screen" id="Instances Screen" >}}
-
-Click on an instance to populate the **Details for *Instance*** widgets with information and configuration options for that instance.
-Click <i class="material-icons" aria-hidden="true" title="Restart">restart_alt</i> to restart or <i class="material-icons" aria-hidden="true" title="Stop">stop_circle</i> to stop a running instance.
-Click <i class="material-icons" aria-hidden="true" title="Start">play_circle</i> to start a stopped instance.
 
 ## Configuration Menu
 
@@ -75,8 +67,8 @@ When complete, the **Instances** screen displays the **No instances** and <i cla
 | Setting | Description |
 |-----------|-------------|
 | Bridge | Select **Automatic** to use the default network bridge for communication between instances and the TrueNAS host or use the dropdown list to select an existing bridge. See [Accessing NAS from VMs and Containers]({{< relref "/ScaleTutorials/Network/ContainerNASBridge.md" >}}) for more information. |
-| **IPv4 Network** | Displays when **Automatic** is selected for **Bridge**. Enter the IPv4 address and subnet to use for the bridge or leave empty to allow TrueNAS to use the default address. |
-| **IPv6 Network** | Displays when **Automatic** is selected for **Bridge**. Enter the IPv6 address and subnet to use for the bridge or leave empty to allow TrueNAS to use the default address. |
+| **IPv4 Network** | Displays when **Bridge** is set to **Automatic**. Enter the IPv4 address and subnet to use for the bridge or leave empty to allow TrueNAS to use the default address. |
+| **IPv6 Network** | Displays when **Bridge** is set to **Automatic**. Enter the IPv6 address and subnet to use for the bridge or leave empty to allow TrueNAS to use the default address. |
 {{< /truetable >}}
 
 ### Volumes
@@ -142,7 +134,7 @@ The **CPU & Memory** settings specify the number of virtual CPU cores to allocat
 
 {{< include file="/static/includes/VMCPUandMemorySettings.md" >}}
 
-## Environment
+### Environment
 
 The Environment settings allow you to configure optional additional environment variables for a Linux container to run on boot or execute.
 Environment variables are not supported for VMs.
@@ -200,124 +192,148 @@ Click **Add** to display a set of proxy configuration settings.
 {{< /truetable >}}
 {{< /expand >}}
 
+### Network
+
+The **Network** settings allow you to configure how the instance connects to the host and external networks, Options include the default network bridge, an existing bridge interface, or a MACVLAN.
+
+See [Accessing NAS from VMs and Containers]({{< relref "/SCALETutorials/Network/ContainerNASBridge.md" >}}) for more information.
+
+{{< trueimage src="/images/SCALE/Virtualization/InstancesNetworkDefault.png" alt="Default Network Settings" id="Default Network Settings" >}}
+
+{{< expand "Network Settings" "v" >}}
+
+{{< trueimage src="/images/SCALE/Virtualization/InstancesNetworkNonDefault.png" alt="Non-Default Network Settings" id="Non-Default Network Settings" >}}
+
+{{< truetable >}}
+| Setting | Description |
+|---------|-------------|
+| **Use default network settings** | Select to use default network settings to connect the instance to the host using the automatic bridge defined in [Global Settings](#global-settings). Selected by default. Deselect to display the **Bridged NICs** (if available) and **Macvlan NICs** settings. |
+| **Bridged NICs** | Select an existing bridge on the TrueNAS host to connect to the instance. Displays when one or more existing bridge interface(s) is available. |
+| **Macvlan NICs** | Select an existing interface to create a virtual network interface based on the selected interface, assigning it a unique MAC address to allow the instance to appear as a separate device on the network. |
+{{< /truetable >}}
+{{< include file="/static/includes/MacvlanHost.md" >}}
+{{< /expand >}}
+
+### USB Devices
+
+The USB Devices settings allow you to attach a USB device directly to an instance, enabling it to access the device as if it were physically connected.
+
+{{< trueimage src="/images/SCALE/Virtualization/CreateInstanceUSB.png" alt="USB Devices" id="USB Devices" >}}
+
+Select one or more device(s) to attach.
+
+### PCI Passthrough
+
+The **PCI Passthrough** settings allow you to assign a physical PCI device, such as a network card or GPU, directly to a VM, enabling it to use the device as if it were physically attached.
+This setting is only available for VMs and cannot be used with containers.
+
+The selected PCI device(s) must not be in use by the host and must not share an IOMMU group with other devices that the host requires.
+
+{{< trueimage src="/images/SCALE/Virtualization/CreateInstancePCI.png" alt="PCI Passthrough" id="PCI Passthrough" >}}
+
+Click **Add PCI Passthrough** to open the [**Add PCI Passthrough Device**](#add-pci-passthrough-device-screen) screen and select the device(s) to attach.
+
+### VNC
+
+The **VNC** settings allow you to enable VNC access for a VM, configure the VNC port, and set a VNC password for remote access.
+This setting is only available for VMs and cannot be used with containers.
+
+{{< trueimage src="/images/SCALE/Virtualization/CreateInstanceVNC.png" alt="VNC Settings" id="VNC Settings" >}}
+
+{{< expand "VNC Settings" "v" >}}
+
+{{< truetable >}}
+| Setting | Description |
+|---------|-------------|
+| **Enable VNC** | Select to allow remote desktop access via VNC. |
+| **VNC Port** | Enter a port number to configure the port on which the VM's VNC server listens for connections. |
+| **VNC Password** | Enter a password to authenticate VNC access to the VM. Note: A VNC password is not cryptographically secure. You should not rely on it as a single authentication mechanism for your VMs. |
+{{< /truetable >}}
+{{< /expand >}}
+
+## Instances Table
+
+The **Instances** table populates a row for each configured instance that shows the name, type, current state, and options to restart or stop the instance.
+Stopped instances show the option to start the instance.
+
+{{< trueimage src="/images/SCALE/Virtualization/InstancesScreenWithInstances.png" alt="Instances Screen - Populated" id="Instances Screen - Populated" >}}
+
+Click on an instance to populate the **Details for *Instance*** [widgets](#instances-widgets) with information and configuration options for that instance.
+
+Click <i class="material-icons" aria-hidden="true" title="Restart">restart_alt</i> to restart or <i class="material-icons" aria-hidden="true" title="Stop">stop_circle</i> to stop a running instance.
+Click <i class="material-icons" aria-hidden="true" title="Start">play_circle</i> to start a stopped instance.
+
+**Search** above the **Instances** table allows entering the name of an instance to locate a configured instance.
+
+Selecting the checkbox to the left of **Name** selects all configured instances and shows the [**Bulk Actions**](#bulk-actions) dropdown list.
+Selecting the checkbox on an instance row also shows the [**Bulk Actions**](#bulk-actions) dropdown list.
+
+### Bulk Actions
+
+The **Bulk Action** dropdown list allows you to apply actions to one or more instances on your system.
+Select the checkbox to the left of **Name** to show the **Bulk Actions** dropdown menu.
+
+Menu options are **Start All Selected**, **Stop All Selected**, and **Restart All Selected**.
+
+{{< trueimage src="/images/SCALE/Virtualization/InstancesBulkActions.png" alt="Bulk Actions" id="Bulk Actions" >}}
+
+## Instances Widgets
+
+Configured instances have a set of widgets on the **Instances** screen.
+Click on an instance row to highlight it and view the information widgets for that instance.
+Information in the widgets changes based on the row highlighted in the **Instances** table.
+
+### General Info Widget
+
+The **General Info** widget shows the status and configured autostart, base image, CPU, memory, and secure boot settings for the instance.
+It includes the **Edit** and **Delete** buttons for the instance.
+
+{{< trueimage src="/images/SCALE/Virtualization/GeneralInfoWidget.png" alt="General Info Widget" id="General Info Widget" >}}
+
+**[Delete](#delete-instances)** opens the **Delete** dialog.
+
+**[Edit](#edit-instance-screen)** opens an **Edit Instance: *Instance*** configuration screen populated with editable settings also found on the install wizard screen for the instance.
+
+#### Delete Instances
+
+The **Delete** dialog asks for confirmation to delete the selected instance.
+
+{{< trueimage src="/images/SCALE/Virtualization/DeleteInstance.png" alt="Delete Instance Dialog" id="Delete Instance Dialog" >}}
+
+**Confirm** activates the **Continue** button.
+**Continue** starts the delete operation.
+
+### Devices Widget
+
+The **Devices** widget displays all USB, GPU, Trusted Platform Module (TPM), and PCI Passthrough devices attached to the instance.
+
+{{< trueimage src="/images/SCALE/Virtualization/DevicesWidget.png" alt="Devices Widget" id="Devices Widget" >}}
+
+**Add** opens a flyout menu containing available options for **USB Devices**, **GPUs**, **TPM**, and **PCI Passthrough** devices.
+Select a device to attach it to the instance.
+
+**Add Device** under **PCI Passthrough** opens the [**Add PCI Passthrough Device**](#add-pci-passthrough-device-screen) screen.
+
 <!--
-### Network Interface Screen
 
-The **Network Interface** settings specify the network adapter type, mac address, and physical network interface card associated with the VM.
+### Disks Widget
 
-{{< trueimage src="/images/SCALE/Virtualization/AddVMNetwork.png" alt="Network Interface" id="Network Interface" >}}
+### NIC Widget
 
-{{< expand "Network Interface Settings" "v" >}}
-{{< truetable >}}
-| Setting | Description |
-|---------|-------------|
-| **Adapter Type** | Select the adapter type from the dropdown list. Options are:<br><li>**Intel e82545 (e1000)** emulates the same Intel Ethernet card and provides compatibility with most operating systems.<br><li>**VirtIO** provides better performance when the operating system installed in the VM supports VirtIO para-virtualized network drivers.</li> |
-| **Mac Address** | Enter the desired address into the field to override the randomized MAC address. |
-| **Attach NIC** | Select the physical interface to associate with the VM from the dropdown list. |
-| **Trust Guest Filters** | Select to enable and allow the virtual server to change its MAC address. As a consequence, the virtual server can join multicast groups. The ability to join multicast groups is a prerequisite for the IPv6 Neighbor Discovery Protocol (NDP).<br>Setting **Trust Guest Filters** to yes has security risks because it allows the virtual server to change its MAC address and so receive all frames delivered to this address. Disabled by default. |
-{{< /truetable >}}
-{{< /expand >}}
+### Proxies Widget
 
-### Installation Media Screen
+### Idmap Widget
 
-The **Installation Media** settings specify the operation system installation media image on a dataset or upload one from the local machine.
+(Containers only)
 
-{{< trueimage src="/images/SCALE/Virtualization/AddVMInstallMedia.png" alt="Installation Media" id="Installation Media" >}}
+### Tools Widget
 
-{{< expand "Installation Media Settings" "v" >}}
-{{< truetable >}}
-| Setting | Description |
-|---------|-------------|
-| **Choose Installation Media Image** | Enter the path or browse to the operating system installer image file. To collapse the browse tree click on the <i class="fa fa-caret-right" aria-hidden="true"></i> to the left of **/mnt**. |
-| **Upload New Image File** | Select to open the **Upload Image File** dialog. |
-{{< /truetable >}}
+### Metrics Widget
 
-{{< trueimage src="/images/SCALE/Virtualization/CreateVMWInstallMediaUploadSCALE.png" alt="Upload Installation Media" id="Upload Installation Media" >}}
+-->
 
-{{< truetable >}}
-| Setting | Description |
-|---------|-------------|
-| **ISO save location** | Enter the path or browse to the location where you want to install the image file. |
-| **Choose File** | Click to save the path populated in the **ISO save location** field. |
-| **Upload** | Click to upload the file selected in the **ISO save location** field. |
-{{< /truetable >}}
-{{< /expand >}}
-
-### GPU Screen
-
-The **GPU** settings specify the graphic processing unit (GPU) for the VM. It also provides the option to hide the VM from the Microsoft Reserved Partition (MSR) on Windows systems.
-
-{{< trueimage src="/images/SCALE/Virtualization/AddVMGPU.png" alt="GPU" id="GPU" >}}
-
-{{< include file="/static/includes/VMGPUSettings.md" >}}
-
-### Confirm Options Screen
-
-The **Confirm Options** screen displays a summary of settings for the VM. It shows the number of CPUs, cores, threads, memory, name of the VM, and the disk size.
-
-Click **Save** to add the VM to the **Instances** screen. Click **Back** to return to the previous screens to make changes.
-
-## Virtual Machine Details Screen
-
-Expand any VM on the **Instances** screen to show the details and options for a VM.
-Details include the basic information on the number of virtual CPUs, cores, and threads, the amount of memory, boot load and system clock types, the display port number, and the shutdown timeout in seconds.
-
-{{< trueimage src="/images/SCALE/Virtualization/VirtualMachinesScreenwithVMDetails.png" alt="VM Details" id="VM Details" >}}
-
-Starting the VM shows additional options for the VM.
-
-{{< expand "VM Options" "v" >}}
-{{< truetable >}}
-| Operation | Icon | Description |
-|-----------|------|-------------|
-| **Start** | <span class="iconify" data-icon="bxs:right-arrow"></span> | Starts a VM. The toggle turns blue when the VM switches to running. Toggles to **Stop**. Clicking **Start** shows the **Restart**,**Power Off**, **Display**, and **Serial Shell** buttons. |
-| **Restart** | <span class="material-icons">replay</span> | Restarts the VM. |
-| **Power Off** | <span class="material-icons">power_settings_new</span> | Powers off and halts the VM, similar to turning off a computer power switch.  |
-| **Stop** | <i class="material-icons" aria-hidden="true" title="Stop">stop</i> | Stops a running VM. Because a virtual machine does not always respond well to **STOP** or the command might time out if the VM does not have an OS. Use **Power Off** instead. |
-| **Edit** | <span class="material-icons">mode_edit</span> | Opens the **[Edit Virtual Machine](#edit-virtual-machine-screen)** that displays editable VM settings. You cannot edit a VM while it is running. Stop the VM and then you can edit the properties and settings. |
-| **Delete** | <i class="material-icons" aria-hidden="true" title="Delete">delete</i> | Deletes a VM. Opens a [delete dialog](#delete-virtual-machine-dialog) that allows you to remove the VM from your system. You cannot delete a virtual machine that is running. You must first stop the VM and then you can delete it. |
-| **Devices** | <i class="material-icons" aria-hidden="true" title="Devices">device_hub</i> | Opens the **[Virtual Machine Devices](#devices-screens)** screen for the selected VM. Shows a list of configured devices for the VM. By default, all VMs show the **Disks**, **NIC**, and **Display** devices. |
-| **Clone** | <span class="iconify" data-icon="cil:clone"></span> | Makes an exact copy or *clone* of the VM. Opens the **[Clone](#clone-virtual-machine-window)** dialog that allows you to clone the selected VM. Enter a name for the cloned VM. Naming the clone VM is optional. The cloned VM displays on the Virtual Machines list with the extension **_clone0**. If you clone the same VM again the extension for the second clone is **clone1**. |
-| **Display** | <i class="material-icons" aria-hidden="true" title="display">settings_ethernet</i> | Opens the **SPICE** login screen in a browser window and allows you to connect to the remote desktop. |
-| **Serial Shell** | <i class="material-icons" aria-hidden="true" title="Serial">keyboard_arrow_right</i> | Opens the TrueNAS **VM Serial Shell** screen. |
-| **Download Logs** | <span class="material-icons">content_paste</span> | Downloads a <file>.log </file> file to the system. |
-{{< /truetable >}}
-{{< /expand >}}
-
-### Delete Virtual Machine Dialog
-
-**Delete** removes the VM configuration from your system.
-
-{{< trueimage src="/images/SCALE/Virtualization/DeleteVirtualMachine.png" alt="Delete Virtual Machine" id="Delete Virtual Machine" >}}
-
-{{< expand "Delete Settings" "v" >}}
-{{< truetable >}}
-| Setting | Description |
-|---------|-------------|
-| **Delete Virtual Machine Data** | Select to remove the data associated with this virtual machine. Deleting a VM results in data loss if the data is not backed up. Leave unselected to keep the VM data intact. |
-| **Force Delete**| Select to ignore the virtual machine status during the delete operation. Leave unselected to prevent deleting the VM when it is still active or has an undefined state. |
-| **Enter *vmname* below to confirm** | Enter the name of the VM to confirm you want to delete the selected VM. |
-{{< /truetable >}}
-{{< /expand >}}
-
-### Clone Virtual Machine Window
-
-The **Clone** dialog allows you to create an exact duplicate of the VM using the name entered.
-
-{{< trueimage src="/images/SCALE/Virtualization/CloneVMDialog.png" alt="Clone Virtual Machine" id="Clone Virtual Machine" >}}
-
-Naming the clone VM is optional. The cloned VM displays on the **Instances** list with the extension **_clone0**.
-If you clone the same VM again the extension for the second clone is **clone1**.
-
-### VM Serial Shell Screen
-
-Click **Serial Shell** to open the **VM Serial Shell** screen where you can enter commands for the selected virtual machine.
-
-{{< trueimage src="/images/SCALE/Virtualization/VMSerialShellScreen.png" alt="Serial Shell" id="Serial Shell" >}}
-
-Click **Instances** in the header to return to the **Virtual Machine** screen.
-
-## Edit Virtual Machine Screen
+<!--
+## Edit Instance Screen
 
 The **Edit VM** screen settings are a subset of those found on the **[Create Virtual Machine](#create-virtual-machine-wizard-screens)** screens.
 It only includes the general settings found on the wizard **Operating System** screen, **CPU & Memory**, and **GPUs** screen settings.
@@ -513,3 +529,18 @@ Select **USB Passthrough Device** in **Device Type** in the **Add** device scree
 | **Device Order** | Enter the number (such as *1003*) that represents where in the boot order this device should be. The higher the number, the later in the boot-up process the device falls. |
 {{< /truetable >}}
 {{< /expand >}}
+
+-->
+
+## Add PCI Passthrough Device Screen
+
+The **Add PCI Passthrough Device** screen displays the physical PCI devices available to attach to an instance.
+Use PCI passthrough to assign a physical PCI device, such as a network card or GPU, directly to a VM, enabling it to use the device as if it were physically attached.
+
+The selected PCI device(s) must not be in use by the host and must not share an IOMMU group with other devices that the host requires.
+
+{{< trueimage src="/images/SCALE/Virtualization/AddPCIPassthroughDevice.png" alt="Add PCI Passthrough Device Screen" id="Add PCI Passthrough Device Screen" >}}
+
+To  filter the available devices, enter all or part of a device type or label in **Search Devices** or use the **Type** dropdown.
+
+Click **Select** to attach the selected device.
