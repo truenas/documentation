@@ -14,16 +14,16 @@ keywords:
 
 {{< include file="/static/includes/25.04Virtualization.md" >}}
 
-If you want to access your TrueNAS directories from within a virtual machine, Linux container, or app hosted on the system, you have multiple options:
+If you want to access your TrueNAS directories from within a virtual machine or container hosted on the system, you have multiple options:
 
 * Allow TrueNAS to create an automatic bridge (default)
 * If you have only one physical interface, you can manually create a bridge interface.
-* If your system has more than one physical interface, you can assign containers to a NIC other than the primary one your TrueNAS server uses.
-  This method makes communication more flexible but does not offer the potential speed of a bridge.
+* If your system has more than one physical interface, you can assign a NIC other than the primary one your TrueNAS server uses.
+  This method makes communication more flexible but does not offer the potential speed benefits of a bridge.
+  Instances (Linux containers or VMs) allow you to configure a MACVLAN NIC.
+  A MACVLAN NIC creates a virtual network interface based on an existing physical interface, assigning it a unique MAC address to allow the instance to appear as a separate device on the network.
 
-{{< hint type=note title="Container and Host Communication" >}}
-A MACVLAN NIC on the same physical interface as the TrueNAS host cannot directly communicate with the host. MACVLAN sends traffic directly to the external network without passing through the host’s network stack. The host does not recognize MACVLAN packets as local, so any traffic between them must be routed through an external switch, use a separate NIC, or use a network bridge.
-{{< /hint >}}
+{{< include file="/static/includes/MacvlanHost.md" >}}
 
 ## Using Default Network Settings
 
@@ -53,7 +53,7 @@ You might have to set up [shares]({{< relref "/SCALEUIReference/Shares/_index.md
 If you have more than one NIC on your system, you can assign container traffic to a secondary NIC.
 Configure the secondary interface as described in [Managing Interfaces]({{< relref "/SCALETutorials/Network/Interfaces/_index.md" >}}) before attaching it to a instance.
 
-If you are creating a new instance, use the **Network** settings to deselect **Use default network Settings** and select the secondary NIC.
+If you are creating a new instance, use the **Network** settings to deselect **Use default network Settings** and select the secondary NIC from **Macvlan NICs**.
 
 {{< trueimage src="/images/SCALE/Virtualization/InstancesNetworkNonDefault.png" alt="Non-Default Network Settings" id="Non-Default Network Settings" >}}
 
