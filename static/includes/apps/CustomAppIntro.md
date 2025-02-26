@@ -6,3 +6,16 @@ Generally, any container that follows the [Open Container Initiative](https://op
 To deploy a custom application, go to **Apps** and click **Discover Apps**.
 Click **Custom App** to open the **[Install iX App]({{< relref "installcustomappscreens.md #install-ix-app-screen" >}})** screen with a guided installation wizard.
 Click <i class="material-icons" aria-hidden="true" title="more_vert">more_vert</i> > **Install via YAML** to open the **[Custom App]({{< relref "installcustomappscreens.md #custom-app-screen" >}})** screen with an advanced YAML editor for deploying apps using Docker Compose.
+
+TrueNAS also allows users to convert already installed apps into custom applications. 
+Click on the app to wish to convert, and then click the widget next to **Edit** to open the menu containing **Update** and **Convert to custom app** options.
+
+{{< trueimage src="/images/SCALE/Apps/ConvertToCustomAppMenu.png" alt="Convert to Custom App Menu" id="Convert to Custom App Menu" >}}
+
+After selecting **Convert to custom app** from the menu, users can confirm the conversion on a confirmation screen.
+
+{{< trueimage src="/images/SCALE/Apps/ConvertToCustomAppConfirm.png" alt="Convert to Custom App Confirm" id="Convert to Custom App Confirm" >}}
+
+Once converted, editing the information of a custom app opens an **Edit App YAML** window that gives users the option to enter a custom app configuration.
+
+{{< trueimage src="/images/SCALE/Apps/CustomAppEditWindow.png" alt="Custom App Edit Window" id="Custom App Edit Window" >}}
