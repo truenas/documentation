@@ -120,7 +120,7 @@ If you have not yet added a virtual machine to your system, click **Add Virtual 
    {{< trueimage src="/images/SCALE/Virtualization/AddVMGPU.png" alt="GPU Screen" id="GPU Screen" >}}
 
    {{< hint type="note" title="Supported GPUs" >}}
-    iXsystems does not have a list of approved GPUs at this time but TrueNAS does support various GPU from Nvidia, Intel, and AMD.
+    TrueNAS does not have a list of approved GPUs at this time but TrueNAS does support various GPU from Nvidia, Intel, and AMD.
     As of 24.10, TrueNAS does not automatically install NVIDIA drivers. Instead, users must manually install drivers from the UI. For detailed instructions, see (https://www.truenas.com/docs/truenasapps/#installing-nvidia-drivers).
    {{< /hint >}}
 

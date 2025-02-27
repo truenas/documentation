@@ -6,15 +6,15 @@ tags:
 - customapp
 ---
 
-**Custom App** on the [**Discover**]({{< relref "/SCALEUIReference/Apps/_index.md" >}}) screen opens the **[Install iX App](#install-ix-app-screen)** guided installation wizard.
+**Custom App** on the [**Discover**]({{< relref "/SCALEUIReference/Apps/_index.md" >}}) screen opens the **[Install Custom App](#install-custom-app-screen)** guided installation wizard.
 <i class="material-icons" aria-hidden="true" title="more_vert">more_vert</i> > **Install via YAML** opens the **[Add Custom App](#add-custom-app-screen)** screen with an advanced YAML editor for deploying apps using Docker Compose.
 
-## Install iX App Screen
+## Install Custom App Screen
 
-The **Install iX App** screen allows you to configure third-party applications using Docker settings.
+The **Install Custom App** screen allows you to configure third-party applications using Docker settings.
 Use the wizard to configure applications not included in the official catalog.
 
-{{< trueimage src="/images/SCALE/Apps/InstallCustomAppScreenNameAndImage.png" alt="Install iX App Screen" id="Install iX App Screen" >}}
+{{< trueimage src="/images/SCALE/Apps/InstallCustomAppScreenNameAndImage.png" alt="Install Custom App Screen" id="Install Custom App Screen" >}}
 
 The panel on the right of the screen links to each setting area.
 Click on a heading or setting to jump to that area of the screen.
@@ -36,7 +36,7 @@ After completing the installation these settings are not editable.
 | Setting | Description |
 |---------|-------------|
 | **Application Name** | Enter a name for the application. The name must have lowercase alphanumeric characters, begin with an alphabet character, and can end with an alphanumeric character. The name can contain a hyphen (-) but not as the first or last character in the name. For example, use *chia-1* but not *-chia1* or *1chia-* as a valid name. |
-| **Version** | Displays the current version of iX-App. Accept the default number. |
+| **Version** | Displays the current version of the custom app. Accept the default number. |
 {{< /truetable >}}
 {{< /expand >}}
 

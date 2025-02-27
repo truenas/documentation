@@ -80,8 +80,8 @@ More details are available from [Software Releases](https://www.truenas.com/docs
 {{< include file="/_includes/MigrateCOREtoSCALEWarning.md" >}}
 
 {{< enterprise >}}
-Enterprise customers with HA systems should contact iXsystems Support for assistance with migrating to TrueNAS.
-{{< expand "iXsystems Support" "v" >}}
+Enterprise customers with HA systems should contact TrueNAS Enterprise Support for assistance with migrating to TrueNAS.
+{{< expand "TrueNAS Enterprise Support" "v" >}}
 {{< include file="content/_includes/iXsystemsSupportContact.md" >}}
 {{< /expand >}}
 {{< /enterprise >}}
@@ -124,7 +124,7 @@ Do not use early-release software for critical tasks.
 
 **February 13, 2025**
 
-iXsystems is pleased to release TrueNAS 25.04-BETA.1!
+The TrueNAS team is pleased to release TrueNAS 25.04-BETA.1!
 This first public release version of TrueNAS 25.04 (Fangtooth) has software component updates and new features that are in the polishing phase.
 
 ### Notable changes

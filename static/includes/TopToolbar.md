@@ -14,12 +14,6 @@ The **Search UI** global search bar allows users to search for screens and eleme
 {{< include file="/static/includes/UsingGlobalSearch.md" >}}
 {{< /expand >}}
 
-{{< expand "iXsystems" "v" >}}
-The iXsystems logo opens the [iXsystems home page](https://www.ixsystems.com/) where users can find information about iXsystems storage and server systems.
-
-Users can also use the iXsystems home page to access their customer portal and the community section for support.
-{{< /expand >}}
-
 {{< expand "Send Feedback" "v" >}}
 {{< include file="/static/includes/FeedbackWindow.md" >}}
 {{< /expand >}}
@@ -60,7 +54,7 @@ See [API Keys]({{< relref "/SCALEUIReference/TopToolbar/Settings/APIKeysScreen.m
 {{< expand "Guide and About" "v" >}}
 Click on **Guide** <span class="material-icons">library_books</span> to open the TrueNAS Documentation Hub in a new tab.
 
-Click on **About** <span class="iconify" data-icon="ant-design:info-circle-outlined"></span> to display the information window with links to the TrueNAS Documentation Hub, TrueNAS Community Forums, FreeNAS Open Source Storage Appliance GitHub repository, and iXsystems home page.
+Click on **About** <span class="iconify" data-icon="ant-design:info-circle-outlined"></span> to display the information window with links to the TrueNAS Documentation Hub, TrueNAS Community Forums, FreeNAS Open Source Storage Appliance GitHub repository, and TrueNAS home page.
 
 {{< trueimage src="/images/SCALE/Dashboard/TrueNASAboutScreenSCALE.png" alt="About Window" id="About Window" >}}
 
