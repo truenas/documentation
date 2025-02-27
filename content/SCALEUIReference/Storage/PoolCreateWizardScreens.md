@@ -21,7 +21,7 @@ The **Pool Creation Wizard** configuration screens include a configuration previ
 ## Pool Creation Wizard
 The **Pool Creation Wizard** for most systems has seven configuration screens, numbered in sequence, to create a pool with VDEVs.
 {{< enterprise>}}
-Larger iXsystems-provided servers for Enterprise users equipped with expansion shelves include the additional [**Enclosure Options**](#enclosure-options) screen.
+Larger servers for TrueNAS Enterprise users equipped with expansion shelves include the additional [**Enclosure Options**](#enclosure-options) screen.
 {{< /enterprise >}}
 
 Each wizard VDEV configuration screen includes the **Automated Disk Selection** and **Advanced Options** areas.
@@ -69,7 +69,7 @@ If system disks have non-unique serial numbers, a warning displays with addition
 
 {{< enterprise >}}
 ### Enclosure Options
-The **Enclosure Options** screen shows in the **Pool Creation Wizard** if the iXsystems hardware includes one or more expansion shelves.
+The **Enclosure Options** screen shows in the **Pool Creation Wizard** if the TrueNAS Enterprise hardware includes one or more expansion shelves.
 
 {{< trueimage src="/images/SCALE/Storage/PoolCreationWizardEnclosureOptionsScreen.png" alt="Pool Creation Wizard Enclosure Options" id="Pool Creation Wizard Enclosure Options" >}}
 

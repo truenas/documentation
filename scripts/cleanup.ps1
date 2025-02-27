@@ -1,10 +1,11 @@
 # Define relative paths
-$targetFolders = @(".\static\includes", ".\static\images")
-$contentDir = ".\content"
-$includesDir = ".\static\includes"
-$layoutsDir = ".\layouts"
-$dataPropertiesDir = ".\data\properties"
-$configFile = ".\config.toml"
+$docRoot = "$PSScriptRoot\.."
+$targetFolders = @("$docRoot\static\includes", "$docRoot\static\images")
+$contentDir = "$docRoot\content"   
+$includesDir = "$docRoot\static\includes"   
+$layoutsDir = "$docRoot\layouts"   
+$dataPropertiesDir = "$docRoot\data\properties"   
+$configFile = "$docRoot\config.toml"   
 
 # Initialize counters
 $totalFiles = 0
@@ -53,7 +54,7 @@ foreach ($targetFolder in $targetFolders) {
 }
 
 # Prepare log content
-$logFilePath = ".\cleanup_log.txt"
+$logFilePath = "$PSScriptRoot\cleanup_log.txt"
 $logContent = @()
 $logContent += "Process time: $dateTime"
 $logContent += "Initiated by: $userName"
