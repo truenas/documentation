@@ -82,6 +82,20 @@ Select the image and then open it.
 An **Uploading Image** dialog displays.
 When complete, the new image displays on the **Volumes** list.
 
+{{< expand "Image Filename Requirements" "v" >}}
+Valid instance names must meet the following conditions:
+
+* The name must be between 1 and 63 characters long.
+* The name must contain only letters, numbers and dashes from the ASCII table.
+* The name must not start with a digit or a dash.
+* The name must not end with a dash.
+
+These requirements ensure the instance name can be used in DNS records, on the file system, in various security profiles, and as the host name of the instance itself.
+See [Instance name requirements](https://linuxcontainers.org/incus/docs/main/reference/instance_properties/#instance-name-requirements) from Incus for more information.
+{{< /expand >}}
+
+#### Delete Volumes
+
 Click <i class="material-icons" aria-hidden="true" title="Delete">delete</i> on an image row to delete that image.
 A **Delete volume** dialog displays.
 
@@ -147,8 +161,8 @@ Click Add to display a set of environment fields.
 {{< truetable >}}
 | Setting | Description |
 |-----------|-------------|
-| Name | Enter the name of the environment variable to set (e.g., `LANG`). |
-| Value | Enter the value to assign to the environment variable (e.g., `en_US.UTF-8`). |
+| Name | Enter the name of the environment variable to set (for example, `LANG`). |
+| Value | Enter the value to assign to the environment variable (for example, `en_US.UTF-8`). |
 {{< /truetable >}}
 {{< /expand >}}
 
@@ -182,14 +196,7 @@ Click **Add** to display a set of proxy configuration settings.
 {{< trueimage src="/images/SCALE/Virtualization/CreateInstanceProxies.png" alt="Proxies" id="Proxies" >}}
 
 {{< expand "Proxies Settings" "v" >}}
-{{< truetable >}}
-| Setting | Description |
-|---------|-------------|
-| **Host Protocol** | Select the connection protocol for the TrueNAS host. Options are **TCP** or **UDP**. |
-| **Host Port** | Enter the TrueNAS host port to map to the instance port on the container or VM, for example *3600*. |
-| **Instance Protocol** | Select the connection protocol for the container or VM. Options are **TCP** or **UDP**. |
-| **Instance Port** | Enter the port number within the container or VM, for example *80*. |
-{{< /truetable >}}
+{{< include file="/static/includes/InstanceProxySettings.md" >}}
 {{< /expand >}}
 
 ### Network
@@ -323,7 +330,7 @@ It allows you to manage the disks, including adding new ones or modifying existi
 
 **Add** opens the [**Add Disk**](#addedit-disk-screen) screen for adding new disks to the instance.
 
-For existing disks, the actions menu (<span class="material-icons">more_vert</span>) includes options to [**Edit**](#addedit-disk-screen) or [**Delete**](#delete-disks) the disk.
+For existing disks, the <span class="material-icons">more_vert</span> actions menu includes options to [**Edit**](#addedit-disk-screen) or [**Delete**](#delete-disks) the disk.
 
 #### Add/Edit Disk Screen
 
@@ -349,12 +356,55 @@ The **Delete Item** dialog asks for confirmation to delete the selected disk.
 **Confirm** activates the **Continue** button.
 **Continue** starts the delete operation.
 
-<!--
-
 ### NIC Widget
 
+The **NIC Widget** displays the network interfaces (NICs) attached to the instance, showing their corresponding names and types.
+It allows you to add new NICs and manage existing ones.
+
+{{< trueimage src="/images/SCALE/Virtualization/NICWidget.png" alt="NIC Widget" id="NIC Widget" >}}
+
+**Add** opens a menu with available NIC choices, allowing you to select and attach a new NIC to the instance.
+
+For existing NICs, the <span class="material-icons">more_vert</span> actions menu allows you to [delete](#delete-nics) the NIC.
+
+#### Delete NICs
+
+The **Delete Item** dialog asks for confirmation to delete the selected NIC.
+
+{{< trueimage src="/images/SCALE/Virtualization/DeleteNicDialog.png" alt="Delete Item Dialog" id="Delete Item Dialog" >}}
+
+**Confirm** activates the **Continue** button.
+**Continue** starts the delete operation.
+
 ### Proxies Widget
--->
+
+The **Proxies** widget displays the network proxy settings configured for the instance.
+It allows you to manage these settings, including adding, editing, or removing proxies.
+
+{{< trueimage src="/images/SCALE/Virtualization/ProxiesWidget.png" alt="Proxies Widget" id="Proxies Widget" >}}
+
+**Add** opens the [**Add Proxy**](#addedit-proxy-screen) screen to configure a new proxy for the instance.
+
+For existing proxies, the <span class="material-icons">more_vert</span> actions menu includes options to [**Edit**](#addedit-proxy-screen) or [**Delete**](#delete-proxies) the proxy.
+
+#### Add/Edit Proxy Screen
+
+The **Add/Edit Proxy** screen allows you to configure or modify a proxy setting attached to an instance.
+
+{{< trueimage src="/images/SCALE/Virtualization/AddProxyScreen.png" alt="Add Proxy Screen" id="Add Proxy Screen" >}}
+
+{{< include file="/static/includes/InstanceProxySettings.md" >}}
+
+Click **Save** to apply changes.
+
+#### Delete Proxies
+
+The **Delete Item** dialog asks for confirmation to delete the selected proxy configuration.
+
+{{< trueimage src="/images/SCALE/Virtualization/DeleteProxyDialog.png" alt="Delete Item Dialog" id="Delete Item Dialog" >}}
+
+**Confirm** activates the **Continue** button.
+**Continue** starts the delete operation.
 
 ### Idmap Widget
 
@@ -371,213 +421,32 @@ For example, if the **Host ID** is `2147000001` and the **Maprange** is `458752`
 
 This widget allows you to view the configured ID mapping settings for the instance, which ensures proper isolation and user/group identity management between the host and the instance.
 
-<!--
-
 ### Tools Widget
+
+The **Tools** widget provides quick access to various tools and utilities for managing your instance.
+You can open a shell, console, or VNC session directly from this widget.
+
+{{< trueimage src="/images/SCALE/Virtualization/ToolsWidget.png" alt="Tools Widget - VM" id="Tools Widget" >}}
+
+**Shell** opens an **Instance Shell** session for interacting with the instance.
+  
+**Console** (VM only) opens an **Instance Console** session for accessing the instance’s system console.
+
+**VNC** (VM only) opens a VNC connection using your preferred client.
+It uses a VNC URL scheme (for example, `vnc://hostname.domain.com:5930`) to launch the session directly in the application.
+If your environment does not support the VNC URL, you can manually connect to the instance using a VNC client by entering the hostname or IP address followed by the port number without the preceding `vnc://` (for example, `hostname.domain.com:5930` or `IP:5930`).
 
 ### Metrics Widget
 
--->
+The **Metrics** widget provides real-time graphs to monitor the performance of your instance, displaying key metrics such as CPU usage, memory usage, and disk I/O pressure.
 
-<!--
-## Edit Instance Screen
+{{< trueimage src="/images/SCALE/Virtualization/MetricsWidget.png" alt="Metrics Widget" id="Metrics Widget" >}}
 
-The **Edit VM** screen settings are a subset of those found on the **[Create Virtual Machine](#create-virtual-machine-wizard-screens)** screens.
-It only includes the general settings found on the wizard **Operating System** screen, **CPU & Memory**, and **GPUs** screen settings.
-To edit disks, network, or display settings, click [**Devices**](#virtual-machine-details-screen) on the expanded view of the VM to open the [**Devices**](#devices-screens) screen.
+**CPU (%)** shows the percentage of CPU usage over time.
+  
+**Memory (MiB)** displays the memory usage in MiB over time.
 
-### Edit General Settings
-
-The **Edit** screen **General Settings** specify the basic settings for the VM. Unlike the **Create Virtual Machine** wizard, you cannot change the **Enable** or **Start on Boot** status or change the display type or bind address for a saved VM from this screen.
-
-{{< trueimage src="/images/SCALE/Virtualization/EditVMGeneralSettings.png" alt="Edit General Settings" id="Edit General Settings" >}}
-
-{{< expand "General Settings" "v" >}}
-{{< truetable >}}
-| Setting | Description |
-|---------|-------------|
-| **Name** | Required. Enter an alphanumeric name for the virtual machine. |
-| **Description** | Enter a description (optional). |
-| **System Clock** | Select the VM system time from the dropdown list. Options are **Local** or **UTC**. The default is **Local**. |
-| **Boot Method** | Select the boot method option from the dropdown list. Select **UEFI** for newer operating systems or **Legacy BIOS** for older operating systems that only support BIOS booting. |
-| **Shutdown Timeout** | Enter the time in seconds the system waits for the VM to cleanly shut down. During system shutdown, the system initiates power-off for the VM after the shutdown timeout entered expires. |
-| **Start on Boot** | Select to start this VM when the system boots. |
-| **Enable Hyper-V Enlightenments** | Shows for VMs set for Windows OS. KVM implements Hyper-V Enlightenments for Windows guests. These features make Windows think they are running on top of a Hyper-V-compatible hypervisor and use Hyper-V-specific features. In some cases enabling these enlightenments might improve the usability and performance on the guest. |
-{{< /truetable >}}
-{{< /expand >}}
-
-{{< expand "To edit display type or bind address after VM creation (click to expand)" "v" >}}
-Go to **Virtualization > Virtual Machines** and locate the VM you want to modify.
-Click anywhere on the VM entry on the **Instances** widget to expand it.
-Click <i class="material-icons" aria-hidden="true" title="Devices">device_hub</i> **Devices** to open the devices screen associated with the VM.
-From this screen, click the <span class="material-icons">more_vert</span> icon at the right of the display device and select **Edit** to open the **Edit Display Device** screen.
-Use the **Bind** dropdown to select a new IP address.
-{{< /expand >}}
-
-### Edit CPU & Memory Settings
-
-The **CPU & Memory** settings on the **Edit VM** screen are the same as those in the **Create Virtual Machine** wizard.
-
-{{< trueimage src="/images/SCALE/Virtualization/EditVMCPUandMemory.png" alt="Edit CPU & Memory" id="Edit CPU & Memory" >}}
-
-{{< include file="/static/includes/VMCPUandMemorySettings.md" >}}
-
-### Edit GPU Settings
-
-The **GPU** settings on the **Edit** screen are the same as those in the **Create Virtual Machine** wizard.
-
-{{< trueimage src="/images/SCALE/Virtualization/EditVMGpuSettings.png" alt="Edit GPU" id="Edit GPU" >}}
-
-{{< include file="/static/includes/VMGPUSettings.md" >}}
-
-## Devices Screens
-
-The **Devices** screen displays a list of VM devices configured on your system.
-By default, every VM displays three devices: **Disks**, **NIC**, and **Display**.
-
-{{< trueimage src="/images/SCALE/Virtualization/VMDevicesListed.png" alt="VM Devices Screen" id="VM Devices Screen" >}}
-
-**Add** opens the [**Add Device**](#devices-add-screens) screen. Settings change based on the various device types.
-
-{{<include file="/static/includes/addcolumnorganizer.md">}}
-
-### Device Actions
-
-Each device listed on the **Devices** screen has the same three options, accessed by clicking the <span class="material-icons">more_vert</span> at the right of the device row:
-
-* **Edit** opens the **Edit *type* Device** screen where *type* is the device type selected.
-  Settings vary based on the type of device selected in **Device Type**. See **[Add Device](#devices-add-screens)** screen.
-  **Device Type** only displays on the **Add Device** screens.
-
-* **Delete** opens a dialog. **Delete Device** confirms you want to delete the device.
-
-* **Details** opens an information dialog that lists the port, type, bind IP, and other details about the device.
-  Click **Close** to close the dialog.
-
-## Devices Add Screens
-
-The **Add Device** screen displays different settings based on the **Device Type** selected.
-
-{{< expand "Add CD-ROM Device Type Settings" "v" >}}
-Select **CD-ROM** in **Device Type** to see the CD-ROM settings.
-
-{{< trueimage src="/images/SCALE/Virtualization/VMAddDeviceCDROM.png" alt="Add Device - CD-ROM" id="Add Device - CD-ROM" >}}
-
-{{< truetable >}}
-| Setting | Description |
-|---------|-------------|
-| **Type** | Select the device type from the dropdown list. **CD-ROM** is the default setting. |
-| **CD-ROM Path** | Use the <iconify-icon icon="bxs:right-arrow"></iconify-icon> to the left of <iconify-icon icon="bxs:folder"></iconify-icon>**/mnt** to browse to the location of the CD-ROM file on the system. |
-| **Device Order** | Enter the number (such as *1003*) that represents where in the boot order this device should be. The higher the number, the later in the boot-up process the device falls. |
-{{< /truetable >}}
-{{< /expand >}}
-
-{{< expand "Add NIC Device Type Settings" "v" >}}
-Select **NIC** in **Device Type** to see the VM network interface card settings.
-
-{{< trueimage src="/images/SCALE/Virtualization/VMAddDeviceNIC.png" alt="Add Device - NIC" id="Add Device - NIC" >}}
-
-{{< truetable >}}
-| Setting | Description |
-|---------|-------------|
-| **Type** | Select the device type from the dropdown list.  |
-| **Adapter Type** | Required. Select the emulator type from the dropdown list. Emulating an **Intel e82545 (e1000)** Ethernet card provides compatibility with most operating systems. Change to **VirtIO** to provide better performance on systems with VirtIO paravirtualized network driver support. |
-| **MAC Address**  | Displays the default auto-generated random MAC address the VM receives. Enter a custom address to override the default.   |
-| **Generate** | Click to add a new randomized address in **MAC Address**. |
-| **NIC To attach** | Select a physical interface from the dropdown list to associate with the VM. |
-| **Trust Guest Filters** | Default setting is not enabled. Set this attribute to allow the virtual server to change its MAC address. As a consequence, the virtual server can join multicast groups. The ability to join multicast groups is a prerequisite for the IPv6 Neighbor Discovery Protocol (NDP).<br>Setting **Trust Guest Filters** to "yes" has security risks because it allows the virtual server to change its MAC address and receive all frames delivered to this address. |
-| **Device Order** | Enter the number (such as *1003*) that represents where in the boot order this device should be. The higher the number, the later in the boot-up process the device falls. |
-{{< /truetable >}}
-{{< /expand >}}
-
-{{< expand "Add Disk Device Type Settings" "v" >}}
-Select **Disk** in **Device Type** in the **Add** device screen to see the disk settings including disk location, drive type, and disk sector size.
-
-{{< trueimage src="/images/SCALE/Virtualization/VMAddDeviceDisk.png" alt="Add Device - Disk" id="Add Device - Disk" >}}
-
-{{< truetable >}}
-| Setting | Description |
-|---------|-------------|
-| **Type** | Select the device type from the dropdown list. |
-| **Zvol** | Select the zvol path from the dropdown list. |
-| **Mode** | Select the drive type from the dropdown list. Options are **AHCI** or **VirtIO**. |
-| **Disk sector size** | Select the disk sector size from the dropdown list or leave set as **Default**. Options are **Default**, **512** or **4096**. |
-| **Device Order** | Enter the number (such as *1003*) that represents where in the boot order this device should be. The higher the number, the later in the boot-up process the device falls. |
-{{< /truetable >}}
-{{< /expand >}}
-
-{{< expand "Add Display Device Type Settings" "v" >}}
-Remote clients can connect to VM display sessions using a SPICE client, or by installing a 3rd party remote desktop server inside your VM.
-SPICE clients are available from the [SPICE Protocol site](https://www.spice-space.org/).
-
-Select **Display** in **Device Type** in the **Add** device screen to see the display device settings.
-
-{{< trueimage src="/images/SCALE/Virtualization/VMAddDeviceDisplay.png" alt="Add Device - Display" id="Add Device - Display" >}}
-
-{{< truetable >}}
-| Setting | Description |
-|---------|-------------|
-| **Type** | Select the device type from the dropdown list. **Display** is the default setting. |
-| **Port** | Enter the port number. You can assign **0**, leave it empty for TrueNAS to assign a port when the VM is started, or set it to a fixed preferred port number. |
-| **Resolution** | Select a screen resolution to use for VM display sessions. |
-| **Bind** | Select an IP address to use for display sessions or use the default **0.0.0.0**. |
-| **Password** | Enter a password of no more than eight characters in length to automatically pass to the remote display session. |
-| **Web Interface** | Select to enable connecting to the SPICE web interface. |
-| **Device Order** | Enter the number (such as *1003*) that represents where in the boot order this device should be. The higher the number, the later in the boot-up process the device falls. If you want the CD-ROM to be the first device checked assign it a lower number. |
-{{< /truetable >}}
-{{< /expand >}}
-
-{{< expand "Add Raw File Device Type Settings" "v" >}}
-Select **Raw File** in **Device Type** in the **Add** device screen to see the raw file settings that include location, size of the file, disk sector size, and type.
-
-{{< trueimage src="/images/SCALE/Virtualization/VMAddDeviceRawFile.png" alt="Add Device - Raw File" id="Add Device - Raw File" >}}
-
-{{< truetable >}}
-| Setting | Description |
-|---------|-------------|
-| **Type** | Select the device type from the dropdown list. |
-| **Raw File** | Enter or use the <iconify-icon icon="bxs:right-arrow"></iconify-icon> to the left of <iconify-icon icon="bxs:folder"></iconify-icon>**/mnt** to browse to the location of the file on the system. |
-| **Disk sector size** | Select the disk sector size from the dropdown list or leave set as **Default**. Options are **Default**, **512** or **4096**. |
-| **Mode** | Select the drive type from the dropdown list. Options are **AHCI** or **VirtIO**. |
-| **Raw filesize** | Enter the size of the file in GiB. |
-| **Device Order** | Enter the number (such as *1003*) that represents where in the boot order this device should be. The higher the number, the later in the boot-up process the device falls. |
-{{< /truetable >}}
-{{< /expand >}}
-
-{{< expand "Add PCI Passthrough Device Type Settings" "v" >}}
-Select **PCI Passthrough Device** in **Device Type** in the **Add** device screen to see the PCI passthrough device settings.
-{{< hint type=important >}}
-Depending upon the type of device installed in your system, you might see a warning: PCI device does not have a reset mechanism defined. You might experience inconsistent or degraded behavior when starting or stopping the VM.
-Determine if you want to proceed with this action in such an instance.
-{{< /hint >}}
-
-{{< trueimage src="/images/SCALE/Virtualization/VMAddDevicePCIpass.png" alt="Add Device - PCI Passthrough" id="Add Device - PCI Passthrough" >}}
-
-{{< truetable >}}
-| Setting | Description |
-|---------|-------------|
-| **Type** | Select the device type from the dropdown list. |
-| **PCI Passthrough Device** | Enter or select the device from the dropdown list of options. Enter as (bus#/slot#/fcn#). |
-| **Device Order** | Enter the number (such as *1003*) that represents where in the boot order this device should be. The higher the number, the later in the boot-up process the device falls. |
-{{< /truetable >}}
-{{< /expand >}}
-
-{{< expand "Add USB Passthrough Device Type Settings" "v" >}}
-Select **USB Passthrough Device** in **Device Type** in the **Add** device screen to see the USB passthrough device settings.
-
-{{< trueimage src="/images/SCALE/Virtualization/VMAddDeviceUSBpass.png" alt="Add Device - USB Passthrough" id="Add Device - USB Passthrough" >}}
-
-{{< truetable >}}
-| Setting | Description |
-|---------|-------------|
-| **Type** | Select the device type from the dropdown list. |
-| **Controller Type** | Required. Choose from **piix3-uhci**, **piix4-uhci**, **ehci**, **ich9-ehci1**, **vt82c686b-uhci**, **pci-ohci**, **nec-xhci**, **qemu-xhci**. |
-| **Device** | Enter or select the device from the dropdown list of options. If **Specify custom** is chosen, enter the required **Vendor ID** and **Product ID**. |
-| **Device Order** | Enter the number (such as *1003*) that represents where in the boot order this device should be. The higher the number, the later in the boot-up process the device falls. |
-{{< /truetable >}}
-{{< /expand >}}
-
--->
+**Disk I/O Full Pressure (%)** tracks the disk input/output pressure as a percentage over time.
 
 ## Add PCI Passthrough Device Screen
 
