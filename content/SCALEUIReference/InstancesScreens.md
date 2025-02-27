@@ -314,17 +314,64 @@ Select a device to attach it to the instance.
 
 **Add Device** under **PCI Passthrough** opens the [**Add PCI Passthrough Device**](#add-pci-passthrough-device-screen) screen.
 
-<!--
-
 ### Disks Widget
+
+The **Disks** widget displays the storage devices attached to the instance, showing their corresponding paths.
+It allows you to manage the disks, including adding new ones or modifying existing ones.
+
+{{< trueimage src="/images/SCALE/Virtualization/DisksWidget.png" alt="Disks Widget" id="Disks Widget" >}}
+
+**Add** opens the [**Add Disk**](#addedit-disk-screen) screen for adding new disks to the instance.
+
+For existing disks, the actions menu (<span class="material-icons">more_vert</span>) includes options to [**Edit**](#addedit-disk-screen) or [**Delete**](#delete-disks) the disk.
+
+#### Add/Edit Disk Screen
+
+The **Add/Edit Disk** screen allows you to configure a new disk or modify an existing one attached to an instance.
+
+{{< trueimage src="/images/SCALE/Virtualization/AddDiskScreen.png" alt="Add Disk Screen" id="Add Disk Screen" >}}
+
+{{< truetable >}}
+| Setting | Description |
+|---------|-------------|
+| **Source** | Enter or browse to select the host source path for the disk. To create a new dataset, enter or browse to select the parent path, then click **Create Dataset**, enter a name for the new dataset, and click **Create**. |
+| **Destination**| Enter the destination path to mount the disk in the instance. |
+{{< /truetable >}}
+
+Click **Save** to apply changes.
+
+#### Delete Disks
+
+The **Delete Item** dialog asks for confirmation to delete the selected disk.
+
+{{< trueimage src="/images/SCALE/Virtualization/DeleteDiskDialog.png" alt="Delete Item Dialog" id="Delete Item Dialog" >}}
+
+**Confirm** activates the **Continue** button.
+**Continue** starts the delete operation.
+
+<!--
 
 ### NIC Widget
 
 ### Proxies Widget
+-->
 
 ### Idmap Widget
 
-(Containers only)
+(Containers Only) The **Idmap** widget displays the user ID (UID) and group ID (GID) mappings used by the instance for ID translation between the host and the container or VM.
+It provides details such as the **Host ID**, **Maprange**, and **NS ID** for both UIDs and GIDs.
+
+{{< trueimage src="/images/SCALE/Virtualization/IdmapWidget.png" alt="Idmap Widget" id="Idmap Widget" >}}
+
+* **Host ID**: Shows the starting ID used by the host for mapping to the instance's IDs.
+* **Maprange**: Indicates the range of IDs that the host allocates for the instance.
+* **NS ID**: Represents the namespace ID used for the mapping.
+
+For example, if the **Host ID** is `2147000001` and the **Maprange** is `458752`, the container UID 0 (root) is mapped to the host UID `2147000001`.
+
+This widget allows you to view the configured ID mapping settings for the instance, which ensures proper isolation and user/group identity management between the host and the instance.
+
+<!--
 
 ### Tools Widget
 
