@@ -12,7 +12,7 @@ Click on the app to wish to convert, and then click the widget next to **Edit** 
 
 {{< trueimage src="/images/SCALE/Apps/ConvertToCustomAppMenu.png" alt="Convert to Custom App Menu" id="Convert to Custom App Menu" >}}
 
-After selecting **Convert to custom app** from the menu, users can confirm the conversion on a confirmation screen.
+Select **Convert to custom app** from the dropdown list, then select **Confirm** to convert the app. 
 
 {{< trueimage src="/images/SCALE/Apps/ConvertToCustomAppConfirm.png" alt="Convert to Custom App Confirm" id="Convert to Custom App Confirm" >}}
 
