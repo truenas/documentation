@@ -144,7 +144,9 @@ Device notes:
 * A **CD-ROM** device allows booting a VM from a CD-ROM image like an installation CD.
   The CD image must be available in the system storage.
 
-<!-- 
+<!-- nb: this is the content from the removed /scaletutorials/virtualization/addmanagevmdevicesscale/ -->
+<!-- preserved here in case any of it is useful when this tutorial is rewritten for Instances. -->
+<!--
 ## Managing Devices
 
 After creating a VM, the next step is to add virtual devices for that VM.
