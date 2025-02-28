@@ -80,7 +80,7 @@ To add or edit users, go to **Credentials > Users** to add or edit the SMB share
 Click **Add** to create a new user or as many new user accounts as needed.
 If joined to Active Directory, it can create the TrueNAS accounts.
 
-Enter the values in each required field, verify **Samba Authentication** is selected, then click **Save**.
+Enter the values in each required field, verify **SMB User** is selected, then click **Save**.
 For more information on the fields and adding users, see [Creating User Accounts]({{< relref "ManageLocalUsersScale.md" >}}).
 
 By default, all new users are members of a built-in group called **builtin_users**.

@@ -41,7 +41,7 @@ See [Using Administration Logins]({{< relref "AdminRoles.md" >}}) for more infor
 To add non-SMB share users or edit users, go to **Credentials > Users** to add or edit the user(s).
 Click **Add** to create a new or as many new user accounts as you need.
 
-Enter the values in each required field, verify **Samba Authentication** is selected for SMB share users, then click **Save**.
+Enter the values in each required field, verify **SMB User** is selected for SMB share users, then click **Save**.
 For more information on the fields and adding users, see [Creating User Accounts]({{< relref "ManageLocalUsersScale.md" >}}).
 
 By default, all new users are members of a built-in group called **builtin_users**.

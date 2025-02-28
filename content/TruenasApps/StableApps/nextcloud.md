@@ -39,7 +39,7 @@ The instructions in this article apply to these TrueNAS 24.10 and later releases
 TrueNAS offered a FreeBSD-based TrueNAS Nextcloud plugin in releases 13.0 and 13, but it is no longer available in TrueNAS 13.0 and is soon to be unavailable in 13.3. Refer to release notes for more information on upcoming and current changes.
 For more information on the FreeBSD-based Nextcloud plugin, see [Nextcloud]({{< relref "/content/solutions/integrations/nextcloud.md" >}}).
 
-{{< include file="/static/includes/AppsUnversioned.md" >}}
+
 
 ## Before You Begin
 
@@ -143,7 +143,7 @@ Select **Enable ACL**, then enter or browse to select the **html** dataset to po
 {{< trueimage src="/images/SCALE/Apps/InstallNextcloudStorageAppDataACLandACESettings.png" alt="Add Nextcloud Storage for AppData" id="Add Nextcloud Storage for AppData" >}}
 
 Click **Add** to the right of **ACL Entries** for each user or group entry you want to add.
-Set **ID Type** to **Entry is for a USER**, enter the **0*** in **ID**, and give it full control permissions.
+Set **ID Type** to **Entry is for a USER**, enter the **0** in **ID**, and give it full control permissions.
 For example, add the **0** user, and give each **FULL_CONTROL Access**. Repeat this for the **568** user.
 
 Select **Force Flag** to allow upgrading the app when the dataset has existing data.
@@ -152,7 +152,7 @@ Repeat the storage steps above to configure the host path for **Nextcoud Data St
 
 To configure the **Nextcloud Postgres Data Storage** host path, do not select **Enable ACL**!
 Set **Type** to **Host Path (Path that already exists on the system)**, then enter or browse to select the **postgres_data** dataset to populate the **Host Path** field.
-Select **Automatic Permissions**. This does not show if you selected **Edit ACL**.
+Select **Automatic Permissions**. This does not show if you selected **Enable ACL**.
 
 {{< trueimage src="/images/SCALE/Apps/InstallWizardPostgresDatasetAutomaticPermissions.png" alt="Postgres Storage Automatic Permissions" id="Postgres Storage Automatic Permissions" >}}
 

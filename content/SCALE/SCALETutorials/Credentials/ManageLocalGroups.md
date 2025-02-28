@@ -41,7 +41,7 @@ You can only use the dollar sign ($) as the last character in a group name.
 
 {{< include file="/static/includes/AdminSudo.md" >}}
 
-To allow Samba permissions and authentication to use this group, select **Samba Authentication**.
+To allow Samba permissions and authentication to use this group, select **SMB Group**.
 
 To allow more than one group to have the same group ID (not recommended), select **Allow Duplicate GIDs**.
 Use only if absolutely necessary, as duplicate GIDs can lead to unexpected behavior.
