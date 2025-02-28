@@ -7,6 +7,10 @@ related: false
 aliases:
 - /scaletutorials/virtualization/
 - /scaletutorials/virtualization/addmanagevmdevicesscale/
+tags:
+ - vm
+ - container
+ - instances
 keywords:
 - nas data storage
 - software storage solutions
@@ -15,17 +19,24 @@ keywords:
 
 {{< include file="/static/includes/25.04Virtualization.md" >}}
 
-The **Instances** section allows users to set up Virtual Machines (VMs) to run alongside TrueNAS.
-Enterprise licensed High Availability (HA) systems do not support virtual machines.
+**Instances** allow users to set up containers or virtual machines (VMs) to run alongside TrueNAS.
 
-Delegating processes to VMs reduces the load on the physical system, which means users can utilize additional hardware resources.
-Users can customize six different segments of a VM when creating one in TrueNAS.
+A *Linux container* is a lightweight, isolated environment that shares the host system’s kernel while maintaining its own filesystem, processes, and network settings.
+Containers start quickly, use fewer system resources than VMs, and scale efficiently, making them ideal for deploying and managing applications with minimal overhead.
 
-A *virtual machine (VM)* is an environment on a host computer that you can use as if it is a separate, physical computer.
-Users can use VMs to run multiple operating systems simultaneously on a single computer.
-Operating systems running inside a VM see emulated virtual hardware rather than the host computer physical hardware.
-VMs provide more isolation than Jails but also consume more system resources.
+A *virtual machine (VM)* is an environment on a host computer that operates like a separate physical computer.
+VMs allow users to run multiple operating systems simultaneously on a single machine.
+VMs emulate hardware, providing greater isolation than containers but requiring more system resources.
 
+<!-- to be removed -->
+{{< hint type=note >}}
+A full tutorial for **Instances** is coming soon.
+
+For the most up-to-date documentation on this feature, see [Instances Screens]({{< relref "/SCALEUIReference/InstancesScreens.md" >}}).
+{{< /hint >}}
+<!-- / to be removed -->
+
+<!-- Commenting out previous tutorial content
 {{< expand "What system resources do VMs require?" "v" >}}
 {{< include file="/static/includes/ScaleVMReqResources.md" >}}
 {{< /expand >}}
@@ -333,7 +344,6 @@ Select **Display** as **Device Type** on the **Add Device** screen to configure 
 Display devices have a 60-second inactivity timeout.
 If the VM display session appears unresponsive, try refreshing the browser tab.
 
--->
 
 ## Managing a Virtual Machine
 After creating the VM and configuring devices for it, click on the VM to expand it and show the options to manage the VM. 
@@ -532,4 +542,3 @@ If your system has more than one physical interface, you can assign your VMs to 
 
 To create a bridge interface for the VM to use if you have only one physical interface, stop all existing apps, VMs, and services using the current interface, edit the interface and VMs, create the bridge, and add the bridge to the VM device.
 See [Accessing NAS from VM]({{< relref "ContainerNASBridge.md" >}}) for more information.
-
