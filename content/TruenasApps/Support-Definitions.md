@@ -20,8 +20,8 @@ Users should review these definitions carefully and consult with their support c
 **Definition** : Applications classified under this tier receive no formal support from TrueNAS official support channels.
 
 **Scope** :
-Issues related to these applications are addressed on a best-effort basis through [community forums](https://forums.truenas.com/) and user-driven resources.
-There is no guaranteed resolution timeframe. 
+Issues related to these applications are [tracked separately](https://github.com/truenas/apps/issues) and addressed on a best-effort basis through [community forums](https://forums.truenas.com/) and user-driven resources.
+There is no guaranteed resolution timeframe.
 
 **Examples** : Plex, Tailscale, Jellyfin, NextCloud, and any App available from the [Stable](/truenasapps/stableapps/) or [Community](/truenasapps/communityapps/) trains.
 
