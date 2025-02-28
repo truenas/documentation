@@ -334,6 +334,10 @@ It allows you to manage the disks, including adding new ones or modifying existi
 
 For existing disks, the <span class="material-icons">more_vert</span> actions menu includes options to [**Edit**](#addedit-disk-screen) or [**Delete**](#delete-disks) the disk.
 
+For VMs, the widget displays the current root disk size.
+The root disk stores the OS and serves as the boot disk for the VM.
+**Increase** opens the [**Increase Root Disk Size**](#increase-root-disk-size) dialog.
+
 #### Add/Edit Disk Screen
 
 The **Add/Edit Disk** screen allows you to configure a new disk or modify an existing one attached to an instance.
@@ -357,6 +361,14 @@ The **Delete Item** dialog asks for confirmation to delete the selected disk.
 
 **Confirm** activates the **Continue** button.
 **Continue** starts the delete operation.
+
+#### Increase Root Disk Size
+
+The **Increase Root Disk Size** dialog allows you to configure the size of the disk a VM stores its OS on and boots from.
+
+{{< trueimage src="/images/SCALE/Virtualization/IncreaseRoot.png" alt="Increase Root Disk Size Widget" id="Increase Root Disk Size Widget" >}}
+
+Enter a new size in GiB, such as *20*, then click **Save** to apply changes.
 
 ### NIC Widget
 
