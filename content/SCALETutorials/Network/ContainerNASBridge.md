@@ -5,6 +5,7 @@ weight: 60
 tags:
  - vm
  - container
+ - instances
  - apps
 keywords:
 - nas data storage
