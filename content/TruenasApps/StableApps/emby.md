@@ -20,7 +20,7 @@ TrueNAS Emby app provides the server function.
 The Emby service uses a Web UI to manage user profiles that are allowed to access your media files and allows you to manage the media library of files.
 Emby naming conventions for media files are important. Pay close attention to the instructions Emby provides to correctly configure the TrueNAS Emby app storage volumes, and when adding any labels to apply to media files.
 
-{{< include file="/static/includes/AppsUnversioned.md" >}}
+
 
 ## Before You Begin
 
