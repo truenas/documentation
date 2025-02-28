@@ -8,7 +8,6 @@ tags:
 - smb
 ---
 
-
 {{< include file="/static/includes/RootLevelDatasetShareWarning.md" >}}
 
 {{< hint type=important title="Home Share Legacy Feature" >}}
@@ -26,15 +25,15 @@ TrueNAS does not recommend setting up new home shares and has removed the **Use 
 The **Private SMB Datasets and Shares** setting replaces the home shares option and is the recommended method to provide users with a private personal folder they access through an SMB share.
 Follow the instructions in the [Adding Private SMB Datasets and Shares](#adding-private-smb-datasets-and-shares) section below to set up private and personal shares.
 
-{{< expand "What is a private dataset? "v" >}}
-The private dataset and share option creates a private personal directory under the dataset specified as the home directory for the user, and when correctly configured, provides users with a private folder they access through an SMB share.
+{{< expand "What is a private dataset and share?" "v" >}}
+The private dataset and share option allows creating a private personal directory under the dataset specified as the home directory for the user, and when correctly configured, provides users with a private folder they access through an SMB share.
+{{< /expand >}}
 
 TrueNAS allows creating  one private directory per user but allows creating as many non-private directories as desired or needed.
 Users can create as many directories as needed in their private share through Windows File Explorer.
 
 TrueNAS does not control what Windows allows through the File Explorer.
 If the personal directories show in File Explorer, use [Windows file properties](https://community.spiceworks.com/t/how-to-configure-file-sharing-in-windows-server/1014185) and access control to hide the folder in the share.
-{{< /expand >}}
 
 After creating a dataset and SMB share, use the path to this dataset as the home directory for each user with a private share directory.
 Other users who do not require a private personal share can use a path to another dataset for their home directory.
