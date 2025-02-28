@@ -151,20 +151,13 @@ The **CPU & Memory** settings specify the number of virtual CPU cores to allocat
 ### Environment
 
 The Environment settings allow you to configure optional environment variables to run on boot or execute.
-TrueNAS supports environment variables for Linux containers only.
+These settings are only supported for containers and cannot be used with VMs.
 
 Click Add to display a set of environment fields.
 
 {{< trueimage src="/images/SCALE/Virtualization/CreateInstanceEnvironment.png" alt="Environment" id="Environment" >}}
 
-{{< expand "Environment Settings" "v" >}}
-{{< truetable >}}
-| Setting | Description |
-|-----------|-------------|
-| Name | Enter the name of the environment variable to set (for example, `LANG`). |
-| Value | Enter the value to assign to the environment variable (for example, `en_US.UTF-8`). |
-{{< /truetable >}}
-{{< /expand >}}
+{{< include file="/static/includes/InstanceEnvironmentSettings.md" >}}
 
 ### Disks
 
@@ -231,10 +224,18 @@ The **USB Devices** settings let you attach a USB device to an instance, allowin
 
 Select one or more device(s) to attach.
 
+### GPU Devices
+
+The **GPU Devices** settings allow you to attach one or more GPU devices to an instance, enabling it to utilize hardware acceleration for graphics or computation tasks.
+
+{{< trueimage src="/images/SCALE/Virtualization/CreateInstanceGPU.png" alt="GPU Devices" id="GPU Devices" >}}
+
+Select one or more GPU device(s) from the list to attach to the instance.
+
 ### PCI Passthrough
 
 The **PCI Passthrough** settings let you assign a physical PCI device, such as a network card or GPU, directly to a VM, allowing it to use the device as if physically attached.
-This setting is only available for VMs and cannot be used with containers.
+These settings are only available for VMs and cannot be used with containers.
 
 The selected PCI device(s) cannot be in use by the host or share an IOMMU group with devices the host requires.
 
@@ -245,19 +246,30 @@ Click **Add PCI Passthrough** to open the [**Add PCI Passthrough Device**](#add-
 ### VNC
 
 The **VNC** settings allow you to enable VNC access for a VM, configure the VNC port, and set a VNC password for remote access.
-This setting is only available for VMs and cannot be used with containers.
+These settings are only available for VMs and cannot be used with containers.
 
 {{< trueimage src="/images/SCALE/Virtualization/CreateInstanceVNC.png" alt="VNC Settings" id="VNC Settings" >}}
 
-{{< expand "VNC Settings" "v" >}}
+{{< include file="/static/includes/InstanceVNCSettings.md" >}}
 
+### Security
+
+The **Security settings** control various system security features, including Trusted Platform Module (TPM) and Secure Boot options.
+These options help to ensure a secure environment by enabling advanced hardware-based security features during the system’s startup and operation.
+These settings are only available for VMs and cannot be used with containers.
+
+{{< trueimage src="/images/SCALE/Virtualization/CreateInstanceSecurity.png" alt="Security Settings" id="Security Settings" >}}
+
+{{< expand "Security Settings" "v" >}}
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Enable VNC** | Select to allow remote desktop access via VNC. |
-| **VNC Port** | Enter a port number to configure the port on which the VM VNC server listens for connections. |
-| **VNC Password** | Enter a password to authenticate VNC access to the VM. Note: A VNC password is not cryptographically secure. You should not rely on it as a single authentication mechanism for your VMs. |
+| **Add Trusted Platform Module (TPM)** | Enables TPM, a hardware-based security feature that protects sensitive data and ensures integrity. Adds a Trusted Platform Module (TPM) device to the VM. |
+| **Secure Boot** | Ensures that only trusted, signed software is loaded during the system's boot process. May be incompatible with some images. |
 {{< /truetable >}}
+
+{{< include file="/static/includes/SecureBootHelp.md" >}}
+
 {{< /expand >}}
 
 ## Instances Table
@@ -460,6 +472,70 @@ The **Metrics** widget displays real-time graphs that monitor instance performan
 **Memory (MiB)** displays the memory usage in MiB over time.
 
 **Disk I/O Full Pressure (%)** tracks the disk input/output pressure as a percentage over time.
+
+## Edit Instance Screen
+
+The **Edit Instance: *Instance*** screen settings are a subset of those found on the **[Create Instance Wizard](#create-instance-wizard)** screens.
+It includes the general **Instance Configuration** and **CPU and Memory** settings for all instances.
+Additionally, containers include **Environment** settings.
+VMs include **VNC** and **Security** settings.
+To edit device, disk, network, or proxy settings, use the [Instances Widgets](#instances-widgets) on the **Instances** screen.
+
+### Edit Instance Configuration Settings
+
+The **Instance Configuration** settings on the **Edit** screen allow you to modify basic parameters for the instance, such as startup behavior.
+
+{{< trueimage src="/images/SCALE/Virtualization/EditInstanceConfiguration.png" alt="Edit Instance Configuration" id="Edit Instance Configuration" >}}
+
+{{< expand "Instance Configuration Settings" "v" >}}
+{{< truetable >}}
+| Setting | Description |
+|---------|-------------|
+| **Autostart** | Select to automatically start the instance when the system boots. |
+{{< /truetable >}}
+{{< /expand >}}
+
+### Edit CPU and Memory Settings
+
+The **CPU & Memory** settings on the **Edit** screen are the same as those in the **Create Instance** wizard.
+
+{{< trueimage src="/images/SCALE/Virtualization/EditCPUandMemory.png" alt="Edit CPU & Memory" id="Edit CPU & Memory" >}}
+
+{{< include file="/static/includes/VMCPUandMemorySettings.md" >}}
+
+### Edit VNC Settings
+The **VNC** settings on the **Edit** screen are the same as those in the **Create Instance** wizard.
+These settings are only available for VMs and cannot be used with containers.
+
+{{< trueimage src="/images/SCALE/Virtualization/EditVNC.png" alt="Edit VNC" id="Edit VNC" >}}
+
+{{< include file="/static/includes/InstanceVNCSettings.md" >}}
+
+### Edit Environment Settings  
+
+The **Environment** settings on the **Edit** screen are the same as those in the **Create Instance** wizard.
+These settings are only supported for containers and cannot be used with VMs.
+
+Click Add to display a set of environment fields.
+
+{{< trueimage src="/images/SCALE/Virtualization/EditEnvironment.png" alt="Environment Settings" id="Environment Settings" >}}  
+
+{{< include file="/static/includes/InstanceEnvironmentSettings.md" >}}
+
+### Edit Security Settings  
+
+The **Security** settings on the **Edit** screen allow you to enable Secure Boot for the instance, ensuring that only trusted, signed software runs during the startup process.
+These settings are only available for VMs and cannot be used with containers.  
+
+{{< trueimage src="/images/SCALE/Virtualization/EditSecurity.png" alt="Security Settings" id="Security Settings" >}}  
+
+{{< expand "Security Settings" "v" >}}  
+{{< truetable >}}  
+| Setting | Description |  
+|---------|-------------|  
+| **Secure Boot** | Select to ensure only trusted, signed software runs during startup. Some images may not be compatible with Secure Boot. |  
+{{< /truetable >}}
+{{< /expand >}}
 
 ## Add PCI Passthrough Device Screen
 
