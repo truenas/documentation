@@ -6,8 +6,8 @@ aliases:
 - /scaleuireference/virtualizationscreens/
 tags:
  - vm
- - gpu
- - storage provisioning
+ - container
+ - instances
 ---
 
 {{< include file="/static/includes/25.04Virtualization.md" >}}
