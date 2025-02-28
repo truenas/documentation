@@ -90,7 +90,7 @@ Valid instance names must meet the following conditions:
 * The name must not start with a digit or a dash.
 * The name must not end with a dash.
 
-These requirements ensure the instance name can be used in DNS records, on the file system, in various security profiles, and as the host name of the instance itself.
+This ensures the instance name works without conflicts in DNS records, the file system, security profiles, and as the instance hostname.
 See [Instance name requirements](https://linuxcontainers.org/incus/docs/main/reference/instance_properties/#instance-name-requirements) from Incus for more information.
 {{< /expand >}}
 
@@ -150,8 +150,8 @@ The **CPU & Memory** settings specify the number of virtual CPU cores to allocat
 
 ### Environment
 
-The Environment settings allow you to configure optional additional environment variables for a Linux container to run on boot or execute.
-Environment variables are not supported for VMs.
+The Environment settings allow you to configure optional environment variables to run on boot or execute.
+TrueNAS supports environment variables for Linux containers only.
 
 Click Add to display a set of environment fields.
 
@@ -189,7 +189,8 @@ Click **Add** again to create or mount additional disks.
 
 ### Proxies
 
-The **Proxies** settings allow you to forward network connections between the host and the instance. This enables traffic directed to a specific address on the host to be routed to an address inside the instance, or vice versa, allowing the instance to connect externally through the host.
+The **Proxies** settings allow you to forward network connections between the host and the instance.
+This routes traffic from a specific address on the host to an address inside the instance, or vice versa, allowing the instance to connect externally through the host.
 
 Click **Add** to display a set of proxy configuration settings.
 
@@ -201,7 +202,8 @@ Click **Add** to display a set of proxy configuration settings.
 
 ### Network
 
-The **Network** settings allow you to configure how the instance connects to the host and external networks, Options include the default network bridge, an existing bridge interface, or a MACVLAN.
+The **Network settings** configure how the instance connects to the host and external networks.
+Options include the default network bridge, an existing bridge interface, or a MACVLAN.
 
 See [Accessing NAS from VMs and Containers]({{< relref "/SCALETutorials/Network/ContainerNASBridge.md" >}}) for more information.
 
@@ -216,14 +218,14 @@ See [Accessing NAS from VMs and Containers]({{< relref "/SCALETutorials/Network/
 |---------|-------------|
 | **Use default network settings** | Select to use default network settings to connect the instance to the host using the automatic bridge defined in [Global Settings](#global-settings). Selected by default. Deselect to display the **Bridged NICs** (if available) and **Macvlan NICs** settings. |
 | **Bridged NICs** | Select an existing bridge on the TrueNAS host to connect to the instance. Displays when one or more existing bridge interface(s) is available. |
-| **Macvlan NICs** | Select an existing interface to create a virtual network interface based on the selected interface, assigning it a unique MAC address to allow the instance to appear as a separate device on the network. |
+| **Macvlan NICs** | Select an existing interface to create a virtual network interface based on it, assigning a unique MAC address so the instance appears as a separate device on the network. |
 {{< /truetable >}}
 {{< include file="/static/includes/MacvlanHost.md" >}}
 {{< /expand >}}
 
 ### USB Devices
 
-The USB Devices settings allow you to attach a USB device directly to an instance, enabling it to access the device as if it were physically connected.
+The **USB Devices** settings let you attach a USB device to an instance, allowing it to function as if physically connected.
 
 {{< trueimage src="/images/SCALE/Virtualization/CreateInstanceUSB.png" alt="USB Devices" id="USB Devices" >}}
 
@@ -231,10 +233,10 @@ Select one or more device(s) to attach.
 
 ### PCI Passthrough
 
-The **PCI Passthrough** settings allow you to assign a physical PCI device, such as a network card or GPU, directly to a VM, enabling it to use the device as if it were physically attached.
+The **PCI Passthrough** settings let you assign a physical PCI device, such as a network card or GPU, directly to a VM, allowing it to use the device as if physically attached.
 This setting is only available for VMs and cannot be used with containers.
 
-The selected PCI device(s) must not be in use by the host and must not share an IOMMU group with other devices that the host requires.
+The selected PCI device(s) cannot be in use by the host or share an IOMMU group with devices the host requires.
 
 {{< trueimage src="/images/SCALE/Virtualization/CreateInstancePCI.png" alt="PCI Passthrough" id="PCI Passthrough" >}}
 
@@ -253,14 +255,14 @@ This setting is only available for VMs and cannot be used with containers.
 | Setting | Description |
 |---------|-------------|
 | **Enable VNC** | Select to allow remote desktop access via VNC. |
-| **VNC Port** | Enter a port number to configure the port on which the VM's VNC server listens for connections. |
+| **VNC Port** | Enter a port number to configure the port on which the VM VNC server listens for connections. |
 | **VNC Password** | Enter a password to authenticate VNC access to the VM. Note: A VNC password is not cryptographically secure. You should not rely on it as a single authentication mechanism for your VMs. |
 {{< /truetable >}}
 {{< /expand >}}
 
 ## Instances Table
 
-The **Instances** table populates a row for each configured instance that shows the name, type, current state, and options to restart or stop the instance.
+The **Instances** table lists each configured instance, displaying its name, type, current state, and options to restart or stop it.
 Stopped instances show the option to start the instance.
 
 {{< trueimage src="/images/SCALE/Virtualization/InstancesScreenWithInstances.png" alt="Instances Screen - Populated" id="Instances Screen - Populated" >}}
@@ -292,7 +294,7 @@ Information in the widgets changes based on the row highlighted in the **Instanc
 
 ### General Info Widget
 
-The **General Info** widget shows the status and configured autostart, base image, CPU, memory, and secure boot settings for the instance.
+The **General Info** widget displays the instance status, autostart setting, base image, CPU, memory, and secure boot configuration.
 It includes the **Edit** and **Delete** buttons for the instance.
 
 {{< trueimage src="/images/SCALE/Virtualization/GeneralInfoWidget.png" alt="General Info Widget" id="General Info Widget" >}}
@@ -323,7 +325,7 @@ Select a device to attach it to the instance.
 
 ### Disks Widget
 
-The **Disks** widget displays the storage devices attached to the instance, showing their corresponding paths.
+The **Disks** widget shows the storage devices attached to the instance, along with their associated paths.
 It allows you to manage the disks, including adding new ones or modifying existing ones.
 
 {{< trueimage src="/images/SCALE/Virtualization/DisksWidget.png" alt="Disks Widget" id="Disks Widget" >}}
@@ -358,7 +360,7 @@ The **Delete Item** dialog asks for confirmation to delete the selected disk.
 
 ### NIC Widget
 
-The **NIC Widget** displays the network interfaces (NICs) attached to the instance, showing their corresponding names and types.
+The **NIC Widget** displays the network interfaces (NICs) attached to the instance, along with their names and types.
 It allows you to add new NICs and manage existing ones.
 
 {{< trueimage src="/images/SCALE/Virtualization/NICWidget.png" alt="NIC Widget" id="NIC Widget" >}}
@@ -408,18 +410,17 @@ The **Delete Item** dialog asks for confirmation to delete the selected proxy co
 
 ### Idmap Widget
 
-(Containers Only) The **Idmap** widget displays the user ID (UID) and group ID (GID) mappings used by the instance for ID translation between the host and the container or VM.
+(Containers Only) The **Idmap** widget shows the user ID (UID) and group ID (GID) mappings used by the instance to translate IDs between the host and the container or VM.
 It provides details such as the **Host ID**, **Maprange**, and **NS ID** for both UIDs and GIDs.
 
 {{< trueimage src="/images/SCALE/Virtualization/IdmapWidget.png" alt="Idmap Widget" id="Idmap Widget" >}}
 
-* **Host ID**: Shows the starting ID used by the host for mapping to the instance's IDs.
+* **Host ID**: Shows the starting ID used by the host for mapping to the instance IDs.
 * **Maprange**: Indicates the range of IDs that the host allocates for the instance.
 * **NS ID**: Represents the namespace ID used for the mapping.
 
 For example, if the **Host ID** is `2147000001` and the **Maprange** is `458752`, the container UID 0 (root) is mapped to the host UID `2147000001`.
-
-This widget allows you to view the configured ID mapping settings for the instance, which ensures proper isolation and user/group identity management between the host and the instance.
+This ensures proper isolation and user/group identity management between the host and the instance.
 
 ### Tools Widget
 
@@ -434,11 +435,11 @@ You can open a shell, console, or VNC session directly from this widget.
 
 **VNC** (VM only) opens a VNC connection using your preferred client.
 It uses a VNC URL scheme (for example, `vnc://hostname.domain.com:5930`) to launch the session directly in the application.
-If your environment does not support the VNC URL, you can manually connect to the instance using a VNC client by entering the hostname or IP address followed by the port number without the preceding `vnc://` (for example, `hostname.domain.com:5930` or `IP:5930`).
+If your environment does not support VNC URLs, you can manually connect using a VNC client by entering the hostname or IP address followed by the port number without `vnc://` (for example, `hostname.domain.com:5930` or `IP:5930`).
 
 ### Metrics Widget
 
-The **Metrics** widget provides real-time graphs to monitor the performance of your instance, displaying key metrics such as CPU usage, memory usage, and disk I/O pressure.
+The **Metrics** widget displays real-time graphs that monitor instance performance, including CPU usage, memory usage, and disk I/O pressure.
 
 {{< trueimage src="/images/SCALE/Virtualization/MetricsWidget.png" alt="Metrics Widget" id="Metrics Widget" >}}
 
@@ -450,13 +451,14 @@ The **Metrics** widget provides real-time graphs to monitor the performance of y
 
 ## Add PCI Passthrough Device Screen
 
-The **Add PCI Passthrough Device** screen displays the physical PCI devices available to attach to an instance.
-Use PCI passthrough to assign a physical PCI device, such as a network card or GPU, directly to a VM, enabling it to use the device as if it were physically attached.
+The **Add PCI Passthrough Device** screen lists the available physical PCI devices that can be attached to an instance.
 
-The selected PCI device(s) must not be in use by the host and must not share an IOMMU group with other devices that the host requires.
+PCI passthrough assigns a physical PCI device, such as a network card or GPU, directly to a VM, allowing it to function as if physically attached.
+
+The selected PCI device(s) must not be in use by the host or share an IOMMU group with any device the host requires.
 
 {{< trueimage src="/images/SCALE/Virtualization/AddPCIPassthroughDevice.png" alt="Add PCI Passthrough Device Screen" id="Add PCI Passthrough Device Screen" >}}
 
-To  filter the available devices, enter all or part of a device type or label in **Search Devices** or use the **Type** dropdown.
+To filter available devices, enter a device type or label in **Search Devices**, or use the **Type** dropdown.
 
 Click **Select** to attach the selected device.
