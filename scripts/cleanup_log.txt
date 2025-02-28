@@ -1,3 +1,25 @@
+Process time: 2025-02-27 17:35:38
+Initiated by: Dan Pizappi
+
+1141 files reviewed.
+14 files deleted.
+The following files were deleted:
+C:\Users\iXUser\Documents\GitHub\documentation\static\includes\iSCSIExtentScreens.md
+C:\Users\iXUser\Documents\GitHub\documentation\static\includes\VMGPUSettings.md
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Shares\iSCSAuthorizedAccessScreenFC.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Shares\iSCSIWizardProtocolOptionsScreenFC.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Virtualization\AddVMNoVMs.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Virtualization\CloneVMDialog.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Virtualization\EditVMCPUandMemory.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Virtualization\EditVMGeneralSettings.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Virtualization\EditVMGpuSettings.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Virtualization\VirtualMachinesScreenwithVM.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Virtualization\VMAddDeviceRawFile.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Virtualization\VMEditDeviceNIC.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Virtualization\VMEditDeviceSecondaryNIC.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Virtualization\VMSerialShellScreen.png
+
+----------------------------------------
 Process time: 2025-02-14 16:48:52
 Initiated by: Dan Pizappi
 

@@ -1,6 +1,6 @@
 &NewLine;
 
-* **Generic** for non-SMB share datasets such as iSCSI and NFS share datasets or datasets not associated with application storage.
+* **Generic** for non-SMB share datasets such as iSCSI and NFS share datasets, datasets for **Instances** (containers or virtual machines), or datasets not associated with application storage.
 * **Multiprotocol** for datasets optimized for SMB and NFS multi-mode shares or to create a dataset for NFS shares.
 * **SMB** for datasets optimized for SMB shares.
 * **Apps** for datasets optimized for application storage.
