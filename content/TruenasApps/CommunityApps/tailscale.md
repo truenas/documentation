@@ -22,3 +22,14 @@ keywords:
 [Tailscale](https://tailscale.com) <!-- is a [description of the application] -->
 
 {{< include file="/static/includes/ProposeArticleChange.md" >}}
+
+## Connecting to a custom headscale server
+Add the following to "Extra Arguments":
+`--login-server=https://<yourserver>:<port>`
+
+## Advertising TrueNAS as an exit node
+Tick the checkbox next to "Advertise Exit Node"
+
+Important: Needs enabled IP forwarding on the host via System > Advanced Settings > Sysctls.
+Please make sure you read and understand the warnings displayed when adding Sysctls
+See also https://tailscale.com/kb/1019/subnets?tab=linux#enable-ip-forwarding
