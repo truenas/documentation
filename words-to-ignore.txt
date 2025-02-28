@@ -2243,3 +2243,15 @@ ToolsWidget
 MetricsWidget
 AddPCIPassthroughDevice
 IncreaseRoot
+InstanceEnvironmentSettings
+CreateInstanceGPU
+InstanceVNCSettings
+CreateInstanceSecurity
+SecureBootHelp
+EditInstanceConfiguration
+EditCPUandMemory
+EditVNC
+InstanceVNCSettings
+EditEnvironment
+InstanceEnvironmentSettings
+EditSecurity
