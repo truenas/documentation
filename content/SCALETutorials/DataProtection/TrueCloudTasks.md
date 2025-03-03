@@ -89,9 +89,9 @@ To add the TrueCloud backup task, go to **Data Protection > TrueCloud Backup Tas
 9. Click **Save**.
 
 {{< hint type=important >}}
-Restic uses the password created for the backup repository to encrypt and manage the repository. Without this password, users cannot access or restore backup data, and restic cannot decrypt the repository.
+Restic uses the password you created for the backup repository to encrypt and manage the repository. Without this password, you cannot access or restore backup data, and restic cannot decrypt the repository.
 
-TrueNAS only stores the password as part of the TrueCloud backup task, and passes the password to restic using the environment variable RESTIC_PASSWORD each time the repository is accessed. This is done so that restic can further manage and encrypt the repository.
+TrueNAS only stores the password as part of the TrueCloud backup task. It passes the password to restic using the environment variable RESTIC_PASSWORD each time you access the repository. TrueNAS does this so that restic can further manage and encrypt the repository.
 {{< /hint >}}
 
 TrueNAS adds the task to the **TrueCloud Backup Tasks** widget with the state **N/A** until the task runs on schedule.
