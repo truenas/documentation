@@ -176,7 +176,7 @@ Click **Add** again to create or mount additional disks.
 |---------|-------------|
 | **Root Disk Size (in GiB)** | (Required for VMs only) Enter a plain integer to configure the size of the VM root disk (default 10). |
 | **Source** | (Required) Displays after clicking **Add** in **Disks**. To create a new zvol, enter a path or browse to select a parent dataset from the dropdown list of datasets on the system. Then click **Create Dataset**, enter a name for the new zvol in the **Create Dataset** window, and click **Create**. <br><br> To use an existing zvol, select an existing zvol from the dropdown list under <file>/dev/zvol/</file>. |
-| **Destination** | (Required for containers only) Enter the filesystem path to mount the disk at in the container. |
+| **Destination** | (Required for containers only) Enter the filesystem path to mount the disk at in the container, for example */media* or */var/lib/data*. |
 {{< /truetable >}}
 {{< /expand >}}
 
