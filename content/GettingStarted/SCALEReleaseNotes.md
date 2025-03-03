@@ -115,7 +115,35 @@ Any new feature flags introduced since the previous OpenZFS version that was int
 
 For more details on feature flags, see [OpenZFS Feature Flags](https://openzfs.github.io/openzfs-docs/Basic%20Concepts/Feature%20Flags.html) and [OpenZFS zpool-feature.7](https://openzfs.github.io/openzfs-docs/man/7/zpool-features.7.html).
 
+## 25.04-RC.1
+
+{{< hint type=warning title="Early Release Software" >}}
+Early releases are intended for testing and feedback purposes.
+Do not use early-release software for critical tasks.
+{{< /hint >}}
+
+**March 11, 2025**
+
+The TrueNAS team is pleased to release TrueNAS 25.04-RC.1!
+This release candidate version has software component updates and new features that are in the polishing phase as well as fixes for issues discovered in 25.04-BETA.1.
+
+### Notable changes
+
+* To prevent excessive resource usage, especially on systems with large HDD storage pools, SMART test results no longer appear directly on the **Storage** dashboard **Disk Health** widget ([NAS-134275](https://ixsystems.atlassian.net/browse/NAS-134275)).
+  Click **View S.M.A.R.T. Tests** on the widget to open the **S.M.A.R.T. Test Results of *POOL*** screen.
+* Allow configuration of IO bus for disk devices in Instances ([NAS-134250](https://ixsystems.atlassian.net/browse/NAS-134250)).
+  This enables users to create virtualized disks using a standard other than VirtIO in cases where the OS image does not by default include VirtIO drivers.
+
+<a href="https://ixsystems.atlassian.net/issues/?filter=11942" target="_blank">Click here for the full changelog</a> of completed tickets that are included in the 25.04-RC.1 release.
+{{< include file="/static/includes/JiraFilterInstructions.md" >}}
+
+### Known Issues
+
+<a href="https://ixsystems.atlassian.net/issues/?filter= " target="_blank">Click here to see the latest information</a> about public issues discovered in 25.04-BETA.1 that are being resolved in a future TrueNAS release.
+
 ## 25.04-BETA.1
+
+{{< expand "Click to expand" "v" >}}
 
 {{< hint type=warning title="Early Release Software" >}}
 Early releases are intended for testing and feedback purposes.
@@ -165,3 +193,4 @@ This first public release version of TrueNAS 25.04 (Fangtooth) has software comp
     * `GPU_UUID` is the UUID matching the pci slot that you retrieved with the above command.
 
 <a href="https://ixsystems.atlassian.net/issues/?filter=11745" target="_blank">Click here to see the latest information</a> about public issues discovered in 25.04-BETA.1 that are being resolved in a future TrueNAS release.
+{{< /expand >}}
