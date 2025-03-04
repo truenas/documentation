@@ -113,12 +113,10 @@ If you wait too long, a new number code displays in Google Authenticator, so you
 ### Logging In Using SSH
 1. Confirm that you set **Enable Two-Factor Auth for SSH** in **System > Advanced > Global Two Factor Authentication**.
 
-2. Go to **System > Services** and edit the **SSH** service.
+2. Go to **Credentials > Users** and edit the desired user account. Set **SSH password login enabled**, then click **Save**.
 
-   a. Set **Log in as Admin with Password**, then click **Save**.
+3. Go to **System Settings > Services** and click the **SSH** toggle. Wait for the service status to show that it is running.
 
-   b. Click the **SSH** toggle and wait for the service status to show that it is running.
+4. Open the Google Authentication app on your mobile device.
 
-3. Open the Google Authentication app on your mobile device.
-
-4. Open a terminal (such as Windows Shell) and SSH into the system using either the host name or IP address, the administrator account user name and password, and the 2FA code.
+5. Open a terminal (such as Windows Shell) and SSH into the system using either the host name or IP address, the administrator account user name and password, and the 2FA code.
