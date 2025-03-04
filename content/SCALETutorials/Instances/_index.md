@@ -21,7 +21,7 @@ keywords:
 
 **Instances** allow users to set up containers or virtual machines (VMs) to run alongside TrueNAS.
 
-A *Linux container* is a lightweight, isolated environment that shares the host system’s kernel while maintaining its own filesystem, processes, and network settings.
+A *Linux container* is a lightweight, isolated environment that shares the host system kernel while maintaining its own filesystem, processes, and network settings.
 Containers start quickly, use fewer system resources than VMs, and scale efficiently, making them ideal for deploying and managing applications with minimal overhead.
 
 A *virtual machine (VM)* is an environment on a host computer that operates like a separate physical computer.
