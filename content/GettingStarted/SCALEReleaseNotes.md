@@ -139,6 +139,9 @@ This release candidate version has software component updates and new features t
 
 ### Known Issues
 
+* Full IDMAP support for **Instances** in the TrueNAS UI is undergoing further development ahead of the 25.04.0 release ([NAS-134447](https://ixsystems.atlassian.net/browse/NAS-134447)).
+  Users testing instances in 25.04-RC.1 can use the **apps** user and group (568:568) to set permissions with consistent mapping in the TrueNAS host and containers (see [NAS-134560](https://ixsystems.atlassian.net/browse/NAS-134560)).
+
 <a href="https://ixsystems.atlassian.net/issues/?filter= " target="_blank">Click here to see the latest information</a> about public issues discovered in 25.04-BETA.1 that are being resolved in a future TrueNAS release.
 
 ## 25.04-BETA.1
