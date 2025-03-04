@@ -42,7 +42,7 @@ The **Configuration** dropdown menu includes **[Global Settings](#global-setting
 
 ### Global Settings
 
-**Global Settings** opens the **Global Settings** screen showing global options that apply to all instance, including selecting the storage pool for instances and network settings.
+**Global Settings** opens the **Global Settings** screen showing global options that apply to all instances, including selecting the storage pool for instances and network settings.
 
 {{< trueimage src="/images/SCALE/Virtualization/InstancesGlobalSettingsScreen.png" alt="Global Settings Screen" id="Global Settings Screen" >}}
 
