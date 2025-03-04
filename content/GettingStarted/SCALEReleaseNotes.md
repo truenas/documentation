@@ -133,6 +133,8 @@ This release candidate version has software component updates and new features t
   Click **View S.M.A.R.T. Tests** on the widget to open the **S.M.A.R.T. Test Results of *POOL*** screen.
 * Allow configuration of IO bus for disk devices in Instances ([NAS-134250](https://ixsystems.atlassian.net/browse/NAS-134250)).
   This enables users to create virtualized disks using a standard other than VirtIO in cases where the OS image does not by default include VirtIO drivers.
+* To improve stability and prevent unsupported SMB configurations from breaking on [migration from TrueNAS CORE]({{< relref "/GettingStarted/Migrate/_index.md" >}}), TrueNAS automatically removes the SMB auxiliary parameters `wide links`, `use sendfile`, `vfs objects`, and `allow insecure` during migration ([NAS-132911](https://ixsystems.atlassian.net/browse/NAS-132911)).
+* To prevent unexpected failures in SMB shares, TrueNAS automatically disables SMB2/3 lease support globally when [multiprotocol SMB/NFS shares]({{< relref "MixedModeShares.md" >}}) are enabled ([NAS-133680](https://ixsystems.atlassian.net/browse/NAS-133680)).
 
 <a href="https://ixsystems.atlassian.net/issues/?filter=11942" target="_blank">Click here for the full changelog</a> of completed tickets that are included in the 25.04-RC.1 release.
 {{< include file="/static/includes/JiraFilterInstructions.md" >}}
