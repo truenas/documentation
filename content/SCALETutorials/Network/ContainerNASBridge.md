@@ -52,7 +52,7 @@ You might have to set up [shares]({{< relref "/SCALEUIReference/Shares/_index.md
 ## Assigning a Secondary NIC: Multiple Physical Interfaces
 
 If you have more than one NIC on your system, you can assign container traffic to a secondary NIC.
-Configure the secondary interface as described in [Managing Interfaces]({{< relref "/SCALETutorials/Network/Interfaces/_index.md" >}}) before attaching it to a instance.
+Configure the secondary interface as described in [Managing Interfaces]({{< relref "/SCALETutorials/Network/Interfaces/_index.md" >}}) before attaching it to an instance.
 
 If you are creating a new instance, use the **Network** settings to deselect **Use default network Settings** and select the secondary NIC from **Macvlan NICs**.
 
