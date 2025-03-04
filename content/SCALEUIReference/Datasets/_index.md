@@ -102,7 +102,7 @@ Otherwise, you cannot delete a clone while the original volume still exists. See
 Non-root parent and child dataset versions of the card include the **[Delete](#delete-dataset)** button.
 To delete a root dataset, use the **Disconnect/Export** option on the **[Storage Dashboard]({{< relref "/SCALEUIReference/Storage/_index.md" >}})** screen.
 
-**Delete** opens a window that includes information about other options or services that use the dataset, for example a parent to other datasets and the services the child datasets of a parent dataset uses.
+**Delete** opens a window that includes information about other options or services that use the dataset, for example, a parent to other datasets and the services the child datasets of a parent dataset uses.
 Non-root parent and child datasets include the **Delete** button.
 {{< /expand >}}
 
@@ -113,7 +113,7 @@ If a parent to other datasets, the window includes the services a child dataset 
 {{< trueimage src="/images/SCALE/Datasets/DeleteDatasetParentDataset.png" alt="Delete Dataset Parent Dataset" id="Delete Dataset Parent Dataset" >}}
 
 {{< expand "Click Here for More Information" "v" >}}
-If a child dataset uses services the window displays the services.
+If a child dataset uses services, the window displays the services.
 
 {{< trueimage src="/images/SCALE/Datasets/DeleteDatasetChildUsingAService.png" alt="Delete Dataset Child Dataset Using a Service" id="Delete Dataset Child Dataset Using a Service" >}}
 
@@ -126,7 +126,7 @@ The window includes a field where you enter the path for the dataset. Select the
 
 ### Dataset Space Management Widget
 The **Dataset Space Management** widget displays space allocation (reserved, used, available) for all datasets.
-The widget displays if an encrypted dataset is unlocked. After locking the dataset this widget disappears until you unlock the dataset.
+The widget displays if an encrypted dataset is unlocked. After locking the dataset, this widget disappears until you unlock the dataset.
 
 {{< trueimage src="/images/SCALE/Datasets/DatasetSpaceManagementWidgetRootDataset.png" alt="Dataset Space Management Widget Root Dataset" id="Dataset Space Management Widget Root Dataset" >}}
 
@@ -212,9 +212,9 @@ The **Roles** widget for a dataset with no share shows two links, one to create 
 | Apps | [Manage Apps Settings]({{< relref "/SCALEUIReference/Apps/_index.md" >}}) | Displays Kubernetes is using the dataset. Select the option to **Choose Pool** from the **Settings** dropdown list on the **Applications** screen. |
 | Dataset with no share | [Create SMB Share]({{< relref "SMBSharesScreens.md" >}})<br>[Create NFS Share]({{< relref "NFSSharesScreens.md" >}}) | Opens either the **Add SMB** or **Add NFS** share screen to configure the share. |
 | SMB share | [Manage SMB Shares]({{< relref "SMBSharesScreens.md" >}}) | Displays the name of the SMB share using the dataset. Select the snare on the **Sharing SMB** screen to edit it. |
-| Other share | Link to the share type screen | Displays the name of the share using the dataset. Select the on the share screen (NFS or iSCSI) to edit it. |
+| Other share | Link to the share type screen | Displays the name of the share using the dataset. Select the option on the share screen (NFS or iSCSI) to edit it. |
 | Multiprotocol share | [Manage SMB Shares]({{< relref "SMBSharesScreens.md" >}})<br>[Manage NFS Shares]({{< relref "NFSSharesScreens.md" >}}) | Displays the name of the SMB and NFS share using the dataset. Each link opens the **Sharing SMB** or **Sharing NFS** screens. Click on the share to edit it. |
-| VM | [Manage VM Settings]({{< relref "InstancesScreens.md" >}}) | Displays the name of the VM using the dataset(zvol). Select it on the **Virtual Machines** screen to edit it. |
+| VM | [Manage VM Settings]({{< relref "InstancesScreens.md" >}}) | Displays the name of the VM using the dataset (zvol). Select it on the **Virtual Machines** screen to edit it. |
 {{< /truetable >}}
 {{< /expand >}}
 
@@ -270,7 +270,7 @@ The common settings are **Parent Path**, **Name**, and the **Dataset Preset** (p
 |---------|-------------|
 | **Parent path** | Read-only field that displays the dataset path. Populated with the parent dataset path, adds the name given to the dataset after entering it in **Name**. For example, *tank/shares/smbshare1*. |
 | **Name** | Enter a unique identifier for the dataset. Names allow upper and lower case letters, numbers, and the dash (-) or underscore (_) special characters, but TrueNAS does not allow trailing spaces after the dataset name. You cannot change the dataset name after clicking **Save**. The **Name** field on the **Edit Dataset** screen shows the path. |
-| **Dataset Preset** | Select the option from the dropdown list to define the type of data sharing the dataset uses. The options optimize the dataset for a sharing protocol or app and set the ACL type best suited to the dataset purpose. Options are: <br><li>**Generic** - Select for general storage datasets that are not associated with SMB shares, or apps. Sets the ACL to POSIX.<br><li>**SMB** - Select to optimize the dataset for SMB shares. Displays the **Create SMB Share** option pre-selected and **SMB Name** field populated with the value entered in **Name**. Sets the ACL to NFSv4. <br><li> **Apps** - Select to optimize the dataset for use by any application. Sets the ACL to NFSv4. If you plan to deploy container applications, the system automatically creates the **ix-apps** dataset for Docker storage for but separate datasets used for application data storage. <br><li>**Multiprotocol** - Select if configuring a multi-protocol or mixed-mode NFS and SMB sharing protocols. Allows clients to use either protocol to access the same data. Displays the **Create NFS Share** and **Create SMB Share** options pre-selected and the **SMB Name** field populated with the value entered in **Name**. See [Multiprotcol Shares]({{< relref "MixedModeShares.md" >}}) for more information. Sets the ACL to NFSv4.<br></li>Setting cannot be edited after saving the dataset. |
+| **Dataset Preset** | Select the option from the dropdown list to define the type of data sharing the dataset uses. The options optimize the dataset for a sharing protocol or app and set the ACL type best suited to the dataset purpose. Options are: <br><li>**Generic** - Select for general storage datasets that are not associated with SMB shares, or apps. Sets the ACL to POSIX.<br><li>**SMB** - Select to optimize the dataset for SMB shares. Displays the **Create SMB Share** option pre-selected and **SMB Name** field populated with the value entered in **Name**. Sets the ACL to NFSv4. <br><li> **Apps** - Select to optimize the dataset for use by any application. Sets the ACL to NFSv4. If you plan to deploy container applications, the system automatically creates the **ix-apps** dataset for Docker storage, but separate datasets used for application data storage. <br><li>**Multiprotocol** - Select if configuring a multi-protocol or mixed-mode NFS and SMB sharing protocols. Allows clients to use either protocol to access the same data. Displays the **Create NFS Share** and **Create SMB Share** options pre-selected and the **SMB Name** field populated with the value entered in **Name**. See [Multiprotcol Shares]({{< relref "MixedModeShares.md" >}}) for more information. Sets the ACL to NFSv4.<br></li>Setting cannot be edited after saving the dataset. |
 {{< /truetable >}}
 {{< /expand >}}
 
@@ -333,7 +333,7 @@ The **Other Options** tune the dataset for specific data-sharing protocols by se
 | **Enable Atime**| Select the access time for files option from the dropdown list. Access time can result in significant performance gains. **Inherit** uses the access time setting of the parent or the root dataset. **On** updates the access time for files when they are read. **Off** disables creating log traffic when reading files to maximize performance. |
 | **ZFS Deduplication** | Select the option from the dropdown list to transparently reuse a single copy of duplicated data to save space. Options are: <br><li>**Inherit** - Select to use the parent or root dataset settings. <br><li>**On** - Select to use deduplication. <br><li>**Off** - Select to not use deduplication. <br><li>**Verify** - Select to do a byte-to-byte comparison when two blocks have the same signature to verify the block contents are identical.<br></li> Deduplication can improve storage capacity but is RAM intensive. Compressing data is recommended before using deduplication.<br> Deduplicating data is a one-way process. You cannot undo deduplicated data! |
 | **Case Sensitivity** | Select the option from the dropdown list. Options are: <br><li>**Sensitive** assumes file names are case sensitive. <br><li>**Insensitive** assumes file names are not case sensitive. <br></li>You cannot change case sensitivity after saving the dataset. Note: The **Mixed** option no longer exists. |
-| **Checksum** | Select the [checksum](https://openzfs.github.io/openzfs-docs/Basic%20Concepts/Checksums.html) option from the dropdown list. Options: <br><li> **Inherit** - Select to use the parent setting. <br><li>**On** - Select to use checksum without specifying the variant. <br><li>**FLETCHER2** (deprecated) or **FLETCHER4** - Select to use a position-dependent checksum that uses two checksums to determine single-bit errors in messages transmitted over network channels or ZFS streams. <br><li>**SHA256** (default for dedupted datasets) or **SHA512** - Select to use a sequence of numbers and letters to check the copy of a downloaded update file is identical to the original. <br><li>**SKEIN** Not supported for a file system on boot pools. <br><li>**EDNOR** is not supported for file systems on boot pools and Edon-R requires verification when used with dedup so it automatically uses `verify`.</li> |
+| **Checksum** | Select the [checksum](https://openzfs.github.io/openzfs-docs/Basic%20Concepts/Checksums.html) option from the dropdown list. Options: <br><li> **Inherit** - Select to use the parent setting. <br><li>**On** - Select to use checksum without specifying the variant. <br><li>**FLETCHER2** (deprecated) or **FLETCHER4** - Select to use a position-dependent checksum that uses two checksums to determine single-bit errors in messages transmitted over network channels or ZFS streams. <br><li>**SHA256** (default for deduped datasets) or **SHA512** - Select to use a sequence of numbers and letters to check the copy of a downloaded update file is identical to the original. <br><li>**SKEIN** Not supported for a file system on boot pools. <br><li>**EDNOR** is not supported for file systems on boot pools and Edon-R requires verification when used with dedup so it automatically uses `verify`.</li> |
 {{< /truetable >}}
 
 {{< trueimage src="/images/SCALE/Datasets/AddDatasetOtherOptionsAdvanced2.png" alt="Add Dataset Advanced Other Options" id="Add Dataset Advanced Other Options" >}}
@@ -342,7 +342,7 @@ The **Other Options** tune the dataset for specific data-sharing protocols by se
 | Setting | Description |
 |---------|-------------|
 | **Read-only** | Select the option to allow or prevent dataset modification from the dropdown list. **On** prevents modifying the dataset. **Off** allows users accessing the dataset to modify its contents. |
-| **Exec** | Select the option for executing processes from within the dataset from the dropdown list. **On** allows executing processes from within this dataset. **Off** prevents executing processes from with the dataset. We recommend setting it to **On**. |
+| **Exec** | Select the option for executing processes from within the dataset from the dropdown list. **On** allows executing processes from within this dataset. **Off** prevents executing processes from within the dataset. We recommend setting it to **On**. |
 | **Snapshot directory** | Select the option to controls visibility of the <file>.zfs</file> directory on the dataset from the dropdown list. Select either **Visible** or **Invisible**. |
 | **Snapdev** | Select the option that controls whether the volume snapshot devices under /dev/zvol/*poolname* are hidden or visible from the dropdown list. Options are **Inherit (hidden)**, **Visible** and **Hidden** (default value). |
 | **Copies** | Select the number of ZFS user data duplicates stored on this dataset from the dropdown list. Select between **1**, **2**, or **3** redundant data copies. This can improve data protection and retention but is not a substitute for storage pools with disk redundancy. |
