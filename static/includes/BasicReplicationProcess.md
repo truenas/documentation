@@ -7,7 +7,7 @@ Ensure the account configuration has **SSH password login enabled** set.
 
 Remote replication requires setting up an [SSH connection]({{< relref "AddSSHConnectionKeyPair.md" >}}) in TrueNAS before creating a remote replication task.
 
-Verify the SSH service settings to ensure **Allow Password Authentication** selected to enable these capabilities.
+Verify the SSH service settings and ensure **Allow Password Authentication** is selected to enable these capabilities.
 Incorrect SSH service settings can impact the admin user ability to establish an SSH session during replication and require you to obtain and paste a public SSH key into the admin user settings.
 
 Replication tasks typically require a configured and active [periodic snapshot task]({{< relref "PeriodicSnapshotTasksSCALE.md" >}}).
