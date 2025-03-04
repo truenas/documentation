@@ -91,7 +91,9 @@ To add the TrueCloud backup task, go to **Data Protection > TrueCloud Backup Tas
 TrueNAS adds the task to the **TrueCloud Backup Tasks** widget with the state **N/A** until the task runs on schedule.
 To test the task, click **<i class="fa fa-play" aria-hidden="true" title="Run Job"></i> Run Job** to start the task apart from the scheduled time.
 
-The task status changes to **SUCCESS** when complete and **Task Details** for each task become available on the right side of the screen.
+When you finish creating a task, the **Task Details** for it become available on the right side of the screen.
+
+The task status changes to **SUCCESS** when it runs successfully. 
 
 {{< trueimage src="/images/SCALE/DataProtection/TrueCloudTaskSuccess.png" alt="TrueCloud Backup Task Complete" id="TrueCloud Backup Task Complete" >}}
 
