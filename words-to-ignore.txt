@@ -2255,3 +2255,6 @@ InstanceVNCSettings
 EditEnvironment
 InstanceEnvironmentSettings
 EditSecurity
+multiprotocol
+MixedModeShares
+natively
