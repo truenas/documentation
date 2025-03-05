@@ -23,7 +23,7 @@ After successfully deploying the app, you can access the Netdata web portal from
 The Netdata web portal opens on the local dashboard, and where you can create new dashboards, add plugins, metric databases, physical and virtual systems, containers, and other cloud deployments you want to monitor.
 The portal also provides access to the Netdata Cloud sign-in screen.
 
-{{< include file="/static/includes/AppsUnversioned.md" >}}
+
 
 ## Before You Begin
 

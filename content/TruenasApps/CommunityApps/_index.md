@@ -21,6 +21,8 @@ The TrueNAS community creates and maintains numerous applications intended to ex
 By default, the TrueNAS application catalog includes the **stable** train.
 To see community-maintained applications on the **Discover** screen, you must add the train.
 
+{{< include file="/static/includes/apps/Apps-Community-Support.md" >}}
+
 To view the community apps, from the **Installed** application screen, click **Settings** and then **Train Settings**.
 Select the **community** checkbox on the **Train Settings** screen and click **Save**.
 Go to the **Discover** screen and click **Refresh Catalog**, to the right of the search field.

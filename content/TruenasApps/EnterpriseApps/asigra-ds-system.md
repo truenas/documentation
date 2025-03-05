@@ -34,8 +34,6 @@ After installing the Asigra DS-System app, register an account with Asigra if yo
 Refer to communications from Asigra for the license and the link to the DS-Operator download.
 See [Setting Up Asigra in the DS Operator](#setting-up-asigra-in-the-ds-operator) below for the next steps after installing the Asigra DS-System app.
 
-{{< include file="/static/includes/AppsUnversioned.md" >}}
-
 ## Before You Begin
 
 Before you install the Asigra app:

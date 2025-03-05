@@ -23,7 +23,7 @@ The TrueNAS Chia app installs the Chia Blockchain architecture in a Kubernetes c
 Chia Blockchain is a cryptocurrency ecosystem that uses Proof of Space and Time, and allows users to work with digital money and interact with their assets and resources.
 Instead of using expensive hardware that consumes exorbitant amounts of electricity to mine crypto, it leverages existing empty hard disk space on your computer(s) to farm crypto with minimal resources.
 
-{{< include file="/static/includes/AppsUnversioned.md" >}}
+
 
 ## First Steps
 Before you install the application, you have the option to create the **config** and **plots** datasets for the Chia app storage volumes, or you can allow TrueNAS to automatically create these storage volumes.
