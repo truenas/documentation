@@ -82,12 +82,14 @@ Manage these callout addresses as part of your general network configuration (i.
 Callouts are grouped into several classes.
 
 {{< expand "All TrueNAS releases callouts" "v" >}}
-* Sentry "phone home" general system information and feature tracking to https://7ac3e76fe2a94f77a58e1c38ea6b42d9@sentry.ixsystems.com/4
+
 * Update to https://update-master.ixsystems.com/ or https://update.ixsystems.com/
 * Enterprise Proactive support to https://support-proxy.ixsystems.com
 * Error parser to https://github.com/angular/angular/blob/master/packages/core/src/util/errors.ts
   Other possible error callouts to https://github.com/angular/angular/issues/10816 as a workaround for https://github.com/angular/angular/issues/56471 
 * Email to the address set in the TrueNAS UI as configured for administration users, and for alerts
+
+TrueNAS uses Sentry to "phone home" general system statictics for analytics to https://7ac3e76fe2a94f77a58e1c38ea6b42d9@sentry.ixsystems.com/4
 {{< /expand >}}
 
 {{< expand "TrueNAS FreeBSD-based systems plugin callouts" "v" >}}
