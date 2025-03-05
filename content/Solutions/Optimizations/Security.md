@@ -29,6 +29,53 @@ Follow these best practices to administer TrueNAS securely.
 Consult the [TrueNAS Security Advisories](https://security.truenas.com/) site for information about any identified security vulnerabilities in TrueNAS products.
 Check back regularly for updates.
 
+## Web Locations and Software Calls
+
+Some elements of TrueNAS make callouts to online locations.
+To secure your system, manage these callout in your network configurations.
+
+All TrueNAS releases callouts:
+* Update to https://update-master.ixsystems.com/ or https://update.ixsystems.com/
+* Enterprise Proactive support to https://support-proxy.ixsystems.com
+* Error parser to https://github.com/angular/angular/blob/master/packages/core/src/util/errors.ts
+  Other possible error callouts to https://github.com/angular/angular/issues/10816 as a workaround for https://github.com/angular/angular/issues/56471 
+* Email to the address set in the TrueNAS UI as configured for administration users, and for alerts
+
+TrueNAS open ports are 80 and 443. See [Default Ports]({{< relref "DefaultPorts.md" >}}) or a complete list of assigned ports.
+
+TrueNAS FreeBSD-based systemsplugin callouts:
+* Official plugins list to https://github.com/freenas/iocate-ix-plugins
+* Community plugins list to https://github.com/ix-plugin-hub/iocate-plugin-index
+
+Each plugin JSON excludes its own download and pkg update URL.
+
+TrueNAS FreeBSD-based systems jail callouts:
+* Upstream FreeBSD pkg updates to pkg.freebsd.org
+* Upstream FreeBSD current releases to https://download.freebsd.org/releases/amd64/
+* Upstream archived FreeBSD releases for manual iocage fetch downloads to https://frp-archive.freebsd.org/pub/FreeBSD-Archive/old-releases/amd64/
+* Python package index for pip updates to pypi.org
+
+Portsnap is deprecated, see https://lists.freebsd.org/pipermail/freebsd-ports/2020-Augus/119098.html
+
+Truenas Debian Linux-based Systems App Callouts:
+* Images to https://github.com/truenas/charts.git
+* Graphic to https://media.sys.truenas.net
+* Docker hub registry to https://index.docker.io/v1/
+
+TrueNAS Debian Linux-based systems chart callouts:
+* Register all necessary components (fixed https://ixsystems.atlassian.net/browse/NAS-130717)
+* When ng-mocks get view child support see https://github.com/help-me-mom/ng-mocks/issues/8634
+
+TrueNAS Debian Linux-based system other callouts:
+* Feedback Oauth URL to https://support-proxy.ixsystems.com/oauth/initiate?origin=
+* Feedback User Guide form to https://www.truenas.com/docs/hub/
+* File Jira ticket to https://ixsystems.atlassian.net
+* Feedback service private readonly host name to https://feedback.ui.truenas.com
+
+When usage collection is disabled, anonymous usage statistics consisting of only the software version and total system cpacity (e.g. TrueNAS 24.04.0, 55 TB) are still collected, but information about the system configuration and usage is not.
+
+When Debian Linux-based system DNS look-ups to https://updates.ixystems.com *(storjshare.io) occur it is the content delivery network (CDN) for TrueNAS making the callouts to Storj where TrueNAS update available for downloads are stored.
+
 ## User Accounts
 
 Restrict new [TrueNAS user accounts]({{< relref "ManageLocalUsersSCALE.md" >}}) to the most minimal set of storage ACL permissions and access possible.
