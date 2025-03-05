@@ -135,16 +135,37 @@ This release candidate version has software component updates and new features t
   This enables users to create virtualized disks using a standard other than VirtIO in cases where the OS image does not by default include VirtIO drivers.
 * To improve stability and prevent unsupported SMB configurations from breaking on [migration from TrueNAS CORE]({{< relref "/GettingStarted/Migrate/_index.md" >}}), TrueNAS automatically removes the SMB auxiliary parameters `wide links`, `use sendfile`, `vfs objects`, and `allow insecure` during migration ([NAS-132911](https://ixsystems.atlassian.net/browse/NAS-132911)).
 * To prevent unexpected failures in SMB shares, TrueNAS automatically disables SMB2/3 lease support globally when [multiprotocol SMB/NFS shares]({{< relref "MixedModeShares.md" >}}) are enabled ([NAS-133680](https://ixsystems.atlassian.net/browse/NAS-133680)).
+* Reserve 2 GiB of disk space (but no more than 1%) to allow the data disk to be replaced with a slightly smaller one in the future ([NAS-134309](https://ixsystems.atlassian.net/browse/NAS-134309)).
+* Bugfix: Avoid possible deadlock in arc_read ([NAS-134106](https://ixsystems.atlassian.net/browse/NAS-134106)).
+* Bugfix: Ensure disk temperature reporting is available for all disks ([NAS-130766](https://ixsystems.atlassian.net/browse/NAS-130766)).
+* Bugfix: Changing the owner group of a dataset with an AD group does not work if the AD cache is disabled ([NAS-132203](https://ixsystems.atlassian.net/browse/NAS-132203)).
+* Bugfix: Allow SMB authentication for usernames with a capital letter ([NAS-134346](https://ixsystems.atlassian.net/browse/NAS-134346)).
+* Bugfix: Fix top toolbar icon colors for the iX Blue, Paper, and High Contrast UI themes ([NAS-133853](https://ixsystems.atlassian.net/browse/NAS-133853)).
+* Bugfix: Enable the applications **Web UI** button when accessing from IPv6 or mDNS name ([NAS-133655](https://ixsystems.atlassian.net/browse/NAS-133655)).
 
 <a href="https://ixsystems.atlassian.net/issues/?filter=11942" target="_blank">Click here for the full changelog</a> of completed tickets that are included in the 25.04-RC.1 release.
 {{< include file="/static/includes/JiraFilterInstructions.md" >}}
 
 ### Known Issues
 
-* Full IDMAP support for **Instances** in the TrueNAS UI is undergoing further development ahead of the 25.04.0 release ([NAS-134447](https://ixsystems.atlassian.net/browse/NAS-134447)).
-  Users testing instances in 25.04-RC.1 can use the **apps** user and group (568:568) to set permissions with consistent mapping in the TrueNAS host and containers (see [NAS-134560](https://ixsystems.atlassian.net/browse/NAS-134560)).
+* Further development of the experimental **Instances** virtualization feature is expected ahead of the 25.04.0 release. Current known issues include:
+  * Full IDMAP support is currently unavailable in the TrueNAS UI ([NAS-134447](https://ixsystems.atlassian.net/browse/NAS-134447)).
+    Users testing instances in 25.04-RC.1 can use the **apps** user and group (568:568) to set permissions with consistent mapping in the TrueNAS host and containers (see [NAS-134560](https://ixsystems.atlassian.net/browse/NAS-134560)).
+  * In 25.04-RC.1, VirtIO is the only available IO bus for VMs, which complicates deployment of VMs using OS images that do not natively support VirtIO, see ([NAS-134250](https://ixsystems.atlassian.net/browse/NAS-134250)).
+    Additional IO bus options are expected in 25.04.0 ([NAS-134393](https://ixsystems.atlassian.net/browse/NAS-134393)).
+* Some users of TrueNAS Apps attempring to configure GPU allocation report the error `Expected [uuid] to be set for GPU inslot [<some pci slot>] in [nvidia_gpu_selection])` (see ([NAS-134152](https://ixsystems.atlassian.net/browse/NAS-134152)).
 
-<a href="https://ixsystems.atlassian.net/issues/?filter= " target="_blank">Click here to see the latest information</a> about public issues discovered in 25.04-BETA.1 that are being resolved in a future TrueNAS release.
+  Users experiencing this error should follow the steps below for a one time fix that should not need to be repeated.
+
+  Connect to a shell session and retrieve the UUID for each GPU with the command `midclt call app.gpu_choices | jq`.
+
+  For each application that experiences the error, run `midclt call -job app.update APP_NAME '{"values": {"resources": {"gpus": {"use_all_gpus": false, "nvidia_gpu_selection": {"PCI_SLOT": {"use_gpu": true, "uuid": "GPU_UUID"}}}}}}'`
+  Where:
+    * `APP_NAME` is the name you entered in the application, for example “plex”.
+    * `PCI_SLOT` is the pci slot identified in the error, for example "0000:2d:00.0”.
+    * `GPU_UUID` is the UUID matching the pci slot that you retrieved with the above command.
+
+<a href="https://ixsystems.atlassian.net/issues/?filter=11975" target="_blank">Click here to see the latest information</a> about public issues discovered in 25.04-BETA.1 that are being resolved in a future TrueNAS release.
 
 ## 25.04-BETA.1
 
