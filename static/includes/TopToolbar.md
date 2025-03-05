@@ -68,8 +68,10 @@ The **Read-Only Admin** and **Sharing Admin** roles only have access to the **Lo
 
 {{< expand "Power Options" "v" >}}
 Click the **Power** <span class="material-icons">power_settings_new</span> button to open the dropdown list of power options.
-The restart function logs you out of the TrueNAS UI and restarts the server. The shutdown function logs you out of the UI and then powers off the system as though you pressed the power button on the physical server.  Click on the **Restart** button to open the dialog, then select an option from the **Reason** dropdown list, select **Confirm** to activate the **Restart** button. Click to restart the system
-To shutdown the system, Click on **Shutdown** to open the dialog, select a reason from the dropdown list, select **Confirm**, then click **Shut Down**. 
+The restart function logs you out of the TrueNAS UI and restarts the server.
+The shutdown function logs you out of the UI and then powers off the system.
+**Restart** and **Shutdown** open a dialog to record the power off reason for audit logging. 
+Select an option from the **Reason** dropdown list, then select **Confirm** to activate the **Restart** or **Shutdown** button.
 
 {{< trueimage src="/images/SCALE/Dashboard/RestartWindowReason.png" alt="Restart Window" id="Restart Window" >}}
 
