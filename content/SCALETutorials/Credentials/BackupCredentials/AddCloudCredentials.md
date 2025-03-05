@@ -30,7 +30,7 @@ This article provides instructions for the more involved providers.
 We recommend users open another browser tab to open and log into the cloud storage provider account you intend to link with TrueNAS.
 
 Some TrueNAS providers credentials require entering additional information generated while creating the provider account.
-For example, the Storj iX account produces an access and secret key that must be entered in the **Cloud Credential** screen to create the credential.
+For example, the Storj TrueNAS account produces an access and secret key that must be entered in the **Cloud Credential** screen to create the credential.
 
 Have the authentication information required by your cloud storage provider on hand to make the process easier.
 Authentication information can include but is not limited to user credentials, access tokens, and access and security keys.
@@ -50,11 +50,11 @@ To add a cloud credential:
 5. Click **Save**.
 
 ## Adding Storj Cloud Credentials
-Storj iX is the default cloud storage provider in TrueNAS.
+Storj TrueNAS is the default cloud storage provider in TrueNAS.
 
 {{< include file="/static/includes/AddStorjCloudCredential.md" >}}
 
-### Creating the Storj iX Account
+### Creating the Storj TrueNAS Account
 
 {{< include file="/static/includes/CreateStorjiXAccount.md" >}}
 

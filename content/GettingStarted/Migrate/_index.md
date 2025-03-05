@@ -14,7 +14,7 @@ keywords:
 - data migration
 ---
 
-On March 20, 2024, iXsystems [announced](https://www.truenas.com/blog/truenas-core-13-3-plans/) that the FreeBSD-based TrueNAS CORE platform has entered "sustaining engineering phase within the TrueNAS project."
+On March 20, 2024, the TrueNAS team [announced](https://www.truenas.com/blog/truenas-core-13-3-plans/) that the FreeBSD-based TrueNAS CORE platform has entered "sustaining engineering phase within the TrueNAS project."
 With this transition, TrueNAS 13.0 and 13.3 continue to receive bug fixes related to stability and security.
 New feature development and component improvement continues on Linux-based TrueNAS versions.
 

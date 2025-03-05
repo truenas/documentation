@@ -9,7 +9,7 @@ related: false
 
 
 {{< enterprise >}}
-iXsystems TrueNAS Enterprise customers should contact iXsystems Support to receive additional guidance on system configuration.
+TrueNAS Enterprise customers should contact TrueNAS Enterprise Support to receive additional guidance on system configuration.
 
 {{< expand "Contacting Support" "v" >}}
 {{< include file="/static/includes/iXsystemsSupportContact.md" >}}
