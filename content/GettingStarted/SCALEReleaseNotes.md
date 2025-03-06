@@ -68,6 +68,12 @@ More details are available from [Software Releases](https://www.truenas.com/docs
 
 {{< include file="/static/includes/MigratingVMs.md" >}}
 
+### TrueNAS Apps
+
+{{< include file="/static/includes/AppsUnversionedAdmonition.md" >}}
+
+{{< include file="/static/includes/AppsHostIP.md" >}}
+
 ### Upgrade Paths (Anticipated)
 
 {{< include file="/static/includes/25.04UpgradeMethods.md" >}}
