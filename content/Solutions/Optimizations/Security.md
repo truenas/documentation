@@ -109,11 +109,11 @@ Portsnap is deprecated, see https://lists.freebsd.org/pipermail/freebsd-ports/20
 {{< /expand >}}
 
 {{< expand "Truenas Debian Linux-based systems app callouts" "v" >}}
-* Images to https://github.com/truenas/apps.git
 * Graphic to https://media.sys.truenas.net
-* Docker hub registry to https://index.docker.io/v1/
+* Docker hub registry to https://index.docker.io/v1
 
-Some apps make callouts to other registries like ghcr.io and quay.io.
+TruNAS apps clone images from https://github.com/truenas/apps.
+Some apps pull from other registries like ghcr.io and quay.io.
 {{< /expand >}}
 
 {{< expand "TrueNAS Debian Linux-based systems chart callouts" "v" >}}
