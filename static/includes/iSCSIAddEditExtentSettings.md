@@ -22,7 +22,7 @@ The **Add Extent** and **Edit Extent** screens show the same configuration setti
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Enable TCP** | Select to allow an initiator to bypass normal access control and access any scannable target. This allows [xcopy](https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/cc771254(v=ws.11)) operations that are otherwise blocked by access control. |
+| **Enable TPC** | Select to allow an initiator to bypass normal access control and access any scannable target. This allows [xcopy](https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/cc771254(v=ws.11)) operations that are otherwise blocked by access control. |
 | **Xen initiator compat mode** | Select when using Xen as the iSCSI initiator. |
 | **LUN RPM** | Select the option from the dropdown list. Options are **UNKNOWN**, **SSD**, **5400**, **7200**, **10000** or **15000**. Do *not* change this setting when using Windows as the initiator. Only change LUN RPM in large environments where the number of systems using a specific RPM is needed for accurate reporting statistics. |
 | **Read-only** | Select to prevent the initiator from initializing this LUN. |
