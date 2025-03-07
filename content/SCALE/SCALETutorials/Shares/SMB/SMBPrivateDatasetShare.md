@@ -17,7 +17,7 @@ The SMB share **Other Options** includes a home share legacy option but it is no
 Future TrueNAS releases can introduce instability or require configuration changes affecting this legacy feature.
 
 Microsoft has eliminated the Home Share feature in Windows 11 and deprecated it in Windows 10.
-Microsoft support for Home Shares is planned for October 2025.
+Microsoft ending support for Home Shares is planned for October 2025.
 {{< /hint >}}
 
 ## Replacing SMB Home Shares
