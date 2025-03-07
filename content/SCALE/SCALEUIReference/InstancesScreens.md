@@ -66,7 +66,7 @@ When complete, the **Instances** screen displays the **No instances** and <i cla
 {{< truetable >}}
 | Setting | Description |
 |-----------|-------------|
-| Bridge | Select **Automatic** to use the default network bridge for communication between instances and the TrueNAS host or use the dropdown list to select an existing bridge. See [Accessing NAS from VMs and Containers]({{< relref "/SCALE/SCALETutorials/Network/ContainerNASBridge.md" >}}) for more information. |
+| **Bridge** | Select **Automatic** to use the default network bridge for communication between instances and the TrueNAS host or use the dropdown list to select an existing bridge. See [Accessing NAS from VMs and Containers]({{< relref "/SCALE/SCALETutorials/Network/ContainerNASBridge.md" >}}) for more information. |
 | **IPv4 Network** | Displays when **Bridge** is set to **Automatic**. Enter the IPv4 address and subnet to use for the bridge or leave empty to allow TrueNAS to use the default address. |
 | **IPv6 Network** | Displays when **Bridge** is set to **Automatic**. Enter the IPv6 address and subnet to use for the bridge or leave empty to allow TrueNAS to use the default address. |
 {{< /truetable >}}
