@@ -37,22 +37,21 @@ TrueNAS provides two feedback options, one to rate a UI screen and the other to 
 To send feedback go to **System** > **General Settings**, and click **File Ticket** on the **Support** widget to open the **Send Feedback** window.
 Alternately, on screens that show the option to rate the screen, click the **Send Feedback** ![FeedbackIcon](/images/SCALE/Dashboard/FeedbackIcon.png "Feedback Icon") icon to open the feedback window.
 
+### Rating a UI Screen
+
 Click **Rate this page** to send feedback on a UI page, add comments, and add a screenshot or additional images, or click the link to go to the TrueNAS forum where you can vote for new features on the community forum, report a problem, or suggest improvements directly to the TrueNAS development team.
+You can include a screenshot of the current page and/or upload additional images with your comments.
 
 {{< trueimage src="/images/SCALE/Dashboard/FeedbackWindow.png" alt="Send Feedback Window" id="Send Feedback Window" >}}
 
-Click **Report a bug** to show the fields and option to open an engineering ticket and submit it directly to the TrueNAS development team.
+### Reporting an Issue
+Click **Report a bug** to show the fields and option to open an engineering ticket and submit it directly to the TrueNAS development team when a TrueNAS screen or feature is not working as intended.
 Submitting a bug report requires a free [Atlassian account](https://id.atlassian.com/signup).
 
 {{< trueimage src="/images/SCALE/SystemSettings/SendFeedbackReportABugWindow.png" alt="Send Feedback Window" id="Send Feedback Window" >}}
 
-{{< expand "Rating a Page" "v" >}}
-Click on **Rate this page** to quickly review and provide comments on the currently active TrueNAS user interface screen.
-You can include a screenshot of the current page and/or upload additional images with your comments.
-{{< /expand >}}
-
-{{< expand "Reporting a bug" "v" >}}
-Click **Report a bug** to see the fields to create an engineering ticket and notify the development team when a TrueNAS screen or feature is not working as intended.
+{{< expand "Issue Reporting Example" "v" >}}
+Click **Report a bug** to see the fields to create an engineering ticket.
 For example, reporting a bug where a middleware error and traceback occurred while saving a configuration change.
 
 Bug reports are created in the publicly visible [TrueNAS Jira project](https://ixsystems.atlassian.net/jira/software/c/projects/NAS/).
@@ -79,7 +78,8 @@ Duplicate tickets are closed in favor of consolidating feedback into one report.
 Click **Login To Jira To Submit** to finish and submit the report.
 {{< /expand >}}
 
-{{< expand "Bug Reports from Enterprise Licensed Systems" "v" >}}
+### Reporting an Issue - Enterprose Licensed Systems
+
 {{< enterprise >}}
 When an Enterprise license is applied to the system, the **Report a bug** screen includes additional environment and contact information fields for sending bug reports directly to the TrueNAS team.
 
@@ -87,7 +87,6 @@ When an Enterprise license is applied to the system, the **Report a bug** screen
 
 Filling out the entire form with precise details and accurate contact information ensures a prompt response from the TrueNAS Customer Support team.
 {{< /enterprise >}}
-{{< /expand >}}
 
 ## Configuring GUI Options
 
