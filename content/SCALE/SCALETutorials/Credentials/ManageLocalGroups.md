@@ -23,8 +23,9 @@ To see saved groups, go to **Credentials > Groups**.
 
 {{< trueimage src="/images/SCALE/Credentials/GroupsListedSCALE.png" alt="Groups Screen" id="Groups Screen" >}}
 
-By default, TrueNAS hides the system built-in groups.
-To see built-in groups, click the **Show Built-In Groups** toggle. The toggle turns blue and all built-in groups display. Click the **Show Built-In Groups** toggle again to show only non-built-in groups on the system.
+By default, TrueNAS hides the built-in groups in the system.
+To see built-in groups, click the **Show Built-In Groups** toggle. The toggle turns blue and shows all built-in groups.
+Click the **Show Built-In Groups** toggle again to show only non-built-in groups on the system.
 
 ## Adding a New Group
 
@@ -32,21 +33,21 @@ To create a group, go to **Credentials > Groups** and click **Add**.
 
 {{< trueimage src="/images/SCALE/Credentials/AddGroupScreen.png" alt="Add Group Screen" id="Add Group Screen" >}}
 
-Enter a unique number for the group ID in **GID** that TrueNAS uses to identify a Unix group.
+Enter a unique number for the group ID in **GID**. TrueNAS uses this to identify a Unix group.
 Enter a number above 3000 for a group with user accounts or enter the default port number as the GID for a system service.
 
 Enter a name for the group.
 The group name cannot begin with a hyphen (-) or contain a space, tab, or any of these characters: colon (:), plus (+), ampersand (&), hash (#), percent (%), carat (^), open or close parentheses ( ), exclamation mark (!), at symbol (@), tilde (~), asterisk (*), question mark (?) greater or less than (<) (>), equal (=).
-You can only use the dollar sign ($) as the last character in a group name.
+The dollar sign ($) can be the last character in a group name.
 
 {{< include file="/static/includes/AdminSudo.md" >}}
 
 To allow Samba permissions and authentication to use this group, select **SMB Group**.
+{{< hint type=info >}}
+Using the same group ID (GID) is not permitted as it can create confusion because the operating system treats it as the same group, even if a different name is assigned to the group.
+{{< /hint >}}
 
-To allow more than one group to have the same group ID (not recommended), select **Allow Duplicate GIDs**.
-Use only if absolutely necessary, as duplicate GIDs can lead to unexpected behavior.
-
-Select **SMB Group** to make this group available for permissions editors over SMB protocol, and add the share ACL Editor.
+Select **SMB Group** to make this group available for permissions editors over SMB protocol, and add the share ACL editor.
 This is not used for SMB authentication or determining the user session token or internal permissions checks.
 
 Click **Save**.
@@ -61,7 +62,7 @@ Use [**Members**](#update-members) to manage membership and [**Edit**](#edit-gro
 
 ### Update Members
 
-To manage group membership, go to **Credentials > Groups**, expand the group entry, and click **Members** to open the **Update Members** screen.
+To manage group membership, go to **Credentials > Groups**, click on the group entry to expand it, then click **Members** to open the **Update Members** screen.
 
 {{< trueimage src="/images/SCALE/Credentials/GroupsManageMembersSCALE.png" alt="Update Members Screen" id="Update Members Screen" >}}
 

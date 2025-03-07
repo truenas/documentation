@@ -32,33 +32,26 @@ Click the <span class="material-icons">expand_more</span> arrow or anywhere on a
 
 Use [**Members**](#update-members) to manage membership and [**Edit**](#edit-group) or **Delete** to manage the group.
 
-## Add Group Screen
+## Add and Edit Group Screens
 
-Click **Add** to open the **Add Group** configuration screen.
+The **Add Group** and **Edit Group** screens show the same settings but the GID is not editable after saving changes on the **Add Group** screen.
+**Add** opens the **Add Group** configuration screen.
+The <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83l3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75z"/></svg> **Edit** icon opens the **Edit Group** screen.
 
 {{< trueimage src="/images/SCALE/Credentials/AddGroupScreen.png" alt="Add Group Screen" id="Add Group Screen" >}}
 
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **GID** | Required. Enter a unique number for the group ID (**GID**) TrueNAS uses to identify a Unix group. Enter a number above 1000 for a group with user accounts (you cannot change the GID later). If a system service uses a group, the group ID must match the default port number for the service. |
-| **Name** | Required. Enter a name for the group. The group name cannot begin with a hyphen (-) or contain a space, tab, or any of these characters: colon (:), plus (+), ampersand (&), hash (#), percent (%), carat (^), open or close parentheses ( ), exclamation mark (!), at symbol (@), tilde (~), asterisk (*), question mark (?) greater or less than (<) (>), equal (=). You can only use the dollar sign ($) as the last character in a user name. |
-| **Privileges** | Attaches administrator role privileges to the group. Using custom administrator roles aside from the defaults is an **experimental** feature and is not supported. Do not modify the local administrator or default admin user privileges! Only use if you need users in this group to access limited areas of the web UI or authentication for TrueNAS API calls. |
-| **Allowed sudo commands** | Use to list specific [sudo](https://www.sudo.ws/) commands allowed for group members. Enter each command as an absolute path to the ELF (Executable and Linkable Format) executable file, for example */usr/bin/nano*. <file>/usr/bin/</file> is the default location for commands. <br> Grants limited root-like permissions for group members when using these commands. Using sudo prompts the user for their account password. |
+| **GID** | (Required) Enter a unique number for the group ID (**GID**) TrueNAS uses to identify a Unix group. Enter a number above 1000 for a group with user accounts. If a system service uses the group, the group ID must match the default port number for the service.<br> Shows the group ID assigned at the time the group is created on the **Edit Group** screen but cannot be changed. |
+| **Name** | (Required) Enter a name for the group. The group name cannot begin with a hyphen (-) or contain a space, tab, or any of these characters: colon (:), plus (+), ampersand (&), hash (#), percent (%), carat (^), open or close parentheses ( ), exclamation mark (!), at symbol (@), tilde (~), asterisk (*), question mark (?) greater or less than (<) (>), equal (=). You can only use the dollar sign ($) as the last character in a group or user name. |
+| **Privileges** | Attaches defined role privileges to the group as configured on the Add or Edit Privileges screens. Using custom administrator roles aside from the defaults is an **experimental** feature and is not supported. Do not modify the local administrator or default admin user privileges! Only use if you need users in this group to access limited areas of the TrueNAS UI or authentication for TrueNAS API calls. |
+| **Allowed sudo commands** | Enter specific [sudo](https://www.sudo.ws/) commands group members are allowed to enter. Enter each command as an absolute path to the ELF (Executable and Linkable Format) executable file, for example */usr/bin/nano*. <file>/usr/bin/</file> is the default location for commands. <br> Grants limited root-like permissions for group members when using these commands. Using sudo prompts the user for their account password. |
 | **Allow all sudo commands** | Select to give group members permission to use all [sudo](https://www.sudo.ws/) commands. Using sudo prompts the user for their account password. |
-| **Allowed sudo commands with no password** | Use to list specific [sudo](https://www.sudo.ws/) commands allowed for group members with no password required. Enter each command as an absolute path to the ELF (Executable and Linkable Format) executable file, for example */usr/bin/nano*. <file>/usr/bin/</file> is the default location for commands. <br> Grants limited root-like permissions for group members when using these commands. Exercise caution when allowing sudo commands without password prompts. It is recommended to limit this privilege to trusted users and specific commands to minimize security risks. |
-| **Allow all sudo commands with no password** | Not recommended. Select to give group members the ability to use all [sudo](https://www.sudo.ws/) commands with no password required. |
-| **SMB Group** | Select to make this group available for permissions editors over [SMB protocol]({{< relref "/SCALE/SCALETutorials/Shares/_index.md" >}}) (and the share ACL editor). It is not used for SMB authentication or determining the user session token or internal permissions checks. |
-| **Allow Duplicate GIDs** | Not recommended. Select to allow more than one group to have the same group ID. Use only if absolutely necessary, as duplicate GIDs can lead to unexpected behavior. |
+| **Allowed sudo commands with no password** | Enter specific allowed [sudo](https://www.sudo.ws/) commands users in the group members can enter without needing to enter their password. Enter each command as an absolute path to the ELF (Executable and Linkable Format) executable file, for example */usr/bin/nano*. <file>/usr/bin/</file> is the default location for commands. <br> Grants limited root-like permissions for group members when using these commands. Exercise caution when allowing sudo commands without password prompts. Recommended to limit the privilege to trusted users and specific commands to minimize security risks. |
+| **Allow all sudo commands with no password** | Not recommended. Select to give group members the ability to enter all [sudo](https://www.sudo.ws/) commands without needing to enter a password. |
+| **SMB Group** | Select to make the group available for permissions editors over [SMB protocol]({{< relref "/SCALE/SCALETutorials/Shares/_index.md" >}}) (and the share ACL editor). Not used for SMB authentication or determining the user session token or internal permissions checks. |
 {{< /truetable >}}
-
-## Edit Group Screen
-
-Click **Edit** on an expanded group in the **Groups** screen to open the **Edit Group** screen.
-
-{{< trueimage src="/images/SCALE/Credentials/EditGroup.png" alt="Edit Group Screen" id="Edit Group Screen" >}}
-
-**Edit Group** has the same fields and checkboxes as [**Add Group**](#add-group-screen), except that it does not include **Allow Duplicate GIDs**.
 
 ## Update Members Screen
 
@@ -66,45 +59,42 @@ Use the **Update Members** screen to manage group permissions and access for lar
 
 {{< trueimage src="/images/SCALE/Credentials/GroupsManageMembersSCALE.png" alt="Update Members Screen" id="Update Members Screen" >}}
 
-To add user accounts to the group, select users and then click the right arrow <i class="fa fa-arrow-right" aria-hidden="true" title="Right Arrow"></i>.
-To remove user accounts from the group, select users and then click the left arrow <i class="fa fa-arrow-left" aria-hidden="true" title="Left Arrow"></i>.
-Select multiple users by holding <kbd>Ctrl</kbd> while clicking each entry.
-
-Click **Save**.
+The right arrow <i class="fa fa-arrow-right" aria-hidden="true" title="Right Arrow"></i> adds a user account to the group after selecting the user.
+The left arrow <i class="fa fa-arrow-left" aria-hidden="true" title="Left Arrow"></i> removes the selected user account from the group.
+Hold <kbd>Ctrl</kbd> while clicking each entry to select multiple groups.
 
 ## Privileges Screen
 
 {{< hint type="warning" title="Experimental Feature" >}}
-The **Privileges** feature is an early release experimental feature.
-Use the **Privileges** screens to view default administrator groups and roles, or define customized groupings of roles for different local or Directory Service-imported account groups.
+The **Privileges** feature is an early-release experimental feature.
+The **Privileges** screens show the default administrator groups and roles and define customized groupings of roles for different local or directory service-imported account groups.
 
-Only the **Readonly Admin**, **Sharing Admin**, and **Full Admin** roles are supported in the Web UI.
-Users can experiment with defining a new privilege but should **NOT** edit the existing predefined administrator roles!
+The TrueNAS UI shows the **Readonly Admin**, **Sharing Admin**.
+
+Do not edit the existing predefined administrator roles!
 Editing the unrestricted administrator account privilege can result in lost access to the system!
-
 {{< /hint >}}
 
 {{< trueimage src="/images/SCALE/Credentials/PrivilegesScreen.png" alt="Privileges Screen" id="Privileges Screen" >}}
 
+### Add and Edit Privilege Screens
+
 **Add** opens the **New Privilege** screen.
-
-{{< trueimage src="/images/SCALE/Credentials/AddNewPrivilegeScreen.png" alt="New Privilege Screen" id="New Privilege Screen" >}}
-
-Click on a listed privilege to expand the row and show details on the privilege.
-Edit opens the **Edit Privilege** screen.
-
+The <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83l3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75z"/></svg> **Edit** icon opens the **Edit Privilege** screen.
 The new and edit privilege screens show the same settings but not all settings are editable.
 
-{{<include file="/static/includes/addcolumnorganizer.md">}}
+{{< trueimage src="/images/SCALE/Credentials/AddNewPrivilegeScreen.png" alt="New Privilege Screen" id="New Privilege Screen" >}}
 
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Name** | Enter a name for the new privilege. Names can include the dash (-) or underscore(_) special characters, and upper and lowercase alphanumeric characters. Enter a descriptive name for the privilege.  |
-| **Groups** | Click in the field to see a dropdown list of available groups to apply the privilege to. Do not add the predefined administrator or builtin groups! Only select new user groups created if you experiment with this function. |
-| **Directory Services Groups** | Click in the field to see a dropdown list of available groups to apply the privilege to. |
-| **Roles** | Click in the field to see a dropdown list of all available roles available to assign to the new privilege. |
-| **Web Shell Access** | Select to allow a user assign the new privilege access to the **System > Shell** screen.  |
+| **Name** | Enter a name for the new privilege. Names can include the dash (-) or underscore(_) special characters, and upper and lowercase alphanumeric characters. Enter a descriptive name for the privilege. **Name** shows on the **Edit Privilege** screen but is not editable. |
+| **Groups** | Shows a list of groups configured on the system to select from a dropdown list after clicking in the field. Select the group(s) to apply the privilege to. Do not add the predefined administrator or builtin groups! Only select new user groups created if you experiment with this function. |
+| **Directory Services Groups** | Shows a list of available groups to select after clicking in the field. Applies the privilege to selected groups. |
+| **Roles** |Select from a dropdown list of all available roles available to assign to the new privilege, or change in an existing privilege. |
+| **Web Shell Access** | Select to allow a user to assign the new privilege access to the **System > Shell** screen. |
 {{< /truetable >}}
 
-Assigned administrator roles display on the [Users Screen]({{< relref "LocalUsersScreensSCALE.md" >}}).
+Assigned administrator roles show on the [Users Screen]({{< relref "LocalUsersScreensSCALE.md" >}}).
+
+{{< include file="/static/includes/addcolumnorganizer.md" >}}
