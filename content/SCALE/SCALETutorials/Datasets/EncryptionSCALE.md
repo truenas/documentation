@@ -90,7 +90,6 @@ You cannot use passphrase encryption at the pool level.
 {{< hint type=important >}}
 You cannot change an existing dataset from encrypted to unencrypted.
 You can only change the dataset encryption type (key or passphrase).
-After saving a dataset with encryption, if the encryption type is set to passphrase you can change it to key type, but you cannot change from key type to passphrase.
 {{< /hint >}}
 
 ### Adding Encryption to a New Pool
