@@ -135,16 +135,14 @@ This release candidate version has software component updates and new features t
 
 ### Notable changes
 
-* To prevent excessive resource usage, especially on systems with large HDD storage pools, SMART test results no longer appear directly on the **Storage** dashboard **Disk Health** widget ([NAS-134275](https://ixsystems.atlassian.net/browse/NAS-134275)).
-  Click **View S.M.A.R.T. Tests** on the widget to open the **S.M.A.R.T. Test Results of *POOL*** screen.
+* To prevent excessive resource usage, especially on systems with large HDD storage pools, SMART test results no longer appear directly on the **Storage** dashboard.
+  Click **View S.M.A.R.T. Tests** on the **Disk Health** widget to open the **S.M.A.R.T. Test Results of *POOL*** screen.
 * Allow configuration of IO bus for disk devices in Instances ([NAS-134250](https://ixsystems.atlassian.net/browse/NAS-134250)).
   This enables users to create virtualized disks using a standard other than VirtIO in cases where the OS image does not by default include VirtIO drivers.
 * To improve stability and prevent unsupported SMB configurations from breaking on [migration from TrueNAS CORE]({{< relref "/GettingStarted/Migrate/_index.md" >}}), TrueNAS automatically removes the SMB auxiliary parameters `wide links`, `use sendfile`, `vfs objects`, and `allow insecure` during migration ([NAS-132911](https://ixsystems.atlassian.net/browse/NAS-132911)).
 * To prevent unexpected failures in SMB shares, TrueNAS automatically disables SMB2/3 lease support globally when [multiprotocol SMB/NFS shares]({{< relref "MixedModeShares.md" >}}) are enabled ([NAS-133680](https://ixsystems.atlassian.net/browse/NAS-133680)).
 * Reserve 2 GiB of disk space (but no more than 1%) to allow the data disk to be replaced with a slightly smaller one in the future ([NAS-134309](https://ixsystems.atlassian.net/browse/NAS-134309)).
-* Bugfix: Avoid possible deadlock in arc_read ([NAS-134106](https://ixsystems.atlassian.net/browse/NAS-134106)).
 * Bugfix: Ensure disk temperature reporting is available for all disks ([NAS-130766](https://ixsystems.atlassian.net/browse/NAS-130766)).
-* Bugfix: Changing the owner group of a dataset with an AD group does not work if the AD cache is disabled ([NAS-132203](https://ixsystems.atlassian.net/browse/NAS-132203)).
 * Bugfix: Allow SMB authentication for usernames with a capital letter ([NAS-134346](https://ixsystems.atlassian.net/browse/NAS-134346)).
 * Bugfix: Fix top toolbar icon colors for the iX Blue, Paper, and High Contrast UI themes ([NAS-133853](https://ixsystems.atlassian.net/browse/NAS-133853)).
 * Bugfix: Enable the applications **Web UI** button when accessing from IPv6 or mDNS name ([NAS-133655](https://ixsystems.atlassian.net/browse/NAS-133655)).
@@ -156,7 +154,7 @@ This release candidate version has software component updates and new features t
 
 * Further development of the experimental **Instances** virtualization feature is expected ahead of the 25.04.0 release. Current known issues include:
   * Full IDMAP support is currently unavailable in the TrueNAS UI ([NAS-134447](https://ixsystems.atlassian.net/browse/NAS-134447)).
-    Users testing instances in 25.04-RC.1 can use the **apps** user and group (568:568) to set permissions with consistent mapping in the TrueNAS host and containers (see [NAS-134560](https://ixsystems.atlassian.net/browse/NAS-134560)).
+    Users testing instances in 25.04-RC.1 can use the **apps** user and group (568:568) to set permissions with consistent mapping in the TrueNAS host and containers.
   * In 25.04-RC.1, VirtIO is the only available IO bus for VMs, which complicates deployment of VMs using OS images that do not natively support VirtIO, see ([NAS-134250](https://ixsystems.atlassian.net/browse/NAS-134250)).
     Additional IO bus options are expected in 25.04.0 ([NAS-134393](https://ixsystems.atlassian.net/browse/NAS-134393)).
 * Some users of TrueNAS Apps attempting to configure GPU allocation report the error `Expected [uuid] to be set for GPU inslot [<some pci slot>] in [nvidia_gpu_selection])` (see ([NAS-134152](https://ixsystems.atlassian.net/browse/NAS-134152)).
