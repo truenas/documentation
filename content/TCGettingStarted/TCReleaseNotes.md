@@ -1,8 +1,130 @@
 ---
-title: TrueCommand 3.0 Release Notes
+title: TrueCommand 3.0 and 3.1 Release Notes
 description: "Highlights and change log for the latest TrueCommand releases."
 weight: 5
 ---
+
+## TrueCommand 3.1.0
+
+TrueCommand 3.1.0 builds on the foundation of previous releases, delivering the latest feature enhancements, improved system stability, and expanded software compatibility. This major update introduces new monitoring tools, configuration options, and quality-of-life improvements to make managing your TrueNAS systems even simpler.
+Here are the major changes in this release:
+
+{{< columns >}}
+
+* A brand new widget for Disk IOPs Reporting to provide real-time insight into system performance.
+
+* New STARTTLS configuration options for Microsoft365 users to improve security and compatibility.
+<--->
+* The base node is updated from 20 to 22, ensuring a more efficient runtime environment for users.
+
+* Snapshot task toggling is now available, granting greater flexibility in managing schedules snapshots.
+
+{{< /columns >}}
+
+## Obtaining the 3.1.0 Release
+
+TrueCommand is primarily offered as a Software as a Service (SaaS) solution from iXsystems, but can be self-hosted as a container deployment.
+
+TrueCommand Cloud registrations are available from https://portal.ixsystems.com.
+A valid email address and credit card is required ([sign up instructions]({{< relref "InstallTCCloud.md" >}})).
+
+A self-hosted TrueCommand container is available from https://hub.docker.com/r/ixsystems/truecommand/tags under the tag **release-3.1.0** ([deployment instructions]({{< relref "InstallTCDocker.md" >}})).
+
+## 3.1.0 Upgrade Notes
+
+TrueCommand Cloud deployments are updraged automatically by TrueNAS. Self-hosted instances must be updated manually by a local TrueCommand administrator.
+
+As a best practice, back up your instance data directory before deploying updates. Self-hosted containers are typically updated by backing up the container volume and pulling the latest available container version. See the [container update tutorial]({{< relref "InstallTCDocker.md" >}}) for guidance.
+
+Migrating off of TrueCommand v2.3.3 or later does not require additional migration processes; however, migrating from any versions earlier than v2.3.3 requires a database migration process.
+
+After upgrading to TrueCommand 3.1.0, you might need to edit and re-apply connected TrueNAS system passwords to ensure connectivity.
+
+Starting in version 3.1.0, TrueCommand supports STARTTLS again to support availability for Microsoft365 users. 
+
+Users can now enable or disable snapshot tasks directly, providing better control over scheduled backups.
+
+Enhancements to CPU reporting and Disk IOPs reports provide more accurate system performance data.
+
+A new NAS OTP code dialog improves two-factor authentication workflows and temporary password resets for Cloud users are fixed.
+
+Note that if you are using TrueCommand with a TrueNAS SCALE HA system, you need to update SCALE to version 23.10 or later before connecting to TrueCommand 3.1.0.
+
+API key logins now fail and revoke the key, triggering a NAS alert. Users who have swtiched from the default SSL port, or are using a self-signed certificate, might experience broken connections. It is advised to update your authentication settings prior to updating to TrueCommand 3.1.0 to avoid this disruption.
+
+After updating, clear the browser cache (CTRL+F5) before logging in to TrueCommand. This ensures stale data does not interfere the TrueCommand UI.
+
+### TrueNAS Compatibility
+
+TrueCommand 3.1.0 is tested and compatible with these TrueNAS versions:
+
+* 13.0
+* 22.12
+* 23.10
+* 24.04
+* 24.10
+* 25.04
+
+### 3.1.0 Paths
+
+Self-hosted Containers:
+```mermaid
+flowchart LR
+A["Legacy (Pre 1.2)"] --> B
+B["1.3"] --> C
+C["2.3.3"] --> D
+D["3.0.2"] --> E
+E["3.1.0"]
+```
+
+## Release Schedule
+
+{{< include file="/static/includes/ReleaseScheduleWarning.md" >}}
+
+{{< releaselist name=tc-releases defaultTab=2 >}}
+
+{{< expand "Software Lifecycle" "v" >}}
+{{< include file="/static/includes/LifecycleTable.md" >}}
+{{< include file="/static/includes/SoftwareStatusPage.md" >}}
+{{< /expand >}}
+
+## 3.1.0 Changelog
+
+**March 4, 2025**
+
+iXsystems is pleased to release TrueCommand 3.1.0!
+
+Notable changes:
+
+* Anticipate insecure logins on FT+ ([TC-3273](https://ixsystems.atlassian.net/browse/TC-3273))
+* Update usage of HostInfo product field ([TC-3272](https://ixsystems.atlassian.net/browse/TC-3272))
+* Add dialog to provide NAS OTP code ([TC-3268](https://ixsystems.atlassian.net/browse/TC-3268))
+* Create Disk IOPs Report ([TC-3255](https://ixsystems.atlassian.net/browse/TC-3255))
+* UI hangs trying to display large middleware log ([TC-3264](https://ixsystems.atlassian.net/browse/TC-3264))
+* Fangtooth Compatibility ([TC-3263](https://ixsystems.atlassian.net/browse/TC-3263))
+* Add cloud-specific wording to system delete ([TC-3242](https://ixsystems.atlassian.net/browse/TC-3242))
+* Improve logging for system events ([TC-3281](https://ixsystems.atlassian.net/browse/TC-3281))
+* Resolve middleware crash on large dataset replication ([TC-3276](https://ixsystems.atlassian.net/browse/TC-3276))
+* Enhance security checks for API requests ([TC-3275](https://ixsystems.atlassian.net/browse/TC-3275))
+* Fix UI inconsistencies in dashboard graphs ([TC-3274](https://ixsystems.atlassian.net/browse/TC-3274))
+* Address issues with scheduled snapshot tasks ([TC-3254](https://ixsystems.atlassian.net/browse/TC-3254))
+* Optimize database queries for performance improvements ([TC-3253](https://ixsystems.atlassian.net/browse/TC-3253))
+
+<a href="https://ixsystems.atlassian.net/issues/?filter=11943" target="_blank">Click here for the full changelog</a> of completed tickets that are included in the TrueCommand 3.1.0 release.
+
+{{< include file="/static/includes/JiraFilterInstructions.md" >}}
+
+### 3.1.0 Ongoing Issues
+
+{{< enterprise >}}
+We recommend that TrueNAS Enterprise High Availability (HA) systems be updated from the TrueNAS UI.
+
+If TrueCommand 3.1.0 is used to upgrade HA systems, the standby controller might fail to activate the updated boot environment, resulting in a version mismatch error between the controllers. If you encounter this issue, manually activate the updated boot environment on the active controller and then failover to complete the upgrade.
+{{< /enterprise >}}
+
+<a href="https://ixsystems.atlassian.net/issues/?filter=12008" target="_blank">Click here to see the latest Jira tickets</a> about known issues in 3.1.0 that are being resolved in a future TrueCommand release.
+
+## TrueCommand 3.0
 
 TrueCommand 3.0 brings the latest feature development, stability fixes, and software compatibility updates together in a major version that is more functional and performant than ever before.
 Here are the major changes in this release:
@@ -19,7 +141,7 @@ Here are the major changes in this release:
 
 {{< /columns >}}
 
-## Obtaining the Release
+## Obtaining the 3.0 Release
 
 TrueCommand is primarily offered as a Software as a Service (SaaS) solution from iXsystems, but can be self-hosted as a container deployment.
 
@@ -28,7 +150,7 @@ A valid email address and credit card is required ([sign up instructions]({{< re
 
 A self-hosted TrueCommand container is available from https://hub.docker.com/r/ixsystems/truecommand/tags under the tag **release-3.0.2** ([deployment instructions]({{< relref "InstallTCDocker.md" >}})).
 
-## Upgrade Notes
+## 3.0 Upgrade Notes
 
 TrueCommand Cloud deployments are upgraded by iXsystems on an ongoing basis.
 Please use caution when upgrading production TrueCommand systems.
@@ -54,7 +176,7 @@ See [Configuring SMTP Email]({{< relref "AlertManage.md #configuring-smtp-email"
 In version 3.0.2 administrative users no longer appear on the list of users available to be assigned to a team.
 Administrative users have full admin permissions for all connected systems, so manual team assignment is not needed.
 
-After updating, clear the browser cache (CTRL+F5) before logging in to TrueCommand. This ensures stale data doesn't interfere the TrueCommand UI.
+After updating, clear the browser cache (CTRL+F5) before logging in to TrueCommand. This ensures stale data does not interfere the TrueCommand UI.
 
 ### TrueNAS Compatibility
 
@@ -65,6 +187,7 @@ TrueCommand 3.0 is tested and compatible with these TrueNAS versions:
 * 23.10
 * 24.04
 * 24.10
+* 25.04
 
 ### Paths
 
@@ -76,17 +199,6 @@ B["1.3"] --> C
 C["2.3.3"] --> D
 D["3.0.2"]
 ```
-
-## Release Schedule
-
-{{< include file="/static/includes/ReleaseScheduleWarning.md" >}}
-
-{{< releaselist name=tc-releases defaultTab=2 >}}
-
-{{< expand "Software Lifecycle" "v" >}}
-{{< include file="/static/includes/LifecycleTable.md" >}}
-{{< include file="/static/includes/SoftwareStatusPage.md" >}}
-{{< /expand >}}
 
 ## 3.0.2 Changelog
 
@@ -131,7 +243,7 @@ If TrueCommand 3.0.2 is used to upgrade HA systems, the standby controller might
   If you have previously updated your SMTP configuration, create new user accounts as described in [Creating User Accounts]({{< relref "UserAccounts.md" >}}).
   Log in as the new user and review settings in **Alert Services > SMTP Email** to confirm they are correct.
 
-* Removing all the systems from a group doesn't automatically delete the group. However, the system group is still manually removable.
+* Removing all the systems from a group does not automatically delete the group. However, the system group is still manually removable.
 
 <a href="https://ixsystems.atlassian.net/issues/?filter=10581" target="_blank">Click here to see the latest Jira tickets</a> about known issues in 3.0.2 that are being resolved in a future TrueCommand release.
 
