@@ -2198,3 +2198,4 @@ InstallWizardResourceConfig
 Goldeye
 Jellyfin
 timeframe
+AppsSupportTimeline
