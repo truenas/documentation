@@ -35,7 +35,7 @@ VMs emulate hardware, providing greater isolation than containers but requiring 
 {{< hint type=note >}}
 A full tutorial for **Instances** is coming soon.
 
-For the most up-to-date documentation on this feature, see [Instances Screens]({{< relref "/SCALEUIReference/InstancesScreens.md" >}}).
+For the most up-to-date documentation on this feature, see [Instances Screens]({{< relref "/SCALE/SCALEUIReference/InstancesScreens.md" >}}).
 {{< /hint >}}
 <!-- / to be removed -->
 
