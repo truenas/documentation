@@ -146,8 +146,11 @@ majorVersions:
     majorVersion: "25.04 (Fangtooth)"
     releaseName: "Fangtooth"
     releases:
+      - name: "25.04-RC.1"
+        link: "https://download.truenas.com/TrueNAS-SCALE-Fangtooth-RC/25.04-RC.1"
+        date: "2025-03-11"
       - name: "25.04-BETA.1"
-        link: "https://download.truenas.com/truenas-scale-fangtooth-beta/25.04-beta.1"
+        link: "https://download.truenas.com/TrueNAS-SCALE-Fangtooth-BETA/25.04-BETA.1"
         date: "2025-02-13"
       - name: "25.04 (Fangtooth) Nightly .iso"
         link: "https://download.truenas.com/truenas-scale-fangtooth-nightly/"
