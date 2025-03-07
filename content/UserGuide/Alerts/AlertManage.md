@@ -16,7 +16,7 @@ Administrator accounts can see all system alerts, but non-administrator accounts
 
 TrueCommand provides three alert screen options:
 * **All Alerts** displays all alerts from systems that TrueCommand monitors.
-* **Alert Rules** allows administrators and users with permissions to configure alerts for monitored systems.
+* **Alert Rules** allows administrators and users with permission to configure alerts for monitored systems.
 * **Alert Services** allows administrators to configure communication plugins.
 
 The **All Alerts**, **Fleet Dashboard**, main **Dashboard**, and **Systems** and **System Inventory** screens display alert indications.
@@ -129,6 +129,13 @@ Each plugin has three options:
 {{< hint type=note >}}
 The user profile page must have an email address to receive emails.
 {{< /hint >}}
+
+To set up email service, the user must first configure an email address in their user profile.
+The email address must not duplicate an email address already configured in TrueCommand.
+
+After configuring the user email, go to Alert Services to test the SMTP service to see if the user configured receives a test email.
+If the test fails, try setting **Enable STARTTLS** on the **SMTP Email** configuration screen.
+If it fails again, disable **Enable TLS**.
 
 To configure SMTP service:
 
