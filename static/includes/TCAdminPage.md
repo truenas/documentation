@@ -151,6 +151,7 @@ Click **Configure** to open the **Mailing List Configure** screen.
 | **Auth user** | Enter the user name for plain authentication. |
 | **Auth pass** | Enter the password for plain authentication. Leave blank for no-auth. |
 | **From** | Enter the email address of the sender. |
-| **Tls** | Initiates a connection with TLS. Uses system settings. |
+| **TLS** | Initiates a connection with TLS. Uses system settings. |
+| **STARTTLS** | Initiates a connection with TLS or SSL on an existing connection. |
 {{< /truetable >}}
 {{< /expand >}}
