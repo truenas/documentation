@@ -126,7 +126,7 @@ Configure and enable these services based on your TrueNAS system needs:
 * Failover service on TrueNAS Enterprise High Availability (HA) systems
 
   The failover service enables an HA system to fail over to the standby system controller after a disruption to the primary controller.
-  This service is not included on non-Enterprise and non-HA systems.
+  This service is not included in non-Enterprise and non-HA systems.
 
   Enterprise customers should not make changes to failover settings or the service on their own except when disabling failover to make changes to network settings.
   Contact TrueNAS Enterprise Support for assistance before making any changes to other failover settings.
@@ -135,6 +135,14 @@ When you add data sharing, the system prompts you to enable the appropriate shar
 
 If your installation includes a UPS, configure and enable the UPS service.
 {{< /expand >}}
+
+### Exiting Configuration Screens Without Saving
+TrueNAS allows exiting a configuration screen without saving but asks if you want to exit without saving before closing it.
+After opening a configuration screen and making any change, such as entering a setting, when you click away from the screen or the **X** at the top right of the screen, a dialog opens and asks if you are sure you want to exit the screen.
+
+{{< trueimage src="/images/SCALE/Dashboard/CloseWithoutSavingChangesDialog.png" alt="Close Without Saving Changes" id="Close Without Saving Changes" >}}
+
+To close without saving, click **Yes** or **No** to continue making changes or entering values.
 
 ### Setting Up SMART Testing
 All systems can take advantage of the SMART service and testing with compatible attached disks.
@@ -178,7 +186,7 @@ After saving system configuration and debug files, we recommend setting up data 
 
 You can take single [snapshots]({{< relref "CreatingSnapshots.md" >}}) or [schedule periodic snapshot tasks]({{< relref "PeriodicSnapshotTasksSCALE.md" >}}) to capture changes to stored data without the storage overhead that comes with backing up through data replication, or you can use one of the [replication options]({{< relref "/SCALE/SCALETutorials/DataProtection/Replication/_index.md" >}}) TrueNAS provides.
 
-Another option is to create an account with a cloud storage service provider, then let TrueNAS manage the backups.
+Another option is to create an account with a cloud storage service provider, and then let TrueNAS manage the backups.
 Use the **Backup Credentials** screen [**Cloud Credentials**]({{< relref "AddCloudCredentials.md" >}}) to add authentication credentials for a supported cloud service provider, and go to **Data Protection** to schedule a [**Cloud Sync Tasks**]({{< relref "/SCALE/SCALETutorials/DataProtection/CloudSynctasks/_index.md" >}}) that regularly backs up your storage data to the cloud.
 
 ## Checking System Alert Settings and Services
@@ -203,7 +211,7 @@ TrueNAS allows you to configure an Active Directory or LDAP server to handle aut
 TrueNAS allows configuring either directory server but not both.
 
 {{< hint type=warning >}}
-We do not recommended that you switch between directory services. This can result in configuration issues that could disrupt your system!
+We do not recommend that you switch between directory services. This can result in configuration issues that could disrupt your system!
 
 However, it is possible to change from either directory service to the other.
 If you want to migrate from LDAP to Active Directory, you must disable LDAP in TrueNAS and then remove the current directory server settings.
