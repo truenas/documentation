@@ -88,7 +88,8 @@ The **License** screen allows copying your license pasting it in the form and sa
 
 **Reload Now** reloads the page.
 
-**End User License Agreement (EULA)** opens a copy of the TrueNAS end user license agreement. After thoroughly and completely reading it, **I AGREE**digitially marks it signed, then closes the screen, and updates the **Support** widget with th license and hardware information.
+**End User License Agreement (EULA)** opens a copy of the TrueNAS end user license agreement.
+After thoroughly and completely reading it, **I AGREE** digitally marks it signed, then closes the screen and updates the **Support** widget with the license and hardware information.
 
 {{< trueimage src="/images/SCALE/SystemSettings/GeneralSettingsSCALESupportLicenseComplete.png" alt="Support Widget with License" id="Support Widget with License" >}}
 
@@ -97,7 +98,8 @@ The **License** screen allows copying your license pasting it in the form and sa
 
 ### Proactive Support Screen
 
-Silver/Goldcoverage customers can enable iXsystems proactive support. This feature automatically emails TrueNAS when certain conditions occur in a TrueNAS system.
+Silver/Gold coverage customers can enable proactive support.
+This feature automatically emails TrueNAS when certain conditions occur in a TrueNAS system.
 
 **Proactive Support** opens a window where you configure proactive support.
 
@@ -105,7 +107,7 @@ Silver/Goldcoverage customers can enable iXsystems proactive support. This featu
 
 **Primary Contact** and **Secondary Contact** fields specify customer name, title, and contact information.
 
-**Enable iXsystems Proactive Support** and **Save** notify TrueNAS the system is configured for proactive support.
+**Enable iXsystems Proactive Support** and **Save** notifies the TrueNAS team the system is configured for proactive support.
 
 ## GUI Settings Screen
 
