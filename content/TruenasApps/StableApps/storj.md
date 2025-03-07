@@ -61,7 +61,7 @@ Before you can configure your system to act as a Storj node:
    If not using the default user **apps** (568) as the assigned user and group, go to **Credentials > Local User**, click **Add** and create the new user.
    Make sure the user has read/write/execute privileges. If you have an existing admin user on your system with the right permissions, you make that user the app user.
 
-   If using ports other than the assigned default ports (**20909** and **28967**), go to [Default Ports](https://www.truenas.com/docs/references/defaultports/) for a list of available or unavailable port numbers to verify the port numbers you want to use are available options.
+   If using ports other than the assigned default ports (**20909** and **28967**), go to [default port list]({{< relref "/solutions/optimizations/security.md #truenas-default-ports" >}}) for a list of available or unavailable port numbers to verify the port numbers you want to use are available options.
 
    {{< hint type=info >}}
    Earlier releases of TrueNAS used port 20988 for in and outbound traffic. This port assignment changed in later releases to 28967.
@@ -199,7 +199,7 @@ TrueNAS alerts you when a new version is available for deployed apps, and allows
    {{< trueimage src="/images/SCALE/Apps/InstallStorjNetworkConfig.png" alt="Storj Network Settings" id="Storj Network Settings" >}}
 
 4. Accept the default **Network Configuration** settings.
-   If you want to use different ports, check the [Default Ports]({{< relref "/References/DefaultPorts.md" >}}) for a list of available or unavailable port numbers.
+   If you want to use different ports, check the [default port list]({{< relref "/solutions/optimizations/security.md #truenas-default-ports" >}}) for a list of available or unavailable port numbers.
    Leave **Host Network** unselected.
 
 5. Configure the **Storage Configuration** settings.
