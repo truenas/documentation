@@ -15,10 +15,10 @@ aliases:
 ---
 
 An automatic script sends a nightly email containing important information such as disk health to the administrator account.
-For fast awareness and resolution of critical issues configure TrueNAS to send these emails to the remote email account for the administrator.
+For fast awareness and resolution of critical issues, configure TrueNAS to send these emails to the remote email account for the administrator.
 
 {{< hint type=note >}}
-TrueNAS mails [scrub Task]({{< relref "ScrubTasksSCALE.md" >}}) issues and [S.M.A.R.T. reports]({{< relref "SMARTTestsSCALE.md" >}}) separately to the address configured in those services.
+TrueNAS mails [Scrub Task]({{< relref "ScrubTasksSCALE.md" >}}) issues and [S.M.A.R.T. reports]({{< relref "SMARTTestsSCALE.md" >}}) separately to the address configured in those services.
 {{< /hint >}}
 
 ## Configuring User Email Addresses
@@ -80,7 +80,7 @@ Click **Save**.
 
 ### Configuring Email Using GMail OAuth
 
-To set up the system email using **Gmail OAuth** you log in to your Gmail account through the TrueNAS web UI.
+To set up the system email using **Gmail OAuth**, use the TrueNAS web UI to log in to your Gmail account.
 
 Select **GMail OAuth**.
 
@@ -114,7 +114,7 @@ Click **Save**.
 
 ### Configuring Email Using Outlook OAuth
 
-To set up the system email using **Outlook OAuth**, you log in to your Outlook account through the TrueNAS web UI.
+To set up the system email using **Outlook OAuth**, use the TrueNAS web UI to log in to your Outlook account.
 
 Select **Outlook OAuth**.
 
