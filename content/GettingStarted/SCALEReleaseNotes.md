@@ -4,7 +4,7 @@ description: "Highlights, change log, and known issues for TrueNAS 25.04 release
 weight: 10
 related: false
 ---
-{{< header logo="/images/tn-openstorage-logo.png" logo_alt="TrueNAS Logo" version="25.04 Fangtooth" icon="" icon_alt="" >}}
+{{< header logo="/images/tn-openstorage-logo.png" logo_alt="TrueNAS Logo" version="25.04 Fangtooth" icon="/images/Fangtooth_Icon.png" icon_alt="Fangtooth Icon" >}}
 
 {{< hint type="tip" title="25.04 Early Release Documentation" >}}
 This page tracks the latest development roadmap and early release notes for the future TrueNAS major version 25.04 (Fangtooth).
