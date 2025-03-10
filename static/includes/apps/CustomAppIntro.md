@@ -16,6 +16,6 @@ Select **Convert to custom app** from the dropdown list, then select **Confirm**
 
 {{< trueimage src="/images/SCALE/Apps/ConvertToCustomAppConfirm.png" alt="Convert to Custom App Confirm" id="Convert to Custom App Confirm" >}}
 
-Once converted, editing the information of a custom app opens an **Edit App YAML** window that gives users the option to enter a custom app configuration.
+After converting, clicking the **Edit** button within the **Application Info** window opens an **Edit App YAML** window. This gives users the option to enter a custom app configuration.
 
 {{< trueimage src="/images/SCALE/Apps/CustomAppEditWindow.png" alt="Custom App Edit Window" id="Custom App Edit Window" >}}
