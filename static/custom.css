@@ -2405,3 +2405,19 @@ pre.gdoc-mermaid.mermaid.mermaid_sizing {
     text-align: center;
 }
 /* End style for Logo and Icon*/
+
+.no-highlight-table table {
+    background: transparent !important; /* Prevents colored highlights */
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  .no-highlight-table th, .no-highlight-table td {
+    border: 1px solid #ddd; /* Light border for readability */
+    padding: 8px;
+    text-align: left;
+  }
+
+  .no-highlight-table tr:nth-child(even) {
+    background: transparent !important; /* Removes alternating row colors */
+  }
