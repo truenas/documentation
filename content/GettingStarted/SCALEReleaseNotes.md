@@ -133,7 +133,7 @@ Do not use early-release software for critical tasks.
 The TrueNAS team is pleased to release TrueNAS 25.04-RC.1!
 This release candidate version has software component updates and new features that are in the polishing phase as well as fixes for issues discovered in 25.04-BETA.1.
 
-Special thanks to (Github users) René, jnbastoky, Bas Nijholt, jbsamcho, t0b3, Franco Castillo, Ljcbaby, Oskar, ken1010533, Aiden, Gleb Chesnokov, markrieder, janekdz, Aurélien Sallé, Nicodemus Schoenwald, m.chernobrov, Jason Cheng, SejoWuigui, TheJulianJES, p0358, Janek, Dhananjay Kamble, wanyuehan, Georg Schölly, dany22m, xream, and Lee Jihaeng for contributing to TrueNAS 25.04-RC.1. For information on how you can contribute, visit https://www.truenas.com/docs/contributing/.
+Special thanks to (Github users) René, jnbastoky, Bas Nijholt, jbsamcho, t0b3, Franco Castillo, Ljcbaby, Oskar, ken1010533, Gleb Chesnokov, markrieder, janekdz, Aurélien Sallé, Nicodemus Schoenwald, m.chernobrov, Jason Cheng, SejoWuigui, TheJulianJES, p0358, Janek, Dhananjay Kamble, wanyuehan, Georg Schölly, dany22m, xream, and Lee Jihaeng for contributing to TrueNAS 25.04-RC.1. For information on how you can contribute, visit https://www.truenas.com/docs/contributing/.
 
 ### Notable changes
 
