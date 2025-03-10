@@ -8,6 +8,8 @@ tags:
 related: false
 ---
 
+{{< include file="/static/includes/AppsSupportTimeline.md" >}}
+
 {{< include file="/static/includes/ProposeArticleChange.md" >}}
 
 There are two main application screens, [**Installed**](#installed-screen) and [**Discover**](#discover-screen).
