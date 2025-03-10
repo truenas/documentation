@@ -19,7 +19,7 @@ TrueNAS can send, receive, or synchronize data with the cloud storage providers 
 TrueCloud backup tasks allow for single-time transfers or recurring transfers on a schedule.
 They are an effective method to back up data to a remote location.
 
-This article provides instructions on configuring a TrueCloud backup task using Storj and covers setting up both the Storj iX account and TrueNAS credential.
+This article provides instructions on configuring a TrueCloud backup task using Storj and covers setting up the Storj iX account and TrueNAS credential.
 
 {{< hint type=important >}}
 To take advantage of the lower-cost benefits of the TrueCloud backup service, you must create your Storj iX account using the link provided on the **Add Cloud Credentials** screen.
@@ -71,7 +71,7 @@ To add the TrueCloud backup task, go to **Data Protection > TrueCloud Backup Tas
 3. Select the Storj credential on the **Credentials** dropdown list.
    You can select **Add New** to create the Storj credential if you skipped the instructions above.
 
-4. Select the Storj bucket to use from the **Bucket** dropdown list.
+4. Select the Storj bucket from the **Bucket** dropdown list.
 
    If you have not previously created a TrueNAS compatible Storj bucket, select **Add New** and follow the procedure in [Creating a TrueNAS Storj Bucket](#creating-a-truenas-storj-bucket).
 
@@ -103,9 +103,7 @@ The task status changes to **SUCCESS** when complete.
 
 {{< trueimage src="/images/SCALE/DataProtection/AddTrueCloudTaskAdvancedOptions.png" alt="Add TrueCloud Backup Task Advanced Options" id="Add TrueCloud Backup Task Advanced Options" >}}
 
-<!-- <to be re-added at a later date> To take a snapshot before transferring data to Storj, select **Take Snapshot**.
-This option is not available for datasets with child datasets.
--->
+Select **Use Snapshot** to create and use a snapshot to back up or synchronize the operation between TrueNAS and the TrueCloud backup solution. This snapshot is automatically removed after the operation completes.
 
 Advanced users can write scripts that run immediately before or after the TrueCloud backup task.
 Enter environment variables in either the **Pre-script** or **Post-script** fields.
