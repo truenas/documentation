@@ -164,7 +164,7 @@ Click **Save** on the **Add bucket** screen to create the remote bucket on Storj
 
 ### Advanced Options Settings
 **Advanced Options** settings are for advanced users.
-Selecting **Push** in **Direction** adds the **Take Snapshot** option in **Advanced Options**.
+Selecting **Push** in **Direction** adds the **Use Snapshot** option.
 
 {{< trueimage src="/images/SCALE/DataProtection/AddCloudSyncTaskPushControlAdvancedOptions.png" alt="Add Cloud Sync Task Control and Advanced Options" id="Add Cloud Sync Task Control and Advanced Options" >}}
 
