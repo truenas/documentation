@@ -72,7 +72,7 @@ More details are available from [Software Releases](https://www.truenas.com/docs
 
 {{< include file="/static/includes/AppsUnversionedAdmonition.md" >}}
 
-{{< include file="/static/includes/AppsHostIP.md" >}}
+{{< include file="/static/includes/AppsSupportTimeline.md" >}}
 
 ### Upgrade Paths (Anticipated)
 
