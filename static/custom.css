@@ -1276,6 +1276,10 @@ pre.chroma {
   }
 /* End adjustment of code rendering */
 
+pre.gdoc-mermaid.mermaid.text-center[data-processed="true"] {
+	display: block;
+}
+
 /* Add display styling for <file> tags */
 .gdoc-markdown file {
     font-family: 'Courier New', Courier, monospace;

@@ -42,6 +42,7 @@ Click **BROWSE WIDGETS** or **WIDGET** to add charts to the report.
 | **Network Device Chart (Upload)**  | Monitor network traffic per adapter. |
 | **Storage Utilization Chart**  | Track storage used over time. |
 | **Storage Pool Utilization Chart**  | Track storage used per-pool over time. |
+| **Disk IOPs**  | Track the number of total IOP writes and IOP reads. |
 {{< /truetable >}}
 {{< /expand >}}
 
