@@ -10,6 +10,8 @@ tags:
 TrueNAS applications allow for quick and easy integration of third-party software and TrueNAS SCALE.
 Applications are available from official, Enterprise, and community maintained trains.
 
+{{< include file="/static/includes/AppsSupportTimeline.md" >}}
+
 {{< hint type=important title="24.04 Application Tutorials" >}}
 {{< include file="/static/includes/AppsUnversioned.md" >}}
 {{< /hint >}}

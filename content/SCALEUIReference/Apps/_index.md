@@ -8,6 +8,8 @@ tags:
 related: false
 ---
 
+{{< include file="/static/includes/AppsSupportTimeline.md" >}}
+
 {{< hint type=important title="Application Articles" >}}
 {{< include file="/static/includes/AppsUnversioned.md" >}}
 {{< /hint >}}
