@@ -83,7 +83,7 @@ Additionally, configuration options for individual apps include one or more of t
 
 ### Signing In to a Docker Registry
 
-To sign in to a Docker registry, click **Configuration > Sign-in to a Docker registry** to go to the **Docker Registries** screen.
+To sign in to a Docker registry, click **Configuration > Sign-in to a Docker registry** to open the **Docker Registries** screen.
 
 {{< trueimage src="/images/SCALE/Apps/DockerRegistriesScreen.png" alt="Docker Registries Screen" id="Docker Registries Screen" >}}
 
