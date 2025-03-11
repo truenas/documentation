@@ -104,7 +104,7 @@ Deleting a system purges all collected data from the database but does not affec
 
 ## Organizing Systems into Groups
 TrueCommand administrators can organize systems into collections called groups.
-Grouping systems allows you to efficiently manage system permissions and reporting.
+By grouping systems, you can efficiently manage system permissions and reporting.
 
 {{< include file="/static/includes/TCPermissionsHierarchy.md" >}}
 
