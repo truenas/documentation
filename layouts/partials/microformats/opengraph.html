@@ -9,7 +9,7 @@
 {{- with .Site.Title }}
   <meta property="og:site_name" {{ . | printf "content=%q" | safeHTMLAttr }} />
 {{- end }}
-  <meta property="og:image" content="/images/TrueNAS_Open_Enterprise_Storage.png" />
+  <meta property="og:image" content="https://www.truenas.com/docs/images/TrueNAS_Open_Enterprise_Storage.png" />
 {{- with partial "utils/description" . }}
   <meta property="og:description" content="{{ . | plainify | htmlUnescape | chomp }}" />
 {{- end }}
