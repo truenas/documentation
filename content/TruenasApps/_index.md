@@ -83,30 +83,32 @@ Additionally, configuration options for individual apps include one or more of t
 
 ### Signing In to a Docker Registry
 
-<!--
-### Docker Registries
-
-The **Docker Registries** screen lists signed-in Docker registry records.
-Signing in to a registry, such as Docker Hub, is not required but allows you to avoid rate limiting issues or connect to a private registry.
+To sign in to a Docker registry, click **Configuration > Sign-in to a Docker registry** to go to the **Docker Registries** screen.
 
 {{< trueimage src="/images/SCALE/Apps/DockerRegistriesScreen.png" alt="Docker Registries Screen" id="Docker Registries Screen" >}}
 
-#### Create Docker Registry
+Signing in to a registry, such as Docker Hub, is not required but allows you to avoid rate limiting issues or connect to a private registry.
 
-**Add Registry** opens the **Create Docker Registry** panel.
+Click **Add Registry** to open the **Create Docker Registry** panel.
 
-{{< trueimage src="/images/SCALE/Apps/CreateDockerRegistry.png" alt="Create Docker Registry" id="Create Docker Registry" >}}
+{{< trueimage src="/images/SCALE/Apps/CreateDockerRegistry.png" alt="Create Docker Registry - Docker Hub" id="Create Docker Registry - Docker Hub" >}}
 
-{{< truetable >}}
-| Setting | Description |
-|-----------|-------------|
-| **URI** (Dropdown) | Select the Uniform Resource Identifier (URI) type for the registry. Options are **Docker Hub** or **Other Registry**. Hidden when a Docker Hub registry record is configured. |
-| **URI** | Enter a valid Uniform Resource Identifier (URI) for the registry, for example *https://index.docker.io/v1/*. Displays when **URI** is set to **Other Registry** or when a Docker Hub registry record is configured. |
-| **Name** | Enter a display name for the registry record. Displays when **URI** is set to **Other Registry** or when a Docker Hub registry record is configured. |
-| **Username** | Enter the user name to sign in to the registry. |
-| **Password** | Enter the password for the user to sign in to the registry. |
-{{< /truetable >}}
--->
+Use the **URI** dropdown to select the Uniform Resource Identifier (URI) type for the registry.
+Options are **Docker Hub** or **Other Registry**.
+The URI dropdown is hidden when a Docker Hub registry record is already configured.
+
+To sign in to Docker Hub, enter the user name and password of an existing Docker Hub account.
+
+To sign in to another registry, select **Other Registry** from the dropdown or click **Add Registry** again after signing in to Docker Hub.
+
+{{< trueimage src="/images/SCALE/Apps/CreateDockerRegistryOther.png" alt="Create Docker Registry - Other Registry" id="Create Docker Registry - Other Registry" >}}
+
+Enter a valid Uniform Resource Identifier (URI) for the registry, for example *https://index.docker.io/v1/*.
+Then enter a display name for the registry record in TrueNAS.
+
+Enter the user name and password of an existing account on the registry.
+
+Click **Save** to sign in and create the registry record.
 
 ### Configuring Apps Settings
 
