@@ -88,11 +88,9 @@ From the account home page, click **Manage**.
 
 To obtain a TrueCommand WireGuard config file, add a client.  
 
-Under **Create Access Client** enter a nickname, then click **Add**.
+Under **Create Access Client** enter a nickname, then click **Add**. The portal sends a verification code to your account email. Enter it to approve the new client and download the TrueCommand WireGuard configuration file.
 
 ![CloudSubscriptionServiceDetails](/images/TrueCommand/Cloud/CloudSubscriptionServiceDetails.png "Account Services: Service Details")
-
-After adding the client, click <i class="fa fa-download action-icon clickable" aria-hidden="true" title="Download WireGuard configuration file"></i> to download the configuration file.
 
 ![CloudSubscriptionServiceDetailsWireGuardClient](/images/TrueCommand/Cloud/CloudSubscriptionServiceDetailsWireGuardClient.png "Account Services: Downloading the WireGuard Configuration File")
 

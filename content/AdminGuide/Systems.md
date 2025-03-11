@@ -98,7 +98,7 @@ Click <i class="material-icons" aria-hidden="true" title="Delete">delete</i>  **
 ![Systems Delete](/images/TrueCommand/Systems/SystemsDeleteSystem.png "Systems Delete")
 
 {{< hint type=important >}}
-Deleting a system purges all collected data from the database.
+Deleting a system purges all collected data from the database but does not affect data stored on the TrueNAS system. TrueCommand archives all system metrics and backups.
 {{< /hint >}}
 {{< /expand >}}
 
