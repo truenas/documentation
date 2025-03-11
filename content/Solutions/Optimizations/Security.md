@@ -112,7 +112,7 @@ Portsnap is deprecated, see https://lists.freebsd.org/pipermail/freebsd-ports/20
 * Graphic to https://media.sys.truenas.net
 * Docker hub registry to https://index.docker.io/v1
 
-TruNAS apps clone images from https://github.com/truenas/apps.
+TruNAS apps index from https://github.com/truenas/apps.
 Some apps pull from other registries like ghcr.io and quay.io.
 {{< /expand >}}
 
