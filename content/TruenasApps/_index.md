@@ -81,6 +81,33 @@ Additionally, configuration options for individual apps include one or more of t
 
 {{< include file="/static/includes/apps/AppsDatasets.md" >}}
 
+### Signing In to a Docker Registry
+
+<!--
+### Docker Registries
+
+The **Docker Registries** screen lists signed-in Docker registry records.
+Signing in to a registry, such as Docker Hub, is not required but allows you to avoid rate limiting issues or connect to a private registry.
+
+{{< trueimage src="/images/SCALE/Apps/DockerRegistriesScreen.png" alt="Docker Registries Screen" id="Docker Registries Screen" >}}
+
+#### Create Docker Registry
+
+**Add Registry** opens the **Create Docker Registry** panel.
+
+{{< trueimage src="/images/SCALE/Apps/CreateDockerRegistry.png" alt="Create Docker Registry" id="Create Docker Registry" >}}
+
+{{< truetable >}}
+| Setting | Description |
+|-----------|-------------|
+| **URI** (Dropdown) | Select the Uniform Resource Identifier (URI) type for the registry. Options are **Docker Hub** or **Other Registry**. Hidden when a Docker Hub registry record is configured. |
+| **URI** | Enter a valid Uniform Resource Identifier (URI) for the registry, for example *https://index.docker.io/v1/*. Displays when **URI** is set to **Other Registry** or when a Docker Hub registry record is configured. |
+| **Name** | Enter a display name for the registry record. Displays when **URI** is set to **Other Registry** or when a Docker Hub registry record is configured. |
+| **Username** | Enter the user name to sign in to the registry. |
+| **Password** | Enter the password for the user to sign in to the registry. |
+{{< /truetable >}}
+-->
+
 ### Configuring Apps Settings
 
 Click **Configuration > Settings** to open the **Settings** screen, which contains options for setting app trains, configuring app networking, installing NVIDIA drivers (if compatible hardware is present), and allowing TrueNAS to monitor for Docker image updates.
@@ -303,11 +330,15 @@ When complete, the update badge and buttons disappear and the application **Upda
 ### Deleting Apps
 
 To delete an application, click <i class="fa fa-stop" aria-hidden="true"></i> **Stop** on the application row.
-After the app status changes to stopped, click **Delete** on the **Application Info** widget for the selected application to open the **Delete** dialog.
+After the app status changes to stopped, click **Delete** on the **Application Info** widget for the selected application to open the **Delete App** dialog.
 
 {{< trueimage src="/images/SCALE/Apps/AppsDeleteAppDialog.png" alt="Delete Application Dialog" id="Delete Application Dialog" >}}
 
-Select **Remove ixVolumes** to delete hidden app storage from the Apps pool.
+Select **Remove iXVolumes** to delete hidden app storage from the apps pool.
+Select **Force-Remove iXVolumes** to delete app storage created on TrueNAS 24.04 and migrated to 24.10 or later.
+Proceed with caution as this option removes both legacy kubernetes and current Docker data for the application.
+
+Select **Remove Images** to prune Docker images of the deleted app.
 
 Click **Confirm** then **Continue** to delete the application.
 
