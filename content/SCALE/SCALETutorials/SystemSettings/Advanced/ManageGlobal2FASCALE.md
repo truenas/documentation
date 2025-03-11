@@ -83,6 +83,8 @@ Before you begin, download Google Authenticator to your mobile device.
 3. Click **Configure 2FA Secret** to open the **Set Up Two-Factor Authentication** screen where you scan the QR code using Google Authenticator or copy the unique key.
    To generate a new QR code click **Renew 2FA Secret**.
 
+   {{< trueimage src="/images/SCALE/SystemSettings/SetUpTwoFactorAuthenticationScreen.png" alt="Set Up Two-Factor Authentication Screen" id="Set Up Two-Factor Authentication Screen" >}}
+
    After scanning the code click **Finish** to close the dialog on the **Two-Factor Authentication** screen.
 
 Accounts that are already configured with individual 2FA are not prompted for 2FA login codes until **Global 2FA** is enabled.
