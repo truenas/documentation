@@ -94,19 +94,20 @@ Click **Add Registry** to open the **Create Docker Registry** panel.
 {{< trueimage src="/images/SCALE/Apps/CreateDockerRegistry.png" alt="Create Docker Registry - Docker Hub" id="Create Docker Registry - Docker Hub" >}}
 
 Use the **URI** dropdown to select the Uniform Resource Identifier (URI) type for the registry.
-Options are **Docker Hub** or **Other Registry**.
 The URI dropdown is hidden when a Docker Hub registry record is already configured.
 
-To sign in to Docker Hub, enter the user name and password of an existing Docker Hub account.
+* Select **Docker Hub** to sign in to Docker Hub.
+  Enter the user name and password of an existing Docker Hub account.
 
-To sign in to another registry, select **Other Registry** from the dropdown or click **Add Registry** again after signing in to Docker Hub.
+* Select **Other Registry** to enter a registry address and sign in to a non-Docker Hub registry.
+  Alternately, click **Add Registry** again after signing in to Docker Hub.
 
-{{< trueimage src="/images/SCALE/Apps/CreateDockerRegistryOther.png" alt="Create Docker Registry - Other Registry" id="Create Docker Registry - Other Registry" >}}
+  {{< trueimage src="/images/SCALE/Apps/CreateDockerRegistryOther.png" alt="Create Docker Registry - Other Registry" id="Create Docker Registry - Other Registry" >}}
 
-Enter a valid Uniform Resource Identifier (URI) for the registry, for example *https://index.docker.io/v1/*.
-Then enter a display name for the registry record in TrueNAS.
+  Enter a valid Uniform Resource Identifier (URI) for the registry as a URL, for example *https://index.docker.io/v1/*.
+  Then enter a display name for the registry record in TrueNAS.
 
-Enter the user name and password of an existing account on the registry.
+  Enter the user name and password of an existing account on the registry.
 
 Click **Save** to sign in and create the registry record.
 
