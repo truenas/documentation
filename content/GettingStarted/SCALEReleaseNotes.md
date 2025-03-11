@@ -135,7 +135,7 @@ This release candidate version has software component updates and new features t
 
 Special thanks to (Github users) René, jnbastoky, Bas Nijholt, jbsamcho, t0b3, Franco Castillo, Ljcbaby, Oskar, ken1010533, Gleb Chesnokov, markrieder, janekdz, Aurélien Sallé, Nicodemus Schoenwald, m.chernobrov, Jason Cheng, SejoWuigui, TheJulianJES, p0358, Janek, Dhananjay Kamble, wanyuehan, Georg Schölly, dany22m, xream, and Lee Jihaeng for contributing to TrueNAS 25.04-RC.1. For information on how you can contribute, visit https://www.truenas.com/docs/contributing/.
 
-### Notable changes
+### Notable Changes
 
 * To prevent excessive resource usage, especially on systems with large HDD storage pools, SMART test results no longer appear directly on the **Storage** dashboard.
   Click **View S.M.A.R.T. Tests** on the **Disk Health** widget to open the **S.M.A.R.T. Test Results of *POOL*** screen.
