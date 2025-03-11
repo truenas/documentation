@@ -183,4 +183,3 @@ As a result, June 1 is also the cutoff date for two related app behaviors:
 
   No further migration is required.
   Normal application update and install functionality resumes after updating to the minimum TrueNAS version (25.04) or later.
-  
