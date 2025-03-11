@@ -180,7 +180,7 @@ Any users still running TrueNAS Apps on 24.04 after June 1 will have to re-deplo
 
 {{< hint type=important title="End of 24.10 App Updates" >}}
 **June 1, 2025** is the cutoff date for app updates on TrueNAS 24.10.
-Any users still running TrueNAS Apps on 24.10 after June 1 will have to update TrueNAS to 25.04 (or later) to update or install new applications.
+Any users still running TrueNAS Apps on 24.10 after June 1 must update TrueNAS to 25.04 (or later) to update or install new applications.
 
 No further migration is required.
 Normal application update and install functionality resumes after updating to the minimum TrueNAS version (25.04) or later.
