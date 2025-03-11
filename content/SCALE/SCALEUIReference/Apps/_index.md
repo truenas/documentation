@@ -113,8 +113,9 @@ The **Docker Registries** screen lists signed-in Docker registry records.
 | Setting | Description |
 |-----------|-------------|
 | **URI** (Dropdown) | The Uniform Resource Identifier (URI) type for the registry. Options are **Docker Hub** or **Other Registry**. Hidden when a Docker Hub registry record is already configured. |
-| **URI** | The valid Uniform Resource Identifier (URI) for the registry, for example *https://index.docker.io/v1/*. Displays when **URI** is set to **Other Registry** or when a Docker Hub registry record is already configured. |
-| **Name** | Display name for the registry record. Displays when **URI** is set to **Other Registry** or when a Docker Hub registry record is already configured. |
+| **URI** | Field shows after selecting **Other Registry* as the URI type on the **URI** dropdown list. Also shows when a Docker Hub registry record is already configured. Enter a valid URI for the registry as a URL address, for example *https://index.docker.io/vi/*.
+|
+| **Name** | Field shows after selecting **Other Registry* as the URI type on the **URI** dropdown list. Also shows when a Docker Hub registry record is already configured. Enter a display name for the registry record. |
 | **Username** | The user name to sign in to the registry. |
 | **Password** | The password for the user to sign in to the registry. |
 {{< /truetable >}}
