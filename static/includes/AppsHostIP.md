@@ -7,7 +7,7 @@ It includes port bind mode options to publish the port for external access or ex
 A small but growing list of applications currently support this functionality in TrueNAS 24.10 or later.
 
 {{< expand "Applications that currently support host IP port binding" "v" >}}
-The following applications currently support host IP port binding.
+These applications currently support host IP port binding.
 {{< columns >}}
 * calibre-web  
 * esphome  
