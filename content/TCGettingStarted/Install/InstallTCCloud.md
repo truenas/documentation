@@ -92,8 +92,6 @@ Under **Create Access Client** enter a nickname, then click **Add**. The portal 
 
 ![CloudSubscriptionServiceDetails](/images/TrueCommand/Cloud/CloudSubscriptionServiceDetails.png "Account Services: Service Details")
 
-![CloudSubscriptionServiceDetailsWireGuardClient](/images/TrueCommand/Cloud/CloudSubscriptionServiceDetailsWireGuardClient.png "Account Services: Downloading the WireGuard Configuration File")
-
 Open Wireguard on your system and click **Add Tunnel**.
 
 ![WireGuardTunnels](/images/TrueCommand/WireGuardTunnels.png "WireGuard: Adding Tunnels")
