@@ -1,5 +1,5 @@
 ---
-title: TrueCommand 3.0 and 3.1 Release Notes
+title: TrueCommand Version 3 Release Notes
 description: "Highlights and change log for the latest TrueCommand releases."
 weight: 5
 ---
