@@ -91,9 +91,9 @@ F["3.1.0"]
 
 ## 3.1.0 Changelog
 
-**March 4, 2025**
+**March 11, 2025**
 
-iXsystems is pleased to release TrueCommand 3.1.0!
+The TrueNAS team is pleased to release TrueCommand 3.1.0!
 
 Notable changes:
 
