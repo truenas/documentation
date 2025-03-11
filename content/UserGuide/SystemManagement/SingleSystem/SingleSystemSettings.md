@@ -11,7 +11,7 @@ TrueCommand allows administrator and non-administrator users with permissions to
 
 ### Editing System Settings
 To edit system settings, click **Edit** on the system options menu. 
-The **Edit *system*** screen opens and allows users change the system IP address/host name, system name (**Nickname**), and enter a new TrueNAS administrator password/API key for authentications. 
+The **Edit *system*** screen opens and allows users to change the system IP address/host name, system name (**Nickname**), and enter a new TrueNAS administrator password/API key for authentications. 
 Do not change the port number TrueCommand listens on.
 
 Click **SAVE CHANGES** to keep your changes, or **RESET** to clear settings and start over. 
