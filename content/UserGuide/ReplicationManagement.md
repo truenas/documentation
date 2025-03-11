@@ -51,8 +51,6 @@ The existing snapshot cannot be read only. Replication manager cannot add a task
 
 Note that users can enable or disable a snapshot task by using the toggle within the row of the snapshot task.
 
-
-
 Verify the SSH service on the TrueNAS systems is enabled and running. 
 When not enabled and running, the **Replication** screen does not populate and TrueCommand returns a variety of error messages.
 Either check the SSH service setting on the TrueNAS system or go to the TrueCommand main **Dashboard**, click the <span class="iconify" data-icon="ic:round-more-vert"></span> on the system widget, then click **Services** to see the list of services enabled and running for the selected system.
