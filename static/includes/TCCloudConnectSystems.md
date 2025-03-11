@@ -10,7 +10,9 @@ Log into a TrueNAS system and click the TrueCommand icon in the upper right.
 
 ![SystemsAddFirstSystemTCButton](/images/TrueCommand/Systems/SystemsAddFirstSystemTCButton.png "Connecting from TrueNAS")
 
-Paste the TrueCommand API key copied from the iXsystems Account Portal into the TrueNAS dialog window. 
+Paste the TrueCommand API key copied from the iXsystems Account Portal into the TrueNAS dialog window.
+
+Select **Enable** to activate the WireGuard interface and immediately connect to TrueCommand, or deselect it to activate the interface later.
 
 ![TrueCommandCloudConnectAPIKey](/images/TrueCommand/Cloud/TrueCommandCloudConnectAPIKey.png "Connecting TrueNAS to TrueCommand Cloud")
 
