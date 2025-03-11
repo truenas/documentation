@@ -100,7 +100,6 @@ Entering characters in the **<span class="iconify" data-icon="mdi:magnify"></spa
 ### Docker Registries
 
 The **Docker Registries** screen lists signed-in Docker registry records.
-Signing in to a registry, such as Docker Hub, is not required but allows you to avoid rate limiting issues or connect to a private registry.
 
 {{< trueimage src="/images/SCALE/Apps/DockerRegistriesScreen.png" alt="Docker Registries Screen" id="Docker Registries Screen" >}}
 
@@ -113,9 +112,9 @@ Signing in to a registry, such as Docker Hub, is not required but allows you to 
 {{< truetable >}}
 | Setting | Description |
 |-----------|-------------|
-| **URI** (Dropdown) | Select the Uniform Resource Identifier (URI) type for the registry. Options are **Docker Hub** or **Other Registry**. Hidden when a Docker Hub registry record is configured. |
-| **URI** | Enter a valid Uniform Resource Identifier (URI) for the registry, for example *https://index.docker.io/v1/*. Displays when **URI** is set to **Other Registry** or when a Docker Hub registry record is configured. |
-| **Name** | Enter a display name for the registry record. Displays when **URI** is set to **Other Registry** or when a Docker Hub registry record is configured. |
+| **URI** (Dropdown) | Select the Uniform Resource Identifier (URI) type for the registry. Options are **Docker Hub** or **Other Registry**. Hidden when a Docker Hub registry record is already configured. |
+| **URI** | Enter a valid Uniform Resource Identifier (URI) for the registry, for example *https://index.docker.io/v1/*. Displays when **URI** is set to **Other Registry** or when a Docker Hub registry record is already configured. |
+| **Name** | Enter a display name for the registry record. Displays when **URI** is set to **Other Registry** or when a Docker Hub registry record is already configured. |
 | **Username** | Enter the user name to sign in to the registry. |
 | **Password** | Enter the password for the user to sign in to the registry. |
 {{< /truetable >}}
