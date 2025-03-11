@@ -29,7 +29,7 @@ The TrueNAS instance can take 10 to 15 minutes to fully sync up with TrueCommand
 
 ### Updating TrueCommand Settings
 
-Log into TrueNAS and click the TrueCommand icon in the upper right, then click **Settings**.
+Log into TrueNAS, click the TrueCommand icon in the upper right, then click **Settings**.
 
 ![TrueCommandCloudUpdateSettings](/images/TrueCommand/Cloud/TrueCommandCloudUpdateSettings.png "Updating TrueCommand Cloud Settings")
 
