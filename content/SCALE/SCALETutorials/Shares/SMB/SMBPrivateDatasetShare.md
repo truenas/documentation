@@ -66,8 +66,8 @@ To add private shares and datasets for users that require home directories:
 
 1. Create the share (and dataset) using the **Private SMB Datasets and Shares** preset.
 
-2. Configure the share dataset ACL to use the **NFSv4_HOME** preset and add the user as an ACL entry to the ACL.
-
+2. Configure the share dataset ACL to use the **NFSv4_HOME** preset.
+   
 3. Create users either manually or through Active Directory.
 
 4. Add the home directory path to the dataset where you want to create the private directory, and set permissions.
@@ -121,6 +121,8 @@ When prompted by the system to configure the dataset ACL, accept the option. The
 ### Setting Dataset ACL Permissions
 
 Dataset ACL permissions are configured on the **Edit ACL** screen.
+The user assigned the private directory share does not need to be added as and ACL entry in the dataset ACL.
+Add an ACL entry to the dataset ACL to grant another user other than the private share user or a group of users to allow access to the private directory.
 
 If on the **Datasets** screen, select the dataset row for the share dataset, then click **Edit** on the **Permissions** widget to open the **Edit ACL** screen.
 See [Setting Up Permissions]({{< relref "PermissionsSCALE.md" >}}) for more information on editing dataset permissions.
@@ -129,7 +131,7 @@ If starting on the **Shares** screen and not prompted by the system to configure
 Do not select the option to edit the share permissions. Share permissions only apply to the share and not the dataset the share uses for storage.
 See [SMB Shares]({{< relref "ManageSMBShares.md" >}}) for detailed information on editing the share dataset permissions.
 
-Set the permission for the private dataset.
+Set the permission for the private dataset to allow additional users or a group if others are permitted to access the private directory share.
 
 Click the **Owner** dropdown, select the administration user with full control, then repeat for **Group**.
 You can set the owning group to your Active Directory domain admins. Click **Apply Owner** and **Apply Group** to apply the changes.
