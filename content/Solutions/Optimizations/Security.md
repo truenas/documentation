@@ -106,7 +106,7 @@ Each plugin JSON excludes its own download and pkg update URL.
 {{< /expand >}}
 
 {{< expand "Truenas Debian Linux-based systems app callouts" "v" >}}
-* Graphic to https://media.sys.truenas.net
+* Media content downloads from https://media.sys.truenas.net
 * Docker hub registry to https://index.docker.io/v1
 
 TruNAS apps index from https://github.com/truenas/apps.
