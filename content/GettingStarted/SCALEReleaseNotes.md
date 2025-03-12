@@ -31,13 +31,7 @@ More details are available from [Software Releases](https://www.truenas.com/docs
 
 ## Upgrade Notes
 
-* TrueNAS is an appliance built from specific Linux packages.
-  Attempting to update TrueNAS with `apt` or methods other than the web interface can result in a nonfunctional system.
-
-* All auxiliary parameters can experience changes between TrueNAS major versions due to security and development changes.
-  We recommend removing all auxiliary parameters from TrueNAS configurations before upgrading as these settings can result in SMB share failures after an upgrade.
-
-* {{< include file="/static/includes/UpgradeClearCache.md" >}}
+{{< include file="/static/includes/UpgradeNotesBoilerplate.md" >}}
 
 * 24.10 moves the applications backend from Kubernetes to Docker ([announcement](https://forums.truenas.com/t/the-future-of-electric-eel-and-apps/5409)).
 
@@ -84,6 +78,8 @@ More details are available from [Software Releases](https://www.truenas.com/docs
   To view SMB audit results, go to **System > Services** and click <i class="material-icons" aria-hidden="true" title="Audit Logs">receipt_long</i> **Audit Logs** for the SMB service or use advanced search on the main **Audit** screen to query SMB events.
 
 ### Preparing for App Migration
+
+{{< include file="/static/includes/AppsSupportTimeline.md" >}}
 
 To prepare applications for migration from Kubernetes to Docker, address the following configurations before upgrading to 24.10:  
   
