@@ -9,7 +9,9 @@
 {{- with .Site.Title }}
   <meta property="og:site_name" {{ . | printf "content=%q" | safeHTMLAttr }} />
 {{- end }}
-  <meta property="og:image" content="https://www.truenas.com/docs/images/TrueNAS_Open_Enterprise_Storage.png" />
+  <meta property="og:image" content="https://www.truenas.com/docs/images/open-enterprise-storage--logo-full-color-rgb-large.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="260" />
 {{- with partial "utils/description" . }}
   <meta property="og:description" content="{{ . | plainify | htmlUnescape | chomp }}" />
 {{- end }}
@@ -60,7 +62,8 @@
   {{- end }}
 {{- end }}
 
-{{- /* Facebook Page Admin ID for Domain Insights */}}
-{{- with .Site.Social.facebook_admin }}
-  <meta property="fb:admins" content="{{ . }}" />
-{{- end }}
+{{- /* /Twitter Card Tags for better compatibility */}}
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="{{ .Title }}" />
+<meta name="twitter:description" content="{{ .Description }}" />
+<meta name="twitter:image" content="https://www.truenas.com/docs/images/open-enterprise-storage--logo-full-color-rgb-large.png" />
