@@ -103,9 +103,6 @@ Each plugin JSON excludes its own download and pkg update URL.
 * Upstream FreeBSD pkg updates to pkg.freebsd.org
 * Upstream FreeBSD current releases to https://download.freebsd.org/releases/amd64/
 * Upstream archived FreeBSD releases for manual iocage fetch downloads to https://frp-archive.freebsd.org/pub/FreeBSD-Archive/old-releases/amd64/
-* Python package index for pip updates to pypi.org
-
-Portsnap is deprecated, see https://lists.freebsd.org/pipermail/freebsd-ports/2020-Augus/119098.html
 {{< /expand >}}
 
 {{< expand "Truenas Debian Linux-based systems app callouts" "v" >}}
