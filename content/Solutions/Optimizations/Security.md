@@ -112,7 +112,8 @@ Each plugin JSON excludes its own download and pkg update URL.
 * Feedback Oauth URL to https://support-proxy.ixsystems.com/oauth/initiate?origin=
 * Feedback service private readonly host name to https://feedback.ui.truenas.com
 * Analytics data collection to https://usage.truenas.com/submit.
-  When usage collection is disabled, anonymous usage statistics consisting of only the software version and total system capacity (e.g. TrueNAS 24.04.0, 55 TB) are still collected but information about the system configuration and usage is not.
+
+When usage collection is disabled, anonymous usage statistics consisting of only the software version and total system capacity (e.g. TrueNAS 24.04.0, 55 TB) are still collected but information about the system configuration and usage is not.
 
 When Debian Linux-based system DNS look-ups to https://updates.ixystems.com *(storjshare.io) occur,  the content delivery network (CDN) for TrueNAS is making callouts to Storj where TrueNAS updates available for downloads are stored.
 {{< /expand >}}
