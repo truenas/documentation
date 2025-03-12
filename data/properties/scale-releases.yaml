@@ -26,16 +26,11 @@ majorVersions:
     name: "TrueNAS 25.04 - Fangtooth"
     releaseName: "Fangtooth"
     releases:
-      - name: "25.04-BETA.1"
-        type: "Early"
-        link: "https://www.truenas.com/docs/scale/25.04/gettingstarted/scalereleasenotes/#2504-beta1"
-        releaseDate: "2025-02-13"
-        latest: true
       - name: "25.04-RC.1"
         type: "Early"
-        link: ""
+        link: "https://www.truenas.com/docs/scale/25.04/gettingstarted/scalereleasenotes/#2504-rc1"
         releaseDate: "2025-03-11"
-        latest: false
+        latest: true
       - name: "25.04.0"
         type: "Stable"
         link: ""
@@ -45,4 +40,4 @@ majorVersions:
         type: "Experimental"
         link: "https://www.truenas.com/docs/scale/25.04/gettingstarted/scalereleasenotes/"
         releaseDate: "2024-08-13"
-        latest: false 
+        latest: false

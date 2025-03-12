@@ -2259,3 +2259,4 @@ InstanceVNCSettings
 EditEnvironment
 InstanceEnvironmentSettings
 EditSecurity
+AppsSupportTimeline

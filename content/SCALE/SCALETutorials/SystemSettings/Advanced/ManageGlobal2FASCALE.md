@@ -23,7 +23,7 @@ TrueNAS offers global 2FA to ensure that entities cannot use a compromised admin
 ## About TrueNAS 2FA
 To use 2FA, you need a mobile device with the current time and date, and an authenticator app installed.
 We recommend Google Authenticator.
-You can use other authenticator applications, but you must confirm the settings and QR codes generated in TrueNAS are compatible with your particular app before permanently activating 2FA.
+You can use other authenticator applications, but you must confirm the settings, unique keys, and QR codes generated in TrueNAS are compatible with your particular app before permanently activating 2FA.
 
 {{< hint type=important >}}
 Two-factor authentication is time-based and requires a correct system time setting.
@@ -55,7 +55,7 @@ Set up a second 2FA device as a backup before proceeding.
 
 Before you begin, download Google Authenticator to your mobile device.
 
-1. Go to **System > Advanced Settings**, scroll down to the **Global Two Factor Authentication** widget, and click **Config**.
+1. Go to **System > Advanced Settings**, scroll down to the **Global Two Factor Authentication** widget, and click **Configure**.
 
    {{< trueimage src="/images/SCALE/SystemSettings/GlobalTwoFactorAuthenticationWidget.png" alt="Global TwoFactor Authentication Widget" id="1 - Global Two Factor Authentication Settings Widget" >}}
 
@@ -72,7 +72,7 @@ Before you begin, download Google Authenticator to your mobile device.
 
    {{< trueimage src="/images/SCALE/SystemSettings/UserTwoFactorAuthenticationActionsScreen.png" alt="User Two-Factor Authentication Actions Screen" id="User Two-Factor Authentication Actions Screen" >}}
 
-   Click **Configure 2FA Secret** to view the QR code.
+   Click **Configure 2FA Secret** to open the **Set Up Two-Factor Authentication** screen and view the QR code.  The **Set Up Two-Factor Authentication** screen also has the unique key with a copy to clipboard button so you can configure 2FA using a non-camera method if necessary.
 
    {{< hint type="info">}}
    You can configure two-factor authentication and get the QR code for an authenticator app for the logged-in user at any time, but you must configure global two-factor authentication to enable it.
@@ -80,10 +80,12 @@ Before you begin, download Google Authenticator to your mobile device.
    
    When using Google Authenticator, set **Interval** to **30** or the authenticator code might not function when logging in.
 
-3. Click **Configure 2FA Secret** to open the **User Two-Factor Authentication Actions** screen where you scan the QR code using Google Authenticator.
+3. Click **Configure 2FA Secret** to open the **Set Up Two-Factor Authentication** screen where you scan the QR code using Google Authenticator or copy the unique key.
    To generate a new QR code click **Renew 2FA Secret**.
 
-   After scanning the code click **CLOSE** to close the dialog on the **Two-Factor Authentication** screen.
+   {{< trueimage src="/images/SCALE/SystemSettings/SetUpTwoFactorAuthenticationScreen.png" alt="Set Up Two-Factor Authentication Screen" id="Set Up Two-Factor Authentication Screen" >}}
+
+   After scanning the code click **Finish** to close the dialog on the **Two-Factor Authentication** screen.
 
 Accounts that are already configured with individual 2FA are not prompted for 2FA login codes until **Global 2FA** is enabled.
 When **Global 2FA** is enabled, user accounts without 2FA settings configured see the **Two-Factor Authentication** screen on their next login to configure and enable 2FA authentication for that account.
