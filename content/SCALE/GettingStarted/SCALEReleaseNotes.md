@@ -43,9 +43,9 @@ More details are available from [Software Releases]({{< relref "/TrueNASUpgrades
 
 ## Upgrade Notes
 
-{{< include file="UpgradeNotesBoilerplate.md" >}}
+{{< include file="/static/includes/UpgradeNotesBoilerplate.md" >}}
 
-* {{< include file="/static/includes/RESTAPIDeprecationNotice.md" >}}
+{{< include file="/static/includes/RESTAPIDeprecationNotice.md" >}}
 
   {{< expand "Accessing API Documentation" "v" >}}
   {{< include file="/static/includes/APIDocs.md" >}}
