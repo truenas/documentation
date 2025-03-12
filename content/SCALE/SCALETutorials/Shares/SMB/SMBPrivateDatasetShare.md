@@ -181,7 +181,6 @@ Click **Save**. TrueNAS adds the user and creates the home directory for the use
 The home directory shows on the **Edit User** screen but not on the **Datasets** screen.
 
 {{< hint type="important" title="Home Directory Known Impacts" >}}
-{{< include file="/static/includes/24.04HomeDirectory.md" >}}
 
 {{< expand "Why the change?" "v" >}}
 TrueNAS uses the `pam_mkhomdir` PAM module in the pam_open_session configuration file to automatically create user home directories if they do not exist.
