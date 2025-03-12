@@ -12,8 +12,8 @@ keywords:
 
 {{< include file="/static/includes/apps/AppsIntro.md" >}}
 
-This article covers discovering, installing, and managing applications.
-For information about setting up the TrueNAS Apps service and configuring global settings, see [TrueNAS Apps]({{< relref "/TruenasApps/_index.md" >}}) and individual app tutorials.
+This article covers how to discover, install, and manage applications.
+For details on setting up the TrueNAS Apps service, configuring global settings, and other general information, see [TrueNAS Apps]({{< relref "/TruenasApps/_index.md" >}}) and individual app tutorials.
 
 {{< include file="/static/includes/ProposeArticleChange.md" >}}
 
