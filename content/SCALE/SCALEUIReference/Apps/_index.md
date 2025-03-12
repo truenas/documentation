@@ -81,6 +81,10 @@ The **Manage Container Images** screen lists all container images currently down
 
 Entering characters in the **<span class="iconify" data-icon="mdi:magnify"></span> Search** field on the screen header filters the images list to only the **Image ID** or **Tags** entries matching the entered characters.
 
+**<span class="iconify" data-icon="mdi:garbage">Delete</span> Delete** in an image row opens the [**Delete** image](#delete-image) dialog.
+
+The checkbox to the left of **Image ID** or an image shows the **Batch Operations** section and delete button.
+
 #### Pull Image
 
 **Pull Image** opens a side panel with options to download specific images to TrueNAS.
@@ -96,6 +100,19 @@ Entering characters in the **<span class="iconify" data-icon="mdi:magnify"></spa
 | **Username** | User account name to access a private Docker image. |
 | **Password** | User account password to access a private Docker image. |
 {{< /truetable >}}
+
+#### Delete Image
+
+**<span class="iconify" data-icon="mdi:garbage">Delete</span> Delete** in an image row or the **Batch Operations** section opens the **Delete** dialog.
+The dialog displays the selected image(s) to delete.
+
+{{< trueimage src="/images/SCALE/Apps/DeleteImage.png" alt="Delete Image" id="Delete Image" >}}
+
+Target images must not be associated with any running container.
+Select **Confirm** and then click **Delete** to delete the image(s).
+
+**Force** allows deletion if an image is referenced by multiple tags or stopped containers.
+Use **Force** with caution as it can potentially break dependencies or leave images without defined tags.
 
 ### Docker Registries
 
