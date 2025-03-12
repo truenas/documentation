@@ -252,7 +252,7 @@ Block both the **CBC** and **Arcfour** ciphers by going to **Services > SSH > Ed
 Review any application or virtual machine (VM) deployment scenario for additional security exposure or vulnerabilities.
 The TrueNAS team cannot resolve security vulnerabilities introduced from within user-deployed virtualized environments.
 
-After [configuring a VM]({{< relref "/SCALE/SCALETutorials/Virtualization/_index.md" >}}), disable any VNC or SPICE virtual machine display devices.
+After [configuring a VM]({{< relref "/SCALE/SCALETutorials/Instances/_index.md" >}}), disable any VNC or SPICE virtual machine display devices.
 
 Update [applications]({{< relref "/content/TruenasApps/_index.md" >}}) regularly.
 TrueNAS monitors connected application catalogs and trains and displays available updates on the **Installed** applications screen.
