@@ -82,11 +82,8 @@ Manage these callout addresses as part of your general network configuration (i.
 Callouts are grouped into several classes.
 
 {{< expand "All TrueNAS releases callouts" "v" >}}
-
 * Update to https://update-master.ixsystems.com/ or https://update.ixsystems.com/
 * Enterprise Proactive support to https://support-proxy.ixsystems.com
-* Error parser to https://github.com/angular/angular/blob/master/packages/core/src/util/errors.ts
-  Other possible error callouts to https://github.com/angular/angular/issues/10816 as a workaround for https://github.com/angular/angular/issues/56471 
 * Email to the address set in the TrueNAS UI as configured for administration users, and for alerts
 
 TrueNAS uses Sentry to "phone home" general system statictics for analytics to https://7ac3e76fe2a94f77a58e1c38ea6b42d9@sentry.ixsystems.com/4
@@ -102,29 +99,20 @@ Each plugin JSON excludes its own download and pkg update URL.
 {{< expand "TrueNAS FreeBSD-based systems jail callouts" "v" >}}
 * Upstream FreeBSD pkg updates to pkg.freebsd.org
 * Upstream FreeBSD current releases to https://download.freebsd.org/releases/amd64/
-* Upstream archived FreeBSD releases for manual iocage fetch downloads to https://frp-archive.freebsd.org/pub/FreeBSD-Archive/old-releases/amd64/
+* Upstream archived FreeBSD releases for manual iocage fetch downloads to https://ftp-archive.freebsd.org/pub/FreeBSD-Archive/old-releases/amd64/
 {{< /expand >}}
 
 {{< expand "Truenas Debian Linux-based systems app callouts" "v" >}}
 * Media content downloads from https://media.sys.truenas.net
-* Docker hub registry to https://index.docker.io/v1
-
-TruNAS apps index from https://github.com/truenas/apps.
-Some apps pull from other registries like ghcr.io and quay.io.
-{{< /expand >}}
-
-{{< expand "TrueNAS Debian Linux-based systems chart callouts" "v" >}}
-* Register all necessary components (fixed https://ixsystems.atlassian.net/browse/NAS-130717)
-* When ng-mocks get view child support see https://github.com/help-me-mom/ng-mocks/issues/8634
+* TrueNAS apps index from https://github.com/truenas/apps. Some apps pull from other registries like ghcr.io and quay.io.
+* Docker hub registry information downdloads from https://index.docker.io/v1
 {{< /expand >}}
 
 {{< expand "TrueNAS Debian Linux-based system other callouts" "v" >}}
 * Feedback Oauth URL to https://support-proxy.ixsystems.com/oauth/initiate?origin=
-* Feedback User Guide form to https://www.truenas.com/docs/hub/
-* File Jira ticket to https://ixsystems.atlassian.net
 * Feedback service private readonly host name to https://feedback.ui.truenas.com
-
-When usage collection is disabled, anonymous usage statistics consisting of only the software version and total system capacity (e.g. TrueNAS 24.04.0, 55 TB) are still collected but information about the system configuration and usage is not.
+* Analytics data collection to https://usage.truenas.com/submit.
+  When usage collection is disabled, anonymous usage statistics consisting of only the software version and total system capacity (e.g. TrueNAS 24.04.0, 55 TB) are still collected but information about the system configuration and usage is not.
 
 When Debian Linux-based system DNS look-ups to https://updates.ixystems.com *(storjshare.io) occur,  the content delivery network (CDN) for TrueNAS is making callouts to Storj where TrueNAS updates available for downloads are stored.
 {{< /expand >}}
