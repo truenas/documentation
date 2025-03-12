@@ -107,7 +107,7 @@ Each plugin JSON excludes its own download and pkg update URL.
 
 {{< expand "Truenas Debian Linux-based systems app callouts" "v" >}}
 * Media content downloads from https://media.sys.truenas.net
-* Docker hub registry to https://index.docker.io/v1
+* Docker hub registry info downloads from https://index.docker.io/v1
 
 TruNAS apps index from https://github.com/truenas/apps.
 Some apps pull from other registries like ghcr.io and quay.io.
