@@ -86,7 +86,7 @@ Callouts are grouped into several classes.
 * Enterprise Proactive support to https://support-proxy.ixsystems.com
 * Email to the address set in the TrueNAS UI as configured for administration users, and for alerts
 
-TrueNAS uses Sentry to "phone home" system crash data for analytics to https://7ac3e76fe2a94f77a58e1c38ea6b42d9@sentry.ixsystems.com/4
+TrueNAS uses Sentry to collect anonymous Javascript crash reports from your Web Interface browser session to https://7ac3e76fe2a94f77a58e1c38ea6b42d9@sentry.ixsystems.com/4
 {{< /expand >}}
 
 {{< expand "TrueNAS FreeBSD-based systems plugin callouts" "v" >}}
