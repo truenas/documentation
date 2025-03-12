@@ -1,6 +1,6 @@
 &NewLine;
 
-#### ix-apps Dataset
+### ix-apps Dataset
 
 TrueNAS 24.10 and newer creates a hidden **ix-apps** dataset to store Docker configuration, catalog data, and app metadata.
 This dataset is physically located on the selected pool for apps and mounted at <file>/mnt/.ix-apps</file>.
@@ -25,7 +25,7 @@ TrueNAS 24.10 or newer does not use app data in the ix-applications dataset.
 It can be safely removed after fully migrating to 24.10, but apps do not function if reverted to 24.04 without the ix-applications dataset.
 {{< /hint >}}
 
-#### ixVolume Datasets
+### ixVolume Datasets
 
 **ixVolume** datasets allow TrueNAS to automatically create an app storage path inside the hidden ix-apps dataset.
 
@@ -36,7 +36,7 @@ ixVolumes are not recommended for permanent storage volumes, they are intended f
 Though they can simplify test deployment, ixVolumes complicate tasks like app data backup.
 We recommend manually adding datasets and configuring container storage volumes with the host path option.
 
-#### Host Path Datasets
+### Host Path Datasets
 
 **Host Paths** allow users to mount existing TrueNAS datasets to paths within the app container.
 Create the TrueNAS dataset(s) before assigning them as host paths within the app installation screen.
@@ -60,12 +60,12 @@ This allows TrueNAS to write ACL entries to the storage volume if it has existin
 **Force Flag** is required to edit or update an existing application.
 {{< /expand >}}
 
-#### SMB Share Volumes
+### SMB Share Volumes
 
 Some app storage configurations include the **SMB/CIFS Share** option.
 Use this option to mount an existing SMB share using a Docker [volume](https://docs.docker.com/engine/storage/#volumes).
 
-#### Tmpfs Directories
+### Tmpfs Directories
 
 Some app storage configurations include the **Tmpfs (Temporary directory created on the RAM)** option.
 Use this option to configure a memory-backed temporary directory, such as for transcoding.
