@@ -20,7 +20,8 @@ If you have not added SMB shares to the system, the SMB widget shows **No record
 {{< trueimage src="/images/SCALE/Shares/WindowsSMBShareWidgetNoShares.png" alt="Windows (SMB) Share Widget without Shares" id="Windows (SMB) Share Widget without Shares" >}}
 
 **Add** at the top right of the widget opens the [**Add SMB** screen](#add-and-edit-smb-screens) where you configure SMB shares.
-Added SMB shares show on the widget.
+
+After adding an SMB share, it displays on the widget.
 
 {{< trueimage src="/images/SCALE/Shares/WindowsSMBShareWidget.png" alt="Windows (SMB) Share Widget with Shares" id="Windows (SMB) Share Widget with Shares" >}}
 
@@ -40,6 +41,19 @@ Each SMB share row includes a toggle that provides quick access to enable or dis
 * <span class="material-icons">security</span> **Edit Filesystem ACL** icon opens the [**Edit ACL**](#edit-filesystem-acl-screen) screen.
 * <span class="iconify" data-icon="ic:baseline-edit"></span> edit icon opens the [**Edit SMB** screen](#add-and-edit-smb-screens).
 * <span class="material-icons">delete</span> opens the [**Delete** dialog](#delete-smb-share-dialog).
+
+The **Windows (SMB) Shares <span class="material-icons">launch</span>** toolbar displays the status of the SMB service as either **STOPPED** (red) or **RUNNING** (blue).
+Before adding the first share, the **STOPPED** status displays in the default color.
+
+Click on the widget header to open the [**Sharing > SMB** details](#sharing-smb-details-screen) screen.
+
+**Add** opens the **[Add SMB](#add-and-edit-smb-screens)** share configuration screen.
+
+The <span class="material-icons">more_vert</span> icon displays four options available to SMB shares in general:
+* **Turn Off Service** that shows when the SMB service is enabled and that toggles to **Turn On Service** when the SMB service is disabled.
+* **Config Service** that opens the [**SMB**]({{< relref "SMBServicesScreen.md" >}}) configuration screen.
+* **SMB Sessions** that opens the **SMB Status** screen with four tabs: **Sessions**, **Locks**, **Shares**, and **Notifications**.
+* **Audit Logs** that opens the [**Audit** screen]({{< relref "AuditingSCALE.md" >}}) with a predefined filter for and showing the SMB share logs.
 
 ### Delete SMB Share Dialog
 The <span class="material-icons">delete</span> trash can icon opens the **Delete** dialog.
@@ -142,9 +156,10 @@ The **Other Options** settings include improving Apple software compatibility, Z
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Use as Home Share** | Select to allow the share to host user home directories. Each user has a personal home directory that is not accessible by other users and they use it when connecting to the share. Home Shares allow for personal, dynamic shares. You can only use one share as the home share. See [Adding an SMB Home Share]({{< relref "SMBPrivateDatasetShare.md" >}}) for more information. |
-| **Time Machine** | Enables [Apple Time Machine](https://support.apple.com/en-us/HT201250) backups on this share. This option requires SMB2/3 protocol extension support so it cannot be set if **Purpose** is set to the multi-protocol option. You can enable this in the general SMB server configuration. |
-| **Legacy AFP Compatibility** | Select to enable the share to behave like the deprecated Apple Filing Protocol (AFP). Leave disabled (cleared) for the share to behave like a normal SMB share. This option controls how the SMB share reads and writes data. Only enable this when this share originated as an AFP sharing configuration. You do not need legacy compatibility for pure SMB shares or macOS SMB clients. This option requires SMB2/3 protocol extension support so it cannot be set if **Purpose** is set to the multi-protocol option. You can enable this in the general SMB server configuration. |
+| **Use as Home Share** | Select to allow the share to host user home directories. Each user has a personal home directory they use when connecting to the share that is not accessible by other users. Home Shares allow for personal, dynamic shares. You can only use one share as the home share. See [Adding an SMB Home Share]({{< relref "AddSMBHomeShare.md" >}}) for more information. |
+| **Time Machine** | Enables [Apple Time Machine](https://support.apple.com/en-us/HT201250) backups on this share. This option requires SMB2/3 protocol extension support. You can enable this in the general SMB server configuration. |
+| ** Time Machine Quota** | Visible when **Time Machine** is enabled. Sets a maximum limit on storage consumed by time machine backups. This applies to the entire share. |
+| **Legacy AFP Compatibility** | Select to enable the share to behave like the deprecated Apple Filing Protocol (AFP). Leave cleared for the share to behave like a normal SMB share. This option controls how the SMB share reads and writes data. Only enable this when this share originated as an AFP sharing configuration. You do not need legacy compatibility for pure SMB shares or macOS SMB clients. This option requires SMB2/3 protocol extension support. You can enable this in the general SMB server configuration. |
 | **Enable Shadow Copies** | Select to export ZFS snapshots as [Shadow Copies](https://docs.microsoft.com/en-us/windows/win32/vss/shadow-copies-and-shadow-copy-sets) for Microsoft Volume Shadow Copy Service (VSS) clients. |
 | **Export Recycle Bin** | Select to enable. Deleted files are renamed to a per-user subdirectory within the `.recycle` directory at either the root of the SMB share if the path is the same dataset as the SMB share (default is share and dataset have the same name), or at the root of the current dataset if datasets are nested. Nested datasets do not have automatic deletion based on file size. Do not rely on this function for backups or replacements of ZFS snapshots. |
 | **Use Apple-style Character Encoding** | Select to convert NTFS illegal characters in the same manner as macOS SMB clients. By default, Samba uses a hashing algorithm for NTFS illegal characters. Apple extension options cannot be set if **Purpose** is set to the multi-protocol option|
