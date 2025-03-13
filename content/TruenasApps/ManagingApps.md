@@ -21,12 +21,12 @@ For details on setting up the TrueNAS Apps service, configuring global settings,
 
 The **Discover** screen shows application widgets based on the trains selected on the **Train Settings** screen.
 
-Non-Enterprise systems show the **stable** catalog of apps by default.
+TrueNAS Community Edition systems show the **community** and **stable** catalog of apps by default.
 These are official applications, pre-configured to only require a name during a test deployment, or some customization for a full deployment.
 
 Enterprise-licensed systems display the **enterprise** train of applications simplified and validated for Enterprise systems.
 
-Community users can add the **community** and **enterprise** trains on the [**Settings**](#changing-app-trains) screen.
+Community users can add the **enterprise** train on the [**Train Settings**](RELREF #changing-app-trains) screen.
 
 {{< trueimage src="/images/SCALE/Apps/AppsDiscoverScreen.png" alt="Applications Discover Screen" id="Applications Discover Screen" >}}
 
