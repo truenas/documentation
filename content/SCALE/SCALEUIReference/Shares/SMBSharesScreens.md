@@ -20,7 +20,7 @@ If you have not added SMB shares to the system, the SMB widget shows **No record
 {{< trueimage src="/images/SCALE/Shares/WindowsSMBShareWidgetNoShares.png" alt="Windows (SMB) Share Widget without Shares" id="Windows (SMB) Share Widget without Shares" >}}
 
 **Add** at the top right of the widget opens the [**Add SMB** screen](#add-and-edit-smb-screens) where you configure SMB shares.
-After adding an SMB share it displays on the widget.
+After adding an SMB share, it displays on the widget.
 
 {{< trueimage src="/images/SCALE/Shares/WindowsSMBShareWidget.png" alt="Windows (SMB) Share Widget with Shares" id="Windows (SMB) Share Widget with Shares" >}}
 
@@ -40,7 +40,7 @@ Click on the widget header to open the [**Sharing > SMB** details](#sharing-smb-
 **Add** opens the **[Add SMB](#add-and-edit-smb-screens)** share configuration screen.
 
 The <span class="material-icons">more_vert</span> icon displays four options available to SMB shares in general:
-* **Turn Off Service** what shows when the SMB service is enabled and that toggles to **Turn On Service** when the SMB service is disabled.
+* **Turn Off Service** that shows when the SMB service is enabled and that toggles to **Turn On Service** when the SMB service is disabled.
 * **Config Service** that opens the [**SMB**]({{< relref "SMBServicesScreen.md" >}}) configuration screen.
 * **SMB Sessions** that opens the **SMB Status** screen with four tabs: **Sessions**, **Locks**, **Shares**, and **Notifications**.
 * **Audit Logs** that opens the [**Audit** screen]({{< relref "AuditingSCALE.md" >}}) with a predefined filter for and showing the SMB share logs.
@@ -149,6 +149,7 @@ The **Other Options** settings include improving Apple software compatibility, Z
 |---------|-------------|
 | **Use as Home Share** | Select to allow the share to host user home directories. Each user has a personal home directory they use when connecting to the share that is not accessible by other users. Home Shares allow for personal, dynamic shares. You can only use one share as the home share. See [Adding an SMB Home Share]({{< relref "AddSMBHomeShare.md" >}}) for more information. |
 | **Time Machine** | Enables [Apple Time Machine](https://support.apple.com/en-us/HT201250) backups on this share. This option requires SMB2/3 protocol extension support. You can enable this in the general SMB server configuration. |
+| ** Time Machine Quota** | Visible when **Time Machine** is enabled. Sets a maximum limit on storage consumed by time machine backups. This applies to the entire share. |
 | **Legacy AFP Compatibility** | Select to enable the share to behave like the deprecated Apple Filing Protocol (AFP). Leave cleared for the share to behave like a normal SMB share. This option controls how the SMB share reads and writes data. Only enable this when this share originated as an AFP sharing configuration. You do not need legacy compatibility for pure SMB shares or macOS SMB clients. This option requires SMB2/3 protocol extension support. You can enable this in the general SMB server configuration. |
 | **Enable Shadow Copies** | Select to export ZFS snapshots as [Shadow Copies](https://docs.microsoft.com/en-us/windows/win32/vss/shadow-copies-and-shadow-copy-sets) for Microsoft Volume Shadow Copy Service (VSS) clients. |
 | **Export Recycle Bin** | Select to enable. Deleted files are renamed to a per-user subdirectory within the `.recycle` directory at either the root of the SMB share if the path is the same dataset as the SMB share (default is share and dataset have the same name), or at the root of the current dataset if datasets are nested. Nested datasets do not have automatic deletion based on file size. Do not rely on this function for backups or replacements of ZFS snapshots. |
@@ -212,7 +213,7 @@ These settings configure new ACL entries for the selected SMB share and apply th
 
 ## Edit Filesystem ACL Screen
 The **Edit Filesystem ACL** option opens the **Edit ACL** screen for the dataset the share uses.
-See [**Edit ACL Screen**]({{< relref "EditACLScreens.md" >}}) more information on the settings found on this screen.
+See [**Edit ACL Screen**]({{< relref "EditACLScreens.md" >}}) for more information on the settings found on this screen.
 
 {{< trueimage src="/images/SCALE/Shares/SMBACLEditor.png" alt="SMB ACL Editor" id="SMB ACL Editor" >}}
 
