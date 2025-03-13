@@ -178,7 +178,7 @@ The **Remote** settings specify the TrueCloud credential and destination storage
 | Settings | Description |
 |----------|-------------|
 | **Use Snapshot** | Select to set the TrueCloud Backup Task to use a snapshot of the dataset before a push transfer. |
-| **Use Absolute Paths** | Select to ensure that restic backups contain absolute paths. If you not selecte, the restic backup contains relative paths. |
+| **Use Absolute Paths** | Select to ensure that restic backups contain absolute paths. If you do not select this option, the restic backup contains relative paths. |
 | **Pre-Script** | (For advanced users only) Enter a script to execute before running the task. See the [Managing TrueCloud Backup Tasks tutorial]({{< relref "TrueCloudTasks.md #using-advanced-options" >}}) for more information. See **Script Environment Variables** below for a list of variables for scripts. |
 | **Post-Script** | (For advanced users only) Enter a script to execute after running the task. See the [Managing TrueCloud Backup Tasks tutorial]({{< relref "TrueCloudTasks.md #using-advanced-options" >}}) for more information. See **Script Environment Variables** below for a list of variables for scripts. |
 | **Exclude** | Enter a list of files and directories to exclude from the backup. Separate entries by pressing <kbd>Enter</kbd>. See [restic exclude patterns](https://restic.readthedocs.io/en/latest/040_backup.html#excluding-files) for more information about the `--exclude` option and proper syntax. |
