@@ -1,6 +1,6 @@
 ---
 title: "Adding a Basic Time Machine SMB Share"
-description: "Provides instructions to adding an SMB share and enabling basic time machine."
+description: "Provides instructions for adding an SMB share and enabling basic time machine."
 weight: 25
 aliases:
 tags:
@@ -30,7 +30,7 @@ After creating the share, enable the SMB service.
 When accessing from a Windows client, having more than 512 snapshots on the TrueNAS box can lead to performance issues, as the Windows client often attempts to load all snapshots into the 'Previous Versions' tab.
 To avoid this, users should maintain fewer than 512 snapshots, or consider accessing from a non-Windows client. Alternatively, configuring snapshot lifetimes or creating an automatic deletion policy via the [Periodic Snapshot Tasks screen]({{< relref "PeriodicSnapshotTasksSCALE.md" >}}) can help users manage the snapshot count more effectively.
 
-The latest maintained macOS versions allow setting the maximumim time machine backup size from the macOS UI.
+The latest maintained macOS versions allow setting the maximum time machine backup size from the macOS UI.
 Setting this from the client side is generally recommended for better share flexibility and macOS coordination.
 
 ### Creating the Share and Dataset
@@ -48,7 +48,7 @@ The dataset name populates the share **Name** field and updates the **Path** aut
 The dataset name becomes the share name.
 Leave this as the default.
 
-If you change the name follow the naming conventions for:
+If you change the name, follow the naming conventions for:
 * [Files and directories](https://learn.microsoft.com/en-us/windows/win32/fileio/naming-a-file#naming-conventions)
 * [Share names](https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-fscc/dc9978d7-6299-4c5a-a22d-a039cdc716ea)
 
