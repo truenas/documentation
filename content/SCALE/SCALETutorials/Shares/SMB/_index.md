@@ -26,7 +26,7 @@ SMB is suitable for managing and administering large or small pools of data.
 
 TrueNAS uses [Samba](https://www.samba.org/) to provide SMB services.
 The SMB protocol has multiple versions. An SMB client typically negotiates the highest supported SMB protocol during SMB session negotiation.
-Industry-wide, SMB1 protocol (sometimes referred to as NT1) usage is deprecated for security reasons.
+Industry-wide, SMB1 protocol (sometimes referred to as NT1) use is deprecated for security reasons.
 
 {{< include file="/static/includes/SMBShareMSDOSalert.md" >}}
 
@@ -50,15 +50,15 @@ Discoverability through broadcast protocols is a convenience feature and is not 
 ## How do I add an SMB Share?
 
 {{< hint type="info" title="Active Directory and SMB Service" >}}
-Verify Active Directory connections are working and error free-before adding an SMB share.
+Verify Active Directory connections are working and error-free before adding an SMB share.
 If configured but not working or in an error state, AD cannot bind and prevents starting the SMB service.
 {{< /hint >}}
 
-Creating an SMB share to your system involves several steps to add the share and get it working.
+Creating an SMB share on your system involves several steps to add the share and get it working.
 
 1. [Create the SMB share user account](#creating-the-smb-share-user-account).
    You can also use directory services like Active Directory or LDAP to provide additional user accounts.
-   If setting up an external SMB share, we recommend using Active Directory or LDAP, or at a minimum synchronizing the user accounts between systems.
+   If setting up an external SMB share, we recommend using Active Directory or LDAP, or at a minimum, synchronizing the user accounts between systems.
 
 2. [Create the SMB share and dataset](#adding-an-smb-share-and-dataset).
    You can create a basic SMB share or for more specific share types or feature requirements from the **Add SMB** screen using the [Advanced Options](#configuring-share-advanced-options-settings) instructions before saving the share.
@@ -147,7 +147,7 @@ To create a basic Windows SMB share and a dataset, go to **Shares**, then click 
    Enter as **EXTERNAL:*ip address*&bsol;*sharename*** in **Path**, then change **Name** to EXTERNAL with no special characters.
 
 3. Select a preset from the **Purpose** dropdown list to apply.
-   The preset selected locks or unlock pre-determined **Advanced Options** settings for the share.
+   The preset selected locks or unlocks the pre-determined **Advanced Options** settings for the share.
 
    To retain control over all the share **Advanced Options** settings, select **No presets** or **Default share parameters**.
 
@@ -192,7 +192,7 @@ Additional client-side configuration is required to provide guest access to thes
 * **Connect As: Guest** Specifically choose this option in macOS to log in as the guest account.
   See the [Apple documentation](https://support.apple.com/guide/mac-help/connect-mac-shared-computers-servers-mchlp1140/mac) for more details.
 
-If setting up guest access with read only permissions, see the information in [Adding a New Share Group](#adding-a-new-share-group).
+If setting up guest access with read-only permissions, see the information in [Adding a New Share Group](#adding-a-new-share-group).
 If the share is nested under parent datasets, see [Using the Traverse Permission](#using-the-traverse-permission).
 {{< /expand >}}
 {{< expand "Setting Up Read or Write Access" "v" >}}
@@ -356,14 +356,14 @@ Mount the volume using the `sudo mount_smbfs -I computer_name\share_name /mnt/sm
 ## Setting up an External SMB Share
 
 External SMB shares are essentially redirects to shares on other systems.
-Administrators might want to use this when managing multiple TrueNAS systems with SMB shares and if they do not want to keep track of which shares live on which boxes for clients.
+Administrators might want to use this when managing multiple TrueNAS systems with SMB shares, and if they do not want to keep track of which shares are on which boxes for clients.
 This feature allows admins to connect to any of the TrueNAS systems with external shares set up, and to see them all.
 
 Create the SMB share on another TrueNAS server (for example, *system1*), as described in [Adding an SMB Share](#adding-an-smb-share) above.
 
 We recommend using Active Directory or LDAP when creating user accounts, but at a minimum synchronize user accounts between the system with the share (*system1*) and on the TrueNAS system where you set up the external share (for example, *system2*).
 
-On *system2*, enter the host name or IP address of the system hosting the SMB share (*system1*) and the name given the share on that system as **EXTERNAL:*ip address*&bsol;*sharename*** in **Path**, then change **Name** to EXTERNAL with no special characters.
+On *system2*, enter the host name or IP address of the system hosting the SMB share (*system1*) and the name given to the share on that system as **EXTERNAL:*ip address*&bsol;*sharename*** in **Path**, then change **Name** to EXTERNAL with no special characters.
 
 Leave **Purpose** set to **Default share parameters**, leave **Enabled** selected, then click **Save** to add the share redirect.
 
