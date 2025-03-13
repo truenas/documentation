@@ -61,7 +61,7 @@ For security hardening, we recommend disabling the **NFSv3** protocol.
 
 Select **Require Kerberos for NFSv4** to enable using a Kerberos ticket.
 
-If Active Directory is already joined to the TrueNAS server, click **Save** and then reopen the **NFS** service screen.
+If Active Directory is already joined to the TrueNAS server, click **Save**, then reopen the **NFS** service screen.
 Click **Add SPN** to open the **Add Kerberos SPN Entry** dialog.
 
 {{< trueimage src="/images/SCALE/SystemSettings/ServicesNFSAddKerberosSPNEntry.png" alt="Add Kerberos SPN Entry" id="Add Kerberos SPN Entry" >}}
@@ -101,7 +101,7 @@ Configure a container (group or organizational unit), Kerberos admin, and user a
 You can create a share and dataset from either the **Add Dataset** or **Add SMB** screen.
 
 {{< hint type=info >}}
-The multi-protocol share type is mutually exclusive with AAPL extension support like time machine. These extension require the SMB2/3 lease support which is no longer available in multi-protocol shares. Therefore, time machine cannot be enabled and a warning message shows in the UI. Selecting other Apple protocol options also displays warning messages. Mulit-protocol shares can impact the performance of all SMB shares.
+The multi-protocol share type is mutually exclusive with AAPL extension support like time machine. These extensions require the SMB2/3 lease support which is no longer available in multi-protocol shares. Therefore, time machine cannot be enabled and a warning message shows in the UI. Selecting other Apple protocol options also displays warning messages. Multi-protocol shares can impact the performance of all SMB shares.
 {{< /hint >}}
 
 ### Using the Add Dataset Screen
@@ -177,7 +177,7 @@ Select the share row on the widget, then click the edit icon to modify permissio
 
 {{< trueimage src="/images/SCALE/Shares/EditMultimodeShareDatasetPermissions.png" alt="Editing Share Dataset ACL" id="Editing Share Dataset ACL" >}}
 
-Or go to **Datasets**, select the the dataset row created for the multiprotocol share on the **Datasets** table, then scroll down to the **Permissions** widget for the dataset.
+Or go to **Datasets**, select the dataset row created for the multiprotocol share on the **Datasets** table, then scroll down to the **Permissions** widget for the dataset.
 Click **Edit** to open the **Edit ACL** screen.
 
 {{< trueimage src="/images/SCALE/Datasets/EditMultimodeDatasetPermissions.png" alt="Editing Multi-Mode Dataset Permissions" id="Editing Multi-Mode Dataset Permissions" >}}
