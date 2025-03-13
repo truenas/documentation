@@ -20,7 +20,7 @@ If you have not added SMB shares to the system, the SMB widget shows **No record
 {{< trueimage src="/images/SCALE/Shares/WindowsSMBShareWidgetNoShares.png" alt="Windows (SMB) Share Widget without Shares" id="Windows (SMB) Share Widget without Shares" >}}
 
 **Add** at the top right of the widget opens the [**Add SMB** screen](#add-and-edit-smb-screens) where you configure SMB shares.
-After adding an SMB share it displays on the widget.
+After adding an SMB share, it displays on the widget.
 
 {{< trueimage src="/images/SCALE/Shares/WindowsSMBShareWidget.png" alt="Windows (SMB) Share Widget with Shares" id="Windows (SMB) Share Widget with Shares" >}}
 
@@ -40,7 +40,7 @@ Click on the widget header to open the [**Sharing > SMB** details](#sharing-smb-
 **Add** opens the **[Add SMB](#add-and-edit-smb-screens)** share configuration screen.
 
 The <span class="material-icons">more_vert</span> icon displays four options available to SMB shares in general:
-* **Turn Off Service** what shows when the SMB service is enabled and that toggles to **Turn On Service** when the SMB service is disabled.
+* **Turn Off Service** that shows when the SMB service is enabled and that toggles to **Turn On Service** when the SMB service is disabled.
 * **Config Service** that opens the [**SMB**]({{< relref "SMBServicesScreen.md" >}}) configuration screen.
 * **SMB Sessions** that opens the **SMB Status** screen with four tabs: **Sessions**, **Locks**, **Shares**, and **Notifications**.
 * **Audit Logs** that opens the [**Audit** screen]({{< relref "AuditingSCALE.md" >}}) with a predefined filter for and showing the SMB share logs.
@@ -213,7 +213,7 @@ These settings configure new ACL entries for the selected SMB share and apply th
 
 ## Edit Filesystem ACL Screen
 The **Edit Filesystem ACL** option opens the **Edit ACL** screen for the dataset the share uses.
-See [**Edit ACL Screen**]({{< relref "EditACLScreens.md" >}}) more information on the settings found on this screen.
+See [**Edit ACL Screen**]({{< relref "EditACLScreens.md" >}}) for more information on the settings found on this screen.
 
 {{< trueimage src="/images/SCALE/Shares/SMBACLEditor.png" alt="SMB ACL Editor" id="SMB ACL Editor" >}}
 
