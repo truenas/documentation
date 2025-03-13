@@ -108,8 +108,9 @@ Click **Configuration > Settings** to open the **Settings** screen, which contai
 
 {{< trueimage src="/images/SCALE/Apps/AppsSettingScreen.png" alt="Apps Settings Screen" id="Apps Settings Screen" >}}
 
-### Changing App Trains
+### Managing the Application Catalog
 
+<!-- get clarification on this and then update train landing pages as well -->
 TrueNAS applications are available in three catalogs (trains):
 
 * **stable** - Default train of official apps, vetted by the TrueNAS team, chosen because of the features and functionality of the app, and how they integrate with TrueNAS.
@@ -121,42 +122,22 @@ The default TrueNAS **Stable** catalog populates the **Discover** apps screen wi
 Some apps proposed by community members might be adopted as official **stable** train apps.
 The TrueNAS team maintains official apps for non-Enterprise and community users.
 
-Click **Settings** on the **Configuration** dropdown menu to open the **Settings** screen, then select the desired train(s).
-To show only the one train of apps, for example, the **enterprise** train, after selecting **enterprise** deselect the **stable** checkbox and click **Save**.
+<!--Support Definitions for details-->
 
-Some applications deploy as the **root** user for initial configuration before operating as a non-root user.
-Keep these general best practices in mind when using applications with TrueNAS.
+Users can change the apps displayed on the **Discover** screen by adding or removing trains.
 
-<!-- 
-TrueNAS has a pre-built official catalog of available TrueNAS-approved applications.
+To add or remove a train, **Settings** on the **Configuration** dropdown list to open the **Settings** screen.
 
-Users can configure and add catalog trains if they choose.
-The default train is **stable** which shows the apps found in the charts repository. Other available trains are **enterprise** and **community**.
+{{< trueimage src="/images/SCALE/Apps/AppsSettingScreen.png" alt="Settings Screen" id="Settings Screen" >}}
 
-{{< hint type=note >}}
-TrueNAS uses outbound ports 80/443 to retrieve the TRUENAS catalog.
-{{< /hint >}}
+Select the **Preferred Trains** checkbox(es) for the train(s) to include, then click **Save**.
 
-## Managing the Application Catalog
-Users can manage the catalog by changing the trains included in it.
-To add or remove a train, from the **Installed** application screen, click **Configuration** then on **Settings** on the dropdown menu to open the **Settings** screen.
-You can also click **Manage Installed Apps** at the top right of the **Discover** screen to open the **Installed** screen.
+After making a change, go to the **Discover** screen and click on **Refresh Catalog** to pull the catalog from the repository and refresh it in TrueNAS.
 
 {{< trueimage src="/images/SCALE/Apps/AppsDiscoverScreen.png" alt="Applications Discover Screen" id="Applications Discover Screen" >}}
 
-Users can change the catalog trains and show apps in those trains on the **Settings** screen.
-After making a change, go to the **Discover** screen and click on **Refresh Catalog** to pull the catalog from the repository and refresh it in TrueNAS.
-
-{{< trueimage src="/images/SCALE/Apps/AppsTrainSettingsScreen.png" alt="Apps Train Settings Screen" id="Apps Train Settings Screen" >}}
-
-To remove a train from the catalog, select the checkbox for the train on the **Settings** screen to clear the checkbox, then click **Save**.
-You must have one train selected.
- 
-## Adding the Enterprise Train
-
-{{< include file="/static/includes/apps/AddEnterpriseTrain.md" >}}
-
--->
+To remove a train from the catalog, deselect the checkbox for the train on the **Settings** screen, then click **Save**.
+You must have at least one train selected.
 
 ### Apps Network Settings
 
