@@ -16,6 +16,7 @@ aliases:
  - /scale/scaletutorials/apps/
  - /truenasapps/usingcatalogs/
  - /truenasapps/usingtrains/
+ - /truenasapps/support-definitions/
 cascade:
   - _target:
     book: "TrueNASApps"
@@ -196,12 +197,43 @@ Select **Check for docker image updates** (selected by default) to enable TrueNA
 This applies to all Docker images present on the system for either catalog or custom applications.
 Disable to prevent TrueNAS from monitoring for upstream image updates.
 
-## Understanding App Storage Volumes
+## App Support Definitions
 
-The **ix-apps** dataset is the base-level storage volume for app data.
-Additionally, configuration options for individual apps include one or more of the following storage types: ixVolume datasets, host path datasets, SMB share volumes, and Tmpfs.
+TrueNAS offers three distinct classes of support for applications, each tailored to provide varying levels of assistance depending on the specific needs and requirements.  
+This policy outlines the support structure for applications on TrueNAS.  
+Users should review these definitions carefully and consult with their support channels if they have specific questions about the level of support applicable to their applications.
 
-{{< include file="/static/includes/apps/AppsDatasets.md" >}}
+<div class="support-cards">
+  <div class="support-card community">
+    <h3>Community Support</h3>
+    <p><strong>Definition:</strong> Applications classified under this tier receive no formal support from TrueNAS official support channels.</p>
+    <p><strong>Scope:</strong> Issues related to these applications are 
+      <a href="https://github.com/truenas/apps/issues">tracked separately</a> and addressed on a best-effort basis through 
+      <a href="https://forums.truenas.com/">community forums</a> and user-driven resources.  
+      There is no guaranteed resolution timeframe.</p>
+    <p><strong>Examples:</strong> Plex, Tailscale, Jellyfin, NextCloud, and any App available from the 
+      <a href="/truenasapps/stableapps/">Stable</a> or <a href="/truenasapps/communityapps/">Community</a> trains.</p>
+  </div>
+
+  <div class="support-card enterprise-deployment">
+    <h3>Enterprise Deployment Support</h3>
+    <p><strong>Definition:</strong> Applications listed in the TrueNAS Enterprise Catalog are supported for application deployment 
+      and issues related to the TrueNAS application framework.</p>
+    <p><strong>Scope:</strong> The TrueNAS Support team includes guidance on the initial deployment and setup of the application within the TrueNAS environment.  
+      This is limited to App store configuration, vendor-provided updates, and basic troubleshooting.</p>
+    <p>This tier does <strong>not</strong> cover ongoing maintenance or troubleshooting beyond the initial deployment phase or TrueNAS standard configuration.  
+      It does <strong>not</strong> cover functionality, compatibility, or performance issues internal to the application itself.</p>
+    <p><strong>Examples:</strong> Minio, Asigra.</p>
+  </div>
+
+  <div class="support-card enterprise-application">
+    <h3>Enterprise Application Support</h3>
+    <p><strong>Definition:</strong> Applications in this category are fully supported by both the TrueNAS Support and Development teams.</p>
+    <p><strong>Scope:</strong> Comprehensive assistance is provided for troubleshooting, bug fixes, compatibility issues, and integration with new system features.  
+      Regular updates and maintenance are included to ensure optimal performance and functionality.</p>
+    <p><strong>Examples:</strong> Syncthing, Remote Assistance.</p>
+  </div>
+</div>
 
 <div class="noprint">
 
