@@ -20,7 +20,7 @@ div.docs-read_mod {display: none;}
 h1 {display:none;}
 </style>
 
-{{< header logo="/images/tn-openstorage-logo.png" logo_alt="TrueNAS Logo" version="25.04 - Fangtooth" icon="" icon_alt="" >}}
+{{< header logo="/images/tn-openstorage-logo.png" logo_alt="TrueNAS Logo" version="25.04 Fangtooth" icon="/images/Fangtooth_Icon.png" icon_alt="Fangtooth Icon" >}}
 
 {{< include file="/static/includes/25.04FeatureList.md" >}}
 
