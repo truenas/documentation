@@ -18,7 +18,7 @@ tags:
 ---
 
 
-The **Datasets** screen and widgets shows information about datasets, provides access to data management functions, indicates the dataset roles, lists the services using the dataset, shows the encryption status, and the permissions the dataset has in place.
+The **Datasets** screen and widgets show information about datasets, provide access to data management functions, indicate the dataset roles, list the services using the dataset, show the encryption status, and list the permissions the dataset has in place.
 The screen focuses on managing data storage including user and group quotas, snapshots, and other data protection measures.
 
 ## Datasets Screen
@@ -109,7 +109,7 @@ Otherwise, you cannot delete a clone while the original volume still exists. See
 Non-root parent and child dataset versions of the widget show the **[Delete](#delete-dataset)** button.
 Use the **Disconnect/Export** option on the **[Storage Dashboard]({{< relref "/SCALE/SCALEUIReference/Storage/_index.md" >}})** screen to deleate a root datset.
 
-**Delete** opens a window with information about other options or services using the dataset, for example a parent to other datasets and the services the child datasets of a parent dataset uses.
+**Delete** opens a window with information about other options or services using the dataset, for example, a parent to other datasets and the services the child datasets of a parent dataset uses.
 Non-root parent and child datasets include the **Delete** button.
 
 #### Delete Window
@@ -119,7 +119,7 @@ If a parent to other datasets, the window includes the services a child dataset 
 {{< trueimage src="/images/SCALE/Datasets/DeleteDatasetParentDataset.png" alt="Delete Dataset Parent Dataset" id="Delete Dataset Parent Dataset" >}}
 
 {{< expand "Click Here for More Information" "v" >}}
-If a child dataset uses services the window shows the services.
+If a child dataset uses services, the window shows the services.
 
 {{< trueimage src="/images/SCALE/Datasets/DeleteDatasetChildUsingAService.png" alt="Delete Dataset Child Dataset Using a Service" id="Delete Dataset Child Dataset Using a Service" >}}
 
@@ -216,7 +216,7 @@ The **Roles** widget for a dataset with no share shows two links, one to create 
 | Apps | [Manage Apps Settings]({{< relref "/SCALE/SCALEUIReference/Apps/_index.md" >}}) | Shows apps (Docker) is using the dataset. Select the option to **Choose Pool** from the **Settings** dropdown list on the **Applications** screen. |
 | Dataset with no share | [Create SMB Share]({{< relref "SMBSharesScreens.md" >}})<br>[Create NFS Share]({{< relref "NFSSharesScreens.md" >}}) | Opens either the **Add SMB** or **Add NFS** share screen to configure the share. |
 | SMB share | [Manage SMB Shares]({{< relref "SMBSharesScreens.md" >}}) | Shows the name of the SMB share using the dataset. Select the snare on the **Sharing SMB** screen to edit it. |
-| Other share | Link to the share type screen | Shows the name of the share using the dataset. Select the on the share screen (NFS or iSCSI) to edit it. |
+| Other share | Link to the share type screen | Shows the name of the share using the dataset. Select the option on the share screen (NFS or iSCSI) to edit it. |
 | Multiprotocol share | [Manage SMB Shares]({{< relref "SMBSharesScreens.md" >}})<br>[Manage NFS Shares]({{< relref "NFSSharesScreens.md" >}}) | Shows the name of the SMB and NFS share using the dataset. Each link opens the **Sharing SMB** or **Sharing NFS** screens. Click on the share to edit it. |
 {{< /truetable >}}
 {{< /expand >}}
@@ -273,7 +273,7 @@ The common settings are **Parent Path**, **Name**, and the **Dataset Preset** (p
 |---------|-------------|
 | **Parent path** | Read-only field that shows the dataset path. Populated with the parent dataset path, adds the name given to the dataset after entering it in **Name**. For example, *tank/shares/smbshare1*. |
 | **Name** | Enter a unique identifier for the dataset. Names allow upper and lower case letters, numbers, and the dash (-) or underscore (_) special characters, but TrueNAS does not allow trailing spaces after the dataset name. You cannot change the dataset name after clicking **Save**. The **Name** field on the **Edit Dataset** screen shows the path. |
-| **Dataset Preset** | Select the option from the dropdown list to define the type of data sharing the dataset uses. The options optimize the dataset for a sharing protocol or app and set the ACL type best suited to the dataset purpose. Options are: <br><li>**Generic** - Select for general storage datasets that are not associated with SMB, NFS, or multi-protocol shares, or apps. Sets the ACL to POSIX.<br><li>**SMB** - Select to optimize the dataset for SMB shares. Shows the **Create SMB Share** option pre-selected and **SMB Name** field populated with the value entered in **Name**. Sets the ACL to NFSv4. <br><li> **Apps** - Select to optimize the dataset for use by any application. Sets the ACL to NFSv4. If you plan to deploy container applications, the system automatically creates the **ix-apps** dataset for Docker storage for application data. For data storage for individual apps create separate datasets. <br><li>**Multiprotocol** - Select if configuring a multi-protocol or mixed-mode NFS and SMB sharing protocols, or to create only an NFS share. Allows clients to use either protocol to access the same data. Shows the **Create NFS Share** and **Create SMB Share** options pre-selected and the **SMB Name** field populated with the value entered in **Name**. See [Multiprotcol Shares]({{< relref "MixedModeShares.md" >}}) for more information. Sets the ACL to NFSv4.<br></li>Setting cannot be edited after saving the dataset. |
+| **Dataset Preset** | Select the option from the dropdown list to define the type of data sharing the dataset uses. The options optimize the dataset for a sharing protocol or app and set the ACL type best suited to the dataset purpose. Options are: <br><li>**Generic** - Select for general storage datasets that are not associated with SMB, NFS, or multi-protocol shares, or apps. Sets the ACL to POSIX.<br><li>**SMB** - Select to optimize the dataset for SMB shares. Shows the **Create SMB Share** option pre-selected and **SMB Name** field populated with the value entered in **Name**. Sets the ACL to NFSv4. <br><li> **Apps** - Select to optimize the dataset for use by any application. Sets the ACL to NFSv4. If you plan to deploy container applications, the system automatically creates the **ix-apps** dataset for Docker storage for application data. For data storage for individual apps, create separate datasets. <br><li>**Multiprotocol** - Select if configuring a multi-protocol or mixed-mode NFS and SMB sharing protocols, or to create only an NFS share. Allows clients to use either protocol to access the same data. Shows the **Create NFS Share** and **Create SMB Share** options pre-selected and the **SMB Name** field populated with the value entered in **Name**. See [Multiprotcol Shares]({{< relref "MixedModeShares.md" >}}) for more information. Sets the ACL to NFSv4.<br></li>Setting cannot be edited after saving the dataset. |
 {{< /truetable >}}
 {{< /expand >}}
 
