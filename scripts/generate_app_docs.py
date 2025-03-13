@@ -150,7 +150,7 @@ if community_added:
 if stable_added:
     print("New Stable articles added:")
     for app, filename in stable_added:
-        print(f"- {app} ({filename} - Please create a Product Documentation ticket.)")
+        print(f"- {app} ({filename})")
     print()
 if enterprise_added:
     print("New Enterprise articles added:")
