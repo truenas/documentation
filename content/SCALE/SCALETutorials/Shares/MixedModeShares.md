@@ -101,7 +101,7 @@ Configure a container (group or organizational unit), Kerberos admin, and user a
 You can create a share and dataset from either the **Add Dataset** or **Add SMB** screen.
 
 {{< hint type=info >}}
-The multi-protocol share type is mutually exclusive with AAPL extension support like time machine that requires the SMB2/3 lease support. Therefore, time machine cannot be enabled and a warning message shows in the UI. Selecting other Apple protocol options also displays warning messages. Mulit-protocol shares can impact the performance of all SMB shares.
+The multi-protocol share type is mutually exclusive with AAPL extension support like time machine. These extension require the SMB2/3 lease support which is no longer available in multi-protocol shares. Therefore, time machine cannot be enabled and a warning message shows in the UI. Selecting other Apple protocol options also displays warning messages. Mulit-protocol shares can impact the performance of all SMB shares.
 {{< /hint >}}
 
 ### Using the Add Dataset Screen
