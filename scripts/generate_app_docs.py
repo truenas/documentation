@@ -3,12 +3,15 @@ import json
 import re
 import requests
 
-# Paths to documentation directories
-# ***Update these paths if they differ on your local filesystem***
+# Determine the script's root directory
+script_dir = os.path.dirname(os.path.abspath(__file__))
+root_dir = os.path.abspath(os.path.join(script_dir, ".."))  # Move up one level from 'scripts' to project root
+
+# Paths to documentation directories (dynamically generated)
 output_dirs = {
-    "Enterprise": r"C:\Users\iXUser\Documents\GitHub\documentation\content\TruenasApps\EnterpriseApps",
-    "Stable": r"C:\Users\iXUser\Documents\GitHub\documentation\content\TruenasApps\StableApps",
-    "Community": r"C:\Users\iXUser\Documents\GitHub\documentation\content\TruenasApps\CommunityApps",
+    "Enterprise": os.path.join(root_dir, "content", "TruenasApps", "EnterpriseApps"),
+    "Stable": os.path.join(root_dir, "content", "TruenasApps", "StableApps"),
+    "Community": os.path.join(root_dir, "content", "TruenasApps", "CommunityApps"),
 }
 
 # Apps to ignore during processing
