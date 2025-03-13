@@ -71,7 +71,6 @@ It then creates ongoing hourly, daily, weekly, and monthly backups.
 The oldest backups are deleted when a Time Machine share fills up, so make sure that the quota size is large enough to hold the desired number of backups.
 A default installation of macOS is over 20 GiB.
 
-Configure a global quota using the instructions in [Set up Time Machine for multiple machines with OSX Server-Style Quotas](https://forums.freenas.org/index.php?threads/how-to-set-up-time-machine-for-multiple-machines-with-osx-server-style-quotas.47173/)
-or create individual share quotas.
+Currently maintained macOS versions allow setting maximum time machine backup sizes from the client, which provides even greater flexibility over setting a share-wide quota.
 
 See [vfs_fruit(8)](https://www.samba.org/samba/docs/current/man-html/vfs_fruit.8.html) and the [Apple documentation](https://support.apple.com/en-us/HT201250) for detailed Time Machine configuration instructions.

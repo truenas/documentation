@@ -28,8 +28,10 @@ To set up a basic time machine share:
 After creating the share, enable the SMB service.
 
 When accessing from a Windows client, having more than 512 snapshots on the TrueNAS box can lead to performance issues, as the Windows client often attempts to load all snapshots into the 'Previous Versions' tab.
-
 To avoid this, users should maintain fewer than 512 snapshots, or consider accessing from a non-Windows client. Alternatively, configuring snapshot lifetimes or creating an automatic deletion policy via the [Periodic Snapshot Tasks screen]({{< relref "PeriodicSnapshotTasksSCALE.md" >}}) can help users manage the snapshot count more effectively.
+
+The latest maintained macOS versions allow setting the maximumim time machine backup size from the macOS UI.
+Setting this from the client side is generally recommended for better share flexibility and macOS coordination.
 
 ### Creating the Share and Dataset
 You can either [create the dataset]({{< relref "DatasetsSCALE.md" >}}) to use for the share on the **Add Dataset** screen and the share, or create the dataset when you add the share on the **Add SMB** screen.
