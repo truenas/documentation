@@ -35,7 +35,7 @@ The <span class="material-icons">more_vert</span> icon displays four options ava
 * **SMB Sessions** opens the **SMB Status** screen with four tabs: **Sessions**, **Locks**, **Shares**, and **Notifications**.
 * **Audit Logs** opens the [**Audit** screen]({{< relref "AuditingSCALE.md" >}}) with a predefined filter for and showing the SMB share logs.
 
-Each SMB share row includes a toggle that provides quick access to enable or disable the shar, and four icons for different individual share functions:
+Each SMB share row includes a toggle that provides quick access to enable or disable the share, and four icons for different individual share functions:
 * <span class="material-icons">share</span> **Edit Share ACL** icon opens the [**Edit Share ACL**](#edit-share-acl-screen) screen.
 * <span class="material-icons">security</span> **Edit Filesystem ACL** icon opens the [**Edit ACL**](#edit-filesystem-acl-screen) screen.
 * <span class="iconify" data-icon="ic:baseline-edit"></span> edit icon opens the [**Edit SMB** screen](#add-and-edit-smb-screens).
@@ -74,7 +74,7 @@ The <span class="material-icons">more_vert</span> displays a dropdown list of op
 To return to the **Share** screen, click **Shares** on the main navigation panel or **Sharing** on the breadcrumb at the top of the screen.
 
 ## Add and Edit SMB Screens
-The two SMB share configuration screens, **Add SMB** and **Edit SMB**, display the same SNB share setting options.
+The two SMB share configuration screens, **Add SMB** and **Edit SMB**, display the same SMB share setting options.
 The **Create Dataset** option only shows on the **Add SMB** screen, but you can change it to another existing dataset on the system.
 
 **Save** creates the share (or saves an existing one) and adds it to the **Windows (SMB) Shares** widget and the table on the **Sharing > SMB** screen.
@@ -102,7 +102,7 @@ This table details the options found on the **Purpose** dropdown list.
 {{< include file="/static/includes/SMBPurposePresets.md" >}}
 
 ### Advanced Options Settings
-**Advanced Options** show settings made available or locked based on the selected in the **Purpose** option.
+**Advanced Options** show settings made available or locked based on the selection in the **Purpose** option.
 
 #### Access Settings
 **Access** settings customize access to the share and files and specify allowed or denied access for host names or IP addresses.
@@ -117,7 +117,7 @@ This table details the options found on the **Purpose** dropdown list.
 | **Browsable to Network Clients** | Select to include this share name when browsing shares. Enabled by default. Home shares are only visible to the owner regardless of this setting. |
 | **Allow Guest Access** | Select to enable and allow guest accounts to access the share. Privileges are the same as the guest account. Guest access is disabled by default in Windows 10 version 1709 and Windows Server version 1903. Additional client-side configuration is required to provide guest access to these clients. <br>**MacOS clients**: Attempting to connect as a user that does not exist in FreeNAS does not automatically connect as the guest account. You must select the **Connect As: Guest** option in macOS to log in as the guest account. See the [Apple documentation](https://support.apple.com/guide/mac-help/connect-mac-shared-computers-servers-mchlp1140/mac) for more details. |
 | **Access Based Share Enumeration** | Select to restrict share visibility to users with read or write access to the share. Open is the default for this setting. See the [smb.conf](https://www.samba.org/samba/docs/current/man-html/smb.conf.5.html) manual page. |
-| **Hosts Allow** | Enter a list of allowed host names or IP addresses. Separate entries by pressing <kbd>Enter</kbd>. Ford a more detailed description with examples click [here](https://www.samba.org/samba/docs/current/man-html/smb.conf.5.html#HOSTSALLOW).
+| **Hosts Allow** | Enter a list of allowed host names or IP addresses. Separate entries by pressing <kbd>Enter</kbd>. For a more detailed description with examples click [here](https://www.samba.org/samba/docs/current/man-html/smb.conf.5.html#HOSTSALLOW).
 | **Hosts Deny** | Enter a list of denied host names or IP addresses. Separate entries by pressing <kbd>Enter</kbd>. |
 {{< /truetable >}}
 
@@ -156,7 +156,7 @@ The **Other Options** settings include improving Apple software compatibility, Z
 {{< /truetable >}}
 
 #### Other Options
-The **Other Options** shows after selecting **Advanced Options**. The **Purpose** setting sets default options and affects which other settings (presets) are selectable. Some options are available or locked based on the choice.
+The **Other Options** show after selecting **Advanced Options**. The **Purpose** setting sets default options and affects which other settings (presets) are selectable. Some options are available or locked based on the choice.
 The expandable below provides a comparison table listing these preset options and shows whether the option is available or locked.
 
 {{< expand "What do all the presets do?" "v" >}}
