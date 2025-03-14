@@ -22,7 +22,7 @@ related: false
 There are two main application screens, [**Installed**](#installed-screen) and [**Discover**](#discover-screen).
 The **Installed** applications screen shows status of installed apps, provides access to [pod shell and logs screens](#workloads-widget) and a web portal for the app (if available), and the ability to edit deployed app settings.
 
-The **Discover** screen show widgets for the installed catalog of apps.
+The **Discover** screen shows widgets for the installed catalog of apps.
 The individual app widgets open app information screens with details about that application, and access to an installation wizard for the app.
 It also includes options to install [third-party applications](#install-custom-app-screen) in Docker containers that allow users to deploy apps not included in the catalog.
 
@@ -64,7 +64,7 @@ The first time you open the **Installed** applications screen a dialog prompts y
 Select the pool from the dropdown list, then click **Save**. This starts the applications service.
 If you exit out of this dialog, to set the pool, click [**Settings > Choose Pool**](#choose-a-pool-for-apps-dialog) to select a storage pool for apps.
 
-If a pool is not chosen and you attempt to install an application, after clicking **Install** on an application information screen a dialog window prompts you to select a pool before the installation wizard shows.
+If a pool is not chosen and you attempt to install an application, a dialog window prompts you to select a pool before the installation wizard shows.
 
 ### Unset Pool
 
@@ -75,7 +75,7 @@ When complete, a **Success** dialog displays.
 
 ### Manage Container Images
 
-The **Manage Container Images** screen lists all container images currently downloaded on TrueNAS.
+The **Manage Container Images** screen lists all container images downloaded on TrueNAS.
 
 {{< trueimage src="/images/SCALE/Apps/AppsManageContainerImages.png" alt="Apps Manage Container Images" id="Apps Manage Container Images" >}}
 
@@ -157,7 +157,7 @@ Select a predefined range from the dropdown list.
 
 {{< hint type="info" title="Apps Troubleshooting Tip!" >}}
 This setting replaces the Kubernetes Settings option for Bind Network in 24.04 and earlier.
-Use to resolve issues where apps experiences issues where TrueNAS device is not reachable from some networks.
+Use to resolve issues where apps experience issues where the TrueNAS device is not reachable from some networks.
 Select the network option, or add additional options to resolve the network connection issues.
 {{< /hint >}}
 
@@ -209,9 +209,9 @@ Upgrade begins updating the applications one at a time. Apps status changes to S
 
 ## Application Widgets
 
-Installed application have a set of widgets on the **Installed** screen.
+Installed applications have a set of widgets on the **Installed** screen.
 Select an application row to view the information widgets for that application.
-Information in the widgets change based on the app row selected in the **Applications** table.
+Information in the widgets changes based on the app row selected in the **Applications** table.
 
 ### Application Info Widget
 
@@ -291,7 +291,7 @@ Use the logs to help troubleshoot problems with your container pods.
 
 ### Notes Widget
 
-The **Notes** widget shows information about the apps, location where TrueNAS Documentation Hub articles are found, and links to file bug reports through Jira or GitHub, and where to make feature requests.
+The **Notes** widget shows information about the apps, TrueNAS Documentation Hub article locations, links to file bug reports through Jira or GitHub, and where to make feature requests.
 
 {{< trueimage src="/images/SCALE/Apps/AppsNotesWidget.png" alt="Apps Notes Widget" id="Apps Notes Widget" >}}
 
@@ -347,15 +347,15 @@ See [Install Custom App Screens]({{< relref "InstallCustomAppScreens.md" >}}) fo
 
 ## Application Information Screens
 
-Each application widget on the **Discover** screen opens a information screen with details about that application, a few screenshot of web UI for the application, and the **Install** button.
+Each application widget on the **Discover** screen opens an information screen with details about that application, a few screenshots of the web UI for the application, and the **Install** button.
 Application information shows the app version, GitHub repository link for the image, and date the image was last updated, keywords, the TrueNAS app train, and the app homepage location.
 
 {{< trueimage src="/images/SCALE/Apps/CollaboraInfoScreen.png" alt="Application Information Screen Example" id="Application Information Screen Example" >}}
 
 The application information screen shows two widgets:
 
-* **Available Resources** that shows CPU and memory usage the app requires, the app pool, and available space in gigabits.
-* **Application Info** that includes the application version number, link to GitHub repository for the image, and date the image was last application updated.
+* **Available Resources** that show CPU and memory usage the app requires, the app pool, and available space in gigabits.
+* **Application Info** that includes the application version number, link to GitHub repository for the image, and date the image was last updated.
 
 Some applications might also include the **Run-As Content** and **Capabilities** widgets.
 
