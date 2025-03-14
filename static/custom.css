@@ -2481,7 +2481,7 @@ pre.gdoc-mermaid.mermaid.mermaid_sizing {
 
 .version-header {
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     width: 100%;
     padding: 5px;
   }
@@ -2496,10 +2496,15 @@ pre.gdoc-mermaid.mermaid.mermaid_sizing {
   .version-line {
     flex-grow: 1;
     height: 1px;
-    border: none;
     border-top: 1px solid white;
-    margin-left: 10px;
-    margin-bottom: 2px;
+    margin-left: 5px;
+  }
+
+  .no-version-line {
+    flex-grow: 1;
+    height: 1px;
+    border-top: 1px solid white;
+    margin: 0 5px;
   }
 
 /* End Styling for Version Selector Sections */
