@@ -2523,4 +2523,12 @@ pre.gdoc-mermaid.mermaid.mermaid_sizing {
     border-left: 5px solid #0095D5;
   }  
 
+  .support-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    display: block; 
+    margin-bottom: 0.5rem;
+  }
+  
+
 /* End Styling for App Support Definitions Cards */
