@@ -2487,3 +2487,29 @@ pre.gdoc-mermaid.mermaid.mermaid_sizing {
     background: transparent !important; /* Removes alternating row colors */
   }
   
+/* Styling for Version Selector Sections */
+
+.version-header {
+    display: flex;
+    align-items: flex-end;
+    width: 100%;
+    padding: 5px;
+  }
+  
+  .version-label {
+    flex-shrink: 0;
+    font-size: 0.9em;
+    color: white;
+    line-height: 1;
+  }
+  
+  .version-line {
+    flex-grow: 1;
+    height: 1px;
+    border: none;
+    border-top: 1px solid white;
+    margin-left: 10px;
+    margin-bottom: 2px;
+  }
+
+/* End Styling for Version Selector Sections */
