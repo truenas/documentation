@@ -33,7 +33,7 @@ For more information on configuring general application functions and installati
 
 {{< include file="/static/includes/apps/InstallWizardSettingsOverview.md" >}}
 
-For information on adding to or changing the train for the apps catalog, see [Managing App Trains]({{< relref "UsingTrains.md" >}}).
+For information on adding to or changing the train for the apps catalog, see [Changing App Trains]({{< relref "/truenasapps/_index.md #changing-app-trains" >}}).
 
 <div class="noprint">
 
