@@ -108,36 +108,9 @@ Click **Configuration > Settings** to open the **Settings** screen, which contai
 
 {{< trueimage src="/images/SCALE/Apps/AppsSettingScreen.png" alt="Apps Settings Screen" id="Apps Settings Screen" >}}
 
-### Managing the Application Catalog
+### Managing Application Catalogs
 
-<!-- get clarification on this and then update train landing pages as well -->
-TrueNAS applications are available in three catalogs (trains):
-
-* **stable** - Default train of official apps, vetted by the TrueNAS team, chosen because of the features and functionality of the app, and how they integrate with TrueNAS.
-* **enterprise** - Default train of apps, simplified and validated for Enterprise users for TrueNAS Enterprise-licensed systems.
-* **community** - Apps proposed and maintained by the community
-
-The default TrueNAS **Stable** catalog populates the **Discover** apps screen with apps.
-
-Some apps proposed by community members might be adopted as official **stable** train apps.
-The TrueNAS team maintains official apps for non-Enterprise and community users.
-
-<!--Support Definitions for details-->
-
-Users can change the apps displayed on the **Discover** screen by adding or removing trains.
-
-To add or remove a train, **Settings** on the **Configuration** dropdown list to open the **Settings** screen.
-
-{{< trueimage src="/images/SCALE/Apps/AppsSettingScreen.png" alt="Settings Screen" id="Settings Screen" >}}
-
-Select the **Preferred Trains** checkbox(es) for the train(s) to include, then click **Save**.
-
-After making a change, go to the **Discover** screen and click on **Refresh Catalog** to pull the catalog from the repository and refresh it in TrueNAS.
-
-{{< trueimage src="/images/SCALE/Apps/AppsDiscoverScreen.png" alt="Applications Discover Screen" id="Applications Discover Screen" >}}
-
-To remove a train from the catalog, deselect the checkbox for the train on the **Settings** screen, then click **Save**.
-You must have at least one train selected.
+{{< include file="/static/includes/apps/AppCatalogs.md" >}}
 
 ### Apps Network Settings
 
