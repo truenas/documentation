@@ -116,11 +116,10 @@ mark {
 .truenas-docs-menuitem:hover .truenas-docsnav-menubutton {background-color: #0e0e0e;color:#31beec;}
 
 .sidebar-fixed {
-    position: fixed;
-    max-height: 75vh;
-    overflow-y: auto;
-    z-index: 1;
-    scrollbar-width: thin;
+    position: sticky;
+    top: 0;
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
 }
 
 /* Webkit (Safari and Chrome) */
@@ -617,7 +616,7 @@ mark {
 }
 .toc-panel {
 	position: fixed;
-	max-height: 75vh;
+	max-height: 50vh;
 	overflow-y: auto;
 	padding: 1rem 1rem 1rem 0rem;
 	font-size: 14px;
@@ -2469,6 +2468,22 @@ pre.gdoc-mermaid.mermaid.mermaid_sizing {
 .edition-logo {
     height: 24px !important;
     vertical-align: middle !important;
+  }
+
+  .no-highlight-table table {
+    background: transparent !important; /* Prevents colored highlights */
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  .no-highlight-table th, .no-highlight-table td {
+    border: 1px solid #ddd; /* Light border for readability */
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .no-highlight-table tr:nth-child(even) {
+    background: transparent !important; /* Removes alternating row colors */
   }
   
 /* Styling for App Support Definitions Cards */

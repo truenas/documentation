@@ -8,12 +8,12 @@
   This occurs due to conflicts between the manually installed and native Docker configurations.  
   * Affected systems can encounter `app_lifecycle.compose_action` errors, such as:  
     `'group_add[0]' expected type 'string', got unconvertible type 'int', value: '568'`
-  * See [NAS-134660](https://ixsystems.atlassian.net/browse/NAS-13466) for details and a workaround.
+  * See [NAS-134660](https://ixsystems.atlassian.net/browse/NAS-134660) for details and a workaround.
   {{< /expand >}}
 
 * All auxiliary parameters can experience changes between TrueNAS major versions due to security and development changes.
   We recommend removing all auxiliary parameters from TrueNAS configurations before upgrading as these settings can result in SMB share failures after an upgrade.
 
-* {{< include file="/static/includes/UpgradeClearCache.md" >}}
+{{< include file="/static/includes/UpgradeClearCache.md" >}}
 
 {{< include file="/static/includes/AppsUnversionedAdmonition.md" >}}
