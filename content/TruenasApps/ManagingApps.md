@@ -21,23 +21,21 @@ For details on setting up the TrueNAS Apps service, configuring global settings,
 
 The **Discover** screen shows application widgets based on the trains selected on the **Train Settings** screen.
 
-TrueNAS Community Edition systems show the **community** and **stable** catalog of apps by default.
-These are official applications, pre-configured to only require a name during a test deployment, or some customization for a full deployment.
-
-Enterprise-licensed systems display the **enterprise** train of applications simplified and validated for Enterprise systems.
-
-Community users can add the **enterprise** train on the [**Train Settings**](RELREF #changing-app-trains) screen.
-
 {{< trueimage src="/images/SCALE/Apps/AppsDiscoverScreen.png" alt="Applications Discover Screen" id="Applications Discover Screen" >}}
 
 Use the **Discover** screen links to access other functions.
 
 * [**Refresh Catalog**](#refreshing-the-apps-catalog) - Refreshes the list of app widgets after changing train settings or changes to the catalog.
-* **Manage Installed Apps** - Opens the **Installed** apps screen where you access the **Configuration** menu to manage general application settings.
+* [**Manage Installed Apps**](#managing-installed-apps) - Opens the **Installed** apps screen where you access the **Configuration** menu to manage general application settings.
+* [**Custom App**](#installing-custom-apps) - Allows users to deploy custom applications.
 
 Click on an app widget to open the app information screen with details about the selected application.
 
 {{< trueimage src="/images/SCALE/Apps/CollaboraInfoScreen.png" alt="Application Information Screen Example" id="Application Information Screen Example" >}}
+
+### Managing Application Catalogs
+
+{{< include file="/static/includes/apps/AppCatalogs.md" >}}
 
 ### Understanding Versions
 
@@ -157,7 +155,7 @@ See [Installing Custom Applications]({{< relref "UsingCustomApp.md" >}}) for a d
 Installed applications appear on the **Installed** applications screen.
 Click on an app row to view **Details**, including the **Application Info**, **Workloads**, **Notes**, and **Application Metadata** widgets.
 
-{{< trueimage src="/images/SCALE/Apps/InstalledAppsScreenWithApps.png" alt="" id="" >}}
+{{< trueimage src="/images/SCALE/Apps/InstalledAppsScreenWithApps.png" alt="Installed Applications Screen" id="Installed Applications Screen" >}}
 
 ### Upgrading Apps
 
