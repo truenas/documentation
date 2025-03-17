@@ -15,8 +15,7 @@ If you have not added SMB shares to the system, the SMB widget shows **No record
 {{< trueimage src="/images/SCALE/Shares/WindowsSMBShareWidgetNoShares.png" alt="Windows (SMB) Share Widget without Shares" id="Windows (SMB) Share Widget without Shares" >}}
 
 **Add** at the top right of the widget opens the [**Add SMB** screen](#add-and-edit-smb-screens) where you configure SMB shares.
-
-After adding an SMB share it displays on the widget.
+Added SMB shares show on the widget.
 
 {{< trueimage src="/images/SCALE/Shares/WindowsSMBShareWidget.png" alt="Windows (SMB) Share Widget with Shares" id="Windows (SMB) Share Widget with Shares" >}}
 
@@ -36,19 +35,6 @@ Each SMB share row includes a toggle that provides quick access to enable or dis
 * <span class="material-icons">security</span> **Edit Filesystem ACL** icon opens the [**Edit ACL**](#edit-filesystem-acl-screen) screen.
 * <span class="iconify" data-icon="ic:baseline-edit"></span> edit icon opens the [**Edit SMB** screen](#add-and-edit-smb-screens).
 * <span class="material-icons">delete</span> opens the [**Delete** dialog](#delete-smb-share-dialog).
-
-The **Windows (SMB) Shares <span class="material-icons">launch</span>** toolbar displays the status of the SMB service as either **STOPPED** (red) or **RUNNING** (blue).
-Before adding the first share, the **STOPPED** status displays in the default color.
-
-Click on the widget header to open the [**Sharing > SMB** details](#sharing-smb-details-screen) screen.
-
-**Add** opens the **[Add SMB](#add-and-edit-smb-screens)** share configuration screen.
-
-The <span class="material-icons">more_vert</span> icon displays four options available to SMB shares in general:
-* **Turn Off Service** what shows when the SMB service is enabled and that toggles to **Turn On Service** when the SMB service is disabled.
-* **Config Service** that opens the [**SMB**]({{< relref "SMBServicesScreen.md" >}}) configuration screen.
-* **SMB Sessions** that opens the **SMB Status** screen with four tabs: **Sessions**, **Locks**, **Shares**, and **Notifications**.
-* **Audit Logs** that opens the [**Audit** screen]({{< relref "AuditingSCALE.md" >}}) with a predefined filter for and showing the SMB share logs.
 
 ### Delete SMB Share Dialog
 The <span class="material-icons">delete</span> trash can icon opens the **Delete** dialog.
@@ -217,7 +203,7 @@ These settings configure new ACL entries for the selected SMB share and apply th
 
 ## Edit Filesystem ACL Screen
 The **Edit Filesystem ACL** option opens the **Edit ACL** screen for the dataset the share uses.
-See [**Edit ACL Screen**]({{< relref "EditACLScreens.md" >}}) more information on the settings found on this screen.
+See [**Edit ACL Screen**]({{< relref "EditACLScreens.md" >}}) for more information on the settings found on this screen.
 
 {{< trueimage src="/images/SCALE/Shares/SMBACLEditor.png" alt="SMB ACL Editor" id="SMB ACL Editor" >}}
 
