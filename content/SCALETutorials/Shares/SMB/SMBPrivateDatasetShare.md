@@ -203,7 +203,7 @@ If not already created, add a pool, then join Active Directory.
 
 Go to **Storage** and [create a pool]({{< relref "CreatePoolWizard.md" >}}).
 
-Next, [set up the Active Directory]({{< relref "/SCALE/SCALETutorials/credentials/directoryservices/configadscale.md" >}}) that you want to share resources with over your network.
+Next, [set up the Active Directory]({{< relref "/SCALETutorials/credentials/directoryservices/configadscale.md" >}}) that you want to share resources with over your network.
 
 When creating the share for this dataset, use the **SMB** preset for the dataset but do not add the share from the **Add Dataset** screen. 
 
