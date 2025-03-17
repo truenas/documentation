@@ -45,6 +45,8 @@ The **Add Sysctl** or **Edit Sysctl** configuration screens display the settings
 
 ![AddSysctlConfigScreens](/images/SCALE/SystemSettings/AddSysctlConfigScreen.png "TrueNAS Add Sysctl Screen")
 
+Select the sysctl type from the **Type** drop-down menu. Sysctl types refer to the category of sysctl users wish to add.
+
 Enter the sysctl variable name in **Variable**. Sysctl tunables configure kernel module parameters while the system runs and generally take effect immediately.
 
 Enter a [sysctl](https://man7.org/linux/man-pages/man8/sysctl.8.html) value for the loader in **Value**.

@@ -186,6 +186,7 @@ The **Add Sysctl** or **Edit Sysctl** configuration screen settings let users se
 {{< truetable >}}
 | Settings | Description |
 |----------|-------------|
+| **Type** | Select the type of sysctl you wish to add from the drop-down menu. Options include: SYSCTL, UDEV, and ZFS. |
 | **Variable** | Enter the name of the sysctl variable to configure. Sysctl tunables configure kernel parameters while the system runs and generally take effect immediately. |
 | **Value** | Enter a [sysctl](https://man7.org/linux/man-pages/man8/sysctl.8.html) value to use for the loader, **sysctl** variable. |
 | **Description** | Enter a description for the tunable. |
