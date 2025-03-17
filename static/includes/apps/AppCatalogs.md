@@ -12,7 +12,7 @@ TrueNAS applications are available in three catalogs (trains):
   <div class="support-card community">
      <b class="support-title">Stable</b>
     <p>Applications tested by the TrueNAS Engineering team and chosen based on their functionality and integration with TrueNAS.</p>
-    <p>TrueNAS Engineering may provide software maintenance for these applications, but the TrueNAS Support team does not offer continual support.
+    <p>TrueNAS Engineering can provide software maintenance for these applications, but the TrueNAS Support team does not offer continual support.
     Issues for these applications are <a href="https://github.com/truenas/apps/issues">tracked separately</a> and addressed on a best-effort basis in the <a href="https://forums.truenas.com/">community forums</a> and other user-driven resources.</p>
   </div>
 
