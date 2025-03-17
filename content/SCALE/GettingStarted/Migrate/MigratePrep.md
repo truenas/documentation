@@ -26,7 +26,7 @@ For more information on using USB drives and devices in general, read the [Hardw
 If you must use a USB-type device, verify you can access files on the device before you migrate.
 {{< /hint >}}
 {{< enterprise >}}
-Enterprise customers are strongly encouraged to contact Support for assistance with the process of moving from a FreeBSD-based (13.3 or earlier) to a Linux-based (22.12 or newer) TrueNAS version, especially customers with HA systems and iSCSI shares. Enterprise customers should not attempt to migrate their HA systems with iSCSI or fibre channel on their own!
+Enterprise customers are strongly encouraged to contact Support for assistance with the process of moving from a FreeBSD-based (13.3 or earlier) to a Linux-based (22.12 or newer) TrueNAS version, especially customers with HA systems with iSCSI shares or fibre channel. Enterprise customers should not attempt to migrate their HA systems with iSCSI or fibre channel on their own!
 Enterprise systems with iSCSI and fibre channel deployments require complex, special preparation and migration steps executed before and after migration to ensure data integrity.
 Please contact Support for assistance!
 {{< /enterprise >}}
