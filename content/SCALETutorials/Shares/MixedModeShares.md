@@ -25,6 +25,9 @@ It is important to properly configure permissions and access controls to ensure 
 To maximize security on the NFS side of the multiprotocol share, we recommend using NFSv4 and [Active Directory](#joining-active-directory)(AD) for Kerberos authentication.
 It is also important that NFS clients preserve extended attributes when copying files, or SMB metadata could be discarded in the copy.
 
+Multiprotocol shares are not compatible with the Apple Time Machine feature.
+Choosing to configure a multiprotocol share disables options to enable AAPL extensions globally.
+
 ## First Steps
 Before adding a multiprotocol SMB and NFS share to your system:
 
