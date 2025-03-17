@@ -70,10 +70,12 @@ Please contact Support for assistance!
 
    <input type="checkbox"> Data protection tasks - Write down or take screenshots of replication, periodic snapshots, cloud sync, or other task settings to reconfigure these after migrating.
 
-   Enterprise systems with iSCSI shares and/or fibre channel deployments have special requirements, preparation and migration steps to ensure data integrity and a smooth migration.
+   
    Community users with iSCSI deployments can migrate their systems without assistance. Note, unlike FreeBSD systems, Linux Debian systems require at least one LUN set to zero.
    iSCSI portals in Linux Debian-based systems are defined globally instead of per port.
-   Other iSCSI differences only apply to Enterprise High Availability (HA) systems and those with fibre channel ports. Enterprise users **must** contact Support for assistance with their migrations!
+
+   Enterprise systems with iSCSI shares and/or fibre channel deployments have special requirements, preparation and migration steps to ensure data integrity and a smooth migration.
+   Other iSCSI differences only apply to Enterprise High Availability (HA) systems and those with fibre channel ports. Enterprise users **must** contact TrueNAS Customer Support for assistance with their migrations!
 
 5. Remove all SMB auxiliary parameter settings before migrating.
    In TrueNAS 23.10 (Cobia) or newer, the SMB **Auxiliary Parameters** option is unavailable in the UI.
