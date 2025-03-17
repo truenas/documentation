@@ -11,12 +11,12 @@ tags:
 {{< include file="/static/includes/RootLevelDatasetShareWarning.md" >}}
 
 ## About Multiprotocol Shares
-A multiprotocol or mixed-mode NFS and SMB share supports both NFS and SMB protocols for sharing data.
-Multiprotocol shares allow clients to use either protocol to access the same data.
+A mult-protocol or mixed-mode NFS and SMB share supports both NFS and SMB protocols for sharing data.
+Multi-protocol shares allow clients to use either protocol to access the same data.
 This can be useful in environments with a mix of Windows systems and Unix-like systems, especially if some clients lack an SMB client.
 
 {{< hint type=tip >}}
-Carefully consider your environment and access requirements before configuring a multiprotocol share.
+Carefully consider your environment and access requirements before configuring a multi-protocol share.
 For many applications, a single protocol SMB share provides a better user experience and ease of administration.
 Linux clients can access SMB shares using [`mount.cifs`](https://linux.die.net/man/8/mount.cifs).
 {{< /hint >}}
@@ -25,8 +25,9 @@ It is important to properly configure permissions and access controls to ensure 
 To maximize security on the NFS side of the multiprotocol share, we recommend using NFSv4 and [Active Directory](#joining-active-directory)(AD) for Kerberos authentication.
 It is also important that NFS clients preserve extended attributes when copying files, or SMB metadata could be discarded in the copy.
 
-Multiprotocol shares are not compatible with the Apple Time Machine feature.
-Choosing to configure a multiprotocol share disables options to enable AAPL extensions globally.
+Multi-protocol shares are not compatible with APPL extensions such as Apple Time Machine that rely on SMB3/3 lease support which is no longer available in multi-protocol shares.
+The Apple Time Machine feature cannot be enabled and a warning message shows in the UI.
+Choosing to configure a multi-protocol share disables options to enable AAPL extensions globally.
 
 ## First Steps
 Before adding a multiprotocol SMB and NFS share to your system:
