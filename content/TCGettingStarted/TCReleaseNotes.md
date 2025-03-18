@@ -52,7 +52,7 @@ Note that if you are using TrueCommand with a TrueNAS SCALE HA system, you need 
 
 API key logins now fail and revoke the key, triggering a NAS alert. Users who are using a self-signed certificate might experience broken connections. It is advised to update your authentication settings prior to updating to TrueCommand 3.1.0 to avoid this disruption.
 
-After updating, clear the browser cache (CTRL+F5) before logging in to TrueCommand. This ensures stale data does not interfere the TrueCommand UI.
+After updating, clear the browser cache (CTRL+F5) before logging in to TrueCommand. This ensures stale data does not interfere with the TrueCommand UI.
 
 ### TrueNAS Compatibility
 
