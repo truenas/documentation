@@ -72,7 +72,7 @@ Remember to enable the SSH service in **System > Services** after making changes
 
 Create and store SSH connections and keypairs to allow SSH access in **Credentials > Backup Credentials** or by editing an administrative user account. See [Adding SSH Credentials]({{< relref "AddSSHConnectionKeyPair.md" >}}) for more information.
 
-TrueNAS shows an error if users activate Global 2FA (Two-Factor Authentication) and attempt to enable password-based SSH authentication without a 2FA token. See [Managing Global 2FA](https://www.truenas.com/docs/scale/scaletutorials/systemsettings/advanced/manageglobal2fascale/) for more information.
+TrueNAS shows an error if users activate Global 2FA (Two-Factor Authentication) and attempt to enable password-based SSH authentication without a 2FA token. See [Managing Global 2FA](https://www.truenas.com/docs/SCALETutorials/systemsettings/advanced/manageglobal2fascale/) for more information.
 
 ### Using SFTP Connections
 
