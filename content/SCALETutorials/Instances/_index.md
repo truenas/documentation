@@ -65,7 +65,7 @@ Select a pool with enough storage space for all the instances you intend to host
 
 For stability and performance, we recommend using SSD/NVMe storage for the instances pool due to their faster speed and resilience for repeated read/writes.
 
-TrueNAS creates a hidden **ix-virt** dataset on the selected pool and mounts the hidden directory at <file>/mnt/POOL/.ix-virt</file>.
+TrueNAS creates a hidden **ix-virt** dataset on the selected pool and mounts the hidden directory at <file>*POOL*/.ix-virt</file>.
 The ix-virt dataset does not inherit encryption if an encrypted pool is selected as the pool for instances.
 
 To select a different pool for instances to use, use the **Pool** dropdown to select a different pool.
