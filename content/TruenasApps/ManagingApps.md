@@ -182,7 +182,7 @@ After the app status changes to stopped, click **Delete** on the **Application I
 
 Select **Remove iXVolumes** to delete hidden app storage from the apps pool.
 Select **Force-Remove iXVolumes** to delete app storage created on TrueNAS 24.04 and migrated to 24.10 or later.
-Proceed with caution as this option removes both legacy kubernetes and current Docker data for the application.
+Proceed with caution as this option removes both legacy Kubernetes and current Docker data for the application.
 
 Select **Remove Images** to prune Docker images of the deleted app.
 
