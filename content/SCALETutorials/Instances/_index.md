@@ -19,22 +19,61 @@ keywords:
 
 {{< include file="/static/includes/25.04Virtualization.md" >}}
 
-**Instances** allow users to set up containers or virtual machines (VMs) to run alongside TrueNAS.
+**Instances** allow users to configure Incus-based containers or VMs in TrueNAS.
 
-A *Linux container* is a lightweight, isolated environment that shares the host system kernel while maintaining its own filesystem, processes, and network settings.
-Containers start quickly, use fewer system resources than VMs, and scale efficiently, making them ideal for deploying and managing applications with minimal overhead.
+*Linux containers*, powered by LXC, offer a lightweight, isolated environment that shares the host system kernel while maintaining its own filesystem, processes, and network settings.
+Containers start quickly, use fewer system resources than VMs, and scale efficiently, making them ideal for deploying and managing scalable applications with minimal overhead.
 
-A *virtual machine (VM)* is an environment on a host computer that operates like a separate physical computer.
-VMs allow users to run multiple operating systems simultaneously on a single machine.
-VMs emulate hardware, providing greater isolation than containers but requiring more system resources.
+*Virtual machines (VMs)*, powered by QEMU, offer full OS isolation, kernel independence, and can run diverse OS types.
+VMs emulate hardware, providing greater isolation than containers but requiring more system resources, making them ideal for legacy applications, full-featured desktops, or software with strict OS dependencies.
 
-<!-- to be removed -->
-{{< hint type=note >}}
-A full tutorial for **Instances** is coming soon.
+{{< expand "What system resources do instances require?" "v" >}}
+{{< include file="/static/includes/ScaleVMReqResources.md" >}}
+{{< /expand >}}
 
-For the most up-to-date documentation on this feature, see [Instances Screens]({{< relref "/SCALEUIReference/InstancesScreens.md" >}}).
-{{< /hint >}}
-<!-- / to be removed -->
+## Setting Up the Instances Service
+
+You must choose a pool before you can deploy an instance.
+The **Instances** screen header displays a <i class="fa fa-cog" aria-hidden="true"></i> **Pool is not selected** status before a pool for instances is selected.
+See [Choosing the Instances Pool](#choosing-the-instances-pool) below for more information about pool selection.
+
+{{< trueimage src="/images/SCALE/Virtualization/InstancesPoolNotSelected.png" alt="Pool Is Not Selected" id="Pool Is Not Selected" >}}
+
+After setting the pool, <i class="fa fa-check" aria-hidden="true" title="Check"></i> **Initialized** shows on the screen header.
+
+For more information on screens and screen functions, refer to the UI Reference article on [Instances Screens]({{< relref "/SCALEUIReference/InstancesScreens.md" >}}).
+
+Use the **Configuration** dropdown to access the **[Global Settings](#configuring-global-settings)**, **[Manage Volumes](#managing-volumes)**, and [**Map User/Group IDs**](#mapping-user-and-group-ids) options.
+
+### Configuring Global Settings
+
+<!-- General Global Settings description with screenshot 
+
+**Global Settings** opens the **Global Settings** screen showing global options that apply to all instances, including selecting the storage pool for instances and network settings.
+
+{{< trueimage src="/images/SCALE/Virtualization/InstancesGlobalSettingsScreen.png" alt="Global Settings Screen" id="Global Settings Screen" >}}
+-->
+
+#### Choosing the Instances Pool
+
+You must set the pool before you can add any instances.
+
+Use the use the **Pool** dropdown to select the pool and click **Save**.
+
+We recommend users keep the VM and container use case in mind when choosing an instances pool.
+Select a pool with enough storage space for all the instances you intend to host.
+
+For stability and performance, we recommend using SSD/NVMe storage for the instances pool due to their faster speed and resilience for repeated read/writes.
+
+TrueNAS creates a hidden **ix-virt** dataset on the selected pool and mounts the hidden directory at <file>/mnt/POOL/.ix-virt</file>.
+The ix-virt dataset does not inherit encryption if an encrypted pool is selected as the pool for instances.
+
+To select a different pool for instances to use, use the **Pool** dropdown to select a different pool.
+Select **[Disabled]** to deselect the active pool and disable the instances service.
+
+#### Configuring the Default Network
+
+### Managing Volumes
 
 <!-- To include in tutorial PR:
 
@@ -64,10 +103,15 @@ To prevent accidental deletion of an in-use image, the delete icon is not select
 
  -->
 
+
+### Mapping User and Group IDs
+
+## Creating Instances
+
+### Creating a Virtual Machine
+
+### Creating a Container
 <!-- Commenting out previous tutorial content
-{{< expand "What system resources do VMs require?" "v" >}}
-{{< include file="/static/includes/ScaleVMReqResources.md" >}}
-{{< /expand >}}
 
 ## Creating a Virtual Machine
 Before creating a VM, obtain an installer <file>.iso</file> or image file for the OS you intend to install, and create a [zvol]({{< relref "AddManageZvols.md" >}}) on a storage pool that is available for both the virtual disk and the OS install file.
