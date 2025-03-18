@@ -36,6 +36,34 @@ For the most up-to-date documentation on this feature, see [Instances Screens]({
 {{< /hint >}}
 <!-- / to be removed -->
 
+<!-- To include in tutorial PR:
+
+{{< expand "Image Filename Requirements" "v" >}}
+{{< include file="/static/includes/InstanceImageFilename.md" >}}
+
+This ensures the instance name works without conflicts in DNS records, the file system, security profiles, and as the instance hostname.
+See [Instance name requirements](https://linuxcontainers.org/incus/docs/main/reference/instance_properties/#instance-name-requirements) from Incus for more information.
+{{< /expand >}}
+
+
+---
+
+#### Delete Volumes
+
+Click <i class="material-icons" aria-hidden="true" title="Delete">delete</i> on an image row to delete that image.
+A **Delete volume** dialog displays.
+
+{{< trueimage src="/images/SCALE/Virtualization/InstancesDeleteVolume.png" alt="Delete Volume Dialog" id="Delete Volume Dialog" >}}
+
+Select **Confirm** and then click **Continue** to delete the image.
+To prevent accidental deletion of an in-use image, the delete icon is not selectable for active images.
+
+---
+
+
+
+ -->
+
 <!-- Commenting out previous tutorial content
 {{< expand "What system resources do VMs require?" "v" >}}
 {{< include file="/static/includes/ScaleVMReqResources.md" >}}
