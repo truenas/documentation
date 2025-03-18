@@ -90,7 +90,7 @@ Enter a number for the maximum number of simultaneous replication tasks you want
 
 ## Managing Allowed IP Addresses
 
-Use the **System > Advanced Settings** screen **Allowed IP Addresses** configuration screen to restrict access to the TrueNAS web UI and API.
+Use the **Allowed IP Addresses** configuration screen in **System > Advanced Settings** to restrict access to the TrueNAS web UI and API.
 
 Entering an IP address limits access to the system to only the address(es) entered here. To allow unrestricted access to all IP addresses, leave this list empty.
 
