@@ -30,7 +30,7 @@ Users can submit changes to an existing application catalogs through:
 ### Contributing Applications
 
 The Apps catalog is open for contributions!
-For instructions on how to locally develop and test new applications, see the [contributors guide](https://github.com/truenas/apps/blob/master/CONTRIBUTIONS.md) on Github.
+For instructions on how to locally develop and test new applications, see the [contributors guide](https://github.com/truenas/apps/blob/master/CONTRIBUTIONS.md) on GitHub.
 
 ### Participating in Github Discussions
 
