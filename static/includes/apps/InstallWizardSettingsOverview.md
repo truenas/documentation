@@ -42,7 +42,7 @@ All apps in the **stable** train, some **community** train apps, and all apps in
 
   Some applications require specific storage volumes for configuration and other data.
   Apps with these requirements indicate this in the wizard UI or details screen.
-  Refer to  tutorials for specifics.
+  Refer to tutorials for specifics.
 
   Depending on the app, storage options include:
   * **ixVolume**
