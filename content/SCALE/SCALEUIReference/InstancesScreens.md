@@ -16,8 +16,8 @@ tags:
 
 The **Instances** screen allows users to add, edit, or manage virtual machines (VMs) and Linux containers.
 
-The first time you go to **Instances**, the screen header shows a <i class="fa fa-cog" aria-hidden="true"></i> **Pool is not selected** status.
-You must choose the pool instances use before you can create an instance. See [**Global Settings**](#global-settings) for more information.
+The screen header displays a <i class="fa fa-cog" aria-hidden="true"></i> **Pool is not selected** status before a pool for instances is selected.
+See [**Global Settings**](#global-settings) for more information.
 
 {{< trueimage src="/images/SCALE/Virtualization/InstancesPoolNotSelected.png" alt="Pool Is Not Selected" id="Pool Is Not Selected" >}}
 
@@ -49,19 +49,13 @@ The **Configuration** dropdown menu includes **[Global Settings](#global-setting
 #### Storage Settings
 
 The **Pool** dropdown list shows a list of available pools on the system.
-Select a pool for instances.
+**[Disabled]** deselects the active pool and disables the instances service.
 
-The first time you open the **Instances** screen, the header shows a <i class="fa fa-cog" aria-hidden="true"></i> **Pool is not selected** status.
-**Select Pool** at the top right of the screen opens the **Global Settings** screen.
-Select the pool from the dropdown list, then click **Save**.
-This starts the instances service.
+The screen header displays a <i class="fa fa-cog" aria-hidden="true"></i> **Pool is not selected** status before a pool for instances is selected.
 
-To unset an active pool and stop the instances service, click **Configuration > Global Settings** and select **[Disabled]** from the **Pool** dropdown list.
- on the **Settings** menu opens the **Unset Pool** dialog. Click **Unset** to unset the pool and turn off the application service.
-Click **Save**.
-When complete, the **Instances** screen displays the **No instances** and <i class="fa fa-cog" aria-hidden="true"></i> **Pool is not selected** statuses.
+#### Default Network Settings
 
-#### Network Settings
+**Default Network** settings configure global networking defaults for the instances service.
 
 {{< truetable >}}
 | Setting | Description |
@@ -71,38 +65,27 @@ When complete, the **Instances** screen displays the **No instances** and <i cla
 | **IPv6 Network** | Displays when **Bridge** is set to **Automatic**. Enter the IPv6 address and subnet to use for the bridge or leave empty to allow TrueNAS to use the default address. |
 {{< /truetable >}}
 
-### Volumes
+### Manage Volumes
 
 The **Volumes** screen lists all <file>.iso</file> images currently uploaded to the instances service.
 
 {{< trueimage src="/images/SCALE/Virtualization/InstancesVolumesScreen.png" alt="Volumes Screen" id="Volumes Screen" >}}
 
 **Upload New Image** opens a file browser to select an image from the client computer and upload it to TrueNAS for use in instances.
-Select the image and then open it.
-An **Uploading Image** dialog displays.
-When complete, the new image displays on the **Volumes** list.
 
 {{< expand "Image Filename Requirements" "v" >}}
-Valid instance names must meet the following conditions:
-
-* The name must be between 1 and 63 characters long.
-* The name must contain only letters, numbers and dashes from the ASCII table.
-* The name must not start with a digit or a dash.
-* The name must not end with a dash.
-
-This ensures the instance name works without conflicts in DNS records, the file system, security profiles, and as the instance hostname.
-See [Instance name requirements](https://linuxcontainers.org/incus/docs/main/reference/instance_properties/#instance-name-requirements) from Incus for more information.
+{{< include file="/static/includes/InstanceImageFilename.md" >}}
 {{< /expand >}}
 
 #### Delete Volumes
 
-Click <i class="material-icons" aria-hidden="true" title="Delete">delete</i> on an image row to delete that image.
+**<i class="material-icons" aria-hidden="true" title="Delete">delete</i> Delete** on an image row deletes that image.
 A **Delete volume** dialog displays.
 
 {{< trueimage src="/images/SCALE/Virtualization/InstancesDeleteVolume.png" alt="Delete Volume Dialog" id="Delete Volume Dialog" >}}
 
-Select **Confirm** and then click **Continue** to delete the image.
-To prevent accidental deletion of an in-use image, the delete icon is not selectable for active images.
+**Confirm** and then **Continue** deletes the image.
+Delete is disabled for active images.
 
 ## Create Instance Wizard
 
@@ -150,10 +133,10 @@ The **CPU & Memory** settings specify the number of virtual CPU cores to allocat
 
 ### Environment
 
-The Environment settings allow you to configure optional environment variables to run on boot or execute.
+The **Environment** settings configure optional environment variables to run on boot or execute.
 These settings are only supported for containers and cannot be used with VMs.
 
-Click Add to display a set of environment fields.
+**Add** displays a set of environment fields.
 
 {{< trueimage src="/images/SCALE/Virtualization/CreateInstanceEnvironment.png" alt="Environment" id="Environment" >}}
 
@@ -165,8 +148,7 @@ The **Disks** settings allow mounting storage volumes to an instance.
 Options are to create a new zvol on an existing dataset or to use an existing zvol.
 For VMs, you can also specify the size of the root disk.
 
-Click **Add** to configure to create or mount a disk.
-Click **Add** again to create or mount additional disks.
+**Add** displays a set of fields to create or mount a disk.
 
 {{< trueimage src="/images/SCALE/Virtualization/CreateInstanceDisksVM.png" alt="Disks - VM" id="Disks - VM" >}}
 
@@ -185,7 +167,7 @@ Click **Add** again to create or mount additional disks.
 The **Proxies** settings allow you to forward network connections between the host and the instance.
 This routes traffic from a specific address on the host to an address inside the instance, or vice versa, allowing the instance to connect externally through the host.
 
-Click **Add** to display a set of proxy configuration settings.
+**Add** displays a set of proxy configuration settings.
 
 {{< trueimage src="/images/SCALE/Virtualization/CreateInstanceProxies.png" alt="Proxies" id="Proxies" >}}
 
@@ -218,30 +200,26 @@ See [Accessing NAS from VMs and Containers]({{< relref "/SCALE/SCALETutorials/Ne
 
 ### USB Devices
 
-The **USB Devices** settings let you attach a USB device to an instance, allowing it to function as if physically connected.
+**USB Devices** displays a list of available devices to attach to an instance, allowing the device to function as if physically connected.
 
 {{< trueimage src="/images/SCALE/Virtualization/CreateInstanceUSB.png" alt="USB Devices" id="USB Devices" >}}
 
-Select one or more device(s) to attach.
-
 ### GPU Devices
 
-The **GPU Devices** settings allow you to attach one or more GPU devices to an instance, enabling it to utilize hardware acceleration for graphics or computation tasks.
+**GPU Devices** displays available GPU devices to attach to an instance, enabling it to utilize hardware acceleration for graphics or computation tasks.
 
 {{< trueimage src="/images/SCALE/Virtualization/CreateInstanceGPU.png" alt="GPU Devices" id="GPU Devices" >}}
 
-Select one or more GPU device(s) from the list to attach to the instance.
-
 ### PCI Passthrough
 
-The **PCI Passthrough** settings let you assign a physical PCI device, such as a network card or GPU, directly to a VM, allowing it to use the device as if physically attached.
+**PCI Passthrough** settings enable assigning a physical PCI device, such as a network card or GPU, directly to a VM, allowing it to use the device as if physically attached.
 These settings are only available for VMs and cannot be used with containers.
 
 The selected PCI device(s) cannot be in use by the host or share an IOMMU group with devices the host requires.
 
 {{< trueimage src="/images/SCALE/Virtualization/CreateInstancePCI.png" alt="PCI Passthrough" id="PCI Passthrough" >}}
 
-Click **Add PCI Passthrough** to open the [**Add PCI Passthrough Device**](#add-pci-passthrough-device-screen) screen and select the device(s) to attach.
+**Add PCI Passthrough** opens the [**Add PCI Passthrough Device**](#add-pci-passthrough-device-screen) screen.
 
 ### VNC
 
@@ -255,7 +233,7 @@ These settings are only available for VMs and cannot be used with containers.
 ### Security
 
 The **Security settings** control various system security features, including Trusted Platform Module (TPM) and Secure Boot options.
-These options help to ensure a secure environment by enabling advanced hardware-based security features during the system’s startup and operation.
+These options help to ensure a secure environment by enabling advanced hardware-based security features during system startup and operation.
 These settings are only available for VMs and cannot be used with containers.
 
 {{< trueimage src="/images/SCALE/Virtualization/CreateInstanceSecurity.png" alt="Security Settings" id="Security Settings" >}}
@@ -265,7 +243,7 @@ These settings are only available for VMs and cannot be used with containers.
 | Setting | Description |
 |---------|-------------|
 | **Add Trusted Platform Module (TPM)** | Enables TPM, a hardware-based security feature that protects sensitive data and ensures integrity. Adds a Trusted Platform Module (TPM) device to the VM. |
-| **Secure Boot** | Ensures that only trusted, signed software is loaded during the system's boot process. May be incompatible with some images. |
+| **Secure Boot** | Ensures that only trusted, signed software is loaded during the system boot process. May be incompatible with some images. |
 {{< /truetable >}}
 
 {{< include file="/static/includes/SecureBootHelp.md" >}}
@@ -279,30 +257,26 @@ Stopped instances show the option to start the instance.
 
 {{< trueimage src="/images/SCALE/Virtualization/InstancesScreenWithInstances.png" alt="Instances Screen - Populated" id="Instances Screen - Populated" >}}
 
-Click on an instance to populate the **Details for *Instance*** [widgets](#instances-widgets) with information and configuration options for that instance.
+The **Details for *Instance*** [widgets](#instances-widgets) display information and configuration options for the selected instance.
 
-Click <i class="material-icons" aria-hidden="true" title="Restart">restart_alt</i> to restart or <i class="material-icons" aria-hidden="true" title="Stop">stop_circle</i> to stop a running instance.
-Click <i class="material-icons" aria-hidden="true" title="Start">play_circle</i> to start a stopped instance.
+<i class="material-icons" aria-hidden="true" title="Restart">restart_alt</i> restarts or <i class="material-icons" aria-hidden="true" title="Stop">stop_circle</i> stops a running instance.
+<i class="material-icons" aria-hidden="true" title="Start">play_circle</i> starts a stopped instance.
 
 **Search** above the **Instances** table allows entering the name of an instance to locate a configured instance.
 
-Selecting the checkbox to the left of **Name** selects all configured instances and shows the [**Bulk Actions**](#bulk-actions) dropdown list.
-Selecting the checkbox on an instance row also shows the [**Bulk Actions**](#bulk-actions) dropdown list.
+The checkboxes to the left of **Name** on each instance row shows the [**Bulk Actions**](#bulk-actions) dropdown list.
+The checkboxes on each instance row shows the [**Bulk Actions**](#bulk-actions) dropdown list.
 
 ### Bulk Actions
 
 The **Bulk Action** dropdown list allows you to apply actions to one or more instances on your system.
-Select the checkbox to the left of **Name** to show the **Bulk Actions** dropdown menu.
-
-Menu options are **Start All Selected**, **Stop All Selected**, and **Restart All Selected**.
+Options are **Start All Selected**, **Stop All Selected**, and **Restart All Selected**.
 
 {{< trueimage src="/images/SCALE/Virtualization/InstancesBulkActions.png" alt="Bulk Actions" id="Bulk Actions" >}}
 
 ## Instances Widgets
 
-Configured instances have a set of widgets on the **Instances** screen.
-Click on an instance row to highlight it and view the information widgets for that instance.
-Information in the widgets changes based on the row highlighted in the **Instances** table.
+The **Details for *Instance*** [widgets](#instances-widgets) display information and configuration options for the selected instance.
 
 ### General Info Widget
 
@@ -330,8 +304,7 @@ The **Devices** widget displays all USB, GPU, Trusted Platform Module (TPM), and
 
 {{< trueimage src="/images/SCALE/Virtualization/DevicesWidget.png" alt="Devices Widget" id="Devices Widget" >}}
 
-**Add** opens a flyout menu containing available options for **USB Devices**, **GPUs**, **TPM**, and **PCI Passthrough** devices.
-Select a device to attach it to the instance.
+**Add** opens a list of available **USB Devices**, **GPUs**, **TPM**, and **PCI Passthrough** devices.
 
 **Add Device** under **PCI Passthrough** opens the [**Add PCI Passthrough Device**](#add-pci-passthrough-device-screen) screen.
 
@@ -344,7 +317,7 @@ It allows you to manage the disks, including adding new ones or modifying existi
 
 **Add** opens the [**Add Disk**](#addedit-disk-screen) screen for adding new disks to the instance.
 
-For existing disks, the <span class="material-icons">more_vert</span> actions menu includes options to [**Edit**](#addedit-disk-screen) or [**Delete**](#delete-disks) the disk.
+For existing disks, the <span class="material-icons">more_vert</span> actions include options to [**Edit**](#addedit-disk-screen) or [**Delete**](#delete-disks) the disk.
 
 For VMs, the widget displays the current root disk size.
 The root disk stores the OS and serves as the boot disk for the VM.
@@ -359,11 +332,11 @@ The **Add/Edit Disk** screen allows you to configure a new disk or modify an exi
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Source** | Enter or browse to select the host source path for the disk. To create a new dataset, enter or browse to select the parent path, then click **Create Dataset**, enter a name for the new dataset, and click **Create**. |
+| **Source** | Enter or browse to select the host source path for the disk. For a new dataset, enter or browse to select the parent path. |
 | **Destination**| Enter the destination path to mount the disk in the instance. |
 {{< /truetable >}}
 
-Click **Save** to apply changes.
+**Save** applies changes.
 
 #### Delete Disks
 
@@ -380,7 +353,8 @@ The **Increase Root Disk Size** dialog allows you to configure the size of the d
 
 {{< trueimage src="/images/SCALE/Virtualization/IncreaseRoot.png" alt="Increase Root Disk Size Widget" id="Increase Root Disk Size Widget" >}}
 
-Enter a new size in GiB, such as *20*, then click **Save** to apply changes.
+Enter a new size in GiB, such as *20*.
+**Save** applies changes.
 
 ### NIC Widget
 
@@ -421,7 +395,7 @@ The **Add/Edit Proxy** screen allows you to configure or modify a proxy setting 
 
 {{< include file="/static/includes/InstanceProxySettings.md" >}}
 
-Click **Save** to apply changes.
+**Save** applies changes.
 
 #### Delete Proxies
 
@@ -439,9 +413,9 @@ It provides details such as the **Host ID**, **Maprange**, and **NS ID** for bot
 
 {{< trueimage src="/images/SCALE/Virtualization/IdmapWidget.png" alt="Idmap Widget" id="Idmap Widget" >}}
 
-* **Host ID**: Shows the starting ID used by the host for mapping to the instance IDs.
-* **Maprange**: Indicates the range of IDs that the host allocates for the instance.
-* **NS ID**: Represents the namespace ID used for the mapping.
+* **Host ID** shows the starting ID used by the host for mapping to the instance IDs.
+* **Maprange** indicates the range of IDs that the host allocates for the instance.
+* **NS ID** represents the namespace ID used for the mapping.
 
 For example, if the **Host ID** is `2147000001` and the **Maprange** is `458752`, the container UID 0 (root) is mapped to the host UID `2147000001`.
 This ensures proper isolation and user/group identity management between the host and the instance.
@@ -459,7 +433,7 @@ You can open a shell, console, or VNC session directly from this widget.
 
 **VNC** (VM only) opens a VNC connection using your preferred client.
 It uses a VNC URL scheme (for example, `vnc://hostname.domain.com:5930`) to launch the session directly in the application.
-If your environment does not support VNC URLs, you can manually connect using a VNC client by entering the hostname or IP address followed by the port number without `vnc://` (for example, `hostname.domain.com:5930` or `IP:5930`).
+If your environment does not support VNC URLs, you can manually connect using a VNC client by entering the host name or IP address followed by the port number without `vnc://` (for example, `hostname.domain.com:5930` or `IP:5930`).
 
 ### Metrics Widget
 
@@ -487,13 +461,7 @@ The **Instance Configuration** settings on the **Edit** screen allow you to modi
 
 {{< trueimage src="/images/SCALE/Virtualization/EditInstanceConfiguration.png" alt="Edit Instance Configuration" id="Edit Instance Configuration" >}}
 
-{{< expand "Instance Configuration Settings" "v" >}}
-{{< truetable >}}
-| Setting | Description |
-|---------|-------------|
-| **Autostart** | Select to automatically start the instance when the system boots. |
-{{< /truetable >}}
-{{< /expand >}}
+**Autostart** automatically starts the instance when the system boots.
 
 ### Edit CPU and Memory Settings
 
@@ -516,7 +484,7 @@ These settings are only available for VMs and cannot be used with containers.
 The **Environment** settings on the **Edit** screen are the same as those in the **Create Instance** wizard.
 These settings are only supported for containers and cannot be used with VMs.
 
-Click Add to display a set of environment fields.
+**Add** displays a set of environment fields.
 
 {{< trueimage src="/images/SCALE/Virtualization/EditEnvironment.png" alt="Environment Settings" id="Environment Settings" >}}  
 
@@ -547,6 +515,6 @@ The selected PCI device(s) must not be in use by the host or share an IOMMU grou
 
 {{< trueimage src="/images/SCALE/Virtualization/AddPCIPassthroughDevice.png" alt="Add PCI Passthrough Device Screen" id="Add PCI Passthrough Device Screen" >}}
 
-To filter available devices, enter a device type or label in **Search Devices**, or use the **Type** dropdown.
+Use **Search Devices** or the **Type** dropdown to filter available devices, enter device type or a label.
 
-Click **Select** to attach the selected device.
+**Select** attaches the selected device.
