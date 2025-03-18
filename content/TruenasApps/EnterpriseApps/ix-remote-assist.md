@@ -33,6 +33,13 @@ After the remote assistance session completes, delete the Remote Assist applicat
 This fully deauthorizes the remote connection.
 It cannot be re-established without creating a new authentication key and redeploying Remote Assist at a later date, such as to resolve a future support case.
 
+## App Versioning
+
+{{< github-content 
+    repo="truenas/apps"
+    path="trains/enterprise/ix-remote-assist/app_versions.json"
+    lang="json" >}}
+
 ## Installing Remote Assist
 
 {{< enterprise >}}

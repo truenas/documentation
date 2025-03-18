@@ -1,0 +1,34 @@
+<!-- Thank you to Greg Hilston and his excellent article on https://www.greghilston.com/post/hugo-display-dynamic-github-content/ for this shortcode -->
+{{ $url := printf "https://api.github.com/repos/%s/contents/%s" (.Get "repo") (.Get "path") }}
+{{ $lang := default "plaintext" (.Get "lang") }}
+{{ with resources.GetRemote $url }}
+  {{ $remoteContent := . }}
+  {{ with transform.Unmarshal $remoteContent.Content }}
+    {{ $decodedContent := .content | base64Decode }}
+    {{ $jsonData := transform.Unmarshal $decodedContent }}
+
+    <!-- Extract the first key dynamically -->
+    {{ $firstKey := "" }}
+    {{ range $key, $value := $jsonData }}
+      {{ $firstKey = $key }}
+      {{ break }}
+    {{ end }}
+    {{ $versionData := index $jsonData $firstKey }}
+
+    <!-- Normal Display -->
+    <div>
+      <ul>
+        <li>Last Update: {{ $versionData.last_update }}</li>
+        <li>Version: {{ $versionData.version }}</li>
+        <li>App Version: {{ $versionData.app_metadata.app_version }}</li>
+      </ul>
+      <p><a href="{{ $remoteContent.Permalink }}" target="_blank">View on GitHub</a></p>
+    </div>
+
+    <!-- Expandable Section -->
+    <details>
+      <summary>View Raw File</summary>
+      <pre><code>{{ highlight $decodedContent $lang "" }}</code></pre>
+    </details>
+  {{ end }}
+{{ end }}
