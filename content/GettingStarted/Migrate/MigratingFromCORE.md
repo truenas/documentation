@@ -99,7 +99,7 @@ After TrueNAS reboots, you might need to [use the Console Setup menu to configur
 
 After gaining access to the UI, sign in with the admin user credentials created during installation.
 
-Go to **System > General Settings** and [upload the system config file](/scale/scaletutorials/systemsettings/general/managesysconfigscale/#uploading-the-file).
+Go to **System > General Settings** and [upload the system config file](/SCALETutorials/systemsettings/general/managesysconfigscale/#uploading-the-file).
 This migrates your settings, imports your pools, shares, etc.
 The system reboots to apply the uploaded configuration.
 
