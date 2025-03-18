@@ -49,7 +49,7 @@ After creating the pool and datasets, set up shares to enable data access and sh
 Different types of data sharing methods are discussed in [Setting Up Data Sharing]({{< relref "SetUpSharing.md" >}}).
 You should investigate more specific coverage of each share based on your use case.
 
-[SMB Shares Screens]({{< relref "SMBSharesScreens.md" >}}) and [Setting Up SMB Home Shares]({{< relref "AddSMBHomeShare.md" >}}) provide a good introduction as to how TrueNAS handles SMB shares.
+[SMB Shares Screens]({{< relref "SMBSharesScreens.md" >}}) and [Setting Up SMB Home Shares]({{< relref "SMBPrivateDatasetShare.md" >}}) provide a good introduction as to how TrueNAS handles SMB shares.
 
 See [Adding NFS Shares]({{< relref "AddingNFSShares.md" >}}) for information on creating a basic NFS share.
 Adjust access permissions using the advanced options.

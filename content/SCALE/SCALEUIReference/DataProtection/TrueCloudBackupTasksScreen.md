@@ -174,13 +174,11 @@ The **Remote** settings specify the TrueCloud credential and destination storage
 
 {{< trueimage src="/images/SCALE/DataProtection/AddTrueCloudTaskAdvancedOptions.png" alt="Add TrueCloud Backup Task - Advanced Options" id="Add TrueCloud Backup Task - Advanced Options" >}}
 
-<!-- <to be re-added to the table at a later date> | **Take Snapshot** | Select to take a snapshot before transferring data to the specified cloud provider like Storj. This option is not available to datasets with child datasets. |-->
-
 {{< truetable >}}
 | Settings | Description |
 |----------|-------------|
-| **Take Snapshot** | Select to set the TrueCloud Backup Task to take a snapshot of the dataset before a push. |
-| **Use Absolute Paths** | Select to ensure that restic backups will contain absolute paths. If you don't check this box, the restic backup will contain relative paths. |
+| **Use Snapshot** | Select to set the TrueCloud Backup Task to use a snapshot of the dataset before a push transfer. |
+| **Use Absolute Paths** | Select to ensure that restic backups contain absolute paths. If you do not select this option, the restic backup contains relative paths. |
 | **Pre-Script** | (For advanced users only) Enter a script to execute before running the task. See the [Managing TrueCloud Backup Tasks tutorial]({{< relref "TrueCloudTasks.md #using-advanced-options" >}}) for more information. See **Script Environment Variables** below for a list of variables for scripts. |
 | **Post-Script** | (For advanced users only) Enter a script to execute after running the task. See the [Managing TrueCloud Backup Tasks tutorial]({{< relref "TrueCloudTasks.md #using-advanced-options" >}}) for more information. See **Script Environment Variables** below for a list of variables for scripts. |
 | **Exclude** | Enter a list of files and directories to exclude from the backup. Separate entries by pressing <kbd>Enter</kbd>. See [restic exclude patterns](https://restic.readthedocs.io/en/latest/040_backup.html#excluding-files) for more information about the `--exclude` option and proper syntax. |

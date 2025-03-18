@@ -164,14 +164,14 @@ Click **Save** on the **Add bucket** screen to create the remote bucket on Storj
 
 ### Advanced Options Settings
 **Advanced Options** settings are for advanced users.
-Selecting **Push** in **Direction** adds the **Take Snapshot** option in **Advanced Options**.
+Selecting **Push** in **Direction** adds the **Use Snapshot** option.
 
 {{< trueimage src="/images/SCALE/DataProtection/AddCloudSyncTaskPushControlAdvancedOptions.png" alt="Add Cloud Sync Task Control and Advanced Options" id="Add Cloud Sync Task Control and Advanced Options" >}}
 
 {{< truetable >}}
 | Settings | Description |
 |----------|-------------|
-|**Use Snapshot** | This option ensures data consistency by creating a snapshot at the start of the backup or synchronization task. The process involves the following steps:<br>1. Snapshot Creation: A snapshot of the current state is taken when the task is initiated.<br>2. Backup/sync operation: The task utilizes the snapshot contents to perform the backup or synchronization, ensuring that the data remains consistent and unchanged during the operation.<br>3. Snapshot removal: After the task completes, the snapshot is automatically removed to save storage space.<br>This mechanism guarantees that the backup or synchronization task captures an exact state of your data at the start, even if changes occur during the process. |
+|**Use Snapshot** | Select to ensure data consistency by creating a snapshot at the start of the backup or synchronization task. The process involves:<br>1. Create a snapshot of the current state, taken when the task is initiated.<br>2. Back up and sync operation. The task uses the snapshot contents to perform the backup or synchronization to ensure the data remains consistent and unchanged during the operation.<br>3. Remove the snapshot after the task completes to save storage space.<br>This mechanism guarantees that the backup or synchronization task captures an exact state of your data at the start, even if changes occur during the process. |
 | **Create empty source dirs on destination after sync** | Select to create an empty source directory in the cloud storage provider folder when pushing data to the cloud provider location, or in TrueNAS if pulling data from the cloud storage provider. |
 | **Follow Symlinks** | Select to follow symbolic links (symlinks) and copy the items to which they link. |
 | **Pre-Script** | For advanced users. Enter a script to execute before running sync. See the [Cloud Sync tutorial]({{< relref "/SCALE/SCALETutorials/DataProtection/CloudSyncTasks/_index.md" >}}) for more information. |
