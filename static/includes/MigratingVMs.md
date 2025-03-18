@@ -31,10 +31,10 @@ To migrate VMs from TrueNAS 24.10 (latest) to 25.04:
 #### Recreating VMs in 25.04
 
 1. Configure Virtualization Settings
-   - After upgrading to TrueNAS 25.04, go to **Instances** (formerly **Virtualization**).
-   - Click **Select Pool** to open **Global Settings**.
-   - Use the **Pool** dropdown to select a storage pool for virtualization.
-   - Accept default networking settings or modify as needed, then click **Save**.
+   a. After upgrading to TrueNAS 25.04, go to **Instances** (formerly **Virtualization**).
+   b. Click **Select Pool** to open **Global Settings**.
+   c. Use the **Pool** dropdown to select a storage pool for virtualization.
+   d. Accept default networking settings or modify as needed, then click **Save**.
 
 2. Recreate the VM
    - Click **Create New Instance**.
