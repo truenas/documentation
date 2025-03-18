@@ -186,6 +186,7 @@ The **Add Sysctl** or **Edit Sysctl** configuration screen settings let users se
 {{< truetable >}}
 | Settings | Description |
 |----------|-------------|
+| **Type** | Select the type of sysctl you wish to add from the drop-down menu. Options include: SYSCTL, UDEV, and ZFS. |
 | **Variable** | Enter the name of the sysctl variable to configure. Sysctl tunables configure kernel parameters while the system runs and generally take effect immediately. |
 | **Value** | Enter a [sysctl](https://man7.org/linux/man-pages/man8/sysctl.8.html) value to use for the loader, **sysctl** variable. |
 | **Description** | Enter a description for the tunable. |
@@ -235,7 +236,7 @@ It allows administrators to manage other active sessions and configure the sessi
 **Terminate Other Sessions** ends all sessions except the active session for the logged-in admin user.
 You can also end individual sessions by clicking the logout <span class="iconify" data-icon="PH:arrow-square-right"></span> icon next to that session if it is not the admin user session.
 You must check a confirmation box before the system allows you to end sessions.
-TrueNAS terminates inactive sessions when the it reaches the specified timeout limit. If a new session is initiated within a five-minute period, TrueNAS logs the user in as the previously login session. If the log in occurs outside the five-minute period TrueNAS initiates a new websocket session.
+TrueNAS terminates inactive sessions when they reach the specified timeout limit. If a new session is initiated within five minutes, TrueNAS logs the user in as the previously login session. If the login occurs outside the five-minute period TrueNAS initiates a new WebSocket session.
 
 The logout button is inactive for your current session and active for all other current sessions.
 It cannot be used to terminate your current session.
