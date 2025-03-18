@@ -27,7 +27,7 @@ The **Instances** screen displays **No Instances** before you create the first i
 
 {{< trueimage src="/images/SCALE/Virtualization/InstancesScreenNoInstances.png" alt="Instances Screen No Instances" id="Instances Screen No Instances" >}}
 
-The **Configuration** dropdown menu includes **[Global Settings](#global-settings-screen)** and **[Manage Volumes](#manage-volumes-screen)**.
+The **Configuration** dropdown menu includes **[Global Settings](#global-settings-screen)**, **[Manage Volumes](#manage-volumes-screen)**, and [**Map User/Group IDs**](#map-user-and-group-ids) options.
 
 **Create New Instance** at the top right of the screen opens the **[Create Instance](#create-instance-wizard-screens)** wizard.
 
@@ -37,8 +37,7 @@ The **Configuration** dropdown menu includes **[Global Settings](#global-setting
 
 * **Global Settings** opens the **[Global Settings](#global-settings)** screen.
 * **Manage Volumes** opens the [**Volumes**](#volumes) screen.
-
-{{< trueimage src="/images/SCALE/Virtualization/InstancesConfigurationMenu.png" alt="Configuration Menu" id="Configuration Menu" >}}
+* **Map User/Group IDs** opens the [**Map User And Group IDs**](#map-user-and-group-ids) screen.
 
 ### Global Settings
 
@@ -86,6 +85,8 @@ A **Delete volume** dialog displays.
 
 **Confirm** and then **Continue** deletes the image.
 Delete is disabled for active images.
+
+### Map User And Group IDs
 
 ## Create Instance Wizard
 
