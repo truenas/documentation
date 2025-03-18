@@ -212,20 +212,34 @@
     
       if (product === 'TrueNAS') {
         versionDropdown.innerHTML = `
-		  <small>Next</small>
-		  <hr style="background-color: white; width: 90%; border: none; height: 1px;">
-          <div class="truenas-dropdown-item" onclick="selectVersion('scale-nightly')" id="scale-nightly">25.10</div>
-		  <div class="truenas-dropdown-item" onclick="selectVersion('25.04')" id="2504">25.04</div>
-		  <small>Current</small>
-		  <hr style="background-color: white; width: 90%; border: none; height: 1px;">
-          <div class="truenas-dropdown-item" onclick="selectVersion('24.10')" id="2410">24.10</div>
-		  <small>Previous</small>
-		  <hr style="background-color: white; width: 90%; border: none; height: 1px;">
-          <div class="truenas-dropdown-item" onclick="selectVersion('24.04')" id="2404">24.04</div>
-          <div class="truenas-dropdown-item" onclick="selectVersion('13.3')" id="13.3">13.3</div>
-          <div class="truenas-dropdown-item" onclick="selectVersion('13.0')" id="13">13.0</div>
-		  <hr style="background-color: white; width: 90%; border: none; height: 1px;">
-          <div class="truenas-dropdown-item" onclick="selectVersion('Archive')" id="Archive">Archive</div>
+          <div class="truenas-version-group">
+            <div class="version-header">
+              <small class="version-label">Next</small>
+              <hr class="version-line">
+            </div>
+            <div class="truenas-dropdown-item" onclick="selectVersion('scale-nightly')" id="scale-nightly">25.10</div>
+            <div class="truenas-dropdown-item" onclick="selectVersion('25.04')" id="2504">25.04</div>
+          </div>
+          <div class="truenas-version-group">
+            <div class="version-header">
+              <small class="version-label">Current</small>
+              <hr class="version-line">
+            </div>
+            <div class="truenas-dropdown-item" onclick="selectVersion('24.10')" id="2410">24.10</div>
+          </div>
+          <div class="truenas-version-group">
+            <div class="version-header">
+              <small class="version-label">Previous</small>
+              <hr class="version-line">
+            </div>
+            <div class="truenas-dropdown-item" onclick="selectVersion('24.04')" id="2404">24.04</div>
+            <div class="truenas-dropdown-item" onclick="selectVersion('13.3')" id="13.3">13.3</div>
+            <div class="truenas-dropdown-item" onclick="selectVersion('13.0')" id="13">13.0</div>
+          </div>
+          <div class="truenas-version-group">
+            <hr class="no-version-line">
+            <div class="truenas-dropdown-item" onclick="selectVersion('Archive')" id="Archive">Archive</div>
+          </div>
         `;
       } else if (product === 'TrueCommand') {
         versionDropdown.innerHTML = `
