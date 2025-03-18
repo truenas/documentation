@@ -17,13 +17,16 @@ This can be useful in environments with a mix of Windows systems and Unix-like s
 
 {{< hint type=tip >}}
 Carefully consider your environment and access requirements before configuring a multiprotocol share.
-For many applications, a single protocol SMB share provides better user experience and ease of administration.
+For many applications, a single protocol SMB share provides a better user experience and ease of administration.
 Linux clients can access SMB shares using [`mount.cifs`](https://linux.die.net/man/8/mount.cifs).
 {{< /hint >}}
 
 It is important to properly configure permissions and access controls to ensure security and data integrity when using mixed-mode sharing.
-To maximize security on the NFS side of the multiprotocol share, we recommend using NFSv4 and [Active Directory](#joining-active-directory)(AD) for Kerberos authentication.
+To maximize security on the NFS side of the multiprotocol share, we recommend using NFSv4 and [Active Directory](#joining-active-directory) (AD) for Kerberos authentication.
 It is also important that NFS clients preserve extended attributes when copying files, or SMB metadata could be discarded in the copy.
+
+Multiprotocol shares are not compatible with the Apple Time Machine feature.
+Configuring a multiprotocol share disables the option to use AAPL extensions globally.
 
 ## First Steps
 Before adding a multiprotocol SMB and NFS share to your system:
@@ -40,7 +43,7 @@ Before adding a multiprotocol SMB and NFS share to your system:
 Before joining AD and creating a dataset for the share to use, start both the SMB and NFS services and configure the NFS service for Kerberos authentication.
 Configure the NFS service before joining AD for simpler Kerberos credential creation.
 
-You can either use the**Shares** screen **Configure Service** option on both the **Windows (SMB) Share** and on the **UNIX (NFS) Shares** widgets, or go to **System > Services** and select the **Edit** option on the **SMB** and **NFS** services.
+You can either use the**Shares** screen **Configure Service** option on both the **Windows (SMB) Share** and on the **UNIX (NFS) Shares** widgets or go to **System > Services** and select the **Edit** option on the **SMB** and **NFS** services.
 
 {{< trueimage src="/images/SCALE/Shares/SMBShareOptions.png" alt="SMB Service Options" id="SMB Service Options" >}}
 
@@ -138,7 +141,7 @@ After creating the multimode share on the **Add Dataset** screen, go to **Shares
 
     {{< trueimage src="/images/SCALE/Shares/AddNFSScreen.png" alt="Add NFS Share" id="Add NFS Share" >}}
 
-2. Enable Kereberos security. Click **Advanced Options**. 
+2. Enable Kerberos security. Click **Advanced Options**. 
     Select **KRB5** from the **Security** dropdown to enable the Kerberos ticket that generated when you [joined Active Directory](#joining-active-directory).
 
    {{< trueimage src="/images/SCALE/Shares/EditNFSShareAdvancedSecuritySetting.png" alt="Advanced Options Security Settings" id="Advanced Options Security Settings" >}}
@@ -157,7 +160,7 @@ Using this method you select the share on the **Windows (SMB) Share** widget, th
 
 {{< trueimage src="/images/SCALE/Shares/EditMultimodeShareDatasetPermissions.png" alt="Editing Share Dataset ACL" id="Editing Share Dataset ACL" >}}
 
-Or you can go to **Datasets**, select the name of the dataset created for the multiprotocol share to use and scroll down to the **Permissions** widget for the dataset.
+Or you can go to **Datasets**, select the name of the dataset created for the multiprotocol share to use, and scroll down to the **Permissions** widget for the dataset.
 Click **Edit** to open the **Edit ACL** screen.
 
 {{< trueimage src="/images/SCALE/Datasets/EditMultimodeDatasetPermissions.png" alt="Editing Multimode Dataset Permissions" id="Editing Multimode Dataset Permissions" >}}
