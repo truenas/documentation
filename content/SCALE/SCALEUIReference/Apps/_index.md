@@ -22,7 +22,7 @@ related: false
 {{< include file="/static/includes/ProposeArticleChange.md" >}}
 
 There are two main application screens, [**Installed**](#installed-screen) and [**Discover**](#discover-screen).
-The **Installed** applications screen shows status of installed apps, provides access to [pod shell and logs screens](#workloads-widget) and a web portal for the app (if available), and the ability to edit deployed app settings.
+The **Installed** applications screen shows the status of installed apps, provides access to [pod shell and logs screens](#workloads-widget) and a web portal for the app (if available), and the ability to edit deployed app settings.
 
 The **Discover** screen shows widgets for the installed catalog of apps.
 The individual app widgets open app information screens with details about that application, and access to an installation wizard for the app.
