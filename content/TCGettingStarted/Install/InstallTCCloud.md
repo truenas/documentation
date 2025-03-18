@@ -11,7 +11,7 @@ TrueCommand is versatile and offers several different install options.
 TrueCommand Cloud is the preferred method for using TrueCommand since it does not require local resources or have specific hardware requirements to get started!
 
 {{< hint type=note >}}
-Please note that a credit card number is required for Cloud Signups.
+A credit card number is required for Cloud Signups.
 
 If you are purchasing TrueNAS Enterprise hardware or licenses, you might be eligible to receive an additional TrueCommand license that lasts the duration of the TrueNAS Enterprise contract.
 Inquire with [**iXsystems Customer Support**](https://www.ixsystems.com/support/) for more details about adding TrueCommand to your TrueNAS Enterprise purchase.
@@ -36,10 +36,10 @@ If the email does not arrive within a few minutes, check the address spam folder
 If the email is in the spam folder, mark it as *not spam* and add the account to the address book.
 After receiving the verification email, open the link provided to verify the account.
 
-Future login attempts to the iXsystems account requires entering a one time password (OTP) sent to the registered email address.
+Future login attempts to the iXsystems account require entering a one-time password (OTP) sent to the registered email address.
 Three failed login attempts results in a temporary account lock for 30 hours.
 
-Continued failed login attempts can result in a permament account block.
+Continued failed login attempts can result in a permanent account block.
 If this occurs, contact iXsystems Support to request unblocking the account.
 
 {{< nest-expand "Contacting iXsystems Support (Click to expand)" "v" >}}
@@ -88,13 +88,9 @@ From the account home page, click **Manage**.
 
 To obtain a TrueCommand WireGuard config file, add a client.  
 
-Under **Create Access Client** enter a nickname, then click **Add**.
+Under **Create Access Client** enter a nickname, then click **Add**. The portal sends a verification code to your account email. Enter it to approve the new client and download the TrueCommand WireGuard configuration file.
 
 ![CloudSubscriptionServiceDetails](/images/TrueCommand/Cloud/CloudSubscriptionServiceDetails.png "Account Services: Service Details")
-
-After adding the client, click <i class="fa fa-download action-icon clickable" aria-hidden="true" title="Download WireGuard configuration file"></i> to download the configuration file.
-
-![CloudSubscriptionServiceDetailsWireGuardClient](/images/TrueCommand/Cloud/CloudSubscriptionServiceDetailsWireGuardClient.png "Account Services: Downloading the WireGuard Configuration File")
 
 Open Wireguard on your system and click **Add Tunnel**.
 

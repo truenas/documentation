@@ -11,7 +11,7 @@ TrueCommand allows administrator and non-administrator users with permissions to
 
 ### Editing System Settings
 To edit system settings, click **Edit** on the system options menu. 
-The **Edit *system*** screen opens and allows users change the system IP address/host name, system name (**Nickname**), and enter a new TrueNAS administrator password/API key for authentications. 
+The **Edit *system*** screen opens and allows users to change the system IP address/host name, system name (**Nickname**), and enter a new TrueNAS administrator password/API key for authentications. 
 Do not change the port number TrueCommand listens on.
 
 Click **SAVE CHANGES** to keep your changes, or **RESET** to clear settings and start over. 
@@ -59,7 +59,10 @@ You cannot edit service parameters with TrueCommand, but can set them to start a
 
 ### Deleting a TrueNAS System
 Click the **Delete** <i class="material-icons" aria-hidden="true" title="Delete">delete</i> on the system options menu to remove the selected system from TrueCommand. 
-Deleting does not affect data stored on the TrueNAS system, but it does delete all system metrics saved in TrueCommand.
+
+{{< hint type=important >}}
+Deleting a system purges all collected data from the database but does not affect data stored on the TrueNAS system. TrueCommand archives all system metrics and backups.
+{{< /hint >}}
 
 ![TrueCommandSystemSettingsDelete](/images/TrueCommand/Dashboard/SystemSettingsDelete.png "System Settings Delete")
 

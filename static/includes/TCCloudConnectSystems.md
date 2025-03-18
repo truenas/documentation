@@ -10,7 +10,9 @@ Log into a TrueNAS system and click the TrueCommand icon in the upper right.
 
 ![SystemsAddFirstSystemTCButton](/images/TrueCommand/Systems/SystemsAddFirstSystemTCButton.png "Connecting from TrueNAS")
 
-Paste the TrueCommand API key copied from the iXsystems Account Portal into the TrueNAS dialog window. 
+Paste the TrueCommand API key copied from the iXsystems Account Portal into the TrueNAS dialog window.
+
+Select **Enable** to activate the WireGuard interface and immediately connect to TrueCommand, or deselect it to activate the interface later.
 
 ![TrueCommandCloudConnectAPIKey](/images/TrueCommand/Cloud/TrueCommandCloudConnectAPIKey.png "Connecting TrueNAS to TrueCommand Cloud")
 
@@ -24,3 +26,15 @@ Click the **Discovered Systems** icon and select the TrueNAS system. TrueCommand
 ![NewSystemCreds](/images/TrueCommand/Dashboard/TC20NewSystemCreds.png "Registering TrueNAS in TrueCommand Cloud")
 
 The TrueNAS instance can take 10 to 15 minutes to fully sync up with TrueCommand Cloud.
+
+### Updating TrueCommand Settings
+
+Log into TrueNAS, click the TrueCommand icon in the upper right, then click **Settings**.
+
+![TrueCommandCloudUpdateSettings](/images/TrueCommand/Cloud/TrueCommandCloudUpdateSettings.png "Updating TrueCommand Cloud Settings")
+
+In the **Update TrueCommand Settings** window, you can enter a new API key, enable or disable the WireGuard interface, and deregister the local interface to TrueCommand.
+
+{{< hint type=note >}}
+Deregistering a system does not remove it from TrueCommand. To completely remove a system, you must also remove it from your [iXsystems cloud account](portal.ixsystems.com), and [delete the system from TrueCommand](https://www.truenas.com/docs/truecommand/3.0/adminguide/systems/#expand-7-Systems).
+{{< /hint >}}
