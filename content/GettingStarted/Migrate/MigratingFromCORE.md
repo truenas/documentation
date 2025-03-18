@@ -19,7 +19,7 @@ slug: migrate-community
 This article provides information and instructions for migrating non-Enterprise FreeBSD-based TrueNAS versions (13.0 or 13.3) to Linux-based TrueNAS (24.04).
 
 {{< enterprise >}}
-TrueNAS Enterprise customers should consult with TrueNAS Enterprise Support before attempting migrate.
+TrueNAS Enterprise customers should consult with TrueNAS Enterprise Support before attempting to migrate.
 
 The process requires an extended maintenance window, requires executing steps in the correct order to prevent issues with system configuration and operation, and additional system review post-migration to catch and correct any configuration issues.
 
@@ -32,7 +32,7 @@ The process requires an extended maintenance window, requires executing steps in
 
 **Review the [Migration Preparation article]({{< relref "MigratePrep.md" >}}) for detailed recommendations and preparation steps before attempting to migrate.**
 
-Depending on system configuration, migrating can be more or less complicated.
+Depending on the system configuration, migrating can be more or less complicated.
 
 ## Migration Methods
 
@@ -57,7 +57,7 @@ This method is only available for non-Enterprise community systems.
 3. Review the TrueNAS migrations warning and verify the system is ready to migrate before confirming and continuing.
 
 4. When the latest update for that chosen TrueNAS release is loaded, click **Apply Pending Update** or **Download Updates** to begin the update process documented in [Updating TrueNAS]({{< relref "UpdateSCALE.md#performing-an-automatic-update" >}}).
-   It is strongly recommended to download the system configuration backup prior to starting the update.
+   It is strongly recommended to download the system configuration backup before starting the update.
 
 5. After the system installs the update and reboots, log in and review the system configuration to ensure the migration was successful.
 
@@ -66,13 +66,13 @@ Some TrueNAS 13.0 or 13.3 releases can migrate using the UI **Upgrade** function
 To use this method, you must upgrade to the latest maintenance release.
 
 Earlier releases must upgrade to 13.0 and then the latest maintenance release (U6.2) to use this method.
-For community users, 13.3 and the latest public release is acceptable.
+For community users, 13.3 and the latest public release are acceptable.
 If this process fails, retry using the iso file method above.
 
 1. Confirm that the system is on the latest public release, 13.0-U6.2 (community users could have 13.3-RELEASE or newer installed).
 
 2. Download the [TrueNAS manual update file](https://www.truenas.com/download-truenas-scale/).
-   See [Software Releases](https://www.truenas.com/docs/softwarereleases/#upgrade-paths) for current recommended update paths to make sure you download and migrate to the correct version.
+   See [Software Releases](https://www.truenas.com/docs/softwarereleases/#upgrade-paths) for currently recommended update paths to make sure you download and migrate to the correct version.
 
 3. Click **CHECK FOR UPDATES** in the **System Information** card on the **Dashboard** or go to **System > Update**.
 
@@ -100,13 +100,13 @@ After TrueNAS reboots, you might need to [use the Console Setup menu to configur
 After gaining access to the UI, sign in with the admin user credentials created during installation.
 
 Go to **System > General Settings** and [upload the system config file](/SCALETutorials/systemsettings/general/managesysconfigscale/#uploading-the-file).
-This migrates your settings, imports your pools, shares, etc.
+This migrates your settings and imports your pools, shares, etc.
 The system reboots to apply the uploaded configuration.
 
 After TrueNAS reboots, sign in with the root user credentials from the previous configuration.
 Uploading the config file deletes the **truenas_admin** user account created during a clean install and therefore requires you to [recreate an administrative user](#recreating-the-admin-user-account).
 
-After uploading the config file, review each area of the UI previously configured to validate pools imported and settings migrated correctly. Begin with your network settings.
+After uploading the config file, review each area of the UI previously configured to validate that pools imported and settings migrated correctly. Begin with your network settings.
 
 {{< hint type=info title="Component Descriptions" >}}
 {{< include file="/static/includes/MigratingDescriptions.md" >}}
