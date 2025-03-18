@@ -40,7 +40,7 @@ The **General Info** area includes two default settings, **Name** and **Encrypti
 {{< trueimage src="/images/SCALE/Storage/PoolCreationWizardGeneralInfo.png" alt="Pool Creation Wizard General Info" id="Pool Creation Wizard General Info" >}}
 
 **Name** is a required field.
-A pool name can have yo to 50 characters and must follow [ZFS naming conventions](https://docs.oracle.com/cd/E23824_01/html/821-1448/gbcpt.html).
+A pool name can have up to 50 characters and must follow [ZFS naming conventions](https://docs.oracle.com/cd/E23824_01/html/821-1448/gbcpt.html).
 Use lower-case alpha characters to avoid potential problems with sharing protocols.
 Names can include numbers and special characters such as underscore (_), hyphen (-), colon (:), or a period (.).
 Do not begin a pool name with a special character.
