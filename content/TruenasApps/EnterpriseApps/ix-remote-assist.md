@@ -38,7 +38,9 @@ It cannot be re-established without creating a new authentication key and redepl
 {{< github-content 
     repo="truenas/apps"
     path="trains/enterprise/ix-remote-assist/app_versions.json"
-    lang="json" >}}
+    lang="json"
+	includeFile="/static/includes/apps/Apps-Understanding-Versions.md"
+>}}
 
 ## Installing Remote Assist
 

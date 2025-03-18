@@ -1,6 +1,11 @@
 <!-- Thank you to Greg Hilston and his excellent article on https://www.greghilston.com/post/hugo-display-dynamic-github-content/ for this shortcode -->
-{{ $url := printf "https://api.github.com/repos/%s/contents/%s" (.Get "repo") (.Get "path") }}
+{{ $repo := .Get "repo" }}
+{{ $path := .Get "path" }}
+{{ $branch := default "main" (.Get "branch") }} <!-- Default to "main" if no branch is provided -->
+{{ $url := printf "https://api.github.com/repos/%s/contents/%s" $repo $path }}
 {{ $lang := default "plaintext" (.Get "lang") }}
+{{ $includeFile := .Get "includeFile" }} <!-- Get the file to include -->
+
 {{ with resources.GetRemote $url }}
   {{ $remoteContent := . }}
   {{ with transform.Unmarshal $remoteContent.Content }}
@@ -15,19 +20,34 @@
     {{ end }}
     {{ $versionData := index $jsonData $firstKey }}
 
+    <!-- Include File Content -->
+    {{ if $includeFile }}
+	<details>
+	  <summary><small>Understanding App Versioning</small></summary>
+      <div>
+        {{ $fileContent := readFile $includeFile }}
+        {{ $fileContent | markdownify }}
+      </div>
+	</details>
+    {{ end }}
     <!-- Normal Display -->
     <div>
       <ul>
-        <li>Last Update: {{ $versionData.last_update }}</li>
-        <li>Version: {{ $versionData.version }}</li>
         <li>App Version: {{ $versionData.app_metadata.app_version }}</li>
+        <li>Version: {{ $versionData.version }}</li>
+		<li>Last Updated: {{ $versionData.last_update }}</li>
       </ul>
-      <p><a href="{{ $remoteContent.Permalink }}" target="_blank">View on GitHub</a></p>
+      <p>
+        <!-- Construct the GitHub blame URL -->
+        <a href="https://github.com/{{ $repo }}/blame/{{ $branch }}/{{ $path }}" target="_blank">
+          <small>View file changes (blame) on GitHub</small>
+        </a>
+      </p>
     </div>
 
     <!-- Expandable Section -->
     <details>
-      <summary>View Raw File</summary>
+      <summary>App Version File</summary>
       <pre><code>{{ highlight $decodedContent $lang "" }}</code></pre>
     </details>
   {{ end }}
