@@ -1,15 +1,10 @@
-<!-- This is a row of 4 product cards with tab buttons to switch between three different major versions.
-     Links relevant to that major version become visible when a card's tab button is clicked.
-	 Tabs are labeled "Previous", "Stable", and "Next" and the links within these sections need to be adjusted as new major versions release.
-	 -->
+<!-- This separates the Community and Enterprise content sides for version docs into two boxes that use the latest branding. -->
+
+<!-- Community Box -->
 <div class="docs-sections">
   <div class="section-box" id="scale-section">
     <div class="box-image">
-      <img src="/images/tn-openstorage-logo.png" style="box-shadow: none;">
-    <p>
-      <img src="/images/Community_Edition.png" class="edition-logo" alt="TrueNAS Community Edition"> |
-      <img src="/images/Enterprise.png" class="edition-logo" alt="TrueNAS Enterprise">
-    </p>    
+      <img src="/images/Truenas_community_edition_logos_2025_Logo_Full_Color_Rgb_1-29-25.png" style="padding-bottom:1.4rem;box-shadow: none;">
     </div>
     <div class="section-tabs">
       <div class="section-tab" id="scale-prev-tab">Previous</div>
@@ -17,42 +12,45 @@
       <div class="section-tab" id="scale-next-tab">Next</div>
     </div>
     <div class="section-tab-content" id="scale-previous">
-    <a href="https://www.truenas.com/docs/scale/24.04/">24.04 - Enterprise / Community</a>
-    <br><a href="https://www.truenas.com/docs/scale/24.04/scaletutorials/apps/">24.04 Application Tutorials</a>
-    <hr class="section-divider">
-    <a href="https://www.truenas.com/docs/core/13.0/">13.0 - Enterprise / Community</a>
-    <hr class="section-divider">
-    <a href="https://www.truenas.com/docs/core/13.3/">13.3 - Community only</a>
+      <a href="https://www.truenas.com/docs/scale/24.04/">24.04</a>
+      <hr class="section-divider">
+      <a href="https://www.truenas.com/docs/core/13.3/">13.3</a>
     </div>
     <div class="section-tab-content" id="scale-stable" style="display:none;">
-    <a href="https://www.truenas.com/docs/scale/24.10/">24.10 - Enterprise / Community</a>
-    <br><a href="https://www.truenas.com/docs/scale/24.10/gettingstarted/scalereleasenotes/">24.10 Release Notes</a>
-	  <br><a href="/truenasapps/">Application Tutorials</a>
+      <a href="https://www.truenas.com/docs/scale/24.10/">24.10</a>
+      <br><a href="https://www.truenas.com/docs/scale/24.10/gettingstarted/scalereleasenotes/">24.10 Release Notes</a>
     </div>
     <div class="section-tab-content" id="scale-next" style="display:none;">
-    <a href="https://www.truenas.com/docs/scale/25.04/">25.04 (Pre-Release) - Enterprise / Community</a>
+      <a href="https://www.truenas.com/docs/scale/25.04/">25.04 (Pre-Release)</a>
 	  <br><a href="https://www.truenas.com/docs/scale/25.04/gettingstarted/scalereleasenotes/">25.04 Release Notes</a>
-    <hr class="section-divider">
-    <a href="/scale/">25.10 (Early Development) - Enterprise / Community</a>
+      <hr class="section-divider">
+      <a href="/scale/">25.10 (Early Development)</a>
 	  <br><a href="/scale/gettingstarted/scalereleasenotes/">25.10 Development Notes</a>
     </div>
   </div>
 
-<!-- Systems Box -->
+<!-- Enterprise Box -->
   <div class="section-box" id="systems-section">
     <div class="box-image">
-      <img src="/images/truenas_enterprise-logo-full-color-rgb.png" style="padding-bottom:.8rem;box-shadow: none;">
+      <img src="/images/Truenas_enterprise_logo_2025_Logo_Full_Color_Rgb_1-29-25.png" style="padding-bottom:.5rem;box-shadow: none;">
     </div>
-    <p><b>TrueNAS<sup class="section-sup">&reg;</sup> Hardware</b></p>
     <div class="section-tabs">
-      <div class="section-tab mute" disabled>&emsp;&emsp;&ensp;</div>
-      <div class="section-tab active"id="tn-systems-hardware">Products</div>
-	    <div class="section-tab mute" disabled>&emsp;&emsp;&ensp;</div>
+      <div class="section-tab" id="ent-prev-tab">Previous</div>
+      <div class="section-tab" id="ent-stable-tab">Current</div>
+      <div class="section-tab active"id="ent-systems-hardware">Products</div>
     </div>
-    <div class="section-tab-content" id="tn-systems-hardware">
+	<div class="section-tab-content" id="ent-previous-content" style="display:none;">
+      <a href="https://www.truenas.com/docs/scale/24.04/">24.04</a>
+      <hr class="section-divider">
+      <a href="https://www.truenas.com/docs/core/13.0/">13.0</a>
+    </div>
+	<div class="section-tab-content" id="ent-stable-content" style="display:none;">
+	  <a href="https://www.truenas.com/docs/scale/24.10/">24.10</a>
+      <br><a href="https://www.truenas.com/docs/scale/24.10/gettingstarted/scalereleasenotes/">24.10 Release Notes</a>
+    </div>
+    <div class="section-tab-content" id="ent-products-content">
       <a href="/hardware/">Products Overview</a>
       <br><a href="/hardware/stencils/">Visio Stencils</a>
-      <br><a href="/hardware/notices/">Notices</a>
       <br><a href="/hardware/legacyhardware/">Legacy Systems</a>
     </div>
   </div>
@@ -77,7 +75,7 @@ document.addEventListener("DOMContentLoaded", function() {
     tabs[tabIndex].classList.add("active");
   }
 
-  const sectionBoxes = document.querySelectorAll(".section-box:not(#systems-section)");
+  const sectionBoxes = document.querySelectorAll(".section-box");
   sectionBoxes.forEach(box => {
     const tabs = box.querySelectorAll(".section-tab");
     tabs.forEach((tab, index) => {
