@@ -26,12 +26,14 @@ For more information on using USB drives and devices in general, read the [Hardw
 If you must use a USB-type device, verify you can access files on the device before you migrate.
 {{< /hint >}}
 {{< enterprise >}}
-Enterprise customers are encouraged to contact Support for assistance with the process of moving from a FreeBSD-based (13.3 or earlier) to a Linux-based (22.12 or newer) TrueNAS version, especially customers with HA systems.
+We strongly encourage Enterprise customers to contact Support for assistance moving from a FreeBSD-based (13.3 or earlier) to a Linux-based (22.12 or newer) TrueNAS version, especially customers with HA systems using iSCSI shares or fibre channel. Enterprise customers should not attempt to migrate their HA systems with iSCSI or fibre channel on their own!
+Enterprise systems with iSCSI and fibre channel deployments require complex, special preparation and migration steps executed before and after migration to ensure data integrity.
+Please contact Support for assistance!
 {{< /enterprise >}}
 
 1. Upgrade your system to either the latest 13.0 or 13.3 release.
    TrueNAS Enterprise-licensed (or community systems that haven't switched to 13.3) systems on 12.0x or earlier should upgrade to the latest 13.0 release (e.g. 13.0-U6.2 or newer) before migration.
-   Community users with 13.3 installed should update to the latest maintenance release of that version prior to migration.
+   Community users with 13.3 installed should update to the latest maintenance release of that version before migration.
    Either major version can use the [iso upgrade](#migrating-using-an-iso-file-to-upgrade) method for migration.
 
 2. Migrate [GELI-encrypted pools](https://www.truenas.com/docs/core/13.0/coretutorials/storage/pools/storageencryption/#geli-pool-migrations) to a non-GELI-encrypted pool before upgrading from TrueNAS 12.0x or earlier releases!
@@ -67,6 +69,13 @@ Enterprise customers are encouraged to contact Support for assistance with the p
    <input type="checkbox"> Credentials - Copy or write down the credentials for SSH connections and keypairs, and any configured cloud service backup providers if you do not have the credential settings saved in other files kept secured outside of TrueNAS.
 
    <input type="checkbox"> Data protection tasks - Write down or take screenshots of replication, periodic snapshots, cloud sync, or other task settings to reconfigure these after migrating.
+
+   
+   Community users with iSCSI deployments can migrate their systems without assistance. Note, unlike FreeBSD systems, Linux Debian systems require at least one LUN set to zero.
+   iSCSI portals in Linux Debian-based systems are defined globally instead of per port.
+
+   Enterprise systems with iSCSI shares and/or fibre channel deployments have special requirements, preparation, and migration steps to ensure data integrity and a smooth migration.
+   Other iSCSI differences only apply to Enterprise High Availability (HA) systems and those with fibre channel ports. Enterprise users **must** contact TrueNAS Customer Support for assistance with their migrations!
 
 5. Remove all SMB auxiliary parameter settings before migrating.
    In TrueNAS 23.10 (Cobia) or newer, the SMB **Auxiliary Parameters** option is unavailable in the UI.
@@ -162,10 +171,10 @@ Disable both the WebDAV share and service.
 Also disable the **Start Automatically** option to prevent the service from re-enabling after a system restart.
 
 Review any existing WebDAV service authentication settings.
-Take note of all IP addresses, port numbers, URLs and credentials (username and password).
+Take note of all IP addresses, port numbers, URLs, and credentials (username and password).
 
 Remove any existing WebDAV shares. Go to **Shares > WebDAV** and use **Edit** to view any existing configurations.
-Take note of the share name, path, and read only settings. Delete the WebDAV share configuration.
+Take note of the share name, path, and read-only settings. Delete the WebDAV share configuration.
 
 In Bluefin:
 To grant access to a specific user (and group) other than using the default admin user UID and GID, add a new non-root administrative user for the share(s).

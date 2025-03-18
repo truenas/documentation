@@ -11,49 +11,54 @@ aliases:
 - /contributing/documentation/appcontributions/
 ---
 
-
 We welcome community user contributions, issue reporting, and suggestions for new features and apps to create the best possible TrueNAS app user experience!
 
 ## App Updates and Releases
+
 Application maintenance is independent of TrueNAS version release cycles.
 App version information, features, configuration options, and installation behavior during access might vary from those in documented tutorials.
 
 TrueNAS apps show the **Update** badge and button on any deployed application instance on the **Installed** application screen when a new version is available.
 Users can apply the update(s) individually or collectively and at a convenient time based on needs.
 
+To see currently available apps, go to **Apps** and click **Discover Apps** or visit the [TrueNAS Apps repository](https://github.com/truenas/apps) on GitHub.
+
 ## Contributing to TrueNAS Application Catalogs
+
 Users can submit changes to an existing application catalogs through:
 
-* GitHub Contributions
+### Contributing Applications
 
-  {{< hint type=note title="Coming Soon" >}}
-  We are actively working on making the core application library more user-friendly. This process might involve breaking changes to the API. Therefore, please wait for an update on when you can start submitting pull requests.
+The Apps catalog is open for contributions!
+For instructions on how to locally develop and test new applications, see the [contributors guide](https://github.com/truenas/apps/blob/master/CONTRIBUTIONS.md) on GitHub.
 
-  Thank you for your understanding.
-  {{< /hint >}}
+### Participating in Github Discussions
 
-* Community Forum Feature Requests
+Questions on the development of applications?
+Please head over to the [discussions](https://github.com/truenas/apps/discussions) page to ask questions and collaborate with other App Developers.
 
-  To request a feature change, go to the [TrueNAS Community Forum](https://forums.truenas.com/), and click **Feature Request**.
-  Read the **About the Feature Requests category - README First** topic, then click **Open Draft** on the top right of the screen.
-  Populate the new request form with the relevant information for each section, **Problem/Justification**, **Impact**, and **User Story**.
-  The form guides you on populating these sections.
-  Click **Create Topic** to add your suggestion to the list of topics.
+### Community Forum Feature Requests
 
-  Users vote and comment on these suggestions.
-  TrueNAS team members actively monitor this channel and discusses the feasibility of each request both internally and in the forum posts.
+To request an application or general Apps service feature change, go to the [TrueNAS Community Forum](https://forums.truenas.com/), and click **Feature Request**.
+Read the **About the Feature Requests category - README First** topic, then click **Open Draft** on the top right of the screen.
+Populate the new request form with the relevant information for each section, **Problem/Justification**, **Impact**, and **User Story**.
+The form guides you on populating these sections.
+Click **Create Topic** to add your suggestion to the list of topics.
 
-  If approved and requested to submit a PR to add the new application, submit a PR against the [TrueNAS/Community](https://github.com/truenas/charts/tree/master/community) repository.
-  Include the relevant files in the PR, including a ReadMe.txt file with any installation notes for TrueNAS developers.
+Users vote and comment on these suggestions.
+TrueNAS team members actively monitor this channel and discusses the feasibility of each request both internally and in the forum posts.
 
-To see a current list of apps, visit the [TrueNAS Apps repository](https://github.com/truenas/apps) on GitHub.
+If approved and requested to submit a PR to add the new application, submit a PR against the [TrueNAS/Community](https://github.com/truenas/charts/tree/master/community) repository.
+Include the relevant files in the PR, including a ReadMe.txt file with any installation notes for TrueNAS developers.
 
 ## Contributing to TrueNAS Application Documentation
+
 Community members can submit change requests or add new tutorials to the **Truenas Apps > Community Apps** tutorials section of the Documentation Hub.
 
 For more information on submitting change requests, forking repos, and submitting PRs, see [Updating Content]({{< relref "/Contributing/Documentation/ContentUpdate.md" >}}).
 
 ### Submitting New Tutorial Articles
+
 When submitting new tutorials or requesting changes to existing TrueNAS Documentation Hub application tutorials:
   
 1. Create the PR against a forked copy of the [TrueNAS Documentation Hub public repository](https://github.com/truenas/documentation/tree/master).
@@ -70,6 +75,7 @@ When submitting new tutorials or requesting changes to existing TrueNAS Document
 6. Submit the PR against the **Master** branch.
 
 ### Using the App Tutorial Template
+
 Feel free to change standard article content by adding or removing sections to fit the app installation process.
 Change the front matter <file>description:</file> parameter at the top of the article to suit the subject and content of the new tutorial.
 Description text must not exceed 160 alphanumeric or special characters, including spaces between characters.
@@ -77,8 +83,10 @@ After updating content, delete commented-out sections providing instructions for
 When documenting a **Community** train app, not delete any of the commented-out instructions in the COMMUNITY APP INTRO SNIPPETS section.
 
 #### Formatting Tips for Content Development
+
 Standard text emphasis:
-* Apply **Bold** to UI elements seen on the screen, including field, button, and navigation option names, other descriptions, etc.
+
+* Apply **Bold** to UI elements seen on the screen, including field, button, and navigation option names.
   Use double asterisks preceding and following the name or text string to make it bold.
   Do not use bold in code strings.
 
@@ -103,6 +111,7 @@ When entering commands, command strings, or code blocks:
 To create a code block, either use three backticks (<code>```</code>) on the line before and after the content block, or use the HTML code tags.
 
 #### Using the Apps Snippet Library
+
 When creating your articles you can use the library of snippets that contain explanations of settings and configuration instructions for the various app Install Wizard settings in your submitted content.
 The Technical Documentation team maintains these snippets, but you can submit change requests for these files just as with full articles if you find content that needs updating or changing.
 
@@ -122,7 +131,7 @@ Open and read snippet files to determine where to use them in your tutorial.
 | File Name | Snippet Use and Content |
 |-----------|-------------------------|
 | CommunityApp.md | Introduces Community Apps section tutorials, and contributing content. |
-| CommunityPleaseExpand.md | States the tutorial is incomplete or a placeholder needing further development. Use if you are proposing a partial expansion of the content, but further work is needed. | 
+| CommunityPleaseExpand.md | States the tutorial is incomplete or a placeholder needing further development. Use if you are proposing a partial expansion of the content, but further work is needed. |
 | CommunityPleaseImprove.md | States the tutorial content is suspected to be out of date or inaccurate. Use if you suspect the Community app documentation is out of date, inaccurate, or needs further improvement. |
 {{< /truetable >}}
 
@@ -134,7 +143,7 @@ Open and read snippet files to determine where to use them in your tutorial.
 | BeforeYouBeginRunAsUser.md | Bullet point describing where to find the run as user information, and includes a screenshot of the app information screen for the app being documented. |
 | BeforeYouBegigAddAppDatasets.md | Bullet point for adding datasets for the app. Does does not include details on adding datasets as these vary by app. |
 | BeforeYouBeginAddAppDatasetsProcedure.md | Procedure for correctly creating datasets for apps in an expand/collapse area. |
-| InstallWizardPostgresStorageAutomaticPermissions | Information on configuring postgres and parent dataset permissions, added in the Before You Begin section but can also be added in the Understanding Application Wizard Settings. |
+| InstallWizardPostgresStorageAutomaticPermissions.md | Information on configuring postgres and parent dataset permissions, added in the Before You Begin section but can also be added in the Understanding Application Wizard Settings. |
 | BeforeYouBeginAddAppCertificate.md | Bullet point for adding a certificate if required for the app. Also include the AddingAppCertificate.md snippet with detailed instructions on adding a self-signed certificate. |
 | AddingAppCertificate.md | Detailed set procedure on adding a self-signed certificate authority (CA) and certificate. |
 | BeforeYouBeginAddNewUser.md | Single bullet point and procedure for adding a new user as a TrueNAS app administrator. |
@@ -146,7 +155,7 @@ Open and read snippet files to determine where to use them in your tutorial.
 |-----------|---------------------|
 | LocateAndOpenInstallWizard.md | Describes locating the app widget, and opening the install wizard for the app. |
 | MultipleAppInstancesAndNaming.md | Describes adding more than one instance of the same app and naming it. For example, adding two stable or community app instances, or an enterprise and stable train version of the same app. |
-| Configuring the app | InstallWizardEnvironVariablesSettings.md | Details the Environment Variable settings. Can use this if the procedure requires adding environment variables, or leave the snippet in the Understanding App Install Wizard section and refer to it for more information. |
+| InstallWizardEnvironVariablesSettings.md | Details the Environment Variable settings. Can use this if the procedure requires adding environment variables, or leave the snippet in the Understanding App Install Wizard section and refer to it for more information. |
 | InstallWizardAdvancedDNSSettings.md | Details the Advanced DNS setting options that might be included as part of the app configuration or network configuration settings. |
 {{< /truetable >}}
 
@@ -174,6 +183,7 @@ Open and read snippet files to determine where to use them in your tutorial.
 {{< /expand >}}
 
 ### Suggesting Edits to Existing Articles
-Click **Edit Article** at the top of the Documentation Hub article to suggest changes to an existing article.
+
+Click **Edit page** at the top of the Documentation Hub article to suggest changes to an existing article.
 
 Refer to the [Content Updates]({{< relref "/Contributing/Documentation/ContentUpdate.md" >}}) article for more details.
