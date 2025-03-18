@@ -8,7 +8,7 @@ To set up a bridge interface:
 
    {{< trueimage src="/images/SCALE/Network/NetworkInterfacesSCALE.png" alt="Network Interfaces" id="Network Interfaces" >}}
 
-2. If enabled, clear the **DHCP** checkbox.
+2. Clear the **DHCP** checkbox, if enabled.
    Note the IP address and mask under **Aliases**.
    Click the **X** next to the listed alias to remove the IP address and mask.
    The **Aliases** field now reads **No items have been added yet**.
@@ -16,16 +16,17 @@ To set up a bridge interface:
 
    {{< trueimage src="/images/SCALE/Network/EditInterfaceNicDeviceSCALE.png" alt="Edit Network Interface" id="Edit Network Interface" >}}
 
-3. The **Interfaces** widget displays the edited interface without IP information.
+   The **Interfaces** widget displays the edited interface without IP information.
 
    {{< trueimage src="/images/SCALE/Network/NetworkInterfacesNoIPSCALE.png" alt="Network Interface Widget" id="Network Interface Widget" >}}
 
-4. Select **Bridge** from the **Type** dropdown list.
+3. Click **Add** to open the **Add Interface** screen.
+   Select **Bridge** from the **Type** dropdown list.
    You cannot change the **Type** field value after clicking **Save**!
 
    {{< trueimage src="/images/SCALE/Network/AddInterfaceNicDeviceSCALE.png" alt="Add Bridge Interface" id="Add Bridge Interface" >}}
 
-5. Enter a name for the interface.
+4. Enter a name for the interface.
    Use the correct format based on the interface type:
 
    ***bond*X*** for a LAGG interface
@@ -37,25 +38,25 @@ To set up a bridge interface:
 
    You cannot change the **Name** of the interface after clicking **Save**.
 
-6. (Optional but recommended) Enter any notes or reminders about this particular bridge in **Description**.
+5. (Optional but recommended) Enter any notes or reminders about this particular bridge in **Description**.
 
-7. Select the interfaces on the **Bridge Members** dropdown list.
+6. Select the interfaces on the **Bridge Members** dropdown list.
 
-8. Click **Add** to the right of **Aliases** to show the IP address fields, and enter the IP address for this bridge interface.
+7. Click **Add** to the right of **Aliases** to show the IP address fields, and enter the IP address for this bridge interface.
    Click **Add** again to show additional IP address fields for each additional IP address you want to add.
 
    {{< trueimage src="/images/SCALE/Network/AddInterfaceNicDeviceOtherSettingsSCALE.png" alt="Add IP and Subnet Mask" id="Add IP and Subnet Mask" >}}
 
-9. Click **Save** when finished. The created bridge shows in **Interfaces** with its associated IP address information.
+8. Click **Save** when finished. The created bridge shows in **Interfaces** with its associated IP address information.
 
    {{< trueimage src="/images/SCALE/Network/NetworkInterfacesBridgeSCALE.png" alt="Network Interfaces with Bridge" id="Network Interfaces with Bridge" >}}
 
-10. Click **Test Changes** to determine if network changes are successful.
+9. Click **Test Changes** to determine if network changes are successful.
    See [Testing Network Interface Changes]({{< relref "/SCALE/SCALETutorials/Network/Interfaces/_index.md#Testing-Network-Interface-Changes">}})
 
    {{< trueimage src="/images/SCALE/Virtualization/VMTestNetworkChanges.png" alt="Test Network Changes" id="Test Network Changes" >}}
 
-11. After TrueNAS finishes testing the interface, click **Save Changes** to keep the changes.
+10. After TrueNAS finishes testing the interface, click **Save Changes** to keep the changes.
    Click **Revert Changes** to discard the changes and return to the previous configuration.
 
 {{< trueimage src="/images/SCALE/Virtualization/VMSaveNetworkChanges.png" alt="Save Network Changes" id="Save Network Changes" >}}
