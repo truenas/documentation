@@ -47,12 +47,10 @@ Use the **Configuration** dropdown to access the **[Global Settings](#configurin
 
 ### Configuring Global Settings
 
-<!-- General Global Settings description with screenshot 
-
-**Global Settings** opens the **Global Settings** screen showing global options that apply to all instances, including selecting the storage pool for instances and network settings.
+Click **Global Settings** on the **Configuration** menu to open the **Global Settings** screen, showing global options that apply to all instances.
+Use these options to configure the [storage pool](#choosing-the-instances-pool) for instances and [network settings](#configuring-the-default-network).
 
 {{< trueimage src="/images/SCALE/Virtualization/InstancesGlobalSettingsScreen.png" alt="Global Settings Screen" id="Global Settings Screen" >}}
--->
 
 #### Choosing the Instances Pool
 
@@ -65,48 +63,82 @@ Select a pool with enough storage space for all the instances you intend to host
 
 For stability and performance, we recommend using SSD/NVMe storage for the instances pool due to their faster speed and resilience for repeated read/writes.
 
-TrueNAS creates a hidden **ix-virt** dataset on the selected pool and mounts the hidden directory at <file>*POOL*/.ix-virt</file>.
-The ix-virt dataset does not inherit encryption if an encrypted pool is selected as the pool for instances.
+<!-- Placeholder: Further description of the instances storage implementation here (once implementation is nailed down and experimental status removed) -->
 
 To select a different pool for instances to use, use the **Pool** dropdown to select a different pool.
 Select **[Disabled]** to deselect the active pool and disable the instances service.
 
 #### Configuring the Default Network
 
+Use the **Default Network** settings to define how instances connect to the network.
+These settings apply to all new containers and VMs, unless configured otherwise.  
+
+Select **Automatic** for **Bridge** to use the default network bridge for communication between instances and the TrueNAS host.
+To specify an existing bridge, select one from the dropdown list.
+See [Accessing NAS from VMs and Containers]({{< relref "/ScaleTutorials/Network/ContainerNASBridge.md" >}}) for details.  
+When **Bridge** is set to **Automatic**, the **IPv4 Network** and **IPv6 Network** settings display.
+
+Enter an IPv4 address and subnet (e.g., *192.168.1.0/24*) in **IPv4 Network** to assign a specific network for instances.
+Leave this field empty to allow TrueNAS to assign the default address.  
+
+Enter an IPv6 address and subnet (e.g., *fd42:96dd:aef2:483c::1/64*) in **IPv6 Network** or leave this field empty to allow TrueNAS to assign the default address.  
+
+Adjust these settings as needed to match your network environment and ensure proper connectivity for instances.  
+
 ### Managing Volumes
 
-<!-- To include in tutorial PR:
+Click **Manage Volumes** on the **Configuration** menu to open the **Volumes** screen, which lists all <file>.iso</file> images currently uploaded to the instances service.
+
+{{< trueimage src="/images/SCALE/Virtualization/InstancesVolumesScreen.png" alt="Volumes Screen" id="Volumes Screen" >}}
+
+Click **Upload New Image** to open a file browser.
+Select an image from your computer and upload it to TrueNAS for use in instances.
 
 {{< expand "Image Filename Requirements" "v" >}}
-{{< include file="/static/includes/InstanceImageFilename.md" >}}
+{{< include file="/static/includes/InstanceImageFilenames.md" >}}
 
 This ensures the instance name works without conflicts in DNS records, the file system, security profiles, and as the instance hostname.
 See [Instance name requirements](https://linuxcontainers.org/incus/docs/main/reference/instance_properties/#instance-name-requirements) from Incus for more information.
 {{< /expand >}}
 
-
----
-
-#### Delete Volumes
-
 Click <i class="material-icons" aria-hidden="true" title="Delete">delete</i> on an image row to delete that image.
-A **Delete volume** dialog displays.
+The **Delete volume** dialog displays.
 
 {{< trueimage src="/images/SCALE/Virtualization/InstancesDeleteVolume.png" alt="Delete Volume Dialog" id="Delete Volume Dialog" >}}
 
 Select **Confirm** and then click **Continue** to delete the image.
-To prevent accidental deletion of an in-use image, the delete icon is not selectable for active images.
-
----
-
-
-
- -->
-
+TrueNAS disables the delete icon for active images to prevent accidental deletion.
 
 ### Mapping User and Group IDs
 
+Click **Map User/Group IDs** on the **Configuration** menu to open the **Map User and Group IDs** screen, which allows you to manually configure UID and GID mappings inside instances.
+By default, user and group accounts within an instance are assigned UIDs and GIDs from a special private range starting at `2147000001`.
+This mapping ensures security isolation for containers.
+However, you can override these mappings to meet specific system requirements.
+
+{{< trueimage src="/images/SCALE/Virtualization/MapUserGroupIDs.png" alt="Map User and Group IDs Screen" id="Map User and Group IDs Screen" >}}
+
+Select **Users** or **Groups** to view mappings for individual user or group accounts, respectively.
+
+Existing mappings are shown in a table containing the user or group name, host ID, and instance ID.
+Click **<i class="material-icons" aria-hidden="true" title="Delete">delete</i> Delete** on a row to delete that mapping.
+
+To configure a new mapping, type an account name to search for it or select it from the dropdown menu.
+Select **Map to the same UID/GID in the instance** to directly map the host ID to the same ID in instances.
+This means that the selected user or group ID on the host appears as the same ID in instances.
+
+Deselect **Map to the same UID/GID in the instance** to define a different instance ID for the user or group.
+Enter an ID number to map in instances, for example *1000*.
+This means that the selected user or group ID on the host appears as the configured ID in instances.
+
+Click **Set** to create the mapping.
+Changes take effect immediately, though instances can require a restart to reflect the changes.
+
+Incorrect mappings can create permission issues within instances.
+
 ## Creating Instances
+
+a
 
 ### Creating a Virtual Machine
 
@@ -614,3 +646,4 @@ If your system has more than one physical interface, you can assign your VMs to 
 
 To create a bridge interface for the VM to use if you have only one physical interface, stop all existing apps, VMs, and services using the current interface, edit the interface and VMs, create the bridge, and add the bridge to the VM device.
 See [Accessing NAS from VM]({{< relref "ContainerNASBridge.md" >}}) for more information.
+-->
