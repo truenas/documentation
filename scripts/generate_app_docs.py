@@ -33,6 +33,8 @@ keywords:
 
 {{< include file="/static/includes/apps/EnterpriseApps.md" >}}
 
+{{< github-content repo="truenas/apps" path="train/enterprise/$name/app_versions.json" branch="master" title="$title" >}}
+
 $app_readme
 """,
     "Stable": """---
@@ -48,6 +50,8 @@ keywords:
 - software solutions
 - data management
 ---
+
+{{< github-content repo="truenas/apps" path="train/stable/$name/app_versions.json" branch="master" title="$title" >}}
 
 $app_readme
 """,
@@ -66,6 +70,8 @@ keywords:
 ---
 
 {{< include file="/static/includes/apps/CommunityApp.md" >}}
+
+{{< github-content repo="truenas/apps" path="train/community/$name/app_versions.json" branch="master" title="$title" >}}
 
 {{< include file="/static/includes/apps/CommunityPleaseExpand.md" >}}
 

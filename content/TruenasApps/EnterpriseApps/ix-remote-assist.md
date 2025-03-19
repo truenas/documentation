@@ -21,6 +21,15 @@ The Remote Assist app is intended for use by TrueNAS Enterprise customers with a
 TrueNAS community use of Remote assist for any reason is outside of the intended purposes and not supported.
 {{< /hint >}}
 
+{{< github-content 
+    repo="truenas/apps"
+    path="trains/enterprise/ix-remote-assist/app_versions.json"
+    lang="json"
+	includeFile="/static/includes/apps/Apps-Understanding-Versions.md"
+>}}
+
+## App Description
+
 The Remote Assist app allows TrueNAS Enterprise support personnel remote access to customer systems to assist with deploying or troubleshooting an environment.
 Remote Assist uses Tailscale to create secure connections between support staff and customers.
 Authentication is established with a one-time use authentication key, provided by TrueNAS Enterprise Support and used for the duration of the active deployment or support case.
@@ -32,15 +41,6 @@ Support personnel can guide you through configuration.
 After the remote assistance session completes, delete the Remote Assist application from the TrueNAS system.
 This fully deauthorizes the remote connection.
 It cannot be re-established without creating a new authentication key and redeploying Remote Assist at a later date, such as to resolve a future support case.
-
-## App Versioning
-
-{{< github-content 
-    repo="truenas/apps"
-    path="trains/enterprise/ix-remote-assist/app_versions.json"
-    lang="json"
-	includeFile="/static/includes/apps/Apps-Understanding-Versions.md"
->}}
 
 ## Installing Remote Assist
 

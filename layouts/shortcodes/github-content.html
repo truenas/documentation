@@ -1,10 +1,11 @@
 <!-- Thank you to Greg Hilston and his excellent article on https://www.greghilston.com/post/hugo-display-dynamic-github-content/ for this shortcode -->
 {{ $repo := .Get "repo" }}
 {{ $path := .Get "path" }}
-{{ $branch := default "main" (.Get "branch") }} <!-- Default to "main" if no branch is provided -->
+{{ $branch := default "master" (.Get "branch") }} <!-- Default to "master" if no branch is provided -->
 {{ $url := printf "https://api.github.com/repos/%s/contents/%s" $repo $path }}
 {{ $lang := default "plaintext" (.Get "lang") }}
 {{ $includeFile := .Get "includeFile" }} <!-- Get the file to include -->
+{{ $title := .Get "title" }} <!-- Title for the card -->
 
 {{ with resources.GetRemote $url }}
   {{ $remoteContent := . }}
@@ -20,35 +21,103 @@
     {{ end }}
     {{ $versionData := index $jsonData $firstKey }}
 
-    <!-- Include File Content -->
-    {{ if $includeFile }}
-	<details>
-	  <summary><small>Understanding App Versioning</small></summary>
-      <div>
-        {{ $fileContent := readFile $includeFile }}
-        {{ $fileContent | markdownify }}
-      </div>
-	</details>
-    {{ end }}
-    <!-- Normal Display -->
-    <div>
-      <ul>
-        <li>App Version: {{ $versionData.app_metadata.app_version }}</li>
-        <li>Version: {{ $versionData.version }}</li>
-		<li>Last Updated: {{ $versionData.last_update }}</li>
-      </ul>
-      <p>
-        <!-- Construct the GitHub blame URL -->
-        <a href="https://github.com/{{ $repo }}/blame/{{ $branch }}/{{ $path }}" target="_blank">
-          <small>View file changes (blame) on GitHub</small>
-        </a>
-      </p>
-    </div>
+    <!-- Extract specific values from the JSON -->
+    {{ $icon := $versionData.app_metadata.icon }}
+    {{ $name := $versionData.app_metadata.title }}
+	{{ $descr := $versionData.app_metadata.description }}
 
-    <!-- Expandable Section -->
-    <details>
-      <summary>App Version File</summary>
-      <pre><code>{{ highlight $decodedContent $lang "" }}</code></pre>
-    </details>
+	<!-- Text Card Layouts -->
+	<div class="docs-sections">
+	<!-- First Card -->
+	<div class="section-box">
+		<div class="box-image">
+		<img class="prod-card-img" src="{{ $icon }}" aria-label="{{ $name }} Logo">
+		</div>
+		<div class="section-tab-content ixprods">
+		<b style="justify-content:center;font-size:1.5rem;font-weight:600;">{{ $name }}</b><br>
+		{{ $descr }}<br>
+		<small>App Version: {{ $versionData.app_metadata.app_version }}<br>
+		Version: {{ $versionData.version }}<br>
+		Keywords: {{ delimit $versionData.app_metadata.keywords ", " }}<br>
+		Train: {{ $versionData.app_metadata.train }}<br>
+	    Home Page: <a href="{{ $versionData.app_metadata.home }}" target="_blank">{{ $versionData.app_metadata.home }}</a>
+		</small>
+		</div>
+	</div>
+	
+	<!-- Second Card -->
+	<div class="section-box">
+	<div class="box-image">
+		<b>{{ $name }} Details</b><br>
+		<a href="https://github.com/{{ $repo }}/blame/{{ $branch }}/{{ $path }}" target="_blank">Last Updated: {{ $versionData.last_update }}</a>
+	</div>
+	<div class="section-tab-content ixprods">
+		<small>
+		<!-- Context Section -->
+		{{ if $versionData.app_metadata.run_as_context }}
+		<p><b>User & Groups Context:</b></p>
+		<ul style="list-style-type:none;">
+			{{ range $run_as_context := $versionData.app_metadata.run_as_context }}
+			<li>
+				{{ $run_as_context.description }}<br>
+				<b>Group:</b> {{ $run_as_context.gid }} / {{ $run_as_context.group_name }}<br>
+				<b>User:</b> {{ $run_as_context.uid }} / {{ $run_as_context.user_name }}
+			</li>
+			{{ end }}
+		</ul>
+		{{ end }}
+	
+		<!-- Capabilities Section -->
+		{{ if $versionData.app_metadata.capabilities }}
+			{{ if gt (len $versionData.app_metadata.capabilities) 0 }}
+			<p><b>Capabilities:</b></p>
+			<ul>
+				{{ range $capability := $versionData.app_metadata.capabilities }}
+				<li>
+					{{ $capability.description }}
+				</li>
+				{{ end }}
+			</ul>
+			{{ end }}
+		{{ end }}
+		</small>
+	</div>
+	</div>
+	</div>
+
+{{ if $includeFile }}
+	<details>
+		<summary><small>Understanding App Versioning</small></summary>
+			<div>
+				{{ $fileContent := readFile $includeFile }}
+				{{ $fileContent | markdownify }}
+			</div>
+	</details>
+{{ end }}
+
+<!-- Screenshots Section: displays only when app versions file has screenshot urls added -->
+{{ if $versionData.app_metadata.screenshots }}
+  <br>
+  <div class="screenshots-section">
+    <b>Screenshots</b>
+    <div class="screenshots-thumbnails">
+      {{ range $screenshot := $versionData.app_metadata.screenshots }}
+        <a href="{{ $screenshot }}" target="_blank">
+          <img class="screenshot-thumbnail" src="{{ $screenshot }}" alt="Screenshot">
+        </a>
+      {{ end }}
+    </div>
+  </div>
+{{ end }}
+
+
+<!-- Expandable Section -->
+<br>
+<details>
+  <summary>App Metadata (Raw File)</summary>
+  <pre><code>{{ highlight $decodedContent $lang "" }}</code></pre>
+</details>
+<br>
+<hr>
   {{ end }}
 {{ end }}

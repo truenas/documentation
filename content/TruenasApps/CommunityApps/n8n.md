@@ -11,6 +11,13 @@ keywords:
 - flash storage
 ---
 
+{{< github-content 
+    repo="truenas/apps"
+    path="trains/community/n8n/app_versions.json"
+    lang="json"
+	includeFile="/static/includes/apps/Apps-Understanding-Versions.md"
+>}}
+
 {{< include file="/static/includes/apps/CommunityApp.md" >}}
 
 <!-- Comment out the following line if your suggested changes to this Community app documentation provide a complete installation tutorial. Leave exposed if you are proposing a partial expansion of the content, but further work is needed. -->
@@ -18,7 +25,5 @@ keywords:
 
 <!-- Uncomment the following line if you suspect this Community app documentation is out of date, inaccurate, or needs further improvement -->
 <!--{{< include file="/static/includes/apps/CommunityPleaseImprove.md" >}}-->
-
-[n8n](https://n8n.io) <!-- is a [description of the application] -->
 
 {{< include file="/static/includes/ProposeArticleChange.md" >}}
