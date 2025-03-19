@@ -16,6 +16,15 @@ keywords:
 
 {{< include file="/static/includes/apps/EnterpriseApps.md" >}}
 
+{{< github-content 
+    repo="truenas/apps"
+    path="trains/enterprise/asigra-ds-system/app_versions.json"
+    lang="json"
+	includeFile="/static/includes/apps/Apps-Understanding-Versions.md"
+>}}
+
+## App Description
+
 The Asigra DS-System app enables you to offer a robust, scalable service to multiple customers.
 Agentless architecture, where customers only need to install the DS-Client on one LAN computer, eliminates the need to install software on each target backup/restore computer.
 

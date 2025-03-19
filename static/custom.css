@@ -2579,19 +2579,75 @@ pre.gdoc-mermaid.mermaid.mermaid_sizing {
   }
 
 /* End Styling for Version Selector Sections */
-/* Style the screenshot thumbnails for injected App content */
+/* Screenshot Thumbnails */
 .screenshots-thumbnails {
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
 }
+
 .screenshot-thumbnail {
   width: 400px;
   height: auto;
   border: 1px solid #ccc;
   border-radius: 5px;
   transition: transform 0.2s;
+  cursor: pointer;
 }
+
 .screenshot-thumbnail:hover {
   transform: scale(1.1);
+}
+/* Lightbox Styles */
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 50%; /* Center horizontally */
+  top: 50%; /* Center vertically */
+  transform: translate(-50%, -50%); /* Adjust for centering */
+  width: 80%; /* Set the width to 80% of the viewport */
+  height: 80%; /* Set the height to 80% of the viewport */
+  background-color: rgba(0, 0, 0, 0.9); /* Dark background */
+  border-radius: 10px; /* Optional: Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Add a shadow */
+  overflow: hidden; /* Prevent scrolling inside the modal */
+}
+
+/* Lightbox Content (Image) */
+.lightbox-content {
+  max-width: 100%; /* Ensure the image fits within the modal */
+  max-height: 100%; /* Ensure the image fits within the modal */
+  margin: auto;
+  display: block;
+  object-fit: contain; /* Ensure the image scales proportionally */
+}
+
+/* Close Button */
+.lightbox-close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  color: white;
+  font-size: 30px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Navigation Controls */
+.lightbox-controls {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+}
+
+.lightbox-controls button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 40px;
+  cursor: pointer;
 }

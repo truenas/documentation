@@ -66,20 +66,6 @@
 			{{ end }}
 		</ul>
 		{{ end }}
-	
-		<!-- Capabilities Section -->
-		{{ if $versionData.app_metadata.capabilities }}
-			{{ if gt (len $versionData.app_metadata.capabilities) 0 }}
-			<p><b>Capabilities:</b></p>
-			<ul>
-				{{ range $capability := $versionData.app_metadata.capabilities }}
-				<li>
-					{{ $capability.description }}
-				</li>
-				{{ end }}
-			</ul>
-			{{ end }}
-		{{ end }}
 		</small>
 	</div>
 	</div>
@@ -95,22 +81,45 @@
 	</details>
 {{ end }}
 
-<!-- Screenshots Section: displays only when app versions file has screenshot urls added -->
+<!-- Screenshots Section: displays only when app versions file has screenshot URLs added -->
 {{ if $versionData.app_metadata.screenshots }}
   <br>
   <div class="screenshots-section">
     <b>Screenshots</b>
     <div class="screenshots-thumbnails">
-      {{ range $screenshot := $versionData.app_metadata.screenshots }}
-        <a href="{{ $screenshot }}" target="_blank">
-          <img class="screenshot-thumbnail" src="{{ $screenshot }}" alt="Screenshot">
-        </a>
-      {{ end }}
+		{{ range $index, $screenshot := $versionData.app_metadata.screenshots }}
+		<img class="screenshot-thumbnail" src="{{ $screenshot }}" alt="Screenshot {{ add $index 1 }}" onclick="openLightbox('{{ $screenshot }}')">
+		{{ end }}
+	</div>
+  </div>
+
+  <!-- Lightbox Modal -->
+  <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+    <span class="lightbox-close">&times;</span>
+    <img id="lightbox-image" class="lightbox-content" src="" alt="Full Screenshot">
+    <div class="lightbox-controls">
+      <button id="prev-button" onclick="prevImage(event)">&#10094;</button>
+      <button id="next-button" onclick="nextImage(event)">&#10095;</button>
     </div>
   </div>
 {{ end }}
-
-
+	
+<!-- Security Capabilities Section -->
+{{ if $versionData.app_metadata.capabilities }}
+	{{ if gt (len $versionData.app_metadata.capabilities) 0 }}
+	<br>
+	<details>
+		<summary>Security Capabilities</summary>
+		<ul>
+			{{ range $capability := $versionData.app_metadata.capabilities }}
+			<li>
+				{{ $capability.description }}
+			</li>
+			{{ end }}
+		</ul>
+	</details>
+	{{ end }}
+{{ end }}
 <!-- Expandable Section -->
 <br>
 <details>
