@@ -31,7 +31,7 @@ Select **Email** from the **Type** dropdown list to display email authentication
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Email Address** | Enter a valid email address to receive alerts from this TrueNAS system. |
+| **Override Admin Email** | Enter a valid email address to override the admin account default email. If left blank, the admin account default email is used. |
 {{< /truetable >}}
 {{< /expand >}}
 
@@ -153,18 +153,18 @@ Select **Telegram** from the **Type** dropdown list to display Telegram authenti
 {{< /truetable >}}
 {{< /expand >}}
 
-### VictorOPS
+### Splunk On-Call
 {{< expand "Click here for more information" "v" >}}
-Select **VictorOps** from the **Type** dropdown list to display VictorOps authentication settings.  
+Select **Splunk On-Call** from the **Type** dropdown list to display Splunk On-Call authentication settings.  
 
-![AddAlertServiceVictorOpsScreen](/images/SCALE/SystemSettings/AddAlertServiceVictorOpsScreen.png "Add VictorOps Alert Service")
+![AddAlertServiceSplunkOnCallScreen](/images/SCALE/SystemSettings/AddAlertServiceSplunkOnCallScreen.png "Add Splunk On-Call Alert Service")
 
 **Authentication Settings**
 
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **API Key** | Enter or paste the [VictorOps API key](https://help.victorops.com/knowledge-base/api/). |
-| **Routing Key** | Enter or past the [VictorOps routing key](https://portal.victorops.com/public/api-docs.html). |
+| **API Key** | Enter or paste the [Splunk On-Call API key](https://help.victorops.com/knowledge-base/api/). |
+| **Routing Key** | Enter or past the [Splunk On-Call routing key](https://portal.victorops.com/public/api-docs.html). |
 {{< /truetable >}}
 {{< /expand >}}
