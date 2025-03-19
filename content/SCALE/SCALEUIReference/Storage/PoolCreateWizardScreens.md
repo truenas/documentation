@@ -170,7 +170,7 @@ The **Layout** dropdown list includes the **Stripe** or **Mirror** types.
 {{< include file="/static/includes/PoolCreationWizardCommonSettings.md" >}}
 {{< /expand >}}
 
-### Advanced Options
+### Manual Selection Screen
 
 The **Manual Selection** screen shows settings to add a **Data** VDEV **Layout** and the individual disks available to add to the new VDEV.
 You can filter disks by type or size.
