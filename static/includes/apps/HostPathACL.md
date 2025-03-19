@@ -11,6 +11,9 @@ Refer to the app **Run As Context** on the app details screen for default ID req
 A user or group ID does not need to exist locally on TrueNAS or match the name configured in the container to grant an ACE.
 Failing to configure host path ACLs prevents the app from deploying!
 
+If the app has run-as users, shown in the **Run As User** widget on the information screen for the app, add an ACL entry for these users for each dataset host path added.
+You do not need to add these users on the **Credentials > Users** screen to add the UID/GUI as an ACE entry for the host path dataset.
+
 Select **Force Flag** to allow TrueNAS to update the application to the next version.
 This allows TrueNAS to write ACL entries to the storage volume if it has existing data in it.
 **Force Flag** is required to edit or update an existing application.
