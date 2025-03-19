@@ -59,9 +59,9 @@ The screen header displays a <i class="fa fa-cog" aria-hidden="true"></i> **Pool
 {{< truetable >}}
 | Setting | Description |
 |-----------|-------------|
-| Bridge | Select **Automatic** to use the default network bridge for communication between instances and the TrueNAS host or use the dropdown list to select an existing bridge. See [Accessing NAS from VMs and Containers]({{< relref "/ScaleTutorials/Network/ContainerNASBridge.md" >}}) for more information. |
-| **IPv4 Network** | Displays when **Bridge** is set to **Automatic**. Enter the IPv4 address and subnet to use for the bridge or leave empty to allow TrueNAS to use the default address. |
-| **IPv6 Network** | Displays when **Bridge** is set to **Automatic**. Enter the IPv6 address and subnet to use for the bridge or leave empty to allow TrueNAS to use the default address. |
+| **Bridge** | Select **Automatic** to use the default network bridge for communication between instances and the TrueNAS host or use the dropdown list to select an existing bridge. See [Accessing NAS from VMs and Containers]({{< relref "/ScaleTutorials/Network/ContainerNASBridge.md" >}}) for more information. |
+| **IPv4 Network** | Displays when **Bridge** is set to **Automatic**. Enter the IPv4 address and subnet (e.g., *192.168.1.0*/*24*) to use for instances or leave empty to allow TrueNAS to use the default address. |
+| **IPv6 Network** | Displays when **Bridge** is set to **Automatic**. Enter the IPv6 address and subnet (e.g., *fd42:96dd:aef2:483c::1*/*64*) to use for instances or leave empty to allow TrueNAS to use the default address. |
 {{< /truetable >}}
 
 ### Manage Volumes
@@ -73,7 +73,7 @@ The **Volumes** screen lists all <file>.iso</file> images currently uploaded to 
 **Upload New Image** opens a file browser to select an image from the client computer and upload it to TrueNAS for use in instances.
 
 {{< expand "Image Filename Requirements" "v" >}}
-{{< include file="/static/includes/InstanceImageFilename.md" >}}
+{{< include file="/static/includes/InstanceImageFilenames.md" >}}
 {{< /expand >}}
 
 #### Delete Volumes
@@ -87,6 +87,31 @@ A **Delete volume** dialog displays.
 Delete is disabled for active images.
 
 ### Map User And Group IDs
+
+The **Map User and Group IDs** screen allows users to manually configure UID and GID mappings inside instances.
+
+Existing mappings are shown in a table containing the group or user name, host ID, and instance ID.
+**<i class="material-icons" aria-hidden="true" title="Delete">delete</i> Delete** on a row deletes that mapping.
+
+{{< trueimage src="/images/SCALE/Virtualization/MapUserGroupIDs.png" alt="Map User and Group IDs Screen" id="Map User and Group IDs Screen" >}}
+
+The **Users** or **Groups** tabs display mappings for individual user or group accounts, respectively.
+
+Existing mappings are shown in a table containing the group or user name, host ID, and instance ID.
+**<i class="material-icons" aria-hidden="true" title="Delete">delete</i> Delete** on a row deletes that mapping.
+
+{{< expand "Add New Mapping Settings" "v" >}}
+{{< truetable >}}
+| Setting | Description |
+|---------|-------------|
+| **User/Group** | Type an account name to search for it or select it from the dropdown menu. |
+| **Map to the same UID/GID in the instance** | (Default) Select to map the host ID to the same ID in instances. |
+| **Instance UID/GID** | (Displays when **Map to the same UID/GID in the instance** is not selected)<br> Enter the ID number (e.g., *1000*) to map the host user or group ID to in instances. |
+{{< /truetable >}}
+{{< /expand >}}
+
+**Set** creates the mapping.
+Changes take effect immediately, but instances can require a restart to reflect the changes.
 
 ## Create Instance Wizard
 
