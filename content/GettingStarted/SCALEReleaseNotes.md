@@ -184,6 +184,17 @@ This is a maintenance release and includes refinement and fixes for issues disco
 
 * We are aware of an issue affecting SED disk unlock at boot, particularly for systems configured with per-disk SED passwords.
   A fix is expected in the TrueNAS 25.04 release.
+* Some users who have applications with have NVIDIA GPU allocations report the error `Expected [uuid] to be set for GPU inslot [<some pci slot>] in [nvidia_gpu_selection])` (see [NAS-132086](https://ixsystems.atlassian.net/browse/NAS-132086)).
+
+  Users experiencing this error should follow the steps below for a one time fix that should not need to be repeated.
+
+  Connect to a shell session and retrieve the UUID for each GPU with the command `midclt call app.gpu_choices | jq`.
+
+  For each application that experiences the error, run `midclt call -job app.update APP_NAME '{"values": {"resources": {"gpus": {"use_all_gpus": false, "nvidia_gpu_selection": {"PCI_SLOT": {"use_gpu": true, "uuid": "GPU_UUID"}}}}}}'`
+  Where:
+    * `APP_NAME` is the name you entered in the application, for example “plex”.
+    * `PCI_SLOT` is the pci slot identified in the error, for example "0000:2d:00.0”.
+    * `GPU_UUID` is the UUID matching the pci slot that you retrieved with the above command.
 
 <a href="https://ixsystems.atlassian.net/issues/?filter=11415" target="_blank">Click here to see the latest information on Jira</a> about public issues discovered in 24.10.2 that are being resolved in a future TrueNAS release.
 
