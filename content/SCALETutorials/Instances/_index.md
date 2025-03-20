@@ -159,7 +159,7 @@ To create a new container, from the **Create Instance** screen:
       Search or browse to choose a Linux image from [linuxcontainers.org](https://linuxcontainers.org/).
       Click **Select** in the row for your desired image.
 
-2. Configure the **CPU & Memory** settings.
+2. (Optional) Configure the **CPU & Memory** settings.
 
    {{< trueimage src="/images/SCALE/Virtualization/CreateInstanceCPUandMemory.png" alt="CPU & Memory - Container" id="CPU & Memory - Container" >}}
 
@@ -176,8 +176,63 @@ To create a new container, from the **Create Instance** screen:
       This field accepts human-readable input (Ex. 50 GiB, 500M, 2 TB).
       If units are not specified, the value defaults to mebibytes (MiB). The minimum value is 32 MiB.
 
+3. (Optional) Configure the **Environment** settings.
+   Use these settings to configure optional environment variables to run on boot or execute.
+   Environment settings are only supported for containers and cannot be used with VMs.
+
+   {{< trueimage src="/images/SCALE/Virtualization/CreateInstanceEnvironment.png" alt="Environment" id="Environment" >}}
+
+   a. Click **Add** to display a set of environment fields.
+
+   b. Enter the name of the environment variable to set (for example, `LANG`).
+
+   c. Enter the value to assign to the environment variable (for example, `en_US.UTF-8`).
+
+   d. Click **Add** again to configure additional environment variables.
+
+4. (Optional) Configure the **Disks** settings to mount storage volumes for the container.
+   You can create a new dataset or use an existing one.
+
+   {{< trueimage src="/images/SCALE/Virtualization/CreateInstanceDisksContainer.png" alt="Disks - Container" id="Disks - Container" >}}
+
+   a. Click **Add** to display a set of fields to mount a disk.
+
+   b. To create a new dataset, enter a path or browse to select a parent dataset from the dropdown list of datasets on the system.
+      Then click **Create Dataset**, enter a name for the new dataset in the **Create Dataset** window, and click **Create**.
+
+      To use an existing volume, enter a path or browse to select an existing dataset or zvol from the **Source** dropdown list.
+
+   c. Enter the filesystem **Destination** path to mount the disk at in the container, for example */media* or */var/lib/data*.
+
+   d. Click **Add** again to mount additional storage volumes.
+
+5. (Optional) Configure **Proxies** settings to forward network connections between the host and the container.
+   This routes traffic from a specific address on the host to an address inside the instance, or vice versa, allowing the instance to connect externally through the host.
+
+   {{< trueimage src="/images/SCALE/Virtualization/CreateInstanceProxies.png" alt="Proxies" id="Proxies" >}}
+
+   a. Click **Add** to display a set of proxy configuration settings.
+
+   b. Select the **Host Protocol** to set the connection protocol for the TrueNAS host.
+      Options are **TCP** or **UDP**.
+
+   c. Enter the **Host Port** to define the TrueNAS port to map to the instance port on the container, for example *3600*.
+
+   d. Select the **Instance Protocol** to set the connection protocol for the container.
+      Options are **TCP** or **UDP**.
+
+   e. Enter the **Instance Port** to define the port number within the container that the host port is mapped to, for example *80*.
 
 ### Creating a Virtual Machine
+
+{{< hint type=note title="Before You Begin" >}}
+Before creating a VM, you should:
+
+- Obtain an installer <file>.iso</file> or image file for the OS you intend to install, if you are not using a Linux image from the catalog or one previously uploaded to the instances service. You can upload an image for use in instances by using the [**Manage Volumes**](#managing-volumes) option on the **Instances** screen **Configuration** menu or you can upload the image from the **Instance Configuration** settings while creating the VM.
+
+- [Create a zvol]({{< relref "/SCALETutorials/Datasets/AddManageZvols.md" >}}) on a storage pool that is available for the virtual disk.
+
+{{< /hint >}}
 
 To create a new virtual machine, from the **Create Instance** screen:
 
@@ -230,10 +285,36 @@ To create a new virtual machine, from the **Create Instance** screen:
       For better cache locality and performance, select cores that share the same cache hierarchy or NUMA node.
       For example, to assign cores 0,1,2,5,9,10,11, you can write: `1-2,5,9-11`.
 
-      b. Allocate RAM to the VM in **Memory Size**.
+   b. Allocate RAM to the VM in **Memory Size**.
 
       This field accepts human-readable input (Ex. 50 GiB, 500M, 2 TB).
       If units are not specified, the value defaults to mebibytes (MiB). The minimum value is 32 MiB.
+
+3. Configure the **Disks** settings to mount storage volumes for the VM.
+   For VMs, you must specify the I/O bus and size of the root disk.
+   You can also mount one or more existing zvol(s) as additional storage, if needed.
+   See [Storage volume types](https://linuxcontainers.org/incus/docs/main/explanation/storage/#storage-volume-types) from Incus for more information.
+
+   {{< trueimage src="/images/SCALE/Virtualization/CreateInstanceDisksVM.png" alt="Disks - VM" id="Disks - VM" >}}
+
+   a. Choose the root disk I/O bus type that best suits system needs. Options are:
+
+      - **NVMe** – Ideal for high-performance storage with faster read and write speeds. Choose NVMe to install an image that does not natively support Virtio drivers, such as Windows 11.
+
+      - **Virtio-BLK** – Efficient for virtualized environments, offering direct block device access with lower overhead.
+
+      - **Virtio-SCSI** – Flexible and scalable, supporting advanced features like hot-swapping and multiple devices.
+
+   b. Enter a plain integer in **Root Disk Size (in GiB)** to configure the size of the VM root disk (default **10**).
+
+   c. To mount additional storage, click **Add** to display a set of fields to mount a zvol.
+
+   d. Enter a path or browse to select an existing zvol from the **Source** dropdown list.
+
+   e. Choose the disk **I/O Bus** type that best suits system needs.
+      Options are **NVMe**, **Virtio-BLK**, or **Virtio-SCSI**.
+
+   f. Click **Add** again to mount additional storage volumes.
 
 <!-- Commenting out previous tutorial content
 
