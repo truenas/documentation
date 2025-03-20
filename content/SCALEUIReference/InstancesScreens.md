@@ -171,8 +171,8 @@ These settings are only supported for containers and cannot be used with VMs.
 ### Disks
 
 The **Disks** settings allow mounting storage volumes to an instance.
-Options are to create a new zvol on an existing dataset or to use an existing zvol.
-For VMs, you can also specify the size of the root disk.
+For containers options are to create a new dataset or use an existing one.
+For VMs, you must use an existing zvol and also specify the I/O bus and size of the root disk.
 
 **Add** displays a set of fields to create or mount a disk.
 
@@ -182,9 +182,11 @@ For VMs, you can also specify the size of the root disk.
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
+| **Root Disk I/O Bus** | (Required for VMs only) Choose the root disk I/O bus type that best suits system needs. Options are:<br><ul><li>**NVMe** – Ideal for high-performance storage with faster read and write speeds.<br><li>**Virtio-BLK** – Efficient for virtualized environments, offering direct block device access with lower overhead.<br><li>**Virtio-SCSI** – Flexible and scalable, supporting advanced features like hot-swapping and multiple devices.</ul> |
 | **Root Disk Size (in GiB)** | (Required for VMs only) Enter a plain integer to configure the size of the VM root disk (default 10). |
-| **Source** | (Required) Displays after clicking **Add** in **Disks**. To create a new zvol, enter a path or browse to select a parent dataset from the dropdown list of datasets on the system. Then click **Create Dataset**, enter a name for the new zvol in the **Create Dataset** window, and click **Create**. <br><br> To use an existing zvol, select an existing zvol from the dropdown list under <file>/dev/zvol/</file>. |
+| **Source** | (Required) Displays after clicking **Add** in **Disks**. To create a new dataset, enter a path or browse to select a parent dataset from the dropdown list of datasets on the system. Then click **Create Dataset**, enter a name for the new dataset in the **Create Dataset** window, and click **Create**. <br><br> To use an existing zvol, select an existing zvol from the dropdown list. |
 | **Destination** | (Required for containers only) Enter the filesystem path to mount the disk at in the container, for example */media* or */var/lib/data*. |
+| **I/O Bus** | (Required for VMs only) Choose the disk I/O bus type that best suits system needs. Options are **NVMe**, **Virtio-BLK**, or **Virtio-SCSI**. |
 {{< /truetable >}}
 {{< /expand >}}
 
@@ -192,6 +194,7 @@ For VMs, you can also specify the size of the root disk.
 
 The **Proxies** settings allow you to forward network connections between the host and the instance.
 This routes traffic from a specific address on the host to an address inside the instance, or vice versa, allowing the instance to connect externally through the host.
+These settings are only available for containers and cannot be used with VMs.
 
 **Add** displays a set of proxy configuration settings.
 
