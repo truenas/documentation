@@ -1,11 +1,11 @@
 <!-- Thank you to Greg Hilston and his excellent article on https://www.greghilston.com/post/hugo-display-dynamic-github-content/ for this shortcode -->
 {{ $repo := .Get "repo" }}
 {{ $path := .Get "path" }}
-{{ $branch := default "master" (.Get "branch") }} <!-- Default to "master" if no branch is provided -->
+{{ $branch := default "master" (.Get "branch") }}
 {{ $url := printf "https://api.github.com/repos/%s/contents/%s" $repo $path }}
 {{ $lang := default "plaintext" (.Get "lang") }}
-{{ $includeFile := .Get "includeFile" }} <!-- Get the file to include -->
-{{ $title := .Get "title" }} <!-- Title for the card -->
+{{ $includeFile := .Get "includeFile" }}
+{{ $title := .Get "title" }}
 
 {{ with resources.GetRemote $url }}
   {{ $remoteContent := . }}
@@ -23,8 +23,23 @@
 
     <!-- Extract specific values from the JSON -->
     {{ $icon := $versionData.app_metadata.icon }}
-    {{ $name := $versionData.app_metadata.title }}
-	{{ $descr := $versionData.app_metadata.description }}
+    {{ $name := $versionData.app_metadata.name }} <!-- Use app_metadata.name -->
+    {{ $descr := $versionData.app_metadata.description }}
+
+    <!-- Fetch Telemetry Data -->
+    {{ $telemetryURL := "https://telemetry.sys.truenas.net/apps/truenas-apps-stats.json" }}
+    {{ $telemetryData := resources.GetRemote $telemetryURL | transform.Unmarshal }}
+
+    <!-- Check if the app is actively deployed with more than 5000 instances -->
+    {{ $deploymentCount := 0 }}
+    {{ if $telemetryData }}
+      {{ range $category, $apps := $telemetryData }}
+        {{ $appCount := index $apps $name }}
+        {{ if $appCount }}
+          {{ $deploymentCount = $appCount }}
+        {{ end }}
+      {{ end }}
+    {{ end }}
 
 	<!-- Text Card Layouts -->
 	<div class="apps-docs-sections">
@@ -34,7 +49,7 @@
 		<img class="app-card-img" src="{{ $icon }}" aria-label="{{ $name }} Logo">
 		</div>
 		<div class="section-tab-content ixprods">
-		<b style="justify-content:center;font-size:1.5rem;font-weight:600;">{{ $name }}</b><br>
+		<b style="justify-content:center;font-size:1.5rem;font-weight:600;">{{ $versionData.app_metadata.title }}</b><br>
 		<a class="truenas-appbutton" href="https://www.truenas.com/docs/truenasapps/">Get Started with Apps!</a><br>
 		<small>App Version: {{ $versionData.app_metadata.app_version }}<br>
 		Version: {{ $versionData.version }}<br>
@@ -49,13 +64,30 @@
 	<!-- Second Card -->
 	<div class="section-box">
 	<div class="box-image">
-		<b>{{ $name }} Details</b><br>
+	<!-- Add Inline Icon and Placeholder Text for active use callouts -->
+		{{ if gt $deploymentCount 0 }}
+		<div class="popular-app">
+			{{ if gt $deploymentCount 10000 }}
+			<img src="/images/AdobeStock_606441794.png" alt="10,000 active deployments icon" style="width: 20px; height: 20px; vertical-align: middle;">
+			<span style="font-weight: bold; color: #0095d5;">Actively used on over 10,000 TrueNAS systems!</span><br>
+			{{ else if gt $deploymentCount 5000 }}
+			<img src="/images/AdobeStock_653744533.png" alt="5,000 active deployments icon" style="width: 20px; height: 20px; vertical-align: middle;">
+			<span style="font-weight: bold; color: #0095d5;">Actively used on over 5,000 TrueNAS systems!</span><br>
+			{{ else if gt $deploymentCount 1000 }}
+			<img src="/images/AdobeStock_709806220.png" alt="1,000 active deployments icon" style="width: 20px; height: 20px; vertical-align: middle;">
+			<span style="font-weight: bold; color: #0095d5;">Actively used on over 1,000 TrueNAS systems!</span><br>
+			{{ else if gt $deploymentCount 100 }}
+			<img src="/images/AdobeStock_1240018133.png" alt="100 active deployments icon" style="width: 2em; vertical-align: middle;">
+			<span style="font-weight: bold; color: #0095d5;">Actively used on over 100 TrueNAS systems!</span><br>
+			{{ end }}
+		</div>
+		{{ end }}
+		<b>{{ $versionData.app_metadata.title }} Details</b><br>
 		{{ $descr }}<br>
-	</div>
-	<div class="ixprods">
+	<div class="app-details">
 	  <!-- Context Section -->
 	  {{ if $versionData.app_metadata.run_as_context }}
-		<p><small><b>User & Groups Context</b></small></p>
+		<p><small><b>User & Groups Context</b></small>
 		<ul style="list-style-type:none;">
 			{{ range $run_as_context := $versionData.app_metadata.run_as_context }}
 			<li>
@@ -67,7 +99,9 @@
 			</li>
 			{{ end }}
 		</ul>
+		</p>
 		{{ end }}
+	</div>
 	</div>
 	</div>
 	</div>

@@ -2636,7 +2636,10 @@ pre.gdoc-mermaid.mermaid.mermaid_sizing {
 .truenas-appbutton:visited {
 	color: white !important;
 }
-
+.app-details {
+	text-align: left;
+	padding-left: 1em;
+}
 /* End Apps Docs Boxes */
 /* Screenshot Thumbnails */
 .screenshots-thumbnails {
