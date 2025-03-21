@@ -311,7 +311,7 @@ To create a new virtual machine, from the **Create Instance** screen:
 
    a. Choose the root disk I/O bus type that best suits system needs. Options are:
 
-      - **NVMe** – Ideal for high-performance storage with faster read and write speeds. Choose NVMe to install an image that does not natively support Virtio drivers, such as Windows 11.
+      - **NVMe** – Ideal for high-performance storage with faster read and write speeds.
 
       - **Virtio-BLK** – Efficient for virtualized environments, offering direct block device access with lower overhead.
 
