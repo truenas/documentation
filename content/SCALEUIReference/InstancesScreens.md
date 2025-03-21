@@ -144,7 +144,7 @@ The **Instance Configuration** settings specify the instance name, virtualizatio
 | **Virtualization Method** | Required. Select **VM** to create a fully isolated virtual machine using any operating system. |
 | **VM Image Options** | (Shows when **Virtualization Method** is set to **VM**)  |
 | **Use a Linux image** | Select to choose a Linux image from [linuxcontainers.org](https://linuxcontainers.org/). **Browse Catalog** opens the **Select Image** screen with available image choices. Search or browse to locate your desired image and click **Select**. |
-| **Use an ISO image** | Select to use ISO image previously uploaded to the instances service or to upload a new one. **Select ISO** opens the **Volumes** screen. Locate your desired image and click **Select** or use **Upload New Image**. See [Volumes](#volumes) for more information. |
+| **Use an ISO image** | Select to use ISO image previously uploaded to the instances service or to upload a new one. **Select ISO** opens the **Volumes** screen. Locate your desired image and click **Select** or use **Upload New Image**. See [**Volumes**](#volumes) for more information. |
 | **Use zvol with previously installed OS** | Select to create a new instance using an existing VM storage volume. Enter or browse to select the zvol on the TrueNAS system.<br><br>Use this option to migrate a previously configured VM, such as after updating from TrueNAS 24.10. See [Migrating Virtual Machines](https://www.truenas.com/docs/scale/25.04/gettingstarted/scalereleasenotes/#migrating-virtual-machines) from the 25.04 release notes for more information. |
 {{< /truetable >}}
 {{< /expand >}}
@@ -241,7 +241,7 @@ See [Accessing NAS from VMs and Containers]({{< relref "/SCALETutorials/Network/
 
 ### PCI Passthrough
 
-**PCI Passthrough** settings enable assigning a physical PCI device, such as a network card or GPU, directly to a VM, allowing it to use the device as if physically attached.
+**PCI Passthrough** settings enable assigning a physical PCI device, such as a network card or controller, directly to a VM, allowing it to use the device as if physically attached.
 These settings are only available for VMs and cannot be used with containers.
 
 The selected PCI device(s) cannot be in use by the host or share an IOMMU group with devices the host requires.
@@ -274,8 +274,6 @@ These settings are only available for VMs and cannot be used with containers.
 | **Add Trusted Platform Module (TPM)** | Enables TPM, a hardware-based security feature that protects sensitive data and ensures integrity. Adds a Trusted Platform Module (TPM) device to the VM. |
 | **Secure Boot** | Ensures that only trusted, signed software is loaded during the system boot process. May be incompatible with some images. |
 {{< /truetable >}}
-
-{{< include file="/static/includes/SecureBootHelp.md" >}}
 
 {{< /expand >}}
 
@@ -538,12 +536,12 @@ These settings are only available for VMs and cannot be used with containers.
 
 The **Add PCI Passthrough Device** screen lists the available physical PCI devices that can be attached to an instance.
 
-PCI passthrough assigns a physical PCI device, such as a network card or GPU, directly to a VM, allowing it to function as if physically attached.
+PCI passthrough assigns a physical PCI device, such as a network card or controller, directly to a VM, allowing it to function as if physically attached.
 
 The selected PCI device(s) must not be in use by the host or share an IOMMU group with any device the host requires.
 
 {{< trueimage src="/images/SCALE/Virtualization/AddPCIPassthroughDevice.png" alt="Add PCI Passthrough Device Screen" id="Add PCI Passthrough Device Screen" >}}
 
-Use **Search Devices** or the **Type** dropdown to filter available devices, enter device type or a label.
+Use **Search Devices** or the **Type** dropdown to filter available devices.
 
 **Select** attaches the selected device.
