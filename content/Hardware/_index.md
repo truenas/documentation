@@ -45,7 +45,7 @@ descr="Archived documentation about discontinued TrueNAS hardware products." >}}
 {{< imagecard image="/images/Hardware/Notices.png" title="Notices" link="/hardware/notices/"
 descr="Product announcements, unspecific FAQs, and articles about hardware components." >}}
 
-{{< imagecard image="/images/Hardware/FullStencilPack.png" title="TrueNAS Full Stencil Pack" link="https://www.truenas.com/docs/files/TrueNAS_Full_Stencil_Pack.vssx"
+{{< imagecard image="/images/Hardware/FullStencilPack.png" title="TrueNAS Full Stencil Pack" link="https://www.truenas.com/docs/files/TrueNASFullStencilPack.vssx"
 descr="Download all TrueNAS stencils to diagram your hardware configuration in Microsoft Visio." >}}
 
 </div>
