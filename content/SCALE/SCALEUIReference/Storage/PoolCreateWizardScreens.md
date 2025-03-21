@@ -40,21 +40,23 @@ The **General Info** area includes two default settings, **Name** and **Encrypti
 {{< trueimage src="/images/SCALE/Storage/PoolCreationWizardGeneralInfo.png" alt="Pool Creation Wizard General Info" id="Pool Creation Wizard General Info" >}}
 
 **Name** is a required field.
-Enter a pool name of up to 50 characters in length that follows [ZFS naming conventions](https://docs.oracle.com/cd/E23824_01/html/821-1448/gbcpt.html).
+A pool name can have up to 50 characters and must follow [ZFS naming conventions](https://docs.oracle.com/cd/E23824_01/html/821-1448/gbcpt.html).
 Use lower-case alpha characters to avoid potential problems with sharing protocols.
 Names can include numbers and special characters such as underscore (_), hyphen (-), colon (:), or a period (.).
+Do not begin a pool name with a special character.
 
 **Encryption** applies key-type encryption to the pool.
 
 {{< include file="/static/includes/EncryptionRootLevel.md" >}}
 
-Select to enable [ZFS encryption](https://zfsonlinux.org/manpages/0.8.3/man8/zfs.8.html) for the pool and all datasets (or zvols) within the pool created using the TrueNAS UI.
+Enables [ZFS encryption](https://zfsonlinux.org/manpages/0.8.3/man8/zfs.8.html) for the pool and all datasets (or zvols) within the pool created using the TrueNAS UI.
 See [Storage Encryption]({{< relref "EncryptionScale.md" >}}) for more information on using TrueNAS storage encryption.
-An encryption warning dialog displays with a **Confirm** checkbox.
-Select to enable the **I Understand** button. **I Understand** allows you to continue adding the pool with encryption applied.
+An encryption warning dialog opens with a **Confirm** option.
+**Confirm** enables the **I Understand** button. **I Understand** continues with adding the pool with encryption applied.
 
 {{< hint type="Warning" >}}
-Keep the encryption key file in a safe location where you perform regular backups. Losing the encryption key file results in lost data you cannot recover.
+Keep the encryption key file in a safe location where you perform regular backups.
+Losing the encryption key file results in lost data you cannot recover.
 {{< /hint >}}
 
 If system disks contain data exported from pools, a warning displays with a checkbox for the pool name.
@@ -65,44 +67,51 @@ If system disks have non-unique serial numbers, a warning displays with addition
 
 {{< trueimage src="/images/SCALE/Storage/PoolCreationWizardGenInfoNonUniqueSerialNums.png" alt="Non-Unique Serial Numbers Screen" id="Non-Unique Serial Numbers Screen" >}}
 
-**Allow non-unique serialed disks** has two radio buttons, **Allow** and **Don't Allow**.
+**Allow non-unique serialed disks** has two options, **Allow** and **Don't Allow**.
 
-**Allow** permits using disks with non-unique serial numbers, such as those that can occur on virtual disks, and displays them as available disks on the **Data** wizard screen.
+**Allow** permits using disks with non-unique serial numbers, such as those that can occur on virtual disks.
+The **Data** wizard screen shows the disks as available.
 **Don't Allow** does not permit using disks with non-unique serial numbers.
 
 {{< enterprise >}}
 ### Enclosure Options
-The **Enclosure Options** screen shows in the **Pool Creation Wizard** if the iXsystems hardware includes one or more expansion shelves.
+
+The **Enclosure Options** wizard screen shows if the Enterprise system has one or more expansion shelves.
 
 {{< trueimage src="/images/SCALE/Storage/PoolCreationWizardEnclosureOptionsScreen.png" alt="Pool Creation Wizard Enclosure Options" id="Pool Creation Wizard Enclosure Options" >}}
 
-The **Enclosure Options** screen shows three radio buttons that could apply a set pool storage configuration topology when using the **Automated Disk Selection** option to assign disks to a VDEV.
+The three radio button options apply a dispersal strategy that sets pool storage configuration topology. A *dispersal strategy* determines how the system adds disks by size and type to the pool VDEVs created when using the **Automated Disk Selection** option. Enclosures in the options below refer to the disk enclosures in the expansion shelves and system chassis.
 
-* **No Enclosure Dispersal Strategy** does not apply a dispersal strategy in how the system adds disks by size and type to the pool VDEVs created when using the **Automated Disk Selection** option.
-  Does not show additional options. Disks added to the pool VDEVs are assigned in sequence based on disk availability and are not balanced across all enclosures.
-* **Maximum Dispersal Strategy** applies a maximum dispersal strategy in how the system adds disks by size and type to the pool VDEVs created when using the **Automated Disk Selection** option.
-  This balances disk selection across all enclosures and available disks.
+* **No Enclosure Dispersal Strategy** does not apply a dispersal strategy and does not show additional options.
+  Disks added to the pool VDEVs are assigned in sequence based on disk availability but are not balanced across all enclosures.
+
+* **Maximum Dispersal Strategy** applies a maximum dispersal strategy, which balances disk selection across all enclosures and available disks.
   Does not show additional options. Disks added to the pool VDEVs are spread across all available enclosure disks.
-* **Limit Pool To A Single Enclosure** applies a minimum dispersal strategy in how the system adds disks by size and type to the pool VDEVs created when using the **Automated Disk Selection** option.
-  Shows the **Enclosure** dropdown with a list of available expansion shelf options. Disks added to the pool VDEVs are spread across the enclosure disks that align with the selection in **Enclosure**.
+
+* **Limit Pool To A Single Enclosure** applies a minimum dispersal strategy.
+  Shows the **Enclosure** dropdown with a list of available expansion shelf options.
+  Disks added to the pool VDEVs are spread across the enclosure disks that align with the selection in **Enclosure**.
 
 {{< trueimage src="/images/SCALE/Storage/PoolCreationWizardEnclosureOptionsLimitedToSingleEnclosure.png" alt="Enclosure Option Limit Pool to a Single Enclosure" id="Enclosure Option Limit Pool to a Single Enclosure" >}}
 
 {{< /enterprise >}}
+
 ### Data Screen
-The **Data** wizard screen includes the option to automatically or manually add disks to a data VDEV.
-You must add a data VDEV before you can add other types of VDEVs to the pool.
+
+The **Data** wizard screen shows options to automatically or manually add disks to a data VDEV.
+A pool must have a data VDEV before you can add other types of VDEVs to the pool.
 
 {{< trueimage src="/images/SCALE/Storage/PoolCreationWizardDataScreen.png" alt="Pool Creation Wizard Data Screen" id="Pool Creation Wizard Data Screen" >}}
 
 {{< expand "Common Pool Creation Wizard Settings" "v" >}}
-The **Layout** dropdown list shows the **Stripe**, **Mirror**, **RAIDZ1**, **RAIDZ2**, **RAIDZ3**, **dRAID1**, **dRAID2**, and **dRAID3** VDEV types on the **Data** wizard screens.
+The **Layout** dropdown list shows the **Stripe**, **Mirror**, **RAIDZ1**, **RAIDZ2**, **RAIDZ3**, **dRAID1**, **dRAID2**, and **dRAID3** VDEV types.
 
 {{< include file="/static/includes/PoolCreationWizardCommonSettings.md" >}}
 {{< /expand >}}
 
 ### Log (Optional)
-Use the **Log** wizard screen to configure a log VDEV. ZFS log devices can improve the speeds of synchronous writes.
+
+The **Log** wizard screen settings configure a log VDEV. ZFS log devices can improve the speeds of synchronous writes.
 
 {{< trueimage src="/images/SCALE/Storage/PoolCreationWizardLogScreen.png" alt="Pool Creation Wizard Log Screen" id="Pool Creation Wizard Log Screen" >}}
 
@@ -113,7 +122,8 @@ The **Layout** dropdown list includes the **Stripe** or **Mirror** types.
 {{< /expand >}}
 
 ### Spare (Optional)
-Use the **Spare** wizard screen to configure a hot spare for a drive in a data VDEV.
+
+The **Spare** wizard screen settings configure a hot spare for a drive in a data VDEV.
 
 {{< trueimage src="/images/SCALE/Storage/PoolCreationWizardSpareScreen.png" alt="Pool Creation Wizard Spare Screen" id="Pool Creation Wizard Spare Screen" >}}
 
@@ -124,7 +134,8 @@ Use the **Spare** wizard screen to configure a hot spare for a drive in a data V
 {{< /expand >}}
 
 ### Cache (Optional)
-Use the **Cache** wizard screen to configure a ZFS L2ARC read-cache VDEV.
+
+The **Cache** wizard screen settings configure a ZFS L2ARC read-cache VDEV.
 
 {{< trueimage src="/images/SCALE/Storage/PoolCreationWizardCacheScreen.png" alt="Pool Creation Wizard Cache Screen" id="Pool Creation Wizard Cache Screen" >}}
 
@@ -135,8 +146,8 @@ Use the **Cache** wizard screen to configure a ZFS L2ARC read-cache VDEV.
 {{< /expand >}}
 
 ### Metadata (Optional)
-Use the **Metadata** wizard screen to configure a special allocation class VDEV. Metadata VDEVS are used when creating a fusion pool.
-This VDEV type is used to speed up metadata and small block IO.
+
+The **Metadata** wizard screen settings configure a special allocation class VDEV. Metadata VDEVS are used to speed up metadata and small block I/O. Use when creating a fusion pool.
 
 {{< trueimage src="/images/SCALE/Storage/PoolCreationWizardMetadataScreen.png" alt="Pool Creation Wizard Metadata Screen" id="Pool Creation Wizard Metadata Screen" >}}
 
@@ -147,7 +158,8 @@ The **Layout** dropdown list includes the **Stripe** or **Mirror** types.
 {{< /expand >}}
 
 ### Dedup (Optional)
-Use the **Dedup** wizard screen to configure a VDEV. A Dedup VDEV is used to store de-duplication tables.
+
+The **Dedup** wizard screen settings configure a deduplication VDEV. A Dedup VDEV stores de-duplication tables.
 Size dedup VDEVs as *x* GiB for each *x* TiB of general storage.
 
 {{< trueimage src="/images/SCALE/Storage/PoolCreationWizardDedupScreen.png" alt="Pool Creation Wizard Dedup Screen" id="Pool Creation Wizard Dedup Screen" >}}
@@ -158,14 +170,16 @@ The **Layout** dropdown list includes the **Stripe** or **Mirror** types.
 {{< include file="/static/includes/PoolCreationWizardCommonSettings.md" >}}
 {{< /expand >}}
 
-### Advanced Options
-The **Manual Selection** screen allows adding a **Stripe** or the **Data** VDEV **Layout**, then selecting individual disks to add to the new VDEV.
+### Manual Selection Screen
+
+The **Manual Selection** screen shows settings to add a **Data** VDEV **Layout** and the individual disks available to add to the new VDEV.
 You can filter disks by type or size.
 
 **Add** places a VDEV area to populate with individual disks.
 
-The screen shows disk icons for available disks, or click on the system field to expand the dropdown list to show a list of available system disks.
-You can use the disk filters separately or together to find disks of the same type and size.
+The screen shows disk icons for available disks.
+The system dropdown list also shows a list of available system disks.
+Use the disk filters separately or together to find disks of the same type and size.
 Drag disks to the VDEV to add them.
 
 **Save Selection** creates the VDEV and closes the window.
@@ -176,13 +190,14 @@ Drag disks to the VDEV to add them.
 | Setting | Description |
 |---------|-------------|
 | **Search** | Enter the disk name or other details to search for disks matching the specified value to filter available disks in the system. |
-| **Filter by Disk Type** | Resets the available disks list to show only the selected type (HDD or SSD). |
-| **Filter by Disk Size** | Resets the available disks list to show only disks matching the selected size. |
+| **Filter by Disk Type** | Resets the available disks listed to show only the selected type (HDD or SSD). |
+| **Filter by Disk Size** | Resets the available disks listed to show only disks matching the selected size. |
 | TrueNAS System | Click to expand and show the list of available disks in the system. Filter options change disks displayed on this list. |
 {{< /truetable >}}
 
 ### Review
-The **Review** wizard screen displays a summary of the pool VDEV configuration.
+
+The **Review** wizard screen shows a summary of VDEVs in the pool configuration.
 
 {{< trueimage src="/images/SCALE/Storage/PoolCreationWizardReviewScreen.png" alt="Pool Creation Wizard Review Screen" id="Pool Creation Wizard Review Screen" >}}
 

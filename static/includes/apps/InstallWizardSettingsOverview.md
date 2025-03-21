@@ -38,43 +38,27 @@ All apps in the **stable** train, some **community** train apps, and all apps in
   We recommend adding datasets and configuring the container storage volumes with the host path option.
 
   Host paths add existing dataset(s) as the storage volumes.
-  You must configure the datasets before beginning the app installation using the wizard.
-
-  {{< hint type="note" title="ix-apps Dataset" >}}
-  The **ix-apps** dataset is for internal use only.
-
-  TrueNAS systems with applications deployed that upgrade from earlier releases to 24.10 continue to see the **ix-Applications** dataset on the pool chosen for applications to use.
-  New installs or systems upgrading where applications are not deployed and a pool is not chosen for apps use the hidden **ix-apps** dataset.
-  Choosing the pool for apps to use, creates this dataset to store all container-related data.
-  To expose storage volumes found in the ix-applications dataset, take a recursive snapshot.
-  {{< /hint >}}
+  You can configure the datasets before beginning the app installation using the wizard or click **Create Dataset** in the app install wizard.
 
   Some applications require specific storage volumes for configuration and other data.
-  Apps with these requirements might indicate this in the wizard UI but refer to tutorials for specifics. 
-  After configuring required storage volumes you can add storage volumes.
-  To configure additional storage volumes for the application, click **Add** to select the type of storage to configure.
-  The three storage options are:
+  Apps with these requirements indicate this in the wizard UI or details screen.
+  Refer to tutorials for specifics.
+
+  Depending on the app, storage options include:
   * **ixVolume**
   * **Host path**
   * **SMB share**
+  * **Tmpfs (Temporary directory created on the RAM)**
+
+  See [Understanding App Storage Volumes](/truenasapps/managingapps/#understanding-app-storage-volumes) for more information.
+
+  After configuring required storage volumes you can add additional storage volumes.
+  To configure additional storage volumes for the application, click **Add** to select the type of storage to configure.
   
   An SMB share option allows you to mount an SMB share as a Docker volume for the application to use.
   If the application requires specific datasets or you want to allow SMB share access, configure the dataset(s) and SMB share before using the installation wizard.
 
-  ixVolumes do not require setting up an Access Control List (ACL) and Access Control Entry (ACE) in the app configuration settings, but host paths do.
-  After entering the path inside the container in **Mount Path**, select **Enable ACL**.
-  Browse to or enter the path to the dataset in **Host Path**.
-  Click **Add** next to **ACL Entries** to display a set of ACE fields.
-  Use **ID Type** to select whether the ACE is for a user or a group.
-  Enter the UID or GID in **ID** and adjust the permissions level in **Access**.
-  
-  Refer to the app **Run As Context** on the app details screen for default ID requirements.
-  A user or group ID does not need to exist locally on TrueNAS or match the name configured in the container to grant an ACE.
-  Failing to configure host path ACLs prevents the app from deploying!
-
-  Select **Force Flag** to allow TrueNAS to update the application to the next version.
-  This allows TrueNAS to write ACL entries to the storage volume if it has existing data in it.
-  **Force Flag** is required to edit or update an existing application.
+  {{< include file="/static/includes/apps/HostPathACL.md" >}}
   
 * **Resources Configuration** shows CPU and memory settings for the container pod.
    In most cases, you can accept the default settings, or you can change these settings to limit the system resources available to the application.

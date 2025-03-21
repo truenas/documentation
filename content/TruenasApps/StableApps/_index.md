@@ -25,7 +25,7 @@ Some apps replace deprecated services or functionality previously built into Tru
 
 The tutorials in this section are for the commonly-used **stable** train catalog.
 
-For information on adding to or changing the train for the apps catalog, see [Managing App Trains]({{< relref "UsingTrains.md" >}}).
+For information on adding to or changing the train for the apps catalog, see [Changing App Trains]({{< relref "/truenasapps/_index.md #changing-app-trains" >}}).
 
 {{< include file="/static/includes/apps/AppsBestPractices.md" >}}
 

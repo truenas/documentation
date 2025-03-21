@@ -116,11 +116,10 @@ mark {
 .truenas-docs-menuitem:hover .truenas-docsnav-menubutton {background-color: #0e0e0e;color:#31beec;}
 
 .sidebar-fixed {
-    position: fixed;
-    max-height: 75vh;
-    overflow-y: auto;
-    z-index: 1;
-    scrollbar-width: thin;
+    position: sticky;
+    top: 0;
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
 }
 
 /* Webkit (Safari and Chrome) */
@@ -617,7 +616,7 @@ mark {
 }
 .toc-panel {
 	position: fixed;
-	max-height: 75vh;
+	max-height: 50vh;
 	overflow-y: auto;
 	padding: 1rem 1rem 1rem 0rem;
 	font-size: 14px;
@@ -2487,3 +2486,96 @@ pre.gdoc-mermaid.mermaid.mermaid_sizing {
     background: transparent !important; /* Removes alternating row colors */
   }
   
+/* Styling for App Support Definitions Cards */
+:root[color-theme="light"] {
+    --card-background: rgb(248, 249, 250);
+  }
+  
+  :root[color-theme="dark"] {
+    --card-background: #475d6b;
+  }
+  
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --card-background: #475d6b;
+    }
+  }
+  
+  @media (prefers-color-scheme: light) {
+    :root {
+      --card-background: rgb(248, 249, 250);
+    }
+  }
+  
+  .support-cards {
+    display: block; /* Stack cards vertically */
+  }
+  
+  .support-card {
+    background-color: var(--card-background);
+    width: 100%;
+    max-width: 900px;
+    margin: 1rem auto;
+    padding: 1.5rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+  }
+  
+  .support-card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  }
+  
+  .community {
+    border-left: 5px solid #71BF44;
+  }
+  
+  .enterprise-deployment {
+    border-left: 5px solid #31BEEC;
+  }
+  
+  .enterprise-application {
+    border-left: 5px solid #0095D5;
+  }  
+
+  .support-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    display: block; 
+    margin-bottom: 0.5rem;
+  }
+  
+
+/* End Styling for App Support Definitions Cards */
+
+/* Styling for Version Selector Sections */
+
+.version-header {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 5px;
+  }
+  
+  .version-label {
+    flex-shrink: 0;
+    font-size: 0.9em;
+    color: white;
+    line-height: 1;
+  }
+  
+  .version-line {
+    flex-grow: 1;
+    height: 1px;
+    border-top: 1px solid white;
+    margin-left: 5px;
+  }
+
+  .no-version-line {
+    flex-grow: 1;
+    height: 1px;
+    border-top: 1px solid white;
+    margin: 0 5px;
+  }
+
+/* End Styling for Version Selector Sections */
