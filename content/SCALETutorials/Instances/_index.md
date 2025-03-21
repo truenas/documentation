@@ -163,19 +163,10 @@ To create a new container, from the **Create Instance** screen:
 
    {{< trueimage src="/images/SCALE/Virtualization/CreateInstanceCPUandMemory.png" alt="CPU & Memory - Container" id="CPU & Memory - Container" >}}
 
-   a. Enter the number of virtual CPU (vCPU) cores to allocate to the container in **CPU Configuration** or leave this field blank to allow the container access to all host CPUs.
+   For containers, **CPU Configuration** and **Memory Size** can be configured or left blank to allow the container access to all host CPU and memory resources.
+   To configure resource allocation:
 
-      To allocate cores (optional), set to an integer to expose that number of full vCPU cores to the instance.
-
-      Set to a range or comma-separated list to pin vCPUs to specific physical cores.
-      For better cache locality and performance, select cores that share the same cache hierarchy or NUMA node.
-      For example, to assign cores 0,1,2,5,9,10,11, you can write: `1-2,5,9-11`.
-
-   b. Allocate RAM to the container in **Memory Size** or leave this field blank to allow the container access to all host memory.
-
-      This field accepts human-readable input (Ex. 50 GiB, 500M, 2 TB).
-      If units are not specified, the value defaults to mebibytes (MiB).
-      The minimum value is 32 MiB.
+   {{< include file="/static/includes/InstanceCPUMemoryProcedure.md" >}}
 
 3. (Optional) Configure the **Environment** settings.
    Use these settings to configure optional environment variables to run on boot or execute.
@@ -183,13 +174,7 @@ To create a new container, from the **Create Instance** screen:
 
    {{< trueimage src="/images/SCALE/Virtualization/CreateInstanceEnvironment.png" alt="Environment" id="Environment" >}}
 
-   a. Click **Add** to display a set of environment fields.
-
-   b. Enter the name of the environment variable to set (for example, `LANG`).
-
-   c. Enter the value to assign to the environment variable (for example, `en_US.UTF-8`).
-
-   d. Click **Add** again to configure additional environment variables.
+   {{< include file="/static/includes/InstancesEnvironmentProcedure.md" >}}
 
 4. (Optional) Configure the **Disks** settings to mount storage volumes for the container.
    You can create a new dataset or use an existing one.
@@ -289,18 +274,9 @@ To create a new virtual machine, from the **Create Instance** screen:
 
    {{< trueimage src="/images/SCALE/Virtualization/CreateVMCPUandMemory.png" alt="CPU & Memory - VM" id="CPU & Memory - VM" >}}
 
-   a. Enter the number of virtual CPU (vCPU) cores to allocate to the VM in **CPU Configuration**.
+   For VMs, CPU and memory configuration is required.
 
-      Set to an integer to expose that number of full vCPU cores to the instance.
-
-      Set to a range or comma-separated list to pin vCPUs to specific physical cores.
-      For better cache locality and performance, select cores that share the same cache hierarchy or NUMA node.
-      For example, to assign cores 0,1,2,5,9,10,11, you can write: `1-2,5,9-11`.
-
-   b. Allocate RAM to the VM in **Memory Size**.
-
-      This field accepts human-readable input (Ex. 50 GiB, 500M, 2 TB).
-      If units are not specified, the value defaults to mebibytes (MiB). The minimum value is 32 MiB.
+   {{< include file="/static/includes/InstanceCPUMemoryProcedure.md" >}}
 
 3. Configure the **Disks** settings to mount storage volumes for the VM.
    For VMs, you must specify the I/O bus and size of the root disk.
@@ -350,21 +326,13 @@ To create a new virtual machine, from the **Create Instance** screen:
    c. Click **Select** on a device row to attach that device.
 
 8. (Optional) Configure **VNC** settings to enable VNC access for a VM, configure the VNC port, and set a VNC password for remote access.
+   When VNC access is enabled, remote clients can connect to VM display sessions using a VNC client.
 
    {{< trueimage src="/images/SCALE/Virtualization/CreateInstanceVNC.png" alt="VNC Settings" id="VNC Settings" >}}
 
-   a. Select **Enable VNC** to allow remote desktop access via a VNC client.
+   {{< include file="/static/includes/InstanceVNCProcedure.md" >}}
 
-   b. Enter a **VNC Port** number to define the port that the VM VNC server listens for connections on.
-
-   c. Enter a **VNC Password** to authenticate VNC access to the VM.
-
-   {{< hint type=important title="Security Concern">}}
-   A VNC password is not cryptographically secure.
-   You should not rely on it as a single authentication mechanism for your VMs.
-   {{< /hint >}}
-
-9. (Optional) Configure the **Security settings** to control various system security features, including Trusted Platform Module (TPM) and Secure Boot options.
+10. (Optional) Configure the **Security settings** to control various system security features, including Trusted Platform Module (TPM) and Secure Boot options.
    These options help to ensure a secure environment by enabling advanced hardware-based security features during system startup and operation.
 
    {{< trueimage src="/images/SCALE/Virtualization/CreateInstanceSecurity.png" alt="Security Settings" id="Security Settings" >}}
@@ -372,89 +340,109 @@ To create a new virtual machine, from the **Create Instance** screen:
    - Select **Add Trusted Platform Module (TPM)** to enable TPM, a hardware-based security feature that protects sensitive data and ensures integrity.
       This adds a Trusted Platform Module (TPM) device to the VM.
 
-   - Select **Secure Boot** to enable [UEFI Secure Boot](https://wiki.debian.org/SecureBoot#What_is_UEFI_Secure_Boot.3F).
-      Secure boot ensures that only trusted, signed software is loaded during the system boot process.
-      This may be incompatible with some images, refer to the guest OS documentation for compatibility information.
+   - {{< include file="/static/includes/InstanceSecureBootProcedure.md" >}}
 
-10. Click **Create** to deploy the VM.
+11. Click **Create** to deploy the VM.
 
    {{< hint type=tip >}}  
    Some guest operating systems, such as Windows, require user input during boot to start the installation.
-   If the VM does not boot into the installer automatically, connect via VNC and press a key within the first 10 seconds after startup.  
+   If the VM does not boot into the installer automatically, connect using a VNC client and press a key within the first 10 seconds after startup.  
    {{< /hint >}}
-
-<!-- Commenting out previous tutorial content
-
-When a **Display** device is configured, remote clients can connect to VM display sessions using a SPICE client, or by installing a 3rd party remote desktop server inside your VM.
-SPICE clients are available from the [SPICE Protocol site](https://www.spice-space.org/).
-
-
-{{< hint type="tip" title="OS Dependent Toggles" >}}
-If the VM does not have a guest OS installed, the VM **State** toggle and <i class="material-icons" aria-hidden="true" title="Stop Button">stop</i> **Stop** button might not function as expected.
-The **State** toggle and <i class="material-icons" aria-hidden="true" title="Stop Button">stop</i> **Stop** buttons send an ACPI power down command to the VM operating system, but since an OS is not installed, these commands time out.
-Use the **Power Off** button instead.
-{{< /hint >}}
-
-
-
-{{< hint type="note" title="OS Specific Settings" >}}
-Some operating systems can require specific settings to function properly in a virtual machine.
-For example, vanilla Debian can require advanced partitioning when installing the OS.
-Refer to the documentation for your chosen operating system for tips and configuration instructions.
-{{< /hint >}}
--->
 
 ## Managing Instances
 
-<!-- Managing Instances content from the UI REF
-## Instances Table
-
-The **Instances** table lists each configured instance, displaying its name, type, current state, and options to restart or stop it.
+Created instances appear in a table on the **Instances** screen.
+The table lists each configured instance, displaying its name, type, current status, and options to restart or stop it.
 Stopped instances show the option to start the instance.
 
 {{< trueimage src="/images/SCALE/Virtualization/InstancesScreenWithInstances.png" alt="Instances Screen - Populated" id="Instances Screen - Populated" >}}
 
-The **Details for *Instance*** [widgets](#instances-widgets) display information and configuration options for the selected instance.
+Select the checkbox to the left of **Name** (select all) or select one or more instance rows to access the [**Bulk Actions**](#using-bulk-actions) dropdown.
 
-<i class="material-icons" aria-hidden="true" title="Restart">restart_alt</i> restarts or <i class="material-icons" aria-hidden="true" title="Stop">stop_circle</i> stops a running instance.
-<i class="material-icons" aria-hidden="true" title="Start">play_circle</i> starts a stopped instance.
+Enter the name of an instance in the **Search** field above the **Instances** table to locate a configured instance.
 
-**Search** above the **Instances** table allows entering the name of an instance to locate a configured instance.
+Click <i class="material-icons" aria-hidden="true" title="Restart">restart_alt</i> to restart or <i class="material-icons" aria-hidden="true" title="Stop">stop_circle</i> to stop a running instance.
+Click <i class="material-icons" aria-hidden="true" title="Start">play_circle</i> to start a stopped instance.
 
-The checkboxes to the left of **Name** on each instance row shows the [**Bulk Actions**](#bulk-actions) dropdown list.
-The checkboxes on each instance row shows the [**Bulk Actions**](#bulk-actions) dropdown list.
+Select an instance row in the table to populate the **Details for *Instance*** widgets with information and management options for the selected instance.
 
-### Bulk Actions
+### Using Bulk Actions
 
-The **Bulk Action** dropdown list allows you to apply actions to one or more instances on your system.
-Options are **Start All Selected**, **Stop All Selected**, and **Restart All Selected**.
+Apply actions to one or more selected instances on your system using **Bulk Actions**.
 
 {{< trueimage src="/images/SCALE/Virtualization/InstancesBulkActions.png" alt="Bulk Actions" id="Bulk Actions" >}}
 
-## Instances Widgets
+Use the dropdown to select **Start All Selected**, **Stop All Selected**, and **Restart All Selected**.
 
-The **Details for *Instance*** [widgets](#instances-widgets) display information and configuration options for the selected instance.
+### Editing Instances
 
-### General Info Widget
-
-The **General Info** widget displays the instance status, autostart setting, base image, CPU, memory, and secure boot configuration.
-It includes the **Edit** and **Delete** buttons for the instance.
+After selecting the instance row in the table to populate the **Details for *Instance*** widgets, locate the **General Info** widget.
 
 {{< trueimage src="/images/SCALE/Virtualization/GeneralInfoWidget.png" alt="General Info Widget" id="General Info Widget" >}}
 
-**[Delete](#delete-instances)** opens the **Delete** dialog.
+Click **Edit** to open the **Edit Instance: *Instance*** screen.
+The **Edit Instance: *Instance*** screen settings are a subset of those found on the **Create Instance** screen.
+It includes the general **Instance Configuration** and **CPU and Memory** settings for all instances.
+Additionally, containers include **Environment** settings and VMs include **VNC** and **Security** settings.
 
-**[Edit](#edit-instance-screen)** opens an **Edit Instance: *Instance*** configuration screen populated with editable settings also found on the install wizard screen for the instance.
+- Edit the **Instance Configuration** settings to modify basic parameters for the instance, such as startup behavior.
 
-#### Delete Instances
+   {{< trueimage src="/images/SCALE/Virtualization/EditInstanceConfiguration.png" alt="Edit Instance Configuration" id="Edit Instance Configuration" >}}
 
-The **Delete** dialog asks for confirmation to delete the selected instance.
+  - Select **Autostart** to automatically start the instance when the system boots.
+
+- Edit the **CPU & Memory** settings to adjust the **CPU Configuration** or **Memory Size**.
+
+   {{< trueimage src="/images/SCALE/Virtualization/EditCPUandMemory.png" alt="Edit CPU & Memory" id="Edit CPU & Memory" >}}
+
+   For containers, **CPU Configuration** and **Memory Size** can be configured or left blank to allow the container access to all host CPU and memory resources.
+   For VMs, CPU and memory configuration is required.
+
+   To edit resource allocation:
+
+   <div style="margin-left: 33px">{{< include file="/static/includes/InstanceCPUMemoryProcedure.md" >}}
+   </div>
+
+- Edit the **VNC** settings to enable or disable VNC, or to edit the **VNC** port or **VNC Password**.
+   When VNC access is enabled, remote clients can connect to VM display sessions using a VNC client.
+   These settings are only available for VMs and cannot be used with containers.
+
+   Stop the instance before editing VNC settings.
+
+   {{< trueimage src="/images/SCALE/Virtualization/EditVNC.png" alt="Edit VNC" id="Edit VNC" >}}
+
+   <div style="margin-left: 33px">{{< include file="/static/includes/InstanceVNCProcedure.md" >}}
+   </div>
+
+- Edit the **Environment** settings to modify or add optional environment variables to run on boot or execute.
+   These settings are only available for containers and cannot be used with VMs.
+
+   {{< trueimage src="/images/SCALE/Virtualization/EditEnvironment.png" alt="Environment Settings" id="Environment Settings" >}}  
+
+   <div style="margin-left: 33px">{{< include file="/static/includes/InstancesEnvironmentProcedure.md" >}}
+   </div>
+- Edit the **Security** settings to enable or disable Secure Boot for the instance.
+   These settings are only available for VMs and cannot be used with containers.  
+
+   {{< trueimage src="/images/SCALE/Virtualization/EditSecurity.png" alt="Security Settings" id="Security Settings" >}}  
+
+   {{< include file="/static/includes/InstanceSecureBootProcedure.md" >}}
+
+### Deleting Instances
+
+After selecting the instance row in the table to populate the **Details for *Instance*** widgets, locate the **General Info** widget.
+
+{{< trueimage src="/images/SCALE/Virtualization/GeneralInfoWidget.png" alt="General Info Widget" id="General Info Widget" >}}
+
+Click **Delete** to open the **Delete** dialog.
 
 {{< trueimage src="/images/SCALE/Virtualization/DeleteInstance.png" alt="Delete Instance Dialog" id="Delete Instance Dialog" >}}
 
-**Confirm** activates the **Continue** button.
-**Continue** starts the delete operation.
+Select **Confirm** to activate the **Continue** button.
+Click **Continue** to delete the instance.
 
+
+<!--
 ### Devices Widget
 
 The **Devices** widget displays all USB, GPU, Trusted Platform Module (TPM), and PCI Passthrough devices attached to the instance.
@@ -603,64 +591,6 @@ The **Metrics** widget displays real-time graphs that monitor instance performan
 **Memory (MiB)** displays the memory usage in MiB over time.
 
 **Disk I/O Full Pressure (%)** tracks the disk input/output pressure as a percentage over time.
-
-## Edit Instance Screen
-
-The **Edit Instance: *Instance*** screen settings are a subset of those found on the **[Create Instance Wizard](#create-instance-wizard)** screens.
-It includes the general **Instance Configuration** and **CPU and Memory** settings for all instances.
-Additionally, containers include **Environment** settings.
-VMs include **VNC** and **Security** settings.
-To edit device, disk, network, or proxy settings, use the [Instances Widgets](#instances-widgets) on the **Instances** screen.
-
-### Edit Instance Configuration Settings
-
-The **Instance Configuration** settings on the **Edit** screen allow you to modify basic parameters for the instance, such as startup behavior.
-
-{{< trueimage src="/images/SCALE/Virtualization/EditInstanceConfiguration.png" alt="Edit Instance Configuration" id="Edit Instance Configuration" >}}
-
-**Autostart** automatically starts the instance when the system boots.
-
-### Edit CPU and Memory Settings
-
-The **CPU & Memory** settings on the **Edit** screen are the same as those in the **Create Instance** wizard.
-
-{{< trueimage src="/images/SCALE/Virtualization/EditCPUandMemory.png" alt="Edit CPU & Memory" id="Edit CPU & Memory" >}}
-
-{{< include file="/static/includes/VMCPUandMemorySettings.md" >}}
-
-### Edit VNC Settings
-The **VNC** settings on the **Edit** screen are the same as those in the **Create Instance** wizard.
-These settings are only available for VMs and cannot be used with containers.
-
-{{< trueimage src="/images/SCALE/Virtualization/EditVNC.png" alt="Edit VNC" id="Edit VNC" >}}
-
-{{< include file="/static/includes/InstanceVNCSettings.md" >}}
-
-### Edit Environment Settings  
-
-The **Environment** settings on the **Edit** screen are the same as those in the **Create Instance** wizard.
-These settings are only supported for containers and cannot be used with VMs.
-
-**Add** displays a set of environment fields.
-
-{{< trueimage src="/images/SCALE/Virtualization/EditEnvironment.png" alt="Environment Settings" id="Environment Settings" >}}  
-
-{{< include file="/static/includes/InstanceEnvironmentSettings.md" >}}
-
-### Edit Security Settings  
-
-The **Security** settings on the **Edit** screen allow you to enable Secure Boot for the instance, ensuring that only trusted, signed software runs during the startup process.
-These settings are only available for VMs and cannot be used with containers.  
-
-{{< trueimage src="/images/SCALE/Virtualization/EditSecurity.png" alt="Security Settings" id="Security Settings" >}}  
-
-{{< expand "Security Settings" "v" >}}  
-{{< truetable >}}  
-| Setting | Description |  
-|---------|-------------|  
-| **Secure Boot** | Select to ensure only trusted, signed software runs during startup. Some images may not be compatible with Secure Boot. |  
-{{< /truetable >}}
-{{< /expand >}}
 
 ## Add PCI Passthrough Device Screen
 
