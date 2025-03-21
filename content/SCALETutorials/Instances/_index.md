@@ -174,7 +174,8 @@ To create a new container, from the **Create Instance** screen:
    b. Allocate RAM to the container in **Memory Size** or leave this field blank to allow the container access to all host memory.
 
       This field accepts human-readable input (Ex. 50 GiB, 500M, 2 TB).
-      If units are not specified, the value defaults to mebibytes (MiB). The minimum value is 32 MiB.
+      If units are not specified, the value defaults to mebibytes (MiB).
+      The minimum value is 32 MiB.
 
 3. (Optional) Configure the **Environment** settings.
    Use these settings to configure optional environment variables to run on boot or execute.
@@ -223,6 +224,14 @@ To create a new container, from the **Create Instance** screen:
 
    e. Enter the **Instance Port** to define the port number within the container that the host port is mapped to, for example *80*.
 
+6. {{< include file="/static/includes/InstanceNetworkProcedure.md" >}}
+
+7. {{< include file="/static/includes/InstanceUSBProcedure.md" >}}
+
+8. {{< include file="/static/includes/InstanceGPUProcedure.md" >}}
+
+9. Click **Create** to deploy the container.
+
 ### Creating a Virtual Machine
 
 {{< hint type=note title="Before You Begin" >}}
@@ -231,6 +240,9 @@ Before creating a VM, you should:
 - Obtain an installer <file>.iso</file> or image file for the OS you intend to install, if you are not using a Linux image from the catalog or one previously uploaded to the instances service. You can upload an image for use in instances by using the [**Manage Volumes**](#managing-volumes) option on the **Instances** screen **Configuration** menu or you can upload the image from the **Instance Configuration** settings while creating the VM.
 
 - [Create a zvol]({{< relref "/SCALETutorials/Datasets/AddManageZvols.md" >}}) on a storage pool that is available for the virtual disk.
+
+- Compare the recommended specifications for the guest operating system with your available host system resources.
+  Reference these when allocating resources to the instance.
 
 {{< /hint >}}
 
@@ -316,93 +328,62 @@ To create a new virtual machine, from the **Create Instance** screen:
 
    f. Click **Add** again to mount additional storage volumes.
 
-<!-- Commenting out previous tutorial content
+4. {{< include file="/static/includes/InstanceNetworkProcedure.md" >}}
 
-   Compare the recommended specifications for the guest operating system with your available host system resources when allocating virtual CPUs, cores, threads, and memory size.
+5. {{< include file="/static/includes/InstanceUSBProcedure.md" >}}
 
-1. Change other **Operating System** settings per your use case.
+6. {{< include file="/static/includes/InstanceGPUProcedure.md" >}}
 
-   Select **UTC** as the VM system time from the **System Clock** dropdown if you do not want to use the default **Local** setting.
+7. (Optional) Configure **PCI Passthrough** settings to assign physical PCI devices, such as a network card or controller, directly to a VM.
+   This allows the VM to use the device as if physically attached.
+   The selected PCI device(s) cannot be in use by the host or share an IOMMU group with devices the host requires.
 
-   Select **Enable Display** to enable a SPICE Virtual Network Computing (VNC) remote connection for the VM.
-      The **Bind** and **Password** fields display. If **Enable Display** is selected:
+   {{< trueimage src="/images/SCALE/Virtualization/CreateInstancePCI.png" alt="PCI Passthrough" id="PCI Passthrough" >}}
 
-   Enter a display **Password**
+   a. Click **Add PCI Passthrough** to open the **Add PCI Passthrough Device** screen.
+      The **Add PCI Passthrough Device** screen lists the available physical PCI devices that can be attached to an instance.
 
-   Use the dropdown menu to change the default IP address in **Bind** if you want to use a specific address as the display network interface, otherwise leave it set to **0.0.0.0**.
-   The **Bind** menu populates any existing logical interfaces, such as static routes, configured on the system.
-   **Bind** cannot be edited after VM creation.
+      {{< trueimage src="/images/SCALE/Virtualization/AddPCIPassthroughDevice.png" alt="Add PCI Passthrough Device Screen" id="Add PCI Passthrough Device Screen" >}}
 
-   Click **Next**.
+   b. Use **Search Devices** or the **Type** dropdown to filter available devices.
 
-2. Enter the CPU and memory settings for your VM.
+   c. Click **Select** on a device row to attach that device.
 
-   {{< trueimage src="/images/SCALE/Virtualization/AddVMMemory.png" alt="CPU and Memory" id="CPU and Memory" >}}
+8. (Optional) Configure **VNC** settings to enable VNC access for a VM, configure the VNC port, and set a VNC password for remote access.
 
-   If you selected Windows as the **Guest Operating System**, the **Virtual CPUs** field displays a default value of 2.
-   The VM operating system might have operational or licensing restrictions on the number of CPUs.
+   {{< trueimage src="/images/SCALE/Virtualization/CreateInstanceVNC.png" alt="VNC Settings" id="VNC Settings" >}}
 
-   Do not allocate too much memory to a VM. Activating a VM with all available memory allocated to it can slow the host system or prevent other VMs from starting.
+   a. Select **Enable VNC** to allow remote desktop access via a VNC client.
 
-   Leave **CPU Mode** set to **Custom** if you want to select a CPU model.
+   b. Enter a **VNC Port** number to define the port that the VM VNC server listens for connections on.
 
-   Use **Memory Size** and **Minimum Memory Size** to specify how much RAM to dedicate to this VM.
-   To dedicate a fixed amount of RAM, enter a value (minimum 256 MiB) in the **Memory Size** field and leave **Minimum Memory Size** empty.
+   c. Enter a **VNC Password** to authenticate VNC access to the VM.
 
-   To allow for memory usage flexibility (sometimes called ballooning), define a specific value in the **Minimum Memory Size** field and a larger value in **Memory Size**.
-   The VM uses the **Minimum Memory Size** for normal operations but can dynamically allocate up to the defined **Memory Size** value in situations where the VM requires additional memory.
-   Reviewing available memory from within the VM typically shows the **Minimum Memory Size**.
-
-   Click **Next**.
-
-3. Configure disk settings.
-
-   {{< trueimage src="/images/SCALE/Virtualization/CreateVirtualMachineDisks.png" alt="Disks" id="Disks" >}}
-
-   Select **Create new disk image** to create a new zvol on an existing dataset.  
-   Select **Use existing disk image** to use an existing zvol for the VM.
-
-   Select either **AHCI** or **VirtIO** from the **Select Disk Type** dropdown list. We recommend using **AHCI** for Windows VMs.
-
-   Select the location for the new zvol from the **Zvol Location** dropdown list.
-
-   Enter a value in **Size (Examples: 500KiB, 500M, and 2TB)** to indicate the amount of space to allocate for the new zvol.
-
-   Click **Next**.
-
-4. Configure the network interface.
-
-   {{< trueimage src="/images/SCALE/Virtualization/AddVMNetwork.png" alt="Network Interface" id="Network Interface" >}}
-
-   Select the network interface type from the **Adapter Type** dropdown list. Select **Intel e82585 (e1000)** as it offers a higher level of compatibility with most operating systems, or select **VirtIO** if the guest operating system supports para-virtualized network drivers.
-
-   Select the network interface card to use from the **Attach NIC** dropdown list.
-   If the VM needs to access local NAS storage, attach a [network bridge](#accessing-truenas-storage-from-a-vm) interface.
-
-   Click **Next**.
-
-5. Upload installation media for the operating system you selected.
-
-   {{< trueimage src="/images/SCALE/Virtualization/AddVMInstallMedia.png" alt="Installation Media" id="Installation Media" >}}
-
-   You can create the VM without an OS installed. To add it either type the path or browse to the location and select it.
-
-   To upload an <file>iso</file> select **Upload New Image File** and either enter the path or browse to the location of the file.
-
-   {{< trueimage src="/images/SCALE/Virtualization/CreateVMWInstallMediaUploadSCALE.png" alt="Upload Installation Media" id="Upload Installation Media" >}}
-
-   Click **Upload** to begin the upload process. After the upload finishes, click **Next**.
-
-6. Specify a GPU.
-
-   {{< trueimage src="/images/SCALE/Virtualization/AddVMGPU.png" alt="GPU Screen" id="GPU Screen" >}}
-
-   {{< hint type="note" title="Supported GPUs" >}}
-    TrueNAS does not have a list of approved GPUs at this time but TrueNAS does support various GPU from Nvidia, Intel, and AMD.
-    As of 24.10, TrueNAS does not automatically install NVIDIA drivers. Instead, users must manually install drivers from the UI. For detailed instructions, see (https://www.truenas.com/docs/truenasapps/#installing-nvidia-drivers).
+   {{< hint type=important title="Security Concern">}}
+   A VNC password is not cryptographically secure.
+   You should not rely on it as a single authentication mechanism for your VMs.
    {{< /hint >}}
 
-7. Confirm your VM settings, then click **Save**.
+9. (Optional) Configure the **Security settings** to control various system security features, including Trusted Platform Module (TPM) and Secure Boot options.
+   These options help to ensure a secure environment by enabling advanced hardware-based security features during system startup and operation.
+
+   {{< trueimage src="/images/SCALE/Virtualization/CreateInstanceSecurity.png" alt="Security Settings" id="Security Settings" >}}
+
+   - Select **Add Trusted Platform Module (TPM)** to enable TPM, a hardware-based security feature that protects sensitive data and ensures integrity.
+      This adds a Trusted Platform Module (TPM) device to the VM.
+
+   - Select **Secure Boot** to enable [UEFI Secure Boot](https://wiki.debian.org/SecureBoot#What_is_UEFI_Secure_Boot.3F).
+      Secure boot ensures that only trusted, signed software is loaded during the system boot process.
+      This may be incompatible with some images, refer to the guest OS documentation for compatibility information.
+
+10. Click **Create** to deploy the VM.
+
+   {{< hint type=tip >}}  
+   Some guest operating systems, such as Windows, require user input during boot to start the installation.
+   If the VM does not boot into the installer automatically, connect via VNC and press a key within the first 10 seconds after startup.  
+   {{< /hint >}}
+
+<!-- Commenting out previous tutorial content
 
 ### Adding and Removing Devices
 After creating the VM, you can add or remove virtual devices.
