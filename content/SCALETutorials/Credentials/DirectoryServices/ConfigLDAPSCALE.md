@@ -36,7 +36,10 @@ To configure TrueNAS to use an LDAP directory server:
 
 If you want to further modify the LDAP configuration, click **Advanced Options**. See the [LDAP UI Reference article]({{< relref "/SCALEUIReference/Credentials/DirectoryServices/LDAP.md" >}}) for details about advanced settings.
 
-Note that the Legacy Samba Scheme was deprecated in 22.10 and removed in 24.10, so SMBs can no longer be set up using LDAP.
+{{< hint type=note title="Does LDAP work with SMB?" >}}
+The Legacy Samba Schema, needed to populate the LDAP directory with Samba attributes, was deprecated in TrueNAS 22.10 and removed in 24.10. 
+SMB shares can no longer be set up using LDAP authentication.
+{{< /hint >}}
 
 ## Disabling LDAP
 
