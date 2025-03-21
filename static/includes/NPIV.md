@@ -20,7 +20,7 @@ Refer to your switch documentation for details on how to configure zoning of vir
 To create virtual ports on the TrueNAS system, go to **System > Tunables** and click **ADD**.
 Enter these options:
 
-* **Variable** - Enter <code>input hint.isp.<i>X</i>.vports</code>, where *X* is the number of the physical interface.
+* **Variable** - Enter <code>hint.isp.<i>X</i>.vports</code>, where *X* is the number of the physical interface.
 * **Value** - Enter the number of virtual ports to create. 
   The maximum number of target ports is 125 SCSI target ports, including all physical Fibre Channel ports, all virtual ports, and all configured combinations of iSCSI portals and targets.
 * **Type** - Select **loader**. Reboot each node in HA.
