@@ -14,6 +14,13 @@ keywords:
 
 {{< include file="/static/includes/apps/CommunityApp.md" >}}
 
+{{< github-content 
+    repo="truenas/apps"
+    path="trains/community/handbrake-web/app_versions.json"
+    lang="json"
+	includeFile="/static/includes/apps/Apps-Understanding-Versions.md"
+>}}
+
 {{< include file="/static/includes/apps/CommunityPleaseExpand.md" >}}
 
 <a href="https://github.com/TheNickOfTime/handbrake-web">Handbrake Web</a> is a self-hosted platform to use <a href="https://handbrake.fr/">HandBrake</a> on your headless devices via a bespoke web interface.

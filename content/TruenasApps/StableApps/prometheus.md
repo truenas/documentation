@@ -15,6 +15,13 @@ keywords:
 - software storage solutions
 ---
 
+{{< github-content 
+    repo="truenas/apps"
+    path="trains/stable/prometheus/app_versions.json"
+    lang="json"
+	includeFile="/static/includes/apps/Apps-Understanding-Versions.md"
+>}}
+
 Prometheus is a monitoring platform that collects metrics from *targets* it monitors. Targets are system HTTP endpoints configured in the Prometheus web UI. Prometheus is itself an HTTP endpoint so it can monitor itself.
 
 Prometheus collects and stores metrics such as time series data. Information stored is time-stamped at the point when it is recorded.

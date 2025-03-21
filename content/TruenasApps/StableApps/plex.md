@@ -13,9 +13,14 @@ keywords:
 - TrueNAS media applications
 ---
 
+{{< github-content 
+    repo="truenas/apps"
+    path="trains/stable/plex/app_versions.json"
+    lang="json"
+	includeFile="/static/includes/apps/Apps-Understanding-Versions.md"
+>}}
+
 Plex is a media server that allows you to manage and stream your media (music, movies, live TV, etc.) to any Plex client.
-
-
 
 ## Before You Begin
 

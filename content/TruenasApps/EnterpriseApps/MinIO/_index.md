@@ -18,6 +18,13 @@ keywords:
 
 {{< include file="/static/includes/apps/EnterpriseApps.md" >}}
 
+{{< github-content 
+    repo="truenas/apps"
+    path="trains/enterprise/minio/app_versions.json"
+    lang="json"
+	includeFile="/static/includes/apps/Apps-Understanding-Versions.md"
+>}}
+
 This article applies to the TrueNAS MinIO application in the **enterprise** train.
 This smaller version of MinIO is tested and polished for a safe and supportable experience for TrueNAS Enterprise customers.
 The enterprise MinIO application is tested and verified as an immutable target for Veeam Backup and Replication.
