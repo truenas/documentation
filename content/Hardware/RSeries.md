@@ -45,7 +45,7 @@ descr="Identifications list of TrueNAS R-Series systems network ports." >}}
 {{< imagecard image="/images/Hardware/RSeries/RSeriesOOBM.png" title="Out-of-Band Management" link="https://www.truenas.com/docs/files/RSeriesOOBM1.1.pdf"
 descr="BIOS configuration instructions for TrueNAS R-Series systems." >}}
 
-{{< imagecard image="/images/Hardware/RSeries/RSeriesStencil.png" title="Hardware Stencils" link="https://www.truenas.com/docs/files/TrueNAS_R-Series_Stencil_Pack.vssx"
+{{< imagecard image="/images/Hardware/RSeries/RSeriesStencil.png" title="Hardware Stencils" link="https://www.truenas.com/docs/files/TrueNASRSeriesStencilPack.vssx"
 descr="Download R-Series stencils to diagram your TrueNAS hardware configuration." >}}
 
 {{< imagecard image="/images/Hardware/RSeries/R20BSOV.png" title="R20B Statement of Volatility" link="https://www.truenas.com/docs/files/R20BSOV.pdf"
