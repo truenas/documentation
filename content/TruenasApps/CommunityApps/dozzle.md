@@ -14,6 +14,13 @@ keywords:
 
 {{< include file="/static/includes/apps/CommunityApp.md" >}}
 
+{{< github-content 
+    repo="truenas/apps"
+    path="trains/community/dozzle/app_versions.json"
+    lang="json"
+	includeFile="/static/includes/apps/Apps-Understanding-Versions.md"
+>}}
+
 {{< include file="/static/includes/apps/CommunityPleaseExpand.md" >}}
 
 <a href="https://dozzle.dev">Dozzle</a> - Realtime log viewer for docker containers.

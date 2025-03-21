@@ -12,6 +12,13 @@ keywords:
 - assistant
 ---
 
+{{< github-content 
+    repo="truenas/apps"
+    path="trains/stable/home-assistant/app_versions.json"
+    lang="json"
+	includeFile="/static/includes/apps/Apps-Understanding-Versions.md"
+>}}
+
 The TrueNAS Home Assistant app provides a streamlined way to install, manage, and leverage the powerful capabilities of Home Assistant. TrueNAS deploys the Home Assistant app in a Docker container using Docker Compose. Once the app is successfully deployed, you can access the Home Assistant web interface directly from TrueNAS. The Home Assistant interface lets you control, automate, and monitor various smart home devices. With support for thousands of integrations, you can customize automations, create detailed dashboards, and easily manage your smart home setup.
 
 Home Assistant provides a [Quickstart Setup Guide](https://www.home-assistant.io/getting-started/) with step-by-step instructions to help users get started.

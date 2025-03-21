@@ -14,6 +14,13 @@ keywords:
 - observability
 ---
 
+{{< github-content 
+    repo="truenas/apps"
+    path="trains/stable/elastic-search/app_versions.json"
+    lang="json"
+	includeFile="/static/includes/apps/Apps-Understanding-Versions.md"
+>}}
+
 Elastic Search is the distributed, RESTful search and analytics engine at the heart of the [Elastic Stack](https://www.elastic.co/guide/en/starting-with-the-elasticsearch-platform-and-its-solutions/current/stack-components.html).
 The TrueNAS Elastic Search app allows you to configure and deploy a single Elasticsearch node.
 You can install multiple instances to deploy additional nodes, however you must configure a [Custom App]({{< relref "/TruenasApps/UsingCustomApp.md" >}}) with the **Install via YAML** option to deploy a [multi-node cluster](https://www.elastic.co/guide/en/elasticsearch/reference/master/docker.html#docker-compose-file).

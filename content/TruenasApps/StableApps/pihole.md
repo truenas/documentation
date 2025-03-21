@@ -16,6 +16,13 @@ keywords:
 - software storage solutions
 ---
 
+{{< github-content 
+    repo="truenas/apps"
+    path="trains/stable/pihole/app_versions.json"
+    lang="json"
+	includeFile="/static/includes/apps/Apps-Understanding-Versions.md"
+>}}
+
 {{< include file="/static/includes/CommunityAppsLegacy.md" >}}
 
 TrueNAS includes the ability to run Docker containers using Docker Compose.

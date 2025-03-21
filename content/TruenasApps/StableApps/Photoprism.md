@@ -12,6 +12,13 @@ keywords:
 - TrueNAS photo applications
 ---
 
+{{< github-content 
+    repo="truenas/apps"
+    path="trains/stable/photoprism/app_versions.json"
+    lang="json"
+	includeFile="/static/includes/apps/Apps-Understanding-Versions.md"
+>}}
+
 The TrueNAS Photoprism app provides an efficient way to install, manage, and utilize the various capabilities of Photoprism. TrueNAS deploys the Photoprism app in a Docker container using Docker Compose. After successfully deploying the app, you can access the Photoprism web interface from TrueNAS. The Photoprism interface allows you to organize, search, and share your photos with advanced features like AI-based image classification, facial recognition, and geotagging. You can also manage photo collections, create albums, and utilize powerful search tools to find specific images based on metadata and tags.
 
 ## Before You Begin

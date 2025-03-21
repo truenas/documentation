@@ -14,6 +14,13 @@ keywords:
 
 {{< include file="/static/includes/apps/CommunityApp.md" >}}
 
+{{< github-content 
+    repo="truenas/apps"
+    path="trains/community/filestash/app_versions.json"
+    lang="json"
+	includeFile="/static/includes/apps/Apps-Understanding-Versions.md"
+>}}
+
 {{< include file="/static/includes/apps/CommunityPleaseExpand.md" >}}
 
 <a href="https://github.com/mickael-kerjean/filestash">Filestash</a> - a file manager / web client

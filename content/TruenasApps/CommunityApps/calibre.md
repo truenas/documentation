@@ -14,6 +14,13 @@ keywords:
 
 {{< include file="/static/includes/apps/CommunityApp.md" >}}
 
+{{< github-content 
+    repo="truenas/apps"
+    path="trains/community/calibre/app_versions.json"
+    lang="json"
+	includeFile="/static/includes/apps/Apps-Understanding-Versions.md"
+>}}
+
 {{< include file="/static/includes/apps/CommunityPleaseExpand.md" >}}
 
 <a href="https://calibre-ebook.com/">Calibre</a> is the one stop solution for all your e-book needs.

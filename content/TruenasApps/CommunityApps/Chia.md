@@ -16,6 +16,13 @@ keywords:
 
 {{< include file="/static/includes/apps/CommunityApp.md" >}}
 
+{{< github-content 
+    repo="truenas/apps"
+    path="trains/community/chia/app_versions.json"
+    lang="json"
+	includeFile="/static/includes/apps/Apps-Understanding-Versions.md"
+>}}
+
 <!--Comment or remove the following line if your PR changes provide a complete, up-to-date, and working installation tutorial -->
 {{< include file=\"/static/includes/apps/CommunityPleaseImprove.md\" >}}
 

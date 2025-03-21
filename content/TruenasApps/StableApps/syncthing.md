@@ -13,6 +13,13 @@ tags:
 - syncthing
 ---
 
+{{< github-content 
+    repo="truenas/apps"
+    path="trains/stable/syncthing/app_versions.json"
+    lang="json"
+	includeFile="/static/includes/apps/Apps-Understanding-Versions.md"
+>}}
+
 ## Syncthing Overview
 
 {{< include file="/static/includes/SyncthingOverview.md" >}}

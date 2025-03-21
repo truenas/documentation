@@ -16,6 +16,13 @@ keywords:
 - software storage solutions
 ---
 
+{{< github-content 
+    repo="truenas/apps"
+    path="trains/stable/storj/app_versions.json"
+    lang="json"
+	includeFile="/static/includes/apps/Apps-Understanding-Versions.md"
+>}}
+
 {{< include file="/static/includes/CommunityAppsLegacy.md" >}}
 
 Storj is an open-source decentralized cloud storage (DCS) platform.

@@ -18,6 +18,13 @@ keywords:
 - software storage solutions
 ---
 
+{{< github-content 
+    repo="truenas/apps"
+    path="trains/stable/wg-easy/app_versions.json"
+    lang="json"
+	includeFile="/static/includes/apps/Apps-Understanding-Versions.md"
+>}}
+
 WG Easy is the easiest way to install and manage WireGuard on any Linux host.
 The application is included in the Community catalog of applications.
 

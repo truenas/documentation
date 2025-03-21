@@ -14,6 +14,13 @@ keywords:
 
 {{< include file="/static/includes/apps/CommunityApp.md" >}}
 
+{{< github-content 
+    repo="truenas/apps"
+    path="trains/community/duplicati/app_versions.json"
+    lang="json"
+	includeFile="/static/includes/apps/Apps-Understanding-Versions.md"
+>}}
+
 {{< include file="/static/includes/apps/CommunityPleaseExpand.md" >}}
 
 <a href="https://duplicati.com">Duplicati</a> is a backup client that securely stores encrypted backups in the cloud!

@@ -22,6 +22,13 @@ keywords:
 - redis
 ---
 
+{{< github-content 
+    repo="truenas/apps"
+    path="trains/stable/nextcloud/app_versions.json"
+    lang="json"
+	includeFile="/static/includes/apps/Apps-Understanding-Versions.md"
+>}}
+
 Nextcloud is a drop-in replacement for many popular cloud services, including file sharing, calendar, groupware, and more.
 One of its more common uses for the home environment is serving as a media backup, and organizing and sharing service.
 

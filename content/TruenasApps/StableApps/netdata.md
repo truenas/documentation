@@ -17,13 +17,18 @@ keywords:
 - software storage solutions
 ---
 
+{{< github-content 
+    repo="truenas/apps"
+    path="trains/stable/netdata/app_versions.json"
+    lang="json"
+	includeFile="/static/includes/apps/Apps-Understanding-Versions.md"
+>}}
+
 The TrueNAS Netdata app provides an easy way to install and access the Netdata infrastructure monitoring solution.
 TrueNAS deploys the Netdata app in a Docker container using Docker Compose.
 After successfully deploying the app, you can access the Netdata web portal from TrueNAS.
 The Netdata web portal opens on the local dashboard, and where you can create new dashboards, add plugins, metric databases, physical and virtual systems, containers, and other cloud deployments you want to monitor.
 The portal also provides access to the Netdata Cloud sign-in screen.
-
-
 
 ## Before You Begin
 

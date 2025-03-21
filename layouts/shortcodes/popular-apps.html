@@ -1,0 +1,71 @@
+<!-- Popular Apps Section -->
+<h2>Popular Apps</h2>
+<p>These apps are heavily used by the TrueNAS community and are a great place to get started!</p>
+
+<div class="docs-sections" id="popular-apps-container"></div>
+
+<script>
+  // Fetch and process the telemetry data
+  async function fetchAndProcessTelemetry() {
+    try {
+      // Fetch the telemetry JSON file
+      const telemetryResponse = await fetch("https://telemetry.sys.truenas.net/apps/truenas-apps-stats.json");
+      const telemetryData = await telemetryResponse.json();
+
+      // Flatten the telemetry data
+      const flattenedData = [];
+      for (const category in telemetryData) {
+        for (const appName in telemetryData[category]) {
+          const count = telemetryData[category][appName];
+          flattenedData.push({ name: appName, count: count, category: category });
+        }
+      }
+
+      // Sort the data by count in descending order
+      const sortedData = flattenedData.sort((a, b) => b.count - a.count);
+
+      // Get the top 10 apps
+      const top10Apps = sortedData.slice(0, 10);
+
+      // Generate the HTML for the top 10 apps
+      const container = document.getElementById("popular-apps-container");
+      for (const app of top10Apps) {
+        // Dynamically generate the fetch URL for the app's version_info.json
+        const category = app.category.toLowerCase(); // Convert category to lowercase
+        const appName = app.name;
+        const versionInfoURL = `https://api.github.com/truenas/apps/blob/master/trains/${category}/${appName}/app_versions.json`;
+
+        // Fetch the app's version_info.json file
+        const versionInfoResponse = await fetch(versionInfoURL);
+        if (!versionInfoResponse.ok) {
+          console.error(`Failed to fetch version info for ${appName}: ${versionInfoResponse.statusText}`);
+          continue;
+        }
+        const versionInfoBase64 = await versionInfoResponse.json();
+        const versionInfoDecoded = JSON.parse(atob(versionInfoBase64.content));
+
+        // Get the app metadata
+        const appMetadata = versionInfoDecoded[appName];
+        if (appMetadata) {
+          const appBox = `
+            <a class="section-box" href="/apps/${appName}">
+              <div class="box-image">
+                <img class="prod-card-img" src="${appMetadata.app_metadata.icon}" aria-label="${appMetadata.app_metadata.title} Documentation Page">
+              </div>
+              <div class="section-tab-content ixprods">
+                <b style="justify-content:center;font-size:1.5rem;font-weight:600;">${appMetadata.app_metadata.title}</b>
+                <p>${appMetadata.app_metadata.description}</p>
+              </div>
+            </a>
+          `;
+          container.innerHTML += appBox;
+        }
+      }
+    } catch (error) {
+      console.error("Error fetching or processing telemetry data:", error);
+    }
+  }
+
+  // Call the function to fetch and process the telemetry data
+  fetchAndProcessTelemetry();
+</script>
