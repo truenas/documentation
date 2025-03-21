@@ -160,7 +160,7 @@ The **CPU & Memory** settings specify the number of virtual CPU cores to allocat
 ### Environment
 
 The **Environment** settings configure optional environment variables to run on boot or execute.
-These settings are only supported for containers and cannot be used with VMs.
+These settings are only available for containers and cannot be used with VMs.
 
 **Add** displays a set of environment fields.
 
@@ -284,19 +284,18 @@ Stopped instances show the option to start the instance.
 
 {{< trueimage src="/images/SCALE/Virtualization/InstancesScreenWithInstances.png" alt="Instances Screen - Populated" id="Instances Screen - Populated" >}}
 
-The **Details for *Instance*** [widgets](#instances-widgets) display information and configuration options for the selected instance.
+The **Details for *Instance*** [widgets](#instances-widgets) display information and management options for the selected instance.
 
 <i class="material-icons" aria-hidden="true" title="Restart">restart_alt</i> restarts or <i class="material-icons" aria-hidden="true" title="Stop">stop_circle</i> stops a running instance.
 <i class="material-icons" aria-hidden="true" title="Start">play_circle</i> starts a stopped instance.
 
 **Search** above the **Instances** table allows entering the name of an instance to locate a configured instance.
 
-The checkboxes to the left of **Name** on each instance row shows the [**Bulk Actions**](#bulk-actions) dropdown list.
-The checkboxes on each instance row shows the [**Bulk Actions**](#bulk-actions) dropdown list.
+The checkboxes on each instance row show the [**Bulk Actions**](#bulk-actions) dropdown.
 
 ### Bulk Actions
 
-The **Bulk Action** dropdown list allows you to apply actions to one or more instances on your system.
+The **Bulk Actions** dropdown list allows you to apply actions to one or more instances on your system.
 Options are **Start All Selected**, **Stop All Selected**, and **Restart All Selected**.
 
 {{< trueimage src="/images/SCALE/Virtualization/InstancesBulkActions.png" alt="Bulk Actions" id="Bulk Actions" >}}
@@ -499,6 +498,7 @@ The **CPU & Memory** settings on the **Edit** screen are the same as those in th
 {{< include file="/static/includes/VMCPUandMemorySettings.md" >}}
 
 ### Edit VNC Settings
+
 The **VNC** settings on the **Edit** screen are the same as those in the **Create Instance** wizard.
 These settings are only available for VMs and cannot be used with containers.
 
@@ -509,7 +509,7 @@ These settings are only available for VMs and cannot be used with containers.
 ### Edit Environment Settings  
 
 The **Environment** settings on the **Edit** screen are the same as those in the **Create Instance** wizard.
-These settings are only supported for containers and cannot be used with VMs.
+These settings are only available for containers and cannot be used with VMs.
 
 **Add** displays a set of environment fields.
 
