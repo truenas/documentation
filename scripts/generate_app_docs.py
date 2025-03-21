@@ -157,3 +157,35 @@ if enterprise_added:
     for app, filename in enterprise_added:
         print(f"- {app} ({filename} - Please create a Product Documentation ticket.)")
     print()
+
+# Separate ignore list for orphan detection
+orphan_ignore_list = {"example-app1", "example-app2"}  # Add known false alerts here
+
+# Function to find orphaned articles
+def find_orphaned_articles():
+    orphaned_articles = []
+    
+    for train_name, output_dir in output_dirs.items():
+        if not os.path.exists(output_dir):
+            continue
+
+        existing_articles = {f[:-3].lower() for f in os.listdir(output_dir) if f.endswith(".md") and f != "_index.md"}
+        catalog_apps = {app.lower() for app in catalog.get(train_name.lower(), {}).keys()}
+
+        # Find articles that exist but no longer have a corresponding app
+        orphaned = existing_articles - catalog_apps - {app.lower() for app in orphan_ignore_list}
+
+        for app in orphaned:
+            relative_path = os.path.relpath(os.path.join(output_dir, f"{app}.md"), root_dir)
+            orphaned_articles.append((train_name, app, relative_path))
+
+    return orphaned_articles
+
+# Detect and log orphaned articles
+orphaned_articles = find_orphaned_articles()
+
+if orphaned_articles:
+    print("\n⚠️  Potential orphaned articles detected (app not found in catalog):")
+    for train, app, path in orphaned_articles:
+        print(f"- [{train}] {app} ({path}) - Review and consider deleting")
+    print()
