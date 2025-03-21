@@ -3,12 +3,15 @@ import json
 import re
 import requests
 
-# Paths to documentation directories
-# ***Update these paths if they differ on your local filesystem***
+# Determine the script's root directory
+script_dir = os.path.dirname(os.path.abspath(__file__))
+root_dir = os.path.abspath(os.path.join(script_dir, ".."))  # Move up one level from 'scripts' to project root
+
+# Paths to documentation directories (dynamically generated)
 output_dirs = {
-    "Enterprise": r"C:\Users\iXUser\Documents\GitHub\documentation\content\TruenasApps\EnterpriseApps",
-    "Stable": r"C:\Users\iXUser\Documents\GitHub\documentation\content\TruenasApps\StableApps",
-    "Community": r"C:\Users\iXUser\Documents\GitHub\documentation\content\TruenasApps\CommunityApps",
+    "Enterprise": os.path.join(root_dir, "content", "TruenasApps", "EnterpriseApps"),
+    "Stable": os.path.join(root_dir, "content", "TruenasApps", "StableApps"),
+    "Community": os.path.join(root_dir, "content", "TruenasApps", "CommunityApps"),
 }
 
 # Apps to ignore during processing
@@ -147,10 +150,42 @@ if community_added:
 if stable_added:
     print("New Stable articles added:")
     for app, filename in stable_added:
-        print(f"- {app} ({filename} - Please create a Product Documentation ticket.)")
+        print(f"- {app} ({filename})")
     print()
 if enterprise_added:
     print("New Enterprise articles added:")
     for app, filename in enterprise_added:
         print(f"- {app} ({filename} - Please create a Product Documentation ticket.)")
+    print()
+
+# Separate ignore list for orphan detection
+orphan_ignore_list = {"example-app1", "example-app2"}  # Add known false alerts here
+
+# Function to find orphaned articles
+def find_orphaned_articles():
+    orphaned_articles = []
+    
+    for train_name, output_dir in output_dirs.items():
+        if not os.path.exists(output_dir):
+            continue
+
+        existing_articles = {f[:-3].lower() for f in os.listdir(output_dir) if f.endswith(".md") and f != "_index.md"}
+        catalog_apps = {app.lower() for app in catalog.get(train_name.lower(), {}).keys()}
+
+        # Find articles that exist but no longer have a corresponding app
+        orphaned = existing_articles - catalog_apps - {app.lower() for app in orphan_ignore_list}
+
+        for app in orphaned:
+            relative_path = os.path.relpath(os.path.join(output_dir, f"{app}.md"), root_dir)
+            orphaned_articles.append((train_name, app, relative_path))
+
+    return orphaned_articles
+
+# Detect and log orphaned articles
+orphaned_articles = find_orphaned_articles()
+
+if orphaned_articles:
+    print("\n⚠️  Potential orphaned articles detected (app not found in catalog):")
+    for train, app, path in orphaned_articles:
+        print(f"- [{train}] {app} ({path}) - Review and consider deleting")
     print()
