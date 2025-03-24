@@ -2285,3 +2285,5 @@ Rgb
 installingscale
 managingapps
 communityapps
+truenasrseriesstencilpack
+truenasfullstencilpack
