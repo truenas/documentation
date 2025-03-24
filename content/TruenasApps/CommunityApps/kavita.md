@@ -11,6 +11,13 @@ keywords:
 - flash storage
 ---
 
+{{< github-content 
+    repo="truenas/apps"
+    path="trains/community/kavita/app_versions.json"
+    lang="json"
+	includeFile="/static/includes/apps/Apps-Understanding-Versions.md"
+>}}
+
 {{< include file="/static/includes/apps/CommunityApp.md" >}}
 
 <!-- Comment out the following line if your suggested changes to this Community app documentation provide a complete installation tutorial. Leave exposed if you are proposing a partial expansion of the content, but further work is needed. -->
