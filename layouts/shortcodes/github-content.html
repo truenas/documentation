@@ -51,20 +51,22 @@
 		<div class="section-tab-content ixprods">
 		<b style="justify-content:center;font-size:1.5rem;font-weight:600;">{{ $versionData.app_metadata.title }}</b><br>
 		<a class="truenas-appbutton" href="https://www.truenas.com/docs/truenasapps/">Get Started with Apps!</a><br>
-		<small>App Version: <b>{{ $versionData.app_metadata.app_version }}</b>
-		{{ with $versionData.app_metadata.home }}
-			{{ if strings.HasPrefix . "https://github.com" }}
-			(<a href="{{ . }}/releases/" target="_blank">Releases</a>)
-			{{ end }}
-		{{ end }}
-		<br>
-		Version: <b>{{ $versionData.version }}</b> (<a href="https://github.com/{{ $repo }}/blame/{{ $branch }}/{{ $path }}" target="_blank">Updated {{ substr $versionData.last_update 0 10 }}</a>)<br>
-		{{ with $versionData.app_metadata.keywords }}
-		  Keywords: {{ delimit . ", " }}<br>
-		{{ end }}
-		Train: {{ $versionData.app_metadata.train }}<br>
-	    Home Page: <a href="{{ $versionData.app_metadata.home }}" target="_blank">{{ $versionData.app_metadata.home }}</a><br>
-		</small>
+		<div class="app-info">
+		  <small>App Version: <b>{{ $versionData.app_metadata.app_version }}</b>
+		  {{ with $versionData.app_metadata.home }}
+		  	{{ if strings.HasPrefix . "https://github.com" }}
+		  	(<a href="{{ . }}/releases/" target="_blank">Releases</a>)
+		  	{{ end }}
+		  {{ end }}
+		  <br>
+		  Version: <b>{{ $versionData.version }}</b> (<a href="https://github.com/{{ $repo }}/blame/{{ $branch }}/{{ $path }}" target="_blank">Updated {{ substr $versionData.last_update 0 10 }}</a>)<br>
+		  {{ with $versionData.app_metadata.keywords }}
+		    Keywords: {{ delimit . ", " }}<br>
+		  {{ end }}
+		  Train: {{ $versionData.app_metadata.train }}<br>
+	      Home Page: <a href="{{ $versionData.app_metadata.home }}" target="_blank">{{ $versionData.app_metadata.home }}</a><br>
+		  </small>
+		</div>
 		</div>
 	</div>
 	
@@ -89,19 +91,19 @@
 			{{ end }}
 		</div>
 		{{ end }}
-		<b>{{ $versionData.app_metadata.title }} Details</b><br>
-		{{ $descr }}<br>
+		<b>{{ $versionData.app_metadata.title }} Details</b>
+		<p class="app-descr">{{ $descr }}</p>
 	<div class="app-details">
 	  <!-- Context Section -->
 	  {{ if $versionData.app_metadata.run_as_context }}
 		<p><small><b>Run as Context</b></small>
-		<ul style="list-style-type:none;">
+		<ul style="list-style-type:none;padding-left:0;">
 			{{ range $run_as_context := $versionData.app_metadata.run_as_context }}
 			<li>
 				<small>
 				{{ $run_as_context.description }}<br>
-				&nbsp;&nbsp;<b>Group:</b> {{ $run_as_context.gid }} / {{ $run_as_context.group_name }}<br>
-				&nbsp;&nbsp;<b>User:</b> {{ $run_as_context.uid }} / {{ $run_as_context.user_name }}
+				<b>Group:</b> {{ $run_as_context.gid }} / {{ $run_as_context.group_name }}<br>
+				<b>User:</b> {{ $run_as_context.uid }} / {{ $run_as_context.user_name }}
 				</small>
 			</li>
 			{{ end }}
