@@ -2280,3 +2280,8 @@ DockerRegistriesScreen
 CreateDockerRegistry
 CreateDockerRegistryOther
 AppCatalogs
+scalehardwareguide
+Rgb
+installingscale
+managingapps
+communityapps
