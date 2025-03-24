@@ -51,10 +51,17 @@
 		<div class="section-tab-content ixprods">
 		<b style="justify-content:center;font-size:1.5rem;font-weight:600;">{{ $versionData.app_metadata.title }}</b><br>
 		<a class="truenas-appbutton" href="https://www.truenas.com/docs/truenasapps/">Get Started with Apps!</a><br>
-		<small>App Version: {{ $versionData.app_metadata.app_version }}<br>
-		Version: {{ $versionData.version }}<br>
-		<a href="https://github.com/{{ $repo }}/blame/{{ $branch }}/{{ $path }}" target="_blank">Last Updated: {{ $versionData.last_update }}</a><br>
-		Keywords: {{ delimit $versionData.app_metadata.keywords ", " }}<br>
+		<small>App Version: <b>{{ $versionData.app_metadata.app_version }}</b>
+		{{ with $versionData.app_metadata.home }}
+			{{ if strings.HasPrefix . "https://github.com" }}
+			(<a href="{{ . }}/releases/" target="_blank">Releases</a>)
+			{{ end }}
+		{{ end }}
+		<br>
+		Version: <b>{{ $versionData.version }}</b> (<a href="https://github.com/{{ $repo }}/blame/{{ $branch }}/{{ $path }}" target="_blank">Updated {{ substr $versionData.last_update 0 10 }}</a>)<br>
+		{{ with $versionData.app_metadata.keywords }}
+		  Keywords: {{ delimit . ", " }}<br>
+		{{ end }}
 		Train: {{ $versionData.app_metadata.train }}<br>
 	    Home Page: <a href="{{ $versionData.app_metadata.home }}" target="_blank">{{ $versionData.app_metadata.home }}</a><br>
 		</small>
