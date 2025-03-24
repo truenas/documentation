@@ -2707,7 +2707,7 @@ pre.gdoc-mermaid.mermaid.mermaid_sizing {
 }
 
 .lightbox-controls button {
-  background: none;
+  background: gray;
   border: none;
   color: white;
   font-size: 40px;
