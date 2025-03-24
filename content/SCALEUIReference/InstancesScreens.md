@@ -66,15 +66,48 @@ The screen header displays a <i class="fa fa-cog" aria-hidden="true"></i> **Pool
 
 ### Manage Volumes
 
-The **Volumes** screen lists all <file>.iso</file> images currently uploaded to the instances service.
+The **Volumes** screen lists all volumes currently configured for the instances service.
 
 {{< trueimage src="/images/SCALE/Virtualization/InstancesVolumesScreen.png" alt="Volumes Screen" id="Volumes Screen" >}}
 
-**Upload New Image** opens a file browser to select an image from the client computer and upload it to TrueNAS for use in instances.
+**Create Volume** opens the [**Create New Volume**](#create-volumes) dialog to configure a new instances volume.
+
+**Import Zvols** opens the [**Import Zvol**](#import-zvol) dialog to import an existing Zvol as an instances volume.
+
+**Upload ISO** opens a file browser to select an <file>.iso</file> file from the client computer and upload it to TrueNAS for use in instances.
 
 {{< expand "Image Filename Requirements" "v" >}}
 {{< include file="/static/includes/InstanceImageFilenames.md" >}}
 {{< /expand >}}
+
+#### Create Volumes
+
+**Create Volume** on the **Volumes** screen opens the **Create New Volume** dialog.
+
+{{< trueimage src="/images/SCALE/Virtualization/InstancesCreateVolume.png" alt="Create New Volume Dialog" id="Create New Volume Dialog" >}}
+
+{{< truetable >}}
+| Setting | Description |
+|-----------|-------------|
+| **Name** | Enter a name for the volume. |
+| **Size** | Enter a size for the volume, for example *1 GiB*. |
+{{< /truetable >}}
+
+**Create** creates the new volume.
+
+#### Import Zvol
+
+**Import Zvols** on the **Volumes** screen opens the **Import Zvol** dialog.
+
+{{< trueimage src="/images/SCALE/Virtualization/InstanceImportZvol.png" alt="Import Zvol Dialog" id="Import Zvol Dialog" >}}
+
+{{< truetable >}}
+| Setting | Description |
+|-----------|-------------|
+| **Select Zvols** | Enter or browse to select an existing Zvol. |
+| **Clone** | Clone and promote a temporary snapshot of the zvol into a custom storage volume. This option retains the original zvol while creating an identical copy as an instances volume. |
+| **Move** | Relocate the existing zvol to the ix-virt dataset as a volume. |
+{{< /truetable >}}
 
 #### Delete Volumes
 
@@ -272,7 +305,7 @@ These settings are only available for VMs and cannot be used with containers.
 | Setting | Description |
 |---------|-------------|
 | **Add Trusted Platform Module (TPM)** | Enables TPM, a hardware-based security feature that protects sensitive data and ensures integrity. Adds a Trusted Platform Module (TPM) device to the VM. |
-| **Secure Boot** | Ensures that only trusted, signed software is loaded during the system boot process. May be incompatible with some images. |
+| **Secure Boot** | Ensures that only trusted, signed software is loaded during the system boot process. Can be incompatible with some images. |
 {{< /truetable >}}
 
 {{< /expand >}}
@@ -343,17 +376,30 @@ It allows you to manage the disks, including adding new ones or modifying existi
 
 **Add** opens the [**Add Disk**](#addedit-disk-screen) screen for adding new disks to the instance.
 
-For existing disks, the <span class="material-icons">more_vert</span> actions include options to [**Edit**](#addedit-disk-screen) or [**Delete**](#delete-disks) the disk.
+For existing disks, the <span class="material-icons">more_vert</span> actions include options to [**Edit**](#addedit-disk-screen) or [**Delete**](#delete-disk-mounts) the disk mount.
 
 For VMs, the widget displays the current root disk size.
 The root disk stores the OS and serves as the boot disk for the VM.
-**Increase** opens the [**Increase Root Disk Size**](#increase-root-disk-size) dialog.
+**Change** opens the [**Change Root Disk Setup**](#change-root-disk-setup) dialog.
 
 #### Add/Edit Disk Screen
 
 The **Add/Edit Disk** screen allows you to configure a new disk or modify an existing one attached to an instance.
 
-{{< trueimage src="/images/SCALE/Virtualization/AddDiskScreen.png" alt="Add Disk Screen" id="Add Disk Screen" >}}
+{{< trueimage src="/images/SCALE/Virtualization/AddDiskScreenVM.png" alt="Add Disk Screen - VM" id="Add Disk Screen - VM" >}}
+
+{{< expand "Add/Edit Disk Settings - VM" "v" >}}
+{{< truetable >}}
+| Setting | Description |
+|-----------|-------------|
+| **Volume** | **Select Volume** opens the [**Volumes**](#manage-volumes) screen to create or select a volume to attach. |
+| **Boot Priority** | Sets the order in which to boot disks. By default, the root disk is set to 1, which is the highest priority. |
+| **I/O Bus** | Sets the I/O bus for the disk. Options are **NVMe**, **Virtio-BLK**, and **Virtio-SCSI**. |
+{{< /truetable >}}
+{{< /expand >}}
+
+{{< expand "Add/Edit Disk Settings - Container" "v" >}}
+{{< trueimage src="/images/SCALE/Virtualization/AddDiskScreen.png" alt="Add Disk Screen - Container" id="Add Disk Screen - Container" >}}
 
 {{< truetable >}}
 | Setting | Description |
@@ -361,25 +407,30 @@ The **Add/Edit Disk** screen allows you to configure a new disk or modify an exi
 | **Source** | Enter or browse to select the host source path for the disk. For a new dataset, enter or browse to select the parent path. |
 | **Destination**| Enter the destination path to mount the disk in the instance. |
 {{< /truetable >}}
+{{< /expand >}}
 
 **Save** applies changes.
 
-#### Delete Disks
+#### Delete Disk Mounts
 
-The **Delete Item** dialog asks for confirmation to delete the selected disk.
+The **Delete Item** dialog asks for confirmation to delete the selected disk mount.
 
 {{< trueimage src="/images/SCALE/Virtualization/DeleteDiskDialog.png" alt="Delete Item Dialog" id="Delete Item Dialog" >}}
 
 **Confirm** activates the **Continue** button.
 **Continue** starts the delete operation.
 
-#### Increase Root Disk Size
+#### Change Root Disk Setup
 
-The **Increase Root Disk Size** dialog allows you to configure the size of the disk a VM stores its OS on and boots from.
+The **Change Root Disk Setup** dialog allows you to configure the size of the disk a VM stores its OS on and boots from and change the root disk I/O bus.
 
 {{< trueimage src="/images/SCALE/Virtualization/IncreaseRoot.png" alt="Increase Root Disk Size Widget" id="Increase Root Disk Size Widget" >}}
 
-Enter a new size in GiB, such as *20*.
+Enter a new root disk size in GiB, such as *20*.
+
+Select the **Root Disk I/O Bus**.
+Options are **NVMe**, **Virtio-BLK**, and **Virtio-SCSI**.
+
 **Save** applies changes.
 
 ### NIC Widget
@@ -406,6 +457,7 @@ The **Delete Item** dialog asks for confirmation to delete the selected NIC.
 
 The **Proxies** widget displays the network proxy settings configured for the instance.
 It allows you to manage these settings, including adding, editing, or removing proxies.
+These settings are only available for containers and cannot be used with VMs.
 
 {{< trueimage src="/images/SCALE/Virtualization/ProxiesWidget.png" alt="Proxies Widget" id="Proxies Widget" >}}
 
@@ -434,8 +486,9 @@ The **Delete Item** dialog asks for confirmation to delete the selected proxy co
 
 ### Idmap Widget
 
-(Containers Only) The **Idmap** widget shows the user ID (UID) and group ID (GID) mappings used by the instance to translate IDs between the host and the container or VM.
+The **Idmap** widget shows the user ID (UID) and group ID (GID) mappings used by the instance to translate IDs between the host and the container or VM.
 It provides details such as the **Host ID**, **Maprange**, and **NS ID** for both UIDs and GIDs.
+These settings are only available for containers and cannot be used with VMs.
 
 {{< trueimage src="/images/SCALE/Virtualization/IdmapWidget.png" alt="Idmap Widget" id="Idmap Widget" >}}
 
@@ -453,9 +506,9 @@ You can open a shell, console, or VNC session directly from this widget.
 
 {{< trueimage src="/images/SCALE/Virtualization/ToolsWidget.png" alt="Tools Widget - VM" id="Tools Widget" >}}
 
-**Shell** opens an **Instance Shell** session for interacting with the instance.
+**Shell** opens an **Instance Shell** session for command-line interaction with the instance.
   
-**Console** (VM only) opens an **Instance Console** session for accessing the instance’s system console.
+**Serial Console** (VM only) opens an **Instance Console** session to access the system console for the instance.
 
 **VNC** (VM only) opens a VNC connection using your preferred client.
 It uses a VNC URL scheme (for example, `vnc://hostname.domain.com:5930`) to launch the session directly in the application.
@@ -528,7 +581,7 @@ These settings are only available for VMs and cannot be used with containers.
 {{< truetable >}}  
 | Setting | Description |  
 |---------|-------------|  
-| **Secure Boot** | Select to ensure only trusted, signed software runs during startup. Some images may not be compatible with Secure Boot. |  
+| **Secure Boot** | Select to ensure only trusted, signed software runs during startup. Some images are not be compatible with Secure Boot. |  
 {{< /truetable >}}
 {{< /expand >}}
 
@@ -536,12 +589,9 @@ These settings are only available for VMs and cannot be used with containers.
 
 The **Add PCI Passthrough Device** screen lists the available physical PCI devices that can be attached to an instance.
 
-PCI passthrough assigns a physical PCI device, such as a network card or controller, directly to a VM, allowing it to function as if physically attached.
-
-The selected PCI device(s) must not be in use by the host or share an IOMMU group with any device the host requires.
-
 {{< trueimage src="/images/SCALE/Virtualization/AddPCIPassthroughDevice.png" alt="Add PCI Passthrough Device Screen" id="Add PCI Passthrough Device Screen" >}}
 
 Use **Search Devices** or the **Type** dropdown to filter available devices.
+The selected PCI device(s) must not be in use by the host or share an IOMMU group with any device the host requires.
 
 **Select** attaches the selected device.
