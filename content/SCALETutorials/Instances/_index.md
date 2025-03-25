@@ -115,7 +115,7 @@ Click **Import Zvols** on the **Volumes** screen to open the **Import Zvol** dia
 
 {{< trueimage src="/images/SCALE/Virtualization/InstanceImportZvol.png" alt="Import Zvol Dialog" id="Import Zvol Dialog" >}}
 
-Enter or browse to select an existing Zvol in **Select Zvols**.
+Enter the path or browse to select an existing Zvol in **Select Zvols**.
 
 Select **Clone** to clone and promote a temporary snapshot of the zvol into a custom storage volume.
 This option retains the original zvol while creating an identical copy as an instances volume.
@@ -262,7 +262,7 @@ Before creating a VM, you should:
 
 - Obtain an installer <file>.iso</file> or image file for the OS you intend to install, if you are not using a Linux image from the catalog or one previously uploaded to the instances service. You can upload an image for use in instances by using the [**Manage Volumes**](#managing-volumes) option on the **Instances** screen **Configuration** menu or you can upload the image from the **Instance Configuration** settings while creating the VM.
 
-- [Create a zvol]({{< relref "/SCALETutorials/Datasets/AddManageZvols.md" >}}) on a storage pool that is available for the virtual disk.
+- You can [create one or more zvols]({{< relref "/SCALETutorials/Datasets/AddManageZvols.md" >}}) on a storage pool for the virtual disk now or you can do so from the **Volumes** screen while configuring the instance.
 
 - Compare the recommended specifications for the guest operating system with your available host system resources.
   Reference these when allocating resources to the instance.
@@ -523,7 +523,7 @@ Use the **Disks** widget to view the storage devices attached to the instance, a
 
 {{< trueimage src="/images/SCALE/Virtualization/DisksWidget.png" alt="Disks Widget" id="Disks Widget" >}}
 
-Click **Add** to open the [**Add Disk**](#addedit-disk-screen) screen for adding new disks to the instance.
+Click **Add** to open the [**Add Disk**](#adding-or-editing-disks) screen for adding new disks to the instance.
 
 Click the the <span class="material-icons">more_vert</span> icon to the right of an existing disk to open the actions menu.
 Select to either [**Edit**](#adding-or-editing-disks) or [**Delete**](#deleting-disk-mounts) the disk mount.
@@ -534,10 +534,10 @@ Click **Change** to open the [**Change Root Disk Setup**](#managing-the-root-dis
 
 #### Adding or Editing Disks
 
-Click **Add** to open the [**Add Disk**](#addedit-disk-screen) screen for adding new disks to the instance.
+Click **Add** to open the **Add Disk** screen for adding new disks to the instance.
 
 Click the the <span class="material-icons">more_vert</span> icon to the right of an existing disk to open the actions menu.
-Select [**Edit**](#adding-or-editing-disks) to edit the disk mount.
+Select **Edit** to edit the disk mount.
 
 {{< trueimage src="/images/SCALE/Virtualization/AddDiskScreenVM.png" alt="Add Disk Screen - VM" id="Add Disk Screen - VM" >}}
 
@@ -607,9 +607,9 @@ Proxies are available for containers only and cannot be used with VMs.
 
 {{< trueimage src="/images/SCALE/Virtualization/ProxiesWidget.png" alt="Proxies Widget" id="Proxies Widget" >}}
 
-Click **Add** to open the [**Add Proxy**](#addedit-proxy-screen) screen to configure a new proxy for the instance.
+Click **Add** to open the [**Add Proxy**](#adding-or-editing-proxies) screen to configure a new proxy for the instance.
 
-For existing proxies, click <span class="material-icons">more_vert</span> to open the actions menu with options to [**Edit**](#addedit-proxy-screen) or [**Delete**](#delete-proxies) the proxy.
+For existing proxies, click <span class="material-icons">more_vert</span> to open the actions menu with options to [**Edit**](#adding-or-editing-proxies) or [**Delete**](#deleting-proxies) the proxy.
 
 #### Adding or Editing Proxies
 
