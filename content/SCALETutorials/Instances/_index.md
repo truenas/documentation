@@ -279,8 +279,7 @@ To create a new virtual machine, from the **Create Instance** screen:
 
    b. Select **VM** as the **Virtualization Method**.
 
-   c. Select one of the available **VM Image Options**.
-      Options include **Use a Linux Image**, **Use an ISO image**, or **Use zvol with previously installed OS**.
+   c. Select one of the available **VM Image Options**: **Use a Linux Image** or **Upload ISO, import a zvol or use another volume**.
 
       - Select **Use a Linux Image** to create the VM using a Linux image from [linuxcontainers.org](https://linuxcontainers.org/).
          Click **Browse Catalog** to open the **Select Image** screen.
@@ -290,21 +289,38 @@ To create a new virtual machine, from the **Create Instance** screen:
          Search or browse to choose an available image.
          Click **Select** in the row for your desired image.
 
-      - Select **Use an ISO image** to create the VM using an <file>.iso</file> image.
-         Click **Select ISO** to open the **Volumes** screen.
+      - Select **Upload ISO, import a zvol or use another volume** to create the VM using an <file>.iso</file> image, import a zvol from a previously installed VM, or use an existing instances volume.
+         Click **Select Volume** to open the **Volumes** screen.
 
          {{< trueimage src="/images/SCALE/Virtualization/InstancesVolumesScreen.png" alt="Volumes Screen" id="Volumes Screen" >}}
 
-         Locate your desired image and click **Select** or use **Upload New Image**.
-         See [Managing Volumes](#managing-volumes) for more information.
+         - Click **Select** on an existing volume to use that for the new VM.
+            The selected volume cannot be in use by an existing instance.
 
-      - Select **Use zvol with previously installed OS** to create a new VM using a zvol from a previously installed VM.
-         Enter or browse to select the zvol on the TrueNAS system.
+         - Click **Create Volume** to open the **Create New Volume** dialog.
 
-         {{< trueimage src="/images/SCALE/Virtualization/CreateInstanceZvol.png" alt="Zvol Selection" id="Zvol Selection" >}}
+            {{< trueimage src="/images/SCALE/Virtualization/InstancesCreateVolume.png" alt="Create New Volume Dialog" id="Create New Volume Dialog" >}}
 
-         Use this option to migrate a previously configured VM, such as after updating from TrueNAS 24.10.
-         See [Migrating Virtual Machines](https://www.truenas.com/docs/scale/25.04/gettingstarted/scalereleasenotes/#migrating-virtual-machines) from the 25.04 release notes for more information.
+            Enter a name for the volume.
+            Enter a size for the volume, for example *1 GiB*.
+
+            Click **Create** to create the new volume.
+
+         - Click **Import Zvols** on the **Volumes** screen opens the **Import Zvol** dialog.
+
+            {{< trueimage src="/images/SCALE/Virtualization/InstanceImportZvol.png" alt="Import Zvol Dialog" id="Import Zvol Dialog" >}}
+
+            Enter a path in **Select Zvols** or browse to select an existing Zvol.
+
+            Select **Clone** to clone and promote a temporary snapshot of the zvol into a custom storage volume.
+            This option retains the original zvol while creating an identical copy as an instances volume.
+            Select **Move** to relocate the existing zvol to the ix-virt dataset as a volume.
+
+            Use this option to migrate a previously configured VM, such as after updating from TrueNAS 24.10.
+            See [Migrating Virtual Machines](https://www.truenas.com/docs/scale/25.04/gettingstarted/scalereleasenotes/#migrating-virtual-machines) from the 25.04 release notes for more information.
+
+         - Click **Upload ISO** to open a file browser and select an <file>.iso</file> file from your client computer.
+            Locate your desired image file and then click **Open** to upload the file for use in instances.
 
 2. Configure the **CPU & Memory** settings.
 
@@ -370,7 +386,7 @@ To create a new virtual machine, from the **Create Instance** screen:
 
    {{< include file="/static/includes/InstanceVNCProcedure.md" >}}
 
-10. (Optional) Configure the **Security settings** to control various system security features, including Trusted Platform Module (TPM) and Secure Boot options.
+9.  (Optional) Configure the **Security settings** to control various system security features, including Trusted Platform Module (TPM) and Secure Boot options.
    These options help to ensure a secure environment by enabling advanced hardware-based security features during system startup and operation.
 
    {{< trueimage src="/images/SCALE/Virtualization/CreateInstanceSecurity.png" alt="Security Settings" id="Security Settings" >}}
@@ -380,7 +396,7 @@ To create a new virtual machine, from the **Create Instance** screen:
 
    - {{< include file="/static/includes/InstanceSecureBootProcedure.md" >}}
 
-11. Click **Create** to deploy the VM.
+10. Click **Create** to deploy the VM.
 
    {{< hint type=tip >}}  
    Some guest operating systems, such as Windows, require user input during boot to start the installation.
