@@ -13,6 +13,8 @@ cascade:
   - _target:
     volume: "SCALE"
 related: false
+aliases:
+ - /truecommand/3.1/
 ---
 <style>
 div.gdoc-page__header {display: none;}
