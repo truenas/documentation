@@ -3,6 +3,8 @@
 {{< hint type=important icon=gdoc_notification title="Manual Migration Required" >}}
 Due to configuration incompatibilities between the previous KVM hypervisor (TrueNAS 24.10 and earlier) and Incus in TrueNAS 25.04, existing VM configurations do not transfer automatically during the upgrade.
 However, TrueNAS retains storage zvols, allowing you to manually recreate the previous VM configurations and get them back online.
+
+Users with production VMs on TrueNAS 24.10 **should not upgrade** to TrueNAS 25.04 until after the experimental **Instances** feature stabilizes in a future TrueNAS release.
 {{< /hint >}}
 
 {{< expand "Manual Migration Instructions" "v" >}}
