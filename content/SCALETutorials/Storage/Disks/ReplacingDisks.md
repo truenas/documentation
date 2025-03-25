@@ -128,6 +128,16 @@ A **Hot Spare** vdev sets up drives as reserved to prevent larger pool and data 
 TrueNAS automatically inserts an available hot spare into a **Data** vdev when an active drive fails.
 TrueNAS resilvers the pool after the hot spare is activated.
 
+### Replacing a Failed Disk in a Non-Hotswappable System
+
+To replace a failed disk in a non-hotswappable system, first identify the serial number of the failed disk. This information can be located in the **Disks** section of the **Storage** screen, and is crucial for ensuring that you finish the replacement process on the correct disk.
+
+After you have identified the failed disk, [take the failed disk offline](#taking-a-failed-disk-offline). Then, completely shut down your system. This is a vital step for non-hotswappable systems, as disks cannot be removed or inserted in a non-hotswappable system if the power is still on.
+
+When you have ensured that your system is powered off, remove the failed drive from the system. Double-check the serial number on the drive you are removing to verify that it is the failed drive you previously identified.
+
+Replace the failed disk and reboot your system. Disk replacement automatically triggers a pool resilver to transfer your data onto the newly replaced disk.
+
 #### Detaching a Failed Disk
 
 After [taking the failed disk offline](#taking-a-failed-disk-offline) and physically removing it from the system, go to the **Storage Dashboard** and click **Manage Devices** on the **Topology** widget for the degraded pool to open the **Devices** screen for that pool.
