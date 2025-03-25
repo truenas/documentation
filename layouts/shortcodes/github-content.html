@@ -2,16 +2,15 @@
 {{ $repo := .Get "repo" }}
 {{ $path := .Get "path" }}
 {{ $branch := default "master" (.Get "branch") }}
-{{ $url := printf "https://api.github.com/repos/%s/contents/%s" $repo $path }}
+{{ $url := printf "https://raw.githubusercontent.com/%s/%s/%s" $repo $branch $path }}
+{{ $editUrl := printf "https://github.com/%s/edit/%s/%s" $repo $branch $path }}
 {{ $lang := default "plaintext" (.Get "lang") }}
 {{ $includeFile := .Get "includeFile" }}
 {{ $title := .Get "title" }}
 
 {{ with resources.GetRemote $url }}
   {{ $remoteContent := . }}
-  {{ with transform.Unmarshal $remoteContent.Content }}
-    {{ $decodedContent := .content | base64Decode }}
-    {{ $jsonData := transform.Unmarshal $decodedContent }}
+  {{ $jsonData := transform.Unmarshal $remoteContent.Content }}
 
     <!-- Extract the first key dynamically -->
     {{ $firstKey := "" }}
@@ -23,14 +22,14 @@
 
     <!-- Extract specific values from the JSON -->
     {{ $icon := $versionData.app_metadata.icon }}
-    {{ $name := $versionData.app_metadata.name }} <!-- Use app_metadata.name -->
+    {{ $name := $versionData.app_metadata.name }}
     {{ $descr := $versionData.app_metadata.description }}
 
     <!-- Fetch Telemetry Data -->
     {{ $telemetryURL := "https://telemetry.sys.truenas.net/apps/truenas-apps-stats.json" }}
     {{ $telemetryData := resources.GetRemote $telemetryURL | transform.Unmarshal }}
 
-    <!-- Check if the app is actively deployed with more than 5000 instances -->
+    <!-- Check if the app is actively deployed with more than 0 instances -->
     {{ $deploymentCount := 0 }}
     {{ if $telemetryData }}
       {{ range $category, $apps := $telemetryData }}
@@ -165,10 +164,10 @@
 <!-- Expandable Section -->
 <br>
 <details>
+  <a href="{{ $editUrl }}">Submit changes to this file</a>
   <summary>App Metadata (Raw File)</summary>
-  <pre><code>{{ highlight $decodedContent $lang "" }}</code></pre>
+  <pre><code>{{ $remoteContent.Content }}</code></pre>
 </details>
 <br>
 <hr>
-  {{ end }}
 {{ end }}
