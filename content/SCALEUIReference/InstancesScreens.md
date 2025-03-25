@@ -27,7 +27,7 @@ The **Instances** screen displays **No Instances** before you create the first i
 
 {{< trueimage src="/images/SCALE/Virtualization/InstancesScreenNoInstances.png" alt="Instances Screen No Instances" id="Instances Screen No Instances" >}}
 
-The **Configuration** dropdown menu includes **[Global Settings](#global-settings-screen)**, **[Manage Volumes](#manage-volumes-screen)**, and [**Map User/Group IDs**](#map-user-and-group-ids) options.
+The **Configuration** dropdown menu includes **[Global Settings](#global-settings)**, **[Manage Volumes](#manage-volumes)**, and [**Map User/Group IDs**](#map-user-and-group-ids) options.
 
 **Create New Instance** at the top right of the screen opens the **[Create Instance](#create-instance-wizard-screens)** wizard.
 
@@ -36,7 +36,7 @@ The **Configuration** dropdown menu includes **[Global Settings](#global-setting
 **Configuration** on the **Instances** screen header displays service-level settings that apply to all instances.
 
 * **Global Settings** opens the **[Global Settings](#global-settings)** screen.
-* **Manage Volumes** opens the [**Volumes**](#volumes) screen.
+* **Manage Volumes** opens the [**Volumes**](#manage-volumes) screen.
 * **Map User/Group IDs** opens the [**Map User And Group IDs**](#map-user-and-group-ids) screen.
 
 ### Global Settings
@@ -177,8 +177,7 @@ The **Instance Configuration** settings specify the instance name, virtualizatio
 | **Virtualization Method** | Required. Select **VM** to create a fully isolated virtual machine using any operating system. |
 | **VM Image Options** | (Shows when **Virtualization Method** is set to **VM**)  |
 | **Use a Linux image** | Select to choose a Linux image from [linuxcontainers.org](https://linuxcontainers.org/). **Browse Catalog** opens the **Select Image** screen with available image choices. Search or browse to locate your desired image and click **Select**. |
-| **Use an ISO image** | Select to use ISO image previously uploaded to the instances service or to upload a new one. **Select ISO** opens the **Volumes** screen. Locate your desired image and click **Select** or use **Upload New Image**. See [**Volumes**](#volumes) for more information. |
-| **Use zvol with previously installed OS** | Select to create a new instance using an existing VM storage volume. Enter or browse to select the zvol on the TrueNAS system.<br><br>Use this option to migrate a previously configured VM, such as after updating from TrueNAS 24.10. See [Migrating Virtual Machines](https://www.truenas.com/docs/scale/25.04/gettingstarted/scalereleasenotes/#migrating-virtual-machines) from the 25.04 release notes for more information. |
+| **Upload ISO, import a zvol or use another volume** | Select to create the VM using an <file>.iso</file> image, import a zvol from a previously installed VM, or use an existing instances volume. **Select ISO** opens the **Volumes** screen. See [**Volumes**](#manage-volumes) for more information. |
 {{< /truetable >}}
 {{< /expand >}}
 
