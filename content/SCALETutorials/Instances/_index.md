@@ -253,8 +253,6 @@ To create a new container, from the **Create Instance** screen:
 
 9. Click **Create** to deploy the container.
 
-{{< include file="/static/includes/InstanceCommunitySupport.md" >}}
-
 ### Creating a Virtual Machine
 
 {{< hint type=note title="Before You Begin" >}}
@@ -402,8 +400,6 @@ To create a new virtual machine, from the **Create Instance** screen:
    Some guest operating systems, such as Windows, require user input during boot to start the installation.
    If the VM does not boot into the installer automatically, connect using a VNC client and press a key within the first 10 seconds after startup.  
    {{< /hint >}}
-
-{{< include file="/static/includes/InstanceCommunitySupport.md" >}}
 
 ## Managing Instances
 
