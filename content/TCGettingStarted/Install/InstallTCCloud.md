@@ -5,6 +5,8 @@ weight: 10
 tags:
 - install
 - tccloud
+aliases:
+- /truecommand/3.1/tcgettingstarted/install/installtccloud/
 ---
 
 TrueCommand is versatile and offers several different install options.

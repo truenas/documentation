@@ -2,6 +2,8 @@
 title: TrueCommand Version 3 Release Notes
 description: "Highlights and change log for the latest TrueCommand releases."
 weight: 5
+aliases:
+- /truecommand/3.1/tcgettingstarted/tcreleasenotes/
 ---
 
 ## TrueCommand 3.1.0

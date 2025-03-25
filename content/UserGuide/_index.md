@@ -7,6 +7,7 @@ cascade:
     book: "TrueCmdUG"
 aliases:
  - /userguide/clusters/
+ - /truecommand/3.1/userguide/
 ---
 
 TrueCommand supports creating additional user accounts that can log in to the web interface and use some TrueCommand features.
