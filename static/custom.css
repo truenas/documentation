@@ -1517,6 +1517,7 @@ pre.chroma {
     border-radius: 15px;
 	transition: 0.3s;
 	background-color: rgb(248, 249, 250);
+	position: relative;
 }
 .section-box:hover {
 	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
@@ -1540,7 +1541,7 @@ a.section-box:hover {
 }
 /* End adjust section-box for TrueNAS Systems page cards */
 .box-image {
-	padding-top: .5rem;
+	padding: .5rem 2rem .5rem 2rem;
 	text-align: center;
 }
 .prod-card-img {
@@ -2639,6 +2640,12 @@ pre.gdoc-mermaid.mermaid.mermaid_sizing {
 }
 .app-info {
 	padding-top: .5rem;
+}
+.popular-app {
+	position: absolute;
+	top: 1rem;
+	right: .25rem;
+	width: 4rem;
 }
 /* End Apps Docs Boxes */
 /* Screenshot Thumbnails */

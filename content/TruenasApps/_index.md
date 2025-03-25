@@ -76,5 +76,3 @@ descr="Resources about the Community catalog of applications." >}}
 descr="How to deploy third-party apps that aren't available from any catalog." >}}
 
 </div>
-
-{{< popular-apps >}}
