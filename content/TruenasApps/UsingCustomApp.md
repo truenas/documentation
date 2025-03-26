@@ -7,6 +7,7 @@ aliases:
  - /scale/apps/docker/
  - /scale/scaleuireference/apps/docker/
  - /scale/scaletutorials/apps/usingcustomapp/
+ - /truenasapps/stableapps/ix-app/
 tags:
 - customapp
 - apps

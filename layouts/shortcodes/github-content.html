@@ -9,6 +9,9 @@
 {{ $telemetryURL := "https://telemetry.sys.truenas.net/apps/truenas-apps-stats.json" }}
 {{ $telemetryData := resources.GetRemote $telemetryURL | transform.Unmarshal }}
 
+<!-- Define categories -->
+{{ $categories := slice "Enterprise" "Stable" "Community" }}
+
 <!-- Initialize deployment count -->
 {{ $deploymentCount := 0 }}
 
@@ -28,14 +31,26 @@
     {{ end }}
     {{ $versionData := index $jsonData $firstKey }}
 
-    <!-- Check if the app is actively deployed with more than 0 instances -->
-    {{ if $telemetryData }}
-      {{ $name := $versionData.app_metadata.name }}
-      {{ range $category, $apps := $telemetryData }}
+  <!-- Determine the app's category -->
+    {{ $appCategory := "" }}
+    {{ $name := $versionData.app_metadata.name }}
+    {{ range $categories }}
+      {{ $category := . }}
+      {{ $apps := index $telemetryData $category }}
+      {{ if $apps }}
         {{ $appCount := index $apps $name }}
         {{ if $appCount }}
-          {{ $deploymentCount = $appCount }}
+          {{ $appCategory = $category }}
+          {{ break }}
         {{ end }}
+      {{ end }}
+    {{ end }}
+
+    <!-- Evaluate deployment count only for the app's category -->
+    {{ if and $appCategory $telemetryData }}
+      {{ $apps := index $telemetryData $appCategory }}
+      {{ if $apps }}
+        {{ $deploymentCount = index $apps $name | default 0 }}
       {{ end }}
     {{ end }}
 
