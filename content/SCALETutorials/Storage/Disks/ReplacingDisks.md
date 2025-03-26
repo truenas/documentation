@@ -97,7 +97,7 @@ After you have identified the failed disk, [take the failed disk offline](#takin
 
 When you have ensured that your system is powered off, remove the failed drive from the system. Double-check the serial number on the drive you are removing to verify that it is the failed drive you previously identified.
 
-Connect the replacement disk and reboot your system. Depending on your hot spare availability, continue with one of the below processes to complete the resilver process.
+Insert and connect the replacement disk and power-up your system. Complete the resilver process below that matches your hot spare availability.
 
 ### Replacing a Failed Disk Without a Hot Spare
 
