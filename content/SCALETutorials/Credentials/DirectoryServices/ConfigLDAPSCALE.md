@@ -16,13 +16,6 @@ An LDAP server provides directory services for finding network resources like us
 You can have either Active Directory or LDAP configured on TrueNAS but not both.
 {{< /hint >}}
 
-{{< expand "Does LDAP work with SMB?" "v" >}}
-LDAP authentication for SMB shares is disabled unless you configured and populated the LDAP directory with Samba attributes.
-The most popular script for performing this task is `smbldap-tools`.
-TrueNAS needs to be able to validate the full certificate chain (no self-signed certificates).
-TrueNAS does not support non-CA certificates.
-{{< /expand >}}
-
 ## Configuring LDAP
 
 To configure TrueNAS to use an LDAP directory server:
@@ -42,6 +35,18 @@ To configure TrueNAS to use an LDAP directory server:
 6. Click **Save**.
 
 If you want to further modify the LDAP configuration, click **Advanced Options**. See the [LDAP UI Reference article]({{< relref "/SCALEUIReference/Credentials/DirectoryServices/LDAP.md" >}}) for details about advanced settings.
+
+{{< hint type=note >}}
+When using the `idmap_ad` backend, TrueNAS relies on the LDAP server to provide `uidNumber` and `gidNumber` attributes for users and groups.
+If users are missing a `uidNumber`, they might appear in queries (`wbinfo -u`) but fail when a UID is required.
+Ensure the LDAP directory assigns `uidNumber` values to all users.
+If users do not map correctly, check the LDAP server settings and verify attribute assignments.
+{{< /hint >}}
+
+{{< hint type=note title="Does LDAP work with SMB?" >}}
+The Legacy Samba Schema, needed to populate the LDAP directory with Samba attributes, was deprecated in TrueNAS 22.10 and removed in 24.10. 
+SMB shares can no longer be set up using LDAP authentication.
+{{< /hint >}}
 
 ## Disabling LDAP
 
