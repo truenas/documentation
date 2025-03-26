@@ -95,7 +95,7 @@ To replace a failed disk in a non-hotswappable system, first, identify the seria
 
 After you have identified the failed disk, [take the failed disk offline](#taking-a-failed-disk-offline). Then, completely shut down your system. This is a vital step for non-hotswappable systems, as disks cannot be removed or inserted in a non-hotswappable system if the power is still on.
 
-When you have ensured that your system is powered off, remove the failed drive from the system. Double-check the serial number on the drive you are removing to verify that it is the failed drive you previously identified.
+After your system is powered off, remove the failed drive from the system. Double-check the serial number on the removed drive matches the failed drive you previously identified.
 
 Insert and connect the replacement disk and power-up your system. Complete the resilver process below that matches your hot spare availability.
 
