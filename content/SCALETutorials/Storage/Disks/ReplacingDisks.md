@@ -91,7 +91,7 @@ After offlining the failed disk, physically remove it from the system.
 
 ### Replacing a Failed Disk in a Non-Hotswappable System
 
-To replace a failed disk in a non-hotswappable system, first, identify the serial number of the failed disk. This information can be located in the **Disks** section of the **Storage** screen and is crucial for ensuring that you finish the replacement process on the correct disk.
+To replace a failed disk in a non-hotswappable system, first, identify the serial number of the failed disk. To find the serial number, click on **Disks** on the **Storage** screen. The serial number is crucial for ensuring that you finish the replacement process on the correct disk.
 
 After you have identified the failed disk, [take the failed disk offline](#taking-a-failed-disk-offline). Then, completely shut down your system. This is a vital step for non-hotswappable systems, as disks cannot be removed or inserted in a non-hotswappable system if the power is still on.
 
