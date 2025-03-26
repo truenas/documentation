@@ -12,9 +12,7 @@ keywords:
 ---
 
 {{< github-content 
-    repo="truenas/apps"
     path="trains/community/tiny-media-manager/app_versions.json"
-    lang="json"
 	includeFile="/static/includes/apps/Apps-Understanding-Versions.md"
 >}}
 

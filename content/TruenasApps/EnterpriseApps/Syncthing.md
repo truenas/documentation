@@ -18,9 +18,7 @@ keywords:
 {{< include file="/static/includes/apps/EnterpriseApps.md" >}}
 
 {{< github-content 
-    repo="truenas/apps"
     path="trains/enterprise/syncthing/app_versions.json"
-    lang="json"
 	includeFile="/static/includes/apps/Apps-Understanding-Versions.md"
 >}}
 

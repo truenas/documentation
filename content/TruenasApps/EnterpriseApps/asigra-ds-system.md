@@ -17,9 +17,7 @@ keywords:
 {{< include file="/static/includes/apps/EnterpriseApps.md" >}}
 
 {{< github-content 
-    repo="truenas/apps"
     path="trains/enterprise/asigra-ds-system/app_versions.json"
-    lang="json"
 	includeFile="/static/includes/apps/Apps-Understanding-Versions.md"
 >}}
 

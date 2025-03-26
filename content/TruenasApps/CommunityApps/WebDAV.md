@@ -17,9 +17,7 @@ tags:
 ---
 
 {{< github-content 
-    repo="truenas/apps"
     path="trains/community/webdav/app_versions.json"
-    lang="json"
 	includeFile="/static/includes/apps/Apps-Understanding-Versions.md"
 >}}
 

@@ -14,9 +14,7 @@ tags:
 ---
 
 {{< github-content 
-    repo="truenas/apps"
     path="trains/stable/syncthing/app_versions.json"
-    lang="json"
 	includeFile="/static/includes/apps/Apps-Understanding-Versions.md"
 >}}
 

@@ -15,9 +15,7 @@ keywords:
 ---
 
 {{< github-content 
-    repo="truenas/apps"
     path="trains/stable/elastic-search/app_versions.json"
-    lang="json"
 	includeFile="/static/includes/apps/Apps-Understanding-Versions.md"
 >}}
 

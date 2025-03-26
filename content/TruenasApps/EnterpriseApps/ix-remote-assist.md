@@ -22,9 +22,7 @@ TrueNAS community use of Remote assist for any reason is outside of the intended
 {{< /hint >}}
 
 {{< github-content 
-    repo="truenas/apps"
     path="trains/enterprise/ix-remote-assist/app_versions.json"
-    lang="json"
 	includeFile="/static/includes/apps/Apps-Understanding-Versions.md"
 >}}
 

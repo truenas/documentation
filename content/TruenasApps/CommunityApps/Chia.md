@@ -17,9 +17,7 @@ keywords:
 {{< include file="/static/includes/apps/CommunityApp.md" >}}
 
 {{< github-content 
-    repo="truenas/apps"
     path="trains/community/chia/app_versions.json"
-    lang="json"
 	includeFile="/static/includes/apps/Apps-Understanding-Versions.md"
 >}}
 
