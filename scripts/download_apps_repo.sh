@@ -21,17 +21,8 @@ echo "Starting to download the 'trains' directory from the GitHub repository int
 # Define the GitHub repository URL
 REPO_URL="https://github.com/truenas/apps"
 
-# Initialize a new Git repository in the temporary directory
-cd "$TEMP_DIR" || exit 1
-git init
-git remote add origin "$REPO_URL"
-
-# Enable sparse-checkout to fetch only the "trains" directory
-git sparse-checkout init --cone
-git sparse-checkout set trains
-
-# Perform a shallow clone of the repository (fetch only the latest commit)
-if git pull --depth=1 origin master; then
+git clone -b master --depth=1 $REPO_URL $BASE_DIR
+if [ $? -ne 0 ]; then
   echo "'trains' directory successfully downloaded to: $TEMP_DIR"
 else
   echo "Failed to download the 'trains' directory. Please check the URL or your network connection."
