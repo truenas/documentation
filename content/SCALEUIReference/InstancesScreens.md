@@ -203,8 +203,8 @@ These settings are only available for containers and cannot be used with VMs.
 ### Disks
 
 The **Disks** settings allow mounting storage volumes to an instance.
-For containers options are to create a new dataset or use an existing one.
-For VMs, you must use an existing zvol and also specify the I/O bus and size of the root disk.
+For containers, options include creating a new dataset or using an existing one.
+For VMs, you must use an existing zvol and specify the I/O bus and size of the root disk.
 
 **Add** displays a set of fields to create or mount a disk.
 
