@@ -2280,3 +2280,5 @@ DockerRegistriesScreen
 CreateDockerRegistry
 CreateDockerRegistryOther
 AppCatalogs
+truenasrseriesstencilpack
+truenasfullstencilpack
