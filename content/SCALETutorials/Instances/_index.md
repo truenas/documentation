@@ -282,46 +282,67 @@ To create a new virtual machine, from the **Create Instance** screen:
 
    c. Select one of the available **VM Image Options**: **Use a Linux Image** or **Upload ISO, import a zvol or use another volume**.
 
-      - Select **Use a Linux Image** to create the VM using a Linux image from [linuxcontainers.org](https://linuxcontainers.org/).
-         Click **Browse Catalog** to open the **Select Image** screen.
+      - Selecting **Use a Linux Image**:
+
+         Select this option to create the VM using a Linux image from [linuxcontainers.org](https://linuxcontainers.org/).
+
+         a. Click **Browse Catalog** to open the **Select Image** screen.
 
          {{< trueimage src="/images/SCALE/Virtualization/SelectImage.png" alt="Select Image Screen" id="Select Image Screen" >}}
 
-         Search or browse to choose an available image.
-         Click **Select** in the row for your desired image.
+         b. Search or browse to choose an available image.
 
-      - Select **Upload ISO, import a zvol or use another volume** to create the VM using an <file>.iso</file> image, import a zvol from a previously installed VM, or use an existing instances volume.
+         c. Click **Select** in the row for your desired image.
+
+      - Selecting **Upload ISO, import a zvol or use another volume**:
+
+         Select this option to create the VM using an <file>.iso</file> image, import a zvol from a previously installed VM, or use an existing instances volume.
+
          Click **Select Volume** to open the **Volumes** screen.
 
          {{< trueimage src="/images/SCALE/Virtualization/InstancesVolumesScreen.png" alt="Volumes Screen" id="Volumes Screen" >}}
 
-         - Click **Select** on an existing volume to use that for the new VM.
+         Use one of the available options to select or create a volume:
+
+         - Using an existing volume:
+
+            Click **Select** on an existing volume to use that for the new VM.
             The selected volume cannot be in use by an existing instance.
 
-         - Click **Create Volume** to open the **Create New Volume** dialog.
+         - Creating a new volume:
+
+            a. Click **Create Volume** to open the **Create New Volume** dialog.
 
             {{< trueimage src="/images/SCALE/Virtualization/InstancesCreateVolume.png" alt="Create New Volume Dialog" id="Create New Volume Dialog" >}}
 
-            Enter a name for the volume.
-            Enter a size for the volume, for example *1 GiB*.
+            b. Enter a name for the volume.
 
-            Click **Create** to create the new volume.
+            c. Enter a size for the volume, for example *1 GiB*.
 
-         - Click **Import Zvols** on the **Volumes** screen opens the **Import Zvol** dialog.
+            d. Click **Create** to create the new volume.
 
-            {{< trueimage src="/images/SCALE/Virtualization/InstanceImportZvol.png" alt="Import Zvol Dialog" id="Import Zvol Dialog" >}}
-
-            Enter a path in **Select Zvols** or browse to select an existing Zvol.
-
-            Select **Clone** to clone and promote a temporary snapshot of the zvol into a custom storage volume.
-            This option retains the original zvol while creating an identical copy as an instances volume.
-            Select **Move** to relocate the existing zvol to the ix-virt dataset as a volume.
+         - Importing a Zvol:
 
             Use this option to migrate a previously configured VM, such as after updating from TrueNAS 24.10.
             See [Migrating Virtual Machines](https://www.truenas.com/docs/scale/25.04/gettingstarted/scalereleasenotes/#migrating-virtual-machines) from the 25.04 release notes for more information.
 
-         - Click **Upload ISO** to open a file browser and select an <file>.iso</file> file from your client computer.
-            Locate your desired image file and then click **Open** to upload the file for use in instances.
+            a. Click **Import Zvols** on the **Volumes** screen to open the **Import Zvol** dialog.
+
+            {{< trueimage src="/images/SCALE/Virtualization/InstanceImportZvol.png" alt="Import Zvol Dialog" id="Import Zvol Dialog" >}}
+
+            b. Enter a path in **Select Zvols** or browse to select an existing Zvol.
+
+            c. Select a method to import the Zvol:
+
+             - Select **Clone** to clone and promote a temporary snapshot of the zvol into a custom storage volume.
+                This option retains the original zvol while creating an identical copy as an instances volume.
+          
+             - Select **Move** to relocate the existing zvol to the ix-virt dataset as a volume.
+         - Uploading an ISO file:
+
+            a. Click **Upload ISO** to open a file browser and select an <file>.iso</file> file from your client computer.
+
+            b. Locate your desired image file and then click **Open** to upload the file for use in instances.
 
 2. Configure the **CPU & Memory** settings.
 
