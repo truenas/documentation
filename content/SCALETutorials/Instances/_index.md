@@ -185,6 +185,7 @@ To create a new container, from the **Create Instance** screen:
    {{< trueimage src="/images/SCALE/Virtualization/InstanceConfigurationContainer.png" alt="Instance Configuration - Container" id="Instance Configuration - Container" >}}
 
    a. Enter a name for the container.
+      {{< include file="/static/includes/InstanceNameRequirements.md" >}}
 
    b. Select **Container** as the **Virtualization Method**.
 
@@ -274,6 +275,8 @@ To create a new virtual machine, from the **Create Instance** screen:
    {{< trueimage src="/images/SCALE/Virtualization/InstanceConfigurationVM.png" alt="Instance Configuration - VM" id="Instance Configuration - VM" >}}
 
    a. Enter a name for the virtual machine.
+
+      {{< include file="/static/includes/InstanceNameRequirements.md" >}}
 
    b. Select **VM** as the **Virtualization Method**.
 
