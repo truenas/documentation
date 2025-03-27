@@ -336,7 +336,7 @@ To create a new virtual machine, from the **Create Instance** screen:
 
              - Select **Clone** to clone and promote a temporary snapshot of the zvol into a custom storage volume.
                 This option retains the original zvol while creating an identical copy as an instances volume.
-          
+
              - Select **Move** to relocate the existing zvol to the ix-virt dataset as a volume.
          - Uploading an ISO file:
 
