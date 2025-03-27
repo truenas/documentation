@@ -164,6 +164,9 @@ The **Instance Configuration** settings specify the instance name, virtualizatio
 | **Virtualization Method** | Required. Select **Container** to create a lightweight Linux container that shares the TrueNAS OS kernel. |
 | **Image** | **Browse Catalog** opens the **Select Image** screen with available Linux image choices from [linuxcontainers.org](https://linuxcontainers.org/). Search or browse to locate your desired image and click **Select**. |
 {{< /truetable >}}
+
+{{< include file="/static/includes/InstanceNameRequirements.md" >}}
+
 {{< /expand >}}
 
 {{< expand "Instance Configuration Settings - VM" "v" >}}
@@ -179,6 +182,9 @@ The **Instance Configuration** settings specify the instance name, virtualizatio
 | **Use a Linux image** | Select to choose a Linux image from [linuxcontainers.org](https://linuxcontainers.org/). **Browse Catalog** opens the **Select Image** screen with available image choices. Search or browse to locate your desired image and click **Select**. |
 | **Upload ISO, import a zvol or use another volume** | Select to create the VM using an <file>.iso</file> image, import a zvol from a previously installed VM, or use an existing instances volume. **Select ISO** opens the **Volumes** screen. See [**Volumes**](#manage-volumes) for more information. |
 {{< /truetable >}}
+
+{{< include file="/static/includes/InstanceNameRequirements.md" >}}
+
 {{< /expand >}}
 
 ### CPU & Memory
