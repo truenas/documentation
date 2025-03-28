@@ -48,7 +48,7 @@ The **Configuration** dropdown menu includes **[Global Settings](#global-setting
 #### Storage Settings
 
 The **Pool** dropdown list shows a list of available pools on the system.
-**[Disabled]** deselects the active pool and disables the instances service.
+**[Disabled]** deactivates the pool and disables the instances service.
 
 The screen header displays a <i class="fa fa-cog" aria-hidden="true"></i> **Pool is not selected** status before a pool for instances is selected.
 
@@ -259,7 +259,7 @@ See [Accessing NAS from VMs and Containers]({{< relref "/SCALETutorials/Network/
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Use default network settings** | Select to use default network settings to connect the instance to the host using the automatic bridge defined in [Global Settings](#global-settings). Selected by default. Deselect to display the **Bridged NICs** (if available) and **Macvlan NICs** settings. |
+| **Use default network settings** | Select to use default network settings to connect the instance to the host using the automatic bridge defined in [Global Settings](#global-settings). Selected by default. Disable to display the **Bridged NICs** (if available) and **Macvlan NICs** settings. |
 | **Bridged NICs** | Select an existing bridge on the TrueNAS host to connect to the instance. Displays when one or more existing bridge interface(s) is available. |
 | **Macvlan NICs** | Select an existing interface to create a virtual network interface based on it, assigning a unique MAC address so the instance appears as a separate device on the network. |
 {{< /truetable >}}
