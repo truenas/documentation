@@ -61,7 +61,7 @@ The screen header displays a <i class="fa fa-cog" aria-hidden="true"></i> **Pool
 |-----------|-------------|
 | **Bridge** | Specifies the network bridge.  **Automatic** uses the default network bridge for communication between instances and the TrueNAS host. The dropdown list option shows existing bridges. See [Accessing NAS from VMs and Containers]({{< relref "/ScaleTutorials/Network/ContainerNASBridge.md" >}}) for more information. |
 | **IPv4 Network** | Specifies the IPv4 address for the bridge specified when **Bridge** is set to **Automatic**. Enter the IPv4 address and subnet (e.g., *192.168.1.0*/*24*) for the instances to use or leave empty to allow TrueNAS to use the default address. |
-| **IPv6 Network** | Specifies the IPv6 address for the bridge specifed when **Bridge** is set to **Automatic**. Enter the IPv6 address and subnet (e.g., *fd42:96dd:aef2:483c::1*/*64*) for the instances to use or leave empty to allow TrueNAS to use the default address. |
+| **IPv6 Network** | Specifies the IPv6 address for the bridge specified when **Bridge** is set to **Automatic**. Enter the IPv6 address and subnet (e.g., *fd42:96dd:aef2:483c::1*/*64*) for the instances to use or leave empty to allow TrueNAS to use the default address. |
 {{< /truetable >}}
 
 ### Manage Volumes
@@ -104,7 +104,7 @@ The **Volumes** screen lists all volumes currently configured for the instances 
 {{< truetable >}}
 | Setting | Description |
 |-----------|-------------|
-| **Select Zvols** | Specifies the zvole to import. Enter or browse to select an existing Zvol. |
+| **Select Zvols** | Specifies the Zvol to import. Enter or browse to select an existing Zvol. |
 | **Clone** | Clones and promotes a temporary snapshot of the zvol into a custom storage volume. This option retains the original zvol while creating an identical copy as an instances volume. |
 | **Move** | Relocates the existing zvol to the ix-virt dataset as a volume. |
 {{< /truetable >}}

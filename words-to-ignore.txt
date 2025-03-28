@@ -2299,3 +2299,4 @@ MapUserGroupIDs
 Virtio-BLK
 Virtio-SCSI
 AddDiskScreenVM
+InstanceNameRequirements
