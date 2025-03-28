@@ -22,6 +22,12 @@ While browsing, switch to a different version of the same product to see the cor
 
 {{< section-cards >}}
 
+Use the TrueNAS AI Search below or on the left sidebar to ask questions about TrueNAS.
+
+<div class="latest-development-container" style="padding-top: 20px;padding-bottom: 20px;">
+<iframe src="https://docsbot.ai/iframe/c6l7vGyugnoP9SSSoNXy/h6qDF4J2h3xfHKO9Nm6r" width="100%" height="400" frameborder="0" allowtransparency="true" scrolling="no"></iframe>
+</div>
+
 <div class="latest-development-container" style="padding-top: 20px;">
   <div style="display: flex; align-items: center;">
     <img src="/images/Software_Status_Icon_2.png" alt="Engineering Icon" title="Development Preview" style="padding-right: .75rem; max-width: 45px; max-height: 45px; align-self: flex-start;">
