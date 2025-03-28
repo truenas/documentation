@@ -1,3 +1,24 @@
+Process time: 2025-03-21 10:10:58
+Initiated by: Dan Pizappi
+
+1658 files reviewed.
+14 files deleted.
+The following files were deleted:
+C:\Users\iXUser\Documents\GitHub\documentation\static\includes\25.04FeatureList.md
+C:\Users\iXUser\Documents\GitHub\documentation\static\includes\ThirdPartyCatalogs.md
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\truenas_enterprise-logo-full-color-rgb.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\TrueNAS_Open_Enterprise_Storage.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\CORE\System\Login2FA.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\Hardware\ExpansionShelves\ES12BSG.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\Hardware\RSeries\R50BSG.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\Hardware\RSeries\RSeriesBSG.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Apps\AddNextcloudParentDatasetNetdataUserACL.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Apps\AddPostgres_DataACLPermissions.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Apps\AppsTrainSettingsScreen.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Apps\InstallNextcloudStorageDataACLandACESettings.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Apps\SetPostgres_dataACLtoPOSIX.png
+
+----------------------------------------
 Process time: 2025-02-14 16:32:36
 Initiated by: Dan Pizappi
 
