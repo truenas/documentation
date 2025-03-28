@@ -21,7 +21,7 @@ keywords:
 
 **Instances** allow users to configure Incus-based containers or VMs in TrueNAS.
 
-*Linux containers*, powered by LXC, offer a lightweight, isolated environment that shares the host system kernel while maintaining its own filesystem, processes, and network settings.
+*Linux containers*, powered by LXC, offer a lightweight, isolated environment that shares the host system kernel while maintaining its own file system, processes, and network settings.
 Containers start quickly, use fewer system resources than VMs, and scale efficiently, making them ideal for deploying and managing scalable applications with minimal overhead.
 
 *Virtual machines (VMs)*, powered by QEMU, offer full OS isolation, kernel independence, and can run diverse OS types.
@@ -66,14 +66,14 @@ For stability and performance, we recommend using SSD/NVMe storage for the insta
 <!-- Placeholder: Further description of the instances storage implementation here (once implementation is nailed down and experimental status removed) -->
 
 To select a different pool for instances to use, use the **Pool** dropdown to select a different pool.
-Select **[Disabled]** to deselect the active pool and disable the instances service.
+Select **[Disabled]** to deactivate the pool and disable the instances service.
 
 #### Configuring the Default Network
 
-Use the **Default Network** settings to define how instances connect to the network.
+Use the **Default Network** settings on the **Global Settings** screen to define how instances connect to the network.
 These settings apply to all new containers and VMs, unless configured otherwise.  
 
-Select **Automatic** for **Bridge** to use the default network bridge for communication between instances and the TrueNAS host.
+Select **Automatic** from the **Bridge** dropdown list to use the default network bridge for communication between instances and the TrueNAS host.
 To specify an existing bridge, select one from the dropdown list.
 See [Accessing NAS from VMs and Containers]({{< relref "/ScaleTutorials/Network/ContainerNASBridge.md" >}}) for details.  
 When **Bridge** is set to **Automatic**, the **IPv4 Network** and **IPv6 Network** settings display.
@@ -147,8 +147,8 @@ TrueNAS disables the delete icon for active images to prevent accidental deletio
 
 ### Mapping User and Group IDs
 
-Click **Map User/Group IDs** on the **Configuration** menu to open the **Map User and Group IDs** screen, which allows you to manually configure UID and GID mappings inside instances.
-By default, user and group accounts within an instance are assigned UIDs and GIDs from a special private range starting at `2147000001`.
+Click **Map User/Group IDs** on the **Configuration** dropdown list to open the **Map User and Group IDs** screen, which allows you to manually configure UID and GID mappings inside instances.
+By default, user and group accounts within an instance are assigned UIDs and GIDs from a special private range starting at **2147000001**.
 This mapping ensures security isolation for containers.
 However, you can override these mappings to meet specific system requirements.
 
@@ -159,11 +159,11 @@ Select **Users** or **Groups** to view mappings for individual user or group acc
 Existing mappings are shown in a table containing the user or group name, host ID, and instance ID.
 Click **<i class="material-icons" aria-hidden="true" title="Delete">delete</i> Delete** on a row to delete that mapping.
 
-To configure a new mapping, type an account name to search for it or select it from the dropdown menu.
+To configure a new mapping, type an account name to search for it or select it from the dropdown list.
 Select **Map to the same UID/GID in the instance** to directly map the host ID to the same ID in instances.
 This means that the selected user or group ID on the host appears as the same ID in instances.
 
-Deselect **Map to the same UID/GID in the instance** to define a different instance ID for the user or group.
+Disable **Map to the same UID/GID in the instance** to define a different instance ID for the user or group.
 Enter an ID number to map in instances, for example *1000*.
 This means that the selected user or group ID on the host appears as the configured ID in instances.
 
@@ -180,7 +180,7 @@ Click **Create New Instance** on the **Instances** screen to open the **Create I
 
 To create a new container, from the **Create Instance** screen:
 
-1. Configure the **Instance Configuration** settings.
+1. Configure the instance configuration settings.
 
    {{< trueimage src="/images/SCALE/Virtualization/InstanceConfigurationContainer.png" alt="Instance Configuration - Container" id="Instance Configuration - Container" >}}
 
@@ -196,52 +196,50 @@ To create a new container, from the **Create Instance** screen:
       Search or browse to choose a Linux image from [linuxcontainers.org](https://linuxcontainers.org/).
       Click **Select** in the row for your desired image.
 
-2. (Optional) Configure the **CPU & Memory** settings.
+2. (Optional) Configure CPU and memory settings.
 
    {{< trueimage src="/images/SCALE/Virtualization/CreateInstanceCPUandMemory.png" alt="CPU & Memory - Container" id="CPU & Memory - Container" >}}
 
-   For containers, **CPU Configuration** and **Memory Size** can be configured or left blank to allow the container access to all host CPU and memory resources.
+   For containers, enter values for **CPU Configuration** and **Memory Size** or leave blank to allow the container access to all host CPU and memory resources.
    To configure resource allocation:
 
    {{< include file="/static/includes/InstanceCPUMemoryProcedure.md" >}}
 
-3. (Optional) Configure the **Environment** settings.
-   Use these settings to configure optional environment variables to run on boot or execute.
+3. (Optional) Configure environment variables to run on boot or execute.
    Environment settings are only supported for containers and cannot be used with VMs.
 
    {{< trueimage src="/images/SCALE/Virtualization/CreateInstanceEnvironment.png" alt="Environment" id="Environment" >}}
 
    {{< include file="/static/includes/InstancesEnvironmentProcedure.md" >}}
 
-4. (Optional) Configure the **Disks** settings to mount storage volumes for the container.
+4. (Optional) Configure disk settings to mount storage volumes for the container.
    You can create a new dataset or use an existing one.
 
    {{< trueimage src="/images/SCALE/Virtualization/CreateInstanceDisksContainer.png" alt="Disks - Container" id="Disks - Container" >}}
 
-   a. Click **Add** to display a set of fields to mount a disk.
+   a. Click **Add** in the **Disks** section to display a set of fields to mount a disk.
 
    b. To create a new dataset, enter a path or browse to select a parent dataset from the dropdown list of datasets on the system.
       Then click **Create Dataset**, enter a name for the new dataset in the **Create Dataset** window, and click **Create**.
 
       To use an existing volume, enter a path or browse to select an existing dataset or zvol from the **Source** dropdown list.
 
-   c. Enter the filesystem **Destination** path to mount the disk at in the container, for example */media* or */var/lib/data*.
+   c. Enter the file system **Destination** path to mount the disk in the container, for example */media* or */var/lib/data*.
 
    d. Click **Add** again to mount additional storage volumes.
 
-5. (Optional) Configure **Proxies** settings to forward network connections between the host and the container.
+5. (Optional) Configure proxy settings to forward network connections between the host and the container.
    This routes traffic from a specific address on the host to an address inside the instance, or vice versa, allowing the instance to connect externally through the host.
 
    {{< trueimage src="/images/SCALE/Virtualization/CreateInstanceProxies.png" alt="Proxies" id="Proxies" >}}
 
-   a. Click **Add** to display a set of proxy configuration settings.
+   a. Click **Add** in the **Proxies** section to display a set of proxy configuration settings.
 
-   b. Select the **Host Protocol** to set the connection protocol for the TrueNAS host.
-      Options are **TCP** or **UDP**.
+   b. Select the protocol option from the **Host Protocol** dropdown list to set the connection protocol for the TrueNAS host as **TCP** or **UDP**.
 
-   c. Enter the **Host Port** to define the TrueNAS port to map to the instance port on the container, for example *3600*.
+   c. Enter a port in **Host Port** to define the TrueNAS port to map to the instance port on the container, for example *3600*.
 
-   d. Select the **Instance Protocol** to set the connection protocol for the container.
+   d. Select the connection protocol for the container in **Instance Protocol**.
       Options are **TCP** or **UDP**.
 
    e. Enter the **Instance Port** to define the port number within the container that the host port is mapped to, for example *80*.
@@ -257,11 +255,11 @@ To create a new container, from the **Create Instance** screen:
 ### Creating a Virtual Machine
 
 {{< hint type=note title="Before You Begin" >}}
-Before creating a VM, you should:
+Before creating a VM:
 
 - Obtain an installer <file>.iso</file> or image file for the OS you intend to install, if you are not using a Linux image from the catalog or one previously uploaded to the instances service. You can upload an image for use in instances by using the [**Manage Volumes**](#managing-volumes) option on the **Instances** screen **Configuration** menu or you can upload the image from the **Instance Configuration** settings while creating the VM.
 
-- You can [create one or more zvols]({{< relref "/SCALETutorials/Datasets/AddManageZvols.md" >}}) on a storage pool for the virtual disk now or you can do so from the **Volumes** screen while configuring the instance.
+- [Create one or more zvols]({{< relref "/SCALETutorials/Datasets/AddManageZvols.md" >}}) on a storage pool for the virtual disk now or do this from the **Volumes** screen while configuring the instance.
 
 - Compare the recommended specifications for the guest operating system with your available host system resources.
   Reference these when allocating resources to the instance.
@@ -270,7 +268,7 @@ Before creating a VM, you should:
 
 To create a new virtual machine, from the **Create Instance** screen:
 
-1. Configure the **Instance Configuration** settings.
+1. Configure the instance configuration settings.
 
    {{< trueimage src="/images/SCALE/Virtualization/InstanceConfigurationVM.png" alt="Instance Configuration - VM" id="Instance Configuration - VM" >}}
 
@@ -344,7 +342,7 @@ To create a new virtual machine, from the **Create Instance** screen:
 
             b. Locate your desired image file and then click **Open** to upload the file for use in instances.
 
-2. Configure the **CPU & Memory** settings.
+2. Configure the CPU and memory settings.
 
    Compare the recommended specifications for the guest operating system with your available host system resources when allocating CPU and memory resources.
 
@@ -354,7 +352,7 @@ To create a new virtual machine, from the **Create Instance** screen:
 
    {{< include file="/static/includes/InstanceCPUMemoryProcedure.md" >}}
 
-3. Configure the **Disks** settings to mount storage volumes for the VM.
+3. Configure disks settings to mount storage volumes for the VM.
    For VMs, you must specify the I/O bus and size of the root disk.
    You can also mount one or more existing zvol(s) as additional storage, if needed.
    See [Storage volume types](https://linuxcontainers.org/incus/docs/main/explanation/storage/#storage-volume-types) from Incus for more information.
@@ -386,7 +384,7 @@ To create a new virtual machine, from the **Create Instance** screen:
 
 6. {{< include file="/static/includes/InstanceGPUProcedure.md" >}}
 
-7. (Optional) Configure **PCI Passthrough** settings to assign physical PCI devices, such as a network card or controller, directly to a VM.
+7. (Optional) Configure PCI passthrough settings to assign physical PCI devices, such as a network card or controller, directly to a VM.
    This allows the VM to use the device as if physically attached.
    The selected PCI device(s) cannot be in use by the host or share an IOMMU group with devices the host requires.
 
@@ -401,17 +399,19 @@ To create a new virtual machine, from the **Create Instance** screen:
 
    c. Click **Select** on a device row to attach that device.
 
-8. (Optional) Configure **VNC** settings to enable VNC access for a VM, configure the VNC port, and set a VNC password for remote access.
+8. (Optional) Configure the **VNC** section settings to enable VNC access for a VM, configure the VNC port, and set a VNC password for remote access.
    When VNC access is enabled, remote clients can connect to VM display sessions using a VNC client.
 
    {{< trueimage src="/images/SCALE/Virtualization/CreateInstanceVNC.png" alt="VNC Settings" id="VNC Settings" >}}
 
    {{< include file="/static/includes/InstanceVNCProcedure.md" >}}
 
-9.  (Optional) Configure the **Security settings** to control various system security features, including Trusted Platform Module (TPM) and Secure Boot options.
+9.  (Optional) Configure the security settings to control various system security features, including Trusted Platform Module (TPM) and Secure Boot options.
    These options help to ensure a secure environment by enabling advanced hardware-based security features during system startup and operation.
 
    {{< trueimage src="/images/SCALE/Virtualization/CreateInstanceSecurity.png" alt="Security Settings" id="Security Settings" >}}
+   
+   Configuring security options:
 
    - Select **Add Trusted Platform Module (TPM)** to enable TPM, a hardware-based security feature that protects sensitive data and ensures integrity.
       This adds a Trusted Platform Module (TPM) device to the VM.
@@ -448,7 +448,7 @@ Apply actions to one or more selected instances on your system using **Bulk Acti
 
 {{< trueimage src="/images/SCALE/Virtualization/InstancesBulkActions.png" alt="Bulk Actions" id="Bulk Actions" >}}
 
-Use the dropdown to select **Start All Selected**, **Stop All Selected**, and **Restart All Selected**.
+Use the dropdown to select **Start All Selected**, **Stop All Selected**, or **Restart All Selected**.
 
 ### Editing Instances
 
