@@ -359,13 +359,13 @@ To create a new virtual machine, from the **Create Instance** screen:
 
    {{< trueimage src="/images/SCALE/Virtualization/CreateInstanceDisksVM.png" alt="Disks - VM" id="Disks - VM" >}}
 
-   a. Choose the root disk I/O bus type that best suits system needs. Options are:
+   a. Choose the root disk I/O bus type that best suits system needs.
 
-      - **NVMe** – Ideal for high-performance storage with faster read and write speeds.
+      Use **NVMe** for high-performance storage with faster read/write speeds.
 
-      - **Virtio-BLK** – Efficient for virtualized environments, offering direct block device access with lower overhead.
+      Use **Virtio-BLK** for efficient virtualized environments that need direct block device access with lower overhead.
 
-      - **Virtio-SCSI** – Flexible and scalable, supporting advanced features like hot-swapping and multiple devices.
+      Use **Virtio-SCSI** for flexible and scalable storage that supports advanced features like hot-swapping and multiple devices.
 
    b. Enter a plain integer in **Root Disk Size (in GiB)** to configure the size of the VM root disk (default **10**).
 
