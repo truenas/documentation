@@ -17,21 +17,21 @@ To migrate VMs from TrueNAS 24.10 (latest) to 25.04:
 
 #### Preparing to Migrate VMs from 24.10
 
-1. Record VM configuration:
+1. Copy or write down the VM configuration:
 
-   a. Open **Virtualization** and locate your VM.
+   a. Go to the **Virtualization** screen and locate your VM.
 
-   b. Click the VM row to expand it, then click <span class="iconify" data-icon="mdi:pencil"></span> **Edit**.
+   b. Click on the VM row to expand it, then click <span class="iconify" data-icon="mdi:pencil"></span> **Edit**.
 
-   c. Take a screenshot or manually record the VM settings, as they do not transfer to 25.04.
+   c. Take a screenshot or manually write down the VM settings, as they do not transfer to 25.04.
 
    d. Save this information externally for reference.
 
-2. Record storage and virtual device configuration:
+2. Copy or write down the storage and virtual device configuration:
 
-   a. Open **Virtualization** and locate your VM.
+   a. Go to the **Virtualization** screen and locate your VM.
 
-   b. Click the VM row to expand it, then click <i class="material-icons" aria-hidden="true" title="Devices">device_hub</i> **Devices**.
+   b. Click on the VM row to expand it, then click <i class="material-icons" aria-hidden="true" title="Devices">device_hub</i> **Devices**.
 
    c. Click <i class="material-icons" aria-hidden="true" title="System Update">more_vert</i> in the **Disk** row and select **Edit**.
 
@@ -47,7 +47,7 @@ To migrate VMs from TrueNAS 24.10 (latest) to 25.04:
 
    b. Click **Select Pool** to open **Global Settings**.
 
-   c. Use the **Pool** dropdown to select a storage pool for virtualization.
+   c. Select the storage pool for virtualization from the **Pool** dropdown.
 
    d. Accept default networking settings or modify as needed, then click **Save**.
 

@@ -4,7 +4,7 @@ a. Enter the number of virtual CPU (vCPU) cores to allocate in **CPU Configurati
 
   Set to a range or comma-separated list to pin vCPUs to specific physical cores.
   For better cache locality and performance, select cores that share the same cache hierarchy or NUMA node.
-  For example, to assign cores 0,1,2,5,9,10,11, you can write: `1-2,5,9-11`.
+  For example, to assign cores 0,1,2,5,9,10,11, enter `1-2,5,9-11`.
 
 b. Allocate RAM in **Memory Size**.
 

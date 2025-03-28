@@ -4,7 +4,7 @@ TrueNAS uses [Incus](https://linuxcontainers.org/incus/) to manage instances, wi
 
 VMs require an Intel processor with VT-x extensions or an AMD processor with SVM (AMD-V) extensions.
 Users cannot create VMs unless the host system supports these features.
-To verify Intel VT-x or AMD-V support, check your processor model on the vendor's website.
+To verify Intel VT-x or AMD-V support, check your processor model on the vendor website.
 If needed, enable virtualization in the BIOS under **Advanced > CPU Configuration** settings.
 
 Containers do not require CPU virtualization support since they use OS-level virtualization and share the host kernel.

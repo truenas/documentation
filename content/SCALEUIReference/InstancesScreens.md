@@ -59,9 +59,9 @@ The screen header displays a <i class="fa fa-cog" aria-hidden="true"></i> **Pool
 {{< truetable >}}
 | Setting | Description |
 |-----------|-------------|
-| **Bridge** | Select **Automatic** to use the default network bridge for communication between instances and the TrueNAS host or use the dropdown list to select an existing bridge. See [Accessing NAS from VMs and Containers]({{< relref "/ScaleTutorials/Network/ContainerNASBridge.md" >}}) for more information. |
-| **IPv4 Network** | Displays when **Bridge** is set to **Automatic**. Enter the IPv4 address and subnet (e.g., *192.168.1.0*/*24*) to use for instances or leave empty to allow TrueNAS to use the default address. |
-| **IPv6 Network** | Displays when **Bridge** is set to **Automatic**. Enter the IPv6 address and subnet (e.g., *fd42:96dd:aef2:483c::1*/*64*) to use for instances or leave empty to allow TrueNAS to use the default address. |
+| **Bridge** | Specifies the network bridge.  **Automatic** uses the default network bridge for communication between instances and the TrueNAS host. The dropdown list option shows existing bridges. See [Accessing NAS from VMs and Containers]({{< relref "/ScaleTutorials/Network/ContainerNASBridge.md" >}}) for more information. |
+| **IPv4 Network** | Specifies the IPv4 address for the bridge specified when **Bridge** is set to **Automatic**. Enter the IPv4 address and subnet (e.g., *192.168.1.0*/*24*) for the instances to use or leave empty to allow TrueNAS to use the default address. |
+| **IPv6 Network** | Specifies the IPv6 address for the bridge specifed when **Bridge** is set to **Automatic**. Enter the IPv6 address and subnet (e.g., *fd42:96dd:aef2:483c::1*/*64*) for the instances to use or leave empty to allow TrueNAS to use the default address. |
 {{< /truetable >}}
 
 ### Manage Volumes
@@ -89,8 +89,8 @@ The **Volumes** screen lists all volumes currently configured for the instances 
 {{< truetable >}}
 | Setting | Description |
 |-----------|-------------|
-| **Name** | Enter a name for the volume. |
-| **Size** | Enter a size for the volume, for example *1 GiB*. |
+| **Name** | Name of the volume. Enter a name for the volume. |
+| **Size** | Size of the volume. Enter a size for the volume, for example *1 GiB*. |
 {{< /truetable >}}
 
 **Create** creates the new volume.
@@ -104,9 +104,9 @@ The **Volumes** screen lists all volumes currently configured for the instances 
 {{< truetable >}}
 | Setting | Description |
 |-----------|-------------|
-| **Select Zvols** | Enter or browse to select an existing Zvol. |
-| **Clone** | Clone and promote a temporary snapshot of the zvol into a custom storage volume. This option retains the original zvol while creating an identical copy as an instances volume. |
-| **Move** | Relocate the existing zvol to the ix-virt dataset as a volume. |
+| **Select Zvols** | Specifies the zvole to import. Enter or browse to select an existing Zvol. |
+| **Clone** | Clones and promotes a temporary snapshot of the zvol into a custom storage volume. This option retains the original zvol while creating an identical copy as an instances volume. |
+| **Move** | Relocates the existing zvol to the ix-virt dataset as a volume. |
 {{< /truetable >}}
 
 #### Delete Volumes
@@ -137,14 +137,14 @@ Existing mappings are shown in a table containing the group or user name, host I
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **User/Group** | Type an account name to search for it or select it from the dropdown menu. |
-| **Map to the same UID/GID in the instance** | (Default) Select to map the host ID to the same ID in instances. |
-| **Instance UID/GID** | (Displays when **Map to the same UID/GID in the instance** is not selected)<br> Enter the ID number (e.g., *1000*) to map the host user or group ID to in instances. |
+| **User/Group** | Specifies the user or group account name. Begin typing an account name to search for it or select it from the dropdown menu. |
+| **Map to the same UID/GID in the instance** | (Default) Specifies the host ID-to-instance user or group ID mapping. Select to map the host ID to the same ID in instances. |
+| **Instance UID/GID** | (Displays when **Map to the same UID/GID in the instance** is not selected)<br> Specified the user or group ID. Enter the ID number (e.g., *1000*) to map the host user or group ID to in instances. |
 {{< /truetable >}}
 {{< /expand >}}
 
 **Set** creates the mapping.
-Changes take effect immediately, but instances can require a restart to reflect the changes.
+Changes take effect immediately, but instances might require a restart to reflect the changes.
 
 ## Create Instance Wizard
 
@@ -180,7 +180,7 @@ The **Instance Configuration** settings specify the instance name, virtualizatio
 | **Virtualization Method** | Required. Select **VM** to create a fully isolated virtual machine using any operating system. |
 | **VM Image Options** | (Shows when **Virtualization Method** is set to **VM**)  |
 | **Use a Linux image** | Select to choose a Linux image from [linuxcontainers.org](https://linuxcontainers.org/). **Browse Catalog** opens the **Select Image** screen with available image choices. Search or browse to locate your desired image and click **Select**. |
-| **Upload ISO, import a zvol or use another volume** | Select to create the VM using an <file>.iso</file> image, import a zvol from a previously installed VM, or use an existing instances volume. **Select ISO** opens the **Volumes** screen. See [**Volumes**](#manage-volumes) for more information. |
+| **Upload ISO, import a zvol or use another volume** | Sets the method to use to for the storage option. Select to create the VM using an <file>.iso</file> image, import a zvol from a previously installed VM, or use an existing instances volume. **Select ISO** opens the **Volumes** screen. See [**Volumes**](#manage-volumes) for more information. |
 {{< /truetable >}}
 
 {{< include file="/static/includes/InstanceNameRequirements.md" >}}
@@ -209,8 +209,9 @@ These settings are only available for containers and cannot be used with VMs.
 ### Disks
 
 The **Disks** settings allow mounting storage volumes to an instance.
-For containers, options include creating a new dataset or using an existing one.
-For VMs, you must use an existing zvol and specify the I/O bus and size of the root disk.
+Container options include creating a new dataset or using an existing one.
+VMs use the [**Volumes**](#manage-volumes) screen to select or create a new volume.
+VMs must specify the I/O bus and size of the root disk.
 
 **Add** displays a set of fields to create or mount a disk.
 
@@ -220,11 +221,11 @@ For VMs, you must use an existing zvol and specify the I/O bus and size of the r
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Root Disk I/O Bus** | (Required for VMs only) Choose the root disk I/O bus type that best suits system needs. Options are:<br><ul><li>**NVMe** – Ideal for high-performance storage with faster read and write speeds.<br><li>**Virtio-BLK** – Efficient for virtualized environments, offering direct block device access with lower overhead.<br><li>**Virtio-SCSI** – Flexible and scalable, supporting advanced features like hot-swapping and multiple devices.</ul> |
+| **Root Disk I/O Bus** | (Required for VMs only) Set the root disk I/O bus type to the option that best suits system needs. Options are:<br><ul><li>**NVMe** – Ideal for high-performance storage with faster read and write speeds.<br><li>**Virtio-BLK** – Efficient for virtualized environments, offering direct block device access with lower overhead.<br><li>**Virtio-SCSI** – Flexible and scalable, supporting advanced features like hot-swapping and multiple devices.</ul> |
 | **Root Disk Size (in GiB)** | (Required for VMs only) Enter a plain integer to configure the size of the VM root disk (default 10). |
-| **Source** | (Required) Displays after clicking **Add** in **Disks**. To create a new dataset, enter a path or browse to select a parent dataset from the dropdown list of datasets on the system. Then click **Create Dataset**, enter a name for the new dataset in the **Create Dataset** window, and click **Create**. <br><br> To use an existing zvol, select an existing zvol from the dropdown list. |
-| **Destination** | (Required for containers only) Enter the filesystem path to mount the disk at in the container, for example */media* or */var/lib/data*. |
-| **I/O Bus** | (Required for VMs only) Choose the disk I/O bus type that best suits system needs. Options are **NVMe**, **Virtio-BLK**, or **Virtio-SCSI**. |
+| **Source** | (Required) Displays after clicking **Add** in **Disks**.  Enter an existing zvol or create a new dataset using the **Create Dataset** option that allows creating a new dataset after entering a path or browsing to select a parent dataset from the dropdown list of datasets on the system. Enter a name for the new dataset in the **Create Dataset** window. **Create** adds the dataset. <br><br> To use an existing zvol, select an existing zvol from the dropdown list. |
+| **Destination** | (Required for containers only) Specifies the file system path to mount the disk in the container, for example */media* or */var/lib/data*. |
+| **I/O Bus** | (Required for VMs only) Sets the disk I/O bus type to what best suits system needs. Options are **NVMe**, **Virtio-BLK**, or **Virtio-SCSI**. |
 {{< /truetable >}}
 {{< /expand >}}
 
@@ -310,7 +311,7 @@ These settings are only available for VMs and cannot be used with containers.
 | Setting | Description |
 |---------|-------------|
 | **Add Trusted Platform Module (TPM)** | Enables TPM, a hardware-based security feature that protects sensitive data and ensures integrity. Adds a Trusted Platform Module (TPM) device to the VM. |
-| **Secure Boot** | Ensures that only trusted, signed software is loaded during the system boot process. Can be incompatible with some images. |
+| **Secure Boot** | Sets boot to ensure that only trusted, signed software is loaded during the system boot process. Can be incompatible with some images. |
 {{< /truetable >}}
 
 {{< /expand >}}
@@ -322,14 +323,14 @@ Stopped instances show the option to start the instance.
 
 {{< trueimage src="/images/SCALE/Virtualization/InstancesScreenWithInstances.png" alt="Instances Screen - Populated" id="Instances Screen - Populated" >}}
 
-The **Details for *Instance*** [widgets](#instances-widgets) display information and management options for the selected instance.
+The **Details for *Instance*** [widgets](#instances-widgets) show information and management options for the selected instance.
 
 <i class="material-icons" aria-hidden="true" title="Restart">restart_alt</i> restarts or <i class="material-icons" aria-hidden="true" title="Stop">stop_circle</i> stops a running instance.
 <i class="material-icons" aria-hidden="true" title="Start">play_circle</i> starts a stopped instance.
 
 **Search** above the **Instances** table allows entering the name of an instance to locate a configured instance.
 
-The checkboxes on each instance row show the [**Bulk Actions**](#bulk-actions) dropdown.
+The checkbox on each instance row shows the [**Bulk Actions**](#bulk-actions) dropdown.
 
 ### Bulk Actions
 
@@ -431,10 +432,13 @@ The **Change Root Disk Setup** dialog allows you to configure the size of the di
 
 {{< trueimage src="/images/SCALE/Virtualization/IncreaseRoot.png" alt="Increase Root Disk Size Widget" id="Increase Root Disk Size Widget" >}}
 
-Enter a new root disk size in GiB, such as *20*.
+{{< truetable >}}
+| Setting | Description |
+|-----------|-------------|
+| **Root Disk Size (in GiB)** | Increases the size of the VM root disk. Enter a new root disk size in GiB, such as *20*. |
+| **Root Disk I/O Bus** | Sets the communication pathway type for the root disk. Options are **NVMe**, **Virtio-BLK**, and **Virtio-SCSI**. |
+{{< /truetable >}}
 
-Select the **Root Disk I/O Bus**.
-Options are **NVMe**, **Virtio-BLK**, and **Virtio-SCSI**.
 
 **Save** applies changes.
 
@@ -586,7 +590,7 @@ These settings are only available for VMs and cannot be used with containers.
 {{< truetable >}}  
 | Setting | Description |  
 |---------|-------------|  
-| **Secure Boot** | Select to ensure only trusted, signed software runs during startup. Some images are not be compatible with Secure Boot. |  
+| **Secure Boot** | Select to ensure only trusted, signed software runs during startup. Some images are not compatible with Secure Boot. |  
 {{< /truetable >}}
 {{< /expand >}}
 
