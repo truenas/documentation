@@ -87,7 +87,7 @@ If the off-line operation fails with a **Disk offline failed - no valid replicas
 When the scrub operation finishes, return to the **Devices** screen, expand the VDEV, then click the disk, and try to off-line it again.
 {{< /expand >}}
 
-After offlining the failed disk, physically remove it from the system.
+After [offlining the failed disk](#taking-a-failed-disk-offline), physically remove it from the system. Replacing a failed disk in [hotswappable](#replacing-a-failed-disk-with-a-hot-spare) systems and [non-hotswappable](#replacing-a-failed-disk-in-a-non-hotswappable-system) systems have guidance below.
 
 ### Replacing a Failed Disk in a Non-Hotswappable System
 
