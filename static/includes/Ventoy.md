@@ -1,6 +1,6 @@
 &NewLine;
 
-### Installing Using Ventoy
+{{< expand "Using Ventoy" "v" >}} 
 
 [Ventoy](https://www.ventoy.net/en/index.html) is an open-source tool TrueNAS users can use when creating a bootable USB or other local drive for an ISO image file when installing TrueNAS.
 After installing Ventoy on a USB or local drive, users can copy the install media multiple times onto this same device with the Ventoy executable file.
@@ -144,4 +144,5 @@ Ventoy GRUB2 can only be used to boot Linux <file>iso</file> files that contain 
 TrueNAS <file>iso</file> files have a grub2 configuration file for booting that is required to use Ventoy GRUB2 mode.
 
 To enter GRUB2 mode, press <kbd>Ctrl+r<kbd>. Press again to return to default mode.
+{{< /expand >}}
 {{< /expand >}}
