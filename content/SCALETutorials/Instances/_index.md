@@ -242,7 +242,7 @@ To create a new container, from the **Create Instance** screen:
    d. Select the connection protocol for the container in **Instance Protocol**.
       Options are **TCP** or **UDP**.
 
-   e. Enter the **Instance Port** to define the port number within the container that the host port is mapped to, for example *80*.
+   e. Enter the port number within the container to map to the host port in **Instance Port**, for example *80*.
 
 6. {{< include file="/static/includes/InstanceNetworkProcedure.md" >}}
 
