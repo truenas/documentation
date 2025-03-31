@@ -18,9 +18,5 @@ To change the permission level for some share users, add a new group, reassign t
 
 7. Click **Save Access Control List**.
 
-If restricting this group to read only and the share dataset is nested under parent datasets, go to each parent dataset, edit the ACL.
-Add an ACE entry for the new group, and select **Traverse**.
-Keep the parent dataset permission set to either **Full_Control** or **MODIFY** but select **Traverse**.
-
 If you wish to restrict this group to read only and the share dataset is nested under parent datasets, go to each parent dataset and edit each ACL. 
 Add an ACE entry for the new group, and select **Traverse** for group permissions. For the parent dataset(s) permissions, keep these at either **Full_Control** or **MODIFY**. 
