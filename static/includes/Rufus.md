@@ -1,7 +1,7 @@
 &NewLine;
 
 {{< expand "Using Rufus" "v" >}}
-Rufus is a Windows program that allows creating a bootable USB drive from an ISO file. 
+Rufus is a Windows program that allows you to create a bootable USB drive from an ISO file. 
 
 Rufus supports most Linux and Windows operating systems, including TrueNAS. For a list of supported ISO, see the [Rufus non-exhaustive list](https://rufus.ie/en/).
 
