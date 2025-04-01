@@ -150,7 +150,10 @@ enable = true
   [params.geekdocContentLicense]
     name = "CC BY-SA 4.0"
     link = "https://creativecommons.org/licenses/by-sa/4.0/"
-
+  
+  [params.authors]
+    "The TrueNAS team and Community" = {}
+	
 [frontmatter]
 lastmod = ["lastmod", ":git", ":fileModTime", ":default"]
 
@@ -158,4 +161,4 @@ lastmod = ["lastmod", ":git", ":fileModTime", ":default"]
   tags = "tags"
   categories = "book"
   volumes = "volume"
-
+  author = "authors"
