@@ -150,6 +150,18 @@ Any new feature flags introduced since the previous OpenZFS version that was int
 
 For more details on feature flags, see [OpenZFS Feature Flags](https://openzfs.github.io/openzfs-docs/Basic%20Concepts/Feature%20Flags.html) and [OpenZFS zpool-feature.7](https://openzfs.github.io/openzfs-docs/man/7/zpool-features.7.html).
 
+## 24.10.2.1
+
+**April 3, 2025**
+
+The TrueNAS team is pleased to release TrueNAS 24.10.2!
+
+This maintenance release is focused on fixing a few OpenZFS-related priority issues that impact 24.10.2:
+
+* Error with device removal and block pointers remap with cloned blocks [NAS-133555](https://ixsystems.atlassian.net/browse/NAS-133555).
+* ZED fails to activate a hot spare if a device is removed by the kernel [NAS-135033](https://ixsystems.atlassian.net/browse/NAS-135033).
+  An [OpenZFS patch](https://github.com/openzfs/zfs/pull/17187) was also submitted.
+
 ## 24.10.2
 
 **January 28, 2025**
