@@ -10,7 +10,7 @@ The simplest option is to enter a single number in the field.
 The task runs when the time value matches that number.
 For example, entering *10* means that the job runs when the time is ten minutes past the hour.
 
-Note that there is not a **Minutes** field in the TrueNAS UI, but users can specify minutes within the **Hours** field by using the [CRON syntax](#examples-of-cron-syntax) described below.
+Note that there is no **Minutes** field in the TrueNAS UI, but users can specify minutes within the **Hours** field using the [CRON syntax](#examples-of-cron-syntax) described below.
 
 An asterisk (`*`) means match all values.
 
@@ -27,7 +27,7 @@ Combining the above examples creates a schedule running a task each minute from 
 TrueNAS has an option to select which **Months** the task runs.
 Leaving each month unset is the same as selecting every month.
 
-The **Days of Week** schedules the task to run on specific days in addition to any listed days.
+The **Days of Week** schedules the task to run on specific days and any listed days.
 For example, entering *1* in **Days** and setting *Wed* for **Days of Week** creates a schedule that starts a task on the first day of the month *and* every Wednesday of the month.
 
 The **Schedule Preview** displays when the current settings mean the task runs.
