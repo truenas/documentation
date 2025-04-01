@@ -50,7 +50,7 @@ The <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 
 | **Allow all sudo commands** | Select to give group members permission to use all [sudo](https://www.sudo.ws/) commands. Using sudo prompts the user for their account password. |
 | **Allowed sudo commands with no password** | Enter specific allowed [sudo](https://www.sudo.ws/) commands users in the group members can enter without needing to enter their password. Enter each command as an absolute path to the ELF (Executable and Linkable Format) executable file, for example */usr/bin/nano*. <file>/usr/bin/</file> is the default location for commands. <br> Grants limited root-like permissions for group members when using these commands. Exercise caution when allowing sudo commands without password prompts. Recommended to limit the privilege to trusted users and specific commands to minimize security risks. |
 | **Allow all sudo commands with no password** | Not recommended. Select to give group members the ability to enter all [sudo](https://www.sudo.ws/) commands without needing to enter a password. |
-| **SMB Group** | Select to make the group available for permissions editors over [SMB protocol]({{< relref "/SCALE/SCALETutorials/Shares/_index.md" >}}) (and the share ACL editor). Not used for SMB authentication or determining the user session token or internal permissions checks. |
+| **SMB Group** | Select to make the group available for permissions editors over [SMB protocol]({{< relref "/SCALE/SCALETutorials/Shares" >}}) (and the share ACL editor). Not used for SMB authentication or determining the user session token or internal permissions checks. |
 {{< /truetable >}}
 
 ## Update Members Screen

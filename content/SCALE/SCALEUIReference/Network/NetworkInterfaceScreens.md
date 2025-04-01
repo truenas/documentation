@@ -146,4 +146,4 @@ The option to test network changes shows when creating a new or changing an exis
 
 **Test Changes** starts the 60-second timer. 
 **Revert Changes** discards changes made within the 60-second period.
-**Save Changes** makes changes permanent. Shows in the new browser window opened as part of the [esting Network Interface Changes]({{< relref "/SCALE/SCALETutorials/Network/Interfaces/_index.md#testing-network-interface-changes" >}}) process.
+**Save Changes** makes changes permanent. Shows in the new browser window opened as part of the [esting Network Interface Changes]({{< relref "/SCALE/SCALETutorials/Network/Interfaces#testing-network-interface-changes" >}}) process.

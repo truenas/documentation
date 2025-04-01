@@ -26,7 +26,7 @@ Each option displays the information you enter in the **Edit Disk** screen or wh
 Select the checkbox to the left of a disk to display the **[Batch Operations](#batch-operations)** options.
 The checkbox at the top of the table selects all disks in the system. Select again to clear the checkboxes.
 
-**Storage** in the breadcrumb at the top of the screen returns to the **[Storage Dashboard]({{< relref "/SCALE/SCALEUIReference/Storage/_index.md" >}})**.
+**Storage** in the breadcrumb at the top of the screen returns to the **[Storage Dashboard]({{< relref "/SCALE/SCALEUIReference/Storage" >}})**.
 
 ## Disks Screen - Expanded Disk
 Click anywhere on a disk row to expand it and show the traits specific to that disk and available options.

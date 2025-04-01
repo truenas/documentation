@@ -209,4 +209,4 @@ Enter a plain integer followed by the measurement suffix, for example 4G.
 Systems with compatible GPU(s) display devices in **GPU Configuration**.
 Use the **GPU Resource** dropdown menu(s) to configure device allocation.
 
-See [Allocating GPU]({{< relref "/TruenasApps/_index.md#allocating-gpu" >}}) for more information about allocating GPU devices in TrueNAS.
+See [Allocating GPU]({{< relref "/TruenasApps#allocating-gpu" >}}) for more information about allocating GPU devices in TrueNAS.

@@ -41,7 +41,7 @@ This guide describes the process of configuring a Veeam Immutability solution.
 
 Before you begin, acquire and install/apply the Enterprise VM & Apps License for a single system or if a cluster, for four TrueNAS systems in the Multi-Node Multi Disk (MNMD) cluster configuration. You can apply the same license to each of the cluster systems.
 
-Follow the instructions in the [MinIO Enterprise tutorial]({{< relref "/TruenasApps/EnterpriseApps/MinIO/_index.md" >}}) for a single system deployment, or [MinIO Enterprise MNMD tutorial]({{< relref "/TruenasApps/EnterpriseApps/MinIO/ConfigMinIOEnterpriseMNMD.md" >}}) to install and deploy the MinIO enterprise train app in a MNMD configuration. TrueNAS and MinIO provide the S3 compatible object storage for Veeam.
+Follow the instructions in the [MinIO Enterprise tutorial]({{< relref "/TruenasApps/EnterpriseApps/MinIO" >}}) for a single system deployment, or [MinIO Enterprise MNMD tutorial]({{< relref "/TruenasApps/EnterpriseApps/MinIO/ConfigMinIOEnterpriseMNMD.md" >}}) to install and deploy the MinIO enterprise train app in a MNMD configuration. TrueNAS and MinIO provide the S3 compatible object storage for Veeam.
 
 ## Configuring Veeam for Immutability
 Open Veeam Backup & Replication Console, go to **Backup Infrastructure** and click on **Backup Repositories**.

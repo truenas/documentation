@@ -37,7 +37,7 @@ If installing Linkding with everything with both Linkding Data Storage and Linkd
 
 {{< hint type=note >}}
 TrueNAS does not recommend ixVolume datasets as permanent storage volumes for production deployments.
-See [Understanding App Storage Volumes]({{< relref "truenasapps/_index.md#understanding-app-storage-volumes" >}}) for more information.
+See [Understanding App Storage Volumes]({{< relref "truenasapps#understanding-app-storage-volumes" >}}) for more information.
 {{< /hint >}} 
 
 If setting a custom host path for Linkding Data Storage (e.g. for storing page snapshots to a zfs pool), you'll likely want to select **Enable ACL** and then within **ACL Entries** set ID type (e.g. for user), ID (e.g. 568, or whatever is set as the User and Group for Linkding on the same settings page) and Access (FULL_CONTROL) appropriately.

@@ -13,7 +13,7 @@ keywords:
 {{< include file="/static/includes/apps/AppsIntro.md" >}}
 
 This article covers how to discover, install, and manage applications.
-For details on setting up the TrueNAS Apps service, configuring global settings, and other general information, see [TrueNAS Apps]({{< relref "/TruenasApps/_index.md" >}}) and individual app tutorials.
+For details on setting up the TrueNAS Apps service, configuring global settings, and other general information, see [TrueNAS Apps]({{< relref "/TruenasApps" >}}) and individual app tutorials.
 
 {{< include file="/static/includes/ProposeArticleChange.md" >}}
 
@@ -119,7 +119,7 @@ Click **Start** to restart the application.
 The screen defaults to selecting the first app row listed on the **Applications** table and showing the application widgets that first app.
 To modify installed application settings, click on the app row in the **Applications** table, then click **Edit** on the **Application Info** widget.
 
-Refer to individual tutorials in the [Stable]({{< relref "/TruenasApps/StableApps/_index.md" >}}), [Community]({{< relref "/TruenasApps/CommunityApps/_index.md" >}}), or [Enterprise]({{< relref "/TruenasApps/EnterpriseApps/_index.md" >}}) sections of the Documentation Hub for more details on configuring application settings.
+Refer to individual tutorials in the [Stable]({{< relref "/TruenasApps/StableApps" >}}), [Community]({{< relref "/TruenasApps/CommunityApps" >}}), or [Enterprise]({{< relref "/TruenasApps/EnterpriseApps" >}}) sections of the Documentation Hub for more details on configuring application settings.
 
 #### GPU Passthrough
 

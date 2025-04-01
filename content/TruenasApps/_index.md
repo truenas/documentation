@@ -48,7 +48,7 @@ Docker is an open-source software that manages images and container deployments.
 
 The default system-level settings are found in **Apps > Settings**.
 
-For more information on screens and screen functions, refer to the UI Reference article on [Apps Screens]({{< relref "SCALE/SCALEUIReference/Apps/_index.md" >}}).
+For more information on screens and screen functions, refer to the UI Reference article on [Apps Screens]({{< relref "SCALE/SCALEUIReference/Apps" >}}).
 
 Use the **Configuration** dropdown to access the **Choose Pool**, **Unset Pool**, **Manage Container Images**, and **Settings** options.
 

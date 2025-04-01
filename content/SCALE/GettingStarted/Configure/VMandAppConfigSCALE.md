@@ -75,7 +75,7 @@ A TrueNAS storage pool is required.
 We recommend you create additional datasets beneath the storage pool to organize your VM data further.
 
 Review [Virtualization Screens]({{< relref "InstancesScreens.md" >}}) to determine requirements for VM installation.
-See [Adding and Managing VMs]({{< relref "/SCALE/scaletutorials/instances/_index.md" >}}) for more information on adding or managing VMs.
+See [Adding and Managing VMs]({{< relref "/SCALE/scaletutorials/instances" >}}) for more information on adding or managing VMs.
 
 ## Application Configuration
 
@@ -90,7 +90,7 @@ Set up a new dataset before installing your applications if you want to store yo
 After an Apps storage pool is configured, the status changes to <span class="iconify" data-icon="mdi:check-circle" color=#71BF44></span> **Apps Service Running**.
 
 Use **Discover Apps** to view available applications.
-See [Apps tutorials]({{< relref "/TruenasApps/_index.md" >}}) and [Apps reference guide]({{< relref "/SCALE/SCALEUIReference/Apps/_index.md" >}}) for more information.
+See [Apps tutorials]({{< relref "/TruenasApps" >}}) and [Apps reference guide]({{< relref "/SCALE/SCALEUIReference/Apps" >}}) for more information.
 
 For custom applications, [Install Custom App]({{< relref "InstallCustomAppScreens.md" >}}) details each field on the **Install Custom App** screen.
 Before beginning a custom application installation, determine the following information:

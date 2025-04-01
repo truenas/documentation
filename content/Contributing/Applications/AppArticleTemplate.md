@@ -56,7 +56,7 @@ When entering commands, command strings, or code blocks:
 
 To create a code block, either use three backticks on the line before and after the content block, or use the HTML code tags.
 
-Refer to the [Contributing to Apps]({{< relref "/contributing/applications/_index.md" >}}) article for more information on using the template. -->
+Refer to the [Contributing to Apps]({{< relref "/contributing/applications" >}}) article for more information on using the template. -->
 <!-- /END GENERAL INSTRUCTIONS -->
 ---
 <!-- BEGIN TEMPLATE -->

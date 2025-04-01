@@ -165,7 +165,7 @@ To apply NFS ACLs, click **Advanced Options** on the add or edit NFS share scree
 
 ### SMB
 
-Select a **Purpose** during [SMB share creation]({{< relref "/SCALE/SCALETutorials/Shares/_index.md" >}}).
+Select a **Purpose** during [SMB share creation]({{< relref "/SCALE/SCALETutorials/Shares" >}}).
 This changes the share configuration with one click.
 For example, when selecting **Private SMB Datasets and Shares** from the list, TrueNAS adjusts the **Advanced Options** so the share is set up for private use.
 To fully customize the share settings, select **No presets** as the **Purpose**.
@@ -241,7 +241,7 @@ Block both the **CBC** and **Arcfour** ciphers by going to **Services > SSH > Ed
 Review any application or virtual machine (VM) deployment scenario for additional security exposure or vulnerabilities.
 The TrueNAS team cannot resolve security vulnerabilities introduced from within user-deployed virtualized environments.
 
-After [configuring a VM]({{< relref "/SCALE/SCALETutorials/Instances/_index.md" >}}), disable any VNC or SPICE virtual machine display devices.
+After [configuring a VM]({{< relref "/SCALE/SCALETutorials/Instances" >}}), disable any VNC or SPICE virtual machine display devices.
 
-Update [applications]({{< relref "/TruenasApps/_index.md" >}}) regularly.
+Update [applications]({{< relref "/TruenasApps" >}}) regularly.
 TrueNAS monitors connected application catalogs and trains and displays available updates on the **Installed** applications screen.

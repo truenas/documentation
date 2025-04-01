@@ -171,7 +171,7 @@ If linking to file names that are not unique, you must also include the path to 
 
 Linking to the index file of an article bundle requires using the generic linking syntax to point to the article location:
 ```
-You find information on applications in the [Apps article]({{\< relref "/SCALE/ScaleTutorials/apps/_index.md" >).
+You find information on applications in the [Apps article]({{\< relref "/SCALE/ScaleTutorials/apps" >).
 (do not include the escaping backslash \)
 ```
 

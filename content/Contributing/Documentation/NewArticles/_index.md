@@ -12,7 +12,7 @@ All that is required is a [GitHub account](https://github.com) and your favorite
 Taking screenshots for your article is also recommended.
 
 To add an article, construct a bundle that contains your text file and any images, then open a pull request on the repository.
-There is an [Article Template]({{< relref "/Contributing/Documentation/Template/_index.md" >}}) available that can simplify creating your article.
+There is an [Article Template]({{< relref "/Contributing/Documentation/Template" >}}) available that can simplify creating your article.
 
 ## Creating an Article Bundle
 

@@ -65,7 +65,7 @@ Storj iX is the default cloud storage provider in TrueNAS.
 
 ### Creating a TrueNAS Storj Bucket
 
-You can either create a TrueNAS compatible Storj bucket while configuring cloud credentials or wait to do so while configuring a [TrueCloud back up]({{< relref "TrueCloudTasks.md" >}}) or [Cloud Sync]({{< relref "/SCALE/SCALETutorials/DataProtection/CloudSyncTasks/_index.md" >}}) task.
+You can either create a TrueNAS compatible Storj bucket while configuring cloud credentials or wait to do so while configuring a [TrueCloud back up]({{< relref "TrueCloudTasks.md" >}}) or [Cloud Sync]({{< relref "/SCALE/SCALETutorials/DataProtection/CloudSyncTasks" >}}) task.
 
 {{< include file="/static/includes/StorjBucket.md" >}}
 

@@ -48,7 +48,7 @@ The settings on the **Basic Options** also display on the **[Advanced Options](#
 | **Base DN** | Enter the top level of the LDAP directory tree to use when searching for resources. Example: *dc=test,dc=org*. |
 | **Bind DN** | Enter the administrative account name for the LDAP server. Example: *cn=Manager,dc=test,dc=org*. |
 | **Bind Password** | Enter the password for the administrative account (in **Bind DN**). |
-| **Enable** | Select to activate the configuration. Select to clear and disable the configuration without deleting it. You can re-enable it later without reconfiguring it. The **[Directory Services]({{< relref "/SCALE/SCALEUIReference/Credentials/DirectoryServices/_index.md" >}})** screen returns to the default and provides the options to configure AD or LDAP. |
+| **Enable** | Select to activate the configuration. Select to clear and disable the configuration without deleting it. You can re-enable it later without reconfiguring it. The **[Directory Services]({{< relref "/SCALE/SCALEUIReference/Credentials/DirectoryServices" >}})** screen returns to the default and provides the options to configure AD or LDAP. |
 {{< /truetable >}}
 {{< /expand >}}
 ### LDAP Screen - Advanced Options

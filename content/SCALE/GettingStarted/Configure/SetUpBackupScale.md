@@ -45,7 +45,7 @@ You can clone the boot environment listed after the **initial-install** environm
 TrueNAS has several options that allow you to back up data:
 
 * [TrueCloud backup tasks](#using-truecloud-backup-or-cloud-sync)
-* [Cloud sync tasks]({{< relref "/Scale/ScaleTutorials/DataProtection/CloudSyncTasks/_index.md" >}})
+* [Cloud sync tasks]({{< relref "/Scale/ScaleTutorials/DataProtection/CloudSyncTasks" >}})
 * [Replication tasks](#using-replication)
 * [Rsync tasks]({{< relref "RsyncTasksSCALE.md" >}})
 

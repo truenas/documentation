@@ -27,7 +27,7 @@ Datasets can also be [encrypted]({{< relref "EncryptionSCALE.md" >}}).
 In TrueNAS 22.12.3 or later, the TrueNAS UI requires encryption for child datasets created in encrypted parent datasets, but you can change the encryption type from key to passphrase.
 You can create an encrypted dataset if the parent is not encrypted and set the type as either key or passphrase.
 
-We recommend organizing your pool with datasets before configuring [data sharing]({{< relref "/SCALE/SCALEUIReference/Shares/_index.md" >}}), as this allows for more fine-tuning of access permissions and using different sharing protocols.
+We recommend organizing your pool with datasets before configuring [data sharing]({{< relref "/SCALE/SCALEUIReference/Shares" >}}), as this allows for more fine-tuning of access permissions and using different sharing protocols.
 
 ## Creating a Dataset
 
@@ -55,7 +55,7 @@ You can configure quotas for only the new dataset or both the new dataset and an
 Define the maximum allowed space for the dataset in either the **Quota for this dataset** or **Quota for this dataset and all children** field. 
 Enter **0** to disable quotas.
 
-Dataset quota [alerts]({{< relref "/SCALE/SCALEUIReference/TopToolbar/Alerts/_index.md" >}}) are based on the percentage of storage used.
+Dataset quota [alerts]({{< relref "/SCALE/SCALEUIReference/TopToolbar/Alerts" >}}) are based on the percentage of storage used.
 To set up a quota warning alert, enter a percentage value in **Quota warning alert at, %**.
 When consumed space reaches the defined percentage it sends the alert.
 To change the setting from the parent dataset warning level, clear the **Inherit** checkbox and then change the value.
@@ -126,7 +126,7 @@ Enter a threshold block size for including small file blocks into the [special a
 ## Managing Datasets
 After creating a dataset, users can manage additional options from the **Datasets** screen.
 Select the dataset, then click **Edit** on the dataset widget for the function you want to manage. 
-The [Datasets Screen]({{< relref "/SCALE/SCALEUIReference/Datasets/_index.md" >}}) article describes each option in detail.
+The [Datasets Screen]({{< relref "/SCALE/SCALEUIReference/Datasets" >}}) article describes each option in detail.
 
 ### Editing a Dataset
 Select the dataset on the tree table, then click **Edit** on the **Dataset Details** widget to open the **Edit Dataset** screen and change the dataset configuration settings. You can change all settings except **Name**, **Case Sensitivity**, or **Device Preset**.

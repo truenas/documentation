@@ -23,17 +23,17 @@ This article details customizable settings to accomplish a security-hardened sys
 ## Install TrueNAS
 Existing TrueNAS systems can upgrade to the latest release through the UI.
 Earlier releases of TrueNAS can upgrade by following the established migration paths or might need to clean-install the latest release of SCALE using the <file>iso
-</file>. Refer to documentation on upgrading existing systems found [here]({{< relref "/TrueNASUpgrades/_index.md" >}}).
+</file>. Refer to documentation on upgrading existing systems found [here]({{< relref "/TrueNASUpgrades" >}}).
 
 If side-grading (migrating) from an earlier release to the latest TrueNAS release, follow guidance in the [Preparing to Migrate]({{< relref "/SCALE/GettingStarted/Migrate/MigratePrep.md" >}}) article before beginning the migration.
 
-If clean-installing TrueNAS for the first time, follow guidance in the [Installation Instructions]({{< relref "/SCALE/GettingStarted/Install/_index.md" >}}) articles.
+If clean-installing TrueNAS for the first time, follow guidance in the [Installation Instructions]({{< relref "/SCALE/GettingStarted/Install" >}}) articles.
 
 ### Prerequisites
 If you are installing TrueNAS on servers other than licensed TrueNAS Enterprise systems, you should read and follow guidance in the [TrueNAS Hardware Guide]({{< relref "SCALEHardwareGuide.md" >}}).
 
 ## Configuring TrueNAS
-After installing TrueNAS, users must configure network, storage, users, sharing, and data backup solutions. See [Configuration Instructions]({{< relref "/SCALE/gettingstarted/configure/_index.md" >}}) for more information.
+After installing TrueNAS, users must configure network, storage, users, sharing, and data backup solutions. See [Configuration Instructions]({{< relref "/SCALE/gettingstarted/configure" >}}) for more information.
 
 ### Administration Accounts
 TrueNAS creates the root user and an administration user at installation.
@@ -218,7 +218,7 @@ Access to datasets can be configured for the owner, per user, group, or everyone
 See [Setting Up Permissions]({{< relref "PermissionsSCALE.md" >}}) for more information.
 
 SMB shares permit setting up permissions for just the share but not the dataset for the share, or for both the dataset and the share.
-See [Windows Shares]({{< relref "/SCALE/SCALETutorials/Shares/SMB/_index.md" >}}) for more information on SMB shares, creating shares, and configuring settings including permissions.
+See [Windows Shares]({{< relref "/SCALE/SCALETutorials/Shares/SMB" >}}) for more information on SMB shares, creating shares, and configuring settings including permissions.
 
 NFS shares do not have the same setting options and rely on the dataset ACL settings.
 See [NFS Shares]({{< relref "AddingNFSShares.md" >}}) for more information.
@@ -237,7 +237,7 @@ Datasets with encryption allow users to lock the datasets to prevent reading fro
 TrueNAS allows encryption on data transfers made through cloud sync and replication tasks.
 This adds a layer of encryption on top of dataset-level encryption whether the dataset is encrypted or not.
 
-See [Encrypting Cloud Sync Tasks]({{< relref "/SCALE/SCALETutorials/dataprotection/CloudSyncTasks/_index.md" >}}) for more information on encrypting cloud sync tasks, or [Adding Transfer Encryption]({{< relref "/scale/scaletutorials/dataprotection/replication/advancedreplication/_index.md" >}}) for information on adding encryption to remote replication tasks.
+See [Encrypting Cloud Sync Tasks]({{< relref "/SCALE/SCALETutorials/dataprotection/CloudSyncTasks" >}}) for more information on encrypting cloud sync tasks, or [Adding Transfer Encryption]({{< relref "/scale/scaletutorials/dataprotection/replication/advancedreplication" >}}) for information on adding encryption to remote replication tasks.
 
 #### Maintain SSH Connection Credentials
 TrueNAS uses SSH connection credentials for cloud backup tasks, cloud sync tasks, rsync tasks, and replication tasks.

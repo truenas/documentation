@@ -68,11 +68,11 @@ While TrueNAS is designed for and ever-evolving towards increased user friendlin
   The main ARC resides in system memory.
   The L2ARC is 2nd layer ARC assigned to a disk to expand ARC capability.
 
-* [**ZFS Datasets**]({{< relref "SCALE/SCALETutorials/Datasets/_index.md" >}}): similar to a conventional mounted filesystem.
+* [**ZFS Datasets**]({{< relref "SCALE/SCALETutorials/Datasets" >}}): similar to a conventional mounted filesystem.
   It appears in casual inspection as "just another folder".
   However, unlike conventional mounted filesystems, each ZFS dataset has its own set of properties.
 
-* [**ZFS Pools**]({{< relref "SCALE/SCALETutorials/Storage/_index.md" >}}): filesystem container that is composed of one or more vdevs.
+* [**ZFS Pools**]({{< relref "SCALE/SCALETutorials/Storage" >}}): filesystem container that is composed of one or more vdevs.
 
 * [**ZFS vdev**]({{< relref "/references/ZFSPrimer.md" >}}): ZFS virtual device.
   A ZFS pool is made up by one or more vdevs.
@@ -105,11 +105,11 @@ While TrueNAS is designed for and ever-evolving towards increased user friendlin
 
 * [**ZFS Resilver**]({{< relref "SCALE/SCALETutorials/DataProtection/ScrubTasksSCALE.md" >}}): process to reconstruct data on a disk when that disk has replaced a failed disk.
 
-* [**ZFS Replication**]({{< relref "SCALE/SCALETutorials/DataProtection/Replication/_index.md" >}}): copying a ZFS dataset to another dataset.
+* [**ZFS Replication**]({{< relref "SCALE/SCALETutorials/DataProtection/Replication" >}}): copying a ZFS dataset to another dataset.
   The receiving dataset can be on the same machine or on another machine in a remote location.
   Replication works with snapshots so only the changes to the stored data need to be sent to the receiving dataset.
 
-* [**Cloud Sync**]({{< relref "SCALE/SCALETutorials/DataProtection/CloudSyncTasks/_index.md" >}}): TrueNAS sending, receiving, or synchronizing data with a Cloud Storage provider like Amazon S3, Google Cloud, or Microsoft Azure.
+* [**Cloud Sync**]({{< relref "SCALE/SCALETutorials/DataProtection/CloudSyncTasks" >}}): TrueNAS sending, receiving, or synchronizing data with a Cloud Storage provider like Amazon S3, Google Cloud, or Microsoft Azure.
 
 ## Networking Terminology
 
