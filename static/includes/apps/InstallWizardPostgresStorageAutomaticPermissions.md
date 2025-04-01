@@ -12,7 +12,7 @@ You can use **Enable ACL** to manually configure ACL permissions for the postgre
 
 {{< expand "Why should I use Automatic Permissions?" "v" >}}
 Before the **Automatic Permissions** option, users deploying apps with postgres datasets receive errors or tracebacks prompting them to add built-in users such as the **netdata** user and others.
-These built-in users show in the **Run As Content** widget on the information screen for each app.
+These built-in users show in the **Run As Context** widget on the information screen for each app.
 These users are not added as users through the **Credentials > Users > Add User** screen and might not show on the list of users. 
 They are run-as users for the app that are added as ACL entries to the ACL for the dataset host path.
 
