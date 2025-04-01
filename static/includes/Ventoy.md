@@ -1,7 +1,6 @@
 &NewLine;
 
 {{< expand "Using Ventoy" "v" >}} 
-
 [Ventoy](https://www.ventoy.net/en/index.html) is an open-source tool TrueNAS users can use when creating a bootable USB or other local drive for an ISO image file when installing TrueNAS.
 After installing Ventoy on a USB or local drive, users can copy the install media multiple times onto this same device with the Ventoy executable file.
 Ventoy provides a directory tree that allows users to browse to or select the <file>iso </file>.
@@ -62,7 +61,6 @@ Rufus only supports USB or removable HDD with a USB interface. A local HDD is no
 
 The <file>vtsi</file> file can only be written to the corresponding disk but cannot be written to other disks.
 {{< /expand >}}
-
 {{< expand "Ventoy LiveCD Installations" "v" >}}
 [Ventoy LiveCD](https://www.ventoy.net/en/doc_livecd.html) is only for Windows users, and only necessary when the Ventoy2.Disk.exe fails to install or upgrade.
 
@@ -84,7 +82,6 @@ After formatting the USB drive, extract the Ventoy LiveCD files to the USB drive
 
 Option 3 is the best option when installing an <file>iso</file> in a VM. It requires VMWare to create a VM with a default configuration, and then delete the default drive before adding the USB drive as a disk for the VM.
 {{< /expand >}}
-
 {{< expand "VentoyVlnk.exe Installation" "v" >}}
 Ventoy supports booting image files such as <file>iso</file> files from a local disk through Vlnks.
 A *VLnk* is a file link in Ventoy that is similar to a softlink that creates a pointer or shortcut to the <file>iso</file> location.
@@ -107,7 +104,7 @@ If security requirements do not allow using Vlnks to a network disk, store the <
 
 Create a Vlnk file for the image file stored on a local disk. You can create the link file in the same directory as the VentoyVlnk.exe file.
 You cannot specify the name of the vlnk file created by the VentoyVlnk.exe but you can use command-line mode to change it by entering <code>VentoyVlnk.exe -s</code>. A prompt allows you to save the path after selecting the <file>iso</file>.
-Or use <code>VentoyVlnk.ex -i <i>filename</i>.iso -o <i>linkname</i>.vlnk.iso<code> to directly generate the Vlnk file; and no other interactions are nessesary.
+Or use <code>VentoyVlnk.ex -i <i>filename</i>.iso -o <i>linkname</i>.vlnk.iso</code> to directly generate the Vlnk file; and no other interactions are nessesary.
 
 Next copy the Vlnk file to the Ventoy USB and boot from it. You can put the Vlnk file in the root directory or a subdirectory.
 
@@ -115,7 +112,6 @@ Observe the rules in the [Ventoy documentation](https://www.ventoy.net/en/doc_vl
 
 To resolve issues with booting files in a local disk, refer to [Browse/Boot Files in Local Disk](https://www.ventoy.net/en/doc_browser.html).
 {{< /expand >}}
-
 {{< expand "Memdisk Mode Installation" "v" >}}
 [Ventoy Memdisk mode](https://www.ventoy.net/en/doc_memdisk.html) is an alternative to the default Ventoy mode when Legacy BIOS modes have problems.
 When booting, Ventoy normal mode only reads the <file>iso</file> file and just the content needed for boot.
@@ -130,7 +126,6 @@ TrueNAS <file>iso</file> files typically fall under the 1 GB upper limit.
 To use Memdisk mode, after installing Ventoy2Disk.exe on a USB drive and copying the <file>iso</file> with one of the available methods, press <kbd>Ctrl+d</kbd> before selecting the iso file in the Ventoy boot menu.
 To return to default mode, press <kbd>Ctrl+d</kbd> again.
 {{< /expand >}}
-
 {{< expand "GRUB2 Installation" "v" >}}
 [Ventoy GRUB2 mode](https://www.ventoy.net/en/doc_grub2boot.html) is an alternative for booting Linux <file>iso</file> files, and supports Legacy BIOS and UEFI.
 It uses a different mechanism to boot an ISO file. It emulates the <file>iso</file> file as a CDROM to boot it.

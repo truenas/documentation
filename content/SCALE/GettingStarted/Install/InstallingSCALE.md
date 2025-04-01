@@ -138,6 +138,7 @@ TrueNAS allows using other methods to create boot media such as:
 The following sections provide more information on a few of these options.
 
 {{< include file="static/includes/Ventoy.md" >}}
+
 {{< include file="static/includes/Rufus.md" >}}
 
 {{< expand "Using TINU" "v" >}}
