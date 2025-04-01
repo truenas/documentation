@@ -243,5 +243,5 @@ The TrueNAS team cannot resolve security vulnerabilities introduced from within 
 
 After [configuring a VM]({{< relref "/SCALE/SCALETutorials/Instances/_index.md" >}}), disable any VNC or SPICE virtual machine display devices.
 
-Update [applications]({{< relref "/content/TruenasApps/_index.md" >}}) regularly.
+Update [applications]({{< relref "/TruenasApps/_index.md" >}}) regularly.
 TrueNAS monitors connected application catalogs and trains and displays available updates on the **Installed** applications screen.

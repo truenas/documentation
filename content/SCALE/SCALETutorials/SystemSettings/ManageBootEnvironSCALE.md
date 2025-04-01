@@ -78,7 +78,7 @@ If anything goes wrong during the update, the system administrator can activate 
 
 Boot environments do not preserve or restore the state of any attached storage pools or apps, only the system **boot-pool**.
 Storage backups must be handled through the [ZFS snapshot]({{<relref "PeriodicSnapshotTasksSCALE.md" >}}) feature or other [backup options]({{< relref "/SCALE/SCALETutorials/DataProtection/_index.md" >}}).
-TrueNAS [applications]({{< relref "/content/TruenasApps/_index.md" >}}) also use separate upgrade and container image management methods to provide app update and rollback features.
+TrueNAS [applications]({{< relref "/TruenasApps/_index.md" >}}) also use separate upgrade and container image management methods to provide app update and rollback features.
 
 To view the list of boot environments on the system, go to **System > Boot**.
 Each boot environment entry contains this information:

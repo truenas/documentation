@@ -1240,7 +1240,7 @@ Installed custom applications show on the **Installed** applications screen.
 Many of the management options available for catalog applications are also available for custom apps.
 
 TrueNAS monitors upstream images and alerts when an updated version is available.
-Update custom applications using the same [Upgrading Apps]({{< relref "/truenasapps/_index.md #upgrading-apps" >}}) procedure as catalog applications.
+Update custom applications using the same [Upgrading Apps]({{< relref "/truenasapps/_index/#upgrading-apps" >}}) procedure as catalog applications.
 
 {{< trueimage src="/images/SCALE/Apps/CustomAppDetails.png" alt="App Details Widgets" id="App Details Widgets" >}}
 
@@ -1250,7 +1250,7 @@ To access the web UI for a custom app, navigate to the port on the TrueNAS syste
 Click **Edit** to edit and redeploy the application.
 
 Click **Delete** to remove the application.
-See [Deleting Apps]({{< relref "/truenasapps/_index.md #deleting-apps" >}}) for more information.
+See [Deleting Apps]({{< relref "/truenasapps/_index/#deleting-apps" >}}) for more information.
 
 The **Workloads** widget shows ports and container information.
 Each container includes buttons to access a container shell, view volume mounts, and view logs.

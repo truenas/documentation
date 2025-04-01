@@ -63,7 +63,7 @@ When submitting new tutorials or requesting changes to existing TrueNAS Document
   
 1. Create the PR against a forked copy of the [TrueNAS Documentation Hub public repository](https://github.com/truenas/documentation/tree/master).
   
-2. Open the existing article file in the <file>/content/TrueNASApps/CommunityApps</file> directory of your local forked repository.
+2. Open the existing article file in the <file>/TrueNASApps/CommunityApps</file> directory of your local forked repository.
 
 3. Add the new tutorial to the <file>CommunityApps</file> folder in your local copy of the repository if submitting a new tutorial.
 

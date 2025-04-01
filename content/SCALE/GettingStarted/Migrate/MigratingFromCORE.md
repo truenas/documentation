@@ -74,7 +74,7 @@ If this process fails, retry using the iso file method above.
 1. Confirm that the system is on the latest public release, 13.0-U6.2 (community users could have 13.3-RELEASE or newer installed).
 
 2. Download the [TrueNAS manual update file](https://www.truenas.com/download-truenas-scale/).
-   See [Software Releases]({{< relref "TrueNASUpgrades/_index.md #upgrade-paths" >}}) for current recommended update paths to make sure you download and migrate to the correct version.
+   See [Software Releases]({{< relref "TrueNASUpgrades/_index/#upgrade-paths" >}}) for current recommended update paths to make sure you download and migrate to the correct version.
 
 3. Click **CHECK FOR UPDATES** in the **System Information** card on the **Dashboard** or go to **System > Update**.
 

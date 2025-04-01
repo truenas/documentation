@@ -27,13 +27,13 @@ TrueNAS applications expand the capabilities of your system by adding third-part
 
 {{< include file="/static/includes/apps/AppsBestPractices.md" >}}
 
-For more information on configuring general application functions and installation wizard screens, see [TrueNAS Apps]({{< relref "/content/TruenasApps/_index.md" >}}).
+For more information on configuring general application functions and installation wizard screens, see [TrueNAS Apps]({{< relref "/TruenasApps/_index.md" >}}).
 
 ## Understanding App Install Wizard Settings
 
 {{< include file="/static/includes/apps/InstallWizardSettingsOverview.md" >}}
 
-For information on adding to or changing the train for the apps catalog, see [Changing App Trains]({{< relref "/truenasapps/_index.md #changing-app-trains" >}}).
+For information on adding to or changing the train for the apps catalog, see [Changing App Trains]({{< relref "/truenasapps/_index/#changing-app-trains" >}}).
 
 <div class="noprint">
 

@@ -20,7 +20,7 @@ This can occur naturally over the lifetime of the pool as you modify or delete d
 To manually recover capacity, simply replicate and rewrite the data to the extended pool.
 {{< include file="/static/includes/ExpandedVdevReporting.md" >}}
 
-See [Extending a RAIDZ VDEV]({{< relref "ManagePoolsSCALE.md #extending-a-raidz-vdev" >}}) for more information, including a detailed overview, considerations, and a tutorial.
+See [Extending a RAIDZ VDEV]({{< relref "ManagePoolsSCALE/#extending-a-raidz-vdev" >}}) for more information, including a detailed overview, considerations, and a tutorial.
 
 {{< expand "How to use this calculator" "v" >}}
 Edit the values to see how much lost headroom capacity is available to recover.

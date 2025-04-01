@@ -108,11 +108,11 @@ Select **Use Snapshot** to create and use a snapshot to back up or synchronize t
 Advanced users can write scripts that run immediately before or after the TrueCloud backup task.
 Enter environment variables in either the **Pre-script** or **Post-script** fields.
 The **Post-script** field only runs when the TrueCloud backup task succeeds.
-See [TrueCloud Backup Tasks Screens]({{< relref "truecloudbackuptasksscreen.md #advanced-options-settings" >}}) for information on available environment variables.
+See [TrueCloud Backup Tasks Screens]({{< relref "truecloudbackuptasksscreen/#advanced-options-settings" >}}) for information on available environment variables.
 
 Use **Exclude** to enter a list of files and directories to exclude from sync.
 Press <kbd>Enter</kbd> to separate entries.
-See [TrueCloud Backup Tasks Screens]({{< relref "truecloudbackuptasksscreen.md #advanced-options-settings" >}}) for syntax examples.
+See [TrueCloud Backup Tasks Screens]({{< relref "truecloudbackuptasksscreen/#advanced-options-settings" >}}) for syntax examples.
 
 Use **Transfer Settings** to prevent excess resource consumption by setting the pack size and read concurrency.
 
@@ -124,7 +124,7 @@ To run a scheduled task before the defined time, click **<i class="fa fa-play" a
 
 To delete a task, click **<i class="material-icons" aria-hidden="true" title="Delete">delete</i> Delete** for the task to delete. 
 
-See [TrueCloud Backup Tasks Screens]({{< relref "truecloudbackuptasksscreen.md #advanced-options-settings" >}}) for more information on TrueCloud Backup Task screens.
+See [TrueCloud Backup Tasks Screens]({{< relref "truecloudbackuptasksscreen/#advanced-options-settings" >}}) for more information on TrueCloud Backup Task screens.
 
 ### Restoring Data from TrueCloud Snapshots
 To restore data from a TrueCloud backup, locate an existing snapshot on the **Snapshots widget**.

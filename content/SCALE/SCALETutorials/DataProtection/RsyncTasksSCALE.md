@@ -43,7 +43,7 @@ If the remote system is also a TrueNAS, go to **Credentials**, select **Users** 
 Select the administration user and click **Edit**.
 
 If creating a new administration user, for rsync functions, click **Add**.
-See [Managing Users]({{< relref "managelocalusersscale.md #creating-an-administrator-user-account" >}}) for more information.
+See [Managing Users]({{< relref "managelocalusersscale/#creating-an-administrator-user-account" >}}) for more information.
 Take note of the path to the home directory to use in setting up the connection.
 
 Add an SSH connection for the remote server on the local TrueNAS host system. 

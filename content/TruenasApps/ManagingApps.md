@@ -119,7 +119,7 @@ Click **Start** to restart the application.
 The screen defaults to selecting the first app row listed on the **Applications** table and showing the application widgets that first app.
 To modify installed application settings, click on the app row in the **Applications** table, then click **Edit** on the **Application Info** widget.
 
-Refer to individual tutorials in the [Stable]({{< relref "/content/TruenasApps/StableApps/_index.md" >}}), [Community]({{< relref "/content/TruenasApps/CommunityApps/_index.md" >}}), or [Enterprise]({{< relref "/content/TruenasApps/EnterpriseApps/_index.md" >}}) sections of the Documentation Hub for more details on configuring application settings.
+Refer to individual tutorials in the [Stable]({{< relref "/TruenasApps/StableApps/_index.md" >}}), [Community]({{< relref "/TruenasApps/CommunityApps/_index.md" >}}), or [Enterprise]({{< relref "/TruenasApps/EnterpriseApps/_index.md" >}}) sections of the Documentation Hub for more details on configuring application settings.
 
 #### GPU Passthrough
 

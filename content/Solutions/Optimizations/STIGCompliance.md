@@ -23,11 +23,11 @@ This article details customizable settings to accomplish a security-hardened sys
 ## Install TrueNAS
 Existing TrueNAS systems can upgrade to the latest release through the UI.
 Earlier releases of TrueNAS can upgrade by following the established migration paths or might need to clean-install the latest release of SCALE using the <file>iso
-</file>. Refer to documentation on upgrading existing systems found [here]({{< relref "/content/TrueNASUpgrades/_index.md" >}}).
+</file>. Refer to documentation on upgrading existing systems found [here]({{< relref "/TrueNASUpgrades/_index.md" >}}).
 
 If side-grading (migrating) from an earlier release to the latest TrueNAS release, follow guidance in the [Preparing to Migrate]({{< relref "/SCALE/GettingStarted/Migrate/MigratePrep.md" >}}) article before beginning the migration.
 
-If clean-installing TrueNAS for the first time, follow guidance in the [Installation Instructions]({{< relref "/content/SCALE/GettingStarted/Install/_index.md" >}}) articles.
+If clean-installing TrueNAS for the first time, follow guidance in the [Installation Instructions]({{< relref "/SCALE/GettingStarted/Install/_index.md" >}}) articles.
 
 ### Prerequisites
 If you are installing TrueNAS on servers other than licensed TrueNAS Enterprise systems, you should read and follow guidance in the [TrueNAS Hardware Guide]({{< relref "SCALEHardwareGuide.md" >}}).
@@ -41,7 +41,7 @@ Some releases of TrueNAS might only have **root** as the default administration 
 
 TrueNAS systems with the **root** user, or either the **admin** or **truenas_admin** user should create a new administration user with full control privileges and assign a complex password that follows current password management guidelines.
 
-After testing the login for the new administration user, disable both the **root** user password if not already disabled, and the the default **admin** or **truenas_admin** user password to security-harden the system. 
+After testing the login for the new administration user, disable both the **root** user password if not already disabled, and the the default **admin** or **truenas_admin** user password to security-harden the system.
 Only enable the root user password when necessary to perform functions not available to the administration user, and when tasks are complete, disable the root user password again.
 
 If creating multiple administration user accounts for individuals that fill specific roles, limit privileges and access to what is minimally required to perform the system responsibilities.
@@ -203,7 +203,7 @@ Check share advanced options and share service configurations for invalid networ
 #### Allowed Domains and IP Addresses/Hosts
 To increase network, consider configuring allowed domains on the [**Network > Global Configuration** screen]({{< relref "ManagingGlobalConfig.md" >}}).
 
-To increase share security, configure allowed host names or IP addresses for [SMB shares]({{< relref "/scale/scaletutorials/shares/smb/_index.md #configuring-share-advanced-options-settings" >}}) or [NFS shares]({{< relref "/AddingNFSShares.md #adding-nfs-share-networks-and-hosts" >}}. 
+To increase share security, configure allowed host names or IP addresses for [SMB shares]({{< relref "/scale/scaletutorials/shares/smb/_index/#configuring-share-advanced-options-settings" >}}) or [NFS shares]({{< relref "/AddingNFSShares/#adding-nfs-share-networks-and-hosts" >}}.
 
 ### Data Security
 To keep data secure, TrueNAS provides dataset access controls, encryption, and the ability to lock/unlock datasets.
@@ -218,7 +218,7 @@ Access to datasets can be configured for the owner, per user, group, or everyone
 See [Setting Up Permissions]({{< relref "PermissionsSCALE.md" >}}) for more information.
 
 SMB shares permit setting up permissions for just the share but not the dataset for the share, or for both the dataset and the share.
-See [Windows Shares]({{< relref "/content/SCALE/SCALETutorials/Shares/SMB/_index.md" >}}) for more information on SMB shares, creating shares, and configuring settings including permissions.
+See [Windows Shares]({{< relref "/SCALE/SCALETutorials/Shares/SMB/_index.md" >}}) for more information on SMB shares, creating shares, and configuring settings including permissions.
 
 NFS shares do not have the same setting options and rely on the dataset ACL settings.
 See [NFS Shares]({{< relref "AddingNFSShares.md" >}}) for more information.

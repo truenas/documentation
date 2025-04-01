@@ -117,7 +117,7 @@ You can enter a **Public Login Message** to display on the login page, or leave 
 Accept the default port numbers in **Web Port**.
 The TrueNAS Immich app listens on port **30041**.
 
-Refer to the TrueNAS [default port list]({{< relref "/solutions/optimizations/security.md #truenas-default-ports" >}}) for a list of assigned port numbers.
+Refer to the TrueNAS [default port list]({{< relref "/solutions/optimizations/security/#truenas-default-ports" >}}) for a list of assigned port numbers.
 To change the port numbers, enter a number within the range 9000-65535.
 
 {{< trueimage src="/images/SCALE/Apps/InstallImmichNetworkConfig.png" alt="Immich Networking" id="Immich Networking" >}}
@@ -148,7 +148,7 @@ Enter a plain integer followed by the measurement suffix, for example 4G or 123M
 Systems with compatible GPU(s) display devices in **GPU Configuration**.
 Use the **GPU Resource** dropdown menu(s) to configure device allocation.
 
-See [Allocating GPU]({{< relref "/content/TruenasApps/_index.md#allocating-gpu" >}}) for more information about allocating GPU devices in TrueNAS.
+See [Allocating GPU]({{< relref "/TruenasApps/_index.md#allocating-gpu" >}}) for more information about allocating GPU devices in TrueNAS.
 
 ## Immich Database Backup and Restore
 

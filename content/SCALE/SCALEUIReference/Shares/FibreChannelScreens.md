@@ -25,7 +25,7 @@ The **Wizard** button on the header opens the **Wizard iSCSI** wizard on the **T
 {{< trueimage src="/images/SCALE/Shares/SharesScreenFC.png" alt="Block (iSCSI) Shares Targets Widget with Fibre Channel" id="Block (iSCSI) Shares Targets Widget with Fibre Channel" >}}
 
 The <span class="material-icons">more_vert</span> icon button shows two options: a toggle for **Turn On Service**/**Turn Off Service** and **Config Service**.
-**Config Service** opens the **[iSCSI Global Configuration]({{< relref "iSCSISharesScreens.md #iscsi-global-configuration-screen" >}})** screen. 
+**Config Service** opens the **[iSCSI Global Configuration]({{< relref "iSCSISharesScreens/#iscsi-global-configuration-screen" >}})** screen. 
 
 ### iSCSI Target Wizard Screen - Fibre Channel
 

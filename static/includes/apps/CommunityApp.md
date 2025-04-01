@@ -5,5 +5,5 @@ Documentation for applications within the **Community** train is created and mai
 The TrueNAS Documentation Hub hosts but does not validate or maintain articles within this section.
 
 Community contributions are highly encouraged!
-Please see [Contributing to TrueNAS Application Documentation]({{< relref "/contributing/applications/_index.md #contributing-to-truenas-application-documentation" >}}) to learn how you can assist.
+Please see [Contributing to TrueNAS Application Documentation]({{< relref "/contributing/applications/_index/#contributing-to-truenas-application-documentation" >}}) to learn how you can assist.
 {{< /hint >}}

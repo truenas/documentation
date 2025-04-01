@@ -228,7 +228,7 @@ Using the Syncthing Enterprise app to sync directories with greater than 8191 su
 Increase inotify values to allow Syncthing to monitor all sync directories.
 Add a sysctl variable to ensure changes persist through restart.
 
-Go to **System > Advanced** and locate the [**Sysctl** widget]({{< relref "/scale/scaletutorials/systemsettings/advanced/_index.md #managing-sysctl-variables" >}}).
+Go to **System > Advanced** and locate the [**Sysctl** widget]({{< relref "/scale/scaletutorials/systemsettings/advanced/_index/#managing-sysctl-variables" >}}).
 
 {{< trueimage src="/images/SCALE/SystemSettings/AdvancedSysctlWidget.png" alt="Sysctl Widget" id="Sysctl Widget" >}}
 
