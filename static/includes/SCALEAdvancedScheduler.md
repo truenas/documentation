@@ -10,7 +10,7 @@ The simplest option is to enter a single number in the field.
 The task runs when the time value matches that number.
 For example, entering *10* means that the job runs when the time is ten minutes past the hour.
 
-Note that there is no **Minutes** field in the TrueNAS UI, but users can specify minutes within the **Hours** field using the [CRON syntax](#examples-of-cron-syntax) described below.
+The TrueNAS UI does not have a **Minutes** field, but you can specify minutes within the **Hours** field using the [CRON syntax](#examples-of-cron-syntax) described below.
 
 An asterisk (`*`) means match all values.
 
