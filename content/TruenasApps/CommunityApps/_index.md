@@ -27,7 +27,7 @@ To view the community apps, from the **Installed** application screen, click **S
 Select the **community** checkbox on the **Train Settings** screen and click **Save**.
 Go to the **Discover** screen and click **Refresh Catalog**, to the right of the search field.
 
-For information on adding to or changing the train for the apps catalog, see [Changing App Trains]({{< relref "/truenasapps/_index/#changing-app-trains" >}}).
+For information on adding to or changing the train for the apps catalog, see [Changing App Trains]({{< relref "/truenasapps/#changing-app-trains" >}}).
 
 {{< include file="/static/includes/apps/AppsBestPractices.md" >}}
 

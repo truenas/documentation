@@ -29,7 +29,7 @@ It downloads a JSON file to your downloads folder.
 
 {{< trueimage src="/images/SCALE/Storage/DownloadPoolEncryptionKey.png" alt="Download Pool Encryption Key" id="Download Pool Encryption Key" >}}
 
-The [**Encryption Options** settings]({{< relref "/scale/scaleuireference/datasets/_index/#encryption-options-section" >}}) under **Advanced Options** on the **Add Dataset** screen configure encryption for that dataset.
+The [**Encryption Options** settings]({{< relref "/scale/scaleuireference/datasets/#encryption-options-section" >}}) under **Advanced Options** on the **Add Dataset** screen configure encryption for that dataset.
 
 {{< trueimage src="/images/SCALE/Datasets/AddDatasetBasicEncryptionAndOtherOptions.png" alt="Add Dataset Encryption Options Key" id="Add Dataset Encryption Options Key" >}}
 

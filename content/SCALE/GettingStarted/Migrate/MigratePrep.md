@@ -109,7 +109,7 @@ These features require careful configuration to avoid data corruption or loss of
 {{< /enterprise>}}
 
 After completing the steps listed above that apply to your existing system, download the latest [TrueNAS ISO file](https://www.truenas.com/download-tn-scale/) and save it to your computer.
-See [Software Releases]({{< relref "TrueNASUpgrades/_index/#upgrade-paths" >}}) for currently recommended update paths to make sure you download and migrate to and from the correct TrueNAS versions.
+See [Software Releases]({{< relref "TrueNASUpgrades/#upgrade-paths" >}}) for currently recommended update paths to make sure you download and migrate to and from the correct TrueNAS versions.
 Burn the iso to a USB drive (see [**Installing on Physical Hardware**]({{< relref "InstallingSCALE.md#installing-on-physical-hardware" >}})) when upgrading a physical system.
 
 ## Deprecated Services
