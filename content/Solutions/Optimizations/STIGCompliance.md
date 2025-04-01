@@ -203,7 +203,7 @@ Check share advanced options and share service configurations for invalid networ
 #### Allowed Domains and IP Addresses/Hosts
 To increase network, consider configuring allowed domains on the [**Network > Global Configuration** screen]({{< relref "ManagingGlobalConfig.md" >}}).
 
-To increase share security, configure allowed host names or IP addresses for [SMB shares]({{< relref "/scale/scaletutorials/shares/smb/_index/#configuring-share-advanced-options-settings" >}}) or [NFS shares]({{< relref "/AddingNFSShares/#adding-nfs-share-networks-and-hosts" >}}.
+To increase share security, configure allowed host names or IP addresses for [SMB shares]({{< relref "/scale/scaletutorials/shares/smb/_index/#configuring-share-advanced-options-settings" >}}) or [NFS shares]({{< relref "/AddingNFSShares/#adding-nfs-share-networks-and-hosts" >}}).
 
 ### Data Security
 To keep data secure, TrueNAS provides dataset access controls, encryption, and the ability to lock/unlock datasets.
