@@ -123,7 +123,7 @@ Be very careful when using `dd`, as choosing the wrong `of=` device path can res
 
 Enter this command `dd status=progress if=path/to/.iso of=path/to/USB` in the CLI.
 
-If this results in a permission denied error, use command `sudo dd` with the same parameters and enter the administrator password.
+If this results in a permission denied error, use the command `sudo dd` with the same parameters and enter the administrator password.
 {{< /expand >}}
 
 TrueNAS allows using other methods to create boot media such as:
@@ -145,7 +145,7 @@ The following sections provide more information on a few of these options.
 [TINU](https://github.com/ITzTravelInTime/TINU) is an open-source tool to create bootable MacOS installers.
 It creates bootable MacOS installers capable of running Apple MacOS.
 The program uses a GU for the `createinstallmedia` executable found in any MacOS installer app.
-This allows for easy creation of MacOS install media without using the command-line or Disk Utility, and it detects and prevents the most common errors when creating bootable MacOS installers
+This allows you to easily create MacOS install media without using the command line or Disk Utility, and it detects and prevents the most common errors when creating bootable MacOS installers
 
 Follow the instructions provided in the GUI to begin creating the bootable media.
 
