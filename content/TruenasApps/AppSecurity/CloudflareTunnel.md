@@ -106,7 +106,7 @@ Click **Save** and deploy the application.
 
 ### Nextcloud Configuration
 
-Install the [Nextcloud]({{< relref "/truenasapps/stableapps/nextcloud.md" >}}) **stable** application.
+Install the [Nextcloud]({{< relref "/truenasapps/stableapps/nextcloud" >}}) **stable** application.
 
 The first application deployment could take a while, and starts and stops multiple times.
 This is normal behavior.

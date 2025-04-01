@@ -136,7 +136,7 @@ Click **<i class="material-icons" aria-hidden="true" title="Restore">history</i>
 {{< trueimage src="/images/SCALE/DataProtection/TrueCloudRestore.png" alt="Restore from Snapshot" id="Restore from Snapshot" >}}
 
 Select **Include Everything** to restore all data, or exclude some data using **Include from subfolder**, **Select paths to exclude**, or **Exclude by pattern**.
-See [TrueCloud Backup Tasks Screens]({{< relref "TrueCloudBackupTasksScreen.md" >}}) for more information.
+See [TrueCloud Backup Tasks Screens]({{< relref "TrueCloudBackupTasksScreen" >}}) for more information.
 
 Set the local **Target** to the target dataset of the backup task.
 Click **Save** to restore data from the snapshot.

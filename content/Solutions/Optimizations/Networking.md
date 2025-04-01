@@ -32,7 +32,7 @@ Configure link aggregation (LAGG) to combine multiple physical interfaces into a
 
 {{< include file="/static/includes/MultipleInterfacesOnNetwork.md" >}}
 
-See also [Setting Up a Link Aggregation]({{< relref "settinguplagg.md" >}}).
+See also [Setting Up a Link Aggregation]({{< relref "settinguplagg" >}}).
 
 ### LACP
 
@@ -71,7 +71,7 @@ LACP, being a lower-layer protocol, is less aware of the applications running ov
 
 These advantages can be more pronounced at higher network speeds, such as in 100G environments ([see below](#link-aggregation)).
 
-See [Setting Up SMB Multichannel]({{< relref "smbmultichannel.md" >}}) for more information.
+See [Setting Up SMB Multichannel]({{< relref "smbmultichannel" >}}) for more information.
 
 ## Network Traffic Segmentation
 
@@ -88,7 +88,7 @@ Devices in one VLAN do not see the broadcast traffic of devices in other VLANs, 
 VLANs provide flexibility in network design, providing enhanced isolation, access control, and scalability.
 They are often used to group devices based on functional roles or departments and optimize performance by prioritizing discrete traffic types on each VLAN.
 
-See also [Setting Up a Network VLAN]({{< relref "settingupvlan.md" >}}).
+See also [Setting Up a Network VLAN]({{< relref "settingupvlan" >}}).
 
 ### Layer 3 Isolation
 

@@ -34,7 +34,7 @@ keywords:
 {{< include file="/static/includes/apps/AppsIntro.md" >}}
 
 This article covers how to set up the TrueNAS Apps service, configure global settings, and other general information.
-For details on discovering, installing, and managing applications, see [Managing Apps]({{< relref "ManagingApps.md" >}}) and individual app tutorials.
+For details on discovering, installing, and managing applications, see [Managing Apps]({{< relref "ManagingApps" >}}) and individual app tutorials.
 
 {{< include file="/static/includes/ProposeArticleChange.md" >}}
 

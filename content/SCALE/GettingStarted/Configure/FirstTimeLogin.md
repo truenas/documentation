@@ -33,14 +33,14 @@ On networks that support Multicast Domain Name Services (mDNS), the system can u
 By default, TrueNAS uses the host name and domain **truenas.local**.
 To change the host name and domain in the web interface, go to **Network** and click **Settings** on the **Global Configuration** widget.
 
-To access the web interface using an IP address, either use the DHCP-assigned IP address displayed at the top of the Console Setup menu after installing TrueNAS or use the static IP address you assigned using the [Console Setup menu]({{< relref "/SCALE/GettingStarted/install/ConsoleSetupMenuSCALE.md" >}}).
+To access the web interface using an IP address, either use the DHCP-assigned IP address displayed at the top of the Console Setup menu after installing TrueNAS or use the static IP address you assigned using the [Console Setup menu]({{< relref "/SCALE/GettingStarted/install/ConsoleSetupMenuSCALE" >}}).
 
 {{< enterprise >}}
 TrueNAS Enterprise (HA) systems have specific network configuration requirements.
 Installing TrueNAS on High Availability (HA) systems and configuring networking is complicated and should be guided by Enterprise-level support.
 Contact TrueNAS Enterprise Support for assistance whenever attempting to install TrueNAS on Enterprise HA hardware or configure network settings.
 
-Refer to the [Preparing for TrueNAS UI Configuration (Enterprise)]({{< relref "InstallPrepEnterprise.md" >}}) and [Installing TrueNAS Enterprise (HA)]({{< relref "InstallEnterpriseHASCALE.md" >}}) for information on installing HA system and configuring networking.
+Refer to the [Preparing for TrueNAS UI Configuration (Enterprise)]({{< relref "InstallPrepEnterprise" >}}) and [Installing TrueNAS Enterprise (HA)]({{< relref "InstallEnterpriseHASCALE" >}}) for information on installing HA system and configuring networking.
 {{< expand "Contacting Support" "v" >}}
 {{< include file="/static/includes/iXsystemsSupportContact.md" >}}
 {{< /expand >}}
@@ -88,7 +88,7 @@ After upgrading from an earlier release, use the existing root user credentials 
 {{< expand "Migrating/Upgrading from FreeBSD- to Linux-based TrueNAS Versions" "v" >}}
 
 {{< enterprise >}}
-Customers with a TrueNAS Enterprise High Availability (HA) system should review [Migration Preparation]({{< relref "MigratePrep.md" >}}), [Enterprise HA Migrations]({{< relref "MigrateCOREHAToSCALEHA.md" >}}), and consult with TrueNAS Enterprise Support prior to migrating.
+Customers with a TrueNAS Enterprise High Availability (HA) system should review [Migration Preparation]({{< relref "MigratePrep" >}}), [Enterprise HA Migrations]({{< relref "MigrateCOREHAToSCALEHA" >}}), and consult with TrueNAS Enterprise Support prior to migrating.
 {{< /enterprise >}}
 For non-HA systems, there are two possible scenarios when migrating:
 
@@ -97,7 +97,7 @@ For non-HA systems, there are two possible scenarios when migrating:
 
 If performing a clean install using the TrueNAS <file>iso</file> file, after installing TrueNAS and uploading the configuration file, your network settings get overwritten by the config file, so you cannot use the new IP address and admin user to access to the web UI.
 Use the previous address and root credentials to access the UI.
-See [TrueNAS Migrations]({{< relref "MigratingFromCORE.md" >}}) for instructions on recovering the new network settings and access to the UI, and recreating the administrator account.
+See [TrueNAS Migrations]({{< relref "MigratingFromCORE" >}}) for instructions on recovering the new network settings and access to the UI, and recreating the administrator account.
 
 If using the **Update** UI option, log into TrueNAS with the existing root user credentials.
 {{< include file="/static/includes/CreateAdminDisableRoot.md" >}}
@@ -109,13 +109,13 @@ After setting up the truenas_admin user from one of the scenarios documented abo
 {{< trueimage src="/images/SCALE/Login/LoginScreenSCALE.png" alt="TrueNAS Login Screen" id="TrueNAS Login Screen" >}}
 
 To modify user credentials, go to **Credentials > Users**, click anywhere on the user row, then click **Edit**.
-For more information, see [Managing Users]({{< relref "ManageLocalUsersScale.md" >}}).
+For more information, see [Managing Users]({{< relref "ManageLocalUsersScale" >}}).
 
 ### Logging In as Root
 If logging in with the root user credentials, enter root as the user and the root password.
 {{< include file="/static/includes/CreateAdminDisableRoot.md" >}}
 
-Follow the directions in [Managing Users]({{< relref "ManageLocalUsersScale.md" >}}) to create an administration user with all required settings.
+Follow the directions in [Managing Users]({{< relref "ManageLocalUsersScale" >}}) to create an administration user with all required settings.
 For environments requiring specific configurations, such as non-AD environments or those using LDAP, ensure that your admin user is properly set up to manage all aspects of the system.
 
 ### Creating an Administrator Account at First Log in
@@ -126,7 +126,7 @@ One allows you to log in as root or you can create the administration account.
 
 Select either the **Administrative user** or **Root user (not recommended)** option, then enter the password to use with that user.
 
-If you choose **Root user (not recommended)** as the TrueNAS authentication method, go to the **Credentials > Users** screen and [create the admin account]({{< relref "ManageLocalUsersSCALE.md" >}}) immediately after you enter the UI.
+If you choose **Root user (not recommended)** as the TrueNAS authentication method, go to the **Credentials > Users** screen and [create the admin account]({{< relref "ManageLocalUsersSCALE" >}}) immediately after you enter the UI.
 Enter the admin user name and password, make sure the password is enabled, and click **Save**.
 After setting up the admin user, click on the root user and then click **Edit**. Disable the root user password and then click **Save**.
 This brings the system into compliance with FIPS system security-hardening standards.
@@ -162,7 +162,7 @@ The dashboard includes configurable widgets that include a text-only **Custom** 
 {{< trueimage src="/images/SCALE/Dashboard/DashboardMainScreen.png" alt="TrueNAS Dashboard" id="TrueNAS Dashboard" >}}
 
 TrueNAS Enterprise users with an iXsystems-provided server also see an image of the system in the **System Information** widget.
-Click on the system image to open the **System > [View Enclosure]({{< relref "EnclosureScreensSCALE.md" >}})** screen.
+Click on the system image to open the **System > [View Enclosure]({{< relref "EnclosureScreensSCALE" >}})** screen.
 
 The **Dashboard** for non-Enterprise systems displays the TrueNAS logo on the **System Information** widget.
 
@@ -186,4 +186,4 @@ To monitor and manage all active sessions, go to **System > Advanced Settings** 
 {{< include file="/static/includes/SessionsSettingsWidget.md" >}}
 
 ## Next Steps
-With access to the TrueNAS web interface and all the management options, you can begin [configuring your system]({{< relref "UIConfigurationSCALE.md" >}})!
+With access to the TrueNAS web interface and all the management options, you can begin [configuring your system]({{< relref "UIConfigurationSCALE" >}})!

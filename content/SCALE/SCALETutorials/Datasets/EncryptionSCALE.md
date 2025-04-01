@@ -36,7 +36,7 @@ TrueNAS includes the [Key Management Interface Protocol (KMIP)](https://docs.oas
 {{< include file="/static/includes/EncryptionWarning.md" >}}
 
 TrueNAS automatically generates a root dataset when you create a pool.
-Select **Encryption** on the **[Pool Creation Wizard]({{< relref "PoolCreateWizardScreens.md" >}})** screen when you create the pool to encrypt the root dataset.
+Select **Encryption** on the **[Pool Creation Wizard]({{< relref "PoolCreateWizardScreens" >}})** screen when you create the pool to encrypt the root dataset.
 TrueNAS forces encryption of all child datasets and zvols within an encrypted root or parent dataset created using the TrueNAS UI.
 By default, child datasets inherit encryption settings from the parent.
 Deselecting **Inherit (encrypted)** under **Advanced Options** allows modifying the encryption configuration for a child dataset but you cannot change a child dataset of an encrypted parent dataset to unencrypted.
@@ -242,7 +242,7 @@ TrueNAS displays the dataset with the unlocked icon.
 
 {{< include file="/static/includes/EncryptionBackupKeys.md" >}}
 
-To encrypt a Zvol, select a parent dataset and then [create a new Zvol]({{< relref "AddManageZvols.md" >}}).
+To encrypt a Zvol, select a parent dataset and then [create a new Zvol]({{< relref "AddManageZvols" >}}).
 If the parent dataset is encrypted, select **Inherit (encrypted)** under **Encryption Options**.
 If the parent dataset is not encrypted, deselect **Inherit (non-encrypted)**, select **Encryption**, and then configure the **Encryption Type** and related settings.
 

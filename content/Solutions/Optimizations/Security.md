@@ -22,8 +22,8 @@ Follow these best practices to administer TrueNAS securely.
 * Upgrade to new major releases promptly consistent with the deployment use case.
 * Disable any network services when not in use.
 * Restrict the TrueNAS web UI, IPMI, and any other management interfaces to private subnets away from untrusted users, or keep them disconnected when not in active use.
-* Configure **Syslog** settings to send logs to an external server ([CORE](https://www.truenas.com/docs/core/13.0/uireference/system/advanced/) | [SCALE]({{< relref "managesyslogsscale.md" >}})).
-* In TrueNAS 24.04 (Dragonfish) or later, locally [monitor and review audit logs]({{< relref "auditingscale.md" >}}) using the **Audit** screen.
+* Configure **Syslog** settings to send logs to an external server ([CORE](https://www.truenas.com/docs/core/13.0/uireference/system/advanced/) | [SCALE]({{< relref "managesyslogsscale" >}})).
+* In TrueNAS 24.04 (Dragonfish) or later, locally [monitor and review audit logs]({{< relref "auditingscale" >}}) using the **Audit** screen.
 * In the **System > Advanced Settings**, always keep **Show Text Console without Password Prompt** set to **Disabled**.
 
 {{<include file="/static/includes/CustomScriptWarning.md">}}
@@ -120,7 +120,7 @@ When Debian Linux-based system DNS look-ups to https://updates.ixystems.com *(st
 
 ## User Accounts
 
-Restrict new [TrueNAS user accounts]({{< relref "ManageLocalUsersSCALE.md" >}}) to the most minimal set of storage ACL permissions and access possible.
+Restrict new [TrueNAS user accounts]({{< relref "ManageLocalUsersSCALE" >}}) to the most minimal set of storage ACL permissions and access possible.
 
 On TrueNAS 22.12 or newer, [create the administrator account]({{< relref "ManageLocalUsersSCALE.md#creating-an-admin-user-account" >}}) on install and disable root NAS administrative access.
 
@@ -128,7 +128,7 @@ In TrueNAS 24.04 (Dragonfish) or later, use the **Credentials > Groups > Privile
 Assign users to those groups to grant partial NAS administrative access.
 Members of privilege groups can access the UI but cannot perform administrative tasks outside those defined by their role(s).
 
-Use complex passwords and [Two-Factor Authentication]({{< relref "ManageGlobal2FASCALE.md" >}}) for all TrueNAS administrator accounts.
+Use complex passwords and [Two-Factor Authentication]({{< relref "ManageGlobal2FASCALE" >}}) for all TrueNAS administrator accounts.
 
 Grant TrueNAS user accounts (local or domain accounts) access to SSH or console shells only if that user is explicitly trusted.
 
@@ -139,7 +139,7 @@ However, it allows outside connections to the system and must be configured to m
 
 ### iSCSI
 
-Follow the [iSCSI creation wizard]({{< relref "AddingISCSIShares.md" >}}) to create an iSCSI share.
+Follow the [iSCSI creation wizard]({{< relref "AddingISCSIShares" >}}) to create an iSCSI share.
 
 When creating a new **Portal**, consider adding a **Discovery Authentication Method**.
 This adds authentication between the initiator and the extent based on the chosen authentication method, CHAP or Mutual CHAP.
@@ -154,7 +154,7 @@ When these options are empty, all initiators and all networks can connect to the
 
 ### NFS
 
-During [NFS share creation]({{< relref "AddingNFSShares.md" >}}), define which systems are authorized for share connections.
+During [NFS share creation]({{< relref "AddingNFSShares" >}}), define which systems are authorized for share connections.
 Leaving the **Authorized Networks** or **Authorized Hosts and IP addresses** lists empty allows any system to connect to the NFS share.
 To define which systems can connect to the share, click **Advanced Options*, then enter all networks, hosts, and IP addresses to share access.
 
@@ -184,7 +184,7 @@ Administration group members have full permission to modify or delete the share 
 ## SSH
 
 Using Secure Shell (SSH) to connect to your TrueNAS is very helpful when issuing commands through the CLI.
-[SSH settings]({{< relref "SSHServiceSCALE.md" >}}) are in **Services** after clicking the <span class="iconify" data-icon="mdi:pencil"></span> (pencil).
+[SSH settings]({{< relref "SSHServiceSCALE" >}}) are in **Services** after clicking the <span class="iconify" data-icon="mdi:pencil"></span> (pencil).
 
 For best security, disable all login options for root or admin accounts in the SSH service options.
 Instead, create and exchange SSH keys between client systems and TrueNAS before attempting to connect with SSH.

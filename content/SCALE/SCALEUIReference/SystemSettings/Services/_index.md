@@ -20,11 +20,11 @@ related: false
 
 The <span class="material-icons">edit</span> **Configure** icon opens the service configuration screen.
 
-The **NFS** service row has one additional <span class="iconify" data-icon="material-symbols:list"></span> **NFS Sessions** icon that opens the [**NFS Sessions** screen]({{< relref "NFSSharesScreens.md" >}}).
+The **NFS** service row has one additional <span class="iconify" data-icon="material-symbols:list"></span> **NFS Sessions** icon that opens the [**NFS Sessions** screen]({{< relref "NFSSharesScreens" >}}).
 
 The **SMB** service row has two additional icons that link to other screens:
 * <span class="iconify" data-icon="material-symbols:receipt-long"></span> **Audit Logs** opens the **Audit** screen.
-* <span class="iconify" data-icon="material-symbols:list"></span> **SMB Sessions** opens the [**SMB Status** screen]({{< relref "SMBSharesScreens.md" >}}).
+* <span class="iconify" data-icon="material-symbols:list"></span> **SMB Sessions** opens the [**SMB Status** screen]({{< relref "SMBSharesScreens" >}}).
 
 Select **Start Automatically** to set the service to start after the system restarts.
 

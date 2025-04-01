@@ -20,7 +20,7 @@ Set DHCP to assign the IPv4 address, or manually set a static IP address, add IP
 {{< /expand >}}
 
 {{< expand "Can I configure these options elsewhere?" "v" >}}
-Users can configure many of the interface, DNS, and gateway options using the [Console Setup menu]({{< relref "ConsoleSetupMenuSCALE.md" >}}).
+Users can configure many of the interface, DNS, and gateway options using the [Console Setup menu]({{< relref "ConsoleSetupMenuSCALE" >}}).
 Be sure to check both locations when troubleshooting network connectivity issues.
 {{< /expand >}}
 

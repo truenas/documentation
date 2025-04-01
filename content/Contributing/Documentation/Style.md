@@ -160,13 +160,13 @@ See the [Docsy shortcodes guide](https://www.docsy.dev/docs/adding-content/short
 {{< expand "Linking to Other Articles on this Website" >}}
 Internal references use the `ref` shortcode to look up a file by name, or the `relref` shortcode to link to another article on the Documentation Hub website:
 ```
-[Creating a new ZFS Pool]({{\< relref "pools.md" >}})
+[Creating a new ZFS Pool]({{\< relref "pools" >}})
 (do not include the escaping backslash \)
 ```
 If linking to file names that are not unique, you must also include the path to that file. For example:
 
 ```
-[Creating a new Dataset]({{\< relref "/SCALETutorials/Storage/Datasets/datasetsScale.md" >}})
+[Creating a new Dataset]({{\< relref "/SCALETutorials/Storage/Datasets/datasetsScale" >}})
 ```
 
 Linking to the index file of an article bundle requires using the generic linking syntax to point to the article location:

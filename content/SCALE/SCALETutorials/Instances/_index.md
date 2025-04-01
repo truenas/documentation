@@ -35,7 +35,7 @@ VMs emulate hardware, providing greater isolation than containers but requiring 
 {{< hint type=note >}}
 A full tutorial for **Instances** is coming soon.
 
-For the most up-to-date documentation on this feature, see [Instances Screens]({{< relref "/SCALE/SCALEUIReference/InstancesScreens.md" >}}).
+For the most up-to-date documentation on this feature, see [Instances Screens]({{< relref "/SCALE/SCALEUIReference/InstancesScreens" >}}).
 {{< /hint >}}
 <!-- / to be removed -->
 
@@ -73,7 +73,7 @@ To prevent accidental deletion of an in-use image, the delete icon is not select
 {{< /expand >}}
 
 ## Creating a Virtual Machine
-Before creating a VM, obtain an installer <file>.iso</file> or image file for the OS you intend to install, and create a [zvol]({{< relref "AddManageZvols.md" >}}) on a storage pool that is available for both the virtual disk and the OS install file.
+Before creating a VM, obtain an installer <file>.iso</file> or image file for the OS you intend to install, and create a [zvol]({{< relref "AddManageZvols" >}}) on a storage pool that is available for both the virtual disk and the OS install file.
 
 If the VM needs to access local NAS storage, you need to create a network bridge to allow communication.
 See [Accessing TrueNAS Storage from a VM](#accessing-truenas-storage-from-a-vm) below for more information.
@@ -572,4 +572,4 @@ If you want to access your TrueNAS directories from a VM, to connect to a TrueNA
 If your system has more than one physical interface, you can assign your VMs to a NIC other than the primary one your TrueNAS server uses. This method makes communication more flexible but does not offer the potential speed of a bridge.
 
 To create a bridge interface for the VM to use if you have only one physical interface, stop all existing apps, VMs, and services using the current interface, edit the interface and VMs, create the bridge, and add the bridge to the VM device.
-See [Accessing NAS from VM]({{< relref "ContainerNASBridge.md" >}}) for more information.
+See [Accessing NAS from VM]({{< relref "ContainerNASBridge" >}}) for more information.

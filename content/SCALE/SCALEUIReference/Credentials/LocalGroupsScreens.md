@@ -95,6 +95,6 @@ The new and edit privilege screens show the same settings but not all settings a
 | **Web Shell Access** | Select to allow a user to assign the new privilege access to the **System > Shell** screen. |
 {{< /truetable >}}
 
-Assigned administrator roles show on the [Users Screen]({{< relref "LocalUsersScreensSCALE.md" >}}).
+Assigned administrator roles show on the [Users Screen]({{< relref "LocalUsersScreensSCALE" >}}).
 
 {{< include file="/static/includes/addcolumnorganizer.md" >}}

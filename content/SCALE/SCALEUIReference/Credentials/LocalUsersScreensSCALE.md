@@ -120,7 +120,7 @@ The add and edit user screens grant access to a shell option, but the [privilege
 {{< /truetable >}}
 
 #### Shell Options
-You can set a specific [shell]({{< relref "UseScaleShell.md" >}}) for the user from the **Shell** dropdown list options.
+You can set a specific [shell]({{< relref "UseScaleShell" >}}) for the user from the **Shell** dropdown list options.
 
 {{< truetable >}}
 | Shell | Description |

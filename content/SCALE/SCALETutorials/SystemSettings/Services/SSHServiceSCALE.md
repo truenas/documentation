@@ -46,7 +46,7 @@ These **Auxiliary Parameters** can be useful when troubleshooting SSH connectivi
 
 Remember to enable the SSH service in **System > Services** after making changes.
 
-Create and store SSH connections and keypairs to allow SSH access in **Credentials > Backup Credentials** or by editing an administrative user account. See [Adding SSH Credentials]({{< relref "AddSSHConnectionKeyPair.md" >}}) for more information.
+Create and store SSH connections and keypairs to allow SSH access in **Credentials > Backup Credentials** or by editing an administrative user account. See [Adding SSH Credentials]({{< relref "AddSSHConnectionKeyPair" >}}) for more information.
 
 ## Using SSH File Transfer Protocol (SFTP)
 
@@ -59,7 +59,7 @@ Go to **System > Services**, find the **SSH** entry, and click the <i class="mat
 
 Select **Allow Password Authentication**.
 
-Go to **Credentials > Users**. Click anywhere on the row of the user you want to access SSH to expand the user entry, then click **Edit** to open the **Edit User** configuration screen. Make sure that **SSH password login enabled** is selected. See [Managing Users]({{< relref "managelocalusersscale.md" >}}) for more information.
+Go to **Credentials > Users**. Click anywhere on the row of the user you want to access SSH to expand the user entry, then click **Edit** to open the **Edit User** configuration screen. Make sure that **SSH password login enabled** is selected. See [Managing Users]({{< relref "managelocalusersscale" >}}) for more information.
 
 {{< hint type=danger title="Security Concern" >}}
 SSH with root is a security vulnerability. It allows users to fully control the NAS remotely with a terminal instead of providing SFTP transfer access.
@@ -71,7 +71,7 @@ Review the remaining options and configure them according to your environment or
 
 Remember to enable the SSH service in **System > Services** after making changes.
 
-Create and store SSH connections and keypairs to allow SSH access in **Credentials > Backup Credentials** or by editing an administrative user account. See [Adding SSH Credentials]({{< relref "AddSSHConnectionKeyPair.md" >}}) for more information.
+Create and store SSH connections and keypairs to allow SSH access in **Credentials > Backup Credentials** or by editing an administrative user account. See [Adding SSH Credentials]({{< relref "AddSSHConnectionKeyPair" >}}) for more information.
 
 TrueNAS shows an error if users activate Global 2FA (Two-Factor Authentication) and attempt to enable password-based SSH authentication without a 2FA token. See [Managing Global 2FA](https://www.truenas.com/docs/scale/scaletutorials/systemsettings/advanced/manageglobal2fascale/) for more information.
 

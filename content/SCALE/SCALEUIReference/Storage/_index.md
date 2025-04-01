@@ -23,7 +23,7 @@ The **No Pools** screen displays before you add the first pool.
 
 {{< trueimage src="/images/SCALE/Storage/StorageDashboardNoPools.png" alt="Storage Dashboard without Pools" id="Storage Dashboard without Pools" >}}
 
-The **Create Pool** button in the center of the screen opens the **[Pool Creation Wizard]({{< relref "PoolCreateWizardScreens.md" >}})** screen.
+The **Create Pool** button in the center of the screen opens the **[Pool Creation Wizard]({{< relref "PoolCreateWizardScreens" >}})** screen.
 
 ## Storage Dashboard
 The buttons at the top right of the **Storage Dashboard** screen provide access to pool and disk functions:
@@ -41,8 +41,8 @@ The buttons at the top right of the **Storage Dashboard** screen provide access 
   **Import** starts the process of connecting the pool and bringing it into TrueNAS.
   {{< /expand >}}
 
-* **Disks** opens the **[Disks]({{< relref "DisksScreen.md" >}})** screen.
-* **Create Pool** opens the **[Pool Creation Wizard]({{< relref "PoolCreateWizardScreens.md" >}})**.
+* **Disks** opens the **[Disks]({{< relref "DisksScreen" >}})** screen.
+* **Create Pool** opens the **[Pool Creation Wizard]({{< relref "PoolCreateWizardScreens" >}})**.
 
 After adding pools, the dashboard shows [storage widgets](#storage-dashboard-widgets) and two more buttons.
 
@@ -131,7 +131,7 @@ A **Data VDEV** includes the data type (stripe, mirror, RAID, or mixed configura
   
 {{< trueimage src="/images/SCALE/Storage/StorageDashboardTopologyWidget.png" alt="Topology Widget" id="Topology Widget" >}}
   
-**Manage Devices** opens the **[Devices]({{< relref "DevicesScreensSCALE.md" >}})** screen where you can add or manage existing VDEVs.
+**Manage Devices** opens the **[Devices]({{< relref "DevicesScreensSCALE" >}})** screen where you can add or manage existing VDEVs.
 
 ### Usage Widget
 The **Usage** widget shows information on the space datasets consume in the pool, and the status of pool usage.
@@ -171,14 +171,14 @@ The **ZFS Health** widget shows information on the health of the pool.
 
 **Scrub** opens the Scrub Pool dialog. From this, you run a check on the data integrity of the pool.
 
-**View all Scrub Tasks** opens the **[Data Protections > Scrub Tasks]({{< relref "ScrubTasksScreensSCALE.md" >}})** details screen.
+**View all Scrub Tasks** opens the **[Data Protections > Scrub Tasks]({{< relref "ScrubTasksScreensSCALE" >}})** details screen.
 This lists all scheduled scrub tasks and allows you to add a new or edit an existing task.
 
 **Prune** and **Set Quota** only show if the pool has a dedup VDEV and it contains duplicated files in the pool.
 
 * {{< expand "Scrub Pool Dialog" "v" >}}
   The **Scrub Pool** dialog allows you to run an unscheduled scrub task.
-  If TrueNAS detects problems during the scrub, it either corrects them automatically or generates an [alert]({{< relref "AlertSettingsScreen.md" >}}) in the web interface.
+  If TrueNAS detects problems during the scrub, it either corrects them automatically or generates an [alert]({{< relref "AlertSettingsScreen" >}}) in the web interface.
 
   By default, TrueNAS automatically checks every pool to verify it is on a reoccurring scrub schedule.
 
@@ -235,7 +235,7 @@ The details on the widget include the non-dismissed disk temperature alerts for 
 
 {{< trueimage src="/images/SCALE/Storage/StorageDashboardDiskHealthWidget.png" alt="Disk Health Widget" id="Disk Health Widget" >}}
 
-**Manage Disks** opens the **Storage > [Disk]({{< relref "DisksScreen.md" >}})** screen.
+**Manage Disks** opens the **Storage > [Disk]({{< relref "DisksScreen" >}})** screen.
 
 **View Reports** opens the **Report** screen for the disks in the selected pool.
 

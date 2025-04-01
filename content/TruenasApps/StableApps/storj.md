@@ -19,7 +19,7 @@ keywords:
 {{< include file="/static/includes/CommunityAppsLegacy.md" >}}
 
 Storj is an open-source decentralized cloud storage (DCS) platform.
-TrueNAS partners with Storj in two areas, the [cloud service]({{< relref "AddCloudCredentials.md" >}}) offering and as storage media for cloud service data through the Storj node application.
+TrueNAS partners with Storj in two areas, the [cloud service]({{< relref "AddCloudCredentials" >}}) offering and as storage media for cloud service data through the Storj node application.
 
 Installing the Storj node app allows you to configure your system as a storage node, and to rent out unused system storage capacity and bandwidth to other Storj cloud service users.
 
@@ -37,7 +37,7 @@ Before you can configure your system to act as a Storj node:
 
 * Review the Storj node hardware and bandwidth considerations at [Storj Node](https://www.storj.io/node).
 
-* Update [TrueNAS]({{< relref "UpdateSCALE.md" >}}) to the latest public release.
+* Update [TrueNAS]({{< relref "UpdateSCALE" >}}) to the latest public release.
 
 * Create a [wallet address](#getting-a-wallet-address).
 
@@ -143,7 +143,7 @@ The **Datasets** screen displays two nested datasets **data** and **identity** u
 After adding each dataset you might be prompted to change the ACL permissions or to return to the **Datasets** screen.
 You can modify the dataset permissions now, or wait to modify permissions when you add the dataset as a storage volume in the **Storage Configuration** section of the **Install Storj** wizard.
 
-See [Setting Up Permissions]({{< relref "PermissionsSCALE.md" >}}) for more information on changing permissions in TrueNAS.
+See [Setting Up Permissions]({{< relref "PermissionsSCALE" >}}) for more information on changing permissions in TrueNAS.
 
 ## Installing the Storj App
 

@@ -32,7 +32,7 @@ We strongly recommend that you review your available system resources and plan y
 * Maximizing total available storage at the expense of redundancy or performance entails allocating large-volume disks and configuring a pool for minimal redundancy.
 * Maximizing pool performance entails installing and allocating high-speed SSD drives to a pool.
 
-Security requirements can mean the pool must be created with [ZFS encryption]({{< relref "EncryptionSCALE.md" >}}).
+Security requirements can mean the pool must be created with [ZFS encryption]({{< relref "EncryptionSCALE" >}}).
 However, we recommend that users create pools as unencrypted and then encrypt some or all of of the child datasets, as needed.
 
 {{< include file="/static/includes/EncryptionRootLevel.md" >}}
@@ -45,7 +45,7 @@ TrueNAS recommends defaulting to a RAIDz layout generally and whenever a dRAID v
 
 Determining your specific storage requirements is a critical step before creating a pool.
 The [ZFS](https://www.truenas.com/docs/references/zfsprimer/) and [dRAID](https://www.truenas.com/docs/references/draidprimer/) primers provide a starting point to learn about the strengths and costs of different storage pool layouts.
-You can also use the [ZFS Capacity Calculator]({{< relref "/References/ZFSCapacityCalculator.md" >}}) and [ZFS Capacity Graph]({{< relref "/References/ZFSCapacityGraph.md" >}}) to compare configuration options.
+You can also use the [ZFS Capacity Calculator]({{< relref "/References/ZFSCapacityCalculator" >}}) and [ZFS Capacity Graph]({{< relref "/References/ZFSCapacityGraph" >}}) to compare configuration options.
 
 ## Creating a Pool
 

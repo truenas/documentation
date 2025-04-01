@@ -36,7 +36,7 @@ You can configure environment variables at any time after deploying the applicat
 TrueNAS does not need advance preparation.
 
 You can allow TrueNAS to create the datasets Jellyfin requires automatically during app installation.
-Or before beginning app installation, [create the datasets]({{< relref "DatasetsSCALE.md" >}}) to use in the **Storage Configuration** section during installation.
+Or before beginning app installation, [create the datasets]({{< relref "DatasetsSCALE" >}}) to use in the **Storage Configuration** section during installation.
 Jellyfin requires two datasets: **config** and **cache**.
 You can organize these as one parent with two child datasets, for example <file>mnt/tank/jellyfin/config</file>, <file>mnt/tank/jellyfin/cache</file>, and so on.
 You can choose to create a static **transcodes** dataset or use temporary storage in the disk or memory for transcoding.

@@ -62,7 +62,7 @@ The settings on the **Advanced Options** screen include the **[Basic Options](#l
 |---------|-------------|  
 | **Allow Anonymous Binding** | Select to enable the LDAP server to disable authentication and allow read and write access to any client. |
 | **Encryption Mode** | Select the options for encrypting the LDAP connection from the dropdown list. <br> <br>Select **OFF** to not encrypt the LDAP connection. <br>Select **ON** to encrypt the LDAP connection with SSL on port 636. <br>Select **START_TLS** to encrypt the LDAP connection with STARTTLS on the default LDAP port *389*. |
-| **Certificate** | Select the certificate to use when performing LDAP certificate-based authentication.  To configure LDAP certificate-based authentication, [create a Certificate Signing Request]({{< relref "CertificatesSCALE.md" >}}) for the LDAP provider to sign. TrueNAS does not need a certificate when using username/password or Kerberos authentication.  |
+| **Certificate** | Select the certificate to use when performing LDAP certificate-based authentication.  To configure LDAP certificate-based authentication, [create a Certificate Signing Request]({{< relref "CertificatesSCALE" >}}) for the LDAP provider to sign. TrueNAS does not need a certificate when using username/password or Kerberos authentication.  |
 | **Validate Certificates** | Select to verify certificate authenticity. |
 | **Disable LDAP User/Group Cache** | Select to disable caching LDAP users and groups in large LDAP environments. When caching is disabled, LDAP users and groups do not appear in drop-down menus but are still accepted when manually entered. |
 | **Kerberos Realm** | Select an existing realm from **Kerberos Realms**. |

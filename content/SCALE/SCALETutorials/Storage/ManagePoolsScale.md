@@ -99,7 +99,7 @@ To manage disks in a pool, click on the VDEV to expand it and show the disks in 
 Click on a disk to see the **Devices** widgets for that disk.
 You can take a disk offline, detach it, replace it, manage the SED encryption password, and perform other disk management tasks from this screen.
 
-See [Replacing Disks]({{< relref "ReplacingDisks.md" >}}) for more information on the **Offline**, **Replace** and **Online** options.
+See [Replacing Disks]({{< relref "ReplacingDisks" >}}) for more information on the **Offline**, **Replace** and **Online** options.
 
 ## Expanding a Pool
 
@@ -147,7 +147,7 @@ Extended VDEVs recover lost headroom as existing data is read and rewritten to t
 This can occur naturally over the lifetime of the pool as you modify or delete data.
 To manually recover capacity, simply replicate and rewrite the data to the extended pool.
 
-You can use the [RAIDZ Extension Calculator]({{< relref "/References/ExtensionCalculator.md" >}}) to visualize potential lost headroom and capacity available to recover by rewriting existing data.
+You can use the [RAIDZ Extension Calculator]({{< relref "/References/ExtensionCalculator" >}}) to visualize potential lost headroom and capacity available to recover by rewriting existing data.
 
 {{< include file="/static/includes/ExpandedVdevReporting.md" >}}
 
@@ -193,7 +193,7 @@ Click **Add VDEV** on the ***Poolname* Devices** screen to open the **Add Vdevs 
 
 {{< trueimage src="/images/SCALE/Storage/AddVdevsToPoolScreen.png" alt="Add VDEVs to Pool Screen" id="Add VDEVs to Pool Screen" >}}
 
-Adding a vdev to an existing pool follows the same process as documented in [Create Pool]({{< relref "CreatePoolWizard.md" >}}).
+Adding a vdev to an existing pool follows the same process as documented in [Create Pool]({{< relref "CreatePoolWizard" >}}).
 Click on the type of vdev you want to add, for example, to add a spare, click on **Spare** to show the vdev spare options.
 
 {{< trueimage src="/images/SCALE/Storage/AddVdevToPoolSpareScreen.png" alt="Add VDEVs to Pool Spare Example" id="Add VDEVs to Pool Spare Example" >}}
@@ -255,7 +255,7 @@ Change to **Custom** to set the quota to your preference.
 Click **Save** to save and close the dialogs.
 
 ### Replacing Disks to Expand a Pool
-To expand a pool by replacing disks with a higher capacity disk, follow the same procedure as in [Replacing Disks]({{< relref "ReplacingDisks.md" >}}).
+To expand a pool by replacing disks with a higher capacity disk, follow the same procedure as in [Replacing Disks]({{< relref "ReplacingDisks" >}}).
 
 Insert a new disk into an empty enclosure slot. Remove the old disk only after completing the replace operation.
 If an empty slot is not available, you can offline the existing disk and replace it in the same slot, but this reduces redundancy during the process.
@@ -321,5 +321,5 @@ To remove a VDEV from a pool:
    If the **Remove** button is not visible, check that all conditions for VDEV removal listed above are correct.
 3. Confirm the removal operation and click the **Remove** button.
 
-The VDEV removal process status shows in the [Task Manager]({{< relref "TasksScreens.md" >}}) (or alternately with the `zpool status` command).
+The VDEV removal process status shows in the [Task Manager]({{< relref "TasksScreens" >}}) (or alternately with the `zpool status` command).
 Avoid physically removing or attempting to wipe the disks until the removal operation completes.

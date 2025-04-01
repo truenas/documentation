@@ -94,7 +94,7 @@ Next, click <b>Add Item</b> to add an ACE entry for the <b>MinIO</b> run as user
 You might need to add another user, such as <b>www-data</b> if you receive an error message when installing the app.
 The error message shows the user name to add. Give both users full permissions.
 
-See [Setting Up Permissions]({{< relref "PermissionsSCALE.md" >}}) and [Edit ACL Screen]({{< relref "EditACLScreens.md" >}}) for more information.
+See [Setting Up Permissions]({{< relref "PermissionsSCALE" >}}) and [Edit ACL Screen]({{< relref "EditACLScreens" >}}) for more information.
 {{< /expand >}}</div>
  
 ## Installing MinIO Enterprise
@@ -184,7 +184,7 @@ Next, add an ACL entry for the run-as user.
 For MinIO, the run-as users is **568**. Add a user entry for this user.
 Save the ACL before leaving the screen.
 
-See [Setting Up Permissions]({{< relref "PermissionsSCALE.md" >}}) and [Edit ACL Screen]({{< relref "EditACLScreens.md" >}}) for more information.
+See [Setting Up Permissions]({{< relref "PermissionsSCALE" >}}) and [Edit ACL Screen]({{< relref "EditACLScreens" >}}) for more information.
 {{< /expand >}}
 
 Set ACL permissions for each dataset in the configuration, and on each system in the cluster.

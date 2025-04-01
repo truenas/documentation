@@ -63,7 +63,7 @@ Access control policies are set up within a storage array to ensure only certain
 The setup of vCenter iSCSI to TrueNAS requires that ESXi hosts be set up as initiators and TrueNAS storage arrays are set up as targets.
 To configure ESXi hosts with vCenter, see the [VMware vCenter documentation](https://docs.vmware.com/).
 
-To configure TrueNAS Enterprise storage arrays with vCenter, the TrueNAS team has developed a [vCenter plugin]({{< relref "vCenterPlugin.md" >}}).
+To configure TrueNAS Enterprise storage arrays with vCenter, the TrueNAS team has developed a [vCenter plugin]({{< relref "vCenterPlugin" >}}).
 The plugin uses TrueNAS REST APIs to automate LUN creation and assignment.
 When an VMFS (iSCSI) datastore is created using the plugin, the TrueNAS systems automatically activate their iSCSI system services.
 

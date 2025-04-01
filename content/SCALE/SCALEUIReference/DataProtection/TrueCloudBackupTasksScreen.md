@@ -138,7 +138,7 @@ The **Remote** settings specify the TrueCloud credential and destination storage
 {{< truetable >}}
 | Settings | Description |
 |----------|-------------|
-| **Credential** | Select an existing Storj iX credential from the dropdown list. TrueNAS automatically validates the selected credential. <br> Select **Add New** to open the [**Cloud Credentials**]({{< relref "CloudCredentialScreens.md" >}}) screen. This is the same configuration screen that opens when you click **Add** on the **Credentials > Backup Credentials** screen. |
+| **Credential** | Select an existing Storj iX credential from the dropdown list. TrueNAS automatically validates the selected credential. <br> Select **Add New** to open the [**Cloud Credentials**]({{< relref "CloudCredentialScreens" >}}) screen. This is the same configuration screen that opens when you click **Add** on the **Credentials > Backup Credentials** screen. |
 | **Bucket** | Displays after selecting the Storj credential. Select a pre-configured Storj bucket. Only TrueNAS-compatible Storj buckets are selectable. <br> Select **Add New** to create a new Storj bucket from the TrueNAS UI. |
 | **New Bucket Name** | Displays when **Add New** is selected in the **Bucket** field. Enter a name for the new bucket. Only lowercase letters, numbers, and hyphens are allowed. |
 | **Folder** | Enter or browse to select the dataset or directory to receive the backed-up data. Click the <span class="material-icons">arrow_right</span> arrow to the left of the folder icon and at each dataset or directory to reach the storage location to use for this task. <br> Enter <code>/<i>name</i></code>, where *name* is a folder that does not exist, to create a new folder in the bucket. |

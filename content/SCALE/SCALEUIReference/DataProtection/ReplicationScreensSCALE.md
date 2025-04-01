@@ -117,7 +117,7 @@ The **What and Where** screen shows settings for both the source and destination
 The **[Encryption](#encryption-setting-options)** and **[SSH Connection](#ssh-settings)** options show when the source or destination is set to **On a Different System**.
 Encryption applies another layer of protection to the data transfer, it is not the encryption of the data stored or the dataset.
 You can use an existing SSH connection created using the **Credentials > Backup Credentials > SSH Connection** screen or [create a new connection](#new-ssh-connection) through the replication task wizard or screens.
-See[Configure SSH]({{< relref "AddSSHConnectionKeyPair.md" >}}) for more information on adding a **Backup Credential** SSH credentials.
+See[Configure SSH]({{< relref "AddSSHConnectionKeyPair" >}}) for more information on adding a **Backup Credential** SSH credentials.
 
 Settings showing on the wizard screen change based on the **[Source Location](#source-and-destination-options)** and **[Destination Location](#destination-location-setting-options)** option selected. 
 **On this System** (local replication) and **On a Different System** (remote replication) show settings that apply to or are needed to set up that type of replication.
@@ -281,7 +281,7 @@ These setting options display in addition to the two options displayed when **Tr
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **SSH Connection** | Select a connection created and saved in **Credentials > Backup Credentials > SSH Connections**. If a connection does not display on the the dropdown list, exit the task creation screen. Open **Credentials > Backup Credentials** and [add an SSH connection]({{< relref "AddSSHConnectionKeyPair.md" >}}). |
+| **SSH Connection** | Select a connection created and saved in **Credentials > Backup Credentials > SSH Connections**. If a connection does not display on the the dropdown list, exit the task creation screen. Open **Credentials > Backup Credentials** and [add an SSH connection]({{< relref "AddSSHConnectionKeyPair" >}}). |
 | **Stream Compression** | Select a compression algorithm from the dropdown list to reduce the size of the data being replicated. Only appears when SSH is chosen as the **Transport** type. |
 | **Limit (Examples: 500 KiB, 500M, 2 TB)**| Enter the number of bytes per second to limit replication speed to this number of bytes per second. |
 {{< /truetable >}}
@@ -296,7 +296,7 @@ These setting options display in addition to the two options displayed when **Tr
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **SSH Connection** | Select a connection created and saved in **Credentials > Backup Credentials > SSH Connections**. If a connection does not display on the dropdown list, exit the task creation screen. Open **Credentials > Backup Credentials** and [add an SSH connection]({{< relref "AddSSHConnectionKeyPair.md" >}}). |
+| **SSH Connection** | Select a connection created and saved in **Credentials > Backup Credentials > SSH Connections**. If a connection does not display on the dropdown list, exit the task creation screen. Open **Credentials > Backup Credentials** and [add an SSH connection]({{< relref "AddSSHConnectionKeyPair" >}}). |
 | **Netcat Active Side** | Select the option for the system that opens ports from the dropdown list. Options are **Local** or **Remote**. Establishing a connection requires that one of the connection systems has open TCP ports. Consult your IT department to determine which systems are allowed to open ports. |
 | **Netcat Active Side Listen Address** | Enter the IP address on which the connection Active Side listens. Defaults to 0.0.0.0. |
 | **Netcat Active Side Min Port** | Enter the lowest port number of the active side listen address that is open to connections. |

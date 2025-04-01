@@ -14,7 +14,7 @@ keywords:
 ---
 
 In TrueNAS, user accounts allow flexibility for accessing shared data.
-Typically, administrators create users and assign them to [groups]({{< relref "ManageLocalGroups.md" >}}).
+Typically, administrators create users and assign them to [groups]({{< relref "ManageLocalGroups" >}}).
 Doing so makes tuning permissions for large numbers of users more efficient.
 
 When the network uses a directory service, import the existing account information using the instructions in [Directory Services]({{< relref "/SCALE/SCALEUIReference/Credentials/DirectoryServices" >}}).
@@ -38,7 +38,7 @@ TrueNAS hides all built-in users (except root) by default. Click the toggle **Sh
 TrueNAS 24.04 or newer supports administrator privileges for role-based administrator accounts.
 Users can create new administrator accounts with limited privileges based on their needs.
 Predefined administrator roles are read-only, share admin, and the default full access local administrator account.
-See [Using Administrator Logins]({{< relref "adminroles.md" >}}) for more information.
+See [Using Administrator Logins]({{< relref "adminroles" >}}) for more information.
 
 {{< include file="/static/includes/AddAdminGroup.md" >}}
 
@@ -117,7 +117,7 @@ Always keep a backup of an SSH public key if you are using one.
 
 As of TrueNAS 24.04, the **Shell** setting defaults to **nologin** for read-only and sharing administrators, which means they cannot access the **Shell** screen.
 
-Select the [shell]({{< relref "LocalUsersScreensSCALE.md" >}}) option for the admin user from the **Shell** dropdown list.
+Select the [shell]({{< relref "LocalUsersScreensSCALE" >}}) option for the admin user from the **Shell** dropdown list.
 Options are **nologin**, **TrueNAS CLI**, **TrueNAS Console**, **sh**, **bash**, **rbash**, **dash**, **tmux**, and **zsh**.
 
 To disable all password-based functionality for the account, select **Lock User**. Clear to unlock the user.
@@ -144,7 +144,7 @@ Click **Save**. TrueNAS creates a new home directory for the user.
 
 To edit an existing user account, go to **Credentials > Users**.
 Click anywhere on the user row to expand the user entry, then click **Edit** to open the **Edit User** configuration screen.
-See [Local User Screens]({{< relref "LocalUsersScreensScale.md" >}}) for details on all settings.
+See [Local User Screens]({{< relref "LocalUsersScreensScale" >}}) for details on all settings.
 
 ## Utilizing API Keys Feature
 

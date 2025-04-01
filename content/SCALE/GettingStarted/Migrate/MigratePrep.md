@@ -22,7 +22,7 @@ keywords:
 Read this article before you attempt to migrate your FreeBSD-based system to a Linux-based TrueNAS version.
 {{< hint type="warning" title="Using USB Devices for Backups" >}}
 We strongly recommend not using USB flash drives or USB-attached drives for backups as these can have issues, including with recovering backed-up files.
-For more information on using USB drives and devices in general, read the [Hardware Guide]({{< relref "scalehardwareguide.md" >}}).
+For more information on using USB drives and devices in general, read the [Hardware Guide]({{< relref "scalehardwareguide" >}}).
 If you must use a USB-type device, verify you can access files on the device before you migrate.
 {{< /hint >}}
 {{< enterprise >}}
@@ -86,7 +86,7 @@ Please contact Support for assistance!
 
    FreeBSD and Linux use different nomenclature for network interfaces, bridges, LAGGs, and VLANs.
    Because of the difference, network settings can either get lost or not transfer which means you have no network connectivity.
-   See [Component Naming]({{< relref "ComponentNaming.md" >}}) for more information.
+   See [Component Naming]({{< relref "ComponentNaming" >}}) for more information.
 
    When using a TrueNAS Enterprise system from iXsystems, refer to the network port ID manuals of your [TrueNAS Systems](https://www.truenas.com/docs/hardware/) to find the network port assignments in TrueNAS.
    When using custom hardware for TrueNAS, refer to the manual or documentation provided with your system or locate this information on your server hardware and take note of it.

@@ -1,6 +1,6 @@
 &NewLine;
 
-Enter <b>https://<i>10.123.12.100</i>{0...3}:30000/data{1...4}</b> in the field if [configuring MNMD]({{< relref "ConfigMinioEnterpriseMNMD.md" >}}).
+Enter <b>https://<i>10.123.12.100</i>{0...3}:30000/data{1...4}</b> in the field if [configuring MNMD]({{< relref "ConfigMinioEnterpriseMNMD" >}}).
 The last number in the final octet of the IP address number is the first number in the **{0...3}** string.
 Separate the numbers in the curly brackets with three dots.
 

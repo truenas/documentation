@@ -54,7 +54,7 @@ Use this function to create an API key for this purpose.
 
 Click **API Docs** to access the API documentation portal with information on TrueNAS API commands.
 
-See [API Keys]({{< relref "/SCALE/SCALEUIReference/TopToolbar/Settings/APIKeysScreen.md" >}}) for more information on adding or managing API keys.
+See [API Keys]({{< relref "/SCALE/SCALEUIReference/TopToolbar/Settings/APIKeysScreen" >}}) for more information on adding or managing API keys.
 {{< /expand >}}
 
 {{< expand "Guide and About" "v" >}}

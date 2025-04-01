@@ -8,7 +8,7 @@ tags:
 - iscsi
 ---
 
-To get started with iSCSI shares, make sure you have already created a [zvol]({{< relref "AddManageZvols.md" >}}) or a [dataset]({{< relref "DatasetsSCALE.md" >}}) with at least one file to share.
+To get started with iSCSI shares, make sure you have already created a [zvol]({{< relref "AddManageZvols" >}}) or a [dataset]({{< relref "DatasetsSCALE" >}}) with at least one file to share.
 
 Go to **Shares** and click **Configure** in the **Block (iSCSI) Shares Targets** window. You can either use the creation wizard or set one up manually.
 
@@ -117,7 +117,7 @@ Click on the **Block (iSCSI) Share Targets** widget header to open the individua
       
       Select the authentication method from the dropdown list.
       **None** allows anonymous discovery. **CHAP** uses one-way authentication. **Mutual CHAP** uses two-way authentication.
-      For more information on authentication methods, see [iSCSI Screens]({{< relref "iSCSISharesScreens.md" >}}).
+      For more information on authentication methods, see [iSCSI Screens]({{< relref "iSCSISharesScreens" >}}).
 
       Select a portal ID from the **Initiator Group ID** dropdown list.
 
@@ -219,7 +219,7 @@ Go to **Shares** and click the **Block (iSCSI) Shares Targets** widget header to
       
    Select the authentication method from the dropdown list.
    **None** allows anonymous discovery. **CHAP** uses one-way authentication. **Mutual CHAP** uses two-way authentication.
-   For more information on authentication methods, see [iSCSI Screens]({{< relref "iSCSISharesScreens.md" >}}).
+   For more information on authentication methods, see [iSCSI Screens]({{< relref "iSCSISharesScreens" >}}).
 
    Select a portal ID from the **Initiator Group ID** dropdown list.
 

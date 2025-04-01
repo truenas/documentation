@@ -23,7 +23,7 @@ keywords:
 A TrueNAS *dataset* is a file system within a data storage pool.
 Datasets can contain files, directories, and child datasets, and have individual permissions or flags.
 
-Datasets can also be [encrypted]({{< relref "EncryptionSCALE.md" >}}).
+Datasets can also be [encrypted]({{< relref "EncryptionSCALE" >}}).
 In TrueNAS 22.12.3 or later, the TrueNAS UI requires encryption for child datasets created in encrypted parent datasets, but you can change the encryption type from key to passphrase.
 You can create an encrypted dataset if the parent is not encrypted and set the type as either key or passphrase.
 
@@ -44,7 +44,7 @@ We recommend choosing a compression algorithm that balances disk performance wit
 
 ### Setting Dataset Quotas
 You can set dataset quotas while adding datasets using the quota management options in the **Add Dataset** screen under **Advanced Options**.
-You can also add or edit quotas for an existing dataset, by clicking **Edit** on the **Dataset Space Management** widget to open the **[Capacity Settings]({{< relref "CapacitySettingsSCALE.md" >}})** screen.
+You can also add or edit quotas for an existing dataset, by clicking **Edit** on the **Dataset Space Management** widget to open the **[Capacity Settings]({{< relref "CapacitySettingsSCALE" >}})** screen.
 
 {{< trueimage src="/images/SCALE/Datasets/AddDatasetQuotasManagement.png" alt="Add Dataset Advanced Quota Options" id="Add Dataset Advanced Quota Options" >}}
 
@@ -68,17 +68,17 @@ When setting quotas or changing the alert percentages for both the parent datase
 Enter a value in **Reserved space for this dataset** to set aside additional space for datasets that contain logs, which could eventually take all available free space.
 Enter **0** for unlimited.
 
-For more information on quotas, see [Managing User or Group Quotas]({{< relref "ManageQuotas.md" >}}).
+For more information on quotas, see [Managing User or Group Quotas]({{< relref "ManageQuotas" >}}).
 
 ### Changing Dataset Inherited Values
 By default, many dataset options inherit their values from the parent dataset.
 When settings on the **Advanced Options** screen are set to**Inherit** the dataset uses the setting from the parent dataset.
-For example, the [Encryption]({{< relref "EncryptionScale.md" >}}) or **ACL Type** settings.
+For example, the [Encryption]({{< relref "EncryptionScale" >}}) or **ACL Type** settings.
 
 To change any setting that datasets inherit from the parent, select an available option other than **Inherit**.
 
 ### Setting Datasets Access Controls
-For information on ACL settings see [Setting Up Permissions]({{< relref "PermissionsSCALE.md" >}}).
+For information on ACL settings see [Setting Up Permissions]({{< relref "PermissionsSCALE" >}}).
 
 ### Adding Deduplication
 Deduplication is found on the **Add Datasets Advanced Settings** screen.
@@ -109,19 +109,19 @@ Complete any other setting changes you want to make, then click **Save**.
 
 
 ## Creating a Dataset for a Fusion Pool
-First, add the [pool with a Metadata VDEV]({{< relref "FusionPoolsSCALE.md" >}}).
+First, add the [pool with a Metadata VDEV]({{< relref "FusionPoolsSCALE" >}}).
 
 {{< trueimage src="/images/SCALE/Storage/AddMetadataVDEV.png" alt="Add Metadata VDEV" id="Add Metadata VDEV" >}}
 
 Select the root dataset of the pool (with the metadata VDEV), then click **Add Dataset** to add the dataset.
-Click **Advanced Options**. Enter the dataset name, select the **Dataset Preset**, then scroll down to **Metadata (Special) Small Block Size** setting to set a threshold block size for including small file blocks into the [special allocation class (fusion pools)]({{< relref "FusionPoolsScale.md" >}}).
+Click **Advanced Options**. Enter the dataset name, select the **Dataset Preset**, then scroll down to **Metadata (Special) Small Block Size** setting to set a threshold block size for including small file blocks into the [special allocation class (fusion pools)]({{< relref "FusionPoolsScale" >}}).
 
 {{< trueimage src="/images/SCALE/Datasets/AddDatasetFusionPoolMetadataOptions.png" alt="Add Dataset for Fusion Pool" id="Add Dataset for Fusion Pool" >}}
 
 Blocks smaller than or equal to this value are assigned to the special allocation class while greater blocks are assigned to the regular class.
 Valid values are zero or a power of two from 512B up to 1M.
 The default size **0** means no small file blocks are allocated in the special class.
-Enter a threshold block size for including small file blocks into the [special allocation class (fusion pools)]({{< relref "FusionPoolsScale.md" >}}).
+Enter a threshold block size for including small file blocks into the [special allocation class (fusion pools)]({{< relref "FusionPoolsScale" >}}).
 
 ## Managing Datasets
 After creating a dataset, users can manage additional options from the **Datasets** screen.
@@ -140,13 +140,13 @@ To modify ownership, configure new or change existing ACL entries, click **Edit*
 To edit a POSIX ACL type, click **Edit** on the **Permissions** widget to open the **Unix Permissions Editor** screen.
 To access the **Edit ACL** screen for POSIX ACLs, select **Create a custom ACL** on the **Select a preset ACL** window.
 
-For more information, see the [Setting Up Permissions]({{< relref "PermissionsSCALE.md" >}}) article.
+For more information, see the [Setting Up Permissions]({{< relref "PermissionsSCALE" >}}) article.
 
 ### Deleting a Dataset
 Select the dataset on the tree table, then click **Delete** on the **Dataset Details** widget.
 This opens a delete window where you enter the dataset path (root/parent/child) and select **Confirm** to delete the dataset, all stored data, and any snapshots from TrueNAS. 
 
-To delete a root dataset, use the **Export/Disconnect** option on the **[Storage Dashboard]({{< relref "ManagePoolsSCALE.md" >}})** screen to delete the pool.
+To delete a root dataset, use the **Export/Disconnect** option on the **[Storage Dashboard]({{< relref "ManagePoolsSCALE" >}})** screen to delete the pool.
 
 {{< hint type=warning >}}
 Deleting datasets can result in unrecoverable data loss!

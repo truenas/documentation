@@ -32,7 +32,7 @@ You also have the option to mount datasets inside the container for other Chia s
 You can allow TrueNAS to create these storage volumes, or you can create and name datasets according to your intended use or as sequentially-named datasets (i.e., *volume1*, *volume2*, etc.) for each extra volume to mount inside the container.
 
 Create all datasets before you begin the app installation process if using existing datasets and the host path option.
-See [Creating a Dataset]({{< relref "DatasetsSCALE.md" >}}) for information on correctly configuring the datasets.
+See [Creating a Dataset]({{< relref "DatasetsSCALE" >}}) for information on correctly configuring the datasets.
 
 ## Installing the TrueNAS Chia App
 To install the TrueNAS Chia app you:
@@ -212,7 +212,7 @@ To change the port numbers, enter an available number within the range 9000-6553
 
 ### Storage Configuration
 You can allow TrueNAS to create the datasets for Chia plots and configuration storage, or you can create the datasets you want to use as storage volumes for the app or to mount in the container.
-If manually creating and using datasets, follow the instructions in [Creating a Dataset]({{< relref "DatasetsSCALE.md" >}}) to correctly configure the datasets.
+If manually creating and using datasets, follow the instructions in [Creating a Dataset]({{< relref "DatasetsSCALE" >}}) to correctly configure the datasets.
 Add one dataset named **config** and the another named **plots**.
 If also mounting datasets in the container, add and name these additional storage volumes according to your intended use or use *volume1*, *volume2*, etc. for each additional volume.
 

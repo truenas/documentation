@@ -40,7 +40,7 @@ TrueNAS does not need advance preparation.
 If not using the default user and group to manage the application, create a new user (and group) and take note of the IDs.
 
 You can allow TrueNAS to create the two datasets Prometheus requires automatically during app installation.
-Or before beginning app installation, [create the datasets]({{< relref "DatasetsSCALE.md" >}}) named **data** and **config** to use in the **Storage Configuration** section during installation.
+Or before beginning app installation, [create the datasets]({{< relref "DatasetsSCALE" >}}) named **data** and **config** to use in the **Storage Configuration** section during installation.
 
 ## Installing the Prometheus Application
 

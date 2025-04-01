@@ -51,7 +51,7 @@ The **Console** widget displays the current console settings for TrueNAS.
 
 ### Console Configuration Screen
 
-**Console** settings configure how the [Console Setup menu]({{< relref "ConsoleSetupMenuSCALE.md" >}}) displays, the serial port it uses and the port speed, and the banner users see when accessing it.
+**Console** settings configure how the [Console Setup menu]({{< relref "ConsoleSetupMenuSCALE" >}}) displays, the serial port it uses and the port speed, and the banner users see when accessing it.
 
 {{< trueimage src="/images/SCALE/SystemSettings/ConsoleConfigScreen.png" alt="Console Config Screen" id="Console Config Screen" >}}
 

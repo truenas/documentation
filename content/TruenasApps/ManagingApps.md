@@ -73,8 +73,8 @@ The **ix-apps** dataset is the base-level storage volume for app data.
 Additionally, configuration options for individual apps include one or more of the following storage types: ixVolume datasets, host path datasets, SMB share volumes, and Tmpfs.
 
 If an application requires specific host path datasets, create the datasets before installing the application.
-For example, the [Nextcloud]({{< relref "/truenasapps/stableapps/nextcloud.md" >}}) app requires three datasets: **html** for app data, **data** for user data, and **postgres_data** for the database data storage volume.
-[Create these datasets]({{< relref "DatasetsSCALE.md" >}}) before installing the app.
+For example, the [Nextcloud]({{< relref "/truenasapps/stableapps/nextcloud" >}}) app requires three datasets: **html** for app data, **data** for user data, and **postgres_data** for the database data storage volume.
+[Create these datasets]({{< relref "DatasetsSCALE" >}}) before installing the app.
 See individual app information screens and app tutorials for more information.
 
 {{< include file="/static/includes/apps/AppsDatasets.md" >}}
@@ -125,7 +125,7 @@ Refer to individual tutorials in the [Stable]({{< relref "/TruenasApps/StableApp
 
 Users with compatible hardware can pass through a GPU device to an application for use in hardware acceleration.
 
-GPU devices can be available for the host operating system (OS) and applications or can be [isolated for use in a Virtual Machine (VM)]({{< relref "managegpuscale.md" >}}).
+GPU devices can be available for the host operating system (OS) and applications or can be [isolated for use in a Virtual Machine (VM)]({{< relref "managegpuscale" >}}).
 A single GPU cannot be shared between the OS/applications and a VM.
 
 The GPU passthrough option shows in the **Resources Configuration** section of the application installation wizard screen or the **Edit** screen for a deployed application.
@@ -148,7 +148,7 @@ To check the logs for information on deployment issues encountered, click <span 
 
 {{< include file="/static/includes/apps/AppsCustomApp.md" >}}
 
-See [Installing Custom Applications]({{< relref "UsingCustomApp.md" >}}) for a detailed tutorial with deployment examples.
+See [Installing Custom Applications]({{< relref "UsingCustomApp" >}}) for a detailed tutorial with deployment examples.
 
 ## Managing Installed Apps
 

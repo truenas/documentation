@@ -28,7 +28,7 @@ Take note of any required environment variables, optional variables you want to 
 If your application requires specific directory paths, datasets, or other storage arrangements, configure them before you start the **Install Custom App** wizard.
 
 You cannot save settings and exit the configuration wizard to create data storage or directories in the middle of the process.
-If you are unsure about any configuration settings, review the [Install Custom App Screen UI reference article]({{< relref "InstallCustomAppScreens.md" >}}) before creating a new container image.
+If you are unsure about any configuration settings, review the [Install Custom App Screen UI reference article]({{< relref "InstallCustomAppScreens" >}}) before creating a new container image.
 
 To create directories in a dataset on TrueNAS, before you begin installing the container, open the TrueNAS CLI and enter `storage filesystem mkdir path="/PATH/TO/DIRECTORY"`.
 {{< /hint >}}
@@ -38,7 +38,7 @@ To create directories in a dataset on TrueNAS, before you begin installing the c
 ## Setting up App Storage
 
 To set up a new container image, first, determine if you want the container to use additional TrueNAS datasets.
-If yes, [create the dataset(s)]({{< relref "DatasetsSCALE.md" >}}) before you begin the app installation.
+If yes, [create the dataset(s)]({{< relref "DatasetsSCALE" >}}) before you begin the app installation.
 
 The custom app installation wizard provides four options for mounting app storage, see below.
 When deploying a custom app via YAML, refer to the Docker [Storage](https://docs.docker.com/engine/storage/) documentation for guidance on mount options.

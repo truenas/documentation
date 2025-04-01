@@ -25,7 +25,7 @@ The following steps are a list of configuration prerequisites you have completed
 
 The primary network interface is configured as part of the installation process.
 Go to **Network > Global Configuration** screen in the TrueNAS web UI to determine if the default gateway, host name, domain, and DNS name servers have been configured correctly.
-See [Console Setup Menu Configuration]({{< relref "ConsoleSetupMenuScale.md" >}}) for more information on network settings.
+See [Console Setup Menu Configuration]({{< relref "ConsoleSetupMenuScale" >}}) for more information on network settings.
 
 {{< include file="static/includes/ABridgeToSellYou.md" >}}
 
@@ -35,30 +35,30 @@ You can configure a virtual LAN (VLAN) to route traffic for your VMs.
 VLAN benefits include the reduction of broadcast traffic and the ability to group resources in different physical locations into a broadcast domain.
 VLANs virtually segment a network.
 Different VLANs can communicate with each other using layer 3 devices.
-See [Setting Up a Network VLAN]({{< relref "SettingUpVLAN.md" >}}) for more information on creating virtual LANs (VLAN).
+See [Setting Up a Network VLAN]({{< relref "SettingUpVLAN" >}}) for more information on creating virtual LANs (VLAN).
 
 ### Storage Configuration
 
 Storage pool creation is part of the initial process of setting up storage.
 A TrueNAS dataset is a file system within a data storage pool.
-See [Setting Up Storage]({{< relref "SetUpStorageScale.md" >}}) to review storage pool creation and [Adding and Managing Datasets]({{< relref "DatasetsSCALE.md" >}}) for information on dataset configuration.
+See [Setting Up Storage]({{< relref "SetUpStorageScale" >}}) to review storage pool creation and [Adding and Managing Datasets]({{< relref "DatasetsSCALE" >}}) for information on dataset configuration.
 
 ### Shares Configuration
 
 After creating the pool and datasets, set up shares to enable data access and sharing.
-Different types of data sharing methods are discussed in [Setting Up Data Sharing]({{< relref "SetUpSharing.md" >}}).
+Different types of data sharing methods are discussed in [Setting Up Data Sharing]({{< relref "SetUpSharing" >}}).
 You should investigate more specific coverage of each share based on your use case.
 
-[SMB Shares Screens]({{< relref "SMBSharesScreens.md" >}}) and [Setting Up SMB Home Shares]({{< relref "SMBPrivateDatasetShare.md" >}}) provide a good introduction as to how TrueNAS handles SMB shares.
+[SMB Shares Screens]({{< relref "SMBSharesScreens" >}}) and [Setting Up SMB Home Shares]({{< relref "SMBPrivateDatasetShare" >}}) provide a good introduction as to how TrueNAS handles SMB shares.
 
-See [Adding NFS Shares]({{< relref "AddingNFSShares.md" >}}) for information on creating a basic NFS share.
+See [Adding NFS Shares]({{< relref "AddingNFSShares" >}}) for information on creating a basic NFS share.
 Adjust access permissions using the advanced options.
 
 ### Directory Services Configuration
 
 Certain directory services must be set up as part of SMB and NFS share configuration.
-See [Active Directory Screen]({{< relref "/SCALE/SCALEUIReference/credentials/directoryservices/ActiveDirectory.md" >}}) for a better understanding of how to configure Active Directory and [Configuring Kerberos]({{< relref "ConfigKerberosSCALE.md" >}}) for an outline of required Kerberos information.
-For LDAP best practices see [Configuring LDAP]({{< relref "ConfigLDAPSCALE.md" >}}).
+See [Active Directory Screen]({{< relref "/SCALE/SCALEUIReference/credentials/directoryservices/ActiveDirectory" >}}) for a better understanding of how to configure Active Directory and [Configuring Kerberos]({{< relref "ConfigKerberosSCALE" >}}) for an outline of required Kerberos information.
+For LDAP best practices see [Configuring LDAP]({{< relref "ConfigLDAPSCALE" >}}).
 
 ## Virtualization Configuration
 
@@ -74,7 +74,7 @@ Software requirements include an installer for the OS you intend to install on t
 A TrueNAS storage pool is required.
 We recommend you create additional datasets beneath the storage pool to organize your VM data further.
 
-Review [Virtualization Screens]({{< relref "InstancesScreens.md" >}}) to determine requirements for VM installation.
+Review [Virtualization Screens]({{< relref "InstancesScreens" >}}) to determine requirements for VM installation.
 See [Adding and Managing VMs]({{< relref "/SCALE/scaletutorials/instances" >}}) for more information on adding or managing VMs.
 
 ## Application Configuration
@@ -92,7 +92,7 @@ After an Apps storage pool is configured, the status changes to <span class="ico
 Use **Discover Apps** to view available applications.
 See [Apps tutorials]({{< relref "/TruenasApps" >}}) and [Apps reference guide]({{< relref "/SCALE/SCALEUIReference/Apps" >}}) for more information.
 
-For custom applications, [Install Custom App]({{< relref "InstallCustomAppScreens.md" >}}) details each field on the **Install Custom App** screen.
+For custom applications, [Install Custom App]({{< relref "InstallCustomAppScreens" >}}) details each field on the **Install Custom App** screen.
 Before beginning a custom application installation, determine the following information:
 
 * Container host networking requirements, including host interface

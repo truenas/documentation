@@ -51,7 +51,7 @@ If your system only has a single physical interface, and you prefer to manually 
    {{< trueimage src="/images/SCALE/Virtualization/InstanceAddNIC.png" alt="Add NIC" id="Add NIC" >}}
 
 You can now access your TrueNAS storage from the container.
-You might have to set up [shares]({{< relref "/SCALE/SCALEUIReference/Shares" >}}) or [users]({{< relref "ManageLocalUsersSCALE.md" >}}) with home directories to access certain files.
+You might have to set up [shares]({{< relref "/SCALE/SCALEUIReference/Shares" >}}) or [users]({{< relref "ManageLocalUsersSCALE" >}}) with home directories to access certain files.
 
 ## Assigning a Secondary NIC: Multiple Physical Interfaces
 

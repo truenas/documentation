@@ -37,7 +37,7 @@ TrueNAS offers one deployment option for setting up Nextcloud, a Linux Debian-ba
 The instructions in this article apply to these TrueNAS 24.10 and later releases.
 
 TrueNAS offered a FreeBSD-based TrueNAS Nextcloud plugin in releases 13.0 and 13, but it is no longer available in TrueNAS 13.0 and is soon to be unavailable in 13.3. Refer to release notes for more information on upcoming and current changes.
-For more information on the FreeBSD-based Nextcloud plugin, see [Nextcloud]({{< relref "/solutions/integrations/nextcloud.md" >}}).
+For more information on the FreeBSD-based Nextcloud plugin, see [Nextcloud]({{< relref "/solutions/integrations/nextcloud" >}}).
 
 
 
@@ -116,7 +116,7 @@ Accept the remaining defaults in the **Nextcloud Configuration** section. Howeve
 {{< expand "Nextcloud Cron Jobs" "v" >}}
 NextCloud cron jobs only run while the app is running. If you stop the app, the cron job(s) do not run until you start the app again.
 
-For more information on formatting and using cron jobs, see [Managing Cron Jobs]({{< relref "ManageCronJobsSCALE.md" >}}).
+For more information on formatting and using cron jobs, see [Managing Cron Jobs]({{< relref "ManageCronJobsSCALE" >}}).
 {{< /expand >}}
 
 The TrueNAS app is configured with all the required environment variables, but if you want to customize the container, click **Add** to the right of **Additional Environment Variables** for each to enter the variable(s) and values(s).
@@ -267,7 +267,7 @@ Upgrading to 24.10 migrates earlier Nextcloud Kubernetes app deployments to the 
 You can configure ACL permissions for the required dataset in the **Install Nextcloud** wizard, or from the **Datasets** screen any time after adding the datasets.
 
 {{< expand "Creating App Datasets" "v" >}}
-To create the Nextcloud app datasets, go to **Datasets**, select the dataset you want to use as the parent dataset, then click **Add Dataset** to [add a dataset]({{< relref "DatasetsScale.md" >}}).
+To create the Nextcloud app datasets, go to **Datasets**, select the dataset you want to use as the parent dataset, then click **Add Dataset** to [add a dataset]({{< relref "DatasetsScale" >}}).
 In this example, we create the Nextcloud datasets under the root parent dataset **tank**.
 
 Enter **nextcloud** in **Name**, and select **Apps** as the **Dataset Preset**.

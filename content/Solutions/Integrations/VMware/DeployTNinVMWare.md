@@ -19,13 +19,13 @@ Before starting configuration work in VMWare:
 
 * Download the <file>.iso</file> file from the [TrueNAS.com downloads page](https://www.truenas.com/download-truenas-scale/).
 
-* Visit the TrueNAS [hardware guide]({{< relref "/scale/gettingstarted/scalehardwareguide.md" >}}) and take note of the minimum system requirements.
+* Visit the TrueNAS [hardware guide]({{< relref "/scale/gettingstarted/scalehardwareguide" >}}) and take note of the minimum system requirements.
   Note the information in the **Memory** and **Storage Device Sizing** sections.
 
   The hardware guide provides guidance on how much memory, the number of CPUs, and drive size you need to configure.
 
 * Determine your data storage requirements. Consider the number of storage pools and the type of storage you need for your deployment or how you plan to use the TrueNAS.
-  See [Setting Up Storage]({{< relref "/SCALE/GettingStarted/Configure/SetUpStorageScale.md" >}}) for information on pool layouts.
+  See [Setting Up Storage]({{< relref "/SCALE/GettingStarted/Configure/SetUpStorageScale" >}}) for information on pool layouts.
 
   Determine the number of virtual hard drives (vmdks) you want to create when setting up your virtual machine.
   For example, if you want a mirror layout you need to add a minimum of three drives, one for the boot drive and two for the mirrored storage.
@@ -150,7 +150,7 @@ To create the virtual machine for your TrueNAS, from the **Virtual Machines** sc
    Click **Next** to finish creating the VM. You can use the **Edit** option later to add more drives to support your TrueNAS deployment.
 
    Each storage layout has different disk minimum disk requirements.
-   See [Setting Up Storage]({{< relref "/SCALE/GettingStarted/Configure/SetUpStorageScale.md" >}}) for information on pool layouts.
+   See [Setting Up Storage]({{< relref "/SCALE/GettingStarted/Configure/SetUpStorageScale" >}}) for information on pool layouts.
 
 4. Review the **Ready to Complete** screen to verify the settings are correct for your deployment.
 
