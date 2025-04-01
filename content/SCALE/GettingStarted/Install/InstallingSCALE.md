@@ -17,10 +17,10 @@ keywords:
 
 After you [download](https://www.truenas.com/download-tn-scale/) the <kbd>.iso</kbd> file, you can start installing TrueNAS!
 
-This article describes verifying the <kbd>.iso</kbd> file and installing TrueNAS using that file, and selecting the type of installation as either on [physical hardware](#installing-on-physical-hardware) or a [virtual machine (VM)](#installing-on-a-virtual-machine).
+This article describes verifying the <kbd>.iso</kbd> file, then installing TrueNAS using that file, and selecting the type of installation as either on [physical hardware](#installing-on-physical-hardware) or a [virtual machine (VM)](#installing-on-a-virtual-machine).
 
 {{< enterprise >}}
-TrueNAS Enterprise customers should receive their systems already installed and ready for UI configuration. If there are any issues with that require you to install or re-install TrueNAS, contact TrueNAS Enterprise Support for assistance.
+TrueNAS Enterprise customers should receive their systems already installed and ready for UI configuration. If any issues require you to install or re-install TrueNAS, contact TrueNAS Enterprise Support for assistance.
 
 Enterprise customers with High Availability (HA) systems should not attempt to re-install their systems on their own. The dual controller install process is complicated and the risk of causing serious network issues is high. Contact TrueNAS Enterprise Support for assistance!
 
@@ -30,7 +30,7 @@ Enterprise customers with High Availability (HA) systems should not attempt to r
 {{< /enterprise >}}
 
 ## ISO Verification
-The iXsystems Security Team cryptographically signs TrueNAS <kbd>.iso</kbd> files so that users can verify the integrity of their downloaded file.
+The iXsystems Security Team cryptographically signs TrueNAS <kbd>.iso</kbd> files so that users can verify the integrity of their downloaded files.
 This section demonstrates how to verify an <kbd>.iso</kbd> file using the [Pretty Good Privacy (PGP)](https://tools.ietf.org/html/rfc4880) and [SHA256](https://tools.ietf.org/html/rfc6234) methods.
 
 ### Performing PGP ISO Verification
@@ -38,7 +38,7 @@ You need an OpenPGP encryption application for this method of ISO verification.
 {{< expand "Click here for the verification process." "v" >}}
 
 1. Obtain an OpenPGP encryption application to use.
-   There are many free applications available, but the OpenPGP group provides a list of available software for different operating systems at https://www.openpgp.org/software/.
+   There are many free applications available. The OpenPGP group provides a list of available software for different operating systems at https://www.openpgp.org/software/.
    The examples in this section show verifying the TrueNAS <kbd>.iso</kbd> using [gnupg2](https://gnupg.org/software/index.html) in a command prompt, but [Gpg4win](https://www.gpg4win.org/) is also a good option for Windows users.
 
 2. To verify the <kbd>.iso</kbd> source, go to https://www.truenas.com/download-tn-scale/, expand the **Security** option,
@@ -74,7 +74,7 @@ You need an OpenPGP encryption application for this method of ISO verification.
    This response means the signature is correct but still untrusted.
 
 4. Go back to the browser page that has the **PGP Public key**.
-   Open and manually confirm that the key is issued for `IX SecTeam <security-officer@ixsystems.com>` (iX Security Team) on October 15, 2019 and is signed by an iXsystems account.
+   Open and manually confirm that the key is issued for `IX SecTeam <security-officer@ixsystems.com>` (iX Security Team) on October 15, 2019, and is signed by an iXsystems account.
 {{< /expand >}}
 
 ### Using SHA256 Verification
@@ -96,12 +96,12 @@ Different checksum values indicate a corrupted installer file that you should no
 You can install TrueNAS on either physical hardware or a virtual machine.
 
 {{< hint type=important >}}
-Prior to starting the update process, confirm that the system storage has enough space to handle the update.
+Before starting the update process, confirm that the system storage has enough space to handle the update.
 The update stops if there is insufficient space to complete.
 {{< /hint >}}
 
 ### Installing on Physical Hardware
-TrueNAS is very flexible and can run on any x86_64 compatible (Intel or AMD) processor.
+TrueNAS is flexible and can run on any x86_64 compatible (Intel or AMD) processor.
 TrueNAS requires at least 8GB of RAM (more is better) and a 20GB Boot Device.
 
 #### Preparing the Install File
@@ -115,24 +115,57 @@ Start by making sure the USB stick connection path is correct.
 There are many ways to do this in Linux, but a quick option is to enter the command `lsblk -po +vendor,model` and note the path to the USB stick.
 This shows in the **NAME** column of the `lsblk` output.
 
-Next, use command `dd` to write the installer to the USB stick.
+Next, use the `dd` command to write the installer to the USB stick.
 
 {{< hint type=warning >}}
 Be very careful when using `dd`, as choosing the wrong `of=` device path can result in irretrievable data loss!
 {{< /hint >}}
 
-Enter command `dd status=progress if=path/to/.iso of=path/to/USB` in the CLI.
+Enter this command `dd status=progress if=path/to/.iso of=path/to/USB` in the CLI.
 
-If this results in a permission denied error, use command `sudo dd` with the same parameters and enter the administrator password.
+If this results in a permission denied error, use the command `sudo dd` with the same parameters and enter the administrator password.
+{{< /expand >}}
+
+TrueNAS allows using other methods to create boot media such as:
+* Ventoy for Windows and Linux operating systems
+* TINU for MacOS Operating systems
+* DiskMaker X for MacOS 
+* Rufus for Windows and Linux operating systems, or by creating a Windows VM in your Mac
+* Universal USB Installer (UUI) similar to Rufus
+* Your Universal Multiboot Installer (YUMI) for multiple operating systems
+* MultiBootUSB for Windows, Linux operating systems
+
+The following sections provide more information on a few of these options.
+
+{{< include file="static/includes/Ventoy.md" >}}
+
+{{< include file="static/includes/Rufus.md" >}}
+
+{{< expand "Using TINU" "v" >}}
+[TINU](https://github.com/ITzTravelInTime/TINU) is an open-source tool to create bootable MacOS installers.
+It creates bootable MacOS installers capable of running Apple MacOS.
+The program uses a GU for the `createinstallmedia` executable found in any MacOS installer app.
+This allows you to easily create MacOS install media without using the command line or Disk Utility, and it detects and prevents the most common errors when creating bootable MacOS installers
+
+Follow the instructions provided in the GUI to begin creating the bootable media.
+
+This program works with every MacOS installer app with the `creteinstallmedia` executable inside its internal resources folder. The program does not require special preparation, requirements are:
+* A computer that runs MacOS X Yosemite or later
+* A drive or partition to turn into a MacOS installer, of at least 8 GB (some MacOS releases require 9 GB or 12 Gb)
+* A copy of a ".ap" MacOS/Mac OS x installer
+
+To use:
+1. [Download a copy](https://github.com/ITzTravelInTime/TINU/releases) of the TINU app
+2. Launch the program and follow the instructions in the GUI.
 {{< /expand >}}
 
 #### Installing From the Device Media
 Before you begin:
 
 * Locate the hotkey defined by the manufacturer of your motherboard to use in this process.
-* Disable SecureBoot if your system supports it so or set it to **Other OS**, so you can boot to the install media.
+* Disable SecureBoot if your system supports it or set it to **Other OS**, so you can boot to the install media.
 
-With the installer added to a device (CD or USB), you can now install TrueNAS onto the desired system using the TrueNAS installer.
+With the installer added to a device (CD or USB), install TrueNAS onto the desired system using the TrueNAS installer.
 
 Insert the install media and restart or boot the system.
 At the motherboard splash screen, use the hotkey defined by your motherboard manufacturer to boot into the motherboard UEFI/BIOS.
@@ -145,7 +178,7 @@ If your system supports SecureBoot, and you have not disabled it or set it to **
 
 Select the install device as the boot drive, exit, and restart the system.
 If the USB stick is not shown as a boot option, try a different USB slot.
-Slots available for boot differs by hardware. For optimal performance, consider using NVMe S.M.A.R.T. tests to ensure the reliability of your storage devices before installation.
+Slots available for boot differ by hardware. For optimal performance, consider using NVMe S.M.A.R.T. tests to ensure the reliability of your storage devices before installation.
 
 #### Using the TrueNAS Installer
 {{< hint type=important >}}
@@ -158,15 +191,15 @@ After the system boots into the installer, follow these steps.
 {{< expand "TrueNAS Installer Instructions" "v" >}}
 {{< include file="/static/includes/SCALEInstallerProcedure.md" >}}
 
-After following the steps to install, restart the system and remove the install media.
+After following the installation steps, restart the system, and then remove the install media.
 
 {{< expand "Troubleshooting" "v">}}
 If the system does not boot into TrueNAS, there are several things you can check to resolve the situation:
 
-* Check to see if the system BIOS has an option to change the **USB emulation** from **CD/DVD/floppy** to **hard drive**.
-  If it still does not boot after making the change, check to see if the card/drive is UDMA compliant.
+* Check the system BIOS for an option to change **USB emulation** from **CD/DVD/floppy** to **hard drive**.
+  After making the change it still does not boot, check to see if the card/drive is UDMA compliant.
 * Check to see if the system BIOS supports **UEFI with BIOS emulation**.
-  If not, see if it has an option to boot using **legacy BIOS mode**.
+  If not, check for an option to boot using **legacy BIOS mode**.
 
 If the system starts to boot but hangs with this repeating error message: `run_interrupt_driven_hooks: still waiting after 60 seconds for xpt_config`, go into the system BIOS and look for an onboard device configuration for a `1394 Controller`.
 If present, disable that device and try booting again.
@@ -182,10 +215,10 @@ Because TrueNAS is built and provided as an <kbd>.iso</kbd> file, it works on al
 This section describes installing on a VM using [VMware Workstation Player](https://www.vmware.com/products/workstation-player/workstation-player-evaluation.html) on Windows.
 
 #### Minimum Virtual Machine Settings
-Regardless of virtualization application, use these minimum settings:
+Regardless of the virtualization application, use these minimum settings:
 
 * RAM: at least 8192MB (8GB)
-* DISKS: two virtual disks with at least 16GB, one for the operating system and boot environments and at least one additional virtual disk to use as data storage.
+* DISKS: two virtual disks with at least 16GB, one for the operating system and boot environments, and at least one additional virtual disk for data storage.
 * NETWORK: Use NAT, bridged, or host-only depending on your host network configuration.
 
 #### Networking Checks for VMWare
@@ -206,7 +239,7 @@ The procedure for creating a TrueNAS VM is the same for most hypervisors.
    * Point a bootable CD/DVD device in the virtual hardware to the TrueNAS installer image (this is usually an <kbd>.iso</kbd>).
 
    * Configure the virtual network card to allow your network to reach it.
-     Bridged mode is optimal as this treats the network card as one plugged into a simple switch on the existing network.
+     Bridged mode is optimal, as it treats the network card as if it is plugged into a simple switch on the existing network.
 
    * Identify the OS you plan to install on the VM. This is required by some products. The ideal option is **Debian 11 64 bit**.
      If not available, try options like Debian 11, Debian 64 bit, 64 bit OS, or other.
@@ -272,7 +305,7 @@ One disk is for the boot environment the other for data storage.
 
 4. Select **Store virtual disk as single file**.
 
-5. Enter a name and chose a location for the new virtual disk.
+5. Enter a name and choose a location for the new virtual disk.
 
 Repeat this process until enough disks are available for TrueNAS to create ideal storage pools.
 This depends on your specific TrueNAS use case.

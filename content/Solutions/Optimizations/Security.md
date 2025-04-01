@@ -55,14 +55,14 @@ The TCP ports and services that listen for external connections:
 |       443       |    TCP   |    WebDAV    |                 HTTPS access to files                |    Yes    |  Closed  |
 |       3260      |    TCP   |     iSCSI    |                 Block storage over IP                |  Optional |  Closed  |
 |       9000      |    TCP   |    S3 API    |                Object storage over IP                |    Yes    |  Closed  |
-|       837       |    TCP   |     Rsync    |                Remote synchronization                |  Optional |  Closed  |
+|       873       |    TCP   |     Rsync    |                Remote synchronization                |  Optional |  Closed  |
 |   Not defined   |    UDP   |   Wireguard  |               Point-to-point encryption              |    Yes    |  Closed  |
 |     161/162     |    TCP   |     SNMP     |               Simple Network Monitoring              |  Optional |  Closed  |
 {{< /truetable >}}
 
 ### Outbound Ports
 
-Outpound protocols do not listen for or accept external connections.
+Outbound protocols do not listen for or accept external connections.
 These protocols and ports are not a security risk and are usually allowed through firewalls.
 These protocols are considered *primary* and might need to be permitted through a firewall:
 
@@ -78,7 +78,7 @@ These protocols are considered *primary* and might need to be permitted through 
 ## Callouts to Websites
 
 Some elements of TrueNAS make external callouts to online locations.
-Manage these callout addresses as part of your general network configuration (i.e., TrueNAS and router allow/deny hosts, etc.) to further secure your system.
+Manage these callout addresses as part of your general network configuration (e.g., TrueNAS and router allow/deny hosts, etc.) to further secure your system.
 Callouts are grouped into several classes.
 
 {{< expand "All TrueNAS releases callouts" "v" >}}
@@ -105,12 +105,12 @@ Each plugin JSON excludes its own download and pkg update URL.
 {{< expand "Truenas Debian Linux-based systems app callouts" "v" >}}
 * Media content downloads from https://media.sys.truenas.net
 * TrueNAS apps index from https://github.com/truenas/apps. Some apps pull from other registries like ghcr.io and quay.io.
-* Docker hub registry information downdloads from https://index.docker.io/v1
+* Docker hub registry information downloads from https://index.docker.io/v1
 {{< /expand >}}
 
 {{< expand "TrueNAS Debian Linux-based system other callouts" "v" >}}
 * Feedback Oauth URL to https://support-proxy.ixsystems.com/oauth/initiate?origin=
-* Feedback service private readonly host name to https://feedback.ui.truenas.com
+* Feedback service private read-only host name to https://feedback.ui.truenas.com
 * Analytics data collection to https://usage.truenas.com/submit.
 
 When usage collection is disabled, anonymous usage statistics consisting of only the software version and total system capacity (e.g. TrueNAS 24.04.0, 55 TB) are still collected but information about the system configuration and usage is not.
@@ -126,7 +126,7 @@ On TrueNAS 22.12 or newer, [create the administrator account]({{< relref "Manage
 
 In TrueNAS 24.04 (Dragonfish) or later, use the **Credentials > Groups > Privileges** screen to define limited access administrative roles, such as read-only or share administrators.
 Assign users to those groups to grant partial NAS administrative access.
-Members of privilege groups can access the UI but cannot perform administrative tasks outside those defined by their role(s).
+Members of privileged groups can access the UI but cannot perform administrative tasks outside those defined by their role(s).
 
 Use complex passwords and [Two-Factor Authentication]({{< relref "ManageGlobal2FASCALE" >}}) for all TrueNAS administrator accounts.
 
@@ -149,7 +149,7 @@ iSCSI data traffic is not encrypted and should be isolated from regular data tra
 One common approach is to create a dedicated network or VLAN (Virtual Local Area Network) specifically for iSCSI traffic.
 
 Entering a list of **Initiators** and **Authorized Networks** is also recommended.
-This allows defining to systems or networks that can connect to the extent.
+This allows you to define systems or networks that can connect to the extent.
 When these options are empty, all initiators and all networks can connect to the extent.
 
 ### NFS
