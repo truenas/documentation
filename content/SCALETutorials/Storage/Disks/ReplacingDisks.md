@@ -87,7 +87,17 @@ If the off-line operation fails with a **Disk offline failed - no valid replicas
 When the scrub operation finishes, return to the **Devices** screen, expand the VDEV, then click the disk, and try to off-line it again.
 {{< /expand >}}
 
-After offlining the failed disk, physically remove it from the system.
+After [offlining the failed disk](#taking-a-failed-disk-offline), physically remove it from the system. Replacing a failed disk in [hotswappable](#replacing-a-failed-disk-with-a-hot-spare) systems and [non-hotswappable](#replacing-a-failed-disk-in-a-non-hotswappable-system) systems have guidance below.
+
+### Replacing a Failed Disk in a Non-Hotswappable System
+
+To replace a failed disk in a non-hotswappable system, first, identify the serial number of the failed disk. To find the serial number, click on **Disks** on the **Storage** screen. The serial number is crucial for ensuring that you finish the replacement process on the correct disk.
+
+After you have identified the failed disk, [take the failed disk offline](#taking-a-failed-disk-offline). Then, completely shut down your system. This is a vital step for non-hotswappable systems, as disks cannot be removed or inserted in a non-hotswappable system if the power is still on.
+
+After your system is powered off, remove the failed drive from the system. Double-check the serial number on the removed drive matches the failed drive you previously identified.
+
+Insert and connect the replacement disk and power-up your system. Complete the resilver process below that matches your hot spare availability.
 
 ### Replacing a Failed Disk Without a Hot Spare
 
