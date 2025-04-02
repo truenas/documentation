@@ -39,10 +39,9 @@ The **Download File** option opens the **Save Configuration** dialog, where user
 
 {{< trueimage src="/images/SCALE/SystemSettings/SaveConfigurationWindow.png" alt="Save Configuration" id="Save Configuration" >}}
 
-The **Export Password Secret Seed** option.
-This option allows you to restore the configuration file to a different operating system device where the secret seed is not already present.
-
-{{< include file="/static/includes/SecretSeed.md" >}}
+The **Export Password Secret Seed** option stores hashes of the passwords sufficient for authentication in the system. It does not store user passwords.
+The secret seed is used to decrypt encrypted fields in the TrueNAS configuration database.
+Various fields are encrypted because they might contain sensitive information such as cryptographic certificates, passwords (not user login passwords), or weak hashing algorithms (for example, NT hashes of SMB users). When a config file is restored without the secret seed, encrypted fields are set to empty values. This means various services can be broken due to the missing information. Examples are SMB via local accounts and apps.
 
 ### Upload File
 

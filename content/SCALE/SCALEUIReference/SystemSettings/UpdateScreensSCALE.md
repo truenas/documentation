@@ -46,7 +46,7 @@ The **Save configuration settings from this machine before updating?** window op
 
 {{< trueimage src="/images/SCALE/SystemSettings/SaveConfigSettingsWindow.png" alt="Save Configuration Settings" id="Save Configuration Settings" >}}
 
-**Include Password Secret Seed** stores hashes of the passwords sufficient for authentication in the system. It does not store user passwords.
+**Export Password Secret Seed** stores hashes of the passwords sufficient for authentication in the system. It does not store user passwords.
 The secret seed is used to decrypt encrypted fields in the TrueNAS configuration database.
 Various fields are encrypted because they might contain sensitive information such as cryptographic certificates, passwords (not user login passwords), or weak hashing algorithms (for example, NT hashes of SMB users). When a config file is restored without the secret seed, encrypted fields are set to empty values. This means various services can be broken due to the missing information. Examples are SMB via local accounts and apps.
 

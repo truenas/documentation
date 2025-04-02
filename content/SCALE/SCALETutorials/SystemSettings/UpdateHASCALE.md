@@ -31,7 +31,7 @@ This opens the **System > Update** screen. If an update is available it shows on
 2. Save the password secret seed and configuration settings to a secure location. Click **Install Manual Updates**. The **Save configuration settings** window opens.
 Select **Export Password Secret Seed** then click **Save Configuration**. The system downloads the file with sensitive system data. Keep this file in a secure location.
 
- {{< include file="/static/includes/SecretSeed.md" >}}
+<div style="margin-left: 33px">{{< include file="/static/includes/SecretSeed.md" >}}</div>
 
 3. Select the update file and start the process.
  Click **Choose File** and select the <kbd>update</kbd> file downloaded to your system, then click **Apply Update** to start the update process.
