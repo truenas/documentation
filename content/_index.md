@@ -24,7 +24,7 @@ While browsing, switch to a different version of the same product to see the cor
 
 Use the TrueNAS AI Search below or on the left sidebar to ask questions about TrueNAS.
 
-<div class="latest-development-container" style="padding-top: 20px; padding-bottom: 20px; border-radius: 15px; overflow: hidden; background-color: white; width: 94%;">
+<div style="padding-top: 6px; padding-bottom: 1px; border-radius: 15px; overflow: hidden; background-color: white; width: 94%;">
     <iframe src="https://docsbot.ai/iframe/c6l7vGyugnoP9SSSoNXy/h6qDF4J2h3xfHKO9Nm6r" 
         width="100%" height="400" frameborder="0" allowtransparency="true" scrolling="no"></iframe>
 </div>
