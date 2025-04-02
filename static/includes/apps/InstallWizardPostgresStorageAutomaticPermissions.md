@@ -11,7 +11,7 @@ As with other host path storage volumes, you can create a dataset when entering 
 You can use **Enable ACL** to manually configure ACL permissions for the postgres dataset and a parent dataset, but getting the ACL permissions right is involved and if not correctly configured, you are likely to receive errors after clicking **Install** on the application installation wizard. Additionally, the **Automatic Permissions** option does not show on the wizard screen.
 
 {{< expand "Why should I use Automatic Permissions?" "v" >}}
-Before the **Automatic Permissions** option, users deploying apps with postgres datasets might receive errors or tracebacks prompting them to add built-in users such as the **netdata** user and others.
+Before the **Automatic Permissions** option, users deploying apps with postgres datasets receive errors or tracebacks prompting them to add built-in users such as the **netdata** user and others.
 These built-in users show in the **Run As Context** widget on the information screen for each app.
 These users are not added as users through the **Credentials > Users > Add User** screen and might not show on the list of users. 
 They are run-as users for the app that should be added as ACL entries to the ACL for the dataset host path.
