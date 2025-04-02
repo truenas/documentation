@@ -280,9 +280,7 @@ To create a new virtual machine, from the **Create Instance** screen:
 
    c. Select one of the available **VM Image Options**: **Use a Linux Image** or **Upload ISO, import a zvol or use another volume**.
 
-      - Selecting **Use a Linux Image**:
-
-         Select this option to create the VM using a Linux image from [linuxcontainers.org](https://linuxcontainers.org/).
+      - Select **Use a Linux Image** to create the VM using a Linux image from [linuxcontainers.org](https://linuxcontainers.org/).
 
          a. Click **Browse Catalog** to open the **Select Image** screen.
 
@@ -292,9 +290,7 @@ To create a new virtual machine, from the **Create Instance** screen:
 
          c. Click **Select** in the row for your desired image.
 
-      - Selecting **Upload ISO, import a zvol or use another volume**:
-
-         Select this option to create the VM using an <file>.iso</file> image, import a zvol from a previously installed VM, or use an existing instances volume.
+      - Select **Upload ISO, import a zvol or use another volume** to create the VM using an <file>.iso</file> image, import a zvol from a previously installed VM, or use an existing instances volume.
 
          Click **Select Volume** to open the **Volumes** screen.
 
@@ -406,14 +402,14 @@ To create a new virtual machine, from the **Create Instance** screen:
 
    {{< include file="/static/includes/InstanceVNCProcedure.md" >}}
 
-9.  (Optional) Configure the security settings to control various system security features, including Trusted Platform Module (TPM) and Secure Boot options.
+9. (Optional) Configure the security settings to control various system security features, including Trusted Platform Module (TPM) and Secure Boot options.
    These options help to ensure a secure environment by enabling advanced hardware-based security features during system startup and operation.
 
    {{< trueimage src="/images/SCALE/Virtualization/CreateInstanceSecurity.png" alt="Security Settings" id="Security Settings" >}}
-   
-   Configuring security options:
 
-   - Select **Add Trusted Platform Module (TPM)** to enable TPM, a hardware-based security feature that protects sensitive data and ensures integrity.
+   There are two options:
+
+   - **Add Trusted Platform Module (TPM)** enables TPM, a hardware-based security feature that protects sensitive data and ensures integrity.
       This adds a Trusted Platform Module (TPM) device to the VM.
 
    - {{< include file="/static/includes/InstanceSecureBootProcedure.md" >}}
@@ -461,48 +457,52 @@ The **Edit Instance: *Instance*** screen settings are a subset of those found on
 It includes the general **Instance Configuration** and **CPU and Memory** settings for all instances.
 Additionally, containers include **Environment** settings and VMs include **VNC** and **Security** settings.
 
-- Edit the **Instance Configuration** settings to modify basic parameters for the instance, such as startup behavior.
+#### Editing Instance Configuration Settings
 
-   {{< trueimage src="/images/SCALE/Virtualization/EditInstanceConfiguration.png" alt="Edit Instance Configuration" id="Edit Instance Configuration" >}}
+{{< trueimage src="/images/SCALE/Virtualization/EditInstanceConfiguration.png" alt="Edit Instance Configuration" id="Edit Instance Configuration" >}}
 
-  - Select **Autostart** to automatically start the instance when the system boots.
+Select **Autostart** to automatically start the instance when the system boots.
 
-- Edit the **CPU & Memory** settings to adjust the **CPU Configuration** or **Memory Size**.
+#### Editing CPU & Memory Settings
 
-   {{< trueimage src="/images/SCALE/Virtualization/EditCPUandMemory.png" alt="Edit CPU & Memory" id="Edit CPU & Memory" >}}
+For containers, **CPU Configuration** and **Memory Size** can be configured or left blank to allow the container access to all host CPU and memory resources.
+For VMs, CPU and memory configuration is required.
 
-   For containers, **CPU Configuration** and **Memory Size** can be configured or left blank to allow the container access to all host CPU and memory resources.
-   For VMs, CPU and memory configuration is required.
+{{< trueimage src="/images/SCALE/Virtualization/EditCPUandMemory.png" alt="Edit CPU & Memory" id="Edit CPU & Memory" >}}
 
-   To edit resource allocation:
+To edit resource allocation:
 
-   <div style="margin-left: 33px">{{< include file="/static/includes/InstanceCPUMemoryProcedure.md" >}}
-   </div>
+<div style="margin-left: 33px">{{< include file="/static/includes/InstanceCPUMemoryProcedure.md" >}}
+</div>
 
-- Edit the **VNC** settings to enable or disable VNC, or to edit the **VNC** port or **VNC Password**.
-   When VNC access is enabled, remote clients can connect to VM display sessions using a VNC client.
-   These settings are only available for VMs and cannot be used with containers.
+#### Editing VNC Settings
 
-   Stop the instance before editing VNC settings.
+When VNC access is enabled, remote clients can connect to VM display sessions using a VNC client.
+These settings are only available for VMs and cannot be used with containers.
 
-   {{< trueimage src="/images/SCALE/Virtualization/EditVNC.png" alt="Edit VNC" id="Edit VNC" >}}
+Stop the instance before editing VNC settings.
 
-   <div style="margin-left: 33px">{{< include file="/static/includes/InstanceVNCProcedure.md" >}}
-   </div>
+{{< trueimage src="/images/SCALE/Virtualization/EditVNC.png" alt="Edit VNC" id="Edit VNC" >}}
 
-- Edit the **Environment** settings to modify or add optional environment variables to run on boot or execute.
-   These settings are only available for containers and cannot be used with VMs.
+<div style="margin-left: 33px">{{< include file="/static/includes/InstanceVNCProcedure.md" >}}
+</div>
 
-   {{< trueimage src="/images/SCALE/Virtualization/EditEnvironment.png" alt="Environment Settings" id="Environment Settings" >}}  
+#### Editing Environment Settings
 
-   <div style="margin-left: 33px">{{< include file="/static/includes/InstancesEnvironmentProcedure.md" >}}
-   </div>
-- Edit the **Security** settings to enable or disable Secure Boot for the instance.
-   These settings are only available for VMs and cannot be used with containers.  
+These settings are only available for containers and cannot be used with VMs.
 
-   {{< trueimage src="/images/SCALE/Virtualization/EditSecurity.png" alt="Security Settings" id="Security Settings" >}}  
+{{< trueimage src="/images/SCALE/Virtualization/EditEnvironment.png" alt="Environment Settings" id="Environment Settings" >}}  
 
-   {{< include file="/static/includes/InstanceSecureBootProcedure.md" >}}
+<div style="margin-left: 33px">{{< include file="/static/includes/InstancesEnvironmentProcedure.md" >}}
+</div>
+
+#### Editing Security Settings
+
+These settings are only available for VMs and cannot be used with containers.  
+
+{{< trueimage src="/images/SCALE/Virtualization/EditSecurity.png" alt="Security Settings" id="Security Settings" >}}  
+
+{{< include file="/static/includes/InstanceSecureBootProcedure.md" >}}
 
 ### Deleting Instances
 
