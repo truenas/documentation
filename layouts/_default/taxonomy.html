@@ -1,4 +1,5 @@
 {{ define "main" }}
+  {{ $pagination := partialCached "pagination.html" . }}
   {{ range .Paginator.Pages }}
     <article class="gdoc-post" data-pagefind-ignore>
       <header class="gdoc-post__header">
@@ -13,11 +14,7 @@
 
       <div class="gdoc-post__readmore">
         {{ if .Truncated }}
-          <a
-            class="flex-inline align-center fake-link"
-            title="{{ i18n "posts_read_more" }}"
-            href="{{ .RelPermalink }}"
-          >
+          <a class="flex-inline align-center fake-link" title="{{ i18n "posts_read_more" }}" href="{{ .RelPermalink }}">
             {{ i18n "posts_read_more" }}
             <i class="gdoc-icon">gdoc_arrow_right_alt</i>
           </a>
@@ -26,24 +23,10 @@
 
       <footer class="gdoc-post__footer">
         <div class="flex flex-wrap align-center gdoc-post__meta">
-          {{ partial "posts/metadata.html" . }}
+          {{ partialCached "posts/metadata.html" . }}
         </div>
       </footer>
     </article>
   {{ end }}
-  {{ partial "pagination.html" . }}
-{{ end }}
-
-{{ define "post-tag" }}
-  <span class="gdoc-post__tag">
-    <span class="gdoc-button">
-      <a
-        class="gdoc-button__link"
-        href="{{ .page.RelPermalink }}"
-        title="{{ i18n "posts_tagged_with" .name }}"
-      >
-        {{ .name }}
-      </a>
-    </span>
-  </span>
+  {{ $pagination }}
 {{ end }}

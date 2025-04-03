@@ -1,4 +1,6 @@
 {{ $current := . }}
+{{ $sortBy := default "title" .Site.Params.GeekdocFileTreeSortBy | lower }}
+
 <!-- Static chatbot button -->
 <div style="margin-top: 15px; margin-bottom: 10px;">
   <button id="chatbot-open-button" style="padding: 10px 20px; background-color: #0095d5; color: white; border: none; cursor: pointer; border-radius: 15px; display: flex; align-items: center; gap: 10px; transition: opacity 0.3s;">
@@ -13,316 +15,52 @@
 
 <style>
   #chatbot-open-button:hover {
-    opacity: 0.8; /* Adjust the opacity for the hover effect */
+    opacity: 0.8;
   }
 </style>
 
-<!-- Chatbot Initialization Script -->
-<script type="text/javascript">
-  window.DocsBotAI = window.DocsBotAI || {};
-
-  DocsBotAI.init = function(c) {
-    return new Promise(function(e, o) {
-      var t = document.createElement("script");
-      t.type = "text/javascript";
-      t.async = true;
-      t.src = "https://widget.docsbot.ai/chat.js";
-      var n = document.getElementsByTagName("script")[0];
-      n.parentNode.insertBefore(t, n);
-      t.addEventListener("load", function() {
-        window.DocsBotAI.mount({
-          id: c.id,
-          supportCallback: c.supportCallback,
-          identify: c.identify,
-          options: c.options,
-          signature: c.signature
-        });
-
-        // Attach the click event to the static button to open the chatbot
-        document.getElementById("chatbot-open-button").addEventListener("click", function() {
-          if (window.DocsBotAI.open) {
-            window.DocsBotAI.open();  // Open the chatbot without toggling or changing icons
-          } else {
-            console.error("Chatbot open method not available.");
-          }
-        });
-
-        e(); // Resolve the promise
-      });
-      t.addEventListener("error", function(t) {
-        o(t.message);
-      });
-    });
-  };
-
-  DocsBotAI.init({
-    id: "c6l7vGyugnoP9SSSoNXy/h6qDF4J2h3xfHKO9Nm6r",
-    options: {
-      customCSS: `
-        .docsbot-wrapper {
-          display: flex;
-          flex-direction: column;
-          width: 75%;
-          max-width: 750px;
-          max-height: 75vh;
-          position: fixed;
-          left: 35% !important;
-          top: 10% !important;
-          z-index: 1000 !important;
-          box-sizing: border-box;
-        }
-        .docsbot-content {
-          flex: 1 1 auto;
-          overflow-y: auto;
-        }
-        .docsbot-input {
-          flex-shrink: 0;
-          padding: 10px;
-          box-sizing: border-box;
-        }
-        .floating-button {
-          display: none !important;
-        }
-        .docsbot-chat-header {
-          display: flex;
-          align-items: center;
-          padding: 5px 10px;
-          transition: height 0.3s ease, padding 0.3s ease;
-        }
-        .docsbot-chat-header-content {
-          text-align: center;
-          transition: opacity 0.3s ease, transform 0.3s ease;
-        }
-        
-        /* Minimize header when viewport height is below 600px */
-        @media (max-height: 600px) {
-          .docsbot-chat-header {
-            height: 50px; /* Minimized height */
-            padding: 2px 5px;
-          }
-          .docsbot-chat-header-content h1 {
-            font-size: 14px;
-          }
-          .docsbot-chat-header-content span {
-            display: none; /* Hides the description text */
-          }
-        }
-        
-        /* Adjust layout for smaller screens (optional adjustments) */
-        @media (max-width: 1200px) {
-          .docsbot-wrapper {
-            left: 10% !important;
-            top: 10% !important;
-          }
-        }
-
-        .mobile-close-button {
-          display: flex !important; /* Forces the button to be visible */
-          background: #0095d5;
-          align-items: center;
-          padding: 5px 10px;
-          justify-content: center;
-          border-radius: inherit;
-          position: fixed;
-          box-shadow: none;
-        }
-
-        .mobile-close-button:hover {
-          cursor: pointer;
-        }
-
-        .mobile-close-button:hover svg {
-          transform: scale(1.2);
-        }
-
-      `,
-    }
-  });    
-</script>
-
 <!-- Navigation Menu -->
-{{ template "tree-nav" dict "sect" .Site.Home.Sections "current" $current "main_index_class" .Page.Params.main_index_class "path" .RelPermalink }}
+{{ template "tree-nav" dict "sect" .Site.Home.Sections "current" $current "sortBy" $sortBy }}
 
 <!-- templates -->
 {{ define "tree-nav" }}
   {{ $current := .current }}
-  {{ $mainIndexClass := .main_index_class }}
-  {{ $path := .path }}
+  {{ $sortBy := .sortBy }}
 
   <ul class="gdoc-nav__list">
-    {{ $sortBy := (default "title" .current.Site.Params.GeekdocFileTreeSortBy | lower) }}
     {{ range .sect.GroupBy "Weight" }}
       {{ $rangeBy := .ByTitle }}
 
-      {{ if eq $sortBy "title" }}
-        {{ $rangeBy = .ByTitle }}
-      {{ else if eq $sortBy "linktitle" }}
-        {{ $rangeBy = .ByLinkTitle }}
-      {{ else if eq $sortBy "date" }}
-        {{ $rangeBy = .ByDate }}
-      {{ else if eq $sortBy "publishdate" }}
-        {{ $rangeBy = .ByPublishDate }}
-      {{ else if eq $sortBy "expirydate" }}
-        {{ $rangeBy = .ByExpiryDate }}
-      {{ else if eq $sortBy "lastmod" }}
-        {{ $rangeBy = .ByLastmod }}
-      {{ else if eq $sortBy "title_reverse" }}
-        {{ $rangeBy = .ByTitle.Reverse }}
-      {{ else if eq $sortBy "linktitle_reverse" }}
-        {{ $rangeBy = .ByLinkTitle.Reverse }}
-      {{ else if eq $sortBy "date_reverse" }}
-        {{ $rangeBy = .ByDate.Reverse }}
-      {{ else if eq $sortBy "publishdate_reverse" }}
-        {{ $rangeBy = .ByPublishDate.Reverse }}
-      {{ else if eq $sortBy "expirydate_reverse" }}
-        {{ $rangeBy = .ByExpiryDate.Reverse }}
-      {{ else if eq $sortBy "lastmod_reverse" }}
-        {{ $rangeBy = .ByLastmod.Reverse }}
+      {{ if eq $sortBy "linktitle" }}{{ $rangeBy = .ByLinkTitle }}
+      {{ else if eq $sortBy "date" }}{{ $rangeBy = .ByDate }}
+      {{ else if eq $sortBy "publishdate" }}{{ $rangeBy = .ByPublishDate }}
+      {{ else if eq $sortBy "expirydate" }}{{ $rangeBy = .ByExpiryDate }}
+      {{ else if eq $sortBy "lastmod" }}{{ $rangeBy = .ByLastmod }}
+      {{ else if eq $sortBy "title_reverse" }}{{ $rangeBy = .ByTitle.Reverse }}
+      {{ else if eq $sortBy "linktitle_reverse" }}{{ $rangeBy = .ByLinkTitle.Reverse }}
+      {{ else if eq $sortBy "date_reverse" }}{{ $rangeBy = .ByDate.Reverse }}
+      {{ else if eq $sortBy "publishdate_reverse" }}{{ $rangeBy = .ByPublishDate.Reverse }}
+      {{ else if eq $sortBy "expirydate_reverse" }}{{ $rangeBy = .ByExpiryDate.Reverse }}
+      {{ else if eq $sortBy "lastmod_reverse" }}{{ $rangeBy = .ByLastmod.Reverse }}
       {{ end }}
 
       {{ range $rangeBy }}
         {{ if not .Params.GeekdocHidden }}
-          {{ $numberOfPages := (add (len .Pages) (len .Sections)) }}
+          {{ $numberOfPages := add (len .Pages) (len .Sections) }}
           {{ $isParent := and (ne $numberOfPages 0) (not .Params.GeekdocFlatSection) }}
           {{ $isCurrent := eq $current . }}
           {{ $isAncestor := .IsAncestor $current }}
           {{ $id := substr (sha1 .Permalink) 0 8 }}
           {{ $doCollapse := and $isParent (or .Params.GeekdocCollapseSection (default false .Site.Params.GeekdocCollapseAllSections)) }}
 
-          {{ $pagePath := .RelPermalink }}
-
-          {{ if or (eq $mainIndexClass "main-index-page")
-          (strings.Contains $path "/softwarereleases/")
-          (strings.Contains $path "/solutions/")
-          (strings.Contains $path "/hardware/")
-          (strings.Contains $path "/contributing/")
-          (strings.Contains $path "/references/")
-          (strings.Contains $path "/archive/")
-  }}
-    {{/* Custom version for TrueNAS section */}}
-    {{ if (eq (path.Base .RelPermalink) "scale") }}
-      <li>
-        <input
-          type="checkbox"
-          class="gdoc-nav__toggle" id="{{ printf "navtree-%s" $id }}"
-        />
-        <label for="{{ printf "navtree-%s" $id }}" class="flex justify-between align-center" style="font-weight: normal;">
-          <span class="flex">
-            {{ if eq (path.Base .RelPermalink) "scale" }}
-              TrueNAS
-            {{ else }}
-              {{ partial "utils/title" . }}
-            {{ end }}
-          </span>
-          <svg class="gdoc-icon toggle gdoc_keyboard_arrow_left">
-            <use xlink:href="#gdoc_keyboard_arrow_left"></use>
-          </svg>
-          <svg class="gdoc-icon toggle gdoc_keyboard_arrow_down">
-            <use xlink:href="#gdoc_keyboard_arrow_down"></use>
-          </svg>
-        </label>
-        <ul class="gdoc-nav__list">
-          {{ if (eq (path.Base .RelPermalink) "scale") }}
-            <li><a href="/" class="gdoc-nav__entry">Nightly (25.04)</a></li>
-            <li><a href="https://www.truenas.com/docs/scale/24.10/" class="gdoc-nav__entry">24.10</a></li>
-            <li><a href="https://www.truenas.com/docs/scale/24.04/" class="gdoc-nav__entry">24.04</a></li>
-            <li><a href="https://www.truenas.com/docs/scale/23.10/" class="gdoc-nav__entry">23.10</a></li>
-            <li><a href="https://www.truenas.com/docs/core/13.3/" class="gdoc-nav__entry">13.3</a></li>
-            <li><a href="https://www.truenas.com/docs/core/13.0/" class="gdoc-nav__entry">13.0</a></li>
-            <li><a href="/archive/" class="gdoc-nav__entry">Archive</a></li>
-          {{ end }}
-        </ul>
-      </li>
-    {{ else }}
-              <li>
-                <input
-                  type="checkbox"
-                  {{ if $doCollapse }}
-                    class="gdoc-nav__toggle" id="{{ printf "navtree-%s" $id }}"
-                    {{ if or $isCurrent $isAncestor }}checked{{ end }}
-                  {{ else }}
-                    class="hidden"
-                  {{ end }}
-                />
-                <label
-                  {{ if $doCollapse }}
-                    for="{{ printf "navtree-%s" $id }}" class="flex justify-between align-center"
-                  {{ end }}
-                >
-                  {{ if or .Content .Params.GeekdocFlatSection }}
-                    <span class="flex">
-                      <a
-                        href="{{ .RelPermalink }}"
-                        class="gdoc-nav__entry{{- if eq $current . }}
-                          {{- printf " is-active" }}
-                        {{- end }}"
-                      >
-                        {{ partial "utils/title" . }}
-                      </a>
-                    </span>
-                  {{ else }}
-                    <span class="flex">{{ partial "utils/title" . }}</span>
-                  {{ end }}
-                  {{ if $doCollapse }}
-                    <svg class="gdoc-icon toggle gdoc_keyboard_arrow_left">
-                      <use xlink:href="#gdoc_keyboard_arrow_left"></use>
-                    </svg>
-                    <svg class="gdoc-icon toggle gdoc_keyboard_arrow_down">
-                      <use xlink:href="#gdoc_keyboard_arrow_down"></use>
-                    </svg>
-                  {{ end }}
-                </label>
-
-                {{ if $isParent }}
-                  {{ template "tree-nav" dict "sect" .Pages "current" $current "main_index_class" $mainIndexClass "path" $path }}
-                {{ end }}
-              </li>
-            {{ end }}
-          {{ else }}
-            <li>
-              <input
-                type="checkbox"
-                {{ if $doCollapse }}
-                  class="gdoc-nav__toggle" id="{{ printf "navtree-%s" $id }}"
-                  {{ if or $isCurrent $isAncestor }}checked{{ end }}
-                {{ else }}
-                  class="hidden"
-                {{ end }}
-              />
-              <label
-                {{ if $doCollapse }}
-                  for="{{ printf "navtree-%s" $id }}" class="flex justify-between align-center"
-                {{ end }}
-              >
-                {{ if or .Content .Params.GeekdocFlatSection }}
-                  <span class="flex">
-                    <a
-                      href="{{ .RelPermalink }}"
-                      class="gdoc-nav__entry{{- if eq $current . }}
-                        {{- printf " is-active" }}
-                      {{- end }}"
-                    >
-                      {{ partial "utils/title" . }}
-                    </a>
-                  </span>
-                {{ else }}
-                  <span class="flex">{{ partial "utils/title" . }}</span>
-                {{ end }}
-                {{ if $doCollapse }}
-                  <svg class="gdoc-icon toggle gdoc_keyboard_arrow_left">
-                    <use xlink:href="#gdoc_keyboard_arrow_left"></use>
-                  </svg>
-                  <svg class="gdoc-icon toggle gdoc_keyboard_arrow_down">
-                    <use xlink:href="#gdoc_keyboard_arrow_down"></use>
-                  </svg>
-                {{ end }}
-              </label>
-
-              {{ if $isParent }}
-                {{ template "tree-nav" dict "sect" .Pages "current" $current "main_index_class" $mainIndexClass "path" $path }}
-              {{ end }}
-            </li>
-          {{ end }}
+          <li>
+            <input type="checkbox" class="gdoc-nav__toggle" id="navtree-{{ $id }}" {{ if or $isCurrent $isAncestor }}checked{{ end }} />
+            <label for="navtree-{{ $id }}" class="flex justify-between align-center">
+              <span class="flex">
+                <a href="{{ .RelPermalink }}" class="gdoc-nav__entry{{ if $isCurrent }} is-active{{ end }}">{{ partial "utils/title" . }}</a>
+              </span>
+            </label>
+          </li>
         {{ end }}
       {{ end }}
     {{ end }}

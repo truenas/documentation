@@ -1,16 +1,22 @@
 <nav class="sidebar-fixed">
- <h2>{{ i18n "nav_navigation" }}</h2>
+  <h2>{{ i18n "nav_navigation" }}</h2>
 
   {{ if not (isset .Params "main_index_class") }}
-    {{ partial "search" . }}
-    {{ partial "search-form" . }}
+    {{ partialCached "search" . .RelPermalink }}
+    {{ partialCached "search-form" . .RelPermalink }}
   {{ end }}
 
   <section class="gdoc-nav--main">
     {{ if .Site.Params.GeekdocMenuBundle }}
-      {{ partial "menu-bundle" (dict "current" . "source" .Site.Data.menu.main.main) }}
+      {{ partialCached "menu-bundle" (dict "current" . "source" .Site.Data.menu.main.main) "menu-bundle-main" }}
     {{ else }}
-      {{ partial "menu-filetree" . }}
+      {{ partialCached "menu-filetree" . .RelPermalink }}
+    {{ end }}
+  </section>
+
+  <section class="gdoc-nav--more">
+    {{ if .Site.Data.menu.more.more }}
+      {{ partialCached "menu-bundle" (dict "current" . "source" .Site.Data.menu.more.more) "menu-bundle-more" }}
     {{ end }}
   </section>
 
@@ -22,13 +28,9 @@
         {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
           {{ with $.Site.GetPage (printf "/tags/%s" $name) }}
             <li>
-              <a
-                class="gdoc-nav__entry{{- if eq $currentPage .RelPermalink }}
-                  {{- printf " is-active" }}
-                {{- end }}"
-                href="{{ .RelPermalink }}"
-              >
-                {{ partial "utils/title" . }}
+              <a class="gdoc-nav__entry{{ if eq $currentPage .RelPermalink }} is-active{{ end }}"
+                 href="{{ .RelPermalink }}">
+                {{ partialCached "utils/title" . .RelPermalink }}
               </a>
             </li>
           {{ end }}
@@ -36,10 +38,4 @@
       </ul>
     </section>
   {{ end }}
-
-  <section class="gdoc-nav--more">
-    {{ if .Site.Data.menu.more.more }}
-      {{ partial "menu-bundle" (dict "current" . "source" .Site.Data.menu.more.more) }}
-    {{ end }}
-  </section>
 </nav>
