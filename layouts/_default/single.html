@@ -1,17 +1,14 @@
 {{ define "main" }}
-  {{ $header := partialCached "page-header" . .Permalink }}
-  {{ $align := default "left" (.Page.Params.GeekdocAlign | lower) }}
-  {{ $showReadingTime := and (not .Params.hide_readingtime) .Site.Params.ui.readingtime.enable }}
-  
-  {{ $content := partialCached "utils/content" . .Permalink }}
-  <article class="gdoc-markdown gdoc-markdown__align--{{ $align }}">
-    {{ $pageTitle := partialCached "utils/title" . .Permalink }}
-    <h1>{{ $pageTitle }}</h1>
+  {{ partial "page-header" . }}
 
-    {{ if $showReadingTime }}
-      {{ partialCached "reading-time.html" . .Permalink }}
+
+  <article
+    class="gdoc-markdown gdoc-markdown__align--{{ default "left" (.Page.Params.GeekdocAlign | lower) }}"
+  >
+    <h1>{{ partial "utils/title" . }}</h1>
+	{{ if (and (not .Params.hide_readingtime) (.Site.Params.ui.readingtime.enable)) }}
+       	{{ partial "reading-time.html" . }}
     {{ end }}
-
-    {{ $content }}
+    {{ partial "utils/content" . }}
   </article>
 {{ end }}
