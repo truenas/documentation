@@ -26,9 +26,9 @@ The **Windows (SMB) Shares <span class="material-icons">launch</span>** header i
 
 The <span class="material-icons">more_vert</span> icon displays four options available to SMB shares in general:
 * **Turn Off/ON Service** toggle shows **Turn Off Service** when the SMB service is enabled, and changes to **Turn On Service** when the SMB service is disabled.
-* **Config Service** opens the [**SMB**]({{< relref "SMBServicesScreen.md" >}}) configuration screen.
+* **Config Service** opens the [**SMB**]({{< ref "SMBServicesScreen" >}}) configuration screen.
 * **SMB Sessions** opens the **SMB Status** screen with four tabs: **Sessions**, **Locks**, **Shares**, and **Notifications**.
-* **Audit Logs** opens the [**Audit** screen]({{< relref "AuditingSCALE.md" >}}) with a predefined filter for and showing the SMB share logs.
+* **Audit Logs** opens the [**Audit** screen]({{< ref "AuditingSCALE" >}}) with a predefined filter for and showing the SMB share logs.
 
 Each SMB share row includes a toggle that provides quick access to enable or disable the share, and four icons for different individual share functions:
 * <span class="material-icons">share</span> **Edit Share ACL** icon opens the [**Edit Share ACL**](#edit-share-acl-screen) screen.
@@ -137,7 +137,7 @@ The **Other Options** settings include improving Apple software compatibility, Z
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Use as Home Share** | Select to allow the share to host user home directories. Each user has a personal home directory they use when connecting to the share that is not accessible by other users. Home Shares allow for personal, dynamic shares. You can only use one share as the home share. See [Adding an SMB Home Share]({{< relref "SMBPrivateDatasetShare.md" >}}) for more information. |
+| **Use as Home Share** | Select to allow the share to host user home directories. Each user has a personal home directory they use when connecting to the share that is not accessible by other users. Home Shares allow for personal, dynamic shares. You can only use one share as the home share. See [Adding an SMB Home Share]({{< ref "SMBPrivateDatasetShare" >}}) for more information. |
 | **Time Machine** | Enables [Apple Time Machine](https://support.apple.com/en-us/HT201250) backups on this share. This option requires SMB2/3 protocol extension support. You can enable this in the general SMB server configuration.  Apple extension options cannot be set if **Purpose** is set to the multi-protocol option. |
 | **Legacy AFP Compatibility** | Select to enable the share to behave like the deprecated Apple Filing Protocol (AFP). Leave cleared for the share to behave like a normal SMB share. This option controls how the SMB share reads and writes data. Only enable this when this share originated as an AFP sharing configuration. You do not need legacy compatibility for pure SMB shares or macOS SMB clients. This option requires SMB2/3 protocol extension support. You can enable this in the general SMB server configuration. |
 | **Enable Shadow Copies** | Select to export ZFS snapshots as [Shadow Copies](https://docs.microsoft.com/en-us/windows/win32/vss/shadow-copies-and-shadow-copy-sets) for Microsoft Volume Shadow Copy Service (VSS) clients. |
@@ -203,12 +203,12 @@ These settings configure new ACL entries for the selected SMB share and apply th
 
 ## Edit Filesystem ACL Screen
 The **Edit Filesystem ACL** option opens the **Edit ACL** screen for the dataset the share uses.
-See [**Edit ACL Screen**]({{< relref "EditACLScreens.md" >}}) for more information on the settings found on this screen.
+See [**Edit ACL Screen**]({{< ref "EditACLScreens" >}}) for more information on the settings found on this screen.
 
 {{< trueimage src="/images/SCALE/Shares/SMBACLEditor.png" alt="SMB ACL Editor" id="SMB ACL Editor" >}}
 
 Use the ACL editor screen to set file system permissions for the shared dataset.
-See [Permissions]({{< relref "PermissionsSCALE.md" >}}) for more information on configuring permissions.
+See [Permissions]({{< ref "PermissionsSCALE" >}}) for more information on configuring permissions.
 
 ## SMB Status Screens
 The **SMB Status** screen opens after clicking **SMB** on the <i class="material-icons" aria-hidden="true" title="list">list</i> icon on the **System > Services** screen with and the <span class="material-icons">more_vert</span> on the **Shares > Windows (SMB) Shares** widget.
