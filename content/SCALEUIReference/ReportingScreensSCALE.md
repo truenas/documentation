@@ -108,7 +108,7 @@ System graphs display the number of processes grouped by state, sleeping, runnin
 ### UPS Graphs
 Displays the **UPS Charging** percentage, **UPS Runtime**, **UPS Voltage - Battery**, **UPS Voltage - Input**, **UPS Voltage - Output**, **UPS Input Current**, **UPS Input Frequency**, **UPS Input Load**, and **UPS Temperature**.
 
-The **UPS** service must be [configured]({{< relref "upsservicesscale.md" >}}) with a compatible Uninterruptible Power Supply (UPS) device.
+The **UPS** service must be [configured]({{< relref "upsservicesscale" >}}) with a compatible Uninterruptible Power Supply (UPS) device.
 
 {{< trueimage src="/images/SCALE/Reporting/UPSReportingChargingRuntime.png" alt="UPS Reporting" id="UPS Reporting" >}}
 

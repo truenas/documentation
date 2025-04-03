@@ -6,7 +6,7 @@ tags:
 - customapp
 ---
 
-**Custom App** on the [**Discover**]({{< relref "/SCALEUIReference/Apps/_index.md" >}}) screen opens the **[Install Custom App](#install-custom-app-screen)** guided installation wizard.
+**Custom App** on the [**Discover**]({{< relref "/SCALEUIReference/Apps/" >}}) screen opens the **[Install Custom App](#install-custom-app-screen)** guided installation wizard.
 <i class="material-icons" aria-hidden="true" title="more_vert">more_vert</i> > **Install via YAML** opens the **[Add Custom App](#add-custom-app-screen)** screen with an advanced YAML editor for deploying apps using Docker Compose.
 
 ## Install Custom App Screen

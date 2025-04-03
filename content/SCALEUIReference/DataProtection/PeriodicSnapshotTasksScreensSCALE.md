@@ -11,7 +11,7 @@ tags:
 The **Data Protection** screen **Periodic Snapshot Task** widget displays periodic snapshot tasks created on the system. 
 A periodic snapshot task allows scheduling the creation of read only versions of pools and datasets at a given point in time.
 
-Periodic snapshot tasks display the machine time, browser time, or both depending on individual user timezone settings. Users can update timezone settings by utilizing the [**General Settings**]({{< relref "GeneralSettingsScreens.md" >}}) screen.
+Periodic snapshot tasks display the machine time, browser time, or both depending on individual user timezone settings. Users can update timezone settings by utilizing the [**General Settings**]({{< relref "GeneralSettingsScreens" >}}) screen.
 
 ## Periodic Snapshot Task Widget
 
@@ -25,8 +25,8 @@ If a periodic snapshot task is not yet configured **No Periodic Snapshot Task co
 
 **Add** opens the **[Add Periodic Snapshot Task](#add-and-edit-periodic-snapshot-screens)** screen. 
 
-**VMware Snapshot Integration** opens the **[VMware Snapshots]({{< relref "VMwareSnapshotsScreen.md" >}})** screen. 
-**Snapshots** opens the **[Snapshots]({{< relref "SnapshotsScreens.md" >}})** screen.
+**VMware Snapshot Integration** opens the **[VMware Snapshots]({{< relref "VMwareSnapshotsScreen" >}})** screen. 
+**Snapshots** opens the **[Snapshots]({{< relref "SnapshotsScreens" >}})** screen.
 
 Each task listed is a link that opens the **[Edit Periodic Snapshot Task](#add-and-edit-periodic-snapshot-screens)** screen populated with with the settings for that task. Click on the **Description**, **Frequency**, or **Next Run** column entry to open the edit task screen.
 

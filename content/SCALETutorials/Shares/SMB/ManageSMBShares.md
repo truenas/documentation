@@ -37,7 +37,7 @@ You have two options that modify ACL permissions for SMB shares:
 
 * **Edit Filesystem ACL** where you modify ACL permissions at the shared dataset level.
 
-See the [ACL Primer](https://www.truenas.com/docs/references/aclprimer/) for general information on Access Control Lists (ACLs) in general, the [Permissions]({{< relref "PermissionsSCALE.md" >}}) article for more details on configuring ACLs, and [**Edit ACL** Screen]({{< relref "EditACLScreens.md" >}}) for more information on the dataset ACL editor screens and setting options.
+See the [ACL Primer](https://www.truenas.com/docs/references/aclprimer/) for general information on Access Control Lists (ACLs) in general, the [Permissions]({{< relref "PermissionsSCALE" >}}) article for more details on configuring ACLs, and [**Edit ACL** Screen]({{< relref "EditACLScreens" >}}) for more information on the dataset ACL editor screens and setting options.
 
 ### Configuring the SMB Share ACL
 

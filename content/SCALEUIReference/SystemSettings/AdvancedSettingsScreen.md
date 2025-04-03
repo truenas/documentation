@@ -38,7 +38,7 @@ The **Console** widget displays the current console settings for TrueNAS.
 
 ### Console Configuration Screen
 
-**Console** settings configure how the [Console Setup menu]({{< relref "ConsoleSetupMenuSCALE.md" >}}) displays, the serial port it uses and the port speed, and the banner users see when accessing it.
+**Console** settings configure how the [Console Setup menu]({{< relref "ConsoleSetupMenuSCALE" >}}) displays, the serial port it uses and the port speed, and the banner users see when accessing it.
 
 {{< trueimage src="/images/SCALE/SystemSettings/ConsoleConfigScreen.png" alt="Console Config Screen" id="Console Config Screen" >}}
 
@@ -84,7 +84,7 @@ There are also options to configure a remote syslog server for recording system 
 {{< /expand >}}
 
 ## Audit Widget
-The **Audit** widget displays the current audit storage and retention policy settings. The public-facing [TrueNAS API]({{< relref "/API/_index.md" >}}) allows querying audit records, exporting audit reports, and configuring audit dataset settings and retention periods.
+The **Audit** widget displays the current audit storage and retention policy settings. The public-facing [TrueNAS API]({{< relref "/API/" >}}) allows querying audit records, exporting audit reports, and configuring audit dataset settings and retention periods.
 
 {{< trueimage src="/images/SCALE/SystemSettings/SystemAdvancedAuditWidget.png" alt="Advanced System Setting Audit Widget" id="Advanced System Setting Audit Widget" >}}
 

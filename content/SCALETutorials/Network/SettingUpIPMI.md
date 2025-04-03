@@ -54,7 +54,7 @@ Click **Show Events** on the **IPMI** widget to show the **IPMI Events** log.
 
 {{< trueimage src="/images/SCALE/Network/IPMIEvents.png" alt="IPMI Events" id="IPMI Events" >}}
 
-Use the [Alert Settings Screen]({{< relref "AlertsSettingsServiceScreen.md" >}}) under the **Hardware** category to adjust IPMI alerts.
+Use the [Alert Settings Screen]({{< relref "AlertsSettingsServiceScreen" >}}) under the **Hardware** category to adjust IPMI alerts.
 Configure the minimum warning level and frequency to display IPMI alerts in the TrueNAS UI.
 
 {{< include file="/static/includes/IPMISELAlert.md" >}}

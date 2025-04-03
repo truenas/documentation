@@ -80,7 +80,7 @@ Change the default settings to your preferred primary account and group and sele
 
 Click **Save** now if you do not want to [use an ACL preset](#adding-a-new-preset-posix-acl).
 
-See [Edit ACL Screen]({{< relref "EditACLScreens.md" >}}) for information on the ACL editor screens and setting options.
+See [Edit ACL Screen]({{< relref "EditACLScreens" >}}) for information on the ACL editor screens and setting options.
 
 ### Adding a New Preset (POSIX ACL)
 From the **Unix Permissions Editor** screen:

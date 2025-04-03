@@ -11,7 +11,7 @@ tags:
 
 The **Backup Credentials** screen displays the **SSH Connections** and **SSH Keypairs** widgets.
 
-You must also configure and activate the [SSH Service]({{< relref "sshservicescreenscale.md" >}}) to allow SSH access.
+You must also configure and activate the [SSH Service]({{< relref "sshservicescreenscale" >}}) to allow SSH access.
 
 ## SSH Connection and Keypairs Widgets
 

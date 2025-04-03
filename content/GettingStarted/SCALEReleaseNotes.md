@@ -56,7 +56,7 @@ More details are available from [Software Releases](https://www.truenas.com/docs
 
   {{< include file="/static/includes/APIKeyWarn.md" >}}
 
-  See [Managing API Keys]({{< relref "/scaletutorials/toptoolbar/managingapikeys.md" >}}) for more information.
+  See [Managing API Keys]({{< relref "/scaletutorials/toptoolbar/managingapikeys" >}}) for more information.
 
   * {{< include file="/static/includes/APIKeyMigrate.md" >}}
 
@@ -96,7 +96,7 @@ When attempting to migrate from a FreeBSD-based TrueNAS version, the general rec
 After install, restore the system configuration and import the pools.
 
 Depending on the specific system configuration, this can be a straightforward or complicated process.
-See the [Migration articles]({{< relref "/GettingStarted/Migrate/_index.md" >}}) for cautions and notes about differences between each software and the migration process.
+See the [Migration articles]({{< relref "/GettingStarted/Migrate/" >}}) for cautions and notes about differences between each software and the migration process.
 
 You must either clean install using an <file>iso</file> or use an upgrade file to migrate a FreeBSD-based TrueNAS system to TrueNAS 25.04 (Fangtooth).
 Enterprise customers should [contact Support](https://www.truenas.com/docs/scale/gettingstarted/migrate/migratecorehatoscaleha/#expand-1-Enterprise%20HA%20Migrations) for assistance with migration.
@@ -144,8 +144,8 @@ Special thanks to (Github users) René, jnbastoky, Bas Nijholt, jbsamcho, t0b3, 
 
 * To prevent excessive resource usage, especially on systems with large HDD storage pools, SMART test results no longer appear directly on the **Storage** dashboard.
   Click **View S.M.A.R.T. Tests** on the **Disk Health** widget to open the **S.M.A.R.T. Test Results of *POOL*** screen.
-* To improve stability and prevent unsupported SMB configurations from breaking on [migration from TrueNAS CORE]({{< relref "/GettingStarted/Migrate/_index.md" >}}), TrueNAS automatically removes the SMB auxiliary parameters `wide links`, `use sendfile`, `vfs objects`, and `allow insecure` during migration ([NAS-132911](https://ixsystems.atlassian.net/browse/NAS-132911)).
-* To prevent unexpected failures in SMB shares, TrueNAS automatically disables SMB2/3 lease support and AAPL extensions (typically used to configure Time Machine) globally when [multiprotocol SMB/NFS shares]({{< relref "MixedModeShares.md" >}}) are enabled ([NAS-133680](https://ixsystems.atlassian.net/browse/NAS-133680)).
+* To improve stability and prevent unsupported SMB configurations from breaking on [migration from TrueNAS CORE]({{< relref "/GettingStarted/Migrate/" >}}), TrueNAS automatically removes the SMB auxiliary parameters `wide links`, `use sendfile`, `vfs objects`, and `allow insecure` during migration ([NAS-132911](https://ixsystems.atlassian.net/browse/NAS-132911)).
+* To prevent unexpected failures in SMB shares, TrueNAS automatically disables SMB2/3 lease support and AAPL extensions (typically used to configure Time Machine) globally when [multiprotocol SMB/NFS shares]({{< relref "MixedModeShares" >}}) are enabled ([NAS-133680](https://ixsystems.atlassian.net/browse/NAS-133680)).
 * Reserve 2 GiB of disk space (but no more than 1%) to allow the data disk to be replaced with a slightly smaller one in the future ([NAS-134309](https://ixsystems.atlassian.net/browse/NAS-134309)).
 * Bugfix: Ensure disk temperature reporting is available for all disks ([NAS-130766](https://ixsystems.atlassian.net/browse/NAS-130766)).
 * Bugfix: Allow SMB authentication for usernames with a capital letter ([NAS-134346](https://ixsystems.atlassian.net/browse/NAS-134346)).
@@ -192,7 +192,7 @@ This first public release version of TrueNAS 25.04 (Fangtooth) has software comp
 
 ### Notable changes
 
-* The TrueNAS REST API is deprecated in TrueNAS 25.04 and replaced with a versioned JSON-RPC 2.0 over WebSocket API ([API Reference]({{< relref "/api/_index.md" >}})). Full removal of the REST API is planned for a future release.
+* The TrueNAS REST API is deprecated in TrueNAS 25.04 and replaced with a versioned JSON-RPC 2.0 over WebSocket API ([API Reference]({{< relref "/api/" >}})). Full removal of the REST API is planned for a future release.
 * Improved API key mechanism with support for user-linked API keys ([NAS-131396](https://ixsystems.atlassian.net/browse/NAS-131396)).
 * UI login experience improvements ([NAS-130810](https://ixsystems.atlassian.net/browse/NAS-130810)).
 * NFS over RDMA support - Enterprise Feature ([NAS-131784](https://ixsystems.atlassian.net/browse/NAS-131784)).

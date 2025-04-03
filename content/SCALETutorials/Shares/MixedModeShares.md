@@ -98,7 +98,7 @@ They also require careful attention to security complexities not present in stan
 NFS shares do not respect permissions set in the SMB Share ACL.
 Protect the NFS export with proper authentication and authorization controls to prevent unauthorized access by NFS clients.
 
-We recommend using [Active Directory]({{< relref "configadscale.md" >}}) to enable Kerberos security for the NFS share.
+We recommend using [Active Directory]({{< relref "configadscale" >}}) to enable Kerberos security for the NFS share.
 Configure a container (group or organizational unit), Kerberos admin, and user accounts in AD.
 
 ## Creating a Multiprotocol Share
@@ -203,7 +203,7 @@ If not, add this Access Control Entry (ACE) item on the **Edit ACL** screen for 
 
 4. Click **Save Access Control List** to add the ACE item or save changes.
 
-See [Permissions]({{< relref "PermissionsScale.md" >}}) for more information on editing dataset permissions.
+See [Permissions]({{< relref "PermissionsScale" >}}) for more information on editing dataset permissions.
 
 After setting the dataset permission, connect to the share.
 
@@ -213,4 +213,4 @@ After setting the dataset permission, connect to the share.
 
 After creating and configuring the shares, connect to the multi-protocol share using either SMB or NFS protocols from a variety of client operating systems including Windows, Apple, FreeBSD, and Linux/Unix systems.
 
-For more information on accessing shares, see [Mounting the SMB Share]({{< relref "/SCALETutorials/Shares/SMB/_index.md#mounting-the-smb-share" >}}) and [Connecting to the NFS Share]({{< relref "AddingNFSShares.md#connecting-to-the-nfs-share" >}}).
+For more information on accessing shares, see [Mounting the SMB Share]({{< relref "/SCALETutorials/Shares/SMB/#mounting-the-smb-share" >}}) and [Connecting to the NFS Share]({{< relref "AddingNFSShares.md#connecting-to-the-nfs-share" >}}).

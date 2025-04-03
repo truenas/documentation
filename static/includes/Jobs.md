@@ -21,4 +21,4 @@ Click **View** next to a task to see the log information and error message for t
 
 {{< trueimage src="/images/SCALE/Dashboard/TasksScreen.png" alt="Tasks Screen" id="Tasks Screen" >}}
 
-For more information, see [**Tasks Screens**]({{< relref "TasksScreens.md" >}}).
+For more information, see [**Tasks Screens**]({{< relref "TasksScreens" >}}).

@@ -32,7 +32,7 @@ For example, a system with 18,446,744,073,709,551,615 bytes reports the number a
 
 {{< trueimage src="/images/SCALE/Datasets/DatasetsScreenAfterAddingAPool.png" alt="Datasets Screen With a Pool" id="Datasets Screen With a Pool" >}}
 
-**Add Zvol** opens the **[Add Zvol]({{< relref "ZvolsScreensScale.md" >}})** screen.
+**Add Zvol** opens the **[Add Zvol]({{< relref "ZvolsScreensScale" >}})** screen.
 
 **Add Dataset** opens the **[Add Dataset](#add-and-edit-dataset-screens)** screen.
 
@@ -103,7 +103,7 @@ This option promotes the cloned child dataset and allows users to delete the par
 Otherwise, you cannot delete a clone while the original volume still exists. See [zfs-promote.8](https://openzfs.github.io/openzfs-docs/man/8/zfs-promote.8.html).
 
 Non-root parent and child dataset versions of the widget show the **[Delete](#delete-dataset)** button.
-Use the **Disconnect/Export** option on the **[Storage Dashboard]({{< relref "/SCALEUIReference/Storage/_index.md" >}})** screen to deleate a root datset.
+Use the **Disconnect/Export** option on the **[Storage Dashboard]({{< relref "/SCALEUIReference/Storage/" >}})** screen to deleate a root datset.
 
 **Delete** opens a window with information about other options or services using the dataset, for example, a parent to other datasets and the services the child datasets of a parent dataset uses.
 Non-root parent and child datasets include the **Delete** button.
@@ -138,9 +138,9 @@ The widget donut graph provides at-a-glance information and numeric values for t
 This includes data written and space allocated to child datasets of this dataset.
 It provides access to quota configuration options for the parent dataset and the child dataset of the parent and for users and groups with access to the dataset.
 
-**Edit** opens the **[Capacity Settings]({{< relref "CapacitySettingsSCALE.md" >}})** screen where you can set quotas for the dataset.
+**Edit** opens the **[Capacity Settings]({{< relref "CapacitySettingsSCALE" >}})** screen where you can set quotas for the dataset.
 
-**[Manage User Quotas]({{< relref "ManageQuotas.md" >}})** screen and **Manage Group Quotas** opens the **[Manage Group Quotas]({{< relref "ManageQuotas.md" >}})** screen.
+**[Manage User Quotas]({{< relref "ManageQuotas" >}})** screen and **Manage Group Quotas** opens the **[Manage Group Quotas]({{< relref "ManageQuotas" >}})** screen.
 {{< /expand >}}
 
 ### Data Protection Widget
@@ -153,17 +153,17 @@ It shows the number of snapshots and other data protection-related scheduled tas
 
 The **Data Protection** widget links to tasks configured on the **Data Protection** screen.
 
-**Create Snapshot** opens the **[Add Snapshot]({{< relref "SnapshotsScreens.md" >}})** screen.
+**Create Snapshot** opens the **[Add Snapshot]({{< relref "SnapshotsScreens" >}})** screen.
 
-**Manage Snapshots** opens the **[Snapshots]({{< relref "SnapshotsScreens.md" >}})** screen list view where you can manage snapshots.
+**Manage Snapshots** opens the **[Snapshots]({{< relref "SnapshotsScreens" >}})** screen list view where you can manage snapshots.
 
-**Manage Snapshot Tasks** opens the **Data Protection > [Periodic Snapshot Tasks]({{< relref "PeriodicSnapshotTasksScreensSCALE.md" >}})** screen list view where you can manage scheduled periodic snapshot tasks.
+**Manage Snapshot Tasks** opens the **Data Protection > [Periodic Snapshot Tasks]({{< relref "PeriodicSnapshotTasksScreensSCALE" >}})** screen list view where you can manage scheduled periodic snapshot tasks.
 
-**Manage Replication Tasks** opens the **Data Protection > [Replications Tasks]({{< relref "ReplicationScreensSCALE.md" >}})** screen list view where you can manage scheduled replication tasks.
+**Manage Replication Tasks** opens the **Data Protection > [Replications Tasks]({{< relref "ReplicationScreensSCALE" >}})** screen list view where you can manage scheduled replication tasks.
 
-**Manage Cloud Sync Tasks** opens the **Data Protection > [Cloud Sync Tasks]({{< relref "CloudSyncTasksScreensSCALE.md" >}})** screen list view where you can manage scheduled cloud sync tasks.
+**Manage Cloud Sync Tasks** opens the **Data Protection > [Cloud Sync Tasks]({{< relref "CloudSyncTasksScreensSCALE" >}})** screen list view where you can manage scheduled cloud sync tasks.
 
-**Manage Rsync Tasks** opens the **Data Protection > [Rsync Tasks]({{< relref "RsyncTasksScreensSCALE.md" >}})** screen list view where you can manage scheduled rsync tasks.
+**Manage Rsync Tasks** opens the **Data Protection > [Rsync Tasks]({{< relref "RsyncTasksScreensSCALE" >}})** screen list view where you can manage scheduled rsync tasks.
 
 The **Snapshot** counter shows the number of snapshots taken.
 The **Snapshot Tasks** counter shows the number of scheduled snapshot tasks.
@@ -193,7 +193,7 @@ Click to show a selectable checklist of **Permissions Advanced** and **Flags Adv
 
 A dataset with a POSIX ACL type is only editable using the **Edit** button.
 
-**Edit** opens the [**Edit ACL**]({{< relref "EditACLScreens.md" >}}) for ACL type.
+**Edit** opens the [**Edit ACL**]({{< relref "EditACLScreens" >}}) for ACL type.
 {{< /expand >}}
 
 ### Roles Widget
@@ -212,13 +212,13 @@ The **Roles** widget for a dataset with no share shows two links, one to create 
 {{< truetable >}}
 | Role | Link Included | Description |
 |------|---------------|-------------|
-| System dataset | [Manage Advanced Settings]({{< relref "AdvancedSettingsScreen.md" >}}) | Select the option to configure the **System Dataset** |
-| Apps | [Manage Apps Settings]({{< relref "/SCALEUIReference/Apps/_index.md" >}}) | Shows apps (Docker) is using the dataset. Select the option to **Choose Pool** from the **Settings** dropdown list on the **Applications** screen. |
-| Dataset with no share | [Create SMB Share]({{< relref "SMBSharesScreens.md" >}})<br>[Create NFS Share]({{< relref "NFSSharesScreens.md" >}}) | Opens either the **Add SMB** or **Add NFS** share screen to configure the share. |
-| SMB share | [Manage SMB Shares]({{< relref "SMBSharesScreens.md" >}}) | Shows the name of the SMB share using the dataset. Select the snare on the **Sharing SMB** screen to edit it. |
+| System dataset | [Manage Advanced Settings]({{< relref "AdvancedSettingsScreen" >}}) | Select the option to configure the **System Dataset** |
+| Apps | [Manage Apps Settings]({{< relref "/SCALEUIReference/Apps/" >}}) | Shows apps (Docker) is using the dataset. Select the option to **Choose Pool** from the **Settings** dropdown list on the **Applications** screen. |
+| Dataset with no share | [Create SMB Share]({{< relref "SMBSharesScreens" >}})<br>[Create NFS Share]({{< relref "NFSSharesScreens" >}}) | Opens either the **Add SMB** or **Add NFS** share screen to configure the share. |
+| SMB share | [Manage SMB Shares]({{< relref "SMBSharesScreens" >}}) | Shows the name of the SMB share using the dataset. Select the snare on the **Sharing SMB** screen to edit it. |
 | Other share | Link to the share type screen | Shows the name of the share using the dataset. Select the option on the share screen (NFS or iSCSI) to edit it. |
-| Multiprotocol share | [Manage SMB Shares]({{< relref "SMBSharesScreens.md" >}})<br>[Manage NFS Shares]({{< relref "NFSSharesScreens.md" >}}) | Shows the name of the SMB and NFS share using the dataset. Each link opens the **Sharing SMB** or **Sharing NFS** screens. Click on the share to edit it. |
-| VM | [Manage VM Settings]({{< relref "InstancesScreens.md" >}}) | Displays the name of the VM using the dataset (zvol). Select it on the **Virtual Machines** screen to edit it. |
+| Multiprotocol share | [Manage SMB Shares]({{< relref "SMBSharesScreens" >}})<br>[Manage NFS Shares]({{< relref "NFSSharesScreens" >}}) | Shows the name of the SMB and NFS share using the dataset. Each link opens the **Sharing SMB** or **Sharing NFS** screens. Click on the share to edit it. |
+| VM | [Manage VM Settings]({{< relref "InstancesScreens" >}}) | Displays the name of the VM using the dataset (zvol). Select it on the **Virtual Machines** screen to edit it. |
 {{< /truetable >}}
 {{< /expand >}}
 
@@ -241,9 +241,9 @@ The non-root parent dataset controls the state of the child dataset.
 
 {{< trueimage src="/images/SCALE/Datasets/ZFSEncryptionWidgetWithGoToEncryptionRoot.png" alt="ZFS Encryption Widget with Go To Encryption Root" id="ZFS Encryption Widget with Go To Encryption Root" >}}
 
-**Edit** opens the **[Edit Encryption Options]({{< relref "EncryptionUISCALE.md" >}}) for *dataset*** window for the selected dataset.
+**Edit** opens the **[Edit Encryption Options]({{< relref "EncryptionUISCALE" >}}) for *dataset*** window for the selected dataset.
 
-For more details on encryption windows and functions see [Encryption Settings]({{< relref "EncryptionUISCALE.md" >}}).
+For more details on encryption windows and functions see [Encryption Settings]({{< relref "EncryptionUISCALE" >}}).
 {{< /expand >}}
 
 ## Add and Edit Dataset Screens
@@ -274,7 +274,7 @@ The common settings are **Parent Path**, **Name**, and the **Dataset Preset** (p
 |---------|-------------|
 | **Parent path** | Read-only field that shows the dataset path. Populated with the parent dataset path, adds the name given to the dataset after entering it in **Name**. For example, *tank/shares/smbshare1*. |
 | **Name** | Enter a unique identifier for the dataset. Names allow upper and lower case letters, numbers, and the dash (-) or underscore (_) special characters, but TrueNAS does not allow trailing spaces after the dataset name. You cannot change the dataset name after clicking **Save**. The **Name** field on the **Edit Dataset** screen shows the path. |
-| **Dataset Preset** | Select the option from the dropdown list to define the type of data sharing the dataset uses. The options optimize the dataset for a sharing protocol or app and set the ACL type best suited to the dataset purpose. Options are: <br><li>**Generic** - Select for general storage datasets that are not associated with SMB, NFS, or multi-protocol shares, or apps. Sets the ACL to POSIX.<br><li>**SMB** - Select to optimize the dataset for SMB shares. Shows the **Create SMB Share** option pre-selected and **SMB Name** field populated with the value entered in **Name**. Sets the ACL to NFSv4. <br><li> **Apps** - Select to optimize the dataset for use by any application. Sets the ACL to NFSv4. If you plan to deploy container applications, the system automatically creates the **ix-apps** dataset for Docker storage for application data. For data storage for individual apps, create separate datasets. <br><li>**Multiprotocol** - Select if configuring a multi-protocol or mixed-mode NFS and SMB sharing protocols, or to create only an NFS share. Allows clients to use either protocol to access the same data. Shows the **Create NFS Share** and **Create SMB Share** options pre-selected and the **SMB Name** field populated with the value entered in **Name**. See [Multiprotcol Shares]({{< relref "MixedModeShares.md" >}}) for more information. Sets the ACL to NFSv4.<br></li>Setting cannot be edited after saving the dataset. |
+| **Dataset Preset** | Select the option from the dropdown list to define the type of data sharing the dataset uses. The options optimize the dataset for a sharing protocol or app and set the ACL type best suited to the dataset purpose. Options are: <br><li>**Generic** - Select for general storage datasets that are not associated with SMB, NFS, or multi-protocol shares, or apps. Sets the ACL to POSIX.<br><li>**SMB** - Select to optimize the dataset for SMB shares. Shows the **Create SMB Share** option pre-selected and **SMB Name** field populated with the value entered in **Name**. Sets the ACL to NFSv4. <br><li> **Apps** - Select to optimize the dataset for use by any application. Sets the ACL to NFSv4. If you plan to deploy container applications, the system automatically creates the **ix-apps** dataset for Docker storage for application data. For data storage for individual apps, create separate datasets. <br><li>**Multiprotocol** - Select if configuring a multi-protocol or mixed-mode NFS and SMB sharing protocols, or to create only an NFS share. Allows clients to use either protocol to access the same data. Shows the **Create NFS Share** and **Create SMB Share** options pre-selected and the **SMB Name** field populated with the value entered in **Name**. See [Multiprotcol Shares]({{< relref "MixedModeShares" >}}) for more information. Sets the ACL to NFSv4.<br></li>Setting cannot be edited after saving the dataset. |
 {{< /truetable >}}
 {{< /expand >}}
 
@@ -283,7 +283,7 @@ Shows only on the **Advanced Options** screen.
 The **This Dataset** and **This Dataset and Child Datasets** sections include the same setting options.
 **This Dataset** applies the quota settings to the dataset you are creating or editing.
 **This Dataset and Child Datasets** applies to any children of the dataset.
-These settings also display on the **[Capacity Settings]({{< relref "CapacitySettingsSCALE.md" >}})** screen.
+These settings also display on the **[Capacity Settings]({{< relref "CapacitySettingsSCALE" >}})** screen.
 
 {{< trueimage src="/images/SCALE/Datasets/AddDatasetQuotasManagement.png" alt="Add Dataset Advanced Quota Options" id="Add Dataset Advanced Quota Options" >}}
 
@@ -352,8 +352,8 @@ The **Other Options** tune the dataset for specific data-sharing protocols by se
 | **Copies** | Select the number of ZFS user data duplicates stored on this dataset from the dropdown list. Select between **1**, **2**, or **3** redundant data copies. This can improve data protection and retention but is not a substitute for storage pools with disk redundancy. |
 | **Record Size** | Select the logical block size in the dataset from the dropdown list of options. Matching the fixed size of data, as in a database, can result in better performance. |
 | **ACL Type** | Select the access control list type from the dropdown list of options. Options are: <br><li>**Inherit** - Select to preserve ACL type from the parent dataset.<br><li>**Off** - Select to use neither NFSv4 or POSIX protocols.<br><li>**NFSv4** -Select to cleanly migrate Windows-style ACLs across Active Directory domains (or stand-alone servers) that use ACL models richer than POSIX. Since POSIX ACLs are a Linux-specific ZFS feature, administrators should use NFSv4 to maintain compatibility with TrueNAS Core, FreeBSD, or other non-Linux ZFS implementations. <br><li>**POSIX** - Select when an organization data backup target does not support native NFSv4 ACLs. Since the Linux platform used POSIX for a long time, many backup products that access the server outside the SMB protocol cannot understand or preserve native NFSv4 ACLs.<br></li> All datasets within an SMB share path must have identical ACL types. For a more in-depth explanation of ACLs and configurations in TrueNAS, see our [ACL Primer](https://www.truenas.com/docs/references/aclprimer/). This advanced setting changes ACL type and mode settings configured by the [**Dataset Preset** option](#add-and-edit-dataset-screens). Do not make changes here if you do not understand ACLs. |
-| **ACL Mode** | Select the option that determines how [chmod](https://linux.die.net/man/1/chmod) behaves when adjusting file ACLs. See the [zfs(8)](https://linux.die.net/man/8/zfs) `aclmode` property for more information. Options are: <br><li>**Passthrough** - Only updates ACL entries related to the file or directory mode.<br><li> **Restricted** - Does not allow chmod to make changes to files or directories with a non-trivial ACL. An ACL is trivial if it can be fully expressed as a file mode without losing access rules. Set **ACL Mode** to restricted to optimize a dataset for SMB sharing, but it can also require further optimizations. For example, configuring an [rsync task]({{< relref "RsyncTasksSCALE.md" >}}) with this dataset could require adding `--no-perms` in the task **Auxiliary Parameters** field.</li> |
-| **Metadata (Special) Small Block Size** | Enter a threshold block size for small file blocks you include in the [special allocation class (fusion pools)]({{< relref "FusionPoolsScale.md" >}}). Blocks smaller than or equal to this value are assigned to the special allocation class while greater blocks are assigned to the regular class. Valid values are zero or a power of two from 512B up to 1M. The default size **0** means no small file blocks are allocated in the special class. Before setting this property, you must add a [metadata special class VDEV]({{< relref "FusionPoolsScale.md" >}}) to the pool. |
+| **ACL Mode** | Select the option that determines how [chmod](https://linux.die.net/man/1/chmod) behaves when adjusting file ACLs. See the [zfs(8)](https://linux.die.net/man/8/zfs) `aclmode` property for more information. Options are: <br><li>**Passthrough** - Only updates ACL entries related to the file or directory mode.<br><li> **Restricted** - Does not allow chmod to make changes to files or directories with a non-trivial ACL. An ACL is trivial if it can be fully expressed as a file mode without losing access rules. Set **ACL Mode** to restricted to optimize a dataset for SMB sharing, but it can also require further optimizations. For example, configuring an [rsync task]({{< relref "RsyncTasksSCALE" >}}) with this dataset could require adding `--no-perms` in the task **Auxiliary Parameters** field.</li> |
+| **Metadata (Special) Small Block Size** | Enter a threshold block size for small file blocks you include in the [special allocation class (fusion pools)]({{< relref "FusionPoolsScale" >}}). Blocks smaller than or equal to this value are assigned to the special allocation class while greater blocks are assigned to the regular class. Valid values are zero or a power of two from 512B up to 1M. The default size **0** means no small file blocks are allocated in the special class. Before setting this property, you must add a [metadata special class VDEV]({{< relref "FusionPoolsScale" >}}) to the pool. |
 {{< /truetable >}}
 {{< /expand >}}
 

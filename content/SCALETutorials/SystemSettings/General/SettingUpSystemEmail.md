@@ -15,7 +15,7 @@ An automatic script sends a nightly email containing important information such 
 For fast awareness and resolution of critical issues, configure TrueNAS to send these emails to the remote email account for the administrator.
 
 {{< hint type=note >}}
-TrueNAS mails [Scrub Task]({{< relref "ScrubTasksSCALE.md" >}}) issues and [S.M.A.R.T. reports]({{< relref "SMARTTestsSCALE.md" >}}) separately to the address configured in those services.
+TrueNAS mails [Scrub Task]({{< relref "ScrubTasksSCALE" >}}) issues and [S.M.A.R.T. reports]({{< relref "SMARTTestsSCALE" >}}) separately to the address configured in those services.
 {{< /hint >}}
 
 ## Configuring User Email Addresses
@@ -27,7 +27,7 @@ Before configuring anything else, set the local administrator email address.
 Go to **Credentials > Users**, click on the admin user row to expand it, then select **Edit** to open the **Edit User** configuration screen.
 In the **Email** field, enter a remote email address for the system administrator that regularly monitors (like *admin@example.com*), and click **Save**.
 
-For more information on adding or changing user settings, see [Managing Users]({{< relref "ManageLocalUsersSCALE.md" >}}).
+For more information on adding or changing user settings, see [Managing Users]({{< relref "ManageLocalUsersSCALE" >}}).
 
 ## Setting Up System Email
 
@@ -143,7 +143,7 @@ Click **Save**.
 
 After configuring the system email send method, the admin email receives a system health email every night/morning.
 
-You can also add/configure the **Email Alert Service** to send timely warnings when a system alert hits a warning level that is specified in [**Alert Settings**]({{< relref "/SCALEUIReference/toptoolbar/alerts/alertsettingsscreen.md" >}}).
+You can also add/configure the **Email Alert Service** to send timely warnings when a system alert hits a warning level that is specified in [**Alert Settings**]({{< relref "/SCALEUIReference/toptoolbar/alerts/alertsettingsscreen" >}}).
 
  Go to **System > Alert Settings** or from any screen, click on the **Alerts** <span class="material-icons">notifications</span> icon at the top right of the screen to open the **Alerts** panel.
 Click on the <span class="material-icons">settings</span> settings icon and then on **Alert Settings**.
