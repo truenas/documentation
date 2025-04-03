@@ -22,7 +22,7 @@ keywords:
 Read this article before you attempt to migrate your FreeBSD-based system to a Linux-based TrueNAS version.
 {{< hint type="warning" title="Using USB Devices for Backups" >}}
 We strongly recommend not using USB flash drives or USB-attached drives for backups as these can have issues, including with recovering backed up files.
-For more information on using USB drives and devices in general, read the [Hardware Guide]({{< relref "scalehardwareguide" >}}).
+For more information on using USB drives and devices in general, read the [Hardware Guide]({{< ref "scalehardwareguide" >}}).
 If you must use a USB type device, verify you can access files on the device before you migrate.
 {{< /hint >}}
 {{< enterprise >}}
@@ -85,7 +85,7 @@ Please contact Support for assistance!
 
    FreeBSD and Linux use different nomenclature for network interfaces, bridges, LAGGs, and VLANs.
    Because of the difference, network settings can either get lost or not transfer which means you have no network connectivity.
-   See [Component Naming]({{< relref "ComponentNaming" >}}) for more information.
+   See [Component Naming]({{< ref "ComponentNaming" >}}) for more information.
 
    When using a TrueNAS Enterprise system, refer to the network port ID manuals of your [TrueNAS Systems](https://www.truenas.com/docs/hardware/) to find the network port assignments in TrueNAS.
    When using custom hardware for TrueNAS, refer to the manual or documentation provided with your system or locate this information on your server hardware and take note of it.
@@ -104,7 +104,7 @@ Please contact Support for assistance!
 
 After completing the steps listed above that apply to your existing system, download the latest [TrueNAS 24.04 ISO file](https://www.truenas.com/download-tn-scale/) and save it to your computer.
 See [Software Releases](https://www.truenas.com/docs/softwarereleases/#upgrade-paths) for current recommended update paths to make sure you download and migrate to and from the correct TrueNAS versions.
-Burn the iso to a USB drive (see [**Installing on Physical Hardware**]({{< relref "InstallingSCALE.md#installing-on-physical-hardware" >}})) when upgrading a physical system.
+Burn the iso to a USB drive (see [**Installing on Physical Hardware**]({{< ref "InstallingSCALE.md#installing-on-physical-hardware" >}})) when upgrading a physical system.
 
 ## Deprecated Services
 The built-in services listed in this section are available in 13.0, but deprecated in 22.12.3 (Bluefin) and removed in later TrueNAS releases.

@@ -111,14 +111,14 @@ The **GUI Settings** screen shows configuration settings for the TrueNAS web int
 | Setting | Description |
 |---------|-------------|
 | **Theme** | Select a color theme from the dropdown list of options. Options are: **ixDark** (default option), **ixBlue**, **Dracula**, **Nord**, **Paper**, **Soloarized Dark**, **Midnight**, and **High Contrast**. Selecting an option immediately changes the UI to the selected color theme. |
-| **GUI SSL Certificate** | Sets the selected certificate as the SSH certificate. **truenas_default** is the default self-signed certificate. The system uses a self-signed certificate to enable encrypted web interface connections. **Manage Certificates** opens the [Certificates]({{< relref "/SCALEUIReference/credentials/certificates/" >}}) screen. Certificates added to TrueNAS show on this list. |
+| **GUI SSL Certificate** | Sets the selected certificate as the SSH certificate. **truenas_default** is the default self-signed certificate. The system uses a self-signed certificate to enable encrypted web interface connections. **Manage Certificates** opens the [Certificates]({{< ref "/SCALEUIReference/credentials/certificates/" >}}) screen. Certificates added to TrueNAS show on this list. |
 | **Web Interface IPv4 Address** | Select an IP address to limit the usage when accessing the administrative GUI. The built-in HTTP server binds to the wildcard address of **0.0.0.0** (any address) and issues an alert if the specified address becomes unavailable. |
 | **Web Interface IPv6 Address** | Select an IPv6 address from the dropdown list to limit usage when accessing the administrative GUI. The default is **::**. The built-in HTTP server binds to the wildcard address of **0.0.0.0** (any address) and issues an alert if the specified address becomes unavailable. |
 | **Web Interface HTTP Port** | Sets a non-standard port to access the GUI over HTTP. The default is **80**. Changing this setting might require changing a [Firefox configuration setting](https://support.mozilla.org/en-US/kb/connection-settings-firefox). |
 | **Web Interface HTTPS Port** | Sets a non-standard port to access the GUI over HTTPS. The default is **443**. |
 | **HTTPS Protocols** | Sets a cryptographic protocol(s) for securing client/server connections. Select the [Transport Layer Security (TLS)](https://en.wikipedia.org/wiki/Transport_Layer_Security) versions TrueNAS can use for connection security from the dropdown list of options:<br><li>**TLSv1**<br><li>**TLSv1.1**<br><li>**TLSV1.2** selected by default<br><li>**TLSv1.3** (selected by default)</li> |
 | **Web Interface HTTP -> HTTPS Redirect** | Select to redirect HTTP connections to HTTPS. A GUI SSL certificate is required for HTTPS. Activating this sets the [HTTP Strict Transport Security (HSTS)](https://en.wikipedia.org/wiki/HTTP_Strict_Transport_Security) maximum age to 31536000 seconds (one year). This means that after a browser connects to the web interface for the first time, the browser continues to use HTTPS and renews this setting every year. After adding a new certificate select it or use the default TrueNAS certificate in **GUI SSL Certificate**. |
-| **Usage Collection** | Select to enable sending anonymous usage statistics to iXsystems. For more information about what usage data is collected, see the [TrueNAS Data Collection Statement]({{< relref "/GettingStarted/UserAgreements/DataCollectionStatement" >}}). |
+| **Usage Collection** | Select to enable sending anonymous usage statistics to iXsystems. For more information about what usage data is collected, see the [TrueNAS Data Collection Statement]({{< ref "/GettingStarted/UserAgreements/DataCollectionStatement" >}}). |
 | **Show Console Messages** | Select to show console messages in real-time at the bottom of the browser. |
 {{< /truetable >}}
 {{< /expand >}}
@@ -192,7 +192,7 @@ The **Email Options** screen with **SMTP** selected shows standard email configu
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **From Email** | Enter the user account email address to use for the envelope **From**  email address, the address sending emails and configured on either the Add or Edit User screen. For more information, see [**User Screens**]({{< relref "LocalUsersScreensSCALE" >}}). |
+| **From Email** | Enter the user account email address to use for the envelope **From**  email address, the address sending emails and configured on either the Add or Edit User screen. For more information, see [**User Screens**]({{< ref "LocalUsersScreensSCALE" >}}). |
 | **From Name** | Enter the name to show in front of the sending email address, for example *truenas system 1* in *truenas system 1@example.com*. |
 | **Outgoing Mail Server** | Host name or IP address of SMTP server used to send emails. |
 | **Mail Server Port** | SMTP port number. Typically **25**, **465** (secure SMTP), or **587** (submission). |
@@ -208,4 +208,4 @@ The **Email Options** screen with **SMTP** selected shows standard email configu
 **Gmail OAuth** and **Outlook OAuth** options show the **From Email** and **From Name** fields and a log-in-to button for the email method selected. 
 **GMail OAuth** shows **Log In To Gmail** and **Outlook OAuth** shows **Log In To Outlook**.
 These login methods step through a sequence of login screens for the selected method.
-For more information, see [Setting Up System Email]({{< relref "SettingUpSystemEmail" >}})
+For more information, see [Setting Up System Email]({{< ref "SettingUpSystemEmail" >}})

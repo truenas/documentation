@@ -7,7 +7,7 @@ Before you begin configuring the replication task, first verify the destination 
 To create a replication task:
 
 1. Create the destination dataset or storage location you want to use to store the replication snapshots.
-   If using another TrueNAS system, [create a dataset]({{< relref "DatasetsSCALE" >}}) in one of your pools.
+   If using another TrueNAS system, [create a dataset]({{< ref "DatasetsSCALE" >}}) in one of your pools.
   
 2. Verify the admin user home directory, auxiliary groups, and sudo setting on both the local and remote destination systems.
    Local replication does not require an SSH connection, so this only applies to replication to another system.
@@ -25,7 +25,7 @@ To create a replication task:
 
    {{< trueimage src="/images/SCALE/Credentials/ChangeAdminUserHomeDirectorySetting.png" alt="Home Directory Settings Early Bluefin" id="Home Directory Settings Early Bluefin" >}}
 
-   For more information, follow the instructions in [Adding Home Directories]({{< relref "ManageLocalUsersSCALE" >}}) to create the home directory for the admin user.
+   For more information, follow the instructions in [Adding Home Directories]({{< ref "ManageLocalUsersSCALE" >}}) to create the home directory for the admin user.
 
    b. Select the sudo permission level you want the admin user to have.
       **Allow all sudo commands with no password** must be selected to enable SSH+NETCAT remote replication.

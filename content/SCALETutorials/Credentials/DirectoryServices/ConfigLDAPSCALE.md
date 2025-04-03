@@ -34,7 +34,7 @@ To configure TrueNAS to use an LDAP directory server:
 
 6. Click **Save**.
 
-If you want to further modify the LDAP configuration, click **Advanced Options**. See the [LDAP UI Reference article]({{< relref "/SCALEUIReference/Credentials/DirectoryServices/LDAP" >}}) for details about advanced settings.
+If you want to further modify the LDAP configuration, click **Advanced Options**. See the [LDAP UI Reference article]({{< ref "/SCALEUIReference/Credentials/DirectoryServices/LDAP" >}}) for details about advanced settings.
 
 {{< hint type=note >}}
 When using the `idmap_ad` backend, TrueNAS relies on the LDAP server to provide `uidNumber` and `gidNumber` attributes for users and groups.

@@ -30,11 +30,11 @@ TrueNAS is not responsible for any charges incurred using third-party vendors wi
 
 ## Cloud Sync Task Requirements
 You must have:
-* All system [storage]({{< relref "/SCALETutorials/Storage/" >}}) configured and ready to receive or send data.
+* All system [storage]({{< ref "/SCALETutorials/Storage/" >}}) configured and ready to receive or send data.
 A cloud storage provider account and location (like an Amazon S3 bucket).
 
 You can create cloud storage account credentials using **Credentials > Backup Credentials > Cloud Credentials** before adding the sync task or add it when configuring the cloud sync task using **Add** on the **Data Protection > Cloud Sync Task** widget to open the **Cloudsync Task Wizard**.
-See the [Cloud Credentials]({{< relref "/SCALETutorials/Credentials/BackupCredentials/AddCloudCredentials" >}}) article for instructions on adding a backup cloud credential.
+See the [Cloud Credentials]({{< ref "/SCALETutorials/Credentials/BackupCredentials/AddCloudCredentials" >}}) article for instructions on adding a backup cloud credential.
 
 ## Creating a Cloud Sync Task
 

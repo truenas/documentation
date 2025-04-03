@@ -58,8 +58,8 @@ After configuring the Storj account in the Storj-iX portal return to TrueNAS to 
 | Setting | Description |
 |---------|-------------|
 | **Signup for account** | Link to the Storj iX account sign-up page where you either create a new account or sign into your Storj iX account. |
-| **Access Key ID** | Enter the alphanumeric key provided by Storj when you [create the S3 account access]({{< relref "TrueCloudTasks" >}}) associated with the storage buckets added in Storj. |
-| **Secret Access Key** | Enter the alphanumeric key provided by Storj when you [create the S3 account access]({{< relref "TrueCloudTasks" >}}) associated with the storage buckets added in Storj. |
+| **Access Key ID** | Enter the alphanumeric key provided by Storj when you [create the S3 account access]({{< ref "TrueCloudTasks" >}}) associated with the storage buckets added in Storj. |
+| **Secret Access Key** | Enter the alphanumeric key provided by Storj when you [create the S3 account access]({{< ref "TrueCloudTasks" >}}) associated with the storage buckets added in Storj. |
 {{< /truetable >}}
 {{< /expand >}}
 

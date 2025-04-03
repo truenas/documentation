@@ -17,7 +17,7 @@ keywords:
 The **SSH Connections** and **SSH Keypairs** widgets on the **Backup Credentials** screen display a list of SSH connections and key pairs configured on the system.
 Using these widgets, users can establish Secure Socket Shell (SSH) connections.
 
-You must also configure and activate the [SSH Service]({{< relref "sshservicescale" >}}) to allow SSH access.
+You must also configure and activate the [SSH Service]({{< ref "sshservicescale" >}}) to allow SSH access.
 
 ## Creating an SSH Connection
 

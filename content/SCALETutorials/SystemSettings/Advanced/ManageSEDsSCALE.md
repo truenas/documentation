@@ -23,4 +23,4 @@ keywords:
 
 {{< include file="/static/includes/SEDIndividualPWs.md" >}}
 
-See [Managing Self-Encrypting Drives (SED)]({{< relref "/SCALETutorials/Storage/Disks/SEDScale" >}}) for more information.
+See [Managing Self-Encrypting Drives (SED)]({{< ref "/SCALETutorials/Storage/Disks/SEDScale" >}}) for more information.

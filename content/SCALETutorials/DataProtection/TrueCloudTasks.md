@@ -116,11 +116,11 @@ This option is not available for datasets with child datasets.
 Advanced users can write scripts that run immediately before or after the TrueCloud backup task.
 Enter environment variables in either the **Pre-script** or **Post-script** fields.
 The **Post-script** field only runs when the TrueCloud backup task succeeds.
-See [TrueCloud Backup Tasks Screens]({{< relref "truecloudbackuptasksscreen/#advanced-options-settings" >}}) for information on available environment variables.
+See [TrueCloud Backup Tasks Screens]({{< ref "truecloudbackuptasksscreen/#advanced-options-settings" >}}) for information on available environment variables.
 
 Use **Exclude** to enter a list of files and directories to exclude from sync.
 Press <kbd>Enter</kbd> to separate entries.
-See [TrueCloud Backup Tasks Screens]({{< relref "truecloudbackuptasksscreen/#advanced-options-settings" >}}) for syntax examples.
+See [TrueCloud Backup Tasks Screens]({{< ref "truecloudbackuptasksscreen/#advanced-options-settings" >}}) for syntax examples.
 
 Use **Transfer Settings** to prevent excess resource consumption by setting the pack size and read concurrency.
 
@@ -132,7 +132,7 @@ To run a scheduled task before the defined time, click **<i class="fa fa-play" a
 
 To delete a task, click **<i class="material-icons" aria-hidden="true" title="Delete">delete</i> Delete** for the task to delete. 
 
-See [TrueCloud Backup Tasks Screens]({{< relref "truecloudbackuptasksscreen/#advanced-options-settings" >}}) for more information on TrueCloud Backup Task screens.
+See [TrueCloud Backup Tasks Screens]({{< ref "truecloudbackuptasksscreen/#advanced-options-settings" >}}) for more information on TrueCloud Backup Task screens.
 
 ### Restoring Data from TrueCloud Snapshots
 To restore data from a TrueCloud backup, locate an existing snapshot on the **Snapshots widget**.
@@ -144,7 +144,7 @@ Click **<i class="material-icons" aria-hidden="true" title="Restore">history</i>
 {{< trueimage src="/images/SCALE/DataProtection/TrueCloudRestore.png" alt="Restore from Snapshot" id="Restore from Snapshot" >}}
 
 Select **Include Everything** to restore all data, or exclude some data using **Include from subfolder**, **Select paths to exclude**, or **Exclude by pattern**.
-See [TrueCloud Backup Tasks Screens]({{< relref "TrueCloudBackupTasksScreen" >}}) for more information.
+See [TrueCloud Backup Tasks Screens]({{< ref "TrueCloudBackupTasksScreen" >}}) for more information.
 
 Set the local **Target** to the target dataset of the backup task.
 Click **Save** to restore data from the snapshot.

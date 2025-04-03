@@ -19,7 +19,7 @@ TrueNAS Enterprise customers should contact TrueNAS Enterprise Support for assis
 {{< /expand >}}
 {{< /enterprise >}}
 
-After completing the installation process, you can either use the [Console setup menu]({{< relref "ConsoleSetupMenuSCALE" >}}) to reconfigure the primary network interface with a static IP address or use the TrueNAS UI to make network changes and complete the initial configuration.
+After completing the installation process, you can either use the [Console setup menu]({{< ref "ConsoleSetupMenuSCALE" >}}) to reconfigure the primary network interface with a static IP address or use the TrueNAS UI to make network changes and complete the initial configuration.
 
 Configuring your system includes:
 

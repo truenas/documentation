@@ -29,7 +29,7 @@ We strongly recommend that you review your available system resources and plan y
 * Maximizing total available storage at the expense of redundancy or performance entails allocating large-volume disks and configuring a pool for minimal redundancy.
 * Maximizing pool performance entails installing and allocating high-speed SSD drives to a pool.
 
-Security requirements can mean the pool must be created with [ZFS encryption]({{< relref "EncryptionSCALE" >}}).
+Security requirements can mean the pool must be created with [ZFS encryption]({{< ref "EncryptionSCALE" >}}).
 However, we recommend that users create pools as unencrypted and then encrypt some or all of of the child datasets, as needed.
 
 {{< include file="/static/includes/EncryptionRootLevel.md" >}}

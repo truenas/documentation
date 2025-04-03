@@ -15,12 +15,12 @@ keywords:
 
 {{< include file="/static/includes/SnapshotsIntroSnippet.md" >}}
 
-Taking snapshots requires the system have all [pools]({{< relref "CreatePoolWizard" >}}), [datasets]({{< relref "DatasetsScale" >}}), and [zvols]({{< relref "AddManageZvols" >}}) already configured.
+Taking snapshots requires the system have all [pools]({{< ref "CreatePoolWizard" >}}), [datasets]({{< ref "DatasetsScale" >}}), and [zvols]({{< ref "AddManageZvols" >}}) already configured.
 
 ## Creating a Snapshot
 
 {{< hint type=note >}}
-Consider making a [Periodic Snapshot Task]({{< relref "PeriodicSnapshotTasksScreensSCALE" >}}) to save time and create regular, fresh snapshots.
+Consider making a [Periodic Snapshot Task]({{< ref "PeriodicSnapshotTasksScreensSCALE" >}}) to save time and create regular, fresh snapshots.
 {{< /hint >}}
 
 There are two ways to access snapshot creation:

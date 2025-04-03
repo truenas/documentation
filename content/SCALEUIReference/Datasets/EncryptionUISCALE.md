@@ -10,7 +10,7 @@ tags:
 - storage
 ---
 
-Datasets, root, non-root parent, and child, or zvols with encryption include the **[ZFS Encryption]({{< relref "/SCALEUIReference/Datasets/" >}})** widget in the set of dataset widgets displayed on the **Datasets** screen.
+Datasets, root, non-root parent, and child, or zvols with encryption include the **[ZFS Encryption]({{< ref "/SCALEUIReference/Datasets/" >}})** widget in the set of dataset widgets displayed on the **Datasets** screen.
 
 {{< trueimage src="/images/SCALE/Datasets/DatasetTreeWithLockIcons.png" alt="Dataset Tree Table Encryption Icons" id="Dataset Tree Table Encryption Icons" >}}
 
@@ -18,7 +18,7 @@ Datasets, root, non-root parent, and child, or zvols with encryption include the
 
 ## Dataset Encryption
 
-The **Encryption** option on the **[Pool Manager]({{< relref "PoolCreateWizardScreens" >}})** screen sets encryption for the pool and root dataset.
+The **Encryption** option on the **[Pool Manager]({{< ref "PoolCreateWizardScreens" >}})** screen sets encryption for the pool and root dataset.
 
 {{< include file="/static/includes/EncryptionRootLevel.md" >}}
 
@@ -27,7 +27,7 @@ It downloads a JSON file to your downloads folder.
 
 {{< trueimage src="/images/SCALE/Storage/DownloadPoolEncryptionKey.png" alt="Download Pool Encryption Key" id="Download Pool Encryption Key" >}}
 
-The [**Encryption Options** settings]({{< relref "/scaleuireference/datasets/#encryption-options-section" >}}) under **Advanced Options** on the **Add Dataset** screen configure encryption for that dataset.
+The [**Encryption Options** settings]({{< ref "/scaleuireference/datasets/#encryption-options-section" >}}) under **Advanced Options** on the **Add Dataset** screen configure encryption for that dataset.
 
 {{< trueimage src="/images/SCALE/Datasets/AddDatasetBasicEncryptionAndOtherOptions.png" alt="Add Dataset Encryption Options Key" id="Add Dataset Encryption Options Key" >}}
 

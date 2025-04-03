@@ -68,9 +68,9 @@ The options are **Change Password**, **Two-Factor Authentication**, **Preference
 
 The <span class="material-icons">dialpad</span> **Change Password** icon button displays a dialog where you can change the login password for the currently logged-in administrator password.
 
-The <span class="iconify" data-icon="mdi:two-factor-authentication"></span> **Two-Factor Authentication** icon button opens the [**Two-Factor Authentication Screen**]({{< relref "2fascreenscale" >}}).
+The <span class="iconify" data-icon="mdi:two-factor-authentication"></span> **Two-Factor Authentication** icon button opens the [**Two-Factor Authentication Screen**]({{< ref "2fascreenscale" >}}).
 
-The <span class="material-icons">laptop</span> **API Keys** icon button displays the [API Keys screen]({{< relref "APIKeysScreen" >}}) that lists current API keys and where you can add or manage API keys that identify outside resources and applications without a principal.
+The <span class="material-icons">laptop</span> **API Keys** icon button displays the [API Keys screen]({{< ref "APIKeysScreen" >}}) that lists current API keys and where you can add or manage API keys that identify outside resources and applications without a principal.
 
 The <span class="material-icons">library_books</span> **Guide** icon button opens the TrueNAS Documentation Hub website in a new browser tab.
 
