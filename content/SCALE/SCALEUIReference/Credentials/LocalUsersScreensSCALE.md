@@ -99,7 +99,7 @@ Built-in users (except the **root** user) do not include the **Home Directory Pe
 
 ### Authentication settings
 **Authentication** settings specify authentication methods, the public SSH key, user administration access, and enable/disable password authentication.
-The add and edit user screens grant access to a shell option, but the [privilege screen **Web Shell Access** setting]({{< relref "LocalGroupsScreens.md#PrivilegesScreen" >}}) determines the ability to see the **System > Shell** screen.
+The add and edit user screens grant access to a shell option, but the [privilege screen **Web Shell Access** setting]({{< ref "LocalGroupsScreens.md#PrivilegesScreen" >}}) determines the ability to see the **System > Shell** screen.
 
 {{< trueimage src="/images/SCALE/Credentials/AddUserHomeDirAuth.png" alt="Authentication Settings" id="Authentication Settings" >}}
 
@@ -115,12 +115,12 @@ The add and edit user screens grant access to a shell option, but the [privilege
 | **Allow all sudo commands** | Select to give this user permission to use all [sudo](https://www.sudo.ws/) commands. Using sudo prompts the user for their account password. |
 | **Allowed sudo commands with no password** | Use to list specific [sudo](https://www.sudo.ws/) commands allowed for this user with no password required. Enter each command as an absolute path to the ELF (Executable and Linkable Format) executable file, for example, */usr/bin/nano*. <file>/usr/bin/</file> is the default location for commands. <br> Grants limited root-like permissions for this user when using these commands. Exercise caution when allowing sudo commands without password prompts. We recommend limiting this privilege to trusted users and specific commands to minimize security risks. |
 | **Allow all sudo commands with no password** | Select to give this user administrator permissions and the ability to use all [sudo](https://www.sudo.ws/) commands with no password required. <br> This is not recommended. |
-| **SMB User** | Select to allow this user to authenticate to and access data share with [SMB]({{< relref "/SCALE/SCALETutorials/Shares" >}}) samba shares. |  
+| **SMB User** | Select to allow this user to authenticate to and access data share with [SMB]({{< ref "/SCALE/SCALETutorials/Shares" >}}) samba shares. |  
 | **Download Authorized Keys** | Click to generate and download a public key text file. Displays on the **Edit User** screen. |
 {{< /truetable >}}
 
 #### Shell Options
-You can set a specific [shell]({{< relref "UseScaleShell" >}}) for the user from the **Shell** dropdown list options.
+You can set a specific [shell]({{< ref "UseScaleShell" >}}) for the user from the **Shell** dropdown list options.
 
 {{< truetable >}}
 | Shell | Description |

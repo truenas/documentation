@@ -186,7 +186,7 @@ Plex required host path storage volumes:
 * **config** to use as the Plex app configuration storage volume.
 * **logs** optional if you want to save and have easy access to log data.
 
-If organizing datasets under a parent dataset named *plex*, configure the [ACL permissions]({{< relref "PermissionsSCALE" >}}) for this parent dataset and add an ACE entry for the run-as (root or **0**) or assigned user (**568**).
+If organizing datasets under a parent dataset named *plex*, configure the [ACL permissions]({{< ref "PermissionsSCALE" >}}) for this parent dataset and add an ACE entry for the run-as (root or **0**) or assigned user (**568**).
 
 See [Before You Begin](#before-you-begin) for more information on creating app datasets.
 
@@ -206,7 +206,7 @@ Change the **@owner** and **@group** values from **root** to the administrative 
 Next, add an ACL entry for the run-as user.
 For Plex, the run-as users are **0** for **root** and **568**. Add a user entry for these users.
 Save the ACL before leaving the screen.
-See [Setting Up Permissions]({{< relref "PermissionsSCALE" >}}) and [Edit ACL Screen]({{< relref "EditACLScreens" >}}) for more information.
+See [Setting Up Permissions]({{< ref "PermissionsSCALE" >}}) and [Edit ACL Screen]({{< ref "EditACLScreens" >}}) for more information.
 {{< /expand >}}
 
 #### Mounting an SMB Share Storage Volume

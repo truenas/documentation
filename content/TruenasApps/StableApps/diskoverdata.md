@@ -147,7 +147,7 @@ Diskover Data only expects one host path storage volume, **config** to hold app 
 
 {{< include file="/static/includes/apps/InstallAppsStorageConfig.md" >}}
 
-If you organize the **config** dataset under a parent dataset named *diskoverdata*, configure the [ACL permissions]({{< relref "PermissionsSCALE" >}}) for this parent dataset and add an ACE entry for the **root** user and the Elasticsearch root **1000**.
+If you organize the **config** dataset under a parent dataset named *diskoverdata*, configure the [ACL permissions]({{< ref "PermissionsSCALE" >}}) for this parent dataset and add an ACE entry for the **root** user and the Elasticsearch root **1000**.
 
 You can add extra storage volumes during the app installation or edit the application after it deploys. Stop the app before editing settings.
 {{< include file="/static/includes/apps/InstallAppStorageConfig2.md" >}}

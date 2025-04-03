@@ -34,4 +34,4 @@ Use this as a reference for projects that require direct TrueNAS integration.
 
 {{< include file="/static/includes/APIKeyWarn.md" >}}
 
-See [Managing API Keys]({{< relref "/scale/scaletutorials/toptoolbar/managingapikeys" >}}) for more information.
+See [Managing API Keys]({{< ref "/scale/scaletutorials/toptoolbar/managingapikeys" >}}) for more information.

@@ -4,8 +4,8 @@ TrueNAS includes the ability to install third-party apps in Docker containers th
 Generally, any container that follows the [Open Container Initiative](https://opencontainers.org/) specifications can be deployed.
 
 To deploy a custom application, go to **Apps** and click **Discover Apps**.
-Click **Custom App** to open the **[Install iX App]({{< relref "installcustomappscreens/#install-ix-app-screen" >}})** screen with a guided installation wizard.
-Click <i class="material-icons" aria-hidden="true" title="more_vert">more_vert</i> > **Install via YAML** to open the **[Custom App]({{< relref "installcustomappscreens/#custom-app-screen" >}})** screen with an advanced YAML editor for deploying apps using Docker Compose.
+Click **Custom App** to open the **[Install iX App]({{< ref "installcustomappscreens/#install-ix-app-screen" >}})** screen with a guided installation wizard.
+Click <i class="material-icons" aria-hidden="true" title="more_vert">more_vert</i> > **Install via YAML** to open the **[Custom App]({{< ref "installcustomappscreens/#custom-app-screen" >}})** screen with an advanced YAML editor for deploying apps using Docker Compose.
 
 TrueNAS also allows users to convert already installed apps into custom applications. 
 Select the app you wish to convert, and then click the triple dot icon button next to **Edit** to open the menu containing **Update** and **Convert to custom app** options.

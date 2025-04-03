@@ -9,7 +9,7 @@ tags:
 - apikeys
 ---
 
-TrueNAS 25.04 and later uses a versioned JSON-RPC 2.0 over WebSocket API with support for user-linked API access keys ([API Reference]({{< relref "/scale/api" >}})).
+TrueNAS 25.04 and later uses a versioned JSON-RPC 2.0 over WebSocket API with support for user-linked API access keys ([API Reference]({{< ref "/scale/api" >}})).
 
 User-linked API keys allow administrators to configure per-user access to the TrueNAS API.
 Keys are revocable and can be configured to automatically expire on a preset date.

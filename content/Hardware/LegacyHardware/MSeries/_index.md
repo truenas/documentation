@@ -15,7 +15,7 @@ Discontinued TrueNAS M-Series Documents
 
 ### M-Series (Gen 2)
 
-The M-Series (Gen 2) are replaced by M-Series (Gen 3) systems. Please refer to the [M-Series Resources]({{< relref "/Hardware/MSeries" >}}) for any other M-Series instructions.
+The M-Series (Gen 2) are replaced by M-Series (Gen 3) systems. Please refer to the [M-Series Resources]({{< ref "/Hardware/MSeries" >}}) for any other M-Series instructions.
 
 Click below to download archival documents for legacy M-Series (Gen 2) systems.
 

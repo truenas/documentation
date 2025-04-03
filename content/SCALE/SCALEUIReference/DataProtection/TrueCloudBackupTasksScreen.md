@@ -138,7 +138,7 @@ The **Remote** settings specify the TrueCloud credential and destination storage
 {{< truetable >}}
 | Settings | Description |
 |----------|-------------|
-| **Credential** | Select an existing Storj iX credential from the dropdown list. TrueNAS automatically validates the selected credential. <br> Select **Add New** to open the [**Cloud Credentials**]({{< relref "CloudCredentialScreens" >}}) screen. This is the same configuration screen that opens when you click **Add** on the **Credentials > Backup Credentials** screen. |
+| **Credential** | Select an existing Storj iX credential from the dropdown list. TrueNAS automatically validates the selected credential. <br> Select **Add New** to open the [**Cloud Credentials**]({{< ref "CloudCredentialScreens" >}}) screen. This is the same configuration screen that opens when you click **Add** on the **Credentials > Backup Credentials** screen. |
 | **Bucket** | Displays after selecting the Storj credential. Select a pre-configured Storj bucket. Only TrueNAS-compatible Storj buckets are selectable. <br> Select **Add New** to create a new Storj bucket from the TrueNAS UI. |
 | **New Bucket Name** | Displays when **Add New** is selected in the **Bucket** field. Enter a name for the new bucket. Only lowercase letters, numbers, and hyphens are allowed. |
 | **Folder** | Enter or browse to select the dataset or directory to receive the backed-up data. Click the <span class="material-icons">arrow_right</span> arrow to the left of the folder icon and at each dataset or directory to reach the storage location to use for this task. <br> Enter <code>/<i>name</i></code>, where *name* is a folder that does not exist, to create a new folder in the bucket. |
@@ -179,8 +179,8 @@ The **Remote** settings specify the TrueCloud credential and destination storage
 |----------|-------------|
 | **Use Snapshot** | Select to set the TrueCloud Backup Task to use a snapshot of the dataset before a push transfer. |
 | **Use Absolute Paths** | Select to ensure that restic backups contain absolute paths. If you do not select this option, the restic backup contains relative paths. |
-| **Pre-Script** | (For advanced users only) Enter a script to execute before running the task. See the [Managing TrueCloud Backup Tasks tutorial]({{< relref "TrueCloudTasks/#using-advanced-options" >}}) for more information. See **Script Environment Variables** below for a list of variables for scripts. |
-| **Post-Script** | (For advanced users only) Enter a script to execute after running the task. See the [Managing TrueCloud Backup Tasks tutorial]({{< relref "TrueCloudTasks/#using-advanced-options" >}}) for more information. See **Script Environment Variables** below for a list of variables for scripts. |
+| **Pre-Script** | (For advanced users only) Enter a script to execute before running the task. See the [Managing TrueCloud Backup Tasks tutorial]({{< ref "TrueCloudTasks/#using-advanced-options" >}}) for more information. See **Script Environment Variables** below for a list of variables for scripts. |
+| **Post-Script** | (For advanced users only) Enter a script to execute after running the task. See the [Managing TrueCloud Backup Tasks tutorial]({{< ref "TrueCloudTasks/#using-advanced-options" >}}) for more information. See **Script Environment Variables** below for a list of variables for scripts. |
 | **Exclude** | Enter a list of files and directories to exclude from the backup. Separate entries by pressing <kbd>Enter</kbd>. See [restic exclude patterns](https://restic.readthedocs.io/en/latest/040_backup.html#excluding-files) for more information about the `--exclude` option and proper syntax. |
 {{< /truetable >}}
 

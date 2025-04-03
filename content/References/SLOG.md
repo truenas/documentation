@@ -58,7 +58,7 @@ Allocate SSDs into this vdev according to your use case.
 Users can exercise an optional step to avoid data loss from device failure or any performance degradation by arranging the **Log VDev** as a mirror.
 The drives must be the same size.
 As stated earlier, the recommended drive size is 16 GB after over-provisioning.
-See the [SLOG over-provisioning guide]({{< relref "/SCALE/SCALETutorials/Storage/Disks/SLOGOverprovisionSCALE" >}}) for more information.
+See the [SLOG over-provisioning guide]({{< ref "/SCALE/SCALETutorials/Storage/Disks/SLOGOverprovisionSCALE" >}}) for more information.
 
 ## SLOG for Asynchronous Writes
 

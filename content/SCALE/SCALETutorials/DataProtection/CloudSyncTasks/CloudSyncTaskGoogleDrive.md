@@ -63,7 +63,7 @@ To add a cloud sync task, go to **Data Protection > Cloud Sync Tasks** and click
 
 {{< include file="/static/includes/AddCloudSyncTaskSteps3-8.md" >}}
 
-See **Using Scripting and Environment Variables** for more information on [environment variables]({{< relref "/SCALE/SCALETutorials/DataProtection/CloudSyncTasks" >}}).
+See **Using Scripting and Environment Variables** for more information on [environment variables]({{< ref "/SCALE/SCALETutorials/DataProtection/CloudSyncTasks" >}}).
 
 {{<include file="/static/includes/addcolumnorganizer.md">}}
 

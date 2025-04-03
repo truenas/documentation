@@ -34,7 +34,7 @@ Do not clear the **Legacy AFP Compatibility** checkbox, as it impacts how data i
 Any other shares created to access these paths after the migration must also have **Legacy AFP Compatibility** selected.
 {{< /hint >}}
 
-Once you have [migrated to TrueNAS 24.04]({{< relref "MigratingFromCore" >}}), you can find your migrated AFP configuration in **Shares >** **Windows Shares (SMB)** with the prefix **AFP_**.
+Once you have [migrated to TrueNAS 24.04]({{< ref "MigratingFromCore" >}}), you can find your migrated AFP configuration in **Shares >** **Windows Shares (SMB)** with the prefix **AFP_**.
 To make the migrated AFP share accessible, start the SMB service.
 
 ![MigratedAFPShareSCALE](/images/SCALE/Shares/MigratedAFPShareSCALE.png "Migrated AFP Share")

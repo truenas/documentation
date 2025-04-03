@@ -20,14 +20,14 @@ Set DHCP to assign the IPv4 address, or manually set a static IP address, add IP
 {{< /expand >}}
 
 {{< expand "Can I configure these options elsewhere?" "v" >}}
-Users can configure many of the interface, DNS, and gateway options using the [Console Setup menu]({{< relref "ConsoleSetupMenuSCALE" >}}).
+Users can configure many of the interface, DNS, and gateway options using the [Console Setup menu]({{< ref "ConsoleSetupMenuSCALE" >}}).
 Be sure to check both locations when troubleshooting network connectivity issues.
 {{< /expand >}}
 
 ## Adding Network Settings
 Use the **Global Configuration Settings** screen to add general network settings like the default gateway and DNS name servers to allow external communication.
 
-To add new or change existing network interfaces see [Interface Configurations]({{< relref "/SCALE/SCALETutorials/Network/Interfaces" >}}).
+To add new or change existing network interfaces see [Interface Configurations]({{< ref "/SCALE/SCALETutorials/Network/Interfaces" >}}).
 
 
 Go to **Network**, and click **Settings** on the **Global Configuration** widget to open the **Edit Global Configuration** screen.

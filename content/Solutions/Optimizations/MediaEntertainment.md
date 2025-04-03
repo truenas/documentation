@@ -26,7 +26,7 @@ Read more to learn how TrueNAS can be optimized for typical M&E production house
 
 {{< hint type=note >}}
 General tuning recommendations are changing constantly!
-Check back often to see what's changed or [add your own recommendations]({{< relref "/Contributing" >}})!
+Check back often to see what's changed or [add your own recommendations]({{< ref "/Contributing" >}})!
 {{< /hint >}}
 
 ## General Optimizations

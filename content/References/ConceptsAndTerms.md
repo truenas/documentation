@@ -54,7 +54,7 @@ While TrueNAS is designed for and ever-evolving towards increased user friendlin
 
 * **Self-Encrypting Drive (SED)**: A SED (or Self-Encrypting Drive) is a hard drive that automatically and continuously encrypts the data on the drive without any user action.
 
-* [**Zettabyte File System (ZFS)**]({{< relref "/references/ZFSPrimer" >}}): ZFS is a next-generation file system designed by Sun Microsystems that eliminates most, if not all of the shortcomings found in legacy file systems and hardware RAID devices.
+* [**Zettabyte File System (ZFS)**]({{< ref "/references/ZFSPrimer" >}}): ZFS is a next-generation file system designed by Sun Microsystems that eliminates most, if not all of the shortcomings found in legacy file systems and hardware RAID devices.
 
 * **iSCSI**: iSCSI stands for Internet Small Computer Systems Interface.
   iSCSI is a transport layer protocol that works on top of the Transport Control Protocol (TCP).
@@ -62,54 +62,54 @@ While TrueNAS is designed for and ever-evolving towards increased user friendlin
 
 ### ZFS
 
-* [**L2ARC**]({{< relref "/references/L2ARC" >}}): sometimes called a CACHE vdev.
+* [**L2ARC**]({{< ref "/references/L2ARC" >}}): sometimes called a CACHE vdev.
   This is a special class of vdev.
   ARC stands for Adaptive Replacement Cache and is a caching algorithm that tracks both the blocks in cache and blocks recently evicted from cache.
   The main ARC resides in system memory.
   The L2ARC is 2nd layer ARC assigned to a disk to expand ARC capability.
 
-* [**ZFS Datasets**]({{< relref "SCALE/SCALETutorials/Datasets" >}}): similar to a conventional mounted filesystem.
+* [**ZFS Datasets**]({{< ref "SCALE/SCALETutorials/Datasets" >}}): similar to a conventional mounted filesystem.
   It appears in casual inspection as "just another folder".
   However, unlike conventional mounted filesystems, each ZFS dataset has its own set of properties.
 
-* [**ZFS Pools**]({{< relref "SCALE/SCALETutorials/Storage" >}}): filesystem container that is composed of one or more vdevs.
+* [**ZFS Pools**]({{< ref "SCALE/SCALETutorials/Storage" >}}): filesystem container that is composed of one or more vdevs.
 
-* [**ZFS vdev**]({{< relref "/references/ZFSPrimer" >}}): ZFS virtual device.
+* [**ZFS vdev**]({{< ref "/references/ZFSPrimer" >}}): ZFS virtual device.
   A ZFS pool is made up by one or more vdevs.
   A vdev can be created using a single disk or many.
   A vdev has many configurations: single disk, stripe, RAIDz1, RAIDz2, RAIDz3, or mirror.
 
-* [**ZFS zvols**]({{< relref "SCALE/SCALETutorials/Datasets/AddManageZvols" >}}): datasets that represent block devices.
+* [**ZFS zvols**]({{< ref "SCALE/SCALETutorials/Datasets/AddManageZvols" >}}): datasets that represent block devices.
 
 * [**ZIL**](https://www.truenas.com/blog/zfs-zil-and-slog-demystified/) (or ZFS Intent Log): special vdev class.
   This is also sometimes referred to as a SLOG or Separate Intent Log.
 
-* [**Fusion Pool**]({{< relref "SCALE/SCALETutorials/Storage/FusionPoolsScale" >}}) (or metadata vdev): is a special class of vdev.
+* [**Fusion Pool**]({{< ref "SCALE/SCALETutorials/Storage/FusionPoolsScale" >}}) (or metadata vdev): is a special class of vdev.
   This special vdev can store meta data such as file locations and allocation tables.
   Using a special vdev drastically speeds up random I/O and can cut the average number of spinning-disk I/Os needed to find and access a file by up to half.
 
-* [**Checksum**]({{< relref "zfsprimer" >}}): As ZFS writes data, it creates a checksum for each disk block it writes.
+* [**Checksum**]({{< ref "zfsprimer" >}}): As ZFS writes data, it creates a checksum for each disk block it writes.
   As ZFS reads data, it validates the checksum for each disk block it reads.
 
-* [**Self-healing**]({{< relref "zfsprimer" >}}): Media errors or bit rot can cause data to change.
+* [**Self-healing**]({{< ref "zfsprimer" >}}): Media errors or bit rot can cause data to change.
   As a result, the checksum no longer matches.
   When ZFS identifies a disk block checksum error on a pool that is mirrored or uses RAIDZ, it replaces the corrupted data with the correct data.
 
-* [**ZFS Snapshots**]({{< relref "SCALE/SCALETutorials/Datasets/CreatingSnapshots" >}}): read-only copy of a file system or volume.
+* [**ZFS Snapshots**]({{< ref "SCALE/SCALETutorials/Datasets/CreatingSnapshots" >}}): read-only copy of a file system or volume.
   When a snapshot of a dataset is made, ZFS records the timestamp of when the snapshot was made.
   No data is copied and no extra storage is consumed.
   Only when changes occur in the filesystem and the data in it diverges from the snapshot does the snapshot start using additional storage.
 
-* [**ZFS Scrub**]({{< relref "SCALE/SCALETutorials/DataProtection/ScrubTasksSCALE" >}}): the process that ZFS uses to verify the data on disk.
+* [**ZFS Scrub**]({{< ref "SCALE/SCALETutorials/DataProtection/ScrubTasksSCALE" >}}): the process that ZFS uses to verify the data on disk.
   All of the data is read and checked against the computed checksums to verify that no corruption has occurred.
 
-* [**ZFS Resilver**]({{< relref "SCALE/SCALETutorials/DataProtection/ScrubTasksSCALE" >}}): process to reconstruct data on a disk when that disk has replaced a failed disk.
+* [**ZFS Resilver**]({{< ref "SCALE/SCALETutorials/DataProtection/ScrubTasksSCALE" >}}): process to reconstruct data on a disk when that disk has replaced a failed disk.
 
-* [**ZFS Replication**]({{< relref "SCALE/SCALETutorials/DataProtection/Replication" >}}): copying a ZFS dataset to another dataset.
+* [**ZFS Replication**]({{< ref "SCALE/SCALETutorials/DataProtection/Replication" >}}): copying a ZFS dataset to another dataset.
   The receiving dataset can be on the same machine or on another machine in a remote location.
   Replication works with snapshots so only the changes to the stored data need to be sent to the receiving dataset.
 
-* [**Cloud Sync**]({{< relref "SCALE/SCALETutorials/DataProtection/CloudSyncTasks" >}}): TrueNAS sending, receiving, or synchronizing data with a Cloud Storage provider like Amazon S3, Google Cloud, or Microsoft Azure.
+* [**Cloud Sync**]({{< ref "SCALE/SCALETutorials/DataProtection/CloudSyncTasks" >}}): TrueNAS sending, receiving, or synchronizing data with a Cloud Storage provider like Amazon S3, Google Cloud, or Microsoft Azure.
 
 ## Networking Terminology
 

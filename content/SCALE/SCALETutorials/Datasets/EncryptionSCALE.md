@@ -36,14 +36,14 @@ TrueNAS includes the [Key Management Interface Protocol (KMIP)](https://docs.oas
 {{< include file="/static/includes/EncryptionWarning.md" >}}
 
 TrueNAS automatically generates a root dataset when you create a pool.
-Select **Encryption** on the **[Pool Creation Wizard]({{< relref "PoolCreateWizardScreens" >}})** screen when you create the pool to encrypt the root dataset.
+Select **Encryption** on the **[Pool Creation Wizard]({{< ref "PoolCreateWizardScreens" >}})** screen when you create the pool to encrypt the root dataset.
 TrueNAS forces encryption of all child datasets and zvols within an encrypted root or parent dataset created using the TrueNAS UI.
 By default, child datasets inherit encryption settings from the parent.
 Deselecting **Inherit (encrypted)** under **Advanced Options** allows modifying the encryption configuration for a child dataset but you cannot change a child dataset of an encrypted parent dataset to unencrypted.
 
 As of TrueNAS 22.12.3 or later, the TrueNAS UI does not allow you to create unencrypted datasets within an encrypted pool or parent dataset.
 However, datasets created outside the UI, such as those created programmatically or manually via shell access, might not inherit encryption unless properly configured.
-For example, the [ix-apps dataset]({{< relref "/TrueNASApps/#ix-apps-dataset" >}}) on the pool selected for applications does not inherit encryption settings.
+For example, the [ix-apps dataset]({{< ref "/TrueNASApps/#ix-apps-dataset" >}}) on the pool selected for applications does not inherit encryption settings.
 
 If the system has only one pool, we recommend that you do not use pool-level encryption for this pool.
 Leave **Encryption** unselected on the **Pool Creation Wizard** screen to create a pool with an unencrypted root dataset.
@@ -65,7 +65,7 @@ If your system loses power or you restart the system, all encrypted datasets and
 
 ### Encryption Visual Cues
 
-TrueNAS uses lock icons to indicate the encryption state of a root, parent, or child dataset in the tree table on the **[Datasets]({{< relref "/SCALE/SCALEUIReference/Datasets" >}})** screen.
+TrueNAS uses lock icons to indicate the encryption state of a root, parent, or child dataset in the tree table on the **[Datasets]({{< ref "/SCALE/SCALEUIReference/Datasets" >}})** screen.
 Each icon shows a text label with the state of the dataset when you hover the mouse over the icon.
 
 {{< include file="/static/includes/EncryptionIconsSCALE.md" >}}
@@ -242,7 +242,7 @@ TrueNAS displays the dataset with the unlocked icon.
 
 {{< include file="/static/includes/EncryptionBackupKeys.md" >}}
 
-To encrypt a Zvol, select a parent dataset and then [create a new Zvol]({{< relref "AddManageZvols" >}}).
+To encrypt a Zvol, select a parent dataset and then [create a new Zvol]({{< ref "AddManageZvols" >}}).
 If the parent dataset is encrypted, select **Inherit (encrypted)** under **Encryption Options**.
 If the parent dataset is not encrypted, deselect **Inherit (non-encrypted)**, select **Encryption**, and then configure the **Encryption Type** and related settings.
 

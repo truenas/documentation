@@ -112,7 +112,7 @@ System graphs display the number of processes grouped by state, sleeping, runnin
 ### UPS Graphs
 Displays the **UPS Charging** percentage, **UPS Runtime**, **UPS Voltage - Battery**, **UPS Voltage - Input**, **UPS Voltage - Output**, **UPS Input Current**, **UPS Input Frequency**, **UPS Input Load**, and **UPS Temperature**.
 
-The **UPS** service must be [configured]({{< relref "upsservicesscale" >}}) with a compatible Uninterruptible Power Supply (UPS) device.
+The **UPS** service must be [configured]({{< ref "upsservicesscale" >}}) with a compatible Uninterruptible Power Supply (UPS) device.
 
 {{< trueimage src="/images/SCALE/Reporting/UPSReportingChargingRuntime.png" alt="UPS Reporting" id="UPS Reporting" >}}
 
@@ -172,4 +172,4 @@ Additional settings populate based on the selected **Type** option.
 {{< /truetable >}}
 {{< /expand >}}
 
-See [Adding a Reporting Exporter]({{< relref "ConfigReportsScale.md#adding-a-reporting-exporter" >}}) for guidance with configuring a Graphite exporter on TrueNAS.
+See [Adding a Reporting Exporter]({{< ref "ConfigReportsScale.md#adding-a-reporting-exporter" >}}) for guidance with configuring a Graphite exporter on TrueNAS.

@@ -21,8 +21,8 @@ These are the items that do not migrate:
   We recommend removing any auxiliary parameter settings before migrating.
 * AFP shares also do not transfer, but migrate into an SMB share with AFP compatibility enabled.
 * `netcli` utility.
-  A new CLI utility is used for the [Console Setup Menu]({{< relref "ConsoleSetupMenuSCALE" >}}) and other commands issued in a CLI.
-  By default, any TrueNAS user account with **netcli** as the chosen **Shell** updates to use the **nologin** option instead. See the [Users Screens]({{< relref "LocalUsersScreensSCALE.md#authentication-settings" >}}) reference article for descriptions of all **Shell** options.
+  A new CLI utility is used for the [Console Setup Menu]({{< ref "ConsoleSetupMenuSCALE" >}}) and other commands issued in a CLI.
+  By default, any TrueNAS user account with **netcli** as the chosen **Shell** updates to use the **nologin** option instead. See the [Users Screens]({{< ref "LocalUsersScreensSCALE.md#authentication-settings" >}}) reference article for descriptions of all **Shell** options.
 * SAS multipath is not supported.
 * TrueNAS 13 account names beginning with a number are not supported in TrueNAS 24.04.
   Usernames must begin with a letter or an underscore.

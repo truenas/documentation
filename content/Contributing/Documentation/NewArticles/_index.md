@@ -12,7 +12,7 @@ All that is required is a [GitHub account](https://github.com) and your favorite
 Taking screenshots for your article is also recommended.
 
 To add an article, construct a bundle that contains your text file and any images, then open a pull request on the repository.
-There is an [Article Template]({{< relref "/Contributing/Documentation/Template" >}}) available that can simplify creating your article.
+There is an [Article Template]({{< ref "/Contributing/Documentation/Template" >}}) available that can simplify creating your article.
 
 ## Creating an Article Bundle
 
@@ -63,7 +63,7 @@ GitHub shows all the files to upload.
 ## Opening a Pull Request
 
 {{< hint type=note >}}
-[Forking the repository]({{< relref "ContentUpdate.md#forking-the-repo" >}}) might be needed as part of opening a Pull Request.
+[Forking the repository]({{< ref "ContentUpdate.md#forking-the-repo" >}}) might be needed as part of opening a Pull Request.
 {{< /hint >}}
 
 Make sure all your files have been uploaded then scroll down to the **Commit changes** section and write a summary and description of your changes.

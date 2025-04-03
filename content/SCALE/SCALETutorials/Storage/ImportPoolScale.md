@@ -43,5 +43,5 @@ Select a pool from the **Pool** dropdown list, then click **Import**.
 GELI encryption is specific to FreeBSD so Linux-based TrueNAS cannot import GELI-encrypted pools.
 See the **GELI Pool Migrations** section in the TrueNAS 13.0 [Storage Encryption](https://www.truenas.com/docs/core/13.0/coretutorials/storage/pools/storageencryption/#geli-pool-migrations) article.
 
-The [Preparing to Migrate]({{< relref "MigratePrep" >}}) article provides information on what you can and cannot migrate and a checklist of actions to take before migrating from TrueNAS 13.0 (or 13.3 for community users) with GELI-encrypted pools to 24.04.
+The [Preparing to Migrate]({{< ref "MigratePrep" >}}) article provides information on what you can and cannot migrate and a checklist of actions to take before migrating from TrueNAS 13.0 (or 13.3 for community users) with GELI-encrypted pools to 24.04.
 {{< /expand >}}

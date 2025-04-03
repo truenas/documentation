@@ -17,7 +17,7 @@ Check back for updates!
 
 Click **Edit Page** above or locate the Markdown file at [/Contributing/Applications/AppArticleTemplate.md](https://github.com/truenas/documentation/blob/master/Contributing/Applications/AppArticleTemplate.md) on the documentation [Github Repository](https://github.com/truenas/documentation).
 
-Copy the template content to an existing [Community Apps]({{< relref "communityapps" >}}) placeholder article (or create a new one if needed for this app) to begin writing.
+Copy the template content to an existing [Community Apps]({{< ref "communityapps" >}}) placeholder article (or create a new one if needed for this app) to begin writing.
 
 Detailed template instructions are commented out of the rendered copy of this template but show in the Markdown file.
 
@@ -56,7 +56,7 @@ When entering commands, command strings, or code blocks:
 
 To create a code block, either use three backticks on the line before and after the content block, or use the HTML code tags.
 
-Refer to the [Contributing to Apps]({{< relref "/contributing/applications" >}}) article for more information on using the template. -->
+Refer to the [Contributing to Apps]({{< ref "/contributing/applications" >}}) article for more information on using the template. -->
 <!-- /END GENERAL INSTRUCTIONS -->
 ---
 <!-- BEGIN TEMPLATE -->

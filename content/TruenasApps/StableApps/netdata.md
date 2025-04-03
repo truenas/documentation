@@ -154,7 +154,7 @@ Next, add an ACL entry for the run-as user.
 For Netdata, the run-as users is **0** for **root**. Add a user entry for this user.
 Save the ACL before leaving the screen.
 
-See [Setting Up Permissions]({{< relref "PermissionsSCALE" >}}) and [Edit ACL Screen]({{< relref "EditACLScreens" >}}) for more information.
+See [Setting Up Permissions]({{< ref "PermissionsSCALE" >}}) and [Edit ACL Screen]({{< ref "EditACLScreens" >}}) for more information.
 {{< /expand >}}
 
 #### Mounting an SMB Share Storage Volume

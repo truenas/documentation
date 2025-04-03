@@ -149,7 +149,7 @@ Emby only expects one host path storage volume, **config** to hold app configura
 
 {{< include file="/static/includes/apps/InstallAppsStorageConfig.md" >}}
 
-If you organize the **config** dataset under a parent dataset named **emby**, configure the [ACL permissions]({{< relref "PermissionsSCALE" >}}) for this parent dataset and add an ACE entry for the **root** user.
+If you organize the **config** dataset under a parent dataset named **emby**, configure the [ACL permissions]({{< ref "PermissionsSCALE" >}}) for this parent dataset and add an ACE entry for the **root** user.
 
 You can add extra storage volumes during the app installation, or edit the application after it deploys. Stop the app before editing settings.
 {{< include file="/static/includes/apps/InstallAppStorageConfig2.md" >}}

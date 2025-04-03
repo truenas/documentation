@@ -51,12 +51,12 @@ If your system only has a single physical interface, and you prefer to manually 
    {{< trueimage src="/images/SCALE/Virtualization/InstanceAddNIC.png" alt="Add NIC" id="Add NIC" >}}
 
 You can now access your TrueNAS storage from the container.
-You might have to set up [shares]({{< relref "/SCALE/SCALEUIReference/Shares" >}}) or [users]({{< relref "ManageLocalUsersSCALE" >}}) with home directories to access certain files.
+You might have to set up [shares]({{< ref "/SCALE/SCALEUIReference/Shares" >}}) or [users]({{< ref "ManageLocalUsersSCALE" >}}) with home directories to access certain files.
 
 ## Assigning a Secondary NIC: Multiple Physical Interfaces
 
 If you have more than one NIC on your system, you can assign container traffic to a secondary NIC.
-Configure the secondary interface as described in [Managing Interfaces]({{< relref "/SCALE/SCALETutorials/Network/Interfaces" >}}) before attaching it to an instance.
+Configure the secondary interface as described in [Managing Interfaces]({{< ref "/SCALE/SCALETutorials/Network/Interfaces" >}}) before attaching it to an instance.
 
 If you are creating a new instance, use the **Network** settings to deselect **Use default network Settings** and select the secondary NIC from **Macvlan NICs**.
 

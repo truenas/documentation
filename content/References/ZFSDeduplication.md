@@ -21,7 +21,7 @@ ZFS keeps a reference table that links files and pool data to the actual storage
 
 The DDT is a fundamental ZFS structure and is part of the metadata or the pool. 
 If a pool (or any dataset in the pool) has ever contained deduplicated data, the pool contains a DDT, and that DDT is as fundamental to the pool data as any of its other file system tables. 
-Like any other metadata, DDT contents might be temporarily held in the ARC (RAM/memory cache) or [L2ARC]({{< relref "/references/L2ARC" >}}) (disk cache) for speed and repeated use, but the DDT is not a disk cache. 
+Like any other metadata, DDT contents might be temporarily held in the ARC (RAM/memory cache) or [L2ARC]({{< ref "/references/L2ARC" >}}) (disk cache) for speed and repeated use, but the DDT is not a disk cache. 
 It is a fundamental part of the ZFS pool structure and how ZFS organizes pool data on its disks. 
 Therefore, like any other pool data, if DDT data is lost, the pool is likely to become unreadable. DDT is not needed for reads, but any writes or deletions of deduplicated blocks. So, it is important to store on redundant devices. 
 
@@ -150,7 +150,7 @@ It is recommended to use SSDs that do not rely on a limited amount of fast cache
 Most SSD performance (latency) drops when the onboard cache is fully used and more writes occur. 
 Always review the steady state performance for 4K random mixed read/write.
 
-[Special vdev]({{< relref "SCALE/SCALETutorials/Storage/FusionPoolsScale" >}}) SSDs receive continuous, heavy I/O. 
+[Special vdev]({{< ref "SCALE/SCALETutorials/Storage/FusionPoolsScale" >}}) SSDs receive continuous, heavy I/O. 
 HDDs and many common SSDs are inadequate. 
 As of 2021, some recommended SSDs for deduplicated ZFS include Intel Optane 900p, 905p, P48xx, and better devices. 
 Lower-cost solutions are high-quality consumer SSDs such as the Samsung EVO and PRO models. 
@@ -195,7 +195,7 @@ If deduplication is used in an inadequately built system, these symptoms might b
 * **Cause**: When ZFS has fast, special vdev SSD disks, sufficient RAM, and is not limited by disk I/O, then the hash calculation becomes the next bottleneck. 
  Most of the ZFS CPU consumption is from attempting to keep hashing up to date with disk I/O.
  When the CPU is overburdened, the console becomes unresponsive and the web UI fails to connect. Other tasks might not run properly because of timeouts. 
- This is often encountered with [pool scrubs]({{< relref "SCALE/SCALETutorials/DataProtection/ScrubTasksSCALE" >}}) and it can be necessary to pause the scrub temporarily when other tasks are a priority.
+ This is often encountered with [pool scrubs]({{< ref "SCALE/SCALETutorials/DataProtection/ScrubTasksSCALE" >}}) and it can be necessary to pause the scrub temporarily when other tasks are a priority.
 * **Diagnose**: An easily seen symptom is that console logins or prompts take several seconds to display.
  Generally, multiple entries with command <code>kernel {z_rd_int_[<i>NUMBER</i>]}</code> can be seen using the CPU capacity, and the CPU is heavily (98%+) used with almost no idle.
 * **Solutions**: Changing to a higher-performance CPU can help but might have limited benefits. 40-core CPUs have been observed to struggle as much as 4- or 8-core CPUs. 

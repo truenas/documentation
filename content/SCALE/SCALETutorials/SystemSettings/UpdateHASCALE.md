@@ -15,11 +15,11 @@ keywords:
 
 {{<enterprise>}}
 This procedure only applies to TrueNAS Enterprise (HA) systems.
-If attempting to migrate from FreeBSD- to Linux-based TrueNAS versions, see [TrueNAS Migrations]({{< relref "MigratingFromCORE" >}}).
+If attempting to migrate from FreeBSD- to Linux-based TrueNAS versions, see [TrueNAS Migrations]({{< ref "MigratingFromCORE" >}}).
 {{</enterprise>}}
 
 ## Updating Enterprise (HA) Systems
-If the system does not have an administrative user account, [create the admin user]({{< relref "ManageLocalUsersSCALE" >}}) as part of this procedure.
+If the system does not have an administrative user account, [create the admin user]({{< ref "ManageLocalUsersSCALE" >}}) as part of this procedure.
 
 Take a screenshot of the license information found on the **Support** widget on the **System > General Settings** screen. You use this to verify the license after the update.
 
@@ -41,7 +41,7 @@ To update your Enterprise (HA) system to the latest TrueNAS release, log into th
 5. Verify the system license after the update. Go to **System > General Settings**.
    Verify the license information in the screenshot of the **Support** widget you took before the update matches the information on the **Support** widget after updating the system.  
 
-6. Verify the admin user settings, or if not created, [create the admin user]({{< relref "ManageLocalUsersSCALE" >}}) account now.
+6. Verify the admin user settings, or if not created, [create the admin user]({{< ref "ManageLocalUsersSCALE" >}}) account now.
    If you want the admin account to have the ability to execute `sudo` commands in an SSH session, select the option for the sudo access you want to allow.
    Also, verify **Shell** is set to **bash** if you want the admin user to have the ability to execute commands in **Shell**.
    To set a location where the admin user can save to, browse to, and select the dataset in **Home Directory**. If set to the default **/nonexistent** files are not saved for this user.
@@ -55,4 +55,4 @@ To update your Enterprise (HA) system to the latest TrueNAS release, log into th
 8. After validating access to the TrueNAS UI using the admin credentials, disable the root user password.
    Go to **Credentials > Local User** and edit the root user. Select **Disable Password** and click **Save**.
 
-Finish the update by saving your updated [system configuration file]({{< relref "SetUpBackUpSCALE" >}}) to a secure location and [create a new boot environment]({{< relref "ManageBootEnvironSCALE" >}}) to use as a restore point if it becomes necessary.
+Finish the update by saving your updated [system configuration file]({{< ref "SetUpBackUpSCALE" >}}) to a secure location and [create a new boot environment]({{< ref "ManageBootEnvironSCALE" >}}) to use as a restore point if it becomes necessary.

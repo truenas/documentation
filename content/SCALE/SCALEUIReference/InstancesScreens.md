@@ -60,7 +60,7 @@ The screen header displays a <i class="fa fa-cog" aria-hidden="true"></i> **Pool
 {{< truetable >}}
 | Setting | Description |
 |-----------|-------------|
-| **Bridge** | Select **Automatic** to use the default network bridge for communication between instances and the TrueNAS host or use the dropdown list to select an existing bridge. See [Accessing NAS from VMs and Containers]({{< relref "/SCALE/SCALETutorials/Network/ContainerNASBridge" >}}) for more information. |
+| **Bridge** | Select **Automatic** to use the default network bridge for communication between instances and the TrueNAS host or use the dropdown list to select an existing bridge. See [Accessing NAS from VMs and Containers]({{< ref "/SCALE/SCALETutorials/Network/ContainerNASBridge" >}}) for more information. |
 | **IPv4 Network** | Displays when **Bridge** is set to **Automatic**. Enter the IPv4 address and subnet to use for the bridge or leave empty to allow TrueNAS to use the default address. |
 | **IPv6 Network** | Displays when **Bridge** is set to **Automatic**. Enter the IPv6 address and subnet to use for the bridge or leave empty to allow TrueNAS to use the default address. |
 {{< /truetable >}}
@@ -180,7 +180,7 @@ This routes traffic from a specific address on the host to an address inside the
 The **Network settings** configure how the instance connects to the host and external networks.
 Options include the default network bridge, an existing bridge interface, or a MACVLAN.
 
-See [Accessing NAS from VMs and Containers]({{< relref "/SCALE/SCALETutorials/Network/ContainerNASBridge" >}}) for more information.
+See [Accessing NAS from VMs and Containers]({{< ref "/SCALE/SCALETutorials/Network/ContainerNASBridge" >}}) for more information.
 
 {{< trueimage src="/images/SCALE/Virtualization/InstancesNetworkDefault.png" alt="Default Network Settings" id="Default Network Settings" >}}
 

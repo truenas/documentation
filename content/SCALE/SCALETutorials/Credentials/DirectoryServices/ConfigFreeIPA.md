@@ -78,7 +78,7 @@ To configure TrueNAS for a FreeIPA server:
 6. Click **Save**.
 
 TrueNAS creates the Kerberos key and realm, and populates these fields on the **LDAP Advanced Options** screen.
-See the [LDAP UI Reference article]({{< relref "/SCALE/SCALEUIReference/Credentials/DirectoryServices/LDAP" >}}) for details about advanced settings.
+See the [LDAP UI Reference article]({{< ref "/SCALE/SCALEUIReference/Credentials/DirectoryServices/LDAP" >}}) for details about advanced settings.
 
 ## Disabling LDAP
 

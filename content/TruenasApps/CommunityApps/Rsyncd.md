@@ -23,7 +23,7 @@ keywords:
 {{< include file=\"/static/includes/apps/CommunityPleaseImprove.md\" >}}
 
 {{< hint type="important" >}}
-This application in not needed when rsync is configured externally with SSH or with the [TrueNAS built-in rsync task in SSH mode]({{< relref "RsyncTasksSCALE" >}}).
+This application in not needed when rsync is configured externally with SSH or with the [TrueNAS built-in rsync task in SSH mode]({{< ref "RsyncTasksSCALE" >}}).
 It is always recommended to use rsync with SSH as a security best practice.
 
 You do not need this application to schedule or run rsync tasks from the **Data Protections** screen using the **Rsync Task** widget.
