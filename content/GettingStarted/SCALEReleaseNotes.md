@@ -154,9 +154,9 @@ For more details on feature flags, see [OpenZFS Feature Flags](https://openzfs.g
 
 **April 3, 2025**
 
-The TrueNAS team is pleased to release TrueNAS 24.10.2!
+The TrueNAS team is pleased to release TrueNAS 24.10.2.1!
 
-This maintenance release is focused on fixing a few OpenZFS-related priority issues that impact 24.10.2.
+This maintenance release is focused on fixing a few OpenZFS-related priority issues that impact 24.10.2.1.
 
 ### Notable Changes
 
