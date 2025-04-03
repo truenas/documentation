@@ -17,7 +17,7 @@ These users are not added as users through the **Credentials > Users > Add User*
 They are run-as users for the app that should be added as ACL entries to the ACL for the dataset host path.
 
 Additionally, the parent dataset created for app datasets nested as children under the parent has different ACL requirements that must be set up when creating the parent dataset.
-To simplify the process and avoid issues with normal ACL behaviors, use the **Automatic Permissions** option which properly configures the parent and postgres dataset ACL permissions.
+To simplify the process and avoid issues with normal ACL behaviors, use the **Automatic Permissions** option which properly configures the ACE entries for parent and postgres datasets, and only on empty directories so configure this before using the app to store data.
 
 You can reverse setting the host path with **Enable ACL** selected and configure ACE entries before you click **Install** to finish the installation.
 At this point, you should not receive the error again.
