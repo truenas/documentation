@@ -17,7 +17,7 @@ SCALE uses predefined setting options to establish an SMB share that fits a pred
 
 To set up a basic time machine share:
 
-1. [Create the user(s)]({{< relref "ManageLocalUsersSCALE.md" >}}) for this SMB share.
+1. [Create the user(s)]({{< relref "ManageLocalUsersSCALE" >}}) for this SMB share.
    Go to **Credentials > Local User** and click **Add**.
 
 2. [Create the share and dataset](#creating-the-share-and-dataset) with **Purpose** set to **Basic time machine share**.
@@ -28,10 +28,10 @@ After creating the share, enable the SMB service.
 
 When accessing from a Windows client, having more than 512 snapshots on the TrueNAS box can lead to performance issues, as the Windows client often attempts to load all snapshots into the 'Previous Versions' tab.
 
-To avoid this, users should maintain fewer than 512 snapshots, or consider accessing from a non-Windows client. Alternatively, configuring snapshot lifetimes or creating an automatic deletion policy via the [Periodic Snapshot Tasks screen]({{< relref "PeriodicSnapshotTasksSCALE.md" >}}) can help users manage the snapshot count more effectively.
+To avoid this, users should maintain fewer than 512 snapshots, or consider accessing from a non-Windows client. Alternatively, configuring snapshot lifetimes or creating an automatic deletion policy via the [Periodic Snapshot Tasks screen]({{< relref "PeriodicSnapshotTasksSCALE" >}}) can help users manage the snapshot count more effectively.
 
 ### Creating the Share and Dataset
-You can either [create the dataset]({{< relref "DatasetsSCALE.md" >}}) to use for the share on the **Add Dataset** screen and the share, or create the dataset when you add the share on the **Add SMB** screen.
+You can either [create the dataset]({{< relref "DatasetsSCALE" >}}) to use for the share on the **Add Dataset** screen and the share, or create the dataset when you add the share on the **Add SMB** screen.
 If you want to customize the dataset, use the **Add Dataset** screen.
 
 {{< include file="/static/includes/CreateDatasetSCALE.md" >}}

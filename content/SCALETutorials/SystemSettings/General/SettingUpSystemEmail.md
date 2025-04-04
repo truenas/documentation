@@ -15,7 +15,7 @@ An automatic script sends a nightly email to the administrator account containin
 Configure the system to send these emails to the administrator remote email account for fast awareness and resolution of any critical issues.
 
 {{< hint type=note >}}
-[Scrub Task]({{< relref "ScrubTasksSCALE.md" >}}) issues and [S.M.A.R.T. reports]({{< relref "SMARTTestsSCALE.md" >}}) are mailed separately to the address configured in those services.
+[Scrub Task]({{< relref "ScrubTasksSCALE" >}}) issues and [S.M.A.R.T. reports]({{< relref "SMARTTestsSCALE" >}}) are mailed separately to the address configured in those services.
 {{< /hint >}}
 
 ## Setting Up User Accounts
@@ -34,7 +34,7 @@ In the **Email** field, enter a remote email address that the system administrat
 ### Configuring User Emails
 
 Add a new user as an administrative or non-administrative account and set up email for that user.
-Follow the directions in [Configuring the Admin User Email Address](#configuring-the-admin-user-email-address) above for an existing user or see [Managing Users]({{< relref "ManageLocalUsersSCALE.md" >}}) for a new user.
+Follow the directions in [Configuring the Admin User Email Address](#configuring-the-admin-user-email-address) above for an existing user or see [Managing Users]({{< relref "ManageLocalUsersSCALE" >}}) for a new user.
 
 ## Setting Up System Email
 
@@ -128,7 +128,7 @@ Click **Save**.
 
 If the system email send method is configured, the admin email receives a system health email every night/morning.
 
-You can also add/configure the **Email Alert Service** to send timely warnings when a system alert hits a warning level that is specified in [**Alert Settings**]({{< relref "/SCALEUIReference/toptoolbar/alerts/alertsettingsscreen.md" >}}).
+You can also add/configure the **Email Alert Service** to send timely warnings when a system alert hits a warning level that is specified in [**Alert Settings**]({{< relref "/SCALEUIReference/toptoolbar/alerts/alertsettingsscreen" >}}).
 
 From the **Alerts** <span class="material-icons">notifications</span> panel, select the <span class="material-icons">settings</span> icon and then **Alert Settings**, or go to **System > Alert Settings**.
 

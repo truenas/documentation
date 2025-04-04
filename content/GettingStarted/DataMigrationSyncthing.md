@@ -137,7 +137,7 @@ The process of setting up data migration from an external NAS to TrueNAS SCALE c
 
    Enter a clear identifying name, such as *INGEST*, and click **Save**.
 
-3. [Create a new dataset]({{< relref "datasetsscale.md" >}}) on TrueNAS SCALE to be the target for the data ingest, for example, */mnt/tank/ingest*.
+3. [Create a new dataset]({{< relref "datasetsscale" >}}) on TrueNAS SCALE to be the target for the data ingest, for example, */mnt/tank/ingest*.
 
     Click **Advanced Options** and set **ACL Type** to **SMB/NFSv4**.
     Set **ACL Mode** to **Restricted**.

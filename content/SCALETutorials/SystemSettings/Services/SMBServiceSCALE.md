@@ -33,7 +33,7 @@ This setting enables backward compatibility with older versions of Windows, but 
 
 Enter any notes about the service configuration in **Description**.
 
-For more advanced settings, see [SMB Services Screen]({{< relref "SMBServicesScreen.md" >}}).
+For more advanced settings, see [SMB Services Screen]({{< relref "SMBServicesScreen" >}}).
 
 Click **Save**.
 
@@ -65,7 +65,7 @@ For more information on Windows SMB-client side transport encryption see [Window
 
 ## Auditing SMB Events
 
-To monitor SMB service event logs, such as when a client attempts to authenticate to the share, use the TrueNAS SCALE [auditing screen]({{< relref "auditingscale.md" >}}).
+To monitor SMB service event logs, such as when a client attempts to authenticate to the share, use the TrueNAS SCALE [auditing screen]({{< relref "auditingscale" >}}).
 Go to **System > Audit** to review event logs including SMB connect, disconnect, create, read or write events, and others.
 
 Enter `SMB` in the [search bar]({{< relref "auditingscale.md#searching-audit-logs" >}}) to view only SMB service logs or use the advanced search to further limit results.

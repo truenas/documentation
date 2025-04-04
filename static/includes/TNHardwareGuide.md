@@ -27,7 +27,7 @@ For help building a system according to your unique performance, storage, and ne
 The heart of any storage system is the symbiotic pairing of the file system and physical storage devices.
 The ZFS file system in TrueNAS provides the [best available data protection of any file system at any cost](https://www.ixsystems.com/blog/openzfs-vs-the-competition/) and makes effective use of both spinning-disk and all-flash storage or a mix of the two.
 ZFS is prepared for the eventual failure of storage devices and is highly configurable to achieve the perfect balance of redundancy and performance to meet any storage goal.
-A properly configured TrueNAS system can tolerate multiple storage device failures and recreate its boot media with a copy of the [configuration file]({{< relref "ManageSysConfigSCALE.md" >}}).
+A properly configured TrueNAS system can tolerate multiple storage device failures and recreate its boot media with a copy of the [configuration file]({{< relref "ManageSysConfigSCALE" >}}).
 
 ### Storage Device Quantities
 
@@ -154,7 +154,7 @@ For example, a 480 GB L2ARC filled with 4KiB blocks needs more than 10GiB of met
 {{< /expand >}}
 
 {{< expand "Self Encrypting Drives" "v" >}}
-TrueNAS supports two forms of data encryption at rest to achieve privacy and compliance objectives: [native ZFS encryption]({{< relref "EncryptionSCALE.md" >}}) and [self-encrypting drives (SEDs)]({{< relref "SEDScale.md" >}}).
+TrueNAS supports two forms of data encryption at rest to achieve privacy and compliance objectives: [native ZFS encryption]({{< relref "EncryptionSCALE" >}}) and [self-encrypting drives (SEDs)]({{< relref "SEDScale" >}}).
 SEDs do not experience the performance overhead introduced by software partition encryption but are not as readily available as non-SED drives (and thus can cost a little more).
 {{< /expand >}}
 

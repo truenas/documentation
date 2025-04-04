@@ -11,5 +11,5 @@ It provides the `midclt` command-line tool, and the means to easily communicate 
 This API client allows for better integration of TrueNAS into third-party solutions.
 Use this as a reference for projects that require direct TrueNAS integration.
 
-TrueNAS API documentation remains available in the UI and through the [TrueNAS Documentation Hub]({{< relref "/content/api/_index.md" >}}).
+TrueNAS API documentation remains available in the UI and through the [TrueNAS Documentation Hub]({{< relref "/api/" >}}).
 {{< /hint >}}

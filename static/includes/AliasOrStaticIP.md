@@ -8,5 +8,5 @@ Use aliases to add multiple internal IP addresses, representing containers or ap
 In the UI, you can add aliases when adding or editing an existing interface using the **Add** button to the right of the **Aliases**.
 To add a static IP. Click **Add** again to add an additional alias.
 
-From the [Console Setup menu]({{< relref "ConsoleSetupMenuSCALE.md" >}}), select option 1 to configure network settings and add alias IP addresses.
+From the [Console Setup menu]({{< relref "ConsoleSetupMenuSCALE" >}}), select option 1 to configure network settings and add alias IP addresses.
 {{< /expand >}}

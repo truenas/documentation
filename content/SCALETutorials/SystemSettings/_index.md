@@ -31,7 +31,7 @@ SCALE system management options are collected in this section of the UI and orga
 
 * **Shell** allows users to use the Linux command-line interface (CLI) directly in the web UI.
 
-* **Alert Settings** allows users to configure **Alert Services** and to adjust the threshold and frequency of various alert types. See [Alerts Settings Screens]({{< relref "AlertSettingsScreen.md" >}}) for more information.
+* **Alert Settings** allows users to configure **Alert Services** and to adjust the threshold and frequency of various alert types. See [Alerts Settings Screens]({{< relref "AlertSettingsScreen" >}}) for more information.
 
 * **Audit** allows users to review auditing logs of all actions performed by a session, user, or service (SMB, middleware).
 

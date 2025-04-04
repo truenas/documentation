@@ -43,7 +43,7 @@ If your system only has a single physical interface, complete these steps to cre
 
    {{< trueimage src="/images/SCALE/Network/NetworkInterfacesNoIPSCALE.png" alt="Network Interface Widget" id="Network Interface Widget" >}}
 
-5. Add a [bridge interface]({{< relref "SettingUpBridge.md" >}}).
+5. Add a [bridge interface]({{< relref "SettingUpBridge" >}}).
 
 6. Edit VM device configuration.
 
@@ -54,11 +54,11 @@ If your system only has a single physical interface, complete these steps to cre
    {{< trueimage src="/images/SCALE/Virtualization/VMEditDeviceNIC.png" alt="Edit NIC Device" id="Edit NIC Device" >}}
 
 You can now access your TrueNAS storage from the VM.
-You might have to set up [shares]({{< relref "/SCALEUIReference/Shares/_index.md" >}}) or [users]({{< relref "ManageLocalUsersSCALE.md" >}}) with home directories to access certain files.
+You might have to set up [shares]({{< relref "/SCALEUIReference/Shares/" >}}) or [users]({{< relref "ManageLocalUsersSCALE" >}}) with home directories to access certain files.
 
 ## Assigning a Secondary NIC: Multiple Physical Interfaces
 If you have more than one NIC on your system, you can assign VM traffic to a secondary NIC.
-Configure the secondary interface as described in [Managing Interfaces]({{< relref "/SCALETutorials/Network/Interfaces/_index.md" >}}) before attaching it to a VM.
+Configure the secondary interface as described in [Managing Interfaces]({{< relref "/SCALETutorials/Network/Interfaces/" >}}) before attaching it to a VM.
 
 If you are creating a new VM, use the **Attach NIC** dropdown menu under **Network Interface** to select the secondary NIC.
 

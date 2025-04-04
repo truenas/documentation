@@ -24,9 +24,9 @@ Only one directory service can be configured at a time.
 
 Three options show by default:
 
-* **Configure Active Directory** opens the **[Active Directory]({{< relref "ActiveDirectory.md" >}})** configuration screen.
+* **Configure Active Directory** opens the **[Active Directory]({{< relref "ActiveDirectory" >}})** configuration screen.
 
-* **Configure LDAP** opens the [**LDAP**]({{< relref "LDAP.md" >}}) configuration screen. Use to configure access to LDAP-based service such as FreeIPA.
+* **Configure LDAP** opens the [**LDAP**]({{< relref "LDAP" >}}) configuration screen. Use to configure access to LDAP-based service such as FreeIPA.
 
 * **Advanced Settings** opens a warning dialog before showing configuration options for [ID mapping] ({{< relref "Idmap.md" >}} and Kerberos.
 

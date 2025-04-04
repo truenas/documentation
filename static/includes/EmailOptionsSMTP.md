@@ -7,7 +7,7 @@ If **SMTP** is selected, the screen displays the SMTP configuration fields.
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **From Email** | The email address to use for sending emails. You must first [configure the user account email]({{< relref "SettingUpSystemEmail.md" >}}) in [**Credentials > Users**]({{< relref "LocalUsersScreensSCALE.md" >}}). |
+| **From Email** | The email address to use for sending emails. You must first [configure the user account email]({{< relref "SettingUpSystemEmail" >}}) in [**Credentials > Users**]({{< relref "LocalUsersScreensSCALE" >}}). |
 | **From Name** | The name to show in front of the sending email address, for example: *TrueNAS*. |
 | **Outgoing Mail Server** | Host name or IP address of SMTP server to use for sending emails. |
 | **Mail Server Port** | SMTP port number. Typically 25, 465 (secure SMTP), or 587 (submission). |

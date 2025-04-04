@@ -10,9 +10,9 @@ keywords:
 ---
 
 TrueNAS offers groups as an efficient way to manage permissions for many similar user accounts.
-See [Users]({{< relref "ManageLocalUsersSCALE.md" >}}) for managing users.
+See [Users]({{< relref "ManageLocalUsersSCALE" >}}) for managing users.
 The interface lets you manage UNIX-style groups.
-If the network uses a directory service, import the existing account information using the instructions in [Active Directory]({{< relref "/SCALEUIReference/Credentials/DirectoryServices/_index.md" >}}).
+If the network uses a directory service, import the existing account information using the instructions in [Active Directory]({{< relref "/SCALEUIReference/Credentials/DirectoryServices/" >}}).
 
 {{< include file="archive/24.04PrivilegesWIP.md" >}}
 
@@ -69,4 +69,4 @@ Click **Save**.
 
 ### Edit Group
 
-To edit an existing group, go to **Credentials > Groups**, expand the group entry, and click <i class="material-icons" aria-hidden="true" title="Edit">edit</i> **Edit** to open the **Edit Group** configuration screen. See [Groups Screens]({{< relref "LocalGroupsScreens.md" >}}) for details on all settings.
+To edit an existing group, go to **Credentials > Groups**, expand the group entry, and click <i class="material-icons" aria-hidden="true" title="Edit">edit</i> **Edit** to open the **Edit Group** configuration screen. See [Groups Screens]({{< relref "LocalGroupsScreens" >}}) for details on all settings.

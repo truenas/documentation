@@ -115,7 +115,7 @@ Upgrade your system to the latest publicly-available 13.0-U6.2 (or later) releas
 After install, restore the system configuration and import the pools.
 
 Depending on the specific system configuration, this can be a straightforward or complicated process.
-See the [Migration articles]({{< relref "/GettingStarted/Migrate/_index.md" >}}) for cautions and notes about differences between each software and the migration process.
+See the [Migration articles]({{< relref "/GettingStarted/Migrate/" >}}) for cautions and notes about differences between each software and the migration process.
 
 The only path to side-grade or migrate from 13.0-U6.2 or 13.3 is to install or upgrade to 24.04 (latest).
 TrueNAS 24.10 and later releases do not support migrations from 13.X. These migrations cannot be done, and either fail or result in error conditions that cannot be resolved.
@@ -469,7 +469,7 @@ This release candidate version has software component updates and new features t
 
 * The SMB Share **Purpose** presets on the **Add SMB** screen do not adjust advanced options when set ([NAS-131374](https://ixsystems.atlassian.net/browse/NAS-131374)).
   Users encountering this issue can manually set the required advanced options.
-  See [Advanced Options Presets]({{< relref "SMBSharesScreens.md #advanced-options-presets">}}) in the UI reference guide for more information.
+  See [Advanced Options Presets]({{< relref "SMBSharesScreens/#advanced-options-presets">}}) in the UI reference guide for more information.
 
 * Some users have reported incomplete shutdown and reboot behavior ([NAS-130118](https://ixsystems.atlassian.net/browse/NAS-130118)). This issue has not been reported in iXsystems hardware.
 
@@ -500,11 +500,11 @@ This has software component updates and new features that are in the polishing p
 
 * Applications backend framework is shifted from Kubernetes to Docker. See the official [announcement](https://forums.truenas.com/t/the-future-of-electric-eel-and-apps/5409) for more information. The **Custom App** installation screen is disabled in 24.10-BETA.1. A redesigned screen, including Docker Compose support, is anticipated for the RC.1 version. See [Upgrade Notes](#upgrade-notes) for more information.
   
-* New [TrueCloud Backup Tasks]({{< relref "TrueCloudTasks.md" >}}) with streamlined functionality for Storj iX cloud backups and restoration ([NAS-127165](https://ixsystems.atlassian.net/browse/NAS-127165)).
+* New [TrueCloud Backup Tasks]({{< relref "TrueCloudTasks" >}}) with streamlined functionality for Storj iX cloud backups and restoration ([NAS-127165](https://ixsystems.atlassian.net/browse/NAS-127165)).
 
-* [Extend a RAIDZ vdev]({{< relref "ManagePoolsScale.md #extending-a-raidz-vdev" >}}) with individual disks (OpenZFS feature sponsored by iXsystems) ([NAS-123548](https://ixsystems.atlassian.net/browse/NAS-123548)).
+* [Extend a RAIDZ vdev]({{< relref "ManagePoolsScale/#extending-a-raidz-vdev" >}}) with individual disks (OpenZFS feature sponsored by iXsystems) ([NAS-123548](https://ixsystems.atlassian.net/browse/NAS-123548)).
 
-* New [global search]({{< relref "GlobalSearch.md" >}}) for finding pages and settings in the TrueNAS UI ([NAS-127224](https://ixsystems.atlassian.net/browse/NAS-127224)).
+* New [global search]({{< relref "GlobalSearch" >}}) for finding pages and settings in the TrueNAS UI ([NAS-127224](https://ixsystems.atlassian.net/browse/NAS-127224)).
 
 * UI support for NVMe SMART tests [NAS-128116](https://ixsystems.atlassian.net/browse/NAS-128116)
 
@@ -527,7 +527,7 @@ This has software component updates and new features that are in the polishing p
   Existing **admin** accounts are preserved on upgrade.
 
   For improved security, we recommended that users create a unique administrator account and disable password access for default administrator accounts.
-  See [Using Administrator Logins]({{< relref "adminroles.md" >}}) for more information.
+  See [Using Administrator Logins]({{< relref "adminroles" >}}) for more information.
 
 * SMB audit log entries are omitted by default from the **System > Audit** screen ([NAS-130498](https://ixsystems.atlassian.net/browse/NAS-130498)).
   To view SMB audit results, go to **System > Services** and click <i class="material-icons" aria-hidden="true" title="Audit Logs">receipt_long</i> **Audit Logs** for the SMB service or use advanced search on the main **Audit** screen to query SMB events.

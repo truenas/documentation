@@ -49,7 +49,7 @@ For network configuration options **1**, **2**, and **3**, we recommend using th
   You can use this to change the admin password before you log into the SCALE UI.
   {{< hint type=note >}}
   This is not the password for the root user in the CLI or the root user login password for the web UI.
-  The [root user password]({{< relref "AdminRoles.md" >}}) is disabled by default as part of security hardening.
+  The [root user password]({{< relref "AdminRoles" >}}) is disabled by default as part of security hardening.
   Activating the root user is not recommended.
   {{< /hint >}}
 
@@ -59,7 +59,7 @@ For network configuration options **1**, **2**, and **3**, we recommend using th
 
 * **6) Open TrueNAS CLI Shell**
 
-  Use to start a shell for running TrueNAS commands, or use the SCALE UI **[System Settings > Shell]({{< relref "UseScaleShell.md" >}})**.
+  Use to start a shell for running TrueNAS commands, or use the SCALE UI **[System Settings > Shell]({{< relref "UseScaleShell" >}})**.
   Type `exit` to leave the shell.
 
 * **7) Open Linux Shell**
@@ -168,7 +168,7 @@ Enter **5** in the Console Setup menu, then enter <kbd>y</kbd> to reset the syst
 ## Completing your System Setup
 After setting up network requirements, log into the web UI to complete your system setup by:
 
-* [Completing network configuration] ({{< relref "/SCALETutorials/Network/_index.md" >}}) if not already set up using the Console Setup menu.
-* [Setting up storage]({{< relref "SetUpStorageSCALE.md" >}})
-* [Setting up sharing]({{< relref "SetUpSharing.md" >}})
-* [Backing Up your configuration]({{< relref "SetUpBackupSCALE.md" >}})
+* [Completing network configuration] ({{< relref "/SCALETutorials/Network/" >}}) if not already set up using the Console Setup menu.
+* [Setting up storage]({{< relref "SetUpStorageSCALE" >}})
+* [Setting up sharing]({{< relref "SetUpSharing" >}})
+* [Backing Up your configuration]({{< relref "SetUpBackupSCALE" >}})
