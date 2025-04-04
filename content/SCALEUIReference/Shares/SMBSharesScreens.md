@@ -36,9 +36,9 @@ Click on the widget header to open the [**Sharing > SMB** details](#sharing-smb-
 
 The <span class="material-icons">more_vert</span> icon displays four options available to SMB shares in general:
 * **Turn Off Service** what shows when the SMB service is enabled and that toggles to **Turn On Service** when the SMB service is disabled.
-* **Config Service** that opens the [**SMB**]({{< relref "SMBServicesScreen" >}}) configuration screen.
+* **Config Service** that opens the [**SMB**]({{< ref "SMBServicesScreen" >}}) configuration screen.
 * **SMB Sessions** that opens the **SMB Status** screen with four tabs: **Sessions**, **Locks**, **Shares**, and **Notifications**.
-* **Audit Logs** that opens the [**Audit** screen]({{< relref "AuditingSCALE" >}}) with a predefined filter for and showing the SMB share logs.
+* **Audit Logs** that opens the [**Audit** screen]({{< ref "AuditingSCALE" >}}) with a predefined filter for and showing the SMB share logs.
 
 ### Delete SMB Share Dialog
 The <span class="material-icons">delete</span> trash can icon displays the **Delete** dialog.
@@ -142,7 +142,7 @@ The **Other Options** settings include improving Apple software compatibility, Z
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Use as Home Share** | Select to allow the share to host user home directories. Each user has a personal home directory they use when connecting to the share that is not accessible by other users. Home Shares allow for personal, dynamic shares. You can only use one share as the home share. See [Adding an SMB Home Share]({{< relref "AddSMBHomeShare" >}}) for more information. |
+| **Use as Home Share** | Select to allow the share to host user home directories. Each user has a personal home directory they use when connecting to the share that is not accessible by other users. Home Shares allow for personal, dynamic shares. You can only use one share as the home share. See [Adding an SMB Home Share]({{< ref "AddSMBHomeShare" >}}) for more information. |
 | **Time Machine** | Enables [Apple Time Machine](https://support.apple.com/en-us/HT201250) backups on this share. This option requires SMB2/3 protocol extension support. You can enable this in the general SMB server configuration. |
 | **Legacy AFP Compatibility** | Select to enable the share to behave like the deprecated Apple Filing Protocol (AFP). Leave cleared for the share to behave like a normal SMB share. This option controls how the SMB share reads and writes data. Only enable this when this share originated as an AFP sharing configuration. You do not need legacy compatibility for pure SMB shares or macOS SMB clients. This option requires SMB2/3 protocol extension support. You can enable this in the general SMB server configuration. |
 | **Enable Shadow Copies** | Select to export ZFS snapshots as [Shadow Copies](https://docs.microsoft.com/en-us/windows/win32/vss/shadow-copies-and-shadow-copy-sets) for Microsoft Volume Shadow Copy Service (VSS) clients. |
@@ -207,12 +207,12 @@ These settings configure new ACL entries for the selected SMB share and apply th
 
 ## Edit Filesystem ACL Screen
 The **Edit Filesystem ACL** option opens the **Edit ACL** screen for the dataset the share uses.
-See [**Edit ACL Screen**]({{< relref "EditACLScreens" >}}) more information on the settings found on this screen.
+See [**Edit ACL Screen**]({{< ref "EditACLScreens" >}}) more information on the settings found on this screen.
 
 {{< trueimage src="/images/SCALE/Shares/SMBACLEditor.png" alt="SMB ACL Editor" id="SMB ACL Editor" >}}
 
 Use the ACL editor screen to set filesystem permissions for the shared dataset.
-See [Permissions]({{< relref "PermissionsSCALE" >}}) for more information on configuring permissions.
+See [Permissions]({{< ref "PermissionsSCALE" >}}) for more information on configuring permissions.
 
 ## SMB Status Screens
 You can access the **SMB Status** screen from the **SMB** option on the **System > Services** screen with the <i class="material-icons" aria-hidden="true" title="list">list</i> icon and from the <span class="material-icons">more_vert</span> on the **Shares > Windows (SMB) Shares** widget.

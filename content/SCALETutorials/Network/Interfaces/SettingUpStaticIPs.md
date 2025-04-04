@@ -37,10 +37,10 @@ Back up your system to preserve your data and system settings. Save the system c
 As a precaution, grab a screenshot of your current settings in the **Global Configuration** widget.
 
 If your network changes result in lost communication with the network and you need to return to the DHCP configuration, you can refer to this information to restore communication with your server.
-Lost communication might require reconfiguring your network settings using the [Console Setup menu]({{< relref "ConsoleSetupMenuSCALE" >}}).
+Lost communication might require reconfiguring your network settings using the [Console Setup menu]({{< ref "ConsoleSetupMenuSCALE" >}}).
 
 ## Changing to a Static IP Address
-To view a demonstration of this procedure see the tutorial video in the [Managing Global Configuration]({{< relref "ManagingGlobalConfig" >}}) article.
+To view a demonstration of this procedure see the tutorial video in the [Managing Global Configuration]({{< ref "ManagingGlobalConfig" >}}) article.
 
 To change an interface from using DHCP to a static IP address:
 

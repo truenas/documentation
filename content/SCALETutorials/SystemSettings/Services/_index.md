@@ -25,7 +25,7 @@ iXsystems TrueNAS Enterprise customers should contact iXsystems Support to recei
 
 **System > Services** displays each system component that runs continuously in the background. These typically control data-sharing or other external access to the system. Individual services have configuration screens and activation toggles, and you can set them to run automatically.
 
-Documented services related to data sharing or automated tasks are in their respective [Shares]({{< relref "/SCALEUIReference/Shares/" >}}) and [Tasks]({{< relref "/SCALEUIReference/DataProtection/" >}}) articles.
+Documented services related to data sharing or automated tasks are in their respective [Shares]({{< ref "/SCALEUIReference/Shares/" >}}) and [Tasks]({{< ref "/SCALEUIReference/DataProtection/" >}}) articles.
 
 <div class="noprint">
 

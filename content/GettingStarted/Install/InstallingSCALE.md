@@ -273,7 +273,7 @@ One disk is for the boot environment the other for data storage.
 
 Repeat this process until enough disks are available for TrueNAS to create ideal storage pools.
 This depends on your specific TrueNAS use case.
-See [Pool Creation]({{< relref "CreatePoolWizard" >}}) for descriptions of the various pool ("vdev") types and layouts.
+See [Pool Creation]({{< ref "CreatePoolWizard" >}}) for descriptions of the various pool ("vdev") types and layouts.
 {{< /expand >}}
 
 #### Using the TrueNAS Installer
@@ -286,11 +286,11 @@ The machine starts and boots into the TrueNAS installer.
 {{< include file="/static/includes/SCALEInstallerProcedure.md" >}}
 
 After the TrueNAS SCALE installation completes, reboot the system.
-The [Console Setup menu]({{< relref "ConsoleSetupMenuScale" >}}) displays when the system boots successfully.
+The [Console Setup menu]({{< ref "ConsoleSetupMenuScale" >}}) displays when the system boots successfully.
 {{< /expand >}}
 
 Congratulations, TrueNAS SCALE is now installed!
 
 The next step is to configure SCALE network and general settings.
-Experienced users can use the [Console Setup Menu]({{< relref "ConsoleSetupMenuScale" >}}) to configure network settings, but if you are unfamiliar with the Console setup menu and how network configuration works, we recommend using the SCALE UI to [configure settings]({{< relref "UIConfigurationSCALE" >}}).
+Experienced users can use the [Console Setup Menu]({{< ref "ConsoleSetupMenuScale" >}}) to configure network settings, but if you are unfamiliar with the Console setup menu and how network configuration works, we recommend using the SCALE UI to [configure settings]({{< ref "UIConfigurationSCALE" >}}).
 TrueNAS SCALE uses DHCP to assign an IP address to the primary system interface and displays it at the top of the Console Setup menu screen. Use this IP address to log into the web UI.

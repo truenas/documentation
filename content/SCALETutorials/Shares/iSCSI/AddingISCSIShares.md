@@ -8,7 +8,7 @@ tags:
 - iscsi
 ---
 
-To get started with iSCSI shares, make sure you have already created a [zvol]({{< relref "AddManageZvols" >}}) or a [dataset]({{< relref "DatasetsSCALE" >}}) with at least one file to share.
+To get started with iSCSI shares, make sure you have already created a [zvol]({{< ref "AddManageZvols" >}}) or a [dataset]({{< ref "DatasetsSCALE" >}}) with at least one file to share.
 
 Go to **Shares** and click **Configure** in the **Block (iSCSI) Shares Targets** window. You can either use the creation wizard or set one up manually.
 
