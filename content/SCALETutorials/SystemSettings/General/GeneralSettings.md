@@ -20,7 +20,7 @@ The TrueNAS SCALE General Settings section provides settings options for support
 The **Support** widget shows information about the TrueNAS version and system hardware.
 Links to the open source documentation, community forums, and official Enterprise licensing from iXsystems are also provided.
 
-**Add License** opens the sidebar with a field to paste a TrueNAS Enterprise license ([details]({{< relref "AddLicenseProactiveSupport.md" >}})).
+**Add License** opens the sidebar with a field to paste a TrueNAS Enterprise license ([details]({{< ref "AddLicenseProactiveSupport" >}})).
 
 **File Ticket** opens a window to provide feedback directly to the development team.
 {{< expand "Feedback window" "v" >}}
@@ -57,7 +57,7 @@ To send failed HTTP request data which can include client and server IP addresse
 ### Sending Usage Statistics to iXsystems
 To send anonymous usage statistics to iXsystems, select the **Usage Collection** option.
 
-For more information about what usage data is collected, see the [TrueNAS Data Collection Statement]({{< relref "/GettingStarted/UserAgreements/DataCollectionStatement.md" >}}).
+For more information about what usage data is collected, see the [TrueNAS Data Collection Statement]({{< ref "/GettingStarted/UserAgreements/DataCollectionStatement" >}}).
 
 ### Showing Console Messages
 To display console messages in real time at the bottom of the browser, select the **Show Console Messages** option.

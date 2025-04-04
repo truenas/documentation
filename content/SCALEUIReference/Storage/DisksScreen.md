@@ -22,7 +22,7 @@ Each option displays the information you enter in the **Edit Disk** screen or wh
 Select the checkbox to the left of a disk to display the **[Batch Operations](#batch-operations)** options.
 The checkbox at the top of the table selects all disks in the system. Select again to clear the checkboxes.
 
-**Storage** in the breadcrumb at the top of the screen returns to the **[Storage Dashboard]({{< relref "/SCALEUIReference/Storage/_index.md" >}})**.
+**Storage** in the breadcrumb at the top of the screen returns to the **[Storage Dashboard]({{< ref "/SCALEUIReference/Storage/" >}})**.
 
 ## Disks Screen - Expanded Disk
 Click anywhere on a disk row to expand it and show the traits specific to that disk and available options.
@@ -57,7 +57,7 @@ The screen lists the device names for each selected disk in the **Disks to be ed
 |---------|-------------|
 | **HDD Standby** | Select the minutes of inactivity before the drive enters standby mode from the dropdown list. Options are **Always On** or **5**, **10**, **20**, **30**, **60**, **120**, **240**, **300**, and **330**. For more information read this [forum post|(https://forums.freenas.org/index.php?threads/how-to-find-out-if-a-drive-is-spinning-down-properly.2068/) describing identifying spun-down drives. Temperature monitoring is disabled for the standby disk. |
 | **Advanced Power Management** | Select the power management profile from the dropdown list. Options are **Disabled**, **Level 1 - Minimum power usage with Standby (spindown)**, **Level 64 - Intermediate power usage with Standby**, **Level 127 - Maximum power usage with Standby**, **Level 128 - Minimum power usage without Standby (no spindown)**, **Level 192 - Intermediate power usage without Standby**, and **Level 254 - Maximum performance, maximum power usage**. |
-| **Enable S.M.A.R.T.**  | Select to enable and allow the system to conduct periodic [S.M.A.R.T. tests]({{< relref "SMARTTestsScreensSCALE.md" >}}). |
+| **Enable S.M.A.R.T.**  | Select to enable and allow the system to conduct periodic [S.M.A.R.T. tests]({{< ref "SMARTTestsScreensSCALE" >}}). |
 | **S.M.A.R.T. Extra Options** | Enter additional [smartctl(8)](https://www.smartmontools.org/browser/trunk/smartmontools/smartctl.8.in). |
 {{< /truetable >}}
 {{< /expand >}}
@@ -79,7 +79,7 @@ The **Manual S.M.A.R.T. Test** dialog displays the name of the selected disk(s) 
 
 **Start** begins the test. Depending on the test type selected, the test can take some time to complete. TrueNAS generates alerts when tests discover issues.
 
-For information on automated S.M.A.R.T. testing, see the [S.M.A.R.T. tests]({{< relref "SMARTTestsSCALE.md" >}}) article.
+For information on automated S.M.A.R.T. testing, see the [S.M.A.R.T. tests]({{< ref "SMARTTestsSCALE" >}}) article.
 {{< /expand >}}
 
 ### S.M.A.R.T. Test Results of&nbsp;*diskname*&nbsp;Screen
@@ -126,7 +126,7 @@ The **Wipe Disk *diskname*** opens after clicking **Wipe** on the expanded view 
 
 **Method** provides options for how you want the system to wipe the disk.
 Options are **Quick**, **Full with zeros**, or **Full with random data**.
-See [Wiping Disks]({{< relref "WipingDisks.md" >}}) for more information.
+See [Wiping Disks]({{< ref "WipingDisks" >}}) for more information.
 
 **Wipe** opens the wipe disk confirmation dialog.
 
@@ -144,7 +144,7 @@ The **Edit Disk** screen allows users to configure and manage general disk, powe
 
 {{< trueimage src="/images/SCALE/Storage/EditDiskScreen.png" alt="Edit Disk Screen" id="Edit Disk Screen" >}}
 
-Click **Edit Disk** on the **[Devices]({{< relref "DevicesScreensSCALE.md" >}})** screen to open the the **Edit Disk** screen.
+Click **Edit Disk** on the **[Devices]({{< ref "DevicesScreensSCALE" >}})** screen to open the the **Edit Disk** screen.
 
 ### General Settings
 {{< truetable >}}
@@ -167,7 +167,7 @@ Click **Edit Disk** on the **[Devices]({{< relref "DevicesScreensSCALE.md" >}})*
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Critical** | Enter a threshold temperature in Celsius. If the drive temperature is higher than this value, it creates a LOG_CRIT level log entry and sends an email to the address entered in the [Alerts]({{< relref "/SCALEUIReference/TopToolbar/Alerts/EmailScreens.md" >}}). Enter **0** to disable this check. |
+| **Critical** | Enter a threshold temperature in Celsius. If the drive temperature is higher than this value, it creates a LOG_CRIT level log entry and sends an email to the address entered in the [Alerts]({{< ref "/SCALEUIReference/TopToolbar/Alerts/EmailScreens" >}}). Enter **0** to disable this check. |
 | **Difference** | Enter a value in degrees Celsius that triggers a report if the temperature of a drive changes by this value since the last report. Enter **0** to disable this check. |
 | **Informational** | Enter a value in degrees Celsius that triggers a report if the drive temperature is at or above this temperature. Enter **0** to disable this check. |
 {{< /truetable >}}
@@ -176,7 +176,7 @@ Click **Edit Disk** on the **[Devices]({{< relref "DevicesScreensSCALE.md" >}})*
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Enable S.M.A.R.T.** | Select to enable the system to conduct periodic [S.M.A.R.T. tests]({{< relref "SMARTTestsSCALE.md" >}}). |
+| **Enable S.M.A.R.T.** | Select to enable the system to conduct periodic [S.M.A.R.T. tests]({{< ref "SMARTTestsSCALE" >}}). |
 | **S.M.A.R.T. extra options** | Enter additional [smartctl(8)](https://www.unix.com/man-page/suse/8/smartctl/) options. |
 | **SED Password** | Enter a password to set or change the password of the SED for this disk and to use instead of the global SED password. |
 | **Clear SED Password** | Select to clear the SED password for this disk. |
