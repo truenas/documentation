@@ -22,554 +22,657 @@ keywords:
 
 {{< include file="/static/includes/25.04Virtualization.md" >}}
 
-**Instances** allow users to set up containers or virtual machines (VMs) to run alongside TrueNAS.
+**Instances** allow users to configure Incus-based containers or VMs in TrueNAS.
 
-A *Linux container* is a lightweight, isolated environment that shares the host system kernel while maintaining its own filesystem, processes, and network settings.
-Containers start quickly, use fewer system resources than VMs, and scale efficiently, making them ideal for deploying and managing applications with minimal overhead.
+*Linux containers*, powered by LXC, offer a lightweight, isolated environment that shares the host system kernel while maintaining its own file system, processes, and network settings.
+Containers start quickly, use fewer system resources than VMs, and scale efficiently, making them ideal for deploying and managing scalable applications with minimal overhead.
 
-A *virtual machine (VM)* is an environment on a host computer that operates like a separate physical computer.
-VMs allow users to run multiple operating systems simultaneously on a single machine.
-VMs emulate hardware, providing greater isolation than containers but requiring more system resources.
+*Virtual machines (VMs)*, powered by QEMU, offer full OS isolation, kernel independence, and can run diverse OS types.
+VMs emulate hardware, providing greater isolation than containers but requiring more system resources, making them ideal for legacy applications, full-featured desktops, or software with strict OS dependencies.
 
-<!-- to be removed -->
-{{< hint type=note >}}
-A full tutorial for **Instances** is coming soon.
+{{< expand "What system resources do instances require?" "v" >}}
+{{< include file="/static/includes/ScaleVMReqResources.md" >}}
+{{< /expand >}}
 
-For the most up-to-date documentation on this feature, see [Instances Screens]({{< relref "/SCALE/SCALEUIReference/InstancesScreens.md" >}}).
-{{< /hint >}}
-<!-- / to be removed -->
+## Setting Up the Instances Service
 
-<!-- To include in tutorial PR:
+You must choose a pool before you can deploy an instance.
+The **Instances** screen header displays a <i class="fa fa-cog" aria-hidden="true"></i> **Pool is not selected** status before a pool for instances is selected.
+See [Choosing the Instances Pool](#choosing-the-instances-pool) below for more information about pool selection.
+
+{{< trueimage src="/images/SCALE/Virtualization/InstancesPoolNotSelected.png" alt="Pool Is Not Selected" id="Pool Is Not Selected" >}}
+
+After setting the pool, <i class="fa fa-check" aria-hidden="true" title="Check"></i> **Initialized** shows on the screen header.
+
+For more information on screens and screen functions, refer to the UI Reference article on [Instances Screens]({{< relref "/SCALE/SCALEUIReference/InstancesScreens.md" >}}).
+
+Use the **Configuration** dropdown to access the **[Global Settings](#configuring-global-settings)**, **[Manage Volumes](#managing-volumes)**, and [**Map User/Group IDs**](#mapping-user-and-group-ids) options.
+
+### Configuring Global Settings
+
+Click **Global Settings** on the **Configuration** menu to open the **Global Settings** screen, showing global options that apply to all instances.
+Use these options to configure the [storage pool](#choosing-the-instances-pool) for instances and [network settings](#configuring-the-default-network).
+
+{{< trueimage src="/images/SCALE/Virtualization/InstancesGlobalSettingsScreen.png" alt="Global Settings Screen" id="Global Settings Screen" >}}
+
+#### Choosing the Instances Pool
+
+You must set the pool before you can add any instances.
+
+Use the use the **Pool** dropdown to select the pool and click **Save**.
+
+We recommend users keep the VM and container use case in mind when choosing an instances pool.
+Select a pool with enough storage space for all the instances you intend to host.
+
+For stability and performance, we recommend using SSD/NVMe storage for the instances pool due to their faster speed and resilience for repeated read/writes.
+
+<!-- Placeholder: Further description of the instances storage implementation here (once implementation is nailed down and experimental status removed) -->
+
+To select a different pool for instances to use, use the **Pool** dropdown to select a different pool.
+Select **[Disabled]** to deactivate the pool and disable the instances service.
+
+#### Configuring the Default Network
+
+Use the **Default Network** settings on the **Global Settings** screen to define how instances connect to the network.
+These settings apply to all new containers and VMs, unless configured otherwise.  
+
+Select **Automatic** from the **Bridge** dropdown list to use the default network bridge for communication between instances and the TrueNAS host.
+To specify an existing bridge, select one from the dropdown list.
+See [Accessing NAS from VMs and Containers]({{< relref "/SCALE/SCALETutorials/Network/ContainerNASBridge.md" >}}) for details.  
+When **Bridge** is set to **Automatic**, the **IPv4 Network** and **IPv6 Network** settings display.
+
+Enter an IPv4 address and subnet (e.g., *192.168.1.0/24*) in **IPv4 Network** to assign a specific network for instances.
+Leave this field empty to allow TrueNAS to assign the default address.  
+
+Enter an IPv6 address and subnet (e.g., *fd42:96dd:aef2:483c::1/64*) in **IPv6 Network** or leave this field empty to allow TrueNAS to assign the default address.  
+
+Adjust these settings as needed to match your network environment and ensure proper connectivity for instances.  
+
+### Managing Volumes
+
+Click **Manage Volumes** on the **Configuration** menu to open the **Volumes** screen, which lists all the volumes currently configured for the instances service.
+
+Click **Create Volume** to open the [**Create New Volume**](#creating-volumes) dialog to configure a new instances volume.
+
+Click **Import Zvols** to open the [**Import Zvol**](#importing-zvols) dialog to import an existing Zvol as an instances volume.
+
+Click **Upload ISO** to open a file browser to select an <file>.iso</file> file from the client computer and [upload it](#uploading-iso-images) to TrueNAS for use in instances.
+
+{{< trueimage src="/images/SCALE/Virtualization/InstancesVolumesScreen.png" alt="Volumes Screen" id="Volumes Screen" >}}
+
+#### Creating Volumes
+
+Click **Create Volume** on the **Volumes** screen to open the **Create New Volume** dialog.
+
+{{< trueimage src="/images/SCALE/Virtualization/InstancesCreateVolume.png" alt="Create New Volume Dialog" id="Create New Volume Dialog" >}}
+
+Enter a name for the volume.
+
+Enter a size for the volume, for example *1 GiB*.
+
+Click **Create** to create the new volume.
+
+#### Importing Zvols
+
+Click **Import Zvols** on the **Volumes** screen to open the **Import Zvol** dialog.
+
+{{< trueimage src="/images/SCALE/Virtualization/InstanceImportZvol.png" alt="Import Zvol Dialog" id="Import Zvol Dialog" >}}
+
+Enter the path or browse to select an existing Zvol in **Select Zvols**.
+
+Select **Clone** to clone and promote a temporary snapshot of the zvol into a custom storage volume.
+This option retains the original zvol while creating an identical copy as an instances volume.
+
+Select **Move** to relocate the existing zvol to the ix-virt dataset as a volume.
+
+#### Uploading ISO Images
+
+Click **Upload ISO** to open a file browser.
+Select an <file>.iso</file> file from your client computer to upload it to TrueNAS for use in instances.
 
 {{< expand "Image Filename Requirements" "v" >}}
-{{< include file="/static/includes/InstanceImageFilename.md" >}}
+{{< include file="/static/includes/InstanceImageFilenames.md" >}}
 
 This ensures the instance name works without conflicts in DNS records, the file system, security profiles, and as the instance hostname.
 See [Instance name requirements](https://linuxcontainers.org/incus/docs/main/reference/instance_properties/#instance-name-requirements) from Incus for more information.
 {{< /expand >}}
 
+#### Deleting Volumes
 
----
-
-#### Delete Volumes
-
-Click <i class="material-icons" aria-hidden="true" title="Delete">delete</i> on an image row to delete that image.
-A **Delete volume** dialog displays.
+Click **Configuration > Manage Volumes** to access the **Volumes** screen.
+Click <i class="material-icons" aria-hidden="true" title="Delete">delete</i> on an volume row to delete that volume.
+The **Delete volume** dialog displays.
 
 {{< trueimage src="/images/SCALE/Virtualization/InstancesDeleteVolume.png" alt="Delete Volume Dialog" id="Delete Volume Dialog" >}}
 
 Select **Confirm** and then click **Continue** to delete the image.
-To prevent accidental deletion of an in-use image, the delete icon is not selectable for active images.
+TrueNAS disables the delete icon for active images to prevent accidental deletion.
 
----
+### Mapping User and Group IDs
 
+Click **Map User/Group IDs** on the **Configuration** dropdown list to open the **Map User and Group IDs** screen, which allows you to manually configure UID and GID mappings inside instances.
+By default, user and group accounts within an instance are assigned UIDs and GIDs from a special private range starting at **2147000001**.
+This mapping ensures security isolation for containers.
+However, you can override these mappings to meet specific system requirements.
 
+{{< trueimage src="/images/SCALE/Virtualization/MapUserGroupIDs.png" alt="Map User and Group IDs Screen" id="Map User and Group IDs Screen" >}}
 
- -->
+Select **Users** or **Groups** to view mappings for individual user or group accounts, respectively.
 
-<!-- Commenting out previous tutorial content
-{{< expand "What system resources do VMs require?" "v" >}}
-{{< include file="/static/includes/ScaleVMReqResources.md" >}}
-{{< /expand >}}
+Existing mappings are shown in a table containing the user or group name, host ID, and instance ID.
+Click **<i class="material-icons" aria-hidden="true" title="Delete">delete</i> Delete** on a row to delete that mapping.
 
-## Creating a Virtual Machine
-Before creating a VM, obtain an installer <file>.iso</file> or image file for the OS you intend to install, and create a [zvol]({{< relref "AddManageZvols.md" >}}) on a storage pool that is available for both the virtual disk and the OS install file.
+To configure a new mapping, type an account name to search for it or select it from the dropdown list.
+Select **Map to the same UID/GID in the instance** to directly map the host ID to the same ID in instances.
+This means that the selected user or group ID on the host appears as the same ID in instances.
 
-If the VM needs to access local NAS storage, you need to create a network bridge to allow communication.
-See [Accessing TrueNAS Storage from a VM](#accessing-truenas-storage-from-a-vm) below for more information.
+Disable **Map to the same UID/GID in the instance** to define a different instance ID for the user or group.
+Enter an ID number to map in instances, for example *1000*.
+This means that the selected user or group ID on the host appears as the configured ID in instances.
 
-To create a new VM, go to **Instances** and click **Add** to open the **Create Virtual Machine** configuration screen.
-If you have not yet added a virtual machine to your system, click **Add Virtual Machines** to open the same screen.
+Click **Set** to create the mapping.
+Changes take effect immediately, though instances can require a restart to reflect the changes.
 
-1. Select the operating system you want to use from the **Guest Operating System** dropdown list.
+Incorrect mappings can create permission issues within instances.
 
-   {{< trueimage src="/images/SCALE/Virtualization/AddVMOperSys.png" alt="Operating System Settings" id="Operating System Settings" >}}
+## Creating Instances
 
-   Compare the recommended specifications for the guest operating system with your available host system resources when allocating virtual CPUs, cores, threads, and memory size.
+Click **Create New Instance** on the **Instances** screen to open the **Create Instance** configuration wizard with the settings to set up a new [container](#creating-a-container) or [virtual machine](#creating-a-virtual-machine).
 
-2. Change other **Operating System** settings per your use case.
+### Creating a Container
 
-   Select **UTC** as the VM system time from the **System Clock** dropdown if you do not want to use the default **Local** setting.
+To create a new container, from the **Create Instance** screen:
 
-   Select **Enable Display** to enable a SPICE Virtual Network Computing (VNC) remote connection for the VM.
-      The **Bind** and **Password** fields display. If **Enable Display** is selected:
+1. Configure the instance configuration settings.
 
-   Enter a display **Password**
+   {{< trueimage src="/images/SCALE/Virtualization/InstanceConfigurationContainer.png" alt="Instance Configuration - Container" id="Instance Configuration - Container" >}}
 
-   Use the dropdown menu to change the default IP address in **Bind** if you want to use a specific address as the display network interface, otherwise leave it set to **0.0.0.0**.
-   The **Bind** menu populates any existing logical interfaces, such as static routes, configured on the system.
-   **Bind** cannot be edited after VM creation.
+   a. Enter a name for the container.
+      {{< include file="/static/includes/InstanceNameRequirements.md" >}}
 
-   Click **Next**.
+   b. Select **Container** as the **Virtualization Method**.
 
-3. Enter the CPU and memory settings for your VM.
+   c. Click **Browse Catalog** to open the **Select Image** screen.
 
-   {{< trueimage src="/images/SCALE/Virtualization/AddVMMemory.png" alt="CPU and Memory" id="CPU and Memory" >}}
+      {{< trueimage src="/images/SCALE/Virtualization/SelectImage.png" alt="Select Image Screen" id="Select Image Screen" >}}
 
-   If you selected Windows as the **Guest Operating System**, the **Virtual CPUs** field displays a default value of 2.
-   The VM operating system might have operational or licensing restrictions on the number of CPUs.
+      Search or browse to choose a Linux image from [linuxcontainers.org](https://linuxcontainers.org/).
+      Click **Select** in the row for your desired image.
 
-   Do not allocate too much memory to a VM. Activating a VM with all available memory allocated to it can slow the host system or prevent other VMs from starting.
+2. (Optional) Configure CPU and memory settings.
 
-   Leave **CPU Mode** set to **Custom** if you want to select a CPU model.
+   {{< trueimage src="/images/SCALE/Virtualization/CreateInstanceCPUandMemory.png" alt="CPU & Memory - Container" id="CPU & Memory - Container" >}}
 
-   Use **Memory Size** and **Minimum Memory Size** to specify how much RAM to dedicate to this VM.
-   To dedicate a fixed amount of RAM, enter a value (minimum 256 MiB) in the **Memory Size** field and leave **Minimum Memory Size** empty.
+   For containers, enter values for **CPU Configuration** and **Memory Size** or leave blank to allow the container access to all host CPU and memory resources.
+   To configure resource allocation:
 
-   To allow for memory usage flexibility (sometimes called ballooning), define a specific value in the **Minimum Memory Size** field and a larger value in **Memory Size**.
-   The VM uses the **Minimum Memory Size** for normal operations but can dynamically allocate up to the defined **Memory Size** value in situations where the VM requires additional memory.
-   Reviewing available memory from within the VM typically shows the **Minimum Memory Size**.
+   {{< include file="/static/includes/InstanceCPUMemoryProcedure.md" >}}
 
-   Click **Next**.
+3. (Optional) Configure environment variables to run on boot or execute.
+   Environment settings are only supported for containers and cannot be used with VMs.
 
-4. Configure disk settings.
+   {{< trueimage src="/images/SCALE/Virtualization/CreateInstanceEnvironment.png" alt="Environment" id="Environment" >}}
 
-   {{< trueimage src="/images/SCALE/Virtualization/CreateVirtualMachineDisks.png" alt="Disks" id="Disks" >}}
+   {{< include file="/static/includes/InstancesEnvironmentProcedure.md" >}}
 
-   Select **Create new disk image** to create a new zvol on an existing dataset.  
-   Select **Use existing disk image** to use an existing zvol for the VM.
+4. (Optional) Configure disk settings to mount storage volumes for the container.
+   You can create a new dataset or use an existing one.
 
-   Select either **AHCI** or **VirtIO** from the **Select Disk Type** dropdown list. We recommend using **AHCI** for Windows VMs.
+   {{< trueimage src="/images/SCALE/Virtualization/CreateInstanceDisksContainer.png" alt="Disks - Container" id="Disks - Container" >}}
 
-   Select the location for the new zvol from the **Zvol Location** dropdown list.
+   a. Click **Add** in the **Disks** section to display a set of fields to mount a disk.
 
-   Enter a value in **Size (Examples: 500KiB, 500M, and 2TB)** to indicate the amount of space to allocate for the new zvol.
+   b. To create a new dataset, enter a path or browse to select a parent dataset from the dropdown list of datasets on the system.
+      Then click **Create Dataset**, enter a name for the new dataset in the **Create Dataset** window, and click **Create**.
 
-   Click **Next**.
+      To use an existing volume, enter a path or browse to select an existing dataset or zvol from the **Source** dropdown list.
 
-5. Configure the network interface.
+   c. Enter the file system **Destination** path to mount the disk in the container, for example */media* or */var/lib/data*.
 
-   {{< trueimage src="/images/SCALE/Virtualization/AddVMNetwork.png" alt="Network Interface" id="Network Interface" >}}
+   d. Click **Add** again to mount additional storage volumes.
 
-   Select the network interface type from the **Adapter Type** dropdown list. Select **Intel e82585 (e1000)** as it offers a higher level of compatibility with most operating systems, or select **VirtIO** if the guest operating system supports para-virtualized network drivers.
+5. (Optional) Configure proxy settings to forward network connections between the host and the container.
+   This routes traffic from a specific address on the host to an address inside the instance, or vice versa, allowing the instance to connect externally through the host.
 
-   Select the network interface card to use from the **Attach NIC** dropdown list.
-   If the VM needs to access local NAS storage, attach a [network bridge](#accessing-truenas-storage-from-a-vm) interface.
+   {{< trueimage src="/images/SCALE/Virtualization/CreateInstanceProxies.png" alt="Proxies" id="Proxies" >}}
 
-   Click **Next**.
+   a. Click **Add** in the **Proxies** section to display a set of proxy configuration settings.
 
-6. Upload installation media for the operating system you selected.
+   b. Select the protocol option from the **Host Protocol** dropdown list to set the connection protocol for the TrueNAS host as **TCP** or **UDP**.
 
-   {{< trueimage src="/images/SCALE/Virtualization/AddVMInstallMedia.png" alt="Installation Media" id="Installation Media" >}}
+   c. Enter a port in **Host Port** to define the TrueNAS port to map to the instance port on the container, for example *3600*.
 
-   You can create the VM without an OS installed. To add it either type the path or browse to the location and select it.
+   d. Select the connection protocol for the container in **Instance Protocol**.
+      Options are **TCP** or **UDP**.
 
-   To upload an <file>iso</file> select **Upload New Image File** and either enter the path or browse to the location of the file.
+   e. Enter the port number within the container in **Instance Port**, for example *80*, to map to the host port.
 
-   {{< trueimage src="/images/SCALE/Virtualization/CreateVMWInstallMediaUploadSCALE.png" alt="Upload Installation Media" id="Upload Installation Media" >}}
+6. {{< include file="/static/includes/InstanceNetworkProcedure.md" >}}
 
-   Click **Upload** to begin the upload process. After the upload finishes, click **Next**.
+7. {{< include file="/static/includes/InstanceUSBProcedure.md" >}}
 
-7. Specify a GPU.
+8. {{< include file="/static/includes/InstanceGPUProcedure.md" >}}
 
-   {{< trueimage src="/images/SCALE/Virtualization/AddVMGPU.png" alt="GPU Screen" id="GPU Screen" >}}
+9. Click **Create** to deploy the container.
 
-   {{< hint type="note" title="Supported GPUs" >}}
-    iXsystems does not have a list of approved GPUs at this time but TrueNAS does support various GPU from Nvidia, Intel, and AMD.
-    As of 24.10, TrueNAS does not automatically install NVIDIA drivers. Instead, users must manually install drivers from the UI. For detailed instructions, see (https://www.truenas.com/docs/truenasapps/#installing-nvidia-drivers).
+### Creating a Virtual Machine
+
+{{< hint type=note title="Before You Begin" >}}
+Before creating a VM:
+
+- Obtain an installer <file>.iso</file> or image file for the OS you intend to install, if you are not using a Linux image from the catalog or one previously uploaded to the instances service. You can upload an image for use in instances by using the [**Manage Volumes**](#managing-volumes) option on the **Instances** screen **Configuration** menu or you can upload the image from the **Instance Configuration** settings while creating the VM.
+
+- [Create one or more zvols]({{< relref "/SCALE/SCALETutorials/Datasets/AddManageZvols.md" >}}) on a storage pool for the virtual disk now or do this from the **Volumes** screen while configuring the instance.
+
+- Compare the recommended specifications for the guest operating system with your available host system resources.
+  Reference these when allocating resources to the instance.
+
+{{< /hint >}}
+
+To create a new virtual machine, from the **Create Instance** screen:
+
+1. Configure the instance configuration settings.
+
+   {{< trueimage src="/images/SCALE/Virtualization/InstanceConfigurationVM.png" alt="Instance Configuration - VM" id="Instance Configuration - VM" >}}
+
+   a. Enter a name for the virtual machine.
+
+      {{< include file="/static/includes/InstanceNameRequirements.md" >}}
+
+   b. Select **VM** as the **Virtualization Method**.
+
+   c. Select one of the available **VM Image Options**: **Use a Linux Image** or **Upload ISO, import a zvol or use another volume**.
+
+      - Select **Use a Linux Image** to create the VM using a Linux image from [linuxcontainers.org](https://linuxcontainers.org/).
+
+         a. Click **Browse Catalog** to open the **Select Image** screen.
+
+         {{< trueimage src="/images/SCALE/Virtualization/SelectImage.png" alt="Select Image Screen" id="Select Image Screen" >}}
+
+         b. Search or browse to choose an available image.
+
+         c. Click **Select** in the row for your desired image.
+
+      - Select **Upload ISO, import a zvol or use another volume** to create the VM using an <file>.iso</file> image, import a zvol from a previously installed VM, or use an existing instances volume.
+
+         Click **Select Volume** to open the **Volumes** screen.
+
+         {{< trueimage src="/images/SCALE/Virtualization/InstancesVolumesScreen.png" alt="Volumes Screen" id="Volumes Screen" >}}
+
+         Use one of the available options to select or create a volume:
+
+         - Using an existing volume:
+
+            Click **Select** on an existing volume to use that for the new VM.
+            The selected volume cannot be in use by an existing instance.
+
+         - Creating a new volume:
+
+            a. Click **Create Volume** to open the **Create New Volume** dialog.
+
+            {{< trueimage src="/images/SCALE/Virtualization/InstancesCreateVolume.png" alt="Create New Volume Dialog" id="Create New Volume Dialog" >}}
+
+            b. Enter a name for the volume.
+
+            c. Enter a size for the volume, for example *1 GiB*.
+
+            d. Click **Create** to create the new volume.
+
+         - Importing a Zvol:
+
+            Use this option to migrate a previously configured VM, such as after updating from TrueNAS 24.10.
+            See [Migrating Virtual Machines](https://www.truenas.com/docs/scale/25.04/gettingstarted/scalereleasenotes/#migrating-virtual-machines) from the 25.04 release notes for more information.
+
+            a. Click **Import Zvols** on the **Volumes** screen to open the **Import Zvol** dialog.
+
+            {{< trueimage src="/images/SCALE/Virtualization/InstanceImportZvol.png" alt="Import Zvol Dialog" id="Import Zvol Dialog" >}}
+
+            b. Enter a path in **Select Zvols** or browse to select an existing Zvol.
+
+            c. Select a method to import the Zvol:
+
+             - Select **Clone** to clone and promote a temporary snapshot of the zvol into a custom storage volume.
+                This option retains the original zvol while creating an identical copy as an instances volume.
+
+             - Select **Move** to relocate the existing zvol to the ix-virt dataset as a volume.
+         - Uploading an ISO file:
+
+            a. Click **Upload ISO** to open a file browser and select an <file>.iso</file> file from your client computer.
+
+            b. Locate your desired image file and then click **Open** to upload the file for use in instances.
+
+2. Configure the CPU and memory settings.
+
+   Compare the recommended specifications for the guest operating system with your available host system resources when allocating CPU and memory resources.
+
+   {{< trueimage src="/images/SCALE/Virtualization/CreateVMCPUandMemory.png" alt="CPU & Memory - VM" id="CPU & Memory - VM" >}}
+
+   For VMs, CPU and memory configuration is required.
+
+   {{< include file="/static/includes/InstanceCPUMemoryProcedure.md" >}}
+
+3. Configure disks settings to mount storage volumes for the VM.
+   For VMs, you must specify the I/O bus and size of the root disk.
+   You can also mount one or more existing zvol(s) as additional storage, if needed.
+   See [Storage volume types](https://linuxcontainers.org/incus/docs/main/explanation/storage/#storage-volume-types) from Incus for more information.
+
+   {{< trueimage src="/images/SCALE/Virtualization/CreateInstanceDisksVM.png" alt="Disks - VM" id="Disks - VM" >}}
+
+   a. Choose the root disk I/O bus type that best suits system needs.
+
+      Use **NVMe** for high-performance storage with faster read/write speeds.
+
+      Use **Virtio-BLK** for efficient virtualized environments that need direct block device access with lower overhead.
+
+      Use **Virtio-SCSI** for flexible and scalable storage that supports advanced features like hot-swapping and multiple devices.
+
+   b. Enter a plain integer in **Root Disk Size (in GiB)** to configure the size of the VM root disk (default **10**).
+
+   c. To mount additional storage, click **Add** to display a set of fields to mount a zvol.
+
+   d. Enter a path or browse to select an existing zvol from the **Source** dropdown list.
+
+   e. Choose the disk **I/O Bus** type that best suits system needs.
+      Options are **NVMe**, **Virtio-BLK**, or **Virtio-SCSI**.
+
+   f. Click **Add** again to mount additional storage volumes.
+
+4. {{< include file="/static/includes/InstanceNetworkProcedure.md" >}}
+
+5. {{< include file="/static/includes/InstanceUSBProcedure.md" >}}
+
+6. {{< include file="/static/includes/InstanceGPUProcedure.md" >}}
+
+7. (Optional) Configure PCI passthrough settings to assign physical PCI devices, such as a network card or controller, directly to a VM.
+   This allows the VM to use the device as if physically attached.
+   The selected PCI device(s) cannot be in use by the host or share an IOMMU group with devices the host requires.
+
+   {{< trueimage src="/images/SCALE/Virtualization/CreateInstancePCI.png" alt="PCI Passthrough" id="PCI Passthrough" >}}
+
+   a. Click **Add PCI Passthrough** to open the **Add PCI Passthrough Device** screen.
+      The **Add PCI Passthrough Device** screen lists the available physical PCI devices that can be attached to an instance.
+
+      {{< trueimage src="/images/SCALE/Virtualization/AddPCIPassthroughDevice.png" alt="Add PCI Passthrough Device Screen" id="Add PCI Passthrough Device Screen" >}}
+
+   b. Use **Search Devices** or the **Type** dropdown to filter available devices.
+
+   c. Click **Select** on a device row to attach that device.
+
+8. (Optional) Configure the **VNC** section settings to enable VNC access for a VM, configure the VNC port, and set a VNC password for remote access.
+   When VNC access is enabled, remote clients can connect to VM display sessions using a VNC client.
+
+   {{< trueimage src="/images/SCALE/Virtualization/CreateInstanceVNC.png" alt="VNC Settings" id="VNC Settings" >}}
+
+   {{< include file="/static/includes/InstanceVNCProcedure.md" >}}
+
+9. (Optional) Configure the security settings to control various system security features, including Trusted Platform Module (TPM) and Secure Boot options.
+   These options help to ensure a secure environment by enabling advanced hardware-based security features during system startup and operation.
+
+   {{< trueimage src="/images/SCALE/Virtualization/CreateInstanceSecurity.png" alt="Security Settings" id="Security Settings" >}}
+
+   There are two options:
+
+   - **Add Trusted Platform Module (TPM)** enables TPM, a hardware-based security feature that protects sensitive data and ensures integrity.
+      This adds a Trusted Platform Module (TPM) device to the VM.
+
+   - {{< include file="/static/includes/InstanceSecureBootProcedure.md" >}}
+
+10. Click **Create** to deploy the VM.
+
+   {{< hint type=tip >}}  
+   Some guest operating systems, such as Windows, require user input during boot to start the installation.
+   If the VM does not boot into the installer automatically, connect using a VNC client and press a key within the first 10 seconds after startup.  
    {{< /hint >}}
 
-8. Confirm your VM settings, then click **Save**.
+## Managing Instances
 
-### Adding and Removing Devices
-After creating the VM, you can add or remove virtual devices.
+Created instances appear in a table on the **Instances** screen.
+The table lists each configured instance, displaying its name, type, current status, and options to restart or stop it.
+Stopped instances show the option to start the instance.
 
-Click on the VM row on the **Virtual Machines** screen to expand it and show the options, then click <i class="material-icons" aria-hidden="true" title="Devices">device_hub</i> **Devices**.
+{{< trueimage src="/images/SCALE/Virtualization/InstancesScreenWithInstances.png" alt="Instances Screen - Populated" id="Instances Screen - Populated" >}}
 
-{{< trueimage src="/images/SCALE/Virtualization/VMDevicesListed.png" alt="Devices" id="Devices" >}}
+Select the checkbox to the left of **Name** (select all) or select one or more instance rows to access the [**Bulk Actions**](#using-bulk-actions) dropdown.
 
-{{<include file="/static/includes/addcolumnorganizer.md">}}
+Enter the name of an instance in the **Search** field above the **Instances** table to locate a configured instance.
 
-Device notes:
+Click <i class="material-icons" aria-hidden="true" title="Restart">restart_alt</i> to restart or <i class="material-icons" aria-hidden="true" title="Stop">stop_circle</i> to stop a running instance.
+Click <i class="material-icons" aria-hidden="true" title="Start">play_circle</i> to start a stopped instance.
 
-* A virtual machine attempts to boot from devices according to the **Device Order**, starting with **1000**, then ascending.
-* A **CD-ROM** device allows booting a VM from a CD-ROM image like an installation CD.
-  The CD image must be available in the system storage.
+Select an instance row in the table to populate the **Details for *Instance*** widgets with information and management options for the selected instance.
 
-<!-- nb: this is the content from the removed /scaletutorials/virtualization/addmanagevmdevicesscale/ -->
-<!-- preserved here in case any of it is useful when this tutorial is rewritten for Instances. -->
-<!--
-## Managing Devices
+### Using Bulk Actions
 
-After creating a VM, the next step is to add virtual devices for that VM.
-Using the Create Virtual Machine wizard configures at least one disk, NIC, and the display as part of the process.
-To add devices, from the **Virtual Machines** screen, click anywhere on a VM entry to expand it and show the options for the VM.
+Apply actions to one or more selected instances on your system using **Bulk Actions**.
 
-Click <i class="material-icons" aria-hidden="true" title="Devices">device_hub</i> **Devices** to open the **Devices** screen for the VM.
-From this screen, you can edit, add, or delete devices.
-Click the <span class="material-icons">more_vert</span> icon at the right of each listed device to see device options.
+{{< trueimage src="/images/SCALE/Virtualization/InstancesBulkActions.png" alt="Bulk Actions" id="Bulk Actions" >}}
 
-{{< trueimage src="/images/SCALE/Virtualization/VirtualMachinesScreenwithVMDetails.png" alt="VM Options" id="VM Options" >}}
+Use the dropdown to select **Start All Selected**, **Stop All Selected**, or **Restart All Selected**.
 
-The devices for the VM display as a list.
+### Editing Instances
 
-Device notes:
+After selecting the instance row in the table to populate the **Details for *Instance*** widgets, locate the **General Info** widget.
 
-* A virtual machine attempts to boot from devices according to the **Device Order**, starting with **1000**, then ascending.
-* A **CD-ROM** device allows booting a VM from a CD-ROM image like an installation CD.
-  The CD image must be available in the system storage.
-* With a **Display** device, remote clients can connect to VM display sessions using a SPICE client, or by installing a 3rd party remote desktop server inside your VM.
-  SPICE clients are available from the [SPICE Protocol site](https://www.spice-space.org/).
+{{< trueimage src="/images/SCALE/Virtualization/GeneralInfoWidget.png" alt="General Info Widget" id="General Info Widget" >}}
 
-Before adding, editing, or deleting a VM device, stop the VM if it is running.
-Click the **State** toggle to stop or restart a VM, or use the **Stop** and **Restart** buttons.
+Click **Edit** to open the **Edit Instance: *Instance*** screen.
+The **Edit Instance: *Instance*** screen settings are a subset of those found on the **Create Instance** screen.
+It includes the general **Instance Configuration** and **CPU and Memory** settings for all instances.
+Additionally, containers include **Environment** settings and VMs include **VNC** and **Security** settings.
 
-### Editing a Device
+#### Editing Instance Configuration Settings
 
-Select **Edit** to open the **Edit Device** screen.
-You can change the type of virtual hard disk, the storage volume to use, or change the device boot order.
+{{< trueimage src="/images/SCALE/Virtualization/EditInstanceConfiguration.png" alt="Edit Instance Configuration" id="Edit Instance Configuration" >}}
 
-To edit a VM device:
+Select **Autostart** to automatically start the instance when the system boots.
 
-1. Stop the VM if it is running, then click **Devices** to open the list of devices for the selected VM.
-2. Click on the <span class="material-icons">more_vert</span> icon at the right of the listed device you want to edit, then select **Edit** to open the **Edit Device** screen.
+#### Editing CPU & Memory Settings
 
-   {{< trueimage src="/images/SCALE/Virtualization/EditDeviceDiskScreen.png" alt="Edit Device VM Disk" id="Edit Device VM Disk" >}}
+For containers, **CPU Configuration** and **Memory Size** can be configured or left blank to allow the container access to all host CPU and memory resources.
+For VMs, CPU and memory configuration is required.
 
-3. Select the path to the zvol created when setting up the VM on the **Zvol** dropdown list.
-4. Select the type of hard disk emulation from the **Mode** dropdown list.
-   Select **AHCI** for better software compatibility, or select **VirtIO** for better performance if the guest OS installed in the VM has support for VirtIO disk devices.
-5. (Optional) Specify the disk sector size in bytes in **Disk Sector Size**.
-   Leave set to **Default** or select either **512** or **4096** byte values from the dropdown list.
-   If not set, the sector size uses the ZFS volume values.
-6. Specify the boot order or priority level in **Device Order** to move this device up or down in the sequence.
-   The lower the number the higher the priority in the boot sequence.
-7. Click **Save**.
-8. Restart the VM.
+{{< trueimage src="/images/SCALE/Virtualization/EditCPUandMemory.png" alt="Edit CPU & Memory" id="Edit CPU & Memory" >}}
 
-### Deleting a Disk Device
+To edit resource allocation:
 
-Deleting a device removes it from the list of available devices for the selected VM.
+<div style="margin-left: 33px">{{< include file="/static/includes/InstanceCPUMemoryProcedure.md" >}}
+</div>
 
-To delete a VM device:
+#### Editing VNC Settings
 
-1. Stop the VM if it is running, then click **Devices** to open the list of devices for the selected VM.
-2. Click on the <span class="material-icons">more_vert</span> icon at the right of the listed device you want to edit, then select **Delete**.
-   The **Delete Virtual Machine** dialog opens.
+When VNC access is enabled, remote clients can connect to VM display sessions using a VNC client.
+These settings are only available for VMs and cannot be used with containers.
 
-   {{< trueimage src="/images/SCALE/Virtualization/DeleteVirtualMachine.png" alt="Delete Virtual Machine" id="Delete Virtual Machine" >}}
+Stop the instance before editing VNC settings.
 
-3. Select **Delete zvol device** to confirm you want to delete the zvol device.
-   Select **Force Delete** if you want the system to force the deletion of the zvol device, even if other devices or services are using or affiliated with the zvol device.
-4. Click **Delete Device**.
+{{< trueimage src="/images/SCALE/Virtualization/EditVNC.png" alt="Edit VNC" id="Edit VNC" >}}
 
-### Changing the Device Order
+<div style="margin-left: 33px">{{< include file="/static/includes/InstanceVNCProcedure.md" >}}
+</div>
 
-1. Stop the VM if it is running, then click **Devices** to open the list of devices for the selected VM
-2. Click **Edit**.
-3. Enter the number that represents where in the boot sequence you want this device to boot in the **Devices Order** field.
-   The lower the number, the higher the device is in the boot sequence.
-4. Click **Save**.
-5. Restart the VM.
+#### Editing Environment Settings
 
-### Adding a CD-ROM Device
+These settings are only available for containers and cannot be used with VMs.
 
-Select **CD-ROM** as the **Device Type** on the **Add Device** screen and set a boot order.
+{{< trueimage src="/images/SCALE/Virtualization/EditEnvironment.png" alt="Environment Settings" id="Environment Settings" >}}  
 
-1. Stop the VM if it is running, then click **Devices**.
-2. Click **Add** and select **CD-ROM** from the **Device Type** dropdown list.
+<div style="margin-left: 33px">{{< include file="/static/includes/InstancesEnvironmentProcedure.md" >}}
+</div>
 
-   {{< trueimage src="/images/SCALE/Virtualization/VMAddDeviceCDROM.png" alt="Devices Add CD-ROM Type" id="Devices Add CD-ROM Type" >}}
+#### Editing Security Settings
 
-3. Specify the mount path.
-   Click on the <i class="fa fa-caret-right" aria-hidden="true"></i> to the left of **/mnt** and at the pool and dataset levels to expand the directory tree. Select the path to the CD-ROM device.
-4. Specify the boot sequence in **Device Order**.
-5. Click **Save**.
-6. Restart the VM.
+These settings are only available for VMs and cannot be used with containers.  
 
-### Adding a NIC Device Type
+{{< trueimage src="/images/SCALE/Virtualization/EditSecurity.png" alt="Security Settings" id="Security Settings" >}}  
 
-Select **NIC** in the **Device Type** on the **Add Device** screen to add a network interface card for the VM to use.
+{{< include file="/static/includes/InstanceSecureBootProcedure.md" >}}
 
-1. Stop the VM if it is running, then click **Devices**.
-2. Click **Add** and select **NIC** from the **Device Type** dropdown list.
+### Deleting Instances
 
-   {{< trueimage src="/images/SCALE/Virtualization/VMAddDeviceNIC.png" alt="Devices Add NIC" id="Devices Add NIC" >}}
+After selecting the instance row in the table to populate the **Details for *Instance*** widgets, locate the **General Info** widget.
 
-3. Select the adapter type. Choose **Intel e82585(e1000)** for maximum compatibility with most operating systems.
-   If the guest OS supports VirtIO paravirtualized network drivers, choose **VirtIO** for better performance.
-4. Click **Generate** to assign a new random MAC address to replace the random default address, or enter your own custom address.
-5. Select the physical interface you want to use from the **NIC To Attach** dropdown list.
-6. (Optional) Select **Trust Guest Filters** to allow the virtual server to change its MAC address and join multicast groups.
-   This is required for the IPv6 Neighbor Discovery Protocol (NDP).
+{{< trueimage src="/images/SCALE/Virtualization/GeneralInfoWidget.png" alt="General Info Widget" id="General Info Widget" >}}
 
-   Setting this attribute has security risks.
-   It allows the virtual server to change its MAC address and receive all frames delivered to this address.
-   Determine your network setup needs before setting this attribute.
-7. Click **Save**.
-8. Restart the VM
+Click **Delete** to open the **Delete** dialog.
 
-### Add a Disk Device Type
+{{< trueimage src="/images/SCALE/Virtualization/DeleteInstance.png" alt="Delete Instance Dialog" id="Delete Instance Dialog" >}}
 
-Select **Disk** in **Device Type** on the **Add Device** screen to configure a new disk location, drive type and disk sector size, and boot order.
+Select **Confirm** to activate the **Continue** button.
+Click **Continue** to delete the instance.
 
-1. Stop the VM if it is running, then click **Devices**.
-2. Click **Add** and select **Disk** from the **Device Type** dropdown list.
+### Managing Devices
 
-   {{< trueimage src="/images/SCALE/Virtualization/VMAddDeviceDisk.png" alt="Devices Add Dik" id="Devices Add Disk" >}}
+Use the **Devices** widget to view all USB, GPU, Trusted Platform Module (TPM), and PCI Passthrough devices attached to the instance.
 
-4. Select the path to the zvol you created when setting up the VM using the **Zvol** dropdown list.
-5. Select the hard disk emulation type from the **Mode** dropdown list.
-   Select **AHCI** for better software compatibility, or **VirtIO** for better performance if the guest OS installed in the VM supports VirtIO disk devices.
-6. Specify the sector size in bytes in **Disk Sector Size**.
-   Leave set to **Default** or select either **512** or **4096** from the dropdown list to change it.
-   If the sector size remains unset it uses the ZFS volume values.
-7. Specify the boot sequence order for the disk device.
-8. Click **Save**.
-9. Restart the VM.
+{{< trueimage src="/images/SCALE/Virtualization/DevicesWidget.png" alt="Devices Widget" id="Devices Widget" >}}
 
-### Adding a PCI Passthrough Device
+Click **Add** to open a list of available **USB Devices**, **GPUs**, **TPM**, and **PCI Passthrough** devices to attach.
+Select a device to attach it to an instance.
 
-Select **PCI Passthrough Device** in the **Device Type** on the **Add Device** screen to configure the PCI passthrough device and boot order.
-{{< hint type=important >}}
-Depending upon the type of device installed in your system, you might see a warning: PCI device does not have a reset mechanism defined.
-You may experience inconsistent or degraded behavior when starting or stopping the VM.
-Determine if you want to proceed with this action in such an instance.
-{{< /hint >}}
+To attach a PCI passthrough device, click **Add Device** under **PCI Passthrough** on the device list to open the **Add PCI Passthrough Device**.
+PCI passthrough assigns a physical PCI device, such as a network card or controller, directly to a VM, allowing it to function as if physically attached.
+The **Add PCI Passthrough Device** screen lists the available physical PCI devices that can be attached to an instance.
 
-1. Stop the VM if it is running, then click **Devices**.
-2. Click **Add** and select **PCI Passthrough Device** from the **Device Type** dropdown list.
-3. Enter a value in **PCI Passthrough Device** using the format of bus#/slot#/fcn#.
+{{< trueimage src="/images/SCALE/Virtualization/AddPCIPassthroughDevice.png" alt="Add PCI Passthrough Device Screen" id="Add PCI Passthrough Device Screen" >}}
 
-   {{< trueimage src="/images/SCALE/Virtualization/VMAddDevicePCIpass.png" alt="Devices Add PCI Passthrough" id="Devices Add PCI Passthrough" >}}
+Use **Search Devices** or the **Type** dropdown to filter available devices.
+The selected PCI device(s) must not be in use by the host or share an IOMMU group with any device the host requires.
 
-4. Specify the boot sequence order for the PCI passthrough device.
-5. Click **Save**.
-6. Restart the VM.
+Click **Select** to attach the selected device.
 
-### Adding a USB Passthrough Device
+### Managing Disks
 
-Select **USB Passthrough Device** as the **Device Type** on the **Add Device** screen to configure the USB passthrough device, and set a boot order.
+Use the **Disks** widget to view the storage devices attached to the instance, along with their associated paths.
 
-1. Stop the VM if it is running, then click **Devices**.
-2. Click **Add** and select **USB Passthrough Device** from the **Device Type** dropdown list.
+{{< trueimage src="/images/SCALE/Virtualization/DisksWidget.png" alt="Disks Widget" id="Disks Widget" >}}
 
-   {{< trueimage src="/images/SCALE/Virtualization/VMAddDeviceUSBpass.png" alt="Devices Add USB Passthrough" id="Devices Add USB Passthrough" >}}
+Click **Add** to open the [**Add Disk**](#adding-or-editing-disks) screen for adding new disks to the instance.
 
-3. Select the **Controller Type** from the dropdown list.
-4. Select the hub controller type from the **Device** dropdown list.
-   If the type is not listed, select **Specify custom**, then enter the **Vendor ID** and **Product ID**.
-5. Specify the boot sequence order.
-6. Click **Save**.
-7. Restart the VM.
+Click the the <span class="material-icons">more_vert</span> icon to the right of an existing disk to open the actions menu.
+Select to either [**Edit**](#adding-or-editing-disks) or [**Delete**](#deleting-disk-mounts) the disk mount.
 
-### Adding a Display Device
+For VMs, use the **Disks** widget to manage the root disk size and I/O Bus.
+The root disk stores the OS and serves as the boot disk for the VM.
+Click **Change** to open the [**Change Root Disk Setup**](#managing-the-root-disk-setup) dialog.
 
-Select **Display** as **Device Type** on the **Add Device** screen to configure a new display device.
+#### Adding or Editing Disks
 
-1. Stop the VM if it is running, then click **Devices**.
-2. Click **Add** and select **Display** from the **Device Type** dropdown list.
+Click **Add** to open the **Add Disk** screen for adding new disks to the instance.
 
-   {{< trueimage src="/images/SCALE/Virtualization/VMAddDeviceDisplay.png" alt="Devices Add Display" id="Devices Add Display" >}}
+Click the the <span class="material-icons">more_vert</span> icon to the right of an existing disk to open the actions menu.
+Select **Edit** to edit the disk mount.
 
-3. Enter a fixed port number in **Port**.
-   To allow TrueNAS to assign the port after restarting the VM, set the value to zero (leave the field empty).
-4. Specify the display session settings:
-   a. Select the screen resolution to use for the display from the **Resolution** dropdown.
-   b. Select an IP address for the display device to use in **Bind**. The default is **0.0.0.0**.
-   c. Enter a unique password for the display device to securely access the VM.
-5. Select **Web Interface** to allow access to the VNC web interface.
-6. Click **Save**.
-7. Restart the VM.
+{{< trueimage src="/images/SCALE/Virtualization/AddDiskScreenVM.png" alt="Add Disk Screen - VM" id="Add Disk Screen - VM" >}}
 
-Display devices have a 60-second inactivity timeout.
-If the VM display session appears unresponsive, try refreshing the browser tab.
+For VMs, click **Select Volume** to open the [**Volumes**](#managing-volumes) screen to create or select a volume to attach.
+Enter a **Boot Priority** value to set the order in which to boot disks.
+By default, the root disk is set to 1, which is the highest priority.
+Select the **I/O Bus** for the disk.
+Options are **NVMe**, **Virtio-BLK**, and **Virtio-SCSI**.
 
+{{< trueimage src="/images/SCALE/Virtualization/AddDiskScreen.png" alt="Add Disk Screen - Container" id="Add Disk Screen - Container" >}}
 
-## Managing a Virtual Machine
-After creating the VM and configuring devices for it, click on the VM to expand it and show the options to manage the VM. 
+For containers, enter or browse to select the host **Source** path for the disk.
+For a new dataset, enter or browse to select the parent path.
+Enter the **Destination** path to mount the disk in the instance.
 
-{{< trueimage src="/images/SCALE/Virtualization/VirtualMachinesScreenwithVMDetails.png" alt="VM Options" id="VM Options" >}}
+Click **Save** to apply changes.
 
-An active VM displays options for <i class="material-icons" aria-hidden="true" title="VNC">settings_ethernet</i> **Display** and <i class="material-icons" aria-hidden="true" title="Serial Shell">keyboard_arrow_right</i> **Serial Shell** connections.
+#### Deleting Disk Mounts
 
-When a **Display** device is configured, remote clients can connect to VM display sessions using a SPICE client, or by installing a 3rd party remote desktop server inside your VM.
-SPICE clients are available from the [SPICE Protocol site](https://www.spice-space.org/).
+Click the the <span class="material-icons">more_vert</span> icon to the right of an existing disk to open the actions menu.
+Select [**Delete**](#deleting-disk-mounts) to delete the disk mount.
 
-If the display connection screen appears distorted, try adjusting the display device resolution.
+The **Delete Item** dialog asks for confirmation to delete the selected disk mount.
 
-Use the **State** toggle or click <i class="material-icons" aria-hidden="true" title="Stop Button">stop</i> **Stop** to follow a standard procedure to do a clean shutdown of the running VM.
-Click <i class="material-icons" aria-hidden="true" title="Power Off Button">power_settings_new</i> **Power Off** to halt and deactivate the VM, which is similar to unplugging a computer.
+{{< trueimage src="/images/SCALE/Virtualization/DeleteDiskDialog.png" alt="Delete Item Dialog" id="Delete Item Dialog" >}}
 
-{{< hint type="tip" title="OS Dependent Toggles" >}}
-If the VM does not have a guest OS installed, the VM **State** toggle and <i class="material-icons" aria-hidden="true" title="Stop Button">stop</i> **Stop** button might not function as expected.
-The **State** toggle and <i class="material-icons" aria-hidden="true" title="Stop Button">stop</i> **Stop** buttons send an ACPI power down command to the VM operating system, but since an OS is not installed, these commands time out.
-Use the **Power Off** button instead.
-{{< /hint >}}
+Click **Confirm** to activate the **Continue** button.
+Click **Continue** to start the delete operation.
 
-## Installing an OS
-After configuring the VM in TrueNAS and an OS <file>.iso,</file> file is attached, start the VM and begin installing the operating system.
+#### Managing the Root Disk Setup
 
-{{< hint type="note" title="OS Specific Settings" >}}
-Some operating systems can require specific settings to function properly in a virtual machine.
-For example, vanilla Debian can require advanced partitioning when installing the OS.
-Refer to the documentation for your chosen operating system for tips and configuration instructions.
-{{< /hint >}}
+Click **Change** to the right of the root disk to open the [**Change Root Disk Setup**](#managing-the-root-disk-setup) dialog.
 
-{{< expand "Installing Debian OS Example" "v" >}}
-Upload the Debian <file>.iso</file> to the TrueNAS system and attach it to the VM as a CD-ROM device.
-This example uses Debian 12 and basic configuration recommendations.
-Modify settings as needed to suit your use case.
+{{< trueimage src="/images/SCALE/Virtualization/IncreaseRoot.png" alt="Increase Root Disk Size Widget" id="Increase Root Disk Size Widget" >}}
 
-1. Click **Instances**, then **ADD** to use the VM wizard.
-   The table below lists the settings used in this example.
+Enter a new root disk size in GiB, such as *20*.
 
-   {{< trueimage src="/images/SCALE/Virtualization/ScaleDebianVMOsSystem.png" alt="Add Debian VM" id="Add Debian VM" >}}
+Select the **Root Disk I/O Bus**.
+Options are **NVMe**, **Virtio-BLK**, and **Virtio-SCSI**.
 
-   {{< truetable >}}
-   | Wizard Screen | Setting | Description |
-   |---------------|---------|-------------|
-   | **Operating System:** | Guest Operating System |Linux |
-   |  | Name | debianVM |
-   |  | Description | Debian VM |
-   | **CPU and Memory:** | Memory Size | 1024 MiB |
-   | **Disks:** | **Create new disk image** | Selected |
-   |  | Zvol Location | Select pool. |
-   |  | Size | 30 GiB |
-   | **Network Interface:** | Attach NIC | Select the physical interface to associate with the VM. |
-   | **Installation Media:** |  | Installation ISO is uploaded to local storage.<br>If the ISO is not uploaded, select **Upload an installer image file**.<br>Select a dataset to store the ISO, click **Choose file**, then click **Upload**. Wait for the upload to complete. |
-   | **GPU:** |  | Leave the default values. |
-   | **Confirm Options** |  | Verify the information is correct and then click **Save**. |
-   {{< /truetable >}}
+Click **Save** to apply changes.
 
-   After creating the VM, start it. Expand the VM entry and click **Start**.
+### Managing NICs
 
-2. Click **Display** to open a SPICE interface and see the Debian Graphical Installation screens.
+Use the **NIC Widget** to view the network interfaces (NICs) attached to the instance, along with their names and types.
 
-3. Press <kbd>Enter</kbd> to start the Debian Graphical Install.
+{{< trueimage src="/images/SCALE/Virtualization/NICWidget.png" alt="NIC Widget" id="NIC Widget" >}}
 
-   a. Enter your localization settings for **Language**, **Location**, and **Keymap**.
+Click**Add** to open a menu with available NIC choices.
+Select a NIC from the dropdown to attach it to the instance.
 
-   b. Debian automatically configures networking and assigns an IP address with DHCP.
-      * If the network configuration fails, click **Continue** and do not configure the network yet.
+#### Deleting NICs
 
-   c. Enter a name in **Hostname**.
+Click the the <span class="material-icons">more_vert</span> icon to the right of an existing NIC to open the actions menu.
+Select [**Delete**](#deleting-disk-mounts) to delete the NIC mount.
 
-   d. Enter a **Domain name**
+{{< trueimage src="/images/SCALE/Virtualization/DeleteNicDialog.png" alt="Delete Item Dialog" id="Delete Item Dialog" >}}
 
-   e. Enter the root password and re-enter the root password.
+Click **Confirm** to activate the **Continue** button.
+Click **Continue** to start the delete operation.
 
-   f. Enter a name in **New User**.
+### Managing Proxies
 
-   g. Select the username for your account or accept the generated name.
+Use the **Proxies** widget to view the network proxy settings configured for the instance.
+It allows you to manage these settings, including adding, editing, or removing proxies.
+Proxies are available for containers only and cannot be used with VMs.
 
-   h. Enter and re-enter the password for the user account.
+{{< trueimage src="/images/SCALE/Virtualization/ProxiesWidget.png" alt="Proxies Widget" id="Proxies Widget" >}}
 
-   j. Choose the time zone, *Eastern* in this case.
+Click **Add** to open the [**Add Proxy**](#adding-or-editing-proxies) screen to configure a new proxy for the instance.
 
-4. Detect and partition disks.
+For existing proxies, click <span class="material-icons">more_vert</span> to open the actions menu with options to [**Edit**](#adding-or-editing-proxies) or [**Delete**](#deleting-proxies) the proxy.
 
-   a. Select **Guided - use entire disk** to partition.
+#### Adding or Editing Proxies
 
-   b. Select the available disk.
+Use the **Add Proxy** or **Edit Proxy** screen to configure or modify a proxy setting attached to an instance.
 
-   c. Select **All files in one partition (recommended for new users)**.
+{{< trueimage src="/images/SCALE/Virtualization/AddProxyScreen.png" alt="Add Proxy Screen" id="Add Proxy Screen" >}}
 
-   d. Select **Finish partitioning and write changes to disk**.
+Select a **Host Protocol** to set the connection protocol for the TrueNAS host.
+Options are **TCP** or **UDP**.
 
-   e. Select **Yes** to **Write the changes to disks?**.
+Enter a port number in **Host Port** to map to the instance port on the container, for example *3600*.
 
-5. Install the base system
+Select an **Instance Protocol** to set the connection protocol for the container.
+Options are **TCP** or **UDP**.
 
-   a. Select **No** to the question **Scan extra installation media**.
+Enter a port number for the container in **Instance Port**, for example *80*.
 
-   b. Select **Yes** when asked **Continue without a network mirror**.
+Click **Save** to apply changes.
 
-6. Install software packages
+#### Deleting Proxies
 
-   a. Select **No** when asked **Participate in the package usage survey**.
+For existing proxies, click <span class="material-icons">more_vert</span> to open the actions menu.
+Select **Delete** to remove the proxy configuration.
 
-   b. Select **Standard** system utilities.
+{{< trueimage src="/images/SCALE/Virtualization/DeleteProxyDialog.png" alt="Delete Item Dialog" id="Delete Item Dialog" >}}
 
-   c. Click **Continue** when the installation finishes.
+Click **Confirm** to activate the **Continue** button.
+Click **Continue** to start the delete operation.
 
-   After the Debian installation finishes, close the display window.
+## Accessing Instances
 
-7. Remove the device or edit the device order.
-   In the expanded section for the VM, click **Power Off** to stop the new VM.
+After selecting the instance row in the table to populate the **Details for *Instance*** widgets, locate the **Tools** widget.
+You can open a shell, console, or VNC session directly from this widget.
 
-   a. Click **Devices**.
+{{< trueimage src="/images/SCALE/Virtualization/ToolsWidget.png" alt="Tools Widget - VM" id="Tools Widget" >}}
 
-   b. Remove the CD-ROM device containing the install media or edit the device order to boot from the Disk device.
+Click **Shell** <span class="iconify" data-icon="mdi:console-line"></span> to open an **Instance Shell** session for command-line interaction with the instance.
+  
+For VMs, click **Serial Console** <span class="iconify" data-icon="mdi:console"></span> to open an **Instance Console** session to access the system console for the instance.
 
-      * To remove the CD-ROM from the devices, click the <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp; and select **Delete**.
-      Click **Delete Device**.
-
-      * To edit the device boot order, click the <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp; and select **Edit**.
-      Change the CD-ROM **Device Order** to a value greater than that of the existing Disk device, such as *1005*.
-      Click **Save**.
-
-8. Return to the **Virtual Machines** screen and expand the new VM again.
-
-9. Click **Start**, then click **Display**.
-{{< /expand >}}
-{{< expand "What if the grub file does not run after starting the VM?" "v" >}}
-The grub file does not run when you start the VM, enter the following after each start.
-At the shell prompt:
-1. Enter `FS0:` and press <kbd>Enter</kbd>.
-2. Enter `cd EFI` and press <kbd>Enter</kbd>.
-3. Enter `cd Debian` and press <kbd>Enter</kbd>.
-4. Enter `grubx64.efi` and press <kbd>Enter</kbd>.
-
-{{< hint type=important >}}
-To ensure it starts automatically, create the <file>startup.nsh</file> file at the root directory on the VM. To create the file:
-
-1. Go to the **Shell**.
-
-2. At the shell prompt enter `edit startup.nsh`.
-
-3. In the editor enter:
-
-   a. Enter `FS0:` and press <kbd>Enter</kbd>.
-
-   b. Enter `cd EFI` and press <kbd>Enter</kbd>.
-
-   c. Enter `cd Debian` and press <kbd>Enter</kbd>.
-
-   d. Enter `grubx64.efi` and press <kbd>Enter</kbd>.
-
-   Use the <kbd>Control+s</kbd> keys (Command+s for Mac OS) then press <kbd>Enter</kbd>.
-
-   Use the <kbd>Control+q</kbd> keys to quit.
-
-4. Close the display window
-
-5. To test if it boots up on startup:
-
-   a. Power off the VM.
-
-   b. Click **Start**.
-
-   c. Click **Display**.
-
-   d. Log into your Debian VM.
-{{< /hint >}}
-{{< /expand >}}
-
-## Configuring Virtual Machine Network Access
-Configure VM network settings during or after installation of the guest OS.
-To communicate with a VM from other parts of your local network, use the IP address configured or assigned by DHCP within the VM.
-
-To confirm network connectivity, send a ping to and from the VM and other nodes on your local network.
-
-{{< expand "Debian OS Example" "v" >}}
-Open a terminal in the Debian VM.
-
-Enter `ip addr` and record the address.
-
-Enter `ping` followed by the known IP or hostname of another client on the network, that is not your TrueNAS host.
-Confirm the ping is successful.
-To confirm internet access, you can also ping a known web server, such as `ping google.com`.
-
-Log in to another client on the network and ping the IP address of your new VM.
-Confirm the ping is successful.
-{{< /expand >}}
-
-### Accessing TrueNAS Storage From a VM
-By default, VMs are unable to communicate directly with the host NAS.
-If you want to access your TrueNAS directories from a VM, to connect to a TrueNAS data share, for example, you have multiple options.
-
-If your system has more than one physical interface, you can assign your VMs to a NIC other than the primary one your TrueNAS server uses. This method makes communication more flexible but does not offer the potential speed of a bridge.
-
-To create a bridge interface for the VM to use if you have only one physical interface, stop all existing apps, VMs, and services using the current interface, edit the interface and VMs, create the bridge, and add the bridge to the VM device.
-See [Accessing NAS from VM]({{< relref "ContainerNASBridge.md" >}}) for more information.
+For VMs, click **VNC** to open a VNC connection using your preferred client.
+It uses a VNC URL scheme (for example, `vnc://hostname.domain.com:5930`) to launch the session directly in the application.
+If your environment does not support VNC URLs, you can manually connect using a VNC client by entering the host name or IP address followed by the port number without `vnc://` (for example, `hostname.domain.com:5930` or `IP:5930`).

@@ -2281,4 +2281,14 @@ CreateDockerRegistry
 CreateDockerRegistryOther
 AppCatalogs
 truenasrseriesstencilpack
+truenasfullstencilpackaef
+InstanceImageFilenames
+InstancesCreateVolume
+InstanceImportZvol
+ix-virt
+MapUserGroupIDs
+Virtio-BLK
+Virtio-SCSI
+AddDiskScreenVM
+InstanceNameRequirements
 truenasfullstencilpack
