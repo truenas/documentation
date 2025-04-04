@@ -40,7 +40,7 @@ TrueNAS includes features and functions to help with completing the configuratio
 
 ### Preparing for a Clean Install
 
-For a list of TrueNAS Enterprise (HA) preparation information, see [Preparing for TrueNAS UI Configuration (Enterprise)]({{< relref "InstallPrepEnterprise.md" >}}).
+For a list of TrueNAS Enterprise (HA) preparation information, see [Preparing for TrueNAS UI Configuration (Enterprise)]({{< ref "InstallPrepEnterprise" >}}).
 
 Have this information handy to complete this procedure:
 
@@ -257,8 +257,8 @@ The controller 1 and 2 (or a and b) serial numbers display on the **Support** wi
 Create or import a storage pool from a backup. You must have at least one storage pool on controller 1.
 After saving the storage pool, controller 2 automatically restarts. Wait until it comes back online before syncing controller 1 with controller 2.
 
-For more information on how to create a new pool [click here]({{< relref "CreatePoolWizard.md" >}}).
-For more information on how to import a pool [click here]({{< relref "ImportPoolSCALE.md" >}}).
+For more information on how to create a new pool [click here]({{< ref "CreatePoolWizard" >}}).
+For more information on how to import a pool [click here]({{< ref "ImportPoolSCALE" >}}).
 
 ### Syncing Controller 1 and 2
 

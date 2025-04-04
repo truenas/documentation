@@ -20,7 +20,7 @@ The OS does not require a special on-disk format and there is no attempt to conn
 
 After reviewing our reliability data, no significant benefit was found to using multipathing within the FNC line of products.
 Wide porting performs equally well and, in some specific cases, even better.
-If higher availability is needed, a dual controller system like the [M-Series]({{< relref "/hardware/MSeries/_index.md" >}}) should be used.
+If higher availability is needed, a dual controller system like the [M-Series]({{< ref "/hardware/MSeries" >}}) should be used.
 
 There are several reasons to discontinue the use of multipathing on the FNC line:
 

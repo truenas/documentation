@@ -13,7 +13,7 @@ keywords:
 {{< include file="/static/includes/apps/AppsIntro.md" >}}
 
 This article covers how to discover, install, and manage applications.
-For details on setting up the TrueNAS Apps service, configuring global settings, and other general information, see [TrueNAS Apps]({{< relref "/TruenasApps/_index.md" >}}) and individual app tutorials.
+For details on setting up the TrueNAS Apps service, configuring global settings, and other general information, see [TrueNAS Apps]({{< ref "/TruenasApps" >}}) and individual app tutorials.
 
 {{< include file="/static/includes/ProposeArticleChange.md" >}}
 
@@ -73,8 +73,8 @@ The **ix-apps** dataset is the base-level storage volume for app data.
 Additionally, configuration options for individual apps include one or more of the following storage types: ixVolume datasets, host path datasets, SMB share volumes, and Tmpfs.
 
 If an application requires specific host path datasets, create the datasets before installing the application.
-For example, the [Nextcloud]({{< relref "/truenasapps/stableapps/nextcloud.md" >}}) app requires three datasets: **html** for app data, **data** for user data, and **postgres_data** for the database data storage volume.
-[Create these datasets]({{< relref "DatasetsSCALE.md" >}}) before installing the app.
+For example, the [Nextcloud]({{< ref "/truenasapps/stableapps/nextcloud" >}}) app requires three datasets: **html** for app data, **data** for user data, and **postgres_data** for the database data storage volume.
+[Create these datasets]({{< ref "DatasetsSCALE" >}}) before installing the app.
 See individual app information screens and app tutorials for more information.
 
 {{< include file="/static/includes/apps/AppsDatasets.md" >}}
@@ -119,13 +119,13 @@ Click **Start** to restart the application.
 The screen defaults to selecting the first app row listed on the **Applications** table and showing the application widgets that first app.
 To modify installed application settings, click on the app row in the **Applications** table, then click **Edit** on the **Application Info** widget.
 
-Refer to individual tutorials in the [Stable]({{< relref "/content/TruenasApps/StableApps/_index.md" >}}), [Community]({{< relref "/content/TruenasApps/CommunityApps/_index.md" >}}), or [Enterprise]({{< relref "/content/TruenasApps/EnterpriseApps/_index.md" >}}) sections of the Documentation Hub for more details on configuring application settings.
+Refer to individual tutorials in the [Stable]({{< ref "/TruenasApps/StableApps" >}}), [Community]({{< ref "/TruenasApps/CommunityApps" >}}), or [Enterprise]({{< ref "/TruenasApps/EnterpriseApps" >}}) sections of the Documentation Hub for more details on configuring application settings.
 
 #### GPU Passthrough
 
 Users with compatible hardware can pass through a GPU device to an application for use in hardware acceleration.
 
-GPU devices can be available for the host operating system (OS) and applications or can be [isolated for use in a Virtual Machine (VM)]({{< relref "managegpuscale.md" >}}).
+GPU devices can be available for the host operating system (OS) and applications or can be [isolated for use in a Virtual Machine (VM)]({{< ref "managegpuscale" >}}).
 A single GPU cannot be shared between the OS/applications and a VM.
 
 The GPU passthrough option shows in the **Resources Configuration** section of the application installation wizard screen or the **Edit** screen for a deployed application.
@@ -148,7 +148,7 @@ To check the logs for information on deployment issues encountered, click <span 
 
 {{< include file="/static/includes/apps/AppsCustomApp.md" >}}
 
-See [Installing Custom Applications]({{< relref "UsingCustomApp.md" >}}) for a detailed tutorial with deployment examples.
+See [Installing Custom Applications]({{< ref "UsingCustomApp" >}}) for a detailed tutorial with deployment examples.
 
 ## Managing Installed Apps
 

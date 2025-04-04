@@ -23,7 +23,7 @@ Consider assigning a static IP address for increased network stability and commu
 
 {{< include file="/static/includes/AliasOrStaticIP.md" >}}
 
-See [Setting Up Static IPs]({{< relref "/SCALE/SCALETutorials/Network/Interfaces/_index.md" >}}) for more information.
+See [Setting Up Static IPs]({{< ref "/SCALE/SCALETutorials/Network/Interfaces" >}}) for more information.
 
 ## Interfaces
 
@@ -32,7 +32,7 @@ Configure link aggregation (LAGG) to combine multiple physical interfaces into a
 
 {{< include file="/static/includes/MultipleInterfacesOnNetwork.md" >}}
 
-See also [Setting Up a Link Aggregation]({{< relref "settinguplagg.md" >}}).
+See also [Setting Up a Link Aggregation]({{< ref "settinguplagg" >}}).
 
 ### LACP
 
@@ -71,7 +71,7 @@ LACP, being a lower-layer protocol, is less aware of the applications running ov
 
 These advantages can be more pronounced at higher network speeds, such as in 100G environments ([see below](#link-aggregation)).
 
-See [Setting Up SMB Multichannel]({{< relref "smbmultichannel.md" >}}) for more information.
+See [Setting Up SMB Multichannel]({{< ref "smbmultichannel" >}}) for more information.
 
 ## Network Traffic Segmentation
 
@@ -88,7 +88,7 @@ Devices in one VLAN do not see the broadcast traffic of devices in other VLANs, 
 VLANs provide flexibility in network design, providing enhanced isolation, access control, and scalability.
 They are often used to group devices based on functional roles or departments and optimize performance by prioritizing discrete traffic types on each VLAN.
 
-See also [Setting Up a Network VLAN]({{< relref "settingupvlan.md" >}}).
+See also [Setting Up a Network VLAN]({{< ref "settingupvlan" >}}).
 
 ### Layer 3 Isolation
 
@@ -115,7 +115,7 @@ Implement Quality of Service policies to prioritize storage traffic over other n
 As your network grows, isolating the NAS onto its own subnet provides a scalable solution.
 It allows you to maintain control and security even as you add more devices and services to the network.
 
-See [Managing Interfaces]({{< relref "/SCALE/SCALETutorials/Network/Interfaces/_index.md" >}}).
+See [Managing Interfaces]({{< ref "/SCALE/SCALETutorials/Network/Interfaces" >}}).
 
 ## iSCSI
 
@@ -129,7 +129,7 @@ This ensures that storage-related activities receive the necessary network resou
 Ensure consistent network configurations across all components involved in the iSCSI setup.
 Consistency helps in maintaining predictability and stability in the network environment.
 
-For more information, see [Block Shares (iSCSI)]({{< relref "scale/scaletutorials/shares/iscsi/_index.md" >}}).
+For more information, see [Block Shares (iSCSI)]({{< ref "scale/scaletutorials/shares/iscsi" >}}).
 See also [Best Practices for Configuring Networking with Software iSCSI](https://docs.vmware.com/en/VMware-vSphere/7.0/com.vmware.vsphere.storage.doc/GUID-4C19E34E-764C-4069-9D9F-D0F779F2A96C.html) from VMware.
 
 #### MPIO for iSCSI

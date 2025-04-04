@@ -11,7 +11,7 @@ tags:
 ---
 
 Use the **VMware Snapshot Integration** option on the **Data Protection > Periodic Snapshot Tasks** widget to create snapshots when you are using TrueNAS as a VMWare datastore.
-See [Creating VMWare Snapshots]({{< relref "creatingvmwaresnapshots.md" >}}) for a detailed tutorial.
+See [Creating VMWare Snapshots]({{< ref "creatingvmwaresnapshots" >}}) for a detailed tutorial.
 
 **VMware Snapshot Integration**  opens the **VMWare Snapshots** screen.  
 

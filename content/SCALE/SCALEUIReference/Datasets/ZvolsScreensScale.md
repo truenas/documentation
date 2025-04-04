@@ -57,7 +57,7 @@ It provides access to quota configuration options for the parent dataset and the
 
 {{< trueimage src="/images/SCALE/Datasets/ZvolSpaceManagementWidget.png" alt="Zvol Space Management Widget" id="Zvol Space Management Widget" >}}
 
-**Edit** opens the **[Capacity Settings]({{< relref "CapacitySettingsSCALE.md" >}})** screen where you can set quotas for the zvol.
+**Edit** opens the **[Capacity Settings]({{< ref "CapacitySettingsSCALE" >}})** screen where you can set quotas for the zvol.
 
 The widget displays quotas set for users or groups.
 
@@ -69,9 +69,9 @@ The **Export Key** option displays if the zvol uses key encryption.
 
 {{< trueimage src="/images/SCALE/Datasets/ZFSEncryptionWidgetChildDatasetUnlocked.png" alt="ZFS Encryption Widget Zvol" id="ZFS Encryption Widget Zvol" >}}
 
-**Edit** opens the **[Edit Encryption Options]({{< relref "EncryptionUISCALE.md" >}}) for *dataset*** window for the selected zvol.
+**Edit** opens the **[Edit Encryption Options]({{< ref "EncryptionUISCALE" >}}) for *dataset*** window for the selected zvol.
 
-For more details on encryption windows and functions see [Encryption Settings]({{< relref "EncryptionUISCALE.md" >}}).
+For more details on encryption windows and functions see [Encryption Settings]({{< ref "EncryptionUISCALE" >}}).
 
 ### Data Protection Widget
 The **Data Protection** widget displays for all datasets or zvols.
@@ -80,17 +80,17 @@ It provides access to the tasks found on the **Data Protection** screen through 
 
 {{< trueimage src="/images/SCALE/Datasets/DataProtectionWidget.png" alt="Data Protection Widget" id="Data Protection Widget" >}}
 
-**Create Snapshot** opens the **[Add Snapshot]({{< relref "SnapshotsScreens.md" >}})** screen.
+**Create Snapshot** opens the **[Add Snapshot]({{< ref "SnapshotsScreens" >}})** screen.
 
-**Manage Snapshots** opens the **[Snapshots]({{< relref "SnapshotsScreens.md" >}})** screen list view where you can manage snapshots.
+**Manage Snapshots** opens the **[Snapshots]({{< ref "SnapshotsScreens" >}})** screen list view where you can manage snapshots.
 
-**Manage Snapshot Tasks** opens the **Data Protection > [Periodic Snapshot Tasks]({{< relref "PeriodicSnapshotTasksScreensSCALE.md" >}})** screen list view where you can manage scheduled periodic snapshot tasks.
+**Manage Snapshot Tasks** opens the **Data Protection > [Periodic Snapshot Tasks]({{< ref "PeriodicSnapshotTasksScreensSCALE" >}})** screen list view where you can manage scheduled periodic snapshot tasks.
 
-**Manage Replication Tasks** opens the **Data Protection > [Replications Tasks]({{< relref "ReplicationScreensSCALE.md" >}})** screen list view where you can manage scheduled replication tasks.
+**Manage Replication Tasks** opens the **Data Protection > [Replications Tasks]({{< ref "ReplicationScreensSCALE" >}})** screen list view where you can manage scheduled replication tasks.
 
-**Manage Cloud Sync Tasks** opens the **Data Protection > [Cloud Sync Tasks]({{< relref "CloudSyncTasksScreensSCALE.md" >}})** screen list view where you can manage scheduled cloud sync tasks.
+**Manage Cloud Sync Tasks** opens the **Data Protection > [Cloud Sync Tasks]({{< ref "CloudSyncTasksScreensSCALE" >}})** screen list view where you can manage scheduled cloud sync tasks.
 
-**Manage Rsync Tasks** opens the **Data Protection > [Rsync Tasks]({{< relref "RsyncTasksScreensSCALE.md" >}})** screen list view where you can manage scheduled rsync tasks.
+**Manage Rsync Tasks** opens the **Data Protection > [Rsync Tasks]({{< ref "RsyncTasksScreensSCALE" >}})** screen list view where you can manage scheduled rsync tasks.
 
 ## Add and Edit Zvol Screens
 The **Add Zvol** and **Edit Zvol** screens allow admin users with the right permission level to create and modify zvols.
@@ -112,14 +112,14 @@ To edit encryption options, click **Edit** on the **ZFS Encryption** widget.
 | **Sync** | Select the data write synchronization option from the dropdown list. **Inherit** gets the sync settings from the parent dataset. **Standard** uses the sync settings requested by the client software. **Always** waits for data writes to complete. **Disabled** never waits for writes to complete. |
 | **Compression level** | Select the option from the dropdown list for the type of data compression to use for encoding information in less space than the original data occupies. Select the algorithm that balances disk performance with the amount of space saved. See [below](#data-compression-algorithms) for the options. |
 | **ZFS Deduplication** | Do not change this setting unless instructed to do so by your iXsystems support engineer. Select to transparently reuse a single copy of duplicated data to save space. Deduplication can improve storage capacity, but it is RAM intensive. Compressing data is recommended before using deduplication. Deduplicating data is a one-way process. You cannot un-deduplicate deduplicated data! |
-| **Sparse** | Used to provide [thin provisioning]({{< relref "thinprovisioning.md" >}}). Use with caution as writes fail when space is low on a pool. |
+| **Sparse** | Used to provide [thin provisioning]({{< ref "thinprovisioning" >}}). Use with caution as writes fail when space is low on a pool. |
 | **Block size** | Select the size option from the dropdown list. The default is **16KiBt**, other options are **4KiB**, **8KiB**, **16KiB**, **32KiB**, **64KiB**, **128KiB**. The zvol default block size is automatically chosen based on the number of disks in the pool for a general use case. |
 | **Read-only** | Select the option to use to prevent modifying the zvol. Options are **Inherit (off)**, **On** or **Off**. |
 | **Snapdev** | Select the option that controls whether the volume snapshot devices under /dev/zvol/*poolname* are hidden or visible from the dropdown list. Options are **Inherit (hidden)**, **Visible** and **Hidden** (default value). |
 {{< /truetable >}}
 {{< /expand >}}
 
-Encryption options do not display unless you create the zvol and [encrypted dataset]({{< relref "EncryptionScale.md" >}}).
+Encryption options do not display unless you create the zvol and [encrypted dataset]({{< ref "EncryptionScale" >}}).
 
 {{< expand "Block Size Table" "v" >}}
 TrueNAS recommends a space-efficient block size for new zvols.

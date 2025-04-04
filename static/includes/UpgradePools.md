@@ -4,7 +4,7 @@ Storage pool upgrades are typically not required unless the new OpenZFS feature 
 Consider these factors before upgrading a storage pool to the latest OpenZFS feature flags.
 
 * Upgrading can affect data.
-  Before performing any operation that affects data on a storage disk, always [back up]({{< relref "/SCALE/SCALETutorials/DataProtection/_index.md" >}}) data first and verify the backup integrity.
+  Before performing any operation that affects data on a storage disk, always [back up]({{< ref "/SCALE/SCALETutorials/DataProtection" >}}) data first and verify the backup integrity.
 
 * New OpenZFS feature flags are permanently applied to the upgraded pool.
   An upgraded pool cannot be reverted or downgraded to an earlier OpenZFS version.

@@ -57,10 +57,10 @@
     },
     {
       "pattern": "^\/",
-      "replacement": "{{BASEURL}}/content/"
+      "replacement": "{{BASEURL}}/"
     },
     {
-      "pattern": "\/content/images/",
+      "pattern": "\/images/",
       "replacement": "/images/"
     }
   ]

@@ -28,7 +28,7 @@ See the stable [24.10 (Electric Eel)](https://www.truenas.com/docs/scale/24.10/g
 
 For adventurous users that want to experiment with the latest feature development, 25.10 (Goldeye) nightly images are available from the [the TrueNAS downloads server](https://download.truenas.com/truenas-scale-goldeye-nightly/).
 
-More details are available from [Software Releases]({{< relref "/TrueNASUpgrades/_index.md" >}}).
+More details are available from [Software Releases]({{< ref "/TrueNASUpgrades" >}}).
 
 ## Release Schedule
 
@@ -74,7 +74,7 @@ When attempting to migrate from a FreeBSD-based TrueNAS version, the general rec
 After install, restore the system configuration and import the pools.
 
 Depending on the specific system configuration, this can be a straightforward or complicated process.
-See the [Migration articles]({{< relref "/SCALE/GettingStarted/Migrate/_index.md" >}}) for cautions and notes about differences between each software and the migration process.
+See the [Migration articles]({{< ref "/SCALE/GettingStarted/Migrate" >}}) for cautions and notes about differences between each software and the migration process.
 
 You must either clean install using an <file>iso</file> or use an upgrade file to migrate a FreeBSD-based TrueNAS system to TrueNAS 25.10 (Goldeye).
 Enterprise customers should [contact Support](https://www.truenas.com/docs/scale/gettingstarted/migrate/migratecorehatoscaleha/#expand-1-Enterprise%20HA%20Migrations) for assistance with migration.

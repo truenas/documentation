@@ -22,7 +22,7 @@ keywords:
 Read this article before you attempt to migrate your FreeBSD-based system to a Linux-based TrueNAS version.
 {{< hint type="warning" title="Using USB Devices for Backups" >}}
 We strongly recommend not using USB flash drives or USB-attached drives for backups as these can have issues, including with recovering backed-up files.
-For more information on using USB drives and devices in general, read the [Hardware Guide]({{< relref "scalehardwareguide.md" >}}).
+For more information on using USB drives and devices in general, read the [Hardware Guide]({{< ref "scalehardwareguide" >}}).
 If you must use a USB-type device, verify you can access files on the device before you migrate.
 {{< /hint >}}
 {{< enterprise >}}
@@ -86,7 +86,7 @@ Please contact Support for assistance!
 
    FreeBSD and Linux use different nomenclature for network interfaces, bridges, LAGGs, and VLANs.
    Because of the difference, network settings can either get lost or not transfer which means you have no network connectivity.
-   See [Component Naming]({{< relref "ComponentNaming.md" >}}) for more information.
+   See [Component Naming]({{< ref "ComponentNaming" >}}) for more information.
 
    When using a TrueNAS Enterprise system from iXsystems, refer to the network port ID manuals of your [TrueNAS Systems](https://www.truenas.com/docs/hardware/) to find the network port assignments in TrueNAS.
    When using custom hardware for TrueNAS, refer to the manual or documentation provided with your system or locate this information on your server hardware and take note of it.
@@ -109,8 +109,8 @@ These features require careful configuration to avoid data corruption or loss of
 {{< /enterprise>}}
 
 After completing the steps listed above that apply to your existing system, download the latest [TrueNAS ISO file](https://www.truenas.com/download-tn-scale/) and save it to your computer.
-See [Software Releases]({{< relref "TrueNASUpgrades/_index.md #upgrade-paths" >}}) for currently recommended update paths to make sure you download and migrate to and from the correct TrueNAS versions.
-Burn the iso to a USB drive (see [**Installing on Physical Hardware**]({{< relref "InstallingSCALE.md#installing-on-physical-hardware" >}})) when upgrading a physical system.
+See [Software Releases]({{< ref "TrueNASUpgrades/#upgrade-paths" >}}) for currently recommended update paths to make sure you download and migrate to and from the correct TrueNAS versions.
+Burn the iso to a USB drive (see [**Installing on Physical Hardware**]({{< ref "InstallingSCALE.md#installing-on-physical-hardware" >}})) when upgrading a physical system.
 
 ## Deprecated Services
 The built-in services listed in this section are available in 13.0 but deprecated in 22.12.3 (Bluefin) and removed in later TrueNAS releases.
@@ -119,7 +119,7 @@ They require attention before attempting to migrate to 24.04.
 Each of the sections has information that can help you determine the best steps forward to secure any critical data before attempting to migrate from 13.0 to 24.04.
 They provide details on transitioning from that service to an application with the functionality of the deprecated service.
 
-TrueNAS has [apps]({{< relref "/content/TruenasApps/_index.md" >}}) you can deploy as replacements for these services.
+TrueNAS has [apps]({{< ref "/TruenasApps" >}}) you can deploy as replacements for these services.
 24.04 provides the option to force an upgrade without converting deprecated services to apps.
 The force option is not recommended for the S3 service as forcing the upgrade results in losing access to and the ability to recover the MinIO S3 data.
 

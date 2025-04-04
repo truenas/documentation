@@ -68,7 +68,7 @@ Start any sharing services after MinIO completes the installation and starts.</d
 ## Installing MinIO (S3) App
 This procedure covers the basic requirements and installation and configuration instructions for the **stable** train version of the MinIO application.
 For instructions on installing the Enterprise version of the MinIO application see [Configuring
-Enterprise MinIO]({{< relref "/content/TruenasApps/EnterpriseApps/_index.md" >}}).
+Enterprise MinIO]({{< ref "/TruenasApps/EnterpriseApps" >}}).
 {{< hint info >}}
 This basic procedure covers the required MinIO app settings.
 For optional settings, see [Understanding App Installation Wizard Settings](#understanding-app-installation-wizard-settings).

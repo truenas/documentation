@@ -9,10 +9,10 @@ tags:
 This template provides general information on constructing and writing TrueNAS tutorial articles.
 It contains a template example article with front matter, styling, and syntax examples.
 
-Refer to the [Style Guide]({{< relref "Style.md" >}}) for specific text syntax and formatting examples, Markdown and Hugo website enhancements, and content guidelines to follow.
+Refer to the [Style Guide]({{< ref "Style" >}}) for specific text syntax and formatting examples, Markdown and Hugo website enhancements, and content guidelines to follow.
 
 Application tutorials follow a specific format that covers the installation screens and deployment process.
-If submitting a tutorial for a community-maintained application article, please use the [application tutorial template]({{< relref "/Contributing/Applications/AppArticleTemplate.md" >}})
+If submitting a tutorial for a community-maintained application article, please use the [application tutorial template]({{< ref "/Contributing/Applications/AppArticleTemplate" >}})
 
 ## Front Matter
 Every article needs a front-matter section that contains these parameters:
