@@ -91,7 +91,7 @@ The process of setting up data migration from an external NAS to TrueNAS consist
 
     c. Accept the defaults in **Version**, **Syncthing Configuration**, and **User and Group Configuration**.
 
-    d. Deselect **Host Network** under **Network Configuration**. Default ports can be used for this Syncthing instance.
+    d. Disable **Host Network** under **Network Configuration**. Default ports can be used for this Syncthing instance.
 
     e. Select **ixVolume (Dataset created automatically by the system)** or configure an existing host path for **Syncthing Home Storage** under **Storage Configuration**.
 
@@ -153,7 +153,7 @@ The process of setting up data migration from an external NAS to TrueNAS consist
 
     c. Accept the defaults in **Version**, **Syncthing Configuration**, and **User and Group Configuration**.
 
-    d. Deselect **Host Network** under **Network Configuration**.
+    d. Disable **Host Network** under **Network Configuration**.
     Use non-default ports for this Syncthing instance that differ from the configured ports on the first instance.
 
     e. Select **ixVolume (Dataset created automatically by the system)** or configure an existing host path for **Syncthing Home Storage** under **Storage Configuration**.

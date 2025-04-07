@@ -16,7 +16,7 @@ Enter and confirm the admin user password.
 {{< trueimage src="/images/SCALE/Credentials/AddUser-UserIDAndGroupSettings.png" alt="Add User Group Settings" id="Add User Group Settings" >}}
 
 Select **Create New Primary Group** to create a group with the same name as the admin user.
-To assign the new admin to an existing group with appropriate administrative privileges, either assign the group as an auxiliary group or deselect **Create New Primary Group** and select the group as the primary group.
+To assign the new admin to an existing group with appropriate administrative privileges, either assign the group as an auxiliary group or disable **Create New Primary Group** and select the group as the primary group.
 
 {{< trueimage src="/images/SCALE/Credentials/AddUserDirPermsAuthSettings.png" alt="Add User Directory and Authentication Settings" id="Add User Directory and Authentication Settings" >}}
 
