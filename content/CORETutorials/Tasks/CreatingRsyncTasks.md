@@ -10,42 +10,72 @@ tags:
 {{< toc >}}
 
 Rsync is a fast and secure way to copy data to another system, either for backup or data migration purposes.
-An [rsync](https://rsync.samba.org/) task requires the configuration of both a **Host** and **Remote** system. These instructions assume a TrueNAS system for both the **Host** and **Remote** configurations.
+An [rsync](https://rsync.samba.org/) task requires configuring the local and remote host systems.
+These instructions assume the task uses TrueNAS systems for the local host and remote host configurations.
 
 ## Basic Requirements
 
-Rysnc requires a [dataset]({{< relref "/CORETutorials/Storage/Pools/Datasets.md" >}}) with the needed data on the **Host** or **Remote** system.
+Rysnc requires a [dataset]({{< relref "/CORETutorials/Storage/Pools/Datasets.md" >}}) on the local host and remote host systems.
 Rsync provides the ability to either push or pull data.
-When using rsync to push, data copies from alocal host system to a remote system.
-When using rsync to pull, data comes from a remote system. It is then put on the local host system.
+When configuring a push rsync, data is copied from a local host system to a remote system.
+When configuring a pull rsync, data comes from a remote system. It is then put on the local host system.
 
 TrueNAS has extra requirements depending on if you choose the **Module** or **SSH** rsync mode.
 
 ### Rsync Services Requirements
 
-Before you create an rsync task on the **Host** system, you must create a module on the **Remote** system. The **Remote** system must have rsync service activated. 
-When TrueNAS is the **Remote** system, create a module by going to **Services** and clicking <i class="material-icons" aria-hidden="true" title="edit">edit</i> for the rsync service. Click the **Rsync Module** tab, then click **ADD**. See [ConfiguringRsync]({{< relref "ConfiguringRsync.md" >}}) for more information.
+Before creating an rsync task on the local host system, configure a module on the remote host system. The remote host system must have the rsync service activated. 
+When TrueNAS is the remote host system, create a module by going to **Services** and clicking <i class="material-icons" aria-hidden="true" title="edit">edit</i> for the rsync service. Click the **Rsync Module** tab, then click **ADD**. See [ConfiguringRsync]({{< relref "ConfiguringRsync.md" >}}) for more information.
 
 ## Creating a Module Mode Rsync Task
 
-Log in to the **Host** system interface, go to **Tasks > Rsync Tasks**, and click **ADD**.
+Configure the local and remote TrueNAS systems for an rsync task using module mode.
 
-![TasksRsyncTasksAddModeModule](/images/CORE/12.0/TasksRsyncTasksAddModeModule.png "Rsync Task: Module Mode")
+1. Log into the local host system UI, go to **Tasks > Rsync Tasks**, and click **ADD**.
+   Select **Module** in the **Rsync Mode** dropdown list.
 
-Select the **Source** dataset and use it in the rsync task and a **User** account to run the rsync task.
-Select a **Direction** for the rsync task.
+   ![TasksRsyncTasksAddModeModule](/images/CORE/12.0/TasksRsyncTasksAddModeModule.png "Rsync Task: Module Mode")
 
-Select a **Schedule** for the rsync task.
+   a. Select the **Source** dataset and use it in the rsync task and a **User** account to run the rsync task.
+<p style="margin-left: 33px">Select a **Direction** for the rsync task.</p>
 
-Enter the **Remote Host** IP address or host name.
-Use the format `username@remote_host` when the user name differs on the **Remote** host.
-Select **Module** in the **Rsync Mode** dropdown list. 
-Enter the **Remote Module Name** as it appears on the **Remote** system.
+   b. Select a **Schedule** for the rsync task.
 
-Configure the remaining options according to your specific needs.
+   c. Enter the **Remote Host** IP address or host name.
+<div style="margin-left: 33px">Do not add http or https to the host IP address, and do not append a port number to the IP address.
+Use the format `username@remote_host` when the user name differs on the **Remote** host.</div>
 
-Clearing **Enabled** disables the task schedule.
-You can still save the rsync task and run it as a manual task.
+   d. Enter the **Remote Module Name** as it appears on the **Remote** system.
+
+   e. Configure the remaining options according to your specific needs.
+
+<p style="margin-left: 33px">Clearing **Enabled** disables the task schedule. </p>
+
+   f. Enable **Recursive**, and leave the default values for all other settings. Do not enable **Preserve Permissions**.</div>
+
+   g. Click **Save**.
+
+2. Enable the rsysnc service. Go to **System > Services** and toggle the service on.
+
+3. Log into the remote host system and configure the rsync task.
+
+   You do not need to add a value in **Hosts Allow**, but if adding an IP address of the local host (source) system, do not include http or https.
+
+   a. Enter the name given to the local host task.
+
+   b. Enter or browse to populate the path to the dataset/directory receiving the synced data from the local system.
+
+   c. Leave **Enable** selected.
+
+   d. Set **Access Mode** to read and write.
+
+   e. Leave **Max Connections** set to **0**.
+
+   f. Add **wheel** to **Group**.
+
+   g. Click **Save**.
+
+4. Run the local host system task based on the schedule or run it manually.
 
 ## Creating an SSH Mode Rsync Task
 
@@ -53,7 +83,7 @@ Before creating an rsync task on the host system, you need the following on the 
 
 * A unique administration user with identical configurations.su
 
-* An SSH connection keypair is manually added in an **Shell** or an SSH session.
+* An SSH connection keypair is manually added in **Shell** or an SSH session.
 
 * The public key is copied into the **SSH Public Key** field for the unique administration user.
 
@@ -276,17 +306,17 @@ $
    - Remote Path = paste or manually enter the path to the receiving dataset on the remote host system <file>/mnt/<i>poolname</>/<i>rsync-rec</i>/sshreceive/<file>
      Where *poolname* is the name of the pool on the remote host system with the receiving dataset, and *rsync-rec* is the dataset created to receive the rsync file (copy) transfer.
 
-   Configure the SSH settings by selecting **SSH** on the **Rsync Mode** dropdown list. Enter the **Port** number and **Remote Path**.
+   a. Configure the SSH settings by selecting **SSH** on the **Rsync Mode** dropdown list. Enter the **Port** number and **Remote Path**.
 
-   Populate any other settings for your use case. Define the **Source** dataset for the rsync task and select an account in **User**.
+   b. Populate any other settings for your use case. Define the **Source** dataset for the rsync task and select an account in **User**.
    
-   Select a direction for the rsync task, either **Push** or **Pull**, and define the task **Schedule**.
+   c. Select a direction for the rsync task, either **Push** or **Pull**, and define the task **Schedule**.
    
-   Enter the **Remote** host IP address or host name. Use the format `username@remote_host` if the user name differs on the **Remote** host.
+   d. Enter the **Remote** host IP address or host name. Use the format `username@remote_host` if the user name differs on the **Remote** host.
    
-   Configure the remaining options according to your specific needs, then click **Save**.
+   e. Enter the remote host path. You cannot browse to select the remote system receiving dataset, you must manually enter the path to this dataset.
 
-   Note, you cannot browse to select the remote system receiving dataset, you must manually enter the path to his dataset.
+   f. Enter the remaining options according to your specific needs, then click **Save**.
 
    Run the rsync task by going to **Tasks > Rsync Tasks** and clicking <i class="fa fa-chevron-right"></i>, then **RUN NOW**.
    
