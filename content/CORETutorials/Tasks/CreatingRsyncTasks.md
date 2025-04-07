@@ -37,21 +37,21 @@ Configure the local and remote TrueNAS systems for an rsync task using module mo
    ![TasksRsyncTasksAddModeModule](/images/CORE/12.0/TasksRsyncTasksAddModeModule.png "Rsync Task: Module Mode")
 
    a. Select the **Source** dataset and use it in the rsync task and a **User** account to run the rsync task.
-<p style="margin-left: 33px">Select a **Direction** for the rsync task.</p>
+      Select a **Direction** for the rsync task.
 
    b. Select a **Schedule** for the rsync task.
 
    c. Enter the **Remote Host** IP address or host name.
-<div style="margin-left: 33px">Do not add http or https to the host IP address, and do not append a port number to the IP address.
-Use the format `username@remote_host` when the user name differs on the **Remote** host.</div>
+      Do not add http or https to the host IP address, and do not append a port number to the IP address.
+      Use the format `username@remote_host` when the user name differs on the **Remote** host.
 
    d. Enter the **Remote Module Name** as it appears on the **Remote** system.
 
    e. Configure the remaining options according to your specific needs.
 
-<p style="margin-left: 33px">Clearing **Enabled** disables the task schedule. </p>
+      Clearing **Enabled** disables the task schedule.
 
-   f. Enable **Recursive**, and leave the default values for all other settings. Do not enable **Preserve Permissions**.</div>
+   f. Enable **Recursive**, and leave the default values for all other settings. Do not enable **Preserve Permissions**.
 
    g. Click **Save**.
 
@@ -133,53 +133,53 @@ Log into the UI for the local host system:
 
 2. In **Shell** or the SSH session, create an SSH connection keypair and assign it to the new user *chester*. Run the following commands.
 
-   a. Activate the account by entering the <code>su <i>chester</i> command in the SSH session.
+   a. Activate the account by entering the <code>su <i>chester</i></code> command in the SSH session.
 
       Generate the SSH keypair by entering the <code>ssh-keygen -t rsa -b 4096 "<i>chester</i>@<i>hostname</i>"</code> command.
 
       Where *chester* is the unique user created for the rsync operation, and *hostname* is the host name given to the local system.
 
-     {{< expand "Command Example" "v" >}} 
-     ```
-     root@truenas[~]# su chester 
-     $ ssh-keygen -t rsa -b 4096 "chester@gremlin2"
-     Too many arguments.
-     usage: ssh-keygen [-q] [-a rounds] [-b bits] [-C comment] [-f output_keyfile]
-                    [-m format] [-N new_passphrase] [-O option]
-                    [-t dsa | ecdsa | ecdsa-sk | ed25519 | ed25519-sk | rsa]
-                    [-w provider] [-Z cipher]
-         ssh-keygen -p [-a rounds] [-f keyfile] [-m format] [-N new_passphrase]
-                     [-P old_passphrase] [-Z cipher]
-         ssh-keygen -i [-f input_keyfile] [-m key_format]
-         ssh-keygen -e [-f input_keyfile] [-m key_format]
-         ssh-keygen -y [-f input_keyfile]
-         ssh-keygen -c [-a rounds] [-C comment] [-f keyfile] [-P passphrase]
-         ssh-keygen -l [-v] [-E fingerprint_hash] [-f input_keyfile]
-         ssh-keygen -B [-f input_keyfile]
-         ssh-keygen -D pkcs11
-         ssh-keygen -F hostname [-lv] [-f known_hosts_file]
-         ssh-keygen -H [-f known_hosts_file]
-         ssh-keygen -K [-a rounds] [-w provider]
-         ssh-keygen -R hostname [-f known_hosts_file]
-         ssh-keygen -r hostname [-g] [-f input_keyfile]
-         ssh-keygen -M generate [-O option] output_file
-         ssh-keygen -M screen [-f input_file] [-O option] output_file
-         ssh-keygen -I certificate_identity -s ca_key [-hU] [-D pkcs11_provider]
-                     [-n principals] [-O option] [-V validity_interval]
-                     [-z serial_number] file ...
-         ssh-keygen -L [-f input_keyfile]
-         ssh-keygen -A [-a rounds] [-f prefix_path]
-         ssh-keygen -k -f krl_file [-u] [-s ca_public] [-z version_number]
-                    file ...al_number] file ...
-         ssh-keygen -Q [-1] -f krl_file [file ...]           
-         ssh-keygen -Y find-principasl -s signature_file -f allowed_signers_file
-         ssh-keygen -Y check-novlidate -n namespace -s signature_file
-         ssh-keygen -Y sign -f key_file -n namespace file ...
-         ssh-keygen -Y verify -f allowed_signers_file -I signer_identiy
-                    -n namespace -s signature_file [-r revocation_file]
-     $
-     ```
-     {{< /expand >}}
+{{< expand "Command Example" "v" >}} 
+```
+root@truenas[~]# su chester 
+$ ssh-keygen -t rsa -b 4096 "chester@gremlin2"
+  Too many arguments.
+  usage: ssh-keygen [-q] [-a rounds] [-b bits] [-C comment] [-f output_keyfile]
+   [-m format] [-N new_passphrase] [-O option]
+   [-t dsa | ecdsa | ecdsa-sk | ed25519 | ed25519-sk | rsa]
+   [-w provider] [-Z cipher]
+  ssh-keygen -p [-a rounds] [-f keyfile] [-m format] [-N new_passphrase]
+   [-P old_passphrase] [-Z cipher]
+  ssh-keygen -i [-f input_keyfile] [-m key_format]
+  ssh-keygen -e [-f input_keyfile] [-m key_format]
+  ssh-keygen -y [-f input_keyfile]
+  ssh-keygen -c [-a rounds] [-C comment] [-f keyfile] [-P passphrase]
+  ssh-keygen -l [-v] [-E fingerprint_hash] [-f input_keyfile]
+  ssh-keygen -B [-f input_keyfile]
+  ssh-keygen -D pkcs11
+  ssh-keygen -F hostname [-lv] [-f known_hosts_file]
+  ssh-keygen -H [-f known_hosts_file]
+  ssh-keygen -K [-a rounds] [-w provider]
+  ssh-keygen -R hostname [-f known_hosts_file]
+  ssh-keygen -r hostname [-g] [-f input_keyfile]
+  ssh-keygen -M generate [-O option] output_file
+  ssh-keygen -M screen [-f input_file] [-O option] output_file
+  ssh-keygen -I certificate_identity -s ca_key [-hU] [-D pkcs11_provider]
+   [-n principals] [-O option] [-V validity_interval]
+   [-z serial_number] file ...
+  ssh-keygen -L [-f input_keyfile]
+  ssh-keygen -A [-a rounds] [-f prefix_path]
+  ssh-keygen -k -f krl_file [-u] [-s ca_public] [-z version_number]
+   file ...al_number] file ...
+  ssh-keygen -Q [-1] -f krl_file [file ...]           
+  ssh-keygen -Y find-principasl -s signature_file -f allowed_signers_file
+  ssh-keygen -Y check-novlidate -n namespace -s signature_file
+  ssh-keygen -Y sign -f key_file -n namespace file ...
+  ssh-keygen -Y verify -f allowed_signers_file -I signer_identiy
+   -n namespace -s signature_file [-r revocation_file]
+$
+ ```
+{{< /expand >}}
 
       Look at the randomart image to verify the keypair generated. Do not add a passphrase.
    
@@ -221,9 +221,9 @@ The key's randomart image is:
 +----[SHA256]-----+
 $
 ```
-   {{< /expand >}}
+{{< /expand >}}
 
-   {{< expand "Command Example to View the SSH Keypair" "v" >}}
+{{< expand "Command Example to View the SSH Keypair" "v" >}}
 ```
 $ cat /mnt/pool/SMBHomeDataset/chester/.ssh/id_rsa
 
@@ -278,9 +278,9 @@ JGAX6KvxzL3xzQAAABVjaGVzdGVyQDEwLjIzNC4yNy4yNTMBAgME
 -----END OPENSSH PRIVATE KEY-----
 $
 ```
-    {{< /expand >}}
+{{< /expand >}}
 
-   {{< expand "Command to View the SSH Public Key" "v" >}}
+{{< expand "Command to View the SSH Public Key" "v" >}}
 
 ```
 $
@@ -288,7 +288,7 @@ $ cat /mnt/pool/SMBHomeDataset/chester/.ssh/id_rsa.pub
 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDD/hHzypIAHlH1dqBgwDlXvM5BaMfpS+Cy1OCRKs98Vm2NtJkipaojwyoog4DTFVwnXFQB5Xd27bdQBWRlq0jKoQ7xiqAzBQ0TXNB3PbHKAk09QKLNQNC+ZpCOVWpMHosR88OjD6vFMyhQt9PE0++BdSAyQL6EiF+Pp8Yh002UUuKcZ9JdzUj7N7DN4UurbOXyiDT2Im4z1Hbd30R9OP7MHsTfygwpNyOtb6a8lBh7EFwBj5X/1JIAcOARGjcVk1Utr8O5b01ITpE3YhXoHremvfwh65GG66Z9+rCPgu5TE2CEq8KMBcs74ySg0aq0TOc8eCXTAdKlHWKp2vne/2lA4p1D4E0Goa3EAywJCTdPgTTaMy10vcLgcx6jzpe6TWRy9sreUvvhYHBPnpcI/iNDFj2dAQMJpN2Sswi/t7WAU1ELQpmrd0LIQl1OZ8bXmI0UTWQsBLaJ/hzOGe3WsSUgvHCdKzjI35G25GzlqDkAznLeUDmNaUCJHln5q0iSy2xsD8YF2cR9gC/LD4HHxGp74RWv/TGJJvoy8mBjEzYs3S6uh5cU4SS3ArscFM+p+1CAv0HUuT+XdOngW4z5ssHzIPBfbsihoyS1JGBf5kp3NwKSSBQTzTY7jOadnvbvrCivN4iub/5hDB+ZqxjCSo4PD66egJvhLUDOnOH9U8c2pw== chester@hostname
 $
 ```
-   {{< /expand >}}
+{{< /expand >}}
 
    a. Copy the SSH keypair public key to paste into the remote receiving system unique user record (see step 3.b. below)
 
@@ -320,15 +320,15 @@ $
 
    Run the rsync task by going to **Tasks > Rsync Tasks** and clicking <i class="fa fa-chevron-right"></i>, then **RUN NOW**.
    
-   {{< expand "Testing the Sync Operation" "v" >}}
-   Run the task now to test the sync operation.
+{{< expand "Testing the Sync Operation" "v" >}}
+ Run the task now to test the sync operation.
 
-   After the rsync completes, check the contents of the receiving dataset on the remote system to compare it to the source sending dataset.
-   Verifyg the contents using either the SSH session or an SMB share. The sending dataset contents should be the same as what is in the receiving dataset.
+After the rsync completes, check the contents of the receiving dataset on the remote system to compare it to the source sending dataset.
+Verifyg the contents using either the SSH session or an SMB share. The sending dataset contents should be the same as what is in the receiving dataset.
 
-   To further verify the data transfer, reconfigure the rsync task to a **PULL** operation and run the task again.
-   Check the file contents in the local dataset against the remote dataset contents to verify the local dataset reflects the contents in the remote system dataset.
-   {{< /expand >}}
+To further verify the data transfer, reconfigure the rsync task to a **PULL** operation and run the task again.
+Check the file contents in the local dataset against the remote dataset contents to verify the local dataset reflects the contents in the remote system dataset.
+{{< /expand >}}
 
 ### Tips
 
