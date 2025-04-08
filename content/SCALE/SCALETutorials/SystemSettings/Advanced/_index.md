@@ -99,7 +99,10 @@ Entering an IP address limits access to the system to only the address(es) enter
 
 {{< include file="/static/includes/AccessSettingsWidget.md" >}}
 
-<div class="noprint">
+### Configuring Access Settings
+
+{{< include file="/static/includes/ConfigureAccessSettings.md" >}}
+
 
 ## Setting Up FIPS and STIG
 {{< enterprise >}}
@@ -121,6 +124,7 @@ The system prompts you to restart.
 
 The system restart takes several minutes to complete before showing the login screen.
 
+<div class="noprint">
 ## Contents
 
 {{< children depth="2" description="true" >}}

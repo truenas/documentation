@@ -239,23 +239,8 @@ Click **Configure** to open the **Replication** configuration screen.
 Enter a number for the maximum number of simultaneous replication tasks you want to allow the system to process and click **Save**.
 
 ## Access Widget
-The **Access** widget lists all active sessions, including the user who initiated them and when they started.
-It also displays the **Session Timeout** setting for your current session.
-It allows administrators to manage other active sessions and configure the session timeout.
 
-{{< trueimage src="/images/SCALE/SystemSettings/AdvancedSystemSettingsAccessWidget.png" alt="Access Widget" id="Access Widget" >}}
-
-**Terminate Other Sessions** ends all sessions except the active session for the logged-in admin user.
-You can also end individual sessions by clicking the logout <span class="iconify" data-icon="PH:arrow-square-right"></span> icon next to that session if it is not the admin user session.
-You must check a confirmation box before the system allows you to end sessions.
-TrueNAS terminates inactive sessions when the it reaches the specified timeout limit. If a new session is initiated within a five-minute period, TrueNAS logs the user in as the previously login session. If the log in occurs outside the five-minute period TrueNAS initiates a new websocket session.
-
-The logout button is inactive for your current session and active for all other current sessions.
-It cannot be used to terminate your current session.
-
-**Session Timeout** displays the configured token duration for your current session (default is five minutes).
-TrueNAS logs out user sessions that are inactive for longer than the configured token setting.
-New activity resets the token counter.
+{{< include file="/static/includes/AccessSettingsWidget.md" >}}
 
 If the configured session timeout is exceeded, TrueNAS displays a **Logout** dialog with the exceeded ticket lifetime value and the time the session is scheduled to terminate.
 
