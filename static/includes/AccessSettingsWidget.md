@@ -28,7 +28,7 @@ If configured, users see the login banner and must click **Continue** to show th
 
 To change settings, click **Configure** to open the **Access Settings** screen, where you can configure **Session Timeout** or **Login Banner**.
 
-{{< trueimage src="/images/SCALE/SystemSettings/TokenSettingsScreen.png" alt="Token Settings Screen" id="Token Settings Screen" >}}
+{{< trueimage src="/images/SCALE/SystemSettings/AccessSettingsScreen.png" alt="Access Settings Screen" id="Access Settings Screen" >}}
 
 Select a value that fits user needs and security requirements.
 Enter the value in seconds.
