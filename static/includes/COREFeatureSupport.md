@@ -2,7 +2,7 @@
 
 As of TrueNAS 13.3, virtualization features (plugins, jails, and virtual machines) are obsolete and provided without support to the [TrueNAS Community](https://forums.truenas.com/).
 
-Users with a critical need to use containers or virtualization solutions in production should migrate to the tested and supported virtualization features available in [TrueNAS SCALE](https://www.truenas.com/download-truenas-scale/).
+**Instances** (Incus-powered containers and virtual machines) are an experimental feature intended for community testing only. Developers, testers, and early adopters can migrate to [TrueNAS 25.04](https://www.truenas.com/download-truenas-scale/) to experiment with instances; however, it is important to note that this feature remains experimental until the release of TrueNAS 25.10. Functionality could change significantly between releases, and instances might not upgrade reliably. Use this feature for testing purposes only and do not rely on it for production workloads.
 
 [TrueNAS Enterprise customers](https://www.truenas.com/truenas-enterprise/) can contact iXsystems to schedule a TrueNAS 24.04 or newer deployment.
 See [CORE to SCALE Migrations](https://www.truenas.com/docs/scale/24.04/gettingstarted/migrate/) for more information.
