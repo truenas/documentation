@@ -240,7 +240,7 @@ Enter a number for the maximum number of simultaneous replication tasks you want
 
 ## Access Widget
 
-{{< include file="/static/includes/AccessSettingsWidget.md" >}}
+{{< include file="/static/includes/AccessWidget.md" >}}
 
 If the configured session timeout is exceeded, TrueNAS displays a **Logout** dialog with the exceeded ticket lifetime value and the time the session is scheduled to terminate.
 
