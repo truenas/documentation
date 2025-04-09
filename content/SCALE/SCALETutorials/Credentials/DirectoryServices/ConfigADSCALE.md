@@ -64,6 +64,11 @@ Or
 
 ### Connecting to the Active Directory Domain
 
+Before you begin, modify the system DNS server settings.
+Take a screenshot of your current settings to refer to if you need to revert to pre-AD settings for any reason.
+Change the nameserver 1 setting to the IP address of the AD sever and clear the other name server settings.
+Make sure the domain name is set to something other than the default value **truenas**.
+
 To connect TrueNAS to Active Directory:
 
 1. Go to **Credentials > Directory Services** click **Configure Active Directory** to open the **Active Directory** configuration screen.
@@ -71,7 +76,7 @@ To connect TrueNAS to Active Directory:
 2. Enter the domain name for the AD in **Domain Name** and the `bindname` and `bindpw` account credentials in **Domain Account Name** and **Domain Account Password**.
    Default **Domain Account Name** created for TrueNAs is **Administrator**.
 
-3. Enter the TrueNAS hostname in **NetBIOS Name**. The default is **TRUENAS**.
+3. Enter the TrueNAS hostname in **NetBIOS Name**. Change the default **TRUENAS** to something else.
    Enter the TrueNAS host name that matches the information on the **Network > Global Configuration** screen in the **Hostname** field.
 
 4. Select **Enable** to attempt to join the AD domain immediately after saving the configuration.

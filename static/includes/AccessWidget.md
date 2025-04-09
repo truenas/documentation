@@ -6,12 +6,12 @@ The **Session Timeout** setting shows the number of minutes for the current sess
 The **Login Banner** shows the custom text entered on the **Access Settings** screen. This text shows before the login screen.
 When configured, users see the login banner and must click **Continue** to show the TrueNAS login splash screen.
 
-Administrators can manage other active sessions and configure the session timeout for their account.
+Administrators can manage other active sessions and configure the session timeout for their accounts.
 
 {{< trueimage src="/images/SCALE/SystemSettings/AdvancedSystemSettingsAccessWidget.png" alt="Access Widget" id="Access Widget" >}}
 
 **Terminate Other Sessions** ends all sessions except the current session.
-To end individual sessions, clicking the logout <span class="iconify" data-icon="bi:box-arrow-in-right"></span> button next to that session.
+To end individual sessions, click the logout <span class="iconify" data-icon="bi:box-arrow-in-right"></span> button next to that session.
 You must check a confirmation box before the system allows you to end sessions.
 
 The logout icon is inactive for the currently logged-in administrator session and active for any other current sessions.

@@ -97,12 +97,9 @@ Entering an IP address limits access to the system to only the address(es) enter
 
 ## Managing Access (WebSocket Sessions)
 
-{{< include file="/static/includes/AccessSettingsWidget.md" >}}
-
-### Configuring Access Settings
+{{< include file="/static/includes/AccessWidget.md" >}}
 
 {{< include file="/static/includes/ConfigureAccessSettings.md" >}}
-
 
 ## Setting Up FIPS and STIG
 {{< enterprise >}}
