@@ -45,7 +45,7 @@ If the replication task fails, double-check that the schema properly reflects th
 To use a snapshot task in TrueCommand, allow the automatic snapshot task to run before running the replication task.
 
 {{< hint type=info title="Read Only Snapshots" >}}
-The replication manager cannot add a task when you select a dataset with a read only snapshot.
+The replication manager cannot add a task when you select a dataset with a read-only snapshot.
 {{< /hint >}} 
 
 Users can enable or disable a snapshot task by using the toggle within the row of the snapshot task.
@@ -82,7 +82,7 @@ Select the system and destination dataset, then click **Next** or on **Scheduler
 
 ![NewReplicationTaskSchedulerScreen](/images/TrueCommand/Replication/NewReplicationTaskSchedulerScreen.png "New Replication Task Scheduler")
 
-Select the period and day of week from the dropdown lists, then enter the hour and minute.
+Select the period and day of the week from the dropdown lists, then enter the hour and minute.
 Accept the defaults to run the replication task weekly on Sunday at midnight.
 
 Click **NEXT** or on **Confirmation** to view the replication task details.
