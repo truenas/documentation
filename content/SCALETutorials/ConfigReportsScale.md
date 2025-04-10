@@ -28,6 +28,8 @@ Click the <i class="fa fa-backward" aria-hidden="true" title="Backward"></i> to 
 
 ## Using the Netdata UI
 
+{{< include file="/static/includes/NetdataUI.md" >}}
+
 Click **Netdata** from the **Reporting** screen to see the built-in Netdata UI.
 This UI bases metrics off your local system and browser time, which might be different from the default TrueNAS system time.
 
