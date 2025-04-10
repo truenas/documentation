@@ -76,33 +76,25 @@ More details are available from [Software Releases](https://www.truenas.com/docs
 
 {{< include file="/static/includes/AppsSupportTimeline.md" >}}
 
-### Upgrade Paths (Anticipated)
+### Upgrade Paths
 
 {{< include file="/static/includes/25.04UpgradeMethods.md" >}}
 
 {{< include file="/static/includes/SCALEUpgradePaths.md" >}}
 
-<!--
-### Migrating from TrueNAS CORE
+### Migrating from TrueNAS 13.0 or 13.3
 
-{{< include file="/_includes/MigrateCOREtoSCALEWarning.md" >}}
+{{< include file="/static/includes/MigrateCOREtoSCALEWarning.md" >}}
+
+Depending on the specific system configuration, migrating from a FreeBSD-based TrueNAS version can be a straightforward or complicated process.
+See the [Migration articles]({{< relref "/GettingStarted/Migrate/_index.md" >}}) for cautions and notes about differences between each software and the migration process.
 
 {{< enterprise >}}
-Enterprise customers with HA systems should contact TrueNAS Enterprise Support for assistance with migrating to TrueNAS.
+Enterprise customers should contact TrueNAS Enterprise Support for assistance before attempting to migrate.
 {{< expand "TrueNAS Enterprise Support" "v" >}}
 {{< include file="content/_includes/iXsystemsSupportContact.md" >}}
 {{< /expand >}}
 {{< /enterprise >}}
-
-When attempting to migrate from a FreeBSD-based TrueNAS version, the general recommendation is to back up the system configuration file and use a TrueNAS **.iso** file to fresh install TrueNAS.
-After install, restore the system configuration and import the pools.
-
-Depending on the specific system configuration, this can be a straightforward or complicated process.
-See the [Migration articles]({{< relref "/GettingStarted/Migrate/_index.md" >}}) for cautions and notes about differences between each software and the migration process.
-
-You must either clean install using an <file>iso</file> or use an upgrade file to migrate a FreeBSD-based TrueNAS system to TrueNAS 25.04 (Fangtooth).
-Enterprise customers should [contact Support](https://www.truenas.com/docs/scale/gettingstarted/migrate/migratecorehatoscaleha/#expand-1-Enterprise%20HA%20Migrations) for assistance with migration.
--->
 
 ## Component Versions
 
@@ -123,12 +115,44 @@ Any new feature flags introduced since the previous OpenZFS version that was int
 
 For more details on feature flags, see [OpenZFS Feature Flags](https://openzfs.github.io/openzfs-docs/Basic%20Concepts/Feature%20Flags.html) and [OpenZFS zpool-feature.7](https://openzfs.github.io/openzfs-docs/man/7/zpool-features.7.html).
 
-<!-- for 25.04.0 Notable Changes:
+## 25.04.0
+
+**April 15, 2025**
+
+The TrueNAS team is pleased to release TrueNAS 25.04.0!
+This is the first stable release of TrueNAS SCALE 25.04 (Fangtooth). It includes numerous software component updates and polished features, as well as fixes for issues discovered in 25.04-RC.1.
+
+Special thanks to (Github users) ________ for contributing to TrueNAS 25.04-RC.1. For information on how you can contribute, visit https://www.truenas.com/docs/contributing/.
+
+### Notable Changes
+
+Notable changes since 25.04-RC.1:
+
 * Allow configuration of IO bus for disk devices in Instances ([NAS-134250](https://ixsystems.atlassian.net/browse/NAS-134250)).
   This enables users to create virtualized disks using a standard other than VirtIO in cases where the OS image does not by default include VirtIO drivers.
--->
+
+<a href="https://ixsystems.atlassian.net/issues/?filter=" target="_blank">Click here for the full changelog</a> of completed tickets that are included in the 25.04.0 release.
+{{< include file="/static/includes/JiraFilterInstructions.md" >}}
+
+### Known Issues
+
+* Some users of TrueNAS Apps attempting to configure GPU allocation report the error `Expected [uuid] to be set for GPU inslot [<some pci slot>] in [nvidia_gpu_selection])` (see ([NAS-134152](https://ixsystems.atlassian.net/browse/NAS-134152)).
+
+  Users experiencing this error should follow the steps below for a one time fix that should not need to be repeated.
+
+  Connect to a shell session and retrieve the UUID for each GPU with the command `midclt call app.gpu_choices | jq`.
+
+  For each application that experiences the error, run `midclt call -j app.update APP_NAME '{"values": {"resources": {"gpus": {"use_all_gpus": false, "nvidia_gpu_selection": {"PCI_SLOT": {"use_gpu": true, "uuid": "GPU_UUID"}}}}}}'`
+  Where:
+    * `APP_NAME` is the name you entered in the application, for example “plex”.
+    * `PCI_SLOT` is the pci slot identified in the error, for example "0000:2d:00.0”.
+    * `GPU_UUID` is the UUID matching the pci slot that you retrieved with the above command.
+
+<a href="https://ixsystems.atlassian.net/issues/?filter=" target="_blank">Click here to see the latest information</a> about public issues discovered in 25.04.0 that are being resolved in a future TrueNAS release.
 
 ## 25.04-RC.1
+
+{{< expand "Click to expand" "v" >}}
 
 {{< hint type=warning title="Early Release Software" >}}
 Early releases are intended for testing and feedback purposes.
@@ -177,6 +201,8 @@ Special thanks to (Github users) René, jnbastoky, Bas Nijholt, jbsamcho, t0b3, 
     * `GPU_UUID` is the UUID matching the pci slot that you retrieved with the above command.
 
 <a href="https://ixsystems.atlassian.net/issues/?filter=11975" target="_blank">Click here to see the latest information</a> about public issues discovered in 25.04-BETA.1 that are being resolved in a future TrueNAS release.
+
+{{< /expand >}}
 
 ## 25.04-BETA.1
 
