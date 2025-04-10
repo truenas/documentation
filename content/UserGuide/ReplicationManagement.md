@@ -43,13 +43,12 @@ When creating a replication task where only a manual snapshot exists, change the
 If the replication task fails, double-check that the schema properly reflects the desired snapshot name. 
 
 To use a snapshot task in TrueCommand, allow the automatic snapshot task to run before running the replication task.
+
 {{< hint type=info title="Read Only Snapshots" >}}
-The existing snapshot cannot be read only. Replication manager cannot add a task if you select a dataset with a read only snapshot.
+The replication manager cannot add a task when you select a dataset with a read-only snapshot.
 {{< /hint >}} 
 
-![SnapshotToggling](/images/TrueCommand/Replication/SnapshotToggling.png "Snapshot Toggling")
-
-Note that users can enable or disable a snapshot task by using the toggle within the row of the snapshot task.
+Users can enable or disable a snapshot task by using the toggle within the row of the snapshot task.
 
 Verify the SSH service on the TrueNAS systems is enabled and running. 
 When not enabled and running, the **Replication** screen does not populate and TrueCommand returns a variety of error messages.
@@ -57,6 +56,7 @@ Either check the SSH service setting on the TrueNAS system or go to the TrueComm
 Scroll down to the SSH service to see the status.
 
 ## Configuring a Replication Management Task
+
 Click **Replication** to the right of **Reports** on the top toolbar to open the **Replication** screen.
 
 Click **ADD REPLICATION TASK** to open the **New Replication Task** wizard.
@@ -82,7 +82,7 @@ Select the system and destination dataset, then click **Next** or on **Scheduler
 
 ![NewReplicationTaskSchedulerScreen](/images/TrueCommand/Replication/NewReplicationTaskSchedulerScreen.png "New Replication Task Scheduler")
 
-Select the period and day of week from the dropdown lists, then enter the hour and minute.
+Select the period and day of the week from the dropdown lists, then enter the hour and minute.
 Accept the defaults to run the replication task weekly on Sunday at midnight.
 
 Click **NEXT** or on **Confirmation** to view the replication task details.
