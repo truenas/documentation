@@ -62,6 +62,8 @@ More details are available from [Software Releases](https://www.truenas.com/docs
 
 * {{< include file="/static/includes/ConfigRestrictions.md" >}}
 
+* {{< include file="/static/includes/NetdataUI.md" >}}
+
 ### Migrating Virtual Machines
 
 {{< include file="/static/includes/Incus.md" >}}
