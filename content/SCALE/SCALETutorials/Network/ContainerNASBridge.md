@@ -58,7 +58,7 @@ You might have to set up [shares]({{< relref "/SCALE/SCALEUIReference/Shares/_in
 If you have more than one NIC on your system, you can assign container traffic to a secondary NIC.
 Configure the secondary interface as described in [Managing Interfaces]({{< relref "/SCALE/SCALETutorials/Network/Interfaces/_index.md" >}}) before attaching it to an instance.
 
-If you are creating a new instance, use the **Network** settings to deselect **Use default network Settings** and select the secondary NIC from **Macvlan NICs**.
+If you are creating a new instance, use the **Network** settings to disable **Use default network Settings** and select the secondary NIC from **Macvlan NICs**.
 
 {{< trueimage src="/images/SCALE/Virtualization/InstancesNetworkNonDefault.png" alt="Non-Default Network Settings" id="Non-Default Network Settings" >}}
 
