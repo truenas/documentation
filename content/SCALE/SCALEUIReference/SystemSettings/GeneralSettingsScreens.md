@@ -65,7 +65,7 @@ Using **Resetting to Defaults** returns the system configuration to factory sett
 {{< trueimage src="/images/SCALE/SystemSettings/SystemGeneralResetConfiguration.png" alt="Reset Configuration" id="Reset Configuration" >}}
 
 {{< hint type=warning >}}
-Saves the current system configuration with the _Download File_ option before resetting the configuration to default settings.
+Save the current system configuration with the _Download File_ option before resetting the configuration to default settings.
 
 Not saving the system configuration before resetting it, can result in losing data that is not backed up, and losing the ability to revert to the previous configuration.
 {{< /hint >}}
