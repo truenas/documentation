@@ -137,7 +137,7 @@ See [Instance name requirements](https://linuxcontainers.org/incus/docs/main/ref
 #### Deleting Volumes
 
 Click **Configuration > Manage Volumes** to access the **Volumes** screen.
-Click <i class="material-icons" aria-hidden="true" title="Delete">delete</i> on an volume row to delete that volume.
+Click <i class="material-icons" aria-hidden="true" title="Delete">delete</i> on any volume row to delete that volume.
 The **Delete volume** dialog displays.
 
 {{< trueimage src="/images/SCALE/Virtualization/InstancesDeleteVolume.png" alt="Delete Volume Dialog" id="Delete Volume Dialog" >}}
