@@ -8,7 +8,7 @@ You can create a new privilege to customize the functional access you want to gr
 On the **New Privilege** screen:
 
 1. Enter a name for the new privilege. Names can include the dash (-) or underscore (_) special characters, and upper and lowercase alphanumeric characters.
- Make the name descriptive of the privilege. For example, *Replication Administrator* *Backup Administrator*, *iSCSI Share Admin*, etc.
+ Make the name descriptive of the privilege. For example, *Replication Administrator*, *Backup Administrator*, *iSCSI Share Admin*, etc.
  You can create a privilege that can only manage iSCSI shares or one that can manage applications based on the selections made in the **Roles** field.
 
 2. Click in the **Local Groups** field to see a list of groups on the system. To add another group, click in the field to select another group.
