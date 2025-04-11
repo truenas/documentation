@@ -62,9 +62,7 @@ Disk graphs show read and write statistics on I/O, percent busy, latency, operat
 Use the **Select Disks** dropdown to select the disks.
 Use the **Select Reports** dropdown to select the report types to display.
 
-{{< trueimage src="/images/SCALE/Reporting/DiskReportingIO.png" alt="Disks Reporting I/O" id="Disks Reporting I/O" >}}
-
-{{< trueimage src="/images/SCALE/Reporting/DiskReportingTemperature.png" alt="Disks Reporting Temperature" id="Disks Reporting Temperature" >}}
+{{< trueimage src="/images/SCALE/Reporting/DisksReportingScreen.png" alt="Disks Reporting" id="Disks Reporting" >}}
 
 {{< expand "Disk Report Setting Options" "v" >}}
 {{< truetable >}}
