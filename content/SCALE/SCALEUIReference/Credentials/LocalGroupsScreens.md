@@ -15,7 +15,7 @@ The **Credentials > Groups** screen displays a list of groups configured on the 
 
 {{< trueimage src="/images/SCALE/Credentials/GroupsListedSCALE.png" alt="Groups Screen" id="Groups Screen" >}}
 
-When enabled, the **Show Built-In Groups** toggl turns bluee and shows built-in groups. When disabled, the toggle turns grey and shows only non-built-in groups.
+When enabled, the **Show Built-In Groups** toggle turns blue and shows built-in groups. When disabled, the toggle turns grey and shows only non-built-in groups.
 
 The **Credentials > Groups** screen displays the **No groups** screen if no groups other than built-in groups are configured on the system.
 
