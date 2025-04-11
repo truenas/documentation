@@ -28,7 +28,7 @@ More details are available from [Software Releases](https://www.truenas.com/docs
 
 {{< include file="/static/includes/ReleaseScheduleWarning.md" >}}
 
-{{< releaselist name=scale-releases defaultTab=3 >}}
+{{< releaselist name=scale-releases defaultTab=2 >}}
 
 {{< expand "Software Lifecycle" "v" >}}
 {{< include file="/static/includes/LifecycleTable.md" >}}
