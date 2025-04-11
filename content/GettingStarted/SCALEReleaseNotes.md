@@ -6,19 +6,11 @@ related: false
 ---
 {{< header logo="/images/tn-openstorage-logo.png" logo_alt="TrueNAS Logo" version="25.04 Fangtooth" icon="/images/Fangtooth_Icon.png" icon_alt="Fangtooth Icon" >}}
 
-{{< hint type="tip" title="25.04 Early Release Documentation" >}}
-This page tracks the latest development roadmap and early release notes for the future TrueNAS major version 25.04 (Fangtooth).
-
-See the stable [24.10 (Electric Eel)](https://www.truenas.com/docs/scale/24.10/gettingstarted/scalereleasenotes/) release notes for information relating to that version.
-{{< /hint >}}
-
 ## Features
 
 {{< include file="/static/includes/25.04FeatureList.md" >}}
 
 ## Obtaining a Release
-
-{{< include file="/static/includes/EarlyReleaseWarning.md" >}}
 
 For adventurous users that want to experiment with the latest feature development, 25.04 (Fangtooth) nightly images are available from the [the TrueNAS downloads server](https://download.truenas.com/truenas-scale-fangtooth-nightly/).
 
