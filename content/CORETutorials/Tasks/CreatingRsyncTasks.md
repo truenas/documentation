@@ -81,7 +81,7 @@ Configure the local and remote TrueNAS systems for an rsync task using module mo
 
 Before creating an rsync task on the host system, you need the following on the local and remote host systems:
 
-* A unique administration user with identical configurations.su
+* A unique administration user with identical configurations.
 
 * An SSH connection keypair is manually added in **Shell** or an SSH session.
 
