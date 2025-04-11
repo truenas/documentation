@@ -60,7 +60,7 @@ Upgrading a storage pool is typically not required unless the new OpenZFS featur
 
 Do not do a pool-wide ZFS upgrade until you are ready to commit to this SCALE major version! You can not undo a pool upgrade, and you lose the ability to roll back to an earlier major version!
 
-The **Upgrade** button displays on the **Storage Dashboard** for existing pools after an upgrade to a new TrueNAS major version that includes new [OpenZFS feature flags]({{< relref "SCALEReleaseNotes.md#component-versions" >}}).
+The **Upgrade** button displays on the **Storage Dashboard** for existing pools after an upgrade to a new TrueNAS major version that includes new [OpenZFS feature flags]({{< ref "SCALEReleaseNotes.md#component-versions" >}}).
 Newly created pools are always up to date with the OpenZFS feature flags available in the installed TrueNAS version.
 
 {{< trueimage src="/images/SCALE/Storage/StorageDashboardUpgradPoolConfirmationDialog.png" alt="Upgrade Pool Confirmation Dialog" id="Upgrade Pool Confirmation Dialog" >}}
@@ -80,7 +80,7 @@ Use **Scrub** on the **ZFS Health** pool widget to start a pool data integrity c
 Click **Scrub** to open the **Scrub Pool** dialog.
 Select **Confirm**, then click **Start Scrub**.
 
-If TrueNAS detects problems during the scrub operation, it either corrects them or generates an [alert]({{< relref "/SCALEUIReference/TopToolbar/Alerts/_index.md" >}}) in the web interface.
+If TrueNAS detects problems during the scrub operation, it either corrects them or generates an [alert]({{< ref "/SCALEUIReference/TopToolbar/Alerts/" >}}) in the web interface.
 
 By default, TrueNAS automatically checks every pool on a recurring scrub schedule.
 
@@ -96,7 +96,7 @@ To manage disks in a pool, click on the VDEV to expand it and show the disks in 
 Click on a disk to see the devices widgets for that disk.
 You can take a disk offline, detach it, replace it, manage the SED encryption password, and perform other disk management tasks from this screen.
 
-See [Replacing Disks]({{< relref "ReplacingDisks.md" >}}) for more information on the **Offline**, **Replace** and **Online** options.
+See [Replacing Disks]({{< ref "ReplacingDisks" >}}) for more information on the **Offline**, **Replace** and **Online** options.
 
 ## Expanding a Pool
 
@@ -188,7 +188,7 @@ Click **Add VDEV** on the ***Poolname* Devices** screen to open the **Add Vdevs 
 
 {{< trueimage src="/images/SCALE/Storage/AddVdevsToPoolScreen.png" alt="Add VDEVs to Pool Screen" id="Add VDEVs to Pool Screen" >}}
 
-Adding a vdev to an existing pool follows the same process as documented in [Create Pool]({{< relref "CreatePoolWizard.md" >}}).
+Adding a vdev to an existing pool follows the same process as documented in [Create Pool]({{< ref "CreatePoolWizard" >}}).
 Click on the type of vdev you want to add, for example, to add a spare, click on **Spare** to show the vdev spare options.
 
 {{< trueimage src="/images/SCALE/Storage/AddVdevToPoolSpareScreen.png" alt="Add VDEVs to Pool Spare Example" id="Add VDEVs to Pool Spare Example" >}}
@@ -226,7 +226,7 @@ To save changes click **Update Pool**.
 
 ### Replacing Disks to Expand a Pool
 
-To expand a pool by replacing disks, replace each with a higher capacity disk following the same procedure as in [Replacing Disks]({{< relref "ReplacingDisks.md" >}}).
+To expand a pool by replacing disks, replace each with a higher capacity disk following the same procedure as in [Replacing Disks]({{< ref "ReplacingDisks" >}}).
 Insert the new disk into an empty enclosure slot and remove the old disk only after the replace operation is completed.
 If an empty slot is not available, you can offline the existing disk and replace it in place, but redundancy is reduced during the process. 
 
@@ -293,5 +293,5 @@ To remove a VDEV from a pool:
    If the **Remove** button is not visible, check that all conditions for VDEV removal listed above are correct.
 3. Confirm the removal operation and click the **Remove** button.
 
-The VDEV removal process status shows in the [Task Manager]({{< relref "TasksScreens.md" >}}) (or alternately with the `zpool status` command).
+The VDEV removal process status shows in the [Task Manager]({{< ref "TasksScreens" >}}) (or alternately with the `zpool status` command).
 Avoid physically removing or attempting to wipe the disks until the removal operation completes.

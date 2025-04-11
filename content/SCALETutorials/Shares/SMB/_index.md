@@ -78,7 +78,7 @@ Click **Add** to create a new or as many new user accounts as needed.
 If joined to Active Directory, Active Directory can create the TrueNAS accounts.
 
 Enter the values in each required field, verify **SMB User** is selected, then click **Save**.
-For more information on the fields and adding users, see [Creating User Accounts]({{< relref "ManageLocalUsersScale.md" >}}).
+For more information on the fields and adding users, see [Creating User Accounts]({{< ref "ManageLocalUsersScale" >}}).
 
 By default, all new users are members of a built-in group called **builtin_users**.
 You can use a group to grant access to all users on the server or add more groups to fine-tune permissions for large numbers of users.
@@ -96,7 +96,7 @@ Migrate legacy Samba domains to Active Directory before upgrading to 24.10 or la
 {{< /expand >}}
 
 ## Adding an SMB Share and Dataset
-You can create an SMB share while [creating a dataset on the **Add Dataset** screen]({{< relref "DatasetsSCALE.md" >}}) or create the dataset while creating the share on the **Add SMB Share** screen.
+You can create an SMB share while [creating a dataset on the **Add Dataset** screen]({{< ref "DatasetsSCALE" >}}) or create the dataset while creating the share on the **Add SMB Share** screen.
 This article covers adding the dataset on the **Add SMB Share** screen.
 
 {{< include file="/static/includes/AppsSMBErrorWarning.md" >}}
@@ -145,7 +145,7 @@ To create a basic Windows SMB share and a dataset, go to **Shares**, then click 
    The preset selected locks or unlock pre-determined **Advanced Options** settings for the share.
    To retain control over all the share **Advanced Options** settings, select **No presets** or **Default share parameters**.
    To create an alternative to Home Shares, select **Private SMB Datasets and Shares**.
-   See [Setting Up SMB Home Shares]({{< relref "AddSMBHomeShare.md" >}}) for more information on replacing this legacy feature with private SMB shares and datasets.
+   See [Setting Up SMB Home Shares]({{< ref "AddSMBHomeShare" >}}) for more information on replacing this legacy feature with private SMB shares and datasets.
 
    {{< expand "SMP Purpose Options" "v" >}}
    {{< include file="/static/includes/SMBPurposePresets.md" >}}
@@ -165,7 +165,7 @@ Enable the SMB service when prompted.
 ### Configuring Share Advanced Options Settings
 For a basic SMB share, using the **Advanced Options** settings is not required, but if you set **Purpose** to **No Presets**, click **Advanced Options** to finish customizing the SMB share for your use case.
 
-The following are possible use cases. See [SMB Shares Screens]({{< relref "SMBSharesScreens.md" >}}) for all settings and other possible use cases.
+The following are possible use cases. See [SMB Shares Screens]({{< ref "SMBSharesScreens" >}}) for all settings and other possible use cases.
 
 {{< expand "Setting Up Guest Access" "v" >}}
 **Not a recommended configuration and adds security vulnerabilities!**
@@ -226,7 +226,7 @@ By default, Samba uses a hashing algorithm for NTFS illegal characters.
 Use to set up an alternative to the legacy Home Shares function.
 
 Allow adding private datasets and shares for individual users. Useful as an alternate way to creating home shares for individual users.
-See [Setting Up SMB Home Shares]({{< relref "AddSMBHomeShare.md" >}}) for more information.
+See [Setting Up SMB Home Shares]({{< ref "AddSMBHomeShare" >}}) for more information.
 {{< /expand >}}
 {{< expand "Enabling SMB Audit Logging" "v" >}}
 To enable SMB audit logging, from either the **Add SMB** or **Edit SMB** screens, click **Advanced Options**, scroll down to **Audit Logging** and select **Enable**.
@@ -234,13 +234,13 @@ To enable SMB audit logging, from either the **Add SMB** or **Edit SMB** screens
 
 ### Enabling ACL Support
 To add ACL support to the share, select **Enable ACL** under **Advanced Options** on either the **Add SMB** or **Edit SMB** screens.
-See [Managing SMB Shares]({{< relref "ManageSMBShares.md" >}}) for more on configuring permissions for the share and the file system.
+See [Managing SMB Shares]({{< ref "ManageSMBShares" >}}) for more on configuring permissions for the share and the file system.
 
 ## Tuning ACLs for SMB Shares
 There are two levels to set SMB share permissions, at the share or for the dataset associated for with the share.
-See [Managing SMB Shares]({{< relref "ManageSMBShares.md" >}}) for more information on these options.
+See [Managing SMB Shares]({{< ref "ManageSMBShares" >}}) for more information on these options.
 
-See [Permissions]({{< relref "PermissionsScale.md" >}}) for more information on dataset permissions.
+See [Permissions]({{< ref "PermissionsScale" >}}) for more information on dataset permissions.
 
 ### Tuning the Share ACL
 

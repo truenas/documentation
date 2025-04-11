@@ -14,7 +14,7 @@ The tutorials in this section guide you through each type of configuration.
 
 Use the **Network** screen access interface and other network settings.
 This article covers adding new or changing existing network interfaces, and configuring static and alias IPv4 addresses.
-For information on configuring IPv6 addresses, see [Configuring IPv6]({{< relref "ConfigureIPv6.md" >}}).
+For information on configuring IPv6 addresses, see [Configuring IPv6]({{< ref "ConfigureIPv6" >}}).
 
 {{< expand "Why should I use different interface types?" "v" >}}
 {{< include file="/static/includes/NetworkInterfaceTypes.md" >}}
@@ -70,7 +70,7 @@ The **Edit Interface** and **Add Interface** settings are identical except for *
 If you made a mistake with either field and clicked **Save**, the only option to change either setting is to delete the interface and create a new one with the desired name and type.
 
 If you want to change from a DHCP-provided IP address to a static IP, you must also add the new default gateway and DNS nameservers that work with the new IP address.
-See [Setting Up a Static IP]({{< relref "SettingUpStaticIPs.md" >}}) for more information.
+See [Setting Up a Static IP]({{< ref "SettingUpStaticIPs" >}}) for more information.
 
 After making the changes, click **Save**.
 

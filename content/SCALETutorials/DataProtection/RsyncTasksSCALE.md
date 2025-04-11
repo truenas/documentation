@@ -24,7 +24,7 @@ There are two ways to connect to a remote system and run an rsync task:
 ## Configuring SSH Mode Rsync Tasks
 
 Before you create an rsync task in SSH mode, [add an SSH connection and keypair](#setting-up-an-ssh-connection) between the TrueNAS host and remote system.
-See [Adding SSH Credentials]({{< relref "AddSSHConnectionKeyPair.md" >}}) for more information.
+See [Adding SSH Credentials]({{< ref "AddSSHConnectionKeyPair" >}}) for more information.
 
 After setting up the SSH connection, [configure the rsync task](#creating-an-ssh-mode-rsync-task) on the TrueNAS host.
 
@@ -43,7 +43,7 @@ If the remote system is also a TrueNAS, go to **Credentials**, select **Users** 
 Select the administration user and click **Edit**.
 
 If creating a new administration user, for rsync functions, click **Add**.
-See [Managing Users]({{< relref "managelocalusersscale.md #creating-an-administrator-user-account" >}}) for more information.
+See [Managing Users]({{< ref "managelocalusersscale/#creating-an-administrator-user-account" >}}) for more information.
 Take note of the path to the home directory to use in setting up the connection.
 
 Add an SSH connection for the remote server on the local TrueNAS host system. 
