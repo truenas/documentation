@@ -48,6 +48,10 @@ Use **Enable ACL** in **Storage Configuration** to configure ACL entries for eac
 {{< include file="/static/includes/apps/HostPathACL.md" >}}
 {{< /expand >}}
 
+### Postgres Datasets
+
+{{< include file="/static/includes/apps/InstallWizardPostgresStorageAutomaticPermissions.md" >}}
+
 ### SMB Share Volumes
 
 Some app storage configurations include the **SMB/CIFS Share** option.
