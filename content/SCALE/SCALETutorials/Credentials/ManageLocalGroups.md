@@ -84,9 +84,9 @@ To edit an existing group, go to **Credentials > Groups**, expand the group entr
 Never modify the settings for the standard pre-defined privileges (listed below)! Changing these pre-defined roles can result in lost access to the UI!
 
 Pre-defined TrueNAS privileges are:
-* **Read-Only Administrator** that allows the user to view settings but not make changes in the UI.
-* **Sharing Administrator** that allows the user to create new shares and the share dataset.
-* **Local Administrator** with full Control that gives the user full read/write/execute permissions in the UI.
+* **Read-Only Administrator** - Allows the user to view settings but not make changes in the UI.
+* **Sharing Administrator** - Allows the user to create new shares and the share dataset.
+* **Local Administrator** - Gives full control (read/write/exeute permissions) to the user.
 {{< /hint >}}
 
 Active Directory can provision groups in TrueNAS or you can add new groups that you assign to users in AD.
