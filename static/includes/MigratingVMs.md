@@ -69,7 +69,7 @@ To migrate VMs from TrueNAS 24.10 (latest) to 25.04:
 
             This option retains the original zvol while creating an identical copy as an instances volume.
 
-         - Select **Move** to relocate the existing zvol to the ix-virt dataset as a volume.Enter or browse to select the path to the existing zvol.
+         - Select **Move** to relocate the existing zvol to the ix-virt dataset as a volume. Enter or browse to select the path to the existing zvol.
 
    f. Adjust VM settings (CPU, memory, networking, etc.) to match your previous configuration.
 
