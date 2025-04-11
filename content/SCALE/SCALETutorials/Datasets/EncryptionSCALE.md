@@ -39,7 +39,7 @@ TrueNAS automatically generates a root dataset when you create a pool.
 Select **Encryption** on the **[Pool Creation Wizard]({{< relref "PoolCreateWizardScreens.md" >}})** screen when you create the pool to encrypt the root dataset.
 TrueNAS forces encryption of all child datasets and zvols within an encrypted root or parent dataset created using the TrueNAS UI.
 By default, child datasets inherit encryption settings from the parent.
-Deselecting **Inherit (encrypted)** under **Advanced Options** allows modifying the encryption configuration for a child dataset but you cannot change a child dataset of an encrypted parent dataset to unencrypted.
+Disabling **Inherit (encrypted)** under **Advanced Options** allows modifying the encryption configuration for a child dataset but you cannot change a child dataset of an encrypted parent dataset to unencrypted.
 
 As of TrueNAS 22.12.3 or later, the TrueNAS UI does not allow you to create unencrypted datasets within an encrypted pool or parent dataset.
 However, datasets created outside the UI, such as those created programmatically or manually via shell access, might not inherit encryption unless properly configured.
@@ -135,7 +135,7 @@ To keep the dataset encryption settings from the parent, leave inherit selected.
 {{< trueimage src="/images/SCALE/Datasets/AddDatasetEncryptionOptionsInheritCleared.png" alt="Add Dataset Encryption Options Clear Inherit" id="Add Dataset Encryption Options Clear Inherit" >}}
 
 Decide if you want to use the default key type encryption and want to let the system generate the encryption key.
-To use key encryption and an existing key, deselect **Generate Key** to display the **Key** field.
+To use key encryption and an existing key, disable **Generate Key** to display the **Key** field.
 Enter the existing key in this field.
 
 {{< trueimage src="/images/SCALE/Datasets/AddDatasetEncryptionKeyfromNonEncrypted.png" alt="Add Key Encryption" id="Add Key Encryption" >}}
@@ -244,7 +244,7 @@ TrueNAS displays the dataset with the unlocked icon.
 
 To encrypt a Zvol, select a parent dataset and then [create a new Zvol]({{< relref "AddManageZvols.md" >}}).
 If the parent dataset is encrypted, select **Inherit (encrypted)** under **Encryption Options**.
-If the parent dataset is not encrypted, deselect **Inherit (non-encrypted)**, select **Encryption**, and then configure the **Encryption Type** and related settings.
+If the parent dataset is not encrypted, disable **Inherit (non-encrypted)**, select **Encryption**, and then configure the **Encryption Type** and related settings.
 
 Next, go to **Datasets** and click on the Zvol and locate the **ZFS Encryption** widget.
 
