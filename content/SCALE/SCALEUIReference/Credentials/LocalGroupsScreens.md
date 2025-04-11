@@ -67,7 +67,7 @@ Hold <kbd>Ctrl</kbd> while clicking each entry to select multiple groups.
 {{< hint type="warning" title="Experimental Feature" >}}
 The **Privileges** feature in an early releases was an experimental feature but is no longer experimental as of 24.10.
 
-Do not edit the existing predefined administrator roles (Full Control Admin, Rreadonly Admin, and Sharing Admin)!
+Do not edit the existing predefined administrator roles (Full Control Admin, Readonly Admin, and Sharing Admin)!
 Editing an unrestricted administrator account privilege can result in lost access to the system!
 {{< /hint >}}
 
