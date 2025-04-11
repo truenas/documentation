@@ -8,10 +8,12 @@ Use **ID Type** to select whether the ACE is for a user or a group.
 Enter the UID or GID in **ID** and adjust the permissions level in **Access**.
 
 Refer to the app **Run As Context** on the app details screen for default ID requirements.
-A user or group ID does not need to exist locally on TrueNAS or match the name configured in the container to grant an ACE.
-If the app has run-as users, you might need to add an ACL entry for these users for each dataset host path added.
-Some apps might also have other unique run-as users that need to be configured on the appropriate host path, but not necessarily on all of them.
-You do not need to add these users on the **Credentials > Users** screen to add the UID/GUI as an ACE entry for the host path dataset.
+A user or group ID does not need to exist locally on TrueNAS or match the name configured in the container.
+You do not need to add these users in **Credentials** to add the UID/GID as an ACE for the host path dataset.
+
+If the app has run-as users, you need to add an ACL entry for these users on the appropriate host path(s).
+For example, an app with multiple containers might include run-as users for the app itself, a redis container, and  a postgres container. 
+In this case, add an ACE for the app run-as user to hostpath(s) for the app itself, add an ACE for the redis run-as user to the redis storage hostpath, and select the **Automatic Permissions**  option to add permissions for the postgres run-as user to the postgres storage dataset.
 Failing to configure host path ACLs prevents the app from deploying!
 
 Select **Force Flag** to allow TrueNAS to update the application to the next version.
