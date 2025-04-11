@@ -2,22 +2,22 @@
 title: "Instances"
 description: "Tutorials for configuring the TrueNAS Instances feature and creating containers or virtual machines."
 geekdocCollapseSection: true
-aliases:
- - /scale/scaleuireference/virtualization/creatingmanagingvmsscale/
- - /scale/scaletutorials/virtualization/creatingmanagingvmsscale/
 weight: 11
 related: false
 aliases:
-- /scaletutorials/virtualization/
-- /scaletutorials/virtualization/addmanagevmdevicesscale/
+ - /scaletutorials/virtualization/
+ - /scale/scaletutorials/virtualization/
+ - /scaletutorials/virtualization/addmanagevmdevicesscale/
+ - /scale/scaletutorials/virtualization/creatingmanagingvmsscale/
+ - /scale/scaleuireference/virtualization/creatingmanagingvmsscale/
 tags:
  - vm
  - container
  - instances
 keywords:
-- nas data storage
-- software storage solutions
-- storage container virtualization
+ - nas data storage
+ - software storage solutions
+ - storage container virtualization
 ---
 
 {{< include file="/static/includes/25.04Virtualization.md" >}}
