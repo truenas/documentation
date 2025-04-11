@@ -274,7 +274,7 @@ Leave **Login Banner** empty to show just the login screen without interruption 
 
 {{< enterprise >}}
 Enterprise-licensed systems include the **Allow Directory Service users to access WebUI** option on the **Access Settings** screen.
-After enabling this option TrueNAS automatically creates a new entry, named as the domain admin group, in the **Privileges** screen table. For example, if the domain is *ad03.mydomain.ne*t, then you should see a group of that name listed as well as any the groups AD creates on the system.
+After enabling this option TrueNAS automatically creates a new entry, named as the domain admin group, in the **Privileges** screen table. For example, if the domain is *ad03.mydomain.net*, then you should see a group of that name listed as well as any the groups AD creates on the system.
 {{< /enterprise >}}
 
 ## Allowed IP Addresses Widget
