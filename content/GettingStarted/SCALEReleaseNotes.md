@@ -149,6 +149,7 @@ Notable changes since 25.04-RC.1:
   * `APP_NAME` is the name you entered in the application, for example “plex”.
   * `PCI_SLOT` is the pci slot identified in the error, for example "0000:2d:00.0”.
   * `GPU_UUID` is the UUID matching the pci slot that you retrieved with the above command.
+* Custom applications with TTY enabled do not display logs in the TrueNAS UI. This is due to an upstream bug, see https://github.com/docker/docker-py/issues/1394. Users experiencing this issue can resolve it by either disabling TTY or using `docker logs` from the command line.
 
 <a href="https://ixsystems.atlassian.net/issues/?filter=12306" target="_blank">Click here to see the latest information</a> about public issues discovered in 25.04.0 that are being resolved in a future TrueNAS release.
 
