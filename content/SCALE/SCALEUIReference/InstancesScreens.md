@@ -3,7 +3,8 @@ title: "Instances"
 description: "Provides information on the Instances screens and settings to add containers or virtual machines (VMs) to your TrueNAS system."
 weight: 80
 aliases:
-- /scaleuireference/virtualizationscreens/
+ - /scaleuireference/virtualizationscreens/
+ - /scale/scaleuireference/virtualizationscreens/
 tags:
  - vm
  - container
