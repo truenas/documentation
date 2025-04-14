@@ -10,7 +10,7 @@ tags:
  - reporting
 ---
 
-The **Reporting** screen displays graphs of system information for CPU, disk, memory, network, system functions, UPS, and ZF.
+The **Reporting** screen displays graphs of system information for CPU, disk, memory, network, system functions, UPS, and ZFS.
 Use the dropdown in the upper right corner to select between reporting graph display options.
 The **CPU** report displays by default.
 
