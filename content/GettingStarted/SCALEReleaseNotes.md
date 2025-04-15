@@ -109,8 +109,8 @@ For more details on feature flags, see [OpenZFS Feature Flags](https://openzfs.g
 
 ## 25.04.0
 
-{{< hint type="warning" >}}
-During the 25.04.0 release process, an issue was discovered with the update mechanism for users updating from 24.10 to 25.04.
+{{< hint type="caution" title="Update Train Issue and Resolution" >}}
+During the 25.04.0 release process, an issue was discovered with the update train selector method for users updating from 24.10 to 25.04.
 To resolve this issue, the 25.04.0 release is being republished with fixes for the update trains.
 The fixed release will be made available as soon as possible.
 {{< /hint >}}
