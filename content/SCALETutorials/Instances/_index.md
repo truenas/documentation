@@ -228,29 +228,13 @@ To create a new container, from the **Create Instance** screen:
 
    d. Click **Add** again to mount additional storage volumes.
 
-5. (Optional) Configure proxy settings to forward network connections between the host and the container.
-   This routes traffic from a specific address on the host to an address inside the instance, or vice versa, allowing the instance to connect externally through the host.
+5. {{< include file="/static/includes/InstanceNetworkProcedure.md" >}}
 
-   {{< trueimage src="/images/SCALE/Virtualization/CreateInstanceProxies.png" alt="Proxies" id="Proxies" >}}
+6. {{< include file="/static/includes/InstanceUSBProcedure.md" >}}
 
-   a. Click **Add** in the **Proxies** section to display a set of proxy configuration settings.
+7. {{< include file="/static/includes/InstanceGPUProcedure.md" >}}
 
-   b. Select the protocol option from the **Host Protocol** dropdown list to set the connection protocol for the TrueNAS host as **TCP** or **UDP**.
-
-   c. Enter a port in **Host Port** to define the TrueNAS port to map to the instance port on the container, for example *3600*.
-
-   d. Select the connection protocol for the container in **Instance Protocol**.
-      Options are **TCP** or **UDP**.
-
-   e. Enter the port number within the container in **Instance Port**, for example *80*, to map to the host port.
-
-6. {{< include file="/static/includes/InstanceNetworkProcedure.md" >}}
-
-7. {{< include file="/static/includes/InstanceUSBProcedure.md" >}}
-
-8. {{< include file="/static/includes/InstanceGPUProcedure.md" >}}
-
-9. Click **Create** to deploy the container.
+8. Click **Create** to deploy the container.
 
 ### Creating a Virtual Machine
 
@@ -280,17 +264,17 @@ To create a new virtual machine, from the **Create Instance** screen:
 
    c. Select one of the available **VM Image Options**: **Use a Linux Image** or **Upload ISO, import a zvol or use another volume**.
 
-      - Select **Use a Linux Image** to create the VM using a Linux image from [linuxcontainers.org](https://linuxcontainers.org/).
+      - Selecting **Use a Linux Image** creates the VM using a Linux image from [linuxcontainers.org](https://linuxcontainers.org/).
 
-         a. Click **Browse Catalog** to open the **Select Image** screen.
+         1. Click **Browse Catalog** to open the **Select Image** screen.
 
          {{< trueimage src="/images/SCALE/Virtualization/SelectImage.png" alt="Select Image Screen" id="Select Image Screen" >}}
 
-         b. Search or browse to choose an available image.
+         2. Search or browse to choose an available image.
 
-         c. Click **Select** in the row for your desired image.
+         3. Click **Select** in the row for your desired image.
 
-      - Select **Upload ISO, import a zvol or use another volume** to create the VM using an <file>.iso</file> image, import a zvol from a previously installed VM, or use an existing instances volume.
+      - Selecting **Upload ISO, import a zvol or use another volume** creates the VM using an <file>.iso</file> image, importing a zvol from a previously installed VM, or using an existing instances volume.
 
          Click **Select Volume** to open the **Volumes** screen.
 
@@ -305,28 +289,28 @@ To create a new virtual machine, from the **Create Instance** screen:
 
          - Creating a new volume:
 
-            a. Click **Create Volume** to open the **Create New Volume** dialog.
+            1. Click **Create Volume** to open the **Create New Volume** dialog.
 
             {{< trueimage src="/images/SCALE/Virtualization/InstancesCreateVolume.png" alt="Create New Volume Dialog" id="Create New Volume Dialog" >}}
 
-            b. Enter a name for the volume.
+            2. Enter a name for the volume.
 
-            c. Enter a size for the volume, for example *1 GiB*.
+            3. Enter a size for the volume, for example *1 GiB*.
 
-            d. Click **Create** to create the new volume.
+            4. Click **Create** to create the new volume.
 
          - Importing a Zvol:
 
             Use this option to migrate a previously configured VM, such as after updating from TrueNAS 24.10.
             See [Migrating Virtual Machines](https://www.truenas.com/docs/scale/25.04/gettingstarted/scalereleasenotes/#migrating-virtual-machines) from the 25.04 release notes for more information.
 
-            a. Click **Import Zvols** on the **Volumes** screen to open the **Import Zvol** dialog.
+            1. Click **Import Zvols** on the **Volumes** screen to open the **Import Zvol** dialog.
 
             {{< trueimage src="/images/SCALE/Virtualization/InstanceImportZvol.png" alt="Import Zvol Dialog" id="Import Zvol Dialog" >}}
 
-            b. Enter a path in **Select Zvols** or browse to select an existing Zvol.
+            2. Enter a path in **Select Zvols** or browse to select an existing Zvol.
 
-            c. Select a method to import the Zvol:
+            3. Select a method to import the Zvol:
 
              - Select **Clone** to clone and promote a temporary snapshot of the zvol into a custom storage volume.
                 This option retains the original zvol while creating an identical copy as an instances volume.
@@ -334,9 +318,9 @@ To create a new virtual machine, from the **Create Instance** screen:
              - Select **Move** to relocate the existing zvol to the ix-virt dataset as a volume.
          - Uploading an ISO file:
 
-            a. Click **Upload ISO** to open a file browser and select an <file>.iso</file> file from your client computer.
+            1. Click **Upload ISO** to open a file browser and select an <file>.iso</file> file from your client computer.
 
-            b. Locate your desired image file and then click **Open** to upload the file for use in instances.
+            2. Locate your desired image file and then click **Open** to upload the file for use in instances.
 
 2. Configure the CPU and memory settings.
 
@@ -615,46 +599,6 @@ Click the the <span class="material-icons">more_vert</span> icon to the right of
 Select [**Delete**](#deleting-disk-mounts) to delete the NIC mount.
 
 {{< trueimage src="/images/SCALE/Virtualization/DeleteNicDialog.png" alt="Delete Item Dialog" id="Delete Item Dialog" >}}
-
-Click **Confirm** to activate the **Continue** button.
-Click **Continue** to start the delete operation.
-
-### Managing Proxies
-
-Use the **Proxies** widget to view the network proxy settings configured for the instance.
-It allows you to manage these settings, including adding, editing, or removing proxies.
-Proxies are available for containers only and cannot be used with VMs.
-
-{{< trueimage src="/images/SCALE/Virtualization/ProxiesWidget.png" alt="Proxies Widget" id="Proxies Widget" >}}
-
-Click **Add** to open the [**Add Proxy**](#adding-or-editing-proxies) screen to configure a new proxy for the instance.
-
-For existing proxies, click <span class="material-icons">more_vert</span> to open the actions menu with options to [**Edit**](#adding-or-editing-proxies) or [**Delete**](#deleting-proxies) the proxy.
-
-#### Adding or Editing Proxies
-
-Use the **Add Proxy** or **Edit Proxy** screen to configure or modify a proxy setting attached to an instance.
-
-{{< trueimage src="/images/SCALE/Virtualization/AddProxyScreen.png" alt="Add Proxy Screen" id="Add Proxy Screen" >}}
-
-Select a **Host Protocol** to set the connection protocol for the TrueNAS host.
-Options are **TCP** or **UDP**.
-
-Enter a port number in **Host Port** to map to the instance port on the container, for example *3600*.
-
-Select an **Instance Protocol** to set the connection protocol for the container.
-Options are **TCP** or **UDP**.
-
-Enter a port number for the container in **Instance Port**, for example *80*.
-
-Click **Save** to apply changes.
-
-#### Deleting Proxies
-
-For existing proxies, click <span class="material-icons">more_vert</span> to open the actions menu.
-Select **Delete** to remove the proxy configuration.
-
-{{< trueimage src="/images/SCALE/Virtualization/DeleteProxyDialog.png" alt="Delete Item Dialog" id="Delete Item Dialog" >}}
 
 Click **Confirm** to activate the **Continue** button.
 Click **Continue** to start the delete operation.
