@@ -70,7 +70,7 @@ To configure a reporting exporter in SCALE, you need the:
 * Port number the reporting service listens on.
   If using another TrueNAS system with a reporting application, this is the port number the TrueNAS system listens on (port:80)
 
-For more information on reporting exporter settings, see [Add Reporting Exporter]({{< relref "ReportingScreensSCALE.md#add-reporting-exporter" >}}).
+For more information on reporting exporter settings, see [Add Reporting Exporter]({{< ref "ReportingScreensSCALE.md#add-reporting-exporter" >}}).
 
 Go to **Reporting** and click on **Exporters** to open the **Reporting Exporters** screen.
 Any reporting exporters configured on the system display on the **Reporting Exporters** screen.

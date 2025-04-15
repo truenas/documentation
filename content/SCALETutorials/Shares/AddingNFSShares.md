@@ -134,7 +134,7 @@ To configure NFS service settings from the **Services** screen, click <i class="
 To configure NFS service settings from the **Shares > Unix Shares (NFS)** widget, click the **Config Service** from the <span class="material-icons">more_vert</span> dropdown menu on the widget header to open the **NFS** service screen.
 Unless you need specific settings, we recommend using the default NFS settings.
 
-When TrueNAS is already connected to [Active Directory]({{< relref "/SCALEUIReference/Credentials/DirectoryServices/_index.md" >}}), setting **NFSv4** and **Require Kerberos for NFSv4** also requires a [Kerberos Keytab]({{< relref "/SCALEUIReference/Credentials/DirectoryServices/_index.md" >}}).
+When TrueNAS is already connected to [Active Directory]({{< ref "/SCALEUIReference/Credentials/DirectoryServices/" >}}), setting **NFSv4** and **Require Kerberos for NFSv4** also requires a [Kerberos Keytab]({{< ref "/SCALEUIReference/Credentials/DirectoryServices/" >}}).
 
 ## Connecting to the NFS Share
 Although you can connect to an NFS share with various operating systems, we recommend using a Linux/Unix OS.

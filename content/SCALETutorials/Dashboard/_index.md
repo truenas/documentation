@@ -8,7 +8,7 @@ tags:
 related: true
 ---
 
-This section contains tutorials for the [main Dashboard]({{< relref "SCALEDashboard.md" >}}).
+This section contains tutorials for the [main Dashboard]({{< ref "SCALEDashboard" >}}).
 
 ## Customizing the Dashboard
 You can customize the main **Dashboard** by moving, adding, or deleting widgets.

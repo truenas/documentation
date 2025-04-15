@@ -20,4 +20,4 @@ Select either **User** in **Who**, then the user name in **User**, and then set 
 
 Click **Save**.
 
-See [Permissions]({{< relref "PermissionsSCALE.md" >}}) for more information on setting user and group settings.
+See [Permissions]({{< ref "PermissionsSCALE" >}}) for more information on setting user and group settings.
