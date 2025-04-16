@@ -37,4 +37,4 @@ Never modify the settings for the standard pre-defined privileges (listed below)
 Pre-defined TrueNAS privileges are:
 * **Read-Only Administrator** - Allows the user to view settings but not make changes in the UI.
 * **Sharing Administrator** - Allows the user to create new shares and the share dataset.
-* **Local Administrator** - Gives full control (read/write/exeute permissions) to the user.
+* **Local Administrator** - Gives full control (read/write/execute permissions) to the user.
