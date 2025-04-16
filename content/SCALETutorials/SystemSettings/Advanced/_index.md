@@ -96,9 +96,9 @@ Entering an IP address limits access to the system to only the address(es) enter
 
 ## Managing Access (WebSocket Sessions)
 
-{{< include file="/static/includes/AccessSettingsWidget.md" >}}
+{{< include file="/static/includes/AccessWidget.md" >}}
 
-<div class="noprint">
+{{< include file="/static/includes/ConfigureAccessSettings.md" >}}
 
 ## Setting Up FIPS and STIG
 {{< enterprise >}}
@@ -120,6 +120,7 @@ The system prompts you to reboot.
 
 The system reboot takes several minutes to complete before showing the login screen.
 
+<div class="noprint">
 ## Contents
 
 {{< children depth="2" description="true" >}}
