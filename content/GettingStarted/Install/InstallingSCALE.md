@@ -82,8 +82,7 @@ The command to verify the checksum varies by operating system:
 * BSD: use command `sha256 isofile`
 * Linux: use command `sha256sum isofile`
 * Mac: use command `shasum -a 256 isofile`
-
-Freeware or online checksum utilities are available for Windows users.
+* Windows: use command `certutil` or `get-filehash`
 
 The value produced by running the command must match the value shown in the <kbd>sha256.txt</kbd> file.
 Different checksum values indicate a corrupted installer file that you should not use.
