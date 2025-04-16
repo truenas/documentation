@@ -20,10 +20,12 @@ Use carriage returns to break up a large block of text and to improve the readab
 After saving the text. The next time an administrative user logs into the UI, a banner screen shows.
 To advance to the login screen, click **Continue**.
 
-{{< enterprise >}}
 #### Allowing Directory Service Users to Access the UI
 
-TrueNAS allows Enterprise users to show the UI to users in an Active Directory group.
+{{< enterprise >}}
+Only TrueNAS allows Enterprise users to show the UI to users in an Active Directory group.
+{{< /enterprise >}}
+
 To configure this access, first, add the selected AD users to a group that is granted a TrueNAS privilege that permits it, and enable the **Allow Directory Service users to access WebUI** option on the **Access Settings** screen. This option only shows on Enterprise-licensed systems.
 
 {{< trueimage src="/images/SCALE/SystemSettings/AccessSettingsScreenEnterprise.png" alt="Access Settings Screen Enterprise Systems" id="Access Settings Screen Enterprise Systens" >}}
@@ -35,5 +37,4 @@ Never modify the settings for the standard pre-defined privileges (listed below)
 Pre-defined TrueNAS privileges are:
 * **Read-Only Administrator** - Allows the user to view settings but not make changes in the UI.
 * **Sharing Administrator** - Allows the user to create new shares and the share dataset.
-* **Local Administrator** - Gives full control (read/write/exeute permissions) to the user.
-{{< /enterprise >}}
+* **Local Administrator** - Gives full control (read/write/execute permissions) to the user.
