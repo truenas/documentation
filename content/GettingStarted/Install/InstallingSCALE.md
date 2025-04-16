@@ -17,9 +17,9 @@ After you [download](https://www.truenas.com/download-tn-scale/) the <kbd>.iso</
 This article describes verifying the <kbd>.iso</kbd> file and installing TrueNAS using that file, and selecting the type of installation as either on [physical hardware](#installing-on-physical-hardware) or a [virtual machine (VM)](#installing-on-a-virtual-machine).
 
 {{< enterprise >}}
-TrueNAS Enterprise customers should receive their systems already installed and ready for UI configuration. If there are any issues with that require you to install or re-install TrueNAS, contact TrueNAS Enterprise Support for assistance.
+TrueNAS Enterprise customers should receive their systems already installed and ready for UI configuration. If there are any issues with that require you to install or reinstall TrueNAS, contact TrueNAS Enterprise Support for assistance.
 
-Enterprise customers with High Availability (HA) systems should not attempt to re-install their systems on their own. The dual controller install process is complicated and the risk of causing serious network issues is high. Contact TrueNAS Enterprise Support for assistance!
+Enterprise customers with High Availability (HA) systems should not attempt to reinstall their systems independently. The dual controller installation process is complicated, and the risk of causing serious network issues is high. Contact TrueNAS Enterprise Support for assistance!
 
 {{< expand "Contacting Support" "v" >}}
 {{< include file="/static/includes/iXsystemsSupportContact.md" >}}
@@ -101,7 +101,7 @@ TrueNAS is very flexible and can run on any x86_64 compatible (Intel or AMD) pro
 TrueNAS requires at least 8GB of RAM (more is better) and a 20GB Boot Device.
 
 #### Preparing the Install File
-Physical hardware requires burning the TrueNAS installer to a device, typically a CD or removable USB device.
+Physical hardware requires burning the TrueNAS installer to a device, typically a CD or a removable USB device.
 This device is temporarily attached to the system to install TrueNAS to the system permanent boot device.
 
 {{< expand "Writing the TrueNAS installer to a USB stick on Linux" "v" >}}
@@ -130,7 +130,7 @@ Before you begin:
 
 With the installer added to a device (CD or USB), you can now install TrueNAS onto the desired system using the TrueNAS installer.
 
-Insert the install media and reboot or boot the system.
+Insert the installation media and reboot or boot the system.
 At the motherboard splash screen, use the hotkey defined by your motherboard manufacturer to boot into the motherboard UEFI/BIOS.
 
 Choose to boot in **UEFI mode** or **legacy CSM/BIOS mode**.
@@ -141,7 +141,7 @@ If your system supports SecureBoot, and you have not disabled it or set it to **
 
 Select the install device as the boot drive, exit, and reboot the system.
 If the USB stick is not shown as a boot option, try a different USB slot.
-Slots available for boot differs by hardware. For optimal performance, consider using NVMe S.M.A.R.T. tests to ensure the reliability of your storage devices before installation.
+Slots available for boot differ by hardware. For optimal performance, consider using NVMe S.M.A.R.T. tests to ensure the reliability of your storage devices before installation.
 
 #### Using the TrueNAS Installer
 {{< hint type=important >}}
@@ -154,7 +154,7 @@ After the system boots into the installer, follow these steps.
 {{< expand "TrueNAS Installer Instructions" "v" >}}
 {{< include file="/static/includes/SCALEInstallerProcedure.md" >}}
 
-After following the steps to install, reboot the system and remove the install media.
+After following the steps to install, reboot the system and remove the installation media.
 
 {{< expand "Troubleshooting" "v">}}
 If the system does not boot into TrueNAS, there are several things you can check to resolve the situation:
@@ -178,16 +178,16 @@ Because TrueNAS is built and provided as an <kbd>.iso</kbd> file, it works on al
 This section describes installing on a VM using [VMware Workstation Player](https://www.vmware.com/products/workstation-player/workstation-player-evaluation.html) on Windows.
 
 #### Minimum Virtual Machine Settings
-Regardless of virtualization application, use these minimum settings:
+Regardless of the virtualization application, use these minimum settings:
 
 * RAM: at least 8192MB (8GB)
-* DISKS: two virtual disks with at least 16GB, one for the operating system and boot environments and at least one additional virtual disk to use as data storage.
+* DISKS: two virtual disks with at least 16GB, one for the operating system and boot environments, and at least one additional virtual disk to use as data storage.
 * NETWORK: Use NAT, bridged, or host-only depending on your host network configuration.
 
-#### Networking Checks for VMWare
-When installing TrueNAS in a VMWare VM, double-check the virtual switch and VMWare port group.
-A misconfigured virtual switch or VMWare port group can cause network connection errors for TrueNAS systems with additional applications installed inside the TrueNAS VM.
-Enable **MAC spoofing** and **promiscuous mode** on the switch first, and then the port group the VM is using. 
+#### Networking Checks for VMware
+When installing TrueNAS in a VMware VM, double-check the virtual switch and VMware port group.
+A misconfigured virtual switch or VMware port group can cause network connection errors for TrueNAS systems with additional applications installed inside the TrueNAS VM.
+Enable **MAC spoofing** and **promiscuous mode** on the switch first, and then on the port group the VM is using. 
 
 If not using static IP addresses, configure your VM to use DHCP to assign IP addresses for seamless network connectivity.
 
@@ -205,22 +205,22 @@ The procedure for creating a TrueNAS VM is the same for most hypervisors.
      Bridged mode is optimal as this treats the network card as one plugged into a simple switch on the existing network.
 
    * Identify the OS you plan to install on the VM. This is required by some products. The ideal option is **Debian 11 64 bit**.
-     If not available, try options like Debian 11, Debian 64 bit, 64 bit OS, or other.
+     If not available, try options like Debian 11, Debian 64-bit, 64-bit OS, or others.
 
-   * Install in BIOS mode for VMWare hypervisors.
+   * Install in BIOS mode for VMware hypervisors.
 
-   * Ensure the VM has sufficient memory and disk space. For TrueNAS set to at least 8 GB RAM and 20 GB disk space.
+   * Ensure the VM has sufficient memory and disk space. For TrueNAS, set to at least 8 GB RAM and 20 GB disk space.
      Not all hypervisors allocate enough memory by default.
 
 2. Boot the VM and install TrueNAS as usual.
 
 3. After the installation completes, shut down the VM instead of rebooting, and disconnect the CD/DVD from the VM before rebooting the VM.
 
-4. After rebooting into TrueNAS, install VM tools if applicable for your VM, and if they exist for Debian 11, or ensure they loaded on boot.
+4. After rebooting into TrueNAS, install VM tools if applicable for your VM, and if they exist for Debian 11, or ensure they load on boot.
 {{< /expand >}}
 
 #### Installing Using VMWare Player 15.5
-This example describes installing TrueNAS using VMWare Player 15.5.
+This example describes installing TrueNAS using VMware Player 15.5.
 
 {{< expand "Installation Instructions" "v" >}}
 Open VMware Player and click **Create a New Virtual Machine** to enter the New Virtual Machine Wizard.
@@ -254,7 +254,7 @@ Open VMware Player and click **Create a New Virtual Machine** to enter the New V
 #### Adding Virtual Disks
 After installing TrueNAS on a virtual machine (VM), add virtual disks to the VM.
 You need a minimum of two disks, 16 GB each.
-One disk is for the boot environment the other for data storage.
+One disk is for the boot environment, and the other for data storage.
 
 {{< expand "Adding Virtual Disk Instructions" "v" >}}
 
@@ -268,7 +268,7 @@ One disk is for the boot environment the other for data storage.
 
 4. Select **Store virtual disk as single file**.
 
-5. Enter a name and chose a location for the new virtual disk.
+5. Enter a name and choose a location for the new virtual disk.
 
 Repeat this process until enough disks are available for TrueNAS to create ideal storage pools.
 This depends on your specific TrueNAS use case.
@@ -288,8 +288,8 @@ After the TrueNAS installation completes, reboot the system.
 The [Console Setup menu]({{< relref "ConsoleSetupMenuScale.md" >}}) displays when the system boots successfully.
 {{< /expand >}}
 
-Congratulations, TrueNAS is now installed!
+Congratulations! TrueNAS is now installed.
 
-The next step is to configure TrueNAS network and general settings.
+The next step is to configure the TrueNAS network and general settings.
 Experienced users can use the [Console Setup Menu]({{< relref "ConsoleSetupMenuScale.md" >}}) to configure network settings, but if you are unfamiliar with the Console setup menu and how network configuration works, we recommend using the TrueNAS UI to [configure settings]({{< relref "UIConfigurationSCALE.md" >}}).
 TrueNAS uses DHCP to assign an IP address to the primary system interface and displays it at the top of the Console Setup menu screen. Use this IP address to log into the web UI.
