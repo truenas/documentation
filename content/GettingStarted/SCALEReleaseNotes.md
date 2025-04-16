@@ -56,6 +56,11 @@ More details are available from [Software Releases](https://www.truenas.com/docs
 
 * {{< include file="/static/includes/NetdataUI.md" >}}
 
+* To prevent unexpected failures in SMB shares, TrueNAS automatically disables SMB2/3 lease support and AAPL extensions (typically used to configure Time Machine) globally when [multiprotocol SMB/NFS shares]({{< relref "MixedModeShares.md" >}}) are enabled ([NAS-133680](https://ixsystems.atlassian.net/browse/NAS-133680)).
+
+  This means that in TrueNAS 25.04 and later multiprotocol shares are incompatable with Time Machine shares on the same system.
+  To prevent service interruption, Time Machine users should make sure that no multiprotocol shares are configured on TrueNAS.
+
 ### Migrating Virtual Machines
 
 {{< include file="/static/includes/Incus.md" >}}
