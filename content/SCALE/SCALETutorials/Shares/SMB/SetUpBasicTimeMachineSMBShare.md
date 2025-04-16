@@ -14,7 +14,7 @@ tags:
 
 {{< include file="/static/includes/TimeMachineMultiprotocol.md" >}}
 
-TrueNAS uses predefined setting options to establish an SMB share that fits a predefined purpose, such as a basic time machine share.
+TrueNAS uses predefined setting options to establish an SMB share that fits a predefined purpose, such as a basic Time Machine share.
 
 ## Setting Up a Basic Time Machine SMB Share
 
@@ -30,7 +30,7 @@ To set up a basic time machine share:
 After creating the share, enable the SMB service.
 
 When accessing from a Windows client, having more than 512 snapshots on the TrueNAS box can lead to performance issues, as the Windows client often attempts to load all snapshots into the 'Previous Versions' tab.
-To avoid this, users should maintain fewer than 512 snapshots, or consider accessing from a non-Windows client. Alternatively, configuring snapshot lifetimes or creating an automatic deletion policy via the [Periodic Snapshot Tasks screen]({{< relref "PeriodicSnapshotTasksSCALE.md" >}}) can help users manage the snapshot count more effectively.
+To avoid this, users should maintain fewer than 512 snapshots or consider accessing from a non-Windows client. Alternatively, configuring snapshot lifetimes or creating an automatic deletion policy via the [Periodic Snapshot Tasks screen]({{< relref "PeriodicSnapshotTasksSCALE.md" >}}) can help users manage the snapshot count more effectively.
 
 The latest maintained macOS versions allow setting the maximum time machine backup size from the macOS UI.
 Setting this from the client side is generally recommended for better share flexibility and macOS coordination.
@@ -57,11 +57,11 @@ If you change the name, follow the naming conventions for:
 Set the **Purpose** to **Basic time machine share**.
 
 Select **Enabled** to allow sharing of this path when the SMB service is activated.
-Leave it cleared if you want to disable the share without deleting the configuration.
+Leave it clear if you want to disable the share without deleting the configuration.
 
 Finish customizing the share, then click **Save**.
 
-Do not start the SMB service when prompted, start it after configuring the SMB service.
+Do not start the SMB service when prompted; start it after configuring the SMB service.
 
 ### Modifying the SMB Service
 Click on the <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i> on the **Windows (SMB) Share** widget, then click **Configure Service** to open the **SMB Service** screen.
