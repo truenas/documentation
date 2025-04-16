@@ -1,3 +1,41 @@
+Process time: 2025-04-11 15:53:40
+Initiated by: Dan Pizappi
+
+1167 files reviewed.
+30 files deleted.
+The following files were deleted:
+C:\Users\iXUser\Documents\GitHub\documentation\static\includes\EarlyReleaseWarning.md
+C:\Users\iXUser\Documents\GitHub\documentation\static\includes\apps\CustomAppIntro.md
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\TrueNAS_Open_Enterprise_Storage.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Apps\ConvertToCustomAppConfirm.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Apps\ConvertToCustomAppMenu.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Apps\CreateDockerRegistryOther.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Apps\CustomAppEditWindow.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Reporting\NetdataCredentialsDialog.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Reporting\NetdataUI.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Virtualization\AddVMGPU.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Virtualization\AddVMInstallMedia.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Virtualization\AddVMMemory.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Virtualization\AddVMNetwork.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Virtualization\AddVMOperSys.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Virtualization\CreateInstanceScreen.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Virtualization\CreateInstanceZvol.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Virtualization\CreateVirtualMachineDisks.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Virtualization\CreateVMWInstallMediaUploadSCALE.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Virtualization\DeleteVirtualMachine.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Virtualization\EditDeviceDiskScreen.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Virtualization\InstancesConfigurationMenu.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Virtualization\ScaleDebianVMOsSystem.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Virtualization\VirtualMachinesScreenwithVMDetails.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Virtualization\VMAddDeviceCDROM.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Virtualization\VMAddDeviceDisk.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Virtualization\VMAddDeviceDisplay.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Virtualization\VMAddDeviceNIC.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Virtualization\VMAddDevicePCIpass.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Virtualization\VMAddDeviceUSBpass.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Virtualization\VMDevicesListed.png
+
+----------------------------------------
 Process time: 2025-02-27 17:35:38
 Initiated by: Dan Pizappi
 

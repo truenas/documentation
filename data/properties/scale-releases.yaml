@@ -5,39 +5,39 @@ product: "TrueNAS"
 title: '<img src="/images/Community_Edition.png" class="edition-logo" alt="TrueNAS Community Edition"> | <img src="/images/Enterprise.png" class="edition-logo" alt="TrueNAS Enterprise">'
 majorVersions:
   - lifecycle: "Previous"
-    name: "TrueNAS 24.04 - Dragonfish"
-    releaseName: "Dragonfish"
-    releases:
-      - name: "24.04.2.5"
-        type: "Maintenance"
-        link: "https://www.truenas.com/docs/scale/24.04/gettingstarted/scalereleasenotes/#240425-changelog"
-        releaseDate: "2024-11-08"
-        latest: true
-  - lifecycle: "Current"
     name: "TrueNAS 24.10 - Electric Eel"
     releaseName: "Electric Eel"
     releases:
-      - name: "24.10.2"
+      - name: "24.10.2.1"
         type: "Maintenance"
-        link: "https://www.truenas.com/docs/scale/24.10/gettingstarted/scalereleasenotes/#24102-changelog"
-        releaseDate: "2025-01-28"
+        link: "https://www.truenas.com/docs/scale/24.10/gettingstarted/scalereleasenotes/#241021"
+        releaseDate: "2025-04-03"
         latest: true
-  - lifecycle: "Next"
+  - lifecycle: "Current"
     name: "TrueNAS 25.04 - Fangtooth"
     releaseName: "Fangtooth"
     releases:
-      - name: "25.04-RC.1"
-        type: "Early"
-        link: "https://www.truenas.com/docs/scale/25.04/gettingstarted/scalereleasenotes/#2504-rc1"
-        releaseDate: "2025-03-11"
-        latest: true
       - name: "25.04.0"
         type: "Stable"
-        link: ""
+        link: "https://www.truenas.com/docs/scale/25.04/gettingstarted/scalereleasenotes/#25040"
         releaseDate: "2025-04-15"
-        latest: false
-      - name: "25.04 Nightlies"
-        type: "Experimental"
+        latest: true
+      - name: "25.04.1"
+        type: "Maintenance"
         link: "https://www.truenas.com/docs/scale/25.04/gettingstarted/scalereleasenotes/"
-        releaseDate: "2024-08-13"
+        releaseDate: "2025-05-20"
+        latest: false
+  - lifecycle: "Next"
+    name: "TrueNAS 25.10 - Goldeye"
+    releaseName: "Goldeye"
+    releases:
+      - name: "25.10 Nightlies"
+        type: "Experimental"
+        link: "https://www.truenas.com/docs/scale/25.10/gettingstarted/scalereleasenotes/"
+        releaseDate: "2025-01-27"
+        latest: true
+      - name: "25.10-BETA.1"
+        type: "Early"
+        link: ""
+        releaseDate: ""
         latest: false

@@ -84,7 +84,7 @@ Dataset widgets are:
 * **[ZFS Encryption](#zfs-encryption-widget)**
 
 ### Datasets Details Widget
-The **Dataset Details** widget lists information on dataset type, sync type, compression level, case sensitivity, Atime, and ZFS deduplication settings.
+The **Dataset Details** widget lists information on dataset type, sync type, compression, case sensitivity, Atime, and ZFS deduplication settings.
 **Path** shows the full path for the selected dataset.
 
 A root dataset path shows the pool name alone.
