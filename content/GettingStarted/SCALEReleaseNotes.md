@@ -138,6 +138,11 @@ Notable changes since 25.04-RC.1:
 
 ### 25.04.0 Known Issues
 
+* The SSH service does not start if certain user-provided SSH auxiliary parameters are configured ([NAS-135367](https://ixsystems.atlassian.net/browse/NAS-135367)).
+  This is known to affect `match` parameters minimally, but might impact other parameters as well.
+
+* A validation check intended to prevent users from creating multiple VMs from the sam zvol source has the unintended consequence of preventing attaching the same virtual disk to multiple Instance containers ([NAS-135371](https://ixsystems.atlassian.net/browse/NAS-135371)).
+
 * Some users of TrueNAS Apps attempting to configure GPU allocation report the error `Expected [uuid] to be set for GPU inslot [<some pci slot>] in [nvidia_gpu_selection])` (see ([NAS-134152](https://ixsystems.atlassian.net/browse/NAS-134152)).
 
   Users experiencing this error should follow the steps below for a one time fix that should not need to be repeated.
