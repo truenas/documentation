@@ -12,7 +12,7 @@ Note, the secret seed does not store local users passwords in any form, only a h
 What happens if I do not save the secret seed?
 You might be prompted to enter a default password or reset the password.
 The UI should allow users to log into the system with their current password but might be prompted to enter a new password.
-If users cannot log into the UI, they can connect a keyboard and monitor to the system and enter a new password if they cannot log into the web UI login with or reset the current password.
+Users can connect a keyboard and monitor to the system and enter a new password if they cannot log into the web UI or reset the current password.
 
 Is there a default password for the system?
 Enterprise users are issued a password to enter if prompted for such a password after the system resets.
