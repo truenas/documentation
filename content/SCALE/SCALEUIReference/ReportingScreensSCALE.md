@@ -119,8 +119,7 @@ The UPS service must be [configured]({{< relref "upsservicesscale.md" >}}) with 
 Shows graphs of the ARC size, hit ratio, ARC requests demand_data, demand_metadata, prefetch_data, and prefetch_metadata with the Arc and L2 gigabytes and hits (%), and the hits, misses, and total number of requests.
 ZFS graphs show compressed physical ARC size, hit ratio, demand data, demand metadata, and prefetch data and metadata.
 
-{{< trueimage src="/images/SCALE/Reporting/ZFSReportingActualHitsHitsRate.png" alt="ZFS ARC Actual Cache Hits Rate and ARC Hit Rate" id="ZFS ARC Actual Cache Hits Rate and ARC Hit Rate" >}}
-{{< trueimage src="/images/SCALE/Reporting/ZFSReportingARCSizeResult.png" alt="ZFS ARC Size and ARC Result" id="ZFS ARC Size and ARC Result" >}}
+{{< trueimage src="/images/SCALE/Reporting/ZFSReportingActualHitsHitsRate.png" alt="ZFS ARC Reporting Graphs" id="ZFS ARC Reporting Graphs" >}}
 
 ## Reporting Exporters Screen
 
