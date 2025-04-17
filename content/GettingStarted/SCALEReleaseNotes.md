@@ -143,8 +143,6 @@ Notable changes since 25.04-RC.1:
 
 ### 25.04.0 Known Issues
 
-* Errors with importing a storage pool with instances from early 25.04 releases into a fresh install of 25.04.0 ([NAS-135412](https://ixsystems.atlassian.net/browse/NAS-135412)).
-
 * The SSH service does not start if certain user-provided SSH auxiliary parameters are configured ([NAS-135367](https://ixsystems.atlassian.net/browse/NAS-135367)).
   This is known to affect `match` parameters minimally, but might impact other parameters as well.
 
