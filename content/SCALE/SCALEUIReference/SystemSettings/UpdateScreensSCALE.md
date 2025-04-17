@@ -62,7 +62,7 @@ The **Manual Update** screen shows after clicking **Save Configuration** or **Do
 **Choose File** opens a browse window where you can locate the downloaded update configuration file.
 
 The **Update File Temporary Storage Location** dropdown list includes two options:
-* **Memory Device** that sets the mount location to one on the dropdown list, and to keep a copy in the server.
-* A mount location on the system designating where on the system to store the upgrade file.
+* **Memory Device** that sets the mount location to one you select on the dropdown list.
+* A mount location on the system designating where on the system to store the upgrade file. For example, a pool or dataset path on your system.
 
 **Apply Update** to start the installation.
