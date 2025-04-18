@@ -37,8 +37,8 @@ All future applications, as well as those added to the TrueNAS Apps catalog afte
 However, applications that were in the TrueNAS Apps catalog before implementation of this feature require OS-level changes to enable support.
 Catalog updates to provide host IP port functionality to these applications are scheduled for June 1, 2025.
 Previously installed versions of these apps do not automatically update after this point.
-Users need to manually delete and redeploy the app to have the new version with IP port binding.
-Automatic updates for apps is expected to resume after this point.
+Users need to manually remove and redeploy the app to have the new version with IP port binding.
+Automatic updates for apps resume after this point.
 
 {{< expand "Applications that do not currently support host IP port binding" "v" >}}
 
