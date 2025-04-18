@@ -140,7 +140,7 @@ When STIG (and FIPS) are enabled, auditing includes these events:
 * Privilege changes
 * Log-ins and other system access events.
   Account log-ins are tracked from two distinct sources (UI and SSH)
-* Kernel modlue load/unload
+* Kernel module load/unload
 * Audit log modifications and attempts to modify audit logs
 * Security object modifications and attempts to modify security objects
 {{< /expand >}}
