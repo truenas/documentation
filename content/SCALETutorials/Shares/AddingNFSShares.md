@@ -87,11 +87,11 @@ To tune the NFS share access permissions or define authorized networks, click **
 
 Select **Read-Only** to prohibit writing to the share.
 
-To map user permissions to the root user, enter a string or select the user from the **Maproot User** dropdown list.
-To map the user permissions to all clients, enter a string or select the user from the **Mapall User** dropdown list.
+To map client credentials to the root user, enter a string or select the user from the **Maproot User** dropdown list.
+To map client credentials to all users, enter a string or select the user from the **Mapall User** dropdown list.
 
-To map group permissions to the root user, enter a string or select the group from the **Maproot Group** dropdown list.
-To map the group permissions to all clients, enter a string or select the group from the **Mapall Group** dropdown list.
+To map group credentials to the root user, enter a string or select the group from the **Maproot Group** dropdown list.
+To map group credentials to all users, enter a string or select the group from the **Mapall Group** dropdown list.
 
 Select an option from the **Security** dropdown. If you select **KRB5** security, you can use a Kerberos ticket. Otherwise, everything is based on IDs.
 
