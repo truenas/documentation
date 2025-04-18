@@ -93,11 +93,11 @@ Only the **Access** settings display on the **Advanced Options** screen.
 | Setting | Description |
 |---------|-------------|
 | **Read-Only** | Select to prohibit writing to the share. |
-| **Maproot User** | Enter a string or select a user from the dropdown to apply permissions for that user to the *root* user. |
-| **Maproot Group** | Enter a string or select a group from the dropdown to apply permissions for that group to the *root* user. |
-| **Mapall User** | Enter a string or select a user to apply permission for the chosen user to all clients. |
-| **Mapall Group** | Enter a string or select a group to apply permission for the chosen group to all clients. |
-| **Security** | Select a security option from the dropdown list. Options are **SYS**, **KRB5**, **KRB5I**, **KRB5P**. Selecting **KRB5** allows you to use a Kerberos ticket. |
+| **Maproot User** | Enter a string or select a user from the dropdown to map root (UID 0) access from clients to the specified user. |
+| **Maproot Group** | Enter a string or select a group from the dropdown to map root group access from clients to the specified group. |
+| **Mapall User** | Enter a string or select a user to map all client users to the specified user. |
+| **Mapall Group** | Enter a string or select a group to map all client users to the specified group. |
+| **Security** | Select a security option from the dropdown list. Options are **SYS**, **KRB5**, **KRB5I**, **KRB5P**. Selecting **KRB5** allows clients to authenticate using a Kerberos ticket. |
 {{< /truetable >}}
 
 #### Security Types
