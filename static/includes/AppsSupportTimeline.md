@@ -9,7 +9,7 @@ Due to breaking changes involved in enabling host IP port binding, **June 1, 202
 Migrate from 24.04 to 24.10 before June 1, 2025, to ensure automatic app migration.
 
 Applications installed on 24.10 do not automatically update after June 1, 2025.
-To resume automatic updates, 24.10 deployed apps need to be manually deleted and redeployed.
+To resume automatic updates, 24.10 deployed apps need to be manually removed and redeployed.
 
 <div class="no-highlight-table">
 <table>
