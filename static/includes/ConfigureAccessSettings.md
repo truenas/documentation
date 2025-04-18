@@ -23,9 +23,10 @@ To advance to the login screen, click **Continue**.
 #### Allowing Directory Service Users to Access the UI
 
 {{< enterprise >}}
-Only TrueNAS allows Enterprise users to show the UI to users in an Active Directory group.
+Only Enterprise-licensed systems allow TrueNAS web UI access for Directory Service accounts
 {{< /enterprise >}}
 
+TrueNAS allows Enterprise users to show the UI to users in an Active Directory group.
 To configure this access, first, add the selected AD users to a group that is granted a TrueNAS privilege that permits it, and enable the **Allow Directory Service users to access WebUI** option on the **Access Settings** screen. This option only shows on Enterprise-licensed systems.
 
 {{< trueimage src="/images/SCALE/SystemSettings/AccessSettingsScreenEnterprise.png" alt="Access Settings Screen Enterprise Systems" id="Access Settings Screen Enterprise Systens" >}}
