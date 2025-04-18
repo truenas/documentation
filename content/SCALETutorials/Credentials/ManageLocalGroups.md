@@ -92,7 +92,6 @@ Pre-defined TrueNAS privileges are:
 * **Read-Only Administrator** - Allows the user to view settings but not make changes in the UI.
 * **Sharing Administrator** - Allows the user to create new shares and the share dataset.
 * **Local Administrator** - Gives full control (read/write/execute permissions) to the user.
-
 {{< /hint >}}
 
 Active Directory can provision groups in TrueNAS or you can add new groups that you assign to users in AD.
