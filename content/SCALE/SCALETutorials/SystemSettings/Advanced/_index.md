@@ -106,7 +106,48 @@ Entering an IP address limits access to the system to only the address(es) enter
 Only Enterprise-licensed systems show the **Security** widget and have access to FIPS and STIG settings.
 {{< /enterprise >}}
 
-To configure FIPS or STIG compliance on a TrueNAS server, you must first configure two-factor authentication for an admin user with full permissions.
+### Before You Begin
+
+Consider the following and prepare before enabling STIG and FIPS security settings. Enterprise customers should contact Support for assistance.
+
+When STIG (and FIPS) are enabled:
+
+* TrueNAS cannot issue API keys and existing API keys cannot be used for authentication. Only user credentials and two-factor authentication are accepted.
+* SSH log-ins are harder and require a cryptographic algorithm.
+* Usage stats are not reported and the **Usage Collection** option is disabled.
+* One-time passwords configured for administration users can only be used one time and expire after 24 hours.
+  After logging in with the OTP, the system prompts the user to immediately change the password and set up two-factor authentication.
+* TrueNAS is limited to a maximum of 10 concurrent sessions.
+  Account locks for 15 minutes after three consecutive failed login attempts.
+* Password aging rules apply to SMB protocol. After a failed login attempt, users with expired passwords receive a password-expired message.
+* TrueNAS prompts users to change their passwords when logging in when the system flags the account requiring this change.
+  Users cannot reuse a password if it is marked as used within the last five passwords in the history file. Passwords must be 15 characters in length.
+* TrueNAS updates must be a signed update file provided by TrueNAS.
+
+{{< expand "What features are not available?" "v" >}}
+When enabled, STIG disables these features:
+* Virtualization
+* Apps
+* TrueCommand
+* TrueConnect (available in the near future)
+{{< /expand >}}
+
+{{< expand "What events are included in auditing?" "v" >}}
+When STIG (and FIPS) are enabled, auditing includes these events:
+
+* Account creation events
+* Privilege commands (with full text of the commands run)
+* Privilege changes
+* Log-ins and other system access events.
+  Account log-ins are tracked from two distinct sources (UI and SSH)
+* Kernel modlue load/unload
+* Audit log modifications and attempts to modify audit logs
+* Security object modifications and attempts to modify security objects
+{{< /expand >}}
+
+### Configuring STIG and FIPS
+
+To set up FIPS or STIG compliance on a TrueNAS server, you must first configure two-factor authentication for an admin user with full permissions.
 
 After configuring two-factor authentication, go to **System > Advanced Settings** and locate the **Security** widget.
 
