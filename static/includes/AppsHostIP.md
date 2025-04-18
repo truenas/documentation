@@ -1,6 +1,6 @@
 &NewLine;
 
-Application host IP port binding is being developed for all applications in the TrueNAS Apps catalog, starting with TrueNAS 25.04.
+Application host IP port binding is being developed for all applications in the TrueNAS Apps catalog.
 This feature allows per-app selection of any IP address from the available aliases assigned to an interface to bind the WebUI port to.
 It includes port bind mode options to publish the port for external access or expose it for inter-container communication.
 
@@ -36,7 +36,9 @@ All future applications, as well as those added to the TrueNAS Apps catalog afte
 
 However, applications that were in the TrueNAS Apps catalog before implementation of this feature require OS-level changes to enable support.
 Catalog updates to provide host IP port functionality to these applications are scheduled for June 1, 2025.
-The updated versions of these applications do not function on TrueNAS versions earlier than 25.04.
+Previously installed versions of these apps do not automatically update after this point.
+Users need to manually remove and redeploy the app to have the new version with IP port binding.
+Automatic updates for apps resume after this point.
 
 {{< expand "Applications that do not currently support host IP port binding" "v" >}}
 
@@ -178,9 +180,8 @@ As a result, June 1 is also the cutoff date for two related app behaviors:
   Any users still running TrueNAS Apps on 24.04 after June 1 must re-deploy those apps after upgrading to 24.10 or later.
 
 * **24.10 App Updates:**
-  The cutoff date for app updates on TrueNAS 24.10 is **June 1, 2025**.
-  To update or install new applications, any users still running TrueNAS Apps on 24.10 after June 1 must update TrueNAS to 25.04 (or later).
-
+  The cutoff date for simple app updates on TrueNAS 24.10 is **June 1, 2025**.
+  Any users with deployed TrueNAS Apps on 24.10 after June 1 must manually redeploy apps to the new IP port binding version.
   No further migration is required.
-  Normal application update and install functionality resumes after updating to the minimum TrueNAS version (25.04) or later.
+  Normal application update functionality resumes after manual redeployment of these apps.
   
