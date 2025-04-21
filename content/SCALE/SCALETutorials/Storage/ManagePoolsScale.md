@@ -321,5 +321,5 @@ To remove a VDEV from a pool:
    If the **Remove** button is not visible, check that all conditions for VDEV removal listed above are correct.
 3. Confirm the removal operation and click the **Remove** button.
 
-The VDEV removal process status shows in the [Task Manager]({{< relref "TasksScreens.md" >}}) (or alternately with the `zpool status` command).
+The VDEV removal process status shows on the [**Jobs** creen]({{< relref "JobsScreens.md" >}}) (or alternately with the `zpool status` command).
 Avoid physically removing or attempting to wipe the disks until the removal operation completes.
