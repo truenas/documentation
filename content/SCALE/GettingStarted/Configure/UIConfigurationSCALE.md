@@ -156,7 +156,8 @@ After completing your initial system configuration and before you begin day-to-d
 1. Saving the [system configuration file]({{< relref "SetUpBackupSCALE.md" >}}).
 2. Saving or [creating a new boot environment]({{< relref "ManageBootEnvironSCALE.md" >}}) to use as a restore point if system issues cause you to lose access to the TrueNAS UI.
 3. Downloading a system debug to capture system information to use as a comparison against future debug files.
-  {{< expand "Downloading a system debug file" "v" >}}
+
+  {{< expand "Downloading System Files" "v" >}}
   {{< include file="/static/includes/DownloadSystemConfigFileSCALE.md" >}}
   {{< /expand >}}
 
