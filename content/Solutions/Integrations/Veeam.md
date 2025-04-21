@@ -30,7 +30,7 @@ This article discusses some of the best practices when deploying TrueNAS with Ve
 The focus is on capabilities native to TrueNAS.
 For more information on using and optimizing Veeam deployments, we encourage you to review relevant Veeam documentation, such as the [Veeam help center](https://www.veeam.com/documentation-guides-datasheets.html) and [Veeam best practices](https://bp.veeam.com/vbr) articles.
 
-## What is Needed?
+## What Do I Need?
 
 When deploying TrueNAS with Veeam, prepare the following:
 
@@ -73,15 +73,15 @@ Snapshots, full backups, and incremental backups all require more storage than t
 
 ### Estimating Network Bandwidth
 
-Bandwidth is harder to estimate and must take into account backup timeframes, backup sizes, and available network resources.
+Bandwidth is harder to estimate and must account for backup timeframes, backup sizes, and available network resources.
 Typically, backups run during off-hours when IT equipment is under a lighter load.
-This timeframe can be set, but if each backup is several terabytes in size, a longer amount of time and greater bandwidth are required.
+This timeframe can be set, but if each backup is several terabytes, you need more time and bandwidth.
 iXsystems tests Veeam backups using a 10 GbE mixed network with the datastore storage, hypervisor hosts, and backup repository (the TrueNAS) on the same network.
 However, shorter backup windows, heavy network usage, and dozens of VMs being backed up simultaneously can require 40 or 100 GbE networking and multiple Veeam backup proxies used in tandem.
 
-For example, consider a scenario of backing up 1000 VMs (each 100 GB in size) with a backup window of eight hours.
+For example, consider backing up 1000 VMs (each 100 GB in size) with a backup window of eight hours.
 This requires around five virtual proxy servers with eight vCores (16 GB memory each) and about 3.7 GB/s throughput.
-In such a scenario, iXsystems recommends 100 GbE interconnect and TrueNAS appliances with over 100+ hard drives.
+In such a scenario, we recommend 100 GbE interconnect and TrueNAS appliances with over 100+ hard drives.
 However, bandwidth can be greatly reduced if users can accept incremental and staggered backups.
 For example, run an incremental backup on all VMs each day, and a full backup on 100 VMs per night, rotating a different 100 VMs each night.
 This strategy provides a 5X increase to the  maximum number of VMs and reduces costs by 75%.
@@ -124,7 +124,7 @@ Detailed configurations can be discussed with iXsystems sales representatives an
 ### Planning Storage Lifecycle
 
 TrueNAS storage pools can be expanded online to the maximum size supported by a particular TrueNAS system.
-Storage pools can be expanded one vdev (RAID group) at a tim,e so long as each vdev shares the same type.
+Storage pools can be expanded one vdev (RAID group) at a time, so long as each vdev shares the same type.
 When deploying an iSCSI share requiring a zvol (LUN), users should consider [thin provisioning]({{< relref "thinprovisioning.md" >}}) using the sparse option during setup.
 
 ## Other Considerations
@@ -159,8 +159,8 @@ Here are additional key features that are offered out-of-the-box at no extra cos
 ## Setting Up TrueNAS as a Veeam Repository
 
 Veeam Backup & Replication runs on a Windows operating system, typically Windows Server 2012 or newer, and can connect to a variety of storage systems.
-iXsystems recommends using iSCSI on TrueNAS 13.0 with a [Veeam scale-out repository](https://bp.veeam.com/vbr/VBP/3_Build_structures/B_Veeam_Components/B_backup_repositories/scaleout.html) architecture.
-Users can also use [SMB](https://www.truenas.com/docs/core/13.0/coretutorials/sharing/smb/smbshare/) to mount the volume to the backup server directly.
+iXsystems recommends using iSCSI on TrueNAS with a [Veeam scale-out repository](https://bp.veeam.com/vbr/VBP/3_Build_structures/B_Veeam_Components/B_backup_repositories/scaleout.html) architecture.
+Users can also use SMB (see the SMB tutorial section for your version) to directly mount the volume to the backup server.
 With support for SMB/CIFS, NFS, AFP, iSCSI, and FC, TrueNAS offers many ways to connect to Veeam backup servers.
 
 Veeam Backup & Replication provides [three tiers of immutability](https://helpcenter.veeam.com/docs/backup/vsphere/immutability_sobr.html) to temporarily prohibit deleting data from extents.
