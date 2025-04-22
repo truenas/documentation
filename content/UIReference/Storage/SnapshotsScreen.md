@@ -65,4 +65,4 @@ Do not roll back until all desired data and snapshots are backed up.
 | **Confirm** | Select to confirm the selection and activate the **ROLLBACK** button. |
 {{< /truetable >}}
 
-See [Creating Snapshots]({{< relref "/CORETutorials/Storage/Snapshots.md" >}}) for more information on creating and managing snapshots.
+See [Creating Snapshots]({{< ref "/CORETutorials/Storage/Snapshots" >}}) for more information on creating and managing snapshots.

@@ -8,4 +8,4 @@ tags:
 
 {{< include file="/static/includes/FusionPools.md" >}}
 
-See [Managing Pools]({{< relref "ManagingPools.md" >}}).
+See [Managing Pools]({{< ref "ManagingPools" >}}).

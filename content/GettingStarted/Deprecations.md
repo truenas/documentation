@@ -37,4 +37,4 @@ Users should avoid creating and managing SAS multipath scenarios with TrueNAS.
 ## Web Shell
 
 The web UI **Shell** is removed in CORE 13.3.
-Users can continue to access the shell using [SSH]({{< relref "ConfiguringSSH.md" >}}) or a physical system connection with serial cable or other direct method.
+Users can continue to access the shell using [SSH]({{< ref "ConfiguringSSH" >}}) or a physical system connection with serial cable or other direct method.

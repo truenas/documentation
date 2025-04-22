@@ -24,16 +24,16 @@ To configure SSH, disable the service and click the <i class="material-icons" ar
 
 Configure the options as needed to match your network environment.
 
-See [SSH Screen]({{< relref "/UIReference/Services/ServicesSSH.md" >}})
+See [SSH Screen]({{< ref "/UIReference/Services/ServicesSSH" >}})
 
 {{< hint type=warning >}}
 Root access to the system from a remote client is never recommended.
-If an unavoidable critical situation requires allowing root access, it is recommended to [configure two-factor authentication]({{< relref "UsingTwoFactorAuthentication.md" >}}) first.
+If an unavoidable critical situation requires allowing root access, it is recommended to [configure two-factor authentication]({{< ref "UsingTwoFactorAuthentication" >}}) first.
 Also, disable root logins as soon as possible.
 {{< /hint>}}
 
 Re-enable the SSH service on the **Services** page when all configuration changes are complete.
-To create and store specific [SSH connections and keypairs]({{< relref "ConfiguringSSHConnections.md" >}}), go to the **System** menu section.
+To create and store specific [SSH connections and keypairs]({{< ref "ConfiguringSSHConnections" >}}), go to the **System** menu section.
 
 {{< expand "Advanced: Restricting Command Line Users to scp or sftp" "v" >}}
 This only works for users that use command line versions of commands `scp` and `sftp`.

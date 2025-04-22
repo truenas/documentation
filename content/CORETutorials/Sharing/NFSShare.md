@@ -46,7 +46,7 @@ If you wish to create the share but not immediately enable it, select **CANCEL**
 
 ### NFS Share Settings
 
-See [Sharing NFS Screen]({{< relref "NFSShareScreen.md" >}}) for more information on NFS share settings.
+See [Sharing NFS Screen]({{< ref "NFSShareScreen" >}}) for more information on NFS share settings.
 
 To edit an existing NFS share, go to **Sharing > Unix Shares (NFS)** and click <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> **> Edit**.
 The options available are identical to the share creation options.
@@ -57,10 +57,10 @@ To begin sharing the data, go to **Services** and click the **NFS** toggle.
 If you want NFS sharing to activate immediately after TrueNAS boots, set **Start Automatically**.
 
 NFS service settings can be configured by clicking <i class="fa fa-pen" aria-hidden="true" title="Configure"></i> (Configure).
-See [NFS Screen]({{< relref "NFSScreen.md" >}}) for details.
+See [NFS Screen]({{< ref "NFSScreen" >}}) for details.
 
 Unless a specific setting is needed, we recommend using the default settings for the NFS service.
-When TrueNAS is already connected to [Active Directory]({{< relref "/CORETutorials/DirectoryServices/ActiveDirectory.md" >}}), setting **NFSv4** and **Require Kerberos for NFSv4** also requires a [kerberos keytab]({{< relref "/CORETutorials/DirectoryServices/Kerberos.md" >}}).
+When TrueNAS is already connected to [Active Directory]({{< ref "/CORETutorials/DirectoryServices/ActiveDirectory" >}}), setting **NFSv4** and **Require Kerberos for NFSv4** also requires a [kerberos keytab]({{< ref "/CORETutorials/DirectoryServices/Kerberos" >}}).
 
 ## Connecting to the NFS Share with a Linux/Unix OS
 

@@ -13,7 +13,7 @@ These instructions assume the task uses TrueNAS systems for the local host and r
 
 ## Basic Requirements
 
-Rysnc requires a [dataset]({{< relref "/CORETutorials/Storage/Pools/Datasets.md" >}}) on the local host and remote host systems.
+Rysnc requires a [dataset]({{< ref "/CORETutorials/Storage/Pools/Datasets" >}}) on the local host and remote host systems.
 Rsync provides the ability to either push or pull data.
 When configuring a push rsync, data is copied from a local host system to a remote system.
 When configuring a pull rsync, data comes from a remote system. It is then put on the local host system.
@@ -23,7 +23,7 @@ TrueNAS has extra requirements depending on if you choose the **Module** or **SS
 ### Rsync Services Requirements
 
 Before creating an rsync task on the local host system, configure a module on the remote host system. The remote host system must have the rsync service activated. 
-When TrueNAS is the remote host system, create a module by going to **Services** and clicking <i class="material-icons" aria-hidden="true" title="edit">edit</i> for the rsync service. Click the **Rsync Module** tab, then click **ADD**. See [ConfiguringRsync]({{< relref "ConfiguringRsync.md" >}}) for more information.
+When TrueNAS is the remote host system, create a module by going to **Services** and clicking <i class="material-icons" aria-hidden="true" title="edit">edit</i> for the rsync service. Click the **Rsync Module** tab, then click **ADD**. See [ConfiguringRsync]({{< ref "ConfiguringRsync" >}}) for more information.
 
 ## Creating a Module Mode Rsync Task
 
@@ -342,7 +342,7 @@ Enter `cat ~/.ssh/id_rsa.pub` to see the key and copy the file contents.
 
 The rsync task does not work when the related system service is off.
 To turn the rsync service on, go to **Services** and click the **rsync** toggle. The toggle is blue when the service is on, grey when it is off.
-See [ConfiguringRsync]({{< relref "ConfiguringRsync.md" >}}) for more information on rsync configuration and module creation.
+See [ConfiguringRsync]({{< ref "ConfiguringRsync" >}}) for more information on rsync configuration and module creation.
 
 {{< taglist tag="corersync" limit="10" >}}
 

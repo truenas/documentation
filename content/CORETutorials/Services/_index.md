@@ -9,7 +9,7 @@ related: false
 
 {{< include file="/static/includes/COREServices.md" >}}
 
-Services related to data sharing or automated tasks are documented in their respective [Sharing]({{< relref "/CORETutorials/Sharing/" >}}) or [Tasks]({{< relref "/CORETutorials/Tasks/" >}}).  
+Services related to data sharing or automated tasks are documented in their respective [Sharing]({{< ref "/CORETutorials/Sharing/" >}}) or [Tasks]({{< ref "/CORETutorials/Tasks/" >}}).  
 
 <div class="noprint">
 

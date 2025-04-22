@@ -23,7 +23,7 @@ SMB is suitable for the management and administration of large or small pools of
 TrueNAS uses [Samba](https://www.samba.org/) to provide SMB services.
 There are many versions of the SMB protocol.
 During SMB session negotiation, an SMB client attempts to negotiate the highest SMB protocol.
-Industry-wide, the usage of the SMB1 protocol (sometimes referred to as NT1) is [being deprecated]({{< relref "SMB1Advisory.md" >}}) for security reasons.
+Industry-wide, the usage of the SMB1 protocol (sometimes referred to as NT1) is [being deprecated]({{< ref "SMB1Advisory" >}}) for security reasons.
 However, most SMB clients support SMB 2 or 3 protocols, even when they are not the default protocols.
 {{< /hint >}}
 
@@ -64,7 +64,7 @@ It is not required to access an SMB server.
 
    By default, all new local users are members of a built-in SMB group called **builtin users**.
    You can use this group to grant access to all local users on the server.
-   You can use additional [groups]({{< relref "SettingUpUsersAndGroups.md" >}}) to fine-tune permissions to large numbers of users.
+   You can use additional [groups]({{< ref "SettingUpUsersAndGroups" >}}) to fine-tune permissions to large numbers of users.
    User accounts built-in to TrueNAS cannot access SMB.
    User accounts that do not have the **smb** flag set cannot access SMB.
 
@@ -87,7 +87,7 @@ It is not required to access an SMB server.
    After creating a dataset and the needed accounts, determine the access requirements and adjust the dataset ACL to match.
    To edit the ACL, go to **Storage > Pools**, open the options for the new dataset, and click **Edit Permissions**.
    Many home users often add a new entry that grants this access: **FULL_CONTROL** to the **builtin_users** group with the flags set to **INHERIT**.
-   See the [Permissions article]({{< relref "Permissions.md" >}}) for more details.
+   See the [Permissions article]({{< ref "Permissions" >}}) for more details.
 
 ## Creating an SMB Share
 
@@ -112,7 +112,7 @@ You can specify an optional value in **Description** to help explain the purpose
 **Enabled** shares this path when the SMB service is activated.
 Clearing **Enabled** disables the share without deleting the configuration.
 
-See [SMB Share Screen]({{< relref "SMBShareScreen.md" >}}) for more information on SMB Share settings.
+See [SMB Share Screen]({{< ref "SMBShareScreen" >}}) for more information on SMB Share settings.
 
 ## Activating the SMB Service
 
@@ -120,7 +120,7 @@ Connecting to an SMB share does not work when the related system service is not 
 To make an SMB share available on the network, go to **Services** and click the **SMB** toggle to start the service.
 If you want the service to activate whenever TrueNAS boots, select **Start Automatically**.
 
-See [SMB Service Screen]({{< relref "SMBScreen.md" >}}) for more information on SMB services settings.
+See [SMB Service Screen]({{< ref "SMBScreen" >}}) for more information on SMB services settings.
 
 ## Mounting an SMB Share on Another Machine
 

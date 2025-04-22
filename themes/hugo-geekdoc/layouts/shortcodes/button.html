@@ -10,8 +10,8 @@
   {{- $ref = . }}
 {{- end }}
 
-{{- with .Get "relref" }}
-  {{- $ref = relref $ . }}
+{{- with .Get "ref" }}
+  {{- $ref = ref $ . }}
 {{- end }}
 
 {{- with .Get "class" }}

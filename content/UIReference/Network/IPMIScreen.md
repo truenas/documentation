@@ -29,4 +29,4 @@ Use the **Network > IPMI** screen to configure the TrueNAS for an IPMI connectio
 
 Use **SAVE** to save the IPMI settings.
 
-See [IPMI]({{< relref "/CORETutorials/Network/IPMI.md" >}}) for more information.
+See [IPMI]({{< ref "/CORETutorials/Network/IPMI" >}}) for more information.

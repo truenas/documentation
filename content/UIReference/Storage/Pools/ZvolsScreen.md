@@ -33,7 +33,7 @@ Selecting **ADVANCED OPTIONS** adds one additional setting.
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Block size** | select the default **Inherit** or select from the other dropdown list options **4KiB**, **8KiB**, **16KiB**, **32KiB**, **64KiB** or **128KiB**. See [Creating a Zvol]({{< relref "zvols.md" >}}) for more information on these options and block sizes. |
+| **Block size** | select the default **Inherit** or select from the other dropdown list options **4KiB**, **8KiB**, **16KiB**, **32KiB**, **64KiB** or **128KiB**. See [Creating a Zvol]({{< ref "zvols" >}}) for more information on these options and block sizes. |
 {{< /truetable >}}
 
 **SUBMIT** activates after all required fields are populated. Use to save settings.

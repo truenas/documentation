@@ -18,9 +18,9 @@ These areas are not editable.
 
 ![**NetworkSummaryScreen**](/images/CORE/Network/NetworkSummaryScreen.png "Network Summary Screen")
 
-* [**Interfaces**]({{< relref "InterfacesScreen.md" >}}) shows any configured physical [bridge]({{< relref "BridgeCreate.md" >}}), [LAGG]({{< relref "LAGGCreate.md" >}}), and [vlan]({{< relref "VLANCreate.md" >}}) interfaces.
+* [**Interfaces**]({{< ref "InterfacesScreen" >}}) shows any configured physical [bridge]({{< ref "BridgeCreate" >}}), [LAGG]({{< ref "LAGGCreate" >}}), and [vlan]({{< ref "VLANCreate" >}}) interfaces.
 All detected physical interfaces are listed, even when unconfigured.
-The IPv4 or IPv6 address displays when a [static IP]({{< relref "SettingStaticIP.md" >}}) is saved for an interface.
+The IPv4 or IPv6 address displays when a [static IP]({{< ref "SettingStaticIP" >}}) is saved for an interface.
 
 * **Default Routes** lists all saved TrueNAS Default Routes.
   Go to **Network > Global Configuration** to configure Default Routes.
@@ -30,6 +30,6 @@ The IPv4 or IPv6 address displays when a [static IP]({{< relref "SettingStaticIP
 
 ## Additional Network Configuration Screens
 
-Define any Static Routes in **Network > [Static Routes]({{< relref "StaticRoutesScreen.md" >}})**.
+Define any Static Routes in **Network > [Static Routes]({{< ref "StaticRoutesScreen" >}})**.
 
-Out-of-band management is managed from **Network > [IPMI]({{< relref "/CORETutorials/Network/IPMI.md" >}})**. This option is visible only when TrueNAS detects the appropriate physical hardware.
+Out-of-band management is managed from **Network > [IPMI]({{< ref "/CORETutorials/Network/IPMI" >}})**. This option is visible only when TrueNAS detects the appropriate physical hardware.
