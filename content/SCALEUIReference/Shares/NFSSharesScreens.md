@@ -37,7 +37,7 @@ The NFS share on the widget opens the **[Edit NFS](#add-and-edit-nfs-screens)** 
 {{< trueimage src="/images/SCALE/Shares/NFSWidgetOptions.png" alt="Unix (NFS) Share Widget Options" id="Unix (NFS) Share Widget Options" >}}
 
 The <span class="material-icons">more_vert</span> icon displays three options available to NFS shares in general:
-* **Turn Off Service** what shows when the NFS service is enabled and that toggles to **Turn On Service** when the NFS service is disabled.
+* **Turn Off Service** what shows when the NFS service is enabled, and that toggles to **Turn On Service** when the NFS service is disabled.
 * **Config Service** that opens the [**NFS**]({{< relref "NFSServiceScreen.md" >}}) configuration screen.
 * **NFS Sessions** that opens the [**NFS Sessions** screen](#nfs-sessions-screen).
 
