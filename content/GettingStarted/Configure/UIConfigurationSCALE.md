@@ -143,8 +143,8 @@ See [Managing SMART Tests]({{< ref "SmartTestsScale" >}}) for information on run
 ## Setting Up Backup Solutions
 After completing your initial system configuration and before you begin day-to-day operations, we recommend configuring the system and data storage backup. Recommended backup options:
 
-1. Saving the [system configuration file]({{< relref "SetUpBackupSCALE.md" >}}).
-2. Saving or [creating a new boot environment]({{< relref "ManageBootEnvironSCALE.md" >}}) to use as a restore point if system issues cause you to lose access to the TrueNAS UI.
+1. Saving the [system configuration file]({{< ref "SetUpBackupSCALE" >}}).
+2. Saving or [creating a new boot environment]({{< ref "ManageBootEnvironSCALE" >}}) to use as a restore point if system issues cause you to lose access to the TrueNAS UI.
 3. Downloading a system debug to capture system information to use as a comparison against future debug files.
 
   {{< expand "Downloading System Files" "v" >}}

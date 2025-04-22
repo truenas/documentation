@@ -1,5 +1,5 @@
 Configure the **Network** section settings to define how the instance connects to the host and external networks.
-   Options include the default network bridge, an existing [bridge interface]({{< relref "/SCALETutorials/Network/ContainerNASBridge.md" >}}), or a MACVLAN.
+   Options include the default network bridge, an existing [bridge interface]({{< ref "/SCALETutorials/Network/ContainerNASBridge" >}}), or a MACVLAN.
 
    {{< trueimage src="/images/SCALE/Virtualization/InstancesNetworkDefault.png" alt="Default Network Settings" id="Default Network Settings" >}}
 

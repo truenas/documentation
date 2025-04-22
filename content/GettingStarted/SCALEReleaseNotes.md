@@ -56,7 +56,7 @@ More details are available from [Software Releases](https://www.truenas.com/docs
 
 * {{< include file="/static/includes/NetdataUI.md" >}}
 
-* To prevent unexpected failures in SMB shares, TrueNAS automatically disables SMB2/3 lease support and AAPL extensions (typically used to configure Time Machine) globally when [multiprotocol SMB/NFS shares]({{< relref "MixedModeShares.md" >}}) are enabled ([NAS-133680](https://ixsystems.atlassian.net/browse/NAS-133680)).
+* To prevent unexpected failures in SMB shares, TrueNAS automatically disables SMB2/3 lease support and AAPL extensions (typically used to configure Time Machine) globally when [multiprotocol SMB/NFS shares]({{< ref "MixedModeShares" >}}) are enabled ([NAS-133680](https://ixsystems.atlassian.net/browse/NAS-133680)).
 
   This means that in TrueNAS 25.04 and later, multiprotocol shares are incompatible with Time Machine shares on the same system.
   To prevent service interruption, Time Machine users should make sure that no multiprotocol shares are configured on TrueNAS.
@@ -84,7 +84,7 @@ More details are available from [Software Releases](https://www.truenas.com/docs
 {{< include file="/static/includes/MigrateCOREtoSCALEWarning.md" >}}
 
 Depending on the specific system configuration, migrating from a FreeBSD-based TrueNAS version can be a straightforward or complicated process.
-See the [Migration articles]({{< relref "/GettingStarted/Migrate/_index.md" >}}) for cautions and notes about differences between each software and the migration process.
+See the [Migration articles]({{< ref "/GettingStarted/Migrate/" >}}) for cautions and notes about differences between each software and the migration process.
 
 {{< enterprise >}}
 Enterprise customers should contact TrueNAS Enterprise Support for assistance before attempting to migrate.
