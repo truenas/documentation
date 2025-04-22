@@ -167,11 +167,8 @@ The system prompts you to restart.
 
 ![SecurityFIPSSTIGRestartDialog](/images/SCALE/SystemSettings/SecurityFIPSSTIGRestartDialog.png "Restart Require Dialog")
 
-{{< enterprise >}}
-Highly Available (HA) Enterprise systems must restart each storage controller before STIG mode is fully enabled.
-{{< /enterprise >}}
-
 The system restart takes several minutes to complete before showing the login screen.
+Highly Available (HA) systems must restart each storage controller before STIG mode is fully enabled.
 
 <div class="noprint">
 
