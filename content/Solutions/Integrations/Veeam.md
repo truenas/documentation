@@ -69,7 +69,7 @@ The first step when estimating required capacity is to understand how much capac
 Veeam and the TrueNAS appliance both apply data compression, though different file types and the structure of the data in those files affect the achieved compression levels.
 Some tools for capacity estimation are listed at the end of this section, but it is always good to err on the side of caution, and three times (3x) the current storage used is not unreasonable.
 ZFS performs best with utilization below 80%.
-Snapshots, full backups, and incremental backups all require more storage than the  primary storage used today.
+Snapshots, full backups, and incremental backups all require more storage than the primary storage used today.
 
 ### Estimating Network Bandwidth
 
