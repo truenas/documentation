@@ -4,6 +4,7 @@ description: "Notes about community-maintained applications and individual tutor
 weight: 30
 aliases:
  - /scale/scaletutorials/apps/communityapps/
+ - /scale/scaletutorials/apps/communityapps/installwgeasyapp/
 tags:
 - apps
 related: false

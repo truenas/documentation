@@ -1,6 +1,6 @@
 ---
 title: "General Settings Screen"
-description: "Provides information on General system setting screen, widgets, and settings for getting support, changing console or the GUI, localization, and keyboard setups, and adding NTP servers."
+description: "Provides information on the General Settings screen, widgets, and configuration settings for getting support, changing console or the GUI, localization and keyboard setups, and adding NTP servers."
 weight: 20
 aliases: 
  - /scale/scaleclireference/system/cliconfig/
@@ -11,6 +11,7 @@ aliases:
  - /scale/scaletutorials/dashboard/scaletimesync/
  - /images/CORE/12.0/SystemNTPServersAdd.png
  - /images/CORE/12.0/SystemNTPServers.png
+ - /scale/scaleuireference/systemsettings/generalsettings/
 tags:
  - settings
  - console
@@ -39,9 +40,9 @@ The **Download File** option opens the **Save Configuration** dialog, where user
 
 {{< trueimage src="/images/SCALE/SystemSettings/SaveConfigurationWindow.png" alt="Save Configuration" id="Save Configuration" >}}
 
-The **Export Password Secret Seed** option includes encrypted passwords in the downloaded configuration file.
-This option allows you to restore the configuration file to a different operating system device where the decryption seed is not already present.
-Users must physically secure configuration file backups containing the seed to prevent unauthorized access or password decryption.
+The **Export Password Secret Seed** option stores hashes of the passwords sufficient for authentication in the system. It does not store user passwords.
+The secret seed is used to decrypt encrypted fields in the TrueNAS configuration database.
+Various fields are encrypted because they might contain sensitive information such as cryptographic certificates, passwords (not user login passwords), or weak hashing algorithms (for example, NT hashes of SMB users). When a config file is restored without the secret seed, encrypted fields are set to empty values. This means various services can be broken due to the missing information. Examples are SMB via local accounts and apps.
 
 ### Upload File
 
@@ -50,7 +51,7 @@ The **Upload File** option opens the **Upload Config** dialog, which allows user
 {{< trueimage src="/images/SCALE/SystemSettings/SystemGeneralUploadConfig.png" alt="Upload Config" id="Upload Config" >}}
 
 **Choose File** opens a file browser window to locate the downloaded and saved configuration file.
-  After selecting the file, the **Upload Config** window opens.
+ After selecting the file, the **Upload Config** window opens.
 **Upload** uploads the selected configuration file.
 
 {{< hint type=warning >}}
@@ -65,7 +66,7 @@ Using **Resetting to Defaults** returns the system configuration to factory sett
 {{< trueimage src="/images/SCALE/SystemSettings/SystemGeneralResetConfiguration.png" alt="Reset Configuration" id="Reset Configuration" >}}
 
 {{< hint type=warning >}}
-Save the system current configuration with the _Download File_ option before resetting the configuration to default settings.
+Save the current system configuration with the _Download File_ option before resetting the configuration to default settings.
 
 Not saving the system configuration before resetting it, can result in losing data that is not backed up, and losing the ability to revert to the previous configuration.
 {{< /hint >}}
@@ -89,7 +90,7 @@ The **License** screen allows copying your license pasting it in the form and sa
 **Reload Now** reloads the page.
 
 **End User License Agreement (EULA)** opens a copy of the TrueNAS end user license agreement.
-After thoroughly and completely reading it, **I AGREE** digitally marks it signed, then closes the screen and updates the **Support** widget with the license and hardware information.
+**I AGREE** digitally marks it signed, then closes the screen and updates the **Support** widget with the license and hardware information.
 
 {{< trueimage src="/images/SCALE/SystemSettings/GeneralSettingsSCALESupportLicenseComplete.png" alt="Support Widget with License" id="Support Widget with License" >}}
 
@@ -119,16 +120,16 @@ The **GUI Settings** screen shows configuration settings for the TrueNAS web int
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Theme** | Select a color theme from the dropdown list of options. Options are: **ixDark** (default option), **ixBlue**, **Dracula**, **Nord**, **Paper**, **Soloarized Dark**, **Midnight**, and **High Contrast**. Selecting an option immediately changes the UI to the selected color theme. |
+| **Theme** | Sets a color theme selected from the dropdown list of options. Options are: **ixDark** (default option), **ixBlue**, **Dracula**, **Nord**, **Paper**, **Soloarized Dark**, **Midnight**, and **High Contrast**. Selecting an option immediately changes the UI to the selected color theme. |
 | **GUI SSL Certificate** | Sets the selected certificate as the SSH certificate. **truenas_default** is the default self-signed certificate. The system uses a self-signed certificate to enable encrypted web interface connections. **Manage Certificates** opens the [Certificates]({{< ref "/SCALE/SCALEUIReference/credentials/certificates" >}}) screen. Certificates added to TrueNAS show on this list. |
-| **Web Interface IPv4 Address** | Select an IP address to limit the usage when accessing the administrative GUI. The built-in HTTP server binds to the wildcard address of **0.0.0.0** (any address) and issues an alert if the specified address becomes unavailable. |
-| **Web Interface IPv6 Address** | Select an IPv6 address from the dropdown list to limit usage when accessing the administrative GUI. The default is **::**. The built-in HTTP server binds to the wildcard address of **0.0.0.0** (any address) and issues an alert if the specified address becomes unavailable. |
+| **Web Interface IPv4 Address** | Sets an IP address to limit the usage when accessing the administrative GUI. The built-in HTTP server binds to the wildcard address of **0.0.0.0** (any address) and issues an alert if the specified address becomes unavailable. |
+| **Web Interface IPv6 Address** | Sets an IPv6 address from the dropdown list to limit usage when accessing the administrative GUI. The default is **::**. The built-in HTTP server binds to the wildcard address of **0.0.0.0** (any address) and issues an alert if the specified address becomes unavailable. |
 | **Web Interface HTTP Port** | Sets a non-standard port to access the GUI over HTTP. The default is **80**. Changing this setting might require changing a [Firefox configuration setting](https://support.mozilla.org/en-US/kb/connection-settings-firefox). |
 | **Web Interface HTTPS Port** | Sets a non-standard port to access the GUI over HTTPS. The default is **443**. |
 | **HTTPS Protocols** | Sets a cryptographic protocol(s) for securing client/server connections. Select the [Transport Layer Security (TLS)](https://en.wikipedia.org/wiki/Transport_Layer_Security) versions TrueNAS can use for connection security from the dropdown list of options:<br><li>**TLSv1**<br><li>**TLSv1.1**<br><li>**TLSV1.2** selected by default<br><li>**TLSv1.3** (selected by default)</li> |
-| **Web Interface HTTP -> HTTPS Redirect** | Select to redirect HTTP connections to HTTPS. A GUI SSL certificate is required for HTTPS. Activating this sets the [HTTP Strict Transport Security (HSTS)](https://en.wikipedia.org/wiki/HTTP_Strict_Transport_Security) maximum age to 31536000 seconds (one year). This means that after a browser connects to the web interface for the first time, the browser continues to use HTTPS and renews this setting every year. After adding a new certificate select it or use the default TrueNAS certificate in **GUI SSL Certificate**. |
-| **Usage Collection** | Select to enable sending anonymous usage statistics to iXsystems. For more information about what usage data is collected, see the [TrueNAS Data Collection Statement]({{< ref "/SCALE/GettingStarted/UserAgreements/DataCollectionStatement" >}}). |
-| **Show Console Messages** | Select to show console messages in real-time at the bottom of the browser. |
+| **Web Interface HTTP -> HTTPS Redirect** | Redirects HTTP connections to HTTPS. A GUI SSL certificate is required for HTTPS. Activating this sets the [HTTP Strict Transport Security (HSTS)](https://en.wikipedia.org/wiki/HTTP_Strict_Transport_Security) maximum age to 31536000 seconds (one year). This means that after a browser connects to the web interface for the first time, the browser continues to use HTTPS and renews this setting every year. After adding a new certificate select it or use the default TrueNAS certificate in **GUI SSL Certificate**. |
+| **Usage Collection** | Enables sending anonymous usage statistics to iXsystems when selected. For more information about what usage data is collected, see the [TrueNAS Data Collection Statement]({{< ref "/SCALE/GettingStarted/UserAgreements/DataCollectionStatement" >}}). |
+| **Show Console Messages** | Shows console messages in real-time at the bottom of the browser when enabled. |
 {{< /truetable >}}
 {{< /expand >}}
 
@@ -150,13 +151,13 @@ Provides access to a configuration screen to customize settings.
 | **Language** | Sets the language for the UI screens. The default setting is **English** but might be customized to the language based on the country of origin for an Enterprise customer. Clear the field and begin typing to filter the list or scroll down and select a language from the dropdown list. |
 | **Console Keyboard Map** | Sets a language for the keyboard layout, for example, **English (US)** for American English. Select and option the dropdown list. |
 | **Timezone** | Set the geographical time zone for the system. Clear the field and begin typing to filter the list or scroll down to select a time zone from the dropdown list. |
-| **Date Format** | Select a date format from the dropdown list. |
-| **Time Format** | Select a time format from the dropdown list. |
+| **Date Format** | Sets a date format to what is selected on the dropdown list. |
+| **Time Format** | Sets a time format to what is selected on the dropdown list. |
 {{< /truetable >}}
 {{< /expand >}}
 
 ## Add NTP Server Screen
-The **Add NTP Server** screen shows settings to configure Network Time Protocol (NTP) servers that sync the local TrueNAS system with an accurate external reference.
+The **Add NTP Server** screen shows Network Time Protocol (NTP) server settings that sync the local TrueNAS system with an accurate external reference.
 By default, new installations use several existing NTP servers. TrueNAS supports adding custom NTP servers.
 
 **Add** on the **NTP Servers** widget opens the **Add NTP Server** screen.
@@ -167,13 +168,13 @@ By default, new installations use several existing NTP servers. TrueNAS supports
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Address** | Enter the host name or IP address of the NTP server. |
-| **Burst** | Select to enable using a non-public NTP server. Recommended when **Max Poll** is greater than **10**. Only use on personal NTP servers or those under direct control. Do not enable it when using public NTP servers. |
-| **IBurst** | Select to enable and speed up the initial synchronization (seconds instead of minutes). |
-| **Prefer** | Select to enable when using highly accurate NTP servers such as those with time monitoring hardware. Only use for these highly accurate NTP servers. |
+| **Address** | Sets the host name or IP address of the NTP server. |
+| **Burst** | Enables using a non-public NTP server. Recommended when **Max Poll** is greater than **10**. Only use on personal NTP servers or those under direct control. Do not enable it when using public NTP servers. |
+| **IBurst** | Enables and speeds up the initial synchronization (seconds instead of minutes). |
+| **Prefer** | Enable when using highly accurate NTP servers such as those with time monitoring hardware. Only use for these highly accurate NTP servers. |
 | **Min Poll** | Sets the minimum polling interval. Enter a numeric value in seconds, as a power of 2. For example, 6 means 2^6, or 64 seconds. The default is **6**, and the minimum value is **4**. |
 | **Max Poll** | Sets the maximum polling interval. Enter a numeric in seconds, as a power of 2. For example, 10 means 2^10, or 1,024 seconds. The default is **10**, and the maximum value is **17**. |
-| **Force** | Select to enable. Forces the addition of the NTP server, even if it is currently unreachable. |
+| **Force** | Enable to force the addition of the NTP server, even if it is currently unreachable. |
 {{< /truetable >}}
 {{< /expand >}}
 
@@ -201,14 +202,14 @@ The **Email Options** screen with **SMTP** selected shows standard email configu
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **From Email** | Enter the user account email address to use for the envelope **From**  email address, the address sending emails and configured on either the Add or Edit User screen. For more information, see [**User Screens**]({{< ref "LocalUsersScreensSCALE" >}}). |
-| **From Name** | Enter the name to show in front of the sending email address, for example *truenas system 1* in *truenas system 1@example.com*. |
-| **Outgoing Mail Server** | Host name or IP address of SMTP server used to send emails. |
-| **Mail Server Port** | SMTP port number. Typically **25**, **465** (secure SMTP), or **587** (submission). |
-| **Security** | Select the security option from the dropdown list. Options are:<br><li>**Plain (No Encryption)**<br><li>**SSL (Implicit TLS)**<br><li>**TLS (STARTTLS)**</li> For more information on types, see [email encryption](https://www.fastmail.com/help/technical/ssltlsstarttls.html). |
+| **From Email** | Sets the user account email address used for the envelope **From** email address, the address sending emails, and configured on either the add or edit user screen. For more information, see [**User Screens**]({{< ref "LocalUsersScreensSCALE" >}}). |
+| **From Name** | Sets the name shown in front of the sending email address, for example, *truenas system 1* in *truenas system 1@example.com*. |
+| **Outgoing Mail Server** | Sets the host name or IP address of the SMTP server used to send emails. |
+| **Mail Server Port** | Sets the SMTP port number. Typically **25**, **465** (secure SMTP), or **587** (submission). |
+| **Security** | Sets the security option to what is selected on the dropdown list. Options are:<br><li>**Plain (No Encryption)**<br><li>**SSL (Implicit TLS)**<br><li>**TLS (STARTTLS)**</li> For more information on types, see [email encryption](https://www.fastmail.com/help/technical/ssltlsstarttls.html). |
 | **SMTP Authentication** | Select to enable [SMTP AUTH](https://en.wikipedia.org/wiki/SMTP_Authentication) using plain Simple Authentication and Security Layer (SASL) for authentication and data security. Applies and requires a valid simple username and password authentication method. |
-| **Username** | Shows after selecting **SMTP Authentication**. The user name for the sending email account,is typically the full email address. Enter the username if the SMTP server requires authentication. |
-| **Password** | Shows after selecting **SMTP Authentication**. Enter the password for the sending email account, for the SMTP server. Only plain ASCII characters are accepted.|
+| **Username** | Shows after selecting **SMTP Authentication**. Sets the username of the sending email account, which is typically the full email address. Enter the username if the SMTP server requires authentication. |
+| **Password** | Shows after selecting **SMTP Authentication**. Sets the password for the sending email account, for the SMTP server. Only plain ASCII characters are accepted.|
 {{< /truetable >}}
 {{< /expand >}}
 

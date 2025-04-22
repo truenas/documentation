@@ -30,7 +30,7 @@ The top toolbar icon buttons allows for quick software feedback, displays the st
 | ![TrueCommandIcon](/images/SCALE/Dashboard/TrueCommandIcon.png "TrueCommand Icon") | Status of TrueCommand | Displays either the status of a TrueCommand cloud connection or a dialog that allows users to [sign up for a new TrueCommand cloud connection](https://portal.ixsystems.com/portal/signin/#login). |
 | <span class="iconify" data-icon="ic:sharp-system-update-alt" style="font-size:150%;"></span> | Update Status | Shows the system update progress and which user account started the update. Only appears in the top bar when a TrueNAS system update starts. |
 | <span class="material-icons">info</span> | Directory Services status | Displays a dialog with the status of Active Directory and LDAP directory servers configured on the system. |
-| <span class="material-icons">assignment</span> | Jobs | Displays the Jobs dialog. Click the **History** button to display the **Tasks** screen with a list of **All**, **Active** or **Failed** tasks or processes. |
+| <span class="material-icons">assignment</span> | Running Jobs | Displays the **Running Jobs** dialog. Click the **History** button to display the **Tasks** screen with a list of **All**, **Active** or **Failed** tasks or processes. |
 | <span class="material-icons">notifications</span> | Alerts | Displays a list of system alerts and a dropdown list with the alert options **Alert Settings** and **Email**. |
 | <span class="material-icons">account_circle</span> | Settings | Displays a dropdown list of setting options **Change Password**, **Two-Factor Authentication**, **API Keys**, **Guide**, **About**, and **Log Out**. |
 | <span class="material-icons">power_settings_new</span> | Power options | Displays the power related options **Restart** or **Shut Down**. |
@@ -77,9 +77,9 @@ The <span class="material-icons">laptop</span> **API Keys** icon button displays
 
 The <span class="material-icons">library_books</span> **Guide** icon button opens the TrueNAS Documentation Hub website in a new browser tab.
 
-The <span class="material-icons-outlined">info</span> **About** icon button displays a window with links to the TrueNAS Documentation Hub, the TrueNAS Community Forums, the TrueNAS GitHub repository, and the iXsystems home page. Use the **Close** button to close the window.
+The <span class="material-icons-outlined">info</span> **About** icon button opens the dashboard **Help** widget with links to the TrueNAS Documentation Hub, the TrueNAS Community Forums, and the TrueNAS GitHub repository in a window. Use the **Close** button to close the window.
 
-{{< trueimage src="/images/SCALE/Dashboard/AboutWindow.png" alt="About Window" id="About Window" >}}
+{{< trueimage src="/images/SCALE/Dashboard/DashboardHelpWidget.png" alt="Help Window" id="Help Window" >}}
 
 The <span class="iconify" data-icon="bx:exit">info</span> **Log Out** icon button logs the currently logged in user out of the TrueNAS UI.
 

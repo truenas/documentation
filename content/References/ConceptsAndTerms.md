@@ -79,7 +79,7 @@ While TrueNAS is designed for and ever-evolving towards increased user friendlin
   A vdev can be created using a single disk or many.
   A vdev has many configurations: single disk, stripe, RAIDz1, RAIDz2, RAIDz3, or mirror.
 
-* [**ZFS zvols**]({{< ref "SCALE/SCALETutorials/Datasets/AddManageZvols" >}}): datasets that represent block devices.
+* [**ZFS zvols**]({{< ref "/SCALE/SCALETutorials/Datasets/AddManageZvols" >}}): datasets that represent block devices.
 
 * [**ZIL**](https://www.truenas.com/blog/zfs-zil-and-slog-demystified/) (or ZFS Intent Log): special vdev class.
   This is also sometimes referred to as a SLOG or Separate Intent Log.

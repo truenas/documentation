@@ -10,6 +10,8 @@ tags:
 
 {{< include file="/static/includes/RootLevelDatasetShareWarning.md" >}}
 
+{{< include file="/static/includes/TimeMachineMultiprotocol.md" >}}
+
 ## About Multiprotocol Shares
 A mult-protocol or mixed-mode NFS and SMB share supports both NFS and SMB protocols for sharing data.
 Multi-protocol shares allow clients to use either protocol to access the same data.
@@ -25,8 +27,8 @@ It is important to properly configure permissions and access controls to ensure 
 To maximize security on the NFS side of the multiprotocol share, we recommend using NFSv4 and [Active Directory](#joining-active-directory)(AD) for Kerberos authentication.
 It is also important that NFS clients preserve extended attributes when copying files, or SMB metadata could be discarded in the copy.
 
-Multi-protocol shares are not compatible with APPL extensions such as Apple Time Machine that rely on SMB3/3 lease support which is no longer available in multi-protocol shares.
-The Apple Time Machine feature cannot be enabled and a warning message shows in the UI.
+Multi-protocol shares are not compatible with APPL extensions such as Apple Time Machine that rely on SMB3/3 lease support, which is no longer available in multi-protocol shares.
+The Apple Time Machine feature cannot be enabled, and a warning message shows in the UI.
 Choosing to configure a multi-protocol share disables options to enable AAPL extensions globally.
 
 ## First Steps
@@ -102,10 +104,10 @@ Configure a container (group or organizational unit), Kerberos admin, and user a
 
 ## Creating a Multiprotocol Share
 
-You can create a share and dataset from either the **Add Dataset** or **Add SMB** screen.
+You can create a share and a dataset from either the **Add Dataset** or **Add SMB** screen.
 
 {{< hint type=info >}}
-The multi-protocol share type is mutually exclusive with AAPL extension support like time machine. These extensions require the SMB2/3 lease support which is no longer available in multi-protocol shares. Therefore, time machine cannot be enabled and a warning message shows in the UI. Selecting other Apple protocol options also displays warning messages. Multi-protocol shares can impact the performance of all SMB shares.
+The multi-protocol share type is mutually exclusive with AAPL extension support, like Time Machine. These extensions require the SMB2/3 lease support, which is no longer available in multi-protocol shares. Therefore, Time Machine cannot be enabled, and a warning message shows in the UI. Selecting other Apple protocol options also displays warning messages. Multi-protocol shares can impact the performance of all SMB shares.
 {{< /hint >}}
 
 ### Using the Add Dataset Screen
@@ -138,14 +140,14 @@ After adding the dataset, edit the dataset ACL.
 To create a share and dataset from the **Add SBM** share screen, go to **Shares**, and click **Add** on the **Windows (SMB) Shares** widget to open the **Add SMB** screen.
 
 1. Enter or browse to select the dataset where you want to add the share dataset, then click **Create Dataset**.
-   The dataset name populates the **Name** field. Both the dataset and share have the same name.
+   The dataset name populates the **Name** field. Both the dataset and the share have the same name.
    
 2. Select **Multi-protocol (NFSv4/SMB) shares** from the **Purpose** dropdown list.
    This applies the pre-determined **Other Options** selected on the **Advanced Options** screen.
 
    {{< trueimage src="/images/SCALE/Shares/EditSMBPurpose.png" alt="Edit SMB Purpose" id="Edit SMB Purpose" >}}
 
-   Click **Advanced Options** to modify any settings you want to use. Multi-mode shares cannot use APPL extension settings like time machine.
+   Click **Advanced Options** to modify any settings you want to use. Multi-mode shares cannot use APPL extension settings like Time Machine.
 
 3. (Optional) Enter a **Description** to help explain the share purpose.
 

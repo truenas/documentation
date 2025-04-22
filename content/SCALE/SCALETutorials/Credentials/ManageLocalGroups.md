@@ -44,11 +44,11 @@ The dollar sign ($) can be the last character in a group name.
 
 To allow Samba permissions and authentication to use this group, select **SMB Group**.
 {{< hint type=info >}}
-Using the same group ID (GID) is not permitted as it can create confusion because the operating system treats it as the same group, even if a different name is assigned to the group.
+Using the same group ID (GID) is not permitted as it can create confusion. The operating system treats it as the same group, even if a different name is assigned.
 {{< /hint >}}
 
 Select **SMB Group** to make this group available for permissions editors over SMB protocol, and add the share ACL editor.
-This is not used for SMB authentication or determining the user session token or internal permissions checks.
+This is not used for SMB authentication or when determining the user session token or internal permissions checks.
 
 Click **Save**.
 
@@ -77,3 +77,21 @@ Click **Save**.
 ### Edit Group
 
 To edit an existing group, go to **Credentials > Groups**, expand the group entry, and click <i class="material-icons" aria-hidden="true" title="Edit">edit</i> **Edit** to open the **Edit Group** configuration screen. See [Groups Screens]({{< ref "LocalGroupsScreens" >}}) for details on all settings.
+
+## Managing Privileges
+
+{{< hint type=warning >}}
+Never modify the settings for the standard pre-defined privileges (listed below)! Changing these pre-defined roles can result in lost access to the UI!
+
+Pre-defined TrueNAS privileges are:
+* **Read-Only Administrator** - Allows the user to view settings but not make changes in the UI.
+* **Sharing Administrator** - Allows the user to create new shares and the share dataset.
+* **Local Administrator** - Gives full control (read/write/execute permissions) to the user.
+{{< /hint >}}
+
+Active Directory can provision groups in TrueNAS or you can add new groups that you assign to users in AD.
+After adding a group, verify or edit the privilege(s) granted to the users in the group.
+
+### Adding a Privilege
+
+{{< include file="/static/includes/AddPrivilege.md" >}}
