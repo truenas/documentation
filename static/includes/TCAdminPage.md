@@ -106,7 +106,7 @@ The **Allow LDAP user creation** checkbox is not selected (disabled) by default.
 
 ![AdministrationConfigLDAP](/images/TrueCommand/Administration/AdministrationConfigLDAP.png "Configuration LDAP Settings")
 
-The SAML service is an experimental feature that allows users to configure TrueCommand SAML for [Active Directory]({{< relref "SAMLAD.md" >}}) or [Google Admin]({{< relref "SAMLGA.md" >}}).
+The SAML service is an experimental feature that allows users to configure TrueCommand SAML for [Active Directory]({{< ref "SAMLAD" >}}) or [Google Admin]({{< ref "SAMLGA" >}}).
 
 ### Telemetry
 
@@ -120,7 +120,7 @@ Select **Disable Telemetry** to deny telemetry collection.
 
 ## LDAP Servers Widget
 
-Users can configure TrueCommand to use [LDAP servers]({{< relref "LDAPServers.md" >}}) for security and authentication management among connected TrueNAS systems.
+Users can configure TrueCommand to use [LDAP servers]({{< ref "LDAPServers" >}}) for security and authentication management among connected TrueNAS systems.
 
 {{< include file="/static/includes/TrueCommandLDAP.md" >}}
 

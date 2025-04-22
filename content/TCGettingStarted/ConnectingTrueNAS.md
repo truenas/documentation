@@ -48,7 +48,7 @@ Click **ADD AND CONTINUE** to add this system and continue to add more systems.
 {{< expand "TrueCommand Cloud: Connecting Systems" "v" >}}
 {{< include file="/static/includes/TCCloudConnectSystems.md" >}}
 
-When all systems are connected to TrueCommand Cloud, refer to the TrueCommand [User]({{< relref "/UserGuide/_index.md" >}}) and [Administrator]({{< relref "/AdminGuide/_index.md" >}}) Guides for instructions about setting up configuration backups, alerts, reports, and role-based access control.
+When all systems are connected to TrueCommand Cloud, refer to the TrueCommand [User]({{< ref "/UserGuide/" >}}) and [Administrator]({{< ref "/AdminGuide/" >}}) Guides for instructions about setting up configuration backups, alerts, reports, and role-based access control.
 {{< /expand >}}
 
 ## Managing Systems with the TrueCommand UI

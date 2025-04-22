@@ -27,7 +27,7 @@ Admin password resets generate a temporary password to provide login access.
 The user then changes this temporary password.
 
 Need help resetting the TrueCommand Admin Cloud password or other user passwords?
-Contact [**iXsystems Customer Support**]({{< relref "Support.md" >}}) if you have purchased a support contract.
+Contact [**iXsystems Customer Support**]({{< ref "Support" >}}) if you have purchased a support contract.
 
 ## Next Steps
 
