@@ -32,7 +32,17 @@ The **Download File** option downloads your TrueNAS current configuration to the
 The **Upload File** option gives users the ability to replace the current system configuration with any previously saved TrueNAS configuration file.
 
 {{< hint type=warning >}}
-All passwords are reset if the uploaded configuration file was saved without selecting **Save Password Secret Seed**.
+When migrating from a FreeBSD-based releases to a Linux-based release, the new administration user login credentials (name and password) are deleted and replaced with the FreeBSD-based root user and password in the uploaded configuration file.
+Log into the UI with the original root user credentials, then recreate an administration user and password.
+
+To security-harden your system, do not use the **trunas_admin** user or **admin**, choose a unique username and password that cannot be easily guessed.
+Disable the root user login password as the final step.
+{{< /hint >}}
+
+{{< hint type=warning title="Always Include the Secret Seed!" >}}
+If you do not save the secret seed downloading the system config file, various services can break due to missing information.
+Without the secret seed, encrypted fields are set to empty values. For example, SMB via local accounts and apps.
+Always select the option to save the secret seed when downloading the system config file!
 {{< /hint >}}
 
 ### Resetting to Defaults
