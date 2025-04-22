@@ -26,7 +26,7 @@ iXsystems is not responsible for any charges incurred from the use of third part
 Transferring data from TrueNAS to the Cloud requires saving Cloud Storage Provider credentials on the system.
 
 To maximize security, TrueNAS encrypts credentials after saving.
-However, this means that to restore any cloud credentials from a TrueNAS configuration file, you must enable **Export Password Secret Seed** when generating that [configuration backup]({{< relref "/CORETutorials/SystemConfiguration/UsingConfigurationBackups.md" >}}).
+However, this means that to restore any cloud credentials from a TrueNAS configuration file, you must enable **Export Password Secret Seed** when generating that [configuration backup]({{< ref "/CORETutorials/SystemConfiguration/UsingConfigurationBackups" >}}).
 Remember to protect any downloaded TrueNAS configuration files.
 
 Go to **System > Cloud Credentials** and click **ADD**.
@@ -50,7 +50,7 @@ We recommend verifying the credential before saving it.
 ## Create a Cloud Sync Task
 
 {{< expand "Requirements" "v" >}}
-* All system [Storage]({{< relref "/CORETutorials/Storage/_index.md" >}}) configured and ready to receive or send data.
+* All system [Storage]({{< ref "/CORETutorials/Storage/" >}}) configured and ready to receive or send data.
 * A Cloud Storage provider account and a cloud storage location (like an Amazon S3 bucket).
 * Cloud Storage account credentials must be saved in **System > Cloud Credentials**.
 {{< /expand >}}

@@ -15,7 +15,7 @@ Go to **Storage > Pools** to add a new dataset.
 
 ![StoragePoolsAddDataset2](/images/CORE/13.0/StoragePoolsAddDataset2.png "Adding a New Dataset")
 
-See [Creating Datasets]({{< relref "/CORETutorials/Storage/Pools/Datasets.md" >}}) for information on how to create the dataset. After this step is completed, the new dataset appears nested beneath the pool.
+See [Creating Datasets]({{< ref "/CORETutorials/Storage/Pools/Datasets" >}}) for information on how to create the dataset. After this step is completed, the new dataset appears nested beneath the pool.
 
 ![StorageAllPoolsDataset](/images/CORE/13.0/StorageAllPoolsDataset.png "New Dataset Listed")
 
@@ -38,7 +38,7 @@ To configure FTP, go to the **Services** page, find the **FTP** entry, and click
 
 ![FTPServicesGeneralCORE](/images/CORE/13.0/FTPServicesGeneralCORE.png "Services FTP Options")
 
-Configure the options according to your environment and security considerations. See [FTP Screen]({{< relref "/UIReference/Services/FTPScreen.md" >}})
+Configure the options according to your environment and security considerations. See [FTP Screen]({{< ref "/UIReference/Services/FTPScreen" >}})
 
 ### Advanced Options
 

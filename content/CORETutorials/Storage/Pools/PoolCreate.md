@@ -39,7 +39,7 @@ To begin, enter a name for the pool in **Name**. Do not include spaces in the po
 {{< expand "Encryption?" "v" >}}
 Encryption algorithms are available as an option for maximizing data security.
 This also complicates how data is retrieved and risks permanent data loss!
-Refer to the [Encryption article]({{< relref "/CORETutorials/Storage/Pools/StorageEncryption.md" >}}) for more details and decide if encryption is necessary for your use case before setting any encryption options.
+Refer to the [Encryption article]({{< ref "/CORETutorials/Storage/Pools/StorageEncryption" >}}) for more details and decide if encryption is necessary for your use case before setting any encryption options.
 {{< /expand >}}
 
 Next, configure the virtual devices (vdevs) that make up the pool.
@@ -95,7 +95,7 @@ When a failed drive is replaced with a new drive, the hot spare reverts to an in
 When the failed drive is only detached from the pool, the temporary hot spare is promoted to a full data vdev member and is no longer available as a hot spare.
 {{< /expand >}}
 {{< expand "Metadata" >}}
-Special Allocation class used to create [Fusion Pools]({{< relref "/CORETutorials/Storage/Pools/FusionPool.md" >}}) for increased metadata and small block I/O performance.
+Special Allocation class used to create [Fusion Pools]({{< ref "/CORETutorials/Storage/Pools/FusionPool" >}}) for increased metadata and small block I/O performance.
 {{< /expand >}}
 {{< expand "Dedup" >}}
 **Dedup** vdevs store [ZFS de-duplication](https://www.truenas.com/docs/references/zfsdeduplication/).

@@ -12,12 +12,12 @@ tags:
 
 {{< include file="/static/includes/SnapshotsIntroSnippet.md" >}}
 
-Taking snapshots requires the system have all [pools]({{< relref "/CORETutorials/Storage/Pools/PoolCreate.md" >}}), [datasets]({{< relref "/CORETutorials/Storage/Pools/datasets.md" >}}), and [zvols]({{< relref "/CORETutorials/Storage/Pools/zvols.md" >}}) already configured.
+Taking snapshots requires the system have all [pools]({{< ref "/CORETutorials/Storage/Pools/PoolCreate" >}}), [datasets]({{< ref "/CORETutorials/Storage/Pools/datasets" >}}), and [zvols]({{< ref "/CORETutorials/Storage/Pools/zvols" >}}) already configured.
 
 ## Creating a Single Snapshot
 
 {{< hint type=tip >}}
-Consider making a [Periodic Snapshot Task]({{< relref "/UIReference/Tasks/PeriodicSnapshotTasks.md" >}}) to save time and create regular, fresh snapshots.
+Consider making a [Periodic Snapshot Task]({{< ref "/UIReference/Tasks/PeriodicSnapshotTasks" >}}) to save time and create regular, fresh snapshots.
 {{< /hint >}}
 
 To perform a quick snapshot of existing storage, go to **Storage > Snapshots** and click **ADD**.
@@ -28,7 +28,7 @@ Use the **Dataset** dropdown list to select an existing ZFS pool, dataset, or zv
 
 The TrueNAS software displays a suggested name that you can override with any custom string.
 
-To include the snapshot in [local]({{< relref "LocalReplication.md" >}}) or [remote]({{< relref "RemoteReplication.md" >}}) replication tasks  choose a proper naming schema. The **Naming Schema** drop-down list populates with schemas already created from periodic snapshot tasks.
+To include the snapshot in [local]({{< ref "LocalReplication" >}}) or [remote]({{< ref "RemoteReplication" >}}) replication tasks  choose a proper naming schema. The **Naming Schema** drop-down list populates with schemas already created from periodic snapshot tasks.
 
 To include child datasets with the snapshot, select **Recursive**.
 

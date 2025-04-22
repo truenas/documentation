@@ -21,7 +21,7 @@ weight: 3
 * Due to security vulnerabilities and maintainability issues, the S3 service is deprecated in TrueNAS CORE 13.0 and removed in CORE 13.3 ([NAS-127694](https://ixsystems.atlassian.net/browse/NAS-127694)).
   Beginning in CORE 13.0-U6, the CORE web interface generates an alert when the deprecated service is either actively running or enabled to start on boot.
   Users should move any production data away from the S3 service storage location before migrating to TrueNAS 24.04 or newer, which has MinIO applications available.
-  See also [Feature Deprecations]({{< relref "Deprecations.md" >}}).
+  See also [Feature Deprecations]({{< ref "Deprecations" >}}).
 
 * SAS Multipath is supported *as-is* and receives no further maintenance updates.
   While multipath situations might be detected and be generally functional in TrueNAS CORE, there is a possibility this is not available in a future TrueNAS CORE major version.
@@ -1262,8 +1262,8 @@ Known issues are those found during internal testing or reported by the communit
 | Notice or Behavior | Details |
 |--------------------|---------|
 | iSCSI LUN can be removed on active controller but still advertised on passive | To avoid this issue, always remove any relevant iSCSI configuration details using the TrueNAS web interface prior to deleting the associated zvol. |
-| S3 Service deprecated | Due to security and maintainability issues, this service is deprecated and scheduled for removal in the next TrueNAS CORE major version. See [Feature Deprecations]({{< relref "Deprecations.md" >}}) for more details. |
-| SAS Multipath deprecated | Due to maintainability issues, SAS multipath scenarios are no longer receiving maintenance updates. See [Feature Deprecations]({{< relref "Deprecations.md" >}}) for more details. |
+| S3 Service deprecated | Due to security and maintainability issues, this service is deprecated and scheduled for removal in the next TrueNAS CORE major version. See [Feature Deprecations]({{< ref "Deprecations" >}}) for more details. |
+| SAS Multipath deprecated | Due to maintainability issues, SAS multipath scenarios are no longer receiving maintenance updates. See [Feature Deprecations]({{< ref "Deprecations" >}}) for more details. |
 | Virtual Machine display devices appear to be insecure. | This is under investigation and resolution is TBD. To secure the system, disable any VM display devices after configuring the VM. |
 | Netatalk deprecation in 13.0-U3 | Netatalk is deprecated in 13.0-U3 and users should begin migrating away from using it with TrueNAS. | Netatalk is deprecated in 13.0, and like AFP will be completely removed post-CORE 13.0. Users should migrate to SMB shares. |
 | Nextcloud (official) plugin does not install. | Recommend users migrate to SCALE which provides a better experience with running applications. |
@@ -1306,7 +1306,7 @@ Please use CLI commands carefully and **always back up critical data** before at
 {{< /hint >}}
 
 {{< expand "CLI Disk Replacement for CORE 13.0-RELEASE only (Click to expand)" "v" >}}
-1. On a system with 13.0-RELEASE installed, access the TrueNAS shell either by logging in to the web interface and clicking **Shell** or accessing the CLI remotely using [SSH]({{< relref "CORETutorials/Services/ConfiguringSSH.md" >}}).
+1. On a system with 13.0-RELEASE installed, access the TrueNAS shell either by logging in to the web interface and clicking **Shell** or accessing the CLI remotely using [SSH]({{< ref "CORETutorials/Services/ConfiguringSSH" >}}).
    Type in the commands formatted in these code blocks and replace any `<text>` strings with data unique to your system.
 2. Find the pool and disk to replace:
    - `zpool list` shows the name of the pools on the system.

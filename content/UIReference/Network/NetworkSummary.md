@@ -18,9 +18,9 @@ These areas are not editable.
 
 ![**Network Summary**](/images/CORE/12.0/NetworkSummary.png "Network Summary")
 
-* [**Interfaces**]({{< relref "/CORETutorials/Network/Interfaces/_index.md" >}}) shows any configured physical, [bridge]({{< relref "/CORETutorials/Network/Interfaces/BridgeCreate.md" >}}), [LAGG]({{< relref "/CORETutorials/Network/Interfaces/LAGGCreate.md" >}}), and [vlan]({{< relref "/CORETutorials/Network/Interfaces/VLANCreate.md" >}}) interfaces.
+* [**Interfaces**]({{< ref "/CORETutorials/Network/Interfaces/" >}}) shows any configured physical, [bridge]({{< ref "/CORETutorials/Network/Interfaces/BridgeCreate" >}}), [LAGG]({{< ref "/CORETutorials/Network/Interfaces/LAGGCreate" >}}), and [vlan]({{< ref "/CORETutorials/Network/Interfaces/VLANCreate" >}}) interfaces.
   All detected physical interfaces are listed, even when unconfigured.
-  The IPv4 or IPv6 address displays when a [Static IP]({{< relref "/CORETutorials/Network/Interfaces/SettingStaticIP.md" >}}) is saved for an interface.
+  The IPv4 or IPv6 address displays when a [Static IP]({{< ref "/CORETutorials/Network/Interfaces/SettingStaticIP" >}}) is saved for an interface.
 
 * **Default Routes** lists all saved TrueNAS Default Routes.
   Go to **Network > Global Configuration** to configure Default Routes.
@@ -29,8 +29,8 @@ These areas are not editable.
 
 ## Additional Network Configuration Screens
 
-Define any Static Routes in **Network > [Static Routes]({{< relref "/CORETutorials/Network/StaticRoutes.md" >}})**.
+Define any Static Routes in **Network > [Static Routes]({{< ref "/CORETutorials/Network/StaticRoutes" >}})**.
 
-Out of Band Management is managed from **Network > [IPMI]({{< relref "/CORETutorials/Network/IPMI.md" >}})**. This option is visible only when TrueNAS detects the appropriate physical hardware.
+Out of Band Management is managed from **Network > [IPMI]({{< ref "/CORETutorials/Network/IPMI" >}})**. This option is visible only when TrueNAS detects the appropriate physical hardware.
 
 {{< taglist tag="corenetworkinterfaces" limit="10" >}}

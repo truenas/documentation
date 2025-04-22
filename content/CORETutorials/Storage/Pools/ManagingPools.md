@@ -65,15 +65,15 @@ Some vdev extending examples:
 {{< expand "Scrub Pool" >}}
 Initiate a data integrity check of the pool.
 
-Any problems detected during the scrub are either automatically corrected or generate an [alert]({{< relref "/CORETutorials/SystemConfiguration/CreatingAlerts.md" >}}) in the web interface.
-By default, every pool is automatically checked on a reoccurring [scrub schedule]({{< relref "/CORETutorials/Tasks/CreatingScrubTasks.md" >}}).
+Any problems detected during the scrub are either automatically corrected or generate an [alert]({{< ref "/CORETutorials/SystemConfiguration/CreatingAlerts" >}}) in the web interface.
+By default, every pool is automatically checked on a reoccurring [scrub schedule]({{< ref "/CORETutorials/Tasks/CreatingScrubTasks" >}}).
 {{< /expand >}}
 {{< expand "Status" >}}
 Opens the **Pool Status** screen to show the state of the last scrub and disks in the pool.
 
 ![PoolStatusScreen](/images/CORE/13.0/PoolStatusScreen.png "Storage Pools Status")
 
-Additional options for [managing connected disks]({{< relref "/CORETutorials/Storage/Disks/DiskReplace.md" >}}) are available in this screen.
+Additional options for [managing connected disks]({{< ref "/CORETutorials/Storage/Disks/DiskReplace" >}}) are available in this screen.
 {{< /expand >}}
 {{< expand "Expand Pool" >}}
 Increases the size of the pool to match all available disk space.

@@ -43,7 +43,7 @@ Verify the name to ensure you have the correct disk chosen.
 When satisfied the disk can be wiped, select **Confirm** and click **CONTINUE**.
 A dialog shows the disk wipe progress.
 
-See [Disks Screens]({{< relref "DisksScreens.md" >}}) for more information on Disks screen settings.
+See [Disks Screens]({{< ref "DisksScreens" >}}) for more information on Disks screen settings.
 
 {{< taglist tag="corerecovery" limit="10" >}}
 

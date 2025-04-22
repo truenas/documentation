@@ -12,7 +12,7 @@ tags:
 
 {{< hint type=note >}}
 This procedure only applies to disks with a ZFS storage pool.
-To import disks with different file systems, see [Import Disk]({{< relref "/CORETutorials/Storage/ImportDisk.md" >}}).
+To import disks with different file systems, see [Import Disk]({{< ref "/CORETutorials/Storage/ImportDisk" >}}).
 {{< /hint >}}
 
 ZFS pool importing works for pools that were exported or disconnected from the current system, created on another system, and pools to reconnect after reinstalling or upgrading the TrueNAS system.

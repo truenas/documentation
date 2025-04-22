@@ -107,7 +107,7 @@ When a replication task has difficulty completing, set **Save Pending Snapshots*
 ### Destination
 
 The destination is where replicated data is stored.
-Choosing a remote destination requires an *[SSH Connection]({{< relref "ConfiguringSSHConnections.md" >}})* to that system.
+Choosing a remote destination requires an *[SSH Connection]({{< ref "ConfiguringSSHConnections" >}})* to that system.
 Expanding the file browser shows the current available datasets on the destination system.
 You can click a destination or manually type a path in the field.
 Adding a name to the end of the path creates a new dataset in that location.

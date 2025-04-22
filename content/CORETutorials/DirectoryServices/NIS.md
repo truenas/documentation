@@ -18,7 +18,7 @@ In FreeBSD, the file <file>/etc/passwd</file> contains the list of users. The fi
 
 {{< hint type=important >}}
 NIS is limited in scalability and security.
-For modern networks, [LDAP]({{< relref "LDAP.md" >}}) has replaced NIS.
+For modern networks, [LDAP]({{< ref "LDAP" >}}) has replaced NIS.
 {{< /hint >}}
 
 To configure NIS, go to **Directory Services > NIS**.
