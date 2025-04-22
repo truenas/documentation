@@ -100,7 +100,7 @@ Select the dataset on the tree table, then click **Edit** on the **Dataset Detai
 ### Editing Dataset Permissions
 To edit the dataset ACL permissions, click **Edit** on the **Permissions** widget.
 If the ACL type is NFSv4, the **Permissions** widget shows ACE entries for the dataset.
-Each entry opens a checklist of flag options you can select/deselect without opening the **Edit ACL** screen.
+Each entry opens a checklist of flag options you can select or clear without opening the **Edit ACL** screen.
 To modify ownership, configure new or change existing ACL entries, click **Edit** to open the **ACL Editor** screen.
 
 To edit a POSIX ACL type, click **Edit** on the **Permissions** widget to open the **Unix Permissions Editor** screen.

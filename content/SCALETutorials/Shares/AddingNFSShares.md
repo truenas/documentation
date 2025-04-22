@@ -1,6 +1,6 @@
 ---
 title: "Adding NFS Shares"
-description: "Provides instructions on adding NFS shares, starting NFS service, and accessing the share."
+description: "Provides instructions on adding NFS shares, starting the NFS service, and accessing the share."
 weight: 30
 tags:
 - nfs
@@ -16,7 +16,7 @@ Creating a Network File System (NFS) share on TrueNAS makes a lot of data availa
 Depending on the share configuration, it can restrict users to read or write privileges.
 
 {{< hint type=note >}}
-NFS treats each dataset as its own file system. When creating the NFS share on the server, the specified dataset is the location that client accesses.
+NFS treats each dataset as its own file system. When creating the NFS share on the server, the specified dataset is the location that the client accesses.
 If you choose a parent dataset as the NFS file share location, the client cannot access any nested or child datasets beneath the parent.
 
 If you need to create shares that include child datasets, SMB sharing is an option. Note that Windows NFS Client versions currently support only NFSv2 and NFSv3.
@@ -33,7 +33,7 @@ If you need to create shares that include child datasets, SMB sharing is an opti
 {{< include file="/static/includes/ShareDatasetsNotPools.md" >}}
 You have the option to create the share and dataset at the same time from either the **Add Dataset** or **Add NFS** screens.
 
-If creating a dataset and share from the **Add Dataset** screen, we recommend creating a new dataset with the **Dataset Preset** set to **Generic** for the new NFS share.
+If you are creating a dataset and share from the **Add Dataset** screen, we recommend creating a new dataset with the **Dataset Preset** set to **Generic** for the new NFS share.
 Or you can set it to **Multiprotocol** and select only the NFS share type.
 {{< expand "Creating a Dataset Using Add Dataset" "v" >}}
 {{< include file="/static/includes/CreateDatasetSCALE.md" >}}
@@ -49,7 +49,7 @@ Enter the path or use the <span class="material-icons">arrow_right</span> icon t
 
 {{< include file="/static/includes/FileExplorerFolderIcons.md" >}}
 
-Click **Create Dataset**, enter a name for the dataset and click **Create**.
+Click **Create Dataset**, enter a name for the dataset, and click **Create**.
 The system creates the dataset optimized for an NFS share, populates the share **Name**, and updates the **Path** with the dataset name.
 The dataset name is the share name.
 
@@ -87,11 +87,11 @@ To tune the NFS share access permissions or define authorized networks, click **
 
 Select **Read-Only** to prohibit writing to the share.
 
-To map user permissions to the root user, enter a string or select the user from the **Maproot User** dropdown list.
-To map the user permissions to all clients, enter a string or select the user from the **Mapall User** dropdown list.
+To map client credentials to the root user, enter a string or select the user from the **Maproot User** dropdown list.
+To map client credentials to all users, enter a string or select the user from the **Mapall User** dropdown list.
 
-To map group permissions to the root user, enter a string or select the group from the **Maproot Group** dropdown list.
-To map the group permissions to all clients, enter a string or select the group from the **Mapall Group** dropdown list.
+To map group credentials to the root user, enter a string or select the group from the **Maproot Group** dropdown list.
+To map group credentials to all users, enter a string or select the group from the **Mapall Group** dropdown list.
 
 Select an option from the **Security** dropdown. If you select **KRB5** security, you can use a Kerberos ticket. Otherwise, everything is based on IDs.
 
@@ -144,7 +144,7 @@ When TrueNAS is already connected to [Active Directory]({{< ref "/SCALEUIReferen
 TrueNAS Enterprise customers utilizing NFS shares with compatible hardware can enable NFS over RDMA to improve NFS performance and efficiency.
 Remote Direct Memory Access (RDMA) lets a client system transfer data directly from a server’s memory to its own, improving speed, reducing latency, and lowering CPU usage.
 
-NFS over RDMA support requires an active Enterprise license and RDMA capable network interface cards (NICs) in both the TrueNAS host and client systems.
+NFS over RDMA support requires an active Enterprise license and RDMA-capable network interface cards (NICs) in both the TrueNAS host and client systems.
 Interested customers should contact Enterprise Support for assistance.
 
 {{< expand "Contacting Support" "v" >}}
@@ -158,7 +158,7 @@ Although you can connect to an NFS share with various operating systems, we reco
 
 First, download the `nfs-common` kernel module.
 You can do this using the installed distribution package manager.
-For example, on Ubuntu/Debian, enter command `sudo apt-get install nfs-common` in the terminal.
+For example, on Ubuntu/Debian, enter the command `sudo apt-get install nfs-common` in the terminal.
 
 After installing the module, connect to an NFS share by entering `sudo mount -t nfs {IPaddressOfTrueNASsystem}:{path/to/nfsShare} {localMountPoint}`.
 Where *{IPaddressOfTrueNASsystem}* is the remote TrueNAS system IP address that contains the NFS share, *{path/to/nfsShare}* is the path to the NFS share on the TrueNAS system, and *{localMountPoint}* is a local directory on the host system configured for the mounted NFS share.
@@ -169,7 +169,7 @@ To enable Linux `nconnect`, enter `sudo mount -t nfs -o rw,nconnect=16 {IPaddres
 Where *{IPaddressOfTrueNASsystem}*, *{path/to/nfsShare}*, and *{localMountPoint}* are the same ones you used when connecting to the share.
 For example, `sudo mount -t nfs -o rw,nconnect=16 10.239.15.110:/mnt/Pool1/NFS_Share /mnt`.
 
-By default, anyone that connects to the NFS share only has read permission.
+By default, anyone who connects to the NFS share only has read permission.
 To change the default permissions, edit the share, open the **Advanced Options**, and change the **Access** settings.
 
 {{< hint type=important >}}

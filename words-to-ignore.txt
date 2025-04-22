@@ -2290,3 +2290,15 @@ xream
 Jihaeng
 AppsSupportTimeline
 InstanceImageFilename
+aef
+InstanceImageFilenames
+InstancesCreateVolume
+InstanceImportZvol
+ix-virt
+MapUserGroupIDs
+Virtio-BLK
+Virtio-SCSI
+AddDiskScreenVM
+InstanceNameRequirements
+TTY
+ZF

@@ -26,27 +26,6 @@ Click on the <i class="fa fa-search-minus" aria-hidden="true"></i> icon to zoom 
 Click the <i class="fa fa-forward" aria-hidden="true" title="Forward"></i> to move the graph forward.
 Click the <i class="fa fa-backward" aria-hidden="true" title="Backward"></i> to move the graph backward.
 
-## Using the Netdata UI
-
-Click **Netdata** from the **Reporting** screen to see the built-in Netdata UI.
-This UI bases metrics off your local system and browser time, which might be different from the default TrueNAS system time.
-
-{{< trueimage src="/images/SCALE/Reporting/NetdataUI.png" alt="Netdata UI Dashboard" id="Netdata UI Dashboard" >}}
-
-The Netdata UI opens in a new browser tab and automatically logs in.
-
-A **Netdata** dialog also opens in the TrueNAS UI.
-If automatic log in fails, use the generated password from this dialog to access the Netdata UI.
-
-{{< trueimage src="/images/SCALE/Reporting/NetdataCredentialsDialog.png" alt="Netdata Credentials" id="Netdata Credentials" >}}
-
-A new password generates each time the **Netdata** button is clicked on the **Reporting** screen.
-Click **Generate New Password** on the dialog to force regeneration.
-The Netdata UI opens a log in prompt.
-Enter the new generated password to regain access.
-
-See [Dashboards and Charts](https://learn.netdata.cloud/docs/dashboards-and-charts/) from Netdata for more information about the Netdata UI.
-
 ## Configuring Reporting Exporters
 You can configure TrueNAS to export Netdata information to any time-series database, reporting cloud service or application installed on a server.
 For example, Graphite, Grafana, etc., installed on a server or use their cloud service.

@@ -178,7 +178,7 @@ Performing a bulk action update opens a dialog listing the apps with available u
 
 {{< trueimage src="/images/SCALE/Apps/InstalledAppsBulkActionUpgradeDialog.png" alt="App Bulk Update Dialog" id="App Bulk Update Dialog" >}}
 
-Select the radio button to the left of a listed application to deselect or reselect an application to upgrade.
+Select an application by clicking the radio button to the left of a listed application.
 
 Click the expand icon for listed app to show the **Version** dropdown and **Changelog** for the selected version.
 

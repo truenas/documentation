@@ -47,7 +47,7 @@ The **Console** widget displays the current console settings for TrueNAS.
 | Settings | Description |
 |----------|-------------|
 | **Show Text Console without Password Prompt** | Select to display the console without being prompted to enter a password. Leave cleared to add a login prompt to the system before showing the console menu. Selected by default. |
-| **Enable Serial Console** | Select to enable the serial console. Selected by default. Clear this if the serial port is disabled.  |
+| **Enable Serial Console** | Select to enable the serial console. Selected by default. Clear this if the serial port is disabled.  |
 | **Serial Port** | Shows the default serial port. If using a port other than the default, enter the serial console port address. |
 | **Serial Speed** | Shows the default serial port speed. If not using the default speed, select the speed (in bits per second) the serial port uses from the dropdown list. Options are 9600, 19200, 38400, 57600, or 115200. |
 | **MOTD Banner** | Enter the message you want to display when a user logs in with SSH. The default banner message is **Welcome to TrueNAS**. |
@@ -79,7 +79,7 @@ There are also options to configure a remote syslog server for recording system 
 | **Syslog Transport** | Enter the [transport protocol](https://tools.ietf.org/html/rfc8095) for the remote system log server connection. Selecting Transport Layer Security (TLS) displays the **Syslog TLS Certificate** and **Syslog TSL Certificate Authority** fields. This setting requires preconfiguring both the server system certificate and the certificate authority (CA). |
 | **Syslog TLS Certificate** | Displays after selecting **TLS** in **Syslog Transport**. Select the [transport protocol](https://tools.ietf.org/html/rfc8095) for the remote system log server TLS certificate from the dropdown list. Select the default or add the certificate and CA for the server using the **Credentials > Certificates** screen **Certificates** widget. |
 | **Syslog TLS Certificate Authority** | Displays after selecting **TLS** in **Syslog Transport**. Select the TLS CA for the TLS server from the dropdown list. If not using the default, create the CA for the syslog server TLS certificate on the **Credentials > Certificates > Certificate Authorities** screen. |
-| **Include Audit Logs** | Select to enable audit logging.  |
+| **Include Audit Logs** | Select to enable audit logging.  |
 {{< /truetable >}}
 {{< /expand >}}
 
@@ -110,7 +110,7 @@ The **Kernel** widget shows options for configuring the Linux kernel installed w
 
 ## Cron Jobs Widget
 
-The **Cron Jobs** widget displays **No Cron Jobs configured** until you add a cron job, then it shows the information on cron job(s) configured on the system.
+The **Cron Jobs** widget displays **No Cron Jobs configured** until you add a cron job,  and then it shows the information on cron job(s) configured on the system.
 
 {{< trueimage src="/images/SCALE/SystemSettings/AdvancedSettingsCronJobWidget.png" alt="Cron Job Widget" id="Cron Job Widget" >}}
 
@@ -131,7 +131,7 @@ The **Add Cron Job** and **Edit Cron Job** configuration screens display the sam
 | Settings | Description |
 |----------|-------------|
 | **Description** | Enter a description for the cron job. |
-| **Command** | Enter the full path to the command or script to run. For example, to create a command string that generates a list of users on the system and write that list to a file, enter `cat /etc/passwd > users_$(date +%F).txt`  |
+| **Command** | Enter the full path to the command or script to run. For example, to create a command string that generates a list of users on the system and write that list to a file, enter `cat /etc/passwd > users_$(date +%F).txt` |
 | **Run As User** | Select a user account to run the command. The user must have permissions allowing them to run the command or script. |
 | **Schedule** | Select a schedule preset or choose **Custom** to open the advanced scheduler. Note that an in-progress cron task postpones any later scheduled instance of the same task until the running task is complete. |
 | **Hide Standard Output** | Select to hide standard output (stdout) from the command. If left cleared, TrueNAS mails any standard output to the user account cron that ran the command. |
@@ -227,23 +227,8 @@ Click **Configure** to open the **Replication** configuration screen.
 Enter a number for the maximum number of simultaneous replication tasks you want to allow the system to process and click **Save**.
 
 ## Access Widget
-The **Access** widget lists all active sessions, including the user who initiated them and when they started.
-It also displays the **Session Timeout** setting for your current session.
-It allows administrators to manage other active sessions and configure the session timeout.
 
-{{< trueimage src="/images/SCALE/SystemSettings/AdvancedSystemSettingsAccessWidget.png" alt="Access Widget" id="Access Widget" >}}
-
-**Terminate Other Sessions** ends all sessions except the active session for the logged-in admin user.
-You can also end individual sessions by clicking the logout <span class="iconify" data-icon="PH:arrow-square-right"></span> icon next to that session if it is not the admin user session.
-You must check a confirmation box before the system allows you to end sessions.
-TrueNAS terminates inactive sessions when they reach the specified timeout limit. If a new session is initiated within five minutes, TrueNAS logs the user in as the previously login session. If the login occurs outside the five-minute period TrueNAS initiates a new WebSocket session.
-
-The logout button is inactive for your current session and active for all other current sessions.
-It cannot be used to terminate your current session.
-
-**Session Timeout** displays the configured token duration for your current session (default is five minutes).
-TrueNAS logs out user sessions that are inactive for longer than the configured token setting.
-New activity resets the token counter.
+{{< include file="/static/includes/AccessWidget.md" >}}
 
 If the configured session timeout is exceeded, TrueNAS displays a **Logout** dialog with the exceeded ticket lifetime value and the time the session is scheduled to terminate.
 
@@ -254,7 +239,7 @@ If the configured session timeout is exceeded, TrueNAS displays a **Logout** dia
 If the button is not clicked, the TrueNAS terminates the session automatically and returns to the login screen.
 {{< /expand >}}
 
- **Configure** opens the **Access Settings** screen.
+ **Configure** opens the **Access Settings** screen.
 
 ### Access Settings Screen
 The **Access Settings** screen allows users to configure the **Session Timeout** for the current account.
@@ -267,13 +252,18 @@ Enter the value in seconds.
 {{< hint type=tip >}}
 The default lifetime setting is 300 seconds or five minutes.
 
-The maximum is 2147482 seconds, or 24 days, 20 hours, 31 minutes, and 22 seconds.
+The maximum is 2147482 seconds or 24 days, 20 hours, 31 minutes, and 22 seconds.
 {{< /hint >}}
 
 The **Login Banner** field allows specifying a text message the system shows before the TrueNAS login splash screen displays.
 **Continue** on the banner screen closes the screen, then shows the login splash screen.
 The maximum length of the banner text is 4096 characters including spaces. Long text wraps and banner text can use carriage returns to break up long messages to improve readability.
 Leave **Login Banner** empty to show just the login screen without interruption by a banner screen.
+
+{{< enterprise >}}
+Enterprise-licensed systems include the **Allow Directory Service users to access WebUI** option on the **Access Settings** screen.
+After enabling this option TrueNAS automatically creates a new entry, named as the domain admin group, in the **Privileges** screen table. For example, if the domain is *ad03.mydomain.net*, then you should see a group of that name listed as well as any the groups AD creates on the system.
+{{< /enterprise >}}
 
 ## Allowed IP Addresses Widget
 
@@ -286,7 +276,7 @@ The **Allowed IP Addresses** widget displays IP addresses and networks added to 
 {{< hint type="warning" >}}
 Entering an IP address to the allowed IP address list denies access to the UI or API for all other IP addresses not listed.
 
-Use only if limiting system access to a single or limited number of IP addresses. Leave the list blank to allow all IP addresses.
+Only use when limiting system access to a single or limited number of IP addresses. Leave the list blank to allow all IP addresses.
 {{< /hint >}}
 
 Click **Add** next to **Allowed IP Addresses** to add an entry to the allowed IP Addresses list.
@@ -347,9 +337,9 @@ Select the GPU device ID from the dropdown list and click **Save**.
 Isolated GPU devices are reserved for use by configured applications or a VM.
 
 To allocate an isolated GPU device, select it while creating or editing the VM configuration.
-When allocated to a VM, the isolated GPU connects to the VM as if it were physically installed in that VM and becomes unavailable for any other allocations.
+When allocated to a VM, the isolated GPU connects to the VM as if it were physically installed in that VM, and it becomes unavailable for any other allocations.
 
-## Global Two Factor Authentication Widget
+## Global Two-Factor Authentication Widget
 
 The **Global Two Factor Authentication** widget allows you to set up two-factor authentication (2FA) for your system.
 

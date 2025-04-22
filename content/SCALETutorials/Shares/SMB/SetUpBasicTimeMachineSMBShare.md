@@ -11,6 +11,8 @@ tags:
 
 {{< include file="/static/includes/RootLevelDatasetShareWarning.md" >}}
 
+{{< include file="/static/includes/TimeMachineMultiprotocol.md" >}}
+
 TrueNAS uses predefined setting options to establish an SMB share that fits a predefined purpose, such as a basic time machine share.
 
 ## Setting Up a Basic Time Machine SMB Share
