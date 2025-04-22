@@ -4,7 +4,6 @@ description: "Provides information on using the Console Setup menu after install
 weight: 20
 aliases:
  - /scale/gettingstarted/post-installconfiguration/
- - /images/SCALE/22.12/ConsoleSetupMenuSCALE.png
 tags:
 - install
 - network

@@ -6,7 +6,6 @@ aliases:
 - /scale/scaleuireference/shares/smb/smbsharesscreens/
 - /scale/scaleuireference/shares/smb/
 - /scale/scaleclireference/sharing/clismb/
-- /images/CORE/13.0/SharingSMBAdvancedOptions.png
 tags:
 - smb
 - afp

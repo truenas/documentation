@@ -4,7 +4,6 @@ description: "Describes the web interface, logging in to the TrueNAS web interfa
 weight: 20
 aliases: 
  - /scale/gettingstarted/firsttimelogin/
- - /images/SCALE/Dashboard/DashboardMainScreenSCALE.png
 tags:
 - dashboard
 keywords:

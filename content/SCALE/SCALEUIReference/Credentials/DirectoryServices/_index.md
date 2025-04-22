@@ -9,7 +9,6 @@ aliases:
   - /scale/credentials/directoryservices/idmapscale/
   - /scale/credentials/directoryservices/kerberosscale/
   - /scale/scaleclireference/directory-service/
-  - /images/CORE/12.0/DirectoryServicesNIS.png
 tags:
 - kerberos
 - activedirectory

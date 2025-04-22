@@ -9,8 +9,6 @@ aliases:
  - /scale/scaleclireference/system/clisupport/
  - /scale/scaleclireference/system/clitruenas/
  - /scale/scaletutorials/dashboard/scaletimesync/
- - /images/CORE/12.0/SystemNTPServersAdd.png
- - /images/CORE/12.0/SystemNTPServers.png
  - /scale/scaleuireference/systemsettings/generalsettings/
 tags:
  - settings

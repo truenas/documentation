@@ -11,7 +11,6 @@ aliases:
  - /scale/scaleclireference/app/clicontainer/
  - /scale/scaleclireference/app/clidocker/
  - /scale/scaleclireference/app/clikubernetes/
- - /images/SCALE/AppsCatalog.png
 tags:
 - apps
 related: false

@@ -5,7 +5,6 @@ geekdocCollapseSection: true
 aliases:
  - /scale/scaletutorials/dataprotection/cloudsynctasks/addcloudsynctasks/
  - /scale/scaleclireference/task/cloudsync/
- - /images/CORE/12.0/TasksCloudSyncAdd.png
 weight: 20
 tags:
  - cloud

@@ -12,7 +12,6 @@ aliases:
  - /scale/scaleclireference/system/clisystemdataset/
  - /scale/scaleclireference/system/clitunable/
  - /scale/scaleclireference/task/clicronjob/
- - /images/SCALE/22.02/AdvancedSystemSettingsSyslogWidget.png
 tags:
  - settings
  - pools

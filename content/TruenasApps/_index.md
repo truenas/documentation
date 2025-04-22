@@ -9,7 +9,6 @@ aliases:
  - /scale/apps/usingapps/
  - /scale/scaleclireference/app/
  - /scale/scaletutorials/apps/
- - /images/SCALE/Apps/AppsAddCatalogScreen.png
  - /scale/scaleuireference/apps/usingcatalogs/
  - /scale/apps/usingcatalogs/
  - /scale/scaletutorials/apps/usingcatalogs/

@@ -4,7 +4,6 @@ description: "Provides instructions on adding and managing administrator and use
 weight: 10
 aliases:
 - /scale/scaleuireference/credentials/localusers/
-- /images/CORE/13.0/AddUserNamedCORE.png
 tags:
 - users
 - accounts

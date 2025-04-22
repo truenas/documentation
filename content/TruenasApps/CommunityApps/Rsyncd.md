@@ -7,7 +7,6 @@ aliases:
  - /scale/scaletutorials/systemsettings/services/configrsyncservicescale/
  - /scale/scaleuireference/systemsettings/services/rsyncservicesscreenscale/
  - /scale/scaletutorials/apps/communityapps/rsyncd/
- - /images/SCALE/22.12/ServicesRsyncCreateModule.png
 tags:
 - rsync
 - apps
