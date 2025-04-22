@@ -14,7 +14,7 @@ The **Console** widget on the **System Setting > Advanced** screen displays curr
 
 ![AdvancedSystemSettingsConsoleWidget](/images/SCALE/SystemSettings/AdvancedSystemSettingsConsoleWidget.png "SCALE Advanced Settings Console Widget") 
 
-Click **Configure** to open the **Console** configuration screen. The **Console** configuration settings determine how the [Console setup menu]({{< relref "ConsoleSetupMenuSCALE.md" >}}) displays, the serial port it uses and the speed of the port, and the banner users see when it is accessed.
+Click **Configure** to open the **Console** configuration screen. The **Console** configuration settings determine how the [Console setup menu]({{< ref "ConsoleSetupMenuSCALE" >}}) displays, the serial port it uses and the speed of the port, and the banner users see when it is accessed.
 
 ![ConsoleConfigScreen](/images/SCALE/SystemSettings/ConsoleConfigScreen.png "SCALE Console Settings Screen") 
 

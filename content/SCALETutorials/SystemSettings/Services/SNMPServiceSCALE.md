@@ -14,7 +14,7 @@ To configure SNMP, go to **System Settings > Services** page, find **SNMP**, and
 
 ![ServicesSNMPSCALE](/images/SCALE/SystemSettings/SCALESNMPOptions.png "SCALE SNMP Service Options")
 
-See [SNMP Service Screen]({{< relref "SNMPServiceScreenSCALE.md" >}}) for setting information.
+See [SNMP Service Screen]({{< ref "SNMPServiceScreenSCALE" >}}) for setting information.
 
 Port **UDP 161** listens for SNMP requests when starting the SNMP service.
 
@@ -22,7 +22,7 @@ Port **UDP 161** listens for SNMP requests when starting the SNMP service.
 
 Click to view or download a static copy of the <a href="https://www.truenas.com/docs/files/truenas-mib-dragonfish.txt">SCALE 24.04 Dragonfish MIB</a> file.
 
-To download an MIB from your TrueNAS system, you can [enable SSH]({{< relref "SSHServiceSCALE.md" >}}) and use a file transfer command like `scp`.
+To download an MIB from your TrueNAS system, you can [enable SSH]({{< ref "SSHServiceSCALE" >}}) and use a file transfer command like `scp`.
 When using SSH, make sure to validate the user logging in has SSH login permissions enabled and the SSH service is active and using a known port (**22** is default).
 Management Information Base (MIB) files are located in <file>/usr/local/share/snmp/mibs/</file>.
 

@@ -10,7 +10,7 @@ tags:
 - storage
 ---
 
-Datasets, root, non-root parent, and child, or zvols with encryption include the **[ZFS Encryption]({{< relref "/SCALEUIReference/Datasets/_index.md" >}})** widget in the set of dataset widgets displayed on the **Datasets** screen.
+Datasets, root, non-root parent, and child, or zvols with encryption include the **[ZFS Encryption]({{< ref "/SCALEUIReference/Datasets/" >}})** widget in the set of dataset widgets displayed on the **Datasets** screen.
 
 {{< trueimage src="/images/SCALE/Datasets/DatasetTreeWithLockIcons.png" alt="Dataset Tree Table Encryption Icons" id="Dataset Tree Table Encryption Icons" >}}
 
@@ -18,7 +18,7 @@ Datasets, root, non-root parent, and child, or zvols with encryption include the
 
 ## Pool Encryption
 
-The **Encryption** option on the **[Pool Manager]({{< relref "PoolCreateWizardScreens.md" >}})** screen sets encryption for the pool and root dataset.
+The **Encryption** option on the **[Pool Manager]({{< ref "PoolCreateWizardScreens" >}})** screen sets encryption for the pool and root dataset.
 The **Download Encryption Key** warning window displays when you create the pool.
 It downloads a JSON file to your downloads folder.
 

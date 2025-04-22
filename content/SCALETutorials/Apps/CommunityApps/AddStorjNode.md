@@ -20,7 +20,7 @@ Before you can configure your system to act as a Storj node:
 
 1. Review the Storj node hardware and bandwidth considerations at [Storj Node](https://www.storj.io/node).
 
-2. Update [TrueNAS SCALE]({{< relref "UpdateSCALE.md" >}}) to the latest public release.
+2. Update [TrueNAS SCALE]({{< ref "UpdateSCALE" >}}) to the latest public release.
 
 3. Create a [wallet address](#getting-a-wallet-address).
 

@@ -28,7 +28,7 @@ The administrator account must have sudo permissions enabled.
 To verify, go to **Credentials > Local User**.
 Click on the administrator user (e.g., admin), then click **Edit**. Scroll down to the sudo permissions.
 Select either **Allow all sudo commands** to permit changes after entering a password (not recommended in this instance) or **Allow all sudo commands with not password** to permit changes without requiring a password.
-If you upgraded from Angelfish or early releases of Bluefin that do not have an admin user account, see [Creating an Admin User Account]({{< relref "ManageLocalUsersSCALE.md" >}}) for instructions on correctly creating an administrator account with the required permissions.
+If you upgraded from Angelfish or early releases of Bluefin that do not have an admin user account, see [Creating an Admin User Account]({{< ref "ManageLocalUsersSCALE" >}}) for instructions on correctly creating an administrator account with the required permissions.
 
 You can create a Netdata account before or after installing and deploying the Netdata app.
 
@@ -102,7 +102,7 @@ SCALE defaults to automatically creating storage volumes for Netdata without ena
 
 To create and use datasets for the Netdata configuration, cache, and library storage or extra storage volumes inside the container pod, first create these datasets.
 Go to **Datasets** and create the datasets before you begin the app installation process.
-See [Add Datasets]({{< relref "DatasetsScale.md" >}}) for more information.
+See [Add Datasets]({{< ref "DatasetsScale" >}}) for more information.
 Select **Enable Host Path for Netdata** to show the volume mount path field to add the configuration storage dataset.
 
 {{< trueimage src="/images/SCALE/Apps/InstallNetdataStorageEnableHostPath.png" alt="Install Netdata Storage Enable Host Path" id="Install Netdata Storage Enable Host Path" >}}

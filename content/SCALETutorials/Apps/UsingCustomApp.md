@@ -21,7 +21,7 @@ Generally, you can deploy any container that follows the [Open Container Initiat
 
 Always read through the documentation page for the application container you are considering installing so that you know all of the settings that you need to configure.
 To set up a new container image, first, determine if you want the container to use additional TrueNAS datasets.
-If yes, [create a dataset]({{< relref "DatasetsSCALE.md" >}}) for host volume paths before you click **Custom App** on the **Discover** application screen.
+If yes, [create a dataset]({{< ref "DatasetsSCALE" >}}) for host volume paths before you click **Custom App** on the **Discover** application screen.
 
 ### Custom Docker Applications
 Custom Docker applications typically follow open container specifications and deploy in TrueNAS following the custom application deployment process described below.
@@ -33,7 +33,7 @@ Take note of any required environment variables, optional variables you want to 
 If your application requires specific directory paths, datasets, or other storage arrangements, configure these before you start the **Install Custom App** wizard.
 
 You cannot save settings and exit the configuration wizard to create data storage or directories in the middle of the process.
-If you are unsure about any configuration settings, review the [Install Custom App Screen UI reference article]({{< relref "InstallCustomAppScreens.md" >}}) before creating a new container image.
+If you are unsure about any configuration settings, review the [Install Custom App Screen UI reference article]({{< ref "InstallCustomAppScreens" >}}) before creating a new container image.
 
 To create directories in a dataset on SCALE, before you begin installing the container, open the TrueNAS SCALE CLI and enter `storage filesystem mkdir path="/PATH/TO/DIRECTORY"`.
 {{< /hint >}}
@@ -71,7 +71,7 @@ When you are ready to create a container, go to **Apps**, click **Discover Apps*
    {{< trueimage src="/images/SCALE/Apps/InstallCustomAppContainerEnvironmentVariables.png" alt="Container Environment Variables Settings" id="Container Environment Variables Settings" >}}
 
 5. Enter the networking settings.
-   To use a unique IP address for the container, set up an [external interface]({{< relref "InstallCustomAppScreens.md#NetworkingSettings" >}}).
+   To use a unique IP address for the container, set up an [external interface]({{< ref "InstallCustomAppScreens.md#NetworkingSettings" >}}).
 
    Users can create additional network interfaces for the container if needed.
    Users can also give static IP addresses and routes to a new interface.

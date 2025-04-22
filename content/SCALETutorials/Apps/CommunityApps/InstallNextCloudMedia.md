@@ -20,7 +20,7 @@ This procedure demonstrates how to set up Nextcloud on TrueNAS SCALE, and config
 
 Before using SCALE to install the Nextcloud application you need to [create four datasets](#adding-nextcloud-storage) to use as storage for the Nextcloud application.
 
-If you are creating a new user account to manage this application or using the [local administrator]({{< relref "ManageLocalUsersSCALE.md" >}}) account, enable sudo permissions for that account.
+If you are creating a new user account to manage this application or using the [local administrator]({{< ref "ManageLocalUsersSCALE" >}}) account, enable sudo permissions for that account.
 
 If creating a new user for Nextcloud, add the user to the dataset ACL permissions.
 
@@ -49,7 +49,7 @@ The four child datasets are named and used as follows:
 SCALE creates the **ix-applications** dataset in the pool you set as the application pool when you first go to the **Apps** screen.
 This dataset is internally managed, so you cannot use this as the parent when you create the required Nextcloud datasets.
 
-To create the Nextcloud app datasets, go to **Datasets**, select the dataset you want to use as the parent dataset, then click **Add Dataset** to [add a dataset]({{< relref "DatasetsScale.md" >}}).
+To create the Nextcloud app datasets, go to **Datasets**, select the dataset you want to use as the parent dataset, then click **Add Dataset** to [add a dataset]({{< ref "DatasetsScale" >}}).
 In this example, we create the Nextcloud datasets under the root parent dataset **tank**.
 
 Enter **nextcloud** in **Name**, select **Apps** as the **Dataset Preset**.
@@ -121,7 +121,7 @@ When set, the **Installed Applications** screen displays **Apps Service Running*
      {{< expand "Nextcloud Cron Jobs" "v" >}}
      NextCloud cron jobs only run while the app is running. If you stop the app, the cron job(s) do not run until you start the app again.
 
-     For more information on formatting and using cron jobs, see [Managing Cron Jobs]({{< relref "ManageCronJobsSCALE.md" >}}).
+     For more information on formatting and using cron jobs, see [Managing Cron Jobs]({{< ref "ManageCronJobsSCALE" >}}).
      {{< /expand >}}
 
    e. To specify an optional **Environment Variable** name and value, click the **Add** button.

@@ -109,7 +109,7 @@ Click **Settings** to open the **GUI Settings** screen.
 | Setting | Description |
 |---------|-------------|
 | **Theme** | Select a preferred color theme from the dropdown list of eight options. |
-| **GUI SSL Certificate** | Select a self-signed certificate from the dropdown list. The system uses a self-signed certificate to enable encrypted web interface connections. **Manage Certificates** opens the [Certificates]({{< relref "/SCALEUIReference/credentials/certificates/_index.md" >}}) screen. |
+| **GUI SSL Certificate** | Select a self-signed certificate from the dropdown list. The system uses a self-signed certificate to enable encrypted web interface connections. **Manage Certificates** opens the [Certificates]({{< ref "/SCALEUIReference/credentials/certificates/" >}}) screen. |
 | **Web Interface IPv4 Address** | Select a recent IP address from the dropdown list to limit usage when accessing the administrative GUI. The built-in HTTP server binds to the wildcard address of **0.0.0.0** (any address) and issues an alert if the specified address becomes unavailable. |
 | **Web Interface IPv6 Address** | Select a recent IPv6 address from the dropdown list to limit the usage when accessing the administrative GUI. The built-in HTTP server binds to the wildcard address of **0.0.0.0** (any address) and issues an alert if the specified address becomes unavailable. |
 | **Web Interface HTTP Port** | Enter a port number for an HTTP connection to the web interface. Allow configuring a non-standard port to access the GUI over HTTP. Changing this setting might require changing a [Firefox configuration setting](https://support.mozilla.org/en-US/questions/1083282). |

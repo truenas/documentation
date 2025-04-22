@@ -24,7 +24,7 @@ The process requires an extended maintenance window, requires executing steps in
 {{< /enterprise >}}
 
 ## Migration Preparation
-**Review the [Migration Preparation article]({{< relref "MigratePrep.md" >}}) for detailed recommendations and preparation steps before attempting to migrate from CORE to SCALE.**
+**Review the [Migration Preparation article]({{< ref "MigratePrep" >}}) for detailed recommendations and preparation steps before attempting to migrate from CORE to SCALE.**
 
 Depending on system configuration, migrating from CORE to SCALE can be more or less complicated.
 
@@ -37,10 +37,10 @@ Depending on system configuration, migrating from CORE to SCALE can be more or l
 ### Clean Install
 You can migrate from CORE to SCALE with a clean install using an <file>iso</file> file.
 With a clean SCALE install, you need to reconfigure your CORE settings in SCALE and import your data.
-Follow the instructions in the [Install]({{< relref "InstallingSCALE.md" >}}) articles.
+Follow the instructions in the [Install]({{< ref "InstallingSCALE" >}}) articles.
 
-After TrueNAS SCALE boots, you might need to [use the Console Setup menu to reconfigure networking interfaces]({{< relref "ConsoleSetupMenuScale.md" >}}) to enable GUI accessibility.
-After logging in to the TrueNAS UI with the **truenas_admin** administrator account, go to **System Settings > General** and [upload the CORE system config file]({{< relref "ManageSysConfigSCALE.md#uploading-the-file" >}}).
+After TrueNAS SCALE boots, you might need to [use the Console Setup menu to reconfigure networking interfaces]({{< ref "ConsoleSetupMenuScale" >}}) to enable GUI accessibility.
+After logging in to the TrueNAS UI with the **truenas_admin** administrator account, go to **System Settings > General** and [upload the CORE system config file]({{< ref "ManageSysConfigSCALE.md#uploading-the-file" >}}).
 This migrates your CORE settings, imports your pools, shares, etc. into TrueNAS.
 
 After uploading the config file, TrueNAS reboots. 
@@ -55,7 +55,7 @@ Begin with your network settings.
 {{< hint type=info title="Component Descriptions" >}}
 {{< include file="/static/includes/MigratingDescriptions.md" >}}
 
-See [Component Naming]({{< relref "ComponentNaming.md" >}}) for more information.
+See [Component Naming]({{< ref "ComponentNaming" >}}) for more information.
 {{< /hint >}}
 
 Use the information gathered during your migration preparation to restore settings, tasks, VMs, credentials, etc. not present in TrueNAS after uploading the config file.
@@ -69,7 +69,7 @@ This method is only available for non-Enterprise community systems and for relea
 
 3. Review the migrations warning and verify the system is ready to migrate before confirming and continuing.
 
-4. When the latest update for that chosen TrueNAS release is loaded, click **Apply Pending Update** or **Download Updates** to begin the update process documented in [Updating SCALE]({{< relref "UpdateSCALE.md#performing-an-automatic-update" >}}).
+4. When the latest update for that chosen TrueNAS release is loaded, click **Apply Pending Update** or **Download Updates** to begin the update process documented in [Updating SCALE]({{< ref "UpdateSCALE.md#performing-an-automatic-update" >}}).
    It is strongly recommended to download the system configuration backup prior to starting the update.
    We strongly recommended downloading the system configuration backup prior to starting the update.
 

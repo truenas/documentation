@@ -21,7 +21,7 @@ Enhancing app security is a multifaceted challenge and there are various effecti
 
 ## Securing Apps with VPNs and Zero Trust
 
-TrueNAS SCALE offers various [applications]({{< relref "/scaletutorials/apps/_index.md" >}}), either directly provided or via the community.
+TrueNAS SCALE offers various [applications]({{< ref "/scaletutorials/apps/" >}}), either directly provided or via the community.
 While applications can greatly expand TrueNAS functionality, making them accessible from outside the local network can create security risks that need to be solved.
 
 {{< hint type=important >}}

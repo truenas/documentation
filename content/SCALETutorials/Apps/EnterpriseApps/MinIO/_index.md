@@ -131,10 +131,10 @@ Click **Add** to display the field where you enter the storage or system port an
 
 {{< trueimage src="/images/SCALE/Apps/InstallMinIOAddMultiModeSNMD.png" alt="Multi Mode SNDN Command" id="Multi Mode SNDN Command" >}}
 
-Enter **/data{1...4}** in the field if [configuring SNMD]({{< relref "ConfigMinIOEnterpriseSNMD.md" >}}).
+Enter **/data{1...4}** in the field if [configuring SNMD]({{< ref "ConfigMinIOEnterpriseSNMD" >}}).
 Where **/data** represents the dataset name and the curly brackets enclosing **1** and **4** separated by three dots represent the numeric value of the dataset names.
 
-Enter <b>https://<i>10.123.123.10</i>{0...3}:30000/data{1...4}</b> in the field if [configuring MNMD]({{< relref "ConfigMinioEnterpriseMNMD.md" >}}).
+Enter <b>https://<i>10.123.123.10</i>{0...3}:30000/data{1...4}</b> in the field if [configuring MNMD]({{< ref "ConfigMinioEnterpriseMNMD" >}}).
 The last number in the final octet of the IP address number is the first number in the **{0...3}** string.
 Separate the numbers in the curly brackets with three dots.
 If your sequential IP addresses are not using 100 - 103, for example *10.123.123.125* through *128*, then enter them as <b>https://<i>10.123.123.12</i>{5...8}:30000/data{1...4}</b>.

@@ -42,13 +42,13 @@ The simplest way to set up a cloud sync task is using an iX-Storj account.
    The **Storj iX** provider is preselected.
    Click **Signup for account** to open a browser tab, then register, select a plan, and activate an iX-Storj Account.
 
-   After creating the iX-Storj account, log in to the Storj portal, create a new bucket, and create new S3 access credentials ([details]({{< relref "AddStorjCloudSyncTask.md#adding-storj-cloud-credentials" >}})).
+   After creating the iX-Storj account, log in to the Storj portal, create a new bucket, and create new S3 access credentials ([details]({{< ref "AddStorjCloudSyncTask.md#adding-storj-cloud-credentials" >}})).
    When the new S3 Credentials are created, download the **Access Key** and **Secret Key** and paste each string into the TrueNAS **Access Key ID** and **Secret Access Key** fields, respectively.
    Click **Save**.
 
 2. Define the backup targets and schedule.
 
-   In the TrueNAS Cloud sync task wizard, review the fields in the **What and When** section ([details]({{< relref "AddStorjCloudSyncTask.md#setting-up-the-storj-cloud-sync-task" >}})).
+   In the TrueNAS Cloud sync task wizard, review the fields in the **What and When** section ([details]({{< ref "AddStorjCloudSyncTask.md#setting-up-the-storj-cloud-sync-task" >}})).
    Select the created Storj **Bucket** before choosing a **Folder**.
 
    There are several predefined **Schedules** to choose from, or you can select **Custom** to define your own.
@@ -56,7 +56,7 @@ The simplest way to set up a cloud sync task is using an iX-Storj account.
    Click **Save**.
 {{< /expand >}}
 
-See [Adding Cloud Credentials]({{< relref "AddCloudCredentials.md" >}}) for information on connecting TrueNAS SCALE to other cloud storage providers.
+See [Adding Cloud Credentials]({{< ref "AddCloudCredentials" >}}) for information on connecting TrueNAS SCALE to other cloud storage providers.
 
 ### Using Replication for Data Backup
 
@@ -65,7 +65,7 @@ Snapshots typically use less storage than full file backups and have more manage
 {{< expand "Click here for basic instructions" "v" >}}
 To create a simple replication task with the TrueNAS replication wizard:
 
-1. Create a periodic snapshot task using the **[Periodic Snapshot Task]({{< relref "PeriodicSnapshotTasksSCALE.md" >}})** or use the **Run Once** replication schedule option.
+1. Create a periodic snapshot task using the **[Periodic Snapshot Task]({{< ref "PeriodicSnapshotTasksSCALE" >}})** or use the **Run Once** replication schedule option.
    If scheduling a task, SCALE creates the periodic snapshot task when it runs the replication task according to the scheduled time.
 
 2. Create the replication task.
@@ -105,6 +105,6 @@ After saving the system configuration, go to **System Settings > Advanced** and 
 
 ## Create a Boot Environment
 
-After installing and completing your SCALE system configuration, [create a boot environment]({{< relref "ManageBootEnvironSCALE.md" >}}) to use as a restore point.
+After installing and completing your SCALE system configuration, [create a boot environment]({{< ref "ManageBootEnvironSCALE" >}}) to use as a restore point.
 If an issue occurs where you lose access to the SCALE UI, you can establish an SSH session and restore it from the boot environment.
 You can clone the boot environment listed after the **initial-install** environment and rename the clone to something you recognize, such as the release number with date and time.

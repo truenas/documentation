@@ -31,7 +31,7 @@ You can configure environment variables at any time after deploying the applicat
 SCALE does not need advance preparation.
 
 You can allow SCALE to create the datasets Immich requires automatically during app installation.
-Or before beginning app installation, [create the datasets]({{< relref "DatasetsSCALE.md" >}}) to use in the **Storage Configuration** section during installation.
+Or before beginning app installation, [create the datasets]({{< ref "DatasetsSCALE" >}}) to use in the **Storage Configuration** section during installation.
 Immich requires seven datasets: **library**, **pgBackup**, **pgData**, **profile**, **thumbs**, **uploads**, and **video**.
 You can organize these as one parent with seven child datasets, for example <file>mnt/tank/immich/library</file>, <file>mnt/tank/immich/pgBackup</file>, and so on.
 
@@ -147,4 +147,4 @@ Enter a plain integer followed by the measurement suffix, for example 4G or 123M
 Systems with compatible GPU(s) display devices in **GPU Configuration**.
 Use the **GPU Resource** dropdown menu(s) to configure device allocation.
 
-See [Allocating GPU]({{< relref "/scaletutorials/apps/_index.md#allocating-gpu" >}}) for more information about allocating GPU devices in TrueNAS SCALE.
+See [Allocating GPU]({{< ref "/scaletutorials/apps/#allocating-gpu" >}}) for more information about allocating GPU devices in TrueNAS SCALE.

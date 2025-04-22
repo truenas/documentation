@@ -8,14 +8,14 @@ tags:
 ---
 
 In TrueNAS, user accounts allow flexibility for accessing shared data.
-Typically, administrators create users and assign them to [groups]({{< relref "ManageLocalGroups.md" >}}).
+Typically, administrators create users and assign them to [groups]({{< ref "ManageLocalGroups" >}}).
 Doing so makes tuning permissions for large numbers of users more efficient.
 
 {{< include file="/static/includes/RootToAdminUserAccount.md" >}}
 
-When the network uses a directory service, import the existing account information using the instructions in [Directory Services]({{< relref "/SCALEUIReference/Credentials/DirectoryServices/_index.md" >}}).
+When the network uses a directory service, import the existing account information using the instructions in [Directory Services]({{< ref "/SCALEUIReference/Credentials/DirectoryServices/" >}}).
 
-Using [Active Directory]({{< relref "/SCALEUIReference/Credentials/DirectoryServices/_index.md" >}}) requires setting Windows user passwords in Windows.
+Using [Active Directory]({{< ref "/SCALEUIReference/Credentials/DirectoryServices/" >}}) requires setting Windows user passwords in Windows.
 
 To see user accounts, go to **Credentials > Local Users**.
 
@@ -105,7 +105,7 @@ Always keep a backup of an SSH public key if you are using one.
 
 As of SCALE 24.04, users assigned to the **trueNAS_readonly_administrators** group cannot access the **Shell** screen.
 
-Select the [shell]({{< relref "LocalUsersScreensSCALE.md" >}}) option for the admin user from the **Shell** dropdown list.
+Select the [shell]({{< ref "LocalUsersScreensSCALE" >}}) option for the admin user from the **Shell** dropdown list.
 Options are **nologin**, **TrueNAS CLI**, **TrueNAS Console**, **sh**, **bash**, **rbash**, **dash**, **tmux**, and **zsh**.
 
 To disable all password-based functionality for the account, select **Lock User**. Clear to unlock the user.
@@ -120,7 +120,7 @@ Enter each command as an absolute path to the ELF (Executable and Linkable Forma
 <file>/usr/bin/</file> is the default location for commands.
 Select **Allow all sudo commands** or **Allow all sudo commands with no password**.
 
-Leave **Samba Authentication** selected to allow using the account credentials to access data shared with [SMB]({{< relref "/SCALEUIReference/Shares/_index.md" >}}).
+Leave **Samba Authentication** selected to allow using the account credentials to access data shared with [SMB]({{< ref "/SCALEUIReference/Shares/" >}}).
 
 Click **Save**.
 
@@ -128,4 +128,4 @@ Click **Save**.
 
 To edit an existing user account, go to **Credentials > Local Users**.
 Click anywhere on the user row to expand the user entry, then click **Edit** to open the **Edit User** configuration screen.
-See [Local User Screens]({{< relref "LocalUsersScreensScale.md" >}}) for details on all settings.
+See [Local User Screens]({{< ref "LocalUsersScreensScale" >}}) for details on all settings.

@@ -36,7 +36,7 @@ The **Console** widget displays the current console settings for TrueNAS.
 **Configure** opens the **[Console](#console-configuration-screen)** configuration screen.
 
 ### Console Configuration Screen
-**Console** settings configure how the [Console Setup menu]({{< relref "ConsoleSetupMenuSCALE.md" >}}) displays, the serial port it uses and the port speed, and the banner users see when accessing it.
+**Console** settings configure how the [Console Setup menu]({{< ref "ConsoleSetupMenuSCALE" >}}) displays, the serial port it uses and the port speed, and the banner users see when accessing it.
 
 {{< trueimage src="/images/SCALE/SystemSettings/ConsoleConfigScreen.png" alt="Console Config Screen" id="Console Config Screen" >}}
 
@@ -89,7 +89,7 @@ Click **Configure** to open the **Audit** configuration screen.
 ### Configure Auditing
 {{< include file="/static/includes/ConfigureSystemAuditSCALE.md" >}}
 
-Click **Configure** to open the **Audit** configuration screen and [manage storage and retention policies]({{< relref "AuditingSCALE.md#configuring-audit-storage-and-retention-policies" >}})
+Click **Configure** to open the **Audit** configuration screen and [manage storage and retention policies]({{< ref "AuditingSCALE.md#configuring-audit-storage-and-retention-policies" >}})
 
 ## Kernel Widget
 The **Kernel** widget shows options for configuring the Linux kernel installed with TrueNAS SCALE.

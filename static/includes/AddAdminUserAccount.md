@@ -22,7 +22,7 @@ Select the shell for this admin user from the **Shell** dropdown list.
 Options are **nologin**, **TrueNAS CLI**, **TrueNAS Console**, **sh**, **bash**, **rbash**, **dash**, **tmux**, and **zsh**.
 
 Select the sudo authorization permissions for this admin user.
-Some applications, such as [Nextcloud]({{< relref "InstallNextCloudMedia.md" >}}), require sudo permissions for the administrator account.
+Some applications, such as [Nextcloud]({{< ref "InstallNextCloudMedia" >}}), require sudo permissions for the administrator account.
 For administrator accounts generated during the initial installation process, TrueNAS SCALE sets authorization to **Allow all sudo commands**.
 
 Click **Save**.

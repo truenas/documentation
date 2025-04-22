@@ -16,7 +16,7 @@ The TrueNAS SCALE General Settings section provides settings options for support
 The **Support** widget shows information about the TrueNAS version and system hardware.
 Links to the open source documentation, community forums, and official Enterprise licensing from iXsystems are also provided.
 
-**Add License** opens the sidebar with a field to paste a TrueNAS Enterprise license ([details]({{< relref "AddLicenseProactiveSupport.md" >}})).
+**Add License** opens the sidebar with a field to paste a TrueNAS Enterprise license ([details]({{< ref "AddLicenseProactiveSupport" >}})).
 
 **File Ticket** opens a window to provide feedback directly to the development team.
 {{< expand "Feedback window" "v" >}}

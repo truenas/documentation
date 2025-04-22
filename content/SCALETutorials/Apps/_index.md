@@ -123,7 +123,7 @@ The **Chart** catalog train has official applications that are pre-configured an
 Enterprise applications display automatically for Enterprise=licensed systems, but community users can add these apps using the **Manage Catalogs** screen.
 App trains display based on the **Trains** settings on the **Edit Catalog** screen.
 
-See [Using SCALE Catalogs]({{< relref "usingcatalogs.md" >}}) for more information on managing catalogs.
+See [Using SCALE Catalogs]({{< ref "usingcatalogs" >}}) for more information on managing catalogs.
 
 {{< trueimage src="/images/SCALE/Apps/AppsDiscoverScreen.png" alt="Applications Discover Screen" id="Applications Discover Screen" >}}
 
@@ -131,7 +131,7 @@ The **Discover** screen includes three links:
 
 * [**Refresh Charts**](#refreshing-charts) 
 * **Manage Installed Apps** opens the **Installed** application screen.
-* [**Manage Catalogs**]({{< relref "UsingCatalogs.md" >}})
+* [**Manage Catalogs**]({{< ref "UsingCatalogs" >}})
 
 The **Custom App** button opens a wizard where you can install unofficial apps or an app not included in a catalog.
 
@@ -228,7 +228,7 @@ Installation and editing wizards include tooltips to help users configure applic
 Users with compatible hardware can allocate one or more GPU devices to an application for use in hardware acceleration.
 This is an advanced process that could require significant troubleshooting depending on installed GPU device(s) and application-specific criteria.
 
-GPU devices can be available for the host operating system (OS) and applications or can be [isolated for use in a Virtual Machine (VM)]({{< relref "managegpuscale.md" >}}).
+GPU devices can be available for the host operating system (OS) and applications or can be [isolated for use in a Virtual Machine (VM)]({{< ref "managegpuscale" >}}).
 A single GPU cannot be shared between the OS/applications and a VM.
 
 Allocate GPU from the **Resources Configuration** section of the application installation wizard screen or the **Edit** screen for a deployed application.
@@ -260,7 +260,7 @@ Restart the system then return to the **Resources Configuration** section of the
 
 ## Installing Custom Applications
 To deploy a custom application, go to **Discover** and click **Custom App** to open the **Install Custom App** screen.
-See [Using Install Custom App]({{< relref "UsingCustomApp.md" >}}) for more information.
+See [Using Install Custom App]({{< ref "UsingCustomApp" >}}) for more information.
 
 ### Changing Custom Application Networking
 Custom applications use the system-level Kubernetes Node IP settings by default.

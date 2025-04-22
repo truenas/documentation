@@ -8,7 +8,7 @@ tags:
 
 Use the **Global Configuration Settings** screen to add general network settings like the default gateway and DNS name servers to allow external communication.
 
-To add new or change existing network interfaces see [Managing Interfaces]({{< relref "ManagingInterfaces.md" >}}).
+To add new or change existing network interfaces see [Managing Interfaces]({{< ref "ManagingInterfaces" >}}).
 
 {{< hint type=warning >}}
 **Disruptive Change**
