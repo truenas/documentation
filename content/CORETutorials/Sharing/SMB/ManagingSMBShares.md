@@ -13,7 +13,7 @@ After creating the SMB share, additional management options are available by goi
 {{< truetable >}}
 | Name | Description |
 |---------|-------------|
-| **Edit** | Opens the [share creation screen]({{< relref "/CORETutorials/Sharing/SMB/_index.md" >}}) to reconfigure the share or disable it. |
+| **Edit** | Opens the [share creation screen]({{< relref "/CORETutorials/Sharing/SMB/" >}}) to reconfigure the share or disable it. |
 | **Edit Share ACL** | Opens a screen to configure an Access Control List (ACL) for the share. The default is open. |
 {{< /truetable >}}
 

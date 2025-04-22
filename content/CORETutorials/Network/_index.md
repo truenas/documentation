@@ -16,7 +16,7 @@ These areas are not editable.
 
 ![**Network Summary**](/images/CORE/Network/NetworkSummary.png "Network Summary")
 
-* [**Interfaces**]({{< relref "CORETutorials/Network/Interfaces/_index.md" >}}) shows configured physical, [bridge]({{< relref "BridgeCreate.md" >}}), link aggregation [LAGG]({{< relref "LAGGCreate.md" >}}), and virtual LAN [vlan]({{< relref "VLANCreate.md" >}}) interfaces.
+* [**Interfaces**]({{< relref "CORETutorials/Network/Interfaces/" >}}) shows configured physical, [bridge]({{< relref "BridgeCreate.md" >}}), link aggregation [LAGG]({{< relref "LAGGCreate.md" >}}), and virtual LAN [vlan]({{< relref "VLANCreate.md" >}}) interfaces.
   All detected physical interfaces are listed, even when unconfigured.
   The IPv4 or IPv6 address displays when a [static IP]({{< relref "SettingStaticIP.md" >}}) is saved for an interface.
 

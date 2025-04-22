@@ -42,7 +42,7 @@ aliases:
 13.3 releases are only available as manual update <file>.tar</file> or full installation <file>.iso</file> files.
 Go to https://www.truenas.com/download-truenas-core/ to download either file type.
 
-See [Updating TrueNAS]({{< relref "/CORETutorials/UpdatingTrueNAS/_index.md" >}}) for instructions about updating with either file type.
+See [Updating TrueNAS]({{< relref "/CORETutorials/UpdatingTrueNAS/" >}}) for instructions about updating with either file type.
 
 ### Upgrade Paths
 

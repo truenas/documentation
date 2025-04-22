@@ -49,7 +49,7 @@ We recommend verifying the credential before saving it.
 ## Create a Cloud Sync Task
 
 {{< expand "Requirements" "v" >}}
-* All system [Storage]({{< relref "/CORETutorials/Storage/_index.md" >}}) configured and ready to receive or send data.
+* All system [Storage]({{< relref "/CORETutorials/Storage/" >}}) configured and ready to receive or send data.
 * A Cloud Storage provider account and a cloud storage location (like an Amazon S3 bucket).
 * Cloud Storage account credentials must be saved in **System > Cloud Credentials**.
 {{< /expand >}}

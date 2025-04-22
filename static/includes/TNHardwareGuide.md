@@ -306,7 +306,7 @@ To summarize the lengthy, Internet-wide debate on whether to use error-correctin
 Choosing ECC RAM limits your CPU and motherboard options, but that can be beneficial.
 Intel<sup>®</sup> limits ECC RAM support to workstation and server motherboards.
 The 13th generation of their consumer CPUs, such as the Core i5 and i7, support ECC as long as they are paired with a workstation motherboard chipset, such as the W680.
-[Refer to Intel ARK](https://ark.intel.com/content/www/us/en/ark/search/featurefilter.html?productType=873&0_ECCMemory=True) for a full list of Intel CPUs with ECC support.
+[Refer to Intel ARK](https://ark.intel.com/www/us/en/ark/search/featurefilter.html?productType=873&0_ECCMemory=True) for a full list of Intel CPUs with ECC support.
 
 Which CPU to choose can come down to a short list of factors:
 

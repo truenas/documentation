@@ -91,7 +91,7 @@ For better security, leave this option disabled.
 If the user account is accessing TrueNAS data using a Windows 8 or newer client, set **Microsoft Account** to enable additional authentication methods available from those operating systems.
 
 By default, **Samba Authentication** is enabled.
-It allows users to access [SMB]({{< relref "/CORETutorials/Sharing/SMB/_index.md" >}}) share data using account credentials.
+It allows users to access [SMB]({{< relref "/CORETutorials/Sharing/SMB/" >}}) share data using account credentials.
 
 ## Groups
 
@@ -127,7 +127,7 @@ Setting it allows group members to act as the root account by using [sudo](https
 Leave **Permit Sudo** unset for better security.
 
 **Samba Authentication** is set by default.
-It allows group members to use [SMB]({{< relref "/CORETutorials/Sharing/SMB/_index.md" >}}) permissions and authentication.
+It allows group members to use [SMB]({{< relref "/CORETutorials/Sharing/SMB/" >}}) permissions and authentication.
 
 Finally, **Allow Duplicate GIDs** lets you duplicate group IDs but can complicate system configurations.
 We recommend leaving it unset.

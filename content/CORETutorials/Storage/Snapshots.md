@@ -8,7 +8,7 @@ tags:
 
 {{< include file="/static/includes/SnapshotsIntroSnippet.md" >}}
 
-Taking snapshots requires the system have all [pools]({{< relref "/CORETutorials/Storage/Pools/_index.md" >}}), [datasets]({{< relref "/CORETutorials/Storage/Pools/datasets.md" >}}), and [zvols]({{< relref "zvols.md" >}}) already configured.
+Taking snapshots requires the system have all [pools]({{< relref "/CORETutorials/Storage/Pools/" >}}), [datasets]({{< relref "/CORETutorials/Storage/Pools/datasets.md" >}}), and [zvols]({{< relref "zvols.md" >}}) already configured.
 
 ## Creating a Single Snapshot
 

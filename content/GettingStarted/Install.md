@@ -11,7 +11,7 @@ Now that the <file>.iso</file> file is [downloaded](https://www.truenas.com/down
 
 {{< expand "Major Upgrades" "v" >}}
 The install process can be repeated with newer installation files when the system already has TrueNAS installed.
-This is used for [major version upgrades]({{< relref "/CORETutorials/UpdatingTrueNAS/_index.md#upgrade-via-iso" >}})
+This is used for [major version upgrades]({{< relref "/CORETutorials/UpdatingTrueNAS/#upgrade-via-iso" >}})
 {{< /expand >}}
 
 {{< expand "ISO Verification" "v" >}}
@@ -268,7 +268,7 @@ Finally, name and chose a location for the new virtual disk.
 
 Repeat this process until enough disks are available for TrueNAS to create ideal storage pools
 This depends on your specific TrueNAS use case.
-See [Pool Creation]({{< relref "/CORETutorials/Storage/Pools/_index.md" >}}) for descriptions of the various pool (vdev) types and layouts
+See [Pool Creation]({{< relref "/CORETutorials/Storage/Pools/" >}}) for descriptions of the various pool (vdev) types and layouts
 
 ## TrueNAS Installer
 

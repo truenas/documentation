@@ -10,7 +10,7 @@ A TrueNAS dataset is a file system that is created within a data storage pool.
 Datasets can contain files, directories (child datasets), and have individual permissions or flags.
 Datasets can also be [encrypted]({{< relref "StorageEncryption.md" >}}), either using the encryption created with the pool or with a separate encryption configuration.
 
-It is recommended to organize your pool with datasets before configuring [data sharing]({{< relref "/UIReference/Sharing/_index.md" >}}), as this allows for more fine-tuning of access permissions and using different sharing protocols.
+It is recommended to organize your pool with datasets before configuring [data sharing]({{< relref "/UIReference/Sharing/" >}}), as this allows for more fine-tuning of access permissions and using different sharing protocols.
 
 ## Creating a Dataset
 
