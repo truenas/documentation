@@ -25,6 +25,6 @@ Use the <span class="material-icons-outlined">north</span> arrow beside the **St
 
 The **Failed** screen lists failed jobs. 
 
-![jobsFailed](/images/SCALE/Dashboard/JobsFailed.png "Failed Jobs")
+![JobsFailed](/images/SCALE/Dashboard/JobsFailed.png "Failed Jobs")
 
 Click **View** to show the job log. The system error for this failed job displays at the bottom of the log file.
