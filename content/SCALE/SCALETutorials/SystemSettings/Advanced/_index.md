@@ -104,32 +104,38 @@ Entering an IP address limits access to the system to only the address(es) enter
 ## Setting Up FIPS and STIG
 {{< enterprise >}}
 Only Enterprise-licensed systems show the **Security** widget and have access to FIPS and STIG settings.
+
+Administrators considering enabling STIG and FIPS security settings should contact TrueNAS Support before making any changes.
+
+{{< expand "Contacting Support" "v" >}}
+{{< include file="/static/includes/iXsystemsSupportContact.md" >}}
+{{< /expand >}}
+
 {{< /enterprise >}}
 
-### Before You Begin
+### STIG and FIPS Considerations
 
-Consider the following and prepare before enabling STIG and FIPS security settings. Enterprise customers should contact Support for assistance.
+Review these topics and contact TrueNAS Support before enabling STIG and FIPS security settings.
 
 When STIG (and FIPS) are enabled:
 
-* TrueNAS cannot issue API keys and existing API keys cannot be used for authentication. Only user credentials and two-factor authentication are accepted.
-* SSH log-ins are harder and require a cryptographic algorithm.
+* TrueNAS cannot issue API keys and existing API keys cannot be used for authentication. Only the user credential with two-factor authentication method is accepted.
+* SSH log-ins require a cryptographic algorithm.
 * Usage stats are not reported and the **Usage Collection** option is disabled.
-* One-time passwords configured for administration users can only be used one time and expire after 24 hours.
+* One-time passwords (OTP) configured for administrative users have a single use and expire after 24 hours.
   After logging in with the OTP, the system prompts the user to immediately change the password and set up two-factor authentication.
 * TrueNAS is limited to a maximum of 10 concurrent sessions.
-  Account locks for 15 minutes after three consecutive failed login attempts.
-* Password aging rules apply to SMB protocol. After a failed login attempt, users with expired passwords receive a password-expired message.
-* TrueNAS prompts users to change their passwords when logging in when the system flags the account requiring this change.
+  Accounts lock for 15 minutes after three consecutive failed login attempts.
+* Password aging rules are applied to the SMB protocol. After a failed login attempt, users with expired passwords receive a password-expired message.
+* TrueNAS prompts users to change their passwords when logging in and the system flagged the account as requiring this change.
   Users cannot reuse a password if it is marked as used within the last five passwords in the history file. Passwords must be 15 characters in length.
-* TrueNAS updates must be a signed update file provided by TrueNAS.
+* TrueNAS updates can only use a signed update file provided by the TrueNAS team.
 
 {{< expand "What features are not available?" "v" >}}
 When enabled, STIG disables these features:
 * Virtualization
 * Apps
-* TrueCommand
-* TrueConnect (available in the near future)
+* TrueCommand connectivity
 {{< /expand >}}
 
 {{< expand "What events are included in auditing?" "v" >}}
@@ -155,15 +161,21 @@ Click **Settings** to open the **System Security** configuration screen.
 
 ![SystemSecurityScreen](/images/SCALE/SystemSettings/SystemSecurityScreen.png "System Security Screen")
 
-Select the toggle to enable FIPS and STIG, then click **Save**. You must enable FIPS with STIG!
+Select the toggle to enable FIPS and STIG, then click **Save**.
+You must enable FIPS with STIG!
 The system prompts you to restart.
 
 ![SecurityFIPSSTIGRestartDialog](/images/SCALE/SystemSettings/SecurityFIPSSTIGRestartDialog.png "Restart Require Dialog")
 
+{{< enterprise >}}
+Highly Available (HA) Enterprise systems must restart each storage controller before STIG mode is fully enabled.
+{{< /enterprise >}}
+
 The system restart takes several minutes to complete before showing the login screen.
 
 <div class="noprint">
-## Contents
+
+## Additional Content
 
 {{< children depth="2" description="true" >}}
 
