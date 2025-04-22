@@ -63,8 +63,8 @@ You can also link directly just by typing the URL with no additional markup: `ww
 
 HTML linking syntax is also allowed: `<a href="www.example.com">Example Site</a>`
 
-You can also use the `relref` shortcode to link to documents on the TrueNAS Documentation Hub website.
-For example, linking to an existing article such as a TrueNAS tutorial [Dashboard]({{ relref "/SCALE/SCALETutorials/Dashboard.md" }}).
+You can also use the `ref` shortcode to link to documents on the TrueNAS Documentation Hub website.
+For example, linking to an existing article such as a TrueNAS tutorial [Dashboard]({{ ref "/SCALE/SCALETutorials/Dashboard.md" }}).
 
 To link to another section of the **same** article, use an anchor (`#`) to refer to that section header.
 The header title needs to be in lower case and spaces replaced with dashes (-): `[Escape Characters](#escape-characters)`
@@ -158,20 +158,20 @@ This theme has some additional styling elements that can be used to enhance your
 See the [Docsy shortcodes guide](https://www.docsy.dev/docs/adding-content/shortcodes/) for a list of built-in reusable content snippets.
 
 {{< expand "Linking to Other Articles on this Website" >}}
-Internal references use the `ref` shortcode to look up a file by name, or the `relref` shortcode to link to another article on the Documentation Hub website:
+Internal references use the `ref` shortcode to look up a file by name, or the `ref` shortcode to link to another article on the Documentation Hub website:
 ```
-[Creating a new ZFS Pool]({{\< relref "pools" >}})
+[Creating a new ZFS Pool]({{\< ref "pools" >}})
 (do not include the escaping backslash \)
 ```
 If linking to file names that are not unique, you must also include the path to that file. For example:
 
 ```
-[Creating a new Dataset]({{\< relref "/SCALETutorials/Storage/Datasets/datasetsScale" >}})
+[Creating a new Dataset]({{\< ref "/SCALETutorials/Storage/Datasets/datasetsScale" >}})
 ```
 
 Linking to the index file of an article bundle requires using the generic linking syntax to point to the article location:
 ```
-You find information on applications in the [Apps article]({{\< relref "/SCALE/ScaleTutorials/apps" >).
+You find information on applications in the [Apps article]({{\< ref "/SCALE/ScaleTutorials/apps" >).
 (do not include the escaping backslash \)
 ```
 
