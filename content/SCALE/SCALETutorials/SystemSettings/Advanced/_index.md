@@ -122,7 +122,7 @@ When STIG (and FIPS) are enabled:
 * TrueNAS cannot issue API keys and existing API keys cannot be used for authentication. Only the user credential with two-factor authentication method is accepted.
 * SSH log-ins require a cryptographic algorithm.
 * SMB authentication for local TrueNAS accounts is disabled.
-* NTLM authentication passthrough to a Domain Controller is disabled.
+* NTLM authentication passthrough to a domain controller is disabled.
 * Usage stats are not reported and the **Usage Collection** option is disabled.
 * One-time passwords (OTP) configured for administrative users have a single use and expire after 24 hours.
   After logging in with the OTP, the system prompts the user to immediately change the password and set up two-factor authentication.
