@@ -2301,3 +2301,4 @@ Virtio-SCSI
 AddDiskScreenVM
 InstanceNameRequirements
 TTY
+ZF
