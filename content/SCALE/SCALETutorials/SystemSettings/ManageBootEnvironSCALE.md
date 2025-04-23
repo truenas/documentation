@@ -102,7 +102,6 @@ Click the <span class="material-icons">more_vert</span> for an inactive boot env
 Click **Confirm**, and then click **Activate**.
 
 The **System Boot** screen status changes to **Reboot** and the current **Active** entry changes from **Now/Reboot** to **Now**, indicating that it is the current boot environment but it is not used on the next system restart (boot operation).
-{{< /expand >}}
 
 ### Cloneing a Boot Environment
 
@@ -130,7 +129,6 @@ Select **Confirm** and then click **Delete**.
 You cannot delete the default or any active entries.
 Because you cannot delete an activated boot entry, this option does not show for activated boot environments.
 To delete the active boot environment, first, activate another entry and then delete the environment you want to remove.
-{{< /expand >}}
 
 ### Keeping a Boot Environment
 
