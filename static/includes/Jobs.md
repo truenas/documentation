@@ -3,7 +3,7 @@
 The **Jobs** <span class="material-icons">assignment</span> icon button displays all running and failed jobs/processes.
 Users can see minimized jobs/processes here.
 
-{{< trueimage src="/images/SCALE/Dashboard/JobsMenu.png" alt="Jobs Task Manager" id="Jobs Task Manager" >}}
+{{< trueimage src="/images/SCALE/Dashboard/JobsMenu.png" alt="Running Jobs" id="Running Jobs" >}}
 
 Users can minimize a job/process by clicking the minus (-) at the top right corner of any dialog or pop-up window.  
 
@@ -19,6 +19,6 @@ Click on the **All**, **Active**, or **Failed** button at the top of the screen 
 
 Click **View** next to a task to see the log information and error message for that task.
 
-{{< trueimage src="/images/SCALE/Dashboard/TasksScreen.png" alt="Tasks Screen" id="Tasks Screen" >}}
+{{< trueimage src="/images/SCALE/Dashboard/TasksScreen.png" alt="Jobs Screen" id="Jobs Screen" >}}
 
 For more information, see [**Tasks Screens**]({{< relref "TasksScreens.md" >}}).
