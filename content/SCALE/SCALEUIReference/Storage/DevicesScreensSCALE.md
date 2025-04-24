@@ -62,7 +62,7 @@ After taking a drive offline you can remove or replace the physical drive.
 
 ### Hardware Disk Encryption Widget
 {{< enterprise >}}
-The **Hardware Disk Encryptio**n widget only shows on Enterprise-licensed systems.
+The **Hardware Disk Encryption** widget only shows on Enterprise-licensed systems.
 {{< /enterprise >}}
 
 The **Hardware Disk Encryption** widget shows drive information such as the SED password set or not set.
