@@ -45,7 +45,7 @@ Each task includes five icons for various functions:
 
 * The <span class="material-icons">delete</span> **Delete** icon opens a confirmation dialog before the system deletes the task.
 
-**State** shows the status of the next cloud sync task.Statuse are:
+**State** shows the status of the next cloud sync task:
   * **SUCCESS** for completed tasks.
   * **FAILED** if the task fails to complete the sync.
   * **PENDING** for tasks not run yet.
