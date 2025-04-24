@@ -19,7 +19,7 @@ The **Boot Environment** screen has options that monitor and manage the ZFS boot
 
 The **Stats/Settings** option shows current system statistics. It also allows you to change the scrub interval or how often the system runs a data integrity check on the operating system device.
 
-Go to **System > BootEnvirotnment** screen and click **Stats/Settings**.
+Go to the **System > Boot Environment** screen and click **Stats/Settings**.
 The **Stats/Settings** window opens showing statistics for the operating system device: **Boot pool Condition** as **ONLINE** or **OFFLINE**, **Size** in GiB and the space in use in **Used**, and **Last Scrub Run** with the date and time of the scrub.
 By default, the operating system device is scrubbed every seven days.
 
