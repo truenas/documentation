@@ -88,7 +88,7 @@ The wizard has two screens, **Provider** and **What and When**.
 ### Provider Wizard Screen
 
 The **Provider** wizard screen allows you to select the cloud sync provider with the **Credentials** dropdown.
-Select the provider from the dropdown list to show the additional credential settings the seleCted provider requires to establish a connection.
+Select the provider from the dropdown list to show the additional credential settings the selected provider requires to establish a connection.
 
 {{< trueimage src="/images/SCALE/DataProtection/CloudSyncTaskWizardProviderScreen.png" alt="Cloudsync Task Wizard Provider Screen" id="Cloudsync Task Wizard Provider Screen" >}}
 
