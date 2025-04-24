@@ -121,6 +121,8 @@ This is the first stable release of TrueNAS SCALE 25.04 (Fangtooth). It includes
 
 Special thanks to (Github users): Gleb Chesnokov and Franco Castillo for contributing to TrueNAS 25.04.0. For information on how you can contribute, visit https://www.truenas.com/docs/contributing/.
 
+{{< include file="/static/includes/25.04FeatureList.md" >}}
+
 ### 25.04.0 Notable Changes
 
 Notable changes since 25.04-RC.1:
