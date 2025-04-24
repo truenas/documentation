@@ -218,7 +218,8 @@ This lists all scheduled scrub tasks and allows you to add a new or edit an exis
 
 * {{< expand "Deduplication Qutoa Dialog" "v" >}}
  The **Deduplication Quota for *poolname*** shows the **Quota** dropdown list with three options for setting the maximum size limit the deduplication table can reach.
-  **Auto** is the default option, which allows the system to set the quota and the size of a dedicated dedup VDEV. This property works for both legacy and fast dedup tables.
+
+ **Auto** is the default option, which allows the system to set the quota and the size of a dedicated dedup VDEV. This property works for both legacy and fast dedup tables.
   
  {{< trueimage src="/images/SCALE/Storage/DedupQutoaDialog.png" alt="Deduplication Qutoa for Pool Dialog" id="Prune Deduplication Table Dialog" >}}
 
