@@ -205,7 +205,7 @@ This lists all scheduled scrub tasks and allows you to add a new or edit an exis
  The **Prune Deduplication Table** dialog shows pruning measurement options the system should use when pruning the deduplication table (DDT).
  Options are **Percentage** and **Age**.
   
-  **Percentage** shows a slider to set the size (maximum amount of storage) percentage threshold the DDT is filled before it reaches the maximum size.
+ **Percentage** shows a slider to set the size (maximum amount of storage) percentage threshold the DDT is filled before it reaches the maximum size.
  When reached the system prunes the table. 
 
  {{< trueimage src="/images/SCALE/Storage/DedupPruneDialog.png" alt="Prune Deduplication Table - Percentage" id="Prune Deduplication Table - Percentage" >}}
