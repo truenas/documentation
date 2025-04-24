@@ -65,7 +65,7 @@ Hold <kbd>Ctrl</kbd> while clicking each entry to select multiple groups.
 ## Privileges Screen
 
 {{< hint type="warning" title="Experimental Feature" >}}
-The **Privileges** feature releases earlier than 24.10 is an experimental feature but as of 24.10 is no longer experimental.
+The **Privileges** feature in releases earlier than 24.10 is experimental, but as of 24.10 onwards is no longer experimental.
 
 Do not edit the existing predefined administrator roles (Full Control Admin, Readonly Admin, and Sharing Admin)!
 Editing an unrestricted administrator account privilege can result in lost access to the system!
