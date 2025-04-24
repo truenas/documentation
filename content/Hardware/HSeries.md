@@ -34,7 +34,7 @@ descr="Additional cabling examples for High Availability H-Series systems." >}}
 {{< imagecard image="/images/Hardware/HSeries/HSeriesSOV.png" title="Statement of Volatility" link="https://www.truenas.com/docs/files/HSeriesSOV.pdf"
 descr="TrueNAS official Statement of Volatility for H-Series systems." >}}
 
-{{< imagecard image="/images/Hardware/HSeries/HSeriesStencil.png" title="Hardware Stencils" link="https://www.truenas.com/docs/files/hseriesstencil.vssx"
+{{< imagecard image="/images/Hardware/HSeries/HSeriesStencil.png" title="Hardware Stencils" link="https://www.truenas.com/docs/files/hseries_stencil_pack.vssx"
 descr="Download H-Series stencils to diagram your TrueNAS hardware configuration." >}}
 
 </div>
