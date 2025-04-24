@@ -126,7 +126,7 @@ If a service does not use a child dataset, the **Delete** window does not show a
 
 {{< trueimage src="/images/SCALE/Datasets/DeleteDatasetChildDataset.png" alt="Delete Dataset Child Dataset" id="Delete Dataset Child Dataset" >}}
 
-The window includes a field to enter the path for the dataset. Enter the path, and select **Confirm** to activate the **Delete Dataset** button.
+The window includes a field to enter the path for the dataset. Enter the path and select **Confirm** to activate the **Delete Dataset** button.
 
 ### Dataset Space Management Widget
 The **Dataset Space Management** widget shows space allocation (reserved, used, available) for all datasets.
