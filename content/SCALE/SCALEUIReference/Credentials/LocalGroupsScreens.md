@@ -95,7 +95,7 @@ The <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 
 |---------|-------------|
 | **Name** | Assigns the name entered to a new privilege. Names can include the dash (-) or underscore(_) special characters, and upper and lowercase alphanumeric characters. Enter a descriptive name for the privilege. **Name** shows on the **Edit Privilege** screen but is not editable. |
 | **Groups** | Shows a list of groups configured on the system. Select a group from the dropdown list after clicking in the field. The privilege is applied to the selected group(s). |
-| **Roles** |Select from a dropdown list of all available roles available to assign to the new privilege, or change in an existing privilege. Note, only Readonly Admin, Sharing Admin, or Full Admin roles are supported in the web UI. |
+| **Roles** | Select from a dropdown list of all available roles available to assign to the new privilege or change an existing privilege. Only the Readonly Admin, Sharing Admin, or Full Admin roles are supported in the web UI. |
 | **Web Shell Access** | Select to allow a user to assign the new privilege access to the **System > Shell** screen. |
 {{< /truetable >}}
 
