@@ -1,6 +1,6 @@
 &NewLine;
 
-Select the compression algorithm that best suits your needs from the **Compression** dropdown list of options.
+The **Compression Level** setting lists several compression algorithm to choose from. Select the option that best suits your needs from the dropdown list.
 
 [LZ4](https://manpages.debian.org/unstable/lz4/lz4.1.en.html) maximizes performance and dynamically identifies the best files to compress. LZ4 provides lightning-fast compression/decompression speeds and comes coupled with a high-speed decoder. This makes it one of the best Linux compression tools for enterprise customers.
 
