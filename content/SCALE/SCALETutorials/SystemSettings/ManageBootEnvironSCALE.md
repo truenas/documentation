@@ -95,7 +95,7 @@ Use the icons row to take different actions for a boot environment.
 The option to activate a boot environment only displays for boot entries not set to **Active**
 
 Activating an environment means the system boots into the point of time saved in that environment the next time it is started.
-Click the <span class="material-icons">more_vert</span> for an inactive boot environment, and then select **Activate** to open the **Activate** dialog.
+Click on the activate icon for an inactive boot environment to open the **Activate** dialog.
 
 {{< trueimage src="/images/SCALE/SystemSettings/ActivateBootEnvironmentSCALE.png" alt="Activate Boot Environment" id="Activate Boot Environment" >}}
 
@@ -107,7 +107,7 @@ The **System Boot** screen status changes to **Reboot** and the current **Active
 
 Cloning copies the selected boot environment into a new inactive boot environment that preserves the **boot-pool** state at the clone-creation time.
 
-Click the <span class="material-icons">more_vert</span> for a boot environment, and then select **Clone** to open the **Clone Boot Environment** window.
+Click the clone icon to open the **Clone Boot Environment** window.
 
 {{< trueimage src="/images/SCALE/SystemSettings/CloneBootEnvironmentSCALE.png" alt="Clone Boot Environment" id="Clone Boot Environment" >}}
 
@@ -121,7 +121,7 @@ Click **Save**.
 
 Deleting a boot environment removes it from the ** Boot Environment** screen and the boot menu.
 
-Click the <span class="material-icons">more_vert</span> for a boot environment, and then select **Delete** to open the **Delete** dialog.
+Click on the delete icon for a boot environment to open the **Delete** dialog.
 Select **Confirm** and then click **Delete**.
 
 {{< trueimage src="/images/SCALE/SystemSettings/DeleteBootEnvironmentSCALE.png" alt="Delete Boot Environment" id="Delete Boot Environment" >}}
@@ -136,7 +136,7 @@ By default, TrueNAS prunes boot environments when the boot pool runs out of rema
 
 **Keep** toggles with the **Unkeep** option, and they determine whether the TrueNAS updater can automatically delete this boot environment if there is not enough space to proceed with an update.
 
-Click the <span class="material-icons">more_vert</span> for a boot environment, and then select **Keep** to open the **Keep** dialog.
+Click the keep icon for a boot environment to open the **Keep** dialog.
 Select **Confirm** and then click **Keep Flag**.
 
 {{< trueimage src="/images/SCALE/SystemSettings/KeepBootEnvironmentSCALE.png" alt="Keep Boot Environment" id="Keep Boot Environment" >}}
