@@ -48,7 +48,7 @@ descr="iXsystems official Statement of Volatility for M-Series systems." >}}
 {{< imagecard image="/images/Hardware/MSeries/NVDIMMUpdates.png" title="NVDIMM Updates" link="https://www.truenas.com/docs/files/MSeriesNVDIMMUpdates.pdf"
 descr="Procedure to update M-Series NVDIMMs firmware." >}}
 
-{{< imagecard image="/images/Hardware/MSeries/MSeriesStencil.png" title="Hardware Stencils" link="https://www.truenas.com/docs/files/truenasmmodels.vssx"
+{{< imagecard image="/images/Hardware/MSeries/MSeriesStencil.png" title="Hardware Stencils" link="https://www.truenas.com/docs/files/mseries_stencil_pack.vssx"
 descr="Download M-Series stencils to diagram your TrueNAS hardware configuration." >}}
 
 {{< imagecard image="/images/Hardware/Power.png" title="1300W Power Supply Reliability Notice" link="/hardware/notices/1300wpowersupply/"
