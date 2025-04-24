@@ -19,7 +19,7 @@ Software documentation is released under the Creative Commons license.
 
 # Local Build Process
 
-1. Download Hugo Extended from https://github.com/gohugoio/hugo/releases/ and [install](https://gohugo.io/getting-started/installing/ "Install Hugo").
+1. Download Hugo Extended v0.145.0 from [https://github.com/gohugoio/hugo/releases/](https://github.com/gohugoio/hugo/releases/tag/v0.145.0) and [install](https://gohugo.io/getting-started/installing/ "Install Hugo").
    See these instructions for manually installing the Hugo extended version in WSL: https://sal.as/post/install-hugo-on-wsl/
 
 2. Download this repository.
