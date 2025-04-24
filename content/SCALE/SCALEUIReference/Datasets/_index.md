@@ -113,7 +113,7 @@ Use the **Disconnect/Export** option on the **[Storage Dashboard]({{< relref "/S
 Non-root parent and child datasets include the **Delete** button.
 
 #### Delete Window
-The **Delete** window for a parent dataset (non-root) includes information about snapshots, shares or other services such as aps or VMs that use the dataset.
+The **Delete** window for a parent dataset (non-root) includes information about snapshots, shares, or other services such as apps or VMs that use the dataset.
 If a parent to other datasets, the window includes the services a child dataset uses.
 
 {{< trueimage src="/images/SCALE/Datasets/DeleteDatasetParentDataset.png" alt="Delete Dataset Parent Dataset" id="Delete Dataset Parent Dataset" >}}
