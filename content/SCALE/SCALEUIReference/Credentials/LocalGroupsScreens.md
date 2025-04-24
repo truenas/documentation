@@ -81,7 +81,8 @@ The **Privileges** screens show the default administrator groups and roles and d
 The new and edit privilege screens show the same settings but not all settings are editable.
 
 {{< enterprise >}}
-Enterprise-licensed systems can enable Active Directory to provision groups in TrueNAS. To make this possible, join Active Directory, then go to **System > Advanced Settings > Access** and enable the **Allow Directory Service users to access WebUI** option. After enabling this, the **Edit Privilege** screen lists AD groups on the **Groups** dropdown list.
+Enterprise-licensed systems can enable Active Directory to provision groups in TrueNAS. To make this possible, join Active Directory, then go to **System > Advanced Settings > Access** and enable the **Allow Directory Service users to access WebUI** option.
+After enabling this, the **Edit Privilege** screen lists AD groups on the **Groups** dropdown list.
 See [Allowing Directory Service Users to Access the UI]({{< relref "advanced.md #allowing-directory-service-users-to-access-the-ui" >}}) for more information.
 {{< /enterprise >}}
 
