@@ -138,7 +138,7 @@ The **Manage Credentials** link opens the **Backup Credentials** screen where yo
 {{< truetable >}}
 | Settings | Description |
 |----------|-------------|
-| **Credential** | Sets the credential to an existing backup cloud storage provider credential selected on the dropdown list. A **Bucket** setting displays after selecting a credential that uses S3, like **Amazon S3**. TrueNAS automatically validates the selected credential. |
+| **Credential** | Defines which preconfigured cloud storage account participates in this task. A **Bucket** setting displays after selecting a credential that uses S3, like **Amazon S3**. TrueNAS automatically validates the selected credential. |
 | **Bucket** | Sets the pre-defined bucket to use. For Storj-iX credentials, select **Add New** to open the **Add Bucket** screen and create a new bucket on your Storj account from the TrueNAS UI. |
 | **Folder** | Enter or browse to select the dataset. Click the <span class="material-icons">arrow_right</span> arrow to the left of the folder icon and at each dataset or directory to reach the storage location to use for this task. |
 {{< /truetable >}}
