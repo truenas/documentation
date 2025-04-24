@@ -95,7 +95,7 @@ Use the icons row to take different actions for a boot environment.
 The option to activate a boot environment only displays for boot entries not set to **Active**
 
 Activating an environment means the system boots into the point of time saved in that environment the next time it is started.
-Click on the activate icon for an inactive boot environment to open the **Activate** dialog.
+Click the <span class="iconify" data-icon="mdi:check-decagram">Activate</span> (Activate) icon for an inactive boot environment to open the **Activate** dialog.
 
 {{< trueimage src="/images/SCALE/SystemSettings/ActivateBootEnvironmentSCALE.png" alt="Activate Boot Environment" id="Activate Boot Environment" >}}
 
