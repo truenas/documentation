@@ -121,7 +121,7 @@ Click **Save**.
 
 Deleting a boot environment removes it from the ** Boot Environment** screen and the boot menu.
 
-Click on the delete icon for a boot environment to open the **Delete** dialog.
+Click on the <span class="iconify" data-icon="mdi:delete">Delete</span> (Delete) icon for a boot environment to open the **Delete** dialog.
 Select **Confirm** and then click **Delete**.
 
 {{< trueimage src="/images/SCALE/SystemSettings/DeleteBootEnvironmentSCALE.png" alt="Delete Boot Environment" id="Delete Boot Environment" >}}
