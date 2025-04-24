@@ -107,7 +107,7 @@ The **System Boot** screen status changes to **Reboot** and the current **Active
 
 Cloning copies the selected boot environment into a new inactive boot environment that preserves the **boot-pool** state at the clone-creation time.
 
-Click the clone icon to open the **Clone Boot Environment** window.
+Click the <span class="iconify" data-icon="mdi:content-copy">Clone</span> (Clone) icon to open the **Clone Boot Environment** window.
 
 {{< trueimage src="/images/SCALE/SystemSettings/CloneBootEnvironmentSCALE.png" alt="Clone Boot Environment" id="Clone Boot Environment" >}}
 
