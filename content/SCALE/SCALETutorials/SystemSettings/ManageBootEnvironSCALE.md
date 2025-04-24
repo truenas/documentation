@@ -88,7 +88,7 @@ Each boot environment entry contains this information:
 * **Space**: shows boot environment size.
 * **Keep**: indicates whether or not TrueNAS deletes this boot environment when a system update does not have enough space to proceed.
 
-Click the icon options for a boot environment to manage that environment.
+Use the icons row to take different actions for a boot environment.
 
 ### Activating a Boot Environment
 
