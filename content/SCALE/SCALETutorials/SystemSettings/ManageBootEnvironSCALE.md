@@ -136,7 +136,7 @@ By default, TrueNAS prunes boot environments when the boot pool runs out of rema
 
 **Keep** toggles with the **Unkeep** option, and they determine whether the TrueNAS updater can automatically delete this boot environment if there is not enough space to proceed with an update.
 
-Click the keep icon for a boot environment to open the **Keep** dialog.
+Click the <span class="iconify" data-icon="mdi:bookmark">Keep</span> (Keep) icon for a boot environment to open the **Keep** dialog.
 Select **Confirm** and then click **Keep Flag**.
 
 {{< trueimage src="/images/SCALE/SystemSettings/KeepBootEnvironmentSCALE.png" alt="Keep Boot Environment" id="Keep Boot Environment" >}}
