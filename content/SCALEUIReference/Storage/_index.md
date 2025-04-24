@@ -23,7 +23,7 @@ The **Create Pool** button in the center of the screen opens the **[Pool Creatio
 ## Storage Dashboard
 The buttons at the top right of the **Storage Dashboard** screen provide access to pool and disk functions:
 
-* {{< expand "Import Pool (Click to expand)" "v" >}}
+* {{< expand "Import Pool" "v" >}}
 
 **Import Pool** opens the **Import Pool** screen.
 
@@ -43,7 +43,7 @@ After adding pools, the dashboard shows [storage widgets](#storage-dashboard-wid
 
 {{< trueimage src="/images/SCALE/Storage/StorageDashboardWithPool.png" alt="Storage Dashboard with Pool" id="Storage Dashboard with Pool" >}}
 
-* {{< expand "Export/Disconnect" "v" >}}
+{{< expand "Export/Disconnect" "v" >}}
 **Export/Disconnect** opens the **Export/disconnect pool: *poolname*** window where users can export, disconnect, or delete a pool.
 
 The **Export/disconnect pool** window includes a warning stating data becomes unavailable after export and that selecting **Destroy Data on this pool** destroys data on the pool disks.
@@ -72,7 +72,7 @@ If you select a disk used by an exported pool for use in a new pool, the system 
 A status window shows progress. When complete, a final dialog states the export/disconnect completed successfully.
  {{< /expand >}}
 
-* {{< expand "Expand Pool" "v" >}}
+{{< expand "Expand Pool" "v" >}}
 Select **Expand Pool** to increase the pool size to match all available disk space.
 Users with pools using virtual disks use this option to resize these virtual disks apart from TrueNAS.
 
@@ -98,7 +98,7 @@ To see information on each disk on the system, click **Manage Disks** on the **[
 
 {{< trueimage src="/images/SCALE/Storage/StorageDashboardUnassignedDisksWidget.png" alt="Unassigned Disks Widget" id="Unassigned Disks Widget" >}}
 
-* {{< expand "Add To Pool Window" "v" >}}
+{{< expand "Add To Pool Window" "v" >}}
 **Add to Pool** on the **Unassigned Disks** widget opens the **Add to Pool** window.
 It displays the number of unassigned disks and provides the option to assign these disks to a new or existing pool.
 
@@ -171,7 +171,7 @@ This lists all scheduled scrub tasks and allows you to add a new or edit an exis
 
 **Prune** and **Set Quota** only show if the pool has a dedup VDEV and it contains duplicated files in the pool.
 
-* {{< expand "Scrub Pool Dialog" "v" >}}
+{{< expand "Scrub Pool Dialog" "v" >}}
 The **Scrub Pool** dialog allows you to run an unscheduled scrub task.
 If TrueNAS detects problems during the scrub, it either corrects them automatically or generates an [alert]({{< relref "AlertSettingsScreen.md" >}}) in the web interface.
 
@@ -184,7 +184,7 @@ To schedule a single or a regular pool scrub operation, click **View All Scrub T
 **Confirm** activates the **Start Scrub** button.
  {{< /expand >}}
 
-* {{< expand "Auto TRIM Dialog" "v" >}}
+{{< expand "Auto TRIM Dialog" "v" >}}
 The **Edit Auto TRIM** option on the **ZFS Health** widget opens a dialog to set **Auto TRIM**.
 
 {{< trueimage src="/images/SCALE/Storage/PoolOptionsAuotTRIM.png" alt="Pool Option Auto TRIM" id="Pool Option Auto TRIM" >}}
@@ -196,7 +196,7 @@ Select **Confirm** to activate **Save**.
 For more details about TRIM in ZFS, see the `autotrim` property description in [zpool.8](https://zfsonlinux.org/manpages/0.8.1/man8/zpool.8.html).
  {{< /expand >}}
 
-* {{< expand "Prune Deduplication Table Dialog" "v" >}}
+{{< expand "Prune Deduplication Table Dialog" "v" >}}
 The **Prune Deduplication Table** dialog shows pruning measurement options the system should use when pruning the deduplication table (DDT).
 Options are **Percentage** and **Age**.
 
@@ -211,7 +211,7 @@ Options are **Percentage** and **Age**.
 
 {{< /expand >}}
 
-* {{< expand "Deduplication Qutoa Dialog" "v" >}}
+{{< expand "Deduplication Qutoa Dialog" "v" >}}
 The **Deduplication Quota for *poolname*** shows the **Quota** dropdown list with three options for setting the maximum size limit the deduplication table can reach.
 
 **Auto** is the default option, which allows the system to set the quota and the size of a dedicated dedup VDEV.
