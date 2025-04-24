@@ -1592,8 +1592,15 @@ a.section-box:hover {
 }
 /* Adjust input elements for calculator */
 .monitor {
-    color: var(--body-font-color); /* Adjust text color as needed */
-  } 
+    color: var(--body-font-color);
+    background-color: var(--body-background);
+  }
+input[type='radio']  {
+    accent-color: #0095d5;
+}
+input[type='checkbox']  {
+    accent-color: #0095d5;
+}
 /* End Adjust input elements for calculator */
 
 /* Style for tables with class "inputs" */
