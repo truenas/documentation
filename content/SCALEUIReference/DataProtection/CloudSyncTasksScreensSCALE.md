@@ -110,7 +110,7 @@ The **Manage Credentials** link opens the [Backup Credentials]({{< relref "/SCAL
 
 **Advanced Options** accessed from the **Cloudsync Task Wizard** and **Edit Cloud Sync Task** show the same settings, and settings are grouped into **Transfer**, **Remote**, **Control**, and **Advanced Options**.
 
-**Manage Credentials** opens the [Backup Credentials]({{< relref "/SCALE/SCALEUIReference/Credentials/BackupCredentials/_index.md" >}}) screen.
+**Manage Credentials** opens the [Backup Credentials]({{< relref "/SCALEUIReference/Credentials/BackupCredentials/_index.md" >}}) screen.
 
 ### Transfer Settings
 
