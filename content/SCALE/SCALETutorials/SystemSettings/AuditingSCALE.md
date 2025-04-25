@@ -141,7 +141,6 @@ Each audit message JSON object includes:
 ## Accessing Auditing Screens
 Users have access to audit information from three locations in the TrueNAS UI:
 
-
 * **Credentials > Users** details screen through the **Audit Logs** option
   * On the **Users** screen, click **Audit Logs** on the **Users** details screen to open the **Audit** log screen with the **Search** field filtered to show events (authentication, changes to existing users, creating new users, etc.) specific to that user.  For more details see [Audit Screen](#audit-screen).
 * **Shares > Window (SMB) Shares** details screen through the share edit **Audit Logging** option
@@ -152,6 +151,7 @@ Users have access to audit information from three locations in the TrueNAS UI:
   * The default **Audit** log screen is unfiltered and displays all system events such as authentication and SMB events.
 
 ## Searching Audit Logs
+
 {{< trueimage src="/images/SCALE/SystemSettings/SystemSettingsAuditScreen.png" alt="Audit Screen" id="Audit Screen" >}}
 
 The audit screen includes basic and advanced search options.
