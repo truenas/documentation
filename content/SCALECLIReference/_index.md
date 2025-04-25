@@ -102,7 +102,7 @@ You can also access the TrueNAS CLI through the Console Setup Menu.
 ### Entering the TrueNAS CLI from the Console Setup Menu
 You can access the Console Setup Menu when you SSH into the TrueNAS system after you install SCALE from the <file>iso</file>, or from the Shell.
 
-To open the TrueNAS CLI from the [Console Setup Menu]({{< relref "ConsoleSetupMenuScale.md" >}}), enter `6`.
+To open the TrueNAS CLI from the [Console Setup Menu]({{< ref "ConsoleSetupMenuScale" >}}), enter `6`.
 
 ![CSMCLIlaunch](/images/SCALE/CLI/CSMCLIlaunch.png "TrueNAS CLI from CSM")
 
@@ -157,7 +157,7 @@ Use the `ls` command to view the list of namespaces or commands.
 {{< truetable >}}
 | Namespace | Description |
 |-----------|-------------|
-| **account** | Provides access to the **user** and **group** namespaces and commands. In the UI these are found on the **[Credentials]({{< relref "/SCALEUIReference/Credentials/_index.md" >}}) screen. |
+| **account** | Provides access to the **user** and **group** namespaces and commands. In the UI these are found on the **[Credentials]({{< ref "/SCALEUIReference/Credentials/" >}}) screen. |
 | **app** | Provides access to the **catalog**, **chart_release**, **container**, **docker** and **kubernetes** namespaces and commands. |
 | **auth** | Provides access to the authentication **api_key**, **privilege**, **sessions**, and **two_factor** namespaces and commands. |
 | **directory_service** | Provides access to directory services **activedirectory**, **idmap**, **kerberos**, and **ldap** namespaces and commands. |

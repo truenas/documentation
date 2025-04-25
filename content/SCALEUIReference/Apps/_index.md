@@ -318,7 +318,7 @@ Click in the field to see the list, then click on a category. Repeat to select m
 ## Install Custom App Screen
 
 The **Install Custom App** screen displays the setting options needed to install a third-party application not included in the TRUENAS catalog.
-See [Install Custom App Screens]({{< relref "InstallCustomAppScreens.md" >}}) for more information.
+See [Install Custom App Screens]({{< ref "InstallCustomAppScreens" >}}) for more information.
 
 ## Catalogs Screen
 

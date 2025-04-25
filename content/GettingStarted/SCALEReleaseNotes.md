@@ -51,7 +51,7 @@ More details are available from [Software Releases](https://www.truenas.com/docs
 
 * {{< include file="/static/includes/24.04HomeDirectory.md" >}}
   
-  See [Managing Users]({{< relref "managelocalusersscale.md#configuring-a-user" >}}) for more information.
+  See [Managing Users]({{< ref "managelocalusersscale.md#configuring-a-user" >}}) for more information.
 
 * Users upgrading from TrueNAS SCALE 23.10 (Cobia) to 24.04 (Dragonfish) who import a Cobia configuration file might find that some services are not automatically enabled as expected.
 After uploading the configuration file and rebooting the system, review **System Settings > Services**.
@@ -84,7 +84,7 @@ When attempting to migrate from TrueNAS CORE, the general recommendation is to b
 After install, restore the system configuration and import the pools.
 
 Depending on the specific system configuration, this can be a straightforward or complicated process.
-See the [Migration articles]({{< relref "/GettingStarted/Migrate/_index.md" >}}) for cautions and notes about differences between each software and the CORE to SCALE migration process.
+See the [Migration articles]({{< ref "/GettingStarted/Migrate/" >}}) for cautions and notes about differences between each software and the CORE to SCALE migration process.
 
 You must either clean install or use an upgrade ***iso** file to migrate a TrueNAS CORE system to SCALE 24.04 (Dragonfish).
 Enterprise customers should [contact Support](https://www.truenas.com/docs/scale/gettingstarted/migrate/migratecorehatoscaleha/#expand-1-Enterprise%20HA%20Migrations) for assistance with transitioning from CORE to SCALE.
@@ -309,7 +309,7 @@ This is the first stable release of TrueNAS SCALE 24.04 Dragonfish. It includes 
 ### Notable Changes
 
 * Users migrating data from an existing third-party NAS solution to TrueNAS SCALE 24.04 can use the Syncthing Enterprise application to mount the source with a remote SMB share that preserves metadata.
-  See [Third-Party SMB Data Migration]({{< relref "DataMigrationSyncthing.md" >}}) for considerations and a full tutorial.
+  See [Third-Party SMB Data Migration]({{< ref "DataMigrationSyncthing" >}}) for considerations and a full tutorial.
 * Improved workflow for FIPS changes on HA systems ([NAS-128187](https://ixsystems.atlassian.net/browse/NAS-128187)).
 * Improved compatibility of TrueNAS SCALE MinIO app and CORE MinIO plugin facilitate [simplified migration](https://www.truenas.com/docs/solutions/miniocoretoscale/) for CORE users with S3 data deployments.
 * Fixed bug to ensure ISCSI targets are mountable after removing and replacing targets ([NAS-128099](https://ixsystems.atlassian.net/browse/NAS-128099)).
@@ -359,7 +359,7 @@ This release candidate version has software component updates and new features t
 
 ### Notable Changes
 
-* New privilege levels for TrueNAS [administrative users]({{< relref "AdminRoles.md" >}}) for greater system security hardening ([NAS-123416](https://ixsystems.atlassian.net/browse/NAS-123416)).
+* New privilege levels for TrueNAS [administrative users]({{< ref "AdminRoles" >}}) for greater system security hardening ([NAS-123416](https://ixsystems.atlassian.net/browse/NAS-123416)).
 * UPS graphs are added to **Reporting** screens ([NAS-125159](https://ixsystems.atlassian.net/browse/NAS-125159)).
 * Fixes and polish on **Dashboard** and **Reporting** screens ([NAS-125453](https://ixsystems.atlassian.net/browse/NAS-125453), [NAS-127824](https://ixsystems.atlassian.net/browse/NAS-127824)).
 * Fix for missing SATA/SSD temperatures ([NAS-127524](https://ixsystems.atlassian.net/browse/NAS-127524)).
@@ -403,22 +403,22 @@ This has software component updates and new features that are in the polishing p
 ### Notable Changes
 
 * New audit logging framework added with initial support for SMB and other TrueNAS UI account and authorization activity ([NAS-123447](https://ixsystems.atlassian.net/browse/NAS-123447)), including SMB activity ([NAS-123371](https://ixsystems.atlassian.net/browse/NAS-123371)).
-  An [Auditing screen]({{< relref "AuditingSCALE.md" >}}) manages this feature in the UI.
+  An [Auditing screen]({{< ref "AuditingSCALE" >}}) manages this feature in the UI.
 
 * A new dashboard widget for backup configurations is available. This summarizes saved backup tasks and has links to quickly set up new backup schedules.
 
-* New status pages for [SMB]({{< relref "SMBSharesScreens.md#smb-status-screens" >}}) and [NFS]({{< relref "NFSSharesScreens.md#nfs-sessions-screen" >}}) services allow managing active sessions ([SMB - NAS-105505](https://ixsystems.atlassian.net/browse/NAS-105505) and [NFS - NAS-124942](https://ixsystems.atlassian.net/browse/NAS-124942)).
+* New status pages for [SMB]({{< ref "SMBSharesScreens.md#smb-status-screens" >}}) and [NFS]({{< ref "NFSSharesScreens.md#nfs-sessions-screen" >}}) services allow managing active sessions ([SMB - NAS-105505](https://ixsystems.atlassian.net/browse/NAS-105505) and [NFS - NAS-124942](https://ixsystems.atlassian.net/browse/NAS-124942)).
 
 * FreeIPA support is added to **Credentials** > **Directory Services** > **Configure LDAP** form ([NAS-123701](https://ixsystems.atlassian.net/browse/NAS-123701)).
 
-* The [Feedback reporting]({{< relref "/SCALEUIReference/TopToolbar/_index.md#how-would-you-rate-this-page" >}}) window has improved!
+* The [Feedback reporting]({{< ref "/SCALEUIReference/TopToolbar/#how-would-you-rate-this-page" >}}) window has improved!
   The page rating icon is now always visible on the top toolbar and the feedback window also functions for new bug reports and improvement suggestions ([NAS-124484](https://ixsystems.atlassian.net/browse/NAS-124484)).
   Clicking **File a ticket** on **System Settings** > **General** also opens the feedback window.
   
-* An unsupported [development mode]({{< relref "DeveloperMode.md" >}}) is added to the base system.
+* An unsupported [development mode]({{< ref "DeveloperMode" >}}) is added to the base system.
   Enabling this puts the system in an unsupported state and allows customization of the operating system.
   
-* systemd-nspawn containers ([Sandboxes]({{< relref "/SCALETutorials/Apps/Sandboxes.md" >}})) are added as an unsupported community feature so that an advanced containerization user can deploy custom software in persistent containers.
+* systemd-nspawn containers ([Sandboxes]({{< ref "/SCALETutorials/Apps/Sandboxes" >}})) are added as an unsupported community feature so that an advanced containerization user can deploy custom software in persistent containers.
 
 * Support is added for data ingest via filesystem (SMB/NFS) clients, allowing users migrating to TrueNAS SCALE to more easily import data from a third-party NAS solution ([NAS-123717](https://ixsystems.atlassian.net/browse/NAS-123717)).
   Supported SMB migration via the TrueNAS Syncthing Enterprise app is arriving in a future 24.04 release.

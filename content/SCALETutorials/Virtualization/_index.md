@@ -24,7 +24,7 @@ VMs provide more isolation than Jails but also consume more system resources.
 {{< /expand >}}
 
 ## Creating a Virtual Machine
-Before creating a VM, obtain an installer <file>.iso</file> or image file for the OS you intend to install, and create a [zvol]({{< relref "AddManageZvols.md" >}}) on a storage pool that is available for both the virtual disk and the OS install file.
+Before creating a VM, obtain an installer <file>.iso</file> or image file for the OS you intend to install, and create a [zvol]({{< ref "AddManageZvols" >}}) on a storage pool that is available for both the virtual disk and the OS install file.
 
 To create a new VM, go to **Virtualization** and click **Add** to open the **Create Virtual Machine** configuration screen.
 If you have not yet added a virtual machine to your system, click **Add Virtual Machines** to open the same screen.
@@ -132,7 +132,7 @@ Device notes:
 * A **CD-ROM** device allows booting a VM from a CD-ROM image like an installation CD.
   The CD image must be available in the system storage.
 
-See [Adding and Managing VM Devices]({{< relref "AddManageVMDevicesSCALE.md" >}}) for more information.
+See [Adding and Managing VM Devices]({{< ref "AddManageVMDevicesSCALE" >}}) for more information.
 
 ## Managing a Virtual Machine
 After creating the VM and configuring devices for it, click on the VM to expand it and show the options to manage the VM. 
@@ -330,7 +330,7 @@ If you want to access your TrueNAS SCALE directories from a VM, to connect to a 
 If your system has more than one physical interface, you can assign your VMs to a NIC other than the primary one your TrueNAS server uses. This method makes communication more flexible but does not offer the potential speed of a bridge.
 
 To create a bridge interface for the VM to use if you have only one physical interface, stop all existing apps, VMs, and services using the current interface, edit the interface and VMs, create the bridge, and add the bridge to the VM device.
-See [Accessing NAS from VM]({{< relref "accessingnasfromvm.md" >}}) for more information.
+See [Accessing NAS from VM]({{< ref "accessingnasfromvm" >}}) for more information.
 
 ## Virtualization Contents
 

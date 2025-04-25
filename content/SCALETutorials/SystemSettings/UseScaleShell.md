@@ -68,7 +68,7 @@ TrueNAS CLI is still in active development.
 We are not accepting bug reports or feature requests at this time.
 {{< /hint >}}
 
-See [SCALE CLI Reference Guide]({{< relref "/SCALECLIReference/_index.md" >}}) for more information on using the TrueNAS CLI.
+See [SCALE CLI Reference Guide]({{< ref "/SCALECLIReference/" >}}) for more information on using the TrueNAS CLI.
 
 We intend the CLI to be an alternative method for configuring TrueNAS features.
 Because of the variety of available features and configurations, we include CLI-specific instructions in their respective UI documentation sections.

@@ -23,8 +23,8 @@ If a periodic snapshot task is not yet configured **No Periodic Snapshot Task co
 
 **Add** opens the **[Add Periodic Snapshot Task](#add-and-edit-periodic-snapshot-screens)** screen. 
 
-**VMware Snapshot Integration** opens the **[VMware Snapshots]({{< relref "VMwareSnapshotsScreen.md" >}})** screen. 
-**Snapshots** opens the **[Snapshots]({{< relref "SnapshotsScreens.md" >}})** screen.
+**VMware Snapshot Integration** opens the **[VMware Snapshots]({{< ref "VMwareSnapshotsScreen" >}})** screen. 
+**Snapshots** opens the **[Snapshots]({{< ref "SnapshotsScreens" >}})** screen.
 
 Each task listed is a link that opens the **[Edit Periodic Snapshot Task](#add-and-edit-periodic-snapshot-screens)** screen populated with with the settings for that task. Click on the **Description**, **Frequency**, or **Next Run** column entry to open the edit task screen.
 

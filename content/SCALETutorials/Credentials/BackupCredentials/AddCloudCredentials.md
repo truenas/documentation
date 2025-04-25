@@ -16,11 +16,11 @@ The **Cloud Credentials** widget on the **Backup Credentials** screen allows use
 {{< include file="/static/includes/CloudServiceProvidersSCALE.md" >}}
 
 To maximize security, TrueNAS encrypts cloud credentials when saving them.
-However, this means that to restore any cloud credentials from a TrueNAS configuration file, you must enable **Export Password Secret Seed** when generating that [configuration backup]({{< relref "/SCALETutorials/SystemSettings/General/ManageSysConfigSCALE.md" >}}).
+However, this means that to restore any cloud credentials from a TrueNAS configuration file, you must enable **Export Password Secret Seed** when generating that [configuration backup]({{< ref "/SCALETutorials/SystemSettings/General/ManageSysConfigSCALE" >}}).
 Remember to protect any downloaded TrueNAS configuration files.
 
 Authentication methods for each provider could differ based on the provider security requirements.
-You can add credentials for many of the supported cloud storage providers from the information on the [Cloud Credentials Screens]({{< relref "/SCALEUIReference/Credentials/BackupCredentials/CloudCredentialScreens.md" >}}).
+You can add credentials for many of the supported cloud storage providers from the information on the [Cloud Credentials Screens]({{< ref "/SCALEUIReference/Credentials/BackupCredentials/CloudCredentialScreens" >}}).
 This article provides instructions for the more involved providers.
 
 ## Before You Begin
@@ -38,7 +38,7 @@ Have any authentication information your cloud storage provider requires on-hand
 
 2. Select the cloud service from the **Provider** dropdown list. The provider required authentication option settings display.
 
-   For details on each provider authentication settings see [Cloud Credentials Screens]({{< relref "/SCALEUIReference/Credentials/BackupCredentials/CloudCredentialScreens.md" >}}).
+   For details on each provider authentication settings see [Cloud Credentials Screens]({{< ref "/SCALEUIReference/Credentials/BackupCredentials/CloudCredentialScreens" >}}).
 
 3. Click **Verify Credentials** to test the entered credentials and verify they work.
 
@@ -46,7 +46,7 @@ Have any authentication information your cloud storage provider requires on-hand
 
 ### Adding Storj Cloud Credentials
 
-The process to set up the Storj-TrueNAS account, buckets, create the S3 access and download the credentials is documented fully in [Adding a Storj Cloud Sync Task]({{< relref "AddStorjCloudSyncTask.md" >}}) in the **Adding Storj Cloud Credentials** section.
+The process to set up the Storj-TrueNAS account, buckets, create the S3 access and download the credentials is documented fully in [Adding a Storj Cloud Sync Task]({{< ref "AddStorjCloudSyncTask" >}}) in the **Adding Storj Cloud Credentials** section.
 
 ### Adding Amazon S3 Cloud Credentials
 

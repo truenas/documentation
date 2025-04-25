@@ -12,25 +12,44 @@
     <link>https://www.truenas.com/docs/scale/24.04{{ .RelPermalink }}</link>
     <description>Recent content {{ if ne  .Title  .Site.Title }}{{ with .Title }}in {{.}} {{ end }}{{ end }}on {{ .Site.Title }}</description>
     <generator>Hugo -- gohugo.io</generator>{{ with .Site.LanguageCode }}
-    <language>{{.}}</language>{{end}}{{ with .Site.Author.email }}
-    <managingEditor>{{.}}{{ with $.Site.Author.name }} ({{.}}){{end}}</managingEditor>{{end}}{{ with .Site.Author.email }}
-    <webMaster>{{.}}{{ with $.Site.Author.name }} ({{.}}){{end}}</webMaster>{{end}}{{ with .Site.Copyright }}
-    <copyright>{{.}}</copyright>{{end}}{{ if not .Date.IsZero }}
+    <language>{{.}}</language>{{end}}
+
+    {{- range $name, $details := .Site.Params.authors }}
+      {{- with $details.email }}
+        <managingEditor>{{ . }} ({{ $name }})</managingEditor>
+        <webMaster>{{ . }} ({{ $name }})</webMaster>
+      {{- end }}
+      {{- break }} {{/* Use only the first author found */}}
+    {{- end }}
+
+    {{ with .Site.Copyright }}
+    <copyright>{{.}}</copyright>{{end}}
+
+    {{ if not .Date.IsZero }}
     <lastBuildDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</lastBuildDate>{{ end }}
+
     {{ with .OutputFormats.Get "RSS" }}
-	  <atom:link href="https://www.truenas.com/docs/scale/24.04{{ .RelPermalink }}" rel="self" type="application/rss+xml" />
+      <atom:link href="https://www.truenas.com/docs/scale/25.04{{ .RelPermalink }}" rel="self" type="application/rss+xml" />
     {{ end }}
+    
     {{ range $pages }}
-    {{ if ne .Params.no_print "true" }}
-    <item>
-      <title>{{ .Title }}</title>
-      <link>https://www.truenas.com/docs/scale/24.04{{ .RelPermalink }}</link>
-      <pubDate>{{ .Lastmod.Format "2006-01-02 15:04 MST" | safeHTML }}</pubDate>
-      {{ with .Site.Author.email }}<author>{{.}}{{ with $.Site.Author.name }} ({{.}}){{end}}</author>{{end}}
-      <guid>https://www.truenas.com/docs/scale/24.04{{ .RelPermalink }}</guid>
-      <description>{{ .Content | html }}</description> 
-    </item>
-    {{ end }}
+      {{ if ne .Params.no_print "true" }}
+      <item>
+        <title>{{ .Title }}</title>
+        <link>https://www.truenas.com/docs/scale/25.04{{ .RelPermalink }}</link>
+        <pubDate>{{ .Lastmod.Format "2006-01-02 15:04 MST" | safeHTML }}</pubDate>
+
+        {{- range $name, $details := .Site.Params.authors }}
+          {{- with $details.email }}
+            <author>{{ . }} ({{ $name }})</author>
+          {{- end }}
+          {{- break }} {{/* Use only the first author found */}}
+        {{- end }}
+
+        <guid>https://www.truenas.com/docs/scale/25.04{{ .RelPermalink }}</guid>
+        <description>{{ .Content | html }}</description>
+      </item>
+      {{ end }}
     {{ end }}
   </channel>
 </rss>

@@ -175,7 +175,7 @@ The <i class="material-icons" aria-hidden="true" title="Copy to Clipboard">assig
 
 ## Configuring Audit Storage and Retention Policies
 
-To configure Audit storage and retention settings, go to **System Settings > Advanced**, then click **Configure** on the [**Audit**]({{< relref "/SCALEUIReference/SystemSettings/AdvancedSettingsScreen.md#audit-widget" >}}) widget.
+To configure Audit storage and retention settings, go to **System Settings > Advanced**, then click **Configure** on the [**Audit**]({{< ref "/SCALEUIReference/SystemSettings/AdvancedSettingsScreen.md#audit-widget" >}}) widget.
 
 {{< include file="/static/includes/ConfigureSystemAuditSCALE.md" >}}
 

@@ -18,7 +18,7 @@ TrueNAS SCALE provides three types of sharing methods:
 * NFS for Unix-like shares
 * ISCSi block shares
 
-For more information on TrueNAS SCALE shares, see the [Shares]({{< relref "/SCALETutorials/Shares/_index.md" >}}) tutorials.
+For more information on TrueNAS SCALE shares, see the [Shares]({{< ref "/SCALETutorials/Shares/" >}}) tutorials.
 
 Regardless of what type of share you create, you need to create the user and dataset for the share.
 
@@ -27,13 +27,13 @@ Share users have permissions to access the share. You can create the user before
 
 Administrators can provision share users using a directory server such as Active Directory or LDAP.
 The administration user can create a limited administration user with only the ability to manage shares.
-See [Using Administration Logins]({{< relref "AdminRoles.md" >}}) for more information on administration roles.
+See [Using Administration Logins]({{< ref "AdminRoles" >}}) for more information on administration roles.
 
 To add non-SMB share users or edit users, go to **Credentials > Local Users** to add or edit the user(s).
 Click **Add** to create a new or as many new user accounts as you need.
 
 Enter the values in each required field, verify **Samba Authentication** is selected for SMB share users, then click **Save**.
-For more information on the fields and adding users, see [Creating User Accounts]({{< relref "ManageLocalUsersScale.md" >}}).
+For more information on the fields and adding users, see [Creating User Accounts]({{< ref "ManageLocalUsersScale" >}}).
 
 By default, all new local users are members of a built-in group called **builtin_users**.
 You can use a group to grant access to all local users on the server or add more groups to fine-tune permissions for large numbers of users.
@@ -51,7 +51,7 @@ This article provides instructions on creating the share and adding the dataset 
 
 ## Setting up SMB Shares for Windows
 
-For more information on adding SMB shares, see [Adding SMB Shares]({{< relref "/SCALETutorials/Shares/_index.md" >}}).
+For more information on adding SMB shares, see [Adding SMB Shares]({{< ref "/SCALETutorials/Shares/" >}}).
 
 {{< include file="/static/includes/LocalSMBUser.md" >}}
 
@@ -121,7 +121,7 @@ To set up a basic SMB share from the **Add SMB** screen:
    c. Begin browsing the dataset.
 
 ## Setting up NFS for Unix-Like Shares
-For more information on creating NFS shares, see [Adding NFS Shares]({{< relref "AddingNFSShares.md" >}}).
+For more information on creating NFS shares, see [Adding NFS Shares]({{< ref "AddingNFSShares" >}}).
 
 You can create an NFS share from either the **Add Dataset** screen while creating the dataset, or from the **Add NFS** share screen. Both options allow creating the dataset and the share at the same time.
 
@@ -181,6 +181,6 @@ To set up NFS sharing from the **Add NFS** screen:
 ## Setting up an iSCSI Block Share
 
 Setting up block sharing is a complicated scenario that requires detailed configuration steps and knowledge of your network environment.
-A simple configuration is beyond the scope of this getting started guide, but detailed articles are [available in the SCALE Tutorials section]({{< relref "/SCALETutorials/Shares/iSCSI/_index.md" >}}).
+A simple configuration is beyond the scope of this getting started guide, but detailed articles are [available in the SCALE Tutorials section]({{< ref "/SCALETutorials/Shares/iSCSI/" >}}).
 
 With simple sharing now set up, you can back up your configuration and set up data backup.

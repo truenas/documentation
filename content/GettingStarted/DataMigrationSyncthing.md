@@ -12,7 +12,7 @@ tags:
 ---
 
 TrueNAS SCALE 24.04 (Dragonfish) adds functionality to mount remote SMB shares in a manner that preserves relevant metadata.
-This allows users to migrate data from a third-party NAS solution onto TrueNAS SCALE using the [Syncthing Enterprise application]({{< relref "/scaletutorials/apps/enterpriseapps/syncthing.md" >}}).
+This allows users to migrate data from a third-party NAS solution onto TrueNAS SCALE using the [Syncthing Enterprise application]({{< ref "/scaletutorials/apps/enterpriseapps/syncthing" >}}).
 
 {{< expand "Syncthing Overview" "v" >}}
 {{< include file="/static/includes/SyncthingOverview.md" >}}
@@ -137,7 +137,7 @@ The process of setting up data migration from an external NAS to TrueNAS SCALE c
 
    Enter a clear identifying name, such as *INGEST*, and click **Save**.
 
-3. [Create a new dataset]({{< relref "datasetsscale.md" >}}) on TrueNAS SCALE to be the target for the data ingest, for example */mnt/tank/ingest*.
+3. [Create a new dataset]({{< ref "datasetsscale" >}}) on TrueNAS SCALE to be the target for the data ingest, for example */mnt/tank/ingest*.
 
     Click **Advanced Options** and set **ACL Type** to **SMB/NFSv4**.
     Set **ACL Mode** to **Restricted**.

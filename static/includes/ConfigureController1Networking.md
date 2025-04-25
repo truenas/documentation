@@ -16,7 +16,7 @@ To configure network settings on controller 1:
    Go to **System Settings > Services** locate the **Failover** service and click edit.
    Select **Disable Failover** and click **Save**.
 
-2. [Edit the global network settings]({{< relref "AddingGlobalConf.md" >}}) to add any missing network settings or make any changes.
+2. [Edit the global network settings]({{< ref "AddingGlobalConf" >}}) to add any missing network settings or make any changes.
 
 3. Edit the primary network interface to add failover settings.
    Go to **Network** and click on the primary interface **eno1** to open the **Edit Interface** screen for this interface.

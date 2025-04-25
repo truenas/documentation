@@ -14,7 +14,7 @@ Two-factor authentication is time-based and requires a correct system time setti
 
 The **Two-Factor Authentication** screen has buttons to manage two-factor authentication (2FA) credentials, and it displays a different message depending on if you have 2FA enabled or disabled.
 
-To configure 2FA settings go to the [**Advanced**]({{< relref "AdvancedSettingsScreen.md" >}}) settings screen. For more information, see the [Managing Global 2FA]({{< relref "ManageGlobal2FASCALE.md" >}}) tutorial.
+To configure 2FA settings go to the [**Advanced**]({{< ref "AdvancedSettingsScreen" >}}) settings screen. For more information, see the [Managing Global 2FA]({{< ref "ManageGlobal2FASCALE" >}}) tutorial.
 
 {{< trueimage src="/images/SCALE/Credentials/2FAScreenDisabled.png" alt="2FAScreenDisabled" id="2FA Screen with Disabled Message" >}}
 

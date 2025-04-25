@@ -30,7 +30,7 @@
             href="{{ if .external }}
               {{ .ref }}
             {{ else }}
-              {{ relref $current .ref }}
+              {{ ref $current .ref }}
             {{ end }}"
             class="gdoc-header__link"
           >

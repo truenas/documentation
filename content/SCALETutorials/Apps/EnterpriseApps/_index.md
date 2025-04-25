@@ -56,7 +56,7 @@ You might need to supply your LDAP server host name, LDAP server base and bind d
 Determine the container and node port numbers. TrueNAS SCALE requires a node port to be greater than 9000.
 Refer to the [Default Ports](https://www.truenas.com/docs/references/defaultports/) for a list of used and available ports before changing default port assignments. 
 
-iXsystems Support can assist Enterprise customers with configuring directory service settings in SCALE with the [information customers provide]({{< relref "/GettingStarted/Install/_index.md" >}}), but they do not configure customer Active Directory system settings.
+iXsystems Support can assist Enterprise customers with configuring directory service settings in SCALE with the [information customers provide]({{< ref "/GettingStarted/Install/" >}}), but they do not configure customer Active Directory system settings.
 
 ## Section Contents
 

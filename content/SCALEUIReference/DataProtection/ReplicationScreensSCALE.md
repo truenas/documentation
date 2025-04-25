@@ -35,7 +35,7 @@ The **[<span class="material-icons">delete</span> Delete](#delete-option)** icon
 **State** displays the status of the replication task as **SUCCESS** for completed tasks, **FAILED** if the task fails to complete the sync, and **PENDING** for tasks that have not run yet.
 Click on the state oval to open the **Logs** dialog for that task. **Download Logs** saves a copy of the current task logs.
 
-[Configure SSH]({{< relref "AddSSHConnectionKeyPair.md" >}}) in TrueNAS before creating a remote replication task. This ensures that new snapshots are regularly available for replication.
+[Configure SSH]({{< ref "AddSSHConnectionKeyPair" >}}) in TrueNAS before creating a remote replication task. This ensures that new snapshots are regularly available for replication.
 
 ## Replication Tasks Screen
 The **Replications Tasks** screen lists the replication tasks configured on the system.
@@ -267,7 +267,7 @@ These setting options display in addition to the two options displayed when **Tr
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **SSH Connection** | Select a connection created and saved in **Credentials > Backup Credentials > SSH Connections**. If a connection does not display on the the dropdown list, exit the task creation screen. Open **Credentials > Backup Credentials** and [add an SSH connection]({{< relref "AddSSHConnectionKeyPair.md" >}}). |
+| **SSH Connection** | Select a connection created and saved in **Credentials > Backup Credentials > SSH Connections**. If a connection does not display on the the dropdown list, exit the task creation screen. Open **Credentials > Backup Credentials** and [add an SSH connection]({{< ref "AddSSHConnectionKeyPair" >}}). |
 | **Stream Compression** | Select a compression algorithm from the dropdown list to reduce the size of the data being replicated. Only appears when SSH is chosen for **Transport** type. |
 | **Limit (Examples: 500 KiB, 500M, 2 TB)**| Enter the number of bytes per second to limit replication speed to this number of bytes per second. |
 {{< /truetable >}}
@@ -282,7 +282,7 @@ These setting options display in addition to the two options displayed when **Tr
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **SSH Connection** | Select a connection created and saved in **Credentials > Backup Credentials > SSH Connections**. If a connection does not display on the the dropdown list, exit the task creation screen. Open **Credentials > Backup Credentials** and [add an SSH connection]({{< relref "AddSSHConnectionKeyPair.md" >}}). |
+| **SSH Connection** | Select a connection created and saved in **Credentials > Backup Credentials > SSH Connections**. If a connection does not display on the the dropdown list, exit the task creation screen. Open **Credentials > Backup Credentials** and [add an SSH connection]({{< ref "AddSSHConnectionKeyPair" >}}). |
 | **Netcat Active Side** | Select the option for the system that opens ports from the dropdown list. Options are **Local** or **Remote**. Establishing a connection requires that one of the connection systems has open TCP ports. Consult your IT department to determine which systems are allowed to open ports. |
 | **Netcat Active Side Listen Address** | Enter the IP address on which the connection Active Side listens. Defaults to 0.0.0.0. |
 | **Netcat Active Side Min Port** | Enter the lowest port number of the active side listen address that is open to connections. |

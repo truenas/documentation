@@ -22,7 +22,7 @@ You might need command line knowledge or physical access to the TrueNAS system t
 {{< /expand >}}
 
 {{< expand "Can I configure these options elsewhere?" "v" >}}
-Users can configure many of these interface, DNS, and gateway options in the [Console Setup menu]({{< relref "ConsoleSetupMenuSCALE.md" >}}).
+Users can configure many of these interface, DNS, and gateway options in the [Console Setup menu]({{< ref "ConsoleSetupMenuSCALE" >}}).
 Be sure to check both locations when troubleshooting network connectivity issues.
 {{< /expand >}}
 

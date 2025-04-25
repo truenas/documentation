@@ -27,7 +27,7 @@ TrueNAS SCALE includes the [Key Management Interface Protocol (KMIP)](https://do
 {{< include file="/static/includes/EncryptionWarning.md" >}}
 
 TrueNAS automatically generates a root dataset when you create a pool.
-This root dataset inherits the encryption state of the pool through the **Encryption** option on the **[Pool Creation Wizard]({{< relref "PoolCreateWizardScreens.md" >}})** screen when you create the pool.
+This root dataset inherits the encryption state of the pool through the **Encryption** option on the **[Pool Creation Wizard]({{< ref "PoolCreateWizardScreens" >}})** screen when you create the pool.
 Because encryption is inherited from the parent, all data within that pool is encrypted.
 Selecting the **Encryption** option for the pool (root dataset) forces encryption for all datasets and zvols created within the root dataset.
 
@@ -56,7 +56,7 @@ If your system loses power or you reboot the system, the datasets, zvols, and al
 {{< /hint >}}
 
 ### Encryption Visual Cues
-SCALE uses lock icons to indicate the encryption state of a root, parent, or child dataset in the tree table on the **[Datasets]({{< relref "/SCALEUIReference/Datasets/_index.md" >}})** screen.
+SCALE uses lock icons to indicate the encryption state of a root, parent, or child dataset in the tree table on the **[Datasets]({{< ref "/SCALEUIReference/Datasets/" >}})** screen.
 Each icon shows a text label with the state of the dataset when you hover the mouse over the icon.
 
 {{< include file="/static/includes/EncryptionIconsSCALE.md" >}}
@@ -233,7 +233,7 @@ You can only encrypt a Zvol if you create the Zvol from a dataset with encryptio
 
 Zvols inherit encryption settings from the parent dataset.
 
-To encrypt a Zvol, select a dataset configured with encryption and then [create a new Zvol]({{< relref "AddManageZvols.md" >}}).
+To encrypt a Zvol, select a dataset configured with encryption and then [create a new Zvol]({{< ref "AddManageZvols" >}}).
 
 Next, go to **Datasets** and click on the Zvol.
 

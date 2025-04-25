@@ -18,7 +18,7 @@ Do not change to a prerelease or nightly release unless the system is intended t
 
 If you are using a non-production train, be prepared to experience bugs or other problems.
 Testers are encouraged to submit bug reports and debug files.
-For information on how to file an issue ticket see [Filing an Issue Ticket in SCALE]({{< relref "FileIssueSCALE.md" >}}).
+For information on how to file an issue ticket see [Filing an Issue Ticket in SCALE]({{< ref "FileIssueSCALE" >}}).
 {{< /hint >}}
 
 The TrueNAS SCALE **Update** screen provides users with two different methods to update the system, automatic or manual.

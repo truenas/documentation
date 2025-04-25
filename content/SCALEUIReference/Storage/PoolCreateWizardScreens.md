@@ -40,7 +40,7 @@ Names can include numbers and special characters such as underscore (_), hyphen 
 
 **Encryption** applies key-type encryption to the pool.
 Select to enable [ZFS encryption](https://zfsonlinux.org/manpages/0.8.3/man8/zfs.8.html) for the pool and all datasets (or zvols) created within the pool.
-See [Storage Encryption]({{< relref "EncryptionScale.md" >}}) for more information on using SCALE storage encryption.
+See [Storage Encryption]({{< ref "EncryptionScale" >}}) for more information on using SCALE storage encryption.
 An encryption warning dialog displays with a **Confirm** checkbox.
 Select to enable the **I Understand** button. **I Understand** allows you to continue adding the pool with encryption applied.
 

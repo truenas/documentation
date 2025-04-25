@@ -8,7 +8,7 @@ tags:
 - migrate
 ---
 
-The initial implementation of the TrueNAS SCALE administrator login permitted users to continue using the root user but encouraged users to create a local administrator account when first [installing SCALE]({{< relref "InstallingSCALE.md" >}}).
+The initial implementation of the TrueNAS SCALE administrator login permitted users to continue using the root user but encouraged users to create a local administrator account when first [installing SCALE]({{< ref "InstallingSCALE" >}}).
 
 {{< include file="/static/includes/RootLoginWarnSCALE.md" >}}
 
@@ -27,7 +27,7 @@ At present, SCALE has both the root and local administrator user logins and pass
 
 {{< include file="/static/includes/RootToAdminUserAccount.md" >}}
 
-All systems should [create the local administrator account]({{< relref "ManageLocalUsersSCALE.md" >}}) and use this account for web interface access.
+All systems should [create the local administrator account]({{< ref "ManageLocalUsersSCALE" >}}) and use this account for web interface access.
 When properly set up, the local administrator (full admin) account performs the same functions and has the same access as the root user.
 
 {{< hint type="note" title="References to Root Account" >}}
@@ -36,7 +36,7 @@ Some UI screens and settings still refer to the root account, but these referenc
 
 To improve system security after the local administrator account is created, disable the root account password to restrict root access to the system.
 
-For more information on the different administrator scenarios users can encounter, read [Logging Into SCALE the First Time]({{< relref "FirstTimeLogin.md" >}}).
+For more information on the different administrator scenarios users can encounter, read [Logging Into SCALE the First Time]({{< ref "FirstTimeLogin" >}}).
 
 ### Disabling Root and Admin User Passwords
 As a security measure, the root user is no longer the default account and the password is disabled when you create the admin user during installation.
@@ -79,10 +79,10 @@ To enable SSH to access the system as the admin user (or for root):
 
 ## Two-Factor Authentication (2FA) and Administrator Account Log In
 
-To use two-factor authentication with the administrator account (root or admin user), first configure and enable SSH service to allow SSH access, then [configure two-factor authentication]({{< relref "ManageGlobal2FASCALE.md" >}}).
+To use two-factor authentication with the administrator account (root or admin user), first configure and enable SSH service to allow SSH access, then [configure two-factor authentication]({{< ref "ManageGlobal2FASCALE" >}}).
 If you have the root user configured with a password and enable it, you can SSH into the system with the root user.
 Security best practice is to disable the root user password and only use the local administrator account.
 
 ## Administrator Logins and TrueCommand
 
-At present, administrator logins work with TrueCommand but you need to set up the TrueNAS connection using an [API key]({{< relref "ManagingAPIKeys.md" >}}).
+At present, administrator logins work with TrueCommand but you need to set up the TrueNAS connection using an [API key]({{< ref "ManagingAPIKeys" >}}).

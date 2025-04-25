@@ -8,7 +8,7 @@ tags:
 related: false
 ---
 
-This section contains tutorials involving the [SCALE Dashboard]({{< relref "SCALEDashboard.md" >}}).
+This section contains tutorials involving the [SCALE Dashboard]({{< ref "SCALEDashboard" >}}).
 
 ## Contents
 

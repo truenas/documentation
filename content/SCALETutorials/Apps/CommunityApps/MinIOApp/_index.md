@@ -34,15 +34,15 @@ The Minio applications, **chart** and **enterprise** train versions, allow users
 
 MinIO supports [distributed mode](https://min.io/docs/minio/kubernetes/upstream/index.html?ref=docs-redirect).
 Distributed mode, allows pooling multiple drives, even on different systems, into a single object storage server.
-For information on configuring a distributed mode cluster in SCALE using MinIO, see [Setting Up MinIO Clustering]({{< relref "MinIOClustering.md" >}}).
+For information on configuring a distributed mode cluster in SCALE using MinIO, see [Setting Up MinIO Clustering]({{< ref "MinIOClustering" >}}).
 
-For information on installing and configuring MinIO Enterprise, see [Installing MinIO Enterprise]({{< relref "/SCALETutorials/Apps/EnterpriseApps/MinIO/_index.md" >}}).
+For information on installing and configuring MinIO Enterprise, see [Installing MinIO Enterprise]({{< ref "/SCALETutorials/Apps/EnterpriseApps/MinIO/" >}}).
 
 ## Installing MinIO (S3) Community App
 
 The instructions in this section cover the basic requirements and instruction on how to install and configure the community MinIO application, **charts** train version.
 For instructions on installing the Enterprise version of the MinIO application see [Configuring
-Enterprise MinIO]({{< relref "/SCALETutorials/Apps/EnterpriseApps/_index.md" >}}).
+Enterprise MinIO]({{< ref "/SCALETutorials/Apps/EnterpriseApps/" >}}).
 
 ### First Steps
 

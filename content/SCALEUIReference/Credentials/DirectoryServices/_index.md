@@ -19,7 +19,7 @@ The **Directory Services** screen opens with two options, **Active Directory** a
 
 ![DirectoryServicesScreen](/images/SCALE/Credentials/DirectoryServicesScreen.png "Directory Services")
 
-**Configure Active Directory** opens the **[Active Directory]({{< relref "ActiveDirectory.md" >}})** configuration screen.
+**Configure Active Directory** opens the **[Active Directory]({{< ref "ActiveDirectory" >}})** configuration screen.
 
 **Configure LDAP** opens the **LDAP** configuration screen.
 

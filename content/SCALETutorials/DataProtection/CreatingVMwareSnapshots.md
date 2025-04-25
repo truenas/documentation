@@ -40,10 +40,10 @@ Please contact iXsystems Support to learn more and schedule a time to deploy or 
 Before using TrueNAS SCALE to create VMWare snapshots, configure TrueNAS to present a VMFS datastore or NFS export to your ESXi host(s) (this tutorial uses iSCSI) and then create and start your VM(s) in ESXi.
 Virtual machines must be running for TrueNAS to include them in VMWare snapshots, because powered-off virtual machines are already in a consistent state
 
-1. Go to **Datasets** and click **Add Zvol** to [create a dedicated zvol]({{< relref "addmanagezvols.md" >}}) for VMWare.  
+1. Go to **Datasets** and click **Add Zvol** to [create a dedicated zvol]({{< ref "addmanagezvols" >}}) for VMWare.  
   This tutorial uses *virtual/vmware/zvol-01*.
 
-2. [Create an iSCSI share]({{< relref "addingiscsishares.md" >}}).
+2. [Create an iSCSI share]({{< ref "addingiscsishares" >}}).
    Go to **Shares** and click **Wizard** on the **Block (iSCSI) Shares Targets** widget.  
 
     a. Enter a name for the share. For example, *vmware*.  
@@ -113,7 +113,7 @@ If you click in *ZFS Filestore** or **Datastores** before you click **Fetch Data
 
     **State** indicates the current status of the VMware connection as **PENDING**, **SUCCESS**, or **ERROR**.
 
-7. [Create a new periodic snapshot task]({{< relref "periodicsnapshottasksscale.md" >}}) for the zvol or a parent dataset.
+7. [Create a new periodic snapshot task]({{< ref "periodicsnapshottasksscale" >}}) for the zvol or a parent dataset.
     If there is an existing snapshot task for the zvol or a parent dataset, VMWare snapshots are automatically integrated with any snapshots created after the VMWare snapshot is configured.
 
     Expand the configured task on the **Periodic Snapshot Tasks** screen and ensure that **VMware Sync** is true.

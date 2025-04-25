@@ -106,7 +106,7 @@ Click **Save** and deploy the application.
 
 ### Nextcloud Configuration
 
-Install the [Nextcloud]({{< relref "InstallNextCloudMedia.md" >}}) community application.
+Install the [Nextcloud]({{< ref "InstallNextCloudMedia" >}}) community application.
 
 The first application deployment may take a while and starts and stops multiple times.
 This is normal behavior.
