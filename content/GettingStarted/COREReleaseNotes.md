@@ -28,9 +28,9 @@ aliases:
 * Due to security vulnerabilities and maintainability issues, the S3 service is deprecated in TrueNAS CORE 13.0 and removed in CORE 13.3 ([NAS-127694](https://ixsystems.atlassian.net/browse/NAS-127694)).
   Beginning in CORE 13.0-U6, the CORE web interface generates an alert when the deprecated service is either actively running or is enabled to start on boot.
   Users should move any production data away from the S3 service storage location before migrating to TrueNAS 24.04 or newer, which have MinIO applications available.
-  See also [Feature Deprecations]({{< relref "Deprecations.md" >}}).
+  See also [Feature Deprecations]({{< ref "Deprecations" >}}).
 
-* The web UI **Shell** is removed in CORE 13.3. Users can continue to access the shell using [SSH]({{< relref "ConfiguringSSH.md" >}}) or a physical system connection with serial cable or other direct method ([NAS-124392](https://ixsystems.atlassian.net/browse/NAS-124392)).
+* The web UI **Shell** is removed in CORE 13.3. Users can continue to access the shell using [SSH]({{< ref "ConfiguringSSH" >}}) or a physical system connection with serial cable or other direct method ([NAS-124392](https://ixsystems.atlassian.net/browse/NAS-124392)).
 
 * The Plugins, Jails, and Virtual Machines features are untested and provided without support to the TrueNAS Community.
   Users with a critical need to use containers or virtualization solutions in production should migrate to the tested and supported virtualization features available in [TrueNAS SCALE](https://www.truenas.com/download-truenas-scale/).
@@ -42,7 +42,7 @@ aliases:
 13.3 releases are only available as manual update <file>.tar</file> or full installation <file>.iso</file> files.
 Go to https://www.truenas.com/download-truenas-core/ to download either file type.
 
-See [Updating TrueNAS]({{< relref "/CORETutorials/UpdatingTrueNAS/_index.md" >}}) for instructions about updating with either file type.
+See [Updating TrueNAS]({{< ref "/CORETutorials/UpdatingTrueNAS/" >}}) for instructions about updating with either file type.
 
 ### Upgrade Paths
 
@@ -179,9 +179,9 @@ Notable changes:
 * Due to security vulnerabilities and maintainability issues, the S3 service is deprecated in TrueNAS CORE 13.0 and removed in CORE 13.3 ([NAS-127694](https://ixsystems.atlassian.net/browse/NAS-127694)).
   Beginning in CORE 13.0-U6, the CORE web interface generates an alert when the deprecated service is either actively running or is enabled to start on boot.
   Users should move any production data away from the S3 service storage location and consider migrating to TrueNAS 24.04 or newer releases that have Minio Applications available.
-  See also [Feature Deprecations]({{< relref "Deprecations.md" >}}).
+  See also [Feature Deprecations]({{< ref "Deprecations" >}}).
 
-* The web UI **Shell** is removed in CORE 13.3. Users can continue to access the shell using [SSH]({{< relref "ConfiguringSSH.md" >}}) or a physical system connection with serial cable or other direct method ([NAS-124392](https://ixsystems.atlassian.net/browse/NAS-124392)).
+* The web UI **Shell** is removed in CORE 13.3. Users can continue to access the shell using [SSH]({{< ref "ConfiguringSSH" >}}) or a physical system connection with serial cable or other direct method ([NAS-124392](https://ixsystems.atlassian.net/browse/NAS-124392)).
 
 * The Plugins, Jails, and Virtual Machines features are untested and provided without support to the TrueNAS Community.
   Users with a critical need to use containers or virtualization solutions in production should migrate to the tested and supported virtualization features available in [TrueNAS SCALE](https://www.truenas.com/download-truenas-scale/).

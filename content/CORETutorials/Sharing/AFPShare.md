@@ -34,7 +34,7 @@ Clicking **SUBMIT** creates the share.
 
 ![Sharing AFP Add](/images/CORE/Sharing/SharingAFPAdd.png "Sharing AFP Add")
 
-See [Sharing AFP screen]({{< relref "AFPShareScreen.md" >}}) for more information on screen settings.
+See [Sharing AFP screen]({{< ref "AFPShareScreen" >}}) for more information on screen settings.
 
 To edit an existing AFP share, go to **Sharing > Apple Shares (AFP)** and click  <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i>.
 
@@ -52,7 +52,7 @@ To adjust the service settings, click the <i class="material-icons" aria-hidden=
 
 ![Services AFP Edit](/images/CORE/Services/ServicesAFPEdit.png "Services AFP Edit")
 
-See [Adding AFP Service]({{< relref "AFPScreen.md" >}}) for more information on AFP service settings.
+See [Adding AFP Service]({{< ref "AFPScreen" >}}) for more information on AFP service settings.
 
 ## Connecting to the AFP Share
 

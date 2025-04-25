@@ -58,7 +58,7 @@ You can configure static IP addresses while creating or editing an interface.
 
 <!-- Enterprise specific comment that doesn't apply in 13.3-RELEASE
 {{< hint type=tip >}}
-To edit an active interface on TrueNAS Enterprise systems, you must first disable High Availability relref "/UIReference/System/Failover.md" .
+To edit an active interface on TrueNAS Enterprise systems, you must first disable High Availability ref "/UIReference/System/Failover.md" .
 {{< /hint >}}
 -->
 
@@ -88,7 +88,7 @@ To view system networking settings, go to **Network > Network Summary**.
 
 ### Using the System Console Menu to Assign Static IP Addresses to a Physical Interface
 
-You need to have a monitor and keyboard attached to the system to use the console. If the system hardware allows it, you can connect with [IPMI]({{< relref "/CORETutorials/Network/IPMI.md" >}}).
+You need to have a monitor and keyboard attached to the system to use the console. If the system hardware allows it, you can connect with [IPMI]({{< ref "/CORETutorials/Network/IPMI" >}}).
 The console menu displays after the system completes booting.
 
 {{< trueimage src="/images/CORE/ConsoleSetupMenu.png" alt="TrueNAS Console Setup Menu" id="TrueNAS Console Setup Menu" >}}

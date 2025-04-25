@@ -11,10 +11,10 @@ Options are **UDP**, **TCP**, or **TLS**.
 The steps for all three protocols are the same except **UDP** and **TCP** do not require a certificate and certificate authority and **TLS** does.
 
 ## Configuring a Syslog Server
-1. (TLS only) Go to **System > CAs** and configure a [certificate authority]({{< relref "CreatingCertificateAuthorities.md" >}}) for the remote logging server.
+1. (TLS only) Go to **System > CAs** and configure a [certificate authority]({{< ref "CreatingCertificateAuthorities" >}}) for the remote logging server.
    You can use a self-signed CA. Enter the IP address for the remote server in **Subject Alternate Names**.
 
-2. (TLS only) Go to **System > Certificates** and configure a [certificate]({{< relref "CreatingCertificates.md" >}}) for the remote logging server.
+2. (TLS only) Go to **System > Certificates** and configure a [certificate]({{< ref "CreatingCertificates" >}}) for the remote logging server.
    Use the CA created for the remote syslog server. Enter the IP address for the remote server in **Subject Alternate Names**.
 
 3. Go to **System > Advanced** and configure the syslog server settings.

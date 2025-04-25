@@ -26,7 +26,7 @@ Use **MANUAL TEST** to display the **Manual S.M.A.R.T. Tests** dialog where you 
 
 Use **S.M.A.R.T. TEST RESULTS** to display the results of any S.M.A.R.T. tests executed on the system.
 
-Use **WIPE** to delete obsolete data off an unused disk. This option does not display unless your disk is unused. See [Wiping a Disk]({{< relref "DiskWipe.md" >}}) for more information on how to use this function. 
+Use **WIPE** to delete obsolete data off an unused disk. This option does not display unless your disk is unused. See [Wiping a Disk]({{< ref "DiskWipe" >}}) for more information on how to use this function. 
 
 ## Edit Disk Screen
 The settings on the **Edit Disk** are the same as those on the **Add Disk** screen.
@@ -70,4 +70,4 @@ Use the **Import Disk** screen to perform a one time disk import, only one disk 
 
 The **SAVE** button activates after required fields are populated.
 
-See [Import Disks]({{< relref "ImportDisk.md" >}}) for more information on importing a disk into your TrueNAS.
+See [Import Disks]({{< ref "ImportDisk" >}}) for more information on importing a disk into your TrueNAS.

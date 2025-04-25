@@ -43,7 +43,7 @@ Do not include spaces in the pool name as this could cause problems with other f
 
 {{< expand "Encryption?" "v" >}}
 Encryption algorithms are available as an option for maximizing data security, however, this also complicates how data is retrieved and risks permanent data loss!
-Refer to the [Encryption article]({{< relref "StorageEncryption.md" >}}) for more details and decide if encryption is necessary for your use case before setting any encryption options.
+Refer to the [Encryption article]({{< ref "StorageEncryption" >}}) for more details and decide if encryption is necessary for your use case before setting any encryption options.
 {{< /expand >}}
 
 Next, configure the virtual devices (vdevs) that make up the pool.
@@ -104,7 +104,7 @@ We do not recommend this method, because it causes two resilver events: one when
 Resilvering degrades system performance until completed and causes unnecessary strain on the disk.
 {{< /expand >}}
 {{< expand "Metadata" >}}
-Metadata vdevs are a special allocation class used to create [Fusion Pools]({{< relref "FusionPool.md" >}}) for increased metadata and small block I/O performance.
+Metadata vdevs are a special allocation class used to create [Fusion Pools]({{< ref "FusionPool" >}}) for increased metadata and small block I/O performance.
 {{< /expand >}}
 {{< expand "Dedup" >}}
 **Dedup** vdevs store [ZFS de-duplication](https://www.truenas.com/docs/references/zfsdeduplication/).

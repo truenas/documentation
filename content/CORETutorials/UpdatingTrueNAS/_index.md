@@ -39,7 +39,7 @@ We have several trains available for updates, but the web interface only display
 Update trains have a numeric version followed by a short description.
 The current version receives regular bug fixes and new features.
 Supported older versions of TrueNAS only receive maintenance updates.
-See the [Software Development Life Cycle]({{< relref "SofDevLifecycle.md" >}}) for more details about the development and support timeline for TrueNAS versions.
+See the [Software Development Life Cycle]({{< ref "SofDevLifecycle" >}}) for more details about the development and support timeline for TrueNAS versions.
 
 We use three different terms to describe train types:
 
@@ -160,7 +160,7 @@ Dialogs also appear in every active web interface session to warn that a system 
 
 To upgrade TrueNAS to a new major version using an <file>.iso</file> file, use the [Release List](https://www.truenas.com/docs/truenasupgrades/) to download the <file>.iso</file> to the computer that prepares the installation media.
 
-Burn the downloaded <file>.iso</file> file to a CD or USB stick. Refer to the [Prepare the Install File]({{< relref "/GettingStarted/Install.md#prepare-the-install-file" >}}) instructions in the Installation article for tips about burning the <file>.iso</file> to media using different Operating Systems.
+Burn the downloaded <file>.iso</file> file to a CD or USB stick. Refer to the [Prepare the Install File]({{< ref "/GettingStarted/Install.md#prepare-the-install-file" >}}) instructions in the Installation article for tips about burning the <file>.iso</file> to media using different Operating Systems.
 
 Insert the prepared media into the system and boot from it.
 The installer waits ten seconds in the installer boot menu before booting the default option.

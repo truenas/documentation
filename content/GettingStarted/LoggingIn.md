@@ -143,4 +143,4 @@ For users with compatible TrueNAS Hardware, clicking the system image goes to th
 
 The **Dashboard** provides access to all TrueNAS management options.
 
-Now that you can access the TrueNAS web interface and see all the management options, it is time to begin [storing data]({{< relref "StoringData.md" >}})!
+Now that you can access the TrueNAS web interface and see all the management options, it is time to begin [storing data]({{< ref "StoringData" >}})!

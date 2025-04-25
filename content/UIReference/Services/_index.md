@@ -9,7 +9,7 @@ related: false
 
 {{< include file="/static/includes/COREServices.md" >}}
 
-[Sharing]({{< relref "/UIReference/Sharing/_index.md" >}}) provides documentation for services related to data sharing. [Tasks]({{< relref "/UIReference/Tasks/_index.md" >}}) provides documentation for services related to automated tasks.
+[Sharing]({{< ref "/UIReference/Sharing/" >}}) provides documentation for services related to data sharing. [Tasks]({{< ref "/UIReference/Tasks/" >}}) provides documentation for services related to automated tasks.
 
 <div class="noprint">
 

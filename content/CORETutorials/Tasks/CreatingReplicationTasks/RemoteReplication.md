@@ -6,7 +6,7 @@ tags:
 - replication
 ---
 
-Configure [SSH]({{< relref "/ConfiguringSSHConnections.md" >}}) and [automatic dataset snapshots]({{< relref "CreatingPeriodicSnapshotTasks.md" >}}) in TrueNAS before creating a remote replication task.
+Configure [SSH]({{< ref "ConfiguringSSHConnections" >}}) and [automatic dataset snapshots]({{< ref "CreatingPeriodicSnapshotTasks" >}}) in TrueNAS before creating a remote replication task.
 This ensures that both systems can connect and new snapshots are regularly available for replication.
 
 To streamline creating simple replication configurations, the replication wizard assists with creating a new SSH connection and automatically creates a periodic snapshot task for sources with no existing snapshots.
