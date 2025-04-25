@@ -7,8 +7,6 @@ aliases:
  - /scale/scaletutorials/systemsettings/services/ddnsservicescale/
  - /scale/scaletutorials/systemsettings/services/ddnsservicemigrate/
  - /scale/scaletutorials/apps/communityapps/ddns-updater/
- - /images/SCALE/22.02/DynamicDNSServiceSettings.png
- - /images/CORE/13.0/ServicesDynamicDNSOptions.png
 tags:
   - ddns
   - apps

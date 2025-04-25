@@ -19,7 +19,7 @@ keywords:
 {{< include file="/static/includes/CommunityAppsLegacy.md" >}}
 
 Storj is an open-source decentralized cloud storage (DCS) platform.
-TrueNAS partners with Storj in two areas, the [cloud service]({{< relref "AddCloudCredentials.md" >}}) offering and as storage media for cloud service data through the Storj node application.
+TrueNAS partners with Storj in two areas, the [cloud service]({{< ref "AddCloudCredentials" >}}) offering and as storage media for cloud service data through the Storj node application.
 
 Installing the Storj node app allows you to configure your system as a storage node, and to rent out unused system storage capacity and bandwidth to other Storj cloud service users.
 
@@ -37,7 +37,7 @@ Before you can configure your system to act as a Storj node:
 
 * Review the Storj node hardware and bandwidth considerations at [Storj Node](https://www.storj.io/node).
 
-* Update [TrueNAS]({{< relref "UpdateSCALE.md" >}}) to the latest public release.
+* Update [TrueNAS]({{< ref "UpdateSCALE" >}}) to the latest public release.
 
 * Create a [wallet address](#getting-a-wallet-address).
 
@@ -61,7 +61,7 @@ Before you can configure your system to act as a Storj node:
    If not using the default user **apps** (568) as the assigned user and group, go to **Credentials > Local User**, click **Add** and create the new user.
    Make sure the user has read/write/execute privileges. If you have an existing admin user on your system with the right permissions, you make that user the app user.
 
-   If using ports other than the assigned default ports (**20909** and **28967**), go to [default port list]({{< relref "/solutions/optimizations/security.md #truenas-default-ports" >}}) for a list of available or unavailable port numbers to verify the port numbers you want to use are available options.
+   If using ports other than the assigned default ports (**20909** and **28967**), go to [default port list]({{< ref "/solutions/optimizations/security/#truenas-default-ports" >}}) for a list of available or unavailable port numbers to verify the port numbers you want to use are available options.
 
    {{< hint type=info >}}
    Earlier releases of TrueNAS used port 20988 for in and outbound traffic. This port assignment changed in later releases to 28967.
@@ -120,7 +120,7 @@ To verify it works, use <code>nslookup <i>name.ddns.net</i></code> where <code><
 
 ## Creating the Storj Datasets on TrueNAS
 
-[Create three new datasets]({{< relref "datasetsscale.md#creating-a-dataset" >}}), one parent with two child datasets nested under it.
+[Create three new datasets]({{< ref "datasetsscale.md#creating-a-dataset" >}}), one parent with two child datasets nested under it.
 
 Log into TrueNAS then go to **Datasets** and click **Add Dataset** to open the **Add Dataset** screen.
 
@@ -143,7 +143,7 @@ The **Datasets** screen displays two nested datasets **data** and **identity** u
 After adding each dataset you might be prompted to change the ACL permissions or to return to the **Datasets** screen.
 You can modify the dataset permissions now, or wait to modify permissions when you add the dataset as a storage volume in the **Storage Configuration** section of the **Install Storj** wizard.
 
-See [Setting Up Permissions]({{< relref "PermissionsSCALE.md" >}}) for more information on changing permissions in TrueNAS.
+See [Setting Up Permissions]({{< ref "PermissionsSCALE" >}}) for more information on changing permissions in TrueNAS.
 
 ## Installing the Storj App
 
@@ -199,7 +199,7 @@ TrueNAS alerts you when a new version is available for deployed apps, and allows
    {{< trueimage src="/images/SCALE/Apps/InstallStorjNetworkConfig.png" alt="Storj Network Settings" id="Storj Network Settings" >}}
 
 4. Accept the default **Network Configuration** settings.
-   If you want to use different ports, check the [default port list]({{< relref "/solutions/optimizations/security.md #truenas-default-ports" >}}) for a list of available or unavailable port numbers.
+   If you want to use different ports, check the [default port list]({{< ref "/solutions/optimizations/security/#truenas-default-ports" >}}) for a list of available or unavailable port numbers.
    Leave **Host Network** unselected.
 
 5. Configure the **Storage Configuration** settings.

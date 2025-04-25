@@ -148,7 +148,7 @@ TrueNAS provides two options for storage volumes: ixVolumes and host paths.
 * ***data-storage*** to use as the ***User Data*** storage volume.
 * ***media-storage*** to use as the ***Media Data*** storage volume.
 
-If you group these datasets under a parent dataset named *Home Assistant*, configure the [ACL permissions]({{< relref "PermissionsSCALE.md" >}}) for this parent dataset and add an ACE entry for the ***Home Assistant*** user.
+If you group these datasets under a parent dataset named *Home Assistant*, configure the [ACL permissions]({{< ref "PermissionsSCALE" >}}) for this parent dataset and add an ACE entry for the ***Home Assistant*** user.
 If the app includes postgres storage volumes, include the following information
 If the app installation wizard cannot set up the ACL type or correctly add user permissions for the postgres storage volume,
 you must configure these outside the install wizard using the **Add Dataset** and **Edit ACL** screens.

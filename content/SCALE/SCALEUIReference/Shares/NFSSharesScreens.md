@@ -42,7 +42,7 @@ The NFS share on the widget opens the **[Edit NFS](#add-and-edit-nfs-screens)** 
 
 The <span class="material-icons">more_vert</span> icon displays three options available to NFS shares in general:
 * **Turn Off Service** what shows when the NFS service is enabled and that toggles to **Turn On Service** when the NFS service is disabled.
-* **Config Service** that opens the [**NFS**]({{< relref "NFSServiceScreen.md" >}}) configuration screen.
+* **Config Service** that opens the [**NFS**]({{< ref "NFSServiceScreen" >}}) configuration screen.
 * **NFS Sessions** that opens the [**NFS Sessions** screen](#nfs-sessions-screen).
 
 The toolbar displays the **STOPPED** service status in red before you start the service or click **Enable Service** when the dialog displays.

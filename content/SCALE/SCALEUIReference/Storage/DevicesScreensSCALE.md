@@ -4,7 +4,6 @@ description: "Provides information on settings and functions found on the Device
 weight: 35
 aliases:
  - /scale/scaleuireference/storage/pools/devicesscreensscale/
- - /images/SCALE/Storage/DevicesSLOG.png
 tags:
 - smart
 - disks
@@ -23,7 +22,7 @@ Click anywhere on the VDEV to see the drives in it and the **ZFS Info** widget f
 
 Click anywhere on a drive to see the [drive widgets](#disk-widgets).
 
-**Add VDEV** opens the **Add a VDEVs to Pool** screen with the **[Pool Creation Wizard]({{< relref "PoolCreateWizardScreens.md" >}})** for the selected pool.
+**Add VDEV** opens the **Add a VDEVs to Pool** screen with the **[Pool Creation Wizard]({{< ref "PoolCreateWizardScreens" >}})** for the selected pool.
 For example, find the **Topology** widget for a pool and click **Manage Devices**.
 This opens the **Pool Creation Wizard** with *tank* prepopulated but not editable.
 
@@ -74,7 +73,7 @@ The **Manage SED Password** link opens a **Manage SED Password** dialog, where y
 {{< trueimage src="/images/SCALE/Storage/ManageSEDPasswordDialog.png" alt="Manage Disk SED Encryption Password" id="Manage Disk SED Encryption Password" >}}
 
 **Global SED Password** shows the status as set or not set.
-The **Manage Global SED Password** link opens the **[System Settings > Advanced]({{< relref "AdvancedSettingsScreen.md" >}})** screen where you can change the global SED password that overrides the disk passwords.
+The **Manage Global SED Password** link opens the **[System Settings > Advanced]({{< ref "AdvancedSettingsScreen" >}})** screen where you can change the global SED password that overrides the disk passwords.
 
 ### S.M.A.R.T. Info for&nbsp;*Devicename*&nbsp;Widget
 
@@ -83,7 +82,7 @@ The widget shows the status of the last short test performed.
 
 {{< trueimage src="/images/SCALE/Storage/DeviceDiskSMARTInfoWidget.png" alt="Devices Disk S.M.A.R.T. Info Widget" id="Devices Disk S.M.A.R.T. Info Widget" >}}
 
-The **Manage SMART Tasks** link opens the **[Data Protection > SMART Tests]({{< relref "SMARTTestsScreensSCALE.md" >}})** details screen where you find the list of SMART tests configured on your system.
+The **Manage SMART Tasks** link opens the **[Data Protection > SMART Tests]({{< ref "SMARTTestsScreensSCALE" >}})** details screen where you find the list of SMART tests configured on your system.
 
 **Run Manual Test** opens the **Manual S.M.A.R.T. Test** dialog if the disk is compatible with SMART tests or opens an information dialog if it is not.
 

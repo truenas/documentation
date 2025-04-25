@@ -25,7 +25,7 @@ keywords:
 
 Users migrating data from an existing third-party NAS solution to TrueNAS 24.04 (Dragonfish) or newer can use the Syncthing **enterprise** application to mount the source with a remote SMB share that preserves metadata.
 
-See [Third-Party SMB Data Migration]({{< relref "DataMigrationSyncthing.md" >}}) for considerations and a full tutorial.
+See [Third-Party SMB Data Migration]({{< ref "DataMigrationSyncthing" >}}) for considerations and a full tutorial.
 
 Enterprise users with the appropriate license can see the apps in the **enterprise** train.
 Community users can access enterprise versions of apps by adding the **enterprise** train to their catalog. To change app train settings:
@@ -68,7 +68,7 @@ Set the <b>@owner</b> and <b>@group</b> to <b>admin</b> or the name of your True
 
 Next, click **Add Item** to add an ACE entry for the <b>Syncthing</b> run as user, <b>0</b>. Give the user full permissions.
 
-See [Setting Up Permissions]({{< relref "PermissionsSCALE.md" >}}) and [Edit ACL Screen]({{< relref "EditACLScreens.md" >}}) for more information.
+See [Setting Up Permissions]({{< ref "PermissionsSCALE" >}}) and [Edit ACL Screen]({{< ref "EditACLScreens" >}}) for more information.
 {{< /expand >}}</div>
 
 ## Installing the Syncthing Application
@@ -200,7 +200,7 @@ Next, add an ACL entry for the run-as user.
 For Syncthing, the run-as user is **0**. Add a user entry for this user.
 Save the ACL before leaving the screen.
 
-For more infomration, see [Setting Up Permissions]({{< relref "PermissionsSCALE.md" >}}) and [Edit ACL Screen]({{< relref "EditACLScreens.md" >}}).
+For more infomration, see [Setting Up Permissions]({{< ref "PermissionsSCALE" >}}) and [Edit ACL Screen]({{< ref "EditACLScreens" >}}).
 {{< /expand >}}
 
 #### Mounting an SMB Share Storage Volume
@@ -228,7 +228,7 @@ Using the Syncthing Enterprise app to sync directories with greater than 8191 su
 Increase inotify values to allow Syncthing to monitor all sync directories.
 Add a sysctl variable to ensure changes persist through restart.
 
-Go to **System > Advanced** and locate the [**Sysctl** widget]({{< relref "/scale/scaletutorials/systemsettings/advanced/_index.md #managing-sysctl-variables" >}}).
+Go to **System > Advanced** and locate the [**Sysctl** widget]({{< ref "/scale/scaletutorials/systemsettings/advanced/#managing-sysctl-variables" >}}).
 
 {{< trueimage src="/images/SCALE/SystemSettings/AdvancedSysctlWidget.png" alt="Sysctl Widget" id="Sysctl Widget" >}}
 

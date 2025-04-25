@@ -9,7 +9,6 @@ aliases:
  - /scale/scaleuireference/shares/webdavsharesscreens/
  - /scale/scaleuireference/systemsettings/services/webdavservicescreen/
  - /scale/scaletutorials/apps/communityapps/webdav/
- - /images/CORE/12.0/SharingWebdavAdd.png
 tags:
  - webdav
  - shares

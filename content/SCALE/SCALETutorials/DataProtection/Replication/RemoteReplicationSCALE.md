@@ -87,7 +87,7 @@ This saves some time when creating multiple replication tasks between the same t
 
 {{< include file="/static/includes/ReplicationScheduleAndRetentionSteps.md" >}}
 
-For information on replicating encrypted pools or datasets, see [Setting Up an Encrypted Replication Task]({{< relref "ReplicationWithEncryptionSCALE.md" >}}).
+For information on replicating encrypted pools or datasets, see [Setting Up an Encrypted Replication Task]({{< ref "ReplicationWithEncryptionSCALE" >}}).
 
 ### Configuring a New SSH Connection
 

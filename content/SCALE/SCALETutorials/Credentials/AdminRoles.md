@@ -29,7 +29,7 @@ TrueNAS has three predefined admin user account levels:
 
 * Readonly Admin - Assigned to users that can monitor the system but not make changes to settings.
 
-For more information on the different administrator scenarios users can encounter, read [Logging In for the First Time]({{< relref "FirstTimeLogin.md" >}}).
+For more information on the different administrator scenarios users can encounter, read [Logging In for the First Time]({{< ref "FirstTimeLogin" >}}).
 
 ## Changing Administrator Account Passwords
 Adminstrator passwords can be changed on the **Edit User** screen or, if currently logged in as that admin user, by clicking the **Settings** <span class="material-icons">account_circle</span> icon on the top toolbar and clicking **Change Password**.
@@ -38,7 +38,7 @@ Adminstrator passwords can be changed on the **Edit User** screen or, if current
 
 ## Configuring Administrative Privileges
 
-[Create a new administrator]({{< relref "managelocalusersscale.md #creating-an-administrator-user-account" >}}) account or select an existing account to grant administrative privileges.
+[Create a new administrator]({{< ref "managelocalusersscale/#creating-an-administrator-user-account" >}}) account or select an existing account to grant administrative privileges.
 Note the primary group assigned to that user.
 
 {{< include file="/static/includes/AddAdminGroup.md" >}}
@@ -113,10 +113,10 @@ To allow an admin user to issue commands in an SSH session:
 
 ## Two-Factor Authentication (2FA) and Administrator Account Log In
 
-To use two-factor authentication with an administrator account, configure and enable SSH service to allow SSH access, then [configure two-factor authentication]({{< relref "ManageGlobal2FASCALE.md" >}}).
+To use two-factor authentication with an administrator account, configure and enable SSH service to allow SSH access, then [configure two-factor authentication]({{< ref "ManageGlobal2FASCALE" >}}).
 If you have the root user configured with a password and it is enabled, you can SSH into the system as the root user.
 Disable the root user password and only use a local administrator account for more security.
 
 ## Administrator Logins and TrueCommand
 
-Administrator logins work with TrueCommand, but you need to set up the TrueNAS connection using an [API key]({{< relref "ManagingAPIKeys.md" >}}).
+Administrator logins work with TrueCommand, but you need to set up the TrueNAS connection using an [API key]({{< ref "ManagingAPIKeys" >}}).

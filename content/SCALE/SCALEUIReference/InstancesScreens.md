@@ -60,7 +60,7 @@ The screen header displays a <i class="fa fa-cog" aria-hidden="true"></i> **Pool
 {{< truetable >}}
 | Setting | Description |
 |-----------|-------------|
-| **Bridge** | Specifies the network bridge.  **Automatic** uses the default network bridge for communication between instances and the TrueNAS host. The dropdown list option shows existing bridges. See [Accessing NAS from VMs and Containers]({{< relref "/SCALE/SCALETutorials/Network/ContainerNASBridge.md" >}}) for more information. |
+| **Bridge** | Specifies the network bridge.  **Automatic** uses the default network bridge for communication between instances and the TrueNAS host. The dropdown list option shows existing bridges. See [Accessing NAS from VMs and Containers]({{< ref "/SCALE/SCALETutorials/Network/ContainerNASBridge" >}}) for more information. |
 | **IPv4 Network** | Specifies the IPv4 address for the bridge specified when **Bridge** is set to **Automatic**. Enter the IPv4 address and subnet (e.g., *192.168.1.0*/*24*) for the instances to use or leave empty to allow TrueNAS to use the default address. |
 | **IPv6 Network** | Specifies the IPv6 address for the bridge specified when **Bridge** is set to **Automatic**. Enter the IPv6 address and subnet (e.g., *fd42:96dd:aef2:483c::1*/*64*) for the instances to use or leave empty to allow TrueNAS to use the default address. |
 {{< /truetable >}}
@@ -249,7 +249,7 @@ These settings are only available for containers and cannot be used with VMs.
 The **Network settings** configure how the instance connects to the host and external networks.
 Options include the default network bridge, an existing bridge interface, or a MACVLAN.
 
-See [Accessing NAS from VMs and Containers]({{< relref "/SCALE/SCALETutorials/Network/ContainerNASBridge.md" >}}) for more information.
+See [Accessing NAS from VMs and Containers]({{< ref "/SCALE/SCALETutorials/Network/ContainerNASBridge" >}}) for more information.
 
 {{< trueimage src="/images/SCALE/Virtualization/InstancesNetworkDefault.png" alt="Default Network Settings" id="Default Network Settings" >}}
 

@@ -32,7 +32,7 @@ The process requires an extended maintenance window, requires executing steps in
 
 ## Migration Preparation
 
-**Review the [Migration Preparation article]({{< relref "MigratePrep.md" >}}) for detailed recommendations and preparation steps before attempting to migrate.**
+**Review the [Migration Preparation article]({{< ref "MigratePrep" >}}) for detailed recommendations and preparation steps before attempting to migrate.**
 
 Depending on system configuration, migrating can be more or less complicated.
 
@@ -43,9 +43,9 @@ Depending on system configuration, migrating can be more or less complicated.
 ### Clean Install
 You can migrate with a clean install using an <file>iso</file> file.
 With a clean install, you need to reconfigure your settings and import your data.
-Follow the instructions in the [Install]({{< relref "InstallingSCALE.md" >}}) articles.
+Follow the instructions in the [Install]({{< ref "InstallingSCALE" >}}) articles.
 
-When TrueNAS boots, you might need to [use the Console Setup Menu to configure networking interfaces]({{< relref "ConsoleSetupMenuScale.md" >}}) to enable GUI accessibility.
+When TrueNAS boots, you might need to [use the Console Setup Menu to configure networking interfaces]({{< ref "ConsoleSetupMenuScale" >}}) to enable GUI accessibility.
 After logging in to the TrueNAS UI, use a system configuration file to restore the system settings and import the data storage pools.
 
 ### Select Update Train
@@ -58,7 +58,7 @@ This method is only available for non-Enterprise community systems.
 
 3. Review the TrueNAS migrations warning and verify the system is ready to migrate before confirming and continuing.
 
-4. When the latest update for that chosen TrueNAS release is loaded, click **Apply Pending Update** or **Download Updates** to begin the update process documented in [Updating TrueNAS]({{< relref "UpdateSCALE.md#performing-an-automatic-update" >}}).
+4. When the latest update for that chosen TrueNAS release is loaded, click **Apply Pending Update** or **Download Updates** to begin the update process documented in [Updating TrueNAS]({{< ref "UpdateSCALE.md#performing-an-automatic-update" >}}).
    It is strongly recommended to download the system configuration backup prior to starting the update.
 
 5. After the system installs the update and restarts, log in and review the system configuration to ensure the migration was successful.
@@ -74,7 +74,7 @@ If this process fails, retry using the iso file method above.
 1. Confirm that the system is on the latest public release, 13.0-U6.2 (community users could have 13.3-RELEASE or newer installed).
 
 2. Download the [TrueNAS manual update file](https://www.truenas.com/download-truenas-scale/).
-   See [Software Releases]({{< relref "TrueNASUpgrades/_index.md #upgrade-paths" >}}) for current recommended update paths to make sure you download and migrate to the correct version.
+   See [Software Releases]({{< ref "TrueNASUpgrades/#upgrade-paths" >}}) for current recommended update paths to make sure you download and migrate to the correct version.
 
 3. Click **CHECK FOR UPDATES** in the **System Information** card on the **Dashboard** or go to **System > Update**.
 
@@ -97,7 +97,7 @@ If this process fails, retry using the iso file method above.
 
    {{< trueimage src="/images/SCALE/SystemSettings/SidegradeRestart.png" alt="Restart to Finish" id="Restart to Finish" >}}
 
-After TrueNAS restarts, to enable GUI accessibility, you might need to use the [Console Setup menu]({{< relref "ConsoleSetupMenuScale.md" >}}) to configure the primary networking interfaces.
+After TrueNAS restarts, to enable GUI accessibility, you might need to use the [Console Setup menu]({{< ref "ConsoleSetupMenuScale" >}}) to configure the primary networking interfaces.
 
 After gaining access to the UI, sign in with the admin user credentials created during installation.
 
@@ -113,7 +113,7 @@ After uploading the config file, review each area of the UI previously configure
 {{< hint type=info title="Component Descriptions" >}}
 {{< include file="/static/includes/MigratingDescriptions.md" >}}
 
-See [Component Naming]({{< relref "ComponentNaming.md" >}}) for more information.
+See [Component Naming]({{< ref "ComponentNaming" >}}) for more information.
 {{< /hint >}}
 
 Use the information gathered during your preparation to migrate to restore settings, tasks, VMs configured using the GRUB bootloader, credentials, etc. not present after uploading the config file.

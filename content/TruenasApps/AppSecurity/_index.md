@@ -14,12 +14,12 @@ author:
 
 {{< hint type=note >}}
 Enhancing app security is a multifaceted challenge and there are various effective approaches.
-We invite community members to share insights on their methods by [contributing]({{< ref "/Contributing/_index.md" >}}) to the documentation.
+We invite community members to share insights on their methods by [contributing]({{< ref "/Contributing" >}}) to the documentation.
 {{< /hint >}}
 
 ## Securing Apps with VPNs and Zero Trust
 
-TrueNAS offers various [applications]({{< relref "/content/Truenasapps/_index.md" >}}), either directly provided or via the community.
+TrueNAS offers various [applications]({{< ref "/Truenasapps" >}}), either directly provided or via the community.
 While applications can greatly expand TrueNAS functionality, making them accessible from outside the local network can create security risks that need to be solved.
 
 {{< hint type=important >}}
