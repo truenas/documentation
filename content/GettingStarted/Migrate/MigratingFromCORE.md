@@ -24,7 +24,7 @@ The process requires an extended maintenance window, requires executing steps in
 
 ## Migration Preparation
 
-**Review the [Migration Preparation article]({{< relref "MigratePrep.md" >}}) for detailed recommendations and preparation steps before attempting to migrate from CORE to SCALE.**
+**Review the [Migration Preparation article]({{< ref "MigratePrep" >}}) for detailed recommendations and preparation steps before attempting to migrate from CORE to SCALE.**
 
 Depending on system configuration, migrating from CORE to SCALE can be more or less complicated.
 
@@ -38,10 +38,10 @@ Depending on system configuration, migrating from CORE to SCALE can be more or l
 
 You can migrate from 13.0-U6.x to 24.10 with a clean install using an <file>iso</file> file and 13.0 or 13.3 configuration file upload.
 With a clean install, you need to review any settings imported from your configuration file and import your storage pools.
-Follow the instructions in the [Install]({{< relref "InstallingSCALE.md" >}}) articles.
+Follow the instructions in the [Install]({{< ref "InstallingSCALE" >}}) articles.
 
-After TrueNAS boots, you might need to [use the Console Setup menu to reconfigure networking interfaces]({{< relref "ConsoleSetupMenuScale.md" >}}) to enable GUI accessibility.
-After logging in to the TrueNAS UI with the **truenas_admin** administrator account, go to **System > General Settings** and [upload the 13.0-U6.x system config file]({{< relref "ManageSysConfigSCALE.md#uploading-the-file" >}}).
+After TrueNAS boots, you might need to [use the Console Setup menu to reconfigure networking interfaces]({{< ref "ConsoleSetupMenuScale" >}}) to enable GUI accessibility.
+After logging in to the TrueNAS UI with the **truenas_admin** administrator account, go to **System > General Settings** and [upload the 13.0-U6.x system config file]({{< ref "ManageSysConfigSCALE.md#uploading-the-file" >}}).
 This migrates your settings, imports your pools, shares, etc. into 24.10.
 
 After uploading the config file, TrueNAS reboots.
