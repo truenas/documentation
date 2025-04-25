@@ -18,7 +18,7 @@ The **No Pools** screen displays before you add the first pool.
 
 {{< trueimage src="/images/SCALE/Storage/StorageDashboardNoPools.png" alt="Storage Dashboard without Pools" id="Storage Dashboard without Pools" >}}
 
-The **Create Pool** button in the center of the screen opens the **[Pool Creation Wizard]({{< relref "PoolCreateWizardScreens.md" >}})** screen.
+The **Create Pool** button in the center of the screen opens the **[Pool Creation Wizard]({{< ref "PoolCreateWizardScreens" >}})** screen.
 
 ## Storage Dashboard
 The buttons at the top right of the **Storage Dashboard** screen provide access to pool and disk functions:
@@ -36,8 +36,8 @@ TrueNAS detects these as present on the system but not yet connected in TrueNAS.
 **Import** starts connecting the pool and bringing it into TrueNAS.
  {{< /expand >}}
 
-* **Disks** opens the **[Disks]({{< relref "DisksScreen.md" >}})** screen.
-* **Create Pool** opens the **[Pool Creation Wizard]({{< relref "PoolCreateWizardScreens.md" >}})**.
+* **Disks** opens the **[Disks]({{< ref "DisksScreen" >}})** screen.
+* **Create Pool** opens the **[Pool Creation Wizard]({{< ref "PoolCreateWizardScreens" >}})**.
 
 After adding pools, the dashboard shows [storage widgets](#storage-dashboard-widgets) and two more buttons.
 
@@ -126,7 +126,7 @@ A **Data VDEV** includes the data type (stripe, mirror, RAID, or mixed configura
 
 {{< trueimage src="/images/SCALE/Storage/StorageDashboardTopologyWidget.png" alt="Topology Widget" id="Topology Widget" >}}
 
-**Manage Devices** opens the **[Devices]({{< relref "DevicesScreensSCALE.md" >}})** screen where you can add or manage existing VDEVs.
+**Manage Devices** opens the **[Devices]({{< ref "DevicesScreensSCALE" >}})** screen where you can add or manage existing VDEVs.
 
 ### Usage Widget
 The **Usage** widget shows information on the pool space datasets consumed and the status of pool usage.
@@ -147,7 +147,7 @@ Storage configurations with more than 9,007,199,254,740,992 bytes round the last
 For example, a system with 18,446,744,073,709,551,615 bytes reports the number as 18,446,744,073,709,552,000 bytes.
 {{< /hint >}}
 
-**Manage Datasets** opens the **[Datasets]({{< relref "/SCALEUIReference/Datasets/_index.md" >}})** screen.
+**Manage Datasets** opens the **[Datasets]({{< ref "/SCALEUIReference/Datasets/" >}})** screen.
 
 ### ZFS Health Widget
 The **ZFS Health** widget shows health-of-the-pool information.
@@ -166,14 +166,14 @@ The **ZFS Health** widget shows health-of-the-pool information.
 
 **Scrub** opens the **Scrub Pool** dialog. Run a check on the data integrity of the pool from this dialog.
 
-**View all Scrub Tasks** opens the **[Data Protections > Scrub Tasks]({{< relref "ScrubTasksScreensSCALE.md" >}})** details screen.
+**View all Scrub Tasks** opens the **[Data Protections > Scrub Tasks]({{< ref "ScrubTasksScreensSCALE" >}})** details screen.
 This lists all scheduled scrub tasks and allows you to add a new or edit an existing task.
 
 **Prune** and **Set Quota** only show if the pool has a dedup VDEV and it contains duplicated files in the pool.
 
 {{< expand "Scrub Pool Dialog" "v" >}}
 The **Scrub Pool** dialog allows you to run an unscheduled scrub task.
-If TrueNAS detects problems during the scrub, it either corrects them automatically or generates an [alert]({{< relref "AlertSettingsScreen.md" >}}) in the web interface.
+If TrueNAS detects problems during the scrub, it either corrects them automatically or generates an [alert]({{< ref "AlertSettingsScreen" >}}) in the web interface.
 
 By default, TrueNAS automatically checks every pool to verify it is on a reoccurring scrub schedule.
 
@@ -232,7 +232,7 @@ The details on the widget include the non-dismissed disk temperature alerts for 
 
 {{< trueimage src="/images/SCALE/Storage/StorageDashboardDiskHealthWidget.png" alt="Disk Health Widget" id="Disk Health Widget" >}}
 
-**Manage Disks** opens the **Storage > [Disk]({{< relref "DisksScreen.md" >}})** screen.
+**Manage Disks** opens the **Storage > [Disk]({{< ref "DisksScreen" >}})** screen.
 
 **View Reports** opens the **Report** screen for the disks in the selected pool.
 
@@ -247,7 +247,7 @@ This icon indicates the status of the pool as healthy (green checkmark), offline
 This same information displays on both the **Storage** widget and a pool widget you can add to the **Dashboard**.
 
 ## Upgrade Dialog
-The **Storage Dashboard** shows the **Upgrade** button for existing pools after an upgrade to a new TrueNAS release that includes new [OpenZFS feature flags]({{< relref "SCALEReleaseNotes.md#component-versions" >}}).
+The **Storage Dashboard** shows the **Upgrade** button for existing pools after an upgrade to a new TrueNAS release that includes new [OpenZFS feature flags]({{< ref "SCALEReleaseNotes.md#component-versions" >}}).
 Newly created pools are always up-to-date with the OpenZFS feature flags in the installed TrueNAS release.
 
 {{< include file="/static/includes/UpgradePools.md" >}}
