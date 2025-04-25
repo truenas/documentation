@@ -51,6 +51,8 @@ Use the TrueNAS AI Search below or on the left sidebar to ask questions about Tr
 
 <h2> Additional Content </h2>
 
+{{< include file="/static/includes/apps/AppsMarket.md" >}}
+
 Interested in contributing to the TrueNAS projects or documentation or want to learn more about the technologies TrueNAS uses?
 See these additional content areas:
 
