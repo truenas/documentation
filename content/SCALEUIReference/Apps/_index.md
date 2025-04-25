@@ -8,6 +8,8 @@ tags:
 related: false
 ---
 
+{{< include file="/static/includes/apps/AppsMarket.md" >}}
+
 {{< include file="/static/includes/AppsSupportTimeline.md" >}}
 
 {{< include file="/static/includes/ProposeArticleChange.md" >}}
