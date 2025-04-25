@@ -33,7 +33,7 @@ These trains have the various preview / early build releases of the software.
 TrueNAS offers "nightly" images which allow adventurous users and developers to participate in early testing and feedback of future versions of TrueNAS.
 These images should not be used in production, and users are required to roll back to a previous "released" version before upgrading again to a stable release.
 
-See [CORE Updates]({{< relref "UpdatingCORE.md" >}}) for more information about how to use nightly images.
+See [CORE Updates]({{< ref "UpdatingCORE" >}}) for more information about how to use nightly images.
 
 ## Migrating from CORE to SCALE
 

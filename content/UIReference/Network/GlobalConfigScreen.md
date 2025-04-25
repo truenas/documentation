@@ -9,7 +9,7 @@ tags:
 
 {{< toc >}}
 
-The **Network > Global Configuration** screen has all the general TrueNAS networking settings that *are not* specific to any [interface]({{< relref "/UIReference/Network/InterfacesScreen.md" >}}).
+The **Network > Global Configuration** screen has all the general TrueNAS networking settings that *are not* specific to any [interface]({{< ref "/UIReference/Network/InterfacesScreen" >}}).
 
 {{< hint type=warning >}}
 **Disruptive Change**
@@ -25,7 +25,7 @@ Fixing any misconfigured network settings might require command line knowledge o
 Options are organized into several categories.
 
 {{< expand "Can these options be configured elsewhere?" "v" >}}
-Many of these interface, DNS, and gateway options are also configured in the [Console Setup Menu]({{< relref "/GettingStarted/ConsoleSetupMenu.md" >}}).
+Many of these interface, DNS, and gateway options are also configured in the [Console Setup Menu]({{< ref "/GettingStarted/ConsoleSetupMenu" >}}).
 Be sure to check both locations when troubleshooting network connectivity issues.
 {{< /expand >}}
 

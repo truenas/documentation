@@ -18,10 +18,10 @@ TrueNAS provides flexibility for keeping the operating system up-to-date:<br>
    Boot environments provide the option to return to the previous version of the operating system by rebooting the system and selecting the previous boot environment from the **System > Boot** menu.
    
 The [upgrade instructions](#upgrade-via-iso) instructions describe how to use an <file>.iso</file> file to perform a major version upgrade from an earlier version of FreeNAS/TrueNAS.
-See the [Updating CORE]({{< relref "/CORETutorials/UpdatingTrueNAS/UpdatingCORE.md" >}}) or [Updating Enterprise]({{< relref "/CORETutorials/UpdatingTrueNAS/UpdatingENTERPRISE.md" >}}) articles for instructions about using the web interface to keep the system updated.
+See the [Updating CORE]({{< ref "/CORETutorials/UpdatingTrueNAS/UpdatingCORE" >}}) or [Updating Enterprise]({{< ref "/CORETutorials/UpdatingTrueNAS/UpdatingENTERPRISE" >}}) articles for instructions about using the web interface to keep the system updated.
 
 The upgrade path for major versions of FreeNAS/TrueNAS is **9.3 > 9.10 > 11.1 > 11.3 > 12.0**.
-We always recommend upgrading to a [supported version]({{< relref "/GettingStarted/UserAgreements/SofDevLifecycle.md" >}}) of the software.
+We always recommend upgrading to a [supported version]({{< ref "/GettingStarted/UserAgreements/SofDevLifecycle" >}}) of the software.
 
 ## Caveats
 
@@ -41,13 +41,13 @@ Be aware of these caveats before attempting a major version upgrade:
   However, if the system is currently running a 32-bit version of FreeNAS/TrueNAS and the hardware supports 64-bit, you can upgrade the system.
   Any archived reporting graphs delete during upgrades.
 * **UFS is not supported.**
-  If the data resides on one UFS-formatted disk, [create a ZFS pool]({{< relref "/CORETutorials/Storage/Pools/PoolCreate.md" >}}) using other disks after upgrading, then use the instructions in [Importing a Disk]({{< relref "/CORETutorials/Storage/ImportDisk.md" >}}) to mount the UFS-formatted disk and copy the data to the ZFS pool.
+  If the data resides on one UFS-formatted disk, [create a ZFS pool]({{< ref "/CORETutorials/Storage/Pools/PoolCreate" >}}) using other disks after upgrading, then use the instructions in [Importing a Disk]({{< ref "/CORETutorials/Storage/ImportDisk" >}}) to mount the UFS-formatted disk and copy the data to the ZFS pool.
   With only one disk, back up its data to another system or media before the upgrade, format the disk as `ZFS` after the upgrade, then restore the backup.
   If the data resides on a UFS RAID of disks, you cannot directly import that data to the ZFS pool.
   Instead, back up the data before the upgrade, create a ZFS pool after upgrading, then restore the data from the backup.
 * **If you have GELI-encrypted pools and are upgrading to TrueNAS 12.0 or newer**, you might want to migrate data from the GELI-encrypted pools into ZFS-encrypted pools.
   You CANNOT CONVERT the GELI pools. You must migrate the data to a new ZFS pool.
-  See the [Encryption article]({{< relref "/CORETutorials/Storage/Pools/StorageEncryption.md" >}}) for more details.
+  See the [Encryption article]({{< ref "/CORETutorials/Storage/Pools/StorageEncryption" >}}) for more details.
 
 ## Prepare the System
 
@@ -70,7 +70,7 @@ For example, this is the path to download an <file>.iso</file> of the latest Fre
 
 ![DownloadLatest](/images/CORE/11.3/DownloadLatest.png "Path to latest 11.3 release")
 
-Burn the downloaded <file>.iso</file> file to a CD or USB stick. Refer to the [Prepare the Install File]({{< relref "/GettingStarted/Install.md#prepare-the-install-file" >}}) instructions in the Installation article for tips about burning the <file>.iso</file> to media using different Operating Systems.
+Burn the downloaded <file>.iso</file> file to a CD or USB stick. Refer to the [Prepare the Install File]({{< ref "/GettingStarted/Install.md#prepare-the-install-file" >}}) instructions in the Installation article for tips about burning the <file>.iso</file> to media using different Operating Systems.
 
 Insert the prepared media into the system and boot from it.
 The installer waits ten seconds in the installer boot menu before booting the default option.

@@ -59,7 +59,7 @@ Do not enable ALUA on TrueNAS unless it is also supported by and enabled on the 
 
 There are a few different approaches for configuring and managing iSCSI-shared data:
 
-* TrueNAS CORE web interface: the TrueNAS web interface is fully capable of configuring iSCSI shares. This requires creating and populating [zvol block devices]({{< relref "/CORETutorials/Storage/Pools/Zvols.md" >}}) with data, then setting up the [iSCSI Share]({{< relref "/CORETutorials/Sharing/iSCSI/AddingiSCSIShare.md" >}}). TrueNAS Enterprise licensed customers also have additional options to configure the share with [Fibre Channel]({{< relref "/UIReference/Sharing/iSCSI/FibreChannel.md" >}}).
+* TrueNAS CORE web interface: the TrueNAS web interface is fully capable of configuring iSCSI shares. This requires creating and populating [zvol block devices]({{< ref "/CORETutorials/Storage/Pools/Zvols" >}}) with data, then setting up the [iSCSI Share]({{< ref "/CORETutorials/Sharing/iSCSI/AddingiSCSIShare" >}}). TrueNAS Enterprise licensed customers also have additional options to configure the share with [Fibre Channel]({{< ref "/UIReference/Sharing/iSCSI/FibreChannel" >}}).
 
 * TrueNAS SCALE web interface: TrueNAS SCALE offers a similar experience to TrueNAS CORE for managing data with iSCSI; create and populate the block storage, then configure the iSCSI share.
 

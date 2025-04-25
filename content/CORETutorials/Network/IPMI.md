@@ -24,7 +24,7 @@ Configure **IPMI** by going to **Network > IPMI**. The IPMI configuration screen
 
 ## IPMI Configuration
 
-Use the **Network > IPMI** screen to configure IPMI settings. See [IPMI Screen]({{< relref "/UIReference/Network/IPMIScreen.md" >}}) for more information on IPMI settings.
+Use the **Network > IPMI** screen to configure IPMI settings. See [IPMI Screen]({{< ref "/UIReference/Network/IPMIScreen" >}}) for more information on IPMI settings.
 
 Click **SAVE** to save the IPMI settings.
 

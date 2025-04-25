@@ -12,7 +12,7 @@ tags:
 Now that you have logged in to the web interface, it's time to set up TrueNAS storage.
 These instructions demonstrate a simple *mirrored* pool setup, where you use one disk for storage and the other for data protection.
 However, there are many configuration possibilities for your storage environment!
-You can read more about these options in the in-depth [Pool Creation article]({{< relref "PoolCreate.md" >}}).
+You can read more about these options in the in-depth [Pool Creation article]({{< ref "PoolCreate" >}}).
 
 ## Requirements
 
@@ -63,7 +63,7 @@ Users create datasets and zvols as part of configuring specific data-sharing sit
 
 Organize the pool with additional datasets or zvols according to your access and data-sharing requirements before moving any data into the pool.
 
-When you finish building and organizing your TrueNAS pools, move on to configuring how the system [shares data]({{< relref "SharingStorage.md" >}})
+When you finish building and organizing your TrueNAS pools, move on to configuring how the system [shares data]({{< ref "SharingStorage" >}})
 
 {{< taglist tag="corestoredata" limit="10" >}}
 

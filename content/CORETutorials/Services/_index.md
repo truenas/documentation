@@ -21,7 +21,7 @@ Click the toggle to start or stop the service, depending on the current state. H
 
 Click the <i class="material-icons" aria-hidden="true" title="Configure">edit</i> icon to display the settings screen for a service.
 
-Services related to data sharing or automated tasks are documented in their respective [Sharing]({{< relref "/UIReference/Sharing/_index.md" >}}) or [Tasks]({{< relref "/UIReference/Tasks/_index.md" >}}).  
+Services related to data sharing or automated tasks are documented in their respective [Sharing]({{< ref "/UIReference/Sharing/" >}}) or [Tasks]({{< ref "/UIReference/Tasks/" >}}).  
 
 ## Additional Services Articles
 

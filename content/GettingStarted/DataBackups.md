@@ -94,6 +94,6 @@ To confirm that snapshots have been replicated, go to **Storage > Snapshots** an
 TrueNAS is now accessible and configured to store, share, and back up your data!
 
 When you're ready to fine-tune the system configuration or learn more about the advanced features, see the remaining sections in the TrueNAS CORE and Enterprise section.
-These sections are organized in order of appearance in the TrueNAS interface, with additional topics for [3rd party solutions](https://www.truenas.com/docs/solutions/), [API reference guide]({{< relref "/API/_index.md" >}}), and [community recommendations]({{< relref "/CORETutorials/CommunityGuides/_index.md" >}}).
+These sections are organized in order of appearance in the TrueNAS interface, with additional topics for [3rd party solutions](https://www.truenas.com/docs/solutions/), [API reference guide]({{< ref "/API/" >}}), and [community recommendations]({{< ref "/CORETutorials/CommunityGuides/" >}}).
 
 {{< taglist tag="coregettingstarted" limit="10" >}}

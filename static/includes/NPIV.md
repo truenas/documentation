@@ -45,7 +45,7 @@ In the example shown:
 
 After creating the tunables and rebooting, the configured number of virtual ports shows on **Sharing > Block Shares (iSCSI) > Fibre Channel Ports** screen so they can be associated with targets, and they are also advertised to the switch so zoning can be configured on the switch.
 
-After associating a virtual port with a target, add it to the **Target** tab of [Reporting]({{< relref "/UIReference/ReportingGraphs.md" >}}) so you can view its bandwidth usage.
+After associating a virtual port with a target, add it to the **Target** tab of [Reporting]({{< ref "/UIReference/ReportingGraphs" >}}) so you can view its bandwidth usage.
 
 ## Setting up NPIV with Fibre Channel
 The following is a general guide on setting up NPIV with Fibre Channel in a Fibre Channel switch and a host system.

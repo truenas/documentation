@@ -46,7 +46,7 @@ The icon changes to <span class="iconify" data-icon="clarity:bell-solid-badged">
 Clicking the icon slides out a panel from the right side of the screen that lists each alert.
 Dismiss or reopen alerts in this panel.
 Dismissing an alert does not prevent it from recurring. TrueNAS might create a new alert if the alert conditions continue to exist on the system.
-Configure the alert system in [System > Alert Settings]({{< relref "AlertSettings.md" >}}).
+Configure the alert system in [System > Alert Settings]({{< ref "AlertSettings" >}}).
 
 ### Settings
 
