@@ -6,7 +6,10 @@ tags:
 - customapp
 ---
 
+{{< include file="/static/includes/apps/AppsMarket.md" >}}
+
 **Custom App** on the [**Discover**]({{< ref "/SCALEUIReference/Apps/" >}}) screen opens the **[Install iX App](#install-ix-app-screen)** guided installation wizard.
+
 <i class="material-icons" aria-hidden="true" title="more_vert">more_vert</i> > **Install via YAML** opens the **[Add Custom App](#add-custom-app-screen)** screen with an advanced YAML editor for deploying apps using Docker Compose.
 
 ## Install iX App Screen
