@@ -11,9 +11,9 @@ keywords:
 ---
 
 TrueNAS offers groups as an efficient way to manage permissions for many similar user accounts.
-See [Users]({{< relref "ManageLocalUsersSCALE.md" >}}) for managing users.
+See [Users]({{< ref "ManageLocalUsersSCALE" >}}) for managing users.
 The interface lets you manage UNIX-style groups.
-If the network uses a directory service, import the existing account information using the instructions in [Active Directory]({{< relref "/SCALE/SCALEUIReference/Credentials/DirectoryServices/_index.md" >}}).
+If the network uses a directory service, import the existing account information using the instructions in [Active Directory]({{< ref "/SCALE/SCALEUIReference/Credentials/DirectoryServices" >}}).
 
 {{< include file="archive/24.04PrivilegesWIP.md" >}}
 
@@ -76,7 +76,7 @@ Click **Save**.
 
 ### Edit Group
 
-To edit an existing group, go to **Credentials > Groups**, expand the group entry, and click <i class="material-icons" aria-hidden="true" title="Edit">edit</i> **Edit** to open the **Edit Group** configuration screen. See [Groups Screens]({{< relref "LocalGroupsScreens.md" >}}) for details on all settings.
+To edit an existing group, go to **Credentials > Groups**, expand the group entry, and click <i class="material-icons" aria-hidden="true" title="Edit">edit</i> **Edit** to open the **Edit Group** configuration screen. See [Groups Screens]({{< ref "LocalGroupsScreens" >}}) for details on all settings.
 
 ## Managing Privileges
 
@@ -86,7 +86,7 @@ Never modify the settings for the standard pre-defined privileges (listed below)
 Pre-defined TrueNAS privileges are:
 * **Read-Only Administrator** - Allows the user to view settings but not make changes in the UI.
 * **Sharing Administrator** - Allows the user to create new shares and the share dataset.
-* **Local Administrator** - Gives full control (read/write/exeute permissions) to the user.
+* **Local Administrator** - Gives full control (read/write/execute permissions) to the user.
 {{< /hint >}}
 
 Active Directory can provision groups in TrueNAS or you can add new groups that you assign to users in AD.

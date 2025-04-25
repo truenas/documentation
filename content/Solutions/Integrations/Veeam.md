@@ -125,7 +125,7 @@ Detailed configurations can be discussed with iXsystems sales representatives an
 
 TrueNAS storage pools can be expanded online to the maximum size supported by a particular TrueNAS system.
 Storage pools can be expanded one vdev (RAID group) at a time, so long as each vdev shares the same type.
-When deploying an iSCSI share requiring a zvol (LUN), users should consider [thin provisioning]({{< relref "thinprovisioning.md" >}}) using the sparse option during setup.
+When deploying an iSCSI share requiring a zvol (LUN), users should consider [thin provisioning]({{< ref "thinprovisioning" >}}) using the sparse option during setup.
 
 ## Other Considerations
 

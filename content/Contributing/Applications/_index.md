@@ -55,7 +55,7 @@ Include the relevant files in the PR, including a ReadMe.txt file with any insta
 
 Community members can submit change requests or add new tutorials to the **Truenas Apps > Community Apps** tutorials section of the Documentation Hub.
 
-For more information on submitting change requests, forking repos, and submitting PRs, see [Updating Content]({{< relref "/Contributing/Documentation/ContentUpdate.md" >}}).
+For more information on submitting change requests, forking repos, and submitting PRs, see [Updating Content]({{< ref "/Contributing/Documentation/ContentUpdate" >}}).
 
 ### Submitting New Tutorial Articles
 
@@ -63,11 +63,11 @@ When submitting new tutorials or requesting changes to existing TrueNAS Document
   
 1. Create the PR against a forked copy of the [TrueNAS Documentation Hub public repository](https://github.com/truenas/documentation/tree/master).
   
-2. Open the existing article file in the <file>/content/TrueNASApps/CommunityApps</file> directory of your local forked repository.
+2. Open the existing article file in the <file>/TrueNASApps/CommunityApps</file> directory of your local forked repository.
 
 3. Add the new tutorial to the <file>CommunityApps</file> folder in your local copy of the repository if submitting a new tutorial.
 
-4. Use the text editor of your choice to make changes to the [application tutorial template]({{< relref "/Contributing/Applications/AppArticleTemplate.md" >}}) as the basis for your new article.
+4. Use the text editor of your choice to make changes to the [application tutorial template]({{< ref "/Contributing/Applications/AppArticleTemplate" >}}) as the basis for your new article.
   Article content is written in Commonmark Markdown.
 
 5. (Optional) Save images in the **/documentation/static/images/scale/apps** folder of your local branch.
@@ -186,4 +186,4 @@ Open and read snippet files to determine where to use them in your tutorial.
 
 Click **Edit page** at the top of the Documentation Hub article to suggest changes to an existing article.
 
-Refer to the [Content Updates]({{< relref "/Contributing/Documentation/ContentUpdate.md" >}}) article for more details.
+Refer to the [Content Updates]({{< ref "/Contributing/Documentation/ContentUpdate" >}}) article for more details.

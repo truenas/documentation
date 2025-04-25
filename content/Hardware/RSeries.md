@@ -7,7 +7,6 @@ aliases:
  - /hardware/rseries/rseriesbsg/
  - /hardware/rseries/rseriesoobm/
  - /hardware/rseries/rseriessov/
- - /images/Hardware/R40R50Front.png
 keyword:
  - enterprise storage solution
  - scalable storage systems

@@ -64,7 +64,7 @@ Set the <b>@owner</b> and <b>@group</b> to <b>admin</b> or the name of your True
 
 Next, click **Add Item** to add an ACE entry for the <b>Syncthing</b> run as user, <b>0</b>. Give the user full permissions.
 
-See [Setting Up Permissions]({{< relref "PermissionsSCALE.md" >}}) and [Edit ACL Screen]({{< relref "EditACLScreens.md" >}}) for more information.
+See [Setting Up Permissions]({{< ref "PermissionsSCALE" >}}) and [Edit ACL Screen]({{< ref "EditACLScreens" >}}) for more information.
 {{< /expand >}}</div>
 
 ## Installing the Syncthing Application
@@ -185,7 +185,7 @@ Next, add an ACL entry for the run-as user.
 For Syncthing, the run-as user is **0**. Add a user entry for this user.
 Save the ACL before leaving the screen.
 
-For more infomration, see [Setting Up Permissions]({{< relref "PermissionsSCALE.md" >}}) and [Edit ACL Screen]({{< relref "EditACLScreens.md" >}}).
+For more infomration, see [Setting Up Permissions]({{< ref "PermissionsSCALE" >}}) and [Edit ACL Screen]({{< ref "EditACLScreens" >}}).
 {{< /expand >}}
 
 #### Mounting an SMB Share Storage Volume

@@ -32,9 +32,9 @@ A *node* is a single TrueNAS storage system in a cluster.
 
 The **stable** train version of MinIO supports [distributed mode](https://min.io/docs/minio/kubernetes/upstream/index.html?ref=docs-redirect).
 Distributed mode, allows pooling multiple drives, even on different systems, into a single object storage server.
-For information on configuring a distributed mode cluster in TrueNAS using MinIO, see [Setting Up MinIO Clustering]({{< relref "MinIOClustering.md" >}}).
+For information on configuring a distributed mode cluster in TrueNAS using MinIO, see [Setting Up MinIO Clustering]({{< ref "MinIOClustering" >}}).
 
-The **enterprise** train version of MinIO provides two options for clustering, Single Node Multi-Disk (SNMD) and Multi-Node Multi-Disk (MNMD) configurations. See [MinIO Enterprise]({{< relref "/TruenasApps/EnterpriseApps/MinIO/_index.md" >}}) for more information.
+The **enterprise** train version of MinIO provides two options for clustering, Single Node Multi-Disk (SNMD) and Multi-Node Multi-Disk (MNMD) configurations. See [MinIO Enterprise]({{< ref "/TruenasApps/EnterpriseApps/MinIO" >}}) for more information.
 
 The examples below use four TrueNAS systems to create a distributed cluster.
 For more information on MinIO distributed setups, refer to the [MinIO documentation](https://docs.min.io/docs/distributed-minio-quickstart-guide.html).

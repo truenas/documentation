@@ -12,7 +12,6 @@ aliases:
  - /scale/scaleclireference/system/clisystemdataset/
  - /scale/scaleclireference/system/clitunable/
  - /scale/scaleclireference/task/clicronjob/
- - /images/SCALE/22.02/AdvancedSystemSettingsSyslogWidget.png
 tags:
  - settings
  - pools
@@ -51,7 +50,7 @@ The **Console** widget displays the current console settings for TrueNAS.
 
 ### Console Configuration Screen
 
-**Console** settings configure how the [Console Setup menu]({{< relref "ConsoleSetupMenuSCALE.md" >}}) displays, the serial port it uses and the port speed, and the banner users see when accessing it.
+**Console** settings configure how the [Console Setup menu]({{< ref "ConsoleSetupMenuSCALE" >}}) displays, the serial port it uses and the port speed, and the banner users see when accessing it.
 
 {{< trueimage src="/images/SCALE/SystemSettings/ConsoleConfigScreen.png" alt="Console Config Screen" id="Console Config Screen" >}}
 
@@ -97,7 +96,7 @@ There are also options to configure a remote syslog server for recording system 
 {{< /expand >}}
 
 ## Audit Widget
-The **Audit** widget displays the current audit storage and retention policy settings. The public-facing [TrueNAS API]({{< relref "/SCALE/API/_index.md" >}}) allows querying audit records, exporting audit reports, and configuring audit dataset settings and retention periods.
+The **Audit** widget displays the current audit storage and retention policy settings. The public-facing [TrueNAS API]({{< ref "/SCALE/API" >}}) allows querying audit records, exporting audit reports, and configuring audit dataset settings and retention periods.
 
 {{< trueimage src="/images/SCALE/SystemSettings/SystemAdvancedAuditWidget.png" alt="Advanced System Setting Audit Widget" id="Advanced System Setting Audit Widget" >}}
 
@@ -105,7 +104,7 @@ The **Audit** widget displays the current audit storage and retention policy set
 
 {{< include file="/static/includes/ConfigureSystemAuditSCALE.md" >}}
 
-Click **Configure** to open the **Audit** configuration screen and [manage storage and retention policies]({{< relref "AuditingSCALE.md#configuring-audit-storage-and-retention-policies" >}})
+Click **Configure** to open the **Audit** configuration screen and [manage storage and retention policies]({{< ref "AuditingSCALE.md#configuring-audit-storage-and-retention-policies" >}})
 
 ## Kernel Widget
 

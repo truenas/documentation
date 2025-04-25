@@ -78,8 +78,8 @@ To add private shares and datasets for users that require home directories:
 
 You can use an existing dataset or create a new dataset for the share.
 We recommend using the **Add SMB** screen to create a new share and dataset for this procedure.
-While you can add a share while [creating the dataset]({{< relref "DatasetsSCALE.md" >}}) on the **Add Dataset** screen, this method requires editing the share settings afterward.
-In general, when creating a simple SMB share and dataset you can use either method, but if customizing the dataset, use the [**Add Dataset** screen]({{< relref "DatasetsSCALE.md" >}}) to access dataset advanced setting options.
+While you can add a share while [creating the dataset]({{< ref "DatasetsSCALE" >}}) on the **Add Dataset** screen, this method requires editing the share settings afterward.
+In general, when creating a simple SMB share and dataset you can use either method, but if customizing the dataset, use the [**Add Dataset** screen]({{< ref "DatasetsSCALE" >}}) to access dataset advanced setting options.
 To configure and customize an SMB share, using the **Add SMB** share method is better as it provides access to the advanced setting options for shares, meaning you do not have to edit settings afterward.
 
 To create SMB private datasets and shares, go to **Shares** and click **Add** on the **Windows (SMB) Shares** widget to open the **Add SMB** screen.
@@ -125,11 +125,11 @@ The user assigned the private directory share does not need to be added as an AC
 Add an ACL entry to the dataset ACL to grant another user, other than the private share user or a group of users, to allow access to the private directory.
 
 If on the **Datasets** screen, select the dataset row for the share dataset, then click **Edit** on the **Permissions** widget to open the **Edit ACL** screen.
-See [Setting Up Permissions]({{< relref "PermissionsSCALE.md" >}}) for more information on editing dataset permissions.
+See [Setting Up Permissions]({{< ref "PermissionsSCALE" >}}) for more information on editing dataset permissions.
 
 If starting on the **Shares** screen and not prompted by the system to configure the ACL permissions or if you closed the prompt window, select the share on the **Windows (SMB) Share** widget, then click **Edit Filesystem ACL** to open the **Edit ACL** screen.
 Do not select the option to edit the share permissions. Share permissions only apply to the share and not the dataset the share uses for storage.
-See [SMB Shares]({{< relref "ManageSMBShares.md" >}}) for detailed information on editing the share dataset permissions.
+See [SMB Shares]({{< ref "ManageSMBShares" >}}) for detailed information on editing the share dataset permissions.
 
 Set the permission for the private dataset to allow additional users or a group if others are permitted to access the private directory share.
 
@@ -201,9 +201,9 @@ You can use Active Directory or LDAP to create share users.
 
 If not already created, add a pool, then join Active Directory.
 
-Go to **Storage** and [create a pool]({{< relref "CreatePoolWizard.md" >}}).
+Go to **Storage** and [create a pool]({{< ref "CreatePoolWizard" >}}).
 
-Next, [set up the Active Directory]({{< relref "/SCALE/SCALETutorials/credentials/directoryservices/configadscale.md" >}}) that you want to share resources with over your network.
+Next, [set up the Active Directory]({{< ref "/SCALE/SCALETutorials/credentials/directoryservices/configadscale" >}}) that you want to share resources with over your network.
 
 When creating the share for this dataset, use the **SMB** preset for the dataset but do not add the share from the **Add Dataset** screen. 
 

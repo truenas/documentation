@@ -5,7 +5,6 @@ geekdocCollapseSection: true
 weight: 60
 aliases: 
  - /scale/scaleclireference/network/
- - /images/SCALE/22.12/CSMEditNetworkSettings.png
 tags:
 related: false
 ---

@@ -100,7 +100,7 @@ Edit network configuration to enable TrueNAS to reach the Entra ID domain servic
 4. Verify domain users and groups are available.
 
     Go to **Datasets** and select any existing non-root dataset from the dataset tree table.
-    Click **Edit** on the **Permissions** widget to open the [permissions edit screen]({{< relref "EditACLScreens.md" >}}) for the dataset.
+    Click **Edit** on the **Permissions** widget to open the [permissions edit screen]({{< ref "EditACLScreens" >}}) for the dataset.
 
     {{< trueimage src="/images/SCALE/Datasets/EditPermissionsUnixPermissionsEditor.png" alt="Edit Permissions" id="Edit Permissions" >}}
 

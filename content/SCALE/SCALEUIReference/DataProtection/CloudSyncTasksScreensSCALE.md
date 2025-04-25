@@ -111,7 +111,7 @@ The **What and When** screen sets the direction (push or pull), transfer mode (m
 
 **Advanced Options** accessed from the **Cloudsync Task Wizard** and **Edit Cloud Sync Task** show the same settings, and settings are grouped into **Transfer**, **Remote**, **Control**, and **Advanced Options**.
 
-**Manage Credentials** opens the [Backup Credentials]({{< relref "/SCALE/SCALEUIReference/Credentials/BackupCredentials/_index.md" >}}) screen.
+**Manage Credentials** opens the [Backup Credentials]({{< ref "/SCALE/SCALEUIReference/Credentials/BackupCredentials" >}}) screen.
 
 ### Transfer Settings
 
@@ -183,8 +183,8 @@ Selecting **Push** in **Direction** adds the **Use Snapshot** option.
 |----------|-------------|
 | **Create empty source dirs on destination after sync** | Creates an empty source directory in the cloud-storage provider folder when pushing data to the cloud provider location, or in TrueNAS if pulling data from the cloud storage provider. |
 | **Follow Symlinks** | Sets symbolic links (symlinks) to follow when enabled and copies the items to which they link. |
-| **Pre-Script** | For advanced users. Sets a script to execute before running sync to what is entered. See the [Cloud Sync tutorial]({{< relref "/SCALE/SCALETutorials/DataProtection/CloudSyncTasks/_index.md" >}}) for more information. |
-| **Post-Script** | For advanced user. Sets a script to execute after running sync to what is entered. See the [Cloud Sync tutorial]({{< relref "/SCALE/SCALETutorials/DataProtection/CloudSyncTasks/_index.md" >}}) for more information. |
+| **Pre-Script** | For advanced users. Sets a script to execute before running sync to what is entered. See the [Cloud Sync tutorial]({{< ref "/SCALE/SCALETutorials/DataProtection/CloudSyncTasks" >}}) for more information. |
+| **Post-Script** | For advanced user. Sets a script to execute after running sync to what is entered. See the [Cloud Sync tutorial]({{< ref "/SCALE/SCALETutorials/DataProtection/CloudSyncTasks" >}}) for more information. |
 | **Exclude** | Sets up a list of files and directories to exclude from sync. Enter one or separate additional entries by pressing <kbd>Enter</kbd>.<br> Examples of proper syntax to exclude files/directories are:<li> `photos</code>` excludes a file named *photos*</li><li> `/photos`> excludes a file named *photos* from root directory (but not subdirectories)</li><li>`photos/` excludes a directory named *photos</li><li>`/photos/` excludes a directory named *photos* from root directory (but not subdirectories).</li></ul> See [rclone filtering](https://rclone.org/filtering/) for more details about the `--exclude` option. |
 {{< /truetable >}}
 

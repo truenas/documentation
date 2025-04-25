@@ -9,7 +9,6 @@ aliases:
  - /scale/apps/usingapps/
  - /scale/scaleclireference/app/
  - /scale/scaletutorials/apps/
- - /images/SCALE/Apps/AppsAddCatalogScreen.png
  - /scale/scaleuireference/apps/usingcatalogs/
  - /scale/apps/usingcatalogs/
  - /scale/scaletutorials/apps/usingcatalogs/
@@ -34,7 +33,7 @@ keywords:
 {{< include file="/static/includes/apps/AppsIntro.md" >}}
 
 This article covers how to set up the TrueNAS Apps service, configure global settings, and other general information.
-For details on discovering, installing, and managing applications, see [Managing Apps]({{< relref "ManagingApps.md" >}}) and individual app tutorials.
+For details on discovering, installing, and managing applications, see [Managing Apps]({{< ref "ManagingApps" >}}) and individual app tutorials.
 
 {{< include file="/static/includes/ProposeArticleChange.md" >}}
 
@@ -48,7 +47,7 @@ Docker is an open-source software that manages images and container deployments.
 
 The default system-level settings are found in **Apps > Settings**.
 
-For more information on screens and screen functions, refer to the UI Reference article on [Apps Screens]({{< relref "SCALE/SCALEUIReference/Apps/_index.md" >}}).
+For more information on screens and screen functions, refer to the UI Reference article on [Apps Screens]({{< ref "SCALE/SCALEUIReference/Apps" >}}).
 
 Use the **Configuration** dropdown to access the **Choose Pool**, **Unset Pool**, **Manage Container Images**, and **Settings** options.
 

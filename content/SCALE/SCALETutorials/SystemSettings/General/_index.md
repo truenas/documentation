@@ -25,11 +25,11 @@ The TrueNAS **General Settings** provide options to configure support, the graph
 The **Support** widget shows information about the TrueNAS version and system hardware.
 Links to the open-source TrueNAS documentation, community forums, and official Enterprise licensing are provided.
 
-**Add License** opens a screen with a field to paste a copy of your TrueNAS Enterprise license ([details]({{< relref "AddLicenseProactiveSupport.md" >}})).
+**Add License** opens a screen with a field to paste a copy of your TrueNAS Enterprise license ([details]({{< ref "AddLicenseProactiveSupport" >}})).
 
 **File Ticket** opens the **Send Feedback** window with two options, one to report a system bug and the other to send TrueNAS feedback on the UI and rate a screen. Feedback goes to the TrueNAS development team.
 
-Enterprise-licensed systems show the **Proactive Support** button. For information on configuring proactive support, see [Adding a License and Proactive Support]({{< relref "AddLicenseProactiveSupport.md" >}}).
+Enterprise-licensed systems show the **Proactive Support** button. For information on configuring proactive support, see [Adding a License and Proactive Support]({{< ref "AddLicenseProactiveSupport" >}}).
 
 ## Sending Feedback
 
@@ -96,7 +96,7 @@ The **GUI** widget allows users to configure the TrueNAS web interface address. 
 ### Changing the GUI SSL Certificate
 
 The system uses a self-signed certificate to enable encrypted web interface connections.
-To change the default certificate, create or import a certificate as described in [Managing Certificates]({{< relref "CertificatesSCALE.md" >}}) to add it to the dropdown list of certificates available on the system. Select the certificate from the **GUI SSL Certificate** dropdown list.
+To change the default certificate, create or import a certificate as described in [Managing Certificates]({{< ref "CertificatesSCALE" >}}) to add it to the dropdown list of certificates available on the system. Select the certificate from the **GUI SSL Certificate** dropdown list.
 
 ### Setting the Web Interface IP Address
 
@@ -122,7 +122,7 @@ Select **Crash Reporting** to send failed HTTP request data, which might include
 ### Sending Usage Statistics
 To send anonymous usage statistics to TrueNAS, select the **Usage Collection** option.
 
-For more information about what usage data is collected, see the [TrueNAS Data Collection Statement]({{< relref "/SCALE/GettingStarted/UserAgreements/DataCollectionStatement.md" >}}).
+For more information about what usage data is collected, see the [TrueNAS Data Collection Statement]({{< ref "/SCALE/GettingStarted/UserAgreements/DataCollectionStatement" >}}).
 
 ### Showing Console Messages
 To show real-time console messages at the bottom of the browser window, select **Show Console Messages**.
@@ -154,7 +154,7 @@ When configured, an automatic script sends a nightly email to the administrator 
 
 To configure the system email send method, click **Settings** to open the **Email Options** screen.
 Select either [**SMTP**](#smtp) or [**GMail OAuth**](#gmail-oauth) to display the relevant configuration settings.
-For more information on configuring system email, see [Setting Up System Email]({{< relref "SettingUpSystemEmail.md" >}}).
+For more information on configuring system email, see [Setting Up System Email]({{< ref "SettingUpSystemEmail" >}}).
 
 <div class="noprint">
 

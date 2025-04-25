@@ -4,7 +4,6 @@ geekdocCollapseSection: true
 weight: 40
 aliases:
  - /hardware/stencils/
- - /images/Hardware/TrueNASStencilsPreview.png
 cascade:
   - _target:
     related: false

@@ -6,7 +6,6 @@ geekdocFlatSection: true
 aliases:
  - /hardware/mini/
  - /hardware/mini/minibsg/
- - /images/Hardware/MiniFamilyFront.png
 keyword:
  - scalable storage systems
  - data storage system

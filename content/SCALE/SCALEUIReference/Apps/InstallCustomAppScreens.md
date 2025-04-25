@@ -5,13 +5,11 @@ weight: 25
 aliases:
  - /scale/scaleuireference/apps/launchdockerimagescreens/
  - /scale/scaletutorials/apps/docker/
- - /images/SCALE/22.12/LaunchDockerImageAddStorage.png
- - /images/SCALE/22.12/LaunchDockerImageAddContainerEntrypoints.png
 tags:
 - customapp
 ---
 
-**Custom App** on the [**Discover**]({{< relref "SCALE/SCALEUIReference/Apps/_index.md" >}}) screen opens the **[Install iX App](#install-ix-app-screen)** guided installation wizard.
+**Custom App** on the [**Discover**]({{< ref "SCALE/SCALEUIReference/Apps" >}}) screen opens the **[Install iX App](#install-ix-app-screen)** guided installation wizard.
 <i class="material-icons" aria-hidden="true" title="more_vert">more_vert</i> > **Install via YAML** opens the **[Add Custom App](#add-custom-app-screen)** screen with an advanced YAML editor for deploying apps using Docker Compose.
 
 ## Install iX App Screen

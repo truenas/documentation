@@ -59,7 +59,7 @@ Next, click **Add Item** to add an ACE entry for the <b>MinIO</b> run as user, <
 You might need to add another user, such as <b>www-data</b> if you receive an error message when installing the app.
 The error message shows the user name to add. Give both users full permissions.
 
-See [Setting Up Permissions]({{< relref "PermissionsSCALE.md" >}}) and [Edit ACL Screen]({{< relref "EditACLScreens.md" >}}) for more information.
+See [Setting Up Permissions]({{< ref "PermissionsSCALE" >}}) and [Edit ACL Screen]({{< ref "EditACLScreens" >}}) for more information.
 {{< /expand >}}</div>
 
 ## Installing the MinIO Application
@@ -123,9 +123,9 @@ Click **Enabled** under **Multi Mode (SNMD or MNMD) Configuration** to enable mu
 
 For more information see:
 
-* [SNMD]({{< relref "ConfigMinioEnterpriseSNMD.md" >}})
+* [SNMD]({{< ref "ConfigMinioEnterpriseSNMD" >}})
 
-* [MNMD]({{< relref "ConfigMinioEnterpriseMNMD.md" >}})
+* [MNMD]({{< ref "ConfigMinioEnterpriseMNMD" >}})
 
 #### Adding Environment Variables
 {{< include file="/static/includes/apps/InstallWizardEnvironVariablesSettings.md" >}}
@@ -163,7 +163,7 @@ Next, add an ACL entry for the run-as user.
 For MinIO, the run-as users is **568**. Add a user entry for this user.
 Save the ACL before leaving the screen.
 
-See [Setting Up Permissions]({{< relref "PermissionsSCALE.md" >}}) and [Edit ACL Screen]({{< relref "EditACLScreens.md" >}}) for more information.
+See [Setting Up Permissions]({{< ref "PermissionsSCALE" >}}) and [Edit ACL Screen]({{< ref "EditACLScreens" >}}) for more information.
 {{< /expand >}}
 
 ### Resource Configuration
