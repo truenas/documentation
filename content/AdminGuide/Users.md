@@ -55,9 +55,9 @@ To revert to the original field contents, click **RESET FORM** before you click 
 | **Username** | Enter or change the username. |
 | **Full Name** | Enter or change the user full name. |
 | **Title** | Enter or change the user title. |
-| **Email** | Enter or change the user email. If [SMTP]({{< relref "AlertManage.md" >}}) is not set up, an error message displays at the bottom of the screen stating **Failed to send email. Are your SMTP settings configured?**. Admins can click the **CONFIGURE** button to open the SMTP settings window. Before adding a user email, go to **Alert Services** and verify you have set up the SMTP service. |
+| **Email** | Enter or change the user email. If [SMTP]({{< ref "AlertManage" >}}) is not set up, an error message displays at the bottom of the screen stating **Failed to send email. Are your SMTP settings configured?**. Admins can click the **CONFIGURE** button to open the SMTP settings window. Before adding a user email, go to **Alert Services** and verify you have set up the SMTP service. |
 | **Phone** | Enter or change the user phone number. |
-| **Two Factor Authentication** | Enables [Two Factor Authentication]({{< relref "/tcgettingstarted/useraccounts.md" >}}), which requires the user to enter a validation code emailed to them after they enter their username, password, and click **SIGN IN** on the login screen. |
+| **Two Factor Authentication** | Enables [Two Factor Authentication]({{< ref "/tcgettingstarted/useraccounts" >}}), which requires the user to enter a validation code emailed to them after they enter their username, password, and click **SIGN IN** on the login screen. |
 | **TrueCommand Administrator** | Designates the account as an administrator. This gives the user full permissions to every connected TrueNAS system, as well as the ability to configure TrueCommand. |
 | **Password** | New user password. |
 | **Password Confirm** | Confirms new user password. |
@@ -76,7 +76,7 @@ Use the **Teams** screen to create new teams or edit existing ones.
 ### System Access
 
 To limit non-administrative account access to connected systems, configure the **System Access** and **System Groups** sections.
-You must first configure [system connections]({{< relref "ConnectingTrueNAS.md" >}}) and/or [system groups]({{< relref "ConnectingTrueNAS.md" >}}) in TrueCommand. Add systems from either the **Dashboard** or **Systems** screens.
+You must first configure [system connections]({{< ref "ConnectingTrueNAS" >}}) and/or [system groups]({{< ref "ConnectingTrueNAS" >}}) in TrueCommand. Add systems from either the **Dashboard** or **Systems** screens.
 
 {{< include file="/static/includes/TCPermissionsHierarchy.md" >}}
 

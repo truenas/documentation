@@ -17,7 +17,7 @@ The default view shows all widgets for all NAS systems added to and managed by T
 Use the **Find** field to search for a system by name.
 To add a new system, click **New System**.
 
-For more information on the top toolbar icons, refer to the [Interface Overview]({{< relref "InterfaceOverview.md" >}}) article in the Getting Started Guide.
+For more information on the top toolbar icons, refer to the [Interface Overview]({{< ref "InterfaceOverview" >}}) article in the Getting Started Guide.
 
 ## Dashboard System Widgets
 
@@ -35,9 +35,9 @@ Click the <span class="material-icons">keyboard_double_arrow_down</span> double 
 
 An alert bubble appears next to the system name and indicates the number of alerts detected for the system.
 For details on system alerts click the gear <i class="material-icons" aria-hidden="true" title="Settings">settings</i> icon, then **All Alerts** to open the **Alerts** screen.
-See [Alert Management]({{< relref "AlertManage.md" >}}) for further information.
+See [Alert Management]({{< ref "AlertManage" >}}) for further information.
 
-Click on the system name to open an expanded view of the system with more [single system management options]({{< relref "/UserGuide/SystemManagement/SingleSystem/_index.md" >}}).
+Click on the system name to open an expanded view of the system with more [single system management options]({{< ref "/UserGuide/SystemManagement/SingleSystem/" >}}).
 
 Click on **DRIVES**, **DISK WRITE**, **DISK READ** to open the disk activity graph for each to view the system statistical history.
 
@@ -58,5 +58,5 @@ Click on **TEMP** to open the CPU temperature percentages graph.
 {{< include file="/static/includes/TCSystemOptionsMenu.md" >}}
 
 ### Explore Options
-The **Explore** button on individual system widgets opens the [**File Explorer**]({{< relref "TrueCommandStorageManagement.md" >}}) that provides access to dataset, zvol, share, snapshot, and replication information for that TrueNAS system.
+The **Explore** button on individual system widgets opens the [**File Explorer**]({{< ref "TrueCommandStorageManagement" >}}) that provides access to dataset, zvol, share, snapshot, and replication information for that TrueNAS system.
 

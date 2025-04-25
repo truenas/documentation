@@ -33,7 +33,7 @@ Just as with replication tasks created on TrueNAS systems, you must take an init
 Verify the dataset has a snapshot or a snapshot task scheduled.
 TrueCommand shows existing snapshots and snapshot tasks in the file explorer.
 
-If the system does not show existing snapshots or snapshot tasks, use the [**Create Snapshot**]({{< relref "TrueCommandSnapshots.md" >}}) option in TrueCommand to create a one-time manual snapshot or schedule an automatic snapshot task.
+If the system does not show existing snapshots or snapshot tasks, use the [**Create Snapshot**]({{< ref "TrueCommandSnapshots" >}}) option in TrueCommand to create a one-time manual snapshot or schedule an automatic snapshot task.
 You can also create the manual snapshot or automatic snapshot task in the TrueNAS system.
 When creating a snapshot task in TrueCommand, that task must run and create the snapshot before you can run a replication task.
 

@@ -28,15 +28,15 @@ Here are the major changes in this release:
 TrueCommand is primarily offered as a Software as a Service (SaaS) solution from iXsystems, but can be self-hosted as a container deployment.
 
 TrueCommand Cloud registrations are available from https://portal.ixsystems.com.
-A valid email address and credit card is required ([sign up instructions]({{< relref "InstallTCCloud.md" >}})).
+A valid email address and credit card is required ([sign up instructions]({{< ref "InstallTCCloud" >}})).
 
-A self-hosted TrueCommand container is available from https://hub.docker.com/r/ixsystems/truecommand/tags under the tag **release-3.1.0** ([deployment instructions]({{< relref "InstallTCDocker.md" >}})).
+A self-hosted TrueCommand container is available from https://hub.docker.com/r/ixsystems/truecommand/tags under the tag **release-3.1.0** ([deployment instructions]({{< ref "InstallTCDocker" >}})).
 
 ## 3.1.0 Upgrade Notes
 
 TrueCommand Cloud deployments are upgraded automatically by TrueNAS. Self-hosted instances must be updated manually by a local TrueCommand administrator.
 
-As a best practice, back up your instance data directory before deploying updates. Self-hosted containers are typically updated by backing up the container volume and pulling the latest available container version. See the [container update tutorial]({{< relref "InstallTCDocker.md" >}}) for guidance.
+As a best practice, back up your instance data directory before deploying updates. Self-hosted containers are typically updated by backing up the container volume and pulling the latest available container version. See the [container update tutorial]({{< ref "InstallTCDocker" >}}) for guidance.
 
 Migrating off of TrueCommand v2.3.3 or later does not require additional migration processes; however, migrating from any versions earlier than v2.3.3 requires a database migration process.
 
@@ -151,9 +151,9 @@ Here are the major changes in this release:
 TrueCommand is primarily offered as a Software as a Service (SaaS) solution from iXsystems, but can be self-hosted as a container deployment.
 
 TrueCommand Cloud registrations are available from https://portal.ixsystems.com.
-A valid email address and credit card is required ([sign up instructions]({{< relref "InstallTCCloud.md" >}})).
+A valid email address and credit card is required ([sign up instructions]({{< ref "InstallTCCloud" >}})).
 
-A self-hosted TrueCommand container is available from https://hub.docker.com/r/ixsystems/truecommand/tags under the tag **release-3.0.2** ([deployment instructions]({{< relref "InstallTCDocker.md" >}})).
+A self-hosted TrueCommand container is available from https://hub.docker.com/r/ixsystems/truecommand/tags under the tag **release-3.0.2** ([deployment instructions]({{< ref "InstallTCDocker" >}})).
 
 ## 3.0 Upgrade Notes
 
@@ -163,7 +163,7 @@ Please use caution when upgrading production TrueCommand systems.
 Self-hosted containers must be updated by a local TrueCommand administrator.
 As a best practice, TrueCommand administrators need to back up their instance data directory before deploying TrueCommand updates.
 Self-hosted containers are typically updated by backing up the container volume and pulling the latest available container version.
-See the [container update tutorial]({{< relref "InstallTCDocker.md" >}}) for guidance.
+See the [container update tutorial]({{< ref "InstallTCDocker" >}}) for guidance.
 
 Updating from TrueCommand v1.3 to v2.0 or later involves a database migration process.
 This preserves all configuration data, but does not preserve old performance statistics.
@@ -176,7 +176,7 @@ After upgrading to TrueCommand 3.0, you might need to edit and re-apply connecte
 
 Starting in version 3.0.2, TrueCommand does not support STARTTLS or port 587 for SMTP email configuration.
 Users with SMTP configured on port 587 should use port *465* and select **Enable TLS** for full SSL/TLS encryption.
-See [Configuring SMTP Email]({{< relref "AlertManage.md #configuring-smtp-email" >}}) for more information.
+See [Configuring SMTP Email]({{< ref "AlertManage/#configuring-smtp-email" >}}) for more information.
 
 In version 3.0.2 administrative users no longer appear on the list of users available to be assigned to a team.
 Administrative users have full admin permissions for all connected systems, so manual team assignment is not needed.
@@ -245,7 +245,7 @@ If TrueCommand 3.0.2 is used to upgrade HA systems, the standby controller might
 * The **Explore > Snapshots** tab can timeout when selected for datasets with high numbers of stored snapshots ([TC-3078](https://ixsystems.atlassian.net/browse/TC-3078)).
 
 * Changes made to SMTP email configuration after initial setup might not apply for new users created after created after the configuration updates.
-  If you have previously updated your SMTP configuration, create new user accounts as described in [Creating User Accounts]({{< relref "UserAccounts.md" >}}).
+  If you have previously updated your SMTP configuration, create new user accounts as described in [Creating User Accounts]({{< ref "UserAccounts" >}}).
   Log in as the new user and review settings in **Alert Services > SMTP Email** to confirm they are correct.
 
 * Removing all the systems from a group does not automatically delete the group. However, the system group is still manually removable.

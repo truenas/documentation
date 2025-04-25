@@ -69,7 +69,7 @@ Only administrator accounts can create alert rules.
 TrueCommand alert rules monitor system information and generate a TrueCommand alert if specific conditions occur.
 TrueCommand has several built-in default alert rules listed on the **Alert Rules** screen.
 Alert rules define alert options and triggers that can generate alerts for a system.
-TrueCommand administrators and [team members]({{< relref "/TCGettingStarted/UserAccounts.md" >}}) with the appropriate permissions can create new alert rules.
+TrueCommand administrators and [team members]({{< ref "/TCGettingStarted/UserAccounts" >}}) with the appropriate permissions can create new alert rules.
 
 To view all TrueCommand alert rules, click the gear <i class="material-icons" aria-hidden="true" title="Settings">settings</i>icon, then click **Alert Rules**.
 

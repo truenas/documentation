@@ -35,7 +35,7 @@ Only administrators can view and edit TrueNAS users and groups.
 
 {{< include file="/static/includes/TCNASUserAndGroup.md" >}}
 
-For information on managing TrueNAS users groups, see [NAS Users and Groups]({{< relref "NASUsersAndGroups.md" >}})
+For information on managing TrueNAS users groups, see [NAS Users and Groups]({{< ref "NASUsersAndGroups" >}})
 
 ## Updating the TrueNAS System
 If an update is available, the **Systems** widget on the **Fleet Dashboard** and system widget on the main **Dashboard** show a green **Update** icon. 

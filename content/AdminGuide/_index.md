@@ -8,10 +8,10 @@ cascade:
 ---
 
 TrueCommand has features that are restricted to administrator accounts.
-After [getting started with TrueCommand]({{< relref "/TCGettingStarted/_index.md" >}}), additional administrator accounts can log in to the web interface and configure the software in the same way the first time user can.
+After [getting started with TrueCommand]({{< ref "/TCGettingStarted/" >}}), additional administrator accounts can log in to the web interface and configure the software in the same way the first time user can.
 This guide reviews these screens and provides guidance for these TrueCommand administrator accounts to configure any access-restricted settings.
 
-To read about settings that are available to any TrueCommand user account, see the related [User Guide]({{< relref "/UserGuide/_index.md" >}}).
+To read about settings that are available to any TrueCommand user account, see the related [User Guide]({{< ref "/UserGuide/" >}}).
 
 ## Administration Guide Contents
 

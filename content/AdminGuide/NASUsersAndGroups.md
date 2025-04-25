@@ -9,7 +9,7 @@ TrueCommand allows administrator users to create TrueNAS users and groups across
 ## NAS Users and Groups
 To add a NAS user  or group to TrueNAS systems using TrueCommand, click the <i class="material-icons" aria-hidden="true" >more_vert</i> button found on system widgets on the main **Dashboard**, the systems listed on the **Fleet Dashboard > Systems** widget, and for administrator users, on the system rows listed on the **Systems** screen. 
 
-The [**Users**]({{< relref "/AdminGuide/Users.md" >}}) option on the main settings dropdown menu only manages TrueCommand users and groups.
+The [**Users**]({{< ref "/AdminGuide/Users" >}}) option on the main settings dropdown menu only manages TrueCommand users and groups.
 
 ### Adding TrueNAS Users
 

@@ -64,7 +64,7 @@ After adding charts to the report, click **SAVE** to make it available for use.
 
 ![ReportsCreateReportSave](/images/TrueCommand/Reports/ReportsCreateReportSave.png "Reports Create Report Save")
 
-After creating a report, you can click **GENERATE** to [generate the report]({{< relref "Generation.md" >}}), or you can go back to the reports page and create another.
+After creating a report, you can click **GENERATE** to [generate the report]({{< ref "Generation" >}}), or you can go back to the reports page and create another.
 
 ![ReportsGenerate](/images/TrueCommand/Reports/ReportsGenerate.png "Reports Generate")
 

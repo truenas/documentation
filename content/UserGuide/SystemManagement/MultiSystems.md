@@ -4,11 +4,11 @@ description: "How to find and use TrueNAS fleet management features in TrueComma
 weight: 30
 ---
 
-TrueCommand has several multisystem management capabilities including the [**Fleet Dashboard**]({{< relref "FleetDashboard.md" >}}).
+TrueCommand has several multisystem management capabilities including the [**Fleet Dashboard**]({{< ref "FleetDashboard" >}}).
 
 ## Multiple System Configuration Management
 
-TrueCommand can manage TrueNAS [Config files]({{< relref "ConfigBackups.md" >}}), and restore a single config file to multiple systems.
+TrueCommand can manage TrueNAS [Config files]({{< ref "ConfigBackups" >}}), and restore a single config file to multiple systems.
 
 To apply a config to multiple systems, first create a config backup from the TrueNAS system with the settings to apply to other TrueNAS systems.
 
@@ -26,6 +26,6 @@ While on the main **Dashboard**, click on the TrueNAS system name to open the si
 
 ## Viewing Multiple Systems
 
-Administrator accounts have access to the [**Systems**]({{< relref "Systems.md" >}}) screen that lists all TrueNAS systems managed by TrueCommand.
+Administrator accounts have access to the [**Systems**]({{< ref "Systems" >}}) screen that lists all TrueNAS systems managed by TrueCommand.
 
-Non-administrator accounts have access to the [**Systems Inventory**]({{< relref "SystemInventory.md" >}}) screen which lists only the systems they have permissions to access.
+Non-administrator accounts have access to the [**Systems Inventory**]({{< ref "SystemInventory" >}}) screen which lists only the systems they have permissions to access.

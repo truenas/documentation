@@ -8,7 +8,7 @@ tags:
 - update
 ---
 
-In addition to the main TrueCommand [**Dashboard**]({{< relref "/UserGuide/Dashboard.md" >}}) that shows individual system widgets (information cards) with performance information for each system managed by TrueCommand, release 3.0 introduces a new **Fleet Dashboard** with new function widgets.
+In addition to the main TrueCommand [**Dashboard**]({{< ref "/UserGuide/Dashboard" >}}) that shows individual system widgets (information cards) with performance information for each system managed by TrueCommand, release 3.0 introduces a new **Fleet Dashboard** with new function widgets.
 
 ![FleetDashboard](/images/TrueCommand/Dashboard/FleetDashboard.png "Fleet Dashboard")
 
@@ -43,7 +43,7 @@ The **Alerts** widget lists alerts detected by TrueCommand and provides the opti
 ![FleetDashboardAlertsWidget](/images/TrueCommand/Dashboard/FleetDashboardAlertsWidget.png "Fleet Dashboard Alerts Widget")
 
 For more alert options, click the gear <span class="material-icons">settings</span> icon, then select **All Alerts** to open the **Alerts** screen and access more alert management options.
-See [Alert Management]({{< relref "AlertManage.md" >}}) for further information.
+See [Alert Management]({{< ref "AlertManage" >}}) for further information.
 
 ## Pools Widget
 The **Pools** widget displays pools configured on each NAS system added to and managed by TrueCommand.
