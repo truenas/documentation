@@ -12,7 +12,7 @@ tags:
 The **Snapshots** screen lists dataset snapshots on the system.
 It allows you to add new or manage existing snapshots.
 
-Access to the **Snapshots** screen is available using the **Manage Snapshots** link on the **Data Protection** widget on the **Datasets** screen and by clicking **Snapshots** on the **[Periodic Snapshot Tasks]({{< relref "PeriodicSnapshotTasksScreensSCALE.md" >}})** widget on the **Data Protection** screen.
+Access to the **Snapshots** screen is available using the **Manage Snapshots** link on the **Data Protection** widget on the **Datasets** screen and by clicking **Snapshots** on the **[Periodic Snapshot Tasks]({{< ref "PeriodicSnapshotTasksScreensSCALE" >}})** widget on the **Data Protection** screen.
 
 If the selected dataset does not have snapshots, the screen displays **No Snapshots are Available**.
 {{< trueimage src="/images/SCALE/Datasets/SnapshotsScreenNoSnapshotsAvailable.png" alt="No Snapshots Available" id="No Snapshots Available" >}}

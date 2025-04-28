@@ -41,7 +41,7 @@ See [Choosing the Instances Pool](#choosing-the-instances-pool) below for more i
 
 After setting the pool, <i class="fa fa-check" aria-hidden="true" title="Check"></i> **Initialized** shows on the screen header.
 
-For more information on screens and screen functions, refer to the UI Reference article on [Instances Screens]({{< relref "/SCALEUIReference/InstancesScreens.md" >}}).
+For more information on screens and screen functions, refer to the UI Reference article on [Instances Screens]({{< ref "/SCALEUIReference/InstancesScreens" >}}).
 
 Use the **Configuration** dropdown to access the **[Global Settings](#configuring-global-settings)**, **[Manage Volumes](#managing-volumes)**, and [**Map User/Group IDs**](#mapping-user-and-group-ids) options.
 
@@ -75,7 +75,7 @@ These settings apply to all new containers and VMs, unless configured otherwise.
 
 Select **Automatic** from the **Bridge** dropdown list to use the default network bridge for communication between instances and the TrueNAS host.
 To specify an existing bridge, select one from the dropdown list.
-See [Accessing NAS from VMs and Containers]({{< relref "/ScaleTutorials/Network/ContainerNASBridge.md" >}}) for details.  
+See [Accessing NAS from VMs and Containers]({{< ref "/ScaleTutorials/Network/ContainerNASBridge" >}}) for details.  
 When **Bridge** is set to **Automatic**, the **IPv4 Network** and **IPv6 Network** settings display.
 
 Enter an IPv4 address and subnet (e.g., *192.168.1.0/24*) in **IPv4 Network** to assign a specific network for instances.
@@ -243,7 +243,7 @@ Before creating a VM:
 
 - Obtain an installer <file>.iso</file> or image file for the OS you intend to install, if you are not using a Linux image from the catalog or one previously uploaded to the instances service. You can upload an image for use in instances by using the [**Manage Volumes**](#managing-volumes) option on the **Instances** screen **Configuration** menu or you can upload the image from the **Instance Configuration** settings while creating the VM.
 
-- [Create one or more zvols]({{< relref "/SCALETutorials/Datasets/AddManageZvols.md" >}}) on a storage pool for the virtual disk now or do this from the **Volumes** screen while configuring the instance.
+- [Create one or more zvols]({{< ref "/SCALETutorials/Datasets/AddManageZvols" >}}) on a storage pool for the virtual disk now or do this from the **Volumes** screen while configuring the instance.
 
 - Compare the recommended specifications for the guest operating system with your available host system resources.
   Reference these when allocating resources to the instance.
