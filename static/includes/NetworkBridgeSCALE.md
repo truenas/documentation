@@ -51,7 +51,7 @@ To set up a bridge interface:
    {{< trueimage src="/images/SCALE/Network/NetworkInterfacesBridgeSCALE.png" alt="Network Interfaces with Bridge" id="Network Interfaces with Bridge" >}}
 
 9. Click **Test Changes** to determine if network changes are successful.
-   See [Testing Network Interface Changes]({{< relref "/SCALETutorials/Network/Interfaces/_index.md#Testing-Network-Interface-Changes">}})
+   See [Testing Network Interface Changes]({{< ref "/SCALETutorials/Network/Interfaces/#Testing-Network-Interface-Changes">}})
 
    {{< trueimage src="/images/SCALE/Virtualization/VMTestNetworkChanges.png" alt="Test Network Changes" id="Test Network Changes" >}}
 
