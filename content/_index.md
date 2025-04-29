@@ -17,6 +17,8 @@ h1 {display:none;}
 
 {{< header logo="/images/truenas-core-logo.png" logo_alt="TrueNAS CORE Logo" version="TrueNAS CORE 13.3" icon="" icon_alt="" >}}
 
+{{< include file="/static/includes/13.3FinalRelease.md" >}}
+
 {{< include file="/static/includes/13.3Overview.md" >}}
 
 ## TrueNAS CORE 13.3 Featured Content
