@@ -14,7 +14,7 @@
       A["11.3-U5"] -->|update| B["12.0-U8.1"]
       B -->|update| C["13.0-U6.7"]
       C -->|update| D["13.3-U1.2"]
-	  D -->|migrate| E["25.04.0"]
+      D -->|migrate| E["25.04.0"]
       {{< /mermaid >}}
     </div>
     <div class="upgrade-paths-container">
