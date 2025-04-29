@@ -18,6 +18,10 @@ keywords:
 
 **Advanced Settings** provides configuration options for the console, syslog, kernel, sysctl, replication, cron jobs, init/shutdown scripts, system dataset pool, isolated GPU device(s), self-encrypting drives, system access sessions, allowed IP addresses, audit logging, and global two-factor authentication.
 
+{{< enterprise >}}
+Enterprise-licensed system administrators have additional options to configure security-related settings such as FIPS and STIG compatibility and Self-Encrypting Drive (SED) configuration.
+{{< /enterprise >}}
+
 {{< include file="/static/includes/AdvancedSettingsWarningSCALE.md" >}}
 
 {{< trueimage src="/images/SCALE/SystemSettings/SystemAdvancedScreen.png" alt="TrueNAS Advanced Settings Screen" id="TrueNAS Advanced Settings Screen" >}}
@@ -101,9 +105,9 @@ Entering an IP address limits access to the system to only the address(es) enter
 
 {{< include file="/static/includes/ConfigureAccessSettings.md" >}}
 
-## Setting Up FIPS and STIG
+## Security Settings
 {{< enterprise >}}
-Only Enterprise-licensed systems show the **Security** widget and have access to FIPS and STIG settings.
+Only Enterprise-licensed systems show the **Security** widget and have access to these settings.
 
 Administrators considering enabling STIG and FIPS security settings should contact TrueNAS Support before making any changes.
 
@@ -171,6 +175,14 @@ The system prompts you to restart.
 
 The system restart takes several minutes to complete before showing the login screen.
 Highly Available (HA) systems must restart each storage controller before STIG mode is fully enabled.
+
+### TrueNAS Administrator Password Rules
+
+The remaining options are for setting TrueNAS administrator password rules.
+Options include defining a password lifetime, types of characters that must be present in the password, how many characters must be present in a valid password, and how many previously used passwords to remember for an account and prevent reuse in a new password.
+
+Adjust these as needed for your security requirements.
+Enabling STIG compatibility mode requires specific minimum values for these settings.
 
 <div class="noprint">
 

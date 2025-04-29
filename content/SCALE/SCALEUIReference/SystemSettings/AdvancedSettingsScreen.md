@@ -375,7 +375,7 @@ The **Global Two Factor Authentication** widget allows you to set up two-factor 
 ## System Security Widget
 
 {{< enterprise >}}
-The **System Security** widget allows administrators of Enterprise-licensed systems to enable or disable FIPS 140-2 compliant algorithms, and general-purpose OS STIG compliance.
+The **System Security** widget allows administrators of Enterprise-licensed systems to enable or disable FIPS 140-2 compliant algorithms, general-purpose OS STIG compliance, and other administrator account rules.
 Changing FIPS or STIG settings requires a system restart to apply setting changes.
 
 High Availability (HA) systems restart the standby controller and then show a prompt to failover and restart the primary controller.
@@ -387,7 +387,18 @@ High Availability (HA) systems restart the standby controller and then show a pr
 {{< trueimage src="/images/SCALE/SystemSettings/SystemSecurityScreen.png" alt="System Security Screen" id="System Security Screen" >}}
 
 The **Enable FIPS** toggle enables or disables enforcement.
-The **Enable General Purpose OS STIG compatibility mode** toggle enables or disables the STIG compliance implementation. Requires two-factor authentication for an admin user with full permissions before enabling STIG compatibility.
-**Save**.
-The system prompts to restart (or failover for HA systems) to apply the settings.
+The **Enable General Purpose OS STIG compatibility mode** toggle enables or disables the STIG compliance implementation.
+Requires two-factor authentication for an admin user with full permissions before enabling STIG compatibility.
+
+**Administrator Password settings**
+{{< truetable >}}
+| Name | Description |
+|------|-------------|
+| **Min Password Age** | Minimum number of days a password must be used before it can be changed. |
+| **Max Password Age** | Maximum number of days a password can be used before it must be changed. |
+| **Password Complexity Ruleset** | Defines the required character types for administrator passwords. Choose between **Upper**, **Lower**, **Number**, and **Special** character type requirements. |
+| **Min Password Length** | Define how many characters must be present in an administrator password. The default required minimum is **8** characters. |
+| **Password History Length** | Define how many previous used passwords to remember. Prevents administrators reusing passwords when updating credentials. Requires an integer between **1** and **10**.
+{{< /truetable >}}
+
 {{< /enterprise >}}
