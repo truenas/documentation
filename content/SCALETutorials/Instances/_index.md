@@ -222,7 +222,7 @@ To create a new container, from the **Create Instance** screen:
    b. To create a new dataset, enter a path or browse to select a parent dataset from the dropdown list of datasets on the system.
       Then click **Create Dataset**, enter a name for the new dataset in the **Create Dataset** window, and click **Create**.
 
-      To use an existing volume, enter a path or browse to select an existing dataset or zvol from the **Source** dropdown list.
+      To use an existing volume, enter a path or browse to select an existing dataset from the **Source** dropdown list.
 
    c. Enter the file system **Destination** path to mount the disk in the container, for example */media* or */var/lib/data*.
 
@@ -418,6 +418,8 @@ Select the checkbox to the left of **Name** (select all) or select one or more i
 Enter the name of an instance in the **Search** field above the **Instances** table to locate a configured instance.
 
 Click <i class="material-icons" aria-hidden="true" title="Restart">restart_alt</i> to restart or <i class="material-icons" aria-hidden="true" title="Stop">stop_circle</i> to stop a running instance.
+Choosing to stop an instance shows a choice to stop immediately or after a small delay.
+
 Click <i class="material-icons" aria-hidden="true" title="Start">play_circle</i> to start a stopped instance.
 
 Select an instance row in the table to populate the **Details for *Instance*** widgets with information and management options for the selected instance.
