@@ -9,7 +9,7 @@ tags:
 
 
 The **System > Services** screen includes two icons on the **NFS** service row:
-* <span class="iconify" data-icon="material-symbols:list"></span> **NFS Sessions** opens the [**NFS Sessions** screen]({{< ref "NFSSharesScreens" >}}).
+* <span class="iconify" data-icon="material-symbols:list"></span> **NFS Sessions** opens the [**NFS Sessions** screen]({{< ref "NFSSharesScreens#nfs-sessions-screen" >}}).
 * <span class="iconify" data-icon="ic:baseline-edit"></span> **Configure** opens the **NFS Service** screen.
 
 {{< hint type=info title="UDP Protocol and NFS" >}}
