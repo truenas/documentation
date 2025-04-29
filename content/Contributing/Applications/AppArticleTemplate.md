@@ -15,11 +15,11 @@ Check back for updates!
 
 ## How to Use this Template
 
-Click **Edit Page** above or locate the Markdown file at [/Contributing/Applications/AppArticleTemplate.md](https://github.com/truenas/documentation/blob/master/Contributing/Applications/AppArticleTemplate.md) on the documentation [Github Repository](https://github.com/truenas/documentation).
+Click **Edit Page** above or locate the Markdown template at [`content/resources/AppArticleTemplate.md`](https://github.com/truenas/apps-web/blob/main/content/resources/AppArticleTemplate.md) in the [TrueNAS Apps Repository](https://github.com/truenas/apps-web).
 
-Copy the template content to an existing [Community Apps]({{< ref "communityapps" >}}) placeholder article (or create a new one if needed for this app) to begin writing.
+Copy the template content into a new Markdown file under `content/resources/` in your fork of the repository to begin writing a tutorial for a TrueNAS application. If the tutorial corresponds to an existing catalog app, update the related `content/catalog/*.md` file to link to your new resource.
 
-Detailed template instructions are commented out of the rendered copy of this template but show in the Markdown file.
+Detailed template instructions are commented in the Markdown source but do not appear in the rendered version of the article.
 
 <!-- BEGIN GENERAL INSTRUCTIONS -->
 <!-- Use this template as a guide when creating a new application tutorial.
