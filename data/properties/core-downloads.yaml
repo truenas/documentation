@@ -83,6 +83,9 @@ majorVersions:
     majorVersion: "13.3"
     majorLink: "https://download-core.sys.truenas.net/13.3/STABLE/"
     releases:
+      - name: "13.3-U1.2"
+        link: "https://download-core.sys.truenas.net/13.3/STABLE/U1.2/"
+        date: "2025-04-29"
       - name: "13.3-U1.1"
         link: "https://download-core.sys.truenas.net/13.3/STABLE/U1.1/"
         date: "2025-01-31"
