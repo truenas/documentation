@@ -75,6 +75,17 @@ The items listed here represent new feature flags implemented since the previous
 
 For more details on feature flags see [OpenZFS Feature Flags](https://openzfs.github.io/openzfs-docs/Basic%20Concepts/Feature%20Flags.html) and [OpenZFS zpool-feature.7](https://openzfs.github.io/openzfs-docs/man/7/zpool-features.7.html).
 
+## 13.3-U1.2 Changelog
+
+**April 29, 2025**
+
+The TrueNAS team is pleased to release TrueNAS 13.3-U1.2!
+This maintenance release resolves a critical OpenZFS issue.
+
+* Error with device removal and block pointers remap with cloned blocks [NAS-133555](https://ixsystems.atlassian.net/browse/NAS-133555).
+
+{{< include file="/static/includes/13.3FinalRelease.md" >}}
+
 ## 13.3-U1.1 Changelog
 
 **January 31, 2025**
