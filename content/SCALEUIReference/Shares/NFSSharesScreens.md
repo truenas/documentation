@@ -37,7 +37,7 @@ The NFS share on the widget opens the **[Edit NFS](#add-and-edit-nfs-screens)** 
 {{< trueimage src="/images/SCALE/Shares/NFSWidgetOptions.png" alt="Unix (NFS) Share Widget Options" id="Unix (NFS) Share Widget Options" >}}
 
 The <span class="material-icons">more_vert</span> icon displays three options available to NFS shares in general:
-* **Turn Off Service** what shows when the NFS service is enabled, and that toggles to **Turn On Service** when the NFS service is disabled.
+* **Turn Off Service** shows when the NFS service is enabled, and that toggles to **Turn On Service** when the NFS service is disabled.
 * **Config Service** that opens the [**NFS**]({{< ref "NFSServiceScreen" >}}) configuration screen.
 * **NFS Sessions** that opens the [**NFS Sessions** screen](#nfs-sessions-screen).
 
@@ -48,7 +48,7 @@ When service starts, it displays **RUNNING** in blue.
 The **Sharing > NFS** details screen displays the same list of NFS shares as the **Unix (NFS) Share** widget.
 
 Customize the information using the **Columns** dropdown list.
-Select from the **Unselect All,** **Description**, **Enabled**, and **Reset to Defaults** options.
+Select from the **Unselect All**, **Description**, **Enabled**, and **Reset to Defaults** options.
 
 Each share includes these options:
 * **Edit** opens the **Edit NFS** configuration screen.
@@ -115,7 +115,7 @@ You can access the **NFS Sessions** screen from the **NFS** option on the **Syst
 
 {{< trueimage src="/images/SCALE/Shares/NFSSessionsScreen.png" alt="NFS Sessions Screen" id="NFS Sessions Screen" >}}
 
-This screen shows NFSv3 clients that have successfully completed a MNT request by reading the NFS **[rmtab](https://linux.die.net/man/8/mountd)** file.
+This screen shows NFSv3 clients that have successfully completed an MNT request by reading the NFS **[rmtab](https://linux.die.net/man/8/mountd)** file.
 Clients with appropriate permissions are removed from the list on a successful UMNT request.
 
 However, this list can become inaccurate due to the different ways that a client can disconnect from a share.
