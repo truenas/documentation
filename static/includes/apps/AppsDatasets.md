@@ -59,6 +59,6 @@ Use this option to mount an existing SMB share using a Docker [volume](https://d
 
 ### Tmpfs Directories
 
-Some app storage configurations include the **Tmpfs (Temporary directory created on the RAM)** option.
+**Tmpfs (Temporary directory created on the RAM)** is conditionally available and not provided as an option for every app configuration. Overusing tmpfs mounts can exhaust system memory, leading to crashes or failed application starts. To prevent these issues, only use tmpfs with apps that explicitly support it.
 Use this option to configure a memory-backed temporary directory, such as for transcoding.
 See the Docker [tmpfs](https://docs.docker.com/engine/storage/#tmpfs) documentation for more information.
