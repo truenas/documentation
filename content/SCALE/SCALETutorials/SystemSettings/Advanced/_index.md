@@ -19,7 +19,7 @@ keywords:
 **Advanced Settings** provides configuration options for the console, syslog, kernel, sysctl, replication, cron jobs, init/shutdown scripts, system dataset pool, isolated GPU device(s), self-encrypting drives, system access sessions, allowed IP addresses, audit logging, and global two-factor authentication.
 
 {{< enterprise >}}
-Enterprise-licensed system administrators have additional options to configure security-related settings such as FIPS and STIG compatibility and Self-Encrypting Drive (SED) configuration.
+Enterprise-licensed system administrators have additional options to configure security-related settings, such as FIPS and STIG compatibility and Self-Encrypting Drive (SED) configuration.
 {{< /enterprise >}}
 
 {{< include file="/static/includes/AdvancedSettingsWarningSCALE.md" >}}
@@ -123,17 +123,17 @@ Review these topics and contact TrueNAS Support before enabling STIG and FIPS se
 
 When STIG (and FIPS) are enabled:
 
-* TrueNAS cannot issue API keys and existing API keys cannot be used for authentication. Only the user credential with two-factor authentication method is accepted.
+* TrueNAS cannot issue API keys, and existing API keys cannot be used for authentication. Only the user credential with a two-factor authentication method is accepted.
 * SSH log-ins require a cryptographic algorithm.
 * SMB authentication for local TrueNAS accounts is disabled.
 * NTLM authentication passthrough to a domain controller is disabled.
-* Usage stats are not reported and the **Usage Collection** option is disabled.
+* Usage stats are not reported, and the **Usage Collection** option is disabled.
 * One-time passwords (OTP) configured for administrative users have a single use and expire after 24 hours.
   After logging in with the OTP, the system prompts the user to immediately change the password and set up two-factor authentication.
 * TrueNAS is limited to a maximum of 10 concurrent sessions.
   Accounts lock for 15 minutes after three consecutive failed login attempts.
 * Password aging rules are applied to the SMB protocol. After a failed login attempt, users with expired passwords receive a password-expired message.
-* TrueNAS prompts users to change their passwords when logging in and the system flagged the account as requiring this change.
+* TrueNAS prompts users to change their passwords when logging in, and the system flags the account as requiring this change.
   Users cannot reuse a password if it is marked as used within the last five passwords in the history file. Passwords must be 15 characters in length.
 * TrueNAS updates can only use a signed update file provided by the TrueNAS team.
 
