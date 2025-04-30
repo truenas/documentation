@@ -5,9 +5,9 @@
 TrueNAS 24.10 and newer creates a hidden **ix-apps** dataset to store Docker configuration, catalog data, and app metadata.
 This dataset is physically located on the selected pool for apps and mounted at <file>/mnt/.ix-apps</file>.
 The ix-apps dataset is internally managed by TrueNAS and hidden to prevent user misconfiguration.
-Any modification of it can result in instability and loss of app functionality.
+Any modification can result in instability and loss of app functionality.
 
-Do not include the ix-apps dataset inside of an SMB or NFS share.
+Do not include the ix-apps dataset inside an SMB or NFS share.
 
 The ix-apps dataset does not inherit encryption if an encrypted pool is selected as the pool for applications.
 
@@ -59,6 +59,6 @@ Use this option to mount an existing SMB share using a Docker [volume](https://d
 
 ### Tmpfs Directories
 
-Some app storage configurations include the **Tmpfs (Temporary directory created on the RAM)** option.
+**Tmpfs (Temporary directory created on the RAM)** is conditionally available and not provided as an option for every app configuration. Overusing tmpfs mounts can exhaust system memory, leading to crashes or failed application starts. To prevent these issues, only use tmpfs with apps that explicitly support it.
 Use this option to configure a memory-backed temporary directory, such as for transcoding.
 See the Docker [tmpfs](https://docs.docker.com/engine/storage/#tmpfs) documentation for more information.
