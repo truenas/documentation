@@ -260,7 +260,7 @@ See [Accessing NAS from VMs and Containers]({{< ref "/SCALETutorials/Network/Con
 | Setting | Description |
 |---------|-------------|
 | **Use default network settings** | Select to use default network settings to connect the instance to the host using the automatic bridge defined in [Global Settings](#global-settings). Selected by default. Disable to display the **Bridged NICs** (if available) and **Macvlan NICs** settings. |
-| **Bridged NICs** | Select an existing bridge on the TrueNAS host to connect to the instance. Displays when one or more existing bridge interface(s) is available. |
+| **Bridged NICs** | Select an existing bridge on the TrueNAS host to connect to the instance. Displays when one or more existing bridge interface(s) are available. |
 | **Macvlan NICs** | Select an existing interface to create a virtual network interface based on it, assigning a unique MAC address so the instance appears as a separate device on the network. |
 {{< /truetable >}}
 {{< include file="/static/includes/MacvlanHost.md" >}}
@@ -433,7 +433,7 @@ The **Delete Item** dialog asks for confirmation to delete the selected disk mou
 
 #### Change Root Disk Setup
 
-The **Change Root Disk Setup** dialog allows you to configure the size of the disk a VM stores its OS on and boots from and change the root disk I/O bus.
+The **Change Root Disk Setup** dialog allows you to configure the size of the disk a VM stores its OS on and boots from, and change the root disk I/O bus.
 
 {{< trueimage src="/images/SCALE/Virtualization/IncreaseRoot.png" alt="Increase Root Disk Size Widget" id="Increase Root Disk Size Widget" >}}
 
