@@ -141,9 +141,6 @@ majorVersions:
       - name: "24.10-BETA.1"
         link: "https://download.truenas.com/truenas-scale-electriceel-BETA/24.10-BETA.1/"
         date: "2024-08-29"
-      - name: "24.10 (Electric Eel) Nightly .iso"
-        link: "https://download.truenas.com/truenas-scale-electriceel-nightly/"
-        date: ""
   - lifecycle: "Current"
     majorVersion: "25.04 (Fangtooth)"
     releaseName: "Fangtooth"
@@ -164,6 +161,6 @@ majorVersions:
     majorVersion: "25.10 (Goldeye)"
     releaseName: "Goldeye"
     releases:
-      - name: "25.04 (Goldeye) Nightly .iso"
+      - name: "25.10 (Goldeye) Nightly .iso"
         link: "https://download.truenas.com/truenas-scale-goldeye-nightly/"
         date: ""

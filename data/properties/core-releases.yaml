@@ -17,17 +17,9 @@ majorVersions:
     name: "TrueNAS CORE 13.3"
     releaseName: "13.3"
     releases:
-      - name: "13.3-U1.1"
+      - name: "13.3-U1.2"
         type: "Community"
         link: "https://www.truenas.com/docs/core/13.3/gettingstarted/corereleasenotes/"
-        releaseDate: "2025-01-31"
+        releaseDate: "2025-04-29"
         latest: true
-  - lifecycle: "Next"
-    name: "TBD"
-    releaseName: "TBD"
-    releases:
-      - name: "TBD"
-        type: "Experimental"
-        link: ""
-        releaseDate: ""
-        latest: true
+

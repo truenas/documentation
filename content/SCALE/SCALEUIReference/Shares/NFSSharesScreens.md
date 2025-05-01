@@ -119,7 +119,11 @@ You can access the **NFS Sessions** screen from the **NFS** option on the **Syst
 
 {{< trueimage src="/images/SCALE/Shares/NFSSessionsScreen.png" alt="NFS Sessions Screen" id="NFS Sessions Screen" >}}
 
-The **NFS Sessions** screen shows current NFS sessions.
+This screen shows NFSv3 clients that have successfully completed a MNT request by reading the NFS **[rmtab](https://linux.die.net/man/8/mountd)** file.
+Clients with appropriate permissions are removed from the list on a successful UMNT request.
+
+However, this list can become inaccurate due to the different ways that a client can disconnect from a share.
+To help prevent stale entries from accumulating, the sessions list is cleared on each system boot.
 
 **Refresh** updates the information displayed on the screen.
 
