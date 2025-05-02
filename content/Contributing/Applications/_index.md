@@ -53,7 +53,7 @@ Include the relevant files in the PR, including a ReadMe.txt file with any insta
 
 ## Contributing to TrueNAS Application Documentation
 
-Community members can now submit content directly to the [TrueNAS Apps](https://apps.truenas.com) site repository.
+Community members can now submit content directly to the [TrueNAS Apps Market](https://apps.truenas.com) site repository.
 
 For more information about submitting a PR, see the [TrueNAS Contributor Guide](https://www.truenas.com/docs/contributing/applications/).
 
