@@ -57,7 +57,7 @@ Community members can now submit content directly to the [TrueNAS Apps Market](h
 
 For more information about submitting a PR, see the [TrueNAS Contributor Guide](https://www.truenas.com/docs/contributing/applications/).
 
-### Submitting New or Updated Tutorial Articles
+### Proposing Content Changes
 
 To submit new tutorials or request changes to existing application tutorials:
 
