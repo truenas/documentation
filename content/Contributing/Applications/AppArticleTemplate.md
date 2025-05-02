@@ -17,7 +17,7 @@ Check back for updates!
 
 Click **Edit Page** above or locate the Markdown file at [/Contributing/Applications/AppArticleTemplate.md](https://github.com/truenas/documentation/blob/master/Contributing/Applications/AppArticleTemplate.md) on the documentation [Github Repository](https://github.com/truenas/documentation).
 
-Copy the template content to an existing [Community Apps]({{< ref "communityapps" >}}) placeholder article (or create a new one if needed for this app) to begin writing.
+Copy the template content to an existing placeholder article (or create a new one if needed for this app) to begin writing.
 
 Detailed template instructions are commented out of the rendered copy of this template but show in the Markdown file.
 
