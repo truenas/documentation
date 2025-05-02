@@ -61,18 +61,31 @@ For more information about submitting a PR, see the [TrueNAS Contributor Guide](
 
 To submit new tutorials or request changes to existing application tutorials:
 
-1. Fork the `truenas/apps-web` repository.
-2. Create a local copy of your fork.
-3. To edit an existing application article, open the related `.md` file in the `content/catalog/` directory of your local repository copy.
-4. To submit a new tutorial or create application content, add a new `.md` file to the `content/resources/` directory. Follow the front matter format used in existing examples for consistency.
-5. If the new tutorial is associated with a catalog application entry, update the related `content/catalog/` `.md` file to link to the new tutorial.
-6. Embed images as needed by saving them in the `static/images/` directory. Follow standard Markdown image referencing procedures in your PR to ensure consistency with other articles.
-7. (Optional) Embed YouTube videos or TrueNAS Community Forum direct links in the **Resources** section. These will become visibly accessible on the **Resources** section of the app article.
-8. Submit a PR against the `main` branch of the repository.
+1. Fork the [`truenas/apps-web`](https://github.com/truenas/apps-web/?tab=readme-ov-file#apps-web) repository.
+2. To edit an existing application article, open the related `.md` file in the `content/catalog/` directory of your forked copy. Here, you can make edits and commit them to your PR.
+3. To submit a new tutorial or create application content, add a new `.md` file to the `content/resources/` directory. Follow the [front matter format](#formatting-front-matter) used in existing examples for consistency.
+4. If the new tutorial is associated with a catalog application entry, update the related `content/catalog/` `.md` file to link to the new tutorial.
+5. Embed images as needed by saving them in the `static/images/` directory. Follow standard Markdown image referencing procedures in your PR to ensure consistency with other articles.
+6. (Optional) [Embed](#embedding-resources) YouTube videos or TrueNAS Community Forum direct links in the **Resources** section. These will become visibly accessible on the **Resources** section of the app article.
+7. Submit a PR against the `main` branch of the repository.
 
 From the **Resources** section of an existing article, contributors can edit pages directly from the [TrueNAS Apps](https://apps.truenas.com) website using the **Edit page** button in the upper right corner. Some articles related to Enterprise applications might not offer this option.
 
 Browse the `content/` and `static/` folders in the repository for examples of complete application entries and resource tutorials.
+
+### Formatting Front Matter
+
+To correctly format the front matter of a new `.md` file, use the following example as a guide:
+
+{{< trueimage src="/images/Contribute/AppsFrontMatterExample.png" alt="Front Matter Example" id="Front Matter Example" >}}
+
+Including a title, short description, train, and tag(s) ensures consistency and viability across all apps content.
+
+### Embedding Resources
+
+You can embed outside resources, such as YouTube videos, within the **Resources** section of an app page. To do this, use shortcode containing the resource ID from the original source.
+
+For example, to embed a YouTube video located at https&#8203;://www.youtube.com&#8203;/watch?v=abcd_1234, enter the shortcode &#123;&#123; youtube abcd_1234 &#125;&#125;. In this scenario, **youtube** is the shortcode name, and **abcd_1234** is the original resource ID from the YouTube video. 
 
 ### Using the App Tutorial Template
 
