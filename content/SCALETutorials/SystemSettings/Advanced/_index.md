@@ -11,9 +11,17 @@ keywords:
 - enterprise storage solutions
 - nas storage solutions
 - software storage solutions
+- TrueNAS Security compliance
+- FIPS
+- STIG
+- TrueNAS account policy
 ---
 
 **Advanced Settings** provides configuration options for the console, syslog, kernel, sysctl, replication, cron jobs, init/shutdown scripts, system dataset pool, isolated GPU device(s), self-encrypting drives, system access sessions, allowed IP addresses, audit logging, and global two-factor authentication.
+
+{{< enterprise >}}
+Enterprise-licensed system administrators have additional options to configure security-related settings, such as FIPS and STIG compatibility and Self-Encrypting Drive (SED) configuration.
+{{< /enterprise >}}
 
 {{< include file="/static/includes/AdvancedSettingsWarningSCALE.md" >}}
 
@@ -100,25 +108,81 @@ Entering an IP address limits access to the system to only the address(es) enter
 
 {{< include file="/static/includes/ConfigureAccessSettings.md" >}}
 
-## Setting Up FIPS and STIG
+## Security Settings
+
 {{< enterprise >}}
-Only Enterprise-licensed systems show the **Security** widget and have access to FIPS and STIG settings.
+Only Enterprise-licensed systems show the **Security** widget and have access to these settings.
+
+Administrators considering enabling STIG and FIPS security settings should contact TrueNAS Support before making any changes.
+
+{{< expand "Contacting Support" "v" >}}
+{{< include file="/static/includes/iXsystemsSupportContact.md" >}}
+{{< /expand >}}
 {{< /enterprise >}}
 
-To configure FIPS or STIG compliance on a TrueNAS server, you must first configure two-factor authentication for an admin user with full permissions.
+### STIG and FIPS Considerations
 
+Review these topics and contact TrueNAS Support before enabling STIG and FIPS security settings.
+
+When STIG (and FIPS) are enabled:
+
+* TrueNAS cannot issue API keys, and existing API keys cannot be used for authentication. Only the user credential with a two-factor authentication method is accepted.
+* SSH log-ins require a cryptographic algorithm.
+* SMB authentication for local TrueNAS accounts is disabled.
+* NTLM authentication passthrough to a domain controller is disabled.
+* Usage stats are not reported, and the **Usage Collection** option is disabled.
+* One-time passwords (OTP) configured for administrative users have a single use and expire after 24 hours.
+  After logging in with the OTP, the system prompts the user to immediately change the password and set up two-factor authentication.
+* TrueNAS is limited to a maximum of 10 concurrent sessions.
+  Accounts lock for 15 minutes after three consecutive failed login attempts.
+* Password aging rules are applied to the SMB protocol. After a failed login attempt, users with expired passwords receive a password-expired message.
+* TrueNAS prompts users to change their passwords when logging in, and the system flags the account as requiring this change.
+  Users cannot reuse a password if it is marked as used within the last five passwords in the history file. Passwords must be 15 characters in length.
+* TrueNAS updates can only use a signed update file provided by the TrueNAS team.
+
+{{< expand "What features are not available?" "v" >}}
+When enabled, STIG disables these features:
+* Virtualization
+* Apps
+* TrueCommand connectivity
+{{< /expand >}}
+
+{{< expand "What events are included in auditing?" "v" >}}
+When STIG (and FIPS) are enabled, auditing includes these events:
+* Account creation events
+* Privilege commands (with full text of the commands run)
+* Privilege changes
+* Log-ins and other system access events.
+  Account log-ins are tracked from two distinct sources (UI and SSH)
+* Kernel module load/unload
+* Audit log modifications and attempts to modify audit logs
+* Security object modifications and attempts to modify security objects
+{{< /expand >}}
+
+### Configuring STIG and FIPS
+
+To set up FIPS or STIG compliance on a TrueNAS server, you must first configure two-factor authentication for an admin user with full permissions.
 After configuring two-factor authentication, go to **System > Advanced Settings** and locate the **Security** widget.
-
 Click **Settings** to open the **System Security** configuration screen.
 
 ![SystemSecurityScreen](/images/SCALE/SystemSettings/SystemSecurityScreen.png "System Security Screen")
 
-Select the toggle to enable FIPS and STIG, then click **Save**. You must enable FIPS with STIG!
-The system prompts you to reboot.
+Select the toggle to enable FIPS and STIG, then click **Save**.
+You must enable FIPS with STIG!
+The system prompts you to restart.
 
-![SecurityFIPSSTIGRebootDialog](/images/SCALE/SystemSettings/SecurityFIPSSTIGRebootDialog.png "Reboot Require Dialog")
+![SecurityFIPSSTIGRestartDialog](/images/SCALE/SystemSettings/SecurityFIPSSTIGRestartDialog.png "Restart Require Dialog")
 
-The system reboot takes several minutes to complete before showing the login screen.
+The system restart takes several minutes to complete before showing the login screen.
+Highly Available (HA) systems must restart each storage controller before STIG mode is fully enabled.
+
+### TrueNAS Administrator Password Rules
+
+The remaining options are for setting TrueNAS administrator password rules.
+Options include defining a password lifetime, types of characters that must be present in the password, how many characters must be present in a valid password, and how many previously used passwords to remember for an account and prevent reuse in a new password.
+
+Adjust these as needed for your security requirements.
+Enabling STIG compatibility mode requires specific minimum values for these settings.
 
 <div class="noprint">
 ## Contents
