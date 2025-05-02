@@ -223,7 +223,7 @@ VMs must specify the I/O bus and size of the root disk.
 |---------|-------------|
 | **Root Disk I/O Bus** | (Required for VMs only) Set the root disk I/O bus type to the option that best suits system needs. Options are:<br><ul><li>**NVMe** – Ideal for high-performance storage with faster read and write speeds.<br><li>**Virtio-BLK** – Efficient for virtualized environments, offering direct block device access with lower overhead.<br><li>**Virtio-SCSI** – Flexible and scalable, supporting advanced features like hot-swapping and multiple devices.</ul> |
 | **Root Disk Size (in GiB)** | (Required for VMs only) Enter a plain integer to configure the size of the VM root disk (default 10). |
-| **Source** | (Required) Displays after clicking **Add** in **Disks**.  Enter an existing zvol or create a new dataset using the **Create Dataset** option that allows creating a new dataset after entering a path or browsing to select a parent dataset from the dropdown list of datasets on the system. Enter a name for the new dataset in the **Create Dataset** window. **Create** adds the dataset. <br><br> To use an existing zvol, select an existing zvol from the dropdown list. |
+| **Source** | (Required) Displays after clicking **Add** in **Disks**. Define an existing dataset or create a new dataset using the **Create Dataset** option. Creating a dataset requires entering a path or browsing to select a parent dataset from the dropdown list of datasets on the system. Enter a name for the new dataset in the **Create Dataset** window. **Create** adds the dataset. |
 | **Destination** | (Required for containers only) Specifies the file system path to mount the disk in the container, for example */media* or */var/lib/data*. |
 | **I/O Bus** | (Required for VMs only) Sets the disk I/O bus type to what best suits system needs. Options are **NVMe**, **Virtio-BLK**, or **Virtio-SCSI**. |
 {{< /truetable >}}
@@ -260,7 +260,7 @@ See [Accessing NAS from VMs and Containers]({{< ref "/SCALETutorials/Network/Con
 | Setting | Description |
 |---------|-------------|
 | **Use default network settings** | Select to use default network settings to connect the instance to the host using the automatic bridge defined in [Global Settings](#global-settings). Selected by default. Disable to display the **Bridged NICs** (if available) and **Macvlan NICs** settings. |
-| **Bridged NICs** | Select an existing bridge on the TrueNAS host to connect to the instance. Displays when one or more existing bridge interface(s) is available. |
+| **Bridged NICs** | Select an existing bridge on the TrueNAS host to connect to the instance. Displays when one or more existing bridge interface(s) are available. |
 | **Macvlan NICs** | Select an existing interface to create a virtual network interface based on it, assigning a unique MAC address so the instance appears as a separate device on the network. |
 {{< /truetable >}}
 {{< include file="/static/includes/MacvlanHost.md" >}}
@@ -326,6 +326,11 @@ Stopped instances show the option to start the instance.
 The **Details for *Instance*** [widgets](#instances-widgets) show information and management options for the selected instance.
 
 <i class="material-icons" aria-hidden="true" title="Restart">restart_alt</i> restarts or <i class="material-icons" aria-hidden="true" title="Stop">stop_circle</i> stops a running instance.
+
+The **Stop Options** window defines when the Instance stops, immediately or after one of 30 seconds, 1 minute, or 5 minutes occurs.
+
+{{< trueimage src="/images/SCALE/Virtualization/InstanceStopOptions.png" alt="TrueNAS Instance Stop Options Dropdown with Options" id="Instance Stop Options" >}}
+
 <i class="material-icons" aria-hidden="true" title="Start">play_circle</i> starts a stopped instance.
 
 **Search** above the **Instances** table allows entering the name of an instance to locate a configured instance.
@@ -428,7 +433,7 @@ The **Delete Item** dialog asks for confirmation to delete the selected disk mou
 
 #### Change Root Disk Setup
 
-The **Change Root Disk Setup** dialog allows you to configure the size of the disk a VM stores its OS on and boots from and change the root disk I/O bus.
+The **Change Root Disk Setup** dialog allows you to configure the size of the disk a VM stores its OS on and boots from, and change the root disk I/O bus.
 
 {{< trueimage src="/images/SCALE/Virtualization/IncreaseRoot.png" alt="Increase Root Disk Size Widget" id="Increase Root Disk Size Widget" >}}
 

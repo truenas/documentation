@@ -2302,3 +2302,4 @@ AddDiskScreenVM
 InstanceNameRequirements
 TTY
 ZF
+InstanceStopOptions
