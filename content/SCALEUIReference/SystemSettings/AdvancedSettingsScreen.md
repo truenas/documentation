@@ -38,7 +38,7 @@ The **Console** widget displays the current console settings for TrueNAS.
 
 ### Console Configuration Screen
 
-**Console** settings configure how the [Console Setup menu]({{< relref "ConsoleSetupMenuSCALE.md" >}}) displays, the serial port it uses and the port speed, and the banner users see when accessing it.
+**Console** settings configure how the [Console Setup menu]({{< ref "ConsoleSetupMenuSCALE" >}}) displays, the serial port it uses and the port speed, and the banner users see when accessing it.
 
 {{< trueimage src="/images/SCALE/SystemSettings/ConsoleConfigScreen.png" alt="Console Config Screen" id="Console Config Screen" >}}
 
@@ -84,7 +84,7 @@ There are also options to configure a remote syslog server for recording system 
 {{< /expand >}}
 
 ## Audit Widget
-The **Audit** widget displays the current audit storage and retention policy settings. The public-facing [TrueNAS API]({{< relref "/API/_index.md" >}}) allows querying audit records, exporting audit reports, and configuring audit dataset settings and retention periods.
+The **Audit** widget displays the current audit storage and retention policy settings. The public-facing [TrueNAS API]({{< ref "/API/" >}}) allows querying audit records, exporting audit reports, and configuring audit dataset settings and retention periods.
 
 {{< trueimage src="/images/SCALE/SystemSettings/SystemAdvancedAuditWidget.png" alt="Advanced System Setting Audit Widget" id="Advanced System Setting Audit Widget" >}}
 
@@ -92,7 +92,7 @@ The **Audit** widget displays the current audit storage and retention policy set
 
 {{< include file="/static/includes/ConfigureSystemAuditSCALE.md" >}}
 
-Click **Configure** to open the **Audit** configuration screen and [manage storage and retention policies]({{< relref "AuditingSCALE.md#configuring-audit-storage-and-retention-policies" >}})
+Click **Configure** to open the **Audit** configuration screen and [manage storage and retention policies]({{< ref "AuditingSCALE.md#configuring-audit-storage-and-retention-policies" >}})
 
 ## Kernel Widget
 
@@ -110,7 +110,7 @@ The **Kernel** widget shows options for configuring the Linux kernel installed w
 
 ## Cron Jobs Widget
 
-The **Cron Jobs** widget displays **No Cron Jobs configured** until you add a cron job,  and then it shows the information on cron job(s) configured on the system.
+The **Cron Jobs** widget displays **No Cron Jobs configured** until you add a cron job, and then it shows the information on cron job(s) configured on the system.
 
 {{< trueimage src="/images/SCALE/SystemSettings/AdvancedSettingsCronJobWidget.png" alt="Cron Job Widget" id="Cron Job Widget" >}}
 
@@ -131,7 +131,7 @@ The **Add Cron Job** and **Edit Cron Job** configuration screens display the sam
 | Settings | Description |
 |----------|-------------|
 | **Description** | Enter a description for the cron job. |
-| **Command** | Enter the full path to the command or script to run. For example, to create a command string that generates a list of users on the system and write that list to a file, enter `cat /etc/passwd > users_$(date +%F).txt` |
+| **Command** | Enter the full path to the command or script to run. For example, to create a command string that generates a list of users on the system and writes that list to a file, enter `cat /etc/passwd > users_$(date +%F).txt` |
 | **Run As User** | Select a user account to run the command. The user must have permissions allowing them to run the command or script. |
 | **Schedule** | Select a schedule preset or choose **Custom** to open the advanced scheduler. Note that an in-progress cron task postpones any later scheduled instance of the same task until the running task is complete. |
 | **Hide Standard Output** | Select to hide standard output (stdout) from the command. If left cleared, TrueNAS mails any standard output to the user account cron that ran the command. |
@@ -142,7 +142,7 @@ The **Add Cron Job** and **Edit Cron Job** configuration screens display the sam
 
 ## Init/Shutdown Scripts Widget
 
-The **Init/Shutdown Scripts** widget displays **No Init/Shutdown Scripts configured** until you add either a command or script, then the widget lists the scrips configured on the system.
+The **Init/Shutdown Scripts** widget displays **No Init/Shutdown Scripts configured** until you add either a command or script, then the widget lists the scripts configured on the system.
 
 {{< trueimage src="/images/SCALE/SystemSettings/AdvancedSystemInitShutdownScriptWidget.png" alt="Init/Shutdown Scripts Widget" id="Init/Shutdown Scripts Widget" >}}
 
@@ -207,7 +207,7 @@ The system dataset stores core files for debugging and keys for encrypted pools.
 
 If the system has one pool, TrueNAS configures that pool as the system dataset pool.
 If your system has more than one pool, you can set the system dataset pool using the **Select Pool** dropdown.
-Users can move the system dataset to an unencrypted pool, or an encrypted pool without passphrases.
+Users can move the system dataset to an unencrypted pool or an encrypted pool without passphrases.
 
 {{< trueimage src="/images/SCALE/SystemSettings/SystemStorageConfigScreen.png" alt="System Dataset Pool Config Screen" id="System Dataset Pool Config Screen" >}}
 
@@ -236,10 +236,10 @@ If the configured session timeout is exceeded, TrueNAS displays a **Logout** dia
 {{< trueimage src="/images/SCALE/SystemSettings/TimeoutDialog.png" alt="Logout Dialog" id="Logout Dialog" >}}
 
 **Extend Session** resets the token counter.
-If the button is not clicked, the TrueNAS terminates the session automatically and returns to the login screen.
+When the button is not clicked within the timeout period, TrueNAS terminates the session automatically and returns to the login screen.
 {{< /expand >}}
 
- **Configure** opens the **Access Settings** screen.
+**Configure** opens the **Access Settings** screen.
 
 ### Access Settings Screen
 The **Access Settings** screen allows users to configure the **Session Timeout** for the current account.
@@ -255,26 +255,27 @@ The default lifetime setting is 300 seconds or five minutes.
 The maximum is 2147482 seconds or 24 days, 20 hours, 31 minutes, and 22 seconds.
 {{< /hint >}}
 
-The **Login Banner** field allows specifying a text message the system shows before the TrueNAS login splash screen displays.
+The **Login Banner** field allows specifying a text message that the system shows before the TrueNAS login splash screen displays.
 **Continue** on the banner screen closes the screen, then shows the login splash screen.
-The maximum length of the banner text is 4096 characters including spaces. Long text wraps and banner text can use carriage returns to break up long messages to improve readability.
+The maximum length of the banner text is 4096 characters, including spaces.
+Long text wraps and banner text can use carriage returns to break up long messages to improve readability.
 Leave **Login Banner** empty to show just the login screen without interruption by a banner screen.
 
 {{< enterprise >}}
 Enterprise-licensed systems include the **Allow Directory Service users to access WebUI** option on the **Access Settings** screen.
-After enabling this option TrueNAS automatically creates a new entry, named as the domain admin group, in the **Privileges** screen table. For example, if the domain is *ad03.mydomain.net*, then you should see a group of that name listed as well as any the groups AD creates on the system.
+After enabling this option, TrueNAS automatically creates a new entry, named as the domain admin group, in the **Privileges** screen table. For example, if the domain is *ad03.mydomain.net*, then you should see a group of that name listed as well as any the groups AD creates on the system.
 {{< /enterprise >}}
 
 ## Allowed IP Addresses Widget
 
-The **Allowed IP Addresses** widget displays IP addresses and networks added to the system that are allowed to use the API and UI. If this list is empty, then all IP addresses are allowed to use API and UI.
+The **Allowed IP Addresses** widget displays IP addresses and networks added to the system that are allowed to use the API and UI. If this list is empty, then all IP addresses are allowed to use the API and UI.
 
 {{< trueimage src="/images/SCALE/SystemSettings/AdvancedSystemAllowedIPAddressesWidget.png" alt="Allowed IP Addresses Widget" id="Allowed IP Addresses Widget" >}}
 
 **Configure** opens the **Allowed IP Addresses** configuration screen.
 
 {{< hint type="warning" >}}
-Entering an IP address to the allowed IP address list denies access to the UI or API for all other IP addresses not listed.
+Entering an IP address into the allowed IP address list denies access to the UI or API for all other IP addresses not listed.
 
 Only use when limiting system access to a single or limited number of IP addresses. Leave the list blank to allow all IP addresses.
 {{< /hint >}}
@@ -364,7 +365,7 @@ The **Global Two Factor Authentication** widget allows you to set up two-factor 
 ## System Security Widget
 
 {{< enterprise >}}
-The **System Security** widget allows administrators of Enterprise-licensed systems to enable or disable FIPS 140-2 compliant algorithms, and general-purpose OS STIG compliance.
+The **System Security** widget allows administrators of Enterprise-licensed systems to enable or disable FIPS 140-2 compliant algorithms, general-purpose OS STIG compliance, and other administrator account rules.
 Changing FIPS or STIG settings requires a system reboot to apply setting changes.
 
 High Availability (HA) systems reboot the standby controller and then show a prompt to failover and reboot the primary controller.
@@ -376,7 +377,20 @@ High Availability (HA) systems reboot the standby controller and then show a pro
 {{< trueimage src="/images/SCALE/SystemSettings/SystemSecurityScreen.png" alt="System Security Screen" id="System Security Screen" >}}
 
 The **Enable FIPS** toggle enables or disables enforcement.
-The **Enable General Purpose OS STIG compatibility mode** toggle enables or disables the STIG compliance implementation. Requires two-factor authentication for an admin user with full permissions before enabling STIG compatibility.
-**Save**.
-The system prompts to reboot (or failover for HA systems) to apply the settings.
+The **Enable General Purpose OS STIG compatibility mode** toggle enables or disables the STIG compliance implementation.
+Requires two-factor authentication for an admin user with full permissions before enabling STIG compatibility.
+The system prompts to reboot (or failover for HA systems) to apply these settings.
+
+**Administrator Password settings**
+{{< truetable >}}
+| Name | Description |
+|------|-------------|
+| **Min Password Age** | Minimum number of days a password must be used before it can be changed. |
+| **Max Password Age** | Maximum number of days a password can be used before it must be changed. |
+| **Password Complexity Ruleset** | Defines the required character types for administrator passwords. Choose between **Upper**, **Lower**, **Number**, and **Special** character type requirements. |
+| **Min Password Length** | Define how many characters must be present in an administrator password. The default required minimum is **8** characters. |
+| **Password History Length** | Define how many previously used passwords to remember. Prevents administrators from reusing passwords when updating credentials. Requires an integer between **1** and **10**.
+{{< /truetable >}}
+
+
 {{< /enterprise >}}

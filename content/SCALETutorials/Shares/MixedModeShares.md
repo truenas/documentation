@@ -100,7 +100,7 @@ They also require careful attention to security complexities not present in stan
 NFS shares do not respect permissions set in the SMB Share ACL.
 Protect the NFS export with proper authentication and authorization controls to prevent unauthorized access by NFS clients.
 
-We recommend using [Active Directory]({{< relref "configadscale.md" >}}) to enable Kerberos security for the NFS share.
+We recommend using [Active Directory]({{< ref "configadscale" >}}) to enable Kerberos security for the NFS share.
 Configure a container (group or organizational unit), Kerberos admin, and user accounts in AD.
 
 ## Creating a Multiprotocol Share
@@ -127,7 +127,7 @@ The share configuration options display with **Create NFS Share** and **Create S
 {{< trueimage src="/images/SCALE/Datasets/AddMultimodeDataset.png" alt="Adding a Multi-Mode Dataset and Share" id="Adding a Multi-Mode Dataset and Share" >}}
 
 (Optional) Click **Advanced Options** to customize other dataset settings such as quotas, compression level, encryption, and case sensitivity.
-See [Creating Datasets]({{< relref "DatasetsSCALE.md#creating-a-dataset" >}}) for more information on adding and customizing datasets.
+See [Creating Datasets]({{< ref "DatasetsSCALE.md#creating-a-dataset" >}}) for more information on adding and customizing datasets.
 
 Click **Save**.
 TrueNAS creates the dataset and the multi-protocol SMB and NFS shares.
@@ -205,7 +205,7 @@ If not, add this Access Control Entry (ACE) item on the **Edit ACL** screen for 
 
 4. Click **Save Access Control List** to add the ACE item or save changes.
 
-See [Permissions]({{< relref "PermissionsScale.md" >}}) for more information on editing dataset permissions.
+See [Permissions]({{< ref "PermissionsScale" >}}) for more information on editing dataset permissions.
 
 After setting the dataset permission, connect to the share.
 
@@ -215,4 +215,4 @@ After setting the dataset permission, connect to the share.
 
 After creating and configuring the shares, connect to the multi-protocol share using either SMB or NFS protocols from a variety of client operating systems including Windows, Apple, FreeBSD, and Linux/Unix systems.
 
-For more information on accessing shares, see [Mounting the SMB Share]({{< relref "/SCALETutorials/Shares/SMB/_index.md#mounting-the-smb-share" >}}) and [Connecting to the NFS Share]({{< relref "AddingNFSShares.md#connecting-to-the-nfs-share" >}}).
+For more information on accessing shares, see [Mounting the SMB Share]({{< ref "/SCALETutorials/Shares/SMB/#mounting-the-smb-share" >}}) and [Connecting to the NFS Share]({{< ref "AddingNFSShares.md#connecting-to-the-nfs-share" >}}).

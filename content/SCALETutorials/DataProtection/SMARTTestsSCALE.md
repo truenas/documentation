@@ -21,7 +21,7 @@ Refer to your respective drive documentation for confirmation.
 TrueNAS runs S.M.A.R.T. tests on disks.
 Running tests can reduce drive performance, so we recommend scheduling tests when the system is in a low-usage state.
 Avoid scheduling disk-intensive tests at the same time!
-For example, do not schedule S.M.A.R.T. tests on the same day as a disk [scrub]({{< relref "ScrubTasksSCALE.md" >}}) or other data protection task.
+For example, do not schedule S.M.A.R.T. tests on the same day as a disk [scrub]({{< ref "ScrubTasksSCALE" >}}) or other data protection task.
 
 {{< expand "How do I check or change S.M.A.R.T. testing for a disk?" "v" >}}
 Go to **Storage**, then click **Disks** button. Select disks to be examined using the checkbox at left. Click the <i class="material-icons" aria-hidden="true">expand_more</i> to the right of the disk row to expand it.
@@ -73,7 +73,7 @@ For more information, refer to [smartctl(8)](https://www.unix.com/man-page/suse/
 
 {{< expand "Where can I view the test results?" "v" >}}
 Click the <i class="material-icons" aria-hidden="true">expand_more</i> in a disk's row to expand it, then click **S.M.A.R.T. TEST RESULTS**.
-You can also see results in the **[Shell]({{< relref "UseSCALEShell.md" >}})** using `smartctl` and the name of the drive: `smartctl -l selftest /dev/ada0`.
+You can also see results in the **[Shell]({{< ref "UseSCALEShell" >}})** using `smartctl` and the name of the drive: `smartctl -l selftest /dev/ada0`.
 {{< /expand >}}
 
 ## Running Automatic S.M.A.R.T. Tests
@@ -102,7 +102,7 @@ Start the S.M.A.R.T. service. Go to **System > Services** and scroll down to the
 
 ![SMARTSystemServicesSCALE](/images/SCALE/SystemSettings/SMARTSystemServicesSCALE.png "System Services S.M.A.R.T. Test")
 
-If you have not configured the S.M.A.R.T. service yet, while the service is stopped, click <i class="material-icons" aria-hidden="true" title="Configure">edit</i> to open the service configuration form. See [Services S.M.A.R.T. Screen]({{< relref "SMARTServicesScreen.md" >}}) for more information on service settings.
+If you have not configured the S.M.A.R.T. service yet, while the service is stopped, click <i class="material-icons" aria-hidden="true" title="Configure">edit</i> to open the service configuration form. See [Services S.M.A.R.T. Screen]({{< ref "SMARTServicesScreen" >}}) for more information on service settings.
 Click **Save** to save settings and return to the **Services** screen.
 
 {{<include file="/static/includes/addcolumnorganizer.md">}}
@@ -115,5 +115,5 @@ The controller monitors S.M.A.R.T. separately and marks disks as a **Predictive 
 ## Using Shell to View Scheduled Tests
 
 {{< expand "CLI" "v" >}}
-To verify the schedule is saved, you can open the [shell]({{< relref "UseSCALEShell.md" >}}) and enter `smartd -q showtests`.
+To verify the schedule is saved, you can open the [shell]({{< ref "UseSCALEShell" >}}) and enter `smartd -q showtests`.
 {{< /expand >}}
