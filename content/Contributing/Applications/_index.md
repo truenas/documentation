@@ -53,13 +53,13 @@ Include the relevant files in the PR, including a ReadMe.txt file with any insta
 
 ## Contributing to TrueNAS Application Documentation
 
-Community members can now submit content directly to the [TrueNAS Apps](https://apps.truenas.com) site repository.
+Community members can now submit content directly to the [TrueNAS Apps Market](https://apps.truenas.com) site repository.
 
 For more information about submitting a PR, see the [TrueNAS Contributor Guide](https://www.truenas.com/docs/contributing/applications/).
 
-### Submitting New or Updated Tutorial Articles
+### Proposing Content Changes
 
-To submit new tutorials or request changes to existing application tutorials:
+To submit new content or request changes to existing application documentation:
 
 1. Fork the [`truenas/apps-web`](https://github.com/truenas/apps-web/?tab=readme-ov-file#apps-web) repository.
 2. To edit an existing application article, open the related `.md` file in the `content/catalog/` directory of your forked copy. Here, you can make edits and commit them to your PR.
