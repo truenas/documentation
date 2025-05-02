@@ -59,7 +59,7 @@ For more information about submitting a PR, see the [TrueNAS Contributor Guide](
 
 ### Proposing Content Changes
 
-To submit new tutorials or request changes to existing application tutorials:
+To submit new content or request changes to existing application documentation:
 
 1. Fork the `truenas/apps-web` repository.
 2. Create a local copy of your fork.
