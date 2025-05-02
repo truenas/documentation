@@ -67,19 +67,6 @@
   </div>
 </blockquote>
 </article>
-{{ else if hasPrefix .RelPermalink "/truenasapps/" }}
-<article class="gdoc-markdown">
-<blockquote class="gdoc-hint caution">
-  <div class="gdoc-hint__title flex align-center">
-    <img src="/favicon/TN-favicon-32x32.png" alt="TrueNAS Apps" title="TrueNAS Apps" style="padding-right:.75rem;"></img>TrueNAS Apps: Tutorials
-  </div>
-  <div class="gdoc-hint__text" style="font-size:smaller;">
-    Application maintenance is independent from TrueNAS version release cycles.<br>
-    See the <a href="https://www.apps.truenas.com">TrueNAS Applications Market</a> for the latest details about apps available within TrueNAS!<br>
-	Content available from this location is planned to fully migrate to the Applications Market at a future date.
-  </div>
-</blockquote>
-</article>
 {{ else if and (in .Section "SCALE") (hasPrefix .RelPermalink "/scale/scaleuireference/apps/") }}
 <article class="gdoc-markdown">
 <blockquote class="gdoc-hint caution">
@@ -88,8 +75,8 @@
   </div>
   <div class="gdoc-hint__text" style="font-size:smaller;">
     Application maintenance is independent from TrueNAS version release cycles.<br>
-    App versions, features, options, and installation behavior at time of access might vary from documented <a href="/truenasapps/">tutorials</a> and UI reference.<br>
-	See the <a href="https://www.apps.truenas.com">TrueNAS Applications Market</a> for the latest details about apps available within TrueNAS!
+    App versions, features, options, and installation behavior at time of access might vary from documentation.<br>
+	See the <a href="https://www.apps.truenas.com">TrueNAS Applications Market</a> for the latest details, documentation, and resources for apps available within TrueNAS!
   </div>
 </blockquote>
 </article>

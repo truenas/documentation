@@ -8,7 +8,6 @@
           <button class="truenas-docsnav-menubutton" id="productButton" data-product-id="">Product <i class="fa fa-angle-down"></i></button>
           <div class="truenas-navmenudropdown" id="productDropdown">
             <div class="truenas-dropdown-item" onclick="selectProduct('TrueNAS')" data-id="truenas">TrueNAS</div>
-            <div class="truenas-dropdown-item" onclick="selectProduct('TrueNAS Apps')" data-id="apps">TrueNAS Apps</div>
             <div class="truenas-dropdown-item" onclick="selectProduct('TrueCommand')" data-id="truecommand">TrueCommand</div>
             <div class="truenas-dropdown-item" onclick="selectProduct('TrueNAS Systems')" data-id="hardware">TrueNAS Systems</div>
           </div>
@@ -165,12 +164,6 @@
         versionButton.textContent = '---';
         versionUpdated = true;
       }
-    } else if (path.includes('/truenasapps/')) {
-      productButton.innerHTML = 'TrueNAS Apps <i class="fa fa-angle-down"></i>';
-      if (!versionUpdated) {
-        versionButton.textContent = '---';
-        versionUpdated = true;
-      }  
     } else {
       productButton.innerHTML = 'Product <i class="fa fa-angle-down"></i>';
     }
@@ -200,9 +193,6 @@
     
       if (product === 'TrueNAS Systems') {
         window.location.href = 'https://www.truenas.com/docs/hardware';
-        return;
-      } else if (product === 'TrueNAS Apps') {
-        window.location.href = 'https://www.truenas.com/docs/truenasapps';
         return;
       }
     
@@ -432,8 +422,6 @@
     var versionsElement = document.getElementById('versions');
     if (product) {
       versionDropdown.style.display = product.toLowerCase() === 'truenas systems' ? 'none' : 'block';
-    } else if (product) {
-      versionDropdown.style.display = product.toLowerCase() === 'truenas apps' ? 'none' : 'block';
     } else {
       versionDropdown.style.display = 'none';
     }
@@ -462,8 +450,6 @@
 
     if (product) {
       versionDropdown.style.display = product.toLowerCase() === 'truenas systems' ? 'none' : 'block';
-    } else if (product) {
-      versionDropdown.style.display = product.toLowerCase() === 'truenas apps' ? 'none' : 'block';
     } else {
       versionDropdown.style.display = 'none';
     }
