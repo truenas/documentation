@@ -53,7 +53,17 @@ Click the <span class="iconify" data-icon="mdi:wrench"></span> icon next to the 
 
 ![LetsEncryptACMECertificate](/images/SCALE/Credentials/LetsEncryptACMECertificate.png "Add ACME Certificate")
 
-Fill out the ACME Certificate form. Under **Domains**, select the ACME DNS Authenticator you created for both domains, then click **Save**.
+In the **Identifier** field, enter the name you wish to use for the ACME certificate.
+
+Check the **Terms of Service** box accept the terms of service for the given ACME server.
+
+Use the **Renew Certificate Days** field to input the number of days to renew a certifiate before expiring. TrueNAS defaults this number to 10, but users should raise this number to 30 if they wish to align with Lets Encrypt recommendations.
+
+If you want to utilize a **Custom ACME Server Directory URI**, check the box next to this option. 
+
+Use the **ACME Server Directory URI** drop-down menu to select a default URI if you did not enter a custom URI above.
+
+Under **Domains**, select the ACME DNS Authenticator you created for both domains, then click **Save**.
 
 You can create testing and staging certificates for your domain.
 
