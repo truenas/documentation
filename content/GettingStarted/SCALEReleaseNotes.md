@@ -41,7 +41,7 @@ More details are available from [Software Releases](https://www.truenas.com/docs
     See [Preparing for App Migration](#preparing-for-app-migration) below for more information.
   
   * Custom applications based on Docker images can be installed using the installation wizard or a Docker Compose YAML file.
-    See [Installing Custom Applications](https://www.truenas.com/docs/truenasapps/usingcustomapp/) for more information.
+    See [Installing Custom Apps](https://apps.truenas.com/managing-apps/installing-custom-apps/) for more information.
   
   * Automatic app migration on upgrade from 24.04 is at parity for all official catalog applications.
     A few applications might require manual migration steps, depending on the options enabled in 24.04.
