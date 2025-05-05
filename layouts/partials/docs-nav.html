@@ -252,14 +252,7 @@
     
       var base_url = 'https://www.truenas.com';
       var currentPath = getCurrentPath();
-    
-      // Add this section for the redirection from scale 24.04 apps tutorials
-      if (currentPath.startsWith('/docs/scale/24.04/scaletutorials/apps/') && version !== '24.04') {
-        var newPath = currentPath.replace('/scale/24.04/scaletutorials/apps/', '/truenasapps/');
-        window.location.href = base_url + newPath;
-        return; // Exit the function after redirection
-      }    
-    
+        
       function getProductFromPath(path) {
         if (path.includes('/core/') || path.includes('/scale/')) {
           return 'TrueNAS'; 
