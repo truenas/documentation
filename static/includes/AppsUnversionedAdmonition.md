@@ -5,7 +5,7 @@
     <img src="/favicon/TN-favicon-32x32.png" alt="TrueNAS Apps" title="TrueNAS Apps" style="padding-right:.75rem;"></img>TrueNAS Apps
   </div>
   <div class="gdoc-hint__text" style="font-size:smaller;">
-    Application maintenance, including version updates, features, and configuration options, is independent from TrueNAS version release cycles.<br>
-    See the <a href="https://www.truenas.com/docs/truenasapps/">TrueNAS Apps documentation</a> and the <a href="https://github.com/truenas/apps/issues/">truenas/apps</a> repository for more information.
+  Application maintenance, including version updates, features, and configuration options, is independent from TrueNAS version release cycles.<br>
+  See the <a href="https://apps.truenas.com/">TrueNAS Apps documentation</a> and the <a href="https://github.com/truenas/apps/issues/">truenas/apps</a> repository for more information.
   </div>
 </blockquote>
