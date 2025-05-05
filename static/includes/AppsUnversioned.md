@@ -7,6 +7,6 @@ In TrueNAS 24.04 (Dragonfish), the Apps feature is provided using Kuberenetes.
 To propose documentation changes to a Kubernetes-based app available in TrueNAS 24.04 (Dragonfish), click **Edit Page** in the top right corner.
 
 Future versions of TrueNAS, starting with 24.10 (Electric Eel), provide the Apps feature using Docker.
-To propose documentation changes for a separately versioned Docker-based app, first use the **Product and Version** dropdowns to switch to the **Nightly** version Apps documentation, then click **Edit Page**.
+See the [TrueNAS Apps Marketplace](https://apps.truenas.com) for more information.
 
 See [Updating Content](https://www.truenas.com/docs/contributing/documentation/contentupdate/) for more guidance on proposing documentation changes.
