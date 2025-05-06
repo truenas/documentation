@@ -23,7 +23,6 @@ Debug sends audit messages from the Samba debug library. Messages have a configu
 
 The **System > Audit** screen lists all session or user events, facilitating comprehensive monitoring.
 Logs include who performed the action, timestamp, event type, and a short string of the action performed (event data).
-For more information, see [Audit Screen]({{< relref "AuditScreen.md" >}}).
 
 TrueNAS includes a manual page with more information on the [VFS auditing functions](https://github.com/truenas/samba/blob/SCALE-v4-19-stable/docs-xml/manpages/vfs_truenas_audit.8.xml).
 
