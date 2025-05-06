@@ -167,7 +167,7 @@ After completing your initial system configuration and before beginning day-to-d
 The best practice for critical data is to use more than one solution or method to back up your data in case one method fails. Recommended minimum system backup options:
 
 1. Save the [system configuration file]({{< ref "SetUpBackupSCALE" >}}).
-2. Save or [create a new boot environment]({{< ref "ManageBootEnvironSCALE" >}}) before upgrading the system. This creates a restore point if system issues cause you to lose access to the TrueNAS UI.
+2. Save or [create a new boot environment]({{< ref "ManageBootEnvironSCALE" >}}) before upgrading the system to create a restore point if system issues cause lost access to the TrueNAS UI.
 3. Download a system debug to capture system information before and after an upgrade or major change for comparison against future debug files.
 
  {{< expand "Downloading System Files" "v" >}}
@@ -206,7 +206,7 @@ Use the **Backup Credentials** screen [**Cloud Credentials**]({{< ref "AddCloudC
 
 {{< hint type=warning title="Backing Up Critical Data" >}}
 Having a secondary backup solution for critical data is a best practice!
-When backing up critical data to a cloud service provider, consider backing up the data to a remote server or a secondary cloud storage service as a protection against unforeseen failures with the primary backup solution!
+When backing up critical data to a cloud service provider, consider backing up the data to a remote server or a secondary cloud storage service as a protection against unforeseen failures with the primary backup solution.
 {{</hint >}}
 
 ## Checking System Alert Settings and Services
