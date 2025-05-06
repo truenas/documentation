@@ -99,7 +99,6 @@ The new and edit privilege screens show the same settings but not all settings a
 |---------|-------------|
 | **Name** | Enter a name for the new privilege. Names can include the dash (-) or underscore(_) special characters, and upper and lowercase alphanumeric characters. Enter a descriptive name for the privilege.  |
 | **Groups** | Click in the field to see a dropdown list of available groups to apply the privilege to. Do not add the predefined administrator or builtin groups! Only select new user groups created if you experiment with this function. |
-| **Directory Services Groups** | Click in the field to see a dropdown list of available groups to apply the privilege to. |
 | **Roles** | Click in the field to see a dropdown list of all available roles available to assign to the new privilege. |
 | **Web Shell Access** | Select to allow a user assign the new privilege access to the **System > Shell** screen.  |
 {{< /truetable >}}
