@@ -5,7 +5,7 @@ Multiple interfaces connected to a single TrueNAS system cannot be members of th
 Alternatively, you can assign multiple static IP addresses to a single interface by configuring aliases.
 
 {{< expand "Multiple NICs on One Subnet" "v" >}}
-When multiple network interface cards (NICs) connect to the same subnet, users might incorrectly assume that the interfaces automatically load balances.
+When multiple network interface cards (NICs) connect to the same subnet, users might incorrectly assume that the interfaces automatically load balance.
 However, ethernet network topology allows only one interface to communicate at a time.
 Additionally, both interfaces must handle broadcast messages since they are listening on the same network.
 This configuration adds complexity and significantly reduces network throughput.
