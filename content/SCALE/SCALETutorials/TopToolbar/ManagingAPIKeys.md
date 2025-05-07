@@ -55,7 +55,7 @@ TrueNAS API key strings are 64 randomly generated characters long.
 The token only shows in the **API Key** dialog.
 To save the key for use as an authentication token, click **Copy to Clipboard**, paste it into a text file, then save the fle in a secure location.
 
-{{< expand "Can I view the API Key again after closing the API Key dialog? "v" >}}
+{{< expand "Can I view the API Key again after closing the API Key dialog?" "v" >}}
 You cannot view the API key string after closing the **API Key** dialog.
 
 If you close the dialog before copying the key, select the user row and click **Edit** to open the **Edit API Key** screen.
@@ -94,7 +94,8 @@ Select **Confirm**, then click **Delete**.
 
 ## API Documentation
 
-Click **API Docs** to access the TrueNAS API documentation built into the system. A new browser window opens, showing the API documentation Table of Contents.
+Click **API Docs** on the **User** or **User API Keys** screen to access the TrueNAS API documentation built into the system.
+A new browser window opens, showing the API documentation Table of Contents.
 
 {{< trueimage src="/images/SCALE/Dashboard/APIDocsTableOfContentsScreen.png" alt="API Docs Table of Contents" id="API Docs Table of Contents" >}}
 
