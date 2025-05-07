@@ -9,7 +9,7 @@ Enter or browse to select the dataset to populate **Host Path**.
 
 Click **Add** to the right of **ACL Entries** to show the permissions settings. Set **ID Type** to **Entry is for a USER** or **Entry is for a GROUP**. If using a group, set the ID to **Group** and enter the GID.
 
-Enter the UID and/or GID for the run-as users, found in the **Run As Context** widget. For postgres storage volumes, the default user ID is **999**.
+Enter the UID and/or GID for the run-as users, found in the **Run As Context** widget. 
 
 If a new TrueNAS user is created to serve as the app administrator, add the UID for this user along with the run-as user ID. Set the **Access** permission to **FULL CONTROL** for the run-as user, default user, and app administrator user.
 
