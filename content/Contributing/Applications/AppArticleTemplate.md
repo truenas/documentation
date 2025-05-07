@@ -70,7 +70,7 @@ keywords are search tags for the article to assist with Internet searches. -->
 <!--
 ---
 title: "APP_NAME Deployment"
-description: "Description and resources for the TrueNAS community application called App Name."
+description: "Provides installation instructions for the APP_NAME application in TrueNAS."
 train: "community"
 tags:
 - apps
