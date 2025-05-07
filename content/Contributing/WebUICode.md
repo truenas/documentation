@@ -7,7 +7,7 @@ tags:
 ---
 
 TrueNAS is an open-source project, and we welcome contributions from the community.
-We license our code under the GPLv3 license.
+We license our code under the [GPLv3](https://www.gnu.org/licenses/gpl-3.0.en.html) license.
 
 This guide explains how to contribute code updates to the TrueNAS web interface.
 
