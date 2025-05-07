@@ -69,7 +69,7 @@ tags are search tags for internal Docs Hub searches.
 keywords are search tags for the article to assist with Internet searches. -->
 <!--
 ---
-title: "App Name"
+title: "APP_NAME Deployment"
 description: "Description and resources for the TrueNAS community application called App Name."
 train: "community"
 tags:
