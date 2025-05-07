@@ -63,7 +63,7 @@ To submit new content or request changes to existing application documentation:
 
 1. Fork the [`truenas/apps-web`](https://github.com/truenas/apps-web/?tab=readme-ov-file#apps-web) repository.
 2. To edit an existing application article, open the related <file>.md</file> file in the <file>content/catalog/</file> directory of your forked copy. Here, you can make edits and commit them to your PR.
-3. To submit a new tutorial or create application content, add a new `.md` file to the `content/resources/` directory. Follow the [front matter format](#formatting-front-matter) used in existing examples for consistency.
+3. To submit a new tutorial or create application content, add a new <file>.md</file> file to the <file>content/resources/</file> directory. Follow the [front matter format](#formatting-front-matter) used in existing examples for consistency.
 4. If the new tutorial is associated with a catalog application entry, update the related `content/catalog/` `.md` file to link to the new tutorial.
 5. Embed images as needed by saving them in the `static/images/` directory. Follow standard Markdown image referencing procedures in your PR to ensure consistency with other articles.
 6. (Optional) [Embed](#embedding-resources) YouTube videos or TrueNAS Community Forum direct links in the **Resources** section. These will become visibly accessible on the **Resources** section of the app article.
