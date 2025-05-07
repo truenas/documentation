@@ -15,11 +15,11 @@ Check back for updates!
 
 ## How to Use this Template
 
-Click **Edit Page** above or locate the Markdown file at [/Contributing/Applications/AppArticleTemplate.md](https://github.com/truenas/documentation/blob/master/Contributing/Applications/AppArticleTemplate.md) on the documentation [Github Repository](https://github.com/truenas/documentation).
+Click **Edit Page** above or locate the Markdown template at [`content/resources/AppArticleTemplate.md`](https://github.com/truenas/apps-web/blob/main/content/resources/AppArticleTemplate.md) in the [TrueNAS Apps Market Repository](https://github.com/truenas/apps-web).
 
-Copy the template content to an existing [Community Apps]({{< ref "communityapps" >}}) placeholder article (or create a new one if needed for this app) to begin writing.
+Copy the template content into a new Markdown file under `content/resources/` in your fork of the repository to begin writing a tutorial for a TrueNAS application. If the tutorial corresponds to an existing catalog app, update the related `content/catalog/*.md` file to link to your new resource.
 
-Detailed template instructions are commented out of the rendered copy of this template but show in the Markdown file.
+Detailed template instructions are commented in the Markdown source but do not appear in the rendered version of the article.
 
 <!-- BEGIN GENERAL INSTRUCTIONS -->
 <!-- Use this template as a guide when creating a new application tutorial.
@@ -69,15 +69,13 @@ tags are search tags for internal Docs Hub searches.
 keywords are search tags for the article to assist with Internet searches. -->
 <!--
 ---
-title: "AppName"
-description: "Provides installation instructions for the AppName application in TrueNAS."
-weight:
-aliases:
+title: "APP_NAME Deployment"
+description: "Provides installation instructions for the APP_NAME application in TrueNAS."
+related_app: "/catalog/APP_NAME"
+GeekdocShowEdit: true
+geekdocEditPath: "edit/main/content/resources/FILE-NAME.md"
 tags:
 - apps
-keywords:
-- keyword1
-- keyword2
 ---
 -->
 <!-- /END FRONTMATTER -->
@@ -102,117 +100,56 @@ For example:
 *AppName* provides a [Quickstart Setup Guide](https://docs.appName/setup) with step-by-step instructions to help users create a *AppName* node. -->
 
 ## Before You Begin
-<!-- Enter information about the configuration or preparation steps required before beginning the installation process.
-For example, creating a certificate, adding a third-party account if the app requires this before installing it, and creating TrueNAS datasets for the application to use.
+<!-- Briefly list any steps required before installing the app.
+Include things like setting up datasets, creating credentials, certificates, or accounts the app needs. Focus only on what’s essential.
 
-Include names of datasets if required or strongly recommended. For example, a dataset named ***data***, or ***config***, etc.
+Keep it short and app-specific. For example: -->
 
-Specify system resources the app requires to operate properly, such as CPU or memory resources, and/or additional network interface or router configuration.
-
-If the app requires setting up additional resources or credentials, such as a crypto wallet, include this information.
-
-Example of possible points to include in this section you can modify to suit prerequisite for installing the app you are documenting: -->
-
-Prepare TrueNAS before installing the app by:
+Before installing, prepare TrueNAS by completing any needed setup:
 
 {{< include file="/static/includes/apps/BeforeYouBeginStableApps.md" >}}
 {{< include file="/static/includes/apps/BeforeYouBeginRunAsUser.md" >}}
 
-<!-- Use the style="margin-left: 33px" tags for this and other indicated elements to indent them in line with the indented snippet text in the rendered article.
-Replace Markdown tags with html tags as Markdown tags do not render if you use the <div></div> and <p></p> tags. -->
-<!-- replace the image path and name
-<div style="margin-left: 33px">{{< trueimage src="/images/SCALE/Apps/PlexDetailsScreen.png" alt="Plex App Details Screen" id="Plex App Details Screen" >}}</div>
--->
-
-{{< include file="/static/includes/apps/BeforeYouBeginAddAppDatasets.md" >}}
-
-<!-- Include this paragraph to detail the datasets for host path storage volumes. Change the names of the datasets to suit what is expected for the app.
-NOTE: Include the HTML styling to align the indented paragraph with the bullet list in the snippet above. If only indenting one line or paragraph you can use the <p>paragraph</p> tabs with the indent information. If adding several paragraphs, and image code or expand section use the <div>sectionIndent</div> with the indent information -->
-  <p style="margin-left: 33px">Create a parent dataset, such as <i>appName</i>, and then the storage datasets (<b><i>config</i></b> and <b><i>data</i></b>) under it.
-  Select <b>apps</b> as the <b>Dataset Preset</b> for these datasets. You can modify the dataset ACLs at the time of creation, or modify them later when adding them in the app.</p>
+<!-- Dataset setup example -->
+<p style="margin-left: 33px">Create a parent dataset like <i>appName</i>, then add <b><i>config</i></b> and <b><i>data</i></b> datasets beneath it.
+Use the <b>apps</b> preset. Adjust ACLs now or when adding the dataset in the app.</p>
 
 <div style="margin-left: 33px">{{< include file="/static/includes/apps/BeforeYouBeginAddAppDatasetsProcedure.md" >}}</div>
 
-<!-- if the app uses postgres storage volumes, include this content
-<div style="margin-left: 33px">You can modify dataset ACLs at the time of creation, or later in the app.
-  Adding ACL permissions in the installation wizard is the recommended method.
+<!-- Add this only if needed -->
+{{< include file="/static/includes/apps/BeforeYouBeginAddAppCertificate.md" >}}
 
-  {{< include file="/static/includes/apps/InstallWizardPostgresStorageAutomaticPermissions.md" >}}</div>
- -->
- 
-<!-- Include this snippet and a modified version of the indented text if the app requires setting up a certificate.
-If the Install wizard does not include the certificate field, do not include this snippet or content. -->
+<p style="margin-left: 33px">Certificates are optional. You can create a self-signed certificate or import one if your app needs HTTPS.</p>
 
-{{< include file="/static/includes/apps/BeforeYouBeginAddAppCertificate.md" >}} 
-
-  <p style="margin-left: 33px">Adding a certificate is optional but if you want to use a certificate for this application, either create a new self-signed CA and certificate or import an existing CA and create the certificate for Nextcloud. A certificate is not required to deploy the application.</p>
-
-<!-- Include this snippet if the app requires setting up a new TrueNAS user account before installing the app in TrueNAS, if not remove the snippet. -->
 {{< include file="/static/includes/apps/BeforeYouBeginAddNewAppUser.md" >}}
 
-<!-- Add any additional prerequisites users should complete before installing the app. -->
+<!-- Add any extra prerequisites specific to your app here -->
 
 ## Installing the Application
 
-{{< hint info >}}
-This basic procedure covers the required *appName* app settings.
-For optional settings, see [Understanding App Installation Wizard Settings](#understanding-app-installation-wizard-settings).
-{{< /hint >}}
+Use this procedure to install the *AppName* application on TrueNAS.
 
-{{< include file="static/includes/apps/MultipleAppInstancesAndNaming.md" >}}
+1. Go to **Apps** and click **Launch Docker Image**, or locate *AppName* in the catalog and click **Install**.
+2. Enter an application name and select a version, if applicable.
 
-{{< include file="/static/includes/apps/LocateAndOpenInstallWizard.md" >}}
-<!-- Change the name of the image in the path below to include the screenshot, if including the image of the Install AppName screen showing the Application Name section and the wizard ToC on the right side of the screen:
-{{< trueimage src="/images/SCALE/Apps/InstallAppNameScreen.png" alt="Install *AppName* Screen" id="Install *AppName* Screen" >}} -->
+### Configure Application Settings
 
-{{< include file="/static/includes/apps/InstallWizardAppNameAndVersion.md" >}}
+- **App Configuration**: Enter required environment variables. Leave defaults unless the application requires specific changes.
+- **Network Configuration**: Use default settings unless the application requires custom networking.
+- **Storage Configuration**:
+  - Set **Type** to **Host Path (Path that already exists on the system)**.
+  - Browse to and select the appropriate dataset, such as `data` or `config`.
+  - Enable ACL and assign full control to user `0`.
+  - Repeat for each required volume.
+  - For Postgres storage, do not enable ACL. Select **Automatic Permissions** instead.
 
-<!-- Enter the required steps/instructions to configure the app. You can use a numbered procedure or paragraph conversational style procedure to convey the instructions the reader needs to follow. 
-Enter settings in the order the reader encounters them or the order settings should be entered.
-If following the default Install Wizard, enter the required App Configuration, Network Configuration, Storage Configuration, and Resource Configuration steps. -->
-Enter the ***App* Configuration** settings.
-<!--Only describe the required app configuration settings. Refer to the [*App* Configuration](#appname-configuration-settings) section below for more information.  -->
-The TrueNAS app is configured with all the required environment variables, but if you want to further customize the container, click **Add** to the right of **Additional Environment Variables** for each to enter the variable(s) and values(s).
-<!-- example text for app configuration sections: 
-Accept the default values in both **User and Group Configuration** and **Network Configuration**.
-(Optional) If you created a new user to administer apps, enter that user ID in the user and group fields.
-See [User and Group Configuration](#user-and-group-configuration) and [Network Configuration](#network-configuration) for more details.
+### Configure Resource Settings
 
-Do not select **Host Network** if it is not selected. If checkmarked, select to clear it.-->
+Use the default values for CPU and memory. Enable GPU if the application uses GPU resources.
 
-Add your **Storage Configuration** settings.
+Click **Install** to begin deployment. The application enters the **Deploying** state and changes to **Running** when deployment completes.
 
-Set **Type** to **Host Path (Path that already exists on the system)** for ***Data Storage***.
-Select **Enable ACL**, and then enter or browse to select the ***data*** dataset to populate the **Host Path** field.
-<!-- replace image with the path to the image you want to add:
-{{< trueimage src="/images/SCALE/Apps/InstallPlexStorageConfigDataACLandACE.png" alt="Add Plex Data Storage" id="Add Plex Data Storage" >}}-->
-
-Click **Add** to the right of **ACL Entries** for each user or group entry you want to add.
-Set **ID Type** to **Entry is for a USER**, enter the ***0*** in **ID**, and give it full control permissions.
-For example, add the ***0*** user, and give each **FULL_CONTROL Access**.
-<!-- if there are more than one user IDs, include "Click **Add** again to enter the user information for the next user.">
-
-Select **Force Flag** to allow upgrading the app when the dataset has existing data.
-
-Repeat the storage steps above each additional storage volume.
-
-To configure the ***appName* Postgres Data Storage** host path, do not select **Enable ACL**!
-Set **Type** to **Host Path (Path that already exists on the system)**, then enter or browse to select the **postgres_data** dataset to populate the **Host Path** field.
-Select **Automatic Permissions**. This does not show if you selected **Edit ACL**.
-
-{{< trueimage src="/images/SCALE/Apps/InstallWizardPostgresDatasetAutomaticPermissions.png" alt="Postgres Storage Automatic Permissions" id="Postgres Storage Automatic Permissions" >}}
-
-See [Storage Configuration Settings](#storage-configuration-settings) below for more information.
-
-Accept the defaults in **Resources Configuration**, and select the GPU option if applicable.
-
-Click **Install**. A progress dialog displays before switching to the **Installed** applications screen.
-The **Installed** screen displays with the **nextcloud** app in the **Deploying** state. Status changes to **Running** when ready to use.
-
-Click **Web Portal** on the **Application Info** widget to open the *AppName* web portal sign-in screen.
-<!-- replace image with the path to the image you want to add 
-{{< trueimage src="/images/SCALE/Apps/NextcloudSignInScreen.png" alt="Nextcloud Sign In Screen" id="Nextcloud Sign In Screen" >}}
--->
+Access the application by clicking **Web Portal** in the **Application Info** widget.
 
 ## Understanding App Installation Wizard Settings
 
@@ -238,6 +175,7 @@ If you do not have an existing account, enter the name and password you want to 
 Refer to [*AppName* documentation](URL for environment variables documentation provided in the app provider) for more information on environment variables.
 
 <!-- Not all apps include the following section. If it does, include the following, customized for the app requirements. -->
+
 ### User and Group Configuration <!-- Optional section, include only if the Install Wizard has this section -->
 <!-- replace the image path and name:
 {{< trueimage src="/images/SCALE/Apps/InstallPlexUserAndGroupConfig.png" alt="Plex User and Group Configuration Settings" id="Plex User and Group Configuration Settings" >}} -->
@@ -254,36 +192,34 @@ The default web port for *AppName* is ***30027***.
 {{< include file="/static/includes/apps/InstallWizardCertificateSettings.md" >}}
 
 ### Storage Configuration
-TrueNAS provides two options for storage volumes: ixVolumes and host paths. 
+TrueNAS provides two options for storage volumes: ixVolumes and host paths.  
 {{< include file="/static/includes/apps/InstallAppsStorageConfig.md" >}}
-<!-- replace this content with what applies to the app, if the app requires creating specific datasets, and if the app uses postgres dataset storage that might require special handling.
 
-*AppName* needs *three* datasets for host path storage volume configurations:
-* ***config*** to use as the ***Configuration*** storage volume.
-* ***data*** to use as the ***User Data*** storage volume.
-* ***postgresdata*** to use as the ***Postgres Data*** storage volume.
+*AppName* uses three datasets for host path storage volume configurations:
 
-If you nest these datasets under a parent dataset named *nextcloud*, you can create this nextcloud dataset with the **Dataset Preset** set to **Generic** or **Apps**.
-You can configure the ACL for this dataset from the **Permissions** widget on the **Datasets** screen.
-If the app has postgres storage volumes, the process is easier and less prone to permissions errors if you use the **Automatic Permissions** option in the postgres storage volume section of the install Wizard. 
+* **config** – for the **Configuration** storage volume  
+* **data** – for the **User Data** storage volume  
+* **postgres_data** – for the **Postgres Data** storage volume
 
-See the instructions in the [Before You Begin](#before-you-begin) section for more on creating both the parent and postgres_data datasets and configuring the ACL permissions for each.-->
+Create a parent dataset named *nextcloud* and nest these datasets underneath it. Set the **Dataset Preset** to **Apps**.  
+Configure the ACL for this dataset from the **Permissions** widget on the **Datasets** screen.
+
+For apps with Postgres storage volumes, use the **Automatic Permissions** option in the **Postgres Data** storage section of the install wizard.  
+This approach reduces the risk of permission errors.
+
+See the [Before You Begin](#before-you-begin) section for more information about creating datasets and setting ACL permissions.
+
 You can add extra storage volumes at the time of installation or edit the application after it deploys. Stop the app before editing settings.
 
-<!-- replace the snippet with the text in the snippet if the additional storage options include temporary directory options or other storage choices. We might need to create a new snippet for those instances if they are the same in other app install wizards. -->
 {{< include file="/static/includes/apps/InstallAppsStorageConfig2.md" >}}
 
 #### Setting Dataset ACL Permissions
-You can configure ACL permissions for the required dataset in the **Install *App*** wizard, or from the **Datasets** screen any time after adding the datasets.
+You can configure ACL permissions for the required dataset in the **Install *App*** wizard or later from the **Datasets** screen.
 
 {{< include file="/static/includes/apps/InstallWizardStorageACLConfig.md" >}}
-<!-- replace the UIDs in the section below with the user IDs or run as user ID. Include any other app-specific user information. This might become a snippet. -->
-{{< expand "Adding ACL Permissions from the Datasets Screen" "v">}}
-First, select the dataset row, then scroll down to the **Permissions** widget, and then click **Edit** to open the **Edit ACL** screen.
-Change the **@owner** and **@group** values from **root** to the administrative user for your TrueNAS system, and click apply for each.
-Next, add an ACL entry for the run-as user.
-For *Netdata*, the run-as users is **0** for **root**. Add a user entry for this user.
-Save the ACL before leaving the screen.
+
+{{< expand "Adding ACL Permissions from the Datasets Screen" "v" >}}
+Select the dataset row, scroll to the **Permissions** widget, and click **Edit**. Change the **@owner** and **@group** values from **root** to the administrative user, then click apply for each. Add an ACL entry for the run-as user. For *Netdata*, the run-as user is **0** for **root**. Save the ACL before leaving the screen.
 {{< /expand >}}
 
 #### Mounting an SMB Share Storage Volume
