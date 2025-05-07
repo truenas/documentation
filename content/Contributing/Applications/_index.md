@@ -53,26 +53,39 @@ Include the relevant files in the PR, including a ReadMe.txt file with any insta
 
 ## Contributing to TrueNAS Application Documentation
 
-Community members can submit change requests or add new tutorials to the **Truenas Apps > Community Apps** tutorials section of the Documentation Hub.
+Community members can now submit content directly to the [TrueNAS Apps Market](https://apps.truenas.com) site repository.
 
-For more information on submitting change requests, forking repos, and submitting PRs, see [Updating Content]({{< ref "/Contributing/Documentation/ContentUpdate" >}}).
+For more information about submitting a pull request on GitHub, see the [TrueNAS Contributor Guide](https://www.truenas.com/docs/contributing/applications/).
 
-### Submitting New Tutorial Articles
+### Proposing Content Changes
 
-When submitting new tutorials or requesting changes to existing TrueNAS Documentation Hub application tutorials:
-  
-1. Create the PR against a forked copy of the [TrueNAS Documentation Hub public repository](https://github.com/truenas/documentation/tree/master).
-  
-2. Open the existing article file in the <file>/TrueNASApps/CommunityApps</file> directory of your local forked repository.
+To submit new content or request changes to existing application documentation:
 
-3. Add the new tutorial to the <file>CommunityApps</file> folder in your local copy of the repository if submitting a new tutorial.
+1. Fork the [`truenas/apps-web`](https://github.com/truenas/apps-web/?tab=readme-ov-file#apps-web) repository.
+2. To edit an existing application article, open the related <file>.md</file> file in the <file>content/catalog/</file> directory of your forked copy. Here, you can make edits and commit them to your PR.
+3. To submit a new tutorial or create application content, add a new <file>.md</file> file to the <file>content/resources/</file> directory. Follow the [front matter format](#formatting-front-matter) used in existing examples for consistency.
+4. Update the link related to the <file>content/catalog/</file> path and .md</file> file to the new tutorial if the new tutorial is associated with a catalog application entry,
+5. Embed images as needed by saving them in the <file>static/images/</file> directory. Follow standard Markdown image referencing procedures in your PR to ensure consistency with other articles.
+6. (Optional) [Embed](#embedding-resources) YouTube videos or TrueNAS Community Forum direct links in the **Resources** section. These become visibly accessible on the **Resources** section of the app article.
+7. Submit a PR against the main branch of the repository.
 
-4. Use the text editor of your choice to make changes to the [application tutorial template]({{< ref "/Contributing/Applications/AppArticleTemplate" >}}) as the basis for your new article.
-  Article content is written in Commonmark Markdown.
+From the **Resources** section of an existing article page, contributors can edit pages directly from the [TrueNAS Apps](https://apps.truenas.com) website using the **Edit page** button in the upper right corner. Some articles related to Enterprise applications might not offer this option.
 
-5. (Optional) Save images in the **/documentation/static/images/scale/apps** folder of your local branch.
+Browse the <file> `content/` </file> and <file> `static/` </file> folders in the repository for examples of complete application entries and resource tutorials.
 
-6. Submit the PR against the **Master** branch.
+### Formatting Front Matter
+
+To correctly format the front matter of a new <file> .md </file> file, use the following example as a guide:
+
+{{< trueimage src="/images/Contribute/AppsFrontMatterExample.png" alt="Front Matter Example" id="Front Matter Example" >}}
+
+Including a title, short description, train, and tag(s) ensures consistency and viability across all apps content.
+
+### Embedding Resources
+
+You can embed outside resources, such as YouTube videos, within the **Resources** section of an app page. To do this, use shortcode containing the resource ID from the original source.
+
+For example, to embed a YouTube video located at *https&#8203;://www.youtube.com&#8203;/watch?v=abcd_1234*, enter the shortcode *&#123;&#123; youtube abcd_1234 &#125;&#125;*. In this scenario, **youtube** is the shortcode name, and **abcd_1234** is the original resource ID from the YouTube video. 
 
 ### Using the App Tutorial Template
 
