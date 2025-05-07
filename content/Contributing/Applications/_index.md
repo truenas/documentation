@@ -69,13 +69,13 @@ To submit new content or request changes to existing application documentation:
 6. (Optional) [Embed](#embedding-resources) YouTube videos or TrueNAS Community Forum direct links in the **Resources** section. These become visibly accessible on the **Resources** section of the app article.
 7. Submit a PR against the main branch of the repository.
 
-From the **Resources** section of an existing article, contributors can edit pages directly from the [TrueNAS Apps](https://apps.truenas.com) website using the **Edit page** button in the upper right corner. Some articles related to Enterprise applications might not offer this option.
+From the **Resources** section of an existing article page, contributors can edit pages directly from the [TrueNAS Apps](https://apps.truenas.com) website using the **Edit page** button in the upper right corner. Some articles related to Enterprise applications might not offer this option.
 
-Browse the `content/` and `static/` folders in the repository for examples of complete application entries and resource tutorials.
+Browse the <file> `content/` </file> and <file> `static/` </file> folders in the repository for examples of complete application entries and resource tutorials.
 
 ### Formatting Front Matter
 
-To correctly format the front matter of a new `.md` file, use the following example as a guide:
+To correctly format the front matter of a new <file> .md </file> file, use the following example as a guide:
 
 {{< trueimage src="/images/Contribute/AppsFrontMatterExample.png" alt="Front Matter Example" id="Front Matter Example" >}}
 
@@ -85,7 +85,7 @@ Including a title, short description, train, and tag(s) ensures consistency and 
 
 You can embed outside resources, such as YouTube videos, within the **Resources** section of an app page. To do this, use shortcode containing the resource ID from the original source.
 
-For example, to embed a YouTube video located at https&#8203;://www.youtube.com&#8203;/watch?v=abcd_1234, enter the shortcode &#123;&#123; youtube abcd_1234 &#125;&#125;. In this scenario, **youtube** is the shortcode name, and **abcd_1234** is the original resource ID from the YouTube video. 
+For example, to embed a YouTube video located at *https&#8203;://www.youtube.com&#8203;/watch?v=abcd_1234*, enter the shortcode *&#123;&#123; youtube abcd_1234 &#125;&#125;*. In this scenario, **youtube** is the shortcode name, and **abcd_1234** is the original resource ID from the YouTube video. 
 
 ### Using the App Tutorial Template
 

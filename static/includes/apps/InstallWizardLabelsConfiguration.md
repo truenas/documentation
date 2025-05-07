@@ -13,7 +13,7 @@ Select the target container from the **Containers** dropdown. Apps with multiple
 Click **Add** again to configure additional labels.
 
 ### Tips for Labels:
-- Use reverse-DNS notation to avoid conflicts, e.g., *com.example.owner=team-a*.
+- Docker [recommends](https://docs.docker.com/reference/compose-file/services/#labels) using reverse-DNS notation to prevent conflicts with other objects.
 - Apply a consistent naming convention, e.g., *com.example.env=production*.
 - Group related resources using labels, e.g., *com.example.role=db*.
 - Combine labels for more control, e.g., *com.example.env=prod* and *com.example.tier=frontend* for service differentiation.
