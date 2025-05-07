@@ -102,7 +102,7 @@ After TrueNAS restarts, to enable GUI accessibility, you might need to use the [
 After gaining access to the UI, sign in with the admin user credentials created during installation.
 
 Go to **System > General Settings** and [upload the system config file](/scale/scaletutorials/systemsettings/general/managesysconfigscale/#uploading-the-file).
-This migrates your settings, imports your pools, shares, etc.
+Uploading a previously-saved system config file migrates your settings, including accounts, directory services, networking, services, shares, storage configuration, system setting, data protection tasks, and more.
 The system restarts to apply the uploaded configuration.
 
 After TrueNAS restarts, sign in with the root user credentials from the previous configuration.
@@ -117,6 +117,8 @@ See [Component Naming]({{< ref "ComponentNaming" >}}) for more information.
 {{< /hint >}}
 
 Use the information gathered during your preparation to migrate to restore settings, tasks, VMs configured using the GRUB bootloader, credentials, etc. not present after uploading the config file.
+
+{{< include file="/static/includes/WhyUploadConfig.md" >}}
 
 ## Recreating the Admin User Account
 

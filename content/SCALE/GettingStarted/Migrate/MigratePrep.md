@@ -58,6 +58,8 @@ Please contact Support for assistance!
 
    <input type="checkbox"> Usernames beginning with (0-9) - Review local user account names and rename or replace these with a letter or underscore before migrating.
 
+   <input type="checkbox"> User-created accounts with UID or GID less than 1000 - The UID/GID range below 1000 are reserved for built-in system accounts. User-created accounts in this ID range can cause conflicts and undefined behavior after migration, including duplicate accounts with the same ID. Recreate any non-builtin accounts in this range to assign an ID of 1000 or higher, then delete the previous account and reconfigure ACLs as needed before migrating.
+
    <input type="checkbox"> Tunables - Linux-based TrueNAS (22.12 or newer) does not use **Tunables** in the same way. Copy script configurations to add on the **System > Advanced Settings** screen, using the **Sysctl** widget, after migrating.
 
    <input type="checkbox"> Init/shutdown scripts - If using init/shutdown scripts, copy them or take a screenshot to add them after migrating.
@@ -70,7 +72,6 @@ Please contact Support for assistance!
 
    <input type="checkbox"> Data protection tasks - Write down or take screenshots of replication, periodic snapshots, cloud sync, or other task settings to reconfigure these after migrating.
 
-   
    Community users with iSCSI deployments can migrate their systems without assistance. Note, unlike FreeBSD systems, Linux Debian systems require at least one LUN set to zero.
    iSCSI portals in Linux Debian-based systems are defined globally instead of per port.
 
