@@ -66,8 +66,8 @@ To submit new content or request changes to existing application documentation:
 3. To submit a new tutorial or create application content, add a new <file>.md</file> file to the <file>content/resources/</file> directory. Follow the [front matter format](#formatting-front-matter) used in existing examples for consistency.
 4. Update the link related to the <file>content/catalog/</file> path and .md</file> file to the new tutorial if the new tutorial is associated with a catalog application entry,
 5. Embed images as needed by saving them in the <file>static/images/</file> directory. Follow standard Markdown image referencing procedures in your PR to ensure consistency with other articles.
-6. (Optional) [Embed](#embedding-resources) YouTube videos or TrueNAS Community Forum direct links in the **Resources** section. These will become visibly accessible on the **Resources** section of the app article.
-7. Submit a PR against the `main` branch of the repository.
+6. (Optional) [Embed](#embedding-resources) YouTube videos or TrueNAS Community Forum direct links in the **Resources** section. These become visibly accessible on the **Resources** section of the app article.
+7. Submit a PR against the main branch of the repository.
 
 From the **Resources** section of an existing article, contributors can edit pages directly from the [TrueNAS Apps](https://apps.truenas.com) website using the **Edit page** button in the upper right corner. Some articles related to Enterprise applications might not offer this option.
 
