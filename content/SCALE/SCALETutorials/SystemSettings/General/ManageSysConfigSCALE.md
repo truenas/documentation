@@ -14,9 +14,10 @@ keywords:
 - hybrid storage
 ---
 
-TrueNAS allows users to manage the system configuration by uploading or downloading configurations, or by resetting the system to the default configuration. 
+TrueNAS allows users to manage the system configuration by uploading or downloading configurations, or by resetting the system to the default configuration.
 
 ## System Configuration Options
+
 The **Manage Configuration** option on the **System > General Settings** screen provides three options:
 
 * **Download File** that downloads your system configuration settings to a file on your system.
@@ -24,11 +25,15 @@ The **Manage Configuration** option on the **System > General Settings** screen 
 * **Reset to Defaults** that resets system configuration settings back to factory settings.
 
 ### Downloading the File
+
 The **Download File** option downloads your TrueNAS current configuration to the local machine.
+
+A system config file is a database file containing your settings, including accounts, directory services, networking, services, shares, storage configuration, system setting, data protection tasks, and more.
 
 {{< include file="/static/includes/DownloadSystemConfigFileSCALE.md" >}}
 
 ### Uploading the File
+
 The **Upload File** option gives users the ability to replace the current system configuration with any previously saved TrueNAS configuration file.
 
 {{< hint type=warning >}}
@@ -44,6 +49,8 @@ If you do not save the secret seed downloading the system config file, various s
 Without the secret seed, encrypted fields are set to empty values. For example, SMB via local accounts and apps.
 Always select the option to save the secret seed when downloading the system config file!
 {{< /hint >}}
+
+{{< include file="/static/includes/WhyUploadConfig.md" >}}
 
 ### Resetting to Defaults
 
@@ -63,6 +70,7 @@ The **Reset to Defaults** option resets the system configuration to factory sett
 After the configuration resets, the system restarts and users must set a new login password.
 
 ### Backing Up the Config File
+
 TrueNAS does not automatically back up the system configuration file to the system dataset.
 
 Users who want to schedule an automatic backup of the system configuration file should:
