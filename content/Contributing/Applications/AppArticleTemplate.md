@@ -71,7 +71,9 @@ keywords are search tags for the article to assist with Internet searches. -->
 ---
 title: "APP_NAME Deployment"
 description: "Provides installation instructions for the APP_NAME application in TrueNAS."
-train: "community"
+related_app: "/catalog/APP_NAME"
+GeekdocShowEdit: true
+geekdocEditPath: "edit/main/content/resources/FILE-NAME.md"
 tags:
 - apps
 ---
