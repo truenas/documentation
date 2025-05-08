@@ -100,7 +100,7 @@ After TrueNAS reboots, you might need to [use the Console Setup menu to configur
 After gaining access to the UI, sign in with the admin user credentials created during installation.
 
 Go to **System > General Settings** and [upload the system config file](/SCALETutorials/systemsettings/general/managesysconfigscale/#uploading-the-file).
-This migrates your settings and imports your pools, shares, etc.
+Uploading a previously-saved system config file migrates your settings and including accounts, directory services, networking, services, shares, storage configuration, system setting, data protection tasks, and more.
 The system reboots to apply the uploaded configuration.
 
 After TrueNAS reboots, sign in with the root user credentials from the previous configuration.
@@ -115,6 +115,8 @@ See [Component Naming]({{< ref "ComponentNaming" >}}) for more information.
 {{< /hint >}}
 
 Use the information gathered during your preparation to migrate to restore settings, tasks, VMs configured using the GRUB bootloader, credentials, etc. not present after uploading the config file.
+
+{{< include file="/static/includes/WhyUploadConfig.md" >}}
 
 ## Recreating the Admin User Account
 
