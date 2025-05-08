@@ -1,14 +1,13 @@
 &NewLine;
 
-Some TrueNAS apps have predefined run-as user and group IDs. These assignments vary based on the app train and other variables such as installing but not running as the root user.
+Some TrueNAS applications use predefined user and group IDs. These IDs vary based on the app train and whether the application runs as root.
 
-Default user and group IDs are:
-* **473** for the MinIO stable train app.
-* **568** (**apps** user), used in some **community** apps and all apps in the **enterprise** train
-* **999** (**netdata** user), used for all postgres storage volumes
-* **0** (**root** user).
+Common default IDs include:
+- **473** for MinIO (stable train)
+- **568** for community and enterprise train apps (apps user)
+- **999** for Postgres storage volumes (netdata user)
+- **0** for root
 
-Accept the default user and group ID in the **User and Group Configuration** section or enter the user ID for a new TrueNAS user created to serve as the administrator for this app.
+Use the default ID in the **User and Group Configuration** section, or enter the UID of a TrueNAS user created for this application.
 
-Create any app administrator user before installing the application, and take note of the UID.
-Enter this user ID when configuring the user for the app and as the user when setting up storage volume permissions.
+Create any custom app administrator user before installing the application. Use the same UID during user configuration and storage permission setup.
