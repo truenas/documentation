@@ -22,22 +22,25 @@ You should also:
 * [Create a boot environment](#create-a-boot-environment) to use as a restore point.
 * [Backup Stored Data](#backing-up-truenas-storage-data)
 
-TrueNAS provides several options to set up a data storage backup method including using either a cloud sync provider and scheduled task, or configuring a replication task.
+TrueNAS provides several options to set up a data storage backup method, including using a cloud sync provider and a scheduled task or configuring a replication task.
 
 ## Backing Up the System Configuration
-The first thing you should do after you set up TrueNAS is back up your system configuration by downloading the system configuration file.
+After setting up TrueNAS, first, back up your system configuration by downloading the system configuration file.
 
 {{< include file="/static/includes/DownloadSystemConfigFileSCALE.md" >}}
 
 ### Downloading the Initial System Debug File
 
-After saving the system configuration, go to **System > Advanced Settings** and click **Save Debug**. After the download completes, save this initial debug file with your system configuration file.
+After saving the system configuration, save an initial system debug file by going to **System > Advanced Settings** and clicking **Save Debug**. After the download completes, save this initial debug file with your system configuration file.
+
+Why download the initial system debug file?
+Downloading and storing the initial system debug after completing the system configuration is a recommended best practice to have a point of reference for your system if a problem arises. Save a debug file after a major system upgrade or reconfiguration to provide Support or Engineering if requested.
 
 ## Create a Boot Environment
 
 After installing and completing your system configuration, [create a boot environment]({{< ref "ManageBootEnvironSCALE" >}}) to use as a restore point.
 
-If an issue occurs where you lose access to the TrueNAS UI, you can establish an SSH session and restore it from the boot environment.
+If you lose access to the TrueNAS UI, you can establish an SSH session and restore it from the boot environment.
 You can clone the boot environment listed after the **initial-install** environment and rename the clone to something you recognize, such as the release number with date and time.
 
 ## Backing Up TrueNAS Storage Data
@@ -49,9 +52,9 @@ TrueNAS has several options that allow you to back up data:
 * [Replication tasks](#using-replication)
 * [Rsync tasks]({{< ref "RsyncTasksSCALE" >}})
 
-Both TrueCloud backup and cloud sync tasks require setting up a cloud service provider account and adding the credentials in TrueNAS before configuring and scheduling the tasks.
+TrueCloud backup and cloud sync tasks require setting up a cloud service provider account and adding the credentials in TrueNAS before configuring and scheduling the tasks.
 
-Replication requires setting up SSH credentials before configuring and scheduling the task. Rsync tasks can be configured with SSH credentials or set up to use a module.
+Replication requires setting up SSH credentials before configuring and scheduling the task. Rsync tasks can be configured with SSH credentials or set to use a module.
 
 ### Using TrueCloud Backup or Cloud Sync
 
@@ -69,39 +72,39 @@ See [Managing TrueCloud Backup Tasks]({{< ref "TrueCloudTasks" >}}) for a full t
 See [Adding Cloud Credentials]({{< ref "/SCALE/SCALETutorials/Credentials/BackupCredentials/AddCloudCredentials" >}}) for information on connecting TrueNAS to other cloud storage providers.
 
 ### Using Replication
-Replication is the process of taking a moment-in-time snapshot of data and then copying that snapshot to another location.
+Replication takes a moment-in-time snapshot of data and then copies that snapshot to another location.
 Snapshot technology typically uses less storage than full file backups and has more management and snapshot storage options.
 {{< expand "Setting Up a Simple Replication Task" "v" >}}
 To create a simple replication task with the TrueNAS replication wizard:
 
 Replication needs an existing [periodic snapshot task]({{< ref "PeriodicSnapshotTasksSCALE" >}})** to run before the replication task runs or the replication task fails.
-You can define this before configuring the replication task or select the replication wizard **Replicate Custom Snapshots** option to have TrueNAS automatically create the task before running the replication task.
+You can define a periodic snapshot before manually configuring the replication task, or let the system create the snapshot task by selecting the replication wizard **Replicate Custom Snapshots** option. When using the wizard, TrueNAS automatically creates the periodic snapshot task and then runs the replication task.
 
-1. Create a periodic snapshot task using the or use the replication wizard **Replicate Custom Snapshots** replication option.
-   If scheduling a task, TrueNAS creates the periodic snapshot task when it runs the replication task according to the scheduled time.
+1. Create a periodic snapshot task using the replication wizard **Replicate Custom Snapshots** replication option.
+ If scheduling a task, TrueNAS creates the periodic snapshot task when it runs the replication task according to the scheduled time.
 
 2. Create the replication task.
 
-   Go to **Data Protection**, and click **Add** on the **Replication Tasks** widget to open the **Replication Task Wizard** configuration screen.
+ Go to **Data Protection**, and click **Add** on the **Replication Tasks** widget to open the **Replication Task Wizard** configuration screen.
 
-   Select both the **Source Location** and **Destination Location** using the dropdown list options.
-   You can back up your data on the same system or a different system.
-   If you select **A different system** you must have an SSH connection. Have your destination and source information ready.
+ Select the **Source Location** and **Destination Location** using the dropdown list options.
+You can back up your data on the same or a different system.
+ If selecting **A different system**, you must have an SSH connection to that system. Have your destination and source information ready.
 
-   Set the **Source** and **Destination** paths, either enter the full path to the data you want to back up or click on the caret <i class="fa fa-caret-right" aria-hidden="true"></i> to the left of **mnt** and at the pool and dataset levels to expand the options. Click on the dataset or directory to narrow the backup down to that level.
+Set the **Source** and **Destination** paths, either enter the full path to the data you want to back up or click on the caret <i class="fa fa-caret-right" aria-hidden="true"></i> to the left of **mnt** and at the pool and dataset levels to expand the options. Click on the dataset or directory to narrow the backup down to that level.
 
-   The task name populates from the values in **Source** and **Destination**.
+ The task name populates from the values in **Source** and **Destination**.
 
-   Select **Replicate Custom Snapshots**.
+ Select **Replicate Custom Snapshots**.
 
-   Click **Next**.
+ Click **Next**.
 
 3. Define when to run this task.
 
-   Select the radio button for **Run On a Schedule** and select the schedule to use. Select **Run Once** to run the task manually.
-   If using this option you must have a periodic snapshot task already defined. If running on a schedule, you do not need to pre-defined a snapshot task.
+ Select the radio button for **Run On a Schedule** and select the schedule you want to use. Select **Run Once** to run the task manually.
+When using this option, you must have defined a periodic snapshot task. If running on a schedule, you do not need to pre-defined a snapshot task.
 
-   Select the radio button to specify the destination snapshot lifetime.
+ Select the radio button to specify the destination snapshot lifetime.
 
 4. Click **START REPLICATION**. The task appears on the **Replication Tasks** widget with the status **PENDING**.
 {{< /expand >}}

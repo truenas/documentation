@@ -4,9 +4,8 @@
 {{< include file="/static/includes/ConfigRestrictions.md" >}}
 {{< /hint >}}
 
-When you download the configuration (config) file, you have the option to include the secret seed in the config file.
-Select **Export Password Secret Seed** to download this file.
-Downloading the config file and the secret seed file allows you to restore the system to a different operating system device where the secret seed is not already present.
+When downloading the configuration (config) file, select the **Export Password Secret Seed** option to include the secret seed in the config file.
+Downloading the config file allows you to restore the system to a different operating system device where the secret seed is not already present.
 
 {{< include file="/static/includes/SecretSeed.md" >}}
 
