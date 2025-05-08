@@ -27,9 +27,9 @@ You can assign yourself to any issue in the queue, even if a TrueNAS team member
 {{< hint type=note >}}
 If you discover a new bug in TrueNAS, please [create a Jira ticket](/contributing/issuereporting/jiraissuereporting) before attempting a fix.
 
-If your proposed fix isn't on the Help Wanted list, communicate with the team on the Jira ticket before starting work.
+If your proposed fix is not on the Help Wanted list, communicate with the team on the Jira ticket before starting work.
 You can ask for the issue to be added to the Help Wanted list, share your ideas, and confirm that the fix aligns with current plans.
-This helps avoid working on code that's scheduled for replacement or significant changes.
+This helps avoid working on code that is scheduled for replacement or significant changes.
 {{< /hint >}}
 
 ### Update the Code
@@ -48,7 +48,7 @@ When working on a task from the Help Wanted list:
 - Test your fix.
 
 {{< hint type=tip >}}
-If a fix requires significant refactoring beyond the scope of the issue, it likely doesn't belong on the Help Wanted list—or may not be the right solution.
+If a fix requires significant refactoring beyond the scope of the issue, it likely does not belong on the Help Wanted list—or might not be the right solution.
 {{< /hint >}}
 
 ### Add Tests if Necessary
@@ -60,7 +60,7 @@ Our CI (Continuous Integration) system enforces a minimum coverage requirement.
 
 As a rule of thumb, cover all happy paths (expected successful outcomes) in the code you modify.
 
-We don't suggest running all tests locally, as it takes too long.
+We do not suggest running all tests locally, as it takes too long.
 Instead, use these alternatives:
 
 - Run a specific test suite using your IDE or `yarn test <src/app/path to the test file>`.
