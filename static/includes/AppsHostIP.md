@@ -76,7 +76,7 @@ All applications added to the TrueNAS Apps catalog after December 24, 2024 suppo
 * Umami  
 * Unmanic  
 * UrBackup  
-* Versitygw  
+* Versity Gateway  
 * Warracker  
 * Windmill  
 * Wyze Bridge  
