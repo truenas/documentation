@@ -85,8 +85,7 @@ For example, a system with 18,446,744,073,709,551,615 bytes reports the number a
 
 ### Memory Graphs
 
-Shows both the **Physical memory utilization** and **Swap utilization** graphs.
-Memory graphs show memory usage and swap graphs show the amount of free and used swap space.
+Shows the **Physical memory available** graph with the amount of free memory available based on current memory usage.
 
 {{< trueimage src="/images/SCALE/Reporting/MemoryReportingPhysSwap.png" alt="Memory Reporting" id="Memory Reporting" >}}
 
@@ -99,14 +98,13 @@ Network graphs report received and transmitted traffic in megabytes per second f
 
 ### System Graphs
 
-Shows both the **Processes** and **Uptime** graphs.
-System graphs show the number of processes grouped by state, sleeping, running, stopped, zombies and blocked, and system uptime.
+Shows the **System Uptime** graph.
 
 {{< trueimage src="/images/SCALE/Reporting/SystemReportingProcessUptime.png" alt="System Reporting" id="System Reporting" >}}
 
 ### UPS Graphs
 
-Shows the UPS charging percentage, UPS runtime, UPS voltage for battery, input, and output, UPS input current, frequency, and input load, and UPS temperature.
+Shows the UPS UPS voltage for battery, input, and output, charging percentage, UPS runtime, UPS input current, frequency, and input load, and UPS temperature.
 
 The UPS service must be [configured]({{< ref "upsservicesscale" >}}) with a compatible Uninterruptible Power Supply (UPS) device.
 
@@ -114,11 +112,9 @@ The UPS service must be [configured]({{< ref "upsservicesscale" >}}) with a comp
 
 ### ZFS Graphs
 
-Shows graphs of the ARC size, hit ratio, ARC requests demand_data, demand_metadata, prefetch_data, and prefetch_metadata with the Arc and L2 gigabytes and hits (%), and the hits, misses, and total number of requests.
-ZFS graphs show compressed physical ARC size, hit ratio, demand data, demand metadata, and prefetch data and metadata.
+Shows the ZFS ARC size graph with compressed physical ARC size.
 
-{{< trueimage src="/images/SCALE/Reporting/ZFSReportingActualHitsHitsRate.png" alt="ZFS ARC Actual Cache Hits Rate and ARC Hit Rate" id="ZFS ARC Actual Cache Hits Rate and ARC Hit Rate" >}}
-{{< trueimage src="/images/SCALE/Reporting/ZFSReportingARCSizeResult.png" alt="ZFS ARC Size and ARC Result" id="ZFS ARC Size and ARC Result" >}}
+{{< trueimage src="/images/SCALE/Reporting/ZFSReportingActualHitsHitsRate.png" alt="ZFS Reporting" id="ZFS Reporting" >}}
 
 ## Reporting Exporters Screen
 
