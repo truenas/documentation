@@ -65,7 +65,7 @@ The event data for a sudo event includes the command.
 ### SMB and NFS Auditing Events
 
 SMB and NFS events are omitted by default from the **System > Audit** screen.
-To view these audit results, go to **System > Services** and click <i class="material-icons" aria-hidden="true" title="Audit Logs">receipt_long</i> **Audit Logs** for the SMB  or NFS service or use advanced search on the main **Audit** screen to query {{< cli >}}"Service" = "SMB"{{< /cli >}}.
+To view these audit results, go to **System > Services** and click <i class="material-icons" aria-hidden="true" title="Audit Logs">receipt_long</i> **Audit Logs** for the SMB or NFS service or use advanced search on the main **Audit** screen to query {{< cli >}}"Service" = "SMB"{{< /cli >}}.
 
 {{< hint type=info title="SMB Service Audit Logs" >}}
 SMB audit logs include all SMB protocol events, but do not include changes to SMB configuration, such as creating an SMB share or querying and modifying SMB ACLs.
