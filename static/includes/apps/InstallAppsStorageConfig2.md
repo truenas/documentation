@@ -1,11 +1,11 @@
 &NewLine;
 
 {{< expand "Configuring Additional Storage Volumes" "v" >}}
-If you choose to configure additional storage volumes, click **Add** to the right of **Additional Storage** to show the **Type** field with three options:
-* **HostPath (Path that already exists on the system)**
-* **ixVolume (Dataset created automatically by the system)**
-* **SMB/CIFS Share (Mounts a volume to a SMB share)**
+To configure additional storage volumes, click **Add** next to **Additional Storage**. Choose from three options:
 
-The host path option requires an existing dataset on the system.
-The SMB/CIFS share option shows settings for configuring an SMB share as a storage option.
+* **Host Path** – Requires an existing dataset.
+* **ixVolume** – Creates a dataset automatically.
+* **SMB/CIFS Share** – Mounts a volume to an SMB share.
+
+Select the appropriate option for your needs.
 {{< /expand >}}
