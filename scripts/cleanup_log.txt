@@ -1,3 +1,31 @@
+Process time: 2025-05-09 10:56:55
+Initiated by: Dan Pizappi
+
+1655 files reviewed.
+20 files deleted.
+The following files were deleted:
+C:\Users\iXUser\Documents\GitHub\documentation\static\includes\_index.md
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\CORE\Accounts\AddUserNamedCORE.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\CORE\DirectoryServices\DirectoryServicesNIS.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\CORE\Services\NFSServicesScreen.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\CORE\Services\ServicesDynamicDNSOptions.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\CORE\Sharing\SharingSMBAdvancedOptions.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\CORE\Sharing\SharingWebdavAdd.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\CORE\Storage\StorageAllPoolsDataset.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\CORE\Storage\StoragePoolsAddDataset2.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\CORE\System\CloudCredentialsAddCredentials.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\CORE\System\SystemCloudCredentialsOAuthLogin.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\CORE\System\SystemNTPServersAdd.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\CORE\Tasks\RsyncConfigure.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\CORE\Tasks\TasksCloudSyncAdd.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\Hardware\Minis\MiniX+BSG.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\Hardware\Minis\MiniX+OOBM.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\Hardware\Minis\MiniX+SOV.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Apps\InstallPlexStorageConfigDataACLandACE.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\DataProtection\AdvancedAddReplicationTaskGeneralTransportSSH+NETCAT.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\SystemSettings\RenameBootEnvironmentSCALE.png
+
+----------------------------------------
 Process time: 2025-04-14 11:57:10
 Initiated by: Dan Pizappi
 
