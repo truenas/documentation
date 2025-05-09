@@ -103,7 +103,7 @@ Click **Confirm**, and then click **Activate**.
 
 The **System Boot** screen status changes to **Reboot** and the current **Active** entry changes from **Now/Reboot** to **Now**, indicating that it is the current boot environment but it is not used on the next system restart (boot operation).
 
-### Cloneing a Boot Environment
+### Cloning a Boot Environment
 
 Cloning copies the selected boot environment into a new inactive boot environment that preserves the **boot-pool** state at the clone-creation time.
 
