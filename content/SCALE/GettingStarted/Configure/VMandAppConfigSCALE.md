@@ -90,7 +90,7 @@ Set up a new dataset before installing your applications if you want to store yo
 After an Apps storage pool is configured, the status changes to <span class="iconify" data-icon="mdi:check-circle" color=#71BF44></span> **Apps Service Running**.
 
 Use **Discover Apps** to view available applications.
-See [Apps tutorials]({{< ref "/TruenasApps" >}}) and [Apps reference guide]({{< ref "/SCALE/SCALEUIReference/Apps" >}}) for more information.
+See [TrueNAS Apps Market](https://apps.truenas.com/) and [Apps reference guide]({{< ref "/SCALE/SCALEUIReference/Apps" >}}) for more information.
 
 For custom applications, [Install Custom App]({{< ref "InstallCustomAppScreens" >}}) details each field on the **Install Custom App** screen.
 Before beginning a custom application installation, determine the following information:

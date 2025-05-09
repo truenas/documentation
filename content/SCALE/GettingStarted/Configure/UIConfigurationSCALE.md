@@ -240,7 +240,7 @@ If using TrueNAS on hardware not provided by iXsystems, the **System Information
 ## Using Applications in TrueNAS
 TrueNAS provides a list of applications you can deploy on the **Apps > Discover** screen.
 
-See the [Apps tutorials]({{< ref "/TruenasApps" >}}) for procedures on generically deploying and managing apps, app catalogs and images, custom apps, and specific app deployments and notes.
+See the [TrueNAS Apps Market](https://apps.truenas.com/) for information on deploying and managing apps, app catalogs and images, including custom apps, and specific catalog app resources.
 
 ## Updating TrueNAS
 You can update your system with an <file>iso</file> file using the system administration console or an update file installed through the TrueNAS UI.

@@ -12,7 +12,7 @@ It contains a template example article with front matter, styling, and syntax ex
 Refer to the [Style Guide]({{< ref "Style" >}}) for specific text syntax and formatting examples, Markdown and Hugo website enhancements, and content guidelines to follow.
 
 Application tutorials follow a specific format that covers the installation screens and deployment process.
-If submitting a tutorial for a community-maintained application article, please use the [application tutorial template]({{< ref "/Contributing/Applications/AppArticleTemplate" >}})
+If submitting a tutorial for a community-maintained application article, please see [Contributing to Apps](https://apps.truenas.com/getting-started/contributing-to-apps) and the [Community App Tutorial Template](https://apps.truenas.com/getting-started/contributing-to-apps/template) at the TrueNAS Apps Market.
 
 ## Front Matter
 Every article needs a front-matter section that contains these parameters:
