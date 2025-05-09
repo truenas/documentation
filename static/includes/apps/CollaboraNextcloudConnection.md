@@ -8,4 +8,4 @@ After installing Collabora Online, users should navigate to the **Collabora Onli
 
 This successfully integrates Collabora and Nextcloud accounts, enhancing document access and editing capabilities.
 
-For more details on installing Nextcloud, visit the [Nextcloud TrueNAS tutorial](https://www.truenas.com/docs/truenasapps/stableapps/installnextcloudmedia/).
+For more details on installing Nextcloud, visit the [Nextcloud resources](https://apps.truenas.com/catalog/nextcloud/) on the TrueNAS Apps Marketplace.
