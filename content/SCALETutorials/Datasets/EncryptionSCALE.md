@@ -39,7 +39,7 @@ Deselecting **Inherit (encrypted)** under **Advanced Options** allows modifying 
 
 As of TrueNAS 22.12.3 or later, the TrueNAS UI does not allow you to create unencrypted datasets within an encrypted pool or parent dataset.
 However, datasets created outside the UI, such as those created programmatically or manually via shell access, might not inherit encryption unless properly configured.
-For example, the [ix-apps dataset](https://www.truenas.com/docs/truenasapps/) on the pool selected for applications does not inherit encryption settings.
+For example, the [ix-apps dataset](https://apps.truenas.com/getting-started/app-storage/#ix-apps-dataset) on the pool selected for applications does not inherit encryption settings.
 
 If the system has only one pool, we recommend that you do not use pool-level encryption for this pool.
 Leave **Encryption** unselected on the **Pool Creation Wizard** screen to create a pool with an unencrypted root dataset.

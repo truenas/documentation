@@ -114,7 +114,7 @@ You can use the SSS connection created in [Setting Up an SSH Connection](#settin
 ## Configuring Module Mode Rsync Tasks
 
 Before you create an rsync task in module mode, you must [define at least one module](#defining-an-rsync-module) per [rsyncd.conf(5)](https://www.samba.org/ftp/rsync/rsyncd.conf.html) on the remote rsync server.
-The [Rsync Daemon](https://www.truenas.com/docs/truenasapps/communityapps/rsyncd/) application is available in situations where configuring TrueNAS as an rsync server with an rsync module is necessary.
+The [Rsync Daemon](https://apps.truenas.com/catalog/rsyncd/) application is available in situations where configuring TrueNAS as an rsync server with an rsync module is necessary.
 
 After configuring the rsync server, configure the rsync task.
 

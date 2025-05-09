@@ -2,8 +2,8 @@
 ---
 more:
   - name: ""
-  - name: "TrueNAS Apps"
-    ref: "https://www.truenas.com/docs/truenasapps/"
+  - name: "TrueNAS Apps Marketplace"
+    ref: "https://apps.truenas.com/"
     external: true
   - name: "Software Status"
     ref: "https://www.truenas.com/software-status/"

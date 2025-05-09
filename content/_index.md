@@ -42,7 +42,7 @@ To view or search through documentation for previous TrueNAS SCALE major version
     <br><a href="/scaletutorials/network/">Networking</a>
     <br><a href="/scaletutorials/storage/">Storage Management</a>
     <br><a href="/scaletutorials/dataprotection/">Data Protection</a>
-    <br><a href="https://www.truenas.com/docs/truenasapps/">Apps</a>
+    <br><a href="https://apps.truenas.com/">TrueNAS Apps Marketplace</a>
     </p>
     <p>
     <a href="/scaleuireference/" style="font-size:18px;">UI Reference Guide</a>

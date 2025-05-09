@@ -268,7 +268,7 @@ Resource limits specify the CPU and memory limits to place on the container.
 
 **GPU Configuration** settings configure GPU device allocation for application processes.
 Settings only display if the system detects available GPU device(s).
-See [Allocating GPU](https://www.truenas.com/docs/truenasapps/#allocating-gpu) for more information.
+See [GPU Passthrough](https://apps.truenas.com/managing-apps/installing-apps/#gpu-passthrough) for more information.
 
 {{< trueimage src="/images/SCALE/Apps/InstallCustomAppAddResourceLimits.png" alt="Resources Configuration Settings" id="Resources Configuration Settings" >}}
 
