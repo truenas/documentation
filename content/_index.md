@@ -1,5 +1,5 @@
 ---
-title: "24.04 (Dragonfish)"
+title: "TrueNAS 24.04 (Archived)"
 geekdocCollapseSection: true
 weight: 20
 cascade:
@@ -15,9 +15,21 @@ div.docs-read_mod {display: none;}
 h1 {display:none;}
 </style>
 
-{{< header logo="/images/tn-scale-logo.png" logo_alt="TrueNAS SCALE Logo" version="24.04 Dragonfish" icon="/images/SCALEDragonfishIcon.png" icon_alt="SCALE Dragonfish Icon" >}}
+{{< header logo="/images/tn-scale-logo.png" logo_alt="TrueNAS SCALE Logo" version="24.04 Dragonfish (Archived)" icon="/images/SCALEDragonfishIcon.png" icon_alt="SCALE Dragonfish Icon" >}}
+
+iXsystems released TrueNAS 24.04 (Dragonfish) on April 23, 2024. This version received its final update on November 8, 2024. The terminal version of Dragonfish is 24.04.2.5.
 
 {{< include file="/static/includes/24.04FeatureList.md" >}}
+
+## Documentation End of Life (EOL)
+
+**24.04 (Dragonfish) Documentation EOL: 05-09-2025**
+
+iXsystems employees maintain documentation and provide regular updates for current and in development (future) versions of TrueNAS software.
+For documentation purposes, current and future releases are those recommended by the TrueNAS [Software Status page](https://www.truenas.com/software-status/) for one or more user type.
+
+Documentation for previous releases, that are no longer recommended for any user type, is archived and unmaintained.
+All documentation provided here is end-of-life (EOL), intended for reference only, and no longer receives *any* updates.
 
 ## 24.04 (Dragonfish) Featured Content
 
