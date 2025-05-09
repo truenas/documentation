@@ -44,13 +44,13 @@ All apps in the **stable** train, some **community** train apps, and all apps in
   Apps with these requirements indicate this in the wizard UI or details screen.
   Refer to tutorials for specifics.
 
-  Depending on the app, storage options include:
+  Depending on the app, storage options can include:
   * **ixVolume**
   * **Host path**
   * **SMB share**
   * **Tmpfs (Temporary directory created on the RAM)**
 
-  See [Understanding App Storage Volumes](/truenasapps/managingapps/#understanding-app-storage-volumes) for more information.
+  See [App Storage](https://apps.truenas.com/getting-started/app-storage/) for more information.
 
   After configuring required storage volumes you can add additional storage volumes.
   To configure additional storage volumes for the application, click **Add** to select the type of storage to configure.
