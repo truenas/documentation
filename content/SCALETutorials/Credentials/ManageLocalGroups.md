@@ -32,8 +32,9 @@ Enter a unique number for the group ID in **GID** that TrueNAS uses to identify 
 Enter a number above 3000 for a group with user accounts or enter the default port number as the GID for a system service.
 
 Enter a name for the group.
-The group name cannot begin with a hyphen (-) or contain a space, tab, or any of these characters: colon (:), plus (+), ampersand (&), hash (#), percent (%), carat (^), open or close parentheses ( ), exclamation mark (!), at symbol (@), tilde (~), asterisk (*), question mark (?) greater or less than (<) (>), equal (=).
-You can only use the dollar sign ($) as the last character in a group name.
+The group name cannot begin with a hyphen (-) or contain a space, tab, or any of these characters: colon (:), plus (+), ampersand (&), hash (#), percent (%), carat (^), open or close parentheses ( ), exclamation mark (!), at symbol (@), tilde (~), asterisk (*), question mark (?) greater or less than (<) (>), equal (=). The dollar sign ($) can be the last character in a group name. 
+
+Group names must also align with the [Portable Filename Character Set](https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/V1_chap03.html#tag_03_282) defined by *The Open Group*.
 
 **Allowed sudo commands**, **Allow all sudo commands**, **Allowed sudo commands with no password** and **Allow all sudo commands with no password** grant members of the group limited root-like permissions using the [sudo](https://www.sudo.ws/) command.
 Use **Allowed sudo commands** or **Allowed sudo commands with no password** to list specific sudo commands allowed for group members.
