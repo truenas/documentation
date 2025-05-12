@@ -1,6 +1,6 @@
 &NewLine;
 
-Application host IP port binding is being developed for all applications in the TrueNAS Apps catalog, starting with TrueNAS 25.04.
+Application host IP port binding is being developed for all applications in the TrueNAS Apps catalog.
 This feature allows per-app selection of any IP address from the available aliases assigned to an interface to bind the WebUI port to.
 It includes port bind mode options to publish the port for external access or expose it for inter-container communication.
 
@@ -238,21 +238,14 @@ These applications update to support host IP port binding on June 1, 2025.
 
 **App Updates in 24.10**
 
-  The cutoff date for simple app updates on TrueNAS 24.10 is **June 1, 2025**.
-  Previously installed versions of these apps on TrueNAS 24.10 do not automatically update after this point.
+  Update to TrueNAS 24.04.2.2 before June 1, 2025 to continue receiving app updates without interruption, including the new IP port binding functionality.
   
-  Any users with TrueNAS Apps deployed on 24.10 after June 1 must manually redeploy apps to the new IP port binding version at that time by uninstalling and then reinstalling the application.
-  Ensure app user data is stored in persistent locations and note configuration settings before uninstalling existing applications to allow for easy redeployment.
-  No further migration is required.
-  Normal application update functionality resumes after manual redeployment of these apps.
+  Previously installed apps on TrueNAS 24.10.2.1 (or earlier) do not receive updates after this point.
+  Normal application update functionality resumes after TrueNAS updates to 24.10.2.2 or 25.04.
 
-**App Migration from 24.10 to 25.04**
+**App Updates in 25.04**
 
-  Update to TrueNAS 25.04 before June 1, 2025 to continue receiving app updates without interruption, including the new IP port binding functionality.
-
-  Users who remain on 24.10 after June 1 can either manually redeploy affected applications in that version or update to 25.04 to resume app updates.
-
-**25.04 App Updates**
+  Users of TrueNAS 25.04 continue receiving app updates without interruption, including the new IP port binding functionality.
 
   Applications installed on TrueNAS 25.04 before June 1, 2025 automatically update to enable the new functionality.
   No manual management is required.
