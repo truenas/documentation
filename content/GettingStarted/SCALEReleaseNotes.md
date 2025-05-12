@@ -161,7 +161,7 @@ For more details on feature flags, see [OpenZFS Feature Flags](https://openzfs.g
 The TrueNAS team is pleased to release TrueNAS 24.10.2.2!
 
 This maintenance release is intended to assist the community with the TrueNAS Apps transition to per-app IP address binding.
-It contains a single change to backport migration logic from TrueNAS 25.04, allowing users who prefer to remain on 24.10 past the June 1 app migration cut-off to do so.
+It contains a single change to backport app update logic from TrueNAS 25.04, allowing users who prefer to remain on 24.10 past the June 1 app migration cut-off to do so ([NAS-135515](https://ixsystems.atlassian.net/browse/NAS-135515)).
 See [TrueNAS Apps](https://www.truenas.com/docs/scale/24.10/gettingstarted/scalereleasenotes/#truenas-apps) in the 24.10 Upgrade Notes for more information.
 
 ## 24.10.2.1
