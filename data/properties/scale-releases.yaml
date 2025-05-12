@@ -8,10 +8,10 @@ majorVersions:
     name: "TrueNAS SCALE 24.04 - Dragonfish"
     releaseName: "Dragonfish"
     releases:
-      - name: "24.04.2.5"
+      - name: "24.10.2.2"
         type: "Maintenance"
-        link: "https://www.truenas.com/docs/scale/24.04/gettingstarted/scalereleasenotes/#240425-changelog"
-        releaseDate: "2024-11-08"
+        link: "https://www.truenas.com/docs/scale/24.10/gettingstarted/scalereleasenotes/#241022"
+        releaseDate: "2025-05-13"
         latest: true
   - lifecycle: "Current"
     name: "TrueNAS SCALE 24.10 - Electric Eel"
