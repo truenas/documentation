@@ -179,7 +179,7 @@ As a result, June 1 is also the cutoff date for two related app behaviors:
 
 **App Updates in 24.10**
 
-  Update to TrueNAS 24.04.2.2 before June 1, 2025 to continue receiving app updates without interruption, including the new IP port binding functionality.
+  Update to TrueNAS 24.10.2.2 before June 1, 2025 to continue receiving app updates without interruption, including the new IP port binding functionality.
   
   Previously installed apps on TrueNAS 24.10.2.1 (or earlier) do not receive updates after this point.
   Normal application update functionality resumes after TrueNAS updates to 24.10.2.2 or 25.04.
