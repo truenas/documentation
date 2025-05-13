@@ -77,9 +77,13 @@ More details are available from [Software Releases](https://www.truenas.com/docs
 * SMB audit log entries are omitted by default from the **System > Audit** screen.
   To view SMB audit results, go to **System > Services** and click <i class="material-icons" aria-hidden="true" title="Audit Logs">receipt_long</i> **Audit Logs** for the SMB service or use advanced search on the main **Audit** screen to query SMB events.
 
-### Preparing for App Migration
+### TrueNAS Apps
+
+{{< include file="/static/includes/AppsUnversionedAdmonition.md" >}}
 
 {{< include file="/static/includes/AppsSupportTimeline.md" >}}
+
+#### Preparing for App Migration
 
 To prepare applications for migration from Kubernetes to Docker, address the following configurations before upgrading to 24.10:  
   
@@ -149,6 +153,16 @@ Any new feature flags introduced since the previous OpenZFS version that was int
 {{< /truetable >}}
 
 For more details on feature flags, see [OpenZFS Feature Flags](https://openzfs.github.io/openzfs-docs/Basic%20Concepts/Feature%20Flags.html) and [OpenZFS zpool-feature.7](https://openzfs.github.io/openzfs-docs/man/7/zpool-features.7.html).
+
+## 24.10.2.2
+
+**May 13, 2025**
+
+The TrueNAS team is pleased to release TrueNAS 24.10.2.2!
+
+This maintenance release is intended to assist the community with the TrueNAS Apps transition to per-app IP address binding.
+It contains a single change to backport app update logic from TrueNAS 25.04, allowing users who prefer to remain on 24.10 past the June 1 app migration cut-off to do so ([NAS-135515](https://ixsystems.atlassian.net/browse/NAS-135515)).
+See [TrueNAS Apps](https://www.truenas.com/docs/scale/24.10/gettingstarted/scalereleasenotes/#truenas-apps) in the 24.10 Upgrade Notes for more information.
 
 ## 24.10.2.1
 
