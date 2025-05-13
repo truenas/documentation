@@ -177,10 +177,16 @@ As a result, June 1 is also the cutoff date for two related app behaviors:
   Due to breaking changes involved in enabling host IP port binding, **June 1, 2025** is the deadline for automatic apps migration on upgrade.
   Any users still running TrueNAS Apps on 24.04 after June 1 must re-deploy those apps after upgrading to 24.10 or later.
 
-* **24.10 App Updates:**
-  The cutoff date for app updates on TrueNAS 24.10 is **June 1, 2025**.
-  To update or install new applications, any users still running TrueNAS Apps on 24.10 after June 1 must update TrueNAS to 25.04 (or later).
+**App Updates in 24.10**
 
-  No further migration is required.
-  Normal application update and install functionality resumes after updating to the minimum TrueNAS version (25.04) or later.
+  Update to TrueNAS 24.10.2.2 before June 1, 2025 to continue receiving app updates without interruption, including the new IP port binding functionality.
   
+  Previously installed apps on TrueNAS 24.10.2.1 (or earlier) do not receive updates after this point.
+  Normal application update functionality resumes after TrueNAS updates to 24.10.2.2 or 25.04.
+
+**App Updates in 25.04**
+
+  Users of TrueNAS 25.04 continue receiving app updates without interruption, including the new IP port binding functionality.
+
+  Applications installed on TrueNAS 25.04 before June 1, 2025 automatically update to enable the new functionality.
+  No manual management is required.
