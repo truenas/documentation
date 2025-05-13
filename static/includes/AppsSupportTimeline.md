@@ -8,9 +8,9 @@ These updates roll out on **June 1, 2025**, and require TrueNAS 25.04 (or later)
 Due to breaking changes involved in enabling host IP port binding, **June 1, 2025** is the deadline for automatic apps migration on upgrade.
 Migrate from 24.04 to 24.10 before June 1, 2025, to ensure automatic app migration.
 
-Additionally, existing applications installed on 24.10 do not automatically update after June 1, 2025.
-Upgrade to 25.04 before June 1 to continue receiving regular app updates.
-Users who do not wish to upgrade to 25.04 before June 1 must manually uninstall and redeploy affected applications after that date to resume app updates.
+Upgrade to 24.10.2.2 or 25.04 before June 1 to continue receiving regular app updates.
+Existing applications installed on 24.10.2.1 or earlier do not automatically update after June 1, 2025.
+Users who do not upgrade to 24.10.2.2 or newer before June 1 must manually uninstall and redeploy affected applications after updating TrueNAS to resume regular application updates.
 
 <div class="no-highlight-table">
 <table>
@@ -34,7 +34,7 @@ Users who do not wish to upgrade to 25.04 before June 1 must manually uninstall 
     <tr>
       <td><strong>After June 1, 2025</strong></td>
       <td>❌ Not Supported</td>
-      <td>⚠️ Action required</td>
+      <td>✅ Supported<br>(24.10.2.2 or later)</td>
       <td>✅ Supported</td>
       <td>✅ Supported</td>
     </tr>
