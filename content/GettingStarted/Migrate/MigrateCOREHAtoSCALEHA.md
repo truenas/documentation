@@ -13,7 +13,9 @@ keywords:
 slug: migrate-enterprise
 ---
 
-**TrueNAS Enterprise customers should consult with TrueNAS Enterprise Support before attempting to migrate.**
+{{< enterprise >}}
+TrueNAS Enterprise customers with High Availability (HA) or Non-HA TrueNAS Hardware should consult with TrueNAS Enterprise Support before attempting to migrate.
+{{< /enterprise >}}
 
 The process requires:
 * Backing up critical data.
