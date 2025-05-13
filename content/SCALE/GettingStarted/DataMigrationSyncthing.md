@@ -17,7 +17,7 @@ keywords:
 - Enterprise NAS storage
 ---
 
-Users of TrueNAS 24.04 (Dragonfish) or newer can migrate data from a third-party NAS solution onto TrueNAS using the [Syncthing Enterprise application]({{< ref "/TruenasApps/enterpriseapps/syncthing" >}}).
+Users of TrueNAS 24.04 (Dragonfish) or newer can migrate data from a third-party NAS solution onto TrueNAS using the [Syncthing Enterprise application](https://apps.truenas.com/catalog/syncthing_enterprise/).
 The Syncthing Enterprise application can mount remote SMB shares in a manner that preserves relevant metadata.
 TrueNAS 24.10 (Electric Eel) also adds migration support for SMB alternate data streams (ADS), used to store application-specific metadata.
 
