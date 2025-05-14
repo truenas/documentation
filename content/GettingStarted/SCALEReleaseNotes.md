@@ -112,8 +112,43 @@ Any new feature flags introduced since the previous OpenZFS version that was int
 
 For more details on feature flags, see [OpenZFS Feature Flags](https://openzfs.github.io/openzfs-docs/Basic%20Concepts/Feature%20Flags.html) and [OpenZFS zpool-feature.7](https://openzfs.github.io/openzfs-docs/man/7/zpool-features.7.html).
 
-## 25.04.0
+## 25.04.1
 
+**May 27, 2025**
+
+The TrueNAS team is pleased to release TrueNAS 25.04.1!
+This is a maintenance release and includes refinement and fixes for issues discovered after 24.10.0.
+
+Special thanks to (Github users): {} for contributing to TrueNAS 25.04.1. For information on how you can contribute, visit https://www.truenas.com/docs/contributing/.
+
+### 25.04.1 Notable Changes
+
+* 
+
+<a href="https://ixsystems.atlassian.net/issues/?filter=12503" target="_blank">Click here for the full changelog</a> of completed tickets that are included in the 25.04.1 release.
+{{< include file="/static/includes/JiraFilterInstructions.md" >}}
+
+### 25.04.1 Known Issues
+
+* 
+
+* Some users of TrueNAS Apps attempting to configure GPU allocation report the error `Expected [uuid] to be set for GPU inslot [<some pci slot>] in [nvidia_gpu_selection])` (see ([NAS-134152](https://ixsystems.atlassian.net/browse/NAS-134152)).
+
+  Users experiencing this error should follow the steps below for a one-time fix that should not need to be repeated.
+
+  Connect to a shell session and retrieve the UUID for each GPU with the command `midclt call app.gpu_choices | jq`.
+
+  For each application that experiences the error, run `midclt call -j app.update APP_NAME '{"values": {"resources": {"gpus": {"use_all_gpus": false, "nvidia_gpu_selection": {"PCI_SLOT": {"use_gpu": true, "uuid": "GPU_UUID"}}}}}}'`
+  Where:
+  * `APP_NAME` is the name you entered in the application, for example, “plex”.
+  * `PCI_SLOT` is the PCI slot identified in the error, for example "0000:2d:00.0”.
+  * `GPU_UUID` is the UUID matching the PCI slot that you retrieved with the above command.
+* Custom applications with TTY enabled do not display logs in the TrueNAS UI. This is due to an upstream bug, see https://github.com/docker/docker-py/issues/1394. Users experiencing this issue can resolve it by either disabling TTY or using `docker logs` from the command line.
+
+<a href="https://ixsystems.atlassian.net/issues/?filter=12504" target="_blank">Click here to see the latest information</a> about public issues in 25.04.1 that are being resolved in a future TrueNAS release.
+
+## 25.04.0
+{{< expand "Click to expand" "v" >}}
 **April 15, 2025**
 
 The TrueNAS team is pleased to release TrueNAS 25.04.0!
@@ -164,6 +199,7 @@ Notable changes since 25.04-RC.1:
 * Custom applications with TTY enabled do not display logs in the TrueNAS UI. This is due to an upstream bug, see https://github.com/docker/docker-py/issues/1394. Users experiencing this issue can resolve it by either disabling TTY or using `docker logs` from the command line.
 
 <a href="https://ixsystems.atlassian.net/issues/?filter=12306" target="_blank">Click here to see the latest information</a> about public issues discovered in 25.04.0 that are being resolved in a future TrueNAS release.
+{{< /expand >}}
 
 ## 25.04-RC.1
 
