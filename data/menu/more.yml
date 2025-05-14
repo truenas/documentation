@@ -1,25 +1,45 @@
 #available icons: https://github.com/thegeeklab/hugo-geekdoc/tree/master/src/icons
 ---
 more:
-  - name: TrueNAS API Docs
+  - name: TrueNAS API Docs - Opt 1
     ref: "https://api.truenas.com/"
     external: true
-    icon: "api"
+    icon: "api.svg"
     iconSrc: "static"
-  - name: TrueNAS API Docs
+  - name: TrueNAS API Docs - Opt 2
     ref: "https://api.truenas.com/"
     external: true
-    icon: "book-cog-outline"
+    icon: "API_5.png"
     iconSrc: "static"
-  - name: TrueNAS API Docs
+  - name: TrueNAS API Docs - Opt 3
     ref: "https://api.truenas.com/"
     external: true
-    icon: "cog"
+    icon: "API_2.png"
     iconSrc: "static"
-  - name: TrueNAS API Docs
+  - name: TrueNAS API Docs - Opt 4
     ref: "https://api.truenas.com/"
     external: true
-    icon: "file-cog-outline"
+    icon: "API_4.png"
+    iconSrc: "static"
+  - name: TrueNAS API Docs - Opt 5
+    ref: "https://api.truenas.com/"
+    external: true
+    icon: "API_1.png"
+    iconSrc: "static"
+  - name: TrueNAS API Docs - Opt 6
+    ref: "https://api.truenas.com/"
+    external: true
+    icon: "API_3.png"
+    iconSrc: "static"
+  - name: TrueNAS API Docs - Opt 7
+    ref: "https://api.truenas.com/"
+    external: true
+    icon: "cog.svg"
+    iconSrc: "static"
+  - name: TrueNAS API Docs - Opt 8
+    ref: "https://api.truenas.com/"
+    external: true
+    icon: "book-cog-outline.svg"
     iconSrc: "static"
   - name: TrueNAS Apps Market
     ref: "https://apps.truenas.com/"
