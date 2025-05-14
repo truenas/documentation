@@ -9,7 +9,7 @@ tags:
 - apikeys
 ---
 
-TrueNAS 25.04 and later uses a versioned JSON-RPC 2.0 over WebSocket API with support for user-linked API access keys ([API Reference]({{< ref "/scale/api" >}})).
+TrueNAS 25.04 and later uses a versioned [JSON-RPC 2.0 over WebSocket API](https://api.truenas.com) with support for user-linked API access keys ([API Reference]({{< ref "/scale/api" >}})).
 
 User-linked API keys allow administrators to configure per-user access to the TrueNAS API.
 Keys are revocable and can be configured to expire on a preset date.
@@ -20,7 +20,7 @@ The **User API Keys** screen shows a table listing API keys added to the system,
 
 {{< trueimage src="/images/SCALE/Dashboard/APIKeysScreen.png" alt="API Keys Screen" id="API Keys Screen" >}}
 
-Click **API Docs** to view [API Documentation](#api-documentation).
+Click **API Docs** to view [API Documentation](#api-documentation) embedded within the system.
 
 {{<include file="/static/includes/addcolumnorganizer.md">}}
 
@@ -92,7 +92,7 @@ TrueNAS opens a **Delete API Key** dialog.
 
 Select **Confirm**, then click **Delete**.
 
-## API Documentation
+## Embedded API Documentation
 
 Click **API Docs** on the **User** or **User API Keys** screen to access the TrueNAS API documentation built into the system.
 A new browser window opens, showing the API documentation Table of Contents.
