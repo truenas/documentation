@@ -4,17 +4,22 @@ more:
   - name: TrueNAS API Docs
     ref: "https://api.truenas.com/"
     external: true
-    icon: "api-svgrepo-com"
+    icon: "api"
     iconSrc: "static"
   - name: TrueNAS API Docs
     ref: "https://api.truenas.com/"
     external: true
-    icon: "api-page-svgrepo-com"
+    icon: "book-cog-outline"
     iconSrc: "static"
   - name: TrueNAS API Docs
     ref: "https://api.truenas.com/"
     external: true
-    icon: "cog-data-files-svgrepo-com"
+    icon: "cog"
+    iconSrc: "static"
+  - name: TrueNAS API Docs
+    ref: "https://api.truenas.com/"
+    external: true
+    icon: "file-cog-outline"
     iconSrc: "static"
   - name: TrueNAS Apps Market
     ref: "https://apps.truenas.com/"
