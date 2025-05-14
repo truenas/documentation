@@ -12,7 +12,9 @@ keywords:
 - nas data storage
 ---
 
-**TrueNAS Enterprise customers should consult with iXsystems Support before attempting migrate to TrueNAS SCALE.**
+{{< enterprise >}}
+TrueNAS Enterprise customers with High Availability (HA) or Non-HA TrueNAS Hardware should consult with TrueNAS Enterprise Support before attempting to migrate.
+{{< /enterprise >}}
 
 The process requires:
 * Backing up critical data.
