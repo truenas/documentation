@@ -1,9 +1,25 @@
 #available icons: https://github.com/thegeeklab/hugo-geekdoc/tree/master/src/icons
 ---
 more:
-  - name: ""
-  - name: "TrueNAS Apps"
-    ref: "https://www.truenas.com/docs/truenasapps/"
+  - name: "TrueNAS Apps Market"
+    ref: "https://apps.truenas.com/"
+    external: true
+    icon: "icon-dots-grid"
+  - name: "Security Reports"
+    ref: "https://security.truenas.com"
+    external: true
+    icon: "gdoc_shield"
+  - name: "Documentation Archive"
+    ref: "https://www.truenas.com/docs/archive/"
+    external: true
+    icon: "gdoc_bookmark"
+  - name: "View Source"
+    ref: "https://github.com/truenas/documentation/blob/25.04/"
+    external: true
+    icon: "gdoc_github"
+  - name: "RSS Feed"
+    ref: "https://truenas.com/docs/index.xml"
+    icon: "gdoc_notification"
     external: true
   - name: "Software Status"
     ref: "https://www.truenas.com/software-status/"
@@ -22,20 +38,4 @@ more:
     external: true
   - name: "References"
     ref: "https://www.truenas.com/docs/references/"
-    external: true
-  - name: "Security Reports"
-    ref: "https://security.truenas.com"
-    external: true
-    icon: "gdoc_shield"
-  - name: "Documentation Archive"
-    ref: "https://www.truenas.com/docs/archive/"
-    external: true
-    icon: "gdoc_bookmark"
-  - name: "View Source"
-    ref: "https://github.com/truenas/documentation/blob/25.04/"
-    external: true
-    icon: "gdoc_github"
-  - name: "RSS Feed"
-    ref: "https://truenas.com/docs/index.xml"
-    icon: "gdoc_notification"
     external: true
