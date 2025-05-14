@@ -18,10 +18,10 @@ slug: migrate-community
 
 ## Migration Overview
 
-This article provides information and instructions for migrating non-Enterprise FreeBSD-based TrueNAS versions (13.0 or 13.3) to Linux-based TrueNAS (24.04).
+This article provides information and instructions for migrating non-Enterprise FreeBSD-based TrueNAS versions (13.0 or 13.3) to Linux-based TrueNAS (22.12 and later).
 
 {{< enterprise >}}
-TrueNAS Enterprise customers should consult with TrueNAS Enterprise Support before attempting migrate.
+TrueNAS Enterprise customers with High Availability (HA) or Non-HA TrueNAS Hardware should consult with TrueNAS Enterprise Support before attempting to migrate.
 
 The process requires an extended maintenance window, requires executing steps in the correct order to prevent issues with system configuration and operation, and additional system review post-migration to catch and correct any configuration issues.
 
@@ -40,17 +40,28 @@ Depending on system configuration, migrating can be more or less complicated.
 
 {{< include file="/static/includes/MigrateCOREtoSCALEWarning.md" >}}
 
-### Clean Install
-You can migrate with a clean install using an <file>iso</file> file.
-With a clean install, you need to reconfigure your settings and import your data.
-Follow the instructions in the [Install]({{< ref "InstallingSCALE" >}}) articles.
+{{< include file="/static/includes/MigrateCOREtoSCALE24_04.md" >}}
 
-When TrueNAS boots, you might need to [use the Console Setup Menu to configure networking interfaces]({{< ref "ConsoleSetupMenuScale" >}}) to enable GUI accessibility.
-After logging in to the TrueNAS UI, use a system configuration file to restore the system settings and import the data storage pools.
+For all migration methods, you must upgrade to the latest maintenance release of TrueNAS 13.0 or 13.3 before attempting to migrate.
+See [Software Releases](https://www.truenas.com/docs/softwarereleases/) to confirm the latest version.
 
-### Select Update Train
+### Performing a Clean Install
+
+To migrate directly from TrueNAS 13.0 or 13.3 to the latest TrueNAS Community Edition release (24.10 or later), perform a clean install using an <file>iso</file> file for the target version.
+After obtaining a file from the [Software Releases](https://www.truenas.com/docs/softwarereleases/) page or [Download TrueNAS Community Edition](https://www.truenas.com/truenas-community-edition/) follow the instructions in [Installing TrueNAS]({{< ref "InstallingSCALE" >}}) to install TrueNAS Community Edition.
+
+After logging in to the TrueNAS UI, use the system configuration file downloaded in [Migration Preparation]({{< ref "MigratePrep" >}}) to [restore system settings](#restoring-configuration) and import data storage pools.
+
+### Updating to 24.04
+
+You can migrate from TrueNAS 13.0 or 13.3 to 24.04 using either the update train method or a manual update file.
+After migrating, you can follow the standard update process to step through each major release until you reach the latest version.
+
+#### Select Update Train
 
 This method is only available for non-Enterprise community systems.
+
+To migrate to TrueNAS 24.04 using the UI **Update** screen and **Train** selector:
 
 1. Go to **System > Update**
 
@@ -63,15 +74,13 @@ This method is only available for non-Enterprise community systems.
 
 5. After the system installs the update and restarts, log in and review the system configuration to ensure the migration was successful.
 
-### Manual Update
-Some TrueNAS 13.0 or 13.3 releases can migrate using the UI **Upgrade** function using a TrueNAS 24.04 update file downloaded from the website.
-To use this method, you must upgrade to the latest maintenance release.
+#### Manual Update
 
-Earlier releases must upgrade to 13.0 and then the latest maintenance release (U6.2) to use this method.
-For community users, 13.3 and the latest public release is acceptable.
+To migrate to TrueNAS 24.04 using the UI **Update** screen and a TrueNAS 24.04 update file:
+
 If this process fails, retry using the iso file method above.
 
-1. Confirm that the system is on the latest public release, 13.0-U6.2 (community users could have 13.3-RELEASE or newer installed).
+1. Confirm that the system is on the latest public release of TrueNAS 13.0 or 13.3.
 
 2. Download the [TrueNAS manual update file](https://www.truenas.com/download-truenas-scale/).
    See [Software Releases]({{< ref "TrueNASUpgrades/#upgrade-paths" >}}) for current recommended update paths to make sure you download and migrate to the correct version.
@@ -97,7 +106,9 @@ If this process fails, retry using the iso file method above.
 
    {{< trueimage src="/images/SCALE/SystemSettings/SidegradeRestart.png" alt="Restart to Finish" id="Restart to Finish" >}}
 
-After TrueNAS restarts, to enable GUI accessibility, you might need to use the [Console Setup menu]({{< ref "ConsoleSetupMenuScale" >}}) to configure the primary networking interfaces.
+## Restoring Configuration
+
+After TrueNAS reboots, you might need to [use the Console Setup menu to configure the primary networking interfaces]({{< ref "ConsoleSetupMenuScale" >}}) to enable GUI accessibility.
 
 After gaining access to the UI, sign in with the admin user credentials created during installation.
 
