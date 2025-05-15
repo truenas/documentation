@@ -1,37 +1,85 @@
 &NewLine;
 
-Application host IP port binding is being developed for all applications in the TrueNAS Apps catalog, starting with TrueNAS 25.04.
+Application host IP port binding is being developed for all applications in the TrueNAS Apps catalog.
 This feature allows per-app selection of any IP address from the available aliases assigned to an interface to bind the WebUI port to.
 It includes port bind mode options to publish the port for external access or expose it for inter-container communication.
 
 A small but growing list of applications currently support this functionality in TrueNAS 24.10 or later.
 
 {{< expand "Applications that currently support host IP port binding" "v" >}}
-The following applications currently support host IP port binding.
+All applications added to the TrueNAS Apps catalog after December 24, 2024 support host IP port binding. As of May 9, 2025, these applications include:
 {{< columns >}}
-* calibre-web  
-* esphome  
-* handbrake-web  
-* homearr  
-* invoiceninja  
-* it-tools  
-* jelu  
-* lyrion-music-server  
-* minecraft-bedrock  
+* ArchiSteamFarm  
+* Arti  
+* Authelia  
+* Authentik  
+* Bitcoind  
+* Calibre Web  
+* Change Detection  
+* Channels DVR  
+* Cockpit WS  
+* Code Server  
+* Codegate  
+* Concourse  
+* ConvertX
+* Crafty 4  
+* Dozzle
 
 <--->
 
-* romm  
-* satisfactory-server  
-* steam-headless  
-* terreria  
-* tianji  
-* umami  
-* urbackup  
-* zigbee2mqtt  
-* emby  
+* Duplicati  
+* Electrs  
+* Emby  
+* ESPHome  
+* Flood  
+* Forgejo  
+* Gitea Act Runner  
+* Glances  
+* Handbrake Web  
+* Heimdall  
+* Homearr
+* Homebox  
+* I2P  
+* InfluxDB  
+* Invoice Ninja  
+
+<--->
+
+* IT Tools  
+* IX Remote Assist  
+* Jackett  
+* JDownloader2  
+* Jelu  
+* Karakeep  
+* Kasm Workspaces  
+* Lyrion Music Server  
+* Minecraft Bedrock
+* Open Speed Test  
+* Outline  
+* Playwright  
+* Romm  
+* Satisfactory Server  
+* Scrypted  
+
+<--->
+
+* Spottarr  
+* Steam Headless  
+* Stirling PDF  
+* Terreria  
+* Tianji  
+* TrueNAS WebUI  
+* TVHeadend  
+* Umami  
+* Unmanic  
+* UrBackup  
+* Versity Gateway  
+* Warracker  
+* Windmill  
+* Wyze Bridge  
+* Zigbee2MQTT  
 {{< /columns >}}
-All future applications, as well as those added to the TrueNAS Apps catalog after December 24, 2024, support this feature.
+All applications added after this date also support this feature.
 {{< /expand >}}
 
 However, applications that were in the TrueNAS Apps catalog before implementation of this feature require OS-level changes to enable support.
@@ -41,132 +89,146 @@ The updated versions of these applications do not function on TrueNAS versions e
 {{< expand "Applications that do not currently support host IP port binding" "v" >}}
 
 {{< columns >}}
-* actual-budget  
-* adguard-home  
-* audiobookshelf  
-* autobrr  
-* bazarr  
-* briefkasten  
-* calibre  
-* castopod  
-* chia  
-* clamav  
-* dashy  
-* ddns-updater  
-* deluge  
-* distribution  
-* dockge  
-* drawio  
-* eclipse-mosquitto  
-* filebrowser  
-* filestash  
-* firefly-iii  
-* flame  
-* flaresolverr  
-* freshrss  
-* frigate  
-* fscrawler  
-* gaseous-server  
-* gitea  
-* grafana  
-* handbrake  
+* Actual Budget  
+* Adguard Home  
+* Asigra DS System  
+* Audiobookshelf  
+* Autobrr  
+* Bazarr  
+* Briefkasten  
+* Calibre  
+* Castopod  
+* Chia  
+* ClamAV  
+* Collabora  
+* Dashy  
+* DDNS Updater  
+* Deluge  
+* Diskoverdata  
+* Distribution  
+* Dockge  
+* Drawio  
+* Eclipse Mosquitto  
+* Elastic Search  
+* Emby  
+* Filebrowser  
+* Filestash  
+* Firefly III  
+* Flame  
+* Flaresolverr  
+* FreshRSS  
+* Frigate  
+* FSCrawler  
+* Gaseous Server  
+* Gitea
+
+<--->
   
-<--->  
+* Grafana  
+* Handbrake  
+* Home Assistant  
+* Homepage  
+* Homer  
+* Immich  
+* Invidious  
+* IPFS  
+* IX App (Custom App)  
+* Jellyfin  
+* Jellyseerr  
+* Jenkins  
+* Joplin  
+* Kapowarr  
+* Kavita  
+* Komga  
+* Lidarr  
+* Linkding  
+* Listmonk  
+* Logseq  
+* Mealie  
+* Metube  
+* Minecraft  
+* Minecraft Bedrock  
+* MineOS  
+* Minio  
+* Mumble  
+* N8N  
+* Navidrome  
+* NetbootXYZ  
+* Netdata  
+* Nextcloud  
 
-* homepage  
-* homer  
-* immich  
-* invidious  
-* ipfs  
-* jellyfin  
-* jellyseerr  
-* jenkins  
-* joplin  
-* kapowarr  
-* kavita  
-* komga  
-* lidarr  
-* linkding  
-* listmonk  
-* logseq  
-* mealie  
-* metube  
-* minecraft  
-* mineos  
-* mumble  
-* n8n  
-* navidrome  
-* netbootxyz  
-* nginx-proxy-manager  
-* node-red  
-* odoo  
-* ollama  
-* omada-controller
+<--->
 
-<--->  
+* Nginx Proxy Manager  
+* Node RED  
+* Odoo  
+* Ollama  
+* Omada Controller  
+* Open Speed Test  
+* Open WebUI  
+* Organizr  
+* Outline  
+* Overseerr  
+* Palworld  
+* Paperless NGX  
+* Passbolt  
+* Penpot  
+* PGAdmin  
+* Photoprism  
+* PiGallery2  
+* PiHole  
+* Piwigo  
+* Planka  
+* Plex  
+* Portainer  
+* Postgres  
+* Prometheus  
+* Prowlarr  
+* Qbittorrent  
+* Radarr  
+* Readarr  
+* Redis  
+* Romm  
+* Roundcube  
+* Rsyncd  
 
-* open-webui  
-* organizr  
-* overseerr  
-* palworld  
-* paperless-ngx  
-* passbolt  
-* penpot  
-* pgadmin  
-* pigallery2  
-* piwigo  
-* planka  
-* portainer  
-* postgres  
-* prowlarr  
-* qbittorrent  
-* radarr  
-* readarr  
-* redis  
-* roundcube  
-* rsyncd  
-* rust-desk  
-* sabnzbd  
-* scrutiny  
-* searxng  
-* sftpgo  
-* sonarr  
-* tautulli  
-* tdarr  
-* terraria
+<--->
 
-<--->  
-
-* tftpd-hpa  
-* tiny-media-manager  
-* transmission  
-* twofactor-auth  
-* unifi-controller  
-* uptime-kuma  
-* vaultwarden  
-* vikunja  
-* webdav  
-* whoogle  
-* wordpress  
-* asigra-ds-system  
-* syncthing  
-* collabora  
-* diskoverdata  
-* elastic-search  
-* emby  
-* home-assistant  
-* ix-app (Custom App)
-* minio  
-* netdata  
-* nextcloud  
-* photoprism  
-* pihole  
-* plex  
-* prometheus  
-* storj  
-* wg-easy
+* Rust Desk  
+* Satisfactory Server  
+* Sabnzbd  
+* Scrutiny  
+* SearxNG  
+* Scrypted  
+* SFTPGo  
+* Sonarr  
+* Storj  
+* Syncthing  
+* Tautulli  
+* TDarr  
+* Terraria  
+* TFTPD HPA  
+* Tiny Media Manager  
+* Transmission  
+* TrueNAS WebUI  
+* Twofactor Auth  
+* Unifi Controller  
+* Umami  
+* Uptime Kuma  
+* UrBackup  
+* Vaultwarden  
+* Versitygw  
+* Vikunja  
+* Warracker  
+* WebDAV  
+* WG Easy  
+* Whoogle  
+* Windmill  
+* Wordpress  
+* Wyze Bridge  
+* Zigbee2MQTT  
 {{< /columns >}}
-
+These applications update to support host IP port binding on June 1, 2025.
 {{< /expand >}}
 
 As a result, June 1 is also the cutoff date for two related app behaviors:
@@ -177,9 +239,16 @@ As a result, June 1 is also the cutoff date for two related app behaviors:
   Due to breaking changes involved in enabling host IP port binding, **June 1, 2025** is the deadline for automatic apps migration on upgrade.
   Any users still running TrueNAS Apps on 24.04 after June 1 must re-deploy those apps after upgrading to 24.10 or later.
 
-* **24.10 App Updates:**
-  The cutoff date for app updates on TrueNAS 24.10 is **June 1, 2025**.
-  To update or install new applications, any users still running TrueNAS Apps on 24.10 after June 1 must update TrueNAS to 25.04 (or later).
+**App Updates in 24.10**
 
-  No further migration is required.
-  Normal application update and install functionality resumes after updating to the minimum TrueNAS version (25.04) or later.
+  Update to TrueNAS 24.10.2.2 before June 1, 2025 to continue receiving app updates without interruption, including the new IP port binding functionality.
+  
+  Previously installed apps on TrueNAS 24.10.2.1 (or earlier) do not receive updates after this point.
+  Normal application update functionality resumes after TrueNAS updates to 24.10.2.2 or 25.04.
+
+**App Updates in 25.04**
+
+  Users of TrueNAS 25.04 continue receiving app updates without interruption, including the new IP port binding functionality.
+
+  Applications installed on TrueNAS 25.04 before June 1, 2025 automatically update to enable the new functionality.
+  No manual management is required.

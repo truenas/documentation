@@ -114,6 +114,9 @@ majorVersions:
     majorVersion: "24.10 (Electric Eel)"
     releaseName: "Electric Eel"
     releases:
+      - name: "24.10.2.2"
+        link: "https://download.truenas.com/TrueNAS-SCALE-ElectricEel/24.10.2.2/"
+        date: "2025-05-13"
       - name: "24.10.2.1"
         link: "https://download.truenas.com/TrueNAS-SCALE-ElectricEel/24.10.2.1/"
         date: "2025-04-03"

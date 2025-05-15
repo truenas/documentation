@@ -11,7 +11,7 @@ aliases:
 [Nextcloud](https://nextcloud.com/) is a suite of client-server software for creating and using file hosting services.
 
 TrueNAS offers one deployment option for setting up Nextcloud, a Linux Debian-based TrueNAS version application available in TrueNAS releases 24.10 and later.
-For the Linux Debian-based app instructions, see [Nextcloud]({{< ref "/truenasapps/stableapps/nextcloud" >}}).
+For the Linux Debian-based app instructions, see [Nextcloud](https://apps.truenas.com/catalog/nextcloud/).
 
 TrueNAS offered a FreeBSD-based TrueNAS Nextcloud plugin in releases 13.0 and earlier, and 13.3, but it is no longer available in TrueNAS 13.0 because of changes in FreeBSD, and it is soon to be unavailable in 13.3.
 Refer to release notes for more information on upcoming and current changes.
