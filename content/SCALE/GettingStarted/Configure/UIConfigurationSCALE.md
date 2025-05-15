@@ -266,7 +266,7 @@ If using TrueNAS on hardware not provided by TrueNAS, the **System Information**
 
 TrueNAS shows a list of deployable applications on the **Apps > Discover** screen.
 
-See the [Apps Marketplace](https://apps.truenas.com/) Reference documentation for tutorials and procedures on generically deploying and managing apps, app catalogs, app images, custom apps, and specific app deployments and notes.
+See the [Getting Started with Apps](https://apps.truenas.com/getting-started/) and [Managing Apps](Managing Apps) in the TrueNAS Apps Marketplace for tutorials and procedures on generically deploying and managing apps, app catalogs, app images, and custom apps, and References in the [Catalog](https://apps.truenas.com/catalog/) for specific app deployments and notes.
 
 ## Updating TrueNAS
 
