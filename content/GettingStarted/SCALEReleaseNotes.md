@@ -56,11 +56,6 @@ More details are available from [Software Releases](https://www.truenas.com/docs
 
 * {{< include file="/static/includes/NetdataUI.md" >}}
 
-* To prevent unexpected failures in SMB shares, TrueNAS automatically disables SMB2/3 lease support and AAPL extensions (typically used to configure Time Machine) globally when [multiprotocol SMB/NFS shares]({{< ref "MixedModeShares" >}}) are enabled ([NAS-133680](https://ixsystems.atlassian.net/browse/NAS-133680)).
-
-  This means that in TrueNAS 25.04 and later, multiprotocol shares are incompatible with Time Machine shares on the same system.
-  To prevent service interruption, Time Machine users should make sure that no multiprotocol shares are configured on TrueNAS.
-
 ### Migrating Virtual Machines
 
 {{< include file="/static/includes/Incus.md" >}}
@@ -125,14 +120,34 @@ Special thanks to (Github users): {} for contributing to TrueNAS 25.04.1. For in
 
 ### 25.04.1 Notable Changes
 
-* 
+* STIG Improvement: Add PAM-based session management for middleware ([NAS-127189](https://ixsystems.atlassian.net/browse/NAS-127189)).
+  For STIG compliant environments, the max number of simultaneous logins is 10.
+  Accounts are locked for 15 minutes after 3 consecutive failed login attempts.
+* Remove support for BOTH in share ACLs ([NAS-135183](https://ixsystems.atlassian.net/browse/NAS-135183)).
+* Persist updated GMail OAuth refresh token to prevent deauthentication ([NAS-135394](https://ixsystems.atlassian.net/browse/NAS-135394)).
+* Improvements to **Instances**, including:
+  * Allow same the host path to be mounted inside multiple containers ([NAS-135371](https://ixsystems.atlassian.net/browse/NAS-135371)).\
+  * Enhanced robustness of the **Instances** screen to handle edge-case configurations ([NAS-135098](https://ixsystems.atlassian.net/browse/NAS-135098)).
+  * Add a synthetic container root user ([NAS-135375](https://ixsystems.atlassian.net/browse/NAS-135375)).
+    This adds new built-in user account `truenas_container_unpriv_root` for idmapping to the root account in unprivileged containers.
+    This may be used in permissions related APIs / UI forms to grant permissions to root in VMs and containers (see ).
+  * Improved error handling when instance ports conflict with other service or application configurations ([NAS-134963](https://ixsystems.atlassian.net/browse/NAS-134963)).
+  * Prevent accidental deletion of built-in idmap entries ([NAS-135475](https://ixsystems.atlassian.net/browse/NAS-135475)).
+  * Improved validation for attaching and removing zvols from instances ([NAS-135308](https://ixsystems.atlassian.net/browse/NAS-135308)).
+* Increase middlewared.service timeout to prevent boot failure when upgrading systems with slow boot drives ([NAS-135663](https://ixsystems.atlassian.net/browse/NAS-135663)).
+* Prevent JSON decode crash in smartctl output to fix issues with disk temperature reporting ([NAS-135527](https://ixsystems.atlassian.net/browse/NAS-135527)).
+* Fix TrueNAS UI authentication with IPv6 entries in **Allowed IP Addresses** ([NAS-135361](https://ixsystems.atlassian.net/browse/NAS-135361)).
+* Fix SSH service startup with auxiliary parameters enabled ([NAS-135367](https://ixsystems.atlassian.net/browse/NAS-135367)).
+* Improve human-readable formatting of TrueCloud Backup log ([NAS-134491](https://ixsystems.atlassian.net/browse/NAS-134491)).
+* Change how oplocks are handled for multiprotocol shares ([NAS-135040](https://ixsystems.atlassian.net/browse/NAS-135040)).
+  Removes kernel oplocks in favor of disabling oplocks on a per-share basis when they have been flagged for mixed-mode use.
+  This avoids issues observed in the field with kernel lease breaks causing client timeouts as well allowing SMB leases globally, resolving limitations on multiprotocol shares and Time Machine backup seen in 25.04.0.
+* Fix API calls when connected to legacy `/websocket` endpoints ([NAS-135643](https://ixsystems.atlassian.net/browse/NAS-135643)).
 
 <a href="https://ixsystems.atlassian.net/issues/?filter=12503" target="_blank">Click here for the full changelog</a> of completed tickets that are included in the 25.04.1 release.
 {{< include file="/static/includes/JiraFilterInstructions.md" >}}
 
 ### 25.04.1 Known Issues
-
-* 
 
 * Some users of TrueNAS Apps attempting to configure GPU allocation report the error `Expected [uuid] to be set for GPU inslot [<some pci slot>] in [nvidia_gpu_selection])` (see ([NAS-134152](https://ixsystems.atlassian.net/browse/NAS-134152)).
 
