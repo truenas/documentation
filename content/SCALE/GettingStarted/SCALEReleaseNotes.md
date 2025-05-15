@@ -59,25 +59,21 @@ More details are available from [Software Releases]({{< ref "/TrueNASUpgrades" >
 {{< include file="/static/includes/SCALEUpgradePaths.md" >}}
 
 <!--
-### Migrating from TrueNAS CORE
+### Migrating from TrueNAS 13.0 or 13.3
 
-{{< include file="/_includes/MigrateCOREtoSCALEWarning.md" >}}
+{{< include file="/static/includes/MigrateCOREtoSCALEWarning.md" >}}
+
+Depending on the specific system configuration, migrating from a FreeBSD-based TrueNAS version can be a straightforward or complicated process.
+See the [Migration articles]({{< ref "/GettingStarted/Migrate/" >}}) for cautions and notes about differences between each software and the migration process.
 
 {{< enterprise >}}
-Enterprise customers with HA systems should contact TrueNAS Enterprise Support for assistance with migrating to TrueNAS.
+{{< include file="/static/includes/EnterpriseMigrationSupport.md" >}}
+
 {{< expand "TrueNAS Enterprise Support" "v" >}}
-{{< include file="content/_includes/iXsystemsSupportContact.md" >}}
+{{< include file="/static/includes/iXsystemsSupportContact.md" >}}
+
 {{< /expand >}}
 {{< /enterprise >}}
-
-When attempting to migrate from a FreeBSD-based TrueNAS version, the general recommendation is to back up the system configuration file and use a TrueNAS **.iso** file to fresh install TrueNAS.
-After install, restore the system configuration and import the pools.
-
-Depending on the specific system configuration, this can be a straightforward or complicated process.
-See the [Migration articles]({{< ref "/SCALE/GettingStarted/Migrate" >}}) for cautions and notes about differences between each software and the migration process.
-
-You must either clean install using an <file>iso</file> or use an upgrade file to migrate a FreeBSD-based TrueNAS system to TrueNAS 25.10 (Goldeye).
-Enterprise customers should [contact Support](https://www.truenas.com/docs/scale/gettingstarted/migrate/migratecorehatoscaleha/#expand-1-Enterprise%20HA%20Migrations) for assistance with migration.
 -->
 
 ## Component Versions
