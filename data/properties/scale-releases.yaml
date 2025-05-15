@@ -17,37 +17,17 @@ majorVersions:
     name: "TrueNAS SCALE 24.10 - Electric Eel"
     releaseName: "Electric Eel"
     releases:
-      - name: "24.10.0.2"
+      - name: "24.10.2.2"
         type: "Maintenance"
-        link: "https://www.truenas.com/docs/scale/24.10/gettingstarted/scalereleasenotes/#241002-changelog"
-        releaseDate: "2024-11-08"
+        llink: "https://www.truenas.com/docs/scale/24.10/gettingstarted/scalereleasenotes/#241022"
+        releaseDate: "2025-05-13"
         latest: true
-      - name: "24.10.1"
-        type: "Maintenance"
-        link: ""
-        releaseDate: "2024-12-12"
-        latest: false
   - lifecycle: "Next"
     name: "TrueNAS SCALE 25.04 - Fangtooth"
     releaseName: "Fangtooth"
     releases:
-      - name: "25.04 Nightlies"
-        type: "Experimental"
-        link: "https://www.truenas.com/docs/scale/25.04/gettingstarted/scalereleasenotes/"
-        releaseDate: "2024-08-13"
-        latest: true
-      - name: "25.04-BETA.1"
-        type: "Early"
-        link: ""
-        releaseDate: "2025-02-11"
-        latest: false
-      - name: "25.04-RC.1"
-        type: "Early"
-        link: ""
-        releaseDate: "2025-03-11"
-        latest: false
       - name: "25.04.0"
         type: "Stable"
-        link: ""
+        link: "https://www.truenas.com/docs/scale/25.04/gettingstarted/scalereleasenotes/#25040"
         releaseDate: "2025-04-15"
-        latest: false
+        latest: true
