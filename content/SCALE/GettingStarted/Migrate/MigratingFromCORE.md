@@ -21,7 +21,8 @@ slug: migrate-community
 This article provides information and instructions for migrating non-Enterprise FreeBSD-based TrueNAS versions (13.0 or 13.3) to Linux-based TrueNAS (22.12 and later).
 
 {{< enterprise >}}
-TrueNAS Enterprise customers with High Availability (HA) or Non-HA TrueNAS Hardware should consult with TrueNAS Enterprise Support before attempting to migrate.
+
+{{< include file="/static/includes/EnterpriseMigrationSupport.md" >}}
 
 The process requires an extended maintenance window, requires executing steps in the correct order to prevent issues with system configuration and operation, and additional system review post-migration to catch and correct any configuration issues.
 
