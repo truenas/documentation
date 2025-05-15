@@ -87,9 +87,11 @@ Depending on the specific system configuration, migrating from a FreeBSD-based T
 See the [Migration articles]({{< ref "/GettingStarted/Migrate/" >}}) for cautions and notes about differences between each software and the migration process.
 
 {{< enterprise >}}
-Enterprise customers should contact TrueNAS Enterprise Support for assistance before attempting to migrate.
+{{< include file="/static/includes/EnterpriseMigrationSupport.md" >}}
+
 {{< expand "TrueNAS Enterprise Support" "v" >}}
-{{< include file="content/_includes/iXsystemsSupportContact.md" >}}
+{{< include file="/static/includes/iXsystemsSupportContact.md" >}}
+
 {{< /expand >}}
 {{< /enterprise >}}
 
