@@ -4,6 +4,13 @@ more:
   - name: TrueNAS Solutions
     ref: "https://www.truenas.com/docs/solutions"
     icon: "gdoc_star"
+  - name: TrueNAS API Docs
+    ref: "https://api.truenas.com/"
+    external: true
+    icon: "API-Icon.svg"
+    iconSrc: "static"
+  - name: TrueNAS Apps Market
+    ref: "https://apps.truenas.com/"
     external: true
   - name: "Reference Articles"
     ref: "https://www.truenas.com/docs/references"
