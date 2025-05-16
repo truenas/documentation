@@ -120,7 +120,7 @@ Special thanks to (Github users): {} for contributing to TrueNAS 25.04.1. For in
 
 ### 25.04.1 Notable Changes
 
-* STIG Improvement: Add PAM-based session management for middleware ([NAS-127189](https://ixsystems.atlassian.net/browse/NAS-127189)).
+* STIG compliance improvement: Add PAM-based session management for middleware ([NAS-127189](https://ixsystems.atlassian.net/browse/NAS-127189)).
   For STIG compliant environments, the max number of simultaneous logins is 10.
   Accounts are locked for 15 minutes after 3 consecutive failed login attempts.
 * Remove support for BOTH in share ACLs ([NAS-135183](https://ixsystems.atlassian.net/browse/NAS-135183)).
