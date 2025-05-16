@@ -14,14 +14,21 @@ related: false
 
 ## API Documentation
 
-You can access TrueNAS API documentation in the web interface by clicking <i class="material-icons" aria-hidden="true" title="laptop" style="vertical-align: top;">laptop</i> **My API Keys** on the top right toolbar <i class="material-icons" aria-hidden="true">account_circle</i> user settings dropdown menu to open the **User API Keys** screen.
-Click **API Docs** to view API documentation.
-
-![SCALEapidocs](/images/SCALE/Dashboard/APIKeysScreen.png "API Docs location")
-
-Alternatively, append `/api/docs/` to your TrueNAS host name or IP address in a browser to access the API documentation.
-
 {{< include file="/static/includes/APIDocs.md" >}}
+
+### Viewing API Documenation
+
+There are several ways to view TrueNAS API documentation:
+
+* In the web interface, click <i class="material-icons" aria-hidden="true" title="laptop" style="vertical-align: top;">laptop</i> **My API Keys** on the top right toolbar <i class="material-icons" aria-hidden="true">account_circle</i> user settings dropdown menu to open the **User API Keys** screen.
+   Click **API Docs** on the **User API Keys** or **User** screen to access the TrueNAS API documentation built into the system.
+   A new browser window opens, showing the API documentation Table of Contents.
+
+   ![SCALEapidocs](/images/SCALE/Dashboard/APIKeysScreen.png "API Docs location")
+
+* Append **/api/docs/** to your TrueNAS host name or IP address in a browser to access the API documentation.
+
+* Go to the [API Docs website](https://api.truenas.com) and use the dropdown to view documentation for a specific TrueNAS (and API) version.
 
 ## API Access
 
