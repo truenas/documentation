@@ -64,6 +64,12 @@ Earlier releases are available only in PDF.
 
 ## TrueNAS
 
+{{< expand "TrueNAS 24.04 (Dragonfish)" "v" >}}
+[TrueNAS 24.04 (Dragonfish)](https://www.truenas.com/docs/scale/24.04/)
+
+Release notes for each minor release of 24.04 are available in the [24.04 Dragonfish Release Notes](https://www.truenas.com/docs/scale/24.04/gettingstarted/scalereleasenotes/).
+{{< /expand >}}
+
 {{< expand "TrueNAS 23.10 (Cobia)" "v" >}}
 [TrueNAS 23.10 (Cobia)](https://www.truenas.com/docs/scale/23.10/)
 
