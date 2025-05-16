@@ -57,11 +57,11 @@ To migrate VMs from TrueNAS 24.10 (latest) to 25.04:
 
    c. Select **Upload ISO, import a zvol or use another volume** from **VM Image Options**.
 
-   d. Click **Select Volume** to open the **Volumes** screen, then click **Import Zvols** to open the **Import Zvol** dialog.
+   d. Click **Select Volume** to open the **Volumes** screen, then click **Import zvols** to open the **Import zvol** dialog.
 
-      1. Enter the path or browse to select an existing Zvol in **Select Zvols**.
+      1. Enter the path or browse to select an existing zvol in **Select zvols**.
 
-         - Zvols usually appear at <file>/dev/zvol/[POOL]/[ZVOL-ID]</file> and use the <span class="iconify" data-icon="mdi:database">ZVOL</span> icon in the TrueNAS UI.
+         - zvols usually appear at <file>/dev/zvol/[POOL]/[zvol-ID]</file> and use the <span class="iconify" data-icon="mdi:database">zvol</span> icon in the TrueNAS UI.
 
       2. Select the radio button to clone or move the existing zvol.
 
