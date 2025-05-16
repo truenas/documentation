@@ -126,11 +126,11 @@ Special thanks to (Github users): {} for contributing to TrueNAS 25.04.1. For in
 * Remove support for BOTH in share ACLs ([NAS-135183](https://ixsystems.atlassian.net/browse/NAS-135183)).
 * Persist updated GMail OAuth refresh token to prevent deauthentication ([NAS-135394](https://ixsystems.atlassian.net/browse/NAS-135394)).
 * Improvements to **Instances**, including:
-  * Allow same the host path to be mounted inside multiple containers ([NAS-135371](https://ixsystems.atlassian.net/browse/NAS-135371)).\
+  * Allow same the host path to be mounted inside multiple containers ([NAS-135371](https://ixsystems.atlassian.net/browse/NAS-135371)).
   * Enhanced robustness of the **Instances** screen to handle edge-case configurations ([NAS-135098](https://ixsystems.atlassian.net/browse/NAS-135098)).
   * Add a synthetic container root user ([NAS-135375](https://ixsystems.atlassian.net/browse/NAS-135375)).
     This adds new built-in user account `truenas_container_unpriv_root` for idmapping to the root account in unprivileged containers.
-    This may be used in permissions related APIs / UI forms to grant permissions to root in VMs and containers (see ).
+    This may be used in permissions related APIs / UI forms to grant permissions to root in VMs and containers (see [Mapping User and Group IDs](/scaletutorials/instances/#mapping-user-and-group-ids)).
   * Improved error handling when instance ports conflict with other service or application configurations ([NAS-134963](https://ixsystems.atlassian.net/browse/NAS-134963)).
   * Prevent accidental deletion of built-in idmap entries ([NAS-135475](https://ixsystems.atlassian.net/browse/NAS-135475)).
   * Improved validation for attaching and removing zvols from instances ([NAS-135308](https://ixsystems.atlassian.net/browse/NAS-135308)).
