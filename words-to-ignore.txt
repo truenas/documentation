@@ -2303,3 +2303,8 @@ InstanceNameRequirements
 TTY
 ZF
 InstanceStopOptions
+oplocks
+deauthentication
+EnterpriseMigrationSupport
+idmapping
+TrueCloud
