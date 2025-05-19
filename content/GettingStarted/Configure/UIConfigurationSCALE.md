@@ -65,7 +65,7 @@ DHCP is only available for a single interface; all other physical interfaces mus
 TrueNAS allows configuring virtual network interfaces such as a [bridge]({{< ref "SettingUpBridge" >}}), link aggregate (LAGG), or virtual LAN (VLAN) interface.
 
 You can use the Console Setup menu or TrueNAS UI to configure network interfaces.
-We recommend using the web UI **Network** screen to [add or change network interfaces or aliases]({{< ref "/SCALE/SCALETutorials/Network/Interfaces" >}}), set up virtual interfaces such as a link aggregate [LAGG]({{< ref "SettingUpLAGG" >}}) or virtual LAN [VLAN]({{< ref "SettingUpVLAN" >}}), and change or [configure global network settings]({{< ref "ManagingGlobalConfig" >}}).
+We recommend using the web UI **Network** screen to [add or change network interfaces or aliases]({{< ref "/SCALETutorials/Network/Interfaces" >}}), set up virtual interfaces such as a link aggregate [LAGG]({{< ref "SettingUpLAGG" >}}) or virtual LAN [VLAN]({{< ref "SettingUpVLAN" >}}), and change or [configure global network settings]({{< ref "ManagingGlobalConfig" >}}).
 
 ### Adding Aliases or Static IP Addresses
 
@@ -76,7 +76,7 @@ TrueNAS Enterprise HA systems use a virtual IP (VIP) to maintain access to the U
 This VIP address might experience a minor blip at failover, but you do not need to log in with the standby controller IP address to gain access to the UI after a failover.
 {{< /enterprise >}}
 The **Add Interface** screen allows configuring a network interface with a static IP address or adding an alias IP address.
-For more information on when to use an alias or a static IP address, see [Managing Interfaces]({{< ref "/SCALE/SCALETutorials/Network/Interfaces" >}}).
+For more information on when to use an alias or a static IP address, see [Managing Interfaces]({{< ref "/SCALETutorials/Network/Interfaces" >}}).
 
 ## Setting Up Storage
 
@@ -90,7 +90,7 @@ Creating your initial storage is [explained here]({{< ref "SetUpStorageScale" >}
 ### Setting the System Dataset
 
 TrueNAS assigns the root (parent) dataset of the first created pool as the system dataset.
-If your system has enough disks to add more pools, you can [change the system dataset]({{< ref "/SCALE/SCALETutorials/SystemSettings/Advanced" >}}) to a root dataset of another pool.
+If your system has enough disks to add more pools, you can [change the system dataset]({{< ref "/SCALETutorials/SystemSettings/Advanced" >}}) to a root dataset of another pool.
 
 ## Setting Up Shares
 
