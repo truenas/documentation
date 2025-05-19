@@ -1,7 +1,11 @@
 #available icons: https://github.com/thegeeklab/hugo-geekdoc/tree/master/src/icons
 ---
 more:
-  - name: "TrueNAS Apps Market"
+  - name: TrueNAS API Docs
+    ref: "https://api.truenas.com/"
+    external: true
+    icon: "api-icon"
+  - name: TrueNAS Apps Market
     ref: "https://apps.truenas.com/"
     external: true
     icon: "icon-dots-grid"
