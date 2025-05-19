@@ -116,13 +116,15 @@ For more details on feature flags, see [OpenZFS Feature Flags](https://openzfs.g
 The TrueNAS team is pleased to release TrueNAS 25.04.1!
 This is a maintenance release and includes refinement and fixes for issues discovered after 24.10.0.
 
-Special thanks to (Github users): {} for contributing to TrueNAS 25.04.1. For information on how you can contribute, visit https://www.truenas.com/docs/contributing/.
-
 ### 25.04.1 Notable Changes
 
-* STIG compliance improvement: Add PAM-based session management for middleware ([NAS-127189](https://ixsystems.atlassian.net/browse/NAS-127189)).
+{{< enterprise >}}
+* Support for account policy settings in TrueNAS Enterprise environments regarding password history, complexity, and aging ([NAS-135115](https://ixsystems.atlassian.net/browse/NAS-135115)).
+  Note: Administrators should contact TrueNAS Support before enabling STIG and FIPS security settings (see [Security Settings](/SCALETutorials/SystemSettings/Advanced/#security-settings) for details).
+* Add PAM-based session management for middleware ([NAS-127189](https://ixsystems.atlassian.net/browse/NAS-127189)).
   For STIG compliant environments, the max number of simultaneous logins is 10.
   Accounts are locked for 15 minutes after 3 consecutive failed login attempts.
+{{< /enterprise >}}
 * Remove support for BOTH in share ACLs ([NAS-135183](https://ixsystems.atlassian.net/browse/NAS-135183)).
 * Persist updated GMail OAuth refresh token to prevent deauthentication ([NAS-135394](https://ixsystems.atlassian.net/browse/NAS-135394)).
 * Improvements to **Instances**, including:
