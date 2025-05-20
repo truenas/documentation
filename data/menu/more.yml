@@ -9,6 +9,7 @@ more:
   - name: TrueNAS Apps Market
     ref: "https://apps.truenas.com/"
     external: true
+    icon: "icon-dots-grid"
   - name: "Security Reports"
     ref: "https://security.truenas.com"
     external: true
