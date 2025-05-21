@@ -132,7 +132,7 @@ This is a maintenance release and includes refinement and fixes for issues disco
   * ARC scaling and eviction fixes to prevent VM crashes due to OOM errors ([NAS-135904](https://ixsystems.atlassian.net/browse/NAS-135904)).
   * Enhanced robustness of the **Instances** screen to handle edge-case configurations ([NAS-135098](https://ixsystems.atlassian.net/browse/NAS-135098)).
   * Add a synthetic container root user ([NAS-135375](https://ixsystems.atlassian.net/browse/NAS-135375)).
-    This adds a built-in unprivileged root user for containers **truenas_container_unpriv_root**.
+    This adds a built-in unprivileged root user for containers: **truenas_container_unpriv_root**.
     This account can be used in permissions related APIs / UI forms to grant permissions aligning to root in VMs and containers (see [Managing Instance Permissions](/scaletutorials/instances/#managing-instance-permissions)).
   * Improved error handling when instance ports conflict with other service or application configurations ([NAS-134963](https://ixsystems.atlassian.net/browse/NAS-134963)).
   * Prevent accidental deletion of built-in idmap entries ([NAS-135475](https://ixsystems.atlassian.net/browse/NAS-135475)).
