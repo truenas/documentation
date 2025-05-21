@@ -2308,3 +2308,5 @@ deauthentication
 EnterpriseMigrationSupport
 idmapping
 TrueCloud
+OOM
+unpriv
