@@ -128,7 +128,7 @@ This is a maintenance release and includes refinement and fixes for issues disco
 * Remove support for BOTH in share ACLs ([NAS-135183](https://ixsystems.atlassian.net/browse/NAS-135183)).
 * Persist updated GMail OAuth refresh token to prevent deauthentication ([NAS-135394](https://ixsystems.atlassian.net/browse/NAS-135394)).
 * Improvements to **Instances**, including:
-  * Allow same the host path to be mounted inside multiple containers ([NAS-135371](https://ixsystems.atlassian.net/browse/NAS-135371)).
+  * Allow the same host path to be mounted inside multiple containers ([NAS-135371](https://ixsystems.atlassian.net/browse/NAS-135371)).
   * ARC scaling and eviction fixes to prevent VM crashes due to OOM errors ([NAS-135904](https://ixsystems.atlassian.net/browse/NAS-135904)).
   * Enhanced robustness of the **Instances** screen to handle edge-case configurations ([NAS-135098](https://ixsystems.atlassian.net/browse/NAS-135098)).
   * Add a synthetic container root user ([NAS-135375](https://ixsystems.atlassian.net/browse/NAS-135375)).
