@@ -145,72 +145,64 @@ The **Delete volume** dialog displays.
 Select **Confirm** and then click **Continue** to delete the image.
 TrueNAS disables the delete icon for active images to prevent accidental deletion.
 
-### Mapping User and Group IDs
+### Managing Instance Permissions
 
-Click **Map User/Group IDs** from the **Configuration** dropdown to open the **Map User and Group IDs** screen.
-This screen allows you to manually configure UID and GID mappings inside instances.
+Instances run as isolated environments from the host system.  
+To give instance processes access to host files and datasets, you must map user and group IDs (UIDs and GIDs) between the host and the instance.
 
-By default, user and group accounts within an instance are assigned UIDs and GIDs from a private range starting at 2147000001.
-This mapping ensures security isolation for containers.
-You can override these mappings to meet specific system requirements.
+Click **Map User/Group IDs** from the **Configuration** dropdown to open the **Map User and Group IDs** screen.  
+This screen allows you to configure how user and group IDs (UIDs and GIDs) appear inside containers and virtual machines.
+
+By default, user and group accounts within an instance are assigned UIDs and GIDs from a private range starting at **2147000001**.  
+This mapping ensures security isolation for containers. You can override these mappings to meet specific access requirements.
 
 {{< trueimage src="/images/SCALE/Virtualization/MapUserGroupIDs.png" alt="Map User and Group IDs Screen" id="Map User and Group IDs Screen" >}}
 
 Select **Users** or **Groups** to view mappings for individual user or group accounts.
 
-Existing mappings appear in a table that lists the user or group name, host ID, and instance ID.
+Existing mappings appear in a table that lists the user or group name, host ID, and instance ID.  
 Click **<i class="material-icons" aria-hidden="true" title="Delete">delete</i> Delete** on a row to remove a mapping.
 
 To add a new mapping:
 
 * Type an account name to search or select it from the dropdown.
-* Enable **Map to the same UID/GID in the instance** to use the same ID from the host in instances.
-  This means that the selected user or group ID on the host appears as the same ID in instances.
-* Disable **Map to the same UID/GID in the instance** to assign a different instance ID.
+* Enable **Map to the same UID/GID in the instance** to use the same ID from the host in instances.  
+  This makes the selected user or group ID appear the same inside and outside the container.
+* Disable **Map to the same UID/GID in the instance** to assign a different instance ID.  
   Enter the instance UID or GID you want to use—for example, *1000*.
 
-Click **Set** to create the mapping.
-Changes apply immediately, though a restart might be required for instances to reflect them.
+Click **Set** to create the mapping.  
+Changes apply immediately, though restarting the instance can be required for them to take effect.
 
-Mapped IDs are used to control access to host data.
-For a mapping to be effective, you must:
+Mapped IDs control access to mounted host datasets.  
+For example, if you map a host user with UID *3000* to UID *1000* inside the instance:
 
-1. Assign host permissions (ownership or ACLs) to the host-side user or group (the Host ID).
-2. Access the data from inside the container as the user or group mapped to that ID (the Instance ID).
+1. Assign permissions on the host dataset to UID *3000*.
+2. Inside the container, perform actions as UID *1000*.
 
-For example, if you map a host user account with UID *3000* to UID *1000* in the container, you must:
-
-1. Set permissions on the host dataset for UID *3000*.
-2. Run processes or access files inside the container as UID *1000*.
-
-The container process sees UID *1000*, which maps to UID *3000* on the host.
-If you access the container as a different user (e.g., UID *1010*), the mapping does not apply, and access fails unless that user also has valid permissions on the host.
+This setup grants user 1000 in the container the same access to the dataset as user 3000 has on the host.  
+Assigning dataset permissions to a host user is not enough to grant container permissions to all users—you must also map that user and ensure the correct user and UID is used inside the instance.
 
 {{< hint type=note >}}
-Assigning permissions to a mapped host account does not grant access to all users inside the container.
-Only processes running as the mapped instance ID have access to the corresponding host permissions.
+Incorrect or missing mappings can cause permission errors when containers access host paths.
 {{< /hint >}}
 
-#### Mapping Root Accounts
+#### Granting Root Access to Host Paths
 
-To safely grant container root access to host resources, you can map the container root user (UID 0) to an unprivileged account on the host.
+To safely allow instance root processes to access host datasets, TrueNAS provides a built-in unprivileged root user for containers **truenas_container_unpriv_root**.
 
-TrueNAS provides a built-in account named *truenas_container_unpriv_root* for this purpose.
-This synthetic user does not appear in system password or shadow files, but can be selected in user-related forms and used to assign permissions to container root processes.
+This user has UID **2147000001** and is used automatically to represent the Instance root on the host.
+No manual ID mapping is required.
 
-To map the container root user:
+To grant container root access to host data:
 
-* Select *truenas_container_unpriv_root* from the **User** dropdown.
-* Disable **Map to the same UID in the instance**.
-* Enter **0** as the instance UID.
+1. Assign permissions on the host dataset to the **truenas_container_unpriv_root** user.
+2. Access the dataset from inside the container as root.
 
-Click **Set** to save the mapping.
-
-You can then assign ownership or permissions on host datasets to *truenas_container_unpriv_root*.
-When root inside the container accesses those paths, it uses the mapped host permissions of this unprivileged account.
+When the instance root accesses the path, it uses the host permissions of **truenas_container_unpriv_root**.
 
 {{< hint type=note >}}
-This approach supports better isolation than allowing root access to the host while allowing controlled access to specific resources by root inside containers.
+This approach provides secure, controlled access for container root processes without exposing host root privileges.
 {{< /hint >}}
 
 ## Creating Instances
