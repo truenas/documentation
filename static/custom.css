@@ -732,7 +732,7 @@ p,h1,h2,h3,h4,th,td,a,body {
     background-color: #0095d5;
     color: white !important;
     width: 90%;
-    padding: 10px;
+    padding: 10px 20px;
     text-decoration: none;
     border-radius: 5px;
 }
@@ -774,8 +774,9 @@ p,h1,h2,h3,h4,th,td,a,body {
 }
 
 .footer-logo {
-    max-width: 70%;
+    max-width: 80%;
     margin-bottom: 1.5rem;
+    margin-block-start: .83rem;
 }
 
 .footer-column h2 {

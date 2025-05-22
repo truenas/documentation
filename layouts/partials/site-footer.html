@@ -3,7 +3,7 @@
 	<div class="footer-row">
 			<!-- Column 1: Logo and Newsletter -->
 			<div class="footer-column">
-					<img src="/images/truenas-logo-mark.png" alt="TrueNAS Logo" class="footer-logo">
+					<img src="/images/truenas-logo-mark.png" alt="TrueNAS Logo" class="footer-logo" >
 					<a href="https://www.truenas.com/newsletter/" class="footer-button">Subscribe to our newsletter</a>
 					<h3 class="footer-column-title">Find us on Social</h3>
 					<nav class="social-links" style="align-items: end;">
@@ -15,6 +15,7 @@
 							<a href="https://github.com/truenas" target="_blank" title="GitHub"><img src="/favicon/github.png" alt="GitHub"></a>
 							<a href="https://www.vendop.com/vendor/ixsystems-inc/reviews/" target="_blank" title="Vend Op"><img src='/favicon/VendOp_Icon_15x15px.png' alt="Vend Op"></a>
 					</nav>
+					<p style="font-size:1.2em">Listen to TrueNAS <a href="https://www.truenas.com/truenas-podcast/">Podcast</a></p>
 			</div>
 
 			<!-- Column 2: Useful Links -->
@@ -25,10 +26,12 @@
 							<li><a href="https://www.ixsystems.com/about-us/">About Us</a></li>
 							<li><a href="https://www.truenas.com/blog/">Blog</a></li>
 							<li><a href="https://www.ixsystems.com/newsroom/">News & Articles</a></li>
-							<li><a href="https://www.truenas.com/truenas-core/">TrueNAS CORE</a></li>
-							<li><a href="https://www.truenas.com/truenas-scale/">TrueNAS SCALE</a></li>
+							<li><a href="https://www.truenas.com/truenas-scale/">TrueNAS Community Edition (SCALE)</a></li>
+							<li><a href="https://www.truenas.com/truenas-core/">TrueNAS Legacy (CORE)</a></li>
 							<li><a href="https://www.truenas.com/freenas/">FreeNAS</a></li>
 							<li><a href="https://www.truenas.com/software-status/">Software Status</a></li>
+							<li><a href="https://www.truenas.com/reseller-network/">Reseller Network</a></li>
+							<br>
 					</ul>
 			</div>
 
@@ -48,7 +51,7 @@
 					<h2 class="footer-column-title">Contact</h2>
 					<ul class="footer-list">
 						<li><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp;<a href="mailto:info@ixsystems.com" target="_blank">info@ixsystems.com</a></li>
-						<li><i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp;521 Division St</li>
+						<li><i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp;541 Division St</li>
 							<li>Campbell, CA 95008</li>
 							<li>USA</li>
 					</ul>
@@ -58,11 +61,15 @@
 	<div class="container flex flex-wrap">
 			<span class="gdoc-footer__item">© Copyright <script>document.write(new Date().getFullYear())</script>&nbsp;iXsystems, Inc. dba TrueNAS. All rights reserved. |</span>
 			{{ with .Site.Params.GeekdocPrivacyPolicy }}
+			<span class="gdoc-footer__item"><a href="{{ . | absURL }}" class="gdoc-footer__link">Cookie Policy</a> |</span>
 			<span class="gdoc-footer__item"><a href="{{ . | absURL }}" class="gdoc-footer__link">Privacy Policy</a> |</span>
 			{{ end }}
+			<span class="gdoc-footer__item"><a href="https://www.truenas.com/logos/" class="gdoc-footer__link">TrueNAS Logos</a> |</span>		
 			{{ with .Site.Params.GeekdocLegalNotice }}
-			<span class="gdoc-footer__item"><a href="https://www.ixsystems.com/trademarks/" class="gdoc-footer__link">Trademark Policy</a> |</span>
-			<span class="gdoc-footer__item">Documentation distributed under <a href="https://github.com/freenas/documentation/blob/master/LICENSE.md" class="gdoc-footer__link">CC BY NC SA 4.0</a>.</span>
+			<span class="gdoc-footer__item"><a href="https://www.truenas.com/trademarks/" class="gdoc-footer__link">Trademark Policy</a></span>
 			{{ end }}
+	</div>
+	<div class="container flex flex-wrap" style="padding-top: 0;">
+			<span class="gdoc-footer__item" style="padding-top: 0;">Documentation distributed under <a href="https://github.com/truenas/documentation/blob/master/LICENSE.md" class="gdoc-footer__link">CC BY NC SA 4.0</a>.</span>
 	</div>
 </footer>
