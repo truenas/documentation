@@ -14,6 +14,8 @@ keywords:
 
 {{< include file="/static/includes/MigrateCOREtoSCALEWarning.md" >}}
 
+{{< include file="/static/includes/MigrateCOREtoSCALE24_04.md" >}}
+
 ## What can or cannot migrate?
 
 {{< include file="/static/includes/COREMigratesList.md" >}}
@@ -112,7 +114,7 @@ Burn the iso to a USB drive (see [**Installing on Physical Hardware**]({{< ref "
 The built-in services listed in this section are available in 13.0, but deprecated in 22.12.3 (Bluefin) and removed in later TrueNAS releases.
 They require attention before attempting to migrate to 24.04.
 
-Each of the sections has information that can help you determine the best steps forward to secure any critical data before attempting to migrate from 13.0 to 24.04.
+Each of the sections has information that can help you determine the best steps forward to secure any critical data before attempting to migrate.
 They provide details on transitioning from that service to an application with the functionality of the deprecated service.
 
 TrueNAS has [apps](https://www.truenas.com/docs/truenasapps/) you can deploy as replacements for these services.
