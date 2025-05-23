@@ -145,32 +145,65 @@ The **Delete volume** dialog displays.
 Select **Confirm** and then click **Continue** to delete the image.
 TrueNAS disables the delete icon for active images to prevent accidental deletion.
 
-### Mapping User and Group IDs
+### Managing Instance Permissions
 
-Click **Map User/Group IDs** on the **Configuration** dropdown list to open the **Map User and Group IDs** screen, which allows you to manually configure UID and GID mappings inside instances.
-By default, user and group accounts within an instance are assigned UIDs and GIDs from a special private range starting at **2147000001**.
-This mapping ensures security isolation for containers.
-However, you can override these mappings to meet specific system requirements.
+Instances run as isolated environments from the host system.  
+To give instance processes access to host files and datasets, you must map user and group IDs (UIDs and GIDs) between the host and the instance.
+
+Click **Map User/Group IDs** from the **Configuration** dropdown to open the **Map User and Group IDs** screen.  
+This screen allows you to configure how user and group IDs (UIDs and GIDs) appear inside containers and virtual machines.
+
+By default, user and group accounts within an instance are assigned UIDs and GIDs from a private range starting at **2147000001**.  
+This mapping ensures security isolation for containers. You can override these mappings to meet specific access requirements.
 
 {{< trueimage src="/images/SCALE/Virtualization/MapUserGroupIDs.png" alt="Map User and Group IDs Screen" id="Map User and Group IDs Screen" >}}
 
-Select **Users** or **Groups** to view mappings for individual user or group accounts, respectively.
+Select **Users** or **Groups** to view mappings for individual user or group accounts.
 
-Existing mappings are shown in a table containing the user or group name, host ID, and instance ID.
-Click **<i class="material-icons" aria-hidden="true" title="Delete">delete</i> Delete** on a row to delete that mapping.
+Existing mappings appear in a table that lists the user or group name, host ID, and instance ID.  
+Click **<i class="material-icons" aria-hidden="true" title="Delete">delete</i> Delete** on a row to remove a mapping.
 
-To configure a new mapping, type an account name to search for it or select it from the dropdown list.
-Select **Map to the same UID/GID in the instance** to directly map the host ID to the same ID in instances.
-This means that the selected user or group ID on the host appears as the same ID in instances.
+To add a new mapping:
 
-Disable **Map to the same UID/GID in the instance** to define a different instance ID for the user or group.
-Enter an ID number to map in instances, for example *1000*.
-This means that the selected user or group ID on the host appears as the configured ID in instances.
+* Type an account name to search or select it from the dropdown.
+* Enable **Map to the same UID/GID in the instance** to use the same ID from the host in instances.  
+  This makes the selected user or group ID appear the same inside and outside the container.
+* Disable **Map to the same UID/GID in the instance** to assign a different instance ID.  
+  Enter the instance UID or GID you want to use—for example, *1000*.
 
-Click **Set** to create the mapping.
-Changes take effect immediately, though instances can require a restart to reflect the changes.
+Click **Set** to create the mapping.  
+Changes apply immediately, though restarting the instance can be required for them to take effect.
 
-Incorrect mappings can create permission issues within instances.
+Mapped IDs control access to mounted host datasets.  
+For example, if you map a host user with UID *3000* to UID *1000* inside the instance:
+
+1. Assign permissions on the host dataset to UID *3000*.
+2. Inside the container, perform actions as UID *1000*.
+
+This setup grants user 1000 in the container the same access to the dataset as user 3000 has on the host.  
+Assigning dataset permissions to a host user is not enough to grant container permissions to all users—you must also map that user and ensure the correct user and UID is used inside the instance.
+
+{{< hint type=note >}}
+Incorrect or missing mappings can cause permission errors when containers access host paths.
+{{< /hint >}}
+
+#### Granting Root Access to Host Paths
+
+To safely allow instance root processes to access host datasets, TrueNAS provides a built-in unprivileged root user for containers **truenas_container_unpriv_root**.
+
+This user has UID **2147000001** and is used automatically to represent the Instance root on the host.
+No manual ID mapping is required.
+
+To grant container root access to host data:
+
+1. Assign permissions on the host dataset to the **truenas_container_unpriv_root** user.
+2. Access the dataset from inside the container as root.
+
+When the instance root accesses the path, it uses the host permissions of **truenas_container_unpriv_root**.
+
+{{< hint type=note >}}
+This approach provides secure, controlled access for container root processes without exposing host root privileges.
+{{< /hint >}}
 
 ## Creating Instances
 
@@ -228,13 +261,29 @@ To create a new container, from the **Create Instance** screen:
 
    d. Click **Add** again to mount additional storage volumes.
 
-5. {{< include file="/static/includes/InstanceNetworkProcedure.md" >}}
+5. (Optional) Configure proxy settings to forward network connections between the host and the container.
+   This routes traffic from a specific address on the host to an address inside the instance, or vice versa, allowing the instance to connect externally through the host.
 
-6. {{< include file="/static/includes/InstanceUSBProcedure.md" >}}
+   {{< trueimage src="/images/SCALE/Virtualization/CreateInstanceProxies.png" alt="Proxies" id="Proxies" >}}
 
-7. {{< include file="/static/includes/InstanceGPUProcedure.md" >}}
+   a. Click **Add** in the **Proxies** section to display a set of proxy configuration settings.
 
-8. Click **Create** to deploy the container.
+   b. Select the protocol option from the **Host Protocol** dropdown list to set the connection protocol for the TrueNAS host as **TCP** or **UDP**.
+
+   c. Enter a port in **Host Port** to define the TrueNAS port to map to the instance port on the container, for example *3600*.
+
+   d. Select the connection protocol for the container in **Instance Protocol**.
+      Options are **TCP** or **UDP**.
+
+   e. Enter the port number within the container in **Instance Port**, for example *80*, to map to the host port.
+
+6. {{< include file="/static/includes/InstanceNetworkProcedure.md" >}}
+
+7. {{< include file="/static/includes/InstanceUSBProcedure.md" >}}
+
+8. {{< include file="/static/includes/InstanceGPUProcedure.md" >}}
+
+9. Click **Create** to deploy the container.
 
 ### Creating a Virtual Machine
 
@@ -601,6 +650,46 @@ Click the <span class="material-icons">more_vert</span> icon to the right of an 
 Select [**Delete**](#deleting-disk-mounts) to delete the NIC mount.
 
 {{< trueimage src="/images/SCALE/Virtualization/DeleteNicDialog.png" alt="Delete Item Dialog" id="Delete Item Dialog" >}}
+
+Click **Confirm** to activate the **Continue** button.
+Click **Continue** to start the delete operation.
+
+### Managing Proxies
+
+Use the **Proxies** widget to view the network proxy settings configured for the instance.
+It allows you to manage these settings, including adding, editing, or removing proxies.
+Proxies are available for containers only and cannot be used with VMs.
+
+{{< trueimage src="/images/SCALE/Virtualization/ProxiesWidget.png" alt="Proxies Widget" id="Proxies Widget" >}}
+
+Click **Add** to open the [**Add Proxy**](#adding-or-editing-proxies) screen to configure a new proxy for the instance.
+
+For existing proxies, click <span class="material-icons">more_vert</span> to open the actions menu with options to [**Edit**](#adding-or-editing-proxies) or [**Delete**](#deleting-proxies) the proxy.
+
+#### Adding or Editing Proxies
+
+Use the **Add Proxy** or **Edit Proxy** screen to configure or modify a proxy setting attached to an instance.
+
+{{< trueimage src="/images/SCALE/Virtualization/AddProxyScreen.png" alt="Add Proxy Screen" id="Add Proxy Screen" >}}
+
+Select a **Host Protocol** to set the connection protocol for the TrueNAS host.
+Options are **TCP** or **UDP**.
+
+Enter a port number in **Host Port** to map to the instance port on the container, for example *3600*.
+
+Select an **Instance Protocol** to set the connection protocol for the container.
+Options are **TCP** or **UDP**.
+
+Enter a port number for the container in **Instance Port**, for example *80*.
+
+Click **Save** to apply changes.
+
+#### Deleting Proxies
+
+For existing proxies, click <span class="material-icons">more_vert</span> to open the actions menu.
+Select **Delete** to remove the proxy configuration.
+
+{{< trueimage src="/images/SCALE/Virtualization/DeleteProxyDialog.png" alt="Delete Item Dialog" id="Delete Item Dialog" >}}
 
 Click **Confirm** to activate the **Continue** button.
 Click **Continue** to start the delete operation.
