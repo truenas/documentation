@@ -4,8 +4,7 @@ more:
   - name: TrueNAS API Docs
     ref: "https://api.truenas.com/"
     external: true
-    icon: "API-Icon.svg"
-    iconSrc: "static"
+    icon: "api-icon"
   - name: TrueNAS Apps Market
     ref: "https://apps.truenas.com/"
     external: true
