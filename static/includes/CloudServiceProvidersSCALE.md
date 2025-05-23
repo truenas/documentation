@@ -14,7 +14,6 @@ These providers are supported for Cloud Sync tasks in TrueNAS:
 * [Google Photos](https://photos.google.com)
 * Hypertext Transfer Protocol (HTTP)
 * Hubic ([closed to new accounts](https://www.ovhcloud.com/en-gb/subscriptions-hubic-ended/))
-* [Mega](https://mega.io/)
 * [Microsoft Azure Blob Storage](https://azure.microsoft.com/en-us/products/storage/blobs)
 <--->
 * [OpenStack Swift](https://docs.openstack.org/swift/latest/)
