@@ -74,7 +74,7 @@ Development timelines are available below.
 
 <--->
 
-{{< releaselist name=core-releases defaultTab=2 >}}
+{{< releaselist name=core-releases defaultTab=1 >}}
 
 <--->
 
