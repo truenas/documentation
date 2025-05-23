@@ -34,12 +34,12 @@ Please contact Support for assistance!
 {{< /enterprise >}}
 
 1. Upgrade your system to either the latest 13.0 or 13.3 release.
-   TrueNAS Enterprise-licensed (or community systems that haven't switched to 13.3) systems on 12.0x or earlier should upgrade to the latest 13.0 release (e.g. 13.0-U6.2 or newer) before migration.
+   TrueNAS Enterprise-licensed (or community systems that haven't switched to 13.3) systems on 12.0x or earlier should upgrade to the latest 13.0 release before migration.
    Community users with 13.3 installed should update to the latest maintenance release of that version before migration.
    Either major version can use the [iso upgrade](#migrating-using-an-iso-file-to-upgrade) method for migration.
 
 2. Migrate [GELI-encrypted pools](https://www.truenas.com/docs/core/13.0/coretutorials/storage/pools/storageencryption/#geli-pool-migrations) to a non-GELI-encrypted pool before upgrading from TrueNAS 12.0x or earlier releases!
-   If you do not migrate from GELI to ZFS encryption before upgrading to 13.0-U6.2 (or newer) or migrating to TrueNAS 24.04, you permanently lose access to the data in the GELI encrypted pool(s).
+   If you do not migrate from GELI to ZFS encryption before upgrading to 13.0-U6.2 (or newer) or migrating to TrueNAS 24.04 (or newer), you permanently lose access to the data in the GELI encrypted pool(s).
 
 3. Verify the root user is not locked.
    Go to **Accounts > Users**, select the root user and click **Edit** to view current settings and confirm **Lock User** is not selected.
@@ -112,13 +112,13 @@ Burn the iso to a USB drive (see [**Installing on Physical Hardware**]({{< ref "
 
 ## Deprecated Services
 The built-in services listed in this section are available in 13.0, but deprecated in 22.12.3 (Bluefin) and removed in later TrueNAS releases.
-They require attention before attempting to migrate to 24.04.
+They require attention before attempting to migrate to 24.04 or later.
 
 Each of the sections has information that can help you determine the best steps forward to secure any critical data before attempting to migrate.
 They provide details on transitioning from that service to an application with the functionality of the deprecated service.
 
-TrueNAS has [apps](https://www.truenas.com/docs/truenasapps/) you can deploy as replacements for these services.
-24.04 provides the option to force an upgrade without converting deprecated services to apps.
+TrueNAS has [apps](https://apps.truenas.com/) you can deploy as replacements for these services.
+TrueNAS provides the option to force an upgrade without converting deprecated services to apps.
 The force option is not recommended for the S3 service as forcing the upgrade results in losing access to and the ability to recover the MinIO S3 data.
 
 See [Bluefin Deprecated Services](https://www.truenas.com/docs/scale/22.12/gettingstarted/scaledeprecatedfeatures/) for more information.
