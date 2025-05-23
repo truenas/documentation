@@ -41,7 +41,7 @@ TrueNAS Enterprise customers with Silver or Gold Coverage support contracts can 
 
 Customers with appropriate support contracts can configure **[Proactive Support]({{< ref "AddLicenseProactiveSupport" >}})** after they apply their system license, and after acknowledging and signing the End User License Agreement (EULA).
 
-After entering your system license,  the **Proactive Support** option shows on the **Support** widget on the **System > General Settings** screen. 
+After entering your system license, the **Proactive Support** option shows on the **Support** widget on the **System > General Settings** screen. 
 {{< /enterprise >}}
 
 ## Setting Up Networking
