@@ -14,7 +14,7 @@ slug: migrate-enterprise
 ---
 
 {{< enterprise >}}
-TrueNAS Enterprise customers with High Availability (HA) or Non-HA TrueNAS Hardware should consult with TrueNAS Enterprise Support before attempting to migrate.
+{{< include file="/static/includes/EnterpriseMigrationSupport.md" >}}
 {{< /enterprise >}}
 
 The process requires:
