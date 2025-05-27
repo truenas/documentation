@@ -165,7 +165,7 @@ This is a maintenance release and includes refinements and fixes for issues disc
   * `GPU_UUID` is the UUID matching the PCI slot that you retrieved with the above command.
 * Custom applications with TTY enabled do not display logs in the TrueNAS UI. This is due to an upstream bug, see https://github.com/docker/docker-py/issues/1394. Users experiencing this issue can resolve it by either disabling TTY or using `docker logs` from the command line.
 * TrueNAS UI displays **Updates Available** button after updating to the latest release (see ([NAS-136046](https://ixsystems.atlassian.net/browse/NAS-136046)).
-  This issue will be resolved in the upcoming 25.04.2 release, but if you want to work around this issue now, follow these steps:
+  This issue is resolved in the upcoming 25.04.2 release, but if you want to work around this issue now, follow these steps:
   1. Open the **Shell** and run `midclt call systemdataset.config | jq ."path"`
   2. Search for a file named **update.sqsh** in the returned string
   3. Run `rm -f <full-path-to-update.sqsh>`, replacing `<full-path-to-update.sqsh>` with the file path to the **update.sqsh** file.
