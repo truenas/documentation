@@ -149,10 +149,10 @@ majorVersions:
     releaseName: "Fangtooth"
     releases:
       - name: "25.04.1"
-        link: "https://download.truenas.com/TrueNAS-Fangtooth/25.04.1"
+        link: "https://download.truenas.com/TrueNAS-SCALE-Fangtooth/25.04.1"
         date: "2025-05-27"
       - name: "25.04.0"
-        link: "https://download.truenas.com/TrueNAS-Fangtooth/25.04.0"
+        link: "https://download.truenas.com/TrueNAS-SCALE-Fangtooth/25.04.0"
         date: "2025-04-15"
       - name: "25.04-RC.1"
         link: "https://download.truenas.com/TrueNAS-SCALE-Fangtooth-RC/25.04-RC.1"
