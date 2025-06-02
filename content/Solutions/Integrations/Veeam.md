@@ -121,7 +121,29 @@ Pools can include several of these groups, so the capacity can be expanded as ne
 For example, 390 TB of usable space with 12 TB drives requires four groups and 48 drives.
 Detailed configurations can be discussed with iXsystems sales representatives and engineers.
 
-### Planning Storage Lifecycle
+## Configuring Veeam Agent with SMB on TrueNAS
+
+Veeam Agent for Microsoft Windows supports backing up to SMB shares hosted on TrueNAS.
+
+### Creating the SMB Share
+
+1. Go to **Storage > Pools**, create a dataset (example: `veeam-backups`), and set the Share Type to **SMB**.
+2. Go to **Sharing > SMB**, create a share pointing to the dataset.
+3. Create a TrueNAS user (example: `veeam`) and assign full access to the dataset ACL.
+4. Enable the SMB service.
+
+Use the Virtual IP (VIP) for high availability.
+
+### Setting Up Veeam Agent
+
+1. Open **Veeam Agent for Microsoft Windows**.
+2. Click **Configure Backup**.
+3. Select **Entire Computer**, then **Shared Folder** as the destination.
+4. Enter the SMB path and TrueNAS local user credentials.
+5. Adjust backup schedule and retention if desired.
+6. Click **Finish** to begin the backup.
+
+## Planning Storage Lifecycle
 
 TrueNAS storage pools can be expanded online to the maximum size supported by a particular TrueNAS system.
 Storage pools can be expanded one vdev (RAID group) at a time, so long as each vdev shares the same type.
