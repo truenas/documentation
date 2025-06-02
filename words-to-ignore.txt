@@ -2310,3 +2310,5 @@ idmapping
 TrueCloud
 OOM
 unpriv
+sqsh
+

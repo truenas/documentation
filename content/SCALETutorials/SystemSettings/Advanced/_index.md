@@ -184,6 +184,8 @@ Options include defining a password lifetime, types of characters that must be p
 Adjust these as needed for your security requirements.
 Enabling STIG compatibility mode requires specific minimum values for these settings.
 
+Note that TrueNAS begins warning all local account types (administrator, full admin, read-only, and sharing-only) seven days before password expiration. After expiration, the account locks and requires administrative action to unlock.
+
 <div class="noprint">
 ## Contents
 
