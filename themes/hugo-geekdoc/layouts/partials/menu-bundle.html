@@ -21,6 +21,7 @@
         {{ if $ref }}
           {{ $this := $site.GetPage .ref }}
           {{ $icon := default false .icon }}
+		  {{ $iconSrc := default "sprite" .iconSrc }}
           {{ $numberOfPages := (add (len $this.Pages) (len $this.Sections)) }}
           {{ $isCurrent := eq $current $this }}
           {{ $isAncestor := $this.IsAncestor $current }}
@@ -49,8 +50,12 @@
             >
               <span class="flex">
                 {{ if $icon }}
-                  <svg class="gdoc-icon {{ .icon }}"><use xlink:href="#{{ .icon }}"></use></svg>
-                {{ end }}
+				  {{ if eq $iconSrc "static" }}
+					<img class="gdoc-icon" src="/icons/{{ $icon }}" alt="{{ $icon }}" style="width:1.5rem;height:1.5rem;margin-right:.25rem;" />
+				  {{ else }}
+					<svg class="gdoc-icon {{ $icon }}"><use xlink:href="#{{ $icon }}"></use></svg>
+				  {{ end }}
+				{{ end }}
                 <a
                   href="{{ if .external }}
                     {{ .ref }}
