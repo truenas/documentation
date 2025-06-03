@@ -167,8 +167,8 @@ This is a maintenance release and includes refinements and fixes for issues disc
 * TrueNAS UI displays **Updates Available** button after updating to the latest release (see ([NAS-136046](https://ixsystems.atlassian.net/browse/NAS-136046)).
   This issue is resolved in the upcoming 25.04.2 release, but if you want to work around this issue now, follow these steps:
   1. Open the **Shell** and run `midclt call systemdataset.config | jq ."path"`
-  2. Search for a file named **update.sqsh** in the returned string
-  3. Run `rm -f <full-path-to-update.sqsh>`, replacing `<full-path-to-update.sqsh>` with the file path to the **update.sqsh** file.
+  2. Search for a file named **update.sqsh** in the returned string using `find "returned path" -name update.sqsh`
+  3. Run `rm -f <full-path-to-update.sqsh>`, replacing `<full-path-to-update.sqsh>` with the **full** file path to the **update.sqsh** file from the previous step
      
 <a href="https://ixsystems.atlassian.net/issues/?filter=12504" target="_blank">Click here to see the latest information</a> about public issues in 25.04.1 that are being resolved in a future TrueNAS release.
 
