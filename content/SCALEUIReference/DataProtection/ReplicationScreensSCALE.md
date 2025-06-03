@@ -214,7 +214,7 @@ The **Replication Schedule** options set when to run the task based on the sched
 {{< /expand >}}
 
 #### Destination Snapshot Lifetime Options
-The **Destination Snapshot Lifetime** setting determines how long the replicated snapshot is retained on the destination server. 
+The **Destination Snapshot Lifetime** setting determines how long the replicated snapshot is retained on the destination server.  *Note that the latest snapshot is **always** preserved to permit later resumption of replication. If a dataset or zvol is deleted on the source the replicated dataset or zvol and most recent snapshot must be manually deleted on the desintation.* 
 
 {{< trueimage src="/images/SCALE/DataProtection/AddReplicationTaskWhenRunOnceCustomLifetime.png" alt="Add Replication Task When Custom Lifetime" id="Add Replication Task When Custom Lifetime" >}}
 
