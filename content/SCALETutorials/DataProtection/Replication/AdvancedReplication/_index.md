@@ -175,6 +175,8 @@ Make sure that any snapshots deleted from the destination are obsolete or otherw
 Defining the **Snapshot Retention Policy** is generally recommended to prevent cluttering the system with obsolete snapshots.
 Choosing **Same as Source** keeps the snapshots on the destination system for the same amount of time as the defined **Snapshot Lifetime** from the source system periodic snapshot task.
 
+*Note that the latest snapshot is **always** preserved to permit later resumption of replication. If a dataset or zvol is deleted on the source the replicated dataset or zvol and most recent snapshot must be manually deleted on the desintation.*
+
 You can use **Custom** to define your own lifetime for snapshots on the destination system.
 
 ### Replicating Snapshots Matching a Schedule
