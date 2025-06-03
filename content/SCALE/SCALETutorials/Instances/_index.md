@@ -174,6 +174,11 @@ To add a new mapping:
 * Disable **Map to the same UID/GID in the instance** to assign a different instance ID.  
   Enter the instance UID or GID you want to use—for example, *1000*.
 
+{{< hint type=info >}}
+Only local users and groups are supported for ID mapping in instances.  
+Domain accounts from Active Directory or other directory services are not supported.
+{{< /hint >}}
+
 Click **Set** to create the mapping.  
 Changes apply immediately, though restarting the instance can be required for them to take effect.
 
