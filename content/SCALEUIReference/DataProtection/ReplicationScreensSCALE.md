@@ -208,13 +208,17 @@ The **Replication Schedule** options set when to run the task based on the sched
 |---------|-------------|
 | **Run On a Schedule** | Displays the **Schedule** option where you select a preset time or select **Custom** to use the advanced scheduler. |
 | **Run Once** | Runs the replication task after you click **Start Replication**. Displays the **Make Destination Dataset Read-only?** option. Removes the **Schedule** option. |
-| **Schedule** | Displays after selecting the **Run On a Schedule** radio button. Select a preset time or can select **Custom** to use the advanced scheduler. |
+| **Schedule** | Displays after selecting the **Run On a Schedule** radio button. Select a preset time or select **Custom** to use the advanced scheduler. |
 | **Make Destination Dataset Read-only?** | Displays after selecting the **Run Once** radio button. Select to change the destination dataset to be read-only. To continue using the default or existing dataset read permissions, leave this checkbox cleared. |
 {{< /truetable >}}
 {{< /expand >}}
 
 #### Destination Snapshot Lifetime Options
-The **Destination Snapshot Lifetime** setting determines how long the replicated snapshot is retained on the destination server. 
+The **Destination Snapshot Lifetime** setting determines how long the replicated snapshot is retained on the destination server.  
+
+{{< hint type=note (title="Snapshot Preservation") >}}
+TrueNAS always preserves the latest snapshot to permit later resumption of replication. If a dataset or zvol is deleted on the source, you must manually delete the replicated dataset or zvol and the most recent snapshot on the destination.
+{{< /hint >}} 
 
 {{< trueimage src="/images/SCALE/DataProtection/AddReplicationTaskWhenRunOnceCustomLifetime.png" alt="Add Replication Task When Custom Lifetime" id="Add Replication Task When Custom Lifetime" >}}
 
