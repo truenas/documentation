@@ -41,6 +41,8 @@ The **Basic Settings** options display by default when you edit the SSH service.
 
 {{< trueimage src="/images/SCALE/SystemSettings/SSHServicesAdvancedSettings.png" alt="SSH Advanced Settings Options" id="SSH Advanced Settings Options" >}}
 
+{{< include file="/static/includes/auxiliary-parameters-caution.md" >}}
+
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|

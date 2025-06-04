@@ -26,6 +26,8 @@ See [UPS Service Screen]({{< ref "UPSServicesScreenSCALE" >}}) for details on th
 
 Some UPS models are unresponsive with the default polling frequency (default is two seconds).
 TrueNAS displays the issue in logs as a recurring error like **libusb_get_interrupt: Unknown error**.
+
+{{< include file="/static/includes/auxiliary-parameters-caution.md" >}}
 If you get an error, decrease the polling frequency by adding an entry to **Auxiliary Parameters (ups.conf)**: `pollinterval = 10`.
 
 {{< expand "How do I find a device name?" "v" >}}

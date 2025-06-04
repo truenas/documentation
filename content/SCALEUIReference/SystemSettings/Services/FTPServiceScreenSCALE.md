@@ -83,6 +83,8 @@ Enable TLS when possible (especially when exposing FTP to a WAN). TLS effectivel
 
 {{< trueimage src="/images/SCALE/SystemSettings/FTPAdvancedSettingsOtherOptions.png" alt="FTP Advanced Settings Other Options" id="FTP Advanced Settings Other Options" >}}
 
+{{< include file="/static/includes/auxiliary-parameters-caution.md" >}}
+
 {{< truetable >}}
 | Settings | Description |
 |----------|-------------|

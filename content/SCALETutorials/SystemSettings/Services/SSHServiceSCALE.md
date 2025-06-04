@@ -40,6 +40,8 @@ Configure the options as needed to match your network environment.
 
 These **Auxiliary Parameters** can be useful when troubleshooting SSH connectivity issues:
 
+{{< include file="/static/includes/auxiliary-parameters-caution.md" >}}
+
 * Increase the `ClientAliveInterval` if SSH connections tend to drop.
 * Increase the `MaxStartups` value (**10** is default) when you need more concurrent SSH connections.
 
