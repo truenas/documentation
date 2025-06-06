@@ -152,6 +152,8 @@ The **Other Options** settings include improving Apple software compatibility, Z
 
 {{< trueimage src="/images/SCALE/Shares/AddSMBAdvancedOtherSettings.png" alt="SMB Advanced Options Other" id="SMB Advanced Options Other" >}}
 
+{{< include file="/static/includes/auxiliary-parameters-caution.md" >}}
+
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
