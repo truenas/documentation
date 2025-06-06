@@ -83,7 +83,7 @@ Click **Save** now if you do not want to [use an ACL preset](#adding-a-new-prese
 See [Edit ACL Screen]({{< ref "EditACLScreens" >}}) for information on the ACL editor screens and setting options.
 
 {{< hint type=important >}}
-Users can grant `root` permissions to containers and instances through an unprivileged root account using the ACL editor in the UI or the TrueNAS API. 
+Users can grant root permissions to containers and instances through an unprivileged root account using the ACL editor in the UI or the TrueNAS API. 
 
 To ensure functionality, add an ACE for the `truenas_container_unpriv_root` user and assign the appropriate permissions (such as **Read**, **Modify**, and **Execute**).
 
