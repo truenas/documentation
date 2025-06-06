@@ -110,7 +110,6 @@ There are a few  ways to increase the size of an existing pool:
 
 While adding a new special VDEV increases usable space in combination with a special_small_files VDEV, it is not encouraged.
 By default, a VDEV limits all disks to the usable capacity of the smallest attached device.
-If a pool is not automatically expanded, for example when resizing virtual disks in a hypervisor apart from TrueNAS, click **Expand** on the **Storage Dashboard** to manually increase the pool size to match all available disk space.
 
 ### Extending a RAIDZ VDEV
 Extend a RAIDZ VDEV to add additional disks one at a time, expanding capacity incrementally.
@@ -296,7 +295,7 @@ Go to the **Storage Dashboard** and click **Manage Devices** on the **Topology**
 Wait for the resilver to complete before replacing the next disk.
 Repeat steps 1-4 for all attached disks.
 
-TrueNAS automatically expands the usable capacity of the pool to fit all available space after replacing the last attached disk.
+After replacing the last attached disk, click **Expand** on the **Storage Dashboard** to increase the pool size to fit all available disk space.
 
 ## Removing VDEVs
 You can always remove the L2ARC (cache) and SLOG (log) VDEVs from an existing pool, regardless of topology or VDEV type.
