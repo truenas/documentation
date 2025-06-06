@@ -87,7 +87,7 @@ Users can grant root permissions to containers and instances through an unprivil
 
 To ensure functionality, add an ACE for the truenas_container_unpriv_root user and assign the appropriate permissions (such as read, modify, and execute).
 
-For container environments, verify that the ACL includes an entry for `truenas_container_unpriv_root` with the required access to any dataset paths used by the container.
+For container environments, verify that the ACL includes an entry for truenas_container_unpriv_root with the required access to any dataset paths used by the container.
 
 See [Granting Root Access to Host Paths](/scale/scaletutorials/instances/#granting-root-access-to-host-paths) for more information.
 {{< /hint >}}
