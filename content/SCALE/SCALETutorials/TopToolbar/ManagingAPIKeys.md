@@ -107,3 +107,5 @@ Click the link for the content you want to access:
 * Query Methods shows query basic usage, supported operators, and information on query operations and syntax.
 
 {{< include file="/static/includes/APIDocs.md" >}}
+
+For more information on the API documentation see [API Reference]([({{ relref "/}}](https://www.truenas.com/docs/scale/api/)).
