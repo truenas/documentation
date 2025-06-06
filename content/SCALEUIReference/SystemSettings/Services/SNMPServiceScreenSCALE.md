@@ -42,6 +42,8 @@ Click the <i class="material-icons" aria-hidden="true" title="Configure">edit</i
 
 ### Other Options
 
+{{< include file="/static/includes/auxiliary-parameters-caution.md" >}}
+
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
