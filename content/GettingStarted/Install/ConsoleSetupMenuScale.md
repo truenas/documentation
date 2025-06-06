@@ -46,7 +46,7 @@ For network configuration options **1**, **2**, and **3**, we recommend using th
   
   Use to change the administrator user password.
   If you selected option 1 on the iso installer menu, you have already configured the **truenas_admin** user and password.
-  You can use this to change the admin password before you log into the TrueNAS UI.
+  You can use this to change the admin password before you log into the TrueNAS UI. Note that TrueNAS begins warning all local account types (administrator, full admin, read-only, and sharing-only) seven days before password expiration. After expiration, the account locks and requires administrative action to unlock.
   {{< hint type=note >}}
   This is not the password for the root user in the CLI or the root user login password for the web UI.
   The [root user password]({{< ref "AdminRoles" >}}) is disabled by default as part of security hardening.

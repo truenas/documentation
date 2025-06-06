@@ -1,3 +1,16 @@
+Process time: 2025-05-15 16:06:34
+Initiated by: Dan Pizappi
+
+1155 files reviewed.
+5 files deleted.
+The following files were deleted:
+C:\Users\iXUser\Documents\GitHub\documentation\static\includes\_index.md
+C:\Users\iXUser\Documents\GitHub\documentation\static\includes\InstancesManagingProxies.md
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Dashboard\TasksFailed.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Reporting\ZFSReportingARCSizeResult.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\SystemSettings\SecurityFIPSSTIGRebootDialog.png
+
+----------------------------------------
 Process time: 2025-04-11 15:53:40
 Initiated by: Dan Pizappi
 
