@@ -92,6 +92,8 @@ Users can grant `root` permissions to containers and instances through an unpriv
 To ensure functionality, add an ACE for the `truenas_container_unpriv_root` user and assign the appropriate permissions (such as **Read**, **Modify**, and **Execute**).
 
 For container environments, verify that the ACL includes an entry for `truenas_container_unpriv_root` with the required access to any dataset paths used by the container.
+
+See [Granting Root Access to Host Paths](https://www.truenas.com/docs/scale/25.04/scaletutorials/instances/#granting-root-access-to-host-paths) for more information.
 {{< /hint >}}
 
 ### Adding a New Preset (POSIX ACL)
