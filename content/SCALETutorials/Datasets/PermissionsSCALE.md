@@ -82,6 +82,16 @@ Click **Save** now if you do not want to [use an ACL preset](#adding-a-new-prese
 
 See [Edit ACL Screen]({{< ref "EditACLScreens" >}}) for information on the ACL editor screens and setting options.
 
+{{< hint type=important >}}
+Users can grant root permissions to containers and instances through an unprivileged root account using the ACL editor in the UI or the TrueNAS API. 
+
+To ensure functionality, add an ACE for the truenas_container_unpriv_root user and assign the appropriate permissions (such as read, modify, and execute).
+
+For container environments, verify that the ACL includes an entry for truenas_container_unpriv_root with the required access to any dataset paths used by the container.
+
+See [Granting Root Access to Host Paths](/scale/scaletutorials/instances/#granting-root-access-to-host-paths) for more information.
+{{< /hint >}}
+
 ### Adding a New Preset (POSIX ACL)
 From the **Unix Permissions Editor** screen:
 1. Click **Set ACL**.
