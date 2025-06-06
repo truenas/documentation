@@ -98,6 +98,9 @@ The **More Options** specify other settings related to when and how the rsync oc
 {{< /expand >}}
 
 {{< expand "More Options Settings" "v" >}}
+
+{{< include file="/static/includes/auxiliary-parameters-caution.md" >}}
+
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|

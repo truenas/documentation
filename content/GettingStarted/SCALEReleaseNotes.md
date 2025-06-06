@@ -56,11 +56,6 @@ More details are available from [Software Releases](https://www.truenas.com/docs
 
 * {{< include file="/static/includes/NetdataUI.md" >}}
 
-* To prevent unexpected failures in SMB shares, TrueNAS automatically disables SMB2/3 lease support and AAPL extensions (typically used to configure Time Machine) globally when [multiprotocol SMB/NFS shares]({{< ref "MixedModeShares" >}}) are enabled ([NAS-133680](https://ixsystems.atlassian.net/browse/NAS-133680)).
-
-  This means that in TrueNAS 25.04 and later, multiprotocol shares are incompatible with Time Machine shares on the same system.
-  To prevent service interruption, Time Machine users should make sure that no multiprotocol shares are configured on TrueNAS.
-
 ### Migrating Virtual Machines
 
 {{< include file="/static/includes/Incus.md" >}}
@@ -87,9 +82,11 @@ Depending on the specific system configuration, migrating from a FreeBSD-based T
 See the [Migration articles]({{< ref "/GettingStarted/Migrate/" >}}) for cautions and notes about differences between each software and the migration process.
 
 {{< enterprise >}}
-Enterprise customers should contact TrueNAS Enterprise Support for assistance before attempting to migrate.
+{{< include file="/static/includes/EnterpriseMigrationSupport.md" >}}
+
 {{< expand "TrueNAS Enterprise Support" "v" >}}
-{{< include file="content/_includes/iXsystemsSupportContact.md" >}}
+{{< include file="/static/includes/iXsystemsSupportContact.md" >}}
+
 {{< /expand >}}
 {{< /enterprise >}}
 
@@ -112,8 +109,71 @@ Any new feature flags introduced since the previous OpenZFS version that was int
 
 For more details on feature flags, see [OpenZFS Feature Flags](https://openzfs.github.io/openzfs-docs/Basic%20Concepts/Feature%20Flags.html) and [OpenZFS zpool-feature.7](https://openzfs.github.io/openzfs-docs/man/7/zpool-features.7.html).
 
-## 25.04.0
+## 25.04.1
 
+**May 27, 2025**
+
+The TrueNAS team is pleased to release TrueNAS 25.04.1!
+This is a maintenance release and includes refinements and fixes for issues discovered after 24.04.0.
+
+### 25.04.1 Notable Changes
+
+{{< enterprise >}}
+* Support for account policy settings in TrueNAS Enterprise environments regarding password history, complexity, and aging ([NAS-135115](https://ixsystems.atlassian.net/browse/NAS-135115)).
+  Note: Administrators should contact TrueNAS Support before enabling STIG and FIPS security settings (see [Security Settings](/SCALETutorials/SystemSettings/Advanced/#security-settings) for details).
+* Add PAM-based session management for middleware ([NAS-127189](https://ixsystems.atlassian.net/browse/NAS-127189)).
+  For STIG compliant environments, the max number of simultaneous logins is 10.
+  Accounts are locked for 15 minutes after 3 consecutive failed login attempts.
+{{< /enterprise >}}
+* Remove support for BOTH in share ACLs ([NAS-135183](https://ixsystems.atlassian.net/browse/NAS-135183)).
+* Persist updated GMail OAuth refresh token to prevent deauthentication ([NAS-135394](https://ixsystems.atlassian.net/browse/NAS-135394)).
+* Improvements to **Instances**, including:
+  * Allow the same host path to be mounted inside multiple containers ([NAS-135371](https://ixsystems.atlassian.net/browse/NAS-135371)).
+  * ARC scaling and eviction fixes to prevent VM crashes due to OOM errors ([NAS-135904](https://ixsystems.atlassian.net/browse/NAS-135904)).
+  * Enhanced robustness of the **Instances** screen to handle edge-case configurations ([NAS-135098](https://ixsystems.atlassian.net/browse/NAS-135098)).
+  * Add a synthetic container root user ([NAS-135375](https://ixsystems.atlassian.net/browse/NAS-135375)).
+    This adds a built-in unprivileged root user for containers: **truenas_container_unpriv_root**.
+    This account can be used in permissions related APIs / UI forms to grant permissions aligning to root in VMs and containers (see [Managing Instance Permissions](/scaletutorials/instances/#managing-instance-permissions)).
+  * Improved error handling when instance ports conflict with other service or application configurations ([NAS-134963](https://ixsystems.atlassian.net/browse/NAS-134963)).
+  * Prevent accidental deletion of built-in idmap entries ([NAS-135475](https://ixsystems.atlassian.net/browse/NAS-135475)).
+  * Improved validation for attaching and removing zvols from instances ([NAS-135308](https://ixsystems.atlassian.net/browse/NAS-135308)).
+* Increase middlewared.service timeout to prevent boot failure when upgrading systems with slow boot drives ([NAS-135663](https://ixsystems.atlassian.net/browse/NAS-135663)).
+* Prevent JSON decode crash in smartctl output to fix issues with disk temperature reporting ([NAS-135527](https://ixsystems.atlassian.net/browse/NAS-135527)).
+* Fix TrueNAS UI authentication with IPv6 entries in **Allowed IP Addresses** ([NAS-135361](https://ixsystems.atlassian.net/browse/NAS-135361)).
+* Fix SSH service startup with auxiliary parameters enabled ([NAS-135367](https://ixsystems.atlassian.net/browse/NAS-135367)).
+* Improve human-readable formatting of TrueCloud Backup log ([NAS-134491](https://ixsystems.atlassian.net/browse/NAS-134491)).
+* Change how oplocks are handled for multiprotocol shares ([NAS-135040](https://ixsystems.atlassian.net/browse/NAS-135040)).
+  Removes kernel oplocks in favor of disabling oplocks on a per-share basis when they have been flagged for mixed-mode use.
+  This avoids issues observed in the field with kernel lease breaks causing client timeouts as well allowing SMB leases globally, resolving limitations on multiprotocol shares and Time Machine backup seen in 25.04.0.
+* Fix API calls when connected to legacy `/websocket` endpoints ([NAS-135643](https://ixsystems.atlassian.net/browse/NAS-135643)).
+
+<a href="https://ixsystems.atlassian.net/issues/?filter=12503" target="_blank">Click here for the full changelog</a> of completed tickets that are included in the 25.04.1 release.
+{{< include file="/static/includes/JiraFilterInstructions.md" >}}
+
+### 25.04.1 Known Issues
+
+* Some users of TrueNAS Apps attempting to configure GPU allocation report the error `Expected [uuid] to be set for GPU inslot [<some pci slot>] in [nvidia_gpu_selection])` (see ([NAS-134152](https://ixsystems.atlassian.net/browse/NAS-134152)).
+
+  Users experiencing this error should follow the steps below for a one-time fix that should not need to be repeated.
+
+  Connect to a shell session and retrieve the UUID for each GPU with the command `midclt call app.gpu_choices | jq`.
+
+  For each application that experiences the error, run `midclt call -j app.update APP_NAME '{"values": {"resources": {"gpus": {"use_all_gpus": false, "nvidia_gpu_selection": {"PCI_SLOT": {"use_gpu": true, "uuid": "GPU_UUID"}}}}}}'`
+  Where:
+  * `APP_NAME` is the name you entered in the application, for example, “plex”.
+  * `PCI_SLOT` is the PCI slot identified in the error, for example "0000:2d:00.0”.
+  * `GPU_UUID` is the UUID matching the PCI slot that you retrieved with the above command.
+* Custom applications with TTY enabled do not display logs in the TrueNAS UI. This is due to an upstream bug, see https://github.com/docker/docker-py/issues/1394. Users experiencing this issue can resolve it by either disabling TTY or using `docker logs` from the command line.
+* TrueNAS UI displays **Updates Available** button after updating to the latest release (see ([NAS-136046](https://ixsystems.atlassian.net/browse/NAS-136046)).
+  This issue is resolved in the upcoming 25.04.2 release, but if you want to work around this issue now, follow these steps:
+  1. Open the **Shell** and run `midclt call systemdataset.config | jq ."path"`
+  2. Search for a file named **update.sqsh** in the returned string using `find "returned path" -name update.sqsh`
+  3. Run `rm -f <full-path-to-update.sqsh>`, replacing `<full-path-to-update.sqsh>` with the **full** file path to the **update.sqsh** file from the previous step
+     
+<a href="https://ixsystems.atlassian.net/issues/?filter=12504" target="_blank">Click here to see the latest information</a> about public issues in 25.04.1 that are being resolved in a future TrueNAS release.
+
+## 25.04.0
+{{< expand "Click to expand" "v" >}}
 **April 15, 2025**
 
 The TrueNAS team is pleased to release TrueNAS 25.04.0!
@@ -164,6 +224,7 @@ Notable changes since 25.04-RC.1:
 * Custom applications with TTY enabled do not display logs in the TrueNAS UI. This is due to an upstream bug, see https://github.com/docker/docker-py/issues/1394. Users experiencing this issue can resolve it by either disabling TTY or using `docker logs` from the command line.
 
 <a href="https://ixsystems.atlassian.net/issues/?filter=12306" target="_blank">Click here to see the latest information</a> about public issues discovered in 25.04.0 that are being resolved in a future TrueNAS release.
+{{< /expand >}}
 
 ## 25.04-RC.1
 

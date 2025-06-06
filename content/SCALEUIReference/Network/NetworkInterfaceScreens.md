@@ -76,9 +76,9 @@ Additional settings show based on the selection in **Link Aggregation Protocol**
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Link Aggregation Protocol** | Select the protocol to use from the dropdown list of options. The protocol determines the outgoing and incoming traffic ports.<br><li>**LACP** - Select if the network switch is capable of active LACP (this is the recommended protocol). **LACP** shows additional settings.<br><li>**Failover** - Select if the network switch does not support active LACP. This is the default protocol choice and is only used if the network switch does not support active LACP. **Failover** uses only the **Link Aggregation Interfaces** setting.<br<li>**Loadbalance** - Select to set up loadbalancing. **Loadbalance** does not use any other link aggregation settings.</li> |
-| **Transmit Hash Policy** | Shows when the protocol is set to **LCAP** or **Loadbalance**. Select the hash policy from the dropdown list of options, **LAYER2**, **LAYER2+3** the default, or **LAYER3+4**. |
-| **LACPDU Rate** | Shows only when the protocol is set to **LCAP**. Select either **Slow** or **Fast** from the dropdown list of options. |
+| **Link Aggregation Protocol** | Select the protocol to use from the dropdown list of options. The protocol determines the outgoing and incoming traffic ports.<br><li>**LACP** - Select if the network switch is capable of active LACP (this is the recommended protocol). **LACP** shows additional settings.<br><li>**Failover** - Select if the network switch does not support active LACP. This is the default protocol choice and is only used if the network switch does not support active LACP. **Failover** uses only the **Link Aggregation Interfaces** setting.<li>**Loadbalance** - Select to set up loadbalancing. **Loadbalance** does not use any other link aggregation settings.</li> |
+| **Transmit Hash Policy** | Shows when the protocol is set to **LACP** or **Loadbalance**. Select the hash policy from the dropdown list of options, **LAYER2**, **LAYER2+3** the default, or **LAYER3+4**. |
+| **LACPDU Rate** | Shows only when the protocol is set to **LACP**. Select either **Slow** or **Fast** from the dropdown list of options. |
 | **Link Aggregation Interfaces** | (Required) Shows when protocol is set to **LACP**, **Failover** or **Loadbalance**. Select the interfaces to use in the aggregation.<br> Warning! Link Aggregation creation fails if any of the selected interfaces are manually configured! |
 {{< /truetable >}}
 {{< /expand >}}
@@ -109,7 +109,7 @@ Additional settings show based on the selection in **Link Aggregation Protocol**
 {{< /expand >}}
 
 ### VLAN Settings
-Link aggregation settings only display after you select **VLAN** as the **Type**.
+VLAN settings only display after you select **VLAN** as the **Type**.
 
 ![AddInterfaceVLANSettings](/images/SCALE/Network/AddInterfaceVLANSettings.png "Interface Settings VLAN Type")
 

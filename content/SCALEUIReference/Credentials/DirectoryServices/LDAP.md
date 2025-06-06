@@ -51,6 +51,8 @@ The settings on the **Advanced Options** screen include the **[Basic Options](#l
 
 ![LDAPAdvancedOptionsSettings](/images/SCALE/Credentials/LDAPAdvancedOptionsSettings.png "LDAP Screen Advanced Options")
 
+{{< include file="/static/includes/auxiliary-parameters-caution.md" >}}
+
 {{< truetable >}}
 | Setting | Description |  
 |---------|-------------|  
