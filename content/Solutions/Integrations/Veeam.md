@@ -127,8 +127,8 @@ Veeam Agent for Microsoft Windows supports backing up to SMB shares hosted on Tr
 
 ### Creating the SMB Share
 
-1. Go to **Storage > Pools**, create a dataset (example: `veeam-backups`), and set the Share Type to **SMB**.
-2. Go to **Sharing > SMB**, create a share pointing to the dataset.
+1. Go to **Datasets**, create a dataset (example: `veeam-backups`), and set the **Dataset Preset** to **SMB**.
+2. Accept the option to create the share with the dataset.
 3. Create a TrueNAS user (example: `veeam`) and assign full access to the dataset ACL.
 4. Enable the SMB service.
 
