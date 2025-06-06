@@ -1,0 +1,153 @@
+---
+title: "Adding and Managing Datasets"
+description: "Provides instructions on creating and managing datasets."
+weight: 10
+aliases:
+ - /scale/scaleuireference/storage/pools/datasetsscale/
+ - /scale/scaletutorials/storage/pools/datasetsscale/
+ - /scale/scaletutorials/storage/datasets/datasetsscale/
+ - /_includes/storagecompressionlevelsscale/
+tags:
+ - datasets
+ - storage
+ - acl
+ - quotas
+keywords:
+- nas storage device
+- enterprise data storage
+- nas data storage
+- data sharing
+---
+
+A TrueNAS *dataset* is a file system within a data storage pool.
+Datasets can contain files, directories, and child datasets, and have individual permissions or flags.
+
+Datasets can also be [encrypted]({{< ref "EncryptionSCALE" >}}).
+In TrueNAS 22.12.3 or later, the TrueNAS UI requires encryption for child datasets created in encrypted parent datasets, but you can change the encryption type from key to passphrase.
+You can create an encrypted dataset if the parent is not encrypted and set the type as either key or passphrase.
+
+We recommend organizing your pool with datasets before configuring [data sharing]({{< ref "/SCALE/SCALEUIReference/Shares" >}}), as this allows for more fine-tuning of access permissions and using different sharing protocols.
+
+## Creating a Dataset
+
+{{< include file="/static/includes/CreateDatasetSCALE.md" >}}
+
+### Setting Dataset Compression Levels
+
+Compression encodes information in less space than the original data occupies. 
+We recommend choosing a compression algorithm that balances disk performance with the amount of saved space.
+
+{{< trueimage src="/images/SCALE/Datasets/AddDatasetCompressionLevelOptions.png" alt="Add Dataset Compression Level Options" id="Add Dataset Compression Level Options" >}}
+
+{{< include file="/static/includes/StorageCompressionLevelsScale.md" >}}
+
+### Setting Dataset Quotas
+You can set dataset quotas while adding datasets using the quota management options in the **Add Dataset** screen under **Advanced Options**.
+You can also add or edit quotas for an existing dataset, by clicking **Edit** on the **Dataset Space Management** widget to open the **[Capacity Settings]({{< ref "CapacitySettingsSCALE" >}})** screen.
+
+{{< trueimage src="/images/SCALE/Datasets/AddDatasetQuotasManagement.png" alt="Add Dataset Advanced Quota Options" id="Add Dataset Advanced Quota Options" >}}
+
+Setting a quota defines the maximum allowed space for the dataset.
+You can also reserve a defined amount of pool space to prevent automatically generated data like system logs from consuming all of the dataset space.
+You can configure quotas for only the new dataset or both the new dataset and any child datasets of the new dataset.
+
+Define the maximum allowed space for the dataset in either the **Quota for this dataset** or **Quota for this dataset and all children** field. 
+Enter **0** to disable quotas.
+
+Dataset quota [alerts]({{< ref "/SCALE/SCALEUIReference/TopToolbar/Alerts" >}}) are based on the percentage of storage used.
+To set up a quota warning alert, enter a percentage value in **Quota warning alert at, %**.
+When consumed space reaches the defined percentage it sends the alert.
+To change the setting from the parent dataset warning level, clear the **Inherit** checkbox and then change the value.
+
+To set up the quota critical level alerts, enter the percentage value in **Quota critical alert at, %**.
+Clear the **Inherit** checkbox to change this value to something other than using the parent alert setting.
+
+When setting quotas or changing the alert percentages for both the parent dataset and all child datasets, use the fields under **This Dataset and Child Datasets**.
+
+Enter a value in **Reserved space for this dataset** to set aside additional space for datasets that contain logs, which could eventually take all available free space.
+Enter **0** for unlimited.
+
+For more information on quotas, see [Managing User or Group Quotas]({{< ref "ManageQuotas" >}}).
+
+### Changing Dataset Inherited Values
+By default, many dataset options inherit their values from the parent dataset.
+When settings on the **Advanced Options** screen are set to**Inherit** the dataset uses the setting from the parent dataset.
+For example, the [Encryption]({{< ref "EncryptionScale" >}}) or **ACL Type** settings.
+
+To change any setting that datasets inherit from the parent, select an available option other than **Inherit**.
+
+### Setting Datasets Access Controls
+For information on ACL settings see [Setting Up Permissions]({{< ref "PermissionsSCALE" >}}).
+
+### Adding Deduplication
+Deduplication is found on the **Add Datasets Advanced Settings** screen.
+
+{{< hint type=info >}}
+Best practice is to add deduplication when you first create the dataset.
+
+You can add deduplication to an existing dataset but existing files do not have deduplication applied to them.
+Adding deduplication to an existing dataset only applies deduplication to data written after you enable the function.
+
+When enabling deduplication for a dataset of a pool that does not have a deduplication or special VDEV, the deduplication table (DDT) is stored on a regular VDEVs of the pool.
+To store the DDT outside of the regular VDEVs, add a deduplication or special VDEV to the pool.
+{{< /hint >}}
+To add deduplication to a new dataset, after entering the name and selecting the dataset preset, click **Advanced Settings**.
+
+To add deduplication to an existing dataset, select the dataset on the **Dataset** screen tree table, click **Edit** on the **Dataset Details** widget to open the **Edit Dataset** screen. Click **Advanced Settings**.
+
+Scroll down to the **ZFS Deduplication** setting, then change to **On**.
+A warning dialog opens and states that deduplication is an experimental and not fully supported feature.
+
+{{< trueimage src="/images/SCALE/Storage/DedupWarningDialog.png" alt="Deduplication Warning" id="Deduplication Warning" >}}
+
+Click **Continue**.
+
+Change **Checksum** to **SHA512**.
+
+Complete any other setting changes you want to make, then click **Save**.
+
+
+## Creating a Dataset for a Fusion Pool
+First, add the [pool with a Metadata VDEV]({{< ref "FusionPoolsSCALE" >}}).
+
+{{< trueimage src="/images/SCALE/Storage/AddMetadataVDEV.png" alt="Add Metadata VDEV" id="Add Metadata VDEV" >}}
+
+Select the root dataset of the pool (with the metadata VDEV), then click **Add Dataset** to add the dataset.
+Click **Advanced Options**. Enter the dataset name, select the **Dataset Preset**, then scroll down to **Metadata (Special) Small Block Size** setting to set a threshold block size for including small file blocks into the [special allocation class (fusion pools)]({{< ref "FusionPoolsScale" >}}).
+
+{{< trueimage src="/images/SCALE/Datasets/AddDatasetFusionPoolMetadataOptions.png" alt="Add Dataset for Fusion Pool" id="Add Dataset for Fusion Pool" >}}
+
+Blocks smaller than or equal to this value are assigned to the special allocation class while greater blocks are assigned to the regular class.
+Valid values are zero or a power of two from 512B up to 1M.
+The default size **0** means no small file blocks are allocated in the special class.
+Enter a threshold block size for including small file blocks into the [special allocation class (fusion pools)]({{< ref "FusionPoolsScale" >}}).
+
+## Managing Datasets
+After creating a dataset, users can manage additional options from the **Datasets** screen.
+Select the dataset, then click **Edit** on the dataset widget for the function you want to manage. 
+The [Datasets Screen]({{< ref "/SCALE/SCALEUIReference/Datasets" >}}) article describes each option in detail.
+
+### Editing a Dataset
+Select the dataset on the tree table, then click **Edit** on the **Dataset Details** widget to open the **Edit Dataset** screen and change the dataset configuration settings. You can change all settings except **Name**, **Case Sensitivity**, or **Device Preset**.
+
+### Editing Dataset Permissions
+To edit the dataset ACL permissions, click **Edit** on the **Permissions** widget.
+If the ACL type is NFSv4, the **Permissions** widget shows ACE entries for the dataset.
+Each entry opens a checklist of flag options you can select or clear without opening the **Edit ACL** screen.
+To modify ownership, configure new or change existing ACL entries, click **Edit** to open the **ACL Editor** screen.
+
+To edit a POSIX ACL type, click **Edit** on the **Permissions** widget to open the **Unix Permissions Editor** screen.
+To access the **Edit ACL** screen for POSIX ACLs, select **Create a custom ACL** on the **Select a preset ACL** window.
+
+For more information, see the [Setting Up Permissions]({{< ref "PermissionsSCALE" >}}) article.
+
+### Deleting a Dataset
+Select the dataset on the tree table, then click **Delete** on the **Dataset Details** widget.
+This opens a delete window where you enter the dataset path (root/parent/child) and select **Confirm** to delete the dataset, all stored data, and any snapshots from TrueNAS. 
+
+To delete a root dataset, use the **Export/Disconnect** option on the **[Storage Dashboard]({{< ref "ManagePoolsSCALE" >}})** screen to delete the pool.
+
+{{< hint type=warning >}}
+Deleting datasets can result in unrecoverable data loss!
+Move any critical data stored on the dataset off to a backup copy or obsolete the data before performing the delete operation.
+{{< /hint >}}
