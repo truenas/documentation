@@ -58,7 +58,7 @@ Lost communication might require reconfiguring your network settings using the [
 {{< hint type=tip >}}
 DHCP provides the IP address for only one network interface.
 TrueNAS uses DHCP to assign an IP address to the primary network interface during installation to provide access to the web UI.
-You can changes this to a static, or fixed IP address using the Console Setup menu before accessing the web UI or after logging into the UI from the **Network** screen.
+You can change this to a static, or fixed IP address [using the Console Setup menu]({{< ref "ConsoleSetupMenuSCALE" >}}) before accessing the web UI or after logging into the UI from the **Network** screen.
 We recommend using the UI to make network changes because of the safeguards in place to prevent you from losing access to the system due to incorrectly configured interfaces.
 
 To add another network interface, go to **Network** and click **Add** on the **Interfaces** widget to open the **Add Interface** screen.

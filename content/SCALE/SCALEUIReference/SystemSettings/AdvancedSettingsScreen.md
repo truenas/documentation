@@ -396,7 +396,7 @@ Requires two-factor authentication for an admin user with full permissions befor
 | Name | Description |
 |------|-------------|
 | **Min Password Age** | Minimum number of days a password must be used before it can be changed. |
-| **Max Password Age** | Maximum number of days a password can be used before it must be changed. |
+| **Max Password Age** | Maximum number of days a password can be used before it must be changed. TrueNAS warns users of password expiration seven days prior to the set expiration date. |
 | **Password Complexity Ruleset** | Defines the required character types for administrator passwords. Choose between **Upper**, **Lower**, **Number**, and **Special** character type requirements. |
 | **Min Password Length** | Define how many characters must be present in an administrator password. The default required minimum is **8** characters. |
 | **Password History Length** | Define how many previously used passwords to remember. Prevents administrators from reusing passwords when updating credentials. Requires an integer between **1** and **10**.
