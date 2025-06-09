@@ -141,7 +141,7 @@ Use the Virtual IP (VIP) for high availability.
 3. Select **Entire Computer**, then **Shared Folder** as the destination.
 4. Enter the SMB path and TrueNAS local user credentials.
 5. Adjust backup schedule and retention if desired.
-6. Click **Finish** to begin the backup.
+6. Click **Finish**. You can now begin a backup.
 
 ## Planning Storage Lifecycle
 
