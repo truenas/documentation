@@ -64,6 +64,8 @@ Click <i class="material-icons" aria-hidden="true" title="Configure">edit</i> to
 
 {{< trueimage src="/images/SCALE/SystemSettings/UPSServiceSettingsOtherOptions.png" alt="UPS Service Other Options" id="UPS Service Other Options" >}}
 
+{{< include file="/static/includes/auxiliary-parameters-caution.md" >}}
+
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
