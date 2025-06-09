@@ -108,4 +108,4 @@ Click the link for the content you want to access:
 
 {{< include file="/static/includes/APIDocs.md" >}}
 
-For more information on the API documentation see [API Reference]([({{ relref "/}}](https://www.truenas.com/docs/scale/api/)).
+For more information on the API documentation see [API Reference](https://www.truenas.com/docs/scale/api/).
