@@ -16,7 +16,7 @@ keywords:
 Periodic snapshot tasks allow you to schedule creating read-only versions of pools and datasets at a given point in time. You can also access VMWare snapshot integration and TrueNAS storage snapshots from the **Periodic Snapshot Tasks** widget.
 
 {{< expand "How should I use snapshots?" "v" >}}
-Snapshots do not make not copies of the data so creating one is quick and if little data changed, they take very little space.
+Snapshots do not make copies of the data so creating one is quick and if little data changed, they take very little space.
 It is common to take frequent snapshots as soon as every 15 minutes, even for large and active pools.
 A snapshot where no files changed takes no storage space, but as files changes happen, the snapshot size changes to reflect the size of the changes.
 In the same way as all pool data, after deleting the last reference to the data you recover the space.

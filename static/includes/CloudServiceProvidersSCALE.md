@@ -14,7 +14,6 @@ These providers are supported for Cloud Sync tasks in TrueNAS:
 * [Google Photos](https://photos.google.com)
 * Hypertext Transfer Protocol (HTTP)
 * Hubic ([closed to new accounts](https://www.ovhcloud.com/en-gb/subscriptions-hubic-ended/))
-* [Mega](https://mega.io/)
 * [Microsoft Azure Blob Storage](https://azure.microsoft.com/en-us/products/storage/blobs)
 <--->
 * [Microsoft OneDrive](https://www.microsoft.com/en-us/microsoft-365/onedrive/online-cloud-storage)
@@ -26,4 +25,4 @@ These providers are supported for Cloud Sync tasks in TrueNAS:
 * [Yandex](https://cloud.yandex.com/en/)
 {{< /columns >}}
 
-*<sup><sub>[TrueCloud backup tasks]({{< relref "truecloudtasks.md" >}}) streamline functionality for Storj iX cloud backups and restoration.</sub></sup>
+*<sup><sub>[TrueCloud backup tasks]({{< ref "truecloudtasks" >}}) streamline functionality for Storj iX cloud backups and restoration.</sub></sup>

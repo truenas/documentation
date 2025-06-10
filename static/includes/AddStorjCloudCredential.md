@@ -25,3 +25,5 @@ The Storj main dashboard opens.
 {{< trueimage src="/images/SCALE/DataProtection/StorjMainDashboard.png" alt="Storj Main Dashboard" id="Storj Main Dashboard" >}}
 
 After setting up your Storj iX account, set up [Storj S3 access](#setting-up-s3-access) and [create your Storj bucket](#creating-a-truenas-storj-bucket).
+
+The endpoint set in the Storj credential applies to all Cloud Sync Tasks that use that credential.

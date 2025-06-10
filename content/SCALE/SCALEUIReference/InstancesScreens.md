@@ -60,7 +60,7 @@ The screen header displays a <i class="fa fa-cog" aria-hidden="true"></i> **Pool
 {{< truetable >}}
 | Setting | Description |
 |-----------|-------------|
-| **Bridge** | Specifies the network bridge.  **Automatic** uses the default network bridge for communication between instances and the TrueNAS host. The dropdown list option shows existing bridges. See [Accessing NAS from VMs and Containers]({{< relref "/SCALE/SCALETutorials/Network/ContainerNASBridge.md" >}}) for more information. |
+| **Bridge** | Specifies the network bridge.  **Automatic** uses the default network bridge for communication between instances and the TrueNAS host. The dropdown list option shows existing bridges. See [Accessing NAS from VMs and Containers]({{< ref "/SCALE/SCALETutorials/Network/ContainerNASBridge" >}}) for more information. |
 | **IPv4 Network** | Specifies the IPv4 address for the bridge specified when **Bridge** is set to **Automatic**. Enter the IPv4 address and subnet (e.g., *192.168.1.0*/*24*) for the instances to use or leave empty to allow TrueNAS to use the default address. |
 | **IPv6 Network** | Specifies the IPv6 address for the bridge specified when **Bridge** is set to **Automatic**. Enter the IPv6 address and subnet (e.g., *fd42:96dd:aef2:483c::1*/*64*) for the instances to use or leave empty to allow TrueNAS to use the default address. |
 {{< /truetable >}}
@@ -224,7 +224,7 @@ VMs must specify the I/O bus and size of the root disk.
 |---------|-------------|
 | **Root Disk I/O Bus** | (Required for VMs only) Set the root disk I/O bus type to the option that best suits system needs. Options are:<br><ul><li>**NVMe** – Ideal for high-performance storage with faster read and write speeds.<br><li>**Virtio-BLK** – Efficient for virtualized environments, offering direct block device access with lower overhead.<br><li>**Virtio-SCSI** – Flexible and scalable, supporting advanced features like hot-swapping and multiple devices.</ul> |
 | **Root Disk Size (in GiB)** | (Required for VMs only) Enter a plain integer to configure the size of the VM root disk (default 10). |
-| **Source** | (Required) Displays after clicking **Add** in **Disks**.  Enter an existing zvol or create a new dataset using the **Create Dataset** option that allows creating a new dataset after entering a path or browsing to select a parent dataset from the dropdown list of datasets on the system. Enter a name for the new dataset in the **Create Dataset** window. **Create** adds the dataset. <br><br> To use an existing zvol, select an existing zvol from the dropdown list. |
+| **Source** | (Required) Displays after clicking **Add** in **Disks**. Define an existing dataset or create a new dataset using the **Create Dataset** option. Creating a dataset requires entering a path or browsing to select a parent dataset from the dropdown list of datasets on the system. Enter a name for the new dataset in the **Create Dataset** window. **Create** adds the dataset. |
 | **Destination** | (Required for containers only) Specifies the file system path to mount the disk in the container, for example */media* or */var/lib/data*. |
 | **I/O Bus** | (Required for VMs only) Sets the disk I/O bus type to what best suits system needs. Options are **NVMe**, **Virtio-BLK**, or **Virtio-SCSI**. |
 {{< /truetable >}}
@@ -249,7 +249,7 @@ These settings are only available for containers and cannot be used with VMs.
 The **Network settings** configure how the instance connects to the host and external networks.
 Options include the default network bridge, an existing bridge interface, or a MACVLAN.
 
-See [Accessing NAS from VMs and Containers]({{< relref "/SCALE/SCALETutorials/Network/ContainerNASBridge.md" >}}) for more information.
+See [Accessing NAS from VMs and Containers]({{< ref "/SCALE/SCALETutorials/Network/ContainerNASBridge" >}}) for more information.
 
 {{< trueimage src="/images/SCALE/Virtualization/InstancesNetworkDefault.png" alt="Default Network Settings" id="Default Network Settings" >}}
 
@@ -327,6 +327,11 @@ Stopped instances show the option to start the instance.
 The **Details for *Instance*** [widgets](#instances-widgets) show information and management options for the selected instance.
 
 <i class="material-icons" aria-hidden="true" title="Restart">restart_alt</i> restarts or <i class="material-icons" aria-hidden="true" title="Stop">stop_circle</i> stops a running instance.
+
+The **Stop Options** window defines when the Instance stops, immediately or after one of 30 seconds, 1 minute, or 5 minutes occurs.
+
+{{< trueimage src="/images/SCALE/Virtualization/InstanceStopOptions.png" alt="TrueNAS Instance Stop Options Dropdown with Options" id="Instance Stop Options" >}}
+
 <i class="material-icons" aria-hidden="true" title="Start">play_circle</i> starts a stopped instance.
 
 **Search** above the **Instances** table allows entering the name of an instance to locate a configured instance.

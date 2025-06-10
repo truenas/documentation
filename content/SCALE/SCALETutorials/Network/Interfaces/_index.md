@@ -17,7 +17,7 @@ The tutorials in this section guide you through each type of configuration.
 
 The **Network** screen provides access interface and other network settings.
 This article covers adding new or changing existing network interfaces, and configuring static routes, and alias IPv4 addresses.
-For information on configuring IPv6 addresses, see [Configuring IPv6]({{< relref "ConfigureIPv6.md" >}}).
+For information on configuring IPv6 addresses, see [Configuring IPv6]({{< ref "ConfigureIPv6" >}}).
 
 {{< expand "Why should I use different interface types?" "v" >}}
 {{< include file="/static/includes/NetworkInterfaceTypes.md" >}}
@@ -50,7 +50,7 @@ Back up your system to preserve your data and system settings. Save the system c
 As a precaution, grab a screenshot of your current settings in the **Global Configuration** widget.
 
 If your network changes result in lost communication with the network and you need to return to the DHCP configuration, you can refer to this information to restore communication with your server.
-Lost communication might require reconfiguring your network settings using the [Console Setup menu]({{< relref "ConsoleSetupMenuSCALE.md" >}}).
+Lost communication might require reconfiguring your network settings using the [Console Setup menu]({{< ref "ConsoleSetupMenuSCALE" >}}).
 
 {{< include file="/static/includes/BeforeYouBridge.md" >}}
 
@@ -58,7 +58,7 @@ Lost communication might require reconfiguring your network settings using the [
 {{< hint type=tip >}}
 DHCP provides the IP address for only one network interface.
 TrueNAS uses DHCP to assign an IP address to the primary network interface during installation to provide access to the web UI.
-You can changes this to a static, or fixed IP address using the Console Setup menu before accessing the web UI or after logging into the UI from the **Network** screen.
+You can change this to a static, or fixed IP address [using the Console Setup menu]({{< ref "ConsoleSetupMenuSCALE" >}}) before accessing the web UI or after logging into the UI from the **Network** screen.
 We recommend using the UI to make network changes because of the safeguards in place to prevent you from losing access to the system due to incorrectly configured interfaces.
 
 To add another network interface, go to **Network** and click **Add** on the **Interfaces** widget to open the **Add Interface** screen.
@@ -132,7 +132,7 @@ An *alias* is an additional IP address assigned to a network interface configure
 Use the **Aliases** option on the **Add Interface** and **Edit Interface** screens to enter a non-DHCP-assigned IP address to an interface whether it is the primary fixed IP address or additional alias addresses for other purposes.
 {{< /hint >}}
 
-From the [Console Setup menu]({{< relref "ConsoleSetupMenuSCALE.md" >}}), select option 1 to configure network settings or add alias IP addresses.
+From the [Console Setup menu]({{< ref "ConsoleSetupMenuSCALE" >}}), select option 1 to configure network settings or add alias IP addresses.
 
 {{< include file="/static/includes/MultipleInterfacesOnNetwork.md" >}}
 

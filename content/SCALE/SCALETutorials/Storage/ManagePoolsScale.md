@@ -4,7 +4,6 @@ description: "Provides instructions on managing storage pools, VDEVs, and disks 
 weight: 40
 aliases:
  - /scale/scaletutorials/storage/pools/managepoolsscale/
- - /images/CORE/13.0/StorageAllPoolsDataset.png
 tags: 
 - pools
 - storage
@@ -63,7 +62,7 @@ Upgrading a storage pool is typically not required unless the new OpenZFS featur
 
 Do not do a pool-wide ZFS upgrade until you are ready to commit to this TrueNAS major version! You can not undo a pool upgrade, and you lose the ability to roll back to an earlier major version!
 
-The **Upgrade** button displays on the **Storage Dashboard** for existing pools after an upgrade to a new TrueNAS major version that includes new [OpenZFS feature flags]({{< relref "SCALEReleaseNotes.md#component-versions" >}}).
+The **Upgrade** button displays on the **Storage Dashboard** for existing pools after an upgrade to a new TrueNAS major version that includes new [OpenZFS feature flags]({{< ref "SCALEReleaseNotes.md#component-versions" >}}).
 Newly created pools are always up to date with the OpenZFS feature flags available in the installed TrueNAS version.
 
 {{< trueimage src="/images/SCALE/Storage/StorageDashboardUpgradPoolConfirmationDialog.png" alt="Upgrade Pool Confirmation Dialog" id="Upgrade Pool Confirmation Dialog" >}}
@@ -83,7 +82,7 @@ Use **Scrub** on the **ZFS Health** pool widget to start a pool data integrity c
 Click **Scrub** to open the **Scrub Pool** dialog.
 Select **Confirm**, then click **Start Scrub**.
 
-If TrueNAS detects problems during the scrub operation, it either corrects them or generates an [alert]({{< relref "/SCALE/SCALEUIReference/TopToolbar/Alerts/_index.md" >}}) in the web interface.
+If TrueNAS detects problems during the scrub operation, it either corrects them or generates an [alert]({{< ref "/SCALE/SCALEUIReference/TopToolbar/Alerts" >}}) in the web interface.
 
 By default, TrueNAS automatically checks every pool on a recurring scrub schedule.
 
@@ -99,7 +98,7 @@ To manage disks in a pool, click on the VDEV to expand it and show the disks in 
 Click on a disk to see the **Devices** widgets for that disk.
 You can take a disk offline, detach it, replace it, manage the SED encryption password, and perform other disk management tasks from this screen.
 
-See [Replacing Disks]({{< relref "ReplacingDisks.md" >}}) for more information on the **Offline**, **Replace** and **Online** options.
+See [Replacing Disks]({{< ref "ReplacingDisks" >}}) for more information on the **Offline**, **Replace** and **Online** options.
 
 ## Expanding a Pool
 
@@ -111,7 +110,6 @@ There are a few  ways to increase the size of an existing pool:
 
 While adding a new special VDEV increases usable space in combination with a special_small_files VDEV, it is not encouraged.
 By default, a VDEV limits all disks to the usable capacity of the smallest attached device.
-If a pool is not automatically expanded, for example when resizing virtual disks in a hypervisor apart from TrueNAS, click **Expand** on the **Storage Dashboard** to manually increase the pool size to match all available disk space.
 
 ### Extending a RAIDZ VDEV
 Extend a RAIDZ VDEV to add additional disks one at a time, expanding capacity incrementally.
@@ -147,7 +145,7 @@ Extended VDEVs recover lost headroom as existing data is read and rewritten to t
 This can occur naturally over the lifetime of the pool as you modify or delete data.
 To manually recover capacity, simply replicate and rewrite the data to the extended pool.
 
-You can use the [RAIDZ Extension Calculator]({{< relref "/References/ExtensionCalculator.md" >}}) to visualize potential lost headroom and capacity available to recover by rewriting existing data.
+You can use the [RAIDZ Extension Calculator]({{< ref "/References/ExtensionCalculator" >}}) to visualize potential lost headroom and capacity available to recover by rewriting existing data.
 
 {{< include file="/static/includes/ExpandedVdevReporting.md" >}}
 
@@ -193,7 +191,7 @@ Click **Add VDEV** on the ***Poolname* Devices** screen to open the **Add Vdevs 
 
 {{< trueimage src="/images/SCALE/Storage/AddVdevsToPoolScreen.png" alt="Add VDEVs to Pool Screen" id="Add VDEVs to Pool Screen" >}}
 
-Adding a vdev to an existing pool follows the same process as documented in [Create Pool]({{< relref "CreatePoolWizard.md" >}}).
+Adding a vdev to an existing pool follows the same process as documented in [Create Pool]({{< ref "CreatePoolWizard" >}}).
 Click on the type of vdev you want to add, for example, to add a spare, click on **Spare** to show the vdev spare options.
 
 {{< trueimage src="/images/SCALE/Storage/AddVdevToPoolSpareScreen.png" alt="Add VDEVs to Pool Spare Example" id="Add VDEVs to Pool Spare Example" >}}
@@ -255,7 +253,7 @@ Change to **Custom** to set the quota to your preference.
 Click **Save** to save and close the dialogs.
 
 ### Replacing Disks to Expand a Pool
-To expand a pool by replacing disks with a higher capacity disk, follow the same procedure as in [Replacing Disks]({{< relref "ReplacingDisks.md" >}}).
+To expand a pool by replacing disks with a higher capacity disk, follow the same procedure as in [Replacing Disks]({{< ref "ReplacingDisks" >}}).
 
 Insert a new disk into an empty enclosure slot. Remove the old disk only after completing the replace operation.
 If an empty slot is not available, you can offline the existing disk and replace it in the same slot, but this reduces redundancy during the process.
@@ -297,7 +295,7 @@ Go to the **Storage Dashboard** and click **Manage Devices** on the **Topology**
 Wait for the resilver to complete before replacing the next disk.
 Repeat steps 1-4 for all attached disks.
 
-TrueNAS automatically expands the usable capacity of the pool to fit all available space after replacing the last attached disk.
+After replacing the last attached disk, click **Expand** on the **Storage Dashboard** to increase the pool size to fit all available disk space.
 
 ## Removing VDEVs
 You can always remove the L2ARC (cache) and SLOG (log) VDEVs from an existing pool, regardless of topology or VDEV type.
@@ -321,5 +319,5 @@ To remove a VDEV from a pool:
    If the **Remove** button is not visible, check that all conditions for VDEV removal listed above are correct.
 3. Confirm the removal operation and click the **Remove** button.
 
-The VDEV removal process status shows in the [Task Manager]({{< relref "TasksScreens.md" >}}) (or alternately with the `zpool status` command).
+The VDEV removal process status shows in the [**Jobs** screen]({{< ref "JobsScreens" >}}) (or alternately with the `zpool status` command).
 Avoid physically removing or attempting to wipe the disks until the removal operation completes.

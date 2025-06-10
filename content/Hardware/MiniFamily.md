@@ -6,7 +6,6 @@ geekdocFlatSection: true
 aliases:
  - /hardware/mini/
  - /hardware/mini/minibsg/
- - /images/Hardware/MiniFamilyFront.png
 keyword:
  - scalable storage systems
  - data storage system
@@ -42,7 +41,7 @@ descr="iXsystems official Statement of Volatility for Mini systems." >}}
 {{< imagecard image="/images/Hardware/Minis/MiniRSOV.png" title="Mini R Statement of Volatility" link="https://www.truenas.com/docs/files/MiniRSOV.pdf"
 descr="iXsystems official Statement of Volatility for Mini R systems." >}}
 
-{{< imagecard image="/images/Hardware/Minis/MiniStencil.png" title="Hardware Stencils" link="https://www.truenas.com/docs/files/truenasminimodels.vssx"
+{{< imagecard image="/images/Hardware/Minis/MiniStencil.png" title="Hardware Stencils" link="https://www.truenas.com/docs/files/minis_stencil_pack.vssx"
 descr="Download Mini stencils to diagram your TrueNAS hardware configuration." >}}
 
 </div>

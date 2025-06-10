@@ -5,7 +5,6 @@ weight: 25
 aliases:
  - /scale/scaleuireference/shares/nfs/nfsservicescreen/
  - /scale/scaleclireference/service/clinfs/
- - /images/CORE/13.0/NFSServicesScreen.png
 tags:
  - nfs
  - services
@@ -13,7 +12,7 @@ tags:
 
 
 The **System > Services** screen includes two icons on the **NFS** service row:
-* <span class="iconify" data-icon="material-symbols:list"></span> **NFS Sessions** opens the [**NFS Sessions** screen]({{< relref "NFSSharesScreens.md" >}}).
+* <span class="iconify" data-icon="material-symbols:list"></span> **NFS Sessions** opens the [**NFS Sessions** screen]({{< ref "NFSSharesScreens#nfs-sessions-screen" >}}).
 * <span class="iconify" data-icon="ic:baseline-edit"></span> **Configure** opens the **NFS Service** screen.
 
 {{< hint type=info title="UDP Protocol and NFS" >}}
@@ -72,4 +71,4 @@ Select **Start Automatically** to activate the NFS service when TrueNAS boots.
 {{< /truetable >}}
 
 We recommend using the default NFS settings unless you require specific settings.
-When TrueNAS is already connected to [Active Directory]({{< relref "/SCALE/SCALEUIReference/Credentials/DirectoryServices/_index.md" >}}), setting **NFSv4** and **Require Kerberos for NFSv4** also requires a [Kerberos Keytab]({{< relref "/SCALE/SCALEUIReference/Credentials/DirectoryServices/_index.md" >}}).
+When TrueNAS is already connected to [Active Directory]({{< ref "/SCALE/SCALEUIReference/Credentials/DirectoryServices" >}}), setting **NFSv4** and **Require Kerberos for NFSv4** also requires a [Kerberos Keytab]({{< ref "/SCALE/SCALEUIReference/Credentials/DirectoryServices" >}}).

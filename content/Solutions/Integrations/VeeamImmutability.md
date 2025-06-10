@@ -29,7 +29,7 @@ For more detailed information on Veeam Immutability, see [How Immutability Works
 * Obtain and apply the TrueNAS Enterprise license for VMs and Applications to your TrueNAS Enterprise system.
 * Deploy the MinIO Enterprise app.
   You can deploy the MinIO Enterprise app as S3 object storage or configure a cluster to use for S3 object storage.
-  To deploy a cluster follow the instructions in the [MinIO MNMD tutorial]({{< relref "/truenasApps/EnterpriseApps/MinIO/ConfigMinIOEnterpriseMNMD.md" >}}).
+  To deploy a cluster follow the instructions in the [MinIO MNMD tutorial](https://apps.truenas.com/resources/minio-enterprise-mnmd/).
   A cluster consists of four systems (nodes), each with four datasets (representing drives in the cluster configuration).
 * Verify the MinIO service shows your MinIO app deployment as a single or clustered configuration.
   The correct number of nodes and drives for a cluster configuration is four nodes and 12 drives.
@@ -41,7 +41,7 @@ This guide describes the process of configuring a Veeam Immutability solution.
 
 Before you begin, acquire and install/apply the Enterprise VM & Apps License for a single system or if a cluster, for four TrueNAS systems in the Multi-Node Multi Disk (MNMD) cluster configuration. You can apply the same license to each of the cluster systems.
 
-Follow the instructions in the [MinIO Enterprise tutorial]({{< relref "/Content/TruenasApps/EnterpriseApps/MinIO/_index.md" >}}) for a single system deployment, or [MinIO Enterprise MNMD tutorial]({{< relref "/Content/TruenasApps/EnterpriseApps/MinIO/ConfigMinIOEnterpriseMNMD.md" >}}) to install and deploy the MinIO enterprise train app in a MNMD configuration. TrueNAS and MinIO provide the S3 compatible object storage for Veeam.
+Follow the instructions in the [MinIO Enterprise tutorial](https://apps.truenas.com/resources/deploy-minio-enterprise/) for a single system deployment, or [MinIO Enterprise MNMD tutorial](https://apps.truenas.com/resources/minio-enterprise-mnmd/) to install and deploy the MinIO enterprise train app in a MNMD configuration. TrueNAS and MinIO provide the S3 compatible object storage for Veeam.
 
 ## Configuring Veeam for Immutability
 Open Veeam Backup & Replication Console, go to **Backup Infrastructure** and click on **Backup Repositories**.

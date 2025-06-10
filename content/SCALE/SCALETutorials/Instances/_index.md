@@ -27,7 +27,7 @@ keywords:
 *Linux containers*, powered by LXC, offer a lightweight, isolated environment that shares the host system kernel while maintaining its own file system, processes, and network settings.
 Containers start quickly, use fewer system resources than VMs, and scale efficiently, making them ideal for deploying and managing scalable applications with minimal overhead.
 
-*Virtual machines (VMs)*, powered by QEMU, offer full OS isolation, kernel independence, and can run diverse OS types.
+*Virtual machines (VMs)*, powered by QEMU, offer full OS isolation and kernel independence and can run diverse OS types.
 VMs emulate hardware, providing greater isolation than containers but requiring more system resources, making them ideal for legacy applications, full-featured desktops, or software with strict OS dependencies.
 
 {{< expand "What system resources do instances require?" "v" >}}
@@ -44,7 +44,7 @@ See [Choosing the Instances Pool](#choosing-the-instances-pool) below for more i
 
 After setting the pool, <i class="fa fa-check" aria-hidden="true" title="Check"></i> **Initialized** shows on the screen header.
 
-For more information on screens and screen functions, refer to the UI Reference article on [Instances Screens]({{< relref "/SCALE/SCALEUIReference/InstancesScreens.md" >}}).
+For more information on screens and screen functions, refer to the UI Reference article on [Instances Screens]({{< ref "/SCALE/SCALEUIReference/InstancesScreens" >}}).
 
 Use the **Configuration** dropdown to access the **[Global Settings](#configuring-global-settings)**, **[Manage Volumes](#managing-volumes)**, and [**Map User/Group IDs**](#mapping-user-and-group-ids) options.
 
@@ -59,7 +59,7 @@ Use these options to configure the [storage pool](#choosing-the-instances-pool) 
 
 You must set the pool before you can add any instances.
 
-Use the use the **Pool** dropdown to select the pool and click **Save**.
+Use the **Pool** dropdown to select the pool and click **Save**.
 
 We recommend users keep the VM and container use case in mind when choosing an instances pool.
 Select a pool with enough storage space for all the instances you intend to host.
@@ -78,7 +78,7 @@ These settings apply to all new containers and VMs, unless configured otherwise.
 
 Select **Automatic** from the **Bridge** dropdown list to use the default network bridge for communication between instances and the TrueNAS host.
 To specify an existing bridge, select one from the dropdown list.
-See [Accessing NAS from VMs and Containers]({{< relref "/SCALE/SCALETutorials/Network/ContainerNASBridge.md" >}}) for details.  
+See [Accessing NAS from VMs and Containers]({{< ref "/SCALE/SCALETutorials/Network/ContainerNASBridge" >}}) for details.  
 When **Bridge** is set to **Automatic**, the **IPv4 Network** and **IPv6 Network** settings display.
 
 Enter an IPv4 address and subnet (e.g., *192.168.1.0/24*) in **IPv4 Network** to assign a specific network for instances.
@@ -140,7 +140,7 @@ See [Instance name requirements](https://linuxcontainers.org/incus/docs/main/ref
 #### Deleting Volumes
 
 Click **Configuration > Manage Volumes** to access the **Volumes** screen.
-Click <i class="material-icons" aria-hidden="true" title="Delete">delete</i> on an volume row to delete that volume.
+Click <i class="material-icons" aria-hidden="true" title="Delete">delete</i> on a volume row to delete that volume.
 The **Delete volume** dialog displays.
 
 {{< trueimage src="/images/SCALE/Virtualization/InstancesDeleteVolume.png" alt="Delete Volume Dialog" id="Delete Volume Dialog" >}}
@@ -148,32 +148,70 @@ The **Delete volume** dialog displays.
 Select **Confirm** and then click **Continue** to delete the image.
 TrueNAS disables the delete icon for active images to prevent accidental deletion.
 
-### Mapping User and Group IDs
+### Managing Instance Permissions
 
-Click **Map User/Group IDs** on the **Configuration** dropdown list to open the **Map User and Group IDs** screen, which allows you to manually configure UID and GID mappings inside instances.
-By default, user and group accounts within an instance are assigned UIDs and GIDs from a special private range starting at **2147000001**.
-This mapping ensures security isolation for containers.
-However, you can override these mappings to meet specific system requirements.
+Instances run as isolated environments from the host system.  
+To give instance processes access to host files and datasets, you must map user and group IDs (UIDs and GIDs) between the host and the instance.
+
+Click **Map User/Group IDs** from the **Configuration** dropdown to open the **Map User and Group IDs** screen.  
+This screen allows you to configure how user and group IDs (UIDs and GIDs) appear inside containers and virtual machines.
+
+By default, user and group accounts within an instance are assigned UIDs and GIDs from a private range starting at **2147000001**.  
+This mapping ensures security isolation for containers. You can override these mappings to meet specific access requirements.
 
 {{< trueimage src="/images/SCALE/Virtualization/MapUserGroupIDs.png" alt="Map User and Group IDs Screen" id="Map User and Group IDs Screen" >}}
 
 Select **Users** or **Groups** to view mappings for individual user or group accounts, respectively.
 
-Existing mappings are shown in a table containing the user or group name, host ID, and instance ID.
-Click **<i class="material-icons" aria-hidden="true" title="Delete">delete</i> Delete** on a row to delete that mapping.
+Existing mappings appear in a table that lists the user or group name, host ID, and instance ID.  
+Click **<i class="material-icons" aria-hidden="true" title="Delete">delete</i> Delete** on a row to remove a mapping.
 
-To configure a new mapping, type an account name to search for it or select it from the dropdown list.
-Select **Map to the same UID/GID in the instance** to directly map the host ID to the same ID in instances.
-This means that the selected user or group ID on the host appears as the same ID in instances.
+To add a new mapping:
 
-Disable **Map to the same UID/GID in the instance** to define a different instance ID for the user or group.
-Enter an ID number to map in instances, for example *1000*.
-This means that the selected user or group ID on the host appears as the configured ID in instances.
+* Type an account name to search or select it from the dropdown.
+* Enable **Map to the same UID/GID in the instance** to use the same ID from the host in instances.  
+  This makes the selected user or group ID appear the same inside and outside the container.
+* Disable **Map to the same UID/GID in the instance** to assign a different instance ID.  
+  Enter the instance UID or GID you want to use—for example, *1000*.
 
-Click **Set** to create the mapping.
-Changes take effect immediately, though instances can require a restart to reflect the changes.
+{{< hint type=info >}}
+Only local users and groups are supported for ID mapping in instances.  
+Domain accounts from Active Directory or other directory services are not supported.
+{{< /hint >}}
 
-Incorrect mappings can create permission issues within instances.
+Click **Set** to create the mapping.  
+Changes apply immediately, though restarting the instance can be required for them to take effect.
+
+Mapped IDs control access to mounted host datasets.  
+For example, if you map a host user with UID *3000* to UID *1000* inside the instance:
+
+1. Assign permissions on the host dataset to UID *3000*.
+2. Inside the container, perform actions as UID *1000*.
+
+This setup grants user 1000 in the container the same access to the dataset as user 3000 has on the host.  
+Assigning dataset permissions to a host user is not enough to grant container permissions to all users—you must also map that user and ensure the correct user and UID is used inside the instance.
+
+{{< hint type=note >}}
+Incorrect or missing mappings can cause permission errors when containers access host paths.
+{{< /hint >}}
+
+#### Granting Root Access to Host Paths
+
+To safely allow instance root processes to access host datasets, TrueNAS provides a built-in unprivileged root user for containers **truenas_container_unpriv_root**.
+
+This user has UID **2147000001** and is used automatically to represent the Instance root on the host.
+No manual ID mapping is required.
+
+To grant container root access to host data:
+
+1. Assign permissions on the host dataset to the **truenas_container_unpriv_root** user.
+2. Access the dataset from inside the container as root.
+
+When the instance root accesses the path, it uses the host permissions of **truenas_container_unpriv_root**.
+
+{{< hint type=note >}}
+This approach provides secure, controlled access for container root processes without exposing host root privileges.
+{{< /hint >}}
 
 ## Creating Instances
 
@@ -225,7 +263,7 @@ To create a new container, from the **Create Instance** screen:
    b. To create a new dataset, enter a path or browse to select a parent dataset from the dropdown list of datasets on the system.
       Then click **Create Dataset**, enter a name for the new dataset in the **Create Dataset** window, and click **Create**.
 
-      To use an existing volume, enter a path or browse to select an existing dataset or zvol from the **Source** dropdown list.
+      To use an existing volume, enter a path or browse to select an existing dataset from the **Source** dropdown list.
 
    c. Enter the file system **Destination** path to mount the disk in the container, for example */media* or */var/lib/data*.
 
@@ -260,9 +298,9 @@ To create a new container, from the **Create Instance** screen:
 {{< hint type=note title="Before You Begin" >}}
 Before creating a VM:
 
-- Obtain an installer <file>.iso</file> or image file for the OS you intend to install, if you are not using a Linux image from the catalog or one previously uploaded to the instances service. You can upload an image for use in instances by using the [**Manage Volumes**](#managing-volumes) option on the **Instances** screen **Configuration** menu or you can upload the image from the **Instance Configuration** settings while creating the VM.
+- Obtain an installer <file>.iso</file> or image file for the OS you intend to install, if you are not using a Linux image from the catalog or one previously uploaded to the instances service. You can upload an image for use in instances by using the [**Manage Volumes**](#managing-volumes) option on the **Instances** screen **Configuration** menu, or you can upload the image from the **Instance Configuration** settings while creating the VM.
 
-- [Create one or more zvols]({{< relref "/SCALE/SCALETutorials/Datasets/AddManageZvols.md" >}}) on a storage pool for the virtual disk now or do this from the **Volumes** screen while configuring the instance.
+- [Create one or more zvols]({{< ref "/SCALE/SCALETutorials/Datasets/AddManageZvols" >}}) on a storage pool for the virtual disk now, or do this from the **Volumes** screen while configuring the instance.
 
 - Compare the recommended specifications for the guest operating system with your available host system resources.
   Reference these when allocating resources to the instance.
@@ -347,11 +385,11 @@ To create a new virtual machine, from the **Create Instance** screen:
 
    {{< trueimage src="/images/SCALE/Virtualization/CreateVMCPUandMemory.png" alt="CPU & Memory - VM" id="CPU & Memory - VM" >}}
 
-   For VMs, CPU and memory configuration is required.
+   For VMs, CPU and memory configurations are required.
 
    {{< include file="/static/includes/InstanceCPUMemoryProcedure.md" >}}
 
-3. Configure disks settings to mount storage volumes for the VM.
+3. Configure disk settings to mount storage volumes for the VM.
    For VMs, you must specify the I/O bus and size of the root disk.
    You can also mount one or more existing zvol(s) as additional storage, if needed.
    See [Storage volume types](https://linuxcontainers.org/incus/docs/main/explanation/storage/#storage-volume-types) from Incus for more information.
@@ -385,7 +423,7 @@ To create a new virtual machine, from the **Create Instance** screen:
 
 7. (Optional) Configure PCI passthrough settings to assign physical PCI devices, such as a network card or controller, directly to a VM.
    This allows the VM to use the device as if physically attached.
-   The selected PCI device(s) cannot be in use by the host or share an IOMMU group with devices the host requires.
+   The selected PCI device(s) cannot be in use by the host or share an IOMMU group with devices that the host requires.
 
    {{< trueimage src="/images/SCALE/Virtualization/CreateInstancePCI.png" alt="PCI Passthrough" id="PCI Passthrough" >}}
 
@@ -437,6 +475,8 @@ Select the checkbox to the left of **Name** (select all) or select one or more i
 Enter the name of an instance in the **Search** field above the **Instances** table to locate a configured instance.
 
 Click <i class="material-icons" aria-hidden="true" title="Restart">restart_alt</i> to restart or <i class="material-icons" aria-hidden="true" title="Stop">stop_circle</i> to stop a running instance.
+Choosing to stop an instance shows a choice to stop immediately or after a small delay.
+
 Click <i class="material-icons" aria-hidden="true" title="Start">play_circle</i> to start a stopped instance.
 
 Select an instance row in the table to populate the **Details for *Instance*** widgets with information and management options for the selected instance.
@@ -458,7 +498,7 @@ After selecting the instance row in the table to populate the **Details for *Ins
 Click **Edit** to open the **Edit Instance: *Instance*** screen.
 The **Edit Instance: *Instance*** screen settings are a subset of those found on the **Create Instance** screen.
 It includes the general **Instance Configuration** and **CPU and Memory** settings for all instances.
-Additionally, containers include **Environment** settings and VMs include **VNC** and **Security** settings.
+Additionally, containers include **Environment** settings, and VMs include **VNC** and **Security** settings.
 
 #### Editing Instance Configuration Settings
 
@@ -469,7 +509,7 @@ Select **Autostart** to automatically start the instance when the system boots.
 #### Editing CPU & Memory Settings
 
 For containers, **CPU Configuration** and **Memory Size** can be configured or left blank to allow the container access to all host CPU and memory resources.
-For VMs, CPU and memory configuration is required.
+For VMs, CPU and memory configurations are required.
 
 {{< trueimage src="/images/SCALE/Virtualization/EditCPUandMemory.png" alt="Edit CPU & Memory" id="Edit CPU & Memory" >}}
 
@@ -527,7 +567,7 @@ Use the **Devices** widget to view all USB, GPU, Trusted Platform Module (TPM), 
 {{< trueimage src="/images/SCALE/Virtualization/DevicesWidget.png" alt="Devices Widget" id="Devices Widget" >}}
 
 Click **Add** to open a list of available **USB Devices**, **GPUs**, **TPM**, and **PCI Passthrough** devices to attach.
-Select a device to attach it to an instance.
+Select a device to attach to an instance.
 
 To attach a PCI passthrough device, click **Add Device** under **PCI Passthrough** on the device list to open the **Add PCI Passthrough Device**.
 PCI passthrough assigns a physical PCI device, such as a network card or controller, directly to a VM, allowing it to function as if physically attached.
@@ -548,7 +588,7 @@ Use the **Disks** widget to view the storage devices attached to the instance, a
 
 Click **Add** to open the [**Add Disk**](#adding-or-editing-disks) screen for adding new disks to the instance.
 
-Click the the <span class="material-icons">more_vert</span> icon to the right of an existing disk to open the actions menu.
+Click the <span class="material-icons">more_vert</span> icon to the right of an existing disk to open the actions menu.
 Select to either [**Edit**](#adding-or-editing-disks) or [**Delete**](#deleting-disk-mounts) the disk mount.
 
 For VMs, use the **Disks** widget to manage the root disk size and I/O Bus.
@@ -559,7 +599,7 @@ Click **Change** to open the [**Change Root Disk Setup**](#managing-the-root-dis
 
 Click **Add** to open the **Add Disk** screen for adding new disks to the instance.
 
-Click the the <span class="material-icons">more_vert</span> icon to the right of an existing disk to open the actions menu.
+Click the <span class="material-icons">more_vert</span> icon to the right of an existing disk to open the actions menu.
 Select **Edit** to edit the disk mount.
 
 {{< trueimage src="/images/SCALE/Virtualization/AddDiskScreenVM.png" alt="Add Disk Screen - VM" id="Add Disk Screen - VM" >}}
@@ -580,7 +620,7 @@ Click **Save** to apply changes.
 
 #### Deleting Disk Mounts
 
-Click the the <span class="material-icons">more_vert</span> icon to the right of an existing disk to open the actions menu.
+Click the <span class="material-icons">more_vert</span> icon to the right of an existing disk to open the actions menu.
 Select [**Delete**](#deleting-disk-mounts) to delete the disk mount.
 
 The **Delete Item** dialog asks for confirmation to delete the selected disk mount.
@@ -609,12 +649,12 @@ Use the **NIC Widget** to view the network interfaces (NICs) attached to the ins
 
 {{< trueimage src="/images/SCALE/Virtualization/NICWidget.png" alt="NIC Widget" id="NIC Widget" >}}
 
-Click**Add** to open a menu with available NIC choices.
+Click **Add** to open a menu with available NIC choices.
 Select a NIC from the dropdown to attach it to the instance.
 
 #### Deleting NICs
 
-Click the the <span class="material-icons">more_vert</span> icon to the right of an existing NIC to open the actions menu.
+Click the <span class="material-icons">more_vert</span> icon to the right of an existing NIC to open the actions menu.
 Select [**Delete**](#deleting-disk-mounts) to delete the NIC mount.
 
 {{< trueimage src="/images/SCALE/Virtualization/DeleteNicDialog.png" alt="Delete Item Dialog" id="Delete Item Dialog" >}}

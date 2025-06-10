@@ -4,7 +4,7 @@ img: "/images/truenas_core-logo-full-color-rgb.png"
 product: "TrueNAS CORE"
 title: "CORE&trade; | Enterprise&trade;"
 majorVersions:
-  - lifecycle: "Previous"
+  - lifecycle: "13.0"
     name: "TrueNAS CORE 13.0"
     releaseName: "13.0"
     releases:
@@ -13,21 +13,17 @@ majorVersions:
         link: "https://www.truenas.com/docs/core/13.0/gettingstarted/corereleasenotes/"
         releaseDate: "2025-01-24"
         latest: true
-  - lifecycle: "Current"
+  - lifecycle: "13.3"
     name: "TrueNAS CORE 13.3"
     releaseName: "13.3"
     releases:
-      - name: "13.3-U1.1"
+      - name: "13.3-U1.2"
         type: "Community"
         link: "https://www.truenas.com/docs/core/13.3/gettingstarted/corereleasenotes/"
-        releaseDate: "2025-01-31"
+        releaseDate: "2025-04-29"
         latest: true
-  - lifecycle: "Next"
-    name: "TBD"
-    releaseName: "TBD"
-    releases:
-      - name: "TBD"
-        type: "Experimental"
+      - name: "No Additional Development"
+        type: ""
         link: ""
         releaseDate: ""
-        latest: true
+        latest: false

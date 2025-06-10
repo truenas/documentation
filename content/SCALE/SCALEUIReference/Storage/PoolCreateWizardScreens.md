@@ -50,7 +50,7 @@ Do not begin a pool name with a special character.
 {{< include file="/static/includes/EncryptionRootLevel.md" >}}
 
 Enables [ZFS encryption](https://zfsonlinux.org/manpages/0.8.3/man8/zfs.8.html) for the pool and all datasets (or zvols) within the pool created using the TrueNAS UI.
-See [Storage Encryption]({{< relref "EncryptionScale.md" >}}) for more information on using TrueNAS storage encryption.
+See [Storage Encryption]({{< ref "EncryptionScale" >}}) for more information on using TrueNAS storage encryption.
 An encryption warning dialog opens with a **Confirm** option.
 **Confirm** enables the **I Understand** button. **I Understand** continues with adding the pool with encryption applied.
 

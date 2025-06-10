@@ -6,7 +6,7 @@ tags:
  - permissions
 ---
 
-[TrueNAS provides for full Access Control List (ACL) compatibility]({{< relref "PermissionsSCALE.md" >}}) between Windows and Linux with NFSv4 ACLs on ZFS and eases the challenges of integrating Unix servers in Windows environments.
+[TrueNAS provides for full Access Control List (ACL) compatibility]({{< ref "PermissionsSCALE" >}}) between Windows and Linux with NFSv4 ACLs on ZFS and eases the challenges of integrating Unix servers in Windows environments.
 
 ## ACL Overview
 

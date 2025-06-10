@@ -43,13 +43,13 @@ The <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 
 | Setting | Description |
 |---------|-------------|
 | **GID** | (Required) Assigns the entered unique number as the group ID (**GID**) TrueNAS uses to identify a Unix group. Enter a number above 1000 for a group with user accounts. If a system service uses the group, the group ID must match the default port number for the service.<br> Shows the group ID assigned at the time the group is created on the **Edit Group** screen but cannot be changed. |
-| **Name** | (Required) Assigns the entered name to the group. A group name cannot begin with a hyphen (-) or contain a space, tab, or any of these characters: colon (:), plus (+), ampersand (&), hash (#), percent (%), carat (^), open or close parentheses ( ), exclamation mark (!), at symbol (@), tilde (~), asterisk (*), question mark (?) greater or less than (<) (>), equal (=). You can only use the dollar sign ($) as the last character in a group name or username. |
+| **Name** | (Required) Assigns the entered name to the group. A group name cannot begin with a hyphen (-) or contain a space, tab, or any of these characters: colon (:), plus (+), ampersand (&), hash (#), percent (%), carat (^), open or close parentheses ( ), exclamation mark (!), at symbol (@), tilde (~), asterisk (\*), question mark (?), greater or less than (<) (>), equal (=). You can only use the dollar sign ($) as the last character in a group name. Group names must also align with the [Portable Filename Character Set](https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/V1_chap03.html#tag_03_282) defined by *The Open Group*. |
 | **Privileges** | Attaches a role privilege to the group as assigned and configured on the Add or **Edit Privileges** screens. <br>Using custom administrator roles aside from the defaults is an experimental feature and is not supported.<br>Do not modify the local administrator or default admin user privileges! Only use if you need users in this group to access limited areas of the TrueNAS UI or authentication for TrueNAS API calls. |
 | **Allowed sudo commands** | Permits the group members to enter the specific [sudo](https://www.sudo.ws/) commands in this field. Enter each command as an absolute path to the ELF (Executable and Linkable Format) executable file, for example */usr/bin/nano*. <file>/usr/bin/</file> is the default location for commands. <br> Grants limited root-like permissions for group members when using these commands. Using sudo prompts the user for their account password. |
 | **Allow all sudo commands** | Enable to give group members permission to use all [sudo](https://www.sudo.ws/) commands. Using sudo prompts the user for their account password. |
 | **Allowed sudo commands with no password** | Permits group memebers to enter the specific allowed [sudo](https://www.sudo.ws/) commands entered in this field without requiring the user to enter their password. Enter each command as an absolute path to the ELF (Executable and Linkable Format) executable file, for example */usr/bin/nano*. <file>/usr/bin/</file> is the default location for commands. <br> Grants limited root-like permissions for group members when using these commands. Exercise caution when allowing sudo commands without password prompts. Recommended to limit the privilege to trusted users and specific commands to minimize security risks. |
 | **Allow all sudo commands with no password** | Not recommended. Enable to give group members the ability to enter all [sudo](https://www.sudo.ws/) commands without needing to enter a password. Does not require specifying allowed commands. |
-| **SMB Group** | Select to make the group available for permissions editors over [SMB protocol]({{< relref "/SCALE/SCALETutorials/Shares/_index.md" >}}) (and the share ACL editor). Not used for SMB authentication or determining the user session token or internal permissions checks. |
+| **SMB Group** | Select to make the group available for permissions editors over [SMB protocol]({{< ref "/SCALE/SCALETutorials/Shares" >}}) (and the share ACL editor). Not used for SMB authentication or determining the user session token or internal permissions checks. |
 {{< /truetable >}}
 
 ## Update Members Screen
@@ -65,7 +65,7 @@ Hold <kbd>Ctrl</kbd> while clicking each entry to select multiple groups.
 ## Privileges Screen
 
 {{< hint type="warning" title="Experimental Feature" >}}
-The **Privileges** feature in an early releases was an experimental feature but is no longer experimental as of 24.10.
+The **Privileges** feature in releases earlier than 24.10 is experimental, but as of 24.10 onwards is no longer experimental.
 
 Do not edit the existing predefined administrator roles (Full Control Admin, Readonly Admin, and Sharing Admin)!
 Editing an unrestricted administrator account privilege can result in lost access to the system!
@@ -80,6 +80,12 @@ The **Privileges** screens show the default administrator groups and roles and d
 
 The new and edit privilege screens show the same settings but not all settings are editable.
 
+{{< enterprise >}}
+Enterprise-licensed systems can enable Active Directory to provision groups in TrueNAS. To make this possible, join Active Directory, then go to **System > Advanced Settings > Access** and enable the **Allow Directory Service users to access WebUI** option.
+After enabling this, the **Edit Privilege** screen lists AD groups on the **Groups** dropdown list.
+See [Allowing Directory Service Users to Access the UI]({{< ref "advanced/#allowing-directory-service-users-to-access-the-ui" >}}) for more information.
+{{< /enterprise >}}
+
 {{< trueimage src="/images/SCALE/Credentials/AddNewPrivilegeScreen.png" alt="New Privilege Screen" id="New Privilege Screen" >}}
 
 **Add** opens the **New Privilege** screen. 
@@ -88,13 +94,12 @@ The <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Name** | Assigns the entered name to a new privilege. Names can include the dash (-) or underscore(_) special characters, and upper and lowercase alphanumeric characters. Enter a descriptive name for the privilege. **Name** shows on the **Edit Privilege** screen but is not editable. |
+| **Name** | Assigns the name entered to a new privilege. Names can include the dash (-) or underscore(_) special characters, and upper and lowercase alphanumeric characters. Enter a descriptive name for the privilege. **Name** shows on the **Edit Privilege** screen but is not editable. |
 | **Groups** | Shows a list of groups configured on the system. Select a group from the dropdown list after clicking in the field. The privilege is applied to the selected group(s). |
-| **Directory Services Groups** | Shows a list of available groups to select after clicking in the field. Applies the privilege to selected groups. |
-| **Roles** |Select from a dropdown list of all available roles available to assign to the new privilege, or change in an existing privilege. |
+| **Roles** | Select from a dropdown list of all available roles available to assign to the new privilege or change an existing privilege. Only the Readonly Admin, Sharing Admin, or Full Admin roles are supported in the web UI. |
 | **Web Shell Access** | Select to allow a user to assign the new privilege access to the **System > Shell** screen. |
 {{< /truetable >}}
 
-Assigned administrator roles show on the [Users Screen]({{< relref "LocalUsersScreensSCALE.md" >}}).
+Assigned administrator roles show on the [Users Screen]({{< ref "LocalUsersScreensSCALE" >}}).
 
 {{< include file="/static/includes/addcolumnorganizer.md" >}}

@@ -4,7 +4,6 @@ description: "Provides information on using the Console Setup menu after install
 weight: 20
 aliases:
  - /scale/gettingstarted/post-installconfiguration/
- - /images/SCALE/22.12/ConsoleSetupMenuSCALE.png
 tags:
 - install
 - network
@@ -49,10 +48,10 @@ For network configuration options **1**, **2**, and **3**, we recommend using th
   
   Use to change the administrator user password.
   If you selected option 1 on the iso installer menu, you have already configured the **truenas_admin** user and password.
-  You can use this to change the admin password before you log into the TrueNAS UI.
+  You can use this to change the admin password before you log into the TrueNAS UI. Note that TrueNAS begins warning all local account types (administrator, full admin, read-only, and sharing-only) seven days before password expiration. After expiration, the account locks and requires administrative action to unlock.
   {{< hint type=note >}}
   This is not the password for the root user in the CLI or the root user login password for the web UI.
-  The [root user password]({{< relref "AdminRoles.md" >}}) is disabled by default as part of security hardening.
+  The [root user password]({{< ref "AdminRoles" >}}) is disabled by default as part of security hardening.
   Activating the root user is not recommended.
   {{< /hint >}}
 
@@ -67,7 +66,7 @@ For network configuration options **1**, **2**, and **3**, we recommend using th
 
 * **7) Open TrueNAS CLI Shell**
 
-  Use to start a shell for running TrueNAS commands, or use the TrueNAS UI **[System Settings > Shell]({{< relref "UseScaleShell.md" >}})**.
+  Use to start a shell for running TrueNAS commands, or use the TrueNAS UI **[System Settings > Shell]({{< ref "UseScaleShell" >}})**.
   Type `exit` to leave the shell.
 
 * **8) Open Linux Shell**
@@ -176,7 +175,7 @@ Enter **5** in the Console Setup menu, then enter <kbd>y</kbd> to reset the syst
 ## Completing your System Setup
 After setting up network requirements, log into the web UI to complete your system setup by:
 
-* [Completing network configuration] ({{< relref "/SCALE/SCALETutorials/Network/_index.md" >}}) if not already set up using the Console Setup menu.
-* [Setting up storage]({{< relref "SetUpStorageSCALE.md" >}})
-* [Setting up sharing]({{< relref "SetUpSharing.md" >}})
-* [Backing Up your configuration]({{< relref "SetUpBackupSCALE.md" >}})
+* [Completing network configuration] ({{< ref "/SCALE/SCALETutorials/Network" >}}) if not already set up using the Console Setup menu.
+* [Setting up storage]({{< ref "SetUpStorageSCALE" >}})
+* [Setting up sharing]({{< ref "SetUpSharing" >}})
+* [Backing Up your configuration]({{< ref "SetUpBackupSCALE" >}})

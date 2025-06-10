@@ -4,8 +4,6 @@ description: "Provides information on the Cloud Credentials screens and settings
 weight: 10
 aliases: 
  - /scale/scaleclireference/task/cloudsync/clicredential/
- - /images/CORE/12.0/SystemCloudCredentialsOAuthLogin.png
- - /images/CORE/12.0/CloudCredentialsAddCredentials.png
 tags:
 - cloud
 - credentials
@@ -53,7 +51,7 @@ The selection in **Provider** changes the **Authentication** settings.
 
 ### Storj iX Credential
 Storj authentication includes going to the Storj iX sign-in screen to either create a new Storj iX account or log into an existing Storj iX account.
-After configuring the Storj account in the Storj-iX portal return to TrueNAS to enter the S3 credentials provided by Storj.
+After configuring the Storj account in the Storj-iX portal, return to TrueNAS to enter the S3 credentials provided by Storj.
 
 {{< trueimage src="/images/SCALE/Credentials/CloudCredentialsAdd.png" alt="Cloud Credentials Storj iX" id="Cloud Credentials Storj iX" >}}
 
@@ -62,8 +60,9 @@ After configuring the Storj account in the Storj-iX portal return to TrueNAS to 
 | Setting | Description |
 |---------|-------------|
 | **Signup for account** | Link to the Storj iX account sign-up page where you either create a new account or sign in to your Storj iX account. |
-| **Access Key ID** | Enter the alphanumeric key provided by Storj when you [create the S3 account access]({{< relref "TrueCloudTasks.md" >}}) associated with the storage buckets added in Storj. |
-| **Secret Access Key** | Enter the alphanumeric key provided by Storj when you [create the S3 account access]({{< relref "TrueCloudTasks.md" >}}) associated with the storage buckets added in Storj. |
+| **Access Key ID** | Enter the alphanumeric key provided by Storj when you [create the S3 account access]({{< ref "TrueCloudTasks" >}}) associated with the storage buckets added in Storj. |
+| **Secret Access Key** | Enter the alphanumeric key provided by Storj when you [create the S3 account access]({{< ref "TrueCloudTasks" >}}) associated with the storage buckets added in Storj. |
+| **Endpoint** | (Optional) Enter a custom Storj S3-compatible endpoint to use a specific tier, such as Global or Select. Leave blank to use the default. |
 {{< /truetable >}}
 {{< /expand >}}
 
@@ -114,7 +113,7 @@ This section provides information on the BackBlaze B2 authentication settings.
 
 ### OAuth and Access Token Authentication Credentials
 Several cloud storage providers use OAuth authentication and a required access token to authenticate the cloud storage account.
-Providers using these methods are Box, Dropbox, Google Photo, pCloud, and Yandex.
+Providers using these methods are Box, Dropbox, Google Photos, pCloud, and Yandex.
 
 {{< trueimage src="/images/SCALE/Credentials/CloudCredentialsOAuthAccessTokenAuthentication.png" alt="OAuth and Access Token Authentications" id="OAuth and Access Token Authentication" >}}
 
@@ -140,16 +139,16 @@ FTP and SFTP cloud storage providers use host name, port, and user credentials t
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Host** | Enter the FTP host name or for SFTP the SSH host name to connect. For example, *ftp.example.com*. |
+| **Host** | Enter the FTP host name, or for SFTP, the SSH host name to connect. For example, *ftp.example.com*. |
 | **Port** | Enter the FTP or for SFTPP, the SSH port number. Leave blank to use the default port **21** for FTP or **22** for SFTP. |
-| **Username** | Enter a username on the FTP or for the SFTP host system the SSJ user name. This user must already exist on the host. |
+| **Username** | Enter a username on the FTP or for the SFTP host system, the SSJ user name. This user must already exist on the host. |
 | **Password** | Enter the password for the user account. |
 | **Private Key ID** | (SFTP only) Import the private key from an existing SSH keypair or, if no keypairs exist on the system, select **Add** on the **SSH Keypairs** widget to open the **SSH Keypairs** screen. Enter a name, and then click **Generate New** to create a new SSH key for this credential. |
 {{< /truetable >}}
 {{< /expand >}}
 
 ### Google Cloud Storage Credential
-Google Cloud Storage authentication uses a Google [service account json key credential file](https://rclone.org/googlecloudstorage/#service-account-support) to authenticate the account.
+Google Cloud Storage authentication uses a Google [service account JSON key credential file](https://rclone.org/googlecloudstorage/#service-account-support) to authenticate the account.
 
 {{< trueimage src="/images/SCALE/Credentials/CloudCredentialsGoogleCloudAuth.png" alt="Google Cloud Storage Authentication" id="Google Cloud Storage Authentication" >}}
 
@@ -176,7 +175,7 @@ Use **Login to Provider** to enter the account username and password.
 | **OAuth Client ID** | Enter the public identifier for the cloud application. |
 | **OAuth Client Secret** | Enter the secret phrase known only to the cloud application and the authorization server. |
 | **Access Token** | (Required) Token created with [Google Drive](https://developers.google.com/drive/api/v3/about-auth). Access Tokens expire periodically, so you must refresh them. |
-| **Team Drive ID** | (Optional) Google Drive only when connecting to a team drive and is the top-level folder ID for the team drive. |
+| **Team Drive ID** | (Optional) Google Drive only when connecting to a team drive, and is the top-level folder ID for the team drive. |
 {{< /truetable >}}
 {{< /expand >}}
 
@@ -188,10 +187,6 @@ HTTP uses an HTTP host URL to authenticate account credentials.
 
 Hubic uses an access token to authenticate the account.
 Enter the token generated by a [Hubic account](https://api.hubic.com/sandbox/) into the **Access Token** field.
-
-### Mega Credential
-
-Mega uses the username and password for the [MEGA user account](https://mega.nz/) to authenticate the account credentials.
 
 ### Microsoft Azure Blob Storage Credential
 Microsoft Azure Blob Storage uses the Microsoft Azure account name and account key to authenticate the account credentials.
@@ -237,11 +232,11 @@ The **Authentication Advanced Options** screen shows different options based on 
 | Setting | Description |
 |---------|-------------|
 | **Tenant Name** | Enter the OS_TENANT_NAME from an [OpenStack credentials file](https://rclone.org/swift/#configuration-from-an-openstack-credentials-file). |
-| **Tenant ID** | (Optional for v1 auth) Enter the tenant ID Enter the tenant ID. For more information see [rclone documentation](https://rclone.org/swift/#standard-options). |
-| **Auth Token** | (Optional) Enter the auth token from alternate authentication. For more information see [rclone documentation](https://rclone.org/swift/#standard-options). |
-| **Region Name** | (Optional) Enter the region name. For more information see [rclone documentation](https://rclone.org/swift/#standard-options). |
-| **Storage URL** | (Optional) Enter the storage URL. For more information see [rclone documentation](https://rclone.org/swift/#standard-options). |
-| **Endpoint Type** | Select service catalog option from the **Endpoint Type** dropdown. Options are **Public**, **Internal** and **Admin**. **Public** is recommended. For more information see [rclone documentation](https://rclone.org/swift/#standard-options). |
+| **Tenant ID** | (Optional for v1 auth) Enter the tenant ID Enter the tenant ID. For more information, see [rclone documentation](https://rclone.org/swift/#standard-options). |
+| **Auth Token** | (Optional) Enter the auth token from alternate authentication. For more information, see [rclone documentation](https://rclone.org/swift/#standard-options). |
+| **Region Name** | (Optional) Enter the region name. For more information, see [rclone documentation](https://rclone.org/swift/#standard-options). |
+| **Storage URL** | (Optional) Enter the storage URL. For more information, see [rclone documentation](https://rclone.org/swift/#standard-options). |
+| **Endpoint Type** | Select service catalog option from the **Endpoint Type** dropdown. Options are **Public**, **Internal** and **Admin**. **Public** is recommended. For more information, see [rclone documentation](https://rclone.org/swift/#standard-options). |
 {{< /truetable >}}
 {{< /expand >}}
 
@@ -253,20 +248,20 @@ Setting **AuthVersion** to **v3** shows additional authentication settings.
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **User ID** | (Optional) Enter the user ID to log in. To log into most swift systems leave this blank. For more information see [rclone documentation](https://rclone.org/swift/#standard-options). |
-| **User Domain** | (Optional) Enter the user domain. For more information see [rclone documentation](https://rclone.org/swift/#standard-options). |
+| **User ID** | (Optional) Enter the user ID to log in. To log into most swift systems, leave this blank. For more information, see [rclone documentation](https://rclone.org/swift/#standard-options). |
+| **User Domain** | (Optional) Enter the user domain. For more information, see [rclone documentation](https://rclone.org/swift/#standard-options). |
 | **Tenant Name** | (Required) Enter the OS_TENANT_NAME from an [OpenStack credentials file](https://rclone.org/swift/#configuration-from-an-openstack-credentials-file). |
-| **Tenant ID** | Required for **v2** and **v3**. Enter the tenant ID. For more information see [rclone documentation](https://rclone.org/swift/#standard-options). |
-| **Tenant Domain** | (Optional) Enter the tenant domain. For more information see [rclone documentation](https://rclone.org/swift/#standard-options). |
-| **Auth Token** | (Optional) Enter the auth token from alternate authentication. For more information see [rclone documentation](https://rclone.org/swift/#standard-options). |
-| **Region Name** | (Optional) Enter the region name. For more information see [rclone documentation](https://rclone.org/swift/#standard-options). |
-| **Storage URL** | (Optional) Enter the storage URL. For more information see [rclone documentation](https://rclone.org/swift/#standard-options). |
-| **Endpoint Type** | Select service catalog option from the **Endpoint Type** dropdown. Options are **Public**, **Internal** and **Admin**. **Public** is recommended. For more information see [rclone documentation](https://rclone.org/swift/#standard-options). |
+| **Tenant ID** | Required for **v2** and **v3**. Enter the tenant ID. For more information, see [rclone documentation](https://rclone.org/swift/#standard-options). |
+| **Tenant Domain** | (Optional) Enter the tenant domain. For more information, see [rclone documentation](https://rclone.org/swift/#standard-options). |
+| **Auth Token** | (Optional) Enter the auth token from alternate authentication. For more information, see [rclone documentation](https://rclone.org/swift/#standard-options). |
+| **Region Name** | (Optional) Enter the region name. For more information, see [rclone documentation](https://rclone.org/swift/#standard-options). |
+| **Storage URL** | (Optional) Enter the storage URL. For more information, see [rclone documentation](https://rclone.org/swift/#standard-options). |
+| **Endpoint Type** | Select service catalog option from the **Endpoint Type** dropdown. Options are **Public**, **Internal** and **Admin**. **Public** is recommended. For more information, see [rclone documentation](https://rclone.org/swift/#standard-options). |
 {{< /truetable >}}
 {{< /expand >}}
 
 ### WebDAV Credential
-WebDAV uses a URL, service type, and user credentials to authenticate account cloud account credentials.
+WebDAV uses a URL, service type, and user credentials to authenticate the cloud account credentials.
 
 {{< trueimage src="/images/SCALE/Credentials/CloudCredentialWebDAVAuthentication.png" alt="WebDAV Authentication Settings" id="WebDAV Authentication Settings" >}}
 
