@@ -17,7 +17,7 @@ After you [download](https://www.truenas.com/download-tn-scale/) the <kbd>.iso</
 This article describes verifying the <kbd>.iso</kbd> file and installing TrueNAS using that file, and selecting the type of installation as either on [physical hardware](#installing-on-physical-hardware) or a [virtual machine (VM)](#installing-on-a-virtual-machine).
 
 {{< enterprise >}}
-TrueNAS Enterprise customers should receive their systems already installed and ready for UI configuration. If there are any issues with that require you to install or reinstall TrueNAS, contact TrueNAS Enterprise Support for assistance.
+TrueNAS Enterprise customers should receive their systems already installed and ready for UI configuration. If you have any issues that require you to install or reinstall TrueNAS, contact TrueNAS Enterprise Support for help.
 
 Enterprise customers with High Availability (HA) systems should not attempt to reinstall their systems independently. The dual controller installation process is complicated, and the risk of causing serious network issues is high. Contact TrueNAS Enterprise Support for assistance!
 
@@ -82,7 +82,7 @@ The command to verify the checksum varies by operating system:
 * BSD: use command `sha256 isofile`
 * Linux: use command `sha256sum isofile`
 * Mac: use command `shasum -a 256 isofile`
-* Windows: use command `certutil -hashfile`. For example, `certutil -hashfile "path to sha256 file"`
+* Windows: use command `certutil -hashfile "path to sha256 file"`. For example, `certutil -hashfile "C:\Users\User1\Downloads\TrueNAS-SCALE-25.04.1.iso.sha256"`
 
 The value produced by running the command must match the value shown in the <kbd>sha256.txt</kbd> file.
 Different checksum values indicate a corrupted installer file that you should not use.
