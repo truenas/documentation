@@ -50,7 +50,6 @@ Get‑SmbMultichannelConnection
 You can also enter `Get-SmbMultichannelConnection | ConvertTo-Json` and ensure `CurrentChannels` is more than 1.
 
 # View details as JSON
-Get‑SmbMultichannelConnection | ConvertTo‑Json
 
 ```powershell
 # View details as JSON
