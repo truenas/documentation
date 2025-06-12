@@ -59,7 +59,10 @@ You must set the pool before you can add any instances.
 Use the **Pool** dropdown to select the pool and click **Save**.
 
 We recommend users keep the VM and container use case in mind when choosing an instances pool.
-Select a pool with enough storage space for all the instances you intend to host.
+
+{{< hint type=tip title="Instances Pool Capacity" >}}
+Select a pool with enough storage space for all the instances you intend to host. The pool must also store all the ISO files.
+{{< /hint >}}
 
 For stability and performance, we recommend using SSD/NVMe storage for the instances pool due to their faster speed and resilience for repeated read/writes.
 
