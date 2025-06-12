@@ -204,7 +204,7 @@ See the [smb.conf](https://www.samba.org/samba/docs/current/man-html/smb.conf.5.
 {{< expand "Setting Up Host Allow and Host Deny" "v" >}}
 Use the **Host Allow** and **Host Deny** options to allow or deny specific host names and IP addresses.
 
-Use the **Hosts Allow** field to enter a list of allowed IP addresses or networks.
+Use the **Hosts Allow** field to enter a list of allowed IP addresses.
 Separate entries by pressing <kbd>Enter</kbd>.
 {{< hint type="Warning" title="Setting Host Allow" >}}
 Entering values in the **Host Allow** restricts access to only the addresses entered into this list!
