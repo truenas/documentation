@@ -1,4 +1,5 @@
 ---
+# This file is pulled by the API Docs Jenkins pipeline to match SCALE versions with API versions
 id: "scale-schedule"
 img: "/images/tn-openstorage-logo.png"
 product: "TrueNAS"
@@ -41,3 +42,4 @@ majorVersions:
         link: ""
         releaseDate: ""
         latest: false
+
