@@ -2296,3 +2296,5 @@ GPLv3
 GPLv
 apparticletemplate
 appcontributions
+fseries
+FStencil
