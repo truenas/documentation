@@ -60,7 +60,7 @@ Use the **Pool** dropdown to select the pool and click **Save**.
 
 We recommend users keep the VM and container use case in mind when choosing an instances pool.
 
-{{< hint type=[tip] (title="Instances Pool Capacity") >}}
+{{< hint type=tip title="Instances Pool Capacity" >}}
 Select a pool with enough storage space for all the instances you intend to host. The pool must also store all the ISO files.
 {{< /hint >}}
 
