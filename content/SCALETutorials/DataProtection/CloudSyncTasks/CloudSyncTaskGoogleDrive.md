@@ -18,7 +18,7 @@ TrueNAS offers the ability to easily back up Google Drive by using the built-in 
 
 ## Setting up Google Drive Credentials
 
-You can add Google Drive credentials using the **Add Cloud Credentials** screen accessed from the **Credentials > Backup Credentials > Cloud Credentials** screen, or you can add them when you create a cloud sync task using the **Add Cloud Sync Task** screen accessed from the **Data Protection > Cloud Sycn Task** screen.
+You can add Google Drive credentials using the **Add Cloud Credentials** screen accessed from the **Credentials > Backup Credentials > Cloud Credentials** screen, or you can add them when you create a cloud sync task using the **Add Cloud Sync Task** screen accessed from the **Data Protection > Cloud Sync Task** screen.
 
 ### Adding Google Drive Credentials Using Cloud Credentials
 
