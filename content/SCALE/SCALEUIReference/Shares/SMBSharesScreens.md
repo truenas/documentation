@@ -105,7 +105,7 @@ The **Basic Options** settings also show on the **Advanced Options** screen.
 | **Create Dataset** | Opens the **Create Dataset** dialog. After navigating to the location in the dataset tree where you want to create the dataset, click to open the dialog. Enter a name for the new dataset and the SMB share. **Create** adds the dataset and populates**Name** field on the **Add SMB** screen. |
 | **Name** | Enter a name for the share that is less than or equal to 80 characters. Because of how the SMB protocol uses the name, the name must not exceed 80 characters. The name cannot have invalid characters as specified in Microsoft documentation MS-FSCC section 2.1.6. **Name** is automatically populated with the name of the dataset when you use **Create Dataset**. If not supplied, the share name becomes the last component of the path. This forms part of the full share path name when SMB clients perform and SMB tree connect. If changing the name, follow the naming conventions for [files and directories](https://learn.microsoft.com/en-us/windows/win32/fileio/naming-a-file#naming-conventions) or [share names](https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-fscc/dc9978d7-6299-4c5a-a22d-a039cdc716ea). |
 | **Purpose** | Select a [preset option](#purpose-setting-options) from the dropdown list. The selected option applies predetermined settings ([presets](#advanced-options-presets)) and disables changing some share setting options. |
-| **Description** | Enter a brief description or notes on this share is used.  |
+| **Description** | Enter a brief description or notes on how this share is used.  |
 | **Enabled** | Selected by default to enable sharing the path when the SMB service is activated. Clear to disable this SMB share without deleting it. |
 {{< /truetable >}}
 
@@ -118,19 +118,19 @@ This table details the options found on the **Purpose** dropdown list.
 **Advanced Options** show settings made available or locked based on the selection in the **Purpose** option.
 
 #### Access Settings
-**Access** settings customize access to the share and files and specify allowed or denied access for host names or IP addresses.
+**Access** settings customize access to the share and files, and specify allowed or denied access for host names or IP addresses.
 
 {{< trueimage src="/images/SCALE/Shares/AddSMBAdvancedAccessSettings.png" alt="SMB Advanced Options Access" id="SMB Advanced Options Access" >}}
 
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Enable ACL** | Select to enable ACL support for the SMB share. When clearing this option a warning shows when the SMB dataset has an ACL. You must strip the ACL from the dataset before creating the SMB share. |
+| **Enable ACL** | Select to enable ACL support for the SMB share. When clearing this option, a warning shows when the SMB dataset has an ACL. You must strip the ACL from the dataset before creating the SMB share. |
 | **Export Read-Only** | Select to prohibit writes to the share. |
-| **Browsable to Network Clients** | Select to include this share name when browsing shares. Enabled by default. Home shares are only visible to the owner regardless of this setting. |
+| **Browsable to Network Clients** | Select to include this share name when browsing shares. Enabled by default. Home shares are only visible to the owner, regardless of this setting. |
 | **Allow Guest Access** | Select to enable and allow guest accounts to access the share. Privileges are the same as the guest account. Guest access is disabled by default in Windows 10 version 1709 and Windows Server version 1903. Additional client-side configuration is required to provide guest access to these clients. <br>**MacOS clients**: Attempting to connect as a user that does not exist in FreeNAS does not automatically connect as the guest account. You must select the **Connect As: Guest** option in macOS to log in as the guest account. See the [Apple documentation](https://support.apple.com/guide/mac-help/connect-mac-shared-computers-servers-mchlp1140/mac) for more details. |
 | **Access Based Share Enumeration** | Select to restrict share visibility to users with read or write access to the share. Open is the default for this setting. See the [smb.conf](https://www.samba.org/samba/docs/current/man-html/smb.conf.5.html) manual page. |
-| **Hosts Allow** | Enter a list of allowed IP addresses. Separate entries by pressing <kbd>Enter</kbd>. For a more detailed description with examples click [here](https://www.samba.org/samba/docs/current/man-html/smb.conf.5.html#HOSTSALLOW).
+| **Hosts Allow** | Enter a list of allowed host names or IP addresses. Separate entries by pressing <kbd>Enter</kbd>. For a more detailed description with examples, click [here](https://www.samba.org/samba/docs/current/man-html/smb.conf.5.html#HOSTSALLOW).
 | **Hosts Deny** | Enter a list of denied host names or IP addresses. Separate entries by pressing <kbd>Enter</kbd>. |
 {{< /truetable >}}
 
@@ -143,8 +143,8 @@ The **Audit Logging** settings enable the auditing function for the SMB share an
 | Setting | Description |
 |---------|-------------|
 | **Enabled** | Select to enable audit logging for the SMB share. |
-| **Watch List** | Select groups from the dropdown list for which you want to generate audit logging messages. Leaving this blank includes all SMB users with access to the share. If also setting a limit list, when a conflict exists the watch list takes precedence. |
-| **Limit List** | Select groups from the dropdown list that you want to ignore or exclude from audit logging. If a group is a member of both the watch and limit lists, the watch list takes precedence and the group generates audit messages. |
+| **Watch List** | Select groups from the dropdown list for which you want to generate audit logging messages. Leaving this blank includes all SMB users with access to the share. If also setting a limit list, when a conflict exists, the watch list takes precedence. |
+| **Limit List** | Select groups from the dropdown list that you want to ignore or exclude from audit logging. If a group is a member of both the watch and limit lists, the watch list takes precedence, and the group generates audit messages. |
 {{< /truetable >}}
 
 #### Other Settings
@@ -157,10 +157,10 @@ The **Other Options** settings include improving Apple software compatibility, Z
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Use as Home Share** | Select to allow the share to host user home directories. Each user has a personal home directory they use when connecting to the share that is not accessible by other users. Home Shares allow for personal, dynamic shares. You can only use one share as the home share. See [Adding an SMB Home Share]({{< ref "SMBPrivateDatasetShare" >}}) for more information. |
+| **Use as Home Share** | Select to allow the share to host user home directories. Each user has a personal home directory that they use when connecting to the share that is not accessible by other users. Home Shares allow for personal, dynamic shares. You can only use one share as the home share. See [Adding an SMB Home Share]({{< ref "SMBPrivateDatasetShare" >}}) for more information. |
 | **Time Machine** | Enables [Apple Time Machine](https://support.apple.com/en-us/HT201250) backups on this share. This option requires SMB2/3 protocol extension support. You can enable this in the general SMB server configuration. |
-| **Time Machine Quota** | Visible when **Time Machine** is enabled. Sets a maximum limit on storage consumed by individual backups. |
-| **Legacy AFP Compatibility** | Select to enable the share to behave like the deprecated Apple Filing Protocol (AFP). Leave cleared for the share to behave like a normal SMB share. This option controls how the SMB share reads and writes data. Only enable this when this share originated as an AFP sharing configuration. You do not need legacy compatibility for pure SMB shares or macOS SMB clients. This option requires SMB2/3 protocol extension support. You can enable this in the general SMB server configuration. |
+| ** Time Machine Quota** | Visible when **Time Machine** is enabled. Sets a maximum limit on storage consumed by Time Machine backups. This applies to the entire share. |
+| **Legacy AFP Compatibility** | Select to enable backend compatibility with metadata written by legacy netatalk implementations. This option configures Samba to properly read and present Apple Filing Protocol (AFP) metadata, such as resource forks to SMB clients. Only enable this option when migrating data that was previously shared via the AFP. Pure SMB shares and standard macOS SMB clients do not require this compatibility option. |
 | **Enable Shadow Copies** | Select to export ZFS snapshots as [Shadow Copies](https://docs.microsoft.com/en-us/windows/win32/vss/shadow-copies-and-shadow-copy-sets) for Microsoft Volume Shadow Copy Service (VSS) clients. |
 | **Export Recycle Bin** | Select to enable. Deleted files are renamed to a per-user subdirectory within the `.recycle` directory at either the root of the SMB share if the path is the same dataset as the SMB share (default is share and dataset have the same name), or at the root of the current dataset if datasets are nested. Nested datasets do not have automatic deletion based on file size. Do not rely on this function for backups or replacements of ZFS snapshots. |
 | **Use Apple-style Character Encoding** | Select to convert NTFS illegal characters in the same manner as macOS SMB clients. By default, Samba uses a hashing algorithm for NTFS illegal characters. Apple extension options cannot be set if **Purpose** is set to the multi-protocol option|
@@ -204,17 +204,17 @@ A <i class="material-icons" aria-hidden="true" title="System Update">check_box</
 
 ## Edit Share ACL Screen
 The **Share ACL for *sharename*** screen opens after clicking on the <i class="material-icons" aria-hidden="true" title="share">share</i> **Edit Share ACL** icon on the **Windows (SMB) Shares** widget or the <span class="material-icons">more_vert</span> on the [**Sharing SMB** details screen](#sharing-smb-details-screen).
-These settings configure new ACL entries for the selected SMB share and apply them at the entire SMB share level but not to the dataset. It is separate from file system permissions. To configure dataset permissions, use the **Edit Filesystem ACL** option.
+These settings configure new ACL entries for the selected SMB share and apply them at the entire SMB share level, but not to the dataset. It is separate from file system permissions. To configure dataset permissions, use the **Edit Filesystem ACL** option.
 
 {{< trueimage src="/images/SCALE/Shares/SMBShareACLScreen.png" alt="SMB Share ACL Screen" id="SMB Share ACL Screen" >}}
 
 **ACL Entries** shows a block of settings that specify who and the permissions they are granted.
-**Add** shows a block of these settings to enter who, and the permissions level and type.
+**Add** shows a block of these settings to enter who, the permissions level, and type.
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **SID** | Shows the security identifier (SID) trustee value or to whom this ACL entry (ACE) applies. SID is a unique value of variable length that identifies the trustee. Shown as a [Windows Security Identifier](https://docs.microsoft.com/en-us/windows/win32/secauthz/security-identifiers). **Save** and re-open **Edit Share ACL** to update. |
-| **Who** | Select the domain for an account (who) to apply the permissions for this ACL entry. Options are:<br><li>**User** - Select to show the **User** field. Enter or select a user (who) from the dropdown list to apply the permissions for this ACL entry; shown as a user name.<br><li>**Group** - Select to show the **Group** field. Enter or select a group (who) from the dropdown to apply the permissions for this ACL entry; shown as a group name.<br><li>**everyone** - Select to apply the ACL entry permissions to everyone.</li> |
+| **Who** | Select the domain for an account (who) to apply the permissions for this ACL entry. Options are:<br><li>**User** - Select to show the **User** field. Enter or select a user (who) from the dropdown list to apply the permissions for this ACL entry; shown as a user name.<br><li>**Group** - Select to show the **Group** field. Enter or select a group (who) from the dropdown to apply the permissions for this ACL entry, shown as a group name.<br><li>**everyone** - Select to apply the ACL entry permissions to everyone.</li> |
 | **Permission** | Select predefined permission combinations from the dropdown list. Options are:<br><li>**FULL** - Select to grant read access, execute permission, write access, delete objects, change permissions, and take ownership (RXWDPO) permissions.<br><li>**CHANGE** - Select to grant read access, execute permission, write access, and delete object (RXWD) permissions.<br><li>**READ** - Select to grant read access and execute permission on the object (RX). For more details, see [smbacls(1)](https://www.samba.org/samba/docs/current/man-html/smbcacls.1.html).</li> |
 | **Type** | Select the option from the dropdown list that specifies how TrueNAS applies permissions to the share. Options are:<br><li>**ALLOWED** - Select to deny all permissions by default, except manually defined permissions.<br><li>**DENIED** - Select to allow all permissions by default, except manually defined permissions.</li> |
 {{< /truetable >}}
@@ -231,7 +231,7 @@ Use the ACL editor screen to set file system permissions for the shared dataset.
 See [Permissions]({{< ref "PermissionsSCALE" >}}) for more information on configuring permissions.
 
 ## SMB Status Screens
-The **SMB Status** screen opens after clicking **SMB** on the <i class="material-icons" aria-hidden="true" title="list">list</i> icon on the **System > Services** screen with and the <span class="material-icons">more_vert</span> on the **Shares > Windows (SMB) Shares** widget.
+The **SMB Status** screen opens after clicking **SMB** on the <i class="material-icons" aria-hidden="true" title="list">list</i> icon on the **System > Services** screen, and the <span class="material-icons">more_vert</span> on the **Shares > Windows (SMB) Shares** widget.
 
 {{< trueimage src="/images/SCALE/Shares/SMBStatusScreenSessionsTab.png" alt="SMB Status Sessions Tab" id="SMB Status Sessions Tab" >}}
 
