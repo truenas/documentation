@@ -16,11 +16,12 @@ The list includes the names, serial numbers, sizes, and pools for each system di
 {{< trueimage src="/images/SCALE/Storage/DisksScreen.png" alt="Disks Screen" id="Disks Screen" >}}
 
 Use the **Columns** dropdown list to select options to customize disk the information displayed.
-Options are **Select All**, **Serial** (the disk serial number), **Disk Size**, **Pool** (where the disk is in use), **Disk Type**, **Description**, **Model**, **Transfer Mode**, **Rotation Rate (RPM)**, **HDD Standby**, **Adv. Power Management**, **Enable S.M.A.R.T.**, **S.M.A.R.T. extra options**, and **Reset to Defaults**.
+Options are **Select All**, **Name**, **Serial**, **Disk Size**, **Pool** (where the disk is in use), **Disk Type**, **Description**, **Model**, **Transfer Mode**, **Rotation Rate (RPM)**, **HDD Standby**, **Adv. Power Management**, **Enable S.M.A.R.T.**, and **Reset to Defaults**.
 Each option displays the information you enter in the **Edit Disk** screen or when you install the disk.
 
 Select the checkbox to the left of a disk to display the **[Batch Operations](#batch-operations)** options.
-The checkbox at the top of the table selects all disks in the system. Select again to clear the checkboxes.
+The checkbox at the top of the table selects all disks in the system.
+Select again to clear the checkboxes.
 
 **Storage** in the breadcrumb at the top of the screen returns to the **[Storage Dashboard]({{< ref "/SCALEUIReference/Storage/" >}})**.
 
@@ -37,13 +38,14 @@ The expanded view of a disk includes details for the disk and options to edit di
 **S.M.A.R.T. Test Results** opens the **[S.M.A.R.T. Test Results of *diskname*](#smart-test-results-of-diskname-screen)** screen with the results of each S.M.A.R.T. test run for that disk.
 
 **Wipe** opens the **[Wipe Disk](#wipe-disk-dialogs)** dialog.
+This option is only available for disks that are not currently reserved by a storage pool.
 
 ### Batch Operations
 Select a checkbox to the left of a disk on the **Disks** screen to display the **Batch Operations** functions: **Edit Disk(s)** and **Manual Test**.
 
 **Edit Disk(s)** opens the **[Bulk Edit Disks](#bulk-edit-disks)** screen.
 
-**Manual Test** opens the **[Manual SMART Test]()** dialog with a list of the disk(s) selected.
+**Manual Test** opens the **[Manual SMART Test](#manual-smart-test-dialog)** dialog with a list of the disk(s) selected.
 
 #### Bulk Edit Disks
 The **Bulk Edits Disks** screen allows you to change disk settings for multiple disks simultaneously.
@@ -58,7 +60,6 @@ The screen lists the device names for each selected disk in the **Disks to be ed
 | **HDD Standby** | Select the minutes of inactivity before the drive enters standby mode from the dropdown list. Options are **Always On** or **5**, **10**, **20**, **30**, **60**, **120**, **240**, **300**, and **330**. For more information read this [forum post|(https://forums.freenas.org/index.php?threads/how-to-find-out-if-a-drive-is-spinning-down-properly.2068/) describing identifying spun-down drives. Temperature monitoring is disabled for the standby disk. |
 | **Advanced Power Management** | Select the power management profile from the dropdown list. Options are **Disabled**, **Level 1 - Minimum power usage with Standby (spindown)**, **Level 64 - Intermediate power usage with Standby**, **Level 127 - Maximum power usage with Standby**, **Level 128 - Minimum power usage without Standby (no spindown)**, **Level 192 - Intermediate power usage without Standby**, and **Level 254 - Maximum performance, maximum power usage**. |
 | **Enable S.M.A.R.T.**  | Select to enable and allow the system to conduct periodic [S.M.A.R.T. tests]({{< ref "SMARTTestsScreensSCALE" >}}). |
-| **S.M.A.R.T. Extra Options** | Enter additional [smartctl(8)](https://www.smartmontools.org/browser/trunk/smartmontools/smartctl.8.in). |
 {{< /truetable >}}
 {{< /expand >}}
 
@@ -91,13 +92,11 @@ The **Storage** and **Disks** breadcrumbs return to other storage pages.
 
 {{< expand "Customizing the Test Results Screen" "v" >}}
 Customize the information displayed with the **Columns** option. 
-Options are **Unselect All** (toggles to **Select All**), **Description**, **Status**, **Remaining**, **Lifetime**, **Error**, and **Reset to Defaults**.
-**Unselect All** removes all information except the **ID** number.
-Expand the row to see the **Description**, Status, Remaining, Lifetime, and Error information for the test ID.
+
+The **Select All** option displays all information on the table view.
+**Unselect All** shows only the disk ID.
 
 {{< trueimage src="/images/SCALE/Storage/SMARTTestResultsExpandedAfterUnselectAll.png" alt="S.M.A.R.T. Test Results after Unselect All" id="S.M.A.R.T. Test Results after Unselect All" >}}
-
-The **Select All** option displays all information on the table view and eliminates the expand function for the tests listed.
 
 #### SMART Test Result Column Options
 These options, except the ID, appear on the **Columns** dropdown list.
@@ -105,12 +104,12 @@ These options, except the ID, appear on the **Columns** dropdown list.
 {{< truetable >}}
 | Option | Description |
 |--------|-------------|
-| **ID** | The test identification number assigned by the system. |
+| **Disk** | The disk identifier. |
 | **Description** | Type of test run and the status of the system. For example, **Short offline** indicates the test type is **Short** while the system is **offline** when the test runs. |
 | **Status** | Lists the test status. Options are **Success** or **Fail**. |
 | **Remaining** | How much of the test is left to perform. If the test encounters an error, the field shows at what point in the test the error occurs. A value of **0** means the test completed and with no errors encountered. |
-| **Lifetime** | The age of the disk when the test ran. |
-| **Error** | Displays details about any error encountered during the test. Displays **N/A** if no error was encountered during the test. |
+| **Power On Hours Ago** | Tracks how many hours have passed while the disk has been powered on since the last test. |
+| **LBA of First Error** | Displays the logical block address (LBA) of the first location where a self-test encountered any detected problem. Displays **No Errors** when no error has been encountered in testing. |
 {{< /truetable >}}
 {{< /expand >}}
 
@@ -177,7 +176,6 @@ Click **Edit Disk** on the **[Devices]({{< ref "DevicesScreensSCALE" >}})** scre
 | Setting | Description |
 |---------|-------------|
 | **Enable S.M.A.R.T.** | Select to enable the system to conduct periodic [S.M.A.R.T. tests]({{< ref "SMARTTestsSCALE" >}}). |
-| **S.M.A.R.T. extra options** | Enter additional [smartctl(8)](https://www.unix.com/man-page/suse/8/smartctl/) options. |
 {{< /truetable >}}
 
 ### SED Settings
