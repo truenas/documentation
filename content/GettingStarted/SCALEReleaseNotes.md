@@ -23,7 +23,6 @@ More details are available from [Software Releases](https://www.truenas.com/docs
 {{< releaselist name=scale-releases defaultTab=2 >}}
 
 {{< expand "Software Lifecycle" "v" >}}
-{{< include file="/static/includes/LifecycleTable.md" >}}
 {{< include file="/static/includes/SoftwareStatusPage.md" >}}
 {{< /expand >}}
 
