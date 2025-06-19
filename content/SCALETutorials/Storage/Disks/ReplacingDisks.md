@@ -26,7 +26,7 @@ TrueNAS wipes the data on the replacement disk as part of the process.
 Disk replacement automatically triggers a pool resilver.
 {{< /hint >}}
 
-This tutorial includes instructions for replacing a failed disk in TrueNAS systems with and without an available hot spare.
+This tutorial includes instructions for replacing healthy and failed disks in TrueNAS systems with and without an available hot spare.
 
 To replace a disk in a pool without a hot spare available:
 
@@ -40,6 +40,14 @@ To replace a disk in a pool with a hot spare:
 2. [Detach the failed disk](#detaching-a-failed-disk) to promote the hot spare.
 3. Refresh the screen.
 4. [Recreate the hot spare VDEV](#recreating-a-hot-spare).
+
+## Replacing a Healthy Disk
+
+If you want to replace a healthy disk with another that is the same size or larger, go to **Storage** and click **Manage Devices** on the **Topology** widget of the pool with the disk you want to replace.
+
+Select the disk you want to replace, then click **Replace** in the Disk Info widget.
+
+   {{< trueimage src="/images/SCALE/Storage/ReplacingDiskDialog.png" alt="Replacing Disk Dialog" id="Replacing Disk Dialog" >}}
 
 ## Replacing a Failed Disk
 
