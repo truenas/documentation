@@ -15,7 +15,7 @@ TrueNAS developers then begin implementing proposed TrueNAS changes.
 {{< /tab >}}
 {{< tab "Evaluation" >}}
 Code is integrated into the existing TrueNAS source tree, then built and tested by multiple TrueNAS teams and those Community users willing to experiment with early development TrueNAS builds.
-Technical Communication Engineers also begin evaluating these early builds and write public-facing content about the changes to TrueNAS in the new version.
+TrueNAS documentation contributors also begin evaluating these early builds and write public-facing content about the changes to TrueNAS in the new version.
 These teams verify all requirements and objectives are properly met and the updated software is reliable and fault-tolerant, according to the predetermined requirements.
 If issues are found, TrueNAS features are reworked to meet the development requirements.
 
