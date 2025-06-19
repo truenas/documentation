@@ -111,6 +111,8 @@ To allow an admin user to issue commands in an SSH session:
 
 4. Disable this after completing the SSH session to return to a security-hardened system.
 
+{{< include file="/static/includes/SSHUserValidationCheck.md" >}}
+
 ## Two-Factor Authentication (2FA) and Administrator Account Log In
 
 To use two-factor authentication with an administrator account, configure and enable SSH service to allow SSH access, then [configure two-factor authentication]({{< ref "ManageGlobal2FASCALE" >}}).
