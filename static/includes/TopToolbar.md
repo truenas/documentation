@@ -76,6 +76,10 @@ The **Read-Only Admin** and **Sharing Admin** roles only have access to the **Lo
 Click the **Power** <span class="material-icons">power_settings_new</span> button to open the dropdown list of power options.
 Options **Restart** which logs you out of the TrueNAS UI and restarts the server or **Shut Down** which logs you out of the TrueNAS UI and powers off the system as though you pressed the power button on the physical server.
 
+{{< enterprise >}}
+Please consult your specific [hardware documentation](https://www.truenas.com/docs/hardware/) for notes about possible hardware-specific controls for power on or off behaviors.
+{{< /enterprise >}}
+
 With the implementation of administrator roles, the power options are locked based on the level of privileges for the administrator role.
 The full administrator has access to both power options but readonly and sharing admin roles do not.
 The power options that show a lock icon indicate the function is not permitted.
