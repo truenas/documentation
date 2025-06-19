@@ -2,7 +2,7 @@
 
 The TrueNAS top navigation top toolbar provides access to functional areas of the UI that you might want to directly access while on other screens in the UI.
 Icon buttons provide quick access to dropdown lists of options, dropdown panels with information on system alerts or tasks, and can include access to other information or configuration screens.
-It also shows the name of admin user currently logged into the system to the left of the **Settings** and **Power** icons.
+It also shows the name of the admin user currently logged into the system to the left of the **Settings** and **Power** icons.
 
 You can also collapse or expand the main function menu on the left side of the screen.
 
@@ -15,7 +15,7 @@ The **Search UI** global search bar allows users to search for screens and eleme
 {{< /expand >}}
 
 {{< expand "iXsystems" "v" >}}
-The iXsystems logo opens the [iXsystems home page](https://www.ixsystems.com/) where users can find information about iXsystems storage and server systems.
+The iXsystems logo opens the [iXsystems home page](https://www.ixsystems.com/), where users can find information about iXsystems storage and server systems.
 
 Users can also use the iXsystems home page to access their customer portal and the community section for support.
 {{< /expand >}}
@@ -41,7 +41,7 @@ Users can also use the iXsystems home page to access their customer portal and t
 {{< /expand >}}
 
 {{< expand "Settings" "v" >}}
-The **Settings** <span class="material-icons">account_circle</span> icon opens a dropdown list of options to change passwords, set up user two-factor authentication, create and manage API keys, access the TrueNAS API guide, see information on the system, and to logout of the TrueNAS UI.
+The **Settings** <span class="material-icons">account_circle</span> icon opens a dropdown list of options to change passwords, set up user two-factor authentication, create and manage API keys, access the TrueNAS API guide, see information on the system, and to log out of the TrueNAS UI.
 {{< expand "Change Password" >}}
 {{< include file="/static/includes/ChangeLoggedInUserPassword.md" >}}
 {{< /expand >}}
@@ -74,13 +74,13 @@ The **Read-Only Admin** and **Sharing Admin** roles only have access to the **Lo
 
 {{< expand "Power Options" "v" >}}
 Click the **Power** <span class="material-icons">power_settings_new</span> button to open the dropdown list of power options.
-Options **Restart** which logs you out of the TrueNAS UI and restarts the server or **Shut Down** which logs you out of the TrueNAS UI and powers off the system as though you pressed the power button on the physical server.
+**Restart** logs you out of the TrueNAS UI and restarts the server. **Shut Down** logs you out of the TrueNAS UI and powers off the system as though you pressed the power button on the physical server.
 
 {{< enterprise >}}
-Please consult your specific [hardware documentation](https://www.truenas.com/docs/hardware/) for notes about possible hardware-specific controls for power on or off behaviors.
+Please consult your specific [hardware documentation](https://www.truenas.com/docs/hardware/) to find notes about possible hardware-specific controls for power-on or off behaviors.
 {{< /enterprise >}}
 
 With the implementation of administrator roles, the power options are locked based on the level of privileges for the administrator role.
-The full administrator has access to both power options but readonly and sharing admin roles do not.
+The full administrator has access to both power options, but read-only and sharing admin roles do not.
 The power options that show a lock icon indicate the function is not permitted.
 {{< /expand >}}
