@@ -5,5 +5,3 @@ weight: 20
 ---
 
 {{< include file="/static/includes/TNLifecycle.md" >}}
-
-{{< include file="/static/includes/LifecycleTable.md" >}}
