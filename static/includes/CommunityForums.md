@@ -7,3 +7,5 @@ We encourage new users to briefly review the [forum rules and helpful tips](http
 
 [Community Resources](https://forums.truenas.com/c/resources/) are user-contributed articles about every facet of using TrueNAS.
 They are organized into broad categories and incorporate a community rating system to better highlight content that the whole community has found helpful.
+
+Users can also suggest and vote for new TrueNAS features through the [Community Forum](https://forums.truenas.com/c/features/12)!
