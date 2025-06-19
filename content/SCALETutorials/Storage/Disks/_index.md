@@ -16,9 +16,10 @@ To manage disks, go to **Storage** and click **Disks** on the top right of the s
 
 Select the disk on the list, then select **Edit**.
 
-The **Disks** page lets users edit disks, perform manual tests, and view S.M.A.R.T. test results. Users may also delete obsolete data off an unused disk.
+The **Disks** page lets users edit disks, perform manual tests, and view S.M.A.R.T. test results.
+Users can also delete obsolete data off an unused disk.
 
-## Performing Manual  S.M.A.R.T. Testing
+## Performing Manual S.M.A.R.T. Testing
 
 Select the disk(s) you want to perform a S.M.A.R.T. test on and click **Manual Test**.
 
