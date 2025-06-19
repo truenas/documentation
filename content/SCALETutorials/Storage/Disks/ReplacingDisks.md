@@ -45,13 +45,13 @@ To replace a disk in a pool with a hot spare:
 
 If you want to replace a healthy disk with another that is the same size or larger, go to **Storage** and click **Manage Devices** on the **Topology** widget of the pool with the disk you want to replace.
 
-Select the disk you want to replace, then click **Replace** in the Disk Info widget.
+Select the disk you want to replace, then click **Replace** in the **Disk Info** widget.
 
    {{< trueimage src="/images/SCALE/Storage/ReplacingDiskDialog.png" alt="Replacing Disk Dialog" id="Replacing Disk Dialog" >}}
 
 ## Replacing a Failed Disk
 
-If you configure your main SCALE **Dashboard** to include individual **Pool** or the **Storage** widgets they show the status of your system pools as on or offline, degraded, or in an error condition.
+If you configure your main TrueNAS **Dashboard** to include individual **Pool** or the **Storage** widgets they show the status of your system pools as on or offline, degraded, or in an error condition.
 
 {{< trueimage src="/images/SCALE/Storage/MainDashboardPoolAndStorageWidgetsDegraded.png" alt="Main Dashboard Pool and Storage Widgets Degraded" id="Main Dashboard Pool and Storage Widgets Degraded" >}}
 
@@ -59,7 +59,7 @@ The **Storage Dashboard** pool widgets also show the status of each of your pool
 
 {{< trueimage src="/images/SCALE/Storage/StoragePoolWidgetsDegradedState.png" alt="Storage Pool Widgets in Degraded State" id="Storage Pool Widgets in Degraded State" >}}
 
-From the main Dashboard, you can click the <i class="fa fa-database" aria-hidden="true" title="Pool Status"></i> on either the **Pool** or **Storage** widget or you can click **Storage** on the main navigation menu to open the **Storage Dashboard** screen and locate the pool in the degraded state.
+From the main **Dashboard**, you can click the <i class="fa fa-database" aria-hidden="true" title="Pool Status"></i> on either the **Pool** or **Storage** widget or you can click **Storage** on the main navigation menu to open the **Storage Dashboard** screen and locate the pool in the degraded state.
 
 {{< expand "My disk is faulted. Should I replace it?" "v" >}}
 If a disk shows a faulted state, TrueNAS has detected an issue with that disk and you should replace it.
