@@ -37,7 +37,6 @@ More details are available from [Software Releases]({{< ref "/TrueNASUpgrades" >
 {{< releaselist name=scale-releases defaultTab=3 >}}
 
 {{< expand "Software Lifecycle" "v" >}}
-{{< include file="/static/includes/LifecycleTable.md" >}}
 {{< include file="/static/includes/SoftwareStatusPage.md" >}}
 {{< /expand >}}
 
