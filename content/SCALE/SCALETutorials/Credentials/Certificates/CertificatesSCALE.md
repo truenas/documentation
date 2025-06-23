@@ -20,6 +20,17 @@ Before creating a self-signed certificate in the system, first create a certific
 
 ![CredentialsCertificatesScreen](/images/SCALE/Credentials/CredentialsCertificatesScreen.png "Credentials Certificates Screen")
 
+<!-- commenting out until ready to pubilicize TNC content in the Docs Hub 
+## TrueNAS Connect Certificate
+
+The TrueNAS Connect service automatically creates a default *truenas_connect_* certificate after registering your TrueNAS system in the TrueNAS Connect service.
+The certificate shows in the **Certificates** widget on the **Credentials > Certificates** screen.
+
+{{< trueimage src="/images/SCALE/Credentials/CertificatesScreenWithTNCCert.png" alt="TrueNAS Connect Certificate" id="TrueNAS Connect Certificate" >}}
+
+This certificate provides secure SSL access between the TrueNAS server and the TrueNAS Connect service.
+-->
+
 ## Adding Certificates
 
 By default, TrueNAS comes equipped with an internal, self-signed certificate that enables encrypted access to the web interface, but users can import and create more certificates by clicking **Add** in the **Certificates** window.
