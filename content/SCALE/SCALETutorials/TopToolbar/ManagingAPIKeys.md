@@ -23,7 +23,7 @@ The **User API Keys** screen shows a table listing API keys added to the system,
 Click **API Docs** to view [API Documentation](#api-documentation) embedded within the system.
 
 {{<include file="/static/includes/addcolumnorganizer.md">}}
-
+<!-- Comment out until ready to release TNC information
 ## TrueNAS Connect API Keys
 
 TrueNAS Connect automatically creates an API key when you register your system in the TrueNAS Connect service. This key, shown on the **User API Key** screen, is used for authentication between the TrueNAS system and the TrueNAS Connect service.
@@ -33,7 +33,7 @@ TrueNAS Connect automatically creates an API key when you register your system i
 There are instances where you might see more than one *tnc* key listed.
 
 If you delete a *tnc* API key, the TrueNAS Connect prompts you to re-authenticate the next time you connect to the service.
-<!-- Comment out until ready to release TNC information-->
+-->
 
 ## Adding an API Key
 
