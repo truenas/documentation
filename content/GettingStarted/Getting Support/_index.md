@@ -11,13 +11,12 @@ related: false
 ## About TrueNAS Support
 
 {{< enterprise >}}
-TrueNAS Enterprise hardware customers with support contracts can contact iXsystems Support using either this **[Enterprise Support](https://www.ixsystems.com/support/)** link or through one of the contact options listed below.
+TrueNAS Enterprise hardware customers with support contracts can contact TrueNAS Support using either this **[Enterprise Support](https://www.ixsystems.com/support/)** link or through one of the contact options listed below.
 
-{{< expand "Contacting iXsystems Support" "v" >}}
+{{< expand "Contacting TrueNAS Support" "v" >}}
 {{< include file="/static/includes/iXsystemsSupportContact.md" >}}
 {{< /expand >}}
 {{< /enterprise >}}
-
 
 The TrueNAS UI has a **Support** widget where users can report issues to the TrueNAS team.
 
