@@ -6,12 +6,9 @@ tags:
 - support
 ---
 
-
 There are several options to get support for your TrueNAS installation.
-TrueNAS CORE users can engage with the TrueNAS community to answer questions and resolve issues. TrueNAS Enterprise hardware customers can also access the fast and effective support directly provided by iXsystems.
-
-TrueNAS CORE users are welcome to report bugs and vote for or suggest new TrueNAS features in the project Jira instance.
-Have questions? We recommend searching through the software documentation and community resources for answers.
+TrueNAS 13.3 users can engage with the TrueNAS community to answer questions and resolve issues.
+We recommend searching through the software documentation and community resources for assistance using 13.3.
 
 ## Reporting a Bug
 
@@ -39,10 +36,6 @@ We recommend keeping the description less than three paragraphs and including an
 
 ### Creating a Debug File
 {{< include file="/static/includes/CreateDebugCORE.md" >}}
-
-## Suggesting New Features
-
-{{< include file="/static/includes/CreateJiraSuggestion.md" >}}
 
 ## TrueNAS Community
 
