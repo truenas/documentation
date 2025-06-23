@@ -6,7 +6,7 @@ The TrueNAS Software Development Life Cycle (SDLC) is the process of planning, c
 {{< tab "Planning" >}}
 Determine the objectives, nature, and scope of future versions of the software.
 This involves gathering feedback and interpreting customer needs and requirements, diagnosing existing problems, and weighing the pros and cons of potential solutions.
-The end result is a list of recommended improvements to be integrated into a future TrueNAS versions.
+The end result is a list of recommended improvements to be integrated into a future TrueNAS version.
 {{< /tab >}}
 {{< tab "Development" >}}
 Required and planned changes are investigated in detail and development steps are determined.
