@@ -51,6 +51,8 @@ When creating a user, you must:
 * Specify or accept the default user ID (**UID**)
 * (Optional) Select the **Shell** the user has access to when they go to **System > Shell**. Not all users can select a shell.
 
+{{< include file="/static/includes/SSHUserValidationCheck.md" >}}
+
 All other settings are optional.
 Click **Save** after configuring the user settings to add the user.
 
