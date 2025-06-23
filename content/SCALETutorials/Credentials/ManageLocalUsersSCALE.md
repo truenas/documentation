@@ -167,11 +167,3 @@ The **API Keys** selection takes users to the **Users API Keys** page, which pro
 {{< /truetable >}}
 
 You can edit or delete your API keys in the **User API Keys** screen. Click <i class="material-icons" aria-hidden="true" title="Edit">edit</i> **Edit** to open the **Edit API Key** screen. Click <i class="material-icons" aria-hidden="true" title="Delete">delete</i> **Delete** to delete an API key.
-
-<!-- Comment out until ready to release TNC information
-## TrueNAS Connect API Keys
-
-TrueNAS Connect automatically creates an API key when you register your system in the TrueNAS Connect service. This key, shown on the **User API Key** screen, is used for authentication between the TrueNAS system and the TrueNAS Connect service.
-There are instances where you might see more than one *tnc* key listed.
-If you delete a *tnc* API key, the TrueNAS Connect prompts you to re-authenticate the next time you connect to the service.
--->
