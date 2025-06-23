@@ -32,6 +32,6 @@ This life cycle is generally applied to TrueNAS major versions released to the C
 For Enterprise customers, releases are evaluated for Enterprise deployment suitability according to different criteria of internal testing on commercial hardware, security topics, upgradability, and general software stability as derived from Community usage.
 
 A formal software End of Life (EoL) is not defined, as TrueNAS releases can be used in a stable manner for extended lengths of time, depending on use case and security risk factors.
-However, some general guidance is to evaluate the latest major version point release against your usage mindset.
+However, general guidance advises users to evaluate the latest major version point release against your usage mindset.
 
 {{< include file="/static/includes/SoftwareStatusPage.md" >}}
