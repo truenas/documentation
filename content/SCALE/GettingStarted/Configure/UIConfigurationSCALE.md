@@ -127,6 +127,8 @@ All TrueNAS systems that need SSH access should enable SSH service as part of th
 To security-harden your system, do not enable SSH and leave it activated at all times.
 Enable the service when SSH access is needed and then disable it until needed again.
 
+{{< include file="/static/includes/SSHUserValidationCheck.md" >}}
+
 * SMART service and SMART tests
 
  SMART service and tests are important for systems with large numbers of disks.
