@@ -3,25 +3,23 @@
 The TrueNAS Software Development Life Cycle (SDLC) is the process of planning, creating, testing, deploying, and maintaining TrueNAS releases.
 
 {{< tabs "SDLC Stages" >}}
-{{< tab "Requirement Analysis" >}}
+{{< tab "Planning" >}}
 Determine the objectives, nature, and scope of future versions of the software.
-Requirement Analysis involves gathering feedback and interpreting customer needs and requirements, diagnosing existing problems, and weighing the pros and cons of potential solutions.
-The end result is a list of recommended improvements to be integrated into future versions of TrueNAS.
+This involves gathering feedback and interpreting customer needs and requirements, diagnosing existing problems, and weighing the pros and cons of potential solutions.
+The end result is a list of recommended improvements to be integrated into a future TrueNAS versions.
 {{< /tab >}}
-{{< tab "Design and Development" >}}
+{{< tab "Development" >}}
 Required and planned changes are investigated in detail and development steps are determined.
 Proposed alterations are reviewed by peers for completeness, correctness, and proper coding style.
-TrueNAS developers then begin altering the software to include new features, resolve software bugs, or implement security improvements. 
+TrueNAS developers then begin implementing proposed TrueNAS changes. 
 {{< /tab >}}
-{{< tab "Testing and Evaluation" >}}
-Code is integrated into the existing TrueNAS source tree, then built and tested by the Release Engineering (RE) department.
-RE verifies that all requirements and objectives are properly met and the updated software is reliable and fault-tolerant according to the determined requirements.
-If issues are found, code is reworked to meet the development requirements.
-Simultaneously, a security evaluation of the TrueNAS code is completed, with any discovered issues sent to the engineering team for resolution.
-{{< /tab >}}
-{{< tab "Documentation" >}}
-The Validation and Documentation Team audits all development changes to the software and resolves any inconsistencies with the current software documentation.
-This is to verify that end user documentation is as accurate as possible.
+{{< tab "Evaluation" >}}
+Code is integrated into the existing TrueNAS source tree, then built and tested by multiple TrueNAS teams and those Community users willing to experiment with early development TrueNAS builds.
+TrueNAS documentation contributors also begin evaluating these early builds and write public-facing content about the changes to TrueNAS in the new version.
+These teams verify all requirements and objectives are properly met and the updated software is reliable and fault-tolerant, according to the predetermined requirements.
+If issues are found, TrueNAS features are reworked to meet the development requirements.
+
+Simultaneously, a security evaluation of the TrueNAS code is completed, with any discovered issues sent to the TrueNAS development team for resolution.
 Any security notices, errata, or best practices are also drafted for inclusion on the [TrueNAS Security website](https://security.truenas.com/).
 {{< /tab >}}
 {{< tab "Maintenance" >}}
@@ -30,13 +28,10 @@ During this stage, security patches and software erratum are corrected, updated 
 {{< /tab >}}
 {{< /tabs >}}
 
-## SDLC Application
+This life cycle is generally applied to TrueNAS major versions released to the Community.
+For Enterprise customers, releases are evaluated for Enterprise deployment suitability according to different criteria of internal testing on commercial hardware, security topics, upgradability, and general software stability as derived from Community usage.
 
-The TrueNAS SDLC applies to the latest two release branches.
-As new releases are created for TrueNAS, the oldest TrueNAS release branch is dropped out of the SDLC and labeled as End of Life (EoL).
-For example, TrueNAS/FreeNAS 11.3 and TrueNAS 12.0 were in active development under the SDLC in August 2020.
-In early 2021, TrueNAS Enterprise 12.0 and 13.0 branches were in active development under the SDLC.
-These versions of the software are in active development and maintenance.
-We encourage users to actively keep their software updated to an active development version to continue to receive security patches and other software improvements.
+A formal software End of Life (EoL) is not defined, as TrueNAS releases can be used in a stable manner for extended lengths of time, depending on use case and security risk factors.
+However, some general guidance is to evaluate the latest major version point release against your usage mindset.
 
 {{< include file="/static/includes/SoftwareStatusPage.md" >}}

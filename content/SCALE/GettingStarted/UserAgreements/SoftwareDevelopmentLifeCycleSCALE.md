@@ -7,5 +7,3 @@ aliases:
 ---
 
 {{< include file="/static/includes/TNLifecycle.md" >}}
-
-{{< include file="/static/includes/LifecycleTable.md" >}}
