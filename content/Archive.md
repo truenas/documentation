@@ -159,7 +159,7 @@ Release Notes:
 * [1.3.1]({{< ref "/_archive/TCReleaseNotes/1.3.1" >}})
 * [1.3]({{< ref "/_archive/TCReleaseNotes/1.3" >}})
 
-<a href="https://www.ixsystems.com/documentation/truecommand/1.2/TrueCommand-Guide-1.2_screen.pdf">TrueCommand 1.2</a>
+<a href="https://www.truenas.com/docs/files/TrueCommand-Guide-1.2_screen.pdf">TrueCommand 1.2</a>
 
 Release Notes:
 * [1.2.3 Release Notes]({{< ref "/_archive/TCReleaseNotes/1.2.3" >}})
@@ -167,11 +167,11 @@ Release Notes:
 * [1.2.1 Release Notes]({{< ref "/_archive/TCReleaseNotes/1.2.1" >}})
 * [1.2 Release Notes]({{< ref "/_archive/TCReleaseNotes/1.2" >}})
 
-<a href="https://www.ixsystems.com/documentation/truecommand/1.1/TrueCommand-Guide-1.1_screen.pdf">TrueCommand 1.1</a>
+<a href="https://www.truenas.com/docs/files/TrueCommand-Guide-1.1_screen.pdf">TrueCommand 1.1</a>
 
 [1.1 Release Notes]({{< ref "/_archive/TCReleaseNotes/1.1" >}})
 
-<a href="https://www.ixsystems.com/documentation/truecommand/1.0/TrueCommand-Guide-1.0-RELEASE.pdf">TrueCommand 1.0</a>
+<a href="https://www.truenas.com/docs/files/TrueCommand-Guide-1.0-RELEASE.pdf">TrueCommand 1.0</a>
 
 Release Notes:
 * [1.0U1]({{< ref "/_archive/TCReleaseNotes/1.0U1" >}})
@@ -188,7 +188,7 @@ TrueNAS releases took all the FreeNAS changes up to that point and added a few E
 ### Legacy FreeNAS
 
 {{< expand "FreeNAS 11.3" "v" >}}
-<a href="https://www.ixsystems.com/documentation/freenas/11.3-U5/FreeNAS-11.3-U5-User-Guide_screen.pdf">FreeNAS 11.3</a>
+<a href="https://www.truenas.com/docs/files/FreeNAS-11.3-U5-User-Guide_screen.pdf">FreeNAS 11.3</a>
 
 11.3 Release Notes:
 * [11.3-U5]({{< ref "/_archive/COREReleaseNotes/FreeNAS/11.3/11.3U5" >}})
@@ -207,8 +207,8 @@ TrueNAS releases took all the FreeNAS changes up to that point and added a few E
 {{< /expand >}}
 {{< expand "FreeNAS 11.2" "v" >}}
 
-<a href="https://www.ixsystems.com/documentation/freenas/11.2-U8/FreeNAS-11.2-U8-User-Guide_screen.pdf">FreeNAS 11.2 (New GUI)</a>
-<a href="https://www.ixsystems.com/documentation/freenas/11.2-U8-legacy/FreeNAS-11.2-U8-Legacy-User-Guide_screen.pdf">FreeNAS 11.2 (Legacy GUI)</a>
+<a href="https://www.truenas.com/docs/files/FreeNAS-11.2-U8-User-Guide_screen.pdf">FreeNAS 11.2 (New GUI)</a>
+<a href="https://www.truenas.com/docs/files/FreeNAS-11.2-U8-Legacy-User-Guide_screen.pdf">FreeNAS 11.2 (Legacy GUI)</a>
 
 11.2 Release Notes:
 * [11.2-U8]({{< ref "/_archive/COREReleaseNotes/FreeNAS/11.2/11.2U8" >}})
@@ -231,7 +231,7 @@ TrueNAS releases took all the FreeNAS changes up to that point and added a few E
 {{< /expand >}}
 {{< expand "FreeNAS 11.1" "v" >}}
 
-<a href="https://www.ixsystems.com/documentation/freenas/11.1/FreeNAS.pdf">FreeNAS 11.1</a>
+<a href="https://www.truenas.com/docs/files/FreeNAS11.1.pdf">FreeNAS 11.1</a>
 
 11.1 Release Notes:
 * [11.1-U7]({{< ref "/_archive/COREReleaseNotes/FreeNAS/11.1/11.1U7" >}})
@@ -247,26 +247,23 @@ TrueNAS releases took all the FreeNAS changes up to that point and added a few E
 {{< /expand >}}
 
 {{< expand "FreeNAS 9.x" "v" >}}
-<a href="https://www.ixsystems.com/documentation/freenas/9.10/freenas.html">FreeNAS 9.10 (HTML)</a>
 
-<a href="https://www.truenas.com/docs/files/freenas9.10.2_guide.pdf">FreeNAS 9.10 (PDF)</a>
+<a href="https://www.truenas.com/docs/files/freenas9.10.2_guide.pdf">FreeNAS 9.10</a>
 
-<a href="https://www.ixsystems.com/documentation/freenas/9.3/freenas.html">FreeNAS 9.3 (HTML)</a>
+<a href="https://www.truenas.com/docs/files/freenas9.3_guide.pdf">FreeNAS 9.3</a>
 
-<a href="https://www.truenas.com/docs/files/freenas9.3_guide.pdf">FreeNAS 9.3 (PDF)</a>
+<a href="https://www.truenas.com/docs/files/freenas9.2.1_guide.pdf">FreeNAS 9.2</a>
 
-<a href="https://www.ixsystems.com/documentation/freenas/9.2.1/freenas9.2.1_guide.pdf">FreeNAS 9.2</a>
-
-<a href="https://www.ixsystems.com/documentation/freenas/9.1.1/freenas9.1.1_guide.pdf">FreeNAS 9.1</a>
+<a href="https://www.truenas.com/docs/files/freenas9.1.1_guide.pdf">FreeNAS 9.1</a>
 
 <a href="https://www.truenas.com/docs/files/Notice9.3to9.10FAQ.pdf">Notice - 9.3 to 9.10 FAQ</a>
 {{< /expand >}}
 {{< expand "FreeNAS 8.x" "v" >}}
-<a href="https://www.ixsystems.com/documentation/freenas/8.3.1/freenas8.3.1_guide.pdf">FreeNAS 8.3</a>
+<a href="https://www.truenas.com/docs/files/freenas8.3.1_guide.pdf">FreeNAS 8.3</a>
 
-<a href="https://www.ixsystems.com/documentation/freenas/8.2/freenas8.2_guide.pdf">FreeNAS 8.2</a>
+<a href="https://www.truenas.com/docs/files/freenas8.2_guide.pdf">FreeNAS 8.2</a>
 
-<a href="https://www.ixsystems.com/documentation/freenas/8.0.3/freenas8.0.3_guide.pdf">FreeNAS 8.0</a>
+<a href="https://www.truenas.com/docs/files/freenas8.0.3_guide.pdf">FreeNAS 8.0</a>
 {{< /expand >}}
 
 Notices:
@@ -295,7 +292,7 @@ Notices:
 {{< /expand >}}
 {{< expand "TrueNAS 11.2" "v" >}}
 
-<a href="https://www.ixsystems.com/documentation/truenas/11.2-U8-legacy/TrueNAS-11.2-U8-Legacy-User-Guide_screen.pdf">TrueNAS 11.2</a>
+<a href="https://www.truenas.com/docs/files/TrueNAS-11.2-U8-Legacy-User-Guide_screen.pdf">TrueNAS 11.2</a>
 
 11.2 Release Notes:
 * [11.2-U8.1]({{< ref "/_archive/COREReleaseNotes/TrueNAS/11.2/11.2U8.1" >}})
@@ -309,7 +306,7 @@ Notices:
 {{< /expand >}}
 {{< expand "TrueNAS 11.1" "v" >}}
 
-<a href="https://www.ixsystems.com/documentation/truenas/11.1/TrueNAS.pdf">TrueNAS 11.1</a>
+<a href="https://www.truenas.com/docs/files/TrueNAS11.1.pdf">TrueNAS 11.1</a>
 
 11.1 Release Notes:
 * [11.1-U7.1]({{< ref "/_archive/COREReleaseNotes/TrueNAS/11.1/11.1U7.1" >}})
