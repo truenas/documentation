@@ -75,7 +75,7 @@ Settings change base on the **Rsync Mode** selected (**Module** or **SSH**).
 | **Connect using** | (Required) If **Rsync Mode** is set to **SSH**, select the connection method from the dropdown list. Options are:<br><li>**SSH private key stored in user's home directory** - If selected, the user entered in **User** must have an SSH private key added and stored in the home directory for the user. Create the SSH connection and keypair, download the keys, then add the private key to the user in the UI and to the home directory either from the **Shell** using Linux CLI commands or while in an SSH session with the system.<br><li>**SSH connection from the keychain** - Requires creating an [SSH connection and keypair]({{< ref "AddSSHConnectionKeyPair" >}}) before setting up the rsync task. |
 | **Remote SSH Port** |  (Required) If **Rsync Mode** is set to **SSH**, enter the SSH port number of the remote system. By default, **22** is reserved in TrueNAS. |
 | **Remote Path** | Enter an existing path on the remote host. Maximum path length is 255 characters. |
-| **Validate Remote Path** | Shows when **Rsync Mode** is set to **SSH**. Select to automatically create the defined **Remote Path** if it does not exist. |
+| **Validate Remote Path** | Shows when **Rsync Mode** is set to **SSH**. Set to test the remote server connection and verify the defined **Remote Path** exists. |
 {{< /truetable >}}
 {{< /expand >}}
 
