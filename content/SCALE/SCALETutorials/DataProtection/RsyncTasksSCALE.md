@@ -97,7 +97,7 @@ You can use the SSS connection created in [Setting Up an SSH Connection](#settin
 7. Enter the full path to the dataset on the remote server to either pull from or push to in **Remote Path**.
    Maximum path length is 255 characters.
 
-   If the remote path location does not exist, select **Validate Remote Path** to create and define it in **Remote Path**.
+   To confirm the remote server is reachable and the path exists, you can set **Validate Remote Path**.
 
 8. Set the schedule for when to run this task, and any other options you want to use.
 
