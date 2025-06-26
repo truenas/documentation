@@ -16,14 +16,14 @@ keywords:
 
 [Rsync](https://rsync.samba.org/) provides fast incremental data transfer to synchronize files between a TrueNAS host and a remote system.
 The **Push** function copies data from TrueNAS to a remote system.
-The **Pull** function copies data from a remote system to the TrueNAS local host system, and stores it in the dataset defined in the **Path** field.
+The **Pull** function copies data from a remote system to the TrueNAS local host system and stores it in the dataset defined in the **Path** field.
 
 There are two ways to connect to a remote system and run an rsync task: 
 * Set up an [SSH connection](#configuring-ssh-mode-rsync-tasks) to the remote server.
 * Set up an [rsync module](#configuring-module-mode-rsync-tasks) for the remote server.
 
 ## Configuring SSH Mode Rsync Tasks
-Before you create an rsync task in SSH mode, [add an SSH connection and keypair](#setting-up-an-ssh-connection) between the TrueNAS host and remote system.
+Before you create an rsync task in SSH mode, [add an SSH connection and keypair](#setting-up-an-ssh-connection) between the TrueNAS host and the remote system.
 See [Adding SSH Credentials]({{< ref "AddSSHConnectionKeyPair" >}}) for more information.
 
 After setting up the SSH connection, [configure the rsync task](#creating-an-ssh-mode-rsync-task) on the TrueNAS host.
@@ -42,7 +42,7 @@ Note the path to where home directories are stored to enter on the local host Tr
 If the remote system is also a TrueNAS, go to **Credentials**, select **Users** to see the list of users.
 Select the administration user and click **Edit**.
 
-If creating a new administration user, for rsync functions, click **Add**.
+If creating a new administration user for rsync functions, click **Add**.
 See [Managing Users]({{< ref "managelocalusersscale/#creating-an-administrator-user-account" >}}) for more information.
 Take note of the path to the home directory to use in setting up the connection.
 
@@ -64,7 +64,7 @@ The generated keypair shows on the **SSH Keypair** widget.
 To download the public and private keypairs, click the <i class="material-icons" aria-hidden="true" title="Download">file_download</i> for the new keypair on the **SSH Keypairs** widget.
 
 ### Adding an Rsync Task
-Enabled SSH on both the local host TrueNAS and the remote destination system.
+Enabled SSH on both the local host TrueNAS, and the remote destination system.
 
 You can use the SSS connection created in [Setting Up an SSH Connection](#setting-up-an-ssh-connection) or create a new connection while configuring the rsync task.
 
@@ -89,17 +89,17 @@ You can use the SSS connection created in [Setting Up an SSH Connection](#settin
   
 6. Choose a connection method from the **Connect using** dropdown list.
 
-   If selecting **SSH private key stored in user's home directory**, the public key for the SSH connection must be saved in the home directory for administration user.
-   To accomplish this, copy the public key from the **SSH Keypair** and paste into the **Authorized Keys** field on the **Edit User** screen.
+   If selecting **SSH private key stored in the user home directory**, the public key for the SSH connection must be saved in the home directory for the admin user.
+   To accomplish this, copy the public key from the **SSH Keypair** and paste it into the **Authorized Keys** field on the **Edit User** screen.
 
-   If selecting **SSH connection from the keychain** the system grabs the key for you, and select either the existing SSH credential from the **SSH Connection** dropdown list or select **Add New** to open the **New SSH Connection** configuration screen.
+   If selecting **SSH connection from the keychain**, choose either the existing SSH credential from the **SSH Connection** dropdown list or select **Add New** to open the **New SSH Connection** configuration screen.
 
 7. Enter the full path to the dataset on the remote server to either pull from or push to in **Remote Path**.
    Maximum path length is 255 characters.
 
-   If the remote path location does not exist, select **Validate Remote Path** to create and define it in **Remote Path**.
+   To confirm the remote server is reachable and the path exists, set **Validate Remote Path**.
 
-8. Set the schedule for when to run this task, and any other options you want to use.
+8. Set the schedule for when to run this task and any other options you want to use.
 
    {{< trueimage src="/images/SCALE/DataProtection/AddRsyncTaskSchedOpt.png" alt="Add Rsync Task Schedule and More Options" id="Add Rsync Task Schedule and More Options" >}}
 
@@ -109,12 +109,12 @@ You can use the SSS connection created in [Setting Up an SSH Connection](#settin
    {{< /expand >}}
 
 9. Select the **Enabled** to enable the task.
-   Leave cleared to disable the task but not delete the configuration.
-   You can run the rsync task at any time from the **Rsync Taks** widget by the **Run Now** <i class="material-icons" aria-hidden="true" title="play_arrow">play_arrow</i> icon for the rsync task.
+   Leave cleared to disable the task, but not delete the configuration.
+   You can run the rsync task at any time from the **Rsync Tasks** widget by the **Run Now** <i class="material-icons" aria-hidden="true" title="play_arrow">play_arrow</i> icon for the rsync task.
 
 10. Click **Save**.
    The system verifies the SSH connection and adds the task to the **Rsync Tasks** widget.
-   If the connection fails the system lets you know what went wrong so you can correct the issue with the connection.
+   If the connection fails, the system lets you know what went wrong so you can correct the issue with the connection.
 
 ## Configuring Module Mode Rsync Tasks
 
