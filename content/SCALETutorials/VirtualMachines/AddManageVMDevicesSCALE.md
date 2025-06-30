@@ -5,6 +5,8 @@ weight: 12
 tags:
  - vm
  - gpu
+aliases:
+ - /scaletutorials/virtualization/addmanagevmdevicesscale/
 keywords:
 - nas data storage
 - software storage solutions

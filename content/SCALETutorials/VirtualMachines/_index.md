@@ -1,14 +1,13 @@
 ---
-title: "Virtualization"
+title: "Virtual Machines"
 description: "Tutorials for configuring TrueNAS SCALE virtualization features and creating virtual machines."
 geekdocCollapseSection: true
 weight: 12
 aliases:
  - /scaletutorials/virtualization/
  - /scaletutorials/virtualization/addmanagevmdevicesscale/
- - /scale/scaletutorials/virtualization/creatingmanagingvmsscale/
- - /scale/scaleuireference/virtualization/creatingmanagingvmsscale/
-
+ - /scaletutorials/virtualization/creatingmanagingvmsscale/
+ - /scaleuireference/virtualization/creatingmanagingvmsscale/
 related: false
 keywords:
 - nas data storage
@@ -16,24 +15,11 @@ keywords:
 - storage container virtualization
 ---
 
-The **Virtualization** section allows users to set up Virtual Machines (VMs) to run alongside TrueNAS.
+The **Virtual Machines** section allows users to set up Virtual Machines (VMs) to run alongside TrueNAS.
 Enterprise licensed High Availability (HA) systems do not support virtual machines.
 
 Delegating processes to VMs reduces the load on the physical system, which means users can utilize additional hardware resources.
 Users can customize six different segments of a VM when creating one in TrueNAS SCALE.
-
-{{< expand "What system resources do VMs require?" "v" >}}
-{{< include file="/static/includes/ScaleVMReqResources.md" >}}
-{{< /expand >}}
-
-A *virtual machine (VM)* is an environment on a host computer that you can use as if it is a separate, physical computer.
-Users can use VMs to run multiple operating systems simultaneously on a single computer.
-Operating systems running inside a VM see emulated virtual hardware rather than the host computer physical hardware.
-VMs provide more isolation than Jails but also consume more system resources.
-
-{{< expand "What system resources do VMs require?" "v" >}}
-{{< include file="/static/includes/ScaleVMReqResources.md" >}}
-{{< /expand >}}
 
 A *virtual machine (VM)* is an environment on a host computer that you can use as if it is a separate, physical computer.
 Users can use VMs to run multiple operating systems simultaneously on a single computer.
@@ -45,12 +31,13 @@ VMs provide more isolation than Jails but also consume more system resources.
 {{< /expand >}}
 
 ## Creating a Virtual Machine
+
 Before creating a VM, obtain an installer <file>.iso</file> or image file for the OS you intend to install, and create a [zvol]({{< ref "AddManageZvols" >}}) on a storage pool that is available for both the virtual disk and the OS install file.
 
 If the VM needs to access local NAS storage, you need to create a network bridge to allow communication.
 See [Accessing TrueNAS Storage from a VM](#accessing-truenas-storage-from-a-vm) below for more information.
 
-To create a new VM, go to **Virtualization** and click **Add** to open the **Create Virtual Machine** configuration screen.
+To create a new VM, go to **Virtual Machines** and click **Add** to open the **Create Virtual Machine** configuration screen.
 If you have not yet added a virtual machine to your system, click **Add Virtual Machines** to open the same screen.
 
 1. Select the operating system you want to use from the **Guest Operating System** dropdown list.
@@ -146,6 +133,7 @@ If you have not yet added a virtual machine to your system, click **Add Virtual 
 8. Confirm your VM settings, then click **Save**.
 
 ### Adding and Removing Devices
+
 After creating the VM, you can add or remove virtual devices.
 
 Click on the VM row on the **Virtual Machines** screen to expand it and show the options, then click <i class="material-icons" aria-hidden="true" title="Devices">device_hub</i> **Devices**.
@@ -163,6 +151,7 @@ Device notes:
 See [Adding and Managing VM Devices]({{< ref "AddManageVMDevicesSCALE" >}}) for more information.
 
 ## Managing a Virtual Machine
+
 After creating the VM and configuring devices for it, click on the VM to expand it and show the options to manage the VM. 
 
 {{< trueimage src="/images/SCALE/Virtualization/VirtualMachinesScreenwithVMDetails.png" alt="VM Options" id="VM Options" >}}
@@ -184,6 +173,7 @@ Use the **Power Off** button instead.
 {{< /hint >}}
 
 ## Installing an OS
+
 After configuring the VM in TrueNAS and an OS <file>.iso,</file> file is attached, start the VM and begin installing the operating system.
 
 {{< hint type="note" title="OS Specific Settings" >}}
@@ -197,7 +187,7 @@ Upload the Debian <file>.iso</file> to the TrueNAS system and attach it to the V
 This example uses Debian 12 and basic configuration recommendations.
 Modify settings as needed to suit your use case.
 
-1. Click **Virtualization**, then **ADD** to use the VM wizard.
+1. Click **Virtual Machines**, then **ADD** to use the VM wizard.
    The table below lists the settings used in this example.
 
    {{< trueimage src="/images/SCALE/Virtualization/ScaleDebianVMOsSystem.png" alt="Add Debian VM" id="Add Debian VM" >}}
@@ -333,6 +323,7 @@ To ensure it starts automatically, create the <file>startup.nsh</file> file at t
 {{< /expand >}}
 
 ## Configuring Virtual Machine Network Access
+
 Configure VM network settings during or after installation of the guest OS.
 To communicate with a VM from other parts of your local network, use the IP address configured or assigned by DHCP within the VM.
 
@@ -352,6 +343,7 @@ Confirm the ping is successful.
 {{< /expand >}}
 
 ### Accessing TrueNAS Storage From a VM
+
 By default, VMs are unable to communicate directly with the host NAS.
 If you want to access your TrueNAS SCALE directories from a VM, to connect to a TrueNAS data share, for example, you have multiple options.
 
@@ -362,7 +354,8 @@ See [Accessing NAS from VM]({{< ref "ContainerNASBridge" >}}) for more informati
 
 <div class="noprint">
 
-## Virtualization Contents
+## Virtual Machines Contents
+
 {{< children depth="2" description="true" >}}
 
 </div>
