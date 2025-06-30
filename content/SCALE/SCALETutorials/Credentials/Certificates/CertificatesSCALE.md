@@ -29,6 +29,8 @@ The certificate shows in the **Certificates** widget on the **Credentials > Cert
 {{< trueimage src="/images/SCALE/Credentials/CertificatesScreenWithTNCCert.png" alt="TrueNAS Connect Certificate" id="TrueNAS Connect Certificate" >}}
 
 This certificate provides secure SSL access between the TrueNAS server and the TrueNAS Connect service.
+If not listed on the **Certificates** screen, choose the truenas_default certificate.
+For apps where certificates are used, you should see and be able to select the TNC certificate and get a full secure connection for the apps.
 -->
 
 ## Adding Certificates
