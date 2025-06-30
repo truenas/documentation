@@ -5,7 +5,6 @@ geekdocCollapseSection: true
 weight: 12
 aliases:
  - /scaletutorials/virtualization/
- - /scaletutorials/virtualization/addmanagevmdevicesscale/
  - /scaletutorials/virtualization/creatingmanagingvmsscale/
  - /scaleuireference/virtualization/creatingmanagingvmsscale/
 related: false
