@@ -72,8 +72,8 @@ Software requirements include an installer for the OS you intend to install on t
 A TrueNAS storage pool is required.
 We recommend you create additional datasets beneath the storage pool to organize your VM data further.
 
-Review [Virtualization Screens]({{< ref "InstancesScreens" >}}) to determine requirements for VM installation.
-See [Adding and Managing VMs]({{< ref "/scaletutorials/instances/" >}}) for more information on adding or managing VMs.
+Review []() to determine requirements for VM installation.
+See []() for more information on adding or managing VMs.
 
 ## Application Configuration
 
