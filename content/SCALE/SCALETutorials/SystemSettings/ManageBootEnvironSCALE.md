@@ -146,3 +146,8 @@ The boot environment action list removes the **Keep** option and adds **Unkeep**
 {{< trueimage src="/images/SCALE/SystemSettings/UnkeepBootEnvironmentSCALE.png" alt="Unkeep Boot Environment" id="Unkeep Boot Environment" >}}
 
 This makes the boot environment subject to automatic deletion if the TrueNAS updater needs space for an update.
+
+### Recovering a Boot Pool
+
+{{< include file="/static/includes/BootPoolRecoveryProcess.md" >}}
+
