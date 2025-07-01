@@ -18,7 +18,7 @@ aliases:
 
 <--->
 
-{{< tabbox name=core-downloads defaultTab=3 >}}
+{{< tabbox name=core-downloads defaultTab=2 >}}
 
 {{< /columns >}}
 
