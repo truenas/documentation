@@ -18,10 +18,10 @@ keywords:
 
 {{< include file="/static/includes/25.04Virtualization.md" >}}
 
-**Containers** allow users to configure Incus-based containers or VMs in TrueNAS.
+**Containers** allow users to configure linux containers in TrueNAS.
 
 *Linux containers*, powered by LXC, offer a lightweight, isolated environment that shares the host system kernel while maintaining its own file system, processes, and network settings.
-Containers start quickly, use fewer system resources than VMs, and scale efficiently, making them ideal for deploying and managing scalable applications with minimal overhead.
+Containers start quickly, use fewer system resources than [virtual machines (VMs)](/scaletutorials/virtualmachines/), and scale efficiently, making them ideal for deploying and managing scalable applications with minimal overhead.
 
 {{< expand "What system resources do containers require?" "v" >}}
 {{< include file="/static/includes/ScaleVMReqResources.md" >}}
