@@ -112,6 +112,7 @@ majorVersions:
             date: "2022-09-27"
   - lifecycle: "Previous"
     majorVersion: "24.10 (Electric Eel)"
+    releaseNotes: "https://www.truenas.com/docs/scale/24.10/gettingstarted/scalereleasenotes/"
     releaseName: "Electric Eel"
     releases:
       - name: "24.10.2.2"
@@ -146,6 +147,7 @@ majorVersions:
         date: "2024-08-29"
   - lifecycle: "Current"
     majorVersion: "25.04 (Fangtooth)"
+    releaseNotes: "https://www.truenas.com/docs/scale/25.04/gettingstarted/scalereleasenotes/"
     releaseName: "Fangtooth"
     releases:
       - name: "25.04.1"
