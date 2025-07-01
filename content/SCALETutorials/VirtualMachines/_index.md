@@ -14,16 +14,12 @@ keywords:
 - storage container virtualization
 ---
 
-The **Virtual Machines** section allows users to set up Virtual Machines (VMs) to run alongside TrueNAS.
+TrueNAS includes built-in virtualization capabilities that let you run multiple operating systems on a single system, maximizing hardware utilization and consolidating workloads. Virtual machines offer a flexible solution without requiring additional hardware.
 Enterprise licensed High Availability (HA) systems do not support virtual machines.
 
-Delegating processes to VMs reduces the load on the physical system, which means users can utilize additional hardware resources.
-Users can customize six different segments of a VM when creating one in TrueNAS SCALE.
+A *virtual machine (VM)* is a software-based computer that runs inside your TrueNAS system, appearing as a separate physical machine to the operating system installed within it. VMs use virtualized hardware components including network interfaces, storage, graphics adapters, and other devices, providing complete isolation between different operating systems and applications.
 
-A *virtual machine (VM)* is an environment on a host computer that you can use as if it is a separate, physical computer.
-Users can use VMs to run multiple operating systems simultaneously on a single computer.
-Operating systems running inside a VM see emulated virtual hardware rather than the host computer physical hardware.
-VMs provide more isolation than Jails but also consume more system resources.
+VMs offer stronger isolation than [containers](/content/containers) but require more system resources, making them ideal for running full operating systems, legacy applications, or services that need dedicated environments.
 
 {{< expand "What system resources do VMs require?" "v" >}}
 {{< include file="/static/includes/ScaleVMReqResources.md" >}}
