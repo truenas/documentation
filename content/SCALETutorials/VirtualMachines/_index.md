@@ -19,7 +19,7 @@ Enterprise licensed High Availability (HA) systems do not support virtual machin
 
 A *virtual machine (VM)* is a software-based computer that runs inside your TrueNAS system, appearing as a separate physical machine to the operating system installed within it. VMs use virtualized hardware components including network interfaces, storage, graphics adapters, and other devices, providing complete isolation between different operating systems and applications.
 
-VMs offer stronger isolation than [containers](/content/containers) but require more system resources, making them ideal for running full operating systems, legacy applications, or services that need dedicated environments.
+VMs offer stronger isolation than [containers](/scaletutorials/containers/) but require more system resources, making them ideal for running full operating systems, legacy applications, or services that need dedicated environments.
 
 {{< expand "What system resources do VMs require?" "v" >}}
 {{< include file="/static/includes/ScaleVMReqResources.md" >}}
