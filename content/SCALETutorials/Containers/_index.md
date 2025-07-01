@@ -23,9 +23,6 @@ keywords:
 *Linux containers*, powered by LXC, offer a lightweight, isolated environment that shares the host system kernel while maintaining its own file system, processes, and network settings.
 Containers start quickly, use fewer system resources than VMs, and scale efficiently, making them ideal for deploying and managing scalable applications with minimal overhead.
 
-*Virtual machines (VMs)*, powered by QEMU, offer full OS isolation and kernel independence and can run diverse OS types.
-VMs emulate hardware, providing greater isolation than containers but requiring more system resources, making them ideal for legacy applications, full-featured desktops, or software with strict OS dependencies.
-
 {{< expand "What system resources do containers require?" "v" >}}
 {{< include file="/static/includes/ScaleVMReqResources.md" >}}
 {{< /expand >}}
