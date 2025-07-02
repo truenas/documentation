@@ -24,7 +24,7 @@ A *virtual machine (VM)* is a software-based computer that runs inside your True
 VMs offer stronger isolation than [containers](/scaletutorials/containers/) but require more system resources, making them ideal for running full operating systems, legacy applications, or services that need dedicated environments.
 
 {{< expand "What system resources do VMs require?" "v" >}}
-{{< include file="/static/includes/ScaleVMReqResources.md" >}}
+{{< include file="/static/includes/VMRequirements.md" >}}
 {{< /expand >}}
 
 ## Creating a Virtual Machine
