@@ -23,6 +23,7 @@ majorVersions:
             date: "2019-01-24"
   - lifecycle: "Previous"
     majorVersion: "13.0"
+    releaseNotes: "https://www.truenas.com/docs/core/13.0/gettingstarted/corereleasenotes/"
     majorLink: "https://download-core.sys.truenas.net/13.0/STABLE/"
     releases:
       - name: "13.0-U6.7"
@@ -81,6 +82,7 @@ majorVersions:
         date: "2022-05-22"
   - lifecycle: "Current"
     majorVersion: "13.3"
+    releaseNotes: "https://www.truenas.com/docs/core/13.3/gettingstarted/corereleasenotes/"
     majorLink: "https://download-core.sys.truenas.net/13.3/STABLE/"
     releases:
       - name: "13.3-U1.2"
