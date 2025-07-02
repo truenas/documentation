@@ -14,6 +14,8 @@ keywords:
 - storage container virtualization
 ---
 
+{{< include file="/static/includes/25.04Virtualization.md" >}}
+
 TrueNAS includes built-in virtualization capabilities that let you run multiple operating systems on a single system, maximizing hardware utilization and consolidating workloads. Virtual machines offer a flexible solution without requiring additional hardware.
 Enterprise licensed High Availability (HA) systems do not support virtual machines.
 
