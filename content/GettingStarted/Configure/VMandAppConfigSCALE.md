@@ -58,22 +58,38 @@ Certain directory services must be set up as part of SMB and NFS share configura
 See [Active Directory Screen]({{< ref "/SCALEUIReference/credentials/directoryservices/ActiveDirectory" >}}) for a better understanding of how to configure Active Directory and [Configuring Kerberos]({{< ref "ConfigKerberosSCALE" >}}) for an outline of required Kerberos information.
 For LDAP best practices see [Configuring LDAP]({{< ref "ConfigLDAPSCALE" >}}).
 
-## Virtualization Configuration
+## Virtual Machine and Container Configuration
 
 {{< include file="/static/includes/25.04Virtualization.md" >}}
 
-To run a virtual machine (VM), hardware requirements include an x86 machine running a recent Linux kernel using either an Intel processor with VT extensions or an AMD processor with SVM extensions (AMD-V).
-To install a VM, first research the minimum and recommended specifications for the OS you plan to use and your full use case for that VM.
-Allocating too many resources to a VM can cause performance on the TrueNAS system to suffer.
-We recommend you plan for and ensure your system has the resources to run itself and a full VM deployment effectively, taking into account the need for high availability (HA) and persistent storage.
+TrueNAS includes built-in virtualization capabilities that enable you to run multiple operating systems and containerized applications on a single system, maximizing hardware utilization and consolidating workloads.
 
-Software requirements include an installer for the OS you intend to install on the VM.
+### Virtual Machines
 
-A TrueNAS storage pool is required.
-We recommend you create additional datasets beneath the storage pool to organize your VM data further.
+Virtual machines provide complete isolation by running full operating systems with dedicated virtualized hardware including network interfaces, storage, graphics adapters, and other components. VMs are ideal for running legacy applications, different operating systems, or services that require dedicated environments.
 
-Review []() to determine requirements for VM installation.
-See []() for more information on adding or managing VMs.
+Hardware Requirements:
+- x86 machine running a recent Linux kernel
+- Intel processor with VT extensions or AMD processor with SVM extensions (AMD-V)
+- Sufficient RAM and storage for both TrueNAS and the VM workloads
+
+Planning Considerations:
+- Research minimum and recommended specifications for your intended operating systems
+- Ensure adequate system resources for TrueNAS operation and VM deployment
+- Plan storage layout with dedicated datasets for VM organization
+
+See [Virtual Machines](/scaletutorials/virtualmachines/) for VM setup and management information.
+
+### Containers
+
+Linux containers, powered by LXC, offer lightweight, isolated environments that share the host system kernel while maintaining separate file systems, processes, and network settings. Containers start quickly, use fewer system resources than VMs, and scale efficiently, making them ideal for deploying applications with minimal overhead.
+
+Setup Requirements:
+- A TrueNAS storage pool for container storage
+- Additional datasets for organized container data management
+- Network configuration appropriate for container networking needs
+
+See [Containers](/scaletutorials/containers/) for Linux container configuration and management information.
 
 ## Application Configuration
 
