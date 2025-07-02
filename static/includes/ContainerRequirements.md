@@ -1,5 +1,8 @@
-Containers share the host kernel and require fewer resources than VMs.
-You can leave CPU and memory settings blank to allow containers access to all host resources.
+Containers are lightweight and share the host kernel, requiring fewer resources than virtual machines.
+However, proper resource allocation ensures optimal performance and system stability.
+
+You can leave CPU and memory settings blank to allow containers access to all available host resources, or configure specific limits based on your needs.
+Key considerations for container deployment:
 
 * Storage Pool: Containers require a storage pool for volume creation and image storage.
   SSD drives provide optimal performance.
