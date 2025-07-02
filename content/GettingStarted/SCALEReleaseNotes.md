@@ -115,7 +115,14 @@ This is a maintenance release and includes refinements and fixes for issues disc
 
 ### 25.04.2 Notable Changes
 
-* 25.04.2 reintroduces "classic virtualization" in the **Virtual Machines** feature.
+* TrueNAS 25.04.2 reintroduces "classic virtualization" with the [**Virtual Machines**]({{< ref "/scaletutorials/virtualmachines/" >}}) feature.
+  Virtualization features are now split between the **Virtual Machines** and [**Containers**]({{< ref "/scaletutorials/containers/" >}}) screens. 
+  
+  Virtual machines created in 25.04.0 or 25.04.1 using the **Instances** feature continue to function and appear in the **Containers** screen.
+  New VMs and those migrated from 24.10.2.2 to 25.04.2 use the **Virtual Machines** screen.
+
+  Virtual machines automatically migrate from TrueNAS 24.10 to 25.10.2.
+  No manual migration of virtual machines is required.
 
 <!-- Create filter and then update filter number (#####) in the link below
 <a href="https://ixsystems.atlassian.net/issues/?filter=#####" target="_blank">Click here for the full changelog</a> of completed tickets that are included in the 25.04.2 release.
