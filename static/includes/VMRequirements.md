@@ -1,4 +1,8 @@
-VMs require dedicated resources and proper planning to avoid impacting host system performance.
+Virtual machines need dedicated resources to operate effectively.
+Allocating too many resources to VMs might negatively impact host system performance.
+
+You can configure CPU and memory allocation to balance host and VM performance based on your use case.
+Key considerations for VM deployment:
 
 * Storage Pool: VMs require a storage pool for zvol creation and disk image storage.
   SSD drives provide optimal performance.
