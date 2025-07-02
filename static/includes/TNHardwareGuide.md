@@ -29,6 +29,15 @@ The ZFS file system in TrueNAS provides the [best available data protection of a
 ZFS is prepared for the eventual failure of storage devices and is highly configurable to achieve the perfect balance of redundancy and performance to meet any storage goal.
 A properly configured TrueNAS system can tolerate multiple storage device failures and recreate its boot media with a copy of the [configuration file]({{< ref "ManageSysConfigSCALE" >}}).
 
+{{< hint type=warning title="TrueNAS and SMR Drives" >}}  
+Drive manufacturers produce SATA NAS disks that use either CMR or [Shingled Magnetic Recording (SMR)](https://en.wikipedia.org/wiki/Shingled_magnetic_recording) technology.  
+SMR drives offer greater storage density compared to their CMR equivalents.
+However, due to slower write and overwrite performance (rewriting over existing data) and the potential for instability or even data loss during resilver operations, TrueNAS [does not recommend](https://www.truenas.com/docs/hardware/notices/wdsmr/) using SMR drives with TrueNAS or ZFS in general.
+See also: [WD Red SMR vs CMR Tested: Avoid Red SMR](https://www.servethehome.com/wd-red-smr-vs-cmr-tested-avoid-red-smr/) and [We put Western Digital’s dreaded SMR Red drive to the test](https://arstechnica.com/gadgets/2020/06/western-digitals-smr-disks-arent-great-but-theyre-not-garbage/).  
+
+Consult your drive manufacturer, such as [Western Digital](https://support-en.wd.com/app/answers/detailweb/a_id/50697/~/steps-to-determine-if-an-internal-drive-uses-cmr-or-smr-technology) or [Seagate](https://www.seagate.com/products/cmr-smr-list/), to determine whether a disk uses CMR or SMR technology.  
+{{< /hint >}}
+
 ### Storage Device Quantities
 
 TrueNAS can manage many storage devices as part of a single storage array.
@@ -57,15 +66,6 @@ Western Digital designed the WD Red™ Plus NAS drives (non-SMR) for systems wit
 
 The TrueNAS Community Forum prefers WD drives for TrueNAS builds due to their exceptional quality and reliability.
 All TrueNAS Minis ship with WD Red™ Plus drives unless requested otherwise.
-
-{{< hint type=warning title="TrueNAS and SMR Drives" >}}  
-Drive manufacturers produce SATA NAS disks that use either CMR or [Shingled Magnetic Recording (SMR)](https://en.wikipedia.org/wiki/Shingled_magnetic_recording) technology.  
-SMR drives offer greater storage density compared to their CMR equivalents.
-However, due to slower write and overwrite performance (rewriting over existing data) and the potential for instability or even data loss during resilver operations, TrueNAS [does not recommend](https://www.truenas.com/docs/hardware/notices/wdsmr/) using SMR drives with TrueNAS or ZFS in general.
-See also: [WD Red SMR vs CMR Tested: Avoid Red SMR](https://www.servethehome.com/wd-red-smr-vs-cmr-tested-avoid-red-smr/) and [We put Western Digital’s dreaded SMR Red drive to the test](https://arstechnica.com/gadgets/2020/06/western-digitals-smr-disks-arent-great-but-theyre-not-garbage/).  
-
-Consult your drive manufacturer, such as [Western Digital](https://support-en.wd.com/app/answers/detailweb/a_id/50697/~/steps-to-determine-if-an-internal-drive-uses-cmr-or-smr-technology) or [Seagate](https://www.seagate.com/products/cmr-smr-list/), to determine whether a disk uses CMR or SMR technology.  
-{{< /hint >}}
 
 {{< /expand >}}
 
@@ -149,13 +149,13 @@ As for capacity, 5x to 20x more than the RAM size is a good guideline.
 High-end TrueNAS systems can have NVMe-based L2ARC in double-digit terabyte sizes.
 
 Remember that for every data block in the L2ARC, the primary ARC needs an 88-byte entry.
-Poorly-designed systems can cause an unexpected fill-up in the ARC and reduce performance.
+Poorly designed systems can cause an unexpected fill-up in the ARC and reduce performance.
 For example, a 480 GB L2ARC filled with 4KiB blocks needs more than 10GiB of metadata storage in the primary ARC.
 {{< /expand >}}
 
 {{< expand "Self Encrypting Drives" "v" >}}
 TrueNAS supports two forms of data encryption at rest to achieve privacy and compliance objectives: [native ZFS encryption]({{< ref "EncryptionSCALE" >}}) and [self-encrypting drives (SEDs)]({{< ref "SEDScale" >}}).
-SEDs do not experience the performance overhead introduced by software partition encryption but are not as readily available as non-SED drives (and thus can cost a little more).
+SEDs do not experience the performance overhead introduced by software partition encryption, but are not as readily available as non-SED drives (and thus can cost a little more).
 {{< /expand >}}
 
 {{< expand "Boot Devices" "v" >}}
@@ -164,7 +164,7 @@ We recommend looking at other options since USB drive quality varies widely, and
 For this reason, all pre-built [TrueNAS Systems](https://www.truenas.com/docs/hardware/) ship with either M.2 drives or SATA DOMs.
 
 SATA DOMs, or disk-on-modules, offer reliability close to consumer 2.5" SSDs with a smaller form factor that mounts to an internal SATA port and does not use a drive bay.
-Because SATA DOMs and motherboards with M.2 slots are not as common as the other storage devices mentioned here, users often boot TrueNAS systems from 2.5" SSDs and HDDs (often mirrored for added redundancy).
+Since SATA DOMs and motherboards with M.2 slots are not as common as the other storage devices mentioned here, users often boot TrueNAS systems from 2.5" SSDs and HDDs (usually mirrored for added redundancy).
 The recommended size for the TrueNAS boot volume is 8 GB, but 16 or 32 GB (or a 120 GB 2.5" SATA SSD) provides room for more boot environments.
 {{< /expand >}}
 
@@ -188,7 +188,7 @@ TrueNAS does not officially support T10-DIF drives. Users on our forums have dev
 ### Storage Device Sizing
 
 Pool layout (the organization of LUNs and volumes, in TrueNAS/ZFS parlance) is outside of the scope of this guide.
-The availability of double-digit terabyte drives raises a question TrueNAS users now have the luxury of asking: How many should I use to achieve my desired capacity?
+The availability of double-digit terabyte drives raises a question that TrueNAS users now have the luxury of asking: How many should I use to achieve my desired capacity?
 You can mirror two 16 TB drives to achieve 16 TB of available capacity, but that does not mean you should.
 Mirroring two large drives offers the advantage of redundancy and balancing reads between the two devices, which could lower power draw, but little else.
 The write performance of two large drives is similar to that of a single drive.
