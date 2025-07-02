@@ -55,11 +55,9 @@ More details are available from [Software Releases](https://www.truenas.com/docs
 
 * {{< include file="/static/includes/NetdataUI.md" >}}
 
-### Migrating Virtual Machines
+### Virtual Machines and Containers (Updated for 25.04.2)
 
-{{< include file="/static/includes/Incus.md" >}}
-
-{{< include file="/static/includes/MigratingVMs.md" >}}
+{{< include file="/static/includes/25.04Virtualization.md" >}}
 
 ### TrueNAS Apps
 
@@ -108,7 +106,48 @@ Any new feature flags introduced since the previous OpenZFS version that was int
 
 For more details on feature flags, see [OpenZFS Feature Flags](https://openzfs.github.io/openzfs-docs/Basic%20Concepts/Feature%20Flags.html) and [OpenZFS zpool-feature.7](https://openzfs.github.io/openzfs-docs/man/7/zpool-features.7.html).
 
+## 25.04.2
+
+**<!--Date-->, 2025**
+
+The TrueNAS team is pleased to release TrueNAS 25.04.2!
+This is a maintenance release and includes refinements and fixes for issues discovered after 24.04.1.
+
+### 25.04.2 Notable Changes
+
+* 25.04.2 reintroduces "classic virtualization" in the **Virtual Machines** feature.
+
+<!-- Create filter and then update filter number (#####) in the link below
+<a href="https://ixsystems.atlassian.net/issues/?filter=#####" target="_blank">Click here for the full changelog</a> of completed tickets that are included in the 25.04.2 release.
+-->
+
+### 25.04.2 Known Issues
+
+* Some users of TrueNAS Apps attempting to configure GPU allocation report the error `Expected [uuid] to be set for GPU inslot [<some pci slot>] in [nvidia_gpu_selection])` (see ([NAS-134152](https://ixsystems.atlassian.net/browse/NAS-134152)).
+
+  Users experiencing this error should follow the steps below for a one-time fix that should not need to be repeated.
+
+  Connect to a shell session and retrieve the UUID for each GPU with the command `midclt call app.gpu_choices | jq`.
+
+  For each application that experiences the error, run `midclt call -j app.update APP_NAME '{"values": {"resources": {"gpus": {"use_all_gpus": false, "nvidia_gpu_selection": {"PCI_SLOT": {"use_gpu": true, "uuid": "GPU_UUID"}}}}}}'`
+  Where:
+  * `APP_NAME` is the name you entered in the application, for example, “plex”.
+  * `PCI_SLOT` is the PCI slot identified in the error, for example "0000:2d:00.0”.
+  * `GPU_UUID` is the UUID matching the PCI slot that you retrieved with the above command.
+* Custom applications with TTY enabled do not display logs in the TrueNAS UI. This is due to an upstream bug, see https://github.com/docker/docker-py/issues/1394. Users experiencing this issue can resolve it by either disabling TTY or using `docker logs` from the command line.
+* TrueNAS UI displays **Updates Available** button after updating to the latest release (see ([NAS-136046](https://ixsystems.atlassian.net/browse/NAS-136046)).
+  This issue is resolved in the upcoming 25.04.2 release, but if you want to work around this issue now, follow these steps:
+  1. Open the **Shell** and run `midclt call systemdataset.config | jq ."path"`
+  2. Search for a file named **update.sqsh** in the returned string using `find "returned path" -name update.sqsh`
+  3. Run `rm -f <full-path-to-update.sqsh>`, replacing `<full-path-to-update.sqsh>` with the **full** file path to the **update.sqsh** file from the previous step
+
+<!-- Create filter and then update filter number (#####) in the link below
+<a href="https://ixsystems.atlassian.net/issues/?filter=#####" target="_blank">Click here to see the latest information</a> about public issues in 25.04.2 that are being resolved in a future TrueNAS release.
+-->
+
 ## 25.04.1
+
+{{< expand "Click to expand" "v" >}}
 
 **May 27, 2025**
 
@@ -168,8 +207,9 @@ This is a maintenance release and includes refinements and fixes for issues disc
   1. Open the **Shell** and run `midclt call systemdataset.config | jq ."path"`
   2. Search for a file named **update.sqsh** in the returned string using `find "returned path" -name update.sqsh`
   3. Run `rm -f <full-path-to-update.sqsh>`, replacing `<full-path-to-update.sqsh>` with the **full** file path to the **update.sqsh** file from the previous step
-     
+
 <a href="https://ixsystems.atlassian.net/issues/?filter=12504" target="_blank">Click here to see the latest information</a> about public issues in 25.04.1 that are being resolved in a future TrueNAS release.
+{{< /expand >}}
 
 ## 25.04.0
 {{< expand "Click to expand" "v" >}}
