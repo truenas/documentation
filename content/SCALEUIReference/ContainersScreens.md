@@ -14,7 +14,11 @@ tags:
 
 ## Containers Screen
 
-The **Containers** screen allows users to add, edit, or manage virtual machines (VMs) and Linux containers.
+The **Containers** screen allows users to add, edit, or manage Linux containers.
+
+{{< hint type=info >}}
+{{< include file="/static/includes/containers-vms.md" >}}
+{{< /hint >}}
 
 The screen header displays a <i class="fa fa-cog" aria-hidden="true"></i> **Pool is not selected** status before a pool for containers is selected.
 See [**Global Settings**](#global-settings) for more information.
@@ -72,7 +76,7 @@ The **Volumes** screen lists all volumes currently configured for the containers
 
 **Create Volume** opens the [**Create New Volume**](#create-volumes) dialog to configure a new containers volume.
 
-**Import Zvols** opens the [**Import Zvol**](#import-zvol) dialog to import an existing Zvol as an containers volume.
+**Import Zvols** opens the [**Import Zvol**](#import-zvol) dialog to import an existing Zvol as a containers volume.
 
 **Upload ISO** opens a file browser to select an <file>.iso</file> file from the client computer and upload it to TrueNAS for use in containers.
 
@@ -105,7 +109,7 @@ The **Volumes** screen lists all volumes currently configured for the containers
 | Setting | Description |
 |-----------|-------------|
 | **Select Zvols** | Specifies the Zvol to import. Enter or browse to select an existing Zvol. |
-| **Clone** | Clones and promotes a temporary snapshot of the zvol into a custom storage volume. This option retains the original zvol while creating an identical copy as an containers volume. |
+| **Clone** | Clones and promotes a temporary snapshot of the zvol into a custom storage volume. This option retains the original zvol while creating an identical copy as a containers volume. |
 | **Move** | Relocates the existing zvol to the ix-virt dataset as a volume. |
 {{< /truetable >}}
 
@@ -148,52 +152,30 @@ Changes take effect immediately, but containers might require a restart to refle
 
 ## Create Container Wizard
 
-The **Create Container** configuration wizard displays all settings to set up a new container or virtual machine.
+The **Create Container** configuration wizard displays all settings to set up a new container.
 
 ### Container Configuration
 
-The **Container Configuration** settings specify the container name, virtualization method or type, and operating system image.
+The **Container Configuration** settings specify the container name and operating system image.
 
-{{< trueimage src="/images/SCALE/Virtualization/InstanceConfigurationContainer.png" alt="Container Configuration - Container" id="Container Configuration - Container" >}}
+{{< trueimage src="/images/SCALE/Virtualization/InstanceConfigurationContainer.png" alt="Container Configuration" id="Container Configuration" >}}
 
-{{< expand "Container Configuration Settings - Container" "v" >}}
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Name** | Required. Enter an alphanumeric name for the container. |
-| **Virtualization Method** | Required. Select **Container** to create a lightweight Linux container that shares the TrueNAS OS kernel. |
 | **Image** | **Browse Catalog** opens the **Select Image** screen with available Linux image choices from [linuxcontainers.org](https://linuxcontainers.org/). Search or browse to locate your desired image and click **Select**. |
 {{< /truetable >}}
 
 {{< include file="/static/includes/InstanceNameRequirements.md" >}}
 
-{{< /expand >}}
-
-{{< expand "Container Configuration Settings - VM" "v" >}}
-
-{{< trueimage src="/images/SCALE/Virtualization/InstanceConfigurationVM.png" alt="Container Configuration - VM" id="Container Configuration - VM" >}}
-
-{{< truetable >}}
-| Setting | Description |
-|---------|-------------|
-| **Name** | Required. Enter an alphanumeric name for the container. |
-| **Virtualization Method** | Required. Select **VM** to create a fully isolated virtual machine using any operating system. |
-| **VM Image Options** | (Shows when **Virtualization Method** is set to **VM**)  |
-| **Use a Linux image** | Select to choose a Linux image from [linuxcontainers.org](https://linuxcontainers.org/). **Browse Catalog** opens the **Select Image** screen with available image choices. Search or browse to locate your desired image and click **Select**. |
-| **Upload ISO, import a zvol or use another volume** | Sets the method to use to for the storage option. Select to create the VM using an <file>.iso</file> image, import a zvol from a previously installed VM, or use an existing containers volume. **Select ISO** opens the **Volumes** screen. See [**Volumes**](#manage-volumes) for more information. |
-{{< /truetable >}}
-
-{{< include file="/static/includes/InstanceNameRequirements.md" >}}
-
-{{< /expand >}}
-
 ### CPU & Memory
 
-The **CPU & Memory** settings specify the number of virtual CPU cores to allocate to the virtual machine and memory size.
+The **CPU & Memory** settings specify the number of virtual CPU cores to allocate to the container and memory size.
 
 {{< trueimage src="/images/SCALE/Virtualization/CreateInstanceCPUandMemory.png" alt="CPU & Memory" id="CPU & Memory" >}}
 
-{{< include file="/static/includes/VMCPUandMemorySettings.md" >}}
+{{< include file="/static/includes/ContainerCPUandMemorySettings.md" >}}
 
 ### Environment
 
@@ -208,10 +190,8 @@ These settings are only available for containers and cannot be used with VMs.
 
 ### Disks
 
-The **Disks** settings allow mounting storage volumes to an container.
+The **Disks** settings allow mounting storage volumes to a container.
 Container options include creating a new dataset or using an existing one.
-VMs use the [**Volumes**](#manage-volumes) screen to select or create a new volume.
-VMs must specify the I/O bus and size of the root disk.
 
 **Add** displays a set of fields to create or mount a disk.
 
@@ -221,11 +201,8 @@ VMs must specify the I/O bus and size of the root disk.
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Root Disk I/O Bus** | (Required for VMs only) Set the root disk I/O bus type to the option that best suits system needs. Options are:<br><ul><li>**NVMe** – Ideal for high-performance storage with faster read and write speeds.<br><li>**Virtio-BLK** – Efficient for virtualized environments, offering direct block device access with lower overhead.<br><li>**Virtio-SCSI** – Flexible and scalable, supporting advanced features like hot-swapping and multiple devices.</ul> |
-| **Root Disk Size (in GiB)** | (Required for VMs only) Enter a plain integer to configure the size of the VM root disk (default 10). |
 | **Source** | (Required) Displays after clicking **Add** in **Disks**. Define an existing dataset or create a new dataset using the **Create Dataset** option. Creating a dataset requires entering a path or browsing to select a parent dataset from the dropdown list of datasets on the system. Enter a name for the new dataset in the **Create Dataset** window. **Create** adds the dataset. |
-| **Destination** | (Required for containers only) Specifies the file system path to mount the disk in the container, for example */media* or */var/lib/data*. |
-| **I/O Bus** | (Required for VMs only) Sets the disk I/O bus type to what best suits system needs. Options are **NVMe**, **Virtio-BLK**, or **Virtio-SCSI**. |
+| **Destination** | (Required) Specifies the file system path to mount the disk in the container, for example */media* or */var/lib/data*. |
 {{< /truetable >}}
 {{< /expand >}}
 
@@ -233,7 +210,6 @@ VMs must specify the I/O bus and size of the root disk.
 
 The **Proxies** settings allow you to forward network connections between the host and the container.
 This routes traffic from a specific address on the host to an address inside the container, or vice versa, allowing the container to connect externally through the host.
-These settings are only available for containers and cannot be used with VMs.
 
 **Add** displays a set of proxy configuration settings.
 
@@ -268,53 +244,15 @@ See [Accessing NAS from VMs and Containers]({{< ref "/SCALETutorials/Network/Con
 
 ### USB Devices
 
-**USB Devices** displays a list of available devices to attach to an container, allowing the device to function as if physically connected.
+**USB Devices** displays a list of available devices to attach to a container, allowing the device to function as if physically connected.
 
 {{< trueimage src="/images/SCALE/Virtualization/CreateInstanceUSB.png" alt="USB Devices" id="USB Devices" >}}
 
 ### GPU Devices
 
-**GPU Devices** displays available GPU devices to attach to an container, enabling it to utilize hardware acceleration for graphics or computation tasks.
+**GPU Devices** displays available GPU devices to attach to a container, enabling it to utilize hardware acceleration for graphics or computation tasks.
 
 {{< trueimage src="/images/SCALE/Virtualization/CreateInstanceGPU.png" alt="GPU Devices" id="GPU Devices" >}}
-
-### PCI Passthrough
-
-**PCI Passthrough** settings enable assigning a physical PCI device, such as a network card or controller, directly to a VM, allowing it to use the device as if physically attached.
-These settings are only available for VMs and cannot be used with containers.
-
-The selected PCI device(s) cannot be in use by the host or share an IOMMU group with devices the host requires.
-
-{{< trueimage src="/images/SCALE/Virtualization/CreateInstancePCI.png" alt="PCI Passthrough" id="PCI Passthrough" >}}
-
-**Add PCI Passthrough** opens the [**Add PCI Passthrough Device**](#add-pci-passthrough-device-screen) screen.
-
-### VNC
-
-The **VNC** settings allow you to enable VNC access for a VM, configure the VNC port, and set a VNC password for remote access.
-These settings are only available for VMs and cannot be used with containers.
-
-{{< trueimage src="/images/SCALE/Virtualization/CreateInstanceVNC.png" alt="VNC Settings" id="VNC Settings" >}}
-
-{{< include file="/static/includes/InstanceVNCSettings.md" >}}
-
-### Security
-
-The **Security settings** control various system security features, including Trusted Platform Module (TPM) and Secure Boot options.
-These options help to ensure a secure environment by enabling advanced hardware-based security features during system startup and operation.
-These settings are only available for VMs and cannot be used with containers.
-
-{{< trueimage src="/images/SCALE/Virtualization/CreateInstanceSecurity.png" alt="Security Settings" id="Security Settings" >}}
-
-{{< expand "Security Settings" "v" >}}
-{{< truetable >}}
-| Setting | Description |
-|---------|-------------|
-| **Add Trusted Platform Module (TPM)** | Enables TPM, a hardware-based security feature that protects sensitive data and ensures integrity. Adds a Trusted Platform Module (TPM) device to the VM. |
-| **Secure Boot** | Sets boot to ensure that only trusted, signed software is loaded during the system boot process. Can be incompatible with some images. |
-{{< /truetable >}}
-
-{{< /expand >}}
 
 ## Containers Table
 
@@ -325,7 +263,7 @@ Stopped containers show the option to start the container.
 
 The **Details for *Container*** [widgets](#containers-widgets) show information and management options for the selected container.
 
-<i class="material-icons" aria-hidden="true" title="Restart">restart_alt</i> restarts or <i class="material-icons" aria-hidden="true" title="Stop">stop_circle</i> stops a running container.
+The <i class="material-icons" aria-hidden="true" title="Restart">restart_alt</i> button restarts or the <i class="material-icons" aria-hidden="true" title="Stop">stop_circle</i> button stops a running container.
 
 The **Stop Options** window defines when the container stops, immediately or after one of 30 seconds, 1 minute, or 5 minutes occurs.
 
@@ -333,7 +271,7 @@ The **Stop Options** window defines when the container stops, immediately or aft
 
 <i class="material-icons" aria-hidden="true" title="Start">play_circle</i> starts a stopped container.
 
-**Search** above the **Containers** table allows entering the name of an container to locate a configured container.
+**Search** above the **Containers** table allows entering the name of a container to locate a configured container.
 
 The checkbox on each container row shows the [**Bulk Actions**](#bulk-actions) dropdown.
 
@@ -395,7 +333,7 @@ The root disk stores the OS and serves as the boot disk for the VM.
 
 #### Add/Edit Disk Screen
 
-The **Add/Edit Disk** screen allows you to configure a new disk or modify an existing one attached to an container.
+The **Add/Edit Disk** screen allows you to configure a new disk or modify an existing one attached to a container.
 
 {{< trueimage src="/images/SCALE/Virtualization/AddDiskScreenVM.png" alt="Add Disk Screen - VM" id="Add Disk Screen - VM" >}}
 
@@ -409,8 +347,8 @@ The **Add/Edit Disk** screen allows you to configure a new disk or modify an exi
 {{< /truetable >}}
 {{< /expand >}}
 
-{{< expand "Add/Edit Disk Settings - Container" "v" >}}
-{{< trueimage src="/images/SCALE/Virtualization/AddDiskScreen.png" alt="Add Disk Screen - Container" id="Add Disk Screen - Container" >}}
+{{< expand "Add/Edit Disk Settings" "v" >}}
+{{< trueimage src="/images/SCALE/Virtualization/AddDiskScreen.png" alt="Add Disk Screen" id="Add Disk Screen" >}}
 
 {{< truetable >}}
 | Setting | Description |
@@ -481,7 +419,7 @@ For existing proxies, the <span class="material-icons">more_vert</span> actions 
 
 #### Add/Edit Proxy Screen
 
-The **Add/Edit Proxy** screen allows you to configure or modify a proxy setting attached to an container.
+The **Add/Edit Proxy** screen allows you to configure or modify a proxy setting attached to a container.
 
 {{< trueimage src="/images/SCALE/Virtualization/AddProxyScreen.png" alt="Add Proxy Screen" id="Add Proxy Screen" >}}
 
@@ -562,7 +500,7 @@ The **CPU & Memory** settings on the **Edit** screen are the same as those in th
 
 {{< trueimage src="/images/SCALE/Virtualization/EditCPUandMemory.png" alt="Edit CPU & Memory" id="Edit CPU & Memory" >}}
 
-{{< include file="/static/includes/VMCPUandMemorySettings.md" >}}
+{{< include file="/static/includes/ContainerCPUandMemorySettings.md" >}}
 
 ### Edit VNC Settings
 
@@ -601,7 +539,7 @@ These settings are only available for VMs and cannot be used with containers.
 
 ## Add PCI Passthrough Device Screen
 
-The **Add PCI Passthrough Device** screen lists the available physical PCI devices that can be attached to an container.
+The **Add PCI Passthrough Device** screen lists the available physical PCI devices that can be attached to a container.
 
 {{< trueimage src="/images/SCALE/Virtualization/AddPCIPassthroughDevice.png" alt="Add PCI Passthrough Device Screen" id="Add PCI Passthrough Device Screen" >}}
 
