@@ -47,6 +47,11 @@ If you have not yet added a virtual machine to your system, click **Add Virtual 
 
    Select **UTC** as the VM system time from the **System Clock** dropdown if you do not want to use the default **Local** setting.
 
+   Select **UEFI** from the **Boot Method** dropdown, unless using an older OS that requires **Legacy BIOS**.
+
+   Select **Enable Secure Boot** to verifies the software loaded during the computer's startup process is trusted.
+   This is required for some operating systems, such as Windows 11.
+
    Select **Enable Display** to enable a SPICE Virtual Network Computing (VNC) remote connection for the VM.
       The **Bind** and **Password** fields display. If **Enable Display** is selected:
 
@@ -123,7 +128,7 @@ If you have not yet added a virtual machine to your system, click **Add Virtual 
    The **VirtIO** network interface requires a guest OS that supports VirtIO para-virtualized network drivers.
 
    {{< hint type="note" title="Supported GPUs" >}}
-    iXsystems does not have a list of approved GPUs at this time but TrueNAS does support various GPU from Nvidia, Intel, and AMD.
+    TrueNAS does not have a list of approved GPUs at this time but TrueNAS does support various GPU from Nvidia, Intel, and AMD.
     As of TrueNAS 24.10, TrueNAS does not automatically install NVIDIA drivers. Instead, users must manually install drivers from the TrueNAS UI. For detailed instructions, see (https://apps.truenas.com/getting-started/initial-setup/#installing-nvidia-drivers).
    {{< /hint >}}
 
