@@ -46,14 +46,15 @@ Go to **Network**, and click **Settings** on the **Global Configuration** widget
 4. Enter the IP address for your default gateway into the **IPv4 Default Gateway** if you are using IPv4 IP addresses.
    Enter the IPv6 address in the **IPv6 Default Gateway** if you are using IPv6 addresses.
 
-5. Select **Allow All** for **Outbound Network**  to permit external communication for all TrueNAS services or select **Deny All** to prevent external communication.
-   Select **Allow Specific** and then use the dropdown list to pick a limited set of services to allow external communication.
+5. Select **Allow All** for **Outbound Network** to permit external communication for all TrueNAS services or select **Deny All** to prevent external communication.
+   Select **Allow Specific** and then use the **Services** dropdown list to pick a limited set of services to allow external communication. 
+   Select **Allow All Except** and then use the **Services** dropdown list to pick services to deny external communication while allowing all other services.
 
    {{< trueimage src="/images/SCALE/Network/GlobalConfigOutboundSettings.png" alt="Global Configuration Outbound Settings" id="Global Configuration Outbound Settings" >}}
 
    {{< trueimage src="/images/SCALE/Network/GlobalConfigAllowSpecificServiceOptions.png" alt="Global Configuration Allow Specific Service Options" id="Global Configuration Allow Specific Service Options" >}}
 
-   Click as many services as desired to permit external communications. Unchecked services cannot communicate externally.
+   Click as many services as desired. For **Allow Specific**, unchecked services cannot communicate externally. For **Allow All Except**, checked services cannot communicate externally.
 
 See [below](#setting-up-external-communication-for-services) for more information.
 
@@ -80,8 +81,12 @@ Select **Allow All** to permit all of the above services to communicate external
 
 Select **Deny All** to prevent all of the above services from communicating externally.
 
-Select **Allow Specific** to permit external communication for the services you select.
-**Allow Specific** displays a dropdown list of selectable services.
+Select **Allow Specific** to permit external communication only for the services you select.
+**Allow Specific** displays a **Services** dropdown list of selectable services.
+
+Select **Allow All Except** to deny external communication for the services you select while allowing all other services.
+**Allow All Except** displays a **Services** dropdown list of selectable services.
+
 Click on all that apply. A checkmark displays next to a selected service, and these services display in the field separated by a comma (,).
 
 Click **Save** when finished.
