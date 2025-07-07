@@ -269,7 +269,7 @@ The **Stop Options** window defines when the container stops, immediately or aft
 
 {{< trueimage src="/images/SCALE/Virtualization/InstanceStopOptions.png" alt="Container Stop Options" id="Container Stop Options" >}}
 
-<i class="material-icons" aria-hidden="true" title="Start">play_circle</i> starts a stopped container.
+The <i class="material-icons" aria-hidden="true" title="Start">play_circle</i> button starts a stopped container.
 
 **Search** above the **Containers** table allows entering the name of a container to locate a configured container.
 
@@ -283,6 +283,8 @@ Options are **Start All Selected**, **Stop All Selected**, and **Restart All Sel
 {{< trueimage src="/images/SCALE/Virtualization/InstancesBulkActions.png" alt="Bulk Actions" id="Bulk Actions" >}}
 
 ## Containers Widgets
+
+<!-- I'm leaving VM widgets unchanged since some users on 25.04.2 will still have VMs visible on the Containers screen. -->
 
 The **Details for *Container*** widgets display information and configuration options for the selected container.
 
