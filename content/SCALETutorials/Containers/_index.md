@@ -1,6 +1,6 @@
 ---
 title: "Containers"
-description: "Tutorials for configuring the TrueNAS Containers feature and creating containers or virtual machines."
+description: "Tutorials for configuring the TrueNAS Containers feature, creating, and managing containers."
 geekdocCollapseSection: true
 weight: 11
 related: false
@@ -29,7 +29,7 @@ Containers start quickly, use fewer system resources than [virtual machines (VMs
 
 ## Setting Up the Containers Service
 
-You must choose a pool before you can deploy an container.
+You must choose a pool before you can deploy a container.
 The **Containers** screen header displays a <i class="fa fa-cog" aria-hidden="true"></i> **Pool is not selected** status before a pool for containers is selected.
 See [Choosing the Containers Pool](#choosing-the-containers-pool) below for more information about pool selection.
 
@@ -50,27 +50,29 @@ Use these options to configure the [storage pool](#choosing-the-containers-pool)
 
 #### Choosing the Containers Pool
 
-You must set the pool before you can add any containers.
+You must set a pool before you can add any containers.
 
-Use the **Pool** dropdown to select the pool and click **Save**.
+Select **Enabled** to enable container storage.
 
-We recommend users keep the VM and container use case in mind when choosing an containers pool.
+Use the **Pool** dropdown to select one or more pools and click **Save**.
 
-{{< hint type=tip title="Containers Pool Capacity" >}}
-Select a pool with enough storage space for all the containers you intend to host. The pool must also store all the ISO files.
-{{< /hint >}}
+We recommend users keep the container use case in mind when choosing a containers pool.
+Select a pool with enough storage space for all the containers you intend to host.
 
 For stability and performance, we recommend using SSD/NVMe storage for the containers pool due to their faster speed and resilience for repeated read/writes.
+
+Select additional pools to allow containers to access shared resources.
 
 <!-- Placeholder: Further description of the containers storage implementation here (once implementation is nailed down and experimental status removed) -->
 
 To select a different pool for containers to use, use the **Pool** dropdown to select a different pool.
-Select **[Disabled]** to deactivate the pool and disable the containers service.
+
+Deselect **Enabled** to deactivate the pool and disable the containers service.
 
 #### Configuring the Default Network
 
 Use the **Default Network** settings on the **Global Settings** screen to define how containers connect to the network.
-These settings apply to all new containers and VMs, unless configured otherwise.  
+These settings apply to all new containers, unless configured otherwise.  
 
 Select **Automatic** from the **Bridge** dropdown list to use the default network bridge for communication between containers and the TrueNAS host.
 To specify an existing bridge, select one from the dropdown list.
@@ -88,11 +90,12 @@ Adjust these settings as needed to match your network environment and ensure pro
 
 Click **Manage Volumes** on the **Configuration** menu to open the **Volumes** screen, which lists all the volumes currently configured for the containers service.
 
-Click **Create Volume** to open the [**Create New Volume**](#creating-volumes) dialog to configure a new containers volume.
+Click **Create Volume** to open the [**Create New Volume**](#creating-volumes) dialog to configure a new volume.
 
-Click **Import Zvols** to open the [**Import Zvol**](#importing-zvols) dialog to import an existing Zvol as an containers volume.
+Click **Import Zvols** to open the [**Import Zvol**](#importing-zvols) dialog to import an existing Zvol as a volume.
 
-Click **Upload ISO** to open a file browser to select an <file>.iso</file> file from the client computer and [upload it](#uploading-iso-images) to TrueNAS for use in containers.
+<!-- Commenting out the Upload ISO documentation as this was only useful for VM creation -->
+<!-- Click **Upload ISO** to open a file browser to select an <file>.iso</file> file from the client computer and [upload it](#uploading-iso-images) to TrueNAS for use in containers. -->
 
 {{< trueimage src="/images/SCALE/Virtualization/InstancesVolumesScreen.png" alt="Volumes Screen" id="Volumes Screen" >}}
 
@@ -112,16 +115,19 @@ Click **Create** to create the new volume.
 
 Click **Import Zvols** on the **Volumes** screen to open the **Import Zvol** dialog.
 
+Importing a zvol as as a volume allows its lifecycle to be managed, including backups, restores, and snapshots.
+This allows portability between systems using standard tools.
+
 {{< trueimage src="/images/SCALE/Virtualization/InstanceImportZvol.png" alt="Import Zvol Dialog" id="Import Zvol Dialog" >}}
 
 Enter the path or browse to select an existing Zvol in **Select Zvols**.
 
 Select **Clone** to clone and promote a temporary snapshot of the zvol into a custom storage volume.
-This option retains the original zvol while creating an identical copy as an containers volume.
+This option retains the original zvol while creating an identical copy as a container volume.
 
 Select **Move** to relocate the existing zvol to the ix-virt dataset as a volume.
 
-#### Uploading ISO Images
+<!--#### Uploading ISO Images
 
 Click **Upload ISO** to open a file browser.
 Select an <file>.iso</file> file from your client computer to upload it to TrueNAS for use in containers.
@@ -130,7 +136,7 @@ Select an <file>.iso</file> file from your client computer to upload it to TrueN
 {{< include file="/static/includes/InstanceImageFilenames.md" >}}
 
 This ensures the container name works without conflicts in DNS records, the file system, security profiles, and as the container hostname.
-{{< /expand >}}
+{{< /expand >}} -->
 
 #### Deleting Volumes
 
@@ -149,10 +155,11 @@ Containers run as isolated environments from the host system.
 To give container processes access to host files and datasets, you must map user and group IDs (UIDs and GIDs) between the host and the container.
 
 Click **Map User/Group IDs** from the **Configuration** dropdown to open the **Map User and Group IDs** screen.  
-This screen allows you to configure how user and group IDs (UIDs and GIDs) appear inside containers and virtual machines.
+This screen allows you to configure how user and group IDs (UIDs and GIDs) appear inside containers.
 
-By default, user and group accounts within an container are assigned UIDs and GIDs from a private range starting at **2147000001**.  
-This mapping ensures security isolation for containers. You can override these mappings to meet specific access requirements.
+By default, user and group accounts within a container are assigned UIDs and GIDs from a private range starting at **2147000001**.  
+This mapping ensures security isolation for containers.
+You can override these mappings to meet specific access requirements.
 
 {{< trueimage src="/images/SCALE/Virtualization/MapUserGroupIDs.png" alt="Map User and Group IDs Screen" id="Map User and Group IDs Screen" >}}
 
@@ -210,11 +217,11 @@ This approach provides secure, controlled access for container root processes wi
 
 ## Creating Containers
 
-Click **Create New Container** on the **Containers** screen to open the **Create Container** configuration wizard with the settings to set up a new [container](#creating-a-container) or [virtual machine](#creating-a-virtual-machine).
+Click **Create New Container** to open the **Create Container** configuration wizard.
 
 ### Creating a Container
 
-To create a new container, from the **Create Container** screen:
+To create a new container:
 
 1. Configure the container configuration settings.
 
@@ -223,13 +230,11 @@ To create a new container, from the **Create Container** screen:
    a. Enter a name for the container.
       {{< include file="/static/includes/InstanceNameRequirements.md" >}}
 
-   b. Select **Container** as the **Virtualization Method**.
-
-   c. Click **Browse Catalog** to open the **Select Image** screen.
+   b. Click **Browse Catalog** to open the **Select Image** screen.
 
       {{< trueimage src="/images/SCALE/Virtualization/SelectImage.png" alt="Select Image Screen" id="Select Image Screen" >}}
 
-      Search or browse to choose a Linux image from [linuxcontainers.org](https://linuxcontainers.org/).
+      Search or browse to choose a Linux image.
       Click **Select** in the row for your desired image.
 
 2. (Optional) Configure CPU and memory settings.
@@ -242,7 +247,6 @@ To create a new container, from the **Create Container** screen:
    {{< include file="/static/includes/InstanceCPUMemoryProcedure.md" >}}
 
 3. (Optional) Configure environment variables to run on boot or execute.
-   Environment settings are only supported for containers and cannot be used with VMs.
 
    {{< trueimage src="/images/SCALE/Virtualization/CreateInstanceEnvironment.png" alt="Environment" id="Environment" >}}
 
@@ -310,14 +314,14 @@ Stopped containers show the option to start the container.
 
 Select the checkbox to the left of **Name** (select all) or select one or more container rows to access the [**Bulk Actions**](#using-bulk-actions) dropdown.
 
-Enter the name of an container in the **Search** field above the **Containers** table to locate a configured container.
+Enter the name of a container in the **Search** field above the **Containers** table to locate a configured container.
 
 Click <i class="material-icons" aria-hidden="true" title="Restart">restart_alt</i> to restart or <i class="material-icons" aria-hidden="true" title="Stop">stop_circle</i> to stop a running container.
-Choosing to stop an container shows a choice to stop immediately or after a small delay.
+Choosing to stop a container shows a choice to stop immediately or after a small delay.
 
 Click <i class="material-icons" aria-hidden="true" title="Start">play_circle</i> to start a stopped container.
 
-Select an container row in the table to populate the **Details for *Container*** widgets with information and management options for the selected container.
+Select a container row in the table to populate the **Details for *Container*** widgets with information and management options for the selected container.
 
 ### Using Bulk Actions
 
@@ -405,11 +409,11 @@ Use the **Devices** widget to view all USB, GPU, Trusted Platform Module (TPM), 
 {{< trueimage src="/images/SCALE/Virtualization/DevicesWidget.png" alt="Devices Widget" id="Devices Widget" >}}
 
 Click **Add** to open a list of available **USB Devices**, **GPUs**, **TPM**, and **PCI Passthrough** devices to attach.
-Select a device to attach to an container.
+Select a device to attach to a container.
 
 To attach a PCI passthrough device, click **Add Device** under **PCI Passthrough** on the device list to open the **Add PCI Passthrough Device**.
 PCI passthrough assigns a physical PCI device, such as a network card or controller, directly to a VM, allowing it to function as if physically attached.
-The **Add PCI Passthrough Device** screen lists the available physical PCI devices that can be attached to an container.
+The **Add PCI Passthrough Device** screen lists the available physical PCI devices that can be attached to a container.
 
 {{< trueimage src="/images/SCALE/Virtualization/AddPCIPassthroughDevice.png" alt="Add PCI Passthrough Device Screen" id="Add PCI Passthrough Device Screen" >}}
 
@@ -514,7 +518,7 @@ For existing proxies, click <span class="material-icons">more_vert</span> to ope
 
 #### Adding or Editing Proxies
 
-Use the **Add Proxy** or **Edit Proxy** screen to configure or modify a proxy setting attached to an container.
+Use the **Add Proxy** or **Edit Proxy** screen to configure or modify a proxy setting attached to a container.
 
 {{< trueimage src="/images/SCALE/Virtualization/AddProxyScreen.png" alt="Add Proxy Screen" id="Add Proxy Screen" >}}
 
