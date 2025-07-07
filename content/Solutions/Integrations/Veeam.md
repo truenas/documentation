@@ -23,7 +23,7 @@ These TrueNAS products are certified by Veeam:
 
 ![VeeamReadyTrueNASProducts](/images/Veeam/VeeamReadyiX.png "TrueNAS Products that are Veeam Ready")
 
-For more information, refer to the [Veeam Ready list](https://www.veeam.com/alliance-partner-integrations-qualifications.html?alliancePartner=ixsystems) filtered for iXsystems.
+For more information, refer to the [Veeam Ready list](https://www.veeam.com/alliance-partner-integrations-qualifications.html?alliancePartner=ixsystems) filtered for TrueNAS.
 {{< /expand >}}
 
 This article discusses some of the best practices when deploying TrueNAS with Veeam, the specific considerations users must be aware of, and some tips to help with performance.
@@ -76,7 +76,7 @@ Snapshots, full backups, and incremental backups all require more storage than t
 Bandwidth is harder to estimate and must account for backup timeframes, backup sizes, and available network resources.
 Typically, backups run during off-hours when IT equipment is under a lighter load.
 This timeframe can be set, but if each backup is several terabytes, you need more time and bandwidth.
-iXsystems tests Veeam backups using a 10 GbE mixed network with the datastore storage, hypervisor hosts, and backup repository (the TrueNAS) on the same network.
+TrueNAS tests Veeam backups using a 10 GbE mixed network with the datastore storage, hypervisor hosts, and backup repository (the TrueNAS) on the same network.
 However, shorter backup windows, heavy network usage, and dozens of VMs being backed up simultaneously can require 40 or 100 GbE networking and multiple Veeam backup proxies used in tandem.
 
 For example, consider backing up 1000 VMs (each 100 GB in size) with a backup window of eight hours.
@@ -115,15 +115,17 @@ Recommended sizing:
 
 ### Configuring the Pools, Datasets, and Zvols
 
-For high-capacity deployments, iXsystems recommends 9+2+1 RAID groups (called virtual devices or vdevs by ZFS terminology).
+For high-capacity deployments, TrueNAS recommends 9+2+1 RAID groups (called virtual devices or vdevs by ZFS terminology).
 This configuration consists of a RAIDZ2 (similar to RAID 6 with two drive parity, so two drives can fail without data loss) with one to two global hot spares added to the pool.
 Pools can include several of these groups, so the capacity can be expanded as needed.
 For example, 390 TB of usable space with 12 TB drives requires four groups and 48 drives.
-Detailed configurations can be discussed with iXsystems sales representatives and engineers.
+Detailed configurations can be discussed with TrueNAS sales representatives and engineers.
 
 ## Configuring Veeam Agent with SMB on TrueNAS
 
 Veeam Agent for Microsoft Windows supports backing up to SMB shares hosted on TrueNAS.
+This procedure details configuring a standard SMB share and dataset in TrueNAS.
+To use block or fast cloning, see [Configuring Veeam with SMB and Fast Clone](#configuring-veeam-with-smb-and-fast-clone) for the correct procedure.
 
 ### Creating the SMB Share
 
@@ -142,6 +144,66 @@ Use the Virtual IP (VIP) for high availability.
 4. Enter the SMB path and TrueNAS local user credentials.
 5. Adjust backup schedule and retention if desired.
 6. Click **Finish**. You can now begin a backup.
+
+## Configuring Veeam with SMB and Fast Clone
+
+{{< enterprise >}}
+To configure TrueNAS SMB shares for Veeam fast (block) cloning, you must have an enterprise-licensed TrueNAS system.
+
+You must set up TrueNAS system storage and the share before you configure the Veeam repository.
+You cannot use an existing Veeam repository for SMB fast cloning.
+There is no supported mechanism for converting an existing SMB Veeam repository into one that the TrueNAS SMB share with fast cloning can use.
+
+TrueNAS is designed to properly align the storage requirements with a Veeam repository when using these instructions.
+
+If not already created, go to **Credentials > User** and add a TrueNAS administrative user to serve as the share user.
+You can assign this admin user the full control or the sharing admin role. Add this user to the ACL for the dataset created for Veeam SMB with fast cloning.
+
+### Configuring TrueNAS Storage
+
+First, think about how you want to organize your data storage. We recommend creating the parent dataset structure before creating the dataset and share for Veeam SMB fast cloning.
+For example, organizing all datasets for shares (SMB, NFS, etc.) under one common parent dataset (*shares*) with datasets for each share type nested under it.
+If you have other Veeam-specific data storage on the system and you want to nest the block cloning dataset under that, then you can skip adding the dataset structure instructions.
+
+To create datasets in a hierarchical structure for shares, for example, *shares/smb/veeam*:
+
+Go to the **Dataset** screen, select the parent dataset in the dataset table, for example: the pool root dataset (i.e., *tank*) or the name of the existing dataset created for shares storage (i.e., *shares*), then click **Add Dataset**.
+Assuming you have not created storage for shares or SMB shares, add a dataset called *shares* or create one called *smb* nested under *shares*.
+
+Enter a name for the dataset, and then select the **SMB** option under **Dataset Preset**. 
+Do not create a share from the **Add Dataset** screen for this structure!
+
+Next, verify the record size. Click **Advanced Options** and scroll down to the **Record Size** field. If not set to **128 KiB**, select this on the dropdown list.
+
+Click **Save** to create the dataset.
+
+Grant full access to the user created as the share admin in the dataset ACLs.
+
+If a parent dataset structure exists and you only want/need to create the dataset and SMB share for the Veeam repository, select the parent dataset to verify the record size setting.
+With the parent dataset selected, click **Edit** and then **Advanced Options**.
+Scroll down to **Record Size**. If not set to **128 KiB**, select it on the dropdown list, then click **Save**.
+
+You are ready to create the share.
+
+### Creating the SMB Share
+
+With the data structure organization in place and the record size correctly set, go to **Shares** and then click **Add** on the **Windows SMB Shares** widget.
+
+Browse to select the parent dataset. Click on each dataset in the path to the parent dataset, for example: */tank/shares/smb/*, and then click **Create Dataset**.
+Enter the name for the Veeam SMB dataset in the **Create Dataset** dialog, then click **Create Dataset**. The dialog closes and the **Path** on the **Add SMB** screen populates with the path to the new dataset.
+
+Select **Veeam repository with Fast Clone** on the **Purpose** dropdown list.
+Click **Advanced Options** and scroll down to **Additional Parameters String**. It should show **block size = 131072**.
+Select any other SMB share setting you want to enable. For example, to include in audit logging, select **Enable** under **Audit Logging**.
+
+Click **Save** to create the share.
+Enable or restart the SMB service when prompted.
+
+### Adding the Veeam Repository for SMB with Fast Cloning
+
+With the TrueNAS storage and share properly configured, you can now add the repository in Veeam.
+Follow the instructions in [Setting Up Veeam Agent](#setting-up-veeam-agent) to add the repository.
+{{< /enterprise >}}
 
 ## Planning Storage Lifecycle
 
@@ -181,7 +243,7 @@ Here are additional key features that are offered out-of-the-box at no extra cos
 ## Setting Up TrueNAS as a Veeam Repository
 
 Veeam Backup & Replication runs on a Windows operating system, typically Windows Server 2012 or newer, and can connect to a variety of storage systems.
-iXsystems recommends using iSCSI on TrueNAS with a [Veeam scale-out repository](https://bp.veeam.com/vbr/VBP/3_Build_structures/B_Veeam_Components/B_backup_repositories/scaleout.html) architecture.
+TrueNAS recommends using iSCSI on TrueNAS with a [Veeam scale-out repository](https://bp.veeam.com/vbr/VBP/3_Build_structures/B_Veeam_Components/B_backup_repositories/scaleout.html) architecture.
 Users can also use SMB (see the SMB tutorial section for your version) to directly mount the volume to the backup server.
 With support for SMB/CIFS, NFS, AFP, iSCSI, and FC, TrueNAS offers many ways to connect to Veeam backup servers.
 
