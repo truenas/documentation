@@ -33,7 +33,7 @@ Use **Next** and **Back** to advance to the next or return to the previous scree
 Use **Save** to close the wizard screens and add the new VM to the **Virtual Machines** screen.
 
 ### Operating System Screen
-The **Operating System** settings specify the VM operating system type, the time the VM system clock uses, the boot method, and  display type.
+The **Operating System** settings specify the VM operating system type, the time setting the VM system clock uses, the boot method, and display type.
 
 {{< trueimage src="/images/SCALE/Virtualization/AddVMOperSys.png" alt="Operating System" id="Operating System" >}}
 
@@ -45,8 +45,9 @@ The **Operating System** settings specify the VM operating system type, the time
 | **Enable Hyper-V Enlightenments** |Only displays when **Guest Operating System** is set to **Windows**. This emulates a Hyper-V-compatible hypervisor for the Windows guest operating system and makes some Hyper-V-specific features available. |
 | **Name** | Required. Enter an alphanumeric name for the virtual machine. |
 | **Description** | (Optional) Enter a description of your choosing. For example, the type of OS for the VM or the VM use. |
-| **System Clock** | Select the method to use to set the system the VM from the dropdown list. Options are **Local** which uses the TrueNAS SCALE system clock setting, or **UTC** to use the Coordinated Universal Time clock. The default is **Local**. |
+| **System Clock** | Select the method to set the VM system clock from the dropdown list. Options are **Local** which uses the TrueNAS SCALE system clock setting, or **UTC** to use the Coordinated Universal Time clock. The default is **Local**. |
 | **Boot Method** | Select the boot method option from the dropdown list. Options are **UEFI** for newer operating systems or **Legacy BIOS** for older operating systems that only support BIOS booting. |
+| **Enable Secure Boot** | Select to verify boot components using digital signatures. This prevents unauthorized code from running during startup and is required for Windows 11 and some Linux distributions. |
 | **Shutdown Timeout** | Enter the time in seconds the system waits for the VM to cleanly shut down. During system shutdown, the system initiates power-off for the VM after the shutdown timeout entered expires. |
 | **Start on Boot** | Select to start the VM when the system boots. Selected by default. |
 | **Enable Display** | Enables a display (Virtual Network Computing) remote connection. Requires UEFI booting. Selected by default. |
@@ -75,8 +76,8 @@ The **Disks** settings allow specifying how virtual disks are added. Options are
 | **Use existing disk image** | Select to use an existing zvol or file for the VM. Displays the **Select Disk Type** and **Select Existing Zvol** dropdown list fields. |
 | **Select Disk Type** | Displays after selecting **Use existing disk image**. Select the desired disk type. Options are **AHCI** or **VirtIO**. Select **AHCI** for Windows VMs. **VirtIO** requires a guest OS that supports VirtIO paravirtualized network drivers. |
 | **Select Existing Zvol** | (Required) Displays after selecting **Use existing disk image**. Select an existing zvol from the dropdown list. |
-| **Zvol Location** | (Required) Displays after selecting **Use existing disk image**. Select a dataset for the new zvol from the dropdown list of datasets on the system. |
-| **Size** | (Required) Displays after selecting **Use existing disk image**. Allocate space for the new zvol. (Examples: 500 KiB, 500M, 2 TB). Units smaller than MiB are not allowed. |
+| **Zvol Location** | (Required) Displays after selecting **Create new disk image**. Select a dataset for the new zvol from the dropdown list of datasets on the system. |
+| **Size** | (Required) Displays after selecting **Create new disk image**. Allocate space for the new zvol. (Examples: 500 KiB, 500M, 2 TB). Units smaller than MiB are not allowed. |
 {{< /truetable >}}
 {{< /expand >}}
 
@@ -97,7 +98,7 @@ The **Network Interface** settings specify the network adapter type, mac address
 {{< /expand >}}
 
 ### Installation Media Screen
-The **Installation Media** settings specify the operation system installation media image on a dataset or upload one from the local machine.
+The **Installation Media** settings specify the operating system installation media image on a dataset or upload one from the local machine.
 
 {{< trueimage src="/images/SCALE/Virtualization/AddVMInstallMedia.png" alt="Installation Media" id="Installation Media" >}}
 
@@ -134,7 +135,7 @@ Click **Save** to add the VM to the **Virtual Machines** screen. Click **Back** 
 
 ## Virtual Machine Details Screen
 Expand any VM on the **Virtual Machines** screen to show the details and options for a VM.
-Details include the basic information on the number of virtual CPUs, cores, and threads, the amount of memory, boot load and system clock types, the display port number, and the shutdown timeout in seconds.
+Details include the basic information on the number of virtual CPUs, cores, and threads, the amount of memory, boot loader and system clock types, the display port number, and the shutdown timeout in seconds.
 
 {{< trueimage src="/images/SCALE/Virtualization/VirtualMachinesScreenwithVMDetails.png" alt="VM Details" id="VM Details" >}}
 
@@ -146,8 +147,8 @@ Starting the VM shows additional options for the VM.
 |-----------|------|-------------|
 | **Start** | <span class="iconify" data-icon="bxs:right-arrow"></span> | Starts a VM. The toggle turns blue when the VM switches to running. Toggles to **Stop**. Clicking **Start** shows the **Restart**,**Power Off**, **Display**, and **Serial Shell** buttons. |
 | **Restart** | <span class="material-icons">replay</span> | Restarts the VM. |
-| **Power Off** | <span class="material-icons">power_settings_new</span> | Powers off and halts the VM, similar to turning off a computer power switch.  |
-| **Stop** | <i class="material-icons" aria-hidden="true" title="Stop">stop</i> | Stops a running VM. Because a virtual machine does not always respond well to **STOP** or the command might time out if the VM does not have an OS. Use **Power Off** instead. |
+| **Power Off** | <span class="material-icons">power_settings_new</span> | Powers off and halts the VM, similar to turning off a computer power switch. |
+| **Stop** | <i class="material-icons" aria-hidden="true" title="Stop">stop</i> | Stops a running VM. Virtual machines do not always respond to **STOP** or the command might time out if the VM does not have an OS. Use **Power Off** instead. |
 | **Edit** | <span class="material-icons">mode_edit</span> | Opens the **[Edit Virtual Machine](#edit-virtual-machine-screen)** that displays editable VM settings. You cannot edit a VM while it is running. Stop the VM and then you can edit the properties and settings. |
 | **Delete** | <i class="material-icons" aria-hidden="true" title="Delete">delete</i> | Deletes a VM. Opens a [delete dialog](#delete-virtual-machine-dialog) that allows you to remove the VM from your system. You cannot delete a virtual machine that is running. You must first stop the VM and then you can delete it. |
 | **Devices** | <i class="material-icons" aria-hidden="true" title="Devices">device_hub</i> | Opens the **[Virtual Machine Devices](#devices-screens)** screen for the selected VM. Shows a list of configured devices for the VM. By default, all VMs show the **Disks**, **NIC**, and **Display** devices. |
@@ -281,9 +282,9 @@ Select **NIC** in **Device Type** to see the VM network interface card settings.
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Type** | Select the device type from the dropdown list.  |
+| **Type** | Select the device type from the dropdown list. |
 | **Adapter Type** | Required. Select the emulator type from the dropdown list. Emulating an **Intel e82545 (e1000)** Ethernet card provides compatibility with most operating systems. Change to **VirtIO** to provide better performance on systems with VirtIO paravirtualized network driver support. |
-| **MAC Address**  | Displays the default auto-generated random MAC address the VM receives. Enter a custom address to override the default.   |
+| **MAC Address** | Displays the default auto-generated random MAC address the VM receives. Enter a custom address to override the default. |
 | **Generate** | Click to add a new randomized address in **MAC Address**. |
 | **NIC To attach** | Select a physical interface from the dropdown list to associate with the VM. |
 | **Trust Guest Filters** | Default setting is not enabled. Set this attribute to allow the virtual server to change its MAC address. As a consequence, the virtual server can join multicast groups. The ability to join multicast groups is a prerequisite for the IPv6 Neighbor Discovery Protocol (NDP).<br>Setting **Trust Guest Filters** to "yes" has security risks because it allows the virtual server to change its MAC address and receive all frames delivered to this address. |
