@@ -115,7 +115,7 @@ Click **Create** to create the new volume.
 
 Click **Import Zvols** on the **Volumes** screen to open the **Import Zvol** dialog.
 
-Importing a zvol as as a volume allows its lifecycle to be managed, including backups, restores, and snapshots.
+Importing a zvol as a volume allows its lifecycle to be managed, including backups, restores, and snapshots.
 This allows portability between systems using standard tools.
 
 {{< trueimage src="/images/SCALE/Virtualization/InstanceImportZvol.png" alt="Import Zvol Dialog" id="Import Zvol Dialog" >}}
@@ -146,7 +146,7 @@ The **Delete volume** dialog displays.
 
 {{< trueimage src="/images/SCALE/Virtualization/InstancesDeleteVolume.png" alt="Delete Volume Dialog" id="Delete Volume Dialog" >}}
 
-Select **Confirm** and then click **Continue** to delete the image.
+Select **Confirm** and then click **Continue** to delete the volume.
 TrueNAS disables the delete icon for active images to prevent accidental deletion.
 
 ### Managing Container Permissions
@@ -464,7 +464,7 @@ Click **Change** to open the [**Change Root Disk Setup**](#managing-the-root-dis
 
 Click **Add** to open the **Add Disk** screen for adding new disks to the container.
 
-Click the the <span class="material-icons">more_vert</span> icon to the right of an existing disk to open the actions menu.
+Click the <span class="material-icons">more_vert</span> icon to the right of an existing disk to open the actions menu.
 Select **Edit** to edit the disk mount.
 
 {{< trueimage src="/images/SCALE/Virtualization/AddDiskScreenVM.png" alt="Add Disk Screen - VM" id="Add Disk Screen - VM" >}}
@@ -485,8 +485,8 @@ Click **Save** to apply changes.
 
 #### Deleting Disk Mounts
 
-Click the the <span class="material-icons">more_vert</span> icon to the right of an existing disk to open the actions menu.
-Select [**Delete**](#deleting-disk-mounts) to delete the disk mount.
+Click the <span class="material-icons">more_vert</span> icon to the right of an existing disk to open the actions menu.
+Select **Delete** to delete the disk mount.
 
 The **Delete Item** dialog asks for confirmation to delete the selected disk mount.
 
@@ -520,7 +520,7 @@ Select a NIC from the dropdown to attach it to the container.
 #### Deleting NICs
 
 Click the <span class="material-icons">more_vert</span> icon to the right of an existing NIC to open the actions menu.
-Select [**Delete**](#deleting-disk-mounts) to delete the NIC mount.
+Select **Delete** to delete the NIC mount.
 
 {{< trueimage src="/images/SCALE/Virtualization/DeleteNicDialog.png" alt="Delete Item Dialog" id="Delete Item Dialog" >}}
 
@@ -569,7 +569,7 @@ Click **Continue** to start the delete operation.
 
 ## Accessing Containers
 
-After selecting the container row in the table to populate the **Details for *Instance*** widgets, locate the **Tools** widget.
+After selecting the container row in the table to populate the **Details for *Container*** widgets, locate the **Tools** widget.
 You can open a shell, console, or VNC session directly from this widget.
 
 {{< trueimage src="/images/SCALE/Virtualization/ToolsWidget.png" alt="Tools Widget - VM" id="Tools Widget" >}}
