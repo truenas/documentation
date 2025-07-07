@@ -49,8 +49,9 @@ If you have not yet added a virtual machine to your system, click **Add Virtual 
 
    Select **UEFI** from the **Boot Method** dropdown, unless using an older OS that requires **Legacy BIOS**.
 
-   Select **Enable Secure Boot** to verifies the software loaded during the computer's startup process is trusted.
-   This is required for some operating systems, such as Windows 11.
+   Select **Enable Secure Boot** to enable cryptographic verification of boot loaders, operating system kernels, and drivers during VM startup.
+   This security feature prevents unauthorized or malicious code from running during the boot process by checking digital signatures against trusted certificates.
+   Secure Boot is required for Windows 11 and some Linux distributions, and can be optional or unsupported for older operating systems.
 
    Select **Enable Display** to enable a SPICE Virtual Network Computing (VNC) remote connection for the VM.
       The **Bind** and **Password** fields display. If **Enable Display** is selected:
@@ -104,6 +105,8 @@ If you have not yet added a virtual machine to your system, click **Add Virtual 
 
    Select the network interface type from the **Adapter Type** dropdown list. Select **Intel e82585 (e1000)** as it offers a higher level of compatibility with most operating systems, or select **VirtIO** if the guest operating system supports para-virtualized network drivers.
 
+   The **VirtIO** network interface requires a guest OS that supports VirtIO para-virtualized network drivers.
+
    Select the network interface card to use from the **Attach NIC** dropdown list.
    If the VM needs to access local NAS storage, attach a [network bridge](#accessing-truenas-storage-from-a-vm) interface.
 
@@ -125,10 +128,8 @@ If you have not yet added a virtual machine to your system, click **Add Virtual 
 
    {{< trueimage src="/images/SCALE/Virtualization/AddVMGPU.png" alt="GPU Screen" id="GPU Screen" >}}
 
-   The **VirtIO** network interface requires a guest OS that supports VirtIO para-virtualized network drivers.
-
    {{< hint type="note" title="Supported GPUs" >}}
-    TrueNAS does not have a list of approved GPUs at this time but TrueNAS does support various GPU from Nvidia, Intel, and AMD.
+    TrueNAS does not have a list of approved GPUs at this time but TrueNAS does support various GPUs from NVIDIA, Intel, and AMD.
     As of TrueNAS 24.10, TrueNAS does not automatically install NVIDIA drivers. Instead, users must manually install drivers from the TrueNAS UI. For detailed instructions, see (https://apps.truenas.com/getting-started/initial-setup/#installing-nvidia-drivers).
    {{< /hint >}}
 
@@ -176,7 +177,7 @@ Use the **Power Off** button instead.
 
 ## Installing an OS
 
-After configuring the VM in TrueNAS and an OS <file>.iso,</file> file is attached, start the VM and begin installing the operating system.
+After configuring the VM in TrueNAS and an OS <file>.iso</file> file is attached, start the VM and begin installing the operating system.
 
 {{< hint type="note" title="OS Specific Settings" >}}
 Some operating systems can require specific settings to function properly in a virtual machine.
@@ -223,7 +224,7 @@ Modify settings as needed to suit your use case.
 
    c. Enter a name in **Hostname**.
 
-   d. Enter a **Domain name**
+   d. Enter a **Domain name**.
 
    e. Enter the root password and re-enter the root password.
 
@@ -247,13 +248,13 @@ Modify settings as needed to suit your use case.
 
    e. Select **Yes** to **Write the changes to disks?**.
 
-5. Install the base system
+5. Install the base system:
 
    a. Select **No** to the question **Scan extra installation media**.
 
    b. Select **Yes** when asked **Continue without a network mirror**.
 
-6. Install software packages
+6. Install software packages:
 
    a. Select **No** when asked **Participate in the package usage survey**.
 
@@ -281,8 +282,8 @@ Modify settings as needed to suit your use case.
 
 9. Click **Start**, then click **Display**.
 {{< /expand >}}
-{{< expand "What if the grub file does not run after starting the VM?" "v" >}}
-The grub file does not run when you start the VM, enter the following after each start.
+{{< expand "What if GRUB does not start automatically?" "v" >}}
+If GRUB does not run when you start the VM, enter the following commands after each start.
 At the shell prompt:
 1. Enter `FS0:` and press <kbd>Enter</kbd>.
 2. Enter `cd EFI` and press <kbd>Enter</kbd>.
