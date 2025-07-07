@@ -225,7 +225,7 @@ To create a new container:
 
 1. Configure the container configuration settings.
 
-   {{< trueimage src="/images/SCALE/Virtualization/InstanceConfigurationContainer.png" alt="Container Configuration - Container" id="Container Configuration - Container" >}}
+   {{< trueimage src="/images/SCALE/Virtualization/InstanceConfigurationContainer.png" alt="Container Configuration" id="Container Configuration" >}}
 
    a. Enter a name for the container.
       {{< include file="/static/includes/InstanceNameRequirements.md" >}}
@@ -239,9 +239,9 @@ To create a new container:
 
 2. (Optional) Configure CPU and memory settings.
 
-   {{< trueimage src="/images/SCALE/Virtualization/CreateInstanceCPUandMemory.png" alt="CPU & Memory - Container" id="CPU & Memory - Container" >}}
+   {{< trueimage src="/images/SCALE/Virtualization/CreateInstanceCPUandMemory.png" alt="CPU & Memory" id="CPU & Memory" >}}
 
-   For containers, enter values for **CPU Configuration** and **Memory Size** or leave blank to allow the container access to all host CPU and memory resources.
+   Enter values for **CPU Configuration** and **Memory Size** or leave blank to allow the container access to all host CPU and memory resources.
    To configure resource allocation:
 
    {{< include file="/static/includes/InstanceCPUMemoryProcedure.md" >}}
@@ -255,7 +255,7 @@ To create a new container:
 4. (Optional) Configure disk settings to mount storage volumes for the container.
    You can create a new dataset or use an existing one.
 
-   {{< trueimage src="/images/SCALE/Virtualization/CreateInstanceDisksContainer.png" alt="Disks - Container" id="Disks - Container" >}}
+   {{< trueimage src="/images/SCALE/Virtualization/CreateInstanceDisksContainer.png" alt="Disks" id="Disks" >}}
 
    a. Click **Add** in the **Disks** section to display a set of fields to mount a disk.
 
@@ -279,32 +279,55 @@ To create a new container:
 
    c. Enter a port in **Host Port** to define the TrueNAS port to map to the container port on the container, for example *3600*.
 
-   d. Select the connection protocol for the container in **Container Protocol**.
+   d. Select the connection protocol for the container in **Instance Protocol**.
       Options are **TCP** or **UDP**.
 
-   e. Enter the port number within the container in **Container Port**, for example *80*, to map to the host port.
+   e. Enter the port number within the container in **Instance Port**, for example *80*, to map to the host port.
 
-6. {{< include file="/static/includes/InstanceNetworkProcedure.md" >}}
+6. Configure the **Network** section settings to define how the container connects to the host and external networks.
+   Options include the default network bridge, an existing [bridge interface]({{< ref "/SCALETutorials/Network/ContainerNASBridge" >}}), or a MACVLAN.
 
-7. {{< include file="/static/includes/InstanceUSBProcedure.md" >}}
+   {{< trueimage src="/images/SCALE/Virtualization/InstancesNetworkDefault.png" alt="Default Network Settings" id="Default Network Settings" >}}
 
-8. {{< include file="/static/includes/InstanceGPUProcedure.md" >}}
+   - **Use default network settings**: Enable to connect the instance to the host using the automatic bridge defined in [**Global Settings**](#configuring-global-settings). Disable to show the **Bridged NICs** (if available) and **Macvlan NICs** settings.
+
+   {{< trueimage src="/images/SCALE/Virtualization/InstancesNetworkNonDefault.png" alt="Non-Default Network Settings" id="Non-Default Network Settings" >}}
+
+   - To configure non-default network settings, select one or more interface options:
+
+      - **Bridged NICs**: Use to connect an existing bridge interface to the instance.
+      - **Macvlan NICs**: Use to create a virtual network interface based on an existing interface.
+         A MACVLAN assigns a unique MAC address to the virtual interface so the instance appears as a separate device on the network.
+
+      {{< include file="/static/includes/MacvlanHost.md" >}}
+
+7. (Optional) Configure USB devices to attach available devices to the container by selecting one or more in **USB Devices**.
+   This allows the device to function as if physically connected.
+
+   {{< trueimage src="/images/SCALE/Virtualization/CreateInstanceUSB.png" alt="USB Devices" id="USB Devices" >}}
+
+8. (Optional) Configure GPU devices in the **GPU Devices** section to attach available GPU devices, enabling the container to utilize hardware acceleration for graphics or computation tasks.
+
+  {{< trueimage src="/images/SCALE/Virtualization/CreateInstanceGPU.png" alt="GPU Devices" id="GPU Devices" >}}
+
+   Select one or more devices.
+
+   {{< hint type="note" title="Supported GPUs" >}}
+   TrueNAS does not have a list of approved GPUs at this time but TrueNAS does support various GPU from Nvidia, Intel, and AMD.
+   As of 24.10, TrueNAS does not automatically install NVIDIA drivers. Instead, users must manually install drivers from the UI. For detailed instructions, see [Installing NVIDIA Drivers](https://apps.truenas.com/getting-started/initial-setup/#installing-nvidia-drivers).
+   {{< /hint >}}
 
 9. Click **Create** to deploy the container.
 
 ### Creating Virtual Machines
 
-TrueNAS 25.04.2 introduces the [**Virtual Machines**](/scaletutorials/virtualmachines/) screen for creating and managing VMs.
-
-You cannot create new virtual machines using the **Containers** screen in 25.04.2 or later.
-New VM creation is only available through the **Virtual Machines** screen.
-
-Virtual machines created using the previous **Instances** feature in earlier 25.04 versions remain fully functional and continue to appear in the **Containers** screen for management purposes.
-You can manage these existing VMs using the same tools and procedures described in the [Managing Containers](#managing-containers) section.
-
-Virtual machines automatically migrated from TrueNAS 24.10 to 25.04.2 appear in the new **Virtual Machines** screen and use the updated VM management interface.
+{{< hint type=info >}}
+{{< include file="/static/includes/containers-vms.md" >}}
+{{< /hint >}}
 
 ## Managing Containers
+
+<!-- NOTE: I'm leaving the Managing section *mostly* unchanged for 25.04.2 since some users will still have Instance VMs configured and will need these management options. We may need to readdress this down the line. -->
 
 Created containers appear in a table on the **Containers** screen.
 The table lists each configured container, displaying its name, type, current status, and options to restart or stop it.
@@ -452,7 +475,7 @@ By default, the root disk is set to 1, which is the highest priority.
 Select the **I/O Bus** for the disk.
 Options are **NVMe**, **Virtio-BLK**, and **Virtio-SCSI**.
 
-{{< trueimage src="/images/SCALE/Virtualization/AddDiskScreen.png" alt="Add Disk Screen - Container" id="Add Disk Screen - Container" >}}
+{{< trueimage src="/images/SCALE/Virtualization/AddDiskScreen.png" alt="Add Disk Screen" id="Add Disk Screen" >}}
 
 For containers, enter or browse to select the host **Source** path for the disk.
 For a new dataset, enter or browse to select the parent path.
