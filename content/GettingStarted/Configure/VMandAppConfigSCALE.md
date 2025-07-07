@@ -68,15 +68,7 @@ TrueNAS includes built-in virtualization capabilities that enable you to run mul
 
 Virtual machines provide complete isolation by running full operating systems with dedicated virtualized hardware including network interfaces, storage, graphics adapters, and other components. VMs are ideal for running legacy applications, different operating systems, or services that require dedicated environments.
 
-Hardware Requirements:
-- x86 machine running a recent Linux kernel
-- Intel processor with VT extensions or AMD processor with SVM extensions (AMD-V)
-- Sufficient RAM and storage for both TrueNAS and the VM workloads
-
-Planning Considerations:
-- Research minimum and recommended specifications for your intended operating systems
-- Ensure adequate system resources for TrueNAS operation and VM deployment
-- Plan storage layout with dedicated datasets for VM organization
+{{< include file="/static/includes/VMRequirements.md" >}}
 
 See [Virtual Machines](/scaletutorials/virtualmachines/) for VM setup and management information.
 
@@ -84,10 +76,7 @@ See [Virtual Machines](/scaletutorials/virtualmachines/) for VM setup and manage
 
 Linux containers, powered by LXC, offer lightweight, isolated environments that share the host system kernel while maintaining separate file systems, processes, and network settings. Containers start quickly, use fewer system resources than VMs, and scale efficiently, making them ideal for deploying applications with minimal overhead.
 
-Setup Requirements:
-- A TrueNAS storage pool for container storage
-- Additional datasets for organized container data management
-- Network configuration appropriate for container networking needs
+{{< include file="/static/includes/ContainerRequirements.md" >}}
 
 See [Containers](/scaletutorials/containers/) for Linux container configuration and management information.
 
