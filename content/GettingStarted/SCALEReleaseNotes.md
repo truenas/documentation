@@ -108,6 +108,55 @@ Any new feature flags introduced since the previous OpenZFS version that was int
 
 For more details on feature flags, see [OpenZFS Feature Flags](https://openzfs.github.io/openzfs-docs/Basic%20Concepts/Feature%20Flags.html) and [OpenZFS zpool-feature.7](https://openzfs.github.io/openzfs-docs/man/7/zpool-features.7.html).
 
+## 25.04.2
+
+**July 18, 2025**
+
+The TrueNAS team is pleased to release TrueNAS 25.04.2!
+This is a maintenance release and includes refinements and fixes for issues discovered after 24.04.1.
+
+### 25.04.2 Notable Changes
+
+{{< enterprise >}}
+* STIG enforces the limit of three consecutive invalid login attempts by a user in 15 minutes, and limits the maximum number of concurrent session to 10 for all accounts and/or account types ([NAS-127189](https://ixsystems.atlassian.net/browse/NAS-127189)).
+* Adds a new SMB share preset **Veeam Repository with Fast Clone** to the share **Purpose** list of options.
+  Requires creating a new share and dataset prior to adding a Veeam Backup & Restore repository, and setting the dataset ZFS record size to 128 KiB.
+  No currently supported mechanism to convert an existing SMB Veeam repository into a Veeam Repository Share with fast clone ([NAS-135244](https://ixsystems.atlassian.net/browse/NAS-135244)).
+* Changes to Support notifications for zpool capacity, warning, and critical alerts (85, 90, and 95% respectively) and removes "optimal pool performance" language from the notifications to address customer concerns with over-notification on issues that do not interest them ([NAS-135831](https://ixsystems.atlassian.net/browse/NAS-135831)).
+* Changes PSU failures that occur in the field to automatically generate a support alert ([NAS-135832](https://ixsystems.atlassian.net/browse/NAS-135832)).
+{{< enterprise >}}
+* Adds the ability to enter optional custom endpoints in cloud sync credentials that support **Global** and **Select** tiers in Storj ([NAS-133835](https://ixsystems.atlassian.net/browse/NAS-133835)).
+* Adds a Secure Boot checkbox to the **Add Virtual Machine** wizard and **Edit Virtual Machine** form ([NAS-136466](https://ixsystems.atlassian.net/browse/NAS-136466)).
+* Passes the Storj/iX cloud sync credential access key and secret access key in the UI when creating the credential ([NAS-135837](https://ixsystems.atlassian.net/browse/NAS-135837)).
+* Removes the **Mega** cloud service provider for rclone.
+  Mega Technical Support states they no longer support rclone due to bugs in their implementation and requirements to properly troubleshoot issues ([NAS-135844](https://ixsystems.atlassian.net/browse/NAS-135844)).
+* Adds the `ethtool -m` to the debug file, which brings additional layer1 troubleshooting to interfaces ([NAS-135911](https://ixsystems.atlassian.net/browse/NAS-135911)).
+* Shows all object fields and explicitly  lists all parameters and result fields for nested objects not previously included in generated API documentation ([NAS-135959](https://ixsystems.atlassian.net/browse/NAS-135959)).
+* Adds starting and stopping services in the UI to the audit log records ([NAS-136310](https://ixsystems.atlassian.net/browse/NAS-136310)).
+
+
+### 25.04.2 Known Issues
+
+* Some users of TrueNAS Apps attempting to configure GPU allocation report the error `Expected [uuid] to be set for GPU inslot [<some pci slot>] in [nvidia_gpu_selection])` (see ([NAS-134152](https://ixsystems.atlassian.net/browse/NAS-134152)).
+
+  Users experiencing this error should follow the steps below for a one-time fix that should not need to be repeated.
+
+  Connect to a shell session and retrieve the UUID for each GPU with the command `midclt call app.gpu_choices | jq`.
+
+  For each application that experiences the error, run `midclt call -j app.update APP_NAME '{"values": {"resources": {"gpus": {"use_all_gpus": false, "nvidia_gpu_selection": {"PCI_SLOT": {"use_gpu": true, "uuid": "GPU_UUID"}}}}}}'`
+  Where:
+  * `APP_NAME` is the name you entered in the application, for example, “plex”.
+  * `PCI_SLOT` is the PCI slot identified in the error, for example "0000:2d:00.0”.
+  * `GPU_UUID` is the UUID matching the PCI slot that you retrieved with the above command.
+* Custom applications with TTY enabled do not display logs in the TrueNAS UI. This is due to an upstream bug, see https://github.com/docker/docker-py/issues/1394. Users experiencing this issue can resolve it by either disabling TTY or using `docker logs` from the command line.
+* TrueNAS UI displays **Updates Available** button after updating to the latest release (see ([NAS-136046](https://ixsystems.atlassian.net/browse/NAS-136046)).
+  This issue is resolved in the upcoming 25.04.2 release, but if you want to work around this issue now, follow these steps:
+  1. Open the **Shell** and run `midclt call systemdataset.config | jq ."path"`
+  2. Search for a file named **update.sqsh** in the returned string using `find "returned path" -name update.sqsh`
+  3. Run `rm -f <full-path-to-update.sqsh>`, replacing `<full-path-to-update.sqsh>` with the **full** file path to the **update.sqsh** file from the previous step
+     
+<a href="https://ixsystems.atlassian.net/issues/?filter=12504" target="_blank">Click here to see the latest information</a> about public issues in 25.04.1 that are being resolved in a future TrueNAS release.
+
 ## 25.04.1
 
 **May 27, 2025**
