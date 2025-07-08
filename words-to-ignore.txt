@@ -2310,4 +2310,9 @@ TrueCloud
 OOM
 unpriv
 sqsh
+InstancesScreens
+virtualmachines
+containers-vms
+ContainerCPUandMemorySettings
+
 
