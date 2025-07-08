@@ -53,6 +53,10 @@ If you have not yet added a virtual machine to your system, click **Add Virtual 
    This security feature prevents unauthorized or malicious code from running during the boot process by checking digital signatures against trusted certificates.
    Secure Boot is required for Windows 11 and some Linux distributions, and can be optional or unsupported for older operating systems.
 
+   Select **Enable Trusted Platform Module (TPM)** to provide a virtual TPM 2.0 device for the VM.
+   TPM provides hardware-based security functions including secure key storage, cryptographic operations, and platform attestation.
+   This is required for Windows 11 and enhances security for other operating systems that support TPM.
+
    Select **Enable Display** to enable a SPICE Virtual Network Computing (VNC) remote connection for the VM.
       The **Bind** and **Password** fields display. If **Enable Display** is selected:
 
