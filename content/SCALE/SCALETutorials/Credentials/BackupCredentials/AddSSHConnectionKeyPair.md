@@ -20,6 +20,10 @@ Using these widgets, users can establish Secure Socket Shell (SSH) connections.
 
 You must also configure and activate the [SSH Service]({{< ref "sshservicescale" >}}) to allow SSH access.
 
+These SSH credentials are used to manage SSH connections specifically for automated tasks such as replication, backups, cloud sync, or other system-to-system operations. You can generate, store, and manage SSH key pairs and define SSH connections that TrueNAS uses for these automated processes. The key pairs managed here are not tied to individual user logins, but are instead used by the system for secure communication with other systems or services.
+
+For individual user SSH access, configure SSH keys in the user account settings under **Credentials > Users**.
+
 ## Creating an SSH Connection
 
 To begin setting up an SSH connection, go to **Credentials > Backup Credentials**.
