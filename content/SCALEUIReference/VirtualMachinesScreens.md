@@ -48,6 +48,7 @@ The **Operating System** settings specify the VM operating system type, the time
 | **System Clock** | Select the method to set the VM system clock from the dropdown list. Options are **Local** which uses the TrueNAS SCALE system clock setting, or **UTC** to use the Coordinated Universal Time clock. The default is **Local**. |
 | **Boot Method** | Select the boot method option from the dropdown list. Options are **UEFI** for newer operating systems or **Legacy BIOS** for older operating systems that only support BIOS booting. |
 | **Enable Secure Boot** | Select to verify boot components using digital signatures. This prevents unauthorized code from running during startup and is required for Windows 11 and some Linux distributions. |
+| **Enable Trusted Platform Module (TPM)** | Select to provide a virtual TPM 2.0 device for the VM. Enables hardware-based security functions including secure key storage and cryptographic operations. Required for Windows 11. |
 | **Shutdown Timeout** | Enter the time in seconds the system waits for the VM to cleanly shut down. During system shutdown, the system initiates power-off for the VM after the shutdown timeout entered expires. |
 | **Start on Boot** | Select to start the VM when the system boots. Selected by default. |
 | **Enable Display** | Enables a display (Virtual Network Computing) remote connection. Requires UEFI booting. Selected by default. |
