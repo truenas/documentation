@@ -158,7 +158,7 @@ There is no supported mechanism to convert an existing Veeam repository into one
 TrueNAS properly aligns the TrueNAS ZFS record size and SMB share block size with the Veeam repository requirements when using these instructions.
 
 If not already created, go to **Credentials > User** and add a TrueNAS administrative user to serve as the share user.
-Refer to the basic [SMB Share]({{< relref "/SCALEtutorials/Shares/SMB/_index.md" >}}) instructions for information on creating a share user.
+Refer to the basic [SMB Share]({{< relref "/Scale/SCALEtutorials/Shares/SMB/_index.md" >}}) instructions for information on creating a share user.
 You can assign this admin user full control or a sharing admin role. Add this user to the ACL for the dataset created for Veeam SMB with fast cloning.
 
 ### Configuring TrueNAS Storage
