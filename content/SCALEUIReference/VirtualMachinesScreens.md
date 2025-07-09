@@ -83,7 +83,7 @@ The **Disks** settings allow specifying how virtual disks are added. Options are
 {{< /expand >}}
 
 ### Network Interface Screen
-The **Network Interface** settings specify the network adapter type, mac address, and physical network interface card associated with the VM.
+The **Network Interface** settings specify the network adapter type, MAC address, and physical network interface card associated with the VM.
 
 {{< trueimage src="/images/SCALE/Virtualization/AddVMNetwork.png" alt="Network Interface" id="Network Interface" >}}
 

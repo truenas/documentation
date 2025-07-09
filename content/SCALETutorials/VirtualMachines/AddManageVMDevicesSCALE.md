@@ -15,7 +15,7 @@ keywords:
 
 ## Managing Devices
 After creating a VM, the next step is to add virtual devices for that VM.
-Using the Create Virtual Machine wizard configures at least one disk, NIC, and the display as part of the process.
+Using the Create Virtual Machine wizard, configure at least one disk, NIC, and display as part of the process.
 To add devices, from the **Virtual Machines** screen, click anywhere on a VM entry to expand it and show the options for the VM.
 
 Click <i class="material-icons" aria-hidden="true" title="Devices">device_hub</i> **Devices** to open the **Devices** screen for the VM.

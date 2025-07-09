@@ -16,12 +16,13 @@ keywords:
 
 {{< include file="/static/includes/25.04Virtualization.md" >}}
 
-TrueNAS includes built-in virtualization capabilities that let you run multiple operating systems on a single system, maximizing hardware utilization and consolidating workloads. Virtual machines offer a flexible solution without requiring additional hardware.
-Enterprise licensed High Availability (HA) systems do not support virtual machines.
+TrueNAS includes built-in virtualization capabilities that let you run multiple operating systems on a single system, maximizing hardware utilization and consolidating workloads.
 
 A *virtual machine (VM)* is a software-based computer that runs inside your TrueNAS system, appearing as a separate physical machine to the operating system installed within it. VMs use virtualized hardware components including network interfaces, storage, graphics adapters, and other devices, providing complete isolation between different operating systems and applications.
 
 VMs offer stronger isolation than [containers](/scaletutorials/containers/) but require more system resources, making them ideal for running full operating systems, legacy applications, or services that need dedicated environments.
+
+Enterprise licensed High Availability (HA) systems do not support virtual machines.
 
 {{< expand "What system resources do VMs require?" "v" >}}
 {{< include file="/static/includes/VMRequirements.md" >}}
@@ -133,8 +134,8 @@ If you have not yet added a virtual machine to your system, click **Add Virtual 
    {{< trueimage src="/images/SCALE/Virtualization/AddVMGPU.png" alt="GPU Screen" id="GPU Screen" >}}
 
    {{< hint type="note" title="Supported GPUs" >}}
-    TrueNAS does not have a list of approved GPUs at this time but TrueNAS does support various GPUs from NVIDIA, Intel, and AMD.
-    As of TrueNAS 24.10, TrueNAS does not automatically install NVIDIA drivers. Instead, users must manually install drivers from the TrueNAS UI. For detailed instructions, see (https://apps.truenas.com/getting-started/initial-setup/#installing-nvidia-drivers).
+   TrueNAS does not have a list of approved GPUs at this time but TrueNAS does support various GPUs from NVIDIA, Intel, and AMD.
+   As of 24.10, TrueNAS does not automatically install NVIDIA drivers. Instead, users must manually install drivers from the UI. For detailed instructions, see [Installing NVIDIA Drivers](https://apps.truenas.com/getting-started/initial-setup/#installing-nvidia-drivers).
    {{< /hint >}}
 
 8. Confirm your VM settings, then click **Save**.
@@ -195,31 +196,68 @@ This example uses Debian 12 and basic configuration recommendations.
 Modify settings as needed to suit your use case.
 
 1. Click **Virtual Machines**, then **ADD** to use the VM wizard.
-   The table below lists the settings used in this example.
+   Configure settings as needed.
 
    {{< trueimage src="/images/SCALE/Virtualization/ScaleDebianVMOsSystem.png" alt="Add Debian VM" id="Add Debian VM" >}}
 
+<div style="margin-left: 33px">
+   {{< expand "Settings used in this example" "v" >}}
+
+   **Operating System**
    {{< truetable >}}
-   | Wizard Screen | Setting | Description |
-   |---------------|---------|-------------|
-   | **Operating System:** | Guest Operating System |Linux |
-   |  | Name | debianVM |
-   |  | Description | Debian VM |
-   | **CPU and Memory:** | Memory Size | 1024 MiB |
-   | **Disks:** | **Create new disk image** | Selected |
-   |  | Zvol Location | Select pool. |
-   |  | Size | 30 GiB |
-   | **Network Interface:** | Attach NIC | Select the physical interface to associate with the VM. |
-   | **Installation Media:** |  | Installation ISO is uploaded to local storage.<br>If the ISO is not uploaded, select **Upload an installer image file**.<br>Select a dataset to store the ISO, click **Choose file**, then click **Upload**. Wait for the upload to complete. |
-   | **GPU:** |  | Leave the default values. |
-   | **Confirm Options** |  | Verify the information is correct and then click **Save**. |
+   | Setting | Description |
+   |---------|-------------|
+   | Guest Operating System | Linux |
+   | Name | debianVM |
+   | Description | Debian VM |
    {{< /truetable >}}
+
+   **CPU and Memory**
+   {{< truetable >}}
+   | Setting | Description |
+   |---------|-------------|
+   | Memory Size | 1024 MiB |
+   {{< /truetable >}}
+
+   **Disks**
+   {{< truetable >}}
+   | Setting | Description |
+   |---------|-------------|
+   | **Create new disk image** | Selected |
+   | Zvol Location | Select pool. |
+   | Size | 30 GiB |
+   {{< /truetable >}}
+
+   **Network Interface**
+   {{< truetable >}}
+   | Setting | Description |
+   |---------|-------------|
+   | Attach NIC | Select the physical interface to associate with the VM. |
+   {{< /truetable >}}
+
+   **Installation Media**
+
+   Installation ISO is uploaded to local storage.
+   If the ISO is not uploaded, select **Upload an installer image file**.
+   Select a dataset to store the ISO, click **Choose file**, then click **Upload**. Wait for the upload to
+   complete.
+
+   **GPU**
+
+   Leave the default values.
+
+   **Confirm Options**
+
+   Verify the information is correct and then click **Save**.
+
+   {{< /expand >}}
+</div>
 
    After creating the VM, start it. Expand the VM entry and click **Start**.
 
-2. Click **Display** to open a SPICE interface and see the Debian Graphical Installation screens.
+1. Click **Display** to open a SPICE interface and see the Debian Graphical Installation screens.
 
-3. Press <kbd>Enter</kbd> to start the Debian Graphical Install.
+2. Press <kbd>Enter</kbd> to start the Debian Graphical Install.
 
    a. Enter your localization settings for **Language**, **Location**, and **Keymap**.
 
@@ -240,7 +278,7 @@ Modify settings as needed to suit your use case.
 
    j. Choose the time zone, *Eastern* in this case.
 
-4. Detect and partition disks.
+3. Detect and partition disks.
 
    a. Select **Guided - use entire disk** to partition.
 
@@ -252,13 +290,13 @@ Modify settings as needed to suit your use case.
 
    e. Select **Yes** to **Write the changes to disks?**.
 
-5. Install the base system:
+4. Install the base system:
 
    a. Select **No** to the question **Scan extra installation media**.
 
    b. Select **Yes** when asked **Continue without a network mirror**.
 
-6. Install software packages:
+5. Install software packages:
 
    a. Select **No** when asked **Participate in the package usage survey**.
 
@@ -268,7 +306,7 @@ Modify settings as needed to suit your use case.
 
    After the Debian installation finishes, close the display window.
 
-7. Remove the device or edit the device order.
+6. Remove the device or edit the device order.
    In the expanded section for the VM, click **Power Off** to stop the new VM.
 
    a. Click **Devices**.
@@ -282,9 +320,9 @@ Modify settings as needed to suit your use case.
       Change the CD-ROM **Device Order** to a value greater than that of the existing Disk device, such as *1005*.
       Click **Save**.
 
-8. Return to the **Virtual Machines** screen and expand the new VM again.
+7. Return to the **Virtual Machines** screen and expand the new VM again.
 
-9. Click **Start**, then click **Display**.
+8. Click **Start**, then click **Display**.
 {{< /expand >}}
 {{< expand "What if GRUB does not start automatically?" "v" >}}
 If GRUB does not run when you start the VM, enter the following commands after each start.
