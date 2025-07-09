@@ -60,10 +60,11 @@ Certain directory services must be set up as part of SMB and NFS share configura
 See [Active Directory Screen]({{< ref "/SCALE/SCALEUIReference/credentials/directoryservices/ActiveDirectory" >}}) for a better understanding of how to configure Active Directory and [Configuring Kerberos]({{< ref "ConfigKerberosSCALE" >}}) for an outline of required Kerberos information.
 For LDAP best practices see [Configuring LDAP]({{< ref "ConfigLDAPSCALE" >}}).
 
-## Virtualization Configuration
+## Virtual Machine and Container Configuration
 
 {{< include file="/static/includes/25.04Virtualization.md" >}}
 
+TrueNAS includes built-in virtualization capabilities that enable you to run multiple operating systems and containerized applications on a single system, maximizing hardware utilization and consolidating workloads.
 
 ### Virtual Machines
 
