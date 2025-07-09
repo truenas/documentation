@@ -55,11 +55,9 @@ More details are available from [Software Releases](https://www.truenas.com/docs
 
 * {{< include file="/static/includes/NetdataUI.md" >}}
 
-### Migrating Virtual Machines
+### Virtual Machines and Containers (Updated for 25.04.2)
 
-{{< include file="/static/includes/Incus.md" >}}
-
-{{< include file="/static/includes/MigratingVMs.md" >}}
+{{< include file="/static/includes/25.04Virtualization.md" >}}
 
 ### TrueNAS Apps
 
@@ -125,6 +123,14 @@ This is a maintenance release and includes refinements and fixes for issues disc
 * Changes to Support notifications for zpool capacity, warning, and critical alerts (85, 90, and 95% respectively) and removes "optimal pool performance" language from the notifications to address customer concerns with over-notification on issues that do not interest them ([NAS-135831](https://ixsystems.atlassian.net/browse/NAS-135831)).
 * Changes PSU failures that occur in the field to automatically generate a support alert ([NAS-135832](https://ixsystems.atlassian.net/browse/NAS-135832)).
 {{< enterprise >}}
+* TrueNAS 25.04.2 reintroduces "classic virtualization" with the [**Virtual Machines**]({{< ref "/scaletutorials/virtualmachines/" >}}) feature.
+  Virtualization features are now split between the **Virtual Machines** and [**Containers**]({{< ref "/scaletutorials/containers/" >}}) screens. 
+  
+  Virtual machines created in 25.04.0 or 25.04.1 using the **Instances** feature continue to function and appear in the **Containers** screen.
+  New VMs and those migrated from 24.10.2.2 to 25.04.2 use the **Virtual Machines** screen.
+
+  Virtual machines automatically migrate from TrueNAS 24.10 to 25.10.2.
+  No manual migration of virtual machines is required.
 * Adds the ability to enter optional custom endpoints in cloud sync credentials that support **Global** and **Select** tiers in Storj ([NAS-133835](https://ixsystems.atlassian.net/browse/NAS-133835)).
 * Adds a Secure Boot checkbox to the **Add Virtual Machine** wizard and **Edit Virtual Machine** form ([NAS-136466](https://ixsystems.atlassian.net/browse/NAS-136466)).
 * Passes the Storj/iX cloud sync credential access key and secret access key in the UI when creating the credential ([NAS-135837](https://ixsystems.atlassian.net/browse/NAS-135837)).
@@ -133,7 +139,6 @@ This is a maintenance release and includes refinements and fixes for issues disc
 * Adds the `ethtool -m` to the debug file, which brings additional layer1 troubleshooting to interfaces ([NAS-135911](https://ixsystems.atlassian.net/browse/NAS-135911)).
 * Shows all object fields and explicitly  lists all parameters and result fields for nested objects not previously included in generated API documentation ([NAS-135959](https://ixsystems.atlassian.net/browse/NAS-135959)).
 * Adds starting and stopping services in the UI to the audit log records ([NAS-136310](https://ixsystems.atlassian.net/browse/NAS-136310)).
-
 
 ### 25.04.2 Known Issues
 
@@ -154,10 +159,12 @@ This is a maintenance release and includes refinements and fixes for issues disc
   1. Open the **Shell** and run `midclt call systemdataset.config | jq ."path"`
   2. Search for a file named **update.sqsh** in the returned string using `find "returned path" -name update.sqsh`
   3. Run `rm -f <full-path-to-update.sqsh>`, replacing `<full-path-to-update.sqsh>` with the **full** file path to the **update.sqsh** file from the previous step
-     
+
 <a href="https://ixsystems.atlassian.net/issues/?filter=12504" target="_blank">Click here to see the latest information</a> about public issues in 25.04.1 that are being resolved in a future TrueNAS release.
 
 ## 25.04.1
+
+{{< expand "Click to expand" "v" >}}
 
 **May 27, 2025**
 
@@ -181,7 +188,7 @@ This is a maintenance release and includes refinements and fixes for issues disc
   * Enhanced robustness of the **Instances** screen to handle edge-case configurations ([NAS-135098](https://ixsystems.atlassian.net/browse/NAS-135098)).
   * Add a synthetic container root user ([NAS-135375](https://ixsystems.atlassian.net/browse/NAS-135375)).
     This adds a built-in unprivileged root user for containers: **truenas_container_unpriv_root**.
-    This account can be used in permissions related APIs / UI forms to grant permissions aligning to root in VMs and containers (see [Managing Instance Permissions](/scaletutorials/instances/#managing-instance-permissions)).
+    This account can be used in permissions related APIs / UI forms to grant permissions aligning to root in VMs and containers (see [Managing Instance Permissions](/scaletutorials/containers/#managing-instance-permissions)).
   * Improved error handling when instance ports conflict with other service or application configurations ([NAS-134963](https://ixsystems.atlassian.net/browse/NAS-134963)).
   * Prevent accidental deletion of built-in idmap entries ([NAS-135475](https://ixsystems.atlassian.net/browse/NAS-135475)).
   * Improved validation for attaching and removing zvols from instances ([NAS-135308](https://ixsystems.atlassian.net/browse/NAS-135308)).
@@ -217,8 +224,9 @@ This is a maintenance release and includes refinements and fixes for issues disc
   1. Open the **Shell** and run `midclt call systemdataset.config | jq ."path"`
   2. Search for a file named **update.sqsh** in the returned string using `find "returned path" -name update.sqsh`
   3. Run `rm -f <full-path-to-update.sqsh>`, replacing `<full-path-to-update.sqsh>` with the **full** file path to the **update.sqsh** file from the previous step
-     
+
 <a href="https://ixsystems.atlassian.net/issues/?filter=12504" target="_blank">Click here to see the latest information</a> about public issues in 25.04.1 that are being resolved in a future TrueNAS release.
+{{< /expand >}}
 
 ## 25.04.0
 {{< expand "Click to expand" "v" >}}
@@ -351,7 +359,7 @@ This first public release version of TrueNAS 25.04 (Fangtooth) has software comp
 * iSCSI Extensions for RDMA (iSER) support - Enterprise Feature ([NAS-106190](https://ixsystems.atlassian.net/browse/NAS-106190)).
 * ZFS Fast deduplication support ([NAS-127088](https://ixsystems.atlassian.net/browse/NAS-127088)).
 * iSCSI XCOPY support through ZVOL block cloning ([NAS-130017](ixsystems.atlassian.net/browse/NAS-130017)).
-* Incus Container & VM Support - Experimental Community Feature ([NAS-130251](https://ixsystems.atlassian.net/browse/NAS-130251)).
+* Container & VM Support - Experimental Community Feature ([NAS-130251](https://ixsystems.atlassian.net/browse/NAS-130251)).
 * Hide SED related options in the UI for non-Enterprise users ([NAS-133442](https://ixsystems.atlassian.net/browse/NAS-133442)).
 * Bump nvidia driver version ([NAS-133575](https://ixsystems.atlassian.net/browse/NAS-133575)).
 * Remove integrated Netdata web portal from the TrueNAS UI and middleware ([NAS-133629](https://ixsystems.atlassian.net/browse/NAS-133629)).
