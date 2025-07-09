@@ -80,7 +80,7 @@ Linux containers, powered by LXC, offer lightweight, isolated environments that 
 
 {{< include file="/static/includes/ContainerRequirements.md" >}}
 
-See [Containers]({{< ref "/SCALE/SCALETutorials/Containers/" >}}) for Linux container configuration and management information.
+See [Containers]({{< ref "/scale/scaletutorials/containers/" >}}) for Linux container configuration and management information.
 
 ## Application Configuration
 

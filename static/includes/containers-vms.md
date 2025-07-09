@@ -1,6 +1,6 @@
 &NewLine;
 
-TrueNAS 25.04.2 introduces the [**Virtual Machines**](/scaletutorials/virtualmachines/) screen for creating and managing VMs.
+TrueNAS 25.04.2 introduces the [**Virtual Machines**](/scale/scaletutorials/virtualmachines/) screen for creating and managing VMs.
 
 You cannot create new virtual machines using the **Containers** screen in 25.04.2 or later.
 New VM creation is only available through the **Virtual Machines** screen.
