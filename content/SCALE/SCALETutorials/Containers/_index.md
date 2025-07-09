@@ -76,7 +76,7 @@ These settings apply to all new containers, unless configured otherwise.
 
 Select **Automatic** from the **Bridge** dropdown list to use the default network bridge for communication between containers and the TrueNAS host.
 To specify an existing bridge, select one from the dropdown list.
-See [Accessing NAS from VMs and Containers](/SCALE/SCALETutorials/Network/ContainerNASBridge.md) for details.  
+See [Accessing NAS from VMs and Containers](/scale/scaletutorials/network/containernasbridge) for details.  
 When **Bridge** is set to **Automatic**, the **IPv4 Network** and **IPv6 Network** settings display.
 
 Enter an IPv4 address and subnet (e.g., *192.168.1.0/24*) in **IPv4 Network** to assign a specific network for containers.
