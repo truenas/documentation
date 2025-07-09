@@ -55,11 +55,9 @@ More details are available from [Software Releases](https://www.truenas.com/docs
 
 * {{< include file="/static/includes/NetdataUI.md" >}}
 
-### Migrating Virtual Machines
+### Virtual Machines and Containers (Updated for 25.04.2)
 
-{{< include file="/static/includes/Incus.md" >}}
-
-{{< include file="/static/includes/MigratingVMs.md" >}}
+{{< include file="/static/includes/25.04Virtualization.md" >}}
 
 ### TrueNAS Apps
 
@@ -108,7 +106,55 @@ Any new feature flags introduced since the previous OpenZFS version that was int
 
 For more details on feature flags, see [OpenZFS Feature Flags](https://openzfs.github.io/openzfs-docs/Basic%20Concepts/Feature%20Flags.html) and [OpenZFS zpool-feature.7](https://openzfs.github.io/openzfs-docs/man/7/zpool-features.7.html).
 
+## 25.04.2
+
+**<!--Date-->, 2025**
+
+The TrueNAS team is pleased to release TrueNAS 25.04.2!
+This is a maintenance release and includes refinements and fixes for issues discovered after 24.04.1.
+
+### 25.04.2 Notable Changes
+
+* TrueNAS 25.04.2 reintroduces "classic virtualization" with the [**Virtual Machines**]({{< ref "/scaletutorials/virtualmachines/" >}}) feature.
+  Virtualization features are now split between the **Virtual Machines** and [**Containers**]({{< ref "/scaletutorials/containers/" >}}) screens. 
+  
+  Virtual machines created in 25.04.0 or 25.04.1 using the **Instances** feature continue to function and appear in the **Containers** screen.
+  New VMs and those migrated from 24.10.2.2 to 25.04.2 use the **Virtual Machines** screen.
+
+  Virtual machines automatically migrate from TrueNAS 24.10 to 25.10.2.
+  No manual migration of virtual machines is required.
+
+<!-- Create filter and then update filter number (#####) in the link below
+<a href="https://ixsystems.atlassian.net/issues/?filter=#####" target="_blank">Click here for the full changelog</a> of completed tickets that are included in the 25.04.2 release.
+-->
+
+### 25.04.2 Known Issues
+
+* Some users of TrueNAS Apps attempting to configure GPU allocation report the error `Expected [uuid] to be set for GPU inslot [<some pci slot>] in [nvidia_gpu_selection])` (see ([NAS-134152](https://ixsystems.atlassian.net/browse/NAS-134152)).
+
+  Users experiencing this error should follow the steps below for a one-time fix that should not need to be repeated.
+
+  Connect to a shell session and retrieve the UUID for each GPU with the command `midclt call app.gpu_choices | jq`.
+
+  For each application that experiences the error, run `midclt call -j app.update APP_NAME '{"values": {"resources": {"gpus": {"use_all_gpus": false, "nvidia_gpu_selection": {"PCI_SLOT": {"use_gpu": true, "uuid": "GPU_UUID"}}}}}}'`
+  Where:
+  * `APP_NAME` is the name you entered in the application, for example, “plex”.
+  * `PCI_SLOT` is the PCI slot identified in the error, for example "0000:2d:00.0”.
+  * `GPU_UUID` is the UUID matching the PCI slot that you retrieved with the above command.
+* Custom applications with TTY enabled do not display logs in the TrueNAS UI. This is due to an upstream bug, see https://github.com/docker/docker-py/issues/1394. Users experiencing this issue can resolve it by either disabling TTY or using `docker logs` from the command line.
+* TrueNAS UI displays **Updates Available** button after updating to the latest release (see ([NAS-136046](https://ixsystems.atlassian.net/browse/NAS-136046)).
+  This issue is resolved in the upcoming 25.04.2 release, but if you want to work around this issue now, follow these steps:
+  1. Open the **Shell** and run `midclt call systemdataset.config | jq ."path"`
+  2. Search for a file named **update.sqsh** in the returned string using `find "returned path" -name update.sqsh`
+  3. Run `rm -f <full-path-to-update.sqsh>`, replacing `<full-path-to-update.sqsh>` with the **full** file path to the **update.sqsh** file from the previous step
+
+<!-- Create filter and then update filter number (#####) in the link below
+<a href="https://ixsystems.atlassian.net/issues/?filter=#####" target="_blank">Click here to see the latest information</a> about public issues in 25.04.2 that are being resolved in a future TrueNAS release.
+-->
+
 ## 25.04.1
+
+{{< expand "Click to expand" "v" >}}
 
 **May 27, 2025**
 
@@ -132,7 +178,7 @@ This is a maintenance release and includes refinements and fixes for issues disc
   * Enhanced robustness of the **Instances** screen to handle edge-case configurations ([NAS-135098](https://ixsystems.atlassian.net/browse/NAS-135098)).
   * Add a synthetic container root user ([NAS-135375](https://ixsystems.atlassian.net/browse/NAS-135375)).
     This adds a built-in unprivileged root user for containers: **truenas_container_unpriv_root**.
-    This account can be used in permissions related APIs / UI forms to grant permissions aligning to root in VMs and containers (see [Managing Instance Permissions](/scaletutorials/instances/#managing-instance-permissions)).
+    This account can be used in permissions related APIs / UI forms to grant permissions aligning to root in VMs and containers (see [Managing Instance Permissions](/scaletutorials/containers/#managing-instance-permissions)).
   * Improved error handling when instance ports conflict with other service or application configurations ([NAS-134963](https://ixsystems.atlassian.net/browse/NAS-134963)).
   * Prevent accidental deletion of built-in idmap entries ([NAS-135475](https://ixsystems.atlassian.net/browse/NAS-135475)).
   * Improved validation for attaching and removing zvols from instances ([NAS-135308](https://ixsystems.atlassian.net/browse/NAS-135308)).
@@ -168,8 +214,9 @@ This is a maintenance release and includes refinements and fixes for issues disc
   1. Open the **Shell** and run `midclt call systemdataset.config | jq ."path"`
   2. Search for a file named **update.sqsh** in the returned string using `find "returned path" -name update.sqsh`
   3. Run `rm -f <full-path-to-update.sqsh>`, replacing `<full-path-to-update.sqsh>` with the **full** file path to the **update.sqsh** file from the previous step
-     
+
 <a href="https://ixsystems.atlassian.net/issues/?filter=12504" target="_blank">Click here to see the latest information</a> about public issues in 25.04.1 that are being resolved in a future TrueNAS release.
+{{< /expand >}}
 
 ## 25.04.0
 {{< expand "Click to expand" "v" >}}
@@ -302,7 +349,7 @@ This first public release version of TrueNAS 25.04 (Fangtooth) has software comp
 * iSCSI Extensions for RDMA (iSER) support - Enterprise Feature ([NAS-106190](https://ixsystems.atlassian.net/browse/NAS-106190)).
 * ZFS Fast deduplication support ([NAS-127088](https://ixsystems.atlassian.net/browse/NAS-127088)).
 * iSCSI XCOPY support through ZVOL block cloning ([NAS-130017](ixsystems.atlassian.net/browse/NAS-130017)).
-* Incus Container & VM Support - Experimental Community Feature ([NAS-130251](https://ixsystems.atlassian.net/browse/NAS-130251)).
+* Container & VM Support - Experimental Community Feature ([NAS-130251](https://ixsystems.atlassian.net/browse/NAS-130251)).
 * Hide SED related options in the UI for non-Enterprise users ([NAS-133442](https://ixsystems.atlassian.net/browse/NAS-133442)).
 * Bump nvidia driver version ([NAS-133575](https://ixsystems.atlassian.net/browse/NAS-133575)).
 * Remove integrated Netdata web portal from the TrueNAS UI and middleware ([NAS-133629](https://ixsystems.atlassian.net/browse/NAS-133629)).
