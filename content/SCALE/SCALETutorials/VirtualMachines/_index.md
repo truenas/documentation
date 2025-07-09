@@ -1,14 +1,12 @@
 ---
-title: "Virtualization"
+title: "Virtual Machines"
 description: "Tutorials for configuring TrueNAS SCALE virtualization features and creating virtual machines."
 geekdocCollapseSection: true
 weight: 12
 aliases:
- - /scaletutorials/virtualization/
- - /scaletutorials/virtualization/addmanagevmdevicesscale/
+ - /scale/scaletutorials/virtualization/
  - /scale/scaletutorials/virtualization/creatingmanagingvmsscale/
  - /scale/scaleuireference/virtualization/creatingmanagingvmsscale/
-
 related: false
 keywords:
 - nas data storage
@@ -16,41 +14,28 @@ keywords:
 - storage container virtualization
 ---
 
-The **Virtualization** section allows users to set up Virtual Machines (VMs) to run alongside TrueNAS.
+{{< include file="/static/includes/25.04Virtualization.md" >}}
+
+TrueNAS includes built-in virtualization capabilities that let you run multiple operating systems on a single system, maximizing hardware utilization and consolidating workloads.
+
+A *virtual machine (VM)* is a software-based computer that runs inside your TrueNAS system, appearing as a separate physical machine to the operating system installed within it. VMs use virtualized hardware components including network interfaces, storage, graphics adapters, and other devices, providing complete isolation between different operating systems and applications.
+
+VMs offer stronger isolation than [containers](/scale/scaletutorials/containers/) but require more system resources, making them ideal for running full operating systems, legacy applications, or services that need dedicated environments.
+
 Enterprise licensed High Availability (HA) systems do not support virtual machines.
 
-Delegating processes to VMs reduces the load on the physical system, which means users can utilize additional hardware resources.
-Users can customize six different segments of a VM when creating one in TrueNAS SCALE.
-
 {{< expand "What system resources do VMs require?" "v" >}}
-{{< include file="/static/includes/ScaleVMReqResources.md" >}}
-{{< /expand >}}
-
-A *virtual machine (VM)* is an environment on a host computer that you can use as if it is a separate, physical computer.
-Users can use VMs to run multiple operating systems simultaneously on a single computer.
-Operating systems running inside a VM see emulated virtual hardware rather than the host computer physical hardware.
-VMs provide more isolation than Jails but also consume more system resources.
-
-{{< expand "What system resources do VMs require?" "v" >}}
-{{< include file="/static/includes/ScaleVMReqResources.md" >}}
-{{< /expand >}}
-
-A *virtual machine (VM)* is an environment on a host computer that you can use as if it is a separate, physical computer.
-Users can use VMs to run multiple operating systems simultaneously on a single computer.
-Operating systems running inside a VM see emulated virtual hardware rather than the host computer physical hardware.
-VMs provide more isolation than Jails but also consume more system resources.
-
-{{< expand "What system resources do VMs require?" "v" >}}
-{{< include file="/static/includes/ScaleVMReqResources.md" >}}
+{{< include file="/static/includes/VMRequirements.md" >}}
 {{< /expand >}}
 
 ## Creating a Virtual Machine
+
 Before creating a VM, obtain an installer <file>.iso</file> or image file for the OS you intend to install, and create a [zvol]({{< ref "AddManageZvols" >}}) on a storage pool that is available for both the virtual disk and the OS install file.
 
 If the VM needs to access local NAS storage, you need to create a network bridge to allow communication.
 See [Accessing TrueNAS Storage from a VM](#accessing-truenas-storage-from-a-vm) below for more information.
 
-To create a new VM, go to **Virtualization** and click **Add** to open the **Create Virtual Machine** configuration screen.
+To create a new VM, go to **Virtual Machines** and click **Add** to open the **Create Virtual Machine** configuration screen.
 If you have not yet added a virtual machine to your system, click **Add Virtual Machines** to open the same screen.
 
 1. Select the operating system you want to use from the **Guest Operating System** dropdown list.
@@ -62,6 +47,16 @@ If you have not yet added a virtual machine to your system, click **Add Virtual 
 2. Change other **Operating System** settings per your use case.
 
    Select **UTC** as the VM system time from the **System Clock** dropdown if you do not want to use the default **Local** setting.
+
+   Select **UEFI** from the **Boot Method** dropdown, unless using an older OS that requires **Legacy BIOS**.
+
+   Select **Enable Secure Boot** to enable cryptographic verification of boot loaders, operating system kernels, and drivers during VM startup.
+   This security feature prevents unauthorized or malicious code from running during the boot process by checking digital signatures against trusted certificates.
+   Secure Boot is required for Windows 11 and some Linux distributions, and can be optional or unsupported for older operating systems.
+
+   Select **Enable Trusted Platform Module (TPM)** to provide a virtual TPM 2.0 device for the VM.
+   TPM provides hardware-based security functions including secure key storage, cryptographic operations, and platform attestation.
+   This is required for Windows 11 and enhances security for other operating systems that support TPM.
 
    Select **Enable Display** to enable a SPICE Virtual Network Computing (VNC) remote connection for the VM.
       The **Bind** and **Password** fields display. If **Enable Display** is selected:
@@ -115,6 +110,8 @@ If you have not yet added a virtual machine to your system, click **Add Virtual 
 
    Select the network interface type from the **Adapter Type** dropdown list. Select **Intel e82585 (e1000)** as it offers a higher level of compatibility with most operating systems, or select **VirtIO** if the guest operating system supports para-virtualized network drivers.
 
+   The **VirtIO** network interface requires a guest OS that supports VirtIO para-virtualized network drivers.
+
    Select the network interface card to use from the **Attach NIC** dropdown list.
    If the VM needs to access local NAS storage, attach a [network bridge](#accessing-truenas-storage-from-a-vm) interface.
 
@@ -136,16 +133,15 @@ If you have not yet added a virtual machine to your system, click **Add Virtual 
 
    {{< trueimage src="/images/SCALE/Virtualization/AddVMGPU.png" alt="GPU Screen" id="GPU Screen" >}}
 
-   The **VirtIO** network interface requires a guest OS that supports VirtIO para-virtualized network drivers.
-
    {{< hint type="note" title="Supported GPUs" >}}
-    iXsystems does not have a list of approved GPUs at this time but TrueNAS does support various GPU from Nvidia, Intel, and AMD.
-    As of TrueNAS 24.10, TrueNAS does not automatically install NVIDIA drivers. Instead, users must manually install drivers from the TrueNAS UI. For detailed instructions, see (https://apps.truenas.com/getting-started/initial-setup/#installing-nvidia-drivers).
+   TrueNAS does not have a list of approved GPUs at this time but TrueNAS does support various GPUs from NVIDIA, Intel, and AMD.
+   As of 24.10, TrueNAS does not automatically install NVIDIA drivers. Instead, users must manually install drivers from the UI. For detailed instructions, see [Installing NVIDIA Drivers](https://apps.truenas.com/getting-started/initial-setup/#installing-nvidia-drivers).
    {{< /hint >}}
 
 8. Confirm your VM settings, then click **Save**.
 
 ### Adding and Removing Devices
+
 After creating the VM, you can add or remove virtual devices.
 
 Click on the VM row on the **Virtual Machines** screen to expand it and show the options, then click <i class="material-icons" aria-hidden="true" title="Devices">device_hub</i> **Devices**.
@@ -163,6 +159,7 @@ Device notes:
 See [Adding and Managing VM Devices]({{< ref "AddManageVMDevicesSCALE" >}}) for more information.
 
 ## Managing a Virtual Machine
+
 After creating the VM and configuring devices for it, click on the VM to expand it and show the options to manage the VM. 
 
 {{< trueimage src="/images/SCALE/Virtualization/VirtualMachinesScreenwithVMDetails.png" alt="VM Options" id="VM Options" >}}
@@ -184,7 +181,8 @@ Use the **Power Off** button instead.
 {{< /hint >}}
 
 ## Installing an OS
-After configuring the VM in TrueNAS and an OS <file>.iso,</file> file is attached, start the VM and begin installing the operating system.
+
+After configuring the VM in TrueNAS and an OS <file>.iso</file> file is attached, start the VM and begin installing the operating system.
 
 {{< hint type="note" title="OS Specific Settings" >}}
 Some operating systems can require specific settings to function properly in a virtual machine.
@@ -197,32 +195,69 @@ Upload the Debian <file>.iso</file> to the TrueNAS system and attach it to the V
 This example uses Debian 12 and basic configuration recommendations.
 Modify settings as needed to suit your use case.
 
-1. Click **Virtualization**, then **ADD** to use the VM wizard.
-   The table below lists the settings used in this example.
+1. Click **Virtual Machines**, then **ADD** to use the VM wizard.
+   Configure settings as needed.
 
    {{< trueimage src="/images/SCALE/Virtualization/ScaleDebianVMOsSystem.png" alt="Add Debian VM" id="Add Debian VM" >}}
 
+<div style="margin-left: 33px">
+   {{< expand "Settings used in this example" "v" >}}
+
+   **Operating System**
    {{< truetable >}}
-   | Wizard Screen | Setting | Description |
-   |---------------|---------|-------------|
-   | **Operating System:** | Guest Operating System |Linux |
-   |  | Name | debianVM |
-   |  | Description | Debian VM |
-   | **CPU and Memory:** | Memory Size | 1024 MiB |
-   | **Disks:** | **Create new disk image** | Selected |
-   |  | Zvol Location | Select pool. |
-   |  | Size | 30 GiB |
-   | **Network Interface:** | Attach NIC | Select the physical interface to associate with the VM. |
-   | **Installation Media:** |  | Installation ISO is uploaded to local storage.<br>If the ISO is not uploaded, select **Upload an installer image file**.<br>Select a dataset to store the ISO, click **Choose file**, then click **Upload**. Wait for the upload to complete. |
-   | **GPU:** |  | Leave the default values. |
-   | **Confirm Options** |  | Verify the information is correct and then click **Save**. |
+   | Setting | Description |
+   |---------|-------------|
+   | Guest Operating System | Linux |
+   | Name | debianVM |
+   | Description | Debian VM |
    {{< /truetable >}}
+
+   **CPU and Memory**
+   {{< truetable >}}
+   | Setting | Description |
+   |---------|-------------|
+   | Memory Size | 1024 MiB |
+   {{< /truetable >}}
+
+   **Disks**
+   {{< truetable >}}
+   | Setting | Description |
+   |---------|-------------|
+   | **Create new disk image** | Selected |
+   | Zvol Location | Select pool. |
+   | Size | 30 GiB |
+   {{< /truetable >}}
+
+   **Network Interface**
+   {{< truetable >}}
+   | Setting | Description |
+   |---------|-------------|
+   | Attach NIC | Select the physical interface to associate with the VM. |
+   {{< /truetable >}}
+
+   **Installation Media**
+
+   Installation ISO is uploaded to local storage.
+   If the ISO is not uploaded, select **Upload an installer image file**.
+   Select a dataset to store the ISO, click **Choose file**, then click **Upload**. Wait for the upload to
+   complete.
+
+   **GPU**
+
+   Leave the default values.
+
+   **Confirm Options**
+
+   Verify the information is correct and then click **Save**.
+
+   {{< /expand >}}
+</div>
 
    After creating the VM, start it. Expand the VM entry and click **Start**.
 
-2. Click **Display** to open a SPICE interface and see the Debian Graphical Installation screens.
+1. Click **Display** to open a SPICE interface and see the Debian Graphical Installation screens.
 
-3. Press <kbd>Enter</kbd> to start the Debian Graphical Install.
+2. Press <kbd>Enter</kbd> to start the Debian Graphical Install.
 
    a. Enter your localization settings for **Language**, **Location**, and **Keymap**.
 
@@ -231,7 +266,7 @@ Modify settings as needed to suit your use case.
 
    c. Enter a name in **Hostname**.
 
-   d. Enter a **Domain name**
+   d. Enter a **Domain name**.
 
    e. Enter the root password and re-enter the root password.
 
@@ -243,7 +278,7 @@ Modify settings as needed to suit your use case.
 
    j. Choose the time zone, *Eastern* in this case.
 
-4. Detect and partition disks.
+3. Detect and partition disks.
 
    a. Select **Guided - use entire disk** to partition.
 
@@ -255,13 +290,13 @@ Modify settings as needed to suit your use case.
 
    e. Select **Yes** to **Write the changes to disks?**.
 
-5. Install the base system
+4. Install the base system:
 
    a. Select **No** to the question **Scan extra installation media**.
 
    b. Select **Yes** when asked **Continue without a network mirror**.
 
-6. Install software packages
+5. Install software packages:
 
    a. Select **No** when asked **Participate in the package usage survey**.
 
@@ -271,7 +306,7 @@ Modify settings as needed to suit your use case.
 
    After the Debian installation finishes, close the display window.
 
-7. Remove the device or edit the device order.
+6. Remove the device or edit the device order.
    In the expanded section for the VM, click **Power Off** to stop the new VM.
 
    a. Click **Devices**.
@@ -285,12 +320,12 @@ Modify settings as needed to suit your use case.
       Change the CD-ROM **Device Order** to a value greater than that of the existing Disk device, such as *1005*.
       Click **Save**.
 
-8. Return to the **Virtual Machines** screen and expand the new VM again.
+7. Return to the **Virtual Machines** screen and expand the new VM again.
 
-9. Click **Start**, then click **Display**.
+8. Click **Start**, then click **Display**.
 {{< /expand >}}
-{{< expand "What if the grub file does not run after starting the VM?" "v" >}}
-The grub file does not run when you start the VM, enter the following after each start.
+{{< expand "What if GRUB does not start automatically?" "v" >}}
+If GRUB does not run when you start the VM, enter the following commands after each start.
 At the shell prompt:
 1. Enter `FS0:` and press <kbd>Enter</kbd>.
 2. Enter `cd EFI` and press <kbd>Enter</kbd>.
@@ -333,6 +368,7 @@ To ensure it starts automatically, create the <file>startup.nsh</file> file at t
 {{< /expand >}}
 
 ## Configuring Virtual Machine Network Access
+
 Configure VM network settings during or after installation of the guest OS.
 To communicate with a VM from other parts of your local network, use the IP address configured or assigned by DHCP within the VM.
 
@@ -352,6 +388,7 @@ Confirm the ping is successful.
 {{< /expand >}}
 
 ### Accessing TrueNAS Storage From a VM
+
 By default, VMs are unable to communicate directly with the host NAS.
 If you want to access your TrueNAS SCALE directories from a VM, to connect to a TrueNAS data share, for example, you have multiple options.
 
@@ -362,7 +399,8 @@ See [Accessing NAS from VM]({{< ref "ContainerNASBridge" >}}) for more informati
 
 <div class="noprint">
 
-## Virtualization Contents
+## Virtual Machines Contents
+
 {{< children depth="2" description="true" >}}
 
 </div>

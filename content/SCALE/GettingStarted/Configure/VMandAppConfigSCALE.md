@@ -64,18 +64,22 @@ For LDAP best practices see [Configuring LDAP]({{< ref "ConfigLDAPSCALE" >}}).
 
 {{< include file="/static/includes/25.04Virtualization.md" >}}
 
-To run a virtual machine (VM), hardware requirements include an x86 machine running a recent Linux kernel using either an Intel processor with VT extensions or an AMD processor with SVM extensions (AMD-V).
-To install a VM, first research the minimum and recommended specifications for the OS you plan to use and your full use case for that VM.
-Allocating too many resources to a VM can cause performance on the TrueNAS system to suffer.
-We recommend you plan for and ensure your system has the resources to run itself and a full VM deployment effectively, taking into account the need for high availability (HA) and persistent storage.
 
-Software requirements include an installer for the OS you intend to install on the VM.
+### Virtual Machines
 
-A TrueNAS storage pool is required.
-We recommend you create additional datasets beneath the storage pool to organize your VM data further.
+Virtual machines provide complete isolation by running full operating systems with dedicated virtualized hardware including network interfaces, storage, graphics adapters, and other components. VMs are ideal for running legacy applications, different operating systems, or services that require dedicated environments.
 
-Review [Virtualization Screens]({{< ref "InstancesScreens" >}}) to determine requirements for VM installation.
-See [Adding and Managing VMs]({{< ref "/SCALE/scaletutorials/instances" >}}) for more information on adding or managing VMs.
+{{< include file="/static/includes/VMRequirements.md" >}}
+
+See [Virtual Machines](/scale/scaletutorials/virtualmachines/) for VM setup and management information.
+
+### Containers
+
+Linux containers, powered by LXC, offer lightweight, isolated environments that share the host system kernel while maintaining separate file systems, processes, and network settings. Containers start quickly, use fewer system resources than VMs, and scale efficiently, making them ideal for deploying applications with minimal overhead.
+
+{{< include file="/static/includes/ContainerRequirements.md" >}}
+
+See [Containers]({{< ref "/SCALE/SCALETutorials/Containers/" >}}) for Linux container configuration and management information.
 
 ## Application Configuration
 
