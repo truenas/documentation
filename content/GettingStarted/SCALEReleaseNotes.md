@@ -129,7 +129,7 @@ This is a maintenance release and includes refinements and fixes for issues disc
   Virtual machines created in 25.04.0 or 25.04.1 using the **Instances** feature continue to function and appear in the **Containers** screen.
   New VMs and those migrated from 24.10.2.2 to 25.04.2 use the **Virtual Machines** screen.
 
-  Virtual machines automatically migrate from TrueNAS 24.10 to 25.10.2.
+  Virtual machines automatically migrate from TrueNAS 24.10 to 25.04.2.
   No manual migration of virtual machines is required.
 * Adds the ability to enter optional custom endpoints in cloud sync credentials that support **Global** and **Select** tiers in Storj ([NAS-133835](https://ixsystems.atlassian.net/browse/NAS-133835)).
 * Adds a Secure Boot checkbox to the **Add Virtual Machine** wizard and **Edit Virtual Machine** form ([NAS-136466](https://ixsystems.atlassian.net/browse/NAS-136466)).
