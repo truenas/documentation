@@ -217,8 +217,9 @@ The **Replication Schedule** options set when to run the task based on the sched
 The **Destination Snapshot Lifetime** setting determines how long the replicated snapshot is retained on the destination server.  
 
 {{< hint type=note title="Snapshot Preservation" >}}
-TrueNAS always preserves the latest snapshot to permit later resumption of replication. If a dataset or zvol is deleted on the source, you must manually delete the replicated dataset or zvol and the most recent snapshot on the destination.
-{{< /hint >}} 
+TrueNAS always preserves the latest snapshot so replication can resume later.
+If you delete a dataset or zvol on the source, you must manually delete the replicated dataset or zvol and the most recent snapshot on the destination.
+{{< /hint >}}
 
 {{< trueimage src="/images/SCALE/DataProtection/AddReplicationTaskWhenRunOnceCustomLifetime.png" alt="Add Replication Task When Custom Lifetime" id="Add Replication Task When Custom Lifetime" >}}
 
