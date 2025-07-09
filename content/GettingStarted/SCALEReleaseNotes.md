@@ -122,7 +122,7 @@ This is a maintenance release and includes refinements and fixes for issues disc
   No currently supported mechanism to convert an existing SMB Veeam repository into a Veeam Repository Share with fast clone ([NAS-135244](https://ixsystems.atlassian.net/browse/NAS-135244)).
 * Changes to Support notifications for zpool capacity, warning, and critical alerts (85, 90, and 95% respectively) and removes "optimal pool performance" language from the notifications to address customer concerns with over-notification on issues that do not interest them ([NAS-135831](https://ixsystems.atlassian.net/browse/NAS-135831)).
 * Changes PSU failures that occur in the field to automatically generate a support alert ([NAS-135832](https://ixsystems.atlassian.net/browse/NAS-135832)).
-{{< enterprise >}}
+{{< /enterprise >}}
 * TrueNAS 25.04.2 reintroduces "classic virtualization" with the [**Virtual Machines**]({{< ref "/scaletutorials/virtualmachines/" >}}) feature.
   Virtualization features are now split between the **Virtual Machines** and [**Containers**]({{< ref "/scaletutorials/containers/" >}}) screens. 
   
