@@ -108,13 +108,21 @@ For more details on feature flags, see [OpenZFS Feature Flags](https://openzfs.g
 
 ## 25.04.2
 
-**<!--Date-->, 2025**
+**July 18, 2025**
 
 The TrueNAS team is pleased to release TrueNAS 25.04.2!
 This is a maintenance release and includes refinements and fixes for issues discovered after 24.04.1.
 
 ### 25.04.2 Notable Changes
 
+{{< enterprise >}}
+* STIG enforces the limit of three consecutive invalid login attempts by a user in 15 minutes, and limits the maximum number of concurrent session to 10 for all accounts and/or account types ([NAS-127189](https://ixsystems.atlassian.net/browse/NAS-127189)).
+* Adds a new SMB share preset **Veeam Repository with Fast Clone** to the share **Purpose** list of options.
+  Requires creating a new share and dataset prior to adding a Veeam Backup & Restore repository, and setting the dataset ZFS record size to 128 KiB.
+  No currently supported mechanism to convert an existing SMB Veeam repository into a Veeam Repository Share with fast clone ([NAS-135244](https://ixsystems.atlassian.net/browse/NAS-135244)).
+* Changes to Support notifications for zpool capacity, warning, and critical alerts (85, 90, and 95% respectively) and removes "optimal pool performance" language from the notifications to address customer concerns with over-notification on issues that do not interest them ([NAS-135831](https://ixsystems.atlassian.net/browse/NAS-135831)).
+* Changes PSU failures that occur in the field to automatically generate a support alert ([NAS-135832](https://ixsystems.atlassian.net/browse/NAS-135832)).
+{{< enterprise >}}
 * TrueNAS 25.04.2 reintroduces "classic virtualization" with the [**Virtual Machines**]({{< ref "/scaletutorials/virtualmachines/" >}}) feature.
   Virtualization features are now split between the **Virtual Machines** and [**Containers**]({{< ref "/scaletutorials/containers/" >}}) screens. 
   
@@ -123,10 +131,14 @@ This is a maintenance release and includes refinements and fixes for issues disc
 
   Virtual machines automatically migrate from TrueNAS 24.10 to 25.10.2.
   No manual migration of virtual machines is required.
-
-<!-- Create filter and then update filter number (#####) in the link below
-<a href="https://ixsystems.atlassian.net/issues/?filter=#####" target="_blank">Click here for the full changelog</a> of completed tickets that are included in the 25.04.2 release.
--->
+* Adds the ability to enter optional custom endpoints in cloud sync credentials that support **Global** and **Select** tiers in Storj ([NAS-133835](https://ixsystems.atlassian.net/browse/NAS-133835)).
+* Adds a Secure Boot checkbox to the **Add Virtual Machine** wizard and **Edit Virtual Machine** form ([NAS-136466](https://ixsystems.atlassian.net/browse/NAS-136466)).
+* Passes the Storj/iX cloud sync credential access key and secret access key in the UI when creating the credential ([NAS-135837](https://ixsystems.atlassian.net/browse/NAS-135837)).
+* Removes the **Mega** cloud service provider for rclone.
+  Mega Technical Support states they no longer support rclone due to bugs in their implementation and requirements to properly troubleshoot issues ([NAS-135844](https://ixsystems.atlassian.net/browse/NAS-135844)).
+* Adds the `ethtool -m` to the debug file, which brings additional layer1 troubleshooting to interfaces ([NAS-135911](https://ixsystems.atlassian.net/browse/NAS-135911)).
+* Shows all object fields and explicitly  lists all parameters and result fields for nested objects not previously included in generated API documentation ([NAS-135959](https://ixsystems.atlassian.net/browse/NAS-135959)).
+* Adds starting and stopping services in the UI to the audit log records ([NAS-136310](https://ixsystems.atlassian.net/browse/NAS-136310)).
 
 ### 25.04.2 Known Issues
 
@@ -148,9 +160,7 @@ This is a maintenance release and includes refinements and fixes for issues disc
   2. Search for a file named **update.sqsh** in the returned string using `find "returned path" -name update.sqsh`
   3. Run `rm -f <full-path-to-update.sqsh>`, replacing `<full-path-to-update.sqsh>` with the **full** file path to the **update.sqsh** file from the previous step
 
-<!-- Create filter and then update filter number (#####) in the link below
-<a href="https://ixsystems.atlassian.net/issues/?filter=#####" target="_blank">Click here to see the latest information</a> about public issues in 25.04.2 that are being resolved in a future TrueNAS release.
--->
+<a href="https://ixsystems.atlassian.net/issues/?filter=12504" target="_blank">Click here to see the latest information</a> about public issues in 25.04.1 that are being resolved in a future TrueNAS release.
 
 ## 25.04.1
 
