@@ -37,9 +37,9 @@ iXsystems is pleased to release TrueNAS 13.0-U6.7!
 This is a small maintenance release that incorporates another upstream fix for the just-patched rsync daemon ([NAS-133755](https://ixsystems.atlassian.net/browse/NAS-133755)).
 Users that update to 13.0-U6.6 and encounter issues with an existing rsync task are encouraged to update to 13.0-U6.7.
 
-#### Known Issues
+### Known Issues
 
-* An update to the Microsoft RPC Netlogon protocol affects systems using the "AD" idmap backend for Active Directory. Users will not be able to connect to the SMB service provided by Samba for any domain configured to use the "AD" idmapping backend.
+* An update to the Microsoft Netlogon RPC protocol affects systems using the "AD" idmap backend for Active Directory. Users are not able to connect to the SMB service provided by Samba for any domain configured to use the "AD" idmap backend.
 
 ## 13.0-U6.6
 **January 23, 2025**
