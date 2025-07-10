@@ -30,7 +30,7 @@ The top toolbar icon buttons allows for quick software feedback, displays the st
 | <span class="material-icons">info</span> | Directory Services status | Displays a dialog with the status of Active Directory and LDAP directory servers configured on the system. |
 | <span class="material-icons">assignment</span> | Running Jobs | Displays the **Running Jobs** dialog. Click the **History** button to display the **Tasks** screen with a list of **All**, **Active** or **Failed** tasks or processes. |
 | <span class="material-icons">notifications</span> | Alerts | Displays a list of system alerts and a dropdown list with the alert options **Alert Settings** and **Email**. |
-| <span class="material-icons">account_circle</span> | Settings | Displays a dropdown list of setting options **Change Password**, **Two-Factor Authentication**, **API Keys**, **Guide**, **About**, and **Log Out**. |
+| <span class="material-icons">account_circle</span> | Settings | Displays a dropdown list of setting options **Change Password**, **My API Keys**, **Guide**, and **Log Out**. |
 | <span class="material-icons">power_settings_new</span> | Power options | Displays the power related options **Restart** or **Shut Down**. |
 {{< /truetable >}}
 
