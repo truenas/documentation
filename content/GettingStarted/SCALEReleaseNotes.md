@@ -166,8 +166,8 @@ See [TrueNAS Apps](https://www.truenas.com/docs/scale/24.10/gettingstarted/scale
 
 ### Known Issues
 
-* An update to the Microsoft RPC Netlogon protocol affects systems using the "AD" idmap backend for Active Directory. Users will not be able to connect to the SMB service provided by Samba for any domain configured to use the "AD" idmapping backend.
-  A fix is expected in the TrueNAS 24.10.2.3 hot fix.
+* An update to the Microsoft Netlogon RPC protocol affects systems using the "AD" idmap backend for Active Directory. Users are not able to connect to the SMB service provided by Samba for any domain configured to use the "AD" idmap backend.
+  A fix is expected in the TrueNAS 24.10.2.3 release.
 
 ## 24.10.2.1
 
