@@ -211,7 +211,7 @@ The **Roles** widget for a dataset without a share shows two links, one to creat
 | SMB share | [Manage SMB Shares]({{< ref "SMBSharesScreens" >}}) | Shows the name of the SMB share using the dataset. Select the snare on the **Sharing SMB** screen to edit it. |
 | Other share | Link to the share type screen | Shows the name of the share using the dataset. Select the option on the share screen (NFS or iSCSI) to edit it. |
 | Multiprotocol share | [Manage SMB Shares]({{< ref "SMBSharesScreens" >}})<br>[Manage NFS Shares]({{< ref "NFSSharesScreens" >}}) | Shows the name of the SMB and NFS share using the dataset. Each link opens the **Sharing SMB** or **Sharing NFS** screens. Click on the share to edit it. |
-| VM | [Manage VM Settings]({{< ref "InstancesScreens" >}}) | Displays the name of the VM using the dataset (zvol). Select it on the **Virtual Machines** screen to edit it. |
+| VM | [Manage VM Settings]({{< ref "" >}}) | Displays the name of the VM using the dataset (zvol). Select it on the **Virtual Machines** screen to edit it. |
 {{< /truetable >}}
 {{< /expand >}}
 

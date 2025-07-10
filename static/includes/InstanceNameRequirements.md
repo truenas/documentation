@@ -1,7 +1,7 @@
 &NewLine;
 
-{{< expand "Instance Name Requirements" "v" >}}
-An instance name must meet these criteria:  
+{{< expand "Name Requirements" "v" >}}
+A container name must meet these criteria:  
 
 - It must be between 1 and 63 characters long.  
 
