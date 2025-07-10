@@ -44,17 +44,23 @@ Go to **Network**, and click **Settings** on the **Global Configuration** widget
 4. Enter the IP address for your default gateway into the **IPv4 Default Gateway** if you are using IPv4 IP addresses.
    Enter the IPv6 address in the **IPv6 Default Gateway** if you are using IPv6 addresses.
 
-5. Select **Allow All** for **Outbound Network** to permit external communication for all TrueNAS services or select **Deny All** to prevent external communication.
-   Select **Allow Specific** and then use the **Services** dropdown list to pick a limited set of services to allow external communication. 
-   Select **Allow All Except** and then use the **Services** dropdown list to pick services to deny external communication while allowing all other services.
+5. Select the desired **Outbound Network** option.
+
+   * Selecting **Allow All** permits external communication for all TrueNAS services.
+
+   * Selecting **Deny All** prevents external communication.
+   
+   * Selecting **Allow Specific** shows the **Services** dropdown where you can choose a limited set of services to allow external communication. Unchecked services cannot communicate externally.
+   
+   * Selecting **Allow All Except** and choosing options on the **Services** dropdown list denies those services external communication while allowing it for all other services. Selected services cannot communicate externally.
 
    {{< trueimage src="/images/SCALE/Network/GlobalConfigOutboundSettings.png" alt="Global Configuration Outbound Settings" id="Global Configuration Outbound Settings" >}}
 
+   Select as many services as desired. 
+
    {{< trueimage src="/images/SCALE/Network/GlobalConfigAllowSpecificServiceOptions.png" alt="Global Configuration Allow Specific Service Options" id="Global Configuration Allow Specific Service Options" >}}
 
-   Click as many services as desired. For **Allow Specific**, unchecked services cannot communicate externally. For **Allow All Except**, checked services cannot communicate externally.
-
-See [below](#setting-up-external-communication-for-services) for more information.
+   See [below](#setting-up-external-communication-for-services) for more information.
 
 6. Click **Save**. The **Global Configuration** widget on the **Network** screen updates to show the new settings.
 
