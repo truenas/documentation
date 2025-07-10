@@ -14,6 +14,10 @@ tags:
 
 The **Backup Credentials** screen displays the **SSH Connections** and **SSH Keypairs** widgets.
 
+These widgets are used to manage SSH credentials specifically for automated tasks such as replication, backups, cloud sync, or other system-to-system operations. You can generate, store, and manage SSH key pairs and define SSH connections that TrueNAS uses for these automated processes. The key pairs managed here are not tied to individual user logins, but are instead used by the system for secure communication with other systems or services.
+
+For individual user SSH access, configure SSH keys in the user account settings under **Credentials > Users**.
+
 You must also configure and activate the [SSH Service]({{< ref "sshservicescreenscale" >}}) to allow SSH access.
 
 ## SSH Connection and Keypairs Widgets
