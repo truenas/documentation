@@ -13,7 +13,7 @@ keywords:
 
 
 ## TrueNAS Compliance
-TrueNAS falls into the category of an appliance with its own operating system as covered in [General Purpose Operating System SRG](https://www.stigviewer.com/stig/general_purpose_operating_system_srg/) findings.
+TrueNAS falls into the category of an appliance with its own operating system as covered in [General Purpose Operating System SRG]([https://www.stigviewer.com/stig/general_purpose_operating_system_srg/](https://stigviewer.com/stigs/general_purpose_operating_system_security_requirements_guide)) findings.
 Through connection to Active Directory, TrueNAS also complies with the [Active Directory Domain Security Technical Implementation Guide SRG](https://www.stigviewer.com/stig/active_directory_domain/) findings related to authentication and access controls for user, group, and systems.
 
 ## Customizing TrueNAS Security Options for STIG Compliance
