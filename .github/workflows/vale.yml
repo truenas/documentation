@@ -15,12 +15,48 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Vale
-        uses: errata-ai/vale-action@reviewdog
+      - name: Install Vale
+        run: |
+          wget -qO- https://github.com/errata-ai/vale/releases/download/v3.12.0/vale_3.12.0_Linux_64-bit.tar.gz | tar -xzf - -C /usr/local/bin vale
+          chmod +x /usr/local/bin/vale
+
+      - name: Run Vale
+        continue-on-error: true
+        run: |
+          vale sync
+          vale content/ --output=JSON > vale-results.json || true
+          cat vale-results.json
+
+      - name: Comment PR
+        uses: actions/github-script@v7
+        if: github.event_name == 'pull_request'
         with:
-          files: all
-          reporter: github-pr-review
-          fail_on_error: false
-          level: suggestion
-        env:
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          script: |
+            const fs = require('fs');
+            try {
+              const valeResults = JSON.parse(fs.readFileSync('vale-results.json', 'utf8'));
+              let comment = '## Vale Style Guide Issues\n\n';
+              
+              for (const [file, issues] of Object.entries(valeResults)) {
+                if (issues.length > 0) {
+                  comment += `### ${file}\n\n`;
+                  for (const issue of issues) {
+                    comment += `- **Line ${issue.Line}:${issue.Span[0]}** - ${issue.Severity}: ${issue.Message}\n`;
+                  }
+                  comment += '\n';
+                }
+              }
+              
+              if (comment === '## Vale Style Guide Issues\n\n') {
+                comment = '## Vale Style Guide Issues\n\n✅ No style guide issues found!';
+              }
+              
+              github.rest.issues.createComment({
+                issue_number: context.issue.number,
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                body: comment
+              });
+            } catch (error) {
+              console.log('No Vale results to process');
+            }
