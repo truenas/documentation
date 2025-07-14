@@ -108,15 +108,6 @@ Any new feature flags introduced since the previous OpenZFS version that was int
 
 For more details on feature flags, see [OpenZFS Feature Flags](https://openzfs.github.io/openzfs-docs/Basic%20Concepts/Feature%20Flags.html) and [OpenZFS zpool-feature.7](https://openzfs.github.io/openzfs-docs/man/7/zpool-features.7.html).
 
-## 25.04.1.1
-
-**July 14, 2025**
-
-The TrueNAS team is pleased to release TrueNAS 25.04.1.1!
-
-This maintenance release contains a single change to prevent Active Directory interruptions for TrueNAS systems using the "AD" idmap backend ([NAS-135515](https://ixsystems.atlassian.net/browse/NAS-136590)).
-See the linked NAS ticket for more information.
-
 ## 25.04.1
 
 **May 27, 2025**
@@ -161,7 +152,7 @@ This is a maintenance release and includes refinements and fixes for issues disc
 ### 25.04.1 Known Issues
 
 * An update to the Microsoft Netlogon RPC protocol affects systems using the "AD" idmap backend for Active Directory. Users are not able to connect to the SMB service provided by Samba for any domain configured to use the "AD" idmap backend.
-  A fix is expected in the TrueNAS 25.04.1.1 release.
+  A fix is expected in the TrueNAS 25.04.2 release.
 
 * Some users of TrueNAS Apps attempting to configure GPU allocation report the error `Expected [uuid] to be set for GPU inslot [<some pci slot>] in [nvidia_gpu_selection])` (see ([NAS-134152](https://ixsystems.atlassian.net/browse/NAS-134152)).
 
