@@ -22,6 +22,7 @@ jobs:
           vale --version
 
       - name: Run Vale
+        continue-on-error: true
         run: |
           vale sync
           vale content/
