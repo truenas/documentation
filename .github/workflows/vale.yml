@@ -37,18 +37,51 @@ jobs:
               const valeResults = JSON.parse(fs.readFileSync('vale-results.json', 'utf8'));
               let comment = '## Vale Style Guide Issues\n\n';
               
+              // Count totals
+              let totalIssues = 0;
+              let errorCount = 0;
+              let warningCount = 0;
+              let suggestionCount = 0;
+              
               for (const [file, issues] of Object.entries(valeResults)) {
-                if (issues.length > 0) {
-                  comment += `### ${file}\n\n`;
-                  for (const issue of issues) {
-                    comment += `- **Line ${issue.Line}:${issue.Span[0]}** - ${issue.Severity}: ${issue.Message}\n`;
-                  }
-                  comment += '\n';
+                totalIssues += issues.length;
+                for (const issue of issues) {
+                  if (issue.Severity === 'error') errorCount++;
+                  else if (issue.Severity === 'warning') warningCount++;
+                  else suggestionCount++;
                 }
               }
               
-              if (comment === '## Vale Style Guide Issues\n\n') {
+              comment += `📊 **Summary**: ${totalIssues} issues found - ${errorCount} errors, ${warningCount} warnings, ${suggestionCount} suggestions\n\n`;
+              
+              if (totalIssues === 0) {
                 comment = '## Vale Style Guide Issues\n\n✅ No style guide issues found!';
+              } else {
+                comment += '**Top 10 files with most issues:**\n\n';
+                
+                // Sort files by issue count and show top 10
+                const sortedFiles = Object.entries(valeResults)
+                  .filter(([file, issues]) => issues.length > 0)
+                  .sort(([,a], [,b]) => b.length - a.length)
+                  .slice(0, 10);
+                
+                for (const [file, issues] of sortedFiles) {
+                  comment += `### ${file} (${issues.length} issues)\n\n`;
+                  
+                  // Show first 5 issues per file to keep comment manageable
+                  const issuesToShow = issues.slice(0, 5);
+                  for (const issue of issuesToShow) {
+                    comment += `- **Line ${issue.Line}:${issue.Span[0]}** - ${issue.Severity}: ${issue.Message}\n`;
+                  }
+                  
+                  if (issues.length > 5) {
+                    comment += `- ... and ${issues.length - 5} more issues\n`;
+                  }
+                  comment += '\n';
+                }
+                
+                comment += `\n📋 **Full results**: Check the workflow logs for complete details.\n`;
+                comment += `🔧 **To fix**: Review the issues above and update your documentation accordingly.`;
               }
               
               github.rest.issues.createComment({
