@@ -154,6 +154,15 @@ Any new feature flags introduced since the previous OpenZFS version that was int
 
 For more details on feature flags, see [OpenZFS Feature Flags](https://openzfs.github.io/openzfs-docs/Basic%20Concepts/Feature%20Flags.html) and [OpenZFS zpool-feature.7](https://openzfs.github.io/openzfs-docs/man/7/zpool-features.7.html).
 
+## 24.10.2.3
+
+**July 14, 2025**
+
+The TrueNAS team is pleased to release TrueNAS 24.10.2.3!
+
+This maintenance release contains a single change to prevent Active Directory interruptions for TrueNAS systems using the "AD" idmap backend ([NAS-135515](https://ixsystems.atlassian.net/browse/NAS-136590)).
+See the linked NAS ticket for more information.
+
 ## 24.10.2.2
 
 **May 13, 2025**
