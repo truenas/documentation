@@ -17,7 +17,8 @@ jobs:
 
       - name: Install Vale
         run: |
-          wget -O- https://install.goreleaser.com/github.com/ValeLint/vale.sh | sh -s -- -b /usr/local/bin
+          wget -qO- https://github.com/errata-ai/vale/releases/download/v3.12.0/vale_3.12.0_Linux_64-bit.tar.gz | tar -xzf - -C /usr/local/bin vale
+          chmod +x /usr/local/bin/vale
           vale --version
 
       - name: Run Vale
