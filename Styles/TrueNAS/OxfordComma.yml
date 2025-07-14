@@ -1,0 +1,6 @@
+extends: existence
+message: "Use Oxford comma before 'and' in lists"
+level: suggestion
+nonword: true
+tokens:
+  - '(?:\w+,\s+\w+)\s+and\s+\w+'

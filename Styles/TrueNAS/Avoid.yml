@@ -1,0 +1,18 @@
+extends: existence
+message: "Avoid using '%s'"
+level: warning
+ignorecase: true
+
+tokens:
+  - will
+  - 'ALL CAPS'
+  - underline
+  - 'semicolon'
+  - 'possessive'
+  - "\\b\\w+'s\\b"
+
+action:
+  name: replace
+  params:
+    - will
+    - present tense
