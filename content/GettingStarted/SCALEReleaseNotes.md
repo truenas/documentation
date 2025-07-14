@@ -173,6 +173,11 @@ This maintenance release is intended to assist the community with the TrueNAS Ap
 It contains a single change to backport app update logic from TrueNAS 25.04, allowing users who prefer to remain on 24.10 past the June 1 app migration cut-off to do so ([NAS-135515](https://ixsystems.atlassian.net/browse/NAS-135515)).
 See [TrueNAS Apps](https://www.truenas.com/docs/scale/24.10/gettingstarted/scalereleasenotes/#truenas-apps) in the 24.10 Upgrade Notes for more information.
 
+### Known Issues
+
+* An update to the Microsoft Netlogon RPC protocol affects systems using the "AD" idmap backend for Active Directory. Users are not able to connect to the SMB service provided by Samba for any domain configured to use the "AD" idmap backend.
+  A fix is expected in the TrueNAS 24.10.2.3 release.
+
 ## 24.10.2.1
 
 **April 3, 2025**
