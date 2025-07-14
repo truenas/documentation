@@ -156,7 +156,7 @@ For more details on feature flags, see [OpenZFS Feature Flags](https://openzfs.g
 
 ## 24.10.2.3
 
-**July 10, 2025**
+**July 14, 2025**
 
 The TrueNAS team is pleased to release TrueNAS 24.10.2.3!
 
