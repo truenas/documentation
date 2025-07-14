@@ -23,8 +23,8 @@ jobs:
           # Specify the Vale configuration file
           config: .vale.ini
           
-          # Files to lint (can be overridden by .vale.ini)
-          files: '**/*.{md,txt}'
+          # Files to lint
+          files: all
           
           # Use reviewdog for PR comments
           reporter: github-pr-review
