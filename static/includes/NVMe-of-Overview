@@ -1,0 +1,20 @@
+&NewLine;
+
+
+What is NVMe-oF?
+TrueNAS deployment of NVMe-oF shares provides a block share alternative to iSCSI and iSER available to Enterprise customers with vShpere 7. It is not supported in earlier VMWare releases of vSphere.
+
+Some benefits of NVMe-oF for Enterprise-level customers is lower latency due to streamlined command processing, higher IOPS capabilites, better CPU efficiency with fewer processing layers, and native support for parallelism and queuing.
+It does not require specialized network hardware unless deploying over RDMA or Fibre Channel.
+Both RDMA and Fibre Channel require TrueNaS Enterprise licenses, and the TrueNAS systems must be equipped with the appropriate hardware to support each transport type.
+
+Why choose NVMe/TCP?
+It excels with high-performance databases, virtualization environments, container storage, and for modern applications that require low-latency storage.
+
+Possible use case scenarios for NVMe-of are for system share administrators that want to:
+* Edit or disable NVMe-oF block storage shares, and start, restart, or stop the service from the TrueNAS UI
+* Get logs of who created the share and when, who makes modifications and when, and who disables NVMe-of shares and when.
+* Confirm connectivity and validate credentials during configuration or modification of the shares.
+* Allow read-only admins to view NVMe-oF share details but not allow them to edit or delete the shares.
+
+The NVMe-oF services is restored with no data loss during failover in High Availability (HA) systems.
