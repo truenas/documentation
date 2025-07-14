@@ -14,25 +14,13 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
 
       - name: Vale
         uses: errata-ai/vale-action@reviewdog
         with:
-          # Specify the Vale configuration file
-          config: .vale.ini
-          
-          # Files to lint
           files: all
-          
-          # Use reviewdog for PR comments
           reporter: github-pr-review
-          
-          # Fail on errors
           fail_on_error: true
-          
-          # Show suggestions in PR
           level: suggestion
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
