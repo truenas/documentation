@@ -24,4 +24,4 @@ jobs:
       - name: Run Vale
         run: |
           vale sync
-          vale .
+          vale content/
