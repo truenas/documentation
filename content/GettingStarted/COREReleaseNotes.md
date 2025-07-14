@@ -29,6 +29,15 @@ weight: 3
 
 * {{< include file="/static/includes/COREFeatureSupport.md" >}}
 
+## 13.0-U6.8
+
+**July 14, 2025**
+
+The TrueNAS team is pleased to release TrueNAS 13.0-U6.8!
+
+This maintenance release contains a single change to prevent Active Directory interruptions for TrueNAS systems using the "AD" idmap backend ([NAS-135515](https://ixsystems.atlassian.net/browse/NAS-136590)).
+See the linked NAS ticket for more information.
+
 ## 13.0-U6.7
 **January 24, 2025**
 
