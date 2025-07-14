@@ -21,15 +21,6 @@ jobs:
           chmod +x /usr/local/bin/vale
           vale --version
 
-      - name: Debug styles directory
-        run: |
-          echo "Contents of styles directory:"
-          ls -la styles/
-          echo "Contents of TrueNAS directory:"
-          ls -la styles/TrueNAS/
-          echo "TrueNAS meta.json:"
-          cat styles/TrueNAS/meta.json
-
       - name: Run Vale
         run: |
           vale sync
