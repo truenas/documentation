@@ -2,7 +2,7 @@
 
 The TrueNAS top navigation top toolbar provides access to functional areas of the UI that you might want to directly access while on other screens in the UI.
 Icon buttons provide quick access to dropdown lists of options, dropdown panels with information on system alerts or tasks, and can include access to other information or configuration screens.
-It also shows the name of the admin user currently logged into the system to the left of the **Settings** and **Power** icons.
+It also shows the name of the user currently logged into the system to the left of the **Settings** icon.
 
 You can also collapse or expand the main function menu on the left side of the screen.
 
@@ -14,10 +14,8 @@ The **Search UI** global search bar allows users to search for screens and eleme
 {{< include file="/static/includes/UsingGlobalSearch.md" >}}
 {{< /expand >}}
 
-{{< expand "iXsystems" "v" >}}
-The iXsystems logo opens the [iXsystems home page](https://www.ixsystems.com/), where users can find information about iXsystems storage and server systems.
-
-Users can also use the iXsystems home page to access their customer portal and the community section for support.
+{{< expand "TrueNAS" "v" >}}
+The TrueNAS logo returns to the **Dashboard** from any other screen.
 {{< /expand >}}
 
 {{< expand "Send Feedback" "v" >}}
@@ -26,6 +24,10 @@ Users can also use the iXsystems home page to access their customer portal and t
 
 {{< expand "Status of TrueCommand" "v" >}}
 {{< include file="/static/includes/StatusOfTrueCommand.md" >}}
+{{< /expand >}}
+
+{{< expand "Status of TrueNAS Connect" "v" >}}
+{{< include file="/static/includes/TNCService.md" >}}
 {{< /expand >}}
 
 {{< expand "Directory Services Monitor" "v" >}}
@@ -41,13 +43,13 @@ Users can also use the iXsystems home page to access their customer portal and t
 {{< /expand >}}
 
 {{< expand "Settings" "v" >}}
-The **Settings** <span class="material-icons">account_circle</span> icon opens a dropdown list of options to change passwords, set up user two-factor authentication, create and manage API keys, access the TrueNAS API guide, see information on the system, and to log out of the TrueNAS UI.
+The **Settings** <span class="material-icons">account_circle</span> icon opens a dropdown list of options to change passwords, modify two-factor authentication settings (when configured), create and manage API keys, access the TrueNAS documentation, and to log out of the TrueNAS UI.
 {{< expand "Change Password" >}}
 {{< include file="/static/includes/ChangeLoggedInUserPassword.md" >}}
 {{< /expand >}}
 
-{{< expand "API Keys" "v" >}}
-Click on **API Keys** <span class="material-icons">laptop</span> to add an API key.
+{{< expand "My API Keys" "v" >}}
+Click on **My API Keys** <span class="material-icons">laptop</span> to go to the [User API Keys]({{< ref "/SCALE/SCALEUIReference/TopToolbar/Settings/APIKeysScreen" >}}) screen.
 API keys identify an outside resource or application without a principal.
 For example, when adding a new system to TrueCommand if you are required to add an API key to authenticate the system.
 Use this function to create an API key for this purpose.
@@ -55,19 +57,15 @@ Use this function to create an API key for this purpose.
 Click **API Docs** to access the API documentation portal with information on TrueNAS API commands.
 
 See [API Keys]({{< ref "/SCALEUIReference/TopToolbar/Settings/APIKeysScreen" >}}) for more information on adding or managing API keys.
+See [API Keys]({{< ref "/SCALETutorials/TopToolbar/ManagingAPIKeys" >}}) for more information on adding or managing API keys.
 {{< /expand >}}
 
-{{< expand "Guide and About" "v" >}}
+{{< expand "Guide" "v" >}}
 Click on **Guide** <span class="material-icons">library_books</span> to open the TrueNAS Documentation Hub in a new tab.
-
-Click on **About** <span class="iconify" data-icon="ant-design:info-circle-outlined"></span> to display the information window with links to the TrueNAS Documentation Hub, TrueNAS Community Forums, FreeNAS Open Source Storage Appliance GitHub repository, and iXsystems home page.
-
-{{< trueimage src="/images/SCALE/Dashboard/TrueNASAboutScreenSCALE.png" alt="About Window" id="About Window" >}}
-
 {{< /expand >}}
 
 {{< expand "Log Out" "v" >}}
-**Log Out** logs the current user out of the TrueNAS UI, but does not power off the system. 
+**Log Out** logs the current user out of the TrueNAS UI, but does not power off the system.
 The **Read-Only Admin** and **Sharing Admin** roles only have access to the **Log Out** option.
 {{< /expand >}}
 {{< /expand >}}
