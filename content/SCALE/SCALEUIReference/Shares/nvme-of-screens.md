@@ -137,9 +137,10 @@ Use to set system-wide NVMe-oF settings. **Config Service** on the **NVMe-oF Sub
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Edit** | The name given to the subsystem at creation. The edit <span class="material-icons">edit</span> icon opens an edit field. Names can consist of upper and lower case alphabetic, numeric, and special characters such as the dash (-), underscore (_), etc. |
-| **Delete** | The NVMe Qualified Name (NQN) is used to identify the subsystem. The edit <span class="material-icons">edit</span> icon changes the NQN ID to an entry field. Enter a new number formatted as an NQN ID number. |
-| **Add** | Copies the NQN number to the clipboard. |
+| **Base NQN** | NQN is used as the prefix on the creation of a subsystem, if a subnqn is not supplied. Modifying this value does not change the subnqn of any existing subsystems. |
+| **Enable Asymmetric Namespace Access (ANA)** | Allows storage systems to inform hosts about the optimal controller path to access a namespace on Enterprise licensed systems. It is equivalent to Asymmetric Logical Unit Access (ALUA) in iSCSI. ANA helps storage arrays communicate to hosts which controller provides the best (lowest latency) path to specific namespaces, enabling intelligent multipathing and improved performance in NVMe-oF environments. |
+| **Enable Remote Direct Memory Access (RDMA)** | Allows configuring one or more ports with RDMA selected as the transport when enabled. Requires an Enterprise license, RDMA-capable system and network equipment. Inactive on systems without an Enterprise licenses, if not equipped with required hardware, shows **Not enabled, because this system does not support RDMA**. |
+| **Generate Cross-port Referrals for Ports on This System** | Allows xport_referral. If ANA is active, referrals are always generated between the peer ports on each TrueNAS controller node. |
 {{< /truetable >}}
 {{< /expand >}}
 
