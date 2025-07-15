@@ -4,176 +4,55 @@ description: "Highlights, change log, and known issues for TrueNAS 25.04 release
 weight: 10
 related: false
 ---
-{{< header logo="/images/tn-openstorage-logo.png" logo_alt="TrueNAS Logo" version="25.04 Fangtooth" icon="/images/Fangtooth_Icon.png" icon_alt="Fangtooth Icon" >}}
 
-## Features
+## Notable Changes and Known Issues
 
-{{< include file="/static/includes/25.04FeatureList.md" >}}
-
-## Obtaining a Release
-
-For adventurous users who want to experiment with the latest feature development, 25.04 (Fangtooth) nightly images are available from [the TrueNAS downloads server](https://download.truenas.com/truenas-scale-fangtooth-nightly/).
-
-More details are available from [Software Releases](https://www.truenas.com/docs/softwarereleases/).
-
-## Release Schedule
-
-{{< include file="/static/includes/ReleaseScheduleWarning.md" >}}
-
-{{< releaselist name=scale-releases defaultTab=2 >}}
-
-{{< expand "Software Lifecycle" "v" >}}
-{{< include file="/static/includes/SoftwareStatusPage.md" >}}
-{{< /expand >}}
-
-## Upgrade Notes
-
-{{< include file="/static/includes/UpgradeNotesBoilerplate.md" >}}
-
-* {{< include file="/static/includes/RESTAPIDeprecationNotice.md" >}}
-
-  {{< include file="/static/includes/APIDocs.md" >}}
-
-  You can access TrueNAS API documentation in the web interface by clicking <i class="material-icons" aria-hidden="true" title="laptop" style="vertical-align: top;">laptop</i> **My API Keys** on the top right toolbar <i class="material-icons" aria-hidden="true">account_circle</i> user settings dropdown menu to open the **User API Keys** screen.
-  Click **API Docs** to view API documentation.
-
-* 25.04 also introduces user-linked API access keys, allowing administrators to configure per-user access to the TrueNAS API.
-  Keys are revocable and can be configured to automatically expire on a preset date.
-  
-  {{< include file="/static/includes/API_AD.md" >}}
-
-  User-linked API keys allow for better integration of TrueNAS into third-party solutions.
-  Use this as a reference for projects that require direct TrueNAS integration.
-
-  {{< include file="/static/includes/APIKeyWarn.md" >}}
-
-  See [Managing API Keys]({{< ref "/scaletutorials/toptoolbar/managingapikeys" >}}) for more information.
-
-  * {{< include file="/static/includes/APIKeyMigrate.md" >}}
-
-* {{< include file="/static/includes/ConfigRestrictions.md" >}}
-
-* {{< include file="/static/includes/NetdataUI.md" >}}
-
-### Migrating Virtual Machines
-
-{{< include file="/static/includes/Incus.md" >}}
-
-{{< include file="/static/includes/MigratingVMs.md" >}}
-
-### TrueNAS Apps
-
-{{< include file="/static/includes/AppsUnversionedAdmonition.md" >}}
-
-{{< include file="/static/includes/AppsSupportTimeline.md" >}}
-
-### Upgrade Paths
-
-{{< include file="/static/includes/25.04UpgradeMethods.md" >}}
-
-{{< include file="/static/includes/SCALEUpgradePaths.md" >}}
-
-### Migrating from TrueNAS 13.0 or 13.3
-
-{{< include file="/static/includes/MigrateCOREtoSCALEWarning.md" >}}
-
-Depending on the specific system configuration, migrating from a FreeBSD-based TrueNAS version can be a straightforward or complicated process.
-See the [Migration articles]({{< ref "/GettingStarted/Migrate/" >}}) for cautions and notes about differences between each software and the migration process.
-
-{{< enterprise >}}
-{{< include file="/static/includes/EnterpriseMigrationSupport.md" >}}
-
-{{< expand "TrueNAS Enterprise Support" "v" >}}
-{{< include file="/static/includes/iXsystemsSupportContact.md" >}}
-
-{{< /expand >}}
-{{< /enterprise >}}
-
-## Component Versions
-
-Click the component version number to see release notes for that component.
-
-{{< component-versions "25.04" >}}
-
-### OpenZFS Feature Flags
-
-TrueNAS integrates many features provided by the upstream [OpenZFS project](https://openzfs.org/wiki/Main_Page).
-Any new feature flags introduced since the previous OpenZFS version that was integrated into TrueNAS (OpenZFS 2.2.99) are listed below:
-
-{{< truetable class="tn-blue" >}}
-| Feature Flag | GUID | Notes |
-|--------------|------|-------|
-| fast deduplication | [com.klarasystems:fast_dedup](https://openzfs.github.io/openzfs-docs/man/master/7/zpool-features.7.html#fast_dedup) | This flag is present in 24.10, but is now generally available through the TrueNAS UI. |
-{{< /truetable >}}
-
-For more details on feature flags, see [OpenZFS Feature Flags](https://openzfs.github.io/openzfs-docs/Basic%20Concepts/Feature%20Flags.html) and [OpenZFS zpool-feature.7](https://openzfs.github.io/openzfs-docs/man/7/zpool-features.7.html).
-
-## 25.04.1
-
-**May 27, 2025**
+<!-- Hugo-processed content for release notes tab box -->
+<div style="display: none;" id="release-tab-content-source">
+  <div data-tab-id="25.04.1-changes-and-issues" data-tab-label="25.04.1">
+May 27, 2025
 
 The TrueNAS team is pleased to release TrueNAS 25.04.1!
 This is a maintenance release and includes refinements and fixes for issues discovered after 24.04.0.
 
 ### 25.04.1 Notable Changes
 
-{{< enterprise >}}
+#### Enterprise Features
+
 * Support for account policy settings in TrueNAS Enterprise environments regarding password history, complexity, and aging ([NAS-135115](https://ixsystems.atlassian.net/browse/NAS-135115)).
-  Note: Administrators should contact TrueNAS Support before enabling STIG and FIPS security settings (see [Security Settings](/scale/25.04/scaletutorials/systemsettings/advanced/#security-settings) for details).
 * Add PAM-based session management for middleware ([NAS-127189](https://ixsystems.atlassian.net/browse/NAS-127189)).
-  For STIG compliant environments, the max number of simultaneous logins is 10.
-  Accounts are locked for 15 minutes after 3 consecutive failed login attempts.
-{{< /enterprise >}}
+
+#### General Improvements
+
 * Remove support for BOTH in share ACLs ([NAS-135183](https://ixsystems.atlassian.net/browse/NAS-135183)).
 * Persist updated GMail OAuth refresh token to prevent deauthentication ([NAS-135394](https://ixsystems.atlassian.net/browse/NAS-135394)).
 * Improvements to **Instances**, including:
   * Allow the same host path to be mounted inside multiple containers ([NAS-135371](https://ixsystems.atlassian.net/browse/NAS-135371)).
   * ARC scaling and eviction fixes to prevent VM crashes due to OOM errors ([NAS-135904](https://ixsystems.atlassian.net/browse/NAS-135904)).
   * Enhanced robustness of the **Instances** screen to handle edge-case configurations ([NAS-135098](https://ixsystems.atlassian.net/browse/NAS-135098)).
-  * Add a synthetic container root user ([NAS-135375](https://ixsystems.atlassian.net/browse/NAS-135375)).
-    This adds a built-in unprivileged root user for containers: **truenas_container_unpriv_root**.
-    This account can be used in permissions related APIs / UI forms to grant permissions aligning to root in VMs and containers (see [Managing Instance Permissions](/scaletutorials/instances/#managing-instance-permissions)).
-  * Improved error handling when instance ports conflict with other service or application configurations ([NAS-134963](https://ixsystems.atlassian.net/browse/NAS-134963)).
-  * Prevent accidental deletion of built-in idmap entries ([NAS-135475](https://ixsystems.atlassian.net/browse/NAS-135475)).
-  * Improved validation for attaching and removing zvols from instances ([NAS-135308](https://ixsystems.atlassian.net/browse/NAS-135308)).
 * Increase middlewared.service timeout to prevent boot failure when upgrading systems with slow boot drives ([NAS-135663](https://ixsystems.atlassian.net/browse/NAS-135663)).
 * Prevent JSON decode crash in smartctl output to fix issues with disk temperature reporting ([NAS-135527](https://ixsystems.atlassian.net/browse/NAS-135527)).
 * Fix TrueNAS UI authentication with IPv6 entries in **Allowed IP Addresses** ([NAS-135361](https://ixsystems.atlassian.net/browse/NAS-135361)).
 * Fix SSH service startup with auxiliary parameters enabled ([NAS-135367](https://ixsystems.atlassian.net/browse/NAS-135367)).
-* Improve human-readable formatting of TrueCloud Backup log ([NAS-134491](https://ixsystems.atlassian.net/browse/NAS-134491)).
-* Change how oplocks are handled for multiprotocol shares ([NAS-135040](https://ixsystems.atlassian.net/browse/NAS-135040)).
-  Removes kernel oplocks in favor of disabling oplocks on a per-share basis when they have been flagged for mixed-mode use.
-  This avoids issues observed in the field with kernel lease breaks causing client timeouts as well allowing SMB leases globally, resolving limitations on multiprotocol shares and Time Machine backup seen in 25.04.0.
-* Fix API calls when connected to legacy `/websocket` endpoints ([NAS-135643](https://ixsystems.atlassian.net/browse/NAS-135643)).
 
-<a href="https://ixsystems.atlassian.net/issues/?filter=12503" target="_blank">Click here for the full changelog</a> of completed tickets that are included in the 25.04.1 release.
-{{< include file="/static/includes/JiraFilterInstructions.md" >}}
+[Click here for the full changelog](https://ixsystems.atlassian.net/issues/?filter=12503) of completed tickets included in the 25.04.1 release.
 
 ### 25.04.1 Known Issues
 
-* Some users of TrueNAS Apps attempting to configure GPU allocation report the error `Expected [uuid] to be set for GPU inslot [<some pci slot>] in [nvidia_gpu_selection])` (see ([NAS-134152](https://ixsystems.atlassian.net/browse/NAS-134152)).
+* Some users of TrueNAS Apps attempting to configure GPU allocation report UUID-related errors ([NAS-134152](https://ixsystems.atlassian.net/browse/NAS-134152)).
 
-  Users experiencing this error should follow the steps below for a one-time fix that should not need to be repeated.
+* Custom applications with TTY enabled do not display logs in the TrueNAS UI. Users can resolve this by either disabling TTY or using Docker logs from the command line.
 
-  Connect to a shell session and retrieve the UUID for each GPU with the command `midclt call app.gpu_choices | jq`.
+* TrueNAS UI displays **Updates Available** button after updating to the latest release ([NAS-136046](https://ixsystems.atlassian.net/browse/NAS-136046)).
 
-  For each application that experiences the error, run `midclt call -j app.update APP_NAME '{"values": {"resources": {"gpus": {"use_all_gpus": false, "nvidia_gpu_selection": {"PCI_SLOT": {"use_gpu": true, "uuid": "GPU_UUID"}}}}}}'`
-  Where:
-  * `APP_NAME` is the name you entered in the application, for example, “plex”.
-  * `PCI_SLOT` is the PCI slot identified in the error, for example "0000:2d:00.0”.
-  * `GPU_UUID` is the UUID matching the PCI slot that you retrieved with the above command.
-* Custom applications with TTY enabled do not display logs in the TrueNAS UI. This is due to an upstream bug, see https://github.com/docker/docker-py/issues/1394. Users experiencing this issue can resolve it by either disabling TTY or using `docker logs` from the command line.
-* TrueNAS UI displays **Updates Available** button after updating to the latest release (see ([NAS-136046](https://ixsystems.atlassian.net/browse/NAS-136046)).
-  This issue is resolved in the upcoming 25.04.2 release, but if you want to work around this issue now, follow these steps:
-  1. Open the **Shell** and run `midclt call systemdataset.config | jq ."path"`
-  2. Search for a file named **update.sqsh** in the returned string using `find "returned path" -name update.sqsh`
-  3. Run `rm -f <full-path-to-update.sqsh>`, replacing `<full-path-to-update.sqsh>` with the **full** file path to the **update.sqsh** file from the previous step
-     
-<a href="https://ixsystems.atlassian.net/issues/?filter=12504" target="_blank">Click here to see the latest information</a> about public issues in 25.04.1 that are being resolved in a future TrueNAS release.
+* An update to the Microsoft Netlogon RPC protocol affects systems using the "AD" idmap backend for Active Directory. Users are not able to connect to the SMB service provided by Samba for any domain configured to use the "AD" idmap backend.
+  A fix is expected in the TrueNAS 25.04.1.1 release.
 
-## 25.04.0
-{{< expand "Click to expand" "v" >}}
-**April 15, 2025**
+[Click here for the latest information](https://ixsystems.atlassian.net/issues/?filter=12504) about public issues in 25.04.1.
+  </div>
+  
+  <div data-tab-id="25.04.0-changes-and-issues" data-tab-label="25.04.0">
+April 15, 2025
 
 The TrueNAS team is pleased to release TrueNAS 25.04.0!
 This is the first stable release of TrueNAS SCALE 25.04 (Fangtooth). It includes numerous software component updates and polished features, as well as fixes for issues discovered in 25.04-RC.1.
@@ -205,36 +84,33 @@ Notable changes since 25.04-RC.1:
 ### 25.04.0 Known Issues
 
 * The SSH service does not start if certain user-provided SSH auxiliary parameters are configured ([NAS-135367](https://ixsystems.atlassian.net/browse/NAS-135367)).
-  This is known to affect `match` parameters minimally, but might impact other parameters as well.
+  This is known to affect <code>match</code> parameters minimally, but might impact other parameters as well.
 
 * A validation check intended to prevent users from creating multiple VMs from the same zvol source has the unintended consequence of preventing attaching the same virtual disk to multiple Instance containers ([NAS-135371](https://ixsystems.atlassian.net/browse/NAS-135371)).
 
-* Some users of TrueNAS Apps attempting to configure GPU allocation report the error `Expected [uuid] to be set for GPU inslot [<some pci slot>] in [nvidia_gpu_selection])` (see ([NAS-134152](https://ixsystems.atlassian.net/browse/NAS-134152)).
+* Some users of TrueNAS Apps attempting to configure GPU allocation report the error <code>Expected [uuid] to be set for GPU inslot [<some pci slot>] in [nvidia_gpu_selection])</code> (see ([NAS-134152](https://ixsystems.atlassian.net/browse/NAS-134152)).
 
   Users experiencing this error should follow the steps below for a one-time fix that should not need to be repeated.
 
-  Connect to a shell session and retrieve the UUID for each GPU with the command `midclt call app.gpu_choices | jq`.
+  Connect to a shell session and retrieve the UUID for each GPU with the command <code>midclt call app.gpu_choices | jq</code>.
 
-  For each application that experiences the error, run `midclt call -j app.update APP_NAME '{"values": {"resources": {"gpus": {"use_all_gpus": false, "nvidia_gpu_selection": {"PCI_SLOT": {"use_gpu": true, "uuid": "GPU_UUID"}}}}}}'`
+  For each application that experiences the error, run <code>midclt call -j app.update APP_NAME '{"values": {"resources": {"gpus": {"use_all_gpus": false, "nvidia_gpu_selection": {"PCI_SLOT": {"use_gpu": true, "uuid": "GPU_UUID"}}}}}}'</code>
   Where:
-  * `APP_NAME` is the name you entered in the application, for example, “plex”.
-  * `PCI_SLOT` is the PCI slot identified in the error, for example "0000:2d:00.0”.
-  * `GPU_UUID` is the UUID matching the PCI slot that you retrieved with the above command.
-* Custom applications with TTY enabled do not display logs in the TrueNAS UI. This is due to an upstream bug, see https://github.com/docker/docker-py/issues/1394. Users experiencing this issue can resolve it by either disabling TTY or using `docker logs` from the command line.
+  * <code>APP_NAME</code> is the name you entered in the application, for example, "plex".
+  * <code>PCI_SLOT</code> is the PCI slot identified in the error, for example "0000:2d:00.0".
+  * <code>GPU_UUID</code> is the UUID matching the PCI slot that you retrieved with the above command.
+* Custom applications with TTY enabled do not display logs in the TrueNAS UI. This is due to an upstream bug, see https://github.com/docker/docker-py/issues/1394. Users experiencing this issue can resolve it by either disabling TTY or using <code>docker logs</code> from the command line.
 
 <a href="https://ixsystems.atlassian.net/issues/?filter=12306" target="_blank">Click here to see the latest information</a> about public issues discovered in 25.04.0 that are being resolved in a future TrueNAS release.
-{{< /expand >}}
-
-## 25.04-RC.1
-
-{{< expand "Click to expand" "v" >}}
-
+  </div>
+  
+  <div data-tab-id="25.04-rc.1-changes-and-issues" data-tab-label="25.04-RC.1">
 {{< hint type=warning title="Early Release Software" >}}
 Early releases are intended for testing and feedback purposes.
 Do not use early-release software for critical tasks.
 {{< /hint >}}
 
-**March 11, 2025**
+March 11, 2025
 
 The TrueNAS team is pleased to release TrueNAS 25.04-RC.1!
 This release candidate version has software component updates and new features that are in the polishing phase as well as fixes for issues discovered in 25.04-BETA.1.
@@ -245,7 +121,7 @@ Special thanks to (Github users) René, jnbastoky, Bas Nijholt, jbsamcho, t0b3, 
 
 * To prevent excessive resource usage, especially on systems with large HDD storage pools, SMART test results no longer appear directly on the **Storage** dashboard.
   Click **View S.M.A.R.T. Tests** on the **Disk Health** widget to open the **S.M.A.R.T. Test Results of *POOL*** screen.
-* To improve stability and prevent unsupported SMB configurations from breaking on [migration from TrueNAS CORE]({{< ref "/GettingStarted/Migrate/" >}}), TrueNAS automatically removes the SMB auxiliary parameters `wide links`, `use sendfile`, `vfs objects`, and `allow insecure` during migration ([NAS-132911](https://ixsystems.atlassian.net/browse/NAS-132911)).
+* To improve stability and prevent unsupported SMB configurations from breaking on [migration from TrueNAS CORE]({{< ref "/GettingStarted/Migrate/" >}}), TrueNAS automatically removes the SMB auxiliary parameters <code>wide links</code>, <code>use sendfile</code>, <code>vfs objects</code>, and <code>allow insecure</code> during migration ([NAS-132911](https://ixsystems.atlassian.net/browse/NAS-132911)).
 * To prevent unexpected failures in SMB shares, TrueNAS automatically disables SMB2/3 lease support and AAPL extensions (typically used to configure Time Machine) globally when [multiprotocol SMB/NFS shares]({{< ref "MixedModeShares" >}}) are enabled ([NAS-133680](https://ixsystems.atlassian.net/browse/NAS-133680)).
 * Reserve 2 GiB of disk space (but no more than 1%) to allow the data disk to be replaced with a slightly smaller one in the future ([NAS-134309](https://ixsystems.atlassian.net/browse/NAS-134309)).
 * Bugfix: Ensure disk temperature reporting is available for all disks ([NAS-130766](https://ixsystems.atlassian.net/browse/NAS-130766)).
@@ -263,32 +139,28 @@ Special thanks to (Github users) René, jnbastoky, Bas Nijholt, jbsamcho, t0b3, 
     Users testing instances in 25.04-RC.1 can use the **apps** user and group (568:568) to set permissions with consistent mapping in the TrueNAS host and containers.
   * In 25.04-RC.1, VirtIO is the only available IO bus for VMs, which complicates deployment of VMs using OS images that do not natively support VirtIO, see ([NAS-134250](https://ixsystems.atlassian.net/browse/NAS-134250)).
     Additional IO bus options are expected in 25.04.0 ([NAS-134393](https://ixsystems.atlassian.net/browse/NAS-134393)).
-* Some users of TrueNAS Apps attempting to configure GPU allocation report the error `Expected [uuid] to be set for GPU inslot [<some pci slot>] in [nvidia_gpu_selection])` (see ([NAS-134152](https://ixsystems.atlassian.net/browse/NAS-134152)).
+* Some users of TrueNAS Apps attempting to configure GPU allocation report the error <code>Expected [uuid] to be set for GPU inslot [<some pci slot>] in [nvidia_gpu_selection])</code> (see ([NAS-134152](https://ixsystems.atlassian.net/browse/NAS-134152)).
 
   Users experiencing this error should follow the steps below for a one-time fix that should not need to be repeated.
 
-  Connect to a shell session and retrieve the UUID for each GPU with the command `midclt call app.gpu_choices | jq`.
+  Connect to a shell session and retrieve the UUID for each GPU with the command <code>midclt call app.gpu_choices | jq</code>.
 
-  For each application that experiences the error, run `midclt call -j app.update APP_NAME '{"values": {"resources": {"gpus": {"use_all_gpus": false, "nvidia_gpu_selection": {"PCI_SLOT": {"use_gpu": true, "uuid": "GPU_UUID"}}}}}}'`
+  For each application that experiences the error, run <code>midclt call -j app.update APP_NAME '{"values": {"resources": {"gpus": {"use_all_gpus": false, "nvidia_gpu_selection": {"PCI_SLOT": {"use_gpu": true, "uuid": "GPU_UUID"}}}}}}'</code>
   Where:
-    * `APP_NAME` is the name you entered in the application, for example, “plex”.
-    * `PCI_SLOT` is the PCI slot identified in the error, for example "0000:2d:00.0”.
-    * `GPU_UUID` is the UUID matching the PCI slot that you retrieved with the above command.
+    * <code>APP_NAME</code> is the name you entered in the application, for example, "plex".
+    * <code>PCI_SLOT</code> is the PCI slot identified in the error, for example "0000:2d:00.0".
+    * <code>GPU_UUID</code> is the UUID matching the PCI slot that you retrieved with the above command.
 
 <a href="https://ixsystems.atlassian.net/issues/?filter=11975" target="_blank">Click here to see the latest information</a> about public issues discovered in 25.04-BETA.1 that are being resolved in a future TrueNAS release.
-
-{{< /expand >}}
-
-## 25.04-BETA.1
-
-{{< expand "Click to expand" "v" >}}
-
+  </div>
+  
+  <div data-tab-id="25.04-beta.1-changes-and-issues" data-tab-label="25.04-BETA.1">
 {{< hint type=warning title="Early Release Software" >}}
 Early releases are intended for testing and feedback purposes.
 Do not use early-release software for critical tasks.
 {{< /hint >}}
 
-**February 13, 2025**
+February 13, 2025
 
 The TrueNAS team is pleased to release TrueNAS 25.04-BETA.1!
 This first public release version of TrueNAS 25.04 (Fangtooth) has software component updates and new features that are in the polishing phase.
@@ -318,17 +190,195 @@ This first public release version of TrueNAS 25.04 (Fangtooth) has software comp
 
 * An issue has been discovered for cloud sync tasks configured with file name encryption, which is available in **Advanced Remote Options** ([NAS-132472](https://ixsystems.atlassian.net/browse/NAS-132472)). As this is an upstream issue in rclone, we recommend that users should not create new cloud sync tasks with the **Filename Encryption** setting enabled. Existing users of this feature must leave it enabled for existing cloud sync tasks to be able to recover backups.
 * Unable to Create dataset under disks while configuring a new virtualization Instance ([NAS-134151](https://ixsystems.atlassian.net/browse/NAS-134151)).
-* UUID related traceback when activating NVIDIA GPU for Jellyfin app: `base_v2_1_14.error.RenderError: Expected [uuid] to be set for GPU in slot [0000:01:00.0] in [nvidia_gpu_selection]` ([NAS-134152](https://ixsystems.atlassian.net/browse/NAS-134152)).
+* UUID related traceback when activating NVIDIA GPU for Jellyfin app: <code>base_v2_1_14.error.RenderError: Expected [uuid] to be set for GPU in slot [0000:01:00.0] in [nvidia_gpu_selection]</code> ([NAS-134152](https://ixsystems.atlassian.net/browse/NAS-134152)).
 
   Users experiencing this error should follow the steps below for a one-time fix that should not need to be repeated.
 
-  Connect to a shell session and retrieve the UUID for each GPU with the command `midclt call app.gpu_choices | jq`.
+  Connect to a shell session and retrieve the UUID for each GPU with the command <code>midclt call app.gpu_choices | jq</code>.
 
-  For each application that experiences the error, run `midclt call -j app.update APP_NAME '{"values": {"resources": {"gpus": {"use_all_gpus": false, "nvidia_gpu_selection": {"PCI_SLOT": {"use_gpu": true, "uuid": "GPU_UUID"}}}}}}'`
+  For each application that experiences the error, run <code>midclt call -j app.update APP_NAME '{"values": {"resources": {"gpus": {"use_all_gpus": false, "nvidia_gpu_selection": {"PCI_SLOT": {"use_gpu": true, "uuid": "GPU_UUID"}}}}}}'</code>
   Where:
-    * `APP_NAME` is the name you entered in the application, for example, “plex”.
-    * `PCI_SLOT` is the PCI slot identified in the error, for example "0000:2d:00.0”.
-    * `GPU_UUID` is the UUID matching the PCI slot that you retrieved with the above command.
+    * <code>APP_NAME</code> is the name you entered in the application, for example, "plex".
+    * <code>PCI_SLOT</code> is the PCI slot identified in the error, for example "0000:2d:00.0".
+    * <code>GPU_UUID</code> is the UUID matching the PCI slot that you retrieved with the above command.
 
 <a href="https://ixsystems.atlassian.net/issues/?filter=11745" target="_blank">Click here to see the latest information</a> about public issues discovered in 25.04-BETA.1 that are being resolved in a future TrueNAS release.
+  </div>
+</div>
+
+<!-- Linkable Tab Box -->
+<div id="release-tabs-container"></div>
+
+<script src="/js/linkable-tabs.js?v=3.1"></script>
+<script>
+// Initialize linkable tabs with Hugo-processed content
+document.addEventListener('DOMContentLoaded', function() {
+    // Extract all tab content from Hugo-processed divs
+    const tabSource = document.getElementById('release-tab-content-source');
+    const tabDivs = tabSource.querySelectorAll('[data-tab-id]');
+    
+    const tabs = Array.from(tabDivs).map(div => ({
+        id: div.getAttribute('data-tab-id'),
+        label: div.getAttribute('data-tab-label'),
+        content: div.innerHTML
+    }));
+    
+    createLinkableTabs('release-tabs-container', tabs, {
+        defaultTab: '25.04.1-changes-and-issues',
+        urlHashEnabled: true,
+        enableMarkdown: false // Hugo already processed the content
+    });
+});
+</script>
+
+### Full 25.04 Changelog
+
+{{< expand "Click to expand" "v" >}}
+<!-- CSV Changelog Table with Version Support -->
+<div id="csv-changelog-container"></div>
+
+<script src="/js/csv-changelog-table.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    createCSVChangelogTable('/data', 'csv-changelog-container', {
+        useVersioning: true,
+        versions: [
+            { value: 'all', label: '25.04 (All)', filename: 'scale-25.04-changelog.csv' },
+            { value: '25.04.1', label: '25.04.1', filename: 'scale-25.04.1-changelog.csv' },
+            { value: '25.04.0', label: '25.04.0', filename: 'scale-25.04.0-changelog.csv' },
+            { value: '25.04-RC.1', label: '25.04-RC.1', filename: 'scale-25.04-RC.1-changelog.csv' },
+            { value: '25.04-BETA.1', label: '25.04-BETA.1', filename: 'scale-25.04-BETA.1-changelog.csv' }
+        ],
+        defaultVersion: 'all'
+    });
+});
+</script>
 {{< /expand >}}
+
+## Upgrading to 25.04
+
+<!-- Hugo-processed content for upgrade notes tab box -->
+<div style="display: none;" id="tab-content-source">
+  <div data-tab-id="25.04-upgrade-notes" data-tab-label="Upgrade Notes">
+
+{{< include file="/static/includes/UpgradeNotesBoilerplate.md" >}}
+
+* 25.04 has many API changes. If you use the API or API keys, read through the API changes before upgrading.
+{{< expand "See all API Changes" "v" >}}
+{{< include file="/static/includes/RESTAPIDeprecationNotice.md" >}}
+
+  {{< include file="/static/includes/APIDocs.md" >}}
+
+  You can access TrueNAS API documentation in the web interface by clicking <i class="material-icons" aria-hidden="true" title="laptop" style="vertical-align: top;">laptop</i> **My API Keys** on the top right toolbar <i class="material-icons" aria-hidden="true">account_circle</i> user settings dropdown menu to open the **User API Keys** screen.
+  Click **API Docs** to view API documentation.
+
+* 25.04 also introduces user-linked API access keys, allowing administrators to configure per-user access to the TrueNAS API.
+  Keys are revocable and can be configured to automatically expire on a preset date.
+  
+  {{< include file="/static/includes/API_AD.md" >}}
+
+  User-linked API keys allow for better integration of TrueNAS into third-party solutions.
+  Use this as a reference for projects that require direct TrueNAS integration.
+
+  {{< include file="/static/includes/APIKeyWarn.md" >}}
+
+  See [Managing API Keys]({{< ref "/scaletutorials/toptoolbar/managingapikeys" >}}) for more information.
+
+  * {{< include file="/static/includes/APIKeyMigrate.md" >}}
+{{< /expand >}}
+
+* {{< include file="/static/includes/ConfigRestrictions.md" >}}
+
+* {{< include file="/static/includes/NetdataUI.md" >}}
+  </div>
+  
+  <div data-tab-id="25.04-migrating-virtual-machines" data-tab-label="Migrating Virtual Machines">
+### Migrating Virtual Machines
+
+{{< include file="/static/includes/MigratingVMs.md" >}}
+  </div>
+
+  <div data-tab-id="25.04-truenas-apps" data-tab-label="TrueNAS Apps">
+
+### TrueNAS Apps
+
+{{< include file="/static/includes/AppsUnversionedAdmonition.md" >}}
+
+{{< include file="/static/includes/AppsSupportTimeline.md" >}}
+  </div>
+
+  <div data-tab-id="25.04-upgrade-paths" data-tab-label="Upgrade Paths">
+
+### Upgrade Paths
+
+{{< include file="/static/includes/25.04UpgradeMethods.md" >}}
+
+{{< include file="/static/includes/SCALEUpgradePaths.md" >}}
+  </div>  
+  <div data-tab-id="25.04-migrating-from-tn13" data-tab-label="Migrating from TrueNAS 13.0 or 13.3">
+
+### Migrating from TrueNAS 13.0 or 13.3
+
+{{< include file="/static/includes/MigrateCOREtoSCALEWarning.md" >}}
+
+Depending on the specific system configuration, migrating from a FreeBSD-based TrueNAS version can be a straightforward or complicated process.
+See the [Migration articles]({{< ref "/GettingStarted/Migrate/" >}}) for cautions and notes about differences between each software and the migration process.
+
+{{< enterprise >}}
+{{< include file="/static/includes/EnterpriseMigrationSupport.md" >}}
+
+{{< expand "TrueNAS Enterprise Support" "v" >}}
+{{< include file="/static/includes/iXsystemsSupportContact.md" >}}
+
+{{< /expand >}}
+{{< /enterprise >}}
+  </div>  
+</div>
+
+<!-- Linkable Tab Box -->
+<div id="upgrade-notes-container"></div>
+
+<script src="/js/linkable-tabs.js?v=3.1"></script>
+<script>
+// Initialize linkable tabs with Hugo-processed content
+document.addEventListener('DOMContentLoaded', function() {
+    // Extract all tab content from Hugo-processed divs
+    const tabSource = document.getElementById('tab-content-source');
+    const tabDivs = tabSource.querySelectorAll('[data-tab-id]');
+    
+    const tabs = Array.from(tabDivs).map(div => ({
+        id: div.getAttribute('data-tab-id'),
+        label: div.getAttribute('data-tab-label'),
+        content: div.innerHTML
+    }));
+    
+    createLinkableTabs('upgrade-notes-container', tabs, {
+        defaultTab: '25.04-upgrade-notes',
+        urlHashEnabled: true,
+        enableMarkdown: true
+    });
+});
+</script>
+
+
+
+
+
+## Component Versions
+
+Click the component version number to see release notes for that component.
+
+{{< component-versions "25.04" >}}
+
+### OpenZFS Feature Flags
+
+TrueNAS integrates many features provided by the upstream [OpenZFS project](https://openzfs.org/wiki/Main_Page).
+Any new feature flags introduced since the previous OpenZFS version that was integrated into TrueNAS (OpenZFS 2.2.99) are listed below:
+
+{{< truetable class="tn-blue" >}}
+| Feature Flag | GUID | Notes |
+|--------------|------|-------|
+| fast deduplication | [com.klarasystems:fast_dedup](https://openzfs.github.io/openzfs-docs/man/master/7/zpool-features.7.html#fast_dedup) | This flag is present in 24.10, but is now generally available through the TrueNAS UI. |
+{{< /truetable >}}
+
+For more details on feature flags, see [OpenZFS Feature Flags](https://openzfs.github.io/openzfs-docs/Basic%20Concepts/Feature%20Flags.html) and [OpenZFS zpool-feature.7](https://openzfs.github.io/openzfs-docs/man/7/zpool-features.7.html).
