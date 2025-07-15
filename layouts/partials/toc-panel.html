@@ -8,16 +8,68 @@
           var headers = document.querySelectorAll('.gdoc-page h2, .gdoc-page h3, .gdoc-page h4');
           
           headers.forEach(function(header) {
-            // Ignore headers within <details> elements
-            if (!header.closest('details')) {
+            // Ignore headers within <details> elements or hidden tab content
+            if (!header.closest('details') && 
+                !header.closest('#release-tab-content-source') && 
+                !header.closest('#tab-content-source')) {
               var level = header.tagName.toLowerCase().replace('h', '');
               var text = header.innerText;
-              var anchor = text.toLowerCase().replace(/[^\w\s-]/g, '').replace(/\s/g, '-');
+              var anchor = text.toLowerCase()
+                .replace(/[^\w\s-]/g, '')
+                .replace(/\s+/g, '-')
+                .replace(/-+/g, '-')
+                .replace(/^-|-$/g, '');
 
               var tocItem = document.createElement('li');
               var tocLink = document.createElement('a');
               tocLink.textContent = text;
               tocLink.href = '#' + anchor;
+
+              // Add click handler to trigger deep linking
+              tocLink.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Check if this header might be in a tab box
+                var allTabSources = document.querySelectorAll('#release-tab-content-source, #tab-content-source');
+                var headerInTab = false;
+                
+                allTabSources.forEach(function(tabSource) {
+                  var tabHeaders = tabSource.querySelectorAll('h2, h3, h4');
+                  tabHeaders.forEach(function(tabHeader) {
+                    var tabHeaderText = (tabHeader.innerText || tabHeader.textContent).trim();
+                    var tabHeaderAnchor = tabHeaderText.toLowerCase()
+                      .replace(/[^\w\s-]/g, '')
+                      .replace(/\s+/g, '-')
+                      .replace(/-+/g, '-')
+                      .replace(/^-|-$/g, '');
+                    
+                    if (tabHeaderAnchor === anchor) {
+                      headerInTab = true;
+                    }
+                  });
+                });
+                
+                if (headerInTab) {
+                  // Header is in a tab - use deep linking
+                  window.location.hash = anchor;
+                } else {
+                  // Regular header - use normal scrolling
+                  var targetHeader = document.getElementById(anchor);
+                  if (targetHeader) {
+                    var headerRect = targetHeader.getBoundingClientRect();
+                    var absoluteTop = headerRect.top + window.pageYOffset;
+                    var offset = 150; // Same offset as deep linking
+                    
+                    window.scrollTo({
+                      top: Math.max(0, absoluteTop - offset),
+                      behavior: 'smooth'
+                    });
+                  }
+                  
+                  // Update URL without triggering hashchange
+                  history.replaceState(null, null, '#' + anchor);
+                }
+              });
 
               tocItem.appendChild(tocLink);
               tocList.appendChild(tocItem);
