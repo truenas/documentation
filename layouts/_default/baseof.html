@@ -67,9 +67,11 @@
                     {{ partial "menu-nextprev" . }}
                 </div>
             </div>
+            {{ if not .Page.Params.hide_toc }}
             <aside class="sidebar-right">
                 {{ partial "toc-panel" . }}
             </aside>
+            {{ end }}
         </main>
         {{ partial "site-footer" . }}
     </div>

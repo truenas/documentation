@@ -3,6 +3,17 @@ title: "25.04 (Fangtooth) Version Notes"
 description: "Highlights, change log, and known issues for TrueNAS 25.04 release versions."
 weight: 10
 related: false
+use_jump_to_buttons: true
+jump_to_buttons:
+  - text: "Notable Changes and Known Issues"
+    anchor: "notable-changes-and-known-issues"
+    icon: "clipboard-text"
+  - text: "Upgrade Paths"
+    anchor: "upgrade-paths"
+    icon: "conversion-path"
+  - text: "Component Versions"
+    anchor: "component-versions"
+    icon: "component-versions"
 ---
 
 ## Notable Changes and Known Issues
@@ -14,6 +25,10 @@ May 27, 2025
 
 The TrueNAS team is pleased to release TrueNAS 25.04.1!
 This is a maintenance release and includes refinements and fixes for issues discovered after 24.04.0.
+
+{{< hint type=tip >}}
+As always, we encourage users to review the [Upgrading TrueNAS](/gettingstarted/scalereleasenotes/#upgrading-truenas) section before upgrading the system to 25.04.1.
+{{< /hint >}}
 
 ### 25.04.1 Notable Changes
 
@@ -209,7 +224,7 @@ This first public release version of TrueNAS 25.04 (Fangtooth) has software comp
 <!-- Linkable Tab Box -->
 <div id="release-tabs-container"></div>
 
-<script src="/js/linkable-tabs.js?v=3.1"></script>
+<script src="/js/linkable-tabs.js?v=3.4"></script>
 <script>
 // Initialize linkable tabs with Hugo-processed content
 document.addEventListener('DOMContentLoaded', function() {
@@ -255,7 +270,7 @@ document.addEventListener('DOMContentLoaded', function() {
 </script>
 {{< /expand >}}
 
-## Upgrading to 25.04
+## Upgrading TrueNAS
 
 <!-- Hugo-processed content for upgrade notes tab box -->
 <div style="display: none;" id="tab-content-source">
@@ -338,7 +353,7 @@ See the [Migration articles]({{< ref "/GettingStarted/Migrate/" >}}) for caution
 <!-- Linkable Tab Box -->
 <div id="upgrade-notes-container"></div>
 
-<script src="/js/linkable-tabs.js?v=3.1"></script>
+<script src="/js/linkable-tabs.js?v=3.4"></script>
 <script>
 // Initialize linkable tabs with Hugo-processed content
 document.addEventListener('DOMContentLoaded', function() {

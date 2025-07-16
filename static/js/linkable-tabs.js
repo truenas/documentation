@@ -2,7 +2,7 @@
  * Linkable Tab Box JavaScript - TrueNAS themed tabs with URL linking
  * Supports dark/light mode, matches TrueNAS styling, and processes Markdown
  * 
- * Version: 3.1 - Fixed auto-scroll functionality
+ * Version: 3.4 - Updated hover color to #36bdeb
  */
 
 class LinkableTabBox {
@@ -41,9 +41,10 @@ class LinkableTabBox {
         styleSheet.id = 'linkable-tabs-styles';
         styleSheet.textContent = `
             .linkable-tabs-wrapper {
-                --truenas-primary: #0095d5;
-                --truenas-primary-hover: #0084c0;
+                --truenas-primary: #1194d2;
+                --truenas-primary-hover: #36bdeb;
                 --truenas-secondary: #71bf44;
+                --truenas-inactive: #adadad;
                 font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
                 margin: 20px 0;
             }
@@ -58,8 +59,8 @@ class LinkableTabBox {
             }
             
             .linkable-tab-button {
-                background: var(--accent-color-lite, #f8f9fa);
-                color: var(--body-font-color, #333);
+                background: var(--truenas-inactive);
+                color: white;
                 border: none;
                 padding: 15px 25px;
                 cursor: pointer;
@@ -78,17 +79,17 @@ class LinkableTabBox {
             }
             
             .linkable-tab-button:hover {
-                background: var(--accent-color, #e9ecef);
-                color: var(--truenas-primary);
+                background: var(--truenas-primary-hover);
+                color: white;
                 transform: translateY(-1px);
             }
             
             .linkable-tab-button.active {
-                background: var(--body-background, white);
-                color: var(--truenas-primary);
+                background: var(--truenas-primary);
+                color: white;
                 border-bottom-color: var(--truenas-primary);
                 font-weight: 600;
-                box-shadow: 0 -2px 4px rgba(0, 149, 213, 0.2);
+                box-shadow: 0 -2px 4px rgba(17, 148, 210, 0.2);
             }
             
             .linkable-tab-content {
@@ -141,7 +142,7 @@ class LinkableTabBox {
                 position: absolute;
                 top: 5px;
                 right: 5px;
-                background: var(--truenas-primary);
+                background: rgba(255, 255, 255, 0.2);
                 color: white;
                 border: none;
                 border-radius: 3px;
@@ -157,7 +158,7 @@ class LinkableTabBox {
             }
             
             .tab-copy-link:hover {
-                background: var(--truenas-primary-hover);
+                background: rgba(255, 255, 255, 0.3);
             }
             
             /* List styling for markdown content */
@@ -353,7 +354,7 @@ ${this.config.enableMarkdown ? this.parseMarkdown(cleanContent) : cleanContent}
     }
 
     executeTabScripts(tabPane) {
-        console.log('=== TAB SCRIPT EXECUTION v3.1 ===');
+        console.log('=== TAB SCRIPT EXECUTION v3.4 ===');
         
         // Handle Mermaid diagrams
         this.initializeMermaidDiagrams(tabPane);
