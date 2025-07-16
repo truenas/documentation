@@ -286,7 +286,7 @@ Converting to a custom app direct editing to YAML configuration file for the app
 
 {{< trueimage src="/images/SCALE/Apps/ConvertToCustomAppDialog.png" alt="Convert to Custom App Dialog" id="Convert to Custom App Dialog" >}}
 
-{{< hint type=warning title="Permanant Action" >}}
+{{< hint type=warning title="Permanent Action" >}}
 **Convert to custom app** is a one-time, permanent operation.
 Once converted, an custom application cannot be converted back to a catalog version.
 {{< /hint >}}
