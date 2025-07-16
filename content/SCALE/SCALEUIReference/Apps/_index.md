@@ -75,6 +75,11 @@ If you select a new pool in the **Pool** dropdown after previously configuring t
 
 **Migrate existing applications** migrates any installed application to the new applications pool.
 
+{{< hint type=note >}}
+**Migrate existing applications** only affects data saved in the apps dataset, such as the installed app loacation and iXvolume storage.
+Data in mounted host paths is migrated.
+{{< /hint >}}
+
 ### Unset Pool
 
 **Unset Pool** on the **Settings** menu opens the **Unset Pool** dialog.
@@ -303,7 +308,12 @@ The version numbers displayed are the version of the app in the TrueNAS catalog,
 It is not equal to the **App Version** or the upstream release version.
 
 **Roll back snapshots** restores the application data volume to match the selected version by rolling back to the snapshot for that version.
-This reverts both the application and all stored app data to the exact state from when the snapshot was created.
+This reverts both the application and app data stored in the apps pool to the exact state from when the snapshot was created.
+
+{{< hint type=note >}}
+**Roll back snapshots** only affects data saved in the apps dataset, such as iXvolume storage.
+Data in mounted host paths is not rolled back.
+{{< /hint >}}
 
 **Cancel** closes the dialog without completing the roll back.
 
