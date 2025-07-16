@@ -1,6 +1,5 @@
 &NewLine;
 
-{{< enterprise >}}
 What is NVMe-oF?
 Non-Volatile Memory Express over Fabric (NVMe-oF) is a network protocol that runs NVMe commands over standard TCP/IP networks.
 The default protocol in TrueNAS is TCP.
@@ -12,8 +11,8 @@ TrueNAS NVMe-of works with VMware vShpere 7. It is not supported in earlier VMwa
 
 NVMe-oF benefits include performance, protocol efficiencies, system scalabilitys, and no specific network requirements.
 
-Performance includes lower latency, which is attributed to streamlined command processing.
-Higher IOPS capabilities, better CPU efficiency with fewer processing layers, and native support for parallelism and queuing also improve performance.
+Performance includes lower latency (90% lower than iSCSI), which is attributed to streamlined command processing.
+Other performance improvements are in higher IOPS capabilities (up to 4x performance improvement over iSCSI), better CPU efficiency with fewer processing layers (85% lower than iSCSI), and native support for parallelism and queuing.
 
 Protocol efficiencies result from direct NVMe command mapping versus SCSI translation layers, reductions in overhead in the storage stack, and better utilization of modern SDD capabilities.
 
@@ -21,9 +20,11 @@ Scalability improves through more efficient handling of multiple connections, sc
 
 NVMe does not require specialized network hardware, unless you deploy RDMA or Fibre Channel solutions. NVMe works over standard TCP/IP network infrastructure, and supports standard networking features like VLANs and routing.
 However, if deploying RDMA or Fibre Channel, each requires a TrueNaS Enterprise license, and the TrueNAS systems must be equipped with the appropriate hardware to support each transport type.
+
+When using NVMe-oF with VMware vSphere 7, systems have native support through built-in FC-NVMe and RDMA (RoCE v2). Enhanced virtualization through enabled I/O-intensive workloads previouls rquiring bare metal, and simplified management through integration with the vSphere storage stack.
 {{< /expand >}}
 
-{{< expand "Why choose NVMe/TCP?" "v" >}}
+{{< expand "Why choose NVMe-oF?" "v" >}}
 
 Systems that require support for high-performance databases, virtualization environments, container storage, and modern applications that require low-latency storage, benefit from NVMe which excels with these solutions.
 
@@ -39,27 +40,7 @@ The NVMe-oF service is restored with no data loss during failover in High Availa
 
 {{< expand "How does TrueNAS NVMe-oF compare to iSCSI?" "V" >}}
 
-The TrueNAS NVMe-oF implementation is based on the Linux kernel NVMe target, with four entities:
+{{< include file="/static/includes/NVMe-oF-Structure.md" >}}
 
-* Subsystem - The equivalent of the iSCSI target.
-  A subsystem includes a namespace, port, and host access. The **Add Subsystem** wizard walks admins through the configuration process.
-
-* Namespace - The equivalent of an iSCSI extent. In NVMe, this includes the extent and target-extent mapping.
-  A particular namespace entity can only ever be used in a single subsystem.
-
-* Host - The clients allowed to connect to the subsystem (target) and namespace (extent).
-  The default is to allow all hosts to connect, or for greater security, admins can configure individual hosts allowed to access the subsystem and namespace.
-
-* Port - The communication channels NVMe-oF uses for incoming/outgoing traffic over TCP networks. Port numbers are at least four digits in length.
-
-TrueNAS NVMe-oF uses zvols or files for the storage devices. TrueNAS serves storage (zvols or files) to NVMe-oF clients (hosts).
-TrueNaS allows exporting an existing zvol previously exposed as an iSCSI target for use in NVMe-oF, preserving any data in the zvol a user wants to keep, and with one-to-one mapping of the zvol to the namespace.
-A zvol exported is not eligible to be exposed by iSCSI after it is exported.
-
-TrueNAS NVMe-oF offers global configurations of iSCSI equivalents:
-* Asymmetric Namespace Access (ANA) - This is the equivalent to ALUA in iSCSI.
-  Systems connecting to the target require some form of multi-pathing support.
-* Remote Direct Memory Access (RDMA) - The system must support Remote Direct Memory Access (RDMA).
-
-Both ANA and RDMA require an Enterprise license.
 {{< /expand >}}
+

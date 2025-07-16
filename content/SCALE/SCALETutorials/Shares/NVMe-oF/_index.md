@@ -28,7 +28,7 @@ tags:
 
 ## Configuring the NVMe-oF Service
 
-You can access the NVMe-of service screen from the :
+You can access the NVMe-of service screen from the:
 * <span class="material-icons">more_vert</span> dropdown menu on the **NVMe-oF Subsystems** widget on the **Shares** screen
 * **Global Configuration** button at the top of the **NVMe-oF** screen
 * **NVMe-oF** service option on the **System > Services** screen
@@ -37,34 +37,40 @@ The **NVMe-oF Global Configuration** shows the base NQN for the service.
 
 {{< expand "What is the base NQN?" "v" >}}
 The *base NQN* us the standardized NVMe Qualified Name for the service.
-The NQN standard structure follows the format defined in the base specification, and has a maximum length of 223 bytes.
+The NQN standard structure follows the format defined in the base specification. The maximum length/size is 223 bytes.
 TrueNAS subsystems use the base NQN as the root identifier for the NVMe subsystems in fabric deployments.
-Discovery contorllers use the standardized NQN foram to advertize available subsystems, and storage systems use the base NQN to authenticate and authorase host connections.
-The base NQN format provides the foundation for all NVMe-oF naming, ensuring interoperability, and preventing naming conflicts acros different vendors and implementations.
+Discovery controllers use the standardized NQN to advertize available subsystems.
+Storage systems use the base NQN to authenticate and authorize host connections.
+The base NQN format provides the foundation for all NVMe-oF naming, ensuring interoperability, and preventing naming conflicts across different vendors and implementations.
 {{< /expand >}}
+
+{{< trueimage src="/images/SCALE/Shares/NVMeoFGlobalConfigurationScreen.png" alt="NVMe-oF Global Configuration Screen" id="NVMe-oF Global Configuration Scree" >}}
 
 TrueNaS populates the **baseNQN** field with the NVMe identifier.
 Accept this value or click in the field to copy/paste a new, properly formatted base NQN identifier.
-NQN is used as the prefix on the creation of a subsystem, if a subnqn is not supplied. Modifying this value does not change the subnqn of any existing subsystems.
+NQN is used as the prefix when creating a subsystem, if a subnqn is not supplied.
+Modifying this value does not change the subnqn of any existing subsystems.
 
-
-Select **Generate Cross-port Referrals for Ports on This System**  to allows xport_referral. If ANA is active, referrals are always generated between the peer ports on each TrueNAS controller node.
+Select **Generate Cross-port Referrals for Ports on This System**  to allow xport_referral.
+If ANA is active, referrals are always generated between the peer ports on each TrueNAS controller node.
 
 Click **Save** to save changes and close the screen.
 
 ### Adding Remote Direct Memory Access (RDMA)
 
-Go to the [**NVMe-oF Global Configuration**](#configuring-the-nvme-of-service) screen, and select the **Enable Remote Direct Memory Access (RDMA)** option. Click **Save**.
+Go to the [**NVMe-oF Global Configuration**](#configuring-the-nvme-of-service) screen.
+Select the **Enable Remote Direct Memory Access (RDMA)** option. Click **Save**.
 
 Enabling RDMA allows configuring one or more ports with RDMA selected as the transport when enabled.
-Requires an Enterprise license, and RDMA-capable system and network equipment.
+This option requires an Enterprise license, and you must have an RDMA-capable system and network equipment.
 
-Option is inactive on systems without an Enterprise licenses.
-If the systen is not equipped with required hardware, shows **Not enabled, because this system does not support RDMA** on the screen.
+This option is inactive on systems without an Enterprise licenses.
+If the system is not equipped with required hardware, shows **Not enabled, because this system does not support RDMA** on the screen.
 
 ### Adding Asymmetric Namespace Access (ANA)
 
-Go to the [**NVMe-oF Global Configuration**](#configuring-the-nvme-of-service) screen, and select the **Enable Asymmetric Namespace Access (ANA)** option, and click **Save**.
+Go to the [**NVMe-oF Global Configuration**](#configuring-the-nvme-of-service) screen.
+Select the **Enable Asymmetric Namespace Access (ANA)** option, and click **Save**.
 
 This allows storage systems to inform hosts about the optimal controller path to access a namespace on Enterprise licensed systems.
 It is equivalent to Asymmetric Logical Unit Access (ALUA) in iSCSI.
@@ -72,12 +78,91 @@ ANA helps storage arrays communicate to hosts which controller provides the best
 
 ## Adding a Subsystem
 
+Subsystems correlate to iSCSI targets. Each subsystem has a namespace, host, and port.
+The **Add Subsystem** wizard steps through the subsystem creation process.
 
-### Adding a Namespace
+You can access the **Add Subsystem** wizard from the:
+* **Add** button on the **NVMe-oF Subsystems** widget on the **Shares** screen
+* **Add Subsystem** button at the top of the **NVMe-oF** screen
 
+Go to the **Add Subsystem** wizard, then:
 
-### Adding a Port
+{{< trueimage src="/images/SCALE/Shares/AddSubsystemWhatToShare.png" alt="Add Subsystem What to Share Screen" id="Add Subsystem What to Share Screen" >}}
 
+1. Enter a name for the subsystem. We recommend keeping the name short to avoid any possible issues with accessing the subsystem.
+   A name can consist of upper and lowercase alphabetical characters, numbers, and/or some special characters such as the dash (-), underscore (_), etc.
 
-### Adding a Host
+{{< trueimage src="/images/SCALE/Shares/AddSubSystemAccess.png" alt="Add Subsystem Access Screen" id="Add Subsystem Access Screen" >}}
 
+2. Leave the NQN setting as **Generate from global setting**.
+   To change it, click the edit <span class="material-icons">edit</span> icon, and then enter or copy/paste a correctly formatted NQN identification number in the field.
+
+3. Add a namespace. Click **Add** to open the **Add Namespace** screen. The screen opens with the **Zvol** tab selected.
+   A subsystem can have only one namespace.
+
+   {{< trueimage src="/images/SCALE/Shares/AddNamespaceScreenZvolTab.png" alt="Add Namespace Screen" id="Add Namespace Screen" >}}
+
+   To add a new zvol, browse to and select the parent dataset where you want to add the zvol, then click **Create Zvol** to open the **Add Zvol** screen. See [Creating a Zvol](#creating-a-zvol) for more information on adding a new zvol.
+
+   To use an existing file, click on the **Existing File** tab, and then browse to select the dataset path to the file.
+
+   {{< trueimage src="/images/SCALE/Shares/EditNamespaceExistingFileTab.png" alt="Edit Namespace Existing File Tab" id="Edit Namespace Existing File Tab" >}}
+
+   To add a new file, click on the **New File** tab, then enter a file name, browse to select the dataset where you want to create the file, enter the allowed file size, and then click **Save**.
+
+   {{< trueimage src="/images/SCALE/Shares/EditNamespaceNewFileTab.png" alt="Edit Namespace New File Tab" id="Edit Namespace New File Tab" >}}
+
+   Click **Save**, then click the breadcrumb at the top of the screen to return to the **Add Subsystem** wizard.
+
+4. Click **Next** to show the **Access** screen.
+
+  {{< trueimage src="/images/SCALE/Shares/AddSubSystemAccess.png" alt="Add Subsystem Access Screen" id="Add Subsystem Access Screen" >}}
+
+5. Leave **Allow any host to connect** selected to allow any host to connect, or clear the checkbox to show the **Add** option for hosts.
+
+  {{< trueimage src="/images/SCALE/Shares/AddHostScreen.png" alt="Add Host Screen" id="Add Host Screen" >}}
+
+  a. Enter or copy/paste the host NQN number.
+  
+  b. (Optional) Select **Require Host Authentication** to show and add authentication setting options.
+
+  {{< trueimage src="/images/SCALE/Shares/AddHostScreenRequireAuthentication.png" alt="Add Host Screen Require Authentication" id="Add Host Screen Require Authentication" >}}
+
+  c. (Optional) Add the DH-CHAP key from the host system connecting to TrueNAS.
+     Enter or copy/paste the key into the field.
+     Click in the field to activate **Generate Key** below the **Key for Host to Present** field. The field populates with a key. Copy/paste this into the host system connecting to TrueNAS.
+
+  d. (Optional) Add a bi-directional key for TrueNAS when it connects to the host system.
+     Click **Generate Key** below the **Key for TrueNAS to Present** to populate the field with a key. Copy/paste this into the host system to use when authenticating TrueNAS when it connects to it.
+
+  e. (Optional) Select **Also use Diffie-Hellman key exchange for additional security.
+
+  f. Click **Save**, then click on the breadcrumb at the top of the screen to return to the **Add Subsystem** wizard.
+
+6. Click **Add** to the right of **Ports** to open the **Add Ports** screen.
+
+   {{< trueimage src="/images/SCALE/Shares/AddPortScreen.png" alt="Add Port Screen" id="Add Port Screen" >}}
+
+   a. Select the transport type. **TCP** is the default setting.
+      If you have an Enterprise license and your system can support RDMA or Fibre Channel, these options show as available choices.
+
+   b. Enter an available port number of at least four digits in length.
+
+   c. Select the IP address from the dropdown list.
+
+   d. Click **Save**.
+
+   e. Click on the breadcrumb at the top of the screen to close the **Add Port** screen and return to the **Add Subsystem** wizard.
+
+7. Click **Save** at the bottom of the **Add Subsystem** wizard screen to add the subsystem.
+
+### Creating a Zvol
+
+The **Add Zvol** screen is accessed from the **Add Subsystem** wizard after clicking **Add** to the right of **Namespaces**.
+You can also access it from the **Namespace** widget on the **NVMe-oF** screen.
+Select the subsystem row on the **NVMe-oF** screen table, then click **Add** on the **Namespaces** widget to show the options.
+Select **Create New** to open the **Add Namespace** screen. Browse to and select the dataset where you want to add the zvol, then click on **Create New** to open the **Add Zvol** screen.
+
+To add a new zvol:
+
+{{< include file="/static/includes/Add-Zvol-To-NVMe-oF-Namespace.md" >}}

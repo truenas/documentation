@@ -131,7 +131,7 @@ Shows **All hosts are allowed** if a host is not specified.
 Use to set system-wide NVMe-oF settings. **Config Service** on the **NVMe-oF Subsystem** widget dropdown menu,
 **Global Configuration** on the **NVMe-oF** screen, and the <span class="material-icons">edit</span> edit icon on the **NVMe-oF** row on the **System > Services** screen open the **NVMe-oF Global Configuration** screen.
 
-{{< trueimage src="/images/SCALE/Shares/NVMeoFGlobalConfigurationScreen.png" alt="Add Subsystem Screen" id="Add Subsystem Screen" >}}
+{{< trueimage src="/images/SCALE/Shares/NVMeoFGlobalConfigurationScreen.png" alt="NVMe-oF Global Configuration Screen" id="NVMe-oF Global Configuration Scree" >}}
 
 {{< expand "Settings" "v" >}}
 {{< truetable >}}
@@ -175,7 +175,7 @@ The **Access** screen in the **Add Subsystem** wizard allows configuring hosts a
 When selected, it allows connections to any host.
 When not selected, it shows the **Allow Hosts** option with an **Add** button that opens the [**Add Host**](#add-and-edit-host-screens) screen.
 
-{{< trueimage src="/images/SCALE/Shares/AsddSubsystemAccessWithAllowedHosts.png" alt="Add Subsystem Access with Allowed Hosts" id="Add Subsystem Access with Allowed Hosts" >}}
+{{< trueimage src="/images/SCALE/Shares/AddSubsystemAccessWithAllowedHosts.png" alt="Add Subsystem Access with Allowed Hosts" id="Add Subsystem Access with Allowed Hosts" >}}
 
 {{< include file="/static/includes/NVMe-oFAddPortsMenu.md" >}}
 
@@ -236,9 +236,13 @@ The **New File** tab on the **Edit Namespace** screen allows creating a new file
 
 ### Delete Namespace Dialog
 
-The **Delete Namespace** opens after clicking the delete icon on the **Namespaces** widget.
+The **Delete Namespace** opens after clicking the delete icon to the right of a zvol on the **Namespaces** widget.
 
 {{< trueimage src="/images/SCALE/Shares/DeleteNamespaceDialog.png" alt="Delete Namespace Dialog" id="Delete Namespace Dialog" >}}
+
+The delete icon to the right of a file opens a Delete Namespace dialog with the option to also delete the file.
+
+{{< trueimage src="/images/SCALE/Shares/DeleteNamespaceFromFile.png" alt="Delete Namespace and File Dialog" id="Delete Namespace and File Dialog" >}}
 
 ## Add Zvol Screen
 
