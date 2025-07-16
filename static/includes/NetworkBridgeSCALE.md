@@ -14,7 +14,7 @@ To set up a bridge interface, go to **Network**, click **Add** on the **Interfac
    **vlan*X*** for a VLAN interface
    **br*x*** for a bridge interface
    
-   Where *X* is a number representing a non-parent interface. Assing the first bridge interface **br0**.
+   Where *X* is a number representing a non-parent interface. Assign the first bridge interface **br0**.
 
    You cannot change the **Name** of the interface after clicking **Save**.
 
