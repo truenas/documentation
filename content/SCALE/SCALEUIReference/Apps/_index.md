@@ -73,7 +73,7 @@ If you select a new pool in the **Pool** dropdown after previously configuring t
 
 {{< trueimage src="/images/SCALE/Apps/ChoosePoolMigrate.png" alt="Migrate Existing Applications" id="Migrate Existing Applications" >}}
 
-**Migrate existing applications** migrates any installed application to the new applications pool.
+**Migrate existing applications** migrates all installed applications to the new applications pool.
 
 {{< hint type=note >}}
 **Migrate existing applications** only affects data saved in the apps dataset, such as the installed app loacation and iXvolume storage.
