@@ -266,8 +266,7 @@ The **Delete App** dialog asks for confirmation to delete the selected applicati
 Both only show if TrueNAS detects an available update for an application.
 The application widget on the **Discover** screen also displays an update badge.
 
-**Update** opens an update window for the application that includes the **Version to be updated to** and **Changelog** options.
-Click on the down arrow to see the options available for each.
+**Update** opens an update window for the application that includes the **Version to be updated to** dropdown and **Changelog** options.
 
 {{< trueimage src="/images/SCALE/Apps/AppUpdateWindow.png" alt="Update Application Window" id="Update Application Window" >}}
 
@@ -277,35 +276,38 @@ The **Update** state on the application row on the **Installed** screen changes 
 
 #### Convert to Custom App
 
-Convert to custom app
-You are about to convert nextcloud to a custom app. This will allow you to edit its yaml file directly. Warning. This operation cannot be undone.
-
-Confirm
-
-Cancel
-
-Convert
+**Convert to custom app** on the <i class="material-icons" aria-hidden="true" title="more_vert">more_vert</i> dropdown opens a dialog to convert an installed catalog application to a custom YAML application.
+Converting to a custom app direct editing to YAML configuration file for the app using the [Custom App Screens]({{< relref "/SCALE/SCALEUIReference/Apps/InstallCustomAppScreens.md" >}}).
 
 {{< trueimage src="/images/SCALE/Apps/ConvertToCustomAppDialog.png" alt="Convert to Custom App Dialog" id="Convert to Custom App Dialog" >}}
 
+{{< hint type=warning title="Permanant Action" >}}
+**Convert to custom app** is a one-time, permanent operation.
+Once converted, an custom application cannot be converted back to a catalog version.
+{{< /hint >}}
+
+**Cancel** closes the dialog without converting the application.
+
+**Confirm** enables the **Convert** button.
+
+**Convert** begins the conversion process.
+
 #### Roll Back Apps
 
-Roll Back
-Version
-*
-1.4.5
+**Roll Back** on the <i class="material-icons" aria-hidden="true" title="more_vert">more_vert</i> dropdown opens a dialog to revert an application to the snapshot of an earlier installed version.
 
-Roll back snapshots
-
-Help: Roll back snapshots
-Roll back snapshots of ix_volumes
-
-Cancel
-
-Roll Back
 {{< trueimage src="/images/SCALE/Apps/RollBackDialog.png" alt="Roll Back Dialog" id="Roll Back Dialog" >}}
 
+The **Version** dropdown contains available app versions for roll back.
+The version numbers displayed are the version of the app in the TrueNAS catalog, equivalent to the **Version** displayed on the app information card.
+It is not equal to the **App Version** or the upstream release version.
 
+**Roll back snapshots** restores the application data volume to match the selected version by rolling back to the snapshot for that version.
+This reverts both the application and all stored app data to the exact state from when the snapshot was created.
+
+**Cancel** closes the dialog without completing the roll back.
+
+**Roll Back** begins the operation.
 
 ### Workloads Widget
 
