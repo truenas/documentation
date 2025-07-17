@@ -169,7 +169,7 @@ For example, organizing all datasets for shares (SMB, NFS, etc.) under one commo
 If you have other Veeam data storage set up in the system and you want to nest the fast cloning dataset under the existing Veeam dataset, skip adding the dataset organization instructions below and go to the instructions for verifying the record size for the Veeam dataset at the bottom of this section.
 
 To create and organize datasets in a hierarchical structure for shares, for example, *shares/smb/veeam*, go to the **Datasets** screen, select the parent dataset row in the table, and click **Add Dataset**.
-Add the dataset for the next level in the organization, for example, *shares* or it exists, add *smb*, etc.
+Add the dataset for the next level in the organization, for example, the dataset named *shares* or if it exists, add one named *smb*, etc.
 
 Enter a name for the dataset, then select the **SMB** option under **Dataset Preset**. Clear the option to create the share.
 Clear the checkbox in **Create SMB Share** for these organizational datasets unless you plan to use them for other SMB share purposes.
