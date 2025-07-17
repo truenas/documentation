@@ -197,7 +197,7 @@ Additional client-side configuration is required to provide guest access to thes
 
 * **Mac OS clients** - Prevents attempts to connect as a user that does not exist in TrueNAS and does not automatically connect as the guest account.
 
-* **Connect As: Guest** - Allows a guest to log into the macOS with the guest account.
+* **Connect As: Guest** - Allows a guest to log into the Mac OS with the guest account.
   See the [Apple documentation](https://support.apple.com/guide/mac-help/connect-mac-shared-computers-servers-mchlp1140/mac) for more details.
 
 If setting up guest access with read-only permissions, see the information in [Adding a New Share Group](#adding-a-new-share-group).
