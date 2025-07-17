@@ -366,7 +366,7 @@ Mount the volume using the `sudo mount_smbfs -I computer_name\share_name /mnt/sm
 
 External SMB shares are essentially redirects to shares on other systems.
 Administrators might want to use this when managing multiple TrueNAS systems with SMB shares, and if they do not want to keep track of which shares are on which boxes for clients.
-This feature allows admins to see and connect to any TrueNAS system with external shares set up..
+This feature allows admins to see and connect to any TrueNAS system with external shares active.
 
 Create the SMB share on another TrueNAS server (for example, *system1*), as described in [Adding an SMB Share](#adding-an-smb-share) above.
 
