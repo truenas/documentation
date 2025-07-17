@@ -306,6 +306,7 @@ When converted, an custom application cannot be converted back to a catalog vers
 The **Version** dropdown contains available app versions for roll back.
 The version numbers displayed are the version of the app in the TrueNAS catalog, equivalent to the **Version** displayed on the app information card.
 It is not equal to the **App Version** or the upstream release version.
+See [Understanding Versions](https://apps.truenas.com/managing-apps/discovering-apps/#understanding-versions) on the TrueNAS Apps Market for more information.
 
 **Roll back snapshots** restores the application data volume to match the selected version by rolling back to the snapshot for that version.
 This reverts both the application and app data stored in the apps pool to the exact state from when the snapshot was created.
