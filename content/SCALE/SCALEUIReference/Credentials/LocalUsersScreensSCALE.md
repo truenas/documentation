@@ -90,7 +90,7 @@ Built-in users (except the **root** user) do not include the **Home Directory Pe
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Home Directory** | Enter or browse to enter the path to the home directory for this user. If the directory exists and matches the **Username**, it is set as the home directory for the user. When the path does not end with a subdirectory matching the username, a new subdirectory is created if the **Create Home Directory** option above the **Save** button is selected. The full path to the user home directory shows in this field on the **Edit User** screen for this user. The default location is **/var/empty**. |   
+| **Home Directory** | Enter or browse to enter the path to the home directory for this user. If the directory exists and matches the value in **Username**, it is set as the home directory for the user. When the path does not end with a subdirectory matching the username, a new subdirectory is created if the **Create Home Directory** option above the **Save** button is selected. The full path to the user home directory shows in this field on the **Edit User** screen for this user. The default location is **/var/empty**. |   
 | **Home Directory Permissions** | Select the permissions in **Read**, **Write**, and **Execute** for each role (**User**, **Group**, and **Other**) to set access control for the user home directory. Built-in users are read-only and can not modify these settings.|
 | **Create Home Directory** | Select to create a home directory for the user when the home directory path for this user does not end in the user name. Creates a home directory for the user within the selected path. |
 {{< /truetable >}}
