@@ -1,0 +1,8 @@
+extends: substitution
+message: "Consider 'TrueNAS' instead of '%s'"
+level: suggestion
+ignorecase: true
+swap:
+  truenas: TrueNAS
+  kubernetes: Kubernetes
+  docker: Docker

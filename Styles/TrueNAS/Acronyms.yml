@@ -1,0 +1,31 @@
+extends: conditional
+message: "Spell out '%s' on first use"
+level: suggestion
+ignorecase: false
+first: '\b([A-Z]{3,5})\b'
+second: '(?:\b[A-Za-z]+ )+\([A-Z]{3,5}\)'
+exceptions:
+  - API
+  - CPU
+  - DNS
+  - FTP
+  - GUI
+  - HTML
+  - HTTP
+  - HTTPS
+  - IP
+  - LAN
+  - OS
+  - PC
+  - PDF
+  - RAM
+  - SSD
+  - SSH
+  - SSL
+  - TCP
+  - UI
+  - URL
+  - USB
+  - VPN
+  - WAN
+  - XML
