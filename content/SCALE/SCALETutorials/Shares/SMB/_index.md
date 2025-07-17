@@ -68,7 +68,7 @@ Creating an SMB share on your system requires adding the share and then getting 
    The **Add Dataset** and the **Add SMB** share screens allow TrueNAS to create a dataset and SMB share from that screen.
    Use either option to create a basic SMB share.
    
-   When creating an SMB share that requires customizing or is intended for a specific purpose like working with Veeam Backup & Restore immutability or a repository for block or fast cloning, use the **Add SMB** screen presets and advanced options to create the share and dataset for these special SMB shares.
+   When creating an SMB share that requires customization or is intended for a specific purpose, such as working with Veeam Backup & Restore immutability or a repository for block or fast cloning, use the **Add SMB** screen presets and advanced options to create the share and dataset for these special SMB shares.
    For more information on Veeam SMB shares refer to the [Solutions > Integrations](https://www.truenas.com/docs/solutions/integrations/) **Veeam** and **Veeam Immutability** guides.
 
    When setting up multi-protocol (SMB and NFS) shares refer to the [Multiprotocol Shares]]({{< relref "MixedModeShares.md" >}}) tutorial for configuration instructions.
