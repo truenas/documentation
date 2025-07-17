@@ -229,7 +229,7 @@ The resources listed below provide rough calculations available to determine the
 
 TrueNAS is a robust, unified storage system well-suited for nearly any environment.
 For backups, the platform takes advantage of the data integrity offered by ZFS, which includes features such as copy-on-write, snapshots, and checksums that prevent bit-rot.
-You can expand TrueNAS Enterprise appliances at any time by simply adding more drives, allowing datasets to grow and keep pace with your data storage needs.
+You can expand TrueNAS Enterprise appliances at any time by simply adding more drives, allowing datasets to grow and keeping pace with your data storage needs.
 Here are additional key features that are offered out-of-the-box at no extra cost to the Enterprise user:
 
 * **Self-healing file system** - ZFS places data integrity first with data scrubs and checksums, ensuring files are saved correctly and preserved.
