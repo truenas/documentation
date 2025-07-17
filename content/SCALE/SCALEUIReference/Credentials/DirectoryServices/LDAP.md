@@ -44,7 +44,7 @@ The settings on the **Basic Options** also display on the **[Advanced Options](#
 {{< truetable >}}
 | Setting | Description |  
 |---------|-------------|  
-| **Hostname** | Enter the LDAP server hostnames/IP addresses. Separate entries by pressing enter. You can enter multiple hostnames/IP addresses to create an LDAP failover priority list. If a host does not respond, TrueNAS tries the next host until it establishes a connection. |
+| **Hostname** | Enter the LDAP server hostnames/IP addresses. Separate entries by pressing <kbd>Enter</kbd>. You can enter multiple hostnames/IP addresses to create an LDAP failover priority list. If a host does not respond, TrueNAS tries the next host until it establishes a connection. |
 | **Base DN** | Enter the top level of the LDAP directory tree to use when searching for resources. Example: *dc=test,dc=org*. |
 | **Bind DN** | Enter the administrative account name for the LDAP server. Example: *cn=Manager,dc=test,dc=org*. |
 | **Bind Password** | Enter the password for the **Bind DN**. |
