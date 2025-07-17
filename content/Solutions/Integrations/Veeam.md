@@ -218,7 +218,7 @@ In addition to the above considerations, you can use the many tools, forums, and
 In many sites, Veeam compression or deduplication is around 1.5x to 2x, which is more of a reference than a rule.
 Backup types, applications, and the diversity of VMs can all factor into the amount of storage you need.
 You must also consider capacity alongside desired performance, as a smaller quantity of large drives often does not yield the same performance as a larger number of small drives.
-The resources listed below provide rough calculations you can use to determine the sizes and numbers of drives needed:
+The resources listed below provide rough calculations available to determine the sizes and numbers of drives needed:
 
 * [Veeam Backup Capacity Calculator](https://calculator.veeam.com/)
 * [Sizing from Veeam Best Practices](https://bp.veeam.com/vbr/VBP/3_Build_structures/B_Veeam_Components/B_VBR_Server/Backup_Server.html)
@@ -229,7 +229,7 @@ The resources listed below provide rough calculations you can use to determine t
 
 TrueNAS is a robust, unified storage system well-suited for nearly any environment.
 For backups, the platform takes advantage of the data integrity offered by ZFS, which includes features such as copy-on-write, snapshots, and checksums that prevent bit-rot.
-You can expand TrueNAS Enterprise appliances at any time by simply adding more drives, allowing datasets to grow and keep pace with your data storage needs.
+You can expand TrueNAS Enterprise appliances at any time by simply adding more drives, allowing datasets to grow and keeping pace with your data storage needs.
 Here are additional key features that are offered out-of-the-box at no extra cost to the Enterprise user:
 
 * **Self-healing file system** - ZFS places data integrity first with data scrubs and checksums, ensuring files are saved correctly and preserved.

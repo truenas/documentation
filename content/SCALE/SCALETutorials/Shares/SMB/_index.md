@@ -68,7 +68,7 @@ Creating an SMB share on your system requires adding the share and then getting 
    The **Add Dataset** and the **Add SMB** share screens allow TrueNAS to create a dataset and SMB share from that screen.
    Use either option to create a basic SMB share.
    
-   When creating an SMB share that requires customizing or is intended for a specific purpose like working with Veeam Backup & Restore immutability or a repository for block or fast cloning, use the **Add SMB** screen presets and advanced options to create the share and dataset for these special SMB shares.
+   When creating an SMB share that requires customization or is intended for a specific purpose, such as working with Veeam Backup & Restore immutability or a repository for block or fast cloning, use the **Add SMB** screen presets and advanced options to create the share and dataset for these special SMB shares.
    For more information on Veeam SMB shares refer to the [Solutions > Integrations](https://www.truenas.com/docs/solutions/integrations/) **Veeam** and **Veeam Immutability** guides.
 
    When setting up multi-protocol (SMB and NFS) shares refer to the [Multiprotocol Shares]]({{< relref "MixedModeShares.md" >}}) tutorial for configuration instructions.
@@ -168,7 +168,7 @@ To create a basic Windows SMB share and a dataset, go to **Shares**, then click 
    {{< include file="/static/includes/SMBPurposePresets.md" >}}
    {{< /expand >}}
 
-4. (Optional) Enter a **Description** to help explain the purpose of the share or details on how it is used.
+4. (Optional) Enter a **Description** to help explain the purpose or details on how the share is used.
 
 5. Select **Enabled** to allow sharing of this path when the SMB service is activated.
    Leave the checkbox cleared to disable the share without deleting the configuration.
@@ -195,9 +195,9 @@ The privileges granted are the same as those for a guest account.
 Windows 10 version 1709 and Windows Server version 1903 disable guest access by default.
 Additional client-side configuration is required to provide guest access to these clients.
 
-* **MacOS clients** - Prevents attempts to connect as a user that does not exist in TrueNAS and does not automatically connect as the guest account.
+* **Mac OS clients** - Prevents attempts to connect as a user that does not exist in TrueNAS and does not automatically connect as the guest account.
 
-* **Connect As: Guest** - Allows a guest to log into the macOS with the guest account.
+* **Connect As: Guest** - Allows a guest to log into the Mac OS with the guest account.
   See the [Apple documentation](https://support.apple.com/guide/mac-help/connect-mac-shared-computers-servers-mchlp1140/mac) for more details.
 
 If setting up guest access with read-only permissions, see the information in [Adding a New Share Group](#adding-a-new-share-group).
@@ -366,7 +366,7 @@ Mount the volume using the `sudo mount_smbfs -I computer_name\share_name /mnt/sm
 
 External SMB shares are essentially redirects to shares on other systems.
 Administrators might want to use this when managing multiple TrueNAS systems with SMB shares, and if they do not want to keep track of which shares are on which boxes for clients.
-This feature allows admins to see and connect to any TrueNAS system with external shares set up..
+This feature allows admins to see and connect to any TrueNAS system with external shares active.
 
 Create the SMB share on another TrueNAS server (for example, *system1*), as described in [Adding an SMB Share](#adding-an-smb-share) above.
 
