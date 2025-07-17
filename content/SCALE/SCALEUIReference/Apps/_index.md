@@ -288,7 +288,7 @@ Converting to a custom app direct editing to YAML configuration file for the app
 
 {{< hint type=warning title="Permanent Action" >}}
 **Convert to custom app** is a one-time, permanent operation.
-Once converted, an custom application cannot be converted back to a catalog version.
+When converted, an custom application cannot be converted back to a catalog version.
 {{< /hint >}}
 
 **Cancel** closes the dialog without converting the application.
