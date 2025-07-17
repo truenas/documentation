@@ -195,7 +195,7 @@ The privileges granted are the same as those for a guest account.
 Windows 10 version 1709 and Windows Server version 1903 disable guest access by default.
 Additional client-side configuration is required to provide guest access to these clients.
 
-* **MacOS clients** - Prevents attempts to connect as a user that does not exist in TrueNAS and does not automatically connect as the guest account.
+* **Mac OS clients** - Prevents attempts to connect as a user that does not exist in TrueNAS and does not automatically connect as the guest account.
 
 * **Connect As: Guest** - Allows a guest to log into the macOS with the guest account.
   See the [Apple documentation](https://support.apple.com/guide/mac-help/connect-mac-shared-computers-servers-mchlp1140/mac) for more details.
