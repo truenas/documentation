@@ -168,7 +168,7 @@ To create a basic Windows SMB share and a dataset, go to **Shares**, then click 
    {{< include file="/static/includes/SMBPurposePresets.md" >}}
    {{< /expand >}}
 
-4. (Optional) Enter a **Description** to help explain the purpose of the share or details on how it is used.
+4. (Optional) Enter a **Description** to help explain the purpose or details on how the share is used.
 
 5. Select **Enabled** to allow sharing of this path when the SMB service is activated.
    Leave the checkbox cleared to disable the share without deleting the configuration.
