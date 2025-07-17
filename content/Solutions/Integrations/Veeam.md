@@ -218,7 +218,7 @@ In addition to the above considerations, you can use the many tools, forums, and
 In many sites, Veeam compression or deduplication is around 1.5x to 2x, which is more of a reference than a rule.
 Backup types, applications, and the diversity of VMs can all factor into the amount of storage you need.
 You must also consider capacity alongside desired performance, as a smaller quantity of large drives often does not yield the same performance as a larger number of small drives.
-The resources listed below provide rough calculations you can use to determine the sizes and numbers of drives needed:
+The resources listed below provide rough calculations available to determine the sizes and numbers of drives needed:
 
 * [Veeam Backup Capacity Calculator](https://calculator.veeam.com/)
 * [Sizing from Veeam Best Practices](https://bp.veeam.com/vbr/VBP/3_Build_structures/B_Veeam_Components/B_VBR_Server/Backup_Server.html)
