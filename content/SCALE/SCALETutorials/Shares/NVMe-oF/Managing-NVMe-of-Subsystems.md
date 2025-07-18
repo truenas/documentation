@@ -24,7 +24,7 @@ tags:
 
 ## Editing a Subsystem
 
-After configuring an NVMe-oF subsystem, you can change the subsystem by adding, editing, or deleting a namespace, removing or adding a port, or adding, removing, or deleting a host.
+After configuring a NVMe-oF subsystem, you can change the subsystem by adding, editing, or deleting a namespace, removing or adding a port, or adding, removing, or deleting a host.
 
 To access the subsystem configuration screen from the **Shares** screen:
 1. Click the <span class="material-icons">more_vert</span> dropdown menu on the row for the subsystem listed in the **NVMe-oF Subsystems** widget
