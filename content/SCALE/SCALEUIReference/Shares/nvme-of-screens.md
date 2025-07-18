@@ -137,7 +137,7 @@ After adding a host, the widget shows the NQN identification number for the clie
 
 **Add** shows a dropdown list of options:
 * **Create New** opens the [**Add Host**](#add-and-edit-host-screens) screen.
-* Manage Hosts opens the [**Hosts**](#hosts-window) window
+* **Manage Hosts** opens the [**Hosts**](#hosts-window) window
 * **Allow all hosts** that removes the host from the subsystem but does not delete it.
   It toggles the **Add** dropdown list to show the available host NQN hidden by selecting **Allow all hosts** and removes **Allow all hosts** from the dropdown list.
 
