@@ -39,14 +39,14 @@ The **NVMe-oF Global Configuration** shows the base NQN for the service.
 The *base NQN* us the standardized NVMe Qualified Name for the service.
 The NQN standard structure follows the format defined in the base specification. The maximum length/size is 223 bytes.
 TrueNAS subsystems use the base NQN as the root identifier for the NVMe subsystems in fabric deployments.
-Discovery controllers use the standardized NQN to advertize available subsystems.
+Discovery controllers use the standardized NQN to advertise available subsystems.
 Storage systems use the base NQN to authenticate and authorize host connections.
 The base NQN format provides the foundation for all NVMe-oF naming, ensuring interoperability, and preventing naming conflicts across different vendors and implementations.
 {{< /expand >}}
 
 {{< trueimage src="/images/SCALE/Shares/NVMeoFGlobalConfigurationScreen.png" alt="NVMe-oF Global Configuration Screen" id="NVMe-oF Global Configuration Scree" >}}
 
-TrueNaS populates the **baseNQN** field with the NVMe identifier.
+TrueNAS populates the **baseNQN** field with the NVMe identifier.
 Accept this value or click in the field to copy/paste a new, properly formatted base NQN identifier.
 NQN is used as the prefix when creating a subsystem, if a subnqn is not supplied.
 Modifying this value does not change the subnqn of any existing subsystems.
