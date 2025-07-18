@@ -1,5 +1,5 @@
 ---
-title: "Adding NVMe-oF Subsystems"
+title: "NVMe-oF Subsystems"
 description: "Provides information on NVMe-oF subsystems and instruction on creating a subsystem and setting up enterprise configurations of subsystems."
 geekdocCollapseSection: true
 weight: 90
@@ -59,6 +59,7 @@ Click **Save** to save changes and close the screen.
 ### Adding Remote Direct Memory Access (RDMA)
 
 Go to the [**NVMe-oF Global Configuration**](#configuring-the-nvme-of-service) screen.
+
 Select the **Enable Remote Direct Memory Access (RDMA)** option. Click **Save**.
 
 Enabling RDMA allows configuring one or more ports with RDMA selected as the transport when enabled.
@@ -74,6 +75,7 @@ Select the **Enable Asymmetric Namespace Access (ANA)** option, and click **Save
 
 This allows storage systems to inform hosts about the optimal controller path to access a namespace on Enterprise licensed systems.
 It is equivalent to Asymmetric Logical Unit Access (ALUA) in iSCSI.
+
 ANA helps storage arrays communicate to hosts which controller provides the best (lowest latency) path to specific namespaces, enabling intelligent multipathing and improved performance in NVMe-oF environments.
 
 ## Adding a Subsystem
@@ -92,10 +94,10 @@ Go to the **Add Subsystem** wizard, then:
 1. Enter a name for the subsystem. We recommend keeping the name short to avoid any possible issues with accessing the subsystem.
    A name can consist of upper and lowercase alphabetical characters, numbers, and/or some special characters such as the dash (-), underscore (_), etc.
 
-{{< trueimage src="/images/SCALE/Shares/AddSubSystemAccess.png" alt="Add Subsystem Access Screen" id="Add Subsystem Access Screen" >}}
+   {{< trueimage src="/images/SCALE/Shares/AddSubSystemAccess.png" alt="Add Subsystem Access Screen" id="Add Subsystem Access Screen" >}}
 
-2. Leave the NQN setting as **Generate from global setting**.
-   To change it, click the edit <span class="material-icons">edit</span> icon, and then enter or copy/paste a correctly formatted NQN identification number in the field.
+2. Leave the NQN set to **Generate from global setting**.
+   To change it, click on it or the edit <span class="material-icons">edit</span> icon, and then enter or copy/paste a correctly formatted NQN identification number in the field.
 
 3. Add a namespace. Click **Add** to open the **Add Namespace** screen. The screen opens with the **Zvol** tab selected.
    A subsystem can have only one namespace.
@@ -104,11 +106,11 @@ Go to the **Add Subsystem** wizard, then:
 
    To add a new zvol, browse to and select the parent dataset where you want to add the zvol, then click **Create Zvol** to open the **Add Zvol** screen. See [Creating a Zvol](#creating-a-zvol) for more information on adding a new zvol.
 
-   To use an existing file, click on the **Existing File** tab, and then browse to select the dataset path to the file.
+   To use an existing file, click on the **Existing File** tab, and then browse to select the path to the file.
 
    {{< trueimage src="/images/SCALE/Shares/EditNamespaceExistingFileTab.png" alt="Edit Namespace Existing File Tab" id="Edit Namespace Existing File Tab" >}}
 
-   To add a new file, click on the **New File** tab, then enter a file name, browse to select the dataset where you want to create the file, enter the allowed file size, and then click **Save**.
+   To add a new file, click on the **New File** tab, browse to select the parent dataset, then enter a file name, enter the desired file size.
 
    {{< trueimage src="/images/SCALE/Shares/EditNamespaceNewFileTab.png" alt="Edit Namespace New File Tab" id="Edit Namespace New File Tab" >}}
 
@@ -116,30 +118,31 @@ Go to the **Add Subsystem** wizard, then:
 
 4. Click **Next** to show the **Access** screen.
 
-  {{< trueimage src="/images/SCALE/Shares/AddSubSystemAccess.png" alt="Add Subsystem Access Screen" id="Add Subsystem Access Screen" >}}
+   {{< trueimage src="/images/SCALE/Shares/AddSubSystemAccess.png" alt="Add Subsystem Access Screen" id="Add Subsystem Access Screen" >}}
 
 5. Leave **Allow any host to connect** selected to allow any host to connect, or clear the checkbox to show the **Add** option for hosts.
+   Adding individual hosts limits access to the subsystem to only the host(s) added.
 
-  {{< trueimage src="/images/SCALE/Shares/AddHostScreen.png" alt="Add Host Screen" id="Add Host Screen" >}}
+   {{< trueimage src="/images/SCALE/Shares/AddHostScreen.png" alt="Add Host Screen" id="Add Host Screen" >}}
 
-  a. Enter or copy/paste the host NQN number.
+   a. Enter or copy/paste the NQN number obtained from the host system.
   
-  b. (Optional) Select **Require Host Authentication** to show and add authentication setting options.
+   b. (Optional) Select **Require Host Authentication** to show and add authentication setting options.
 
-  {{< trueimage src="/images/SCALE/Shares/AddHostScreenRequireAuthentication.png" alt="Add Host Screen Require Authentication" id="Add Host Screen Require Authentication" >}}
+   {{< trueimage src="/images/SCALE/Shares/AddHostScreenRequireAuthentication.png" alt="Add Host Screen Require Authentication" id="Add Host Screen Require Authentication" >}}
 
-  c. (Optional) Add the DH-CHAP key from the host system connecting to TrueNAS.
+   c. (Optional) Enter the DH-CHAP key obtained from the host system to use when connecting to TrueNAS.
      Enter or copy/paste the key into the field.
-     Click in the field to activate **Generate Key** below the **Key for Host to Present** field. The field populates with a key. Copy/paste this into the host system connecting to TrueNAS.
+     To allow TrueNAS to create a key for the host, click in the field to activate **Generate Key** below the **Key for Host to Present** field. The field populates with a key. Copy/paste this into the host system connecting to TrueNAS.
 
-  d. (Optional) Add a bi-directional key for TrueNAS when it connects to the host system.
+   d. (Optional) Add a bi-directional key for TrueNAS when it connects to the host system.
      Click **Generate Key** below the **Key for TrueNAS to Present** to populate the field with a key. Copy/paste this into the host system to use when authenticating TrueNAS when it connects to it.
 
-  e. (Optional) Select **Also use Diffie-Hellman key exchange for additional security.
+   e. (Optional) Select **Also use Diffie-Hellman key exchange for additional security.
 
-  f. Click **Save**, then click on the breadcrumb at the top of the screen to return to the **Add Subsystem** wizard.
+   f. Click **Save**, then click on the breadcrumb at the top of the screen to return to the **Add Subsystem** wizard.
 
-6. Click **Add** to the right of **Ports** to open the **Add Ports** screen.
+6. Add a port. Click **Add** to the right of **Ports** to open the **Add Ports** screen.
 
    {{< trueimage src="/images/SCALE/Shares/AddPortScreen.png" alt="Add Port Screen" id="Add Port Screen" >}}
 
@@ -160,8 +163,11 @@ Go to the **Add Subsystem** wizard, then:
 
 The **Add Zvol** screen is accessed from the **Add Subsystem** wizard after clicking **Add** to the right of **Namespaces**.
 You can also access it from the **Namespace** widget on the **NVMe-oF** screen.
+
 Select the subsystem row on the **NVMe-oF** screen table, then click **Add** on the **Namespaces** widget to show the options.
-Select **Create New** to open the **Add Namespace** screen. Browse to and select the dataset where you want to add the zvol, then click on **Create New** to open the **Add Zvol** screen.
+
+Select **Create New** to open the **Add Namespace** screen.
+Browse to and select the dataset where you want to add the zvol, then click on **Create New** to open the **Add Zvol** screen.
 
 To add a new zvol:
 
