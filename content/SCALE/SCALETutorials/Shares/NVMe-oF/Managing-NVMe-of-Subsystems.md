@@ -6,7 +6,6 @@ aliases:
 - 
 tags:
 - nvme-of
-- fibre channel
 - rdma
 - tcp
 - NVME over Fabric
@@ -38,6 +37,8 @@ To access the subsystem configuration screen from the **Shares** screen:
 
 To change a subsystem name, while on the **NVMe-oF** screen, select the subsystem row in the table, then click on the subsystem name or the edit icon in the **Details** widget.
 The name changes to a text entry field. Enter a new name for the subsystem, then click outside the field to save the change.
+
+The subsystem NQN is not modified by this operation. You must choose to modify the NQN by clicking on the NQN or edit icon for the NQN shown in the **Details** widget, then enter or copy/paste a new correctly-formatted NQN in the field.
 
 ### Copying the NQN
 
@@ -71,7 +72,9 @@ Select the tab for the change you want to make. You can:
 
 #### Changing to a Different Zvol
 
-TrueNAS NVMe-oF allows repurposing an existing zvol exposed in iSCSI, but you cannot reuse this zvol for iSCSI again.
+TrueNAS NVMe-oF allows repurposing an existing zvol exposed in iSCSI.
+The zvol can be exposed by either iSCSI or NVMe-oF, but not at the the same time.
+If you delete a namespace you can make the zvol available through iSCSI again.
 Data is not lost when associating the existing zvol with an NVMe subsystem.
 
 With the **Zvol** tab on the **Edit Namespace** screen selected, browse to and select a different parent dataset, and then click **Create Zvol** if you want to use a new zvol.
@@ -164,7 +167,7 @@ The **Add Port** screen creates a new port *IP address:port* assignment on the s
 {{< trueimage src="/images/SCALE/Shares/AddPortScreen.png" alt="Add Port Screen" id="Add Port Screen" >}}
 
 1. Select the transport type. **TCP** is the default setting.
-   If your system has an Enterprise license, and it supports RDMA or Fibre Channel, these options are listed as available choices.
+   If your system has an Enterprise license, and it supports RDMA, this option is listed as available.
 
 2. Enter an available port number of at least four digits in length. For example, *4420*.
 
@@ -187,9 +190,9 @@ The **Edit Port** screen shows current port settings for the selected subsystem.
 {{< trueimage src="/images/SCALE/Shares/EditPortScreen.png" alt="Edit Port Screen" id="Edit Port Screen" >}}
 
 Select the transport type from the dropdown list.
-Leave **TCP** as the default option unless your system has an Enterprise license and it supports RDMA or Fibre Channel.
+Leave **TCP** as the default option unless your system has an Enterprise license and it supports RDMA.
 
-Enter a port number that is at least four digits in length.
+Enter a port number that is at least four digits in length. *4420* is a port number commonly selected for NVMe-oF with IP addresses.
 
 Leave the IP address for the TrueNAS system, or select any static IP address shown on the list.
 
@@ -197,7 +200,7 @@ Click **Save**.
 
 ### Removing a Port from the Subsystem
 
-You can change the port number assigned to the subsystem using the **Remove this port from the subsystem** ![SubsystemPortActionIcon](/images/SCALE/Shares/SubsystemPortActionIcon.png "Subsystem Port Action Icon") icon.
+You can change the port number assigned to the subsystem using the **Remove this port from the subsystem** ![SubsystemPortActionIcon](/images/SCALE/Shares/SubsystemPortActionIcon.png "Subsystem Port Action Icon") icon on the **Ports** widget.
 
 After removing a port, the **Add** button lists any available port on the system, including the port removed from the subsystem, in the format *IP address:port*.
 
@@ -236,13 +239,13 @@ This shows the additional setting options.
 {{< trueimage src="/images/SCALE/Shares/AddHostScreenRequireAuthentication.png" alt="Add Host Screen Require Authentication" id="Add Host Screen Require Authentication" >}}
 
 Accept the default in **Hash** or click the edit <span class="material-icons">edit</span> edit icon and select a hash option from the dropdown list.
-Options are **SHA-256**, **SHA0384**, and **SHA-512**.
+Options are **SHA-256**, **SHA384**, and **SHA-512**.
 
 Obtain the DH-CHAP key from the host you are allowing to connect to the subsystem, and enter or copy/paste it in the **Key For Host To Present** field.
-TrueNAS can create a key for the host system if you click **Generate Key** directly under the field.
+Alternatibely, TrueNAS can create a key for the host system if you click **Generate Key** directly under the field.
 Copy this key from TrueNAS, and paste it into the host system as the key it presents to TrueNAS to authenticate the connection.
 
-To use bidirectional authentication, click **Generate Key** directly below the **Key For TrueNAs To Present (Optional)**.
+To use bidirectional authentication, click **Generate Key** directly below the **Key For TrueNAS To Present (Optional)**.
 It populates the field with a secret key. 
 Copy this key from TrueNAS, and paste it into the host system to validate the TrueNAS connection.
 
@@ -273,7 +276,8 @@ Make the desired change, then click **Save**.
 
 ### Delete Host Dialog
 
-To delete a host from the subsystem, click the <span class="material-icons">delete</span> delete icon to the right of the host.
+To delete a host from the subsystem, click **Add**, then select **Manage Hosts**. The **Hosts** window opens.
+click the <span class="material-icons">delete</span> delete icon to the right of the host.
 
 The **Delete Host** confirmation dialog opens, showing the hosts associated with the subsystem.
 

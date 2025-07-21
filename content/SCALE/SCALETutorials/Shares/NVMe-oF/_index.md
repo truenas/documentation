@@ -35,23 +35,24 @@ You can access the NVMe-of service screen from the:
 
 The **NVMe-oF Global Configuration** shows the base NQN for the service.
 
-{{< expand "What is the base NQN?" "v" >}}
-The *base NQN* us the standardized NVMe Qualified Name for the service.
+{{< expand "What is the Base NQN?" "v" >}}
+The *Base NQN* us the standardized NVMe Qualified Name for the service. It is the prefix used when a new subsystem is created.
 The NQN standard structure follows the format defined in the base specification. The maximum length/size is 223 bytes.
-TrueNAS subsystems use the base NQN as the root identifier for the NVMe subsystems in fabric deployments.
+TrueNAS subsystems use the Base NQN as the root identifier for the NVMe subsystems in fabric deployments.
 Discovery controllers use the standardized NQN to advertise available subsystems.
-Storage systems use the base NQN to authenticate and authorize host connections.
-The base NQN format provides the foundation for all NVMe-oF naming, ensuring interoperability, and preventing naming conflicts across different vendors and implementations.
+Storage systems use the Base NQN to authenticate and authorize host connections.
+The Base NQN format provides the foundation for all NVMe-oF naming, ensuring interoperability, and preventing naming conflicts across different vendors and implementations.
 {{< /expand >}}
 
 {{< trueimage src="/images/SCALE/Shares/NVMeoFGlobalConfigurationScreen.png" alt="NVMe-oF Global Configuration Screen" id="NVMe-oF Global Configuration Scree" >}}
 
-TrueNAS populates the **baseNQN** field with the NVMe identifier.
-Accept this value or click in the field to copy/paste a new, properly formatted base NQN identifier.
+TrueNAS populates the **Base NQN** field with the NVMe identifier.
+Accept this value or click in the field to copy/paste a new, properly formatted Base NQN identifier.
 NQN is used as the prefix when creating a subsystem, if a subnqn is not supplied.
 Modifying this value does not change the subnqn of any existing subsystems.
+We recommend using caution if you change this Base NQN. A particular client might be configured to talk to a particular NQN, so changing this could break the client connection.
 
-Select **Generate Cross-port Referrals for Ports on This System**  to allow xport_referral.
+Select **Generate Cross-port Referrals for Ports on This System**  to if subystems are published through pultiple ports, and connect-all functionality is desired by clients.
 If ANA is active, referrals are always generated between the peer ports on each TrueNAS controller node.
 
 Click **Save** to save changes and close the screen.
@@ -74,13 +75,13 @@ Go to the [**NVMe-oF Global Configuration**](#configuring-the-nvme-of-service) s
 Select the **Enable Asymmetric Namespace Access (ANA)** option, and click **Save**.
 
 This allows storage systems to inform hosts about the optimal controller path to access a namespace on Enterprise licensed systems.
-It is equivalent to Asymmetric Logical Unit Access (ALUA) in iSCSI.
+It is simliar to Asymmetric Logical Unit Access (ALUA) in iSCSI.
 
 ANA helps storage arrays communicate to hosts which controller provides the best (lowest latency) path to specific namespaces, enabling intelligent multipathing and improved performance in NVMe-oF environments.
 
 ## Adding a Subsystem
 
-Subsystems correlate to iSCSI targets. Each subsystem has a namespace, host, and port.
+Subsystems correlate to iSCSI targets. Each subsystem has a namespace and port, hosts are optional for added security.
 The **Add Subsystem** wizard steps through the subsystem creation process.
 
 You can access the **Add Subsystem** wizard from the:
@@ -147,7 +148,7 @@ Go to the **Add Subsystem** wizard, then:
    {{< trueimage src="/images/SCALE/Shares/AddPortScreen.png" alt="Add Port Screen" id="Add Port Screen" >}}
 
    a. Select the transport type. **TCP** is the default setting.
-      If you have an Enterprise license and your system can support RDMA or Fibre Channel, these options show as available choices.
+      If you have an Enterprise license and your system can support RDMA, this option shows as an available choice.
 
    b. Enter an available port number of at least four digits in length.
 
