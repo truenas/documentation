@@ -115,6 +115,49 @@
 </style>
 
 <script>
+  // Sitemap cache for validation
+  const sitemapCache = new Map();
+
+  async function loadSitemap(sitemapUrl) {
+    if (sitemapCache.has(sitemapUrl)) {
+      return sitemapCache.get(sitemapUrl);
+    }
+    
+    try {
+      const response = await fetch(sitemapUrl);
+      if (!response.ok) {
+        throw new Error(`HTTP ${response.status}`);
+      }
+      const xmlText = await response.text();
+      const parser = new DOMParser();
+      const xmlDoc = parser.parseFromString(xmlText, 'text/xml');
+      const urls = Array.from(xmlDoc.querySelectorAll('url loc')).map(loc => loc.textContent);
+      
+      sitemapCache.set(sitemapUrl, new Set(urls));
+      return sitemapCache.get(sitemapUrl);
+    } catch (error) {
+      console.error('Failed to load sitemap:', sitemapUrl, error);
+      return new Set();
+    }
+  }
+
+  function getSitemapUrl(product, version) {
+    const baseUrl = 'https://www.truenas.com/docs';
+    
+    if (product === 'truenas-core') {
+      return `${baseUrl}/core/${version}/sitemap.xml`;
+    } else if (product === 'truenas-scale') {
+      return `${baseUrl}/scale/${version}/sitemap.xml`;
+    } else if (product === 'truecommand') {
+      return `${baseUrl}/truecommand/${version}/sitemap.xml`;
+    } else if (product === 'hardware') {
+      return `${baseUrl}/hardware/sitemap.xml`;
+    }
+    
+    // Fallback to main sitemap
+    return `${baseUrl}/sitemap.xml`;
+  }
+
   function getCurrentPath() {
     return window.location.pathname;
     if (path.startsWith('/docs/')) {
@@ -260,42 +303,62 @@
       }    
     
       function getProductFromPath(path) {
-        if (path.includes('/core/') || path.includes('/scale/')) {
-          return 'TrueNAS'; 
+        if (path.includes('/core/')) {
+          return 'truenas-core'; 
         }
-        if (path.includes('/truecommand/')) return 'TrueCommand';
+        if (path.includes('/scale/')) {
+          return 'truenas-scale';
+        }
+        if (path.includes('/truecommand/')) return 'truecommand';
+        if (path.includes('/hardware/')) return 'hardware';
         return '';
+      }
+
+      function getActualProduct(version) {
+        if (version === '13.0' || version === '13.3') {
+          return 'truenas-core';
+        } else if (version === '24.10' || version === '25.04' || version === 'scale-nightly' || parseFloat(version) >= 20) {
+          return 'truenas-scale';
+        } else if (version === '3.0') {
+          return 'truecommand';
+        }
+        return null;
       }
     
       var currentProduct = getProductFromPath(currentPath);
       var selectedProduct = document.getElementById('productButton').textContent.trim().toLowerCase();
     
-      function handleRedirect(newPath, fallbackUrl) {
+      async function handleRedirect(newPath, fallbackUrl, targetProduct, targetVersion) {
+        // Ensure the path starts with /docs/
+        if (!newPath.startsWith('/docs/')) {
+          newPath = '/docs' + newPath;
+        }
         var attemptedUrl = base_url + newPath;
-        fetch(attemptedUrl, { method: 'HEAD' })
-          .then(response => {
-            if (response.ok) {
-              window.location.href = attemptedUrl;
-            } else {
-              console.log(`Fetch request failed for URL: ${attemptedUrl}`);
-              showRedirectModal(product, version, attemptedUrl); // Show modal before redirecting
-              setTimeout(() => {  
+        
+        try {
+          const sitemapUrl = getSitemapUrl(targetProduct, targetVersion);
+          const validUrls = await loadSitemap(sitemapUrl);
+          
+          if (validUrls.has(attemptedUrl)) {
+            window.location.href = attemptedUrl;
+          } else {
+            showRedirectModal(targetProduct, targetVersion, attemptedUrl, fallbackUrl);
+            setTimeout(() => {  
               console.log(`Redirecting to fallback URL: ${fallbackUrl}`);
               window.location.href = fallbackUrl;
             }, 5000); // Wait 5 seconds before redirecting
           }
-        })
-        .catch(error => {
-          console.error(`Error in fetch request: ${error}`);
-          showRedirectModal(product, version, attemptedUrl); // Show modal before redirecting
+        } catch (error) {
+          console.error(`Error validating URL: ${error}`);
+          showRedirectModal(targetProduct, targetVersion, attemptedUrl, fallbackUrl);
           setTimeout(() => {
             console.log(`Redirecting to fallback URL due to error: ${fallbackUrl}`);
             window.location.href = fallbackUrl;
           }, 5000); // Wait 5 seconds before redirecting
-        });
-    }
+        }
+      }
     
-    function showRedirectModal(product, version, attemptedUrl) {
+    function showRedirectModal(product, version, attemptedUrl, fallbackUrl) {
       var modal = document.getElementById('redirectModal');
       if (!modal) {
         console.error('Redirect modal element not found.');
@@ -312,9 +375,13 @@
         return;
       }
     
+      // Format product name for display
+      var displayProduct = product.replace('truenas-', 'TrueNAS ').replace('truecommand', 'TrueCommand');
+      displayProduct = displayProduct.charAt(0).toUpperCase() + displayProduct.slice(1);
+    
       modalMessageLine1.textContent = `This article could not be found in the selected version documentation.`;
       modalMessageLine2.textContent = `Either the article does not exist for the selected version or it has been moved.`;
-      modalMessageLine3.textContent = `You are being redirected to the ${product} ${version} landing page.`;
+      modalMessageLine3.textContent = `You are being redirected to the ${displayProduct} ${version} landing page.`;
       modalMessageLine4.innerHTML = `If you are not automatically redirected in 5 seconds, <a href="${fallbackUrl}">click here</a>.`;
       modal.style.display = 'block';
     
@@ -359,10 +426,15 @@
       }
     }    
         
-    if (selectedProduct === currentProduct.toLowerCase()) {
+    // Determine current and target product lines
+    var targetProduct = getActualProduct(version);
+    
+    if (currentProduct === targetProduct) {
+      // Same product line - try to preserve current article
       var newPath;
       var fallbackUrl;
-      if (version === 'core-nightly' || version === 'scale-nightly' || version === 'tc-nightly') {
+      
+      if (version === 'scale-nightly') {
         newPath = currentPath.replace(/\/\d+\.\d+\//, '/');
         fallbackUrl = constructFallbackUrl(newPath, 'nightly');
       } else if (version === 'Archive') {
@@ -374,14 +446,20 @@
           var currentVersion = matches[1];
           newPath = currentPath.replace('/' + currentVersion + '/', '/' + version + '/');
         } else {
+          // For nightly builds without version, insert version after product
+          // /scale/path -> /scale/24.10/path
           var pathParts = currentPath.split('/');
-          pathParts.splice(3, 0, version);
+          if (pathParts.length > 2 && (pathParts[1] === 'scale' || pathParts[1] === 'core' || pathParts[1] === 'truecommand')) {
+            pathParts.splice(2, 0, version);
+          } else {
+            pathParts.splice(3, 0, version);
+          }
           newPath = pathParts.join('/');
         }
         fallbackUrl = constructFallbackUrl(currentPath, version);
       }
       newPath = newPath.replace(/\/+/g, '/');
-      handleRedirect(newPath, fallbackUrl);
+      handleRedirect(newPath, fallbackUrl, targetProduct, version);
     } else {
       var relative_url;
       if (version === '13.0') {
