@@ -46,13 +46,13 @@ Go to **Network**, and click **Settings** on the **Global Configuration** widget
 
 5. Select the desired **Outbound Network** option.
 
-   * Selecting **Allow All** permits external communication for all TrueNAS services.
+   * Select **Allow All** to permit external communication for all TrueNAS services.
 
-   * Selecting **Deny All** prevents external communication.
+   * Select **Deny All** to prevent external communication.
    
-   * Selecting **Allow Specific** shows the **Services** dropdown where you can choose a limited set of services to allow external communication. Unchecked services cannot communicate externally.
+   * Select **Allow Specific** to show the **Services** dropdown, and then choose a limited set of services to allow external communication. Unchecked services cannot communicate externally.
    
-   * Selecting **Allow All Except** and choosing options on the **Services** dropdown list denies those services external communication while allowing it for all other services. Selected services cannot communicate externally.
+   * Select **Allow All Except** and choose options on the **Services** dropdown list to deny those services external communication. Selected services cannot communicate externally.
 
    {{< trueimage src="/images/SCALE/Network/GlobalConfigOutboundSettings.png" alt="Global Configuration Outbound Settings" id="Global Configuration Outbound Settings" >}}
 
