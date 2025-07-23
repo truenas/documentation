@@ -144,6 +144,11 @@
   function getSitemapUrl(product, version) {
     const baseUrl = 'https://www.truenas.com/docs';
     
+    // Nightly builds use the main sitemap
+    if (version === 'scale-nightly') {
+      return `${baseUrl}/sitemap.xml`;
+    }
+    
     if (product === 'truenas-core') {
       return `${baseUrl}/core/${version}/sitemap.xml`;
     } else if (product === 'truenas-scale') {
@@ -317,7 +322,7 @@
       function getActualProduct(version) {
         if (version === '13.0' || version === '13.3') {
           return 'truenas-core';
-        } else if (version === '24.10' || version === '25.04' || version === 'scale-nightly' || parseFloat(version) >= 20) {
+        } else if (version === '24.10' || version === '25.04' || version === 'scale-nightly' || (parseFloat(version) >= 20 && parseFloat(version) < 100)) {
           return 'truenas-scale';
         } else if (version === '3.0') {
           return 'truecommand';
@@ -344,15 +349,12 @@
           } else {
             showRedirectModal(targetProduct, targetVersion, attemptedUrl, fallbackUrl);
             setTimeout(() => {  
-              console.log(`Redirecting to fallback URL: ${fallbackUrl}`);
               window.location.href = fallbackUrl;
             }, 5000); // Wait 5 seconds before redirecting
           }
         } catch (error) {
-          console.error(`Error validating URL: ${error}`);
           showRedirectModal(targetProduct, targetVersion, attemptedUrl, fallbackUrl);
           setTimeout(() => {
-            console.log(`Redirecting to fallback URL due to error: ${fallbackUrl}`);
             window.location.href = fallbackUrl;
           }, 5000); // Wait 5 seconds before redirecting
         }
@@ -375,13 +377,21 @@
         return;
       }
     
-      // Format product name for display
-      var displayProduct = product.replace('truenas-', 'TrueNAS ').replace('truecommand', 'TrueCommand');
-      displayProduct = displayProduct.charAt(0).toUpperCase() + displayProduct.slice(1);
+      // Format product and version for display
+      var displayText;
+      if (version === 'scale-nightly') {
+        displayText = 'TrueNAS Nightly';
+      } else if (product === 'truenas-core' || product === 'truenas-scale') {
+        displayText = `TrueNAS ${version}`;
+      } else if (product === 'truecommand') {
+        displayText = `TrueCommand ${version}`;
+      } else {
+        displayText = `${product} ${version}`;
+      }
     
       modalMessageLine1.textContent = `This article could not be found in the selected version documentation.`;
       modalMessageLine2.textContent = `Either the article does not exist for the selected version or it has been moved.`;
-      modalMessageLine3.textContent = `You are being redirected to the ${displayProduct} ${version} landing page.`;
+      modalMessageLine3.textContent = `You are being redirected to the ${displayText} landing page.`;
       modalMessageLine4.innerHTML = `If you are not automatically redirected in 5 seconds, <a href="${fallbackUrl}">click here</a>.`;
       modal.style.display = 'block';
     
@@ -435,6 +445,7 @@
       var fallbackUrl;
       
       if (version === 'scale-nightly') {
+        // Remove version from path: /scale/25.04/path -> /scale/path
         newPath = currentPath.replace(/\/\d+\.\d+\//, '/');
         fallbackUrl = constructFallbackUrl(newPath, 'nightly');
       } else if (version === 'Archive') {
