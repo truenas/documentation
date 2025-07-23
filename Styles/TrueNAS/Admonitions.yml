@@ -1,0 +1,11 @@
+extends: existence
+message: "Use proper admonition syntax: [!NOTE], [!TIP], [!WARNING], [!DANGER]"
+level: suggestion
+tokens:
+  - '(?i)\[!(?!NOTE|TIP|WARNING|DANGER)\w+\]'
+  - '(?i)note:'
+  - '(?i)tip:'
+  - '(?i)warning:'
+  - '(?i)danger:'
+  - '(?i)caution:'
+  - '(?i)important:'
