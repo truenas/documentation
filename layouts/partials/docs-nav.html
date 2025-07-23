@@ -309,6 +309,8 @@
         }
         if (path.includes('/truecommand/')) return 'truecommand';
         if (path.includes('/hardware/')) return 'hardware';
+        if (path.includes('/truecommand/')) return 'truecommand';
+        if (path.includes('/hardware/')) return 'hardware';
         return '';
       }
 
@@ -434,6 +436,11 @@
     
     if (currentProduct === targetProduct) {
       // Same product line - try to preserve current article
+    // Determine current and target product lines
+    var targetProduct = getActualProduct(version);
+    
+    if (currentProduct === targetProduct) {
+      // Same product line - try to preserve current article
       var newPath;
       var fallbackUrl;
       
@@ -452,7 +459,14 @@
         } else {
           // For nightly builds without version, insert version after product
           // /scale/path -> /scale/24.10/path
+          // For nightly builds without version, insert version after product
+          // /scale/path -> /scale/24.10/path
           var pathParts = currentPath.split('/');
+          if (pathParts.length > 2 && (pathParts[1] === 'scale' || pathParts[1] === 'core' || pathParts[1] === 'truecommand')) {
+            pathParts.splice(2, 0, version);
+          } else {
+            pathParts.splice(3, 0, version);
+          }
           if (pathParts.length > 2 && (pathParts[1] === 'scale' || pathParts[1] === 'core' || pathParts[1] === 'truecommand')) {
             pathParts.splice(2, 0, version);
           } else {
@@ -463,6 +477,7 @@
         fallbackUrl = constructFallbackUrl(currentPath, version);
       }
       newPath = newPath.replace(/\/+/g, '/');
+      handleRedirect(newPath, fallbackUrl, targetProduct, version);
       handleRedirect(newPath, fallbackUrl, targetProduct, version);
     } else {
       var relative_url;
