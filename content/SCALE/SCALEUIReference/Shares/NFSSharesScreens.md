@@ -69,6 +69,10 @@ The **Add NFS** and **Edit NFS** display the same **Basic Options** and **Advanc
 {{< include file="/static/includes/NFSServiceUDPWarning.md" >}}
 {{< /hint >}}
 
+{{< hint type=note >}}
+Changes to local groups or directory service groups take up to 10 minutes to take effect for NFS shares. For immediate effect, reload or restart the NFS service.
+{{< /hint >}}
+
 ### Basic Options Settings
 The **Basic Options** settings display by default and also show in the **Advanced Options** settings.
 
