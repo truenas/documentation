@@ -63,30 +63,30 @@ To add the TrueCloud backup task, go to **Data Protection > TrueCloud Backup Tas
 
    {{< trueimage src="/images/SCALE/DataProtection/AddTrueCloudTaskBasicOptions.png" alt="Add TrueCloud Backup Task" id="Add TrueCloud Backup Task" >}}
 
-2. Enter or browse to select the local **Source Path** to the directories or files you want sent to the cloud for backup.
+2. Enter or browse to select the local **Source Path** to the datasets or a single non-Container managed zvol that you want sent to the cloud for backup.
    Click the arrow to the left of the name to expand it, then click on the name to select it.
 
-3. Select the Storj credential on the **Credentials** dropdown list.
+4. Select the Storj credential on the **Credentials** dropdown list.
    You can select **Add New** to create the Storj credential if you skipped the instructions above.
 
-4. Select the Storj bucket to use from the **Bucket** dropdown list.
+5. Select the Storj bucket to use from the **Bucket** dropdown list.
 
    If you have not previously created a TrueNAS compatible Storj bucket, select **Add New** and follow the procedure in [Creating a TrueNAS Storj Bucket](#creating-a-truenas-storj-bucket).
 
    Click the arrow icon for the **Folder** field to expand the dropdown list and select the desired folder in the Storj bucket, or enter a folder path.
    Enter `/name`, where *name* is a folder that does not exist, to create a new folder in the Storj bucket.
 
-5. Enter a name for the task under **Task Settings**.
+6. Enter a name for the task under **Task Settings**.
   
-6. Enter the number of snapshot copies to retain in **Keep Last**.
+7. Enter the number of snapshot copies to retain in **Keep Last**.
 
-7. Enter a password for the backup repository.
+8. Enter a password for the backup repository.
    Record this password in a secure location.
    You need the password to recreate the task using the same bucket/folder, such as in a new TrueNAS install or system, or to restore data from the existing snapshots in another TrueNAS system.
 
-8. Set the task schedule for when to run this task.
+9. Set the task schedule for when to run this task.
 
-9. Click **Save**.
+10. Click **Save**.
 
 {{< hint type=important >}}
 Restic uses the password you created for the backup repository to encrypt and manage the repository. Without this password, you cannot access or restore backup data, and restic cannot decrypt the repository.
