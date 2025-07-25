@@ -31,7 +31,7 @@ The header is a link that opens the [**NFS** screen]().
 
 The <span class="material-icons">more_vert</span> dropdown list shows three options available to NFS shares and the NFS service in general:
 * **Turn Off/ON Service** toggles to **Turn Off Service** when the NFS service is enabled, and to **Turn On Service** when the NFS service is disabled.
-* **Config Service** opens the [**NFS**]({{< ref "NFSServicesScreen" >}}) configuration screen.
+* **Config Service** opens the [**NFS**]({{< ref "NFSServiceScreen" >}}) configuration screen.
 * **NFS Sessions** that opens the [**NFS Sessions** screen](#nfs-sessions-screen).
 
 The widget shows a table listing nfs shares created in TrueNAS.
@@ -62,7 +62,7 @@ Select **Confirm** to activate the **Delete** button.
 
 The **NFS** screen shows an expanded presentation of the table on the **Unix (NFS) Shares** widget.
 
-{{< trueimage src="/images/SCALE/Shares/SharesNFSScreen.png" alt="Shares NFS Screen" id="Shares NFS Screen" >}}
+{{< trueimage src="/images/SCALE/Shares/NFSSharesScreen.png" alt="Shares NFS Screen" id="Shares NFS Screen" >}}
 
 **Shares** in the breadcrumb at the top of the screen returns you to the main **Shares** dashboard.
 
