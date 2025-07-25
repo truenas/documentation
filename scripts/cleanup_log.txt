@@ -1,3 +1,29 @@
+Process time: 2025-07-25 10:10:41
+Initiated by: Dan Pizappi
+
+1355 files reviewed.
+18 files deleted.
+The following files were deleted:
+C:\Users\iXUser\Documents\GitHub\documentation\static\includes\AppsSupportTimeline.md
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\Hardware\ExpansionShelves\ExpansionStencil.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\Hardware\ExpansionShelves\SASConnections.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\Hardware\RSeries\R30BSG.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Apps\InstalledAppsBulkActionUpgradeDialog.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Shares\iSCSIAuthorizedAccessScreenFC.jpg
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Shares\iSCSIExtentsScreenFC.jpg
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Shares\iSCSIFibreChannelPortsScreen.jpg
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Shares\iSCSIInitiatorsScreenFC.jpg
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Shares\iSCSIPortalsScreenFC.jpg
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Shares\iSCSITargetsScreensFC.jpg
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Shares\SMBMultichannelValidateWindows1.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Shares\SMBMultichannelValidateWindows2.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Virtualization\CreateInstancePCI.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Virtualization\CreateInstanceSecurity.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Virtualization\CreateInstanceVNC.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Virtualization\CreateVMCPUandMemory.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Virtualization\InstanceConfigurationVM.png
+
+----------------------------------------
 Process time: 2025-05-15 16:24:05
 Initiated by: Dan Pizappi
 

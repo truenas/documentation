@@ -30,11 +30,12 @@ foreach ($targetFolder in $targetFolders) {
     foreach ($file in $files) {
         $reviewedFiles++
         $filename = $file.Name
-        $foundInContent = Get-ChildItem -Path $contentDir -Recurse -File | Select-String -Pattern "\b$filename\b"
-        $foundInIncludes = Get-ChildItem -Path $includesDir -Recurse -File | Select-String -Pattern "\b$filename\b"
-        $foundInLayouts = Get-ChildItem -Path $layoutsDir -Recurse -File | Select-String -Pattern "\b$filename\b"
-        $foundInDataProperties = Get-ChildItem -Path $dataPropertiesDir -Recurse -File | Select-String -Pattern "\b$filename\b"
-        $foundInConfig = Get-Content $configFile | Select-String -Pattern "\b$filename\b"
+        $escapedFilename = [regex]::Escape($filename)
+        $foundInContent = Get-ChildItem -Path $contentDir -Recurse -File | Select-String -Pattern $escapedFilename
+        $foundInIncludes = Get-ChildItem -Path $includesDir -Recurse -File | Select-String -Pattern $escapedFilename
+        $foundInLayouts = Get-ChildItem -Path $layoutsDir -Recurse -File | Select-String -Pattern $escapedFilename
+        $foundInDataProperties = Get-ChildItem -Path $dataPropertiesDir -Recurse -File | Select-String -Pattern $escapedFilename
+        $foundInConfig = Get-Content $configFile | Select-String -Pattern $escapedFilename
 
         # If the file is not found in any of these locations, delete it
         if (-not $foundInContent -and -not $foundInIncludes -and -not $foundInLayouts -and -not $foundInDataProperties -and -not $foundInConfig) {

@@ -5,6 +5,7 @@ weight: 25
 aliases:
  - /scale/scaleuireference/apps/launchdockerimagescreens/
  - /scale/scaletutorials/apps/docker/
+ - /scale/scaleuireference/apps/docker/
 tags:
 - customapp
 ---

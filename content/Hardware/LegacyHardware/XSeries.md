@@ -7,6 +7,7 @@ aliases:
  - /hardware/xseries/xseriesbsg/
  - /hardware/xseries/xserieshanetworking/
  - /hardware/xseries/xseriessov/
+ - /files/XseriesBSGv1_6.pdf
 ---
 
 ## TrueNAS X-Series Document Archive
