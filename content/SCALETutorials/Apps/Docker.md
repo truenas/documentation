@@ -48,10 +48,8 @@ When you are ready to create a container, go to the **APPS** screen, select the 
 
    If the application requires it, enter the executables you want or need to run after starting the container in **Container Entrypoint**. Click **Add** for **Container CMD** to add a command. Click **Add** for **Container Arg** to add a container argument.
 
-   ![LaunchDockerImageAddContainerEntrypoints](/images/SCALE/22.12/LaunchDockerImageAddContainerEntrypoints.png "Add Container Entrypoints")
-
 3. Enter the **Container Environment Variables**. Not all applications use environment variables. 
-   Check the Docker Hub for details on the application you want to install to verify which variables that particular application requires. 
+   Check the Docker Hub for details on the application you want to install to verify which variables that particular application requires.
 
    ![LaunchDockerImageAddContainerEnvironmentVariables](/images/SCALE/22.12/LaunchDockerImageAddContainerEnvironmentVariables.png "Add Container Environmental Variables")
 
@@ -75,8 +73,6 @@ When you are ready to create a container, go to the **APPS** screen, select the 
 
 6. Add the **Storage** settings. 
    Click **Add** for each application host path. Add any memory-backed or other volumes you want to use.
-
-   ![LaunchDockerImageAddStorage](/images/SCALE/22.12/LaunchDockerImageAddStorage.png "Add Storage Paths and Volumes")
 
    You can add more volumes to the container later if they are needed. 
 

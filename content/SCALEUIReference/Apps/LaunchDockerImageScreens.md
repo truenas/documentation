@@ -54,8 +54,6 @@ Define any [commands and arguments](https://kubernetes.io/docs/tasks/inject-data
 These can override any existing commands stored in the image. 
 Check the documentation for the application you want to install using a Docker Image for entry point commands or arguments you need to enter.
 
-![LaunchDockerImageAddContainerEntrypoints](/images/SCALE/22.12/LaunchDockerImageAddContainerEntrypoints.png "Add Container Entrypoints") 
-
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
@@ -148,8 +146,6 @@ You can mount SCALE storage locations inside the container with host path volume
 For more details, see the [Kubernetes hostPath documentation](https://kubernetes.io/docs/concepts/storage/volumes/#hostpath).
 Users can create additional Persistent Volumes (PVs) for storage within the container. 
 PVs consume space from the pool chosen for application management. To do this, name each new dataset and define a path where that dataset appears inside the container.
-
-![LaunchDockerImageAddStorage](/images/SCALE/22.12/LaunchDockerImageAddStorage.png "Add Storage Paths and Volumes") 
 
 {{< truetable >}}
 | Setting | Description |
