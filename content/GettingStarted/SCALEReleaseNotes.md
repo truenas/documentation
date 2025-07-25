@@ -119,7 +119,7 @@ This is a maintenance release and includes refinements and fixes for issues disc
 
 {{< enterprise >}}
 * Support for account policy settings in TrueNAS Enterprise environments regarding password history, complexity, and aging ([NAS-135115](https://ixsystems.atlassian.net/browse/NAS-135115)).
-  Note: Administrators should contact TrueNAS Support before enabling STIG and FIPS security settings (see [Security Settings](/scale/25.04/scaletutorials/systemsettings/advanced/#security-settings) for details).
+  Note: Administrators should contact TrueNAS Support before enabling STIG and FIPS security settings (see [Security Settings](/scaletutorials/systemsettings/advanced/#security-settings) for details).
 * Add PAM-based session management for middleware ([NAS-127189](https://ixsystems.atlassian.net/browse/NAS-127189)).
   For STIG compliant environments, the max number of simultaneous logins is 10.
   Accounts are locked for 15 minutes after 3 consecutive failed login attempts.
