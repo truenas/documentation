@@ -8,6 +8,7 @@ tags:
 aliases:
  - /scale/gettingstarted/scalesystememail/
  - /scaletutorials/toptoolbar/settingupsystememail/
+ - /_includes/emailoptionsgmail/
 ---
 
 {{< toc >}}
