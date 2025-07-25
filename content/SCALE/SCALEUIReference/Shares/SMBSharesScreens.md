@@ -85,7 +85,7 @@ The <span class="material-icons">more_vert</span> dropdown list at the right of 
 The two SMB share configuration screens, **Add SMB** and **Edit SMB**, have the same SMB share setting options.
 
 The **Create Dataset** option becomes active after selecting a parent dataset in the **Path** file browse field.
-It opens the [**Create Dataset**](#) dialog.
+It opens the [**Create Dataset**](#create-dataset) dialog.
 
 **Save** creates the share (or saves an existing one) and adds it to the **Windows (SMB) Shares** widget and the **SMB** table on the **SMB** screen.
 
