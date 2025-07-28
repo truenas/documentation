@@ -12,7 +12,6 @@
 - **New Features:** <summary of primary addition>
 - **Improvements:** <summary of optimization area>
 
-## Additional Notes
 **Pre-Update Actions:** <Any required preparation steps>
 
 **[Detailed Release Notes]** | **[Known Issues Link]** | **[Enterprise Support Portal]** | **[Community Forums]**
