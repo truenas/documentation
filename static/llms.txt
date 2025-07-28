@@ -174,27 +174,33 @@ The TrueNAS documentation includes two main content types for each version:
 
 ### Storage Management
 - Storage Tutorials: https://truenas.com/docs/core/13.0/coretutorials/storage/
-- Storage UI Reference: https://truenas.com/docs/core/13.0/coreuireference/storage/
+- Storage UI Reference: https://truenas.com/docs/core/13.0/uireference/storage/
 
 ### Data Sharing
 - Sharing Tutorials: https://truenas.com/docs/core/13.0/coretutorials/sharing/
-- Sharing UI Reference: https://truenas.com/docs/core/13.0/coreuireference/sharing/
+- Sharing UI Reference: https://truenas.com/docs/core/13.0/uireference/sharing/
 
-### Data Protection
-- Data Protection Tutorials: https://truenas.com/docs/core/13.0/coretutorials/dataprotection/
-- Data Protection UI Reference: https://truenas.com/docs/core/13.0/coreuireference/dataprotection/
+### Data Protection and Tasks
+- Tasks Tutorials: https://truenas.com/docs/core/13.0/coretutorials/tasks/
+- Tasks UI Reference: https://truenas.com/docs/core/13.0/uireference/tasks/
 
 ### Network Configuration
 - Network Tutorials: https://truenas.com/docs/core/13.0/coretutorials/network/
-- Network UI Reference: https://truenas.com/docs/core/13.0/coreuireference/network/
+- Network UI Reference: https://truenas.com/docs/core/13.0/uireference/network/
 
-### Jails and Plugins
-- Jails and Plugins Tutorials: https://truenas.com/docs/core/13.0/coretutorials/jailsplugins/
-- Jails and Plugins UI Reference: https://truenas.com/docs/core/13.0/coreuireference/jailsplugins/
+### Jails, Plugins, and VMs
+- Jails, Plugins, VMs Tutorials: https://truenas.com/docs/core/13.0/coretutorials/jailspluginsVMs/
+- Jails, Plugins, VMs UI Reference: https://truenas.com/docs/core/13.0/uireference/jailspluginsVMs/
 
 ### System Administration
-- System Settings Tutorials: https://truenas.com/docs/core/13.0/coretutorials/systemsettings/
-- System Settings UI Reference: https://truenas.com/docs/core/13.0/coreuireference/systemsettings/
+- System Configuration Tutorials: https://truenas.com/docs/core/13.0/coretutorials/systemconfiguration/
+- System UI Reference: https://truenas.com/docs/core/13.0/uireference/system/
+- Services Tutorials: https://truenas.com/docs/core/13.0/coretutorials/services/
+- Services UI Reference: https://truenas.com/docs/core/13.0/uireference/services/
+
+### Directory Services
+- Directory Services Tutorials: https://truenas.com/docs/core/13.0/coretutorials/directoryservices/
+- Directory Services UI Reference: https://truenas.com/docs/core/13.0/uireference/directoryservices/
 
 ## External Resources
 
