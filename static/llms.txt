@@ -167,17 +167,43 @@ The TrueNAS documentation includes two main content types for each version:
 ## TrueNAS 13.3 (CORE)
 
 ### Getting Started
-- Installation, Configuration, and Release Notes: https://truenas.com/docs/core/13.3/gettingstarted/
+- Installation Guide: https://truenas.com/docs/core/13.3/gettingstarted/install/
+- Hardware Requirements: https://truenas.com/docs/core/13.3/gettingstarted/corehardwareguide/
+- Configuration Guide: https://truenas.com/docs/core/13.3/gettingstarted/configure/
+- Release Notes: https://truenas.com/docs/core/13.3/gettingstarted/corereleasenotes/
 
-### Core Documentation Areas
-- Tutorials: https://truenas.com/docs/core/13.3/coretutorials/
-- UI Reference: https://truenas.com/docs/core/13.3/coreuireference/
+### Storage Management
+- Storage Tutorials: https://truenas.com/docs/core/13.3/coretutorials/storage/
+- Storage UI Reference: https://truenas.com/docs/core/13.3/uireference/storage/
 
-### Key Feature Areas
-- Storage and Data Protection: https://truenas.com/docs/core/13.3/coretutorials/storage/
-- Data Sharing and Network Configuration: https://truenas.com/docs/core/13.3/coretutorials/sharing/
-- Jails and Plugins: https://truenas.com/docs/core/13.3/coretutorials/jailsplugins/
-- System Administration: https://truenas.com/docs/core/13.3/coretutorials/systemsettings/
+### Data Sharing
+- Sharing Tutorials: https://truenas.com/docs/core/13.3/coretutorials/sharing/
+- Sharing UI Reference: https://truenas.com/docs/core/13.3/uireference/sharing/
+
+### Data Protection and Tasks
+- Tasks Tutorials: https://truenas.com/docs/core/13.3/coretutorials/tasks/
+- Tasks UI Reference: https://truenas.com/docs/core/13.3/uireference/tasks/
+
+### Network Configuration
+- Network Tutorials: https://truenas.com/docs/core/13.3/coretutorials/network/
+- Network UI Reference: https://truenas.com/docs/core/13.3/uireference/network/
+
+### Jails, Plugins, and VMs
+- Jails, Plugins, VMs Tutorials: https://truenas.com/docs/core/13.3/coretutorials/jailspluginsVMs/
+- Jails, Plugins, VMs UI Reference: https://truenas.com/docs/core/13.3/uireference/jailspluginsVMs/
+
+### System Administration
+- System Configuration Tutorials: https://truenas.com/docs/core/13.3/coretutorials/systemconfiguration/
+- System UI Reference: https://truenas.com/docs/core/13.3/uireference/system/
+- Services Tutorials: https://truenas.com/docs/core/13.3/coretutorials/services/
+- Services UI Reference: https://truenas.com/docs/core/13.3/uireference/services/
+
+### Directory Services
+- Directory Services Tutorials: https://truenas.com/docs/core/13.3/coretutorials/directoryservices/
+- Directory Services UI Reference: https://truenas.com/docs/core/13.3/uireference/directoryservices/
+
+### API Documentation
+- API Overview: https://truenas.com/docs/core/13.3/api/
 
 ## TrueNAS 13.0 (CORE - Default for CORE queries)
 
