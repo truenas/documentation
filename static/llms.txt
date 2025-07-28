@@ -171,7 +171,7 @@ The TrueNAS documentation includes two main content types for each version:
 
 ### Core Documentation Areas
 - Tutorials: https://truenas.com/docs/core/13.3/coretutorials/
-- UI Reference: https://truenas.com/docs/core/13.3/coreuireference/
+- UI Reference: https://truenas.com/docs/core/13.3/uireference/
 
 ### Key Feature Areas
 - Storage and Data Protection: https://truenas.com/docs/core/13.3/coretutorials/storage/
