@@ -21,9 +21,9 @@ jump_to_buttons:
 <!-- Hugo-processed content for release notes tab box -->
 <div style="display: none;" id="release-tab-content-source">
   <div data-tab-id="25.04.1-changes-and-issues" data-tab-label="25.04.1">
-May 27, 2025
+TrueNAS Release Date: May 27, 2025
 
-The TrueNAS team is pleased to release TrueNAS 25.04.1!
+The TrueNAS team is pleased to release TrueNAS 25.04.1.
 This is a maintenance release and includes refinements and fixes for issues discovered after 24.04.0.
 
 {{< hint type=tip >}}
@@ -32,6 +32,7 @@ As always, we encourage users to review the [Upgrading TrueNAS](/gettingstarted/
 
 ### 25.04.1 Notable Changes
 
+{{< expand "Open notable issues" "v" >}}
 #### Enterprise Features
 
 * Support for account policy settings in TrueNAS Enterprise environments regarding password history, complexity, and aging ([NAS-135115](https://ixsystems.atlassian.net/browse/NAS-135115)).
@@ -51,9 +52,11 @@ As always, we encourage users to review the [Upgrading TrueNAS](/gettingstarted/
 * Fix SSH service startup with auxiliary parameters enabled ([NAS-135367](https://ixsystems.atlassian.net/browse/NAS-135367)).
 
 [Click here for the full changelog](https://ixsystems.atlassian.net/issues/?filter=12503) of completed tickets included in the 25.04.1 release.
+{{< /expand >}}
 
 ### 25.04.1 Known Issues
 
+{{< expand "Click to expand" "v" >}}
 * Some users of TrueNAS Apps attempting to configure GPU allocation report UUID-related errors ([NAS-134152](https://ixsystems.atlassian.net/browse/NAS-134152)).
 
 * Custom applications with TTY enabled do not display logs in the TrueNAS UI. Users can resolve this by either disabling TTY or using Docker logs from the command line.
@@ -64,6 +67,7 @@ As always, we encourage users to review the [Upgrading TrueNAS](/gettingstarted/
   A fix is expected in the TrueNAS 25.04.1.1 release.
 
 [Click here for the latest information](https://ixsystems.atlassian.net/issues/?filter=12504) about public issues in 25.04.1.
+{{< /expand >}}
   </div>
   
   <div data-tab-id="25.04.0-changes-and-issues" data-tab-label="25.04.0">
@@ -375,11 +379,8 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 
-
-
-
-
 ## Component Versions
+
 
 Click the component version number to see release notes for that component.
 
