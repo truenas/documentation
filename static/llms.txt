@@ -111,12 +111,13 @@ The TrueNAS documentation includes two main content types for each version:
 - System Settings UI Reference: https://truenas.com/docs/scale/25.04/scaleuireference/systemsettings/
 
 ### Interface and Dashboard
-- Dashboard Overview: https://truenas.com/docs/scale/25.04/scaletutorials/dashboard/
-- Top Toolbar Reference: https://truenas.com/docs/scale/25.04/scaleuireference/toptoolbar/
+- Dashboard Tutorials: https://truenas.com/docs/scale/25.04/scaletutorials/dashboard/
+- Dashboard UI Reference: https://truenas.com/docs/scale/25.04/scaleuireference/scaledashboard/
+- Top Toolbar Tutorials: https://truenas.com/docs/scale/25.04/scaletutorials/toptoolbar/
+- Top Toolbar UI Reference: https://truenas.com/docs/scale/25.04/scaleuireference/toptoolbar/
 
 ### API Documentation
-- REST API Reference: https://truenas.com/docs/scale/25.04/api/
-- WebSocket API: https://truenas.com/docs/scale/25.04/api/websocket_api/
+- API Overview: https://truenas.com/docs/scale/25.04/api/
 
 ## TrueNAS 24.10
 
