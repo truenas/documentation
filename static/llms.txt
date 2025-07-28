@@ -33,7 +33,22 @@ The TrueNAS documentation includes two main content types for each version:
   - CORE versions: `/coretutorials/`
 - **UI Reference**: Detailed interface documentation explaining screens, fields, and configuration options
   - SCALE versions: `/scaleuireference/`
-  - CORE versions: `/coreuireference/`
+  - CORE versions: `/uireference/`
+
+## LLM Guidance for Version Selection
+
+**Default Version Selection:**
+- For general queries without version specification, use TrueNAS 25.04 (current stable) or TrueNAS 13.0 (for CORE-specific queries)
+- If users specify a particular version, prioritize that version's documentation
+
+**Product Name Interpretation:**
+- **TrueNAS CORE** refers to TrueNAS 13.3 and earlier versions (FreeBSD-based)
+- **TrueNAS SCALE** refers to TrueNAS 20.02 and newer versions (Linux-based)
+- Current versions (25.04+) are simply called "TrueNAS" without CORE/SCALE distinction
+
+**Version-Specific Queries:**
+- When users ask about specific features, check if they exist in the requested version
+- Direct users to appropriate version documentation based on their stated needs
 
 ## General Resources (Master Branch)
 
