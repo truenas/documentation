@@ -137,17 +137,51 @@ The TrueNAS documentation includes two main content types for each version:
 ## TrueNAS 24.10
 
 ### Getting Started
-- Installation, Configuration, and Release Notes: https://truenas.com/docs/scale/24.10/gettingstarted/
+- Installation Guide: https://truenas.com/docs/scale/24.10/gettingstarted/install/
+- Hardware Requirements: https://truenas.com/docs/scale/24.10/gettingstarted/scalehardwareguide/
+- First-time Configuration: https://truenas.com/docs/scale/24.10/gettingstarted/configure/
+- Migration from CORE: https://truenas.com/docs/scale/24.10/gettingstarted/migrate/
+- Release Notes: https://truenas.com/docs/scale/24.10/gettingstarted/scalereleasenotes/
 
-### Core Documentation Areas
-- Tutorials: https://truenas.com/docs/scale/24.10/scaletutorials/
-- UI Reference: https://truenas.com/docs/scale/24.10/scaleuireference/
+### Storage Management
+- Storage Tutorials: https://truenas.com/docs/scale/24.10/scaletutorials/storage/
+- Storage UI Reference: https://truenas.com/docs/scale/24.10/scaleuireference/storage/
+- Dataset Tutorials: https://truenas.com/docs/scale/24.10/scaletutorials/datasets/
+- Dataset UI Reference: https://truenas.com/docs/scale/24.10/scaleuireference/datasets/
 
-### Key Feature Areas
-- Storage, Datasets, and Data Protection: https://truenas.com/docs/scale/24.10/scaletutorials/storage/
-- Data Sharing and Network Configuration: https://truenas.com/docs/scale/24.10/scaletutorials/shares/
-- Apps, Containers, and Virtual Machines: https://truenas.com/docs/scale/24.10/scaleuireference/apps/
-- User Management and System Administration: https://truenas.com/docs/scale/24.10/scaletutorials/systemsettings/
+### Data Sharing
+- Shares Tutorials: https://truenas.com/docs/scale/24.10/scaletutorials/shares/
+- Shares UI Reference: https://truenas.com/docs/scale/24.10/scaleuireference/shares/
+
+### Data Protection
+- Data Protection Tutorials: https://truenas.com/docs/scale/24.10/scaletutorials/dataprotection/
+- Data Protection UI Reference: https://truenas.com/docs/scale/24.10/scaleuireference/dataprotection/
+
+### Network Configuration
+- Network Tutorials: https://truenas.com/docs/scale/24.10/scaletutorials/network/
+- Network UI Reference: https://truenas.com/docs/scale/24.10/scaleuireference/network/
+
+### User Management and Security
+- Credentials Tutorials: https://truenas.com/docs/scale/24.10/scaletutorials/credentials/
+- Credentials UI Reference: https://truenas.com/docs/scale/24.10/scaleuireference/credentials/
+
+### Applications and Virtualization
+- TrueNAS Apps UI Reference: https://truenas.com/docs/scale/24.10/scaleuireference/apps/
+- Container Tutorials: https://truenas.com/docs/scale/24.10/scaletutorials/containers/
+- Virtual Machine Tutorials: https://truenas.com/docs/scale/24.10/scaletutorials/virtualmachines/
+
+### System Administration
+- System Settings Tutorials: https://truenas.com/docs/scale/24.10/scaletutorials/systemsettings/
+- System Settings UI Reference: https://truenas.com/docs/scale/24.10/scaleuireference/systemsettings/
+
+### Interface and Dashboard
+- Dashboard Tutorials: https://truenas.com/docs/scale/24.10/scaletutorials/dashboard/
+- Dashboard UI Reference: https://truenas.com/docs/scale/24.10/scaleuireference/scaledashboard/
+- Top Toolbar Tutorials: https://truenas.com/docs/scale/24.10/scaletutorials/toptoolbar/
+- Top Toolbar UI Reference: https://truenas.com/docs/scale/24.10/scaleuireference/toptoolbar/
+
+### API Documentation
+- API Overview: https://truenas.com/docs/scale/24.10/api/
 
 ## TrueNAS 24.04
 
