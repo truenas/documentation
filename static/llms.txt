@@ -1,0 +1,259 @@
+# TrueNAS Documentation
+
+> TrueNAS is an open-source network-attached storage (NAS) operating system built on OpenZFS, providing enterprise-grade data management, protection, and sharing capabilities. This documentation covers multiple product versions with both current stable releases and development content.
+
+## Version Structure and Navigation
+
+The documentation is organized across multiple version branches with specific hosting paths:
+
+### Current Stable Versions (Recommended)
+- **TrueNAS 25.04** (Default for general queries): https://truenas.com/docs/scale/25.04/
+- **TrueNAS 24.10**: https://truenas.com/docs/scale/24.10/ 
+- **TrueNAS 24.04**: https://truenas.com/docs/scale/24.04/
+
+### Legacy Versions
+- **TrueNAS 13.3** (TrueNAS CORE): https://truenas.com/docs/core/13.3/
+- **TrueNAS 13.0** (Default for TrueNAS CORE queries): https://truenas.com/docs/core/13.0/
+
+### General Content
+- **Main Branch** (Unversioned content): https://truenas.com/docs/
+  - Release information and downloads: https://truenas.com/docs/truenasupgrades/
+  - TrueNAS Enterprise hardware products: https://truenas.com/docs/hardware/
+  - Reference materials: https://truenas.com/docs/references/
+  - Latest nightly development content (unstable): https://truenas.com/docs/scale/
+
+**Note**: TrueNAS no longer uses SCALE/CORE product names in current development. Refer to products as "TrueNAS + Version" (e.g., "TrueNAS 25.04").
+
+## Documentation Types
+
+The TrueNAS documentation includes two main content types for each version:
+
+- **Tutorials**: Step-by-step guides and how-to instructions for accomplishing specific tasks and workflows
+  - SCALE versions: `/scaletutorials/`
+  - CORE versions: `/coretutorials/`
+- **UI Reference**: Detailed interface documentation explaining screens, fields, and configuration options
+  - SCALE versions: `/scaleuireference/`
+  - CORE versions: `/uireference/`
+
+## LLM Guidance for Version Selection
+
+**Default Version Selection:**
+- For general queries without version specification, use TrueNAS 25.04 (current stable) or TrueNAS 13.0 (for CORE-specific queries)
+- If users specify a particular version, prioritize that version's documentation
+
+**Product Name Interpretation:**
+- **TrueNAS CORE** refers to TrueNAS 13.3 and earlier versions (FreeBSD-based)
+- **TrueNAS SCALE** refers to TrueNAS 20.02 and newer versions (Linux-based)
+- Current versions (25.04+) are simply called "TrueNAS" without CORE/SCALE distinction
+
+**Version-Specific Queries:**
+- When users ask about specific features, check if they exist in the requested version
+- Direct users to appropriate version documentation based on their stated needs
+
+## General Resources (Master Branch)
+
+### Release and Software Information
+- Software Releases and Upgrades: https://truenas.com/docs/truenasupgrades/
+- Software Status: https://truenas.com/docs/softwarestatus/
+- Release Schedules and Lifecycle: https://truenas.com/docs/truenasupgrades/
+
+### TrueNAS Enterprise Hardware Products
+- Hardware Overview: https://truenas.com/docs/hardware/
+- F-Series (All-flash HA, 2U): https://truenas.com/docs/hardware/fseries/
+- H-Series (Hybrid/All-flash HA, 2U): https://truenas.com/docs/hardware/hseries/
+- M-Series (Hybrid HA, 4U): https://truenas.com/docs/hardware/mseries/
+- R-Series (Customizable performance): https://truenas.com/docs/hardware/rseries/
+- Mini Family (Compact systems): https://truenas.com/docs/hardware/minifamily/
+- Expansion Shelves: https://truenas.com/docs/hardware/expansionshelves/
+- Legacy Hardware Archive: https://truenas.com/docs/hardware/legacyhardware/
+- Hardware Notices and Announcements: https://truenas.com/docs/hardware/notices/
+
+### Reference Materials and Technical Concepts
+- ZFS Primer: https://truenas.com/docs/references/zfsprimer/
+- ZFS Capacity Calculator: https://truenas.com/docs/references/zfscapacitycalculator/
+- ACL Primer: https://truenas.com/docs/references/aclprimer/
+- Concepts and Terminology: https://truenas.com/docs/references/conceptsandterms/
+- Storage Technical References: https://truenas.com/docs/references/
+
+### Community Resources
+- Contributing to Documentation: https://truenas.com/docs/contributing/documentation/
+- Issue Reporting Guidelines: https://truenas.com/docs/contributing/issuereporting/
+- UI Translation Contributions: https://truenas.com/docs/contributing/uitranslations/
+- Community Solutions: https://truenas.com/docs/solutions/
+
+### Development Content (Nightly/Unstable)
+- TrueNAS 25.10 Development Content: https://truenas.com/docs/scale/
+- Latest Development Features: https://truenas.com/docs/scale/gettingstarted/scalereleasenotes/
+
+## TrueNAS 25.04 (Current Stable - Default)
+
+### Getting Started
+- Installation Guide: https://truenas.com/docs/scale/25.04/gettingstarted/install/
+- Hardware Requirements: https://truenas.com/docs/scale/25.04/gettingstarted/scalehardwareguide/
+- First-time Configuration: https://truenas.com/docs/scale/25.04/gettingstarted/configure/
+- Migration from CORE: https://truenas.com/docs/scale/25.04/gettingstarted/migrate/
+- Release Notes: https://truenas.com/docs/scale/25.04/gettingstarted/scalereleasenotes/
+
+### Storage Management
+- Storage Tutorials: https://truenas.com/docs/scale/25.04/scaletutorials/storage/
+- Storage UI Reference: https://truenas.com/docs/scale/25.04/scaleuireference/storage/
+- Dataset Tutorials: https://truenas.com/docs/scale/25.04/scaletutorials/datasets/
+- Dataset UI Reference: https://truenas.com/docs/scale/25.04/scaleuireference/datasets/
+
+### Data Sharing
+- Shares Tutorials: https://truenas.com/docs/scale/25.04/scaletutorials/shares/
+- Shares UI Reference: https://truenas.com/docs/scale/25.04/scaleuireference/shares/
+
+### Data Protection
+- Data Protection Tutorials: https://truenas.com/docs/scale/25.04/scaletutorials/dataprotection/
+- Data Protection UI Reference: https://truenas.com/docs/scale/25.04/scaleuireference/dataprotection/
+
+### Network Configuration
+- Network Tutorials: https://truenas.com/docs/scale/25.04/scaletutorials/network/
+- Network UI Reference: https://truenas.com/docs/scale/25.04/scaleuireference/network/
+
+### User Management and Security
+- Credentials Tutorials: https://truenas.com/docs/scale/25.04/scaletutorials/credentials/
+- Credentials UI Reference: https://truenas.com/docs/scale/25.04/scaleuireference/credentials/
+
+### Applications and Virtualization
+- TrueNAS Apps UI Reference: https://truenas.com/docs/scale/25.04/scaleuireference/apps/
+- Container Tutorials: https://truenas.com/docs/scale/25.04/scaletutorials/containers/
+- Virtual Machine Tutorials: https://truenas.com/docs/scale/25.04/scaletutorials/virtualmachines/
+
+### System Administration
+- System Settings Tutorials: https://truenas.com/docs/scale/25.04/scaletutorials/systemsettings/
+- System Settings UI Reference: https://truenas.com/docs/scale/25.04/scaleuireference/systemsettings/
+
+### Interface and Dashboard
+- Dashboard Tutorials: https://truenas.com/docs/scale/25.04/scaletutorials/dashboard/
+- Dashboard UI Reference: https://truenas.com/docs/scale/25.04/scaleuireference/scaledashboard/
+- Top Toolbar Tutorials: https://truenas.com/docs/scale/25.04/scaletutorials/toptoolbar/
+- Top Toolbar UI Reference: https://truenas.com/docs/scale/25.04/scaleuireference/toptoolbar/
+
+### API Documentation
+- API Overview: https://truenas.com/docs/scale/25.04/api/
+
+## TrueNAS 24.10
+
+### Getting Started
+- Installation Guide: https://truenas.com/docs/scale/24.10/gettingstarted/install/
+- Hardware Requirements: https://truenas.com/docs/scale/24.10/gettingstarted/scalehardwareguide/
+- First-time Configuration: https://truenas.com/docs/scale/24.10/gettingstarted/configure/
+- Migration from CORE: https://truenas.com/docs/scale/24.10/gettingstarted/migrate/
+- Release Notes: https://truenas.com/docs/scale/24.10/gettingstarted/scalereleasenotes/
+
+### Storage Management
+- Storage Tutorials: https://truenas.com/docs/scale/24.10/scaletutorials/storage/
+- Storage UI Reference: https://truenas.com/docs/scale/24.10/scaleuireference/storage/
+- Dataset Tutorials: https://truenas.com/docs/scale/24.10/scaletutorials/datasets/
+- Dataset UI Reference: https://truenas.com/docs/scale/24.10/scaleuireference/datasets/
+
+### Data Sharing
+- Shares Tutorials: https://truenas.com/docs/scale/24.10/scaletutorials/shares/
+- Shares UI Reference: https://truenas.com/docs/scale/24.10/scaleuireference/shares/
+
+### Data Protection
+- Data Protection Tutorials: https://truenas.com/docs/scale/24.10/scaletutorials/dataprotection/
+- Data Protection UI Reference: https://truenas.com/docs/scale/24.10/scaleuireference/dataprotection/
+
+### Network Configuration
+- Network Tutorials: https://truenas.com/docs/scale/24.10/scaletutorials/network/
+- Network UI Reference: https://truenas.com/docs/scale/24.10/scaleuireference/network/
+
+### User Management and Security
+- Credentials Tutorials: https://truenas.com/docs/scale/24.10/scaletutorials/credentials/
+- Credentials UI Reference: https://truenas.com/docs/scale/24.10/scaleuireference/credentials/
+
+### Applications and Virtualization
+- TrueNAS Apps UI Reference: https://truenas.com/docs/scale/24.10/scaleuireference/apps/
+- Container Tutorials: https://truenas.com/docs/scale/24.10/scaletutorials/containers/
+- Virtual Machine Tutorials: https://truenas.com/docs/scale/24.10/scaletutorials/virtualmachines/
+
+### System Administration
+- System Settings Tutorials: https://truenas.com/docs/scale/24.10/scaletutorials/systemsettings/
+- System Settings UI Reference: https://truenas.com/docs/scale/24.10/scaleuireference/systemsettings/
+
+### Interface and Dashboard
+- Dashboard Tutorials: https://truenas.com/docs/scale/24.10/scaletutorials/dashboard/
+- Dashboard UI Reference: https://truenas.com/docs/scale/24.10/scaleuireference/scaledashboard/
+- Top Toolbar Tutorials: https://truenas.com/docs/scale/24.10/scaletutorials/toptoolbar/
+- Top Toolbar UI Reference: https://truenas.com/docs/scale/24.10/scaleuireference/toptoolbar/
+
+### API Documentation
+- API Overview: https://truenas.com/docs/scale/24.10/api/
+
+## TrueNAS 24.04
+
+### Getting Started
+- Installation, Configuration, and Release Notes: https://truenas.com/docs/scale/24.04/gettingstarted/
+
+### Core Documentation Areas
+- Tutorials: https://truenas.com/docs/scale/24.04/scaletutorials/
+- UI Reference: https://truenas.com/docs/scale/24.04/scaleuireference/
+
+### Key Feature Areas
+- Storage, Datasets, and Data Protection: https://truenas.com/docs/scale/24.04/scaletutorials/storage/
+- Data Sharing and Network Configuration: https://truenas.com/docs/scale/24.04/scaletutorials/shares/
+- Apps, Containers, and Virtual Machines: https://truenas.com/docs/scale/24.04/scaleuireference/apps/
+- User Management and System Administration: https://truenas.com/docs/scale/24.04/scaletutorials/systemsettings/
+
+## TrueNAS 13.3 (CORE)
+
+### Getting Started
+- Installation, Configuration, and Release Notes: https://truenas.com/docs/core/13.3/gettingstarted/
+
+### Core Documentation Areas
+- Tutorials: https://truenas.com/docs/core/13.3/coretutorials/
+- UI Reference: https://truenas.com/docs/core/13.3/uireference/
+
+### Key Feature Areas
+- Storage and Data Protection: https://truenas.com/docs/core/13.3/coretutorials/storage/
+- Data Sharing and Network Configuration: https://truenas.com/docs/core/13.3/coretutorials/sharing/
+- Jails and Plugins: https://truenas.com/docs/core/13.3/coretutorials/jailsplugins/
+- System Administration: https://truenas.com/docs/core/13.3/coretutorials/systemsettings/
+
+## TrueNAS 13.0 (CORE - Default for CORE queries)
+
+### Getting Started
+- Installation Guide: https://truenas.com/docs/core/13.0/gettingstarted/install/
+- Hardware Requirements: https://truenas.com/docs/core/13.0/gettingstarted/corehardwareguide/
+- Configuration Guide: https://truenas.com/docs/core/13.0/gettingstarted/configure/
+- Release Notes: https://truenas.com/docs/core/13.0/gettingstarted/corereleasenotes/
+
+### Storage Management
+- Storage Tutorials: https://truenas.com/docs/core/13.0/coretutorials/storage/
+- Storage UI Reference: https://truenas.com/docs/core/13.0/uireference/storage/
+
+### Data Sharing
+- Sharing Tutorials: https://truenas.com/docs/core/13.0/coretutorials/sharing/
+- Sharing UI Reference: https://truenas.com/docs/core/13.0/uireference/sharing/
+
+### Data Protection and Tasks
+- Tasks Tutorials: https://truenas.com/docs/core/13.0/coretutorials/tasks/
+- Tasks UI Reference: https://truenas.com/docs/core/13.0/uireference/tasks/
+
+### Network Configuration
+- Network Tutorials: https://truenas.com/docs/core/13.0/coretutorials/network/
+- Network UI Reference: https://truenas.com/docs/core/13.0/uireference/network/
+
+### Jails, Plugins, and VMs
+- Jails, Plugins, VMs Tutorials: https://truenas.com/docs/core/13.0/coretutorials/jailspluginsVMs/
+- Jails, Plugins, VMs UI Reference: https://truenas.com/docs/core/13.0/uireference/jailspluginsVMs/
+
+### System Administration
+- System Configuration Tutorials: https://truenas.com/docs/core/13.0/coretutorials/systemconfiguration/
+- System UI Reference: https://truenas.com/docs/core/13.0/uireference/system/
+- Services Tutorials: https://truenas.com/docs/core/13.0/coretutorials/services/
+- Services UI Reference: https://truenas.com/docs/core/13.0/uireference/services/
+
+### Directory Services
+- Directory Services Tutorials: https://truenas.com/docs/core/13.0/coretutorials/directoryservices/
+- Directory Services UI Reference: https://truenas.com/docs/core/13.0/uireference/directoryservices/
+
+## External Resources
+
+- TrueNAS Apps Marketplace: https://apps.truenas.com/
+- Security Advisories: https://security.truenas.com/
+- Community Forums: https://forums.truenas.com/
+- GitHub Repository: https://github.com/truenas/documentation
