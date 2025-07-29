@@ -108,7 +108,7 @@ For more details on feature flags, see [OpenZFS Feature Flags](https://openzfs.g
 
 ## 25.04.2
 
-**July 18, 2025**
+**July 31, 2025**
 
 The TrueNAS team is pleased to release TrueNAS 25.04.2!
 This is a maintenance release and includes refinements and fixes for issues discovered after 24.04.1.
@@ -142,6 +142,7 @@ This is a maintenance release and includes refinements and fixes for issues disc
 
 <a href="https://ixsystems.atlassian.net/issues/?filter=#####" target="_blank">Click here for the full changelog</a> of completed tickets that are included in the 25.04.2 release.
 {{< include file="/static/includes/JiraFilterInstructions.md" >}}
+
 ### 25.04.2 Known Issues
 
 * Some users of TrueNAS Apps attempting to configure GPU allocation report the error `Expected [uuid] to be set for GPU inslot [<some pci slot>] in [nvidia_gpu_selection])` (see ([NAS-134152](https://ixsystems.atlassian.net/browse/NAS-134152)).
@@ -161,6 +162,7 @@ This is a maintenance release and includes refinements and fixes for issues disc
   1. Open the **Shell** and run `midclt call systemdataset.config | jq ."path"`
   2. Search for a file named **update.sqsh** in the returned string using `find "returned path" -name update.sqsh`
   3. Run `rm -f <full-path-to-update.sqsh>`, replacing `<full-path-to-update.sqsh>` with the **full** file path to the **update.sqsh** file from the previous step
+* {{< include file="/static/includes/auxiliary-parameters-ssh.md" >}}
 
 <a href="https://ixsystems.atlassian.net/issues/?filter=12504" target="_blank">Click here to see the latest information</a> about public issues in 25.04.1 that are being resolved in a future TrueNAS release.
 
