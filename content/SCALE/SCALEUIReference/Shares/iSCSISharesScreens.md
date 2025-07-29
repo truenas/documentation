@@ -18,11 +18,11 @@ tags:
 
 If you have not added iSCSI shares to the system, the iSCSI widget shows text stating general information about the block (iSCSI) share targets until a share is added.
 
-{{< trueimage src="/images/SCALE/Shares/iSCSIBlockSharesWidgetNoShares.png" alt="Block (iSCSI) Share Target Widget without Shares" id=Block (iSCSI) Share Target Widget without Shares" >}}
+{{< trueimage src="/images/SCALE/Shares/iSCSIBlockSharesWidgetNoShares.png" alt="Block (iSCSI) Share Target Widget without Shares" id="Block (iSCSI) Share Target Widget without Shares" >}}
 
 After adding a share, the widget lists them in a table.
 
-{{< trueimage src="/images/SCALE/Shares/iSCSIBlockSharesWidget.png" alt="Block (iSCSI) Share Target Widget Toolbar" id="Block (iSCSI) Share Target Widget Toolbar" >}}
+{{< trueimage src="/images/SCALE/Shares/iSCSIBlockSharesWidget.png" alt="Block (iSCSI) Share Target Widget without Shares" id="Block (iSCSI) Share Target Widget without Shares" >}}
 
 The **Block (iSCSI) Shares Targets** widget header shows the status of the iSCSI service as  **STOPPED** (red) or **RUNNING** (green).
 Before adding the first share, the **STOPPED** status displays in the default color.
@@ -147,15 +147,14 @@ Each target shows three **Details for *targetname*** widgets:
 
 #### Target Detail Widgets
 
-The screen shows three widgets on the right side of the screen for the selected target: **iSCSI Authorized Networks**, **Extents**, and **iSCSI Connections**.
+The screen shows three widgets on the right side of the screen for the selected target:
+* **Extents**- Shows a list of LUNs, and includes two options:
+  * [**Associate** button](#associate-dialog)
+  * [**Remove Extent Association**](#remove-extent-association) <span class="material-icons">link_off</span> icon.
+  
+* **iSCSI Authorized Networks** - Shows a list of authorized networks configured when you create the target or using the **Authorized Network** settings on the [**Add** or **Edit iSCSI Target**](#add-and-edit-iscsi-target-screens) screens.
 
-**Extents** shows a list of LUNs, and includes two options:
-* [**Associate** button](#associate-dialog)
-* [**Remove Extent Association**](#remove-extent-association) <span class="material-icons">link_off</span> icon.
-
-**iSCSI Authorized Networks** shows a list of authorized networks configured when you create the target or using the **Authorized Network** settings on the [**Add** or **Edit iSCSI Target**](#add-and-edit-iscsi-target-screens) screens.
-
-**iSCSI Connections** shows a list of the connections.
+* **iSCSI Connections** - Shows a list of the connections.
 
 #### Remove Extent Association Dialog
 
