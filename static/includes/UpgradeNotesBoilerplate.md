@@ -12,6 +12,8 @@
   {{< /expand >}}
 
 * All auxiliary parameters can experience changes between TrueNAS major versions due to security and development changes.
-  We recommend removing all auxiliary parameters from TrueNAS configurations before upgrading as these settings can result in SMB share failures after an upgrade.
+  We recommend removing all auxiliary parameters from TrueNAS configurations before upgrading as these settings can result in unexpected behavior such as SMB share failures after an upgrade.
+
+  {{< include file="/static/includes/auxiliary-parameters-ssh.md" >}}
 
 * {{< include file="/static/includes/UpgradeClearCache.md" >}}
