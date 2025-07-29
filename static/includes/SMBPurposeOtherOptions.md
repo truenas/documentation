@@ -24,9 +24,9 @@
 
 | | Default Share | Time Machine | Multi-Protocol | Time Locked | Private Datasets | External | 
 |-|---------------|--------------|----------------|-------------|----------------- |----------|
-| **Use Apple-style character Encloding** | x |  | x | x | x |  |
+| **Use Apple-style character Encoding** | x |  | x | x | x |  |
 | **Dataset Name Schema** |  |  |  |  | x |  |
-| **Auto Qutoa** |  |  |  |  | x |  |
+| **Auto Quota** |  |  |  |  | x |  |
 | **Grace Period** |  |  |  | x |  |  |
 | **Time Machine Quota** |  | x |  |  |  |  |
 | **VUID** |  | x |  |  |  |  |

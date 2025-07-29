@@ -14,7 +14,7 @@ tags:
 ---
 
 ## Windows (SMB) Shares Widget
-If you have not added SMB shares to the system, the SMB widget shows text stating general information about the Windows (SMB) Shares until a share is added. 
+If you have not added SMB shares to the system, the SMB widget shows text stating general information about the Windows (SMB) Shares until a share is added.
 
 {{< trueimage src="/images/SCALE/Shares/WindowsSMBShareWidgetNoShares.png" alt="Windows (SMB) Share Widget without Shares" id="Windows (SMB) Share Widget without Shares" >}}
 
@@ -113,7 +113,7 @@ The **Basic Options** settings show by default on the **Add** and **Edit SMB** s
 **Advanced Options** settings are grouped into three categories:
 * [**Access**](#access-settings)
 * [**Audit Logging**](#audit-logging)
-* [**Other Options**](#other-options-settings) 
+* [**Other Options**](#other-options-settings)
 
 **Access** and **Audit Logging** settings show for all share options in the **Purpose** dropdown list.
 The **Other Options** settings change based on the share option selected in the **Purpose** dropdown list.
@@ -267,7 +267,7 @@ The **Create Dataset** dialog adds a new dataset under the parent dataset select
 
 The **Share ACL for *sharename** screen edits permissions at the share level for the selected share.
 Settings configure new ACL entries for the selected SMB share and apply them at the entire SMB share level, but do not apply to the dataset.
-It is separate from file system permissions. 
+It is separate from file system permissions.
 To configure dataset permissions, use the **Edit Filesystem ACL** option.
 
 The **Share ACL for *sharename*** screen opens after clicking on the <i class="material-icons" aria-hidden="true" title="share">share</i> **Edit Share ACL** icon on the **Windows (SMB) Shares** widget or the <span class="material-icons">more_vert</span> on the [**Sharing SMB** details screen](#sharing-smb-details-screen).
