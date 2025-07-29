@@ -38,16 +38,27 @@ Configure the options as needed to match your network environment.
 
 {{< trueimage src="/images/SCALE/SystemSettings/SSHServicesAdvancedSettings.png" alt="SSH Advanced Options" id="SSH Advanced Options" >}}
 
-These **Auxiliary Parameters** can be useful when troubleshooting SSH connectivity issues:
+Select specific network interfaces from **Bind Interfaces** for SSH to listen on, or deselect all options to have SSH listen on all interfaces (default).
+Select **Compress Connections** to reduce latency over slow networks.
+
+Configure SFTP logging by selecting the appropriate **SFTP Log Level** and **SFTP Log Facility**.
+
+Select additional cipher options in **Weak Ciphers** if needed.
+**None** allows unencrypted SSH connections while **AES128-CBC** allows the 128-bit Advanced Encryption Standard cipher.
+These ciphers are security vulnerabilities and should only be used in secure network environments.
 
 {{< include file="/static/includes/auxiliary-parameters-caution.md" >}}
 
-* Increase the `ClientAliveInterval` if SSH connections tend to drop.
-* Increase the `MaxStartups` value (**10** is default) when you need more concurrent SSH connections.
+Add sshd_config options not covered by other settings in **Auxiliary Parameters**.
+Enter one option per line.
+Parameters are case-sensitive.
+
+{{< include file="/static/includes/auxiliary-parameters-ssh.md" >}}
 
 Remember to enable the SSH service in **System > Services** after making changes.
 
-Create and store SSH connections and keypairs to allow SSH access in **Credentials > Backup Credentials** or by editing an administrative user account. See [Adding SSH Credentials]({{< ref "AddSSHConnectionKeyPair" >}}) for more information.
+Create and store SSH connections and keypairs to allow SSH access in **Credentials > Backup Credentials** or by editing an administrative user account.
+See [Adding SSH Credentials]({{< ref "AddSSHConnectionKeyPair" >}}) for more information.
 
 ## Using SSH File Transfer Protocol (SFTP)
 

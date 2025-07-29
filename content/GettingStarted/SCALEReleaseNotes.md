@@ -151,6 +151,8 @@ This is a maintenance release and includes refinements and fixes for issues disc
 
 ### 25.04.1 Known Issues
 
+* {{< include file="/static/includes/auxiliary-parameters-ssh.md" >}}
+
 * An update to the Microsoft Netlogon RPC protocol affects systems using the "AD" idmap backend for Active Directory. Users are not able to connect to the SMB service provided by Samba for any domain configured to use the "AD" idmap backend.
   A fix is expected in the TrueNAS 25.04.2 release.
 
