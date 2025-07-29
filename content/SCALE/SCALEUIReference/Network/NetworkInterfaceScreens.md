@@ -7,143 +7,118 @@ tags:
  - interfaces
 ---
 
-The **Interfaces** widget on the **Network** screen shows interface port names and IP addresses configured on your TrueNAS system and their upload/download rates.
+The **Interfaces** widget on the **Network** screen shows the configured interface port names and IP addresses, and the MAC addresses associated with network interface cards in your TrueNAS system.
 
-![NetworkInterfacesWidget](/images/SCALE/Network/NetworkInterfacesWidget.png "Network Interfaces Widget")
+{{< trueimage src="/images/SCALE/Network/NetworkInterfacesWidget.png" alt="Network Interfaces Widget" id="Network Interfaces Widgets" >}}
 
-Use **Add** to open the **Add Interface** configuration screen.
+**Add** opens the [**Add Interface**](#addedit-interface-screens) screen.
 
-Click on an interface to open the **Edit Interface** configuration screen.
-
-Click the <i class="material-icons" aria-hidden="true" title="edit">edit</i> icon next to an interface to open the **Edit Interface** configuration screen.
-
-Click the <i class="material-icons" aria-hidden="true" title="reset configuration">refresh</i> icon next to a physical interface to reset configuration settings for that interface.
-
-Click the <i class="material-icons" aria-hidden="true" title="delete">delete</i> icon next to any other interface to delete that interface.
+The <span class="material-icons">more_vert</span> at the right of each interface shows a dropdown list with two options:
+* **<i class="material-icons" aria-hidden="true" title="edit">edit</i> Edit** - Opens the [**Edit Interface**](#addedit-interface-screens) screen.
+* **<i class="material-icons" aria-hidden="true" title="reset configuration">refresh</i> Reset Configuration** - Opens the [**Reset Configuration**](#refresh-configuration-dialog) dialog.
 
 {{< enterprise >}}
-High Availability (HA) Enterprise systems cannot reset or delete interfaces while failover is enabled.
-On systems with HA failover enabled, the <i class="material-icons" aria-hidden="true" title="reset configuration">refresh</i> or <i class="material-icons" aria-hidden="true" title="delete">delete</i> icons are disabled.
+High Availability (HA) Enterprise systems cannot reset or edit interface settings with failover enabled.
+On systems with HA failover enabled, the **<i class="material-icons" aria-hidden="true" title="reset configuration">refresh</i> Reset Configuration** or **<i class="material-icons" aria-hidden="true" title="edit">edit</i> Edit** options are disabled.
 Go to **System > Failover** to disable failover before attempting to modify interfaces on HA systems.
 
-![NetworkInterfacesWidgetHA](/images/SCALE/Network/NetworkInterfacesWidgetHA.png "Network Interfaces Widget with HA Enabled")
+{{< trueimage src="/images/SCALE/Network/NetworkInterfacesWidgetHA.png" alt="Network Interfaces Widget with HA Enabled" id="Network Interfaces Widget with HA Enabled" >}}
 
 {{< /enterprise >}}
 
-## Add/Edit Interface Configuration Screens
-The fields on the **Add Interface** and **Edit Interface** configuration screens are almost identical. 
-The **Type** field only shows on the **Add Interface** configuration screen.
-**Type** is a required field, and after selecting the interface type additional configuration fields show based on the selected type.
+### Refresh Configuration Dialog
 
-**Apply** saves setting changes.
+The **Reset Configuration** dialog allows you to reset the configuration settings for that interface.
+
+{{< trueimage src="/images/SCALE/Network/RefreshConfigurationDialog.png" alt="Refresh Configuration Dialog" id="Refresh Configuration Dialog" >}}
+
+**Confirm** validates the reset activity and activates the **Reset** button.
+
+**Reset** resets the configuration for that interface. Resetting the configuration shows the [test change](#test-changes) options to prevent losing access to that interface and the TrueNAS system.
+
+## Add/Edit Interface Screens
+
+The **Add Interface** screen allows you to configure the settings for a new interface.
+The **Edit Interface** screen allows changes to settings for an existing interface.
+Both screens show the [test changes](#test-changes) options to validate settings and prevent losing access to the TrueNAS system if the interface is incorrectly configured.
+
+The setting on the **Add Interface** and **Edit Interface** screens are almost identical.
+
+**Type** only shows on the **Add Interface** screen. It cannot be changed on the **Edit Interface** screen.
+**Type** is a required field. The additional settings show on the **Add Interface** screen based on the selected type.
+
+**Apply** saves setting changes, and shows the test changes options.
 
 {{<include file="/static/includes/addcolumnorganizer.md">}}
 
 ### Interface Settings
-These settings are common to all interface types. The **Type** setting is only available and required on the **Add Interface** configuration screen.
 
-![AddInterfaceInterfaceSettings](/images/SCALE/Network/AddInterfaceInterfaceSettings.png "Interface Settings")
+Interface settings configure the network interface name, type, and IP address assignment. These settings are common to the three interface types.
+
+{{< trueimage src="/images/SCALE/Network/AddInterfaceInterfaceSettings.png" alt="Interface Setting" id="Interface Setting" >}}
 
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Type** | (Required) Select the type of interface from the dropdown list, Options are:<br><li> **Bridge** - Select to create a logical link between multiple networks.<br><li>**Link Aggregation** - Select to combine multiple network connections into a single interface.<br><li>**VLAN** - Select to partition and isolate a segment of the connection.<br></li>Each type of interface shows additional configuration settings for that type. The **Type** field does not display on the **Edit Interface** screen. |
-| **Name** | (Required) Enter a name for the interface. Use the format bond*X*, vlan*X*, or br*X* where *X* is a number representing a non-parent interface. Assign the first interface of any type the appropriate name plus zero, for example, **br0** for the first bridge interface created. You cannot change the interface name after clicking **Apply**. After saving, **Name** becomes a read-only field when editing an interface. |
-| **Description** | Enter a description for the interface. |
-| **DHCP** | Select to enable DHCP. Leave the checkbox clear to create a static IPv4 or IPv6 configuration. Only one interface can be configured using DHCP. |
+| **Type** | (Required) Only shows on the **Add Interface** screen. Sets the type of interface based on the selection on the dropdown list. Options are: <br><li> **Bridge** - Creates a logical link between multiple networks. <br><li>**Link Aggregation** (LAGG) - Combines multiple network connections into a single interface. <br><li>**VLAN** - Partitions and isolates a segment of the connection. <br></li>Each type of interface shows additional configuration settings for that type. The type cannot be changed after clicking **Apply**, and testing and accepting the interface change. |
+| **Name** | (Required) Accepts manual or copy/paste entry of a name for the interface. Names must use the format bond*X* for a LAGG, vlan*X* for a VLAN, or br*X* for a bridge, and where *X* is a number representing a non-parent interface. Assign the first interface of any type the appropriate name plus zero, for example, **br0** for the first bridge interface created. You cannot change the interface name after clicking **Apply**. After saving, **Name** becomes a read-only field when editing an interface. |
+| **Description** | Accepts manual or copy/paste entry of a description for the interface. Descritpions can provide additional information about how the interface is used or what it connects to. |
+| **DHCP** | Enable DHCP, allowing it to assign IP addresses to the interface. Shows two options: **Get IP Address Automatically from DHCP** and **Define Static IP Addresses**. reate a static IPv4 or IPv6 configuration.  |
+| **Get IP Address Automatically from DHCP** | Allows DHCP to assign the IP address for the interface. Only one interface can be configured using DHCP. |
+| **Define Static IP Addresses** | Allows adding a static IP address to the interface using the **Static IP Addresses** fields. |
+| **Static IP Addresses** | Shows IP address and netmask (CIDR) fields after clicking **Add**. Click **Add** for each static IP address to add to/assoicate with the interface. |
 | **Autoconfigure IPv6** | Select to automatically configure the IPv6 address with [rtsol(8)](https://man.cx/rtsol(8)). Only one interface can be configured this way. |
+| **MTU** | Sets the maximum transmission unit (MTU), which is the largest protocol data unit that can be communicated. The largest workable MTU size varies  with network interfaces and equipment. 1500 and 9000 are standard Ethernet MTU sizes. Leaving blank restores the field to the default value of **1500**. |
 {{< /truetable >}}
 
 ### Bridge Settings
-**Bridge Settings** only shows after selecting **Bridge** in **Type**.
 
-![AddInterfaceBridgeSettings](/images/SCALE/Network/AddInterfaceBridgeSettings.png "Bridge Settings")
+Bridge settings show after setting **Type** to **Bridge**. TrueNAS automatically populates the **Name** with the default **br1**.
+Use **Description** to further define or clarify how or where the bridge is used.
 
-{{< truetable >}}
-| Setting | Description |
-|---------|-------------|
-| **Bridge Members** | Select the network interfaces to include in the bridge from the dropdown list of options. |
-{{< /truetable >}}
+{{< trueimage src="/images/SCALE/Network/AddInterfaceBridgeSettings.png" alt="Bridge Interface Settings" id="Bridge Interface Settings" >}}
+
+**Bridge Members** sets the network interfaces to include in the bridge to the option selected on the dropdown list. |
 
 ### Link Aggregation Settings
-Link aggregation settings only show after selecting **Link Aggregation** as the **Type**.
-Additional settings show based on the selection in **Link Aggregation Protocol**.
 
-{{< expand "Click here for LACP settings" "v" >}}
+Link aggregation (LAGG) settings show after setting  **Type** to **Link Aggregation**. TrueNAS automatically populates **Name** with the default **bond1**.
+Use **Description** to further define or clarify how or where the LAGG is used.
 
-![AddInterfaceLinkAggLACPSettings](/images/SCALE/Network/AddInterfaceLinkAggLACPSettings.png "Link Aggregation LACP Protocol")
-
-{{< truetable >}}
-| Setting | Description |
-|---------|-------------|
-| **Link Aggregation Protocol** | Select the protocol to use from the dropdown list of options. The protocol determines the outgoing and incoming traffic ports.<br><li>**LACP** - Select if the network switch is capable of active LACP (this is the recommended protocol). **LACP** shows additional settings.<br><li>**Failover** - Select if the network switch does not support active LACP. This is the default protocol choice and is only used if the network switch does not support active LACP. **Failover** uses only the **Link Aggregation Interfaces** setting.<br<li>**Loadbalance** - Select to set up loadbalancing. **Loadbalance** does not use any other link aggregation settings.</li> |
-| **Transmit Hash Policy** | Shows when the protocol is set to **LCAP** or **Loadbalance**. Select the hash policy from the dropdown list of options, **LAYER2**, **LAYER2+3** the default, or **LAYER3+4**. |
-| **LACPDU Rate** | Shows only when the protocol is set to **LCAP**. Select either **Slow** or **Fast** from the dropdown list of options. |
-| **Link Aggregation Interfaces** | (Required) Shows when protocol is set to **LACP**, **Failover** or **Loadbalance**. Select the interfaces to use in the aggregation.<br> Warning! Link Aggregation creation fails if any of the selected interfaces are manually configured! |
-{{< /truetable >}}
-{{< /expand >}}
-
-{{< expand "Click here for Failover settings" "v" >}}
-
-![AddInterfaceLinkAggFailoverSettings](/images/SCALE/Network/AddInterfaceLinkAggFailoverSettings.png "Link Aggregation Failover Protocol")
+{{< trueimage src="/images/SCALE/Network/AddInterfaceLinkAggLACPSettings.png" alt="Link Aggregation LACP Protocol" id="Link Aggregation LACP Protocol" >}}
 
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Link Aggregation Protocol** | Select the protocol to use  from the dropdown list of options. The protocol determines the outgoing and incoming traffic ports. Options are:<br><li>**LACP** - Select if the network switch is capable of active LACP (this is the recommended protocol). **LACP** Shows additional settings.<br><li>**Failover** - Select if the network switch does not support active LACP. This is the default protocol choice and is only used if the network switch does not support active LACP. **Failover** uses only the **Link Aggregation Interfaces** setting.<br><li>**Loadbalance** - Select to set up loadbalancing. **Loadbalance** does not use any other link aggregation settings.</li> |
-| **Link Aggregation Interfaces** | (Required) Select the interfaces to use in the aggregation. <br> Warning! Link Aggregation creation fails if any of the selected interfaces are manually configured! |
+| **Link Aggregation Protocol** | The protocol determines the outgoing and incoming traffic ports. Shows a dropdown list with three Link Aggregation (LAGG) protocol options:  <br><li>**LACP** - Use if the network switch is capable of active LACP (this is the recommended protocol). **LACP** shows additional settings.<br><li>**Failover** - Use if the network switch does not support active LACP. This is the default protocol choice and is only used if the network switch does not support active LACP. **Failover** uses only the **Link Aggregation Interfaces** setting. <br<li>**Loadbalance** - Use to set up loadbalancing. This does not use any other link aggregation settings.</li> |
+| **Link Aggregation Interfaces** | (Required) Shows a dropdown list of interfaces in the system. Select the interfaces to use in the aggregation.<br> Warning! Link Aggregation creation fails if any of the selected interfaces are manually configured!<br><li>Failover shows the interfaces that can be enabled for failover. Enabling the toggle select the interface.<br><li>Loadbalance shows the **Transmit Hash Policy** setting. |
+| **Transmit Hash Policy** | Shows when the protocol is set to **LCAP** or **Loadbalance**. Dropdown list shows three hash policy options, **LAYER2**, **LAYER2+3** the default, or **LAYER3+4**. |
+| **LACPDU Rate** | Shows when the protocol is set to **LCAP**. Shows a dropdown list with two options: **Slow** or **Fast**. |
 {{< /truetable >}}
-{{< /expand >}}
-
-{{< expand "Click here for Loadbalance settings" "v" >}}
-
-![AddInterfaceLinkAggLoadbalanceSettings](/images/SCALE/Network/AddInterfaceLinkAggLoadbalanceSettings.png "Link Aggregation Loadbalance Protocol")
-
-{{< truetable >}}
-| Setting | Description |
-|---------|-------------|
-| **Link Aggregation Protocol** | Select the protocol to use  from the dropdown list of options. The protocol determines the outgoing and incoming traffic ports.<br><li>**LACP** - Select if the network switch is capable of active LACP (this is the recommended protocol). **LACP** shows additional settings.<br><li>**Failover** - Select if the network switch does not support active LACP. This is the default protocol choice and should be only used if the network switch does not support active LACP. **Failover** uses only the **Link Aggregation Interfaces** setting.<br><li>**Loadbalance**  Select to set up loadbalancing. **Loadbalance** does not use any other link aggregation settings</li>|
-| **Transmit Hash Policy** | Select the hash policy from the dropdown list of options, **LAYER2**, **LAYER2+3** the default, or **LAYER3+4**. |
-| **Link Aggregation Interfaces** | Required. Select the interfaces to use in the aggregation. <br> Warning! Link Aggregation creation fails if any of the selected interfaces have been manually configured! |
-{{< /truetable >}}
-{{< /expand >}}
 
 ### VLAN Settings
-Link aggregation settings only display after you select **VLAN** as the **Type**.
 
-![AddInterfaceVLANSettings](/images/SCALE/Network/AddInterfaceVLANSettings.png "Interface Settings VLAN Type")
+VLAN settings show after setting **Type** to **VLAN**. TrueNAS automatically populates the **Name** with the default **vlan1**.
+Use **Description** to further define or clarify how or where the bridge is used.
 
-{{< truetable >}}
-| Setting | Description |
-|---------|-------------|
-| **Parent Interface** | Select the VLAN parent interface from the dropdown list of options. This is usually an Ethernet card connected to a switch port configured for the VLAN. New link aggregations are not available until you restart the system. |
-| **VLAN Tag** |(Required) Enter the numeric tag configured in the switched network. Request this from your IT department if you are not the network administrator for your systems. |
-| **Priority Code Point** | Select the class of service from the dropdown list of options. The available 802.1p class of service ranges from **Best effort (default)** to **Network control (highest)**. |
-{{< /truetable >}}
-
-### Other Settings
-**Other Settings** show for all types of interfaces.
-
-![AddInterfaceOtherSettings](/images/SCALE/Network/AddInterfaceOtherSettings.png "Interface Other Settings")
+{{< trueimage src="/images/SCALE/Network/AddInterfaceVLANSettings.png" alt="VLAN Settings" id="VLAN Settings" >}}
 
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **MTU** | *Maximum Transmission Unit* (MTU), or the largest protocol data unit that can be communicated. The largest workable MTU size varies with network interfaces and equipment. 1500 and 9000 are standard Ethernet MTU sizes. Leaving blank restores the field to the default value of **1500**. |
+| **Parent Interface** | Shows a dropdown list of VLAN parent interface options. Options are usually an Ethernet card connected to a switch port configured for the VLAN. New link aggregations are not available until you restart the system. |
+| **VLAN Tag** |(Required) Accetps manual or copy/paste entry of the numeric tag configured in the switched network. Request this tag from your IT department if you are not the network administrator for your systems. |
+| **Priority Code Point** | Shows a dropdown list of the class of service options. The available 802.1p class of service ranges from **Best effort (default)** to **Network control (highest)**. |
 {{< /truetable >}}
 
-### Aliases
-**Add** the right of **Aliases** shows fields to define an alias IP address and netmask (CIDR) for the interface on the TrueNAS controller. The alias can be an IPv4 or IPv6 address.
+## Test Changes
 
-![AddInterfaceAliases](/images/SCALE/Network/AddInterfaceAliases.png "Interface Aliases")
-
-Users can also select the CIDR bits that are a part of the network address from the dropdown list of options.
-
-## Testing Changes
-The option to test network changes shows when creating a new or changing an existing network interface that can affect access to the UI.
+These options show above the **Interfaces** widget after applying changes to a network interface  that can affect access to the UI., and are used to test network changes when creating a new or changing an existing network interface
 
 {{< trueimage src="/images/SCALE/Network/TestNetworkChanges.png" alt="Test Network Changes" id="Test Network Changes" >}}
 
 **Test Changes** starts the 60-second timer. 
+
 **Revert Changes** discards changes made within the 60-second period.
-**Save Changes** makes changes permanent. Shows in the new browser window opened as part of the [esting Network Interface Changes]({{< ref "/SCALE/SCALETutorials/Network/Interfaces#testing-network-interface-changes" >}}) process.
+
+**Save Changes** shows after logging into the UI in a new browser window. Makes network changes permanent. Shows as the final part of the [testing network interface changes]({{< ref "/SCALE/SCALETutorials/Network/Interfaces#testing-network-interface-changes" >}}) process.
