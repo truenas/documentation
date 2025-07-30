@@ -61,8 +61,8 @@ For network configuration options **1**, **2**, and **3**, we recommend using th
   This is intended for quick authentication to the web interface to further set up secure log ins.
 
   Once you generate a one-time password, it remains valid for one login within 24 hours and does not persist
-  across reboots. You must set a new password after you log in.
-
+  across reboots.
+  You must set a new password after you log in.
 
 * **6) Reset configuration to defaults**
 
