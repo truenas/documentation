@@ -182,6 +182,7 @@ Use **Login to Provider** to enter the account username and password.
 ### HTTP Credential
 
 HTTP uses an HTTP host URL to authenticate account credentials.
+It is a read-only client that supports directory listings from popular web servers like Apache and Nginx.
 
 ### Hubic Credential
 
