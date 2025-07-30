@@ -26,7 +26,7 @@ majorVersions:
       - name: "25.04.2"
         type: "Maintenance"
         link: ""
-        releaseDate: ""
+        releaseDate: "2025-07-31"
         latest: false
   - lifecycle: "Next"
     name: "TrueNAS 25.10 - Goldeye"

@@ -54,8 +54,8 @@ Built-in users (except the **root** user) do not include the **Home Directory Pe
 | Setting | Description |
 |---------|-------------|
 | **Full Name** | Required. Enter a description for the user, such as a first and last name. |  
-| **Username** | Required. Enter a user name of up to 16 characters in length. When using NIS or other legacy software with limited user name lengths, keep names to eight characters or less for compatibility. Do not begin the user name with a hyphen (-), and do not include a space, tab, the comma (,), plus (+), ampersand (&), percent (%), carat (^), open or close parenthesis ( ), exclamation mark (!), at symbol (@), tilde (~), question mark (?), greater or less than symbols (<)(>), or equals (+) in the name. |  
-| **Disable Password** | Use the toggle to disable the password for the selected user. At least one user with administrative privileges must have a password enabled. |
+| **Username** | Required. Enter a user name of up to 32 characters in length. When using NIS or other legacy software with limited user name lengths, keep names to eight characters or less for compatibility. Do not begin the user name with a hyphen (-), and do not include a space, tab, the comma (,), plus (+), ampersand (&), percent (%), carat (^), open or close parenthesis ( ), exclamation mark (!), at symbol (@), tilde (~), question mark (?), greater or less than symbols (<)(>), or equals (+) in the name. |  
+| **Disable Password** | Use the toggle to disable the password for the selected user. Disabling password-based logins prevents an account from using credentials to log in to an SMB share or open an SSH session on the system. At least one user with administrative privileges must have a password enabled. |
 | **Password** | Required. Enter a user password unless you set **Enable Password login** to **No**. A password cannot contain a question mark (?). The **Edit User** screen displays **New Password**. |  
 | **Confirm Password** | Required. Re-enter the value entered in **Password**. The **Edit User** screen displays **Confirm New Password**. |  
 | **Email** | Enter the email address of the new user. This email address receives notifications, alerts, and messages based on configured settings. |
@@ -90,7 +90,7 @@ Built-in users (except the **root** user) do not include the **Home Directory Pe
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Home Directory** | Enter or browse to enter the path to the home directory for this user. If the directory exists and matches the **Username**, it is set as the home directory for the user. When the path does not end with a subdirectory matching the username, a new subdirectory is created if **Create Home Directory** is selected (enabled). The full path to the user home directory shows in this field on the **Edit User** screen for this user. The default location is **/var/empty**. |   
+| **Home Directory** | Enter or browse to enter the path to the home directory for this user. If the directory exists and matches the value in **Username**, it is set as the home directory for the user. When the path does not end with a subdirectory matching the username, a new subdirectory is created if the **Create Home Directory** option above the **Save** button is selected. The full path to the user home directory shows in this field on the **Edit User** screen for this user. The default location is **/var/empty**. |   
 | **Home Directory Permissions** | Select the permissions in **Read**, **Write**, and **Execute** for each role (**User**, **Group**, and **Other**) to set access control for the user home directory. Built-in users are read-only and can not modify these settings.|
 | **Create Home Directory** | Select to create a home directory for the user when the home directory path for this user does not end in the user name. Creates a home directory for the user within the selected path. |
 {{< /truetable >}}
