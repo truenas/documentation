@@ -26,7 +26,7 @@ Go to **System > Failover** to disable failover before attempting to modify inte
 
 {{< /enterprise >}}
 
-### Refresh Configuration Dialog
+### Reset Configuration Dialog
 
 The **Reset Configuration** dialog allows you to reset the configuration settings for that interface.
 

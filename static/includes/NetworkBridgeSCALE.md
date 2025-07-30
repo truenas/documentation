@@ -19,7 +19,7 @@ Alternatively, after obtaining the MAC address and IP address information you ca
 After selecting **Confirm** and then **Reset**, TrueNaS prompts you to test the changes before making it permanent. 
 
 TrueNAS prompts you to test any network change before it makes the change permanent so you do not loose access to the interface or your TrueNAS system.
-Refer to [Testing Network Interface Changes]({{< relref "/SCALE/SCALETutorials/Network/Interfaces/_index.md-#testing-network-interface-changes" >}}) for more information on validating network interface changes.
+Refer to [Testing Network Interface Changes]({{< relref "/SCALE/SCALETutorials/Network/Interfaces/_index.md#testing-network-interface-changes" >}}) for more information on validating network interface changes.
 
 After resetting the interface configuration, click **Add** to open the **Add Interface** screen to reconfigure the interface as documented below.
 
