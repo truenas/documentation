@@ -53,7 +53,7 @@ The selection in **Provider** changes the **Authentication** settings.
 Storj authentication includes going to the Storj iX sign-in screen to either create a new Storj iX account or log into an existing Storj iX account.
 After configuring the Storj account in the Storj-iX portal, return to TrueNAS to enter the S3 credentials provided by Storj.
 
-{{< trueimage src="/images/SCALE/Credentials/CloudCredentialsAdd.png" alt="Cloud Credentials Storj iX" id="Cloud Credentials Storj iX" >}}
+{{< trueimage src="/images/SCALE/Credentials/AddingStorjCloudCredential.png" alt="Cloud Credentials Storj iX" id="Cloud Credentials Storj iX" >}}
 
 {{< expand "Storj iX Authentication Settings" "v" >}}
 {{< truetable >}}
