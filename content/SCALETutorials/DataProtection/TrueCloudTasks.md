@@ -63,7 +63,8 @@ To add the TrueCloud backup task, go to **Data Protection > TrueCloud Backup Tas
 
    {{< trueimage src="/images/SCALE/DataProtection/AddTrueCloudTaskBasicOptions.png" alt="Add TrueCloud Backup Task" id="Add TrueCloud Backup Task" >}}
 
-2. Enter or browse to select the local **Source Path** to the directories or files you want sent to the cloud for backup.
+2. Enter or browse to select the local **Source Path** to the datasets or a single non-Container managed zvol that you want sent to the cloud for backup.
+   In 25.04.2 onwards, a zvol managed by the Virtual Machine feature can be selected.
    Click the arrow to the left of the name to expand it, then click on the name to select it.
 
 3. Select the Storj credential on the **Credentials** dropdown list.

@@ -179,7 +179,7 @@ This is a maintenance release and includes refinements and fixes for issues disc
 
 {{< enterprise >}}
 * Support for account policy settings in TrueNAS Enterprise environments regarding password history, complexity, and aging ([NAS-135115](https://ixsystems.atlassian.net/browse/NAS-135115)).
-  Note: Administrators should contact TrueNAS Support before enabling STIG and FIPS security settings (see [Security Settings](/scale/25.04/scaletutorials/systemsettings/advanced/#security-settings) for details).
+  Note: Administrators should contact TrueNAS Support before enabling STIG and FIPS security settings (see [Security Settings](/scaletutorials/systemsettings/advanced/#security-settings) for details).
 * Add PAM-based session management for middleware ([NAS-127189](https://ixsystems.atlassian.net/browse/NAS-127189)).
   For STIG compliant environments, the max number of simultaneous logins is 10.
   Accounts are locked for 15 minutes after 3 consecutive failed login attempts.
@@ -210,6 +210,11 @@ This is a maintenance release and includes refinements and fixes for issues disc
 {{< include file="/static/includes/JiraFilterInstructions.md" >}}
 
 ### 25.04.1 Known Issues
+
+* {{< include file="/static/includes/auxiliary-parameters-ssh.md" >}}
+
+* An update to the Microsoft Netlogon RPC protocol affects systems using the "AD" idmap backend for Active Directory. Users are not able to connect to the SMB service provided by Samba for any domain configured to use the "AD" idmap backend.
+  A fix is expected in the TrueNAS 25.04.2 release.
 
 * Some users of TrueNAS Apps attempting to configure GPU allocation report the error `Expected [uuid] to be set for GPU inslot [<some pci slot>] in [nvidia_gpu_selection])` (see ([NAS-134152](https://ixsystems.atlassian.net/browse/NAS-134152)).
 
