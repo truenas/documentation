@@ -15,12 +15,13 @@ IPv4 networks cannot see or communicate with an IPv6 website or network unless a
 See [Understanding IPv6](https://www.truenas.com/docs/references/ipv6/) for more information.
 
 ## Configuring IPv6 Addresses
+
 After configuring your network infrastructure for IPv6, assign the IP addresses for your TrueNAS system.
 Use the TrueNAS UI to configure your network settings.
 If setting TrueNAS up for the first time after a clean install, use the Console Setup menu to enter IPv6 addresses.
 
-
 ### Configuring an Interface Using the Console Setup Menu
+
 If configuring your network settings using the Console Setup menu for the first time after installing TrueNAS, first configure the interface address.
 Type 1, then press <kbd>Enter</kbd>.
 Enter **eno1** in **name**, then the IPv6 address in **aliases**.
@@ -34,7 +35,8 @@ Enter the name server addresses provided by your IT department or Internet Servi
 Save, then select **a** to apply and **p** to make it persist. 
 
 ### Adding an IPv6 Interface in the UI
-Navigate to the **Network** screen to enter your network settings.
+
+Navigate to **System > Network** screen to enter your network settings.
 
 Click on **Add** in the **Interfaces** to open the **Add Interface** screen.
 
@@ -53,6 +55,7 @@ To access the UI after configuring an IPv6 address, enter the IPv6 address insid
 You cannot access the UI with the assigned host name when the system is configured on an IPv6 network.
 
 ### Configuring Dual Stacking
+
 TrueNAS supports dual-stacking IPv4 and IPv6 addresses in the same interface.
 An IPv4 network cannot see or communicate with an IPv6 network unless some gateway is configured to allow IPv6 communication.
 Dual stacking these two protocols allows TrueNAS to see and communicate with an all IPv6 address or website.
@@ -65,11 +68,11 @@ Assign a static IPv6 address and netmask, the network gateway address, and name 
 When configuring dual stacking, the order in which you configure the two network IP protocols does not matter.
 {{< /hint >}}
 
-If IPv4 networking is already configured in TrueNAS, to set up dual stacking of IPv6 in the UI, go to **Network**:
+If IPv4 networking is already configured in TrueNAS, to set up dual stacking of IPv6 in the UI, go to **System > Network**:
 
 1. Add the IPv6 gateway information.
 
-   Click **Settings** on the **Global Configuration** widget. The **Edit Global Configuration** screen opens.
+   Click **Settings** on the **Global Configuration** widget to open the **Edit Global Configuration** screen.
 
    Enter the IPv6 address for the gateway in **IPv6 Default Gateway**.
    
@@ -98,6 +101,7 @@ After installing TrueNAS and using the Console Setup menu to configure system ne
 If using the Console Setup menu to set up IPv6 on an already IPv4-configured system, add the v6 default gateway in general network, then add the IPv6 IP address with netmask as an alias on the primary interface.
 
 ### Connecting to the UI IPv6 Address
+
 Unlike IPv4, you must enter the IPv6 address with a square bracket preceding and following the address.
 You cannot enter the host name assigned to the TrueNAS system to access the UI.
 For example, enter <code>[<i>ffff:ff:59f8:100::12</i>]</code> into the URL field of the browser window to access the UI.
@@ -128,6 +132,7 @@ Finally, add the share owner to the dataset permissions.
    See [Adding NFS Shares]({{< ref "AddingNFSShares" >}}) or [Windows Shares (SMB)]({{< ref "/SCALE/SCALETutorials/Shares/SMB" >}}) for more information on adding shares.
 
 ### Mounting and Accessing the Share in Windows
+
 To mount or access the share in Windows, you must enter the share information using a particular syntax or it cannot find nor connect to the share.
  
 The syntax requires you to replace each colon (:) in the IPv6 address with a dash (-).
@@ -136,11 +141,11 @@ Enter two forward slashes, followed by the IPv6 address with **.ipv6-literal.net
 For example, <code>\\<i>ffff-ff-59f8-100--12</i>.ipv6-literal.net\<i>v6smbshare</i></code>.
 
 ### Configuring an SSH Connection
+
 Both replication to a remote server and rscyn tasks require configuring an SSH connection credential.
 When both systems are using IPv6 addresses and the protocol to communicate, you must enclose the IPv6 address in square brackets when defining the remote system URL in the **TrueNAS URL** field on the **New SSH Connection** configuration screen.
 <!-- 
 
 ### Using IPv6 with Applications
 Commented out until we have Internet access over our IPv6 network so we can test. 
-
 -->

@@ -6,5 +6,4 @@ Before making network interface changes:
 2. Power off running virtual machines (VMs) and containers.
 3. Remove active NIC devices for VMs and containers.
 
-Sharing services such as SMB that use the IP address(s) assigned to the primary interface might cause issues with testing network changes.
-To resolve issues, stop sharing services such as SMB, change the interface, and test the connection. Restart the service when complete.
+Changing IP address(s) assigned to the primary interface can cause with access so it is best to make change outside normal working hours.
