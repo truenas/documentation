@@ -8,8 +8,8 @@ To configure share owner, user and group permissions for the dataset Access Cont
 This modifies the ACL entry for the SMB share the path (defined in **Path**) at the dataset level.
 To customize permissions, add Access Control Entries (ACEs) for users or groups.
 
-To access the dataset (filesystem) permissions, either click the <<span class="material-icons">security</span>> **Edit Filesystem ACL** icon on the share row to open the **Edit ACL** screen for the dataset the share uses.
-You can also go to **Datasets**, select the dataset the share uses (same name as the share), then click **Edit** on the **Permissions** widget to open the **Edit ACL** screen.
+To access the dataset (filesystem) permissions, click on the <span class="material-icons">more_vert</span> dropdown list to the right of each share then on **Edit Filesystem ACL** to open the **Edit ACL** screen for the dataset associated with the share.
+You can also go to **Datasets**, select the dataset (same name as the share), then click **Edit** on the **Permissions** widget to open the **Edit ACL** screen.
 
 **Samba Authentication** selected by default when SMB share users are created or added to TrueNAS manually or through a directory service, and these users are automatically added to the **builtin-users** group.
 Users in this group can add or modify files and directories in the share.
@@ -21,6 +21,6 @@ To restrict or grant additional file permissions for some or all share users, do
 Best practice is to create a new group for the share users that need different permissions, reassign these users to the new group and remove them from **builtin-users** group.
 Next, edit the ACL by adding a new ACE entry for the new group, and then modify the permissions of that group.
 
-Home users can modify the **builtin-users** group ACE entry to grant **FULL_CONTROL**
+Private dataset (home share) users can modify the **builtin-users** group ACE entry to grant **FULL_CONTROL**
 
 If you need to restrict or increase permissions for some share users, create a new group and add an ACE entry with the modified permissions.
