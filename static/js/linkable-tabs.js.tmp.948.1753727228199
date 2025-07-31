@@ -53,23 +53,10 @@ class LinkableTabBox {
             .linkable-tabs-nav {
                 display: flex;
                 border-bottom: 2px solid var(--accent-color, #dee2e6);
-                background-color: var(--tab-nav-bg, #f7f9fb);
+                background-color: var(--body-background, white);
                 border-radius: 8px 8px 0 0;
                 overflow: hidden;
                 box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            }
-            
-            /* Dark mode support */
-            @media (prefers-color-scheme: dark) {
-                .linkable-tabs-nav {
-                    background-color: var(--tab-nav-bg-dark, #253138);
-                }
-            }
-            
-            .linkable-tabs-nav.collapsed {
-                border-bottom: none !important;
-                border-radius: 8px !important;
-                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
             }
             
             .linkable-tab-button {
@@ -114,6 +101,16 @@ class LinkableTabBox {
                 padding: 25px;
                 min-height: 200px;
                 box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                transition: max-height 0.3s ease, opacity 0.3s ease;
+            }
+            
+            .linkable-tab-content.collapsed {
+                display: none;
+                border: none !important;
+                box-shadow: none !important;
+                padding: 0 !important;
+                min-height: 0 !important;
+                background: transparent !important;
             }
             
             .linkable-tab-pane {
@@ -222,8 +219,7 @@ class LinkableTabBox {
                                 role="tab" 
                                 id="tab-${tab.id}" 
                                 data-tab="${tab.id}"
-                                aria-controls="pane-${tab.id}"
-                                title="${this.config.collapsible ? 'Click to Expand/Collapse' : 'Click to view tab content'}">
+                                aria-controls="pane-${tab.id}">
                             ${tab.label}
                             <button class="tab-copy-link" 
                                     onclick="copyTabLink('${tab.id}')" 
@@ -291,8 +287,7 @@ ${this.config.enableMarkdown ? this.parseMarkdown(cleanContent) : cleanContent}
                 button.addEventListener('click', (e) => {
                     e.preventDefault();
                     if (this.config.collapsible) {
-                        // In collapsible mode, don't update URL when clicking tabs
-                        this.toggleTab(tab.id, false);
+                        this.toggleTab(tab.id);
                     } else {
                         this.switchToTab(tab.id, this.config.urlHashEnabled);
                     }
@@ -301,43 +296,17 @@ ${this.config.enableMarkdown ? this.parseMarkdown(cleanContent) : cleanContent}
         });
 
         // Handle hash changes
-        if (this.config.urlHashEnabled) {
-            let lastProcessedHash = '';
-            
+        if (this.config.urlHashEnabled && !this.config.collapsible) {
             window.addEventListener('hashchange', () => {
-                const currentHash = window.location.hash.substring(1);
-                console.log(`🔄 HASHCHANGE: "${currentHash}" | Last: "${lastProcessedHash}"`);
-                
-                // If it's the same hash as last time, force re-processing
-                if (currentHash === lastProcessedHash && currentHash !== '') {
-                    console.log(`🔄 Same hash detected, forcing re-navigation`);
-                    // Force a brief clear and reset to ensure processing
-                    const tempPath = window.location.pathname + window.location.search;
-                    history.replaceState(null, null, tempPath);
-                    
-                    setTimeout(() => {
-                        window.location.hash = `#${currentHash}`;
-                        this.handleNavigation(currentHash);
-                        lastProcessedHash = currentHash;
-                    }, 50);
-                } else {
-                    this.handleNavigation(currentHash);
-                    lastProcessedHash = currentHash;
-                }
+                this.handleNavigation(window.location.hash.substring(1));
             });
         }
     }
 
     handleInitialNavigation() {
         if (this.config.collapsible) {
-            // In collapsible mode, check for hash first
-            if (this.config.urlHashEnabled && window.location.hash) {
-                const hash = window.location.hash.substring(1);
-                this.handleNavigation(hash);
-            } else {
-                // Start with all tabs collapsed if no hash
-                this.collapseAllTabs();
-            }
+            // In collapsible mode, start with all tabs collapsed
+            this.collapseAllTabs();
         } else if (this.config.urlHashEnabled) {
             const hash = window.location.hash.substring(1);
             this.handleNavigation(hash);
@@ -347,40 +316,23 @@ ${this.config.enableMarkdown ? this.parseMarkdown(cleanContent) : cleanContent}
     }
 
     handleNavigation(hash) {
-        console.log(`🔧 TAB SYSTEM: handleNavigation called with hash: "${hash}"`);
-        
         if (!hash) {
-            if (this.config.collapsible) {
-                this.collapseAllTabs();
-            } else {
-                this.switchToTab(this.config.defaultTab, false);
-            }
+            this.switchToTab(this.config.defaultTab, false);
             return;
         }
 
         // Check if hash matches a tab ID directly
         const directTabMatch = this.tabs.find(t => t.id === hash);
         if (directTabMatch) {
-            console.log(`🎪 Direct tab match found: ${hash}`);
-            if (this.config.collapsible) {
-                this.expandTab(hash, false);
-            } else {
-                this.switchToTab(hash, false);
-            }
+            this.switchToTab(hash, false);
             return;
         }
 
         // Check if hash matches a header inside any tab content
         const headerTabMatch = this.findTabContainingHeader(hash);
         if (headerTabMatch) {
-            console.log(`🎯 Found header "${hash}" in tab "${headerTabMatch.tabId}", switching and scrolling`);
-            if (this.config.collapsible) {
-                // FORCE expansion even if tab appears active
-                console.log(`🎪 Force expanding tab for header: ${headerTabMatch.tabId}`);
-                this.forceExpandTabForHash(headerTabMatch.tabId);
-            } else {
-                this.switchToTab(headerTabMatch.tabId, false);
-            }
+            console.log(`Found header "${hash}" in tab "${headerTabMatch.tabId}", switching and scrolling`);
+            this.switchToTab(headerTabMatch.tabId, false);
             this.waitForTabActivation(headerTabMatch.tabId, () => {
                 console.log(`Tab "${headerTabMatch.tabId}" is now active, scrolling to header "${hash}"`);
                 this.scrollToHeaderInTab(hash, headerTabMatch.tabId);
@@ -388,13 +340,8 @@ ${this.config.enableMarkdown ? this.parseMarkdown(cleanContent) : cleanContent}
             return;
         }
 
-        // Default behavior if no match found
-        console.log(`❌ No match found for hash: ${hash}`);
-        if (this.config.collapsible) {
-            this.collapseAllTabs();
-        } else {
-            this.switchToTab(this.config.defaultTab, false);
-        }
+        // Default to first tab if no match found
+        this.switchToTab(this.config.defaultTab, false);
     }
 
     switchToTab(tabId, updateUrl = true) {
@@ -424,14 +371,12 @@ ${this.config.enableMarkdown ? this.parseMarkdown(cleanContent) : cleanContent}
         }
     }
 
-    toggleTab(tabId, updateUrl = false) {
+    toggleTab(tabId) {
         const button = document.getElementById(`tab-${tabId}`);
         const pane = document.getElementById(`pane-${tabId}`);
-        // Target the content container within this specific instance
-        const content = this.container.querySelector('.linkable-tab-content');
-        const nav = this.container.querySelector('.linkable-tabs-nav');
+        const content = document.querySelector('.linkable-tab-content');
         
-        if (!button || !pane || !content || !nav) return;
+        if (!button || !pane || !content) return;
 
         const isCurrentlyActive = button.classList.contains('active');
         
@@ -439,10 +384,7 @@ ${this.config.enableMarkdown ? this.parseMarkdown(cleanContent) : cleanContent}
             // Collapse the active tab
             button.classList.remove('active');
             pane.classList.remove('active');
-            // Hide the entire content container
-            content.style.display = 'none';
-            // Style the nav for collapsed state
-            nav.classList.add('collapsed');
+            content.classList.add('collapsed');
         } else {
             // Collapse all other tabs first
             this.collapseAllTabs();
@@ -450,10 +392,7 @@ ${this.config.enableMarkdown ? this.parseMarkdown(cleanContent) : cleanContent}
             // Then expand this tab
             button.classList.add('active');
             pane.classList.add('active');
-            // Show the content container
-            content.style.display = 'block';
-            // Remove collapsed styling from nav
-            nav.classList.remove('collapsed');
+            content.classList.remove('collapsed');
             
             // Execute any scripts in the newly shown tab content
             this.executeTabScripts(pane);
@@ -461,15 +400,9 @@ ${this.config.enableMarkdown ? this.parseMarkdown(cleanContent) : cleanContent}
     }
 
     collapseAllTabs() {
-        // Target the content container within this specific instance
-        const content = this.container.querySelector('.linkable-tab-content');
-        const nav = this.container.querySelector('.linkable-tabs-nav');
-        
+        const content = document.querySelector('.linkable-tab-content');
         if (content) {
-            content.style.display = 'none';
-        }
-        if (nav) {
-            nav.classList.add('collapsed');
+            content.classList.add('collapsed');
         }
         
         this.tabs.forEach(tab => {
@@ -478,75 +411,6 @@ ${this.config.enableMarkdown ? this.parseMarkdown(cleanContent) : cleanContent}
             if (pane) pane.classList.remove('active');
             if (button) button.classList.remove('active');
         });
-    }
-
-    expandTab(tabId, updateUrl = false) {
-        // Similar to toggleTab but always expands (for deep linking)
-        const button = document.getElementById(`tab-${tabId}`);
-        const pane = document.getElementById(`pane-${tabId}`);
-        const content = this.container.querySelector('.linkable-tab-content');
-        const nav = this.container.querySelector('.linkable-tabs-nav');
-        
-        if (!button || !pane || !content || !nav) return;
-
-        // Collapse all other tabs first
-        this.collapseAllTabs();
-        
-        // Then expand this tab
-        button.classList.add('active');
-        pane.classList.add('active');
-        content.style.display = 'block';
-        nav.classList.remove('collapsed');
-        
-        // Execute any scripts in the newly shown tab content
-        this.executeTabScripts(pane);
-        
-        // Update URL if requested (typically false for deep linking)
-        if (updateUrl && this.config.urlHashEnabled) {
-            history.pushState(null, null, `#${tabId}`);
-        }
-    }
-
-    forceExpandTabForHash(tabId) {
-        console.log(`🎪 FORCE expanding tab for hash navigation: ${tabId}`);
-        
-        const button = document.getElementById(`tab-${tabId}`);
-        const pane = document.getElementById(`pane-${tabId}`);
-        const content = this.container.querySelector('.linkable-tab-content');
-        const nav = this.container.querySelector('.linkable-tabs-nav');
-        
-        if (!button || !pane || !content || !nav) {
-            console.log(`❌ Missing tab elements for: ${tabId}`);
-            return;
-        }
-
-        console.log(`📊 Before force expansion:`);
-        console.log(`  Button active: ${button.classList.contains('active')}`);
-        console.log(`  Pane active: ${pane.classList.contains('active')}`);
-        console.log(`  Content display: ${content.style.display || 'default'}`);
-        console.log(`  Nav collapsed: ${nav.classList.contains('collapsed')}`);
-
-        // ALWAYS force collapse everything first
-        this.collapseAllTabs();
-        console.log(`🔥 Forced collapse of all tabs`);
-        
-        // Small delay then force expand
-        setTimeout(() => {
-            button.classList.add('active');
-            pane.classList.add('active');
-            content.style.display = 'block';
-            nav.classList.remove('collapsed');
-            
-            console.log(`📊 After force expansion:`);
-            console.log(`  Button active: ${button.classList.contains('active')}`);
-            console.log(`  Pane active: ${pane.classList.contains('active')}`);
-            console.log(`  Content display: ${content.style.display || 'default'}`);
-            console.log(`  Nav collapsed: ${nav.classList.contains('collapsed')}`);
-            
-            // Execute any scripts in the newly shown tab content
-            this.executeTabScripts(pane);
-            console.log(`✅ Force expansion complete for: ${tabId}`);
-        }, 50);
     }
 
     executeTabScripts(tabPane) {
@@ -709,19 +573,6 @@ ${this.config.enableMarkdown ? this.parseMarkdown(cleanContent) : cleanContent}
                 }
             }
         });
-        
-        // Call specific initialization functions for known components
-        this.callComponentInitializers(tabPane);
-    }
-
-    callComponentInitializers(tabPane) {
-        // Check if this tab contains a CSV changelog table and initialize it
-        if (tabPane.querySelector('#csv-changelog-container') && typeof window.initializeChangelogTable === 'function') {
-            console.log('Initializing CSV changelog table for active tab');
-            setTimeout(() => {
-                window.initializeChangelogTable();
-            }, 100);
-        }
     }
 
     findTabContainingHeader(headerId) {
