@@ -114,7 +114,7 @@ The TrueNAS team is pleased to release TrueNAS 25.04.2!
 This is a maintenance release and includes refinements and fixes for issues discovered after 24.04.1.
 
 {{< enterprise >}}
-This release is not recommended for Enterprise High Availability (HA) systems at this time.
+TrueNAS 25.04.2 is not recommended for TrueNAS Enterprise customers with High Availability (HA) systems at this time.
 {{< /enterprise >}}
 
 ### 25.04.2 Notable Changes
