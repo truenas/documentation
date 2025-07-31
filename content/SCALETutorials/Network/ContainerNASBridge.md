@@ -22,7 +22,7 @@ If you want to access your TrueNAS directories from within a virtual machine or 
 * If you have more than one physical interface, you can assign a NIC other than the primary one your TrueNAS server uses.
   This method makes communication more flexible but does not offer the potential speed benefits of a bridge.
   
-  Instances (Linux containers or VMs) allow you to configure a MACVLAN NIC, which creates a virtual interface based on an existing physical one.
+  Containers allow you to configure a MACVLAN NIC, which creates a virtual interface based on an existing physical one.
   The assigned unique MAC address allows the instance to appear as a separate device on the network.
 
 {{< include file="/static/includes/MacvlanHost.md" >}}
