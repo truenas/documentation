@@ -67,21 +67,17 @@
             {{ end }}
           ];
           
-          // Function to load SVG icons from static directory
-          function loadSVGIcon(iconName) {
-            return fetch('/icons/' + iconName + '.svg')
-              .then(response => response.text())
-              .then(svgContent => {
-                // Ensure the SVG has proper styling
-                if (svgContent.includes('<svg')) {
-                  return svgContent.replace('<svg', '<svg style="width: 16px; height: 16px;"');
-                }
-                return svgContent;
-              })
-              .catch(error => {
-                console.warn('Failed to load icon:', iconName, error);
-                return '<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z"/></svg>';
-              });
+          // Function to get embedded SVG icons (no fetch required)
+          function getEmbeddedSVGIcon(iconName) {
+            var iconMap = {
+              'clipboard-text': '<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17,9H7V7H17M17,13H7V11H17M14,17H7V15H14M12,3A1,1 0 0,1 13,4A1,1 0 0,1 12,5A1,1 0 0,1 11,4A1,1 0 0,1 12,3M19,3H14.82C14.4,1.84 13.3,1 12,1C10.7,1 9.6,1.84 9.18,3H5A2,2 0 0,0 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5A2,2 0 0,0 19,3Z"/></svg>',
+              'conversion-path': '<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M9,2V8H7L12,13L17,8H15V2H9M5,15V17H8V20H10V17H19V15H5Z"/></svg>',
+              'component-versions': '<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12,2L13.09,8.26L22,9L16.26,14.74L17.64,22L12,18.5L6.36,22L7.74,14.74L2,9L10.91,8.26L12,2Z"/></svg>',
+              'package-variant': '<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12,15.5A3.5,3.5 0 0,1 8.5,12A3.5,3.5 0 0,1 12,8.5A3.5,3.5 0 0,1 15.5,12A3.5,3.5 0 0,1 12,15.5M19.43,12.97C19.47,12.65 19.5,12.33 19.5,12C19.5,11.67 19.47,11.34 19.43,11L21.54,9.37C21.73,9.22 21.78,8.95 21.66,8.73L19.66,5.27C19.54,5.05 19.27,4.96 19.05,5.05L16.56,6.05C16.04,5.66 15.5,5.32 14.87,5.07L14.5,2.42C14.46,2.18 14.25,2 14,2H10C9.75,2 9.54,2.18 9.5,2.42L9.13,5.07C8.5,5.32 7.96,5.66 7.44,6.05L4.95,5.05C4.73,4.96 4.46,5.05 4.34,5.27L2.34,8.73C2.22,8.95 2.27,9.22 2.46,9.37L4.57,11C4.53,11.34 4.5,11.67 4.5,12C4.5,12.33 4.53,12.65 4.57,12.97L2.46,14.63C2.27,14.78 2.22,15.05 2.34,15.27L4.34,18.73C4.46,18.95 4.73,19.03 4.95,18.95L7.44,17.94C7.96,18.34 8.5,18.68 9.13,18.93L9.5,21.58C9.54,21.82 9.75,22 10,22H14C14.25,22 14.46,21.82 14.5,21.58L14.87,18.93C15.5,18.68 16.04,18.34 16.56,17.94L19.05,18.95C19.27,19.03 19.54,18.95 19.66,18.73L21.66,15.27C21.78,15.05 21.73,14.78 21.54,14.63L19.43,12.97Z"/></svg>',
+              'update-truenas': '<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12,18A6,6 0 0,1 6,12A6,6 0 0,1 12,6A6,6 0 0,1 18,12A6,6 0 0,1 12,18M20,15.31L23.31,12L20,8.69V4H15.31L12,0.69L8.69,4H4V8.69L0.69,12L4,15.31V20H8.69L12,23.31L15.31,20H20V15.31Z"/></svg>'
+            };
+            
+            return Promise.resolve(iconMap[iconName] || '<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z"/></svg>');
           }
           
           // Create buttons with async icon loading
@@ -102,7 +98,7 @@
             jumpButton.appendChild(textSpan);
             
             // Load SVG icon asynchronously
-            loadSVGIcon(buttonConfig.icon).then(function(svgContent) {
+            getEmbeddedSVGIcon(buttonConfig.icon).then(function(svgContent) {
               iconSpan.innerHTML = svgContent;
             });
             
