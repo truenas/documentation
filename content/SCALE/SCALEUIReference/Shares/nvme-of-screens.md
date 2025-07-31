@@ -197,7 +197,7 @@ When not selected, it shows the **Allow Hosts** option and **Add** button that o
 **Save** saves changes, creates the subsystem, closes the wizard screen, and returns to the previous screen.
 
 ## Add and Edit Namespace Screens
-
+<!-- RC.1 will add an enable checkbox to allow disabling the namespace, update screenshots and add descriptions to these screens/tabs -->
 The **Add Namespace** and **Edit Namespace** screens show the same settings and options.
 Use to select or create the storage device (zvol or file) for the NVMe-oF share.
 

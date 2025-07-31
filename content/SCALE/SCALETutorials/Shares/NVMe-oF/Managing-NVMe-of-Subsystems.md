@@ -99,13 +99,13 @@ Browse to and select the parent dataset or zvol location where the existing file
 
 Click **Save**.
 
-#### Changing to a New File
-
+#### Changing to a New File 
+<!-- RC.1 will add an enable checkbox to allow disabling the namespace, update screenshots and remove commented out text-->
 You can use this procedure to add files to the parent dataset for the namespace, from the **New File** tab on the **Add Namespace** or **Edit Namespace** screens.
 
 If adding a new file, click **Add** open the **Add Namespace** screen, then select the **New File** tab.
 
-If using the edit <span class="material-icons">edit</span> icon associated with an existing namespace zvol or file, stop the NVMe-oF service first.
+If using the edit <span class="material-icons">edit</span> icon associated with an existing namespace zvol <!-- or file, stop the NVMe-oF service first, or clear the **Enabled** checkbox on the **Edit Namespace** screen--> to disable the namespace.
 If the system shows a validation error saying you must disable the namespace, stop the service, and then retry adding a new file.
 
 While on the **Edit Namespace** screen, select the **New File** tab.
