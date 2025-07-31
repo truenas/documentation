@@ -16,7 +16,7 @@ jump_to_buttons:
     icon: "component-versions"
 ---
 
-## Notable Changes and Known Issues
+## Notable Changes and Known Issues {#notable-changes-and-known-issues}
 
 <!-- Hugo-processed content for release notes tab box -->
 <div style="display: none;" id="release-tab-content-source">
@@ -32,7 +32,6 @@ As always, we encourage users to review the [Upgrading TrueNAS](/gettingstarted/
 
 ### 25.04.1 Notable Changes
 
-{{< expand "Open notable issues" "v" >}}
 #### Enterprise Features
 
 * Support for account policy settings in TrueNAS Enterprise environments regarding password history, complexity, and aging ([NAS-135115](https://ixsystems.atlassian.net/browse/NAS-135115)).
@@ -52,11 +51,9 @@ As always, we encourage users to review the [Upgrading TrueNAS](/gettingstarted/
 * Fix SSH service startup with auxiliary parameters enabled ([NAS-135367](https://ixsystems.atlassian.net/browse/NAS-135367)).
 
 [Click here for the full changelog](https://ixsystems.atlassian.net/issues/?filter=12503) of completed tickets included in the 25.04.1 release.
-{{< /expand >}}
 
 ### 25.04.1 Known Issues
 
-{{< expand "Click to expand" "v" >}}
 * Some users of TrueNAS Apps attempting to configure GPU allocation report UUID-related errors ([NAS-134152](https://ixsystems.atlassian.net/browse/NAS-134152)).
 
 * Custom applications with TTY enabled do not display logs in the TrueNAS UI. Users can resolve this by either disabling TTY or using Docker logs from the command line.
@@ -67,7 +64,6 @@ As always, we encourage users to review the [Upgrading TrueNAS](/gettingstarted/
   A fix is expected in the TrueNAS 25.04.1.1 release.
 
 [Click here for the latest information](https://ixsystems.atlassian.net/issues/?filter=12504) about public issues in 25.04.1.
-{{< /expand >}}
   </div>
   
   <div data-tab-id="25.04.0-changes-and-issues" data-tab-label="25.04.0">
@@ -223,6 +219,43 @@ This first public release version of TrueNAS 25.04 (Fangtooth) has software comp
 
 <a href="https://ixsystems.atlassian.net/issues/?filter=11745" target="_blank">Click here to see the latest information</a> about public issues discovered in 25.04-BETA.1 that are being resolved in a future TrueNAS release.
   </div>
+  <div data-tab-id="full-changelog" data-tab-label="Full TrueNAS 24.05 Changelog">
+<!-- CSV Changelog Table with Version Support -->
+<div id="csv-changelog-container"></div>
+
+<script src="/js/csv-changelog-table.js"></script>
+<script>
+// Initialize CSV changelog table when tab becomes active
+window.initializeChangelogTable = function() {
+    if (typeof createCSVChangelogTable === 'function') {
+        // Clear any existing content first
+        const container = document.getElementById('csv-changelog-container');
+        if (container) {
+            container.innerHTML = '';
+        }
+        
+        createCSVChangelogTable('/data', 'csv-changelog-container', {
+            useVersioning: true,
+            versions: [
+                { value: 'all', label: '25.04 (All)', filename: 'scale-25.04-changelog.csv' },
+                { value: '25.04.1', label: '25.04.1', filename: 'scale-25.04.1-changelog.csv' },
+                { value: '25.04.0', label: '25.04.0', filename: 'scale-25.04.0-changelog.csv' },
+                { value: '25.04-RC.1', label: '25.04-RC.1', filename: 'scale-25.04-RC.1-changelog.csv' },
+                { value: '25.04-BETA.1', label: '25.04-BETA.1', filename: 'scale-25.04-BETA.1-changelog.csv' }
+            ],
+            defaultVersion: 'all'
+        });
+    } else {
+        // Retry after a short delay if function not available
+        setTimeout(window.initializeChangelogTable, 200);
+    }
+};
+
+// Try to initialize immediately and also expose for tab activation
+window.initializeChangelogTable();
+</script>
+  </div>
+
 </div>
 
 <!-- Linkable Tab Box -->
@@ -245,36 +278,13 @@ document.addEventListener('DOMContentLoaded', function() {
     createLinkableTabs('release-tabs-container', tabs, {
         defaultTab: '25.04.1-changes-and-issues',
         urlHashEnabled: true,
-        enableMarkdown: false // Hugo already processed the content
+        enableMarkdown: false, // Hugo already processed the content
+        collapsible: true
     });
 });
 </script>
 
-### Full 25.04 Changelog
-
-{{< expand "Click to expand" "v" >}}
-<!-- CSV Changelog Table with Version Support -->
-<div id="csv-changelog-container"></div>
-
-<script src="/js/csv-changelog-table.js"></script>
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    createCSVChangelogTable('/data', 'csv-changelog-container', {
-        useVersioning: true,
-        versions: [
-            { value: 'all', label: '25.04 (All)', filename: 'scale-25.04-changelog.csv' },
-            { value: '25.04.1', label: '25.04.1', filename: 'scale-25.04.1-changelog.csv' },
-            { value: '25.04.0', label: '25.04.0', filename: 'scale-25.04.0-changelog.csv' },
-            { value: '25.04-RC.1', label: '25.04-RC.1', filename: 'scale-25.04-RC.1-changelog.csv' },
-            { value: '25.04-BETA.1', label: '25.04-BETA.1', filename: 'scale-25.04-BETA.1-changelog.csv' }
-        ],
-        defaultVersion: 'all'
-    });
-});
-</script>
-{{< /expand >}}
-
-## Upgrading TrueNAS
+## Upgrading TrueNAS {#upgrade-paths}
 
 <!-- Hugo-processed content for upgrade notes tab box -->
 <div style="display: none;" id="tab-content-source">
@@ -283,7 +293,7 @@ document.addEventListener('DOMContentLoaded', function() {
 {{< include file="/static/includes/UpgradeNotesBoilerplate.md" >}}
 
 * 25.04 has many API changes. If you use the API or API keys, read through the API changes before upgrading.
-{{< expand "See all API Changes" "v" >}}
+
 {{< include file="/static/includes/RESTAPIDeprecationNotice.md" >}}
 
   {{< include file="/static/includes/APIDocs.md" >}}
@@ -303,8 +313,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   See [Managing API Keys]({{< ref "/scaletutorials/toptoolbar/managingapikeys" >}}) for more information.
 
-  * {{< include file="/static/includes/APIKeyMigrate.md" >}}
-{{< /expand >}}
+* {{< include file="/static/includes/APIKeyMigrate.md" >}}
 
 * {{< include file="/static/includes/ConfigRestrictions.md" >}}
 
@@ -346,10 +355,7 @@ See the [Migration articles]({{< ref "/GettingStarted/Migrate/" >}}) for caution
 {{< enterprise >}}
 {{< include file="/static/includes/EnterpriseMigrationSupport.md" >}}
 
-{{< expand "TrueNAS Enterprise Support" "v" >}}
 {{< include file="/static/includes/iXsystemsSupportContact.md" >}}
-
-{{< /expand >}}
 {{< /enterprise >}}
   </div>  
 </div>
@@ -374,18 +380,23 @@ document.addEventListener('DOMContentLoaded', function() {
     createLinkableTabs('upgrade-notes-container', tabs, {
         defaultTab: '25.04-upgrade-notes',
         urlHashEnabled: true,
-        enableMarkdown: true
+        enableMarkdown: true,
+        collapsible: true
     });
 });
 </script>
 
-## Component Versions
+## Component Versions and ZFS Feature Flags
 
-
+<!-- Hugo-processed content for component versions tab box -->
+<div style="display: none;" id="component-tab-content-source">
+  <div data-tab-id="component-versions" data-tab-label="Component Versions">
 Click the component version number to see release notes for that component.
 
 {{< component-versions "25.04" >}}
-
+  </div>
+    
+  <div data-tab-id="zfs-feature-flags" data-tab-label="ZFS Feature Flags">
 ### OpenZFS Feature Flags
 
 TrueNAS integrates many features provided by the upstream [OpenZFS project](https://openzfs.org/wiki/Main_Page).
@@ -398,3 +409,86 @@ Any new feature flags introduced since the previous OpenZFS version that was int
 {{< /truetable >}}
 
 For more details on feature flags, see [OpenZFS Feature Flags](https://openzfs.github.io/openzfs-docs/Basic%20Concepts/Feature%20Flags.html) and [OpenZFS zpool-feature.7](https://openzfs.github.io/openzfs-docs/man/7/zpool-features.7.html).
+  </div>  
+</div>
+
+<!-- Linkable Tab Box -->
+<div id="component-tabs-container"></div>
+
+<script src="/js/linkable-tabs.js?v=3.4"></script>
+<script>
+// Initialize linkable tabs with Hugo-processed content
+document.addEventListener('DOMContentLoaded', function() {
+    // Extract all tab content from Hugo-processed divs
+    const tabSource = document.getElementById('component-tab-content-source');
+    const tabDivs = tabSource.querySelectorAll('[data-tab-id]');
+    
+    const tabs = Array.from(tabDivs).map(div => ({
+        id: div.getAttribute('data-tab-id'),
+        label: div.getAttribute('data-tab-label'),
+        content: div.innerHTML
+    }));
+    
+    createLinkableTabs('component-tabs-container', tabs, {
+        defaultTab: 'component-versions',
+        urlHashEnabled: true,
+        enableMarkdown: false, // Hugo already processed the content
+        collapsible: true
+    });
+    
+    // Jump-to button hash refresh fix for collapsible tabs
+    document.addEventListener('click', function(e) {
+        // Check for jump-to buttons (which are <button> elements)
+        if (e.target.matches('button.jump-to-button') || e.target.closest('button.jump-to-button')) {
+            const button = e.target.matches('button.jump-to-button') ? e.target : e.target.closest('button.jump-to-button');
+            
+            // Get the target hash from the button's data or map from button text
+            let targetHash = button.getAttribute('data-target');
+            
+            if (!targetHash) {
+                const buttonText = button.textContent.trim();
+                
+                // Map button text to hash targets
+                if (buttonText.includes('Upgrade Paths')) {
+                    targetHash = '#upgrade-paths';
+                } else if (buttonText.includes('Notable Changes')) {
+                    targetHash = '#notable-changes-and-known-issues';
+                } else if (buttonText.includes('Component Versions')) {
+                    targetHash = '#component-versions';
+                }
+            }
+            
+            if (targetHash && window.location.hash === targetHash) {
+                // Same hash detected - force refresh to trigger tab expansion
+                e.preventDefault();
+                e.stopPropagation();
+                
+                window.location.hash = '';
+                setTimeout(() => {
+                    window.location.hash = targetHash;
+                }, 50);
+                
+                return false;
+            }
+        }
+        
+        // Also handle regular hash links
+        if (e.target.matches('a[href^="#"]')) {
+            const href = e.target.getAttribute('href');
+            
+            if (window.location.hash === href) {
+                e.preventDefault();
+                e.stopPropagation();
+                
+                window.location.hash = '';
+                setTimeout(() => {
+                    window.location.hash = href;
+                }, 50);
+                
+                return false;
+            }
+        }
+    }, true)
+});
+</script>
+
