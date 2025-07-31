@@ -113,6 +113,10 @@ For more details on feature flags, see [OpenZFS Feature Flags](https://openzfs.g
 The TrueNAS team is pleased to release TrueNAS 25.04.2!
 This is a maintenance release and includes refinements and fixes for issues discovered after 24.04.1.
 
+{{< enterprise >}}
+This release is not recommended for Enterprise High Availability (HA) systems at this time.
+{{< /enterprise >}}
+
 ### 25.04.2 Notable Changes
 
 {{< enterprise >}}
