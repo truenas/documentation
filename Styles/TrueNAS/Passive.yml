@@ -1,0 +1,5 @@
+extends: existence
+message: "Use active voice instead of passive voice"
+level: suggestion
+tokens:
+  - '\b(am|is|are|was|were|being|been|be)\s+([\w]+ed|[\w]+en)\b'

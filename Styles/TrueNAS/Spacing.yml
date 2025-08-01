@@ -1,0 +1,6 @@
+extends: existence
+message: "Use single space after periods and single empty lines between paragraphs"
+level: suggestion
+tokens:
+  - '\.  +'
+  - '\n\n\n+'
