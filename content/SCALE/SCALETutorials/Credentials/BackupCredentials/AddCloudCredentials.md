@@ -55,6 +55,8 @@ Storj iX is the default cloud storage provider in TrueNAS.
 
 {{< include file="/static/includes/AddStorjCloudCredential.md" >}}
 
+After creating your Storj account and obtaining your S3 credentials, optionally specify a custom **Endpoint** to use a specific Storj tier (such as Global or Select). Leave the Endpoint field blank to use the default Storj endpoint.
+
 ### Creating the Storj iX Account
 
 {{< include file="/static/includes/CreateStorjiXAccount.md" >}}
