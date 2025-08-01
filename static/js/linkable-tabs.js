@@ -5,6 +5,7 @@
  * Version: 3.4 - Updated hover color to #36bdeb
  */
 
+if (typeof window.LinkableTabBox === 'undefined') {
 class LinkableTabBox {
     constructor(containerId, tabs, options = {}) {
         this.containerId = containerId;
@@ -45,13 +46,14 @@ class LinkableTabBox {
                 --truenas-primary: #1194d2;
                 --truenas-primary-hover: #36bdeb;
                 --truenas-secondary: #71bf44;
-                --truenas-inactive: #adadad;
+                --truenas-inactive: #676767;
                 font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
                 margin: 20px 0;
             }
             
             .linkable-tabs-nav {
                 display: flex;
+                width: fit-content;
                 border-bottom: 2px solid var(--accent-color, #dee2e6);
                 background-color: var(--tab-nav-bg, #f7f9fb);
                 border-radius: 8px 8px 0 0;
@@ -88,8 +90,15 @@ class LinkableTabBox {
                 border-right: 1px solid var(--accent-color, #dee2e6);
             }
             
-            .linkable-tab-button:last-child {
+            .linkable-tabs-wrapper .linkable-tab-button.first-tab {
+                border-top-left-radius: 8px !important;
+                border-bottom-left-radius: 8px !important;
+            }
+            
+            .linkable-tabs-wrapper .linkable-tab-button.last-tab {
                 border-right: none;
+                border-top-right-radius: 8px !important;
+                border-bottom-right-radius: 8px !important;
             }
             
             .linkable-tab-button:hover {
@@ -140,10 +149,20 @@ class LinkableTabBox {
                     border-right: none;
                     border-bottom: 1px solid var(--accent-color, #dee2e6);
                     text-align: center;
+                    border-radius: 0 !important;
                 }
                 
-                .linkable-tab-button:last-child {
+                .linkable-tab-button:first-child {
+                    border-top-left-radius: 8px !important;
+                    border-top-right-radius: 8px !important;
+                }
+                
+                .linkable-tab-button:last-of-type {
                     border-bottom: none;
+                    border-bottom-left-radius: 8px !important;
+                    border-bottom-right-radius: 8px !important;
+                    border-top-left-radius: 0 !important;
+                    border-top-right-radius: 0 !important;
                 }
                 
                 .linkable-tab-content {
@@ -217,8 +236,8 @@ class LinkableTabBox {
         const tabsHTML = `
             <div class="linkable-tabs-wrapper">
                 <div class="linkable-tabs-nav" role="tablist">
-                    ${this.tabs.map(tab => `
-                        <button class="linkable-tab-button" 
+                    ${this.tabs.map((tab, index) => `
+                        <button class="linkable-tab-button ${index === 0 ? 'first-tab' : ''} ${index === this.tabs.length - 1 ? 'last-tab' : ''}" 
                                 role="tab" 
                                 id="tab-${tab.id}" 
                                 data-tab="${tab.id}"
@@ -557,6 +576,9 @@ ${this.config.enableMarkdown ? this.parseMarkdown(cleanContent) : cleanContent}
         
         // Execute other scripts
         this.executeInlineScripts(tabPane);
+        
+        // Call component initializers for known components
+        this.callComponentInitializers(tabPane);
     }
 
     async initializeMermaidDiagrams(tabPane) {
@@ -716,11 +738,18 @@ ${this.config.enableMarkdown ? this.parseMarkdown(cleanContent) : cleanContent}
 
     callComponentInitializers(tabPane) {
         // Check if this tab contains a CSV changelog table and initialize it
-        if (tabPane.querySelector('#csv-changelog-container') && typeof window.initializeChangelogTable === 'function') {
-            console.log('Initializing CSV changelog table for active tab');
-            setTimeout(() => {
-                window.initializeChangelogTable();
-            }, 100);
+        const csvContainer = tabPane.querySelector('#csv-changelog-container');
+        if (csvContainer && typeof window.initializeChangelogTable === 'function') {
+            // Only initialize if not already initialized
+            if (!csvContainer.hasAttribute('data-initialized')) {
+                console.log('Initializing CSV changelog table for active tab');
+                csvContainer.setAttribute('data-initialized', 'true');
+                setTimeout(() => {
+                    window.initializeChangelogTable();
+                }, 300); // Increased timeout to ensure tab is fully active
+            } else {
+                console.log('CSV changelog table already initialized, skipping');
+            }
         }
     }
 
@@ -1059,3 +1088,4 @@ if (!document.getElementById('copy-feedback-styles')) {
 // Global exports
 window.createLinkableTabs = createLinkableTabs;
 window.LinkableTabBox = LinkableTabBox;
+} // End of LinkableTabBox class definition guard
