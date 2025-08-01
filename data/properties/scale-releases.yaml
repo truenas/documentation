@@ -17,15 +17,15 @@ majorVersions:
     name: "TrueNAS 25.04 - Fangtooth"
     releaseName: "Fangtooth"
     releases:
-      - name: "25.04.1"
-        type: "Maintenance"
-        link: "https://www.truenas.com/docs/scale/25.04/gettingstarted/scalereleasenotes/#25041"
-        releaseDate: "2025-05-27"
-        latest: true
       - name: "25.04.2"
         type: "Maintenance"
-        link: ""
+        link: "https://www.truenas.com/docs/scale/25.04/gettingstarted/scalereleasenotes/#25041"
         releaseDate: "2025-07-31"
+        latest: true
+      - name: "TBD"
+        type: "Maintenance"
+        link: ""
+        releaseDate: ""
         latest: false
   - lifecycle: "Next"
     name: "TrueNAS 25.10 - Goldeye"
