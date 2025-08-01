@@ -166,8 +166,8 @@ TrueNAS 25.04.2 is not recommended for TrueNAS Enterprise customers with High Av
 
   For each application that experiences the error, run `midclt call -j app.update APP_NAME '{"values": {"resources": {"gpus": {"use_all_gpus": false, "nvidia_gpu_selection": {"PCI_SLOT": {"use_gpu": true, "uuid": "GPU_UUID"}}}}}}'`
   Where:
-  * `APP_NAME` is the name you entered in the application, for example, “plex”.
-  * `PCI_SLOT` is the PCI slot identified in the error, for example "0000:2d:00.0”.
+  * `APP_NAME` is the name you entered in the application, for example, *plex*.
+  * `PCI_SLOT` is the PCI slot identified in the error, for example *0000:2d:00.0*.
   * `GPU_UUID` is the UUID matching the PCI slot that you retrieved with the above command.
 * Custom applications with TTY enabled do not display logs in the TrueNAS UI. This is due to an upstream bug, see https://github.com/docker/docker-py/issues/1394. Users experiencing this issue can resolve it by either disabling TTY or using `docker logs` from the command line.
 * TrueNAS UI displays **Updates Available** button after updating to the latest release (see ([NAS-136046](https://ixsystems.atlassian.net/browse/NAS-136046)).
