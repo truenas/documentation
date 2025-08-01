@@ -2168,7 +2168,6 @@ thirdpartymigration
 EarlyReleaseWarning  
 UpgradeNotesBoilerplate  
 libvirt-qemu  
-Incus  
 MigratingVMs  
 RDMA  
 iSER  
@@ -2311,4 +2310,10 @@ TrueCloud
 OOM
 unpriv
 sqsh
+InstancesScreens
+virtualmachines
+containers-vms
+ContainerCPUandMemorySettings
 Netlogon
+ENOENT
+incus

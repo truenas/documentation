@@ -21,7 +21,7 @@ A new browser window opens, showing the API documentation Table of Contents.
 
 Alternatively, append **/api/docs/** to your TrueNAS host name or IP address in a browser to access the API documentation.
 
-Static copies of the versioned API introduced with 25.04 are also available from [api.truenas.com](api.truenas.com).
+Static copies of the versioned API introduced with 25.04 are also available from [api.truenas.com](https://api.truenas.com/).
 
 {{< include file="/static/includes/APIDocs.md" >}}
 
