@@ -151,7 +151,7 @@ TrueNAS 25.04.2 is not recommended for TrueNAS Enterprise customers with High Av
 
 * [NAS-136941](https://ixsystems.atlassian.net/browse/NAS-136941) - Virtual Machines: Cannot Retrieve Response UI response on Virtualization UI.
   * Impacts: VMs that were created without VNC passwords on older TrueNAS releases where this was not required.
-    * Workaround: Rollback to 24.10 and apply password to display device for the VM(s) before updating.
+  * Workaround: Rollback to 24.10 and apply password to display device for the VM(s) before updating.
   * Impacts: VMs with a VNC port configured outside the display device port range (>=5900 <=65535). This can impact VMs created prior to the port range validation implementation.
 
 * [NAS-136939](https://ixsystems.atlassian.net/browse/NAS-136939) - Historic VM entries on systems migrated prior to 25.04.2 may be seen in Virtualization table.
