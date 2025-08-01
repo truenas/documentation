@@ -153,7 +153,7 @@ TrueNAS 25.04.2 is not recommended for TrueNAS Enterprise customers with High Av
   * Impacts: VMs that were created without VNC passwords on older TrueNAS releases where this was not required.
   * Workaround: Rollback to 24.10 and apply password to display device for the VM(s) before updating.
   * Impacts: VMs with a VNC port configured outside the display device port range (>=5900 <=65535). This can impact VMs created prior to the port range validation implementation.
-
+  * Workaround: Rollback to 24.10 and adjust VM VNC ports to be within range **5900 - 65535** before updating.
 * [NAS-136939](https://ixsystems.atlassian.net/browse/NAS-136939) - Historic VM entries on systems migrated prior to 25.04.2 may be seen in Virtualization table.
   * Impacts: VMs created prior to 25.04 which were upgraded to 25.04 releases prior to 25.04.2 may see historic records in the virtualization table.
   * Workaround: Usually the errors are “ENOENT” because the underlying resources were deleted after the user migrated these to incus. The historic entries can be deleted.
