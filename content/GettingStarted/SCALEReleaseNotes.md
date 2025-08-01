@@ -149,6 +149,15 @@ TrueNAS 25.04.2 is not recommended for TrueNAS Enterprise customers with High Av
 
 ### 25.04.2 Known Issues
 
+* [NAS-136941](https://ixsystems.atlassian.net/browse/NAS-136941) - Virtual Machines: Cannot Retrieve Response UI response on Virtualization UI.
+  * Impacts: VMs that were created without VNC passwords on older TrueNAS releases where this was not required.
+  * Workaround: Rollback to 24.10 and apply password to display device for the VM(s) before updating.
+  * Impacts: VMs with a VNC port configured outside the display device port range (>=5900 <=65535). This can impact VMs created prior to the port range validation implementation.
+
+* [NAS-136939](https://ixsystems.atlassian.net/browse/NAS-136939) - Historic VM entries on systems migrated prior to 25.04.2 may be seen in Virtualization table.
+  * Impacts: VMs created prior to 25.04 which were upgraded to 25.04 releases prior to 25.04.2 may see historic records in the virtualization table.
+  * Workaround: Usually the errors are “ENOENT” because the underlying resources were deleted after the user migrated these to incus. The historic entries can be deleted.
+
 * Some users of TrueNAS Apps attempting to configure GPU allocation report the error `Expected [uuid] to be set for GPU inslot [<some pci slot>] in [nvidia_gpu_selection])` (see ([NAS-134152](https://ixsystems.atlassian.net/browse/NAS-134152)).
 
   Users experiencing this error should follow the steps below for a one-time fix that should not need to be repeated.
@@ -157,8 +166,8 @@ TrueNAS 25.04.2 is not recommended for TrueNAS Enterprise customers with High Av
 
   For each application that experiences the error, run `midclt call -j app.update APP_NAME '{"values": {"resources": {"gpus": {"use_all_gpus": false, "nvidia_gpu_selection": {"PCI_SLOT": {"use_gpu": true, "uuid": "GPU_UUID"}}}}}}'`
   Where:
-  * `APP_NAME` is the name you entered in the application, for example, “plex”.
-  * `PCI_SLOT` is the PCI slot identified in the error, for example "0000:2d:00.0”.
+  * `APP_NAME` is the name you entered in the application, for example, *plex*.
+  * `PCI_SLOT` is the PCI slot identified in the error, for example *0000:2d:00.0*.
   * `GPU_UUID` is the UUID matching the PCI slot that you retrieved with the above command.
 * Custom applications with TTY enabled do not display logs in the TrueNAS UI. This is due to an upstream bug, see https://github.com/docker/docker-py/issues/1394. Users experiencing this issue can resolve it by either disabling TTY or using `docker logs` from the command line.
 * TrueNAS UI displays **Updates Available** button after updating to the latest release (see ([NAS-136046](https://ixsystems.atlassian.net/browse/NAS-136046)).
