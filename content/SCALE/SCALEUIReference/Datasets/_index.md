@@ -225,6 +225,9 @@ It includes the current state of the dataset encryption, the encryption root, an
 The **Encryption** widget shows **Lock** when the dataset is unlocked or **Unlock** when the dataset is locked.
 These are not available on the widget for the root dataset.
 
+The **Encryption** widget shows **Export Key** when the encryption type is set to key.
+**Export Key** downloads the system-generated encryption key to a JSON file. You can find this in your Windows **Downloads** folder.
+
 **Edit** opens the **Edit Encryption Options for *datasetname*** window. A root dataset does not include the **Edit** button.
 We do not recommend encrypting the root or system dataset!
 
