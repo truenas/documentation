@@ -2,6 +2,11 @@
 title: "Documentation Hub"
 description: "Home page for the TrueNAS documentation projects."
 geekdocCollapseSection: true
+aliases:
+ - /core/system/support/
+ - /core/network/networksummary/
+ - /core/directoryservices/ldap/
+ - /core/13.3.0/
 main_index_class: main-index-page
 ---
 <style>
