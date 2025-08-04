@@ -15,6 +15,7 @@ tags:
 {{< include file="/static/includes/RootLevelDatasetShareWarning.md" >}}
 
 ## About UNIX (NFS) Shares
+
 Creating a Network File System (NFS) share on TrueNAS makes a lot of data available for anyone with share access.
 Depending on the share configuration, you can restrict users to read or write privileges.
 
@@ -30,9 +31,11 @@ If you need to create shares that include child datasets, SMB sharing is an opti
 {{< /hint >}}
 
 ## Sharing Administrator Access
+
 {{< include file="/static/includes/SharingAdminRole.md" >}}
 
 ## Creating an NFS Share and Dataset
+
 {{< include file="/static/includes/ShareDatasetsNotPools.md" >}}
 You have the option to create the share and a dataset at the same time from either the **Add Dataset** or **Add NFS** screens.
 

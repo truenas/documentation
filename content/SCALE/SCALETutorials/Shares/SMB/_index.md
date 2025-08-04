@@ -68,7 +68,7 @@ Creating an SMB share on your system requires adding the share and then getting 
 
    The **Add Dataset** and the **Add SMB** share screens allow TrueNAS to create a dataset and SMB share from that screen.
    Use either option to create a basic SMB share.
-   
+
    When creating an SMB share that requires customization or is intended for a specific purpose, such as working with Veeam Backup & Restore immutability or a repository for block or fast cloning (requires an Enterprise license), use the **Add SMB** screen presets and advanced options to create the share and dataset for these special SMB shares.
    For more information on Veeam SMB shares, refer to the [Solutions > Integrations](https://www.truenas.com/docs/solutions/integrations/) **Veeam** and **Veeam Immutability** guides.
 
@@ -76,7 +76,7 @@ Creating an SMB share on your system requires adding the share and then getting 
 
    This article provides instructions on adding a dataset while adding the share using the **Add SMB** screen
 
-3. [Modify the share permissions](#tuning-the-dataset-acl).
+3. [Modify the share permissions](#tuning-the-dataset-filesystem-permissions).
 
    After adding or modifying the user account for the share, edit the dataset permissions.
 
@@ -139,7 +139,7 @@ To create a basic Windows SMB share and a dataset, go to **Shares**, then click 
 1. Enter or browse to select the SMB share mount path (parent dataset where you want to add a dataset for this share).
    The blank **Path** field populates with the path.
    The **Path** file browser field is the directory tree on the local file system that TrueNAS exports over the SMB protocol.
-   
+
    {{< include file="/static/includes/FileExplorerFolderIcons.md" >}}
 
 2. Click **Create Dataset**.

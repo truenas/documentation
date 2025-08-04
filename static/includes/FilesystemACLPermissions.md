@@ -8,7 +8,7 @@ To configure share owner, user and group permissions for the dataset Access Cont
 This modifies the ACL entry for the SMB share the path (defined in **Path**) at the dataset level.
 To customize permissions, add Access Control Entries (ACEs) for users or groups.
 
-To access the dataset (filesystem) permissions, click on the <span class="material-icons">more_vert</span> dropdown list to the right of each share then on **Edit Filesystem ACL** to open the **Edit ACL** screen for the dataset assoicated with the share.
+To access the dataset (filesystem) permissions, click on the <span class="material-icons">more_vert</span> dropdown list to the right of each share then on **Edit Filesystem ACL** to open the **Edit ACL** screen for the dataset associated with the share.
 You can also go to **Datasets**, select the dataset (same name as the share), then click **Edit** on the **Permissions** widget to open the **Edit ACL** screen.
 
 **Samba Authentication** selected by default when SMB share users are created or added to TrueNAS manually or through a directory service, and these users are automatically added to the **builtin-users** group.

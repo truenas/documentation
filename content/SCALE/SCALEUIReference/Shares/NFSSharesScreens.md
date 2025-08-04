@@ -14,7 +14,7 @@ tags:
 
 ## Unix (NFS) Share Widget
 
-If you have not added NFS shares to the system, the NFS widget shows text stating general information about the Unix (NFS) shares until a share is added. 
+If you have not added NFS shares to the system, the NFS widget shows text stating general information about the Unix (NFS) shares until a share is added.
 
 {{< trueimage src="/images/SCALE/Shares/NFSShareWidgetNoShare.png" alt="Unix (NFS) Share Widget" id="Unix (NFS) Share Widget" >}}
 
@@ -24,12 +24,12 @@ After adding an NFS share, it is listed in the table on the widget.
 
 {{< trueimage src="/images/SCALE/Shares/NFSShareWidgetWithShares.png" alt="Unix (NFS) Share Widget with Shares" id="Unix (NFS) Share Widget with Shares" >}}
 
-
 The **Unix (NFS) Share <span class="material-icons">launch</span>** header shows the status of the NFS service as either **STOPPED** (red) or **RUNNING** (green).
 Before adding the first share, the **STOPPED** status displays in the default color.
-The header is a link that opens the [**NFS** screen]().
+The header is a link that opens the [**NFS** screen](#nfs-screen).
 
 The <span class="material-icons">more_vert</span> dropdown list shows three options available to NFS shares and the NFS service in general:
+
 * **Turn Off/ON Service** toggles to **Turn Off Service** when the NFS service is enabled, and to **Turn On Service** when the NFS service is disabled.
 * **Config Service** opens the [**NFS**]({{< ref "NFSServiceScreen" >}}) configuration screen.
 * **NFS Sessions** that opens the [**NFS Sessions** screen](#nfs-sessions-screen).
@@ -37,6 +37,7 @@ The <span class="material-icons">more_vert</span> dropdown list shows three opti
 The widget shows a table listing nfs shares created in TrueNAS.
 Each NFS share row on the **Unix (NFS) Shares** widget shows the path to the shared dataset, a description if one is entered when the share is added, an **Enabled** toggle that allows you to enable or disable the share.
 The <span class="material-icons">more_vert</span> dropdown list for each share shows two options:
+
 * **<span class="material-icons">edit</span> Edit** opens the [**Edit NFS** screen](#add-and-edit-nfs-screens).
 * **<span class="material-icons">delete</span> Delete** opens the [**Delete** dialog](#delete-nfs-share-dialog).
 
@@ -82,10 +83,12 @@ If disabled, the share is disabled but not deleted from the system.
 Options include **Unselect All**, **Path**, **Description**, **Enabled** and **Reset to Defaults**.
 
 The <span class="material-icons">more_vert</span> dropdown list at the right of each table row shows two options for a share:
+
 * **Edit** opens the **[Edit NFS](#add-and-edit-nfs-screens)** screen.
 * **Delete** displays the **[Delete](#delete-nfs-share-dialog)** dialog.
 
 ## Add and Edit NFS Screens
+
 The **Add NFS** and **Edit NFS** show the same **Basic Options** and **Advanced Options** settings.
 
 {{< hint type=info title="UDP Protocol and NFS" >}}
@@ -129,6 +132,7 @@ The **Basic Options** settings on the **Add** and **Edit NFS** screens show by d
 {{< /truetable >}}
 
 #### Security Types
+
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
@@ -142,6 +146,7 @@ The **Basic Options** settings on the **Add** and **Edit NFS** screens show by d
 
 The **NFS Sessions** screen shows a table of sessions with the IP address and Export status of each session listed.
 You can access the **NFS Sessions** screen from the :
+
 * <i class="material-icons" aria-hidden="true" title="list">list</i> icon on the **NFS** service row on the **System > Services** screen
 * <span class="material-icons">more_vert</span> on the **Shares > Unix (NFS) Shares** widget
 * **NFS Sessions** on the **NFS** screen
@@ -158,6 +163,6 @@ To help prevent stale entries from accumulating, the sessions list is cleared on
 
 **Column** shows a dropdown list of options for the selected tab to customize the information included on the screen.
 
-The breadcrumb links at the top of the screen return you to the screen you click. 
+The breadcrumb links at the top of the screen return you to the screen you click.
 
 {{<include file="/static/includes/addcolumnorganizer.md">}}
