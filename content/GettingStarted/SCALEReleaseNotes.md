@@ -106,6 +106,18 @@ Any new feature flags introduced since the previous OpenZFS version that was int
 
 For more details on feature flags, see [OpenZFS Feature Flags](https://openzfs.github.io/openzfs-docs/Basic%20Concepts/Feature%20Flags.html) and [OpenZFS zpool-feature.7](https://openzfs.github.io/openzfs-docs/man/7/zpool-features.7.html).
 
+## 25.04.2.1
+
+**August 5, 2025**
+
+The TrueNAS team is pleased to release TrueNAS 25.04.2.1!
+This is a small maintenance release that includes several debug and audit optimizations to community features.
+
+### 25.04.2.1 Notable Changes
+
+* Fixes an issue where upgrading from Electric Eel would break the Virtual Machines page for existing VMs without configured VNC passwords or VMs configured to use display device ports outside the standardized range of 5900-65535 ([NAS-136941](https://ixsystems.atlassian.net/browse/NAS-136941)).
+* Optimizes debug generation and audit features as part of this release.
+
 ## 25.04.2
 
 **July 31, 2025**
