@@ -72,5 +72,3 @@ The default directory is the same as the user <file>/home</file> directory.
 After connecting, you can create directories and upload or download files.
 
 ![FilezillaFTPConnect](/images/CORE/FilezillaFTPConnect.png "Filezilla FTP Connection")
-
-{{< taglist tag="coreftp" limit="10" >}}
