@@ -20,7 +20,7 @@ The list includes the names, serial numbers, sizes, and pools for each system di
 {{< trueimage src="/images/SCALE/Storage/DisksScreen.png" alt="Disks Screen" id="Disks Screen" >}}
 
 Use the **Columns** dropdown list to select options to customize disk the information displayed.
-Options are **Select All**, **Serial** (the disk serial number), **Disk Size**, **Pool** (where the disk is in use), **Disk Type**, **Description**, **Model**, **Transfer Mode**, **Rotation Rate (RPM)**, **HDD Standby**, **Adv. Power Management**, **Enable S.M.A.R.T.**, **S.M.A.R.T. extra options**, and **Reset to Defaults**.
+Options are **Select All**, **Name**, **Serial** (the disk serial number), **Disk Size**, **Pool** (where the disk is in use), **Disk Type**, **Description**, **Model**, **Transfer Mode**, **Rotation Rate (RPM)**, **HDD Standby**, **Adv. Power Management**, and **Reset to Defaults**.
 Each option displays the information you enter in the **Edit Disk** screen or when you install the disk.
 
 Select the checkbox to the left of a disk to display the **[Batch Operations](#batch-operations)** options.
@@ -29,6 +29,7 @@ The checkbox at the top of the table selects all disks in the system. Select aga
 **Storage** in the breadcrumb at the top of the screen returns to the **[Storage Dashboard]({{< ref "/SCALE/SCALEUIReference/Storage" >}})**.
 
 ## Disks Screen - Expanded Disk
+
 Click anywhere on a disk row to expand it and show the traits specific to that disk and available options.
 The expanded view of a disk includes details for the disk and options to edit disk properties, run a SMART test and view the test results, and in some instances the ability to wipe the disk.
 
@@ -36,20 +37,17 @@ The expanded view of a disk includes details for the disk and options to edit di
 
 **Edit** opens the **[Edit Disk](#edit-disk-screen)** screen.
 
-**Manual Test** opens the **[Manual S.M.A.R.T. test](#manual-test-dialog)** where you can initiate a S.M.A.R.T. test of the disk.
-
-**S.M.A.R.T. Test Results** opens the **[S.M.A.R.T. Test Results of *diskname*](#smart-test-results-of-diskname-screen)** screen with the results of each S.M.A.R.T. test run for that disk.
-
+If a disk is not assoicated with a pool and is inactive, the **Wipe** option shows.
 **Wipe** opens the **[Wipe Disk](#wipe-disk-dialogs)** dialog.
 
 ### Batch Operations
-Select a checkbox to the left of a disk on the **Disks** screen to display the **Batch Operations** functions: **Edit Disk(s)** and **Manual Test**.
+
+Select a checkbox to the left of a disk on the **Disks** screen to display the **Batch Operations** functions: **Edit Disk(s)**.
 
 **Edit Disk(s)** opens the **[Bulk Edit Disks](#bulk-edit-disks)** screen.
 
-**Manual Test** opens the **[Manual SMART Test]()** dialog with a list of the disk(s) selected.
-
 #### Bulk Edit Disks
+
 The **Bulk Edits Disks** screen allows you to change disk settings for multiple disks simultaneously.
 The screen lists the device names for each selected disk in the **Disks to be edited** section.
 
@@ -61,67 +59,14 @@ The screen lists the device names for each selected disk in the **Disks to be ed
 |---------|-------------|
 | **HDD Standby** | Select the minutes of inactivity before the drive enters standby mode from the dropdown list. Options are **Always On** or **5**, **10**, **20**, **30**, **60**, **120**, **240**, **300**, and **330**. For more information read this [forum post|(https://forums.freenas.org/index.php?threads/how-to-find-out-if-a-drive-is-spinning-down-properly.2068/) describing identifying spun-down drives. Temperature monitoring is disabled for the standby disk. |
 | **Advanced Power Management** | Select the power management profile from the dropdown list. Options are **Disabled**, **Level 1 - Minimum power usage with Standby (spindown)**, **Level 64 - Intermediate power usage with Standby**, **Level 127 - Maximum power usage with Standby**, **Level 128 - Minimum power usage without Standby (no spindown)**, **Level 192 - Intermediate power usage without Standby**, and **Level 254 - Maximum performance, maximum power usage**. |
-| **Enable S.M.A.R.T.**  | Select to enable and allow the system to conduct periodic [S.M.A.R.T. tests]({{< ref "SMARTTestsScreensSCALE" >}}). |
-| **S.M.A.R.T. Extra Options** | Enter additional [smartctl(8)](https://www.smartmontools.org/browser/trunk/smartmontools/smartctl.8.in). |
-{{< /truetable >}}
-{{< /expand >}}
-
-### Manual S.M.A.R.T. Test Dialog
-The **Manual S.M.A.R.T. Test** dialog displays the name of the selected disk(s) and the option to specify the type of test you want to run outside of a scheduled S.M.A.R.T. test.
-
-{{< trueimage src="/images/SCALE/DataProtection/ManualSMARTTestDialog.png" alt="Manual SMART Test Dialog" id="Manual SMART Test Dialog" >}}
-
-{{< expand "Manual S.M.A.R.T. Test Settings" "v" >}}
-{{< truetable >}}
-| Setting | Description |
-|---------|-------------|
-| **Long** | Runs SMART Extended Self Test. This scans the entire disk surface and can take many hours on large-volume disks. |
-| **Short** | Runs SMART Short Self Test (usually under ten minutes). These are basic disk tests that vary by manufacturer. |
-| **Conveyance** | Runs a SMART Conveyance Self-Test. This self-test routine is intended to identify damage incurred during transporting of the device. This self-test routine requires only minutes to complete. |
-| **Offline** | Runs SMART Immediate Offline Test. The effects of this test are visible only in that it updates the SMART Attribute values, and if the test finds errors, they appear in the SMART error log. |
-{{< /truetable >}}
-
-**Start** begins the test. Depending on the test type selected, the test can take some time to complete. TrueNAS generates alerts when tests discover issues.
-
-For information on automated S.M.A.R.T. testing, see the [S.M.A.R.T. tests]({{< ref "SMARTTestsSCALE" >}}) article.
-{{< /expand >}}
-
-### S.M.A.R.T. Test Results of&nbsp;*diskname*&nbsp;Screen
-The **S.M.A.R.T. Test Results of *diskname*** lists test results for the selected disk.
-The **Storage** and **Disks** breadcrumbs return to other storage pages. 
-**Storage** opens the **Storage Dashboard** and **Disks** opens the **Disks** screen.
-
-{{< trueimage src="/images/SCALE/DataProtection/SMARTTestResultsofDiskExpanded.png" alt="S.M.A.R.T. Test Results for A Disk Screen" id="S.M.A.R.T. Test Results for A Disk Screen" >}}
-
-{{< expand "Customizing the Test Results Screen" "v" >}}
-Customize the information displayed with the **Columns** option. 
-Options are **Unselect All** (toggles to **Select All**), **Description**, **Status**, **Remaining**, **Lifetime**, **Error**, and **Reset to Defaults**.
-**Unselect All** removes all information except the **ID** number.
-Expand the row to see the **Description**, Status, Remaining, Lifetime, and Error information for the test ID.
-
-{{< trueimage src="/images/SCALE/Storage/SMARTTestResultsExpandedAfterUnselectAll.png" alt="S.M.A.R.T. Test Results after Unselect All" id="S.M.A.R.T. Test Results after Unselect All" >}}
-
-The **Select All** option displays all information on the table view and eliminates the expand function for the tests listed.
-
-#### SMART Test Result Column Options
-These options, except the ID, appear on the **Columns** dropdown list.
-
-{{< truetable >}}
-| Option | Description |
-|--------|-------------|
-| **ID** | The test identification number assigned by the system. |
-| **Description** | Type of test run and the status of the system. For example, **Short offline** indicates the test type is **Short** while the system is **offline** when the test runs. |
-| **Status** | Lists the test status. Options are **Success** or **Fail**. |
-| **Remaining** | How much of the test is left to perform. If the test encounters an error, the field shows at what point in the test the error occurs. A value of **0** means the test completed and with no errors encountered. |
-| **Lifetime** | The age of the disk when the test ran. |
-| **Error** | Displays details about any error encountered during the test. Displays **N/A** if no error was encountered during the test. |
 {{< /truetable >}}
 {{< /expand >}}
 
 {{<include file="/static/includes/addcolumnorganizer.md">}}
 
 ### Wipe Disk Dialogs
-The option to wipe a disk only displays when a disk is unused by a pool.
+
+The option to wipe a disk only displays when a disk is not assigned to a pool, and is not in use.
 **Wipe** opens three dialogs, one to select the method, a confirmation dialog, and a progress dialog that includes the option to abort the process.
 
 The **Wipe Disk *diskname*** opens after clicking **Wipe** on the expanded view of a disk on the **Disks** screen.
@@ -174,23 +119,4 @@ Click **Edit Disk** on the **[Devices]({{< ref "DevicesScreensSCALE" >}})** scre
 |---------|-------------|
 | **HDD Standby** | Select a value from the dropdown list of options or leave it set to the default **Always On**. This specifies the minutes of inactivity before the drive enters standby mode. For information on identifying spun-down drives, see this [forum post](https://www.truenas.com/community/threads/how-to-find-out-if-a-drive-is-spinning-down-properly.2068/). Temperature monitoring is disabled for standby disks. |
 | **Advanced Power Management (APM)** | Select a power management profile from the dropdown list of options that include **Disabled** (the default setting), **Level 1 - Minimum power usage with Standby (spindown)**, **Level 64 - Intermediate power usage with Standby**, **Level 127 - Maximum power usage with Standby**, **Level 128 - Minimum power usage without Standby (no spindown)**, **Level 192 - Intermediate power usage without Standby**, or **Level 254 - Maximum performance, maximum power usage**. APM levels control power management behavior when drives are idle, not maximum performance capabilities. When drives are actively accessed, they operate at full performance regardless of the APM setting. Lower numbered levels prioritize power savings during idle periods, while higher levels prioritize quick response times. |
-{{< /truetable >}}
-
-### S.M.A.R.T. Settings
-{{< truetable >}}
-| Setting | Description |
-|---------|-------------|
-| **Enable S.M.A.R.T.** | Select to enable the system to conduct periodic [S.M.A.R.T. tests]({{< ref "SMARTTestsSCALE" >}}). |
-| **S.M.A.R.T. extra options** | Enter additional [smartctl(8)](https://www.unix.com/man-page/suse/8/smartctl/) options. |
-{{< /truetable >}}
-
-### SED Settings
-
-{{< include file="/static/includes/SEDEnterpriseAdmonition.md" >}}
-
-{{< truetable >}}
-| Setting | Description |
-|-----------|-------------|
-| **SED Password** | Enter a password to set or change for this individual Self-Encrypting Disk (SED). If both an individual and global SED password are present, the individual SED password overrides the global password for the disk it is configured on. |
-| **Clear SED Password** | Select to clear the SED password for this disk. |
 {{< /truetable >}}
