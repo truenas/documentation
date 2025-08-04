@@ -51,9 +51,7 @@ This can support more than 16 groups and provide more accurate group memberships
 It is equivalent to setting the `--manage-gids` flag for [rpc.mountd](https://linux.die.net/man/8/rpc.mountd).
 This setting assumes group membership is configured correctly on the NFS server.
 
-{{< hint type=note >}}
-Changes to local groups or directory service groups take up to 10 minutes to take effect for NFS shares. For immediate effect, reload or restart the NFS service.
-{{< /hint >}}
+{{< include file="/static/includes/NFSUpdateTime.md" >}}
 
 Click **Save**.
 
