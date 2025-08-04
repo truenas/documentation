@@ -11,12 +11,12 @@ If using a newly added network interface, click **Add** to open the **Add Interf
 
 ### Converting an Existing Interface to a Bridge
 
-Before making a change, Note the MAC address for the interface in the **Interfaces** widget, click on the edit option to open the **Edit Interface** sreen and take note of any static IP addresses assoicated with the interface.
+Before making a change, Note the MAC address for the interface in the **Interfaces** widget, click on the edit option to open the **Edit Interface** screen and take note of any static IP addresses associated with the interface.
 Disable DHCP if it is enabled, and clear the static IP addresses assigned to the interface.
 After clicking **Save** TrueNAS prompts you to test the changes before making it permanent.
 
 Alternatively, after obtaining the MAC address and IP address information you can exit the **Edit Interface** screen, and then select the **Reset Configuration** option for the interface to clear the interface settings.
-After selecting **Confirm** and then **Reset**, TrueNaS prompts you to test the changes before making it permanent. 
+After selecting **Confirm** and then **Reset**, TrueNaS prompts you to test the changes before making it permanent.
 
 TrueNAS prompts you to test any network change before it makes the change permanent so you do not loose access to the interface or your TrueNAS system.
 Refer to [Testing Network Interface Changes]({{< relref "/SCALE/SCALETutorials/Network/Interfaces/_index.md#testing-network-interface-changes" >}}) for more information on validating network interface changes.
@@ -27,7 +27,7 @@ After resetting the interface configuration, click **Add** to open the **Add Int
 
 While on the **System > Network** screen, click **Add** on the **Interfaces** widget to open the **Add Interfaces** screen.
 
-1. Select **Bridge** in **Type**. Name populates with the default **br1** or increments to the next avaible number if other bridge interfaces exist on your system.
+1. Select **Bridge** in **Type**. Name populates with the default **br1** or increments to the next available number if other bridge interfaces exist on your system.
   
    {{< trueimage src="/images/SCALE/Network/AddInterfaceBridgeSettings.png" alt="Bridge Interface Settings" id="Bridge Interface Settings" >}}
 
@@ -39,24 +39,24 @@ While on the **System > Network** screen, click **Add** on the **Interfaces** wi
 
 3. Select **Define Static IP Addresses**, then click **Add** to the right of **Static IP Addresses** to show the IP address and netmask fields.
 
-   If adding an interface after resetting the configuration for an exising interface, enter the IP address from that reset interface.
-   
-   If adding a new interface, enter the new static IP address. 
-   
-   Click **Add** for each IP address to assoicate with this interface.
+   If adding an interface after resetting the configuration for an existing interface, enter the IP address from that reset interface.
+
+   If adding a new interface, enter the new static IP address.
+
+   Click **Add** for each IP address to associate with this interface.
 
    If you want DHCP to assign an IP address, select **Get IP Address Automatically from DHCP**.
 
 4. Select the interfaces to include in this bridge on the **Bridge Members** dropdown list.
 
 5. Leave **Enable Learning** selected unless you want to defer interface learning until runtime.
-   Disabling learning preents premature state transtions and potential issues during system startup.
+   Disabling learning prevents premature state transitions and potential issues during system startup.
 
 6. Click **Save** when finished. The created bridge shows in **Interfaces** with its associated IP address information.
 
 7. Click **Test Changes** to determine if network changes are successful.
    See [Testing Network Interface Changes]({{< ref "/SCALE/SCALETutorials/Network/Interfaces#Testing-Network-Interface-Changes">}})
-   
+
    {{< expand "Troubleshooting Network Changes" "v" >}}
 
    Occasionally, a misconfigured bridge or a conflict with a running application, VM, or service can cause the network changes test to fail.

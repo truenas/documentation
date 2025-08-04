@@ -65,13 +65,13 @@ We recommend using the UI to make network changes because of the safeguards in p
 
 To add another network interface, go to **System > Network** and click **Add** on the **Interfaces** widget to open the **Add Interface** screen.
 Select the **Define Static IP Addresses** option, then click **Add** to the right of **Static IP Addresses** to show the IP address and netmask (CIDR) fields.
-Click **Add** for each IP address you want to assoicate with the interface.
+Click **Add** for each IP address you want to associate with the interface.
 {{< /hint>}}
 
 You must specify the type of interface to create.
 Select the interface type from the **Type** dropdown options: **Bridge**, **Link Aggregation** (LAGG), or **VLAN** (virtual LAN).
 The interface type cannot be changed after clicking **Save**.
-To change the interface type, select the interface, then click **Reset Configuration** on the <span class="material-icons">more_vert</span> dropdown list to clear the interface configuration, then you can add a new settings to the interface. 
+To change the interface type, select the interface, then click **Reset Configuration** on the <span class="material-icons">more_vert</span> dropdown list to clear the interface configuration, then you can add a new settings to the interface.
 
 Each interface type displays new fields on the **Add Interface** screen.
 
@@ -86,6 +86,7 @@ After adding a new or changing an existing interface that can impact access to t
 {{< trueimage src="/images/SCALE/Network/TestNetworkChanges.png" alt="Test Network Changes" id="Test Network Changes" >}}
 
 To test the change:
+
 1. Click **Test Changes**. You have 60 seconds to test the network change.
 
 2. Open a new browser window while keeping current the browser session open.
@@ -132,7 +133,7 @@ Select the interface, then click **Reset Configuration** on the <span class="mat
 
 **Confirm** validates the reset activity and activates the **Reset** button.
 
-**Reset** resets the configuration for that interface. Resetting the configuration shows the [test change](#test-changes) options to prevent losing access to that interface and the TrueNAS system.
+**Reset** resets the configuration for that interface. Resetting the configuration shows the [test change](#testing-network-interface-changes) options to prevent losing access to that interface and the TrueNAS system.
 
 ## Adding Static IP Addresses
 
@@ -150,19 +151,19 @@ To configure a static IP address:
 
    {{< trueimage src="/images/SCALE/Network/EditInterfaceAddAlias.png" alt="Define Static IP Addresses" id="Define Static IP Addresses" >}}
 
-2. Select the **Define Static IP Addresses** option, then click **Add** to the right of **Static IP Addresses** to show the IP address and netmask (CIDR) fields. 
+2. Select the **Define Static IP Addresses** option, then click **Add** to the right of **Static IP Addresses** to show the IP address and netmask (CIDR) fields.
 
-3. Click **Add** for each static IP address you want to add to this interface. Enter the IP address and netmak values for each address.
+3. Click **Add** for each static IP address you want to add to this interface. Enter the IP address and netmask values for each address.
 
-5. Click **Save**.
+4. Click **Save**.
 
-6. Click [**Test Changes**](#testing-network-interface-changes) when prompted.
+5. Click [**Test Changes**](#testing-network-interface-changes) when prompted.
 
 ### Changing from DHCP to a Static IP Address
 
 To change an interface from using DHCP to a static IP address:
 
-1. Click on the **Edit** icon for the interface on the **Interfaces** widget to open the **Edit Interface** screen, then select **Define Static IP Addreses**.
+1. Click on the **Edit** icon for the interface on the **Interfaces** widget to open the **Edit Interface** screen, then select **Define Static IP Addresses**.
 
    {{< trueimage src="/images/SCALE/Network/EditInterfaceAddAlias.png" alt="Edit Interface screen" id="Edit Interface Screen" >}}
 
@@ -175,7 +176,7 @@ To change an interface from using DHCP to a static IP address:
    If an error displays or the **Save** button remains inactive when setting the IP addresses on multiple interfaces, check the subnet and ensure the netmask (CIDR) numbers are different.
   
 3. Click **Save**.
-   
+
 4. Check the name servers and default router information in the **Global Information** widget.
    If the current settings are not on the same network, click **Settings** and modify each setting as needed to allow the static IP to communicate over the network.
 
@@ -185,7 +186,7 @@ To change an interface from using DHCP to a static IP address:
 
    For home users, use **8.8.8.8** for a DNS name server address so you can communicate with external networks.
 
-   Enter the IP address for the default gateway in the appropriate field.   
+   Enter the IP address for the default gateway in the appropriate field.
    If the static network is IPv4 enter the gateway in **IPv4 Default Gateway**, if the static network is IPv6 use **IPv6 Default Gateway**.
 
    Click **Save**.

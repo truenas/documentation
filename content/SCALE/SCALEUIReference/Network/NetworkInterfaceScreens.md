@@ -66,7 +66,7 @@ Interface settings configure the network interface name, type, and IP address as
 | **DHCP** | Enable DHCP, allowing it to assign IP addresses to the interface. Shows two options: **Get IP Address Automatically from DHCP** and **Define Static IP Addresses**. reate a static IPv4 or IPv6 configuration.  |
 | **Get IP Address Automatically from DHCP** | Allows DHCP to assign the IP address for the interface. Only one interface can be configured using DHCP. |
 | **Define Static IP Addresses** | Allows adding a static IP address to the interface using the **Static IP Addresses** fields. |
-| **Static IP Addresses** | Shows IP address and netmask (CIDR) fields after clicking **Add**. Click **Add** for each static IP address to add to/assoicate with the interface. |
+| **Static IP Addresses** | Shows IP address and netmask (CIDR) fields after clicking **Add**. Click **Add** for each static IP address to add to/associate with the interface. |
 | **Autoconfigure IPv6** | Select to automatically configure the IPv6 address with [rtsol(8)](https://man.cx/rtsol(8)). Only one interface can be configured this way. |
 | **MTU** | Sets the maximum transmission unit (MTU), which is the largest protocol data unit that can be communicated. The largest workable MTU size varies  with network interfaces and equipment. 1500 and 9000 are standard Ethernet MTU sizes. Leaving blank restores the field to the default value of **1500**. |
 {{< /truetable >}}
@@ -107,7 +107,7 @@ Use **Description** to further define or clarify how or where the bridge is used
 | Setting | Description |
 |---------|-------------|
 | **Parent Interface** | Shows a dropdown list of VLAN parent interface options. Options are usually an Ethernet card connected to a switch port configured for the VLAN. New link aggregations are not available until you restart the system. |
-| **VLAN Tag** |(Required) Accetps manual or copy/paste entry of the numeric tag configured in the switched network. Request this tag from your IT department if you are not the network administrator for your systems. |
+| **VLAN Tag** |(Required) Accepts manual or copy/paste entry of the numeric tag configured in the switched network. Request this tag from your IT department if you are not the network administrator for your systems. |
 | **Priority Code Point** | Shows a dropdown list of the class of service options. The available 802.1p class of service ranges from **Best effort (default)** to **Network control (highest)**. |
 {{< /truetable >}}
 
@@ -117,7 +117,7 @@ These options show above the **Interfaces** widget after applying changes to a n
 
 {{< trueimage src="/images/SCALE/Network/TestNetworkChanges.png" alt="Test Network Changes" id="Test Network Changes" >}}
 
-**Test Changes** starts the 60-second timer. 
+**Test Changes** starts the 60-second timer.
 
 **Revert Changes** discards changes made within the 60-second period.
 

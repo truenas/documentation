@@ -44,11 +44,11 @@ Go to **System > Network**, and click **Settings** on the **Global Configuration
    * Selecting **Allow All** permits all services to communicate externally.
 
    * Selecting **Deny All** prevents services from communicating externally.
-   
+
    * Selecting **Allow Specific** shows a dropdown list of services that you can choose to allow to communicate externally.
      Services not selected cannot communicate externally.
-   
-   * Selecting **Allow All Except** shows the same dropdown list of services that you can choose to deny the ability to communicate externally. 
+
+   * Selecting **Allow All Except** shows the same dropdown list of services that you can choose to deny the ability to communicate externally.
      Services not selected for this option are allowed external communication
 
    {{< trueimage src="/images/SCALE/Network/GlobalConfigOutboundSettings.png" alt="Global Configuration Outbound Settings" id="Global Configuration Outbound Settings" >}}
@@ -58,7 +58,7 @@ Go to **System > Network**, and click **Settings** on the **Global Configuration
 
 6. Click **Save**. The **Global Configuration** widget on the **Network** screen shows the new settings.
 
-<!-- Commeting out this section until more information on what each service allows or requires, then use a snippet for this content in the UI ref and here.
+<!-- Commenting out this section until more information on what each service allows or requires, then use a snippet for this content in the UI ref and here.
 ## Setting Up External Communication for Services
 
 Use the **Global Configuration Outbound Network** settings to add services for external communication capability.

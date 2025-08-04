@@ -13,7 +13,7 @@ The TrueNAS **Network** screen shows network configuration and settings options,
 The **Network** screen also provides access to IPMI channels. IPMI only shows on systems with physical hardware but not for virtual machine deployments.
 To access the **Network** screen, go to **System** on the main navigation menu, then click **Network**.
 
-{{< trueimage src="/images/SCALE/Network/Network.png" alt="Nework Screen" id="Network Screen" >}}
+{{< trueimage src="/images/SCALE/Network/Network.png" alt="Network Screen" id="Network Screen" >}}
 
 The articles listed below provide more information on **Network** screen widgets and screens.
 

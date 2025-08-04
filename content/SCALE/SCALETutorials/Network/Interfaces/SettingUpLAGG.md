@@ -16,7 +16,6 @@ To set up a LAGG, go to **Network**, click **Add** on the **Interfaces** widget 
 
 1. Select **Link Aggregation** from the **Type** dropdown list. You cannot change the **Type** field value after you click **Save**.
 
-
    {{< trueimage src="/images/SCALE/Network/AddInterfaceLAGG.png" alt="Add LAGG Interface" id="Add LAGG Interface" >}}
 
    Name populates with the default name for a LAGG interface, **bond1**.
@@ -53,10 +52,10 @@ To set up a LAGG, go to **Network**, click **Add** on the **Interfaces** widget 
    Select the **Transmit Hash Policy** option from the dropdown list. **LAYER2+3** is the default selection.
    {{< /expand >}}
 
-5. Select the interfaces to use in the aggregation from the **Link Aggregation Interface** dropdown list.
+4. Select the interfaces to use in the aggregation from the **Link Aggregation Interface** dropdown list.
 
-6. (Optional) Click **Add** to the right of **Static IP Addresses** to show additional IP address fields for each additional IP address to add to this LAGG interface.
+5. (Optional) Click **Add** to the right of **Static IP Addresses** to show additional IP address fields for each additional IP address to add to this LAGG interface.
 
-7. Click **Save** when finished.
+6. Click **Save** when finished.
 
-8. Test the network change when prompted.
+7. Test the network change when prompted.

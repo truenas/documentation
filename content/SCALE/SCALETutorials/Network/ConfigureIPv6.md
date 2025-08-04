@@ -32,7 +32,7 @@ Save, then select **a** to apply and **p** to make it persist. Type **q** to ret
 
 Next, configure the IPv6 gateway address, and the nameserver addresses. Type **2**, then press <kbd>Enter</kbd>.
 Enter the name server addresses provided by your IT department or Internet Service Provider (ISP), and then the gateways.
-Save, then select **a** to apply and **p** to make it persist. 
+Save, then select **a** to apply and **p** to make it persist.
 
 ### Adding an IPv6 Interface in the UI
 
@@ -48,7 +48,7 @@ Click on **Add** in the **Interfaces** to open the **Add Interface** screen.
 4. Click **Save**
 5. Test the change.
    If adding the primary interface test the network connection by opening a new browser window.
-   Enter the IPv6 address inside square brackets in the URL address field, for example, [*ipv6 address*]. 
+   Enter the IPv6 address inside square brackets in the URL address field, for example, [*ipv6 address*].
    After the system comes up, save the changes to the network interface.
 
 To access the UI after configuring an IPv6 address, enter the IPv6 address inside square brackets in the browser URL field.
@@ -75,7 +75,7 @@ If IPv4 networking is already configured in TrueNAS, to set up dual stacking of 
    Click **Settings** on the **Global Configuration** widget to open the **Edit Global Configuration** screen.
 
    Enter the IPv6 address for the gateway in **IPv6 Default Gateway**.
-   
+
    Click **Save**.
 
 2. Add the IPv6 static IP address to the primary interface.
@@ -107,12 +107,13 @@ You cannot enter the host name assigned to the TrueNAS system to access the UI.
 For example, enter <code>[<i>ffff:ff:59f8:100::12</i>]</code> into the URL field of the browser window to access the UI.
 
 ## Using IPv6 with Sharing Protocols
+
 When configuring an SMB or NFS share, first configure the bind address in the share service.
 Next, configure the share user, and add the share and dataset.
 Finally, add the share owner to the dataset permissions.
 
 1. Go to **System > Services** click **Advanced Options** then edit the share service.
-   
+
    For SMB, scroll down and select the IPv6 address as the **Bind IP Address** and click **Save**.
 
    For NFS, also select the IPv6 address in **Bind IP Addresses**.
@@ -120,12 +121,12 @@ Finally, add the share owner to the dataset permissions.
 
 2. Go to **Credentials > Local User** to create the share user.
 
-3. Go to either **Shares** or **Datasets** to [create the share and dataset]({{< ref "/SCALE/SCALETutorials/Shares/SMB#adding-an-smb-share-and-dataset" >}}). 
+3. Go to either **Shares** or **Datasets** to [create the share and dataset]({{< ref "/SCALE/SCALETutorials/Shares/SMB#adding-an-smb-share-and-dataset" >}}).
 
 4. Modify the ACL permissions.
    Either click on **Edit Filesystem ACL** on the **Shares** screen or go to **Datasets**, select the dataset row, scroll down and click **Edit** on the **Permissions** widget.
 
-   Leave the dataset permissions @owner and @group set to root or change them to the admin user. 
+   Leave the dataset permissions @owner and @group set to root or change them to the admin user.
    Next click **Add New** to create a new ACL entry for the share user(s).
    See [Setting Up Permissions]({{< ref "PermissionsSCALE" >}}) for more information on adding new entries and modifying dataset permissions.
 
@@ -134,7 +135,7 @@ Finally, add the share owner to the dataset permissions.
 ### Mounting and Accessing the Share in Windows
 
 To mount or access the share in Windows, you must enter the share information using a particular syntax or it cannot find nor connect to the share.
- 
+
 The syntax requires you to replace each colon (:) in the IPv6 address with a dash (-).
 Enter two forward slashes, followed by the IPv6 address with **.ipv6-literal.net** after it, then enter another forward slash, and finally the share name.
 
@@ -142,7 +143,7 @@ For example, <code>\\<i>ffff-ff-59f8-100--12</i>.ipv6-literal.net\<i>v6smbshare<
 
 ### Configuring an SSH Connection
 
-Both replication to a remote server and rscyn tasks require configuring an SSH connection credential.
+Both replication to a remote server and rsync tasks require configuring an SSH connection credential.
 When both systems are using IPv6 addresses and the protocol to communicate, you must enclose the IPv6 address in square brackets when defining the remote system URL in the **TrueNAS URL** field on the **New SSH Connection** configuration screen.
 <!-- 
 
