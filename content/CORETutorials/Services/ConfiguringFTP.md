@@ -31,8 +31,10 @@ Link the new dataset for the FTP share on a per-user basis, or create a global a
 {{< hint type=note >}}
 By default, only members of the **ftp** group can authenticate via FTP.
 Add your newly created user to the **ftp** group, or change this behavior in the FTP service configuration:
+
 - Enable **Allow Local User Login** to allow any local user to authenticate
 - Enable **Allow Anonymous Login** to allow anonymous connections without authentication
+
 Dataset permissions are configured separately and control what files authenticated users can access.
 {{< /hint >}}
 
