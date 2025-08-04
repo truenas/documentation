@@ -10,7 +10,6 @@ The **Global Configuration** widget shows the general networking settings for th
 
 {{< trueimage src="/images/SCALE/Network/GlobalConfiguration.png" alt="Global Configuration Widget" id="Global Configuration Widget" >}}
 
-
 **DNS Servers** shows the IP addresses for the primary and secondary name servers.
 
 **Default Route** shows the IP address for the default gateway.
