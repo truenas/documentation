@@ -119,8 +119,10 @@ A warning displays when setting this function.
 
 Select **Crash Reporting** to send failed HTTP request data, which might include client and server IP addresses, tracebacks for failed method calls, and middleware log file contents to TrueNAS.
 
-### Sending Usage Statistics
-To send anonymous usage statistics to TrueNAS, select the **Usage Collection** option.
+### Sending Usage Statistics and UI Error Reports
+To send anonymous usage statistics and WebUI errors to TrueNAS, select the **Usage Collection & UI Error Reporting** option.
+When enabled, anonymous usage statistics and WebUI errors are reported to TrueNAS engineering team. No personally identifiable information is collected.
+When disabled, anonymous usage statistics consisting only of the software version and total system capacity (e.g. TrueNAS 24.04.0, 55 TB) are still collected.
 
 For more information about what usage data is collected, see the [TrueNAS Data Collection Statement]({{< ref "/SCALE/GettingStarted/UserAgreements/DataCollectionStatement" >}}).
 
