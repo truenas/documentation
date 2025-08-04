@@ -114,7 +114,6 @@ When the zvol is encrypted, **Edit** on the **Encryption** widget opens a config
 | **Snapdev** | Select the option that controls whether the volume snapshot devices under /dev/zvol/*poolname* are hidden or visible from the dropdown list. Options are **Inherit (hidden)**, **Visible** and **Hidden** (default value). |
 | **Inherit (non-encrypted/encrypted)** | Encryption settings are inherited from the parent dataset. When the parent is encrypted, this option defaults to **Inherit (encrypted)**; otherwise, it shows **(non-encrypted)**. Clearing the checkmark shows the **Encryption** options. If the parent is encrypted with the passphrase type, the zvol can only use passphrase encryption. When the parent is encrypted with a key, the zvol can use either key or passphrase encryption. Refer to the [Encryption Settings]({{< relref "EncryptionUISCALE.md" >}}) article for more details. |
 {{< /truetable >}}
-{{< /expand >}}
 
 {{< expand "Block Size Table" "v" >}}
 TrueNAS recommends a space-efficient block size for new zvols.
