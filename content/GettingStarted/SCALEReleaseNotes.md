@@ -116,6 +116,7 @@ This is a small maintenance release that includes several debug and audit optimi
 ### 25.04.2.1 Notable Changes
 
 * Fixes an issue where upgrading from Electric Eel would break the Virtual Machines page for existing VMs without configured VNC passwords or VMs configured to use display device ports outside the standardized range of 5900-65535 ([NAS-136941](https://ixsystems.atlassian.net/browse/NAS-136941)).
+* Prevents standby controller from updating `nsswitch.conf` with directory services to avoid blocking NSS lookups before the system is fully configured ([NAS-136994](https://ixsystems.atlassian.net/browse/NAS-136994)).
 * Optimizes debug generation and audit features as part of this release.
 
 ## 25.04.2
