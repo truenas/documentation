@@ -198,7 +198,7 @@ Possible widget details include:
 * **Last Scan Duration** shows the time, in minutes and seconds the last scrub ran.
 * **Deduplication Table** only shows if a dedup VDEV is added to the pool. Shows the size of the deduplication table.
 
-{{< trueimage src="/images/SCALE/Storage/StorageDashboardScrubWidget.png" alt="Storage Health Widget" id="Storage Health Widget" >}}
+{{< trueimage src="/images/SCALE/Storage/StorageDashboardDiskHealthWidget.png" alt="Storage Health Widget" id="Storage Health Widget" >}}
 
 **Scrub Now** opens the **Scrub Pool** dialog. **Start Scrub** in the **Scrub Pool** dialog runs a check on the data integrity of the pool. 
 
