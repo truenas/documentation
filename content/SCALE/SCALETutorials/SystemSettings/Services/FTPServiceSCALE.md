@@ -59,7 +59,7 @@ Click **Save** and then start the FTP service.
 ## Configuring FTP Services For FTP Group
 FTP requires a new dataset and a local user account.
 
-Go to **Storage** and add a new [dataset]]({{< ref "DatasetsSCALE" >}}).
+Go to **Storage** and add a new [dataset]({{< ref "DatasetsSCALE" >}}).
 
 Next, add a new user. Go to **Credentials > Users**  and click **Add** to create a local user on the TrueNAS.
 
