@@ -67,7 +67,7 @@ Visit the <a href="https://www.truenas.com/software-status/" target="_blank">Tru
           {{< mermaid class="mermaid_sizing" >}}
           flowchart LR
             A["11.3-U5"] -->|update| B["12.0-U8.1"]
-            B -->|"update<br><br>ISO install"| C["13.0-U6.7<br><br>13.3-U2"]
+            B -->|"update<br><br>ISO install"| C["13.0-U6.8<br><br>13.3-U2"]
             C -->|update| G
             C -->|ISO install| I
             D["22.02.4 (Angelfish)"] -->|update| E
@@ -75,7 +75,7 @@ Visit the <a href="https://www.truenas.com/software-status/" target="_blank">Tru
             F["23.10.2 (Cobia)"] -->|update| G
             G["24.04.2.5 (Dragonfish)"] -->|update| H
             H["24.10.2.3 (Electric Eel)"] -->|update| I
-            I["25.04.1 (Fangtooth)"]
+            I["25.04.2 (Fangtooth)"]
           {{< /mermaid >}}
         </div>
       </div>
@@ -93,7 +93,7 @@ Visit the <a href="https://www.truenas.com/software-status/" target="_blank">Tru
             D["23.10.2 (Cobia)"] -->|update| E
             E["24.04.2.5 (Dragonfish)"]  -->|update| F
             F["24.10.2.3 (Electric Eel)"] -->|"(anticipated)"| G
-            G["25.04 (Fangtooth)"]
+            G["25.04.2 (Fangtooth)"]
           {{< /mermaid >}}
         </div>
       </div>

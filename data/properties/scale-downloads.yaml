@@ -115,6 +115,9 @@ majorVersions:
     releaseNotes: "https://www.truenas.com/docs/scale/24.10/gettingstarted/scalereleasenotes/"
     releaseName: "Electric Eel"
     releases:
+      - name: "24.10.2.3"
+        link: "https://download.truenas.com/TrueNAS-SCALE-ElectricEel/24.10.2.3/"
+        date: "2025-07-14"
       - name: "24.10.2.2"
         link: "https://download.truenas.com/TrueNAS-SCALE-ElectricEel/24.10.2.2/"
         date: "2025-05-13"
@@ -150,6 +153,9 @@ majorVersions:
     releaseNotes: "https://www.truenas.com/docs/scale/25.04/gettingstarted/scalereleasenotes/"
     releaseName: "Fangtooth"
     releases:
+      - name: "25.04.2"
+        link: "https://download.truenas.com/TrueNAS-SCALE-Fangtooth/25.04.2"
+        date: "2025-07-31"
       - name: "25.04.1"
         link: "https://download.truenas.com/TrueNAS-SCALE-Fangtooth/25.04.1"
         date: "2025-05-27"
