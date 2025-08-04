@@ -23,6 +23,7 @@ It allows hosts to access NVMe storage remotely while maintaining the high perfo
 
 The **NVMe-oF Subsystems** widget shows on the **Shares** screen.
 The header shows the status of the NVMe service as **Stopped** or **Running**, the **Add** button, and the <span class="material-icons">more_vert</span> dropdown menu with two options:
+
 * **Turn Service On/Off** toggle.
   You can also turn the service on/off from the **System > Services** screen or set it to automatically restart after a system restart.
 * **Config Service** that opens the [NVMe-oF Global Configuration](#nvme-of-global-configuration-screen) screen.
@@ -35,6 +36,7 @@ The table in the **NVMe-oF Subsystems** widget lists each subsystem added in Tru
 Each row shows the subsystem name, the number of namespaces associated with the subsystem, the number of ports available through the subsystem, and the number of hosts allowed or restricted from accessing the subsystem.
 
 The <span class="material-icons">more_vert</span> dropdown menu for each subsystem shows two options:
+
 * **View** - Opens the [**NVMe-oF**](#nvme-of-screen) screen showing the widgets for the selected subsystem.
 * **Delete** - Opens [**Delete Subsystem**](#delete-subsystem-dialog) dialog.
 
@@ -78,8 +80,9 @@ An <span class="material-icons">report_problem</span> alert icon shows beside th
 
 ### Details Widgets
 
-Each subsystem shows a group of four **Details for *subsystemName*** widgets on the right side of the screen, *subsystemName* is the name given to the subsystem (i.e., *test*). 
+Each subsystem shows a group of four **Details for *subsystemName*** widgets on the right side of the screen, *subsystemName* is the name given to the subsystem (i.e., *test*).
 Subsystem widgets are:
+
 * [**Details**](#details-widget)
 * [**Namespaces**](#namespaces-widget)
 * [**Ports**](#ports-widget)
@@ -103,7 +106,8 @@ The NQN shows an edit <span class="material-icons">edit</span> icon that changes
 
 #### Namespaces Widget
 
-The **Namespaces** widget lists namespaces (zvol or file) added to the subsystem and the path to it. *Namespaces* are similar to iSCSI extents. 
+The **Namespaces** widget lists namespaces (zvol or file) added to the subsystem and the path to it.
+*Namespaces* are similar to iSCSI extents.
 
 {{< trueimage src="/images/SCALE/Shares/SubsystemNamespacesWidget.png" alt="Subsystem Namespaces Widget" id="Subsystem Namespaces Widget" >}}
 
@@ -129,13 +133,14 @@ After removing a port, the **Add** button dropdown list shows the removed port a
 The **Associated Hosts** widget shows a list of hosts associated with the subsystem.
 Shows **All hosts are allowed** if a host is not specified.
 
-{{< trueimage src="/images/SCALE/Shares/SubsystemAssociatedHostsWidget.png" alt="Subsystem Assoicated Hosts Widget" id="Subsystem Associated Hosts Widget" >}}
+{{< trueimage src="/images/SCALE/Shares/SubsystemAssociatedHostsWidget.png" alt="Subsystem Associated Hosts Widget" id="Subsystem Associated Hosts Widget" >}}
 
 After adding a host, the widget shows the NQN identification number for the client host and the ![RemoveFromSubsystem](/images/SCALE/Shares/RemoveFromSubsystem.png "Remove from Subsystem Icon") **Removes this host from the subsystem** icon that only removes the host from the subsystem but does not delete it from TrueNAS.
 
-{{< trueimage src="/images/SCALE/Shares/AssoicatedHostsWiidgetWithHost.png" alt="Assoicated Hosts Widget with a Host" id="Assoicated Hosts Widget with a Host" >}}
+{{< trueimage src="/images/SCALE/Shares/AssoicatedHostsWiidgetWithHost.png" alt="Associated Hosts Widget with a Host" id="Associated Hosts Widget with a Host" >}}
 
 **Add** shows a dropdown list of options:
+
 * **Create New** opens the [**Add Host**](#add-and-edit-host-screens) screen.
 * **Manage Hosts** opens the [**Hosts**](#hosts-window) window
 * **Allow all hosts** that removes the host from the subsystem but does not delete it.
@@ -208,6 +213,7 @@ The <span class="material-icons">edit</span> edit icon on the **Namespaces** wid
 {{< trueimage src="/images/SCALE/Shares/AddNamespaceScreenZvolTab.png" alt="Add Namespace Screen" id="Add Namespace Screen" >}}
 
 These screens have three tabs:
+
 * [**Zvol**](#zvol-tab) (selected by default)
 * [**Existing File**](#existing-file-tab)
 * [**New File**](#new-file-tab)
@@ -287,7 +293,7 @@ Use to create a new zvol for the namespace to use for storage.
 
 Encryption settings secure data within this zvol. These settings establish the level and type of encryption applied.
 The default setting is **Inherit (non-encrypted)** when the root or parent dataset for the new storage is unencrypted.
-If encrypted, this shows **Inherit (encrypted)**. 
+If encrypted, this shows **Inherit (encrypted)**.
 
 Clearing the checkbox shows the **Encryption Type** setting with two options: **Key** and **Passphrase**. Each option shows different setting options.
 
@@ -295,7 +301,7 @@ Clearing the checkbox shows the **Encryption Type** setting with two options: **
 
 #### Key Type Settings
 
-The **Key** settings accept a system-generated or user-entered encryption key. 
+The **Key** settings accept a system-generated or user-entered encryption key.
 Creating a new key file invalidates the previously downloaded key file associated with this dataset.
 Shows with **Generate Key** selected by default. This automatically generates an encryption key for the zvol. Clearing the checkmark shows the additional key encryption settings.
 
@@ -305,8 +311,7 @@ Shows with **Generate Key** selected by default. This automatically generates an
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Generate Key** | Randomly generates an encryption key to secure the zvol. Disable to manually enter an encryption key.
- WARNING: The encryption key is the only means to decrypt the information stored in this zvol. Store the encryption key in a secure location. |
+| **Generate Key** | Randomly generates an encryption key to secure the zvol. Disable to manually enter an encryption key. <br><br>  WARNING: The encryption key is the only means to decrypt the information stored in this zvol. Store the encryption key in a secure location. |
 | **Key** |Text-entry field that accepts manually entering or copy/pasting an alpha-numeric string to use as the encryption key for this zvol. |
 | **Algorithm** | Dropdown list of mathematical instruction sets that determine how plain text is converted into cipher text. See [Advanced Encryption Standard (AES)(https://en.wikipedia.org/wiki/Advanced_Encryption_Standard)] for more details. |
 {{< /truetable >}}
@@ -322,7 +327,7 @@ The **Passphrase** settings set encryption to a passphrase of your choice to enc
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Passphrase** | Text-entry field that accepts manual or copy/paste of a user-defined string that decrypts the zvol. Use instead of an encryption key.<br>WARNING: The passphrase is the only means to decrypt the information stored in this dataset. Be sure to create a memorable passphrase or physically secure the passphrase. |
+| **Passphrase** | Text-entry field that accepts manual or copy/paste of a user-defined string that decrypts the zvol. Use instead of an encryption key.<br><br>WARNING: The passphrase is the only means to decrypt the information stored in this dataset. Be sure to create a memorable passphrase or physically secure the passphrase. |
 | **Confirm Passphrase** | Confirms the user-defined string entered in **Passphrase**. Entries must match. |
 | **pbkdf2iters** | The pencil icon shows a dropdown list of options to set the number of password-based key derivation function 2 (PBKDF2) iterations to reduce vulnerability to brute-force attacks. Entering a number larger than 100000 is required. See [PBKDF2](https://en.wikipedia.org/wiki/PBKDF2) for more details. |
 | **Algorithm** | The pencil icon shows dropdown list of options to set the mathematical instruction that determine how plain text is converted into cipher text. See [Advanced Encryption Standard (AES)](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard) for more details. |
@@ -350,7 +355,7 @@ The **Edit Host** screen shows the fields associated with the subsystem and allo
 | **Key For Host To Present** | The DH-CHAP key, obtained from the host, to authenticate access to the subsystem. Accepts manual or copy/paste entry of a hash. Use **Generate Key** directly under the field to have TrueNAS create a key to copy/paste into the host to use as the authentication key for that host. |
 | **Generate Key** | Populates the **Key For Host To Present** field with a TrueNAS system-generated DH-CHAP key for the host. |
 | **Key For TrueNAs To Present (Optional)** | The secret key the TrueNAS system presents to the host that further validates the connection between the host and TrueNAS when the host connects to the subsystem (bi-directional authentication). Accepts copy/paste of a key or use the **Generate Key** directly below this field to populate with a system-generated key. Provide this key to the host connecting with TrueNAS to authenticate the TrueNAS system in the connection authorization. |
-| **Generate Key** | Populates the **Key For TureNAS To Present** field with a system-generated bi-directional authentication key. |
+| **Generate Key** | Populates the **Key For TrueNAS To Present** field with a system-generated bi-directional authentication key. |
 | **Also use Diffie-Hellman key exchange for additional security** | Enables further security through a Diffie–Hellman key exchange. This affords greater authentication security than using only the CHAP keys for authentication. |
 {{< /truetable >}}
 {{< /expand >}}

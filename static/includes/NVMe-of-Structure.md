@@ -20,6 +20,7 @@ TrueNaS allows exporting an existing zvol previously exposed as an iSCSI target 
 A zvol exported is not eligible to be exposed by iSCSI after it is exported.
 
 TrueNAS NVMe-oF offers global configurations of iSCSI equivalents:
+
 * Asymmetric Namespace Access (ANA) - This is the equivalent to ALUA in iSCSI.
   Systems connecting to the target require some form of multi-pathing support.
 * Remote Direct Memory Access (RDMA) - The system must support Remote Direct Memory Access (RDMA).

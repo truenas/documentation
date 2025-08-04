@@ -24,11 +24,12 @@ tags:
 
 ## Overview of NVMe-oF
 
-{{< include file="/static/inclues/NVMe-oF-Overview.md" >}}
+{{< include file="/static/includes/NVMe-oF-Overview.md" >}}
 
 ## Configuring the NVMe-oF Service
 
 You can access the NVMe-of service screen from the:
+
 * <span class="material-icons">more_vert</span> dropdown menu on the **NVMe-oF Subsystems** widget on the **Shares** screen
 * **Global Configuration** button at the top of the **NVMe-oF** screen
 * **NVMe-oF** service option on the **System > Services** screen
@@ -75,7 +76,7 @@ Go to the [**NVMe-oF Global Configuration**](#configuring-the-nvme-of-service) s
 Select the **Enable Asymmetric Namespace Access (ANA)** option, and click **Save**.
 
 This allows storage systems to inform hosts about the optimal controller path to access a namespace on Enterprise licensed systems.
-It is simliar to Asymmetric Logical Unit Access (ALUA) in iSCSI.
+It is similar to Asymmetric Logical Unit Access (ALUA) in iSCSI.
 
 ANA helps storage arrays communicate to hosts which controller provides the best (lowest latency) path to specific namespaces, enabling intelligent multipathing and improved performance in NVMe-oF environments.
 
@@ -85,6 +86,7 @@ Subsystems correlate to iSCSI targets. Each subsystem has a namespace and port, 
 The **Add Subsystem** wizard steps through the subsystem creation process.
 
 You can access the **Add Subsystem** wizard from the:
+
 * **Add** button on the **NVMe-oF Subsystems** widget on the **Shares** screen
 * **Add Subsystem** button at the top of the **NVMe-oF** screen
 
@@ -139,7 +141,7 @@ Go to the **Add Subsystem** wizard, then:
    d. (Optional) Add a bi-directional key for TrueNAS when it connects to the host system.
      Click **Generate Key** below the **Key for TrueNAS to Present** to populate the field with a key. Copy/paste this into the host system to use when authenticating TrueNAS when it connects to it.
 
-   e. (Optional) Select **Also use Diffie-Hellman key exchange for additional security.
+   e. (Optional) Select **Also use Diffie-Hellman key exchange for additional security**.
 
    f. Click **Save**, then click on the breadcrumb at the top of the screen to return to the **Add Subsystem** wizard.
 

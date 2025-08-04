@@ -11,10 +11,10 @@
    Enter or select the desired new settings.
 
 4. (Optional) Set encryption for the zvol.
-   
+
    If the parent dataset where you add the zvol is unencrypted, you can set encryption by clearing the **Inherit (unencrypted)** checkbox.
-   
-   If the parent dataset is encrypted you can only change the type of encryption as key or passphrase type.   
+
+   If the parent dataset is encrypted you can only change the type of encryption as key or passphrase type.
    Clear the **Inherit (encrypted)** checkbox to see the encryption type options.
 
 5. Click **Save**, then click the breadcrumb at the top of the screen to return to the previous screen.

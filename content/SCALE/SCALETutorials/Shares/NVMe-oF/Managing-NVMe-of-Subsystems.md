@@ -26,11 +26,12 @@ tags:
 After configuring a NVMe-oF subsystem, you can change the subsystem by adding, editing, or deleting a namespace, removing or adding a port, or adding, removing, or deleting a host.
 
 To access the subsystem configuration screen from the **Shares** screen:
-1. Click the <span class="material-icons">more_vert</span> dropdown menu on the row for the subsystem listed in the **NVMe-oF Subsystems** widget
-2. Select **View** to open the **NVMe-oF** screen for that subsystem and showing the **Details** widgets for it
 
-   or 
-   
+1. Click the <span class="material-icons">more_vert</span> dropdown menu on the row for the subsystem listed in the **NVMe-oF Subsystems** widget.
+2. Select **View** to open the **NVMe-oF** screen for that subsystem and showing the **Details** widgets for it.
+
+   or
+
    Click on the **NVMe-oF Subsystems** widget header to open the **NVMe-oF** screen, and then locate and select the row in the **Subsystem** table for the desired subsystem to show the **Details** widgets for that subsystem.
 
 ### Renaming the Subsystem
@@ -66,6 +67,7 @@ While on the **NVMe-oF** screen, select the subsystem row in the table, then cli
 The zvol or file is the namespace.
 
 Select the tab for the change you want to make. You can:
+
 * Change the current zvol to a new or different existing zvol
 * Change the current zvol to an existing file
 * Change the current zvol to a new file
@@ -99,7 +101,7 @@ Browse to and select the parent dataset or zvol location where the existing file
 
 Click **Save**.
 
-#### Changing to a New File 
+#### Changing to a New File
 <!-- RC.1 will add an enable checkbox to allow disabling the namespace, update screenshots and remove commented out text-->
 You can use this procedure to add files to the parent dataset for the namespace, from the **New File** tab on the **Add Namespace** or **Edit Namespace** screens.
 
@@ -112,7 +114,8 @@ While on the **Edit Namespace** screen, select the **New File** tab.
 
 {{< trueimage src="/images/SCALE/Shares/AddNewFileToNamespace.png" alt="Adding a New File" id="Adding a New File" >}}
 
-Browse to and select the dataset where you want to add a new file. This populates the blank field under **Parent Directory** with the path.
+Browse to and select the dataset where you want to add a new file.
+This populates the blank field under **Parent Directory** with the path.
 
 Enter a name in **Filename**.
 
@@ -148,7 +151,7 @@ The **Delete Namespace** dialog opens with the option to delete the underlying f
 
 Select the **Also delete the underlying file** option, then click **Delete** to delete both the namespace and the file.
 
-##  Editing a Port
+## Editing a Port
 
 You can add new ports or edit existing ports from the **Ports** widget on the **NVMe-oF** screen.
 First, select the subsystem row in the table, then click the **Add** dropdown on the right of the **Ports** widget header.
@@ -222,7 +225,7 @@ The **Delete Port** confirmation dialog opens. You are asked to confirm that you
 The **Associated Hosts** widget on the **NVMe-oF** screen shows a list of hosts associated with the subsystem selected on the table.
 **All hosts are allowed** is selected by default, and allows all clients to connect to the subsystem if a host is not specified.
 
-{{< trueimage src="/images/SCALE/Shares/SubsystemAssociatedHostsWidget.png" alt="Subsystem Assoicated Hosts Widget" id="Subsystem Associated Hosts Widget" >}}
+{{< trueimage src="/images/SCALE/Shares/SubsystemAssociatedHostsWidget.png" alt="Subsystem Associated Hosts Widget" id="Subsystem Associated Hosts Widget" >}}
 
 To add connection security, limit the hosts allowed to connect to the subsystem. Select **All Hosts are allowed** to clear the checkbox and show the option to add a host.
 
@@ -231,7 +234,7 @@ To add a host, click **Add** to open the **Add Host** screen.
 {{< trueimage src="/images/SCALE/Shares/AddHostScreen.png" alt="Add Host Screen" id="Add Host Screen" >}}
 
 Obtain the NQN number from the host system and enter or copy/paste it into the **NQN** field.
-TrueNAS uses this to determine if the host(s) can access the subsystem namespace. 
+TrueNAS uses this to determine if the host(s) can access the subsystem namespace.
 
 To require authentication and add secret keys to further secure communication between the TrueNAS subsystem and the host system, select **Require Host Authentication**.
 This shows the additional setting options.
@@ -242,11 +245,11 @@ Accept the default in **Hash** or click the edit <span class="material-icons">ed
 Options are **SHA-256**, **SHA384**, and **SHA-512**.
 
 Obtain the DH-CHAP key from the host you are allowing to connect to the subsystem, and enter or copy/paste it in the **Key For Host To Present** field.
-Alternatibely, TrueNAS can create a key for the host system if you click **Generate Key** directly under the field.
+Alternatively, TrueNAS can create a key for the host system if you click **Generate Key** directly under the field.
 Copy this key from TrueNAS, and paste it into the host system as the key it presents to TrueNAS to authenticate the connection.
 
 To use bidirectional authentication, click **Generate Key** directly below the **Key For TrueNAS To Present (Optional)**.
-It populates the field with a secret key. 
+It populates the field with a secret key.
 Copy this key from TrueNAS, and paste it into the host system to validate the TrueNAS connection.
 
 For additional authentication security, select **Also use Diffie-Hellman key exchange for additional security**.
