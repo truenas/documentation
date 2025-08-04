@@ -26,6 +26,9 @@ majorVersions:
     releaseNotes: "https://www.truenas.com/docs/core/13.0/gettingstarted/corereleasenotes/"
     majorLink: "https://download-core.sys.truenas.net/13.0/STABLE/"
     releases:
+      - name: "13.0-U6.8"
+        link: "https://download-core.sys.truenas.net/13.0/STABLE/U6.8/"
+        date: "2025-07-14"
       - name: "13.0-U6.7"
         link: "https://download-core.sys.truenas.net/13.0/STABLE/U6.7/"
         date: "2025-01-24"
