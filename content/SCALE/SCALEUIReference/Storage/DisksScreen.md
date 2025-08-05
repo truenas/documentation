@@ -31,7 +31,7 @@ The checkbox at the top of the table selects all disks in the system. Select aga
 ## Disks Screen - Expanded Disk
 
 Click anywhere on a disk row to expand it and show the traits specific to that disk and available options.
-The expanded view of a disk includes details for the disk and options to edit disk properties, run a SMART test and view the test results, and in some instances the ability to wipe the disk.
+The expanded view of a disk includes details for the disk and options to edit disk properties, run a SMART test and view the test results, and, in some instances, the ability to wipe the disk.
 
 {{< trueimage src="/images/SCALE/Storage/DiskScreenExpandedDiskWithWipeOption.png" alt="Disk Details" id="Disk Details" >}}
 
@@ -57,7 +57,7 @@ The screen lists the device names for each selected disk in the **Disks to be ed
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **HDD Standby** | Select the minutes of inactivity before the drive enters standby mode from the dropdown list. Options are **Always On** or **5**, **10**, **20**, **30**, **60**, **120**, **240**, **300**, and **330**. For more information read this [forum post|(https://forums.freenas.org/index.php?threads/how-to-find-out-if-a-drive-is-spinning-down-properly.2068/) describing identifying spun-down drives. Temperature monitoring is disabled for the standby disk. |
+| **HDD Standby** | Select the minutes of inactivity before the drive enters standby mode from the dropdown list. Options are **Always On** or **5**, **10**, **20**, **30**, **60**, **120**, **240**, **300**, and **330**. For more information, read this [forum post|(https://forums.freenas.org/index.php?threads/how-to-find-out-if-a-drive-is-spinning-down-properly.2068/) describing identifying spun-down drives. Temperature monitoring is disabled for the standby disk. |
 | **Advanced Power Management** | Select the power management profile from the dropdown list. Options are **Disabled**, **Level 1 - Minimum power usage with Standby (spindown)**, **Level 64 - Intermediate power usage with Standby**, **Level 127 - Maximum power usage with Standby**, **Level 128 - Minimum power usage without Standby (no spindown)**, **Level 192 - Intermediate power usage without Standby**, and **Level 254 - Maximum performance, maximum power usage**. |
 {{< /truetable >}}
 {{< /expand >}}
@@ -66,7 +66,7 @@ The screen lists the device names for each selected disk in the **Disks to be ed
 
 ### Wipe Disk Dialogs
 
-The option to wipe a disk only displays when a disk is not assigned to a pool, and is not in use.
+The option to wipe a disk only displays when a disk is not assigned to a pool and is not in use.
 **Wipe** opens three dialogs, one to select the method, a confirmation dialog, and a progress dialog that includes the option to abort the process.
 
 The **Wipe Disk *diskname*** opens after clicking **Wipe** on the expanded view of a disk on the **Disks** screen.
@@ -85,7 +85,7 @@ See [Wiping Disks]({{< ref "WipingDisks" >}}) for more information.
 
 {{< trueimage src="/images/SCALE/Storage/DiskWipeProgressDialog.png" alt="Wipe Disk Progress Dialog" id="Wipe Disk Progress Dialog" >}}
 
-**Abort** stops the disk wipe process. At the end of the disk wipe process a success dialog displays.
+**Abort** stops the disk wipe process. At the end of the disk wipe process, a success dialog displays.
 **Close** closes the dialog and returns you to the **Disks** screen.
 
 ## Edit Disk Screen
@@ -109,5 +109,5 @@ Click **Edit Disk** on the **[Devices]({{< ref "DevicesScreensSCALE" >}})** scre
 | Setting | Description |
 |---------|-------------|
 | **HDD Standby** | Select a value from the dropdown list of options or leave it set to the default **Always On**. This specifies the minutes of inactivity before the drive enters standby mode. For information on identifying spun-down drives, see this [forum post](https://www.truenas.com/community/threads/how-to-find-out-if-a-drive-is-spinning-down-properly.2068/). Temperature monitoring is disabled for standby disks. |
-| **Advanced Power Management (APM)** |  Sets the APM level that controls power management behavior when drives are idle, not maximum performance capabilities. When drives are actively accessed, they operate at full performance regardless of the APM setting. Lower numbered levels prioritize power savings during idle periods, while higher levels prioritize quick response times. Power management profile options: <br><li>**Disabled** (the default setting) <br><li>**Level 1 - Minimum power usage with Standby (spindown)** <br><li>**Level 64 - Intermediate power usage with Standby** <br><li>**Level 127 - Maximum power usage with Standby** <br><li**Level 128 - Minimum power usage without Standby (no spindown)** <br><li**Level 192 - Intermediate power usage without Standby** <br><li**Level 254 - Maximum performance, maximum power usage**</li> |
+| **Advanced Power Management (APM)** |  Sets the APM level that controls power management behavior when drives are idle, not maximum performance capabilities. When drives are actively accessed, they operate at full performance regardless of the APM setting. Lower-numbered levels prioritize power savings during idle periods, while higher levels prioritize quick response times. Power management profile options: <br><li>**Disabled** (the default setting) <br><li>**Level 1 - Minimum power usage with Standby (spindown)** <br><li>**Level 64 - Intermediate power usage with Standby** <br><li>**Level 127 - Maximum power usage with Standby** <br><li**Level 128 - Minimum power usage without Standby (no spindown)** <br><li**Level 192 - Intermediate power usage without Standby** <br><li**Level 254 - Maximum performance, maximum power usage**</li> |
 {{< /truetable >}}
