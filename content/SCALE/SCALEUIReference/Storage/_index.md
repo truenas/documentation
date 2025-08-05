@@ -40,7 +40,7 @@ Select a pool from the **Pool** dropdown list.
 These are ZFS storage pools previously created and stored on disks connected to the TrueNAS system.
 TrueNAS detects these as present on the system but not yet connected in TrueNAS.
 
-**Import** starts connecting the pool and bringing it into TrueNAS.
+**Import** starts connecting to the pool and bringing it into TrueNAS.
  {{< /expand >}}
 
 * **Disks** opens the **[Disks]({{< ref "DisksScreen" >}})** screen.
@@ -54,7 +54,7 @@ After adding pools, the dashboard shows the [pool widgets](#pool-widgets) and ad
 * {{< expand "Export/Disconnect" "v" >}}
 **Export/Disconnect** opens the **Export/disconnect pool: *poolname*** window where users can export, disconnect, or delete a pool.
 
-The **Export/disconnect pool** window includes a warning stating data becomes unavailable after export and that selecting **Destroy Data on this pool** destroys data on the pool disks.
+The **Export/disconnect pool** window includes a warning stating that data becomes unavailable after export and that selecting **Destroy Data on this pool** destroys data on the pool disks.
 
 {{< hint type=important >}}
 Exporting/disconnecting can be a destructive process!
@@ -77,7 +77,7 @@ If you select a disk used by an exported pool for use in a new pool, the system 
 {{< /truetable >}}
 
 **Export/Disconnect** executes the process and begins the pool export or disconnect.
-A status window shows progress. When complete, a final dialog states the export/disconnect completed successfully.
+A status window shows progress. When complete, a final dialog states that the export/disconnect completed successfully.
 {{< /expand >}}
 
 * {{< expand "Expand Pool" "v" >}}
@@ -147,7 +147,7 @@ If you select **New Pool**, **Add Disks** opens the **Pool Creation Wizard** scr
 
 The **VDEVs** widget shows information on the VDEVs configured on the system and the status of the pool.
 
-The widget lists each VDEV type (data, metadata, log, cache, spare, and dedup) assoicated with the pool.
+The widget lists each VDEV type (data, metadata, log, cache, spare, and dedup) associated with the pool.
 A **Data VDEV** includes the data type (stripe, mirror, RAID, or mixed configuration), the number of disks (**wide**), and the storage capacity of that VDEV.
 
 {{< trueimage src="/images/SCALE/Storage/StorageDashboardVDEVWidget.png" alt="VDEVs Widget" id="VDEVs Widget" >}}
@@ -168,7 +168,7 @@ This same information displays on the main **Dashboard** on the **Storage** widg
 The **Usage** widget shows information on the pool space datasets consumed and the status of pool usage.
 
 The widget includes a color-coded donut chart that illustrates the percentage of space the pool uses.
-Blue indicates space usage in the 0-80% range and red indicates anything above 80%.
+Blue indicates space usage in the 0-80% range, and red indicates anything above 80%.
 A warning message displays below the donut graph when usage exceeds 80%.
 
 **Usable Capacity** details pool space statistics by **Used** and **Available**.
@@ -179,7 +179,7 @@ A warning message displays below the donut graph when usage exceeds 80%.
 
 {{< hint type=note >}}
 Large (>1 petabyte) systems could report storage numbers inaccurately.
-Storage configurations with more than 9,007,199,254,740,992 bytes round the last 4 digits.
+Storage configurations with more than 9,007,199,254,740,992 bytes round to the last 4 digits.
 For example, a system with 18,446,744,073,709,551,615 bytes reports the number as 18,446,744,073,709,552,000 bytes.
 {{< /hint >}}
 
@@ -191,11 +191,11 @@ The **ZFS Health** widget shows health-of-the-pool information.
 
 Possible widget details include:
 * Pool status shows the pool status as** Online, no errors** or **Offline**, **Degraded no errors**.
-* **Scheduled Scrub** shows the time based on a 24 hour clock and frequency of a schduled scrub (the day the task runs).
+* **Scheduled Scrub** shows the time based on a 24-hour clock and frequency of a scheduled scrub (the day the task runs).
 * **Auto TRIM** shows the auto trim feature as on or off.
 * **Last Scan** shows the date and time of the last completed scrub.
 * **Last Scan Errors** shows the number of errors detected during the last scrub.
-* **Last Scan Duration** shows the time, in minutes and seconds the last scrub ran.
+* **Last Scan Duration** shows the time, in minutes and seconds, that the last scrub ran.
 * **Deduplication Table** only shows if a dedup VDEV is added to the pool. Shows the size of the deduplication table.
 
 {{< trueimage src="/images/SCALE/Storage/StorageDashboardDiskHealthWidget.png" alt="Storage Health Widget" id="Storage Health Widget" >}}
@@ -214,20 +214,20 @@ The **Configure Scheduled Scrub** screen sets a schedule for TrueNAS to run a sc
 
 A scrub is a data integrity check of your pool. 
 Scrubs identify data integrity problems, detect silent data corruptions caused by transient hardware issues, and provide early disk failure alerts.
-By default, TrueNAS automatically checks every pool to verify it is on a reoccurring scrub schedule.
+By default, TrueNAS automatically checks every pool to verify it is on a recurring scrub schedule.
 If TrueNAS detects problems during the scrub, it corrects them automatically or generates an [alert]({{< ref "AlertSettingsScreen" >}}).
 
 **Enabled** shows the schedule information on the **Storage Health** dashboard as the value for **Scheduled Scrub**.
 When disabled, **Scheduled Scrub** changes to **Not Set** and shows the **Schedule** link. **Schedule** opens the **Configure Scheduled Scrub** screen.
 
 **Schedule** shows a dropdown list of schedule options:
-* **Hourly** which runs the scrub at the start of each hour.
-* **Daily** which runs a scrub at **00:00** on the 24-hour clock.
-  This is the time period where system processes and demands are likely at the lowest point, and where it reduces drain on system resources.
-* **Weekly** which runs the scrub on Sundays at **00:00** for the same reason as with the **Daily** option.
-* **Monthly** which runs on the first day of the mont at **00:00**.
-* **Custom** which runs at 12.00 AM, only on Sunday.
-** **Create** which opens the custom schedule window where you can select the frequency (how often it runs), time (in hours and minutes), start or finish times, an dset a time zone.
+* **Hourly**, which runs the scrub at the start of each hour.
+* **Daily**, which runs a scrub at **00:00** on the 24-hour clock.
+  This is the time period where system processes and demands are likely at the lowest point, and where it reduces the drain on system resources.
+* **Weekly**, which runs the scrub on Sundays at **00:00** for the same reason as with the **Daily** option.
+* **Monthly**, which runs on the first day of the month at **00:00**.
+* **Custom**, which runs at 12.00 AM, only on Sunday.
+** **Create**, which opens the custom schedule window where you can select the frequency (how often it runs), time (in hours and minutes), start or finish times, and set a time zone.
 
 **Threshold Days** sets the days before a completed scrub is allowed  to run again.
 This controls the task schedule.
@@ -255,7 +255,7 @@ The **Prune Deduplication Table** dialog shows pruning measurement options the s
 Options are **Percentage** and **Age**.
 
 **Percentage** shows a slider to set the size (maximum amount of storage) percentage threshold the DDT is filled before it reaches the maximum size.
- When reached the system prunes the table. 
+ When reached, the system prunes the table. 
 
  {{< trueimage src="/images/SCALE/Storage/DedupPruneDialog.png" alt="Prune Deduplication Table - Percentage" id="Prune Deduplication Table - Percentage" >}}
 
@@ -285,12 +285,12 @@ The **Disk Health** widget shows information on the health of the disks in a poo
 {{< trueimage src="/images/SCALE/Storage/StorageDashboardDiskHealthWidget.png" alt="Disk Health Widget" id="Disk Health Widget" >}}
 
 The disk health details include:
-* Disk temperature related alerts
+* Disk temperature-related alerts
 * Highest Temperature
 * Lowest Temperature 
 * Average Disk Temperature
 
-TrueNAS complies with SAS/SATA specifications, and reports temperatures in Celsius. TrueNAS converts Kelvin to Celsius
+TrueNAS complies with SAS/SATA specifications and reports temperatures in Celsius. TrueNAS converts Kelvin to Celsius
 
 **View Disks** opens the **Storage > [Disk]({{< ref "DisksScreen" >}})** screen.
 
@@ -305,7 +305,7 @@ Newly created pools are always up-to-date with the OpenZFS feature flags in the 
 
 {{< trueimage src="/images/SCALE/Storage/StorageDashboardUpgradPoolConfirmation.png" alt="Upgrade Pool Dialog" id="Upgrade Pool Dialog" >}}
 
-The upgrading only takes a few seconds and is non-disruptive. However, it is best to upgrade when the pool is not in heavy use.
+The upgrade only takes a few seconds and is non-disruptive. However, it is best to upgrade when the pool is not in heavy use.
 
 The upgrade process suspends I/O for a short period but is nearly instantaneous on a quiet pool.
 
