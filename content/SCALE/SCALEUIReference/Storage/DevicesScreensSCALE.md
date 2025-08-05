@@ -32,7 +32,7 @@ The **ZFS Info** widget for the VDEV shows a count of read, write, and checksum 
 {{< trueimage src="/images/SCALE/Storage/DataVdevExpanded.png" alt="Data VDEV Expanded" id="Data VDEV Expanded" >}}
 
 **Remove** opens the **Remove device** dialog where you confirm you want to remove the selected VDEV.
-To remove a drive from the VDEV, select the drive then select **Detach** on the **[ZFS Info](#zfs-info-widget-drives)** widget to remove the drive from the VDEV (pool).
+To remove a drive from the VDEV, select the drive, then select **Detach** on the **[ZFS Info](#zfs-info-widget-drives)** widget to remove the drive from the VDEV (pool).
 
 ## DiskWidgets
 
@@ -43,7 +43,7 @@ After selecting a disk, the widgets show on the right side of the screen in the 
 
 ### ZFS Info Widget (Drives)
 
-The **ZFS Info** widget for each device (disk drive) in the VDEV shows the name of the VDEV (**Parent**) the read, write, and checksum errors for that drive, and the **Detach** and **Offline** options.
+The **ZFS Info** widget for each device (disk drive) in the VDEV shows the name of the VDEV (**Parent**), the read, write, and checksum errors for that drive, and the **Detach** and **Offline** options.
 
 {{< columns >}}
 {{< trueimage src="/images/SCALE/Storage/ZvolInfoWidget.png" alt="ZFS Info Widget" id="ZFS Info Widget" >}}
@@ -57,7 +57,7 @@ The **ZFS Info** widget for each device (disk drive) in the VDEV shows the name 
 
 **Offline** opens a confirmation dialog and takes the selected drive to an offline state before taking a disk offline to replace it. 
 Toggles to **Online** so you can bring a replacement disk online.
-After taking a drive offline you can remove or replace the physical drive.
+After taking a drive offline, you can remove or replace the physical drive.
 
 {{< trueimage src="/images/SCALE/Storage/DeviceDiskOfflineDialog.png" alt="Devices Disk Offline Dialog" id="Devices Disk Offline Dialog" >}}
 
