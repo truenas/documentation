@@ -1,0 +1,9 @@
+extends: existence
+message: "Accept TrueNAS brand terms."
+level: suggestion
+ignorecase: false
+action:
+  name: accept
+tokens:
+  - iXsystems
+  - TrueNAS
