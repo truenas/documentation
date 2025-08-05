@@ -32,9 +32,11 @@ jobs:
         continue-on-error: true
         run: |
           vale sync
-          if [ -n "${{ steps.changed-files.outputs.all_changed_files }}" ]; then
-            vale ${{ steps.changed-files.outputs.all_changed_files }} --output=JSON > vale-results.json || true
+          if [ "${{ steps.changed-files.outputs.any_changed }}" == "true" ]; then
+            echo "Changed files: ${{ steps.changed-files.outputs.all_changed_files }}"
+            vale --output=JSON ${{ steps.changed-files.outputs.all_changed_files }} > vale-results.json || true
           else
+            echo "No markdown/txt files changed"
             echo '{}' > vale-results.json
           fi
           cat vale-results.json
