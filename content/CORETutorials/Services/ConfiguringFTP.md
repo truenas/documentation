@@ -11,7 +11,7 @@ SSH provides secure transfer methods for critical objects like configuration fil
 
 ## FTP Connections
 
-FTP connections cannot share connections with other accounts, such as SMB connections. FTP requires a new dataset and local user account.
+FTP connections cannot share connections with other accounts, such as SMB connections. FTP requires a new dataset and a local user account.
 
 Go to **Storage > Pools** to add a new dataset.
 
