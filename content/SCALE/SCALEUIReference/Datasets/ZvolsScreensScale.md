@@ -42,7 +42,7 @@ The **Zvol Details** widget lists information on sync type, compression level, a
 #### Delete Zvol
 
 The **Delete Zvol** dialog shows information about other options or services that use the zvol. It also shows the services that child datasets use.
-This includes information about snapshots, shares, or if used, other services such as Kubernetes or VMs that use the dataset.
+This includes information about snapshots, shares, or, if used, other services such as Kubernetes or VMs that use the dataset.
 Parent and child datasets include the **Delete** button.
 
 {{< trueimage src="/images/SCALE/Datasets/DeleteZvolWindow.png" alt="Delete Zvol" id="Delete Zvol" >}}
