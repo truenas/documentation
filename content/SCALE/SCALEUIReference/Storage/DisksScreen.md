@@ -104,19 +104,10 @@ Click **Edit Disk** on the **[Devices]({{< ref "DevicesScreensSCALE" >}})** scre
 | **Description** | Enter notes about this disk. |
 {{< /truetable >}}
 
-### Temperature Alerts Settings
-{{< truetable >}}
-| Setting | Description |
-|---------|-------------|
-| **Critical** | Enter a threshold temperature in Celsius. If the drive temperature is higher than this value, TrueNAS creates a LOG_CRIT level log entry and sends an email to the address entered in the [Alerts]({{< ref "/SCALE/SCALEUIReference/TopToolbar/Alerts/EmailScreens" >}}). Enter **0** to disable this check. |
-| **Difference** | Enter a value in degrees Celsius that triggers a report if the drvie temperature changes by this value since the last report. Enter **0** to disable this check. |
-| **Informational** | Enter a value in degrees Celsius that triggers a report if the drive temperature is at or above this temperature. Enter **0** to disable this check. |
-{{< /truetable >}}
-
 ### Power Management Settings
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **HDD Standby** | Select a value from the dropdown list of options or leave it set to the default **Always On**. This specifies the minutes of inactivity before the drive enters standby mode. For information on identifying spun-down drives, see this [forum post](https://www.truenas.com/community/threads/how-to-find-out-if-a-drive-is-spinning-down-properly.2068/). Temperature monitoring is disabled for standby disks. |
-| **Advanced Power Management (APM)** | Select a power management profile from the dropdown list of options that include **Disabled** (the default setting), **Level 1 - Minimum power usage with Standby (spindown)**, **Level 64 - Intermediate power usage with Standby**, **Level 127 - Maximum power usage with Standby**, **Level 128 - Minimum power usage without Standby (no spindown)**, **Level 192 - Intermediate power usage without Standby**, or **Level 254 - Maximum performance, maximum power usage**. APM levels control power management behavior when drives are idle, not maximum performance capabilities. When drives are actively accessed, they operate at full performance regardless of the APM setting. Lower numbered levels prioritize power savings during idle periods, while higher levels prioritize quick response times. |
+| **Advanced Power Management (APM)** |  Sets the APM level that controls power management behavior when drives are idle, not maximum performance capabilities. When drives are actively accessed, they operate at full performance regardless of the APM setting. Lower numbered levels prioritize power savings during idle periods, while higher levels prioritize quick response times. Power management profile options: <br><li>**Disabled** (the default setting) <br><li>**Level 1 - Minimum power usage with Standby (spindown)** <br><li>**Level 64 - Intermediate power usage with Standby** <br><li>**Level 127 - Maximum power usage with Standby** <br><li**Level 128 - Minimum power usage without Standby (no spindown)** <br><li**Level 192 - Intermediate power usage without Standby** <br><li**Level 254 - Maximum performance, maximum power usage**</li> |
 {{< /truetable >}}

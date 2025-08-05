@@ -45,7 +45,7 @@ To replace a disk in a pool with a hot spare:
 
 ## Replacing a Failed Disk
 
-If you configure your main TrueNAS **Dashboard** to include individual **Pool** or the **Storage** widgets they show the status of your system pools as on or offline, degraded, or in an error condition.
+If you configure your main TrueNAS **Dashboard** to include an individual **Pool** or the **Storage** widgets they show the status of your system pools as on or offline, degraded, or in an error condition.
 
 {{< trueimage src="/images/SCALE/Storage/MainDashboardPoolAndStorageWidgetsDegraded.png" alt="Main Dashboard Pool and Storage Widgets Degraded" id="Main Dashboard Pool and Storage Widgets Degraded" >}}
 
@@ -73,8 +73,8 @@ We recommend users off-line a disk before starting the physical disk replacement
 Off-lining a disk removes the device from the pool and can prevent swap issues.
 To offline a disk:
 
-Go to the **Storage Dashboard** and click **Manage Devices** on the **Topology** widget for the degraded pool to open the **Devices** screen for that pool.
-Click <span class="iconify" data-icon="mdi:keyboard-arrow-right"></span> next to the VDEV to expand it, then look for the disk with the **REMOVED** status.
+Go to the **Storage Dashboard** and click **View VDEVs** on the **VDEVs** widget for the degraded pool to open the **VDEVs** screen for that pool.
+Click <span class="iconify" data-icon="mdi:keyboard-arrow-right"></span> next expand the VDEV, then look for the disk with the **REMOVED** status.
 
 {{< trueimage src="/images/SCALE/Storage/DevicesDiskDegraded.png" alt="Devices Disk Failed" id="Devices Disk Failed" >}}
 
@@ -86,7 +86,7 @@ If the off-line operation fails with a **Disk offline failed - no valid replicas
 
 {{< trueimage src="/images/SCALE/Storage/StorageZFSHealthScrub.png" alt="Storage ZFS Health Scrub Pool" id="Storage ZFS Health Scrub Pool" >}}
 
-When the scrub operation finishes, return to the **Devices** screen, expand the VDEV, then click the disk, and try to off-line it again.
+When the scrub operation finishes, return to the **VDEVs** screen, expand the VDEV, then click the disk, and try to off-line it again.
 {{< /expand >}}
 
 After offlining the failed disk, physically remove it from the system.
@@ -115,7 +115,7 @@ Click **Replace Disk** to add the new disk to the VDEV and bring it online.
 Disk replacement fails when the selected disk has partitions or data present.
 To destroy any data on the replacement disk and allow the replacement to continue, select the **Force** option.
 
-   {{< trueimage src="/images/SCALE/Storage/ReplacingDiskStatusDialog.png" alt="Replacing Disk Status" id="Replacing Disk Status" >}}
+{{< trueimage src="/images/SCALE/Storage/ReplacingDiskStatusDialog.png" alt="Replacing Disk Status" id="Replacing Disk Status" >}}
 
 When the disk wipe completes, TrueNAS starts replacing the failed disk.
 TrueNAS resilvers the pool during the replacement process.
@@ -132,12 +132,12 @@ TrueNAS resilvers the pool after the hot spare is activated.
 
 #### Detaching a Failed Disk
 
-After [taking the failed disk offline](#taking-a-failed-disk-offline) and physically removing it from the system, go to the **Storage Dashboard** and click **Manage Devices** on the **Topology** widget for the degraded pool to open the **Devices** screen for that pool.
+After [taking the failed disk offline](#taking-a-failed-disk-offline) and physically removing it from the system, go to the **Storage Dashboard** and click **View VDEVs** on the **VDEVs** widget for the degraded pool to open the **VDEVs** screen for that pool.
 Click <span class="iconify" data-icon="mdi:keyboard-arrow-right"></span> next to the VDEV to expand it, then look for the disk with the **REMOVED** status.
 
 {{< trueimage src="/images/SCALE/Storage/DevicesDiskDegradedHotSpare.png" alt="Devices Disk Failed - Hot Spare Active" id="Devices Disk Failed - Hot Spare Active" >}}
 
-Click **Detach** on the **ZFS Info** widget on the **Devices** screen for the disk you off-lined.
+Click **Detach** on the **ZFS Info** widget on the **VDEVs** screen for the disk you off-lined.
 
 Select **Confirm**, then click **Detach**.
 TrueNAS detaches the disk from the pool and promotes the hot spare disk to a full member of the pool.
@@ -161,7 +161,7 @@ If recreating the spare with a replacement in place of the failed disk, insert t
 The new disk must have the same or greater capacity as the failed disk.
 If recreating the spare with an available disk in the system, proceed to the next step.
 
-Go to the **Storage Dashboard** and click **Manage Devices** on the **Topology** widget for the degraded pool to open the **Devices** screen for that pool.
+Go to the **Storage Dashboard** and click **View VDEVs** on the **VDEVs** widget for the degraded pool to open the **VDEVs** screen for that pool.
 
 Click **Add VDEV** to open the **Add Vdevs to Pool** screen.
 
@@ -178,4 +178,4 @@ Review changes then click **Update Pool**.
 Select **Confirm**, then click **Continue**.
 
 After completing the job, TrueNAS returns to the **Storage Dashboard** screen.
-Review **Spare VDEVs** on the **Topology** widget to confirm the hot spare is added.
+Review **Spare VDEVs** on the **VDEVs** widget to confirm the hot spare is added.

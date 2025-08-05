@@ -79,23 +79,23 @@ Use **Scrub** on the **ZFS Health** pool widget to start a pool data integrity c
 
 {{< trueimage src="/images/SCALE/Storage/StorageDashboardZFSHealthWidgetWithDedup.png" alt="ZFS Health Widget" id="ZFS Health Widget" >}}
 
-Click **Scrub** to open the **Scrub Pool** dialog.
+Click **Scrub Now** to open the **Scrub Pool** dialog.
 Select **Confirm**, then click **Start Scrub**.
 
 If TrueNAS detects problems during the scrub operation, it either corrects them or generates an [alert]({{< ref "/SCALE/SCALEUIReference/TopToolbar/Alerts" >}}) in the web interface.
 
 By default, TrueNAS automatically checks every pool on a recurring scrub schedule.
 
-The **ZFS Health** widget displays the state of the last scrub or disks in the pool.
-To view scheduled scrub tasks, click **View all Scrub Tasks** on the **ZFS Health** widget.
+The **Storage Health** widget shows the state of the last scrub or disks in the pool.
+To view scheduled scrub tasks, click **Configure** on the **Storage Health** widget.
 
 ## Managing Pool Disks
 
-The **Storage Dashboard** screen **Disks** button and the **Manage Disks** button on the **Disk Health** widget both open the **Disks** screen.
+The **Storage Dashboard** screen **Disks** button and the **View Disks** button on the **Disk Health** widget both open the **Disks** screen.
 
-**Manage Devices** on the **Topology** widget opens the ***Poolname* Devices** screen.
+**View VDEVs** on the **VDEVs** widget opens the ***Poolname* VDEVs** screen.
 To manage disks in a pool, click on the VDEV to expand it and show the disks in that VDEV.
-Click on a disk to see the **Devices** widgets for that disk.
+Click on a disk to see the widgets for that disk.
 You can take a disk offline, detach it, replace it, manage the SED encryption password, and perform other disk management tasks from this screen.
 
 See [Replacing Disks]({{< ref "ReplacingDisks" >}}) for more information on the **Offline**, **Replace** and **Online** options.
@@ -112,6 +112,7 @@ While adding a new special VDEV increases usable space in combination with a spe
 By default, a VDEV limits all disks to the usable capacity of the smallest attached device.
 
 ### Extending a RAIDZ VDEV
+
 Extend a RAIDZ VDEV to add additional disks one at a time, expanding capacity incrementally.
 This is useful for small pools (typically with only one RAID-Z VDEV), where there is not enough hardware capacity to add a second VDEV, doubling the number of disks.
 
@@ -154,7 +155,7 @@ See also ["ZFS RAIDZ Expansion Is Awesome but Has a Small Caveat"](https://louwr
 {{< /expand >}}
 
 To extend a RAIDZ VDEV, go to **Storage**.
-Locate the pool and click **Manage Devices** on the **Topology** widget to open the ***Poolname* Devices** screen.
+Locate the pool and click **View VDEVs** on the **VDEVs** widget to open the ***Poolname* VDEVs** screen.
 
 {{< trueimage src="/images/SCALE/Storage/DevicesMirrorVDEVSelected.png" alt="Devices Screen" id="Devices Screen" >}}
 
@@ -166,9 +167,10 @@ Select an available disk from the **New Disk** dropdown menu.
 Click **Extend**.
 
 A job progress window opens.
-TrueNAS returns to the ***Poolname* Devices** screen when complete.
+TrueNAS returns to the ***Poolname* VDEVs** screen when complete.
 
 ### Adding a VDEV to a Pool
+
 ZFS supports adding VDEVs to an existing ZFS pool to increase the capacity or performance of the pool.
 To extend a pool by mirroring, you must add a data VDEV of the same type as existing VDEVs.
 
@@ -186,8 +188,8 @@ You cannot change the original encryption or data VDEV configuration.
 {{< /expand >}}
 
 To add a VDEV to a pool:
-Click **Manage Devices** on the **Topology** widget to open the ***Poolname* Devices** screen.
-Click **Add VDEV** on the ***Poolname* Devices** screen to open the **Add Vdevs to Pool** screen.
+Click **View VDEVs** on the **VDEVs** widget opens the ***Poolname* VDEVs** screen.
+Click **Add VDEV** on the ***Poolname*VDEVs** screen to open the **Add Vdevs to Pool** screen.
 
 {{< trueimage src="/images/SCALE/Storage/AddVdevsToPoolScreen.png" alt="Add VDEVs to Pool Screen" id="Add VDEVs to Pool Screen" >}}
 
@@ -233,6 +235,7 @@ Select **Confirm** then click **Start Over** to clear all changes.
 Click **Update Pool** to save changes.
 
 #### Adding a Deduplication VDEV
+
 You can add a deduplication VDEV to an existing pool, but files in the pool might or might not have deduplication applied to them.
 When adding a deduplication VDEV to an existing pool, any existing entries in the deduplication table remain on the data VDEVs until the data they reference is rewritten.
 
@@ -253,12 +256,13 @@ Change to **Custom** to set the quota to your preference.
 Click **Save** to save and close the dialogs.
 
 ### Replacing Disks to Expand a Pool
+
 To expand a pool by replacing disks with a higher capacity disk, follow the same procedure as in [Replacing Disks]({{< ref "ReplacingDisks" >}}).
 
 Insert a new disk into an empty enclosure slot. Remove the old disk only after completing the replace operation.
 If an empty slot is not available, you can offline the existing disk and replace it in the same slot, but this reduces redundancy during the process.
 
-Go to the **Storage Dashboard** and click **Manage Devices** on the **Topology** widget for the pool to open the ***Poolname* Devices** screen.
+Go to the **Storage Dashboard** and click **View VDEVs** on the **VDEVs** widget opens the ***Poolname* VDEVs** screen..
 
 1. Click anywhere on the VDEV to expand it and select one of the existing disks.
 
@@ -298,6 +302,7 @@ Repeat steps 1-4 for all attached disks.
 After replacing the last attached disk, click **Expand** on the **Storage Dashboard** to increase the pool size to fit all available disk space.
 
 ## Removing VDEVs
+
 You can always remove the L2ARC (cache) and SLOG (log) VDEVs from an existing pool, regardless of topology or VDEV type.
 Removing these devices does not impact data integrity, but it can significantly impact performance for reads and writes.
 
@@ -314,7 +319,7 @@ This process preserves data integrity but has multiple requirements:
 When a RAIDZ data VDEV is present, it is generally not possible to remove a device.
 
 To remove a VDEV from a pool:
-1. Click **Manage Devices** on the **Topology** widget to open the ***Poolname* Devices** screen.
+1. Click ***View VDEVs** on the **VDEVs** widget opens the ***Poolname* VDEVs** screen.
 2. Click the device or drive to remove, then click the **Remove** button in the **ZFS Info** widget.
    If the **Remove** button is not visible, check that all conditions for VDEV removal listed above are correct.
 3. Confirm the removal operation and click the **Remove** button.
