@@ -10,7 +10,7 @@ They do not apply to other file sharing protocol clients, other SMB shares that 
 
 After creating the share and dataset, modify the share permissions to grant user or group access.
 
-Click on <span class="material-icons">share</span> **Edit Share ACL** icon to open the **Edit Share ACL** screen if you want to modify permissions at the share level.
+Click on <span class="material-icons">share</span> **Edit Share ACL** to open the **Edit Share ACL** screen to modify permissions at the share level.
 
 {{< trueimage src="/images/SCALE/Shares/SMBShareACLScreen.png" alt="SMB Share ACL Screen" id="SMB Share ACL Screen" >}}
 

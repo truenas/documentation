@@ -11,6 +11,7 @@ aliases:
  - /scale/scaleclireference/app/clicontainer/
  - /scale/scaleclireference/app/clidocker/
  - /scale/scaleclireference/app/clikubernetes/
+ - /scale/scaleuireference/apps/usingapps/
 tags:
 - apps
 related: false
@@ -65,11 +66,26 @@ The first time you open the **Installed** applications screen a dialog prompts y
 Select the pool from the dropdown list, then click **Save**. This starts the applications service.
 If you exit out of this dialog, to set the pool, click [**Settings > Choose Pool**](#choose-a-pool-for-apps-dialog) to select a storage pool for apps.
 
-If a pool is not chosen and you attempt to install an application, a dialog window prompts you to select a pool before the installation wizard shows.
+If a pool is not selected and you attempt to install an application, a dialog window prompts you to select a pool before the installation wizard shows.
+
+#### Migrate Existing Applications
+
+If you select a new pool in the **Pool** dropdown after previously configuring the apps service, the dialog displays the **Migrate existing applications** option.
+
+{{< trueimage src="/images/SCALE/Apps/ChoosePoolMigrate.png" alt="Migrate Existing Applications" id="Migrate Existing Applications" >}}
+
+**Migrate existing applications** migrates all installed applications to the new applications pool.
+
+{{< hint type=note >}}
+**Migrate existing applications** only affects data saved in the apps dataset, such as the installed app loacation and iXvolume storage.
+Data in mounted host paths is migrated.
+{{< /hint >}}
 
 ### Unset Pool
 
-**Unset Pool** on the **Settings** menu opens the **Unset Pool** dialog. Click **Unset** to unset the pool and turn off the application service.
+**Unset Pool** on the **Settings** menu opens the **Unset Pool** dialog.
+
+**Unset** removes the pool configuration and turns off the application service.
 When complete, a **Success** dialog displays.
 
 {{< trueimage src="/images/SCALE/Apps/AppsUnsetPoolDialog.png" alt="Apps Unset Pool" id="Apps Unset Pool" >}}
@@ -196,17 +212,17 @@ The **Bulk Action** dropdown list allows you to apply actions to one or more app
 {{< trueimage src="/images/SCALE/Apps/InstalledAppsBulkActions.png" alt="Installed Applications Bulk Actions" id="Installed Applications Bulk Actions" >}}
 
 Select the checkbox to the left of **Applications** to show the **Bulk Actions** dropdown menu.
-Menu options are **Start All Selected**, **Stop All Selected**, **Upgrade All Selected**, and **Delete All Selected**.
+Menu options are **Start All Selected**, **Stop All Selected**, **Update All Selected**, and **Delete All Selected**.
 
 Performing a bulk action update opens a dialog listing the apps with available updates.
 
-{{< trueimage src="/images/SCALE/Apps/InstalledAppsBulkActionUpgradeDialog.png" alt="App Bulk Update Dialog" id="App Bulk Update Dialog" >}}
+{{< trueimage src="/images/SCALE/Apps/InstalledAppsBulkActionUpdateDialog.png" alt="App Bulk Update Dialog" id="App Bulk Update Dialog" >}}
 
 Select an application by clicking the radio button to the left of a listed application.
 
 Click the expand icon for listed app to show the **Version** dropdown and **Changelog** for the selected version.
 
-Upgrade begins updating the applications one at a time. Apps status changes to STOPPED before it is updated, and then returns to RUNNING after the upgrade completes.
+Update begins updating the applications one at a time. Apps status changes to STOPPED before it is updated, and then returns to RUNNING after the update completes.
 
 ## Application Widgets
 
@@ -216,19 +232,26 @@ Information in the widgets changes based on the app row selected in the **Applic
 
 ### Application Info Widget
 
-The **Application Info** widget shows the name, version number, date last updated, source link for the application, developer, catalog, and train name.
-It includes the **Edit**, **Delete**, and **Web UI** buttons for the application.
-If an update is available, it also shows the **Update** button.
+The **Application Info** widget shows the name, (upstream) app version number, catalog version number, source link for the application, and train name.
+It includes the **Edit**, **Delete**, **Roll Back** and **Web UI** buttons for the application.
+The <i class="material-icons" aria-hidden="true" title="more_vert">more_vert</i> dropdown contains the **Update** and **Convert to custom app** buttons.
 
 {{< trueimage src="/images/SCALE/Apps/ApplicationInfoWidget.png" alt="Application Info Widget" id="Application Info Widget" >}}
 
-**Web UI** opens the application login or sign-up web page.
-
-**[Delete](#delete-apps)** opens the **Delete** dialog. Deletes the application deployment but does not remove it from the catalog or train in TrueNAS.
-
 **[Edit](#install-or-edit-app-wizards)** opens an **Edit *Application*** configuration screen populated with editable settings also found on the install wizard screen for the application.
 
-**[Update](#update-apps)** opens a window for the application showing the current version and the new version the upgrade installs.
+<i class="material-icons" aria-hidden="true" title="more_vert">more_vert</i> opens a dropdown containing the **Update** and **Convert to custom app** buttons.
+
+**[Update](#update-apps)** opens a window for the application showing the current version and the new version the update installs.
+
+**[Convert to custom app](#convert-to-custom-app)** opens a **Convert to custom app** dialog to convert the installed application to a custom YAML app.
+
+**Web UI** opens the application login or sign-up web page.
+
+**[Roll Back](#roll-back-apps)** opens the **Roll Back** dialog to revert an app to an earlier installed version.
+
+**[Delete](#delete-apps)** opens the **Delete** dialog.
+This deletes the application deployment but does not remove it from the catalog or train in TrueNAS.
 
 #### Delete Apps
 
@@ -249,14 +272,54 @@ The **Delete App** dialog asks for confirmation to delete the selected applicati
 Both only show if TrueNAS detects an available update for an application.
 The application widget on the **Discover** screen also displays an update badge.
 
-**Update** opens an upgrade window for the application that includes the **Images (to be updated)** and **Changelog** options.
-Click on the down arrow to see the options available for each.
+**Update** opens an update window for the application that includes the **Version to be updated to** dropdown and **Changelog** options.
 
 {{< trueimage src="/images/SCALE/Apps/AppUpdateWindow.png" alt="Update Application Window" id="Update Application Window" >}}
 
-**Upgrade** begins the process and opens a counter dialog that shows the upgrade progress.
+**Update** begins the process and opens a progress dialog that shows the update progress.
 When complete, the update badge and buttons disappear.
 The **Update** state on the application row on the **Installed** screen changes to **Up to date**.
+
+#### Convert to Custom App
+
+**Convert to custom app** on the <i class="material-icons" aria-hidden="true" title="more_vert">more_vert</i> dropdown opens a dialog to convert an installed catalog application to a custom YAML application.
+Converting to a custom app direct editing to YAML configuration file for the app using the [Custom App Screens]({{< relref "/SCALE/SCALEUIReference/Apps/InstallCustomAppScreens.md" >}}).
+
+{{< trueimage src="/images/SCALE/Apps/ConvertToCustomAppDialog.png" alt="Convert to Custom App Dialog" id="Convert to Custom App Dialog" >}}
+
+{{< hint type=warning title="Permanent Action" >}}
+**Convert to custom app** is a one-time, permanent operation.
+When converted, an custom application cannot be converted back to a catalog version.
+{{< /hint >}}
+
+**Cancel** closes the dialog without converting the application.
+
+**Confirm** enables the **Convert** button.
+
+**Convert** begins the conversion process.
+
+#### Roll Back Apps
+
+**Roll Back** on the <i class="material-icons" aria-hidden="true" title="more_vert">more_vert</i> dropdown opens a dialog to revert an application to the snapshot of an earlier installed version.
+
+{{< trueimage src="/images/SCALE/Apps/RollBackDialog.png" alt="Roll Back Dialog" id="Roll Back Dialog" >}}
+
+The **Version** dropdown contains available app versions for roll back.
+The version numbers displayed are the version of the app in the TrueNAS catalog, equivalent to the **Version** displayed on the app information card.
+It is not equal to the **App Version** or the upstream release version.
+See [Understanding Versions](https://apps.truenas.com/managing-apps/discovering-apps/#understanding-versions) on the TrueNAS Apps Market for more information.
+
+**Roll back snapshots** restores the application data volume to match the selected version by rolling back to the snapshot for that version.
+This reverts both the application and app data stored in the apps pool to the exact state from when the snapshot was created.
+
+{{< hint type=note >}}
+**Roll back snapshots** only affects data saved in the apps dataset, such as iXvolume storage.
+Data in mounted host paths is not rolled back.
+{{< /hint >}}
+
+**Cancel** closes the dialog without completing the roll back.
+
+**Roll Back** begins the operation.
 
 ### Workloads Widget
 
