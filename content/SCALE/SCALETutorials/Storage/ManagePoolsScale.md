@@ -117,7 +117,7 @@ Extend a RAIDZ VDEV to add additional disks one at a time, expanding capacity in
 This is useful for small pools (typically with only one RAID-Z VDEV), where there is not enough hardware capacity to add a second VDEV, doubling the number of disks.
 
 {{< expand "Overview and Considerations" "v" >}}
-TrueNAS 24.10 (Electric Eel) introduces RAIDZ extension to allow incremental expansion of an existing RAIDZ VDEV using one more disk.
+TrueNAS 24.10 (Electric Eel) introduces the RAIDZ extension to allow incremental expansion of an existing RAIDZ VDEV using one more disk.
 RAIDZ extension allows resource- or hardware-limited home lab and small enterprise users to expand storage capacity with lower upfront costs compared to traditional ZFS expansion methods.
 
 To expand a RAIDZ array, TrueNAS reads data from the current disks and rewrites it onto the new configuration, including any additional disks.
@@ -132,7 +132,7 @@ If you restart or export/import the pool, the expansion resumes from where it le
 After the expansion, the extra space becomes available for use.
 
 The fault-tolerance level of the RAIDZ array remains unchanged.
-For example, a four-disk-wide RAIDZ2 expanded to a six-wid RAIDZ2 still cannot lose more than two disks at a time.
+For example, a four-disk-wide RAIDZ2 expanded to a six-disk-wide RAIDZ2 still cannot lose more than two disks at a time.
 
 You can expand a RAIDZ vdev multiple times.
 
@@ -180,11 +180,11 @@ You cannot change the original encryption or data VDEV configuration.
 
 {{< expand "Adding VDEV Examples" "v" >}}
 * To make a striped mirror, add the same number of drives to extend a ZFS mirror.
-  For example, you start with ten available drives. Begin by creating a mirror of two drives, and then extending the mirror by adding another mirror of two drives. Repeat this three more times until you add all ten drives.
+  For example, you start with ten available drives. Begin by creating a mirror of two drives, and then extend the mirror by adding another mirror of two drives. Repeat this three more times until you add all ten drives.
 * To make a stripe of two 3-drive RAIDZ1 VDEVs (similar to RAID 50 on a hardware controller), add another three drives as a new RAIDZ1 VDEV to the existing single 3-drive RAIDZ1 VDEV pool.
-* To make a stripe of two 6-disk RAIDZ2 VDEVs (similar to RAID 60 on a hardware controller), add another six drives as a new RAIDZ2 VDEV to existing the single 6-drive RAIDZ2 VDEV pool.
-* To add a deduplication VDEV, we suggest creating the VDEV when you first create the pool to ensure that all metadata or deduplication tables are stored on them.
-  Special or deduplication VDEVs added to a pool with existing data is only populated with new writes.
+* To make a stripe of two 6-disk RAIDZ2 VDEVs (similar to RAID 60 on a hardware controller), add another six drives as a new RAIDZ2 VDEV to the existing single 6-drive RAIDZ2 VDEV pool.
+* To add a deduplication VDEV, we suggest creating the VDEV when you first create the pool to ensure that all metadata or deduplication tables are stored on it.
+  Special or deduplication VDEVs added to a pool with existing data are only populated with new writes.
 {{< /expand >}}
 
 To add a VDEV to a pool:
@@ -198,7 +198,7 @@ Click on the type of vdev you want to add, for example, to add a spare, click on
 
 {{< trueimage src="/images/SCALE/Storage/AddVdevToPoolSpareScreen.png" alt="Add VDEVs to Pool Spare Example" id="Add VDEVs to Pool Spare Example" >}}
 
-Select the layout, mirror or stripe.
+Select the layout, mirror, or stripe.
 
 To use the **Automated Disk Selection** option, select the disk size. The **Width** and **Number of VDEVs** fields populate with default values based on the layout and disk size selected. To change this, select new values from the dropdown lists.
 
@@ -214,7 +214,7 @@ Drag the disk icon to the stripe vdev, then click **Save Selection**.
 
 {{< trueimage src="/images/SCALE/Storage/ManualSelectionAddVdevAddDisk.png" alt="Add Disk to Stripe Vdev for Spare" id="Add Disk to Stripe Vdev for Spare" >}}
 
-The **Manual Selection** screen closes and returns to the **Add Vdev to Pool** wizard screen (in this case the Spare option.)
+The **Manual Selection** screen closes and returns to the **Add Vdev to Pool** wizard screen (in this case, the Spare option.)
 
 {{< trueimage src="/images/SCALE/Storage/AddVdevToPoolSpareWithVdevAdded.png" alt="Add Vdev to Pool Spare with Vdev Added" id="Add Vdev to Pool Spare with Vdev Added" >}}
 
@@ -230,7 +230,7 @@ Click **Save and Go to Review** to go to the **Review** screen when ready to sav
 
 To make changes, click either **Back** or the vdev option (i.e., **Log**, **Cache**, etc.) to return to the settings for that vdev.
 To clear all changes, click **Start Over**.
-Select **Confirm** then click **Start Over** to clear all changes.
+Select **Confirm**, then click **Start Over** to clear all changes.
 
 Click **Update Pool** to save changes.
 
@@ -259,7 +259,7 @@ Click **Save** to save and close the dialogs.
 
 To expand a pool by replacing disks with a higher capacity disk, follow the same procedure as in [Replacing Disks]({{< ref "ReplacingDisks" >}}).
 
-Insert a new disk into an empty enclosure slot. Remove the old disk only after completing the replace operation.
+Insert a new disk into an empty enclosure slot. Remove the old disk only after completing the replacement operation.
 If an empty slot is not available, you can offline the existing disk and replace it in the same slot, but this reduces redundancy during the process.
 
 Go to the **Storage Dashboard** and click **View VDEVs** on the **VDEVs** widget opens the ***Poolname* VDEVs** screen..
@@ -274,7 +274,7 @@ Go to the **Storage Dashboard** and click **View VDEVs** on the **VDEVs** widget
    
    Remove the disk from the system.
 
-3. Insert a larger capacity disk into an open enclosure slot (or if no empty slots, the slot of the off-lined disk being replaced).
+3. Insert a larger capacity disk into an open enclosure slot (or if no empty slots, the slot of the offline disk being replaced).
 
    {{< trueimage src="/images/SCALE/Storage/ReplaceDiskAndOnline.png" alt="Replace and Online a Disk" id="Replace and Online a Disk" >}}
 
