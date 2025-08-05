@@ -19,7 +19,7 @@ tags:
 
 
 The **Datasets** screen and widgets show information about datasets and zvols, provide access to data management functions, indicate the dataset roles, list the services using the dataset, show encryption status, and list permissions for datasets.
-The screen focuses on managing data storage including, user and group quotas, snapshots, and other data protection measures.
+The screen focuses on managing data storage, including user and group quotas, snapshots, and other data protection measures.
 
 ## Datasets Screen
 
@@ -31,7 +31,7 @@ The tree table with multiple datasets lists parent and child datasets (or zvols)
 {{< trueimage src="/images/SCALE/Datasets/DatasetsScreen.png" alt="Datasets Screen" id="Datasets Screen" >}}
 
 {{< hint type=note >}}
-Large petabyte systems might report storage numbers inaccurately. Storage configurations with more than 9,007,199,254,740,992 bytes round the last 4 digits. 
+Large petabyte systems might report storage numbers inaccurately. Storage configurations with more than 9,007,199,254,740,992 bytes round to the last 4 digits. 
 For example, a system with 18,446,744,073,709,551,615 bytes reports the number as 18,446,744,073,709,552,000 bytes.
 {{< /hint >}}
 
@@ -101,14 +101,14 @@ The **Details** widget shows information about the dataset that allows you to ma
 
 Information includes:
 * **Sync** - Shows the type of dataset.
-  For example, **STANDARD** for non-root datasets or **ROOT DATASET** for the first pool or root dataset that is usually the system dataset.
+  For example, **STANDARD** for non-root datasets or **ROOT DATASET** for the first pool or root dataset, which is usually the system dataset.
 * **Compression** - Shows the compression algorithm applied to the dataset. See [Data Compression Algorithms](#data-compression-algorithms) for more information.
 * **Enable Atime** - Shows if this is on or off. See [Advanced Options](#add-and-edit-dataset-screens) for more information.
 * **ZFS Deduplication** - Shows if ZFS deduplication is on or off. See [Advanced Options](#add-and-edit-dataset-screens) for more information.
 * **Case Sensitivity** - Shows if case sensitivity is on or off. See [Advanced Options](#add-and-edit-dataset-screens) for more information.
 * **Path** - Shows the mount path to the dataset.
 
-A root dataset path shows the pool name alone. If there are multiple poolson the system, the first pool created is the system dataset.
+A root dataset path shows the pool name alone. If there are multiple pools on the system, the first pool created is the system dataset.
 The root dataset for a pool is the top-level container in your pool, sharing the same name as the pool itself.
 When managing your TrueNAS system, it is generally best practice to create dedicated datasets under the root dataset for different types of data, rather than storing data directly in the root dataset itself.
 
@@ -132,7 +132,7 @@ The **Delete** window shows information about the dataset, including the path, s
 
 If a service does not use a dataset, the **Delete** window does not show a service.
 
-The window includes a field to where you enter the path to the dataset. 
+The window includes a field where you enter the path to the dataset. 
 **Confirm** activate the **Delete Dataset** button.
 **Delete Dataset** deletes the dataset and all data it contains.
 
@@ -239,7 +239,7 @@ Both screens include the same **Advanced Options** settings but you cannot chang
 
 **Edit** on the **Dataset Details** widget opens the **Edit Dataset** screen.
 
-**Edit** on the **Encryption** widget, opens an encryption edit window. The **Encryption** widget only shows if a dataset is encrypted.
+**Edit** on the **Encryption** widget opens an encryption edit window. The **Encryption** widget only shows if a dataset is encrypted.
 **Edit** on the **Permissions** widget opens the **Edit ACL** screen to edit dataset NFSv4 permissions.
 POSIX ACLs open the **Unix Permissions Editor** screen.
 
@@ -261,8 +261,8 @@ The **Basic Options** show on the **Advanced Options** screen.
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Parent Path** | A read-only field populated with the full dataset path, from the pool root dataset down to the dataset. Adds the name of the dataset after it is entered in **Name**. For example, *tank/shares/smbshare1*. The dataset name and parent path name are combined and limited to a 200-character maximum length. The maximum nested directory level names in a path is limited to 50. You cannot create a dataset at the 51st level in the directory hierarchy after you account for the nested levels in the parent path. |
-| **Name** | Text entry field that accepts manual or copy/paste entry of a unique identifier for the dataset. Names can consist of upper and lower case letters, numbers, and the dash (-) or underscore (_) special characters. Names cannot have trailing spaces after the dataset name. The dataset name and parent path name are combined and limited to a 200 character maximum length. The maximum nested directory level names in a path is limited to 50. You cannot create a dataset at the 51st level in the directory  hierarchy after you account for the nested levels in the parent path. You cannot change the dataset name after clicking **Save**. The **Name** field on the **Edit Dataset** screen shows the path but is not editable. |
+| **Parent Path** | A read-only field populated with the full dataset path, from the pool root dataset down to the dataset. Adds the name of the dataset after it is entered in **Name**. For example, *tank/shares/smbshare1*. The dataset name and parent path name are combined and limited to a 200-character maximum length. The maximum nested directory level names in a path are limited to 50. You cannot create a dataset at the 51st level in the directory hierarchy after you account for the nested levels in the parent path. |
+| **Name** | Text entry field that accepts manual or copy/paste entry of a unique identifier for the dataset. Names can consist of upper and lower case letters, numbers, and the dash (-) or underscore (_) special characters. Names cannot have trailing spaces after the dataset name. The dataset name and parent path name are combined and limited to a 200 character maximum length. The maximum nested directory level names in a path are limited to 50. You cannot create a dataset at the 51st level in the directory  hierarchy after you account for the nested levels in the parent path. You cannot change the dataset name after clicking **Save**. The **Name** field on the **Edit Dataset** screen shows the path but is not editable. |
 | **Dataset Preset** | Presets configure dataset settings and permissions based on the type of data sharing the dataset uses, for example, SMB/NFS shares, apps, or generic storage. The options optimize the dataset for a sharing protocol or app, and set the ACL type (NFSv4 or POSIX) best suited to the dataset purpose. Options are: <br><li>**Generic** - Use for general storage datasets that are not associated with SMB, NFS, or multi-protocol shares, or apps. Created with a POSIX ACL.<br><li>**SMB** - Optimizes the dataset for SMB shares. Preselects the **Create SMB Share** option and populates the **SMB Name** field with the value entered in **Name**. Created with an NFSv4 ACL. <br><li> **Apps** - Optimize for use by any application. Created with an NFSv4 ACL. If planning to deploy container applications, the system automatically creates the **ix-apps** dataset for Docker storage for application data. For data storage for individual apps, create separate datasets. <br><li>**Multiprotocol** - Optimized for multi-protocol or mixed-mode NFS and SMB sharing protocols, or to create only an NFS share. Allows clients to use either protocol to access the same data. The **Create NFS Share** and **Create SMB Share** options are pre-selected, and the **SMB Name** field populates with the value entered in **Name**. See [Multiprotcol Shares]({{< ref "MixedModeShares" >}}) for more information. Created with an NFSv4 ACL.<br></li>This setting cannot be edited after saving the dataset. |
 {{< /truetable >}}
 {{< /expand >}}
@@ -301,9 +301,9 @@ These settings also display on the **[Capacity Settings]({{< ref "CapacitySettin
 
 ### Encryption Options Section
 
-Encryption settings apply key or passphase type encryption to the selected dataset, and encrypt any child datasets of an encrypted parent.
+Encryption settings apply key or passphrase type encryption to the selected dataset, and encrypt any child datasets of an encrypted parent.
 Encryption settings show on in the **Advanced Options** screen for the **Add Dataset** screen, but not on the **Edit Dataset** screen.
-**Edit** on the [**Encryption** widget](#zfs-encryption-widget) opens the **Edit Encryption Options for *datasetName*** window showing the current encryption settings for the selected dataset and allows you to change the encryption type settings.
+**Edit** on the [**Encryption** widget](#zfs-encryption-widget) opens the **Edit Encryption Options for *datasetName*** window, showing the current encryption settings for the selected dataset and allowing you to change the encryption type settings.
 
 {{< trueimage src="/images/SCALE/Datasets/AddDatasetBasicEncryptionAndOtherOptions.png" alt="Add Dataset Encryption Options Key" id="Add Dataset Encryption Options Key" >}}
 
@@ -351,9 +351,9 @@ The **Other Options** section tunes the dataset for specific data-sharing protoc
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Read-only** | Sets the option that allows or prevents dataset modification to the option selected on the dropdown list. **On** prevents modifying the dataset. **Off** allows users accessing the dataset to modify its contents. |
+| **Read-only** | Sets the option that allows or prevents dataset modification to the option selected on the dropdown list. **On** prevents modifying the dataset. **Off** allows users to access the dataset to modify its contents. |
 | **Exec** | Sets the option for executing processes from within the dataset to the option selected on the dropdown list. **On** allows executing processes from within this dataset. **Off** prevents executing processes from within the dataset. We recommend setting it to **On**. |
-| **Snapshot directory** | Sets the option that controls visibility of the <file>.zfs</file> directory on the dataset from the option selected on the dropdown list. Select **Visible**, **Invisible**, or **Disabled**. |
+| **Snapshot directory** | Sets the option that controls visibility of the <file>.zfs</file> directory on the dataset from the option selected in the dropdown list. Select **Visible**, **Invisible**, or **Disabled**. |
 | **Snapdev** | Sets the option that controls whether the volume snapshot devices under /dev/zvol/*poolname* are hidden or visible to the options selected on the dropdown list. Options are **Inherit (hidden)**, **Visible** and **Hidden** (default value). |
 | **Copies** | Sets the number of ZFS user data duplicates stored on this dataset to the option selected on the dropdown list. Select between **1**, **2**, or **3** redundant data copies. This can improve data protection and retention, but is not a substitute for storage pools with disk redundancy. |
 | **Record Size** | Sets the logical block size in the dataset to the option selected on the dropdown list. Matching the fixed size of data, as in a database, can result in better performance. |
