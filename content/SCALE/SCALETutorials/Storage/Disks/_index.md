@@ -25,4 +25,4 @@ The **Disks** screen lets users edit disks or delete obsolete data off an unused
 
 {{< children depth="2" description="true" >}}
 
-</div>
+<div class="noprint">
