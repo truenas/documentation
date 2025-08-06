@@ -9,12 +9,12 @@ tags:
 
 The **Static Routes** widget on the **Network** screen displays static IP addresses configured as static routes. Use this to manually enter routes to network destinations outside the TrueNAS network so the router can send packets to a destination network.
 
-![StaticRoutes](/images/SCALE/Network/StaticRoutes.png "Static Routes")
+{{< trueimage src="/images/SCALE/Network/StaticRoutes.png" alt="Static Routes" id="Static Routes" >}}
 
 TrueNAS does not have defined static routes by default.
 If you need a static route to reach portions of the network, add the route by going to **Network** and clicking **Add** in the **Static Routes** window.
 
-![AddStaticRoute](/images/SCALE/Network/AddStaticRoute.png "Add Static Route")
+{{< trueimage src="/images/SCALE/Network/AddStaticRoute.png" alt="Add Static Route" id="Add Static Route" >}}
 
 {{< truetable >}}
 | Setting | Description |
