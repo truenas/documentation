@@ -20,11 +20,26 @@ jobs:
           wget -qO- https://github.com/errata-ai/vale/releases/download/v3.12.0/vale_3.12.0_Linux_64-bit.tar.gz | tar -xzf - -C /usr/local/bin vale
           chmod +x /usr/local/bin/vale
 
+      - name: Get changed markdown/text files
+        id: changed-files
+        uses: tj-actions/changed-files@v44
+        with:
+          files: |
+            **/*.md
+            **/*.txt
+          separator: " "
+
       - name: Run Vale
         continue-on-error: true
         run: |
           vale sync
-          vale content/ --output=JSON > vale-results.json || true
+          if [ "${{ steps.changed-files.outputs.any_changed }}" == "true" ]; then
+            echo "Running Vale on changed files: ${{ steps.changed-files.outputs.all_changed_files }}"
+            vale --output=JSON ${{ steps.changed-files.outputs.all_changed_files }} > vale-results.json || true
+          else
+            echo "No markdown or text files changed, skipping Vale check"
+            echo '{}' > vale-results.json
+          fi
           cat vale-results.json
 
       - name: Comment PR
