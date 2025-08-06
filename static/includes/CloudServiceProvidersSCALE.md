@@ -16,6 +16,7 @@ These providers are supported for Cloud Sync tasks in TrueNAS:
 * Hubic ([closed to new accounts](https://www.ovhcloud.com/en-gb/subscriptions-hubic-ended/))
 * [Microsoft Azure Blob Storage](https://azure.microsoft.com/en-us/products/storage/blobs)
 <--->
+* [Microsoft OneDrive](https://www.microsoft.com/en-us/microsoft-365/onedrive/online-cloud-storage)
 * [OpenStack Swift](https://docs.openstack.org/swift/latest/)
 * [pCloud](https://www.pcloud.com/)
 * SSH File Transfer Protocol (SFTP)
