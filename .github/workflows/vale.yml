@@ -72,30 +72,23 @@ jobs:
               if (totalIssues === 0) {
                 comment = '## Vale Style Guide Issues\n\n✅ No style guide issues found!';
               } else {
-                comment += '**Top 10 files with most issues:**\n\n';
+                comment += '**All files with issues:**\n\n';
                 
-                // Sort files by issue count and show top 10
+                // Show all files with issues (no limit)
                 const sortedFiles = Object.entries(valeResults)
                   .filter(([file, issues]) => issues.length > 0)
-                  .sort(([,a], [,b]) => b.length - a.length)
-                  .slice(0, 10);
+                  .sort(([,a], [,b]) => b.length - a.length);
                 
                 for (const [file, issues] of sortedFiles) {
                   comment += `### ${file} (${issues.length} issues)\n\n`;
                   
-                  // Show first 5 issues per file to keep comment manageable
-                  const issuesToShow = issues.slice(0, 5);
-                  for (const issue of issuesToShow) {
+                  // Show ALL issues per file (no limit)
+                  for (const issue of issues) {
                     comment += `- **Line ${issue.Line}:${issue.Span[0]}** - ${issue.Severity}: ${issue.Message}\n`;
-                  }
-                  
-                  if (issues.length > 5) {
-                    comment += `- ... and ${issues.length - 5} more issues\n`;
                   }
                   comment += '\n';
                 }
                 
-                comment += `\n📋 **Full results**: Check the workflow logs for complete details.\n`;
                 comment += `🔧 **To fix**: Review the issues above and update your documentation accordingly.`;
               }
               
