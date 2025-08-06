@@ -155,7 +155,7 @@ majorVersions:
     releases:
       - name: "25.04.2.1"
         link: "https://download.truenas.com/TrueNAS-SCALE-Fangtooth/25.04.2.1"
-        date: "2025-08-05"
+        date: "2025-08-07"
       - name: "25.04.2"
         link: "https://download.truenas.com/TrueNAS-SCALE-Fangtooth/25.04.2"
         date: "2025-07-31"
