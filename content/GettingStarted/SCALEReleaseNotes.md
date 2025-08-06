@@ -108,7 +108,7 @@ For more details on feature flags, see [OpenZFS Feature Flags](https://openzfs.g
 
 ## 25.04.2.1
 
-**August 5, 2025**
+**August 7, 2025**
 
 The TrueNAS team is pleased to release TrueNAS 25.04.2.1!
 This is a small maintenance release that includes several debug and audit optimizations to community features.
