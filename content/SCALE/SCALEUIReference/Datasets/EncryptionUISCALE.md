@@ -12,7 +12,7 @@ tags:
 - storage
 ---
 
-Datasets, root, non-root parent, and child, or zvols with encryption include the **[ZFS Encryption]({{< ref "/SCALE/SCALEUIReference/Datasets" >}})** widget in the set of dataset widgets displayed on the **Datasets** screen.
+Datasets, root, non-root parent, and child, or zvols with encryption include the **[Encryption]({{< ref "/SCALE/SCALEUIReference/Datasets" >}})** widget in the set of dataset widgets shown on the **Datasets** screen.
 
 {{< trueimage src="/images/SCALE/Datasets/DatasetTreeWithLockIcons.png" alt="Dataset Tree Table Encryption Icons" id="Dataset Tree Table Encryption Icons" >}}
 
@@ -24,8 +24,8 @@ The **Encryption** option on the **[Pool Manager]({{< ref "PoolCreateWizardScree
 
 {{< include file="/static/includes/EncryptionRootLevel.md" >}}
 
-The **Download Encryption Key** warning window displays when you create the pool.
-It downloads a JSON file to your downloads folder.
+The **Download Encryption Key** warning window opens when you create the pool.
+It downloads a JSON file to the downloads folder on your system.
 
 {{< trueimage src="/images/SCALE/Storage/DownloadPoolEncryptionKey.png" alt="Download Pool Encryption Key" id="Download Pool Encryption Key" >}}
 
@@ -35,9 +35,9 @@ The [**Encryption Options** settings]({{< ref "/scale/scaleuireference/datasets/
 
 ## Export Key Options
 
-The **ZFS Encryption** widget for root datasets with encryption includes the **Export All Keys** and **Export Key** options. It does not include the **Lock** option.
+The **Encryption** widget for root datasets with encryption includes the **Export All Keys** and **Export Key** options. It does not include the **Lock** option.
 
-If a dataset is encrypted using a key, the **ZFS Encryption** widget for that dataset includes the **Export Key** option.
+If a dataset is encrypted using a key, the **Encryption** widget for that dataset includes the **Export Key** option.
 
 ### Export All Keys Dialog
 
@@ -47,7 +47,8 @@ If a dataset is encrypted using a key, the **ZFS Encryption** widget for that da
 
 ### Export Key Dialog
 
-**Export Key** opens a dialog with the key for the selected dataset and the **Download Key** option that exports a JSON file with the encryption key to your system download folder.
+**Export Key** opens a dialog showing the key for the selected dataset, and the **Download Key** button.
+**Download Key** exports the key to a JSON file and saves it in your system download folder.
 
 {{< trueimage src="/images/SCALE/Datasets/ExportKeyDialog.png" alt="Export Key" id="Export Key" >}}
 
@@ -68,25 +69,25 @@ The encryption settings options are the same as those on **Add Dataset > Encrypt
 
 ## Lock Dataset Dialog
 
-**Lock** displays on encrypted non-root parent or child datasets **ZFS Encryption** widgets.
-An encrypted child that inherits encryption from a non-root parent does not see the **Lock** option on its **ZFS Encryption** widget because the lock state is controlled by the parent dataset for that child dataset.
+**Lock** shows on the **Encryption** widgets when you encrypt a dataset (or zvol) with a passphrase.
+An encrypted child that inherits encryption from an encrypted parent does not see the **Lock** option on its **Encryption** widget when the lock state is controlled by the parent dataset for that child dataset.
 The locked icon for child datasets that inherit encryption is the locked by ancestor icon.
 
 **Lock** opens the **Lock Dataset** confirmation dialog with the option to **Force unmount** and **Lock** the dataset.
-**Force unmount** disconnects any client system accessing the dataset via sharing protocol. Do not select this option unless you are certain the dataset is not used or accessed by a share, application, or other system services.
+**Force unmount** disconnects any client system accessing the dataset via the sharing protocol. Do not select this option unless you are certain the dataset is not used or accessed by a share, application, or other system services.
 
 {{< trueimage src="/images/SCALE/Datasets/LockDatasetDialog.png" alt="Lock Dataset Dialog" id="Lock Dataset Dialog" >}}
 
-After locking a dataset, the **ZFS Encryption** screen displays **Locked** as the **Current State** and adds the **Unlock** option.
+After locking a dataset, the **Encryption** screen displays **Locked** as the **Current State** and adds the **Unlock** option.
 
 ## Unlock Datasets Screen
 
-**Unlock** on the **ZFS Encryption** widget displays for locked datasets that are not child datasets that inherit encryption from the parent dataset.
-**Unlock** opens the **Unlock Datasets** screen, which allows you to unlock the selected dataset and child datasets simultaneously.
+**Unlock** on the **Encryption** widget shows for locked datasets that are not child datasets that inherit encryption from the parent dataset.
+**Unlock** opens the **Unlock Datasets** screen, which is used when you unlock the selected dataset and child datasets simultaneously.
 
 {{< trueimage src="/images/SCALE/Datasets/UnlockDatasetsScreenNonRootParent.png" alt="Unlock Non-Root Parent and Child Datasets Screen" id="Unlock Non-Root Parent and Child Datasets Screen" >}}
 
-If you select a child dataset of the root dataset or a non-root parent, the screen includes only the one **Dataset Passphrase** field, and the option to **Unlock Child Encrypted Roots** pre-selected.
+If you select a child dataset of a root (pool-level) dataset or a non-root parent, the screen includes only the one **Dataset Passphrase** field, and the option to **Unlock Child Encrypted Roots** is pre-selected.
 
 {{< trueimage src="/images/SCALE/Datasets/UnlockDatasetsScreen.png" alt="Unlock Datasets Screen" id="Unlock Datasets Screen" >}}
 
@@ -94,10 +95,10 @@ If you select a child dataset of the root dataset or a non-root parent, the scre
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Unlock Child Encrypted Roots** | Select to unlock any encrypted dataset stored within this dataset. |
-| **Dataset Passphrase**<br> **Dataset Key** | Enter the user-defined string (passphrase) or system-generated or user-created alpha-numeric key you entered when you created the dataset. |
-| **Force** | Select to add a force flag to the operation. In some cases the provided key/passphrase may be valid but the path where the dataset is supposed to be mounted after being unlocked already exists and is not empty. In this case, the unlock operation fails. Adding the force flag can override this and when selected, the system renames the existing dataset mount directory/file path and unlocks the dataset. |
-| **Save** | Starts the unlock process, fetches data, and displays the **Unlock Datasets** dialog with the dataset mount path. Click **Continue** to unlock the dataset. |
-| **Save** | Starts the unlock process, fetches data, and displays the **Unlock Datasets** dialog with the dataset mount path. Click **Continue** to unlock the dataset. |
+| **Unlock Child Encrypted Roots** | Unlocks any encrypted dataset stored within this dataset. |
+| **Dataset Passphrase**<br> **Dataset Key** | Text entry field that accepts manual or copy/paste entry of the user-defined string (passphrase) or system-generated or user-created alphanumeric key entered when you created the dataset. |
+| **Force** | Adds a force flag to the operation. In some cases, the provided key/passphrase might be valid, but the path where the dataset is supposed to be mounted after being unlocked already exists and is not empty. In this case, the unlock operation fails. Adding the force flag can override this, and when selected, the system renames the existing dataset mount directory/file path and unlocks the dataset. |
+| **Save** | Starts the unlock process, fetches data, and displays the **Unlock Datasets** dialog with the dataset mount path. **Continue** unlocks the dataset. |
+| **Save** | Starts the unlock process, fetches data, and displays the **Unlock Datasets** dialog with the dataset mount path. **Continue** unlocks the dataset. |
 {{< /truetable >}}
 {{< /expand >}}

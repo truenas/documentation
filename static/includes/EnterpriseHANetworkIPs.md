@@ -3,8 +3,8 @@
 TrueNAS Enterprise (HA) systems use three static IP addresses for access to the UI:
 
 * VIP to provide UI access regardless of which controller is active.
-  If your system fails over from controller 1 to 2, then fails over back to controller 1 later you might not know which controller is active.
-* IP for controller 1. If enabled, DHCP assigns an IP to the primary network interface on non-HA systems.
+  If your system fails over from controller 1 to 2, then fails back over to controller 1 later you might not know which controller is active.
+* IP for controller 1. Do not use DHCP to assign the IP address! If enabled, DHCP assigns an IP to the primary network interface on non-HA systems.
   Disable DHCP, and then manually enter the Controller 1 static IP address your network administrator assigned for this controller.
 * IP for Controller 2. Manually enter the second IP address assigned for this controller.
 
