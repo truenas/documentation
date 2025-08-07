@@ -114,7 +114,7 @@ Click on the **Block (iSCSI) Share Targets** widget header to open the **iSCSI**
    b. Enter a name using lowercase alphanumeric characters plus dot (.), dash (-), and colon (:) in **Target Name**.
       Use the iqn.format for the name. See the "Constructing iSCSI names using the iqn.format" section of [RFC3721](https://tools.ietf.org/html/rfc3721.html).
 
-      You can enter a common name for the target in **Target Alias** but this is not required.
+      You can enter a common name for the target in **Target Alias**, but this is not required.
 
    c. (Optional) Add authorized networks.
       Click **Add** to show the **Network** fields to enter a publicly accessible IP address and netmask (CIDR).
@@ -132,7 +132,7 @@ Click on the **Block (iSCSI) Share Targets** widget header to open the **iSCSI**
 
       Select the authentication method from the dropdown list.
       **None** allows anonymous discovery. **CHAP** uses one-way authentication. **Mutual CHAP** uses two-way authentication.
-      To show the **Mutual CHAP** option you must set the peer user and secret password.
+      To show the **Mutual CHAP** option, you must set the peer user and secret password.
       For more information on authentication methods, see [iSCSI Screens]({{< ref "iSCSISharesScreens" >}}).
 
       The **Authentication Group Number** dropdown list is populated after configuration groups on the **Add Authorized Access** screen.
