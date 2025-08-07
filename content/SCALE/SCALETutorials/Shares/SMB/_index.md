@@ -124,6 +124,12 @@ TrueNAS creates the ZFS dataset with these settings:
 * **ACL Mode** set to **Restricted**
    The **ACL Type** influences the **ACL Mode** setting. When **ACL Type** is set to **Inherit**, you cannot change the **ACL Mode** setting.
    When **ACL Type** is set to **NFSv4**, you can change the **ACL Mode** to **Restricted**.
+   
+   {{< hint type=note >}}
+   For datasets with **NFSv4** ACL type, SMB clients automatically use access-based enumeration. 
+   This means directory listings over SMB only include files and directories that the client has read permissions for. 
+   This behavior is enabled by default and matches FreeBSD behavior.
+   {{< /hint >}}
 
 * **Case Sensitivity** set to **Insensitive**
 
@@ -209,6 +215,8 @@ If the share is nested under parent datasets, see [Using the Traverse Permission
 To prohibit writes to the share, select **Export Read-Only**.
 
 Select **Access Based Share Enumeration** to restrict share visibility for users with read or write access to the share.
+This setting applies to datasets with POSIX ACL type. 
+For datasets with NFSv4 ACL type, access-based enumeration is automatically enabled and does not allow disabling.
 See the [smb.conf](https://www.samba.org/samba/docs/current/man-html/smb.conf.5.html) manual page.
 {{< /expand >}}
 <!-- comment out legacy content
