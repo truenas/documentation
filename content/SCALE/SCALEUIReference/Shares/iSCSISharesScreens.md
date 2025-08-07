@@ -63,7 +63,7 @@ The **Wizard** button opens the iSCSI wizard on the **Targets** screen. The wiza
 * [**Extent**](#iscsi-wizard-extent-screen)
 * [**Protocol Options**](#iscsi-wizard-protocol-options-screen)
 
-The wizard steps you through creating an iSCSI target, adding the extent for the target including setting up the storage (device or file) it uses, and setting up the portal and initiators for the target.
+The wizard steps you through creating an iSCSI target, adding the extent for the target, including setting up the storage (device or file) it uses, and setting up the portal and initiators for the target.
 
 {{< include file="/static/include/FibreChannelEnterpriseScreen.md" >}}
 
@@ -75,11 +75,11 @@ For more information on iSCSI screens and settings, see [**iSCSI Screens**](#isc
 
 ### iSCSI Wizard Target Screen
 
-The **iSCSI Wizard** opens showing the **Target** screen.
+The **iSCSI Wizard** opens and shows the **Target** screen.
 
 {{< trueimage src="/images/SCALE/Shares/iSCSIWizardTargetScreen.png" alt="iSCSI Wizard Target Screen" id="iSCSI Wizard Target Screen" >}}
 
-The **Target** dropdown shows **Create New** and any other existing target on the system. 
+The **Target** dropdown shows **Create New** and any other existing targets on the system. 
 **Create New** creates a target.
 Selecting an existing target from the dropdown list allows you to edit it, but we recommend using the [**iSCSI Target**](#iscsi-target-screen) screen to edit an existing target rather than using the wizard screens.
 
@@ -106,7 +106,7 @@ The iSCSI wizard **Protocol Options** screen shows settings to add a portal and 
 
 ## iSCSI Screens
 
-The **iSCSI** screen provides access manage targets, and the extents, initiators (clients), portals, and authorized access for the targets.
+The **iSCSI** screen provides access to manage targets, and the extents, initiators (clients), portals, and authorized access for the targets.
 The **iSCSI** screen shows five tabs: **Targets**, **Extents**, **Initiators**, **Portals**, and **Autorized Access**.
 The **iSCSI** screen opens with the **Targets** tab selected by default.
 
@@ -120,9 +120,9 @@ The **Block (iSCSI) Shares Targets** widget header opens the **iSCSI** screens.
 
 ### iSCSI Target Screen
 
-iSCSI targets are storage resources on an iSCSI server that are made available to iSCSI intiators (clients) over a TCP/IP network.
+iSCSI targets are storage resources on an iSCSI server that are made available to iSCSI initiators (clients) over a TCP/IP network.
 The target is a server-side torage object that encapuslates a block storage resource (e.g., a phyical disk, logical volume, or file) and makes it accessible to initiators via the iSCSI protocol.
-A target is identified by unique iSCSI qualified name (IQN), and is associated with portal groups for network access and intiator groups for access control.
+A target is identified by a unique iSCSI qualified name (IQN), and is associated with portal groups for network access and initiator groups for access control.
 
 The **Target** tab shows by default when opening the **iSCSI** screen. Use it to manage iSCSI targets.
 
@@ -179,7 +179,7 @@ The **Add Target** and **Edit Target** screens show the same configuration setti
 | Setting | Description |
 |---------|-------------|
 | **Target Name** | The name of the target, consisting of a maximum of 64 lowercase alphanumeric and special characters. Allowed characters are dot (.), dash (-), and colon (:). A name longer than 64 characters is not allowed. See the “Constructing iSCSI names using the iqn.format” section of [RFC3721](https://tools.ietf.org/html/rfc3721.html). The base name (from Target Global Configuration) is automatically prepended if the target name does not start with iqn. |
-| **Target Alias** | An alternative optional user-friendly name for the target. |
+| **Target Alias** | An alternative, optional user-friendly name for the target. |
 | **Authorized Networks** | Networks authorized or allowed to communicate between initiators (client computers) and iSCSI targets (storage devices) over the IP network. **Add** shows the **Network** field. |
 | **Network** | Network addresses for authorized networks. Shows after clicking **Add** to the right of **Authorized Networks**. Enter the IP address for the network and select the netmask (CIDR) from the dropdown list. Address must be a public address. Adds the network address to the **iSCSI Authorized Network** widget. |
 {{< /truetable >}}
@@ -207,7 +207,7 @@ The **Extents** screen shows a table listing extents configured on the system. E
 ### Initiators Groups Screen
 
 The **Initators Groups** screen manages iSCSI initiator groups for targets.
-*Intiator groups* are a logical grouping of iSCSI initiators (clients), identified by their iSCSI qualified name (IQN), that control access to iSCSI targets they are assoicated with, and define what operations clients can perform on storage for those targets.
+*Initiator groups* are a logical grouping of iSCSI initiators (clients), identified by their iSCSI qualified name (IQN), that control access to iSCSI targets they are associated with, and define what operations clients can perform on storage for those targets.
 
 The **Initiators Groups** screen shows after clicking the **Initiator** tab. The table lists initiator groups configured on the system.
 
@@ -228,11 +228,11 @@ The **Initiators Groups** screen shows after clicking the **Initiator** tab. The
 ### Portals Screens
 
 The **Portals** screen manages iSCSI portal groups for the target.
-A *portal group* is a set of network portals (IP addresses and port combinations) within an iSCSI node that collectively spuuports the corrdination of an iSCSI session.
+A *portal group* is a set of network portals (IP addresses and port combinations) within an iSCSI node that collectively supports the coordination of an iSCSI session.
 Each portal group is identified by a 16-bit numerical identifier (portal group tag) unique within the iSCSI node.
-Portal groups allow an iSCSI initiaotr (client) to connect to a target through multiple network paths.
+Portal groups allow an iSCSI initiator (client) to connect to a target through multiple network paths.
 
-The **Portals** screen shows after clicing on the **Portals** tab on the **iSCSI** screen. A **Portals** table lists portal ID groups on the TrueNAS system.
+The **Portals** screen shows after clicking on the **Portals** tab on the **iSCSI** screen. A **Portals** table lists portal ID groups on the TrueNAS system.
 
 {{< trueimage src="/images/SCALE/Shares/iSCSIPortalsScreen.png" alt="iSCSI Portals Screen" id="iSCSI Portals Screen" >}}
 
