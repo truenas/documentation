@@ -36,7 +36,7 @@ Each task listed is a link that opens the **[Edit Periodic Snapshot Task](#add-a
 
 ![PeriodicSnapshotTaskLog](/images/SCALE/DataProtection/PeriodicSnapshotTaskLog.png "Periodic Snapshot Task State Log")
 
-The <span class="material-icons">delete</span> **Delete** icon opens a simple delete dialog where you confirm before the system deletes the saved periodic snapshot task.
+Each task includes a vertical ellipses <span class="material-icons">more_vert</span> icon that opens a dropdown menu with task options. The <span class="material-icons">delete</span> **Delete** icon opens a simple delete dialog where you confirm before the system deletes the saved periodic snapshot task.
 
 ## Periodic Snapshot Task List Screen
 Periodic snapshot tasks display on both the **Data Protection** widget and **Periodic Snapshot Tasks** list screen.
