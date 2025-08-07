@@ -14,7 +14,8 @@ tags:
 ---
 
 ## Windows (SMB) Shares Widget
-If you have not added SMB shares to the system, the SMB widget shows text stating general information about the Windows (SMB) Shares until a share is added. 
+
+If you have not added SMB shares to the system, the SMB widget shows text stating general information about the Windows (SMB) Shares until a share is added.
 
 {{< trueimage src="/images/SCALE/Shares/WindowsSMBShareWidgetNoShares.png" alt="Windows (SMB) Share Widget without Shares" id="Windows (SMB) Share Widget without Shares" >}}
 
@@ -25,9 +26,10 @@ After adding an SMB share, it is listed in the table on the widget.
 {{< trueimage src="/images/SCALE/Shares/WindowsSMBShareWidget.png" alt="Windows (SMB) Share Widget with Shares" id="Windows (SMB) Share Widget with Shares" >}}
 
 The **Windows (SMB) Shares <span class="material-icons">launch</span>** header shows the status of the SMB service as either **STOPPED** (red) or **RUNNING** (green). Before adding the first share, the **STOPPED** status displays in the default color.
-The header is a link that opens the [**Sharing > SMB** screen](#sharing-smb-details-screen).
+The header is a link that opens the [**Sharing > SMB** screen](#smb-screen).
 
 The <span class="material-icons">more_vert</span> dropdown list shows four options available to SMB shares and the SMB service in general:
+
 * **Turn Off/ON Service** toggles to **Turn Off Service** when the SMB service is enabled, and to **Turn On Service** when the SMB service is disabled.
 * **Config Service** opens the [**SMB**]({{< ref "SMBServicesScreen" >}}) configuration screen.
 * **SMB Sessions** opens the **SMB Status** screen with showing **Sessions**.
@@ -90,6 +92,7 @@ It opens the [**Create Dataset**](#create-dataset) dialog.
 **Save** creates the share (or saves an existing one) and adds it to the **Windows (SMB) Shares** widget and the **SMB** table on the **SMB** screen.
 
 ### Basic Settings
+
 The **Basic Options** settings show by default on the **Add** and **Edit SMB** screens. Basic settings show for all share options in the **Purpose** dropdown list, only the **External Share** option shows the **Remote Path** setting.
 
 {{< trueimage src="/images/SCALE/Shares/AddShareBasicOptions.png" alt="Add SMB Basic Options" id="Add SMB Basic Options" >}}
@@ -113,7 +116,7 @@ The **Basic Options** settings show by default on the **Add** and **Edit SMB** s
 **Advanced Options** settings are grouped into three categories:
 * [**Access**](#access-settings)
 * [**Audit Logging**](#audit-logging)
-* [**Other Options**](#other-options-settings) 
+* [**Other Options**](#other-options-settings)
 
 **Access** and **Audit Logging** settings show for all share options in the **Purpose** dropdown list.
 The **Other Options** settings change based on the share option selected in the **Purpose** dropdown list.
@@ -160,7 +163,7 @@ When **Purpose** is set to **Default Share**, **Multi-Purpose Share** or **Exter
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Use Apple-style Character Encoding** | Implements the default hashing algorithm for NTFS illegal characters that Samba uses. Enabling this option translates TFFS illegal characters to the Unicode private range. Shows for all share types except When **Purpose** is set to the **Time Machine Share** or **External Share**. |
+| **Use Apple-style Character Encoding** | Implements the default hashing algorithm for NTFS illegal characters that Samba uses. Enabling this option translates NTFS illegal characters to the Unicode private range. Shows for all share types except When **Purpose** is set to the **Time Machine Share** or **External Share**. |
 {{< /truetable >}}
 {{< /tab >}}
 {{< tab "Time Machine Share" >}}
@@ -185,7 +188,7 @@ When **Purpose** is set to **Time Locked Share**, these settings show in **Other
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Use Apple-style Character Encoding** | Implements the default hashing algorithm for NTFS illegal characters that Samba uses. Enabling this option translates TFFS illegal characters to the Unicode private range. |
+| **Use Apple-style Character Encoding** | Implements the default hashing algorithm for NTFS illegal characters that Samba uses. Enabling this option translates NTFS illegal characters to the Unicode private range. |
 | **Grace Period** | Sets the delay before access times out or the share locks. Only shows when **Purpose** is set to the **Time Locked Share** option. |
 {{< /truetable >}}
 {{< /tab >}}
@@ -197,7 +200,7 @@ When **Purpose** is set to **Private Dataset Share** the following settings show
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Use Apple-style Character Encoding** | Implements the default hashing algorithm for NTFS illegal characters that Samba uses. Enabling this option translates TFFS illegal characters to the Unicode private range. When **Purpose** is set to the **Time Machine Share** or **External Share** options, this setting does not show. |
+| **Use Apple-style Character Encoding** | Implements the default hashing algorithm for NTFS illegal characters that Samba uses. Enabling this option translates NTFS illegal characters to the Unicode private range. When **Purpose** is set to the **Time Machine Share** or **External Share** options, this setting does not show. |
 | **Dataset Naming Schema**  | Sets TrueNAS to require the naming schema used when **Auto Dataset Creation** is enabled. If a schema is not set, the server uses the username if it is not joined to Active Directory. If the server is joined to Active Directory, it uses domain/username. Only shows when **Purpose** is set to the **Private Dataset Share** option. |
 | **Auto Quota** | Sets the specified ZFS quota in gibibytes (GiB) on new datasets. If the value is zero, TrueNAS disables automatic quotas for the share. Only shows when **Purpose** is set to the **Private Dataset Share** option. |
 {{< /truetable >}}
@@ -265,9 +268,9 @@ The **Create Dataset** dialog adds a new dataset under the parent dataset select
 
 ## Edit Share ACL Screen
 
-The **Share ACL for *sharename** screen edits permissions at the share level for the selected share.
+The **Share ACL for *sharename*** screen edits permissions at the share level for the selected share.
 Settings configure new ACL entries for the selected SMB share and apply them at the entire SMB share level, but do not apply to the dataset.
-It is separate from file system permissions. 
+It is separate from file system permissions.
 To configure dataset permissions, use the **Edit Filesystem ACL** option.
 
 The **Share ACL for *sharename*** screen opens after clicking on the <i class="material-icons" aria-hidden="true" title="share">share</i> **Edit Share ACL** icon on the **Windows (SMB) Shares** widget or the <span class="material-icons">more_vert</span> on the [**Sharing SMB** details screen](#sharing-smb-details-screen).
@@ -314,7 +317,7 @@ The **SMB Status** screen shows information related to SMB sessions, for example
 * **UID** - The user ID associated with the session.
 * **GID** - The group ID for the user associated with the session.
 * **Session Dialect** - The version of the SMB protocol.
-* **Ecryption** - The share encryption.
+* **Encryption** - The share encryption.
 * **Signing** - The security mechanism used, such as an authentication algorithm like *AES-128-GCM*, etc.
 
 **Refresh** updates the information shown on the screen.
