@@ -1,6 +1,6 @@
 &NewLine;
 
-**Delete** opens a confiration dialog with two options:
+**Delete** opens a confirmation dialog with two options:
 * **Delete *1* associated extent** - Shows the number of associated extend for the selected target.
 * **Force Delete** - Deletes the target even if the share is still in use.
 
