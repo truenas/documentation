@@ -166,7 +166,6 @@ The screen shows three widgets on the right side of the screen for the selected 
 
 #### Add or Edit Target Screens
 
-
 The **Add Target** and **Edit Target** screens show the same configuration settings.
 
 {{< columns >}}
