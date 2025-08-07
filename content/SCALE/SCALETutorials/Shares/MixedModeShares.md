@@ -148,7 +148,7 @@ After adding the dataset, edit the dataset ACL.
 To create a share and a dataset from the **Add SBM** share screen, go to **Shares**, and click **Add** on the **Windows (SMB) Shares** widget to open the **Add SMB** screen.
 
 1. Enter or browse to select the parent dataset where you want to add the share dataset, then click **Create Dataset**.
-   Enter a name for the dataset/share, then click **Create Dataset**. The **Path** field populates with the path to the dataset and the **Name** field populates with the dataset/share name. Both the dataset and the share have the same name.
+   Enter a name for the dataset/share, then click **Create Dataset**. The **Path** field populates with the path to the dataset, and the **Name** field populates with the dataset/share name. Both the dataset and the share have the same name.
    
 2. Select **Multi-Protocol Shares** on the **Purpose** dropdown list.
    This applies the pre-determined **Other Options** selected on the **Advanced Options** screen.
