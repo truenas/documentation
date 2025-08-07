@@ -140,6 +140,7 @@ TrueNAS 25.04.2 is not recommended for TrueNAS Enterprise customers with High Av
 * Changes to Support notifications for zpool capacity, warning, and critical alerts (85, 90, and 95% respectively) and removes "optimal pool performance" language from the notifications to address customer concerns with over-notification on issues that do not interest them ([NAS-135831](https://ixsystems.atlassian.net/browse/NAS-135831)).
 * Changes PSU failures that occur in the field to automatically generate a support alert ([NAS-135832](https://ixsystems.atlassian.net/browse/NAS-135832)).
 {{< /enterprise >}}
+
 * TrueNAS 25.04.2 reintroduces "classic virtualization" with the [**Virtual Machines**]({{< ref "/scaletutorials/virtualmachines/" >}}) feature.
   Virtualization features are now split between the **Virtual Machines** and [**Containers**]({{< ref "/scaletutorials/containers/" >}}) screens. 
   
@@ -157,7 +158,7 @@ TrueNAS 25.04.2 is not recommended for TrueNAS Enterprise customers with High Av
 * Shows all object fields and explicitly  lists all parameters and result fields for nested objects not previously included in generated API documentation ([NAS-135959](https://ixsystems.atlassian.net/browse/NAS-135959)).
 * Adds starting and stopping services in the UI to the audit log records ([NAS-136310](https://ixsystems.atlassian.net/browse/NAS-136310)).
 
-<a href="https://ixsystems.atlassian.net/issues/?filter=#####" target="_blank">Click here for the full changelog</a> of completed tickets that are included in the 25.04.2 release.
+<a href="https://ixsystems.atlassian.net/issues/?filter=13064" target="_blank">Click here for the full changelog</a> of completed tickets that are included in the 25.04.2 release.
 {{< include file="/static/includes/JiraFilterInstructions.md" >}}
 
 ### 25.04.2 Known Issues
@@ -190,7 +191,7 @@ TrueNAS 25.04.2 is not recommended for TrueNAS Enterprise customers with High Av
   3. Run `rm -f <full-path-to-update.sqsh>`, replacing `<full-path-to-update.sqsh>` with the **full** file path to the **update.sqsh** file from the previous step
 * {{< include file="/static/includes/auxiliary-parameters-ssh.md" >}}
 
-<a href="https://ixsystems.atlassian.net/issues/?filter=12504" target="_blank">Click here to see the latest information</a> about public issues in 25.04.1 that are being resolved in a future TrueNAS release.
+<a href="https://ixsystems.atlassian.net/issues/?filter=13065" target="_blank">Click here to see the latest information</a> about public issues in 25.04.1 that are being resolved in a future TrueNAS release.
 
 ## 25.04.1
 
@@ -210,6 +211,7 @@ This is a maintenance release and includes refinements and fixes for issues disc
   For STIG compliant environments, the max number of simultaneous logins is 10.
   Accounts are locked for 15 minutes after 3 consecutive failed login attempts.
 {{< /enterprise >}}
+
 * Remove support for BOTH in share ACLs ([NAS-135183](https://ixsystems.atlassian.net/browse/NAS-135183)).
 * Persist updated GMail OAuth refresh token to prevent deauthentication ([NAS-135394](https://ixsystems.atlassian.net/browse/NAS-135394)).
 * Improvements to **Instances**, including:
