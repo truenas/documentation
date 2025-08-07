@@ -117,7 +117,7 @@ majorVersions:
     releases:
       - name: "24.10.2.4"
         link: "https://download.truenas.com/TrueNAS-SCALE-ElectricEel/24.10.2.4/"
-        date: "2025-08-05"
+        date: "2025-08-07"
       - name: "24.10.2.3"
         link: "https://download.truenas.com/TrueNAS-SCALE-ElectricEel/24.10.2.3/"
         date: "2025-07-14"
