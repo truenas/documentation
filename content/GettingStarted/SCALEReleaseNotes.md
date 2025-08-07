@@ -154,6 +154,16 @@ Any new feature flags introduced since the previous OpenZFS version that was int
 
 For more details on feature flags, see [OpenZFS Feature Flags](https://openzfs.github.io/openzfs-docs/Basic%20Concepts/Feature%20Flags.html) and [OpenZFS zpool-feature.7](https://openzfs.github.io/openzfs-docs/man/7/zpool-features.7.html).
 
+## 24.10.2.4
+
+**August 7, 2025**
+
+The TrueNAS team is pleased to release TrueNAS 24.10.2.4!
+
+This maintenance release contains a fix for Enterprise that makes HA environments more robust in situations where upstream network configurations are incorrect for the HA environment.
+
+24.10.2.4 also contains optimizations for debug generation.
+
 ## 24.10.2.3
 
 **July 14, 2025**
