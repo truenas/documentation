@@ -215,7 +215,7 @@ If the share is nested under parent datasets, see [Using the Traverse Permission
 To prohibit writes to the share, select **Export Read-Only**.
 
 Select **Access Based Share Enumeration** to restrict share visibility for users with read or write access to the share.
-This setting applies to datasets with POSIX ACL type. 
+This setting applies to datasets with a POSIX ACL type. 
 For datasets with NFSv4 ACL type, access-based enumeration is automatically enabled and does not allow disabling.
 See the [smb.conf](https://www.samba.org/samba/docs/current/man-html/smb.conf.5.html) manual page.
 {{< /expand >}}
@@ -386,10 +386,10 @@ Repeat for each TrueNAS system with SMB shares to add as an external share.
 
 ### Setting Up an External Share with an Earlier Release
 
-When setting up an external share between TrueNAS systems are on different releases, for example, one system is on 25.04 and the other is on the latest release of 25.10, follow the external share instructions for each release.
+When setting up an external share between TrueNAS systems that are on different releases, for example, one system is on 25.04 and the other is on the latest release of 25.10, follow the external share instructions for each release.
 
 Set the TrueNAS 25.04 system SMB **Purpose** to the default preset, leave the default settings associated with this share as is, and then enter the redirect path to share on the 25.10 system as **EXTERNAL:*ipaddress\sharename*** in the **Path** field. For example, *EXTERNAL:10.220.3.33\testshare2*.
-Be aware, changing the path also changes the SMB share name so verify the share name is set to the desired or existing share name and not renamed to the redirect string in **Path**.
+Be aware, changing the path also changes the SMB share name. Verify the share name is set to the desired or existing share name and not renamed to the redirect string in **Path**.
 
 {{< trueimage src="/images/SCALE/Shares/SetUpExternalSMBShare.png" alt="Set Up Another External SMB Share" id="Set Up Another External SMB Share" >}}
 
@@ -398,7 +398,7 @@ Set the TrueNAS 25.10 system SMB **Purpose** to **External Share**, and then ent
 {{< trueimage src="/images/SCALE/Shares/AddingAnExternalShare.png" alt="Set Up Another External SMB Share" id="Set Up Another External SMB Share" >}}
 
 Add descriptions to each share that identify the purpose of the share.
-The description shows on the **Windows (SMB) Shares** widget and on the **SMB** screen.
+The description shows on the **Windows (SMB) Shares** widget and the **SMB** screen.
 
 **Save** changes made to the share.
 
