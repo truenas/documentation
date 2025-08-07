@@ -98,7 +98,7 @@ Stopping an in-progress task cancels the file transfer and requires starting the
 To view logs about a running task, or its most recent run, click on the **State** oval.
 
 ## Using Cloud Sync Task Restore
-To create a new cloud sync task that uses the same options but reverses the data transfer, select <i class="material-icons" aria-hidden="true" title="Restore">history</i> for an existing cloud sync on the **Data Protection** page.
+To create a new cloud sync task that uses the same options but reverses the data transfer, click the vertical ellipses <span class="material-icons">more_vert</span> on an existing cloud sync task on the **Data Protection** page and select <i class="material-icons" aria-hidden="true" title="Restore">history</i> **Restore**.
 The **Restore Cloud Sync Task** window opens.
 
 {{< trueimage src="/images/SCALE/DataProtection/RestoreCloudSyncTaskWindow.png" alt="Cloud Sync Restore" id="Cloud Sync Restore" >}}
