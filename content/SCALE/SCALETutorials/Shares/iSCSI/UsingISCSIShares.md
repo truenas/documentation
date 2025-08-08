@@ -13,9 +13,7 @@ Connecting to and using an iSCSI share can differ between operating systems.
 This article provides instructions on setting up a Linux and Windows system to use the TrueNAS iSCSI block share.
 
 ## Using Linux iSCSI Utilities and Service
-
 In this section, you start the iSCSI service, log in to the share, and obtain the configured basename and target. You also partition the iSCSI disk, make a file system for the share, mount it, and share data.
-
 {{< expand "Click here for more information" "v" >}}
 Before you begin, open the command line and ensure you have installed the `open-iscsi` utility.
 To install the utility on an Ubuntu/Debian distribution, enter command `sudo apt update && sudo apt install open-iscsi`.
@@ -91,7 +89,6 @@ For example, `sudo mount /dev/sdb1 /mnt` mounts the iSCSI device */dev/sdb1* to 
 {{< /expand >}}
 
 ## Using the iSCSI Share with Windows
-
 This section provides instructions on setting up Windows iSCSI Initiator Client to work with TrueNAS iSCSI shares.
 {{< expand "Click here for more information" "v" >}}
 To access the data on the iSCSI share, clients need to use iSCSI Initiator software. An iSCSI Initiator client is pre-installed in Windows 7 to 10 Pro, and Windows Server 2008, 2012, and 2019. Windows Professional Edition is usually required.

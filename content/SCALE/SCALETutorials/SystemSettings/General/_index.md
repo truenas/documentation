@@ -46,7 +46,6 @@ You can include a screenshot of the current page and/or upload additional images
 {{< trueimage src="/images/SCALE/Dashboard/FeedbackWindow.png" alt="Send Feedback Window" id="Send Feedback Window" >}}
 
 ### Reporting an Issue
-
 Click **Report a bug** to show the fields and option to open an engineering ticket and submit it directly to the TrueNAS development team when a TrueNAS screen or feature is not working as intended.
 Submitting a bug report requires a free [Atlassian account](https://id.atlassian.com/signup).
 
@@ -120,18 +119,12 @@ A warning displays when setting this function.
 
 Select **Crash Reporting** to send failed HTTP request data, which might include client and server IP addresses, tracebacks for failed method calls, and middleware log file contents to TrueNAS.
 
-### Sending Usage Statistics and UI Error Reports
-
-To send anonymous usage statistics and WebUI errors to TrueNAS, select the **Usage Collection & UI Error Reporting** option.
-When enabled, anonymous usage statistics and WebUI errors are reported to the TrueNAS engineering team.
-No personally identifiable information is collected.
-
-When disabled, anonymous usage statistics consisting only of the software version and total system capacity (e.g. TrueNAS 24.04.0, 55 TB) are collected.
+### Sending Usage Statistics
+To send anonymous usage statistics to TrueNAS, select the **Usage Collection** option.
 
 For more information about what usage data is collected, see the [TrueNAS Data Collection Statement]({{< ref "/SCALE/GettingStarted/UserAgreements/DataCollectionStatement" >}}).
 
 ### Showing Console Messages
-
 To show real-time console messages at the bottom of the browser window, select **Show Console Messages**.
 
 ## Localizing the TrueNAS System

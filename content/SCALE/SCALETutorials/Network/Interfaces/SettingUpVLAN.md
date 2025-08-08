@@ -20,22 +20,23 @@ To set up a VLAN interface, go to **Network**, click **Add** on the **Interfaces
 
 1. Select **VLAN** from the **Type** dropdown list. You cannot change the **Type** field value after clicking **Apply**.
 
-   {{< trueimage src="/images/SCALE/Network/AddInterfaceVLAN.png" alt="Add VLAN Interface Settings" id="Add VLAN Interface Settings" >}}
+   {{< trueimage src="/images/SCALE/Network/AddInterfaceVLANType.png" alt="Add VLAN Interface Settings" id="Add VLAN Interface Settings" >}}
 
-   Name populates with the default name **vlan1**. You cannot change the **Name** of the interface after clicking **Save**.
+2. Enter a name for the interface using the format **vlan*X*** where *X* is a number representing a non-parent interface.
+   Assing the first VLAN bridge **vlan0**.
 
-   Leave **Define Static IP Addresses** selected under **DHCP**.
+   You cannot change the **Name** of the interface after clicking **Save**.
 
-2. (Optional, but recommended) Enter any notes or reminders about this VLAN in **Description**.
+3. (Optional, but recommended) Enter any notes or reminders about this VLAN in **Description**.
 
-3. Select the interface in the **Parent Interface** dropdown list. This is typically an Ethernet card connected to a switch port already configured for the VLAN.
+4. Select the interface in the **Parent Interface** dropdown list. This is typically an Ethernet card connected to a switch port already configured for the VLAN.
 
-4. Enter the numeric tag for the interface in the **VLAN Tag** field. This is typically preconfigured in the switched network.
+5. Enter the numeric tag for the interface in the **VLAN Tag** field. This is typically preconfigured in the switched network.
 
-5. Select the VLAN [Class of Service](https://tools.ietf.org/html/rfc4761#section-4.2.7)  from the **Priority Code Point** dropdown list.
+6. Select the VLAN [Class of Service](https://tools.ietf.org/html/rfc4761#section-4.2.7)  from the **Priority Code Point** dropdown list.
 
-6. (Optional) Click **Add** to the right of **Aliases** to show additional IP address fields for each additional IP address to add to this VLAN interface.
+7. (Optional) Click **Add** to the right of **Aliases** to show additional IP address fields for each additional IP address to add to this VLAN interface.
 
-7. Click **Save**.
+8. Click **Save**.
 
-8. Test the network change when prompted.
+9. Test the network change when prompted.

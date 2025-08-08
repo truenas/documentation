@@ -16,17 +16,20 @@ To set up a LAGG, go to **Network**, click **Add** on the **Interfaces** widget 
 
 1. Select **Link Aggregation** from the **Type** dropdown list. You cannot change the **Type** field value after you click **Save**.
 
-   {{< trueimage src="/images/SCALE/Network/AddInterfaceLAGG.png" alt="Add LAGG Interface" id="Add LAGG Interface" >}}
+   {{< trueimage src="/images/SCALE/Network/AddInterfacePanel.png" alt="Add Interface" id="Add Interface" >}}
 
-   Name populates with the default name for a LAGG interface, **bond1**.
+2. Enter a name for the interface using the format **bond*X***, where *X* is a number representing a non-parent interface.
+   Assing the first LAGG interface **bond0**.
 
    You cannot change the **Name** of the interface after clicking **Apply**.
 
-   Leave **Define Static IP Addresses** selected under **DHCP**.
+3. (Optional, but recommended) Enter any notes or reminders about this particular LAGG interface in **Description**.
 
-2. (Optional, but recommended) Enter any notes or reminders about this particular LAGG interface in **Description**.
+4. Select the protocol from the **Link Aggregation Protocol** dropdown. Options are **LACP**, **FAILOVER**, or **LOADBALANCE**. Each option displays additional settings.
 
-3. Select the protocol from the **Link Aggregation Protocol** dropdown. Options are **LACP**, **FAILOVER**, or **LOADBALANCE**. Each option displays additional settings.
+   {{< trueimage src="/images/SCALE/Network/AddInterfaceLinkAggregationSettings.png" alt="Add Interface Settings" id="Add Interface Settings" >}}
+
+   ![AddInterfaceLinkAggregationSettings](/images/SCALE/Network/AddInterfaceLinkAggregationSettings.png "Add Interface Settings")
 
    {{< expand "LACP" "v" >}}
    **LACP** is the most common protocol for LAGG interfaces based on [IEEE specification 802.3ad](https://www.ieee802.org/3/hssg/public/apr07/frazier_01_0407.pdf).
@@ -36,7 +39,7 @@ To set up a LAGG, go to **Network**, click **Add** on the **Interfaces** widget 
 
    a. Select the hash policy from the **Transmit Hash Policy** dropdown list. **LAYER2+3** is the default selection.
 
-   b. Select the **LACPDU Rate** options are **Slow** or **Fast**.
+   b. Select the **LACPDU Rate** Option:
 
    **SLOW** (default) sets the heartbeat request to every second and the timeout to a three-consecutive heartbeat loss that is three seconds.
 
@@ -52,10 +55,10 @@ To set up a LAGG, go to **Network**, click **Add** on the **Interfaces** widget 
    Select the **Transmit Hash Policy** option from the dropdown list. **LAYER2+3** is the default selection.
    {{< /expand >}}
 
-4. Select the interfaces to use in the aggregation from the **Link Aggregation Interface** dropdown list.
+5. Select the interfaces to use in the aggregation from the **Link Aggregation Interface** dropdown list.
 
-5. (Optional) Click **Add** to the right of **Static IP Addresses** to show additional IP address fields for each additional IP address to add to this LAGG interface.
+6. (Optional) Click **Add** to the right of **Aliases** to show additional IP address fields for each additional IP address to add to this LAGG interface.
 
-6. Click **Save** when finished.
+7. Click **Save** when finished.
 
-7. Test the network change when prompted.
+8. Test the network change when prompted.

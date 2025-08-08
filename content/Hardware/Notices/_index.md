@@ -7,7 +7,6 @@ weight: 60
 aliases:
   - /hardware/notices/componentarticles/
   - /hardware/notices/componentarticles/lsi9300timeout/
-  - /files/Notice%20-%209.3%20to%209.10%20FAQ.pdf
 ---
 
 <div class="docs-sections">

@@ -64,7 +64,7 @@ To create a new user, click **Add**.
 Enter a personal name or description in **Full Name**, for example, *John Doe* or *Share Anonymous User*, then allow TrueNAS to suggest a simplified name derived from the **Full Name** or enter a name in **Username**.
 
 Enter and confirm a password for the user.
-Make sure the login password is enabled. Click the **Disable Password** toggle to enable/disable the login password. Note that leaving an empty string as your password results in activating the **Disable Password** toggle.
+Make sure the login password is enabled. Click the **Disable Password** toggle to enable/disable the login password.  
 Setting the **Disable Password** toggle to active (blue toggle) disables these functions:
 * The **Password** field becomes unavailable and TrueNAS removes any existing password from the account.
 * The **Lock User** option disappears.

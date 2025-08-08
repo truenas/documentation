@@ -16,14 +16,6 @@ aliases:
  - /hardware/legacyhardware/miniseries/truenas-minis-3rd-gen/minieoobm/
  - /hardware/legacyhardware/miniseries/truenas-minis-3rd-gen/minie+hug/
  - /hardware/legacyhardware/miniseries/truenas-minis-3rd-gen/minie+oobm/
- - /files/Mini-EOL.pdf
- - /files/MiniDataRecoveryGuide1.0.pdf
- - /files/MiniEE+XOOBM1.2.pdf
- - /files/MiniFamily1.0.pdf
- - /files/MiniX+HardwareUpgradesGuide1.0.pdf
- - /files/MiniX+XL+OOBM1.0.pdf
- - /files/MiniX+XL+OOBM1.1.pdf
- 
 ---
 
 ## TrueNAS Mini Series Document Archive

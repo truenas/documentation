@@ -13,7 +13,6 @@ tags:
 TrueNAS lets users expand Zvol and file-based LUNs to increase the available storage in an iSCSI share.
 
 ### Zvol LUNs
-
 To expand a Zvol LUN, go to **Datasets** and click the Zvol LUN name. The **Zvol Details** widget displays. Click the **Edit** button.
 
 {{< trueimage src="/images/SCALE/Datasets/DatasetZvolListingSCALE.png" alt="Edit Zvol LUN" id="Edit Zvol LUN" >}}
@@ -28,7 +27,6 @@ TrueNAS also does not allow users to increase the Zvol size past 80% of the pool
 {{< /hint >}}
 
 ### File LUNs
-
 Go to **Shares** and click **Configure** in the **Block (iSCSI) Shares Targets** screen, then select the **Extents** tab.
 
 {{< trueimage src="/images/SCALE/Shares/FileLUNsEditExtent.png" alt="Extents Screen" id="Extents Screen" >}}

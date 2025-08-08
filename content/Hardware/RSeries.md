@@ -7,8 +7,6 @@ aliases:
  - /hardware/rseries/rseriesbsg/
  - /hardware/rseries/rseriesoobm/
  - /hardware/rseries/rseriessov/
- - /files/R50BMPUM.pdf
- - /files/r50bsg3.0.pdf
 keyword:
  - enterprise storage solution
  - scalable storage systems

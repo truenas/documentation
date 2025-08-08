@@ -81,9 +81,6 @@ Click the component version number to see release notes for that component.
 
 {{< component-versions "25.10" >}}
 
-TrueNAS now uses Nvidia open source drivers to better support the latest Nvidia graphics cards.
-This means TrueNAS also now follows the [Nvidia Support Plan for Maxwell, Pascal, & Volta Architecture GPUs](https://www.nvidia.com/en-us/geforce/news/mafia-the-old-country-geforce-game-ready-driver/) and drops support for these architectures, including the popular 10-series cards.
-
 ### OpenZFS Feature Flags
 
 TrueNAS integrates many features provided by the upstream [OpenZFS project](https://openzfs.org/wiki/Main_Page).
