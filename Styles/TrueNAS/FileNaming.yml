@@ -1,0 +1,7 @@
+extends: existence
+message: "Use camelCase for image names and .png extension (lowercase)"
+level: suggestion
+tokens:
+  - '!\[.*\]\([^)]*\.(jpg|jpeg|JPG|JPEG)\)'
+  - '!\[.*\]\([^)]*[_-][^)]*\.png\)'
+  - '!\[.*\]\([^)]*[A-Z][a-z]+[A-Z][^)]*\.png\)'

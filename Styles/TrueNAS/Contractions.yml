@@ -1,0 +1,41 @@
+extends: substitution
+message: "Avoid contractions. Use '%s' instead of '%s'."
+level: error
+ignorecase: true
+action:
+  name: replace
+swap:
+  aren't: are not
+  can't: cannot
+  couldn't: could not
+  didn't: did not
+  don't: do not
+  doesn't: does not
+  hasn't: has not
+  haven't: have not
+  how's: how is
+  isn't: is not
+  it's: it is
+  shouldn't: should not
+  that's: that is
+  they're: they are
+  wasn't: was not
+  we're: we are
+  we've: we have
+  weren't: were not
+  what's: what is
+  when's: when is
+  where's: where is
+  won't: will not
+  you're: you are
+  you've: you have
+  I'm: I am
+  I've: I have
+  I'll: I will
+  I'd: I would
+  he's: he is
+  she's: she is
+  there's: there is
+  here's: here is
+  let's: let us
+  who's: who is
