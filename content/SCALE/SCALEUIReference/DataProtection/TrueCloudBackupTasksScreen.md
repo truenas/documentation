@@ -27,7 +27,7 @@ The widget header opens the [**TrueCloud Backup Tasks**](#truecloud-backup-tasks
 
 **Add** on the widget and the **TrueCloud Backup Tasks** screen opens the **[Add TrueCloud Backup Task Screen](#add-truecloud-backup-task-screen)**.
 
-Each task on the widget shows four icons for various functions:
+Each task on the widget includes a vertical ellipses <span class="material-icons">more_vert</span> icon that opens a dropdown menu with four options for various functions:
 
 * <span class="material-icons">edit</span> **Edit** opens the **[Edit TrueCloud Backup Task](#edit-truecloud-backup-task-screen)** screen populated with with the settings for that task.
 

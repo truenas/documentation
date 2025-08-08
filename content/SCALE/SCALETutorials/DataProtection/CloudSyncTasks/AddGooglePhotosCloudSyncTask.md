@@ -212,7 +212,7 @@ Click <i class="fa fa-refresh" aria-hidden="true" title="Dry Run"></i> **Dry Run
 During a dry run, TrueNAS sends or receives no data.
 A dry run can report successful even for a task that fails to transfer data due to misconfiguration
 
-Click <i class="fa fa-play" aria-hidden="true" title="Run Job"></i> **Run Job** to start the cloud sync task immediately.
+Click the vertical ellipses <span class="material-icons">more_vert</span> on the task and select <i class="fa fa-play" aria-hidden="true" title="Run Job"></i> **Run Job** to start the cloud sync task immediately.
 
 ### Troubleshooting
 
@@ -242,10 +242,10 @@ Review [Before You Begin](#before-you-begin) above and change the target folder 
 Organize your Google Photos library or local dataset as needed for the selected target.
 {{< /expand >}}
 
-After reviewing available logs, click <i class="material-icons" aria-hidden="true" title="Edit">edit</i> **Edit** on the task and review the configuration.
+After reviewing available logs, click the vertical ellipses <span class="material-icons">more_vert</span> on the task and select <i class="material-icons" aria-hidden="true" title="Edit">edit</i> **Edit** and review the configuration.
 Compare configured options to the requirements in [Before You Begin](#before-you-begin) above and correct any issues.
 
 If a pull task is successful but some or all files are missing from the local dataset, review your library organization in Google Photos.
 Pull tasks configured with <file>/album</file> as the target folder only transfer files organized into albums.
 Files uploaded to Google Photos but not added to an album are not transferred.
-Using the Google Photos UI, create one or more albums and add all files to an album then click <i class="fa fa-play" aria-hidden="true" title="Run Job"></i> **Run Job** to re-run the cloud sync task.
+Using the Google Photos UI, create one or more albums and add all files to an album then click the vertical ellipses <span class="material-icons">more_vert</span> on the task and select <i class="fa fa-play" aria-hidden="true" title="Run Job"></i> **Run Job** to re-run the cloud sync task.
