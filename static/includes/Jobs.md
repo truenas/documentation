@@ -19,6 +19,6 @@ Click on the **All**, **Active**, or **Failed** button at the top of the screen 
 
 Click **View** next to a task to see the log information and error message for that task.
 
-{{< trueimage src="/images/SCALE/Dashboard/JobsScreen.png" alt="Jobs Screen" id="Jobs Screen" >}}
+{{< trueimage src="/images/SCALE/Dashboard/TasksScreen.png" alt="Jobs Screen" id="Jobs Screen" >}}
 
 For more information, see [**Jobs Screens**]({{< ref "JobsScreens" >}}).

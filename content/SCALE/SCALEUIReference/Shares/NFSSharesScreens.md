@@ -11,128 +11,100 @@ tags:
 - shares
 ---
 
+The **Sharing** screen opens after you click **Shares** on the main navigation panel.  
 
 ## Unix (NFS) Share Widget
-
-If you have not added NFS shares to the system, the NFS widget shows text stating general information about the Unix (NFS) shares until a share is added.
+The **Unix (NFS) Share <span class="material-icons">launch</span>** widget includes the widget toolbar that displays the status of the NFS service and the **Add** button.
+After adding NFS shares, the widget displays a list of the shares below the toolbar.
 
 {{< trueimage src="/images/SCALE/Shares/NFSShareWidgetNoShare.png" alt="Unix (NFS) Share Widget" id="Unix (NFS) Share Widget" >}}
-
-**Add** at the top right of the widget opens the [**Add NFS** screen](#add-and-edit-nfs-screens) where you configure NFS shares.
-
-After adding an NFS share, it is listed in the table on the widget.
-
-{{< trueimage src="/images/SCALE/Shares/NFSShareWidgetWithShares.png" alt="Unix (NFS) Share Widget with Shares" id="Unix (NFS) Share Widget with Shares" >}}
-
-The **Unix (NFS) Share <span class="material-icons">launch</span>** header shows the status of the NFS service as either **STOPPED** (red) or **RUNNING** (green).
-Before adding the first share, the **STOPPED** status displays in the default color.
-The header is a link that opens the [**NFS** screen](#nfs-screen).
-
-The <span class="material-icons">more_vert</span> dropdown list shows three options available to NFS shares and the NFS service in general:
-
-* **Turn Off/ON Service** toggles to **Turn Off Service** when the NFS service is enabled, and to **Turn On Service** when the NFS service is disabled.
-* **Config Service** opens the [**NFS**]({{< ref "NFSServiceScreen" >}}) configuration screen.
-* **NFS Sessions** that opens the [**NFS Sessions** screen](#nfs-sessions-screen).
-
-The widget shows a table listing nfs shares created in TrueNAS.
-Each NFS share row on the **Unix (NFS) Shares** widget shows the path to the shared dataset, a description if one is entered when the share is added, an **Enabled** toggle that allows you to enable or disable the share.
-The <span class="material-icons">more_vert</span> dropdown list for each share shows two options:
-
-* **<span class="material-icons">edit</span> Edit** opens the [**Edit NFS** screen](#add-and-edit-nfs-screens).
-* **<span class="material-icons">delete</span> Delete** opens the [**Delete** dialog](#delete-nfs-share-dialog).
-
-### Enable Service Dialog
 
 After adding the first NFS share, the system opens an enable service dialog.
 
 {{< trueimage src="/images/SCALE/Shares/SharingNFSEnableServiceDialog.png" alt="Unix Enable Service" id="Unix Enable Service" >}}
+
 **Enable Service** turns the NFS service on and changes the toolbar status to **Running**.
 
 The **Enable** toggle for each share shows the current status of the share.
 Disabling the share does not delete the configuration from the system.
 
-### Delete NFS Share Dialog
-
 The <span class="material-icons">delete</span> delete icon displays a delete confirmation dialog that removes the share from the system.
+
+{{< trueimage src="/images/SCALE/Shares/NFSShareWidgetDeleteDialog.png" alt="Unix (NFS) Share Delete" id="Unix (NFS) Share Delete" >}}
+
+Click on **Unix (NFS) Share** to open the **Sharing > NFS** screen with the list view of NFS shares.
+
+The NFS share on the widget opens the **[Edit NFS](#add-and-edit-nfs-screens)** screen.
+
+**Add** opens the [**Add NFS** screen](#add-and-edit-nfs-screens).
+
+{{< trueimage src="/images/SCALE/Shares/NFSWidgetOptions.png" alt="Unix (NFS) Share Widget Options" id="Unix (NFS) Share Widget Options" >}}
+
+The <span class="material-icons">more_vert</span> icon displays three options available to NFS shares in general:
+* **Turn Off Service** what shows when the NFS service is enabled and that toggles to **Turn On Service** when the NFS service is disabled.
+* **Config Service** that opens the [**NFS**]({{< ref "NFSServiceScreen" >}}) configuration screen.
+* **NFS Sessions** that opens the [**NFS Sessions** screen](#nfs-sessions-screen).
+
+The toolbar displays the **STOPPED** service status in red before you start the service or click **Enable Service** when the dialog displays.
+When service starts, it displays **RUNNING** in blue.
+
+## Sharing NFS Details Screen
+The **Sharing > NFS** details screen displays the same list of NFS shares as the **Unix (NFS) Share** widget.
+
+Customize the information using the **Columns** dropdown list.
+Select from the **Unselect All,** **Description**, **Enabled**, and **Reset to Defaults** options.
+
+Each share includes these options:
+* **Edit** opens the **Edit NFS** configuration screen.
+* **Delete** opens an **Unshare *path*** confirmation dialog.
 
 {{< trueimage src="/images/SCALE/Shares/SharingNFSDeleteDialog.png" alt="Sharing NFS Delete" id="Sharing NFS Delete" >}}
 
-Select **Confirm** to activate the **Delete** button.
-
-## NFS Screen
-
-The **NFS** screen shows an expanded presentation of the table on the **Unix (NFS) Shares** widget.
-
-{{< trueimage src="/images/SCALE/Shares/NFSSharesScreen.png" alt="Shares NFS Screen" id="Shares NFS Screen" >}}
-
-**Shares** in the breadcrumb at the top of the screen returns you to the main **Shares** dashboard.
-
-**NFS Sessions** opens the [**NFS Session**](#nfs-sessions-screen) screen.
-
-**Add** opens the [**Add NFS**](#add-and-edit-nfs-screens) configuration screen.
-
-### NFS Table
-
-The **NFS** table lists all NFS shares added to the system.
-The table header shows the status of the NFS service as stopped or running.
-The table columns show the path to the dataset for the share, the share description if added during share creation, networks, and hosts.
-The **Enabled** toggle allows you to enable/disable the share. When enabled, the share path is available when the NFS service is active.
-If disabled, the share is disabled but not deleted from the system.
-
-**Columns** shows a set of options to customize the list view.
-Options include **Unselect All**, **Path**, **Description**, **Enabled** and **Reset to Defaults**.
-
-The <span class="material-icons">more_vert</span> dropdown list at the right of each table row shows two options for a share:
-
-* **Edit** opens the **[Edit NFS](#add-and-edit-nfs-screens)** screen.
-* **Delete** displays the **[Delete](#delete-nfs-share-dialog)** dialog.
+Select **Confirm** and then **UNSHARE** to remove the share without affecting the data in the shared dataset.
 
 ## Add and Edit NFS Screens
-
-The **Add NFS** and **Edit NFS** show the same **Basic Options** and **Advanced Options** settings.
+The **Add NFS** and **Edit NFS** display the same **Basic Options** and **Advanced Options** settings.
 
 {{< hint type=info title="UDP Protocol and NFS" >}}
 {{< include file="/static/includes/NFSServiceUDPWarning.md" >}}
 {{< /hint >}}
 
-### Basic Options
-
-The **Basic Options** settings on the **Add** and **Edit NFS** screens show by default, and at the top of the screen when **Advanced Options** is selected.
+### Basic Options Settings
+The **Basic Options** settings display by default and also show in the **Advanced Options** settings.
 
 {{< trueimage src="/images/SCALE/Shares/AddNFSScreen.png" alt="Add NFS Basic Options" id="Add NFS Basic Options" >}}
 
 {{< include file="/static/includes/FileExplorerFolderIcons.md" >}}
-
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Path** | Specifies the mount path for the share. It includes a blank field and a file browser field directly below it. The blank field allows text entry of a share mount path or allows Truenas to populate it with the path to the dataset selected in the file browser field. The file browser selects the mount path to the share dataset on the local file system that TrueNAS exports over the NFS protocol. Use the <span class="material-icons">arrow_right</span> icon to the left of <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M5 21L3 9h18l-2 12zm5-6h4q.425 0 .713-.288T15 14t-.288-.712T14 13h-4q-.425 0-.712.288T9 14t.288.713T10 15M6 8q-.425 0-.712-.288T5 7t.288-.712T6 6h12q.425 0 .713.288T19 7t-.288.713T18 8zm2-3q-.425 0-.712-.288T7 4t.288-.712T8 3h8q.425 0 .713.288T17 4t-.288.713T16 5z"/></svg> to expand the dataset directory tree. |
-| **Create Dataset** | Creates a dataset for a share while configuring the share. Inactive until the parent dataset is selected. It opens the **Create Dataset** dialog, where you enter a name for a new dataset. The dataset name becomes the last part of the NFS share path. **Create** adds the dataset and populates **Path** field on the **Add NFS** screen. |
-| **Description** | A text-entry field for a brief description or notes about how this share is used. The description entered shows in the **Description** column on the **Unix (NFS) Shares** widget on the **Shares** dashboard and the **NFS** table on the **NFS** screen. |
+| **Path** | Enter the path or use the <span class="material-icons">arrow_right</span> icon to the left of **<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M5 21L3 9h18l-2 12zm5-6h4q.425 0 .713-.288T15 14t-.288-.712T14 13h-4q-.425 0-.712.288T9 14t.288.713T10 15M6 8q-.425 0-.712-.288T5 7t.288-.712T6 6h12q.425 0 .713.288T19 7t-.288.713T18 8zm2-3q-.425 0-.712-.288T7 4t.288-.712T8 3h8q.425 0 .713.288T17 4t-.288.713T16 5z"/></svg>/mnt** to locate the dataset and populate the path. **Path** is the directory tree on the local file system that TrueNAS exports over the SMB protocol. |
+| **<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M5 21L3 9h18l-2 12zm5-6h4q.425 0 .713-.288T15 14t-.288-.712T14 13h-4q-.425 0-.712.288T9 14t.288.713T10 15M6 8q-.425 0-.712-.288T5 7t.288-.712T6 6h12q.425 0 .713.288T19 7t-.288.713T18 8zm2-3q-.425 0-.712-.288T7 4t.288-.712T8 3h8q.425 0 .713.288T17 4t-.288.713T16 5z"/></svg>/mnt** | Click the <span class="material-icons">arrow_right</span> icon to expand the path at each dataset until you get to the SMB share dataset you want to use. This populates the **Path**. |
+| **Create Dataset** | Click to open the **Create Dataset** dialog. Enter a name to create a new dataset for the share. Click **Create** to add the dataset and populate the **Name** field on the **Add NFS** screen. |
+| **Description** | Enter any notes or reminders about the share. |
 | **Enabled** | Select to enable this NFS share. Clear the checkbox to disable this NFS share without deleting the configuration. |
-| **Networks** | Defines an authorized network, and any added, restricts access to all other networks. Leave empty to allow all networks. **Add** shows the **Networks** IP address and CIDR fields to enter an allowed network IP and select the mask CIDR notation. Click **Add** for each network address and CIDR you want to define as an authorized network. |
-| **Add hosts** | Defines allowed clients (hosts) you want to allow to connect to the share. Defining authorized systems restricts access to all other systems. Leave the field empty to allow all systems access to the share. **Add** shows the **Authorized Hosts and IP addresses** field. Enter a host name or IP address to allow that system access to the NFS share. Click **Add** for each allowed system you want to define.  |
+| **Networks** | Click **Add** to display the **Networks** IP address and CIDR fields. Enter an allowed network IP and select the mask CIDR notation. Click **Add** for each network address and CIDR you want to define as an authorized network. Defining an authorized network restricts access to all other networks. Leave empty to allow all networks. |
+| **Add hosts** | Click **Add** to display the **Authorized Hosts and IP addresses** field. Enter a host name or IP address to allow that system access to the NFS share. Click **Add** for each allowed system you want to define. Defining authorized systems restricts access to all other systems. Leave the field empty to allow all systems access to the share. |
 {{< /truetable >}}
 
 ### Advanced Options Settings
-
-**Advanced Options** settings tune the share access permissions and define authorized networks. **Advanced Options** shows the **Access** settings listed below.
+**Advanced Options** settings tune the share access permissions and define authorized networks.
+Only the **Access** settings display on the **Advanced Options** screen.
 
 {{< trueimage src="/images/SCALE/Shares/AddNFSAdvancedOptionsAccessSettings.png" alt="Add NSF Advanced Options Access Settings" id="Add NSF Advanced Options Access Settings" >}}
 
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Read-Only** | Selecting this to enable read-only prohibits writing to the share. |
-| **Maproot User** | Text entry field that allows manual entry of a user name or selecting a user from the dropdown list. Typing in the field filters the dropdown list to match what is entered. Entering a user applies permissions for that user to the **root** user, and limits the root user to the permissions of that user. |
-| **Maproot Group** | Text entry field that allows manual entry of a group name or selecting a group from the dropdown list. Typing in the field filters the dropdown list to match what is entered. Entering a group applies permissions for that group to the **root** user and the root user is limited to the permissions of that group. |
-| **Mapall User** | Text entry field that allows manual entry of a user name or selecting a user from the dropdown list. Typing in the field filters the dropdown list to match what is entered. Entering a user applies permission for the chosen user to all clients, and the specified permissions of that user are used by all clients. |
-| **Mapall Group** | Text entry field that allows manual entry of a group name or selecting a group from the dropdown list. Typing in the field filters the dropdown list to match what is entered. Entering a group applies permissions for the chosen group to all clients, and the specified permissions of that group are used by all clients. |
-| **Security** | Sets the level of authentication and cryptographic protection to the option selected on the dropdown list. Options are **SYS**, **KRB5**, **KRB5I**, **KRB5P**. Selecting **KRB5** allows you to use a Kerberos ticket. **SYS** or none should be used if no KDC is available. If a KDC is available, e.g., Active Directory, **KRB5** is recommended. If desired **KRB5I** (integrity protection) and/or **KRB5P** (privacy protection) can be included with **KRB5**. |
+| **Read-Only** | Select to prohibit writing to the share. |
+| **Maproot User** | Enter a string or select a user from the dropdown to apply permissions for that user to the *root* user. |
+| **Maproot Group** | Enter a string or select a group from the dropdown to apply permissions for that group to the *root* user. |
+| **Mapall User** | Enter a string or select a user to apply permission for the chosen user to all clients. |
+| **Mapall Group** | Enter a string or select a group to apply permission for the chosen group to all clients. |
+| **Security** | Select a security option from the dropdown list. Options are **SYS**, **KRB5**, **KRB5I**, **KRB5P**. Selecting **KRB5** allows you to use a Kerberos ticket. |
 {{< /truetable >}}
 
 #### Security Types
-
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
@@ -143,17 +115,11 @@ The **Basic Options** settings on the **Add** and **Edit NFS** screens show by d
 {{< /truetable >}}
 
 ## NFS Sessions Screen
-
-The **NFS Sessions** screen shows a table of sessions with the IP address and Export status of each session listed.
-You can access the **NFS Sessions** screen from the :
-
-* <i class="material-icons" aria-hidden="true" title="list">list</i> icon on the **NFS** service row on the **System > Services** screen
-* <span class="material-icons">more_vert</span> on the **Shares > Unix (NFS) Shares** widget
-* **NFS Sessions** on the **NFS** screen
+You can access the **NFS Sessions** screen from the **NFS** option on the **System > Services** screen with the <i class="material-icons" aria-hidden="true" title="list">list</i> icon and from the <span class="material-icons">more_vert</span> on the **Shares > Unix (NFS) Shares** widget.
 
 {{< trueimage src="/images/SCALE/Shares/NFSSessionsScreen.png" alt="NFS Sessions Screen" id="NFS Sessions Screen" >}}
 
-This screen shows NFSv3 clients that have successfully completed an MNT request by reading the NFS **[rmtab](https://linux.die.net/man/8/mountd)** file.
+This screen shows NFSv3 clients that have successfully completed a MNT request by reading the NFS **[rmtab](https://linux.die.net/man/8/mountd)** file.
 Clients with appropriate permissions are removed from the list on a successful UMNT request.
 
 However, this list can become inaccurate due to the different ways that a client can disconnect from a share.
@@ -161,8 +127,8 @@ To help prevent stale entries from accumulating, the sessions list is cleared on
 
 **Refresh** updates the information displayed on the screen.
 
-**Column** shows a dropdown list of options for the selected tab to customize the information included on the screen.
+**Column** displays a dropdown list of options for the selected tab to customize the information included on the screen.
 
-The breadcrumb links at the top of the screen return you to the screen you click.
+Click **Sharing** on the top breadcrumb to open the Shares dashboard.
 
 {{<include file="/static/includes/addcolumnorganizer.md">}}

@@ -68,7 +68,7 @@ Creating an SMB share on your system requires adding the share and then getting 
 
    The **Add Dataset** and the **Add SMB** share screens allow TrueNAS to create a dataset and SMB share from that screen.
    Use either option to create a basic SMB share.
-
+   
    When creating an SMB share that requires customization or is intended for a specific purpose, such as working with Veeam Backup & Restore immutability or a repository for block or fast cloning (requires an Enterprise license), use the **Add SMB** screen presets and advanced options to create the share and dataset for these special SMB shares.
    For more information on Veeam SMB shares, refer to the [Solutions > Integrations](https://www.truenas.com/docs/solutions/integrations/) **Veeam** and **Veeam Immutability** guides.
 
@@ -76,7 +76,7 @@ Creating an SMB share on your system requires adding the share and then getting 
 
    This article provides instructions on adding a dataset while adding the share using the **Add SMB** screen
 
-3. [Modify the share permissions](#tuning-the-dataset-filesystem-permissions).
+3. [Modify the share permissions](#tuning-the-dataset-acl).
 
    After adding or modifying the user account for the share, edit the dataset permissions.
 
@@ -124,12 +124,6 @@ TrueNAS creates the ZFS dataset with these settings:
 * **ACL Mode** set to **Restricted**
    The **ACL Type** influences the **ACL Mode** setting. When **ACL Type** is set to **Inherit**, you cannot change the **ACL Mode** setting.
    When **ACL Type** is set to **NFSv4**, you can change the **ACL Mode** to **Restricted**.
-   
-   {{< hint type=note >}}
-   For datasets with **NFSv4** ACL type, SMB clients automatically use access-based enumeration. 
-   This means directory listings over SMB only include files and directories that the client has read permissions for. 
-   This behavior is enabled by default and matches FreeBSD behavior.
-   {{< /hint >}}
 
 * **Case Sensitivity** set to **Insensitive**
 
@@ -145,7 +139,7 @@ To create a basic Windows SMB share and a dataset, go to **Shares**, then click 
 1. Enter or browse to select the SMB share mount path (parent dataset where you want to add a dataset for this share).
    The blank **Path** field populates with the path.
    The **Path** file browser field is the directory tree on the local file system that TrueNAS exports over the SMB protocol.
-
+   
    {{< include file="/static/includes/FileExplorerFolderIcons.md" >}}
 
 2. Click **Create Dataset**.
@@ -215,8 +209,6 @@ If the share is nested under parent datasets, see [Using the Traverse Permission
 To prohibit writes to the share, select **Export Read-Only**.
 
 Select **Access Based Share Enumeration** to restrict share visibility for users with read or write access to the share.
-This setting applies to datasets with a POSIX ACL type. 
-For datasets with NFSv4 ACL type, access-based enumeration is automatically enabled and does not allow disabling.
 See the [smb.conf](https://www.samba.org/samba/docs/current/man-html/smb.conf.5.html) manual page.
 {{< /expand >}}
 <!-- comment out legacy content
@@ -386,10 +378,10 @@ Repeat for each TrueNAS system with SMB shares to add as an external share.
 
 ### Setting Up an External Share with an Earlier Release
 
-When setting up an external share between TrueNAS systems that are on different releases, for example, one system is on 25.04 and the other is on the latest release of 25.10, follow the external share instructions for each release.
+When setting up an external share between TrueNAS systems are on different releases, for example, one system is on 25.04 and the other is on the latest release of 25.10, follow the external share instructions for each release.
 
 Set the TrueNAS 25.04 system SMB **Purpose** to the default preset, leave the default settings associated with this share as is, and then enter the redirect path to share on the 25.10 system as **EXTERNAL:*ipaddress\sharename*** in the **Path** field. For example, *EXTERNAL:10.220.3.33\testshare2*.
-Be aware, changing the path also changes the SMB share name. Verify the share name is set to the desired or existing share name and not renamed to the redirect string in **Path**.
+Be aware, changing the path also changes the SMB share name so verify the share name is set to the desired or existing share name and not renamed to the redirect string in **Path**.
 
 {{< trueimage src="/images/SCALE/Shares/SetUpExternalSMBShare.png" alt="Set Up Another External SMB Share" id="Set Up Another External SMB Share" >}}
 
@@ -398,7 +390,7 @@ Set the TrueNAS 25.10 system SMB **Purpose** to **External Share**, and then ent
 {{< trueimage src="/images/SCALE/Shares/AddingAnExternalShare.png" alt="Set Up Another External SMB Share" id="Set Up Another External SMB Share" >}}
 
 Add descriptions to each share that identify the purpose of the share.
-The description shows on the **Windows (SMB) Shares** widget and the **SMB** screen.
+The description shows on the **Windows (SMB) Shares** widget and on the **SMB** screen.
 
 **Save** changes made to the share.
 

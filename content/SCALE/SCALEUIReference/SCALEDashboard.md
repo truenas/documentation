@@ -73,13 +73,10 @@ The **CPU** widgets show the CPU model, dynamic gauges, and graphs of CPU usage 
 
 The widget shows gauges and graphs showing CPU statistics:
 * **CPU Model** widget shows the CPU model.
-* **CPU Usage** gauge shows the average percent of usage for the CPU cores.
+* **CPU Usage** gauge showing the average percent of usage for the CPU cores.
 * **CPU Recent Usage** gauge that shows recent CPU usage updated in realtime, and includes the CPU model number, number of cores, and physical cores.
 * **CPU Usage per Core** bar graph that shows CPU usage per core.
 * **CPU Temperature per Core** bar graph that shows CPU **Usage** in blue and **Temperature** in orange.
-* **CPU Recent Temperature** gauge that shows recent CPU temperatures updated in real time.
-* **CPU Overview** widget shows the CPU model, number of cores, number of threads, highest usage percentage, hottest measured temperature, CPU average usage gauge, and bar graph of CPU usage per core.
-* **CPU Temp** widget shows the current temperature of the system CPU.
 {{< /expand >}}
 
 {{< expand "Memory Widget" "v" >}}
