@@ -10,6 +10,12 @@ pipeline {
   }
 
   stages {
+    stage('Update Modules') {
+        steps {
+            sh 'hugo mod get -u github.com/truenas/docs-shared'
+            sh 'hugo mod tidy'
+        }
+    }
     stage('Build') {
         steps {
             sh 'npm install -D --save autoprefixer'

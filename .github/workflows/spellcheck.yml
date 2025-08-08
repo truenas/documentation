@@ -7,6 +7,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - name: Download shared ignore file
+        run: |
+          curl -o words-to-ignore.txt https://raw.githubusercontent.com/truenas/docs-shared/refs/heads/main/words-to-ignore.txt
       - uses: matheus23/md-spellcheck-action@v4.2.2
         with:
           files-to-check: "./content/*/*.md"
