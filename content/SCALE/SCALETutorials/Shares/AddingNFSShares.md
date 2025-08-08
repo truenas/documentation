@@ -183,6 +183,8 @@ For example, `sudo mount -t nfs -o rw,nconnect=16 10.239.15.110:/mnt/Pool1/NFS_S
 By default, anyone who connects to the NFS share only has read permission.
 To change the default permissions, edit the share, open the **Advanced Options**, and change the **Access** settings.
 
+{{< include file="/static/includes/NFSUpdateTime.md" >}}
+
 {{< hint type=important >}}
 You must have ESXI 6.7 or later for read/write functionality with NFSv4 shares.
 {{< /hint >}}
