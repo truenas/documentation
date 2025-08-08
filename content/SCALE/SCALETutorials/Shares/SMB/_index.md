@@ -69,7 +69,7 @@ Creating an SMB share on your system requires adding the share and then getting 
    The **Add Dataset** and the **Add SMB** share screens allow TrueNAS to create a dataset and SMB share from that screen.
    Use either option to create a basic SMB share.
 
-   When creating an SMB share that requires customization or is intended for a specific purpose, such as working with Veeam Backup & Restore immutability or a repository for block or fast cloning (requires an Enterprise license), use the **Add SMB** screen presets and advanced options to create the share and dataset for these special SMB shares.
+   When creating an SMB share that requires customization or is intended for a specific purpose, such as working with Veeam Backup & Restore immutability or a repository for block or fast cloning (requires an Enterprise license), use the **Add SMB** screen **Purpose** presets to create the share and dataset for these special SMB shares.
    For more information on Veeam SMB shares, refer to the [Solutions > Integrations](https://www.truenas.com/docs/solutions/integrations/) **Veeam** and **Veeam Immutability** guides.
 
    When setting up multi-protocol (SMB and NFS) shares, refer to the [Multiprotocol Shares]({{< relref "MixedModeShares.md" >}}) tutorial for configuration instructions.
@@ -138,12 +138,14 @@ This default ACL is restrictive and only grants access to the dataset owner and 
 You can modify the ACL later according to your use case.
 {{< /expand >}}
 
+Before you begin this procedure, if you want to organize the SMB share dataset under a parent dataset (for example, under *smb-shares*), create that dataset so you can select it as the parent in step 2 below.
+
 To create a basic Windows SMB share and a dataset, go to **Shares**, then click **Add** on the **Windows Shares (SMB)** widget to open the **Add Share** screen.
 
 {{< trueimage src="/images/SCALE/Shares/AddShareBasicOptions.png" alt="Add SMB Basic Options" id="Add SMB Basic Options" >}}
 
 1. Enter or browse to select the SMB share mount path (parent dataset where you want to add a dataset for this share).
-   The blank **Path** field populates with the path.
+   The blank **Path** field populates with the path selected in the file browser field directly below it.
    The **Path** file browser field is the directory tree on the local file system that TrueNAS exports over the SMB protocol.
 
    {{< include file="/static/includes/FileExplorerFolderIcons.md" >}}
@@ -189,7 +191,7 @@ Start or restart the SMB service when prompted.
 
 ### Configuring Share Advanced Options Settings
 
-A basic SMB share does not need to use the **Advanced Options** settings, but if you set **Purpose** to **Time Machine Share**, **Time Locked Share**, or **Private Dataset Share, or External**, click **Advanced Options** to finish customizing the SMB share settings.
+A basic SMB share does not need to use the **Advanced Options** settings, but if you set **Purpose** to **Time Machine Share**, **Time Locked Share**, or **Private Dataset Share**, or **External**, click **Advanced Options** to finish customizing the SMB share settings.
 
 See [SMB Shares Screens]({{< ref "SMBSharesScreens" >}}) for all settings and other possible use cases.
 

@@ -34,9 +34,7 @@ To manage an SMB share, click <span class="material-icons">more_vert</span> drop
 ## Modifying ACL Permissions for SMB Shares
 
 You have two options that modify ACL permissions for SMB shares:
-
 * **Edit Share ACL** modifies ACL permissions that apply to the SMB share.
-
 * **Edit Filesystem ACL** modifies ACL permissions at the share dataset level.
 
 See the [ACL Primer](https://www.truenas.com/docs/references/aclprimer/) for general information on Access Control Lists (ACLs) in general, the [Permissions]({{< ref "PermissionsSCALE" >}}) article for more details on configuring ACLs, and [**Edit ACL** Screen]({{< ref "EditACLScreens" >}}) for more information on the dataset ACL editor screens and setting options.
