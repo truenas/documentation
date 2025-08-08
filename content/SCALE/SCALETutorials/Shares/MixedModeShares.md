@@ -13,6 +13,7 @@ tags:
 {{< include file="/static/includes/TimeMachineMultiprotocol.md" >}}
 
 ## About Multiprotocol Shares
+
 A multi-protocol or mixed-mode NFS and SMB share supports both NFS and SMB protocols for sharing data.
 Multi-protocol shares allow clients to use either protocol to access the same data.
 This can be useful in environments with a mix of Windows systems and Unix-like systems, especially if some clients lack an SMB client.
@@ -31,6 +32,7 @@ Multi-protocol shares are not compatible with APPL extensions such as Apple Time
 Choosing to configure a multi-protocol share disables options to enable AAPL extensions globally.
 
 ## First Steps
+
 Before adding a multi-protocol SMB and NFS share to your system:
 
 1. [Configure and start](#configuring-and-starting-share-services) the SMB and NFS services.
@@ -52,7 +54,7 @@ You can either use the **Shares** screen **Config Service** option on both the *
 
 Unless you need a specific setting or are configuring a unique network environment, we recommend using the default SMB service settings.
 
-After configuring the SMB and NFS share services, start the services. 
+After configuring the SMB and NFS share services, start the services.
 
 From the **Shares** screen, click on the **Windows (SMB) Shares** <span class="material-icons">more_vert</span> to display the service options, which are **Turn Off Service** if the service is running or **Turn On Service** if the service is not running.
 
@@ -122,7 +124,7 @@ TrueNAS allows you to create the dataset and add a multiprotocol (SMB and NFS) s
 
 Select the dataset you want to be the parent of the multi-mode dataset, then click **Add Dataset**.
 
-Enter a name for the dataset. 
+Enter a name for the dataset.
 
 Select **Multiprotocol** from the **Dataset Preset** dropdown.
 The share configuration options display with **Create NFS Share** and **Create SMB Share** preselected.
@@ -146,7 +148,7 @@ After adding the dataset, edit the dataset ACL.
 To create a share and a dataset from the **Add SBM** share screen, go to **Shares**, and click **Add** on the **Windows (SMB) Shares** widget to open the **Add SMB** screen.
 
 1. Enter or browse to select the parent dataset where you want to add the share dataset, then click **Create Dataset**.
-   Enter a name for the dataset/share, then click **Create Dataset**. The **Path** field populates with the path to the dataset and the **Name** field populates with the dataset/share name. Both the dataset and the share have the same name.
+   Enter a name for the dataset/share, then click **Create Dataset**. The **Path** field populates with the path to the dataset, and the **Name** field populates with the dataset/share name. Both the dataset and the share have the same name.
    
 2. Select **Multi-Protocol Shares** on the **Purpose** dropdown list.
    This applies the pre-determined **Other Options** selected on the **Advanced Options** screen.
@@ -164,14 +166,14 @@ You can modify share settings after creating it.
 
 ### Editing the NFS Share
 
-After creating the multi-protocol share on the **Add Dataset** screen, go to **Shares** and edit the NFS share. 
+After creating the multi-protocol share on the **Add Dataset** screen, go to **Shares** and edit the NFS share.
 
-1. Select the new share listed on **Unix (NFS) Shares** widget and then click **Edit**. 
+1. Select the new share listed on **Unix (NFS) Shares** widget and then click **Edit**.
    The **Edit NFS** screen opens with the **Basic Options** settings showing.
 
     {{< trueimage src="/images/SCALE/Shares/AddNFSScreen.png" alt="Add NFS Share" id="Add NFS Share" >}}
 
-2. Enable Kerberos security. Click **Advanced Options**. 
+2. Enable Kerberos security. Click **Advanced Options**.
     Select **KRB5** from the **Security** dropdown to enable the Kerberos ticket generated when you [joined Active Directory](#joining-active-directory).
 
    {{< trueimage src="/images/SCALE/Shares/EditNFSShareAdvancedSecuritySetting.png" alt="Advanced Options Security Settings" id="Advanced Options Security Settings" >}}

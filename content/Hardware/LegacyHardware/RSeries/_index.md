@@ -5,6 +5,8 @@ geekdocCollapseSection: true
 weight: 20
 aliases:
  - /hardware/legacyhardware/rseries/r20a/
+ - /files/RSeriesBSG1.0.pdf
+ - /files/RSeriesOOBM1.0.pdf
 ---
 
 ## TrueNAS R-Series Document Archive
