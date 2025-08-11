@@ -1,0 +1,103 @@
+name: Vale Linting
+
+on:
+  pull_request:
+    paths:
+      - '**/*.md'
+      - '**/*.txt'
+      - '.vale.ini'
+      - 'Styles/**'
+
+jobs:
+  vale:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install Vale
+        run: |
+          wget -qO- https://github.com/errata-ai/vale/releases/download/v3.12.0/vale_3.12.0_Linux_64-bit.tar.gz | tar -xzf - -C /usr/local/bin vale
+          chmod +x /usr/local/bin/vale
+
+      - name: Get changed markdown/text files
+        id: changed-files
+        uses: tj-actions/changed-files@v44
+        with:
+          files: |
+            **/*.md
+            **/*.txt
+          separator: " "
+
+      - name: Run Vale
+        continue-on-error: true
+        run: |
+          vale sync
+          if [ "${{ steps.changed-files.outputs.any_changed }}" == "true" ]; then
+            echo "Running Vale on changed files: ${{ steps.changed-files.outputs.all_changed_files }}"
+            vale --output=JSON ${{ steps.changed-files.outputs.all_changed_files }} > vale-results.json || true
+          else
+            echo "No markdown or text files changed, skipping Vale check"
+            echo '{}' > vale-results.json
+          fi
+          cat vale-results.json
+
+      - name: Comment PR
+        uses: actions/github-script@v7
+        if: github.event_name == 'pull_request'
+        with:
+          script: |
+            const fs = require('fs');
+            try {
+              const valeResults = JSON.parse(fs.readFileSync('vale-results.json', 'utf8'));
+              let comment = '## Vale Style Guide Issues\n\n';
+              
+              // Count totals
+              let totalIssues = 0;
+              let errorCount = 0;
+              let warningCount = 0;
+              let suggestionCount = 0;
+              
+              for (const [file, issues] of Object.entries(valeResults)) {
+                totalIssues += issues.length;
+                for (const issue of issues) {
+                  if (issue.Severity === 'error') errorCount++;
+                  else if (issue.Severity === 'warning') warningCount++;
+                  else suggestionCount++;
+                }
+              }
+              
+              comment += `📊 **Summary**: ${totalIssues} issues found - ${errorCount} errors, ${warningCount} warnings, ${suggestionCount} suggestions\n\n`;
+              
+              if (totalIssues === 0) {
+                comment = '## Vale Style Guide Issues\n\n✅ No style guide issues found!';
+              } else {
+                comment += '**All files with issues:**\n\n';
+                
+                // Show all files with issues (no limit)
+                const sortedFiles = Object.entries(valeResults)
+                  .filter(([file, issues]) => issues.length > 0)
+                  .sort(([,a], [,b]) => b.length - a.length);
+                
+                for (const [file, issues] of sortedFiles) {
+                  comment += `### ${file} (${issues.length} issues)\n\n`;
+                  
+                  // Show ALL issues per file (no limit)
+                  for (const issue of issues) {
+                    comment += `- **Line ${issue.Line}:${issue.Span[0]}** - ${issue.Severity}: ${issue.Message}\n`;
+                  }
+                  comment += '\n';
+                }
+                
+                comment += `🔧 **To fix**: Review the issues above and update your documentation accordingly.`;
+              }
+              
+              github.rest.issues.createComment({
+                issue_number: context.issue.number,
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                body: comment
+              });
+            } catch (error) {
+              console.log('No Vale results to process');
+            }
