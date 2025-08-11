@@ -1,0 +1,18 @@
+extends: substitution
+message: "Use '%s' instead of '%s'"
+level: error
+ignorecase: true
+swap:
+  once: after
+  may: might
+  may: could
+  uncheck: clear
+  log-in: login
+  log in: login
+  'Node A': 'Controller 1'
+  'Node B': 'Controller 2'
+  'Controller A': 'Controller 1'
+  'Controller B': 'Controller 2'
+  'host name': 'hostname'
+  'file system': 'filesystem'
+nonword: true

@@ -1,0 +1,6 @@
+extends: occurrence
+message: "Procedures should have maximum 10 top-level steps"
+level: suggestion
+scope: raw
+max: 10
+token: '^\d+\.\s'

@@ -89,7 +89,7 @@ Each NFS share on the list also has a toggle to enable or disable the service fo
 
 {{< trueimage src="/images/SCALE/Shares/NFSWidgetOptions.png" alt="Unix (NFS) Shares Widget Options" id="Unix (NFS) Shares Widget Options" >}}
 
-To enable the service from the **System > Services** screen, click the toggle for the service and set **Start Automatically** if you want the service to activate when TrueNAS boots.
+To enable the service from the **System > Services** screen, click the toggle for the service and set **Start Automatically** to start the service when TrueNAS boots.
 
 {{< hint type=note >}}
 The NFS service does not automatically start on boot if all NFS shares are encrypted and locked.
@@ -139,7 +139,7 @@ Click **Save**.
 TrueNAS creates the dataset and the multi-protocol SMB and NFS shares.
 
 TrueNAS sets the same share presets as the **Multi-Protocol Share** option in **Purpose** on the **Advanced Options** for the **Add SMB** screen.
-To configure other share settings, go to the **Shares**, select the share, click the edit icon to open the **Edit SMB** screen, and click **Advanced Options** to modify the settings.
+To configure other share settings, go to **Shares**, select the share, click on the <span class="material-icons">more_vert</span> icon and select the **Edit** to open the **Edit SMB** screen, and click **Advanced Options** to modify the settings.
 
 After adding the dataset, edit the dataset ACL.
 
@@ -168,7 +168,7 @@ You can modify share settings after creating it.
 
 After creating the multi-protocol share on the **Add Dataset** screen, go to **Shares** and edit the NFS share.
 
-1. Select the new share listed on **Unix (NFS) Shares** widget and then click **Edit**.
+1. Select the new share listed on **Unix (NFS) Shares** widget, click on the <span class="material-icons">more_vert</span> icon and then click **Edit**.
    The **Edit NFS** screen opens with the **Basic Options** settings showing.
 
     {{< trueimage src="/images/SCALE/Shares/AddNFSScreen.png" alt="Add NFS Share" id="Add NFS Share" >}}

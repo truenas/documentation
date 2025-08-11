@@ -30,7 +30,7 @@ Click on the widget header to open the [**Cloud Sync Task**](#cloud-sync-task-sc
 
 **Add** on the widget and the **Cloud Sync Task** screen opens the **[Cloudsync Task Wizard](#cloudync-task-wizard)**.
 
-Each task includes five icons for various functions:
+Each task includes a vertical ellipses <span class="material-icons">more_vert</span> icon that opens a dropdown menu with five options for various functions:
 
 * The <span class="material-icons">edit</span> **Edit** icon opens the **[Edit Cloud Sync Task](#advanced-options-and-edit-cloud-sync-task-screens)** screen populated with with the settings for that task.
 

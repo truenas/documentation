@@ -20,7 +20,7 @@ TrueNAS generates a default scrub task when you create a new pool and sets it to
 
 Each task is a link that opens the **Edit Scrub Task** Screen.
 
-The <span class="material-icons">delete</span> icon opens a delete confirmation dialog.
+Each task includes a vertical ellipses <span class="material-icons">more_vert</span> icon that opens a dropdown menu with task options. The <span class="material-icons">delete</span> icon opens a delete confirmation dialog.
 
 ## Add and Edit Scrub Task Screen
 The **Add Scrub Task** and **Edit Scrub Task** screens display the same settings that specify the pool, threshold, and schedule for when to run the ZFS scan on the data in a pool.

@@ -25,7 +25,7 @@ Click on the widget header to open the [**Rsync Task**](#rsync-task-screen) scre
 
 **Add** opens the **[Add Rsync Task](#add-and-edit-rsync-task-screens)** screen.
 
-Each task includes three icons for various functions:
+Each task includes a vertical ellipses <span class="material-icons">more_vert</span> icon that opens a dropdown menu with three options for various functions:
 
 * The <span class="material-icons">edit</span> **Edit** icon opens the **[Edit Rsync Task](#add-and-edit-rsync-task-screens)** screen populated with with the settings for that task.
 

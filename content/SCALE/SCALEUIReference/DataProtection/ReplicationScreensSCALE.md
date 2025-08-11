@@ -25,6 +25,8 @@ Click **Replication Task** on the widget heading to open the **[Replications Tas
 
 **Add** on the **Replication Task** widget opens the **[Replication Task Wizard](#replication-task-wizard)**.
 
+Each task includes a vertical ellipses <span class="material-icons">more_vert</span> icon that opens a dropdown menu with task options:
+
 The <span class="material-icons">edit</span> **Edit** icon opens the **[Edit Replication Task](#edit-replication-task-screen)** screen.
 
 The **[<span class="material-icons">play_arrow</span> Run Now](#run-now-option)** icon opens a dialog.
