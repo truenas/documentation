@@ -39,7 +39,6 @@ The widget shows a table listing SMB shares created in TrueNAS.
 Each SMB share row on the **Windows (SMB) Shares** widget shows the path to the shared dataset, a description if one is entered when the share is added, an **Enabled** toggle that allows you to enable or disable the share, and indicates if audit logging is turned on/off.
 
 The <span class="material-icons">more_vert</span> dropdown list for each share shows four options:
-
 * **<span class="material-icons">edit</span> Edit** opens the [**Edit SMB** screen](#add-and-edit-smb-screens).
 * **Edit Share ACL** opens the [**Edit Share ACL**](#edit-share-acl-screen) screen.
 * **Edit Filesystem ACL** opens the [**Edit ACL**](#edit-filesystem-acl-screen) screen.
@@ -78,7 +77,6 @@ If disabled, the share is disabled but not deleted from the system.
 **Audit Logging** indicates whether auditing for the share is enabled or disabled.
 
 The <span class="material-icons">more_vert</span> dropdown list at the right of each table row shows four options for a share:
-
 * **[Edit](#add-and-edit-smb-screens)** opens the **Edit SMB** screen.
 * **[Edit Share ACL](#edit-share-acl-screen)** opens the **Edit Share ACL** screen.
 * **[Edit Filesystem ACL](#edit-filesystem-acl-screen)** opens the **Edit ACL** screen.
@@ -116,7 +114,6 @@ The **Basic Options** settings show by default on the **Add** and **Edit SMB** s
 ### Advanced Options Settings
 
 **Advanced Options** settings are grouped into three categories:
-
 * [**Access**](#access-settings)
 * [**Audit Logging**](#audit-logging)
 * [**Other Options**](#other-options-settings)
@@ -131,12 +128,18 @@ All share options listed in the **Purpose** dropdown show these settings.
 
 {{< trueimage src="/images/SCALE/Shares/AddSMBAdvancedAccessSettings.png" alt="SMB Advanced Options Access" id="SMB Advanced Options Access" >}}
 
+{{< hint type=note >}}
+For datasets with **NFSv4** ACL type, SMB clients automatically use access-based enumeration. 
+This means directory listings over SMB only include files and directories that the client has read permissions for. 
+This behavior is enabled by default and matches FreeBSD behavior.
+{{< /hint >}}
+
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Export Read-Only** | Prohibits writes to the share when enabled. |
 | **Browsable to Network Clients** | Determines  whether this share name is included when browsing shares when enabled. This is enabled by default. Private dataset shares (the replacement for home shares) are only visible to the owner, regardless of this setting. |
-| **Access Based Share Enumeration** | Restricts share visibility to users with read or write access to the share. See the [smb.conf](https://www.samba.org/samba/docs/current/man-html/smb.conf.5.html) manual page. |
+| **Access Based Share Enumeration** | Restricts share visibility to users with read or write access to the share. This setting applies to datasets with a POSIX ACL type. For datasets with NFSv4 ACL type, access-based enumeration is automatically enabled and does not allow disabling. See the [smb.conf](https://www.samba.org/samba/docs/current/man-html/smb.conf.5.html) manual page. |
 {{< /truetable >}}
 
 #### Audit Logging
@@ -313,7 +316,6 @@ It opens after clicking **SMB** on the <i class="material-icons" aria-hidden="tr
 {{< trueimage src="/images/SCALE/Shares/SMBStatusScreenSessionsTab.png" alt="SMB Status Sessions Tab" id="SMB Status Sessions Tab" >}}
 
 The **SMB Status** screen shows information related to SMB sessions, for example:
-
 * **Sessions ID** - The current SMB sessions (default view).
 * **Hostname** - The host name associated with the session ID.
 * **Remote machine** - The remote machine information.
