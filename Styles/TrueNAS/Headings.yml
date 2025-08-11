@@ -1,0 +1,24 @@
+extends: capitalization
+message: "Use Title Case for headings"
+level: suggestion
+scope: heading
+match: $title
+exceptions:
+  - a
+  - an
+  - and
+  - as
+  - at
+  - but
+  - by
+  - for
+  - in
+  - nor
+  - of
+  - on
+  - or
+  - so
+  - the
+  - to
+  - up
+  - yet
