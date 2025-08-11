@@ -7,6 +7,8 @@ aliases:
  - /hardware/legacyhardware/mseriesgen2/
  - /hardware/legacyhardware/mseriesgen2/mseriesgen2/
  - /hardware/legacyhardware/mseriesgen2/mseriesgen2satadomreplace/
+ - /files/MseriesBSGv1_7.pdf
+ - /files/mseriesnvdimmupdates.pdf 
 ---
 
 ## TrueNAS M-Series Document Archive

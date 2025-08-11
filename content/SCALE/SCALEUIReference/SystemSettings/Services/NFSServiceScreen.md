@@ -70,5 +70,7 @@ Select **Start Automatically** to activate the NFS service when TrueNAS boots.
 | **Manage Groups Server-side** | This option allows the server to determine group IDs based on server-side lookups rather than relying solely on the information provided by the NFS client. This can support more than 16 groups and provide more accurate group memberships. Equivalent to the `--manage-gids` flag for [rpc.mountd](https://linux.die.net/man/8/rpc.mountd). |
 {{< /truetable >}}
 
+{{< include file="/static/includes/NFSUpdateTime.md" >}}
+
 We recommend using the default NFS settings unless you require specific settings.
 When TrueNAS is already connected to [Active Directory]({{< ref "/SCALE/SCALEUIReference/Credentials/DirectoryServices" >}}), setting **NFSv4** and **Require Kerberos for NFSv4** also requires a [Kerberos Keytab]({{< ref "/SCALE/SCALEUIReference/Credentials/DirectoryServices" >}}).
