@@ -95,6 +95,8 @@ The **Add NFS** and **Edit NFS** show the same **Basic Options** and **Advanced 
 {{< include file="/static/includes/NFSServiceUDPWarning.md" >}}
 {{< /hint >}}
 
+{{< include file="/static/includes/NFSUpdateTime.md" >}}
+
 ### Basic Options
 
 The **Basic Options** settings on the **Add** and **Edit NFS** screens show by default, and at the top of the screen when **Advanced Options** is selected.
