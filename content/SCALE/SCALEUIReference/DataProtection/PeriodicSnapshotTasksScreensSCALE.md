@@ -33,7 +33,7 @@ The **Periodic Snapshot Task** header opens the [**Periodic Snapshot Task**](#pe
 
 **Snapshots** opens the **[Snapshots]({{< ref "SnapshotsScreens" >}})** screen.
 
-The vertical ellipses <span class="material-icons">more_vert</span> icon at the ritht of the task on the **Periodic Task Widget** opens a dropdown menu with thow task options: **Edit** and **Delete**.
+The vertical ellipses <span class="material-icons">more_vert</span> icon at the right of the task on the **Periodic Task Widget** opens a dropdown menu with thow task options: **Edit** and **Delete**.
 
 The <span class="material-icons">delete</span> **Delete** opens a delete dialog. **Confirm** activates the **Delete**. **Delete** deletes the saved periodic snapshot task.
 
@@ -87,9 +87,10 @@ The **Add Periodic Snapshot Task** and **Edit Periodic Snapshot Task** show the 
 | **Exclude** | Excludes specific child datasets from the snapshot. Use with recursive snapshots. List paths to any child datasets to exclude. Example: `pool1/dataset1/child1`. A recursive snapshot of pool1/dataset1 includes all child datasets except child1. Separate entries by pressing <kbd>Enter</kbd>. |
 | **Recursive** | Sets the task to take separate snapshots of the dataset and each of its child datasets. Leave checkbox clear to take a single snapshot only of the specified dataset without child datasets. |
 {{< /truetable >}}
-{{< /expand >}}{
-{< expand "Schedule Settings" "v" >}}
-**Schedule** settingsshow on both the add and edit configuration screens.
+{{< /expand >}}
+
+{{< expand "Schedule Settings" "v" >}}
+**Schedule** settings show on both the add and edit configuration screens.
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
