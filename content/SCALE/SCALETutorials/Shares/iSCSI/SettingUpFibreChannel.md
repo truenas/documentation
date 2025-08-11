@@ -10,9 +10,7 @@ tags:
 ---
 
 
-{{< enterprise >}}
-Fibre Channel is a TrueNAS Enterprise feature. Only TrueNAS systems licensed for Fibre Channel show iSCSI Fibre Channel screens and settings found by going to **Sharing > Block Shares (iSCSI)**.
-{{< /enterprise >}}
+{{< include file="/static/include/FibreChannelEnterpriseScreen.md" >}}
 
 The Fibre Channel feature is available to Enterprise-licensed High Availability (HA) and non-HA systems.
 Any Enterprise system, equipped with the required fibre channel hardware can implement this feature.
