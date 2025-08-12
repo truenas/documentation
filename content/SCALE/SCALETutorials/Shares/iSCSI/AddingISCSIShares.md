@@ -143,12 +143,12 @@ Click on the **Block (iSCSI) Share Targets** widget header to open the **iSCSI**
 2. Add extent(s). Click on the **Extents** tab, then click **Add** to open the **Add iSCSI Extent** screen.
    
    {{< columns >}}
-   {{< trueimage src="/images/SCALE/Shares/AddExtentScreenDeviceType.png" alt="Add iSCSI Extent Device Type" id="Add iSCSI Extent Device Type" >}}
-   <--->
-   {{< trueimage src="/images/SCALE/Shares/AddExtentScreenFileType.png" alt="Add iSCSI Extent File Type" id="Add iSCSI Extent File type" >}}
-   {{< /columns >}}
+{{< trueimage src="/images/SCALE/Shares/AddExtentScreenDeviceType.png" alt="Add iSCSI Extent Device Type" id="Add iSCSI Extent Device Type" >}}
+<--->
+{{< trueimage src="/images/SCALE/Shares/AddExtentScreenFileType.png" alt="Edit iSCSI Extent File Type" id="Edit iSCSI Extent File type" >}}
+{{< /columns >}}
       
-   a.  Enter a name.
+   a. Enter a name.
 
    b. Add a description about the extent if you want, but this is not required.
       The description shows in the **Target** table on the **Targets** screen and the **iSCSI Block Share Targets** widget and helps identify the share use or purpose.
@@ -175,7 +175,9 @@ Click on the **Block (iSCSI) Share Targets** widget header to open the **iSCSI**
 
    f. Leave **Disable Physical Block Size Reporting** disabled unless you want to enable this function.
 
-   g. Click **Save**.
+   g. Enter a product identification for the extent in **Product ID** or leave it blank to use the default **iSCSI Disk** used when it is left empty.
+
+   h. Click **Save**.
 
 3. Add initiator groups. Click on the **Initiators** tab, then click **Add** to open the **Add Initiator** screen.
    
