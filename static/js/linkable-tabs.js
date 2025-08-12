@@ -54,24 +54,19 @@ class LinkableTabBox {
             .linkable-tabs-nav {
                 display: flex;
                 width: fit-content;
-                border-bottom: 2px solid var(--accent-color, #dee2e6);
-                background-color: var(--tab-nav-bg, #f7f9fb);
                 border-radius: 8px 8px 0 0;
                 overflow: hidden;
-                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             }
             
             /* Dark mode support */
             @media (prefers-color-scheme: dark) {
                 .linkable-tabs-nav {
-                    background-color: var(--tab-nav-bg-dark, #253138);
                 }
             }
             
             .linkable-tabs-nav.collapsed {
                 border-bottom: none !important;
                 border-radius: 8px !important;
-                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
             }
             
             .linkable-tab-button {
@@ -112,7 +107,6 @@ class LinkableTabBox {
                 color: white;
                 border-bottom-color: var(--truenas-primary);
                 font-weight: 600;
-                box-shadow: 0 -2px 4px rgba(17, 148, 210, 0.2);
             }
             
             .linkable-tab-content {
