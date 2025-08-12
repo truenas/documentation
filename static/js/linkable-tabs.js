@@ -117,12 +117,11 @@ class LinkableTabBox {
             
             .linkable-tab-content {
                 background: var(--body-background, white);
-                border: 1px solid var(--accent-color, #dee2e6);
+                border: none;
                 border-top: none;
                 border-radius: 0 0 8px 8px;
                 padding: 25px;
                 min-height: 200px;
-                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             }
             
             .linkable-tab-pane {
