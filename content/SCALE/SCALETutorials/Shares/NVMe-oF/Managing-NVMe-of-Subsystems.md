@@ -23,7 +23,7 @@ tags:
 
 ## Editing a Subsystem
 
-After configuring a NVMe-oF subsystem, you can change the subsystem by adding, editing, or deleting a namespace, removing or adding a port, or adding, removing, or deleting a host.
+After configuring a NVMe-oF subsystem, you can change the subsystem by adding or deleting a namespace, removing or adding a port, or adding, removing, or deleting a host.
 
 To access the subsystem configuration screen from the **Shares** screen:
 
@@ -58,6 +58,7 @@ Click **Delete** to delete the subsystem and namespace(s) associated with it.
 
 Select **Force** if the delete operation fails to start, and click **Delete**.
 
+<!-- commenting out until edit function is added back to the Namespace widget
 ## Editing a Namespace
 
 While on the **NVMe-oF** screen, select the subsystem row in the table, then click the edit <span class="material-icons">edit</span> icon to the right of the zvol path to open the **Edit Namespace** screen.
@@ -99,15 +100,15 @@ Browse to and select the parent dataset or zvol location where the existing file
 
 {{< trueimage src="/images/SCALE/Shares/UseExistingFileInEditNamespace.png" alt="Using an Existing File" id="Using an Existing File" >}}
 
-Click **Save**.
-
+Click **Save**.-->
+<!-- comment out until edit namespace is added back to the UI 
 #### Changing to a New File
-<!-- RC.1 will add an enable checkbox to allow disabling the namespace, update screenshots and remove commented out text-->
+RC.1 will add an enable checkbox to allow disabling the namespace, update screenshots and remove commented out text
 You can use this procedure to add files to the parent dataset for the namespace, from the **New File** tab on the **Add Namespace** or **Edit Namespace** screens.
 
 If adding a new file, click **Add** open the **Add Namespace** screen, then select the **New File** tab.
 
-If using the edit <span class="material-icons">edit</span> icon associated with an existing namespace zvol <!-- or file, stop the NVMe-oF service first, or clear the **Enabled** checkbox on the **Edit Namespace** screen--> to disable the namespace.
+If using the edit <span class="material-icons">edit</span> icon associated with an existing namespace zvol <!-- or file, stop the NVMe-oF service first, or clear the **Enabled** checkbox on the **Edit Namespace** screen to disable the namespace.
 If the system shows a validation error saying you must disable the namespace, stop the service, and then retry adding a new file.
 
 While on the **Edit Namespace** screen, select the **New File** tab.
@@ -123,7 +124,7 @@ Enter a size as a number with a measurement value, for example, *10 MB*, in **Fi
 
 Click **Save**.
 
-The new file shows on the **Namespaces** widget.
+The new file shows on the **Namespaces** widget. -->
 
 ### Adding a Zvol Namespace
 
