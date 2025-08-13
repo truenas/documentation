@@ -34,24 +34,17 @@ To simplify the TrueNAS connection process:
 
 ## Connecting TrueNAS to a KMIP Server
 
-To connect TrueNAS to a KMIP server, import a [certificate authority (CA)]({{< ref "AddCAsSCALE" >}}) and [Certificate]({{< ref "CertificatesSCALE" >}}) from the KMIP server, then configure the KMIP options.
+To connect TrueNAS to a KMIP server, import a [Certificate]({{< ref "CertificatesSCALE" >}}) from the KMIP server, then configure the KMIP options.
 
 {{< expand "How do I import these?" "v" >}}
 Log into the TrueNAS web interface and go to **Credentials > Certificate**. 
-Click **Add** on the **Certificate Authorities** widget. 
-Select **Import CA** from the **Type** dropdown list. 
-Enter a memorable name for the CA, then paste the KMIP server certificate in **Certificate** and the private key in **Private Key**. 
-Leave **Passphrase** empty. 
-Click **Save**.
-
-Next, click **Add** on the **Certificates** widget. 
-Select **Import Certificate** from the **Type** dropdown list. 
+Click **Import** on the **Certificate** widget. 
 Enter a memorable name for the certificate, then paste the KMIP server certificate and private key strings into the related TrueNAS fields. 
 Leave **Passphrase** empty. 
 Click **Save**.
 {{< /expand >}}
 
-For security reasons, we strongly recommend protecting the CA and certificate values.
+For security reasons, we strongly recommend protecting the certificate values.
 
 ### Configuring KMIP in TrueNAS
 
@@ -61,7 +54,7 @@ Go to **Credentials > KMIP**.
 
 Enter the central key server host name or IP address in **Server** and the number of an open connection on the key server in **Port**.
 Select the certificate and certificate authority that you imported from the central key server.
-To ensure the certificate and CA chain is correct, click on **Validate Connection**. Click **Save**.
+To ensure the certificate chain is correct, click on **Validate Connection**. Click **Save**.
 
 When the certificate chain verifies, choose the encryption values, SED passwords, or ZFS data pool encryption keys to move to the central key server.
 Select **Enabled** to begin moving the passwords and keys immediately after clicking **Save**.

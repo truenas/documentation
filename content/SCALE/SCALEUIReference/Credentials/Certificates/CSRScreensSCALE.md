@@ -8,24 +8,78 @@ tags:
  - certificates
 ---
 
-The **Certificates** screen includes the **Certificate Signing Requests** widget that displays a list of certificate signing requires (CSRs) configured on the system.
+The **Certificate Signing Requests** widget, on the **Certificates** screen, shows a list of certificate signing requires (CSRs) configured on the system.
+CSR.
 
-Each CSR listed is a link that opens the **Edit CA** screen for the selected CSR.
+{{< trueimage src="/images/SCALE/Credentials/CertificateSigningRequestWidgetNoCSR.png" alt="Certificate Signing Request Widget No CSRs" id="Certificate Signing Request Widget No CSRs" >}}
 
-![CertificateSigningRequestWidgetNoCSR](/images/SCALE/Credentials/CertificateSigningRequestWidgetNoCSR.png "Certificate Signing Request Widget No CSRs")
+The <span class="material-icons">more_vert</span> icon for a listed CSR shows a dropdown list of options to create an ACME certificate, download, edit, or delete an existing CSR.
 
-The <span class="iconify" data-icon="mdi:tray-arrow-down"></span> download icon downloads the CSR to your server.
+**Create ACME Certificate** opens the [**Create ACME Certificate**](#create-acme-certificate-screen) screen.
 
-<span class="material-icons">delete</span> deletes the CSR from your server.
+**Edit** opens the [**Edit CA**](#edit-csr-screen) screen for the selected CSR.
 
-Each CSR listed on the widget is a link that opens the **Edit CSR** screen.
+<span class="iconify" data-icon="mdi:tray-arrow-down"></span> **Download** puts a copy of the CSR on your server.
 
-**Add** opens the **[Add CSR](#add-csr-wizard-screens)** wizard that steps you through setting up a CSR that certifies the ownership of a public key by the named subject of the certificate.
-The **Certificate Signing Requests** section allows users to configure the message(s) the system sends to a registration authority of the public key infrastructure to apply for a digital identity certificate.
+<span class="material-icons">delete</span> **Delete** opens the **Delete Certificate** dialog.
+
+**Add** opens the **[Add CSR](#add-csr-wizard-screens)** wizard. 
+
+### Create ACME Certificate Screen
+
+The **Create ACME Certificate** screen shows setttings to create an ACME Certificate by selecting an ACME Server Directory URI.
+
+{{< trueimage src="/images/SCALE/Credentials/CreateACMECertificateScreen.png" alt="Create ACME Certificate Screen" id="Create ACME Certificate Screen" >}}
+
+{{< truetable >}}
+| Setting | Description |
+|---------|-------------|
+| **Identifier** | A text entry field that accepts manual or copy/paste entry of a name for the certificate. A name consits of alphanumeric characters, and can use the underscore (_), and/or dash (-) special characters. |
+| **Terms of Service** | Accepts the termis of service for the given ACME server. |
+| **Renew Certificate Days** | Specified the number of days to renew the certificate before it expires. |
+| **Custom ACME Server Directory URI** | Enables using a custom ACME server directory URI. <br>If the **ACME Server Directory URI** is set to **Lets Encrypt Staging Directory**, enabling this option changes the **ACME Server Directory URI** value to show **https://acme-staging-v02.api.letsencrypt.org/directory**. <br>If the **ACME Server Directory URI** is set to **Let's Encrypt Production Directory**, enabling this option changes the **ACME Server Directory URI** value changes to show **https://acme-v02.api.letsencrypt.org/directory**. |
+| **ACME Server Directory URI** | Sets the URI of the ACME server director. Shows two preconfigured URI options on a dropdown list: **Lets Encrypt Staging Directory** and **Let's Encrypt Production Directory**. <br><li>**Lets Encrypt Staging Directory**  <br><li>**Let's Encrypt Production Directory**  </li> |
+| **DNS:UnitedStates** | Sets the authenticator to validate the domain. Shows a dropdown list of previously configured ACME DNS authenticators. |
+{{< /truetable >}}
+
+### Edit CSR Screen
+
+The **Edit CSR** screen shows the current CSR settings. It allows changing the CSR name (identifier), downloading or viewing the CSR, and provides access to the **Create ACME Certificate** screen.
+
+{{< trueimage src="/images/SCALE/Credentials/EditCSRScreen.png" alt="Edit CSR Screen" id="Edit CSR Screen" >}}
+
+{{< truetable >}}
+| Setting | Description |
+|---------|-------------|
+| **Common** | Shows the common name for the certificate. A name can include the underscore (_) or dash (-) special characters. The default value for the **truenas_default** certificate is **localhost**. |
+| **SAN** | Shows the subject alternative name (SAN) name for the certificate. The default value for the **truenas_default** certificate is **DNS:localhost**. |
+| **Distinguished Name** | Shows the full directory service distinguished name for the certificate. This includes the country, organization, common name, email address, state, locality, and SAN properties. |
+| **Country** | Shows the country where the certificate is issued. The default value for the **truenas_default** certificate is **US**. |
+| **State** | Shows the organization for the certificate. The default value for the **truenas_default** certificate is **iXsystems**. |
+| **City** | Shows the city where the certificate organization is located. The default value for the **truenas_default** certificate is **Maryville** |
+| **Organization** | Shows the country where the certificate is issued. The default value for the **truenas_default** certificate is **US** |
+| **Organizational Unit** | Shows the department in the organization for the certificate. No default value for the **truenas_default** certificate is specified. |
+| **Email** | Shows the email address associated with the certificate. The default value for the **truenas_default** certificate is **info@ixsystems.com.** |
+| **Type** | Shows the type of certificate. The default value for the **truenas_default** certificate is **Certificate**. |
+| **Path** | Shows the path to where the certificate is stored. The default value for the **truenas_default** certificate is <code>/etc/certificates</code>. |
+| **Digest Algorithmm** | Shows the authentication protocol for the certificates. The default value for the **truenas_default** certificate is **SHA256S**. |
+| **Key Length** | Shows the number of characters in the key for the certificate. The default value for the **truenas_default** certificate is **2048**. |
+{{< /truetable >}}
+
+**View/Download Certificate** opens a window with the certificate string.
+
+**View/Download Key** opens a window with the certificate private key.
+
+The <span class="material-icons">assignment</span> clipboard icon copies the certificate or public key to the clipboard.
+
+{{< include file="/static/includes/DeleteCertificateDialog.md" >}}
 
 ## Add CSR Wizard Screens
-The **Add CSR** wizard screens step users through configuring a new certificate signing request (CSR) on TrueNAS.
-The wizard has five different configuration screens, one for each step in the CA configuration process:
+
+Certificate signing requests (CSR) allows users to configure a message the TrueNAS system sends to a registration authority of the public key infrastructure to apply for a digital identity certificate.
+
+The **Add CSR** wizard has five screens that step through configuring a new certificate signing request (CSR) on TrueNAS.
+The wizard screens are:
 
 1 **[Identifier and Type](#identifier-and-type-options)**
 
@@ -38,12 +92,13 @@ The wizard has five different configuration screens, one for each step in the CA
 5 **[Confirm Options](#confirm-options)**
 
 ### Identifier and Type Options
+
 The **Identifier and Type** settings specify the certificate signing request (CSR) name and whether to create a new CSR or import an existing CSR.     
 Users can also select a predefined certificate extension from the **Profile** dropdown list.
 {{< expand "Click Here for More Information" "v" >}}
 The selection in **Type** changes setting options on this screen, the **Certificate Options** and **Extra Constraints** screens, and determines if the **Certificate Subject** screen displays at all.
 
-![AddCSRIdentifierAndType](/images/SCALE/Credentials/AddCSRIdentifierAndType.png "Add CSR Identifier and Type")
+{{< trueimage src="/images/SCALE/Credentials/AddCSRIdentifierAndType.png" alt="Add CSR Identifier and Type" id="Add CSR Identifier and Type" >}}
 
 {{< truetable >}}
 | Setting | Description |
@@ -60,10 +115,11 @@ The **Certificate Options** settings specify the type of private key type to use
 There are no **Certificate Options** settings if **Type** on the **Identifier and Type** screen is set to **Import Certificate Signing Request**.
 
 The **Key Type** selection changes fields displayed. **RSA** is the default setting in **Key Type**.
-{{< expand "Click Here for More Information" "v" >}}
 
+{{< trueimage src="/images/SCALE/Credentials/AddCSRIdentifierAndType.png" alt="Add CSR Identifier and Type" id="Add CSR Identifier and Type" >}}
 ![AddCSRCertificateOptionsRSAType](/images/SCALE/Credentials/AddCSRCertificateOptionsRSAType.png "Add CSR Certificate Options RSA Type")
 
+{{< expand "Certificate Options Settings" "v" >}}
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
@@ -80,10 +136,11 @@ The **Certificate Subject** settings lets users define the location, name, and e
 Users can also enter the system [fully-qualified hostname (FQDN)](https://kb.iu.edu/d/aiuv) and any additional domains for multi-domain support.
 
 The **Certificate Subject** settings do not display if **Type** on the **Identifier and Type** screen is set to **Import Certificate Signing Request**.
-{{< expand "Click Here for More Information" "v" >}}
 
+{{< trueimage src="/images/SCALE/Credentials/AddCSRIdentifierAndType.png" alt="Add CSR Identifier and Type" id="Add CSR Identifier and Type" >}}
 ![AddCSRCertificateSubject](/images/SCALE/Credentials/AddCSRCertificateSubject.png "Add CSR Certificate Subject CSR Type") 
 
+{{< expand "Certificate Subject Settings" "v" >}}
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
@@ -99,6 +156,9 @@ The **Certificate Subject** settings do not display if **Type** on the **Identif
 {{< /expand >}}
 
 ### Extra Constraints Settings
+
+{{< trueimage src="/images/SCALE/Credentials/AddCSRExtraConstraints.png" alt="Add CSR Extra Constraints" id="Add CSR Extra Constraints" >}}
+
 The **Extra Constraints** settings contains certificate extension options:
 * **Basic Constraints** that when enabled limits the path length for a certificate chain.
 * **Authority Key Identifier** that when enabled provides a means of identifying the public key corresponding to the private key used to sign a certificate.
@@ -109,10 +169,11 @@ The **Extra Constraints** settings change based on the selection in **Type** on 
 
 #### Extra Constraints - Certificate Signing Request Type
 After selecting **Basic Constraints**, **Authority Key Identifier**, **Extended Key Usage**, or **Key Usage**, each displays more settings that option needs.
-{{< expand "Click Here for More Information" "v" >}}
 
+{{< trueimage src="/images/SCALE/Credentials/AddCSRIdentifierAndType.png" alt="Add CSR Identifier and Type" id="Add CSR Identifier and Type" >}}
 ![AddCSRExtraConstraintsAllExpanded](/images/SCALE/Credentials/AddCSRExtraConstraintsAllExpanded.png "Add CSR Extra Constraints")
 
+{{< expand "Click Here for More Information" "v" >}}
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
@@ -129,10 +190,11 @@ After selecting **Basic Constraints**, **Authority Key Identifier**, **Extended 
 
 #### Import Certificate Signing Request Type Options
 When **Type** on **Identifier and Type** is set to **Import Certificate Signing Request** the **Import Certificate** screen displays.
-{{< expand "Click Here for More Information" "v" >}}
 
+{{< trueimage src="/images/SCALE/Credentials/AddCSRExtraConstraints.png" alt="Add CSR Extra Constraints" id="Add CSR Extra Constraints" >}}
 ![AddCSRImportCSR](/images/SCALE/Credentials/AddCSRImportCSR.png "Add CSR Import Certificate")
 
+{{< expand "Click Here for More Information" "v" >}}
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
@@ -148,6 +210,7 @@ When **Type** on **Identifier and Type** is set to **Import Certificate Signing 
 The final step screen is the **Confirm Options** that displays the CA **Type**, **Key Type**, **Key Length**, **Digest Algorithm**, **Lifetime**, **Country**, and **Basich Constraints Config**.
 For **Import Certificate Signing Request** type, the screen displays **Type**, **Signing Request** and **Private Key**.
 
+{{< trueimage src="/images/SCALE/Credentials/AddCSRExtraConstraints.png" alt="Add CSR Extra Constraints" id="Add CSR Extra Constraints" >}}
 ![AddCSRConfirmOptions](/images/SCALE/Credentials/AddCSRConfirmOptions.png "Add CSR Confirm Options")
 
 **Save** adds the certificate to TrueNAS. **Back** returns to previous screens to make changes before you save. **Next** advances to the next screen in the sequence to return to **Confirm Options**.
