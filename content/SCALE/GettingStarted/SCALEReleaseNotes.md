@@ -48,7 +48,11 @@ This first public release version of TrueNAS 25.10 (Goldeye) has software compon
 
 ### 25.10-BETA.1 Notable changes
 
-*
+* 
+* TrueNAS 25.10 includes the [NVIDIA open GPU kernel module drivers](https://github.com/NVIDIA/open-gpu-kernel-modules).
+  These drivers work with Turing and later GPUs.
+  Earlier architectures (Pascal, Maxwell, Volta) are not compatible.
+  See [NVIDIA GPU Support](#nvidia-gpu-support) for more information.
 
 <a href="https://ixsystems.atlassian.net/issues/?filter=11744" target="_blank">Click here for the full changelog</a> of completed tickets that are included in the 25.10-BETA.1 release.
 {{< include file="/static/includes/JiraFilterInstructions.md" >}}
@@ -118,6 +122,22 @@ initializeChangelogTableForTabs('25.04');
   
 ### NVIDIA GPU Support
 
+TrueNAS 25.10 introduces support for [NVIDIA open GPU kernel module drivers](https://us.download.nvidia.com/XFree86/Linux-x86_64/570.172.08/README/kernel_open.html), enabling compatibility with the latest NVIDIA graphics cards including the newest Blackwell architecture.
+This driver update ensures support for modern GPU acceleration workloads in TrueNAS Apps and Containers.
+
+The open GPU kernel drivers are [compatible with Turing architecture and later GPUs](https://github.com/NVIDIA/open-gpu-kernel-modules/tree/570?tab=readme-ov-file#compatible-gpus), which includes GTX 16-series cards and all RTX series cards.
+The new NVIDIA Blackwell (RTX 50-series) chips require the nvidia-open driver to function, as this driver leverages the built-in NVIDIA GSP (GPU System Processor).
+
+Users with compatible hardware can enable TrueNAS to install NVIDIA drivers.
+See the TrueNAS Apps Market for [installation instructions](https://apps.truenas.com/getting-started/initial-setup/#installing-nvidia-drivers).
+
+GPUs based on earlier architectures including Pascal (GTX 10-series, Quadro P-series), Maxwell (GTX 700 and 900-series), and Volta (GTX Titan V) are not supported by the NVIDIA open drivers.
+This is because these older GPUs lack the required GSP component.
+
+Users with incompatible legacy cards can still utilize them by deploying a TrueNAS Virtual Machine and isolating the GPU to it.
+This approach involves creating a VM, isolating the legacy GPU to that VM, installing the proprietary NVIDIA driver within the VM environment, and running GPU workloads from within the virtual machine.
+However, this workaround requires a secondary GPU (such as integrated Intel graphics or IPMI console) to handle system display duties, as isolating the only GPU in the system would leave TrueNAS without console access.
+
   </div>
 
   <div data-tab-id="upgrade-paths" data-tab-label="Upgrade Paths">
@@ -169,6 +189,11 @@ document.addEventListener('DOMContentLoaded', function() {
 Click the component version number to see release notes for that component.
 
 {{< component-versions "25.10" >}}
+
+\* TrueNAS 25.10 and later includes the [NVIDIA open GPU kernel module drivers](https://github.com/NVIDIA/open-gpu-kernel-modules).
+  These drivers work with Turing and later GPUs.
+  Earlier architectures (Pascal, Maxwell, Volta) are not compatible.
+  See [NVIDIA GPU Support](#nvidia-gpu-support) for more information.
   </div>
 
   <div data-tab-id="zfs-feature-flags" data-tab-label="ZFS Feature Flags">
