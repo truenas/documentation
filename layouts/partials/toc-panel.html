@@ -99,7 +99,6 @@
             jumpButton.addEventListener('click', function(e) {
               e.preventDefault();
               
-              console.log('🔘 JUMP BUTTON CLICKED:', buttonConfig.text, 'anchor:', buttonConfig.anchor);
               
               // Check if this anchor matches a tab ID directly
               var allTabSources = document.querySelectorAll('#release-tab-content-source, #tab-content-source, #component-tab-content-source');
@@ -111,7 +110,6 @@
                 var tabDivs = tabSource.querySelectorAll('[data-tab-id]');
                 tabDivs.forEach(function(tabDiv) {
                   if (tabDiv.getAttribute('data-tab-id') === buttonConfig.anchor) {
-                    console.log('📋 Direct tab match found:', buttonConfig.anchor);
                     isDirectTabMatch = true;
                     headerInTab = true; // Treat as header in tab for deep linking
                   }
@@ -121,9 +119,7 @@
               // If not a direct tab match, check for headers inside tabs
               if (!isDirectTabMatch) {
                 allTabSources.forEach(function(tabSource) {
-                  console.log('🔍 Checking tab source:', tabSource.id);
                   var tabHeaders = tabSource.querySelectorAll('h2, h3, h4');
-                  console.log('   Found', tabHeaders.length, 'headers');
                   tabHeaders.forEach(function(tabHeader) {
                     var tabHeaderText = (tabHeader.innerText || tabHeader.textContent).trim();
                     var tabHeaderAnchor = tabHeaderText.toLowerCase()
@@ -132,21 +128,15 @@
                       .replace(/-+/g, '-')
                       .replace(/^-|-$/g, '');
                     
-                    console.log('   Header:', tabHeaderText, '→', tabHeaderAnchor);
-                    
                     if (tabHeaderAnchor === buttonConfig.anchor) {
-                      console.log('   ✅ HEADER MATCH FOUND!');
                       headerInTab = true;
                     }
                   });
                 });
               }
               
-              console.log('🔍 Header in tab check result:', headerInTab);
-              
               if (headerInTab) {
                 // Header is in a tab - use deep linking
-                console.log('📍 Setting hash to:', buttonConfig.anchor);
                 window.location.hash = buttonConfig.anchor;
               } else {
                 // Regular header - use normal scrolling
