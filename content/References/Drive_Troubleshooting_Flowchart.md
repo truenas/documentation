@@ -12,7 +12,7 @@ These are very simple to follow flowcharts to diagnose drive problems/failures. 
 
 ## DISCLAIMER / WARNING / DISCLAIMER / WARNING
 
-While the flowcharts themselves are not harmful, misuse of some of the commands provided can cause loss of data.  If you do not know what these commands do, then you should not be using them.  All are safe if used "exactly" as written.  This means that it is up to you to ensure the commands are used correctly.  If you endeavour down this path and are unsure about a command, just ask someone on the forums for some assistance.
+While the flowcharts themselves are not harmful, misuse of some of the commands provided can cause loss of data.  If you do not know what these commands do, then you should not be using them.  All are safe if used "exactly" as written.  This means that it is up to you to ensure the commands are used correctly.  If you endeavor down this path and are unsure about a command, just ask someone on the forums for some assistance.
 
 ## How to use
 
@@ -35,14 +35,14 @@ There are four flowcharts:
 
 **2. CRITICAL DRIVE ERRORS** - This flowchart is for what the author considers critical errors.
 
-**3. NON-CRITICAL DRIVE ERRORS** – This flowchart is for what the author considers are non-critical errors, however that doesn’t mean they are to be ignored and pushed off.  You still need to take action.
+**3. NON-CRITICAL DRIVE ERRORS** – This flowchart is for what the author considers are non-critical errors, however that does not mean they are to be ignored and pushed off.  You still need to take action.
 
 **4. SUSPECT FOUL PLAY (ALTERED DRIVE DATA)** – The Seagate Drive Issue Saga (Not only a Seagate issue)
 
 
 ## Hey Doc, How do I do something?
 
-  * This set of flowcharts is not designed to hold your hand and take you step by step to perform the troubleshooting, drive replacements, etc.  These flowcharts are very easy to follow, and in the text version, are step by step however they will tell you that your drive is bad.  It is up tpo you to know how to replace it.
+  * This set of flowcharts is not designed to hold your hand and take you step by step to perform the troubleshooting, drive replacements, etc.  These flowcharts are very easy to follow, and in the text version, are step by step however they will tell you that your drive is bad.  It is up to you to know how to replace it.
 
   * ANSWER THE QUESTIONS AS WRITTEN.  Do not assume I meant something different or you might go down the wrong path.
 
@@ -440,7 +440,7 @@ Example “gptid/d0f8a4fe-bf79-11ed-a0df-000c296fd555  N/A  ada0p2”  This is D
 
 * `glabel status`	[CORE]: Provides the GPTID and Drive Ident. “nvd0” = “nvme0” To obtain the Drive Serial Number, use the “OBTAIN DRIVE SMART DATA” section to cross reference the DRIVE IDENT to the DRIVE SERIAL NUMBER.
 
-### OBTAIN DRIVE SMART DATA INFERFACE
+### OBTAIN DRIVE SMART DATA INTERFACE
 
 * `smartctl --scan`	[CORE/SCALE]: Lists the interface types for all available drive.  If running the smartctl commands **below**, there is an error reading the drive, try adding the interface type.
 
@@ -481,7 +481,7 @@ STOP TEST
 * `smartctl -X /dev/da0` or `ada0`	[CORE]: Same as above.
 
 ### START/STOP a SMART TEST (NVME UNIQUE, IF SMARTCTL DOES NOT WORK)
-<font color="red"><b>These commands if misused could be destructive, enter as written, NO TYPO's.</b></font>
+<font color="red"><b>These commands if misused could be destructive, enter as written, NO typos.</b></font>
 
 In the examples below, the drive is `nvme0`, replace this value for other nvme drives.
 
