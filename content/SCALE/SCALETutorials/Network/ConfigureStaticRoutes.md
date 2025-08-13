@@ -19,11 +19,11 @@ We recommend using the TrueNAS web UI to make network changes because it include
 
 If you need a static route to reach portions of the network:
 
-1.  Go to **Network** and click **Add** on the **Static Routes** widget.
+1. Go to **System > Network** and click **Add** on the **Static Routes** widget.
 
    {{< trueimage src="/images/SCALE/Network/AddStaticRoute.png" alt="Add Static Routes" id="Add Static Routes" >}}
 
-2. Enter an IP address and CIDR for the destination in the format *A.B.C.D/E* where *E* is the CIDR mask in **Destination**.
+2. Enter an IP address and netmask (CIDR) for the destination in the format *A.B.C.D/E* where *E* is the CIDR mask in **Destination**.
 
 3. Enter the default gateway IP address for the destination address in **Gateway**.
 

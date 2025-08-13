@@ -110,7 +110,7 @@ You can use the SSS connection created in [Setting Up an SSH Connection](#settin
 
 9. Select the **Enabled** to enable the task.
    Leave cleared to disable the task, but not delete the configuration.
-   You can run the rsync task at any time from the **Rsync Tasks** widget by the **Run Now** <i class="material-icons" aria-hidden="true" title="play_arrow">play_arrow</i> icon for the rsync task.
+   You can run the rsync task at any time from the **Rsync Tasks** widget by clicking the vertical ellipses <span class="material-icons">more_vert</span> on the rsync task and selecting the **Run Now** <i class="material-icons" aria-hidden="true" title="play_arrow">play_arrow</i> option.
 
 10. Click **Save**.
    The system verifies the SSH connection and adds the task to the **Rsync Tasks** widget.
