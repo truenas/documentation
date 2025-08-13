@@ -1,5 +1,5 @@
 ---
-title: "25.10 (Goldeye) Development Notes"
+title: "25.10 (Goldeye) Version Notes"
 description: "Highlights, change log, and known issues for TrueNAS 25.10 releases."
 aliases:
  - /scale/scalereleasenotes/
@@ -25,7 +25,7 @@ jump_to_buttons:
     icon: "component-versions"
 ---
 
-{{< hint type="tip" title="25.10 Early Release Documentation" >}}
+{{< hint type="important" icon="gdoc_code" title="25.10 Early Release Documentation" >}}
 This page tracks the early release development for the future TrueNAS major version 25.10 (Goldeye).
 See the stable [25.04 (Fangtooth)](https://www.truenas.com/docs/scale/25.04/gettingstarted/scalereleasenotes/) release notes for information relating to that version.
 {{< /hint >}}
@@ -48,14 +48,14 @@ This first public release version of TrueNAS 25.10 (Goldeye) has software compon
 
 ### 25.10-BETA.1 Notable changes
 
-* 
+*
 
 <a href="https://ixsystems.atlassian.net/issues/?filter=11744" target="_blank">Click here for the full changelog</a> of completed tickets that are included in the 25.10-BETA.1 release.
 {{< include file="/static/includes/JiraFilterInstructions.md" >}}
 
 ### 25.10-BETA.1 Known Issues
 
-* 
+*
 
 <a href="https://ixsystems.atlassian.net/issues/?filter=11745" target="_blank">Click here to see the latest information</a> about public issues discovered in 25.10-BETA.1 that are being resolved in a future TrueNAS release.
   </div>
@@ -70,122 +70,20 @@ This first public release version of TrueNAS 25.10 (Goldeye) has software compon
 <div id="release-tabs-container"></div>
 
 <script src="/js/linkable-tabs.js?v=4.8"></script>
+<script src="/js/linkable-tabs-init.js"></script>
 <script>
-// Initialize linkable tabs with Hugo-processed content
 document.addEventListener('DOMContentLoaded', function() {
-    // Extract all tab content from Hugo-processed divs
-    const tabSource = document.getElementById('release-tab-content-source');
-    const tabDivs = tabSource.querySelectorAll('[data-tab-id]');
-    
-    const tabs = Array.from(tabDivs).map(div => ({
-        id: div.getAttribute('data-tab-id'),
-        label: div.getAttribute('data-tab-label'),
-        content: div.innerHTML
-    }));
-    
-    createLinkableTabs('release-tabs-container', tabs, {
-        defaultTab: '25.04.1-changes-and-issues',
-        urlHashEnabled: true,
-        enableMarkdown: false, // Hugo already processed the content
-        collapsible: true
-    });
+    initializeHugoTabs('release-tab-content-source', 'release-tabs-container', '25.10.0-BETA.1');
 });
 </script>
 
 <!-- CSV Changelog Table Script - Load outside tab content to prevent redeclaration -->
 <script src="/js/csv-changelog-table.js"></script>
+<script src="/js/csv-changelog-init.js"></script>
+<script src="/js/csv-changelog-tab-init.js"></script>
 <script>
-// Initialize CSV changelog table when tab becomes active
-window.initializeChangelogTable = function() {
-    console.log('🔄 Attempting to initialize CSV changelog table');
-    
-    if (typeof createCSVChangelogTable === 'function') {
-        // Find the container inside the active tab
-        const activeTabPane = document.querySelector('.linkable-tab-pane.active');
-        if (activeTabPane) {
-            const container = activeTabPane.querySelector('#csv-changelog-container');
-            if (container) {
-                console.log('✅ Container found in active tab, initializing table');
-                // Clear any existing content first
-                container.innerHTML = '';
-                
-                // Fix the duplicate ID issue by temporarily using a unique ID
-                console.log('🔧 Fixing duplicate ID issue...');
-                const originalId = container.id;
-                const uniqueId = 'csv-changelog-container-active-' + Date.now();
-                
-                // Change to unique ID temporarily
-                container.id = uniqueId;
-                console.log('   Changed container ID from', originalId, 'to', uniqueId);
-                
-                try {
-                    console.log('🔄 Calling createCSVChangelogTable with unique ID...');
-                    const result = createCSVChangelogTable('/data', uniqueId, {
-                        useVersioning: true,
-                        versions: [
-                            { value: 'all', label: '25.04 (All)', filename: 'scale-25.04-changelog.csv' },
-                            { value: '25.04.1', label: '25.04.1', filename: 'scale-25.04.1-changelog.csv' },
-                            { value: '25.04.0', label: '25.04.0', filename: 'scale-25.04.0-changelog.csv' },
-                            { value: '25.04-RC.1', label: '25.04-RC.1', filename: 'scale-25.04-RC.1-changelog.csv' },
-                            { value: '25.04-BETA.1', label: '25.04-BETA.1', filename: 'scale-25.04-BETA.1-changelog.csv' }
-                        ],
-                        defaultVersion: 'all'
-                    });
-                    console.log('✅ createCSVChangelogTable returned:', result);
-                    
-                    // Restore original ID after a delay to allow CSV function to complete
-                    setTimeout(() => {
-                        container.id = originalId;
-                        console.log('🔄 Restored container ID to', originalId);
-                    }, 2000);
-                    
-                } catch (error) {
-                    console.error('❌ Error calling createCSVChangelogTable:', error);
-                    // Restore ID even if there's an error
-                    container.id = originalId;
-                }
-                
-                // Debug the container after table creation - check multiple times
-                setTimeout(() => {
-                    console.log('📊 Container 1 second after table creation:');
-                    console.log('   Container HTML length:', container.innerHTML.length);
-                    console.log('   Container children:', container.children.length);
-                    if (container.innerHTML.length > 0) {
-                        console.log('   First 200 chars:', container.innerHTML.substring(0, 200));
-                    }
-                }, 1000);
-                
-                setTimeout(() => {
-                    console.log('📊 Container 3 seconds after table creation:');
-                    console.log('   Container HTML length:', container.innerHTML.length);
-                    console.log('   Container children:', container.children.length);
-                    if (container.innerHTML.length > 0) {
-                        console.log('   Table found!');
-                    } else {
-                        console.log('   Still empty - checking for errors...');
-                        // Try to manually create some content to test
-                        container.innerHTML = '<p style="color: red; font-size: 18px; padding: 20px;">TEST: If you can see this, the container works but CSV table creation failed.</p>';
-                    }
-                }, 3000);
-                
-                return; // Success, exit
-            } else {
-                console.log('❌ Container not found in active tab');
-            }
-        } else {
-            console.log('❌ No active tab found');
-        }
-        
-        // If we get here, retry
-        console.log('⏳ Retrying in 200ms...');
-        setTimeout(window.initializeChangelogTable, 200);
-    } else {
-        console.log('❌ createCSVChangelogTable function not available, retrying...');
-        setTimeout(window.initializeChangelogTable, 200);
-    }
-};
-
-// Don't initialize immediately - let tab system handle it
+// Initialize changelog table for version
+initializeChangelogTableForTabs('25.04');
 </script>
 
 ## Upgrading TrueNAS {#upgrading}
@@ -203,6 +101,7 @@ window.initializeChangelogTable = function() {
   </div>
 
   <div data-tab-id="containers-virtual-machines" data-tab-label="Containers and Virtual Machines">
+
 ### Containers and Virtual Machines
 
   </div>
@@ -212,6 +111,12 @@ window.initializeChangelogTable = function() {
 ### TrueNAS Apps
 
 {{< include file="/static/includes/AppsUnversionedAdmonition.md" >}}
+
+  </div>
+
+  <div data-tab-id="nvidia-GPU-support" data-tab-label="NVIDIA GPU Support">
+  
+### NVIDIA GPU Support
 
   </div>
 
@@ -246,25 +151,10 @@ See the [Migration articles]({{< ref "/SCALE/GettingStarted/Migrate/" >}}) for c
 <div id="upgrade-notes-container"></div>
 
 <script src="/js/linkable-tabs.js?v=4.8"></script>
+<script src="/js/linkable-tabs-init.js"></script>
 <script>
-// Initialize linkable tabs with Hugo-processed content
 document.addEventListener('DOMContentLoaded', function() {
-    // Extract all tab content from Hugo-processed divs
-    const tabSource = document.getElementById('tab-content-source');
-    const tabDivs = tabSource.querySelectorAll('[data-tab-id]');
-    
-    const tabs = Array.from(tabDivs).map(div => ({
-        id: div.getAttribute('data-tab-id'),
-        label: div.getAttribute('data-tab-label'),
-        content: div.innerHTML
-    }));
-    
-    createLinkableTabs('upgrade-notes-container', tabs, {
-        defaultTab: '25.04-upgrade-notes',
-        urlHashEnabled: true,
-        enableMarkdown: true,
-        collapsible: true
-    });
+    initializeHugoTabs('tab-content-source', 'upgrade-notes-container', 'upgrade-prep');
 });
 </script>
 
@@ -280,7 +170,7 @@ Click the component version number to see release notes for that component.
 
 {{< component-versions "25.10" >}}
   </div>
-    
+
   <div data-tab-id="zfs-feature-flags" data-tab-label="ZFS Feature Flags">
 
 ### OpenZFS Feature Flags
@@ -294,7 +184,6 @@ Any new feature flags introduced since the previous OpenZFS version that was int
 |  | [](https://openzfs.github.io/openzfs-docs/man/master/7/zpool-features.7.html#FLAG) |  |
 {{< /truetable >}}
 
-
 For more details on feature flags, see [OpenZFS Feature Flags](https://openzfs.github.io/openzfs-docs/Basic%20Concepts/Feature%20Flags.html) and [OpenZFS zpool-feature.7](https://openzfs.github.io/openzfs-docs/man/7/zpool-features.7.html).
   </div>  
 </div>
@@ -303,81 +192,11 @@ For more details on feature flags, see [OpenZFS Feature Flags](https://openzfs.g
 <div id="component-tabs-container"></div>
 
 <script src="/js/linkable-tabs.js?v=4.8"></script>
+<script src="/js/linkable-tabs-init.js"></script>
+<script src="/js/jump-to-button-fix.js"></script>
 <script>
-// Initialize linkable tabs with Hugo-processed content
 document.addEventListener('DOMContentLoaded', function() {
-    // Extract all tab content from Hugo-processed divs
-    const tabSource = document.getElementById('component-tab-content-source');
-    const tabDivs = tabSource.querySelectorAll('[data-tab-id]');
-    
-    const tabs = Array.from(tabDivs).map(div => ({
-        id: div.getAttribute('data-tab-id'),
-        label: div.getAttribute('data-tab-label'),
-        content: div.innerHTML
-    }));
-    
-    createLinkableTabs('component-tabs-container', tabs, {
-        defaultTab: 'software-component-versions',
-        urlHashEnabled: true,
-        enableMarkdown: false, // Hugo already processed the content
-        collapsible: true
-    });
-    
-    // Jump-to button hash refresh fix for collapsible tabs
-    document.addEventListener('click', function(e) {
-        // Check for jump-to buttons (which are <button> elements)
-        if (e.target.matches('button.jump-to-button') || e.target.closest('button.jump-to-button')) {
-            const button = e.target.matches('button.jump-to-button') ? e.target : e.target.closest('button.jump-to-button');
-            
-            // Get the target hash from the button's data or map from button text
-            let targetHash = button.getAttribute('data-target');
-            
-            if (!targetHash) {
-                const buttonText = button.textContent.trim();
-                
-                // Map button text to hash targets
-                if (buttonText.includes('Full TrueNAS') && buttonText.includes('Changelog')) {
-                    targetHash = '#full-changelog';
-                } else if (buttonText.includes('Upgrade Paths')) {
-                    targetHash = '#upgrade-paths';
-                } else if (buttonText.includes('Notable Changes')) {
-                    targetHash = '#notable-changes-and-known-issues';
-                } else if (buttonText.includes('Component Versions')) {
-                    targetHash = '#software-component-versions';
-                }
-            }
-            
-            if (targetHash && window.location.hash === targetHash) {
-                // Same hash detected - force refresh to trigger tab expansion
-                e.preventDefault();
-                e.stopPropagation();
-                
-                window.location.hash = '';
-                setTimeout(() => {
-                    window.location.hash = targetHash;
-                }, 50);
-                
-                return false;
-            }
-        }
-        
-        // Also handle regular hash links
-        if (e.target.matches('a[href^="#"]')) {
-            const href = e.target.getAttribute('href');
-            
-            if (window.location.hash === href) {
-                e.preventDefault();
-                e.stopPropagation();
-                
-                window.location.hash = '';
-                setTimeout(() => {
-                    window.location.hash = href;
-                }, 50);
-                
-                return false;
-            }
-        }
-    }, true)
+    initializeHugoTabs('component-tab-content-source', 'component-tabs-container', 'software-component-versions');
 });
 </script>
 
