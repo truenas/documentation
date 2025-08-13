@@ -20,11 +20,11 @@ TrueNAS offers two methods to add an iSCSI block share: the setup wizard or the 
 Both methods cover the same basic steps but have some differences.
 
 The setup wizard steps you through the process.
-It is designed to ensure you configure the iSCSI share completely so you can use it immediately.
+The setup wizard ensures you configure the iSCSI share completely so you can use it immediately.
 
 The manual process has more configuration screens than the wizard and allows you to configure the block share in any order after creating the target.
 Use this process to customize your share for special use cases.
-It is designed to give you additional flexibility to build or tune a share to your exact requirements.
+It gives you additional flexibility to build or tune a share to your exact requirements.
 
 ### Before You Begin
 
@@ -135,7 +135,7 @@ Click on the **Block (iSCSI) Share Targets** widget header to open the **iSCSI**
       To show the **Mutual CHAP** option, you must set the peer user and secret password.
       For more information on authentication methods, see [iSCSI Screens]({{< ref "iSCSISharesScreens" >}}).
 
-      The **Authentication Group Number** dropdown list is populated after configuration groups on the **Add Authorized Access** screen.
+      The **Authentication Group Number** dropdown list populates after configuration groups on the **Add Authorized Access** screen.
       Edit the target after adding these groups if you want to include them.
 
    e. Click **Save**.
@@ -175,7 +175,7 @@ Click on the **Block (iSCSI) Share Targets** widget header to open the **iSCSI**
 
    f. Leave **Disable Physical Block Size Reporting** disabled unless you want to enable this function.
 
-   g. Enter a product identification for the extent in **Product ID** or leave it blank to use the default **iSCSI Disk** used when it is left empty.
+   g. Enter a product identification for the extent in **Product ID** or leave it blank to use the default **iSCSI Disk** used when left empty.
 
    h. Click **Save**.
 
