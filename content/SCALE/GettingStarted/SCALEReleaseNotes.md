@@ -116,6 +116,11 @@ initializeChangelogTableForTabs('25.04');
 
 {{< include file="/static/includes/AppsUnversionedAdmonition.md" >}}
 
+* TrueNAS 25.10 adds an option to automatically migrate existing applications when changing apps pool locations.
+  See [Migrating Existing Applications](https://apps.truenas.com/getting-started/initial-setup/#migrating-existing-applications) for details.
+* TrueNAS 25.10 supports configuring external container registry mirrors as alternative sources for Docker images.
+  See [PD-2125]() for more information.
+
   </div>
 
   <div data-tab-id="nvidia-GPU-support" data-tab-label="NVIDIA GPU Support">
@@ -201,12 +206,12 @@ Click the component version number to see release notes for that component.
 ### OpenZFS Feature Flags
 
 TrueNAS integrates many features provided by the upstream [OpenZFS project](https://openzfs.org/wiki/Main_Page).
-Any new feature flags introduced since the previous OpenZFS version that was integrated into TrueNAS (OpenZFS 2.2.99) are listed below:
+Any new feature flags introduced since the previous OpenZFS version that was integrated into TrueNAS (OpenZFS 2.3.0) are listed below:
 
 {{< truetable class="tn-blue" >}}
 | Feature Flag | GUID | Notes |
 |--------------|------|-------|
-|  | [](https://openzfs.github.io/openzfs-docs/man/master/7/zpool-features.7.html#FLAG) |  |
+| n/a | [](https://openzfs.github.io/openzfs-docs/man/master/7/zpool-features.7.html#FLAG) |  |
 {{< /truetable >}}
 
 For more details on feature flags, see [OpenZFS Feature Flags](https://openzfs.github.io/openzfs-docs/Basic%20Concepts/Feature%20Flags.html) and [OpenZFS zpool-feature.7](https://openzfs.github.io/openzfs-docs/man/7/zpool-features.7.html).
@@ -224,4 +229,3 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeHugoTabs('component-tab-content-source', 'component-tabs-container', 'software-component-versions');
 });
 </script>
-
