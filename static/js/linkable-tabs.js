@@ -321,11 +321,9 @@ ${this.config.enableMarkdown ? this.parseMarkdown(cleanContent) : cleanContent}
             
             window.addEventListener('hashchange', () => {
                 const currentHash = window.location.hash.substring(1);
-                console.log(`🔄 HASHCHANGE: "${currentHash}" | Last: "${lastProcessedHash}"`);
                 
                 // If it's the same hash as last time, force re-processing
                 if (currentHash === lastProcessedHash && currentHash !== '') {
-                    console.log(`🔄 Same hash detected, forcing re-navigation`);
                     // Force a brief clear and reset to ensure processing
                     const tempPath = window.location.pathname + window.location.search;
                     history.replaceState(null, null, tempPath);
@@ -362,7 +360,6 @@ ${this.config.enableMarkdown ? this.parseMarkdown(cleanContent) : cleanContent}
     }
 
     handleNavigation(hash) {
-        console.log(`🔧 TAB SYSTEM: handleNavigation called with hash: "${hash}"`);
         
         if (!hash) {
             if (this.config.collapsible) {
@@ -376,7 +373,6 @@ ${this.config.enableMarkdown ? this.parseMarkdown(cleanContent) : cleanContent}
         // Check if hash matches a tab ID directly
         const directTabMatch = this.tabs.find(t => t.id === hash);
         if (directTabMatch) {
-            console.log(`🎪 Direct tab match found: ${hash}`);
             if (this.config.collapsible) {
                 this.expandTab(hash, false);
             } else {
@@ -388,23 +384,19 @@ ${this.config.enableMarkdown ? this.parseMarkdown(cleanContent) : cleanContent}
         // Check if hash matches a header inside any tab content
         const headerTabMatch = this.findTabContainingHeader(hash);
         if (headerTabMatch) {
-            console.log(`🎯 Found header "${hash}" in tab "${headerTabMatch.tabId}", switching and scrolling`);
             if (this.config.collapsible) {
                 // FORCE expansion even if tab appears active
-                console.log(`🎪 Force expanding tab for header: ${headerTabMatch.tabId}`);
                 this.forceExpandTabForHash(headerTabMatch.tabId);
             } else {
                 this.switchToTab(headerTabMatch.tabId, false);
             }
             this.waitForTabActivation(headerTabMatch.tabId, () => {
-                console.log(`Tab "${headerTabMatch.tabId}" is now active, scrolling to header "${hash}"`);
                 this.scrollToHeaderInTab(hash, headerTabMatch.tabId);
             });
             return;
         }
 
         // Default behavior if no match found
-        console.log(`❌ No match found for hash: ${hash}`);
         if (this.config.collapsible) {
             this.collapseAllTabs();
         } else {
@@ -523,7 +515,6 @@ ${this.config.enableMarkdown ? this.parseMarkdown(cleanContent) : cleanContent}
     }
 
     forceExpandTabForHash(tabId) {
-        console.log(`🎪 FORCE expanding tab for hash navigation: ${tabId}`);
         
         const button = document.getElementById(`tab-${tabId}`);
         const pane = document.getElementById(`pane-${tabId}`);
@@ -531,19 +522,11 @@ ${this.config.enableMarkdown ? this.parseMarkdown(cleanContent) : cleanContent}
         const nav = this.container.querySelector('.linkable-tabs-nav');
         
         if (!button || !pane || !content || !nav) {
-            console.log(`❌ Missing tab elements for: ${tabId}`);
             return;
         }
 
-        console.log(`📊 Before force expansion:`);
-        console.log(`  Button active: ${button.classList.contains('active')}`);
-        console.log(`  Pane active: ${pane.classList.contains('active')}`);
-        console.log(`  Content display: ${content.style.display || 'default'}`);
-        console.log(`  Nav collapsed: ${nav.classList.contains('collapsed')}`);
-
         // ALWAYS force collapse everything first
         this.collapseAllTabs();
-        console.log(`🔥 Forced collapse of all tabs`);
         
         // Small delay then force expand
         setTimeout(() => {
@@ -552,20 +535,12 @@ ${this.config.enableMarkdown ? this.parseMarkdown(cleanContent) : cleanContent}
             content.style.display = 'block';
             nav.classList.remove('collapsed');
             
-            console.log(`📊 After force expansion:`);
-            console.log(`  Button active: ${button.classList.contains('active')}`);
-            console.log(`  Pane active: ${pane.classList.contains('active')}`);
-            console.log(`  Content display: ${content.style.display || 'default'}`);
-            console.log(`  Nav collapsed: ${nav.classList.contains('collapsed')}`);
-            
             // Execute any scripts in the newly shown tab content
             this.executeTabScripts(pane);
-            console.log(`✅ Force expansion complete for: ${tabId}`);
         }, 50);
     }
 
     executeTabScripts(tabPane) {
-        console.log('=== TAB SCRIPT EXECUTION v3.4 ===');
         
         // Handle Mermaid diagrams
         this.initializeMermaidDiagrams(tabPane);
@@ -581,7 +556,6 @@ ${this.config.enableMarkdown ? this.parseMarkdown(cleanContent) : cleanContent}
         const mermaidElements = tabPane.querySelectorAll('.mermaid');
         if (mermaidElements.length === 0) return;
 
-        console.log(`Found ${mermaidElements.length} Mermaid elements in tab`);
 
         // Store original content before processing
         this.storeMermaidElementContent(mermaidElements, tabPane);
@@ -593,6 +567,9 @@ ${this.config.enableMarkdown ? this.parseMarkdown(cleanContent) : cleanContent}
 
         // Render diagrams
         await this.renderMermaidDiagrams(mermaidElements);
+        
+        // After Mermaid rendering, check for scroll containers and scroll them
+        this.handlePostMermaidScroll(tabPane);
     }
 
     storeMermaidElementContent(elements, tabPane) {
@@ -617,7 +594,6 @@ ${this.config.enableMarkdown ? this.parseMarkdown(cleanContent) : cleanContent}
 
             if (originalContent) {
                 element.setAttribute('data-original-content', originalContent);
-                console.log(`Stored original content for diagram ${index + 1}:`, originalContent.substring(0, 100) + '...');
             } else {
                 console.warn(`Could not find original content for diagram ${index + 1}`);
             }
@@ -629,19 +605,21 @@ ${this.config.enableMarkdown ? this.parseMarkdown(cleanContent) : cleanContent}
             const script = document.createElement('script');
             script.src = 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js';
             script.onload = () => {
-                console.log('Mermaid loaded dynamically');
                 if (typeof mermaid !== 'undefined') {
                     mermaid.initialize({ 
                         startOnLoad: false,
-                        theme: 'default',
+                        theme: 'base',
                         themeVariables: {
-                            primaryColor: '#0095d5',
-                            primaryTextColor: '#000',
+                            primaryColor: '#222222',
+                            primaryTextColor: '#ffffff',
                             primaryBorderColor: '#0095d5',
-                            lineColor: '#333',
+                            lineColor: '#ffffff',
                             sectionBkColor: '#f8f9fa',
                             altSectionBkColor: '#ffffff',
-                            gridColor: '#e9ecef'
+                            gridColor: '#e9ecef',
+                            secondaryColor: '#7a7a7a',
+                            secondaryBorderColor: '#0095d5',
+                            secondaryTextColor: '#ffffff'
                         }
                     });
                     resolve();
@@ -659,6 +637,62 @@ ${this.config.enableMarkdown ? this.parseMarkdown(cleanContent) : cleanContent}
             const element = elements[i];
             await this.renderSingleMermaidDiagram(element, i);
         }
+    }
+
+    handlePostMermaidScroll(tabPane) {
+        // Look for scroll containers that need to be scrolled to the right
+        const scrollContainers = tabPane.querySelectorAll('.scroll-container');
+        if (scrollContainers.length > 0) {
+            
+            // Add a small delay to ensure the DOM is fully updated
+            setTimeout(() => {
+                scrollContainers.forEach(container => {
+                    if (container.scrollWidth > container.clientWidth) {
+                        container.scrollLeft = container.scrollWidth;
+                    }
+                    
+                    // Add drag scroll functionality if not already added
+                    if (!container.hasAttribute('data-drag-initialized')) {
+                        this.addDragScrollToContainer(container);
+                        container.setAttribute('data-drag-initialized', 'true');
+                    }
+                });
+            }, 100);
+        }
+    }
+
+    addDragScrollToContainer(scrollContainer) {
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+
+        scrollContainer.addEventListener('mousedown', (e) => {
+            isDown = true;
+            scrollContainer.classList.add('active');
+            startX = e.pageX - scrollContainer.offsetLeft;
+            scrollLeft = scrollContainer.scrollLeft;
+            scrollContainer.style.userSelect = 'none'; // Prevent text selection
+        });
+
+        scrollContainer.addEventListener('mouseleave', () => {
+            isDown = false;
+            scrollContainer.classList.remove('active');
+            scrollContainer.style.userSelect = ''; // Re-enable text selection
+        });
+
+        scrollContainer.addEventListener('mouseup', () => {
+            isDown = false;
+            scrollContainer.classList.remove('active');
+            scrollContainer.style.userSelect = ''; // Re-enable text selection
+        });
+
+        scrollContainer.addEventListener('mousemove', (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - scrollContainer.offsetLeft;
+            const walk = (x - startX) * 2; // Adjust scrolling speed
+            scrollContainer.scrollLeft = scrollLeft - walk;
+        });
     }
 
     async renderSingleMermaidDiagram(element, index) {
@@ -683,10 +717,8 @@ ${this.config.enableMarkdown ? this.parseMarkdown(cleanContent) : cleanContent}
                 const id = `mermaid-diagram-${Date.now()}-${index}`;
                 const { svg } = await mermaid.render(id, originalContent);
                 element.innerHTML = svg;
-                console.log(`Mermaid diagram ${index + 1} rendered successfully`);
             } else {
                 mermaid.init(undefined, element);
-                console.log(`Mermaid diagram ${index + 1} initialized successfully`);
             }
         } catch (error) {
             console.error(`Error rendering Mermaid diagram ${index + 1}:`, error);
@@ -738,13 +770,11 @@ ${this.config.enableMarkdown ? this.parseMarkdown(cleanContent) : cleanContent}
         if (csvContainer && typeof window.initializeChangelogTable === 'function') {
             // Only initialize if not already initialized
             if (!csvContainer.hasAttribute('data-initialized')) {
-                console.log('Initializing CSV changelog table for active tab');
                 csvContainer.setAttribute('data-initialized', 'true');
                 setTimeout(() => {
                     window.initializeChangelogTable();
                 }, 300); // Increased timeout to ensure tab is fully active
             } else {
-                console.log('CSV changelog table already initialized, skipping');
             }
         }
     }
@@ -752,31 +782,25 @@ ${this.config.enableMarkdown ? this.parseMarkdown(cleanContent) : cleanContent}
     findTabContainingHeader(headerId) {
         if (!headerId) return null;
         
-        console.log(`Searching for header ID: ${headerId}`);
         
         for (const tab of this.tabs) {
-            console.log(`Checking tab: ${tab.id} (${tab.label})`);
             
             const tempDiv = document.createElement('div');
             tempDiv.innerHTML = tab.content;
             
             const headers = tempDiv.querySelectorAll('h1, h2, h3, h4, h5, h6');
-            console.log(`Found ${headers.length} headers in tab ${tab.id}`);
             
             for (const header of headers) {
                 const headerText = (header.textContent || header.innerText).trim();
                 const potentialId = this.generateHeaderId(headerText);
                 
-                console.log(`  Header: "${headerText}" → ID: "${potentialId}"`);
                 
                 if (potentialId === headerId || header.id === headerId) {
-                    console.log(`Match found in tab ${tab.id}!`);
                     return { tabId: tab.id, headerId: headerId };
                 }
             }
         }
         
-        console.log('No matching header found in any tab');
         return null;
     }
 
@@ -789,62 +813,49 @@ ${this.config.enableMarkdown ? this.parseMarkdown(cleanContent) : cleanContent}
     }
 
     scrollToHeaderInTab(headerId, tabId) {
-        console.log(`Attempting to scroll to header "${headerId}" in tab "${tabId}"`);
         
         const targetTabPane = document.getElementById(`pane-${tabId}`);
         if (!targetTabPane) {
-            console.log(`Tab pane not found: pane-${tabId}`);
             return;
         }
         
-        console.log(`Tab pane found: ${targetTabPane.id}`);
 
         let targetHeader = targetTabPane.querySelector(`#${headerId}`);
-        console.log(`Header found by ID: ${targetHeader}`);
         
         if (!targetHeader) {
-            console.log(`Searching for header by text content...`);
             const headers = targetTabPane.querySelectorAll('h1, h2, h3, h4, h5, h6');
-            console.log(`Found ${headers.length} headers in tab`);
             
             for (const header of headers) {
                 const headerText = (header.textContent || header.innerText).trim();
                 const generatedId = this.generateHeaderId(headerText);
                 
-                console.log(`Header: "${headerText}" → Generated ID: "${generatedId}"`);
                 
                 if (generatedId === headerId) {
                     targetHeader = header;
                     header.id = headerId;
-                    console.log(`Match found! Setting header ID to "${headerId}"`);
                     break;
                 }
             }
         }
 
         if (targetHeader) {
-            console.log(`Target header found, scrolling to:`, targetHeader);
             
             const headerRect = targetHeader.getBoundingClientRect();
             const absoluteTop = headerRect.top + window.pageYOffset;
             const offset = 150;
             
-            console.log(`Scrolling to position: ${absoluteTop - offset}`);
             
             window.scrollTo({
                 top: Math.max(0, absoluteTop - offset),
                 behavior: 'smooth'
             });
         } else {
-            console.log(`Header not found for ID: ${headerId}`);
             
             // Debug: List all headers in the target tab
             const allHeaders = targetTabPane.querySelectorAll('h1, h2, h3, h4, h5, h6');
-            console.log('Available headers in target tab:');
             allHeaders.forEach(h => {
                 const text = (h.textContent || h.innerText).trim();
                 const id = this.generateHeaderId(text);
-                console.log(`"${text}" → "${id}"`);
             });
         }
     }
@@ -858,17 +869,13 @@ ${this.config.enableMarkdown ? this.parseMarkdown(cleanContent) : cleanContent}
             const targetTabPane = document.getElementById(`pane-${tabId}`);
             const activeTabPane = document.querySelector('.linkable-tab-pane.active');
             
-            console.log(`Attempt ${attempts}: Target pane: ${targetTabPane?.id}, Active pane: ${activeTabPane?.id}`);
             
             if (targetTabPane && targetTabPane.classList.contains('active') && activeTabPane?.id === `pane-${tabId}`) {
-                console.log(`Tab ${tabId} is now active, executing callback`);
                 callback();
             } else if (attempts < maxAttempts) {
-                console.log(`Waiting for tab ${tabId} to become active (attempt ${attempts})`);
                 setTimeout(checkTabActive, 50);
             } else {
                 console.warn(`Timeout waiting for tab ${tabId} to become active`);
-                console.log(`Final state - Target: ${targetTabPane?.id}, Active: ${activeTabPane?.id}`);
                 callback(); // Try anyway
             }
         };
