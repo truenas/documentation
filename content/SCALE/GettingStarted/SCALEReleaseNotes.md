@@ -116,9 +116,9 @@ initializeChangelogTableForTabs('25.04');
 
 {{< include file="/static/includes/AppsUnversionedAdmonition.md" >}}
 
-* TrueNAS 25.10 adds an option to automatically migrate existing applications when changing apps pool locations.
+* TrueNAS 25.10 adds an option to automatically migrate existing applications when changing apps pool locations ([NAS-135720](https://ixsystems.atlassian.net/browse/NAS-135720))..
   See [Migrating Existing Applications](https://apps.truenas.com/getting-started/initial-setup/#migrating-existing-applications) for details.
-* TrueNAS 25.10 supports configuring external container registry mirrors as alternative sources for Docker images.
+* 25.10 supports configuring external container registry mirrors as alternative sources for Docker images ([NAS-136553](https://ixsystems.atlassian.net/browse/NAS-136553)).
   See [PD-2125]() for more information.
 
   </div>
