@@ -338,6 +338,17 @@ ${this.config.enableMarkdown ? this.parseMarkdown(cleanContent) : cleanContent}
                     lastProcessedHash = currentHash;
                 }
             });
+            
+            // Also handle direct clicks on hash links to ensure immediate processing
+            document.addEventListener('click', (e) => {
+                if (e.target.matches('a[href^="#"]')) {
+                    const targetHash = e.target.getAttribute('href').substring(1);
+                    // Small delay to let the hash change, then process
+                    setTimeout(() => {
+                        this.handleNavigation(targetHash);
+                    }, 10);
+                }
+            });
         }
     }
 
@@ -370,13 +381,13 @@ ${this.config.enableMarkdown ? this.parseMarkdown(cleanContent) : cleanContent}
             return;
         }
 
-        // Check if hash matches a tab ID directly
-        const directTabMatch = this.tabs.find(t => t.id === hash);
+        // Check if hash matches a tab ID directly (case-insensitive)
+        const directTabMatch = this.tabs.find(t => t.id.toLowerCase() === hash.toLowerCase());
         if (directTabMatch) {
             if (this.config.collapsible) {
-                this.expandTab(hash, false);
+                this.expandTab(directTabMatch.id, false);
             } else {
-                this.switchToTab(hash, false);
+                this.switchToTab(directTabMatch.id, false);
             }
             return;
         }
@@ -507,6 +518,13 @@ ${this.config.enableMarkdown ? this.parseMarkdown(cleanContent) : cleanContent}
         
         // Execute any scripts in the newly shown tab content
         this.executeTabScripts(pane);
+        
+        // Scroll to the tab navigation after expansion (with longer delay for proper rendering)
+        setTimeout(() => {
+            const rect = nav.getBoundingClientRect();
+            const offsetY = window.pageYOffset + rect.top - 80;
+            window.scrollTo({ top: Math.max(0, offsetY), behavior: 'smooth' });
+        }, 200);
         
         // Update URL if requested (typically false for deep linking)
         if (updateUrl && this.config.urlHashEnabled) {
