@@ -52,13 +52,13 @@ Go to **Credentials > KMIP**.
 
 {{< trueimage src="/images/SCALE/Credentials/KMIPScreen.png" alt="KMIP Screen" id="KMIP Screen" >}}
 
-Enter the central key server host name or IP address in **Server** and the number of an open connection on the key server in **Port**.
-Select the certificate and certificate authority that you imported from the central key server.
+Enter the central key server host name or IP address in **Server** and, if not using the default port **5696**, enter a number for an open connection port on the central key server in **Port**.
+Select the certificate imported from the central key server in **Certificate**.
 To ensure the certificate chain is correct, click on **Validate Connection**. Click **Save**.
 
-When the certificate chain verifies, choose the encryption values, SED passwords, or ZFS data pool encryption keys to move to the central key server.
+When the certificate chain verifies, choose the encryption values, SED global password, or ZFS data pool encryption keys to move to the central key server.
 Select **Enabled** to begin moving the passwords and keys immediately after clicking **Save**.
 
 Refresh the KMIP screen to show the current **KMIP Key Status**.
 
-If you want to cancel a pending key synchronization, select **Force Clear** and click **Save**.
+To cancel a pending key synchronization, select **Force Clear** and click **Save**.
