@@ -15,10 +15,10 @@ majorVersions:
   - lifecycle: "Stable"
     name: "TrueCommand 3.1"
     releases:
-      - name: "3.1.0"
+      - name: "3.1.1"
         type: "Stable"
         link: "https://www.truenas.com/docs/truecommand/3.0/tcgettingstarted/tcreleasenotes/#310-changelog"
-        releaseDate: "2025-03-25"
+        releaseDate: "2025-08-26"
         latest: true
   - lifecycle: "Next"
     name: "TrueCommand Next"
