@@ -34,7 +34,7 @@ See the stable [25.04 (Fangtooth)](https://www.truenas.com/docs/scale/25.04/gett
 
 <!-- Hugo-processed content for release notes tab box -->
 <div style="display: none;" id="release-tab-content-source">
-  <div data-tab-id="25.10.0-BETA.1" data-tab-label="25.10.0-BETA.1">
+  <div data-tab-id="25.10-BETA.1" data-tab-label="25.10-BETA.1">
 
 {{< hint type=warning title="Early Release Software" >}}
 Early releases are intended for testing and feedback purposes.
@@ -46,22 +46,32 @@ August 20, 2025
 The TrueNAS team is pleased to release TrueNAS 25.10-BETA.1!
 This first public release version of TrueNAS 25.10 (Goldeye) has software component updates and new features that are in the polishing phase.
 
+Special thanks to (Github users): [Aurélien Sallé](https://github.com/MDVAurelien), [ReiKirishima](https://github.com/ReiKirishima), [AquariusStar](https://github.com/AquariusStar), [RedstoneSpeaker](https://github.com/RedstoneSpeaker), [Lee Jihaeng](https://github.com/SejoWuigui), [Marcos Ribeiro](https://github.com/marcosasribeiro), [Christos Longros](https://github.com/chrislongros), [dany22m](https://github.com/dany22m), [Aindriú Mac Giolla Eoin](https://github.com/aindriu80), [William Li](https://github.com/WilliamLi0623), [Franco Castillo](https://github.com/castillofrancodamian), [MAURICIO S BASTOS](https://github.com/msbastos), [TeCHiScy](https://github.com/TeCHiScy), [Chen Zhaochang](https://github.com/chenwickc), [Helak](https://github.com/helakostain), [dedebenui](https://github.com/dedebenui), [Henry Essinghigh](https://github.com/essinghigh), [Sophist](https://github.com/Sophist-UK), [Piotr Jasiek](https://github.com/pht31337), [Martin Dørum](https://github.com/mortie), [Emmanuel Ferdman](https://github.com/emmanuel-ferdman) and [zrk02](https://github.com/zrk02) for contributing to TrueNAS 25.10-BETA.1.
+Visit [our guide](https://www.truenas.com/docs/contributing/) for information on how you too can contribute.
+
 ### 25.10-BETA.1 Notable changes
 
-* 
-* TrueNAS 25.10 includes the [NVIDIA open GPU kernel module drivers](https://github.com/NVIDIA/open-gpu-kernel-modules).
+* A redesigned **Updates** screen allows users to select an update profile reflecting their risk-tolerance level ([NAS-133600](https://ixsystems.atlassian.net/browse/NAS-133600)). TrueNAS only notifies users of updates recommended for users at the selected profile level.
+* Introduces a refreshed **Users** screen to allow for improved at-a-glance access to account information and simplify user creation ([NAS-134198](https://ixsystems.atlassian.net/browse/NAS-134198)).
+* Includes the [NVIDIA open GPU kernel module drivers](https://github.com/NVIDIA/open-gpu-kernel-modules).
   These drivers work with Turing and later GPUs.
   Earlier architectures (Pascal, Maxwell, Volta) are not compatible.
   See [NVIDIA GPU Support](#nvidia-gpu-support) for more information.
+* Various UI improvements and optimizations simplify core user experiences ([NAS-135159](https://ixsystems.atlassian.net/browse/NAS-135159)).
+* Fixes the NVIDIA GPU related error "RenderError: Expected [uuid] to be set for GPU in slot" ([NAS-134152](https://ixsystems.atlassian.net/browse/NAS-134152)).
+* Fixes an issue affecting drive temperature reporting on the dashboard ([NAS-135572](https://ixsystems.atlassian.net/browse/NAS-135572)).
+* Virtual machines created in 25.04 (pre-25.04.2) and displayed on the **Containers** screen do not automatically start on system boot to prevent conflicts with VMs on the **Virtual Machines** screen that might use the same zvol(s) ([NAS-136946](https://ixsystems.atlassian.net/browse/NAS-136946)).
+* The **Enable Secure Boot** option is added to virtual machine configuration screens ([NAS-136466](https://ixsystems.atlassian.net/browse/NAS-136466)).
+* TrueNAS can now automatically migrate existing applications when selecting a new applications pool ([NAS-132188](https://ixsystems.atlassian.net/browse/NAS-132188)).
+* Fixes contrast issues on some UI theme options ([NAS-135519](https://ixsystems.atlassian.net/browse/NAS-135519)).
 
-<a href="https://ixsystems.atlassian.net/issues/?filter=11744" target="_blank">Click here for the full changelog</a> of completed tickets that are included in the 25.10-BETA.1 release.
-{{< include file="/static/includes/JiraFilterInstructions.md" >}}
+<a href="#full-changelog" target="_blank">Click here</a> to see the full 25.10 changelog or visit the <a href="https://ixsystems.atlassian.net/issues/?filter=13196" target="_blank">TrueNAS 25.10-BETA.1 (Goldeye) Changelog</a> in Jira.
 
 ### 25.10-BETA.1 Known Issues
 
 *
 
-<a href="https://ixsystems.atlassian.net/issues/?filter=11745" target="_blank">Click here to see the latest information</a> about public issues discovered in 25.10-BETA.1 that are being resolved in a future TrueNAS release.
+<a href="https://ixsystems.atlassian.net/issues/?filter=13197" target="_blank">Click here to see the latest information</a> about public issues discovered in 25.10-BETA.1 that are being resolved in a future TrueNAS release.
   </div>
   <div data-tab-id="full-changelog" data-tab-label="Full TrueNAS 25.10 Changelog">
 <!-- CSV Changelog Table with Version Support -->
@@ -77,7 +87,7 @@ This first public release version of TrueNAS 25.10 (Goldeye) has software compon
 <script src="/js/linkable-tabs-init.js"></script>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-    initializeHugoTabs('release-tab-content-source', 'release-tabs-container', '25.10.0-BETA.1');
+    initializeHugoTabs('release-tab-content-source', 'release-tabs-container', '25.10-BETA.1');
 });
 </script>
 
@@ -108,6 +118,9 @@ initializeChangelogTableForTabs('25.04');
 
 ### Containers and Virtual Machines
 
+* Virtual machines created in 25.04 (pre-25.04.2) and displayed on the **Containers** screen do not automatically start on system boot to prevent conflicts with VMs on the **Virtual Machines** screen that might use the same zvol(s) ([NAS-136946](https://ixsystems.atlassian.net/browse/NAS-136946)).
+* The **Enable Secure Boot** option is added to virtual machine configuration screens ([NAS-136466](https://ixsystems.atlassian.net/browse/NAS-136466)).
+
   </div>
 
   <div data-tab-id="truenas-apps" data-tab-label="TrueNAS Apps">
@@ -116,10 +129,16 @@ initializeChangelogTableForTabs('25.04');
 
 {{< include file="/static/includes/AppsUnversionedAdmonition.md" >}}
 
-* TrueNAS 25.10 adds an option to automatically migrate existing applications when changing apps pool locations ([NAS-135720](https://ixsystems.atlassian.net/browse/NAS-135720))..
+* TrueNAS 25.10 adds an option to automatically migrate existing applications when changing apps pool locations ([NAS-135720](https://ixsystems.atlassian.net/browse/NAS-135720)).
   See [Migrating Existing Applications](https://apps.truenas.com/getting-started/initial-setup/#migrating-existing-applications) for details.
 * 25.10 supports configuring external container registry mirrors as alternative sources for Docker images ([NAS-136553](https://ixsystems.atlassian.net/browse/NAS-136553)).
   See [PD-2125]() for more information.
+* Includes the [NVIDIA open GPU kernel module drivers](https://github.com/NVIDIA/open-gpu-kernel-modules).
+  These drivers work with Turing and later GPUs.
+  Earlier architectures (Pascal, Maxwell, Volta) are not compatible.
+  See [NVIDIA GPU Support](#nvidia-gpu-support) for more information.
+* Fixes the NVIDIA GPU related error "RenderError: Expected [uuid] to be set for GPU in slot" ([NAS-134152](https://ixsystems.atlassian.net/browse/NAS-134152)).
+
 
   </div>
 
