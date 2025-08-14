@@ -322,8 +322,8 @@ ${this.config.enableMarkdown ? this.parseMarkdown(cleanContent) : cleanContent}
             window.addEventListener('hashchange', () => {
                 const currentHash = window.location.hash.substring(1);
                 
-                // If it's the same hash as last time, force re-processing
-                if (currentHash === lastProcessedHash && currentHash !== '') {
+                // If it's the same hash as last time (case-insensitive), force re-processing
+                if (currentHash.toLowerCase() === lastProcessedHash.toLowerCase() && currentHash !== '') {
                     // Force a brief clear and reset to ensure processing
                     const tempPath = window.location.pathname + window.location.search;
                     history.replaceState(null, null, tempPath);
