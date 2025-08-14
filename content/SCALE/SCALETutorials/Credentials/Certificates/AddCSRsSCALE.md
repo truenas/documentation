@@ -13,27 +13,51 @@ keywords:
 
 The **Certificate Signing Requests** widget allows users configure the message(s) the system sends to a registration authority of the public key infrastructure to apply for a digital identity certificate. 
 
+## Adding a CSR
+
 To add a new CSR:
 
-First enter the name and select the CSR type. 
-The **Identifier and Type** step lets users name the certificate signing request (CSR) and choose whether to create a new CSR or import an existing CSR.     
-Users can also select a predefined certificate extension from the **Profiles** drop-down list.
+First, enter a name and select the CSR type. The **Add CSR** allows a user to either create a certificate signing request(CSR) or import a certificate for a CSR. Users can also select a predefined certificate extension from the **Profiles** dropdown list.
 
-Next, select the certficate options for the CSR you selected. 
-The **Certificate Options** step provides options for choosing what type of private key type to use, the number of bits in the key used by the cryptographic algorithm, and the cryptographic algorithm the CSR uses.
+When adding a CSR, the next step is to select or enter the certificate options for the CSR. Choose options that specify the type of private key to use, the number of bits in the key used by the cryptographic algorithm, and the cryptographic algorithm the CSR uses.
 
-Now enter the information about the certificate. 
-The **Certificate Subject** step lets users define the location, name, and email for the organization using the certificate.    
-Users can also enter the system [fully-qualified hostname (FQDN)](https://kb.iu.edu/d/aiuv) and any additional domains for multi-domain support.
+Next, enter the information about the certificate. Enter information about the geographical location, contact email, and other system [fully-qualified hostname (FQDN)](https://kb.iu.edu/d/aiuv) and additional domains for multi-domain support.
 
 Lastly, enter any extra constraints you need for your scenario. 
 The **Extra Constraints** step contains certificate extension options.
 
-* **Basic Constraints** when enabled this limits the path length for a certificate chain.
-* **Authority Key Identifier** when enable provides a means of identifying the public key corresponding to the private key used to sign a certificate.
-* **Key Usage** when enabled defines the purpose of the public key contained in a certificate.
-* **Extended Key Usage** when enabled it further refines key usage extensions.
+* **Basic Constraints** limits the path length for a certificate chain.
+* **Authority Key Identifier** provides a means of identifying the public key corresponding to the private key used to sign a certificate.
+* **Key Usage** defines the purpose of the public key contained in a certificate.
+* **Extended Key Usage** further refines key usage extensions.
 
-Review the certificate options. If you want to change something Click **Back** to reach the screen with the setting option you want to change, then click **Next** to advance to the **Confirm Options** step.
+Review the certificate options. If you want to change something, click **Back** to reach the screen with the setting option you want to change, then click **Next** to advance to the **Confirm Options** step.
 
 Click **Save** to add the CSR.
+
+## Importing a CSR
+
+When you want to import a certificate into TrueNAS for the CSR, use **Type** setting on the **Add CSR** screen.
+
+Enter a name, select **Import Certificate Signing Request** in **Type**. Click Next.
+
+Manually enter or copy/paste the certificate string into **Signing Request**, then manually enter or copy/paste the private key into **Private Key**.
+Enter the password for the private key in **Password** and **Confirm Password**. Click **Next**, review the information, then click **Save**.
+
+## Creating ACME Certificate
+
+You can access the **Create ACME Certificate** from the <span class="material-icons">more_vert</span> dropdown list or the **Edit CSR** screen, to add a certificate by selecting an ACME DNS authenticator configured in TrueNAS.
+
+{{< hint type=info >}}
+You must [configure a DNS authenticator]({{< relref "AddACMESCALE.md" >}}) to create an ACME certificate!
+{{< /hint >}}
+
+Enter a name in **Identifier**, and then select **Terms of Service**.
+
+Enter a number in **Renew Certificate Days** to specify the number of days to renew the certificate before it expires.
+
+Select the URI of the ACME server directory from the **ACME Server Directory URI** dropdown list.
+
+Select the Domains from the **DNS:United States** dropdown list. This sets the authenticator to validate the domain.
+
+Click **Save**.

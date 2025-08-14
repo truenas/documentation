@@ -63,7 +63,7 @@ The **Subject** area of the **Edit Certificate** screen shows information about 
 | **Email** | Shows the email address associated with the certificate. The default value for the **truenas_default** certificate is **info@ixsystems.com.** |
 | **Type** | Shows the type of certificate. The default value for the **truenas_default** certificate is **Certificate**. |
 | **Path** | Shows the path to where the certificate is stored. The default value for the **truenas_default** certificate is <code>/etc/certificates</code>. |
-| **Digest Algorithmm** | Shows the authentication protocol for the certificates. The default value for the **truenas_default** certificate is **SHA256S**. |
+| **Digest Algorithm** | Shows the authentication protocol for the certificates. The default value for the **truenas_default** certificate is **SHA256S**. |
 | **Key Length** | Shows the number of characters in the key for the certificate. The default value for the **truenas_default** certificate is **2048**. |
 | **Key Type** | Shows the certificate key type. The default value for the **truenas_default** certificate is **RSA**.  |
 | **Until** | Shows the expiration date for the certificate. |
@@ -78,12 +78,4 @@ The <span class="material-icons">assignment</span> clipboard icon copies the cer
 
 **Download** downloads a copy of the certificate to your server. Keep the certificate in a secure area where you can back it up and save it.
 
-### Delete Certificate Dialog
-
-The **Delete Certificate** dialog removes the certificate from the TrueNAS system.
-
-{{< trueimage src="/images/SCALE/Credentials/DeleteCertificateDialog.png" alt="Delete Certificate Dialog" id="Delete Certificates Dialog" >}}
-
-**Force** deletes the certificate if it is in use by a feature or function in the UI. For example, an application uses it for authentication.
-
-**Delete** removes the certificate.
+{{< include file="/static/includes/DeleteCertificateDialog.md" >}}
