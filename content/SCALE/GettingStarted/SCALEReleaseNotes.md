@@ -51,6 +51,10 @@ Visit [our guide](https://www.truenas.com/docs/contributing/) for information on
 
 ### 25.10-BETA.1 Notable changes
 
+{{< enterprise >}}
+Virtual Machines are now "Enterprise ready" with support for TrueNAS Enterprise High Availability (HA) systems and failover ([NAS-136509](https://ixsystems.atlassian.net/browse/NAS-136509)).
+{{< /enterprise >}}
+
 * A redesigned **Updates** screen allows users to select an update profile reflecting their risk-tolerance level ([NAS-133600](https://ixsystems.atlassian.net/browse/NAS-133600)). TrueNAS only notifies users of updates recommended for users at the selected profile level.
 * Introduces a refreshed **Users** screen to allow for improved at-a-glance access to account information and simplify user creation ([NAS-134198](https://ixsystems.atlassian.net/browse/NAS-134198)).
 * Includes the [NVIDIA open GPU kernel module drivers](https://github.com/NVIDIA/open-gpu-kernel-modules).
@@ -68,6 +72,8 @@ Visit [our guide](https://www.truenas.com/docs/contributing/) for information on
 * Fixes a bug to reenable available update notifications for custom apps ([NAS-135124](https://ixsystems.atlassian.net/browse/NAS-135124)).
 * Fixes contrast issues on some UI theme options ([NAS-135519](https://ixsystems.atlassian.net/browse/NAS-135519)).
 * Simplifies and improves robustness of gateway and name server settings when changing from DHCP to static aliases ([NAS-136360](https://ixsystems.atlassian.net/browse/NAS-136360) and [NAS-136360](https://ixsystems.atlassian.net/browse/NAS-136360)).
+
+
 
 
 <a href="#full-changelog" target="_blank">Click here</a> to see the full 25.10 changelog or visit the <a href="https://ixsystems.atlassian.net/issues/?filter=13196" target="_blank">TrueNAS 25.10-BETA.1 (Goldeye) Changelog</a> in Jira.
@@ -123,6 +129,10 @@ initializeChangelogTableForTabs('25.04');
   <div data-tab-id="containers-virtual-machines" data-tab-label="Containers and Virtual Machines">
 
 ### Containers and Virtual Machines
+
+{{< enterprise >}}
+Virtual Machines are now "Enterprise ready" with support for TrueNAS Enterprise High Availability (HA) systems and failover ([NAS-136509](https://ixsystems.atlassian.net/browse/NAS-136509)).
+{{< /enterprise >}}
 
 * Virtual machines created in 25.04 (pre-25.04.2) and displayed on the **Containers** screen do not automatically start on system boot to prevent conflicts with VMs on the **Virtual Machines** screen that might use the same zvol(s) ([NAS-136946](https://ixsystems.atlassian.net/browse/NAS-136946)).
 * The **Enable Secure Boot** option is added to virtual machine configuration screens ([NAS-136466](https://ixsystems.atlassian.net/browse/NAS-136466)).
