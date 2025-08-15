@@ -72,16 +72,17 @@ Virtual Machines are now "Enterprise ready" with support for TrueNAS Enterprise 
 * Fixes a bug to reenable available update notifications for custom apps ([NAS-135124](https://ixsystems.atlassian.net/browse/NAS-135124)).
 * Fixes contrast issues on some UI theme options ([NAS-135519](https://ixsystems.atlassian.net/browse/NAS-135519)).
 * Simplifies and improves robustness of gateway and name server settings when changing from DHCP to static aliases ([NAS-136360](https://ixsystems.atlassian.net/browse/NAS-136360) and [NAS-136360](https://ixsystems.atlassian.net/browse/NAS-136360)).
-* Resolves ZFS ARC memory management conflicts that were causing out-of-memory crashes in Virtual Machines due to memory fragmentation issues ([NAS-135499](https://ixsystems.atlassian.net/browse/NAS-135499)).
-
-
-
+* Fixes insufficient memory pressure on ZFS ARC by Virtual Machines to prevent out-of-memory conditions ([NAS-135499](https://ixsystems.atlassian.net/browse/NAS-135499)).
+* Includes critical ZFS stability fixes and performance improvements, including fixed corruptions for plaintext replication of encrypted snapshots, enhanced memory pressure handling, faster pool export operations, improved I/O scaling capabilities, zfs rewrite and Direct I/O support ([NAS-135902](https://ixsystems.atlassian.net/browse/NAS-135902)).
+* Enables access-based enumeration for SMB shares with NFSv4 ACL type, so directory listings only show files that users have permission to read ([NAS-136499](https://ixsystems.atlassian.net/browse/NAS-136499)).
+* Removes the **AUTORID** IDMAP backend option from Active Directory configuration to improve consistency across multi-server environments ([NAS-136630](https://ixsystems.atlassian.net/browse/NAS-136630)).
+  Existing configurations using **AUTORID** are automatically migrated to **RID** during upgrade.
+  Users should review their ACLs and permissions after upgrade and might need to reconfigure them in some edge cases.
+* Completes the transition to the versioned JSON-RPC 2.0 over WebSocket API by migrating all remaining jobs and events from the deprecated REST API ([NAS-133984](https://ixsystems.atlassian.net/browse/NAS-133984)).
 
 <a href="#full-changelog" target="_blank">Click here</a> to see the full 25.10 changelog or visit the <a href="https://ixsystems.atlassian.net/issues/?filter=13196" target="_blank">TrueNAS 25.10-BETA.1 (Goldeye) Changelog</a> in Jira.
 
 ### 25.10-BETA.1 Known Issues
-
-*
 
 <a href="https://ixsystems.atlassian.net/issues/?filter=13197" target="_blank">Click here to see the latest information</a> about public issues discovered in 25.10-BETA.1 that are being resolved in a future TrueNAS release.
   </div>
@@ -123,7 +124,22 @@ initializeChangelogTableForTabs('25.04');
 
 {{< include file="/static/includes/UpgradeNotesBoilerplate.md" >}}
 
-*  
+* {{< include file="/static/includes/RESTAPIDeprecationNotice.md" >}}
+
+  {{< include file="/static/includes/APIDocs.md" >}}
+
+  You can access TrueNAS API documentation in the web interface by clicking <i class="material-icons" aria-hidden="true" title="laptop" style="vertical-align: top;">laptop</i> **My API Keys** on the top right toolbar <i class="material-icons" aria-hidden="true">account_circle</i> user settings dropdown menu to open the **User API Keys** screen.
+  Click **API Docs** to view API documentation.
+  
+* NVIDIA GPU Compatibility: TrueNAS 25.10 switches to open GPU kernel drivers that are incompatible with legacy NVIDIA GPUs (Pascal, Maxwell, Volta architectures).
+  See [NVIDIA GPU Support](#nvidia-gpu-support) for compatibility details.
+
+* Virtual Machine Startup Changes: VMs created in TrueNAS 25.04 (pre-25.04.2) and displayed on the **Containers** screen no longer automatically start on system boot to prevent conflicts with VMs on the **Virtual Machines** screen.
+  See [Containers and Virtual Machines](#containers-virtual-machines) for more information.
+
+* Active Directory AUTORID IDMAP Backend Removal: TrueNAS 25.10 removes this option to improve consistency across multi-server environments ([NAS-136630](https://ixsystems.atlassian.net/browse/NAS-136630)).
+  Existing configurations using **AUTORID** are automatically migrated to **RID** during upgrade.
+  Users should review their ACLs and permissions after upgrade and might need to reconfigure them in some edge cases.
 
   </div>
 
@@ -135,8 +151,9 @@ initializeChangelogTableForTabs('25.04');
 Virtual Machines are now "Enterprise ready" with support for TrueNAS Enterprise High Availability (HA) systems and failover ([NAS-136509](https://ixsystems.atlassian.net/browse/NAS-136509)).
 {{< /enterprise >}}
 
-* Virtual machines created in 25.04 (pre-25.04.2) and displayed on the **Containers** screen do not automatically start on system boot to prevent conflicts with VMs on the **Virtual Machines** screen that might use the same zvol(s) ([NAS-136946](https://ixsystems.atlassian.net/browse/NAS-136946)).
 * The **Enable Secure Boot** option is added to virtual machine configuration screens ([NAS-136466](https://ixsystems.atlassian.net/browse/NAS-136466)).
+* Virtual machines created in 25.04 (pre-25.04.2) and displayed on the **Containers** screen do not automatically start on system boot to prevent conflicts with VMs on the **Virtual Machines** screen that might use the same zvol(s) ([NAS-136946](https://ixsystems.atlassian.net/browse/NAS-136946)).\
+* Resolves ZFS ARC memory management conflicts that were causing out-of-memory crashes in Virtual Machines due to memory fragmentation issues ([NAS-135499](https://ixsystems.atlassian.net/browse/NAS-135499)).
 
   </div>
 
