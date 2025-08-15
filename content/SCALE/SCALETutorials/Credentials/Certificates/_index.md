@@ -13,11 +13,11 @@ keywords:
 - nas storage 
 ---
 
-Use the **Credentials > Certificates** screen **Certificates**, **Certificate Signing Requests** (CSRs), **Certificate Authorities** (CA), and **ACME DNS-Authenticators** widgets to manage certificates, certificate signing requests (CSRs), certificate authorities (CA), and ACME DNS-authenticators.
+Use the **Credentials > Certificates** screen to manage certificates, certificate signing requests (CSRs), and DNS authenticators with the **Certificates**, **Certificate Signing Requests** (CSRs), and **ACME DNS-Authenticators** widgets.
 
-![CredentialsCertificatesScreen](/images/SCALE/Credentials/CredentialsCertificatesScreen.png "Credentials Certificates Screen")
+{{< trueimage src="/images/SCALE/Credentials/CredentialsCertificatesScreen.png" alt="Credentials Certificates Screen" id="Credentials Certificates Screen" >}}
 
-Each TrueNAS comes equipped with an internal, self-signed certificate that enables encrypted access to the web interface, but users can make custom certificates for authentication and validation while sharing data.
+Each TrueNAS comes equipped with an internal, self-signed certificate that enables encrypted access to the web interface, but users can import custom certificates for authentication and validation while sharing data.
 
 <div class="noprint">
 
