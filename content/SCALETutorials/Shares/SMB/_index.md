@@ -30,8 +30,8 @@ Industry-wide, SMB1 protocol (sometimes referred to as NT1) usage is deprecated 
 However, most SMB clients support SMB 2 or 3 protocols even when they are not the default.
 
 {{< hint type=note >}}
-Legacy SMB clients rely on NetBIOS name resolution to discover SMB servers on a network.
-TrueNAS disables the NetBIOS name server (nmbd) by default. Enable it on the **Network > Global Settings** screen if this functionality is required.
+Legacy SMB clients rely on NetBIOS name resolution to discover SMB servers on a network. TrueNAS enables the NetBIOS server by default.
+Disable it on the **Network > Global Settings** screen if this functionality is not required.
 
 MacOS clients use mDNS to discover SMB servers present on the network. TrueNAS enables the mDNS server (avahi) by default.
 
