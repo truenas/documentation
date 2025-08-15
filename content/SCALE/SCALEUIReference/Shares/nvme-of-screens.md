@@ -111,9 +111,7 @@ The **Namespaces** widget lists namespaces (zvol or file) added to the subsystem
 
 {{< trueimage src="/images/SCALE/Shares/SubsystemNamespacesWidget.png" alt="Subsystem Namespaces Widget" id="Subsystem Namespaces Widget" >}}
 
-**Add** opens the [**Add Namespace**](#add-and-edit-namespace-screens) screen.
-
-**Edit** opens the [**Edit Namespace**](#add-and-edit-namespace-screens) screen.
+**Add** opens the [**Add Namespace**](#add-namespace-screens) screen.
 
 **Delete** opens a [confirmation dialog](#delete-namespace-dialog) for the namespace.
 
@@ -201,14 +199,16 @@ When not selected, it shows the **Allow Hosts** option and **Add** button that o
 
 **Save** saves changes, creates the subsystem, closes the wizard screen, and returns to the previous screen.
 
-## Add and Edit Namespace Screens
-<!-- RC.1 will add an enable checkbox to allow disabling the namespace, update screenshots and add descriptions to these screens/tabs -->
-The **Add Namespace** and **Edit Namespace** screens show the same settings and options.
+
+## Add Namespace Screens
+<!-- BETA.1 removes the ability to edit a namespace. RC.1 might add it back or it could get added back later. No details on this. add an enable checkbox to allow disabling the namespace, update screenshots and add descriptions to these screens/tabs -->
+The **Add Namespace** ** screens show settings and options to create namespaces.
 Use to select or create the storage device (zvol or file) for the NVMe-oF share.
 
 **Add** to the right of **Namespaces** on the **What to Share** option of the **Add Subsystem** wizard opens the **Add Namespace** screen.
 **Add** on the **Namespaces** widget on the **NVMe-oF** screen opens the **Add Namespaces** screen.
-The <span class="material-icons">edit</span> edit icon on the **Namespaces** widget opens the **Edit Namespaces** screen.
+<!--  Comment out edit content for now as it might be added back at some point in the semi-near term future
+The <span class="material-icons">edit</span> edit icon on the **Namespaces** widget opens the **Edit Namespaces** screen. -->
 
 {{< trueimage src="/images/SCALE/Shares/AddNamespaceScreenZvolTab.png" alt="Add Namespace Screen" id="Add Namespace Screen" >}}
 
@@ -220,28 +220,28 @@ These screens have three tabs:
 
 ### Zvol Tab
 
-The **Zvol** tab on the **Edit Namespace** screen allows selecting an existing or creating a new zvol namespace.
+The **Zvol** tab on the **Add Namespace** screen allows selecting an existing or creating a new zvol namespace.
 There are two **Path to Zvol** fields: the blank field and the file browser field.
 The top blank field populates with the path for the existing zvol or parent dataset selected using the file browser field below it.
 
-{{< trueimage src="/images/SCALE/Shares/EditNamespaceScreenZvolTab.png" alt="Edit Namespace Zvol Tab" id="Edit Namespace Zvol Tab" >}}
+{{< trueimage src="/images/SCALE/Shares/AddNamespaceScreenZvolTab.png" alt="Add Namespace Zvol Tab" id="Add Namespace Zvol Tab" >}}
 
 **Create Zvol** only shows on the **Zvol** tab. It activates after selecting the parent dataset in the file browser field.
 It opens the [**Add Zvol**](#add-zvol-screen) screen.
 
 ### Existing File Tab
 
-The **Existing File** tab on the **Edit Namespace** allows selecting an existing file as a namespace.
+The **Existing File** tab on the **Add Namespace** allows selecting an existing file as a namespace.
 There are two **Path to File** fields: the blank field and the file browser field.
 The top blank field populates with the path for the existing file selected using the file browser field below it.
 
-{{< trueimage src="/images/SCALE/Shares/EditNamespaceExistingFileTab.png" alt="Edit Namespace Existing File Tab" id="Edit Namespace Existing File Tab" >}}
+{{< trueimage src="/images/SCALE/Shares/AddNamespaceExistingFileTab.png" alt="Add Namespace Existing File Tab" id="Add Namespace Existing File Tab" >}}
 
 ### New File Tab
 
-The **New File** tab on the **Edit Namespace** screen allows creating a new file for a namespace.
+The **New File** tab on the **Add Namespace** screen allows creating a new file for a namespace.
 
-{{< trueimage src="/images/SCALE/Shares/EditNamespaceNewFileTab.png" alt="Edit Namespace New File Tab" id="Edit Namespace New File Tab" >}}
+{{< trueimage src="/images/SCALE/Shares/AddNamespaceNewFileTab.png" alt="Add Namespace New File Tab" id="Add Namespace New File Tab" >}}
 
 {{< expand "Settings" "v" >}}
 {{< truetable >}}
