@@ -1,0 +1,349 @@
+<header class="gdoc-header" id="TrueNASHeader">
+  <div class="container linksrow" style="padding-top:.5rem">
+		<div class="truenas-mediamenu">
+            <button class="truenas-menubutton"><i class="fa fa-bars"></i></button>&emsp;<img src="{{ (default "brand.svg" .Root.Site.Params.GeekdocLogo) | relURL }}" alt="TrueNAS Open Storage Logo" style="max-width: 50%;">
+            <div class="truenas-menudropdown">
+                <a href="https://www.truenas.com">TrueNAS.com</a>
+                <a href="https://www.truenas.com/truenas-enterprise/#Systems">Products</a>
+                <a href="https://www.ixsystems.com/support/">Enterprise Support</a>
+                <a href="https://forums.truenas.com/">Community Support</a>
+                <a href="https://security.truenas.com">Truenas Security</a>
+                <a href="https://www.truenas.com/truenas-enterprise/">Get TrueNAS Enterprise</a>
+                <a href="https://www.truenas.com/truenas-community-edition/">Download TrueNAS Community Edition</a>
+                <a href="https://www.ixsystems.com/about-us/">About TrueNAS</a>
+                <a href="https://www.ixsystems.com/careers/">Careers</a>
+            </div>
+        </div>
+	    <div class="container truerow">
+			<a class="gdoc-brand gdoc-header__link" href="https://www.truenas.com">
+				<span class="flex align-center">
+				<img class="gdoc-brand__img" style="display:flex;float:left" src="{{ (default "brand.svg" .Root.Site.Params.GeekdocLogo) | relURL }}" alt="TrueNAS Open Storage Logo"/>
+				<span class="gdoc-brand__title">{{ .Root.Site.Title }}</span>
+				</span>
+			</a>
+			<div class="truenas-menubar" style="display:flex;float:right">
+                <div class="truenas-menuitem">
+                    <button class="truenas-menubutton">Products <i class="fa fa-angle-down"></i></button>
+                    <div class="truenas-menudropdown">
+                        <div class="truenas-menuitem-columns">
+                            <!-- Left Column -->
+                            <div class="truenas-menuitem-column">
+                                <a href="https://www.truenas.com/f-series/" class="truenas-menuitem-link">
+                                    <img src="/favicon/f-series.png" alt="F-Series">
+                                    <div class="truenas-menuitem-text">
+                                        <b>F-Series</b>
+                                        <p>All-Flash NVMe Performance.</p>
+                                    </div>
+                                </a>
+                                <a href="https://www.truenas.com/h-series/" class="truenas-menuitem-link">
+                                    <img src="/favicon/h-series.png" alt="H-Series">
+                                    <div class="truenas-menuitem-text">
+                                        <b>H-Series</b>
+                                        <p>Big business performance. Entry level pricing.</p>
+                                    </div>
+                                </a>
+                                <a href="https://www.truenas.com/truenas-mini/" class="truenas-menuitem-link">
+                                    <img src="/favicon/minis.png" alt="Mini Series">
+                                    <div class="truenas-menuitem-text">
+                                        <b>Mini Series</b>
+                                        <p>Home Labs, Small Office & SMB Applications.</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <!-- Right Column -->
+                            <div class="truenas-menuitem-column">
+                                <a href="https://www.truenas.com/m-series/" class="truenas-menuitem-link">
+                                    <img src="/favicon/m-series.png" alt="M-Series">
+                                    <div class="truenas-menuitem-text">
+                                        <b>M-Series</b>
+                                        <p>All-Flash or Hybrid Enterprise Performance.</p>
+                                    </div>
+                                </a>
+                                <a href="https://www.truenas.com/r-series/" class="truenas-menuitem-link">
+                                    <img src="/favicon/rseries.png" alt="R-Series">
+                                    <div class="truenas-menuitem-text">
+                                        <b>R-Series</b>
+                                        <p>Single Controller Storage Appliances.</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- Horizontal Rule -->
+                        <hr class="truenas-menudropdown-hr">
+                        <!-- Additional Items Below Horizontal Rule -->
+                        <div class="truenas-menuitem-columns">
+                            <div class="truenas-menuitem-column">
+                                <a href="https://www.truenas.com/truenas-enterprise/" class="truenas-menuitem-link">
+                                    <img src="/images/full-rgb.png" alt="TrueNAS Enterprise Icon">
+                                    <div class="truenas-menuitem-text">
+                                        <b>TrueNAS Enterprise</b>
+                                        <p>Mission Critical Storage. 24×7 Enterprise Support.</p>
+                                    </div>
+                                </a>        
+                            </div>
+                            <div class="truenas-menuitem-column">
+                                <a href="https://www.truenas.com/truecommand/" class="truenas-menuitem-link">
+                                    <img src="/favicon/tc-full.png" alt="TrueCommand Icon">
+                                    <div class="truenas-menuitem-text">
+                                        <b>TrueCommand</b>
+                                        <p>Manage Your TrueNAS Fleet All From One Place.</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="truenas-menuitem">
+                    <button class="truenas-menubutton">Solutions <i class="fa fa-angle-down"></i></button>
+                    <div class="truenas-menudropdown">
+                        <div class="truenas-menuitem-columns">
+                            <!-- Left Column -->
+                            <div class="truenas-menuitem-column">
+                                <h3 class="truenas-column-header">Use Cases</h3>
+                                <hr class="truenas-menudropdown-hr">
+                                <div class="truenas-sub-columns">
+                                    <div class="truenas-sub-column">
+                                        <a href="https://www.truenas.com/analytics/">Analytics</a>
+                                        <a href="https://www.truenas.com/backup/">Backup & Archival</a>
+                                        <a href="https://www.truenas.com/cloud/">Cloud</a>
+                                        <a href="https://www.truenas.com/data-mobility/">Data Mobility</a>
+                                        <a href="https://www.truenas.com/file-sharing/">File Sharing</a>
+                                    </div>
+                                    <div class="truenas-sub-column">
+                                        <a href="https://www.truenas.com/ix-storj/">iX-Storj</a>
+                                        <a href="https://www.truenas.com/media-creation/">Media & Entertainment</a>
+                                        <a href="https://www.truenas.com/video-surveillance/">Surveillance</a>
+                                        <a href="https://www.truenas.com/veeam/">Veeam Backup</a>
+                                        <a href="https://www.truenas.com/virtualization/">Virtualization</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Right Column -->
+                            <div class="truenas-menuitem-column">
+                                <h3 class="truenas-column-header">Industry</h3>
+                                <hr class="truenas-menudropdown-hr">
+                                <div class="truenas-sub-columns">
+                                    <div class="truenas-sub-column">
+                                        <a href="https://www.truenas.com/audio/">Audio</a>
+                                        <a href="https://www.truenas.com/broadcasting/">Broadcasting</a>
+                                        <a href="https://www.truenas.com/gaming/">Gaming</a>
+                                        <a href="https://www.truenas.com/healthcare/">Healthcare</a>
+                                        <a href="https://www.truenas.com/manufacturing/">Manufacturing</a>
+                                        <a href="https://www.truenas.com/media-creation/">Media & Entertainment</a>
+                                    </div>
+                                    <div class="truenas-sub-column">
+                                        <a href="https://www.truenas.com/automotive/">Automotive</a>
+                                        <a href="https://www.truenas.com/education/">Education</a>
+                                        <a href="https://www.truenas.com/government/">Government</a>
+                                        <a href="https://www.truenas.com/managed-service-provider/">MSP</a>
+                                        <a href="https://www.truenas.com/ai/">Research & AI</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="truenas-menuitem">
+                    <button class="truenas-menubutton">Support & Resources <i class="fa fa-angle-down"></i></button>
+                    <div class="truenas-menudropdown">
+                        <div class="truenas-menuitem-columns">
+                            <!-- Left Column -->
+                            <div class="truenas-menuitem-column">
+                                <h3 class="truenas-column-header">Support</h3>
+                                <hr class="truenas-menudropdown-hr">
+                                <a href="https://www.ixsystems.com/support/" class="truenas-menuitem-link">
+                                    <div class="truenas-menuitem-text">
+                                        <b>Enterprise Support</b>
+                                        <p>For customers with active support contracts.</p>
+                                    </div>
+                                </a>
+                                <a href="https://forums.truenas.com/" class="truenas-menuitem-link">
+                                    <div class="truenas-menuitem-text">
+                                        <b>Community Support</b>
+                                        <p>For peer-to-peer, open-source support.</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <!-- Right Column -->
+                            <div class="truenas-menuitem-column">
+                                <h3 class="truenas-column-header">Resources</h3>
+                                <hr class="truenas-menudropdown-hr">
+                                <div class="truenas-sub-columns">
+                                    <div class="truenas-sub-column">
+                                        <a href="https://www.truenas.com/case-studies/">Case Studies</a>
+                                        <a href="https://www.truenas.com/docs/">Documentation</a>
+										<a href="https://api.truenas.com">TrueNAS API</a>
+                                        <a href="https://apps.truenas.com/">Apps Market</a>
+                                        <a href="https://security.truenas.com">TrueNAS Security</a>
+                                        <a href="https://www.truenas.com/faq/">FAQ</a>
+                                        <a href="https://www.truenas.com/zfs/">ZFS Overview</a>            
+                                    </div>
+                                    <div class="truenas-sub-column">
+                                        <a href="https://www.truenas.com/blog/">TrueNAS Blog</a>
+                                        <a href="https://www.truenas.com/solution-guides/">Solution Guides</a>
+                                        <a href="https://www.truenas.com/datasheets/">Datasheets</a>
+                                        <a href="https://www.truenas.com/software-status/">Software Status</a>
+                                        <a href="https://www.truenas.com/videos/">Videos</a>
+                                        <a href="https://portal.ixsystems.com/portal/signin/">TrueCommand Cloud</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="truenas-menuitem">
+                    <button class="truenas-menubutton">Community <i class="fa fa-angle-down"></i></button>
+                    <div class="truenas-menudropdown">
+                        <a href="https://www.truenas.com/truenas-community-edition/">TrueNAS Community Edition</a>
+                        <a href="https://forums.truenas.com/">Community Forum</a>
+						<a href="https://discord.com/invite/Q3St5fPETd">Discord</a>
+						<a href="https://www.github.com/truenas">TrueNAS GitHub</a>
+                        <a href="https://www.truenasmerch.com">TrueNAS Merch Store</a>
+                    </div>
+                </div>               
+                <div class="truenas-menuitem">
+                    <button class="truenas-menubutton">Company <i class="fa fa-angle-down"></i></button>
+                    <div class="truenas-menudropdown">
+                        <a href="https://www.ixsystems.com/about-us/">About TrueNAS</a>
+						<a href="https://www.ixsystems.com/awards/">Awards</a>
+						<a href="https://www.truenas.com/careers/">Careers</a>
+						<a href="https://www.truenas.com/contact-us/">Contact Us</a>
+						<a href="https://www.truenas.com/clients/">Our Clients</a>
+						<a href="https://www.truenas.com/reviews/">Reviews</a>
+                    </div>
+                </div>
+                <div class="truenas-menuitem">
+                    <button class="truenas-downloadbutton">Get TrueNAS <i class="fa fa-angle-down"></i></button>
+		            <div class="truenasdownload-menudropdown">
+                        <a href="https://www.truenas.com/get-quote/" class="truenas-menuitem-link">
+                            <img src="/images/chat.svg" alt="Contact Icon">
+                            <div class="truenas-menuitem-text">
+                                <b>Contact an Enterprise Specialist</b>
+                                <p>Speak with an enterprise storage specialist to find the right solutions for your business needs.</p>
+                            </div>
+                        </a>
+                        <a href="https://www.truenas.com/truenas-enterprise/" class="truenas-menuitem-link">
+                            <img src="/images/full-rgb.png" alt="TrueNAS Enterprise Icon">
+                            <div class="truenas-menuitem-text">
+                                <b>TrueNAS Enterprise</b>
+                                <p>Enterprise-grade storage appliances designed for business and mission-critical environments.</p>
+                            </div>
+                        </a>
+                        <a href="https://www.truenas.com/truenas-community-edition/" class="truenas-menuitem-link">
+                            <img src="/images/Truenas_icon.png" alt="TrueNAS Community Edition Icon">
+                            <div class="truenas-menuitem-text">
+                                <b>Download TrueNAS Community Edition</b>
+                                <p>Test Drive TrueNAS in Your Environment.</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>    
+                <div class="truenas-menuitem">
+                    <a href="https://www.ixsystems.com/support">
+                        <button class="truenas-supportbutton"> <i class="fa fa-headphones" aria-hidden="true"></i>&emsp;Enterprise Support  </button>
+                    </a>
+                </div>
+			</div>
+		</div>
+</header>
+
+<nav id="sitenav">
+    {{ partial "docs-nav" }}
+    {{ if .MenuEnabled }}
+    <label for="menu-control" class="gdoc-nav__control" id="leftnavbutton" tabindex="0" style="padding:0 1rem 0 1rem;">
+        <svg class="gdoc-icon gdoc_menu">
+            <title>{{ i18n "button_nav_open" }}</title>
+            <use xlink:href="#gdoc_menu"></use>
+        </svg>
+        <svg class="gdoc-icon gdoc_arrow_back">
+        <title>{{ i18n "button_nav_close" }}</title>
+        <use xlink:href="#gdoc_arrow_back"></use>
+        </svg>
+    </label>
+    {{ end }}
+    <label for="sidebar-right__control" class="sidebar-right__control" id="rightnavbutton" tabindex="0">
+        <svg class="gdoc-icon gdoc_path">
+            <title>{{ i18n "button_toc_open" }}</title>
+            <use xlink:href="#gdoc_path"></use>
+        </svg>
+    </label>
+    </nav>
+    
+<!-- Make stickymenu stay on the top of the page when the user scrolls -->
+<script>
+var options = {
+  root: null, // Use the viewport as the root
+  rootMargin: "0px",
+  threshold: 0, // When 0% of the element is visible
+};
+
+var observer = new IntersectionObserver(callback, options);
+var linksrow = document.querySelector(".linksrow");
+var nav = document.getElementById("sitenav");
+var isSticky = false; // Track if the element is sticky
+
+observer.observe(linksrow);
+
+function callback(entries, observer) {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      // The .linksrow element is in view, so remove sticky
+      if (isSticky) {
+		nav.classList.remove("sticky");
+        isSticky = false;
+      }
+    } else {
+      // The .linksrow element is out of view, so make it sticky
+      if (!isSticky) {
+        nav.classList.add("sticky");
+        isSticky = true;
+      }
+    }
+  });
+}
+// Add behavior for right side toc panel to slide into view on small screens
+document.addEventListener('DOMContentLoaded', function() {
+    var sidebarRight = document.querySelector('.sidebar-right');
+    var sidebarControl = document.getElementById('sidebar-right__control');
+    var menuControl = document.getElementById('menu-control');
+    var gdocPage = document.querySelector('.gdoc-page');
+    var gdocNav = document.querySelector('.gdoc-nav');
+
+    sidebarControl.addEventListener('click', function() {
+        if (!sidebarControl.checked) {
+            menuControl.checked = false;
+            sidebarRight.style.transition = 'transform 0.3s ease';
+            gdocPage.style.transition = 'margin-right 0.3s ease, opacity 0.3s ease';
+
+            sidebarRight.style.transform = 'translateX(100%)';
+            gdocPage.style.opacity = '1';
+            gdocPage.style.marginRight = '0'; // Set margin-right to fill the space
+            sidebarRight.style.display = 'none'; // Hide the sidebar
+        } else {
+            sidebarRight.style.transition = 'transform 0.3s ease';
+            sidebarRight.style.transform = 'translateX(-3rem)';
+            sidebarRight.style.display = 'block'; // Show the sidebar
+        }
+    });
+
+    menuControl.addEventListener('click', function() {
+        if (menuControl.checked) {
+            gdocPage.style.transition = 'opacity 0.3s ease';
+
+            if (!sidebarControl.checked) {
+                gdocPage.style.opacity = '0.25';
+            } else {
+                sidebarRight.style.transition = 'transform 0.3s ease';
+                gdocPage.style.opacity = '0.25';
+                sidebarRight.style.transform = 'translateX(100%)';
+                sidebarRight.style.display = 'none'; // Hide the sidebar
+            }
+			sidebarControl.checked = false;
+        } else {
+            gdocPage.style.transition = 'opacity 0.3s ease';
+            gdocPage.style.opacity = '1';
+        }
+    });
+});
+</script>
+<!-- End sticky main_navbar -->

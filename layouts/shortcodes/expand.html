@@ -1,0 +1,62 @@
+{{ with $.Page.Scratch.Get "expandCounter" }}
+  {{ $.Page.Scratch.Set "expandCounter" (add . 1) }}
+{{ else }}
+  {{ $.Page.Scratch.Set "expandCounter" 1 }}
+{{ end }}
+
+{{ $anchorName := printf "expand-%d" ($.Page.Scratch.Get "expandCounter") | safeURL }}
+
+<a name="{{ $anchorName }}"></a> <!-- Add this line to create a unique anchor link -->
+
+<details class="expand-details" id="{{ $anchorName }}">
+  <summary class="expand-title" aria-label="Toggle the expandable element">{{ .Get 0 }}
+    <a href="{{ printf "#%s" $anchorName }}" onclick="copyToClipboardAndScroll(this.href, '{{ $anchorName }}'); return false" class="anchor-link">
+      <span class="iconify" data-icon="mdi:link" style="color: var(--control-icons);"></span>
+    </a>
+  </summary>
+  {{ .Inner | $.Page.RenderString }}
+</details>
+
+<style>
+  .expand-details .anchor-link {
+    display: none;
+  }
+
+  .expand-details:hover .anchor-link {
+    display: inline;
+  }
+</style>
+
+<script>
+  function copyToClipboardAndScroll(text, anchorName) {
+    const baseURL = window.location.href.split('#')[0];
+    const relativeURL = text.split('#')[1];
+    const finalURL = baseURL + '#' + relativeURL;
+
+    const textarea = document.createElement("textarea");
+    textarea.value = finalURL;
+    document.body.appendChild(textarea);
+    textarea.select();
+    document.execCommand("copy");
+    document.body.removeChild(textarea);
+
+    scrollToAnchor(anchorName);
+  }
+
+  function scrollToAnchor(anchorName) {
+    const anchor = document.querySelector(`a[name="${anchorName}"]`);
+    if (anchor) {
+      const scrollOffset = window.innerHeight / 2 - anchor.offsetHeight / 2;
+      window.scrollTo(0, anchor.offsetTop - scrollOffset);
+    }
+
+    openDetails(anchorName);
+  }
+
+  function openDetails(anchorName) {
+    const details = document.getElementById(anchorName);
+    if (details) {
+      details.open = true;
+    }
+  }
+</script>

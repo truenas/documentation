@@ -1,0 +1,1 @@
+var o=document.querySelector(".scrollToTopBtn"),v=document.documentElement;o.addEventListener("click",(function(){v.scrollTo({top:0,behavior:"smooth"})})),document.addEventListener("scroll",(function(){var e=v.scrollHeight-v.clientHeight;v.scrollTop/e>.1?o.classList.add("showBtn"):o.classList.remove("showBtn")}));
