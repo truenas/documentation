@@ -2,10 +2,6 @@
 title = ""
 theme = ["hugo-geekdoc"]
 
-[module]
-  [[module.imports]]
-    path = "github.com/truenas/docs-shared"
-
 # Required to get well formatted code blocks
 pygmentsUseClasses = true
 pygmentsCodeFences = true
