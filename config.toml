@@ -6,6 +6,9 @@ theme = ["hugo-geekdoc"]
   [[module.imports]]
     path = "github.com/truenas/docs-shared"
   [[module.mounts]]
+    source = "themes/hugo-geekdoc/static"
+    target = "static"
+  [[module.mounts]]
     source = "static"
     target = "static"
 
