@@ -79,7 +79,7 @@ Virtual Machines are now "Enterprise ready" with support for TrueNAS Enterprise 
   Users should review their ACLs and permissions after upgrade and might need to reconfigure them in some edge cases.
 * Completes the transition to the versioned JSON-RPC 2.0 over WebSocket API by migrating all remaining jobs and events from the deprecated REST API ([NAS-133984](https://ixsystems.atlassian.net/browse/NAS-133984)).
   Full removal of the REST API is planned for the TrueNAS 26.04 release.
-* Removes the built-in SMART test scheduling and monitoring interface to improve user flexibility while maintaining smartmontools binaries for continued third-party script compatibility.
+* Removes the built-in SMART test scheduling and monitoring interface to improve user flexibility while maintaining smartmontools binaries for continued third-party script compatibility ([NAS-135020](https://ixsystems.atlassian.net/browse/NAS-135020)).
   Existing scheduled SMART tests are automatically migrated to cron tasks during upgrade, and users can install the "Scrutiny" app for advanced SMART monitoring.
   See [Preparing to Upgrade](#upgrade-prep) for more information.
 * Removes Certificate Authority functionality that allowed TrueNAS to create and sign certificates.
