@@ -79,6 +79,8 @@ Virtual Machines are now "Enterprise ready" with support for TrueNAS Enterprise 
   Existing configurations using **AUTORID** are automatically migrated to **RID** during upgrade.
   Users should review their ACLs and permissions after upgrade and might need to reconfigure them in some edge cases.
 * Completes the transition to the versioned JSON-RPC 2.0 over WebSocket API by migrating all remaining jobs and events from the deprecated REST API ([NAS-133984](https://ixsystems.atlassian.net/browse/NAS-133984)).
+  Full removal of the REST API is planned for the TrueNAS 26.04 release.
+
 
 <a href="#full-changelog" target="_blank">Click here</a> to see the full 25.10 changelog or visit the <a href="https://ixsystems.atlassian.net/issues/?filter=13196" target="_blank">TrueNAS 25.10-BETA.1 (Goldeye) Changelog</a> in Jira.
 
