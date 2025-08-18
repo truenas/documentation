@@ -82,6 +82,7 @@ Virtual Machines are now "Enterprise ready" with support for TrueNAS Enterprise 
 * Removes the built-in SMART test scheduling and monitoring interface to improve user flexibility while maintaining smartmontools binaries for continued third-party script compatibility ([NAS-135020](https://ixsystems.atlassian.net/browse/NAS-135020)).
   Existing scheduled SMART tests are automatically migrated to cron tasks during upgrade, and users can install the "Scrutiny" app for advanced SMART monitoring.
   See [Preparing to Upgrade](#upgrade-prep) for more information.
+* Improves drive temperature monitoring efficiency by extending the `drivetemp` kernel module to include SCSI/SAS disk temperatures.
 * Removes Certificate Authority functionality that allowed TrueNAS to create and sign certificates.
   Users can now manage certificates through CSRs, self-signed certificates, or importing externally-signed certificates.
   See [Preparing to Upgrade](#upgrade-prep) for more information.
