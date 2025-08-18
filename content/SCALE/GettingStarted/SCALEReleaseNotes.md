@@ -62,25 +62,30 @@ Virtual Machines are now "Enterprise ready" with support for TrueNAS Enterprise 
   Earlier architectures (Pascal, Maxwell, Volta) are not compatible.
   See [NVIDIA GPU Support](#nvidia-gpu-support) for more information.
 * Adds support for for directory services authentication via FTP ([NAS-135200](https://ixsystems.atlassian.net/browse/NAS-135200)).
-* Various UI improvements and optimizations simplify core user experiences ([NAS-135159](https://ixsystems.atlassian.net/browse/NAS-135159)).
-* Fixes the NVIDIA GPU related error "RenderError: Expected [uuid] to be set for GPU in slot" ([NAS-134152](https://ixsystems.atlassian.net/browse/NAS-134152)).
-* Fixes an issue affecting drive temperature reporting on the dashboard ([NAS-135572](https://ixsystems.atlassian.net/browse/NAS-135572)).
-* Virtual machines created in 25.04 (pre-25.04.2) and displayed on the **Containers** screen do not automatically start on system boot to prevent conflicts with VMs on the **Virtual Machines** screen that might use the same zvol(s) ([NAS-136946](https://ixsystems.atlassian.net/browse/NAS-136946)).
 * The **Enable Secure Boot** option is added to virtual machine configuration screens ([NAS-136466](https://ixsystems.atlassian.net/browse/NAS-136466)).
 * TrueNAS can now automatically migrate existing applications when selecting a new applications pool ([NAS-132188](https://ixsystems.atlassian.net/browse/NAS-132188)).
 * The TrueNAS Apps service now supports configuring external container registry mirrors as alternative sources for Docker images ([NAS-136553](https://ixsystems.atlassian.net/browse/NAS-136553)).
-* Fixes a bug to reenable available update notifications for custom apps ([NAS-135124](https://ixsystems.atlassian.net/browse/NAS-135124)).
-* Fixes contrast issues on some UI theme options ([NAS-135519](https://ixsystems.atlassian.net/browse/NAS-135519)).
+* Various UI improvements and optimizations simplify core user experiences ([NAS-135159](https://ixsystems.atlassian.net/browse/NAS-135159)).
+* Includes critical ZFS stability fixes and performance improvements, including fixed corruptions for plaintext replication of encrypted snapshots, enhanced memory pressure handling, faster pool export operations, improved I/O scaling capabilities, zfs rewrite and Direct I/O support ([NAS-135902](https://ixsystems.atlassian.net/browse/NAS-135902)).
 * Simplifies and improves robustness of gateway and name server settings when changing from DHCP to static aliases ([NAS-136360](https://ixsystems.atlassian.net/browse/NAS-136360) and [NAS-136360](https://ixsystems.atlassian.net/browse/NAS-136360)).
 * Fixes insufficient memory pressure on ZFS ARC by Virtual Machines to prevent out-of-memory conditions ([NAS-135499](https://ixsystems.atlassian.net/browse/NAS-135499)).
-* Includes critical ZFS stability fixes and performance improvements, including fixed corruptions for plaintext replication of encrypted snapshots, enhanced memory pressure handling, faster pool export operations, improved I/O scaling capabilities, zfs rewrite and Direct I/O support ([NAS-135902](https://ixsystems.atlassian.net/browse/NAS-135902)).
+* Virtual machines created in 25.04 (pre-25.04.2) and displayed on the **Containers** screen do not automatically start on system boot to prevent conflicts with VMs on the **Virtual Machines** screen that might use the same zvol(s) ([NAS-136946](https://ixsystems.atlassian.net/browse/NAS-136946)).
 * Enables access-based enumeration for SMB shares with NFSv4 ACL type, so directory listings only show files that users have permission to read ([NAS-136499](https://ixsystems.atlassian.net/browse/NAS-136499)).
 * Removes the **AUTORID** IDMAP backend option from Active Directory configuration to improve consistency across multi-server environments ([NAS-136630](https://ixsystems.atlassian.net/browse/NAS-136630)).
   Existing configurations using **AUTORID** are automatically migrated to **RID** during upgrade.
   Users should review their ACLs and permissions after upgrade and might need to reconfigure them in some edge cases.
 * Completes the transition to the versioned JSON-RPC 2.0 over WebSocket API by migrating all remaining jobs and events from the deprecated REST API ([NAS-133984](https://ixsystems.atlassian.net/browse/NAS-133984)).
   Full removal of the REST API is planned for the TrueNAS 26.04 release.
-
+* Removes the built-in SMART test scheduling and monitoring interface to improve user flexibility while maintaining smartmontools binaries for continued third-party script compatibility.
+  Existing scheduled SMART tests are automatically migrated to cron tasks during upgrade, and users can install the "Scrutiny" app for advanced SMART monitoring.
+  See [Preparing to Upgrade](#upgrade-prep) for more information.
+* Removes Certificate Authority functionality that allowed TrueNAS to create and sign certificates.
+  Users can now manage certificates through CSRs, self-signed certificates, or importing externally-signed certificates.
+  See [Preparing to Upgrade](#upgrade-prep) for more information.
+* Fixes the NVIDIA GPU related error "RenderError: Expected [uuid] to be set for GPU in slot" ([NAS-134152](https://ixsystems.atlassian.net/browse/NAS-134152)).
+* Fixes an issue affecting drive temperature reporting on the dashboard ([NAS-135572](https://ixsystems.atlassian.net/browse/NAS-135572)).
+* Fixes a bug to reenable available update notifications for custom apps ([NAS-135124](https://ixsystems.atlassian.net/browse/NAS-135124)).
+* Fixes contrast issues on some UI theme options ([NAS-135519](https://ixsystems.atlassian.net/browse/NAS-135519)).
 
 <a href="#full-changelog" target="_blank">Click here</a> to see the full 25.10 changelog or visit the <a href="https://ixsystems.atlassian.net/issues/?filter=13196" target="_blank">TrueNAS 25.10-BETA.1 (Goldeye) Changelog</a> in Jira.
 
@@ -142,6 +147,17 @@ initializeChangelogTableForTabs('25.04');
 * Active Directory AUTORID IDMAP Backend Removal: TrueNAS 25.10 removes this option to improve consistency across multi-server environments ([NAS-136630](https://ixsystems.atlassian.net/browse/NAS-136630)).
   Existing configurations using **AUTORID** are automatically migrated to **RID** during upgrade.
   Users should review their ACLs and permissions after upgrade and might need to reconfigure them in some edge cases.
+
+* TrueNAS 25.10 removes the built-in SMART test scheduling and monitoring interface to improve user flexibility for disk monitoring.
+  The previous implementation was restrictive and limited users' ability to configure custom SMART monitoring solutions.
+
+  The smartmontools binaries remain installed and continue to be used internally by TrueNAS, ensuring that existing third-party scripts and monitoring tools will work unchanged.
+  Users seeking advanced SMART monitoring can install the "Scrutiny" app from the TrueNAS catalog, which offers superior disk health tracking with historical data storage, customizable alerts, and automatic drive detection.
+  TrueNAS maintains monitoring of critical disk health indicators and automatically migrates existing scheduled SMART tests to cron tasks during upgrade.
+
+* TrueNAS 25.10 removes the Certificate Authority (CA) functionality that allowed TrueNAS to create and sign certificates.
+  Users can continue to manage certificates through three supported methods: creating Certificate Signing Requests (CSRs) to be signed by external certificate authorities, generating self-signed certificates for internal use, and importing certificates that have been signed by external CAs or directory services.
+  These alternatives provide the certificate management capabilities most users need while ensuring proper certificate validation through established certificate authorities.
 
   </div>
 
