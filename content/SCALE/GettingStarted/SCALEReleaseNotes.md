@@ -11,6 +11,9 @@ weight: 10
 related: false
 use_jump_to_buttons: true
 jump_to_buttons:
+  - text: "25.10 Major Features"
+    anchor: "major-features"
+    icon: "star"
   - text: "Full TrueNAS 25.10 Changelog"
     anchor: "full-changelog"
     icon: "clipboard-text"
@@ -92,6 +95,12 @@ Virtual Machines are now "Enterprise ready" with support for TrueNAS Enterprise 
 ### 25.10-BETA.1 Known Issues
 
 <a href="https://ixsystems.atlassian.net/issues/?filter=13197" target="_blank">Click here to see the latest information</a> about public issues discovered in 25.10-BETA.1 that are being resolved in a future TrueNAS release.
+  </div>
+
+  <div data-tab-id="major-features" data-tab-label="25.10 Major Features">
+
+{{< include file="/static/includes/25.10FeatureList.md" >}}
+
   </div>
 
   <div data-tab-id="full-changelog" data-tab-label="Full TrueNAS 25.10 Changelog">
