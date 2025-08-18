@@ -5,6 +5,12 @@ theme = ["hugo-geekdoc"]
 [module]
   [[module.imports]]
     path = "github.com/truenas/docs-shared"
+  [[module.mounts]]
+    source = "node_modules/hugo-geekdoc/static"
+    target = "static"
+  [[module.mounts]]
+    source = "static"
+    target = "static"
 
 # Required to get well formatted code blocks
 pygmentsUseClasses = true
