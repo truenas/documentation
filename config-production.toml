@@ -2,6 +2,7 @@
 # This file is merged with config.toml during CI/CD builds
 
 baseURL = "https://docs-dev1.ixsystems.com/docs/"
+relativeURLs = false
 
 [module]
   [[module.imports]]
