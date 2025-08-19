@@ -1,0 +1,95 @@
+<!-- This separates the Community and Enterprise content sides for version docs into two boxes that use the latest branding. -->
+
+<!-- Community Box -->
+<div class="docs-sections">
+  <div class="section-box" id="scale-section">
+    <div class="box-image">
+      <img src="/images/Truenas_community_edition_logos_2025_Logo_Full_Color_Rgb_1-29-25.png" style="padding-bottom:1.4rem;box-shadow: none;">
+    </div>
+    <div class="section-tabs">
+      <div class="section-tab" id="scale-prev-tab">Previous</div>
+      <div class="section-tab active" id="scale-stable-tab">Current</div>
+      <div class="section-tab" id="scale-next-tab">Next</div>
+    </div>
+    <div class="section-tab-content" id="scale-previous">
+      <a href="https://www.truenas.com/docs/scale/24.10/">24.10</a>
+      <hr class="section-divider">
+      <a href="https://www.truenas.com/docs/core/13.3/">13.3</a>
+    </div>
+    <div class="section-tab-content" id="scale-stable" style="display:none;">
+      <a href="https://www.truenas.com/docs/scale/25.04/">25.04</a>
+      <br><a href="https://www.truenas.com/docs/scale/25.04/gettingstarted/scalereleasenotes/">25.04 Release Notes</a>  
+    </div>
+    <div class="section-tab-content" id="scale-next" style="display:none;">
+      <a href="/scale/">25.10 (Early Development)</a>
+  	  <br><a href="/scale/gettingstarted/scalereleasenotes/">25.10 Development Notes</a>
+    </div>
+  </div>
+
+<!-- Enterprise Box -->
+  <div class="section-box" id="systems-section">
+    <div class="box-image">
+      <img src="/images/Truenas_enterprise_logo_2025_Logo_Full_Color_Rgb_1-29-25.png" style="padding-bottom:.5rem;box-shadow: none;">
+    </div>
+    <div class="section-tabs">
+      <div class="section-tab" id="ent-prev-tab">Previous</div>
+      <div class="section-tab" id="ent-stable-tab">Current</div>
+      <div class="section-tab active"id="ent-systems-hardware">Products</div>
+    </div>
+	<div class="section-tab-content" id="ent-previous-content" style="display:none;">
+      <a href="https://www.truenas.com/docs/scale/24.04/">24.04</a>
+      <hr class="section-divider">
+      <a href="https://www.truenas.com/docs/core/13.0/">13.0</a>
+    </div>
+	<div class="section-tab-content" id="ent-stable-content" style="display:none;">
+	  <a href="https://www.truenas.com/docs/scale/24.10/">24.10</a>
+      <br><a href="https://www.truenas.com/docs/scale/24.10/gettingstarted/scalereleasenotes/">24.10 Release Notes</a>
+    </div>
+    <div class="section-tab-content" id="ent-products-content">
+      <a href="/hardware/">Products Overview</a>
+      <br><a href="/hardware/stencils/">Visio Stencils</a>
+      <br><a href="/hardware/legacyhardware/">Legacy Systems</a>
+    </div>
+  </div>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  function showTabContent(sectionBox, tabIndex) {
+    const tabContents = sectionBox.querySelectorAll(".section-tab-content");
+    const tabs = sectionBox.querySelectorAll(".section-tab");
+
+    tabContents.forEach(content => {
+      content.style.display = "none";
+    });
+
+    tabContents[tabIndex].style.display = "block";
+
+    tabs.forEach(tab => {
+      tab.classList.remove("active");
+    });
+
+    tabs[tabIndex].classList.add("active");
+  }
+
+  const sectionBoxes = document.querySelectorAll(".section-box");
+  sectionBoxes.forEach(box => {
+    const tabs = box.querySelectorAll(".section-tab");
+    tabs.forEach((tab, index) => {
+      tab.addEventListener("click", function() {
+        const tabContainer = tab.closest(".section-box");
+        const tabArray = Array.from(tabs);
+        const tabIndex = tabArray.indexOf(tab);
+        showTabContent(tabContainer, tabIndex);
+      });
+    });
+  });
+
+  sectionBoxes.forEach(box => {
+    const defaultTabIndex = box.querySelector(".section-tab.active");
+    const tabArray = Array.from(box.querySelectorAll(".section-tab"));
+    const tabIndex = tabArray.indexOf(defaultTabIndex);
+    showTabContent(box, tabIndex);
+  });
+});
+</script>

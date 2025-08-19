@@ -1,0 +1,41 @@
+{{- $componentNames := dict
+  "linux_kernel" "Linux Kernel"
+  "openzfs" "OpenZFS"
+  "docker_engine" "Docker Engine"
+  "nvidia_driver" "NVIDIA Driver"
+-}}
+
+{{- $version := .Get 0 -}}
+{{- with .Site.Data.properties.component_versions.major_version -}}
+  {{- $versionData := index . $version -}}
+
+  <div style="max-height: 80vh; overflow-y: auto;">
+    <table class="component-versions-table">
+      <thead>
+        <tr>
+          <th scope="col"></th>
+          {{- range $releaseVersion := $versionData.release_order }}
+            <th scope="col">{{ $releaseVersion }}</th>
+          {{- end }}
+        </tr>
+      </thead>
+      <tbody>
+        {{- range $componentName := $versionData.component_order }}
+          <tr>
+            <td scope="row">{{ or (index $componentNames $componentName) $componentName }}</td>
+            {{- range $releaseVersion := $versionData.release_order }}
+              <td>
+                {{- $component := index (index $versionData.release $releaseVersion).components $componentName -}}
+                {{- if and $component $component.version $component.link -}}
+                  <a href="{{ $component.link }}">{{ $component.version }}</a>
+                {{- else -}}
+                  —
+                {{- end }}
+              </td>
+            {{- end }}
+          </tr>
+        {{- end }}
+      </tbody>
+    </table>
+  </div>
+{{- end }}

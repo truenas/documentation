@@ -1,0 +1,164 @@
+{{/* layouts/shortcodes/timeline.html */}}
+{{- $name := .Get "name" -}}
+{{- $productData := index .Site.Data.properties $name -}}
+{{- with $productData }}
+
+<style>
+    .timeline-container {
+        position: relative;
+        max-width: 100%;
+        margin: 0 auto;
+        color: #000;
+        margin-top: .2em;
+        margin-bottom: .2em;
+        line-height: 1;
+        font-size: small;
+        overflow-x: auto;
+    }
+
+    .timeline {
+        display: flex;
+        position: relative;
+        border-radius: 4px;
+        padding: 10px 0;
+        align-items: top;
+    }
+
+    .timeline::before {
+        content: '';
+        position: absolute;
+        height: 6px;
+        background-color: #0095d5;
+        top: 50%;
+        left: 0;
+        right: 0;
+        margin-top: -3px;
+    }
+
+    .timeline .container {
+        flex: 1;
+        padding: 0 20px;
+        position: relative;
+    }
+
+    .timeline .container::before {
+        content: '';
+        position: absolute;
+        width: 25px;
+        height: 25px;
+        background-color: white;
+        border: 4px solid #0095d5;
+        top: 45%;
+        border-radius: 50%;
+        z-index: 1;
+    }
+
+    .timeline .container.no-date::before,
+    .timeline .no-date .content::before {
+        display: none;
+    }   
+
+    .timeline .content {
+        padding: 10px;
+        background-color: white;
+        border: 2px solid #0095d5;
+        border-radius: 6px;
+        position: relative;
+    }
+
+    .timeline .content-above {
+        margin-top: 0px;
+    }
+
+    .timeline .content-below {
+        margin-top: 200px;
+    }
+
+    .timeline .content-below::before {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 0;
+        border-left: 15px solid transparent;
+        border-right: 15px solid transparent;
+        border-bottom: 15px solid #0095d5; 
+        top: -15px;
+        left: 0;
+    }
+    
+    .timeline .content-above::before {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 0;
+        border-left: 15px solid transparent;
+        border-right: 15px solid transparent;
+        border-top: 15px solid #0095d5; 
+        bottom: -15px; 
+        left: 0;
+    }  
+
+    .timeline .content h3 {
+        margin: 0;
+    }
+    
+    .timeline .content h4 {
+        margin: .5em 0 0 0;
+    }
+</style>
+
+<div class="section-box" id="{{ .id }}-timeline" style="padding: 40px; margin-top: 20px; margin-bottom: 20px;">
+    <div class="box-image" style="text-align: left">
+      <img src="{{ .img }}" style="box-shadow: none; max-width: 300px; padding-bottom: 10px;" title="{{ .product }}" alt="{{ .product }}">
+    </div>
+        <div class="timeline-container">
+            <div class="timeline">
+                {{- $sortedReleases := slice -}}
+                {{- range $majorVersion := .majorVersions }}
+                    {{- range $release := $majorVersion.releases }}
+                        {{- $sortedReleases = $sortedReleases | append (dict "majorVersion" $majorVersion "release" $release "releaseDate" (or $release.releaseDate "9999-12-31")) -}}
+                    {{- end }}
+                {{- end }}
+
+                {{- $sortedReleases = sort $sortedReleases "releaseDate" -}}
+
+                {{- range $index, $entry := $sortedReleases }}
+                    {{- $majorVersion := $entry.majorVersion }}
+                    {{- $release := $entry.release }}
+                    {{- $releaseDate := $release.releaseDate }}
+                    {{- $formattedDate := "" }}
+
+                    {{- if not (or (eq $releaseDate "9999-12-31") (eq $releaseDate "")) }}
+                        {{- $formattedDate = dateFormat "2 January 2006" $releaseDate }}
+                    {{- end }}
+
+                    <div class="container {{ if or (eq $releaseDate "9999-12-31") (eq $releaseDate "") }}no-date{{ end }}">
+                        <div class="content {{ if mod $index 2 }}content-above{{ else }}content-below{{ end }}">
+                            <b>{{ $majorVersion.releaseName }}</b><br>
+                            {{- if and $release.link $release.name }}
+                                <b><a href="{{ $release.link }}" class="gdoc-props__title">{{ $release.name }}</a></b>
+                            {{- else }}
+                                <b>{{ $release.name }}</b>
+                            {{- end }}
+                            <p>{{ $release.type }}</p>
+                            {{- if $formattedDate }}
+                                <p>{{ $formattedDate }}</p>
+                            {{- else }}
+                                <p>TBD</p>
+                            {{- end }}
+                            <div class="gdoc-props__description">
+                                {{- with $release.description }}
+                                    {{- $desc := . }}
+                                    {{- if reflect.IsMap $desc }}
+                                        {{- $desc = (index $desc $.Site.Language.Lang) }}
+                                    {{- end }}
+                                    {{ $desc | $.Page.RenderString }}
+                                {{- end }}
+                            </div>
+                        </div>
+                    </div>
+                {{- end }}
+            </div>
+        </div>
+</div>
+{{- end }}

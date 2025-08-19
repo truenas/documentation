@@ -1,0 +1,42 @@
+<!-- Shortcode for embedding iXsystems local hosted videos and use video.js to render on the Docs Hub -->
+<style scoped>
+.docvid {
+    max-width: 75%;
+    margin: auto;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+</style>
+{{ if .IsNamedParams }}
+<a name="{{ .Get "name" }}"></a>
+<div class="docvid">
+  <video
+    id="{{ .Get "name" }}"
+    class="video-js vjs-16-9"
+    controls
+    preload="auto"
+    poster=""
+    data-setup="{}"
+  >
+    <source src="https://www.truenas.com/docs/files/{{ .Get "name" }}.mp4" type="video/mp4" />
+    <source src="https://www.truenas.com/docs/files/{{ .Get "name" }}.webm" type="video/webm" />
+    <p class="vjs-no-js">
+      To view this video please enable JavaScript, and consider upgrading to a
+      web browser that
+      <a href="https://videojs.com/html5-video-support/" target="_blank"
+        >supports HTML5 video</a
+      >
+    </p>
+  </video>
+  <p style="font-size:small;">(Video URL: <a href="https://www.truenas.com/docs/files/{{ .Get "name" }}.mp4">https://www.truenas.com/docs/files/{{ .Get "name" }}.mp4</a>)</p>
+ 
+  <script src="https://vjs.zencdn.net/7.15.4/video.min.js"></script>
+</div>
+{{ else }}
+    <p>Video unable to load</p>
+{{ end }}
+
+{{ with .Get "name" }}
+{{ else }}
+{{ errorf "missing value for param 'name': %s" .Position }}
+{{ end }}
