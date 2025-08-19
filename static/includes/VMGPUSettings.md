@@ -1,5 +1,6 @@
 &NewLine;
 
+{{< expand "GPU Settings" "v" >}}
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
