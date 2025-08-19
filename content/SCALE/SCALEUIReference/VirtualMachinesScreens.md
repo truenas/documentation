@@ -277,7 +277,6 @@ CD-ROM settings show when **Device Type** is set to **CD-ROM**.
 {{< trueimage src="/images/SCALE/Virtualization/VMAddDeviceCDROM.png" alt="Add Device - CD-ROM" id="Add Device - CD-ROM" >}}
 
 **CD-ROM Path** shows two fields: the **/mnt** path field that populates with what is selected with the file browser field directly below it. The <iconify-icon icon="bxs:right-arrow"></iconify-icon> to the left of <iconify-icon icon="bxs:folder"></iconify-icon>**/mnt** expands or collapses the directory branch while you browse to the location of the CD-ROM file on the system. |
-{{< /truetable >}}
 {{< /expand >}}
 
 {{< expand "NIC Settings" "v" >}}
