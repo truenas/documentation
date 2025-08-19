@@ -34,7 +34,7 @@ Expanding a VM shows the [details screen](#virtual-machine-details-screen) detai
 The expanded **Virtual Machines** screen shows the details and options for a VM.
 Details include the basic information on the number of virtual CPUs, cores, and threads, the amount of memory, boot loader, and system clock types, the display port number, and the shutdown timeout in seconds.
 
-{{< trueimage src="/images/SCALE/Virtualization/VirtualMachinesScreenwithVMDetails.png" alt="VM Details" id="VM Details" >}}
+{{< trueimage src="/images/SCALE/Virtualization" >}}
 
 Options shown change after starting a virtual machine.
 
@@ -138,7 +138,6 @@ The **Devices** screen shows a table listing of VM devices configured on your sy
 
 **Add** opens the [**Add Device**](#devices-add-screens) screen. Settings change based on the various device types.
 
-
 The <span class="material-icons">more_vert</span> at the right of each device row has three options:
 
 * **Edit** - Opens the **Edit *type* Device** screen where *type* is the device type selected.
@@ -238,9 +237,13 @@ The **Installation Media** settings specify the location of the operating system
 | **Choose Installation Media Image** | Shows two fields, the mount path field and a file browser field directly below it. Sets the mount path to what is selected in the file browser field. To collapse the file branch, click on the <i class="fa fa-caret-right" aria-hidden="true"></i> to the left of **/mnt**. |
 | **Upload New Image File** | Opens the **Upload Image File** dialog, where you browse to, and select the image file location on the local system or a network location available to your TrueNAS system. **Choose File** sets the file location and activates **UpLoad**.  |
 {{< /truetable >}}
+{{< /expand >}}
+
+#### Upload Installation Media Dialog
 
 {{< trueimage src="/images/SCALE/Virtualization/CreateVMWInstallMediaUploadSCALE.png" alt="Upload Installation Media" id="Upload Installation Media" >}}
 
+{{< expand "Upload Installation Media Settings" "v" >}}
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
@@ -253,7 +256,7 @@ The **Installation Media** settings specify the location of the operating system
 ### GPU Screen
 The **GPU** settings specify the graphics processing unit (GPU) for the VM. It also provides the option to hide the VM from the Microsoft Reserved Partition (MSR) on Windows systems.
 
-{{< trueimage src="/images/SCALE/Virtualization/AddVMGPU.png" alt="GPU" id="GPU" >}}
+{{< trueimage src="/images/SCALE/Virtualization/AddVMGPU.png" alt="GPU Settings" id="GPU Settings" >}}
 
 {{< include file="/static/includes/VMGPUSettings.md" >}}
 
