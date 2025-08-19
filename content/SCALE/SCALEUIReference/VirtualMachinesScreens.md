@@ -10,7 +10,6 @@ tags:
  - storage provisioning
 ---
 
-{{< include file="/static/includes/25.04Virtualization.md" >}}
 
 ## Virtual Machines Screen
 
@@ -34,7 +33,7 @@ Expanding a VM shows the [details screen](#virtual-machine-details-screen) detai
 The expanded **Virtual Machines** screen shows the details and options for a VM.
 Details include the basic information on the number of virtual CPUs, cores, and threads, the amount of memory, boot loader, and system clock types, the display port number, and the shutdown timeout in seconds.
 
-{{< trueimage src="/images/SCALE/Virtualization" >}}
+{{< trueimage src="/images/SCALE/Virtualization/VirtualMachinesScreenwithVMDetails.png" alt="VM Details" id="VM Details" >}}
 
 Options shown change after starting a virtual machine.
 

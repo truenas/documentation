@@ -81,7 +81,7 @@ If you have not yet added a virtual machine to your system, clicking **Add Virtu
 
    Click **Next**.
 
-3. Enter the **CPU and Memory** settings for your VM.
+2. Enter the **CPU and Memory** settings for your VM.
 
    {{< trueimage src="/images/SCALE/Virtualization/CreateVirtualMachineCPUAndMemorySettings.png" alt="CPU and Memory Settings" id="CPU and Memory Settings" >}}
 
@@ -101,7 +101,7 @@ If you have not yet added a virtual machine to your system, clicking **Add Virtu
 
    Click **Next**.
 
-4. Configure **Disks** settings.
+3. Configure **Disks** settings.
 
    {{< trueimage src="/images/SCALE/Virtualization/CreateVirtualMachinesDisksSettings.png" alt="Disks Settings" id="Disks Settings" >}}
 
@@ -117,7 +117,7 @@ If you have not yet added a virtual machine to your system, clicking **Add Virtu
 
    Click **Next**.
 
-5. Configure **Network Interface** settings.
+4. Configure **Network Interface** settings.
 
    {{< trueimage src="/images/SCALE/Virtualization/CreateVirtualMachinesNetworkInterfaceSettings.png" alt="Network Interface Settings" id="Network Interface Settings" >}}
 
@@ -131,7 +131,7 @@ If you have not yet added a virtual machine to your system, clicking **Add Virtu
 
    Click **Next**.
 
-6.  Configure **Installation Media** settings to upload the operating system you selected in step 1.
+5. Configure **Installation Media** settings to upload the operating system you selected in step 1.
 
    {{< trueimage src="/images/SCALE/Virtualization/CreateVirtualMachineInstallationMediaSettings.png" alt="Installation Medi Settings" id="Installation Media Settings" >}}
 
@@ -144,7 +144,7 @@ If you have not yet added a virtual machine to your system, clicking **Add Virtu
 
    Click **Upload** to begin the upload process. After the upload finishes, click **Next**.
 
-7. Specify **GPU** settings.
+6. Specify **GPU** settings.
 
    {{< trueimage src="/images/SCALE/Virtualization/AddVMGPU.png" alt="GPU Settings" id="GPU Settings" >}}
 
@@ -153,7 +153,7 @@ If you have not yet added a virtual machine to your system, clicking **Add Virtu
    As of 24.10, TrueNAS does not automatically install NVIDIA drivers. Instead, users must manually install drivers from the UI. For detailed instructions, see [Installing NVIDIA Drivers](https://apps.truenas.com/getting-started/initial-setup/#installing-nvidia-drivers).
    {{< /hint >}}
 
-8. Confirm your VM settings, then click **Save**.
+7. Confirm your VM settings, then click **Save**.
 
 ### Adding and Removing Devices
 
@@ -258,7 +258,7 @@ Modify settings as needed to suit your use case.
    {{< /expand >}}
 </div>
 
-   After creating the VM, start it. Expand the VM entry and click **Start**.
+<p style="margin-left: 33px">After creating the VM, start it. Expand the VM entry and click **Start**.</p>
 
 2. Click **Display** to open a SPICE interface and see the Debian Graphical Installation screens.
 
