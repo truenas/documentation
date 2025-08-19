@@ -1,6 +1,8 @@
 # Production-only configuration for subdirectory deployment
 # This file is merged with config.toml during CI/CD builds
 
+baseURL = "https://docs-dev1.ixsystems.com/docs/"
+
 [module]
   [[module.imports]]
     path = "github.com/truenas/docs-shared"
