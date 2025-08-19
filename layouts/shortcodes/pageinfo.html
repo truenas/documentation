@@ -1,0 +1,16 @@
+{{ $_hugo_config := `{ "version": 1 }` }}
+{{ $color := .Get "color" | default "primary" }}
+{{ $version := .Get "version" }}
+
+{{ if $version }}
+<div class="pageinfo pageinfo-{{ $color }}">
+    <div class="pageinfo-version">
+        This article applies to {{ $version }} and later versions.
+    </div>
+{{ .Inner }}
+</div>
+{{ else }}
+<div class="pageinfo pageinfo-{{ $color }}">
+{{ .Inner }}
+</div>
+{{ end }}

@@ -1,0 +1,80 @@
+<nav class="toc-panel" style="direction: rtl; text-align: left;">
+  <div class="toc-container" style="direction: ltr; padding: 1em;">
+    <b>Page Sections:</b>
+    <ul class="toc-list" style="list-style: none; padding-left: 0;">
+      <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          var tocList = document.querySelector('.toc-list');
+          var headers = document.querySelectorAll('.gdoc-page h2, .gdoc-page h3, .gdoc-page h4');
+          
+          headers.forEach(function(header) {
+            // Ignore headers within <details> elements
+            if (!header.closest('details')) {
+              var level = header.tagName.toLowerCase().replace('h', '');
+              var text = header.innerText;
+              var anchor = text.toLowerCase().replace(/[^\w\s-]/g, '').replace(/\s/g, '-');
+
+              var tocItem = document.createElement('li');
+              var tocLink = document.createElement('a');
+              tocLink.textContent = text;
+              tocLink.href = '#' + anchor;
+
+              tocItem.appendChild(tocLink);
+              tocList.appendChild(tocItem);
+              header.id = anchor;
+
+              tocItem.id = 'toc-' + level + '-' + anchor; // Unique ID based on header level
+              tocItem.style.marginLeft = (level === '3') ? '1em' : (level === '4') ? '2em' : '0';
+              tocItem.style.fontSize = (level === '3') ? '13px' : (level === '4') ? '12px' : 'inherit';
+            }
+          });
+
+          var sidebarRight = document.querySelector('.sidebar-right');
+          if (document.querySelectorAll('.toc-list li').length < 3) {
+            sidebarRight.style.display = 'none';
+          }
+        });
+      </script>
+      <script>
+        document.addEventListener('DOMContentLoaded', function () {
+          const tocPanel = document.querySelector('.toc-panel');
+          const header = document.querySelector('#TrueNASHeader');
+          const sitenav = document.querySelector('#sitenav');
+          const footer = document.querySelector('.container.gdoc-footer');
+          const footerPadding = 20;
+        
+          function getOffsetBottom(el) {
+            return el ? el.offsetTop + el.offsetHeight : 0;
+          }
+        
+          function clampTocPanel() {
+            const scrollY = window.scrollY || window.pageYOffset;
+            const navHeight = sitenav ? sitenav.offsetHeight : 0;
+            const tocHeight = tocPanel.offsetHeight;
+            const footerTop = footer.getBoundingClientRect().top + window.scrollY - footerPadding;
+        
+            const tocBottom = scrollY + navHeight + tocHeight;
+        
+            if (scrollY > getOffsetBottom(header)) {
+              tocPanel.style.position = 'fixed';
+              tocPanel.style.top = navHeight + 'px'; // keep TOC below sticky menu
+        
+              if (tocBottom > footerTop) {
+                const overlap = tocBottom - footerTop;
+                tocPanel.style.top = `${navHeight - overlap}px`;
+              }
+            } else {
+              tocPanel.style.position = 'absolute';
+              tocPanel.style.top = '';
+            }
+          }
+        
+          window.addEventListener('scroll', clampTocPanel);
+          window.addEventListener('resize', clampTocPanel);
+          clampTocPanel();
+        });        
+      </script>                  
+    </ul>
+  </div>
+</nav>
+
