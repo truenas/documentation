@@ -23,7 +23,7 @@ This article provides instructions on pool management functions available in the
 ## Setting Up Auto TRIM
 
 Select **Storage** on the main navigation panel to open the **Storage Dashboard**.
-Locate the **ZFS Health** widget for the pool, then click the **Edit Auto TRIM**. The **Pool Options for *poolname*** dialog opens.
+Locate the **Storage Health** widget for the pool, then click the **Edit Auto TRIM**. The **Pool Options for *poolname*** dialog opens.
 
 {{< trueimage src="/images/SCALE/Storage/PoolOptionsAuotTRIM.png" alt="Pool Edit Auto TRIM Dialog" id="Pool Edit Auto TRIM Dialog" >}}
 
@@ -75,19 +75,27 @@ It is not necessary to stop sharing services to upgrade the pool.
 
 ## Running a Pool Data Integrity Check (Scrub)
 
-Use **Scrub** on the **ZFS Health** pool widget to start a pool data integrity check.
+Use **Scrub Now** on the **Storage Health** pool widget to start a pool data integrity check.
 
-{{< trueimage src="/images/SCALE/Storage/StorageDashboardZFSHealthWidgetWithDedup.png" alt="ZFS Health Widget" id="ZFS Health Widget" >}}
+{{< trueimage src="/images/SCALE/Storage/StorageHealthWidget.png" alt="Storage Health Widget" id="Storage Health Widget" >}}
 
-Click **Scrub Now** to open the **Scrub Pool** dialog.
-Select **Confirm**, then click **Start Scrub**.
+Click **Scrub Now** to open the **Scrub Pool** dialog, then click **Start Scrub** to begin the process.
 
 If TrueNAS detects problems during the scrub operation, it either corrects them or generates an [alert]({{< ref "/SCALE/SCALEUIReference/TopToolbar/Alerts" >}}) in the web interface.
 
-By default, TrueNAS automatically checks every pool on a recurring scrub schedule.
+{{< hint type=note >}}
+A scrub is a data integrity check of your pool. Scrubs identify data integrity problems, detect silent data corruptions caused by transient hardware issues, and provide early disk failure alerts.
+{{< /hint >}}
 
-The **Storage Health** widget shows the state of the last scrub or disks in the pool.
-To view scheduled scrub tasks, click **Configure** on the **Storage Health** widget.
+### Scheduling Scrub Tasks
+
+TrueNAS automatically creates a scheduled scrub for each pool that runs every Sunday at 12:00 AM by default.
+
+The **Storage Health** widget shows the scheduled scrub status:
+- **Scheduled Scrub: None Set** with a **Schedule** link if no scrub task exists
+- **Scheduled Scrub: [when]** with a **Configure** link if a scrub task is configured and enabled
+
+Click **Schedule** to create a new scrub schedule or **Configure** to modify an existing schedule. This opens the **Configure Scheduled Scrub** form where you can set the schedule, threshold days, and enable or disable the scheduled scrub.
 
 ## Managing Pool Disks
 
@@ -239,7 +247,7 @@ Click **Update Pool** to save changes.
 You can add a deduplication VDEV to an existing pool, but files in the pool might or might not have deduplication applied to them.
 When adding a deduplication VDEV to an existing pool, any existing entries in the deduplication table remain on the data VDEVs until the data they reference is rewritten.
 
-After adding a deduplication VDEV to a pool, and when duplicated files are added to the pool, the **ZFS Health** widget on the **Storage Dashboard** shows two links, **Prune** and **Set Quota**. These links do not show if duplicated files do not exist in the pool.
+After adding a deduplication VDEV to a pool, and when duplicated files are added to the pool, the **Storage Health** widget on the **Storage Dashboard** shows two links, **Prune** and **Set Quota**. These links do not show if duplicated files do not exist in the pool.
 
 Use **Prune** to set the parameters used to prune the deduplication table (DDT). Select the measurement used, percentage or age, when pruning the table size.
 
