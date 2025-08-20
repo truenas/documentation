@@ -44,7 +44,7 @@ Early releases are intended for testing and feedback purposes.
 Do not use early-release software for critical tasks.
 {{< /hint >}}
 
-August 20, 2025
+August 28, 2025
 
 The TrueNAS team is pleased to release TrueNAS 25.10-BETA.1!
 This first public release version of TrueNAS 25.10 (Goldeye) has software component updates and new features that are in the polishing phase.
