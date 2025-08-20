@@ -95,7 +95,14 @@ Virtual Machines are now "Enterprise ready" with support for TrueNAS Enterprise 
 
 ### 25.10-BETA.1 Known Issues
 
+* The time sort for frequency on the **Cloud Sync Tasks** screen is incorrect ([NAS-137096](https://ixsystems.atlassian.net/browse/NAS-137096)).
+* **Users** page shows "can not retrieve response" due to invalid email address ([NAS-137198](https://ixsystems.atlassian.net/browse/NAS-137198)).
+* The **Virtual Machines** page doesn't refresh properly ([NAS-136973](https://ixsystems.atlassian.net/browse/NAS-136973)).
+
 <a href="https://ixsystems.atlassian.net/issues/?filter=13197" target="_blank">Click here to see the latest information</a> about public issues discovered in 25.10-BETA.1 that are being resolved in a future TrueNAS release.
+
+See the [Release Notes](https://forums.truenas.com/c/release-notes/13) section of the TrueNAS forum for ongoing updates about known issues, investigations, and statistics about TrueNAS releases.
+
   </div>
 
   <div data-tab-id="major-features" data-tab-label="25.10 Major Features">
