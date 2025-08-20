@@ -152,7 +152,7 @@ The **Delete Namespace** dialog opens with the option to delete the underlying f
 
 Select the **Also delete the underlying file** option, then click **Delete** to delete both the namespace and the file.
 
-## Editing a Port
+## Editing Ports
 
 You can add new ports or edit existing ports from the **Ports** widget on the **NVMe-oF** screen.
 First, select the subsystem row in the table, then click the **Add** dropdown on the right of the **Ports** widget header.
