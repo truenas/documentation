@@ -57,4 +57,3 @@ The **Advanced Settings > Storage** configuration includes:
 - **Run Resilvering At Higher Priority At Certain Times** - enables priority scheduling
 - Time window configuration for when higher priority resilvering occurs
 - Days of the week selection for the priority schedule
-

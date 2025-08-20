@@ -92,6 +92,7 @@ A scrub is a data integrity check of your pool. Scrubs identify data integrity p
 TrueNAS automatically creates a scheduled scrub for each pool that runs every Sunday at 12:00 AM by default.
 
 The **Storage Health** widget shows the scheduled scrub status:
+
 - **Scheduled Scrub: None Set** with a **Schedule** link if no scrub task exists
 - **Scheduled Scrub: [when]** with a **Configure** link if a scrub task is configured and enabled
 
@@ -111,6 +112,7 @@ See [Replacing Disks]({{< ref "ReplacingDisks" >}}) for more information on the 
 ## Expanding a Pool
 
 There are a few  ways to increase the size of an existing pool:
+
 * Add one or more drives to an existing RAIDZ VDEV.
 * Add a new VDEV of the same type.
 * Add a new VDEV of a different type.
@@ -187,6 +189,7 @@ You cannot change the original encryption or data VDEV configuration.
 {{< /hint >}}
 
 {{< expand "Adding VDEV Examples" "v" >}}
+
 * To make a striped mirror, add the same number of drives to extend a ZFS mirror.
   For example, you start with ten available drives. Begin by creating a mirror of two drives, and then extend the mirror by adding another mirror of two drives. Repeat this three more times until you add all ten drives.
 * To make a stripe of two 3-drive RAIDZ1 VDEVs (similar to RAID 50 on a hardware controller), add another three drives as a new RAIDZ1 VDEV to the existing single 3-drive RAIDZ1 VDEV pool.
@@ -279,7 +282,7 @@ Go to the **Storage Dashboard** and click **View VDEVs** on the **VDEVs** widget
    {{< trueimage src="/images/SCALE/Storage/DevicesDiskWidgets.png" alt="Devices Disk Widgets" id="Devices Disk Widgets" >}}
 
    Click **Offline** on the **ZFS Info** widget to take the disk offline. The button toggles to **Online**.
-   
+
    Remove the disk from the system.
 
 3. Insert a larger capacity disk into an open enclosure slot (or if no empty slots, the slot of the offline disk being replaced).
@@ -327,6 +330,7 @@ This process preserves data integrity but has multiple requirements:
 When a RAIDZ data VDEV is present, it is generally not possible to remove a device.
 
 To remove a VDEV from a pool:
+
 1. Click ***View VDEVs** on the **VDEVs** widget opens the ***Poolname* VDEVs** screen.
 2. Click the device or drive to remove, then click the **Remove** button in the **ZFS Info** widget.
    If the **Remove** button is not visible, check that all conditions for VDEV removal listed above are correct.
