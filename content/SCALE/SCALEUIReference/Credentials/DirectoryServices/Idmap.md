@@ -57,7 +57,7 @@ The settings on the **Add Idmap** and **Edit Idmap** change based on the selecti
 |---------|-------------|
 | **Name** | (Required) Select an option from the dropdown list, **SMB - Primary Domain** or **Custom Value**. **SMB - Primary Domain** reduces the fields displayed on the **Add Idmap** screen. Selecting **Custom Value** adds The **Custom Name** field. |
 | **Custom Name** | Displays below the **Name** field after selecting **Custom Value** in the **Name** field. Enter the pre-Windows 2000 domain name. |
-| **Idmap Backend**  |(Required) Select the backend plugin interface for Winbind to use to store SID to UID/GID mapping tables. The correct setting depends on the environment you deployed the NAS in. Options are **AD** for Active Directory, **LDAP** for an LDAP environment. **AUTORID** is similar to RID but it can automatically assign IDs for different domains. **NSS** provides a means to map Unix users and groups to Windows accounts. **RFC2307** provides a way for Winbind to read ID mappings from records in an LDAP server defined in RFC 2307. **RID** provides a way to use an algorithmic mapping scheme to map UIDs/GIDs and SIDs. **TDB** is similar to RID but it is an allocating backend, which means it needs to allocate new users and group IDs in order to create new mappings. The selected option changes the settings displayed on the **Add Idmap** screen. |
+| **Idmap Backend**  |(Required) Select the backend plugin interface for Winbind to use to store SID to UID/GID mapping tables. The correct setting depends on the environment you deployed the NAS in. Options are **AD** for Active Directory, **LDAP** for an LDAP environment. **NSS** provides a means to map Unix users and groups to Windows accounts. **RFC2307** provides a way for Winbind to read ID mappings from records in an LDAP server defined in RFC 2307. **RID** provides a way to use an algorithmic mapping scheme to map UIDs/GIDs and SIDs. **TDB** is similar to RID but it is an allocating backend, which means it needs to allocate new users and group IDs in order to create new mappings. The selected option changes the settings displayed on the **Add Idmap** screen. |
 | **DNS Domain Name**  | Enter the DNS name of the domain. |
 | **Range Low** |(Required) Enter a value for the least number of members. Works with the **Range High** to establish the range of UID/GID numbers the Idmap backend translates. If an external credential like a Windows SID maps to a UID or GID number outside this range, TrueNAS ignores it. |
 | **Range High**  | (Required) Enter a value for the greatest number of members. Works with the **Range Low** to establish the range of UID/GID numbers the Idmap backend translates. If an external credential like a Windows SID maps to a UID or GID number outside this range, TrueNAS ignores it. |
@@ -111,22 +111,6 @@ The **Add Idmap** screen with **Name** set to **Custom Value** and **Idmap Backe
 {{< /truetable >}}
 {{< /expand >}}
 
-### Add Idmap Screen with Idmap Backend as AUTORID
-
-The **Add Idmap** screen with **Name** set to **Custom Value** and **Idmap Backend** set to **AUTORD** shares the some of the same settings on the **AD** screen but the **Options** settings are different.
-{{< expand "Idmap Backend - AUTORID Options Settings" "v" >}}
-
-![AddIdmapBackendAD](/images/SCALE/Credentials/AddIdmapBackendAD.png "Add Idmap Screen with AUTORID as Idmap Backend")
-
-{{< truetable >}}
-| Setting | Description |
-|---------|-------------|
-| **Range Size** | Enter the number of UIDs/GIDs available per domain range. The minimum number is 2000. The recommended default is 100000. |
-| **Read Only** | Select to make the module read-only. No new ranges are allocated or new mappings created in the idmap pool. |
-| **Ignore Builtin** | Select to ignore mapping requests for the BUILTIN domain. |
-{{< /truetable >}}
-
-{{< /expand >}}
 
 ### Add Idmap Screen with Idmap Backend as LDAP
 
