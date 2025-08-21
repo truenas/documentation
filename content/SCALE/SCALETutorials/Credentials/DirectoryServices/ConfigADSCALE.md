@@ -80,7 +80,7 @@ To connect TrueNAS to Active Directory:
    - Enter the domain name for the AD in **Domain Name** (required)  
    - Enter the site name in **Site Name** (optional)
    - Enter the computer account organizational unit in **Computer Account OU** (optional)
-   - Check **Use Default Domain** if needed for your environment
+   - Select **Use Default Domain** if needed for your environment
 
 4. Configure the **Trusted Domains Configuration** section if needed for your environment. Starting in TrueNAS 25.10, trusted domains are configured as part of the Active Directory configuration rather than as separate idmap entries.
 
