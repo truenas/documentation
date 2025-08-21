@@ -75,7 +75,7 @@ To connect TrueNAS to Active Directory:
 
 2. Select **Active Directory** as the directory service type.
 
-3. Configure the **Active Directory Configuration** section:
+3. Enter the **Active Directory Configuration** settings:
    - Enter the TrueNAS hostname in **TrueNAS Hostname** (required)
    - Enter the domain name for the AD in **Domain Name** (required)  
    - Enter the site name in **Site Name** (optional)
