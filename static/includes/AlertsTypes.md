@@ -31,7 +31,7 @@ Select **Email** from the **Type** dropdown list to display email authentication
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Email Address** | Enter a valid email address to receive alerts from this TrueNAS system. |
+| **Override Admin Email** | Enter an email address to override the admin account's default email. If left blank, the admin account's email address is used. |
 {{< /truetable >}}
 {{< /expand >}}
 

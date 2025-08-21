@@ -11,27 +11,20 @@ keywords:
 - software storage solutions
 ---
 
-An automatic script sends a nightly email containing important information such as disk health to the administrator account.
-For fast awareness and resolution of critical issues, configure TrueNAS to send these emails to the remote email account for the administrator.
+An automatic script sends a nightly email containing important information such as disk health to configured recipients.
+For fast awareness and resolution of critical issues, configure TrueNAS system email with the recipient addresses that should receive these notifications.
 
 {{< hint type=note >}}
 TrueNAS mails [Scrub Task]({{< ref "ScrubTasksSCALE" >}}) issues and [S.M.A.R.T. reports]({{< ref "SMARTTestsSCALE" >}}) separately to the address configured in those services.
 {{< /hint >}}
 
-## Configuring User Email Addresses
+## Configuring Email Recipients
 
-You can configure the email address for the admin user as part of your initial system setup or by following the procedure below.
-You can also configure email addresses for additional user accounts as needed.
-
-Before configuring anything else, set the local administrator email address.
-Go to **Credentials > Users**, click on the admin user row to expand it, then select **Edit** to open the **Edit User** configuration screen.
-In the **Email** field, enter a remote email address for the system administrator that regularly monitors (like *admin@example.com*), and click **Save**.
-
-For more information on adding or changing user settings, see [Managing Users]({{< ref "ManageLocalUsersSCALE" >}}).
+Starting with TrueNAS 25.10, system emails are sent to a configurable list of recipients rather than automatically using local administrator email addresses. Configure the recipient list in the system email settings to specify who receives system notifications.
 
 ## Setting Up System Email
 
-After setting up the admin email address, configure the send method for the email service.
+Configure the send method and recipients for the email service.
 
 Go to **System > General Settings** and locate the **Email** widget to view the current configuration, or click the **Alerts** <span class="iconify" data-icon="mdi:bell"></span> icon at the top right of the UI screen, then click the gear <span class="iconify" data-icon="mdi:cog"></span> settings icon, and select **Email** to open the **General Settings** screen.
 
@@ -46,8 +39,7 @@ Select one of the three **Send Mail Method** options:
 The configuration options change based on the selected method.
 
 After configuring the send method, click **Send Test Mail** to verify you can send email.
-If the email test fails, verify the **Email** field is correctly configured for the admin user.
-Return to **Credentials > Users** to edit the [admin user](#configuring-the-admin-user-email-address).
+If the email test fails, verify the recipient addresses are correctly configured in the **Email Recipients** field.
 
 **Save** stores the email configuration and closes the **Email Options** screen.
 
@@ -141,7 +133,7 @@ Click **Save**.
 
 ## Setting Up the Email Alert Service
 
-After configuring the system email send method, the admin email receives a system health email every night/morning.
+After configuring the system email send method, configured recipients receive a system health email every night/morning.
 
 To add or configure the **Email Alert Service** to send timely warnings when a system alert hits the warning level specified in [**Alert Settings**]({{< ref "/SCALEUIReference/toptoolbar/alerts/alertsettingsscreen" >}}):
 
@@ -152,7 +144,7 @@ Locate **Email** under **Alert Services**, select the <span class="material-icon
 
 {{< trueimage src="/images/SCALE/SystemSettings/EditAlertServiceEmailScreen.png" alt="Edit Email Alert Service" id="Edit Email Alert Service" >}}
 
-Add the system email address in the **Email Address** field.
+Add the alert recipient email address in the **Email Address** field.
 
 Use the **Level** dropdown to adjust the email warning threshold or accept the default **Warning** setting.
 
