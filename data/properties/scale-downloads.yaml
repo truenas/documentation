@@ -115,9 +115,6 @@ majorVersions:
     releaseNotes: "https://www.truenas.com/docs/scale/24.10/gettingstarted/scalereleasenotes/"
     releaseName: "Electric Eel"
     releases:
-      - name: "24.10.2.4"
-        link: "https://download.truenas.com/TrueNAS-SCALE-ElectricEel/24.10.2.4/"
-        date: "2025-08-07"
       - name: "24.10.2.3"
         link: "https://download.truenas.com/TrueNAS-SCALE-ElectricEel/24.10.2.3/"
         date: "2025-07-14"
@@ -156,9 +153,6 @@ majorVersions:
     releaseNotes: "https://www.truenas.com/docs/scale/25.04/gettingstarted/scalereleasenotes/"
     releaseName: "Fangtooth"
     releases:
-      - name: "25.04.2.1"
-        link: "https://download.truenas.com/TrueNAS-SCALE-Fangtooth/25.04.2.1"
-        date: "2025-08-07"
       - name: "25.04.2"
         link: "https://download.truenas.com/TrueNAS-SCALE-Fangtooth/25.04.2"
         date: "2025-07-31"
@@ -181,6 +175,9 @@ majorVersions:
     majorVersion: "25.10 (Goldeye)"
     releaseName: "Goldeye"
     releases:
+      - name: "25.10-BETA.1"
+        link: "https://download.truenas.com/truenas-scale-goldeye-beta/25.10-BETA.1"
+        date: "2025-08-20"
       - name: "25.10 (Goldeye) Nightly .iso"
         link: "https://download.truenas.com/truenas-scale-goldeye-nightly/"
         date: ""
