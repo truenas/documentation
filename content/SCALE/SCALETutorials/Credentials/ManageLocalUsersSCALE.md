@@ -70,7 +70,7 @@ Setting the **Disable Password** toggle to active (blue toggle) disables these f
 * The **Lock User** option disappears.
 * The account is restricted from password-based logins for services like SMB shares and SSH sessions.
 
-Enter a user account email address in the **Email** field if you want this user to receive notifications
+Enter a user account email address in the **Email** field. Starting in TrueNAS 25.10, system notifications are sent to recipients configured in system email settings rather than user account emails
 
 Accept the default user ID or enter a new UID.
 TrueNAS suggests a user ID starting at **3000**, but you can change it if you wish.
