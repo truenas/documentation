@@ -30,5 +30,5 @@ The **Kerberos Settings** configuration screen is available for advanced Kerbero
 ![KerberosSettingsScreen](/images/SCALE/Credentials/KerberosSettingsScreen.png "Kerberos Settings Screen")
 
 {{< hint type=note >}}
-Advanced Kerberos auxiliary parameter configuration options have been removed in TrueNAS 25.10. Kerberos settings are now managed through the unified directory services configuration.
+Advanced Kerberos auxiliary parameter configuration options are removed in TrueNAS 25.10. Kerberos settings are now managed through the unified directory services configuration.
 {{< /hint >}}
