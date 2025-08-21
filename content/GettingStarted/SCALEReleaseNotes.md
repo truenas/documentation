@@ -1,12 +1,6 @@
 ---
 title: "25.10 (Goldeye) Development Notes"
 description: "Highlights, change log, and known issues for the latest TrueNAS nightly development version."
-aliases:
- - /scale/scalereleasenotes/
- - /scalenext-releasenotes/
- - /scale/scalenextversion/
- - /scale/25.10/gettingstarted/scalereleasenotes/
- - /releasenotes/
 weight: 10
 related: false
 ---
