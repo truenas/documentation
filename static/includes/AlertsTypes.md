@@ -31,7 +31,7 @@ Select **Email** from the **Type** dropdown list to display email authentication
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Override Admin Email** | Enter an email address to override the admin account's default email. If left blank, the admin account's email address is used. |
+| **Override Admin Email** | Sets an email address to override the default email address for the admin account. When left blank, the email address for the admin account is used. |
 {{< /truetable >}}
 {{< /expand >}}
 
