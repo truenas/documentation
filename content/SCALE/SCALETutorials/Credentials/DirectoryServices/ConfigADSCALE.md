@@ -75,22 +75,22 @@ To connect TrueNAS to Active Directory:
 
 2. Select **Active Directory** as the directory service type.
 
-3. Configure the **Active Directory Configuration** section:
-   - Enter the TrueNAS hostname in **TrueNAS Hostname**. (required)
-   - Enter the domain name for the AD in **Domain Name**. (required)  
-   - Enter the site name in **Site Name**. (optional)
-   - Enter the computer account organizational unit in **Computer Account OU**. (optional)
-   - Check **Use Default Domain** if needed for your environment.
+3. Enter the **Active Directory Configuration** settings:
+   - Enter the TrueNAS host name in **TrueNAS Hostname** (required)
+   - Enter the domain name for the AD in **Domain Name** (required)  
+   - Enter the site name in **Site Name** (optional)
+   - Enter the computer account organizational unit in **Computer Account OU** (optional)
+   - Select **Use Default Domain** if needed for your environment
 
-4. Configure the **Trusted Domains Configuration** section if needed for your environment. Starting in TrueNAS 25.10, trusted domains are configured as part of the Active Directory configuration rather than as separate idmap entries.
+4. Enter the **Trusted Domains Configuration** settings if needed for your environment.
 
-   {{< trueimage src="/images/SCALE/Credentials/TrustedDomainsConfiguration.png" alt="Trusted Domains Configuration" id="Trusted Domains Configuration" >}}
+   Starting in TrueNAS 25.10, trusted domains are configured as part of the Active Directory configuration rather than as separate IDmap entries.
 
-5. Configure the **IDMAP Configuration** section:
-   - **Use TrueNAS Server IDMAP Defaults** is selected by default.
-   - To customize IDmap settings, deselect **Use TrueNAS Server IDMAP Defaults** to reveal additional configuration options:
-   - **Builtin** settings with the optional **Name** field and required **Range Low** and **Range High** fields.
-   - **IDMAP Domain** settings with the required **IDMAP Backend**, **Name**, **Range Low**, and **Range High** fields.
+5. Enter the **IDMAP Configuration** settings.
+   - By default, **Use TrueNAS Server IDMAP Defaults** is selected
+   - To customize IDMAP settings, uncheck **Use TrueNAS Server IDMAP Defaults** to reveal additional configuration options:
+   - **Builtin** section with optional **Name** field and required **Range Low** and **Range High** fields
+   - **IDMAP Domain** section with required **IDMAP Backend**, **Name**, **Range Low**, and **Range High** fields
 
 6. Click **Save**.
 

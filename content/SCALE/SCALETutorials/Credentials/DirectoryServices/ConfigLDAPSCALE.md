@@ -32,21 +32,21 @@ To configure TrueNAS to use an LDAP directory server:
 
 2. Select **LDAP** as the directory service type.
 
-3. Configure the **LDAP Configuration** section:
-   - Enter your LDAP server URLs in **Server URLs** (required). If using a cloud service LDAP server, do not include the full URL
-   - Enter your LDAP server base DN in **Base DN** (required). This is the top level of the LDAP directory tree to use when searching for resources
-   - Check **Start TLS** if needed for your environment
-   - Check **Validate Certificates** if certificate validation is required
-   - Select the appropriate **Schema** (required)
+3. Enter the **LDAP Configuration** settings:
+   - Enter your LDAP server URLs in **Server URLs** (required). If using a cloud service LDAP server, do not include the full URL.
+   - Enter your LDAP server base DN in **Base DN** (required). This is the top level of the LDAP directory tree to use when searching for resources.
+   - Select **Start TLS** if needed for your environment.
+   - Select **Validate Certificates** if certificate validation is required.
+   - Select the appropriate **Schema** from the dropdown list.
 
-4. Configure the **Auxiliary Parameters** section:
-   - **Use Standard Auxiliary Parameters** is checked by default. Uncheck to enter custom auxiliary parameters
+4. Enter the **Auxiliary Parameters** settings.
+   - **Use Standard Auxiliary Parameters** is enabled by default. Clear the checkbox to disable and enter custom auxiliary parameters.
 
-5. Configure the **Search Bases** section:
-   - **Use Standard Search Bases** is checked by default. Uncheck to enter custom **User Base DN**, **Group Base DN**, and **Netgroup Base DN** values
+5. Enter the **Search Bases** settings. 
+    **Use Standard Search Bases** is enabled by default. To enter custom **User Base DN**, **Group Base DN**, and **Netgroup Base DN** values, clear the checkbox and show these fields.
 
-6. Configure the **Attribute Maps** section:
-   - **Use Standard Attribute Maps** is checked by default. Uncheck to personalize the **LDAP Password Attributes**, **LDAP Shadow Attributes**, **LDAP Group Attributes**, and **LDAP Net Group Attributes**
+6. Enter the **Attribute Maps** settings.
+   - **Use Standard Attribute Maps** is enabled by default. Clear the checkbox to personalize the **LDAP Password Attributes**, **LDAP Shadow Attributes**, **LDAP Group Attributes**, and **LDAP Net Group Attributes**.
 
 7. Click **Save**.
 
