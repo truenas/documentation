@@ -71,31 +71,31 @@ Make sure the domain name is set to something other than the default value **tru
 
 To connect TrueNAS to Active Directory:
 
-1. Go to **Credentials > Directory Services** and click **Configure Directory Services** to open the unified directory services configuration screen.
+1. Go to **Credentials > Directory Services** and click **Configure Directory Services** to open the unified **Directory Services Configuration** form.
 
 2. Select **Active Directory** as the directory service type.
 
 3. Configure the **Active Directory Configuration** section:
-   - Enter the TrueNAS hostname in **TrueNAS Hostname** (required)
-   - Enter the domain name for the AD in **Domain Name** (required)  
-   - Enter the site name in **Site Name** (optional)
-   - Enter the computer account organizational unit in **Computer Account OU** (optional)
-   - Check **Use Default Domain** if needed for your environment
+   - Enter the TrueNAS hostname in **TrueNAS Hostname**. (required)
+   - Enter the domain name for the AD in **Domain Name**. (required)  
+   - Enter the site name in **Site Name**. (optional)
+   - Enter the computer account organizational unit in **Computer Account OU**. (optional)
+   - Check **Use Default Domain** if needed for your environment.
 
 4. Configure the **Trusted Domains Configuration** section if needed for your environment. Starting in TrueNAS 25.10, trusted domains are configured as part of the Active Directory configuration rather than as separate idmap entries.
 
+   {{< trueimage src="/images/SCALE/Credentials/TrustedDomainsConfiguration.png" alt="Trusted Domains Configuration" id="Trusted Domains Configuration" >}}
+
 5. Configure the **IDMAP Configuration** section:
-   - By default, **Use TrueNAS Server IDMAP Defaults** is selected
-   - To customize IDMAP settings, uncheck **Use TrueNAS Server IDMAP Defaults** to reveal additional configuration options:
-   - **Builtin** section with optional **Name** field and required **Range Low** and **Range High** fields
-   - **IDMAP Domain** section with required **IDMAP Backend**, **Name**, **Range Low**, and **Range High** fields
+   - **Use TrueNAS Server IDMAP Defaults** is selected by default.
+   - To customize IDmap settings, deselect **Use TrueNAS Server IDMAP Defaults** to reveal additional configuration options:
+   - **Builtin** settings with the optional **Name** field and required **Range Low** and **Range High** fields.
+   - **IDMAP Domain** settings with the required **IDMAP Backend**, **Name**, **Range Low**, and **Range High** fields.
 
 6. Click **Save**.
 
 
    {{< trueimage src="/images/SCALE/Credentials/ActiveDirectoryBasicOptions.png" alt="Active Directory Basic Options" id="Active Directory Basic Options" >}}
-
-   {{< trueimage src="/images/SCALE/Credentials/TrustedDomainsConfiguration.png" alt="Trusted Domains Configuration" id="Trusted Domains Configuration" >}}
 
    TrueNAS creates the default Kerberos realm and principal, and the **Computer Account OU** value **/computers/servers/NAS**.
 

@@ -21,16 +21,15 @@ tags:
 
 {{< include file="/static/includes/DirectoryServiceAccessAdmonition.md" >}}
 
-The **Directory Services** screen contains configuration options to set up access to directory servers with domain and account settings, and can set up ID mapping or Kerberos authentication and authorization services.
+The **Directory Services** screen configuration options set up access to directory servers through domain and account settings, and can set up ID mapping or Kerberos authentication and authorization services.
 
 {{< trueimage src="/images/SCALE/Credentials/DirectoryServicesScreen.png" alt="Directory Services Screen" id="Directory Services Screen" >}}
 
-The screen shows the status of directory services when no service is configured or when a service is configured but disabled.
-Only one directory service type can be configured at a time.
+The screen shows the status of directory services when a service is not configured or when it is configured but disabled.
 
 The main option displays:
 
-* **Configure Directory Services** opens the unified directory services configuration screen where you can set up either Active Directory or LDAP connections.
+* **Configure Directory Services** opens the unified **Directory Services Configuration** form where you can set up either Active Directory or LDAP connections.
 
 * **Advanced Settings** opens a warning dialog before showing configuration options for [ID mapping]({{< ref "Idmap.md" >}}) and Kerberos.
 
