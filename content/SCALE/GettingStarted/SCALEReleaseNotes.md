@@ -56,37 +56,49 @@ Visit [our guide](https://www.truenas.com/docs/contributing/) for information on
 
 {{< enterprise >}}
 Virtual Machines are now "Enterprise ready" with support for TrueNAS Enterprise High Availability (HA) systems and failover ([NAS-136509](https://ixsystems.atlassian.net/browse/NAS-136509)).
+
+Failover moves to the **Advanced Settings** screen ([NAS-135469](https://ixsystems.atlassian.net/browse/NAS-135469)).
 {{< /enterprise >}}
 
-* A redesigned **Updates** screen allows users to select an update profile reflecting their risk-tolerance level ([NAS-133600](https://ixsystems.atlassian.net/browse/NAS-133600)). TrueNAS only notifies users of updates recommended for users at the selected profile level.
-* Introduces a refreshed **Users** screen to allow for improved at-a-glance access to account information and simplify user creation ([NAS-134198](https://ixsystems.atlassian.net/browse/NAS-134198)).
+* Introduces a redesigned **Updates** screen that allows users to select an update profile reflecting their risk-tolerance level ([NAS-133600](https://ixsystems.atlassian.net/browse/NAS-133600)). TrueNAS only notifies users of updates recommended for their selected profile level.
+* Introduces changes to **Certificates**, **Certificate Authorities (CA)**, and **Certificate Signing Requests (CSR)** ([NAS-135168](https://ixsystems.atlassian.net/browse/NAS-135168)):
+  * Removes **Certificate Authorities (CA)** screens and support for CAs, which means you cannot sign CSRs or create self-signed certificates.
+  * Removes **Add** from **Certficates**. Users can import a certificate created by an external certificate authority.
+  * Allows adding a certificate using the new **Create ACME Certificate** screen found under **Certificate Signing Requests** and an existing DNS authenticator added through the **ACME DNS Authenticators** screen.
+    See [Preparing to Upgrade](#upgrade-prep) for more information.
+* Introduces a refreshed **Users (WIP)** screen that provides improved, at-a-glance access to account information and simplified user creation ([NAS-134198](https://ixsystems.atlassian.net/browse/NAS-134198)).
+* Introduces changes to the **Datasets** and **Storage Dashboard** screens ([NAS-135362](https://ixsystems.atlassian.net/browse/NAS-135362), [NAS-135364](https://ixsystems.atlassian.net/browse/NAS-135364)).
+  - Renames dataset and pool widgets, and changes links to other screens.
+  - Removes **Scrub Tasks** configuration and scheduling from the **Data Protection Tasks** screen, but makes it available on the **Storage Health** widget located on the **Storage Dashboard** ([NAS-135555](https://ixsystems.atlassian.net/browse/NAS-135555)). 
+* Fixes the NVIDIA GPU related error "RenderError: Expected [uuid] to be set for GPU in slot" ([NAS-134152](https://ixsystems.atlassian.net/browse/NAS-134152)).
 * Includes the [NVIDIA open GPU kernel module drivers](https://github.com/NVIDIA/open-gpu-kernel-modules).
   These drivers work with Turing and later GPUs.
   Earlier architectures (Pascal, Maxwell, Volta) are not compatible.
   See [NVIDIA GPU Support](#nvidia-gpu-support) for more information.
 * Adds support for for directory services authentication via FTP ([NAS-135200](https://ixsystems.atlassian.net/browse/NAS-135200)).
-* The **Enable Secure Boot** option is added to virtual machine configuration screens ([NAS-136466](https://ixsystems.atlassian.net/browse/NAS-136466)).
-* TrueNAS can now automatically migrate existing applications when selecting a new applications pool ([NAS-132188](https://ixsystems.atlassian.net/browse/NAS-132188)).
-* The TrueNAS Apps service now supports configuring external container registry mirrors as alternative sources for Docker images ([NAS-136553](https://ixsystems.atlassian.net/browse/NAS-136553)).
-* Various UI improvements and optimizations simplify core user experiences ([NAS-135159](https://ixsystems.atlassian.net/browse/NAS-135159)).
+* Adds the **Enable Secure Boot** option to virtual machine configuration screens ([NAS-136466](https://ixsystems.atlassian.net/browse/NAS-136466)).
+* Allows TrueNAS to automatically migrate existing applications when selecting a new applications pool ([NAS-132188](https://ixsystems.atlassian.net/browse/NAS-132188)).
+* Adds TrueNAS Apps service support for configuring external container registry mirrors as alternative sources for Docker images ([NAS-136553](https://ixsystems.atlassian.net/browse/NAS-136553)).
+* Introduces various UI improvements and optimizations simplify core user experiences ([NAS-135159](https://ixsystems.atlassian.net/browse/NAS-135159)).
 * Includes critical ZFS stability fixes and performance improvements, including fixed corruptions for plaintext replication of encrypted snapshots, enhanced memory pressure handling, faster pool export operations, improved I/O scaling capabilities, zfs rewrite and Direct I/O support ([NAS-135902](https://ixsystems.atlassian.net/browse/NAS-135902)).
 * Simplifies and improves robustness of gateway and name server settings when changing from DHCP to static aliases ([NAS-136360](https://ixsystems.atlassian.net/browse/NAS-136360) and [NAS-136360](https://ixsystems.atlassian.net/browse/NAS-136360)).
+  Moves **Network** screen under the **System** main menu option.
 * Fixes insufficient memory pressure on ZFS ARC by Virtual Machines to prevent out-of-memory conditions ([NAS-135499](https://ixsystems.atlassian.net/browse/NAS-135499)).
 * Virtual machines created in 25.04 (pre-25.04.2) and displayed on the **Containers** screen do not automatically start on system boot to prevent conflicts with VMs on the **Virtual Machines** screen that might use the same zvol(s) ([NAS-136946](https://ixsystems.atlassian.net/browse/NAS-136946)).
-* Enables access-based enumeration for SMB shares with NFSv4 ACL type, so directory listings only show files that users have permission to read ([NAS-136499](https://ixsystems.atlassian.net/browse/NAS-136499)).
+* Makes changes to SMB shares:
+  - Enables access-based enumeration for SMB shares with NFSv4 ACL type, so directory listings only show files that users have permission to read ([NAS-136499](https://ixsystems.atlassian.net/browse/NAS-136499)).
+  - Changes SMB share **Advanced Options**, **Purpose**, and **Other Option** settings assoicated with the preset setting selected ([NAS-136499](https://ixsystems.atlassian.net/browse/NAS-136499)).
 * Removes the **AUTORID** IDMAP backend option from Active Directory configuration to improve consistency across multi-server environments ([NAS-136630](https://ixsystems.atlassian.net/browse/NAS-136630)).
   Existing configurations using **AUTORID** are automatically migrated to **RID** during upgrade.
   Users should review their ACLs and permissions after upgrade and might need to reconfigure them in some edge cases.
 * Completes the transition to the versioned JSON-RPC 2.0 over WebSocket API by migrating all remaining jobs and events from the deprecated REST API ([NAS-133984](https://ixsystems.atlassian.net/browse/NAS-133984)).
   Full removal of the REST API is planned for the TrueNAS 26.04 release.
-* Removes the built-in SMART test scheduling and monitoring interface to improve user flexibility while maintaining smartmontools binaries for continued third-party script compatibility ([NAS-135020](https://ixsystems.atlassian.net/browse/NAS-135020)).
-  Existing scheduled SMART tests are automatically migrated to cron tasks during upgrade, and users can install the "Scrutiny" app for advanced SMART monitoring.
-  See [Preparing to Upgrade](#upgrade-prep) for more information.
+* Removes to SMART tests ([NAS-134927](https://ixsystems.atlassian.net/browse/NAS-134927)).
+  - Removes the built-in SMART test scheduling and monitoring interface to improve user flexibility while maintaining smartmontools binaries for continued third-party script compatibility ([NAS-135020](https://ixsystems.atlassian.net/browse/NAS-135020)).
+    Existing scheduled SMART tests are automatically migrated to cron tasks during upgrade, and users can install the Scrutiny app for advanced SMART monitoring.
+  - SMART tests functions no longer show on the **Data Protections Tasks**, **Storage Dashboard**, or individual disk screens.  
+   See [Preparing to Upgrade](#upgrade-prep) for more information.
 * Improves drive temperature monitoring efficiency by extending the `drivetemp` kernel module to include SCSI/SAS disk temperatures.
-* Removes Certificate Authority functionality that allowed TrueNAS to create and sign certificates.
-  Users can now manage certificates through CSRs, self-signed certificates, or importing externally-signed certificates.
-  See [Preparing to Upgrade](#upgrade-prep) for more information.
-* Fixes the NVIDIA GPU related error "RenderError: Expected [uuid] to be set for GPU in slot" ([NAS-134152](https://ixsystems.atlassian.net/browse/NAS-134152)).
 * Fixes an issue affecting drive temperature reporting on the dashboard ([NAS-135572](https://ixsystems.atlassian.net/browse/NAS-135572)).
 * Fixes a bug to reenable available update notifications for custom apps ([NAS-135124](https://ixsystems.atlassian.net/browse/NAS-135124)).
 * Fixes contrast issues on some UI theme options ([NAS-135519](https://ixsystems.atlassian.net/browse/NAS-135519)).
