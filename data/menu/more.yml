@@ -25,3 +25,21 @@ more:
     ref: "https://truenas.com/docs/index.xml"
     icon: "gdoc_notification"
     external: true
+  - name: "Software Status"
+    ref: "https://www.truenas.com/software-status/"
+    external: true
+  - name: "Software Releases"
+    ref: "https://www.truenas.com/docs/softwarereleases/"
+    external: true
+  - name: "Solutions"
+    ref: "https://www.truenas.com/docs/solutions/"
+    external: true
+  - name: "TrueNAS Systems"
+    ref: "https://www.truenas.com/docs/hardware/"
+    external: true
+  - name: "Contributing"
+    ref: "https://www.truenas.com/docs/contributing/"
+    external: true
+  - name: "References"
+    ref: "https://www.truenas.com/docs/references/"
+    external: true
