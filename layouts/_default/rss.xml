@@ -9,7 +9,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>{{ if eq  .Title  .Site.Title }}{{ .Site.Title }}{{ else }}{{ with .Title }}{{.}} on {{ end }}{{ .Site.Title }}{{ end }}</title>
-    <link>https://www.truenas.com/docs{{ .RelPermalink }}</link>
+    <link>https://www.truenas.com/docs/scale/25.10{{ .RelPermalink }}</link>
     <description>Recent content {{ if ne  .Title  .Site.Title }}{{ with .Title }}in {{.}} {{ end }}{{ end }}on {{ .Site.Title }}</description>
     <generator>Hugo -- gohugo.io</generator>{{ with .Site.LanguageCode }}
     <language>{{.}}</language>{{end}}
@@ -29,14 +29,14 @@
     <lastBuildDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</lastBuildDate>{{ end }}
 
     {{ with .OutputFormats.Get "RSS" }}
-      <atom:link href="https://www.truenas.com/docs{{ .RelPermalink }}" rel="self" type="application/rss+xml" />
+      <atom:link href="https://www.truenas.com/docs/scale/25.10{{ .RelPermalink }}" rel="self" type="application/rss+xml" />
     {{ end }}
     
     {{ range $pages }}
       {{ if ne .Params.no_print "true" }}
       <item>
         <title>{{ .Title }}</title>
-        <link>https://www.truenas.com/docs{{ .RelPermalink }}</link>
+        <link>https://www.truenas.com/docs/scale/25.10{{ .RelPermalink }}</link>
         <pubDate>{{ .Lastmod.Format "2006-01-02 15:04 MST" | safeHTML }}</pubDate>
 
         {{- range $name, $details := .Site.Params.authors }}
@@ -46,7 +46,7 @@
           {{- break }} {{/* Use only the first author found */}}
         {{- end }}
 
-        <guid>https://www.truenas.com/docs{{ .RelPermalink }}</guid>
+        <guid>https://www.truenas.com/docs/scale/25.10{{ .RelPermalink }}</guid>
         <description>{{ .Content | html }}</description>
       </item>
       {{ end }}
