@@ -1,0 +1,39 @@
+Key,Summary,Priority,Status,Fix Version/s,Components,Description,Assignee,Created,Updated
+NAS-135115,Support for account policy settings in TrueNAS Enterprise environments,High,Done,25.04.1,Middleware,"Add support for password history, complexity, and aging policies",John Doe,2024-03-15,2024-05-27
+NAS-127189,Add PAM-based session management for middleware,Medium,Done,25.04.1,Authentication,Implement PAM session management for STIG compliance,Jane Smith,2024-02-10,2024-05-27
+NAS-135183,Remove support for BOTH in share ACLs,Medium,Done,25.04.1,Storage,Clean up ACL implementation by removing BOTH option,Bob Johnson,2024-03-20,2024-05-27
+NAS-135394,Persist updated GMail OAuth refresh token,Low,Done,25.04.1,Email,Prevent deauthentication by persisting refresh tokens,Alice Brown,2024-03-25,2024-05-27
+NAS-135371,Allow the same host path to be mounted inside multiple containers,Medium,Done,25.04.1,Instances,Enable shared host path mounting for containers,Charlie Wilson,2024-03-22,2024-05-27
+NAS-135904,ARC scaling and eviction fixes,High,Done,25.04.1,Storage,Prevent VM crashes due to OOM errors,David Lee,2024-04-01,2024-05-27
+NAS-135098,Enhanced robustness of the Instances screen,Medium,Done,25.04.1,UI,Handle edge-case configurations better in UI,Emma Davis,2024-03-18,2024-05-27
+NAS-135375,Add a synthetic container root user,Medium,Done,25.04.1,Instances,Add built-in unprivileged root user for containers,Frank Miller,2024-03-24,2024-05-27
+NAS-134963,Improved error handling when instance ports conflict,Low,Done,25.04.1,Instances,Better validation for port conflicts with services,Grace Taylor,2024-03-12,2024-05-27
+NAS-135475,Prevent accidental deletion of built-in idmap entries,Medium,Done,25.04.1,Directory Services,Protect system idmap entries from deletion,Henry Wang,2024-03-28,2024-05-27
+NAS-135308,Improved validation for attaching and removing zvols,Medium,Done,25.04.1,Storage,Better validation for zvol operations with instances,Iris Chen,2024-03-26,2024-05-27
+NAS-135663,Increase middlewared.service timeout,Low,Done,25.04.1,Middleware,Prevent boot failure on systems with slow drives,Jack Anderson,2024-04-02,2024-05-27
+NAS-135527,Fix JSON decode crash in smartctl output,Medium,Done,25.04.1,Storage,Fix disk temperature reporting issues,Kelly Rodriguez,2024-03-30,2024-05-27
+NAS-135361,Fix TrueNAS UI authentication with IPv6,Low,Done,25.04.1,Authentication,Support IPv6 entries in Allowed IP Addresses,Liam Martinez,2024-03-29,2024-05-27
+NAS-133555,Prevent cloned blocks remapping after device removal,Critical,Done,25.04.0,Storage,Avoid data corruption in OpenZFS,Mike Thompson,2024-02-15,2024-04-15
+NAS-134250,Allow configuration of IO bus for disk devices in Instances,Medium,Done,25.04.0,Instances,Enable non-VirtIO disk configurations,Nancy Garcia,2024-03-08,2024-04-15
+NAS-134552,Improved upload speed for volume imports,Medium,Done,25.04.0,Instances,Optimize volume import performance,Oliver Kim,2024-03-12,2024-04-15
+NAS-134393,New IO Bus configuration options for Virtual Machines,Medium,Done,25.04.0,Instances,Additional IO bus types beyond VirtIO,Patricia Moore,2024-03-10,2024-04-15
+NAS-134447,New IDMAP options for users and groups in Linux containers,Medium,Done,25.04.0,Instances,Improved ID mapping for containers,Quinn Taylor,2024-03-14,2024-04-15
+NAS-134253,Fixed bug to allow console access for VMs created with an iso file,Low,Done,25.04.0,Instances,Enable VM console access with ISO,Rachel Green,2024-03-06,2024-04-15
+NAS-134736,Fix KeyError crash in ipmi.lan.query,Medium,Done,25.04.0,IPMI,Resolve IPMI query crashes,Steve Wilson,2024-03-16,2024-04-15
+NAS-134558,Fix permissions for user app config file,Low,Done,25.04.0,Apps,Correct app configuration file permissions,Tina Johnson,2024-03-11,2024-04-15
+NAS-134728,Prevent upgrade failure if encrypted fields are not readable in DNS auth table,Medium,Done,25.04.0,DNS,Handle encrypted DNS auth fields during upgrade,Uma Patel,2024-03-17,2024-04-15
+NAS-132124,Optimize Dashboard resource widgets and fetch metrics once per page load,Low,Done,25.04.0,UI,Improve dashboard performance,Victor Chen,2024-02-20,2024-04-15
+NAS-134309,Reserve 2 GiB of disk space for future disk replacement,Medium,Done,25.04-RC.1,Storage,Allow replacement with slightly smaller disks,William Davis,2024-02-25,2024-03-11
+NAS-130766,Ensure disk temperature reporting is available for all disks,Medium,Done,25.04-RC.1,Storage,Fix disk temperature detection issues,Xavier Lee,2024-01-15,2024-03-11
+NAS-134346,Allow SMB authentication for usernames with a capital letter,Low,Done,25.04-RC.1,SMB,Fix SMB username case sensitivity,Yolanda Smith,2024-03-05,2024-03-11
+NAS-133853,Fix top toolbar icon colors for iX Blue Paper and High Contrast UI themes,Low,Done,25.04-RC.1,UI,Correct toolbar icon color display,Zachary Brown,2024-02-28,2024-03-11
+NAS-133655,Enable the applications Web UI button when accessing from IPv6 or mDNS name,Low,Done,25.04-RC.1,Apps,Fix Web UI button for IPv6/mDNS access,Amy Johnson,2024-02-22,2024-03-11
+NAS-132911,Remove unsupported SMB auxiliary parameters during migration,Medium,Done,25.04-BETA.1,SMB,Clean up SMB config during CORE migration,Ben Wilson,2024-01-20,2024-02-13
+NAS-133680,Disable SMB2/3 lease support for multiprotocol shares,Medium,Done,25.04-BETA.1,SMB,Prevent conflicts in mixed NFS/SMB shares,Carol Davis,2024-02-05,2024-02-13
+NAS-131396,Improved API key mechanism with user-linked API keys,High,Done,25.04-BETA.1,API,Support per-user API key management,Daniel Kim,2024-01-10,2024-02-13
+NAS-130810,UI login experience improvements,Medium,Done,25.04-BETA.1,UI,Enhanced login interface and flow,Elena Rodriguez,2024-01-12,2024-02-13
+NAS-131784,NFS over RDMA support - Enterprise Feature,High,Done,25.04-BETA.1,NFS,High-performance NFS for Enterprise,Frank Lee,2024-01-18,2024-02-13
+NAS-106190,iSCSI Extensions for RDMA (iSER) support - Enterprise Feature,High,Done,25.04-BETA.1,iSCSI,High-performance iSCSI for Enterprise,Grace Wang,2024-01-22,2024-02-13
+NAS-127088,ZFS Fast deduplication support,Medium,Done,25.04-BETA.1,Storage,Improved deduplication performance,Helen Chen,2024-01-25,2024-02-13
+NAS-130017,iSCSI XCOPY support through ZVOL block cloning,Medium,Done,25.04-BETA.1,iSCSI,Efficient block copying for iSCSI,Ivan Petrov,2024-01-28,2024-02-13
+NAS-130251,Incus Container & VM Support - Experimental Community Feature,High,Done,25.04-BETA.1,Instances,Next-generation container and VM platform,Julia Martinez,2024-01-30,2024-02-13

@@ -1,0 +1,10 @@
+Key,Summary,Priority,Status,Fix Version/s,Components,Description,Assignee,Created,Updated
+NAS-132911,Remove unsupported SMB auxiliary parameters during migration,Medium,Done,25.04-BETA.1,SMB,Clean up SMB config during CORE migration,Ben Wilson,2024-01-20,2024-02-13
+NAS-133680,Disable SMB2/3 lease support for multiprotocol shares,Medium,Done,25.04-BETA.1,SMB,Prevent conflicts in mixed NFS/SMB shares,Carol Davis,2024-02-05,2024-02-13
+NAS-131396,Improved API key mechanism with user-linked API keys,High,Done,25.04-BETA.1,API,Support per-user API key management,Daniel Kim,2024-01-10,2024-02-13
+NAS-130810,UI login experience improvements,Medium,Done,25.04-BETA.1,UI,Enhanced login interface and flow,Elena Rodriguez,2024-01-12,2024-02-13
+NAS-131784,NFS over RDMA support - Enterprise Feature,High,Done,25.04-BETA.1,NFS,High-performance NFS for Enterprise,Frank Lee,2024-01-18,2024-02-13
+NAS-106190,iSCSI Extensions for RDMA (iSER) support - Enterprise Feature,High,Done,25.04-BETA.1,iSCSI,High-performance iSCSI for Enterprise,Grace Wang,2024-01-22,2024-02-13
+NAS-127088,ZFS Fast deduplication support,Medium,Done,25.04-BETA.1,Storage,Improved deduplication performance,Helen Chen,2024-01-25,2024-02-13
+NAS-130017,iSCSI XCOPY support through ZVOL block cloning,Medium,Done,25.04-BETA.1,iSCSI,Efficient block copying for iSCSI,Ivan Petrov,2024-01-28,2024-02-13
+NAS-130251,Incus Container & VM Support - Experimental Community Feature,High,Done,25.04-BETA.1,Instances,Next-generation container and VM platform,Julia Martinez,2024-01-30,2024-02-13

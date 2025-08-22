@@ -1,0 +1,911 @@
+/**
+ * Linkable Tab Box JavaScript - TrueNAS themed tabs with URL linking
+ * Supports dark/light mode, matches TrueNAS styling, and processes Markdown
+ */
+
+/**
+ * Process markdown lists with proper nesting support
+ * @param {string} html - HTML string to process
+ * @returns {string} HTML string with properly formatted lists
+ */
+function processLists(html) {
+    const lines = html.split('\n');
+    const result = [];
+    let currentList = null;
+    let listStack = [];
+    
+    for (let i = 0; i < lines.length; i++) {
+        const line = lines[i];
+        const trimmedLine = line.trim();
+        
+        // Check for unordered list items (*, -, +)
+        const unorderedMatch = line.match(/^(\s*)[\*\-\+]\s+(.+)$/);
+        // Check for ordered list items (1., 2., etc.)
+        const orderedMatch = line.match(/^(\s*)\d+\.\s+(.+)$/);
+        
+        if (unorderedMatch || orderedMatch) {
+            const indent = (unorderedMatch || orderedMatch)[1].length;
+            const content = (unorderedMatch || orderedMatch)[2];
+            const listType = unorderedMatch ? 'ul' : 'ol';
+            
+            // Handle nesting
+            if (currentList === null) {
+                // Start new list
+                result.push(`<${listType}>`);
+                listStack = [{ type: listType, indent: indent }];
+                currentList = listType;
+            } else {
+                const currentIndent = listStack[listStack.length - 1].indent;
+                
+                if (indent > currentIndent) {
+                    // Nested list
+                    result.push(`<${listType}>`);
+                    listStack.push({ type: listType, indent: indent });
+                } else if (indent < currentIndent) {
+                    // Close nested lists
+                    while (listStack.length > 0 && listStack[listStack.length - 1].indent > indent) {
+                        const closingList = listStack.pop();
+                        result.push(`</${closingList.type}>`);
+                    }
+                    
+                    // Check if we need to start a new list type
+                    if (listStack.length === 0 || listStack[listStack.length - 1].type !== listType) {
+                        if (listStack.length > 0) {
+                            const closingList = listStack.pop();
+                            result.push(`</${closingList.type}>`);
+                        }
+                        result.push(`<${listType}>`);
+                        listStack.push({ type: listType, indent: indent });
+                    }
+                } else if (currentList !== listType) {
+                    // Different list type at same level
+                    const closingList = listStack.pop();
+                    result.push(`</${closingList.type}>`);
+                    result.push(`<${listType}>`);
+                    listStack.push({ type: listType, indent: indent });
+                }
+            }
+            
+            result.push(`<li>${content}</li>`);
+            currentList = listType;
+        } else {
+            // Not a list item
+            if (currentList !== null) {
+                // Close all open lists
+                while (listStack.length > 0) {
+                    const closingList = listStack.pop();
+                    result.push(`</${closingList.type}>`);
+                }
+                currentList = null;
+            }
+            result.push(line);
+        }
+    }
+    
+    // Close any remaining open lists
+    while (listStack.length > 0) {
+        const closingList = listStack.pop();
+        result.push(`</${closingList.type}>`);
+    }
+    
+    return result.join('\n');
+}
+
+
+/**
+ * Simple markdown parser for basic markdown elements
+ * @param {string} markdown - Markdown text to parse
+ * @returns {string} HTML string
+ */
+function parseMarkdown(markdown) {
+    if (!markdown) return '';
+    
+    let html = markdown;
+    
+    // First, protect existing code blocks by temporarily replacing them
+    const codeBlocks = [];
+    html = html.replace(/```([\s\S]*?)```/g, function(match, content) {
+        const placeholder = `__CODE_BLOCK_${codeBlocks.length}__`;
+        codeBlocks.push(`<pre><code>${content.trim()}</code></pre>`);
+        return placeholder;
+    });
+    
+    // Headers (must be processed first)
+    html = html.replace(/^### (.*$)/gim, '<h3>$1</h3>');
+    html = html.replace(/^## (.*$)/gim, '<h2>$1</h2>');
+    html = html.replace(/^# (.*$)/gim, '<h1>$1</h1>');
+    
+    // Bold and italic
+    html = html.replace(/\*\*\*(.*?)\*\*\*/g, '<strong><em>$1</em></strong>');
+    html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+    html = html.replace(/\*(.*?)\*/g, '<em>$1</em>');
+    
+    // Inline code (avoiding conflicts with protected code blocks)
+    html = html.replace(/`([^`]+)`/g, '<code>$1</code>');
+    
+    // Links
+    html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>');
+    
+    // Process lists properly with nesting support
+    html = processLists(html);
+    
+    // Blockquotes
+    html = html.replace(/^> (.+$)/gim, '<blockquote>$1</blockquote>');
+    
+    // Horizontal rules
+    html = html.replace(/^---$/gim, '<hr>');
+    
+    // Line breaks and paragraphs
+    html = html.replace(/\n\n/g, '</p><p>');
+    html = '<p>' + html + '</p>';
+    
+    // Clean up empty paragraphs
+    html = html.replace(/<p><\/p>/g, '');
+    html = html.replace(/<p>(<h[1-6]>)/g, '$1');
+    html = html.replace(/(<\/h[1-6]>)<\/p>/g, '$1');
+    html = html.replace(/<p>(<ul>|<ol>|<blockquote>|<pre>|<hr>)/g, '$1');
+    html = html.replace(/(<\/ul>|<\/ol>|<\/blockquote>|<\/pre>|<hr>)<\/p>/g, '$1');
+    
+    // Restore code blocks
+    codeBlocks.forEach((block, index) => {
+        html = html.replace(`__CODE_BLOCK_${index}__`, block);
+    });
+    
+    
+    return html;
+}
+
+/**
+ * Creates a linkable tab box
+ * @param {string} containerId - ID of the container element
+ * @param {Array} tabs - Array of tab objects with {id, label, content, markdownFile}
+ * @param {Object} options - Configuration options
+ */
+function createLinkableTabs(containerId, tabs, options = {}) {
+    const config = {
+        defaultTab: options.defaultTab || (tabs.length > 0 ? tabs[0].id : null),
+        urlHashEnabled: options.urlHashEnabled !== false, // Default to true
+        theme: options.theme || 'truenas', // 'truenas' or 'minimal'
+        enableMarkdown: options.enableMarkdown !== false // Default to true
+    };
+
+    const container = document.getElementById(containerId);
+    if (!container) {
+        console.error('Container element not found:', containerId);
+        return;
+    }
+
+    // Add CSS for the tabs
+    if (!document.getElementById('linkable-tabs-styles')) {
+        const styleSheet = document.createElement('style');
+        styleSheet.id = 'linkable-tabs-styles';
+        styleSheet.textContent = `
+            .linkable-tabs-wrapper {
+                --truenas-primary: #0095d5;
+                --truenas-primary-hover: #0084c0;
+                --truenas-secondary: #71bf44;
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+                margin: 20px 0;
+            }
+            
+            .linkable-tabs-nav {
+                display: flex;
+                border-bottom: 2px solid var(--accent-color, #dee2e6);
+                background-color: var(--body-background, white);
+                border-radius: 8px 8px 0 0;
+                overflow: hidden;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            }
+            
+            .linkable-tab-button {
+                background: var(--accent-color-lite, #f8f9fa);
+                color: var(--body-font-color, #333);
+                border: none;
+                padding: 15px 25px;
+                cursor: pointer;
+                font-size: 14px;
+                font-weight: 500;
+                transition: all 0.3s ease;
+                border-bottom: 3px solid transparent;
+                position: relative;
+                text-decoration: none;
+                display: inline-block;
+                border-right: 1px solid var(--accent-color, #dee2e6);
+            }
+            
+            .linkable-tab-button:last-child {
+                border-right: none;
+            }
+            
+            .linkable-tab-button:hover {
+                background: var(--accent-color, #e9ecef);
+                color: var(--truenas-primary);
+                transform: translateY(-1px);
+            }
+            
+            .linkable-tab-button.active {
+                background: var(--body-background, white);
+                color: var(--truenas-primary);
+                border-bottom-color: var(--truenas-primary);
+                font-weight: 600;
+                box-shadow: 0 -2px 4px rgba(0, 149, 213, 0.2);
+            }
+            
+            .linkable-tab-content {
+                background: var(--body-background, white);
+                border: 1px solid var(--accent-color, #dee2e6);
+                border-top: none;
+                border-radius: 0 0 8px 8px;
+                padding: 25px;
+                min-height: 200px;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            }
+            
+            .linkable-tab-pane {
+                display: none;
+                animation: fadeIn 0.3s ease;
+            }
+            
+            .linkable-tab-pane.active {
+                display: block;
+            }
+            
+            @keyframes fadeIn {
+                from { opacity: 0; transform: translateY(10px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+            
+            /* Responsive design */
+            @media (max-width: 768px) {
+                .linkable-tabs-nav {
+                    flex-direction: column;
+                }
+                
+                .linkable-tab-button {
+                    border-right: none;
+                    border-bottom: 1px solid var(--accent-color, #dee2e6);
+                    text-align: center;
+                }
+                
+                .linkable-tab-button:last-child {
+                    border-bottom: none;
+                }
+                
+                .linkable-tab-content {
+                    padding: 20px 15px;
+                }
+            }
+            
+            /* Link styling for tabs */
+            .linkable-tab-link {
+                color: inherit;
+                text-decoration: none;
+                display: block;
+                width: 100%;
+                height: 100%;
+            }
+            
+            .linkable-tab-link:hover {
+                color: inherit;
+                text-decoration: none;
+            }
+            
+            /* Copy link button */
+            .tab-copy-link {
+                position: absolute;
+                top: 5px;
+                right: 5px;
+                background: var(--truenas-primary);
+                color: white;
+                border: none;
+                border-radius: 3px;
+                padding: 2px 6px;
+                font-size: 10px;
+                cursor: pointer;
+                opacity: 0;
+                transition: opacity 0.2s;
+            }
+            
+            .linkable-tab-button:hover .tab-copy-link {
+                opacity: 1;
+            }
+            
+            .tab-copy-link:hover {
+                background: var(--truenas-primary-hover);
+            }
+            
+            /* List styling for markdown content */
+            .linkable-tab-content ul,
+            .linkable-tab-content ol {
+                margin: 16px 0;
+                padding-left: 24px;
+            }
+            
+            .linkable-tab-content ul {
+                list-style-type: disc;
+            }
+            
+            .linkable-tab-content ol {
+                list-style-type: decimal;
+            }
+            
+            .linkable-tab-content li {
+                margin: 8px 0;
+                line-height: 1.5;
+            }
+            
+            .linkable-tab-content ul ul,
+            .linkable-tab-content ol ol,
+            .linkable-tab-content ul ol,
+            .linkable-tab-content ol ul {
+                margin: 4px 0;
+            }
+            
+            .linkable-tab-content ul ul {
+                list-style-type: circle;
+            }
+            
+            .linkable-tab-content ul ul ul {
+                list-style-type: square;
+            }
+            
+        `;
+        document.head.appendChild(styleSheet);
+    }
+
+    // Create tab structure
+    const tabsHTML = `
+        <div class="linkable-tabs-wrapper">
+            <div class="linkable-tabs-nav" role="tablist">
+                ${tabs.map(tab => `
+                    <button class="linkable-tab-button" 
+                            role="tab" 
+                            id="tab-${tab.id}" 
+                            data-tab="${tab.id}"
+                            aria-controls="pane-${tab.id}">
+                        ${tab.label}
+                        <button class="tab-copy-link" 
+                                onclick="copyTabLink('${tab.id}')" 
+                                title="Copy link to this tab">
+                            🔗
+                        </button>
+                    </button>
+                `).join('')}
+            </div>
+            <div class="linkable-tab-content">
+                ${tabs.map(tab => {
+                    // Clean up content by removing problematic HTML entities
+                    let cleanContent = tab.content || '<p style="color: #6c757d; font-style: italic;">Content for this tab will be added here.</p>';
+                    
+                    // Remove &NewLine; entities that can cause issues in tab content
+                    cleanContent = cleanContent.replace(/&NewLine;/g, '');
+                    
+                    return `<div class="linkable-tab-pane" 
+                         role="tabpanel" 
+                         id="pane-${tab.id}" 
+                         aria-labelledby="tab-${tab.id}">
+${config.enableMarkdown && cleanContent ? parseMarkdown(cleanContent) : cleanContent}
+                    </div>`;
+                }).join('')}
+            </div>
+        </div>
+    `;
+
+    container.innerHTML = tabsHTML;
+
+    // Add event listeners to tab buttons
+    tabs.forEach(tab => {
+        const button = document.getElementById(`tab-${tab.id}`);
+        button.addEventListener('click', (e) => {
+            e.preventDefault();
+            switchToTab(tab.id, config.urlHashEnabled);
+        });
+    });
+
+    // Handle URL hash on page load
+    if (config.urlHashEnabled) {
+        const hash = window.location.hash.substring(1);
+        
+        // Check if hash matches a tab ID directly
+        const directTabMatch = hash && tabs.find(t => t.id === hash);
+        
+        // Check if hash matches a header inside any tab content
+        const headerTabMatch = findTabContainingHeader(hash);
+        
+        if (directTabMatch) {
+            switchToTab(hash, false); // Don't update URL on initial load
+        } else if (headerTabMatch) {
+            // Open the tab containing the header and scroll to it
+            switchToTab(headerTabMatch.tabId, false);
+            // Wait for the correct tab to become active before scrolling
+            waitForTabActivation(headerTabMatch.tabId, () => {
+                scrollToHeaderInTab(hash, headerTabMatch.tabId);
+            });
+        } else {
+            switchToTab(config.defaultTab, false);
+        }
+        
+        // Listen for hash changes
+        window.addEventListener('hashchange', () => {
+            const newHash = window.location.hash.substring(1);
+            const directMatch = newHash && tabs.find(t => t.id === newHash);
+            const headerMatch = findTabContainingHeader(newHash);
+            
+            if (directMatch) {
+                switchToTab(newHash, false);
+            } else if (headerMatch) {
+                switchToTab(headerMatch.tabId, false);
+                // Wait for the correct tab to become active before scrolling
+                waitForTabActivation(headerMatch.tabId, () => {
+                    scrollToHeaderInTab(newHash, headerMatch.tabId);
+                });
+            }
+        });
+    } else {
+        // Just show default tab
+        switchToTab(config.defaultTab, false);
+    }
+
+    /**
+     * Wait for a specific tab to become active
+     * @param {string} tabId - The tab ID to wait for
+     * @param {Function} callback - Function to call when tab is active
+     */
+    function waitForTabActivation(tabId, callback) {
+        const maxAttempts = 20; // Maximum attempts
+        let attempts = 0;
+        
+        function checkTabActive() {
+            attempts++;
+            const targetTabPane = document.getElementById(`pane-${tabId}`);
+            const activeTabPane = document.querySelector('.linkable-tab-pane.active');
+            
+            console.log(`Attempt ${attempts}: Target pane: ${targetTabPane?.id}, Active pane: ${activeTabPane?.id}`);
+            
+            if (targetTabPane && targetTabPane.classList.contains('active') && activeTabPane?.id === `pane-${tabId}`) {
+                console.log(`Tab ${tabId} is now active, executing callback`);
+                callback();
+            } else if (attempts < maxAttempts) {
+                console.log(`Waiting for tab ${tabId} to become active (attempt ${attempts})`);
+                setTimeout(checkTabActive, 50); // Check every 50ms
+            } else {
+                console.warn(`Timeout waiting for tab ${tabId} to become active`);
+                console.log(`Final state - Target: ${targetTabPane?.id}, Active: ${activeTabPane?.id}`);
+                // Try callback anyway
+                callback();
+            }
+        }
+        
+        checkTabActive();
+    }
+
+    /**
+     * Find which tab contains a header with the given ID
+     * @param {string} headerId - The header ID to search for
+     * @returns {Object|null} Object with tabId if found, null otherwise
+     */
+    function findTabContainingHeader(headerId) {
+        if (!headerId) return null;
+        
+        console.log('Searching for header ID:', headerId);
+        
+        for (const tab of tabs) {
+            console.log(`Checking tab: ${tab.id} (${tab.label})`);
+            
+            // Create a temporary div to parse the tab content
+            const tempDiv = document.createElement('div');
+            tempDiv.innerHTML = tab.content;
+            
+            // Look for headers that might match this ID
+            const headers = tempDiv.querySelectorAll('h1, h2, h3, h4, h5, h6');
+            console.log(`Found ${headers.length} headers in tab ${tab.id}`);
+            
+            for (const header of headers) {
+                // Generate potential anchor IDs from header text
+                const headerText = (header.textContent || header.innerText).trim();
+                const potentialId = headerText.toLowerCase()
+                    .replace(/[^\w\s-]/g, '')
+                    .replace(/\s+/g, '-')
+                    .replace(/-+/g, '-')
+                    .replace(/^-|-$/g, '');
+                
+                console.log(`  Header: "${headerText}" → ID: "${potentialId}"`);
+                
+                if (potentialId === headerId || header.id === headerId) {
+                    console.log(`Match found in tab ${tab.id}!`);
+                    return { tabId: tab.id, headerId: headerId };
+                }
+            }
+        }
+        
+        console.log('No matching header found in any tab');
+        return null;
+    }
+
+    /**
+     * Scroll to a specific header within a specific tab
+     * @param {string} headerId - The header ID to scroll to
+     * @param {string} tabId - The specific tab ID to search in (optional, falls back to active tab)
+     */
+    function scrollToHeaderInTab(headerId, tabId = null) {
+        console.log('Attempting to scroll to header:', headerId, 'in tab:', tabId);
+        
+        // Find the specific tab pane or fall back to active tab
+        let targetTabPane;
+        if (tabId) {
+            targetTabPane = document.getElementById(`pane-${tabId}`);
+            console.log('Specific tab pane found:', targetTabPane);
+        } else {
+            targetTabPane = document.querySelector('.linkable-tab-pane.active');
+            console.log('Active tab pane found:', targetTabPane);
+        }
+        
+        if (!targetTabPane) {
+            console.log('No target tab pane found');
+            return;
+        }
+        
+        console.log('Target tab ID:', targetTabPane.id);
+        
+        // Try to find the header by ID first
+        let targetHeader = targetTabPane.querySelector(`#${headerId}`);
+        console.log('Header found by ID:', targetHeader);
+        
+        // If not found by ID, search by generated anchor from text content
+        if (!targetHeader) {
+            console.log('Searching headers by text content...');
+            const headers = targetTabPane.querySelectorAll('h1, h2, h3, h4, h5, h6');
+            console.log('Found headers:', headers.length);
+            
+            for (const header of headers) {
+                const headerText = (header.textContent || header.innerText).trim();
+                const generatedId = headerText.toLowerCase()
+                    .replace(/[^\w\s-]/g, '')
+                    .replace(/\s+/g, '-')
+                    .replace(/-+/g, '-')
+                    .replace(/^-|-$/g, '');
+                
+                console.log(`Header text: "${headerText}" → Generated ID: "${generatedId}"`);
+                
+                if (generatedId === headerId) {
+                    targetHeader = header;
+                    // Set the ID for future reference
+                    header.id = headerId;
+                    console.log('Match found! Setting header ID and breaking');
+                    break;
+                }
+            }
+        }
+        
+        if (targetHeader) {
+            console.log('Target header found, scrolling to:', targetHeader);
+            
+            // Scroll to the header with some offset for better visibility
+            const headerRect = targetHeader.getBoundingClientRect();
+            const absoluteTop = headerRect.top + window.pageYOffset;
+            const offset = 150; // Increased offset to show header properly
+            
+            console.log(`Scrolling to position: ${absoluteTop - offset}`);
+            
+            window.scrollTo({
+                top: Math.max(0, absoluteTop - offset),
+                behavior: 'smooth'
+            });
+        } else {
+            console.log('Target header not found for ID:', headerId);
+            
+            // Debug: List all headers in the target tab
+            const allHeaders = targetTabPane.querySelectorAll('h1, h2, h3, h4, h5, h6');
+            console.log('Available headers in target tab:');
+            allHeaders.forEach(h => {
+                const text = (h.textContent || h.innerText).trim();
+                const id = text.toLowerCase()
+                    .replace(/[^\w\s-]/g, '')
+                    .replace(/\s+/g, '-')
+                    .replace(/-+/g, '-')
+                    .replace(/^-|-$/g, '');
+                console.log(`"${text}" → "${id}"`);
+            });
+        }
+    }
+
+    /**
+     * Switches to a specific tab
+     * @param {string} tabId - ID of the tab to switch to
+     * @param {boolean} updateUrl - Whether to update the URL hash
+     */
+    function switchToTab(tabId, updateUrl = true) {
+        // Hide all tab panes
+        tabs.forEach(tab => {
+            document.getElementById(`pane-${tab.id}`).classList.remove('active');
+            document.getElementById(`tab-${tab.id}`).classList.remove('active');
+        });
+
+        // Show selected tab
+        const selectedPane = document.getElementById(`pane-${tabId}`);
+        const selectedButton = document.getElementById(`tab-${tabId}`);
+        
+        if (selectedPane && selectedButton) {
+            selectedPane.classList.add('active');
+            selectedButton.classList.add('active');
+            
+            // Execute any scripts in the newly shown tab content
+            executeTabScripts(selectedPane);
+            
+            // Update URL hash if enabled
+            if (updateUrl && config.urlHashEnabled) {
+                history.pushState(null, null, `#${tabId}`);
+            }
+        }
+    }
+
+    /**
+     * Executes scripts found in tab content
+     * @param {Element} tabPane - The tab pane element
+     */
+    function executeTabScripts(tabPane) {
+        console.log('=== TAB SCRIPT EXECUTION v2.3 ===');
+        
+        // Handle Mermaid diagrams with multiple timing attempts
+        const mermaidElements = tabPane.querySelectorAll('.mermaid');
+        console.log(`Found ${mermaidElements.length} Mermaid elements in tab`);
+        console.log('Mermaid available:', typeof mermaid !== 'undefined');
+        
+        if (mermaidElements.length > 0) {
+            if (typeof mermaid !== 'undefined') {
+                console.log('Processing Mermaid diagrams in tab');
+                
+                // Function to initialize Mermaid with improved error handling
+                function initializeMermaid(attempt = 1) {
+                    mermaidElements.forEach(async (element, index) => {
+                        console.log(`Attempting to initialize Mermaid diagram ${index + 1}, attempt ${attempt}`);
+                        
+                        // Clear any previous processing
+                        element.removeAttribute('data-processed');
+                        element.classList.remove('mermaid-processed');
+                        
+                        // Store original content if not already stored
+                        if (!element.hasAttribute('data-original-content')) {
+                            // Get the text content, excluding any styling
+                            const originalContent = element.textContent.trim();
+                            element.setAttribute('data-original-content', originalContent);
+                            console.log(`Stored original content for diagram ${index + 1}:`, originalContent.substring(0, 100) + '...');
+                        }
+                        
+                        // Reset to original content
+                        const originalContent = element.getAttribute('data-original-content');
+                        element.innerHTML = originalContent;
+                        
+                        try {
+                            // Force visibility during initialization
+                            const originalDisplay = element.style.display;
+                            element.style.display = 'block';
+                            element.style.visibility = 'visible';
+                            
+                            // Use async render method instead of init
+                            if (mermaid.render) {
+                                const id = `mermaid-diagram-${Date.now()}-${index}`;
+                                const graphDefinition = element.textContent;
+                                
+                                const { svg } = await mermaid.render(id, graphDefinition);
+                                element.innerHTML = svg;
+                                
+                                console.log(`Mermaid diagram ${index + 1} rendered successfully with render()`);
+                            } else {
+                                // Fallback to init method
+                                mermaid.init(undefined, element);
+                                console.log(`Mermaid diagram ${index + 1} initialized successfully with init()`);
+                            }
+                            
+                            // Restore original display
+                            element.style.display = originalDisplay;
+                            
+                        } catch (error) {
+                            console.warn(`Error initializing Mermaid diagram ${index + 1}:`, error);
+                            
+                            // Retry up to 3 times
+                            if (attempt < 3) {
+                                setTimeout(() => initializeMermaid(attempt + 1), 200 * attempt);
+                            } else {
+                                console.error(`Failed to initialize Mermaid diagram ${index + 1} after ${attempt} attempts`);
+                                element.innerHTML = '<div style="color: red; font-style: italic;">Mermaid diagram failed to load</div>';
+                            }
+                        }
+                    });
+                }
+                
+                // Start initialization with proper timing
+                setTimeout(() => initializeMermaid(), 150);
+            } else {
+                console.warn('Mermaid library not available - charts will not render');
+                
+                // Try to load Mermaid dynamically
+                const script = document.createElement('script');
+                script.src = 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js';
+                script.onload = () => {
+                    console.log('Mermaid loaded dynamically, reinitializing...');
+                    if (typeof mermaid !== 'undefined') {
+                        try {
+                            mermaid.initialize({ 
+                                startOnLoad: false,
+                                theme: 'default',
+                                themeVariables: {
+                                    primaryColor: '#0095d5',
+                                    primaryTextColor: '#000',
+                                    primaryBorderColor: '#0095d5',
+                                    lineColor: '#333',
+                                    sectionBkColor: '#f8f9fa',
+                                    altSectionBkColor: '#ffffff',
+                                    gridColor: '#e9ecef'
+                                }
+                            });
+                            
+                            setTimeout(async () => {
+                                for (let index = 0; index < mermaidElements.length; index++) {
+                                    const element = mermaidElements[index];
+                                    console.log(`Initializing dynamically loaded Mermaid diagram ${index + 1}`);
+                                    
+                                    // Reset element
+                                    element.removeAttribute('data-processed');
+                                    element.classList.remove('mermaid-processed');
+                                    
+                                    // Store original content if not already stored
+                                    if (!element.hasAttribute('data-original-content')) {
+                                        element.setAttribute('data-original-content', element.textContent);
+                                    }
+                                    
+                                    // Reset to original content
+                                    element.innerHTML = element.getAttribute('data-original-content');
+                                    
+                                    // Force visibility during initialization
+                                    const originalDisplay = element.style.display;
+                                    element.style.display = 'block';
+                                    element.style.visibility = 'visible';
+                                    
+                                    try {
+                                        // Use async render method instead of init
+                                        if (mermaid.render) {
+                                            const id = `mermaid-diagram-dynamic-${Date.now()}-${index}`;
+                                            const graphDefinition = element.textContent;
+                                            
+                                            const { svg } = await mermaid.render(id, graphDefinition);
+                                            element.innerHTML = svg;
+                                            
+                                            console.log(`Mermaid diagram ${index + 1} rendered successfully with render()`);
+                                        } else {
+                                            // Fallback to init method
+                                            mermaid.init(undefined, element);
+                                            console.log(`Mermaid diagram ${index + 1} initialized successfully with init()`);
+                                        }
+                                    } catch (error) {
+                                        console.warn(`Error initializing dynamically loaded Mermaid diagram ${index + 1}:`, error);
+                                        element.innerHTML = '<div style="color: red; font-style: italic;">Mermaid diagram failed to load</div>';
+                                    }
+                                    
+                                    // Restore original display
+                                    element.style.display = originalDisplay;
+                                }
+                            }, 200);
+                        } catch (error) {
+                            console.warn('Error setting up Mermaid:', error);
+                        }
+                    }
+                };
+                document.head.appendChild(script);
+            }
+        }
+        
+        // Then execute scripts
+        const scripts = tabPane.querySelectorAll('script');
+        scripts.forEach(script => {
+            if (script.src) {
+                // External script - create new script element
+                const newScript = document.createElement('script');
+                newScript.src = script.src;
+                document.head.appendChild(newScript);
+            } else {
+                // Inline script - execute the code
+                try {
+                    const scriptContent = script.textContent || script.innerHTML;
+                    
+                    // Be more permissive with HTML content - only skip if it's clearly malformed
+                    if (scriptContent.includes('<script') || scriptContent.includes('</script')) {
+                        console.warn('Skipping script with nested script tags:', scriptContent.substring(0, 100));
+                        return;
+                    }
+                    
+                    if (scriptContent.trim()) {
+                        // Create a temporary element to decode HTML entities
+                        const tempDiv = document.createElement('div');
+                        tempDiv.innerHTML = scriptContent;
+                        let decodedScript = tempDiv.textContent || tempDiv.innerText;
+                        
+                        console.log('Original script:', scriptContent.substring(0, 50) + '...');
+                        console.log('Decoded script:', decodedScript.substring(0, 50) + '...');
+                        
+                        eval(decodedScript);
+                    }
+                } catch (error) {
+                    console.warn('Error executing tab script:', error);
+                }
+            }
+        });
+    }
+
+
+    // Store the switchToTab function globally for external access
+    window[`switchToTab_${containerId}`] = switchToTab;
+}
+
+
+/**
+ * Copies the link to a specific tab to clipboard
+ * @param {string} tabId - ID of the tab
+ */
+function copyTabLink(tabId) {
+    const url = `${window.location.origin}${window.location.pathname}#${tabId}`;
+    
+    if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(url).then(() => {
+            showCopyFeedback();
+        });
+    } else {
+        // Fallback for older browsers
+        const textArea = document.createElement('textarea');
+        textArea.value = url;
+        document.body.appendChild(textArea);
+        textArea.focus();
+        textArea.select();
+        try {
+            document.execCommand('copy');
+            showCopyFeedback();
+        } catch (err) {
+            console.error('Failed to copy link');
+        }
+        document.body.removeChild(textArea);
+    }
+}
+
+/**
+ * Shows visual feedback when link is copied
+ * @param {string} message - Message to display (optional)
+ */
+function showCopyFeedback(message = 'Link copied!') {
+    // Create temporary feedback element
+    const feedback = document.createElement('div');
+    feedback.textContent = message;
+    feedback.style.cssText = `
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: var(--truenas-secondary, #71bf44);
+        color: white;
+        padding: 8px 16px;
+        border-radius: 4px;
+        font-size: 14px;
+        z-index: 1000;
+        animation: slideIn 0.3s ease;
+    `;
+    
+    document.body.appendChild(feedback);
+    
+    setTimeout(() => {
+        feedback.remove();
+    }, 2000);
+}
+
+// Add slide-in animation for feedback
+if (!document.getElementById('copy-feedback-styles')) {
+    const feedbackStyles = document.createElement('style');
+    feedbackStyles.id = 'copy-feedback-styles';
+    feedbackStyles.textContent = `
+        @keyframes slideIn {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+    `;
+    document.head.appendChild(feedbackStyles);
+}
+
+// Global function for easy tab creation
+window.createLinkableTabs = createLinkableTabs;
