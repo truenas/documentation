@@ -1,0 +1,21 @@
+{
+  "25.04": {
+    "label": "25.04 (Fangtooth)",
+    "versions": [
+      { "value": "all", "label": "25.04 (All)", "filename": "scale-25.04-changelog.csv" },
+      { "value": "25.04.1", "label": "25.04.1", "filename": "scale-25.04.1-changelog.csv" },
+      { "value": "25.04.0", "label": "25.04.0", "filename": "scale-25.04.0-changelog.csv" },
+      { "value": "25.04-RC.1", "label": "25.04-RC.1", "filename": "scale-25.04-RC.1-changelog.csv" },
+      { "value": "25.04-BETA.1", "label": "25.04-BETA.1", "filename": "scale-25.04-BETA.1-changelog.csv" }
+    ],
+    "defaultVersion": "all"
+  },
+  "25.10": {
+    "label": "25.10 (Goldeye)",
+    "versions": [
+      { "value": "all", "label": "25.10 (All)", "filename": "25.10-changelog.csv" },
+      { "value": "25.10.0-BETA.1", "label": "25.10.0-BETA.1", "filename": "25.10.0-BETA.1-changelog.csv" }
+    ],
+    "defaultVersion": "all"
+  }
+}
