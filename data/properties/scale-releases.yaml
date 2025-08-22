@@ -40,6 +40,6 @@ majorVersions:
       - name: "25.10-BETA.1"
         type: "Early"
         link: ""
-        releaseDate: ""
+        releaseDate: "2025-08-28"
         latest: false
 
