@@ -45,14 +45,6 @@ The chart below shows recommended paths for upgrading from earlier TrueNAS versi
 
 Update the system to the latest maintenance release of the installed major version before attempting to upgrade to a new major version.
 
-Permitted upgrade methods are:
-* **update**: apply an automatic update using the **Update** screen in the TrueNAS UI or install a manual update file. Some upgrade paths do not support these options (see chart).
-* **ISO install**: save a current TrueNAS configuration file, perform a fresh install using an <file>.iso</file> file for the target version, and then upload the previously saved configuration.
-
-Users can skip major versions with a fresh ISO install followed by a configuration file upload.
-Carefully review release notes for each skipped major version before upgrading, noting any service deprecations or significant changes that impact the previous configuration.
-Consider stopping at major versions with significant impacts to address changes before continuing the upgrade path or be prepared to manually reconfigure incompatibilities on the latest target version.
-
 {{< hint type=note >}}
 This chart shows the basic update path to and from the latest release of each TrueNAS major version.
 Depending on your use case and risk tolerance, some users may prefer to remain on an earlier minor or major version for a period of time before updating.
@@ -67,7 +59,7 @@ Visit the <a href="https://www.truenas.com/software-status/" target="_blank">Tru
           {{< mermaid class="mermaid_sizing" >}}
           flowchart LR
             A["11.3-U5"] -->|update| B["12.0-U8.1"]
-            B -->|"update<br><br>ISO install"| C["13.0-U6.8<br><br>13.3-U2"]
+            B -->|"update / ISO install"| C["13.0-U6.8 / 13.3-U2"]
             C -->|update| G
             C -->|ISO install| I
             D["22.02.4 (Angelfish)"] -->|update| E
@@ -75,7 +67,8 @@ Visit the <a href="https://www.truenas.com/software-status/" target="_blank">Tru
             F["23.10.2 (Cobia)"] -->|update| G
             G["24.04.2.5 (Dragonfish)"] -->|update| H
             H["24.10.2.3 (Electric Eel)"] -->|update| I
-            I["25.04.2.1 (Fangtooth)"]
+            I["25.04.2.3 (Fangtooth)"] -->|"(anticipated)"| J
+            J["25.10 (Goldeye)"]
           {{< /mermaid >}}
         </div>
       </div>
@@ -88,27 +81,57 @@ Visit the <a href="https://www.truenas.com/software-status/" target="_blank">Tru
           flowchart LR
             A["11.3-U5"] -->|update| B
             B["12.0-U8.1"] -->|update| C
-            C["13.0-U6.8"] -->|ISO install| F
+            C["13.0-U6.8"] -->|ISO install| G
             C -->|update| E
             D["23.10.2 (Cobia)"] -->|update| E
             E["24.04.2.5 (Dragonfish)"]  -->|update| F
-            F["24.10.2.3 (Electric Eel)"] -->|"(anticipated)"| G
-            G["25.04.2 (Fangtooth)"]
+            F["24.10.2.3 (Electric Eel)"] -->|update| G
+            G["25.04.1.3 (Fangtooth)"] -->|"(anticipated)"| H
+            H["25.10 (Goldeye)"]
           {{< /mermaid >}}
         </div>
       </div>
     </div>
 </div>
 
-<script>
-  // Scroll to the rightmost part of the chart when the page loads
-  document.addEventListener("DOMContentLoaded", function() {
-    var scrollContainer1 = document.getElementById("scrollContainer1");
-    scrollContainer1.scrollLeft = scrollContainer1.scrollWidth;
+Permitted upgrade methods are:
+* **update**: apply an automatic update using the **Update** screen in the TrueNAS UI or install a manual update file. Some upgrade paths do not support these options (see chart).
+* **ISO install**: save a current TrueNAS configuration file, perform a fresh install using an <file>.iso</file> file for the target version, and then upload the previously saved configuration.
 
+Users can skip major versions with a fresh ISO install followed by a configuration file upload.
+Carefully review release notes for each skipped major version before upgrading, noting any service deprecations or significant changes that impact the previous configuration.
+Consider stopping at major versions with significant impacts to address changes before continuing the upgrade path or be prepared to manually reconfigure incompatibilities on the latest target version.
+
+<script>
+  // Function to scroll containers to the right
+  function scrollContainersToRight() {
+    var scrollContainer1 = document.getElementById("scrollContainer1");
     var scrollContainer2 = document.getElementById("scrollContainer2");
-    scrollContainer2.scrollLeft = scrollContainer2.scrollWidth;
-  });
+    
+    if (scrollContainer1) {
+      scrollContainer1.scrollLeft = scrollContainer1.scrollWidth;
+    }
+    
+    if (scrollContainer2) {
+      scrollContainer2.scrollLeft = scrollContainer2.scrollWidth;
+    }
+  }
+
+  // For standalone pages - wait for DOMContentLoaded
+  if (document.readyState === 'loading') {
+    document.addEventListener("DOMContentLoaded", function() {
+      // Wait a bit for Mermaid to render if present
+      setTimeout(scrollContainersToRight, 100);
+      setTimeout(scrollContainersToRight, 500);
+      setTimeout(scrollContainersToRight, 1000);
+    });
+  } else {
+    // For tab content - DOM is already ready, scroll immediately and with delays
+    scrollContainersToRight();
+    setTimeout(scrollContainersToRight, 100);
+    setTimeout(scrollContainersToRight, 500);
+    setTimeout(scrollContainersToRight, 1000);
+  }
 
   // Add click and drag scrolling functionality
   const addDragScroll = (scrollContainer) => {
