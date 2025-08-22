@@ -100,10 +100,10 @@ While TrueNAS is designed for and ever-evolving towards increased user friendlin
   No data is copied and no extra storage is consumed.
   Only when changes occur in the filesystem and the data in it diverges from the snapshot does the snapshot start using additional storage.
 
-* [**ZFS Scrub**]({{< ref "SCALE/SCALETutorials/DataProtection/ScrubTasksSCALE" >}}): the process that ZFS uses to verify the data on disk.
+* [**ZFS Scrub**]({{< ref "SCALE/SCALETutorials/Storage/ManagePoolsScale" >}}): the process that ZFS uses to verify the data on disk.
   All of the data is read and checked against the computed checksums to verify that no corruption has occurred.
 
-* [**ZFS Resilver**]({{< ref "SCALE/SCALETutorials/DataProtection/ScrubTasksSCALE" >}}): process to reconstruct data on a disk when that disk has replaced a failed disk.
+* [**ZFS Resilver**]({{< ref "SCALE/SCALETutorials/Storage/ManagePoolsScale" >}}): process to reconstruct data on a disk when that disk has replaced a failed disk.
 
 * [**ZFS Replication**]({{< ref "SCALE/SCALETutorials/DataProtection/Replication" >}}): copying a ZFS dataset to another dataset.
   The receiving dataset can be on the same machine or on another machine in a remote location.
