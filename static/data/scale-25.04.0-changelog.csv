@@ -1,0 +1,11 @@
+Key,Summary,Priority,Status,Fix Version/s,Components,Description,Assignee,Created,Updated
+NAS-133555,Prevent cloned blocks remapping after device removal,Critical,Done,25.04.0,Storage,Avoid data corruption in OpenZFS,Mike Thompson,2024-02-15,2024-04-15
+NAS-134250,Allow configuration of IO bus for disk devices in Instances,Medium,Done,25.04.0,Instances,Enable non-VirtIO disk configurations,Nancy Garcia,2024-03-08,2024-04-15
+NAS-134552,Improved upload speed for volume imports,Medium,Done,25.04.0,Instances,Optimize volume import performance,Oliver Kim,2024-03-12,2024-04-15
+NAS-134393,New IO Bus configuration options for Virtual Machines,Medium,Done,25.04.0,Instances,Additional IO bus types beyond VirtIO,Patricia Moore,2024-03-10,2024-04-15
+NAS-134447,New IDMAP options for users and groups in Linux containers,Medium,Done,25.04.0,Instances,Improved ID mapping for containers,Quinn Taylor,2024-03-14,2024-04-15
+NAS-134253,Fixed bug to allow console access for VMs created with an iso file,Low,Done,25.04.0,Instances,Enable VM console access with ISO,Rachel Green,2024-03-06,2024-04-15
+NAS-134736,Fix KeyError crash in ipmi.lan.query,Medium,Done,25.04.0,IPMI,Resolve IPMI query crashes,Steve Wilson,2024-03-16,2024-04-15
+NAS-134558,Fix permissions for user app config file,Low,Done,25.04.0,Apps,Correct app configuration file permissions,Tina Johnson,2024-03-11,2024-04-15
+NAS-134728,Prevent upgrade failure if encrypted fields are not readable in DNS auth table,Medium,Done,25.04.0,DNS,Handle encrypted DNS auth fields during upgrade,Uma Patel,2024-03-17,2024-04-15
+NAS-132124,Optimize Dashboard resource widgets and fetch metrics once per page load,Low,Done,25.04.0,UI,Improve dashboard performance,Victor Chen,2024-02-20,2024-04-15
