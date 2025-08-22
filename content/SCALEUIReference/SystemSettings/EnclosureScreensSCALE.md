@@ -2,8 +2,6 @@
 title: "View Enclosure Screen (TrueNAS Systems Only)"
 description: "Provides information on the TrueNAS View Enclosure screen available only on compatible TrueNAS hardware systems."
 weight: 80
-aliases:
- - /scale/scaleclireference/storage/clienclosure/
 tags:
 - enclosure
 - enterprise

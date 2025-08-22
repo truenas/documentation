@@ -3,8 +3,6 @@ title: "Network"
 description: "Describes the screens and fields in the TrueNAS Network section."
 geekdocCollapseSection: true
 weight: 60
-aliases: 
- - /scale/scaleclireference/network/
 tags:
 related: false
 ---

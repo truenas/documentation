@@ -4,8 +4,6 @@ description: "Provides information on NVMe-oF subsystems and instruction on crea
 geekdocCollapseSection: true
 weight: 90
 related: false
-aliases:
- -
 tags:
 - nvme-of
 - nvme

@@ -2,7 +2,6 @@
 title: "Isolating GPU for VMs"
 description: "Provides information on isolating Graphics Processing Units (GPU) installed in your system."
 weight: 60
-aliases:
 tags:
  - gpu
  - vm

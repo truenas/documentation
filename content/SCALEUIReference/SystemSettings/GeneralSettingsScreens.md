@@ -2,14 +2,6 @@
 title: "General Settings Screen"
 description: "Provides information on the General Settings screen, widgets, and configuration settings for getting support, changing console or the GUI, localization and keyboard setups, and adding NTP servers."
 weight: 20
-aliases: 
- - /scale/scaleclireference/system/cliconfig/
- - /scale/scaleclireference/system/cligeneral/
- - /scale/scaleclireference/system/clintpserver/
- - /scale/scaleclireference/system/clisupport/
- - /scale/scaleclireference/system/clitruenas/
- - /scale/scaletutorials/dashboard/scaletimesync/
- - /scale/scaleuireference/systemsettings/generalsettings/
 tags:
  - settings
  - console

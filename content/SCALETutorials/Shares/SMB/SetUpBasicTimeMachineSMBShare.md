@@ -2,7 +2,6 @@
 title: "Adding a Basic Time Machine SMB Share"
 description: "Provides instructions for adding an SMB share and enabling basic time machine."
 weight: 25
-aliases:
 tags:
 - smb
 - afp

@@ -2,8 +2,6 @@
 title: "Update Screens"
 description: "Provides information on functions and fields on the TrueNAS Update screens."
 weight: 10
-aliases: 
- - /scale/scaleclireference/system/cliupdate/
 tags:
 - update
 - configuration files

@@ -2,7 +2,6 @@
 title: "Backing Up Google Drive to TrueNAS"
 description: "Provides instructions on adding Google Drive cloud credentials using the Add Cloud Credentials and Add Cloud Sync Task screens, and on working with Google-created content."
 weight: 10
-aliases: /scale/scaleuireference/dataprotection/cloud-sync-tasks/cloudsynctaskgoogledrive/
 tags:
  - cloud
  - backup

@@ -4,8 +4,6 @@ description: "Provides information on SMB shares and instructions on creating a 
 geekdocCollapseSection: true
 weight: 50
 related: false
-aliases:
- - /scale/scaletutorials/shares/smb/addsmbshares/
 tags:
 - smb
 - afp

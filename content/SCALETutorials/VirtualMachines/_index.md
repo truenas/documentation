@@ -3,10 +3,6 @@ title: "Virtual Machines"
 description: "Tutorials for configuring TrueNAS SCALE virtualization features and creating virtual machines."
 geekdocCollapseSection: true
 weight: 12
-aliases:
- - /scale/scaletutorials/virtualization/
- - /scale/scaletutorials/virtualization/creatingmanagingvmsscale/
- - /scale/scaleuireference/virtualization/creatingmanagingvmsscale/
 related: false
 keywords:
 - nas data storage

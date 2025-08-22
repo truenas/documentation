@@ -4,9 +4,6 @@ description: "All the icons and options contained in the TrueNAS top toolbar."
 geekdocCollapseSection: true
 tags:
 - tasks
-aliases:
- - /scale/scaleuireference/scaletopbar/
- - /contributing/issuereporting/prereleaseuserfeedback/
 weight: 3
 tags:
 - toolbar

@@ -4,9 +4,6 @@ description: "Describes the TrueNAS jobs manager and how to use it to view faile
 weight: 40
 tags:
 - tasks
-aliases:
- - /scale/scaleuireference/jobsscreens/
- - /scale/scaleuireference/toptoolbar/jobsscreens/
 ---
 
 The **Jobs** screens, accessed from the **Running Jobs** window after clicking **Go to Jobs**, shows all jobs executed on the system.

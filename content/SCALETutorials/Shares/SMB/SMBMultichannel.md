@@ -2,7 +2,6 @@
 title: "Setting Up SMB Multichannel"
 description: "Provides information on setting up SMB multichannel."
 weight: 60
-aliases:
 tags:
  - smb
 ---

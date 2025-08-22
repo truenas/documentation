@@ -2,8 +2,6 @@
 title: "VDEVs"
 description: "Provides information on settings and functions found on the VDEVs screens and widget."
 weight: 35
-aliases:
- - /scale/scaleuireference/storage/pools/devicesscreensscale/
 tags:
 - smart
 - disks

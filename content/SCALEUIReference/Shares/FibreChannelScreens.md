@@ -2,7 +2,6 @@
 title: "Fibre Channel Screens"
 description: "Provides information on iSCSI Fibre Channel screens and settings."
 weight: 45
-aliases:
 tags:
 - iscsi
 - shares

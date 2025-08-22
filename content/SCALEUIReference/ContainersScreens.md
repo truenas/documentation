@@ -2,8 +2,6 @@
 title: "Containers"
 description: "Provides information on the Containers screens and settings to add containers or virtual machines (VMs) to your TrueNAS system."
 weight: 80
-aliases:
-- /docs/scale/scaleuireference/instancesscreens/
 tags:
  - vm
  - container

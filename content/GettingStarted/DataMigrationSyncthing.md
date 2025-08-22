@@ -4,8 +4,6 @@ description: "Provides data migration instructions for users wanting move data f
 weight: 45
 draft: false
 slug: thirdpartymigration
-aliases:
-- /scale/gettingstarted/datamigrationsyncthing/
 tags:
 - migrate
 - shares
