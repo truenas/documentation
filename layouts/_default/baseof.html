@@ -67,9 +67,11 @@
                     {{ partial "menu-nextprev" . }}
                 </div>
             </div>
+            {{ if not .Page.Params.hide_toc }}
             <aside class="sidebar-right">
                 {{ partial "toc-panel" . }}
             </aside>
+            {{ end }}
         </main>
         {{ partial "site-footer" . }}
     </div>
@@ -80,6 +82,8 @@
     <script src="/js/figurenumber.js"></script>
     <!-- Scroll padding so anchor links are not hidden by the stickymenu -->
     <script src="/js/anchorpad.js"></script>
+    <!-- Collapsible Headers functionality -->
+    <script src="/js/collapsible-headers.js"></script>
  {{ end }}
 </body>
 </html>
