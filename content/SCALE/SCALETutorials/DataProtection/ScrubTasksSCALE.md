@@ -34,9 +34,6 @@ To run a scrub immediately:
 
 The **Storage Health** widget shows the scrub schedule status for each pool.
 
-- **Scheduled Scrub: None Set** with a **Schedule** link if no scrub task exists
-- **Scheduled Scrub: [when]** with a **Configure** link if a scrub task is configured and enabled
-
 To schedule or modify scrub tasks:
 
 1. Click **Schedule** (for new tasks) or **Configure** (for existing tasks) on the **Storage Health** widget.
@@ -49,7 +46,7 @@ For detailed information about scrub settings and options, see [Configure Schedu
 ## Adjusting Resilver Priority
 
 {{< hint type=note >}}
-Starting in TrueNAS 25.10, resilver priority settings have moved to **System Settings > Advanced Settings > Storage**.
+Starting in TrueNAS 25.10, resilver priority settings are now located in **System Settings > Advanced Settings** on the **Storage** widget.
 {{< /hint >}}
 
 Resilver tasks can run at any time, but by default they have a priority lower than regular ZFS I/O operations. You can specify a time window during which resilvering is given higher priority, such as scheduling it during non-business hours.
@@ -57,9 +54,10 @@ Resilver tasks can run at any time, but by default they have a priority lower th
 To configure resilver priority:
 
 1. Go to **System Settings > Advanced Settings**.
+
+![ScrubTaskEditSCALE](/images/SCALE/DataProtection/PriorityResilveringForm.png "Edit Scrub Task")
+
 2. Click **Configure** on the **Storage** widget.
 3. Select **Run Resilvering At Higher Priority At Certain Times** to enable priority scheduling.
 4. Configure the time window and days when higher priority resilvering should occur.
 5. Click **Save**.
-
-![ScrubTaskEditSCALE](/images/SCALE/DataProtection/PriorityResilveringForm.png "Edit Scrub Task")

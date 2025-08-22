@@ -1,6 +1,6 @@
 ---
 title: "Scrub Tasks Screens"
-description: "Provides information on scrub task configuration through pool settings."
+description: "Provides information on data protection Scrub Task screens and settings."
 weight: 10
 aliases:
  - /scale/scaleuireference/dataprotection/scrubtasksscreensscale/
@@ -12,7 +12,7 @@ tags:
 ---
 
 {{< hint type=note >}}
-Starting in TrueNAS 25.10, scrub tasks are no longer managed as separate scheduled tasks in Data Protection. Scrub configuration has been integrated directly into the settings of each pool on the Storage Dashboard for a simplified user experience.
+Starting in TrueNAS 25.10, scrub tasks are managed directly from each pool settings on the **Storage Dashboard** instead of as separate scheduled tasks. This article covers the integrated scrub management approach.
 {{< /hint >}}
 
 Scrubs identify data integrity problems, detect silent data corruptions caused by transient hardware issues, and provide early disk failure alerts.
@@ -20,11 +20,11 @@ TrueNAS automatically creates a scheduled scrub for each pool that runs every Su
 
 ## Pool Scrub Integration
 
-Scrub tasks are now configured and managed directly from each pool's **Storage Health** widget on the Storage Dashboard:
+Scrub tasks are now configured and managed directly individually from the **Storage Health** widget on the Storage Dashboard:
 
-- **Scrub Now** button runs an immediate scrub
-- **Scheduled Scrub** status shows current schedule or "None Set"
-- **Schedule** link (when no task exists) or **Configure** link (when task exists) opens the scrub configuration form
+- **Scrub Now** runs an immediate scrub.
+- **Scheduled Scrub** shows the current schedule or shows **None Set** when not configured.
+- **Schedule** link (when no task exists) or **Configure** link (when task exists) opens the **Schedule Scrub** or **Configured Scheduled Scrub** form.
 
 ## Configure Scheduled Scrub Screen
 
@@ -41,8 +41,6 @@ The **Configure Scheduled Scrub** form is accessed from the **Storage Health** w
 {{< expand "Advanced Scheduler" "v" >}}
 {{< include file="/static/includes/SCALEAdvancedScheduler.md" >}}
 {{< /expand >}}
-
-For detailed pool scrub management, see [Storage Dashboard]({{< ref "/SCALE/SCALEUIReference/Storage/_index.md#storage-health-widget" >}}).
 
 ## Resilver Priority Configuration
 
