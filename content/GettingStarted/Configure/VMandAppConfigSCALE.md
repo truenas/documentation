@@ -2,8 +2,6 @@
 title: "Configuring Virtualization and Apps"
 description: "Provides general information on setting up virtual machines and applications in TrueNAS."
 weight: 80
-aliases:
- - /scale/gettingstarted/vmandappconfigscale/
 tags:
 - vm
 - apps

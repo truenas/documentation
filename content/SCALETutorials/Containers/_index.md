@@ -4,8 +4,6 @@ description: "Tutorials for configuring the TrueNAS Containers feature, creating
 geekdocCollapseSection: true
 weight: 11
 related: false
-aliases:
-- /scale/scaletutorials/instances/
 tags:
  - vm
  - container

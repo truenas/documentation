@@ -2,7 +2,6 @@
 title: "Configuring FreeIPA"
 description: "Provides information and configuration instructions for adding FreeIPA directory service in TrueNAS."
 weight: 25
-aliases:
 tags:
  - ldap
  - directoryservices

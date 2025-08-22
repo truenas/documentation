@@ -2,7 +2,6 @@
 title: "Adding a License and Proactive Support"
 description: "Provides instructions for TrueNAS Enterprise users to add their system license and set up proactive support."
 weight: 25
-aliases:
 tags:
  - support
 keywords:

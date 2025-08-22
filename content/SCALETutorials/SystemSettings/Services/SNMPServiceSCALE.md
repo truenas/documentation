@@ -2,7 +2,6 @@
 title: "SNMP"
 description: "Provides information on configuring SNMP service in TrueNAS."
 weight: 55
-aliases: 
 tags:
  - snmp
  - alerts

@@ -2,7 +2,6 @@
 title: "Configuring Rsync Tasks"
 description: "Provides instructions on adding rsync tasks with two methods, SSH connection and module."
 weight: 30
-aliases:
 tags:
  - rsync
  - ssh

@@ -2,8 +2,6 @@
 title: "Managing Network Global Configurations"
 description: "Provides instructions on configuring or managing global configuration settings."
 weight: 20
-aliases:
- - /scale/scaletutorials/network/addingglobalconf/
 tags:
 - network
 ---
