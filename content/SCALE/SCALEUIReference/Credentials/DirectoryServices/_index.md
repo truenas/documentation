@@ -29,7 +29,7 @@ The screen shows the status of directory services when a service is not configur
 
 The main option displays:
 
-* **Configure Directory Services** opens the unified **Directory Services Configuration** form where you can set up either Active Directory or LDAP connections.
+* **Configure Directory Services** opens the **Directory Services Configuration** form where you can set up Active Directory, IPA, or LDAP connections.
 
 * **Advanced Settings** opens a warning dialog before showing configuration options for [ID mapping]({{< ref "Idmap.md" >}}) and Kerberos.
 
