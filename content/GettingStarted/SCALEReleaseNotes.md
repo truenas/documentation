@@ -141,7 +141,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <script src="/js/csv-changelog-tab-init.js"></script>
 <script>
 // Initialize changelog table for version
-initializeChangelogTableForTabs('25.04');
+initializeChangelogTableForTabs('25.10');
 </script>
 
 ## Upgrading TrueNAS {#upgrading}
