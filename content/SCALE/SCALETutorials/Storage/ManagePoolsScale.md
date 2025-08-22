@@ -4,6 +4,8 @@ description: "Provides instructions on managing storage pools, VDEVs, and disks 
 weight: 40
 aliases:
  - /scale/scaletutorials/storage/pools/managepoolsscale/
+ - /scale/scaleuireference/dataprotection/scrubtasksscreensscale/
+ - /scale/scaletutorials/dataprotection/scrubtasksscale/
 tags: 
 - pools
 - storage
@@ -97,6 +99,16 @@ The **Storage Health** widget shows the scheduled scrub status:
 - **Scheduled Scrub: [when]** with a **Configure** link if a scrub task is configured and enabled
 
 Click **Schedule** to create a new scrub schedule or **Configure** to modify an existing schedule. This opens the **Configure Scheduled Scrub** form where you can set the schedule, threshold days, and enable or disable the scheduled scrub.
+
+**Threshold Days** sets the days before a completed scrub is allowed to run again.
+This controls the task schedule.
+For example, scheduling a scrub to run daily and setting threshold days to *7* means the scrub attempts to run daily.
+When the scrub is successful, it continues to check daily but does not run again until *seven* days have elapsed.
+Using a multiple of *seven* ensures the scrub always occurs on the same weekday.
+
+{{< hint type=note >}}
+Starting in TrueNAS 25.10, resilver priority settings are now located in **System Settings > Advanced Settings** on the **Storage** widget.
+{{< /hint >}}
 
 ## Managing Pool Disks
 

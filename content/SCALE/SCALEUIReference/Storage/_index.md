@@ -8,6 +8,10 @@ aliases:
  - /scale/scaleclireference/storage/
  - /scale/scaleclireference/storage/clifilesystem-storage/
  - /scale/scaleuireference/storage/storagedashboardscreen/ 
+ - /scale/scaleuireference/dataprotection/scrubtasksscreensscale/
+ - /scale/scaleclireference/storage/cliresilver/
+ - /scale/scaleclireference/storage/cliscrub/
+ - /scale/scaleuireference/dataprotection/scrubtasksscreensscale/
 tags:
 - pools
 - storage
@@ -236,6 +240,10 @@ When the scrub is successful, it continues to check daily but does not run again
 Using a multiple of *seven* ensures the scrub always occurs on the same weekday.
 
 **Save** sets the schedule and adds the time and frequency to the **Storage Health** widget.
+
+{{< hint type=note >}}
+Starting in TrueNAS 25.10, resilver priority settings are now located in **System Settings > Advanced Settings** on the **Storage** widget.
+{{< /hint >}}
 
 #### Auto TRIM Dialog
 
