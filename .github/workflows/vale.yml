@@ -22,7 +22,7 @@ jobs:
 
       - name: Get changed markdown/text files
         id: changed-files
-        uses: tj-actions/changed-files@v44
+        uses: tj-actions/changed-files@v46
         with:
           files: |
             **/*.md
