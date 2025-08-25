@@ -1,5 +1,5 @@
 ---
-title: "TrueNAS 25.10 (Early)"
+title: "TrueNAS 26.04 (Early)"
 geekdocCollapseSection: true
 weight: 20
 aliases:
@@ -23,15 +23,15 @@ div.docs-read_mod {display: none;}
 h1 {display:none;}
 </style>
 
-{{< header logo="/images/tn-openstorage-logo.png" logo_alt="TrueNAS Logo" version="Nightly Development - 25.10 Goldeye" icon="" icon_alt="" >}}
+{{< header logo="/images/tn-openstorage-logo.png" logo_alt="TrueNAS Logo" version="Nightly Development - 26.04 Goldeye" icon="" icon_alt="" >}}
 
-{{< include file="/static/includes/25.10FeatureList.md" >}}
+{{< include file="/static/includes/26.04FeatureList.md" >}}
 
 <div class="noprint">
 
-To view or search through documentation for previous TrueNAS major versions, use the **Version** dropdown at the top of this page.
+---
 
-## 25.10 Featured Content
+## 26.04 Featured Content
 
   <div class="docs-sections">
     <p>
