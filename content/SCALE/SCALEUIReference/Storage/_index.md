@@ -19,7 +19,7 @@ tags:
 - storage provisioning
 ---
 
-The **Storage Dashboard** screen allows users to configure and manage storage resources such as pools (VDEVs) and disks. 
+The **Storage Dashboard** screen allows users to configure and manage storage resources such as pools (VDEVs) and disks.
 The dashboard widgets organize functions related to storage resources.
 
 ## No Pools Screen
@@ -53,7 +53,6 @@ TrueNAS detects these as present on the system but not yet connected in TrueNAS.
 After adding pools, the dashboard shows the [pool widgets](#pool-widgets) and additional buttons.
 
 {{< trueimage src="/images/SCALE/Storage/StorageDashboardWithPool.png" alt="Storage Dashboard with Pool" id="Storage Dashboard with Pool" >}}
-
 
 * {{< expand "Export/Disconnect" "v" >}}
 **Export/Disconnect** opens the **Export/disconnect pool: *poolname*** window where users can export, disconnect, or delete a pool.
@@ -113,7 +112,7 @@ The number of available disks shows, and the **Add to Pool** button.
 The pool with the system dataset, and the state of the pool, shows in the dialog.
 
 **Add to Pool** opens a window with two options:
-* **New Pool** 
+* **New Pool**
 * **Existing Pool**
 
 **Existing Pool** shows the **Existing Pool** dropdown list of pools on the system.
@@ -161,7 +160,7 @@ A **Data VDEV** includes the data type (stripe, mirror, RAID, or mixed configura
 #### Status Indicators
 
 Each pool widget includes a color-coded icon just to the right of the header, near the VDEV lists to indicate the state of the pool VDEV, or near disks in the VDEV. Possible states are:
-* Green circle with checkmark for a **Healthy** 
+* Green circle with checkmark for a **Healthy**
 * Orange circle with an exclamation mark for **No Redundancy** or **Pool is Unhealthy**
 * Red circle with an x for **Pool is not Healthy**
 
@@ -204,7 +203,7 @@ Possible widget details include:
 
 {{< trueimage src="/images/SCALE/Storage/StorageDashboardDiskHealthWidget.png" alt="Storage Health Widget" id="Storage Health Widget" >}}
 
-**Scrub Now** opens the **Scrub Pool** dialog. **Start Scrub** in the **Scrub Pool** dialog runs a check on the data integrity of the pool. 
+**Scrub Now** opens the **Scrub Pool** dialog. **Start Scrub** in the **Scrub Pool** dialog runs a check on the data integrity of the pool.
 
 **Configure** opens the **Configure Scheduled Scrub** screen.
 
@@ -216,7 +215,7 @@ The **Configure Scheduled Scrub** screen sets a schedule for TrueNAS to run a sc
 
 {{< trueimage src="/images/SCALE/Storage/ConfigureScheduledScrubScreen.png" alt="Configure Scheduled Scrub Screen" id="Configure Scheduled Scrub Screen" >}}
 
-A scrub is a data integrity check of your pool. 
+A scrub is a data integrity check of your pool.
 Scrubs identify data integrity problems, detect silent data corruptions caused by transient hardware issues, and provide early disk failure alerts.
 By default, TrueNAS automatically checks every pool to verify it is on a recurring scrub schedule.
 If TrueNAS detects problems during the scrub, it corrects them automatically or generates an [alert]({{< ref "AlertSettingsScreen" >}}).
@@ -263,7 +262,7 @@ The **Prune Deduplication Table** dialog shows pruning measurement options the s
 Options are **Percentage** and **Age**.
 
 **Percentage** shows a slider to set the size (maximum amount of storage) percentage threshold the DDT is filled before it reaches the maximum size.
- When reached, the system prunes the table. 
+ When reached, the system prunes the table.
 
  {{< trueimage src="/images/SCALE/Storage/DedupPruneDialog.png" alt="Prune Deduplication Table - Percentage" id="Prune Deduplication Table - Percentage" >}}
 
@@ -278,11 +277,11 @@ The **Deduplication Quota for *poolname*** shows the **Quota** dropdown list wit
 **Auto** is the default option, which allows the system to set the quota and the size of a dedicated dedup VDEV.
 This property works for both legacy and fast dedup tables.
 
-{{< trueimage src="/images/SCALE/Storage/DedupQutoaDialog.png" alt="Deduplication Qutoa for Pool Dialog" id="Prune Deduplication Table Dialog" >}}
+{{< trueimage src="/images/SCALE/Storage/DedupQutoaDialog.png" alt="Deduplication Quota for Pool Dialog" id="Prune Deduplication Table Dialog" >}}
 
 **Custom** shows the **Custom Qutoa** field where you enter the maximum size of the DDT (quota).
 
-{{< trueimage src="/images/SCALE/Storage/DedupQutoaDialogCustom.png" alt="Deduplication Qutoa for Pool - Custom" id="Prune Deduplication Table - Custom" >}}
+{{< trueimage src="/images/SCALE/Storage/DedupQutoaDialogCustom.png" alt="Deduplication Quota for Pool - Custom" id="Prune Deduplication Table - Custom" >}}
 
 **None** disables the quota.
 
@@ -295,7 +294,7 @@ The **Disk Health** widget shows information on the health of the disks in a poo
 The disk health details include:
 * Disk temperature-related alerts
 * Highest Temperature
-* Lowest Temperature 
+* Lowest Temperature
 * Average Disk Temperature
 
 TrueNAS complies with SAS/SATA specifications and reports temperatures in Celsius. TrueNAS converts Kelvin to Celsius

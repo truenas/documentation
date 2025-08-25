@@ -91,14 +91,14 @@ A scrub is a data integrity check of your pool. Scrubs identify data integrity p
 
 ### Scheduling Scrub Tasks
 
-TrueNAS automatically creates a scheduled scrub for each pool that runs every Sunday at 12:00 AM by default.
+TrueNAS automatically creates a scheduled scrub for each pool that runs every Sunday at 12:00 AM.
 
 The **Storage Health** widget shows the scheduled scrub status:
 
-- **Scheduled Scrub: None Set** with a **Schedule** link if no scrub task exists
-- **Scheduled Scrub: [when]** with a **Configure** link if a scrub task is configured and enabled
+* **Scheduled Scrub: None Set** with a **Schedule** link if no scrub task exists
+* **Scheduled Scrub: [when]** with a **Configure** link if a scrub task is configured and enabled
 
-Click **Schedule** to create a new scrub schedule or **Configure** to modify an existing schedule. This opens the **Configure Scheduled Scrub** form where you can set the schedule, threshold days, and enable or disable the scheduled scrub.
+Click **Schedule** to create a new scrub schedule or **Configure** to modify an existing schedule. This opens the **Configure Scheduled Scrub** screen where you can set the schedule, threshold days, and enable or disable the scheduled scrub.
 
 **Threshold Days** sets the days before a completed scrub is allowed to run again.
 This controls the task schedule.

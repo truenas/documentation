@@ -203,7 +203,7 @@ While TrueNAS is designed for and ever-evolving towards increased user friendlin
   In this scenario, booting is performed in the same way as on legacy BIOS-based systems: ignoring the partition table and relying on the content of a boot sector.
 
 * **GRUB**: GNU GRUB stands for GNU GRand Unified Bootloader and is commonly referred to as GRUB.
-  GRUB is a boot loader package from the GNU Project and the reference implementation of the Free Software Foundation Multiboot Specification, which provides the choice to boot into one of multiple operating systems installed on a computer or select a specific kernel configuration available on a particular operating system partitions.
+  GRUB is a boot loader package from the GNU Project and the reference implementation of the Free Software Foundation (FSF) Multiboot Specification, which provides the choice to boot into one of multiple operating systems installed on a computer or select a specific kernel configuration available on a particular operating system partitions.
 
 * **VNC**: Virtual Network Computing (VNC) is a graphical desktop-sharing system that uses the remote frame buffer protocol to remotely control another computer.
   It transmits the keyboard and mouse events from one computer to another and relays back the graphical-screen updates through a network.
