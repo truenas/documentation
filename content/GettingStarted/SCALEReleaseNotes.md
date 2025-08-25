@@ -57,7 +57,7 @@ Failover moves to the **Advanced Settings** screen ([NAS-135469](https://ixsyste
 * Introduces a redesigned **Updates** screen that allows users to select an update profile reflecting their risk-tolerance level ([NAS-133600](https://ixsystems.atlassian.net/browse/NAS-133600)). TrueNAS only notifies users of updates recommended for their selected profile level.
 * Introduces changes to **Certificates**, **Certificate Authorities (CA)**, and **Certificate Signing Requests (CSR)** ([NAS-135168](https://ixsystems.atlassian.net/browse/NAS-135168)):
   * Removes **Certificate Authorities (CA)** screens and support for CAs, which means you cannot sign CSRs or create self-signed certificates.
-  * Removes **Add** from **Certficates**. Users can import a certificate created by an external certificate authority.
+  * Removes **Add** from **Certificates**. Users can import a certificate created by an external certificate authority.
   * Allows adding a certificate using the new **Create ACME Certificate** screen found under **Certificate Signing Requests** and an existing DNS authenticator added through the **ACME DNS Authenticators** screen.
     See [Preparing to Upgrade](#upgrade-prep) for more information.
 * Introduces a refreshed **Users (WIP)** screen that provides improved, at-a-glance access to account information and simplified user creation ([NAS-134198](https://ixsystems.atlassian.net/browse/NAS-134198)).
@@ -81,7 +81,7 @@ Failover moves to the **Advanced Settings** screen ([NAS-135469](https://ixsyste
 * Virtual machines created in 25.04 (pre-25.04.2) and displayed on the **Containers** screen do not automatically start on system boot to prevent conflicts with VMs on the **Virtual Machines** screen that might use the same zvol(s) ([NAS-136946](https://ixsystems.atlassian.net/browse/NAS-136946)).
 * Makes changes to SMB shares:
   * Enables access-based enumeration for SMB shares with NFSv4 ACL type, so directory listings only show files that users have permission to read ([NAS-136499](https://ixsystems.atlassian.net/browse/NAS-136499)).
-  * Changes SMB share **Advanced Options**, **Purpose**, and **Other Option** settings assoicated with the preset setting selected ([NAS-136499](https://ixsystems.atlassian.net/browse/NAS-136499)).
+  * Changes SMB share **Advanced Options**, **Purpose**, and **Other Option** settings associated with the preset setting selected ([NAS-136499](https://ixsystems.atlassian.net/browse/NAS-136499)).
 * Removes the **AUTORID** IDMAP backend option from Active Directory configuration to improve consistency across multi-server environments ([NAS-136630](https://ixsystems.atlassian.net/browse/NAS-136630)).
   Existing configurations using **AUTORID** are automatically migrated to **RID** during upgrade.
   Users should review their ACLs and permissions after upgrade and might need to reconfigure them in some edge cases.
