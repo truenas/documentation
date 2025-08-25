@@ -106,6 +106,17 @@ Any new feature flags introduced since the previous OpenZFS version that was int
 
 For more details on feature flags, see [OpenZFS Feature Flags](https://openzfs.github.io/openzfs-docs/Basic%20Concepts/Feature%20Flags.html) and [OpenZFS zpool-feature.7](https://openzfs.github.io/openzfs-docs/man/7/zpool-features.7.html).
 
+## 25.04.2.3
+
+**August 26, 2025**
+
+The TrueNAS team is pleased to release TrueNAS 25.04.2.3!
+This is a small maintenance release that includes stability improvements for TrueNAS Enterprise High Availability (HA) environments that use NVMe drives and sharing.
+
+## 25.04.2.2
+
+This maintenance version was not publicly released.
+
 ## 25.04.2.1
 
 **August 7, 2025**
@@ -142,7 +153,7 @@ TrueNAS 25.04.2 is not recommended for TrueNAS Enterprise customers with High Av
 {{< /enterprise >}}
 
 * TrueNAS 25.04.2 reintroduces "classic virtualization" with the [**Virtual Machines**]({{< ref "/scaletutorials/virtualmachines/" >}}) feature.
-  Virtualization features are now split between the **Virtual Machines** and [**Containers**]({{< ref "/scaletutorials/containers/" >}}) screens. 
+  Virtualization features are now split between the **Virtual Machines** and [**Containers**]({{< ref "/scaletutorials/containers/" >}}) screens.
   
   Virtual machines created in 25.04.0 or 25.04.1 using the **Instances** feature continue to function and appear in the **Containers** screen.
   New VMs and those migrated from 24.10.2.2 to 25.04.2 use the **Virtual Machines** screen.
