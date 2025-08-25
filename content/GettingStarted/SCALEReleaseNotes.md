@@ -111,14 +111,7 @@ For more details on feature flags, see [OpenZFS Feature Flags](https://openzfs.g
 **August 26, 2025**
 
 The TrueNAS team is pleased to release TrueNAS 25.04.2.3!
-This is a small maintenance release that includes fixes primarily for TrueNAS Enterprise customers with NVMe system configurations.
-
-### 25.04.2.3 Notable Changes
-
-* Fixes NVMe host identification files being generated at build time, which causes identical hostid and hostnqn values across both controllers in TrueNAS Enterprise HA configurations ([NAS-137181](https://ixsystems.atlassian.net/browse/NAS-137181)).
-  These files are now generated dynamically to ensure each system has unique NVMe host identifiers.
-* Fixes `py-nvme` library to properly detect and use 128-bit host IDs when NVMe controllers support them over fabric connections ([NAS-137163](https://ixsystems.atlassian.net/browse/NAS-137163)).
-  The library now correctly reads controller attributes to determine when Extended Data Structure (EDS) format is required per NVMe specification.
+This is a small maintenance release that includes stability improvements for TrueNAS Enterprise High Availability (HA) environments that use NVMe drives and sharing.
 
 ## 25.04.2.2
 
