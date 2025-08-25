@@ -14,7 +14,7 @@ related: false
 
 {{< include file="/static/includes/APIDocs.md" >}}
 
-### Viewing API Documenation
+### Viewing API Documentation
 
 There are several ways to view TrueNAS API documentation:
 
