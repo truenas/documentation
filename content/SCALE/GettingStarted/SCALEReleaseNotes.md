@@ -1,32 +1,32 @@
 ---
-title: "25.10 (Goldeye) Development Notes"
+title: "26.04 (Halfmoon) Development Notes"
 description: "Highlights, change log, and known issues for the latest TrueNAS nightly development version."
 aliases:
  - /scale/scalereleasenotes/
  - /scalenext-releasenotes/
  - /scale/scalenextversion/
- - /scale/25.10/gettingstarted/scalereleasenotes/
+ - /scale/26.04/gettingstarted/scalereleasenotes/
  - /releasenotes/
 weight: 10
 related: false
 ---
-{{< header logo="/images/tn-openstorage-logo.png" logo_alt="TrueNAS Logo" version="25.10 Goldeye" icon="" icon_alt="" >}}
+{{< header logo="/images/tn-openstorage-logo.png" logo_alt="TrueNAS Logo" version="26.04 Halfmoon" icon="" icon_alt="" >}}
 
-{{< hint type="tip" title="25.10 Nightly Development Documentation" >}}
-This page tracks the latest development roadmap and notes for the future TrueNAS major version 25.10 (Goldeye).
+{{< hint type="tip" title="26.04 Nightly Development Documentation" >}}
+This page tracks the latest development roadmap and notes for the future TrueNAS major version 26.04 (Halfmoon).
 
-See the stable [24.10 (Electric Eel)](https://www.truenas.com/docs/scale/24.10/gettingstarted/scalereleasenotes/) or pre-release [25.04 (Fangtooth)](https://www.truenas.com/docs/scale/25.04/gettingstarted/scalereleasenotes/) release notes for information relating to those versions.
+See the stable [25.04 (Fangtooth)](https://www.truenas.com/docs/scale/25.04/gettingstarted/scalereleasenotes/) or pre-release [25.10 (Goldeye)](https://www.truenas.com/docs/scale/25.04/gettingstarted/scalereleasenotes/) release notes for information relating to those versions.
 {{< /hint >}}
 
 ## Features
 
-{{< include file="/static/includes/25.10FeatureList.md" >}}
+{{< include file="/static/includes/26.04FeatureList.md" >}}
 
 ## Obtaining a Release
 
 {{< include file="/static/includes/EarlyReleaseWarning.md" >}}
 
-For adventurous users that want to experiment with the latest feature development, 25.10 (Goldeye) nightly images are available from the [the TrueNAS downloads server](https://download.truenas.com/truenas-scale-goldeye-nightly/).
+For adventurous users that want to experiment with the latest feature development, 26.04 (Halfmoon) nightly images are available from the [the TrueNAS downloads server](https://download.truenas.com/truenas-scale-halfmoon-nightly/).
 
 More details are available from [Software Releases]({{< ref "/TrueNASUpgrades" >}}).
 
@@ -52,7 +52,7 @@ More details are available from [Software Releases]({{< ref "/TrueNASUpgrades" >
 
 ### Upgrade Paths (Anticipated)
 <!--
-{{< include file="/static/includes/25.10UpgradeMethods.md" >}}
+{{< include file="/static/includes/26.04UpgradeMethods.md" >}}
 -->
 
 {{< include file="/static/includes/SCALEUpgradePaths.md" >}}
@@ -79,7 +79,7 @@ See the [Migration articles]({{< ref "/SCALE/GettingStarted/Migrate/" >}}) for c
 
 Click the component version number to see release notes for that component.
 
-{{< component-versions "25.10" >}}
+{{< component-versions "26.04" >}}
 
 TrueNAS now uses Nvidia open source drivers to better support the latest Nvidia graphics cards.
 This means TrueNAS also now follows the [Nvidia Support Plan for Maxwell, Pascal, & Volta Architecture GPUs](https://www.nvidia.com/en-us/geforce/news/mafia-the-old-country-geforce-game-ready-driver/) and drops support for these architectures, including the popular 10-series cards.
@@ -97,6 +97,6 @@ Any new feature flags introduced since the previous OpenZFS version that was int
 
 For more details on feature flags, see [OpenZFS Feature Flags](https://openzfs.github.io/openzfs-docs/Basic%20Concepts/Feature%20Flags.html) and [OpenZFS zpool-feature.7](https://openzfs.github.io/openzfs-docs/man/7/zpool-features.7.html).
 
-## 25.10 Nightly Development
+## 26.04 Nightly Development
 
 * 
