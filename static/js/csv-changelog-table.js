@@ -12,26 +12,34 @@ let currentConfig = {};
  * @param {string} containerId - ID of the container element
  * @param {Object} options - Configuration options
  */
-function createCSVChangelogTable(baseUrlOrSingleUrl, containerId, options = {}) {
+async function createCSVChangelogTable(baseUrlOrSingleUrl, containerId, options = {}) {
+    // Load version configuration from JSON file
+    let versionConfig = null;
+    if (options.useVersioning && options.versionKey) {
+        try {
+            const response = await fetch('/static/data/changelog-versions.json');
+            const allVersions = await response.json();
+            versionConfig = allVersions[options.versionKey];
+        } catch (error) {
+            console.error('Error loading version configuration:', error);
+        }
+    }
+    
     const config = {
         csvDelimiter: options.delimiter || ',',
         useVersioning: options.useVersioning || false,
         baseUrl: options.useVersioning ? baseUrlOrSingleUrl : null,
         singleCsvUrl: options.useVersioning ? null : baseUrlOrSingleUrl,
-        versions: options.versions || [
-            { value: 'all', label: '25.04 (All)', filename: 'scale-25.04-changelog.csv' },
-            { value: '25.04.1', label: '25.04.1', filename: 'scale-25.04.1-changelog.csv' },
-            { value: '25.04.0', label: '25.04.0', filename: 'scale-25.04.0-changelog.csv' },
-            { value: '25.04-RC.1', label: '25.04-RC.1', filename: 'scale-25.04-RC.1-changelog.csv' },
-            { value: '25.04-BETA.1', label: '25.04-BETA.1', filename: 'scale-25.04-BETA.1-changelog.csv' }
-        ],
-        defaultVersion: options.defaultVersion || 'all',
+        versions: options.versions || (versionConfig ? versionConfig.versions : [
+            { value: 'all', label: '25.04 (All)', filename: 'scale-25.04-changelog.csv' }
+        ]),
+        defaultVersion: options.defaultVersion || (versionConfig ? versionConfig.defaultVersion : 'all'),
         columns: options.columns || {
             key: 'Key',
             summary: 'Summary',
             priority: 'Priority',
             status: 'Status',
-            fixVersion: 'Fix Version/s',
+            fixVersion: 'Fix Versions',
             components: 'Components',
             description: 'Description',
             assignee: 'Assignee',
@@ -220,13 +228,13 @@ function createCSVChangelogTable(baseUrlOrSingleUrl, containerId, options = {}) 
             .csv-changelog-table th:nth-child(2) { width: 35%; } /* Summary */
             .csv-changelog-table th:nth-child(3) { width: 12%; } /* Priority */
             .csv-changelog-table th:nth-child(4) { width: 15%; } /* Status */
-            .csv-changelog-table th:nth-child(5) { width: 23%; } /* Fix Version */
+            .csv-changelog-table th:nth-child(5) { width: 23%; } /* Fix Versions */
             
             .csv-changelog-table td:nth-child(1) { width: 15%; } /* Key */
             .csv-changelog-table td:nth-child(2) { width: 35%; } /* Summary */
             .csv-changelog-table td:nth-child(3) { width: 12%; } /* Priority */
             .csv-changelog-table td:nth-child(4) { width: 15%; } /* Status */
-            .csv-changelog-table td:nth-child(5) { width: 23%; } /* Fix Version */
+            .csv-changelog-table td:nth-child(5) { width: 23%; } /* Fix Versions */
             
             .csv-changelog-table th:hover {
                 background: var(--table-header-hover);
@@ -455,7 +463,7 @@ function createCSVChangelogTable(baseUrlOrSingleUrl, containerId, options = {}) 
                             <th onclick="sortCSVTable(1)">Summary</th>
                             <th onclick="sortCSVTable(2)">Priority</th>
                             <th onclick="sortCSVTable(3)">Status</th>
-                            <th onclick="sortCSVTable(4)">Fix Version</th>
+                            <th onclick="sortCSVTable(4)">Fix Versions</th>
                         </tr>
                     </thead>
                     <tbody id="csv-table-body">
@@ -572,23 +580,39 @@ function parseCSV(csvText, delimiter, columnMapping) {
         if (values.length < headers.length) continue;
         
         const row = {};
+        const fixVersions = [];
+        const affectsVersions = [];
+        
         headers.forEach((header, index) => {
-            row[header] = values[index] ? values[index].replace(/"/g, '') : '';
+            const value = values[index] ? values[index].replace(/"/g, '').trim() : '';
+            
+            // Handle duplicate Fix versions columns specially
+            if (header.toLowerCase().includes('fix version') && value) {
+                fixVersions.push(value);
+            } 
+            // Handle duplicate Affects versions columns specially
+            else if (header.toLowerCase().includes('affects version') && value) {
+                affectsVersions.push(value);
+            } else {
+                row[header] = value;
+            }
         });
         
+        const fixVersionString = fixVersions.length > 0 ? fixVersions.join(', ') : 'TBD';
+        const affectsVersionString = affectsVersions.length > 0 ? affectsVersions.join(', ') : 'N/A';
+
         // Convert to our standard format
         const standardRow = {
             key: row[columnMapping.key] || row['Key'] || row['Issue key'] || '',
             summary: row[columnMapping.summary] || row['Summary'] || '',
             priority: row[columnMapping.priority] || row['Priority'] || 'Medium',
             status: row[columnMapping.status] || row['Status'] || 'Open',
-            fixVersion: row[columnMapping.fixVersion] || row['Fix Version/s'] || row['Fix Version'] || 'TBD',
-            components: row[columnMapping.components] || row['Components'] || row['Component'] || 'N/A',
+            fixVersion: fixVersionString,
+            affectsVersion: affectsVersionString,
             description: row[columnMapping.description] || row['Description'] || '',
-            assignee: row[columnMapping.assignee] || row['Assignee'] || 'Unassigned',
             created: row[columnMapping.created] || row['Created'] || '',
             updated: row[columnMapping.updated] || row['Updated'] || '',
-            url: row['URL'] || `https://ixsystems.atlassian.net/browse/${row[columnMapping.key] || row['Key']}`
+            url: row['URL'] || `https://ixsystems.atlassian.net/browse/${row['Issue key'] || row['Key'] || ''}`
         };
         
         data.push(standardRow);
@@ -740,9 +764,8 @@ function showCSVDetails(item) {
             
             <div class="csv-changelog-detail-column">
                 <h4>Release Information</h4>
-                <div class="csv-changelog-detail-item"><strong>Fix Version:</strong> ${item.fixVersion}</div>
-                <div class="csv-changelog-detail-item"><strong>Components:</strong> ${item.components}</div>
-                <div class="csv-changelog-detail-item"><strong>Assignee:</strong> ${item.assignee}</div>
+                <div class="csv-changelog-detail-item"><strong>Affects Versions:</strong> ${item.affectsVersion}</div>
+                <div class="csv-changelog-detail-item"><strong>Fix Versions:</strong> ${item.fixVersion}</div>
                 ${item.created ? `<div class="csv-changelog-detail-item"><strong>Created:</strong> ${item.created}</div>` : ''}
                 ${item.updated ? `<div class="csv-changelog-detail-item"><strong>Updated:</strong> ${item.updated}</div>` : ''}
             </div>
@@ -840,5 +863,5 @@ function resetCSVTable() {
     hideCSVDetails();
 }
 
-// Global function for easy CSV table creation
+// Global function for easy CSV table creation  
 window.createCSVChangelogTable = createCSVChangelogTable;
