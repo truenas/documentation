@@ -85,6 +85,8 @@ To connect TrueNAS to Active Directory:
 4. Enter the **Trusted Domains Configuration** settings if needed for your environment.
 
    Starting in TrueNAS 25.10, trusted domains are configured as part of the Active Directory configuration rather than as separate IDmap entries.
+   {{< trueimage src="/images/SCALE/Credentials/TrustedDomainsConfiguration.png" alt="Trusted Domains Configuration" id="Trusted Domains Configuration" >}}
+
 
 5. Enter the **IDMAP Configuration** settings.
    - By default, **Use TrueNAS Server IDMAP Defaults** is selected
