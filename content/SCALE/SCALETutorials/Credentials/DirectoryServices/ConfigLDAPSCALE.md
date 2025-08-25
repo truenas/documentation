@@ -28,7 +28,7 @@ TrueNAS does not support non-CA certificates.
 
 To configure TrueNAS to use an LDAP directory server:
 
-1. Go to **Credentials > Directory Services** and click **Configure Directory Services** to open the unified **Directory Services Configuration** form.
+1. Go to **Credentials > Directory Services** and click **Configure Directory Services** to open the **Directory Services Configuration** form.
 
 2. Select **LDAP** as the directory service type.
 
