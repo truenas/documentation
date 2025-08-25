@@ -76,11 +76,11 @@ To connect TrueNAS to Active Directory:
 2. Select **Active Directory** as the directory service type.
 
 3. Enter the **Active Directory Configuration** settings:
-   - Enter the TrueNAS host name in **TrueNAS Hostname** (required)
-   - Enter the domain name for the AD in **Domain Name** (required)  
-   - Enter the site name in **Site Name** (optional)
-   - Enter the computer account organizational unit in **Computer Account OU** (optional)
-   - Select **Use Default Domain** if needed for your environment
+   - Enter the TrueNAS host name in **TrueNAS Hostname** (required).
+   - Enter the domain name for the AD in **Domain Name** (required).  
+   - Enter the site name in **Site Name** (optional).
+   - Enter the computer account organizational unit in **Computer Account OU** (optional).
+   - Select **Use Default Domain** if needed for your environment.
 
 4. Enter the **Trusted Domains Configuration** settings if needed for your environment.
 
@@ -90,10 +90,10 @@ To connect TrueNAS to Active Directory:
 
 
 5. Enter the **IDMAP Configuration** settings.
-   - By default, **Use TrueNAS Server IDMAP Defaults** is selected
+   - By default, **Use TrueNAS Server IDMAP Defaults** is selected.
    - To customize IDMAP settings, uncheck **Use TrueNAS Server IDMAP Defaults** to reveal additional configuration options:
-   - **Builtin** section with optional **Name** field and required **Range Low** and **Range High** fields
-   - **IDMAP Domain** section with required **IDMAP Backend**, **Name**, **Range Low**, and **Range High** fields
+   - **Builtin** section with optional **Name** field and required **Range Low** and **Range High** fields.
+   - **IDMAP Domain** section with required **IDMAP Backend**, **Name**, **Range Low**, and **Range High** fields.
 
 6. Click **Save**.
 
