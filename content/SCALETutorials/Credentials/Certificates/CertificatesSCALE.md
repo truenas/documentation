@@ -25,7 +25,7 @@ By default, TrueNAS comes equipped with an internal, self-signed certificate tha
 
 To add a new certificate:
 
-Click **Add** on the **Certificates** widget to open the **Add Certficates** wizard.
+Click **Add** on the **Certificates** widget to open the **Add Certificates** wizard.
 
 First, enter a name as certificate identifier and select the type.
 The **Identifier and Type** step lets users name the certificate and choose whether to use it for internal or local systems, or import an existing certificate.
