@@ -2,26 +2,50 @@
 
 ## 🚀 Quick Start
 
-Your CSV changelog table is now ready with version support! Here's how to use it:
+Your CSV changelog table is now ready with version support and automated generation! Here's how to use it:
 
 ### 1. **Current Setup**
 - ✅ **JavaScript file**: `/static/js/csv-changelog-table.js`
-- ✅ **Version support**: Multiple CSV files per release version
-- ✅ **Sample data**: Created for all 25.04 versions
+- ✅ **Version configuration**: `/static/data/changelog-versions.json`
+- ✅ **Version support**: Multiple CSV files per release version  
+- ✅ **Automated generation**: Script to combine individual releases
 - ✅ **Integration**: Added to `SCALEReleaseNotes.md` with version selector
 
-### 2. **Version-Based CSV Files**
+### 2. **Version Configuration**
 
-The table now supports multiple versions with separate CSV files:
+Versions are now configured in `/static/data/changelog-versions.json`:
+
+```json
+{
+  "25.04": {
+    "label": "25.04 (Fangtooth)", 
+    "versions": [
+      { "value": "all", "label": "25.04 (All)", "filename": "scale-25.04-changelog.csv" },
+      { "value": "25.04.1", "label": "25.04.1", "filename": "scale-25.04.1-changelog.csv" },
+      { "value": "25.04.0", "label": "25.04.0", "filename": "scale-25.04.0-changelog.csv" }
+    ],
+    "defaultVersion": "all"
+  },
+  "25.10": {
+    "label": "25.10 (Goldeye)",
+    "versions": [
+      { "value": "all", "label": "25.10 (All)", "filename": "25.10-changelog.csv" },
+      { "value": "25.10.0-BETA.1", "label": "25.10.0-BETA.1", "filename": "25.10.0-BETA.1-changelog.csv" }
+    ],
+    "defaultVersion": "all"
+  }
+}
+```
 
 #### **📁 File Structure**
 ```
 /static/data/
-├── scale-25.04-changelog.csv        # All 25.04 tickets (default)
+├── changelog-versions.json          # Version configuration
+├── scale-25.04-changelog.csv        # All 25.04 tickets (generated)
 ├── scale-25.04.1-changelog.csv      # 25.04.1 specific tickets  
 ├── scale-25.04.0-changelog.csv      # 25.04.0 specific tickets
-├── scale-25.04-RC.1-changelog.csv   # RC.1 specific tickets
-└── scale-25.04-BETA.1-changelog.csv # BETA.1 specific tickets
+├── 25.10-changelog.csv              # All 25.10 tickets (generated)  
+└── 25.10.0-BETA.1-changelog.csv     # 25.10.0-BETA.1 specific tickets
 ```
 
 #### **🎯 Version Selector**
@@ -32,55 +56,72 @@ Users can now select:
 - **"25.04-RC.1"** - Shows only RC.1 tickets
 - **"25.04-BETA.1"** - Shows only BETA.1 tickets
 
-#### **Step A: Export from JIRA by Version**
-1. Create separate JIRA filters for each version:
-   - Filter for 25.04.1: `fixVersion = "25.04.1"`
-   - Filter for 25.04.0: `fixVersion = "25.04.0"`
-   - Filter for all 25.04: `fixVersion in ("25.04.1", "25.04.0", "25.04-RC.1", "25.04-BETA.1")`
+### 3. **Adding New Versions/Releases**
+
+#### **Step A: Export Individual Releases from JIRA**
+1. Create separate JIRA filters for each individual release:
+   - Filter for 25.10.0: `fixVersion = "SCALE-25.10.0 (Goldeye)"`
+   - Filter for 25.10.1: `fixVersion = "SCALE-25.10.1 (Goldeye)"`
 2. Export each filter as CSV with these columns:
-   - `Key`, `Summary`, `Priority`, `Status`, `Fix Version/s`, `Components`, `Description`, `Assignee`, `Created`, `Updated`
+   - `Issue key`, `Issue id`, `Summary`, `Fix versions` (multiple), `Status`, `Priority`, `Affects versions` (multiple), `Created`, `Updated`
+3. Save individual release files in `/static/data/`
 
-#### **Step B: Replace the Sample Files**
-1. Save your exports with the correct naming:
-   ```bash
-   cp /path/to/25.04-all-export.csv "/mnt/c/Users/Anthony Rivera/Documents/GitHub/documentation/static/data/scale-25.04-changelog.csv"
-   cp /path/to/25.04.1-export.csv "/mnt/c/Users/Anthony Rivera/Documents/GitHub/documentation/static/data/scale-25.04.1-changelog.csv"
-   cp /path/to/25.04.0-export.csv "/mnt/c/Users/Anthony Rivera/Documents/GitHub/documentation/static/data/scale-25.04.0-changelog.csv"
-   # ... etc for other versions
-   ```
-
-#### **Step C: Update the Script (if needed)**
-If your CSV has different column names, update the script in `SCALEReleaseNotes.md`:
-
-```javascript
-createCSVChangelogTable('/data/sample-changelog.csv', 'csv-changelog-container', {
-    columns: {
-        key: 'Issue key',        // If your column is named differently
-        summary: 'Title',        // If your column is named differently  
-        priority: 'Priority Level', // If your column is named differently
-        // ... etc
-    }
-});
+#### **Step B: Update Version Configuration**
+Add new versions to `/static/data/changelog-versions.json`:
+```json
+{
+  "25.10": {
+    "versions": [
+      { "value": "all", "label": "25.10 (All)", "filename": "25.10-changelog.csv" },
+      { "value": "25.10.1", "label": "25.10.1", "filename": "25.10.1-changelog.csv" },
+      { "value": "25.10.0", "label": "25.10.0", "filename": "25.10.0-changelog.csv" }
+    ]
+  }
+}
 ```
+
+#### **Step C: Generate Combined "All" File**
+Run the automated script to combine individual releases:
+```powershell
+# From the documentation repository root
+python scripts/combine-changelogs.py 25.10
+```
+
+This will automatically:
+- Find all individual release files for version 25.10
+- Combine them into the "All" file (`25.10-changelog.csv`)
+- Remove duplicates and sort by issue key
+- Show progress and statistics
+
+#### **Step D: Update Documentation Pages**
+Update your release notes page to use the new version:
+```javascript
+// In your release notes page (e.g., SCALEReleaseNotes.md)
+initializeChangelogTableForTabs('25.10');  // Matches the key in changelog-versions.json
+```
+
+This function will automatically load the version configuration and set up the changelog table with the appropriate tabs and version selector.
 
 ## 🎨 **Features**
 
 ### **✅ What's Included**
 - **TrueNAS-themed styling** - Matches security site header colors (`#0095d5` gradient)
 - **Dark/Light mode support** - Automatically adapts to documentation theme
-- **Interactive filtering** - Filter by Status, Priority, and search text
-- **Sortable columns** - Click headers to sort data
-- **Detailed view** - Click rows to see full issue details
-- **CSV export** - Export filtered data as new CSV
+- **Version selector** - Switch between individual releases and "All" view
+- **Interactive filtering** - Filter by Priority and search text
+- **Sortable columns** - Click headers to sort data (Key, Summary, Priority, Status, Fix Versions)
+- **Detailed view** - Click rows to see full issue details with Affects Versions
 - **Responsive design** - Works on mobile and desktop
 - **Priority/Status colors** - Visual indicators for issue priority and status
+- **JIRA integration** - Direct links to JIRA tickets from issue keys
+- **Multiple fix versions** - Handles CSV files with multiple "Fix versions" columns
+- **Automated combination** - Script to generate "All" files from individual releases
 
 ### **🎯 Filter Options**
-- **Status Filter**: All Statuses, Done, In Progress, To Do, etc.
+- **Version Selector**: Choose individual releases or "All" combined view
 - **Priority Filter**: All Priorities, High, Medium, Low, etc.  
-- **Search Box**: Search across Key, Summary, Components, and Assignee
+- **Search Box**: Search across Key, Summary text
 - **Reset Button**: Clear all filters and return to full view
-- **Export Button**: Download current filtered view as CSV
 
 ### **🔗 JIRA Integration**
 - **Direct links**: Each issue key links to JIRA ticket
@@ -89,28 +130,39 @@ createCSVChangelogTable('/data/sample-changelog.csv', 'csv-changelog-container',
 
 ## 📝 **Usage Examples**
 
-### **Basic Usage (Default Columns)**
+### **Version-Based Usage (Current Setup)**
+```html
+<div id="changelog-container"></div>
+<script src="/static/js/csv-changelog-table.js"></script>
+<script>
+    createCSVChangelogTable('/static/data/', 'changelog-container', {
+        useVersioning: true,
+        versionKey: '25.10',  // Load version config from changelog-versions.json
+        delimiter: ','
+    });
+</script>
+```
+
+### **Single CSV File (Simple)**
 ```html
 <div id="my-changelog"></div>
-<script src="/js/csv-changelog-table.js"></script>
+<script src="/static/js/csv-changelog-table.js"></script>
 <script>
-    createCSVChangelogTable('/data/my-export.csv', 'my-changelog');
+    createCSVChangelogTable('/static/data/single-file.csv', 'my-changelog');
 </script>
 ```
 
 ### **Custom Column Mapping**
 ```html
 <script>
-    createCSVChangelogTable('/data/my-export.csv', 'my-changelog', {
-        delimiter: ';',  // Use semicolon instead of comma
+    // Only needed if your CSV has different column names than JIRA standard
+    createCSVChangelogTable('/static/data/my-export.csv', 'my-changelog', {
         columns: {
-            key: 'Ticket ID',
-            summary: 'Title',
-            priority: 'Priority Level',
-            status: 'Current Status',
-            fixVersion: 'Target Release',
-            components: 'Area',
-            assignee: 'Owner'
+            key: 'Ticket ID',           // Instead of 'Issue key'
+            summary: 'Title',           // Instead of 'Summary'
+            priority: 'Priority Level', // Instead of 'Priority'
+            status: 'Current Status',   // Instead of 'Status'
+            fixVersion: 'Target Release' // Instead of 'Fix versions'
         }
     });
 </script>
@@ -118,15 +170,23 @@ createCSVChangelogTable('/data/sample-changelog.csv', 'csv-changelog-container',
 
 ## 🔄 **Updating Data**
 
-### **Manual Process** (Current)
-1. Export new CSV from JIRA filter
-2. Replace the file in `/static/data/`
-3. Refresh the documentation page
+### **Recommended Process**
+1. **Export individual releases** from JIRA as CSV files
+2. **Save files** to `/static/data/` with correct naming
+3. **Update** `/static/data/changelog-versions.json` if adding new versions
+4. **Run combination script**: `python scripts/combine-changelogs.py 25.10`
+5. **Refresh** the documentation page
 
-### **Automation Ideas** (Future)
-- Set up GitHub Action to fetch JIRA data periodically
-- Use JIRA webhooks to trigger updates
-- Create a simple script to download and replace CSV
+### **Script Benefits**
+- ✅ **Automated deduplication** - Removes duplicate issues across releases  
+- ✅ **Consistent sorting** - Orders by issue key for predictable results
+- ✅ **Progress tracking** - Shows which files are processed and statistics
+- ✅ **Error handling** - Reports missing files or configuration issues
+
+### **Manual Alternative** (Not recommended)
+1. Export "All" CSV directly from JIRA with complex filter
+2. Replace the combined file manually
+3. Risk of missing issues or inconsistent data
 
 ## 🎨 **Customization**
 
