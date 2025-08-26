@@ -4,6 +4,8 @@ description: "Provides instructions on managing storage pools, VDEVs, and disks 
 weight: 40
 aliases:
  - /scale/scaletutorials/storage/pools/managepoolsscale/
+ - /scale/scaleuireference/dataprotection/scrubtasksscreensscale/
+ - /scale/scaletutorials/dataprotection/scrubtasksscale/
 tags: 
 - pools
 - storage
@@ -23,7 +25,7 @@ This article provides instructions on pool management functions available in the
 ## Setting Up Auto TRIM
 
 Select **Storage** on the main navigation panel to open the **Storage Dashboard**.
-Locate the **ZFS Health** widget for the pool, then click the **Edit Auto TRIM**. The **Pool Options for *poolname*** dialog opens.
+Locate the **Storage Health** widget for the pool, then click the **Edit Auto TRIM**. The **Pool Options for *poolname*** dialog opens.
 
 {{< trueimage src="/images/SCALE/Storage/PoolOptionsAuotTRIM.png" alt="Pool Edit Auto TRIM Dialog" id="Pool Edit Auto TRIM Dialog" >}}
 
@@ -75,19 +77,38 @@ It is not necessary to stop sharing services to upgrade the pool.
 
 ## Running a Pool Data Integrity Check (Scrub)
 
-Use **Scrub** on the **ZFS Health** pool widget to start a pool data integrity check.
+Use **Scrub Now** on the **Storage Health** pool widget to start a pool data integrity check.
 
-{{< trueimage src="/images/SCALE/Storage/StorageDashboardZFSHealthWidgetWithDedup.png" alt="ZFS Health Widget" id="ZFS Health Widget" >}}
+{{< trueimage src="/images/SCALE/Storage/StorageHealthWidget.png" alt="Storage Health Widget" id="Storage Health Widget" >}}
 
-Click **Scrub Now** to open the **Scrub Pool** dialog.
-Select **Confirm**, then click **Start Scrub**.
+Click **Scrub Now** to open the **Scrub Pool** dialog, then click **Start Scrub** to begin the process.
 
 If TrueNAS detects problems during the scrub operation, it either corrects them or generates an [alert]({{< ref "/SCALE/SCALEUIReference/TopToolbar/Alerts" >}}) in the web interface.
 
-By default, TrueNAS automatically checks every pool on a recurring scrub schedule.
+{{< hint type=note >}}
+A scrub is a data integrity check of your pool. Scrubs identify data integrity problems, detect silent data corruptions caused by transient hardware issues, and provide early disk failure alerts.
+{{< /hint >}}
 
-The **Storage Health** widget shows the state of the last scrub or disks in the pool.
-To view scheduled scrub tasks, click **Configure** on the **Storage Health** widget.
+### Scheduling Scrub Tasks
+
+TrueNAS automatically creates a scheduled scrub for each pool that runs every Sunday at 12:00 AM.
+
+The **Storage Health** widget shows the scheduled scrub status:
+
+* **Scheduled Scrub: None Set** with a **Schedule** link if no scrub task exists
+* **Scheduled Scrub: [when]** with a **Configure** link if a scrub task is configured and enabled
+
+Click **Schedule** to create a new scrub schedule or **Configure** to modify an existing schedule. This opens the **Configure Scheduled Scrub** screen where you can set the schedule, threshold days, and enable or disable the scheduled scrub.
+
+**Threshold Days** sets the days before a completed scrub is allowed to run again.
+This controls the task schedule.
+For example, scheduling a scrub to run daily and setting threshold days to *7* means the scrub attempts to run daily.
+When the scrub is successful, it continues to check daily but does not run again until *seven* days have elapsed.
+Using a multiple of *seven* ensures the scrub always occurs on the same weekday.
+
+{{< hint type=note >}}
+Starting in TrueNAS 25.10, resilver priority settings are now located in **System Settings > Advanced Settings** on the **Storage** widget.
+{{< /hint >}}
 
 ## Managing Pool Disks
 
@@ -103,6 +124,7 @@ See [Replacing Disks]({{< ref "ReplacingDisks" >}}) for more information on the 
 ## Expanding a Pool
 
 There are a few  ways to increase the size of an existing pool:
+
 * Add one or more drives to an existing RAIDZ VDEV.
 * Add a new VDEV of the same type.
 * Add a new VDEV of a different type.
@@ -179,6 +201,7 @@ You cannot change the original encryption or data VDEV configuration.
 {{< /hint >}}
 
 {{< expand "Adding VDEV Examples" "v" >}}
+
 * To make a striped mirror, add the same number of drives to extend a ZFS mirror.
   For example, you start with ten available drives. Begin by creating a mirror of two drives, and then extend the mirror by adding another mirror of two drives. Repeat this three more times until you add all ten drives.
 * To make a stripe of two 3-drive RAIDZ1 VDEVs (similar to RAID 50 on a hardware controller), add another three drives as a new RAIDZ1 VDEV to the existing single 3-drive RAIDZ1 VDEV pool.
@@ -239,7 +262,7 @@ Click **Update Pool** to save changes.
 You can add a deduplication VDEV to an existing pool, but files in the pool might or might not have deduplication applied to them.
 When adding a deduplication VDEV to an existing pool, any existing entries in the deduplication table remain on the data VDEVs until the data they reference is rewritten.
 
-After adding a deduplication VDEV to a pool, and when duplicated files are added to the pool, the **ZFS Health** widget on the **Storage Dashboard** shows two links, **Prune** and **Set Quota**. These links do not show if duplicated files do not exist in the pool.
+After adding a deduplication VDEV to a pool, and when duplicated files are added to the pool, the **Storage Health** widget on the **Storage Dashboard** shows two links, **Prune** and **Set Quota**. These links do not show if duplicated files do not exist in the pool.
 
 Use **Prune** to set the parameters used to prune the deduplication table (DDT). Select the measurement used, percentage or age, when pruning the table size.
 
@@ -271,7 +294,7 @@ Go to the **Storage Dashboard** and click **View VDEVs** on the **VDEVs** widget
    {{< trueimage src="/images/SCALE/Storage/DevicesDiskWidgets.png" alt="Devices Disk Widgets" id="Devices Disk Widgets" >}}
 
    Click **Offline** on the **ZFS Info** widget to take the disk offline. The button toggles to **Online**.
-   
+
    Remove the disk from the system.
 
 3. Insert a larger capacity disk into an open enclosure slot (or if no empty slots, the slot of the offline disk being replaced).
@@ -319,6 +342,7 @@ This process preserves data integrity but has multiple requirements:
 When a RAIDZ data VDEV is present, it is generally not possible to remove a device.
 
 To remove a VDEV from a pool:
+
 1. Click ***View VDEVs** on the **VDEVs** widget opens the ***Poolname* VDEVs** screen.
 2. Click the device or drive to remove, then click the **Remove** button in the **ZFS Info** widget.
    If the **Remove** button is not visible, check that all conditions for VDEV removal listed above are correct.
