@@ -10,7 +10,11 @@ Click the minus (-) at the top right corner of any dialog or pop-up window to mi
 Click on a running job to open a dialog for that job.
 
 A running job shows a progress bar and a white circle with a square in the middle to the right of the job. Click on this to show the **Abort** dialog.
-Click **Abort** to stop the job and abort the process. 
+Click **Abort** to stop the job and abort the process.
+
+{{< hint type=note >}}
+Beginning in 25.04, the **Abort** feature is only available for select jobs. Jobs that are unable to be aborted are listed without the white circle with a square in the middle as an option.
+{{< /hint >}}
 
 {{< trueimage src="/images/SCALE/Dashboard/JobsAbort.png" alt="Abort Job" id="Abort Job" >}}
 
