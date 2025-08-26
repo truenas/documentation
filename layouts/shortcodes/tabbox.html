@@ -13,9 +13,9 @@
       </p>
 
       {{- if .majorVersions }}
-        <div class="section-tabs" style="margin-bottom: 1rem;">
+        <div class="section-tabs" style="margin-bottom: 1rem; display: flex; flex-wrap: wrap; gap: 0.25rem;">
           {{- range $index, $majorVersion := .majorVersions }}
-            <div class="section-tab {{ $name }}-section-tab" onclick="showMajorVersion('{{ $name }}', '{{ $majorVersion.lifecycle }}')">{{ $majorVersion.lifecycle }}</div>
+            <div class="section-tab {{ $name }}-section-tab" onclick="showMajorVersion('{{ $name }}', '{{ $majorVersion.lifecycle }}')">{{ if $majorVersion.tabLabel }}{{ $majorVersion.tabLabel }}{{ else }}{{ $majorVersion.lifecycle }}{{ end }}</div>
           {{- end }}
         </div>
 
@@ -102,8 +102,33 @@
     </div>
   </div>
 
+  <style>
+    /* Responsive tabs for narrow cards */
+    @media (max-width: 768px) {
+      .{{ $name }}-section-tab {
+        font-size: 0.85rem;
+        padding: 0.5rem 0.75rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        min-width: 0;
+        flex: 1;
+        text-align: center;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .{{ $name }}-section-tab {
+        font-size: 0.8rem;
+        padding: 0.4rem 0.6rem;
+        min-width: 60px;
+      }
+    }
+  </style>
+
   <script>
-    function showMajorVersion(shortcodeName, majorVersion) {
+    if (!window.showMajorVersion) {
+      window.showMajorVersion = function(shortcodeName, majorVersion) {
       var majorVersionContents = document.querySelectorAll('.' + shortcodeName + '-major-version-content');
       majorVersionContents.forEach(function(content) {
         content.style.display = 'none';
@@ -124,10 +149,11 @@
       if (selectedTab) {
         selectedTab.classList.add('active');
       }
+      }
     }
 
     document.addEventListener('DOMContentLoaded', function() {
-      var defaultTabIndex = {{ $defaultTab }} - 1; // Convert to zero-based index
+      var defaultTabIndex = {{ $defaultTab }} - 1;
       var majorVersionTabs = document.querySelectorAll('.{{ $name }}-section-tab');
       if (defaultTabIndex >= 0 && defaultTabIndex < majorVersionTabs.length) {
         majorVersionTabs[defaultTabIndex].click();
