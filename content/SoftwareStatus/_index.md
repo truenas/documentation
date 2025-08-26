@@ -3,11 +3,31 @@ title: "TrueNAS Software Status"
 description: "Find the right TrueNAS version for your use case with current deployment recommendations, release schedules, and upgrade paths."
 weight: 5
 related: false
+use_jump_to_buttons: true
 aliases:
  - /scale/gettingstarted/upgrades/
  - /truenasupgrades/
  - /softwarereleases/
  - /releasenotes/releaseschedule/
+jump_to_buttons:
+  - text: "Recommendations"
+    anchor: "which-truenas-version-is-recommended"
+    icon: "star"
+  - text: "Release Schedule"
+    anchor: "release-schedule"
+    icon: "calendar"
+  - text: "Development Timeline"
+    anchor: "development-timeline"
+    icon: "timeline"
+  - text: "Upgrade Paths"
+    anchor: "upgrade-paths"
+    icon: "conversion-path"
+  - text: "Releases"
+    anchor: "releases"
+    icon: "download"
+  - text: "Documentation Lifecycle"
+    anchor: "documentation-lifecycle"
+    icon: "file-document"
 ---
 
 ## Which TrueNAS Version is Recommended?
@@ -27,7 +47,9 @@ Our Support team can provide advice based on your unique requirements and be the
 
 Bookmark this page and check back before upgrading to see the latest recommendations. New releases are recommended for more risk-sensitive environments after extensive testing across diverse deployments.
 
-## Release Schedule
+<!-- Hugo-processed content for software status tab box -->
+<div style="display: none;" id="release-tab-content-source">
+  <div data-tab-id="release-schedule" data-tab-label="Release Schedule">
 
 {{< releaselist name=scale-releases defaultTab=2 >}}
 
@@ -43,17 +65,20 @@ Bookmark this page and check back before upgrading to see the latest recommendat
 
 {{< /expand >}}
 
-## Development Timeline
+  </div>
+  <div data-tab-id="development-timeline" data-tab-label="Development Timeline">
 
 Releases for major versions can overlap while a new major version is working towards a stable release and the previous major version is still receiving maintenance updates.
 
 {{< timeline name="scale-releases" >}}
 
-## Upgrade Paths
+  </div>
+  <div data-tab-id="upgrade-paths" data-tab-label="Upgrade Paths">
 
 {{< include file="/static/includes/SCALEUpgradePaths.md" >}}
 
-## Releases
+  </div>
+  <div data-tab-id="releases" data-tab-label="Releases">
 
 {{< columns >}}
 
@@ -92,7 +117,8 @@ Individual releases are within each major version.
 Legacy releases can only be used by downloading the .iso file and freshly installing it to the hardware.
 {{< /expand >}}
 
-## Documentation Lifecycle
+  </div>
+  <div data-tab-id="documentation-lifecycle" data-tab-label="Documentation Lifecycle">
 
 This website is a repository of all documentation for TrueNAS projects and related products.
 The TrueNAS team maintains this documentation and provides regular updates for current and in-development (future) versions of TrueNAS software.
@@ -100,3 +126,18 @@ For documentation purposes, current and future releases are those [recommended](
 
 Documentation for previous releases no longer recommended for any user type is archived and unmaintained.
 See the [Documentation Archive](https://www.truenas.com/docs/archive/) for content related to these releases.
+
+  </div>
+</div>
+
+<!-- Linkable Tab Box -->
+<div id="component-tabs-container"></div>
+
+<script src="/js/linkable-tabs.js?v=4.8"></script>
+<script src="/js/linkable-tabs-init.js"></script>
+<script src="/js/jump-to-button-fix.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    initializeHugoTabs('release-tab-content-source', 'component-tabs-container', 'release-schedule');
+});
+</script>
