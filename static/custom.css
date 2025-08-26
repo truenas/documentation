@@ -2454,6 +2454,24 @@ pre.gdoc-mermaid.mermaid.mermaid_sizing {
   align-items: center;
   background-color: var(--body-background);
 }
+/* Theme-aware edition logos in release lists */
+/* Default light mode - no filter needed */
+.edition-logo {
+    /* Images are already dark for light backgrounds */
+}
+
+/* Manual dark mode selection - invert to white */
+:root[color-theme="dark"] .edition-logo {
+    filter: brightness(0) invert(1);
+}
+
+/* System preference dark mode fallback */
+@media (prefers-color-scheme: dark) {
+    :root:not([color-theme]) .edition-logo {
+        filter: brightness(0) invert(1);
+    }
+}
+
 /* Additional variable colors */
 :root[color-theme='light'] {
   --enterprise-title: rgb(52, 58, 64); /* Define --enterprise-title for the light theme */
