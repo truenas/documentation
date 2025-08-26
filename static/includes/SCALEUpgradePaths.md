@@ -6,6 +6,30 @@
     background-color: inherit;
 }
 
+/* Logo visibility for light/dark modes */
+/* Default light mode */
+.dark-mode-logo { display: none !important; }
+.light-mode-logo { display: block !important; }
+
+/* Manual dark mode selection */
+:root[color-theme="dark"] .light-mode-logo { display: none !important; }
+:root[color-theme="dark"] .dark-mode-logo { display: block !important; }
+
+/* Manual light mode selection */
+:root[color-theme="light"] .dark-mode-logo { display: none !important; }
+:root[color-theme="light"] .light-mode-logo { display: block !important; }
+
+/* System preference fallback */
+@media (prefers-color-scheme: dark) {
+    :root:not([color-theme]) .light-mode-logo { display: none !important; }
+    :root:not([color-theme]) .dark-mode-logo { display: block !important; }
+}
+
+@media (prefers-color-scheme: light) {
+    :root:not([color-theme]) .dark-mode-logo { display: none !important; }
+    :root:not([color-theme]) .light-mode-logo { display: block !important; }
+}
+
 .scroll-container {
     overflow-x: auto; /* Enable horizontal scroll */
     white-space: nowrap; /* Prevent wrapping of content */
@@ -61,7 +85,8 @@ Visit the <a href="https://www.truenas.com/software-status/" target="_blank">Tru
 
 <div class="section-box" id="scale-upgrade-paths" style="padding: 0 40px 40px 40px; margin-bottom: 20px;">
     <div class="upgrade-paths-container">
-      <img src="/images/TrueNAS_Community_Edition.png" style="box-shadow: none; max-width: 225px; padding-bottom: 20px; padding-top: 40px;" title="TrueNAS Community Edition" alt="TrueNAS Community Edition">
+      <img src="/images/truenas-community-edition-logo-blue.png" class="light-mode-logo" style="box-shadow: none; max-width: 225px; padding-bottom: 20px; padding-top: 40px;" title="TrueNAS Community Edition" alt="TrueNAS Community Edition">
+      <img src="/images/truenas-community-edition-logo-white.png" class="dark-mode-logo" style="box-shadow: none; max-width: 225px; padding-bottom: 20px; padding-top: 40px; display: none;" title="TrueNAS Community Edition" alt="TrueNAS Community Edition">
       <div class="scroll-container" id="scrollContainer1">
         <div class="chart-wrapper">
           {{< mermaid class="mermaid_sizing" >}}
@@ -81,7 +106,8 @@ Visit the <a href="https://www.truenas.com/software-status/" target="_blank">Tru
       </div>
     </div>
     <div class="upgrade-paths-container">
-      <img src="/images/TrueNAS_Enterprise.png" style="box-shadow: none; max-width: 225px; padding-bottom: 20px; padding-top: 40px;" title="TrueNAS Enterprise" alt="TrueNAS Enterprise">
+      <img src="/images/truenas-enterprise-logo-logo-blue.png" class="light-mode-logo" style="box-shadow: none; max-width: 225px; padding-bottom: 20px; padding-top: 40px;" title="TrueNAS Enterprise" alt="TrueNAS Enterprise">
+      <img src="/images/truenas-enterprise-logo-logo-white-rgb-900px-w-72ppi.png" class="dark-mode-logo" style="box-shadow: none; max-width: 225px; padding-bottom: 20px; padding-top: 40px; display: none;" title="TrueNAS Enterprise" alt="TrueNAS Enterprise">
       <div class="scroll-container" id="scrollContainer2">
         <div class="chart-wrapper">
           {{< mermaid class="mermaid_sizing" >}}
