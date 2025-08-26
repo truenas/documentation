@@ -41,7 +41,7 @@ The **Create ACME Certificate** screen shows settings to create an ACME Certific
 | **Terms of Service** | Accepts the terms of service for the given ACME server. |
 | **Renew Certificate Days** | Specified the number of days to renew the certificate before it expires. |
 | **Custom ACME Server Directory URI** | Enables using a custom ACME server directory URI. <br>If the **ACME Server Directory URI** is set to **Lets Encrypt Staging Directory**, enabling this option changes the **ACME Server Directory URI** value to show **https://acme-staging-v02.api.letsencrypt.org/directory**. <br>If the **ACME Server Directory URI** is set to **Let's Encrypt Production Directory**, enabling this option changes the **ACME Server Directory URI** value changes to show **https://acme-v02.api.letsencrypt.org/directory**. |
-| **ACME Server Directory URI** | Sets the URI of the ACME server director. Shows two preconfigured URI options on a dropdown list: **Lets Encrypt Staging Directory** and **Let's Encrypt Production Directory**. <br><li>**Lets Encrypt Staging Directory**  <br><li>**Let's Encrypt Production Directory**  </li> |
+| **ACME Server Directory URI** | Sets the URI of the ACME server directory. Shows two preconfigured URI options on a dropdown list: **Lets Encrypt Staging Directory** and **Let's Encrypt Production Directory**. <br><li>**Lets Encrypt Staging Directory**  <br><li>**Let's Encrypt Production Directory**  </li> |
 | **DNS:UnitedStates** | Sets the authenticator to validate the domain. Shows a dropdown list of previously configured ACME DNS authenticators. |
 {{< /truetable >}}
 
