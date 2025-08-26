@@ -2298,3 +2298,8 @@ apparticletemplate
 appcontributions
 fseries
 FStencil
+Seagate
+cksum
+Cksum
+nvd
+ManagePoolsScale

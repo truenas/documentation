@@ -100,10 +100,10 @@ While TrueNAS is designed for and ever-evolving towards increased user friendlin
   No data is copied and no extra storage is consumed.
   Only when changes occur in the filesystem and the data in it diverges from the snapshot does the snapshot start using additional storage.
 
-* [**ZFS Scrub**]({{< ref "SCALE/SCALETutorials/DataProtection/ScrubTasksSCALE" >}}): the process that ZFS uses to verify the data on disk.
+* [**ZFS Scrub**]({{< ref "SCALE/SCALETutorials/Storage/ManagePoolsScale" >}}): the process that ZFS uses to verify the data on disk.
   All of the data is read and checked against the computed checksums to verify that no corruption has occurred.
 
-* [**ZFS Resilver**]({{< ref "SCALE/SCALETutorials/DataProtection/ScrubTasksSCALE" >}}): process to reconstruct data on a disk when that disk has replaced a failed disk.
+* [**ZFS Resilver**]({{< ref "SCALE/SCALETutorials/Storage/ManagePoolsScale" >}}): process to reconstruct data on a disk when that disk has replaced a failed disk.
 
 * [**ZFS Replication**]({{< ref "SCALE/SCALETutorials/DataProtection/Replication" >}}): copying a ZFS dataset to another dataset.
   The receiving dataset can be on the same machine or on another machine in a remote location.
@@ -203,7 +203,7 @@ While TrueNAS is designed for and ever-evolving towards increased user friendlin
   In this scenario, booting is performed in the same way as on legacy BIOS-based systems: ignoring the partition table and relying on the content of a boot sector.
 
 * **GRUB**: GNU GRUB stands for GNU GRand Unified Bootloader and is commonly referred to as GRUB.
-  GRUB is a boot loader package from the GNU Project and the reference implementation of the Free Software Foundation Multiboot Specification, which provides the choice to boot into one of multiple operating systems installed on a computer or select a specific kernel configuration available on a particular operating system partitions.
+  GRUB is a boot loader package from the GNU Project and the reference implementation of the Free Software Foundation (FSF) Multiboot Specification, which provides the choice to boot into one of multiple operating systems installed on a computer or select a specific kernel configuration available on a particular operating system partitions.
 
 * **VNC**: Virtual Network Computing (VNC) is a graphical desktop-sharing system that uses the remote frame buffer protocol to remotely control another computer.
   It transmits the keyboard and mouse events from one computer to another and relays back the graphical-screen updates through a network.
