@@ -104,31 +104,40 @@
   </div>
 
   <script>
-    function showMajorVersion(shortcodeName, majorVersion) {
-      var majorVersionContents = document.querySelectorAll('.' + shortcodeName + '-major-version-content');
-      majorVersionContents.forEach(function(content) {
-        content.style.display = 'none';
-      });
+    if (!window.showMajorVersion) {
+      window.showMajorVersion = function(shortcodeName, majorVersion) {
+        // Find the clicked tab to get the right context
+        var clickedTab = event.target;
+        var sectionBox = clickedTab.closest('.section-box');
+        
+        if (sectionBox) {
+          // Hide all content for this shortcode within this section box
+          var majorVersionContents = sectionBox.querySelectorAll('.' + shortcodeName + '-major-version-content');
+          majorVersionContents.forEach(function(content) {
+            content.style.display = 'none';
+          });
 
-      var selectedContent = document.getElementById(shortcodeName + '-majorVersion' + majorVersion);
-      if (selectedContent) {
-        selectedContent.style.display = 'block';
-      }
+          // Show selected content within this section box
+          var selectedContent = sectionBox.querySelector('#' + shortcodeName + '-majorVersion' + majorVersion);
+          if (selectedContent) {
+            selectedContent.style.display = 'block';
+            selectedContent.style.setProperty('display', 'block', 'important');
+          }
 
-      // Set the active class on the clicked tab
-      var tabs = document.querySelectorAll('.' + shortcodeName + '-section-tab');
-      tabs.forEach(function(tab) {
-        tab.classList.remove('active');
-      });
+          // Update active tab styling within this section box
+          var tabs = sectionBox.querySelectorAll('.' + shortcodeName + '-section-tab');
+          tabs.forEach(function(tab) {
+            tab.classList.remove('active');
+          });
 
-      var selectedTab = document.querySelector("." + shortcodeName + "-section-tab[onclick*='showMajorVersion'][onclick*='" + shortcodeName + "'][onclick*='" + majorVersion + "']");
-      if (selectedTab) {
-        selectedTab.classList.add('active');
+          // Activate the clicked tab
+          clickedTab.classList.add('active');
+        }
       }
     }
 
     document.addEventListener('DOMContentLoaded', function() {
-      var defaultTabIndex = {{ $defaultTab }} - 1; // Convert to zero-based index
+      var defaultTabIndex = {{ $defaultTab }} - 1;
       var majorVersionTabs = document.querySelectorAll('.{{ $name }}-section-tab');
       if (defaultTabIndex >= 0 && defaultTabIndex < majorVersionTabs.length) {
         majorVersionTabs[defaultTabIndex].click();
