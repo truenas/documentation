@@ -200,7 +200,7 @@ The **Email Options** screen with **SMTP** selected shows standard email configu
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **From Email** | Sets the user account email address used for the envelope **From** email address, the address sending emails, and configured on either the add or edit user screen. For more information, see [**User Screens**]({{< ref "LocalUsersScreensSCALE" >}}). |
+| **From Email** | Sets the user account email address used for the envelope **From** email address, the address sending emails. |
 | **From Name** | Sets the name shown in front of the sending email address, for example, *truenas system 1* in *truenas system 1@example.com*. |
 | **Outgoing Mail Server** | Sets the host name or IP address of the SMTP server used to send emails. |
 | **Mail Server Port** | Sets the SMTP port number. Typically **25**, **465** (secure SMTP), or **587** (submission). |
