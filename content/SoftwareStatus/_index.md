@@ -13,6 +13,9 @@ jump_to_buttons:
   - text: "Recommendations"
     anchor: "which-truenas-version-is-recommended"
     icon: "star"
+  - text: "User Types"
+    anchor: "user-types"
+    icon: "account-group"
   - text: "Release Schedule"
     anchor: "release-schedule"
     icon: "calendar"
@@ -22,7 +25,7 @@ jump_to_buttons:
   - text: "Upgrade Paths"
     anchor: "upgrade-paths"
     icon: "conversion-path"
-  - text: "Releases"
+  - text: "Downloads"
     anchor: "releases"
     icon: "download"
   - text: "Documentation Lifecycle"
@@ -32,23 +35,29 @@ jump_to_buttons:
 
 ## Which TrueNAS Version is Recommended?
 
-Choosing the right TrueNAS version depends on balancing your need for new features against operational risk tolerance. The recommendations below are regularly updated to help you select the most appropriate version based on your use case and risk profile.
+Choose the right TrueNAS version by balancing your need for new features against operational risk tolerance. These recommendations are regularly updated and new releases are recommended for risk-sensitive environments after extensive testing across diverse deployments.
 
 {{< software-status-table >}}
 
 <small>\* TrueNAS CORE is no longer under active development. Enterprise customers should contact TrueNAS Support to discuss migration options.</small>
 
-{{< user-expectations-table >}}
-
-{{< enterprise >}}
-In all cases for systems with a TrueNAS Enterprise support contract, we recommend [contacting the TrueNAS Support team](https://www.truenas.com/support/) prior to updating your TrueNAS appliance.
-Our Support team can provide advice based on your unique requirements and be there to help you resolve any unexpected issues.
-{{< /enterprise >}}
-
-Bookmark this page and check back before upgrading to see the latest recommendations. New releases are recommended for more risk-sensitive environments after extensive testing across diverse deployments.
+<div style="display: flex; align-items: center; gap: 2rem; padding: 1rem; border: 1px solid var(--accent-color); border-radius: 8px; background-color: var(--accent-color-lite);">
+  <div style="flex-shrink: 0;">
+    <img src="/images/open-enterprise-storage--logo-full-color-rgb-large.png" alt="TrueNAS Enterprise" style="max-width: 150px; height: auto;">
+  </div>
+  <div style="flex-grow: 1;">
+    In all cases for systems with a TrueNAS Enterprise support contract, we recommend <a href="https://www.truenas.com/support/">contacting the TrueNAS Support team</a> prior to updating your TrueNAS appliance.
+    Our Support team can provide advice based on your unique requirements and be there to help you resolve any unexpected issues.
+  </div>
+</div>
 
 <!-- Hugo-processed content for software status tab box -->
 <div style="display: none;" id="release-tab-content-source">
+  <div data-tab-id="user-types" data-tab-label="User Types">
+
+{{< user-expectations-table >}}
+
+  </div>
   <div data-tab-id="release-schedule" data-tab-label="Release Schedule">
 
 {{< releaselist name=scale-releases defaultTab=2 >}}
@@ -78,7 +87,7 @@ Releases for major versions can overlap while a new major version is working tow
 {{< include file="/static/includes/SCALEUpgradePaths.md" >}}
 
   </div>
-  <div data-tab-id="releases" data-tab-label="Releases">
+  <div data-tab-id="releases" data-tab-label="Downloads">
 
 {{< columns >}}
 
@@ -117,15 +126,18 @@ Individual releases are within each major version.
 Legacy releases can only be used by downloading the .iso file and freshly installing it to the hardware.
 {{< /expand >}}
 
+<small>* TrueNAS CORE is no longer under active development. Enterprise customers should contact TrueNAS Support to discuss migration options.</small>
+
   </div>
   <div data-tab-id="documentation-lifecycle" data-tab-label="Documentation Lifecycle">
 
-This website is a repository of all documentation for TrueNAS projects and related products.
-The TrueNAS team maintains this documentation and provides regular updates for current and in-development (future) versions of TrueNAS software.
-For documentation purposes, current and future releases are those [recommended](#which-truenas-version-is-recommended) for one or more user types.
+This website serves as the central documentation repository for all TrueNAS projects and related products. The TrueNAS team maintains and regularly updates documentation for current and in-development versions of TrueNAS software. For documentation purposes, current and future releases are those [recommended](#which-truenas-version-is-recommended) for one or more user types.
 
-Documentation for previous releases no longer recommended for any user type is archived and unmaintained.
-See the [Documentation Archive](https://www.truenas.com/docs/archive/) for content related to these releases.
+Documentation is actively maintained for all recommended TrueNAS versions, with updates published alongside software releases. Each TrueNAS product has dedicated documentation sections, and version selectors help users navigate between different software releases when breaking changes or new features are introduced.
+
+When TrueNAS versions are no longer recommended for any user type, their documentation is moved to the [Documentation Archive](https://www.truenas.com/docs/archive/). Archived documentation becomes read-only and receives no further updates, but remains available as a historical reference for existing installations that haven't yet migrated to supported versions.
+
+Users can find additional help through the [TrueNAS Community Forums](https://www.truenas.com/community/) for discussions and community support, or through [GitHub Issues](https://github.com/truenas) for reporting bugs and requesting features. Enterprise customers with support contracts receive priority assistance with documentation questions and access to custom deployment guides.
 
   </div>
 </div>
@@ -138,6 +150,6 @@ See the [Documentation Archive](https://www.truenas.com/docs/archive/) for conte
 <script src="/js/jump-to-button-fix.js"></script>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-    initializeHugoTabs('release-tab-content-source', 'component-tabs-container', 'release-schedule');
+    initializeHugoTabs('release-tab-content-source', 'component-tabs-container', 'user-types');
 });
 </script>
