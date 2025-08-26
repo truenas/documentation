@@ -30,10 +30,11 @@ The <span class="material-icons">more_vert</span> icon for a listed certificate 
 
 **Edit** opens the **Edit DNS Authenticator** screen.
 
-<span class="material-icons">delete</span> deletes opens a **Delete DNS Authenticator** dialog.
+<span class="material-icons">delete</span> deletes opens a [**Delete DNS Authenticator**](#delete-dns-authenticator-dialog) dialog.
 
-## Add DNS Authenticator
-Fields change based on **Authenticator** selection.
+## Add or Edit DNS Authenticator
+
+Fields change based on **Authenticator** selection. The **Edit DNS Authenticator** screen shows the current settings entered and saved on the **Add DNS Authenticator** screen.
 
 {{< trueimage src="/images/SCALE/Credentials/AddDNSAuthenticator.png" alt="Add DNS Authenticator" id="Add DNS Authenticator" >}}
 
@@ -42,8 +43,8 @@ Fields change based on **Authenticator** selection.
 |---------|-------------|
 | **Name** | Text entry field that accepts manual or copy/paste entry of an internal identifier (name) for the authenticator. |
 | **Authenticator** | Sets a DNS provider to create authenticator. The dropdown list of provider options: <br>**[cloudflare](https://www.cloudflare.com)** <br>[**digitalocean**](https://www.digitalocean.com/) <br>**[route53](https://aws.amazon.com/route53/)** <br>[**OVH**](https://www.ovhcloud.com/en/domains/) <br>**shell**. |
-| **Cloudflare Email** | Text entry field that accetps manual or copy/paste entry of your Cloudflare account email address. Go to the Cloudfare account **Dashboard > My Profile** to get the email. Shows when **cloudflare** is selected in **Authenticator**.  |
-| **API Key** | Text entry field that accepts manual or copy/paste entry of the API key obtained from Cloudflare. Go to Cloudflare account **Dashboard > My Profile > API Tokens** to find or create a token. Shows when **cloudflare** is selected in **Authenticator**. |
+| **Cloudflare Email** | Text entry field that accetps manual or copy/paste entry of your Cloudflare account email address. Shows when **cloudflare** is selected in **Authenticator**. |
+| **API Key** | Text entry field that accepts manual or copy/paste entry of the API key obtained from Cloudflare. Shows when **cloudflare** is selected in **Authenticator**. |
 | **API Token** | Text entry field that accepts manual or copy/paste entry of the API token obtained from Cloudflare. Shows when **cloudflare** is selected in **Authenticator**. |
 | **Digitalocean Token** | Text entry field that accepts manual or copy/past entry of the [token](https://docs.digitalocean.com/platform/teams/roles/permissions/tokens/) obtained from Digitalocean. Shows when **digitalocean** is selected in **Authenticator**. |
 | **Access Key ID** | Text entry field that accepts manual or copy/paste entry of the [access key ID](https://repost.aws/questions/QUxdxnRDJpSxu3frH98aYGSQ/key-id-and-secret-access-key) obtained from AWS Route53. Shows when **route53** is selected in **Authenticator**. |
@@ -58,3 +59,8 @@ Fields change based on **Authenticator** selection.
 | **Delay** | Text entry field that accepts manual or copy/paste entry of a numberic value (in seconds) that TrueNAS wites after the creation of the DNS record. The default is 60 or 120 seconds. Shows when **shell** is selected in **Authenticator**. |
 {{< /truetable >}}
 
+## Delete DNS Authenticator Dialog
+
+The **Delete DNS Authenticator** dialog shows a **Confirm** option that, when selected, activates the **Delete** button. TrueNAS asks you to confirm before you can delete the authenticator.
+
+{{< trueimage src="/images/SCALE/Credentials/DeleteDNSAuthenticator.png" alt="Delete DNS Authenticator" id="Delete DNS Authenticator" >}}
