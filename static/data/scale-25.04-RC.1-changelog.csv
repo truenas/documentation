@@ -1,0 +1,6 @@
+Key,Summary,Priority,Status,Fix Version/s,Components,Description,Assignee,Created,Updated
+NAS-134309,Reserve 2 GiB of disk space for future disk replacement,Medium,Done,25.04-RC.1,Storage,Allow replacement with slightly smaller disks,William Davis,2024-02-25,2024-03-11
+NAS-130766,Ensure disk temperature reporting is available for all disks,Medium,Done,25.04-RC.1,Storage,Fix disk temperature detection issues,Xavier Lee,2024-01-15,2024-03-11
+NAS-134346,Allow SMB authentication for usernames with a capital letter,Low,Done,25.04-RC.1,SMB,Fix SMB username case sensitivity,Yolanda Smith,2024-03-05,2024-03-11
+NAS-133853,Fix top toolbar icon colors for iX Blue Paper and High Contrast UI themes,Low,Done,25.04-RC.1,UI,Correct toolbar icon color display,Zachary Brown,2024-02-28,2024-03-11
+NAS-133655,Enable the applications Web UI button when accessing from IPv6 or mDNS name,Low,Done,25.04-RC.1,Apps,Fix Web UI button for IPv6/mDNS access,Amy Johnson,2024-02-22,2024-03-11
