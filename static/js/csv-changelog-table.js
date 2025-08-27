@@ -531,6 +531,7 @@ async function createCSVChangelogTable(baseUrlOrSingleUrl, containerId, options 
         // Load default version
         const defaultVersionData = config.versions.find(v => v.value === config.defaultVersion);
         const initialUrl = `${config.baseUrl}/${defaultVersionData.filename}`;
+        console.log('Initial CSV URL:', initialUrl);
         fetchCSVData(initialUrl, config.csvDelimiter, config.columns);
     } else {
         fetchCSVData(config.singleCsvUrl, config.csvDelimiter, config.columns);
@@ -547,6 +548,7 @@ function onVersionChange() {
     if (versionData) {
         const csvUrl = `${currentConfig.baseUrl}/${versionData.filename}`;
         console.log('Loading version:', selectedVersion, 'from:', csvUrl);
+        console.log('Base URL:', currentConfig.baseUrl);
         
         // Add loading state with smooth transition
         const tableBody = document.getElementById('csv-table-body');

@@ -30,7 +30,7 @@ Versions are now configured in `/static/data/changelog-versions.json`:
     "label": "25.10 (Goldeye)",
     "versions": [
       { "value": "all", "label": "25.10 (All)", "filename": "25.10-changelog.csv" },
-      { "value": "25.10.0-BETA.1", "label": "25.10.0-BETA.1", "filename": "25.10.0-BETA.1-changelog.csv" }
+      { "value": "25.10-BETA.1", "label": "25.10-BETA.1", "filename": "25.10-BETA.1-changelog.csv" }
     ],
     "defaultVersion": "all"
   }
@@ -45,7 +45,7 @@ Versions are now configured in `/static/data/changelog-versions.json`:
 ├── scale-25.04.1-changelog.csv      # 25.04.1 specific tickets  
 ├── scale-25.04.0-changelog.csv      # 25.04.0 specific tickets
 ├── 25.10-changelog.csv              # All 25.10 tickets (generated)  
-└── 25.10.0-BETA.1-changelog.csv     # 25.10.0-BETA.1 specific tickets
+└── 25.10-BETA.1-changelog.csv     # 25.10-BETA.1 specific tickets
 ```
 
 #### **🎯 Version Selector**
