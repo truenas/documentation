@@ -28,7 +28,7 @@ Users can configure Kerberos realms by navigating to **Directory Services** and 
 
 ![KerberosRealmsScreen](/images/SCALE/Credentials/KerberosRealmsScreen.png "Kerberos Realms Screen")
 
-Enter the realm and key distribution (KDC) names, then define the admin and password servers for the realm.
+Enter the realm and key distribution (KDC) names. You can specify a primary KDC for failover scenarios, which is especially useful in hub-and-spoke domain topologies. Define the admin and password servers for the realm.
 
 {{<include file="/static/includes/addcolumnorganizer.md">}}
 
@@ -57,12 +57,6 @@ To make LDAP use a keytab principal, click **Settings** in the **LDAP** window a
 
 ### Kerberos Settings
 
-{{< hint type=warning >}}
-If you do not understand Kerberos auxiliary parameters, do not attempt to configure new settings!
+{{< hint type=note >}}
+Advanced Kerberos auxiliary parameter configuration options are removed in TrueNAS 25.10. Kerberos settings are now managed through the unified directory services configuration.
 {{< /hint >}}
-
-The **Kerberos Settings** screen includes two fields used to configure auxiliary parameters.
-
-![KerberosSettingsScreen](/images/SCALE/Credentials/KerberosSettingsScreen.png "Kerberos Settings Screen")
-
-{{< include file="/static/includes/KerberosWarning.md" >}}
