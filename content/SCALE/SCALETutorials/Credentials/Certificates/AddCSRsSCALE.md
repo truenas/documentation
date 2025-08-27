@@ -21,7 +21,7 @@ The **Certificate Signing Requests** widget allows users to configure a message 
 An ACME certificate is created based on the settings in the selected CSR.
 
 If you plan to create an ACME certificate, before adding a CSR, make sure the certificate authority provider account (i.e., Cloudflare, DigitalOcean, etc.) is correctly configured with all domains entered in this CSR.
-For example, if using a Cloudflare DNS authenticator, in the Cloudflare account, register the domain(s) entered in the **Subject Alternative Name** field on the **Certificate Subject** screen in the **Add CSR** wizard
+For example, if using a Cloudflare DNS authenticator, in the Cloudflare account, register the domain(s) entered in the **Subject Alternative Name** field on the **Certificate Subject** screen in the **Add CSR** wizard.
 If the CSR and provider accounts are not properly configured, TrueNAS shows an error indicating the problem with the configuration.
 For information on how to add a DNS authenticator in TrueNAS, [click here]({{< relref "AddACMESCALE.md" >}}).
 {{< /hint >}}
