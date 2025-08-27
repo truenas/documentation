@@ -1,3 +1,80 @@
+Process time: 2025-08-25 11:07:29
+Initiated by: Dan Pizappi
+
+1430 files reviewed.
+69 files deleted.
+The following files were deleted:
+C:\Users\iXUser\Documents\GitHub\documentation\static\includes\AppsHostIP.md
+C:\Users\iXUser\Documents\GitHub\documentation\static\includes\ResilverPriority.md
+C:\Users\iXUser\Documents\GitHub\documentation\static\includes\ResilverPrioritySetWhen.md
+C:\Users\iXUser\Documents\GitHub\documentation\static\includes\SMBPurposeOtherOptions.md
+C:\Users\iXUser\Documents\GitHub\documentation\static\includes\SMBPurposePresets.md
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\CORE\Sharing\SharingSMBScreen.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\DataProtection\AddScrubTaskSCALE.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\DataProtection\ManualSMARTTestDialog.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\DataProtection\ManualSMARTTestSupportDialog.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\DataProtection\PriorityResilveringForm.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\DataProtection\resilverscrubedit.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\DataProtection\ScrubPoolDialog.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\DataProtection\scrubtaskpriority.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\DataProtection\SMARTTestResultsofDiskExpanded.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Datasets\AddZvolEncryptionOptionsKey.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Datasets\DatasetDetailsWidgetChildDataset.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Datasets\DatasetDetailsWidgetRootDataset.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Datasets\DatasetSpaceManagementWidgetRootDataset.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Datasets\DatasetsScreenAfterAddingAPool.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Datasets\DatasetsScreenBeforeAddingAPool.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Datasets\DeleteDatasetChildDataset.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Datasets\DeleteDatasetChildUsingAService.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Datasets\DeleteDatasetParentDataset.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Datasets\DetailstWidgetSystemDataset.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Datasets\DetailsWidgetChildDataset.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Datasets\PermissionsWidgetOwnerNSFv4Options.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Datasets\PermissionsWidgetParentDataset.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Datasets\PermissionsWidgetRootDataset.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Datasets\RolesWidgetRootDataset.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Datasets\ZFSEncryptionWidgetChildDatasetUnlocked.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Datasets\ZFSEncryptionWidgetWithGoToEncryptionRoot.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Network\AddInterfaceAliases.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Network\AddInterfaceLinkAggFailoverSettings.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Network\AddInterfaceLinkAggLoadbalanceSettings.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Network\AddInterfaceLinkAggregationSettings.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Network\AddInterfaceNicDeviceOtherSettingsSCALE.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Network\AddInterfaceNicDeviceSCALE.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Network\AddInterfaceOtherSettings.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Network\AddInterfacePanel.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Network\AddInterfaceVLANType.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Network\EditInterfaceAddAliasesHA.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Network\EditInterfaceClearDHCP.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Network\EditInterfaceNicDeviceSCALE.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Network\GlobalConfigAllowSpecificServiceOptions.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Network\NetworkInterfacesBridgeSCALE.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Network\NetworkInterfacesNoIPSCALE.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Shares\AddNFSAdvancedOptionsAccessSettings (2).png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Shares\AddSMBAdvancedOtherSettingsLegacyShare.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Shares\AddSMBAdvancedOtherSettingsTimeMachineShare.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Shares\AddSMBAdvancedSettingsExternalShare.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Shares\AddSMBAdvancedSettingsMultiProtocolShare.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Shares\iSCSIAuthorizedAccessScreen.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Shares\iSCSIExtenstScreen.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Shares\iSCSIInitiatosrScreen.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Shares\NVMe-oFScreenWithSubsystem.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Storage\DeviceDiskInfoWidget.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Storage\DeviceDiskSMARTInfoWidget.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Storage\DevicesDiskHardwareDiskEncryptionWidget.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Storage\DevicesDiskZFSInfoWidget.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Storage\DevicesExtendVDEVDialog.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Storage\DevicesScreenDataVdevsUnexpanded.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Storage\DevicesVDEVZFSInfoWidget.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Storage\ManageSEDPasswordDialog.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Storage\SMARTTestResultsExpandedAfterUnselectAll.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Storage\StorageDashboardTopologyWidget.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Storage\StorageDashboardZFSHealthWidgetWithDedup.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Storage\VDEVScreen.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Virtualization\VMSaveNetworkChanges.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Virtualization\VMTestNetworkChanges.png
+
+----------------------------------------
 Process time: 2025-07-25 10:10:41
 Initiated by: Dan Pizappi
 
