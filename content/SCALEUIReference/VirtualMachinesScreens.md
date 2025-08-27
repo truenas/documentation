@@ -172,7 +172,7 @@ The **Operating System** settings specify the VM operating system type, the time
 | **Enable Trusted Platform Module (TPM)** | Sets TrueNAS to provide a virtual TPM 2.0 device for the VM. This enables hardware-based security functions, including secure key storage and cryptographic operations. Required for Windows 11. |
 | **Shutdown Timeout** | Text entry field that accepts manual entry of a time in seconds that the system waits for the VM to cleanly shut down. During system shutdown, the system powers off after the shutdown timeout entered for the VM expires. |
 | **Start on Boot** | Sets the VM to automatically start after restarting the system or when it is rebooted. Selected by default. |
-| **Enable Display** | Enables a display (Virtual Network Computing) remote connection. Requires UEFI booting. Selected by default. |
+| **Enable Display (VNC)** | Enables a VNC display (Virtual Network Computing) remote connection. VNC is the default display type when adding a VM. Requires UEFI booting. Selected by default. |
 | **Bind** | Shows when **Enable Display** is selected. Sets an IP address to use for remote VNC sessions. Note that this setting only applies when using a VNC client other than the TrueNAS WebUI. |
 | **Password** | (Required)  Displays when **Enable Display** is selected.Enter a password to secure access to the VM. Enter this when logging into the VNC display. |
 {{< /truetable >}}
@@ -310,7 +310,7 @@ Disk settings, including disk location, drive type, and disk sector size, show w
 {{< /expand >}}
 
 {{< expand "Display Settings" "v" >}}
-Display settings show when **Device Type** is set to **Display**.
+Display settings show when **Device Type** is set to **Display**. You can only have one display type set to either VNC (the default when creating a new VM) but can add a second display device set to SPICE.
 
 Remote clients can connect to VM display sessions using a SPICE client, or by installing a third-party remote desktop server inside your VM.
 SPICE clients are available from the [SPICE Protocol site](https://www.spice-space.org/).
@@ -320,6 +320,7 @@ SPICE clients are available from the [SPICE Protocol site](https://www.spice-spa
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
+| **Display Type** | Sets a new display device type to the option selected. <br>If the VM is created with no display setting, the options shown in **Display Type** are **VNC** or **SPICE**. If the VM is created with the default **VNC** display, only the **SPICE** option shows in on the dropdown list. <br>If you create a VM without adding the device and then later add a display device, the options show **VNC** and **SPICE** on the dropdown list. <br>TrueNAS allows creating two display devices, one from the VM creation wizard, which uses the default **VNC** display, and a second through the **Add Device** screen with the **Device Type** is set to **Display**. Only **SPICE** shows when adding the second display device. |
 | **Port** | Text field that accepts manual or copy/paste entry of a port number. Can be set to **0**, left empty for TrueNAS to assign a port when the VM is started, or set to a fixed preferred port number. |
 | **Resolution** | Sets the screen resolution for the VM display session to the option selected on the dropdown list. |
 | **Bind** | Sets the IP address used for the SPICE display sessions to the option selected on the dropdown list. Options include the default **0.0.0.0**, **::**, **::1**, IP addresses obtained from your network, and the TrueNAS primary interface. |

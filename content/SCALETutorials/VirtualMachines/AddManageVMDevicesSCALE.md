@@ -183,12 +183,18 @@ After stopping the VM and clicking **Devices** to open the **Devices** screen:
 
    {{< trueimage src="/images/SCALE/Virtualization/VMAddDeviceDisplay.png" alt="Devices Add Display" id="Devices Add Display" >}}
 
-2. Enter a fixed port number in **Port**.
+2. Select the **Display Device** option from the dropdown list.
+   TrueNAS allows a VM to have two display devices, a VNC display device added through the VM creation wizard if the **Enable Display (VNC)** option is selected, and a second SPICE display device added to the VM using the **Add Device** screen with **Device Type** set to display.
+
+   If you created the VM without the display, the **Display Type** dropdown list shows the **VNC** and **SPICE** options.
+   Select the display type on the dropdown list. (VNC is recommended).
+   To add a second display device, repeat this procedure and select **SPICE** (the only option for the second display device).
+3. Enter a fixed port number in **Port**.
    To allow TrueNAS to assign the port after restarting the VM, set the value to zero (leave the field empty).
-3. Specify the display session settings:
+4. Specify the display session settings:
    a. Select the screen resolution to use for the display from the **Resolution** dropdown.
    b. Select an IP address for the display device to use in **Bind**. The default is **0.0.0.0**.
    c. Enter a unique password for the display device to securely access the VM.
-4. Select **Web Interface** to allow access to the VNC web interface.
-5. Click **Save**.
-6. Click on the **Virtual Machines** breadcrumb at the top of the screen, and restart the VM.
+5. Select **Web Interface** to allow access to the VNC web interface.
+6. Click **Save**.
+7. Click on the **Virtual Machines** breadcrumb at the top of the screen, and restart the VM.
