@@ -1,3 +1,4 @@
+/scale/25.10 public/scale/25.10
 /scale/25.04 public/scale/25.04
 /scale/24.10 public/scale/24.10
 
