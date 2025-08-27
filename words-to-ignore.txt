@@ -2302,3 +2302,5 @@ Seagate
 cksum
 Cksum
 nvd
+ManagePoolsScale
+Halfmoon

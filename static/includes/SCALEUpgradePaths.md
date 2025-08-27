@@ -67,8 +67,7 @@ Visit the <a href="https://www.truenas.com/software-status/" target="_blank">Tru
             F["23.10.2 (Cobia)"] -->|update| G
             G["24.04.2.5 (Dragonfish)"] -->|update| H
             H["24.10.2.3 (Electric Eel)"] -->|update| I
-            I["25.04.2.3 (Fangtooth)"] -->|"(anticipated)"| J
-            J["25.10 (Goldeye)"]
+            I["25.04.2.3 (Fangtooth)"]
           {{< /mermaid >}}
         </div>
       </div>
@@ -85,9 +84,8 @@ Visit the <a href="https://www.truenas.com/software-status/" target="_blank">Tru
             C -->|update| E
             D["23.10.2 (Cobia)"] -->|update| E
             E["24.04.2.5 (Dragonfish)"]  -->|update| F
-            F["24.10.2.3 (Electric Eel)"] -->|update| G
-            G["25.04.1.3 (Fangtooth)"] -->|"(anticipated)"| H
-            H["25.10 (Goldeye)"]
+            F["24.10.2.3 (Electric Eel)"] -->|"(anticipated)"| G
+            G["25.04.2.3 (Fangtooth)"]
           {{< /mermaid >}}
         </div>
       </div>
