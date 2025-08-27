@@ -17,7 +17,7 @@ async function createCSVChangelogTable(baseUrlOrSingleUrl, containerId, options 
     let versionConfig = null;
     if (options.useVersioning && options.versionKey) {
         try {
-            const response = await fetch('/static/data/changelog-versions.json');
+            const response = await fetch('/data/changelog-versions.json');
             const allVersions = await response.json();
             versionConfig = allVersions[options.versionKey];
         } catch (error) {
