@@ -68,8 +68,8 @@ If you have not yet added a virtual machine to your system, clicking **Add Virtu
 
    g. (Optional) Select **Start on Boot** to start the VM after the system is restarted or boots up.
    
-   h. (Optional) Select **Enable Display** to enable a SPICE Virtual Network Computing (VNC) remote connection for the VM.
-      **Enable Display** shows the **Bind** and **Password** fields.
+   h. (Optional) Select **Enable Display (VNC)** to enable a Virtual Network Computing (VNC) remote connection for the VM.
+      **Enable Display (VNC)** shows the **Bind** and **Password** fields.
 
    h. Select the IP address or option to use in **Bind**. Shows if you select **Enable Display**.
       The **Bind** and **Password** fields display. If it is selected, to change the default IP address to use a specific address as the display network interface; otherwise, leave it set to **0.0.0.0**.
