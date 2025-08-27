@@ -258,7 +258,7 @@
               <hr class="version-line">
             </div>
             <div class="truenas-dropdown-item" onclick="selectVersion('scale-nightly')" id="scale-nightly">26.04</div>
-            <div class="truenas-dropdown-item" onclick="selectVersion('25.10')" id="2504">25.10</div>
+            <div class="truenas-dropdown-item" onclick="selectVersion('25.10')" id="2510">25.10</div>
           </div>
           <div class="truenas-version-group">
             <div class="version-header">
@@ -486,6 +486,8 @@
         relative_url = 'scale/24.10/';
       } else if (version === '25.04') {
         relative_url = 'scale/25.04/';
+	  } else if (version === '25.10') {
+        relative_url = 'scale/25.10/';
       } else if (version === 'scale-nightly') {
         relative_url = 'scale/';
       } else if (version === '3.0') {
