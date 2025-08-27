@@ -6,38 +6,184 @@
     background-color: inherit;
 }
 
+/* Logo visibility for light/dark modes */
+/* Default light mode */
+.dark-mode-logo { display: none !important; }
+.light-mode-logo { display: block !important; }
+
+/* Manual dark mode selection */
+:root[color-theme="dark"] .light-mode-logo { display: none !important; }
+:root[color-theme="dark"] .dark-mode-logo { display: block !important; }
+
+/* Manual light mode selection */
+:root[color-theme="light"] .dark-mode-logo { display: none !important; }
+:root[color-theme="light"] .light-mode-logo { display: block !important; }
+
+/* System preference fallback */
+@media (prefers-color-scheme: dark) {
+    :root:not([color-theme]) .light-mode-logo { display: none !important; }
+    :root:not([color-theme]) .dark-mode-logo { display: block !important; }
+}
+
+@media (prefers-color-scheme: light) {
+    :root:not([color-theme]) .dark-mode-logo { display: none !important; }
+    :root:not([color-theme]) .light-mode-logo { display: block !important; }
+}
+
+/* Enhanced scroll container with navigation controls */
+.scroll-wrapper {
+    position: relative;
+    width: calc(100% - 80px); /* Leave space for arrows (40px each side) */
+    margin: 0 40px; /* Center the container with arrow space */
+}
+
 .scroll-container {
-    overflow-x: auto; /* Enable horizontal scroll */
-    white-space: nowrap; /* Prevent wrapping of content */
-    width: 100%; /* Make the container full width */
-    cursor: grab; /* Change cursor to indicate draggable area */
-    user-select: none; /* Prevent text selection */
+    overflow-x: auto;
+    white-space: nowrap;
+    width: 100%;
+    cursor: grab;
+    user-select: none;
+    position: relative;
+    scroll-behavior: smooth;
 }
 
 .scroll-container:active {
-    cursor: grabbing; /* Change cursor when dragging */
+    cursor: grabbing;
 }
 
-/* Target the scrollbars within .scroll-container */
+.scroll-container:hover {
+    background: rgba(0, 149, 213, 0.02);
+    border-radius: 8px;
+    transition: background-color 0.2s ease;
+}
+
+/* Hide scrollbars completely for clean dot-only navigation */
 .scroll-container::-webkit-scrollbar {
-  height: .4em;
+  display: none;
 }
 
-.scroll-container::-webkit-scrollbar-track {
-  background: var(--body-background); /* Use your CSS variable */
+.scroll-container {
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  scrollbar-width: none;  /* Firefox */
 }
 
-.scroll-container::-webkit-scrollbar-thumb {
-  background: #0095d5;
+/* Navigation arrows - always visible for discoverability */
+.scroll-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 149, 213, 0.8);
+    color: white;
+    border: none;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 20;
+    opacity: 1; /* Always visible */
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: bold;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
 }
 
-.scroll-container::-webkit-scrollbar-thumb:hover {
-  background: #0071a2;
+.scroll-nav:hover {
+    background: rgba(0, 149, 213, 1);
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.scroll-nav:active {
+    transform: translateY(-50%) scale(0.95);
+}
+
+.scroll-nav-left {
+    left: -3.5rem; /* Closer to the edge, further from container */
+}
+
+.scroll-nav-right {
+    right: -3.5rem; /* Closer to the edge, further from container */
+}
+
+/* Hide arrows when at scroll boundaries */
+.scroll-nav.hidden {
+    opacity: 0 !important;
+    pointer-events: none;
+}
+
+/* Edge fade gradients - positioned relative to the scroll wrapper */
+.scroll-wrapper::before,
+.scroll-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 40px;
+    pointer-events: none;
+    z-index: 5;
+    transition: opacity 0.3s ease;
+}
+
+.scroll-wrapper::before {
+    left: 0;
+    background: linear-gradient(to right, var(--card-background) 0%, transparent 100%);
+}
+
+.scroll-wrapper::after {
+    right: 0;
+    background: linear-gradient(to left, var(--card-background) 0%, transparent 100%);
+}
+
+/* Hide gradients at scroll boundaries */
+.scroll-wrapper.at-start::before {
+    opacity: 0;
+}
+
+.scroll-wrapper.at-end::after {
+    opacity: 0;
+}
+
+/* Scroll position indicator */
+.scroll-indicator {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    gap: 4px;
+}
+
+.scroll-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(0, 149, 213, 0.3);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.scroll-dot.active {
+    background: #0095d5;
+    transform: scale(1.2);
+}
+
+.scroll-dot:hover {
+    background: #0071a2;
+    transform: scale(1.1);
 }
 
 .chart-wrapper {
-    display: inline-block; /* Make the chart inline to work with white-space */
-    min-width: 1400px; /* Adjust width to your desired chart size */
+    display: inline-block;
+    width: 1400px; /* Force fixed width instead of min-width */
+}
+
+/* Make sure the SVG fills the wrapper */
+.chart-wrapper svg {
+    width: 100% !important;
+    max-width: none !important;
+    min-width: 1400px;
 }
 </style>
 
@@ -53,42 +199,62 @@ Visit the <a href="https://www.truenas.com/software-status/" target="_blank">Tru
 
 <div class="section-box" id="scale-upgrade-paths" style="padding: 0 40px 40px 40px; margin-bottom: 20px;">
     <div class="upgrade-paths-container">
-      <img src="/images/TrueNAS_Community_Edition.png" style="box-shadow: none; max-width: 225px; padding-bottom: 20px; padding-top: 40px;" title="TrueNAS Community Edition" alt="TrueNAS Community Edition">
-      <div class="scroll-container" id="scrollContainer1">
-        <div class="chart-wrapper">
-          {{< mermaid class="mermaid_sizing" >}}
-          flowchart LR
-            A["11.3-U5"] -->|update| B["12.0-U8.1"]
-            B -->|"update / ISO install"| C["13.0-U6.8 / 13.3-U2"]
-            C -->|update| G
-            C -->|ISO install| I
-            D["22.02.4 (Angelfish)"] -->|update| E
-            E["22.12.4.2 (Bluefin)"] -->|update| F
-            F["23.10.2 (Cobia)"] -->|update| G
-            G["24.04.2.5 (Dragonfish)"] -->|update| H
-            H["24.10.2.3 (Electric Eel)"] -->|update| I
-            I["25.04.2.3 (Fangtooth)"] -->|"(anticipated)"| J
+      <img src="/images/truenas-community-edition-logo-blue.png" class="light-mode-logo" style="box-shadow: none; max-width: 225px; padding-bottom: 20px; padding-top: 40px;" title="TrueNAS Community Edition" alt="TrueNAS Community Edition">
+      <img src="/images/truenas-community-edition-logo-white.png" class="dark-mode-logo" style="box-shadow: none; max-width: 225px; padding-bottom: 20px; padding-top: 40px; display: none;" title="TrueNAS Community Edition" alt="TrueNAS Community Edition">
+      <div class="scroll-wrapper">
+        <button class="scroll-nav scroll-nav-left" aria-label="Scroll left" title="Scroll left">‹</button>
+        <button class="scroll-nav scroll-nav-right" aria-label="Scroll right" title="Scroll right">›</button>
+        <div class="scroll-container" id="scrollContainer1">
+          <div class="chart-wrapper">
+            {{< mermaid class="mermaid_sizing" >}}
+            flowchart LR
+              A["11.3-U5"] -->|update| B["12.0-U8.1"]
+              B -->|"update / ISO install"| C["13.0-U6.8 / 13.3-U2"]
+              C -->|update| G
+              C -->|ISO install| I
+              D["22.02.4 (Angelfish)"] -->|update| E
+              E["22.12.4.2 (Bluefin)"] -->|update| F
+              F["23.10.2 (Cobia)"] -->|update| G
+              G["24.04.2.5 (Dragonfish)"] -->|update| H
+              H["24.10.2.3 (Electric Eel)"] -->|update| I
+              I["25.04.2.3 (Fangtooth)"] -->|"(anticipated)"| J
             J["25.10 (Goldeye)"]
-          {{< /mermaid >}}
+            {{< /mermaid >}}
+          </div>
+        </div>
+        <div class="scroll-indicator" id="scrollIndicator1">
+          <div class="scroll-dot" data-section="0" title="Beginning"></div>
+          <div class="scroll-dot" data-section="1" title="Middle"></div>
+          <div class="scroll-dot active" data-section="2" title="Latest versions"></div>
         </div>
       </div>
     </div>
     <div class="upgrade-paths-container">
-      <img src="/images/TrueNAS_Enterprise.png" style="box-shadow: none; max-width: 225px; padding-bottom: 20px; padding-top: 40px;" title="TrueNAS Enterprise" alt="TrueNAS Enterprise">
-      <div class="scroll-container" id="scrollContainer2">
-        <div class="chart-wrapper">
-          {{< mermaid class="mermaid_sizing" >}}
-          flowchart LR
-            A["11.3-U5"] -->|update| B
-            B["12.0-U8.1"] -->|update| C
-            C["13.0-U6.8"] -->|ISO install| G
-            C -->|update| E
-            D["23.10.2 (Cobia)"] -->|update| E
-            E["24.04.2.5 (Dragonfish)"]  -->|update| F
-            F["24.10.2.3 (Electric Eel)"] -->|update| G
-            G["25.04.1.3 (Fangtooth)"] -->|"(anticipated)"| H
+      <img src="/images/truenas-enterprise-logo-logo-blue.png" class="light-mode-logo" style="box-shadow: none; max-width: 225px; padding-bottom: 20px; padding-top: 40px;" title="TrueNAS Enterprise" alt="TrueNAS Enterprise">
+      <img src="/images/truenas-enterprise-logo-logo-white-rgb-900px-w-72ppi.png" class="dark-mode-logo" style="box-shadow: none; max-width: 225px; padding-bottom: 20px; padding-top: 40px; display: none;" title="TrueNAS Enterprise" alt="TrueNAS Enterprise">
+      <div class="scroll-wrapper">
+        <button class="scroll-nav scroll-nav-left" aria-label="Scroll left" title="Scroll left">‹</button>
+        <button class="scroll-nav scroll-nav-right" aria-label="Scroll right" title="Scroll right">›</button>
+        <div class="scroll-container" id="scrollContainer2">
+          <div class="chart-wrapper">
+            {{< mermaid class="mermaid_sizing" >}}
+            flowchart LR
+              A["11.3-U5"] -->|update| B
+              B["12.0-U8.1"] -->|update| C
+              C["13.0-U6.8"] -->|ISO install| G
+              C -->|update| E
+              D["23.10.2 (Cobia)"] -->|update| E
+              E["24.04.2.5 (Dragonfish)"]  -->|update| F
+              F["24.10.2.3 (Electric Eel)"] -->|update| G
+              G["25.04.2.3 (Fangtooth)"] -->|"(anticipated)"| H
             H["25.10 (Goldeye)"]
-          {{< /mermaid >}}
+            {{< /mermaid >}}
+          </div>
+        </div>
+        <div class="scroll-indicator" id="scrollIndicator2">
+          <div class="scroll-dot" data-section="0" title="Beginning"></div>
+          <div class="scroll-dot" data-section="1" title="Middle"></div>
+          <div class="scroll-dot active" data-section="2" title="Latest versions"></div>
         </div>
       </div>
     </div>
@@ -103,74 +269,239 @@ Carefully review release notes for each skipped major version before upgrading, 
 Consider stopping at major versions with significant impacts to address changes before continuing the upgrade path or be prepared to manually reconfigure incompatibilities on the latest target version.
 
 <script>
-  // Function to scroll containers to the right
-  function scrollContainersToRight() {
-    var scrollContainer1 = document.getElementById("scrollContainer1");
-    var scrollContainer2 = document.getElementById("scrollContainer2");
+  // Enhanced scroll functionality - wait for Mermaid to properly render
+  document.addEventListener("DOMContentLoaded", function() {
     
-    if (scrollContainer1) {
-      scrollContainer1.scrollLeft = scrollContainer1.scrollWidth;
+    let checkAttempts = 0;
+    
+    function waitForMermaidAndInitialize() {
+      if (checkAttempts >= 15) { // 3 seconds total timeout
+        initializeScrollControls();
+        return;
+      }
+      
+      // Find the VISIBLE containers (there might be duplicates)
+      const allContainers1 = document.querySelectorAll('[id="scrollContainer1"]');
+      const allContainers2 = document.querySelectorAll('[id="scrollContainer2"]');
+      
+      const container1 = Array.from(allContainers1).find(el => el.offsetParent !== null);
+      const container2 = Array.from(allContainers2).find(el => el.offsetParent !== null);
+      
+      if (container1 && container1.scrollWidth > 0 && 
+          container2 && container2.scrollWidth > 0) {
+        initializeScrollControls();
+      } else {
+        checkAttempts++;
+        setTimeout(waitForMermaidAndInitialize, 200);
+      }
     }
     
-    if (scrollContainer2) {
-      scrollContainer2.scrollLeft = scrollContainer2.scrollWidth;
+    function initializeWhenReady() {
+      // Start checking immediately
+      waitForMermaidAndInitialize();
     }
-  }
-
-  // For standalone pages - wait for DOMContentLoaded
-  if (document.readyState === 'loading') {
-    document.addEventListener("DOMContentLoaded", function() {
-      // Wait a bit for Mermaid to render if present
-      setTimeout(scrollContainersToRight, 100);
-      setTimeout(scrollContainersToRight, 500);
-      setTimeout(scrollContainersToRight, 1000);
+    
+    // Start initialization
+    initializeWhenReady();
+    
+    // Global function for manual testing
+    window.reinitializeScrollControls = function() {
+      initializeScrollControls();
+    };
+    
+    // Also listen for tab changes and reinitialize when this tab becomes visible
+    function handleTabVisibility() {
+      const upgradePathsSection = document.getElementById('scale-upgrade-paths');
+      if (upgradePathsSection && upgradePathsSection.offsetParent !== null) {
+        // Reset check attempts and try again
+        checkAttempts = 0;
+        setTimeout(waitForMermaidAndInitialize, 100);
+      }
+    }
+    
+    // Listen for tab changes (multiple methods to catch different tab systems)
+    document.addEventListener('click', function(e) {
+      if (e.target.matches('a[href*="upgrade"], .nav-link, .tab-link, [role="tab"]')) {
+        setTimeout(handleTabVisibility, 300);
+      }
     });
-  } else {
-    // For tab content - DOM is already ready, scroll immediately and with delays
-    scrollContainersToRight();
-    setTimeout(scrollContainersToRight, 100);
-    setTimeout(scrollContainersToRight, 500);
-    setTimeout(scrollContainersToRight, 1000);
-  }
-
-  // Add click and drag scrolling functionality
-  const addDragScroll = (scrollContainer) => {
-    let isDown = false;
-    let startX;
-    let scrollLeft;
-
-    scrollContainer.addEventListener('mousedown', (e) => {
-      isDown = true;
-      scrollContainer.classList.add('active');
-      startX = e.pageX - scrollContainer.offsetLeft;
-      scrollLeft = scrollContainer.scrollLeft;
-      scrollContainer.style.userSelect = 'none'; // Prevent text selection
+    
+    // Also try intersection observer for when the section becomes visible
+    if (typeof IntersectionObserver !== 'undefined') {
+      const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+          if (entry.isIntersecting && entry.intersectionRatio > 0.1) {
+            setTimeout(() => {
+              const container1 = document.getElementById('scrollContainer1');
+              if (container1 && container1.scrollWidth === 0) {
+                checkAttempts = 0;
+                waitForMermaidAndInitialize();
+              }
+            }, 200);
+          }
+        });
+      }, { threshold: 0.1 });
+      
+      const upgradePathsSection = document.getElementById('scale-upgrade-paths');
+      if (upgradePathsSection) {
+        observer.observe(upgradePathsSection);
+      }
+    }
+    
+    // Manual trigger for testing - click anywhere on the upgrade paths section
+    document.addEventListener('click', function(e) {
+      const upgradePathsSection = document.getElementById('scale-upgrade-paths');
+      if (upgradePathsSection && upgradePathsSection.contains(e.target)) {
+        const container1 = document.getElementById('scrollContainer1');
+        if (container1 && container1.scrollWidth === 0) {
+          checkAttempts = 0;
+          setTimeout(waitForMermaidAndInitialize, 100);
+        }
+      }
     });
+    
+    function initializeScrollControls() {
+      const containerIds = ['scrollContainer1', 'scrollContainer2'];
+      
+      containerIds.forEach((containerId) => {
+        // Find the VISIBLE container with this ID (there might be duplicates)
+        const allContainers = document.querySelectorAll(`[id="${containerId}"]`);
+        const container = Array.from(allContainers).find(el => el.offsetParent !== null);
+        
+        if (!container) {
+          return;
+        }
+        
+        const wrapper = container.closest('.scroll-wrapper');
+        const leftBtn = wrapper ? wrapper.querySelector('.scroll-nav-left') : null;
+        const rightBtn = wrapper ? wrapper.querySelector('.scroll-nav-right') : null;
+        const indicatorId = containerId.replace('Container', 'Indicator');
+        // Find the VISIBLE indicator that corresponds to this container
+        const allIndicators = document.querySelectorAll(`[id="${indicatorId}"]`);
+        const indicator = Array.from(allIndicators).find(el => el.offsetParent !== null);
+        const dots = indicator ? indicator.querySelectorAll('.scroll-dot') : [];
+        
 
-    scrollContainer.addEventListener('mouseleave', () => {
-      isDown = false;
-      scrollContainer.classList.remove('active');
-      scrollContainer.style.userSelect = ''; // Re-enable text selection
-    });
+        // Set initial scroll position to rightmost
+        if (container.scrollWidth > container.clientWidth) {
+          container.scrollLeft = container.scrollWidth - container.clientWidth;
+        }
+        
+        // Update scroll state function
+        function updateScrollState() {
+          const { scrollLeft, scrollWidth, clientWidth } = container;
+          const maxScroll = scrollWidth - clientWidth;
+          const scrollPercentage = maxScroll > 0 ? scrollLeft / maxScroll : 0;
+          
+          
+          // Update wrapper classes for gradients
+          if (wrapper) {
+            wrapper.classList.toggle('at-start', scrollLeft <= 5);
+            wrapper.classList.toggle('at-end', scrollLeft >= maxScroll - 5);
+          }
+          
+          // Update scroll indicators with partial states (multiple dots can be active)
+          if (dots.length > 0) {
+            // scrollPercentage: 0 = leftmost, 1 = rightmost
+            // Allow overlapping ranges for better UX feedback
+            const dot0Active = scrollPercentage <= 0.4;  // Beginning: 0-40%
+            const dot1Active = scrollPercentage >= 0.2 && scrollPercentage <= 0.8;  // Middle: 20-80%  
+            const dot2Active = scrollPercentage >= 0.6;  // Latest: 60-100%
+            
+            
+            dots[0].classList.toggle('active', dot0Active);
+            dots[1].classList.toggle('active', dot1Active);  
+            dots[2].classList.toggle('active', dot2Active);
+          }
+        }
 
-    scrollContainer.addEventListener('mouseup', () => {
-      isDown = false;
-      scrollContainer.classList.remove('active');
-      scrollContainer.style.userSelect = ''; // Re-enable text selection
-    });
+        // Arrow button event handlers
+        if (leftBtn) {
+          leftBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const scrollAmount = container.clientWidth * 0.7;
+            container.scrollBy({
+              left: -scrollAmount,
+              behavior: 'smooth'
+            });
+            setTimeout(updateScrollState, 100);
+          });
+        }
 
-    scrollContainer.addEventListener('mousemove', (e) => {
-      if (!isDown) return;
-      e.preventDefault();
-      const x = e.pageX - scrollContainer.offsetLeft;
-      const walk = (x - startX) * 2; // Adjust scrolling speed
-      scrollContainer.scrollLeft = scrollLeft - walk;
-    });
-  };
+        if (rightBtn) {
+          rightBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const scrollAmount = container.clientWidth * 0.7;
+            container.scrollBy({
+              left: scrollAmount,
+              behavior: 'smooth'
+            });
+            setTimeout(updateScrollState, 100);
+          });
+        }
 
-  // Apply drag scroll functionality to both containers
-  const scrollContainer1 = document.getElementById('scrollContainer1');
-  const scrollContainer2 = document.getElementById('scrollContainer2');
-  addDragScroll(scrollContainer1);
-  addDragScroll(scrollContainer2);
+        // Dot click handlers
+        dots.forEach((dot, index) => {
+          dot.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const maxScroll = container.scrollWidth - container.clientWidth;
+            const targetScroll = (maxScroll / (dots.length - 1)) * index;
+            container.scrollTo({
+              left: targetScroll,
+              behavior: 'smooth'
+            });
+            setTimeout(updateScrollState, 100);
+          });
+        });
+
+        // Scroll event listener - more aggressive updates
+        container.addEventListener('scroll', updateScrollState);
+        
+        // Also listen for any programmatic scroll changes
+        const observer = new MutationObserver(() => updateScrollState());
+        observer.observe(container, { attributes: true, attributeFilter: ['scrollLeft'] });
+        
+        // Set up drag scrolling
+        setupDragScroll(container);
+        
+        // Initial state update
+        setTimeout(updateScrollState, 100);
+      });
+    }
+
+    // Drag scroll functionality
+    function setupDragScroll(container) {
+      let isDown = false;
+      let startX;
+      let scrollLeft;
+
+      container.addEventListener('mousedown', (e) => {
+        isDown = true;
+        container.style.cursor = 'grabbing';
+        startX = e.pageX - container.offsetLeft;
+        scrollLeft = container.scrollLeft;
+      });
+
+      container.addEventListener('mouseleave', () => {
+        isDown = false;
+        container.style.cursor = 'grab';
+      });
+
+      container.addEventListener('mouseup', () => {
+        isDown = false;
+        container.style.cursor = 'grab';
+      });
+
+      container.addEventListener('mousemove', (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - container.offsetLeft;
+        const walk = (x - startX) * 2;
+        container.scrollLeft = scrollLeft - walk;
+      });
+    }
+  });
 </script>
