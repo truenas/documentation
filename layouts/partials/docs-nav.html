@@ -185,7 +185,9 @@
       } else if (path.includes('/13.0/')) {
         versionButton.textContent = '13.0';
       }
-      else if (path.includes('/25.04/')) {
+      else if (path.includes('/25.10/')) {
+        versionButton.textContent = '25.10';
+      } else if (path.includes('/25.04/')) {
         versionButton.textContent = '25.04';
       } else if (path.includes('/24.10/')) {
         versionButton.textContent = '24.10';
@@ -197,7 +199,7 @@
         versionButton.textContent = 'Archive';
       } else {
         // Default version if no specific path is matched
-        versionButton.textContent = '25.10';
+        versionButton.textContent = '26.04';
       }
       versionUpdated = true;  
     } else if (path.includes('/truecommand/')) {
@@ -255,7 +257,8 @@
               <small class="version-label">Next</small>
               <hr class="version-line">
             </div>
-            <div class="truenas-dropdown-item" onclick="selectVersion('scale-nightly')" id="scale-nightly">25.10</div>
+            <div class="truenas-dropdown-item" onclick="selectVersion('scale-nightly')" id="scale-nightly">26.04</div>
+            <div class="truenas-dropdown-item" onclick="selectVersion('25.10')" id="2504">25.10</div>
           </div>
           <div class="truenas-version-group">
             <div class="version-header">
@@ -322,7 +325,7 @@
       function getActualProduct(version) {
         if (version === '13.0' || version === '13.3') {
           return 'truenas-core';
-        } else if (version === '24.10' || version === '25.04' || version === 'scale-nightly' || (parseFloat(version) >= 20 && parseFloat(version) < 100)) {
+        } else if (version === '24.10' || version === '25.04' || version === '25.10' || version === 'scale-nightly' || (parseFloat(version) >= 20 && parseFloat(version) < 100)) {
           return 'truenas-scale';
         } else if (version === '3.0') {
           return 'truecommand';
@@ -557,6 +560,8 @@
         versionButton.innerHTML = '13.0 <i class="fa fa-angle-down"></i>';
       } else if (currentPath.includes('/core/13.3/')) {
         versionButton.innerHTML = '13.3 <i class="fa fa-angle-down"></i>';
+      } else if (currentPath.includes('/scale/25.10/')) {
+        versionButton.innerHTML = '25.10 <i class="fa fa-angle-down"></i>';
       } else if (currentPath.includes('/scale/25.04/')) {
         versionButton.innerHTML = '25.04 <i class="fa fa-angle-down"></i>';
       } else if (currentPath.includes('/scale/24.10/')) {
@@ -569,7 +574,7 @@
         versionButton.innerHTML = '22.12 <i class="fa fa-angle-down"></i>';
       } else {
         // Default to latest version if no specific path is matched
-        versionButton.innerHTML = '25.10 <i class="fa fa-angle-down"></i>';
+        versionButton.innerHTML = '26.04 <i class="fa fa-angle-down"></i>';
       }
       
       versionDropdown.style.display = 'none';    
