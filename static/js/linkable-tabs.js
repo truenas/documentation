@@ -32,6 +32,7 @@ class LinkableTabBox {
         this.addStyles();
         this.createTabStructure();
         this.storeMermaidContent();
+        this.setupThemeChangeListeners();
         this.addEventListeners();
         this.handleInitialNavigation();
     }
@@ -645,22 +646,8 @@ ${this.config.enableMarkdown ? this.parseMarkdown(cleanContent) : cleanContent}
             script.src = 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js';
             script.onload = () => {
                 if (typeof mermaid !== 'undefined') {
-                    mermaid.initialize({ 
-                        startOnLoad: false,
-                        theme: 'base',
-                        themeVariables: {
-                            primaryColor: '#222222',
-                            primaryTextColor: '#ffffff',
-                            primaryBorderColor: '#0095d5',
-                            lineColor: '#ffffff',
-                            sectionBkColor: '#f8f9fa',
-                            altSectionBkColor: '#ffffff',
-                            gridColor: '#e9ecef',
-                            secondaryColor: '#7a7a7a',
-                            secondaryBorderColor: '#0095d5',
-                            secondaryTextColor: '#ffffff'
-                        }
-                    });
+                    // Initialize with dynamic theme based on current mode
+                    this.initializeMermaidTheme();
                     resolve();
                 } else {
                     reject(new Error('Mermaid failed to load'));
@@ -669,6 +656,104 @@ ${this.config.enableMarkdown ? this.parseMarkdown(cleanContent) : cleanContent}
             script.onerror = reject;
             document.head.appendChild(script);
         });
+    }
+
+    initializeMermaidTheme() {
+        // Detect current theme mode
+        const isDarkMode = this.isDarkMode();
+        
+        // Define theme variables for light and dark modes
+        const lightTheme = {
+            primaryColor: '#ffffff',
+            primaryTextColor: '#222222',
+            primaryBorderColor: '#0095d5',
+            lineColor: '#AEADAE',
+            sectionBkColor: '#f8f9fa',
+            altSectionBkColor: '#ffffff',
+            gridColor: '#e9ecef',
+            secondaryColor: '#31BeeC',
+            secondaryBorderColor: '#0095d5',
+            secondaryTextColor: '#222222',
+            tertiaryColor: '#f0f8ff',
+            background: '#ffffff',
+            mainBkg: '#ffffff',
+            secondBkg: '#f8f9fa',
+            tertiaryTextColor: '#222222'
+        };
+
+        const darkTheme = {
+            primaryColor: '#ffffff',
+            primaryTextColor: '#222222',
+            primaryBorderColor: '#0095d5',
+            lineColor: '#ffffff',
+            sectionBkColor: '#2a2a2a',
+            altSectionBkColor: '#1a1a1a',
+            gridColor: '#444444',
+            secondaryColor: '#31BeeC',
+            secondaryBorderColor: '#0095d5',
+            secondaryTextColor: '#ffffff',
+            tertiaryColor: '#1e1e1e',
+            background: '#1a1a1a',
+            mainBkg: '#ffffff',
+            secondBkg: '#2a2a2a',
+            tertiaryTextColor: '#ffffff'
+        };
+
+        // Initialize Mermaid with appropriate theme
+        mermaid.initialize({ 
+            startOnLoad: false,
+            theme: 'base',
+            themeVariables: isDarkMode ? darkTheme : lightTheme
+        });
+    }
+
+    isDarkMode() {
+        // Check for manual theme selection first
+        const root = document.documentElement;
+        const colorTheme = root.getAttribute('color-theme');
+        
+        if (colorTheme === 'dark') return true;
+        if (colorTheme === 'light') return false;
+        
+        // Fall back to system preference
+        return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    }
+
+    setupThemeChangeListeners() {
+        // Listen for manual theme changes
+        const observer = new MutationObserver((mutations) => {
+            mutations.forEach((mutation) => {
+                if (mutation.type === 'attributes' && mutation.attributeName === 'color-theme') {
+                    this.handleThemeChange();
+                }
+            });
+        });
+        
+        observer.observe(document.documentElement, {
+            attributes: true,
+            attributeFilter: ['color-theme']
+        });
+
+        // Listen for system theme changes
+        if (window.matchMedia) {
+            window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+                this.handleThemeChange();
+            });
+        }
+    }
+
+    async handleThemeChange() {
+        // Only reinitialize if Mermaid is already loaded
+        if (typeof mermaid !== 'undefined') {
+            // Reinitialize Mermaid with new theme
+            this.initializeMermaidTheme();
+            
+            // Re-render all existing Mermaid diagrams
+            const allMermaidElements = this.container.querySelectorAll('.mermaid');
+            if (allMermaidElements.length > 0) {
+                await this.renderMermaidDiagrams(allMermaidElements);
+            }
+        }
     }
 
     async renderMermaidDiagrams(elements) {
