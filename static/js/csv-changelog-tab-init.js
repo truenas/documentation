@@ -8,7 +8,46 @@
  * @param {string} majorVersion - Major version (e.g., '25.04', '25.10')
  * @param {string} baseUrl - Base URL for CSV files (default: '/data')
  */
-function initializeChangelogTableForTabs(majorVersion, baseUrl = '/data') {
+function initializeChangelogTableForTabs(majorVersion, baseUrl) {
+    // Dynamically determine the correct baseUrl if not provided
+    if (!baseUrl) {
+        if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+            // Local Hugo server
+            baseUrl = '/data';
+        } else {
+            // Production/deployed site with subdirectories
+            const pathSegments = window.location.pathname.split('/').filter(s => s); // Remove empty segments
+            const docsIndex = pathSegments.indexOf('docs');
+            if (docsIndex !== -1) {
+                // Check if this is a versioned path (docs/scale/VERSION/) or master (docs/scale/)
+                const scaleIndex = pathSegments.indexOf('scale');
+                let docsRootDepth;
+                
+                if (scaleIndex !== -1 && scaleIndex < pathSegments.length - 1) {
+                    // Check if the segment after 'scale' looks like a version (e.g., "25.10")
+                    const potentialVersion = pathSegments[scaleIndex + 1];
+                    if (potentialVersion && /^\d+\.\d+/.test(potentialVersion)) {
+                        // Versioned branch: docs/scale/25.10/gettingstarted/scalereleasenotes/
+                        // Need to go back to docs root (before docs/scale/25.10)
+                        docsRootDepth = pathSegments.length - docsIndex - 1; // Back to docs/
+                    } else {
+                        // Master branch: docs/scale/gettingstarted/scalereleasenotes/ 
+                        // Need to go back to docs root (before docs/scale)
+                        docsRootDepth = pathSegments.length - docsIndex - 1; // Back to docs/
+                    }
+                } else {
+                    // Fallback: calculate based on position after docs
+                    docsRootDepth = pathSegments.length - docsIndex - 1;
+                }
+                
+                const backPath = '../'.repeat(docsRootDepth);
+                baseUrl = backPath + 'data';
+            } else {
+                // Fallback
+                baseUrl = 'data';
+            }
+        }
+    }
     // Create the initialization function and attach it to window
     window.initializeChangelogTable = async function() {
         if (typeof initializeChangelogFromConfig === 'function') {
