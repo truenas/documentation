@@ -32,12 +32,13 @@ async function initializeChangelogFromConfig(baseUrl, containerId, majorVersion,
                     const potentialVersion = pathSegments[scaleIndex + 1];
                     if (potentialVersion && /^\d+\.\d+/.test(potentialVersion)) {
                         // Versioned branch: docs/scale/25.10/gettingstarted/scalereleasenotes/
-                        // Need to go back to docs root (before docs/scale/25.10)
-                        docsRootDepth = pathSegments.length - docsIndex - 1; // Back to docs/
+                        // Need to go back to version root (docs/scale/25.10/)
+                        const versionIndex = scaleIndex + 1; // Index of version segment (25.10)
+                        docsRootDepth = pathSegments.length - versionIndex - 1; // Back to docs/scale/25.10/
                     } else {
                         // Master branch: docs/scale/gettingstarted/scalereleasenotes/ 
-                        // Need to go back to docs root (before docs/scale)
-                        docsRootDepth = pathSegments.length - docsIndex - 1; // Back to docs/
+                        // Need to go back to scale root (docs/scale/)
+                        docsRootDepth = pathSegments.length - scaleIndex - 1; // Back to docs/scale/
                     }
                 } else {
                     // Fallback: calculate based on position after docs
