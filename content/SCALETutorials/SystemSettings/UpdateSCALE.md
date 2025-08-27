@@ -10,24 +10,31 @@ keywords:
 - software storage solutions
 ---
 
-TrueNAS has several software branches (linear update paths) known as trains. If TrueNAS is in a prerelease train it can have various preview/early build releases of the software.
+TrueNAS has several software branches (linear update paths) known as trains. 
+Update profiles offer updates to the release running on your system based on specific use cases.
+Some profiles are not available or recommended for Enterprise customers.
+TrueNAS systems are shipped with the profile set for the user based on their use case.
 
-The **Update Screen** only displays the current train.
+The **Update** screen shows the installed version, other installation or update options, and user profiles.
+Some users can select a different profile option on **Select and update profile** dropdown list.
+
+## Software Update Paths
+
 When upgrading TrueNAS to a new major version, follow the upgrade path of major versions until the system is on the desired major version release.
-For more information on other available trains and the upgrade path from one version to the next, see [Software Releases](https://www.truenas.com/docs/truenasupgrades/).
+For more information on the upgrade path from one version to the next, see [Software Releases](https://www.truenas.com/docs/truenasupgrades/).
 
 {{< hint type=warning >}}
 See the [Software Status](https://www.truenas.com/software-status/) page for the latest recommendations for software usage.
 Do not change to a prerelease or nightly release unless you intend to keep the system permanently on early versions and are not storing critical data on it.
 
-If you are using a non-production train, be prepared to experience bugs or other problems.
-Testers are encouraged to submit bug reports and debug files.
-For information on how to file an issue ticket see [Filing an Issue Ticket in TrueNAS]({{< ref "FileIssueSCALE" >}}).
+The **Developer** update profile allows using a non-production train in active development, but be prepared to experience bugs or other problems.
+Testers are encouraged to submit bug reports with debug files.
+For information on how to file an issue ticket, see [Filing an Issue Ticket in TrueNAS]({{< ref "FileIssueSCALE" >}}).
 {{< /hint >}}
 
-The TrueNAS **Update** screen provides users with two different updated methods for the system, automatic or manual.
+The TrueNAS **Update** screen provides users with an automatic and manual update method.
 
-We recommend updating TrueNAS when the system is idle (no clients connected, no disk activity, no ongoing S.M.A.R.T. tests, etc.).
+We recommend updating TrueNAS when the system is idle (no clients connected, no disk activity, etc.).
 The system restarts after an upgrade.
 Update during scheduled maintenance times to avoid disrupting user activities.
 
@@ -36,32 +43,29 @@ All auxiliary parameters are subject to change between major versions of TrueNAS
 We recommend removing all auxiliary parameters from TrueNAS configurations before upgrading.
 {{< /hint >}}
 
-{{< trueimage src="/images/SCALE/SystemSettings/SystemUpdateScreenAvailableUpdate.png" alt="System Update Upgrade Available" id="System Update Upgrade Available" >}}
+## Automatically Updating
 
-## Performing an Automatic Update
+If an update is available, it shows in the **Update Available** section on the **Update** screen.
 
-If an update is available, click **Apply Pending Update** to install it.
+{{< trueimage src="/images/SCALE/SystemSettings/UpdateScreenWithUpdateAvailable.png" alt="Update Available" id="Update Available" >}}
 
-The **Save configuration settings from this machine before updating?** window opens.
+Click **Install Update** to open the **Save configuration settings from this machine before updating?** window.
 
 {{< trueimage src="/images/SCALE/SystemSettings/SaveConfigSettingsWindow.png" alt="Save Configuration Settings" id="Save Configuration Settings" >}}
 
-Select **Export Password Secret Seed** then click **Save Configuration**.
+Select **Export Password Secret Seed**, then click **Save Configuration**.
 
 {{< include file="/static/includes/SecretSeed.md" >}}
 
-The **Apply Pending Updates** window opens.
-
-{{< trueimage src="/images/SCALE/SystemSettings/ApplyPendingUdates.png" alt="Apply Pending Updates" id="Apply Pending Updates" >}}
-
-Select **Confirm**, then **Continue** to start the automatic installation process.
-TrueNAS downloads the configuration and the update files, and then starts the installation.
+TrueNAS downloads the configuration and the update files, then starts the installation.
 
 {{< include file="/static/includes/UpgradeClearCache.md" >}}
 
-## Performing a Manual Update
+## Manually Updating
 
-If the system detects an available update, to do a manual update click **Download Updates** and wait for the file to download to your system.
+If the system detects an available update, it and the Install Update button show below the current release running on the system.
+Click **Install Update**. The **Save configuration settings from this machine before updating?** window opens.
+Leave **Export Password Secret Seed** selected, and then click **Save Configuration**.
 
 {{< include file="/static/includes/ManualUpdates.md" >}}
 
