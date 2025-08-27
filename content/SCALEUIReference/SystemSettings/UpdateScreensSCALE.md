@@ -72,6 +72,7 @@ Profile selections allow users to choose how conservative the software selection
 | **General** | Available to Community and some Enterprise customers, but is not recommended for Enterprise customers. General releases are field-tested software with mature features. Expect a few issues in the general release profile. |
 | **Mission Critical** | Available to Community and Enterprise users, especially TrueNAS HA systems. This profile the most conservative release, and is mature software that enables 24x7 operations with high availability for a clearly defined use case. Software updates are very infrequent and based on need. |
 | **Developer** | Available to developer users. The developer profile is for nightly builds of software in active development. Expect many issues and frequent, sometimes twice daily updates. |
+{{< /truetable >}}
 
 ## Save Configuration Settings Window
 
