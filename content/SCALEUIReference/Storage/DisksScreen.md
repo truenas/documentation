@@ -33,7 +33,7 @@ The expanded view of a disk includes details for the disk and options to edit di
 
 **Edit** opens the **[Edit Disk](#edit-disk-screen)** screen.
 
-If a disk is not assoicated with a pool and is inactive, the **Wipe** option shows.
+If a disk is not associated with a pool and is inactive, the **Wipe** option shows.
 **Wipe** opens the **[Wipe Disk](#wipe-disk-dialogs)** dialog.
 
 ### Batch Operations

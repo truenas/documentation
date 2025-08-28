@@ -13,7 +13,46 @@
 async function initializeChangelogFromConfig(baseUrl, containerId, majorVersion, additionalOptions = {}) {
     try {
         // Fetch the version configuration
-        const configResponse = await fetch('/data/changelog-versions.json');
+        // Dynamically determine the correct path based on the current location
+        let configPath;
+        if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+            // Local Hugo server
+            configPath = '/data/changelog-versions.json';
+        } else {
+            // Production/deployed site with subdirectories
+            const pathSegments = window.location.pathname.split('/').filter(s => s); // Remove empty segments
+            const docsIndex = pathSegments.indexOf('docs');
+            if (docsIndex !== -1) {
+                // Check if this is a versioned path (docs/scale/VERSION/) or master (docs/scale/)
+                const scaleIndex = pathSegments.indexOf('scale');
+                let docsRootDepth;
+                
+                if (scaleIndex !== -1 && scaleIndex < pathSegments.length - 1) {
+                    // Check if the segment after 'scale' looks like a version (e.g., "25.10")
+                    const potentialVersion = pathSegments[scaleIndex + 1];
+                    if (potentialVersion && /^\d+\.\d+/.test(potentialVersion)) {
+                        // Versioned branch: docs/scale/25.10/gettingstarted/scalereleasenotes/
+                        // Need to go back to version root (docs/scale/25.10/)
+                        const versionIndex = scaleIndex + 1; // Index of version segment (25.10)
+                        docsRootDepth = pathSegments.length - versionIndex - 1; // Back to docs/scale/25.10/
+                    } else {
+                        // Master branch: docs/scale/gettingstarted/scalereleasenotes/ 
+                        // Need to go back to scale root (docs/scale/)
+                        docsRootDepth = pathSegments.length - scaleIndex - 1; // Back to docs/scale/
+                    }
+                } else {
+                    // Fallback: calculate based on position after docs
+                    docsRootDepth = pathSegments.length - docsIndex - 1;
+                }
+                
+                const backPath = '../'.repeat(docsRootDepth);
+                configPath = backPath + 'data/changelog-versions.json';
+            } else {
+                // Fallback
+                configPath = 'data/changelog-versions.json';
+            }
+        }
+        const configResponse = await fetch(configPath);
         if (!configResponse.ok) {
             throw new Error(`Failed to fetch changelog config: ${configResponse.status}`);
         }
