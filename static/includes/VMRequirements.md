@@ -9,3 +9,6 @@ Virtualization requires:
 - AMD processor with SVM extensions (AMD-V)
 
 Users cannot create VMs unless the host system supports these features.
+
+Users with multiple GPUs who wish to pass a GPU to a VM must first [isolate a GPU]({{< ref "ManageGPUSCALE.md" >}}) for VM use.
+One GPU is always required by TrueNAS.

@@ -2303,3 +2303,4 @@ cksum
 Cksum
 nvd
 ManagePoolsScale
+Halfmoon
