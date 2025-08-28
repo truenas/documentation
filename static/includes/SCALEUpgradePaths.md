@@ -271,6 +271,15 @@ See the <a href="https://www.truenas.com/docs/softwarestatus/#which-truenas-vers
         return;
       }
       
+      // Check if the upgrade-paths tab is currently active
+      const upgradePathsTab = document.getElementById('pane-upgrade-paths');
+      if (!upgradePathsTab || !upgradePathsTab.classList.contains('active')) {
+        // Tab is not active, wait longer
+        checkAttempts++;
+        setTimeout(waitForMermaidAndInitialize, 300);
+        return;
+      }
+      
       // Find the VISIBLE containers (there might be duplicates)
       const allContainers1 = document.querySelectorAll('[id="scrollContainer1"]');
       const allContainers2 = document.querySelectorAll('[id="scrollContainer2"]');
@@ -303,6 +312,28 @@ See the <a href="https://www.truenas.com/docs/softwarestatus/#which-truenas-vers
         waitForMermaidAndInitialize();
       }, 300);
     });
+    
+    // CRITICAL: Listen for when the upgrade-paths tab specifically becomes active
+    const observer = new MutationObserver(function(mutations) {
+      mutations.forEach(function(mutation) {
+        if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
+          const target = mutation.target;
+          if (target.id === 'pane-upgrade-paths' && target.classList.contains('active')) {
+            // Tab just became active, start initialization
+            setTimeout(() => {
+              checkAttempts = 0;
+              waitForMermaidAndInitialize();
+            }, 500); // Extra time for Mermaid to render
+          }
+        }
+      });
+    });
+    
+    // Start observing the upgrade-paths tab pane for class changes
+    const upgradePathsPane = document.getElementById('pane-upgrade-paths');
+    if (upgradePathsPane) {
+      observer.observe(upgradePathsPane, { attributes: true, attributeFilter: ['class'] });
+    }
     
     // Also check after a longer delay on initial load to catch tab activation from URL anchor
     setTimeout(() => {
@@ -371,6 +402,11 @@ See the <a href="https://www.truenas.com/docs/softwarestatus/#which-truenas-vers
     });
     
     function initializeScrollControls() {
+      // Prevent multiple simultaneous initializations
+      if (initializeScrollControls.isInitializing) {
+        return;
+      }
+      initializeScrollControls.isInitializing = true;
       const containerIds = ['scrollContainer1', 'scrollContainer2'];
       
       containerIds.forEach((containerId) => {
@@ -429,10 +465,15 @@ See the <a href="https://www.truenas.com/docs/softwarestatus/#which-truenas-vers
           const scrollPercentage = maxScroll > 0 ? scrollLeft / maxScroll : 0;
           
           
-          // Update wrapper classes for gradients
+          // Update wrapper classes for gradients with larger threshold for smaller screens
           if (wrapper) {
-            wrapper.classList.toggle('at-start', scrollLeft <= 5);
-            wrapper.classList.toggle('at-end', scrollLeft >= maxScroll - 5);
+            // Use larger threshold (10px) to handle sub-pixel rendering and smaller screens
+            const threshold = 10;
+            const isAtStart = scrollLeft <= threshold;
+            const isAtEnd = scrollLeft >= maxScroll - threshold;
+            
+            wrapper.classList.toggle('at-start', isAtStart);
+            wrapper.classList.toggle('at-end', isAtEnd);
           }
           
           // Update scroll indicators with partial states (multiple dots can be active)
@@ -505,6 +546,9 @@ See the <a href="https://www.truenas.com/docs/softwarestatus/#which-truenas-vers
         // Initial state update
         setTimeout(updateScrollState, 100);
       });
+      
+      // Reset initialization flag
+      initializeScrollControls.isInitializing = false;
     }
 
     // Drag scroll functionality
