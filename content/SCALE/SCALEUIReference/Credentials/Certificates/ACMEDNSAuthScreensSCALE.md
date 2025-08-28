@@ -10,7 +10,7 @@ tags:
 ---
 
 The **ACME DNS-Authenticators** widget, on the **Certificates** screen, shows configured authenticators.
-Automatic Certificate Management Environment (ACME) DNS-Authenticators allows users to automate certificate issuing and renewal.
+Automatic Certificate Management Environment (ACME) DNS-Authenticators allow users to automate certificate issuing and renewal.
 The user must verify ownership of the domain before TrueNAS allows certificate automation.
 
 {{< hint type=important >}}
@@ -42,21 +42,21 @@ Fields change based on **Authenticator** selection. The **Edit DNS Authenticator
 | Setting | Description |
 |---------|-------------|
 | **Name** | Text entry field that accepts manual or copy/paste entry of an internal identifier (name) for the authenticator. |
-| **Authenticator** | Sets a DNS provider to create authenticator. The dropdown list of provider options: <br>**[cloudflare](https://www.cloudflare.com)** <br>[**digitalocean**](https://www.digitalocean.com/) <br>**[route53](https://aws.amazon.com/route53/)** <br>[**OVH**](https://www.ovhcloud.com/en/domains/) <br>**shell**. |
-| **Cloudflare Email** | Text entry field that accetps manual or copy/paste entry of your Cloudflare account email address. Shows when **cloudflare** is selected in **Authenticator**. |
+| **Authenticator** | Sets a DNS provider to create an authenticator. The dropdown list of provider options: <br>**[cloudflare](https://www.cloudflare.com)** <br>[**digitalocean**](https://www.digitalocean.com/) <br>**[route53](https://aws.amazon.com/route53/)** <br>[**OVH**](https://www.ovhcloud.com/en/domains/) <br>**shell**. |
+| **Cloudflare Email** | Text entry field that accepts manual or copy/paste entry of your Cloudflare account email address. Shows when **cloudflare** is selected in **Authenticator**. |
 | **API Key** | Text entry field that accepts manual or copy/paste entry of the API key obtained from Cloudflare. Shows when **cloudflare** is selected in **Authenticator**. |
 | **API Token** | Text entry field that accepts manual or copy/paste entry of the API token obtained from Cloudflare. Shows when **cloudflare** is selected in **Authenticator**. |
-| **Digitalocean Token** | Text entry field that accepts manual or copy/past entry of the [token](https://docs.digitalocean.com/platform/teams/roles/permissions/tokens/) obtained from Digitalocean. Shows when **digitalocean** is selected in **Authenticator**. |
+| **Digitalocean Token** | Text entry field that accepts manual or copy/paste entry of the [token](https://docs.digitalocean.com/platform/teams/roles/permissions/tokens/) obtained from Digitalocean. Shows when **digitalocean** is selected in **Authenticator**. |
 | **Access Key ID** | Text entry field that accepts manual or copy/paste entry of the [access key ID](https://repost.aws/questions/QUxdxnRDJpSxu3frH98aYGSQ/key-id-and-secret-access-key) obtained from AWS Route53. Shows when **route53** is selected in **Authenticator**. |
 | **Secret Access Key** | Text entry field that accepts manual or copy/paste entry of the [secret access key](https://repost.aws/questions/QUxdxnRDJpSxu3frH98aYGSQ/key-id-and-secret-access-key) obtained from AWS Route53. Shows when **route53** is selected in **Authenticator**. |
 | **Application Key** | Text entry field that accepts manual or copy/paste entry of the [application key]( https://api.ovh.com/createToken/) obtained from OVH. Shows when **OVH** is selected in **Authenticator**. |
 | **Application Secret** | Text entry field that accepts manual or copy/paste entry of the [application secret key]( https://api.ovh.com/createToken/) obtained from OVH. Shows when **OVH** is selected in **Authenticator**. |
 | **Consumer Key** | Text entry field that accepts manual or copy/paste entry of the [consumer key]( https://api.ovh.com/createToken/) obtained from OVH. Shows when **OVH** is selected in **Authenticator**. |
 | **Endpoint** | Text entry field that accepts manual or copy/paste entry of the endpoint. For example, *ovh-us* or *ovh-ca* depending on your region. Shows when **OVH** is selected in **Authenticator**. |
-| **Script** | Text entry field that accepts manual or copy/paste entry of a path to where you filed the DNS challenge script. For example, <code>/path/to/your-dns-script.sh</code>. Shows when **shell** is selected in **Authenticator**. A *DNS challenge script* automates the process of proving odmain ownership by updating DNS records. It allows creating TXT records, which ACME servers, like Let's Encrypt, that query to verify domain control. It is particularly useful for obtaiing wildcard certificates or when HTTP-based challenges are not feasible. |
+| **Script** | Text entry field that accepts manual or copy/paste entry of a path to where you filed the DNS challenge script. For example, <code>/path/to/your-dns-script.sh</code>. Shows when **shell** is selected in **Authenticator**. A *DNS challenge script* automates the process of proving domain ownership by updating DNS records. It allows creating TXT records, which ACME servers, like Let's Encrypt, that query to verify domain control. It is particularly useful for obtaining wildcard certificates or when HTTP-based challenges are not feasible. |
 | **User** | Text entry field that accepts manual or copy/paste of a user name. For example, *root*, *adminUserName*, etc. Shows when **shell** is selected in **Authenticator**. |
 | **Timeout** | Text entry field that accepts manual or copy/paste of a numeric value that establishes how long TrueNAS waits (in seconds) for DNS propagation. The default is 120 or 300 seconds. Shows when **shell** is selected in **Authenticator**. |
-| **Delay** | Text entry field that accepts manual or copy/paste entry of a numberic value (in seconds) that TrueNAS wites after the creation of the DNS record. The default is 60 or 120 seconds. Shows when **shell** is selected in **Authenticator**. |
+| **Delay** | Text entry field that accepts manual or copy/paste entry of a numeric value (in seconds) that TrueNAS writes after the creation of the DNS record. The default is 60 or 120 seconds. Shows when **shell** is selected in **Authenticator**. |
 {{< /truetable >}}
 
 ## Delete DNS Authenticator Dialog
