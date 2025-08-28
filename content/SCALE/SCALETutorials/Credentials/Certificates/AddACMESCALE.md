@@ -9,6 +9,8 @@ tags:
  - acme
 keywords:
 - nas storage 
+- acme certificate
+- acme dns authenticator
 ---
 
 Automatic Certificate Management Environment (ACME) DNS authenticators allow users to automate certificate issuing and renewal. The user must verify ownership of the domain before TrueNAS allows certificate automation.
@@ -27,11 +29,11 @@ Click **Add** on the **ACME DNS-Authenticator** widget to open the **Add DNS Aut
 
 {{< trueimage src="/images/SCALE/Credentials/AddDNSAuthenticatorCloudflare.png" alt="Add DNS Authenticator" id="Add DNS Authenticator" >}}
 
-Enter a name, and select the authenticator you want to configure.
+Enter a name, and select the authenticator you want to configure. **Cloudflare** shows by default.
 Supported authenticator options are [Cloudflare](https://www.cloudflare.com), [DigitalOcean](https://www.digitalocean.com/), [Amazon Route 53](https://aws.amazon.com/route53/), [OVHcloud](https://www.ovhcloud.com/en/domains/), and **shell**.
 **Authenticator** selection changes the configuration fields.
 
-If you select **cloudflare** as the authenticator, you must enter your Cloudflare account email address, API key, and API token.
+If you select **cloudflare** as the authenticator, you must enter your Cloudflare account email address and API key, or the Cloudflare API token. If using an API token, do not enter the Cloudflare account email address.
 
 If you select **digitalocean** as the authenticator, you must enter your DigitalOcean Token.
 
@@ -44,10 +46,11 @@ Click **Save** to add the authenticator.
 ### Adding an Authenticator with a Shell Script
 
 {{< hint type=warning >}}
-The **shell** authenticator option is meant for advanced users. Improperly configured scripts can result in system instability or unexpected behavior.
+The **shell** authenticator option is intended for advanced users. Improperly configured scripts can result in system instability or unexpected behavior.
 {{< /hint >}}
 
 If you select **shell** as the authenticator, you must enter the path to an authenticator script, the running user, a certificate timeout, and a domain propagation delay.
 
-Advanced users can select this option to pass an authenticator script, such as *acme.sh*, to shell and add an external DNS authenticator.
-Requires an ACME authenticator script saved to the system.
+Advanced users can select this option to pass an authenticator script, such as *acme.sh*, to the shell and add an external DNS authenticator.
+This requires an ACME authenticator script saved to the system.
+
