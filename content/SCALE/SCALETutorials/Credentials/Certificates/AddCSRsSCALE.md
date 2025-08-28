@@ -13,7 +13,7 @@ keywords:
 - ACME certificate
 ---
 
-The **Certificate Signing Requests** widget allows users to configure a message the system sends to a registration authority of the public key infrastructure to apply for a digital identity certificate. 
+The **Certificate Signing Requests** widget allows users to configure a message that the system sends to a registration authority of the public key infrastructure to apply for a digital identity certificate. 
 
 ## Adding a CSR
 
