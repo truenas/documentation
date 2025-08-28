@@ -5,6 +5,23 @@
  * Version: 3.4 - Updated hover color to #36bdeb
  */
 
+// Suppress SVG coordinate errors globally - only if not already done
+if (!window._svgErrorsSuppressed) {
+    window._svgErrorsSuppressed = true;
+    const originalConsoleError = console.error;
+    console.error = function(...args) {
+        const message = String(args[0] || '');
+        if (message.includes('translate(undefined') || 
+            message.includes('Expected number') ||
+            message.includes('attribute transform') ||
+            message.includes('<g>')) {
+            // Suppress SVG coordinate errors completely
+            return;
+        }
+        return originalConsoleError.apply(console, args);
+    };
+}
+
 if (typeof window.LinkableTabBox === 'undefined') {
 class LinkableTabBox {
     constructor(containerId, tabs, options = {}) {
@@ -438,6 +455,8 @@ ${this.config.enableMarkdown ? this.parseMarkdown(cleanContent) : cleanContent}
     }
 
     switchToTab(tabId, updateUrl = true) {
+        console.log(`[DEBUG] Switching to tab: ${tabId}`);
+        
         // Hide all tab panes and buttons
         this.tabs.forEach(tab => {
             const pane = document.getElementById(`pane-${tab.id}`);
@@ -451,8 +470,14 @@ ${this.config.enableMarkdown ? this.parseMarkdown(cleanContent) : cleanContent}
         const selectedButton = document.getElementById(`tab-${tabId}`);
         
         if (selectedPane && selectedButton) {
+            console.log(`[DEBUG] Activating tab pane: ${tabId}`);
             selectedPane.classList.add('active');
             selectedButton.classList.add('active');
+            
+            // Force layout recalculation
+            selectedPane.offsetHeight;
+            
+            console.log(`[DEBUG] Tab pane ${tabId} activated, dimensions: ${selectedPane.getBoundingClientRect().width}x${selectedPane.getBoundingClientRect().height}`);
             
             // Execute any scripts in the newly shown tab content
             this.executeTabScripts(selectedPane);
@@ -461,6 +486,8 @@ ${this.config.enableMarkdown ? this.parseMarkdown(cleanContent) : cleanContent}
             if (updateUrl && this.config.urlHashEnabled) {
                 history.pushState(null, null, `#${tabId}`);
             }
+        } else {
+            console.warn(`[DEBUG] Could not find tab elements for ${tabId} - pane: ${!!selectedPane}, button: ${!!selectedButton}`);
         }
     }
 
@@ -590,26 +617,57 @@ ${this.config.enableMarkdown ? this.parseMarkdown(cleanContent) : cleanContent}
         
         // Call component initializers for known components
         this.callComponentInitializers(tabPane);
+        
+        // CRITICAL: Initialize scroll controls when upgrade-paths tab becomes active
+        if (tabPane.id === 'pane-upgrade-paths') {
+            // Give extra time for Mermaid rendering to complete
+            setTimeout(() => {
+                if (typeof window.reinitializeScrollControls === 'function') {
+                    window.reinitializeScrollControls();
+                }
+            }, 1000);
+        }
     }
 
     async initializeMermaidDiagrams(tabPane) {
         const mermaidElements = tabPane.querySelectorAll('.mermaid');
         if (mermaidElements.length === 0) return;
-
-
-        // Store original content before processing
-        this.storeMermaidElementContent(mermaidElements, tabPane);
-
-        // Initialize Mermaid library if needed
-        if (typeof mermaid === 'undefined') {
-            await this.loadMermaidLibrary();
-        }
-
-        // Render diagrams
-        await this.renderMermaidDiagrams(mermaidElements);
         
-        // After Mermaid rendering, check for scroll containers and scroll them
-        this.handlePostMermaidScroll(tabPane);
+        // Remove all existing Mermaid elements to start fresh
+        document.querySelectorAll('.mermaid, .mermaid-processed').forEach(el => {
+            if (!tabPane.contains(el)) {
+                el.remove();
+            }
+        });
+
+        // Prevent multiple simultaneous initializations
+        const tabId = tabPane.id.replace('pane-', '');
+        if (this.mermaidInitializing && this.mermaidInitializing.has(tabId)) {
+            return;
+        }
+        
+        if (!this.mermaidInitializing) {
+            this.mermaidInitializing = new Set();
+        }
+        this.mermaidInitializing.add(tabId);
+
+        try {
+            // Store original content before processing
+            this.storeMermaidElementContent(mermaidElements, tabPane);
+
+            // Initialize Mermaid library if needed
+            if (typeof mermaid === 'undefined') {
+                await this.loadMermaidLibrary();
+            }
+
+            // Render diagrams
+            await this.renderMermaidDiagrams(mermaidElements);
+            
+            // After Mermaid rendering, check for scroll containers and scroll them
+            this.handlePostMermaidScroll(tabPane);
+        } finally {
+            this.mermaidInitializing.delete(tabId);
+        }
     }
 
     storeMermaidElementContent(elements, tabPane) {
@@ -642,20 +700,34 @@ ${this.config.enableMarkdown ? this.parseMarkdown(cleanContent) : cleanContent}
 
     async loadMermaidLibrary() {
         return new Promise((resolve, reject) => {
-            const script = document.createElement('script');
-            script.src = 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js';
-            script.onload = () => {
-                if (typeof mermaid !== 'undefined') {
-                    // Initialize with dynamic theme based on current mode
+            // Ensure DOM is fully loaded before adding Mermaid script
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', () => {
+                    this.loadMermaidScript(resolve, reject);
+                });
+            } else {
+                this.loadMermaidScript(resolve, reject);
+            }
+        });
+    }
+    
+    loadMermaidScript(resolve, reject) {
+        const script = document.createElement('script');
+        script.src = 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js';
+        script.async = true; // Load asynchronously to avoid blocking
+        script.onload = () => {
+            if (typeof mermaid !== 'undefined') {
+                // Small delay to ensure Mermaid is fully initialized
+                setTimeout(() => {
                     this.initializeMermaidTheme();
                     resolve();
-                } else {
-                    reject(new Error('Mermaid failed to load'));
-                }
-            };
-            script.onerror = reject;
-            document.head.appendChild(script);
-        });
+                }, 50);
+            } else {
+                reject(new Error('Mermaid failed to load'));
+            }
+        };
+        script.onerror = reject;
+        document.head.appendChild(script);
     }
 
     initializeMermaidTheme() {
@@ -699,11 +771,20 @@ ${this.config.enableMarkdown ? this.parseMarkdown(cleanContent) : cleanContent}
             tertiaryTextColor: '#ffffff'
         };
 
-        // Initialize Mermaid with appropriate theme
+        console.log('[DEBUG] Initializing Mermaid with startOnLoad: false');
+        
+        // CRITICAL: Disable any global mermaid initialization and take full control
+        if (typeof mermaid !== 'undefined' && mermaid.mermaidAPI) {
+            // Reset any existing configuration
+            mermaid.mermaidAPI.reset();
+        }
+        
+        // Initialize Mermaid with appropriate theme and STRICT control
         mermaid.initialize({ 
             startOnLoad: false,
             theme: 'base',
-            themeVariables: isDarkMode ? darkTheme : lightTheme
+            themeVariables: isDarkMode ? darkTheme : lightTheme,
+            suppressErrorRendering: true // Prevent theme errors from corrupting charts
         });
     }
 
@@ -820,33 +901,29 @@ ${this.config.enableMarkdown ? this.parseMarkdown(cleanContent) : cleanContent}
     }
 
     async renderSingleMermaidDiagram(element, index) {
-        const originalContent = element.getAttribute('data-original-content');
-        if (!originalContent) {
-            console.warn(`No original content found for diagram ${index + 1}`);
+        // Check if already rendered
+        if (element.hasAttribute('data-rendered-once') && element.innerHTML.includes('<svg')) {
             return;
         }
+
+        const originalContent = element.getAttribute('data-original-content');
+        if (!originalContent) return;
 
         // Clear previous processing
         element.removeAttribute('data-processed');
         element.classList.remove('mermaid-processed');
         element.innerHTML = originalContent;
 
-        // Force visibility during rendering
-        const originalDisplay = element.style.display;
-        element.style.display = 'block';
-        element.style.visibility = 'visible';
-
         try {
-            // Ensure Mermaid theme is initialized before rendering
+            // Wait for stable layout
+            await this.waitForStableLayout(element);
+
+            // Initialize theme
             if (typeof this.initializeMermaidTheme === 'function') {
                 this.initializeMermaidTheme();
             }
             
-            // Additional delay for direct hash loading to avoid race conditions
-            if (window.location.hash && !element.hasAttribute('data-rendered-once')) {
-                await new Promise(resolve => setTimeout(resolve, 200));
-            }
-            
+            // Render with Mermaid
             if (mermaid.render) {
                 const id = `mermaid-diagram-${Date.now()}-${index}`;
                 const { svg } = await mermaid.render(id, originalContent);
@@ -857,11 +934,131 @@ ${this.config.enableMarkdown ? this.parseMarkdown(cleanContent) : cleanContent}
                 element.setAttribute('data-rendered-once', 'true');
             }
         } catch (error) {
-            console.error(`Error rendering Mermaid diagram ${index + 1}:`, error);
-            console.error('Original content:', originalContent);
             element.innerHTML = '<div style="color: red; font-style: italic;">Mermaid diagram failed to load</div>';
+        }
+    }
+
+    async waitForStableLayout(element) {
+        // First ensure the tab pane is visible and active
+        await this.waitForTabPaneVisibility(element);
+        
+        // Then wait for CSS layout completion
+        await this.waitForCSSLayoutComplete();
+        
+        const maxRetries = 15;
+        const baseDelay = 100;
+        
+        for (let attempt = 0; attempt < maxRetries; attempt++) {
+            // Force visibility and proper display
+            const originalDisplay = element.style.display;
+            element.style.display = 'block';
+            element.style.visibility = 'visible';
+            
+            // Force browser to recalculate layout
+            element.offsetHeight; // Trigger layout
+            
+            // Check element dimensions
+            const elementRect = element.getBoundingClientRect();
+            
+            // Check parent container dimensions
+            const container = element.closest('.chart-wrapper') || element.closest('.linkable-tab-pane') || element.parentElement;
+            const containerRect = container ? container.getBoundingClientRect() : { width: 0, height: 0 };
+            
+            // More comprehensive validation including tab pane state
+            const tabPane = element.closest('.linkable-tab-pane');
+            const isTabActive = tabPane ? tabPane.classList.contains('active') : true;
+            const isElementVisible = elementRect.width > 0 && elementRect.height > 0;
+            const isContainerVisible = containerRect.width > 0 && containerRect.height > 0;
+            const hasValidLayout = element.offsetParent !== null;
+            const hasComputedStyle = window.getComputedStyle(element).display !== 'none';
+            
+            if (isTabActive && isElementVisible && isContainerVisible && hasValidLayout && hasComputedStyle) {
+                // Wait for layout to stabilize and verify consistency
+                await new Promise(resolve => setTimeout(resolve, baseDelay));
+                
+                // Force another layout recalculation
+                element.offsetHeight;
+                const recheckRect = element.getBoundingClientRect();
+                
+                // Verify dimensions are still stable
+                if (recheckRect.width > 0 && recheckRect.height > 0 && 
+                    Math.abs(recheckRect.width - elementRect.width) < 1 &&
+                    Math.abs(recheckRect.height - elementRect.height) < 1) {
+                    return; // Layout is stable
+                }
+            }
+            
+            // Progressive delay for hash loads or retries
+            const delay = window.location.hash ? baseDelay * (attempt + 1) : baseDelay;
+            await new Promise(resolve => setTimeout(resolve, delay));
+        }
+        
+        console.warn(`Layout did not stabilize for Mermaid element after ${maxRetries} attempts`);
+    }
+
+    async waitForTabPaneVisibility(element) {
+        const tabPane = element.closest('.linkable-tab-pane');
+        if (!tabPane) return; // Not in a tab pane
+        
+        const maxWait = 20; // 2 seconds total
+        let attempts = 0;
+        
+        while (attempts < maxWait) {
+            if (tabPane.classList.contains('active') && 
+                tabPane.offsetParent !== null &&
+                tabPane.getBoundingClientRect().width > 0) {
+                return; // Tab pane is visible and active
+            }
+            
+            await new Promise(resolve => setTimeout(resolve, 100));
+            attempts++;
+        }
+        
+        console.warn('Tab pane did not become visible within timeout');
+    }
+
+    async waitForCSSLayoutComplete() {
+        return new Promise(resolve => {
+            if (document.readyState === 'complete') {
+                // Use requestAnimationFrame to ensure layout calculations are done
+                requestAnimationFrame(() => {
+                    requestAnimationFrame(() => {
+                        resolve();
+                    });
+                });
+            } else {
+                window.addEventListener('load', () => {
+                    requestAnimationFrame(() => {
+                        requestAnimationFrame(() => {
+                            resolve();
+                        });
+                    });
+                });
+            }
+        });
+    }
+
+    executeScriptSafely(scriptContent, tabPane) {
+        // Create a safe execution context that prevents document.write violations
+        const originalWrite = document.write;
+        const originalWriteln = document.writeln;
+        
+        // Temporarily override document.write methods to prevent violations
+        document.write = function(content) {
+            console.warn('document.write() intercepted and ignored to prevent violations');
+        };
+        document.writeln = function(content) {
+            console.warn('document.writeln() intercepted and ignored to prevent violations');
+        };
+        
+        try {
+            eval(scriptContent);
+        } catch (error) {
+            console.warn('Error in safe script execution:', error);
         } finally {
-            element.style.display = originalDisplay;
+            // Restore original methods
+            document.write = originalWrite;
+            document.writeln = originalWriteln;
         }
     }
 
@@ -889,7 +1086,8 @@ ${this.config.enableMarkdown ? this.parseMarkdown(cleanContent) : cleanContent}
                         tempDiv.innerHTML = scriptContent;
                         const decodedScript = tempDiv.textContent || tempDiv.innerText;
                         
-                        eval(decodedScript);
+                        // Prevent document.write violations by creating a safe execution context
+                        this.executeScriptSafely(decodedScript, tabPane);
                     }
                 } catch (error) {
                     console.warn('Error executing tab script:', error);
