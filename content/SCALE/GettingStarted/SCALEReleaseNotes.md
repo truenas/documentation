@@ -11,12 +11,18 @@ aliases:
  - /scale/26.04/gettingstarted/scalereleasenotes/
  - /releasenotes/
 jump_to_buttons:
+  - text: "Latest Changes"
+    anchor: "26.04-nightly-changes"
+    icon: "fiber-new"
+  - text: "Known Issues"
+    anchor: "known-issues"
+    icon: "warning"
   - text: "26.04 Major Features"
     anchor: "major-features"
-    icon: "star"
-  - text: "Full TrueNAS 26.04 Changelog"
+    icon: "component-versions"
+  - text: "Full 26.04 Changelog"
     anchor: "full-changelog"
-    icon: "clipboard-text"
+    icon: "history"
   - text: "Preparing to Upgrade"
     anchor: "upgrade-prep"
     icon: "update-truenas"
@@ -51,19 +57,32 @@ Check back for more information.
 
   </div>
 
+  <div data-tab-id="known-issues" data-tab-label="Known Issues">
+
+{{< hint type="important" title="Known Issues in 26.04" >}}
+These are ongoing issues that can affect multiple versions in the 26.04 series.
+<br> When resolved, issues move to **Notable Changes** for the appropriate release.
+{{< /hint >}}
+
+### Current Known Issues
+
+No known issues currently reported for 26.04 development builds.
+
+Check back for more information.
+
+See the [Release Notes](https://forums.truenas.com/c/release-notes/13) section of the TrueNAS forum for ongoing updates about known issues, investigations, and statistics about TrueNAS releases.
+
+  </div>
+
   <div data-tab-id="major-features" data-tab-label="26.04 Major Features">
 
 {{< include file="/static/includes/26.04FeatureList.md" >}}
 
   </div>
-<!-- Commenting out changelog until BETA.1
-  <div data-tab-id="full-changelog" data-tab-label="Full TrueNAS 26.04 Changelog">
--->
+  <div data-tab-id="full-changelog" data-tab-label="Full 26.04 Changelog">
 <!-- CSV Changelog Table with Version Support -->
-<!--
 <div id="csv-changelog-container"></div>
   </div>
--->
 
 </div>
 
@@ -74,7 +93,7 @@ Check back for more information.
 <script src="/js/linkable-tabs-init.js"></script>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-    initializeHugoTabs('release-tab-content-source', 'release-tabs-container', '25.10-BETA.1');
+    initializeHugoTabs('release-tab-content-source', 'release-tabs-container', '26.04-nightly-changes');
 });
 </script>
 

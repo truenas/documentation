@@ -27,14 +27,13 @@ majorVersions:
     name: "TrueNAS 25.10 - Goldeye"
     releaseName: "Goldeye"
     releases:
+      - name: "25.10-BETA.1"
+        type: "Early"
+        link: "https://www.truenas.com/docs/scale/25.10/gettingstarted/scalereleasenotes/"
+        releaseDate: "2025-08-28"
+        latest: true
       - name: "25.10 Nightlies"
         type: "Experimental"
         link: "https://www.truenas.com/docs/scale/25.10/gettingstarted/scalereleasenotes/"
         releaseDate: "2025-01-27"
-        latest: true
-      - name: "25.10-BETA.1"
-        type: "Early"
-        link: ""
-        releaseDate: "2025-08-28"
         latest: false
-
