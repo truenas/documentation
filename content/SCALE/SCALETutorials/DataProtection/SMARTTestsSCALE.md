@@ -23,7 +23,7 @@ Refer to your respective drive documentation for confirmation.
 TrueNAS runs S.M.A.R.T. tests on disks.
 Running tests can reduce drive performance, so we recommend scheduling tests when the system is in a low-usage state.
 Avoid scheduling disk-intensive tests at the same time!
-For example, do not schedule S.M.A.R.T. tests on the same day as a disk [scrub]({{< ref "ScrubTasksSCALE" >}}) or other data protection task.
+For example, do not schedule S.M.A.R.T. tests on the same day as a disk [scrub]({{< ref "ManagePoolsScale" >}}) or other data protection task.
 
 {{< expand "How do I check or change S.M.A.R.T. testing for a disk?" "v" >}}
 Go to **Storage**, then click **Disks** button. Select disks to be examined using the checkbox at left. Click the <i class="material-icons" aria-hidden="true">expand_more</i> to the right of the disk row to expand it.

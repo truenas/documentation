@@ -28,6 +28,10 @@ Users can click **Add** in the **Idmap** widget to configure backends or click o
 
 TrueNAS automatically generates an Idmap after you configure AD or LDAP.
 
+{{< hint type=note >}}
+Starting in TrueNAS 25.10, trusted domains are managed as part of the Active Directory configuration rather than as separate idmap entries. For trusted domain configurations, see the Active Directory configuration options in the directory services interface.
+{{< /hint >}}
+
 {{<include file="/static/includes/addcolumnorganizer.md">}}
 
 ## Adding an ID Map
