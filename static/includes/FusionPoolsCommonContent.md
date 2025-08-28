@@ -1,7 +1,5 @@
 &NewLine;
 
-Add SSDs to the new **Metadata VDev** and select the same layout as the **Data VDevs**.
-
 {{< hint type=important >}}
 Metadata VDEVs are critical for pool operation and data integrity. Protect them with redundancy measures such as mirroring, and optionally hot spare(s) for additional fault tolerance. It is suggested to use an equal or greater level of failure tolerance in each of your metadata VDEVs; for example, if your data VDEVs are configured as RAIDZ2, consider the use of 3-way mirrors for your metadata VDEVs.
 {{< /hint >}}
@@ -20,5 +18,3 @@ While the metadata VDEV can be adjusted after its addition by attaching or detac
 When more than one metadata VDEV is created, then allocations are load-balanced between all these devices.
 If the special class becomes full, then allocations spill back into the normal class.
 Deduplication table data is placed first onto a dedicated Dedup VDEV, then a Metadata VDEV, and finally the data VDEVs if neither exists.
-
-Create a fusion pool and **Status** shows a **Special** section with the metadata SSDs.

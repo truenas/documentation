@@ -69,6 +69,23 @@ The **Disk Info** widget shows the disk size, transfer mode, the serial and mode
 
 **Replace** opens the **Replacing disk *diskname*** dialog, where *diskname* is the name of the selected disk.
 
+### Hardware Disk Encryption Widget
+{{< enterprise >}}
+The **Hardware Disk Encryption** widget only shows on Enterprise-licensed systems.
+{{< /enterprise >}}
+
+The **Hardware Disk Encryption** widget shows drive information such as the SED password set or not set.
+It might show on non-enterprise systems with self-encrypting drives, but not all configuration options show in the UI. Community users should use the SED utilities to manage these drives.
+
+The **Manage SED Password** link opens a **Manage SED Password** dialog, where you can enter a disk SED password to set the disk encryption password.
+
+{{< trueimage src="/images/SCALE/Storage/DevicesDiskHardwareDiskEncryptionWidget.png" alt="Devices Disk Hardware Disk Encryption Widget" id="Devices Disk Hardware Disk Encryption Widget" >}}
+
+{{< trueimage src="/images/SCALE/Storage/ManageSEDPasswordDialog.png" alt="Manage Disk SED Encryption Password" id="Manage Disk SED Encryption Password" >}}
+
+**Global SED Password** shows the status as set or not set.
+The **Manage Global SED Password** link opens the **[System Settings > Advanced]({{< ref "AdvancedSettingsScreen" >}})** screen where you can change the global SED password that overrides the disk passwords.
+
 #### Replacing Disk Dialog
 
 The **Replacing disk *diskname** dialog allows replacing the selected disk with a new disk selected from the **Member Disk** dropdown list.
