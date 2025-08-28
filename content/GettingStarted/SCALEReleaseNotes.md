@@ -12,7 +12,7 @@ jump_to_buttons:
     anchor: "known-issues"
     icon: "warning"
   - text: "25.10 Major Features"
-    anchor: "major-features"
+    anchor: "new-releases"
     icon: "component-versions"
   - text: "Full 25.10 Changelog"
     anchor: "full-changelog"
