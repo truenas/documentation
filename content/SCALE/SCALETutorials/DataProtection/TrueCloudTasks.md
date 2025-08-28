@@ -84,7 +84,7 @@ To add the TrueCloud backup task, go to **Data Protection > TrueCloud Backup Tas
   
 6. Enter the number of snapshot copies to retain in **Keep Last**.
 
-7. Optionally, enter a **Rate Limit** value in KiB/s (kibibytes per second) to limit the backup transfer rate. This is a static rate limit that applies throughout the entire backup process. Leave empty for no rate limit.
+7. (Optional) Enter a **Rate Limit** value in KiB/s (kibibytes per second) to limit the backup transfer rate. This is a static rate limit that applies throughout the entire backup process. Leave empty for no rate limit.
 
 8. Enter a password for the backup repository.
    Record this password in a secure location.
