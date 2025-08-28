@@ -10,17 +10,12 @@ keywords:
 - storage container virtualization
 ---
 
-{{< include file="/static/includes/25.04Virtualization.md" >}}
-
 TrueNAS has built-in virtualization capabilities that allow running multiple operating systems on a single system, maximizing hardware utilization, and consolidating workloads.
 
 A *virtual machine (VM)* is a software-based computer that runs inside your TrueNAS system, and appears as a separate physical machine to the operating system installed within it.
 VMs use virtualized hardware components including, network interfaces, storage volumes, graphics adapters, and other devices, providing complete isolation between different operating systems and applications.
 
 VMs offer stronger isolation than [containers](/scaletutorials/containers/) but require more system resources, making them ideal for running full operating systems, legacy applications, or services that need dedicated environments.
-
-Enterprise licensed High Availability (HA) systems do not support virtual machines.
-Other Enterprise licensed non-HA systems support VMs if they have the appropriate license.
 
 {{< expand "What system resources do VMs require?" "v" >}}
 {{< include file="/static/includes/VMRequirements.md" >}}
@@ -67,12 +62,12 @@ If you have not yet added a virtual machine to your system, clicking **Add Virtu
    h. (Optional) Select **Enable Display (VNC)** to enable a Virtual Network Computing (VNC) remote connection for the VM.
       **Enable Display (VNC)** shows the **Bind** and **Password** fields.
 
-   h. Select the IP address or option to use in **Bind**. Shows if you select **Enable Display**.
+   i. Select the IP address or option to use in **Bind**. Shows if you select **Enable Display**.
       The **Bind** and **Password** fields display. If it is selected, to change the default IP address to use a specific address as the display network interface; otherwise, leave it set to **0.0.0.0**.
       The **Bind** list populates with any existing logical interfaces, such as static routes, configured on the system.
       You cannot edit the **Bind** setting after saving the VM settings.
 
-   i. Enter a password to secure access to the virtual display in **Password**. The **Password** field shows if you select **Enable Display**.
+   j. Enter a password to secure access to the virtual display in **Password**. The **Password** field shows if you select **Enable Display**.
       The login screen for the display shows a credential entry field for this password.
 
    Click **Next**.
@@ -140,13 +135,12 @@ If you have not yet added a virtual machine to your system, clicking **Add Virtu
 
    Click **Upload** to begin the upload process. After the upload finishes, click **Next**.
 
-6. Specify **GPU** settings.
+6. Specify **GPU** settings. When available, use a [GPU previously isolated for VM use]({{< ref "ManageGPUSCALE.md" >}}).
 
    {{< trueimage src="/images/SCALE/Virtualization/AddVMGPU.png" alt="GPU Settings" id="GPU Settings" >}}
 
    {{< hint type="note" title="Supported GPUs" >}}
    TrueNAS does not have a list of approved GPUs at this time, but TrueNAS does support various NVIDIA, Intel, and AMD GPUs.
-   As of 24.10, TrueNAS does not automatically install NVIDIA drivers. Instead, users must manually install drivers from the UI. For detailed instructions, see [Installing NVIDIA Drivers](https://apps.truenas.com/getting-started/initial-setup/#installing-nvidia-drivers).
    {{< /hint >}}
 
 7. Confirm your VM settings, then click **Save**.
@@ -167,8 +161,7 @@ After creating the VM and configuring devices for it, click on the VM to expand 
 
 An active VM displays options for <i class="material-icons" aria-hidden="true" title="VNC">settings_ethernet</i> **Display** and <i class="material-icons" aria-hidden="true" title="Serial Shell">keyboard_arrow_right</i> **Serial Shell** connections.
 
-When a display device is configured, remote clients can connect to VM display sessions using a SPICE client, or by installing a third-party remote desktop server inside your VM.
-SPICE clients are available from the [SPICE Protocol site](https://www.spice-space.org/).
+When a display device is configured, remote clients can connect to VM display sessions.
 
 If the display connection screen appears distorted, try adjusting the display device resolution.
 
