@@ -5,12 +5,18 @@ weight: 10
 related: false
 use_jump_to_buttons: true
 jump_to_buttons:
+  - text: "Latest Changes"
+    anchor: "25.10-BETA.1"
+    icon: "fiber-new"
+  - text: "Known Issues"
+    anchor: "known-issues"
+    icon: "warning"
   - text: "25.10 Major Features"
     anchor: "major-features"
-    icon: "star"
-  - text: "Full TrueNAS 25.10 Changelog"
+    icon: "component-versions"
+  - text: "Full 25.10 Changelog"
     anchor: "full-changelog"
-    icon: "clipboard-text"
+    icon: "history"
   - text: "Preparing to Upgrade"
     anchor: "upgrade-prep"
     icon: "update-truenas"
@@ -99,13 +105,22 @@ Failover moves to the **Advanced Settings** screen ([NAS-135469](https://ixsyste
 
 <a href="#full-changelog" target="_blank">Click here</a> to see the full 25.10 changelog or visit the <a href="https://ixsystems.atlassian.net/issues/?filter=13196" target="_blank">TrueNAS 25.10-BETA.1 (Goldeye) Changelog</a> in Jira.
 
-### 25.10-BETA.1 Known Issues
+  </div>
+
+  <div data-tab-id="known-issues" data-tab-label="Known Issues">
+
+{{< hint type="important" title="Known Issues in 25.10" >}}
+These are ongoing issues that affect multiple versions in the 25.10 series.
+<br> When resolved, issues move to **Notable Changes** for the appropriate release.
+{{< /hint >}}
+
+### Current Known Issues
 
 * The time sort for frequency on the **Cloud Sync Tasks** screen is incorrect ([NAS-137096](https://ixsystems.atlassian.net/browse/NAS-137096)).
 * **Users** page shows "can not retrieve response" due to invalid email address ([NAS-137198](https://ixsystems.atlassian.net/browse/NAS-137198)).
 * The **Virtual Machines** page doesn't refresh properly ([NAS-136973](https://ixsystems.atlassian.net/browse/NAS-136973)).
 
-<a href="https://ixsystems.atlassian.net/issues/?filter=13197" target="_blank">Click here to see the latest information</a> about public issues discovered in 25.10-BETA.1 that are being resolved in a future TrueNAS release.
+<a href="https://ixsystems.atlassian.net/issues/?filter=13197" target="_blank">See the latest status on Jira</a> for public issues discovered in 25.10 that are being resolved in a future TrueNAS release.
 
 See the [Release Notes](https://forums.truenas.com/c/release-notes/13) section of the TrueNAS forum for ongoing updates about known issues, investigations, and statistics about TrueNAS releases.
 
@@ -117,7 +132,7 @@ See the [Release Notes](https://forums.truenas.com/c/release-notes/13) section o
 
   </div>
 
-  <div data-tab-id="full-changelog" data-tab-label="Full TrueNAS 25.10 Changelog">
+  <div data-tab-id="full-changelog" data-tab-label="Full 25.10 Changelog">
 <!-- CSV Changelog Table with Version Support -->
 <div id="csv-changelog-container"></div>
   </div>
