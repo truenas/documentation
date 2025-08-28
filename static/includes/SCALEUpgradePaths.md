@@ -423,11 +423,6 @@ See the <a href="https://www.truenas.com/docs/softwarestatus/#which-truenas-vers
         });
         
         if (!container) {
-          console.log(`Debug: No visible container found for ${containerId}. Found ${allContainers.length} total containers.`);
-          allContainers.forEach((el, i) => {
-            const rect = el.getBoundingClientRect();
-            console.log(`Container ${i}: offsetParent=${!!el.offsetParent}, rect=${rect.width}x${rect.height}, display=${window.getComputedStyle(el).display}`);
-          });
           return;
         }
         
@@ -448,8 +443,6 @@ See the <a href="https://www.truenas.com/docs/softwarestatus/#which-truenas-vers
         });
         const dots = indicator ? indicator.querySelectorAll('.scroll-dot') : [];
         
-        console.log(`Debug: Initializing ${containerId} - container=${!!container}, wrapper=${!!wrapper}, leftBtn=${!!leftBtn}, rightBtn=${!!rightBtn}, indicator=${!!indicator}, dots=${dots.length}`);
-        
 
         // Set initial scroll position to rightmost
         if (container.scrollWidth > container.clientWidth) {
@@ -461,7 +454,6 @@ See the <a href="https://www.truenas.com/docs/softwarestatus/#which-truenas-vers
           const { scrollLeft, scrollWidth, clientWidth } = container;
           const maxScroll = scrollWidth - clientWidth;
           const scrollPercentage = maxScroll > 0 ? scrollLeft / maxScroll : 0;
-          
           
           // Update wrapper classes for gradients with larger threshold for smaller screens
           if (wrapper) {
@@ -481,7 +473,6 @@ See the <a href="https://www.truenas.com/docs/softwarestatus/#which-truenas-vers
             const dot0Active = scrollPercentage <= 0.4;  // Beginning: 0-40%
             const dot1Active = scrollPercentage >= 0.2 && scrollPercentage <= 0.8;  // Middle: 20-80%  
             const dot2Active = scrollPercentage >= 0.6;  // Latest: 60-100%
-            
             
             dots[0].classList.toggle('active', dot0Active);
             dots[1].classList.toggle('active', dot1Active);  

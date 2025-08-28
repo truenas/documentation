@@ -410,7 +410,6 @@ ${this.config.enableMarkdown ? this.parseMarkdown(cleanContent) : cleanContent}
     }
 
     handleNavigation(hash) {
-        
         if (!hash) {
             if (this.config.collapsible) {
                 this.collapseAllTabs();
@@ -455,8 +454,6 @@ ${this.config.enableMarkdown ? this.parseMarkdown(cleanContent) : cleanContent}
     }
 
     switchToTab(tabId, updateUrl = true) {
-        console.log(`[DEBUG] Switching to tab: ${tabId}`);
-        
         // Hide all tab panes and buttons
         this.tabs.forEach(tab => {
             const pane = document.getElementById(`pane-${tab.id}`);
@@ -470,14 +467,11 @@ ${this.config.enableMarkdown ? this.parseMarkdown(cleanContent) : cleanContent}
         const selectedButton = document.getElementById(`tab-${tabId}`);
         
         if (selectedPane && selectedButton) {
-            console.log(`[DEBUG] Activating tab pane: ${tabId}`);
             selectedPane.classList.add('active');
             selectedButton.classList.add('active');
             
             // Force layout recalculation
             selectedPane.offsetHeight;
-            
-            console.log(`[DEBUG] Tab pane ${tabId} activated, dimensions: ${selectedPane.getBoundingClientRect().width}x${selectedPane.getBoundingClientRect().height}`);
             
             // Execute any scripts in the newly shown tab content
             this.executeTabScripts(selectedPane);
@@ -486,8 +480,6 @@ ${this.config.enableMarkdown ? this.parseMarkdown(cleanContent) : cleanContent}
             if (updateUrl && this.config.urlHashEnabled) {
                 history.pushState(null, null, `#${tabId}`);
             }
-        } else {
-            console.warn(`[DEBUG] Could not find tab elements for ${tabId} - pane: ${!!selectedPane}, button: ${!!selectedButton}`);
         }
     }
 
@@ -582,7 +574,6 @@ ${this.config.enableMarkdown ? this.parseMarkdown(cleanContent) : cleanContent}
     }
 
     forceExpandTabForHash(tabId) {
-        
         const button = document.getElementById(`tab-${tabId}`);
         const pane = document.getElementById(`pane-${tabId}`);
         const content = this.container.querySelector('.linkable-tab-content');
@@ -608,7 +599,6 @@ ${this.config.enableMarkdown ? this.parseMarkdown(cleanContent) : cleanContent}
     }
 
     executeTabScripts(tabPane) {
-        
         // Handle Mermaid diagrams
         this.initializeMermaidDiagrams(tabPane);
         
@@ -771,7 +761,6 @@ ${this.config.enableMarkdown ? this.parseMarkdown(cleanContent) : cleanContent}
             tertiaryTextColor: '#ffffff'
         };
 
-        console.log('[DEBUG] Initializing Mermaid with startOnLoad: false');
         
         // CRITICAL: Disable any global mermaid initialization and take full control
         if (typeof mermaid !== 'undefined' && mermaid.mermaidAPI) {
@@ -848,7 +837,6 @@ ${this.config.enableMarkdown ? this.parseMarkdown(cleanContent) : cleanContent}
         // Look for scroll containers that need to be scrolled to the right
         const scrollContainers = tabPane.querySelectorAll('.scroll-container');
         if (scrollContainers.length > 0) {
-            
             // Add a small delay to ensure the DOM is fully updated
             setTimeout(() => {
                 scrollContainers.forEach(container => {
@@ -1109,7 +1097,6 @@ ${this.config.enableMarkdown ? this.parseMarkdown(cleanContent) : cleanContent}
                 setTimeout(() => {
                     window.initializeChangelogTable();
                 }, 300); // Increased timeout to ensure tab is fully active
-            } else {
             }
         }
     }
@@ -1117,9 +1104,7 @@ ${this.config.enableMarkdown ? this.parseMarkdown(cleanContent) : cleanContent}
     findTabContainingHeader(headerId) {
         if (!headerId) return null;
         
-        
         for (const tab of this.tabs) {
-            
             const tempDiv = document.createElement('div');
             tempDiv.innerHTML = tab.content;
             
@@ -1128,7 +1113,6 @@ ${this.config.enableMarkdown ? this.parseMarkdown(cleanContent) : cleanContent}
             for (const header of headers) {
                 const headerText = (header.textContent || header.innerText).trim();
                 const potentialId = this.generateHeaderId(headerText);
-                
                 
                 if (potentialId === headerId || header.id === headerId) {
                     return { tabId: tab.id, headerId: headerId };
@@ -1148,12 +1132,10 @@ ${this.config.enableMarkdown ? this.parseMarkdown(cleanContent) : cleanContent}
     }
 
     scrollToHeaderInTab(headerId, tabId) {
-        
         const targetTabPane = document.getElementById(`pane-${tabId}`);
         if (!targetTabPane) {
             return;
         }
-        
 
         let targetHeader = targetTabPane.querySelector(`#${headerId}`);
         
@@ -1164,7 +1146,6 @@ ${this.config.enableMarkdown ? this.parseMarkdown(cleanContent) : cleanContent}
                 const headerText = (header.textContent || header.innerText).trim();
                 const generatedId = this.generateHeaderId(headerText);
                 
-                
                 if (generatedId === headerId) {
                     targetHeader = header;
                     header.id = headerId;
@@ -1174,23 +1155,13 @@ ${this.config.enableMarkdown ? this.parseMarkdown(cleanContent) : cleanContent}
         }
 
         if (targetHeader) {
-            
             const headerRect = targetHeader.getBoundingClientRect();
             const absoluteTop = headerRect.top + window.pageYOffset;
             const offset = 150;
             
-            
             window.scrollTo({
                 top: Math.max(0, absoluteTop - offset),
                 behavior: 'smooth'
-            });
-        } else {
-            
-            // Debug: List all headers in the target tab
-            const allHeaders = targetTabPane.querySelectorAll('h1, h2, h3, h4, h5, h6');
-            allHeaders.forEach(h => {
-                const text = (h.textContent || h.innerText).trim();
-                const id = this.generateHeaderId(text);
             });
         }
     }
@@ -1203,7 +1174,6 @@ ${this.config.enableMarkdown ? this.parseMarkdown(cleanContent) : cleanContent}
             attempts++;
             const targetTabPane = document.getElementById(`pane-${tabId}`);
             const activeTabPane = document.querySelector('.linkable-tab-pane.active');
-            
             
             if (targetTabPane && targetTabPane.classList.contains('active') && activeTabPane?.id === `pane-${tabId}`) {
                 callback();
