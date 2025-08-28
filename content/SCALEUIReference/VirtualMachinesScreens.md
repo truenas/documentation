@@ -42,7 +42,7 @@ Options shown change after starting a virtual machine.
 | **Start** | <span class="iconify" data-icon="bxs:right-arrow"></span> | Starts a VM. The toggle turns blue when the VM switches to running. The **Start** button toggles to **Stop**. While running, the screens shows the **Restart**,**Power Off**, **Display**, and **Serial Shell** buttons. |
 | **Restart** | <span class="material-icons">replay</span> | Stops then starts the VM. Shows for a running VM. |
 | **Power Off** | <span class="material-icons">power_settings_new</span> | Shows after starting a VM. Powers off and halts the VM, similar to turning off a computer power switch. Shows only when the VM is running. |
-| **Stop** | <i class="material-icons" aria-hidden="true" title="Stop">stop</i> | Shows after starging a VM. Stops a running VM. Virtual machines do not always respond to **STOP** or the command might time out if the VM does not have an OS. Use **Power Off** instead. **Stop** toggles to **Start** after the VM stops. |
+| **Stop** | <i class="material-icons" aria-hidden="true" title="Stop">stop</i> | Shows after starting a VM. Stops a running VM. Virtual machines do not always respond to **STOP** or the command might time out if the VM does not have an OS. Use **Power Off** instead. **Stop** toggles to **Start** after the VM stops. |
 | **Edit** | <span class="material-icons">mode_edit</span> | Opens the **[Edit Virtual Machine](#edit-virtual-machine-screen)** with editable VM settings. You cannot edit a VM while it is running. Stop the VM to edit the properties and settings. |
 | **Delete** | <i class="material-icons" aria-hidden="true" title="Delete">delete</i> | Deletes a VM and removes it from the system. Opens a [delete dialog](#delete-virtual-machine-dialog). You cannot delete a virtual machine that is running. Stop the VM to delete it. |
 | **Devices** | <i class="material-icons" aria-hidden="true" title="Devices">device_hub</i> | Shows after starting a VM. Opens the **[Virtual Machine Devices](#devices-screens)** screen for the selected VM. |
@@ -198,7 +198,7 @@ The **Disks** settings specify how virtual disks are added. Options are creating
 | **Create new disk image** | Shows settings to create a new zvol on an existing dataset to use as a virtual hard drive for the VM. |
 | **Use existing disk image** | Shows settings to select an existing zvol or file for the VM. Shows the **Select Disk Type** and **Select Existing Zvol**  fields. |
 | **Select Disk Type** | Sets the disk type to the option selected on the dropdown list. Options are **AHCI** or **VirtIO**. Select **AHCI** for Windows VMs. **VirtIO** requires a guest OS that supports VirtIO paravirtualized network drivers. |
-| **Select Existing Zvol** | (Required) Showss after selecting **Use existing disk image**. Sets the disk to the existing zvol selected from the dropdown list. |
+| **Select Existing Zvol** | (Required) Shows after selecting **Use existing disk image**. Sets the disk to the existing zvol selected from the dropdown list. |
 | **Zvol Location** | (Required) Shows when **Create new disk image** is selected. Shows a dropdown list of datasets to select as the location where a new zvol is created. |
 | **Size** | (Required) Shows when **Create new disk image* is selected. Allocates space for the new zvol. (Examples: 500 KiB, 500M, 2 TB). Units smaller than MiB are not allowed. |
 {{< /truetable >}}
@@ -225,14 +225,14 @@ The **Network Interface** settings specify the network adapter type, MAC address
 
 The **Installation Media** settings specify the location of the operating system installation media image in a TrueNAS dataset, or you can upload a copy from the local machine.
 
-{{< trueimage src="/images/SCALE/Virtualization/CreateVirtualMachineInstallationMediaSettings.png" alt="Installation Medi Settings" id="Installation Media Settings" >}}
+{{< trueimage src="/images/SCALE/Virtualization/CreateVirtualMachineInstallationMediaSettings.png" alt="Installation Media Settings" id="Installation Media Settings" >}}
 
 {{< expand "Installation Media Settings" "v" >}}
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Choose Installation Media Image** | Shows two fields, the mount path field and a file browser field directly below it. Sets the mount path to what is selected in the file browser field. To collapse the file branch, click on the <i class="fa fa-caret-right" aria-hidden="true"></i> to the left of **/mnt**. |
-| **Upload New Image File** | Opens the **Upload Image File** dialog, where you browse to, and select the image file location on the local system or a network location available to your TrueNAS system. **Choose File** sets the file location and activates **UpLoad**.  |
+| **Upload New Image File** | Opens the **Upload Image File** dialog, where you browse to, and select the image file location on the local system or a network location available to your TrueNAS system. **Choose File** sets the file location and activates **Upload**.  |
 {{< /truetable >}}
 {{< /expand >}}
 
@@ -337,7 +337,7 @@ Shows the raw file settings, including file location, size, disk sector size, an
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Raw File** | Shows two fields. A file browser field and a blank field that populates with what is selected in the file browser directly below it. Use the <iconify-icon icon="bxs:right-arrow"></iconify-icon> to the left of <iconify-icon icon="bxs:folder"></iconify-icon>**/mnt** to expand or collaspe the directory branches as you browse to and select the location of the file on the system. |
+| **Raw File** | Shows two fields. A file browser field and a blank field that populates with what is selected in the file browser directly below it. Use the <iconify-icon icon="bxs:right-arrow"></iconify-icon> to the left of <iconify-icon icon="bxs:folder"></iconify-icon>**/mnt** to expand or collapse the directory branches as you browse to and select the location of the file on the system. |
 | **Disk sector size** | Sets the disk sector size to the option selected on the dropdown list. Options are **Default**, which uses the ZFS volume values, **512** or **4096**. Setting a sector size changes both the logical and physical sector size. |
 | **Mode** | Sets the drive type to the option selected on the dropdown list. Options are: <br><li>**AHCI** - Emulates an AHCI hard disk for better software compatibility. <br><li>**VirtIO** - Uses paravirtualized drivers and can provide better performance, but the operating system installed in the VM must support VirtIO disk devices.</li>. |
 | **Raw filesize** | Text field that accepts manual entry of a number for the size of the file in GiB. |
