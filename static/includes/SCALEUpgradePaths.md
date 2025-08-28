@@ -295,6 +295,25 @@ See the <a href="https://www.truenas.com/docs/softwarestatus/#which-truenas-vers
     // Start initialization
     initializeWhenReady();
     
+    // Handle URL hash changes (like when clicking jump buttons or loading with anchor)
+    window.addEventListener('hashchange', function() {
+      // Small delay to allow tab to become active
+      setTimeout(() => {
+        checkAttempts = 0;
+        waitForMermaidAndInitialize();
+      }, 300);
+    });
+    
+    // Also check after a longer delay on initial load to catch tab activation from URL anchor
+    setTimeout(() => {
+      const container1 = document.getElementById('scrollContainer1');
+      const container2 = document.getElementById('scrollContainer2');
+      if ((!container1 || container1.scrollWidth === 0) || (!container2 || container2.scrollWidth === 0)) {
+        checkAttempts = 0;
+        waitForMermaidAndInitialize();
+      }
+    }, 1000);
+    
     // Global function for manual testing
     window.reinitializeScrollControls = function() {
       initializeScrollControls();
