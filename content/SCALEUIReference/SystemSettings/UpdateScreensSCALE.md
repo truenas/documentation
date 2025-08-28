@@ -25,7 +25,7 @@ An upgrade only shows when the system detects it. The screen shows four informat
 - [**Installed Version**](#installed-version) - Shows the current release of TrueNAS running on the system.
 - [**Other Options**](#other-options) - Shows the **Manual Install** option, and a link to the TrueNAS Documentation Hub article on manually updating the release.
 - [**Update Profile**](#update-profiles) - Shows the **Select an update profile** dropdown list.
-- [**Available Profiles**](#available-profiles) - Shows a list of update profile, and a description of what each provides.
+- [**Available Profiles**](#available-profiles) - Shows a list of update profiles, and a description of what each provides.
 
 ### Installed Version
 
@@ -33,7 +33,7 @@ This section shows the current TrueNAS release installed on the system. **System
 
 {{< trueimage src="/images/SCALE/SystemSettings/UpdateScreenWithUpdateAvailable.png" alt="Update Available" id="Update Available" >}}
 
-If an update is detected, it and the **Install Update** button shows below the current release version.
+If an update is detected, it and the **Install Update** button show below the current release version.
 The update summary for this release shows the **View Release Notes** link that opens the release notes for the update version.
 
 **Install Update** starts the update process.
@@ -70,7 +70,7 @@ Profile selections allow users to choose how conservative the software selection
 |---------|-------------|
 | **Early Adoptor** | Available to Community users wanting to try out or test early or nightly releases still in development. Pre-release access to new features and functionality of TrueNAS software. Some issues might need workarounds, bug reports, or patience. |
 | **General** | Available to Community and some Enterprise customers, but is not recommended for Enterprise customers. General releases are field-tested software with mature features. Expect a few issues in the general release profile. |
-| **Mission Critical** | Available to Community and Enterprise users, especially TrueNAS HA systems. This profile the most conservative release, and is mature software that enables 24x7 operations with high availability for a clearly defined use case. Software updates are very infrequent and based on need. |
+| **Mission Critical** | Available to Community and Enterprise users, especially TrueNAS HA systems. This profile is the most conservative release, and is mature software that enables 24x7 operations with high availability for a clearly defined use case. Software updates are very infrequent and based on need. |
 | **Developer** | Available to developer users. The developer profile is for nightly builds of software in active development. Expect many issues and frequent, sometimes twice daily updates. |
 {{< /truetable >}}
 
