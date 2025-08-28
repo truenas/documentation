@@ -816,15 +816,28 @@ ${this.config.enableMarkdown ? this.parseMarkdown(cleanContent) : cleanContent}
         element.style.visibility = 'visible';
 
         try {
+            // Ensure Mermaid theme is initialized before rendering
+            if (typeof this.initializeMermaidTheme === 'function') {
+                this.initializeMermaidTheme();
+            }
+            
+            // Additional delay for direct hash loading to avoid race conditions
+            if (window.location.hash && !element.hasAttribute('data-rendered-once')) {
+                await new Promise(resolve => setTimeout(resolve, 200));
+            }
+            
             if (mermaid.render) {
                 const id = `mermaid-diagram-${Date.now()}-${index}`;
                 const { svg } = await mermaid.render(id, originalContent);
                 element.innerHTML = svg;
+                element.setAttribute('data-rendered-once', 'true');
             } else {
                 mermaid.init(undefined, element);
+                element.setAttribute('data-rendered-once', 'true');
             }
         } catch (error) {
             console.error(`Error rendering Mermaid diagram ${index + 1}:`, error);
+            console.error('Original content:', originalContent);
             element.innerHTML = '<div style="color: red; font-style: italic;">Mermaid diagram failed to load</div>';
         } finally {
             element.style.display = originalDisplay;
