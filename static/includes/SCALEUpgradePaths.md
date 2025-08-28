@@ -374,9 +374,24 @@ See the <a href="https://www.truenas.com/docs/softwarestatus/#which-truenas-vers
       containerIds.forEach((containerId) => {
         // Find the VISIBLE container with this ID (there might be duplicates)
         const allContainers = document.querySelectorAll(`[id="${containerId}"]`);
-        const container = Array.from(allContainers).find(el => el.offsetParent !== null);
+        
+        // More robust visibility detection
+        const container = Array.from(allContainers).find(el => {
+          const rect = el.getBoundingClientRect();
+          const computedStyle = window.getComputedStyle(el);
+          return el.offsetParent !== null && 
+                 rect.width > 0 && 
+                 rect.height > 0 && 
+                 computedStyle.display !== 'none' &&
+                 computedStyle.visibility !== 'hidden';
+        });
         
         if (!container) {
+          console.log(`Debug: No visible container found for ${containerId}. Found ${allContainers.length} total containers.`);
+          allContainers.forEach((el, i) => {
+            const rect = el.getBoundingClientRect();
+            console.log(`Container ${i}: offsetParent=${!!el.offsetParent}, rect=${rect.width}x${rect.height}, display=${window.getComputedStyle(el).display}`);
+          });
           return;
         }
         
@@ -386,8 +401,18 @@ See the <a href="https://www.truenas.com/docs/softwarestatus/#which-truenas-vers
         const indicatorId = containerId.replace('Container', 'Indicator');
         // Find the VISIBLE indicator that corresponds to this container
         const allIndicators = document.querySelectorAll(`[id="${indicatorId}"]`);
-        const indicator = Array.from(allIndicators).find(el => el.offsetParent !== null);
+        const indicator = Array.from(allIndicators).find(el => {
+          const rect = el.getBoundingClientRect();
+          const computedStyle = window.getComputedStyle(el);
+          return el.offsetParent !== null && 
+                 rect.width > 0 && 
+                 rect.height > 0 && 
+                 computedStyle.display !== 'none' &&
+                 computedStyle.visibility !== 'hidden';
+        });
         const dots = indicator ? indicator.querySelectorAll('.scroll-dot') : [];
+        
+        console.log(`Debug: Initializing ${containerId} - container=${!!container}, wrapper=${!!wrapper}, leftBtn=${!!leftBtn}, rightBtn=${!!rightBtn}, indicator=${!!indicator}, dots=${dots.length}`);
         
 
         // Set initial scroll position to rightmost
