@@ -2373,3 +2373,10 @@ RTX
 GSP
 Quadro
 EnterpriseMigrationSupport
+DeleteVirtualMachineDialog
+CreateVirtualMachineOperatingSystemSettings
+CreateVirtualMachineCPUAndMemorySettings
+CreateVirtualMachinesDisksSettings
+CreateVirtualMachinesNetworkInterfaceSettings
+CreateVirtualMachineInstallationMediaSettings
+CBDMA
