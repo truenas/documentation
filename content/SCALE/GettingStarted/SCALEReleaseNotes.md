@@ -19,7 +19,7 @@ jump_to_buttons:
     icon: "warning"
   - text: "26.04 Major Features"
     anchor: "major-features"
-    icon: "component-versions"
+    icon: "new-releases"
   - text: "Full 26.04 Changelog"
     anchor: "full-changelog"
     icon: "history"
