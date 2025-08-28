@@ -17,7 +17,7 @@ Some profiles are not available or recommended for Enterprise customers.
 TrueNAS systems are shipped with the profile set for the user based on their use case.
 
 The **Update** screen shows the installed version, other installation or update options, and user profiles.
-Some users can select a different profile option on **Select and update profile** dropdown list.
+Some users can select a different profile option from the **Select and update profile** dropdown list.
 
 ## Software Update Paths
 
@@ -33,7 +33,7 @@ Testers are encouraged to submit bug reports with debug files.
 For information on how to file an issue ticket, see [Filing an Issue Ticket in TrueNAS]({{< ref "FileIssueSCALE" >}}).
 {{< /hint >}}
 
-The TrueNAS **Update** screen provides users with an automatic and manual update method.
+The TrueNAS **Update** screen provides users with automatic and manual update methods.
 
 We recommend updating TrueNAS when the system is idle (no clients connected, no disk activity, etc.).
 The system restarts after an upgrade.
