@@ -110,7 +110,7 @@ Failover moves to the **Advanced Settings** screen ([NAS-135469](https://ixsyste
   <div data-tab-id="known-issues" data-tab-label="Known Issues">
 
 {{< hint type="important" title="Known Issues in 25.10" >}}
-These are ongoing issues that affect multiple versions in the 25.10 series.
+These are ongoing issues that can affect multiple versions in the 25.10 series.
 <br> When resolved, issues move to **Notable Changes** for the appropriate release.
 {{< /hint >}}
 
