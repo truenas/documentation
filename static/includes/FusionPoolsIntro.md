@@ -1,6 +1,6 @@
 &NewLine;
 
-Fusion Pools are also known as ZFS allocation classes, ZFS special vdevs, and metadata vdevs (**Metadata** vdev type on the **Pool Manager** screen.).
+Fusion Pools are also known as ZFS allocation classes, ZFS special vdevs, and metadata vdevs (**Metadata** vdev type on the **Pool Manager** screen).
 
 {{< expand "What is a special VDEV?" "v" >}}
 A special VDEV can store metadata such as file locations and allocation tables.
