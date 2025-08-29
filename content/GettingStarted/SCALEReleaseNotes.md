@@ -13,7 +13,7 @@ jump_to_buttons:
     icon: "warning"
   - text: "25.10 Major Features"
     anchor: "major-features"
-    icon: "component-versions"
+    icon: "new-releases"
   - text: "Full 25.10 Changelog"
     anchor: "full-changelog"
     icon: "history"
