@@ -58,6 +58,10 @@ SED passwords are used during initial setup and for unlocking SEDs.
 
 {{< include file="/static/includes/SEDGlobalPW.md" >}}
 
+### Configuring Individual SED Passwords
+
+{{< include file="/static/includes/SEDIndividualPWs.md" >}}
+
 ## Check SED Functionality
 
 When SED devices are detected during system boot, TrueNAS checks for configured global and device-specific passwords.
