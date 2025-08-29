@@ -11,10 +11,11 @@ keywords:
 
 The TrueNAS Directory Services tutorials contain options to edit directory domain and account settings, set up ID mapping, and configure authentication and authorization services in TrueNAS.
 
-## Choosing Active Directory or LDAP
+## About Directory Services
 
-When setting up directory services in TrueNAS, you can connect TrueNAS to either an Active Directory or an LDAP server but not both.
+TrueNAS provides unified directory services configuration that supports connecting to Active Directory domains or LDAP servers through a single, streamlined interface. The directory services configuration screen allows you to set up authentication credentials, connection parameters, and advanced options in one location.
 
+Only one directory service type can be configured and enabled at a time.
 To view Idmap and Kerberos Services, click **Show** next to **Advanced Settings**.
 
 <div class="noprint">
