@@ -27,11 +27,11 @@ This opens the **Pool Creation Wizard** with *tank* prepopulated but not editabl
 ## ZFS Info Widget
 The **ZFS Info** widget for the VDEV shows a count of read, write, and checksum errors for that VDEV. It can show the **Remove** or **Offline** buttons, and the **Extend** and **Remove** options.
 
-**Extend** opens the **Extend VDEV** dialog where you select a disk from the **New Disk** dropdown to add a new disk to the VDEV.
+**Extend** opens the **Extend VDEV** dialog, where you select a disk from the **New Disk** dropdown to add a new disk to the VDEV.
 
 {{< trueimage src="/images/SCALE/Storage/DataVdevExpanded.png" alt="Data VDEV Expanded" id="Data VDEV Expanded" >}}
 
-**Remove** opens the **Remove device** dialog where you confirm you want to remove the selected VDEV.
+**Remove** opens the **Remove device** dialog, where you confirm you want to remove the selected VDEV.
 To remove a drive from the VDEV, select the drive, then select **Detach** on the **[ZFS Info](#zfs-info-widget-drives)** widget to remove the drive from the VDEV (pool).
 
 ## DiskWidgets
@@ -74,7 +74,7 @@ The **Disk Info** widget shows the disk size, transfer mode, the serial and mode
 The **Hardware Disk Encryption** widget only shows on Enterprise-licensed systems.
 {{< /enterprise >}}
 
-The **Hardware Disk Encryption** widget shows drive information such as the SED password set or not set.
+The **Hardware Disk Encryption** widget shows drive information, like whether the SED password is set or not.
 It might show on non-enterprise systems with self-encrypting drives, but not all configuration options show in the UI. Community users should use the SED utilities to manage these drives.
 
 The **Manage SED Password** link opens a **Manage SED Password** dialog, where you can enter a disk SED password to set the disk encryption password.
@@ -84,7 +84,7 @@ The **Manage SED Password** link opens a **Manage SED Password** dialog, where y
 {{< trueimage src="/images/SCALE/Storage/ManageSEDPasswordDialog.png" alt="Manage Disk SED Encryption Password" id="Manage Disk SED Encryption Password" >}}
 
 **Global SED Password** shows the status as set or not set.
-The **Manage Global SED Password** link opens the **[System Settings > Advanced]({{< ref "AdvancedSettingsScreen" >}})** screen where you can change the global SED password that overrides the disk passwords.
+The **Manage Global SED Password** link opens the **[System Settings > Advanced]({{< ref "AdvancedSettingsScreen" >}})** screen, where you can change the global SED password that overrides the disk passwords.
 
 #### Replacing Disk Dialog
 
