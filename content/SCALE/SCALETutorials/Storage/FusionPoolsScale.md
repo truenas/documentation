@@ -14,7 +14,7 @@ tags:
 
 ## Creating a Fusion Pool
 
-On the **Storage Dashboard** click **Create Pool**, or click **Add To Pool**, then select **New Pool**.
+On the **Storage Dashboard**, click **Create Pool**, or click **Add To Pool**, then select **New Pool**.
 
 A pool must always have one normal (non-dedup/special) VDEV before you assign other devices to the special class.
 
