@@ -13,7 +13,7 @@ jump_to_buttons:
     icon: "warning"
   - text: "25.10 Major Features"
     anchor: "major-features"
-    icon: "component-versions"
+    icon: "new-releases"
   - text: "Full 25.10 Changelog"
     anchor: "full-changelog"
     icon: "history"
@@ -116,6 +116,11 @@ These are ongoing issues that can affect multiple versions in the 25.10 series.
 
 ### Current Known Issues
 
+* An issue blocks some systems from upgrading ([NAS-137352](https://ixsystems.atlassian.net/browse/NAS-137352))..
+
+  During upgrades, 25.10 updates GRUB when it detects a version difference between the current and new GRUB.
+  However, the code expects a BIOS partition to be present, so environments without a BIOS partition return a traceback.
+  Systems initially deployed with TrueNAS SCALE have this partition, but some systems originally deployed with TrueNAS CORE can be impacted.
 * The time sort for frequency on the **Cloud Sync Tasks** screen is incorrect ([NAS-137096](https://ixsystems.atlassian.net/browse/NAS-137096)).
 * **Users** page shows "can not retrieve response" due to invalid email address ([NAS-137198](https://ixsystems.atlassian.net/browse/NAS-137198)).
 * The **Virtual Machines** page doesn't refresh properly ([NAS-136973](https://ixsystems.atlassian.net/browse/NAS-136973)).

@@ -20,12 +20,12 @@ The **Kerberos Settings** widget in the **Advanced Settings** on the **Directory
 
 {{< include file="/static/includes/KerberosWarning.md" >}}
 
-The **Kerberos Settings** screen includes two fields used to configure auxiliary parameters.
+The **Kerberos Settings** configuration screen is available for advanced Kerberos configuration.
 
 ![KerberosSettingsScreen](/images/SCALE/Credentials/KerberosSettingsScreen.png "Kerberos Settings Screen")
 
-{{< hint type=warning >}}
-If you do not understand Kerberos auxiliary parameters, do not attempt to configure new settings!
+{{< hint type=note >}}
+Advanced Kerberos auxiliary parameter configuration options are removed in TrueNAS 25.10. Kerberos settings are now managed through the unified directory services configuration.
 {{< /hint >}}
 
 {{< truetable >}}
