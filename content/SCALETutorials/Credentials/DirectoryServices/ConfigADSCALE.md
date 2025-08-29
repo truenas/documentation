@@ -70,25 +70,31 @@ Make sure the domain name is set to something other than the default value **tru
 
 To connect TrueNAS to Active Directory:
 
-1. Go to **Credentials > Directory Services** click **Configure Active Directory** to open the **Active Directory** configuration screen.
+1. Go to **Credentials > Directory Services** and click **Configure Directory Services** to open the **Directory Services Configuration** form.
 
-2. Enter the domain name for the AD in **Domain Name** and the `bindname` and `bindpw` account credentials in **Domain Account Name** and **Domain Account Password**.
-   Default **Domain Account Name** created for TrueNAS is **Administrator**.
+2. Select **Active Directory** as the directory service type.
 
-3. Enter the TrueNAS hostname in **NetBIOS Name**. Change the default **TRUENAS** to something else.
-   Enter the TrueNAS host name that matches the information on the **Network > Global Configuration** screen in the **Hostname** field.
+3. Enter the **Active Directory Configuration** settings:
+   - Enter the TrueNAS host name in **TrueNAS Hostname** (required).
+   - Enter the domain name for the AD in **Domain Name** (required).  
+   - Enter the site name in **Site Name** (optional).
+   - Enter the computer account organizational unit in **Computer Account OU** (optional).
+   - Select **Use Default Domain** if needed for your environment.
 
-4. Select **Enable** to attempt to join the AD domain immediately after saving the configuration.
-   TrueNAS populates the **Kerberos Realm** and **Kerberos Principal** fields on the **Advanced Options** settings screen.
+4. Enter the **Trusted Domains Configuration** settings if needed for your environment.
 
-   {{< trueimage src="/images/SCALE/Credentials/ActiveDirectoryBasicOptions.png" alt="Active Directory Basic Options" id="Active Directory Basic Options" >}}
+   Starting in TrueNAS 25.10, trusted domains are configured as part of the Active Directory configuration rather than as separate IDmap entries.
 
-   TrueNAS creates the default Kerberos realm and principal, and the **Computer Account OU** value **/computers/servers/NAS**.
+   {{< trueimage src="/images/SCALE/Credentials/TrustedDomainsConfiguration.png" alt="Trusted Domains Configuration" id="Trusted Domains Configuration" >}}
 
-   If you get a DNS server error, go to **Network > Global Configuration**, click **Settings** and verify the DNS nameserver IP addresses are correctly configured with addresses that permit access to the Active Directory domain controller.
-   Correct any network configuration settings, then reconfigure the Active Directory settings.
 
-5. Click **Save**.
+5. Enter the **IDMAP Configuration** settings.
+   - By default, **Use TrueNAS Server IDMAP Defaults** is selected.
+   - To customize IDMAP settings, uncheck **Use TrueNAS Server IDMAP Defaults** to reveal additional configuration options:
+   - **Builtin** section with optional **Name** field and required **Range Low** and **Range High** fields.
+   - **IDMAP Domain** section with required **IDMAP Backend**, **Name**, **Range Low**, and **Range High** fields.
+
+6. Click **Save**..
 
 TrueNAS offers advanced options for fine-tuning the AD configuration, but the preconfigured defaults are generally suitable.
 
