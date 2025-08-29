@@ -210,7 +210,7 @@ You cannot change the original encryption or data VDEV configuration.
   Special or deduplication VDEVs added to a pool with existing data are only populated with new writes.
 {{< /expand >}}
 
-To add a VDEV to an exisiting pool, you can:
+To add a VDEV to an existing pool, you can:
 * Click **Add To Pool** to open the **Add To Pool** window, and select **Existing Pool**. Select the pool on the **Existing Pool** dropdown.
 
   {{< trueimage src="/images/SCALE/Storage/AddToPoolExistingPoolWindow.png" alt="Add To Pool - Existing Pool" id="Add To Pool - Existing Pool" >}}
@@ -288,7 +288,7 @@ To expand a pool by replacing disks with a higher-capacity disk, follow the same
 Insert a new disk into an empty enclosure slot. Remove the old disk only after completing the replacement operation.
 If an empty slot is unavailable, you can off-line the existing disk and replace it in the same slot, but this reduces redundancy during the process.
 
-Go to the **Storage Dashboard** and click **View VDEVs** on the **VDEVs** widget opens the ***Poolname* VDEVs** screen..
+Go to the **Storage Dashboard** and click **View VDEVs** on the **VDEVs** widget opens the ***Poolname* VDEVs** screen.
 
 1. Click anywhere on the VDEV to expand it and select one of the existing disks.
 
