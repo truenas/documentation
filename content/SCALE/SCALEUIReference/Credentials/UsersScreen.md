@@ -70,7 +70,7 @@ The **User (WIP)** screen shows up to three widgets for each user based on the t
 
 #### Profile Widget
 
-The **Profile** widget shows the full name, group membership, type of user (Local, Built-in, or Directory Service), home directory path and the user ID.
+The **Profile** widget shows the full name, group membership, type of user (Local, Built-in, or Directory Service), home directory path, and the user ID.
 
 {{< trueimage src="/images/SCALE/Credentials/UsersScreenWIPProfileWidget.png" alt="Local User Details" id="Local User Details" >}}
 
@@ -101,7 +101,7 @@ Information details on the **Access** widget:
 - The password shows an active key icon when the user has a password or an inactive key icon when the user does not have a password. Users with passwords show the **Password** widget.
 
 - The access area shows:
-  - Services such as **SMB Access** and indicates it is active or inactive when not granted.
+  - Services (such as **SMB Access**) and indicates whether it is active or inactive when not granted.
   - Pre-defined privilege or role assigned to the user, such as **Full Admin**, **Share Admin**, **Read Only Admin**.
   - API keys assigned or not. When a key exists, the icon changes and shows a number with the key, for example, *1key*.
   - SSH access is active or inactive if not granted.
@@ -177,7 +177,7 @@ Some settings show additional settings, for example, the **Group**, **Home Direc
 |---------|-------------|
 | **Full Name** | Text entry field that accepts manual entry of the full name (first and last) for the user. |
 | **Email** | Enter the email address of the new user. This email address receives notifications, alerts, and messages based on configured settings. |
-| **Groups** | Shows the **Create New Primary Group** pre-selected by default, and **Auxiliary Groups** settings after clicking the edit icon. <br>**Create New Primary Group** creates a new primary group with the same name entered in **Username**. Disabling **Create New Primary Group** shows a dropdown list with group options. <br>**Auxiliary Group** shows a dropdown list after clicking in the field. This sets membership the auxiliary group. For example, to add **built-in administrator** or **truenas_readonly_administrator** group privileges. |
+| **Groups** | Shows the **Create New Primary Group** pre-selected by default, and **Auxiliary Groups** settings after clicking the edit icon. <br>**Create New Primary Group** creates a new primary group with the same name entered in **Username**. Disabling **Create New Primary Group** shows a dropdown list with group options. <br>**Auxiliary Group** shows a dropdown list after clicking in the field. This sets the membership auxiliary group. For example, to add **built-in administrator** or **truenas_readonly_administrator** group privileges. |
 | **UID** | Shows the default **Next Available**. Shows a text entry field that accepts manual entry of a new number for the user ID after clicking edit. Enter a number greater than 1000 for user accounts. System accounts use an ID equal to the default port number used by the service. |
 | **Home Directory** | Sets the home directory for the user. Shows the default **New directory under /var/empty** when not configured. <br><li>**Create Home Directory** is preselected by default, and the **Create Home Directory Under** mount path and file browser fields show after clicking edit. <br>Disabling **Create Home Directory** changes the mount path and browser fields to **Home Directory**. <br>The mount path field allows manual entry of the path to the home directory for this user, or populates with the path selected with the file browser directly below. <br>The file browser allows creating a new dataset after clicking on an existing dataset. If the directory exists and matches the value in **Username**, it is set as the home directory for the user. <br>When the path does not end with a subdirectory matching the username, a new subdirectory is created if the **Create Home Directory** option is selected. <br><li>**Default Permissions** is preselected by default. It sets the home directory ACL permissions to **700 or owner - all, others-none**. <br>Disabling **Default Permissions** shows the **Home Directory Permissions** **Read/Write/Execute** and **User/Group/Other** checkboxes to customize the home directory permissions.</li> |
 | **Shell** | Select the [shell](#shell-options) for local and SSH logins from the dropdown list. Options are **bash** **dash**, **rbash**, **sh**, **tmux**, **TrueNAS CLI**, **TrueNAS Console**, and **zsh**. |
