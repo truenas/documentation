@@ -20,7 +20,7 @@ div.docs-read_mod {display: none;}
 h1 {display:none;}
 </style>
 
-{{< header logo="/images/tn-openstorage-logo.png" logo_alt="TrueNAS Logo" version="Nightly Development - 25.10 Goldeye" icon="" icon_alt="" >}}
+{{< header logo="/images/tn-openstorage-logo.png" logo_alt="TrueNAS Logo" version="25.10 Goldeye" icon="" icon_alt="" >}}
 
 {{< include file="/static/includes/25.10FeatureList.md" >}}
 
@@ -33,7 +33,7 @@ h1 {display:none;}
   <div class="docs-sections">
     <p>
     <a href="/gettingstarted/" style="font-size:18px;">Getting Started Guide</a>
-    <br><a href="/gettingstarted/scalereleasenotes/">Development Notes</a>
+    <br><a href="/gettingstarted/scalereleasenotes/">Release Notes</a>
     <br><a href="/gettingstarted/scalehardwareguide/">Community Hardware Guide</a>
     <br><a href="/gettingstarted/install/">Software Install</a>
     <br><a href="/gettingstarted/migrate/">Migrating from CORE</a>
