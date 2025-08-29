@@ -41,6 +41,8 @@ Choose the right TrueNAS version by balancing your need for new features against
 
 <small>\* TrueNAS CORE is no longer under active development. Enterprise customers should contact TrueNAS Support to discuss migration options.</small>
 
+<small><sup>†</sup> TrueNAS Community users with Mission Critical stability needs should consider [TrueNAS Enterprise](https://truenas.com/truenas-enterprise/) appliances for the ultimate in data protection, performance, and around-the-clock support.</small>
+
 <div style="display: flex; align-items: center; gap: 2rem; padding: 1rem; border: 1px solid var(--accent-color); border-radius: 8px; background-color: var(--accent-color-lite);">
   <div style="flex-shrink: 0;">
     <img src="/images/open-enterprise-storage--logo-full-color-rgb-large.png" alt="TrueNAS Enterprise" style="max-width: 150px; height: auto;">

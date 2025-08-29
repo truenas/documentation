@@ -1,0 +1,101 @@
+table_data:
+  developer:
+    enterprise_core: N/A
+    enterprise_scale: N/A
+    enterprise_colspan: 2
+    community_scale:
+      version: Halfmoon Nightly
+      link: https://download.truenas.com/truenas-scale-halfmoon-nightly/
+  early_adopter:
+    enterprise_core: N/A
+    enterprise_scale: N/A
+    enterprise_colspan: 2
+    community_scale:
+      version: 25.10-BETA.1
+      link: https://www.truenas.com/docs/scale/25.10/gettingstarted/scalereleasenotes/#25.10-BETA.1
+  general:
+    enterprise_core:
+      version: 13.0-U6.8
+      note: '*'
+      link: https://www.truenas.com/docs/core/13.0/gettingstarted/corereleasenotes/#130-u68
+    enterprise_scale:
+      version: 24.10.2.2
+      link: https://www.truenas.com/docs/scale/24.10/gettingstarted/scalereleasenotes/#241022
+    community_scale:
+      version: 25.04.2.1
+      link: https://www.truenas.com/docs/scale/25.04/gettingstarted/scalereleasenotes/#250421
+  mission_critical:
+    enterprise_core:
+      version: 13.0-U6.8
+      note: '*'
+      link: https://www.truenas.com/docs/core/13.0/gettingstarted/corereleasenotes/#130-u68
+    enterprise_scale:
+      version: 24.10.2.2
+      link: https://www.truenas.com/docs/scale/24.10/gettingstarted/scalereleasenotes/#241022
+    community_scale:
+      version: 24.10.2.2
+      link: https://www.truenas.com/docs/scale/24.10/gettingstarted/scalereleasenotes/#241022
+      note: '<sup style="font-size: 0.6em;">†</sup>'
+api_config:
+  base_url: https://update.sys.truenas.net/scale/
+  trains_file: trains_v2.json
+doc_patterns:
+  scale_release: /docs/scale/{major_minor}/gettingstarted/scalereleasenotes/#{version_anchor}
+  core_release: /docs/core/{major_minor}/gettingstarted/corereleasenotes/#{version_anchor}
+nightly_patterns:
+  base_url: https://download.truenas.com/
+  pattern: truenas-scale-{codename}-nightly/
+version_rules:
+  major_minor_regex: ^(\d+\.\d+)
+  codename_regex: TrueNAS-SCALE-([A-Za-z]+)
+  codename_mapping:
+    Goldeye: goldeye
+    Fangtooth: fangtooth
+    Halfmoon: halfmoon
+products:
+  enterprise:
+    scale:
+    - TrueNAS-SCALE-24.10-ENTERPRISE
+    core:
+    - TrueNAS-CORE-13.0
+  community:
+    scale:
+    - TrueNAS-SCALE-Goldeye-BETA
+    - TrueNAS-SCALE-GoldEye-Nightlies
+    - TrueNAS-SCALE-Halfmoon-Nightlies
+profiles:
+  developer: DEVELOPER
+  early_adopter: EARLY_ADOPTER
+  general: GENERAL
+  mission_critical: MISSION_CRITICAL
+current_static:
+  enterprise:
+    general:
+      core:
+        version: 13.0-U6.8
+        link: https://www.truenas.com/docs/core/13.0/gettingstarted/corereleasenotes/#130-u68
+        note: '*'
+      scale:
+        version: 24.10.2.2
+        link: https://www.truenas.com/docs/scale/24.10/gettingstarted/scalereleasenotes/#241022
+    mission_critical:
+      core:
+        version: 13.0-U6.8
+        link: https://www.truenas.com/docs/core/13.0/gettingstarted/corereleasenotes/#130-u68
+        note: '*'
+      scale:
+        version: 24.10.2.2
+        link: https://www.truenas.com/docs/scale/24.10/gettingstarted/scalereleasenotes/#241022
+  community:
+    developer:
+      scale:
+        version: Goldeye Nightly
+        link: https://download.truenas.com/truenas-scale-goldeye-nightly/
+    early_adopter:
+      scale:
+        version: 25.04.2.1
+        link: https://www.truenas.com/docs/scale/25.04/gettingstarted/scalereleasenotes/#250421
+    general:
+      scale:
+        version: 25.04.2.1
+        link: https://www.truenas.com/docs/scale/25.04/gettingstarted/scalereleasenotes/#250421

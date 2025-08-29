@@ -1,4 +1,7 @@
 {{/* layouts/shortcodes/software-status-table.html */}}
+{{/* Load software status configuration */}}
+{{ $config := site.Data.software_status_config }}
+
 <div class="gdoc-columns__content gdoc-markdown--nested">
   <div class="section-box" style="border-radius: 15px;">
         
@@ -19,28 +22,102 @@
         </tr>
       </thead>
       <tbody>
+        {{/* Developer Row */}}
         <tr>
           <td style="padding: 1rem; font-weight: bold;"><strong>Developer</strong></td>
-          <td style="padding: 1rem; text-align: center;" colspan="2">N/A</td>
-          <td style="padding: 1rem; text-align: center;"><a href="https://download.truenas.com/truenas-scale-goldeye-nightly/">Goldeye Nightly</a></td>
+          {{ $dev := $config.table_data.developer }}
+          {{ if $dev.enterprise_colspan }}
+            <td style="padding: 1rem; text-align: center;" colspan="{{ $dev.enterprise_colspan }}">N/A</td>
+          {{ else }}
+            <td style="padding: 1rem; text-align: center;">{{ $dev.enterprise_core | default "N/A" }}</td>
+            <td style="padding: 1rem; text-align: center;">{{ $dev.enterprise_scale | default "N/A" }}</td>
+          {{ end }}
+          {{ if $dev.community_scale.link }}
+            <td style="padding: 1rem; text-align: center;">
+              <a href="{{ $dev.community_scale.link }}">{{ $dev.community_scale.version }}</a>
+            </td>
+          {{ else }}
+            <td style="padding: 1rem; text-align: center;">{{ $dev.community_scale.version | default "N/A" }}</td>
+          {{ end }}
         </tr>
+        
+        {{/* Early Adopter Row */}}
         <tr>
           <td style="padding: 1rem; font-weight: bold;"><strong>Early Adopter</strong></td>
-          <td style="padding: 1rem; text-align: center;">N/A</td>
-          <td style="padding: 1rem; text-align: center;"><a href="https://www.truenas.com/docs/scale/25.04/gettingstarted/scalereleasenotes/#250421">25.04.2.1</a></td>
-          <td style="padding: 1rem; text-align: center;"><a href="https://www.truenas.com/docs/scale/25.04/gettingstarted/scalereleasenotes/#250421">25.04.2.1</a></td>
+          {{ $ea := $config.table_data.early_adopter }}
+          {{ if $ea.enterprise_colspan }}
+            <td style="padding: 1rem; text-align: center;" colspan="{{ $ea.enterprise_colspan }}">N/A</td>
+          {{ else }}
+            <td style="padding: 1rem; text-align: center;">{{ $ea.enterprise_core | default "N/A" }}</td>
+            <td style="padding: 1rem; text-align: center;">{{ $ea.enterprise_scale | default "N/A" }}</td>
+          {{ end }}
+          {{ if $ea.community_scale.link }}
+            <td style="padding: 1rem; text-align: center;">
+              <a href="{{ $ea.community_scale.link }}">{{ $ea.community_scale.version }}</a>
+            </td>
+          {{ else }}
+            <td style="padding: 1rem; text-align: center;">{{ $ea.community_scale.version | default "N/A" }}</td>
+          {{ end }}
         </tr>
+        
+        {{/* General Row */}}
         <tr>
           <td style="padding: 1rem; font-weight: bold;"><strong>General</strong></td>
-          <td style="padding: 1rem; text-align: center;"><a href="https://www.truenas.com/docs/core/13.0/gettingstarted/corereleasenotes/#130-u68">13.0-U6.8*</a></td>
-          <td style="padding: 1rem; text-align: center;"><a href="https://www.truenas.com/docs/scale/24.10/gettingstarted/scalereleasenotes/#241022">24.10.2.2</a></td>
-          <td style="padding: 1rem; text-align: center;"><a href="https://www.truenas.com/docs/scale/25.04/gettingstarted/scalereleasenotes/#250421">25.04.2.1</a></td>
+          {{ $gen := $config.table_data.general }}
+          {{/* Enterprise Core */}}
+          {{ if $gen.enterprise_core.link }}
+            <td style="padding: 1rem; text-align: center;">
+              <a href="{{ $gen.enterprise_core.link }}">{{ $gen.enterprise_core.version }}</a>{{ $gen.enterprise_core.note }}
+            </td>
+          {{ else }}
+            <td style="padding: 1rem; text-align: center;">{{ $gen.enterprise_core.version | default "N/A" }}{{ $gen.enterprise_core.note }}</td>
+          {{ end }}
+          {{/* Enterprise Scale */}}
+          {{ if $gen.enterprise_scale.link }}
+            <td style="padding: 1rem; text-align: center;">
+              <a href="{{ $gen.enterprise_scale.link }}">{{ $gen.enterprise_scale.version }}</a>
+            </td>
+          {{ else }}
+            <td style="padding: 1rem; text-align: center;">{{ $gen.enterprise_scale.version | default "N/A" }}</td>
+          {{ end }}
+          {{/* Community Scale */}}
+          {{ if $gen.community_scale.link }}
+            <td style="padding: 1rem; text-align: center;">
+              <a href="{{ $gen.community_scale.link }}">{{ $gen.community_scale.version }}</a>{{ $gen.community_scale.note }}
+            </td>
+          {{ else }}
+            <td style="padding: 1rem; text-align: center;">{{ $gen.community_scale.version | default "N/A" }}{{ $gen.community_scale.note }}</td>
+          {{ end }}
         </tr>
+        
+        {{/* Mission Critical Row */}}
         <tr>
           <td style="padding: 1rem; font-weight: bold;"><strong>Mission Critical</strong></td>
-          <td style="padding: 1rem; text-align: center;"><a href="https://www.truenas.com/docs/core/13.0/gettingstarted/corereleasenotes/#130-u68">13.0-U6.8*</a></td>
-          <td style="padding: 1rem; text-align: center;"><a href="https://www.truenas.com/docs/scale/24.10/gettingstarted/scalereleasenotes/#241022">24.10.2.2</a></td>
-          <td style="padding: 1rem; text-align: center;"><a href="https://truenas.com/truenas-enterprise/">Enterprise</a></td>
+          {{ $mc := $config.table_data.mission_critical }}
+          {{/* Enterprise Core */}}
+          {{ if $mc.enterprise_core.link }}
+            <td style="padding: 1rem; text-align: center;">
+              <a href="{{ $mc.enterprise_core.link }}">{{ $mc.enterprise_core.version }}</a>{{ $mc.enterprise_core.note }}
+            </td>
+          {{ else }}
+            <td style="padding: 1rem; text-align: center;">{{ $mc.enterprise_core.version | default "N/A" }}{{ $mc.enterprise_core.note }}</td>
+          {{ end }}
+          {{/* Enterprise Scale */}}
+          {{ if $mc.enterprise_scale.link }}
+            <td style="padding: 1rem; text-align: center;">
+              <a href="{{ $mc.enterprise_scale.link }}">{{ $mc.enterprise_scale.version }}</a>
+            </td>
+          {{ else }}
+            <td style="padding: 1rem; text-align: center;">{{ $mc.enterprise_scale.version | default "N/A" }}</td>
+          {{ end }}
+          {{/* Community Scale */}}
+          {{ if $mc.community_scale.link }}
+            <td style="padding: 1rem; text-align: center;">
+              <a href="{{ $mc.community_scale.link }}">{{ $mc.community_scale.version }}</a>{{ $mc.community_scale.note | safeHTML }}
+            </td>
+          {{ else }}
+            <td style="padding: 1rem; text-align: center;">{{ $mc.community_scale.version | default "N/A" }}{{ $mc.community_scale.note | safeHTML }}</td>
+          {{ end }}
         </tr>
       </tbody>
     </table>
