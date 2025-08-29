@@ -185,6 +185,9 @@ majorVersions:
     majorVersion: "25.10 (Goldeye)"
     releaseName: "Goldeye"
     releases:
+      - name: "25.10-BETA.1"
+        link: "https://download.truenas.com/truenas-scale-goldeye-beta/25.10-BETA.1"
+        date: "2025-08-28"
       - name: "25.10 (Goldeye) Nightly .iso"
         link: "https://download.truenas.com/truenas-scale-goldeye-nightly/"
         date: ""
