@@ -1,7 +1,7 @@
 &NewLine;
 
 {{< hint type=important >}}
-Metadata VDEVs are critical for pool operation and data integrity. Protect them with redundancy measures such as mirroring, and optionally hot spare(s) for additional fault tolerance. It is suggested to use an equal or greater level of failure tolerance in each of your metadata VDEVs; for example, if your data VDEVs are configured as RAIDZ2, consider the use of 3-way mirrors for your metadata VDEVs.
+Metadata VDEVs are critical for pool operation and data integrity. Protect them with redundancy measures such as mirroring, and optionally hot spare(s) for additional fault tolerance. We suggest using an equal or greater level of failure tolerance in each of your metadata VDEVs. For example, if your data VDEVs are configured as RAIDZ2, consider using 3-way mirrors for your metadata VDEVs.
 {{< /hint >}}
 
 {{< expand "UPS Recommendation" "v" >}}
