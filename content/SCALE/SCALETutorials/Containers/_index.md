@@ -197,6 +197,11 @@ Assigning dataset permissions to a host user is not enough to grant container pe
 Incorrect or missing mappings can cause permission errors when containers access host paths.
 {{< /hint >}}
 
+{{< hint type=note >}}
+Do not use UIDs or GIDs above **65,535**. While they may appear to work initially, container ID mappings can fail after a **TrueNAS upgrade**.  
+Always keep mapped IDs **below 65,536** to ensure reliable upgrades.
+{{< /hint >}}
+
 #### Granting Root Access to Host Paths
 
 To safely allow container root processes to access host datasets, TrueNAS provides a built-in unprivileged root user for containers **truenas_container_unpriv_root**.
