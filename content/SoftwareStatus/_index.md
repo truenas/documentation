@@ -35,7 +35,7 @@ jump_to_buttons:
 
 ## Which TrueNAS Version is Recommended?
 
-Choose the right TrueNAS version by balancing your need for new features against operational risk tolerance. These recommendations are regularly updated and new releases are recommended for risk-sensitive environments after extensive testing across diverse deployments.
+Choose the right TrueNAS version by balancing your need for new features against operational risk tolerance. These recommendations are regularly updated after extensive testing across diverse deployments.
 
 {{< software-status-table >}}
 
