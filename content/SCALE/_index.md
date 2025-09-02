@@ -23,7 +23,7 @@ div.docs-read_mod {display: none;}
 h1 {display:none;}
 </style>
 
-{{< header logo="/images/tn-openstorage-logo.png" logo_alt="TrueNAS Logo" version="Nightly Development - 26.04 Goldeye" icon="" icon_alt="" >}}
+{{< header logo="/images/tn-openstorage-logo.png" logo_alt="TrueNAS Logo" version="Nightly Development - 26.04 Halfmoon" icon="" icon_alt="" >}}
 
 {{< include file="/static/includes/26.04FeatureList.md" >}}
 

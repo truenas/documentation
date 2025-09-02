@@ -130,6 +130,7 @@ The **Advanced** and **Advanced Remote Options** are for advanced users.
 | Settings | Description |
 |----------|-------------|
 | **Source Path** | Enter or browse to select the dataset or directory with the data to send to the cloud backup provider set in the task. Click the <span class="material-icons">arrow_right</span> arrow to the left of the **/mnt** folder to expand and show datasets and directories within that folder. This is the dataset or directory location with the data the TrueCloud backup task sends to the cloud storage provider. Click the <span class="material-icons">arrow_right</span> arrow to the left of the **/mnt** folder again to collapse the directory tree. |
+| **Cache Path** | Optional. Directory path where cache files are stored. This speeds up the backup process for users with massive datasets and large numbers of files. If not set, performance can degrade. |
 {{< /truetable >}}
 
 ### Remote Settings
@@ -152,6 +153,7 @@ The **Remote** settings specify the TrueCloud credential and destination storage
 |----------|-------------|
 | **Name** | Enter a name for the TrueCloud backup task. |
 | **Keep Last** | Enter a number for the past snapshot copies to retain before removing older snapshots. |
+| **Rate Limit** | Optional. Positive integer that sets the rate limit for the backup process in KiB/s (kibibytes per second). This is a static rate limit that applies throughout the entire backup process. Unlike Cloud Sync bandwidth limits, this setting does not support time-based scheduling. |
 | **Password** | Enter a password for the backup repository. Record this password in a secure location. Required to recreate the task using the same bucket/folder, such as in a new TrueNAS install or system, or to restore data from the existing snapshots in another TrueNAS system. |
 {{< /truetable >}}
 
