@@ -157,12 +157,15 @@ The **Data Protection** widget shows snapshot and backup task information for th
 **View Snapshot Tasks** opens the **[Data Protection]({{< ref "PeriodicSnapshotTasksScreensSCALE" >}})** screen where you can add or manage scheduled periodic snapshot tasks.
 
 **No Backup Tasks** shows when no data protection backup tasks are created. 
-**Go to Backups** opens the **Data Protection > [Replications Tasks]({{< ref "ReplicationScreensSCALE" >}})** screen list view, where you can manage scheduled replication tasks.
+**Go to Backups** opens the **[Data Protection]({{< ref "/SCALE/SCALEUIReference/DataProtection" >}})** screen, where you can manage scheduled replication, rsync, and other data protection tasks.
 
 ### Permissions Widget
 
 The **Permissions** widget shows the type of ACL permissions applied to the dataset.
 ACL types can be **NFSv4** or **Unix Permissions** (POSIX), and each lists access control user or group entries, and the owner and group for the dataset.
+
+The widget shows the owner and type of access control list (ACL) and ACL Entries (ACEs) for the dataset in the lower portion of the widget.
+**Owner** shows both the onwer user and group on one line, formatted as *owner:group*. For example, **Owner: *root:root***.
 
 The permission screen and widget options vary based on the ACL type.
 Root datasets have POSIX permissions, and the entries are not editable. 
@@ -212,13 +215,17 @@ The **Usage** widget for a parent dataset with child datasets with shares shows 
 ### Encryption Widget
 
 The **Encryption** widget only shows for encrypted datasets.
-Options shown in the widget vary based on the type of dataset (root, non-root parent, or child dataset).
+Options shown in the widget vary based on the type of dataset (root, non-root parent, or child dataset), and whether the dataset is a encrypted parent or an encrypted child dataset that inherits settings from the parent.
 It includes the current state of the dataset encryption, the encryption root, and the type.
 
+{{< columns >}}
 {{< trueimage src="/images/SCALE/Datasets/DatasetEncryptionWidget.png" alt="Encryption Widget" id="Encryption Widget" >}}
+<--->
+{{< trueimage src="/images/SCALE/Datasets/EncryptionWidgetInherit.png" alt="Encryption Widget Inherit from Parent" id="Encryption Widget Inherit from Parent" >}}
+{{< /columns >}}
 
 The **Encryption** widget shows **Lock** when the dataset is unlocked or **Unlock** when the dataset is locked.
-These are not available on the widget for the root dataset.
+These are not available on the widget for the root dataset. The dataset table also shows **Locked** or **Unlocked by Parent**.
 
 The **Encryption** widget shows **Export Key** when the encryption type is set to key.
 **Export Key** downloads the system-generated encryption key to a JSON file. You can find this in your Windows **Downloads** folder.
