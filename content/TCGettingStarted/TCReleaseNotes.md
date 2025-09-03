@@ -6,20 +6,20 @@ aliases:
 - /truecommand/3.1/tcgettingstarted/tcreleasenotes/
 ---
 
-## TrueCommand 3.1.1
+## TrueCommand 3.2.0
 
-TrueCommand 3.1.1 enhances the functionality of prior releases with various bugfixes maintenance efforts. This update ensures that TrueCommand is compatible with TrueNAS 25.10.
+TrueCommand 3.2.0 enhances the functionality of prior releases with various bugfixes maintenance efforts. This update ensures that TrueCommand is compatible with TrueNAS 25.10.
 
-## Obtaining the 3.1.1 Release
+## Obtaining the 3.2.0 Release
 
 TrueCommand is primarily offered as a Software as a Service (SaaS) solution from iXsystems, but can be self-hosted as a container deployment.
 
 TrueCommand Cloud registrations are available from https://portal.ixsystems.com.
 A valid email address and credit card is required ([sign up instructions]({{< ref "InstallTCCloud" >}})).
 
-A self-hosted TrueCommand container is available from https://hub.docker.com/r/ixsystems/truecommand/tags under the tag **release-3.1.1** ([deployment instructions]({{< ref "InstallTCDocker" >}})).
+A self-hosted TrueCommand container is available from https://hub.docker.com/r/ixsystems/truecommand/tags under the tag **release-3.2.0** ([deployment instructions]({{< ref "InstallTCDocker" >}})).
 
-## 3.1.1 Upgrade Notes
+## 3.2.0 Upgrade Notes
 
 TrueCommand Cloud deployments are upgraded automatically by TrueNAS. Self-hosted instances must be updated manually by a local TrueCommand administrator.
 
@@ -29,7 +29,7 @@ This is a maintenance release that addresses SMART data parsing issues, resolves
 
 ### TrueNAS Compatibility
 
-TrueCommand 3.1.1 is tested and compatible with these TrueNAS versions:
+TrueCommand 3.2.0 is tested and compatible with these TrueNAS versions:
 
 * 13.0
 * 22.12
@@ -39,7 +39,7 @@ TrueCommand 3.1.1 is tested and compatible with these TrueNAS versions:
 * 25.04
 * 25.10
 
-### 3.1.1 Paths
+### 3.2.0 Paths
 
 Self-hosted Containers:
 ```mermaid
@@ -50,7 +50,7 @@ C["2.2.2"] --> D
 D["2.3.3"] --> E
 E["3.0.2"] --> F
 F["3.1.0"] --> G
-G["3.1.1"]
+G["3.2.0"]
 ```
 
 ## Release Schedule
@@ -64,31 +64,32 @@ G["3.1.1"]
 {{< include file="/static/includes/SoftwareStatusPage.md" >}}
 {{< /expand >}}
 
-## 3.1.1 Changelog
+## 3.2.0 Changelog
 
 **August 26, 2025**
 
-The TrueNAS team is pleased to release TrueCommand 3.1.1!
+The TrueNAS team is pleased to release TrueCommand 3.2.0!
 
 Notable changes:
 
 * Remove iXsystems branding from TrueCommand ([TC-3309](https://ixsystems.atlassian.net/browse/TC-3309))
 * Smart data parsing error ([TC-3305](https://ixsystems.atlassian.net/browse/TC-3305))
 * SMTP configuration with Fastmail not working ([TC-3304](https://ixsystems.atlassian.net/browse/TC-3304))
+* Implement API version dropdown for FT+ RPC API ([TC-3310](https://ixsystems.atlassian.net/browse/TC-3310))
 
-<a href="https://ixsystems.atlassian.net/issues/?filter=13163" target="_blank">Click here for the full changelog</a> of completed tickets that are included in the TrueCommand 3.1.1 release.
+<a href="https://ixsystems.atlassian.net/issues/?filter=13163" target="_blank">Click here for the full changelog</a> of completed tickets that are included in the TrueCommand 3.2.0 release.
 
 {{< include file="/static/includes/JiraFilterInstructions.md" >}}
 
-### 3.1.1 Ongoing Issues
+### 3.2.0 Ongoing Issues
 
 {{< enterprise >}}
 We recommend that TrueNAS Enterprise High Availability (HA) systems be updated from the TrueNAS UI.
 
-If TrueCommand 3.1.1 is used to upgrade HA systems, the standby controller might fail to activate the updated boot environment, resulting in a version mismatch error between the controllers. If you encounter this issue, manually activate the updated boot environment on the active controller and then failover to complete the upgrade.
+If TrueCommand 3.2.0 is used to upgrade HA systems, the standby controller might fail to activate the updated boot environment, resulting in a version mismatch error between the controllers. If you encounter this issue, manually activate the updated boot environment on the active controller and then failover to complete the upgrade.
 {{< /enterprise >}}
 
-<a href="https://ixsystems.atlassian.net/issues/?filter=13164" target="_blank">Click here to see the latest Jira tickets</a> about known issues in 3.1.1 that are being resolved in a future TrueCommand release.
+<a href="https://ixsystems.atlassian.net/issues/?filter=13164" target="_blank">Click here to see the latest Jira tickets</a> about known issues in 3.2.0 that are being resolved in a future TrueCommand release.
 
 ## TrueCommand 3.1.0
 
