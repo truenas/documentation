@@ -1393,15 +1393,31 @@ $(document).ready(function() {
 	update();
 	update_debug("18t7wz2");
 
-	// Calculate button functionality
+	// Update button functionality
 	$("#calculate_button").click(function() {
+		// Show immediate feedback and recalculate (same speed as normal updates)
+		$("#status").html("Updating...").css({
+			"color": "#0095d5",
+			"font-weight": "bold"
+		});
+		
 		get_form_data();
 		draw_tables();
 		update();
 		update_debug("18t7wz2");
 		
-		// Show a brief "Calculated!" message
-		$("#status").html("Calculated!").css({
+		// Add a subtle flash effect to show tables updated (skip header rows)
+		$("table.results tr:not(:first-child)").css({
+			"background-color": "rgba(0, 149, 213, 0.1)",
+			"transition": "background-color 0.3s ease"
+		});
+		
+		setTimeout(function() {
+			$("table.results tr:not(:first-child)").css("background-color", "");
+		}, 300);
+		
+		// Show completion message immediately after update
+		$("#status").html("Updated!").css({
 			"color": "#71bf44",
 			"font-weight": "bold"
 		});
