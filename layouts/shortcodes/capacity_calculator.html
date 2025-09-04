@@ -6,7 +6,7 @@
         <td><label for="disks">Total Disks in Pool:</label></td>
         <td><input class="monitor" type="text" id="disks" name="disks" value="24"></td>
 
-        <td><label for="add_disk" id="add_disk">Add Disk (TB):</label></td>
+        <td><label for="add_disk" id="add_disk">Compare Disk Size:</label></td>
         <td><input class="monitor" type="text" id="add_disk" name="add_disk"></td>
     </tr>
 
@@ -20,7 +20,7 @@
             <button type="button" class="change_disk_qty" id="plus_100">+100</button>
         </td>
 
-        <td id="add_disk_button"><button type="button" id="add_disk">Add Disk</button></td>
+        <td id="add_disk_button"><button type="button" id="add_disk">Add Disk Row</button></td>
         <td id="tb_gb_button"><button type="button" id="tb_gb">TB/GB</button></td>
     </tr>
 
@@ -76,7 +76,7 @@
             <option value="14">14</option>
         </select></td>
 
-        <td id="vdev_button" colspan="2"><button type="button" id="add_vdev">Add vdev Layout</button></td>
+        <td id="vdev_button" colspan="2"><button type="button" id="add_vdev">Add vdev Column</button></td>
     </tr>
 
     <tr>
@@ -173,6 +173,18 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+    }
+    
+    /* Add border radius to calculator input table to match tab buttons */
+    table.inputs {
+        border-radius: 8px;
+        overflow: hidden;
+    }
+    
+    /* Add border radius to calculation values container too */
+    #debug_vals {
+        border-radius: 8px;
+        overflow: hidden;
     }
 </style>
 
