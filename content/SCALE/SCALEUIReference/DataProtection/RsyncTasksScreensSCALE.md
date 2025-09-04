@@ -96,11 +96,13 @@ The **More Options** specify other settings related to when and how the rsync oc
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Schedule** | Select a schedule preset or choose **Custom** to open the advanced scheduler. |
+| **Schedule** | Shows a list of schedule preset options. See **Schedule Presets** below for more info. |
 | **Recursive** | Select to include all subdirectories of the specified directory. When cleared, only the specified directory is included. |
 | **Enabled** | Select to enable this rsync task. Clear to disable this rsync task without deleting it. |
 {{< /truetable >}}
 {{< /expand >}}
+
+{{< include file="/static/includes/SchedulePresetOptions.md" >}}
 
 {{< expand "Advanced Scheduler" "v" >}}
 {{< include file="/static/includes/AdvancedScheduler.md" >}}

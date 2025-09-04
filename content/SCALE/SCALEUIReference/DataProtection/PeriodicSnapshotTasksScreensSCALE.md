@@ -96,10 +96,16 @@ The **Add Periodic Snapshot Task** and **Edit Periodic Snapshot Task** show the 
 |---------|-------------|
 | **Snapshot Lifetime** | Sets the length of time to retain a snapshot on this system. Enter a numeric value and a single lowercase letter for units. Examples: *3h* is three hours, *1m* is one month, and *1y* is one year. Does not accept minute values. After the time expires, the snapshot is removed during the next snapshot scheduled execution finds the snapshot lifetime is expired. Snapshots replicated to other systems are not affected. |
 | **Naming Schema** | Snapshot name format string. The default is `auto-%Y-%m-%d_%H-%M`. Must include the strings `%Y`, `%m`, `%d`, `%H`, and `%M`, which are replaced with the four-digit year, month, day of month, hour, and minute as defined in [strftime(3)](https://man7.org/linux/man-pages/man3/strftime.3.htmle). For example, snapshots of *pool1* with a Naming Schema of `customsnap-%Y%m%d.%H%M` have names like *pool1@customsnap-20190315.0527*. |
-| **Schedule** | Sets the schedule to a preset selected from the dropdown list. Select *Custom* to open the advanced scheduler. |
+| **Schedule** | Shows a list of schedule preset options. See **Schedule Presets** below for more info. |
 | **Begin** | Sets the start time for a snapshot. shows when **Schedule** is set to *Hourly*. Enter the hour and minute when the system can begin taking snapshots. |
 | **End** | Sets the end time for a snapshot. Shows when **Schedule** is set to *Hourly*. Enter the hour and minute the system must stop creating snapshots. Snapshots already in progress continue until complete. |
 | **Allow Taking Empty Snapshots** | Sets the task to allow taking a snapshot and creating a dataset even when there are no changes to the dataset from the last snapshot. Recommended for long-term restore points, multiple snapshot tasks pointed at the same datasets, or compatibility with snapshot schedules or replications created in TrueNAS 11.2 and earlier.  For example, you can set up a monthly snapshot schedule to take monthly snapshots and still have a daily snapshot task taking  snapshots of any changes to the dataset. |
 | **Enabled** | Activates this periodic snapshot schedule. To disable this task without deleting it, leave the checkbox cleared. |
 {{< /truetable >}}
+
+{{< include file="/static/includes/SchedulePresetOptions.md" >}}
+
+{{< expand "Advanced Scheduler" "v" >}}
+{{< include file="/static/includes/AdvancedScheduler.md" >}}
+{{< /expand >}}
 {{< /expand >}}

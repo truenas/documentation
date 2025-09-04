@@ -108,7 +108,7 @@ Shared settings are documented in these sections:
 ## Replication Task Wizard
 The wizard has two screens:
 
-* **What and Where** settings specify the task name, data source and destinations, the type of replication (local or remote), transport options (SSH connection), schema or regular expression that names the snapshot created by the task, and if selected, sets up encryption on the data transfer.
+* **What and Where** settings specify the task name, data source and destinations, the type of replication (local or remote), transport options (SSH connection), schema or regular expression that names the snapshot created by the task, and when selected, sets up encryption on the data transfer.
 * **When** settings specify when to run the task and how long to retain the replicated snapshots.
 
 **Advanced Replication Creation** opens the **Add Replication Task** screen with the same settings found in the wizard and more advanced settings.
@@ -384,10 +384,16 @@ These schedule setting options are common to both the **Replication Task Wizard*
 | Setting | Description |
 |---------|-------------|
 | **Run Automatically** | Select to start this replication task immediately after the linked periodic snapshot task completes.  |
-| **Schedule** | Select to create a replication schedule if not selecting **Run Automatically**. Displays the **Frequency** and **Only Replicate Snapshots Matching Schedule** options. |
+| **Schedule** | Select to create a replication schedule if not selecting **Run Automatically**. Displays the **Frequency** and **Only Replicate Snapshots Matching Schedule** options. Shows a list of schedule preset options. See **Schedule Presets** below for more info. |
 | **Frequency** | Displays after selecting **Schedule**. Select a preset schedule or choose **Custom** to use the advanced scheduler. |
 | **Begin** | Displays after selecting *Hourly* in **Frequency**. Select the start time for the replication task. |
 | **End** | Displays after selecting *Hourly* in **Frequency**. Select the end time for the replication task. A replication that is already in progress can continue to run past this time. |
 | **Only Replicate Snapshots Matching Schedule** | Displays after selecting **Schedule**. Select to use the **Schedule** in place of the **Replicate Specific Snapshots** time frame. The **Schedule** values are read over the **Replicate Specific Snapshots** time frame. |
 {{< /truetable >}}
+
+{{< include file="/static/includes/SchedulePresetOptions.md" >}}
+
+{{< expand "Advanced Scheduler" "v" >}}
+{{< include file="/static/includes/AdvancedScheduler.md" >}}
+{{< /expand >}}
 {{< /expand >}}

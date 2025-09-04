@@ -164,9 +164,11 @@ Click **Save** on the **Add bucket** screen to create the remote bucket on Storj
 {{< truetable >}}
 | Settings | Description |
 |----------|-------------|
-| **Schedule** | Sets a schedule preset or choose **Custom** to open the advanced scheduler. |
+| **Schedule** | Shows a list of schedule preset options. See **Schedule Presets** below for more info. |
 | **Enabled** | Enables this cloud sync task. Leave clear to disable the task without deleting it and keep the configuration available without allowing the specified schedule to run the task. You can use the toggle in the **Enable** column on the **Cloud Sync Tasks** widget to enable or disable the task. |
 {{< /truetable >}}
+
+{{< include file="/static/includes/SchedulePresetOptions.md" >}}
 
 {{< expand "Advanced Scheduler" "v" >}}
 {{< include file="/static/includes/AdvancedScheduler.md" >}}
