@@ -19,31 +19,32 @@ Cloud sync tasks are an effective data backup method that sends data to a remote
 ## Cloud Sync Task Widget
 
 The **Cloud Sync Task** widget lists tasks configured on the system.
+The widget shows a description of cloud sync tasks before adding a task.
 
-{{< trueimage src="/images/SCALE/DataProtection/CloudSyncTaskWidget.png" alt="Cloud Sync Task Widget" id="Cloud Sync Task Widget" >}}
-
-The widget shows **No Cloud Sync Tasks configured** until cloud sync tasks are added.
-
+{{< columns >}}
 {{< trueimage src="/images/SCALE/DataProtection/CloudSyncTaskWidgetNoTasks.png" alt="No Cloud Sync Tasks" id="No Cloud Sync Tasks" >}}
+<--->
+{{< trueimage src="/images/SCALE/DataProtection/CloudSyncTaskWidget.png" alt="Cloud Sync Task Widget" id="Cloud Sync Task Widget" >}}
+{{< /columns >}}
 
-Click on the widget header to open the [**Cloud Sync Task**](#cloud-sync-task-screen) screen that lists all tasks configured on the system.
+The widget header opens the [**Cloud Sync Task**](#cloud-sync-task-screen) screen that lists all tasks configured on the system.
 
 **Add** on the widget and the **Cloud Sync Task** screen opens the **[Cloudsync Task Wizard](#cloudync-task-wizard)**.
 
-Each task includes a vertical ellipses <span class="material-icons">more_vert</span> icon that opens a dropdown menu with five options for various functions:
+The vertical ellipses <span class="material-icons">more_vert</span> opens a dropdown menu with five options for various functions for each task:
 
-* The <span class="material-icons">edit</span> **Edit** icon opens the **[Edit Cloud Sync Task](#advanced-options-and-edit-cloud-sync-task-screens)** screen populated with with the settings for that task.
+* **<span class="material-icons">edit</span> Edit** opens the **[Edit Cloud Sync Task](#advanced-options-and-edit-cloud-sync-task-screens)** screen populated with with the settings for that task.
 
-* The <span class="material-icons">play_circle_filled</span> **Run Now** icon starts the cloud sync, running it outside of the scheduled time. 
+* **<span class="material-icons">play_circle_filled</span> Run Now** starts the cloud sync, running it outside of the scheduled time. 
 
-* The <span class="material-icons">loop</span> **Dry Run** icon performs the same function as the **Dry Run** button on the add and edit configuration screens.
+* **<span class="material-icons">loop</span> Dry Run** performs the same function as the **Dry Run** button on the add and edit configuration screens.
   It tests and validates the configured settings.
   During a dry run, you can close the window and monitor the task using the **Jobs** option on the top toolbar.
 
-* The <span class="material-icons">restore</span> **Restore** icon creates a new cloud sync task from an existing task.
+* **<span class="material-icons">restore</span> Restore** creates a new cloud sync task from an existing task.
   The new task has the same settings but reverses the data transfer.
 
-* The <span class="material-icons">delete</span> **Delete** icon opens a confirmation dialog before the system deletes the task.
+* **<span class="material-icons">delete</span> Delete** opens a confirmation dialog before the system deletes the task.
 
 **State** shows the status of the next cloud sync task:
   * **SUCCESS** for completed tasks.
@@ -70,7 +71,7 @@ Buttons for these task options perform the same functions as the icons on the wi
 * **Dry Run** performs a test of the configuration. 
   This is the same function as the **Dry Run** button on the **Edit Cloud Sync Task** screen and the **Advanced Options** for the **Cloudsync Task Wizard**. 
 
-* **Restore** opens the **Restore Cloud Sync Task** window where you can create a new cloud sync task from an existing task with the same options, but the new task reverses the transfer from PUSH to PULL and vice-versa.
+* **Restore** opens the **Restore Cloud Sync Task** window, where you can create a new cloud sync task from an existing task with the same options, but the new task reverses the transfer from PUSH to PULL and vice-versa.
 
 {{<include file="/static/includes/addcolumnorganizer.md">}}
   
@@ -132,8 +133,8 @@ The **What and When** screen sets the direction (push or pull), transfer mode (m
 
 ### Remote Settings
 The **Remote** settings specify the cloud sync provider and destination storage locations.
-The option selected in **Credential** changes settings displayed in the **Remote** settings area.
-The **Manage Credentials** link opens the **Backup Credentials** screen where you can add a new provider credential.
+The option selected in **Credential** changes settings in the **Remote** settings area.
+The **Manage Credentials** link opens the **Backup Credentials** screen, where you can add a new provider credential.
 
 {{< truetable >}}
 | Settings | Description |
@@ -165,7 +166,7 @@ Click **Save** on the **Add bucket** screen to create the remote bucket on Storj
 | Settings | Description |
 |----------|-------------|
 | **Schedule** | Shows a list of schedule preset options. See **Schedule Presets** below for more info. |
-| **Enabled** | Enables this cloud sync task. Leave clear to disable the task without deleting it and keep the configuration available without allowing the specified schedule to run the task. You can use the toggle in the **Enable** column on the **Cloud Sync Tasks** widget to enable or disable the task. |
+| **Enabled** | Enables this cloud sync task. Leave clear to disable the task without deleting it, and keep the configuration available without allowing the specified schedule to run the task. You can use the toggle in the **Enable** column on the **Cloud Sync Tasks** widget to enable or disable the task. |
 {{< /truetable >}}
 
 {{< include file="/static/includes/SchedulePresetOptions.md" >}}
