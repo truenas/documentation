@@ -9,29 +9,25 @@ tags:
  - ssh
 ---
 
-The **Rsync Task** widget on the **Data Protection** screen shows configured rsync tasks configured on the TrueNAS system, and provides access to configuration screens to add single-time or scheduled recurring transfers between TrueNAS and an rsync backup server.
+The **Rsync Task** widget on the **Data Protection** screen shows rsync tasks configured on the TrueNAS system.
+It provides access to configuration screens to add single-time or scheduled recurring transfers between TrueNAS and an rsync backup server.
 Rsync tasks are an effective method to back up data to a remote location.
 
 ## Rsync Task Widget
-The **Rsync Tasks** widget shows a list of tasks configured on the system.
 
-{{< trueimage src="/images/SCALE/DataProtection/RsyncTaskWidget.png" alt="Data Protection Rsync Task Widget" id="Data Protection Rsync Task Widget" >}}
+The **Rsync Tasks** widget shows a description about rsync tasks until the first task is configured, then it shows a list of tasks configured on the system, with th details about the task, and the task status.
 
-The **Rsync Tasks** widget shows **No Rsync Tasks configured** before adding a task.
+{{< columns >}}
+{{< trueimage src="/images/SCALE/DataProtection/RsyncTaskWidgetNoTasks.png" alt="Rsync Task Widget No Tasks" id="Rsync Task Widget No Tasks" >}}
+<--->
+{{< trueimage src="/images/SCALE/DataProtection/RsyncTaskWidget.png" alt="Rsync Task Widget with Tasks" id="Rsync Task Widget with Tasks" >}}
+{{< /columns >}}
 
-{{< trueimage src="/images/SCALE/DataProtection/RsyncTaskWidgetNoTasks.png" alt="Data Protection Rsync Task Widget No Tasks" id="Data Protection Rsync Task Widget No Tasks" >}}
-
-Click on the widget header to open the [**Rsync Task**](#rsync-task-screen) screen that lists all tasks configured on the system.
+The widget header opens the [**Rsync Task**](#rsync-task-screen) screen.
 
 **Add** opens the **[Add Rsync Task](#add-and-edit-rsync-task-screens)** screen.
 
-Each task includes a vertical ellipses <span class="material-icons">more_vert</span> icon that opens a dropdown menu with three options for various functions:
-
-* The <span class="material-icons">edit</span> **Edit** icon opens the **[Edit Rsync Task](#add-and-edit-rsync-task-screens)** screen populated with with the settings for that task.
-
-* The <i class="material-icons" aria-hidden="true" title="Run Now">play_arrow</i> **Run Now** icon starts the rsync, running it outside of the scheduled time.
-
-* The <span class="material-icons">delete</span> **Delete** icon opens a confirmation dialog before the system deletes the task.
+{{< include file="/static/includes/RsyncMoreVertOptions.md" >}}
 
 **State** displays the status of the next cloud sync task as **SUCCESS** for completed tasks, **FAILED** if the task fails to complete the sync, and **PENDING** for tasks that have not run yet.
 Click on the state oval to open the **Logs** dialog for that task. **Download Logs** saves a copy of the current task logs.
@@ -39,21 +35,30 @@ Click on the state oval to open the **Logs** dialog for that task. **Download Lo
 {{< trueimage src="/images/SCALE/DataProtection/RsyncTaskLogDialog.png" alt="Rsync Task Log Dialog" id="Rsync Task Log Dialog" >}}
 
 ## Rsync Task Screen
+
 The **Rsync Task** screen lists all tasks configured on the system.
 
-{{< trueimage src="/images/SCALE/DataProtection/RsyncTasksScreen.png" alt="Rsync Task Screen" id="Rsync Task Screen" >}}
+{{< trueimage src="/images/SCALE/DataProtection/RsyncTasksScreen.png" alt="Rsync Tasks Screen" id="Rsync Tasks Screen" >}}
 
-Each task shows details about the configured task and the same icon buttons found on the Rsync Task widget to run the task outside of the scheduled time, edit, or delete the task.
+The screen shows a table listing each task, with details about the task, and the task status.
+Table column headings sort the list in ascending or descending order.
+
+{{< include file="/static/includes/RsyncMoreVertOptions.md" >}}
+
+**Add** opens the **[Add Rsync Task](#add-and-edit-rsync-task-screens)** screen.
 
 {{<include file="/static/includes/addcolumnorganizer.md">}}
 
 ## Add and Edit Rsync Task Screens
-The **Add Rsync Task** and **Edit Rsync Task** screens display the same settings.
+
+The **Add Rsync Task** and **Edit Rsync Task** screens show the same settings.
+The sections below group settings by functional area.
 
 ### Source and Remote Options
+
 **Source** settings specify the location of the stored data to sync with a remote server, set the user that performs the task, and the direction of the task (send or receive data).
 The **Remote** settings specify the mode for the task and remote host connection information.
-Settings change based on the **Rsync Mode** selected (**Module** or **SSH**).
+Settings change based on the option (**Module** or **SSH**) set in **Rsync Mode**.
 
 {{< trueimage src="/images/SCALE/DataProtection/AddRsyncTaskSourceAndRemoteSettings.png" alt="Rsync Task Source and Remote Module Settings" id="Rsync Task Source and Remote Module Settings" >}}
 
@@ -69,10 +74,11 @@ Settings change based on the **Rsync Mode** selected (**Module** or **SSH**).
 | **User** | (Required) Select the user to run the rsync task. Select a user who has permissions to write to the specified directory on the remote host. If setting **Rsync Mode** to **SSH**, the user must have an SSH private key in their home directory if **Connect using** is set to **SSH private key stored in user's home directory**. |
 | **Direction** | (Required) Select the direction of the flow of data to the remote host. Options are:<br><li>**Push** - During a push, the dataset copies data to the remote module.<br><li>**Pull** - During a pull, the dataset stores data copied from the remote system.</li> |
 | **Description** | (Optional) Enter a description of the rsync task. |
-| **Rsync Mode** | Select the mode from the dropdown list. Options are:<br><li>**Module** - Select to use a custom-defined remote module from the rsync server.<br><li>**SSH** - Select to use an SSH configuration for the rsync task. The remote system must have SSH enabled. The host system needs an established SSH connection to the remote for the rsync task. **SSH** displays more settings.</li> |
+| **Rsync Mode** | Select the mode from the dropdown list. Options are:<br><li>**Module** - Uses a custom-defined remote module from the rsync server.<br><li>**SSH** - Uses an SSH configuration for the rsync task. The remote system must have SSH enabled. The host system needs an established SSH connection to the remote for the rsync task. **SSH** displays more settings.</li> |
 | **Remote Host** | (Required) Enter the IP address or host name and domain of the remote system. Use the format `username@remote_host` if the user name differs on the remote host. |
 | **Remote Module Name** | (Required) If **Rsync Mode** is set to **Module**, specify the name of the module on the remote rsync server. Define at least one module per [rsyncd.conf(5)](https://www.samba.org/ftp/rsync/rsyncd.conf.html) on the remote rsync server. Enter the **Module Name** exactly as it appears on the remote system. |
-| **Connect using** | (Required) If **Rsync Mode** is set to **SSH**, select the connection method from the dropdown list. Options are:<br><li>**SSH private key stored in user's home directory** - If selected, the user entered in **User** must have an SSH private key added and stored in the home directory for the user. Create the SSH connection and keypair, download the keys, then add the private key to the user in the UI and to the home directory either from the **Shell** using Linux CLI commands or while in an SSH session with the system.<br><li>**SSH connection from the keychain** - Requires creating an [SSH connection and keypair]({{< ref "AddSSHConnectionKeyPair" >}}) before setting up the rsync task. |
+| **Connect using** | (Required) When **Rsync Mode** is set to **SSH**, shows two options: <br><li>**SSH private key stored in user's home directory** - The user entered in **User** must have an SSH private key added and stored in the home directory for the user. Create the SSH connection and keypair, download the keys, then add the private key to the user in the UI and to the home directory either from the **Shell** using Linux CLI commands or while in an SSH session with the system. <br><li>**SSH connection from the keychain** - Requires creating an [SSH connection and keypair]({{< ref "AddSSHConnectionKeyPair" >}}) before setting up the rsync task. Shows the **SSH Connection** dropdown list showing SSH connections configured in the system.</li> |
+| **SSH Connection** | Shows when **Rsync Mode** is set to **SSH**, and **Connect Using** is set to **SSH connecton from the keychain**. Shows a dropdown list of SSH connections added in TrueNAS. Sets the rsync task to use the selected SSH connection to authenticate sync operations with the remote server. |
 | **Remote SSH Port** |  (Required) If **Rsync Mode** is set to **SSH**, enter the SSH port number of the remote system. By default, **22** is reserved in TrueNAS. |
 | **Remote Path** | Enter an existing path on the remote host. Maximum path length is 255 characters. |
 | **Validate Remote Path** | Shows when **Rsync Mode** is set to **SSH**. Set to test the remote server connection and verify that the defined **Remote Path** exists. |
@@ -80,6 +86,7 @@ Settings change based on the **Rsync Mode** selected (**Module** or **SSH**).
 {{< /expand >}}
 
 ### Schedule and More Options
+
 **Schedule** defines when the remote sync task occurs.
 The **More Options** specify other settings related to when and how the rsync occurs.
 

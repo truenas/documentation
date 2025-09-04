@@ -87,8 +87,8 @@ The wizard has two screens, **Provider** and **What and When**.
 
 ### Provider Wizard Screen
 
-The **Provider** wizard screen allows you to select the cloud sync provider with the **Credentials** dropdown.
-Select the provider from the dropdown list to show the additional credential settings the selected provider requires to establish a connection.
+The **Provider** wizard screen allows you to set the cloud sync provider with the **Credentials** dropdown.
+Selecting a provider from the dropdown list shows the additional credential settings required to establish a connection.
 
 {{< trueimage src="/images/SCALE/DataProtection/CloudSyncTaskWizardProviderScreen.png" alt="Cloudsync Task Wizard Provider Screen" id="Cloudsync Task Wizard Provider Screen" >}}
 
@@ -100,7 +100,7 @@ Select the provider from the dropdown list to show the additional credential set
 
 ### What and When Wizard Screen
 
-The **What and When** screen sets the direction (push or pull), transfer mode (move, copy, or sync), select the datasets or directories source and destination, and the schedule for the transfer.
+The **What and When** screen sets the direction (push or pull), transfer mode (move, copy, or sync), sets the datasets or directories source and destination, and the schedule for the transfer.
 **Bucket** shows for providers that use buckets to hold transferred files, folders, etc.
 
 {{< trueimage src="/images/SCALE/DataProtection/CloudSyncTaskWizardWhatandWhenScreen.png" alt="Cloudsync Task Wizard Provider Screen" id="Cloudsync Task Wizard Provider Screen" >}}
