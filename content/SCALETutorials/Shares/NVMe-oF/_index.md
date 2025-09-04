@@ -24,6 +24,8 @@ tags:
 
 {{< include file="/static/includes/NVMe-oF-Overview.md" >}}
 
+{{< include file="/static/includes/NVMeoTCPESXiLimitation.md" >}}
+
 ## Configuring the NVMe-oF Service
 
 You can access the NVMe-of service screen from the:
