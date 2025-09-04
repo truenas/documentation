@@ -8,11 +8,11 @@ aliases:
  - /scale/dataprotection/
 ---
 
-The Data Protection section allows users to set up multiple redundant tasks that will protect and/or backup data in case of drive failure.
+The **Data Protection** screen task widgets allows users to set up multiple redundant tasks to protect and/or backup data in case of drive failure.
 
-Scrub Tasks and S.M.A.R.T. (Self-Monitoring, Analysis and Reporting Technology) Tests can provide early disk failure alerts by identifying data integrity problems and detecting various indicators of drive reliability.
+{{< trueimage src="/images/SCALE/DataProtection/DataProtectionScreen.png" alt="Data Protection Screen" id="Data Protection Screen" >}}
 
-TrueCloud Backup, Cloud Sync, Periodic Snapshot, Rsync, and Replication Tasks, provide backup storage for data and allow users to revert the system to a previous configuration or point in time.
+Refer to the articles listed below for information on setting up and managing various data protection tasks.
 
 <div class="noprint">
 
