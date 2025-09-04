@@ -123,7 +123,7 @@
     </tr>
 
     <tr>
-        <td><label for="show_afr">Show Pool AFR:</label></td>
+        <td><label for="show_afr">Show Pool Annual Failure Rate (AFR):</label></td>
         <td><input class="monitor" type="checkbox" id="show_afr" name="show_afr"></td>
 
         <td> </td>
@@ -133,8 +133,8 @@
     </tr>
 
     <tr>
-        <td><label for="disk_afr">Disk AFR (%):</label></td>
-        <td><input class="monitor" type="text" id="disk_afr" name="disk_afr" value="5" disabled></td>
+        <td> </td>
+        <td> </td>
         
         <td> </td>
         <td><input class="monitor" type="radio" id="cap_w_reserve" name="table_data" value="cap_w_reserve">
@@ -142,19 +142,47 @@
         </td>
     </tr>
 
-    <tr>
+    <tr id="disk_afr_row" style="display: none;">
+        <td><label for="disk_afr">Disk AFR (%):</label></td>
+        <td><input class="monitor" type="text" id="disk_afr" name="disk_afr" value="5" disabled></td>
+        
+        <td> </td>
+        <td> </td>
+    </tr>
+
+    <tr id="allow_resilver_row" style="display: none;">
         <td><label for="allow_resilver">Assume Resilver:</label></td>
         <td><input class="monitor" type="checkbox" id="allow_resilver" name="allow_resilver" disabled checked></td>
         
-        <td id="res_label"><label for="reservation">Reservation (%):</label></td>
-        <td id="res_input"><input class="monitor" type="text" id="reservation" name="reservation" value="20" disabled></td>
+        <td> </td>
+        <td> </td>
     </tr>
 
-    <tr>
+    <tr id="resilver_time_row" style="display: none;">
         <td  style="vertical-align: top;"><label for="resilver_time" >Resilver Time (hrs):</label></td>
         <td style="vertical-align: top;"><input class="monitor" type="text" id="resilver_time" name="resilver_time" value="48" disabled></td>
         
-        <td id="reset_button" style="vertical-align: top;"><button type="button" id="reset_button">Reset</button></td>
+        <td> </td>
+        <td> </td>
+    </tr>
+
+    <tr id="reservation_row" style="display: none;">
+        <td colspan="4" style="padding: 0; position: relative; height: 35px;">
+            <div style="position: absolute; right: 20px; top: 8px; white-space: nowrap;">
+                <label for="reservation">Reservation (%):</label> 
+                <input class="monitor" type="text" id="reservation" name="reservation" value="20" disabled style="width: 50px;">
+            </div>
+        </td>
+    </tr>
+
+    <tr>
+        <td> </td>
+        <td> </td>
+        
+        <td id="action_buttons" style="vertical-align: top;">
+            <button type="button" id="calculate_button" style="margin-right: 10px;">Calculate</button>
+            <button type="button" id="reset_button">Reset</button>
+        </td>
         <td id="status" style="white-space: normal; width: 15em; vertical-align: top;"></td>
     </tr>      
 
@@ -185,6 +213,32 @@
     #debug_vals {
         border-radius: 8px;
         overflow: hidden;
+    }
+    
+    /* Fix table width constraints and scrolling within tab system */
+    #capacity-tabs-container .results-container {
+        border-radius: 8px;
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow-x: auto !important;
+        display: block !important;
+        /* Force table to respect container bounds */
+    }
+    
+    /* Ensure tab content doesn't interfere with table sizing */
+    #capacity-tabs-container .linkable-tab-content {
+        padding: 15px 0 !important; /* Remove horizontal padding that might constrain tables */
+        overflow: visible !important; /* Don't clip overflowing content */
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+    
+    /* Override existing table sizing for tabs */
+    #capacity-tabs-container table.results {
+        width: 99% !important;
+        max-width: none !important; /* Allow table to be wider than container if needed */
+        table-layout: auto !important;
+        white-space: nowrap; /* Prevent text wrapping that could hide overflow */
     }
 </style>
 
