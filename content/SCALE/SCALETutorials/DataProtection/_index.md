@@ -13,7 +13,7 @@ The screen shows **No Data Protection Tasks**, a message, and **Create Pool** un
 After adding a pool, the screen shows a description of each task in the widgets until you configure a task.
 Configured tasks are listed in the corresponding task widgets with details about, and the status of the task.
 
-{{< trueimage src="/images/SCALE/DataProtection/DataProtectionScreen.png" alt="Data Protection Screen" id="Data Protection Screen" >}}
+{{< trueimage src="/images/SCALE/DataProtection/DataProtectionScreenWithTasks.png" alt="Data Protection Screen" id="Data Protection Screen" >}}
 
 Refer to the articles listed below for information on setting up and managing various data protection tasks.
 
