@@ -1093,18 +1093,18 @@ $(document).ready(function() {
 		$("input#add_disk").val("");
 
 		if (add_disk_unit == "TB") {
-			$("td#status").html(new_disk + "TB disk added").css({
+			$("td#status").html(new_disk + "TB row added to tables").css({
                 "color": "#71bf44",
                 "font-weight": "bold"
             });
 		} else {
 			if (new_disk*1000 <= swap_size) {
-				$("td#status").html((new_disk*1000) + "GB disk added (check swap size)").css({
+				$("td#status").html((new_disk*1000) + "GB row added to tables (check swap size)").css({
                     "color": "#71bf44",
                     "font-weight": "bold"
                 });
 			} else {
-				$("td#status").html((new_disk*1000) + "GB disk added").css({
+				$("td#status").html((new_disk*1000) + "GB row added to tables").css({
                     "color": "#71bf44",
                     "font-weight": "bold"
                 });
