@@ -160,62 +160,80 @@
 
 </table>
 
-<p class="subsect_label">Click on the section titles to expand/collapse and view calculated data. Hovering over a table cell loads the relevant data into the Calculation Values section below. You can click table cells to freeze or unfreeze those values.</p>
+<p class="subsect_label">Select a tab to view calculated data for different ZFS configurations. Hovering over a table cell loads the relevant data into the Calculation Values section below. You can click table cells to freeze or unfreeze those values.</p>
 
 <style>
-    summary {
-        font-size: 1.5em;
-        padding: .5em;
+    /* Center the tab navigation buttons */
+    #capacity-tabs-container .linkable-tabs-nav {
+        margin: 0 auto;
+    }
+    
+    /* Center the entire tabs wrapper */
+    #capacity-tabs-container .linkable-tabs-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 </style>
 
-<details>
-    <summary>Common Layouts</summary>
-        <div class="results-container" id="common">
-            <table class="results" id="common">
-            </table>
-        </div>
-</details>
+<!-- Hidden content source for linkable tabs -->
+<div style="display: none;" id="capacity-tab-content-source">
+  <div data-tab-id="common" data-tab-label="Common Layouts">
+    <div class="results-container" id="common">
+        <table class="results" id="common">
+        </table>
+    </div>
+  </div>
 
-<details>
-    <summary>Raw, Stripes, & Mirrors</summary>
-        <div class="results-container" id="stripes">
-            <table class="results" id="stripes">
-            </table>
-        </div>
-</details>
+  <div data-tab-id="stripes" data-tab-label="Raw, Stripes, & Mirrors">
+    <div class="results-container" id="stripes">
+        <table class="results" id="stripes">
+        </table>
+    </div>
+  </div>
 
-<details>
-    <summary>RAIDZ1</summary>
-        <div class="results-container" id="raidz1">
-            <table class="results" id="raidz1">
-            </table>
-        </div>
-</details>
+  <div data-tab-id="raidz1" data-tab-label="RAIDZ1">
+    <div class="results-container" id="raidz1">
+        <table class="results" id="raidz1">
+        </table>
+    </div>
+  </div>
 
-<details>
-    <summary>RAIDZ2</summary>
-        <div class="results-container" id="raidz2">
-            <table class="results" id="raidz2">
-            </table>
-        </div>
-</details>
+  <div data-tab-id="raidz2" data-tab-label="RAIDZ2">
+    <div class="results-container" id="raidz2">
+        <table class="results" id="raidz2">
+        </table>
+    </div>
+  </div>
 
-<details>
-    <summary>RAIDZ3</summary>
-        <div class="results-container" id="raidz3">
-            <table class="results" id="raidz3">
-            </table>
-        </div>
-</details>
+  <div data-tab-id="raidz3" data-tab-label="RAIDZ3">
+    <div class="results-container" id="raidz3">
+        <table class="results" id="raidz3">
+        </table>
+    </div>
+  </div>
 
-<details>
-    <summary>dRAID</summary>
-        <div class="results-container" id="draid">
-            <table class="results" id="draid">
-            </table>
-        </div>
-</details>
+  <div data-tab-id="draid" data-tab-label="dRAID">
+    <div class="results-container" id="draid">
+        <table class="results" id="draid">
+        </table>
+    </div>
+  </div>
+</div>
+
+<!-- Linkable Tab Box Container -->
+<div id="capacity-tabs-container"></div>
+
+<script src="/js/linkable-tabs.js?v=4.8"></script>
+<script src="/js/linkable-tabs-init.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Wait for capacity calculator to initialize before setting up tabs
+    setTimeout(function() {
+        initializeHugoTabs('capacity-tab-content-source', 'capacity-tabs-container', 'common', true);
+    }, 100);
+});
+</script>
 
 
 <h2 class="sect_labels" id="debug_vals">Calculation Values</h2>
