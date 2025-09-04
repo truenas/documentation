@@ -18,7 +18,7 @@ majorVersions:
       - name: "3.2.0"
         type: "Stable"
         link: "https://www.truenas.com/docs/truecommand/3.0/tcgettingstarted/tcreleasenotes/#310-changelog"
-        releaseDate: "2025-09-15"
+        releaseDate: "2025-09-09"
         latest: true
   - lifecycle: "Next"
     name: "TrueCommand Next"
