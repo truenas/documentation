@@ -362,6 +362,7 @@ $(document).ready(function() {
 				cd.pool_usable_gib = 0;
 				cd.pool_usable_tib = 0;
 				cd.pool_usable_pib = 0;
+				cd.vdev_count = 0;
 				return cd;
 			}
 		} else {
@@ -376,6 +377,7 @@ $(document).ready(function() {
 			cd.pool_usable_gib = 0;
 			cd.pool_usable_tib = 0;
 			cd.pool_usable_pib = 0;
+			cd.vdev_count = 0;
 			return cd;
 		}
 
@@ -639,29 +641,43 @@ $(document).ready(function() {
 							$("td." + vdev_layout).text(rnd(capacity_tb,decimal_places) + " TB");
 						}
 					} else {
-						if (table_data == "usable_cap") {
-							if (show_bytes) {
-								$("td." + vdev_layout).text(capacity_data.pool_usable_bytes);
-							} else {
-								if (capacity_data.pool_usable_tib > 1024) {
-									$("td." + vdev_layout).text(rnd(capacity_data.pool_usable_pib,decimal_places) + " PiB");
+						// Check if configuration is invalid (insufficient disks)
+						if (capacity_data.pool_usable_bytes == 0 && capacity_data.vdev_count == 0) {
+							$("td." + vdev_layout).text("Insufficient Disks").css({
+								"color": "#ff6b6b",
+								"font-style": "italic"
+							});
+						} else {
+							// Reset any previous error styling
+							$("td." + vdev_layout).css({
+								"color": "",
+								"font-style": ""
+							});
+							
+							if (table_data == "usable_cap") {
+								if (show_bytes) {
+									$("td." + vdev_layout).text(capacity_data.pool_usable_bytes);
 								} else {
-									$("td." + vdev_layout).text(rnd(capacity_data.pool_usable_tib,decimal_places) + " TiB");
+									if (capacity_data.pool_usable_tib > 1024) {
+										$("td." + vdev_layout).text(rnd(capacity_data.pool_usable_pib,decimal_places) + " PiB");
+									} else {
+										$("td." + vdev_layout).text(rnd(capacity_data.pool_usable_tib,decimal_places) + " TiB");
+									}
 								}
-							}
-						} else if (table_data == "efficiency") {
-							$("td." + vdev_layout).text(rnd(capacity_data.storage_efficiency,decimal_places) + "%");
-						} else if (table_data == "overhead") {
+							} else if (table_data == "efficiency") {
+								$("td." + vdev_layout).text(rnd(capacity_data.storage_efficiency,decimal_places) + "%");
+							} else if (table_data == "overhead") {
 
-							$("td." + vdev_layout).text(rnd(capacity_data.zfs_overhead,decimal_places) + "%");
-						} else if (table_data == "cap_w_reserve") {
-							if (show_bytes) {
-								$("td." + vdev_layout).text(capacity_data.pool_usable_bytes * (1 - reservation));
-							} else {
-								if (capacity_data.pool_usable_tib * (1 - reservation) > 1024) {
-									$("td." + vdev_layout).text(rnd(capacity_data.pool_usable_pib * (1 - reservation),decimal_places) + " PiB");
+								$("td." + vdev_layout).text(rnd(capacity_data.zfs_overhead,decimal_places) + "%");
+							} else if (table_data == "cap_w_reserve") {
+								if (show_bytes) {
+									$("td." + vdev_layout).text(capacity_data.pool_usable_bytes * (1 - reservation));
 								} else {
-									$("td." + vdev_layout).text(rnd(capacity_data.pool_usable_tib * (1 - reservation),decimal_places) + " TiB");
+									if (capacity_data.pool_usable_tib * (1 - reservation) > 1024) {
+										$("td." + vdev_layout).text(rnd(capacity_data.pool_usable_pib * (1 - reservation),decimal_places) + " PiB");
+									} else {
+										$("td." + vdev_layout).text(rnd(capacity_data.pool_usable_tib * (1 - reservation),decimal_places) + " TiB");
+									}
 								}
 							}
 						}
@@ -672,14 +688,44 @@ $(document).ready(function() {
 					if (v == 0) {
 						$("td.vdev" + vdev_width + "wm").text(disks + " disks");
 					} else {
-						$("td.vdev" + vdev_width + "wm").text(capacity_data.vdev_count + " vdev + " + capacity_data.spares_count + " spare");
+						if (capacity_data.vdev_count == 0) {
+							$("td.vdev" + vdev_width + "wm").text("Invalid Config").css({
+								"color": "#ff6b6b",
+								"font-style": "italic"
+							});
+						} else {
+							$("td.vdev" + vdev_width + "wm").text(capacity_data.vdev_count + " vdev + " + capacity_data.spares_count + " spare").css({
+								"color": "",
+								"font-style": ""
+							});
+						}
 					}
 				} else {
 					if (capacity_data.raid_type == "d") {
 						var draid_label = vdev_width.replaceAll(":","-");
-						$("td.vdev" + draid_label).text(capacity_data.vdev_count + " vdev + " + capacity_data.spares_count + " spare");
+						if (capacity_data.vdev_count == 0) {
+							$("td.vdev" + draid_label).text("Invalid Config").css({
+								"color": "#ff6b6b",
+								"font-style": "italic"
+							});
+						} else {
+							$("td.vdev" + draid_label).text(capacity_data.vdev_count + " vdev + " + capacity_data.spares_count + " spare").css({
+								"color": "",
+								"font-style": ""
+							});
+						}
 					} else {
-						$("td.vdev" + vdev_width + "wz" + p).text(capacity_data.vdev_count + " vdev + " + capacity_data.spares_count + " spare");
+						if (capacity_data.vdev_count == 0) {
+							$("td.vdev" + vdev_width + "wz" + p).text("Invalid Config").css({
+								"color": "#ff6b6b",
+								"font-style": "italic"
+							});
+						} else {
+							$("td.vdev" + vdev_width + "wz" + p).text(capacity_data.vdev_count + " vdev + " + capacity_data.spares_count + " spare").css({
+								"color": "",
+								"font-style": ""
+							});
+						}
 					}
 				}
 
@@ -696,48 +742,114 @@ $(document).ready(function() {
 
 				if (p == 4) {
 					draid_width = parseInt(vdev_width.split(":")[2].replace("c",""));
-					if (allow_resilver && redundancy != 0) {
-						var disk_hourly_failure_rate = disk_afr / 8760;
-						var disk_failure_probability = disk_hourly_failure_rate * resilver_time;
-						var pool_afr = R2C2(draid_width,redundancy,capacity_data.vdev_count,disk_failure_probability) * 100;
+					if (capacity_data.vdev_count == 0) {
+						$("td.vdev" + vdev_width.replaceAll(":","-") + "afr").text("N/A").css({
+							"color": "#ff6b6b",
+							"font-style": "italic"
+						});
 					} else {
-						var pool_afr = R2C2(draid_width,redundancy,capacity_data.vdev_count,disk_afr) * 100;
+						if (allow_resilver && redundancy != 0) {
+							var disk_hourly_failure_rate = disk_afr / 8760;
+							var disk_failure_probability = disk_hourly_failure_rate * resilver_time;
+							var pool_afr = R2C2(draid_width,redundancy,capacity_data.vdev_count,disk_failure_probability) * 100;
+						} else {
+							var pool_afr = R2C2(draid_width,redundancy,capacity_data.vdev_count,disk_afr) * 100;
+						}
+						$("td.vdev" + vdev_width.replaceAll(":","-") + "afr").text(rnd(pool_afr,decimal_places) + "%").css({
+							"color": "",
+							"font-style": ""
+						});
 					}
-					$("td.vdev" + vdev_width.replaceAll(":","-") + "afr").text(rnd(pool_afr,decimal_places) + "%");
 				} else {
-
-					if (allow_resilver && redundancy != 0) {
-						var disk_hourly_failure_rate = disk_afr / 8760;
-						var disk_failure_probability = disk_hourly_failure_rate * resilver_time;
-						var pool_afr = R2C2(vdev_width,redundancy,capacity_data.vdev_count,disk_failure_probability) * 100;
-					} else {
-						var pool_afr = R2C2(vdev_width,redundancy,capacity_data.vdev_count,disk_afr) * 100;
-					}
 
 					if (p == 0) {
 						if (v == 0) {
 							$("td.vdev" + vdev_width + "wmafr").text(" - ");
 						} else {
-							$("td.vdev" + vdev_width + "wmafr").text(rnd(pool_afr,decimal_places) + "%");
+							if (capacity_data.vdev_count == 0) {
+								$("td.vdev" + vdev_width + "wmafr").text("N/A").css({
+									"color": "#ff6b6b",
+									"font-style": "italic"
+								});
+							} else {
+								if (allow_resilver && redundancy != 0) {
+									var disk_hourly_failure_rate = disk_afr / 8760;
+									var disk_failure_probability = disk_hourly_failure_rate * resilver_time;
+									var pool_afr = R2C2(vdev_width,redundancy,capacity_data.vdev_count,disk_failure_probability) * 100;
+								} else {
+									var pool_afr = R2C2(vdev_width,redundancy,capacity_data.vdev_count,disk_afr) * 100;
+								}
+								$("td.vdev" + vdev_width + "wmafr").text(rnd(pool_afr,decimal_places) + "%").css({
+									"color": "",
+									"font-style": ""
+								});
+							}
 						}
 					} else {
-						$("td.vdev" + vdev_width + "wz" + p + "afr").text(rnd(pool_afr,decimal_places) + "%");
+						if (capacity_data.vdev_count == 0) {
+							$("td.vdev" + vdev_width + "wz" + p + "afr").text("N/A").css({
+								"color": "#ff6b6b",
+								"font-style": "italic"
+							});
+						} else {
+							if (allow_resilver && redundancy != 0) {
+								var disk_hourly_failure_rate = disk_afr / 8760;
+								var disk_failure_probability = disk_hourly_failure_rate * resilver_time;
+								var pool_afr = R2C2(vdev_width,redundancy,capacity_data.vdev_count,disk_failure_probability) * 100;
+							} else {
+								var pool_afr = R2C2(vdev_width,redundancy,capacity_data.vdev_count,disk_afr) * 100;
+							}
+							$("td.vdev" + vdev_width + "wz" + p + "afr").text(rnd(pool_afr,decimal_places) + "%").css({
+								"color": "",
+								"font-style": ""
+							});
+						}
 					}
 				}
-
-				deflate_ratio = rnd(capacity_data.vdev_deflate_ratio * 100,decimal_places);
-
 
 				if (p == 0) {
 					if (v == 0) {
 						$("td.vdev" + vdev_width + "wmdeflate").text(" - ");
 					} else {
-						$("td.vdev" + vdev_width + "wmdeflate").text(deflate_ratio + "%");
+						if (capacity_data.vdev_count == 0) {
+							$("td.vdev" + vdev_width + "wmdeflate").text("N/A").css({
+								"color": "#ff6b6b",
+								"font-style": "italic"
+							});
+						} else {
+							deflate_ratio = rnd(capacity_data.vdev_deflate_ratio * 100,decimal_places);
+							$("td.vdev" + vdev_width + "wmdeflate").text(deflate_ratio + "%").css({
+								"color": "",
+								"font-style": ""
+							});
+						}
 					}
 				} else if (p == 4) {
-					$("td.vdev" + vdev_width.replaceAll(":","-") + "deflate").text(deflate_ratio + "%");
+					if (capacity_data.vdev_count == 0) {
+						$("td.vdev" + vdev_width.replaceAll(":","-") + "deflate").text("N/A").css({
+							"color": "#ff6b6b",
+							"font-style": "italic"
+						});
+					} else {
+						deflate_ratio = rnd(capacity_data.vdev_deflate_ratio * 100,decimal_places);
+						$("td.vdev" + vdev_width.replaceAll(":","-") + "deflate").text(deflate_ratio + "%").css({
+							"color": "",
+							"font-style": ""
+						});
+					}
 				} else {
-					$("td.vdev" + vdev_width + "wz" + p + "deflate").text(deflate_ratio + "%");
+					if (capacity_data.vdev_count == 0) {
+						$("td.vdev" + vdev_width + "wz" + p + "deflate").text("N/A").css({
+							"color": "#ff6b6b",
+							"font-style": "italic"
+						});
+					} else {
+						deflate_ratio = rnd(capacity_data.vdev_deflate_ratio * 100,decimal_places);
+						$("td.vdev" + vdev_width + "wz" + p + "deflate").text(deflate_ratio + "%").css({
+							"color": "",
+							"font-style": ""
+						});
+					}
 				}
 			}
 		}
@@ -820,10 +932,6 @@ $(document).ready(function() {
 		// 1 - P^numVdev = probability that one or more of the vdevs are not alive
 		return 1 - Math.pow(P,numVdev);
 	}
-
-	draw_tables();
-	update();
-	update_debug("18t7wz2");
 
 	$("input.monitor").change(function() {
 		update();
@@ -1247,10 +1355,14 @@ $(document).ready(function() {
     $(document).on("click", "td", function () {
         if (update_with_mouseover == false) {
             update_with_mouseover = true;
+            // Reset styling for all cells, but preserve error styling by calling update() again
             $("td").css({
                 "background-color": "",
-                "color": "var(--body-font-color)"
+                "color": "var(--body-font-color)",
+                "font-style": ""
             });
+            // Re-run update to restore error styling
+            update();
         } else {
             cell = $(this).attr("class");
             if (cell == undefined) { cell = ""; }
@@ -1273,5 +1385,9 @@ $(document).ready(function() {
 			update_debug($(this).attr("class"));
 		}
 	});
+
+	draw_tables();
+	update();
+	update_debug("18t7wz2");
     
 });
