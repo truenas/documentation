@@ -574,34 +574,37 @@ $(document).ready(function() {
 		var raidz = [mirror, z1, z2, z3, draid];
 
 		if (show_afr) {
-			$("label#disk_afr_label").css("color", "#0095d5");
+			// Show AFR-related rows
+			$("#disk_afr_row").css("display", "table-row");
+			$("#allow_resilver_row").css("display", "table-row");
 			$("input#disk_afr").prop("disabled", false);
-			$("label#allow_resilver_label").css("color", "#0095d5");
 			$("input#allow_resilver").prop("disabled", false);
 			
 			if (allow_resilver) {
-				$("label#resilver_time_label").css("color", "#0095d5");
+				$("#resilver_time_row").css("display", "table-row");
 				$("input#resilver_time").prop("disabled", false);
 			} else {
-				$("label#resilver_time_label").css("color", "grey");
+				$("#resilver_time_row").css("display", "none");
 				$("input#resilver_time").prop("disabled", true);
 			}
 		} else {
-			$("label#disk_afr_label").css("color", "grey");
+			// Hide all AFR-related rows
+			$("#disk_afr_row").css("display", "none");
+			$("#allow_resilver_row").css("display", "none");
+			$("#resilver_time_row").css("display", "none");
 			$("input#disk_afr").prop("disabled", true);
-			$("label#allow_resilver_label").css("color", "grey");
 			$("input#allow_resilver").prop("disabled", true);
-			$("label#resilver_time_label").css("color", "grey");
 			$("input#resilver_time").prop("disabled", true);
 		}
 
 		if (table_data == "cap_w_reserve") {
-			$("label#reservation").css("color", "#0095d5");
+			// Show reservation row when "Cap. w/ Reservation" is selected
+			$("#reservation_row").css("display", "table-row");
 			$("input#reservation").prop("disabled", false);
 		} else {
-			$("label#reservation").css("color", "grey");
+			// Hide reservation row for other selections
+			$("#reservation_row").css("display", "none");
 			$("input#reservation").prop("disabled", true);
-			
 		}
 		for (var p = 0; p < raidz.length; p++) {
 
@@ -1389,5 +1392,24 @@ $(document).ready(function() {
 	draw_tables();
 	update();
 	update_debug("18t7wz2");
+
+	// Calculate button functionality
+	$("#calculate_button").click(function() {
+		get_form_data();
+		draw_tables();
+		update();
+		update_debug("18t7wz2");
+		
+		// Show a brief "Calculated!" message
+		$("#status").html("Calculated!").css({
+			"color": "#71bf44",
+			"font-weight": "bold"
+		});
+		
+		// Clear the message after 2 seconds
+		setTimeout(function() {
+			$("#status").html("");
+		}, 2000);
+	});
     
 });
