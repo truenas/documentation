@@ -2584,24 +2584,37 @@ pre.gdoc-mermaid.mermaid.mermaid_sizing {
 
 /* End TrueNAS Apps Market button styling */
 
-/* Style TrueNAS Apps Market link as green button */
-.gdoc-nav section:last-child .gdoc-nav__list li:nth-child(2) a {
+/* Style the parent span that contains both icon and link as green button */
+.gdoc-nav section:last-child .gdoc-nav__list li:nth-child(2) span.flex {
     background-color: #71bf44 !important;
     color: white !important;
-    padding: 12px 16px !important;
+    padding: 12px 8px !important;
     border-radius: 8px !important;
-    display: flex !important;
+    display: inline-flex !important;
     align-items: center !important;
-    justify-content: flex-start !important;
-    text-align: left !important;
+    justify-content: center !important;
+    text-align: center !important;
     font-weight: bold !important;
     text-decoration: none !important;
     margin: 8px 0px !important;
     border: 2px solid #71bf44 !important;
     transition: all 0.3s ease !important;
+    width: auto !important;
 }
 
-.gdoc-nav section:last-child .gdoc-nav__list li:nth-child(2) a:hover {
+/* Remove styling from the inner link since parent span is now the button */
+.gdoc-nav section:last-child .gdoc-nav__list li:nth-child(2) a {
+    background: none !important;
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    color: white !important;
+    text-decoration: none !important;
+    font-weight: bold !important;
+}
+
+/* Hover effect for the button span */
+.gdoc-nav section:last-child .gdoc-nav__list li:nth-child(2) span.flex:hover {
     background-color: #5da639 !important;
     border-color: #5da639 !important;
     color: white !important;
@@ -2610,25 +2623,18 @@ pre.gdoc-mermaid.mermaid.mermaid_sizing {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2) !important;
 }
 
-/* Create a dots grid icon using CSS */
-.gdoc-nav section:last-child .gdoc-nav__list li:nth-child(2) a::before {
-    content: "" !important;
-    display: inline-block !important;
-    width: 16px !important;
-    height: 16px !important;
+/* Style the original SVG icon to be white */
+.gdoc-nav section:last-child .gdoc-nav__list li:nth-child(2) svg.gdoc-icon {
+    fill: white !important;
+    color: white !important;
+    width: 20px !important;
+    height: 20px !important;
     margin-right: 8px !important;
-    background-image: radial-gradient(circle, white 1.5px, transparent 1.5px) !important;
-    background-size: 5px 5px !important;
-    background-position: 1px 1px !important;
-    background-repeat: repeat !important;
-    opacity: 1 !important;
-    overflow: hidden !important;
 }
 
-/* Hide the original icon that appears outside the button */
-.gdoc-nav section:last-child .gdoc-nav__list li:nth-child(2) svg,
-.gdoc-nav section:last-child .gdoc-nav__list li:nth-child(2) .gdoc-icon {
-    display: none !important;
+/* Style the use element inside the SVG */
+.gdoc-nav section:last-child .gdoc-nav__list li:nth-child(2) svg use {
+    fill: white !important;
 }
 
 /* Reorder the menu items - move Apps Market to the very top */
