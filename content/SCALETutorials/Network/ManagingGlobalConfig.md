@@ -1,12 +1,12 @@
 ---
-title: "Managing Network Global Configurations"
-description: "Provides instructions on configuring or managing global configuration settings."
+title: "Managing Network Configurations"
+description: "Provides instructions on configuring or managing global network configuration settings."
 weight: 20
 tags:
 - network
 ---
 
-Use the **Global Configuration Settings** screen to manage existing general network settings like the default gateway and DNS servers, set services allowed to externally communicate, enter an HTTP proxy, or host name database.
+Use the **Network Configuration Settings** widget shows existing general network settings like the default gateway and DNS servers, set services allowed to externally communicate, enter an HTTP proxy, or host name database.
 
 {{< include file="/static/includes/NetworkWarn.md" >}}
 
@@ -17,11 +17,11 @@ Be sure to check both locations when troubleshooting network connectivity issues
 
 ## Adding Network Settings
 
-Use the **Global Configuration Settings** screen to add general network settings like the default gateway and DNS name servers to allow external communication.
+Use the **Network Configuration** widget to add general network settings like the default gateway and DNS name servers to allow external communication.
 
 To add new or change existing network interfaces see [Interface Configurations]({{< ref "/SCALETutorials/Network/Interfaces" >}}).
 
-Go to **System > Network**, and click **Settings** on the **Global Configuration** widget to open the **Edit Global Configuration** screen.
+Go to **System > Network**, and click **Settings** on the **Network Configuration** widget to open the **Edit Global Configuration** screen.
 
 1. Enter the host name for your TrueNAS in **Hostname**. For example, replace the default value *truenas* with something like *localnas*.
 
@@ -54,7 +54,7 @@ Go to **System > Network**, and click **Settings** on the **Global Configuration
    Select as many services as desired.
 <!--   See [below](#setting-up-external-communication-for-services) for more information. commenting out until the list below is updated with more details -->
 
-6. Click **Save**. The **Global Configuration** widget on the **Network** screen shows the new settings.
+6. Click **Save**. The **Network Configuration** widget on the **Network** screen shows the new settings.
 
 <!-- Commenting out this section until more information on what each service allows or requires, then use a snippet for this content in the UI ref and here.
 ## Setting Up External Communication for Services
