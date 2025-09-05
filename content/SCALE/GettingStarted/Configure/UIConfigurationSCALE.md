@@ -156,13 +156,6 @@ After opening a configuration screen and changing or entering a setting, when yo
 
 To close without saving, click **Yes** or **No** to continue making changes or entering values.
 
-### Setting Up SMART Testing
-
-All systems can benefit from using the SMART service and testing with compatible attached disks.
-Disks that do not support SMART testing do not display the option to set up testing.
-
-See [Managing SMART Tests]({{< ref "SmartTestsScale" >}}) for information on running or managing scheduled SMART tests or [Managing Disks]({{< ref "/SCALE/SCALETutorials/Storage/Disks" >}}) for more information on running a manual test from a selected disk.
-
 ## Setting Up Backup Solutions
 
 After completing your initial system configuration and before beginning day-to-day operations, we recommend configuring the system and data storage backup methods.
