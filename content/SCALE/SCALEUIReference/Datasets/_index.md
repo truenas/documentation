@@ -279,7 +279,7 @@ The **Basic Options** show on the **Advanced Options** screen.
 The **Add Dataset** and **Edit Dataset** screens show the **Advanced Options** button.
 **Advanced Options** show:
 * [**Quota Management**](#quota-management-settings) settings
-* [**Encryption](#encryption-options-section) settings
+* [**Encryption**](#encryption-options-section) settings
 * [**Other Options**](#other-options-section) settings
 
 ### Quota Management Settings
