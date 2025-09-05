@@ -264,6 +264,79 @@
         overflow: hidden;
         table-layout: fixed;
         width: 100%;
+        padding: 0 15px; /* Simple inner padding */
+        box-sizing: border-box;
+    }
+    
+    /* Constrain all input field widths to prevent overflow */
+    table.inputs input[type="text"] {
+        max-width: 100%;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    
+    /* Responsive design for narrow screens */
+    @media (max-width: 768px) {
+        table.inputs td {
+            padding-left: 5px;
+            padding-right: 5px;
+        }
+        
+        /* Stack table cells vertically on very narrow screens */
+        table.inputs tr {
+            display: block;
+            margin-bottom: 15px;
+        }
+        
+        table.inputs td {
+            display: block;
+            width: 100%;
+            padding: 2px 5px;
+        }
+        
+        /* Keep shelf count widget tables in normal table layout */
+        #shelf-count-content table,
+        #shelf-count-content tr,
+        #shelf-count-content td,
+        #shelf-count-content th {
+            display: table !important;
+        }
+        
+        #shelf-count-content tr {
+            display: table-row !important;
+            margin-bottom: 0 !important;
+        }
+        
+        #shelf-count-content td,
+        #shelf-count-content th {
+            display: table-cell !important;
+            width: auto !important;
+        }
+        
+        /* Keep rocker buttons horizontal */
+        #add_disk_buttons,
+        #add_vdev_buttons {
+            display: flex !important;
+            justify-content: center;
+        }
+        
+        /* Action buttons stay horizontal */
+        #action_buttons {
+            display: flex !important;
+            gap: 10px;
+            justify-content: center;
+        }
+    }
+    
+    /* Make shelf count widget scrollable on mobile for wide hardware tables */
+    #shelf-count-widget {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    #shelf-count-content table {
+        min-width: max-content;
+        width: auto;
     }
     
     /* Add border radius to calculation values container too */
