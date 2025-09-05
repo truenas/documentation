@@ -123,7 +123,7 @@ Select the **Dataset Preset** option you want to use. Options are:
 {{< include file="/static/includes/DatasetPresetOptions.md" >}}.
 
 Click **Advanced Options**.
-To add encryption to a dataset, scroll down to **Encryption Options** and select the inherit checkbox to clear the checkmark.
+To add encryption to a dataset, scroll down to **Encryption Options** and select the inherit checkbox to clear the checkmark and show the **Encryption** option. Clear this checkbox to show the default settings for key type encryption.
 If the parent dataset is unencrypted and you want to encrypt the dataset select the **Inherit (non-encrypted)** checkbox to clear it and show the **Encryption** option.
 If the parent dataset is encrypted and you want to change the type, select **Inherit (encrypted)** to show the encryption configuration options.
 To keep the dataset encryption settings from the parent, leave inherit selected.
@@ -158,14 +158,17 @@ These algorithms provide authenticated encryption with block ciphers.
 
 ### Changing Dataset (or Zvol) Encryption
 
-You cannot add encryption to an existing dataset.
-You can change the type of encryption for an already encrypted dataset using the **Edit** option on the **ZFS Encryption** widget for the dataset.
+{{< hint type=info >}}
+You cannot add encryption to an existing dataset!
+{{< /hint >}}
+
+You can change the type of encryption for an already encrypted dataset using the **Edit** option on the **Encryption** widget for the dataset.
 
 {{< hint type=warning >}}
 Save changes to the encryption key or passphrase, update your saved passcodes and keys file,  and back up that file.
 {{< /hint >}}
 
-To change the encryption type, go to **Datasets**, select the encrypted dataset on the tree table, then click **Edit** on the **ZFS Encryption** widget.
+To change the encryption type, go to **Datasets**, select the encrypted dataset on the tree table, then click **Edit** on the **Encryption** widget.
 The **Edit Encryption Options** dialog for the selected dataset opens.
 
 Before making changes to a locked encrypted dataset you must unlock it.
@@ -200,7 +203,7 @@ Before locking a dataset, verify that it is not currently in use.
 
 ### Locking a Dataset
 
-Select the encrypted dataset on the tree table, then click **Lock** on the **ZFS Encryption** widget to open the **Lock Dataset** dialog with the full path name for the dataset.
+Select the encrypted dataset on the tree table, then click **Lock** on the **Encryption** widget to open the **Lock Dataset** dialog with the full path name for the dataset.
 
 {{< trueimage src="/images/SCALE/Datasets/LockDatasetDialog.png" alt="Lock Dataset" id="Lock Dataset" >}}
 
@@ -215,7 +218,7 @@ You *cannot* use locked datasets.
 ### Unlocking a Dataset
 
 To unlock a dataset, go to **Datasets** then select the locked dataset on the tree table.
-Click **Unlock** on the **ZFS Encryption** widget to open the **Unlock Dataset** screen.
+Click **Unlock** on the **Encryption** widget to open the **Unlock Dataset** screen.
 
 {{< trueimage src="/images/SCALE/Datasets/UnlockDatasetsScreen.png" alt="Dataset Unlock Screen" id="Dataset Unlock Screen" >}}
 
@@ -242,11 +245,11 @@ To encrypt a Zvol, select a parent dataset and then [create a new Zvol]({{< ref 
 If the parent dataset is encrypted, select **Inherit (encrypted)** under **Encryption Options**.
 If the parent dataset is not encrypted, disable **Inherit (non-encrypted)**, select **Encryption**, and then configure the **Encryption Type** and related settings.
 
-Next, go to **Datasets** and click on the Zvol and locate the **ZFS Encryption** widget.
+Next, go to **Datasets** and click on the Zvol and locate the **Encryption** widget.
 
 {{< trueimage src="/images/SCALE/Datasets/ZFSEncryptionWidgetRootDataset.png" alt="ZFS Encryption Widget Root Dataset" id="ZFS Encryption Widget" >}}
 
-To change encryption properties from passphrase to key or enter a new key or passphrase, select the zvol, then click **Edit** on the **ZFS Encryption** widget.
+To change encryption properties from passphrase to key or enter a new key or passphrase, select the zvol, then click **Edit** on the **Encryption** widget.
 
 {{< trueimage src="/images/SCALE/Datasets/EditEncryptionDialogForZvol.png" alt="Edit Zvol Encryption" id="Edit Zvol Encryption" >}}
 
@@ -266,7 +269,7 @@ Creating a new encrypted pool automatically generates a new key file and prompts
 {{< hint type=warning >}}
 Always back up the key file to a safe and secure location.
 {{< /hint >}}
-To manually back up a root dataset key file, click **Export Key** on the **ZFS Encryption** widget.
+To manually back up a root dataset key file, click **Export Key** on the **Encryption** widget.
 
 {{< trueimage src="/images/SCALE/Datasets/EditRootDatasetEncryptionOptions.png" alt="Edit Root Dataset Encryption Keys" id="Edit Root Dataset Encryption Keys" >}}
 
