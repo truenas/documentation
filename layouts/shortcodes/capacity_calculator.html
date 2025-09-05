@@ -239,6 +239,35 @@
         max-width: none !important; /* Allow table to be wider than container if needed */
         table-layout: auto !important;
         white-space: nowrap; /* Prevent text wrapping that could hide overflow */
+        border-radius: 8px;
+        overflow: hidden;
+    }
+    
+    /* Add border radius to visible corners, accounting for hidden white cells */
+    
+    /* TOP-LEFT corner: "Raw" header gets top-left radius (it's the 2nd cell, after hidden white cell) */
+    #capacity-tabs-container table.results tr:first-child th:nth-child(2) {
+        border-top-left-radius: 8px;
+    }
+    
+    /* TOP-LEFT corner: First data row header ("4TB") gets top-left radius */
+    #capacity-tabs-container table.results tr:nth-child(3) th:first-child {
+        border-top-left-radius: 8px;
+    }
+    
+    /* TOP-RIGHT corner: last header in first row */
+    #capacity-tabs-container table.results tr:first-child th:last-child {
+        border-top-right-radius: 8px;
+    }
+    
+    /* BOTTOM-LEFT corner: last row header gets bottom-left radius */
+    #capacity-tabs-container table.results tr:last-child th:first-child {
+        border-bottom-left-radius: 8px;
+    }
+    
+    /* BOTTOM-RIGHT corner: last data cell in last row */
+    #capacity-tabs-container table.results tr:last-child td:last-child {
+        border-bottom-right-radius: 8px;
     }
 </style>
 
