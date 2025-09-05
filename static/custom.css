@@ -2526,3 +2526,105 @@ pre.gdoc-mermaid.mermaid.mermaid_sizing {
   }
 
 /* End Styling for Version Selector Sections */
+
+/* Style TrueNAS Apps Market link as green button */
+.gdoc-nav a[href="https://apps.truenas.com/"] {
+    background-color: #71bf44 !important;
+    color: white !important;
+    padding: 12px 16px !important;
+    border-radius: 8px !important;
+    display: block !important;
+    text-align: center !important;
+    font-weight: bold !important;
+    text-decoration: none !important;
+    margin: 8px 4px !important;
+    border: 2px solid #71bf44 !important;
+    transition: all 0.3s ease !important;
+}
+
+.gdoc-nav a[href="https://apps.truenas.com/"]:hover {
+    background-color: #5da639 !important;
+    border-color: #5da639 !important;
+    color: white !important;
+    text-decoration: none !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Ensure the icon is white and properly sized */
+.gdoc-nav a[href="https://apps.truenas.com/"] .gdoc-icon {
+    color: white !important;
+    fill: white !important;
+    margin-right: 8px !important;
+    vertical-align: middle !important;
+}
+
+/* Dark mode adjustments for the Apps Market button */
+@media (prefers-color-scheme: dark) {
+    .gdoc-nav a[href="https://apps.truenas.com/"] {
+        background-color: #71bf44 !important;
+        border-color: #71bf44 !important;
+    }
+    
+    .gdoc-nav a[href="https://apps.truenas.com/"]:hover {
+        background-color: #5da639 !important;
+        border-color: #5da639 !important;
+    }
+}
+
+:root[color-theme=dark] .gdoc-nav a[href="https://apps.truenas.com/"] {
+    background-color: #71bf44 !important;
+    border-color: #71bf44 !important;
+}
+
+:root[color-theme=dark] .gdoc-nav a[href="https://apps.truenas.com/"]:hover {
+    background-color: #5da639 !important;
+    border-color: #5da639 !important;
+}
+
+/* End TrueNAS Apps Market button styling */
+
+/* Style TrueNAS Apps Market link as green button */
+.gdoc-nav section:last-child .gdoc-nav__list li:nth-child(2) a {
+    background-color: #71bf44 !important;
+    color: white !important;
+    padding: 12px 16px !important;
+    border-radius: 8px !important;
+    display: block !important;
+    text-align: center !important;
+    font-weight: bold !important;
+    text-decoration: none !important;
+    margin: 8px 4px !important;
+    border: 2px solid #71bf44 !important;
+    transition: all 0.3s ease !important;
+}
+
+.gdoc-nav section:last-child .gdoc-nav__list li:nth-child(2) a:hover {
+    background-color: #5da639 !important;
+    border-color: #5da639 !important;
+    color: white !important;
+    text-decoration: none !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Hide the icon for clean button appearance */
+.gdoc-nav section:last-child .gdoc-nav__list li:nth-child(2) .gdoc-icon {
+    display: none !important;
+}
+
+/* Reorder the menu items - move Apps Market to the very top */
+.gdoc-nav section:last-child .gdoc-nav__list {
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+/* Move Apps Market (2nd item) to be first */
+.gdoc-nav section:last-child .gdoc-nav__list li:nth-child(2) {
+    order: -1 !important;
+}
+
+/* Keep all other items in their original order */
+.gdoc-nav section:last-child .gdoc-nav__list li:not(:nth-child(2)) {
+    order: 0 !important;
+}
