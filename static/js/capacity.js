@@ -1452,6 +1452,79 @@ $(document).ready(function() {
 			update_debug($(this).attr("class"));
 		}
 	});
+	
+	// Help text functionality - display context-sensitive help when clicking help icons
+	$(document).on("click",".help-icon",function(){
+		var helpId = $(this).attr("data-help");
+		var helpText = "";
+		
+		switch(helpId) {
+			case "disks":
+				helpText = "<strong>Total Disks in Pool:</strong> The total number of physical disks available for the ZFS pool. This includes data disks and any spares you want to reserve.";
+				break;
+			case "min_spares":
+				helpText = "<b>Minimum Spares:</b> Set aside at least this many disks as hot spares for the pool.";
+				break;
+			case "use_new_slop":
+				helpText = "<b>OpenZFS 2.0.7 Slop:</b> ZFS reserves a bit of capacity to prevent major issues if the pool should fill up to 100%. This space is called slop space. As of OpenZFS 2.0.7, slop space is capped at a smaller size so you get more usable capacity.";
+				break;
+			case "recordsize":
+				helpText = "<b>ZFS recordsize value:</b> Using a different recordsize value on your datasets can help minimize capacity wasted due to padding and overhead. <b>Note:</b> The zfs list command always assumes a 128KiB recordsize for capacity calculations. The usable capacity values displayed below represent how much data you can store on a pool with a given recordsize, but changing your recordsize will not change the capacity that zfs list displays.";
+				break;
+			case "ashift":
+				helpText = "<b>ZFS ashift value:</b> ZFS uses ashift to track the smallest possible I/O it can perform (2^ashift = smallest possible I/O). Ideally, this maps to your disk's sector size. For 4KiB sectors, use ashift=12. For 512 byte sectors, use ashift=9.";
+				break;
+			case "swap_size":
+				helpText = "<b>Disk Swap Size:</b> If your pool disks have swap space on them, you can account for that here.";
+				break;
+			case "add_disk":
+				helpText = "<b>New Disk Size:</b> Add a custom disk size to compare capacity scenarios. Useful for evaluating different drive sizes or planning future upgrades. Use TB/GB button to switch units.";
+				break;
+			case "decimal_places":
+				helpText = "<b>Decimal Places:</b> Controls the precision of capacity values displayed in the tables. Choose 'bytes' for exact byte values, or select 0-10 decimal places for rounded values.";
+				break;
+			case "table_data":
+				helpText = "<b>Table Data:</b> Select what type of data to display in the capacity tables - usable capacity, efficiency percentages, ZFS overhead, or capacity with reservation space.";
+				break;
+			case "usable_cap":
+				helpText = "<b>Usable Capacity:</b> Shows the actual storage capacity available for your data after accounting for ZFS parity, metadata, and overhead.";
+				break;
+			case "show_deflate":
+				helpText = "<b>Show Deflate Ratio:</b> The deflate ratio is the ratio of the amount of data stored to its size on disk with parity and padding, always rounded down to an even factor of 512.";
+				break;
+			case "efficiency":
+				helpText = "<b>Capacity Efficiency:</b> Usable capacity of the pool divided by the raw capacity of all of the disks in the pool times 100%.";
+				break;
+			case "show_afr":
+				helpText = "<b>Show Annual Failure Rate (AFR):</b> Calculates a very rough annual failure rate (AFR) for each vdev layout assuming the AFR of an individual disk.";
+				break;
+			case "overhead":
+				helpText = "<b>ZFS Overhead:</b> Calculates simple capacity as the number of data disks times each disk's capacity then shows the difference between the simple capacity and actual usable capacity.";
+				break;
+			case "cap_w_reserve":
+				helpText = "<b>Cap. w/ Reservation:</b> ZFS best practices usually recommend filling a pool to no more than 80% of its total capacity.";
+				break;
+			case "disk_afr":
+				helpText = "<b>Disk AFR (%):</b> The Annual Failure Rate percentage for individual disks in your pool. This value is used to calculate the overall pool failure risk. Typical enterprise drives have 1-2% AFR, consumer drives may be higher.";
+				break;
+			case "allow_resilver":
+				helpText = "<b>Assume Resilver:</b> When enabled, AFR calculations account for the increased risk during resilver operations (when a failed disk is being rebuilt). Resilver operations stress remaining disks and increase failure probability.";
+				break;
+			case "resilver_time":
+				helpText = "<b>Resilver Time (hrs):</b> Expected time in hours for a resilver operation to complete. Larger disks and pools take longer to resilver. During this time, the pool has reduced redundancy and higher failure risk.";
+				break;
+			case "reservation":
+				helpText = "<b>Reservation (%):</b> Percentage of pool capacity to reserve for optimal performance. ZFS performance degrades significantly when pools are very full. 20% reservation is recommended for most workloads.";
+				break;
+			case "add_vdev_type":
+				helpText = "<b>New vdev Type:</b> Adds a new vdev layout column to the tables for comparison, similar to the compare disk size feature. Select the RAID type to compare: Mirror provides 2x redundancy, RAIDZ1 provides single-disk fault tolerance, RAIDZ2 provides double-disk fault tolerance, RAIDZ3 provides triple-disk fault tolerance, and dRAID provides distributed parity for very large pools.";
+				break;
+			default:
+				helpText = "<strong>Configuration Help:</strong> Click the help icons (?) next to field labels above to see detailed explanations of each setting.";
+		}
+		
+		$("#help-text-content").html(helpText);
+	});
 
 	draw_tables();
 	update();
