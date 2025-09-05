@@ -215,15 +215,91 @@
         overflow: hidden;
     }
     
-    /* Fix table width constraints and scrolling within tab system */
+    /* Enhanced scroll container with navigation controls for capacity tables */
+    #capacity-tabs-container .scroll-wrapper {
+        position: relative;
+        width: calc(100% - 80px) !important; /* Leave space for arrows (40px each side) */
+        margin: 0 40px !important; /* Center the container with arrow space */
+    }
+
     #capacity-tabs-container .results-container {
         border-radius: 8px;
         width: 100% !important;
         max-width: 100% !important;
         overflow-x: auto !important;
         display: block !important;
-        /* Force table to respect container bounds */
+        cursor: grab;
+        user-select: none;
+        position: relative;
+        scroll-behavior: smooth;
     }
+    
+    #capacity-tabs-container .results-container:active {
+        cursor: grabbing;
+    }
+    
+    #capacity-tabs-container .results-container:hover {
+        background: rgba(0, 149, 213, 0.02);
+        transition: background-color 0.2s ease;
+    }
+    
+    /* Hide scrollbars completely for clean navigation */
+    #capacity-tabs-container .results-container::-webkit-scrollbar {
+        display: none;
+    }
+    
+    #capacity-tabs-container .results-container {
+        -ms-overflow-style: none;  /* Internet Explorer 10+ */
+        scrollbar-width: none;  /* Firefox */
+    }
+    
+    /* Navigation arrows - always visible for discoverability */
+    #capacity-tabs-container .scroll-nav {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(0, 149, 213, 0.8);
+        color: white;
+        border: none;
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        cursor: pointer;
+        z-index: 20;
+        opacity: 1; /* Always visible */
+        transition: all 0.2s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 14px;
+        font-weight: bold;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    }
+
+    #capacity-tabs-container .scroll-nav:hover {
+        background: rgba(0, 149, 213, 1);
+        transform: translateY(-50%) scale(1.1);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    }
+
+    #capacity-tabs-container .scroll-nav:active {
+        transform: translateY(-50%) scale(0.95);
+    }
+
+    #capacity-tabs-container .scroll-nav-left {
+        left: -3.5rem; /* Position outside the scroll wrapper */
+    }
+
+    #capacity-tabs-container .scroll-nav-right {
+        right: -3.5rem; /* Position outside the scroll wrapper */
+    }
+
+    /* Hide arrows when at scroll boundaries */
+    #capacity-tabs-container .scroll-nav.hidden {
+        opacity: 0 !important;
+        pointer-events: none;
+    }
+
     
     /* Ensure tab content doesn't interfere with table sizing */
     #capacity-tabs-container .linkable-tab-content {
@@ -274,44 +350,68 @@
 <!-- Hidden content source for linkable tabs -->
 <div style="display: none;" id="capacity-tab-content-source">
   <div data-tab-id="common" data-tab-label="Common Layouts">
-    <div class="results-container" id="common">
-        <table class="results" id="common">
-        </table>
+    <div class="scroll-wrapper">
+        <button class="scroll-nav scroll-nav-left" aria-label="Scroll left" title="Scroll left">‹</button>
+        <button class="scroll-nav scroll-nav-right" aria-label="Scroll right" title="Scroll right">›</button>
+        <div class="results-container scroll-container" id="common">
+            <table class="results" id="common">
+            </table>
+        </div>
     </div>
   </div>
 
   <div data-tab-id="stripes" data-tab-label="Raw, Stripes, & Mirrors">
-    <div class="results-container" id="stripes">
-        <table class="results" id="stripes">
-        </table>
+    <div class="scroll-wrapper">
+        <button class="scroll-nav scroll-nav-left" aria-label="Scroll left" title="Scroll left">‹</button>
+        <button class="scroll-nav scroll-nav-right" aria-label="Scroll right" title="Scroll right">›</button>
+        <div class="results-container scroll-container" id="stripes">
+            <table class="results" id="stripes">
+            </table>
+        </div>
     </div>
   </div>
 
   <div data-tab-id="raidz1" data-tab-label="RAIDZ1">
-    <div class="results-container" id="raidz1">
-        <table class="results" id="raidz1">
-        </table>
+    <div class="scroll-wrapper">
+        <button class="scroll-nav scroll-nav-left" aria-label="Scroll left" title="Scroll left">‹</button>
+        <button class="scroll-nav scroll-nav-right" aria-label="Scroll right" title="Scroll right">›</button>
+        <div class="results-container scroll-container" id="raidz1">
+            <table class="results" id="raidz1">
+            </table>
+        </div>
     </div>
   </div>
 
   <div data-tab-id="raidz2" data-tab-label="RAIDZ2">
-    <div class="results-container" id="raidz2">
-        <table class="results" id="raidz2">
-        </table>
+    <div class="scroll-wrapper">
+        <button class="scroll-nav scroll-nav-left" aria-label="Scroll left" title="Scroll left">‹</button>
+        <button class="scroll-nav scroll-nav-right" aria-label="Scroll right" title="Scroll right">›</button>
+        <div class="results-container scroll-container" id="raidz2">
+            <table class="results" id="raidz2">
+            </table>
+        </div>
     </div>
   </div>
 
   <div data-tab-id="raidz3" data-tab-label="RAIDZ3">
-    <div class="results-container" id="raidz3">
-        <table class="results" id="raidz3">
-        </table>
+    <div class="scroll-wrapper">
+        <button class="scroll-nav scroll-nav-left" aria-label="Scroll left" title="Scroll right">‹</button>
+        <button class="scroll-nav scroll-nav-right" aria-label="Scroll right" title="Scroll right">›</button>
+        <div class="results-container scroll-container" id="raidz3">
+            <table class="results" id="raidz3">
+            </table>
+        </div>
     </div>
   </div>
 
   <div data-tab-id="draid" data-tab-label="dRAID">
-    <div class="results-container" id="draid">
-        <table class="results" id="draid">
-        </table>
+    <div class="scroll-wrapper">
+        <button class="scroll-nav scroll-nav-left" aria-label="Scroll left" title="Scroll left">‹</button>
+        <button class="scroll-nav scroll-nav-right" aria-label="Scroll right" title="Scroll right">›</button>
+        <div class="results-container scroll-container" id="draid">
+            <table class="results" id="draid">
+            </table>
+        </div>
     </div>
   </div>
 </div>
@@ -326,7 +426,135 @@ document.addEventListener('DOMContentLoaded', function() {
     // Wait for capacity calculator to initialize before setting up tabs
     setTimeout(function() {
         initializeHugoTabs('capacity-tab-content-source', 'capacity-tabs-container', 'common', true);
+        
+        // Initialize scroll controls after tabs are created
+        setTimeout(initializeCapacityScrollControls, 500);
     }, 100);
+    
+    // Initialize scroll controls for capacity calculator tables
+    function initializeCapacityScrollControls() {
+        const scrollWrappers = document.querySelectorAll('#capacity-tabs-container .scroll-wrapper');
+        
+        scrollWrappers.forEach((wrapper, index) => {
+            const container = wrapper.querySelector('.scroll-container');
+            const leftBtn = wrapper.querySelector('.scroll-nav-left');
+            const rightBtn = wrapper.querySelector('.scroll-nav-right');
+            
+            if (!container || !leftBtn || !rightBtn) return;
+            
+            // Update scroll state function
+            function updateScrollState() {
+                const { scrollLeft, scrollWidth, clientWidth } = container;
+                const maxScroll = scrollWidth - clientWidth;
+                
+                // Hide/show arrows at boundaries
+                const threshold = 10;
+                const isAtStart = scrollLeft <= threshold;
+                const isAtEnd = scrollLeft >= maxScroll - threshold;
+                
+                leftBtn.classList.toggle('hidden', isAtStart);
+                rightBtn.classList.toggle('hidden', isAtEnd);
+            }
+            
+            // Arrow button event handlers
+            leftBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                const scrollAmount = container.clientWidth * 0.7;
+                container.scrollBy({
+                    left: -scrollAmount,
+                    behavior: 'smooth'
+                });
+                setTimeout(updateScrollState, 100);
+            });
+            
+            rightBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                const scrollAmount = container.clientWidth * 0.7;
+                container.scrollBy({
+                    left: scrollAmount,
+                    behavior: 'smooth'
+                });
+                setTimeout(updateScrollState, 100);
+            });
+            
+            // Set up drag scrolling
+            setupDragScroll(container);
+            
+            // Scroll event listener
+            container.addEventListener('scroll', updateScrollState);
+            
+            // Initial state update - delay to allow tables to render
+            setTimeout(updateScrollState, 200);
+            
+            // Update when tabs are switched
+            const tabButton = document.querySelector(`[href="#${container.id}"]`);
+            if (tabButton) {
+                tabButton.addEventListener('click', function() {
+                    setTimeout(updateScrollState, 300);
+                });
+            }
+        });
+        
+        // Also check for tab changes via mutation observer
+        const tabsContainer = document.getElementById('capacity-tabs-container');
+        if (tabsContainer) {
+            const observer = new MutationObserver(function(mutations) {
+                mutations.forEach(function(mutation) {
+                    if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
+                        setTimeout(initializeCapacityScrollControls, 200);
+                    }
+                });
+            });
+            observer.observe(tabsContainer, { 
+                childList: true, 
+                subtree: true, 
+                attributes: true 
+            });
+        }
+    }
+    
+    // Drag scroll functionality
+    function setupDragScroll(container) {
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+
+        container.addEventListener('mousedown', (e) => {
+            isDown = true;
+            container.style.cursor = 'grabbing';
+            startX = e.pageX - container.offsetLeft;
+            scrollLeft = container.scrollLeft;
+        });
+
+        container.addEventListener('mouseleave', () => {
+            isDown = false;
+            container.style.cursor = 'grab';
+        });
+
+        container.addEventListener('mouseup', () => {
+            isDown = false;
+            container.style.cursor = 'grab';
+        });
+
+        container.addEventListener('mousemove', (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - container.offsetLeft;
+            const walk = (x - startX) * 2;
+            container.scrollLeft = scrollLeft - walk;
+        });
+    }
+    
+    // Re-initialize when tables are updated
+    if (typeof window.originalUpdate === 'undefined' && typeof update === 'function') {
+        window.originalUpdate = update;
+        update = function() {
+            window.originalUpdate.apply(this, arguments);
+            setTimeout(initializeCapacityScrollControls, 300);
+        };
+    }
 });
 </script>
 
