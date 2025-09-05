@@ -35,7 +35,7 @@ $(document).ready(function() {
 		"draid3:20d:24c:0s"
 	]
 
-	fast_draid = false;
+	fast_draid = true;
 
 	var raidz = ["common", mirror, z1, z2, z3, draid];
 	var raid_names = ["c","Mirror","Z1","Z2","Z3","dRAID"];
@@ -300,6 +300,7 @@ $(document).ready(function() {
 		decimal_places = $("select#decimal_places").val();
 		show_deflate = $("input#show_deflate").is(':checked');
 		show_afr = $("input#show_afr").is(':checked');
+		fast_draid = $("input#fast_draid").is(':checked');
 		disk_afr = parseFloat($("input#disk_afr").val());
 		allow_resilver = $("input#allow_resilver").is(':checked');
 		resilver_time = parseFloat($("input#resilver_time").val());
@@ -362,6 +363,9 @@ $(document).ready(function() {
 				cd.pool_usable_gib = 0;
 				cd.pool_usable_tib = 0;
 				cd.pool_usable_pib = 0;
+				cd.pool_usable_gb = 0;
+				cd.pool_usable_tb = 0;
+				cd.pool_usable_pb = 0;
 				cd.vdev_count = 0;
 				return cd;
 			}
@@ -377,6 +381,9 @@ $(document).ready(function() {
 			cd.pool_usable_gib = 0;
 			cd.pool_usable_tib = 0;
 			cd.pool_usable_pib = 0;
+			cd.pool_usable_gb = 0;
+			cd.pool_usable_tb = 0;
+			cd.pool_usable_pb = 0;
 			cd.vdev_count = 0;
 			return cd;
 		}
@@ -549,6 +556,10 @@ $(document).ready(function() {
 		cd.pool_usable_gib = cd.pool_usable_bytes / 1024**3;
 		cd.pool_usable_tib = cd.pool_usable_bytes / 1024**4;
 		cd.pool_usable_pib = cd.pool_usable_bytes / 1024**5;
+		// Decimal units (TB, PB, EB)
+		cd.pool_usable_gb = cd.pool_usable_bytes / 1000**3;
+		cd.pool_usable_tb = cd.pool_usable_bytes / 1000**4;
+		cd.pool_usable_pb = cd.pool_usable_bytes / 1000**5;
 
 		// Calculate other misc stats
 		cd.storage_efficiency = cd.pool_usable_bytes / cd.pool_raw_capacity * 100;
@@ -721,7 +732,7 @@ $(document).ready(function() {
 								"font-style": ""
 							});
 							
-							if (table_data == "usable_cap") {
+							if (table_data == "usable_cap_tib") {
 								if (show_bytes) {
 									$("td." + vdev_layout).text(capacity_data.pool_usable_bytes);
 								} else {
@@ -729,6 +740,16 @@ $(document).ready(function() {
 										$("td." + vdev_layout).text(rnd(capacity_data.pool_usable_pib,decimal_places) + " PiB");
 									} else {
 										$("td." + vdev_layout).text(rnd(capacity_data.pool_usable_tib,decimal_places) + " TiB");
+									}
+								}
+							} else if (table_data == "usable_cap_tb") {
+								if (show_bytes) {
+									$("td." + vdev_layout).text(capacity_data.pool_usable_bytes);
+								} else {
+									if (capacity_data.pool_usable_tb > 1000) {
+										$("td." + vdev_layout).text(rnd(capacity_data.pool_usable_pb,decimal_places) + " PB");
+									} else {
+										$("td." + vdev_layout).text(rnd(capacity_data.pool_usable_tb,decimal_places) + " TB");
 									}
 								}
 							} else if (table_data == "efficiency") {
@@ -1003,6 +1024,7 @@ $(document).ready(function() {
 	$("input.monitor").change(function() {
 		update();
 		update_debug("18t7wz2");
+		update_shelf_count();
 	});
 
 	$("input#show_afr").change(function() {
@@ -1018,13 +1040,14 @@ $(document).ready(function() {
 	$("select.monitor").change(function() {
 		update();
 		update_debug("18t7wz2");
+		update_shelf_count();
 	});
 
 	$("select#add_vdev_type").change(function() {
 		var raid_type = $("select#add_vdev_type").val();
 		var tr_text;
 
-		tr_text = "<td><label for=\"recordsize\">ZFS recordsize value:</label></td>"
+		tr_text = "<td><span class=\"help-icon\" data-help=\"recordsize\" title=\"Click for help\">?</span> <label for=\"recordsize\">ZFS recordsize value:</label></td>"
 		tr_text += "<td><select class=\"monitor\" name=\"recordsize\" id=\"recordsize\">"
 		tr_text += "<option value=\"4\">4 KiB</option>"
 		tr_text += "<option value=\"8\">8 KiB</option>"
@@ -1453,6 +1476,31 @@ $(document).ready(function() {
 		}
 	});
 	
+	// Disk quantity adjustment buttons
+	function add_rem_disks(num_disks) {
+		var new_disk_qty = disks + num_disks;
+		new_disk_qty = validate_input(new_disk_qty,"disks",disks,0,999999,true);
+
+		if (new_disk_qty != disks) {
+			$("input#disks").val(new_disk_qty);
+			update();
+			update_debug("18t7wz2");
+			update_shelf_count();
+		}
+	}
+
+	$("div.half.up").click(function() {
+		var id = $(this).attr("id");
+		var num = parseInt(id.replace("plus_",""));
+		add_rem_disks(num);
+	});
+
+	$("div.half.down").click(function() {
+		var id = $(this).attr("id");
+		var num = parseInt(id.replace("minus_",""));
+		add_rem_disks(-1 * num);
+	});
+
 	// Help text functionality - display context-sensitive help when clicking help icons
 	$(document).on("click",".help-icon",function(){
 		var helpId = $(this).attr("data-help");
@@ -1487,10 +1535,16 @@ $(document).ready(function() {
 				helpText = "<b>Table Data:</b> Select what type of data to display in the capacity tables - usable capacity, efficiency percentages, ZFS overhead, or capacity with reservation space.";
 				break;
 			case "usable_cap":
-				helpText = "<b>Usable Capacity:</b> Shows the actual storage capacity available for your data after accounting for ZFS parity, metadata, and overhead.";
+				helpText = "<b>Usable Capacity (TiB):</b> Display usable capacity as powers of 1024 rather than powers of 1000. This is how computers will display usable capacity.";
+				break;
+			case "usable_cap_tb":
+				helpText = "<b>Usable Capacity (TB):</b> Display usable capacity as powers of 1000. This is how hard disk manufacturers label capacity but not how computers see it.";
 				break;
 			case "show_deflate":
 				helpText = "<b>Show Deflate Ratio:</b> The deflate ratio is the ratio of the amount of data stored to its size on disk with parity and padding, always rounded down to an even factor of 512.";
+				break;
+			case "fast_draid":
+				helpText = "<b>Fast dRAID Calculation:</b> Enables an approximate (but much faster) capacity calculation for dRAID layouts. The fast/approximate calculations are high by up to 0.001%.";
 				break;
 			case "efficiency":
 				helpText = "<b>Capacity Efficiency:</b> Usable capacity of the pool divided by the raw capacity of all of the disks in the pool times 100%.";
@@ -1526,9 +1580,39 @@ $(document).ready(function() {
 		$("#help-text-content").html(helpText);
 	});
 
+	// Shelf count calculation functions
+	function calculate_shelf_count(head_size, shelf_size) {
+		var disks_unaccounted_for = disks;
+		disks_unaccounted_for -= head_size;
+		if (disks_unaccounted_for <= 0) {
+			var free_bays = head_size - disks;
+			return "0 (" + String(free_bays) + " free)";
+		}
+		var shelf_count = Math.ceil(disks_unaccounted_for / shelf_size);
+		var free_bays = (head_size + shelf_count * shelf_size) - disks;
+		return String(shelf_count) + " (" + String(free_bays) + " free)";
+	}
+	
+	function update_shelf_count() {
+		var es24 = [calculate_shelf_count(12, 24), calculate_shelf_count(24, 24), calculate_shelf_count(48, 24)];
+		var es60 = [calculate_shelf_count(12, 60), calculate_shelf_count(24, 60), calculate_shelf_count(48, 60)];
+		var es102 = [calculate_shelf_count(12, 102), calculate_shelf_count(24, 102), calculate_shelf_count(48, 102)];
+
+		var shelf_html = "<div style=\"font-size: 0.9em; color: white; margin-bottom: 10px;\"><strong>TrueNAS Hardware:</strong> Shows expansion shelf requirements for different TrueNAS Enterprise systems.</div>";
+		shelf_html += "<table class=\"shelf_count\" style=\"width: 100%; border-collapse: collapse;\">";
+		shelf_html += "<tr><td style=\"padding: 8px; background: #0095d5; color: white; font-weight: bold; font-style: italic;\">Shelf Count</td><td style=\"padding: 8px; text-align: center; background: #0095d5; color: white; font-weight: bold;\">12-Bay Head</td><td style=\"padding: 8px; text-align: center; background: #0095d5; color: white; font-weight: bold;\">24-Bay Head</td><td style=\"padding: 8px; text-align: center; background: #0095d5; color: white; font-weight: bold;\">48-Bay Head</td></tr>";
+		shelf_html += "<tr><td style=\"padding: 8px; background: #0095d5; color: white; font-weight: bold;\">24-Bay Shelf</td><td style=\"padding: 8px; text-align: center; background: rgba(0, 149, 213, 0.1);\">" + es24[0] + "</td><td style=\"padding: 8px; text-align: center; background: rgba(0, 149, 213, 0.1);\">" + es24[1] + "</td><td style=\"padding: 8px; text-align: center; background: rgba(0, 149, 213, 0.1);\">" + es24[2] + "</td></tr>";
+		shelf_html += "<tr><td style=\"padding: 8px; background: #0095d5; color: white; font-weight: bold;\">60-Bay Shelf</td><td style=\"padding: 8px; text-align: center;\">" + es60[0] + "</td><td style=\"padding: 8px; text-align: center;\">" + es60[1] + "</td><td style=\"padding: 8px; text-align: center;\">" + es60[2] + "</td></tr>";
+		shelf_html += "<tr><td style=\"padding: 8px; background: #0095d5; color: white; font-weight: bold;\">102-Bay Shelf</td><td style=\"padding: 8px; text-align: center; background: rgba(0, 149, 213, 0.1);\">" + es102[0] + "</td><td style=\"padding: 8px; text-align: center; background: rgba(0, 149, 213, 0.1);\">" + es102[1] + "</td><td style=\"padding: 8px; text-align: center; background: rgba(0, 149, 213, 0.1);\">" + es102[2] + "</td></tr>";
+		shelf_html += "</table>";
+		
+		$("#shelf-count-content").html(shelf_html);
+	}
+
 	draw_tables();
 	update();
 	update_debug("18t7wz2");
+	update_shelf_count();
 
 	// Update button functionality
 	$("#calculate_button").click(function() {
