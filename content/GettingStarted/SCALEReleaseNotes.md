@@ -116,11 +116,16 @@ These are ongoing issues that can affect multiple versions in the 25.10 series.
 
 ### Current Known Issues
 
-* An issue blocks some systems from upgrading ([NAS-137352](https://ixsystems.atlassian.net/browse/NAS-137352))..
+* An issue blocks some systems from upgrading ([NAS-137352](https://ixsystems.atlassian.net/browse/NAS-137352)).
 
   During upgrades, 25.10 updates GRUB when it detects a version difference between the current and new GRUB.
   However, the code expects a BIOS partition to be present, so environments without a BIOS partition return a traceback.
   Systems initially deployed with TrueNAS SCALE have this partition, but some systems originally deployed with TrueNAS CORE can be impacted.
+* UI Bug Reporting feature fails with a "FAILED: This TrueNAS build is experimental" error ([NAS-137445](https://ixsystems.atlassian.net/browse/NAS-137445)).
+  * Users can manually report bugs directly at [https://ixsystems.atlassian.net/](https://ixsystems.atlassian.net/)
+* NVMe over TCP is incompatible with VMware ESXi environments ([NAS-137372](https://ixsystems.atlassian.net/browse/NAS-137372)).
+  TrueNAS 25.10 uses the Linux kernel NVMe over TCP target driver, which lacks support for fused commands required by VMware ESXi.
+  This is an upstream kernel limitation that prevents path initialization in ESXi environments.
 * The time sort for frequency on the **Cloud Sync Tasks** screen is incorrect ([NAS-137096](https://ixsystems.atlassian.net/browse/NAS-137096)).
 * **Users** page shows "can not retrieve response" due to invalid email address ([NAS-137198](https://ixsystems.atlassian.net/browse/NAS-137198)).
 * The **Virtual Machines** page doesn't refresh properly ([NAS-136973](https://ixsystems.atlassian.net/browse/NAS-136973)).
