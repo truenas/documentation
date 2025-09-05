@@ -3,10 +3,10 @@
 
 <table class="inputs">
     <tr>
-        <td><label for="disks">Total Disks in Pool:</label></td>
+        <td><span class="help-icon" data-help="disks" title="Click for help">?</span> <label id="disks" for="disks">Total Disks in Pool:</label></td>
         <td><input class="monitor" type="text" id="disks" name="disks" value="24"></td>
 
-        <td><label for="add_disk" id="add_disk">Compare Disk Size:</label></td>
+        <td><span class="help-icon" data-help="add_disk" title="Click for help">?</span> <label id="add_disk" for="add_disk">New Disk Size:</label></td>
         <td><input class="monitor" type="text" id="add_disk" name="add_disk"></td>
     </tr>
 
@@ -25,15 +25,15 @@
     </tr>
 
     <tr>
-        <td><label for="min_spares">Minimum Spares:</label></td>
+        <td><span class="help-icon" data-help="min_spares" title="Click for help">?</span> <label id="min_spares" for="min_spares">Minimum Spares:</label></td>
         <td><input class="monitor" type="text" id="min_spares" name="min_spares" value="0"></td>
     </tr>
 
     <tr>
-        <td><label for="use_new_slop">OpenZFS 2.0.7 Slop:</label></td>
+        <td><span class="help-icon" data-help="use_new_slop" title="Click for help">?</span> <label id="use_new_slop" for="use_new_slop">OpenZFS 2.0.7 Slop:</label></td>
         <td><input class="monitor" type="checkbox" id="use_new_slop" name="use_new_slop" checked></td>
 
-        <td><label for="add_vdev_type" id="add_vdev_type">New vdev Type:</label></td>
+        <td><span class="help-icon" data-help="add_vdev_type" title="Click for help">?</span> <label for="add_vdev_type" id="add_vdev_type">New vdev Type:</label></td>
         <td><select class="monitor" name="add_vdev_type" id="add_vdev_type">
             <option value="mirror">Mirror</option>
             <option value="z1">RAIDZ1</option>
@@ -44,7 +44,7 @@
     </tr>
 
     <tr id="new_vdev">
-        <td><label for="recordsize">ZFS recordsize value:</label></td>
+        <td><span class="help-icon" data-help="recordsize" title="Click for help">?</span> <label id="recordsize" for="recordsize">ZFS recordsize value:</label></td>
         <td><select class="monitor" name="recordsize" id="recordsize">
             <option value="4">4 KiB</option>
             <option value="8">8 KiB</option>
@@ -68,7 +68,7 @@
     </tr>
 
     <tr>
-        <td><label for="ashift">ZFS ashift value:</label></td>
+        <td><span class="help-icon" data-help="ashift" title="Click for help">?</span> <label id="ashift" for="ashift">ZFS ashift value:</label></td>
         <td><select class="monitor" name="ashift" id="ashift">
             <option value="9">9</option>
             <option value="12" selected>12</option>
@@ -80,7 +80,7 @@
     </tr>
 
     <tr>
-        <td><label for="swap_size">Disk Swap Size:</label></td>
+        <td><span class="help-icon" data-help="swap_size" title="Click for help">?</span> <label id="swap_size" for="swap_size">Disk Swap Size:</label></td>
         <td><select class="monitor" name="swap_size" id="swap_size">
             <option value="0" selected>0 GiB</option>
             <option value="2">2 GiB</option>
@@ -90,7 +90,7 @@
     </tr>
 
     <tr>
-        <td><label for="decimal_places">Decimal Places:</label></td>
+        <td><span class="help-icon" data-help="decimal_places" title="Click for help">?</span> <label for="decimal_places">Decimal Places:</label></td>
         <td><select class="monitor" name="decimal_places" id="decimal_places">
             <option value="0">0</option>
             <option value="1">1</option>
@@ -106,29 +106,29 @@
             <option value="bytes">bytes</option>
         </select></td>
         
-        <td><label>Table Data:</label></td>
+        <td><span class="help-icon" data-help="table_data" title="Click for help">?</span> <label>Table Data:</label></td>
         <td><input class="monitor" type="radio" id="usable_cap" name="table_data" value="usable_cap" checked>
-            <label for="usable_cap">Usable Capacity</label>
+            <label for="usable_cap">Usable Capacity</label> <span class="help-icon" data-help="usable_cap" title="Click for help">?</span>
         </td>
     </tr>
 
     <tr>
-        <td><label for="show_deflate">Show Deflate Ratio:</label></td>
+        <td><span class="help-icon" data-help="show_deflate" title="Click for help">?</span> <label for="show_deflate">Show Deflate Ratio:</label></td>
         <td><input class="monitor" type="checkbox" id="show_deflate" name="show_deflate"></td>
 
         <td> </td>
         <td><input class="monitor" type="radio" id="efficiency" name="table_data" value="efficiency">
-            <label for="efficiency">Capacity Efficiency</label>
+            <label for="efficiency">Capacity Efficiency</label> <span class="help-icon" data-help="efficiency" title="Click for help">?</span>
         </td>
     </tr>
 
     <tr>
-        <td><label for="show_afr">Show Pool Annual Failure Rate (AFR):</label></td>
+        <td><span class="help-icon" data-help="show_afr" title="Click for help">?</span> <label for="show_afr">Show Annual Failure Rate (AFR):</label></td>
         <td><input class="monitor" type="checkbox" id="show_afr" name="show_afr"></td>
 
         <td> </td>
         <td><input class="monitor" type="radio" id="overhead" name="table_data" value="overhead">
-            <label for="overhead">ZFS Overhead</label>
+            <label for="overhead">ZFS Overhead</label> <span class="help-icon" data-help="overhead" title="Click for help">?</span>
         </td>
     </tr>
 
@@ -138,12 +138,12 @@
         
         <td> </td>
         <td><input class="monitor" type="radio" id="cap_w_reserve" name="table_data" value="cap_w_reserve">
-            <label for="cap_w_reserve">Cap. w/ Reservation</label>
+            <label for="cap_w_reserve">Cap. w/ Reservation</label> <span class="help-icon" data-help="cap_w_reserve" title="Click for help">?</span>
         </td>
     </tr>
 
     <tr id="disk_afr_row" style="display: none;">
-        <td><label for="disk_afr">Disk AFR (%):</label></td>
+        <td><span class="help-icon" data-help="disk_afr" title="Click for help">?</span> <label for="disk_afr">Disk AFR (%):</label></td>
         <td><input class="monitor" type="text" id="disk_afr" name="disk_afr" value="5" disabled></td>
         
         <td> </td>
@@ -151,7 +151,7 @@
     </tr>
 
     <tr id="allow_resilver_row" style="display: none;">
-        <td><label for="allow_resilver">Assume Resilver:</label></td>
+        <td><span class="help-icon" data-help="allow_resilver" title="Click for help">?</span> <label for="allow_resilver">Assume Resilver:</label></td>
         <td><input class="monitor" type="checkbox" id="allow_resilver" name="allow_resilver" disabled checked></td>
         
         <td> </td>
@@ -159,7 +159,7 @@
     </tr>
 
     <tr id="resilver_time_row" style="display: none;">
-        <td  style="vertical-align: top;"><label for="resilver_time" >Resilver Time (hrs):</label></td>
+        <td  style="vertical-align: top;"><span class="help-icon" data-help="resilver_time" title="Click for help">?</span> <label for="resilver_time" >Resilver Time (hrs):</label></td>
         <td style="vertical-align: top;"><input class="monitor" type="text" id="resilver_time" name="resilver_time" value="48" disabled></td>
         
         <td> </td>
@@ -169,7 +169,7 @@
     <tr id="reservation_row" style="display: none;">
         <td colspan="4" style="padding: 0; position: relative; height: 35px;">
             <div style="position: absolute; right: 20px; top: 8px; white-space: nowrap;">
-                <label for="reservation">Reservation (%):</label> 
+                <span class="help-icon" data-help="reservation" title="Click for help">?</span> <label for="reservation">Reservation (%):</label> 
                 <input class="monitor" type="text" id="reservation" name="reservation" value="20" disabled style="width: 50px;">
             </div>
         </td>
@@ -187,6 +187,12 @@
     </tr>      
 
 </table>
+
+<div id="help-text-container" style="margin: 20px 0; padding: 15px; background: rgba(0, 149, 213, 0.05); border-radius: 8px; min-height: 60px; border-left: 4px solid #0095d5;">
+    <div id="help-text-content" style="color: var(--body-font-color); line-height: 1.4;">
+        <strong>Configuration Help:</strong> Click the help icons (?) next to field labels above to see detailed explanations of each setting.
+    </div>
+</div>
 
 <p class="subsect_label">Select a tab to view calculated data for different ZFS configurations. Hovering over a table cell loads the relevant data into the Calculation Values section below. You can click table cells to freeze or unfreeze those values.</p>
 
@@ -317,6 +323,35 @@
         white-space: nowrap; /* Prevent text wrapping that could hide overflow */
         border-radius: 8px;
         overflow: hidden;
+    }
+    
+    /* Help icon styling */
+    .help-icon {
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        line-height: 14px;
+        text-align: center;
+        border-radius: 50%;
+        background: #0095d5;
+        color: white;
+        font-size: 11px;
+        font-weight: bold;
+        cursor: pointer;
+        margin-left: 5px;
+        vertical-align: middle;
+        transition: all 0.2s ease;
+        user-select: none;
+    }
+    
+    .help-icon:hover {
+        background: #007bb5;
+        transform: scale(1.1);
+        box-shadow: 0 2px 6px rgba(0, 149, 213, 0.3);
+    }
+    
+    .help-icon:active {
+        transform: scale(0.95);
     }
     
     /* Add border radius to visible corners, accounting for hidden white cells */
