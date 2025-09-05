@@ -2590,11 +2590,13 @@ pre.gdoc-mermaid.mermaid.mermaid_sizing {
     color: white !important;
     padding: 12px 16px !important;
     border-radius: 8px !important;
-    display: block !important;
-    text-align: center !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    text-align: left !important;
     font-weight: bold !important;
     text-decoration: none !important;
-    margin: 8px 4px !important;
+    margin: 8px 0px !important;
     border: 2px solid #71bf44 !important;
     transition: all 0.3s ease !important;
 }
@@ -2608,7 +2610,23 @@ pre.gdoc-mermaid.mermaid.mermaid_sizing {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2) !important;
 }
 
-/* Hide the icon for clean button appearance */
+/* Create a dots grid icon using CSS */
+.gdoc-nav section:last-child .gdoc-nav__list li:nth-child(2) a::before {
+    content: "" !important;
+    display: inline-block !important;
+    width: 16px !important;
+    height: 16px !important;
+    margin-right: 8px !important;
+    background-image: radial-gradient(circle, white 1.5px, transparent 1.5px) !important;
+    background-size: 5px 5px !important;
+    background-position: 1px 1px !important;
+    background-repeat: repeat !important;
+    opacity: 1 !important;
+    overflow: hidden !important;
+}
+
+/* Hide the original icon that appears outside the button */
+.gdoc-nav section:last-child .gdoc-nav__list li:nth-child(2) svg,
 .gdoc-nav section:last-child .gdoc-nav__list li:nth-child(2) .gdoc-icon {
     display: none !important;
 }
