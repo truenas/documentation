@@ -569,6 +569,52 @@ $(document).ready(function() {
 		return cd;
 	}
 
+	// Function to generate specific error messages based on RAID type and requirements
+	function getSmartErrorMessage(p, vdev_width, current_disks) {
+		// In update() function: raidz = [mirror, z1, z2, z3, draid] (indices 0-4)
+		var raid_names = ["Mirror", "RAIDZ1", "RAIDZ2", "RAIDZ3", "dRAID"];
+		var raid_name = raid_names[p] || "Unknown";
+		
+		// Calculate minimum disks needed based on RAID type
+		var min_disks_needed;
+		
+		if (p == 0) { // Mirror
+			min_disks_needed = Math.max(2, vdev_width);
+			if (current_disks < min_disks_needed) {
+				return "Min. " + min_disks_needed + " disks";
+			}
+		} else if (p == 1) { // RAIDZ1
+			min_disks_needed = Math.max(3, vdev_width);
+			if (current_disks < min_disks_needed) {
+				return "Min. " + min_disks_needed + " disks";
+			}
+		} else if (p == 2) { // RAIDZ2  
+			min_disks_needed = Math.max(5, vdev_width);
+			if (current_disks < min_disks_needed) {
+				return "Min. " + min_disks_needed + " disks";
+			}
+		} else if (p == 3) { // RAIDZ3
+			min_disks_needed = Math.max(7, vdev_width);
+			if (current_disks < min_disks_needed) {
+				return "Min. " + min_disks_needed + " disks"; 
+			}
+		} else if (p == 4) { // dRAID
+			// For dRAID, vdev_width is a string like "draid1:4d:24c:0s"
+			// Extract the total width (c value)
+			if (typeof vdev_width === 'string' && vdev_width.includes(':')) {
+				min_disks_needed = parseInt(vdev_width.split(":")[2].replace("c",""));
+			} else {
+				min_disks_needed = 24; // fallback
+			}
+			if (current_disks < min_disks_needed) {
+				return "Min. " + min_disks_needed + " disks";
+			}
+		}
+		
+		// Fallback for other cases
+		return "Insufficient disks for " + raid_name;
+	}
+
 	function update() {
 		get_form_data();
 		var raidz = [mirror, z1, z2, z3, draid];
@@ -606,6 +652,10 @@ $(document).ready(function() {
 			$("#reservation_row").css("display", "none");
 			$("input#reservation").prop("disabled", true);
 		}
+		
+		// Track which columns have already shown an error message
+		var columnErrors = {};
+		
 		for (var p = 0; p < raidz.length; p++) {
 
 			for (var v = 0; v < raidz[p].length; v++) {
@@ -646,10 +696,24 @@ $(document).ready(function() {
 					} else {
 						// Check if configuration is invalid (insufficient disks)
 						if (capacity_data.pool_usable_bytes == 0 && capacity_data.vdev_count == 0) {
-							$("td." + vdev_layout).text("Insufficient Disks").css({
-								"color": "#ff6b6b",
-								"font-style": "italic"
-							});
+							// Create a column key based on RAID type and vdev width
+							var columnKey = p + "_" + v; // e.g. "2_3" for RAIDZ1 width 6
+							
+							if (!columnErrors[columnKey]) {
+								// First error in this column - show smart error message
+								var errorMessage = getSmartErrorMessage(p, vdev_width, disks);
+								$("td." + vdev_layout).text(errorMessage).css({
+									"color": "#ff6b6b",
+									"font-style": "italic"
+								});
+								columnErrors[columnKey] = true;
+							} else {
+								// Subsequent errors in this column - show dash
+								$("td." + vdev_layout).text("—").css({
+									"color": "#ff6b6b",
+									"font-style": "italic"
+								});
+							}
 						} else {
 							// Reset any previous error styling
 							$("td." + vdev_layout).css({
@@ -692,10 +756,10 @@ $(document).ready(function() {
 						$("td.vdev" + vdev_width + "wm").text(disks + " disks");
 					} else {
 						if (capacity_data.vdev_count == 0) {
-							$("td.vdev" + vdev_width + "wm").text("Invalid Config").css({
+							$("td.vdev" + vdev_width + "wm").text("Invalid Config").addClass("error-text").css({
 								"color": "#ff6b6b",
 								"font-style": "italic"
-							});
+							}).attr("style", "color: #ff6b6b !important; font-style: italic !important;");
 						} else {
 							$("td.vdev" + vdev_width + "wm").text(capacity_data.vdev_count + " vdev + " + capacity_data.spares_count + " spare").css({
 								"color": "",
@@ -707,10 +771,10 @@ $(document).ready(function() {
 					if (capacity_data.raid_type == "d") {
 						var draid_label = vdev_width.replaceAll(":","-");
 						if (capacity_data.vdev_count == 0) {
-							$("td.vdev" + draid_label).text("Invalid Config").css({
+							$("td.vdev" + draid_label).text("Invalid Config").addClass("error-text").css({
 								"color": "#ff6b6b",
 								"font-style": "italic"
-							});
+							}).attr("style", "color: #ff6b6b !important; font-style: italic !important;");
 						} else {
 							$("td.vdev" + draid_label).text(capacity_data.vdev_count + " vdev + " + capacity_data.spares_count + " spare").css({
 								"color": "",
@@ -719,10 +783,10 @@ $(document).ready(function() {
 						}
 					} else {
 						if (capacity_data.vdev_count == 0) {
-							$("td.vdev" + vdev_width + "wz" + p).text("Invalid Config").css({
+							$("td.vdev" + vdev_width + "wz" + p).text("Invalid Config").addClass("error-text").css({
 								"color": "#ff6b6b",
 								"font-style": "italic"
-							});
+							}).attr("style", "color: #ff6b6b !important; font-style: italic !important;");
 						} else {
 							$("td.vdev" + vdev_width + "wz" + p).text(capacity_data.vdev_count + " vdev + " + capacity_data.spares_count + " spare").css({
 								"color": "",
