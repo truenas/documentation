@@ -5,7 +5,7 @@ more:
     ref: "https://api.truenas.com/"
     external: true
     icon: "api-icon"
-  - name: TrueNAS Apps Market
+  - name: TrueNAS Apps
     ref: "https://apps.truenas.com/"
     external: true
     icon: "icon-dots-grid"
