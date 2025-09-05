@@ -12,12 +12,42 @@
 
     <tr>
         <td id="add_disk_buttons" colspan="2">
-            <button type="button" class="change_disk_qty" id="minus_100">-100</button>
-            <button type="button" class="change_disk_qty" id="minus_10">-10</button>
-            <button type="button" class="change_disk_qty" id="minus_1">-1</button>
-            <button type="button" class="change_disk_qty" id="plus_1">+1</button>
-            <button type="button" class="change_disk_qty" id="plus_10">+10</button>
-            <button type="button" class="change_disk_qty" id="plus_100">+100</button>
+            <div class="rocker-button">
+                <div class="half up" id="plus_1"><div class="arrow">+</div></div>
+                <div class="center-text">1</div>
+                <div class="half down" id="minus_1"><div class="arrow">-</div></div>
+            </div>
+            <div class="rocker-button">
+                <div class="half up" id="plus_10"><div class="arrow">+</div></div>
+                <div class="center-text">10</div>
+                <div class="half down" id="minus_10"><div class="arrow">-</div></div>
+            </div>
+            <div class="rocker-button">
+                <div class="half up" id="plus_100"><div class="arrow">+</div></div>
+                <div class="center-text">100</div>
+                <div class="half down" id="minus_100"><div class="arrow">-</div></div>
+            </div>
+            <div class="add_disk_vrule"></div>
+            <div class="rocker-button">
+                <div class="half up" id="plus_12"><div class="arrow">+</div></div>
+                <div class="center-text">12</div>
+                <div class="half down" id="minus_12"><div class="arrow">-</div></div>
+            </div>
+            <div class="rocker-button">
+                <div class="half up" id="plus_24"><div class="arrow">+</div></div>
+                <div class="center-text">24</div>
+                <div class="half down" id="minus_24"><div class="arrow">-</div></div>
+            </div>
+            <div class="rocker-button">
+                <div class="half up" id="plus_60"><div class="arrow">+</div></div>
+                <div class="center-text">60</div>
+                <div class="half down" id="minus_60"><div class="arrow">-</div></div>
+            </div>
+            <div class="rocker-button">
+                <div class="half up" id="plus_102"><div class="arrow">+</div></div>
+                <div class="center-text">102</div>
+                <div class="half down" id="minus_102"><div class="arrow">-</div></div>
+            </div>
         </td>
 
         <td id="add_disk_button"><button type="button" id="add_disk">Add Disk Row</button></td>
@@ -107,8 +137,8 @@
         </select></td>
         
         <td><span class="help-icon" data-help="table_data" title="Click for help">?</span> <label>Table Data:</label></td>
-        <td><input class="monitor" type="radio" id="usable_cap" name="table_data" value="usable_cap" checked>
-            <label for="usable_cap">Usable Capacity</label> <span class="help-icon" data-help="usable_cap" title="Click for help">?</span>
+        <td><input class="monitor" type="radio" id="usable_cap" name="table_data" value="usable_cap_tib" checked>
+            <label for="usable_cap">Usable Capacity (TiB)</label> <span class="help-icon" data-help="usable_cap" title="Click for help">?</span>
         </td>
     </tr>
 
@@ -116,6 +146,16 @@
         <td><span class="help-icon" data-help="show_deflate" title="Click for help">?</span> <label for="show_deflate">Show Deflate Ratio:</label></td>
         <td><input class="monitor" type="checkbox" id="show_deflate" name="show_deflate"></td>
 
+        <td> </td>
+        <td><input class="monitor" type="radio" id="usable_cap_tb" name="table_data" value="usable_cap_tb">
+            <label for="usable_cap_tb">Usable Capacity (TB)</label> <span class="help-icon" data-help="usable_cap_tb" title="Click for help">?</span>
+        </td>
+    </tr>
+
+    <tr>
+        <td><span class="help-icon" data-help="fast_draid" title="Click for help">?</span> <label for="fast_draid">Fast dRAID Calculation:</label></td>
+        <td><input class="monitor" type="checkbox" id="fast_draid" name="fast_draid" checked></td>
+        
         <td> </td>
         <td><input class="monitor" type="radio" id="efficiency" name="table_data" value="efficiency">
             <label for="efficiency">Capacity Efficiency</label> <span class="help-icon" data-help="efficiency" title="Click for help">?</span>
@@ -139,6 +179,15 @@
         <td> </td>
         <td><input class="monitor" type="radio" id="cap_w_reserve" name="table_data" value="cap_w_reserve">
             <label for="cap_w_reserve">Cap. w/ Reservation</label> <span class="help-icon" data-help="cap_w_reserve" title="Click for help">?</span>
+        </td>
+    </tr>
+
+    <tr id="reservation_row" style="display: none;">
+        <td colspan="4" style="padding: 0; position: relative; height: 35px;">
+            <div style="position: absolute; right: 20px; top: 8px; white-space: nowrap;">
+                <span class="help-icon" data-help="reservation" title="Click for help">?</span> <label for="reservation">Reservation (%):</label> 
+                <input class="monitor" type="text" id="reservation" name="reservation" value="20" disabled style="width: 50px;">
+            </div>
         </td>
     </tr>
 
@@ -166,15 +215,6 @@
         <td> </td>
     </tr>
 
-    <tr id="reservation_row" style="display: none;">
-        <td colspan="4" style="padding: 0; position: relative; height: 35px;">
-            <div style="position: absolute; right: 20px; top: 8px; white-space: nowrap;">
-                <span class="help-icon" data-help="reservation" title="Click for help">?</span> <label for="reservation">Reservation (%):</label> 
-                <input class="monitor" type="text" id="reservation" name="reservation" value="20" disabled style="width: 50px;">
-            </div>
-        </td>
-    </tr>
-
     <tr>
         <td> </td>
         <td> </td>
@@ -184,15 +224,24 @@
             <button type="button" id="reset_button">Reset</button>
         </td>
         <td id="status" style="white-space: normal; width: 15em; vertical-align: top;"></td>
-    </tr>      
+    </tr>
+    
+    <tr>
+        <td colspan="4" style="padding: 10px;">
+            <div id="help-text-container" style="padding: 15px; background: rgba(0, 149, 213, 0.05); border-radius: 8px; border-left: 4px solid #0095d5; margin-bottom: 10px;">
+                <div id="help-text-content" style="color: var(--body-font-color); line-height: 1.4; font-size: 0.9em;">
+                    <strong>Configuration Help:</strong> Click the help icons (?) next to field labels above to see detailed explanations of each setting.
+                </div>
+            </div>
+            <div id="shelf-count-widget" style="padding: 15px; background: rgba(0, 149, 213, 0.05); border-radius: 8px; border-left: 4px solid #0095d5;">
+                <div id="shelf-count-content" style="color: var(--body-font-color); line-height: 1.4;">
+                    <strong>Loading TrueNAS shelf calculations...</strong>
+                </div>
+            </div>
+        </td>
+    </tr>
 
 </table>
-
-<div id="help-text-container" style="margin: 20px 0; padding: 15px; background: rgba(0, 149, 213, 0.05); border-radius: 8px; min-height: 60px; border-left: 4px solid #0095d5;">
-    <div id="help-text-content" style="color: var(--body-font-color); line-height: 1.4;">
-        <strong>Configuration Help:</strong> Click the help icons (?) next to field labels above to see detailed explanations of each setting.
-    </div>
-</div>
 
 <p class="subsect_label">Select a tab to view calculated data for different ZFS configurations. Hovering over a table cell loads the relevant data into the Calculation Values section below. You can click table cells to freeze or unfreeze those values.</p>
 
@@ -213,6 +262,8 @@
     table.inputs {
         border-radius: 8px;
         overflow: hidden;
+        table-layout: fixed;
+        width: 100%;
     }
     
     /* Add border radius to calculation values container too */
@@ -325,6 +376,92 @@
         overflow: hidden;
     }
     
+    /* Rocker button styling */
+    .rocker-button {
+        display: inline-block;
+        position: relative;
+        margin: 1px;
+        border: 1px solid var(--border-color, #ccc);
+        border-radius: 3px;
+        width: 40px;
+        height: 40px;
+        vertical-align: top;
+        background-color: rgba(128, 128, 128, 0.1);
+    }
+    
+    .rocker-button .half {
+        position: absolute;
+        width: 100%;
+        height: 19px;
+        cursor: pointer;
+        user-select: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        transition: background-color 0.2s;
+    }
+    
+    .rocker-button .half.up {
+        top: 0;
+        border-radius: 2px 2px 0 0;
+        background-color: rgba(128, 128, 128, 0.1);
+        border: none;
+        color: var(--body-font-color, #333);
+    }
+    
+    .rocker-button .half.down {
+        bottom: 0;
+        border-radius: 0 0 2px 2px;
+        background-color: rgba(128, 128, 128, 0.1);
+        border: none;
+        color: var(--body-font-color, #333);
+    }
+    
+    .rocker-button .half:hover {
+        background-color: #0095d5 !important;
+        color: white !important;
+        border-color: #0095d5 !important;
+    }
+    
+    .rocker-button .half:active {
+        background-color: #007bb5 !important;
+        color: white !important;
+        border-color: #007bb5 !important;
+    }
+    
+    .rocker-button .center-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 10px;
+        font-weight: bold;
+        color: var(--body-font-color, #666);
+        z-index: 1;
+        pointer-events: none;
+    }
+    
+    .rocker-button .arrow {
+        font-size: 12px;
+        line-height: 1;
+        color: inherit;
+    }
+    
+    .add_disk_vrule {
+        display: inline-block;
+        width: 1px;
+        height: 40px;
+        background-color: var(--border-color, #ccc);
+        margin: 0 6px;
+        vertical-align: top;
+    }
+    
+    #add_disk_buttons {
+        text-align: center;
+        padding: 5px;
+    }
+
     /* Help icon styling */
     .help-icon {
         display: inline-block;
