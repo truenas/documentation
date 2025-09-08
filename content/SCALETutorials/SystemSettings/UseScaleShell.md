@@ -36,7 +36,7 @@ This section provides keyboard navigation shortcuts you can use in Shell.
 | Bottom of screen | <kbd>End</kbd> | Moves the cursor to the bottom of the screen command when viewing entries and results. |
 | Delete | <kbd>Delete</kbd> | Deletes highlighted text. |
 | Auto-fill text | <kbd>Tab</kbd> | Type a few letters and press <kbd>Tab</kbd> to complete a command name or filename in the current directory. |
-| right-click |  | Right-clicking in the terminal window opens the brower default right click menu, which allows you to use native copy and paste functions. |
+| right-click |  | Right-clicking in the terminal window opens the browser default right click menu, which allows you to use native copy and paste functions. |
 | Exit to root prompt | `exit` | Entering `exit` leaves the session. |
 | Copy text | <kbd>Ctrl+Insert</kbd> | Enter <kbd>Ctrl+Insert</kbd> to copy highlighted text in Shell. |
 | Paste text | <kbd>Shift+Insert</kbd> | Enter <kbd>Shift+Insert</kbd> to paste copied text in Shell. |
