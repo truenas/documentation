@@ -2688,8 +2688,8 @@ pre.gdoc-mermaid.mermaid.mermaid_sizing {
     font-weight: bold !important;
 }
 
-/* Hover effect for the button span */
-.gdoc-nav section:last-child .gdoc-nav__list li:nth-child(2) span.flex:hover {
+/* Hover effect moved to li to avoid nested hover conflicts */
+.gdoc-nav section:last-child .gdoc-nav__list li:nth-child(2):hover span.flex {
     background-color: #5da639 !important;
     border-color: #5da639 !important;
     color: white !important;
