@@ -19,14 +19,11 @@ All other are not supported and result in undefined behavior that can result in 
 
 {{< trueimage src="/images/SCALE/CLI/SystemShellSCALE.png" alt="Shell Screen" id="Shell Screen" >}}
 
-The **Set font size** slider adjusts the **Shell** displayed text size.
-**Restore Default** resets the font size to default.
+The **Font Size** <i class="material-icons" aria-hidden="true" title="Minus">remove</i> and <i class="material-icons" aria-hidden="true" title="Plus">add</i> buttons adjust the displayed text size in the **Shell**.
 
-The **Shell** stores the command history for the current session.
+The shell window stores the command history for the current session.
 
 Leaving the **Shell** screen clears the command history.
-
-Click **Reconnect** to start a new session.
 
 ## Navigating In Shell
 This section provides keyboard navigation shortcuts you can use in Shell.
@@ -36,12 +33,11 @@ This section provides keyboard navigation shortcuts you can use in Shell.
 |--------|------------------|-------------|
 | Scroll up | Up arrow <span class="material-icons">expand_less</span> | Scroll up through previous commands. |
 | Scroll down | Down arrow <span class="material-icons">expand_more</span> | Scroll down through following commands. |
-| Re-enter command | <kbd>Enter</kbd> | After entering a command, press <kbd>Enter</kbd> to re-enter the command. |
-| Top of screen | <kbd>Home</kbd> | Moves the cursor to the top of the screen entries and results. |
-| Bottom of screen | <kbd>End</kbd> | Moves the cursor to the bottom of the screen command entries and results. |
-| Delete | <kbd>Delete</kbd> | Deletes what you highlight. |
+| Top of screen | <kbd>Home</kbd> | Moves the cursor to the top of the screen when viewing entries and results. |
+| Bottom of screen | <kbd>End</kbd> | Moves the cursor to the bottom of the screen command when viewing entries and results. |
+| Delete | <kbd>Delete</kbd> | Deletes highlighted text. |
 | Auto-fill text | <kbd>Tab</kbd> | Type a few letters and press <kbd>Tab</kbd> to complete a command name or filename in the current directory. |
-| right-click |  | Right-clicking in the terminal window displays a reminder about using <kbd>Command+c</kbd> and <kbd>Command+v</kbd> or <kbd>Ctrl+Insert</kbd> and <kbd>Shift+Insert</kbd> for copy and paste operations. |
+| right-click |  | Right-clicking in the terminal window opens the brower default right click menu, which allows you to use native copy and paste functions. |
 | Exit to root prompt | `exit` | Entering `exit` leaves the session. |
 | Copy text | <kbd>Ctrl+Insert</kbd> | Enter <kbd>Ctrl+Insert</kbd> to copy highlighted text in Shell. |
 | Paste text | <kbd>Shift+Insert</kbd> | Enter <kbd>Shift+Insert</kbd> to paste copied text in Shell. |
@@ -59,7 +55,7 @@ Click **Save**.
 
 Admin users can set the Shell to default to the TrueNAS Console by selecting **TrueNAS Console** in **Shell** on the **Edit User** screen.
 
-Clicking other TrueNAS UI menus options closes the shell session and stops commands running in the **Shell** screen.
+Clicking other TrueNAS UI menu options closes the shell session and stops commands running in the **Shell** screen.
 
 [Tmux](https://github.com/tmux/tmux/wiki/) allows you to detach sessions in **Shell** and then reattach them later.
 Commands continue to run in a detached session.
