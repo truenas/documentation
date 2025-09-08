@@ -49,7 +49,7 @@ The **Settings** <span class="material-icons">account_circle</span> icon opens a
 {{< /expand >}}
 
 {{< expand "My API Keys" "v" >}}
-Click on **My API Keys** <span class="material-icons">laptop</span> to go to the [User API Keys]({{< ref "/SCALE/SCALEUIReference/TopToolbar/Settings/APIKeysScreen" >}}) screen.
+Click on **My API Keys** <span class="material-icons">laptop</span> to go to the [User API Keys]({{< ref "/SCALEUIReference/TopToolbar/Settings/APIKeysScreen" >}}) screen.
 API keys identify an outside resource or application without a principal.
 For example, when adding a new system to TrueCommand if you are required to add an API key to authenticate the system.
 Use this function to create an API key for this purpose.
