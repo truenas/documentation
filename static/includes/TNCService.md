@@ -6,7 +6,7 @@ Before you sign up for TrueNAS Connect, the dialog shows it is waiting to connec
 
 {{< trueimage src="/images/SCALE/Dashboard/TrueNASConnectDialog.png" alt="TrueNAS Connect Dialog" id="TrueNAS Connect Dialog" >}}
 
-Click **Connect** to open the TrueNAS Connect sign-in screen.
+Click **Get Connected** to open the TrueNAS Connect sign-in screen.
 
 {{< trueimage src="/images/SCALE/Dashboard/TNCLoginScreen.png" alt="TrueNAS Connect Login Screen" id="TrueNAS Connect Login Screen" >}}
 
