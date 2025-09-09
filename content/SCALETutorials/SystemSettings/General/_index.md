@@ -31,62 +31,7 @@ Enterprise-licensed systems show the **Proactive Support** button. For informati
 
 ## Sending Feedback
 
-TrueNAS provides two feedback options, one to rate a UI screen and the other to report a problem encountered with the system.
-
-To send feedback go to **System** > **General Settings**, and click **File Ticket** on the **Support** widget to open the **Send Feedback** window.
-Alternately, on screens that show the option to rate the screen, click the **Send Feedback** ![FeedbackIcon](/images/SCALE/Dashboard/FeedbackIcon.png "Feedback Icon") icon to open the feedback window.
-
-### Rating a UI Screen
-
-Click **Rate this page** to send feedback on a UI page, add comments, and add a screenshot or additional images, or click the link to go to the TrueNAS forum where you can vote for new features on the community forum, report a problem, or suggest improvements directly to the TrueNAS development team.
-You can include a screenshot of the current page and/or upload additional images with your comments.
-
-{{< trueimage src="/images/SCALE/Dashboard/FeedbackWindow.png" alt="Send Feedback Window" id="Send Feedback Window" >}}
-
-### Reporting an Issue
-
-Click **Report a bug** to show the fields and option to open an engineering ticket and submit it directly to the TrueNAS development team when a TrueNAS screen or feature is not working as intended.
-Submitting a bug report requires a free [Atlassian account](https://id.atlassian.com/signup).
-
-{{< trueimage src="/images/SCALE/SystemSettings/SendFeedbackReportABugWindow.png" alt="Send Feedback Window" id="Send Feedback Window" >}}
-
-{{< expand "Issue Reporting Example" "v" >}}
-Click **Report a bug** to see the fields to create an engineering ticket.
-For example, reporting a bug where a middleware error and traceback occurred while saving a configuration change.
-
-Bug reports are created in the publicly visible [TrueNAS Jira project](https://ixsystems.atlassian.net/jira/software/c/projects/NAS/).
-
-Enter a descriptive summary in the **Subject**.
-For example, if an application does not update after clicking the update option for the app and you get an error message or traceback after attempting the update, Enter *XYZ application fails to update with a traceback* in **Subject**.
-Enter the details of actions taken that resulted in the error or failed action in **Message**.
-With the same example, enter more details on the issue:
-*Clicked on the XYZ app row, stopped the app, clicked **Update** and the update failed and showed the following traceback message (include the traceback text).
-My system is running on TrueNAS 24.10.0.*
-Keep the details concise and focused on how to reproduce the issue, what you expected from the actions taken, and the actual result.
-This helps ensure a speedy ticket resolution.
-
-Include system debug and screenshot files to also speed up the issue resolution.
-Select **Attach debug**.
-To attach a screenshot of the current page, select **Take screenshot of the current page**.
-Or, before using this form, take screenshots of the screen, traceback or other error message, copy a log into a text file, or create any other file to attach.
-Open this form and attach those files by selecting **Attach additional images** and clicking **Choose File** opens a **File Explorer** window where you can browse to select the files you want to attach to the report.
-
-TrueNAS can show a list of existing Jira tickets with similar summaries.
-When there is an existing ticket about the issue, consider clicking on that ticket and leaving a comment instead of creating a new one.
-Duplicate tickets are closed in favor of consolidating feedback into one report.
-
-Click **Login To Jira To Submit** to finish and submit the report.
-{{< /expand >}}
-
-### Reporting an Issue - Enterprose Licensed Systems
-
-{{< enterprise >}}
-When an Enterprise license is applied to the system, the **Report a bug** screen includes additional environment and contact information fields for sending bug reports directly to the TrueNAS team.
-
-{{< trueimage src="/images/SCALE/Dashboard/FeedbackWindowEnterpriseBugReport.png" alt="TrueNAS Enterprise Bug Report Form" id="TrueNAS Enterprise Bug Report Form" >}}
-
-Filling out the entire form with precise details and accurate contact information ensures a prompt response from the TrueNAS Customer Support team.
-{{< /enterprise >}}
+{{< include file="/static/includes/FeedbackWindow.md" >}}
 
 ## Configuring GUI Options
 
