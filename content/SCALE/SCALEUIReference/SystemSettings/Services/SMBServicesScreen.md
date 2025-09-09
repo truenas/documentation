@@ -10,10 +10,10 @@ tags:
  - services
 ---
 
-The **System > Services** screen includes three icons on the **SMB** service row:
-* <span class="iconify" data-icon="material-symbols:receipt-long"></span> **Audit Logs** opens the [**Audit** screen]({{< ref "AuditingSCALE.md#accessing-auditing-screens" >}}).
-* <span class="iconify" data-icon="material-symbols:list"></span> **SMB Sessions** opens the [**SMB Status** screen]({{< ref "SMBSharesScreens" >}}).
-* <span class="iconify" data-icon="ic:baseline-edit"></span> **Configure** opens the **SMB Service** screen showing the **Basic Settings** by default.
+The **System > Services** screen includes three options on the **SMB** service row:
+* **View Logs** opens the [**Audit** screen]({{< ref "AuditingSCALE.md#accessing-auditing-screens" >}}).
+* **View Sessions** opens the [**SMB Status** screen]({{< ref "SMBSharesScreens" >}}).
+* <span class="material-icons">edit</span> **Configure** icon opens the **SMB Service** screen showing the **Basic Settings** by default.
 
 ## SMB Service Screen
 The **SMB** service screen displays setting options to configure TrueNAS SMB service settings to fit your use case.
