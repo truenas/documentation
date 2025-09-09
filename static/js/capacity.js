@@ -1598,7 +1598,7 @@ $(document).ready(function() {
 		var es60 = [calculate_shelf_count(12, 60), calculate_shelf_count(24, 60), calculate_shelf_count(48, 60)];
 		var es102 = [calculate_shelf_count(12, 102), calculate_shelf_count(24, 102), calculate_shelf_count(48, 102)];
 
-		var shelf_html = "<div style=\"font-size: 0.9em; color: white; margin-bottom: 10px;\"><strong>TrueNAS Hardware:</strong> Shows expansion shelf requirements for different TrueNAS Enterprise systems.</div>";
+		var shelf_html = "<div style=\"font-size: 0.9em; margin-bottom: 10px;\"><strong>TrueNAS Hardware:</strong> Shows expansion shelf requirements for different TrueNAS Enterprise systems.</div>";
 		shelf_html += "<table class=\"shelf_count\" style=\"width: 100%; border-collapse: collapse;\">";
 		shelf_html += "<tr><td style=\"padding: 8px; background: #0095d5; color: white; font-weight: bold; font-style: italic;\">Shelf Count</td><td style=\"padding: 8px; text-align: center; background: #0095d5; color: white; font-weight: bold;\">12-Bay Head</td><td style=\"padding: 8px; text-align: center; background: #0095d5; color: white; font-weight: bold;\">24-Bay Head</td><td style=\"padding: 8px; text-align: center; background: #0095d5; color: white; font-weight: bold;\">48-Bay Head</td></tr>";
 		shelf_html += "<tr><td style=\"padding: 8px; background: #0095d5; color: white; font-weight: bold;\">24-Bay Shelf</td><td style=\"padding: 8px; text-align: center; background: rgba(0, 149, 213, 0.1);\">" + es24[0] + "</td><td style=\"padding: 8px; text-align: center; background: rgba(0, 149, 213, 0.1);\">" + es24[1] + "</td><td style=\"padding: 8px; text-align: center; background: rgba(0, 149, 213, 0.1);\">" + es24[2] + "</td></tr>";
