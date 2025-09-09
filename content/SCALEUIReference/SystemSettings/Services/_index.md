@@ -15,15 +15,15 @@ related: false
 
 The <span class="material-icons">edit</span> **Configure** icon opens the service configuration screen.
 
-The **NFS** service row has one additional <span class="iconify" data-icon="material-symbols:list"></span> **NFS Sessions** icon that opens the [**NFS Sessions** screen]({{< ref "NFSSharesScreens" >}}).
+The **NFS** service row has one additional **View Sessions** link that opens the [**NFS Sessions** screen]({{< ref "NFSSharesScreens" >}}).
 
-The **SMB** service row has two additional icons that link to other screens:
-* <span class="iconify" data-icon="material-symbols:receipt-long"></span> **Audit Logs** opens the **Audit** screen.
-* <span class="iconify" data-icon="material-symbols:list"></span> **SMB Sessions** opens the [**SMB Status** screen]({{< ref "SMBSharesScreens" >}}).
+The **SMB** service row has two additional links:
+* **View Logs** opens the **Audit** screen.
+* **View Sessions** opens the [**SMB Status** screen]({{< ref "SMBSharesScreens" >}}).
 
-Select **Start Automatically** to set the service to start after the system restarts.
+The **Start Automatically** toggle sets the service to start after the system restarts.
 
-Click on the **Running** toggle to start the service or to stop it if it is running. Stop services before changing configuration settings.
+The **Status** column displays the service status with a badge (Stopped or Running) and a <span class="material-icons">play_circle</span>/<span class="material-icons">stop_circle</span> start/stop button. The start/stop button starts the service or stops it if it is running. It is recommended to stop services before changing configuration settings.
 
 {{<include file="/static/includes/addcolumnorganizer.md">}}
 
