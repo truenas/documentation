@@ -50,15 +50,25 @@ jobs:
             const fs = require('fs');
             try {
               const valeResults = JSON.parse(fs.readFileSync('vale-results.json', 'utf8'));
+              const changedFiles = '${{ steps.changed-files.outputs.all_changed_files }}'.split(' ').filter(f => f.trim());
+              
               let comment = '## Vale Style Guide Issues\n\n';
               
-              // Count totals
+              // Filter results to only show changed files
+              const filteredResults = {};
+              for (const file of changedFiles) {
+                if (valeResults[file]) {
+                  filteredResults[file] = valeResults[file];
+                }
+              }
+              
+              // Count totals from filtered results only
               let totalIssues = 0;
               let errorCount = 0;
               let warningCount = 0;
               let suggestionCount = 0;
               
-              for (const [file, issues] of Object.entries(valeResults)) {
+              for (const [file, issues] of Object.entries(filteredResults)) {
                 totalIssues += issues.length;
                 for (const issue of issues) {
                   if (issue.Severity === 'error') errorCount++;
@@ -67,22 +77,22 @@ jobs:
                 }
               }
               
-              comment += `📊 **Summary**: ${totalIssues} issues found - ${errorCount} errors, ${warningCount} warnings, ${suggestionCount} suggestions\n\n`;
+              comment += `📊 **Summary**: ${totalIssues} issues found in changed files - ${errorCount} errors, ${warningCount} warnings, ${suggestionCount} suggestions\n\n`;
               
               if (totalIssues === 0) {
-                comment = '## Vale Style Guide Issues\n\n✅ No style guide issues found!';
+                comment = '## Vale Style Guide Issues\n\n✅ No style guide issues found in the changed files!';
               } else {
-                comment += '**All files with issues:**\n\n';
+                comment += '**Changed files with issues:**\n\n';
                 
-                // Show all files with issues (no limit)
-                const sortedFiles = Object.entries(valeResults)
+                // Show only changed files with issues
+                const sortedFiles = Object.entries(filteredResults)
                   .filter(([file, issues]) => issues.length > 0)
                   .sort(([,a], [,b]) => b.length - a.length);
                 
                 for (const [file, issues] of sortedFiles) {
                   comment += `### ${file} (${issues.length} issues)\n\n`;
                   
-                  // Show ALL issues per file (no limit)
+                  // Show ALL issues per file
                   for (const issue of issues) {
                     comment += `- **Line ${issue.Line}:${issue.Span[0]}** - ${issue.Severity}: ${issue.Message}\n`;
                   }
