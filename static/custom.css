@@ -2620,6 +2620,14 @@ pre.gdoc-mermaid.mermaid.mermaid_sizing {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2) !important;
 }
 
+/* Prevent any hover effects on nested elements that could conflict */
+.gdoc-nav section:last-child .gdoc-nav__list li:nth-child(2) label:hover,
+.gdoc-nav section:last-child .gdoc-nav__list li:nth-child(2) a:hover {
+    background: none !important;
+    transform: none !important;
+    box-shadow: none !important;
+}
+
 /* Style the original SVG icon to be white */
 .gdoc-nav section:last-child .gdoc-nav__list li:nth-child(2) svg.gdoc-icon {
     fill: white !important;
