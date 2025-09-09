@@ -12,11 +12,8 @@ When the user **Shell** setting is set to **TrueNAS Console**, the **Shell** scr
 
 {{< trueimage src="/images/SCALE/CLI/SystemShellSCALE.png" alt="Shell Screen" id="Shell Screen" >}}
 
-The **Set font size** slider adjusts the **Shell** displayed text size.
-**Restore Default** resets the font size to default.
+The **Font Size** <i class="material-icons" aria-hidden="true" title="Minus">remove</i> and <i class="material-icons" aria-hidden="true" title="Plus">add</i> buttons adjust the displayed text size in the **Shell**.
 
-The **Shell** stores the command history for the current session.
+The shell window stores the command history for the current session.
 
 Leaving the **Shell** screen clears the command history.
-
-Click **Reconnect** to start a new session.
