@@ -57,16 +57,16 @@ When an SMB share is configured but not working or is in an error state, AD cann
 
 Creating an SMB share on your system requires adding the share and then getting it working.
 
-1. [Create the SMB share user account](#creating-the-smb-share-user-account).
+1. [Create the SMB share user account](#creating-smb-share-user-accounts).
 
    You can manually add user accounts or use directory services like Active Directory or LDAP to provide additional user accounts.
    If setting up an external SMB share, we recommend using Active Directory or LDAP, or at a minimum, synchronizing the user accounts between systems.
 
 2. [Create the SMB share and dataset](#adding-an-smb-share-and-dataset).
 
-   You can create a basic SMB share or a more specific share type with specific feature requirements from the **Add SMB** screen using the [Advanced Options](#configuring-share-advanced-options-settings) instructions before saving the share.
+   You can use the **Add SMB** screen to create a basic SMB share or a more specific share type with specific feature requirements using the [Advanced Options](#configuring-share-advanced-options-settings) settings before saving the share.
 
-   The **Add Dataset** and the **Add SMB** share screens allow TrueNAS to create a dataset and SMB share from that screen.
+   The **Add Dataset** and the **Add SMB** share screens allow TrueNAS to create a dataset and SMB share from the same screen.
    Use either option to create a basic SMB share.
 
    When creating an SMB share that requires customization or is intended for a specific purpose, such as working with Veeam Backup & Restore immutability or a repository for block or fast cloning (requires an Enterprise license), use the **Add SMB** screen **Purpose** presets to create the share and dataset for these special SMB shares.
@@ -74,7 +74,7 @@ Creating an SMB share on your system requires adding the share and then getting 
 
    When setting up multi-protocol (SMB and NFS) shares, refer to the [Multiprotocol Shares]({{< relref "MixedModeShares.md" >}}) tutorial for configuration instructions.
 
-   This article provides instructions on adding a dataset while adding the share using the **Add SMB** screen
+   This article describes adding a dataset while adding the share using the **Add SMB** screen.
 
 3. [Modify the share permissions](#tuning-the-dataset-filesystem-permissions).
 
@@ -127,7 +127,7 @@ TrueNAS creates the ZFS dataset with these settings:
    
    {{< hint type=note >}}
    For datasets with **NFSv4** ACL type, SMB clients automatically use access-based enumeration. 
-   This means directory listings over SMB only include files and directories that the client has read permissions for. 
+   This means directory listings over SMB only include files and directories for which the client has read permissions. 
    This behavior is enabled by default and matches FreeBSD behavior.
    {{< /hint >}}
 
@@ -138,24 +138,28 @@ This default ACL is restrictive and only grants access to the dataset owner and 
 You can modify the ACL later according to your use case.
 {{< /expand >}}
 
-Before you begin this procedure, if you want to organize the SMB share dataset under a parent dataset (for example, under *smb-shares*), create that dataset so you can select it as the parent in step 2 below.
+If you want to organize the SMB share dataset under a parent dataset (for example, under *smb-shares*), create that parent dataset so you can select it as the parent in step 2 below.
+Alternatively, you can create the parent and SMB share dataset using the **Create Dataset** option associated with the file browser in the **Add SMB** screen by making the create dataset instructions a two-=step process.
 
 To create a basic Windows SMB share and a dataset, go to **Shares**, then click **Add** on the **Windows Shares (SMB)** widget to open the **Add Share** screen.
 
 {{< trueimage src="/images/SCALE/Shares/AddShareBasicOptions.png" alt="Add SMB Basic Options" id="Add SMB Basic Options" >}}
 
 1. Enter or browse to select the SMB share mount path (parent dataset where you want to add a dataset for this share).
+   When the dataset selected has an existing ACL, a warning dialog shows. Click **Continue**.
+   Click on the dataset under which you want to add the SMB share dataset.
    The blank **Path** field populates with the path selected in the file browser field directly below it.
    The **Path** file browser field is the directory tree on the local file system that TrueNAS exports over the SMB protocol.
 
    {{< include file="/static/includes/FileExplorerFolderIcons.md" >}}
 
 2. Click **Create Dataset**.
-   Enter a name for the dataset in the **Create Dataset** dialog, and then click **Create**.
-   The system creates the new dataset and populates the **Name** field with the dataset name.
+   Enter a name for the dataset in the **Create Dataset** dialog, then click **Create**.
+   The system creates the new dataset and populates the **Name** field with the dataset name, which becomes the share name.
 
-   The value entered in **Name** becomes the dataset and share name.
-   It forms part of the share pathname when SMB clients perform an SMB tree connect.
+   To make the new dataset the parent for an SMB share, select the just-added dataset, then click **Create Dataset** again to add the child dataset for the share.
+
+   The path forms part of the share pathname when SMB clients perform an SMB tree connect.
    Because of how the SMB protocol uses the name, it must be less than or equal to 80 characters.
    Do not use invalid characters as specified in Microsoft documentation MS-FSCC section 2.1.6.
 
@@ -166,16 +170,27 @@ To create a basic Windows SMB share and a dataset, go to **Shares**, then click 
 3. Select a share type on the **Purpose** dropdown list.
    The share type selected locks or unlocks the pre-determined **Advanced Options** settings for the share.
 
-   To retain control over all the share **Advanced Options** settings, select **Default Share**.
+   Select **Default Share** to create a basic SMB share with the **Browsable to Network Clients** option preselected.
+   This determines whether this share name is included when browsing shares.
 
-   To create a multi-protocol share (NFSv4/SMB), select **Multi-protocol Share**. This adds the share to the SMB and NFS widgets on the main **Shares** screen.
-
-   To create an alternative to home shares, select **Private Datasets Share**.
+   Select **Private Datasets Share** to create an alternative to home shares.
    See [Setting Up SMB Home Shares]({{< ref "SMBPrivateDatasetShare" >}}) for more information on replacing this legacy feature with private SMB shares and datasets.
 
-   If creating an external share, select **External Share**, enter the full domain name or IP address, and the share name. Separate the server and share name with the `\` characters. Example: *192.168.0.200\SHARE* in **Remote Path**.
+   Select **Multi-protocol Share** to create a multi-protocol share (NFSv4/SMB). Set this if the path is shared through NFS, FTP, or used by containers or apps.
+   Note: This setting can reduce SMB share performance as it turns off some SMB features for safer interoperability with external processes.
+   See [Setting Up SMB Multichannel]({{< ref "SMBMultichannel.md" >}}) for more information on creating multi-protocol shares.
 
-4. (Optional) Enter a **Description** to help explain the purpose or details on how the share is used.
+   Select **Time Machine Share** to create a Time Machine share. The SMB share is presented to Mac OS clients as a Time Machine target.
+   See [Adding a Basic Time Machine SMB Share]({{< ref "SetUpBasicTimeMachineSMBShare.md" >}}) for more information on creating and using Time Machine shares.
+
+   Select **External Share** to [create an external share](#setting-up-an-external-smb-share). Enter the full domain name or IP address and the share name as *192.168.0.200\SHARE* in **Remote Path**.
+
+   Select **Time Locked Share** to create a share that makes files read-only after the grace period you specify expires.
+   This setting does not work if the path is accessed locally or if another SMB share with the **Time Locked Share** purpose uses the same path.
+   Warning: This setting might not meet regulatory requirements for write-once storage.
+
+4. (Optional) Enter a short description or explanation of the share purpose or use in **Description**.
+   This shows on both the SMB widget and **Share > SMB** screen to help explain how the share is used.
    For example, if for an external share, enter *external share* in the field.
    The description entered shows in the **SMB** table on the **SMB** screen and the **Windows (SMB) Share** widget.
 
@@ -189,15 +204,15 @@ To create a basic Windows SMB share and a dataset, go to **Shares**, then click 
 
 Start or restart the SMB service when prompted.
 
-### Configuring Share Advanced Options Settings
+### Configuring Advanced Options
 
-A basic SMB share does not need to use the **Advanced Options** settings, but if you set **Purpose** to **Time Machine Share**, **Time Locked Share**, or **Private Dataset Share**, or **External**, click **Advanced Options** to finish customizing the SMB share settings.
+A basic SMB share does not need to use the **Advanced Options** settings. Click **Advanced Options** to finish customizing the SMB share settings.
 
 See [SMB Shares Screens]({{< ref "SMBSharesScreens" >}}) for all settings and other possible use cases.
 
-{{< expand "Setting Up Guest Access" "v" >}}
+{{< expand "Guest Access" "v" >}}
 {{< hint type=info >}}
-Guest access is not a recommended configuration and adds security vulnerabilities!
+Guest access is not a recommended configuration as it adds security vulnerabilities!
 {{< /hint >}}
 
 To allow guest access to the share, select **Private Dataset Share**.
@@ -213,7 +228,8 @@ Additional client-side configuration is required to provide guest access to thes
 If setting up guest access with read-only permissions, see the information in [Adding a New Share Group](#adding-a-new-share-group).
 If the share is nested under parent datasets, see [Using the Traverse Permission](#using-the-traverse-permission).
 {{< /expand >}}
-{{< expand "Setting Up Read or Write Access" "v" >}}
+
+{{< expand "Read or Write Access" "v" >}}
 To prohibit writes to the share, select **Export Read-Only**.
 
 Select **Access Based Share Enumeration** to restrict share visibility for users with read or write access to the share.
@@ -221,8 +237,8 @@ This setting applies to datasets with a POSIX ACL type.
 For datasets with NFSv4 ACL type, access-based enumeration is automatically enabled and does not allow disabling.
 See the [smb.conf](https://www.samba.org/samba/docs/current/man-html/smb.conf.5.html) manual page.
 {{< /expand >}}
-<!-- comment out legacy content
-{{< expand "Setting Up Host Allow and Host Deny" "v" >}}
+
+{{< expand "Host Allow and Host Deny" "v" >}}
 Use the **Host Allow** and **Host Deny** options to allow or deny specific host names and IP addresses.
 
 Use the **Hosts Allow** field to enter a list of allowed IP addresses.
@@ -239,7 +255,8 @@ Use the **Hosts Deny** field to enter a list of denied host names or IP addresse
 * Adding entries to the **Hosts Allow** list but not the **Hosts Deny** list allows only the hosts on the **Hosts Allow** list to access the share.
 * Adding entries to the **Hosts Deny** list but not the **Hosts Allow** list allows all hosts not on the **Hosts Deny** list to access the share.
 * Adding entries to both a **Hosts Allow** and **Hosts Deny** list allows all hosts on the **Hosts Allow** list to access the share and allows hosts not on the **Hosts Allow** or **Hosts Deny** list to access the share.
-{{< /expand >}} -->
+{{< /expand >}}
+
 {{< expand "Apple Filing Protocol (AFP) Compatibility" "v" >}}
 AFP shares are deprecated and not available in TrueNAS.
 
@@ -250,13 +267,15 @@ To customize your SMB share to work with a migrated AFP share or with your Mac O
 **Use Apple-style Character Encoding**, listed under **Other Options** for all share types except **Time Machine Share** and **External Share**, converts NTFS illegal characters like the Mac OS SMB clients do.
 By default, Samba uses a hashing algorithm for NTFS illegal characters.
 {{< /expand >}}
+
 {{< expand "Private SMB Datasets and Shares" "v" >}}
-Used to set up an alternative to the legacy Home Shares function, select **Private Dataset Share** on the **Purpose** dropdown list, and customize settings listed under **Other Options**.
+Used to set up an alternative to the legacy home shares function, select **Private Dataset Share** on the **Purpose** dropdown list, and customize settings listed under **Other Options**.
 
 This allows you to add private datasets and shares for individual users, and is an alternate way to create home shares for them.
 See [Setting Up SMB Home Shares]({{< ref "SMBPrivateDatasetShare" >}}) for more information.
 {{< /expand >}}
-{{< expand "Enabling SMB Audit Logging" "v" >}}
+
+{{< expand "SMB Audit Logging" "v" >}}
 To enable SMB audit logging, from either the **Add SMB** or **Edit SMB** screens, click **Advanced Options**, scroll down to **Audit Logging**, and select **Enable**.
 {{< /expand >}}
 
