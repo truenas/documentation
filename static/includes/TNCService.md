@@ -1,6 +1,6 @@
 &NewLine;
 
-TrueNAS provides quick access to the TrueNAS Connect service from the top toolbar in your TrueNAS system.
+TrueNAS provides quick access to TrueNAS Connect from the top toolbar in your TrueNAS system.
 The **Status of TrueNAS Connect** icon {{< themed-icon src="/images/SCALE/Dashboard/TNCIcon.svg" alt="TrueNAS Connect Icon" title="TrueNAS Connect Icon" >}} opens the **TrueNAS Connect** dialog.
 Before you sign up for TrueNAS Connect, the dialog shows it is waiting to connect.
 
