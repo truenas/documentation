@@ -193,7 +193,7 @@ jobs:
                     // Normalize contraction messages
                     if (normalizedMessage.includes('Avoid contractions') || 
                         normalizedMessage.includes('instead of') || 
-                        normalizedMessage.includes("Avoid using '") && normalizedMessage.includes("'")) {
+                        (normalizedMessage.includes("Avoid using '") && normalizedMessage.includes("'"))) {
                       normalizedMessage = 'Avoid contractions in formal writing';
                     }
                     
@@ -202,10 +202,15 @@ jobs:
                       normalizedMessage = 'Use numerals instead of spelled-out numbers';
                     }
                     
-                    const key = `${issue.Severity}:${normalizedMessage}`;
+                    // For certain message types, ignore severity differences and group together
+                    const ignoreSeverityForGrouping = normalizedMessage.includes('Avoid contractions') ||
+                                                     normalizedMessage.includes('Use active voice') ||
+                                                     normalizedMessage.includes('first-person plural');
+                    
+                    const key = ignoreSeverityForGrouping ? normalizedMessage : `${issue.Severity}:${normalizedMessage}`;
                     if (!issueGroups[key]) {
                       issueGroups[key] = {
-                        severity: issue.Severity,
+                        severity: ignoreSeverityForGrouping ? 'suggestion' : issue.Severity, // Use most lenient severity for grouped items
                         message: normalizedMessage,
                         lines: []
                       };
