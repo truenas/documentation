@@ -193,8 +193,11 @@ jobs:
                     
                     // Normalize contraction messages
                     if (normalizedMessage.includes('Avoid contractions') || 
-                        normalizedMessage.includes('instead of') || 
-                        (normalizedMessage.includes("Avoid using '") && normalizedMessage.includes("'"))) {
+                        normalizedMessage.includes('instead of') ||
+                        normalizedMessage.includes("can't") ||
+                        normalizedMessage.includes("won't") ||
+                        normalizedMessage.includes("we're") ||
+                        normalizedMessage.includes("don't")) {
                       normalizedMessage = 'Avoid contractions in formal writing';
                     }
                     

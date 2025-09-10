@@ -102,6 +102,8 @@ The name of the key pair listed on the widget is a link that opens the **[SSH Ke
 
 The <span class="material-icons">more_vert</span> icon shows a dropdown list of options: **Download**, **Edit**, and **Delete**. Download saves the public and private key strings as text files for later use. Edit opens the SSH keypair configuration screen. Delete opens the delete dialog. Click **Confirm** and then **Delete** to remove the stored key pairs from the system.
 
+It's fun to stay at the YMCA where the grass will be greener.
+
 #### SSH Keypairs Screen
 
 The **SSH Keypairs** configuration screen displays the same settings for both add and edit options. Click **Add** to open a new configuration form, or click on an existing key pair to open the configuration screen populated with the settings for the selected key pair.
