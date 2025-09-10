@@ -15,20 +15,17 @@ tags:
 
 {{< include file="/static/includes/DirectoryServiceAccessAdmonition.md" >}}
 
-The **Directory Services** screen contains configuration options set up access to directory servers with domain and account settings, and can set up Id mapping or Kerberos authentication and authorization service.
+The **Directory Services** screen configuration options set up access to directory servers through domain and account settings, and can set up ID mapping or Kerberos authentication and authorization services.
 
 {{< trueimage src="/images/SCALE/Credentials/DirectoryServicesScreen.png" alt="Directory Services Screen" id="Directory Services Screen" >}}
 
-The screen shows the status of Active Directory and LDAP services when neither is configured, or if either is configured but disabled.
-Only one directory service can be configured at a time.
+The screen shows the status of directory services when a service is not configured or when it is configured but disabled.
 
-Three options show by default:
+The main option displays:
 
-* **Configure Active Directory** opens the **[Active Directory]({{< ref "ActiveDirectory" >}})** configuration screen.
+* **Configure Directory Services** opens the **Directory Services Configuration** form where you can set up Active Directory, IPA, or LDAP connections.
 
-* **Configure LDAP** opens the [**LDAP**]({{< ref "LDAP" >}}) configuration screen. Use to configure access to LDAP-based service such as FreeIPA.
-
-* **Advanced Settings** opens a warning dialog before showing configuration options for [ID mapping] ({{< ref "Idmap.md" >}} and Kerberos.
+* **Advanced Settings** opens a warning dialog before showing configuration options for [ID mapping]({{< ref "Idmap.md" >}}) and Kerberos.
 
 After configuring Active Directory or LDAP, the **Directory Services** screen includes the widgets for each option, and adds the **Show** button to the right of **Advanced Settings**. **Show** opens the warning dialog stating incorrectly configuring advanced settings is dangerous.
 

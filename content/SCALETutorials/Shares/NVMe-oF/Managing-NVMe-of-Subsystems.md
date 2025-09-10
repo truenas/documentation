@@ -19,6 +19,8 @@ tags:
 
 {{< include file="/static/includes/NVMe-oF-Structure.md" >}}
 
+{{< include file="/static/includes/NVMeoTCPESXiLimitation.md" >}}
+
 ## Editing a Subsystem
 
 After configuring a NVMe-oF subsystem, you can change the subsystem by adding or deleting a namespace, removing or adding a port, or adding, removing, or deleting a host.

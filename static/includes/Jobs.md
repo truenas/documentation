@@ -1,6 +1,6 @@
 &NewLine;
 
-The **Running Jobs** <span class="material-icons">assignment</span> icon button opens the **Running Jobs** window showing a minimized view of all running and failed jobs/processes.
+The **Running Jobs** <span class="material-icons">assignment</span> icon button opens the **Running Jobs** window showing a minimized view of all running, waiting, and failed jobs/processes.
 Hover the mouse over an error job to view a pop-up window with the error message for that failed job.
 
 {{< trueimage src="/images/SCALE/Dashboard/JobsMenu.png" alt="Jobs Task Manager" id="Jobs Manager" >}}
@@ -9,8 +9,12 @@ Click the minus (-) at the top right corner of any dialog or pop-up window to mi
 
 Click on a running job to open a dialog for that job.
 
-A running job shows a progress bar and a white circle with a square in the middle to the right of the job. Click on this to show the **Abort** dialog.
-Click **Abort** to stop the job and abort the process. 
+A running job shows a progress bar and a <i class="material-icons" aria-hidden="true" title="Abort">stop_circle</i> button to the right of the job. Click on this to show the **Abort** dialog.
+Click **Abort** to stop the job and abort the process.
+
+{{< hint type=note >}}
+Beginning in 25.04, the **Abort** option is only available for select jobs. Jobs that are unable to be aborted are listed without the <i class="material-icons" aria-hidden="true" title="Abort">stop_circle</i> button as an option.
+{{< /hint >}}
 
 {{< trueimage src="/images/SCALE/Dashboard/JobsAbort.png" alt="Abort Job" id="Abort Job" >}}
 

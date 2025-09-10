@@ -24,6 +24,8 @@ tags:
 
 {{< include file="/static/includes/NVMe-oF-Overview.md" >}}
 
+{{< include file="/static/includes/NVMeoTCPESXiLimitation.md" >}}
+
 ## Configuring the NVMe-oF Service
 
 You can access the NVMe-of service screen from the:
@@ -51,7 +53,7 @@ NQN is used as the prefix when creating a subsystem, if a subnqn is not supplied
 Modifying this value does not change the subnqn of any existing subsystems.
 We recommend using caution if you change this Base NQN. A particular client might be configured to talk to a particular NQN, so changing this could break the client connection.
 
-Select **Generate Cross-port Referrals for Ports on This System** if subystems are published through multiple ports and connect-all functionality is desired by clients.
+Select **Generate Cross-port Referrals for Ports on This System** if subsystems are published through multiple ports and connect-all functionality is desired by clients.
 If ANA is active, referrals are always generated between the peer ports on each TrueNAS controller node.
 
 Click **Save** to save changes and close the screen.
