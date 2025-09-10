@@ -61,12 +61,7 @@ jobs:
                   !comment.body.includes('(Previous)') && 
                   comment.user.login === 'github-actions[bot]') {
                 try {
-                  const collapsedBody = `<details>
-<summary>Vale Style Guide Issues (Previous - Click to expand)</summary>
-
-${comment.body}
-
-</details>`;
+                  const collapsedBody = '<details>\n<summary>Vale Style Guide Issues (Previous - Click to expand)</summary>\n\n' + comment.body + '\n\n</details>';
                   
                   await github.rest.issues.updateComment({
                     owner: context.repo.owner,
