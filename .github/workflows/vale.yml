@@ -191,7 +191,9 @@ jobs:
                     }
                     
                     // Normalize contraction messages
-                    if (normalizedMessage.includes('Avoid contractions') || normalizedMessage.includes('instead of')) {
+                    if (normalizedMessage.includes('Avoid contractions') || 
+                        normalizedMessage.includes('instead of') || 
+                        normalizedMessage.includes("Avoid using '") && normalizedMessage.includes("'")) {
                       normalizedMessage = 'Avoid contractions in formal writing';
                     }
                     
