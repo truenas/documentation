@@ -115,9 +115,24 @@ jobs:
                       return false; // Skip this issue
                     }
                     
-                    // Filter out formatting issues on headers and structural lines
-                    if (isFormattingRule && (isHeader || isLikelyFalsePositive)) {
-                      return false; // Skip this issue
+                    // Check if formatting issue is a false positive (line already has proper formatting)
+                    if (isFormattingRule) {
+                      // Skip formatting issues on headers and structural lines
+                      if (isHeader || isLikelyFalsePositive) {
+                        return false;
+                      }
+                      
+                      // Check if line already contains proper formatting
+                      const hasProperFormatting = trimmedLine.includes('**') || // Bold formatting
+                                                 trimmedLine.includes('*') ||   // Italic formatting  
+                                                 trimmedLine.includes('`') ||   // Code formatting
+                                                 trimmedLine.includes('_') ||   // Alternative formatting
+                                                 trimmedLine.length < 30;      // Short lines often don't need formatting
+                      
+                      // If line already has formatting, this might be a false positive
+                      if (hasProperFormatting) {
+                        return false; // Skip this potential false positive
+                      }
                     }
                     
                     // Filter out any issues on Hugo shortcode lines  
