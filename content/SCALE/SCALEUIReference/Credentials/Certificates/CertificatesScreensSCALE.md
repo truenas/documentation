@@ -15,7 +15,7 @@ The **Certificates** widget on the **Credentials > Certificates** screen shows c
 
 **Import** opens the **[Import Certificate](#import-certificate)** screen.
 
-The <span class="material-icons">more_vert</span> icon for a listed certificate shows a dropdown list of options to download, edit, or delete an existing certificate.
+The <span class="material-icons">more_vert</span> icon for a listed certificate shows a dropdown list of options: **Download**, **Edit**, and **Delete**.
 Each TrueNAS has an internal certificate that enables encrypted access to the web interface.
 
 <span class="material-icons">download</span> **Download** downloads the certificate to the system. In Windows, this is the **Downloads** folder.
