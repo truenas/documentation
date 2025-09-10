@@ -69,13 +69,14 @@ jobs:
                     continue;
                   }
                   
-                  // Filter out acronym issues on header lines
+                  // Filter out acronym issues on header lines and false positives on empty/image lines
                   const filteredIssues = valeResults[file].filter(issue => {
                     const lineIndex = issue.Line - 1; // Vale uses 1-based line numbers
                     const line = fileContent[lineIndex] || '';
+                    const trimmedLine = line.trim();
                     
                     // Check if this line is a markdown header
-                    const isHeader = line.trim().startsWith('#');
+                    const isHeader = trimmedLine.startsWith('#');
                     
                     // Check if this is an acronym-related rule
                     const isAcronymRule = issue.Check && (
@@ -85,10 +86,26 @@ jobs:
                       issue.Message.includes('should be spelled out')
                     );
                     
-                    // Filter out acronym issues on header lines, but keep everything else
+                    // Check if this is a formatting rule on likely false positive lines
+                    const isFormattingRule = issue.Message.includes('Use proper formatting') || 
+                                           issue.Message.includes('bold for UI elements') ||
+                                           issue.Message.includes('italics for variables');
+                    const isLikelyFalsePositive = trimmedLine === '' || // Empty line
+                                                trimmedLine.startsWith('![') || // Image
+                                                trimmedLine.startsWith('{{<') || // Hugo shortcode
+                                                trimmedLine.match(/^\s*[|]\s*/) || // Table row
+                                                trimmedLine.startsWith('---'); // Horizontal rule
+                    
+                    // Filter out acronym issues on header lines
                     if (isHeader && isAcronymRule) {
                       return false; // Skip this issue
                     }
+                    
+                    // Filter out formatting issues on empty/image/shortcode lines
+                    if (isFormattingRule && isLikelyFalsePositive) {
+                      return false; // Skip this issue
+                    }
+                    
                     return true; // Keep this issue
                   });
                   
@@ -137,7 +154,10 @@ jobs:
                         lines: []
                       };
                     }
-                    issueGroups[key].lines.push(issue.Line);
+                    // Only add line number if it's not already in the array
+                    if (!issueGroups[key].lines.includes(issue.Line)) {
+                      issueGroups[key].lines.push(issue.Line);
+                    }
                   }
                   
                   // Display consolidated issues
