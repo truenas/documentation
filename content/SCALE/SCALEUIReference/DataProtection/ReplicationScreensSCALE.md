@@ -14,11 +14,14 @@ tags:
 The **Replication Task** widget on the **Data Protection** screen lists replication tasks configured on the TrueNAS system.
 The widget shows a definition of replication tasks before adding a task when none exist on the system.
 
-{{< columns >}}
-{{< trueimage src="/images/SCALE/DataProtection/ReplicationTaskWidgetNoTasks.png" alt="Replication Task Widget without Tasks" id="Replication Task Widget without Tasks" >}}
-<--->
-{{< trueimage src="/images/SCALE/DataProtection/ReplicationWidgetWithTasks.png" alt="Replication Task Widget with Tasks" id="Replication Task Widget with Tasks" >}}
-{{< /columns>}}
+<div style="display: flex; gap: 20px; align-items: flex-start;">
+    <div style="flex: 1;">
+      <img src="/images/SCALE/DataProtection/ReplicationTaskWidgetNoTasks.png" alt="Replication Task Widget without Tasks" style="width: 100%; max-width: 400px; height: auto;">
+    </div>
+    <div style="flex: 1;">
+      <img src="/images/SCALE/DataProtection/ReplicationWidgetWithTasks.png" alt="Replication Task Widget with Tasks" style="width: 100%; max-width: 400px; height: auto;">
+    </div>
+  </div>
 
 Replication tasks work with periodic snapshot tasks to complete the replication.
 After scheduling a replication task, the **Periodic Snapshot Task** widget shows a new task for the newly added replication task.

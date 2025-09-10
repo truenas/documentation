@@ -20,11 +20,14 @@ Periodic snapshot tasks display the machine time, browser time, or both, dependi
 The **Periodic Snapshot Task** widget displays a list of tasks configured on the system.
 The widget shows a description of periodic snapshot tasks when a task is not configured.
 
-{{< columns >}}
-![PeriodicSnapshotTasksWidget](/images/SCALE/DataProtection/PeriodicSnapshotTaskWidgetNoTasks.png "Periodic Snapshot Task Widget without Tasks")
-<--->
-![PeriodicSnapshotTasksWidget](/images/SCALE/DataProtection/PeriodicSnapshotTasksWidget.png "Periodic Snapshot Task Widget with Tasks")
-{{< /columns >}}
+<div style="display: flex; gap: 20px; align-items: flex-start;">
+    <div style="flex: 1;">
+      <img src="/images/SCALE/DataProtection/PeriodicSnapshotTaskWidgetNoTasks.png" alt="Periodic Snapshot Task Widget without Task" style="width: 100%; max-width: 400px; height: auto;">
+    </div>
+    <div style="flex: 1;">
+      <img src="/images/SCALE/DataProtection/PeriodicSnapshotTasksWidget.png" alt="Periodic Snapshot Task Widget with Tasks" style="width: 100%; max-width: 400px; height: auto;">
+    </div>
+  </div>
 
 The **Periodic Snapshot Task** widget header opens the [**Periodic Snapshot Task**](#periodic-snapshot-task-screen) screen.
 

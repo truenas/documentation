@@ -17,12 +17,15 @@ Rsync tasks are an effective method to back up data to a remote location.
 
 The **Rsync Tasks** widget shows a description about rsync tasks until the first task is configured, then it shows a list of tasks configured on the system, with th details about the task, and the task status.
 
-{{< columns >}}
-{{< trueimage src="/images/SCALE/DataProtection/RsyncTaskWidgetNoTasks.png" alt="Rsync Task Widget No Tasks" id="Rsync Task Widget No Tasks" >}}
-<--->
-{{< trueimage src="/images/SCALE/DataProtection/RsyncTaskWidget.png" alt="Rsync Task Widget with Tasks" id="Rsync Task Widget with Tasks" >}}
-{{< /columns >}}
-
+<div style="display: flex; gap: 20px; align-items: flex-start;">
+    <div style="flex: 1;">
+      <img src="/images/SCALE/DataProtection/RsyncTaskWidgetNoTasks.png" alt="Rsync Task Widget No Task" style="width: 100%; max-width: 400px; height: auto;">
+    </div>
+    <div style="flex: 1;">
+      <img src="/images/SCALE/DataProtection/RsyncTaskWidget.png" alt="Rsync Task Widget with Tasks" style="width: 100%; max-width: 400px; height: auto;">
+    </div>
+  </div>
+  
 The widget header opens the [**Rsync Task**](#rsync-task-screen) screen.
 
 **Add** opens the **[Add Rsync Task](#add-and-edit-rsync-task-screens)** screen.

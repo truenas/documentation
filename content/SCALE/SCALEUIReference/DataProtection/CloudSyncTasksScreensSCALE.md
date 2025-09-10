@@ -21,11 +21,14 @@ Cloud sync tasks are an effective data backup method that sends data to a remote
 The **Cloud Sync Task** widget lists tasks configured on the system.
 The widget shows a description of cloud sync tasks before adding a task.
 
-{{< columns >}}
-{{< trueimage src="/images/SCALE/DataProtection/CloudSyncTaskWidgetNoTasks.png" alt="No Cloud Sync Tasks" id="No Cloud Sync Tasks" >}}
-<--->
-{{< trueimage src="/images/SCALE/DataProtection/CloudSyncTaskWidget.png" alt="Cloud Sync Task Widget" id="Cloud Sync Task Widget" >}}
-{{< /columns >}}
+<div style="display: flex; gap: 20px; align-items: flex-start;">
+    <div style="flex: 1;">
+      <img src="/images/SCALE/DataProtection/CloudSyncTaskWidgetNoTasks.png" alt="No Cloud Sync Tasks" style="width: 100%; max-width: 400px; height: auto;">
+    </div>
+    <div style="flex: 1;">
+      <img src="/images/SCALE/DataProtection/CloudSyncTaskWidget.png" alt="Cloud Sync Task Widget" style="width: 100%; max-width: 400px; height: auto;">
+    </div>
+  </div>
 
 The widget header opens the [**Cloud Sync Task**](#cloud-sync-task-screen) screen that lists all tasks configured on the system.
 
@@ -176,6 +179,7 @@ Click **Save** on the **Add bucket** screen to create the remote bucket on Storj
 {{< /expand >}}
 
 ### Advanced Options Settings
+
 **Advanced Options** settings are for advanced users.
 Selecting **Push** in **Direction** adds the **Use Snapshot** option.
 
@@ -192,14 +196,18 @@ Selecting **Push** in **Direction** adds the **Use Snapshot** option.
 {{< /truetable >}}
 
 ### Advanced Remote Options
+
 The **Advanced Remote Options** settings are for advanced users to configure remote encryption (if selected), transfer bandwidth speed, and bandwidth limit.
 The **Edit Cloud Sync Task** screen **Advanced Remote Options** screen has an additional setting not found on the **Add Cloud Sync Task** screen.
 
-{{< columns >}}
-{{< trueimage src="/images/SCALE/DataProtection/AddCloudSyncTaskPushControlAdvancedEncrypt.png" alt="Advanced Remote Encryption Options" id="Advanced Remote Encryption Options" >}}
-<--->
-{{< trueimage src="/images/SCALE/DataProtection/EditCloudSyncTaskControlAdvanced.png" alt="Edit Screen Advanced Remote Options" id="Edit Screen Advanced Remote Options" >}}
-{{< /columns >}}
+<div style="display: flex; gap: 20px; align-items: flex-start;">
+    <div style="flex: 1;">
+      <img src="/images/SCALE/DataProtection/AddCloudSyncTaskPushControlAdvancedEncrypt.png" alt="Advanced Remote Encryption Options" style="width: 100%; max-width: 400px; height: auto;">
+    </div>
+    <div style="flex: 1;">
+      <img src="/images/SCALE/DataProtection/EditCloudSyncTaskControlAdvanced.png" alt="Edit Screen Advanced Remote Options" style="width: 100%; max-width: 400px; height: auto;">
+    </div>
+  </div>
 
 {{< truetable >}}
 | Settings | Description |
