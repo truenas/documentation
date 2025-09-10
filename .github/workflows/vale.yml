@@ -55,28 +55,27 @@ jobs:
               issue_number: context.issue.number
             });
             
-            // Find and minimize previous Vale comments
+            // Find and collapse previous Vale comments  
             for (const comment of comments) {
-              if (comment.body.includes('## Vale Style Guide Issues') && comment.user.login === 'github-actions[bot]') {
+              if (comment.body.includes('## Vale Style Guide Issues') && 
+                  !comment.body.includes('(Previous)') && 
+                  comment.user.login === 'github-actions[bot]') {
                 try {
-                  await github.rest.repos.updateCommitComment({
+                  const collapsedBody = `<details>
+<summary>Vale Style Guide Issues (Previous - Click to expand)</summary>
+
+${comment.body}
+
+</details>`;
+                  
+                  await github.rest.issues.updateComment({
                     owner: context.repo.owner,
                     repo: context.repo.repo,
                     comment_id: comment.id,
-                    body: comment.body.replace('## Vale Style Guide Issues', '## Vale Style Guide Issues (Resolved)')
+                    body: collapsedBody
                   });
                 } catch (error) {
-                  // Try using issues API if commit comment API fails
-                  try {
-                    await github.rest.issues.updateComment({
-                      owner: context.repo.owner,
-                      repo: context.repo.repo,
-                      comment_id: comment.id,
-                      body: comment.body.replace('## Vale Style Guide Issues', '## Vale Style Guide Issues (Resolved)')
-                    });
-                  } catch (e) {
-                    console.log('Could not resolve previous comment:', e.message);
-                  }
+                  console.log('Could not collapse previous comment:', error.message);
                 }
               }
             }
