@@ -16,7 +16,7 @@ CSR.
 {{< trueimage src="/images/SCALE/Credentials/CertificatesSigningRequestWidgetWithCSR.png" alt="Certificate Signing Request Widget with CSR" id="Certificate Signing Request Widget with CSR" >}}
 
 
-The <span class="material-icons">more_vert</span> icon for a listed CSR shows a dropdown list of options to create an ACME certificate, download, edit, or delete an existing CSR.
+The <span class="material-icons">more_vert</span> icon for a listed CSR shows a dropdown list of options: **Create ACME Certificate**, **Download**, **Edit**, and **Delete**.
 
 **Create ACME Certificate** opens the [**Create ACME Certificate**](#create-acme-certificate-screen) screen.
 
