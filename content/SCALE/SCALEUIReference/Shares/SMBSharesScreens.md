@@ -91,6 +91,8 @@ It opens the [**Create Dataset**](#create-dataset) dialog.
 
 **Save** creates the share (or saves an existing one) and adds it to the **Windows (SMB) Shares** widget and the **SMB** table on the **SMB** screen.
 
+**Enable Now** shows on both the Add SMB and Edit SMB screens after selecting the **Time Machine Share** option in **Purpose** if the **Enable SMB2/3 Protocol** option is not already enabled on the **Advanced Options** of the [**SMB** service screen]({{< ref "SMBServicesScreen.md" >}}).
+
 ### Basic Settings
 
 The **Basic Options** settings show by default on the **Add** and **Edit SMB** screens. Basic settings show for all share options in the **Purpose** dropdown list, only the **External Share** option shows the **Remote Path** setting.
