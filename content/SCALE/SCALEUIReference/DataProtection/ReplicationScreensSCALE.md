@@ -76,7 +76,7 @@ The details view of each replication task shows the **Transport**, **SSH Connect
 
 {{< trueimage src="/images/SCALE/DataProtection/ReplicationTaskRunNowDialog.png" alt="Replication Task Run Now" id="Replication Task Run Now" >}}
 
-**CONTINUE** starts the replication task.
+**Continue** starts the replication task.
 
 ### Restore Window
 
