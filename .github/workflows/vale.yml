@@ -43,19 +43,18 @@ jobs:
           fi
           cat vale-results.json
 
-      - name: Comment PR
+      - name: Collapse Previous Vale Comments
         uses: actions/github-script@v7
         if: github.event_name == 'pull_request'
         with:
           script: |
-            // First, resolve/hide previous Vale comments
+            // Find and collapse previous Vale comments  
             const { data: comments } = await github.rest.issues.listComments({
               owner: context.repo.owner,
               repo: context.repo.repo,
               issue_number: context.issue.number
             });
             
-            // Find and collapse previous Vale comments  
             for (const comment of comments) {
               if (comment.body.includes('## Vale Style Guide Issues') && 
                   !comment.body.includes('(Previous)') && 
@@ -74,13 +73,18 @@ ${comment.body}
                     comment_id: comment.id,
                     body: collapsedBody
                   });
+                  console.log('Collapsed previous Vale comment');
                 } catch (error) {
                   console.log('Could not collapse previous comment:', error.message);
                 }
               }
             }
-            
-            // Now create the new Vale comment
+
+      - name: Comment PR
+        uses: actions/github-script@v7
+        if: github.event_name == 'pull_request'
+        with:
+          script: |
             const fs = require('fs');
             try {
               const valeResults = JSON.parse(fs.readFileSync('vale-results.json', 'utf8'));
