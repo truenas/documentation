@@ -35,7 +35,7 @@ $(document).ready(function() {
 		"draid3:20d:24c:0s"
 	]
 
-	fast_draid = false;
+	fast_draid = true;
 
 	var raidz = ["common", mirror, z1, z2, z3, draid];
 	var raid_names = ["c","Mirror","Z1","Z2","Z3","dRAID"];
@@ -300,6 +300,7 @@ $(document).ready(function() {
 		decimal_places = $("select#decimal_places").val();
 		show_deflate = $("input#show_deflate").is(':checked');
 		show_afr = $("input#show_afr").is(':checked');
+		fast_draid = $("input#fast_draid").is(':checked');
 		disk_afr = parseFloat($("input#disk_afr").val());
 		allow_resilver = $("input#allow_resilver").is(':checked');
 		resilver_time = parseFloat($("input#resilver_time").val());
@@ -362,6 +363,10 @@ $(document).ready(function() {
 				cd.pool_usable_gib = 0;
 				cd.pool_usable_tib = 0;
 				cd.pool_usable_pib = 0;
+				cd.pool_usable_gb = 0;
+				cd.pool_usable_tb = 0;
+				cd.pool_usable_pb = 0;
+				cd.vdev_count = 0;
 				return cd;
 			}
 		} else {
@@ -376,6 +381,10 @@ $(document).ready(function() {
 			cd.pool_usable_gib = 0;
 			cd.pool_usable_tib = 0;
 			cd.pool_usable_pib = 0;
+			cd.pool_usable_gb = 0;
+			cd.pool_usable_tb = 0;
+			cd.pool_usable_pb = 0;
+			cd.vdev_count = 0;
 			return cd;
 		}
 
@@ -547,6 +556,10 @@ $(document).ready(function() {
 		cd.pool_usable_gib = cd.pool_usable_bytes / 1024**3;
 		cd.pool_usable_tib = cd.pool_usable_bytes / 1024**4;
 		cd.pool_usable_pib = cd.pool_usable_bytes / 1024**5;
+		// Decimal units (TB, PB, EB)
+		cd.pool_usable_gb = cd.pool_usable_bytes / 1000**3;
+		cd.pool_usable_tb = cd.pool_usable_bytes / 1000**4;
+		cd.pool_usable_pb = cd.pool_usable_bytes / 1000**5;
 
 		// Calculate other misc stats
 		cd.storage_efficiency = cd.pool_usable_bytes / cd.pool_raw_capacity * 100;
@@ -567,40 +580,93 @@ $(document).ready(function() {
 		return cd;
 	}
 
+	// Function to generate specific error messages based on RAID type and requirements
+	function getSmartErrorMessage(p, vdev_width, current_disks) {
+		// In update() function: raidz = [mirror, z1, z2, z3, draid] (indices 0-4)
+		var raid_names = ["Mirror", "RAIDZ1", "RAIDZ2", "RAIDZ3", "dRAID"];
+		var raid_name = raid_names[p] || "Unknown";
+		
+		// Calculate minimum disks needed based on RAID type
+		var min_disks_needed;
+		
+		if (p == 0) { // Mirror
+			min_disks_needed = Math.max(2, vdev_width);
+			if (current_disks < min_disks_needed) {
+				return "Min. " + min_disks_needed + " disks";
+			}
+		} else if (p == 1) { // RAIDZ1
+			min_disks_needed = Math.max(3, vdev_width);
+			if (current_disks < min_disks_needed) {
+				return "Min. " + min_disks_needed + " disks";
+			}
+		} else if (p == 2) { // RAIDZ2  
+			min_disks_needed = Math.max(5, vdev_width);
+			if (current_disks < min_disks_needed) {
+				return "Min. " + min_disks_needed + " disks";
+			}
+		} else if (p == 3) { // RAIDZ3
+			min_disks_needed = Math.max(7, vdev_width);
+			if (current_disks < min_disks_needed) {
+				return "Min. " + min_disks_needed + " disks"; 
+			}
+		} else if (p == 4) { // dRAID
+			// For dRAID, vdev_width is a string like "draid1:4d:24c:0s"
+			// Extract the total width (c value)
+			if (typeof vdev_width === 'string' && vdev_width.includes(':')) {
+				min_disks_needed = parseInt(vdev_width.split(":")[2].replace("c",""));
+			} else {
+				min_disks_needed = 24; // fallback
+			}
+			if (current_disks < min_disks_needed) {
+				return "Min. " + min_disks_needed + " disks";
+			}
+		}
+		
+		// Fallback for other cases
+		return "Insufficient disks for " + raid_name;
+	}
+
 	function update() {
 		get_form_data();
 		var raidz = [mirror, z1, z2, z3, draid];
 
 		if (show_afr) {
-			$("label#disk_afr_label").css("color", "#0095d5");
+			// Show AFR-related rows
+			$("#disk_afr_row").css("display", "table-row");
+			$("#allow_resilver_row").css("display", "table-row");
 			$("input#disk_afr").prop("disabled", false);
-			$("label#allow_resilver_label").css("color", "#0095d5");
 			$("input#allow_resilver").prop("disabled", false);
 			
 			if (allow_resilver) {
-				$("label#resilver_time_label").css("color", "#0095d5");
+				$("#resilver_time_row").css("display", "table-row");
 				$("input#resilver_time").prop("disabled", false);
 			} else {
-				$("label#resilver_time_label").css("color", "grey");
+				$("#resilver_time_row").css("display", "none");
 				$("input#resilver_time").prop("disabled", true);
 			}
 		} else {
-			$("label#disk_afr_label").css("color", "grey");
+			// Hide all AFR-related rows
+			$("#disk_afr_row").css("display", "none");
+			$("#allow_resilver_row").css("display", "none");
+			$("#resilver_time_row").css("display", "none");
 			$("input#disk_afr").prop("disabled", true);
-			$("label#allow_resilver_label").css("color", "grey");
 			$("input#allow_resilver").prop("disabled", true);
-			$("label#resilver_time_label").css("color", "grey");
 			$("input#resilver_time").prop("disabled", true);
 		}
 
 		if (table_data == "cap_w_reserve") {
-			$("label#reservation").css("color", "#0095d5");
+			// Show reservation row when "Cap. w/ Reservation" is selected
+			$("#reservation_row").css("display", "table-row");
 			$("input#reservation").prop("disabled", false);
 		} else {
-			$("label#reservation").css("color", "grey");
+			// Hide reservation row for other selections
+			$("#reservation_row").css("display", "none");
 			$("input#reservation").prop("disabled", true);
-			
 		}
+		
+		// Track which columns have already shown an error message
+		var columnErrors = {};
+		
 		for (var p = 0; p < raidz.length; p++) {
 
 			for (var v = 0; v < raidz[p].length; v++) {
@@ -639,29 +705,67 @@ $(document).ready(function() {
 							$("td." + vdev_layout).text(rnd(capacity_tb,decimal_places) + " TB");
 						}
 					} else {
-						if (table_data == "usable_cap") {
-							if (show_bytes) {
-								$("td." + vdev_layout).text(capacity_data.pool_usable_bytes);
+						// Check if configuration is invalid (insufficient disks)
+						if (capacity_data.pool_usable_bytes == 0 && capacity_data.vdev_count == 0) {
+							// Create a column key based on RAID type and vdev width
+							var columnKey = p + "_" + v; // e.g. "2_3" for RAIDZ1 width 6
+							
+							if (!columnErrors[columnKey]) {
+								// First error in this column - show smart error message
+								var errorMessage = getSmartErrorMessage(p, vdev_width, disks);
+								$("td." + vdev_layout).text(errorMessage).css({
+									"color": "#ff6b6b",
+									"font-style": "italic"
+								});
+								columnErrors[columnKey] = true;
 							} else {
-								if (capacity_data.pool_usable_tib > 1024) {
-									$("td." + vdev_layout).text(rnd(capacity_data.pool_usable_pib,decimal_places) + " PiB");
-								} else {
-									$("td." + vdev_layout).text(rnd(capacity_data.pool_usable_tib,decimal_places) + " TiB");
-								}
+								// Subsequent errors in this column - show dash
+								$("td." + vdev_layout).text("—").css({
+									"color": "#ff6b6b",
+									"font-style": "italic"
+								});
 							}
-						} else if (table_data == "efficiency") {
-							$("td." + vdev_layout).text(rnd(capacity_data.storage_efficiency,decimal_places) + "%");
-						} else if (table_data == "overhead") {
-
-							$("td." + vdev_layout).text(rnd(capacity_data.zfs_overhead,decimal_places) + "%");
-						} else if (table_data == "cap_w_reserve") {
-							if (show_bytes) {
-								$("td." + vdev_layout).text(capacity_data.pool_usable_bytes * (1 - reservation));
-							} else {
-								if (capacity_data.pool_usable_tib * (1 - reservation) > 1024) {
-									$("td." + vdev_layout).text(rnd(capacity_data.pool_usable_pib * (1 - reservation),decimal_places) + " PiB");
+						} else {
+							// Reset any previous error styling
+							$("td." + vdev_layout).css({
+								"color": "",
+								"font-style": ""
+							});
+							
+							if (table_data == "usable_cap_tib") {
+								if (show_bytes) {
+									$("td." + vdev_layout).text(capacity_data.pool_usable_bytes);
 								} else {
-									$("td." + vdev_layout).text(rnd(capacity_data.pool_usable_tib * (1 - reservation),decimal_places) + " TiB");
+									if (capacity_data.pool_usable_tib > 1024) {
+										$("td." + vdev_layout).text(rnd(capacity_data.pool_usable_pib,decimal_places) + " PiB");
+									} else {
+										$("td." + vdev_layout).text(rnd(capacity_data.pool_usable_tib,decimal_places) + " TiB");
+									}
+								}
+							} else if (table_data == "usable_cap_tb") {
+								if (show_bytes) {
+									$("td." + vdev_layout).text(capacity_data.pool_usable_bytes);
+								} else {
+									if (capacity_data.pool_usable_tb > 1000) {
+										$("td." + vdev_layout).text(rnd(capacity_data.pool_usable_pb,decimal_places) + " PB");
+									} else {
+										$("td." + vdev_layout).text(rnd(capacity_data.pool_usable_tb,decimal_places) + " TB");
+									}
+								}
+							} else if (table_data == "efficiency") {
+								$("td." + vdev_layout).text(rnd(capacity_data.storage_efficiency,decimal_places) + "%");
+							} else if (table_data == "overhead") {
+
+								$("td." + vdev_layout).text(rnd(capacity_data.zfs_overhead,decimal_places) + "%");
+							} else if (table_data == "cap_w_reserve") {
+								if (show_bytes) {
+									$("td." + vdev_layout).text(capacity_data.pool_usable_bytes * (1 - reservation));
+								} else {
+									if (capacity_data.pool_usable_tib * (1 - reservation) > 1024) {
+										$("td." + vdev_layout).text(rnd(capacity_data.pool_usable_pib * (1 - reservation),decimal_places) + " PiB");
+									} else {
+										$("td." + vdev_layout).text(rnd(capacity_data.pool_usable_tib * (1 - reservation),decimal_places) + " TiB");
+									}
 								}
 							}
 						}
@@ -672,14 +776,44 @@ $(document).ready(function() {
 					if (v == 0) {
 						$("td.vdev" + vdev_width + "wm").text(disks + " disks");
 					} else {
-						$("td.vdev" + vdev_width + "wm").text(capacity_data.vdev_count + " vdev + " + capacity_data.spares_count + " spare");
+						if (capacity_data.vdev_count == 0) {
+							$("td.vdev" + vdev_width + "wm").text("Invalid Config").addClass("error-text").css({
+								"color": "#ff6b6b",
+								"font-style": "italic"
+							}).attr("style", "color: #ff6b6b !important; font-style: italic !important;");
+						} else {
+							$("td.vdev" + vdev_width + "wm").text(capacity_data.vdev_count + " vdev + " + capacity_data.spares_count + " spare").css({
+								"color": "",
+								"font-style": ""
+							});
+						}
 					}
 				} else {
 					if (capacity_data.raid_type == "d") {
 						var draid_label = vdev_width.replaceAll(":","-");
-						$("td.vdev" + draid_label).text(capacity_data.vdev_count + " vdev + " + capacity_data.spares_count + " spare");
+						if (capacity_data.vdev_count == 0) {
+							$("td.vdev" + draid_label).text("Invalid Config").addClass("error-text").css({
+								"color": "#ff6b6b",
+								"font-style": "italic"
+							}).attr("style", "color: #ff6b6b !important; font-style: italic !important;");
+						} else {
+							$("td.vdev" + draid_label).text(capacity_data.vdev_count + " vdev + " + capacity_data.spares_count + " spare").css({
+								"color": "",
+								"font-style": ""
+							});
+						}
 					} else {
-						$("td.vdev" + vdev_width + "wz" + p).text(capacity_data.vdev_count + " vdev + " + capacity_data.spares_count + " spare");
+						if (capacity_data.vdev_count == 0) {
+							$("td.vdev" + vdev_width + "wz" + p).text("Invalid Config").addClass("error-text").css({
+								"color": "#ff6b6b",
+								"font-style": "italic"
+							}).attr("style", "color: #ff6b6b !important; font-style: italic !important;");
+						} else {
+							$("td.vdev" + vdev_width + "wz" + p).text(capacity_data.vdev_count + " vdev + " + capacity_data.spares_count + " spare").css({
+								"color": "",
+								"font-style": ""
+							});
+						}
 					}
 				}
 
@@ -696,48 +830,114 @@ $(document).ready(function() {
 
 				if (p == 4) {
 					draid_width = parseInt(vdev_width.split(":")[2].replace("c",""));
-					if (allow_resilver && redundancy != 0) {
-						var disk_hourly_failure_rate = disk_afr / 8760;
-						var disk_failure_probability = disk_hourly_failure_rate * resilver_time;
-						var pool_afr = R2C2(draid_width,redundancy,capacity_data.vdev_count,disk_failure_probability) * 100;
+					if (capacity_data.vdev_count == 0) {
+						$("td.vdev" + vdev_width.replaceAll(":","-") + "afr").text("N/A").css({
+							"color": "#ff6b6b",
+							"font-style": "italic"
+						});
 					} else {
-						var pool_afr = R2C2(draid_width,redundancy,capacity_data.vdev_count,disk_afr) * 100;
+						if (allow_resilver && redundancy != 0) {
+							var disk_hourly_failure_rate = disk_afr / 8760;
+							var disk_failure_probability = disk_hourly_failure_rate * resilver_time;
+							var pool_afr = R2C2(draid_width,redundancy,capacity_data.vdev_count,disk_failure_probability) * 100;
+						} else {
+							var pool_afr = R2C2(draid_width,redundancy,capacity_data.vdev_count,disk_afr) * 100;
+						}
+						$("td.vdev" + vdev_width.replaceAll(":","-") + "afr").text(rnd(pool_afr,decimal_places) + "%").css({
+							"color": "",
+							"font-style": ""
+						});
 					}
-					$("td.vdev" + vdev_width.replaceAll(":","-") + "afr").text(rnd(pool_afr,decimal_places) + "%");
 				} else {
-
-					if (allow_resilver && redundancy != 0) {
-						var disk_hourly_failure_rate = disk_afr / 8760;
-						var disk_failure_probability = disk_hourly_failure_rate * resilver_time;
-						var pool_afr = R2C2(vdev_width,redundancy,capacity_data.vdev_count,disk_failure_probability) * 100;
-					} else {
-						var pool_afr = R2C2(vdev_width,redundancy,capacity_data.vdev_count,disk_afr) * 100;
-					}
 
 					if (p == 0) {
 						if (v == 0) {
 							$("td.vdev" + vdev_width + "wmafr").text(" - ");
 						} else {
-							$("td.vdev" + vdev_width + "wmafr").text(rnd(pool_afr,decimal_places) + "%");
+							if (capacity_data.vdev_count == 0) {
+								$("td.vdev" + vdev_width + "wmafr").text("N/A").css({
+									"color": "#ff6b6b",
+									"font-style": "italic"
+								});
+							} else {
+								if (allow_resilver && redundancy != 0) {
+									var disk_hourly_failure_rate = disk_afr / 8760;
+									var disk_failure_probability = disk_hourly_failure_rate * resilver_time;
+									var pool_afr = R2C2(vdev_width,redundancy,capacity_data.vdev_count,disk_failure_probability) * 100;
+								} else {
+									var pool_afr = R2C2(vdev_width,redundancy,capacity_data.vdev_count,disk_afr) * 100;
+								}
+								$("td.vdev" + vdev_width + "wmafr").text(rnd(pool_afr,decimal_places) + "%").css({
+									"color": "",
+									"font-style": ""
+								});
+							}
 						}
 					} else {
-						$("td.vdev" + vdev_width + "wz" + p + "afr").text(rnd(pool_afr,decimal_places) + "%");
+						if (capacity_data.vdev_count == 0) {
+							$("td.vdev" + vdev_width + "wz" + p + "afr").text("N/A").css({
+								"color": "#ff6b6b",
+								"font-style": "italic"
+							});
+						} else {
+							if (allow_resilver && redundancy != 0) {
+								var disk_hourly_failure_rate = disk_afr / 8760;
+								var disk_failure_probability = disk_hourly_failure_rate * resilver_time;
+								var pool_afr = R2C2(vdev_width,redundancy,capacity_data.vdev_count,disk_failure_probability) * 100;
+							} else {
+								var pool_afr = R2C2(vdev_width,redundancy,capacity_data.vdev_count,disk_afr) * 100;
+							}
+							$("td.vdev" + vdev_width + "wz" + p + "afr").text(rnd(pool_afr,decimal_places) + "%").css({
+								"color": "",
+								"font-style": ""
+							});
+						}
 					}
 				}
-
-				deflate_ratio = rnd(capacity_data.vdev_deflate_ratio * 100,decimal_places);
-
 
 				if (p == 0) {
 					if (v == 0) {
 						$("td.vdev" + vdev_width + "wmdeflate").text(" - ");
 					} else {
-						$("td.vdev" + vdev_width + "wmdeflate").text(deflate_ratio + "%");
+						if (capacity_data.vdev_count == 0) {
+							$("td.vdev" + vdev_width + "wmdeflate").text("N/A").css({
+								"color": "#ff6b6b",
+								"font-style": "italic"
+							});
+						} else {
+							deflate_ratio = rnd(capacity_data.vdev_deflate_ratio * 100,decimal_places);
+							$("td.vdev" + vdev_width + "wmdeflate").text(deflate_ratio + "%").css({
+								"color": "",
+								"font-style": ""
+							});
+						}
 					}
 				} else if (p == 4) {
-					$("td.vdev" + vdev_width.replaceAll(":","-") + "deflate").text(deflate_ratio + "%");
+					if (capacity_data.vdev_count == 0) {
+						$("td.vdev" + vdev_width.replaceAll(":","-") + "deflate").text("N/A").css({
+							"color": "#ff6b6b",
+							"font-style": "italic"
+						});
+					} else {
+						deflate_ratio = rnd(capacity_data.vdev_deflate_ratio * 100,decimal_places);
+						$("td.vdev" + vdev_width.replaceAll(":","-") + "deflate").text(deflate_ratio + "%").css({
+							"color": "",
+							"font-style": ""
+						});
+					}
 				} else {
-					$("td.vdev" + vdev_width + "wz" + p + "deflate").text(deflate_ratio + "%");
+					if (capacity_data.vdev_count == 0) {
+						$("td.vdev" + vdev_width + "wz" + p + "deflate").text("N/A").css({
+							"color": "#ff6b6b",
+							"font-style": "italic"
+						});
+					} else {
+						deflate_ratio = rnd(capacity_data.vdev_deflate_ratio * 100,decimal_places);
+						$("td.vdev" + vdev_width + "wz" + p + "deflate").text(deflate_ratio + "%").css({
+							"color": "",
+							"font-style": ""
+						});
+					}
 				}
 			}
 		}
@@ -821,13 +1021,10 @@ $(document).ready(function() {
 		return 1 - Math.pow(P,numVdev);
 	}
 
-	draw_tables();
-	update();
-	update_debug("18t7wz2");
-
 	$("input.monitor").change(function() {
 		update();
 		update_debug("18t7wz2");
+		update_shelf_count();
 	});
 
 	$("input#show_afr").change(function() {
@@ -843,13 +1040,14 @@ $(document).ready(function() {
 	$("select.monitor").change(function() {
 		update();
 		update_debug("18t7wz2");
+		update_shelf_count();
 	});
 
 	$("select#add_vdev_type").change(function() {
 		var raid_type = $("select#add_vdev_type").val();
 		var tr_text;
 
-		tr_text = "<td><label for=\"recordsize\">ZFS recordsize value:</label></td>"
+		tr_text = "<td><span class=\"help-icon\" data-help=\"recordsize\" title=\"Click for help\">?</span> <label for=\"recordsize\">ZFS recordsize value:</label></td>"
 		tr_text += "<td><select class=\"monitor\" name=\"recordsize\" id=\"recordsize\">"
 		tr_text += "<option value=\"4\">4 KiB</option>"
 		tr_text += "<option value=\"8\">8 KiB</option>"
@@ -985,18 +1183,18 @@ $(document).ready(function() {
 		$("input#add_disk").val("");
 
 		if (add_disk_unit == "TB") {
-			$("td#status").html(new_disk + "TB disk added").css({
+			$("td#status").html(new_disk + "TB row added to tables").css({
                 "color": "#71bf44",
                 "font-weight": "bold"
             });
 		} else {
 			if (new_disk*1000 <= swap_size) {
-				$("td#status").html((new_disk*1000) + "GB disk added (check swap size)").css({
+				$("td#status").html((new_disk*1000) + "GB row added to tables (check swap size)").css({
                     "color": "#71bf44",
                     "font-weight": "bold"
                 });
 			} else {
-				$("td#status").html((new_disk*1000) + "GB disk added").css({
+				$("td#status").html((new_disk*1000) + "GB row added to tables").css({
                     "color": "#71bf44",
                     "font-weight": "bold"
                 });
@@ -1247,10 +1445,14 @@ $(document).ready(function() {
     $(document).on("click", "td", function () {
         if (update_with_mouseover == false) {
             update_with_mouseover = true;
+            // Reset styling for all cells, but preserve error styling by calling update() again
             $("td").css({
                 "background-color": "",
-                "color": "var(--body-font-color)"
+                "color": "var(--body-font-color)",
+                "font-style": ""
             });
+            // Re-run update to restore error styling
+            update();
         } else {
             cell = $(this).attr("class");
             if (cell == undefined) { cell = ""; }
@@ -1272,6 +1474,179 @@ $(document).ready(function() {
 		if (update_with_mouseover) {
 			update_debug($(this).attr("class"));
 		}
+	});
+	
+	// Disk quantity adjustment buttons
+	function add_rem_disks(num_disks) {
+		var new_disk_qty = disks + num_disks;
+		new_disk_qty = validate_input(new_disk_qty,"disks",disks,0,999999,true);
+
+		if (new_disk_qty != disks) {
+			$("input#disks").val(new_disk_qty);
+			update();
+			update_debug("18t7wz2");
+			update_shelf_count();
+		}
+	}
+
+	$("div.half.up").click(function() {
+		var id = $(this).attr("id");
+		var num = parseInt(id.replace("plus_",""));
+		add_rem_disks(num);
+	});
+
+	$("div.half.down").click(function() {
+		var id = $(this).attr("id");
+		var num = parseInt(id.replace("minus_",""));
+		add_rem_disks(-1 * num);
+	});
+
+	// Help text functionality - display context-sensitive help when clicking help icons
+	$(document).on("click",".help-icon",function(){
+		var helpId = $(this).attr("data-help");
+		var helpText = "";
+		
+		switch(helpId) {
+			case "disks":
+				helpText = "<strong>Total Disks in Pool:</strong> The total number of physical disks available for the ZFS pool. This includes data disks and any spares you want to reserve.";
+				break;
+			case "min_spares":
+				helpText = "<b>Minimum Spares:</b> Set aside at least this many disks as hot spares for the pool.";
+				break;
+			case "use_new_slop":
+				helpText = "<b>OpenZFS 2.0.7 Slop:</b> ZFS reserves a bit of capacity to prevent major issues if the pool should fill up to 100%. This space is called slop space. As of OpenZFS 2.0.7, slop space is capped at a smaller size so you get more usable capacity.";
+				break;
+			case "recordsize":
+				helpText = "<b>ZFS recordsize value:</b> Using a different recordsize value on your datasets can help minimize capacity wasted due to padding and overhead. <b>Note:</b> The zfs list command always assumes a 128KiB recordsize for capacity calculations. The usable capacity values displayed below represent how much data you can store on a pool with a given recordsize, but changing your recordsize will not change the capacity that zfs list displays.";
+				break;
+			case "ashift":
+				helpText = "<b>ZFS ashift value:</b> ZFS uses ashift to track the smallest possible I/O it can perform (2^ashift = smallest possible I/O). Ideally, this maps to your disk's sector size. For 4KiB sectors, use ashift=12. For 512 byte sectors, use ashift=9.";
+				break;
+			case "swap_size":
+				helpText = "<b>Disk Swap Size:</b> If your pool disks have swap space on them, you can account for that here.";
+				break;
+			case "add_disk":
+				helpText = "<b>New Disk Size:</b> Add a custom disk size to compare capacity scenarios. Useful for evaluating different drive sizes or planning future upgrades. Use TB/GB button to switch units.";
+				break;
+			case "decimal_places":
+				helpText = "<b>Decimal Places:</b> Controls the precision of capacity values displayed in the tables. Choose 'bytes' for exact byte values, or select 0-10 decimal places for rounded values.";
+				break;
+			case "table_data":
+				helpText = "<b>Table Data:</b> Select what type of data to display in the capacity tables - usable capacity, efficiency percentages, ZFS overhead, or capacity with reservation space.";
+				break;
+			case "usable_cap":
+				helpText = "<b>Usable Capacity (TiB):</b> Display usable capacity as powers of 1024 rather than powers of 1000. This is how computers will display usable capacity.";
+				break;
+			case "usable_cap_tb":
+				helpText = "<b>Usable Capacity (TB):</b> Display usable capacity as powers of 1000. This is how hard disk manufacturers label capacity but not how computers see it.";
+				break;
+			case "show_deflate":
+				helpText = "<b>Show Deflate Ratio:</b> The deflate ratio is the ratio of the amount of data stored to its size on disk with parity and padding, always rounded down to an even factor of 512.";
+				break;
+			case "fast_draid":
+				helpText = "<b>Fast dRAID Calculation:</b> Enables an approximate (but much faster) capacity calculation for dRAID layouts. The fast/approximate calculations are high by up to 0.001%.";
+				break;
+			case "efficiency":
+				helpText = "<b>Capacity Efficiency:</b> Usable capacity of the pool divided by the raw capacity of all of the disks in the pool times 100%.";
+				break;
+			case "show_afr":
+				helpText = "<b>Show Annual Failure Rate (AFR):</b> Calculates a very rough annual failure rate (AFR) for each vdev layout assuming the AFR of an individual disk.";
+				break;
+			case "overhead":
+				helpText = "<b>ZFS Overhead:</b> Calculates simple capacity as the number of data disks times each disk's capacity then shows the difference between the simple capacity and actual usable capacity.";
+				break;
+			case "cap_w_reserve":
+				helpText = "<b>Cap. w/ Reservation:</b> ZFS best practices usually recommend filling a pool to no more than 80% of its total capacity.";
+				break;
+			case "disk_afr":
+				helpText = "<b>Disk AFR (%):</b> The Annual Failure Rate percentage for individual disks in your pool. This value is used to calculate the overall pool failure risk. Typical enterprise drives have 1-2% AFR, consumer drives may be higher.";
+				break;
+			case "allow_resilver":
+				helpText = "<b>Assume Resilver:</b> When enabled, AFR calculations account for the increased risk during resilver operations (when a failed disk is being rebuilt). Resilver operations stress remaining disks and increase failure probability.";
+				break;
+			case "resilver_time":
+				helpText = "<b>Resilver Time (hrs):</b> Expected time in hours for a resilver operation to complete. Larger disks and pools take longer to resilver. During this time, the pool has reduced redundancy and higher failure risk.";
+				break;
+			case "reservation":
+				helpText = "<b>Reservation (%):</b> Percentage of pool capacity to reserve for optimal performance. ZFS performance degrades significantly when pools are very full. 20% reservation is recommended for most workloads.";
+				break;
+			case "add_vdev_type":
+				helpText = "<b>New vdev Type:</b> Adds a new vdev layout column to the tables for comparison, similar to the compare disk size feature. Select the RAID type to compare: Mirror provides 2x redundancy, RAIDZ1 provides single-disk fault tolerance, RAIDZ2 provides double-disk fault tolerance, RAIDZ3 provides triple-disk fault tolerance, and dRAID provides distributed parity for very large pools.";
+				break;
+			default:
+				helpText = "<strong>Configuration Help:</strong> Click the help icons (?) next to field labels above to see detailed explanations of each setting.";
+		}
+		
+		$("#help-text-content").html(helpText);
+	});
+
+	// Shelf count calculation functions
+	function calculate_shelf_count(head_size, shelf_size) {
+		var disks_unaccounted_for = disks;
+		disks_unaccounted_for -= head_size;
+		if (disks_unaccounted_for <= 0) {
+			var free_bays = head_size - disks;
+			return "0 (" + String(free_bays) + " free)";
+		}
+		var shelf_count = Math.ceil(disks_unaccounted_for / shelf_size);
+		var free_bays = (head_size + shelf_count * shelf_size) - disks;
+		return String(shelf_count) + " (" + String(free_bays) + " free)";
+	}
+	
+	function update_shelf_count() {
+		var es24 = [calculate_shelf_count(12, 24), calculate_shelf_count(24, 24), calculate_shelf_count(48, 24)];
+		var es60 = [calculate_shelf_count(12, 60), calculate_shelf_count(24, 60), calculate_shelf_count(48, 60)];
+		var es102 = [calculate_shelf_count(12, 102), calculate_shelf_count(24, 102), calculate_shelf_count(48, 102)];
+
+		var shelf_html = "<div style=\"font-size: 0.9em; margin-bottom: 10px;\"><strong>TrueNAS Hardware:</strong> Shows expansion shelf requirements for different TrueNAS Enterprise systems.</div>";
+		shelf_html += "<table class=\"shelf_count\" style=\"width: 100%; border-collapse: collapse;\">";
+		shelf_html += "<tr><td style=\"padding: 8px; background: #0095d5; color: white; font-weight: bold; font-style: italic;\">Shelf Count</td><td style=\"padding: 8px; text-align: center; background: #0095d5; color: white; font-weight: bold;\">12-Bay Head</td><td style=\"padding: 8px; text-align: center; background: #0095d5; color: white; font-weight: bold;\">24-Bay Head</td><td style=\"padding: 8px; text-align: center; background: #0095d5; color: white; font-weight: bold;\">48-Bay Head</td></tr>";
+		shelf_html += "<tr><td style=\"padding: 8px; background: #0095d5; color: white; font-weight: bold;\">24-Bay Shelf</td><td style=\"padding: 8px; text-align: center; background: rgba(0, 149, 213, 0.1);\">" + es24[0] + "</td><td style=\"padding: 8px; text-align: center; background: rgba(0, 149, 213, 0.1);\">" + es24[1] + "</td><td style=\"padding: 8px; text-align: center; background: rgba(0, 149, 213, 0.1);\">" + es24[2] + "</td></tr>";
+		shelf_html += "<tr><td style=\"padding: 8px; background: #0095d5; color: white; font-weight: bold;\">60-Bay Shelf</td><td style=\"padding: 8px; text-align: center;\">" + es60[0] + "</td><td style=\"padding: 8px; text-align: center;\">" + es60[1] + "</td><td style=\"padding: 8px; text-align: center;\">" + es60[2] + "</td></tr>";
+		shelf_html += "<tr><td style=\"padding: 8px; background: #0095d5; color: white; font-weight: bold;\">102-Bay Shelf</td><td style=\"padding: 8px; text-align: center; background: rgba(0, 149, 213, 0.1);\">" + es102[0] + "</td><td style=\"padding: 8px; text-align: center; background: rgba(0, 149, 213, 0.1);\">" + es102[1] + "</td><td style=\"padding: 8px; text-align: center; background: rgba(0, 149, 213, 0.1);\">" + es102[2] + "</td></tr>";
+		shelf_html += "</table>";
+		
+		$("#shelf-count-content").html(shelf_html);
+	}
+
+	draw_tables();
+	update();
+	update_debug("18t7wz2");
+	update_shelf_count();
+
+	// Update button functionality
+	$("#calculate_button").click(function() {
+		// Show immediate feedback and recalculate (same speed as normal updates)
+		$("#status").html("Updating...").css({
+			"color": "#0095d5",
+			"font-weight": "bold"
+		});
+		
+		get_form_data();
+		draw_tables();
+		update();
+		update_debug("18t7wz2");
+		
+		// Add a subtle flash effect to show tables updated (skip header rows)
+		$("table.results tr:not(:first-child)").css({
+			"background-color": "rgba(0, 149, 213, 0.1)",
+			"transition": "background-color 0.3s ease"
+		});
+		
+		setTimeout(function() {
+			$("table.results tr:not(:first-child)").css("background-color", "");
+		}, 300);
+		
+		// Show completion message immediately after update
+		$("#status").html("Updated!").css({
+			"color": "#71bf44",
+			"font-weight": "bold"
+		});
+		
+		// Clear the message after 2 seconds
+		setTimeout(function() {
+			$("#status").html("");
+		}, 2000);
 	});
     
 });
