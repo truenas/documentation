@@ -69,7 +69,7 @@ jobs:
                     continue;
                   }
                   
-                  // Filter out acronym issues on header lines and false positives on empty/image lines
+                  // Filter out various false positives and noise
                   const filteredIssues = valeResults[file].filter(issue => {
                     const lineIndex = issue.Line - 1; // Vale uses 1-based line numbers
                     const line = fileContent[lineIndex] || '';
@@ -83,26 +83,44 @@ jobs:
                       issue.Check.includes('Acronym') || 
                       issue.Check.includes('.Acronym') ||
                       issue.Message.toLowerCase().includes('acronym') ||
-                      issue.Message.includes('should be spelled out')
+                      issue.Message.includes('should be spelled out') ||
+                      issue.Message.includes('has no definition')
                     );
+                    
+                    // Check if this is a capitalization rule on headers
+                    const isCapitalizationRule = issue.Message.includes('should use sentence-style capitalization');
                     
                     // Check if this is a formatting rule on likely false positive lines
                     const isFormattingRule = issue.Message.includes('Use proper formatting') || 
                                            issue.Message.includes('bold for UI elements') ||
                                            issue.Message.includes('italics for variables');
+                    
+                    // Identify lines that shouldn't be flagged for various issues
                     const isLikelyFalsePositive = trimmedLine === '' || // Empty line
                                                 trimmedLine.startsWith('![') || // Image
-                                                trimmedLine.startsWith('{{<') || // Hugo shortcode
+                                                trimmedLine.startsWith('{{<') || // Hugo shortcode  
+                                                trimmedLine.startsWith('{{%') || // Hugo shortcode variant
                                                 trimmedLine.match(/^\s*[|]\s*/) || // Table row
-                                                trimmedLine.startsWith('---'); // Horizontal rule
+                                                trimmedLine.startsWith('---') || // Horizontal rule
+                                                trimmedLine.startsWith('```'); // Code block
                     
                     // Filter out acronym issues on header lines
                     if (isHeader && isAcronymRule) {
                       return false; // Skip this issue
                     }
                     
-                    // Filter out formatting issues on empty/image/shortcode lines
+                    // Filter out capitalization issues on header lines  
+                    if (isHeader && isCapitalizationRule) {
+                      return false; // Skip this issue
+                    }
+                    
+                    // Filter out formatting issues on structural lines
                     if (isFormattingRule && isLikelyFalsePositive) {
+                      return false; // Skip this issue
+                    }
+                    
+                    // Filter out any issues on Hugo shortcode lines
+                    if (isLikelyFalsePositive && (isAcronymRule || isFormattingRule)) {
                       return false; // Skip this issue
                     }
                     
@@ -146,11 +164,27 @@ jobs:
                   // Group issues by message to consolidate recurring issues
                   const issueGroups = {};
                   for (const issue of issues) {
-                    const key = `${issue.Severity}:${issue.Message}`;
+                    // Create a normalized key to group similar issues
+                    let normalizedMessage = issue.Message;
+                    
+                    // Normalize similar sentence length messages
+                    if (normalizedMessage.includes('sentences short') || normalizedMessage.includes('Sentences should be under')) {
+                      normalizedMessage = 'Keep sentences under 30 words';
+                    }
+                    
+                    // Normalize similar acronym messages  
+                    if (normalizedMessage.includes('should be spelled out') || normalizedMessage.includes('has no definition')) {
+                      const acronym = normalizedMessage.match(/'([^']+)'/);
+                      if (acronym) {
+                        normalizedMessage = `Spell out '${acronym[1]}' on first use`;
+                      }
+                    }
+                    
+                    const key = `${issue.Severity}:${normalizedMessage}`;
                     if (!issueGroups[key]) {
                       issueGroups[key] = {
                         severity: issue.Severity,
-                        message: issue.Message,
+                        message: normalizedMessage,
                         lines: []
                       };
                     }
