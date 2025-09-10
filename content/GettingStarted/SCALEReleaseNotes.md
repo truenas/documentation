@@ -108,7 +108,7 @@ For more details on feature flags, see [OpenZFS Feature Flags](https://openzfs.g
 
 ## 25.04.2.4
 
-**September 5, 2025**
+**September 10, 2025**
 
 The TrueNAS team is pleased to release TrueNAS 25.04.2.4!
 This is a small maintenance release that includes fixes for ACL editor behavior and SMB thread stability.
