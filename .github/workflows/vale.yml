@@ -58,7 +58,41 @@ jobs:
               const filteredResults = {};
               for (const file of changedFiles) {
                 if (valeResults[file]) {
-                  filteredResults[file] = valeResults[file];
+                  // Read file content to identify header lines
+                  let fileContent = [];
+                  try {
+                    const fs = require('fs');
+                    fileContent = fs.readFileSync(file, 'utf8').split('\n');
+                  } catch (error) {
+                    console.log(`Could not read file ${file} for header detection`);
+                    filteredResults[file] = valeResults[file];
+                    continue;
+                  }
+                  
+                  // Filter out acronym issues on header lines
+                  const filteredIssues = valeResults[file].filter(issue => {
+                    const lineIndex = issue.Line - 1; // Vale uses 1-based line numbers
+                    const line = fileContent[lineIndex] || '';
+                    
+                    // Check if this line is a markdown header
+                    const isHeader = line.trim().startsWith('#');
+                    
+                    // Check if this is an acronym-related rule
+                    const isAcronymRule = issue.Check && (
+                      issue.Check.includes('Acronym') || 
+                      issue.Check.includes('.Acronym') ||
+                      issue.Message.toLowerCase().includes('acronym') ||
+                      issue.Message.includes('should be spelled out')
+                    );
+                    
+                    // Filter out acronym issues on header lines, but keep everything else
+                    if (isHeader && isAcronymRule) {
+                      return false; // Skip this issue
+                    }
+                    return true; // Keep this issue
+                  });
+                  
+                  filteredResults[file] = filteredIssues;
                 }
               }
               
@@ -92,9 +126,29 @@ jobs:
                 for (const [file, issues] of sortedFiles) {
                   comment += `### ${file} (${issues.length} issues)\n\n`;
                   
-                  // Show ALL issues per file
+                  // Group issues by message to consolidate recurring issues
+                  const issueGroups = {};
                   for (const issue of issues) {
-                    comment += `- **Line ${issue.Line}:${issue.Span[0]}** - ${issue.Severity}: ${issue.Message}\n`;
+                    const key = `${issue.Severity}:${issue.Message}`;
+                    if (!issueGroups[key]) {
+                      issueGroups[key] = {
+                        severity: issue.Severity,
+                        message: issue.Message,
+                        lines: []
+                      };
+                    }
+                    issueGroups[key].lines.push(issue.Line);
+                  }
+                  
+                  // Display consolidated issues
+                  for (const group of Object.values(issueGroups)) {
+                    group.lines.sort((a, b) => a - b); // Sort line numbers
+                    if (group.lines.length === 1) {
+                      comment += `- **Line ${group.lines[0]}** - ${group.severity}: ${group.message}\n`;
+                    } else {
+                      const lineList = group.lines.join(', ');
+                      comment += `- **Lines ${lineList}** - ${group.severity}: ${group.message}\n`;
+                    }
                   }
                   comment += '\n';
                 }

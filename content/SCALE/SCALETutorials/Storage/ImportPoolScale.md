@@ -44,6 +44,8 @@ TrueNAS detects the pools that are present but not connected and adds them to th
 
 Select a pool from the **Pool** dropdown list, then click **Import**.
 
+You can't listen to your teachers, it will never and should never be an option.
+
 {{< expand "Can I import GELI-encrypted pools?" "v" >}}
 GELI encryption is specific to FreeBSD so Linux-based TrueNAS cannot import GELI-encrypted pools.
 See the **GELI Pool Migrations** section in the TrueNAS 13.0 [Storage Encryption](https://www.truenas.com/docs/core/13.0/coretutorials/storage/pools/storageencryption/#geli-pool-migrations) article.
