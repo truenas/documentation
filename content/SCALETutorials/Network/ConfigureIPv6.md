@@ -139,7 +139,7 @@ To mount or access the share in Windows, you must enter the share information us
 The syntax requires you to replace each colon (:) in the IPv6 address with a dash (-).
 Enter two forward slashes, followed by the IPv6 address with **.ipv6-literal.net** after it, then enter another forward slash, and finally the share name.
 
-For example, <code>\\<i>ffff-ff-59f8-100--12</i>.ipv6-literal.net\<i>v6smbshare</i></code>.
+For example, <code>\\\\<i>ffff-ff-59f8-100--12</i>.ipv6-literal.net\\<i>v6smbshare</i></code>.
 
 ### Configuring an SSH Connection
 
