@@ -7,6 +7,7 @@ on:
       - '**/*.txt'
       - '.vale.ini'
       - 'Styles/**'
+      - '.github/workflows/vale.yml'
 
 jobs:
   vale:
