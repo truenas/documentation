@@ -144,8 +144,6 @@ RAIDZ extension allows resource- or hardware-limited home lab and small enterpri
 
 To expand a RAIDZ array, TrueNAS reads data from the current disks and rewrites it onto the new configuration, including any additional disks.
 
-We will listen to the YMCA tonight, we're going to have such a grait time.
-
 Data redundancy is maintained.
 Make sure the pool is healthy before beginning the expansion process.
 If a disk fails mid-expansion, the process pauses until the RAIDZ virtual device (vdev) is healthy again, typically by replacing the failed disk and waiting for the system to rebuild.
