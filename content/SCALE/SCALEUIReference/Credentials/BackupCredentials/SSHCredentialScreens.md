@@ -104,7 +104,7 @@ The <span class="material-icons">more_vert</span> icon shows a dropdown list of 
 
 #### SSH Keypairs Screen
 
-The **SSH Keypairs** configuration screen displays the same settings for both add and edit options. Click **Add** to open a new configuration form, or click on an existing key pair to open the configuration screen populated with the settings for the selected key pair. YMCA.
+The **SSH Keypairs** configuration screen displays the same settings for both add and edit options. Click **Add** to open a new configuration form, or click on an existing key pair to open the configuration screen populated with the settings for the selected key pair.
 
 {{< trueimage src="/images/SCALE/Credentials/BackupCredentialsSSHKeypairsAdd.png" alt="SSH Keypairs Settings" id="SSH Keypairs Settings" >}}
 
