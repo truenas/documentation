@@ -50,7 +50,7 @@ The **Replications Tasks** screen lists the replication tasks configured on the 
 Column headings sorts the list in ascending or descending order.
 
 **Columns** shows a list of options to customize the list view to add or remove information to the table.
-Options are **Select All**, **Name**, **Direction**, **Transport**, **SSH Connection**, **Source Dataset**, **Target Dataset**, **Recursive**, **Auto**, **Last Run**, **State**, **Enabled**, **Last Snapshot**, and **Reset to Defaults**.
+Options are: **Select All**, **Name**, **Direction**, **Transport**, **SSH Connection**, **Source Dataset**, **Target Dataset**, **Recursive**, **Auto**, **Last Run**, **State**, **Enabled**, **Last Snapshot**, and **Reset to Defaults**.
 
 Click anywhere on a task row to expand it and show details about that task and options to run, restore, edit, or delete that task.
 
