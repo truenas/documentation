@@ -106,6 +106,18 @@ Any new feature flags introduced since the previous OpenZFS version that was int
 
 For more details on feature flags, see [OpenZFS Feature Flags](https://openzfs.github.io/openzfs-docs/Basic%20Concepts/Feature%20Flags.html) and [OpenZFS zpool-feature.7](https://openzfs.github.io/openzfs-docs/man/7/zpool-features.7.html).
 
+## 25.04.2.4
+
+**September 10, 2025**
+
+The TrueNAS team is pleased to release TrueNAS 25.04.2.4!
+This is a small maintenance release that includes fixes for ACL editor behavior and SMB thread stability.
+
+### 25.04.2.4 Notable Changes
+
+* Fixes an issue where the ACL editor ignored unchecked "Apply Owner" and "Apply Group" checkboxes and always applied owner/group changes recursively, potentially causing unintended ownership changes ([NAS-137378](https://ixsystems.atlassian.net/browse/NAS-137378)).
+* Fixes an issue where SMB threads could become stuck at 100% CPU usage on Windows clients, causing Windows Explorer to become unresponsive until the thread was manually killed ([NAS-137095](https://ixsystems.atlassian.net/browse/NAS-137095)).
+
 ## 25.04.2.3
 
 **August 26, 2025**

@@ -8,31 +8,26 @@ majorVersions:
     name: "TrueNAS 24.10 - Electric Eel"
     releaseName: "Electric Eel"
     releases:
-      - name: "24.10.2.3"
+      - name: "24.10.2.4"
         type: "Maintenance"
-        link: "https://www.truenas.com/docs/scale/24.10/gettingstarted/scalereleasenotes/#241023"
-        releaseDate: "2025-07-14"
+        link: "https://www.truenas.com/docs/scale/24.10/gettingstarted/scalereleasenotes/#241024"
+        releaseDate: "2025-08-07"
         latest: true
   - lifecycle: "Current"
     name: "TrueNAS 25.04 - Fangtooth"
     releaseName: "Fangtooth"
     releases:
-      - name: "25.04.2.3"
+      - name: "25.04.2.4"
         type: "Maintenance"
-        link: "https://www.truenas.com/docs/scale/25.04/gettingstarted/scalereleasenotes/#250423"
-        releaseDate: "2025-08-26"
+        link: "https://www.truenas.com/docs/scale/25.04/gettingstarted/scalereleasenotes/#250424"
+        releaseDate: "2025-09-10"
         latest: true
   - lifecycle: "Next"
     name: "TrueNAS 25.10 - Goldeye"
     releaseName: "Goldeye"
     releases:
-      - name: "25.10 Nightlies"
-        type: "Experimental"
-        link: "https://www.truenas.com/docs/scale/25.10/gettingstarted/scalereleasenotes/"
-        releaseDate: "2025-01-27"
-        latest: true
       - name: "25.10-BETA.1"
         type: "Early"
-        link: ""
-        releaseDate: ""
-        latest: false
+        link: "https://www.truenas.com/docs/scale/25.10/gettingstarted/scalereleasenotes/"
+        releaseDate: "2025-08-28"
+        latest: true
