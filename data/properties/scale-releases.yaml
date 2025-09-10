@@ -37,3 +37,12 @@ majorVersions:
         link: "https://www.truenas.com/docs/scale/25.10/gettingstarted/scalereleasenotes/"
         releaseDate: "2025-01-27"
         latest: false
+  - lifecycle: "Preview"
+    name: "TrueNAS 26.04 - Halfmoon"
+    releaseName: "Halfmoon"
+    releases:
+      - name: "26.04 Nightlies"
+        type: "Experimental"
+        link: "https://www.truenas.com/docs/scale/26.04/gettingstarted/scalereleasenotes/"
+        releaseDate: "2025-08-11"
+        latest: false
