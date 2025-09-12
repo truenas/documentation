@@ -47,12 +47,15 @@ To make this possible:
 {{< include file="/static/includes/NetworkInstallRequirementsSCALE.md" >}}
 
 If you have an HA system with two controllers, you must assign a total of three IP addresses:
+
 * A virtual IP for access to the UI when either controller is active
 * An IP address for the primary network port on controller A
 * An IP address for the primary network port on controller B
 
 iXsystems Support can assist you with any questions you have with these network requirements.
 Provide the information listed to iXsystems when requested to expedite configuring your system network settings.
+
+{{< include file="/static/includes/SCALEHADisableSTP.md" >}}
 
 ### SMTP Access
 
