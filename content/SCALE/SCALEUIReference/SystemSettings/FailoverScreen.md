@@ -28,6 +28,8 @@ The **System > Failover** screen displays settings used on TrueNAS Enterprise (H
 | **Sync From Peer** | Initiates a sync operation that copies over the standby controller configuration to the primary controller. |
 {{< /truetable >}}
 
+{{< include file="/static/includes/SCALEHADisableSTP.md" >}}
+
 ## Sync To or From Peer
 **Sync To Peer** and **Sync From Peer** buttons each open a confirmation dialog before TrueNAS performs the operation requested.
 
