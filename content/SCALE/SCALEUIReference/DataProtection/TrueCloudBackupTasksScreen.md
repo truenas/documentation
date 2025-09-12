@@ -163,9 +163,11 @@ The **Remote** settings specify the TrueCloud credential and destination storage
 {{< truetable >}}
 | Settings | Description |
 |----------|-------------|
-| **Schedule** | Select a schedule preset or choose **Custom** to open the advanced scheduler. |
+| **Schedule** | Shows a list of schedule preset options. See **Schedule Presets** below for more info. |
 | **Enabled** | Select to enable the TrueCloud task. Leave clear to disable the task without deleting it and keep the configuration available without allowing the specified schedule to run the task. The toggle in the **Enable** column on the **TrueCloud Backup Tasks** widget enables/disables the task. |
 {{< /truetable >}}
+
+{{< include file="/static/includes/SchedulePresetOptions.md" >}}
 
 {{< expand "Advanced Scheduler" "v" >}}
 {{< include file="/static/includes/AdvancedScheduler.md" >}}
