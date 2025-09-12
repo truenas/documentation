@@ -157,7 +157,7 @@ The **Data Protection** widget shows snapshot and backup task information for th
 **View Snapshot Tasks** opens the **[Data Protection]({{< ref "PeriodicSnapshotTasksScreensSCALE" >}})** screen where you can add or manage scheduled periodic snapshot tasks.
 
 **No Backup Tasks** shows when no data protection backup tasks are created. 
-**Go to Backups** opens the **[Data Protection]({{< ref "/SCALE/SCALEUIReference/DataProtection" >}})** screen, where you can manage scheduled replication, rsync, and other data protection tasks.
+**Go to Backups** opens the **[Data Protection]({{< ref "/SCALEUIReference/DataProtection" >}})** screen, where you can manage scheduled replication, rsync, and other data protection tasks.
 
 ### Permissions Widget
 
