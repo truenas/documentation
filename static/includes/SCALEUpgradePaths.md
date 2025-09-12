@@ -61,40 +61,62 @@ Visit the <a href="https://www.truenas.com/software-status/" target="_blank">Tru
 
 <div class="section-box" id="scale-upgrade-paths" style="padding: 0 40px 40px 40px; margin-bottom: 20px;">
     <div class="upgrade-paths-container">
-      <img src="/images/tn-scale-logo.png" style="box-shadow: none; max-width: 225px; padding-bottom: 20px; padding-top: 40px;" title="TrueNAS SCALE" alt="TrueNAS SCALE">
-      <div class="scroll-container" id="scrollContainer1">
-        <div class="chart-wrapper">
-          {{< mermaid class="mermaid_sizing" >}}
-          flowchart LR
-            A["11.3-U5"] -->|update| B["12.0-U8.1"]
-            B -->|"update<br><br>ISO install"| C["13.0-U6.4<br><br>13.3-U1"]
-            C -->|ISO install| H
-            C -->|"(anticipated)"| I
-            D["22.02.4 (Angelfish)"] -->|update| E
-            E["22.12.4.2 (Bluefin)"] -->|update| F
-            F["23.10.2 (Cobia)"] -->|update| G
-            G["24.04.2.5 (Dragonfish)"] -->|update| H
-            H["24.10.2.3 (Electric Eel)"] -->|update| I
-            I["25.04.2 (Fangtooth)"]
-          {{< /mermaid >}}
+      <img src="/images/truenas-community-edition-logo-blue.png" class="light-mode-logo" style="box-shadow: none; max-width: 225px; padding-bottom: 20px; padding-top: 40px;" title="TrueNAS Community Edition" alt="TrueNAS Community Edition">
+      <img src="/images/truenas-community-edition-logo-white.png" class="dark-mode-logo" style="box-shadow: none; max-width: 225px; padding-bottom: 20px; padding-top: 40px; display: none;" title="TrueNAS Community Edition" alt="TrueNAS Community Edition">
+      <div class="scroll-wrapper">
+        <button class="scroll-nav scroll-nav-left" aria-label="Scroll left" title="Scroll left">‹</button>
+        <button class="scroll-nav scroll-nav-right" aria-label="Scroll right" title="Scroll right">›</button>
+        <div class="scroll-container" id="scrollContainer1">
+          <div class="chart-wrapper">
+            {{< mermaid class="mermaid_sizing" >}}
+            flowchart LR
+              A["11.3-U5"] -->|update| B["12.0-U8.1"]
+              B -->|"update / ISO install"| C["13.0-U6.8 / 13.3-U2"]
+              C -->|update| G
+              C -->|ISO install| I
+              D["22.02.4 (Angelfish)"] -->|update| E
+              E["22.12.4.2 (Bluefin)"] -->|update| F
+              F["23.10.2 (Cobia)"] -->|update| G
+              G["24.04.2.5 (Dragonfish)"] -->|update| H
+              H["24.10.2.4 (Electric Eel)"] -->|update| I
+              I["25.04.2.4 (Fangtooth)"] -->|"(anticipated)"| J
+            J["25.10 (Goldeye)"]
+            {{< /mermaid >}}
+          </div>
+        </div>
+        <div class="scroll-indicator" id="scrollIndicator1">
+          <div class="scroll-dot" data-section="0" title="Beginning"></div>
+          <div class="scroll-dot" data-section="1" title="Middle"></div>
+          <div class="scroll-dot active" data-section="2" title="Latest versions"></div>
         </div>
       </div>
     </div>
     <div class="upgrade-paths-container">
-      <img src="/images/tn-enterprise-logo.png" style="box-shadow: none; max-width: 225px; padding-bottom: 20px; padding-top: 40px;" title="TrueNAS SCALE Enterprise" alt="TrueNAS SCALE Enterprise">
-      <div class="scroll-container" id="scrollContainer2">
-        <div class="chart-wrapper">
-          {{< mermaid class="mermaid_sizing" >}}
-          flowchart LR
-            A["11.3-U5"] -->|update| B
-            B["12.0-U8.1"] -->|update| C
-            C["13.0-U6.4"] -->|ISO install| F
-            C["13.0-U6.4"] -->|"(anticipated)"| G
-            D["23.10.2 (Cobia)"] -->|update| E
-            E["24.04.2.5 (Dragonfish)"]  -->|update| F
-            F["24.10.2.3 (Electric Eel)"] -->|"(anticipated)"| G
-            G["25.04 (Fangtooth)"]
-          {{< /mermaid >}}
+      <img src="/images/truenas-enterprise-logo-logo-blue.png" class="light-mode-logo" style="box-shadow: none; max-width: 225px; padding-bottom: 20px; padding-top: 40px;" title="TrueNAS Enterprise" alt="TrueNAS Enterprise">
+      <img src="/images/truenas-enterprise-logo-logo-white-rgb-900px-w-72ppi.png" class="dark-mode-logo" style="box-shadow: none; max-width: 225px; padding-bottom: 20px; padding-top: 40px; display: none;" title="TrueNAS Enterprise" alt="TrueNAS Enterprise">
+      <div class="scroll-wrapper">
+        <button class="scroll-nav scroll-nav-left" aria-label="Scroll left" title="Scroll left">‹</button>
+        <button class="scroll-nav scroll-nav-right" aria-label="Scroll right" title="Scroll right">›</button>
+        <div class="scroll-container" id="scrollContainer2">
+          <div class="chart-wrapper">
+            {{< mermaid class="mermaid_sizing" >}}
+            flowchart LR
+              A["11.3-U5"] -->|update| B
+              B["12.0-U8.1"] -->|update| C
+              C["13.0-U6.8"] -->|ISO install| G
+              C -->|update| E
+              D["23.10.2 (Cobia)"] -->|update| E
+              E["24.04.2.5 (Dragonfish)"]  -->|update| F
+              F["24.10.2.4 (Electric Eel)"] -->|update| G
+              G["25.04.2.4 (Fangtooth)"] -->|"(anticipated)"| H
+            H["25.10 (Goldeye)"]
+            {{< /mermaid >}}
+          </div>
+        </div>
+        <div class="scroll-indicator" id="scrollIndicator2">
+          <div class="scroll-dot" data-section="0" title="Beginning"></div>
+          <div class="scroll-dot" data-section="1" title="Middle"></div>
+          <div class="scroll-dot active" data-section="2" title="Latest versions"></div>
         </div>
       </div>
     </div>
