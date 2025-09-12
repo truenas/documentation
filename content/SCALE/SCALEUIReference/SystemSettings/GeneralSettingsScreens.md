@@ -150,7 +150,7 @@ The **GUI Settings** screen shows configuration settings for the TrueNAS web int
 The **Localization** widget shows the current language, date, time format, time zone, and console keyboard map settings for the TrueNAS system.
 Provides access to a configuration screen to customize settings.
 
-{{< trueimage src="/images/SCALE/SystemSettings/SystemGeneralLocalizationSettings.png" alt="Localization Settings Screen" id="Localization Settings Screen" >}}
+{{< trueimage src="/images/SCALE/SystemSettings/GeneralSettingsLocalizationWidget.png" alt="Localization Widget" id="Localization Widget" >}}
 
 **Settings** opens the **Localization Settings** configuration screen.
 

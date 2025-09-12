@@ -43,7 +43,7 @@ You can download or upload your system configuration files from this screen.
 {{< trueimage src="/images/SCALE/SystemSettings/SystemAdvancedScreen3.png" alt="Advanced Settings Screen (cont.'d)" id="Advanced Settings Screen (cont.'d)" >}}
 
 {{< enterprise >}}
-Enterprise-licensed systems include configuration options for STIG and security, and failover when the system is a High Availability system.
+Enterprise-licensed systems include configuration options for STIG and FIPS security, and failover when the system is a High Availability system.
 
 {{< trueimage src="/images/SCALE/SystemSettings/SystemAdvancedScreenHA3.png" alt="Advanced Settings Screen for HA" id="Advanced Settings Screen for HA" >}}
 
@@ -513,6 +513,7 @@ Requires two-factor authentication for an admin user with full permissions befor
 The **Failover** widget shows only on Enterprise-licensed HA systems.
 It shows the status of failover, the default controller, and the network timeout before TrueNAS initiates failover.
 
+{{< trueimage src="/images/SCALE/SystemSettings/AdvancedSettingsFailoverWidget.png" alt="System Failover Widget" id="System Failover Widget" >}}
 
 **Configure** opens the **Failover** configuration screen.
 
@@ -520,7 +521,7 @@ It shows the status of failover, the default controller, and the network timeout
 
 The **Failover** screen shows settings used on TrueNAS Enterprise (HA) systems to turn the failover function on or off, sync the primary and standby controllers, and allow administrator users to configure failover. The main menu option and screen only display on Enterprise (HA) systems with the correct license applied.
 
-![FailoverScreen](/images/SCALE/SystemSettings/FailoverScreen.png "Failover Screen")
+{{< trueimage src="/images/SCALE/SystemSettings/FailoverScreen.png" alt="Failover Screen" id="Failover Screen" >}}
 
 {{< truetable >}}
 | Setting | Description |
