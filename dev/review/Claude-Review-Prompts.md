@@ -1,66 +1,101 @@
-# TrueNAS Documentation Review Prompts for Claude Code
+# TrueNAS Documentation Review System for Claude Code
 
-This document contains standardized prompts for using Claude Code agents to review TrueNAS documentation for style guide compliance.
+This system provides comprehensive review and automated fixes for TrueNAS documentation, with actionable checklists and progress tracking.
 
-## How to Use These Prompts
+## Quick Start Guide
 
-1. **Copy the appropriate prompt** for your content type
-2. **Replace [FILE_PATH]** with the path to the documentation file you want to review
-3. **Ask Claude** to use the prompt with the Task tool
-4. **Review the feedback** and implement suggested changes
-5. **Use the checklist** to verify compliance
+**Step 1**: Choose your prompt type and copy the complete prompt:
+- **Tutorial files** → Use [Tutorial Review and Fix Prompt](#tutorial-review-and-fix-prompt)
+- **Reference/UI docs** → Use [Reference Documentation Review and Fix Prompt](#reference-documentation-review-and-fix-prompt) 
+- **Unknown type** → Use [General Documentation Review and Fix Prompt](#general-documentation-review-and-fix-prompt)
+
+**Step 2**: Replace the placeholder with your file path:
+- `TUTORIAL_FILE_PATH` → `/path/to/your/tutorial.md`
+- `REFERENCE_FILE_PATH` → `/path/to/your/reference.md`  
+- `GENERAL_FILE_PATH` → `/path/to/your/file.md`
+
+**Step 3**: Paste the complete prompt into Claude and get actionable results!
 
 ---
 
-## Tutorial Review Prompt
+## How the Review System Works
+
+1. **Copy the complete prompt** for your content type
+2. **Use Ctrl+F and Replace** to swap placeholder with your file path
+3. **Ask Claude** to use the prompt with the Task tool
+4. **Review automatic fixes** applied by the agent
+5. **Work through manual checklist** by priority (Critical → Important → Minor)
+6. **Track progress** using the provided checklist format
+
+---
+
+## Tutorial Review and Fix Prompt
 
 ```
-Please review the tutorial documentation file at [FILE_PATH] for compliance with TrueNAS tutorial standards using an agent.
+Please review and fix the tutorial documentation file at TUTORIAL_FILE_PATH using an enhanced approach that provides both automated fixes and actionable feedback.
 
 Use the Task tool with a general-purpose agent and provide this prompt:
 
 "Read the tutorial style guide at /mnt/c/Users/iXUser/Documents/GitHub/documentation/dev/style-guides/TrueNAS-Tutorial-Style-Guide.md and the common elements guide at /mnt/c/Users/iXUser/Documents/GitHub/documentation/dev/style-guides/Common-Elements-Guide.md.
 
-Then review the tutorial file at [FILE_PATH] for compliance with these standards:
+Then review the tutorial file at TUTORIAL_FILE_PATH for compliance and make automatic fixes where possible:
 
-STRUCTURE REVIEW:
-- Check heading hierarchy (title case H2, sentence case H3+)
-- Verify introduction follows functional purpose pattern (2-4 sentences)
-- Confirm prerequisites are only included when setup dependencies exist
-- Check for proper task completion ending (no formal conclusions)
+AUTOMATED FIXES (use Edit/MultiEdit tools ONLY when absolutely certain):
+- Fix obvious typos and spelling errors (like 'fle' → 'file')
+- Replace 'will' with present tense alternatives (when clearly future tense)
+- Replace 'may' with 'might', 'could', or 'can' (when expressing possibility)
+- Fix actual duplicate words (like 'the the' BUT NEVER 'edit edit' or 'delete delete' patterns with icons)
+- Correct basic punctuation issues (missing periods, extra spaces)
+- DO NOT modify material icon formatting - inline styles may be intentional
 
-WRITING STANDARDS REVIEW:
-- Present tense, active voice throughout
-- Second person (direct address) usage
-- No use of 'may' for possibility (should use 'might', 'could', or 'can')
-- No use of 'will' (stay in present tense)
-- No 'scare quotes' for emphasis
-- Bold only used for UI elements, never for emphasis
-- Sentences under 30 words
-- 5th grade reading level appropriate
-- No gerunds, semicolons, or object possessives
+ANALYSIS FOR MANUAL REVIEW:
+- Heading hierarchy compliance (title case H2, sentence case H3+)
+- Introduction structure (functional purpose pattern)
+- Long sentences (over 30 words) - suggest rewrites
+- Passive voice constructions - suggest active alternatives
+- Hugo shortcode usage and cross-references
+- Overall structure and organization issues
 
-FORMATTING REVIEW:
-- Hugo shortcodes used correctly (trueimage, ref, hint, truetable)
-- Cross-references use {{< ref >}} shortcode
-- Screenshots use {{< trueimage >}} with descriptive alt-text
-- UI elements properly formatted in **bold**
-- Material Icons formatted consistently
+IMPORTANT: DO NOT flag patterns like '<i>edit</i> edit' or '<i>delete</i> delete' as issues - these are intentional accessibility patterns where icon text serves screen readers and plain text provides visual clarity.
 
-Provide specific feedback organized by:
-1. Critical Issues (must fix)
-2. Style Improvements (should fix)
-3. Minor Suggestions (optional)
+OUTPUT FORMAT - PROVIDE ALL DETAILS TO USER:
+1. **AUTOMATIC FIXES APPLIED** (with before/after examples):
+   - Line X: 'old text' → 'new text' 
+   - Line Y: 'old text' → 'new text'
 
-For each issue, include the specific line/section and suggested correction."
+2. **CRITICAL ISSUES** (must fix immediately):
+   - **Line X**: [Current text excerpt]
+     - **Issue**: [What's wrong]
+     - **Fix**: [Exact replacement text or specific action]
+     - **Why**: [Impact on users/functionality]
+
+3. **IMPORTANT ISSUES** (should fix for style compliance):
+   - **Line X**: [Current text excerpt] 
+     - **Issue**: [Style guide violation]
+     - **Fix**: [Exact replacement text or specific action]
+     - **Why**: [Style/readability improvement]
+
+4. **MINOR SUGGESTIONS** (optional enhancements):
+   - **Line X**: [Current text excerpt]
+     - **Suggestion**: [Possible improvement]
+     - **Benefit**: [Why this helps]
+
+5. **CHANGE TRACKING CHECKLIST**:
+   - [x] Automatic fixes applied (3 items)
+   - [ ] Critical issue 1: [Brief description with line number]
+   - [ ] Critical issue 2: [Brief description with line number] 
+   - [ ] Important issue 1: [Brief description with line number]
+   - [ ] etc.
+
+IMPORTANT: Include specific line numbers, exact current text, and precise replacement text for every issue. Make each item immediately actionable."
 ```
 
 ---
 
-## Reference Review Prompt
+## Reference Documentation Review and Fix Prompt
 
 ```
-Please review the reference documentation file at [FILE_PATH] for compliance with TrueNAS reference standards using an agent.
+Please review and fix the reference documentation file at REFERENCE_FILE_PATH using an enhanced approach that provides both automated fixes and actionable feedback.
 
 This prompt handles all reference documentation types including screens, widgets, dialogs, and UI components.
 
@@ -68,93 +103,119 @@ Use the Task tool with a general-purpose agent and provide this prompt:
 
 "Read the reference style guide at /mnt/c/Users/iXUser/Documents/GitHub/documentation/dev/style-guides/TrueNAS-Reference-Style-Guide.md and the common elements guide at /mnt/c/Users/iXUser/Documents/GitHub/documentation/dev/style-guides/Common-Elements-Guide.md.
 
-Then review the reference file at [FILE_PATH] for compliance with these standards:
+Then review the reference file at REFERENCE_FILE_PATH for compliance and make automatic fixes where possible:
 
-STRUCTURE REVIEW:
-- Check hierarchical organization (Widget → List → Details pattern)
-- Verify table formatting uses {{< truetable >}} shortcode
-- Confirm two-column 'Setting | Description' format
-- Check screenshot placement (before related tables)
-- Verify cross-references use {{< ref >}} shortcode
+AUTOMATED FIXES (use Edit/MultiEdit tools ONLY when absolutely certain):
+- Fix obvious typos and spelling errors (like 'fle' → 'file')
+- Replace 'will' with present tense alternatives (when clearly future tense)
+- Replace 'may' with 'might', 'could', or 'can' (when expressing possibility)
+- Fix actual duplicate words (like 'the the' BUT NEVER 'edit edit' or 'delete delete' patterns with icons)
+- DO NOT modify material icon formatting - inline styles may be intentional
+- Fix basic table formatting issues (only clear errors like missing pipes)
 
-UI DOCUMENTATION REVIEW:
-- Required fields marked with '(Required)' at description start
-- UI elements consistently formatted in **bold**
-- Field descriptions include dropdown options when applicable
-- Dialog documentation follows 'Action + Item Type + Dialog' naming
-- Material Icons properly referenced with aria-labels
-- Widget/component sections document functionality within screen context
-- All UI elements (screens, dialogs, widgets, forms) properly documented
+ANALYSIS FOR MANUAL REVIEW:
+- Table structure ({{< truetable >}} usage, Setting|Description format)
+- Field descriptions completeness and clarity
+- Screenshot placement and alt-text quality
+- Cross-reference accuracy and format
+- UI element documentation completeness
+- Hierarchical organization (Widget → List → Details)
 
-WRITING STANDARDS REVIEW:
-- Present tense, active voice throughout
-- Descriptive voice (avoid second person pronouns)
-- Imperative mood acceptable for instructions
-- No use of 'may' for possibility (should use 'might', 'could', or 'can')
-- No use of 'will' (stay in present tense)
-- Bold only used for UI elements, never for emphasis
-- 5th grade reading level appropriate
+IMPORTANT: DO NOT flag patterns like '<i>edit</i> edit' or '<i>delete</i> delete' as issues - these are intentional accessibility patterns where icon text serves screen readers and plain text provides visual clarity.
 
-TECHNICAL ACCURACY REVIEW:
-- Screenshot naming follows convention: /images/SCALE/Area/FeatureScreenName.png
-- Alt-text matches UI element being shown
-- Cross-references point to correct related screens
-- Enterprise features properly marked with {{< enterprise >}}
+OUTPUT FORMAT - PROVIDE ALL DETAILS TO USER:
+1. **AUTOMATIC FIXES APPLIED** (with before/after examples):
+   - Line X: 'old text' → 'new text'
+   - Line Y: 'old text' → 'new text'
 
-Provide specific feedback organized by:
-1. Critical Issues (must fix)
-2. Style Improvements (should fix)  
-3. Minor Suggestions (optional)
+2. **CRITICAL ISSUES** (must fix immediately):
+   - **Line X**: [Current text excerpt]
+     - **Issue**: [What's wrong - missing fields, broken links, etc.]
+     - **Fix**: [Exact replacement text or specific action]
+     - **Why**: [Impact on user understanding/functionality]
 
-For each issue, include the specific line/section and suggested correction."
+3. **IMPORTANT ISSUES** (should fix for consistency):
+   - **Line X**: [Current text excerpt]
+     - **Issue**: [Formatting/description problem]
+     - **Fix**: [Exact replacement text or specific action] 
+     - **Why**: [Consistency/clarity improvement]
+
+4. **MINOR SUGGESTIONS** (optional enhancements):
+   - **Line X**: [Current text excerpt]
+     - **Suggestion**: [Possible improvement]
+     - **Benefit**: [How this helps users]
+
+5. **CHANGE TRACKING CHECKLIST**:
+   - [x] Automatic fixes applied (X items)
+   - [ ] Critical issue 1: [Brief description with line number]
+   - [ ] Critical issue 2: [Brief description with line number]
+   - [ ] Important issue 1: [Brief description with line number] 
+   - [ ] etc.
+
+IMPORTANT: Include specific line numbers, exact current text, and precise replacement text for every issue. Make each item immediately actionable."
 ```
 
 
 ---
 
-## General Documentation Review Prompt
+## General Documentation Review and Fix Prompt
 
 ```
-Please review the documentation file at [FILE_PATH] for general TrueNAS documentation compliance using an agent.
+Please review and fix the documentation file at GENERAL_FILE_PATH for general TrueNAS documentation compliance using an enhanced approach.
 
 Use the Task tool with a general-purpose agent and provide this prompt:
 
 "Read the common elements guide at /mnt/c/Users/iXUser/Documents/GitHub/documentation/dev/style-guides/Common-Elements-Guide.md and determine if this is tutorial or reference content.
 
-Then review the file at [FILE_PATH] for compliance with these universal standards:
+Then review the file at GENERAL_FILE_PATH for compliance and make automatic fixes where possible:
 
-WRITING STANDARDS REVIEW:
-- Present tense, active voice throughout
-- Appropriate voice for content type (second person for tutorials, descriptive for reference)
-- No use of 'may' for possibility (should use 'might', 'could', or 'can')
-- No use of 'will' (stay in present tense)
-- No 'scare quotes' for emphasis
-- Bold only used for UI elements, never for emphasis
-- No gerunds, semicolons, or object possessives
-- Sentences under 30 words
-- 5th grade reading level appropriate
+AUTOMATED FIXES (use Edit/MultiEdit tools ONLY when absolutely certain):
+- Fix obvious typos and spelling errors (like 'fle' → 'file')
+- Replace 'will' with present tense alternatives (when clearly future tense) 
+- Replace 'may' with 'might', 'could', or 'can' (when expressing possibility)
+- Fix actual duplicate words (like 'the the' BUT NEVER 'edit edit' or 'delete delete' patterns with icons)
+- Correct basic punctuation issues (missing periods, extra spaces)
+- DO NOT modify material icon formatting - inline styles may be intentional
 
-HUGO SHORTCODE REVIEW:
-- Images use {{< trueimage >}} with proper alt-text
-- Cross-references use {{< ref >}} shortcode  
-- Tables use {{< truetable >}} shortcode
-- Warnings use {{< hint >}} shortcode appropriately
-- Enterprise features marked with {{< enterprise >}}
+ANALYSIS FOR MANUAL REVIEW:
+- Content type compliance (tutorial vs reference voice)
+- Hugo shortcode usage and formatting
+- Cross-reference accuracy and consistency
+- Overall structure and organization
+- Writing clarity and readability
 
-FORMATTING REVIEW:
-- Frontmatter properly structured
-- UI elements consistently in **bold**
-- Variables and examples in *italics*
-- Commands in `code formatting`
-- Keyboard buttons use <kbd> tags
-- File names use <file> tags
+IMPORTANT: DO NOT flag patterns like '<i>edit</i> edit' or '<i>delete</i> delete' as issues - these are intentional accessibility patterns where icon text serves screen readers and plain text provides visual clarity.
 
-Provide specific feedback organized by:
-1. Critical Issues (must fix)
-2. Style Improvements (should fix)
-3. Minor Suggestions (optional)
+OUTPUT FORMAT - PROVIDE ALL DETAILS TO USER:
+1. **AUTOMATIC FIXES APPLIED** (with before/after examples):
+   - Line X: 'old text' → 'new text'
+   - Line Y: 'old text' → 'new text'
 
-For each issue, include the specific line/section and suggested correction."
+2. **CRITICAL ISSUES** (must fix immediately):
+   - **Line X**: [Current text excerpt]
+     - **Issue**: [Functional problem, broken link, major compliance issue]
+     - **Fix**: [Exact replacement text or specific action]
+     - **Why**: [Impact on functionality/user experience]
+
+3. **IMPORTANT ISSUES** (should fix for consistency):
+   - **Line X**: [Current text excerpt]
+     - **Issue**: [Style/readability problem]
+     - **Fix**: [Exact replacement text or specific action]
+     - **Why**: [Consistency/readability improvement]
+
+4. **MINOR SUGGESTIONS** (optional enhancements):
+   - **Line X**: [Current text excerpt]
+     - **Suggestion**: [Possible improvement]
+     - **Benefit**: [Enhancement value]
+
+5. **CHANGE TRACKING CHECKLIST**:
+   - [x] Automatic fixes applied (X items)
+   - [ ] Critical issue 1: [Brief description with line number]
+   - [ ] Critical issue 2: [Brief description with line number]
+   - [ ] Important issue 1: [Brief description with line number]
+   - [ ] etc.
+
+IMPORTANT: Include specific line numbers, exact current text, and precise replacement text for every issue. Make each item immediately actionable."
 ```
 
 ---
@@ -197,25 +258,23 @@ Use this checklist after receiving Claude's feedback to ensure all major standar
 
 ---
 
-## Usage Examples
+## Important Usage Notes
 
-### Tutorial Review Example
-```
-Ask Claude: "Please review the tutorial documentation file at /mnt/c/Users/iXUser/Documents/GitHub/documentation/content/SCALE/SCALETutorials/Shares/SMB/_index.md for compliance with TrueNAS tutorial standards using an agent."
-```
+### Easy Copy-and-Replace Process
+1. **Copy the complete prompt** from the appropriate section above
+2. **Use Ctrl+F to find and replace** the placeholder with your file path:
+   - `TUTORIAL_FILE_PATH` → your tutorial file path
+   - `REFERENCE_FILE_PATH` → your reference file path  
+   - `GENERAL_FILE_PATH` → your general documentation file path
+3. **Paste the complete prompt** with your file path into Claude
+4. **Include the full Task tool instructions** for consistent results
 
-### Reference Review Example  
-```
-Ask Claude: "Please review the reference documentation file at /mnt/c/Users/iXUser/Documents/GitHub/documentation/content/SCALE/SCALEUIReference/SystemSettings/FailoverScreen.md for compliance with TrueNAS reference standards using an agent."
-```
-
-### Reference Documentation with Widgets/Components
-```
-Ask Claude: "Please review the reference documentation file at /mnt/c/Users/iXUser/Documents/GitHub/documentation/content/SCALE/SCALEUIReference/Network/NetworkWidget.md for compliance with TrueNAS reference standards using an agent."
-```
-
-### Batch Review
-For multiple files, use the general review prompt and specify the content type in your request.
+### Why Short Prompts Don't Work
+Brief requests like "review this file using the enhanced approach" will NOT work because:
+- Claude has no memory of this system between conversations
+- "Enhanced approach" is undefined without explicit instructions
+- Different Claude instances would produce inconsistent results
+- The specific output format and automated fixes require explicit instruction
 
 ---
 
