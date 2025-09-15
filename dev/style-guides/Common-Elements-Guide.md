@@ -295,7 +295,16 @@ Click the **Edit** <i class="material-icons" aria-hidden="true" title="Edit">edi
 
 **Common Icon Patterns:**
 - `edit` - Edit/modify functions
-- `delete` - Delete/remove functions  
+- `delete` - Delete/remove functions
+
+**Icon + Text Pattern for Accessibility:**
+When referencing UI buttons with icons, include both icon and plain text:
+```markdown
+Click <i class="material-icons" aria-hidden="true" title="Edit">edit</i> **Edit** to modify settings
+```
+- Icon text provides screen reader accessibility
+- Plain text provides visual clarification  
+- This is NOT a duplication error - both serve distinct purposes  
 - `add` - Add/create functions
 - `more_vert` - Additional options menus
 - `info` - Information displays
