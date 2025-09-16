@@ -37,6 +37,36 @@ See the stable [25.04 (Fangtooth)](https://www.truenas.com/docs/scale/25.04/gett
 
 <!-- Hugo-processed content for release notes tab box -->
 <div style="display: none;" id="release-tab-content-source">
+
+  <div data-tab-id="25.10-RC.1" data-tab-label="25.10-RC.1">
+
+{{< hint type=warning title="Early Release Software" >}}
+Early releases are intended for testing and feedback purposes.
+Do not use early-release software for critical tasks.
+{{< /hint >}}
+
+September , 2025
+
+The TrueNAS team is pleased to release TrueNAS 25.10-RC.1!
+This release candidate version has software component updates and new features that are in the polishing phase as well as fixes for issues discovered in 25.10-BETA.1.
+
+Special thanks to (Github users): 
+Visit [our guide](https://www.truenas.com/docs/contributing/) for information on how you too can contribute.
+
+### 25.10-RC.1 Notable changes
+
+* Fixes upgrade blocking issue for systems without BIOS partition ([NAS-137352](https://ixsystems.atlassian.net/browse/NAS-137352)).
+  Resolves traceback during 25.10 upgrades on systems originally deployed with TrueNAS CORE that lack a BIOS partition.
+* Fixes UI Bug Reporting feature "FAILED: This TrueNAS build is experimental" error ([NAS-137445](https://ixsystems.atlassian.net/browse/NAS-137445)).
+  Resolves issue preventing bug report submissions through the UI.
+* Fixes incorrect time sort for frequency on Cloud Sync Tasks screen ([NAS-137096](https://ixsystems.atlassian.net/browse/NAS-137096)).
+* Fixes Users page showing "can not retrieve response" error due to invalid email address ([NAS-137198](https://ixsystems.atlassian.net/browse/NAS-137198)).
+* Fixes Virtual Machines page not refreshing properly ([NAS-136973](https://ixsystems.atlassian.net/browse/NAS-136973)).
+
+<a href="#full-changelog" target="_blank">Click here</a> to see the full 25.10 changelog or visit the <a href="https://ixsystems.atlassian.net/issues/?filter=13361" target="_blank">TrueNAS 25.10-RC.1 (Goldeye) Changelog</a> in Jira.
+
+  </div>
+
   <div data-tab-id="25.10-BETA.1" data-tab-label="25.10-BETA.1">
 
 {{< hint type=warning title="Early Release Software" >}}
@@ -116,21 +146,11 @@ These are ongoing issues that can affect multiple versions in the 25.10 series.
 
 ### Current Known Issues
 
-* An issue blocks some systems from upgrading ([NAS-137352](https://ixsystems.atlassian.net/browse/NAS-137352)).
-
-  During upgrades, 25.10 updates GRUB when it detects a version difference between the current and new GRUB.
-  However, the code expects a BIOS partition to be present, so environments without a BIOS partition return a traceback.
-  Systems initially deployed with TrueNAS SCALE have this partition, but some systems originally deployed with TrueNAS CORE can be impacted.
-* UI Bug Reporting feature fails with a "FAILED: This TrueNAS build is experimental" error ([NAS-137445](https://ixsystems.atlassian.net/browse/NAS-137445)).
-  * Users can manually report bugs directly at [https://ixsystems.atlassian.net/](https://ixsystems.atlassian.net/)
 * NVMe over TCP is incompatible with VMware ESXi environments ([NAS-137372](https://ixsystems.atlassian.net/browse/NAS-137372)).
   TrueNAS 25.10 uses the Linux kernel NVMe over TCP target driver, which lacks support for fused commands required by VMware ESXi.
   This is an upstream kernel limitation that prevents path initialization in ESXi environments.
-* The time sort for frequency on the **Cloud Sync Tasks** screen is incorrect ([NAS-137096](https://ixsystems.atlassian.net/browse/NAS-137096)).
-* **Users** page shows "can not retrieve response" due to invalid email address ([NAS-137198](https://ixsystems.atlassian.net/browse/NAS-137198)).
-* The **Virtual Machines** page doesn't refresh properly ([NAS-136973](https://ixsystems.atlassian.net/browse/NAS-136973)).
 
-<a href="https://ixsystems.atlassian.net/issues/?filter=13197" target="_blank">See the latest status on Jira</a> for public issues discovered in 25.10 that are being resolved in a future TrueNAS release.
+<a href="https://ixsystems.atlassian.net/issues/?filter=13362" target="_blank">See the latest status on Jira</a> for public issues discovered in 25.10 that are being resolved in a future TrueNAS release.
 
 See the [Release Notes](https://forums.truenas.com/c/release-notes/13) section of the TrueNAS forum for ongoing updates about known issues, investigations, and statistics about TrueNAS releases.
 
