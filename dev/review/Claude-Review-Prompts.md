@@ -5,14 +5,12 @@ This system provides comprehensive review and automated fixes for TrueNAS docume
 ## Quick Start Guide
 
 **Step 1**: Choose your prompt type and copy the complete prompt:
-- **Tutorial files** → Use [Tutorial Review and Fix Prompt](#tutorial-review-and-fix-prompt)
-- **Reference/UI docs** → Use [Reference Documentation Review and Fix Prompt](#reference-documentation-review-and-fix-prompt) 
-- **Unknown type** → Use [General Documentation Review and Fix Prompt](#general-documentation-review-and-fix-prompt)
+- **Tutorial drafts** → Use [Draft Tutorial Review and Fix Prompt](#draft-tutorial-review-and-fix-prompt)
+- **Reference/UI drafts** → Use [Draft Reference Documentation Review and Fix Prompt](#draft-reference-documentation-review-and-fix-prompt) 
 
 **Step 2**: Replace the placeholder with your file path:
 - `TUTORIAL_FILE_PATH` → `/path/to/your/tutorial.md`
-- `REFERENCE_FILE_PATH` → `/path/to/your/reference.md`  
-- `GENERAL_FILE_PATH` → `/path/to/your/file.md`
+- `REFERENCE_FILE_PATH` → `/path/to/your/reference.md`
 
 **Step 3**: Paste the complete prompt into Claude and get actionable results!
 
@@ -29,16 +27,18 @@ This system provides comprehensive review and automated fixes for TrueNAS docume
 
 ---
 
-## Tutorial Review and Fix Prompt
+## Draft Tutorial Review and Fix Prompt
 
 ```
-Please review and fix the tutorial documentation file at TUTORIAL_FILE_PATH using an enhanced approach that provides both automated fixes and actionable feedback.
+Please review and improve the DRAFT tutorial documentation file at TUTORIAL_FILE_PATH using a draft-focused approach that prioritizes content clarity and structural issues.
+
+**CONTEXT: This is a draft document** - focus on helping the writer improve content quality, clarity, user experience, and style guide compliance.
 
 Use the Task tool with a general-purpose agent and provide this prompt:
 
 "Read the tutorial style guide at /mnt/c/Users/iXUser/Documents/GitHub/documentation/dev/style-guides/TrueNAS-Tutorial-Style-Guide.md and the common elements guide at /mnt/c/Users/iXUser/Documents/GitHub/documentation/dev/style-guides/Common-Elements-Guide.md.
 
-Then review the tutorial file at TUTORIAL_FILE_PATH for compliance and make automatic fixes where possible:
+Then review the DRAFT tutorial file at TUTORIAL_FILE_PATH with emphasis on content quality and user experience:
 
 AUTOMATED FIXES (use Edit/MultiEdit tools ONLY when absolutely certain):
 - Fix obvious typos and spelling errors (like 'fle' → 'file')
@@ -46,56 +46,84 @@ AUTOMATED FIXES (use Edit/MultiEdit tools ONLY when absolutely certain):
 - Replace 'may' with 'might', 'could', or 'can' (when expressing possibility)
 - Fix actual duplicate words (like 'the the' BUT NEVER 'edit edit' or 'delete delete' patterns with icons)
 - Correct basic punctuation issues (missing periods, extra spaces)
+- Convert markdown images ![alt](src "title") to {{< trueimage src="src" alt="descriptive alt text" id="Readable Description" >}} format
 - DO NOT modify material icon formatting - inline styles may be intentional
 
-ANALYSIS FOR MANUAL REVIEW:
+PRIORITY 1 - CONTENT & CLARITY ANALYSIS:
+- **Task flow logic**: Does the tutorial sequence make sense? Are steps in logical order?
+- **Clarity for international readers**: Flag idioms, cultural references, complex sentence structures
+- **Reading level**: Identify overly complex sentences, jargon without explanation, passive voice
+- **User context**: Does the intro clearly explain what users accomplish and why?
+- **Prerequisites and assumptions**: Are required knowledge/setup steps clearly stated?
+- **Error handling**: Are potential failure points and troubleshooting addressed?
+
+PRIORITY 2 - STRUCTURE & COMPLETENESS:
 - Heading hierarchy compliance (title case H2, sentence case H3+)
 - Introduction structure (functional purpose pattern)
-- Long sentences (over 30 words) - suggest rewrites
-- Passive voice constructions - suggest active alternatives
-- Hugo shortcode usage and cross-references
-- Overall structure and organization issues
+- Step formatting and numbering consistency
+- Cross-reference accuracy and usefulness
+- Screenshot placement and relevance to content
+- Missing sections or incomplete explanations
 
-IMPORTANT: DO NOT flag patterns like '<i>edit</i> edit' or '<i>delete</i> delete' as issues - these are intentional accessibility patterns where icon text serves screen readers and plain text provides visual clarity.
+PRIORITY 3 - STYLE GUIDE COMPLIANCE:
+- Hugo shortcode usage and formatting
+- UI element documentation (bold formatting, naming consistency)
+- Voice and tense consistency
+- Navigation path accuracy
+- Include file analysis for shared content
+
+IMPORTANT: 
+- DO NOT flag patterns like '<i>edit</i> edit' or '<i>delete</i> delete' as issues - these are intentional accessibility patterns
+- DO NOT suggest filename changes or naming convention issues - filenames are managed separately from content quality
+- DO NOT modify icon + text patterns like 'delete icon' or 'edit button' - these are acceptable as-is
+- DO NOT flag &NewLine; at the beginning of include files as issues - this is intentional Hugo formatting
+- Hugo {{< include file="..." >}} shortcodes inject content inline - read the included files and analyze their content for style guide compliance just like the main document
+- When suggesting fixes for included content, reference the include file path: "Include file /static/includes/filename.md, Line X:"
+- Include file improvements benefit multiple documents that use the same includes
+- Focus on helping the writer create better content for users
 
 OUTPUT FORMAT - PROVIDE ALL DETAILS TO USER:
 1. **AUTOMATIC FIXES APPLIED** (with before/after examples):
-   - Line X: 'old text' → 'new text' 
+   - Line X: 'old text' → 'new text'
    - Line Y: 'old text' → 'new text'
 
-2. **CRITICAL ISSUES** (must fix immediately):
+2. **CONTENT & CLARITY ISSUES** (Priority 1 - most important for draft improvement):
    - **Line X**: [Current text excerpt]
-     - **Issue**: [What's wrong]
-     - **Fix**: [Exact replacement text or specific action]
-     - **Why**: [Impact on users/functionality]
+     - **Issue**: [Clarity, flow, or user experience problem]
+     - **Suggestion**: [How to improve for better user understanding]
+     - **Why**: [Impact on user success/international accessibility]
 
-3. **IMPORTANT ISSUES** (should fix for style compliance):
-   - **Line X**: [Current text excerpt] 
-     - **Issue**: [Style guide violation]
-     - **Fix**: [Exact replacement text or specific action]
-     - **Why**: [Style/readability improvement]
-
-4. **MINOR SUGGESTIONS** (optional enhancements):
+3. **STRUCTURAL ISSUES** (Priority 2 - important for completeness):
    - **Line X**: [Current text excerpt]
-     - **Suggestion**: [Possible improvement]
-     - **Benefit**: [Why this helps]
+     - **Issue**: [Missing content, organization, or structural problem]
+     - **Suggestion**: [What to add/reorganize/clarify]
+     - **Why**: [How this improves the tutorial experience]
 
-5. **CHANGE TRACKING CHECKLIST**:
-   - [x] Automatic fixes applied (3 items)
-   - [ ] Critical issue 1: [Brief description with line number]
-   - [ ] Critical issue 2: [Brief description with line number] 
-   - [ ] Important issue 1: [Brief description with line number]
-   - [ ] etc.
+4. **STYLE & FORMATTING** (Priority 3 - polish for publication):
+   - **Line X**: [Current text excerpt]
+     - **Issue**: [Style guide or formatting inconsistency]
+     - **Fix**: [Exact replacement text or specific action]
+     - **Why**: [Consistency/standard compliance benefit]
 
-IMPORTANT: Include specific line numbers, exact current text, and precise replacement text for every issue. Make each item immediately actionable."
+5. **DRAFT IMPROVEMENT CHECKLIST**:
+   - [x] Automatic fixes applied (X items)
+   - [ ] Content issue 1: [Brief description with line number]
+   - [ ] Content issue 2: [Brief description with line number]  
+   - [ ] Structural issue 1: [Brief description with line number]
+   - [ ] Style issue 1: [Brief description with line number]
+
+IMPORTANT: This is draft feedback - help the writer create clear, usable content that follows style guide standards."
 ```
 
 ---
 
-## Reference Documentation Review and Fix Prompt
+
+## Draft Reference Documentation Review and Fix Prompt
 
 ```
-Please review and fix the reference documentation file at REFERENCE_FILE_PATH using an enhanced approach that provides both automated fixes and actionable feedback.
+Please review and improve the DRAFT reference documentation file at REFERENCE_FILE_PATH using a draft-focused approach that prioritizes content completeness and user clarity.
+
+**CONTEXT: This is a draft document** - focus on helping the writer create comprehensive, clear UI documentation that users can successfully follow.
 
 This prompt handles all reference documentation types including screens, widgets, dialogs, and UI components.
 
@@ -103,119 +131,81 @@ Use the Task tool with a general-purpose agent and provide this prompt:
 
 "Read the reference style guide at /mnt/c/Users/iXUser/Documents/GitHub/documentation/dev/style-guides/TrueNAS-Reference-Style-Guide.md and the common elements guide at /mnt/c/Users/iXUser/Documents/GitHub/documentation/dev/style-guides/Common-Elements-Guide.md.
 
-Then review the reference file at REFERENCE_FILE_PATH for compliance and make automatic fixes where possible:
+Then review the DRAFT reference file at REFERENCE_FILE_PATH with emphasis on content completeness and usability:
 
 AUTOMATED FIXES (use Edit/MultiEdit tools ONLY when absolutely certain):
 - Fix obvious typos and spelling errors (like 'fle' → 'file')
 - Replace 'will' with present tense alternatives (when clearly future tense)
 - Replace 'may' with 'might', 'could', or 'can' (when expressing possibility)
-- Fix actual duplicate words (like 'the the' BUT NEVER 'edit edit' or 'delete delete' patterns with icons)
+- Fix actual duplicate words (like 'the the' BUT NEVER icon patterns like 'edit edit', 'delete delete', or 'delete icon')
+- Convert markdown images ![alt](src "title") to {{< trueimage src="src" alt="descriptive alt text" id="Readable Description" >}} format
 - DO NOT modify material icon formatting - inline styles may be intentional
+- DO NOT change icon + text patterns (like 'delete icon' or 'edit button') - these are acceptable as-is
 - Fix basic table formatting issues (only clear errors like missing pipes)
 
-ANALYSIS FOR MANUAL REVIEW:
-- Table structure ({{< truetable >}} usage, Setting|Description format)
-- Field descriptions completeness and clarity
-- Screenshot placement and alt-text quality
-- Cross-reference accuracy and format
-- UI element documentation completeness
+PRIORITY 1 - CONTENT COMPLETENESS & CLARITY:
+- **Field/setting descriptions**: Are all UI elements documented? Do descriptions explain purpose and impact?
+- **User task context**: Can users understand what each setting accomplishes and when to use it?
+- **International reader clarity**: Flag complex sentences, idioms, cultural assumptions
+- **Missing information**: Are there UI elements shown in screenshots but not documented?
+- **Prerequisite context**: Do users understand what screen/feature this relates to in their workflow?
+- **Value/option explanations**: Are dropdown options, field formats, or valid inputs clearly explained?
+
+PRIORITY 2 - STRUCTURE & ORGANIZATION:
 - Hierarchical organization (Widget → List → Details)
+- Table structure ({{< truetable >}} usage, Setting|Description format)
+- Screenshot placement and relevance to content sections
+- Cross-reference accuracy and usefulness for user navigation
+- Navigation path accuracy (how users reach this screen)
+- Missing sections for UI components visible in screenshots
 
-IMPORTANT: DO NOT flag patterns like '<i>edit</i> edit' or '<i>delete</i> delete' as issues - these are intentional accessibility patterns where icon text serves screen readers and plain text provides visual clarity.
-
-OUTPUT FORMAT - PROVIDE ALL DETAILS TO USER:
-1. **AUTOMATIC FIXES APPLIED** (with before/after examples):
-   - Line X: 'old text' → 'new text'
-   - Line Y: 'old text' → 'new text'
-
-2. **CRITICAL ISSUES** (must fix immediately):
-   - **Line X**: [Current text excerpt]
-     - **Issue**: [What's wrong - missing fields, broken links, etc.]
-     - **Fix**: [Exact replacement text or specific action]
-     - **Why**: [Impact on user understanding/functionality]
-
-3. **IMPORTANT ISSUES** (should fix for consistency):
-   - **Line X**: [Current text excerpt]
-     - **Issue**: [Formatting/description problem]
-     - **Fix**: [Exact replacement text or specific action] 
-     - **Why**: [Consistency/clarity improvement]
-
-4. **MINOR SUGGESTIONS** (optional enhancements):
-   - **Line X**: [Current text excerpt]
-     - **Suggestion**: [Possible improvement]
-     - **Benefit**: [How this helps users]
-
-5. **CHANGE TRACKING CHECKLIST**:
-   - [x] Automatic fixes applied (X items)
-   - [ ] Critical issue 1: [Brief description with line number]
-   - [ ] Critical issue 2: [Brief description with line number]
-   - [ ] Important issue 1: [Brief description with line number] 
-   - [ ] etc.
-
-IMPORTANT: Include specific line numbers, exact current text, and precise replacement text for every issue. Make each item immediately actionable."
-```
-
-
----
-
-## General Documentation Review and Fix Prompt
-
-```
-Please review and fix the documentation file at GENERAL_FILE_PATH for general TrueNAS documentation compliance using an enhanced approach.
-
-Use the Task tool with a general-purpose agent and provide this prompt:
-
-"Read the common elements guide at /mnt/c/Users/iXUser/Documents/GitHub/documentation/dev/style-guides/Common-Elements-Guide.md and determine if this is tutorial or reference content.
-
-Then review the file at GENERAL_FILE_PATH for compliance and make automatic fixes where possible:
-
-AUTOMATED FIXES (use Edit/MultiEdit tools ONLY when absolutely certain):
-- Fix obvious typos and spelling errors (like 'fle' → 'file')
-- Replace 'will' with present tense alternatives (when clearly future tense) 
-- Replace 'may' with 'might', 'could', or 'can' (when expressing possibility)
-- Fix actual duplicate words (like 'the the' BUT NEVER 'edit edit' or 'delete delete' patterns with icons)
-- Correct basic punctuation issues (missing periods, extra spaces)
-- DO NOT modify material icon formatting - inline styles may be intentional
-
-ANALYSIS FOR MANUAL REVIEW:
-- Content type compliance (tutorial vs reference voice)
+PRIORITY 3 - STYLE GUIDE COMPLIANCE:
+- UI element documentation completeness
 - Hugo shortcode usage and formatting
-- Cross-reference accuracy and consistency
-- Overall structure and organization
-- Writing clarity and readability
+- Voice and tense consistency
+- Include file analysis for shared content
 
-IMPORTANT: DO NOT flag patterns like '<i>edit</i> edit' or '<i>delete</i> delete' as issues - these are intentional accessibility patterns where icon text serves screen readers and plain text provides visual clarity.
+IMPORTANT: 
+- DO NOT flag patterns like '<i>edit</i> edit' or '<i>delete</i> delete' as issues - these are intentional accessibility patterns
+- DO NOT suggest filename changes or naming convention issues - filenames are managed separately from content quality
+- DO NOT modify icon + text patterns like 'delete icon' or 'edit button' - these are acceptable as-is
+- DO NOT flag &NewLine; at the beginning of include files as issues - this is intentional Hugo formatting
+- Hugo {{< include file="..." >}} shortcodes inject content inline - read the included files and analyze their content for style guide compliance just like the main document
+- When suggesting fixes for included content, reference the include file path: "Include file /static/includes/filename.md, Line X:"
+- Include file improvements benefit multiple documents that use the same includes
+- Focus on helping the writer create complete, usable UI documentation
 
 OUTPUT FORMAT - PROVIDE ALL DETAILS TO USER:
 1. **AUTOMATIC FIXES APPLIED** (with before/after examples):
    - Line X: 'old text' → 'new text'
    - Line Y: 'old text' → 'new text'
 
-2. **CRITICAL ISSUES** (must fix immediately):
+2. **CONTENT COMPLETENESS ISSUES** (Priority 1 - most important for draft improvement):
+   - **Line X**: [Current text excerpt or missing content area]
+     - **Issue**: [Missing documentation, unclear description, or user context problem]
+     - **Suggestion**: [What information to add or clarify for users]
+     - **Why**: [How this helps users successfully complete their tasks]
+
+3. **STRUCTURE & ORGANIZATION ISSUES** (Priority 2 - important for usability):
    - **Line X**: [Current text excerpt]
-     - **Issue**: [Functional problem, broken link, major compliance issue]
+     - **Issue**: [Organization, navigation, or structural problem]
+     - **Suggestion**: [How to improve layout/organization/flow]
+     - **Why**: [How this improves user experience with the documentation]
+
+4. **STYLE & FORMATTING** (Priority 3 - polish for publication):
+   - **Line X**: [Current text excerpt]
+     - **Issue**: [Style guide or formatting inconsistency]
      - **Fix**: [Exact replacement text or specific action]
-     - **Why**: [Impact on functionality/user experience]
+     - **Why**: [Consistency/standard compliance benefit]
 
-3. **IMPORTANT ISSUES** (should fix for consistency):
-   - **Line X**: [Current text excerpt]
-     - **Issue**: [Style/readability problem]
-     - **Fix**: [Exact replacement text or specific action]
-     - **Why**: [Consistency/readability improvement]
-
-4. **MINOR SUGGESTIONS** (optional enhancements):
-   - **Line X**: [Current text excerpt]
-     - **Suggestion**: [Possible improvement]
-     - **Benefit**: [Enhancement value]
-
-5. **CHANGE TRACKING CHECKLIST**:
+5. **DRAFT IMPROVEMENT CHECKLIST**:
    - [x] Automatic fixes applied (X items)
-   - [ ] Critical issue 1: [Brief description with line number]
-   - [ ] Critical issue 2: [Brief description with line number]
-   - [ ] Important issue 1: [Brief description with line number]
-   - [ ] etc.
+   - [ ] Content issue 1: [Brief description with line number]
+   - [ ] Content issue 2: [Brief description with line number]
+   - [ ] Structural issue 1: [Brief description with line number]
+   - [ ] Style issue 1: [Brief description with line number]
 
-IMPORTANT: Include specific line numbers, exact current text, and precise replacement text for every issue. Make each item immediately actionable."
+IMPORTANT: This is draft feedback - help the writer create complete, clear UI documentation that follows style guide standards."
 ```
 
 ---
