@@ -150,7 +150,7 @@ Large Language Models (LLMs) like Claude are **probabilistic systems**, not dete
 - Offers fresh perspective on content clarity
 - Identifies structural gaps in documentation
 
-### What We Don't Recommend
+### What We Recommend
 
 **❌ Don't use this system for:**
 - Final publication review without human oversight
