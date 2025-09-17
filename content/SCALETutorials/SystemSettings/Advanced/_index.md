@@ -7,6 +7,9 @@ tags:
  - settings
  - replication
  - pools
+ - audit
+ - resliver
+ - system dataset
 keywords:
 - enterprise storage solutions
 - nas storage solutions
@@ -21,23 +24,31 @@ Enterprise-licensed system administrators have additional options to configure s
 
 {{< include file="/static/includes/AdvancedSettingsWarningSCALE.md" >}}
 
-{{< trueimage src="/images/SCALE/SystemSettings/SystemAdvancedScreen.png" alt="TrueNAS Advanced Settings Screen" id="TrueNAS Advanced Settings Screen" >}}
+{{< trueimage src="/images/SCALE/SystemSettings/SystemAdvancedScreen.png" alt="Advanced Settings Screen" id="Advanced Settings Screen" >}}
 
-{{< trueimage src="/images/SCALE/SystemSettings/SystemAdvancedScreen2.png" alt="TrueNAS Advanced Settings Screen" id="TrueNAS Advanced Settings Screen" >}}
+{{< trueimage src="/images/SCALE/SystemSettings/SystemAdvancedScreen2.png" alt="Advanced Settings Screen (cont.'d)" id="Advanced Settings Screen (cont.'d)" >}}
+
+{{< trueimage src="/images/SCALE/SystemSettings/SystemAdvancedScreen3.png" alt="Advanced Settings Screen (cont.'d)" id="Advanced Settings Screen (cont.'d)" >}}
+
+{{< enterprise >}}
+Enterprise-licensed systems include configuration options for STIG and FIPS security, and failover when the system is a High Availability system.
+
+{{< trueimage src="/images/SCALE/SystemSettings/SystemAdvancedScreenHA3.png" alt="Advanced Settings Screen for HA" id="Advanced Settings Screen for HA" >}}
+
+{{< /enterprise >}}
 
 {{<include file="/static/includes/addcolumnorganizer.md">}}
 
-This article provides information on sysctl, system dataset pool, setting the maximum number of simultaneous replication tasks the system can perform, and managing sessions.
-
 ## Configuring System Auditing
 
-The **Audit** widget displays the current audit storage and retention policy settings. The public-facing [TrueNAS API]({{< ref "/API" >}}) allows querying audit records, exporting audit reports, and configuring audit dataset settings and retention periods.
+The **Audit** widget displays the current audit storage and retention policy settings.
+The public-facing [TrueNAS API]({{< ref "/SCALE/API" >}}) allows querying audit records, exporting audit reports, and configuring audit dataset settings and retention periods.
 
 {{< trueimage src="/images/SCALE/SystemSettings/SystemAdvancedAuditWidget.png" alt="Advanced System Setting Audit Widget" id="Advanced System Setting Audit Widget" >}}
 
 {{< include file="/static/includes/ConfigureSystemAuditSCALE.md" >}}
 
-Click **Configure** to open the **Audit** configuration screen and [manage storage and retention policies]({{< ref "AuditingSCALE.md#configuring-audit-storage-and-retention-policies" >}})
+Click **Configure** to open the **Audit** configuration screen and [to manage storage and retention policies for audit logs]({{< ref "AuditingSCALE.md#configuring-audit-storage-and-retention-policies" >}}).
 
 ## Managing Sysctl Variables
 
@@ -57,13 +68,20 @@ Enter a description and then select **Enabled**. To disable but not delete the v
 
 Click **Save**.
 
-## Managing the System Dataset Pool
+## Adding NTP Servers
 
-**Storage** widget displays the pool configured as the system dataset pool and allows users to select the storage pool they want to hold the system dataset.
+The **NTP Servers** widget allows users to add Network Time Protocol (NTP) servers.
+These sync the local system time with an accurate external reference.
+By default, new installations use several existing NTP servers. TrueNAS supports adding custom NTP servers.
+
+## Managing the System Dataset
+
+**Storage** widget shows the pool configured as the system dataset pool and allows users to select a different storage pool to hold the system dataset.
 The system dataset stores core files for debugging and keys for encrypted pools.
 It also stores Samba4 metadata, such as the user and group cache and share-level permissions.
+It also includes the reslivering priority setting.
 
-![AdvancedSystemStorageWidget](/images/SCALE/SystemSettings/AdvancedSystemStorageWidget.png "TrueNAS Advanced System Dataset Pool Widget")
+{{< trueimage src="/images/SCALE/SystemSettings/AdvancedSystemStorageWidget.png" alt="Storage Widget" id="Storage Widget" >}}
 
 **Configure** opens the **Storage Settings** configuration screen.
 
@@ -73,10 +91,19 @@ If the system has one pool, TrueNAS configures that pool as the system dataset p
 If your system has more than one pool, you can set the system dataset pool using the **Select Pool** dropdown.
 Users can move the system dataset to an unencrypted or key-encrypted pool.
 
-![SystemDatasetPoolConfigScreen](/images/SCALE/SystemSettings/SystemStorageConfigScreen.png "TrueNAS Advanced Settings System Dataset Pool Screen")
+{{< trueimage src="/images/SCALE/SystemSettings/SystemStorageConfigScreen.png" alt="System Dataset Pool Config Screen" id="System Dataset Pool Config Screen" >}}
 
 Users can move the system dataset to a key-encrypted pool, but cannot change the pool encryption type afterward.
 If the encrypted pool already has a passphrase set, you cannot move the system dataset to that pool.
+
+#### Changing Resilvering Priority
+
+To set a different resiliver priority, select **Run Resilvering At Higher Priority At Certain Times**.
+Two additional setting options show that allow you to configure the day and time range for resilvering to run.
+
+{{< trueimage src="/images/SCALE/SystemSettings/SystemStorageConfigScreenResilverSettings.png" alt="Resilver Prioirty Settings" id="Resilver Prioirty Settings" >}}
+
+To return to the default resilver prioirty, clear the checkbox and click **Save**.
 
 ## Setting the Number of Replication Tasks
 
@@ -104,7 +131,7 @@ Entering an IP address limits access to the system to only the address(es) enter
 
 ## Security Settings
 {{< enterprise >}}
-Only Enterprise-licensed systems show the **Security** widget and have access to these settings.
+Only Enterprise-licensed systems show the **Security** widget and have access to the STIG and FIPS settings.
 
 Administrators considering enabling STIG and FIPS security settings should contact TrueNAS Support before making any changes.
 
