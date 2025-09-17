@@ -14,9 +14,6 @@ tags:
 
 The **Containers** screen allows users to add, edit, or manage Linux containers.
 
-{{< hint type=info >}}
-{{< include file="/static/includes/containers-vms.md" >}}
-{{< /hint >}}
 
 The screen header displays a <i class="fa fa-cog" aria-hidden="true"></i> **Pool is not selected** status before a pool for containers is selected.
 See [**Global Settings**](#global-settings) for more information.
@@ -76,11 +73,6 @@ The **Volumes** screen lists all volumes currently configured for the containers
 
 **Import Zvols** opens the [**Import Zvol**](#import-zvol) dialog to import an existing Zvol as a containers volume.
 
-**Upload ISO** opens a file browser to select an <file>.iso</file> file from the client computer and upload it to TrueNAS for use in containers.
-
-{{< expand "Image Filename Requirements" "v" >}}
-{{< include file="/static/includes/InstanceImageFilenames.md" >}}
-{{< /expand >}}
 
 #### Create Volumes
 
@@ -178,7 +170,6 @@ The **CPU & Memory** settings specify the number of virtual CPU cores to allocat
 ### Environment
 
 The **Environment** settings configure optional environment variables to run on boot or execute.
-These settings are only available for containers and cannot be used with VMs.
 
 **Add** displays a set of environment fields.
 
@@ -281,8 +272,6 @@ Options are **Start All Selected**, **Stop All Selected**, and **Restart All Sel
 {{< trueimage src="/images/SCALE/Virtualization/InstancesBulkActions.png" alt="Bulk Actions" id="Bulk Actions" >}}
 
 ## Containers Widgets
-
-<!-- I'm leaving VM widgets unchanged since some users on 25.04.2 will still have VMs visible on the Containers screen. -->
 
 The **Details for *Container*** widgets display information and configuration options for the selected container.
 
@@ -409,7 +398,6 @@ The **Delete Item** dialog asks for confirmation to delete the selected NIC.
 
 The **Proxies** widget displays the network proxy settings configured for the container.
 It allows you to manage these settings, including adding, editing, or removing proxies.
-These settings are only available for containers and cannot be used with VMs.
 
 {{< trueimage src="/images/SCALE/Virtualization/ProxiesWidget.png" alt="Proxies Widget" id="Proxies Widget" >}}
 
@@ -438,9 +426,8 @@ The **Delete Item** dialog asks for confirmation to delete the selected proxy co
 
 ### Idmap Widget
 
-The **Idmap** widget shows the user ID (UID) and group ID (GID) mappings used by the container to translate IDs between the host and the container or VM.
+The **Idmap** widget shows the user ID (UID) and group ID (GID) mappings used by the container to translate IDs between the host and the container.
 It provides details such as the **Host ID**, **Maprange**, and **NS ID** for both UIDs and GIDs.
-These settings are only available for containers and cannot be used with VMs.
 
 {{< trueimage src="/images/SCALE/Virtualization/IdmapWidget.png" alt="Idmap Widget" id="Idmap Widget" >}}
 
@@ -481,9 +468,8 @@ The **Metrics** widget displays real-time graphs that monitor container performa
 ## Edit Container Screen
 
 The **Edit Container: *Container*** screen settings are a subset of those found on the **[Create Container Wizard](#create-container-wizard)** screens.
-It includes the general **Container Configuration** and **CPU and Memory** settings for all containers.
+It includes the general **Container Configuration** and **CPU and Memory** settings for containers.
 Additionally, containers include **Environment** settings.
-VMs include **VNC** and **Security** settings.
 To edit device, disk, network, or proxy settings, use the [Containers Widgets](#containers-widgets) on the **Containers** screen.
 
 ### Edit Container Configuration Settings
@@ -502,40 +488,16 @@ The **CPU & Memory** settings on the **Edit** screen are the same as those in th
 
 {{< include file="/static/includes/ContainerCPUandMemorySettings.md" >}}
 
-### Edit VNC Settings
-
-The **VNC** settings on the **Edit** screen are the same as those in the **Create Container** wizard.
-These settings are only available for VMs and cannot be used with containers.
-
-{{< trueimage src="/images/SCALE/Virtualization/EditVNC.png" alt="Edit VNC" id="Edit VNC" >}}
-
-{{< include file="/static/includes/InstanceVNCSettings.md" >}}
-
 ### Edit Environment Settings  
 
 The **Environment** settings on the **Edit** screen are the same as those in the **Create Container** wizard.
-These settings are only available for containers and cannot be used with VMs.
+These settings configure optional environment variables for the container.
 
 **Add** displays a set of environment fields.
 
 {{< trueimage src="/images/SCALE/Virtualization/EditEnvironment.png" alt="Environment Settings" id="Environment Settings" >}}  
 
 {{< include file="/static/includes/InstanceEnvironmentSettings.md" >}}
-
-### Edit Security Settings  
-
-The **Security** settings on the **Edit** screen allow you to enable Secure Boot for the container, ensuring that only trusted, signed software runs during the startup process.
-These settings are only available for VMs and cannot be used with containers.  
-
-{{< trueimage src="/images/SCALE/Virtualization/EditSecurity.png" alt="Security Settings" id="Security Settings" >}}  
-
-{{< expand "Security Settings" "v" >}}  
-{{< truetable >}}  
-| Setting | Description |  
-|---------|-------------|  
-| **Secure Boot** | Select to ensure only trusted, signed software runs during startup. Some images are not compatible with Secure Boot. |  
-{{< /truetable >}}
-{{< /expand >}}
 
 ## Add PCI Passthrough Device Screen
 
