@@ -104,7 +104,7 @@ If the encrypted pool already has a passphrase set, you cannot move the system d
 To set a different resiliver priority, select **Run Resilvering At Higher Priority At Certain Times**.
 Two additional setting options show that allow you to configure the day and time range for resilvering to run.
 
-{{< trueimage src="/images/SCALE/SystemSettings/SystemStorageConfigScreenResilverSettingsr.png" alt="Resilver Prioirty Settings" id="Resilver Prioirty Settings" >}}
+{{< trueimage src="/images/SCALE/SystemSettings/SystemStorageConfigScreenResilverSettings.png" alt="Resilver Prioirty Settings" id="Resilver Prioirty Settings" >}}
 
 To return to the default resilver prioirty, clear the checkbox and click **Save**.
 

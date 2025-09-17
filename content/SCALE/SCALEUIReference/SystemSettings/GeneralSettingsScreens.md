@@ -60,7 +60,7 @@ The **Rate this page** is the default selection after clicking the option to rat
 
 #### Report a Bug
 
-{{< trueimage src="/images/SCALE/SystemSettings/SendFeedbackindow.png" alt="Send Feedback Window" id="Send Feedback Window" >}}
+{{< trueimage src="/images/SCALE/SystemSettings/SendFeedbackReportABugWindow.png" alt="Send Feedback Window" id="Send Feedback Window" >}}
 
 **Subject** is a text entry field for a brief description of an issue experienced. For example, *Traceback received when pressing Save*.
 
@@ -78,7 +78,7 @@ The **Rate this page** is the default selection after clicking the option to rat
 
 Select the **Rate this page** to show options to submit review feedback on a UI screen.
 
-{{< trueimage src="/images/SCALE/SystemSettings/RateThisPageindow.png" alt="Rate this page Window" id="Rate this page Window" >}}
+{{< trueimage src="/images/SCALE/SystemSettings/FeedbackWindow.png" alt="Rate this page Window" id="Rate this page Window" >}}
 
 Stars set a rating using one (lowest) to five (best) stars.
 

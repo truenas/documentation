@@ -210,7 +210,7 @@ The **Add Cron Job** and **Edit Cron Job** configuration screens display the sam
 
 ## Init/Shutdown Scripts Widget
 
-The **Init/Shutdown Scripts** widget displays **No Init/Shutdown Scripts configured** until you add either a command or scrip; then the widget lists the scripts configured on the system.
+The **Init/Shutdown Scripts** widget displays **No Init/Shutdown Scripts configured** until you add either a command or script; then the widget lists the scripts configured on the system.
 
 {{< trueimage src="/images/SCALE/SystemSettings/AdvancedSettingsInitShutdownScriptWidget.png" alt="Init/Shutdown Scripts Widget" id="Init/Shutdown Scripts Widget" >}}
 
