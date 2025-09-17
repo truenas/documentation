@@ -116,7 +116,8 @@ This is a small maintenance release that includes fixes for ACL editor behavior 
 ### 25.04.2.4 Notable Changes
 
 * Fixes an issue where the ACL editor ignored unchecked "Apply Owner" and "Apply Group" checkboxes and always applied owner/group changes recursively, potentially causing unintended ownership changes ([NAS-137378](https://ixsystems.atlassian.net/browse/NAS-137378)).
-* Fixes an issue where SMB threads could become stuck at 100% CPU usage on Windows clients, causing Windows Explorer to become unresponsive until the thread was manually killed ([NAS-137095](https://ixsystems.atlassian.net/browse/NAS-137095)).
+* Fixes SMB service hanging during Windows client file operations ([NAS-137095](https://ixsystems.atlassian.net/browse/NAS-137095)).
+  Resolves issue where Windows clients became unresponsive during file moves and editing operations, requiring manual thread termination.
 
 ## 25.04.2.3
 
