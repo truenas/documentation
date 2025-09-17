@@ -143,7 +143,7 @@ There is also an option to configure a remote syslog server for recording system
 ## Audit Widget
 
 The **Audit** widget displays the current audit storage and retention policy settings.
-The public-facing [TrueNAS API]({{< ref "/SCALE/API" >}}) allows querying audit records, exporting audit reports, and configuring audit dataset settings and retention periods.
+The public-facing [TrueNAS API]({{< ref "API" >}}) allows querying audit records, exporting audit reports, and configuring audit dataset settings and retention periods.
 
 {{< trueimage src="/images/SCALE/SystemSettings/SystemAdvancedAuditWidget.png" alt="Advanced System Setting Audit Widget" id="Advanced System Setting Audit Widget" >}}
 
