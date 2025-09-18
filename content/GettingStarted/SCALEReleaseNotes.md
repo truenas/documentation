@@ -78,6 +78,10 @@ This release candidate version has software component updates and new features t
   Resolves issue where critical temperature alerts were triggered incorrectly when threshold was set to 0 degrees Celsius.
 * Enhances session security with improved random number generation ([NAS-137318](https://ixsystems.atlassian.net/browse/NAS-137318)).
   Uses SSL-based random number generator for creating session IDs, improving overall cryptographic security.
+* Consolidates Users page interface ([NAS-137443](https://ixsystems.atlassian.net/browse/NAS-137443)).
+  Removes legacy Users page and renames "Users (WIP)" to "Users" for a cleaner interface experience.
+* Adds VM disk image import and export capabilities ([NAS-137334](https://ixsystems.atlassian.net/browse/NAS-137334), [NAS-137335](https://ixsystems.atlassian.net/browse/NAS-137335)).
+  Enables importing disk images (QCOW2, QED, RAW, VDI, VHDX, and VMDK formats) during VM creation and exporting VM disks to portable image formats, streamlining VM migration and setup processes.
 
 <a href="#full-changelog" target="_blank">Click here</a> to see the full 25.10 changelog or visit the <a href="https://ixsystems.atlassian.net/issues/?filter=13361" target="_blank">TrueNAS 25.10-RC.1 (Goldeye) Changelog</a> in Jira.
 
