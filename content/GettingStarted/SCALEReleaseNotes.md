@@ -54,34 +54,34 @@ This release candidate version has software component updates and new features t
 
 * Enhances remote syslog configuration to support up to two servers ([NAS-137315](https://ixsystems.atlassian.net/browse/NAS-137315)).
   Updates the **Syslog** configuration options in **System > Advanced Settings** to allow configuring multiple syslog servers with individual transport and TLS certificate options.
+* Improves NVMeoF target configuration with automatic port defaults ([NAS-137394](https://ixsystems.atlassian.net/browse/NAS-137394), [NAS-137395](https://ixsystems.atlassian.net/browse/NAS-137395)).
+  Sets port 4420 as the default for NVMe over Fabric targets, eliminating the need for manual port configuration.
+* Clarifies VM secure boot configuration as create-only setting ([NAS-137397](https://ixsystems.atlassian.net/browse/NAS-137397)).
+  Removes secure boot option from VM edit form as this setting can only be configured during initial VM creation.
 * Fixes upgrade blocking issue for systems without BIOS partition ([NAS-137352](https://ixsystems.atlassian.net/browse/NAS-137352)).
   Resolves traceback during 25.10 upgrades on systems originally deployed with TrueNAS CORE that lack a BIOS partition.
+* Fixes SMB service hanging during Windows client file operations ([NAS-137095](https://ixsystems.atlassian.net/browse/NAS-137095)).
+  Resolves issue where Windows clients became unresponsive during file moves and editing operations, requiring manual thread termination.
+* Fixes incorrect disk temperature threshold alerts ([NAS-137385](https://ixsystems.atlassian.net/browse/NAS-137385)).
+  Resolves issue where critical temperature alerts were triggered incorrectly when threshold was set to 0 degrees Celsius.
+* Improves password manager compatibility with WebUI login screen ([NAS-136335](https://ixsystems.atlassian.net/browse/NAS-136335)).
+  Resolves issue where password managers like Bitwarden and Dashlane failed to automatically recognize and fill login credentials.
+* Consolidates Users page interface ([NAS-137443](https://ixsystems.atlassian.net/browse/NAS-137443)).
+  Removes legacy Users page and renames "Users (WIP)" to "Users" for a cleaner interface experience.
+* Fixes network usage units display on Applications page ([NAS-137428](https://ixsystems.atlassian.net/browse/NAS-137428)).
+  Corrects network usage units from lowercase 'b' to capital 'B' (B/s, kB/s, MB/s) to properly indicate bytes per second.
 * Fixes UI Bug Reporting feature "FAILED: This TrueNAS build is experimental" error ([NAS-137445](https://ixsystems.atlassian.net/browse/NAS-137445)).
   Resolves issue preventing bug report submissions through the UI.
 * Fixes incorrect time sort for frequency on Cloud Sync Tasks screen ([NAS-137096](https://ixsystems.atlassian.net/browse/NAS-137096)).
 * Fixes Users page showing "can not retrieve response" error due to invalid email address ([NAS-137198](https://ixsystems.atlassian.net/browse/NAS-137198)).
 * Fixes Virtual Machines page not refreshing properly ([NAS-136973](https://ixsystems.atlassian.net/browse/NAS-136973)).
-* Fixes SMB service hanging during Windows client file operations ([NAS-137095](https://ixsystems.atlassian.net/browse/NAS-137095)).
-  Resolves issue where Windows clients became unresponsive during file moves and editing operations, requiring manual thread termination.
-* Improves password manager compatibility with WebUI login screen ([NAS-136335](https://ixsystems.atlassian.net/browse/NAS-136335)).
-  Resolves issue where password managers like Bitwarden and Dashlane failed to automatically recognize and fill login credentials.
-* Improves NVMeoF target configuration with automatic port defaults ([NAS-137394](https://ixsystems.atlassian.net/browse/NAS-137394), [NAS-137395](https://ixsystems.atlassian.net/browse/NAS-137395)).
-  Sets port 4420 as the default for NVMe over Fabric targets, eliminating the need for manual port configuration.
-* Clarifies VM secure boot configuration as create-only setting ([NAS-137397](https://ixsystems.atlassian.net/browse/NAS-137397)).
-  Removes secure boot option from VM edit form as this setting can only be configured during initial VM creation.
-* Fixes network usage units display on Applications page ([NAS-137428](https://ixsystems.atlassian.net/browse/NAS-137428)).
-  Corrects network usage units from lowercase 'b' to capital 'B' (B/s, kB/s, MB/s) to properly indicate bytes per second.
-* Fixes an issue where the ACL editor ignored unchecked "Apply Owner" and "Apply Group" checkboxes and always applied owner/group changes recursively, potentially causing unintended ownership changes ([NAS-137378](https://ixsystems.atlassian.net/browse/NAS-137378)).
-* Improves Virtual Machine configuration performance ([NAS-136937](https://ixsystems.atlassian.net/browse/NAS-136937)).
-  Prevents libvirt service from starting automatically when browsing VM creation options, improving system responsiveness.
-* Fixes incorrect disk temperature threshold alerts ([NAS-137385](https://ixsystems.atlassian.net/browse/NAS-137385)).
-  Resolves issue where critical temperature alerts were triggered incorrectly when threshold was set to 0 degrees Celsius.
-* Enhances session security with improved random number generation ([NAS-137318](https://ixsystems.atlassian.net/browse/NAS-137318)).
-  Uses SSL-based random number generator for creating session IDs, improving overall cryptographic security.
-* Consolidates Users page interface ([NAS-137443](https://ixsystems.atlassian.net/browse/NAS-137443)).
-  Removes legacy Users page and renames "Users (WIP)" to "Users" for a cleaner interface experience.
 * Adds VM disk image import and export capabilities ([NAS-137334](https://ixsystems.atlassian.net/browse/NAS-137334), [NAS-137335](https://ixsystems.atlassian.net/browse/NAS-137335)).
   Enables importing disk images (QCOW2, QED, RAW, VDI, VHDX, and VMDK formats) during VM creation and exporting VM disks to portable image formats, streamlining VM migration and setup processes.
+* Improves Virtual Machine configuration performance ([NAS-136937](https://ixsystems.atlassian.net/browse/NAS-136937)).
+  Prevents libvirt service from starting automatically when browsing VM creation options, improving system responsiveness.
+* Enhances session security with improved random number generation ([NAS-137318](https://ixsystems.atlassian.net/browse/NAS-137318)).
+  Uses SSL-based random number generator for creating session IDs, improving overall cryptographic security.
+* Fixes an issue where the ACL editor ignored unchecked "Apply Owner" and "Apply Group" checkboxes and always applied owner/group changes recursively, potentially causing unintended ownership changes ([NAS-137378](https://ixsystems.atlassian.net/browse/NAS-137378)).
 
 <a href="#full-changelog" target="_blank">Click here</a> to see the full 25.10 changelog or visit the <a href="https://ixsystems.atlassian.net/issues/?filter=13361" target="_blank">TrueNAS 25.10-RC.1 (Goldeye) Changelog</a> in Jira.
 
