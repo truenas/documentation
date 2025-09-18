@@ -44,7 +44,7 @@ The **Delete Subsystem** dialog confirms you want to delete the subsystem before
 
 {{< trueimage src="/images/SCALE/Shares/DeleteSubsystemDialog.png" alt="Delete Subsystem Dialog" id="Delete Subsystem Dialog" >}}
 
-**Force** forces the delete operation if the subsystem has a port or host assicated with it.
+**Force** forces the delete operation if the subsystem has a port or host associated with it.
 
 **Cancel** closes the dialog without deleting the subsystem.
 

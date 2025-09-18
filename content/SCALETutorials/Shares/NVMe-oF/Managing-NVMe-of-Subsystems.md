@@ -48,17 +48,17 @@ TrueNAS copies the identification number to the clipboard.
 
 ### Deleting a Subsystem
 
-Before deleting a namespace subsystem, delete the port and any assoicated host. TrueNAS shows an error if the subsystem has an active port and host.
+Before deleting a namespace subsystem, delete the port and any associated host. TrueNAS shows an error if the subsystem has an active port and host.
 
 While on the **NVMe-oF** screen, select the subsystem row in the table, then click **Delete** to the right of **Details for *name***.
 The **Delete Subsystem** dialog opens.
 
 1. [Delete the port](#deleting-a-port). This does not delete the port configuration from the system, it removes it from the namespace subsystem.
 
-2. [Delete any assoicated host](#delete-host-dialog). This does not delete the host configuration from the system, it removes it from the namespace subsystem.
+2. [Delete any associated host](#delete-host-dialog). This does not delete the host configuration from the system, it removes it from the namespace subsystem.
 
 3. Delete the subsystem.
-   
+
    Verify the name of the subsystem listed in the dialog to confirm you have the desired subsystem.
 
    Click **Delete** to delete the subsystem and namespace(s) associated with it.
