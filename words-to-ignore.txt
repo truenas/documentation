@@ -2380,3 +2380,11 @@ CreateVirtualMachinesDisksSettings
 CreateVirtualMachinesNetworkInterfaceSettings
 CreateVirtualMachineInstallationMediaSettings
 CBDMA
+Dashlane
+kB
+NVMeoF
+Bitwarden
+Dashlane
+kB
+NVMeoF
+Bitwarden
