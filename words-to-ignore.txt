@@ -2388,3 +2388,6 @@ Dashlane
 kB
 NVMeoF
 Bitwarden
+QCOW
+VDI
+VHDX
