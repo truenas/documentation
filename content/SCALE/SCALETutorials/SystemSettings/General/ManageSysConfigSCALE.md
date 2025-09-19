@@ -14,21 +14,21 @@ keywords:
 - hybrid storage
 ---
 
-TrueNAS allows users to manage the system configuration by uploading or downloading configurations, or by resetting the system to the default configuration.
+TrueNAS allows users to manage the system configuration by uploading or downloading configurations or by resetting the system to the default configuration.
 
 ## System Configuration Options
 
-The **Manage Configuration** option on the **System > General Settings** screen provides three options:
+The **Manage Configuration** option on the **System > Advanced Settings** screen provides three options:
 
 * **Download File** that downloads your system configuration settings to a file on your system.
 * **Upload File** that allows you to upload a replacement configuration file.
-* **Reset to Defaults** that resets system configuration settings back to factory settings.
+* **Reset to Defaults** resets system configuration settings back to factory settings.
 
 ### Downloading the File
 
 The **Download File** option downloads your TrueNAS current configuration to the local machine.
 
-A system config file is a database file containing your settings, including accounts, directory services, networking, services, shares, storage configuration, system setting, data protection tasks, and more.
+A system config file is a database file containing your settings, including accounts, directory services, networking, services, shares, storage configuration, system settings, data protection tasks, and more.
 
 {{< include file="/static/includes/DownloadSystemConfigFileSCALE.md" >}}
 
@@ -37,15 +37,15 @@ A system config file is a database file containing your settings, including acco
 The **Upload File** option gives users the ability to replace the current system configuration with any previously saved TrueNAS configuration file.
 
 {{< hint type=warning >}}
-When migrating from a FreeBSD-based releases to a Linux-based release, the new administration user login credentials (name and password) are deleted and replaced with the FreeBSD-based root user and password in the uploaded configuration file.
-Log into the UI with the original root user credentials, then recreate an administration user and password.
+When migrating from a FreeBSD-based release to a Linux-based release, the new administration user login credentials (name and password) are deleted and replaced with the FreeBSD-based root user and password in the uploaded configuration file.
+Log in to the UI with the original root user credentials, then recreate an administration user and password.
 
 To security-harden your system, do not use the **trunas_admin** user or **admin**, choose a unique username and password that cannot be easily guessed.
 Disable the root user login password as the final step.
 {{< /hint >}}
 
 {{< hint type=warning title="Always Include the Secret Seed!" >}}
-If you do not save the secret seed downloading the system config file, various services can break due to missing information.
+If you do not save the secret seed by downloading the system config file, various services can break due to missing information.
 Without the secret seed, encrypted fields are set to empty values. For example, SMB via local accounts and apps.
 Always select the option to save the secret seed when downloading the system config file!
 {{< /hint >}}
@@ -67,7 +67,7 @@ Save the current system configuration with the **Download File** option before r
 If you do not save the system configuration before resetting it, you could lose data that was not backed up, and you cannot revert to the previous configuration.
 
 The **Reset to Defaults** option resets the system configuration to factory settings.
-After the configuration resets, the system restarts and users must set a new login password.
+After the configuration resets, the system restarts, and users must set a new login password.
 
 ### Backing Up the Config File
 

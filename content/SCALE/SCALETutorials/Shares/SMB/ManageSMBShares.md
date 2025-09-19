@@ -12,8 +12,8 @@ tags:
 
 {{< include file="/static/includes/RootLevelDatasetShareWarning.md" >}}
 
-To access SMB share management options, go to **Shares** screen with the **Windows (SMB) Shares** widget.
-The widget lists configured SMB shares but is not the complete list.
+To access SMB share management options, go to **Shares** and locate the **Windows (SMB) Shares** widget.
+The widget lists configured SMB shares, but it is not the complete list.
 To see a complete list of shares, click on **Windows (SMB) Shares <span class="material-icons">launch</span>** header to open the **Shares > SMB** screen.
 The <span class="material-icons">more_vert</span> dropdown list to the right of each share shows four options that open other screens or dialogs that provide access to share settings.
 
@@ -26,12 +26,14 @@ The <span class="material-icons">more_vert</span> dropdown list to the right of 
 To manage an SMB share, click <span class="material-icons">more_vert</span> dropdown list to the right of each share to see the options for the share you want to manage. Options are:
 
 * **Edit** opens the **Edit SMB** screen where you can change settings for the share.
-* **Edit Share ACL** opens the **Share ACL** screen where you can [add or edit ACL entries](#configuring-smb-share-acl).
-* **Edit Filesystem ACL** opens the **Edit ACL** screen where you can edit the dataset permissions for the share.
-  The **Dataset Preset** option determines the ACL type and therefore the **ACL Editor** screen that opens.
+* **Edit Share ACL** opens the **Share ACL** screen, where you can [add or edit ACL entries](#configuring-smb-share-acl).
+* **Edit Filesystem ACL** opens the **Edit ACL** screen, where you can edit the dataset permissions for the share.
+  The **Dataset Preset** option determines the ACL type and the type of **ACL Editor** screen that opens (POSIX or NSFv4).
 * **Delete** opens a delete confirmation dialog. Use this to delete the share and remove it from the system. Delete does not affect shared data.
 
 ## Modifying ACL Permissions for SMB Shares
+
+{{< include file="/static/includes/ShareACLDialogs.md" >}}
 
 You have two options that modify ACL permissions for SMB shares:
 * **Edit Share ACL** modifies ACL permissions that apply to the SMB share.
