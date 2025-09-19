@@ -92,9 +92,6 @@ Click **Create Volume** to open the [**Create New Volume**](#creating-volumes) d
 
 Click **Import Zvols** to open the [**Import Zvol**](#importing-zvols) dialog to import an existing Zvol as a volume.
 
-<!-- Commenting out the Upload ISO documentation as this was only useful for VM creation -->
-<!-- Click **Upload ISO** to open a file browser to select an <file>.iso</file> file from the client computer and [upload it](#uploading-iso-images) to TrueNAS for use in containers. -->
-
 {{< trueimage src="/images/SCALE/Virtualization/InstancesVolumesScreen.png" alt="Volumes Screen" id="Volumes Screen" >}}
 
 #### Creating Volumes
@@ -124,17 +121,6 @@ Select **Clone** to clone and promote a temporary snapshot of the zvol into a cu
 This option retains the original zvol while creating an identical copy as a container volume.
 
 Select **Move** to relocate the existing zvol to the ix-virt dataset as a volume.
-
-<!--#### Uploading ISO Images
-
-Click **Upload ISO** to open a file browser.
-Select an <file>.iso</file> file from your client computer to upload it to TrueNAS for use in containers.
-
-{{< expand "Image Filename Requirements" "v" >}}
-{{< include file="/static/includes/InstanceImageFilenames.md" >}}
-
-This ensures the container name works without conflicts in DNS records, the file system, security profiles, and as the container hostname.
-{{< /expand >}} -->
 
 #### Deleting Volumes
 
@@ -317,15 +303,7 @@ To create a new container:
 
 9. Click **Create** to deploy the container.
 
-### Creating Virtual Machines
-
-{{< hint type=info >}}
-{{< include file="/static/includes/containers-vms.md" >}}
-{{< /hint >}}
-
 ## Managing Containers
-
-<!-- NOTE: I'm leaving the Managing section *mostly* unchanged for 25.04.2 since some users will still have Instance VMs configured and will need these management options. We may need to readdress this down the line. -->
 
 Created containers appear in a table on the **Containers** screen.
 The table lists each configured container, displaying its name, type, current status, and options to restart or stop it.
@@ -360,8 +338,8 @@ After selecting the container row in the table to populate the **Details for *Co
 
 Click **Edit** to open the **Edit Container: *Container*** screen.
 The **Edit Container: *Container*** screen settings are a subset of those found on the **Create Container** screen.
-It includes the general **Container Configuration** and **CPU and Memory** settings for all containers.
-Additionally, containers include **Environment** settings, and VMs include **VNC** and **Security** settings.
+It includes the general **Container Configuration** and **CPU and Memory** settings for containers.
+Additionally, containers include **Environment** settings.
 
 #### Editing Container Configuration Settings
 
@@ -371,8 +349,7 @@ Select **Autostart** to automatically start the container when the system boots.
 
 #### Editing CPU & Memory Settings
 
-For containers, **CPU Configuration** and **Memory Size** can be configured or left blank to allow the container access to all host CPU and memory resources.
-For VMs, CPU and memory configurations are required.
+**CPU Configuration** and **Memory Size** can be configured or left blank to allow the container access to all host CPU and memory resources.
 
 {{< trueimage src="/images/SCALE/Virtualization/EditCPUandMemory.png" alt="Edit CPU & Memory" id="Edit CPU & Memory" >}}
 
@@ -381,34 +358,14 @@ To edit resource allocation:
 <div style="margin-left: 33px">{{< include file="/static/includes/InstanceCPUMemoryProcedure.md" >}}
 </div>
 
-#### Editing VNC Settings
-
-When VNC access is enabled, remote clients can connect to VM display sessions using a VNC client.
-These settings are only available for VMs and cannot be used with containers.
-
-Stop the container before editing VNC settings.
-
-{{< trueimage src="/images/SCALE/Virtualization/EditVNC.png" alt="Edit VNC" id="Edit VNC" >}}
-
-<div style="margin-left: 33px">{{< include file="/static/includes/InstanceVNCProcedure.md" >}}
-</div>
-
 #### Editing Environment Settings
 
-These settings are only available for containers and cannot be used with VMs.
+These settings configure optional environment variables for the container.
 
 {{< trueimage src="/images/SCALE/Virtualization/EditEnvironment.png" alt="Environment Settings" id="Environment Settings" >}}  
 
 <div style="margin-left: 33px">{{< include file="/static/includes/InstancesEnvironmentProcedure.md" >}}
 </div>
-
-#### Editing Security Settings
-
-These settings are only available for VMs and cannot be used with containers.  
-
-{{< trueimage src="/images/SCALE/Virtualization/EditSecurity.png" alt="Security Settings" id="Security Settings" >}}  
-
-{{< include file="/static/includes/InstanceSecureBootProcedure.md" >}}
 
 ### Deleting Containers
 
@@ -465,17 +422,9 @@ Click **Add** to open the **Add Disk** screen for adding new disks to the contai
 Click the <span class="material-icons">more_vert</span> icon to the right of an existing disk to open the actions menu.
 Select **Edit** to edit the disk mount.
 
-{{< trueimage src="/images/SCALE/Virtualization/AddDiskScreenVM.png" alt="Add Disk Screen - VM" id="Add Disk Screen - VM" >}}
-
-For VMs, click **Select Volume** to open the [**Volumes**](#managing-volumes) screen to create or select a volume to attach.
-Enter a **Boot Priority** value to set the order in which to boot disks.
-By default, the root disk is set to 1, which is the highest priority.
-Select the **I/O Bus** for the disk.
-Options are **NVMe**, **Virtio-BLK**, and **Virtio-SCSI**.
-
 {{< trueimage src="/images/SCALE/Virtualization/AddDiskScreen.png" alt="Add Disk Screen" id="Add Disk Screen" >}}
 
-For containers, enter or browse to select the host **Source** path for the disk.
+Enter or browse to select the host **Source** path for the disk.
 For a new dataset, enter or browse to select the parent path.
 Enter the **Destination** path to mount the disk in the container.
 
@@ -493,18 +442,6 @@ The **Delete Item** dialog asks for confirmation to delete the selected disk mou
 Click **Confirm** to activate the **Continue** button.
 Click **Continue** to start the delete operation.
 
-#### Managing the Root Disk Setup
-
-Click **Change** to the right of the root disk to open the [**Change Root Disk Setup**](#managing-the-root-disk-setup) dialog.
-
-{{< trueimage src="/images/SCALE/Virtualization/IncreaseRoot.png" alt="Increase Root Disk Size Widget" id="Increase Root Disk Size Widget" >}}
-
-Enter a new root disk size in GiB, such as *20*.
-
-Select the **Root Disk I/O Bus**.
-Options are **NVMe**, **Virtio-BLK**, and **Virtio-SCSI**.
-
-Click **Save** to apply changes.
 
 ### Managing NICs
 
@@ -529,7 +466,7 @@ Click **Continue** to start the delete operation.
 
 Use the **Proxies** widget to view the network proxy settings configured for the container.
 It allows you to manage these settings, including adding, editing, or removing proxies.
-Proxies are available for containers only and cannot be used with VMs.
+Proxies allow you to forward network connections between the host and the container.
 
 {{< trueimage src="/images/SCALE/Virtualization/ProxiesWidget.png" alt="Proxies Widget" id="Proxies Widget" >}}
 
@@ -568,14 +505,8 @@ Click **Continue** to start the delete operation.
 ## Accessing Containers
 
 After selecting the container row in the table to populate the **Details for *Container*** widgets, locate the **Tools** widget.
-You can open a shell, console, or VNC session directly from this widget.
+You can open a shell session directly from this widget.
 
-{{< trueimage src="/images/SCALE/Virtualization/ToolsWidget.png" alt="Tools Widget - VM" id="Tools Widget" >}}
+{{< trueimage src="/images/SCALE/Virtualization/ToolsWidget.png" alt="Tools Widget" id="Tools Widget" >}}
 
-Click **Shell** <span class="iconify" data-icon="mdi:console-line"></span> to open an **Instance Shell** session for command-line interaction with the container.
-  
-For VMs, click **Serial Console** <span class="iconify" data-icon="mdi:console"></span> to open an **Instance Console** session to access the system console for the container.
-
-For VMs, click **VNC** to open a VNC connection using your preferred client.
-It uses a VNC URL scheme (for example, `vnc://hostname.domain.com:5930`) to launch the session directly in the application.
-If your environment does not support VNC URLs, you can manually connect using a VNC client by entering the host name or IP address followed by the port number without `vnc://` (for example, `hostname.domain.com:5930` or `IP:5930`).
+Click **Shell** <span class="iconify" data-icon="mdi:console-line"></span> to open a **Container Shell** session for command-line interaction with the container.
