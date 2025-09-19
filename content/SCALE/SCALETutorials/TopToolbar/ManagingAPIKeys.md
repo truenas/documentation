@@ -14,7 +14,8 @@ TrueNAS 25.04 and later uses a versioned [JSON-RPC 2.0 over WebSocket API](https
 User-linked API keys allow administrators to configure per-user access to the TrueNAS API.
 Keys are revocable and can be configured to expire on a preset date.
 
-Click <i class="material-icons" aria-hidden="true" title="laptop" style="vertical-align: top;">laptop</i> **My API Keys** on the top right toolbar <i class="material-icons" aria-hidden="true">account_circle</i> user settings dropdown menu to open the **User API Keys** screen.
+Click <i class="material-icons" aria-hidden="true" title="laptop" style="vertical-align: top;">laptop</i> **My API Keys** from the <i class="material-icons" aria-hidden="true">account_circle</i> user settings dropdown menu in the top right toolbar.
+The **User API Keys** screen opens.
 
 The **User API Keys** screen shows a table listing API keys added to the system, and allows adding, searching for, editing, or deleting keys.
 
@@ -30,7 +31,7 @@ Click **API Docs** to view [API Documentation](#api-documentation) embedded with
 
 {{< include file="/static/includes/APIKeyWarn.md" >}}
 
-Open the **User API Keys** screen by clicking **Settings** on the top toolbar or **API Keys** on the **Users** screen.
+Select **My API Keys** from the **Settings** dropdown on the top toolbar or click **API Keys** on the **Users** screen to open the **User API Keys** screen.
 
 Click **Add** to open the **Add API Key** screen.
 
@@ -53,7 +54,7 @@ TrueNAS API key strings are 64 randomly generated characters long.
 {{< trueimage src="/images/SCALE/Dashboard/APIKeyCopy.png" alt="API Key Success Dialog" id="API Key Success Dialog" >}}
 
 The token only shows in the **API Key** dialog.
-To save the key for use as an authentication token, click **Copy to Clipboard**, paste it into a text file, then save the fle in a secure location.
+To save the key for use as an authentication token, click **Copy to Clipboard**, paste it into a text file, then save the file in a secure location.
 
 {{< expand "Can I view the API Key again after closing the API Key dialog?" "v" >}}
 You cannot view the API key string after closing the **API Key** dialog.
@@ -100,11 +101,11 @@ A new browser window opens, showing the API documentation Table of Contents.
 {{< trueimage src="/images/SCALE/Dashboard/APIDocsTableOfContentsScreen.png" alt="API Docs Table of Contents" id="API Docs Table of Contents" >}}
 
 Click the link for the content you want to access:
-* JSON-RPC 2.0 over WebSocketAPI shows an overview of the JSON-RPC 2.0 format with example objects.
-* API Methods shows a table of contents listing TrueNAS API methods
-* API Events shows the list of API methods with query call options
-* Jobs shows an overview of the job options, uploading/downloading file example scripts, and information on running a query for job status.
-* Query Methods shows query basic usage, supported operators, and information on query operations and syntax.
+* **JSON-RPC 2.0 over WebSocket API** shows an overview of the JSON-RPC 2.0 format with example objects.
+* **API Methods** shows a table of contents listing TrueNAS API methods.
+* **API Events** shows the list of API methods with query call options.
+* **Jobs** shows an overview of the job options, uploading/downloading file example scripts, and information on running a query for job status.
+* **Query Methods** shows query basic usage, supported operators, and information on query operations and syntax.
 
 {{< include file="/static/includes/APIDocs.md" >}}
 
