@@ -42,7 +42,7 @@ See the stable [25.04 (Fangtooth)](https://www.truenas.com/docs/scale/25.04/gett
 
 {{< hint type=warning title="Early Release Software" >}}
 Early releases are intended for testing and feedback purposes.
-Do not use early-release software for critical tasks.
+Do not use early release software for critical tasks.
 {{< /hint >}}
 
 September 25, 2025
@@ -67,7 +67,7 @@ This release candidate version has software component updates and new features t
 * Improves password manager compatibility with WebUI login screen ([NAS-136335](https://ixsystems.atlassian.net/browse/NAS-136335)).
   Resolves issue where password managers like Bitwarden and Dashlane failed to automatically recognize and fill login credentials.
 * Consolidates Users page interface ([NAS-137443](https://ixsystems.atlassian.net/browse/NAS-137443)).
-  Removes legacy Users page and renames "Users (WIP)" to "Users" for a cleaner interface experience.
+  Removes legacy Users page and renames **Users (WIP)** to **Users** for a cleaner interface experience.
 * Fixes network usage units display on Applications page ([NAS-137428](https://ixsystems.atlassian.net/browse/NAS-137428)).
   Corrects network usage units from lowercase 'b' to capital 'B' (B/s, kB/s, MB/s) to properly indicate bytes per second.
 * Fixes UI Bug Reporting feature "FAILED: This TrueNAS build is experimental" error ([NAS-137445](https://ixsystems.atlassian.net/browse/NAS-137445)).
@@ -91,7 +91,7 @@ This release candidate version has software component updates and new features t
 
 {{< hint type=warning title="Early Release Software" >}}
 Early releases are intended for testing and feedback purposes.
-Do not use early-release software for critical tasks.
+Do not use early release software for critical tasks.
 {{< /hint >}}
 
 August 28, 2025
@@ -125,7 +125,7 @@ Failover moves to the **Advanced Settings** screen ([NAS-135469](https://ixsyste
   These drivers work with Turing and later GPUs.
   Earlier architectures (Pascal, Maxwell, Volta) are not compatible.
   See [NVIDIA GPU Support](#nvidia-gpu-support) for more information.
-* Adds support for for directory services authentication via FTP ([NAS-135200](https://ixsystems.atlassian.net/browse/NAS-135200)).
+* Adds support for directory services authentication via FTP ([NAS-135200](https://ixsystems.atlassian.net/browse/NAS-135200)).
 * Adds the **Enable Secure Boot** option to virtual machine configuration screens ([NAS-136466](https://ixsystems.atlassian.net/browse/NAS-136466)).
 * Allows TrueNAS to automatically migrate existing applications when selecting a new applications pool ([NAS-132188](https://ixsystems.atlassian.net/browse/NAS-132188)).
 * Adds TrueNAS Apps service support for configuring external container registry mirrors as alternative sources for Docker images ([NAS-136553](https://ixsystems.atlassian.net/browse/NAS-136553)).
@@ -134,7 +134,7 @@ Failover moves to the **Advanced Settings** screen ([NAS-135469](https://ixsyste
 * Simplifies and improves robustness of gateway and name server settings when changing from DHCP to static aliases ([NAS-136360](https://ixsystems.atlassian.net/browse/NAS-136360) and [NAS-136360](https://ixsystems.atlassian.net/browse/NAS-136360)).
   Moves **Network** screen under the **System** main menu option.
 * Fixes insufficient memory pressure on ZFS ARC by Virtual Machines to prevent out-of-memory conditions ([NAS-135499](https://ixsystems.atlassian.net/browse/NAS-135499)).
-* Virtual machines created in 25.04 (pre-25.04.2) and displayed on the **Containers** screen do not automatically start on system boot to prevent conflicts with VMs on the **Virtual Machines** screen that might use the same zvol(s) ([NAS-136946](https://ixsystems.atlassian.net/browse/NAS-136946)).
+* Virtual machines created in 25.04 (pre-25.04.2) and displayed on the **Containers** screen do not automatically start on system boot to prevent conflicts with VMs on the **Virtual Machines** screen that might use the same zvols ([NAS-136946](https://ixsystems.atlassian.net/browse/NAS-136946)).
 * Makes changes to SMB shares:
   * Enables access-based enumeration for SMB shares with NFSv4 ACL type, so directory listings only show files that users have permission to read ([NAS-136499](https://ixsystems.atlassian.net/browse/NAS-136499)).
   * Changes SMB share **Advanced Options**, **Purpose**, and **Other Option** settings associated with the preset setting selected ([NAS-136499](https://ixsystems.atlassian.net/browse/NAS-136499)).
@@ -237,7 +237,7 @@ initializeChangelogTableForTabs('25.10');
   Users should review their ACLs and permissions after upgrade and might need to reconfigure them in some edge cases.
 
 * TrueNAS 25.10 removes the built-in SMART test scheduling and monitoring interface to improve user flexibility for disk monitoring.
-  The smartmontools binaries remain installed and continue to be used internally by TrueNAS, ensuring that existing third-party scripts and monitoring tools will work unchanged.
+  The smartmontools binaries remain installed and continue to be used internally by TrueNAS, ensuring that existing third-party scripts and monitoring tools continue to work unchanged.
   Users seeking advanced SMART monitoring can install the "Scrutiny" app from the TrueNAS catalog, which offers superior disk health tracking with historical data storage, customizable alerts, and automatic drive detection.
   TrueNAS maintains monitoring of critical disk health indicators and automatically migrates existing scheduled SMART tests to cron tasks during upgrade.
 
