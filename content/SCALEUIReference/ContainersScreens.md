@@ -46,8 +46,8 @@ The **Configuration** dropdown menu includes **[Global Settings](#global-setting
 
 #### Storage Settings
 
-The **Pool** dropdown list shows a list of available pools on the system.
-**[Disabled]** deactivates the pool and disables the containers service.
+The **Enable Containers** toggle activates or deactivates containers.
+The **Pools** dropdown list shows a list of available pools on the system for container storage.
 
 The screen header displays a <i class="fa fa-cog" aria-hidden="true"></i> **Pool is not selected** status before a pool for containers is selected.
 
