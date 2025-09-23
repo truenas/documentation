@@ -1,6 +1,6 @@
 ---
 title: "Setting Up SMB Private Dataset Shares"
-description: "Provides instructions on using SMB Private Datasets and Shares as an alternative to legacy SMB Home Shares."
+description: "Provides instructions on using SMB Private Datasets Share as an alternative to legacy SMB Home Shares."
 weight: 40
 tags:
 - smb
@@ -11,20 +11,24 @@ tags:
 {{< hint type=important title="Home Share Legacy Feature" >}}
 SMB Home Share is a legacy feature for organizations looking to maintain existing SMB configurations.
 TrueNAS removed the home share option from the SMB share **Purpose** list in 24.04 (Dragonfish).
-The SMB share **Other Options** includes a home share legacy option but it is not recommended for new shares, it is for organizations still using the legacy home shares option of adding a single SMB share to provide a personal directory for every user account.
+The SMB share **Other Options** in pre-25.10 releases includes a home share legacy option, but it is not recommended for new shares.
+It is for organizations still using the legacy home shares option to add a single SMB share to provide a personal directory for every user account.
 Future TrueNAS releases can introduce instability or require configuration changes affecting this legacy feature.
+This option does not show in 25.10 and later releases unless an existing home share is upgraded to 25.10 or later.
 
 Microsoft has eliminated the Home Share feature in Windows 11 and deprecated it in Windows 10.
 Microsoft ending support for Home Shares is planned for October 2025.
 {{< /hint >}}
 
 ## Replacing SMB Home Shares
-TrueNAS does not recommend setting up new home shares and has removed the **Use as Home Share** option, found in the **Other Options** section of the **Advanced Options** screen for the **Add SMB** and **Edit SMB** screens.
-The **Private SMB Datasets and Shares** setting replaces the home shares option and is the recommended method to provide users with a private personal folder they access through an SMB share.
-Follow the instructions in the [Adding Private SMB Datasets and Shares](#adding-private-smb-datasets-and-shares) section below to set up private and personal shares.
+
+TrueNAS has removed the **Use as Home Share** option, found in the **Other Options** section of the **Advanced Options** screen for the **Add SMB** and **Edit SMB** screens in earlier releases of TrueNAS.
+The **Private Dataset Share** option on the **Purpose** dropdown list in 25.10 and later releases replaces home shares, and it is the recommended method to provide users with a private personal folder they access through an SMB share.
+Follow the instructions in the [Adding Private Dataset Shares](#adding-a-private-dataset-share) section below to set up private and personal shares.
+
 
 {{< expand "What is a private dataset and share?" "v" >}}
-The private dataset and share option allows creating a private personal directory under the dataset specified as the home directory for the user, and when correctly configured, provides users with a private folder they access through an SMB share.
+The **Private Dataset Share** option allows creating a private personal directory under the dataset specified as the home directory for the user, and when correctly configured, provides users with a private folder they access through an SMB share.
 {{< /expand >}}
 
 TrueNAS allows creating one private directory per user, but allows creating as many non-private directories as desired or needed.
@@ -46,18 +50,18 @@ Other options for configuring individual user directories include:
 * Create a single SMB share and configure the ACL so that users can create individual directories on the share that inherit write access for the user and grant read access to the administrator.
 * Create an SMB share using the **Private SMB datasets and shares** preset, and then create per-user datasets under the umbrella of a single share when users access the share.
 
-Creating an SMB private dataset and share requires provisioning users or joining Active Directory, and configuring the system storage and share.
+* Create an SMB share using the **Private Dataset Share** preset, and then create per-user datasets under the umbrella of a single share when users access the share.
 
-## Adding Private SMB Datasets and Shares
+## Adding a Private Dataset Share
 
 Private directories are not intended for every user on the system.
-When using the **Private SMB Datasets and Shares** share **Purpose** preset and configuring it as a home directory the system TrueNAS does not show the private directories to all users with access to the root level of the share.
+When using the **Private Dataset Share** option on the **Purpose** dropdown list, and configuring it as a home directory for the system, TrueNAS does not show the private directories to all users with access to the root level of the share.
 
 Examples of setting up private SMB shares are those for backups, system configuration, and users or departments that need to keep information private from other users.
 
 You can manually add users and groups in TrueNAS, or configure groups in Active Directory and add users to each group, and then have AD add the users and group to TrueNAS.
 After adding users and groups, configure private directories and home directories for the users and group(s).
-Before setting up SMB shares, check system alerts to verify no errors related to connections to Active Directory are listed.
+Before setting up SMB shares, check system alerts to verify that no errors related to connections to Active Directory are listed.
 Resolve any issues with Active Directory before proceeding. If Active Directory cannot bind with TrueNAS, you cannot start the SMB service after making changes.
 
 To add private shares and datasets for users that require home directories:
@@ -75,20 +79,22 @@ To add private shares and datasets for users that require home directories:
 {{< include file="/static/includes/LocalSMBUser.md" >}}
 
 You can use an existing dataset or create a new dataset for the share.
-We recommend using the **Add SMB** screen to create a new share and dataset for this procedure.
-While you can add a share while [creating the dataset]({{< ref "DatasetsSCALE" >}}) on the **Add Dataset** screen, this method requires editing the share settings afterward.
-In general, when creating a simple SMB share and dataset you can use either method, but if customizing the dataset, use the [**Add Dataset** screen]({{< ref "DatasetsSCALE" >}}) to access dataset advanced setting options.
-To configure and customize an SMB share, using the **Add SMB** share method is better as it provides access to the advanced setting options for shares, meaning you do not have to edit settings afterward.
+
+We recommend using the **Add SMB** screen to create a new share and dataset for this procedure, and for any customized SMB share, rather than using the **Add Dataset** screen to create the share and dataset.
+In general, when you want to create a simple SMB share and dataset, you can use either screen, but we recommend you use the **Add Dataset** screen when you want to customize the dataset, and use the **Add SMB** screen to create and customize an SMB share with presets and advanced options.
+
+In general, when creating a simple SMB share and dataset, you can use either method, but if customizing the dataset, use the [**Add Dataset** screen]({{< ref "DatasetsSCALE" >}}) to access the dataset advanced setting options.
+
+{{< include file="/static/includes/ShareACLDialogs.md" >}}
 
 To create SMB private datasets and shares, go to **Shares** and click **Add** on the **Windows (SMB) Shares** widget to open the **Add SMB** screen.
 
-1. Enter or browse to select the path to where you want to add the share dataset, then click **Create Dataset**. This populates the **Path** for the share.
+1. Enter or browse to select the path to where you want to add the share dataset, then click **Create Dataset** to open the **Create Dataset** dialog.
 
-   Or, if the dataset is already created, select the share on the SMB widget, click edit, then change the **Purpose** setting to **Private SMB Datasets and Shares**.
-   If creating a new share and dataset using the **Add SMB** screen, select **Private SMB Datasets and Shares** from the **Purpose** dropdown list before clicking **Advanced Options** to make other setting changes. See Step 3.
-
-2. Enter a name for the dataset in the dialog field, then click **Create Dataset**. For example, creating a share and dataset named *private*.
+2. Enter the dataset name, click **Create Dataset**. The dialog closes and **Path** is populated with the path to the share storage.
    
+   When you create a simple share and dataset using the **Add Dataset** screen, to customize it, go to **Shares**, select it on the **SMB** screen (or widget if it shows on the list), then click **Edit** on the dropdown list of options. Verify the path and **Name** field are populated.
+
    {{< trueimage src="/images/SCALE/Shares/AddPrivateSMBShare.png" alt="Set the Share Path" id="Set the Share Path" >}}
 
    Follow naming conventions for:
@@ -98,14 +104,14 @@ To create SMB private datasets and shares, go to **Shares** and click **Add** on
    The dataset name populates the share **Name** field and becomes the share name. The **Path** field is updated with the dataset name.
    The share and dataset must have the same name.
 
-3. Select **Private SMB Dataset and Share** on the **Purpose** dropdown list.
-   Click **Advanced Options** to show the additional settings to configure additional share setting options.
+3. Select **Private Dataset Share** on the **Purpose** dropdown list, then click **Advanced Options** to configure additional share setting options.
 
    {{< trueimage src="/images/SCALE/Shares/AddPrivateSMBShareAdvancedOptions.png" alt="Add Share Advanced Options" id="Add Share Advanced Options" >}}
 
-4. (Optional) Select **Enable** for audit logging.
+4. (Optional) Select **Enable Logging** to enable SMB share audit logging.
    
-5. Scroll down to **Other Options** to select **Export Recycle Bin**, which allows moving files deleted in the share to a recycle bin in that dataset.
+5. (Optional) Scroll down to **Other Options**. If you select a share created in an earlier release, you might see the legacy **Export Recycle Bin** option.
+   This allows moving files deleted in the share to a recycle bin in that dataset.
 
    Files are renamed to a per-user subdirectory within <file>.recycle</file> directory at the root of the SMB share if the path is the same dataset as the share.
    If the dataset has a nested dataset, the directory is at the root of the current dataset. If this is the case, there is no automatic deletion based on file size. 
@@ -119,33 +125,33 @@ When prompted by the system to configure the dataset ACL, accept the option. The
 ### Setting Dataset ACL Permissions
 
 Dataset ACL permissions are configured on the **Edit ACL** screen.
-The user assigned the private directory share does not need to be added as an ACL entry in the dataset ACL.
+The user assigned to the private directory share does not need to be added as an ACL entry in the dataset ACL.
 Add an ACL entry to the dataset ACL to grant another user, other than the private share user or a group of users, to allow access to the private directory.
 
-If on the **Datasets** screen, select the dataset row for the share dataset, then click **Edit** on the **Permissions** widget to open the **Edit ACL** screen.
+When on the **Datasets** screen, select the dataset row for the share dataset, then click **Edit** on the **Permissions** widget to open the **Edit ACL** screen.
 See [Setting Up Permissions]({{< ref "PermissionsSCALE" >}}) for more information on editing dataset permissions.
 
-If starting on the **Shares** screen and not prompted by the system to configure the ACL permissions or if you closed the prompt window, select the share on the **Windows (SMB) Share** widget, then click **Edit Filesystem ACL** to open the **Edit ACL** screen.
+When on the **Shares** screen, select the share on the **Windows (SMB) Share** widget, then click **Edit Filesystem ACL** to open the **Edit ACL** screen.
 Do not select the option to edit the share permissions. Share permissions only apply to the share and not the dataset the share uses for storage.
 See [SMB Shares]({{< ref "ManageSMBShares" >}}) for detailed information on editing the share dataset permissions.
 
 Set the permission for the private dataset to allow additional users or a group if others are permitted to access the private directory share.
 
-Click the **Owner** dropdown, select the administration user with full control, then repeat for **Group**.
+Click the **Owner** dropdown, select the administration user with full control, and then repeat for **Group**.
 You can set the owning group to your Active Directory domain admins. Click **Apply Owner** and **Apply Group** to apply the changes.
 
 {{< trueimage src="/images/SCALE/Shares/SetACLPresetForPrivateDataset.png" alt="Add Dataset ACL Permissions" id="Add Dataset ACL Permissions" >}}
 
 ![GroupDomainAdminsSCALE](/images/SCALE/Datasets/GroupDomainAdmins.png "Set the owning group to Domain Admins")
 
-Click **Use Preset** and choose **NFS4_HOME**. If the dataset has a POSIX ACL choose **HOME**.
+Click **Use Preset** and choose **NFS4_HOME**. If the dataset has a POSIX ACL, choose **HOME**.
 Click **Continue**, then click **Save Access Control List**.
 
 Next, click **Add Entry** to add entries for each user that needs access to the dataset.
-To assign required permissions, select **User** in **Who** and locate the user name on the **User** dropdown list.
+To assign required permissions, select **User** in **Who** and locate the user name in the **User** dropdown list.
 Select the required permissions.
 Repeat for each user that needs access.
-Alternatively, if you added users to a group, select, set **Who** to **Group** and locate the group on the dropdown list.
+Alternatively, if you added users to a group, select, set **Who** to **Group** and locate the group in the dropdown list.
 
 {{< include file="/static/includes/SMBShareMSDOSalert.md" >}}
 
@@ -195,6 +201,7 @@ This results in a permissions error if `pam_open_session()` is called by an appl
 {{< /hint >}}
 
 ### Adding Share Users with Directory Services
+
 You can use Active Directory or LDAP to create share users.
 
 If not already created, add a pool, then join Active Directory.
@@ -203,8 +210,8 @@ Go to **Storage** and [create a pool]({{< ref "CreatePoolWizard" >}}).
 
 Next, [set up the Active Directory]({{< ref "/SCALETutorials/credentials/directoryservices/configadscale" >}}) that you want to share resources with over your network.
 
-When creating the share for this dataset, use the **SMB** preset for the dataset but do not add the share from the **Add Dataset** screen. 
+When creating the share for this dataset, use the **SMB** preset for the dataset, but do not add the share from the **Add Dataset** screen. 
 
 Do not share the root directory!
 
-Go to **Shares** and follow the instructions listed above using the **Private SMB Dataset and Share** preset, and then modify the file system permissions of the dataset to use the **NFSv4_HOME** ACL preset.
+Go to **Shares** and follow the instructions listed above using the **Private Dataset Share** preset, and then modify the file system permissions of the dataset to use the **NFSv4_HOME** ACL preset.

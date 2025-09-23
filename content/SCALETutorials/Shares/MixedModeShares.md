@@ -12,7 +12,7 @@ tags:
 
 {{< include file="/static/includes/TimeMachineMultiprotocol.md" >}}
 
-## About Multiprotocol Shares
+## About Multi-Protocol Shares
 
 A multi-protocol or mixed-mode NFS and SMB share supports both NFS and SMB protocols for sharing data.
 Multi-protocol shares allow clients to use either protocol to access the same data.
@@ -25,10 +25,10 @@ Linux clients can access SMB shares using [`mount.cifs`](https://linux.die.net/m
 {{< /hint >}}
 
 To ensure security and data integrity when using multi-protocol sharing, it is important to properly configure permissions and access controls.
-To maximize security on the NFS side of the multiprotocol share, we recommend using NFSv4 and [Active Directory](#joining-active-directory)(AD) for Kerberos authentication.
+To maximize security on the NFS side of the multi-protocol share, we recommend using NFSv4 and [Active Directory](#joining-active-directory)(AD) for Kerberos authentication.
 It is also important that NFS clients preserve extended attributes when copying files, or SMB metadata could be discarded in the copy.
 
-Multi-protocol shares are not compatible with APPL extensions such as Apple Time Machine that rely on SMB3/3 lease support, which is no longer available in multi-protocol shares.
+Multi-protocol shares are not compatible with APPL extensions such as Time Machine that rely on SMB3/3 lease support, which is no longer available in multi-protocol shares.
 Choosing to configure a multi-protocol share disables options to enable AAPL extensions globally.
 
 ## First Steps
@@ -46,9 +46,9 @@ Before adding a multi-protocol SMB and NFS share to your system:
 ## Configuring and Starting Share Services
 
 Before joining AD and creating a dataset for the share, start both the SMB and NFS services and configure the NFS service for Kerberos authentication.
-For a simpler Kerberos credential creation, configure the NFS service before joining AD.
+Configure the NFS service before joining AD for a simpler Kerberos credential creation.
 
-You can either use the **Shares** screen **Config Service** option on both the **Windows (SMB) Share** and the **UNIX (NFS) Shares** widgets, or go to **System > Services** and select the **Edit** option for the **SMB** and **NFS** services.
+To configure services, you can use the **Shares** screen **Config Service** option on both the **Windows (SMB) Share** and the **UNIX (NFS) Shares** widgets, or go to **System > Services** and select the **Edit** option for the **SMB** and **NFS** services.
 
 {{< trueimage src="/images/SCALE/Shares/SMBShareOptions.png" alt="SMB Service Options" id="SMB Service Options" >}}
 
@@ -56,7 +56,7 @@ Unless you need a specific setting or are configuring a unique network environme
 
 After configuring the SMB and NFS share services, start the services.
 
-From the **Shares** screen, click on the **Windows (SMB) Shares** <span class="material-icons">more_vert</span> to display the service options, which are **Turn Off Service** if the service is running or **Turn On Service** if the service is not running.
+From the **Shares** screen, click on the **Windows (SMB) Shares** <span class="material-icons">more_vert</span> to show the service options, which are **Turn Off Service** if the service is running or **Turn On Service** if the service is not running.
 
 After adding a share, use the toggle to enable or disable the service for that share.
 
@@ -83,7 +83,7 @@ TrueNAS automatically applies SPN credentials if the NFS service is enabled with
 
 Click **Save**, then start the NFS service.
 
-From the **Shares** screen, click on the **Unix (NFS) Shares** <span class="material-icons">more_vert</span> to display the service options, which are **Turn Off Service** if the service is running or **Turn On Service** if the service is not running.
+Go to the **Shares** screen, click on the **Unix (NFS) Shares** <span class="material-icons">more_vert</span> to display the service options, which are **Turn Off Service** if the service is running or **Turn On Service** if the service is not running.
 
 Each NFS share on the list also has a toggle to enable or disable the service for that share.
 
@@ -105,7 +105,7 @@ Protect the NFS export with proper authentication and authorization controls to 
 We recommend using [Active Directory]({{< ref "configadscale" >}}) to enable Kerberos security for the NFS share.
 Configure a container (group or organizational unit), Kerberos admin, and user accounts in AD.
 
-## Creating a Multiprotocol Share
+## Creating a Multi-Protocol Share
 
 You can create a share and a dataset from either the **Add Dataset** or **Add SMB** screen.
 
@@ -118,11 +118,12 @@ Multi-protocol shares can impact the performance of all SMB shares.
 
 ### Using the Add Dataset Screen
 
-TrueNAS allows you to create the dataset and add a multiprotocol (SMB and NFS) share using the **Add Dataset** screen.
+TrueNAS allows you to create the dataset and add a multi-protocol (SMB and NFS) share using the **Add Dataset** screen.
+This is the recommended method when creating a multi-protocol share.
 
 {{< include file="/static/includes/ShareDatasetsNotPools.md" >}}
 
-Select the dataset you want to be the parent of the multi-mode dataset, then click **Add Dataset**.
+Select the parent dataset where you want to add the multi-protocol dataset, then click **Add Dataset**.
 
 Enter a name for the dataset.
 
@@ -136,14 +137,16 @@ The dataset name populates the **SMB Name** field and becomes the name of the SM
 See [Creating Datasets]({{< ref "DatasetsSCALE.md#creating-a-dataset" >}}) for more information on adding and customizing datasets.
 
 Click **Save**.
-TrueNAS creates the dataset and the multi-protocol SMB and NFS shares.
+TrueNAS creates the dataset and the SMB and NFS shares.
 
 TrueNAS sets the same share presets as the **Multi-Protocol Share** option in **Purpose** on the **Advanced Options** for the **Add SMB** screen.
-To configure other share settings, go to **Shares**, select the share, click on the <span class="material-icons">more_vert</span> icon and select the **Edit** to open the **Edit SMB** screen, and click **Advanced Options** to modify the settings.
+To configure other share settings, go to **Shares**, select the share, click on the <span class="material-icons">more_vert</span> icon, and select **Edit** to open the **Edit SMB** screen, and click **Advanced Options** to modify the settings.
 
 After adding the dataset, edit the dataset ACL.
 
 ### Using the Add SMB Screen
+
+Adding a multi-protocol share from the **Add SMB** screen creates the SMB share and the dataset, but you must also use the **Add NFS** screen to add the NFS share.
 
 To create a share and a dataset from the **Add SBM** share screen, go to **Shares**, and click **Add** on the **Windows (SMB) Shares** widget to open the **Add SMB** screen.
 
@@ -153,7 +156,7 @@ To create a share and a dataset from the **Add SBM** share screen, go to **Share
 2. Select **Multi-Protocol Shares** on the **Purpose** dropdown list.
    This applies the pre-determined **Other Options** selected on the **Advanced Options** screen.
 
-   {{< trueimage src="/images/SCALE/Shares/EditSMBPurpose.png" alt="Edit SMB Purpose" id="Edit SMB Purpose" >}}
+   {{< trueimage src="/images/SCALE/Shares/EditSMBMultiProtocolShare.png" alt="Edit SMB Purpose" id="Edit SMB Purpose" >}}
 
    Click **Advanced Options** to modify any settings you want to use. Multi-mode shares cannot use APPL extension settings like Time Machine.
 
@@ -161,12 +164,20 @@ To create a share and a dataset from the **Add SBM** share screen, go to **Share
 
 4. Click **Save**.
 
-Restart the service when prompted.
+5. Configure the ACL when prompted.
+
+6. Click **Add** on the **UNIX (NFS) Shares** widget to open the **Add NFS** screen.
+
+7. Set the path to the same dataset created for the SMB share.
+
+8. Customize the NFS share to suit your use case, and click **Save**.
+
+Restart the NFS and SMB services when prompted.
 You can modify share settings after creating it.
 
 ### Editing the NFS Share
 
-After creating the multi-protocol share on the **Add Dataset** screen, go to **Shares** and edit the NFS share.
+After creating the multi-protocol share on the **Add Dataset** screen, if you want to customize the NFS share further, go to **Shares** and edit the NFS share.
 
 1. Select the new share listed on **Unix (NFS) Shares** widget, click on the <span class="material-icons">more_vert</span> icon and then click **Edit**.
    The **Edit NFS** screen opens with the **Basic Options** settings showing.
@@ -176,7 +187,7 @@ After creating the multi-protocol share on the **Add Dataset** screen, go to **S
 2. Enable Kerberos security. Click **Advanced Options**.
     Select **KRB5** from the **Security** dropdown to enable the Kerberos ticket generated when you [joined Active Directory](#joining-active-directory).
 
-   {{< trueimage src="/images/SCALE/Shares/EditNFSShareAdvancedSecuritySetting.png" alt="Advanced Options Security Settings" id="Advanced Options Security Settings" >}}
+   {{< trueimage src="/images/SCALE/Shares/EditNSFMultiProtocolShare.png" alt="Edit NFS Multi-Protocol Share" id="Edit NFS Multi-Protocol Share" >}}
 
     If needed, select **Read-Only** to prohibit writing to the share.
 
@@ -186,10 +197,12 @@ Start or restart the service when prompted.
 
 ### Adjusting the Dataset ACL
 
-After joining AD and creating a multi-protocol dataset and the SMB and NFS shares, adjust the dataset/file system ACL permissions to match the container and users configured in AD.
+After joining AD and creating a multi-protocol dataset and the SMB and NFS shares, adjust the dataset permission or use the SMB file system permissions to match the container and users configured in AD.
 
 You can modify dataset permissions from the **Shares** screen using <span class="material-icons">security</span> **Edit Filesystem ACL** to open the [**Edit ACL**](#edit-filesystem-acl-screen) screen for the selected share (SMB and NFS).
-Select the share row on the widget, then click the edit icon to modify permissions for the share dataset. Repeat this for both the SMB and NFS shares.
+Select the share row on the widget, then click the edit icon to modify permissions for the share dataset.
+Note: editing the dataset permissions sets permissions for the SMB and NFS.
+Using the **Edit Filesystem ACL** only edits permissions for the SMB share in the multi-protocol share configuration.
 
 {{< trueimage src="/images/SCALE/Shares/EditMultimodeShareDatasetPermissions.png" alt="Editing Share Dataset ACL" id="Editing Share Dataset ACL" >}}
 
@@ -215,7 +228,7 @@ After setting the dataset permission, connect to the share.
 
 {{<include file="/static/includes/addcolumnorganizer.md">}}
 
-### Connecting to a Multiprotocol Share
+### Connecting to a Multi-Protocol Share
 
 After creating and configuring the shares, connect to the multi-protocol share using either SMB or NFS protocols from a variety of client operating systems, including Windows, Apple, FreeBSD, and Linux/Unix systems.
 
