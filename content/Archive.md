@@ -130,6 +130,17 @@ Release Notes:
 <a href="https://www.truenas.com/docs/files/NoticePersistentL2ARCinTrueNAS12.0.pdf">Notice - Persistent L2ARC in TrueNAS 12.0</a>
 {{< /expand >}}
 
+{{< expand "TrueNAS 13.3" "v" >}}
+
+<a href="https://www.truenas.com/docs/files/CORE13.3Docs.pdf">TrueNAS 13.3</a>
+
+Release Notes:
+* [13.3 Overview]({{< ref "/_archive/COREReleaseNotes/13.3Overview" >}})
+* [13.3 Final Release]({{< ref "/_includes/13.3FinalRelease" >}})
+* [CORE 13.3 Release Notes]({{< ref "/GettingStarted/COREReleaseNotes" >}})
+
+{{< /expand >}}
+
 ## TrueCommand
 
 {{< expand "TrueCommand 2.x" "v" >}}
