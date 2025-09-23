@@ -118,7 +118,7 @@ Always keep a backup of an SSH public key if you are using one.
 
 As of TrueNAS 24.04, the **Shell** setting defaults to **nologin** for read-only and sharing administrators, which means they cannot access the **Shell** screen.
 
-Select the [shell]({{< ref "LocalUsersScreensSCALE" >}}) option for the admin user from the **Shell** dropdown list.
+Select the [shell]({{< ref "UsersScreen" >}}) option for the admin user from the **Shell** dropdown list.
 Options are **nologin**, **TrueNAS CLI**, **TrueNAS Console**, **sh**, **bash**, **rbash**, **dash**, **tmux**, and **zsh**.
 
 To disable all password-based functionality for the account, select **Lock User**. Clear to unlock the user.
@@ -145,7 +145,7 @@ Click **Save**. TrueNAS creates a new home directory for the user.
 
 To edit an existing user account, go to **Credentials > Users**.
 Click anywhere on the user row to expand the user entry, then click **Edit** to open the **Edit User** configuration screen.
-See [Local User Screens]({{< ref "LocalUsersScreensScale" >}}) for details on all settings.
+See [Local User Screens]({{< ref "UsersScreen" >}}) for details on all settings.
 
 ## Utilizing API Keys Feature
 

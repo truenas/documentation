@@ -1,7 +1,7 @@
 &NewLine;
 
 ### Prerequisites
-Before setting up a replication task, you must configure an [admin user]({{< ref "ManageLocalUsersSCALE" >}}) with the **Home Directory** set to something other than **/var/empty**.
+Before setting up a replication task, you must configure an [admin user]({{< ref "ManageUsersSCALE" >}}) with the **Home Directory** set to something other than **/var/empty**.
 Ensure the account configuration has **SSH password login enabled** set.
 **Allow all sudo commands with no password** must also be enabled to enable SSH+NETCAT remote replication.
 

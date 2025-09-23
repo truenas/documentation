@@ -1,7 +1,7 @@
 ---
-title: "Users (WIP) Screens"
-description: "Provides information on the new Users (WIP) screens and settings in TrueNAS."
-weight: 
+title: "Users Screens"
+description: "Provides information on the Users screens and settings in TrueNAS."
+weight: 10
 aliases: 
 tags:
 - users
@@ -101,9 +101,12 @@ Information details on the **Access** widget:
 - The password shows an active key icon when the user has a password or an inactive key icon when the user does not have a password. Users with passwords show the **Password** widget.
 
 - The access area shows:
+  - Last action time and date by the user, and the **See Logs** link, which opens the [**Audit** log screen]({{< ref "AuditScreen" >}}) for the selected user.
   - Services (such as **SMB Access**) and indicates whether it is active or inactive when not granted.
   - Pre-defined privilege or role assigned to the user, such as **Full Admin**, **Share Admin**, **Read Only Admin**.
-  - API keys assigned or not. When a key exists, the icon changes and shows a number with the key, for example, *1key*.
+  - API keys assigned or not. When a key exists, the icon changes and shows a number with the key, for example, *1 key*.
+    The **Add API Keys** link shows when no key exists, and opens the [**Add API Key** screen]({{< ref "APIKeysScreen" >}}).
+    The **View API Keys** link shows when a key exists, and opens the [**User API Key** screen]({{< ref "APIKeysScreen" >}}).
   - SSH access is active or inactive if not granted.
   - Shell access path.
     - Allowed sudo commands setting
