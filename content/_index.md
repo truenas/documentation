@@ -1,5 +1,6 @@
 ---
-title: "TrueNAS CORE 13.3"
+title: "TrueNAS CORE 13.3 (Archived)"
+description: "Archival documentation for the TrueNAS CORE 13.3 major version. This documentation is End of Life (EOL) and presented for reference only."
 geekdocCollapseSection: true
 weight: 10
 related: false
@@ -15,7 +16,7 @@ div.docs-read_mod {display: none;}
 h1 {display:none;}
 </style>
 
-{{< header logo="/images/truenas-core-logo.png" logo_alt="TrueNAS CORE Logo" version="TrueNAS CORE 13.3" icon="" icon_alt="" >}}
+{{< header logo="/images/truenas-core-logo.png" logo_alt="TrueNAS CORE Logo" version="TrueNAS CORE 13.3 (Archived)" icon="" icon_alt="" >}}
 
 {{< include file="/static/includes/13.3FinalRelease.md" >}}
 
@@ -23,7 +24,7 @@ h1 {display:none;}
 
 ## TrueNAS CORE 13.3 Featured Content
 
-To view documentation for historical or the latest stable TrueNAS CORE major versions, use the **Version** dropdown at the top of this page.
+To view documentation for historical TrueNAS CORE major versions, use the **Version** dropdown at the top of this page.
 
 <div class="docs-sections">
   <p>
@@ -50,3 +51,12 @@ To view documentation for historical or the latest stable TrueNAS CORE major ver
 	<br><a href="/coresecurityreports/">Security Reports</a>
   </p>
 </div>
+
+## Documentation End of Life (EOL)
+
+**13.3 Documentation EOL: April 29, 2025**
+
+TrueNAS employees maintain documentation and provide regular updates for current and in future versions of TrueNAS software.  
+
+Documentation for previous releases, that are no longer recommended for any user type, is archived and unmaintained.  
+All documentation provided here is end-of-life (EOL), intended for reference only, and no longer receives *any* updates.

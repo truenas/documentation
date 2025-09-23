@@ -13,13 +13,12 @@ majorVersions:
         link: "https://www.truenas.com/docs/core/13.0/gettingstarted/corereleasenotes/"
         releaseDate: "2025-01-24"
         latest: true
-  - lifecycle: "Current"
+  - lifecycle: "Archive"
     name: "TrueNAS 13.3"
-    releaseName: "13.3"
+    releaseName: "13.3 (Archived)"
     releases:
       - name: "13.3-U1.2"
         type: "Stable"
         link: "https://www.truenas.com/docs/core/13.3/gettingstarted/corereleasenotes/"
         releaseDate: "2025-04-29"
         latest: true
-

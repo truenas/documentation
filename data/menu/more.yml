@@ -17,10 +17,6 @@ more:
     ref: "https://www.truenas.com/docs/archive/"
     external: true
     icon: "gdoc_bookmark"
-  - name: "View Source"
-    ref: "https://github.com/truenas/documentation/blob/13.3/"
-    external: true
-    icon: "gdoc_github"
   - name: "RSS Feed"
     ref: "https://truenas.com/docs/index.xml"
     icon: "gdoc_notification"
