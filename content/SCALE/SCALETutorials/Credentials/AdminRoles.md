@@ -52,7 +52,7 @@ Administrative users who need to execute root-level commands to complete a task 
 For best security, enable only the required commands to perform the task and require password authentication, unless the task or app prevents it.
 Disable sudo permissions when the task completes and you no longer need them.
 
-**Allowed sudo commands**, **Allow all sudo commands**, **Allowed sudo commands with no password**, and **Allow all sudo commands with no password** grant limited root-like permissions using the sudo command.
+**Allowed sudo commands**, **Allow all sudo commands**, **Allowed sudo commands with no password**, and **Allow all sudo commands with no password**, on the **Add Group** and **Edit Group** screens, grant limited root-like permissions using the sudo command.
 Use **Allowed sudo commands** or **Allowed sudo commands with no password** to list specific sudo commands to allow.
 Enter each command as an absolute path to the ELF (Executable and Linkable Format) executable file, for example, */usr/bin/nano*.
 <file>/usr/bin/</file> is the default location for commands.
@@ -93,6 +93,8 @@ To enable SSH access to the system as an admin user (or root user), you must fir
 
 Now you must verify the user configuration options to allow SSH access.
 
+### Using the Root User in SSH 
+
 If you want to SSH into the system as the root: 
 
 1. Go to **Credentials > Users** and click the root user, then click <span class="iconify" data-icon="mdi:pencil"></span> (**Edit**).
@@ -100,6 +102,8 @@ If you want to SSH into the system as the root:
 2. Make sure **Disable Pasword** is disabled. If the root user has **Disable Password** enabled, you cannot use it to gain SSH access to the system.
 
 3. Click **Save**.
+
+### Allowing an Admin User to Enter Commands in SSH
 
 To allow an admin user to issue commands in an SSH session:
 
