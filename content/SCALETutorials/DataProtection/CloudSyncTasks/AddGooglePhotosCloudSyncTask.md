@@ -57,42 +57,50 @@ Use push to manage media in your local dataset and back it up to Google Photos.
 Next, select the data transfer mode that fits how you want to manage file retention between the source and destination.
 There are three options:
 
-  * **SYNC** - Matches files on the destination to the source.
-    Deletes files from the destination if they do not exist on the source.
-    Only affects albums created by the sync client.
-  * **COPY** - Duplicates each source file into the destination.
-    Overwrites files with the same name.
-    Only affects albums created by the sync client.
-  * **MOVE** - Transfers files from the source to the destination and deletes them from the source.
-    Overwrites files with the same name.
-    Only affects albums created by the sync client.
+* **SYNC** - Matches files on the destination to the source.
+  Deletes files from the destination if they do not exist on the source.
+  Only affects albums created by the sync client.
+* **COPY** - Duplicates each source file into the destination.
+  Overwrites files with the same name.
+  Only affects albums created by the sync client.
+* **MOVE** - Transfers files from the source to the destination and deletes them from the source.
+  Overwrites files with the same name.
+  Only affects albums created by the sync client.
 
 ### Choosing a Target Folder
 
-After choosing the direction and mode for your cloud sync task, choose the remote Google Photos folder that rclone targets to sync data.
-Because of the way rclone interacts with the Google Photos API, each target folder option has specific file management and structure requirements.
-This is due to the way rclone interacts with the Google Photos API.
-A cloud sync task cannot target the root level folder (<file>/</file>).
+After choosing the direction and mode for your cloud sync task, select the remote Google Photos folder that rclone targets.  
+Each folder option has specific file management and structure requirements due to API restrictions.  
+Cloud sync tasks cannot target the root folder (<file>/</file>).
 
 {{< truetable >}}
 | Folder | Recommended | Direction | Description |
 |-----------|-------------|-------------|-------------|
-| <file>/album</file> | Yes | Push or Pull | Use this option for push tasks or if you prefer to organize the Google Photos library by sorting media files into one or more discrete albums. All files must be in distinct albums or child directories of the local dataset. Media files uploaded to Google Photos but not assigned to an album are not pulled to a local dataset mirroring <file>/album</file>. Files uploaded to the base level of the local dataset instead of a child directory (an album) are not pushed to <file>/album</file>. |
-|  <file>/media/all</file> | Yes | Pull | Use this option if you prefer to use the Google Photos library as single directory, without organizing media files into discrete albums. The local dataset of a <file>/media/all</file> sync task contains all media files stored on the Google Photos account at the same level, with no further organization into subdirectories. Using <file>/media/all</file> allows you to upload new files to Google Photos, without needing to organize them into albums, and then pull them to TrueNAS. |
-| <file>/upload</file> | **No** | Push | Media files pushed from the local dataset to <file>/upload</file> are then uploaded to Google Photos and not sorted into an album. Because <file>/upload</file> is a temporary storage location, it can not accurately synchronize from one task to the next. Pushing to this folder does not preserve metadata and can result in duplicated files, poor performance, file name instability. |
+| <file>/album</file> | Yes | Push or Pull | Use this folder for push tasks or to organize media into albums. Only albums created by the TrueNAS cloud sync client are accessible. Pull returns only items in these albums; push uploads work as expected. All local files must be in child directories (albums) under the dataset. |
+| <file>/media/all</file> | **No** | Pull | API restrictions prevent reading your full Google Photos library. Only items in app-created albums are accessible. Do not use this option for full-library sync. |
+| <file>/upload</file> | **No** | Push | Temporary upload location. Files pushed here are not sorted into albums, metadata may be lost, and repeated sync tasks can produce duplicates or unstable filenames. Use only for temporary transfers. |
 {{< /truetable >}}
 
 ### Selecting the Dataset and Organizing Files
 
-Select TrueNAS local dataset or create a new one to use as the source or destination.
+Select a TrueNAS local dataset or create a new one to use as the source or destination.
 
 {{< expand "Creating a Dataset" "v" >}}
 {{< include file="/static/includes/CreateDatasetSCALE.md" >}}
 {{< /expand >}}
 
-Configure file management structure inside the local dataset (for push tasks) or albums in the Google Photos (for pull tasks) as required by your direction, mode, and target selections (see above).
+For push tasks, organize files in the local dataset so they map to albums created by the TrueNAS cloud sync client.  
+For pull tasks, the Google Photos API only provides access to items in albums created by the sync client.
+Full-library pulls or shared albums are not accessible.
+Configure your dataset accordingly based on your chosen direction, mode, and target folder.
 
 ## Creating the API Credentials
+
+{{< hint type=warning title="Important: API Credentials and Tokens" >}}
+Tokens generated before March 31, 2025 do not provide full access to your Google Photos library under the new API rules.  
+When creating credentials, ensure that your OAuth client and token are intended for use with albums created by the TrueNAS cloud sync client.
+Only these app-created albums can be accessed for push or pull tasks.
+{{< /hint >}}
 
 On the [Google API dashboard](https://console.cloud.google.com/apis/dashboard), click the dropdown menu to the right of the Google Cloud logo and select your project.
 
@@ -108,6 +116,8 @@ After you select your project, click **Enabled APIs & Services** on the left men
 {{< trueimage src="/images/SCALE/DataProtection/GooglePhotosAPIEnableAPIsandServices.png" alt="Enable APIs and Services" id="Enable APIs and Services" >}}
 
 Enter **photos library api** in the search bar, then select **Photos Library API** and click **ENABLE**.
+This enables the API for your project
+Access remains limited to albums created by the TrueNAS cloud sync client.
 
 {{< trueimage src="/images/SCALE/DataProtection/GooglePhotosAPIClickEnable.png" alt="Enable Photos Library API" id="Enable Photos Library API" >}}
 
@@ -125,7 +135,7 @@ Enter an email address in **Developer contact information**, then click **SAVE A
 
 {{< trueimage src="/images/SCALE/DataProtection/GooglePhotosAPIDeveloperContactInformation.png" alt="Enter Developer Contact Information" id="Enter Developer Contact Information" >}}
 
-Continue to the **Test users** section and click **+ ADD USERS**, enter your email address, then click **ADD**.
+Continue to the **Test users** section and click **+ ADD USERS**, enter the email addresses of users who will run cloud sync tasks, then click **ADD**.
 
 {{< trueimage src="/images/SCALE/DataProtection/GooglePhotosAPIAddTestingUser.png" alt="Add Test User" id="Add Test User" >}}
 
@@ -135,7 +145,7 @@ On the **OAuth consent screen**, click **PUBLISH APP** under **Testing** and pus
 
 {{< expand "Can I leave the app in testing mode?" "v" >}}
 You can leave the app in testing mode, but testing app credentials expire after seven days.
-Cloud sync tasks fail when credentials expire.
+Cloud sync tasks fail when testing mode credentials expire.
 {{< /expand >}}
 
 ### Create Credentials
@@ -165,6 +175,9 @@ Enter a name for the new remote, then enter the number from the list correspondi
 
 Enter the client id and secret you saved when you created the Google Photos API credentials, then enter `false` or press <kbd>Enter</kbd> to allow the Google Photos backend to request full access.
 
+**Note:** After March 31, 2025, full-library access is no longer possible under the Google Photos API.
+Even if rclone requests full access, it only sees albums created by the TrueNAS cloud sync client.
+
 {{< trueimage src="/images/SCALE/DataProtection/GooglePhotosAPIrcloneConfig2.png" alt="Configure rclone Client ID and Secret" id="Configure rclone Client ID and Secret" >}}
 
 Do not edit the advanced config.
@@ -174,6 +187,7 @@ A browser window opens to authorize rclone access.
 Click **Allow**.
 
 In the command line, enter `y` to confirm rclone uploads media items with full resolution and complete the configuration.
+Only albums created by the TrueNAS cloud sync client are accessible.
 
 Copy and save the type, client_id, client_secret, and token, then enter `y` to save the new remote.
 
@@ -191,6 +205,9 @@ Paste the Google Photos API client ID and client secret in the **OAuth Client ID
 
 Paste your rclone token into the **Token** field.
 
+**Note:** Due to API restrictions, these credentials only provide access to albums created by the TrueNAS cloud sync client
+Full-library or shared-album access is not possible.
+
 Click **Verify Credential** to ensure the credentials are valid, then click **Save**.
 
 ## Creating the Cloud Sync Task
@@ -203,20 +220,21 @@ Go to **Data Protection > Cloud Sync Tasks** and click **Add**. The **Cloud Sync
 
    Click **Verify Credential** to ensure the credentials are valid then click **Next**.
 
-2. Select the **Direction** as **PUSH** or **PULL** and select the **Transfer Mode** as **SYNC**, **COPY**, or **MOVE**.
-   Select the Google Photos location to back up data to or from in **Folder**.
+2. Select the **Direction** as **PUSH** or **PULL** and select the **Transfer Mode** as **SYNC**, **COPY**, or **MOVE**.  
+   Select the Google Photos location to back up data to or from in **Folder**.  
    Browse to and select the **album** folder or enter **/album**.
 
-   {{< trueimage src="/images/SCALE/DataProtection/CloudSyncTaskWizardWhatandWhenScreen.png" alt="Cloud Sync Task Wizard What and When" id="Cloud Sync Task Wizard - What and When" >}}
+   **Note:** Pull tasks only access albums created by the TrueNAS cloud sync client.
+   Full-library pulls or shared albums are not accessible.
 
-3. Select the local dataset in **Directory/Files**.
+3. Select the local dataset in **Directory/Files**.  
    This is the dataset sent to Google Photos for push tasks or the write destination for pull tasks.
 
    {{< hint type=info title="Sync Albums Not Files" >}}
    Push tasks containing media files saved to the local dataset root level fail with the error: **Failed to sync: can't upload files here**.  
 
-   Save files to child directories, not to the root level of the TrueNAS dataset.
-   Directories under the local dataset correspond to albums in the Google Photos library.
+   Save files to child directories, not to the root level of the TrueNAS dataset.  
+   Directories under the local dataset correspond to albums created by the TrueNAS cloud sync client in Google Photos.
    {{< /hint >}}
 
 4. Enter a **Description** for the cloud sync task.
@@ -240,16 +258,18 @@ Review the logged error message(s).
 Common error messages for failed Google Photos tasks include:
 
 {{< expand "Failed to copy: can't upload files here" "v" >}}
-Problem: A push task is trying to upload files to the root level <file>/</file> folder or the <file>/media/all</file> folder.
+Problem: A push task is trying to upload files to the root level <file>/</file> folder or the <file>/upload</file> folder.
 
-Solution: Reconfigure the push task to target the <file>/album</file> folder (and organize your files into one or more subfolders/albums) or change the direction of the task to pull from Google Photos and target the <file>/media/all</file> folder.
+Solution: Reconfigure the push task to target the <file>/album</file> folder and organize your files into one or more subfolders/albums.
+Only albums created by the TrueNAS cloud sync client are accessible for push or pull tasks.
 {{< /expand >}}
 
 {{< expand "Pulling from the root directory is not allowed. Please, select a specific directory" "v" >}}
 Problem: A pull or push task is targeting the root level <file>/</file> folder.
 
-Solution: Review [Before You Begin](#before-you-begin) above and change the target folder to <file>/album</file> or <file>/media/all</file>.
-Ensure the selected folder does not conflict with the direction of the task.
+Solution: Change the target folder to <file>/album</file>.
+Pull tasks only transfer files in albums created by the TrueNAS cloud sync client.
+Full-library or shared albums cannot be accessed.
 {{< /expand >}}
 
 {{< expand "Failed to copy: directory not found" "v" >}}
@@ -257,14 +277,13 @@ Problem: A pull task is targeting the <file>/upload</file> folder.
 
 Solution: The <file>/upload</file> folder functions as a temporary queue for rclone to upload files to Google Photos.
 rclone cannot pull from <file>/upload</file>.
-Review [Before You Begin](#before-you-begin) above and change the target folder to <file>/album</file> or <file>/media/all</file>.
-Organize your Google Photos library or local dataset as needed for the selected target.
+Change the target folder to <file>/album</file> and organize your Google Photos library or local dataset accordingly.
+Only albums created by the TrueNAS cloud sync client are accessible for pull tasks.
 {{< /expand >}}
 
-After reviewing available logs, click the vertical ellipses <span class="material-icons">more_vert</span> on the task and select <i class="material-icons" aria-hidden="true" title="Edit">edit</i> **Edit** and review the configuration.
-Compare configured options to the requirements in [Before You Begin](#before-you-begin) above and correct any issues.
+If a pull task is successful but some or all files are missing from the local dataset, review your library organization in Google Photos.  
 
-If a pull task is successful but some or all files are missing from the local dataset, review your library organization in Google Photos.
-Pull tasks configured with <file>/album</file> as the target folder only transfer files organized into albums.
-Files uploaded to Google Photos but not added to an album are not transferred.
-Using the Google Photos UI, create one or more albums and add all files to an album then click the vertical ellipses <span class="material-icons">more_vert</span> on the task and select <i class="fa fa-play" aria-hidden="true" title="Run Job"></i> **Run Job** to re-run the cloud sync task.
+Pull tasks transfer only files in albums created by the TrueNAS cloud sync client.
+Files uploaded to Google Photos but not added to an app-created album are never transferred.  
+
+Using the Google Photos UI, create one or more albums and add all files to an album, then click the vertical ellipses <span class="material-icons">more_vert</span> on the task and select <i class="fa fa-play" aria-hidden="true" title="Run Job"></i> **Run Job** to re-run the cloud sync task.
