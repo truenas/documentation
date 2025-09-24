@@ -181,7 +181,7 @@
       productButton.innerHTML = 'TrueNAS <i class="fa fa-angle-down"></i>';
     
       if (path.includes('/13.3/')) {
-        versionButton.textContent = '13.3';
+        versionButton.textContent = 'Archive';
       } else if (path.includes('/13.0/')) {
         versionButton.textContent = '13.0';
       }
@@ -273,7 +273,6 @@
               <hr class="version-line">
             </div>
             <div class="truenas-dropdown-item" onclick="selectVersion('24.10')" id="2410">24.10</div>
-            <div class="truenas-dropdown-item" onclick="selectVersion('13.3')" id="13.3">13.3</div>
             <div class="truenas-dropdown-item" onclick="selectVersion('13.0')" id="13">13.0</div>
           </div>
           <div class="truenas-version-group">
@@ -478,8 +477,6 @@
       var relative_url;
       if (version === '13.0') {
         relative_url = 'core/13.0/';
-      } else if (version === '13.3') {
-        relative_url = 'core/13.3/';
       } else if (version === 'Archive') {
         relative_url = 'archive/';
       } else if (version === '24.10') {
