@@ -4,8 +4,8 @@ img: "/images/truenas_core-logo-full-color-rgb.png"
 product: "TrueNAS CORE"
 title: "CORE&trade; | Enterprise&trade;"
 majorVersions:
-  - lifecycle: "Previous"
-    name: "TrueNAS CORE 13.0"
+  - lifecycle: "13.0"
+    name: "TrueNAS 13.0"
     releaseName: "13.0"
     releases:
       - name: "13.0-U6.8"
@@ -13,9 +13,9 @@ majorVersions:
         link: "https://www.truenas.com/docs/core/13.0/gettingstarted/corereleasenotes/"
         releaseDate: "2025-07-14"
         latest: true
-  - lifecycle: "Current"
-    name: "TrueNAS CORE 13.3"
-    releaseName: "13.3"
+  - lifecycle: "13.3 (Archived)"
+    name: "TrueNAS 13.3"
+    releaseName: "13.3 (Archived)"
     releases:
       - name: "13.3-U1.1"
         type: "Community"
@@ -31,3 +31,5 @@ majorVersions:
         link: ""
         releaseDate: ""
         latest: true
+
+
