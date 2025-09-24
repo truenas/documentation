@@ -56,7 +56,7 @@ To view documentation for historical TrueNAS CORE major versions, use the **Vers
 
 **13.3 Documentation EOL: April 29, 2025**
 
-TrueNAS employees maintain documentation and provide regular updates for current and in future versions of TrueNAS software.  
+TrueNAS employees maintain documentation and provide regular updates for current and future versions of TrueNAS software.  
 
 Documentation for previous releases, that are no longer recommended for any user type, is archived and unmaintained.  
 All documentation provided here is end-of-life (EOL), intended for reference only, and no longer receives *any* updates.
