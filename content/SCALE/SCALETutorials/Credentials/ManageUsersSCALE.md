@@ -71,14 +71,16 @@ This toggles to **Unlock User** when locked.
 
 ### Adding Home Directories
 
-To add a home directory for a user account, first create a dataset to use for user home directories, for example, a dataset named *homedirs*.
+You can add a home directory to a new or an existing user account.
+You can create a dataset to use for user home directories if one does not exist before you add or edit a user or create it while adding or editing the user.
 
-Next, go to **Credentials > Users** and either click **Add** to add a new user and their home directory, or select an existing user, click **Edit**, and then add a home directory for the user.
-While on the user configuration screen:
+To add a home directory to an existing user, go to **Credentials > Users**, click on the user row, and then click **Edit** to open the **Edit User** screen.
+Scroll down to the **Home Directory** option, click in the field to show the settings.
 
-Enter the path to the new dataset for home directories in **Home Directory**. For example, change **/var/empty/** to the path to the new dataset */tank/homedirs*.
+Select **Create Home Directory**, then enter or browse to select the path to the dataset for home directories in **Home Directory**. For example, change **/var/empty/** to the path to a new dataset.For example, */tank/homedirs*.
 
-Next, select **Create Home Directory**, and select the level of permissions you want to apply. We recommend leaving the default selections, **Read/Write/Execute** selected for the user home directory.
+Accept the default permissions or clear the checkmark to select the level of permissions you want to apply.
+We recommend leaving the default selections, **Read/Write/Execute** selected for the user home directory.
 
 Click **Save**. TrueNAS creates a new home directory for the user.
 
