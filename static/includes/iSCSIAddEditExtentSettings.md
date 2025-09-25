@@ -12,7 +12,7 @@ The **Add Extent** and **Edit Extent** screens show the same configuration setti
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Name** | Text entry field that accepts manual or copy/paste entry of a name for the extent. An **Extent** where the size is not **0**, cannot be an existing file within the pool or dataset. |
+| **Name** | Text entry field that accepts manual or copy/paste entry of a name for the extent. An **Extent** where the size is not **0** cannot be an existing file within the pool or dataset. |
 | **Description** | Text entry field that accepts manual or copy/paste entry of notes about this extent. |
 | **Enabled** | Enables the iSCSI extent. |
 {{< /truetable >}}
@@ -35,7 +35,7 @@ The **Add Extent** and **Edit Extent** screens show the same configuration setti
 |---------|-------------|
 | **Extent Type** | Provides virtual storage access to zvols or files. Select the extent (zvol) option from the dropdown list. Dropdown options:<br><li>**Device** - Select to specify a device (default option). **Device** provides virtual storage access to zvols and zvol snapshots. Shows the **Device** field.<br><li>**File** - Select to specify a path to a file. **File** provides virtual storage access to a single file. Shows the **Path to the Extent** and **Filesize** fields. </li> |
 | **Device** | Shows after specifying **Device** in **Extent Type**. Select the unused zvol or zvol snapshot from the dropdown list. |
-| **Path to the Extent** | Consists of two fields: a blank field for the mount path to the device or file and a file browser field directly below it that allows browsing to select the file or zvol. After selecting a parent dataset the **Create Dataset** link activates. Enter a slash (/) followed by a file or zvol name to create a file in a dataset, and append the file name to the path (/*filename.ext*). |
+| **Path to the Extent** | Consists of two fields: a blank field for the mount path to the device or file, and a file browser field directly below it that allows browsing to select the file or zvol. After selecting a parent dataset, the **Create Dataset** link activates. Enter a slash (/) followed by a file or zvol name to create a file in a dataset, and append the file name to the path (/*filename.ext*). |
 | **Filesize** | Enter 0 to use the actual file size of an existing file, or specify the file size for the new file added in **Path to the Extent**. |
 | **Product ID** | Product identification string for the extent. The default is **iSCSI Disk** when left empty. |
 | **Logical Block Size** | Shows the default **512** size. If the initiator requires a different block size, enter the numerical value. |
