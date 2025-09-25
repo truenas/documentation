@@ -31,7 +31,7 @@ Enabling or disabling shadow copies is an available option in pre-25.10 TrueNAS 
 TrueNAS sets a share **Purpose** to **Legacy Share** after upgrading to 25.10 when shares created in a release before 25.10 have **Purpose** set to **No Preset**.
 See [Legacy Share Settings]({{< ref "SMBSharesScreens/#legacy-share-settings" >}}) for more information.
 
-To enable shadow copies for a compatible dataset go to **Shares > Windows (SMB) Shares** and locate the share.
+To enable shadow copies for a compatible dataset, go to **Shares > Windows (SMB) Shares** and locate the share.
 
 Click on the **Edit** option for the share.
 
