@@ -254,7 +254,7 @@ Click the vertical ellipses <span class="material-icons">more_vert</span> on the
 ### Troubleshooting
 
 If a Google Photos cloud sync task fails, go to **Data Protection** and click the **FAILED** status in **State** on the **Cloud Sync Tasks** widget.
-Review the logged error message(s).
+Review the logged error messages.
 Common error messages for failed Google Photos tasks include:
 
 {{< expand "Failed to copy: can't upload files here" "v" >}}
@@ -269,7 +269,8 @@ Only albums the sync client creates are accessible to cloud sync tasks.
 Problem: A pull or push task targets the root level <file>/</file> folder.
 
 Solution: Change the target folder to <file>/album</file>.
-Pull tasks transfer only media that exist in albums created by the TrueNAS cloud sync client; full-library pulls and shared albums are not accessible via the API.
+Pull tasks transfer only media that exist in albums created by the TrueNAS cloud sync client.
+Full-library pulls and shared albums are not accessible via the API.
 Do not rely on <file>/media/all</file> for a full export.
 {{< /expand >}}
 
