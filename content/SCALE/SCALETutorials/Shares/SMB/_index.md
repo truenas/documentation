@@ -90,7 +90,7 @@ To add or edit users, go to **Credentials > Users**, then add or edit an existin
 Click **Add** to create a new user or as many new user accounts as needed.
 Joining TrueNAS to Active Directory creates the user accounts.
 
-Enter the values in each required field, verify **SMB User** is selected, then click **Save**.
+Enter the values in each required field, verify **SMB Access** is selected, then click **Save**.
 For more information on the fields and adding users, see [Creating User Accounts]({{< ref "ManageUsersScale" >}}).
 
 By default, all new users are members of a built-in group called **builtin_users**.
@@ -372,7 +372,7 @@ Enter the SMB address as follows: <code>smb://<i>192.168.1.111</i></code>.
 
 Input the username and password for the user assigned to that pool or a guest user if the share has guest access.
 
-For further tuning in macOS, Apple provides some enterprise-specific pointers in their [Adjust SMB browsing behavior in macOS](https://support.apple.com/en-us/102064) article.
+For further tuning in Mac OS, Apple provides some enterprise-specific pointers in their [Adjust SMB browsing behavior in macOS](https://support.apple.com/en-us/102064) article.
 
 {{< /expand >}}
 
