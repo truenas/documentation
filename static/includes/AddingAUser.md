@@ -9,13 +9,13 @@ To manually add a new user, click **Credentials > Users**, and then click **Add*
    **SMB Access** is selected by default.
    Select **TrueNAS Access**, then select the administration role from the dropdown list that shows after selecting the **TrueNAS Access** option.
 
-   To create an administrator with full access, select **Full Admin**.
-   To create an administrator with access to manage shares, select **Sharing Admin**.
-   To create an administrator with read-only access, select **Readonly Admin**.
+   - To create an administrator with full access, select **Full Admin**.
+   - To create an administrator with access to manage shares, select **Sharing Admin**.
+   - To create an administrator with read-only access, select **Readonly Admin**.
+   - To allow the user to access the **Shell** in the UI, select **Shell Access**.
 
-   To allow the user to access the **Shell** in the UI, select **Shell Access**.
-
-   To allow the user to establish an SSH session with the system, select **SSH Access**. Selecting this option also selects the **Shell Access** option by default.
+   To allow the user to establish an SSH session with the system, select **SSH Access**.
+   Selecting this option also selects the **Shell Access** option by default.
    To limit the user to only Shell access, do not select the **SSH Access** option.
    
 3. Enter a password for the user.
@@ -45,7 +45,7 @@ To manually add a new user, click **Credentials > Users**, and then click **Add*
    (Optional) Enter the email for the user.
    Starting in TrueNAS 25.10, system notifications are sent to recipients configured in system email settings rather than user account emails.
 
-   {{< expand "Set up the group." "v" >}}
+   {{< expand "Set up a group." "v" >}}
    Accept the default group setting, which is **Create New Primary Group**. This creates a group with the same name as the admin user.
    The role setting adds the user to the appropriate auxiliary group for that role.
 
