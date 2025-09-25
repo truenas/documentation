@@ -78,7 +78,7 @@ Cloud sync tasks cannot target the root folder (<file>/</file>).
 |-----------|-------------|-------------|-------------|
 | <file>/album</file> | Yes | Push or Pull | Use this folder for push tasks or to organize media into albums. Only albums created by the TrueNAS cloud sync client are accessible. Pull returns only items in these albums; push uploads work as expected. All local files must be in child directories (albums) under the dataset. |
 | <file>/media/all</file> | **No** | Pull | API restrictions prevent reading your full Google Photos library. Only items in app-created albums are accessible. Do not use this option for full-library sync. |
-| <file>/upload</file> | **No** | Push | Temporary upload location. Files pushed here are not sorted into albums, metadata may be lost, and repeated sync tasks can produce duplicates or unstable filenames. Use only for temporary transfers. |
+| <file>/upload</file> | **No** | Push | Temporary upload location. Files pushed here are not sorted into albums, metadata can be lost, and repeated sync tasks can produce duplicates or unstable filenames. Use only for temporary transfers. |
 {{< /truetable >}}
 
 ### Selecting the Dataset and Organizing Files
@@ -135,7 +135,7 @@ Enter an email address in **Developer contact information**, then click **SAVE A
 
 {{< trueimage src="/images/SCALE/DataProtection/GooglePhotosAPIDeveloperContactInformation.png" alt="Enter Developer Contact Information" id="Enter Developer Contact Information" >}}
 
-Continue to the **Test users** section and click **+ ADD USERS**, enter the email addresses of users who will run cloud sync tasks, then click **ADD**.
+Continue to the **Test users** section and click **+ ADD USERS**, enter the email addresses of users who run cloud sync tasks, then click **ADD**.
 
 {{< trueimage src="/images/SCALE/DataProtection/GooglePhotosAPIAddTestingUser.png" alt="Add Test User" id="Add Test User" >}}
 
