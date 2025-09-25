@@ -12,14 +12,14 @@ keywords:
 ---
 
 {{< hint type=important title="Changes to Google Photos API (effective March 31, 2025)" >}}
-On March 31, 2025, Google changed the Google Photos API to allow external applications to access and manage only the media and albums they create.  
-Cloud sync tasks continue to upload photos to albums created by the TrueNAS sync client, but reading from your full photo library or from shared albums does not work as expected.  
-Some operations return permission errors.  
+On March 31, 2025, Google changed the Google Photos API to allow external applications to access and manage only the media and albums they create.
+Cloud sync tasks continue to upload photos to albums created by the TrueNAS sync client, but reading from your full photo library or from shared albums does not work as expected.
+Some operations return permission errors.
 
 Tokens issued before March 31, 2025 do not provide full-library access under the new API rules.
 Generate new credentials if you need to continue uploading into albums created by the sync client.
 
-See the [Google API update notice](https://developers.google.com/photos/support/updates) for more details.  
+See the [Google API update notice](https://developers.google.com/photos/support/updates) for more details.
 
 Review existing Google Photos cloud sync tasks and configure them to use albums created by the TrueNAS source.
 A complete backup of a Google Photos library through the API is not possible.
@@ -45,7 +45,7 @@ Choose the cloud sync [direction and transfer mode](#choosing-a-sync-direction-a
 
 ### Choosing a Sync Direction and Mode
 
-A Google Photos cloud sync task can either push local files to Google Photos or (limited) pull files from Google Photos to a local dataset on TrueNAS.  
+A Google Photos cloud sync task can either push local files to Google Photos or (limited) pull files from Google Photos to a local TrueNAS dataset.
 Select the direction that fits how you want to manage your media files.
 
 Pull is restricted by the Google Photos API and only accesses albums created by the TrueNAS sync client.
@@ -220,20 +220,20 @@ Go to **Data Protection > Cloud Sync Tasks** and click **Add**. The **Cloud Sync
 
    Click **Verify Credential** to ensure the credentials are valid then click **Next**.
 
-2. Select the **Direction** as **PUSH** or **PULL** and select the **Transfer Mode** as **SYNC**, **COPY**, or **MOVE**.  
-   Select the Google Photos location to back up data to or from in **Folder**.  
+2. Select the **Direction** as **PUSH** or **PULL** and select the **Transfer Mode** as **SYNC**, **COPY**, or **MOVE**.
+   Select the Google Photos location to back up data to or from in **Folder**.
    Browse to and select the **album** folder or enter **/album**.
 
    **Note:** Pull tasks only access albums created by the TrueNAS cloud sync client.
    Full-library pulls or shared albums are not accessible.
 
-3. Select the local dataset in **Directory/Files**.  
+3. Select the local dataset in **Directory/Files**.
    This is the dataset sent to Google Photos for push tasks or the write destination for pull tasks.
 
    {{< hint type=info title="Sync Albums Not Files" >}}
    Push tasks containing media files saved to the local dataset root level fail with the error: **Failed to sync: can't upload files here**.  
 
-   Save files to child directories, not to the root level of the TrueNAS dataset.  
+   Save files to child directories, not to the root level of the TrueNAS dataset.
    Directories under the local dataset correspond to albums created by the TrueNAS cloud sync client in Google Photos.
    {{< /hint >}}
 
