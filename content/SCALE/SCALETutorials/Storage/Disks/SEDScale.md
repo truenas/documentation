@@ -21,13 +21,13 @@ keywords:
 * Legacy interface for older ATA devices (Not recommended for security-critical environments!)
 * [TCG Opal 1](https://trustedcomputinggroup.org/wp-content/uploads/Opal_SSC_1.00_rev3.00-Final.pdf) legacy specification
 * [TCG Opal 2](https://trustedcomputinggroup.org/wp-content/uploads/TCG_Storage-Opal_SSC_v2.01_rev1.00.pdf) standard for newer consumer-grade devices
-* [TCG Opalite](https://trustedcomputinggroup.org/wp-content/uploads/TCG_Storage-Opalite_SSC_FAQ.pdf) which is a reduced form of OPAL 2
+* [TCG Opalite](https://trustedcomputinggroup.org/wp-content/uploads/TCG_Storage-Opalite_SSC_FAQ.pdf), which is a reduced form of OPAL 2
 * TCG Pyrite [Version 1](https://trustedcomputinggroup.org/wp-content/uploads/TCG_Storage-Pyrite_SSC_v1.00_r1.00.pdf) and [Version 2](https://trustedcomputinggroup.org/wp-content/uploads/TCG_Storage-Pyrite_SSC_v2.00_r1.00_PUB.pdf) are similar to Opalite, but with hardware encryption removed
   Pyrite provides a logical equivalent of the legacy ATA security for non-ATA devices. Only the drive firmware protects the device.
   {{< hint type=warning >}}
   Pyrite Version 1 SEDs do not have PSID support and can become unusable if the password is lost.
   {{< /hint >}}
-* [TCG Enterprise](https://trustedcomputinggroup.org/wp-content/uploads/TCG_Storage-SSC_Enterprise-v1.01_r1.00.pdf) designed for systems with many data disks.
+* [TCG Enterprise](https://trustedcomputinggroup.org/wp-content/uploads/TCG_Storage-SSC_Enterprise-v1.01_r1.00.pdf) is designed for systems with many data disks.
   These SEDs cannot unlock before the operating system boots.
 * [TCG Ruby 1.0](https://trustedcomputinggroup.org/wp-content/uploads/TCG_Storage_SSC_Ruby_v1_r1_pub-1.pdf)
 
@@ -35,7 +35,7 @@ See this Trusted Computing Group and NVM Express® [joint white paper](https://n
 
 ## TrueNAS Implementation
 
-TrueNAS implements the security capabilities of [sedutil-cli](https://github.com/truenas/sedutil) for TCG compliant devices.
+TrueNAS implements the security capabilities of [sedutil-cli](https://github.com/truenas/sedutil) for TCG-compliant devices.
 
 You can configure a SED before or after assigning the device to a pool.
 
@@ -52,7 +52,7 @@ Repurposing a SED on another system requires the SED password or a full cryptogr
 TrueNAS supports setting a global password for all detected SEDs or setting individual passwords for each SED.
 Using a global password for all SEDs is strongly recommended to simplify deployment and avoid maintaining separate passwords for each SED.
 
-SED passwords are used during initial set up and for unlocking SEDs.
+SED passwords are used during initial setup and for unlocking SEDs.
 
 ### Configuring Global SED Settings
 
@@ -81,7 +81,7 @@ Additional SED management options are available using a shell session and the se
 Enter `sedutil-cli -h` or see [the sedutil-cli.8 man page](https://github.com/truenas/sedutil/blob/master/docs/sedutil-cli.8) for more information.
 
 {{< enterprise >}}
-TrueNAS Enterprise customers should contact TrueNAS Enterprise Support for assistance with the initial set up and management of SEDs using sedutil-cli.
+TrueNAS Enterprise customers should contact TrueNAS Enterprise Support for assistance with the initial setup and management of SEDs using sedutil-cli.
 
 {{< expand "Contacting TrueNAS Enterprise Support" >}}
 {{< include file="/static/includes/iXsystemsSupportContact.md" >}}

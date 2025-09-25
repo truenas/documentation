@@ -1,6 +1,6 @@
 ---
 title: "Windows Shares (SMB)"
-description: "Provides information on SMB shares and instruction on creating a basic share and setting up various specific configurations of SMB shares."
+description: "Provides information on SMB shares and instructions on creating a basic share and setting up various specific configurations of SMB shares."
 geekdocCollapseSection: true
 weight: 50
 related: false
@@ -18,27 +18,28 @@ tags:
 ## About Windows (SMB) Shares
 
 SMB (also known as CIFS) is the native file-sharing system in Windows.
-SMB shares can connect to most operating systems, including Windows, MacOS, and Linux.
+SMB shares can connect to most operating systems, including Windows, Mac OS, and Linux.
 TrueNAS can use SMB to share files among single or multiple users or devices.
 
 SMB supports a wide range of permissions, security settings, and advanced permissions (ACLs) on Windows and other systems, as well as Windows Alternate Streams and Extended Metadata.
 SMB is suitable for managing and administering large or small pools of data.
 
 TrueNAS uses [Samba](https://www.samba.org/) to provide SMB services.
-The SMB protocol has multiple versions. An SMB client typically negotiates the highest supported SMB protocol during SMB session negotiation.
+The SMB protocol has multiple versions. During the SMB session negotiation, a typical SMB client can negotiate the highest supported SMB protocol.
 Industry-wide, SMB1 protocol (sometimes referred to as NT1) use is deprecated for security reasons.
 
 {{< include file="/static/includes/SMBShareMSDOSalert.md" >}}
 
-However, most SMB clients support SMB 2 or 3 protocols, even when not default.
+However, most SMB clients support SMB 2 or 3 protocols even when they are not the default.
 
 {{< hint type=note >}}
 Legacy SMB clients rely on NetBIOS name resolution to discover SMB servers on a network.
-TrueNAS disables the NetBIOS Name Server (nmbd) by default. Enable it on the **Network > Global Settings** screen if you require this functionality.
+TrueNAS disables the NetBIOS name server (nmbd) by default. Enable it on the **Network > Global Settings** screen if this functionality is required.
 
-MacOS clients use mDNS to discover SMB servers present on the network. TrueNAS enables the mDNS server (avahi) by default.
+Mac OS clients use mDNS to discover SMB servers present on the network. TrueNAS enables the mDNS server (avahi) by default.
 
-Windows clients use [WS-Discovery](https://docs.oasis-open.org/ws-dd/ns/discovery/2009/01) to discover the presence of SMB servers, but you can disable network discovery by default depending on the Windows client version.
+Windows clients use [WS-Discovery](https://docs.oasis-open.org/ws-dd/ns/discovery/2009/01) to discover the presence of an SMB server.
+You can disable network discovery by default depending on the Windows client version.
 
 Discoverability through broadcast protocols is a convenience feature and is not required to access an SMB server.
 {{< /hint >}}
@@ -50,35 +51,44 @@ Discoverability through broadcast protocols is a convenience feature and is not 
 ## How do I add an SMB Share?
 
 {{< hint type="info" title="Active Directory and SMB Service" >}}
-Verify Active Directory connections are working and error-free before adding an SMB share.
-If configured but not working or in an error state, AD cannot bind and prevents starting the SMB service.
+Verify your Active Directory connections are working and error-free before adding an SMB share.
+When an SMB share is configured but not working or is in an error state, AD cannot bind, and TrueNAS cannot start the SMB service.
 {{< /hint >}}
 
-Creating an SMB share on your system involves several steps to add the share and get it working.
+Creating an SMB share on your system requires adding the share and then getting it working.
 
-1. [Create the SMB share user account](#creating-the-smb-share-user-account).
-   You can also use directory services like Active Directory or LDAP to provide additional user accounts.
+1. [Create the SMB share user account](#creating-smb-share-user-accounts).
+
+   You can manually add user accounts or use directory services like Active Directory or LDAP to provide additional user accounts.
    If setting up an external SMB share, we recommend using Active Directory or LDAP, or at a minimum, synchronizing the user accounts between systems.
 
 2. [Create the SMB share and dataset](#adding-an-smb-share-and-dataset).
-   You can create a basic SMB share or for more specific share types or feature requirements from the **Add SMB** screen using the [Advanced Options](#configuring-share-advanced-options-settings) instructions before saving the share.
 
-   TrueNAS allows creating the dataset and share at the same time from either the **Add Dataset** screen or the **Add SMB** share screen.
-   Use either option to create a basic SMB share, but when customizing share use the **Add SMB** screen presets and advanced options to create the share and dataset.
-   The procedure in this article provides the instructions to add the dataset while adding the share using the **Add SMB** screen.
+   You can use the **Add SMB** screen to create a basic SMB share or a more specific share type with specific feature requirements using the [Advanced Options](#configuring-share-advanced-options-settings) settings before saving the share.
 
-3. [Modify the share permissions](#tuning-the-dataset-acl).
+   The **Add Dataset** and the **Add SMB** share screens allow TrueNAS to create a dataset and SMB share from the same screen.
+   Use either option to create a basic SMB share.
+
+   When creating an SMB share that requires customization or is intended for a specific purpose, such as working with Veeam Backup & Restore immutability or a repository for block or fast cloning (requires an Enterprise license), use the **Add SMB** screen **Purpose** presets to create the share and dataset for these special SMB shares.
+   For more information on Veeam SMB shares, refer to the [Solutions > Integrations](https://www.truenas.com/docs/solutions/integrations/) **Veeam** and **Veeam Immutability** guides.
+
+   When setting up multi-protocol (SMB and NFS) shares, refer to the [Multiprotocol Shares]({{< relref "MixedModeShares.md" >}}) tutorial for configuration instructions.
+
+   This article describes adding a dataset while adding the share using the **Add SMB** screen.
+
+3. [Modify the share permissions](#tuning-the-dataset-filesystem-permissions).
+
    After adding or modifying the user account for the share, edit the dataset permissions.
 
-After adding the share, [start the service](#starting-the-smb-service) and [mount it](#mounting-the-smb-share) to your other system.
+4. [Start the service](#starting-the-smb-service) and [mount the share](#mounting-the-smb-share) to your other system.
 
 ### Creating SMB Share User Accounts
 
 {{< include file="/static/includes/LocalSMBUser.md" >}}
 
-To add or edit users, go to **Credentials > Users** to add or edit the SMB share user(s).
+To add or edit users, go to **Credentials > Users**, then add or edit an existing user to create the SMB share user(s).
 Click **Add** to create a new user or as many new user accounts as needed.
-If joined to Active Directory, it can create the TrueNAS accounts.
+Joining TrueNAS to Active Directory creates the user accounts.
 
 Enter the values in each required field, verify **SMB User** is selected, then click **Save**.
 For more information on the fields and adding users, see [Creating User Accounts]({{< ref "ManageLocalUsersScale" >}}).
@@ -87,9 +97,9 @@ By default, all new users are members of a built-in group called **builtin_users
 You can use a group to grant access to all users on the server or add more groups to fine-tune permissions for large numbers of users.
 
 {{< expand "Why not just allow anonymous access to the share?" "v" >}}
-Anonymous or guest access to the share is possible, but it is a security vulnerability and not recommended for Enterprise customers or systems with more than one SMB share administrator account.
-Using a guest account also increases the likelihood of unauthorized users gaining access to your data.
-Major SMB client vendors are deprecating it, partly because signing and encryption are impossible for guest sessions.
+Anonymous or guest access to the share is possible, but allowing guest access can create a security vulnerability, so it is not recommended for Enterprise customers or systems with more than one SMB share administrator account.
+Using a guest account increases the likelihood of unauthorized users gaining access to your data in the SMB share.
+Major SMB client vendors are deprecating guest users, partly because signing and encryption are impossible for guest sessions.
 {{< /expand >}}
 
 {{< expand "What about LDAP users?" "v" >}}
@@ -101,8 +111,8 @@ Migrate legacy Samba domains to Active Directory before upgrading to 24.10 or la
 
 ## Adding an SMB Share and Dataset
 
-You can create an SMB share while [creating a dataset on the **Add Dataset** screen]({{< ref "DatasetsSCALE" >}}) or create the dataset and the share on the **Add SMB Share** screen.
-This article covers adding the dataset on the **Add SMB Share** screen.
+You can create an SMB share while [creating a dataset on the **Add Dataset** screen]({{< ref "DatasetsSCALE" >}}) or create a dataset and the share using the **Add SMB** share screen.
+This article covers adding the dataset using the **Add SMB** share screen.
 
 {{< include file="/static/includes/AppsSMBErrorWarning.md" >}}
 
@@ -114,6 +124,12 @@ TrueNAS creates the ZFS dataset with these settings:
 * **ACL Mode** set to **Restricted**
    The **ACL Type** influences the **ACL Mode** setting. When **ACL Type** is set to **Inherit**, you cannot change the **ACL Mode** setting.
    When **ACL Type** is set to **NFSv4**, you can change the **ACL Mode** to **Restricted**.
+   
+   {{< hint type=note >}}
+   For datasets with **NFSv4** ACL type, SMB clients automatically use access-based enumeration. 
+   This means directory listings over SMB only include files and directories for which the client has read permissions. 
+   This behavior is enabled by default and matches FreeBSD behavior.
+   {{< /hint >}}
 
 * **Case Sensitivity** set to **Insensitive**
 
@@ -122,20 +138,28 @@ This default ACL is restrictive and only grants access to the dataset owner and 
 You can modify the ACL later according to your use case.
 {{< /expand >}}
 
+If you want to organize the SMB share dataset under a parent dataset (for example, under *smb-shares*), create that parent dataset so you can select it as the parent in step 2 below.
+Alternatively, you can create the parent and SMB share dataset using the **Create Dataset** option associated with the file browser in the **Add SMB** screen by making the create dataset instructions a two-=step process.
+
 To create a basic Windows SMB share and a dataset, go to **Shares**, then click **Add** on the **Windows Shares (SMB)** widget to open the **Add Share** screen.
 
-   {{< trueimage src="/images/SCALE/Shares/AddShareBasicOptions.png" alt="Add SMB Basic Options" id="Add SMB Basic Options" >}}
+{{< trueimage src="/images/SCALE/Shares/AddShareBasicOptions.png" alt="Add SMB Basic Options" id="Add SMB Basic Options" >}}
 
-1. Enter or browse to select the SMB share mount path (parent dataset where you want to add a dataset for this share) to populate the **Path** field.
-   The **Path** is the directory tree on the local file system that TrueNAS exports over the SMB protocol.
-   
+1. Enter or browse to select the SMB share mount path (parent dataset where you want to add a dataset for this share).
+   You cannot use a root dataset for a share. When the dataset selected has an existing ACL, a warning dialog shows. Click **Continue**.
+   Click on the dataset under which you want to add the SMB share dataset.
+   The blank **Path** field populates with the path selected in the file browser field directly below it.
+   The **Path** file browser field is the directory tree on the local file system that TrueNAS exports over the SMB protocol.
+
    {{< include file="/static/includes/FileExplorerFolderIcons.md" >}}
 
-2. Click **Create Dataset**. Enter the name for the share and dataset in the **Create Dataset** dialog, then click **Create**.
-   The system creates the new dataset and the share and populates the **Name** field with the dataset name.
+2. Click **Create Dataset**.
+   Enter a name for the dataset in the **Create Dataset** dialog, then click **Create**.
+   The system creates the new dataset and populates the **Name** field with the dataset name, which becomes the share name.
 
-   The value entered in **Name** becomes the dataset and share name.
-   This forms part of the share pathname when SMB clients perform an SMB tree connect.
+   To make the new dataset the parent for an SMB share, select the just-added dataset, then click **Create Dataset** again to add the child dataset for the share.
+
+   The path forms part of the share pathname when SMB clients perform an SMB tree connect.
    Because of how the SMB protocol uses the name, it must be less than or equal to 80 characters.
    Do not use invalid characters as specified in Microsoft documentation MS-FSCC section 2.1.6.
 
@@ -143,72 +167,85 @@ To create a basic Windows SMB share and a dataset, go to **Shares**, then click 
    * [Files and directories](https://learn.microsoft.com/en-us/windows/win32/fileio/naming-a-file#naming-conventions)
    * [Share names](https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-fscc/dc9978d7-6299-4c5a-a22d-a039cdc716ea)
 
-   If creating an external SMB share, enter the host name or IP address of the system hosting the SMB share and the name of the share on that system.
-   Enter as **EXTERNAL:*ip address*&bsol;*sharename*** in **Path**, then change **Name** to EXTERNAL with no special characters.
+3. Select a share type on the **Purpose** dropdown list.
+   The share type selected locks or unlocks the pre-determined **Advanced Options** settings for the share.
 
-3. Select a preset from the **Purpose** dropdown list to apply.
-   The preset selected locks or unlocks the pre-determined **Advanced Options** settings for the share.
+   Select **Default Share** to create a basic SMB share with the **Browsable to Network Clients** option preselected.
+   This determines whether this share name is included when browsing shares.
 
-   To retain control over all the share **Advanced Options** settings, select **No presets** or **Default share parameters**.
-
-   To create a multi-protocol share (NFSv4/SMB), select **Multi-protocol (NFSv4/SMB) share**. This adds the share to the SMB and NFS widgets on the main **Shares** screen.
-
-   To create an alternative to Home Shares, select **Private SMB Datasets and Shares**.
+   Select **Private Datasets Share** to create an alternative to home shares.
    See [Setting Up SMB Home Shares]({{< ref "SMBPrivateDatasetShare" >}}) for more information on replacing this legacy feature with private SMB shares and datasets.
 
-   {{< expand "SMP Purpose Options" "v" >}}
-   {{< include file="/static/includes/SMBPurposePresets.md" >}}
-   {{< /expand >}}
+   Select **Multi-protocol Share** to create a multi-protocol share (NFSv4/SMB). Set this if the path is shared through NFS, FTP, or used by containers or apps.
+   Note: This setting can reduce SMB share performance as it turns off some SMB features for safer interoperability with external processes.
+   See [Setting Up SMB Multichannel]({{< ref "SMBMultichannel.md" >}}) for more information on creating multi-protocol shares.
 
-4. (Optional) Enter a **Description** to help explain the share purpose.
+   Select **Time Machine Share** to create a Time Machine share. The SMB share is presented to Mac OS clients as a Time Machine target.
+   See [Adding a Basic Time Machine SMB Share]({{< ref "SetUpBasicTimeMachineSMBShare.md" >}}) for more information on creating and using Time Machine shares.
+
+   Select **External Share** to [create an external share](#setting-up-an-external-smb-share). Enter the full domain name or IP address and the share name as *192.168.0.200\SHARE* in **Remote Path**.
+
+   Select **Time Locked Share** to create a share that makes files read-only after the grace period you specify expires.
+   This setting does not work if the path is accessed locally or if another SMB share with the **Time Locked Share** purpose uses the same path.
+   Warning: This setting might not meet regulatory requirements for write-once storage.
+
+4. (Optional) Enter a short description or explanation of the share purpose or use in **Description**.
+   This shows on both the SMB widget and **Share > SMB** screen to help explain how the share is used.
+   For example, if for an external share, enter *external share* in the field.
+   The description entered shows in the **SMB** table on the **SMB** screen and the **Windows (SMB) Share** widget.
 
 5. Select **Enabled** to allow sharing of this path when the SMB service is activated.
-   Leave it cleared to disable the share without deleting the configuration.
+   Leave the checkbox cleared to disable the share without deleting the configuration.
 
-6. (Optional) Click **Advanced Options** to configure audit logging or other advanced configuration settings such as changing **Case Sensitivity**.
+6. (Optional) Click **Advanced Options** to show additional configuration settings.
+   Click to configure other advanced settings such as access, audit logging, or settings specific to the type of share selected in **Purpose**.
 
 7. Click **Save** to create the share and add it to the **Shares > Windows (SMB) Shares** list.
 
-Enable the SMB service when prompted.
+Start or restart the SMB service when prompted.
 
-### Configuring Share Advanced Options Settings
+### Configuring Advanced Options
 
-For a basic SMB share, using the **Advanced Options** settings is not required, but if you set **Purpose** to **No Presets**, click **Advanced Options** to finish customizing the SMB share for your use case.
+A basic SMB share does not need to use the **Advanced Options** settings. Click **Advanced Options** to finish customizing the SMB share settings.
 
-The following are possible use cases. See [SMB Shares Screens]({{< ref "SMBSharesScreens" >}}) for all settings and other possible use cases.
+See [SMB Shares Screens]({{< ref "SMBSharesScreens" >}}) for all settings and other possible use cases.
 
-{{< expand "Setting Up Guest Access" "v" >}}
+{{< expand "Guest Access" "v" >}}
 {{< hint type=info >}}
-Guest access is not a recommended configuration and adds security vulnerabilities!
+Guest access is not a recommended configuration as it adds security vulnerabilities!
 {{< /hint >}}
 
-To allow guest access to the share, select **Allow Guest Access**.
-The privileges are the same as a guest account.
+To allow guest access to the share, select **Private Dataset Share**.
+The privileges granted are the same as those for a guest account.
 Windows 10 version 1709 and Windows Server version 1903 disable guest access by default.
 Additional client-side configuration is required to provide guest access to these clients.
 
-* **MacOS clients**: Attempting to connect as a user that does not exist in TrueNAS does not automatically connect as the guest account.
+* **Mac OS clients** - Prevents attempts to connect as a user that does not exist in TrueNAS and does not automatically connect as the guest account.
 
-* **Connect As: Guest** Specifically choose this option in macOS to log in as the guest account.
+* **Connect As: Guest** - Allows a guest to log into the Mac OS with the guest account.
   See the [Apple documentation](https://support.apple.com/guide/mac-help/connect-mac-shared-computers-servers-mchlp1140/mac) for more details.
 
 If setting up guest access with read-only permissions, see the information in [Adding a New Share Group](#adding-a-new-share-group).
 If the share is nested under parent datasets, see [Using the Traverse Permission](#using-the-traverse-permission).
 {{< /expand >}}
-{{< expand "Setting Up Read or Write Access" "v" >}}
+
+{{< expand "Read or Write Access" "v" >}}
 To prohibit writes to the share, select **Export Read-Only**.
 
-To restrict share visibility to users with read or write access to the share, select **Access Based Share Enumeration**.
+Select **Access Based Share Enumeration** to restrict share visibility for users with read or write access to the share.
+This setting applies to datasets with a POSIX ACL type. 
+For datasets with NFSv4 ACL type, access-based enumeration is automatically enabled and does not allow disabling.
 See the [smb.conf](https://www.samba.org/samba/docs/current/man-html/smb.conf.5.html) manual page.
 {{< /expand >}}
-{{< expand "Setting Up Host Allow and Host Deny" "v" >}}
+
+{{< expand "Host Allow and Host Deny" "v" >}}
 Use the **Host Allow** and **Host Deny** options to allow or deny specific host names and IP addresses.
 
 Use the **Hosts Allow** field to enter a list of allowed IP addresses.
 Separate entries by pressing <kbd>Enter</kbd>.
 {{< hint type="Warning" title="Setting Host Allow" >}}
 Entering values in the **Host Allow** restricts access to only the addresses entered into this list!
-You can break UI access for all other IP or host name entries by using this list.
+This list can break UI access for all other IP or host name entries.
 {{< /hint >}}
 You can find a more detailed description with examples [here](https://www.samba.org/samba/docs/current/man-html/smb.conf.5.html#HOSTSALLOW).
 Use the **Hosts Deny** field to enter a list of denied host names or IP addresses. Separate entries by pressing <kbd>Enter</kbd>.
@@ -219,39 +256,32 @@ Use the **Hosts Deny** field to enter a list of denied host names or IP addresse
 * Adding entries to the **Hosts Deny** list but not the **Hosts Allow** list allows all hosts not on the **Hosts Deny** list to access the share.
 * Adding entries to both a **Hosts Allow** and **Hosts Deny** list allows all hosts on the **Hosts Allow** list to access the share and allows hosts not on the **Hosts Allow** or **Hosts Deny** list to access the share.
 {{< /expand >}}
+
 {{< expand "Apple Filing Protocol (AFP) Compatibility" "v" >}}
 AFP shares are deprecated and not available in TrueNAS.
 
-To customize your SMB share to work with a migrated AFP share or with your MacOS, use the **Advanced Options** settings provided for these use cases:
+To customize your SMB share to work with a migrated AFP share or with your Mac OS, use the share option on the **Purpose** dropdown list and the **Advanced Options** settings provided for these use cases:
 
-* **Time Machine** enables [Apple Time Machine](https://support.apple.com/en-us/HT201250) backups on this share.
+* **Time Machine Share** enables [Apple Time Machine](https://support.apple.com/en-us/HT201250) backups on this share.
 
-* **Legacy AFP Compatibility** controls how the SMB share reads and writes data.
-  Leave unset to have the share to behave like a standard SMB share.
-Only set this when the share originated as an AFP sharing configuration.
-Pure SMB shares or macOS SMB clients do not require legacy compatibility.
-
-**Use Apple-style Character Encoding** converts NTFS illegal characters in the same manner as MacOS SMB clients.
+**Use Apple-style Character Encoding**, listed under **Other Options** for all share types except **Time Machine Share** and **External Share**, converts NTFS illegal characters like the Mac OS SMB clients do.
 By default, Samba uses a hashing algorithm for NTFS illegal characters.
 {{< /expand >}}
-{{< expand "Private SMB Datasets and Shares" "v" >}}
-Use to set up an alternative to the legacy Home Shares function.
 
-Allow adding private datasets and shares for individual users. Useful as an alternate way to create home shares for individual users.
+{{< expand "Private SMB Datasets and Shares" "v" >}}
+Used to set up an alternative to the legacy home shares function, select **Private Dataset Share** on the **Purpose** dropdown list, and customize settings listed under **Other Options**.
+
+This allows you to add private datasets and shares for individual users, and is an alternate way to create home shares for them.
 See [Setting Up SMB Home Shares]({{< ref "SMBPrivateDatasetShare" >}}) for more information.
 {{< /expand >}}
-{{< expand "Enabling SMB Audit Logging" "v" >}}
+
+{{< expand "SMB Audit Logging" "v" >}}
 To enable SMB audit logging, from either the **Add SMB** or **Edit SMB** screens, click **Advanced Options**, scroll down to **Audit Logging**, and select **Enable**.
 {{< /expand >}}
 
-### Enabling ACL Support
-
-To add ACL support to the share, select **Enable ACL** under **Advanced Options** on either the **Add SMB** or **Edit SMB** screens.
-See [Managing SMB Shares]({{< ref "ManageSMBShares" >}}) for more on configuring permissions for the share and the file system.
-
 ## Tuning ACLs for SMB Shares
 
-There are two levels to set SMB share permissions, at the share or for the dataset associated with the share.
+There are two levels to set SMB share permissions: at the share or for the dataset associated with the share.
 See [Managing SMB Shares]({{< ref "ManageSMBShares" >}}) for more information on these options.
 
 See [Permissions]({{< ref "PermissionsScale" >}}) for more information on dataset permissions.
@@ -280,7 +310,7 @@ See [Permissions]({{< ref "PermissionsScale" >}}) for more information on datase
 
 To connect to an SMB share, start the SMB service.
 
-After adding a new share TrueNAS prompts you to either start or restart the SMB service.
+After adding a new share, TrueNAS prompts you to start or restart the SMB service.
 
 You can also start the service from the **Windows (SMB) Share** widget or on the **System > Services** screen from the **SMB** service row.
 
@@ -294,7 +324,7 @@ Each SMB share on the list also has a toggle to enable or disable the service fo
 
 ### Starting the Service Using System Settings
 
-To make SMB share available on the network, go to **System > Services** and click the toggle for **SMB**.
+To make SMB share available on the network, go to **System > Services** and click the **SMB** toggle.
 Set **Start Automatically** if you want the service to activate when TrueNAS boots.
 
 ## Configuring the SMB Service
@@ -326,27 +356,28 @@ Open the command line and run the following command with the appropriate drive l
 
 Where:
 * *Z* is the drive letter to map to TrueNAS and the share
-* *TrueNAS_name* is either the host name or system IP address
+* *TrueNAS_name* is either the host name or the system IP address
 * *share_name* is the name given to the SMB share
 
 To temporarily connect to a share, open a Windows File Explorer window, type <code>&bsol;&bsol;<i>TrueNAS_name</i>&bsol;<i>share_name</i></code> and then enter the user credentials to authenticate with to connect to the share.
-Windows remembers the user credentials so each time you connect it uses the same authentication credentials unless you restart the system, then you are prompted to enter the authentication credentials again.
+Windows remembers the user credentials, so each time you connect, it uses the same authentication credentials unless you restart the system.
+After restarting, you are prompted to enter the authentication credentials again.
 {{< /expand >}}
 
 {{< expand "Mounting on an Apple System" "v" >}}
-Have the username and password for the user assigned to the pool or for the guest if the share has guest access ready before you begin.
+Before you begin this process, have the username and password for the user assigned to the pool or the credentials for the guest if the share has guest access ready.
 
 Open **Finder > Go > Connect To Server**
 Enter the SMB address as follows: <code>smb://<i>192.168.1.111</i></code>.
 
-Input the username and password for the user assigned to that pool or guest if the share has guest access.
+Input the username and password for the user assigned to that pool or a guest user if the share has guest access.
 
 For further tuning in macOS, Apple provides some enterprise-specific pointers in their [Adjust SMB browsing behavior in macOS](https://support.apple.com/en-us/102064) article.
 
 {{< /expand >}}
 
 {{< expand "Mounting on a FreeBSD System" "v" >}}
-Mounting on a FreeBSD system involves creating the mount point, and then mounting the volume.
+Mounting on a FreeBSD system involves creating the mount point and mounting the volume.
 
 Create a mount point using the `sudo mkdir /mnt/smb_share` command.
 
@@ -357,22 +388,40 @@ Mount the volume using the `sudo mount_smbfs -I computer_name\share_name /mnt/sm
 
 External SMB shares are essentially redirects to shares on other systems.
 Administrators might want to use this when managing multiple TrueNAS systems with SMB shares, and if they do not want to keep track of which shares are on which boxes for clients.
-This feature allows admins to connect to any of the TrueNAS systems with external shares set up, and to see them all.
+This feature allows admins to see and connect to any TrueNAS system with external shares active.
 
-Create the SMB share on another TrueNAS server (for example, *system1*), as described in [Adding an SMB Share](#adding-an-smb-share) above.
+Create the SMB share on another TrueNAS remote server (for example, *system1*), as described in [Adding an SMB Share](#adding-an-smb-share) above.
 
-We recommend using Active Directory or LDAP when creating user accounts, but at a minimum synchronize user accounts between the system with the share (*system1*) and on the TrueNAS system where you set up the external share (for example, *system2*).
+We recommend using Active Directory or LDAP when creating user accounts, but at a minimum, synchronize user accounts between the system with the share (*system1*) and on the TrueNAS system where you set up the external share (for example, *system2*).
 
-On *system2*, enter the host name or IP address of the system hosting the SMB share (*system1*) and the name given to the share on that system as **EXTERNAL:*ip address*&bsol;*sharename*** in **Path**, then change **Name** to EXTERNAL with no special characters.
+On *system2* (the local system), select **External Share**, enter the full domain name or IP address, and the share name.
+Separate the server and share name with the `\` character. Example: *192.168.0.200\SHARE* in **Remote Path**.
 
-Leave **Purpose** set to **Default share parameters**, leave **Enabled** selected, then click **Save** to add the share redirect.
+Click **Save** to add the share.
 
-Repeat the *system2* instructions above to add an external redirect (share) on *system1* to see the SMB shares of each system.
+Repeat the *system2* instructions above on *system1* to see the SMB shares on each system.
+
+{{< trueimage src="/images/SCALE/Shares/AddingAnExternalShare.png" alt="Set Up Another External SMB Share" id="Set Up Another External SMB Share" >}}
+
+Repeat for each TrueNAS system with SMB shares to add as an external share.
+
+### Setting Up an External Share with an Earlier Release
+
+When setting up an external share between TrueNAS systems that are on different releases, for example, one system is on 25.04 and the other is on the latest release of 25.10, follow the external share instructions for each release.
+
+Set the TrueNAS 25.04 system SMB **Purpose** to the default preset, leave the default settings associated with this share as is, and then enter the redirect path to share on the 25.10 system as **EXTERNAL:*ipaddress\sharename*** in the **Path** field. For example, *EXTERNAL:10.220.3.33\testshare2*.
+Be aware, changing the path also changes the SMB share name. Verify the share name is set to the desired or existing share name and not renamed to the redirect string in **Path**.
 
 {{< trueimage src="/images/SCALE/Shares/SetUpExternalSMBShare.png" alt="Set Up Another External SMB Share" id="Set Up Another External SMB Share" >}}
 
-Repeat for each TrueNAS system with SMB shares to add as an external redirect.
-Change the auto-populated name to EXTERNAL2 or something to distinguish it from the SMB shares on the local system (*system1* in this case) and any other external shares added.
+Set the TrueNAS 25.10 system SMB **Purpose** to **External Share**, and then enter the path to the share on the 25.04 system as *ipaddress*\*sharename* in the **Remote Path** field. For example, *10.220.1.34*\*testshare*.
+
+{{< trueimage src="/images/SCALE/Shares/AddingAnExternalShare.png" alt="Set Up Another External SMB Share" id="Set Up Another External SMB Share" >}}
+
+Add descriptions to each share that identify the purpose of the share.
+The description shows on the **Windows (SMB) Shares** widget and the **SMB** screen.
+
+**Save** changes made to the share.
 
 <div class="noprint">
 

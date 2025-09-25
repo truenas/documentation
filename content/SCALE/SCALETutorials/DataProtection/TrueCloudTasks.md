@@ -68,6 +68,8 @@ To add the TrueCloud backup task, go to **Data Protection > TrueCloud Backup Tas
 2. Enter or browse to select the local **Source Path** to the directories or files you want sent to the cloud for backup.
    Click the arrow to the left of the name to expand it, then click on the name to select it.
 
+   Optionally, enter or browse to select a **Cache Path** to store cache files. This can improve backup performance for users with massive datasets and large numbers of files.
+
 3. Select the Storj credential on the **Credentials** dropdown list.
    You can select **Add New** to create the Storj credential if you skipped the instructions above.
 
@@ -82,16 +84,18 @@ To add the TrueCloud backup task, go to **Data Protection > TrueCloud Backup Tas
   
 6. Enter the number of snapshot copies to retain in **Keep Last**.
 
-7. Enter a password for the backup repository.
+7. (Optional) Enter a **Rate Limit** value in KiB/s (kibibytes per second) to limit the backup transfer rate. This is a static rate limit that applies throughout the entire backup process. Leave empty for no rate limit.
+
+8. Enter a password for the backup repository.
    Record this password in a secure location.
    You need the password to recreate the task using the same bucket/folder, such as in a new TrueNAS install or system, or to restore data from the existing snapshots in another TrueNAS system.
 
-8. Set the task schedule for when to run this task.
+9. Set the task schedule for when to run this task.
 
-9. Click **Save**.
+10. Click **Save**.
 
 TrueNAS adds the task to the **TrueCloud Backup Tasks** widget with the state **N/A** until the task runs on schedule.
-To test the task, click **<i class="fa fa-play" aria-hidden="true" title="Run Job"></i> Run Job** to start the task apart from the scheduled time.
+To test the task, click the vertical ellipses <span class="material-icons">more_vert</span> on the task and select **<i class="fa fa-play" aria-hidden="true" title="Run Job"></i> Run Job** to start the task apart from the scheduled time.
 
 The task status changes to **SUCCESS** when complete.
 
@@ -118,11 +122,11 @@ Use **Transfer Settings** to prevent excess resource consumption by setting the 
 
 ## Managing TrueCloud Tasks
 
-To edit an existing TrueCloud backup task, click **<i class="fa fa-pencil" aria-hidden="true" title="Edit"></i> Edit** to open the **Edit TrueCloud Backup Task** screen. After making changes, click **Save**.
+To edit an existing TrueCloud backup task, click the vertical ellipses <span class="material-icons">more_vert</span> on the task and select **<i class="fa fa-pencil" aria-hidden="true" title="Edit"></i> Edit** to open the **Edit TrueCloud Backup Task** screen. After making changes, click **Save**.
 
-To run a scheduled task before the defined time, click **<i class="fa fa-play" aria-hidden="true" title="Run Job"></i> Run Job** to start the task immediately.
+To run a scheduled task before the defined time, click the vertical ellipses <span class="material-icons">more_vert</span> on the task and select **<i class="fa fa-play" aria-hidden="true" title="Run Job"></i> Run Job** to start the task immediately.
 
-To delete a task, click **<i class="material-icons" aria-hidden="true" title="Delete">delete</i> Delete** for the task to delete. 
+To delete a task, click the vertical ellipses <span class="material-icons">more_vert</span> on the task and select **<i class="material-icons" aria-hidden="true" title="Delete">delete</i> Delete** for the task to delete. 
 
 See [TrueCloud Backup Tasks Screens]({{< ref "truecloudbackuptasksscreen/#advanced-options-settings" >}}) for more information on TrueCloud Backup Task screens.
 
@@ -131,7 +135,7 @@ To restore data from a TrueCloud backup, locate an existing snapshot on the **Sn
 
 {{< trueimage src="/images/SCALE/DataProtection/TrueCloudSnapshots.png" alt="Snapshots Widget" id="Snapshots Widget" >}}
 
-Click **<i class="material-icons" aria-hidden="true" title="Restore">history</i> Restore** to open the **Restore from Snapshot** screen.
+Click the vertical ellipses <span class="material-icons">more_vert</span> on the task and select **<i class="material-icons" aria-hidden="true" title="Restore">history</i> Restore** to open the **Restore from Snapshot** screen.
 
 {{< trueimage src="/images/SCALE/DataProtection/TrueCloudRestore.png" alt="Restore from Snapshot" id="Restore from Snapshot" >}}
 
@@ -144,7 +148,7 @@ Click **Save** to restore data from the snapshot.
 ### Removing TrueCloud Snapshots
 
 To delete an existing snapshot, locate it on the **Snapshots widget**.
-Click **<i class="material-icons" aria-hidden="true" title="Delete">delete</i> Delete** to delete the snapshot.
+Click the vertical ellipses <span class="material-icons">more_vert</span> on the snapshot and select **<i class="material-icons" aria-hidden="true" title="Delete">delete</i> Delete** to delete the snapshot.
 A **Delete Snapshot** dialog opens.
 
 {{< trueimage src="/images/SCALE/DataProtection/TrueCloudDeleteSnapshot.png" alt="Delete Snapshot" id="Delete Snapshot" >}}

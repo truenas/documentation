@@ -64,13 +64,13 @@ To create a new user, click **Add**.
 Enter a personal name or description in **Full Name**, for example, *John Doe* or *Share Anonymous User*, then allow TrueNAS to suggest a simplified name derived from the **Full Name** or enter a name in **Username**.
 
 Enter and confirm a password for the user.
-Make sure the login password is enabled. Click the **Disable Password** toggle to enable/disable the login password.  
+Make sure the login password is enabled. Click the **Disable Password** toggle to enable/disable the login password. Note that leaving an empty string as your password results in activating the **Disable Password** toggle.
 Setting the **Disable Password** toggle to active (blue toggle) disables these functions:
 * The **Password** field becomes unavailable and TrueNAS removes any existing password from the account.
 * The **Lock User** option disappears.
 * The account is restricted from password-based logins for services like SMB shares and SSH sessions.
 
-Enter a user account email address in the **Email** field if you want this user to receive notifications
+Enter a user account email address in the **Email** field. Starting in TrueNAS 25.10, system notifications are sent to recipients configured in system email settings rather than user account emails.
 
 Accept the default user ID or enter a new UID.
 TrueNAS suggests a user ID starting at **3000**, but you can change it if you wish.

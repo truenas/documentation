@@ -27,7 +27,7 @@ The widget header opens the [**TrueCloud Backup Tasks**](#truecloud-backup-tasks
 
 **Add** on the widget and the **TrueCloud Backup Tasks** screen opens the **[Add TrueCloud Backup Task Screen](#add-truecloud-backup-task-screen)**.
 
-Each task on the widget shows four icons for various functions:
+Each task on the widget includes a vertical ellipses <span class="material-icons">more_vert</span> icon that opens a dropdown menu with four options for various functions:
 
 * <span class="material-icons">edit</span> **Edit** opens the **[Edit TrueCloud Backup Task](#edit-truecloud-backup-task-screen)** screen populated with with the settings for that task.
 
@@ -130,6 +130,7 @@ The **Advanced** and **Advanced Remote Options** are for advanced users.
 | Settings | Description |
 |----------|-------------|
 | **Source Path** | Enter or browse to select the dataset or directory with the data to send to the cloud backup provider set in the task. Click the <span class="material-icons">arrow_right</span> arrow to the left of the **/mnt** folder to expand and show datasets and directories within that folder. This is the dataset or directory location with the data the TrueCloud backup task sends to the cloud storage provider. Click the <span class="material-icons">arrow_right</span> arrow to the left of the **/mnt** folder again to collapse the directory tree. |
+| **Cache Path** | Optional. Directory path where cache files are stored. This speeds up the backup process for users with massive datasets and large numbers of files. If not set, performance can degrade. |
 {{< /truetable >}}
 
 ### Remote Settings
@@ -152,6 +153,7 @@ The **Remote** settings specify the TrueCloud credential and destination storage
 |----------|-------------|
 | **Name** | Enter a name for the TrueCloud backup task. |
 | **Keep Last** | Enter a number for the past snapshot copies to retain before removing older snapshots. |
+| **Rate Limit** | Optional. Positive integer that sets the rate limit for the backup process in KiB/s (kibibytes per second). This is a static rate limit that applies throughout the entire backup process. Unlike Cloud Sync bandwidth limits, this setting does not support time-based scheduling. |
 | **Password** | Enter a password for the backup repository. Record this password in a secure location. Required to recreate the task using the same bucket/folder, such as in a new TrueNAS install or system, or to restore data from the existing snapshots in another TrueNAS system. |
 {{< /truetable >}}
 
@@ -161,9 +163,11 @@ The **Remote** settings specify the TrueCloud credential and destination storage
 {{< truetable >}}
 | Settings | Description |
 |----------|-------------|
-| **Schedule** | Select a schedule preset or choose **Custom** to open the advanced scheduler. |
+| **Schedule** | Shows a list of schedule preset options. See **Schedule Presets** below for more info. |
 | **Enabled** | Select to enable the TrueCloud task. Leave clear to disable the task without deleting it and keep the configuration available without allowing the specified schedule to run the task. The toggle in the **Enable** column on the **TrueCloud Backup Tasks** widget enables/disables the task. |
 {{< /truetable >}}
+
+{{< include file="/static/includes/SchedulePresetOptions.md" >}}
 
 {{< expand "Advanced Scheduler" "v" >}}
 {{< include file="/static/includes/AdvancedScheduler.md" >}}

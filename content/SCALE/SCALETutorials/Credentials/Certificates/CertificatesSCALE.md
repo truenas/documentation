@@ -11,16 +11,11 @@ keywords:
 - nas storage 
 ---
 
-The **Certificates** screen widgets display information for certificates, certificate signing requests (CSRs), certificate authorities(CAs), and ACME DNS-authenticators configured on the system, and provide the ability to add new ones.
+The **Certificates** screen shows information for certificates, certificate signing requests (CSRs), and ACME DNS-authenticators configured on the system, and provides the ability to import or edit them.
 TrueNAS comes equipped with an internal, self-signed certificate that enables encrypted access to the web interface, but users can make custom certificates for authentication and validation while sharing data.
 
-{{< hint type=important >}}
-Before creating a self-signed certificate in the system, first create a certificate authority. This is a necessary step in the self-signed certificate creation process, as it provides a trust anchor for the certificate in question.
-{{< /hint >}}
+{{< trueimage src="/images/SCALE/Credentials/CredentialsCertificatesScreen.png" alt="Credentials Certificates Screen" id="Credentials Certificates Screen" >}}
 
-![CredentialsCertificatesScreen](/images/SCALE/Credentials/CredentialsCertificatesScreen.png "Credentials Certificates Screen")
-
-<!-- commenting out until ready to pubilicize TNC content in the Docs Hub 
 ## TrueNAS Connect Certificate
 
 The TrueNAS Connect service automatically creates a default *truenas_connect_* certificate after registering your TrueNAS system in the TrueNAS Connect service.
@@ -31,45 +26,43 @@ The certificate shows in the **Certificates** widget on the **Credentials > Cert
 This certificate provides secure SSL access between the TrueNAS server and the TrueNAS Connect service.
 If not listed on the **Certificates** screen, choose the truenas_default certificate.
 For apps where certificates are used, you should see and be able to select the TNC certificate and get a full secure connection for the apps.
--->
 
 ## Adding Certificates
 
-By default, TrueNAS comes equipped with an internal, self-signed certificate that enables encrypted access to the web interface, but users can import and create more certificates by clicking **Add** in the **Certificates** window.
+By default, TrueNAS comes equipped with an internal, self-signed certificate that enables encrypted access to the web interface, but users can import and edit existing certificates.
 
-To add a new certificate:
+To add a certificate to TrueNAS, click **Import** on the **Certificates** widget to open the **Import Certificates** screen.
 
-Click **Add** on the **Certificates** widget to open the **Add Certficates** wizard.
+First, enter a name as a certificate identifier. A name can include the dash (-) or underscore (_) special characters.
 
-First, enter a name as certificate identifier and select the type.
-The **Identifier and Type** step lets users name the certificate and choose whether to use it for internal or local systems, or import an existing certificate.
-Users can also select a predefined certificate extension from the **Profiles** dropdown list.
+Select **Add To Trusted Store** if you want to add the imported certificate to the trusted store in TrueNAS.
 
-Next, specify the certificate options. Select the **Key Type** as this selection changes the settings displayed.
-The **Certificate Options** step provides options for choosing the signing certificate authority (CSR), the type of private key type to use (as well as the number of bits in the key used by the cryptographic algorithm), the cryptographic algorithm the certificate uses, and how many days the certificate authority lasts.
+Copy/paste the certificate into the **Certificate** field, and the private key part of the certificate into the **Private Key** field.
 
-Now enter the certificate location and basic information.
-The **Certificate Subject** step lets users define the location, name, and email for the organization using the certificate.
-Users can also enter the system [fully-qualified hostname (FQDN)](https://kb.iu.edu/d/aiuv) and any additional domains for multi-domain support.
+Enter or copy/paste the password associated with the private key into the **Password** and **Confirm Password** fields.
 
-Lastly, select any extension types you want to apply. Selecting **Extended Key** displays settings for **Key Usage** settings as well. Select any extra constraints you need for your scenario.
-The **Extra Constraints** step contains certificate extension options.
+Click **Import** to add the certificate to TrueNAS.
 
-* **Basic Constraints** when enabled this limits the path length for a certificate chain.
-* **Authority Key Identifier** when enabled provides a means of identifying the public key corresponding to the private key used to sign a certificate.
-* **Key Usage** when enabled defines the purpose of the public key contained in a certificate.
-* **Extended Key Usage** when enabled it further refines key usage extensions.
+## Editing a Certificate
 
-Review the certificate options. If you want to change something Click **Back** to reach the screen with the setting option you want to change, then click **Next** to advance to the **Confirm Options** step.
+TrueNAS allows you to rename a certificate or to add it to the TrueNAS trusted store.
 
-Click **Save** to add the certificate.
+Click on the <span class="material-icons">more_vert</span> icon, then select **Edit** on the dropdown list. The **Edit Certificate** screen for that certificate opens.
 
-## Importing a Certificate
+Enter a new name for the certificate.
 
-To import a certificate, first select **Import Certificate** as the **Type** and name the certificate.
+Select **Add To Trusted Store** to add the certificate to the TrueNAS trusted store.
 
-Next, if the CSR exists on your TrueNAS system, select **CSR exists on this system** and then select the CSR.
+Click **Save**.
 
-Copy/paste the certificate and private Keys into their fields, and enter and confirm the passphrase for the certificate if one exists.
+## Downloading the Certificate or Public Key
 
-Review the options, and then click **Save**.
+Click on the <span class="material-icons">more_vert</span> icon, then select **Edit** or **Download** on the dropdown list.
+On the **Edit Certificate** screen for the selected certificate, click **View/Download Certificate**
+to open a window with the certificate string.
+Click **View/Download Key** to open a window with the certificate private key.
+
+To copy the certificate or private key to the clipboard, click on the <span class="material-icons">assignment</span> clipboard icon.
+Click **Download** to put a copy of the certificate or private key on your server.
+
+Keep the certificates and private keys in a secure area where you can back them up.

@@ -11,9 +11,9 @@ tags:
 ---
 
 
-The **System > Services** screen includes two icons on the **NFS** service row:
-* <span class="iconify" data-icon="material-symbols:list"></span> **NFS Sessions** opens the [**NFS Sessions** screen]({{< ref "NFSSharesScreens#nfs-sessions-screen" >}}).
-* <span class="iconify" data-icon="ic:baseline-edit"></span> **Configure** opens the **NFS Service** screen.
+The **System > Services** screen includes two options on the **NFS** service row:
+* **View Sessions** opens the [**NFS Sessions** screen]({{< ref "NFSSharesScreens#nfs-sessions-screen" >}}).
+* <span class="material-icons">edit</span> **Configure** icon opens the **NFS Service** screen.
 
 {{< hint type=info title="UDP Protocol and NFS" >}}
 {{< include file="/static/includes/NFSServiceUDPWarning.md" >}}
@@ -69,6 +69,8 @@ Select **Start Automatically** to activate the NFS service when TrueNAS boots.
 | **Allow non-root mount** | Only select if required by the NFS client to allow serving non-root mount requests. |
 | **Manage Groups Server-side** | This option allows the server to determine group IDs based on server-side lookups rather than relying solely on the information provided by the NFS client. This can support more than 16 groups and provide more accurate group memberships. Equivalent to the `--manage-gids` flag for [rpc.mountd](https://linux.die.net/man/8/rpc.mountd). |
 {{< /truetable >}}
+
+{{< include file="/static/includes/NFSUpdateTime.md" >}}
 
 We recommend using the default NFS settings unless you require specific settings.
 When TrueNAS is already connected to [Active Directory]({{< ref "/SCALE/SCALEUIReference/Credentials/DirectoryServices" >}}), setting **NFSv4** and **Require Kerberos for NFSv4** also requires a [Kerberos Keytab]({{< ref "/SCALE/SCALEUIReference/Credentials/DirectoryServices" >}}).
