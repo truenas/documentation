@@ -38,11 +38,11 @@ Enter <code>mkdir <i>directory</i></code>, where *directory* is the new name.
 
 After creating the new directory, fetch and run the TrueCommand image.
 
-Open a terminal and enter {{< cli >}}docker run --detach -v "/<i>hostdir</i>:/data" -p port:<i>80</i> -p ssl:<i>443</i> ghcr.io/ixsystems/truecommand:<i>v3.0.2</i>{{< /cli >}}.
+Open a terminal and enter {{< cli >}}docker run --detach -v "/<i>hostdir</i>:/data" -p port:<i>80</i> -p ssl:<i>443</i> ghcr.io/ixsystems/truecommand:<i>v3.1.0</i>{{< /cli >}}.
 
 Where *hostdir* is a directory on the host machine for Docker container data, *80* is the TrueCommand web interface port number, and *443* is the port number for secure web interface access.
 
-To install the container with an earlier TrueCommand release, replace *v3.0.2* with the desired TrueCommand version tag.
+To install the container with an earlier TrueCommand release, replace *v3.1.0* with the desired TrueCommand version tag.
 For example:
 `docker run --detach -v "/DockerDir:/data" -p 9004:80 -p 9005:443 ghcr.io/ixsystems/truecommand:v2.3.3`
 
