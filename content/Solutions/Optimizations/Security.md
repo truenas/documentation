@@ -120,9 +120,9 @@ When Debian Linux-based system DNS look-ups to https://updates.ixystems.com *(st
 
 ## User Accounts
 
-Restrict new [TrueNAS user accounts]({{< ref "ManageLocalUsersSCALE" >}}) to the most minimal set of storage ACL permissions and access possible.
+Restrict new [TrueNAS user accounts]({{< ref "ManageUsersSCALE" >}}) to the most minimal set of storage ACL permissions and access possible.
 
-On TrueNAS 22.12 or newer, [create the administrator account]({{< ref "ManageLocalUsersSCALE.md#creating-an-admin-user-account" >}}) on install and disable root NAS administrative access.
+On TrueNAS 22.12 or newer, [create the administrator account]({{< ref "ManageUsersSCALE.md#creating-an-admin-user-account" >}}) on install and disable root NAS administrative access.
 
 In TrueNAS 24.04 (Dragonfish) or later, use the **Credentials > Groups > Privileges** screen to define limited access administrative roles, such as read-only or share administrators.
 Assign users to those groups to grant partial NAS administrative access.

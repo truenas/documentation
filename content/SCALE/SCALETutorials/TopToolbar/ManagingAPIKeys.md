@@ -24,7 +24,7 @@ The **User API Keys** screen shows a table listing API keys added to the system,
 Click **API Docs** to view [API Documentation](#api-documentation) embedded within the system.
 
 {{<include file="/static/includes/addcolumnorganizer.md">}}
-<!-- Comment out until ready to release TNC information
+
 ## TrueNAS Connect API Keys
 
 TrueNAS Connect automatically creates an API key when you register your system in the TrueNAS Connect service. This key, shown on the **User API Key** screen, is used for authentication between the TrueNAS system and the TrueNAS Connect service.
@@ -34,7 +34,6 @@ TrueNAS Connect automatically creates an API key when you register your system i
 There are instances where you might see more than one *tnc* key listed.
 
 If you delete a *tnc* API key, the TrueNAS Connect prompts you to re-authenticate the next time you connect to the service.
--->
 
 ## Adding an API Key
 
@@ -42,9 +41,10 @@ If you delete a *tnc* API key, the TrueNAS Connect prompts you to re-authenticat
 
 {{< include file="/static/includes/APIKeyWarn.md" >}}
 
-Select **My API Keys** from the **Settings** dropdown on the top toolbar or click **API Keys** on the **Users** screen to open the **User API Keys** screen.
+Select **My API Keys** from the **Settings** dropdown on the top toolbar, or go to **Credentials > Users**, select the user row, and then click the **View API Keys** link on the **Access** widget to open the **User API Keys** screen.
+If a key does not exist for the user, click on the **Add API Key** link to open the **Add API Key** screen.
 
-Click **Add** to open the **Add API Key** screen.
+Click **Add API Key** to open the **Add API Key** screen.
 
 {{< trueimage src="/images/SCALE/Dashboard/APIKeysAdd.png" alt="Add API Key" id="Add API Key" >}}
 
@@ -57,7 +57,7 @@ A non-expiring key remains active until it is manually revoked or changed to exp
 To create a key with a scheduled expiration, disable **Non-expiring** by clearing the checkbox.
 Click on the calendar icon in the **Expires On** field and select the expiration date. The field does not allow typing a date.
 
-{{< trueimage src="/images/SCALE/Dashboard/APIKeyExpires.png" alt="Key Expiration Settings" id="Key Expiration Settings" >}}
+{{< trueimage src="/images/SCALE/Credentials/AddAPIKeyExpiration.png" alt="Set API Key Expiration" id="Set API Key Expiration" >}}
 
 Click **Save**. The **API Key** dialog opens with a generated key string.
 TrueNAS API key strings are 64 randomly generated characters long.
