@@ -3,7 +3,7 @@ title: "Users Screens"
 description: "Provides information on the Users screens and settings in TrueNAS."
 weight: 10
 aliases:
- - /scale/25.10/scaleuireference/credentials/localusersscreensscale/
+ - /scale/scaleuireference/credentials/localusersscreensscale/
 tags:
 - users
 - accounts
