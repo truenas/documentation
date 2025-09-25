@@ -258,32 +258,35 @@ Review the logged error message(s).
 Common error messages for failed Google Photos tasks include:
 
 {{< expand "Failed to copy: can't upload files here" "v" >}}
-Problem: A push task is trying to upload files to the root level <file>/</file> folder or the <file>/upload</file> folder.
+Problem: A push task attempts to upload files to the root level <file>/</file> folder or the <file>/upload</file> folder.
 
-Solution: Reconfigure the push task to target the <file>/album</file> folder and organize your files into one or more subfolders/albums.
-Only albums created by the TrueNAS cloud sync client are accessible for push or pull tasks.
+Solution: Reconfigure the push task to target the <file>/album</file> folder and organize your files into child directories (albums).
+Directories under the local dataset correspond to albums the TrueNAS cloud sync client creates in Google Photos.
+Only albums the sync client creates are accessible to cloud sync tasks.
 {{< /expand >}}
 
 {{< expand "Pulling from the root directory is not allowed. Please, select a specific directory" "v" >}}
-Problem: A pull or push task is targeting the root level <file>/</file> folder.
+Problem: A pull or push task targets the root level <file>/</file> folder.
 
 Solution: Change the target folder to <file>/album</file>.
-Pull tasks only transfer files in albums created by the TrueNAS cloud sync client.
-Full-library or shared albums cannot be accessed.
+Pull tasks transfer only media that exist in albums created by the TrueNAS cloud sync client; full-library pulls and shared albums are not accessible via the API.
+Do not rely on <file>/media/all</file> for a full export.
 {{< /expand >}}
 
 {{< expand "Failed to copy: directory not found" "v" >}}
-Problem: A pull task is targeting the <file>/upload</file> folder.
+Problem: A pull task targets the <file>/upload</file> folder.
 
-Solution: The <file>/upload</file> folder functions as a temporary queue for rclone to upload files to Google Photos.
+Solution: The <file>/upload</file> folder functions as a temporary upload queue.
 rclone cannot pull from <file>/upload</file>.
-Change the target folder to <file>/album</file> and organize your Google Photos library or local dataset accordingly.
-Only albums created by the TrueNAS cloud sync client are accessible for pull tasks.
+Change the target folder to <file>/album</file> and organize files accordingly.
+Remember that only albums created by the TrueNAS cloud sync client are accessible for pull tasks.
 {{< /expand >}}
 
-If a pull task is successful but some or all files are missing from the local dataset, review your library organization in Google Photos.  
+If a pull task runs but some or all files never appear in the local dataset, those files are not in albums created by the TrueNAS cloud sync client and the API does not expose them to the sync client.
+To get originals from Google Photos you can:
 
-Pull tasks transfer only files in albums created by the TrueNAS cloud sync client.
-Files uploaded to Google Photos but not added to an app-created album are never transferred.  
+* Export your account via [Google Takeout](https://takeout.google.com/settings/takeout/custom/photos) (download the archive and import the files into TrueNAS).
+* Download desired photos directly from [Google Photos](photos.google.com) and copy them into your TrueNAS dataset.
 
-Using the Google Photos UI, create one or more albums and add all files to an album, then click the vertical ellipses <span class="material-icons">more_vert</span> on the task and select <i class="fa fa-play" aria-hidden="true" title="Run Job"></i> **Run Job** to re-run the cloud sync task.
+If you want the sync client to manage media going forward, create and sync albums via TrueNAS.
+Those albums then remain accessible to the TrueNAS cloud sync client.
