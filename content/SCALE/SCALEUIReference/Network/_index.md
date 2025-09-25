@@ -9,17 +9,13 @@ tags:
 related: false
 ---
 
-The TrueNAS **Network** screen has network configuration and settings options, in widgets, for active interfaces, static routes, and the global configuration.
-The **Network** screen also displays IPMI channels. IPMI only displays on systems with physical hardware and not on virtual machine deployments.
+The TrueNAS **Network** screen shows network configuration and settings options, in widgets for active interfaces, static routes, and the network configuration.
+The **Network** screen also provides access to IPMI channels. IPMI only shows on systems with physical hardware but not for virtual machine deployments.
+To access the **Network** screen, go to **System** on the main navigation menu, then click **Network**.
 
-![Network](/images/SCALE/Network/Network.png "TrueNAS Network Page")
+{{< trueimage src="/images/SCALE/Network/Network.png" alt="Network Screen" id="Network Screen" >}}
 
-Click the buttons or on an existing widget entry to view configuration options on side panels.
-
-{{< expand "Networking Tour Video" "v" >}}
-This video demonstrates configuring networking settings.
-{{< embed-video name="scaleangelfishgeneralnetworktour" >}}
-{{< /expand >}}
+The articles listed below provide more information on **Network** screen widgets and screens.
 
 <div class="noprint">
 

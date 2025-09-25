@@ -123,6 +123,8 @@ iSCSI shares require specific networking considerations.
 iSCSI should be its own dedicated VLAN network to isolate it from other network traffic.
 This enhances security, reduces the risk of interference, and provides easier Quality of Service (QoS) management.
 
+{{< include file="/static/includes/SCALEHADisableSTP.md" >}}
+
 Prioritize iSCSI traffic over other types of traffic on the network.
 This ensures that storage-related activities receive the necessary network resources for optimal performance.
 

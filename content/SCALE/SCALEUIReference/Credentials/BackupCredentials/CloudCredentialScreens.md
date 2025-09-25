@@ -53,7 +53,7 @@ The selection in **Provider** changes the **Authentication** settings.
 Storj authentication includes going to the Storj iX sign-in screen to either create a new Storj iX account or log into an existing Storj iX account.
 After configuring the Storj account in the Storj-iX portal, return to TrueNAS to enter the S3 credentials provided by Storj.
 
-{{< trueimage src="/images/SCALE/Credentials/CloudCredentialsAdd.png" alt="Cloud Credentials Storj iX" id="Cloud Credentials Storj iX" >}}
+{{< trueimage src="/images/SCALE/Credentials/AddingStorjCloudCredential.png" alt="Cloud Credentials Storj iX" id="Cloud Credentials Storj iX" >}}
 
 {{< expand "Storj iX Authentication Settings" "v" >}}
 {{< truetable >}}
@@ -62,7 +62,7 @@ After configuring the Storj account in the Storj-iX portal, return to TrueNAS to
 | **Signup for account** | Link to the Storj iX account sign-up page where you either create a new account or sign in to your Storj iX account. |
 | **Access Key ID** | Enter the alphanumeric key provided by Storj when you [create the S3 account access]({{< ref "TrueCloudTasks" >}}) associated with the storage buckets added in Storj. |
 | **Secret Access Key** | Enter the alphanumeric key provided by Storj when you [create the S3 account access]({{< ref "TrueCloudTasks" >}}) associated with the storage buckets added in Storj. |
-| **Endpoint** | (Optional) Enter a custom Storj S3-compatible endpoint to use a specific tier, such as Global or Select. Leave blank to use the default. |
+| **Endpoint** | (Optional) Enter a custom Storj S3-compatible endpoint to use a specific tier, such as Global or Select. Automatically set to the default. |
 {{< /truetable >}}
 {{< /expand >}}
 
@@ -182,6 +182,7 @@ Use **Login to Provider** to enter the account username and password.
 ### HTTP Credential
 
 HTTP uses an HTTP host URL to authenticate account credentials.
+It is a read-only client that supports directory listings from popular web servers like Apache and Nginx.
 
 ### Hubic Credential
 
@@ -217,7 +218,7 @@ The **AuthVersion** setting selection changes setting options displayed in **[Ad
 | **User Name** | (Required) Enter the OpenStack user name (OS_USERNAME) from an [OpenStack credentials file](https://rclone.org/swift/#configuration-from-an-openstack-credentials-file). |
 | **API Key or Password** | (Required) Enter the Openstack API key or password. This is the OS_PASSWORD from an [OpenStack credentials file](https://rclone.org/swift/#configuration-from-an-openstack-credentials-file). |
 | **Authentication URL** | (Required) Enter the authentication URL for the server. This is the OS_AUTH_URL from an [OpenStack credentials file](https://rclone.org/swift/#configuration-from-an-openstack-credentials-file). |
-| **AuthVersion**| Select the authentication version from the dropdown list if your auth URL has no version ([rclone documentation](https://rclone.org/swift/#standard-options)). |
+| **AuthVersion**| Authentication version set to default. Click on field to specify different authentication version ([rclone documentation](https://rclone.org/swift/#standard-options)). |
 {{< /truetable >}}
 {{< /expand >}}
 
@@ -256,7 +257,7 @@ Setting **AuthVersion** to **v3** shows additional authentication settings.
 | **Auth Token** | (Optional) Enter the auth token from alternate authentication. For more information, see [rclone documentation](https://rclone.org/swift/#standard-options). |
 | **Region Name** | (Optional) Enter the region name. For more information, see [rclone documentation](https://rclone.org/swift/#standard-options). |
 | **Storage URL** | (Optional) Enter the storage URL. For more information, see [rclone documentation](https://rclone.org/swift/#standard-options). |
-| **Endpoint Type** | Select service catalog option from the **Endpoint Type** dropdown. Options are **Public**, **Internal** and **Admin**. **Public** is recommended. For more information, see [rclone documentation](https://rclone.org/swift/#standard-options). |
+| **Endpoint Type** | Enter service catalog option. For more information, see [rclone documentation](https://rclone.org/swift/#standard-options). |
 {{< /truetable >}}
 {{< /expand >}}
 

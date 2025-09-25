@@ -3,37 +3,67 @@
 
 <table class="inputs">
     <tr>
-        <td><label for="disks">Total Disks in Pool:</label></td>
+        <td><span class="help-icon" data-help="disks" title="Click for help">?</span> <label id="disks" for="disks">Total Disks in Pool:</label></td>
         <td><input class="monitor" type="text" id="disks" name="disks" value="24"></td>
 
-        <td><label for="add_disk" id="add_disk">Add Disk (TB):</label></td>
+        <td><span class="help-icon" data-help="add_disk" title="Click for help">?</span> <label id="add_disk" for="add_disk">New Disk Size:</label></td>
         <td><input class="monitor" type="text" id="add_disk" name="add_disk"></td>
     </tr>
 
     <tr>
         <td id="add_disk_buttons" colspan="2">
-            <button type="button" class="change_disk_qty" id="minus_100">-100</button>
-            <button type="button" class="change_disk_qty" id="minus_10">-10</button>
-            <button type="button" class="change_disk_qty" id="minus_1">-1</button>
-            <button type="button" class="change_disk_qty" id="plus_1">+1</button>
-            <button type="button" class="change_disk_qty" id="plus_10">+10</button>
-            <button type="button" class="change_disk_qty" id="plus_100">+100</button>
+            <div class="rocker-button">
+                <div class="half up" id="plus_1"><div class="arrow">+</div></div>
+                <div class="center-text">1</div>
+                <div class="half down" id="minus_1"><div class="arrow">-</div></div>
+            </div>
+            <div class="rocker-button">
+                <div class="half up" id="plus_10"><div class="arrow">+</div></div>
+                <div class="center-text">10</div>
+                <div class="half down" id="minus_10"><div class="arrow">-</div></div>
+            </div>
+            <div class="rocker-button">
+                <div class="half up" id="plus_100"><div class="arrow">+</div></div>
+                <div class="center-text">100</div>
+                <div class="half down" id="minus_100"><div class="arrow">-</div></div>
+            </div>
+            <div class="add_disk_vrule"></div>
+            <div class="rocker-button">
+                <div class="half up" id="plus_12"><div class="arrow">+</div></div>
+                <div class="center-text">12</div>
+                <div class="half down" id="minus_12"><div class="arrow">-</div></div>
+            </div>
+            <div class="rocker-button">
+                <div class="half up" id="plus_24"><div class="arrow">+</div></div>
+                <div class="center-text">24</div>
+                <div class="half down" id="minus_24"><div class="arrow">-</div></div>
+            </div>
+            <div class="rocker-button">
+                <div class="half up" id="plus_60"><div class="arrow">+</div></div>
+                <div class="center-text">60</div>
+                <div class="half down" id="minus_60"><div class="arrow">-</div></div>
+            </div>
+            <div class="rocker-button">
+                <div class="half up" id="plus_102"><div class="arrow">+</div></div>
+                <div class="center-text">102</div>
+                <div class="half down" id="minus_102"><div class="arrow">-</div></div>
+            </div>
         </td>
 
-        <td id="add_disk_button"><button type="button" id="add_disk">Add Disk</button></td>
+        <td id="add_disk_button"><button type="button" id="add_disk">Add Disk Row</button></td>
         <td id="tb_gb_button"><button type="button" id="tb_gb">TB/GB</button></td>
     </tr>
 
     <tr>
-        <td><label for="min_spares">Minimum Spares:</label></td>
+        <td><span class="help-icon" data-help="min_spares" title="Click for help">?</span> <label id="min_spares" for="min_spares">Minimum Spares:</label></td>
         <td><input class="monitor" type="text" id="min_spares" name="min_spares" value="0"></td>
     </tr>
 
     <tr>
-        <td><label for="use_new_slop">OpenZFS 2.0.7 Slop:</label></td>
+        <td><span class="help-icon" data-help="use_new_slop" title="Click for help">?</span> <label id="use_new_slop" for="use_new_slop">OpenZFS 2.0.7 Slop:</label></td>
         <td><input class="monitor" type="checkbox" id="use_new_slop" name="use_new_slop" checked></td>
 
-        <td><label for="add_vdev_type" id="add_vdev_type">New vdev Type:</label></td>
+        <td><span class="help-icon" data-help="add_vdev_type" title="Click for help">?</span> <label for="add_vdev_type" id="add_vdev_type">New vdev Type:</label></td>
         <td><select class="monitor" name="add_vdev_type" id="add_vdev_type">
             <option value="mirror">Mirror</option>
             <option value="z1">RAIDZ1</option>
@@ -44,7 +74,7 @@
     </tr>
 
     <tr id="new_vdev">
-        <td><label for="recordsize">ZFS recordsize value:</label></td>
+        <td><span class="help-icon" data-help="recordsize" title="Click for help">?</span> <label id="recordsize" for="recordsize">ZFS recordsize value:</label></td>
         <td><select class="monitor" name="recordsize" id="recordsize">
             <option value="4">4 KiB</option>
             <option value="8">8 KiB</option>
@@ -68,7 +98,7 @@
     </tr>
 
     <tr>
-        <td><label for="ashift">ZFS ashift value:</label></td>
+        <td><span class="help-icon" data-help="ashift" title="Click for help">?</span> <label id="ashift" for="ashift">ZFS ashift value:</label></td>
         <td><select class="monitor" name="ashift" id="ashift">
             <option value="9">9</option>
             <option value="12" selected>12</option>
@@ -76,11 +106,11 @@
             <option value="14">14</option>
         </select></td>
 
-        <td id="vdev_button" colspan="2"><button type="button" id="add_vdev">Add vdev Layout</button></td>
+        <td id="vdev_button" colspan="2"><button type="button" id="add_vdev">Add vdev Column</button></td>
     </tr>
 
     <tr>
-        <td><label for="swap_size">Disk Swap Size:</label></td>
+        <td><span class="help-icon" data-help="swap_size" title="Click for help">?</span> <label id="swap_size" for="swap_size">Disk Swap Size:</label></td>
         <td><select class="monitor" name="swap_size" id="swap_size">
             <option value="0" selected>0 GiB</option>
             <option value="2">2 GiB</option>
@@ -90,7 +120,7 @@
     </tr>
 
     <tr>
-        <td><label for="decimal_places">Decimal Places:</label></td>
+        <td><span class="help-icon" data-help="decimal_places" title="Click for help">?</span> <label for="decimal_places">Decimal Places:</label></td>
         <td><select class="monitor" name="decimal_places" id="decimal_places">
             <option value="0">0</option>
             <option value="1">1</option>
@@ -106,116 +136,672 @@
             <option value="bytes">bytes</option>
         </select></td>
         
-        <td><label>Table Data:</label></td>
-        <td><input class="monitor" type="radio" id="usable_cap" name="table_data" value="usable_cap" checked>
-            <label for="usable_cap">Usable Capacity</label>
+        <td><span class="help-icon" data-help="table_data" title="Click for help">?</span> <label>Table Data:</label></td>
+        <td><input class="monitor" type="radio" id="usable_cap" name="table_data" value="usable_cap_tib" checked>
+            <label for="usable_cap">Usable Capacity (TiB)</label> <span class="help-icon" data-help="usable_cap" title="Click for help">?</span>
         </td>
     </tr>
 
     <tr>
-        <td><label for="show_deflate">Show Deflate Ratio:</label></td>
+        <td><span class="help-icon" data-help="show_deflate" title="Click for help">?</span> <label for="show_deflate">Show Deflate Ratio:</label></td>
         <td><input class="monitor" type="checkbox" id="show_deflate" name="show_deflate"></td>
 
         <td> </td>
-        <td><input class="monitor" type="radio" id="efficiency" name="table_data" value="efficiency">
-            <label for="efficiency">Capacity Efficiency</label>
+        <td><input class="monitor" type="radio" id="usable_cap_tb" name="table_data" value="usable_cap_tb">
+            <label for="usable_cap_tb">Usable Capacity (TB)</label> <span class="help-icon" data-help="usable_cap_tb" title="Click for help">?</span>
         </td>
     </tr>
 
     <tr>
-        <td><label for="show_afr">Show Pool AFR:</label></td>
+        <td><span class="help-icon" data-help="fast_draid" title="Click for help">?</span> <label for="fast_draid">Fast dRAID Calculation:</label></td>
+        <td><input class="monitor" type="checkbox" id="fast_draid" name="fast_draid" checked></td>
+        
+        <td> </td>
+        <td><input class="monitor" type="radio" id="efficiency" name="table_data" value="efficiency">
+            <label for="efficiency">Capacity Efficiency</label> <span class="help-icon" data-help="efficiency" title="Click for help">?</span>
+        </td>
+    </tr>
+
+    <tr>
+        <td><span class="help-icon" data-help="show_afr" title="Click for help">?</span> <label for="show_afr">Show Annual Failure Rate (AFR):</label></td>
         <td><input class="monitor" type="checkbox" id="show_afr" name="show_afr"></td>
 
         <td> </td>
         <td><input class="monitor" type="radio" id="overhead" name="table_data" value="overhead">
-            <label for="overhead">ZFS Overhead</label>
+            <label for="overhead">ZFS Overhead</label> <span class="help-icon" data-help="overhead" title="Click for help">?</span>
         </td>
     </tr>
 
     <tr>
-        <td><label for="disk_afr">Disk AFR (%):</label></td>
-        <td><input class="monitor" type="text" id="disk_afr" name="disk_afr" value="5" disabled></td>
+        <td> </td>
+        <td> </td>
         
         <td> </td>
         <td><input class="monitor" type="radio" id="cap_w_reserve" name="table_data" value="cap_w_reserve">
-            <label for="cap_w_reserve">Cap. w/ Reservation</label>
+            <label for="cap_w_reserve">Cap. w/ Reservation</label> <span class="help-icon" data-help="cap_w_reserve" title="Click for help">?</span>
         </td>
     </tr>
 
-    <tr>
-        <td><label for="allow_resilver">Assume Resilver:</label></td>
+    <tr id="reservation_row" style="display: none;">
+        <td colspan="4" style="padding: 0; position: relative; height: 35px;">
+            <div style="position: absolute; right: 20px; top: 8px; white-space: nowrap;">
+                <span class="help-icon" data-help="reservation" title="Click for help">?</span> <label for="reservation">Reservation (%):</label> 
+                <input class="monitor" type="text" id="reservation" name="reservation" value="20" disabled style="width: 50px;">
+            </div>
+        </td>
+    </tr>
+
+    <tr id="disk_afr_row" style="display: none;">
+        <td><span class="help-icon" data-help="disk_afr" title="Click for help">?</span> <label for="disk_afr">Disk AFR (%):</label></td>
+        <td><input class="monitor" type="text" id="disk_afr" name="disk_afr" value="5" disabled></td>
+        
+        <td> </td>
+        <td> </td>
+    </tr>
+
+    <tr id="allow_resilver_row" style="display: none;">
+        <td><span class="help-icon" data-help="allow_resilver" title="Click for help">?</span> <label for="allow_resilver">Assume Resilver:</label></td>
         <td><input class="monitor" type="checkbox" id="allow_resilver" name="allow_resilver" disabled checked></td>
         
-        <td id="res_label"><label for="reservation">Reservation (%):</label></td>
-        <td id="res_input"><input class="monitor" type="text" id="reservation" name="reservation" value="20" disabled></td>
+        <td> </td>
+        <td> </td>
+    </tr>
+
+    <tr id="resilver_time_row" style="display: none;">
+        <td  style="vertical-align: top;"><span class="help-icon" data-help="resilver_time" title="Click for help">?</span> <label for="resilver_time" >Resilver Time (hrs):</label></td>
+        <td style="vertical-align: top;"><input class="monitor" type="text" id="resilver_time" name="resilver_time" value="48" disabled></td>
+        
+        <td> </td>
+        <td> </td>
     </tr>
 
     <tr>
-        <td  style="vertical-align: top;"><label for="resilver_time" >Resilver Time (hrs):</label></td>
-        <td style="vertical-align: top;"><input class="monitor" type="text" id="resilver_time" name="resilver_time" value="48" disabled></td>
+        <td> </td>
+        <td> </td>
         
-        <td id="reset_button" style="vertical-align: top;"><button type="button" id="reset_button">Reset</button></td>
+        <td id="action_buttons" style="vertical-align: top;">
+            <button type="button" id="calculate_button" style="margin-right: 10px;">Update</button>
+            <button type="button" id="reset_button">Reset</button>
+        </td>
         <td id="status" style="white-space: normal; width: 15em; vertical-align: top;"></td>
-    </tr>      
+    </tr>
+    
+    <tr>
+        <td colspan="4" style="padding: 10px;">
+            <div id="help-text-container" style="padding: 15px; background: rgba(0, 149, 213, 0.05); border-radius: 8px; border-left: 4px solid #0095d5; margin-bottom: 10px;">
+                <div id="help-text-content" style="color: var(--body-font-color); line-height: 1.4; font-size: 0.9em;">
+                    <strong>Configuration Help:</strong> Click the help icons (?) next to field labels above to see detailed explanations of each setting.
+                </div>
+            </div>
+            <div id="shelf-count-widget" style="padding: 15px; background: rgba(0, 149, 213, 0.05); border-radius: 8px; border-left: 4px solid #0095d5;">
+                <div id="shelf-count-content" style="color: var(--body-font-color); line-height: 1.4;">
+                    <strong>Loading TrueNAS shelf calculations...</strong>
+                </div>
+            </div>
+        </td>
+    </tr>
 
 </table>
 
-<p class="subsect_label">Click on the section titles to expand/collapse and view calculated data. Hovering over a table cell loads the relevant data into the Calculation Values section below. You can click table cells to freeze or unfreeze those values.</p>
+<p class="subsect_label">Select a tab to view calculated data for different ZFS configurations. Hovering over a table cell loads the relevant data into the Calculation Values section below. You can click table cells to freeze or unfreeze those values.</p>
 
 <style>
-    summary {
-        font-size: 1.5em;
-        padding: .5em;
+    /* Center the tab navigation buttons */
+    #capacity-tabs-container .linkable-tabs-nav {
+        margin: 0 auto;
+    }
+    
+    /* Center the entire tabs wrapper */
+    #capacity-tabs-container .linkable-tabs-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    /* Add border radius to calculator input table to match tab buttons */
+    table.inputs {
+        border-radius: 8px;
+        overflow: hidden;
+        table-layout: fixed;
+        width: 100%;
+        padding: 0 15px; /* Simple inner padding */
+        box-sizing: border-box;
+    }
+    
+    /* Constrain all input field widths to prevent overflow */
+    table.inputs input[type="text"] {
+        max-width: 100%;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    
+    /* Responsive design for narrow screens */
+    @media (max-width: 768px) {
+        table.inputs td {
+            padding-left: 5px;
+            padding-right: 5px;
+        }
+        
+        /* Stack table cells vertically on very narrow screens */
+        table.inputs tr {
+            display: block;
+            margin-bottom: 15px;
+        }
+        
+        table.inputs td {
+            display: block;
+            width: 100%;
+            padding: 2px 5px;
+        }
+        
+        /* Keep shelf count widget tables in normal table layout */
+        #shelf-count-content table,
+        #shelf-count-content tr,
+        #shelf-count-content td,
+        #shelf-count-content th {
+            display: table !important;
+        }
+        
+        #shelf-count-content tr {
+            display: table-row !important;
+            margin-bottom: 0 !important;
+        }
+        
+        #shelf-count-content td,
+        #shelf-count-content th {
+            display: table-cell !important;
+            width: auto !important;
+        }
+        
+        /* Keep rocker buttons horizontal */
+        #add_disk_buttons,
+        #add_vdev_buttons {
+            display: flex !important;
+            justify-content: center;
+        }
+        
+        /* Action buttons stay horizontal */
+        #action_buttons {
+            display: flex !important;
+            gap: 10px;
+            justify-content: center;
+        }
+    }
+    
+    /* Make shelf count widget scrollable on mobile for wide hardware tables */
+    #shelf-count-widget {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    #shelf-count-content table {
+        min-width: max-content;
+        width: auto;
+    }
+    
+    /* Add border radius to calculation values container too */
+    #debug_vals {
+        border-radius: 8px;
+        overflow: hidden;
+    }
+    
+    /* Enhanced scroll container with navigation controls for capacity tables */
+    #capacity-tabs-container .scroll-wrapper {
+        position: relative;
+        width: calc(100% - 80px) !important; /* Leave space for arrows (40px each side) */
+        margin: 0 40px !important; /* Center the container with arrow space */
+    }
+
+    #capacity-tabs-container .results-container {
+        border-radius: 8px;
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow-x: auto !important;
+        display: block !important;
+        cursor: grab;
+        user-select: none;
+        position: relative;
+        scroll-behavior: smooth;
+    }
+    
+    #capacity-tabs-container .results-container:active {
+        cursor: grabbing;
+    }
+    
+    #capacity-tabs-container .results-container:hover {
+        background: rgba(0, 149, 213, 0.02);
+        transition: background-color 0.2s ease;
+    }
+    
+    /* Hide scrollbars completely for clean navigation */
+    #capacity-tabs-container .results-container::-webkit-scrollbar {
+        display: none;
+    }
+    
+    #capacity-tabs-container .results-container {
+        -ms-overflow-style: none;  /* Internet Explorer 10+ */
+        scrollbar-width: none;  /* Firefox */
+    }
+    
+    /* Navigation arrows - always visible for discoverability */
+    #capacity-tabs-container .scroll-nav {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(0, 149, 213, 0.8);
+        color: white;
+        border: none;
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        cursor: pointer;
+        z-index: 20;
+        opacity: 1; /* Always visible */
+        transition: all 0.2s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 14px;
+        font-weight: bold;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    }
+
+    #capacity-tabs-container .scroll-nav:hover {
+        background: rgba(0, 149, 213, 1);
+        transform: translateY(-50%) scale(1.1);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    }
+
+    #capacity-tabs-container .scroll-nav:active {
+        transform: translateY(-50%) scale(0.95);
+    }
+
+    #capacity-tabs-container .scroll-nav-left {
+        left: -3.5rem; /* Position outside the scroll wrapper */
+    }
+
+    #capacity-tabs-container .scroll-nav-right {
+        right: -3.5rem; /* Position outside the scroll wrapper */
+    }
+
+    /* Hide arrows when at scroll boundaries */
+    #capacity-tabs-container .scroll-nav.hidden {
+        opacity: 0 !important;
+        pointer-events: none;
+    }
+
+    
+    /* Ensure tab content doesn't interfere with table sizing */
+    #capacity-tabs-container .linkable-tab-content {
+        padding: 15px 0 !important; /* Remove horizontal padding that might constrain tables */
+        overflow: visible !important; /* Don't clip overflowing content */
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+    
+    /* Override existing table sizing for tabs */
+    #capacity-tabs-container table.results {
+        width: 99% !important;
+        max-width: none !important; /* Allow table to be wider than container if needed */
+        table-layout: auto !important;
+        white-space: nowrap; /* Prevent text wrapping that could hide overflow */
+        border-radius: 8px;
+        overflow: hidden;
+    }
+    
+    /* Rocker button styling */
+    .rocker-button {
+        display: inline-block;
+        position: relative;
+        margin: 1px;
+        border: 1px solid var(--border-color, #ccc);
+        border-radius: 3px;
+        width: 40px;
+        height: 40px;
+        vertical-align: top;
+        background-color: rgba(128, 128, 128, 0.1);
+    }
+    
+    .rocker-button .half {
+        position: absolute;
+        width: 100%;
+        height: 19px;
+        cursor: pointer;
+        user-select: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        transition: background-color 0.2s;
+    }
+    
+    .rocker-button .half.up {
+        top: 0;
+        border-radius: 2px 2px 0 0;
+        background-color: rgba(128, 128, 128, 0.1);
+        border: none;
+        color: var(--body-font-color, #333);
+    }
+    
+    .rocker-button .half.down {
+        bottom: 0;
+        border-radius: 0 0 2px 2px;
+        background-color: rgba(128, 128, 128, 0.1);
+        border: none;
+        color: var(--body-font-color, #333);
+    }
+    
+    .rocker-button .half:hover {
+        background-color: #0095d5 !important;
+        color: white !important;
+        border-color: #0095d5 !important;
+    }
+    
+    .rocker-button .half:active {
+        background-color: #007bb5 !important;
+        color: white !important;
+        border-color: #007bb5 !important;
+    }
+    
+    .rocker-button .center-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 10px;
+        font-weight: bold;
+        color: var(--body-font-color, #666);
+        z-index: 1;
+        pointer-events: none;
+    }
+    
+    .rocker-button .arrow {
+        font-size: 12px;
+        line-height: 1;
+        color: inherit;
+    }
+    
+    .add_disk_vrule {
+        display: inline-block;
+        width: 1px;
+        height: 40px;
+        background-color: var(--border-color, #ccc);
+        margin: 0 6px;
+        vertical-align: top;
+    }
+    
+    #add_disk_buttons {
+        text-align: center;
+        padding: 5px;
+    }
+
+    /* Help icon styling */
+    .help-icon {
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        line-height: 14px;
+        text-align: center;
+        border-radius: 50%;
+        background: #0095d5;
+        color: white;
+        font-size: 11px;
+        font-weight: bold;
+        cursor: pointer;
+        margin-left: 5px;
+        vertical-align: middle;
+        transition: all 0.2s ease;
+        user-select: none;
+    }
+    
+    .help-icon:hover {
+        background: #007bb5;
+        transform: scale(1.1);
+        box-shadow: 0 2px 6px rgba(0, 149, 213, 0.3);
+    }
+    
+    .help-icon:active {
+        transform: scale(0.95);
+    }
+    
+    /* Add border radius to visible corners, accounting for hidden white cells */
+    
+    /* TOP-LEFT corner: "Raw" header gets top-left radius (it's the 2nd cell, after hidden white cell) */
+    #capacity-tabs-container table.results tr:first-child th:nth-child(2) {
+        border-top-left-radius: 8px;
+    }
+    
+    /* TOP-LEFT corner: First data row header ("4TB") gets top-left radius */
+    #capacity-tabs-container table.results tr:nth-child(3) th:first-child {
+        border-top-left-radius: 8px;
+    }
+    
+    /* TOP-RIGHT corner: last header in first row */
+    #capacity-tabs-container table.results tr:first-child th:last-child {
+        border-top-right-radius: 8px;
+    }
+    
+    /* BOTTOM-LEFT corner: last row header gets bottom-left radius */
+    #capacity-tabs-container table.results tr:last-child th:first-child {
+        border-bottom-left-radius: 8px;
+    }
+    
+    /* BOTTOM-RIGHT corner: last data cell in last row */
+    #capacity-tabs-container table.results tr:last-child td:last-child {
+        border-bottom-right-radius: 8px;
     }
 </style>
 
-<details>
-    <summary>Common Layouts</summary>
-        <div class="results-container" id="common">
+<!-- Hidden content source for linkable tabs -->
+<div style="display: none;" id="capacity-tab-content-source">
+  <div data-tab-id="common" data-tab-label="Common Layouts">
+    <div class="scroll-wrapper">
+        <button class="scroll-nav scroll-nav-left" aria-label="Scroll left" title="Scroll left">‹</button>
+        <button class="scroll-nav scroll-nav-right" aria-label="Scroll right" title="Scroll right">›</button>
+        <div class="results-container scroll-container" id="common">
             <table class="results" id="common">
             </table>
         </div>
-</details>
+    </div>
+  </div>
 
-<details>
-    <summary>Raw, Stripes, & Mirrors</summary>
-        <div class="results-container" id="stripes">
+  <div data-tab-id="stripes" data-tab-label="Raw, Stripes, & Mirrors">
+    <div class="scroll-wrapper">
+        <button class="scroll-nav scroll-nav-left" aria-label="Scroll left" title="Scroll left">‹</button>
+        <button class="scroll-nav scroll-nav-right" aria-label="Scroll right" title="Scroll right">›</button>
+        <div class="results-container scroll-container" id="stripes">
             <table class="results" id="stripes">
             </table>
         </div>
-</details>
+    </div>
+  </div>
 
-<details>
-    <summary>RAIDZ1</summary>
-        <div class="results-container" id="raidz1">
+  <div data-tab-id="raidz1" data-tab-label="RAIDZ1">
+    <div class="scroll-wrapper">
+        <button class="scroll-nav scroll-nav-left" aria-label="Scroll left" title="Scroll left">‹</button>
+        <button class="scroll-nav scroll-nav-right" aria-label="Scroll right" title="Scroll right">›</button>
+        <div class="results-container scroll-container" id="raidz1">
             <table class="results" id="raidz1">
             </table>
         </div>
-</details>
+    </div>
+  </div>
 
-<details>
-    <summary>RAIDZ2</summary>
-        <div class="results-container" id="raidz2">
+  <div data-tab-id="raidz2" data-tab-label="RAIDZ2">
+    <div class="scroll-wrapper">
+        <button class="scroll-nav scroll-nav-left" aria-label="Scroll left" title="Scroll left">‹</button>
+        <button class="scroll-nav scroll-nav-right" aria-label="Scroll right" title="Scroll right">›</button>
+        <div class="results-container scroll-container" id="raidz2">
             <table class="results" id="raidz2">
             </table>
         </div>
-</details>
+    </div>
+  </div>
 
-<details>
-    <summary>RAIDZ3</summary>
-        <div class="results-container" id="raidz3">
+  <div data-tab-id="raidz3" data-tab-label="RAIDZ3">
+    <div class="scroll-wrapper">
+        <button class="scroll-nav scroll-nav-left" aria-label="Scroll left" title="Scroll right">‹</button>
+        <button class="scroll-nav scroll-nav-right" aria-label="Scroll right" title="Scroll right">›</button>
+        <div class="results-container scroll-container" id="raidz3">
             <table class="results" id="raidz3">
             </table>
         </div>
-</details>
+    </div>
+  </div>
 
-<details>
-    <summary>dRAID</summary>
-        <div class="results-container" id="draid">
+  <div data-tab-id="draid" data-tab-label="dRAID">
+    <div class="scroll-wrapper">
+        <button class="scroll-nav scroll-nav-left" aria-label="Scroll left" title="Scroll left">‹</button>
+        <button class="scroll-nav scroll-nav-right" aria-label="Scroll right" title="Scroll right">›</button>
+        <div class="results-container scroll-container" id="draid">
             <table class="results" id="draid">
             </table>
         </div>
-</details>
+    </div>
+  </div>
+</div>
+
+<!-- Linkable Tab Box Container -->
+<div id="capacity-tabs-container"></div>
+
+<script src="/js/linkable-tabs.js?v=4.8"></script>
+<script src="/js/linkable-tabs-init.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Wait for capacity calculator to initialize before setting up tabs
+    setTimeout(function() {
+        initializeHugoTabs('capacity-tab-content-source', 'capacity-tabs-container', 'common', true);
+        
+        // Initialize scroll controls after tabs are created
+        setTimeout(initializeCapacityScrollControls, 500);
+    }, 100);
+    
+    // Initialize scroll controls for capacity calculator tables
+    function initializeCapacityScrollControls() {
+        const scrollWrappers = document.querySelectorAll('#capacity-tabs-container .scroll-wrapper');
+        
+        scrollWrappers.forEach((wrapper, index) => {
+            const container = wrapper.querySelector('.scroll-container');
+            const leftBtn = wrapper.querySelector('.scroll-nav-left');
+            const rightBtn = wrapper.querySelector('.scroll-nav-right');
+            
+            if (!container || !leftBtn || !rightBtn) return;
+            
+            // Update scroll state function
+            function updateScrollState() {
+                const { scrollLeft, scrollWidth, clientWidth } = container;
+                const maxScroll = scrollWidth - clientWidth;
+                
+                // Hide/show arrows at boundaries
+                const threshold = 10;
+                const isAtStart = scrollLeft <= threshold;
+                const isAtEnd = scrollLeft >= maxScroll - threshold;
+                
+                leftBtn.classList.toggle('hidden', isAtStart);
+                rightBtn.classList.toggle('hidden', isAtEnd);
+            }
+            
+            // Arrow button event handlers
+            leftBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                const scrollAmount = container.clientWidth * 0.7;
+                container.scrollBy({
+                    left: -scrollAmount,
+                    behavior: 'smooth'
+                });
+                setTimeout(updateScrollState, 100);
+            });
+            
+            rightBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                const scrollAmount = container.clientWidth * 0.7;
+                container.scrollBy({
+                    left: scrollAmount,
+                    behavior: 'smooth'
+                });
+                setTimeout(updateScrollState, 100);
+            });
+            
+            // Set up drag scrolling
+            setupDragScroll(container);
+            
+            // Scroll event listener
+            container.addEventListener('scroll', updateScrollState);
+            
+            // Initial state update - delay to allow tables to render
+            setTimeout(updateScrollState, 200);
+            
+            // Update when tabs are switched
+            const tabButton = document.querySelector(`[href="#${container.id}"]`);
+            if (tabButton) {
+                tabButton.addEventListener('click', function() {
+                    setTimeout(updateScrollState, 300);
+                });
+            }
+        });
+        
+        // Also check for tab changes via mutation observer
+        const tabsContainer = document.getElementById('capacity-tabs-container');
+        if (tabsContainer) {
+            const observer = new MutationObserver(function(mutations) {
+                mutations.forEach(function(mutation) {
+                    if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
+                        setTimeout(initializeCapacityScrollControls, 200);
+                    }
+                });
+            });
+            observer.observe(tabsContainer, { 
+                childList: true, 
+                subtree: true, 
+                attributes: true 
+            });
+        }
+    }
+    
+    // Drag scroll functionality
+    function setupDragScroll(container) {
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+
+        container.addEventListener('mousedown', (e) => {
+            isDown = true;
+            container.style.cursor = 'grabbing';
+            startX = e.pageX - container.offsetLeft;
+            scrollLeft = container.scrollLeft;
+        });
+
+        container.addEventListener('mouseleave', () => {
+            isDown = false;
+            container.style.cursor = 'grab';
+        });
+
+        container.addEventListener('mouseup', () => {
+            isDown = false;
+            container.style.cursor = 'grab';
+        });
+
+        container.addEventListener('mousemove', (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - container.offsetLeft;
+            const walk = (x - startX) * 2;
+            container.scrollLeft = scrollLeft - walk;
+        });
+    }
+    
+    // Re-initialize when tables are updated
+    if (typeof window.originalUpdate === 'undefined' && typeof update === 'function') {
+        window.originalUpdate = update;
+        update = function() {
+            window.originalUpdate.apply(this, arguments);
+            setTimeout(initializeCapacityScrollControls, 300);
+        };
+    }
+});
+</script>
 
 
 <h2 class="sect_labels" id="debug_vals">Calculation Values</h2>

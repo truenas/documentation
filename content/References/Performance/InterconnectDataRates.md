@@ -22,6 +22,58 @@ A best effort attempt has been made to exclude physical link encoding overheads 
 <table class="tg">
 <thead>
   <tr>
+    <th class="tg-1wig" rowspan="2">PCI Express 5.0</th>
+    <th class="tg-1wig" colspan="4">Maximum Effective Data Rate (One Direction)</th>
+  </tr>
+  <tr>
+    <td class="tg-1wig">(1024<sup>2</sup> Bytes) MiB/s</td>
+    <td class="tg-1wig">(1000<sup>2</sup> Bytes) MB/s</td>
+    <td class="tg-1wig">(1000<sup>3</sup> Bits) Gb/s</td>
+    <td class="tg-1wig">Notes</td>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td class="tg-1wig">x1</td>
+    <td class="tg-0lax">3,756</td>
+    <td class="tg-0lax">3,938</td>
+    <td class="tg-0lax">31.5</td>
+    <td class="tg-0lax"></td>
+  </tr>
+  <tr>
+    <td class="tg-1wig">x2</td>
+    <td class="tg-0lax">7,512</td>
+    <td class="tg-0lax">7,877</td>
+    <td class="tg-0lax">63.0</td>
+    <td class="tg-0lax">NVMe M.2 (M+B Key)</td>
+  </tr>
+  <tr>
+    <td class="tg-1wig">x4</td>
+    <td class="tg-0lax">15,024</td>
+    <td class="tg-0lax">15,754</td>
+    <td class="tg-0lax">126</td>
+    <td class="tg-0lax">NVMe M.2 (M Key)<br>U.2/U.3 (1x4 or 2x2)<br>E1.S/E1.L (typical)<br>E3</td>
+  </tr>
+  <tr>
+    <td class="tg-1wig">x8</td>
+    <td class="tg-0lax">30,048</td>
+    <td class="tg-0lax">31,508</td>
+    <td class="tg-0lax">252.1</td>
+    <td class="tg-0lax">E1.S/E1.L (max)<br>E3</td>
+  </tr>
+  <tr>
+    <td class="tg-1wig">x16</td>
+    <td class="tg-0lax">60,096</td>
+    <td class="tg-0lax">63,015</td>
+    <td class="tg-0lax">504.1</td>
+    <td class="tg-0lax">E3 (max)</td>
+  </tr>
+</tbody>
+</table>
+
+<table class="tg">
+<thead>
+  <tr>
     <th class="tg-1wig" rowspan="2">PCI Express 4.0</th>
     <th class="tg-1wig" colspan="4">Maximum Effective Data Rate (One Direction)</th>
   </tr>
@@ -294,25 +346,31 @@ A best effort attempt has been made to exclude physical link encoding overheads 
     <td class="tg-1wig">(1000<sup>2</sup> Bytes) MB/s</td>
     <td class="tg-1wig">(1000<sup>3</sup> Bits) Gb/s</td>
   </tr>
-  <tr>
-    <td class="tg-1wig">8 Gb</td>
-    <td class="tg-0lax">797</td>
-    <td class="tg-0lax">836</td>
-    <td class="tg-0lax">6.7</td>
-  </tr>
 </thead>
 <tbody>
   <tr>
+    <td class="tg-1wig">8 Gb</td>
+    <td class="tg-0lax">773</td>
+    <td class="tg-0lax">810</td>
+    <td class="tg-0lax">6.5</td>
+  </tr>
+  <tr>
     <td class="tg-1wig">16 Gb</td>
-    <td class="tg-0lax">1,594</td>
-    <td class="tg-0lax">1,672</td>
-    <td class="tg-0lax">13.4</td>
+    <td class="tg-0lax">1,545</td>
+    <td class="tg-0lax">1,620</td>
+    <td class="tg-0lax">13.0</td>
   </tr>
   <tr>
     <td class="tg-1wig">32 Gb</td>
-    <td class="tg-0lax">3,275</td>
-    <td class="tg-0lax">3,434</td>
-    <td class="tg-0lax">27.5</td>
+    <td class="tg-0lax">3,091</td>
+    <td class="tg-0lax">3,241</td>
+    <td class="tg-0lax">25.9</td>
+  </tr>
+  <tr>
+    <td class="tg-1wig">64 Gb</td>
+    <td class="tg-0lax">6,543</td>
+    <td class="tg-0lax">6,861</td>
+    <td class="tg-0lax">54.9</td>
   </tr>
 </tbody>
 </table>

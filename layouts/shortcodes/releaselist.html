@@ -15,11 +15,14 @@
       {{- if .majorVersions }}
         <div class="section-tabs">
           {{- range $index, $majorVersion := .majorVersions }}
-            <div class="section-tab {{ $name }}-section-tab" onclick="showMajorVersion('{{ $name }}', '{{ $majorVersion.lifecycle }}')">{{ $majorVersion.lifecycle }}</div>
+            {{- if ne $majorVersion.lifecycle "Preview" }}
+              <div class="section-tab {{ $name }}-section-tab" onclick="showMajorVersion('{{ $name }}', '{{ $majorVersion.lifecycle }}')">{{ $majorVersion.lifecycle }}</div>
+            {{- end }}
           {{- end }}
         </div>
 
         {{- range $index, $majorVersion := .majorVersions }}
+          {{- if ne $majorVersion.lifecycle "Preview" }}
           <div class="major-version-content {{ $name }}-major-version-content" id="{{ $name }}-majorVersion{{ $majorVersion.lifecycle }}" style="padding-left: 1.5rem; padding-right: 1.5rem; display: {{ if eq $index $defaultTab }}block{{ else }}none{{ end }};">
             <p><b>{{ $majorVersion.name }}</b></p>
 
@@ -98,6 +101,7 @@
               {{- end }}
             {{- end }}
           </div>
+          {{- end }}
         {{- end }}
       {{- end }}
     </div>

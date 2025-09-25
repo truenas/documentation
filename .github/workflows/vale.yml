@@ -1,0 +1,300 @@
+name: Vale Linting
+
+on:
+  pull_request:
+    paths:
+      - '**/*.md'
+      - '**/*.txt'
+      - '.vale.ini'
+      - 'Styles/**'
+      - '.github/workflows/vale.yml'
+
+jobs:
+  vale:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install Vale
+        run: |
+          wget -qO- https://github.com/errata-ai/vale/releases/download/v3.12.0/vale_3.12.0_Linux_64-bit.tar.gz | tar -xzf - -C /usr/local/bin vale
+          chmod +x /usr/local/bin/vale
+
+      - name: Get changed markdown/text files
+        id: changed-files
+        uses: tj-actions/changed-files@v46
+        with:
+          files: |
+            **/*.md
+            **/*.txt
+          separator: " "
+          base_sha: ${{ github.event.pull_request.base.sha }}
+
+      - name: Run Vale
+        continue-on-error: true
+        run: |
+          vale sync
+          if [ "${{ steps.changed-files.outputs.any_changed }}" == "true" ]; then
+            echo "Running Vale on changed files: ${{ steps.changed-files.outputs.all_changed_files }}"
+            vale --output=JSON ${{ steps.changed-files.outputs.all_changed_files }} > vale-results.json || true
+          else
+            echo "No markdown or text files changed, skipping Vale check"
+            echo '{}' > vale-results.json
+          fi
+          cat vale-results.json
+
+      - name: Collapse Previous Vale Comments
+        uses: actions/github-script@v7
+        if: github.event_name == 'pull_request'
+        with:
+          script: |
+            // Find and collapse previous Vale comments  
+            const { data: comments } = await github.rest.issues.listComments({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number
+            });
+            
+            for (const comment of comments) {
+              if (comment.body.includes('## Vale Style Guide Issues') && 
+                  !comment.body.includes('(Previous)') && 
+                  comment.user.login === 'github-actions[bot]') {
+                try {
+                  const collapsedBody = '<details>\n<summary>Vale Style Guide Issues (Previous - Click to expand)</summary>\n\n' + comment.body + '\n\n</details>';
+                  
+                  await github.rest.issues.updateComment({
+                    owner: context.repo.owner,
+                    repo: context.repo.repo,
+                    comment_id: comment.id,
+                    body: collapsedBody
+                  });
+                  console.log('Collapsed previous Vale comment');
+                } catch (error) {
+                  console.log('Could not collapse previous comment:', error.message);
+                }
+              }
+            }
+
+      - name: Comment PR
+        uses: actions/github-script@v7
+        if: github.event_name == 'pull_request'
+        with:
+          script: |
+            const fs = require('fs');
+            try {
+              const valeResults = JSON.parse(fs.readFileSync('vale-results.json', 'utf8'));
+              const changedFiles = '${{ steps.changed-files.outputs.all_changed_files }}'.split(' ').filter(f => f.trim());
+              
+              let comment = '## Vale Style Guide Issues\n\n';
+              
+              // Filter results to only show changed files
+              const filteredResults = {};
+              for (const file of changedFiles) {
+                if (valeResults[file]) {
+                  // Read file content to identify header lines
+                  let fileContent = [];
+                  try {
+                    const fs = require('fs');
+                    fileContent = fs.readFileSync(file, 'utf8').split('\n');
+                  } catch (error) {
+                    console.log(`Could not read file ${file} for header detection`);
+                    filteredResults[file] = valeResults[file];
+                    continue;
+                  }
+                  
+                  // Filter out various false positives and noise
+                  const filteredIssues = valeResults[file].filter(issue => {
+                    const lineIndex = issue.Line - 1; // Vale uses 1-based line numbers
+                    const line = fileContent[lineIndex] || '';
+                    const trimmedLine = line.trim();
+                    
+                    // Check if this line is a markdown header
+                    const isHeader = trimmedLine.startsWith('#');
+                    
+                    // Check if this is an acronym-related rule
+                    const isAcronymRule = issue.Check && (
+                      issue.Check.includes('Acronym') || 
+                      issue.Check.includes('.Acronym') ||
+                      issue.Message.toLowerCase().includes('acronym') ||
+                      issue.Message.includes('should be spelled out') ||
+                      issue.Message.includes('has no definition')
+                    );
+                    
+                    // Check if this is a capitalization rule on headers
+                    const isCapitalizationRule = issue.Message.includes('should use sentence-style capitalization');
+                    
+                    // Check if this is a formatting rule on likely false positive lines
+                    const isFormattingRule = issue.Message.includes('Use proper formatting') || 
+                                           issue.Message.includes('bold for UI elements') ||
+                                           issue.Message.includes('italics for variables');
+                    
+                    // Identify lines that shouldn't be flagged for various issues
+                    const isLikelyFalsePositive = trimmedLine === '' || // Empty line
+                                                trimmedLine.startsWith('![') || // Image
+                                                trimmedLine.startsWith('{{<') || // Hugo shortcode  
+                                                trimmedLine.startsWith('{{%') || // Hugo shortcode variant
+                                                trimmedLine.match(/^\s*[|]\s*/) || // Table row
+                                                trimmedLine.startsWith('---') || // Horizontal rule
+                                                trimmedLine.startsWith('```'); // Code block
+                    
+                    // Filter out acronym issues on header lines
+                    if (isHeader && isAcronymRule) {
+                      return false; // Skip this issue
+                    }
+                    
+                    // Filter out capitalization issues on header lines  
+                    if (isHeader && isCapitalizationRule) {
+                      return false; // Skip this issue
+                    }
+                    
+                    // Check if formatting issue is a false positive (line already has proper formatting)
+                    if (isFormattingRule) {
+                      // Skip formatting issues on headers and structural lines
+                      if (isHeader || isLikelyFalsePositive) {
+                        return false;
+                      }
+                      
+                      // Check if line already contains proper formatting
+                      const hasProperFormatting = trimmedLine.includes('**') || // Bold formatting
+                                                 trimmedLine.includes('*') ||   // Italic formatting  
+                                                 trimmedLine.includes('`') ||   // Code formatting
+                                                 trimmedLine.includes('_') ||   // Alternative formatting
+                                                 trimmedLine.length < 30;      // Short lines often don't need formatting
+                      
+                      // If line already has formatting, this might be a false positive
+                      if (hasProperFormatting) {
+                        return false; // Skip this potential false positive
+                      }
+                    }
+                    
+                    // Filter out any issues on Hugo shortcode lines  
+                    if (isLikelyFalsePositive && (isAcronymRule || isFormattingRule)) {
+                      return false; // Skip this issue
+                    }
+                    
+                    return true; // Keep this issue
+                  });
+                  
+                  filteredResults[file] = filteredIssues;
+                }
+              }
+              
+              // Count totals from filtered results only
+              let totalIssues = 0;
+              let errorCount = 0;
+              let warningCount = 0;
+              let suggestionCount = 0;
+              
+              for (const [file, issues] of Object.entries(filteredResults)) {
+                totalIssues += issues.length;
+                for (const issue of issues) {
+                  if (issue.Severity === 'error') errorCount++;
+                  else if (issue.Severity === 'warning') warningCount++;
+                  else suggestionCount++;
+                }
+              }
+              
+              comment += `📊 **Summary**: ${totalIssues} issues found in changed files - ${errorCount} errors, ${warningCount} warnings, ${suggestionCount} suggestions\n\n`;
+              
+              if (totalIssues === 0) {
+                comment = '## Vale Style Guide Issues\n\n✅ No style guide issues found in the changed files!';
+              } else {
+                comment += '**Changed files with issues:**\n\n';
+                
+                // Show only changed files with issues
+                const sortedFiles = Object.entries(filteredResults)
+                  .filter(([file, issues]) => issues.length > 0)
+                  .sort(([,a], [,b]) => b.length - a.length);
+                
+                for (const [file, issues] of sortedFiles) {
+                  comment += `### ${file} (${issues.length} issues)\n\n`;
+                  
+                  // Group issues by message to consolidate recurring issues
+                  const issueGroups = {};
+                  for (const issue of issues) {
+                    // Create a normalized key to group similar issues
+                    let normalizedMessage = issue.Message;
+                    
+                    // Normalize similar sentence length messages
+                    if (normalizedMessage.includes('sentences short') || normalizedMessage.includes('Sentences should be under')) {
+                      normalizedMessage = 'Keep sentences under 30 words';
+                    }
+                    
+                    // Normalize similar acronym messages  
+                    if (normalizedMessage.includes('should be spelled out') || normalizedMessage.includes('has no definition')) {
+                      const acronym = normalizedMessage.match(/'([^']+)'/);
+                      if (acronym) {
+                        normalizedMessage = `Spell out '${acronym[1]}' on first use`;
+                      }
+                    }
+                    
+                    // Normalize passive voice messages
+                    if (normalizedMessage.includes('passive voice') || normalizedMessage.includes('Use active voice')) {
+                      normalizedMessage = 'Use active voice instead of passive voice';
+                    }
+                    
+                    // Normalize first person messages
+                    if (normalizedMessage.includes('first-person plural') || normalizedMessage.includes("Avoid using 'we")) {
+                      normalizedMessage = 'Avoid using first-person plural (we, us, our)';
+                    }
+                    
+                    // Normalize contraction messages
+                    if (normalizedMessage.includes('Avoid contractions') || 
+                        normalizedMessage.includes('instead of') ||
+                        normalizedMessage.includes("can't") ||
+                        normalizedMessage.includes("won't") ||
+                        normalizedMessage.includes("we're") ||
+                        normalizedMessage.includes("don't")) {
+                      normalizedMessage = 'Avoid contractions in formal writing';
+                    }
+                    
+                    // Normalize number spelling messages
+                    if (normalizedMessage.match(/Use '\d+' instead of/)) {
+                      normalizedMessage = 'Use numerals instead of spelled-out numbers';
+                    }
+                    
+                    // For certain message types, ignore severity differences and group together
+                    const ignoreSeverityForGrouping = normalizedMessage.includes('Avoid contractions') ||
+                                                     normalizedMessage.includes('Use active voice') ||
+                                                     normalizedMessage.includes('first-person plural');
+                    
+                    const key = ignoreSeverityForGrouping ? normalizedMessage : `${issue.Severity}:${normalizedMessage}`;
+                    if (!issueGroups[key]) {
+                      issueGroups[key] = {
+                        severity: ignoreSeverityForGrouping ? 'suggestion' : issue.Severity, // Use most lenient severity for grouped items
+                        message: normalizedMessage,
+                        lines: []
+                      };
+                    }
+                    // Only add line number if it's not already in the array
+                    if (!issueGroups[key].lines.includes(issue.Line)) {
+                      issueGroups[key].lines.push(issue.Line);
+                    }
+                  }
+                  
+                  // Display consolidated issues
+                  for (const group of Object.values(issueGroups)) {
+                    group.lines.sort((a, b) => a - b); // Sort line numbers
+                    if (group.lines.length === 1) {
+                      comment += `- **Line ${group.lines[0]}** - ${group.severity}: ${group.message}\n`;
+                    } else {
+                      const lineList = group.lines.join(', ');
+                      comment += `- **Lines ${lineList}** - ${group.severity}: ${group.message}\n`;
+                    }
+                  }
+                  comment += '\n';
+                }
+                
+                comment += `🔧 **To fix**: Review the issues above and update your documentation accordingly.`;
+              }
+              
+              github.rest.issues.createComment({
+                issue_number: context.issue.number,
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                body: comment
+              });
+            } catch (error) {
+              console.log('No Vale results to process');
+            }

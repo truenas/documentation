@@ -127,6 +127,8 @@ All TrueNAS systems that need SSH access should enable SSH service as part of th
 To security-harden your system, do not enable SSH and leave it activated at all times.
 Enable the service when SSH access is needed and then disable it until needed again.
 
+{{< include file="/static/includes/SSHUserValidationCheck.md" >}}
+
 * SMART service and SMART tests
 
  SMART service and tests are important for systems with large numbers of disks.
@@ -153,13 +155,6 @@ After opening a configuration screen and changing or entering a setting, when yo
 {{< trueimage src="/images/SCALE/Dashboard/CloseWithoutSavingChangesDialog.png" alt="Close Without Saving Changes" id="Close Without Saving Changes" >}}
 
 To close without saving, click **Yes** or **No** to continue making changes or entering values.
-
-### Setting Up SMART Testing
-
-All systems can benefit from using the SMART service and testing with compatible attached disks.
-Disks that do not support SMART testing do not display the option to set up testing.
-
-See [Managing SMART Tests]({{< ref "SmartTestsScale" >}}) for information on running or managing scheduled SMART tests or [Managing Disks]({{< ref "/SCALE/SCALETutorials/Storage/Disks" >}}) for more information on running a manual test from a selected disk.
 
 ## Setting Up Backup Solutions
 

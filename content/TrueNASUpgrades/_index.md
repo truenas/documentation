@@ -12,18 +12,19 @@ aliases:
 
 ## Release List
 
+Please see the **[Software Status page](https://www.truenas.com/software-status/)** for the latest deployment recommendations from the TrueNAS team.
+
 {{< columns >}}
 
 {{< tabbox name=scale-downloads defaultTab=3 >}}
 
 <--->
 
-{{< tabbox name=core-downloads defaultTab=3 >}}
+{{< tabbox name=core-downloads defaultTab=2 >}}
 
 {{< /columns >}}
 
 Each listed release links to download files for that release.
-For the latest deployment and update recommendations from the TrueNAS team, see the [Software Status page](https://www.truenas.com/software-status/).
 
 Bug tickets are typically accepted for the latest release of the current stable version.
 Nightly builds also accept feedback and bug tickets.
