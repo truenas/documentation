@@ -40,6 +40,20 @@ Select **Enable** to enable the script. Leave clear to disable but not delete th
 
 Click **Save**.
 
+## Script Execution
+
+Scripts run at different points in the system lifecycle based on the option you select in the **When** dropdown:
+
+- **Pre Init**: Runs early in boot, after filesystems and networking are available.  
+- **Post Init**: Runs later in boot, just before TrueNAS services start.  
+- **Shutdown**: Runs during system shutdown, after services begin stopping.  
+
+Scripts in the same category (for example, multiple Post Init scripts) run sequentially in the order in which the user added them.
+
+The **Timeout** setting limits how long each script runs. A script that hangs or takes too long delays the next script in that category.  
+
+Shutdown scripts run while the system powers down, so not all services or resources remain available.
+
 ## Editing an Init/Shutdown Script
 
 Click a script listed on the **Init/Shutdown Scripts** widget to open the **Edit Init/Shutdown Script** configuration screen populated with the settings for that script.
