@@ -1,41 +1,43 @@
 ---
-title: "Users (WIP) Screens"
-description: "Provides information on the new Users (WIP) screens and settings in TrueNAS."
-weight: 
-aliases: 
+title: "Users Screens"
+description: "Provides information on the Users screens and settings in TrueNAS."
+weight: 10
+aliases:
+ - /scale/scaleuireference/credentials/localusersscreensscale/
 tags:
 - users
 - accounts
 ---
 
 
-The **Credentials > Users (WIP)** screen shows a table with all users created on the system. A set of widgets shows for the selected user row (the first row is selected by default).
+The **Credentials > Users** screen shows a table with all users created on the system. A set of widgets shows for the selected user row (the first row is selected by default).
+The root user is the first user row, and it therefore shows by default when you first access the screen.
 
-{{< trueimage src="/images/SCALE/Credentials/UsersWIPScreen.png" alt="User (WIP) Screen" id="User (WIP) Screen" >}}
+{{< trueimage src="/images/SCALE/Credentials/UsersScreen.png" alt="User Screen" id="User Screen" >}}
 
 **Add** opens the **[Add User](#add-or-edit-user-screens)** screen.
 
-**Edit** opens the **[Edit user]()** screen.
-
-**Delete** opens the **[Delete User]()** dialog.
-
+**Edit** opens the **[Edit user](#add-or-edit-user-screen)** screen.
+<!-- no delete option
+**Delete** opens the **[Delete User](#)** dialog.
+-->
 ### User Search Options
 
-The **Users (WIP)** screen search is set to the basic, or simple search option by default. It accepts any word entered, such as a username, user type, or role.
+The **Users** screen search is set to the basic, or simple search option by default. It accepts any word entered, such as a username, user type, or role.
 
-{{< trueimage src="/images/SCALE/Credentials/UserWIPScreenBasicSearch.png" alt="Advanced Search Options" id="Advanced Search Options" >}}
+{{< trueimage src="/images/SCALE/Credentials/UsersScreenBasicSearch.png" alt="Advanced Search Options" id="Advanced Search Options" >}}
 
 **Switch to Advanced** link shows in the search field when in basic search mode.
 
 **Switch to Advanced** shows advanced search options, an advanced search syntax example in the search field, and several **Add Filter** buttons directly below the search field for common search options. The users table shows all users in the system.
 
-{{< trueimage src="/images/SCALE/Credentials/UserWIPAdvancedSearchOptions.png" alt="Advanced Search Options" id="Advanced Search Options" >}}
+{{< trueimage src="/images/SCALE/Credentials/UserAdvancedSearchOptions.png" alt="Advanced Search Options" id="Advanced Search Options" >}}
 
 **Switch to Basic** option shows in the search field when in advanced search mode. **Switch to Basic** returns to the basic user table view.
 
 ### User Table
 
-The **Users (WIP)**screen user table shows the **Username**, **Full Name**, **Type**, and pre-defined administrator role assigned to the user (**Access**) for each user.
+The **Users** screen user table shows the **Username**, **Full Name**, **Type**, and pre-defined administrator role assigned to the user (**Access**) for each user.
 **Username**, **Full Name**, and **Type** sort the list in an ascending or descending order.
 Each user row also shows an icon showing the level of access given to the user.
 
@@ -58,13 +60,11 @@ The selected user row shows values for that user in the **Details for *user*** w
 
 ### User Widgets
 
-The **User (WIP)** screen shows up to three widgets for each user based on the type of user:
+The **User** screen shows up to three widgets for each user based on the type of user:
 
 * [**Profile**](#profile-widget) - Shows for all user types (local, built-in, directory service created users).
 * [**Password**](#password-widget) - Shows for users that require access to the UI, SSH, or communication to or with external services or users.
 * [**Access**](#access-widget) - Shows for all user types.
-
-{{< trueimage src="/images/SCALE/Credentials/UserScreenUserDetails.png" alt="Local User Details" id="Local User Details" >}}
 
 **Edit** opens the **[Edit User](#add-or-edit-user-screens)** screen.
 
@@ -72,14 +72,14 @@ The **User (WIP)** screen shows up to three widgets for each user based on the t
 
 The **Profile** widget shows the full name, group membership, type of user (Local, Built-in, or Directory Service), home directory path, and the user ID.
 
-{{< trueimage src="/images/SCALE/Credentials/UsersScreenWIPProfileWidget.png" alt="Local User Details" id="Local User Details" >}}
+{{< trueimage src="/images/SCALE/Credentials/UsersScreenProfileWidget.png" alt="Local User Details" id="Local User Details" >}}
 
 #### Password Widget
 
 The **Password** widget shows for users who require credentials to access the UI, an SSH session, or have external communication capabilities (Built-in users).
 The widget shows the password age, which is how long that password has been in use, and the date and time it was last changed.
 
-{{< trueimage src="/images/SCALE/Credentials/UsersScreenWIPPasswordWidget.png" alt="Local User Details" id="Local User Details" >}}
+{{< trueimage src="/images/SCALE/Credentials/UsersScreenPasswordWidget.png" alt="Local User Details" id="Local User Details" >}}
 
 The **Password** widget for the **truenas_admin** and admin users not currently logged in shows the **Generate One-Time Password** button.
 
@@ -93,7 +93,14 @@ The **Password** widget for the **truenas_admin** and admin users not currently 
 
 The **Access** widget has three sections: last action, password status, and any roles, API keys, or access privileges granted to SSH and shell, and shows the Shell settings and access path.
 
-{{< trueimage src="/images/SCALE/Credentials/UsersScreenWIPAccessWidget.png" alt="Local User Details" id="Local User Details" >}}
+<div style="display: flex; gap: 20px; align-items: flex-start;">
+    <div style="flex: 1;">
+      <img src="/images/SCALE/Credentials/UsersScreenAccessWidget.png" alt="Access Widget No API Key" style="width: 100%; max-width: 400px; height: auto;">
+    </div>
+    <div style="flex: 1;">
+      <img src="/images/SCALE/Credentials/UsersScreenAccessWidgetWithAPIKey.png" alt="Access Widget with API Key" style="width: 100%; max-width: 400px; height: auto;">
+    </div>
+  </div>
 
 Information details on the **Access** widget:
 - **Last Action** can be a method call for the action taken (like opening a log file), log in or log out, or none. It shows the date and time of that last action.
@@ -101,9 +108,12 @@ Information details on the **Access** widget:
 - The password shows an active key icon when the user has a password or an inactive key icon when the user does not have a password. Users with passwords show the **Password** widget.
 
 - The access area shows:
+  - Last action time and date by the user, and the **See Logs** link, which opens the [**Audit** log screen]({{< ref "AuditScreen" >}}) for the selected user.
   - Services (such as **SMB Access**) and indicates whether it is active or inactive when not granted.
   - Pre-defined privilege or role assigned to the user, such as **Full Admin**, **Share Admin**, **Read Only Admin**.
-  - API keys assigned or not. When a key exists, the icon changes and shows a number with the key, for example, *1key*.
+  - API keys assigned or not. When a key exists, the icon changes and shows a number with the key, for example, *1 key*.
+    The **Add API Keys** link shows when no key exists, and opens the [**Add API Key** screen]({{< ref "APIKeysScreen" >}}).
+    The **View API Keys** link shows when a key exists, and opens the [**User API Key** screen]({{< ref "APIKeysScreen" >}}).
   - SSH access is active or inactive if not granted.
   - Shell access path.
     - Allowed sudo commands setting
@@ -167,8 +177,8 @@ Authentication settings show after selecting **Shell Access** or **SSH Access** 
 
 ### Additional Details
 
-The <span class="material-icons">edit</span> edit icon shows a text entry or a dropdown list field.
-Some settings show additional settings, for example, the **Group**, **Home Directory**, and **Sudo Commands** all show additional setting options.
+The <span class="material-icons">edit</span> edit icon or on the field shows a text entry,dropdown list, or other setting fields.
+Some settings show additional settings, for example, the **Group**, **Home Directory**, and **Sudo Commands**.
 
 {{< trueimage src="/images/SCALE/Credentials/AddUserAdditionallDetailsSettings.png" alt="Additional Details Settings" id="Additional Details Settings" >}}
 
