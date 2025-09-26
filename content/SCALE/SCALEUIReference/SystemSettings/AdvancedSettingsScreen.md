@@ -122,7 +122,8 @@ The **Console** widget shows the current console settings for TrueNAS, which cov
 
 ## Syslog Widget
 
-The **Syslog** widget displays the existing system logging settings that specify how and when the system sends log messages to the syslog server.
+The **Syslog** widget displays the existing system logging settings that specify how and when the system sends log messages to system log (syslog) servers.
+TrueNAS allows configuring an array of two syslog servers. Each server can have its own host, transport, and TSL certificate setting.
 
 {{< trueimage src="/images/SCALE/SystemSettings/AdvancedSettingsSyslogWidget.png" alt="Syslog Widget" id="Syslog Widget" >}}
 
