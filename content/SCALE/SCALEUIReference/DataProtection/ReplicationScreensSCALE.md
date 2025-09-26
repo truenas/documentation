@@ -268,10 +268,13 @@ If you delete a dataset or zvol on the source, you must manually delete the repl
 ## Add and Edit Replication Task Screens
 
 **Advanced Replication Creation** opens the **Add Replication Task** screen.
-Values entered in the wizard screens do not carry over to the **Add Replication Task** screen, you must re-enter settings.
-When you populate the wizard screen and then click the **Advanced Replication Creation** button, TrueNaS shows the confirmation dialog asking you if you want to leave the wizard screen. After clicking **Yes** the **Add Replication Task** screen opens.
 
 The **Edit** icon button opens the **Edit Replication Task** screen. The **Add Replication Task** and **Edit Replication Task** screens show the same setting options.
+
+The **Add Replication Task** screen shows the **Switch to Wizard** button at the bottom of the screen. 
+
+**Switch to Wizard**, like **Advanced Replication Creation** shows the dialog asking you to confirm you want to leave the screen. After clicking **Yes** the wizard or **Add Replication Task** screen opens.
+Settings entered on either screen do not carry over when switching from one screen to the other.
 
 ### General and Transport Options Settings
 
