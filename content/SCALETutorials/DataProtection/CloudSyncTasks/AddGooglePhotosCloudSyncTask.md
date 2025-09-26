@@ -11,11 +11,25 @@ keywords:
 - data backup and recovery
 ---
 
+{{< hint type=important title="Changes to Google Photos API (effective March 31, 2025)" >}}
+On March 31, 2025, Google changed the Google Photos API to allow external applications to access and manage only the media and albums they create.  
+Cloud sync tasks continue to upload photos to albums created by the TrueNAS sync client, but reading from your full photo library or from shared albums does not work as expected.  
+Some operations return permission errors.  
+
+Tokens issued before March 31, 2025 do not provide full-library access under the new API rules.
+Generate new credentials if you need to continue uploading into albums created by the sync client.
+
+See the [Google API update notice](https://developers.google.com/photos/support/updates) for more details.  
+
+Review existing Google Photos cloud sync tasks and configure them to use albums created by the TrueNAS source.
+A complete backup of a Google Photos library through the API is not possible.
+{{< /hint >}}
+
 Google Photos cloud sync tasks in TrueNAS use the [rclone](https://rclone.org/) backend for the [Google Photos API](https://developers.google.com/photos) to authenticate credentials and transfer data.
 
 Configuring a Google Photos cloud sync task is a multi-part procedure where you:
 
-1. [Plan your deployment](#before-you-begin) and selecting a local dataset.
+1. [Plan your deployment](#before-you-begin) and select a local dataset.
 2. [Generate Google API credentials](#creating-the-api-credentials) on the Google Cloud API dashboard.
 3. [Install rclone and generate a token](#configuring-rclone) on your remote client OS.
 4. [Add Google Photos cloud credentials](#adding-google-photos-cloud-credentials) on TrueNAS.
@@ -23,30 +37,35 @@ Configuring a Google Photos cloud sync task is a multi-part procedure where you:
 
 ## Before You Begin
 
-Review your storage and data protection requirements and consider your options before setting up a Google Photos cloud sync task.
-Refer to the rclone Google Photos backend documentation for more information on using rclone to sync Google Photos, including [standard options](https://rclone.org/googlephotos/#standard-options) and [limitations of the Google Photos API](https://rclone.org/googlephotos/#limitations), that might help you plan your deployment.
+Review your storage and data protection requirements before setting up a Google Photos cloud sync task.
+See the [rclone Google Photos backend documentation](https://rclone.org/googlephotos/) for details on [standard options](https://rclone.org/googlephotos/#standard-options) and [API limitations](https://rclone.org/googlephotos/#limitations) that can help you plan your deployment.
 
-Consider how you want to manage your media files on Google Photos and in your local dataset.
-Decide on the cloud sync task [direction and transfer mode](#choosing-a-sync-direction-and-mode), [remote folder](#choosing-a-target-folder) to target, and [new or existing local dataset](#selecting-the-dataset-and-organizing-files) to pull to or push from, that best fit your needs.
+Decide how you want to manage media files in Google Photos and your local dataset.
+Choose the cloud sync [direction and transfer mode](#choosing-a-sync-direction-and-mode), [target folder](#choosing-a-target-folder), and [local dataset](#selecting-the-dataset-and-organizing-files) (new or existing) that best fit your needs.
 
 ### Choosing a Sync Direction and Mode
 
-A Google Photos cloud sync task can either pull files from Google Photos to a local dataset on TrueNAS or push local files to Google Photos.
-Select the direction that best fits the way you intend to manage your media files.
+A Google Photos cloud sync task can either push local files to Google Photos or (limited) pull files from Google Photos to a local dataset on TrueNAS.  
+Select the direction that fits how you want to manage your media files.
 
-Choose to pull data from Google Photos if you prefer to manage media files via the Google Photos UI and use the local dataset as a backup target.
+Pull is restricted by the Google Photos API and only accesses albums created by the TrueNAS sync client.
+Pulling your full library or from shared albums is not possible.
 
-Choose to push data to Google Photos if you prefer to manage media files in the local dataset and use Google Photos as a cloud backup location.
+Push uploads local files into albums created by the TrueNAS sync client.
+Use push to manage media in your local dataset and back it up to Google Photos.
 
-Next, select the data transfer mode that best fits the way you want to manage file retention between the source and destination.
+Next, select the data transfer mode that fits how you want to manage file retention between the source and destination.
 There are three options:
 
-  * **SYNC** - Select to change files on the destination to match those on the source.
-    If a file does not exist on the source, it is also deleted from the destination.
-  * **COPY** - Select to duplicate each source file into the destination.
-    If files with the same names are present on the destination, they are overwritten.
-  * **MOVE** - Select to transfer files from the source to the destination and delete source files.
-    Copies files from the source to the destination and then deletes them from the source. Files with the same names on the destination are overwritten.
+  * **SYNC** - Matches files on the destination to the source.
+    Deletes files from the destination if they do not exist on the source.
+    Only affects albums created by the sync client.
+  * **COPY** - Duplicates each source file into the destination.
+    Overwrites files with the same name.
+    Only affects albums created by the sync client.
+  * **MOVE** - Transfers files from the source to the destination and deletes them from the source.
+    Overwrites files with the same name.
+    Only affects albums created by the sync client.
 
 ### Choosing a Target Folder
 
