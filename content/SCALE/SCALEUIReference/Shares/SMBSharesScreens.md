@@ -217,7 +217,7 @@ When **Purpose** is set to **Private Dataset Share**, the following settings sho
 
 #### Legacy Share Settings
 
-The **Edit SMB** screen sets **Purpose** to **Legacy Share** on after upgrading to 25.10 when shares created in a release before 25.10 have **Purpose** set to **No Preset**. The **Advanced Options > Other Options** settings selected in the existing share show the same options in the upgraded share.
+The **Edit SMB** screen sets **Purpose** to **Legacy Share** after upgrading to 25.10 when shares created in a release before 25.10 have **Purpose** set to **No Preset**. The **Advanced Options > Other Options** settings selected in the existing share show the same options in the upgraded share.
 
 The **Add SMB** screen does not include the **Legacy Share** option on the list of **Purpose** presets.
 
