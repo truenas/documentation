@@ -129,6 +129,8 @@ The wizard has two screens:
 * **When** settings specify when to run the task and how long to retain the replicated snapshots.
 
 **Advanced Replication Creation** opens the **Add Replication Task** screen with the same settings found in the wizard and more advanced settings.
+If you populate wizard settings and then click **Advanced Replication Creation**, TrueNAS shows you the dialog asking you to confirm you want to leave the screen.
+After clicking **Yes** the **Add Replication Task** screen opens but values entered in the wizard are not transfered to the **Add Replication Task** screen.
 
 ### What and Where Wizard Screen
 
@@ -265,8 +267,11 @@ If you delete a dataset or zvol on the source, you must manually delete the repl
 
 ## Add and Edit Replication Task Screens
 
-**Advanced Replication Creation** opens the **Add Replication Task** screen. Click before or after adding values to any setting on the wizard screens.
-The **Edit** icon button opens the **Edit Replication Task** screen. Both screens show the same setting options.
+**Advanced Replication Creation** opens the **Add Replication Task** screen.
+Values entered in the wizard screens do not carry over to the **Add Replication Task** screen, you must re-enter settings.
+When you populate the wizard screen and then click the **Advanced Replication Creation** button, TrueNaS shows the confirmation dialog asking you if you want to leave the wizard screen. After clicking **Yes** the **Add Replication Task** screen opens.
+
+The **Edit** icon button opens the **Edit Replication Task** screen. The **Add Replication Task** and **Edit Replication Task** screens show the same setting options.
 
 ### General and Transport Options Settings
 
@@ -300,14 +305,14 @@ These settings display for all three **Transport** options.
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Allow Blocks Larger than 128KB** | Inactive by default, and if the system does not support large block transfers. Allows replication to send large data blocks. The destination system must also support large blocks. This setting cannot be changed after it is enabled and the replication task is created. See [sfs(8)](https://linux.die.net/man/8/zfs) for more information. |
+| **Allow Blocks Larger than 128KB** | Selected by default. If the system does not support large block transfers this is not selected by default. Allows replication to send large data blocks. The destination system must also support large blocks. This setting cannot be changed after it is enabled and the replication task is created. See [sfs(8)](https://linux.die.net/man/8/zfs) for more information. |
 | **Allow Compressed WRITE Records** | Selected by default. If enabled, allows using compressed write records to make the stream more efficient. The destination system must also support compressed write records. See [zfs(8)](https://linux.die.net/man/8/zfs). |
 {{< /truetable >}}
 {{< /expand >}}
 
 #### Transport Options Settings - SSH Transport Option
 
-These setting options display in addition to the two options displayed when **Transport** is set to **SSH**.
+When **Transport** is set to **SSH**, the settings listed below show in addtion to the setting options the **Allow Blocks Larger than 128KB** and **Allow Compressed WRITE Records** options shown when **Transport** is set to **Local**.
 
 {{< trueimage src="/images/SCALE/DataProtection/AdvancedAddReplicationTaskGeneralTransportSSH.png" alt="Advanced Add Replication Task SSH Transport" id="Advanced Add Replication Task SSH Transport" >}}
 
@@ -323,7 +328,7 @@ These setting options display in addition to the two options displayed when **Tr
 
 #### Transport Options Settings - SSH+NETCAT Transport Option
 
-These setting options display in addition to the two options displayed when **Transport** is set to **SSH+NETCAT**.
+When **Transport** is set to **SSH+NETCAT**, the settings listed below show in addtion to the setting options the **Allow Blocks Larger than 128KB** and **Allow Compressed WRITE Records** options shown when **Transport** is set to **Local**.
 
 {{< trueimage src="/images/SCALE/DataProtection/AdvancedAddReplicationTaskGeneralTransportSSH+NETCAT.png" alt="Advanced Add Replication Task SSH+NETCAT Transport" id="Advanced Add Replication Task SSH+NETCAT Transport" >}}
 
@@ -342,8 +347,8 @@ These setting options display in addition to the two options displayed when **Tr
 
 ### Advanced Source Options
 
-The settings in **Source** specify the location of files you push or pull in the replication task, and the properties applied to the replicated data.
-The Source setting options change based on selections made in **Recursive** and **Replicate Specific Snapshots**, and each displays additional setting options.
+**Source** settings specify the location of files you push or pull in the replication task, and the properties applied to the replicated data.
+Selections made in **Recursive** and **Replicate Specific Snapshots** change the **Source** setting options, and each option shows additional setting options.
 
 {{< trueimage src="/images/SCALE/DataProtection/AdvancedAddRepTaskSourceAndDestination.png" alt="Advanced Add Replication Task Source and Destination" id="Advanced Add Replication Task Source and Destination" >}}
 
@@ -364,7 +369,7 @@ The Source setting options change based on selections made in **Recursive** and 
 ### Advanced Destination Options
 
 The settings in **Destination** specify the location of files you push or pull in the replication task, and the properties applied to the replicated data.
-The destination setting options change based on selections made in **Encryption** and **Snapshot Retention Policy**, which display additional setting options.
+Selections made in **Encryption** and **Snapshot Retention Policy** change the destination setting options, and each show additional setting options.
 
 {{< trueimage src="/images/SCALE/DataProtection/AdvancedAddReplicationTaskDestinationOptions.png" alt="Advanced Add Replication Task Destination Options" id="Advanced Add Replication Task Destination Options" >}}
 
@@ -376,7 +381,7 @@ The destination setting options change based on selections made in **Encryption*
 | **Destination Dataset Read-Only Policy** | Select the policy from the dropdown list. Options:<br><li>**Set** - Select to change all destination datasets to read only after a successful replication.<br><li> **Require** - Select to stop replication unless all existing destination datasets are read only.<br><li> **Ignore** - Select to disable checking read only during replication.</li> |
 | **Encryption** | Select to use encryption when replicating data. For more information on all options, see [Encryption](#encryption-setting-options). |
 | **Replication from scratch** | Select if the destination system has snapshots, but does not have any data in common with the source snapshot, destroy all data in destination snapshots, and do a full replication. WARNING! Enabling this option can cause data loss or excessive data transfer if the replication is misconfigured. |
-| **Snapshot Retention Policy** | Select the policy from the dropdown list to apply when replicated snapshots are deleted from the destination system. Options are **Same as Source**, **Custom**, and **None**. When selecting **Same as Source** use the **Snapshot Lifetime** from the source periodic snapshot task.  When selecting **Custom** define a **Snapshot Lifetime** for the destination system. Also displays the **Snapshot Lifetime** and **Unit** options. When selecting **None** never delete snapshots from the destination system. |
+| **Snapshot Retention Policy** | Select the policy from the dropdown list to apply when replicated snapshots are deleted from the destination system. Options are:<br><li>**Same as Source** - When selecting **Same as Source** use the **Snapshot Lifetime** from the source periodic snapshot task. <br><li>**Custom** - When selecting **Custom** define a **Snapshot Lifetime** for the destination system. Also displays the **Snapshot Lifetime** and **Unit** options. <br><li>**None** - When selecting **None** never delete snapshots from the destination system.</li> |
 | **Snapshot Lifetime** | Use to enter a numeric value to work with the measure of time field below to specify how long a snapshot remains on the destination system. |
 | **Unit** | Select the measure of time from the dropdown list to work with the numeric value in **Snapshot Lifetime**. Options are **Hour(s)**, **Day(s)**, **Week(s)**, **Month(s)**, and **Year(s)**. |
 {{< /truetable >}}
@@ -393,9 +398,9 @@ The snapshot settings below change options displayed based on selections made.
 | Setting | Description |
 |---------|-------------|
 | **Periodic Snapshot Tasks** | Select the snapshot schedule for this replication task from the dropdown list. Select from previously configured periodic snapshot tasks. This replication task must have the same **Recursive** and **Exclude Child Dataset** values as the selected periodic snapshot task. Selecting a periodic snapshot schedule removes the **Schedule** field. |
-| **Replicate Specific Snapshots** | Select to only replicate snapshots that match a defined creation time. Selecting this option displays the **By snapshot creation time** field. Select the preset schedule or **Custom** to use the advanced scheduler. |
-| **Begin** | Displays after selecting *Hourly* in **By snapshot creation time**. Select a time range for the specific periodic snapshots to replicate, in 15-minute increments. Periodic Snapshots created before this selected time are not included in the replication. |
-| **End** | Displays after selecting *Hourly* in **By snapshot creation time**. Select a time range for the specific periodic snapshots to replicate, in 15-minute increments. Periodic Snapshots created after this selected time are not included in the replication. |
+| **Replicate Specific Snapshots** | Select to only replicate snapshots that match a defined creation time. Selecting this option shows the **By snapshot creation time** field. Select the preset schedule or **Custom** to use the advanced scheduler. |
+| **Begin** | Displays after selecting **Hourly** in **By snapshot creation time**. Select a time range for the specific periodic snapshots to replicate, in 15-minute increments. Periodic Snapshots created before this selected time are not included in the replication. |
+| **End** | Displays after selecting **Hourly** in **By snapshot creation time**. Select a time range for the specific periodic snapshots to replicate, in 15-minute increments. Periodic Snapshots created after this selected time are not included in the replication. |
 | **Also include snapshots with the name** | These radio buttons change the naming schema setting option below it. See [Snapshot Naming](#snapshot-naming-options) in the wizard section for details on this option and the radio buttons. |
 | **Matching naming schema** | Displays the **Also Include Naming Schema** setting. |
 | **Matching regular expression** | Displays the **Matching regular expression** setting. |
@@ -418,8 +423,8 @@ These schedule setting options are common to both the **Replication Task Wizard*
 | **Run Automatically** | Select to start this replication task immediately after the linked periodic snapshot task completes.  |
 | **Schedule** | Select to create a replication schedule if not selecting **Run Automatically**. Displays the **Frequency** and **Only Replicate Snapshots Matching Schedule** options. Shows a list of schedule preset options. See **Schedule Presets** below for more info. |
 | **Frequency** | Displays after selecting **Schedule**. Select a preset schedule or choose **Custom** to use the advanced scheduler. |
-| **Begin** | Displays after selecting *Hourly* in **Frequency**. Select the start time for the replication task. |
-| **End** | Displays after selecting *Hourly* in **Frequency**. Select the end time for the replication task. A replication that is already in progress can continue to run past this time. |
+| **Begin** | Displays after selecting **Hourly** in **Frequency**. Select the start time for the replication task. |
+| **End** | Displays after selecting **Hourly** in **Frequency**. Select the end time for the replication task. A replication that is already in progress can continue to run past this time. |
 | **Only Replicate Snapshots Matching Schedule** | Displays after selecting **Schedule**. Select to use the **Schedule** in place of the **Replicate Specific Snapshots** time frame. The **Schedule** values are read over the **Replicate Specific Snapshots** time frame. |
 {{< /truetable >}}
 
