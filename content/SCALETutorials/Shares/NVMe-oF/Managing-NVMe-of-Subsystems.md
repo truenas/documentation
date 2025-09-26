@@ -184,7 +184,7 @@ The **Add Port** screen creates a new port *IP address:port* assignment on the s
 1. Select the transport type. **TCP** is the default setting.
    If your system has an Enterprise license, and it supports RDMA, this option is listed as available.
 
-2. Enter an available port number of at least four digits in length. For example, *4420*.
+2. Enter an available port number of at least four digits in length. For example, **4420** is the default and recommended port number.
 
 3. Select the IP address from the dropdown list. Only static IP addresses in the TrueNAS system show on this list.
 
@@ -207,7 +207,7 @@ The **Edit Port** screen shows current port settings for the selected subsystem.
 Select the transport type from the dropdown list.
 Leave **TCP** as the default option unless your system has an Enterprise license and it supports RDMA.
 
-Enter a port number that is at least four digits in length. *4420* is a port number commonly selected for NVMe-oF with IP addresses.
+Enter a port number that is at least four digits in length. **4420** is the default port number, commonly selected for NVMe-oF with IP addresses, and we recommend using this port rather than adding a custom port.
 
 Leave the IP address for the TrueNAS system, or select any static IP address shown on the list.
 
