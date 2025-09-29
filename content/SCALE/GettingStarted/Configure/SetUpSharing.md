@@ -42,7 +42,7 @@ To add non-SMB share users or edit users, go to **Credentials > Users** to add o
 Click **Add** to create a new or as many new user accounts as you need.
 
 Enter the values in each required field, verify **SMB User** is selected for SMB share users, then click **Save**.
-For more information on the fields and adding users, see [Creating User Accounts]({{< ref "ManageLocalUsersScale" >}}).
+For more information on the fields and adding users, see [Creating User Accounts]({{< ref "ManageUsersScale" >}}).
 
 By default, all new users are members of a built-in group called **builtin_users**.
 You can use a group to grant access to all users on the server or add more groups to fine-tune permissions for large numbers of users.
