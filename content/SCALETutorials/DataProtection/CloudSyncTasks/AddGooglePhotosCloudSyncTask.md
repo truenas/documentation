@@ -42,6 +42,8 @@ See the [rclone Google Photos backend documentation](https://rclone.org/googleph
 
 Decide how you want to manage media files in Google Photos and your local dataset.
 Choose the cloud sync [direction and transfer mode](#choosing-a-sync-direction-and-mode), [target folder](#choosing-a-target-folder), and [local dataset](#selecting-the-dataset-and-organizing-files) (new or existing) that best fit your needs.
+Decide how you want to manage media files in Google Photos and your local dataset.
+Choose the cloud sync [direction and transfer mode](#choosing-a-sync-direction-and-mode), [target folder](#choosing-a-target-folder), and [local dataset](#selecting-the-dataset-and-organizing-files) (new or existing) that best fit your needs.
 
 ### Choosing a Sync Direction and Mode
 
