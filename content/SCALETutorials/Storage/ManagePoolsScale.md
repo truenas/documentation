@@ -123,15 +123,27 @@ See [Replacing Disks]({{< ref "ReplacingDisks" >}}) for more information on the 
 
 ## Expanding a Pool
 
-There are a few  ways to increase the size of an existing pool:
+There are a few ways to increase the size of an existing pool:
 
 * Add one or more drives to an existing RAIDZ VDEV.
 * Add a new VDEV of the same type.
 * Add a new VDEV of a different type.
 * Replace all existing disks in the VDEV with larger disks.
 
-While adding a new special VDEV increases usable space in combination with a special_small_files VDEV, it is not encouraged.
-By default, a VDEV limits all disks to the usable capacity of the smallest attached device.
+Adding a new special VDEV increases usable space in combination with a special_small_files VDEV, but it is not encouraged.  
+A VDEV limits all disks to the usable capacity of the smallest attached device.  
+
+When you use one of the above methods, TrueNAS does not automatically expand the pool to fit newly available space.  
+
+{{< trueimage src="/images/SCALE/Storage/ExpandPoolDialog.png" alt="Expand Pool Dialog" id="Expand Pool Dialog" >}}
+
+To expand an existing pool:
+
+1. Navigate to **Storage** and click **Expand Pool** above the **Usage** widget.  
+2. Select **Confirm** in the **Expand Pool** pop-up screen.  
+3. Click **Continue** to initiate the pool expansion process.  
+
+TrueNAS expands the pool to use the additional available capacity.
 
 ### Extending a RAIDZ VDEV
 
