@@ -246,7 +246,7 @@ initializeChangelogTableForTabs('25.10');
 
 * TrueNAS 25.10 improves SMB share configuration by displaying only options relevant to each purpose-based preset.
   Existing shares that previously used the "No Preset" option are automatically migrated to the "Legacy Share" preset during upgrade.
-  New shares cannot access legacy configuration options and have shadow copies automatically enabled.
+  New shares cannot access legacy configuration options.
   The SMB recycle bin feature is no longer available for new shares due to security and usability concerns.
   For file recovery and versioning, use ZFS snapshots, which provide more reliable and predictable data protection.
   See [Legacy Share Settings](https://www.truenas.com/docs/scale/25.10/scaleuireference/shares/smbsharesscreens/#legacy-share-settings) for more information.
