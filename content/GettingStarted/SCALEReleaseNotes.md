@@ -245,6 +245,13 @@ initializeChangelogTableForTabs('25.10');
   Users can continue to manage certificates by creating Certificate Signing Requests (CSRs) to be signed by external certificate authorities or and importing certificates that have been signed by external CAs or directory services.
   These alternatives provide the certificate management capabilities most users need while ensuring proper certificate validation through established certificate authorities.
 
+* TrueNAS 25.10 improves SMB share configuration by displaying only options relevant to each purpose-based preset.
+  Existing shares that previously used the "No Preset" option are automatically migrated to the "Legacy Share" preset during upgrade.
+  New shares cannot access legacy configuration options and have shadow copies automatically enabled.
+  The SMB recycle bin feature is no longer available for new shares due to security and usability concerns.
+  For file recovery and versioning, use ZFS snapshots, which provide more reliable and predictable data protection.
+  See [Legacy Share Settings](https://www.truenas.com/docs/scale/25.10/scaleuireference/shares/smbsharesscreens/#legacy-share-settings) for more information.
+
   </div>
 
   <div data-tab-id="containers-virtual-machines" data-tab-label="Containers and Virtual Machines">
