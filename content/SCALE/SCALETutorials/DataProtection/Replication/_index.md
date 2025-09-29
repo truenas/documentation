@@ -16,12 +16,6 @@ keywords:
 TrueNAS replication allows users to create one-time or regularly scheduled snapshots of data stored in pools, datasets or zvols on their TrueNAS system as a way to back up stored data.
 When properly configured and scheduled, replication takes regular snapshots of storage pools or datasets and saves them in the destination location either on the same system or a different system.
 
-{{< include file="/static/includes/ReplicationIndexContentSCALE.md" >}}
-
-## Setting Up a Simple Replication Task Overview
-
-This overview provides instructions what to do before you begin and how to set up a simple local or remote replication task.
-
 {{< include file="/static/includes/BasicReplicationProcess.md" >}}
 
 <div class="noprint">
