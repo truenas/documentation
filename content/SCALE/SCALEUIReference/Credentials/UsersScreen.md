@@ -177,7 +177,7 @@ Authentication settings show after selecting **Shell Access** or **SSH Access** 
 
 ### Additional Details
 
-The <span class="material-icons">edit</span> edit icon or on the field shows a text entry,dropdown list, or other setting fields.
+The <span class="material-icons">edit</span> edit icon or on the field shows a text entry, dropdown list, or other setting fields.
 Some settings show additional settings, for example, the **Group**, **Home Directory**, and **Sudo Commands**.
 
 {{< trueimage src="/images/SCALE/Credentials/AddUserAdditionallDetailsSettings.png" alt="Additional Details Settings" id="Additional Details Settings" >}}
