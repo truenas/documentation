@@ -22,6 +22,7 @@ After a system restart, changes made in the CLI revert to the original database 
 {{< /hint >}}
 
 ## Web Interface Access
+
 TrueNAS automatically creates several ways to access the UI, but you might need to adjust the default settings for your network environment.
 
 By default, a fresh install of TrueNAS provides a default address for logging in to the web interface.
@@ -46,6 +47,7 @@ Refer to the [Preparing for TrueNAS UI Configuration (Enterprise)]({{< ref "Inst
 {{< /enterprise >}}
 
 ## Logging Into the TrueNAS UI
+
 Use a computer with access to the same network as the TrueNAS system.
 Enter the host name and domain or IP address assigned to the primary network interface in a web browser to connect to the TrueNAS web interface.
 
@@ -103,6 +105,7 @@ If using the **Update** UI option, log into TrueNAS with the existing root user 
 {{< /expand >}}
 
 ### Logging In as Truenas_Admin
+
 After setting up the truenas_admin user from one of the scenarios documented above, enter **truenas_admin** and the password to log in.
 
 {{< trueimage src="/images/SCALE/Login/LoginScreenSCALE.png" alt="TrueNAS Login Screen" id="TrueNAS Login Screen" >}}
@@ -111,6 +114,7 @@ To modify user credentials, go to **Credentials > Users**, click anywhere on the
 For more information, see [Managing Users]({{< ref "ManageUsersScale" >}}).
 
 ### Logging In as Root
+
 If logging in with the root user credentials, enter root as the user and the root password.
 {{< include file="/static/includes/CreateAdminDisableRoot.md" >}}
 
@@ -118,6 +122,7 @@ Follow the directions in [Managing Users]({{< ref "ManageUsersScale" >}}) to cre
 For environments requiring specific configurations, such as non-AD environments or those using LDAP, ensure that your admin user is properly set up to manage all aspects of the system.
 
 ### Creating an Administrator Account at First Log in
+
 If you selected the installation option **2. Configure using Web UI**, the sign-in screen shows two authentication methods.
 One allows you to log in as root or you can create the administration account.
 
@@ -131,6 +136,7 @@ After setting up the admin user, click on the root user and then click **Edit**.
 This brings the system into compliance with FIPS system security-hardening standards.
 
 ### Troubleshooting Accessing the Web UI
+
 If you cannot remember the administrator password to log in to the web interface, connect a keyboard and mouse to the TrueNAS system and open the [Console Setup menu]({{< ref "ConsoleSetupMenuScale.md#changing-the-root-password" >}}) to reset the administrator account password.
 
 {{< expand "UI is not accessible by IP address" "V" >}}
@@ -181,8 +187,10 @@ The left-hand panel lists the main feature and functional areas and lets users n
 {{< include file="/static/includes/TopToolbar.md" >}}
 
 ## Managing Sessions
+
 To monitor and manage all active sessions, go to **System > Advanced Settings** and locate the **Access** widget.
 {{< include file="/static/includes/SessionsSettingsWidget.md" >}}
 
 ## Next Steps
+
 With access to the TrueNAS web interface and all the management options, you can begin [configuring your system]({{< ref "UIConfigurationSCALE" >}})!

@@ -32,7 +32,8 @@ TrueNAS has three predefined admin user account levels:
 For more information on the different administrator scenarios users can encounter, read [Logging In for the First Time]({{< ref "FirstTimeLogin" >}}).
 
 ## Changing Administrator Account Passwords
-Adminstrator passwords can be changed on the **Edit User** screen or, if currently logged in as that admin user, by clicking the **Settings** <span class="material-icons">account_circle</span> icon on the top toolbar and clicking **Change Password**.
+
+Administrator passwords can be changed on the **Edit User** screen or, if currently logged in as that admin user, by clicking the **Settings** <span class="material-icons">account_circle</span> icon on the top toolbar and clicking **Change Password**.
 
 {{< include file="/static/includes/ChangeLoggedInUserPassword.md" >}}
 
@@ -93,9 +94,9 @@ To enable SSH access to the system as an admin user (or root user), you must fir
 
 Now you must verify the user configuration options to allow SSH access.
 
-### Using the Root User in SSH 
+### Using the Root User in SSH
 
-If you want to SSH into the system as the root: 
+If you want to SSH into the system as the root:
 
 1. Go to **Credentials > Users** and click the root user, then click <span class="iconify" data-icon="mdi:pencil"></span> (**Edit**).
 
@@ -111,7 +112,7 @@ To allow an admin user to issue commands in an SSH session:
 
 2. Enable **SSH password login enabled** under **Authentication**.
 
-3. Click **Save**. 
+3. Click **Save**.
 
 4. Disable this after completing the SSH session to return to a security-hardened system.
 

@@ -18,7 +18,8 @@ keywords:
 The **Push** function copies data from TrueNAS to a remote system.
 The **Pull** function copies data from a remote system to the TrueNAS local host system and stores it in the dataset defined in the **Path** field.
 
-There are two ways to connect to a remote system and run an rsync task: 
+There are two ways to connect to a remote system and run an rsync task:
+
 * Set up an [SSH connection](#configuring-ssh-mode-rsync-tasks) to the remote server.
 * Set up an [rsync module](#configuring-module-mode-rsync-tasks) for the remote server.
 
@@ -38,7 +39,7 @@ On the local TrueNAS host system, go to **System > Services** and toggle **SSH**
 
 Set up a home directory for the remote system administrator on the remote system.
 Note the path to where home directories are stored to enter on the local host TrueNAS.
-   
+
 If the remote system is also a TrueNAS, go to **Credentials**, select **Users** to see the list of users.
 Select the administration user and click **Edit**.
 
@@ -46,7 +47,7 @@ If creating a new administration user for rsync functions, click **Add**.
 See [Managing Users]({{< ref "manageusersscale/#creating-an-administrator-user-account" >}}) for more information.
 Take note of the path to the home directory to use in setting up the connection.
 
-Add an SSH connection for the remote server on the local TrueNAS host system. 
+Add an SSH connection for the remote server on the local TrueNAS host system.
 
 {{< expand "Adding a remote TrueNAS system" "v" >}}
 
@@ -58,7 +59,7 @@ Add an SSH connection for the remote server on the local TrueNAS host system.
 
 {{< include file="/static/includes/AddManualSSHConnection.md" >}}
 
-{{< /expand >}} 
+{{< /expand >}}
 
 The generated keypair shows on the **SSH Keypair** widget.
 To download the public and private keypairs, click the <i class="material-icons" aria-hidden="true" title="Download">file_download</i> for the new keypair on the **SSH Keypairs** widget.
@@ -84,7 +85,7 @@ You can use the SSS connection created in [Setting Up an SSH Connection](#settin
    Select **Pull** to copy from the remote server to TrueNAS or **Push** to copy to the remote server.
 
 5. Select **SSH** as the connection mode from the **Rsync Mode** dropdown to use an SSH connection. The settings fields show.
-   
+
    Set this to **Module** if syncing with a non-TrueNAS remote system. See [Setting Up an Rsync Task Using Module Mode](#setting-up-an-rsync-task-using-module-modek) for more information.
   
 6. Choose a connection method from the **Connect using** dropdown list.

@@ -13,11 +13,11 @@ tags:
 The **Credentials > Users** screen shows a table with all users created on the system. A set of widgets shows for the selected user row (the first row is selected by default).
 The root user is the first user row, and it therefore shows by default when you first access the screen.
 
-{{< trueimage src="/images/SCALE/Credentials/UsersScreen.png" alt="User Screen" id="User Screen" >}}
+{{< trueimage src="/images/SCALE/Credentials/UsersScreen.png" alt="Users screen showing user table and widgets" id="Users Screen" >}}
 
 **Add** opens the **[Add User](#add-or-edit-user-screens)** screen.
 
-**Edit** opens the **[Edit user](#add-or-edit-user-screen)** screen.
+**Edit** opens the **[Edit user](#add-or-edit-user-screens)** screen.
 <!-- no delete option
 **Delete** opens the **[Delete User](#)** dialog.
 -->
@@ -25,13 +25,13 @@ The root user is the first user row, and it therefore shows by default when you 
 
 The **Users** screen search is set to the basic, or simple search option by default. It accepts any word entered, such as a username, user type, or role.
 
-{{< trueimage src="/images/SCALE/Credentials/UsersScreenBasicSearch.png" alt="Advanced Search Options" id="Advanced Search Options" >}}
+{{< trueimage src="/images/SCALE/Credentials/UsersScreenBasicSearch.png" alt="Users screen basic search interface" id="Users Screen Basic Search" >}}
 
 **Switch to Advanced** link shows in the search field when in basic search mode.
 
 **Switch to Advanced** shows advanced search options, an advanced search syntax example in the search field, and several **Add Filter** buttons directly below the search field for common search options. The users table shows all users in the system.
 
-{{< trueimage src="/images/SCALE/Credentials/UserAdvancedSearchOptions.png" alt="Advanced Search Options" id="Advanced Search Options" >}}
+{{< trueimage src="/images/SCALE/Credentials/UserAdvancedSearchOptions.png" alt="Users screen advanced search interface with filters" id="Users Screen Advanced Search Options" >}}
 
 **Switch to Basic** option shows in the search field when in advanced search mode. **Switch to Basic** returns to the basic user table view.
 
@@ -72,20 +72,20 @@ The **User** screen shows up to three widgets for each user based on the type of
 
 The **Profile** widget shows the full name, group membership, type of user (Local, Built-in, or Directory Service), home directory path, and the user ID.
 
-{{< trueimage src="/images/SCALE/Credentials/UsersScreenProfileWidget.png" alt="Local User Details" id="Local User Details" >}}
+{{< trueimage src="/images/SCALE/Credentials/UsersScreenProfileWidget.png" alt="User profile widget showing user information" id="Users Screen Profile Widget" >}}
 
 #### Password Widget
 
 The **Password** widget shows for users who require credentials to access the UI, an SSH session, or have external communication capabilities (Built-in users).
 The widget shows the password age, which is how long that password has been in use, and the date and time it was last changed.
 
-{{< trueimage src="/images/SCALE/Credentials/UsersScreenPasswordWidget.png" alt="Local User Details" id="Local User Details" >}}
+{{< trueimage src="/images/SCALE/Credentials/UsersScreenPasswordWidget.png" alt="User password widget showing password status" id="Users Screen Password Widget" >}}
 
 The **Password** widget for the **truenas_admin** and admin users not currently logged in shows the **Generate One-Time Password** button.
 
 **Generate One-Time Password** opens the **One-Time Password** window showing a system-generated password.
 
-{{< trueimage src="/images/SCALE/Credentials/OneTimePasswordWindow.png" alt="OneTime Password Window" id="OneTime Password Window" >}}
+{{< trueimage src="/images/SCALE/Credentials/OneTimePasswordWindow.png" alt="One-time password generation window" id="One Time Password Window" >}}
 
 **Copy to Clipboard** copies the key to the clipboard so you can paste it into a text file and save it for use later when TrueNAS prompts you to enter it.
 
@@ -158,7 +158,7 @@ Each access option changes the settings shown in other sections of the **Add Use
 | Setting | Description |
 |---------|-------------|
 | **Username** | (Required) Text entry field that accepts manual or copy/paste entry of a name for the user. A user name consists of up to 32 characters. When using NIS or other legacy software with limited user name lengths, keep names to eight characters or less for compatibility. Names should not begin with a hyphen (-), include a space, tab, or these special characters: comma (,), plus (+), ampersand (&), percent (%), carat (^), open or close parenthesis ( ), exclamation mark (!), at symbol (@), tilde (~), question mark (?), greater or less than symbols (<)(>), or equal (=). |
-| **Allow Access** | Specifies the access granted to the user account. Each option shows different settings. Access options are: <br><li>**SMB Access** - The default option is pre-selected. <br><li>**TrueNAS Access** - Shows the **Select Role** dropdown and the **custom roles** link that opens the TrueNAS documentation article on pre-defined administrator roles.<br><li>**Shell Acccess** - Adds the **Shell** and **Sudo Commands** options to the [**Aditional Details**](#additional-details) section. <br><li>**SSH Access** - Deactivates the **Shell Access** option, but shows the **Shell** and **Sudo Commands** options found with **Shell Access**. Shows the **Allow SSH Login with Password (not recommended)** option, and the **Public SSH Key** field.</li> |
+| **Allow Access** | Specifies the access granted to the user account. Each option shows different settings. Access options are: <br><li>**SMB Access** - The default option is pre-selected. <br><li>**TrueNAS Access** - Shows the **Select Role** dropdown and the **custom roles** link that opens the TrueNAS documentation article on pre-defined administrator roles.<br><li>**Shell Access** - Adds the **Shell** and **Sudo Commands** options to the [**Additional Details**](#additional-details) section. <br><li>**SSH Access** - Deactivates the **Shell Access** option, but shows the **Shell** and **Sudo Commands** options found with **Shell Access**. Shows the **Allow SSH Login with Password (not recommended)** option, and the **Public SSH Key** field.</li> |
 | **Select Role** | Shows after selecting **TrueNAS Access**. Each role adds the appropriate group to the **Groups** option under [**Additional Details**](#additional-details). |
 {{< /truetable >}}
 

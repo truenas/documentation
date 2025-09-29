@@ -27,7 +27,8 @@ To see user accounts, go to **Credentials > Users**.
 TrueNAS hides all built-in users (except root) by default.
 Click the down arrow in the **Filter by Type** dropdown field to see all user options, including **Built-In**, **Local** (default option), and **Directory Services**.
 You can select any or all options to show all users configured in TrueNAS.
-To filter the user table, click the header column name to sort as ascending/descending order or use the advanced search option to select the criteria you want to use to search for a user or type of user.
+To filter the user table, click any column header to sort in ascending or descending order.
+You can also use the advanced search option to search by specific criteria.
 
 {{<include file="/static/includes/addcolumnorganizer.md">}}
 
@@ -72,12 +73,13 @@ This toggles to **Unlock User** when locked.
 ### Adding Home Directories
 
 You can add a home directory to a new or an existing user account.
-You can create a dataset to use for user home directories if one does not exist before you add or edit a user or create it while adding or editing the user.
+Before adding a user, you can create a dataset for home directories if needed.
+You can also create the dataset during the user creation process.
 
 To add a home directory to an existing user, go to **Credentials > Users**, click on the user row, and then click **Edit** to open the **Edit User** screen.
 Scroll down to the **Home Directory** option, click in the field to show the settings.
 
-Select **Create Home Directory**, then enter or browse to select the path to the dataset for home directories in **Home Directory**. For example, change **/var/empty/** to the path to a new dataset.For example, */tank/homedirs*.
+Select **Create Home Directory**, then enter or browse to select the path to the dataset for home directories in **Home Directory**. For example, change **/var/empty/** to the path to a new dataset. For example, */tank/homedirs*.
 
 Accept the default permissions or clear the checkmark to select the level of permissions you want to apply.
 We recommend leaving the default selections, **Read/Write/Execute** selected for the user home directory.

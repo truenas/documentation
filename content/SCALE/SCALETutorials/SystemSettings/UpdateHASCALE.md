@@ -19,6 +19,7 @@ If attempting to migrate from FreeBSD- to Linux-based TrueNAS versions, see [Tru
 {{</enterprise>}}
 
 ## Updating Enterprise (HA) Systems
+
 If the system does not have an administrative user account, [create the admin user]({{< ref "ManageUsersSCALE" >}}) as part of this procedure.
 
 Take a screenshot of the license information found on the **Support** widget on the **System > General Settings** screen. You use this to verify the license after the update.
@@ -28,7 +29,7 @@ To update your Enterprise (HA) system to the latest TrueNAS release, log into th
 1. Check for updates. Go to the main **Dashboard** and click **Check for Updates** on the **System Information** widget for the active controller.
 This opens the **System > Update** screen. If an update is available it shows on this screen.
 
-2. Save the password secret seed and configuration settings to a secure location. Click **Install Manual Updates**. The **Save configuration settings** window opens.
+1. Save the password secret seed and configuration settings to a secure location. Click **Install Manual Updates**. The **Save configuration settings** window opens.
 Select **Export Password Secret Seed** then click **Save Configuration**. The system downloads the file with sensitive system data. Keep this file in a secure location.
 
 <div style="margin-left: 33px">{{< include file="/static/includes/SecretSeed.md" >}}</div>
