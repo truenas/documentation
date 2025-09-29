@@ -45,7 +45,7 @@ Early releases are intended for testing and feedback purposes.
 Do not use early release software for critical tasks.
 {{< /hint >}}
 
-September 25, 2025
+September 30, 2025
 
 The TrueNAS team is pleased to release TrueNAS 25.10-RC.1!
 This release candidate version has software component updates and new features that are in the polishing phase as well as fixes for issues discovered in 25.10-BETA.1.
