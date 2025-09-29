@@ -20,8 +20,7 @@ When properly configured and scheduled, replication takes regular snapshots of s
 
 ## Setting Up a Simple Replication Task Overview
 
-This section provides a simple overview of setting up a replication task regardless of the type of replication, local or remote.
-It also covers the related steps to take prior to configuring a replication task.
+This overview provides instructions what to do before you begin and how to set up a simple local or remote replication task.
 
 {{< include file="/static/includes/BasicReplicationProcess.md" >}}
 
