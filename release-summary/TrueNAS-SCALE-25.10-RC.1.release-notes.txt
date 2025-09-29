@@ -6,7 +6,7 @@
 - **Breaking Changes:**
   - Nvidia open source driver supports the latest GPUs, but removes support for legacy architectures.
   - Removed idmap_autorid option from the Credentials/Directory Services/IDMAP options.
-  - SMB share configuration now displays only options relevant to each preset; shares using "No Preset" migrate to "Legacy Share".
+  - SMB share configuration now displays only options relevant to each preset; shares using **No Preset** migrate to **Legacy Share**.
 - **New Features:** Enhanced remote syslog configuration supporting up to two servers with individual transport and TLS options.
 - **Improvements:** Password manager compatibility, NVMeoF target configuration, VM configuration performance.
 - **Critical Bug Fixes:** Resolved upgrade blocking issues, SMB service hanging with Windows clients, and incorrect disk temperature alerts.
