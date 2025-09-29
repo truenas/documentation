@@ -21,7 +21,7 @@ TrueNAS uses predefined setting options to establish an SMB share that fits a pr
 To set up a basic time machine share:
 
 1. [Create the user(s)]({{< ref "ManageUsersSCALE" >}}) for this SMB share.
-   Go to **Credentials > Local User** and click **Add**.
+   Go to **Credentials > Users** and click **Add**.
 
 2. [Create the share and dataset](#creating-the-share-and-dataset) with **Purpose** set to **Time Machine Share**.
 
@@ -39,10 +39,10 @@ Setting this from the client side is generally recommended for better share flex
 ### Creating the Share and Dataset
 
 You can either [create the dataset]({{< ref "DatasetsSCALE" >}}) to use for the share on the **Add Dataset** screen and the share, or create the dataset when you add the share on the **Add SMB** screen.
-We recommend using the **Add SMB** screen when setting up a Time Machine share as it can create the dataset, enable the SMB2/3 protocol setting in the SMB service, and create the Time Machine share from the same screen.
+We recommend using the **Add SMB** screen when setting up a Time Machine share, as it can create the dataset, enable the SMB2/3 protocol setting in the SMB service, and create the Time Machine share from the same screen.
 
 When you want to customize the dataset, use the **Add Dataset** screen to create the customized dataset and a basic SMB share.
-After saving, go to **Shares**, select the SMB share and click **Edit** to change the purpose to **Time Machine Share**.
+After saving, go to **Shares**, select the SMB share, and click **Edit** to change the purpose to **Time Machine Share**.
 The **Edit SMB** screen shows the **Enable Now** button to configure the SMB service with the required SMB2/3 protocol option if it is not already enabled.
 
 {{< include file="/static/includes/CreateDatasetSCALE.md" >}}
@@ -78,10 +78,10 @@ Start or restart the SMB service when prompted.
 
 You can configure the SMB service before you add the share, or you can enable this setting from the Add SMB or Edit SMB screens while adding the share or modifying an existing share. The system prompts you to restart the service after modifying the SMB service or adding/changing a share configuration.
 
-Click on the <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i> on the **Windows (SMB) Share** widget, then click **Configure Service** to open the **SMB Service** screen.
+Click on the <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i> on the **Windows (SMB) Share** widget, then click **Config Service** to open the **SMB Service** screen.
 
 Go to **System > Services** and scroll down to **SMB**.
-When using the **Services** screen, click the toggle to turn off the SMB service if it is running, then click <i class="material-icons" aria-hidden="true" title="Configure">edit</i> **Edit** to open the **SMB Service** settings screen.
+When using the **Services** screen, click the toggle to turn off the SMB service if it is running, then click <i class="material-icons" aria-hidden="true" title="Configure">edit</i> **Edit** to open the **SMB** service settings screen.
 
 1. Click **Advanced Settings**.
 
