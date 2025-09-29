@@ -10,7 +10,7 @@ tags:
 
 {{< include file="/static/includes/RootLevelDatasetShareWarning.md" >}}
 
-TrueNAS 25.10 or later exports ZFS snapshots as [Shadow Copies](https://docs.microsoft.com/en-us/windows/win32/vss/shadow-copies-and-shadow-copy-sets) for Microsoft clients by default.
+TrueNAS 25.10 or later automatically enables Shadow Copies for all new SMB shares, exporting ZFS snapshots as [Shadow Copies](https://docs.microsoft.com/en-us/windows/win32/vss/shadow-copies-and-shadow-copy-sets) for Microsoft clients.
 
 ## About SMB Shadow Copies
 
@@ -33,7 +33,7 @@ When the snapshot directory is disabled, Samba automatically turns off the shado
 Users with an SMB client cannot delete shadow copies.
 Instead, the administrator uses the TrueNAS web interface to remove snapshots.
 
-## Enabling Shadow Copies (Legacy Option)
+## Managing Shadow Copies (Legacy Shares)
 
 Enabling or disabling shadow copies is an available option in pre-25.10 TrueNAS releases or for legacy shares in 25.10 or later.
 
