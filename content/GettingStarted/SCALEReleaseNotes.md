@@ -6,7 +6,7 @@ related: false
 use_jump_to_buttons: true
 jump_to_buttons:
   - text: "Latest Changes"
-    anchor: "25.10-BETA.1"
+    anchor: "25.10-RC.1"
     icon: "fiber-new"
   - text: "Known Issues"
     anchor: "known-issues"
@@ -81,6 +81,7 @@ The TrueNAS team is pleased to release TrueNAS 25.10-RC.1!
 * Enhances session security with improved random number generation ([NAS-137318](https://ixsystems.atlassian.net/browse/NAS-137318)).
   Uses SSL-based random number generator for creating session IDs, improving overall cryptographic security.
 * Fixes an issue where the ACL editor ignored unchecked "Apply Owner" and "Apply Group" checkboxes and always applied owner/group changes recursively, potentially causing unintended ownership changes ([NAS-137378](https://ixsystems.atlassian.net/browse/NAS-137378)).
+* The PGP public keys for the TrueNAS Security Team have been renewed and published to the [TrueNAS Security Advisories](https://security.truenas.com/).
 
 <a href="#full-changelog" target="_blank">Click here</a> to see the full 25.10 changelog or visit the <a href="https://ixsystems.atlassian.net/issues/?filter=13361" target="_blank">TrueNAS 25.10-RC.1 (Goldeye) Changelog</a> in Jira.
 
