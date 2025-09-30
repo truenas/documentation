@@ -67,8 +67,20 @@ This saves some time when creating multiple replication tasks between the same t
 
    d. Enter the settings for the other location (source or destination), which is automatically set to **On This System**.
       Browse to select the dataset.
-  
-{{< include file="/static/includes/ReplicationWizardSteps4thru6.md" >}}
+
+4. (Optional) Select **Replicate Custom Snapshots**, then leave the default value in **Naming Schema**.
+   If you know how and want to enter the schema, enter it in **Naming Schema**.
+   
+   A snapshot naming schema identifies the snapshots to replicate, and might be required by the remote system.
+   A naming schema is a string of [strftime(3)](https://man7.org/linux/man-pages/man3/strftime.3.html) %Y, %m, %d, %H, and %M variables that name custom snapshots you want to replicate.
+   Separate entries by pressing <kbd>Enter</kbd>. The number of snapshots matching the pattern entered shows on a dropdown list.
+
+   Selecting **Matching regular expression** does not automatically destroy snapshots, whereas selecting **Matching naming schema** does.
+   When using a regular expression, the snapshots on the destination host are not automatically destroyed when they are destroyed on the source host due to the snapshot lifetime.
+   Snapshots on the destination host display as "Will not be destroyed automatically" and do not display with a retention period.
+   Use naming schema for these.
+
+{{< include file="/static/includes/ReplicationWizardSteps5And6.md" >}}
 
 {{< include file="/static/includes/ReplicationScheduleAndRetentionSteps.md" >}}
 
