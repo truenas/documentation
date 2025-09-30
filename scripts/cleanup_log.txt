@@ -56,6 +56,78 @@ C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Virtualizatio
 C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Virtualization\CreateVirtualMachineDisks.png
 C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Virtualization\DeleteVirtualMachine.png
 
+---------------------------------------------------
+
+Process time: 2025-09-23 11:12:18
+Initiated by: 
+
+1440 files reviewed.
+63 files deleted.
+The following files were deleted:
+C:\Users\Linzi M\Documents\GitHub\documentation\static\includes\containers-vms.md
+C:\Users\Linzi M\Documents\GitHub\documentation\static\includes\InstanceImageFilenames.md
+C:\Users\Linzi M\Documents\GitHub\documentation\static\includes\InstanceSecureBootProcedure.md
+C:\Users\Linzi M\Documents\GitHub\documentation\static\includes\InstanceVNCProcedure.md
+C:\Users\Linzi M\Documents\GitHub\documentation\static\includes\InstanceVNCSettings.md
+C:\Users\Linzi M\Documents\GitHub\documentation\static\includes\ReleaseScheduleWarning.md
+C:\Users\Linzi M\Documents\GitHub\documentation\static\includes\TasksSMARTAddFields.md
+C:\Users\Linzi M\Documents\GitHub\documentation\static\images\TrueNAS_Community_Edition.png
+C:\Users\Linzi M\Documents\GitHub\documentation\static\images\TrueNAS_Enterprise.png
+C:\Users\Linzi M\Documents\GitHub\documentation\static\images\SCALE\Credentials\ACMEDNSAuthenticatorWidgetNoAuthtenticators.png
+C:\Users\Linzi M\Documents\GitHub\documentation\static\images\SCALE\Credentials\AddCACertificateOptionsRSAType.png
+C:\Users\Linzi M\Documents\GitHub\documentation\static\images\SCALE\Credentials\AddCACertificateSubject.png
+C:\Users\Linzi M\Documents\GitHub\documentation\static\images\SCALE\Credentials\AddCAConfirmOptions.png
+C:\Users\Linzi M\Documents\GitHub\documentation\static\images\SCALE\Credentials\AddCAExtraConstraintsAllExpanded.png
+C:\Users\Linzi M\Documents\GitHub\documentation\static\images\SCALE\Credentials\AddCAIdentifierAndType.png
+C:\Users\Linzi M\Documents\GitHub\documentation\static\images\SCALE\Credentials\AddCAImportCA.png
+C:\Users\Linzi M\Documents\GitHub\documentation\static\images\SCALE\Credentials\AddCertificateAuthorityScreen.png
+C:\Users\Linzi M\Documents\GitHub\documentation\static\images\SCALE\Credentials\AddCertificateCertifcateSubject.png
+C:\Users\Linzi M\Documents\GitHub\documentation\static\images\SCALE\Credentials\AddCertificateCertificateOptions.png
+C:\Users\Linzi M\Documents\GitHub\documentation\static\images\SCALE\Credentials\AddCertificateConfirmOptions.png
+C:\Users\Linzi M\Documents\GitHub\documentation\static\images\SCALE\Credentials\AddCertificateExtraConstraintsInternalCert.png
+C:\Users\Linzi M\Documents\GitHub\documentation\static\images\SCALE\Credentials\AddCertificateIdentifierAndTypeInternalCert.png
+C:\Users\Linzi M\Documents\GitHub\documentation\static\images\SCALE\Credentials\AddCertificateImport.png
+C:\Users\Linzi M\Documents\GitHub\documentation\static\images\SCALE\Credentials\AddCertificateImportCertificateOptions.png
+C:\Users\Linzi M\Documents\GitHub\documentation\static\images\SCALE\Credentials\AddCSRCertificateOptionsRSAType.png
+C:\Users\Linzi M\Documents\GitHub\documentation\static\images\SCALE\Credentials\AddCSRExtraConstraintsAllExpanded.png
+C:\Users\Linzi M\Documents\GitHub\documentation\static\images\SCALE\Credentials\AddDNSAuthenticatorDigitalocean.png
+C:\Users\Linzi M\Documents\GitHub\documentation\static\images\SCALE\Credentials\AddDNSAuthenticatorOVH.png
+C:\Users\Linzi M\Documents\GitHub\documentation\static\images\SCALE\Credentials\AddDNSAuthenticatorRoute53.png
+C:\Users\Linzi M\Documents\GitHub\documentation\static\images\SCALE\Credentials\AddDNSAuthenticatorShell.png
+C:\Users\Linzi M\Documents\GitHub\documentation\static\images\SCALE\Credentials\CertificateAuthoritiesWidgetNoCAs.png
+C:\Users\Linzi M\Documents\GitHub\documentation\static\images\SCALE\Credentials\CertificateSigningRequestWidgetWithCSR.png
+C:\Users\Linzi M\Documents\GitHub\documentation\static\images\SCALE\Credentials\UsersScreenWIPBasicSearch.png
+C:\Users\Linzi M\Documents\GitHub\documentation\static\images\SCALE\Credentials\UsersScreenWIPUserTable.png
+C:\Users\Linzi M\Documents\GitHub\documentation\static\images\SCALE\DataProtection\DataProtectionAddSMARTTestSCALE.png
+C:\Users\Linzi M\Documents\GitHub\documentation\static\images\SCALE\DataProtection\DataProtectionSMARTTestsListSCALE.png
+C:\Users\Linzi M\Documents\GitHub\documentation\static\images\SCALE\DataProtection\DataProtectionSMARTTestWidgetSCALE.png
+C:\Users\Linzi M\Documents\GitHub\documentation\static\images\SCALE\DataProtection\DeleteSMARTTest.png
+C:\Users\Linzi M\Documents\GitHub\documentation\static\images\SCALE\DataProtection\ReplicationTasksListNoTasks.png
+C:\Users\Linzi M\Documents\GitHub\documentation\static\images\SCALE\DataProtection\ReplicationTasksWidget.png
+C:\Users\Linzi M\Documents\GitHub\documentation\static\images\SCALE\DataProtection\ReplicationTasksWidgetNoTasks.png
+C:\Users\Linzi M\Documents\GitHub\documentation\static\images\SCALE\DataProtection\SmartTestsWidgetNoTests.png
+C:\Users\Linzi M\Documents\GitHub\documentation\static\images\SCALE\Shares\EditSMBPurpose.png
+C:\Users\Linzi M\Documents\GitHub\documentation\static\images\SCALE\Storage\AddFusionPoolVDEV.png
+C:\Users\Linzi M\Documents\GitHub\documentation\static\images\SCALE\Storage\StorageDashDisksButtonSCALE.png
+C:\Users\Linzi M\Documents\GitHub\documentation\static\images\SCALE\Storage\StorageDisksManualTestSCALE.png
+C:\Users\Linzi M\Documents\GitHub\documentation\static\images\SCALE\Storage\StorageDisksSelectedSCALE.png
+C:\Users\Linzi M\Documents\GitHub\documentation\static\images\SCALE\SystemSettings\ApplyPendingUdates.png
+C:\Users\Linzi M\Documents\GitHub\documentation\static\images\SCALE\SystemSettings\GeneralSettingsScreen.png
+C:\Users\Linzi M\Documents\GitHub\documentation\static\images\SCALE\SystemSettings\ProactiveSupporForm.png
+C:\Users\Linzi M\Documents\GitHub\documentation\static\images\SCALE\SystemSettings\RestartAfterUpdate.png
+C:\Users\Linzi M\Documents\GitHub\documentation\static\images\SCALE\SystemSettings\SMARTSystemServicesSCALE.png
+C:\Users\Linzi M\Documents\GitHub\documentation\static\images\SCALE\SystemSettings\SupportWidgetHA.png
+C:\Users\Linzi M\Documents\GitHub\documentation\static\images\SCALE\SystemSettings\SystemGeneralAddNTPServer.png
+C:\Users\Linzi M\Documents\GitHub\documentation\static\images\SCALE\SystemSettings\SystemUpdateScreenAvailableUpdate.png
+C:\Users\Linzi M\Documents\GitHub\documentation\static\images\SCALE\Virtualization\AddVMInstallMedia.png
+C:\Users\Linzi M\Documents\GitHub\documentation\static\images\SCALE\Virtualization\AddVMMemory.png
+C:\Users\Linzi M\Documents\GitHub\documentation\static\images\SCALE\Virtualization\AddVMNetwork.png
+C:\Users\Linzi M\Documents\GitHub\documentation\static\images\SCALE\Virtualization\AddVMOperSys.png
+C:\Users\Linzi M\Documents\GitHub\documentation\static\images\SCALE\Virtualization\CreateVirtualMachineDisks.png
+C:\Users\Linzi M\Documents\GitHub\documentation\static\images\SCALE\Virtualization\DeleteVirtualMachine.png
+C:\Users\Linzi M\Documents\GitHub\documentation\static\images\SCALE\Virtualization\EditSecurity.png
+C:\Users\Linzi M\Documents\GitHub\documentation\static\images\SCALE\Virtualization\EditVNC.png
+
 ----------------------------------------
 Process time: 2025-08-25 11:07:29
 Initiated by: Dan Pizappi
