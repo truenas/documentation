@@ -251,6 +251,8 @@ initializeChangelogTableForTabs('25.10');
   The SMB recycle bin feature is no longer available for new shares due to security and usability concerns.
   For file recovery and versioning, use ZFS snapshots, which provide more reliable and predictable data protection.
   See [Legacy Share Settings](https://www.truenas.com/docs/scale/25.10/scaleuireference/shares/smbsharesscreens/#legacy-share-settings) for more information.
+  
+* Pool usage, disk temperature, and related metrics can have a short delay of no more than 10 minutes before displaying. This is typically seen when TrueNAS boots or in situations where the reporting system restarts.
 
   </div>
 
