@@ -2,7 +2,7 @@
 
 ### Before You Begin Local Replication
 
-Local replication does not require the admin user to have SSH access, home directory, or sudo command permissions.
+Local replication does not require the admin user to have SSH access, a home directory, or sudo command permissions.
 Setting options change based on the source and destination selections. Replicating to or from a local source does not require an SSH connection.
 
 1. Set up the data storage for replicated snapshots. Go to **Datasets** to add a dataset to store the replicated data (snapshots).

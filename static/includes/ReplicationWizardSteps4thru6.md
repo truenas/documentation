@@ -7,10 +7,10 @@
    
    A snapshot naming schema identifies the snapshots to replicate, and might be required by the remote system.
    A naming schema is a string of [strftime(3)](https://man7.org/linux/man-pages/man3/strftime.3.html) %Y, %m, %d, %H, and %M variables that name custom snapshots you want to replicate.
-   Separate entries by pressing <kbd>Enter</kbd>. The number of snapshots matching the pattern entered show on a dropdown list.
+   Separate entries by pressing <kbd>Enter</kbd>. The number of snapshots matching the pattern entered shows on a dropdown list.
 
-   Selecting **Matching regular expression** does not automatically destroy snapshots where selecting **Matching naming schema** does.
-   When using regular expression, the snapshots on the destination host are not automatically destroyed when they are destroyed on the source host due to snapshot lifetime.
+   Selecting **Matching regular expression** does not automatically destroy snapshots, whereas selecting **Matching naming schema** does.
+   When using a regular expression, the snapshots on the destination host are not automatically destroyed when they are destroyed on the source host due to the snapshot lifetime.
    Snapshots on the destination host display as "Will not be destroyed automatically" and do not display with a retention period.
    Use naming schema for these.
 
@@ -19,4 +19,3 @@
    To make it easier to find the snapshot, give it a name that is easy to identify. For example, a replicated task named *dailyfull* for a full file system snapshot taken daily.
 
    Click **Next** to show the scheduling options.
-   

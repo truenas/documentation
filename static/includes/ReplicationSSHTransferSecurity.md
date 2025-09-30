@@ -1,7 +1,7 @@
 &NewLine;
 
 {{< hint type=note >}}
-Using encryption for SSH transfer security is always recommended.
+We always recommend using encryption for SSH transfer security.
 {{< /hint >}}
 
 In situations where you use two systems within an absolutely secure network for replication, disabling encryption speeds up the transfer.
