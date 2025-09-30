@@ -67,6 +67,8 @@ This saves some time when creating multiple replication tasks between the same t
 
    d. Enter the settings for the other location (source or destination), which is automatically set to **On This System**.
       Browse to select the dataset.
+   
+   e. (Optional) Select **Encryption** to add a [second layer of encryption](#adding-additional-encryption) over the already encrypted dataset.
 
 4. (Optional) Select **Replicate Custom Snapshots**, then leave the default value in **Naming Schema**.
    If you know how and want to enter the schema, enter it in **Naming Schema**.
