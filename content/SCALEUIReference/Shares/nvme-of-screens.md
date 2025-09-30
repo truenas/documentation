@@ -383,7 +383,8 @@ The **Delete Host** confirmation dialog deletes the host(s) from the listed subs
 
 ## Add Port Screen
 
-by subsystems. Ports are formatted as *IP address:port*.
+The **Add Port Screen** shows settings to add or select a port to associate with the subsystem. Ports are formatted as *IP address:port*.
+**4420** is the default port number, commonly selected for NVMe-oF with IP addresses, and we recommend using this port rather than adding a custom port.
 
 {{< trueimage src="/images/SCALE/Shares/AddPortScreen.png" alt="Add Port Screen" id="Add Port Screen" >}}
 
@@ -392,7 +393,7 @@ by subsystems. Ports are formatted as *IP address:port*.
 | Setting | Description |
 |---------|-------------|
 | **Transport Type** | Sets the transport type. Options are: **TCP**, **RDMA**, or **Fibre Channel**. The **RDMA** and **Fibre Channel** options require Enterprise licenses and systems with compatible/supporting hardware. |
-| **Port** | Sets the current port assignment. |
+| **Port** | Sets the current port assignment. **4420** is the default and recommended port number. We recommend using this port rather than entering a custom port number. |
 | **Address** | Sets an existing static IP address for the port assignment. |
 {{< /truetable >}}
 {{< /expand >}}
