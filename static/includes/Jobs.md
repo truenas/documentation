@@ -1,6 +1,6 @@
 &NewLine;
 
-The **Running Jobs** <span class="material-icons">assignment</span> icon button opens the **Running Jobs** window showing a minimized view of all running and failed jobs/processes.
+The **Running Jobs** <span class="material-icons">assignment</span> icon button opens the **Running Jobs** window showing a minimized view of all running, waiting, and failed jobs/processes.
 Hover the mouse over an error job to view a pop-up window with the error message for that failed job.
 
 {{< trueimage src="/images/SCALE/Dashboard/JobsMenu.png" alt="Jobs Task Manager" id="Jobs Manager" >}}
