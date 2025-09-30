@@ -68,7 +68,7 @@ This saves some time when creating multiple replication tasks between the same t
       TrueNAS populates this field with the default name using the source and destination paths separated by a hyphen, but this default can make locating the snapshot in the destination dataset a challenge.
       To make it easier to find the snapshot, give it a name that is easy for you to identify. For example, a replicated task named *dailyfull* for a full file system snapshot taken daily.
 
-{{< include file="/static/includes/ReplicationWizardSteps4thru6.md" >}}
+{{< include file="/static/includes/ReplicationWizardSteps5And6.md" >}}
 
 {{< include file="/static/includes/ReplicationScheduleAndRetentionSteps.md" >}}
 

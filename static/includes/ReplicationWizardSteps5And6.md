@@ -1,18 +1,6 @@
 &NewLine;
 
-4. (Optional) Select **Recursive** to replicate all snapshots contained within the parent dataset and any child datasets.
-
-5. (Optional) Select **Replicate Custom Snapshots**, then leave the default value in **Naming Schema**.
-   If you know how and want to enter the schema, enter it in **Naming Schema**.
-   
-   A snapshot naming schema identifies the snapshots to replicate, and might be required by the remote system.
-   A naming schema is a string of [strftime(3)](https://man7.org/linux/man-pages/man3/strftime.3.html) %Y, %m, %d, %H, and %M variables that name custom snapshots you want to replicate.
-   Separate entries by pressing <kbd>Enter</kbd>. The number of snapshots matching the pattern entered shows on a dropdown list.
-
-   Selecting **Matching regular expression** does not automatically destroy snapshots, whereas selecting **Matching naming schema** does.
-   When using a regular expression, the snapshots on the destination host are not automatically destroyed when they are destroyed on the source host due to the snapshot lifetime.
-   Snapshots on the destination host display as "Will not be destroyed automatically" and do not display with a retention period.
-   Use naming schema for these.
+5. (Optional) Select **Recursive** to replicate all snapshots contained within the parent dataset and any child datasets.
 
 6. (Optional) Accept the default name in **Task Name**, or enter a name of your choosing.
    TrueNAS populates this field with a default name using the source and destination paths separated by a hyphen, but this default can make locating the snapshot in the destination dataset a challenge.
