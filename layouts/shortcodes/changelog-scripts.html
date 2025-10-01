@@ -1,0 +1,50 @@
+{{- $currentPath := .Page.RelPermalink -}}
+{{- $pathSegments := split $currentPath "/" -}}
+
+{{- /* Build clean segments list */ -}}
+{{- $cleanSegments := slice -}}
+{{- range $pathSegments -}}
+  {{- if ne . "" -}}
+    {{- $cleanSegments = $cleanSegments | append . -}}
+  {{- end -}}
+{{- end -}}
+
+{{- /* Find 'scale' and check for version */ -}}
+{{- $scaleIndex := -1 -}}
+{{- $hasVersion := false -}}
+{{- range $index, $segment := $cleanSegments -}}
+  {{- if eq $segment "scale" -}}
+    {{- $scaleIndex = $index -}}
+    {{- if lt (add $index 1) (len $cleanSegments) -}}
+      {{- $nextSegment := index $cleanSegments (add $index 1) -}}
+      {{- if findRE `^\d+\.\d+` $nextSegment -}}
+        {{- $hasVersion = true -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+{{- /* Calculate relative path */ -}}
+{{- $relativePath := "../../js/" -}}
+{{- if and (ge $scaleIndex 0) $hasVersion -}}
+  {{- /* Version branch */ -}}
+  {{- $tempPath := "" -}}
+  {{- $segmentsAfterVersion := sub (len $cleanSegments) (add $scaleIndex 3) -}}
+  {{- range seq $segmentsAfterVersion -}}
+    {{- $tempPath = printf "%s../" $tempPath -}}
+  {{- end -}}
+  {{- $relativePath = printf "%sjs/" $tempPath -}}
+{{- else if ge $scaleIndex 0 -}}
+  {{- /* Master branch */ -}}
+  {{- $tempPath := "" -}}
+  {{- $segmentsAfterScale := sub (len $cleanSegments) (add $scaleIndex 1) -}}
+  {{- range seq $segmentsAfterScale -}}
+    {{- $tempPath = printf "%s../" $tempPath -}}
+  {{- end -}}
+  {{- $relativePath = printf "%sjs/" $tempPath -}}
+{{- end -}}
+
+<!-- CSV Changelog Table Scripts -->
+<script src="{{ $relativePath }}csv-changelog-table.js?v=1.1"></script>
+<script src="{{ $relativePath }}csv-changelog-init.js?v=1.1"></script>
+<script src="{{ $relativePath }}csv-changelog-tab-init.js?v=1.1"></script>
