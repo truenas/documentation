@@ -556,8 +556,6 @@ function onVersionChange() {
             csvUrl = currentConfig.baseUrl ? `${currentConfig.baseUrl}/${versionData.filename}` : versionData.filename;
         }
 
-        console.log('Loading version:', selectedVersion, 'from:', csvUrl);
-
         // Add loading state with smooth transition
         const tableBody = document.getElementById('csv-table-body');
         const tbody = tableBody.parentNode;
@@ -590,7 +588,6 @@ function onVersionChange() {
  * Fetches CSV data from the specified URL
  */
 function fetchCSVData(csvUrl, delimiter, columnMapping) {
-    console.log('Fetching CSV from URL:', csvUrl);
     fetch(csvUrl)
         .then(response => {
             if (!response.ok) {
@@ -602,7 +599,6 @@ function fetchCSVData(csvUrl, delimiter, columnMapping) {
             changelogData = parseCSV(csvText, delimiter, columnMapping);
             generateFilterOptions(changelogData);
             populateCSVTable(changelogData);
-            console.log('CSV data loaded successfully:', changelogData.length, 'rows from', csvUrl);
 
             // Remove loading state
             const tbody = document.getElementById('csv-table-body').parentNode;

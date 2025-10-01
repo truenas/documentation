@@ -42,8 +42,6 @@ function initializeChangelogTableForTabs(majorVersion, baseUrl) {
                 baseUrl = '/data';
             }
         }
-
-        console.log('Calculated baseUrl for CSV files:', baseUrl);
     }
     // Create the initialization function and attach it to window
     window.initializeChangelogTable = async function() {
