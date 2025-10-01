@@ -1,23 +1,22 @@
-{{- /* Calculate path depth from current page to js/ folder */ -}}
 {{- $currentPath := .Page.RelPermalink -}}
 {{- $pathSegments := split $currentPath "/" -}}
+
+{{- /* Build clean segments list */ -}}
 {{- $cleanSegments := slice -}}
 {{- range $pathSegments -}}
   {{- if ne . "" -}}
     {{- $cleanSegments = $cleanSegments | append . -}}
   {{- end -}}
 {{- end -}}
-{{- $pathSegments = $cleanSegments -}}
 
-{{- /* Find 'scale' in path - if exists, check for version number after it */ -}}
+{{- /* Find 'scale' and check for version */ -}}
 {{- $scaleIndex := -1 -}}
 {{- $hasVersion := false -}}
-{{- range $index, $segment := $pathSegments -}}
+{{- range $index, $segment := $cleanSegments -}}
   {{- if eq $segment "scale" -}}
     {{- $scaleIndex = $index -}}
-    {{- /* Check if next segment looks like a version (e.g., "25.10") */ -}}
-    {{- if lt (add $index 1) (len $pathSegments) -}}
-      {{- $nextSegment := index $pathSegments (add $index 1) -}}
+    {{- if lt (add $index 1) (len $cleanSegments) -}}
+      {{- $nextSegment := index $cleanSegments (add $index 1) -}}
       {{- if findRE `^\d+\.\d+` $nextSegment -}}
         {{- $hasVersion = true -}}
       {{- end -}}
@@ -25,32 +24,28 @@
   {{- end -}}
 {{- end -}}
 
-{{- /* Build relative path based on structure */ -}}
-{{- $relativePath := "" -}}
+{{- /* Calculate relative path */ -}}
+{{- $relativePath := "../../js/" -}}
 {{- if and (ge $scaleIndex 0) $hasVersion -}}
-  {{- /* Version branch: /docs/scale/VERSION/gettingstarted/scalereleasenotes/ */ -}}
-  {{- /* Need to go up 2 levels to reach /docs/scale/VERSION/ then into js/ */ -}}
-  {{- /* Count segments after scale/version to current page */ -}}
-  {{- $segmentsAfterVersion := sub (len $pathSegments) (add $scaleIndex 3) -}}
+  {{- /* Version branch */ -}}
+  {{- $tempPath := "" -}}
+  {{- $segmentsAfterVersion := sub (len $cleanSegments) (add $scaleIndex 3) -}}
   {{- range seq $segmentsAfterVersion -}}
-    {{- $relativePath = printf "%s../" $relativePath -}}
+    {{- $tempPath = printf "%s../" $tempPath -}}
   {{- end -}}
-  {{- $relativePath = printf "%sjs/" $relativePath -}}
-{{- else -}}
-  {{- /* Master branch: /docs/scale/gettingstarted/scalereleasenotes/ */ -}}
-  {{- /* Need to go up 3 levels to reach /docs/ then into js/ */ -}}
-  {{- /* Find how many segments after 'scale' (which is a content dir in master) */ -}}
-  {{- if ge $scaleIndex 0 -}}
-    {{- $segmentsAfterScale := sub (len $pathSegments) (add $scaleIndex 1) -}}
-    {{- range seq $segmentsAfterScale -}}
-      {{- $relativePath = printf "%s../" $relativePath -}}
-    {{- end -}}
-    {{- $relativePath = printf "%sjs/" $relativePath -}}
+  {{- $relativePath = printf "%sjs/" $tempPath -}}
+{{- else if ge $scaleIndex 0 -}}
+  {{- /* Master branch */ -}}
+  {{- $tempPath := "" -}}
+  {{- $segmentsAfterScale := sub (len $cleanSegments) (add $scaleIndex 1) -}}
+  {{- range seq $segmentsAfterScale -}}
+    {{- $tempPath = printf "%s../" $tempPath -}}
   {{- end -}}
+  {{- $relativePath = printf "%sjs/" $tempPath -}}
 {{- end -}}
 
 <!-- CSV Changelog Table Scripts -->
-<!-- DEBUG: currentPath={{ $currentPath }}, pathSegments={{ $pathSegments }}, scaleIndex={{ $scaleIndex }}, hasVersion={{ $hasVersion }}, relativePath={{ $relativePath }} -->
+<!-- DEBUG: path={{ $currentPath }} | segments={{ delimit $cleanSegments "," }} | scaleIdx={{ $scaleIndex }} | hasVer={{ $hasVersion }} | relPath={{ $relativePath }} -->
 <script src="{{ $relativePath }}csv-changelog-table.js?v=1.1"></script>
 <script src="{{ $relativePath }}csv-changelog-init.js?v=1.1"></script>
 <script src="{{ $relativePath }}csv-changelog-tab-init.js?v=1.1"></script>
