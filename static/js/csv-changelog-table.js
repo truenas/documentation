@@ -544,16 +544,25 @@ async function createCSVChangelogTable(baseUrlOrSingleUrl, containerId, options 
 function onVersionChange() {
     const selectedVersion = document.getElementById('csv-version-select').value;
     const versionData = currentConfig.versions.find(v => v.value === selectedVersion);
-    
+
     if (versionData) {
-        const csvUrl = `${currentConfig.baseUrl}/${versionData.filename}`;
+        // Construct CSV URL using the same logic as initial load
+        let csvUrl;
+        if (currentConfig.baseUrl.startsWith('/')) {
+            // Absolute path - simple concatenation
+            csvUrl = `${currentConfig.baseUrl}/${versionData.filename}`;
+        } else {
+            // Relative path - need to ensure proper concatenation
+            csvUrl = currentConfig.baseUrl ? `${currentConfig.baseUrl}/${versionData.filename}` : versionData.filename;
+        }
+
         console.log('Loading version:', selectedVersion, 'from:', csvUrl);
-        
+
         // Add loading state with smooth transition
         const tableBody = document.getElementById('csv-table-body');
         const tbody = tableBody.parentNode;
         tbody.classList.add('loading');
-        
+
         // Show loading with consistent table structure
         tableBody.innerHTML = `
             <tr>
@@ -564,12 +573,12 @@ function onVersionChange() {
                 <td style="text-align: center; color: #6c757d; font-style: italic;">•••</td>
             </tr>
         `;
-        
+
         // Reset filters
         document.getElementById('csv-priority-select').value = 'all';
         document.getElementById('csv-search').value = '';
         hideCSVDetails();
-        
+
         // Fetch new data with delay for smooth transition
         setTimeout(() => {
             fetchCSVData(csvUrl, currentConfig.csvDelimiter, currentConfig.columns);
@@ -581,10 +590,11 @@ function onVersionChange() {
  * Fetches CSV data from the specified URL
  */
 function fetchCSVData(csvUrl, delimiter, columnMapping) {
+    console.log('Fetching CSV from URL:', csvUrl);
     fetch(csvUrl)
         .then(response => {
             if (!response.ok) {
-                throw new Error('Network response was not ok: ' + response.statusText);
+                throw new Error(`Network response was not ok: ${response.status} ${response.statusText} (URL: ${csvUrl})`);
             }
             return response.text();
         })
@@ -592,12 +602,22 @@ function fetchCSVData(csvUrl, delimiter, columnMapping) {
             changelogData = parseCSV(csvText, delimiter, columnMapping);
             generateFilterOptions(changelogData);
             populateCSVTable(changelogData);
-            console.log('CSV data loaded:', changelogData.length, 'rows');
+            console.log('CSV data loaded successfully:', changelogData.length, 'rows from', csvUrl);
+
+            // Remove loading state
+            const tbody = document.getElementById('csv-table-body').parentNode;
+            tbody.classList.remove('loading');
         })
         .catch(error => {
-            console.error('Error fetching CSV data:', error);
-            document.getElementById('csv-table-body').innerHTML = 
-                '<tr><td colspan="5" style="padding: 20px; text-align: center; color: #dc3545;">Error loading CSV data: ' + error.message + '<br><small>Make sure the CSV file exists and is accessible.</small></td></tr>';
+            console.error('Error fetching CSV data from', csvUrl, ':', error);
+            const tbody = document.getElementById('csv-table-body');
+            tbody.parentNode.classList.remove('loading');
+            tbody.innerHTML =
+                `<tr><td colspan="5" style="padding: 20px; text-align: center; color: #dc3545;">
+                    Error loading CSV data: ${error.message}<br>
+                    <small>Attempted URL: ${csvUrl}<br>
+                    Make sure the CSV file exists and is accessible.</small>
+                </td></tr>`;
         });
 }
 
@@ -829,18 +849,19 @@ function hideCSVDetails() {
 function filterCSVTable() {
     const priorityFilter = document.getElementById('csv-priority-select').value;
     const searchTerm = document.getElementById('csv-search').value.toLowerCase();
-    
+
     const filteredData = changelogData.filter(item => {
         const matchesPriority = priorityFilter === 'all' || item.priority === priorityFilter;
-        const matchesSearch = searchTerm === '' || 
-            item.key.toLowerCase().includes(searchTerm) ||
-            item.summary.toLowerCase().includes(searchTerm) ||
-            item.components.toLowerCase().includes(searchTerm) ||
-            item.assignee.toLowerCase().includes(searchTerm);
-        
+        const matchesSearch = searchTerm === '' ||
+            (item.key || '').toLowerCase().includes(searchTerm) ||
+            (item.summary || '').toLowerCase().includes(searchTerm) ||
+            (item.description || '').toLowerCase().includes(searchTerm) ||
+            (item.status || '').toLowerCase().includes(searchTerm) ||
+            (item.fixVersion || '').toLowerCase().includes(searchTerm);
+
         return matchesPriority && matchesSearch;
     });
-    
+
     populateCSVTable(filteredData);
 }
 
