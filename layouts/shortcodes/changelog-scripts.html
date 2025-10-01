@@ -1,6 +1,13 @@
 {{- /* Calculate path depth from current page to js/ folder */ -}}
 {{- $currentPath := .Page.RelPermalink -}}
-{{- $pathSegments := split $currentPath "/" | where "ne" "" -}}
+{{- $pathSegments := split $currentPath "/" -}}
+{{- $cleanSegments := slice -}}
+{{- range $pathSegments -}}
+  {{- if ne . "" -}}
+    {{- $cleanSegments = $cleanSegments | append . -}}
+  {{- end -}}
+{{- end -}}
+{{- $pathSegments = $cleanSegments -}}
 
 {{- /* Find 'scale' in path - if exists, check for version number after it */ -}}
 {{- $scaleIndex := -1 -}}
