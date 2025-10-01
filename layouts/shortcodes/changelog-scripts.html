@@ -21,25 +21,21 @@
 {{- /* Build relative path based on structure */ -}}
 {{- $relativePath := "" -}}
 {{- if and (ge $scaleIndex 0) $hasVersion -}}
-  {{- /* Version branch: /docs/scale/VERSION/js/ */ -}}
-  {{- /* Count segments after scale/version */ -}}
+  {{- /* Version branch: /docs/scale/VERSION/gettingstarted/scalereleasenotes/ */ -}}
+  {{- /* Need to go up 2 levels to reach /docs/scale/VERSION/ then into js/ */ -}}
+  {{- /* Count segments after scale/version to current page */ -}}
   {{- $segmentsAfterVersion := sub (len $pathSegments) (add $scaleIndex 3) -}}
   {{- range seq $segmentsAfterVersion -}}
     {{- $relativePath = printf "%s../" $relativePath -}}
   {{- end -}}
   {{- $relativePath = printf "%sjs/" $relativePath -}}
 {{- else -}}
-  {{- /* Master branch: /docs/js/ */ -}}
-  {{- /* Count all segments after docs */ -}}
-  {{- $docsIndex := -1 -}}
-  {{- range $index, $segment := $pathSegments -}}
-    {{- if eq $segment "docs" -}}
-      {{- $docsIndex = $index -}}
-    {{- end -}}
-  {{- end -}}
-  {{- if ge $docsIndex 0 -}}
-    {{- $segmentsAfterDocs := sub (len $pathSegments) (add $docsIndex 2) -}}
-    {{- range seq $segmentsAfterDocs -}}
+  {{- /* Master branch: /docs/scale/gettingstarted/scalereleasenotes/ */ -}}
+  {{- /* Need to go up 3 levels to reach /docs/ then into js/ */ -}}
+  {{- /* Find how many segments after 'scale' (which is a content dir in master) */ -}}
+  {{- if ge $scaleIndex 0 -}}
+    {{- $segmentsAfterScale := sub (len $pathSegments) (add $scaleIndex 1) -}}
+    {{- range seq $segmentsAfterScale -}}
       {{- $relativePath = printf "%s../" $relativePath -}}
     {{- end -}}
     {{- $relativePath = printf "%sjs/" $relativePath -}}
