@@ -1,0 +1,52 @@
+{{- /* Calculate path depth from current page to js/ folder */ -}}
+{{- $currentPath := .Page.RelPermalink -}}
+{{- $pathSegments := split $currentPath "/" | where "ne" "" -}}
+
+{{- /* Find 'scale' in path - if exists, check for version number after it */ -}}
+{{- $scaleIndex := -1 -}}
+{{- $hasVersion := false -}}
+{{- range $index, $segment := $pathSegments -}}
+  {{- if eq $segment "scale" -}}
+    {{- $scaleIndex = $index -}}
+    {{- /* Check if next segment looks like a version (e.g., "25.10") */ -}}
+    {{- if lt (add $index 1) (len $pathSegments) -}}
+      {{- $nextSegment := index $pathSegments (add $index 1) -}}
+      {{- if findRE `^\d+\.\d+` $nextSegment -}}
+        {{- $hasVersion = true -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+{{- /* Build relative path based on structure */ -}}
+{{- $relativePath := "" -}}
+{{- if and (ge $scaleIndex 0) $hasVersion -}}
+  {{- /* Version branch: /docs/scale/VERSION/js/ */ -}}
+  {{- /* Count segments after scale/version */ -}}
+  {{- $segmentsAfterVersion := sub (len $pathSegments) (add $scaleIndex 3) -}}
+  {{- range seq $segmentsAfterVersion -}}
+    {{- $relativePath = printf "%s../" $relativePath -}}
+  {{- end -}}
+  {{- $relativePath = printf "%sjs/" $relativePath -}}
+{{- else -}}
+  {{- /* Master branch: /docs/js/ */ -}}
+  {{- /* Count all segments after docs */ -}}
+  {{- $docsIndex := -1 -}}
+  {{- range $index, $segment := $pathSegments -}}
+    {{- if eq $segment "docs" -}}
+      {{- $docsIndex = $index -}}
+    {{- end -}}
+  {{- end -}}
+  {{- if ge $docsIndex 0 -}}
+    {{- $segmentsAfterDocs := sub (len $pathSegments) (add $docsIndex 2) -}}
+    {{- range seq $segmentsAfterDocs -}}
+      {{- $relativePath = printf "%s../" $relativePath -}}
+    {{- end -}}
+    {{- $relativePath = printf "%sjs/" $relativePath -}}
+  {{- end -}}
+{{- end -}}
+
+<!-- CSV Changelog Table Scripts -->
+<script src="{{ $relativePath }}csv-changelog-table.js?v=1.1"></script>
+<script src="{{ $relativePath }}csv-changelog-init.js?v=1.1"></script>
+<script src="{{ $relativePath }}csv-changelog-tab-init.js?v=1.1"></script>
