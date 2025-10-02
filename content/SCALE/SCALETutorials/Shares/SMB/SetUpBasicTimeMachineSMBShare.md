@@ -36,6 +36,8 @@ Alternatively, configure snapshot lifetimes or create an automatic deletion poli
 The latest maintained Mac OS versions allow setting the maximum Time Machine backup size from the Mac OS UI.
 Setting this from the client side is generally recommended for better share flexibility and Mac OS coordination.
 
+Note that enabling a multi-user Time Machine does not automatically replicate the backup data to another pool or offsite system. To protect against data loss, configure a **[Replication Task](https://www.truenas.com/docs/scale/scaletutorials/dataprotection/replication/)** that includes the dataset used by the Time Machine share.
+
 ### Creating the Share and Dataset
 
 You can either [create the dataset]({{< ref "DatasetsSCALE" >}}) to use for the share on the **Add Dataset** screen and the share, or create the dataset when you add the share on the **Add SMB** screen.

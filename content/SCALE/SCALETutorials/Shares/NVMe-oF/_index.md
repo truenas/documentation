@@ -148,6 +148,8 @@ Go to the **Add Subsystem** wizard, then:
    f. Click **Save**, then click on the breadcrumb at the top of the screen to return to the **Add Subsystem** wizard.
 
 6. Add a port. Click **Add** to the right of **Ports** to open the **Add Ports** screen.
+   Enter a port number that is at least four digits in length.
+   **4420** is the default port number, commonly selected for NVMe-oF with IP addresses, and we recommend using this port rather than adding a custom port.
 
    {{< trueimage src="/images/SCALE/Shares/AddPortScreen.png" alt="Add Port Screen" id="Add Port Screen" >}}
 
