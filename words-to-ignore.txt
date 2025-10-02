@@ -469,7 +469,7 @@ Resilvering
 interruptable
 Ahrens
 scalenextversion
-scalereleasenotes
+versionnotes
 ManageLocalUsersSCALE
 iso
 Passthrough
