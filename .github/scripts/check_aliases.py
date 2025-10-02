@@ -7,7 +7,7 @@ import subprocess
 # Match any path containing a version-like segment: /12.34/
 version_pattern = re.compile(r"/\d{2}\.\d{2}/")
 # Allowed exception pattern
-exception_pattern = re.compile(r"^/scale/\d{2}\.\d{2}/gettingstarted/scalereleasenotes/?$")
+exception_pattern = re.compile(r"^/scale/\d{2}\.\d{2}/gettingstarted/versionnotes/?$")
 
 # Get list of changed files compared to the base branch
 base_branch = f"origin/{os.environ.get('GITHUB_BASE_REF', 'master')}"

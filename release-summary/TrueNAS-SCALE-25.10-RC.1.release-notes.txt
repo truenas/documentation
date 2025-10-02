@@ -15,4 +15,4 @@
   - Verify installed Nvidia GPU is [supported](https://github.com/NVIDIA/open-gpu-kernel-modules/tree/570?tab=readme-ov-file#compatible-gpus) (Turing and later are supported; Pascal, Maxwell, and Volta are no longer supported).
   - Change Directory Services idmap_autorid option if in use.
 
-**[Detailed Release Notes](https://www.truenas.com/docs/scale/25.10/gettingstarted/scalereleasenotes/#25.10-RC.1)** | **[Known Issues](https://www.truenas.com/docs/scale/25.10/gettingstarted/scalereleasenotes/#known-issues)** | **[Enterprise Support](https://support.ixsystems.com/)** | **[Community Forums](https://forums.truenas.com/)**
+**[Detailed Release Notes](https://www.truenas.com/docs/scale/25.10/gettingstarted/versionnotes/#25.10-RC.1)** | **[Known Issues](https://www.truenas.com/docs/scale/25.10/gettingstarted/versionnotes/#known-issues)** | **[Enterprise Support](https://support.ixsystems.com/)** | **[Community Forums](https://forums.truenas.com/)**

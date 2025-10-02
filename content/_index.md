@@ -33,7 +33,7 @@ h1 {display:none;}
   <div class="docs-sections">
     <p>
     <a href="/gettingstarted/" style="font-size:18px;">Getting Started Guide</a>
-    <br><a href="/gettingstarted/scalereleasenotes/">Release Notes</a>
+    <br><a href="/gettingstarted/versionnotes/">Release Notes</a>
     <br><a href="/gettingstarted/scalehardwareguide/">Community Hardware Guide</a>
     <br><a href="/gettingstarted/install/">Software Install</a>
     <br><a href="/gettingstarted/migrate/">Migrating from CORE</a>

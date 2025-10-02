@@ -12,7 +12,7 @@
 
 **Pre-Update Actions:** <Any required preparation steps>
 
-**[Detailed Release Notes](https://www.truenas.com/docs/scale/25.10/gettingstarted/scalereleasenotes/)** | **[Known Issues Link]()** | **[Enterprise Support](https://support.ixsystems.com/)** | **[Community Forums](https://forums.truenas.com/)**
+**[Detailed Release Notes](https://www.truenas.com/docs/scale/25.10/gettingstarted/versionnotes/)** | **[Known Issues Link]()** | **[Enterprise Support](https://support.ixsystems.com/)** | **[Community Forums](https://forums.truenas.com/)**
 
 
 <!-- .1/.2/.3 -->
@@ -26,7 +26,7 @@
 
 **Pre-Update Actions:** <Any required preparation steps>
 
-**[Detailed Release Notes](https://www.truenas.com/docs/scale/25.10/gettingstarted/scalereleasenotes/)** | **[Known Issues Link]()** | **[Enterprise Support](https://support.ixsystems.com/)** | **[Community Forums](https://forums.truenas.com/)**
+**[Detailed Release Notes](https://www.truenas.com/docs/scale/25.10/gettingstarted/versionnotes/)** | **[Known Issues Link]()** | **[Enterprise Support](https://support.ixsystems.com/)** | **[Community Forums](https://forums.truenas.com/)**
 
 
 <!-- HOTFIX -->
@@ -37,4 +37,4 @@
 
 **Pre-Update Actions:** <Any required preparation steps>
 
-**[Detailed Release Notes](https://www.truenas.com/docs/scale/25.10/gettingstarted/scalereleasenotes/)** | **[Known Issues Link]()** | **[Enterprise Support](https://support.ixsystems.com/)** | **[Community Forums](https://forums.truenas.com/)**
+**[Detailed Release Notes](https://www.truenas.com/docs/scale/25.10/gettingstarted/versionnotes/)** | **[Known Issues Link]()** | **[Enterprise Support](https://support.ixsystems.com/)** | **[Community Forums](https://forums.truenas.com/)**
