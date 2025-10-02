@@ -133,15 +133,15 @@ There are a few ways to increase the size of an existing pool:
 Adding a new special VDEV increases usable space in combination with a special_small_files VDEV, but it is not encouraged.  
 A VDEV limits all disks to the usable capacity of the smallest attached device.  
 
-When you use one of the above methods, TrueNAS does not automatically expand the pool to fit newly available space.  
+When using one of the above methods, TrueNAS does not automatically expand the pool to fit newly available space.  
 
 {{< trueimage src="/images/SCALE/Storage/ExpandPoolDialog.png" alt="Expand Pool Dialog" id="Expand Pool Dialog" >}}
 
 To expand an existing pool:
 
-1. Navigate to **Storage** and click **Expand Pool** above the **Usage** widget.  
-2. Select **Confirm** in the **Expand Pool** pop-up screen.  
-3. Click **Continue** to initiate the pool expansion process.  
+1. Go to **Storage** and click **Expand Pool** above the **Usage** widget.  
+2. Select **Confirm** in the **Expand Pool** dialog.  
+3. Click **Continue** to start the pool expansion process.  
 
 TrueNAS expands the pool to use the additional available capacity.
 
