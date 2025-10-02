@@ -1,5 +1,5 @@
 &NewLine;
 
-Local replication occurs on the same TrueNAS system using different pools or datasets. 
-Remote replication can occur between your TrueNAS system and another TrueNAS system, or with some other remote server you want to use to store your replicated data.
-Local and remote replication can involve encrypted pools or datasets. 
+Replication from one pool or dataset to another pool or dataset on the TrueNAS system is called local replication.
+Replication from the TrueNAS system to another TrueNAS or other backup server is called remote replication.
+Both local and remote replication can involve encrypted pools or datasets.
