@@ -470,6 +470,7 @@ interruptable
 Ahrens
 scalenextversion
 versionnotes
+scalereleasenotes
 ManageLocalUsersSCALE
 iso
 Passthrough
