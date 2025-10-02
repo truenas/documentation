@@ -88,7 +88,7 @@ Also, limit `sudo` command entry by imposing the requirement to enter a password
 
 If creating multiple administration users with permissions to perform specific tasks, do not enable `sudo` commands or configure limited access by entering only the specific commands they need to use to complete required tasks.
 
-See [Managing Users]({{< ref "ManageUsersSCALE" >}}) and [Using Administrator Logins]({{< ref "AdminRoles" >}}) for more information on creating users and allowing `sudo` command access.
+See [Managing Users]({{< ref "ManageUsers" >}}) and [Using Administrator Logins]({{< ref "AdminRoles" >}}) for more information on creating users and allowing `sudo` command access.
 
 #### Restrict Access to Shell
 
