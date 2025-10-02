@@ -6,8 +6,11 @@ import subprocess
 
 # Match any path containing a version-like segment: /12.34/
 version_pattern = re.compile(r"/\d{2}\.\d{2}/")
-# Allowed exception pattern
-exception_pattern = re.compile(r"^/scale/\d{2}\.\d{2}/gettingstarted/versionnotes/?$")
+# Allowed exception patterns
+exception_patterns = [
+    re.compile(r"^/scale/\d{2}\.\d{2}/gettingstarted/versionnotes/?$"),
+    re.compile(r"^/scale/\d{2}\.\d{2}/gettingstarted/scalereleasenotes/?$")
+]
 
 # Get list of changed files compared to the base branch
 base_branch = f"origin/{os.environ.get('GITHUB_BASE_REF', 'master')}"
@@ -33,7 +36,7 @@ for file in content_files:
 
             aliases = data.get("aliases", [])
             for alias in aliases:
-                if version_pattern.search(alias) and not exception_pattern.match(alias):
+                if version_pattern.search(alias) and not any(pattern.match(alias) for pattern in exception_patterns):
                     violations.append(f"{file}: contains forbidden alias: {alias}")
 
     except Exception as e:
