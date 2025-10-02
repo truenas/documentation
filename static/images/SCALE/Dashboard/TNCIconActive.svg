@@ -1,0 +1,14 @@
+<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="24" height="24">
+  <defs>
+    <mask id="cutout">
+      <rect width="24" height="24" fill="white"/>
+      <g fill="black" transform="translate(0, -3)">
+        <path d="M18.96 11.77v2.96l-6.33 3.66v-2.96ZM11.41 15.26v2.96L5.07 14.56v-2.96l2.86 1.65a.04.04 0 0 0 .01.01ZM14.57 12.84l-2.56 1.48-2.56-1.48 2.56-1.48ZM18.33 9.8l-2.56 1.48-3.17-1.83V6.52ZM11.41 6.52v2.96l-3.17 1.83L5.68 9.8Z"/>
+      </g>
+    </mask>
+  </defs>
+  <!-- Base icon -->
+  <path fill="var(--body-font-color)" mask="url(#cutout)" d="M19.01 8.98A7.1 7.1 0 0 0 12.02.02 8.03 8.03 0 0 0 5.01 4 5.75 5.75 0 0 0 .01 10.02c0 3.31 2.69 6 6 6h13c2.21 0 4-1.79 4-5a5.34 5.34 0 0 0-5-5.04Z"/>
+  <!-- Blue badge dot in top-right corner -->
+  <circle cx="22.5" cy="1.5" r="2.5" fill="#2196f3"/>
+</svg>
