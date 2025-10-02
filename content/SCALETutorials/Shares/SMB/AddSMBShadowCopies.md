@@ -22,7 +22,7 @@ By default, all ZFS snapshots for a dataset underlying an SMB share path are pre
 TrueNAS 25.10 and later does not support per-share disabling of SMB shadow copies on non-legacy shares.
 
 If you need to completely disable shadow copies and prevent client access to ZFS snapshots, disable the ZFS snapshot directory for the shared dataset.
-Navigate to **Storage > Datasets**, select the shared dataset, and click **Edit** on the **Details** widget.
+Go to **Storage > Datasets**, select the shared dataset, and click **Edit** on the **Details** widget.
 In the **Edit Dataset** screen, select **Advanced Options** and set **Snapshot Directory** to **Disabled**.
 When the snapshot directory is disabled, Samba automatically turns off the shadow copy feature.
 {{< /hint >}}
