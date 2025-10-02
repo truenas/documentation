@@ -201,9 +201,7 @@ document.addEventListener('DOMContentLoaded', function() {
 </script>
 
 <!-- CSV Changelog Table Script - Load outside tab content to prevent redeclaration -->
-<script src="/js/csv-changelog-table.js"></script>
-<script src="/js/csv-changelog-init.js"></script>
-<script src="/js/csv-changelog-tab-init.js"></script>
+{{< changelog-scripts >}}
 <script>
 // Initialize changelog table for version
 initializeChangelogTableForTabs('25.10');
