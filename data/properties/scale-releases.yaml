@@ -29,12 +29,12 @@ majorVersions:
     releases:
       - name: "25.10-RC.1"
         type: "Early"
-        link: "https://www.truenas.com/docs/scale/25.10/gettingstarted/scalereleasenotes/#25.10-RC.1"
+        link: "https://www.truenas.com/docs/scale/25.10/gettingstarted/versionnotes/#25.10-RC.1"
         releaseDate: "2025-09-30"
         latest: true
       - name: "25.10 Nightlies"
         type: "Experimental"
-        link: "https://www.truenas.com/docs/scale/25.10/gettingstarted/scalereleasenotes/"
+        link: "https://www.truenas.com/docs/scale/25.10/gettingstarted/versionnotes/"
         releaseDate: "2025-01-27"
         latest: false
   - lifecycle: "Preview"
@@ -43,6 +43,6 @@ majorVersions:
     releases:
       - name: "26.04 Nightlies"
         type: "Experimental"
-        link: "https://www.truenas.com/docs/scale/26.04/gettingstarted/scalereleasenotes/"
+        link: "https://www.truenas.com/docs/scale/26.04/gettingstarted/versionnotes/"
         releaseDate: "2025-08-11"
         latest: false
