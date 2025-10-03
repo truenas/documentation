@@ -61,7 +61,7 @@ This saves some time when creating multiple replication tasks between the same t
    b. Use the file browser for **Destination Location** to browse to the location of the pool or dataset to receive the replicated snapshots.
       Clicking on the dataset populates **Destination** path.
 
-      When setting up the **Destination**, the **Destination** path allows adding a directory/dataset by entering <b>/<i>name</i></b>, where *rname* is the name of a directory or dataset. The source path does not allow adding a new dataset/directory.
+      When setting up the **Destination**, the **Destination** path allows adding a directory/dataset by entering <b>/<i>name</i></b>, where */name* is the name of a directory or dataset. The source path does not allow adding a new dataset/directory.
       You can use zvols as a local replication destination. Add a name to the end of the path to create a new dataset in that location.
 
    c. (Optional) Enter a name for the snapshot in **Task Name**.

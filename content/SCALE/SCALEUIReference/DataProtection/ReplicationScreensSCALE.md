@@ -315,7 +315,7 @@ These settings display for all three **Transport** options.
 
 #### Transport Options Settings - SSH Transport Option
 
-When **Transport** is set to **SSH**, the settings listed below show in addtion to the setting options the **Allow Blocks Larger than 128KB** and **Allow Compressed WRITE Records** options shown when **Transport** is set to **Local**.
+When **Transport** is set to **SSH**, the settings listed below show in addition to the setting options the **Allow Blocks Larger than 128KB** and **Allow Compressed WRITE Records** options shown when **Transport** is set to **Local**.
 
 {{< trueimage src="/images/SCALE/DataProtection/AdvancedAddReplicationTaskGeneralTransportSSH.png" alt="Advanced Add Replication Task SSH Transport" id="Advanced Add Replication Task SSH Transport" >}}
 
@@ -331,7 +331,7 @@ When **Transport** is set to **SSH**, the settings listed below show in addtion 
 
 #### Transport Options Settings - SSH+NETCAT Transport Option
 
-When **Transport** is set to **SSH+NETCAT**, the settings listed below show in addtion to the setting options the **Allow Blocks Larger than 128KB** and **Allow Compressed WRITE Records** options shown when **Transport** is set to **Local**.
+When **Transport** is set to **SSH+NETCAT**, the settings listed below show in addition to the setting options the **Allow Blocks Larger than 128KB** and **Allow Compressed WRITE Records** options shown when **Transport** is set to **Local**.
 
 {{< trueimage src="/images/SCALE/DataProtection/AdvancedAddReplicationTaskGeneralTransportSSH+NETCAT.png" alt="Advanced Add Replication Task SSH+NETCAT Transport" id="Advanced Add Replication Task SSH+NETCAT Transport" >}}
 
