@@ -33,6 +33,10 @@ Click **Add** on the **SSH Connections** widget to open the configuration screen
 
 4. Click **Save**. 
    
-   Saving a new connection automatically opens a connection to the remote TrueNAS and exchanges SSH keys.
-   The new SSH connection displays on the **SSH Connection** widget.
-   To edit it, click on the name to open the **SSH Connections** configuration screen populated with the saved settings.
+Saving a new connection automatically opens a connection to the remote TrueNAS and exchanges SSH keys.
+The new SSH connection displays on the **SSH Connection** and the **SSH Keypairs** widgets.
+
+To edit the SSH connection, select it, then click on edit open the **SSH Connections** configuration screen populated with the saved settings.
+
+To download the private and public keypair, click the <i class="material-icons" aria-hidden="true" title="Download">file_download</i> for the new keypair on the **SSH Keypairs** widget.
+To view and copy the public or private key, click the **Edit** option for the keypair to open the **Edit Keypair** screen.
