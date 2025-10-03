@@ -20,7 +20,7 @@ When the TrueNAS boot pool fails and cannot be repaired, reinstall TrueNAS and r
 ### Important Considerations
 
 {{< hint type=warning >}}
-This recovery process depends entirely on having a current configuration backup saved externally. Boot pool failures result in a complete loss of system configuration if no backup exists.
+By default, TrueNAS creates a new boot environment when you update or reinstall the system, and changes made in a previous boot environment do not automatically appear in a new environment after updates or reinstallation. Because of this, the recovery process depends entirely on having a current configuration backup saved externally. Boot pool failures result in a complete loss of system configuration if no backup exists.
 {{< /hint >}}
 
 - **Keep external backups** - Always maintain current configuration backups stored outside the TrueNAS system
