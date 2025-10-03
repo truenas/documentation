@@ -14,13 +14,13 @@ keywords:
 - data backup and recovery
 ---
 
-TrueNAS advanced replication allows users to create one-time or regularly scheduled snapshots of data stored in pools, datasets or zvols on their TrueNAS system as a way to back up stored data.
+TrueNAS advanced replication allows users to create one-time or regularly scheduled snapshots of data stored in pools, datasets, or zvols on their TrueNAS system as a way to back up stored data.
 When properly configured and scheduled, local or remote replication using the **Advanced Replication Creation** option takes regular snapshots of storage pools or datasets and saves them in the destination location on the same or another system.
 
 {{< include file="/static/includes/ReplicationIndexContentSCALE.md" >}}
 
 The **Advanced Replication Creation** option opens the **Add Replication Task** screen.
-This screen provides access to the same settings found in the replication wizard but has more options to specify:
+This screen provides access to the same settings found in the replication wizard, but has more options to specify:
 
 * Full file system replication
 * Stream compression
@@ -56,30 +56,29 @@ Turn on SSH service. Go to **System > Services** screen, verify the **SSH** serv
 
 ## Creating a Simplified Advanced Replication Task
 
-To access advanced replication settings, click **Advanced Replication Creation** at the bottom of the first screen of the **Replication Task Wizard**.
+To access advanced replication settings, click **Advanced Replication Creation** at the bottom of the first replication wizard screen.
 The **Add Replication Task** configuration screen opens.
 
-{{< include file="/static/includes/ReplicationCreateDatasetAndAdminHomeDirSteps.md" >}}
-
-3. Give the task a name and set the direction of the task.
+1. Give the task a name.
    Unlike the wizard, the **Name** does not automatically populate with the *source*/*destination* task name after you set the source and destination for the task.
-   Each task name must be unique, and we recommend you name it in a way that makes it easy to remember what the task is doing.
+   Each task name must be unique, and we recommend naming it in a way that makes it easy to remember what the task is doing.
 
-4. Select the direction of the task. **Pull** replicates data from a remote system to the local system. **Push** sends data from the local system to the remote.
+2. Select the direction of the task. **Pull** pulls data from a remote system to the local system. **Push** sends data from the local system to the remote.
 
-5. Select the method of tranfer for this replication from the **Transport** dropdown list.
-   Select **LOCAL** to replicate data to another location on the same system.
-   Select **SSH** is the standard option for sending or receiving data from a remote system. Select the existing **SSH Connection** from the dropdown list.
-   Select **SSH+Netcat** is available as a faster option for replications that take place within completely secure networks.
-   **SSH+Netcat** requires defining netcat ports and addresses to use for the Netcat connection.
+3. Select the transfer method for this replication from the **Transport** dropdown list.
+   * Select **LOCAL** to replicate data to another location on the same system.
+   * Select **SSH** is the standard option for sending or receiving data from a remote system.
+     When selected, also select an SSH connection from the **SSH Connection** dropdown list.
+   * Select **SSH+Netcat** is a faster option for replication when it occurs within a completely secure network.
+     **SSH+Netcat** requires defining NETCAT ports and addresses to use for the NETCAT connection.
 
-   With SSH-based replications, select the **SSH Connection** to the remote system that sends or receives snapshots.
+   With SSH-based replications, select the SSH Connection with the remote system from which you want to receive snapshots or send snapshots to.
    To create a new connection to use for replication from a destination to this local system, select **newpullssh**.
 
-   Select **Use Sudo for Zfs Commands** to controls whether the user used for SSH/SSH+NETCAT replication has passwordless sudo enabled to execute zfs commands on the remote host.
+   Select **Use Sudo for Zfs Commands** to control whether the user for SSH/SSH+NETCAT replication has passwordless sudo enabled to execute zfs commands on the remote host.
    If not selected, you must enter `zfs allow` on the remote system to to grant non-user permissions to perform ZFS tasks.
 
-6. Specify the source and destination paths. Adding /*name* to the end of the path creates a new dataset in that location.
+4. Specify the source and destination paths. Destination paths allow adding /*name* to the end of the path to create a new dataset in that location.
    Click the arrow to the left of each folder or dataset name to expand the options and browse to the dataset, then click on the dataset to populate the **Source**.
    Choose a preconfigured periodic snapshot task as the source of snapshots to replicate.
    Pulling snapshots from a remote source requires a valid **SSH Connection** before the file browser can show any directories.
@@ -95,11 +94,11 @@ The **Add Replication Task** configuration screen opens.
    *DO NOT* use zvols as remote destinations.
    {{< /hint >}}
 
-7. Select a previously configured periodic snapshot task for this replication task in **Periodic Snapshot Tasks**.
+5. Select a previously configured periodic snapshot task for this replication task in **Periodic Snapshot Tasks**.
    The replication task selected must have the same values in **Recursive** and **Exclude Child Datasets** as the chosen periodic snapshot task.
    Selecting a periodic snapshot schedule removes the **Schedule** field.
 
-   If a periodic snapshot task does not exist, exist the advanced replication task configuration, go configure a periodic snapshot task, then return to the **Advanced Replication** screen to configure the replication Task.
+   If a periodic snapshot task does not exist, before creating the advanced replication task, configure a periodic snapshot task, then return to the **Add Replication Task** screen to configure the replication Task.
    Select **Replicate Specific Snapshots** to define specific snapshots from the periodic task to use for the replication.
    This displays the schedule options for the snapshot task. Enter the schedule.
    The only periodically generated snapshots included in the replication task are those that match your defined schedule.
@@ -109,9 +108,9 @@ The **Add Replication Task** configuration screen opens.
    For example, entering the naming schema `custom-%Y-%m-%d_%H-%M` finds and replicates snapshots like `custom-2020-03-25_09-15`.
    Enter multiple schemas by pressing <kbd>Enter</kbd> to separate each schema.
 
-8. Set the replication schedule to use and define when the replication task runs.
+6. Set the replication schedule to use and define when the replication task runs.
    Leave **Run Automatically** selected to use the snapshot task specified and start the replication immediately after the related periodic snapshot task completes.
-   Select **Schedule** to display scheduling options for this replication task and To automate the task according to its own schedule.
+   Select **Schedule** to display scheduling options for this replication task, and to run the task according to its own schedule.
 
    Selecting **Schedule** allows scheduling the replication to run at a separate time.
    Choose a time frame that gives the replication task enough time to finish and is during a time of day when network traffic for both source and destination systems is minimal.
@@ -121,7 +120,7 @@ The **Add Replication Task** configuration screen opens.
    {{< include file="/static/includes/SCALEAdvancedScheduler.md" >}}
    {{< /expand >}}
 
-9. Click **Save**.
+7. Click **Save**.
 
 ### Setting a Replication Compression Level
 
@@ -140,7 +139,7 @@ Replication tasks using large block replication only continue to work as long as
 
 By default, the replication task uses snapshots to quickly transfer data to the receiving system.
 Selecting **Full Filesystem Replication** means the task completely replicates the chosen **Source**, including all dataset properties, snapshots, child datasets, and clones.
-When using this option, we recommended allocating additional time for the replication task to run.
+When using this option, we recommend allocating additional time for the replication task to run.
 
 ### Replicating Dataset Properties
 
@@ -177,7 +176,7 @@ You can store the encryption key either in the TrueNAS system database or in a c
 
 {{< hint type=important >}}
 **Synchronizing Destination Snapshots With Source** destroys any snapshots in the destination that do not match the source snapshots.
-TrueNAS also does a full replication of the source snapshots as if the replication task never run, which can lead to excessive bandwidth consumption.
+TrueNAS also does a full replication of the source snapshots as if the replication task had not run, which can lead to excessive bandwidth consumption.
 
 This can be a very destructive option.
 Make sure that any snapshots deleted from the destination are obsolete or otherwise backed up in a different location.
