@@ -10,7 +10,7 @@ The **Boot Environment** screen lists boot environments created by updates perfo
 It has options for monitoring and maintaining the TrueNAS install pool and disks, and includes managing OS restore points(called boot environments) for the TrueNAS system.
 
 {{< hint warning >}}
-Boot environments do not share all configuration information. Updates create a new environment and carry forward core configuration, but other state changes do not propagate across environments. Switching between environments frequently creates configuration divergence and splits audit logs between environments.
+System updates create a new boot environment and carry forward core configuration, but other state changes do not carry forward to new environments. Switching between environments frequently creates configuration divergence and splits audit logs between environments.
 {{< /hint >}}
 
 {{< trueimage src="/images/SCALE/SystemSettings/BootEnvironmentListingSCALE.png" alt="System Boot Screen" id="System Boot Screen" >}}

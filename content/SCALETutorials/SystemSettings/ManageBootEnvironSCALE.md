@@ -91,11 +91,13 @@ Use the icons row to take different actions for a boot environment.
 
 ### Following Best Practices
 
-Boot environments do not share all system information. TrueNAS carries over central database and configuration elements into a new environment during an update, but other state changes made in one environment do not appear in another.
+Boot environments do not share all system information. TrueNAS carries over central database and configuration elements into a new environment during an update, but not all state changes made in an environment appear in another.
 
-Changes in a new boot environment do not exist in older environments. Similarly, changes made while booted into an old environment do not propagate forward into new boot environments. 
+Changes made in a new boot environment do not subsequently appear in older environments of earlier releases. Similarly, changes made while booted into a previous environment do not automatically appear in the upgraded boot environment.
 
-The isolation among different boot environments means that frequent switching between environments can lead configuration divergence and missing audit information. Because of this, it is only recommended to revert a boot pool upgrade if the new version introduces a problem or to recover from a broken configuration if the system console or IPMI is unavailable.
+The isolation among different boot environments means that frequent switching between environments can lead configuration divergence and missing audit information.
+
+We recommend only reverting to an earlier boot environment when a pool upgrade in the new version introduces a problem, or to recover from a broken configuration if the system console or IPMI is unavailable.
 
 ### Activating a Boot Environment
 
