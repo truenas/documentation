@@ -38,7 +38,7 @@ Adminstrator passwords can be changed on the **Edit User** screen or, if current
 
 ## Configuring Administrative Privileges
 
-[Create a new administrator]({{< ref "manageusersscale/#creating-an-administrator-user-account" >}}) account or select an existing account to grant administrative privileges.
+[Create a new administrator]({{< ref "manageusers/#creating-an-administrator-user-account" >}}) account or select an existing account to grant administrative privileges.
 Note the primary group assigned to that user.
 
 {{< include file="/static/includes/AddAdminGroup.md" >}}

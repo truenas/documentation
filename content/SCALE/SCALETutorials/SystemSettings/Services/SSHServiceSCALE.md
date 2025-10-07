@@ -72,7 +72,7 @@ Go to **System > Services**, find the **SSH** entry, and click the <i class="mat
 
 Select **Allow Password Authentication**.
 
-Go to **Credentials > Users**. Click anywhere on the row of the user you want to access SSH to expand the user entry, then click **Edit** to open the **Edit User** configuration screen. Make sure that **SSH password login enabled** is selected. See [Managing Users]({{< ref "manageusersscale" >}}) for more information.
+Go to **Credentials > Users**. Click anywhere on the row of the user you want to access SSH to expand the user entry, then click **Edit** to open the **Edit User** configuration screen. Make sure that **SSH password login enabled** is selected. See [Managing Users]({{< ref "manageusers" >}}) for more information.
 
 {{< include file="/static/includes/SSHUserValidationCheck.md" >}}
 

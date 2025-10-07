@@ -21,7 +21,7 @@ TrueNAS uses predefined setting options to establish an SMB share that fits a pr
 
 To set up a basic time machine share:
 
-1. [Create the user(s)]({{< ref "ManageUsersSCALE" >}}) for this SMB share.
+1. [Create the user(s)]({{< ref "ManageUsers" >}}) for this SMB share.
    Go to **Credentials > Local User** and click **Add**.
 
 2. [Create the share and dataset](#creating-the-share-and-dataset) with **Purpose** set to **Time Machine Share**.

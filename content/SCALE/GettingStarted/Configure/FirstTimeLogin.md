@@ -108,13 +108,13 @@ After setting up the truenas_admin user from one of the scenarios documented abo
 {{< trueimage src="/images/SCALE/Login/LoginScreenSCALE.png" alt="TrueNAS Login Screen" id="TrueNAS Login Screen" >}}
 
 To modify user credentials, go to **Credentials > Users**, click anywhere on the user row, then click **Edit**.
-For more information, see [Managing Users]({{< ref "ManageUsersScale" >}}).
+For more information, see [Managing Users]({{< ref "ManageUsers" >}}).
 
 ### Logging In as Root
 If logging in with the root user credentials, enter root as the user and the root password.
 {{< include file="/static/includes/CreateAdminDisableRoot.md" >}}
 
-Follow the directions in [Managing Users]({{< ref "ManageUsersScale" >}}) to create an administration user with all required settings.
+Follow the directions in [Managing Users]({{< ref "ManageUsers" >}}) to create an administration user with all required settings.
 For environments requiring specific configurations, such as non-AD environments or those using LDAP, ensure that your admin user is properly set up to manage all aspects of the system.
 
 ### Creating an Administrator Account at First Log in
@@ -125,7 +125,7 @@ One allows you to log in as root or you can create the administration account.
 
 Select either the **Administrative user** or **Root user (not recommended)** option, then enter the password to use with that user.
 
-If you choose **Root user (not recommended)** as the TrueNAS authentication method, go to the **Credentials > Users** screen and [create the admin account]({{< ref "ManageUsersSCALE" >}}) immediately after you enter the UI.
+If you choose **Root user (not recommended)** as the TrueNAS authentication method, go to the **Credentials > Users** screen and [create the admin account]({{< ref "ManageUsers" >}}) immediately after you enter the UI.
 Enter the admin user name and password, make sure the password is enabled, and click **Save**.
 After setting up the admin user, click on the root user and then click **Edit**. Disable the root user password and then click **Save**.
 This brings the system into compliance with FIPS system security-hardening standards.
