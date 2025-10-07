@@ -6,7 +6,7 @@ Before you begin configuring the replication task, first verify that the destina
 
 After completing the basic preparation steps in the section above, go to **Data Protection > Replication** and click **Add** to open the replication wizard.
 To configure advanced settings, click **Advanced Replication Creation** to open the **Add Replication Task** screen before you enter any settings in the wizard.
-Refer to the [Advanced Replication Tasks]({{< ref "/Scale/ScaleTutorials/DataProtection/Replication/AdvancedReplication/_index.md" >}}) for configuration instructions using the **Add Replication Task** screen.
+Refer to the [Advanced Replication Tasks]({{< ref "/ScaleTutorials/DataProtection/Replication/AdvancedReplication/_index.md" >}}) for configuration instructions using the **Add Replication Task** screen.
 
 On the **What and Where** replication wizard screen:
 

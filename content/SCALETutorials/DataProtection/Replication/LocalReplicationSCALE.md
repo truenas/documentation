@@ -28,8 +28,6 @@ Setting up replication tasks as an admin user has a few differences from setting
 
 {{< include file="/static/includes/ReplicationIntroSCALE.md" >}}
 
-{{< include file="/static/includes/ReplicationIntroSCALE.md" >}}
-
 {{< include file="/static/includes/ReplicationLocalBeforeYouBegin.md" >}}
 
 To configure the local replication task, follow the instructions in the section below.
