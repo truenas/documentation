@@ -14,4 +14,4 @@ This includes OS component updates, new features for Community and Enterprise en
 
 **Pre-Update Actions:** Verify installed Nvidia GPU is supported by the [XX.XX.XX nvidia driver](), change Directory Services idmap_autorid option.
 
-**[Version Recommendations](https://www.truenas.com/software-status/)** | **[Release Notes]()** | **[Known Issues]()** | **[Enterprise Support](https://support.truenas.com/)** | **[Forums](https://forums.truenas.com/)**
+**[Version Recommendations](https://www.truenas.com/software-status/)** | **[Full Release Notes]()** | **[Known Issues]()** | **[Enterprise Support](https://support.truenas.com/)** | **[Forums](https://forums.truenas.com/)**

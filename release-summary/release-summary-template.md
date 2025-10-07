@@ -12,7 +12,7 @@
 
 **Pre-Update Actions:** <Any required preparation steps>
 
-**[Version Recommendations](https://www.truenas.com/software-status/)** | **[Release Notes]()** | **[Known Issues]()** | **[Enterprise Support](https://support.truenas.com/)** | **[Forums](https://forums.truenas.com/)**
+**[Version Recommendations](https://www.truenas.com/software-status/)** | **[Full Release Notes]()** | **[Known Issues]()** | **[Enterprise Support](https://support.truenas.com/)** | **[Forums](https://forums.truenas.com/)**
 
 
 <!-- .1/.2/.3 -->
@@ -26,7 +26,7 @@
 
 **Pre-Update Actions:** <Any required preparation steps>
 
-**[Version Recommendations](https://www.truenas.com/software-status/)** | **[Release Notes]()** | **[Known Issues]()** | **[Enterprise Support](https://support.truenas.com/)** | **[Forums](https://forums.truenas.com/)**
+**[Version Recommendations](https://www.truenas.com/software-status/)** | **[Full Release Notes]()** | **[Known Issues]()** | **[Enterprise Support](https://support.truenas.com/)** | **[Forums](https://forums.truenas.com/)**
 
 
 <!-- HOTFIX -->
@@ -37,4 +37,4 @@
 
 **Pre-Update Actions:** <Any required preparation steps>
 
-**[Version Recommendations](https://www.truenas.com/software-status/)** | **[Release Notes]()** | **[Known Issues]()** | **[Enterprise Support](https://support.truenas.com/)** | **[Forums](https://forums.truenas.com/)**
+**[Version Recommendations](https://www.truenas.com/software-status/)** | **[Full Release Notes]()** | **[Known Issues]()** | **[Enterprise Support](https://support.truenas.com/)** | **[Forums](https://forums.truenas.com/)**
