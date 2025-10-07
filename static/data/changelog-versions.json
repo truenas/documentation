@@ -14,7 +14,8 @@
     "label": "25.10 (Goldeye)",
     "versions": [
       { "value": "all", "label": "25.10 (All)", "filename": "25.10-changelog.csv" },
-      { "value": "25.10-BETA.1", "label": "25.10-BETA.1", "filename": "25.10-BETA.1-changelog.csv" }
+      { "value": "25.10-BETA.1", "label": "25.10-BETA.1", "filename": "25.10-beta.1-changelog.csv" },
+      { "value": "25.10-RC.1", "label": "25.10-RC.1", "filename": "25.10-rc.1-changelog.csv" }
     ],
     "defaultVersion": "all"
   }

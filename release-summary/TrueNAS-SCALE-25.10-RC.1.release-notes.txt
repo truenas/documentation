@@ -1,0 +1,18 @@
+## TrueNAS 25.10-RC.1
+
+===This a RC release of software available to early adopters who wish to evaluate new features===
+
+
+- **Breaking Changes:**
+  - Nvidia open source driver supports the latest GPUs, but removes support for legacy architectures.
+  - Removed idmap_autorid option from the Credentials/Directory Services/IDMAP options.
+  - SMB share configuration now displays only options relevant to each preset; shares using **No Preset** migrate to **Legacy Share**.
+- **New Features:** Enhanced remote syslog configuration supporting up to two servers with individual transport and TLS options.
+- **Improvements:** Password manager compatibility, NVMeoF target configuration, VM configuration performance.
+- **Critical Bug Fixes:** Resolved upgrade blocking issues, SMB service hanging with Windows clients, and incorrect disk temperature alerts.
+
+**Pre-Update Actions:**
+  - Verify installed Nvidia GPU is [supported](https://github.com/NVIDIA/open-gpu-kernel-modules/tree/570?tab=readme-ov-file#compatible-gpus) (Turing and later are supported; Pascal, Maxwell, and Volta are no longer supported).
+  - Change Directory Services idmap_autorid option if in use.
+
+**[Detailed Release Notes](https://www.truenas.com/docs/scale/25.10/gettingstarted/scalereleasenotes/#25.10-RC.1)** | **[Known Issues](https://www.truenas.com/docs/scale/25.10/gettingstarted/scalereleasenotes/#known-issues)** | **[Enterprise Support](https://support.ixsystems.com/)** | **[Community Forums](https://forums.truenas.com/)**

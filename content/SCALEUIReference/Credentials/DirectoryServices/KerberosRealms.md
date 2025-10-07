@@ -28,7 +28,7 @@ The **Kerberos Settings** configuration screen is available for advanced Kerbero
 
 **Actions** includes the option to **Add** a new realm. **Add** opens the **Add Kerberos Realm** screen.
 
-The <span class="material-icons">more_vert</span> button opens the actions options for the selected realm. Options are **Edit** which opens the **Edit Kerberos Realm** screen for the selected realm, and **Delete** that opens a delete confirmation dialog.
+The <i class="material-icons" aria-hidden="true" title="Configure">edit</i> button opens the **Edit Kerberos Realm** screen for the selected realm. The <i class="material-icons" aria-hidden="true" title="Delete">delete</i> button opens a delete confirmation dialog for the Kerberos realm.
 
 {{<include file="/static/includes/addcolumnorganizer.md">}}
 
