@@ -17,7 +17,7 @@ keywords:
 TrueNAS has built-in virtualization capabilities that allow running multiple operating systems on a single system, maximizing hardware utilization, and consolidating workloads.
 
 A *virtual machine (VM)* is a software-based computer that runs inside your TrueNAS system, and appears as a separate physical machine to the operating system installed within it.
-VMs use virtualized hardware components including, network interfaces, storage volumes, graphics adapters, and other devices, providing complete isolation between different operating systems and applications.
+VMs use virtualized hardware components, including, network interfaces, storage volumes, graphics adapters, and other devices, providing complete isolation between different operating systems and applications.
 
 VMs offer stronger isolation than [containers](/scale/scaletutorials/containers/) but require more system resources, making them ideal for running full operating systems, legacy applications, or services that need dedicated environments.
 
@@ -55,11 +55,14 @@ If you have not yet added a virtual machine to your system, clicking **Add Virtu
       Select **UTC** as the VM system time from the **System Clock** dropdown if you do not want to use the default **Local** setting.
       Select **UEFI** from the **Boot Method** dropdown, unless using an older OS that requires **Legacy BIOS**.
 
-   e. (Optional) Select **Enable Secure Boot** to enable cryptographic verification of boot loaders, operating system kernels, and drivers during VM startup. This security feature prevents unauthorized or malicious code from running during the boot process by checking digital signatures against trusted certificates. Secure Boot is required for Windows 11 and some Linux distributions, and can be optional or unsupported for older operating systems.
+   e. (Optional) Select **Enable Secure Boot** to enable cryptographic verification of boot loaders, operating system kernels, and drivers during VM startup.
+      This security feature prevents unauthorized or malicious code from running during the boot process by checking digital signatures against trusted certificates.
+      Secure Boot is required for Windows 11 and some Linux distributions, and can be optional or unsupported for older operating systems.
+      Secure boot is only available from the VM creation wizard.
       
    f. (Optional) Select **Enable Trusted Platform Module (TPM)** to provide a virtual TPM 2.0 device for the VM.
-   TPM provides hardware-based security functions, including secure key storage, cryptographic operations, and platform attestation.
-   This is required for Windows 11 and enhances security for other operating systems that support TPM.
+      TPM provides hardware-based security functions, including secure key storage, cryptographic operations, and platform attestation.
+      This is required for Windows 11 and enhances security for other operating systems that support TPM.
 
    g. (Optional) Select **Start on Boot** to start the VM after the system is restarted or boots up.
    
