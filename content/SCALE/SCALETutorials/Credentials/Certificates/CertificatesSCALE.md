@@ -16,7 +16,18 @@ TrueNAS comes equipped with an internal, self-signed certificate that enables en
 
 {{< trueimage src="/images/SCALE/Credentials/CredentialsCertificatesScreen.png" alt="Credentials Certificates Screen" id="Credentials Certificates Screen" >}}
 
-## Importing Certificates
+## TrueNAS Connect Certificate
+
+The TrueNAS Connect service automatically creates a default *truenas_connect_* certificate after registering your TrueNAS system in the TrueNAS Connect service.
+The certificate shows in the **Certificates** widget on the **Credentials > Certificates** screen.
+
+{{< trueimage src="/images/SCALE/Credentials/CertificatesScreenWithTNCCert.png" alt="TrueNAS Connect Certificate" id="TrueNAS Connect Certificate" >}}
+
+This certificate provides secure SSL access between the TrueNAS server and the TrueNAS Connect service.
+If not listed on the **Certificates** screen, choose the truenas_default certificate.
+For apps where certificates are used, you should see and be able to select the TNC certificate and get a full secure connection for the apps.
+
+## Adding Certificates
 
 By default, TrueNAS comes equipped with an internal, self-signed certificate that enables encrypted access to the web interface, but users can import and edit existing certificates.
 

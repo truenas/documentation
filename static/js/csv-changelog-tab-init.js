@@ -12,43 +12,38 @@ function initializeChangelogTableForTabs(majorVersion, baseUrl) {
     // Dynamically determine the correct baseUrl if not provided
     if (!baseUrl) {
         if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
-            // Local Hugo server
+            // Local Hugo server - use absolute path
             baseUrl = '/data';
         } else {
             // Production/deployed site with subdirectories
             const pathSegments = window.location.pathname.split('/').filter(s => s); // Remove empty segments
             const docsIndex = pathSegments.indexOf('docs');
+
             if (docsIndex !== -1) {
-                // Check if this is a versioned path (docs/scale/VERSION/) or master (docs/scale/)
+                // Build absolute path to data directory
                 const scaleIndex = pathSegments.indexOf('scale');
-                let docsRootDepth;
-                
+
                 if (scaleIndex !== -1 && scaleIndex < pathSegments.length - 1) {
                     // Check if the segment after 'scale' looks like a version (e.g., "25.10")
                     const potentialVersion = pathSegments[scaleIndex + 1];
                     if (potentialVersion && /^\d+\.\d+/.test(potentialVersion)) {
-                        // Versioned branch: docs/scale/25.10/gettingstarted/scalereleasenotes/
-                        // Need to go back to version root (docs/scale/25.10/)
-                        const versionIndex = scaleIndex + 1; // Index of version segment (25.10)
-                        docsRootDepth = pathSegments.length - versionIndex - 1; // Back to docs/scale/25.10/
+                        // Versioned branch: /docs/scale/25.10/data
+                        baseUrl = '/' + pathSegments.slice(0, scaleIndex + 2).join('/') + '/data';
                     } else {
-                        // Master branch: docs/scale/gettingstarted/scalereleasenotes/ 
-                        // Need to go back to scale root (docs/scale/)
-                        docsRootDepth = pathSegments.length - scaleIndex - 1; // Back to docs/scale/
+                        // Master branch: /docs/scale/data
+                        baseUrl = '/' + pathSegments.slice(0, scaleIndex + 1).join('/') + '/data';
                     }
                 } else {
-                    // Fallback: calculate based on position after docs
-                    docsRootDepth = pathSegments.length - docsIndex - 1;
+                    // Fallback: /docs/data
+                    baseUrl = '/' + pathSegments.slice(0, docsIndex + 1).join('/') + '/data';
                 }
-                
-                const backPath = '../'.repeat(docsRootDepth);
-                baseUrl = backPath + 'data';
             } else {
-                // Fallback
-                baseUrl = 'data';
+                // No 'docs' in path - use root-relative
+                baseUrl = '/data';
             }
         }
     }
+    console.log('Calculated baseUrl for CSV files:', baseUrl);
     // Create the initialization function and attach it to window
     window.initializeChangelogTable = async function() {
         if (typeof initializeChangelogFromConfig === 'function') {
