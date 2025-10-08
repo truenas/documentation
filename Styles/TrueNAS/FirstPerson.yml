@@ -1,0 +1,10 @@
+extends: existence
+message: "Avoid using first-person plural '%s' unless making official TrueNAS recommendations."
+link: https://docs.microsoft.com/en-us/style-guide/grammar/person#avoid-first-person-plural
+level: suggestion
+ignorecase: false
+# Only flag problematic first-person uses, allow "we recommend", "we suggest"
+tokens:
+  - '\bwe\s+(?!recommend|suggest)'
+  - '\bus\b'
+  - '\bours?\b'
