@@ -168,6 +168,9 @@ These are ongoing issues that can affect multiple versions in the 25.10 series.
 
 ### Current Known Issues
 
+* The storage page can temporarily show errors while TrueNAS is on the receiving side of an active replication ([NAS-137818](https://ixsystems.atlassian.net/browse/NAS-137818)).
+  This is due to some ZFS properties being unavailable while the dataset is in an inconsistent state. Better handling of this situation is planned for the 25.10.0 (and newer) releases.
+
 * NVMe over TCP is incompatible with VMware ESXi environments ([NAS-137372](https://ixsystems.atlassian.net/browse/NAS-137372)).
   TrueNAS 25.10 uses the Linux kernel NVMe over TCP target driver, which lacks support for fused commands required by VMware ESXi.
   This is an upstream kernel limitation that prevents path initialization in ESXi environments.
