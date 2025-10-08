@@ -129,6 +129,8 @@ The wizard has two screens:
 * **When** settings specify when to run the task and how long to retain the replicated snapshots.
 
 **Advanced Replication Creation** opens the **Add Replication Task** screen with the same settings found in the wizard and more advanced settings.
+If you populate wizard settings and then click **Advanced Replication Creation**, TrueNAS shows you the dialog asking you to confirm you want to leave the screen.
+After clicking **Yes** the **Add Replication Task** screen opens but values entered in the wizard are not transfered to the **Add Replication Task** screen.
 
 ### What and Where Wizard Screen
 
@@ -167,7 +169,7 @@ Setting **Source Location** to **On This System** and **Destination Location** t
 | **Replicate Custom Snapshots** | Shows after setting **Source Location** to **On this System**. Select to replicate snapshots that are not created by an automated snapshot task. After selecting, it shows the **Also include snapshots with the name** setting options. This setting requires setting a naming schema for the custom snapshots through one of the two methods: **Naming Schema** or **Snapshot Name Regular Expression**. |
 | **Also include snapshots with the name** | Select the option to set the snapshot naming pattern as either a naming schema or regular expression. Options:<br><li> **Naming Schema** and **Snapshot Name Regular Expression**. |
 | **Naming Schema** | Shows after selecting **Naming Schema** under **Also include snapshots with the name**. Enter the pattern of naming custom snapshots to replicate. Enter the name and [strftime(3)](https://man7.org/linux/man-pages/man3/strftime.3.html) %Y, %m, %d, %H, and %M strings that match the snapshots to include in the replication. Naming schema must include **%Y**, **%m**, **%d**, **%H** and **%M**.  Separate entries by pressing <kbd>Enter</kbd>. The number of snapshots matching the patterns displayed on the screen. |
-| **Snapshot Name Regular Expression** | Shows after selecting **Snapshot Name Regular Expression** under **Also include snapshots with the name**. Enter the regular expression that the replicated snapshot(s) should match. This option replicates all snapshots with names matching the specified regular expression. Performance on systems with large numbers of snapshots is lower as this process reads snapshot metadata to determine snapshot creation order. Naming of regular expressions include name followed this pattern, *"auto-[0-9-]+|manual-[0-9]+"* |
+| **Snapshot Name Regular Expression** | Shows after selecting **Snapshot Name Regular Expression** under **Also include snapshots with the name**. Enter the regular expression that the replicated snapshot(s) should match. This option replicates all snapshots with names matching the specified regular expression. Performance on systems with large numbers of snapshots is lower as this process reads snapshot metadata to determine snapshot creation order. Naming of regular expressions include name followed this pattern, <code>auto-[0-9-]+\|manual-[0-9]+</code>. |
 | **SSH Transfer Security** | Shows after selecting **Replicate Custom Snapshots**. Applies data transfer security. Shows two options: **Encryption (more secure, but slower)** and **No Encryption (less secure, but faster)**. The connection is authenticated with SSH. Encryption is recommended, but can be disabled for increased speed on secure networks. |
 | **Encryption** | Select to apply an extra layer of encryption on the data transfer when replicating data. For more information on all options, see [Encryption](#encryption-setting-options) below. |
 | **Task Name** | Shows the name the system adds from the source and destination options or enter a different name for this replication configuration to overwrite the automatically populated task name. By default, the system populates **Task Name** with the source-destination names selected or loaded by selecting a task in **Load Previous Replication Tasks**. The system prompts you to change the name if a task uses the name. Changing the name can be as simple as adding an iteration number, such as *2* or *3*, to the default name. |
@@ -265,8 +267,14 @@ If you delete a dataset or zvol on the source, you must manually delete the repl
 
 ## Add and Edit Replication Task Screens
 
-**Advanced Replication Creation** opens the **Add Replication Task** screen. Click before or after adding values to any setting on the wizard screens.
-The **Edit** icon button opens the **Edit Replication Task** screen. Both screens show the same setting options.
+**Advanced Replication Creation** opens the **Add Replication Task** screen.
+
+The **Edit** icon button opens the **Edit Replication Task** screen. The **Add Replication Task** and **Edit Replication Task** screens show the same setting options.
+
+The **Add Replication Task** screen shows the **Switch to Wizard** button at the bottom of the screen. 
+
+**Switch to Wizard**, like **Advanced Replication Creation** shows the dialog asking you to confirm you want to leave the screen. After clicking **Yes** the wizard or **Add Replication Task** screen opens.
+Settings entered on either screen do not carry over when switching from one screen to the other.
 
 ### General and Transport Options Settings
 
@@ -282,8 +290,8 @@ All three **Transport** field options share the two settings displayed for **Loc
 |---------|-------------|
 | **Name** | (Required) Enter a descriptive name for the replication. |
 | **Direction** | Select the direction for the replication from the dropdown list. **Push** sends snapshots to a destination system. **Pull** connects to a remote system and retrieves snapshots matching the value specified in **Naming Schema**. |
-| **Transport** | Select the method of connecting to a remote system for exchanging data from the dropdown list. Options:<br><li> **SSH** - Default option that is supported by most systems. It requires a previously created SSH connection on the system.<br><li>**SSH+NETCAT** - Uses SSH to establish a connection to the destination system, then uses [py-libzfs](https://github.com/truenas/py-libzfs) to send an unencrypted data stream for higher transfer speeds. This only works when replicating to a FreeNSAS, TrueNAS, or other systems with py-libzfs installed.<br><li>**LOCAL** - Efficiently replicates snapshots to another dataset on the same system without using the network. Removes **Transport Options** SSH setting options from the screen.</li> |
-| **Use Sudo For Zfs Commands** | Select if setting up remote replication tasks when logged in as an admin user. |
+| **Transport** | Select the method of connecting to a remote system for exchanging data from the dropdown list. Options:<br><li> **SSH** - Default option that is supported by most systems, but does not achieve great performance. Transfers the snapshot via an SSH connection. It requires a previously created SSH connection on the system.<br><li>**SSH+NETCAT** - Uses SSH to establish a connection to the destination system, then uses [py-libzfs](https://github.com/truenas/py-libzfs) to send an unencrypted data stream for higher data transfer speeds. This can only be used in trusted networks and requires a port to be open on the NETCAT active side. This only works when replicating to a FreeNSAS, TrueNAS, or other systems with py-libzfs installed.<br><li>**LOCAL** - Efficiently replicates snapshots to another dataset on the same system without using the network. Removes **Transport Options** SSH setting options from the screen.</li> |
+| **Use Sudo For Zfs Commands** | Select if setting up remote replication tasks when logged in as an admin user. Controls whether the user used for SSH/SSH+NETCAT replication have passwordless sudo enabled to execute zfs commands on the remote host. If not selected, `zfs allow` must be used to grant non-user permissions to perform ZFS tasks. Mounting ZFS file systems by non-root is notpossible due to Linux restrictions. |
 | **Number of retries for failed replications** | Enter the number of times the replication is attempted before stopping and marking the task as failed. |
 | **Logging Level** | Select the level of message verbosity in the replication task log from the dropdown list. Options are **Default**, **Debug**, **Info**, **Warning**, and **Error**. |
 | **Enabled** | Select to enable the replication schedule. |
@@ -300,14 +308,14 @@ These settings display for all three **Transport** options.
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Allow Blocks Larger than 128KB** | Inactive by default, and if the system does not support large block transfers. Allows replication to send large data blocks. The destination system must also support large blocks. This setting cannot be changed after it is enabled and the replication task is created. See [sfs(8)](https://linux.die.net/man/8/zfs) for more information. |
+| **Allow Blocks Larger than 128KB** | Selected by default. If the system does not support large block transfers this is not selected by default. Allows replication to send large data blocks. The destination system must also support large blocks. This setting cannot be changed after it is enabled and the replication task is created. See [sfs(8)](https://linux.die.net/man/8/zfs) for more information. |
 | **Allow Compressed WRITE Records** | Selected by default. If enabled, allows using compressed write records to make the stream more efficient. The destination system must also support compressed write records. See [zfs(8)](https://linux.die.net/man/8/zfs). |
 {{< /truetable >}}
 {{< /expand >}}
 
 #### Transport Options Settings - SSH Transport Option
 
-These setting options display in addition to the two options displayed when **Transport** is set to **SSH**.
+When **Transport** is set to **SSH**, the settings listed below show in addition to the setting options the **Allow Blocks Larger than 128KB** and **Allow Compressed WRITE Records** options shown when **Transport** is set to **Local**.
 
 {{< trueimage src="/images/SCALE/DataProtection/AdvancedAddReplicationTaskGeneralTransportSSH.png" alt="Advanced Add Replication Task SSH Transport" id="Advanced Add Replication Task SSH Transport" >}}
 
@@ -323,7 +331,7 @@ These setting options display in addition to the two options displayed when **Tr
 
 #### Transport Options Settings - SSH+NETCAT Transport Option
 
-These setting options display in addition to the two options displayed when **Transport** is set to **SSH+NETCAT**.
+When **Transport** is set to **SSH+NETCAT**, the settings listed below show in addition to the setting options the **Allow Blocks Larger than 128KB** and **Allow Compressed WRITE Records** options shown when **Transport** is set to **Local**.
 
 {{< trueimage src="/images/SCALE/DataProtection/AdvancedAddReplicationTaskGeneralTransportSSH+NETCAT.png" alt="Advanced Add Replication Task SSH+NETCAT Transport" id="Advanced Add Replication Task SSH+NETCAT Transport" >}}
 
@@ -342,8 +350,8 @@ These setting options display in addition to the two options displayed when **Tr
 
 ### Advanced Source Options
 
-The settings in **Source** specify the location of files you push or pull in the replication task, and the properties applied to the replicated data.
-The Source setting options change based on selections made in **Recursive** and **Replicate Specific Snapshots**, and each displays additional setting options.
+**Source** settings specify the location of files you push or pull in the replication task, and the properties applied to the replicated data.
+Selections made in **Recursive** and **Replicate Specific Snapshots** change the **Source** setting options, and each option shows additional setting options.
 
 {{< trueimage src="/images/SCALE/DataProtection/AdvancedAddRepTaskSourceAndDestination.png" alt="Advanced Add Replication Task Source and Destination" id="Advanced Add Replication Task Source and Destination" >}}
 
@@ -353,9 +361,9 @@ The Source setting options change based on selections made in **Recursive** and 
 |---------|-------------|
 | **Source** | (Required) Enter or use <span class="material-icons">arrow_right</span> to the left of the **/mnt** folder and at each dataset to expand the dataset tree to browse to the dataset location that has snapshots to replicate. Click on the dataset or directory name, folder icon, or checkbox to select the dataset or directory. To enter multiple datasets, enter a comma (,) after each path in the **Source** field and then select another dataset. Click the <span class="material-icons"><span class="material-icons">arrow_drop_down</span></span> at the <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M5 21L3 9h18l-2 12zm5-6h4q.425 0 .713-.288T15 14t-.288-.712T14 13h-4q-.425 0-.712.288T9 14t.288.713T10 15M6 8q-.425 0-.712-.288T5 7t.288-.712T6 6h12q.425 0 .713.288T19 7t-.288.713T18 8zm2-3q-.425 0-.712-.288T7 4t.288-.712T8 3h8q.425 0 .713.288T17 4t-.288.713T16 5z"/></svg>**/mnt** to collapse the dataset tree. |
 | **Recursive** | Select to replicate all child dataset snapshots. When selected, **Exclude Child Datasets** displays. |
-| **Exclude Child Datasets** | Displays after selecting **Recursive**. Enter the specific child dataset snapshots from the replication. Separate each entry by pressing <kbd>Enter</kbd>.  |
-| **Include Dataset Properties** | Select to include ZFS dataset properties with the replicated snapshots. For more information on ZFS dataset properties see [ZFS manpages](https://linux.die.net/man/8/zfs). |
-| **Full Filesystem Replication** | Select to completely replicate the selected dataset. The target dataset gets all the properties of the source dataset, child datasets, clones, and snapshots that match the specified naming schema. Hides the **Recursive** and **Include Dataset Properties** options. |
+| **Exclude Child Datasets** | Displays after selecting **Recursive**. Enter the specific child dataset snapshots to exclude from the replication. Separate each entry by pressing <kbd>Enter</kbd>.  |
+| **Include Dataset Properties** | Select to include ZFS dataset properties with the replicated snapshots. Shows additional settings: **Properties Overide** and **Properties Exclude**. For more information on ZFS dataset properties see [ZFS manpages](https://linux.die.net/man/8/zfs). |
+| **Full Filesystem Replication** | Select to completely replicate the selected dataset. The target dataset gets all the properties of the source dataset, child datasets, clones, and snapshots that match the specified naming schema. Hides the **Recursive** and **Include Dataset Properties** options, and shows **Properties Override** and **Properties Exclude**. Set **Snapshot Name Regular Expression** to **\.*** to replicate all snapshots. |
 | **Properties Override** | Enter properties to replace existing dataset properties within the replicated files. |
 | **Properties Exclude** | Enter any existing dataset properties to remove from the replicated files. |
 {{< /truetable >}}
@@ -364,7 +372,7 @@ The Source setting options change based on selections made in **Recursive** and 
 ### Advanced Destination Options
 
 The settings in **Destination** specify the location of files you push or pull in the replication task, and the properties applied to the replicated data.
-The destination setting options change based on selections made in **Encryption** and **Snapshot Retention Policy**, which display additional setting options.
+Selections made in **Encryption** and **Snapshot Retention Policy** change the destination setting options, and each show additional setting options.
 
 {{< trueimage src="/images/SCALE/DataProtection/AdvancedAddReplicationTaskDestinationOptions.png" alt="Advanced Add Replication Task Destination Options" id="Advanced Add Replication Task Destination Options" >}}
 
@@ -376,7 +384,7 @@ The destination setting options change based on selections made in **Encryption*
 | **Destination Dataset Read-Only Policy** | Select the policy from the dropdown list. Options:<br><li>**Set** - Select to change all destination datasets to read only after a successful replication.<br><li> **Require** - Select to stop replication unless all existing destination datasets are read only.<br><li> **Ignore** - Select to disable checking read only during replication.</li> |
 | **Encryption** | Select to use encryption when replicating data. For more information on all options, see [Encryption](#encryption-setting-options). |
 | **Replication from scratch** | Select if the destination system has snapshots, but does not have any data in common with the source snapshot, destroy all data in destination snapshots, and do a full replication. WARNING! Enabling this option can cause data loss or excessive data transfer if the replication is misconfigured. |
-| **Snapshot Retention Policy** | Select the policy from the dropdown list to apply when replicated snapshots are deleted from the destination system. Options are **Same as Source**, **Custom**, and **None**. When selecting **Same as Source** use the **Snapshot Lifetime** from the source periodic snapshot task.  When selecting **Custom** define a **Snapshot Lifetime** for the destination system. Also displays the **Snapshot Lifetime** and **Unit** options. When selecting **None** never delete snapshots from the destination system. |
+| **Snapshot Retention Policy** | Select the policy from the dropdown list to apply when replicated snapshots are deleted from the destination system. Options are:<br><li>**Same as Source** - When selecting **Same as Source** use the **Snapshot Lifetime** from the source periodic snapshot task. <br><li>**Custom** - When selecting **Custom** define a **Snapshot Lifetime** for the destination system. Also displays the **Snapshot Lifetime** and **Unit** options. <br><li>**None** - When selecting **None** never delete snapshots from the destination system.</li> |
 | **Snapshot Lifetime** | Use to enter a numeric value to work with the measure of time field below to specify how long a snapshot remains on the destination system. |
 | **Unit** | Select the measure of time from the dropdown list to work with the numeric value in **Snapshot Lifetime**. Options are **Hour(s)**, **Day(s)**, **Week(s)**, **Month(s)**, and **Year(s)**. |
 {{< /truetable >}}
@@ -393,15 +401,15 @@ The snapshot settings below change options displayed based on selections made.
 | Setting | Description |
 |---------|-------------|
 | **Periodic Snapshot Tasks** | Select the snapshot schedule for this replication task from the dropdown list. Select from previously configured periodic snapshot tasks. This replication task must have the same **Recursive** and **Exclude Child Dataset** values as the selected periodic snapshot task. Selecting a periodic snapshot schedule removes the **Schedule** field. |
-| **Replicate Specific Snapshots** | Select to only replicate snapshots that match a defined creation time. Selecting this option displays the **By snapshot creation time** field. Select the preset schedule or **Custom** to use the advanced scheduler. |
-| **Begin** | Displays after selecting *Hourly* in **By snapshot creation time**. Select a time range for the specific periodic snapshots to replicate, in 15-minute increments. Periodic Snapshots created before this selected time are not included in the replication. |
-| **End** | Displays after selecting *Hourly* in **By snapshot creation time**. Select a time range for the specific periodic snapshots to replicate, in 15-minute increments. Periodic Snapshots created after this selected time are not included in the replication. |
+| **Replicate Specific Snapshots** | Select to only replicate snapshots that match a defined creation time. Selecting this option shows the **By snapshot creation time** field. Select the preset schedule or **Custom** to use the advanced scheduler. |
+| **Begin** | Displays after selecting **Hourly** in **By snapshot creation time**. Select a time range for the specific periodic snapshots to replicate, in 15-minute increments. Periodic Snapshots created before this selected time are not included in the replication. |
+| **End** | Displays after selecting **Hourly** in **By snapshot creation time**. Select a time range for the specific periodic snapshots to replicate, in 15-minute increments. Periodic Snapshots created after this selected time are not included in the replication. |
 | **Also include snapshots with the name** | These radio buttons change the naming schema setting option below it. See [Snapshot Naming](#snapshot-naming-options) in the wizard section for details on this option and the radio buttons. |
 | **Matching naming schema** | Displays the **Also Include Naming Schema** setting. |
 | **Matching regular expression** | Displays the **Matching regular expression** setting. |
-| **Also Include Naming Schema** | Displays after selecting the **Matching naming schema** radio button. Enter the pattern of naming custom snapshots to include in the replication with the periodic snapshot schedule. Enter the [strftime(3)](https://man7.org/linux/man-pages/man3/strftime.3.html) strings that match the snapshots to include in the replication. When a periodic snapshot is not linked to the replication, enter the naming schema for manually created snapshots. Has the same %Y, %m, %d, %H, and %M string requirements as the **Naming Schema** in a **Add Periodic Snapshot Task**. Separate entries by pressing <kbd>Enter</kbd>. |
-| **Matching regular expression** | Displays after selecting the **Matching regular expression** radio button. Enter the regular expression snapshot that should match. Using this option replicates all snapshots with names matching the specified regular expression. This process reads snapshot metadata to determine the snapshot creation order. This slows regular performance on the systems with a large number of snapshots. |
-| **Save Pending Snapshots** | Select to prevent source system snapshots that have failed replication from being automatically removed by the **Snapshot Retention Policy**. |
+| **Also Include Naming Schema** | Displays after selecting **Matching naming schema**. Enter the pattern of naming custom snapshots to include in the replication with the periodic snapshot schedule. Enter the [strftime(3)](https://man7.org/linux/man-pages/man3/strftime.3.html) strings that match the snapshots to include in the replication. When a periodic snapshot is not linked to the replication, enter the naming schema for manually created snapshots. Has the same %Y, %m, %d, %H, and %M string requirements as the **Naming Schema** in a **Add Periodic Snapshot Task**. Separate entries by pressing <kbd>Enter</kbd>. |
+| **Matching regular expression** | Displays after selecting **Matching regular expression**. Replicates all snapshots that match the specified regular expression. This process reads snapshot metadata to determine the snapshot creation order. This slows regular performance on the systems with a large number of snapshots. |
+| **Save Pending Snapshots** | Prevents source system snapshots that have failed replication from being automatically removed by the **Snapshot Retention Policy**. |
 {{< /truetable >}}
 {{< /expand >}}
 
@@ -417,9 +425,9 @@ These schedule setting options are common to both the **Replication Task Wizard*
 |---------|-------------|
 | **Run Automatically** | Select to start this replication task immediately after the linked periodic snapshot task completes.  |
 | **Schedule** | Select to create a replication schedule if not selecting **Run Automatically**. Displays the **Frequency** and **Only Replicate Snapshots Matching Schedule** options. Shows a list of schedule preset options. See **Schedule Presets** below for more info. |
-| **Frequency** | Displays after selecting **Schedule**. Select a preset schedule or choose **Custom** to use the advanced scheduler. |
-| **Begin** | Displays after selecting *Hourly* in **Frequency**. Select the start time for the replication task. |
-| **End** | Displays after selecting *Hourly* in **Frequency**. Select the end time for the replication task. A replication that is already in progress can continue to run past this time. |
+| **Frequency** | Displays after selecting **Schedule**. Select a preset schedule or choose **Custom** to use the advanced scheduler and show the **Begin** and **End** options. |
+| **Begin** | Displays after selecting **Hourly** in **Frequency**. Select the start time for the replication task. |
+| **End** | Displays after selecting **Hourly** in **Frequency**. Select the end time for the replication task. A replication that is already in progress can continue to run past this time. |
 | **Only Replicate Snapshots Matching Schedule** | Displays after selecting **Schedule**. Select to use the **Schedule** in place of the **Replicate Specific Snapshots** time frame. The **Schedule** values are read over the **Replicate Specific Snapshots** time frame. |
 {{< /truetable >}}
 
