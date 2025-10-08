@@ -3,8 +3,9 @@ message: "Avoid using first-person plural '%s' unless making official TrueNAS re
 link: https://docs.microsoft.com/en-us/style-guide/grammar/person#avoid-first-person-plural
 level: suggestion
 ignorecase: false
-# Only flag problematic first-person uses, allow "we recommend", "we suggest"
+# Only flag problematic first-person uses
+# Allow: "we recommend", "we suggest", "our [documentation/guide/tutorial/article/etc]"
 tokens:
   - '\bwe\s+(?!recommend|suggest)'
   - '\bus\b'
-  - '\bours?\b'
+  - '\bour\s+(?![A-Z\[])'  # Flag "our" unless followed by proper noun/link (e.g., "our ACL Primer" is OK)
