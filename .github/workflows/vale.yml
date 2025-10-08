@@ -6,6 +6,7 @@ on:
       - '**/*.md'
       - '**/*.txt'
       - '.vale.ini'
+      - 'styles/**'
       - 'Styles/**'
       - '.github/workflows/vale.yml'
 
