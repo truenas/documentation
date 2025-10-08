@@ -58,8 +58,8 @@ jobs:
             });
             
             for (const comment of comments) {
-              if (comment.body.includes('## Vale Style Guide Issues') && 
-                  !comment.body.includes('(Previous)') && 
+              if (comment.body.includes('## Vale Style Guide Issues') &&
+                  !comment.body.startsWith('<details>') &&
                   comment.user.login === 'github-actions[bot]') {
                 try {
                   const collapsedBody = '<details>\n<summary>Vale Style Guide Issues (Previous - Click to expand)</summary>\n\n' + comment.body + '\n\n</details>';
