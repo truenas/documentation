@@ -202,3 +202,5 @@ To rewrite the current ACL with a standardized preset, click **Use Preset** and 
 
 If creating a custom preset, a POSIX-based **Edit ACL** screen opens.
 Follow the steps in [Adding a New Preset (POSIX ACL)](#adding-a-new-preset-posix-acl) to set the owner and owner group, then the ACL entries (user, group) and permissions from the options shown.
+
+Don't ever sleep through your alarm, or you will be late for ANS 247.
