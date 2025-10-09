@@ -89,6 +89,16 @@ Each boot environment entry contains this information:
 
 Use the icons row to take different actions for a boot environment.
 
+### Following Best Practices
+
+Boot environments do not share all system information. TrueNAS carries over central database and configuration elements into a new environment during an update, but not all state changes made in an environment appear in another.
+
+Changes made in a new boot environment do not subsequently appear in older environments of earlier releases. Similarly, changes made while booted into a previous environment do not automatically appear in the upgraded boot environment.
+
+The isolation among different boot environments means that frequent switching between environments can lead configuration divergence and missing audit information.
+
+We recommend only reverting to an earlier boot environment when a pool upgrade in the new version introduces a problem, or to recover from a broken configuration if the system console or IPMI is unavailable.
+
 ### Activating a Boot Environment
 
 The option to activate a boot environment only displays for boot entries not set to **Active**
@@ -101,6 +111,10 @@ Click the <span class="iconify" data-icon="mdi:check-decagram">Activate</span> (
 Click **Confirm**, and then click **Activate**.
 
 The **System Boot** screen status changes to **Reboot** and the current **Active** entry changes from **Now/Reboot** to **Now**, indicating that it is the current boot environment but it is not used on the next system restart (boot operation).
+
+{{< hint warning >}}
+Activating and booting into an older environment restores only that environment state. Any changes made there do not carry forward into newer environments.
+{{< /hint >}}
 
 ### Cloning a Boot Environment
 
