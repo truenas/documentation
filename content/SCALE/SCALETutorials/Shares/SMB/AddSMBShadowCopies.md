@@ -10,7 +10,7 @@ tags:
 
 {{< include file="/static/includes/RootLevelDatasetShareWarning.md" >}}
 
-TrueNAS 25.10 or later exports ZFS snapshots as [Shadow Copies](https://docs.microsoft.com/en-us/windows/win32/vss/shadow-copies-and-shadow-copy-sets) for Microsoft clients by default.
+TrueNAS automatically enables shadow copies for SMB shares, exporting ZFS snapshots as [Shadow Copies](https://docs.microsoft.com/en-us/windows/win32/vss/shadow-copies-and-shadow-copy-sets) for Microsoft clients.
 
 ## About SMB Shadow Copies
 
@@ -19,12 +19,21 @@ You can use shadow copies to restore previous versions of files from within Wind
 
 By default, all ZFS snapshots for a dataset underlying an SMB share path are presented to SMB clients through the volume shadow copy service or are accessible directly with SMB when the hidden ZFS snapshot directory is within the SMB share path.
 
+{{< hint type=note title="Disabling Shadow Copies" >}}
+TrueNAS 25.10 and later does not support per-share disabling of SMB shadow copies on non-legacy shares.
+
+If you need to completely disable shadow copies and prevent client access to ZFS snapshots, disable the ZFS snapshot directory for the shared dataset.
+Go to **Storage > Datasets**, select the shared dataset, and click **Edit** on the **Details** widget.
+In the **Edit Dataset** screen, select **Advanced Options** and set **Snapshot Directory** to **Disabled**.
+When the snapshot directory is disabled, Samba automatically turns off the shadow copy feature.
+{{< /hint >}}
+
 ## Deleting Shadow Copies
 
 Users with an SMB client cannot delete shadow copies.
 Instead, the administrator uses the TrueNAS web interface to remove snapshots.
 
-## Enabling Shadow Copies (Legacy Option)
+## Managing Shadow Copies (Legacy Shares)
 
 Enabling or disabling shadow copies is an available option in pre-25.10 TrueNAS releases or for legacy shares in 25.10 or later.
 
