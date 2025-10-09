@@ -245,26 +245,14 @@ jobs:
                     if (normalizedMessage.includes('first-person plural') || normalizedMessage.includes("Avoid using 'we")) {
                       normalizedMessage = 'Avoid using first-person plural (we, us, our)';
                     }
-                    
-                    // Normalize contraction messages - but only actual contraction rules
-                    // Don't normalize if it's just any message with "instead of"
-                    if (normalizedMessage.includes('Avoid contractions') ||
-                        (normalizedMessage.includes('instead of') &&
-                         (normalizedMessage.includes("can't") ||
-                          normalizedMessage.includes("won't") ||
-                          normalizedMessage.includes("don't") ||
-                          normalizedMessage.includes("'")))) {
-                      normalizedMessage = 'Avoid contractions in formal writing';
-                    }
-                    
+
                     // Normalize number spelling messages
                     if (normalizedMessage.match(/Use '\d+' instead of/)) {
                       normalizedMessage = 'Use numerals instead of spelled-out numbers';
                     }
                     
                     // For certain message types, ignore severity differences and group together
-                    const ignoreSeverityForGrouping = normalizedMessage.includes('Avoid contractions') ||
-                                                     normalizedMessage.includes('Use active voice') ||
+                    const ignoreSeverityForGrouping = normalizedMessage.includes('Use active voice') ||
                                                      normalizedMessage.includes('first-person plural');
                     
                     const key = ignoreSeverityForGrouping ? normalizedMessage : `${issue.Severity}:${normalizedMessage}`;
