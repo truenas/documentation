@@ -66,7 +66,7 @@ This procedure covers adding a public SSH key to the admin account on the TrueNA
 
    Edit the admin account. Select the user, and click **Edit** to open the **Edit User** screen.
 
-   {{< trueimage src="/images/SCALE/Credentials/EditUserFullAdminSSHAccess.png" alt="Adding SSH Settings" id="Adding SSH Settings" >}}
+   {{< trueimage src="/images/SCALE/DataProtection/EditUserFullAdminSSHAccess.png" alt="Adding SSH Settings" id="Adding SSH Settings" >}}
 
    Verify the user has **TrueNAS Access** selected and the full admin role selected, and the **SSH Access** selected to show the SSH authentication fields.
 
