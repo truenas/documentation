@@ -214,5 +214,3 @@ To rewrite the current ACL with a standardized preset, click **Use Preset** and 
 
 If creating a custom preset, a POSIX-based **Edit ACL** screen opens.
 Follow the steps in [Adding a New Preset (POSIX ACL)](#adding-a-new-preset-posix-acl) to set the owner and owner group, then the ACL entries (user, group) and permissions from the options shown.
-
-Test sentence with repeated repeated words. Don't use contractions like can't or won't in documentation. We are going to test first-person plural usage here. This sentence is really really really long and it just keeps going and going and it doesn't stop and it will definitely be way over the thirty word limit that Vale enforces for sentence length so this should get flagged as an error.
