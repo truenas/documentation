@@ -1,4 +1,3 @@
-```yaml
 name: Weekly PR Summary Alert
 on:
   schedule:
@@ -158,4 +157,3 @@ jobs:
             ]
           }' \
           ${{ secrets.SLACK_WEBHOOK_URL }}
-```
