@@ -29,6 +29,12 @@ jobs:
           files: |
             **/*.md
             **/*.txt
+          files_ignore: |
+            Styles/**
+            styles/**
+            scripts/**
+            words-to-ignore.txt
+            **/cleanup_log.txt
           separator: " "
           base_sha: ${{ github.event.pull_request.base.sha }}
 
