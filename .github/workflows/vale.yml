@@ -240,13 +240,14 @@ jobs:
                       normalizedMessage = 'Avoid using first-person plural (we, us, our)';
                     }
                     
-                    // Normalize contraction messages
-                    if (normalizedMessage.includes('Avoid contractions') || 
-                        normalizedMessage.includes('instead of') ||
-                        normalizedMessage.includes("can't") ||
-                        normalizedMessage.includes("won't") ||
-                        normalizedMessage.includes("we're") ||
-                        normalizedMessage.includes("don't")) {
+                    // Normalize contraction messages - but only actual contraction rules
+                    // Don't normalize if it's just any message with "instead of"
+                    if (normalizedMessage.includes('Avoid contractions') ||
+                        (normalizedMessage.includes('instead of') &&
+                         (normalizedMessage.includes("can't") ||
+                          normalizedMessage.includes("won't") ||
+                          normalizedMessage.includes("don't") ||
+                          normalizedMessage.includes("'")))) {
                       normalizedMessage = 'Avoid contractions in formal writing';
                     }
                     
