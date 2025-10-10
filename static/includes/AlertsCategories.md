@@ -2,8 +2,6 @@
 
 Use the **Category** dropdown list to display alert settings for each category.
 
-
-
 ### Applications
 
 **Applications** alert settings display by default. These alerts apply to the third-party applications you deploy on your TrueNAS system.
@@ -55,9 +53,13 @@ You can customize alert settings for when an automatic sync to peer fails, disks
 **Hardware** alert settings apply to the IPMI network connections, and S.M.A.R.T. and smartd that monitors the hard drives installed on your TrueNAS system.
 {{< expand "Click here for more information" >}}
 
-![AlertSettingsHardware](/images/SCALE/SystemSettings/AlertSettingsHardware.png "Hardware Alert Settings")
+![AlertSettingsHardware](/images/SCALE/SystemSettings/AlertSettingsHardware.png "Hardware Alert Settings 1")
 
-You can customize alert settings for when disk(s) format with the data integrity feature, IPMI has system events, the IPMI system event log space is low, S.M.A.R.T. has an error, and smartd is not running.
+![AlertSettingsHardware](/images/SCALE/SystemSettings/AlertSettingsHardware2.png "Hardware Alert Settings 2")
+
+![AlertSettingsHardware](/images/SCALE/SystemSettings/AlertSettingsHardware3.png "Hardware Alert Settings 3")
+
+You can customize alert settings for when disk(s) format with the data integrity feature, IPMI has system events, the IPMI system event log space is low, and S.M.A.R.T. testing found errors with selftesting or uncorrected errors on disk.
 
 {{< include file="/static/includes/IPMISELAlert.md" >}}
 
