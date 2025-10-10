@@ -5,7 +5,6 @@ geekdocCollapseSection: true
 weight: 20
 tags:
  - disks
- - smart
 keywords:
 - network attached storage devices
 - enterprise data storage solutions

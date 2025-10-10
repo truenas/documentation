@@ -110,8 +110,6 @@ These articles provide more information on the three built-in share types availa
 Configure and enable the services based on what is deployed on your TrueNAS system.
 
 {{< enterprise >}}
-Enterprise or TrueNAS systems with large numbers of disks should enable SMART service and configure SMART testing.
-
 TrueNAS Enterprise HA systems should enable and configure the failover service.
 {{< /enterprise >}}
 
@@ -126,11 +124,6 @@ To security-harden your system, do not enable SSH and leave it activated at all 
 Enable the service when SSH access is needed and then disable it until needed again.
 
 {{< include file="/static/includes/SSHUserValidationCheck.md" >}}
-
-* SMART service and SMART tests
-
- SMART service and tests are important for systems with large numbers of disks.
-Managing systems with large numbers of disks presents challenges when trying to determine the disk with issues if the SMART service and testing are not set up.
 
 * Failover service on TrueNAS Enterprise High Availability (HA) systems
 
@@ -153,13 +146,6 @@ After opening a configuration screen and changing or entering a setting, when yo
 {{< trueimage src="/images/SCALE/Dashboard/CloseWithoutSavingChangesDialog.png" alt="Close Without Saving Changes" id="Close Without Saving Changes" >}}
 
 To close without saving, click **Yes** or **No** to continue making changes or entering values.
-
-### Setting Up SMART Testing
-
-All systems can benefit from using the SMART service and testing with compatible attached disks.
-Disks that do not support SMART testing do not display the option to set up testing.
-
-See [Managing SMART Tests]({{< ref "SmartTestsScale" >}}) for information on running or managing scheduled SMART tests or [Managing Disks]({{< ref "/SCALETutorials/Storage/Disks" >}}) for more information on running a manual test from a selected disk.
 
 ## Setting Up Backup Solutions
 
