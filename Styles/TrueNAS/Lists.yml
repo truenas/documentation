@@ -1,0 +1,8 @@
+extends: existence
+message: "Ensure parallel construction in lists"
+level: suggestion
+tokens:
+  - '\* \w+ing\s+[^\n]*\n\* \w+(?!ing)'
+  - '\* \w+(?!ing)\s+[^\n]*\n\* \w+ing'
+  - '\* [A-Z][a-z]+\s+[^\n]*\n\* [a-z]+'
+  - '\* [a-z]+\s+[^\n]*\n\* [A-Z][a-z]+'
