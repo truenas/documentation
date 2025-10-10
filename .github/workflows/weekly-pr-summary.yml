@@ -1,0 +1,159 @@
+name: Weekly PR Summary Alert
+on:
+  schedule:
+    # Run every Wednesday at 9 AM UTC
+    - cron: '0 9 * * 3'
+  workflow_dispatch: # Allow manual trigger for testing
+
+jobs:
+  pr-summary-alert:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get stale PRs
+        id: get-stale-prs
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const { data: pulls } = await github.rest.pulls.list({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'open'
+            });
+
+            const stalePRs = [];
+            const oneWeekAgo = new Date(Date.now() - (7 * 24 * 60 * 60 * 1000));
+
+            for (const pr of pulls) {
+              if (pr.draft) continue; // Skip draft PRs
+
+              // Get reviews for this PR
+              const { data: reviews } = await github.rest.pulls.listReviews({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                pull_number: pr.number
+              });
+
+              // Get latest review state per reviewer
+              const latestReviews = {};
+              reviews.forEach(review => {
+                latestReviews[review.user.login] = {
+                  state: review.state,
+                  date: new Date(review.submitted_at)
+                };
+              });
+
+              // Check if PR has changes requested
+              const hasChangesRequested = Object.values(latestReviews).some(r => r.state === 'CHANGES_REQUESTED');
+
+              // Check if PR needs review (has requested reviewers or no reviews)
+              const needsReview = pr.requested_reviewers.length > 0 || Object.keys(latestReviews).length === 0;
+
+              let status = null;
+              let staleDate = null;
+
+              if (hasChangesRequested) {
+                // Find most recent "changes requested" review
+                const changesRequestedReviews = Object.values(latestReviews)
+                  .filter(r => r.state === 'CHANGES_REQUESTED')
+                  .sort((a, b) => new Date(b.date) - new Date(a.date));
+
+                if (changesRequestedReviews.length > 0) {
+                  staleDate = changesRequestedReviews[0].date;
+                  if (staleDate < oneWeekAgo) {
+                    status = 'Changes Required';
+                  }
+                }
+              } else if (needsReview) {
+                // Use PR creation date or last update for "needs review"
+                const prDate = new Date(pr.updated_at);
+                if (prDate < oneWeekAgo) {
+                  status = 'Needs Review';
+                  staleDate = prDate;
+                }
+              }
+
+              if (status) {
+                const daysSinceUpdate = Math.floor((Date.now() - staleDate.getTime()) / (24 * 60 * 60 * 1000));
+                stalePRs.push({
+                  number: pr.number,
+                  title: pr.title,
+                  url: pr.html_url,
+                  author: pr.user.login,
+                  status: status,
+                  daysSinceUpdate: daysSinceUpdate,
+                  reviewers: pr.requested_reviewers.map(r => r.login).join(', ') || 'None assigned'
+                });
+              }
+            }
+
+            // Sort by days since update (most stale first)
+            stalePRs.sort((a, b) => b.daysSinceUpdate - a.daysSinceUpdate);
+
+            return stalePRs;
+
+      - name: Send Slack notification
+        if: steps.get-stale-prs.outputs.result != '[]'
+        run: |
+          STALE_PRS='${{ steps.get-stale-prs.outputs.result }}'
+          REPO_NAME="${{ github.repository }}"
+          PR_COUNT=$(echo '${{ steps.get-stale-prs.outputs.result }}' | jq length)
+
+          # Create Slack message
+          cat > slack-message.json << EOF
+          {
+            "text": "📅 Weekly PR Summary: $PR_COUNT stale PRs in $REPO_NAME",
+            "blocks": [
+              {
+                "type": "header",
+                "text": {
+                  "type": "plain_text",
+                  "text": "📅 Weekly PR Summary Report"
+                }
+              },
+              {
+                "type": "context",
+                "elements": [
+                  {
+                    "type": "mrkdwn",
+                    "text": "Repository: $REPO_NAME • $(date +'%B %d, %Y') • $PR_COUNT stale PRs"
+                  }
+                ]
+              },
+              {
+                "type": "divider"
+              },
+              {
+                "type": "section",
+                "text": {
+                  "type": "mrkdwn",
+                  "text": "PRs that have been in the same state for more than 7 days:\n\n$(echo '${{ steps.get-stale-prs.outputs.result }}' | jq -r '.[] | "• *<" + .url + "|#" + (.number|tostring) + " " + .title + ">*\n  👤 " + .author + " • 📋 " + .status + " • ⏰ " + (.daysSinceUpdate|tostring) + " days" + (if .reviewers != "None assigned" then " • 👥 " + .reviewers else "" end)')"
+                }
+              }
+            ]
+          }
+          EOF
+
+          # Send to Slack
+          curl -X POST -H 'Content-type: application/json' \
+          --data @slack-message.json \
+          ${{ secrets.SLACK_WEBHOOK_URL }}
+
+      - name: Send empty report if no stale PRs
+        if: steps.get-stale-prs.outputs.result == '[]'
+        run: |
+          REPO_NAME="${{ github.repository }}"
+
+          curl -X POST -H 'Content-type: application/json' \
+          --data '{
+            "text": "✅ Weekly PR Summary: No stale PRs in '"$REPO_NAME"'",
+            "blocks": [
+              {
+                "type": "section",
+                "text": {
+                  "type": "mrkdwn",
+                  "text": "✅ *Weekly PR Summary - '"$REPO_NAME"'*\n\nNo PRs have been stale for more than 7 days. Great job team! 🎉\n\n_Report generated on $(date +'\''%B %d, %Y'\'')_"
+                }
+              }
+            ]
+          }' \
+          ${{ secrets.SLACK_WEBHOOK_URL }}
