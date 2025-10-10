@@ -8,7 +8,6 @@ aliases:
  - /scale/scaletutorials/storage/disks/managingdisks/
 tags:
  - disks
- - smart
 keywords:
 - network attached storage devices
 - enterprise data storage solutions
