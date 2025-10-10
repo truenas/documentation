@@ -29,7 +29,7 @@ You can customize alert settings for when a certificate expires, a certificate p
 
 ![AlertSettingsDirectoryServices](/images/SCALE/SystemSettings/AlertSettingsDirectoryServices.png "Directory Services Alert Settings")
 
-You can customize alert settings for when the Active Directory bind is unhealthy, Active Directory domain validation fails, the domain is offline, and the LDAP bind bind is unhealthy.
+You can customize alert settings for when the Active Directory bind is unhealthy, Active Directory domain validation fails, the domain is offline, and the LDAP bind is unhealthy.
 {{< /expand >}}
 
 ### High Availability Settings
@@ -37,25 +37,25 @@ You can customize alert settings for when the Active Directory bind is unhealthy
 {{< enterprise >}}
 This section only applies to TrueNAS Enterprise hardware.
 
-**High Availability** alert settings apply to TrueNAS Enterprise HA systems and only displays on the list of alerts for dual-controller High-Availability systems with an Enterprise license applied.
+**High Availability** alert settings apply to TrueNAS Enterprise HA systems and only display on the list of alerts for dual-controller High-Availability systems with an Enterprise license applied.
 {{< expand "Click here for more information" >}}
 
 ![AlertSettingsHA1](/images/SCALE/SystemSettings/AlertSettingsHA1.png "High Availability Alert Settings 1")
 
 ![AlertSettingsHA2](/images/SCALE/SystemSettings/AlertSettingsHA2.png "High Availability Alert Settings 2")
 
-You can customize alert settings for when an automatic sync to peer fails, disks are missing on the active and/or standby controller, the system fails to check failover status with the other controller, syncing operations fail such as encryption keys to peer and KMIP keys to peer, the failover interface is not found, and when a failover action fails.
+You can customize alert settings for when an automatic sync to peer fails, disks are missing on the active and/or standby controller, the system fails to check failover status with the other controller, syncing operations fail, such as encryption keys to peer and KMIP keys to peer, the failover interface is not found, and when a failover action fails.
 {{< /expand >}}
 {{< /enterprise >}}
 
 ### Hardware
 
-**Hardware** alert settings apply to the IPMI network connections, and S.M.A.R.T. related tests monitors the hard drives installed on your TrueNAS system.
+**Hardware** alert settings apply to the IPMI network connections and S.M.A.R.T.-related tests that monitor the hard drives installed on your TrueNAS system.
 {{< expand "Click here for more information" >}}
 
 ![AlertSettingsHardware](/images/SCALE/SystemSettings/AlertSettingsHardware.png "Hardware Alert Settings")
 
-You can customize alert settings for when disk(s) format with the data integrity feature, IPMI has system events, the IPMI system event log space is low, and S.M.A.R.T. testing found errors with selftesting or uncorrected errors on disk.
+You can customize alert settings for when disk(s) format with the data integrity feature, IPMI has system events, the IPMI system event log space is low, and S.M.A.R.T. testing found errors with self-testing or uncorrected errors on disk.
 
 {{< include file="/static/includes/IPMISELAlert.md" >}}
 
@@ -88,7 +88,7 @@ You can customize alert settings for when ports are not active on the LAGG inter
 
 ![AlertSettingsReporting](/images/SCALE/SystemSettings/AlertSettingsReporting.png "Reporting Alert Settings")
 
-You can customize alert settings for when netdata has critical alerts and warnings, the reporting database size exceeds the threshold, and syslog-ng is not running.
+You can customize alert settings for when Netdata has critical alerts and warnings, the reporting database size exceeds the threshold, and syslog-ng is not running.
 {{< /expand >}}
 
 ### Sharing
@@ -100,9 +100,9 @@ You can customize alert settings for when netdata has critical alerts and warnin
 
 ![AlertSettingsSharing2](/images/SCALE/SystemSettings/AlertSettingsSharing2.png "Sharing Alert Settings")
 
-You can customize alert settings for when a deprecated service is running, IP addresses bound to an iSCSI portal are not found, NFS services cannot bind to specific IP addresses using 0.0.0.0, and the system cannot resolve NFS share references hosts.
+You can customize alert settings for when a deprecated service is running, IP addresses bound to an iSCSI portal are not found, NFS services cannot bind to specific IP addresses using 0.0.0.0, and the system cannot resolve NFS share references to hosts.
 
-You can also customize alerts for when NTLMv1 attempts authentication in the last 24 hours, SMB1 connections to TrueNAS server are performed in the last 24 hours, and a share is unavailable because it uses a locked dataset.
+You can also customize alerts for when NTLMv1 attempts authentication in the last 24 hours, SMB1 connections to the TrueNAS server are performed in the last 24 hours, and a share is unavailable because it uses a locked dataset.
 {{< /expand >}}
 
 ### Storage
@@ -128,12 +128,12 @@ You can change alert settings for when a pool consumes USB disks, a scrub pauses
 
 You can customize alert settings for when the admin user is overridden, the boot pool is unhealthy, the system dataset has core files, a device slows down pool I/O, NTP health checks fail, and TrueCommand API keys are disabled or need confirmation.
 
-You can also change alert settings for when SSH logins fail, the system is not ready for Kdump, the web UI cannot bind to a configured address, TrueCommand fails health checks, the system restarts off schedule, and update are available, failed, or not applied.
+You can also change alert settings for when SSH logins fail, the system is not ready for Kdump, the web UI cannot bind to a configured address, TrueCommand fails health checks, the system restarts off schedule, and updates are available, failed, or not applied.
 {{< /expand >}}
 
 ### Tasks
 
-**Tasks** alert settings apply to cloud sync, VMWare snapshots, replication, rsync, scrub and snapshot tasks scheduled on your TrueNAS.
+**Tasks** alert settings apply to cloud sync, VMWare snapshots, replication, rsync, scrub, and snapshot tasks scheduled on your TrueNAS.
 {{< expand "Click here for more information" >}}
 
 ![AlertSettingsTasks1](/images/SCALE/SystemSettings/AlertSettingsTasks1.png "Task Alert Settings 1")
