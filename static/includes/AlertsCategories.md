@@ -50,7 +50,7 @@ You can customize alert settings for when an automatic sync to peer fails, disks
 
 ### Hardware
 
-**Hardware** alert settings apply to the IPMI network connections, and S.M.A.R.T. and smartd that monitors the hard drives installed on your TrueNAS system.
+**Hardware** alert settings apply to the IPMI network connections and S.M.A.R.T. related tests that monitors the hard drives installed on your TrueNAS system.
 {{< expand "Click here for more information" >}}
 
 ![AlertSettingsHardware](/images/SCALE/SystemSettings/AlertSettingsHardware.png "Hardware Alert Settings 1")

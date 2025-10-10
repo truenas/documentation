@@ -5,7 +5,6 @@ geekdocCollapseSection: true
 weight: 20
 tags:
  - disks
- - smart
  - pools
  - storage
 ---
@@ -27,7 +26,7 @@ The checkbox at the top of the table selects all disks in the system. Select aga
 ## Disks Screen - Expanded Disk
 
 Click anywhere on a disk row to expand it and show the traits specific to that disk and available options.
-The expanded view of a disk includes details for the disk and options to edit disk properties, run a SMART test and view the test results, and, in some instances, the ability to wipe the disk.
+The expanded view of a disk includes details for the disk, options to edit disk properties, and, in some instances, the ability to wipe the disk.
 
 {{< trueimage src="/images/SCALE/Storage/DiskScreenExpandedDiskWithWipeOption.png" alt="Disk Details" id="Disk Details" >}}
 
@@ -85,7 +84,7 @@ See [Wiping Disks]({{< ref "WipingDisks" >}}) for more information.
 **Close** closes the dialog and returns you to the **Disks** screen.
 
 ## Edit Disk Screen
-The **Edit Disk** screen allows users to configure and manage general disk, power management, temperature alert, S.M.A.R.T., and SED settings for system disks not assigned to a pool.
+The **Edit Disk** screen allows users to configure and manage general disk, power management, temperature alert, and SED settings for system disks not assigned to a pool.
 
 {{< trueimage src="/images/SCALE/Storage/EditDiskScreen.png" alt="Edit Disk Screen" id="Edit Disk Screen" >}}
 
