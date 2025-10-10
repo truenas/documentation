@@ -1,0 +1,15 @@
+extends: existence
+message: "Avoid using '%s' - use present tense instead of future tense"
+level: suggestion
+ignorecase: true
+
+# Note: Contractions are handled by TrueNAS.Contractions.yml
+# This rule focuses on future tense and style issues
+tokens:
+  - '\bwill\b'
+
+action:
+  name: replace
+  params:
+    - will
+    - present tense
