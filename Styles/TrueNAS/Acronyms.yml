@@ -75,7 +75,6 @@ exceptions:
   - GIDS
   - GMAIL
   - GORM
-  - GPU
   - GUI
   - HBA
   - HCI
@@ -169,7 +168,6 @@ exceptions:
   - SAS
   - SASL
   - SATA
-  - SCALE
   - SDC
   - SDLC
   - SED
