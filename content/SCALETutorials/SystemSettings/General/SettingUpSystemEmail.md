@@ -15,7 +15,7 @@ An automatic script sends a nightly email containing important information such 
 For fast awareness and resolution of critical issues, configure TrueNAS system email with the recipient addresses that should receive these notifications.
 
 {{< hint type=note >}}
-TrueNAS mails [Scrub Task]({{< ref "ManagePoolsScale" >}}) issues and [S.M.A.R.T. reports]({{< ref "SMARTTestsSCALE" >}}) separately to the address configured in those services.
+TrueNAS mails [Scrub Task]({{< ref "ManagePoolsScale" >}}) issues separately to the address configured in those services.
 {{< /hint >}}
 
 ## Configuring Email Recipients
