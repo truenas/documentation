@@ -175,7 +175,7 @@ If your system supports SecureBoot, and you have not disabled it or set it to **
 
 Select the install device as the boot drive, exit, and restart the system.
 If the USB stick is not shown as a boot option, try a different USB slot.
-Slots available for boot differ by hardware. For optimal performance, consider using NVMe S.M.A.R.T. tests to ensure the reliability of your storage devices before installation.
+Slots available for boot differ by hardware.
 
 #### Using the TrueNAS Installer
 {{< hint type=important >}}

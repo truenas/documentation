@@ -3,10 +3,8 @@ title: "VDEVs"
 description: "Provides information on settings and functions found on the VDEVs screens and widget."
 weight: 35
 tags:
-- smart
 - disks
 - sed
-- smart
 ---
 
 The **VDEVs** screen lists VDEVS and disks configured for the selected pool.

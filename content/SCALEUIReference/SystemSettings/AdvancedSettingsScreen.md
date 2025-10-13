@@ -2,6 +2,11 @@
 title: "Advanced Settings Screen"
 description: "Provides information on the System Settings > Advanced screen, widgets, and configuration screen settings."
 weight: 30
+aliases:
+ - /scaleuireference/systemsettings/services/smartservicesscreen/
+ - /scaleuireference/dataprotection/smarttestsscreensscale/
+ - /scaletutorials/dataprotection/smarttestsscale/
+ - /scaletutorials/systemsettings/services/smartservicesscale/
 tags:
  - settings
  - pools
@@ -21,6 +26,8 @@ tags:
 {{< include file="/static/includes/AdvancedSettingsWarningSCALE.md" >}}
 
 The **Advanced Settings** screen provides configuration options for the console, syslog, audit, kernel, sysctl, storage (system dataset pool), replication, WebSocket sessions, cron jobs, init/shutdown scripts, NTS servers, allowed IP addresses, isolated GPU device(s), self-encrypting drives, and global two-factor authentication.
+
+Pre-25.10 systems with S.M.A.R.T. testing schedules have these schedules appearing as cron jobs.
 
 You can download or upload your system configuration files from this screen.
 
