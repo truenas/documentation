@@ -146,8 +146,8 @@ Failover moves to the **Advanced Settings** screen ([NAS-135469](https://ixsyste
 * Removes the SMART UI ([NAS-134927](https://ixsystems.atlassian.net/browse/NAS-134927)).
   * Removes the built-in SMART test scheduling and monitoring interface to improve user flexibility while maintaining smartmontools binaries for continued third-party script compatibility ([NAS-135020](https://ixsystems.atlassian.net/browse/NAS-135020)).
     Existing scheduled SMART tests are automatically migrated to cron tasks during upgrade, and users can install the Scrutiny app for advanced SMART monitoring.
-  * SMART tests functions no longer show on the **Data Protections Tasks**, **Storage Dashboard**, or individual disk screens.  
-   See [Preparing to Upgrade](#upgrade-prep) for more information.
+  * SMART tests functions no longer show on the **Data Protections Tasks**, **Storage Dashboard**, or individual disk screens.
+   See [Disk Management](#disk-management) for more information on the SMART monitoring transition.
 * Improves drive temperature monitoring efficiency by extending the `drivetemp` kernel module to include SCSI/SAS disk temperatures.
 * Fixes an issue affecting drive temperature reporting on the dashboard ([NAS-135572](https://ixsystems.atlassian.net/browse/NAS-135572)).
 * Fixes a bug to reenable available update notifications for custom apps ([NAS-135124](https://ixsystems.atlassian.net/browse/NAS-135124)).
@@ -241,6 +241,7 @@ initializeChangelogTableForTabs('25.10');
   The smartmontools binaries remain installed and continue to be used internally by TrueNAS, ensuring that existing third-party scripts and monitoring tools continue to work unchanged.
   Users seeking advanced SMART monitoring can install the "Scrutiny" app from the TrueNAS catalog, which offers superior disk health tracking with historical data storage, customizable alerts, and automatic drive detection.
   TrueNAS maintains monitoring of critical disk health indicators and automatically migrates existing scheduled SMART tests to cron tasks during upgrade.
+  See [Disk Management](#disk-management) for more information on the SMART monitoring transition.
 
 * TrueNAS 25.10 removes the Certificate Authority (CA) functionality that allowed TrueNAS to create and sign certificates.
   Users can continue to manage certificates by creating Certificate Signing Requests (CSRs) to be signed by external certificate authorities or and importing certificates that have been signed by external CAs or directory services.
@@ -289,6 +290,85 @@ Virtual Machines are now "Enterprise ready" with support for TrueNAS Enterprise 
 * Fixes a bug to reenable available update notifications for custom apps ([NAS-135124](https://ixsystems.atlassian.net/browse/NAS-135124)).
 
 {{< include file="/static/includes/apps-market-ad-banner.md" >}}
+
+  </div>
+
+  <div data-tab-id="disk-management" data-tab-label="Disk Management">
+
+### SMART Monitoring and Disk Management in 25.10 (and Beyond)
+
+TrueNAS 25.10 fundamentally changes how disk health monitoring is handled, transitioning from built-in SMART test scheduling to a more flexible approach that better serves modern storage environments.
+
+#### What Changed
+
+##### In TrueNAS 25.04 and earlier:
+
+* SMART test scheduling was built directly into the TrueNAS UI
+* Tests were configured through **Data Protection Tasks** screens
+* SMART test results appeared on the **Storage Dashboard** and individual disk screens
+* The system maintained a single, integrated approach to disk health monitoring
+
+##### In TrueNAS 25.10 and later:
+
+* SMART test scheduling UI has been removed from TrueNAS
+* SMART monitoring is handled through dedicated applications or user-managed scripts
+* TrueNAS continues to monitor critical disk health indicators automatically
+* The underlying smartmontools binaries remain installed and functional
+
+#### Why This Changed
+
+This transition addresses several limitations of the previous implementation:
+
+1. Modern Storage Realities: SMART testing is less relevant for SSDs and NVMe drives, which represent an increasing percentage of deployments. These devices have their own health monitoring mechanisms that don't rely on traditional SMART tests.
+
+2. Flexibility: The previous built-in system was restrictive and difficult to customize for advanced users who needed specialized monitoring configurations.
+
+3. Reliability: The integrated SMART test scheduler had persistent bugs and maintenance challenges that affected user experience. Scheduled tests could produce false positives and were difficult to troubleshoot.
+
+4. Better Tools Available: Dedicated monitoring applications like Scrutiny provide superior disk health tracking with historical data storage, customizable alerts, and automatic drive detection—capabilities that would be difficult to integrate directly into TrueNAS.
+
+#### What You Need to Do
+
+##### For most users:
+
+Install the **Scrutiny** app from the TrueNAS Apps catalog for comprehensive disk health monitoring. Scrutiny provides:
+
+* Automatic detection of all system drives
+* Historical SMART data tracking and visualization
+* Customizable alert thresholds
+* Regular automated SMART test scheduling
+* Web-based dashboard for monitoring disk health
+
+See the [Scrutiny app documentation](https://apps.truenas.com/catalog/scrutiny/) for installation and configuration resources.
+
+##### For users who had scheduled SMART tests:
+
+TrueNAS automatically migrates existing scheduled SMART tests to cron tasks during the 25.10 upgrade. These cron tasks preserve your existing test schedules and continue running SMART tests at the same intervals.
+
+After upgrading to 25.10, you can view and manage these migrated SMART tests by going to **System > Advanced Settings > Cron Jobs**.
+
+{{< trueimage src="/images/SCALE/SystemSettings/CronJobsSmartTest.png" alt="Migrated SMART Test Cron Job" id="Migrated SMART Test Cron Job" >}}
+
+You can edit, disable, or delete these cron jobs just like any other cron task. If you install Scrutiny or another monitoring solution, you may want to disable these migrated cron jobs to avoid duplicate test scheduling.
+
+##### For advanced users with custom monitoring:
+
+The smartmontools binaries (`smartctl`, `smartd`) remain installed in the base system and continue to function normally. Any existing scripts or third-party monitoring tools that directly invoke smartctl continue to work without modification.
+
+#### What TrueNAS Still Monitors Automatically
+
+TrueNAS continues to automatically monitor critical disk health indicators including:
+
+* Uncorrected read, write, and verify errors
+* SMART self-test failures
+* Critical SMART attributes that indicate imminent drive failure
+* Drive temperatures using the enhanced `drivetemp` kernel module
+
+These automatic alerts ensure that critical disk health issues are reported even without additional monitoring applications installed.
+
+#### Temperature Monitoring Improvements
+
+TrueNAS 25.10 enhances drive temperature monitoring by extending the `drivetemp` kernel module to include SCSI/SAS disk temperatures. This provides more efficient and reliable temperature reporting across all drive types without requiring periodic SMART polling.
 
   </div>
 
