@@ -17,7 +17,7 @@ keywords:
 - storage provisioning
 ---
 
-The **Storage Dashboard** widgets provide enhanced storage provisioning capabilities and access to pool management options to keep the pool and disks healthy, upgrade pools and VDEVs, open datasets, snapshots, data protection screens, and manage S.M.A.R.T. tests.
+The **Storage Dashboard** widgets provide enhanced storage provisioning capabilities and access to pool management options to keep the pool and disks healthy, upgrade pools and VDEVs, open datasets, snapshots, and data protection screens.
 This article provides instructions on pool management functions available in the TrueNAS UI.
 
 {{< trueimage src="/images/SCALE/Storage/StorageDashboardWithPool.png" alt="Storage Dashboard with Pool" id="Storage Dashboard with Pool" >}}

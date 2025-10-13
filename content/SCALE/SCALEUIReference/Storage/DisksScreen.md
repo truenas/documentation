@@ -9,7 +9,6 @@ aliases:
  - /scale/scaleclireference/storage/clidisk/
 tags:
  - disks
- - smart
  - pools
  - storage
 ---
@@ -19,7 +18,7 @@ The list includes the names, serial numbers, sizes, and pools for each system di
 
 {{< trueimage src="/images/SCALE/Storage/DisksScreen.png" alt="Disks Screen" id="Disks Screen" >}}
 
-Use the **Columns** dropdown list to select options to customize disk the information displayed.
+Use the **Columns** dropdown list to select options to customize the information displayed.
 Options are **Select All**, **Name**, **Serial** (the disk serial number), **Disk Size**, **Pool** (where the disk is in use), **Disk Type**, **Description**, **Model**, **Transfer Mode**, **Rotation Rate (RPM)**, **HDD Standby**, **Adv. Power Management**, and **Reset to Defaults**.
 Each option displays the information you enter in the **Edit Disk** screen or when you install the disk.
 
@@ -31,13 +30,13 @@ The checkbox at the top of the table selects all disks in the system. Select aga
 ## Disks Screen - Expanded Disk
 
 Click anywhere on a disk row to expand it and show the traits specific to that disk and available options.
-The expanded view of a disk includes details for the disk and options to edit disk properties, run a SMART test and view the test results, and, in some instances, the ability to wipe the disk.
+The expanded view of a disk includes details for the disk, options to edit disk properties, and, in some instances, the ability to wipe the disk.
 
 {{< trueimage src="/images/SCALE/Storage/DiskScreenExpandedDiskWithWipeOption.png" alt="Disk Details" id="Disk Details" >}}
 
 **Edit** opens the **[Edit Disk](#edit-disk-screen)** screen.
 
-If a disk is not assoicated with a pool and is inactive, the **Wipe** option shows.
+If a disk is not associated with a pool and is inactive, the **Wipe** option shows.
 **Wipe** opens the **[Wipe Disk](#wipe-disk-dialogs)** dialog.
 
 ### Batch Operations
@@ -67,7 +66,7 @@ The screen lists the device names for each selected disk in the **Disks to be ed
 ### Wipe Disk Dialogs
 
 The option to wipe a disk only displays when a disk is not assigned to a pool and is not in use.
-**Wipe** opens three dialogs, one to select the method, a confirmation dialog, and a progress dialog that includes the option to abort the process.
+**Wipe** opens three dialogs: one to select the method, a confirmation dialog, and a progress dialog that includes the option to abort the process.
 
 The **Wipe Disk *diskname*** opens after clicking **Wipe** on the expanded view of a disk on the **Disks** screen.
 
@@ -89,7 +88,7 @@ See [Wiping Disks]({{< ref "WipingDisks" >}}) for more information.
 **Close** closes the dialog and returns you to the **Disks** screen.
 
 ## Edit Disk Screen
-The **Edit Disk** screen allows users to configure and manage general disk, power management, temperature alert, S.M.A.R.T., and SED settings for system disks not assigned to a pool.
+The **Edit Disk** screen allows users to configure and manage general disk, power management, and SED settings for system disks not assigned to a pool.
 
 {{< trueimage src="/images/SCALE/Storage/EditDiskScreen.png" alt="Edit Disk Screen" id="Edit Disk Screen" >}}
 
