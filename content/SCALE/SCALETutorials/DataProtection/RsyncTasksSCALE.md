@@ -57,8 +57,6 @@ Add an SSH connection for the remote server on the local TrueNAS host system.
 
 TrueNAS allows configuring multiple admin users on the system. All admin users configured in the TrueNAS system show in the rsync task **User** dropdown list.
 
-{{< /expand >}}
-
 ## Adding an Rsync Task Using SSH
 
 Enabled SSH on both the local host TrueNAS, and the remote destination system.
