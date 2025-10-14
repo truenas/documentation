@@ -331,13 +331,9 @@ This transition addresses several limitations of the previous implementation:
 
 ##### For most users:
 
-Install the **Scrutiny** app from the TrueNAS Apps catalog for comprehensive disk health monitoring. Scrutiny provides:
+Install the **Scrutiny** app from the TrueNAS Apps catalog for comprehensive disk health monitoring. Scrutiny automatically detects all system drives and provides a clean, modern web interface that displays SMART status, temperature, capacity, and power-on time for all drives at a glance, along with historical data tracking, customizable alert thresholds, and automated SMART test scheduling.
 
-* Automatic detection of all system drives
-* Historical SMART data tracking and visualization
-* Customizable alert thresholds
-* Regular automated SMART test scheduling
-* Web-based dashboard for monitoring disk health
+{{< trueimage src="/images/SCALE/Apps/ScrutinyDiskHealthScreenshot.png" alt="Scrutiny Dashboard" id="Scrutiny Dashboard showing disk health monitoring" >}}
 
 See the [Scrutiny app documentation](https://apps.truenas.com/catalog/scrutiny/) for installation and configuration resources.
 
@@ -369,6 +365,15 @@ These automatic alerts ensure that critical disk health issues are reported even
 #### Temperature Monitoring Improvements
 
 TrueNAS 25.10 enhances drive temperature monitoring by extending the `drivetemp` kernel module to include SCSI/SAS disk temperatures. This provides more efficient and reliable temperature reporting across all drive types without requiring periodic SMART polling.
+
+#### Disk Health Widget
+
+TrueNAS 25.10 integrates disk monitoring options into the **[Disk Health]({{< ref "/SCALEUIReference/Storage/_index.md#disk-health-widget" >}})** widget on the **Storage Dashboard**, providing quick access to temperature monitoring and disk performance metrics without requiring SMART test scheduling.
+
+The widget displays disk temperature-related alerts, highest, lowest, and average disk temperatures across all drives, and provides quick access to detailed monitoring:
+
+* **View Disks** opens the **Storage > [Disks]({{< ref "DisksScreen" >}})** screen.
+* **View Disk Reports** opens the **[Reporting > Disk]({{< ref "/SCALEUIReference/ReportingScreensSCALE.md#disk-graphs" >}})** screen where you can view historical disk I/O performance and temperature data for individual disks or groups of disks.
 
   </div>
 
