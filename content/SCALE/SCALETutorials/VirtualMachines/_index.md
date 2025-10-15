@@ -51,7 +51,7 @@ If you have not yet added a virtual machine to your system, clicking **Add Virtu
 
    c. (Optional) Enter a description for the VM. This can be any short text string describing how the VM is used or which operating system is configured.
 
-   d. (Optional) Change the default settings in **System Clock** and **Boot Method** to suit your use case. 
+   d. (Optional) Change the default settings in **System Clock** and **Boot Method** to suit your use case.
       Select **UTC** as the VM system time from the **System Clock** dropdown if you do not want to use the default **Local** setting.
       Select **UEFI** from the **Boot Method** dropdown, unless using an older OS that requires **Legacy BIOS**.
 
@@ -59,13 +59,13 @@ If you have not yet added a virtual machine to your system, clicking **Add Virtu
       This security feature prevents unauthorized or malicious code from running during the boot process by checking digital signatures against trusted certificates.
       Secure Boot is required for Windows 11 and some Linux distributions, and can be optional or unsupported for older operating systems.
       Secure boot is only available from the VM creation wizard.
-      
+
    f. (Optional) Select **Enable Trusted Platform Module (TPM)** to provide a virtual TPM 2.0 device for the VM.
       TPM provides hardware-based security functions, including secure key storage, cryptographic operations, and platform attestation.
       This is required for Windows 11 and enhances security for other operating systems that support TPM.
 
    g. (Optional) Select **Start on Boot** to start the VM after the system is restarted or boots up.
-   
+
    h. (Optional) Select **Enable Display (VNC)** to enable a Virtual Network Computing (VNC) remote connection for the VM.
       **Enable Display (VNC)** shows the **Bind** and **Password** fields.
 
@@ -119,8 +119,8 @@ If you have not yet added a virtual machine to your system, clicking **Add Virtu
 
    {{< trueimage src="/images/SCALE/Virtualization/CreateVirtualMachinesNetworkInterfaceSettings.png" alt="Network Interface Settings" id="Network Interface Settings" >}}
 
-   Select the network interface type from the **Adapter Type** dropdown list. Select **Intel e82585 (e1000)** as it offers a higher level of compatibility with most operating systems. 
-   
+   Select the network interface type from the **Adapter Type** dropdown list. Select **Intel e82585 (e1000)** as it offers a higher level of compatibility with most operating systems.
+
    Select **VirtIO** if the guest operating system supports para-virtualized network drivers.
    The **VirtIO** network interface requires a guest OS that supports VirtIO para-virtualized network drivers.
 

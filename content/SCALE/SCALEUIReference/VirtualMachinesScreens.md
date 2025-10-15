@@ -46,7 +46,7 @@ When a VM is placed in a suspended state, the options shown on the VM details sc
 | **Restart** | <span class="material-icons">replay</span> | Stops then starts the VM. Shows for a running VM. |
 | **Power Off** | <span class="material-icons">power_settings_new</span> | Shows after starting a VM. Powers off and halts the VM, similar to turning off a computer power switch. Shows only when the VM is running. |
 | **Resume** | Shows when a VM is placed in a suspended state. The VM resumes operation and returns to the normal Running state.  |
-| **Stop** | <i class="material-icons" aria-hidden="true" title="Stop">stop</i> | Shows after starging a VM. Stops a running VM. Virtual machines do not always respond to **STOP** or the command might time out if the VM does not have an OS. Use **Power Off** instead. **Stop** toggles to **Start** after the VM stops. |
+| **Stop** | <i class="material-icons" aria-hidden="true" title="Stop">stop</i> | Shows after starting a VM. Stops a running VM. Virtual machines do not always respond to **STOP** or the command might time out if the VM does not have an OS. Use **Power Off** instead. **Stop** toggles to **Start** after the VM stops. |
 | **Edit** | <span class="material-icons">mode_edit</span> | Opens the **[Edit Virtual Machine](#edit-virtual-machine-screen)** with editable VM settings. You cannot edit a VM while it is running. Stop the VM to edit the properties and settings. |
 | **Delete** | <i class="material-icons" aria-hidden="true" title="Delete">delete</i> | Deletes a VM and removes it from the system. Opens a [delete dialog](#delete-virtual-machine-dialog). You cannot delete a virtual machine that is running. Stop the VM to delete it. |
 | **Devices** | <i class="material-icons" aria-hidden="true" title="Devices">device_hub</i> | Shows after starting a VM. Opens the **[Virtual Machine Devices](#devices-screens)** screen for the selected VM. |
@@ -229,7 +229,7 @@ The **Network Interface** settings specify the network adapter type, MAC address
 
 The **Installation Media** settings specify the location of the operating system installation media image in a TrueNAS dataset, or you can upload a copy from the local machine.
 
-{{< trueimage src="/images/SCALE/Virtualization/CreateVirtualMachineInstallationMediaSettings.png" alt="Installation Medi Settings" id="Installation Media Settings" >}}
+{{< trueimage src="/images/SCALE/Virtualization/CreateVirtualMachineInstallationMediaSettings.png" alt="Installation Media Settings" id="Installation Media Settings" >}}
 
 {{< expand "Installation Media Settings" "v" >}}
 {{< truetable >}}
@@ -303,7 +303,7 @@ VM network interface card settings show when **Device Type** is set to **NIC**.
 {{< expand "Disk Settings" "v" >}}
 Disk settings, including disk location, drive type, and disk sector size, show when **Device Type** is set to **Disk**.
 A disk device has four options: **Edit**, **Delete**, **Details**, and **Export to Image**.
-**Export to Image** opens the [**Export Disk to Image**]() window.
+**Export to Image** opens the [**Export Disk to Image**](#export-disk-to-image-window) window.
 
 {{< trueimage src="/images/SCALE/Virtualization/VMAddDeviceDisk.png" alt="Add Device - Disk" id="Add Device - Disk" >}}
 
@@ -363,7 +363,7 @@ If this occurs, determine if you want to proceed with this action.
 
 {{< trueimage src="/images/SCALE/Virtualization/VMAddDevicePCIpass.png" alt="Add Device - PCI Passthrough" id="Add Device - PCI Passthrough" >}}
 
-**PCI Passthrough Device** sets the PCI device to what is manually entered or select on the dropdown list of options. Enter a device as *bus#/slot#/fcn#*, for example *0000:00:04.3 'System peripheral': Sky Lake-E CBDMA Registers by 'Intel Corporation'*. 
+**PCI Passthrough Device** sets the PCI device to what is manually entered or select on the dropdown list of options. Enter a device as *bus#/slot#/fcn#*, for example *0000:00:04.3 'System peripheral': Sky Lake-E CBDMA Registers by 'Intel Corporation'*.
 {{< /expand >}}
 
 {{< expand "USB Passthrough Settings" "v" >}}
@@ -383,7 +383,7 @@ Shows the USB passthrough device setting when **Device Type** is set to **USB Pa
 
 The **Export Disk to Image** window shows a file browser and other settings to export the selected disk to create a VM disk image that you can then specify later as a zvol for use by a VM. It is accessed from a disk device on the **Devices** screen.
 
-{{< trueimage src="/images/SCALE/Virtualization/ExportDiskToImageWindow.png" alt="Export Disk to Image" id="Exort Disk to Image" >}}
+{{< trueimage src="/images/SCALE/Virtualization/ExportDiskToImageWindow.png" alt="Export Disk to Image" id="Export Disk to Image" >}}
 
 {{< truetable >}}
 | Setting | Description |
@@ -392,6 +392,5 @@ The **Export Disk to Image** window shows a file browser and other settings to e
 | **Image Name** | Show the name for the exported image file. The appropriate extension is added automatically based on the format selected in **Image Format**. |
 | **Image Format** | Sets the type of image created and adds the file extension the name in **Image Name**. Options are: <br><li>**QCOW2 - QEMU Copy On Write** <br><li>**QED - QUEM Enhanced Disk** <br><li>**RAW - Raw Disk Image** <br><li>**VDI - Virtual Box Disk**, which is the default for disks in TrueNAS VM. <br><li>**VHDX - Hyper-V Virtual Hard Disk** <br><li>**VMDX - VMware Virtual Machine Disk**</li> |
 {{< /truetable >}}
-
 
 {{<include file="/static/includes/addcolumnorganizer.md">}}

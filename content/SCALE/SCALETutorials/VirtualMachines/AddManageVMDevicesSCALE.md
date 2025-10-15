@@ -42,7 +42,7 @@ Click *Edit** to open the **Edit Device** screen.
 The screen settings change based on the device type selected.
 For example, when editing a disk (example provided below), you can change the type of virtual hard disk, the storage volume to use, or change the boot order for the device.
 
-Stop the VM on the **Virtual Machines** screen, click on **Devices** to open the **Devices** screen for that VM, and then clik **Edit**.
+Stop the VM on the **Virtual Machines** screen, click on **Devices** to open the **Devices** screen for that VM, and then click **Edit**.
 The procedure below describes editing a disk device.
 Steps below are optional. Change them based on your use case.
 
@@ -57,10 +57,10 @@ Steps below are optional. Change them based on your use case.
 4. (Optional) Enter a number that reflects the boot order or priority level in **Device Order**.
    Setting this value to **1000** puts the disk device in the boot order first position.
    When first installing or changing an OS added to the **CD-ROM** device, the CD-ROM is assigned **1000** to boot up from and install an OS.
-   After installing the OS, change the boot order for the CD-ROM to a lower boot order so you don't keep booting into an installer and to run the OS in the VM. 
+   After installing the OS, change the boot order for the CD-ROM to a lower boot order so you don't keep booting into an installer and to run the OS in the VM.
    The lower the number, the higher the priority in the boot sequence.
 5. Click **Save**.
-4. Click on the **Virtual Machines** breadcrumb at the top of the screen to return to the **Virtual Machines** screen. Click on the VM to expand it and restart it.
+6. Click on the **Virtual Machines** breadcrumb at the top of the screen to return to the **Virtual Machines** screen. Click on the VM to expand it and restart it.
 
 {{< expand "To edit display type or bind address after creating a VM" "v" >}}
 Go to **Virtual Machines**, locate the VM you want to modify, and click on it to expand it.
@@ -70,13 +70,13 @@ Select the IP address or other option on the **Bind** dropdown.
 
 You can assign a port number to your display device or use the default port number associated with the device.
 
-You can add a second display device to have a VNC and SPICE display assoicated with the VM, but only one display device can be active at one time.
+You can add a second display device to have a VNC and SPICE display associated with the VM, but only one display device can be active at one time.
 Adding a second display device assigns a different default port number to the second display device.
 {{< /expand >}}
 
 ### Deleting a Device
 
-Deleting a device removes it from the list of available devices for the selected VM. 
+Deleting a device removes it from the list of available devices for the selected VM.
 
 To delete a device:
 
@@ -112,7 +112,7 @@ After stopping the VM and clicking **Devices** to open the **Devices** screen:
    {{< trueimage src="/images/SCALE/Virtualization/VMAddDeviceCDROM.png" alt="Devices Add CD-ROM Type" id="Devices Add CD-ROM Type" >}}
 
 2. Enter or browse to select the mount path to the CD-ROM device.
-   Click on the <i class="fa fa-caret-right" aria-hidden="true"></i> to the left of **/mnt** to expand or collapse the directory tree. 
+   Click on the <i class="fa fa-caret-right" aria-hidden="true"></i> to the left of **/mnt** to expand or collapse the directory tree.
 3. Enter a new number that represents where in the boot sequence you want to place this device in **Device Order**.
 4. Enter a new number that represents where in the boot sequence you want to place this device in **Device Order**.
    The lower the number, the higher the device is in the boot sequence.
@@ -167,7 +167,7 @@ After stopping the VM and clicking **Devices** to open the **Devices** screen:
 
 1. Click on the <span class="material-icons">more_vert</span> icon to the right of the disk device and then click **Export to Image** to open the **Export Disk to Image** window.
 
-   {{< trueimage src="/images/SCALE/Virtualization/ExportDiskToImageWindow.png" alt="Export Disk to Image" id="Exort Disk to Image" >}}
+   {{< trueimage src="/images/SCALE/Virtualization/ExportDiskToImageWindow.png" alt="Export Disk to Image" id="Export Disk to Image" >}}
 
 2. Browse to select the dataset/directory using the file browser, click on the dataset/directory to select it, and populate the mount path field.
 3. Select the image format from the **Image Format** dropdown list. Selecting the format adds the extension to the image name in **Image Name**.
