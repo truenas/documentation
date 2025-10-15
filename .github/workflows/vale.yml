@@ -6,6 +6,7 @@ on:
       - '**/*.md'
       - '**/*.txt'
       - '.vale.ini'
+      - 'styles/**'
       - 'Styles/**'
       - '.github/workflows/vale.yml'
 
@@ -28,6 +29,12 @@ jobs:
           files: |
             **/*.md
             **/*.txt
+          files_ignore: |
+            Styles/**
+            styles/**
+            scripts/**
+            words-to-ignore.txt
+            **/cleanup_log.txt
           separator: " "
           base_sha: ${{ github.event.pull_request.base.sha }}
 
@@ -57,8 +64,8 @@ jobs:
             });
             
             for (const comment of comments) {
-              if (comment.body.includes('## Vale Style Guide Issues') && 
-                  !comment.body.includes('(Previous)') && 
+              if (comment.body.includes('## Vale Style Guide Issues') &&
+                  !comment.body.startsWith('<details>') &&
                   comment.user.login === 'github-actions[bot]') {
                 try {
                   const collapsedBody = '<details>\n<summary>Vale Style Guide Issues (Previous - Click to expand)</summary>\n\n' + comment.body + '\n\n</details>';
@@ -238,25 +245,14 @@ jobs:
                     if (normalizedMessage.includes('first-person plural') || normalizedMessage.includes("Avoid using 'we")) {
                       normalizedMessage = 'Avoid using first-person plural (we, us, our)';
                     }
-                    
-                    // Normalize contraction messages
-                    if (normalizedMessage.includes('Avoid contractions') || 
-                        normalizedMessage.includes('instead of') ||
-                        normalizedMessage.includes("can't") ||
-                        normalizedMessage.includes("won't") ||
-                        normalizedMessage.includes("we're") ||
-                        normalizedMessage.includes("don't")) {
-                      normalizedMessage = 'Avoid contractions in formal writing';
-                    }
-                    
+
                     // Normalize number spelling messages
                     if (normalizedMessage.match(/Use '\d+' instead of/)) {
                       normalizedMessage = 'Use numerals instead of spelled-out numbers';
                     }
                     
                     // For certain message types, ignore severity differences and group together
-                    const ignoreSeverityForGrouping = normalizedMessage.includes('Avoid contractions') ||
-                                                     normalizedMessage.includes('Use active voice') ||
+                    const ignoreSeverityForGrouping = normalizedMessage.includes('Use active voice') ||
                                                      normalizedMessage.includes('first-person plural');
                     
                     const key = ignoreSeverityForGrouping ? normalizedMessage : `${issue.Severity}:${normalizedMessage}`;
