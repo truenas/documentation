@@ -33,6 +33,7 @@ Use the **Password Login Groups** and **Allow Password Authentication** settings
 Click **Save**. Select **Start Automatically** and enable the SSH service.
 
 ## Configuring Advanced SSH Settings
+
 If your configuration requires more advanced settings, click **Advanced Settings**.
 The basic options continue to display above the **Advanced Settings** screen.
 Configure the options as needed to match your network environment.
@@ -95,7 +96,7 @@ TrueNAS shows an error if users activate Global 2FA (Two-Factor Authentication) 
 Open an FTP client (like FileZilla) or command line.
 This article shows using FileZilla as an example.
 
-Using FileZilla, enter `SFTP://{TrueNAS IP} {username} {password} {port 22}`. Where {TrueNAS IP} is the IP address for your TrueNAS system, {username} is the administrator login user name, and {password} is the adminstrator password, and {port 22} to connect.
+Using FileZilla, enter `SFTP://{TrueNAS IP} {username} {password} {port 22}`. Where {TrueNAS IP} is the IP address for your TrueNAS system, {username} is the administrator login user name, and {password} is the administrator password, and {port 22} to connect.
 
 {{< hint type=important >}}
 SFTP does not offer chroot locking.

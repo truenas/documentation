@@ -32,7 +32,8 @@ TrueNAS has three predefined admin user account levels:
 For more information on the different administrator scenarios users can encounter, read [Logging In for the First Time]({{< ref "FirstTimeLogin" >}}).
 
 ## Changing Administrator Account Passwords
-Adminstrator passwords can be changed on the **Edit User** screen or, if currently logged in as that admin user, by clicking the **Settings** <span class="material-icons">account_circle</span> icon on the top toolbar and clicking **Change Password**.
+
+Administrator passwords can be changed on the **Edit User** screen or, if currently logged in as that admin user, by clicking the **Settings** <span class="material-icons">account_circle</span> icon on the top toolbar and clicking **Change Password**.
 
 {{< include file="/static/includes/ChangeLoggedInUserPassword.md" >}}
 
@@ -83,7 +84,7 @@ Disabling a password for UI login also disables it for SSH access.
 
 To enable SSH access to the system as an admin user (or root user), you must first configure the SSH service.
 
-1. Go to **System > Services**, then click <span class="iconify" data-icon="mdi:pencil"></span> (**Edit**) for the SSH service.
+1. Go to **System > Services**, then click **Edit** for the SSH service.
 
 2. Enter the groups (**truenas_admin**, **root**, etc.) you want to enable for password authentication in the **Password Login Groups** field.
 
@@ -93,11 +94,11 @@ To enable SSH access to the system as an admin user (or root user), you must fir
 
 Now you must verify the user configuration options to allow SSH access.
 
-### Using the Root User in SSH 
+### Using the Root User in SSH
 
-If you want to SSH into the system as the root: 
+If you want to SSH into the system as the root:
 
-1. Go to **Credentials > Users** and click the root user, then click <span class="iconify" data-icon="mdi:pencil"></span> (**Edit**).
+1. Go to **Credentials > Users** and click the root user, then click **Edit**.
 
 2. Make sure **Disable Pasword** is disabled. If the root user has **Disable Password** enabled, you cannot use it to gain SSH access to the system.
 
@@ -107,13 +108,15 @@ If you want to SSH into the system as the root:
 
 To allow an admin user to issue commands in an SSH session:
 
-1. Go to **Credentials > Users**, click the admin user, then click <span class="iconify" data-icon="mdi:pencil"></span> (**Edit**).
+1. Go to **Credentials > Users**, click the admin user, then click **Edit**.
 
-2. Enable **SSH password login enabled** under **Authentication**.
+2. Select **SSH Access**.
 
-3. Click **Save**. 
+3. Enable **SSH password login enabled** under **Authentication**.
 
-4. Disable this after completing the SSH session to return to a security-hardened system.
+4. Click **Save**.
+
+5. Disable this after completing the SSH session to return to a security-hardened system.
 
 {{< include file="/static/includes/SSHUserValidationCheck.md" >}}
 

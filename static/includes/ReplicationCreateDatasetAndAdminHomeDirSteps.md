@@ -25,7 +25,7 @@ To create a replication task:
 
    {{< trueimage src="/images/SCALE/Credentials/ChangeAdminUserHomeDirectorySetting.png" alt="Home Directory Settings Early Bluefin" id="Home Directory Settings Early Bluefin" >}}
 
-   For more information, follow the instructions in [Adding Home Directories]({{< ref "ManageUsersSCALE" >}}) to create the home directory for the admin user.
+   For more information, follow the instructions in [Adding Home Directories]({{< ref "ManageUsers" >}}) to create the home directory for the admin user.
 
    b. Select the sudo permission level you want the admin user to have.
       **Allow all sudo commands with no password** must be selected to enable SSH+NETCAT remote replication.

@@ -18,7 +18,8 @@ keywords:
 The **Push** function copies data from TrueNAS to a remote system.
 The **Pull** function copies data from a remote system to the TrueNAS local host system and stores it in the dataset defined in the **Path** field.
 
-There are two ways to connect to a remote system and run an rsync task: 
+There are two ways to connect to a remote system and run an rsync task:
+
 * Set up an [SSH connection](#configuring-ssh-mode-rsync-tasks) to the remote server.
 * Set up an [rsync module](#configuring-module-mode-rsync-tasks) for the remote server.
 
@@ -38,7 +39,7 @@ Setting options change based on the SSH connection option selected.
 
 Set up a home directory for the remote system administrator on the remote system.
 Note the path to where home directories are stored to enter on the local host TrueNAS.
-   
+
 If the remote system is also a TrueNAS, go to **Credentials**, select **Users** to see the list of users.
 Select the administration user and click **Edit**.
 
@@ -46,7 +47,7 @@ If creating a new administration user for rsync functions, click **Add**.
 See [Managing Users]({{< ref "manageusers/#creating-an-administrator-user-account" >}}) for more information.
 Take note of the path to the home directory to use in setting up the connection.
 
-Add an SSH connection for the remote server on the local TrueNAS host system. 
+Add an SSH connection for the remote server on the local TrueNAS host system.
 
 {{< expand "Adding a remote TrueNAS system" "v" >}}
 
@@ -55,8 +56,6 @@ Add an SSH connection for the remote server on the local TrueNAS host system.
 {{< /expand >}}
 
 TrueNAS allows configuring multiple admin users on the system. All admin users configured in the TrueNAS system show in the rsync task **User** dropdown list.
-
-See [Adding SSH Credentials]({{< ref "AddSSHConnectionKeyPair" >}}) for more information on keypairs.
 
 ## Adding an Rsync Task Using SSH
 

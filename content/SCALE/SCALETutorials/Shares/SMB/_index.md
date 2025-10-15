@@ -124,10 +124,10 @@ TrueNAS creates the ZFS dataset with these settings:
 * **ACL Mode** set to **Restricted**
    The **ACL Type** influences the **ACL Mode** setting. When **ACL Type** is set to **Inherit**, you cannot change the **ACL Mode** setting.
    When **ACL Type** is set to **NFSv4**, you can change the **ACL Mode** to **Restricted**.
-   
+
    {{< hint type=note >}}
-   For datasets with **NFSv4** ACL type, SMB clients automatically use access-based enumeration. 
-   This means directory listings over SMB only include files and directories for which the client has read permissions. 
+   For datasets with **NFSv4** ACL type, SMB clients automatically use access-based enumeration.
+   This means directory listings over SMB only include files and directories for which the client has read permissions.
    This behavior is enabled by default and matches FreeBSD behavior.
    {{< /hint >}}
 
@@ -233,7 +233,7 @@ If the share is nested under parent datasets, see [Using the Traverse Permission
 To prohibit writes to the share, select **Export Read-Only**.
 
 Select **Access Based Share Enumeration** to restrict share visibility for users with read or write access to the share.
-This setting applies to datasets with a POSIX ACL type. 
+This setting applies to datasets with a POSIX ACL type.
 For datasets with NFSv4 ACL type, access-based enumeration is automatically enabled and does not allow disabling.
 See the [smb.conf](https://www.samba.org/samba/docs/current/man-html/smb.conf.5.html) manual page.
 {{< /expand >}}
@@ -251,6 +251,7 @@ You can find a more detailed description with examples [here](https://www.samba.
 Use the **Hosts Deny** field to enter a list of denied host names or IP addresses. Separate entries by pressing <kbd>Enter</kbd>.
 
 **Hosts Allow** and **Hosts Deny** work together to produce different situations:
+
 * Leaving both **Hosts Allow** and **Hosts Deny** free of entries allows any host to access the SMB share.
 * Adding entries to the **Hosts Allow** list but not the **Hosts Deny** list allows only the hosts on the **Hosts Allow** list to access the share.
 * Adding entries to the **Hosts Deny** list but not the **Hosts Allow** list allows all hosts not on the **Hosts Deny** list to access the share.
@@ -355,6 +356,7 @@ Open the command line and run the following command with the appropriate drive l
 <code>net use <i>Z</i>: &bsol;&bsol;<i>TrueNAS_name</i>&bsol;<i>share_name</i> /PERSISTENT:YES</code>
 
 Where:
+
 * *Z* is the drive letter to map to TrueNAS and the share
 * *TrueNAS_name* is either the host name or the system IP address
 * *share_name* is the name given to the SMB share
