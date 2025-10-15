@@ -96,6 +96,7 @@ You might be able to access the web UI using a `hostname.domain` command at the 
 * Is on a network that supports Multicast DNS (mDNS).
 
 ## Console Setup Menu Network Settings
+
 You can either use TrueNAS UI or the Console Setup menu to configure your network settings for the primary network interface or other interfaces such as a link aggregate (LAGG) or virtual LAN (VLAN), or aliases for an interface, and to configure other network settings such as the default gateway, host name, domain, and the DNS name servers, or add static routes.
 
 {{< include file="/static/includes/UsingConsoleSetupMenuSCALE.md" >}}
@@ -126,12 +127,13 @@ Enter <kbd>3</kbd> to display the **Static Route Settings** screen to set up sta
 {{< include file="/static/includes/AliasOrStaticIP.md" >}}
 
 ### Configuring Required Network Settings
+
 {{< include file="/static/includes/DHCPCreatedNetwork.md" >}}
 
 To use the Console Setup menu to change the network interface IP address:
 1. Type <kbd>1</kbd> and then press <kbd>Enter</kbd> to open the **Configure Network Interfaces** screen.
 2. Use either <kbd>Tab</kbd> or the arrow keys to select the interface to use as your primary network interface if you have more than one interface installed and wired to your network.
-4. Enter in the IP address, then use either <kbd>Tab</kbd> or the arrow keys to move through the menu and down to select **Save**, and then press <kbd>Enter</kbd>.
+3. Enter in the IP address, then use either <kbd>Tab</kbd> or the arrow keys to move through the menu and down to select **Save**, and then press <kbd>Enter</kbd>.
 After saving, enter <kbd>q</kbd> to return to the main Console Setup menu.
 
 To configure the default gateway, host name, domain and DNS name severs using the Console Setup menu type <kbd>2</kbd> and then press <kbd>Enter</kbd> to open the **Network Settings** screen.
@@ -140,6 +142,7 @@ To configure network settings in the TrueNAS UI, enter the IP address displayed 
 Log in with the admin user name and password set for the administration user during the <file>iso</file> installation process, and then go to **Network** to edit an interface or global network configuration settings.
 
 #### Configuring Home User Network Settings
+
 Home users have a few options to allow Internet access using TrueNAS:
 
 * Use 8.8.8.8 as the DNS nameserver address
@@ -148,6 +151,7 @@ Home users have a few options to allow Internet access using TrueNAS:
 * Use 9.9.9.9 for [Quad9](https://www.quad9.net/)
 
 ## Changing the Administrator Password
+
 TrueNAS has implemented administrator account logins as replacements for the root user.
 The truenas_admin user account is the default account, and the root password is now disabled by default.
 If you migrate from FreeBSD- to Linux-based TrueNAS releases and need to upload the previous system configuration file, the root user password is not disabled but you must recreate the truenas_admin (or an admin) user account and disable the root password to comply with FIPS-compliance standards and security hardening practices.
@@ -167,6 +171,7 @@ Immediately go to the **Credentials > Local User** screen, select the admin user
 {{< /hint >}}
 
 ## Resetting the System Configuration
+
 {{< hint type=warning >}}
 **Caution!**
 Resetting the configuration deletes all settings and reverts TrueNAS to default settings.
@@ -177,6 +182,7 @@ After the system resets and restarts, you can go to **Storage** and click **Impo
 Enter **5** in the Console Setup menu, then enter <kbd>y</kbd> to reset the system configuration. The system restarts and reverts to default settings.
 
 ## Completing your System Setup
+
 After setting up network requirements, log into the web UI to complete your system setup by:
 
 * [Completing network configuration] ({{< ref "/SCALE/SCALETutorials/Network" >}}) if not already set up using the Console Setup menu.
