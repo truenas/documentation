@@ -32,6 +32,6 @@ For more information, see the [Managing Global 2FA]({{< ref "ManageGlobal2FASCAL
 
 {{< trueimage src="/images/SCALE/Credentials/2FARenewSecretDialog.png" alt="2FA Renew Secret" id="Renew Secret Dialog" >}}
 
-**Unset 2FA Secret** removes the user's configured 2FA secret. This action displays a confirmation dialog before proceeding.
+**Unset 2FA Secret** removes the configured 2FA secret. This action displays a confirmation dialog before proceeding.
 
 {{< trueimage src="/images/SCALE/Credentials/Unset2FA.png" alt="2FA Unset Dialog" id="2FA Unset Dialog" >}}
