@@ -158,7 +158,7 @@ Both the earlier **admin** and new **truenas_admin** accounts have the same perm
 You can change the admin user password in the UI or from the Console Setup menu.
 You can set and enable the root user password in the UI, but for security hardening, we recommend leaving it disabled.
 
-Changing an admin user (or root if you have not created the admin user) password disables 2FA (Two-Factor Authentication).
+Changing an admin user (or root if you have not created the admin user) password unsets the 2FA (Two-Factor Authentication) secret for that user.
 
 {{< hint type=important >}}
 Disabling a password in the UI prevents the user from logging in with it.

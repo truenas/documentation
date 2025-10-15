@@ -145,8 +145,17 @@ Configure session timeout in seconds to limit how long TrueNAS remains logged in
 #### Configure Two Factor Authentication
 
 Two Factor Authentication adds a second level of security to log-in access.
-TrueNAS provides the option to force two-factor authentication for all users wanting to log into the web UI.
-A separate option allows requiring two-factor authentication to log into an SSH session.
+TrueNAS provides the option to enable two-factor authentication globally, which prompts users to set up 2FA for the web UI.
+A separate option allows requiring two-factor authentication to log into an SSH session for users who configured a 2FA secret.
+
+{{< hint type=important >}}
+**STIG Mode Exception:** In GPOS STIG compatibility mode, 2FA for UI access is mandatory for all users. In standard mode, users can skip 2FA setup and log in without it.
+{{< /hint >}}
+
+When global 2FA is enabled in standard (non-STIG) mode:
+* Users with a configured 2FA secret must provide the 2FA code to log in to the UI
+* Users without a configured 2FA secret can log in without 2FA but are prompted once per session to set it up
+* SSH 2FA only applies to users who configured a 2FA secret and are using password-based authentication
 
 See [Managing Global Two-Factor Authentication]({{< ref "ManageGlobal2faSCALE" >}}) for more information
 

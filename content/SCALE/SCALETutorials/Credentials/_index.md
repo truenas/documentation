@@ -26,7 +26,8 @@ TrueNAS Credential options are collected in this section of the UI and organized
   TrueNAS comes equipped with an internal, self-signed certificate that enables encrypted access to the web interface, but users can make custom certificates for authentication and validation while sharing data.
 
 * **2FA** allows users to set up Two-Factor Authentication for their system.
-  Users can set up 2FA, then link the system to an authenticator app (such as Google Authenticator, LastPass Authenticator, etc.) on a mobile device.
+  Users can configure individual 2FA secrets and link the system to an authenticator app (such as Google Authenticator, LastPass Authenticator, etc.) on a mobile device.
+  When global 2FA is enabled, users with configured 2FA secrets must provide a 2FA code to log in.
 
 <div class="noprint">
 
