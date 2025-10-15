@@ -100,6 +100,6 @@ The <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 
 | **Web Shell Access** | Select to allow a user to assign the new privilege access to the **System > Shell** screen. |
 {{< /truetable >}}
 
-Assigned administrator roles show on the [Users Screen]({{< ref "LocalUsersScreensSCALE" >}}).
+Assigned administrator roles show on the [Users Screen]({{< ref "UsersScreen" >}}).
 
 {{< include file="/static/includes/addcolumnorganizer.md" >}}
