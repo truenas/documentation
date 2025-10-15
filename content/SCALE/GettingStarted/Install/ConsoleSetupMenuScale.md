@@ -60,7 +60,7 @@ For network configuration options **1**, **2**, and **3**, we recommend using th
   Use to create a one-time password for the root user.
   This is intended for quick authentication to the web interface to further set up secure log ins.
 
-  Once you generate a one-time password, it remains valid for one login within 24 hours and does not persist
+  After you generate a one-time password, it remains valid for one login within 24 hours and does not persist
   across reboots.
   You must set a new password after you log in.
 

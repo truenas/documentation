@@ -47,7 +47,7 @@ Some releases of TrueNAS might only have **root** as the default administration 
 
 TrueNAS systems with the **root** user, or either the **admin** or **truenas_admin** user should create a new administration user with full control privileges and assign a complex password that follows current password management guidelines.
 
-After testing the login for the new administration user, disable both the **root** user password if not already disabled, and the the default **admin** or **truenas_admin** user password to security-harden the system.
+After testing the login for the new administration user, disable both the **root** user password if not already disabled, and the default **admin** or **truenas_admin** user password to security-harden the system.
 Only enable the root user password when necessary to perform functions not available to the administration user, and when tasks are complete, disable the root user password again.
 
 If creating multiple administration user accounts for individuals that fill specific roles, limit privileges and access to what is minimally required to perform the system responsibilities.
@@ -131,7 +131,7 @@ TrueNAS allows you to configure a banner message to show before logging into the
 
 To configure a web UI banner message, go to **System > Advanced Settings** and click **Configure** on the **Access** widget.
 Type the text into the **Login Banner** field, and click **Save**.
-This shows a banner screen when users first enter the web UI IP address. Users click **Continue** to gain access the the TrueNAS login screen.
+This shows a banner screen when users first enter the web UI IP address. Users click **Continue** to gain access the TrueNAS login screen.
 
 To configure a banner before authorized users can log into an SSH session, go to **System > Advanced Settings** and click **Console**.
 Enter the text for the message in the **MOTD Banner** field and click **Save**.

@@ -91,7 +91,7 @@ Before you begin, download Google Authenticator to your mobile device.
 
    {{< trueimage src="/images/SCALE/SystemSettings/UserTwoFactorAuthenticationActionsScreen.png" alt="User Two-Factor Authentication Actions Screen" id="User Two-Factor Authentication Actions Screen" >}}
 
-   Click **Configure 2FA Secret** to open the **Set Up Two-Factor Authentication** screen and view the QR code.  The **Set Up Two-Factor Authentication** screen also has the unique key with a copy to clipboard button so you can configure 2FA using a non-camera method if necessary.
+   Click **Configure 2FA Secret** to open the **Set Up Two-Factor Authentication** screen and view the QR code. The **Set Up Two-Factor Authentication** screen also has the unique key with a copy to clipboard button so you can configure 2FA using a non-camera method if necessary.
 
    {{< hint type="info">}}
    You can configure two-factor authentication and get the QR code for an authenticator app for the logged-in user at any time, but you must configure global two-factor authentication to enable it.
