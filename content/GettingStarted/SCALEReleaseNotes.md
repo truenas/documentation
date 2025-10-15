@@ -329,14 +329,14 @@ This transition addresses several limitations:
 
 #### What TrueNAS Still Monitors Automatically
 
-TrueNAS continues to automatically monitor critical disk health indicators:
+TrueNAS continues to run continuous background monitoring that periodically polls SMART attributes from all drives. The system automatically detects and alerts on critical disk health indicators:
 
 * Uncorrected read, write, and verify errors
 * SMART self-test failures
 * Critical SMART attributes that indicate imminent drive failure
 * Drive temperatures using the enhanced `drivetemp` kernel module
 
-These automatic alerts ensure critical disk health issues are reported without additional monitoring applications.
+These automatic alerts ensure critical disk health issues are reported immediately without additional monitoring applications.
 
 #### How to Monitor Disk Health in 25.10
 
