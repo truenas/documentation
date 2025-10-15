@@ -4,7 +4,6 @@ description: "Provides instructions on adding and managing administrator and use
 weight: 10
 aliases:
  - /scale/scaletutorials/credentials/managelocalusersscale/
- - /scale/scaleuireference/credentials/localusersscreensscale/
 tags:
 - users
 - accounts
