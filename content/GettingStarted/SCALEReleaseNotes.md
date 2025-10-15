@@ -6,7 +6,7 @@ related: false
 use_jump_to_buttons: true
 jump_to_buttons:
   - text: "Latest Changes"
-    anchor: "25.10-RC.1"
+    anchor: "25.10.0"
     icon: "fiber-new"
   - text: "Known Issues"
     anchor: "known-issues"
@@ -28,15 +28,28 @@ jump_to_buttons:
     icon: "component-versions"
 ---
 
-{{< hint type="important" icon="gdoc_code" title="25.10 Early Release Documentation" >}}
-This page tracks the early release development for the future TrueNAS major version 25.10 (Goldeye).
-See the stable [25.04 (Fangtooth)](https://www.truenas.com/docs/scale/25.04/gettingstarted/scalereleasenotes/) release notes for information relating to that version.
-{{< /hint >}}
-
 ## Notable Changes and Known Issues
 
 <!-- Hugo-processed content for release notes tab box -->
 <div style="display: none;" id="release-tab-content-source">
+
+  <div data-tab-id="25.10.0" data-tab-label="25.10.0">
+
+October 28, 2025
+
+The TrueNAS team is pleased to release TrueNAS 25.10.0!
+
+### 25.10.0 Notable Changes
+
+Changes since 25.10-RC.1.
+See the 25.10 previous releases, [Major Features](#major-features), and [Full Changelog](#full-changelog) for more information.
+
+* Improves ZFS property handling during dataset replication ([NAS-137818](https://ixsystems.atlassian.net/browse/NAS-137818)).
+  Resolves issue where the storage page temporarily displayed errors when receiving active replications due to ZFS properties being unavailable while datasets were in an inconsistent state.
+
+<a href="#full-changelog" target="_blank">Click here</a> to see the full 25.10 changelog or visit the <a href="https://ixsystems.atlassian.net/issues/?filter=13427" target="_blank">TrueNAS 25.10.0 (Goldeye) Changelog</a> in Jira.
+
+  </div>
 
   <div data-tab-id="25.10-RC.1" data-tab-label="25.10-RC.1">
 
@@ -166,14 +179,11 @@ These are ongoing issues that can affect multiple versions in the 25.10 series.
 
 ### Current Known Issues
 
-* The storage page can temporarily show errors while TrueNAS is on the receiving side of an active replication ([NAS-137818](https://ixsystems.atlassian.net/browse/NAS-137818)).
-  This is due to some ZFS properties being unavailable while the dataset is in an inconsistent state. Better handling of this situation is planned for the 25.10.0 (and newer) releases.
-
 * NVMe over TCP is incompatible with VMware ESXi environments ([NAS-137372](https://ixsystems.atlassian.net/browse/NAS-137372)).
   TrueNAS 25.10 uses the Linux kernel NVMe over TCP target driver, which lacks support for fused commands required by VMware ESXi.
   This is an upstream kernel limitation that prevents path initialization in ESXi environments.
 
-<a href="https://ixsystems.atlassian.net/issues/?filter=13362" target="_blank">See the latest status on Jira</a> for public issues discovered in 25.10 that are being resolved in a future TrueNAS release.
+<a href="https://ixsystems.atlassian.net/issues/?filter=13428" target="_blank">See the latest status on Jira</a> for public issues discovered in 25.10 that are being resolved in a future TrueNAS release.
 
 See the [Release Notes](https://forums.truenas.com/c/release-notes/13) section of the TrueNAS forum for ongoing updates about known issues, investigations, and statistics about TrueNAS releases.
 
