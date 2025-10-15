@@ -153,6 +153,7 @@ A separate option allows requiring two-factor authentication to log into an SSH 
 {{< /hint >}}
 
 When global 2FA is enabled in standard (non-STIG) mode:
+
 * Users with a configured 2FA secret must provide the 2FA code to log in to the UI
 * Users without a configured 2FA secret can log in without 2FA but are prompted once per session to set it up
 * SSH 2FA only applies to users who configured a 2FA secret and are using password-based authentication
