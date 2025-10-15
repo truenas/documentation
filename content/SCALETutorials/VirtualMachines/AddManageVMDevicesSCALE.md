@@ -208,6 +208,8 @@ The process involves:
 * Verifying the `volmode` for the zvol is correctly configured.
 * Creating a new VM and selecting the migrated zvol as the storage volume.
 
+### Before You Begin
+
 Before beginning the process, and while in 25.04.1 or the latest maintenance release:
 1. Identify the zvol names associated with the Instance VM.
 2. Take a snapshot or back up the zvol for the Instance VM.
@@ -279,7 +281,10 @@ After updating to 25.10 or later:
 
    <code>sudo zfs list -t volume -r -d 10 <i>poolname</i></code>
 
-   Where `-d 10` shows datasets up to 10 levels deep, and *poolname* is the name of the pool associated with the Instance VMs. If you have multiple pools associated with the Instance VMs, repeat the command to show hidden zvols in each pool.
+   Where:
+   *  `-d 10` shows datasets up to 10 levels deep
+   * *poolname* is the name of the pool associated with the Instance VMs.
+     If you have multiple pools associated with the Instance VMs, repeat this command with the name of that pool to show hidden zvols in that pool.
 
    The **.ix-virt** directory contains the zvols use in Instance VMs. Ignore the entries with the **.block** extension.
    The output includes other zvols in the pool if your system has non-instance VMs configured in the pool name entered in the command.
