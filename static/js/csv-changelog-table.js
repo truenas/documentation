@@ -35,12 +35,12 @@ async function createCSVChangelogTable(baseUrlOrSingleUrl, containerId, options 
                         // Check if the segment after 'scale' looks like a version (e.g., "25.10")
                         const potentialVersion = pathSegments[scaleIndex + 1];
                         if (potentialVersion && /^\d+\.\d+/.test(potentialVersion)) {
-                            // Versioned branch: docs/scale/25.10/gettingstarted/scalereleasenotes/
+                            // Versioned branch: docs/scale/25.10/gettingstarted/versionnotes/
                             // Need to go back to version root (docs/scale/25.10/)
                             const versionIndex = scaleIndex + 1; // Index of version segment (25.10)
                             docsRootDepth = pathSegments.length - versionIndex - 1; // Back to docs/scale/25.10/
                         } else {
-                            // Master branch: docs/scale/gettingstarted/scalereleasenotes/ 
+                            // Master branch: docs/scale/gettingstarted/versionnotes/ 
                             // Need to go back to scale root (docs/scale/)
                             docsRootDepth = pathSegments.length - scaleIndex - 1; // Back to docs/scale/
                         }
