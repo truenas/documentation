@@ -226,6 +226,8 @@ TrueNAS 25.04.2 is not recommended for TrueNAS Enterprise customers with High Av
 The TrueNAS team is pleased to release TrueNAS 25.04.1!
 This is a maintenance release and includes refinements and fixes for issues discovered after 24.04.0.
 
+Virtual machines created in 25.04.1 using the **Instances** screens can be migrated to 25.10 and later using the process described in the **Migrating Instance VMs** section of the [Adding and Managing VM Devices]({{< ref "addmanagevmdevicesscale#migrating-instances-vms" >}}) tutorial.
+
 ### 25.04.1 Notable Changes
 
 {{< enterprise >}}
