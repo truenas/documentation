@@ -223,7 +223,7 @@ If not, go to **Credentials > Users**, edit the user to allow `sudo` commands, o
 
 ### Migrating a Zvol for an Instance VM
 
-This procedure applies to the zvol for an Instance VM that has data you want to preserve, and access from a new 25.10 or later VM.
+This procedure applies to the zvol for an Instance VM that has data you want to preserve, and access from a new VM in 25.10 or later.
 
 While in a 25.04.1 or a later maintenance release:
 
