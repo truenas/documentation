@@ -53,7 +53,7 @@ Select the IP address or other option on the **Bind** dropdown.
 
 ### Deleting a Device
 
-Deleting a device removes it from the list of available devices for the selected VM. 
+Deleting a device removes it from the list of available devices for the selected VM.
 
 To delete a device:
 
@@ -89,7 +89,7 @@ After stopping the VM and clicking **Devices** to open the **Devices** screen:
    {{< trueimage src="/images/SCALE/Virtualization/VMAddDeviceCDROM.png" alt="Devices Add CD-ROM Type" id="Devices Add CD-ROM Type" >}}
 
 2. Enter or browse to select the mount path to the CD-ROM device.
-   Click on the <i class="fa fa-caret-right" aria-hidden="true"></i> to the left of **/mnt** to expand or collapse the directory tree. 
+   Click on the <i class="fa fa-caret-right" aria-hidden="true"></i> to the left of **/mnt** to expand or collapse the directory tree.
 3. Enter a new number that represents where in the boot sequence you want to place this device in **Device Order**.
 4. Enter a new number that represents where in the boot sequence you want to place this device in **Device Order**.
    The lower the number, the higher the device is in the boot sequence.
@@ -201,8 +201,9 @@ After stopping the VM and clicking **Devices** to open the **Devices** screen:
 
 ## Migrating Instances VMs
 
-The storage volumes (zvols) for virtual machines created using the **Instances** option in TrueNAS 25.04.1 can migrate to new VMs created in using the **Virtual Machines** screen options in 25.10 and later.
+The storage volumes (zvols) for virtual machines created using the **Instances** option in TrueNAS 25.04.0 or 25.04.1 can migrate to new VMs created in using the **Virtual Machines** screen options in 25.10 and later.
 The process involves:
+
 * Identifying the hidden storage volumes (zvols) associated with the Instance VMs.
 * Renaming (and moving) the zvols to a new dataset where they can be seen and used by a new VM.
 * Verifying the `volmode` for the zvol is correctly configured.
@@ -211,6 +212,7 @@ The process involves:
 ### Before You Begin
 
 Before beginning the process, and while in 25.04.1 or the latest maintenance release:
+
 1. Identify the zvol names associated with the Instance VM.
 2. Take a snapshot or back up the zvol for the Instance VM.
    Using ZFS commands to rename and move an existing zvol can damage data stored in the volume. Having a backup is a critical step to restoring data if something goes wrong in the process.
@@ -250,7 +252,7 @@ While in a 25.04.1 or a later maintenance release:
 
    {{< expand "Troubleshooting VM Issues" "v" >}}
    After upgrading from 24.10 to 25.04, VMs are visible and running, but are expected to have issues because 25.04 release does not fully support these older VMs.
-   
+
    VMs with a Windows OS installed could require converting to VirtIO-SCSI disks to get reconnected to the Internet.
    To restore connectivity, try clean-mounting the system from the mounted drive from within the VM, and then on the TrueNAS system (host).
    Follow this by removing driver syntax added to raw qem files.
@@ -260,7 +262,7 @@ While in a 25.04.1 or a later maintenance release:
 
    VMs created using the Instances feature initially show on the **Virtual Machine** screen as running when they are not running, but this state corrects on its own.
 
-   If a VM with Windows OS is created in 25.04.0 using the **Virutal Machine** screens (not **Instances** in 25.04.1) the VM should run.
+   If a VM with Windows OS is created in 25.04.0 using the **Virtual Machine** screens (not **Instances** in 25.04.1) the VM should run.
    If this VM cannot find the NIC, delete the NIC in the configuration from the **Devices** screen for that VM, and then reconfigure it to restore functionality.
    {{< /expand >}}
 
@@ -282,7 +284,7 @@ After updating to 25.10 or later:
    <code>sudo zfs list -t volume -r -d 10 <i>poolname</i></code>
 
    Where:
-   *  `-d 10` shows datasets up to 10 levels deep
+   * `-d 10` shows datasets up to 10 levels deep
    * *poolname* is the name of the pool associated with the Instance VMs.
      If you have multiple pools associated with the Instance VMs, repeat this command with the name of that pool to show hidden zvols in that pool.
 
@@ -290,6 +292,7 @@ After updating to 25.10 or later:
    The output includes other zvols in the pool if your system has non-instance VMs configured in the pool name entered in the command.
 
    {{< expand "Example Command Output" "v" >}}
+
    ```
    re-minir-102% sudo zfs list -t volume -r tank
    NAME                                                               USED  AVAIL  REFER  MOUNTPOINT  
@@ -306,6 +309,7 @@ After updating to 25.10 or later:
    tank/vms/vm2410win-mvqznj                                         40.6G  1.70T    56K  -
    tank/vms/vm2410win-mvqznj_vm2410winclone2                            0B  1.66T    56K  -
    ```
+
    The zvols in the command output above with `tank/.ix-virt/custom` in the path are the zvols to migrate if these are associated with the VM you want to migrate to new VMs in the 25.10.0 or later release.
    {{< /expand >}}
 
@@ -356,4 +360,4 @@ After updating to 25.10 or later:
    Click **Save**.
    This sets the VM to boot from the disk, which prevents the volume from being overwritten by booting from the CD-ROM device with an OS image file on it (if you added one in the creation wizard).
 
-9. Return to the **Virtual Machines** screen, expand the VM, then click **Start** to verify it opens as expected and has Internect access.
+9. Return to the **Virtual Machines** screen, expand the VM, then click **Start** to verify it opens as expected and has Internet access.
