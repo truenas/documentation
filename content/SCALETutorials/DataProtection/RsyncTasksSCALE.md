@@ -81,7 +81,7 @@ You can use the SSS connection created in [Setting Up an SSH Connection](#settin
    Settings fields for the selected connection type show.
    
    Leave this set to **Module** if syncing with a non-TrueNAS remote system.
-   See [Addin an Rsync Task Using Module Mode](#adding-an-rsync-task-using-module-mode) for more information.
+   See [Adding an Rsync Task Using Module Mode](#adding-an-rsync-task-using-module-mode) for more information.
   
    If selecting **SSH private key stored in the user home directory**, the public key for the SSH connection must be alread be saved in the home directory for the admin user.
 
