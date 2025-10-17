@@ -25,7 +25,7 @@ To access the devices for a VM, click on the VM row on the **Virtual Machines** 
 
 Click **Add** to create a new device>
 To edit an existing device, click on the <span class="material-icons">more_vert</span> at the right of each device row, click **Edit** to open the **Edit Device** screen.
-Click **Delete** to open a delete confirmation dialog. t
+Click **Delete** to open a delete confirmation dialog.
 
 ### Editing a Device
 
