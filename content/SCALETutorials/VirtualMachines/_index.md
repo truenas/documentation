@@ -259,7 +259,7 @@ Modify settings as needed to suit your use case.
    a. Enter your localization settings for **Language**, **Location**, and **Keymap**.
 
    b. Debian automatically configures networking and assigns an IP address with DHCP.
-      * If the network configuration fails, click **Continue** and do not configure the network yet.
+      - If the network configuration fails, click **Continue** and do not configure the network yet.
 
    c. Enter a name in **Hostname**.
 
@@ -310,10 +310,10 @@ Modify settings as needed to suit your use case.
 
    b. Remove the CD-ROM device containing the install media or edit the device order to boot from the Disk device.
 
-      * To remove the CD-ROM from the devices, click the <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp; and select **Delete**.
+      - To remove the CD-ROM from the devices, click the <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp; and select **Delete**.
       Click **Delete Device**.
 
-      * To edit the device boot order, click the <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp; and select **Edit**.
+      - To edit the device boot order, click the <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp; and select **Edit**.
       Change the CD-ROM **Device Order** to a value greater than that of the existing Disk device, such as *1005*.
       Click **Save**.
 
@@ -399,16 +399,15 @@ See [Accessing NAS from VM]({{< ref "ContainerNASBridge" >}}) for more informati
 
 <div class="noprint">
 
+## Migrating Containers VMs
 
-## Migrating Instances VMs
-
-The storage volumes (zvols) for virtual machines created using the **Instances** option in TrueNAS 25.04.0 or 25.04.1 can migrate to new VMs created in using the **Virtual Machines** screen options in 25.10 and later.
+The storage volumes (zvols) for virtual machines created using the **Instances** screen in TrueNAS 25.04.0 or 25.04.1 (renamed the **Containers** screen in 25.04.2 and later) can migrate to new VMs created using the **Virtual Machines** screen in 25.10 and later.
 The process involves:
 
-* Identifying the hidden storage volumes (zvols) associated with the Instance VMs.
-* Renaming (and moving) the zvols to a new dataset where they can be seen and used by a new VM.
-* Verifying the `volmode` for the zvol is correctly configured.
-* Creating a new VM and selecting the migrated zvol as the storage volume.
+- Identifying the hidden storage volumes (zvols) associated with the Instance VMs.
+- Renaming (and moving) the zvols to a new dataset where they can be seen and used by a new VM.
+- Verifying the `volmode` for the zvol is correctly configured.
+- Creating a new VM and selecting the migrated zvol as the storage volume.
 
 ### Before You Begin
 
@@ -485,8 +484,8 @@ After updating to 25.10 or later:
    <code>sudo zfs list -t volume -r -d 10 <i>poolname</i></code>
 
    Where:
-   * `-d 10` shows datasets up to 10 levels deep
-   * *poolname* is the name of the pool associated with the Instance VMs.
+   - `-d 10` shows datasets up to 10 levels deep
+   - *poolname* is the name of the pool associated with the Instance VMs.
      If you have multiple pools associated with the Instance VMs, repeat this command with the name of that pool to show hidden zvols in that pool.
 
    The **.ix-virt** directory contains the zvols use in Instance VMs. Ignore the entries with the **.block** extension.
@@ -521,10 +520,10 @@ After updating to 25.10 or later:
    <code>sudo zfs rename <i>tank</i>/.ix-virt/custom/<i>default_vm2410linux-icppg_vm2410linuxclone1</i> <i>tank/vms/default_vm2410linux-icppg_vm2410linuxclone1</i></code>
 
    Where:
-   * *tank* is the pool name in the example.
-   * *default_vm2410linux-icppg_vm2410linuxclone1</i>* is the name of a hidden zvol in the example, and the name given to the migrated zvol.
+   - *tank* is the pool name in the example.
+   - *default_vm2410linux-icppg_vm2410linuxclone1</i>* is the name of a hidden zvol in the example, and the name given to the migrated zvol.
      We do not recommend renaming the migrated zvol to minimize potential issues with the migration process.
-   * *vms* is the dataset in the example as the location to store the migrated zvols for VMs. Change this to the location on your system.
+   - *vms* is the dataset in the example as the location to store the migrated zvols for VMs. Change this to the location on your system.
 
    This renames and moves it to the specified location, and returns to the system Linux prompt.
    To verify the zvol moved, enter the <code>sudo zfs list -t volume -r <i>tank</i></code> command again. The output should show the zvol in the new location.
@@ -534,9 +533,9 @@ After updating to 25.10 or later:
    <code>sudo zfs get volmode <i>tank/vms/efault_vm2410linux-icppg_vm2410linuxclone1</i></code>
 
    Where:
-   * *tank* is the pool name.
-   * *vms* is the dataset where the zvol is stored.
-   * *default_vm2410linux-icppg_vm2410linuxclone1* is the name of the zvol
+   - *tank* is the pool name.
+   - *vms* is the dataset where the zvol is stored.
+   - *default_vm2410linux-icppg_vm2410linuxclone1* is the name of the zvol
 
    This returns the `volmode` for the volume. It should be set to `dev`. If not, enter the following command to set it to `dev`:
 
