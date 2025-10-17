@@ -2391,3 +2391,6 @@ Bitwarden
 QCOW
 VDI
 VHDX
+VMDX
+QUEM
+ExportDiskToImageWindow

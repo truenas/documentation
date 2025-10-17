@@ -30,6 +30,7 @@ For more information on TrueNAS shares, see the [Shares]({{< ref "/SCALETutorial
 Regardless of what type of share you create, you need to create the user and dataset for the share.
 
 ## Creating Share Users
+
 Share users have permissions to access the share. You can create the user before or after you create the share.
 
 Administrators can provision share users using a directory server such as Active Directory or LDAP.
@@ -40,7 +41,7 @@ To add non-SMB share users or edit users, go to **Credentials > Users** to add o
 Click **Add** to create a new or as many new user accounts as you need.
 
 Enter the values in each required field, verify **SMB User** is selected for SMB share users, then click **Save**.
-For more information on the fields and adding users, see [Creating User Accounts]({{< ref "ManageLocalUsersScale" >}}).
+For more information on the fields and adding users, see [Creating User Accounts]({{< ref "ManageUsers" >}}).
 
 By default, all new users are members of a built-in group called **builtin_users**.
 You can use a group to grant access to all users on the server or add more groups to fine-tune permissions for large numbers of users.
@@ -63,6 +64,7 @@ For more detailed information on adding SMB shares, see [Adding SMB Shares]({{< 
 {{< include file="/static/includes/LocalSMBUser.md" >}}
 
 To set up a basic SMB share from the **Add SMB** screen:
+
 1. Create the share and dataset.
 
    a. Go to **Shares**, then click **Add** on the **Windows (SMB) Shares** widget to open the **Add SMB** configuration screen.
@@ -74,7 +76,7 @@ To set up a basic SMB share from the **Add SMB** screen:
       Click on the exiting dataset to populate the field with the full path, or click **Create Dataset** to enter a name for a new dataset and the share.
 
       {{< trueimage src="/images/SCALE/Shares/AddSMBPath.png" alt="Add SMB Path" id="Add SMB Path" >}}
-    
+
       {{< include file="/static/includes/FileExplorerFolderIcons.md" >}}
 
       Clicking **Create Dataset** opens the **Create Dataset** dialog. Enter a name and then click **Create**.
@@ -84,12 +86,12 @@ To set up a basic SMB share from the **Add SMB** screen:
    c. (Optional) Customize the share properties.
       You can make changes to any share using the **Advanced Options** option.
       For example, to turn on auditing, click **Enable** to set up audit logging.
-      
+
    d. Click **Save**. TrueNAS creates the share and the dataset.
 
    e. Start the SMB service when prompted, or select the option to start the service if not prompted.
 
-2. Edit the SMB share permissions to set the share owner and/or group. You can edit access permissions at the share or dataset level. 
+2. Edit the SMB share permissions to set the share owner and/or group. You can edit access permissions at the share or dataset level.
 
    a. Click on <span class="material-icons">share</span> **Edit Share ACL** icon to open the **Edit Share ACL** screen.
 
@@ -128,11 +130,13 @@ To set up a basic SMB share from the **Add SMB** screen:
    c. Begin browsing the dataset.
 
 ## Setting up NFS for Unix-Like Shares
+
 For more information on creating NFS shares, see [Adding NFS Shares]({{< ref "AddingNFSShares" >}}).
 
 You can create an NFS share from either the **Add Dataset** screen while creating the dataset, or from the **Add NFS** share screen. Both options allow creating the dataset and the share at the same time.
 
 To set up NFS sharing from the **Add NFS** screen:
+
 1. Add additional packages like `nfs-common` to any client systems that require them.
 
 2. Create the NFS share and dataset.
@@ -156,7 +160,7 @@ To set up NFS sharing from the **Add NFS** screen:
    c. (Optional) Customize the share properties.
       You can make changes to any share using the **Advanced Options** option.
       For example, mapping users or groups, click **Enable** to set up audit logging.
-      
+
    d. Click **Save**. TrueNAS creates the share and the dataset.
 
    e. Start the NFS service when prompted, or select the option to start the service if not prompted.
