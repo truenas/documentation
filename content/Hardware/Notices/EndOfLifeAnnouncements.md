@@ -27,7 +27,7 @@ weight: 30
 
 {{< imagecard image="/images/Hardware/Notices.png" title="FreeNAS Certified EOL March 2021" link="https://www.truenas.com/docs/files/FreeNAS-Certified-Servers-EOL.pdf" descr="Official iXsystems EoL for the FreeNAS Certified system." >}}
 
-{{< imagecard image="/images/Hardware/Notices.png" title="TrueNAS M40 and M50 (Gen2) EOL February 2021" link="https://www.truenas.com/docs/files/TrueNAS%M-Series%Gen2%EOL.pdf" descr="Official iXsystems dba TrueNAS EoL for the M40 (Gen2) and M50 (Gen2) systems." >}}
+{{< imagecard image="/images/Hardware/Notices.png" title="TrueNAS M40 and M50 (Gen2) EOL February 2021" link="https://www.truenas.com/docs/files/TrueNAS%20M-Series%20Gen2%20EOL.pdf" descr="Official iXsystems dba TrueNAS EoL for the M40 (Gen2) and M50 (Gen2) systems." >}}
 
 {{< imagecard image="/images/Hardware/Notices.png" title="Mini XL EOL February 2020" link="https://www.truenas.com/docs/files/MiniXLEOL.pdf" descr="Official iXsystems EoL for the TrueNAS Mini XL system." >}}
 
