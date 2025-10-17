@@ -55,7 +55,7 @@ Steps below are optional. Change them based on your use case.
 4. (Optional) Enter a number that reflects the boot order or priority level in **Device Order**.
    Setting this value to **1000** puts the disk device in the boot order first position.
    When first installing or changing an OS added to the **CD-ROM** device, the CD-ROM is assigned **1000** to boot up from and install an OS.
-   After installing the OS, change the boot order for the CD-ROM to a lower boot order so you don't keep booting into an installer and to run the OS in the VM.
+   After installing the OS, change the boot order for the CD-ROM to a lower boot order so you do not keep booting into an installer and to run the OS in the VM.
    The lower the number, the higher the priority in the boot sequence.
 5. Click **Save**.
 6. Click on the **Virtual Machines** breadcrumb at the top of the screen to return to the **Virtual Machines** screen. Click on the VM to expand it and restart it.
