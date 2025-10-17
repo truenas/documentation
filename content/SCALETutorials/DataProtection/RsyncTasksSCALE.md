@@ -17,7 +17,8 @@ keywords:
 The **Push** function copies data from TrueNAS to a remote system.
 The **Pull** function copies data from a remote system to the TrueNAS local host system and stores it in the dataset defined in the **Path** field.
 
-There are two ways to connect to a remote system and run an rsync task: 
+There are two ways to connect to a remote system and run an rsync task:
+
 * Set up an [SSH connection](#configuring-ssh-mode-rsync-tasks) to the remote server.
 * Set up an [rsync module](#configuring-module-mode-rsync-tasks) for the remote server.
 
@@ -35,14 +36,25 @@ SSH mode has two connection options:
 
 Setting options change based on the SSH connection option selected.
 
-Before adding an rsync task using the **SSH private key stored in the user's home directory** option:
-1. Go to **Credentials > Backup Credentials** to [add an SSH connection and keypair](#using-an-ssh-connection) for the remote system.
-2. Download the SSH keypair to your system
-3. Add the private key to the home directory for the admin user you plan to use for the rsync task.
+Set up a home directory for the remote system administrator on the remote system.
+Note the path to where home directories are stored to enter on the local host TrueNAS.
+
+If the remote system is also a TrueNAS, go to **Credentials**, select **Users** to see the list of users.
+Select the administration user and click **Edit**.
+
+If creating a new administration user for rsync functions, click **Add**.
+See [Managing Users]({{< ref "manageusers/#creating-an-administrator-user-account" >}}) for more information.
+Take note of the path to the home directory to use in setting up the connection.
+
+Add an SSH connection for the remote server on the local TrueNAS host system.
+
+{{< expand "Adding a remote TrueNAS system" "v" >}}
+
+{{< include file="/static/includes/AddSSHConnection.md" >}}
+
+{{< /expand >}}
 
 TrueNAS allows configuring multiple admin users on the system. All admin users configured in the TrueNAS system show in the rsync task **User** dropdown list.
-
-See [Adding SSH Credentials]({{< ref "AddSSHConnectionKeyPair" >}}) for more information on keypairs.
 
 ## Adding an Rsync Task Using SSH
 
@@ -69,7 +81,7 @@ You can use the SSS connection created in [Setting Up an SSH Connection](#settin
    Settings fields for the selected connection type show.
    
    Leave this set to **Module** if syncing with a non-TrueNAS remote system.
-   See [Addin an Rsync Task Using Module Mode](#adding-an-rsync-task-using-module-mode) for more information.
+   See [Adding an Rsync Task Using Module Mode](#adding-an-rsync-task-using-module-mode) for more information.
   
    If selecting **SSH private key stored in the user home directory**, the public key for the SSH connection must be alread be saved in the home directory for the admin user.
 
