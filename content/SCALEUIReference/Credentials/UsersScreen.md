@@ -25,7 +25,7 @@ The root user is the first user row, and it therefore shows by default when you 
 
 The **Users** screen search is set to the basic, or simple search option by default. It accepts any word entered, such as a username, user type, or role.
 
-{{< trueimage src="/images/SCALE/Credentials/UsersScreenBasicSearch.png" alt="Users screen basic search interface" id="Users Screen Basic Search" >}}
+{{< trueimage src="/images/SCALE/Credentials/UserScreenBasicSearch.png" alt="Users screen basic search interface" id="Users Screen Basic Search" >}}
 
 **Switch to Advanced** link shows in the search field when in basic search mode.
 
