@@ -19,7 +19,7 @@ Before starting configuration work in VMWare:
 
 * Download the <file>.iso</file> file from the [TrueNAS.com downloads page](https://www.truenas.com/download-truenas-scale/).
 
-* Visit the TrueNAS [hardware guide]({{< ref "/scale/gettingstarted/scalehardwareguide" >}}) and take note of the minimum system requirements.
+* Visit the TrueNAS [hardware guide]({{< ref "/scale/gettingstarted/tnhardwareguide" >}}) and take note of the minimum system requirements.
   Note the information in the **Memory** and **Storage Device Sizing** sections.
 
   The hardware guide provides guidance on how much memory, the number of CPUs, and drive size you need to configure.

@@ -24,7 +24,7 @@ keywords:
 Read this article before you attempt to migrate your FreeBSD-based system to a Linux-based TrueNAS version.
 {{< hint type="warning" title="Using USB Devices for Backups" >}}
 We strongly recommend not using USB flash drives or USB-attached drives for backups as these can have issues, including with recovering backed-up files.
-For more information on using USB drives and devices in general, read the [Hardware Guide]({{< ref "scalehardwareguide" >}}).
+For more information on using USB drives and devices in general, read the [Hardware Guide]({{< ref "tnhardwareguide" >}}).
 If you must use a USB-type device, verify you can access files on the device before you migrate.
 {{< /hint >}}
 {{< enterprise >}}

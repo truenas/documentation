@@ -28,11 +28,10 @@ With more enterprise-level tuning, TrueNAS can manage up to 1,250 drives in a si
 
 Choosing storage media is the first step in designing the storage system to meet immediate objectives and prepare for future capacity expansion.
 
-{{< expand "Spinning Disks" "v" >}}
-Spinning hard disks are renowned for their balance of capacity and cost. Even the consumer-level spinning disks can reach double-digit terabyte capacities, providing more choices to TrueNAS users than ever.
-{{< /expand >}}
+<!-- Hugo-processed content for release notes tab box -->
+<div style="display: none;" id="storage-media-tab-content-source">
+  <div data-tab-id="sata-nas-disks" data-tab-label="SATA NAS Disks">
 
-{{< expand "SATA NAS Disks" "v" >}}
 Serial Advanced Technology Attachment (SATA) is still the de facto standard disk interface found in many desktop/laptop computers, servers, and some non-enterprise storage arrays.
 The first SATA disks offered double-digit gigabyte capacities. Newer SATA disks meet many size, reliability, and performance goals.
 While consumer desktop SATA disks do not have the overall reliability issues they once had, they are still not designed or warrantied for continuous operation or use in RAID groups.
@@ -54,30 +53,44 @@ See also: [WD Red SMR vs CMR Tested: Avoid Red SMR](https://www.servethehome.com
 
 Consult your drive manufacturer, such as [Western Digital](https://support-en.wd.com/app/answers/detailweb/a_id/50697/~/steps-to-determine-if-an-internal-drive-uses-cmr-or-smr-technology) or [Seagate](https://www.seagate.com/products/cmr-smr-list/), to determine whether a disk uses CMR or SMR technology.
 {{< /hint >}}
-{{< /expand >}}
 
-{{< expand "Nearline SAS Disks" "v" >}}
+  </div>
+
+  <div data-tab-id="spinning-disks" data-tab-label="Spinning Disks">
+
+Spinning hard disks are renowned for their balance of capacity and cost. Even the consumer-level spinning disks can reach double-digit terabyte capacities, providing more choices to TrueNAS users than ever.
+
+  </div>
+
+  <div data-tab-id="nearline-sas-disks" data-tab-label="Nearline SAS Disks">
+
 Nearline SAS (NL-SAS) disks are 7200 RPM enterprise SATA disks with the industry-standard SAS interface. They are used in most enterprise storage systems with more than 16 disks.
 SAS stands for serial attached SCSI, with the traditional SCSI disk interface in serial form.
 SAS systems, designed for data center storage applications, have accurate, verbose error handling, predictable failure behavior, reliable hot swapping, and the added feature of multipath support.
 Multipath access means that each drive has two interfaces and can connect to two storage controllers or one controller over two cables.
 This redundancy protects against cable, controller card, or complete system failure in the case of the TrueNAS high-availability architecture in which each controller is an independent server that accesses the same set of NL-SAS drives.
 Capacity-oriented TrueNAS systems ship with [Western Digital UltraStar](https://www.westerndigital.com/products/data-center-platforms) NL-SAS disks thanks to the all-around perfect balance of capacity, reliability, performance, and flexibility that NL-SAS drives offer.
-{{< /expand >}}
 
-{{< expand "SAS Disks" "v" >}}
+  </div>
+
+  <div data-tab-id="sas-disks" data-tab-label="SAS Disks">
+
 Enterprise SAS disks, built for the maximum performance and reliability that a spinning platter can provide, are the traditional heavy-lifters of the enterprise storage industry.
 SAS disk capacities are low compared to NL-SAS or NAS drives due to the speed at which the platters spin, reaching as high as 15,000 RPMs.
 While SAS drives might sound like the ultimate answer for high-performance storage, many consumer and enterprise flash-based options have come onto the market and significantly reduced the competitiveness of SAS drives.
-{{< /expand >}}
 
-{{< expand "SATA & SAS Flash Storage SSDs" "v" >}}
+  </div>
+
+  <div data-tab-id="sata-and-sas-flash-storage-ssds" data-tab-label="SATA and SAS Flash Storage SSDs">
+
 Unlike hard disks, flash storage is not sensitive to vibration and can be much faster with comparable reliability.
 Flash storage remains more expensive per GB, but is becoming more common in TrueNAS systems as the price gap narrows.
 If you plan to go all-flash, buy the highest-quality flash storage SSDs your budget allows, focusing on power, safety, and write endurance that matches your expected write workload.
-{{< /expand >}}
 
-{{< expand "NVMe" "v" >}}
+  </div>
+
+  <div data-tab-id="nvme" data-tab-label="NVMe">
+
 The Non-Volatile Memory Express (NVMe) standard is a native flash protocol that takes full advantage of the flash storage non-linear, parallel nature.
 
 The main advantage of NVMe is low-latency performance. NVMe is becoming a mainstream option for boot and other tasks.
@@ -86,12 +99,10 @@ The new U.2 interface offers a universal solution that includes the 2.5" drive f
 
 NVMe devices can run quite hot and might need dedicated heat sinks.
 
-{{< hint type=note >}}
-TrueNAS does not support manual S.M.A.R.T. tests on NVMe devices.
-{{< /hint >}}
-{{< /expand >}}
+  </div>
 
-{{< expand "USB Hard Disks" "v" >}}
+  <div data-tab-id="usb-hard-disks" data-tab-label="USB Hard Disks">
+
 Avoid using USB-connected hard disks for primary storage with TrueNAS. You can use USB Hard Disks for very basic backups in a pinch.
 While TrueNAS does not automate this process, you can connect a USB HDD, replicate at the command line, and then take it off-site for safekeeping.
 
@@ -99,6 +110,10 @@ While TrueNAS does not automate this process, you can connect a USB HDD, replica
 **Warning:** USB-connected media (including SSDs) might report their serial numbers inaccurately, making them indistinguishable.
 {{< /hint >}}
 {{< /expand >}}
+
+  </div>
+
+</div>
 
 ### Storage Solutions
 
