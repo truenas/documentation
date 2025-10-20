@@ -417,7 +417,7 @@ Before beginning the process, and while in 25.04.1 or the latest maintenance rel
 2. Take a snapshot or back up the zvol for the Instance VM.
    Using ZFS commands to rename and move an existing zvol can damage data stored in the volume. Having a backup is a critical step to restoring data if something goes wrong in the process.
 3. Verify the VM is operational and has Internet access, then stop the VM before you upgrade to the 25.10 or a later release.
-4. Identify the dataset where you want to move the volume in 25.10 or later.
+4. Identify the dataset where you want to move the volume.
    We do not recommend renaming or moving the volume more than once, as it increases the risk of possible data corruption or loss.
 
 You do not need to log in as the root user if the logged-in admin user has permission to use `sudo` commands.
