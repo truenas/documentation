@@ -32,6 +32,7 @@ Use the **Password Login Groups** and **Allow Password Authentication** settings
 Click **Save**. Select **Start Automatically** and enable the SSH service.
 
 ## Configuring Advanced SSH Settings
+
 If your configuration requires more advanced settings, click **Advanced Settings**.
 The basic options continue to display above the **Advanced Settings** screen.
 Configure the options as needed to match your network environment.
@@ -71,7 +72,7 @@ Go to **System > Services**, find the **SSH** entry, and click the <i class="mat
 
 Select **Allow Password Authentication**.
 
-Go to **Credentials > Users**. Click anywhere on the row of the user you want to access SSH to expand the user entry, then click **Edit** to open the **Edit User** configuration screen. Make sure that **SSH password login enabled** is selected. See [Managing Users]({{< ref "managelocalusersscale" >}}) for more information.
+Go to **Credentials > Users**. Click anywhere on the row of the user you want to access SSH to expand the user entry, then click **Edit** to open the **Edit User** configuration screen. Make sure that **SSH password login enabled** is selected. See [Managing Users]({{< ref "manageusers" >}}) for more information.
 
 {{< include file="/static/includes/SSHUserValidationCheck.md" >}}
 
@@ -94,7 +95,7 @@ TrueNAS shows an error if users activate Global 2FA (Two-Factor Authentication) 
 Open an FTP client (like FileZilla) or command line.
 This article shows using FileZilla as an example.
 
-Using FileZilla, enter `SFTP://{TrueNAS IP} {username} {password} {port 22}`. Where {TrueNAS IP} is the IP address for your TrueNAS system, {username} is the administrator login user name, and {password} is the adminstrator password, and {port 22} to connect.
+Using FileZilla, enter `SFTP://{TrueNAS IP} {username} {password} {port 22}`. Where {TrueNAS IP} is the IP address for your TrueNAS system, {username} is the administrator login user name, and {password} is the administrator password, and {port 22} to connect.
 
 {{< hint type=important >}}
 SFTP does not offer chroot locking.
