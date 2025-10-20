@@ -469,6 +469,7 @@ Resilvering
 interruptable
 Ahrens
 scalenextversion
+versionnotes
 scalereleasenotes
 ManageLocalUsersSCALE
 iso
@@ -2391,3 +2392,6 @@ Bitwarden
 QCOW
 VDI
 VHDX
+VMDX
+QUEM
+ExportDiskToImageWindow
