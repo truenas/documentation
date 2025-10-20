@@ -411,13 +411,15 @@ The process involves:
 
 ### Before You Begin
 
-Before beginning the process, and while in 25.04.1 or the latest maintenance release:
+Before beginning the process:
 
-1. Identify the zvol names associated with the Instance VM.
-2. Take a snapshot or back up the zvol for the Instance VM.
-   Using ZFS commands to rename and move an existing zvol can damage data stored in the volume. Having a backup is a critical step to restoring data if something goes wrong in the process.
-3. Verify the VM is operational and has Internet access, then stop the VM before you upgrade to the 25.10 or a later release.
-4. Identify the dataset where you want to move the volume in 25.10 or later.
+1. Identify the zvol names associated with the Instance (Container) VM.
+2. Take a recursive snapshot or back up the pool configured for Instance VMs.
+   Using ZFS commands to rename and move an existing zvol can damage data stored in the volume.
+   Having a backup is a critical step to restoring data if something goes wrong in the process.
+3. Verify the VM is operational and network is functioning as expected. One way to do this to verify it has Internet access.
+   Then stop the VM before you upgrade to the next release.
+4. Identify the dataset where you want to move the volume.
    We do not recommend renaming or moving the volume more than once, as it increases the risk of possible data corruption or loss.
 
 You do not need to log in as the root user if the logged-in admin user has permission to use `sudo` commands.
@@ -425,23 +427,20 @@ If not, go to **Credentials > Users**, edit the user to allow `sudo` commands, o
 
 ### Migrating a Zvol for an Instance VM
 
-This procedure applies to the zvol for an Instance VM that has data you want to preserve, and access from a new VM in 25.10 or later.
+This procedure applies to the zvol for an Instance or Container VM that has data you want to preserve, and access from a new VM in using the **Virtual Machines** screens in later releases.
 
-While in a 25.04.1 or a later maintenance release:
+1. Go to **Instances** (or **Containers**), click on **Configuration**, and then **Manage Volumes** to open the **Volumes** window.
+   The **Volumes** window lists all Instances VMs and the name associated storage volumes (zvols).
 
-1. Go to **Instances**, click on **Configuration**, and then **Manage Volumes** to open the **Volumes** window.
-   The **Volumes** window lists all Instance VMs and the storage volumes associated with each.
-
-   {{< hint type="tip" >}}
-   Take a screenshot of the information to refer to later when entering commands in the **Shell** screen.
+   Record the volume name or take a screenshot of the information to refer to later when entering commands in the **Shell** screen. Zvol names are similar to the VM name but not identical.
    Optionally, you can highlight all the listed information and copy/paste it into a text file, but this is not necessary.
-   {{< /hint >}}
 
-2. While on the **Instances** screen, verify the VM is operational and has Internet access, and then stop the VM.
-   Repeat for each zvol for an Instance VM that you plan to migrate into a new VM in 25.10 or later.
+2. While on the **Instances** screen, verify the VM is operational and the network is operating as expected.
+   One way to verify external network access is to check Internet access. Stop the VM before upgrading.
+   Repeat for each zvol that you plan to migrate into a new VM in later releases.
 
-3. Go to **Datasets**, locate the zvol for the Instance VM, and take a snapshot of the volume as a backup.
-   Repeat for each VM zvol you want to migrate.
+3. Go to **Datasets**, locate the pool associated with Instances (Containers), and take a recursive snapshot to back up all Instances VM zvols.
+   These zvols are found in the hidden **.ix-virt** directory created in the pool Instances uses, selected when you configure the feature.
 
 4. Go to **System > Update**, and update to the next publicly available maintenance or major version release.
    Follow the release migration paths outlined in the version release notes or the [Software Releases](https://www.truenas.com/docs/softwarereleases/) article.
@@ -465,17 +464,16 @@ While in a 25.04.1 or a later maintenance release:
    If a VM with Windows OS is created in 25.04.0 using the **Virtual Machine** screens (not **Instances** in 25.04.1) the VM should run.
    If this VM cannot find the NIC, delete the NIC in the configuration from the **Devices** screen for that VM, and then reconfigure it to restore functionality.
    {{< /expand >}}
-
-After updating to 25.10 or later:
+After upgrading to a release that shows the **Virtual Machines** screen and the **Containers** option:
 
 5. Go to **Containers** to see which VMs are listed, then click **Configuration**, and then **Manage Volumes** to open the **Volumes** window.
    Take a screenshot of the volumes listed, or copy/paste the volumes and VM information into a text file to use later in this procedure.
+   Zvol names are similar to the VM but not identical. Volume names are used in step 6 below.
 
-6. Go to **Virtual Machines** to see which are listed.
-
-7. Go to **System > Shell**. Exit to the Linux prompt for the system.
+6. Go to **System > Shell**. Exit to the Linux prompt for the system.
 
    Note: This is where the logged in admin user needs `sudo` permissions, or where the root user must have a password configured to enter the following commands to find, rename/move, and verify each Instance zvol is properly configured.
+   Experienced users can use switch to the root user if the root user has a password assigned and enabled.
 
    Enter the following commands at the Linux system prompt:
 
@@ -488,7 +486,7 @@ After updating to 25.10 or later:
    - *poolname* is the name of the pool associated with the Instance VMs.
      If you have multiple pools associated with the Instance VMs, repeat this command with the name of that pool to show hidden zvols in that pool.
 
-   The **.ix-virt** directory contains the zvols use in Instance VMs. Ignore the entries with the **.block** extension.
+   The **.ix-virt** directory contains the zvols use in Instance VMs. Ignore the entries with the **.block** extension, and those not included in the the **.ix-virt** directory.
    The output includes other zvols in the pool if your system has non-instance VMs configured in the pool name entered in the command.
 
    {{< expand "Example Command Output" "v" >}}
@@ -543,7 +541,7 @@ After updating to 25.10 or later:
 
    After completing the commands listed above for each zvol you want to migrate. Go to **Datasets** and verify all volumes you migrated show on the screen.
 
-8. Create the new VM using the migrated zvol. Repeat these steps for each zvol you migrated.
+7. Create the new VM using the migrated zvol. Repeat these steps for each zvol you migrated.
    Go to **Virtual Machines**, click on **Add** to open the **Create Virtual Machine** wizard.
 
    a. Complete the first screen by entering a name for the new VM, select the operating system used by the Instances VM, enter a brief description, then if using the **Bind** setting, enter a password. Click **Next**.
@@ -560,7 +558,7 @@ After updating to 25.10 or later:
    Click **Save**.
    This sets the VM to boot from the disk, which prevents the volume from being overwritten by booting from the CD-ROM device with an OS image file on it (if you added one in the creation wizard).
 
-9. Return to the **Virtual Machines** screen, expand the VM, then click **Start** to verify it opens as expected and has Internet access.
+8. Return to the **Virtual Machines** screen, expand the VM, then click **Start** to verify it opens as expected and has Internet access.
 
 ## Virtual Machines Contents
 
