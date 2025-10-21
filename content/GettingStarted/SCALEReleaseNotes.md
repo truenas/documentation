@@ -111,7 +111,7 @@ For more details on feature flags, see [OpenZFS Feature Flags](https://openzfs.g
 
 The TrueNAS team is pleased to release TrueNAS 25.04.2.5!
 
-This is a small maintenance release that includes fixes centered around Enterprise usage and a SMB version update for security fixes.
+This is a small maintenance release that includes fixes centered around Enterprise usage and an SMB version update for security fixes.
 
 ### 25.04.2.5 Notable Changes
 
@@ -119,7 +119,7 @@ This is a small maintenance release that includes fixes centered around Enterpri
 * Automatically restart dependent services when Directory Services recovers from a FAULTED state ([NAS-137009](https://ixsystems.atlassian.net/browse/NAS-137009)).
 * Adjust alerting for attached USB devices to avoid spamming Proactive Support alerts during TrueNAS Enterprise hardware troubleshooting sessions ([NAS-137844](https://ixsystems.atlassian.net/browse/NAS-137844)).
 * Improve debug logging for Directory Services troubleshooting ([NAS-138057](https://ixsystems.atlassian.net/browse/NAS-138057)).
-* Revert a [limit on NFS hosts and networks](https://ixsystems.atlassian.net/browse/NAS-131451) in 25.04 ([NAS-138074](https://ixsystems.atlassian.net/browse/NAS-138074)). This is being evaulated for reinclusion in a future TrueNAS release .
+* Revert a [limit on NFS hosts and networks](https://ixsystems.atlassian.net/browse/NAS-131451) in 25.04 ([NAS-138074](https://ixsystems.atlassian.net/browse/NAS-138074)). This is being evaluated for reintroduction in a future TrueNAS release.
 
 
 ## 25.04.2.4
