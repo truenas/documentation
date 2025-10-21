@@ -127,7 +127,7 @@ If you have not yet added a virtual machine to your system, clicking **Add Virtu
 
 5. Configure **Installation Media** settings to upload the operating system you selected in step 1.
 
-   {{< trueimage src="/images/SCALE/Virtualization/CreateVirtualMachineInstallationMediaSettings.png" alt="Installation Medi Settings" id="Installation Media Settings" >}}
+   {{< trueimage src="/images/SCALE/Virtualization/CreateVirtualMachineInstallationMediaSettings.png" alt="Installation Media Settings" id="Installation Media Settings" >}}
 
    You can create the VM without an OS installed, then edit the VM to add it later.
    To add the installation media, type the path or browse to select the location of the image file, and then select it.
@@ -417,7 +417,7 @@ Before beginning the process:
 2. Take a recursive snapshot or back up the pool configured for Instance VMs.
    Using ZFS commands to rename and move an existing zvol can damage data stored in the volume.
    Having a backup is a critical step to restoring data if something goes wrong in the process.
-3. Verify the VM is operational and network is functioning as expected. One way to do this to verify it has Internet access.
+3. Verify the VM is operational and network is functioning as expected. One way to do this is to verify it has Internet access.
    Then stop the VM before you upgrade to the next release.
 4. Identify the dataset where you want to move the volume.
    We do not recommend renaming or moving the volume more than once, as it increases the risk of possible data corruption or loss.
@@ -430,7 +430,7 @@ If not, go to **Credentials > Users**, edit the user to allow `sudo` commands, o
 This procedure applies to the zvol for an Instance or Container VM that has data you want to preserve, and access from a new VM in using the **Virtual Machines** screens in later releases.
 
 1. Go to **Instances** (or **Containers**), click on **Configuration**, and then **Manage Volumes** to open the **Volumes** window.
-   The **Volumes** window lists all Instances VMs and the name associated storage volumes (zvols).
+   The **Volumes** window lists all Instances VMs and the named associated storage volumes (zvols).
 
    Record the volume name or take a screenshot of the information to refer to later when entering commands in the **Shell** screen. Zvol names are similar to the VM name but not identical.
    Optionally, you can highlight all the listed information and copy/paste it into a text file, but this is not necessary.
@@ -446,7 +446,7 @@ This procedure applies to the zvol for an Instance or Container VM that has data
    Follow the release migration paths outlined in the version release notes or the [Software Releases](https://www.truenas.com/docs/softwarereleases/) article.
 
    After updating from a 25.04.x release, VMs created using **Instances** screens show on the **Containers** screen, and are stopped.
-   Some VMs experience issues various issues like network connectivity, or are stopped and do not start.
+   Some VMs experience various issues like network connectivity, or are stopped and do not start.
    Refer to the troubleshooting tips below for more information. 25.10 releases correct some issues encountered in 25.04.2.4 VMs that are migrated.
 
    {{< expand "Troubleshooting VM Issues" "v" >}}
@@ -472,7 +472,7 @@ After upgrading to a release that shows the **Virtual Machines** screen and the 
 
 6. Go to **System > Shell**. Exit to the Linux prompt for the system.
 
-   Note: This is where the logged in admin user needs `sudo` permissions, or where the root user must have a password configured to enter the following commands to find, rename/move, and verify each Instance zvol is properly configured.
+   Note: This is where the logged-in admin user needs `sudo` permissions, or where the root user must have a password configured to enter the following commands to find, rename/move, and verify each Instance zvol is properly configured.
    Experienced users can use switch to the root user if the root user has a password assigned and enabled.
 
    Enter the following commands at the Linux system prompt:
@@ -486,7 +486,7 @@ After upgrading to a release that shows the **Virtual Machines** screen and the 
    - *poolname* is the name of the pool associated with the Instance VMs.
      If you have multiple pools associated with the Instance VMs, repeat this command with the name of that pool to show hidden zvols in that pool.
 
-   The **.ix-virt** directory contains the zvols use in Instance VMs. Ignore the entries with the **.block** extension, and those not included in the the **.ix-virt** directory.
+   The **.ix-virt** directory contains the zvols use in Instance VMs. Ignore the entries with the **.block** extension, and those not included in the **.ix-virt** directory.
    The output includes other zvols in the pool if your system has non-instance VMs configured in the pool name entered in the command.
 
    {{< expand "Example Command Output" "v" >}}
@@ -519,7 +519,7 @@ After upgrading to a release that shows the **Virtual Machines** screen and the 
 
    Where:
    - *tank* is the pool name in the example.
-   - *default_vm2410linux-icppg_vm2410linuxclone1</i>* is the name of a hidden zvol in the example, and the name given to the migrated zvol.
+   - *default_vm2410linux-icppg_vm2410linuxclone1* is the name of a hidden zvol in the example, and the name given to the migrated zvol.
      We do not recommend renaming the migrated zvol to minimize potential issues with the migration process.
    - *vms* is the dataset in the example as the location to store the migrated zvols for VMs. Change this to the location on your system.
 
@@ -528,7 +528,7 @@ After upgrading to a release that shows the **Virtual Machines** screen and the 
 
    c. Verify the `volmode`. Enter the following command for each zvol you rename.
 
-   <code>sudo zfs get volmode <i>tank/vms/efault_vm2410linux-icppg_vm2410linuxclone1</i></code>
+   <code>sudo zfs get volmode <i>tank/vms/default_vm2410linux-icppg_vm2410linuxclone1</i></code>
 
    Where:
    - *tank* is the pool name.
@@ -537,7 +537,7 @@ After upgrading to a release that shows the **Virtual Machines** screen and the 
 
    This returns the `volmode` for the volume. It should be set to `dev`. If not, enter the following command to set it to `dev`:
 
-   <code>sudo zfs set volmode=dev <i>tank/vms/efault_vm2410linux-icppg_vm2410linuxclone1</i></code>
+   <code>sudo zfs set volmode=dev <i>tank/vms/default_vm2410linux-icppg_vm2410linuxclone1</i></code>
 
    After completing the commands listed above for each zvol you want to migrate. Go to **Datasets** and verify all volumes you migrated show on the screen.
 
