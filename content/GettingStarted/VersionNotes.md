@@ -2,6 +2,8 @@
 title: "25.10 (Goldeye) Version Notes"
 description: "Highlights, change log, and known issues for TrueNAS 25.10 releases."
 weight: 10
+aliases:
+- /gettingstarted/scalereleasenotes/
 related: false
 use_jump_to_buttons: true
 jump_to_buttons:
