@@ -41,7 +41,8 @@ jobs:
       - name: Run Vale
         continue-on-error: true
         run: |
-          vale sync
+          # Styles are versioned in the repo, no need to sync from external sources
+          echo "Using Vale styles from repository"
           if [ "${{ steps.changed-files.outputs.any_changed }}" == "true" ]; then
             echo "Running Vale on changed files: ${{ steps.changed-files.outputs.all_changed_files }}"
             vale --output=JSON ${{ steps.changed-files.outputs.all_changed_files }} > vale-results.json || true
