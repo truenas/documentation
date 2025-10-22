@@ -36,27 +36,20 @@ A system config file is a database file containing your settings, including acco
 
 The **Upload File** option gives users the ability to replace the current system configuration with any previously saved TrueNAS configuration file.
 
-{{< hint type=warning >}}
-When migrating from a FreeBSD-based release to a Linux-based release, the new administration user login credentials (name and password) are deleted and replaced with the FreeBSD-based root user and password in the uploaded configuration file.
-Log in to the UI with the original root user credentials, then recreate an administration user and password.
+{{< include file="/static/includes/WhyUploadConfig.md" >}}
 
-To security-harden your system, do not use the **trunas_admin** user or **admin**, choose a unique username and password that cannot be easily guessed.
-Disable the root user login password as the final step.
-{{< /hint >}}
-
-{{< hint type=warning title="Always Include the Secret Seed!" >}}
 If you do not save the secret seed by downloading the system config file, various services can break due to missing information.
 Without the secret seed, encrypted fields are set to empty values. For example, SMB via local accounts and apps.
 Always select the option to save the secret seed when downloading the system config file!
-{{< /hint >}}
 
-{{< include file="/static/includes/WhyUploadConfig.md" >}}
+Uploading a configuration file from a FreeBSD-based release wipes any existing administrative users and replaces with the original FreeBSD-based root user and password from the uploaded configuration file.
+To secure the system after restoring from a FreeBSD-based TrueNAS config file, log in with the original root user credentials, recreate an administrative account, and finally re-disable the root account password.
 
 ### Resetting to Defaults
 
 {{< enterprise >}}
 Enterprise High Availability (HA) systems should never reset their system configuration to defaults.
-Contact TrueNAS Enterprise Support if a system configuration reset is required.
+Contact TrueNAS Enterprise Support if you need to reset the system configuration.
 
 {{< expand "TrueNAS Enterprise Support" "v" >}}
 {{< include file="/static/includes/iXsystemsSupportContact.md" >}}
