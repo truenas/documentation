@@ -35,7 +35,7 @@ If you make a mistake or want to change any setting, delete the CSR and create a
 To add a CSR:
 
 1. Enter a name and select the CSR type.
-   The **Add CSR** wizard allows creating a certificate signing request(CSR) or importing a certificate for a CSR.
+   The **Add CSR** wizard allows creating a certificate signing request (CSR) or importing a certificate for a CSR.
    Users can select a predefined certificate extension from the **Profiles** dropdown list.
 
    {{< trueimage src="/images/SCALE/Credentials/AddCSRIdentifierAndType.png" alt="Add CSR Certificate Options RSA Type" id="Add CSR Certificate Options RSA Type" >}}
