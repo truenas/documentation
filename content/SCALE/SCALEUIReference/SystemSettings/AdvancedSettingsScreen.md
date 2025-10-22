@@ -12,6 +12,8 @@ aliases:
  - /scale/scaleclireference/system/clisystemdataset/
  - /scale/scaleclireference/system/clitunable/
  - /scale/scaleclireference/task/clicronjob/
+ - /scale/scaletutorials/systemsettings/services/smartservicesscale/
+ - /scale/scaleuireference/systemsettings/services/smartservicesscreen/
 tags:
  - settings
  - pools
@@ -122,7 +124,8 @@ The **Console** widget shows the current console settings for TrueNAS, which cov
 
 ## Syslog Widget
 
-The **Syslog** widget displays the existing system logging settings that specify how and when the system sends log messages to the syslog server.
+The **Syslog** widget displays the existing system logging settings that specify how and when the system sends log messages to system log (syslog) servers.
+TrueNAS allows configuring an array of two syslog servers. Each server can have its own host, transport, and TSL certificate setting.
 
 {{< trueimage src="/images/SCALE/SystemSettings/AdvancedSettingsSyslogWidget.png" alt="Syslog Widget" id="Syslog Widget" >}}
 
@@ -231,7 +234,7 @@ Any script listed is a link that opens the **[Edit Init/Shutdown Script](#add-or
 | **Type** | Select *Command* for an executable or *Script* for an executable script. |
 | **Command** | Enter the command with any options. |
 | **Script** | Select the script. The script runs using [dash(1)](https://manpages.debian.org/testing/dash/sh.1.en.html "dash(1) Page"). |
-| **When** | Select when the command or script runs from the dropdown list. Options are **Pre Init** for early in the boot process, after mounting file systems and starting networking. **Post Init** runs at the end of the boot process before Linux services start. **Shutdown** runs during the system power-off process. |
+| **When** | Select when the command or script runs from the dropdown list. Options are **Pre Init** for early in the boot process, after mounting file systems and starting networking. **Post Init** runs at the end of the boot process before Linux services start. **Shutdown** runs during the system power-off process. Scripts in the same category (for example, multiple Post Init scripts) run sequentially in the order in which the user added them. |
 | **Enabled** | Select to enable this script. When left cleared, it disables the script without deleting it. |
 | **Timeout** | Automatically stop the script or command after the specified number of seconds. |
 {{< /truetable >}}

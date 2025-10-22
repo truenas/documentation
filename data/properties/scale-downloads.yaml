@@ -156,6 +156,9 @@ majorVersions:
     releaseNotes: "https://www.truenas.com/docs/scale/25.04/gettingstarted/scalereleasenotes/"
     releaseName: "Fangtooth"
     releases:
+      - name: "25.04.2.5"
+        link: "https://download.truenas.com/TrueNAS-SCALE-Fangtooth/25.04.2.5"
+        date: "2025-10-21"
       - name: "25.04.2.4"
         link: "https://download.truenas.com/TrueNAS-SCALE-Fangtooth/25.04.2.4"
         date: "2025-09-10"
@@ -188,6 +191,9 @@ majorVersions:
     majorVersion: "25.10 (Goldeye)"
     releaseName: "Goldeye"
     releases:
+      - name: "25.10-RC.1"
+        link: "https://download.truenas.com/TrueNAS-SCALE-Goldeye-RC/25.10-RC.1/"
+        date: "2025-09-30"
       - name: "25.10-BETA.1"
         link: "https://download.truenas.com/TrueNAS-SCALE-Goldeye-BETA/25.10-BETA.1/"
         date: "2025-08-28"

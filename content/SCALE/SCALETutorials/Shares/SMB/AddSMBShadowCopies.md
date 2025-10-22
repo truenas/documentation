@@ -10,36 +10,37 @@ tags:
 
 {{< include file="/static/includes/RootLevelDatasetShareWarning.md" >}}
 
-**Enable Shadow Copies** is a legacy option not found in 25.10 or later releases.
-It only shows if an SMB share with this option exists in 25.04 latest maintenance release or earlier version is upgraded to the 25.10 or later release.
-It exports ZFS snapshots as [Shadow Copies](https://docs.microsoft.com/en-us/windows/win32/vss/shadow-copies-and-shadow-copy-sets) for Microsoft Volume Shadow Copy Service (VSS) clients.
-
-{{< expand "Can I roll back to an earlier version boot environment to create this share type?" "V" >}}
-No! Rolling back to an earlier release using boot environments does not allow you to create a shadow copy share that propagates to the 25.10 boot environment.
-You can create a new share using the **Time Locked** preset, but this does not migrate your users, other settings, or data.
-{{< /expand >}}
+TrueNAS automatically enables shadow copies for SMB shares, exporting ZFS snapshots as [Shadow Copies](https://docs.microsoft.com/en-us/windows/win32/vss/shadow-copies-and-shadow-copy-sets) for Microsoft clients.
 
 ## About SMB Shadow Copies
 
-[Shadow Copies](https://docs.microsoft.com/en-us/windows-server/storage/file-server/volume-shadow-copy-service), also known as the Volume Shadow Copy Service (VSS) or Previous Versions, is a Microsoft service for creating volume snapshots.
+Shadow Copies, also known as the [Volume Shadow Copy Service (VSS)](https://docs.microsoft.com/en-us/windows-server/storage/file-server/volume-shadow-copy-service) or Previous Versions, is a Microsoft service for creating volume snapshots.
 You can use shadow copies to restore previous versions of files from within Windows Explorer.
 
 By default, all ZFS snapshots for a dataset underlying an SMB share path are presented to SMB clients through the volume shadow copy service or are accessible directly with SMB when the hidden ZFS snapshot directory is within the SMB share path.
 
-Before you activate Shadow Copies in TrueNAS, there are a few caveats:
+{{< hint type=note title="Disabling Shadow Copies" >}}
+TrueNAS 25.10 and later does not support per-share disabling of SMB shadow copies on non-legacy shares.
 
-* Shadow Copies might not work if you have not updated the Windows system to the latest service pack.
-  If previous versions of files to restore are not visible, use Windows Update to ensure the system is fully up-to-date.
+If you need to completely disable shadow copies and prevent client access to ZFS snapshots, disable the ZFS snapshot directory for the shared dataset.
+Go to **Storage > Datasets**, select the shared dataset, and click **Edit** on the **Details** widget.
+In the **Edit Dataset** screen, select **Advanced Options** and set **Snapshot Directory** to **Disabled**.
+When the snapshot directory is disabled, Samba automatically turns off the shadow copy feature.
+{{< /hint >}}
 
-* Shadow Copies support only works for ZFS pools or datasets.
+## Deleting Shadow Copies
 
-* SMB share dataset or pool permissions must be appropriately configured.
+Users with an SMB client cannot delete shadow copies.
+Instead, the administrator uses the TrueNAS web interface to remove snapshots.
 
-* SMB share with **Enable Shadow Copy** selected must exist in an earlier release before upgrading to 25.10 or later.
+## Managing Shadow Copies (Legacy Shares)
 
-## Enabling Shadow Copies
+Enabling or disabling shadow copies is an available option in pre-25.10 TrueNAS releases or for legacy shares in 25.10 or later.
 
-To enable shadow copies in pre-25.10 TrueNAS releases, go to **Shares > Windows (SMB) Shares** and locate the share.
+TrueNAS sets a share **Purpose** to **Legacy Share** after upgrading to 25.10 when shares created in a release before 25.10 have **Purpose** set to **No Preset**.
+See [Legacy Share Settings]({{< ref "SMBSharesScreens/#legacy-share-settings" >}}) for more information.
+
+To enable shadow copies for a compatible dataset, go to **Shares > Windows (SMB) Shares** and locate the share.
 
 Click on the **Edit** option for the share.
 
@@ -61,10 +62,6 @@ Use **Regedit** and go to **HKLM\SYSTEM\CurrentControlSet\Services\LanmanWorksta
 The **DWORD AllowInsecureGuestAuth** is an incorrect value: *0x00000000*. Change this value to **0x00000001** (Hexadecimal 1) to allow adjusting the settings in <file>gpedit.msc</file>.
 You can use a Group Policy Update to apply the edit to a fleet of Windows machines.
 {{< /expand >}}
-
-## Deleting Shadow Copies
-Users with an SMB client cannot delete shadow copies.
-Instead, the administrator uses the TrueNAS web interface to remove snapshots.
 
 Disable shadow copies for an SMB share by clearing the **Enable shadow copies** checkbox on the **Edit SMB** screen in the **Other Options** on the **Advanced Options** screen for the SMB share.
 Disabling does not prevent access to the hidden <file>.zfs/snapshot</file> directory for a ZFS dataset when it is within the path for an SMB share.

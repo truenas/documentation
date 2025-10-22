@@ -20,7 +20,7 @@ Using these widgets, users can establish Secure Socket Shell (SSH) connections.
 
 You must also configure and activate the [SSH Service]({{< ref "sshservicescale" >}}) to allow SSH access.
 
-These SSH credentials are used to manage SSH connections specifically for automated tasks such as replication, backups, cloud sync, or other system-to-system operations. You can generate, store, and manage SSH key pairs and define SSH connections that TrueNAS uses for these automated processes. The key pairs managed here are not tied to individual user logins, but are instead used by the system for secure communication with other systems or services.
+These SSH credentials are used to manage SSH connections specifically for automated tasks such as replication, backups, cloud sync, or other system-to-system operations. You can generate, store, and manage SSH key pairs and define SSH connections that TrueNAS uses for these automated processes. The key pairs managed here are not tied to individual user but are instead used by the system for secure communication with other systems or services.
 
 For individual user SSH access, configure SSH keys in the user account settings under **Credentials > Users**.
 
@@ -28,11 +28,10 @@ For individual user SSH access, configure SSH keys in the user account settings 
 
 To begin setting up an SSH connection, go to **Credentials > Backup Credentials**.
 
-{{< trueimage src="/images/SCALE/Credentials/BackupCredentialsScreen.png" alt="Backup Credentials Screen" id="Backup Credentials Screen" >}}
-
-Click **Add** on the **SSH Connections** widget.
+{{< include file="/static/includes/AddSSHConnection.md" >}}
 
 ### Configuring a Semi-Automatic SSH Connection
+
 The procedure in this section covers the semi-automatic setup method for creating an SSH connection with another TrueNAS system.
 
 **Semi-automatic** simplifies setting up an SSH connection with another TrueNAS system without logging in to that system to transfer SSH keys.
@@ -43,6 +42,7 @@ You can generate the key pair as part of the semiautomatic configuration or a ma
 {{< include file="/static/includes/AddSSHConnection.md" >}}
 
 ### Configuring a Manual SSH Connection
+
 The instructions in this section cover how to set up an SSH connection to a non-TrueNAS system.
 To manually set up an SSH connection, you must copy a public encryption key from the local system to the remote system.
 A manual setup allows a secure connection without a password prompt.
@@ -50,11 +50,12 @@ A manual setup allows a secure connection without a password prompt.
 {{< include file="/static/includes/AddManualSSHConnection.md" >}}
 
 ### Adding a Public SSH Key to an Admin User Account
+
 This procedure covers adding a public SSH key to the admin account on the TrueNAS system and generating a new SSH Keypair to add to the remote system (TrueNAS or other).
 
 1. Copy the SSH public key text or download it to a text file:
 
-   Log into the TrueNAS system that generated the SSH key pair and go to **Credentials > Backup Credentials**.
+   Log in to the TrueNAS system that generated the SSH key pair and go to **Credentials > Backup Credentials**.
 
    Click on the name of the key pair on the **SSH Keypairs** widget to open the key pair for the SSH connection.
 
@@ -62,16 +63,15 @@ This procedure covers adding a public SSH key to the admin account on the TrueNA
 
 2. Add the public key to the admin account on the system where you want to register the public key.
 
-   Log into the TrueNAS system where you want to register the public key and go to **Credentials > Users**.
+   Log in to the TrueNAS system where you want to register the public key and go to **Credentials > Users**.
 
-   Edit the admin account.
-   Click on the <span class="material-icons">expand_more</span> icon and then click **Edit** to open the **Edit User** screen.
+   Edit the admin account. Select the user, and click **Edit** to open the **Edit User** screen.
 
-   {{< trueimage src="/images/SCALE/Credentials/SSHEditUserAuthenticationSettings.png" alt="Add SSH Key" id="Add SSH Key" >}}
+   {{< trueimage src="/images/SCALE/DataProtection/EditUserFullAdminSSHAccess.png" alt="Adding SSH Settings" id="Adding SSH Settings" >}}
 
-   Paste the SSH public key text into the **Authorized Keys** field on the **Edit User** configuration screen in the **Authentication** settings.
+   Verify the user has **TrueNAS Access** selected and the full admin role selected, and the **SSH Access** selected to show the SSH authentication fields.
 
-   Alternately, click **Choose File** to select and upload the SSH key.
+   Paste the SSH public key text into the **Public SSH Key** field in the **Authentication** settings.
 
    {{< hint type=important >}}
    Do not paste the SSH private key.
@@ -81,9 +81,10 @@ This procedure covers adding a public SSH key to the admin account on the TrueNA
 
 If you need to generate a new SSH key pair, see [Generating SSH Keypairs](#generating-ssh-keypairs).
 
-If the remote NAS is not a TrueNAS system, refer to the documentation for that system, and find their instructions on adding a public SSH key.
+If the remote NAS is not a TrueNAS system, refer to the documentation for that system and find its instructions on adding a public SSH key.
 
 ## Generating SSH Keypairs
+
 TrueNAS generates and stores [RSA-encrypted](https://tools.ietf.org/html/rfc8017) SSH public and private key pairs on the **SSH Keypairs** widget found on the **Credentials > Backup Credentials** screen.
 Key pairs are generally used when configuring **SSH Connections** or SFTP **Cloud Credentials**.
 TrueNAS does not support encrypted key pairs or key pairs with passphrases.

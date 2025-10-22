@@ -9,6 +9,8 @@ aliases:
  - /scalenext-releasenotes/
  - /scale/scalenextversion/
  - /scale/26.04/gettingstarted/scalereleasenotes/
+ - /scale/26.04/gettingstarted/versionnotes/
+ - /scale/gettingstarted/scalereleasenotes/ 
  - /releasenotes/
 jump_to_buttons:
   - text: "Latest Changes"
@@ -37,7 +39,7 @@ jump_to_buttons:
 {{< hint type="tip" title="26.04 Nightly Development Documentation" >}}
 This page tracks the latest development roadmap and notes for the future TrueNAS major version 26.04 (Halfmoon).
 
-See the stable [25.04 (Fangtooth)](https://www.truenas.com/docs/scale/25.04/gettingstarted/scalereleasenotes/) or pre-release [25.10 (Goldeye)](https://www.truenas.com/docs/scale/25.04/gettingstarted/scalereleasenotes/) release notes for information relating to those versions.
+See the stable [25.04 (Fangtooth)](https://www.truenas.com/docs/scale/25.04/gettingstarted/scalereleasenotes/) or pre-release [25.10 (Goldeye)](https://www.truenas.com/docs/scale/25.10/gettingstarted/versionnotes/) release notes for information relating to those versions.
 {{< /hint >}}
 
 ## Notable Changes and Known Issues
@@ -98,9 +100,7 @@ document.addEventListener('DOMContentLoaded', function() {
 </script>
 
 <!-- CSV Changelog Table Script - Load outside tab content to prevent redeclaration -->
-<script src="/js/csv-changelog-table.js"></script>
-<script src="/js/csv-changelog-init.js"></script>
-<script src="/js/csv-changelog-tab-init.js"></script>
+{{< changelog-scripts >}}
 <script>
 // Initialize changelog table for version
 initializeChangelogTableForTabs('26.04');

@@ -1,0 +1,26 @@
+name: Re-review Label Alert
+on:
+  pull_request:
+    types: [labeled]
+
+jobs:
+  notify-slack:
+    if: ${{ github.event.label.name == 're-review' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send Slack notification
+        run: |
+          curl -X POST -H 'Content-type: application/json' \
+          --data '{
+            "text": "🔄 PR Needs Re-review",
+            "blocks": [
+              {
+                "type": "section",
+                "text": {
+                  "type": "mrkdwn",
+                  "text": ":arrows_counterclockwise: *PR Needs Re-review*\n:file_folder: Repository: ${{ github.repository }}\n:bust_in_silhouette: Author: ${{ github.event.pull_request.user.login }}\n:memo: Title: \"${{ github.event.pull_request.title }}\"\n:warning: Label added by: ${{ github.event.sender.login }}\n:link: <${{ github.event.pull_request.html_url }}|View PR>"
+                }
+              }
+            ]
+          }' \
+          ${{ secrets.SLACK_WEBHOOK_URL }}
