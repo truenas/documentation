@@ -43,8 +43,32 @@ The TrueNAS team is pleased to release TrueNAS 25.10.0!
 
 ### 25.10.0 Notable Changes
 
-Changes since 25.10-RC.1.
+**New Features:**
+* **NVMe over Fabric**: TCP support (Community Edition) and RDMA (Enterprise) for high-performance storage networking with 400GbE support.
+* **Virtual Machines**: Secure Boot support, disk import/export (QCOW2, RAW, VDI, VHDX, VMDK), and Enterprise HA failover support.
+* **Update Profiles**: Risk-tolerance based update notification system.
+* **Apps**: Automatic pool migration and external container registry mirror support.
+* **Enhanced Users Interface**: Streamlined user management and improved account information display.
+
+**Performance and Stability:**
+* **ZFS**: Critical fixes for encrypted snapshot replication, Direct I/O support, improved memory pressure handling, and enhanced I/O scaling.
+* **VM Memory**: Resolved ZFS ARC memory management conflicts preventing out-of-memory crashes.
+* **Network**: 400GbE interface support and improved DHCP-to-static configuration transitions.
+
+**UI/UX Improvements:**
+* Redesigned Updates, Users, Datasets, and Storage Dashboard screens.
+* Improved password manager compatibility.
+
+**Breaking Changes Requiring Action:**
+* **NVIDIA GPU Drivers**: Switch to open-source drivers supporting Turing and newer (RTX/GTX 16-series+). Pascal, Maxwell, and Volta no longer supported. See [NVIDIA GPU Support](#nvidia-gpu-support).
+* **Active Directory IDMAP**: AUTORID backend removed and auto-migrated to RID. Review ACLs and permissions after upgrade.
+* **Certificate Management**: CA functionality removed. Use external CAs or ACME certificates with DNS authenticators.
+* **SMART Monitoring**: Built-in UI removed. Existing tests auto-migrated to cron tasks. Install Scrutiny app for advanced monitoring.
+* **SMB Shares**: Preset-based configuration introduced. "No Preset" shares migrated to "Legacy Share" preset.
+
 See the 25.10 [Major Features](#major-features) and [Full Changelog](#full-changelog) for more information.
+
+**Notable changes since 25.10-RC.1:**
 
 * Improves ZFS property handling during dataset replication ([NAS-137818](https://ixsystems.atlassian.net/browse/NAS-137818)).
   Resolves issue where the storage page temporarily displayed errors when receiving active replications due to ZFS properties being unavailable while datasets were in an inconsistent state.
