@@ -2394,3 +2394,4 @@ VHDX
 VMDX
 QUEM
 ExportDiskToImageWindow
+InstanceWarning
