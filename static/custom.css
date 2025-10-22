@@ -2630,7 +2630,7 @@ pre.gdoc-mermaid.mermaid.mermaid_sizing {
     text-align: center !important;
     font-weight: bold !important;
     text-decoration: none !important;
-    margin: 0 !important;
+    margin: -.5em !important;
     transition: all 0.3s ease !important;
 }
 
@@ -2694,7 +2694,7 @@ pre.gdoc-mermaid.mermaid.mermaid_sizing {
     text-align: center !important;
     font-weight: bold !important;
     text-decoration: none !important;
-    margin: 0 !important;
+    margin: -.5em !important;
     transition: all 0.3s ease !important;
     width: auto !important;
 }
@@ -2705,7 +2705,7 @@ pre.gdoc-mermaid.mermaid.mermaid_sizing {
     background: none !important;
     border: none !important;
     padding: 0 !important;
-    margin: 0 !important;
+    margin: -.5em !important;
     color: white !important;
     text-decoration: none !important;
     font-weight: bold !important;
