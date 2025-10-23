@@ -151,12 +151,14 @@ mark {
 .sticky {
     position: fixed;
     top: 0;
+    left: 0;
+    right: 0;
     z-index: 5;
     margin: 0 auto;
     padding: .5rem 1rem .5rem 1rem;
 	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 	background: white;
-	min-width: -webkit-fill-available;
+	width: 100%;
 }
 .stickyelement {
     max-width: 100rem;
