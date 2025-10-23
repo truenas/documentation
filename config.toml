@@ -51,6 +51,12 @@ id = "GTM-P87FM6K"
 enable = true
 
 [params]
+  # Multi-site search configuration
+  [params.search]
+    siteName = "TrueNAS Documentation"
+    siteKey = "docs"
+    siteIcon = "/favicon/TN-favicon-32x32.png"
+    sitePriority = 1
 
   # (Optional, default 6) Set how many table of contents levels to be showed on page.
   # Use false to hide ToC, note that 0 will default to 6 (https://gohugo.io/functions/default/)

@@ -1,0 +1,38 @@
+<div id="search-modal" class="search-modal" style="display:none;">
+  <div class="search-modal-overlay" id="search-overlay"></div>
+  <div class="search-modal-content">
+    <div class="search-header">
+      <h3>Search TrueNAS Documentation</h3>
+      <button id="search-close" class="search-close" aria-label="Close search">&times;</button>
+    </div>
+
+    <div class="search-input-container">
+      <input type="text"
+             id="search-input-enhanced"
+             placeholder="Search all TrueNAS sites..."
+             autocomplete="off"
+             aria-label="Search input">
+      <button id="search-submit" class="search-submit-btn" aria-label="Search">
+        <i class="fa fa-search"></i>
+      </button>
+    </div>
+
+    <div class="search-filters">
+      <label>Filter by site:</label>
+      <div class="site-filter-buttons">
+        <button class="site-filter active" data-site="all">All Sites</button>
+        <button class="site-filter" data-site="docs">Documentation</button>
+        <button class="site-filter" data-site="apps">Apps</button>
+        <button class="site-filter" data-site="api">API</button>
+        <button class="site-filter" data-site="security">Security</button>
+        <button class="site-filter" data-site="connect">Connect</button>
+      </div>
+    </div>
+
+    <div id="search-results-enhanced" class="search-results"></div>
+    <div id="search-loading" class="search-loading" style="display:none;">
+      <div class="loading-spinner"></div>
+      <p>Searching...</p>
+    </div>
+  </div>
+</div>

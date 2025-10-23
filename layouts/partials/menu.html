@@ -2,8 +2,7 @@
  <h2>{{ i18n "nav_navigation" }}</h2>
 
   {{ if not (isset .Params "main_index_class") }}
-    {{ partial "search" . }}
-    {{ partial "search-form" . }}
+    {{ partial "search-trigger" . }}
   {{ end }}
 
   <section class="gdoc-nav--main">
