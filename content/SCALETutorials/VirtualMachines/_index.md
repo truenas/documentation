@@ -427,7 +427,7 @@ If not, go to **Credentials > Users**, edit the user to allow `sudo` commands, o
 
 ### Migrating a Zvol for an Instance VM
 
-This procedure applies to the zvol for an Instance or Container VM that has data you want to preserve, and access from a new VM in using the **Virtual Machines** screens in later releases.
+This procedure applies to the zvol for an Instance or Container VM that has data you want to preserve and access from a new VM using the **Virtual Machines** screens in later releases.
 
 1. Go to **Instances** (or **Containers**), click on **Configuration**, and then **Manage Volumes** to open the **Volumes** window.
    The **Volumes** window lists all Instances VMs and the named associated storage volumes (zvols).
