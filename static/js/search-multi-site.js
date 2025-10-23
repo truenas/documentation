@@ -1,13 +1,15 @@
 // Multi-Site Search Configuration
-// Always uses production URLs - works identically in local testing and production
+// Temporary local testing mode - set LOCAL_TESTING to true for local development
+
+const LOCAL_TESTING = true; // Change to false for production
 
 const searchConfig = {
   indexes: {
-    // All sites use production URLs
+    // Local testing uses local pagefind index
     docs: {
-      url: 'https://www.truenas.com/docs/pagefind/',
+      url: LOCAL_TESTING ? '/pagefind/' : 'https://www.truenas.com/docs/pagefind/',
       name: 'TrueNAS Documentation',
-      icon: 'https://www.truenas.com/docs/favicon/TN-favicon-32x32.png',
+      icon: LOCAL_TESTING ? '/favicon/TN-favicon-32x32.png' : 'https://www.truenas.com/docs/favicon/TN-favicon-32x32.png',
       priority: 1
     },
     apps: {
@@ -226,12 +228,19 @@ class MultiSiteSearch {
           results.results.map(async (r) => {
             try {
               const data = await r.data();
+              const version = data.meta?.version || null;
+              const displayName = version
+                ? `${searchConfig.indexes[siteKey].name} (${version})`
+                : searchConfig.indexes[siteKey].name;
+
               return {
                 ...data,
                 siteKey,
                 siteName: searchConfig.indexes[siteKey].name,
+                siteDisplayName: displayName,
                 siteIcon: searchConfig.indexes[siteKey].icon,
-                sitePriority: searchConfig.indexes[siteKey].priority
+                sitePriority: searchConfig.indexes[siteKey].priority,
+                version: version
               };
             } catch (error) {
               console.error(`Error loading result data for ${siteKey}:`, error);
@@ -304,7 +313,7 @@ class MultiSiteSearch {
         <div class="search-result-item">
           <div class="result-header">
             ${icon}
-            <span class="result-site-badge">${result.siteName}</span>
+            <span class="result-site-badge">${result.siteDisplayName}</span>
           </div>
           <h4><a href="${result.url}" target="_blank" rel="noopener">${this.escapeHtml(title)}</a></h4>
           <div class="result-excerpt">${excerpt}</div>
@@ -352,7 +361,7 @@ class MultiSiteSearch {
         <div class="search-result-item">
           <div class="result-header">
             ${icon}
-            <span class="result-site-badge">${result.siteName}</span>
+            <span class="result-site-badge">${result.siteDisplayName}</span>
           </div>
           <h4><a href="${result.url}" target="_blank" rel="noopener">${this.escapeHtml(title)}</a></h4>
           <div class="result-excerpt">${excerpt}</div>
