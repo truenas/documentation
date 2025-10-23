@@ -99,6 +99,20 @@ mark {
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 10;
 }
+/* Normalize link-based dropdown items to behave like the divs */
+.truenas-navmenudropdown a.truenas-dropdown-item {
+  text-decoration: none;   /* remove underline */
+  color: inherit;          /* use same base color as div items */
+}
+
+.truenas-navmenudropdown a.truenas-dropdown-item:visited {
+  color: inherit;          /* prevent purple visited */
+}
+
+.truenas-navmenudropdown a.truenas-dropdown-item:hover {
+  text-decoration: none;   /* keep underline off */
+  color: #bbb;             /* match div hover color */
+}
 .truenas-dropdown-item {
   cursor: pointer;
   font-family: "din-2014";
@@ -2470,3 +2484,148 @@ pre.gdoc-mermaid.mermaid.mermaid_sizing {
   }
 
 /* End Styling for Version Selector Sections */
+
+/* Style TrueNAS Apps Market link as green button */
+.gdoc-nav a[href="https://apps.truenas.com/"],
+.gdoc-nav .gdoc-nav a[href="https://connect.truenas.com"] {
+    background-color: #71bf44 !important;
+    color: white !important;
+    padding: 10px 20px !important;
+    border-radius: 15px !important;
+    display: block !important;
+    text-align: center !important;
+    font-weight: bold !important;
+    text-decoration: none !important;
+    margin: -.5em !important;
+    transition: all 0.3s ease !important;
+}
+
+.gdoc-nav a[href="https://apps.truenas.com/"]:hover,
+.gdoc-nav a[href="https://connect.truenas.com"]:hover {
+    background-color: #5da639 !important;
+    border-color: #5da639 !important;
+    color: white !important;
+    text-decoration: none !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Ensure the icon is white and properly sized */
+.gdoc-nav a[href="https://apps.truenas.com/"] .gdoc-icon,
+.gdoc-nav a[href="https://connect.truenas.com"] .gdoc-icon {
+    color: white !important;
+    fill: white !important;
+    vertical-align: middle !important;
+}
+
+/* Dark mode adjustments for the Apps Market button */
+@media (prefers-color-scheme: dark) {
+    .gdoc-nav a[href="https://apps.truenas.com/"],
+    .gdoc-nav a[href="https://connect.truenas.com"] {
+        background-color: #71bf44 !important;
+        border-color: #71bf44 !important;
+    }
+    
+    .gdoc-nav a[href="https://apps.truenas.com/"]:hover,
+    .gdoc-nav a[href="https://connect.truenas.com"]:hover {
+        background-color: #5da639 !important;
+        border-color: #5da639 !important;
+    }
+}
+
+:root[color-theme=dark] .gdoc-nav a[href="https://apps.truenas.com/"],
+    .gdoc-nav a[href="https://connect.truenas.com"] {
+    background-color: #71bf44 !important;
+    border-color: #71bf44 !important;
+}
+
+:root[color-theme=dark] .gdoc-nav a[href="https://apps.truenas.com/"]:hover,
+    .gdoc-nav a[href="https://connect.truenas.com"]:hover {
+    background-color: #5da639 !important;
+    border-color: #5da639 !important;
+}
+
+/* End TrueNAS Apps Market button styling */
+
+/* Style the parent span that contains both icon and link as green button */
+.gdoc-nav section:last-child .gdoc-nav__list li:nth-child(1) span.flex,
+.gdoc-nav section:last-child .gdoc-nav__list li:nth-child(2) span.flex {
+    background-color: #71bf44 !important;
+    color: white !important;
+    padding: 10px 20px !important;
+    border-radius: 15px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    font-weight: bold !important;
+    text-decoration: none !important;
+    margin: -.5em !important;
+    transition: all 0.3s ease !important;
+    width: auto !important;
+}
+
+/* Remove styling from the inner link since parent span is now the button */
+.gdoc-nav section:last-child .gdoc-nav__list li:nth-child(1) a,
+.gdoc-nav section:last-child .gdoc-nav__list li:nth-child(2) a {
+    background: none !important;
+    border: none !important;
+    padding: 0 !important;
+    margin: -.5em !important;
+    color: white !important;
+    text-decoration: none !important;
+    font-weight: bold !important;
+}
+
+/* Hover effect moved to li to avoid nested hover conflicts */
+.gdoc-nav section:last-child .gdoc-nav__list li:nth-child(1):hover span.flex,
+.gdoc-nav section:last-child .gdoc-nav__list li:nth-child(2):hover span.flex {
+    background-color: #5da639 !important;
+    border-color: #5da639 !important;
+    color: white !important;
+    text-decoration: none !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Prevent any hover effects on nested elements that could conflict */
+.gdoc-nav section:last-child .gdoc-nav__list li:nth-child(1) label:hover,
+.gdoc-nav section:last-child .gdoc-nav__list li:nth-child(1) a:hover,
+.gdoc-nav section:last-child .gdoc-nav__list li:nth-child(2) label:hover,
+.gdoc-nav section:last-child .gdoc-nav__list li:nth-child(2) a:hover {
+    background: none !important;
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+/* Style the original SVG icon to be white */
+.gdoc-nav section:last-child .gdoc-nav__list li:nth-child(1) svg.gdoc-icon {
+    fill: white !important;
+    color: white !important;
+    width: 20px !important;
+    height: 20px !important;
+    margin-right: 8px !important;
+}
+
+/* Style the use element inside the SVG */
+.gdoc-nav section:last-child .gdoc-nav__list li:nth-child(1) svg use {
+    fill: white !important;
+}
+
+/* Reorder the menu items - move Apps Market to the very top */
+.gdoc-nav section:last-child .gdoc-nav__list {
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+/* Move Apps Market (2nd item) to be first */
+.gdoc-nav section:last-child .gdoc-nav__list li:nth-child(1),
+.gdoc-nav section:last-child .gdoc-nav__list li:nth-child(2) {
+    order: -1 !important;
+}
+
+/* Keep all other items in their original order */
+.gdoc-nav section:last-child .gdoc-nav__list li:not(:nth-child(1)),
+.gdoc-nav section:last-child .gdoc-nav__list li:not(:nth-child(2)) {
+    order: 0 !important;
+}
