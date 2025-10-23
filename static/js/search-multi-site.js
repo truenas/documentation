@@ -1,79 +1,37 @@
 // Multi-Site Search Configuration
-// Set LOCAL_TESTING to true for local development, false for production
-const LOCAL_TESTING = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+// Always uses production URLs - works identically in local testing and production
 
 const searchConfig = {
-  indexes: LOCAL_TESTING ? {
-    // LOCAL TESTING MODE
-    // To test multi-site search locally:
-    // 1. Build each site: cd <site-dir> && hugo && npx pagefind --site public
-    // 2. Serve on different ports: hugo serve --port 131X
-    // 3. Uncomment the sites you want to test below
-
-    docs: {
-      url: '/pagefind/',  // Local pagefind index
-      name: 'Documentation',
-      icon: '/favicon/TN-favicon-32x32.png',
-      priority: 1
-    },
-    // Uncomment to test Apps site (serve on port 1314)
-    // apps: {
-    //   url: 'http://localhost:1314/pagefind/',
-    //   name: 'Apps',
-    //   icon: '/favicon/TN-favicon-32x32.png',
-    //   priority: 2
-    // },
-    // Uncomment to test API site (serve on port 1315)
-    // api: {
-    //   url: 'http://localhost:1315/pagefind/',
-    //   name: 'API',
-    //   icon: '/favicon/TN-favicon-32x32.png',
-    //   priority: 3
-    // },
-    // Uncomment to test Security site (serve on port 1316)
-    // security: {
-    //   url: 'http://localhost:1316/pagefind/',
-    //   name: 'Security',
-    //   icon: '/favicon/TN-favicon-32x32.png',
-    //   priority: 4
-    // },
-    // Uncomment to test Connect site (serve on port 1317)
-    // connect: {
-    //   url: 'http://localhost:1317/pagefind/',
-    //   name: 'Connect',
-    //   icon: '/images/tn-openstorage-logo.png',
-    //   priority: 5
-    // }
-  } : {
-    // PRODUCTION MODE - Search all sites
+  indexes: {
+    // All sites use production URLs
     docs: {
       url: 'https://www.truenas.com/docs/pagefind/',
-      name: 'Documentation',
-      icon: '/favicon/TN-favicon-32x32.png',
+      name: 'TrueNAS Documentation',
+      icon: 'https://www.truenas.com/docs/favicon/TN-favicon-32x32.png',
       priority: 1
     },
     apps: {
       url: 'https://apps.truenas.com/pagefind/',
-      name: 'Apps',
-      icon: '/favicon/TN-favicon-32x32.png',
+      name: 'TrueNAS Apps',
+      icon: 'https://apps.truenas.com/images/truenas-logo-mark.png',
       priority: 2
     },
     api: {
       url: 'https://api.truenas.com/pagefind/',
-      name: 'API',
-      icon: '/favicon/TN-favicon-32x32.png',
+      name: 'TrueNAS API',
+      icon: 'https://api.truenas.com/images/truenas-logo-mark.png',
       priority: 3
     },
     security: {
       url: 'https://security.truenas.com/pagefind/',
-      name: 'Security',
-      icon: '/favicon/TN-favicon-32x32.png',
+      name: 'Security Advisories',
+      icon: 'https://security.truenas.com/images/truenas-logo-mark.png',
       priority: 4
     },
     connect: {
       url: 'https://connect.truenas.com/pagefind/',
-      name: 'Connect',
-      icon: '/images/tn-openstorage-logo.png',
+      name: 'TrueNAS Connect',
+      icon: 'https://connect.truenas.com/images/truenas-logo-mark.png',
       priority: 5
     }
   }
