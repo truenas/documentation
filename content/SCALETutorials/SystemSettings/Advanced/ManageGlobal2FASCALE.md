@@ -115,7 +115,7 @@ If you wait too long, a new number code displays in Google Authenticator so you 
 
 2. Go to **Credentials > Users** and edit the desired user account. Set **SSH password login enabled**, then click **Save**.
 
-3. Go to **System Settings > Services** and click the **SSH** toggle. Wait for the service status to show that it is running.
+3. Go to **System Settings > Services** and click the **SSH** <span class="iconify" data-icon="mdi:play-circle" title="Start Service">Start Service</span> button to start the service. Wait for the service status to show that it is running.
 
 4. Open the Google Authentication app on your mobile device.
 
