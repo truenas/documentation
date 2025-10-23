@@ -86,7 +86,7 @@ See the 25.10 [Major Features](#major-features) and [Full Changelog](#full-chang
 * Fixes Cloud Sync task bandwidth limit validation ([NAS-137922](https://ixsystems.atlassian.net/browse/NAS-137922)).
   Resolves "Input should be a valid integer" error when configuring bandwidth limits by properly handling rclone-compatible bandwidth formats and improving client-side validation.
 * Fixes NVMe-oF connection failures due to model number length ([NAS-138102](https://ixsystems.atlassian.net/browse/NAS-138102)).
-  Resolves "failed to connect socket: -111" error by limiting NVMe-oF subsystem model string to 40 characters, preventing kernel errors when enabling NVMe-oF shares.
+  Resolves "failed to connect socket: –111" error by limiting NVMe-oF subsystem model string to 40 characters, preventing kernel errors when enabling NVMe-oF shares.
 * Fixes application upgrade failures with validation traceback ([NAS-137805](https://ixsystems.atlassian.net/browse/NAS-137805)).
   Resolves TypeError "'error' required in context" during app upgrades by ensuring proper Pydantic validation error handling in schema construction.
 * Fixes application update failures due to schema validation errors ([NAS-137940](https://ixsystems.atlassian.net/browse/NAS-137940)).

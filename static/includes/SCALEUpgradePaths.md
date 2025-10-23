@@ -192,7 +192,7 @@ You can then upgrade directly from the latest maintenance release to the latest 
 
 {{< hint type=note >}}
 This chart shows the basic upgrade paths between TrueNAS major versions.
-Depending on your use case and risk tolerance, you may prefer to delay upgrading to allow additional time for testing and stability.
+Depending on your use case and risk tolerance, you might prefer to delay upgrading to allow additional time for testing and stability.
 See the <a href="https://www.truenas.com/docs/softwarestatus/#which-truenas-version-is-recommended" target="_blank">TrueNAS Software Status</a> for version recommendations tailored to different user types from Developer to Mission Critical.
 {{< /hint >}}
 
@@ -583,5 +583,5 @@ Permitted upgrade methods are:
 * **ISO install**: Save your TrueNAS configuration file, perform a fresh install using an .iso file for the target version, then upload the saved configuration.
 
 You can skip major versions using a fresh installation with configuration file restore.
-Before skipping versions, review release notes for each major version to identify service deprecations or significant changes that may affect your configuration.
-Consider upgrading incrementally through major versions with significant changes, or be prepared to manually reconfigure any incompatibilities after upgrading directly to the target version.
+Before skipping versions, review release notes for each major version to identify service deprecations or significant changes that might affect your configuration.
+Consider upgrading incrementally through major versions with significant changes, or prepare to manually reconfigure any incompatibilities after upgrading directly to the target version.
