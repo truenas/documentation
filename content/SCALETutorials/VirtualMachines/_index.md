@@ -430,7 +430,7 @@ If not, go to **Credentials > Users**, edit the user to allow `sudo` commands, o
 This procedure applies to the zvol for an Instance or Container VM that has data you want to preserve and access from a new VM using the **Virtual Machines** screens in later releases.
 
 1. Go to **Instances** (or **Containers**), click on **Configuration**, and then **Manage Volumes** to open the **Volumes** window.
-   The **Volumes** window lists all Instances VMs and the named associated storage volumes (zvols).
+   The **Volumes** window lists all Instances VMs and associated storage volumes (zvols).
 
    Record the volume name or take a screenshot of the information to refer to later when entering commands in the **Shell** screen. Zvol names are similar to the VM name but not identical.
    Optionally, you can highlight all the listed information and copy/paste it into a text file, but this is not necessary.
