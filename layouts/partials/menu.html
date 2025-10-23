@@ -1,10 +1,6 @@
 <nav class="sidebar-fixed">
  <h2>{{ i18n "nav_navigation" }}</h2>
 
-  {{ if not (isset .Params "main_index_class") }}
-    {{ partial "search-trigger" . }}
-  {{ end }}
-
   <section class="gdoc-nav--main">
     {{ if .Site.Params.GeekdocMenuBundle }}
       {{ partial "menu-bundle" (dict "current" . "source" .Site.Data.menu.main.main) }}
