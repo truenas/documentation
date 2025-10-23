@@ -401,7 +401,7 @@ See [Accessing NAS from VM]({{< ref "ContainerNASBridge" >}}) for more informati
 
 ## Migrating Containers VMs
 
-The storage volumes (zvols) for virtual machines created using the **Instances** screen in TrueNAS 25.04.0 or 25.04.1 (renamed the **Containers** screen in 25.04.2 and later) can migrate to new VMs created using the **Virtual Machines** screen in 25.10 and later.
+The storage volumes (zvols) for virtual machines created using the **Instances** screen in TrueNAS 25.04.0 or 25.04.1 (renamed the **Containers** screen in 25.04.2 and later) can migrate to new VMs created using the **Virtual Machines** screen in 25.04.2 and later.
 The process involves:
 
 - Identifying the hidden storage volumes (zvols) associated with the Instance VMs.
