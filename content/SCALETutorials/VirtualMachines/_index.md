@@ -558,7 +558,7 @@ After upgrading to a release that shows the **Virtual Machines** screen and the 
    Click **Save**.
    This sets the VM to boot from the disk, which prevents the volume from being overwritten by booting from the CD-ROM device with an OS image file on it (if you added one in the creation wizard).
 
-8. Return to the **Virtual Machines** screen, expand the VM, then click **Start** to verify it opens as expected and has Internet access.
+8. Return to the **Virtual Machines** screen, expand the VM, then click **Start** to verify it opens as expected and has network access.
 
 ## Virtual Machines Contents
 
