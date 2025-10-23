@@ -553,7 +553,7 @@ After upgrading to a release that shows the **Virtual Machines** screen and the 
 
    d. Click **Next** until you get to the confirmation screen, then click **Create** to add the VM.
 
-   After adding the new VM, click on it to expand it, and click **Devices**.
+   After adding the new VM, click on the row to expand it, and click **Devices**.
    Click **Edit** for the **Disk** device, and enter **1000** in the **Device Order** field.
    Click **Save**.
    This sets the VM to boot from the disk, which prevents the volume from being overwritten by booting from the CD-ROM device with an OS image file on it (if you added one in the creation wizard).
