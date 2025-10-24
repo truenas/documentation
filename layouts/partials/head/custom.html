@@ -50,8 +50,10 @@ const token = await grecaptcha.enterprise.execute('6LeA_SkkAAAAADD6tuU8aNvNYRxCo
 
 <!-- Add Google Font loading as determined by the config.toml file -->
  {{ if .Site.Params.googlefonts }}
- <link rel="stylesheet" href="{{ .Site.Params.googlefonts }}" type="text/css" media="all" /> 
+ <link rel="stylesheet" href="{{ .Site.Params.googlefonts }}" type="text/css" media="all" />
  {{ end }}
+<!-- Multi-site search styles -->
+<link rel="stylesheet" href="/css/search-enhanced.css" type="text/css" media="all" />
 <!-- De-index various sections that we use internally but don't need to be included in search results -->
 {{ if or (eq .Section "_includes") (eq .Section "tags") (eq .Section "book") (eq .Section "volume") .Params.noindex }}
     <meta name="robots" content="noindex">

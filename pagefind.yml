@@ -1,0 +1,21 @@
+site: public
+output_path: public/pagefind
+
+# Exclude navigation, footers, and other non-content elements
+exclude_selectors:
+  - 'nav'
+  - 'footer'
+  - '.gdoc-nav'
+  - '.gdoc-footer'
+  - '.gdoc-nav--main'
+  - '.gdoc-nav--more'
+  - '.gdoc-nav--tags'
+  - '.gdoc-page__header'
+  - '.gdoc-page__footer'
+  - '.gdoc-search'
+
+# Keep the full URL in the index
+keep_index_url: true
+
+# Verbose output for debugging
+verbose: true
