@@ -2396,3 +2396,5 @@ VMDX
 QUEM
 ExportDiskToImageWindow
 InstanceWarning
+VirtualMachines
+virtualmachnes

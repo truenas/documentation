@@ -417,7 +417,7 @@ Before beginning the process:
 2. Take a recursive snapshot or back up the pool configured for Instance VMs.
    Using ZFS commands to rename and move an existing zvol can damage data stored in the volume.
    Having a backup is a critical step to restoring data if something goes wrong in the process.
-3. Verify the VM is operational and network is functioning as expected. One way to do this is to verify it has Internet access.
+3. Verify the VM is operational and the network is functioning as expected. One way to do this is to verify it has Internet access.
    Then stop the VM before you upgrade to the next release.
 4. Identify the dataset where you want to move the volume.
    We do not recommend renaming or moving the volume more than once, as it increases the risk of possible data corruption or loss.
@@ -440,12 +440,13 @@ This procedure applies to the zvol for an Instance or Container VM that has data
    Repeat for each zvol that you plan to migrate into a new VM in later releases.
 
 3. Go to **Datasets**, locate the pool associated with Instances (Containers), and take a recursive snapshot to back up all Instances VM zvols.
-   These zvols are found in the hidden **.ix-virt** directory created in the pool Instances uses, selected when you configure the feature.
+   These zvols are in the hidden **.ix-virt** directory created in the pool Instances uses, selected when you configure the feature.
+   To verify the pool, you can go to **Containers > Configure > Global Settings** and look at the **Pool** setting.
 
 4. Go to **System > Update**, and update to the next publicly available maintenance or major version release.
    Follow the release migration paths outlined in the version release notes or the [Software Releases](https://www.truenas.com/docs/softwarereleases/) article.
 
-   After updating from a 25.04.x release, VMs created using **Instances** screens show on the **Containers** screen, and are stopped.
+   After updating to a 25.04.x release or later, VMs created using **Instances** screens show on the **Containers** screen, and are stopped.
    Some VMs experience various issues like network connectivity, or are stopped and do not start.
    Refer to the troubleshooting tips below for more information. 25.10 releases correct some issues encountered in 25.04.2.4 VMs that are migrated.
 
@@ -473,7 +474,7 @@ After upgrading to a release that shows the **Virtual Machines** screen and the 
 6. Go to **System > Shell**. Exit to the Linux prompt for the system.
 
    Note: This is where the logged-in admin user needs `sudo` permissions, or where the root user must have a password configured to enter the following commands to find, rename/move, and verify each Instance zvol is properly configured.
-   Experienced users can use switch to the root user if the root user has a password assigned and enabled.
+   Experienced users can switch to the root user if the root user has a password assigned and enabled.
 
    Enter the following commands at the Linux system prompt:
 
@@ -486,7 +487,7 @@ After upgrading to a release that shows the **Virtual Machines** screen and the 
    - *poolname* is the name of the pool associated with the Instance VMs.
      If you have multiple pools associated with the Instance VMs, repeat this command with the name of that pool to show hidden zvols in that pool.
 
-   The **.ix-virt** directory contains the zvols use in Instance VMs. Ignore the entries with the **.block** extension, and those not included in the **.ix-virt** directory.
+   The **.ix-virt** directory contains the zvols used in Instance VMs. Ignore the entries with the **.block** extension, and those not included in the **.ix-virt** directory.
    The output includes other zvols in the pool if your system has non-instance VMs configured in the pool name entered in the command.
 
    {{< expand "Example Command Output" "v" >}}
@@ -511,7 +512,7 @@ After upgrading to a release that shows the **Virtual Machines** screen and the 
    The zvols in the command output above with `tank/.ix-virt/custom` in the path are the zvols to migrate if these are associated with the VM you want to migrate to new VMs in the 25.10.0 or later release.
    {{< /expand >}}
 
-   b. Rename (and move) each volume in the **.ix-virt** directory to a new location where you can select it when configuration a new VM.
+   b. Rename (and move) each volume in the **.ix-virt** directory to a new location where you can select it when configuring a new VM.
    Repeat for each volume you want to migrate to a new VM. Do not rename or move the .block volumes.
    Enter the following command:
 
@@ -542,9 +543,11 @@ After upgrading to a release that shows the **Virtual Machines** screen and the 
    After completing the commands listed above for each zvol you want to migrate. Go to **Datasets** and verify all volumes you migrated show on the screen.
 
 7. Create the new VM using the migrated zvol. Repeat these steps for each zvol you migrated.
-   Go to **Virtual Machines**, click on **Add** to open the **Create Virtual Machine** wizard.
 
-   a. Complete the first screen by entering a name for the new VM, select the operating system used by the Instances VM, enter a brief description, then if using the **Bind** setting, enter a password. Click **Next**.
+   Go to **Virtual Machines**, click on **Add** to open the **Create Virtual Machine** wizard.
+   For more information or details on using the Create Virtual Machine wizard, see [Creating a Virtual Machine](#creating-a-virtual-machine).
+
+   a. Complete the first screen by entering a name for the new VM, select the operating system used by the Instances VM, enter a brief description, and then if using the **Bind** setting, enter a password. Click **Next**.
 
    b. Configure the CPU and Memory settings, and then click **Next**.
 
@@ -555,8 +558,9 @@ After upgrading to a release that shows the **Virtual Machines** screen and the 
 
    After adding the new VM, click on it to expand it, and click **Devices**.
    Click **Edit** for the **Disk** device, and enter **1000** in the **Device Order** field.
+   Setting the disk to **1000** makes the disk device the first in the boot order for the VM.
+   Setting the disk to first in boot order over a CD-ROM device with an OS on it, if added when creating the VM, prevents the volume from being overwritten by booting from that CD-ROM device.
    Click **Save**.
-   This sets the VM to boot from the disk, which prevents the volume from being overwritten by booting from the CD-ROM device with an OS image file on it (if you added one in the creation wizard).
 
 8. Return to the **Virtual Machines** screen, expand the VM, then click **Start** to verify it opens as expected and has Internet access.
 
