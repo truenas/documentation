@@ -10,6 +10,7 @@
 major_version:
   "25.10":
     release_order: # list minor version releases in order, starting with the latest
+      - "25.10.0"
       - "25.10-RC.1"
       - "25.10-BETA.1"
     component_order: # list components in the order they should appear in the left column
@@ -18,6 +19,20 @@ major_version:
       - "docker_engine"
       - "nvidia_driver"
     release: # include each release with component versions and links 
+      "25.10.0":
+        components:
+          linux_kernel:
+            version: "6.12.33"
+            link: "https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/tag/?h=v6.12.33"
+          openzfs:
+            version: "2.3.4"
+            link: "https://github.com/openzfs/zfs/releases/tag/zfs-2.3.4"
+          docker_engine:
+            version: "28.3.1"
+            link: "https://docs.docker.com/engine/release-notes/28/#2831"
+          nvidia_driver:
+            version: "570.172.08"
+            link: "https://www.nvidia.com/en-us/drivers/details/249910/"
       "25.10-RC.1":
         components:
           linux_kernel:

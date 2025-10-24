@@ -1,3 +1,45 @@
+Process time: 2025-10-22 16:35:16
+Initiated by: Dan Pizappi
+
+1252 files reviewed.
+34 files deleted.
+The following files were deleted:
+C:\Users\iXUser\Documents\GitHub\documentation\static\includes\containers-vms.md
+C:\Users\iXUser\Documents\GitHub\documentation\static\includes\InstanceImageFilenames.md
+C:\Users\iXUser\Documents\GitHub\documentation\static\includes\InstanceSecureBootProcedure.md
+C:\Users\iXUser\Documents\GitHub\documentation\static\includes\InstanceVNCProcedure.md
+C:\Users\iXUser\Documents\GitHub\documentation\static\includes\InstanceVNCSettings.md
+C:\Users\iXUser\Documents\GitHub\documentation\static\includes\ReplicationCreateDatasetAndAdminHomeDirSteps.md
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Credentials\AddUser-UserIDAndGroupSettings.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Credentials\AddUserDirPermsAuthSettings.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Credentials\AddUserHomeDirAuth.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Credentials\AddUserHomeDirPerm.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Credentials\AddUserIdentificationSettings.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Credentials\AllUsersScreenBuiltInSCALE.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Credentials\AllUsersScreenSCALE.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Credentials\ChangeAdminUserHomeDirectorySetting.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Credentials\EditUserIdentificationSCALE.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Credentials\NewSSHConnectionAuthetication.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Credentials\NewSSHConnectionNameAndMethod.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Credentials\SSHEditUserAuthenticationSettings.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Credentials\UsersAPIKeysButton.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Credentials\UsersAPIKeysMenu.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Credentials\UserScreenUserDetails.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Credentials\UsersScreenUsersScreenAccessWidgetWithAPIKey.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Credentials\UsersScreenUserTable.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\DataProtection\CreateRemoteReplicationTask.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\DataProtection\NewSSHConnectionScreen.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\DataProtection\ReplicationSnapshotConfirmationDialog.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Shares\EditNFSShareAdvancedSecuritySetting.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Shares\EditSMBPurpose.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\SystemSettings\GeneralSettingsScreen.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\SystemSettings\ProactiveSupporForm.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\SystemSettings\SupportWidgetHA.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\SystemSettings\SystemGeneralAddNTPServer.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Virtualization\EditSecurity.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Virtualization\EditVNC.png
+
+----------------------------------------
 Process time: 2025-09-18 12:49:59
 Initiated by: Dan Pizappi
 
