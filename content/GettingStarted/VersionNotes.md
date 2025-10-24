@@ -66,7 +66,7 @@ For information on how you can contribute, visit https://www.truenas.com/docs/co
 * **NVIDIA GPU Drivers**: Switch to open-source drivers supporting Turing and newer (RTX/GTX 16-series+). Pascal, Maxwell, and Volta no longer supported. See [NVIDIA GPU Support](#nvidia-gpu-support).
 * **Active Directory IDMAP**: AUTORID backend removed and auto-migrated to RID. Review ACLs and permissions after upgrade.
 * **Certificate Management**: CA functionality removed. Use external CAs or ACME certificates with DNS authenticators.
-* **SMART Monitoring**: Built-in UI removed. Existing tests auto-migrated to cron tasks. Install Scrutiny app for advanced monitoring.
+* **SMART Monitoring**: Built-in UI removed. Existing tests auto-migrated to cron tasks. Install Scrutiny app for advanced monitoring. See [Disk Management](#disk-management) for more information on disk health monitoring in 25.10 and beyond.
 * **SMB Shares**: Preset-based configuration introduced. "No Preset" shares migrated to "Legacy Share" preset.
 
 See the 25.10 [Major Features](#major-features) and [Full Changelog](#full-changelog) for more information.
