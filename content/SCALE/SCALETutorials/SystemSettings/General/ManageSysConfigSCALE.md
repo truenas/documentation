@@ -42,7 +42,7 @@ If you do not save the secret seed by downloading the system config file, variou
 Without the secret seed, encrypted fields are set to empty values. For example, SMB via local accounts and apps.
 Always select the option to save the secret seed when downloading the system config file!
 
-Uploading a configuration file from a FreeBSD-based release wipes any existing administrative users and replaces with the original FreeBSD-based root user and password from the uploaded configuration file.
+Uploading a configuration file from a FreeBSD-based release wipes any existing administrative users and replaces with the original root user and password from the uploaded configuration file.
 To secure the system after restoring from a FreeBSD-based TrueNAS config file, log in with the original root user credentials, recreate an administrative account, and finally re-disable the root account password.
 
 ### Resetting to Defaults
