@@ -2398,3 +2398,12 @@ ExportDiskToImageWindow
 DisksScreen
 ScrutinyDiskHealthScreenshot
 CronJobsSmartTest
+Sison
+RDMA
+authenticators
+NVMe-oF
+Pydantic
+schemas
+RuntimeError
+ENOMETHOD
+CronTask

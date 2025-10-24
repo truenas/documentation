@@ -41,19 +41,70 @@ October 28, 2025
 
 The TrueNAS team is pleased to release TrueNAS 25.10.0!
 
+Special thanks to (Github users): [Aurélien Sallé](https://github.com/MDVAurelien), [ReiKirishima](https://github.com/ReiKirishima), [AquariusStar](https://github.com/AquariusStar), [RedstoneSpeaker](https://github.com/RedstoneSpeaker), [Lee Jihaeng](https://github.com/SejoWuigui), [Marcos Ribeiro](https://github.com/marcosasribeiro), [Christos Longros](https://github.com/chrislongros), [dany22m](https://github.com/dany22m), [Aindriú Mac Giolla Eoin](https://github.com/aindriu80), [William Li](https://github.com/WilliamLi0623), [Franco Castillo](https://github.com/castillofrancodamian), [MAURICIO S BASTOS](https://github.com/msbastos), [TeCHiScy](https://github.com/TeCHiScy), [Chen Zhaochang](https://github.com/chenwickc), [Helak](https://github.com/helakostain), [dedebenui](https://github.com/dedebenui), [Henry Essinghigh](https://github.com/essinghigh), [Sophist](https://github.com/Sophist-UK), [Piotr Jasiek](https://github.com/pht31337), [David Sison](https://github.com/davids3), [Emmanuel Ferdman](https://github.com/emmanuel-ferdman) and [zrk02](https://github.com/zrk02) for contributing to TrueNAS 25.10.
+For information on how you can contribute, visit https://www.truenas.com/docs/contributing/.
+
 ### 25.10.0 Notable Changes
 
-Changes since 25.10-RC.1.
-See the 25.10 previous releases, [Major Features](#major-features), and [Full Changelog](#full-changelog) for more information.
+**New Features:**
+* **NVMe over Fabric**: TCP support (Community Edition) and RDMA (Enterprise) for high-performance storage networking with 400GbE support.
+* **Virtual Machines**: Secure Boot support, disk import/export (QCOW2, RAW, VDI, VHDX, VMDK), and Enterprise HA failover support.
+* **Update Profiles**: Risk-tolerance based update notification system.
+* **Apps**: Automatic pool migration and external container registry mirror support.
+* **Enhanced Users Interface**: Streamlined user management and improved account information display.
+
+**Performance and Stability:**
+* **ZFS**: Critical fixes for encrypted snapshot replication, Direct I/O support, improved memory pressure handling, and enhanced I/O scaling.
+* **VM Memory**: Resolved ZFS ARC memory management conflicts preventing out-of-memory crashes.
+* **Network**: 400GbE interface support and improved DHCP-to-static configuration transitions.
+
+**UI/UX Improvements:**
+* Redesigned Updates, Users, Datasets, and Storage Dashboard screens.
+* Improved password manager compatibility.
+
+**Breaking Changes Requiring Action:**
+* **NVIDIA GPU Drivers**: Switch to open-source drivers supporting Turing and newer (RTX/GTX 16-series+). Pascal, Maxwell, and Volta no longer supported. See [NVIDIA GPU Support](#nvidia-gpu-support).
+* **Active Directory IDMAP**: AUTORID backend removed and auto-migrated to RID. Review ACLs and permissions after upgrade.
+* **Certificate Management**: CA functionality removed. Use external CAs or ACME certificates with DNS authenticators.
+* **SMART Monitoring**: Built-in UI removed. Existing tests auto-migrated to cron tasks. Install Scrutiny app for advanced monitoring.
+* **SMB Shares**: Preset-based configuration introduced. "No Preset" shares migrated to "Legacy Share" preset.
+
+See the 25.10 [Major Features](#major-features) and [Full Changelog](#full-changelog) for more information.
+
+**Notable changes since 25.10-RC.1:**
 
 * Improves ZFS property handling during dataset replication ([NAS-137818](https://ixsystems.atlassian.net/browse/NAS-137818)).
   Resolves issue where the storage page temporarily displayed errors when receiving active replications due to ZFS properties being unavailable while datasets were in an inconsistent state.
+* Fixes "Failed to load datasets" error on Datasets page ([NAS-138034](https://ixsystems.atlassian.net/browse/NAS-138034)).
+  Resolves issue where directories with ZFS-incompatible characters (such as `[`) caused the Datasets page to fail by gracefully handling `EZFS_INVALIDNAME` errors.
+* Fixes zvol editing and resizing failures ([NAS-137861](https://ixsystems.atlassian.net/browse/NAS-137861)).
+  Resolves validation error "inherit_encryption: Extra inputs are not permitted" when attempting to edit or resize VM zvols through the Datasets interface.
+* Fixes VM disk export failure ([NAS-137836](https://ixsystems.atlassian.net/browse/NAS-137836)).
+  Resolves KeyError when attempting to export VM disks through the Devices menu, allowing successful disk image exports.
+* Fixes inability to remove transfer speed limits from SSH replication tasks ([NAS-137813](https://ixsystems.atlassian.net/browse/NAS-137813)).
+  Resolves validation error "Input should be a valid integer" when attempting to clear the speed limit field, allowing users to successfully remove speed restrictions from existing replication tasks.
+* Fixes Cloud Sync task bandwidth limit validation ([NAS-137922](https://ixsystems.atlassian.net/browse/NAS-137922)).
+  Resolves "Input should be a valid integer" error when configuring bandwidth limits by properly handling rclone-compatible bandwidth formats and improving client-side validation.
+* Fixes NVMe-oF connection failures due to model number length ([NAS-138102](https://ixsystems.atlassian.net/browse/NAS-138102)).
+  Resolves "failed to connect socket: –111" error by limiting NVMe-oF subsystem model string to 40 characters, preventing kernel errors when enabling NVMe-oF shares.
+* Fixes application upgrade failures with validation traceback ([NAS-137805](https://ixsystems.atlassian.net/browse/NAS-137805)).
+  Resolves TypeError "'error' required in context" during app upgrades by ensuring proper Pydantic validation error handling in schema construction.
+* Fixes application update failures due to schema validation errors ([NAS-137940](https://ixsystems.atlassian.net/browse/NAS-137940)).
+  Resolves "argument after ** must be a mapping" exceptions when updating apps by properly handling nested object validation in app schemas.
+* Fixes application image update checks failing with "Connection closed" error ([NAS-137724](https://ixsystems.atlassian.net/browse/NAS-137724)).
+  Resolves RuntimeError when checking for app image updates by ensuring network responses are read within the active connection context.
+* Fixes AMD GPU detection logic ([NAS-137792](https://ixsystems.atlassian.net/browse/NAS-137792)).
+  Resolves issue where AMD graphics cards were not properly detected due to incorrect `kfd_device_exists` variable handling.
+* Fixes API backwards compatibility for configuration methods ([NAS-137468](https://ixsystems.atlassian.net/browse/NAS-137468)).
+  Resolves issue where certain API endpoints like `network.configuration.config` were unavailable in the 25.10.0 API, causing "[ENOMETHOD] Method 'config' not found" errors when called from scripts or applications using previous API versions.
+* Fixes console messages display panel not rendering ([NAS-137814](https://ixsystems.atlassian.net/browse/NAS-137814)).
+  Resolves issue where the console messages panel appeared as a black, unresponsive bar by refactoring the `filesystem.file_tail_follow` API endpoint to properly handle console message retrieval.
+* Fixes unwanted "CronTask Run" email notifications ([NAS-137472](https://ixsystems.atlassian.net/browse/NAS-137472)).
+  Resolves issue where cron tasks were sending emails with subject "CronTask Run" containing only "null" in the message body.
 
 <a href="#full-changelog" target="_blank">Click here</a> to see the full 25.10 changelog or visit the <a href="https://ixsystems.atlassian.net/issues/?filter=13427" target="_blank">TrueNAS 25.10.0 (Goldeye) Changelog</a> in Jira.
 
-  </div>
-
-  <div data-tab-id="25.10-RC.1" data-tab-label="25.10-RC.1">
+{{< expand "25.10-RC.1 Notable Changes" "v" >}}
 
 {{< hint type=warning title="Early Release Software" >}}
 Early releases are intended for testing and feedback purposes.
@@ -100,9 +151,9 @@ The TrueNAS team is pleased to release TrueNAS 25.10-RC.1!
 
 <a href="#full-changelog" target="_blank">Click here</a> to see the full 25.10 changelog or visit the <a href="https://ixsystems.atlassian.net/issues/?filter=13361" target="_blank">TrueNAS 25.10-RC.1 (Goldeye) Changelog</a> in Jira.
 
-  </div>
+{{< /expand >}}
 
-  <div data-tab-id="25.10-BETA.1" data-tab-label="25.10-BETA.1">
+{{< expand "25.10-BETA.1 Notable Changes" "v" >}}
 
 {{< hint type=warning title="Early Release Software" >}}
 Early releases are intended for testing and feedback purposes.
@@ -169,6 +220,8 @@ Failover moves to the **Advanced Settings** screen ([NAS-135469](https://ixsyste
 * Fixes contrast issues on some UI theme options ([NAS-135519](https://ixsystems.atlassian.net/browse/NAS-135519)).
 
 <a href="#full-changelog" target="_blank">Click here</a> to see the full 25.10 changelog or visit the <a href="https://ixsystems.atlassian.net/issues/?filter=13196" target="_blank">TrueNAS 25.10-BETA.1 (Goldeye) Changelog</a> in Jira.
+
+{{< /expand >}}
 
   </div>
 
