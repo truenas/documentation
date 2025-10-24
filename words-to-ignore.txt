@@ -2397,4 +2397,4 @@ QUEM
 ExportDiskToImageWindow
 InstanceWarning
 VirtualMachines
-virtualmachnes
+virtualmachines
