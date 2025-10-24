@@ -255,6 +255,6 @@ Go to **Shares** and click the **Block (iSCSI) Shares Targets** widget header to
 After adding a share with the iSCSI wizard or manual entry screens, the system shows a dialog prompting you to start or restart the service.
 
 You can also start the service by clicking on the <span class="material-icons">more_vert</span> on the **Block (iSCSI) Shares Targets** widget and selecting **Turn On Service**.
-You can go to **System > Services**, locate **iSCSI** on the service list, and click the **Running** toggle to start the service.
+You can go to **System > Services**, locate **iSCSI** on the service list, and click the <span class="iconify" data-icon="mdi:play-circle" title="Start Service">Start Service</span> button to start the service.
 
 {{<include file="/static/includes/addcolumnorganizer.md">}}

@@ -9,10 +9,10 @@ related: false
 TrueNAS Credential options are collected in this section of the UI and organized into a few different screens:
 
 * **Users** allows those with permissions to add, configure, and delete users on the system.
-  There are options to search for keywords in usernames, display or hide user characteristics, and toggle whether the system shows built-in users.
+  There are options to search for keywords in usernames, view or edit user characteristics, and a dropdown to select whether the screen shows built-in, local, and/or directory services users.
 
 * **Groups** allows those with permissions to add, configure, and delete user groups on the system.
-  There are options to search for keywords in group names, display or hide group characteristics, and toggle whether the system shows built-in groups.
+  There are options to search for keywords in group names, display or hide group characteristics, and toggle whether the screen shows built-in groups.
 
 * **Directory Services** contains options to edit directory domain and account settings, set up Idmapping, and configure access and authentication protocols. 
   Specific options include configuring Kerberos realms and key tables (keytab), as well as setting up LDAP validation.

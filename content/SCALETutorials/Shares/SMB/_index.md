@@ -322,8 +322,8 @@ Each SMB share on the list also has a toggle to enable or disable the service fo
 
 ### Starting the Service Using System Settings
 
-To make SMB share available on the network, go to **System > Services** and click the **SMB** toggle.
-Set **Start Automatically** if you want the service to activate when TrueNAS boots.
+To make SMB share available on the network, go to **System > Services** and click the **SMB** <span class="iconify" data-icon="mdi:play-circle" title="Start Service">Start Service</span> button to start the service.
+Toggle **Start Automatically** on if you want the service to activate when TrueNAS boots.
 
 ## Configuring the SMB Service
 
