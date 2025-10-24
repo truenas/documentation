@@ -401,7 +401,7 @@ See [Accessing NAS from VM]({{< ref "ContainerNASBridge" >}}) for more informati
 
 ## Migrating Containers VMs
 
-The storage volumes (zvols) for virtual machines created using the **Instances** screen in TrueNAS 25.04.0 or 25.04.1 (renamed the **Containers** screen in 25.04.2 and later) can migrate to new VMs created using the **Virtual Machines** screen in 25.10 and later.
+The storage volumes (zvols) for virtual machines created using the **Instances** screen in TrueNAS 25.04.0 or 25.04.1 (renamed the **Containers** screen in 25.04.2 and later) can migrate to new VMs created using the **Virtual Machines** screen in 25.04.2 and later.
 The process involves:
 
 - Identifying the hidden storage volumes (zvols) associated with the Instance VMs.
@@ -427,10 +427,10 @@ If not, go to **Credentials > Users**, edit the user to allow `sudo` commands, o
 
 ### Migrating a Zvol for an Instance VM
 
-This procedure applies to the zvol for an Instance or Container VM that has data you want to preserve, and access from a new VM in using the **Virtual Machines** screens in later releases.
+This procedure applies to the zvol for an Instance or Container VM that has data you want to preserve and access from a new VM using the **Virtual Machines** screens in later releases.
 
 1. Go to **Instances** (or **Containers**), click on **Configuration**, and then **Manage Volumes** to open the **Volumes** window.
-   The **Volumes** window lists all Instances VMs and the named associated storage volumes (zvols).
+   The **Volumes** window lists all Instances VMs and associated storage volumes (zvols).
 
    Record the volume name or take a screenshot of the information to refer to later when entering commands in the **Shell** screen. Zvol names are similar to the VM name but not identical.
    Optionally, you can highlight all the listed information and copy/paste it into a text file, but this is not necessary.
@@ -556,13 +556,13 @@ After upgrading to a release that shows the **Virtual Machines** screen and the 
 
    d. Click **Next** until you get to the confirmation screen, then click **Create** to add the VM.
 
-   After adding the new VM, click on it to expand it, and click **Devices**.
+   After adding the new VM, click on the row to expand it, and click **Devices**.
    Click **Edit** for the **Disk** device, and enter **1000** in the **Device Order** field.
    Setting the disk to **1000** makes the disk device the first in the boot order for the VM.
    Setting the disk to first in boot order over a CD-ROM device with an OS on it, if added when creating the VM, prevents the volume from being overwritten by booting from that CD-ROM device.
    Click **Save**.
 
-8. Return to the **Virtual Machines** screen, expand the VM, then click **Start** to verify it opens as expected and has Internet access.
+8. Return to the **Virtual Machines** screen, expand the VM, then click **Start** to verify it opens as expected and has network access.
 
 ## Virtual Machines Contents
 
