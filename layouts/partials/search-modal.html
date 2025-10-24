@@ -18,17 +18,30 @@
     </div>
 
     <div class="search-filters">
-      <label>Filter by site:</label>
       <div class="site-filter-buttons">
-        <button class="site-filter active" data-site="all">All Sites</button>
-        <button class="site-filter" data-site="docs">Documentation</button>
-        <button class="site-filter" data-site="apps">Apps</button>
-        <button class="site-filter" data-site="api">API</button>
-        <button class="site-filter" data-site="security">Security</button>
-        <button class="site-filter" data-site="connect">Connect</button>
+        <!-- TrueNAS Major Versions Group -->
+        <div class="filter-section">
+          <div class="filter-section-label">TrueNAS Major Versions</div>
+          <div class="filter-section-buttons">
+            <button class="site-filter" data-site="docs-26.04">26.04 Nightly</button>
+            <button class="site-filter" data-site="docs-25.10">25.10</button>
+            <button class="site-filter active" data-site="docs-25.04">25.04</button>
+            <button class="site-filter" data-site="docs-24.10">24.10</button>
+          </div>
+        </div>
+
+        <!-- Other Sites -->
+        <div class="filter-section">
+          <div class="filter-section-label">Other Sites</div>
+          <div class="filter-section-buttons">
+            <button class="site-filter active" data-site="apps">Apps</button>
+            <button class="site-filter active" data-site="api">API</button>
+            <button class="site-filter active" data-site="security">Security</button>
+            <button class="site-filter active" data-site="connect">TrueNAS Connect</button>
+          </div>
+        </div>
       </div>
     </div>
-
     <div id="search-results-enhanced" class="search-results"></div>
     <div id="search-loading" class="search-loading" style="display:none;">
       <div class="loading-spinner"></div>

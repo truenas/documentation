@@ -156,7 +156,7 @@
 
 .search-submit-btn {
   padding: 0.75rem 1.5rem;
-  background: #0095d5;
+  background: rgb(113, 191, 68);
   border: none;
   color: white;
   cursor: pointer;
@@ -169,16 +169,16 @@
 }
 
 .search-submit-btn:hover {
-  background: #007ab8;
+  background: rgb(95, 165, 55);
 }
 
 .search-submit-btn:focus {
-  outline: 2px solid #0095d5;
+  outline: 2px solid rgb(113, 191, 68);
   outline-offset: 2px;
 }
 
 .search-submit-btn:active {
-  background: #006094;
+  background: rgb(80, 145, 45);
 }
 
 /* Search Filters */
@@ -198,8 +198,9 @@
 
 .site-filter-buttons {
   display: flex;
-  gap: 0.5rem;
+  gap: 0;
   flex-wrap: wrap;
+  align-items: center;
 }
 
 .site-filter {
@@ -232,6 +233,32 @@
 .site-filter.active:hover {
   background: #007ab8;
   border-color: #007ab8;
+}
+
+/* Filter Sections - Compact Layout */
+.filter-section {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-right: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.filter-section:last-child {
+  margin-right: 0;
+}
+
+.filter-section-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--body-font-color, #555);
+  white-space: nowrap;
+}
+
+.filter-section-buttons {
+  display: inline-flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
 }
 
 /* Search Results Container */
@@ -384,32 +411,26 @@
   border: 1px solid #ef9a9a;
 }
 
-/* Load More Button */
-.load-more-btn {
-  display: block;
-  margin: 1.5rem auto 0;
-  padding: 0.75rem 2rem;
-  background: #0095d5;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 1rem;
-  font-weight: 600;
-  transition: background-color 0.2s ease;
+/* Scroll Loading Indicator */
+.scroll-loading-indicator {
+  text-align: center;
+  padding: 2rem 1rem;
+  color: var(--body-font-color, #666);
 }
 
-.load-more-btn:hover {
-  background: #007ab8;
+.loading-spinner-small {
+  border: 2px solid #f3f3f3;
+  border-top: 2px solid #0095d5;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 0.75rem;
 }
 
-.load-more-btn:focus {
-  outline: 2px solid #0095d5;
-  outline-offset: 2px;
-}
-
-.load-more-btn:active {
-  background: #006094;
+.scroll-loading-indicator p {
+  margin: 0;
+  font-size: 0.9rem;
 }
 
 /* Responsive Design */

@@ -1,40 +1,81 @@
 // Multi-Site Search Configuration
 // Temporary local testing mode - set LOCAL_TESTING to true for local development
 
-const LOCAL_TESTING = true; // Change to false for production
+const LOCAL_TESTING = false; // Change to true for local testing
 
 const searchConfig = {
   indexes: {
-    // Local testing uses local pagefind index
-    docs: {
+    // TrueNAS Documentation versions
+    // NOTE: To change the default version, move the "isDefault: true" flag to the desired version
+    'docs-26.04': {
       url: LOCAL_TESTING ? '/pagefind/' : 'https://www.truenas.com/docs/pagefind/',
       name: 'TrueNAS Documentation',
+      displayName: 'TrueNAS 26.04 Nightly',
+      version: '26.04 Nightly',
       icon: LOCAL_TESTING ? '/favicon/TN-favicon-32x32.png' : 'https://www.truenas.com/docs/favicon/TN-favicon-32x32.png',
-      priority: 1
+      priority: 1,
+      group: 'docs'
     },
+    'docs-25.10': {
+      url: 'https://www.truenas.com/docs/scale/25.10/pagefind/',
+      name: 'TrueNAS Documentation',
+      displayName: 'TrueNAS 25.10',
+      version: '25.10',
+      icon: 'https://www.truenas.com/docs/favicon/TN-favicon-32x32.png',
+      priority: 2,
+      group: 'docs'
+    },
+    'docs-25.04': {
+      url: 'https://www.truenas.com/docs/scale/25.04/pagefind/',
+      name: 'TrueNAS Documentation',
+      displayName: 'TrueNAS 25.04',
+      version: '25.04',
+      icon: 'https://www.truenas.com/docs/favicon/TN-favicon-32x32.png',
+      priority: 3,
+      group: 'docs',
+      isDefault: true  // Default selected version - change this flag to set a different default
+    },
+    'docs-24.10': {
+      url: 'https://www.truenas.com/docs/scale/24.10/pagefind/',
+      name: 'TrueNAS Documentation',
+      displayName: 'TrueNAS 24.10',
+      version: '24.10',
+      icon: 'https://www.truenas.com/docs/favicon/TN-favicon-32x32.png',
+      priority: 4,
+      group: 'docs'
+    },
+    // Other sites (non-expandable)
     apps: {
       url: 'https://apps.truenas.com/pagefind/',
       name: 'TrueNAS Apps',
+      displayName: 'TrueNAS Apps',
       icon: 'https://apps.truenas.com/images/truenas-logo-mark.png',
-      priority: 2
+      priority: 10,
+      group: 'other'
     },
     api: {
       url: 'https://api.truenas.com/pagefind/',
       name: 'TrueNAS API',
+      displayName: 'TrueNAS API',
       icon: 'https://api.truenas.com/images/truenas-logo-mark.png',
-      priority: 3
+      priority: 11,
+      group: 'other'
     },
     security: {
       url: 'https://security.truenas.com/pagefind/',
       name: 'Security Advisories',
+      displayName: 'Security Advisories',
       icon: 'https://security.truenas.com/images/truenas-logo-mark.png',
-      priority: 4
+      priority: 12,
+      group: 'other'
     },
     connect: {
       url: 'https://connect.truenas.com/pagefind/',
       name: 'TrueNAS Connect',
+      displayName: 'TrueNAS Connect',
       icon: 'https://connect.truenas.com/images/truenas-logo-mark.png',
-      priority: 5
+      priority: 13,
+      group: 'other'
     }
   }
 };
@@ -42,11 +83,16 @@ const searchConfig = {
 class MultiSiteSearch {
   constructor() {
     this.loadedIndexes = new Map();
-    this.activeSites = ['all'];
+    // Default to the default documentation version + all other sites
+    const defaultDocs = Object.keys(searchConfig.indexes).find(key => searchConfig.indexes[key].isDefault);
+    const otherSites = Object.keys(searchConfig.indexes).filter(key => searchConfig.indexes[key].group === 'other');
+    this.activeSites = [defaultDocs, ...otherSites];
     this.resultsPerPage = 10;
     this.currentPage = 1;
     this.allResults = [];
     this.isSearching = false;
+    this.hasResults = false; // Track if results are currently displayed
+    this.isLoadingMore = false; // Track if more results are being loaded
 
     // Bind methods
     this.init = this.init.bind(this);
@@ -54,6 +100,7 @@ class MultiSiteSearch {
     this.closeModal = this.closeModal.bind(this);
     this.performSearch = this.performSearch.bind(this);
     this.loadMoreResults = this.loadMoreResults.bind(this);
+    this.updateSearchIcon = this.updateSearchIcon.bind(this);
 
     this.init();
   }
@@ -96,10 +143,26 @@ class MultiSiteSearch {
       btn.addEventListener('click', (e) => this.toggleSiteFilter(e.target));
     });
 
-    // Try to load local index on init (for faster first search)
+    // Infinite scroll for search results
+    const resultsContainer = document.getElementById('search-results-enhanced');
+    if (resultsContainer) {
+      resultsContainer.addEventListener('scroll', () => {
+        const scrollTop = resultsContainer.scrollTop;
+        const scrollHeight = resultsContainer.scrollHeight;
+        const clientHeight = resultsContainer.clientHeight;
+
+        // Trigger load more when scrolled to within 100px of bottom
+        if (scrollTop + clientHeight >= scrollHeight - 100) {
+          this.loadMoreResults();
+        }
+      });
+    }
+
+    // Try to load default docs index on init (for faster first search)
     try {
-      await this.loadIndex('docs');
-      console.log('Local docs index pre-loaded');
+      const defaultDocs = Object.keys(searchConfig.indexes).find(key => searchConfig.indexes[key].isDefault);
+      await this.loadIndex(defaultDocs);
+      console.log(`Default docs index (${defaultDocs}) pre-loaded`);
     } catch (error) {
       console.warn('Could not pre-load docs index:', error);
     }
@@ -129,36 +192,41 @@ class MultiSiteSearch {
   toggleSiteFilter(button) {
     const site = button.dataset.site;
 
-    if (site === 'all') {
-      // Clear all filters and select "All"
-      document.querySelectorAll('.site-filter').forEach(btn => {
-        btn.classList.remove('active');
-      });
+    // Toggle the button state
+    button.classList.toggle('active');
+
+    // Update active sites list
+    const activeButtons = document.querySelectorAll('.site-filter.active');
+    this.activeSites = Array.from(activeButtons).map(btn => btn.dataset.site);
+
+    // Ensure at least one site is selected
+    if (this.activeSites.length === 0) {
       button.classList.add('active');
-      this.activeSites = ['all'];
-    } else {
-      // Toggle individual site
-      const allButton = document.querySelector('.site-filter[data-site="all"]');
-      if (allButton) {
-        allButton.classList.remove('active');
-      }
+      this.activeSites = [site];
+    }
 
-      button.classList.toggle('active');
-
-      // Update active sites list
-      const activeButtons = document.querySelectorAll('.site-filter.active:not([data-site="all"])');
-      this.activeSites = Array.from(activeButtons).map(btn => btn.dataset.site);
-
-      // If nothing selected, default to all
-      if (this.activeSites.length === 0) {
-        if (allButton) {
-          allButton.classList.add('active');
-        }
-        this.activeSites = ['all'];
-      }
+    // If results are displayed, change search icon to refresh
+    if (this.hasResults) {
+      this.updateSearchIcon('refresh');
     }
 
     console.log('Active sites:', this.activeSites);
+  }
+
+  updateSearchIcon(mode = 'search') {
+    const submitBtn = document.getElementById('search-submit');
+    if (!submitBtn) return;
+
+    const icon = submitBtn.querySelector('i');
+    if (!icon) return;
+
+    if (mode === 'refresh') {
+      icon.className = 'fa fa-sync';
+      submitBtn.setAttribute('aria-label', 'Refresh search');
+    } else {
+      icon.className = 'fa fa-search';
+      submitBtn.setAttribute('aria-label', 'Search');
+    }
   }
 
   openModal() {
@@ -199,6 +267,9 @@ class MultiSiteSearch {
     this.currentPage = 1;
     this.allResults = [];
 
+    // Reset search icon to magnifying glass
+    this.updateSearchIcon('search');
+
     // Show loading
     const loadingDiv = document.getElementById('search-loading');
     const resultsDiv = document.getElementById('search-results-enhanced');
@@ -228,19 +299,16 @@ class MultiSiteSearch {
           results.results.map(async (r) => {
             try {
               const data = await r.data();
-              const version = data.meta?.version || null;
-              const displayName = version
-                ? `${searchConfig.indexes[siteKey].name} (${version})`
-                : searchConfig.indexes[siteKey].name;
+              const config = searchConfig.indexes[siteKey];
 
               return {
                 ...data,
                 siteKey,
-                siteName: searchConfig.indexes[siteKey].name,
-                siteDisplayName: displayName,
-                siteIcon: searchConfig.indexes[siteKey].icon,
-                sitePriority: searchConfig.indexes[siteKey].priority,
-                version: version
+                siteName: config.name,
+                siteDisplayName: config.displayName || config.name,
+                siteIcon: config.icon,
+                sitePriority: config.priority,
+                version: config.version || data.meta?.version || null
               };
             } catch (error) {
               console.error(`Error loading result data for ${siteKey}:`, error);
@@ -275,12 +343,16 @@ class MultiSiteSearch {
 
       // Display results
       this.displayResults();
+
+      // Mark that results are now displayed
+      this.hasResults = this.allResults.length > 0;
     } catch (error) {
       console.error('Error during search:', error);
       if (loadingDiv) loadingDiv.style.display = 'none';
       if (resultsDiv) {
         resultsDiv.innerHTML = '<p class="search-error">An error occurred during search. Please try again.</p>';
       }
+      this.hasResults = false;
     } finally {
       this.isSearching = false;
     }
@@ -322,43 +394,66 @@ class MultiSiteSearch {
       `;
     });
 
-    // Add load more button if needed
+    // Add loading indicator if more results available
     if (end < this.allResults.length) {
-      html += `<button id="load-more-results" class="load-more-btn">Load More Results (${this.allResults.length - end} remaining)</button>`;
+      html += `<div id="scroll-loading-indicator" class="scroll-loading-indicator" style="display:none;">
+        <div class="loading-spinner-small"></div>
+        <p>Loading more results...</p>
+      </div>`;
     }
 
     container.innerHTML = html;
-
-    // Add load more event listener
-    const loadMoreBtn = document.getElementById('load-more-results');
-    if (loadMoreBtn) {
-      loadMoreBtn.addEventListener('click', this.loadMoreResults);
-    }
   }
 
   loadMoreResults() {
-    this.currentPage++;
-
-    const container = document.getElementById('search-results-enhanced');
-    if (!container) return;
+    // Prevent multiple simultaneous loads
+    if (this.isLoadingMore) return;
 
     const start = (this.currentPage - 1) * this.resultsPerPage;
     const end = start + this.resultsPerPage;
-    const pageResults = this.allResults.slice(start, end);
 
-    // Create a temporary container for new results
-    const tempDiv = document.createElement('div');
+    // Check if there are more results to load
+    if (end >= this.allResults.length) return;
 
-    pageResults.forEach(result => {
-      const icon = result.siteIcon
-        ? `<img src="${result.siteIcon}" alt="${result.siteName}" class="result-site-icon" width="20" height="20">`
-        : '';
+    this.isLoadingMore = true;
 
-      const title = result.meta?.title || result.url?.split('/').pop() || 'Untitled';
-      const excerpt = result.excerpt || '';
+    // Show loading indicator
+    const loadingIndicator = document.getElementById('scroll-loading-indicator');
+    if (loadingIndicator) {
+      loadingIndicator.style.display = 'block';
+    }
 
-      tempDiv.innerHTML += `
-        <div class="search-result-item">
+    // Simulate a small delay to show loading indicator (remove if not needed)
+    setTimeout(() => {
+      this.currentPage++;
+
+      const container = document.getElementById('search-results-enhanced');
+      if (!container) {
+        this.isLoadingMore = false;
+        return;
+      }
+
+      const newStart = (this.currentPage - 1) * this.resultsPerPage;
+      const newEnd = newStart + this.resultsPerPage;
+      const pageResults = this.allResults.slice(newStart, newEnd);
+
+      // Remove loading indicator
+      if (loadingIndicator) {
+        loadingIndicator.remove();
+      }
+
+      // Append new results
+      pageResults.forEach(result => {
+        const icon = result.siteIcon
+          ? `<img src="${result.siteIcon}" alt="${result.siteName}" class="result-site-icon" width="20" height="20">`
+          : '';
+
+        const title = result.meta?.title || result.url?.split('/').pop() || 'Untitled';
+        const excerpt = result.excerpt || '';
+
+        const resultDiv = document.createElement('div');
+        resultDiv.className = 'search-result-item';
+        resultDiv.innerHTML = `
           <div class="result-header">
             ${icon}
             <span class="result-site-badge">${result.siteDisplayName}</span>
@@ -366,28 +461,25 @@ class MultiSiteSearch {
           <h4><a href="${result.url}" target="_blank" rel="noopener">${this.escapeHtml(title)}</a></h4>
           <div class="result-excerpt">${excerpt}</div>
           <div class="result-url">${this.escapeHtml(result.url)}</div>
-        </div>
-      `;
-    });
+        `;
+        container.appendChild(resultDiv);
+      });
 
-    // Remove old load more button
-    const oldLoadMoreBtn = document.getElementById('load-more-results');
-    if (oldLoadMoreBtn) {
-      oldLoadMoreBtn.remove();
-    }
+      // Add new loading indicator if more results available
+      if (newEnd < this.allResults.length) {
+        const newLoadingIndicator = document.createElement('div');
+        newLoadingIndicator.id = 'scroll-loading-indicator';
+        newLoadingIndicator.className = 'scroll-loading-indicator';
+        newLoadingIndicator.style.display = 'none';
+        newLoadingIndicator.innerHTML = `
+          <div class="loading-spinner-small"></div>
+          <p>Loading more results...</p>
+        `;
+        container.appendChild(newLoadingIndicator);
+      }
 
-    // Append new results
-    container.appendChild(tempDiv);
-
-    // Add new load more button if needed
-    if (end < this.allResults.length) {
-      const loadMoreBtn = document.createElement('button');
-      loadMoreBtn.id = 'load-more-results';
-      loadMoreBtn.className = 'load-more-btn';
-      loadMoreBtn.textContent = `Load More Results (${this.allResults.length - end} remaining)`;
-      loadMoreBtn.addEventListener('click', this.loadMoreResults);
-      container.appendChild(loadMoreBtn);
-    }
+      this.isLoadingMore = false;
+    }, 300);
   }
 
   escapeHtml(text) {

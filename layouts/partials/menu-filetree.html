@@ -1,32 +1,46 @@
 {{ $current := . }}
-<!-- Keyword Search button -->
-<div style="margin-top: 15px; margin-bottom: 10px;">
-  <button id="search-trigger" style="padding: 10px 20px; background-color: #0095d5; color: white; border: none; cursor: pointer; border-radius: 15px; display: flex; align-items: center; gap: 10px; transition: opacity 0.3s; width: 100%;">
-    <span style="display: flex; vertical-align: middle;">
-      <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="width: 20px; height: 20px;">
+<!-- Search Section with Banner -->
+<div style="margin-top: 15px; margin-bottom: 10px; width: 100%;">
+  <!-- "Search Docs" Banner -->
+  <div style="text-align: center; margin-bottom: 8px; font-size: 16px; font-weight: 600; color: var(--body-font-color, #333);">
+    Search
+  </div>
+
+  <!-- Split Search Button -->
+  <div style="display: flex; gap: 2px; width: 100%;">
+    <!-- Left: Keyword Search -->
+    <button id="search-trigger" style="flex: 1; padding: 10px 15px; background-color: #0095d5; color: white; border: none; cursor: pointer; border-radius: 15px 0 0 15px; display: flex; align-items: center; justify-content: center; gap: 8px; transition: background-color 0.3s;">
+      <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="width: 18px; height: 18px;">
         <path fill="currentColor" d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"></path>
       </svg>
-    </span>
-    <span>Keyword Search</span>
-  </button>
-</div>
+      <span style="font-size: 14px; font-weight: 500;">Keyword</span>
+    </button>
 
-<!-- AI-Powered Search button -->
-<div style="margin-top: 0px; margin-bottom: 10px;">
-  <button id="chatbot-open-button" style="padding: 10px 20px; background-color: #0095d5; color: white; border: none; cursor: pointer; border-radius: 15px; display: flex; align-items: center; gap: 10px; transition: opacity 0.3s; width: 100%;">
-    <span id="chatbot-button-icon" style="display: flex; vertical-align: middle;">
-      <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="book" class="svg-inline--fa fa-book" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" style="width: 20px; height: 20px;">
+    <!-- Right: Contextual Search -->
+    <button id="chatbot-open-button" style="flex: 1; padding: 10px 15px; background-color: #0095d5; color: white; border: none; cursor: pointer; border-radius: 0 15px 15px 0; display: flex; align-items: center; justify-content: center; gap: 8px; transition: background-color 0.3s;">
+      <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="book" class="svg-inline--fa fa-book" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" style="width: 18px; height: 18px;">
         <path fill="currentColor" d="M96 0C43 0 0 43 0 96V416c0 53 43 96 96 96H384h32c17.7 0 32-14.3 32-32s-14.3-32-32-32V384c17.7 0 32-14.3 32-32V32c0-17.7-14.3-32-32-32H384 96zm0 384H352v64H96c-17.7 0-32-14.3-32-32s14.3-32 32-32zm32-240c0-8.8 7.2-16 16-16H336c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16zm16 48H336c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16s7.2-16 16-16z"></path>
       </svg>
-    </span>
-    <span>AI-Powered Search</span>
-  </button>
+      <span style="font-size: 14px; font-weight: 500;">Contextual</span>
+    </button>
+  </div>
 </div>
 
 <style>
-  #search-trigger:hover,
+  #search-trigger:hover {
+    background-color: #007ab8;
+  }
+
   #chatbot-open-button:hover {
-    opacity: 0.8; /* Adjust the opacity for the hover effect */
+    background-color: #007ab8;
+  }
+
+  #search-trigger:active {
+    background-color: #006094;
+  }
+
+  #chatbot-open-button:active {
+    background-color: #006094;
   }
 </style>
 
