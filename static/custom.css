@@ -132,7 +132,7 @@ mark {
 .sidebar-fixed {
     position: sticky;
     top: 0;
-    margin-top: 1.5em;
+    margin-top: 0.5em;
     margin-bottom: 1.5em;
 }
 
@@ -147,6 +147,32 @@ mark {
     background: transparent;
 }
 /* End Site Nav Bar */
+/* Docsnav Search Buttons */
+.docsnav-search-btn {
+    background-color: #0095d5;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.docsnav-search-btn:hover {
+    background-color: #007ab8;
+}
+
+.docsnav-search-btn:active {
+    background-color: #006094;
+}
+
+.docsnav-search-btn i {
+    font-size: 16px;
+}
 /* Sticky top menu */
 .sticky {
     position: fixed;
@@ -296,7 +322,7 @@ mark {
     }
 }
 .gdoc-nav nav {
-    padding: 1rem .25rem 1rem 1rem;
+    padding: 0.5rem .25rem 1rem 1rem;
 }
 .gdoc-nav nav section {
 	margin-top: 0;
