@@ -187,7 +187,7 @@ Failover moves to the **Advanced Settings** screen ([NAS-135469](https://ixsyste
 * Introduces changes to the **Datasets** and **Storage Dashboard** screens ([NAS-135362](https://ixsystems.atlassian.net/browse/NAS-135362), [NAS-135364](https://ixsystems.atlassian.net/browse/NAS-135364)).
   * Renames dataset and pool widgets, and changes links to other screens.
   * Removes **Scrub Tasks** configuration and scheduling from the **Data Protection Tasks** screen, but makes it available on the **Storage Health** widget located on the **Storage Dashboard** ([NAS-135555](https://ixsystems.atlassian.net/browse/NAS-135555)). 
-* Fixes the NVIDIA GPU related error "RenderError: Expected [uuid] to be set for GPU in slot" ([NAS-134152](https://ixsystems.atlassian.net/browse/NAS-134152)).
+* Fixes the NVIDIA GPU-related error "RenderError: Expected [uuid] to be set for GPU in slot" ([NAS-134152](https://ixsystems.atlassian.net/browse/NAS-134152)).
 * Includes the [NVIDIA open GPU kernel module drivers](https://github.com/NVIDIA/open-gpu-kernel-modules).
   These drivers work with Turing and later GPUs.
   Earlier architectures (Pascal, Maxwell, Volta) are not compatible.
@@ -196,7 +196,7 @@ Failover moves to the **Advanced Settings** screen ([NAS-135469](https://ixsyste
 * Adds the **Enable Secure Boot** option to virtual machine configuration screens ([NAS-136466](https://ixsystems.atlassian.net/browse/NAS-136466)).
 * Allows TrueNAS to automatically migrate existing applications when selecting a new applications pool ([NAS-132188](https://ixsystems.atlassian.net/browse/NAS-132188)).
 * Adds TrueNAS Apps service support for configuring external container registry mirrors as alternative sources for Docker images ([NAS-136553](https://ixsystems.atlassian.net/browse/NAS-136553)).
-* Introduces various UI improvements and optimizations simplify core user experiences ([NAS-135159](https://ixsystems.atlassian.net/browse/NAS-135159)).
+* Introduces various UI improvements and optimizations to simplify core user experiences ([NAS-135159](https://ixsystems.atlassian.net/browse/NAS-135159)).
 * Includes critical ZFS stability fixes and performance improvements, including fixed corruptions for plaintext replication of encrypted snapshots, enhanced memory pressure handling, faster pool export operations, improved I/O scaling capabilities, zfs rewrite and Direct I/O support ([NAS-135902](https://ixsystems.atlassian.net/browse/NAS-135902)).
 * Simplifies and improves robustness of gateway and name server settings when changing from DHCP to static aliases ([NAS-136360](https://ixsystems.atlassian.net/browse/NAS-136360) and [NAS-136360](https://ixsystems.atlassian.net/browse/NAS-136360)).
   Moves **Network** screen under the **System** main menu option.
@@ -213,8 +213,8 @@ Failover moves to the **Advanced Settings** screen ([NAS-135469](https://ixsyste
 * Removes the SMART UI ([NAS-134927](https://ixsystems.atlassian.net/browse/NAS-134927)).
   * Removes the built-in SMART test scheduling and monitoring interface to improve user flexibility while maintaining smartmontools binaries for continued third-party script compatibility ([NAS-135020](https://ixsystems.atlassian.net/browse/NAS-135020)).
     Existing scheduled SMART tests are automatically migrated to cron tasks during upgrade, and users can install the Scrutiny app for advanced SMART monitoring.
-  * SMART tests functions no longer show on the **Data Protections Tasks**, **Storage Dashboard**, or individual disk screens.  
-   See [Preparing to Upgrade](#upgrade-prep) for more information.
+  * SMART tests functions no longer show on the **Data Protections Tasks**, **Storage Dashboard**, or individual disk screens.
+   See [Disk Management](#disk-management) for more information on the SMART monitoring transition.
 * Improves drive temperature monitoring efficiency by extending the `drivetemp` kernel module to include SCSI/SAS disk temperatures.
 * Fixes an issue affecting drive temperature reporting on the dashboard ([NAS-135572](https://ixsystems.atlassian.net/browse/NAS-135572)).
 * Fixes a bug to reenable available update notifications for custom apps ([NAS-135124](https://ixsystems.atlassian.net/browse/NAS-135124)).
@@ -307,6 +307,7 @@ initializeChangelogTableForTabs('25.10');
   The smartmontools binaries remain installed and continue to be used internally by TrueNAS, ensuring that existing third-party scripts and monitoring tools continue to work unchanged.
   Users seeking advanced SMART monitoring can install the "Scrutiny" app from the TrueNAS catalog, which offers superior disk health tracking with historical data storage, customizable alerts, and automatic drive detection.
   TrueNAS maintains monitoring of critical disk health indicators and automatically migrates existing scheduled SMART tests to cron tasks during upgrade.
+  See [Disk Management](#disk-management) for more information on the SMART monitoring transition.
 
 * TrueNAS 25.10 removes the Certificate Authority (CA) functionality that allowed TrueNAS to create and sign certificates.
   Users can continue to manage certificates by creating Certificate Signing Requests (CSRs) to be signed by external certificate authorities or and importing certificates that have been signed by external CAs or directory services.
@@ -351,10 +352,91 @@ Virtual Machines are now "Enterprise ready" with support for TrueNAS Enterprise 
   These drivers work with Turing and later GPUs.
   Earlier architectures (Pascal, Maxwell, Volta) are not compatible.
   See [NVIDIA GPU Support](#nvidia-gpu-support) for more information.
-* Fixes the NVIDIA GPU related error "RenderError: Expected [uuid] to be set for GPU in slot" ([NAS-134152](https://ixsystems.atlassian.net/browse/NAS-134152)).
+* Fixes the NVIDIA GPU-related error "RenderError: Expected [uuid] to be set for GPU in slot" ([NAS-134152](https://ixsystems.atlassian.net/browse/NAS-134152)).
 * Fixes a bug to reenable available update notifications for custom apps ([NAS-135124](https://ixsystems.atlassian.net/browse/NAS-135124)).
 
 {{< include file="/static/includes/apps-market-ad-banner.md" >}}
+
+  </div>
+
+  <div data-tab-id="disk-management" data-tab-label="Disk Management">
+
+### SMART Monitoring and Disk Management in 25.10 (and Beyond)
+
+TrueNAS 25.10 changes how disk health monitoring works, transitioning from built-in SMART test scheduling to a flexible approach that better serves modern storage environments.
+
+#### What Changed
+
+##### In TrueNAS 25.04 and earlier:
+
+* SMART test scheduling was built into the TrueNAS UI
+* Tests were configured through **Data Protection Tasks** screens
+* SMART test results appeared on the **Storage Dashboard** and individual disk screens
+
+##### In TrueNAS 25.10 and later:
+
+* SMART test scheduling UI is removed
+* SMART monitoring is handled through dedicated applications or user-managed scripts
+* TrueNAS continues to automatically monitor critical disk health indicators
+* The smartmontools binaries remain installed and functional
+* Drive temperature monitoring uses the enhanced `drivetemp` kernel module, extended to include SCSI/SAS disk temperatures
+
+#### Why This Changed
+
+This transition addresses several limitations:
+
+1. Modern Storage Realities: Traditional SMART tests (short and long) designed for mechanical hard drives are less relevant for SSDs and NVMe drives, which now represent an increasing percentage of deployments. These devices focus on different health metrics like write endurance rather than mechanical wear patterns.
+
+2. Flexibility: The previous system was restrictive and difficult to customize for advanced users.
+
+3. Reliability: The integrated SMART test scheduler had persistent bugs and maintenance challenges. Scheduled tests could produce false positives and were difficult to troubleshoot.
+
+4. Better Tools Available: Dedicated monitoring applications like Scrutiny provide superior disk health tracking with historical data storage, customizable alerts, and automatic drive detection.
+
+#### What TrueNAS Still Monitors Automatically
+
+TrueNAS continues to run continuous background monitoring that periodically polls SMART attributes from all drives. The system automatically detects and alerts on critical disk health indicators:
+
+* Uncorrected read, write, and verify errors
+* SMART self-test failures
+* Critical SMART attributes that indicate imminent drive failure
+* Drive temperatures using the enhanced `drivetemp` kernel module
+
+These automatic alerts ensure critical disk health issues are reported immediately without additional monitoring applications.
+
+#### How to Monitor Disk Health in 25.10
+
+TrueNAS 25.10 provides multiple options for monitoring disk health.
+
+##### Built-in Disk Health Widget
+
+The **[Disk Health]({{< ref "/SCALEUIReference/Storage/_index.md#disk-health-widget" >}})** widget on the **Storage Dashboard** provides quick access to temperature monitoring and disk performance metrics:
+
+* Displays disk temperature-related alerts and temperature ranges (highest, lowest, average)
+* **View Disks** opens the **Storage > [Disks]({{< ref "DisksScreen" >}})** screen
+* **View Disk Reports** opens the **[Reporting > Disk]({{< ref "/SCALEUIReference/ReportingScreensSCALE.md#disk-graphs" >}})** screen with historical disk I/O performance and temperature data
+
+##### Scrutiny App for Advanced Monitoring
+
+The **Scrutiny** app provides comprehensive disk health monitoring. Scrutiny automatically detects all system drives and provides a clean web interface displaying SMART status, temperature, capacity, and power-on time at a glance, along with historical data tracking, customizable alert thresholds, and automated SMART test scheduling.
+
+{{< trueimage src="/images/SCALE/Apps/ScrutinyDiskHealthScreenshot.png" alt="Scrutiny Dashboard" id="Scrutiny Dashboard showing disk health monitoring" >}}
+
+Install Scrutiny from the TrueNAS Apps catalog. See the [Scrutiny app documentation](https://apps.truenas.com/catalog/scrutiny/) for installation and configuration details.
+
+##### Migrated SMART Test Cron Jobs
+
+During the 25.10 upgrade, TrueNAS automatically migrates existing scheduled SMART tests to cron tasks, preserving your test schedules and intervals.
+
+View and manage these migrated tests at **System > Advanced Settings > Cron Jobs**.
+
+{{< trueimage src="/images/SCALE/SystemSettings/CronJobsSmartTest.png" alt="Migrated SMART Test Cron Job" id="Migrated SMART Test Cron Job" >}}
+
+You can edit, disable, or delete these cron jobs. If you install Scrutiny or another monitoring solution, disable these migrated cron jobs to avoid duplicate test scheduling.
+
+##### Custom Monitoring Scripts
+
+The smartmontools binaries (`smartctl`, `smartd`) remain installed and continue to function normally. Existing scripts or third-party monitoring tools that invoke smartctl continue to work without modification.
 
   </div>
 
@@ -371,12 +453,12 @@ The new NVIDIA Blackwell (RTX 50-series) chips require the nvidia-open driver to
 Users with compatible hardware can enable TrueNAS to install NVIDIA drivers.
 See the TrueNAS Apps Market for [installation instructions](https://apps.truenas.com/getting-started/initial-setup/#installing-nvidia-drivers).
 
-GPUs based on earlier architectures including Pascal (GTX 10-series, Quadro P-series), Maxwell (GTX 700 and 900-series), and Volta (GTX Titan V) are not supported by the NVIDIA open drivers.
+GPUs based on earlier architectures, including Pascal (GTX 10-series, Quadro P-series), Maxwell (GTX 700 and 900-series), and Volta (GTX Titan V) are not supported by the NVIDIA open drivers.
 This is because these older GPUs lack the required GSP component.
 
 Users with incompatible legacy cards can still utilize them by deploying a TrueNAS Virtual Machine and isolating the GPU to it.
 This approach involves creating a VM, isolating the legacy GPU to that VM, installing the proprietary NVIDIA driver within the VM environment, and running GPU workloads from within the virtual machine.
-However, this workaround requires a secondary GPU (such as integrated Intel graphics or IPMI console) to handle system display duties, as isolating the only GPU in the system would leave TrueNAS without console access.
+However, this workaround requires a secondary GPU (such as integrated Intel graphics or an IPMI console) to handle system display duties, as isolating the only GPU in the system would leave TrueNAS without console access.
 
   </div>
 
