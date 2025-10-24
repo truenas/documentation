@@ -321,6 +321,15 @@
   object-fit: contain;
 }
 
+/* SVG icons in search results */
+.result-header svg {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  vertical-align: middle;
+  fill: currentColor;
+}
+
 .result-site-badge {
   padding: 0.25rem 0.5rem;
   background: #0095d5;

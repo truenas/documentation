@@ -49,7 +49,7 @@ const searchConfig = {
       url: 'https://apps.truenas.com/pagefind/',
       name: 'TrueNAS Apps',
       displayName: 'TrueNAS Apps',
-      icon: 'https://apps.truenas.com/images/truenas-logo-mark.png',
+      iconSvg: '<svg style="width: 20px; height: 20px;" viewBox="0 0 24 24"><circle cx="5" cy="5" r="2"/><circle cx="12" cy="5" r="2"/><circle cx="19" cy="5" r="2"/><circle cx="5" cy="12" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="19" cy="12" r="2"/><circle cx="5" cy="19" r="2"/><circle cx="12" cy="19" r="2"/><circle cx="19" cy="19" r="2"/></svg>',
       priority: 10,
       group: 'other'
     },
@@ -57,7 +57,7 @@ const searchConfig = {
       url: 'https://api.truenas.com/pagefind/',
       name: 'TrueNAS API',
       displayName: 'TrueNAS API',
-      icon: 'https://api.truenas.com/images/truenas-logo-mark.png',
+      iconSvg: '<svg style="width: 20px; height: 20px;" viewBox="0 0 800 800"><g><path d="M699.5,512.3v128.8c-90.1,52.2-181.1,105-273.5,158.6v-129.2c89.9-52,180.7-104.5,273.5-158.2Z"/><path d="M100.5,641.9v-128.8c91.6,53,181.9,105.2,272.8,157.7v129.1c-91.8-53.2-182.3-105.6-272.8-158.1Z"/><path d="M562.2,531.8c-46.4-26.9-91.6-53.2-136.7-79.3v-128.9c83.6,48.3,165.5,95.7,248.5,143.7-38,22-74.8,43.2-111.8,64.6Z"/><path d="M124.6,467.1c83.5-48.3,164.9-95.4,248.2-143.6v129.1c-45.2,26.2-90.9,52.6-136.6,79-36.6-21.2-72.9-42.1-111.6-64.5Z"/><path d="M510.5,561.5c-38.1,22.2-74.2,43.1-111.4,64.8-36.6-21.4-73.1-42.7-110.6-64.7,37.3-21.7,73.6-42.8,110.6-64.4,36.7,21.2,73.3,42.3,111.4,64.3Z"/></g><g><path d="M100.5,255.3L189.3,0h49.6l88.8,255.3h-55.1l-15.5-48.5h-85.5l-15.5,48.5h-55.5ZM185.2,163.2h57.7l-28.9-89.9-28.9,89.9Z"/><path d="M440.5,165.4v89.9h-51.8V0h91.4c58.8,0,95.5,27,95.5,81.8s-36.3,83.6-95.5,83.6h-39.6ZM472.7,121.7c35.9,0,51.1-12.6,51.1-40s-15.2-37.7-51.1-37.7h-32.2v77.7h32.2Z"/><path d="M699.5,255.3h-51.8V0h51.8v255.3Z"/></g></svg>',
       priority: 11,
       group: 'other'
     },
@@ -65,7 +65,7 @@ const searchConfig = {
       url: 'https://security.truenas.com/pagefind/',
       name: 'Security Advisories',
       displayName: 'Security Advisories',
-      icon: 'https://security.truenas.com/images/truenas-logo-mark.png',
+      iconSvg: '<svg style="width: 20px; height: 20px; stroke-width: 0.5;" viewBox="0 0 24 24"><path d="M12,1L3,5V11C3,16.55 6.84,21.74 12,23C17.16,21.74 21,16.55 21,11V5L12,1M12,21C7.59,21 4,17.41 4,13V6.31L12,3.11L20,6.31V13C20,17.41 16.41,21 12,21Z"/></svg>',
       priority: 12,
       group: 'other'
     },
@@ -73,7 +73,7 @@ const searchConfig = {
       url: 'https://connect.truenas.com/pagefind/',
       name: 'TrueNAS Connect',
       displayName: 'TrueNAS Connect',
-      icon: 'https://connect.truenas.com/images/truenas-logo-mark.png',
+      icon: 'https://www.truenas.com/docs/favicon/TN-favicon-32x32.png',
       priority: 13,
       group: 'other'
     }
@@ -307,6 +307,7 @@ class MultiSiteSearch {
                 siteName: config.name,
                 siteDisplayName: config.displayName || config.name,
                 siteIcon: config.icon,
+                siteIconSvg: config.iconSvg,
                 sitePriority: config.priority,
                 version: config.version || data.meta?.version || null
               };
@@ -374,9 +375,12 @@ class MultiSiteSearch {
     let html = `<div class="results-count">${this.allResults.length} result${this.allResults.length !== 1 ? 's' : ''} found</div>`;
 
     pageResults.forEach(result => {
-      const icon = result.siteIcon
-        ? `<img src="${result.siteIcon}" alt="${result.siteName}" class="result-site-icon" width="20" height="20">`
-        : '';
+      let icon = '';
+      if (result.siteIconSvg) {
+        icon = result.siteIconSvg;
+      } else if (result.siteIcon) {
+        icon = `<img src="${result.siteIcon}" alt="${result.siteName}" class="result-site-icon" width="20" height="20">`;
+      }
 
       const title = result.meta?.title || result.url?.split('/').pop() || 'Untitled';
       const excerpt = result.excerpt || '';
@@ -444,9 +448,12 @@ class MultiSiteSearch {
 
       // Append new results
       pageResults.forEach(result => {
-        const icon = result.siteIcon
-          ? `<img src="${result.siteIcon}" alt="${result.siteName}" class="result-site-icon" width="20" height="20">`
-          : '';
+        let icon = '';
+        if (result.siteIconSvg) {
+          icon = result.siteIconSvg;
+        } else if (result.siteIcon) {
+          icon = `<img src="${result.siteIcon}" alt="${result.siteName}" class="result-site-icon" width="20" height="20">`;
+        }
 
         const title = result.meta?.title || result.url?.split('/').pop() || 'Untitled';
         const excerpt = result.excerpt || '';
