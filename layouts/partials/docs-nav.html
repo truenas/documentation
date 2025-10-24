@@ -3,7 +3,6 @@
     <div class="docsnav">
       <span class="docshome"><a href="https://www.truenas.com/docs/">Documentation Hub</a></span>
       <div class="truenas-menubar" style="float:right;">
-        <span id="docsnav-intro">Product and Version: </span>
         <div class="truenas-docsnav-menuitem" id="products" onmouseover="showProductOptions()" onmouseout="hideProductOptions()">
           <button class="truenas-docsnav-menubutton" id="productButton" data-product-id="">Product <i class="fa fa-angle-down"></i></button>
           <div class="truenas-navmenudropdown" id="productDropdown">
@@ -20,13 +19,15 @@
             <!-- Version dropdown options dynamically load -->
           </div>
         </div>
-        <!-- Search Buttons -->
-        <div style="display:flex;align-items:center;gap:8px;margin-left:10px;margin-right:10px;">
-          <button id="search-trigger" class="docsnav-search-btn" aria-label="Keyword Search" title="Keyword Search">
+        <!-- Search Buttons (Split Design) -->
+        <div class="docsnav-search-container">
+          <button id="search-trigger" class="docsnav-search-btn docsnav-search-left" aria-label="Keyword Search" title="Keyword Search">
             <i class="fa fa-search"></i>
+            <span>Keyword</span>
           </button>
-          <button id="chatbot-open-button" class="docsnav-search-btn" aria-label="Contextual Search" title="Contextual Search">
+          <button id="chatbot-open-button" class="docsnav-search-btn docsnav-search-right" aria-label="Contextual Search" title="Contextual Search">
             <i class="fa fa-book"></i>
+            <span>Contextual</span>
           </button>
         </div>
         <!-- disable placeholder translate element for future work <div id="google_translate_element"></div> -->
