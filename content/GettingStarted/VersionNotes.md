@@ -73,6 +73,7 @@ See the 25.10 [Major Features](#major-features) and [Full Changelog](#full-chang
 
 **Notable changes since 25.10-RC.1:**
 
+* Samba version updated from 4.21.7 to 4.21.9 for security fixes ([4.21.8 Release Notes](https://www.samba.org/samba/history/samba-4.21.8.html) | [4.21.9 Release Notes](https://www.samba.org/samba/history/samba-4.21.9.html))
 * Improves ZFS property handling during dataset replication ([NAS-137818](https://ixsystems.atlassian.net/browse/NAS-137818)).
   Resolves issue where the storage page temporarily displayed errors when receiving active replications due to ZFS properties being unavailable while datasets were in an inconsistent state.
 * Fixes "Failed to load datasets" error on Datasets page ([NAS-138034](https://ixsystems.atlassian.net/browse/NAS-138034)).
