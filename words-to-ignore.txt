@@ -2395,3 +2395,6 @@ VHDX
 VMDX
 QUEM
 ExportDiskToImageWindow
+InstanceWarning
+VirtualMachines
+virtualmachines
