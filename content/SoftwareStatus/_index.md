@@ -19,9 +19,6 @@ jump_to_buttons:
   - text: "Release Schedule"
     anchor: "release-schedule"
     icon: "calendar"
-  - text: "Development Timeline"
-    anchor: "development-timeline"
-    icon: "timeline"
   - text: "Upgrade Paths"
     anchor: "upgrade-paths"
     icon: "conversion-path"
@@ -77,13 +74,6 @@ Choose the right TrueNAS version by balancing your need for new features against
 {{< /expand >}}
 
   </div>
-  <div data-tab-id="development-timeline" data-tab-label="Development Timeline">
-
-Releases for major versions can overlap while a new major version is working towards a stable release and the previous major version is still receiving maintenance updates.
-
-{{< timeline name="scale-releases" >}}
-
-  </div>
   <div data-tab-id="upgrade-paths" data-tab-label="Upgrade Paths">
 
 {{< include file="/static/includes/SCALEUpgradePaths.md" >}}
@@ -133,7 +123,7 @@ Legacy releases can only be used by downloading the .iso file and freshly instal
   </div>
   <div data-tab-id="documentation-lifecycle" data-tab-label="Documentation Lifecycle">
 
-This website serves as the central documentation repository for all TrueNAS projects and related products. The TrueNAS team maintains and regularly updates documentation for current and in-development versions of TrueNAS software. For documentation purposes, current and future releases are those [recommended](#which-truenas-version-is-recommended) for one or more user types.
+The TrueNAS team maintains and regularly updates documentation for current and in-development versions of TrueNAS software. For documentation purposes, current and future releases are those [recommended](#which-truenas-version-is-recommended) for one or more user types.
 
 Documentation is actively maintained for all recommended TrueNAS versions, with updates published alongside software releases. Each TrueNAS product has dedicated documentation sections, and version selectors help users navigate between different software releases when breaking changes or new features are introduced.
 
