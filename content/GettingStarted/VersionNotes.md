@@ -239,6 +239,11 @@ These are ongoing issues that can affect multiple versions in the 25.10 series.
   TrueNAS 25.10 uses the Linux kernel NVMe over TCP target driver, which lacks support for fused commands required by VMware ESXi.
   This is an upstream kernel limitation that prevents path initialization in ESXi environments.
 
+* Two-Factor Authentication (2FA) can fail during daylight saving time transitions ([NAS-138200](https://ixsystems.atlassian.net/browse/NAS-138200)).
+  Systems with two-factor authentication configured can experience login failures for approximately one hour during daylight saving time transitions when clocks move backward.
+  North American users should be aware of this issue ahead of the upcoming DST transition on November 2, 2025.
+  The authentication system resolves automatically once the duplicated hour passes.
+
 <a href="https://ixsystems.atlassian.net/issues/?filter=13428" target="_blank">See the latest status on Jira</a> for public issues discovered in 25.10 that are being resolved in a future TrueNAS release.
 
 See the [Release Notes](https://forums.truenas.com/c/release-notes/13) section of the TrueNAS forum for ongoing updates about known issues, investigations, and statistics about TrueNAS releases.
