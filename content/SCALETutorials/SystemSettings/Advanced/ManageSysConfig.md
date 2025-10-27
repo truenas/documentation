@@ -1,16 +1,18 @@
 ---
 title: "Managing the System Configuration"
 description: "Provides information on downloading your TrueNAS configuration to back up system settings, uploading a new configuration file, and resetting back to default settings."
-weight: 15
+weight: 4
 tags:
  - backup
  - settings
 keywords:
-- enterprise storage solutions
-- nas storage solutions
-- software storage solutions
-- backup and recovery
-- hybrid storage
+ - enterprise storage solutions
+ - nas storage solutions
+ - software storage solutions
+ - backup and recovery
+ - hybrid storage
+aliases:
+ - /scaletutorials/systemsettings/general/managesysconfigscale/
 ---
 
 TrueNAS allows users to manage the system configuration by uploading or downloading configurations or by resetting the system to the default configuration.
