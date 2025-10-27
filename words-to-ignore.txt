@@ -2407,3 +2407,6 @@ schemas
 RuntimeError
 ENOMETHOD
 CronTask
+InstanceWarning
+VirtualMachines
+virtualmachines

@@ -332,8 +332,11 @@ initializeChangelogTableForTabs('25.10');
 Virtual Machines are now "Enterprise ready" with support for TrueNAS Enterprise High Availability (HA) systems and failover ([NAS-136509](https://ixsystems.atlassian.net/browse/NAS-136509)).
 {{< /enterprise >}}
 
+{{< include file="/static/includes/25.04Virtualization.md" >}}
+
 * The **Enable Secure Boot** option is added to virtual machine configuration screens ([NAS-136466](https://ixsystems.atlassian.net/browse/NAS-136466)).
-* Virtual machines created in 25.04 (pre-25.04.2) and displayed on the **Containers** screen do not automatically start on system boot to prevent conflicts with VMs on the **Virtual Machines** screen that might use the same zvols ([NAS-136946](https://ixsystems.atlassian.net/browse/NAS-136946)).\
+* Virtual machines created in 25.04 (pre-25.04.2) and displayed on the **Containers** screen do not automatically start on system boot to prevent conflicts with VMs on the **Virtual Machines** screen that might use the same zvols ([NAS-136946](https://ixsystems.atlassian.net/browse/NAS-136946)).
+* Virtual machines created in 25.04.0 or 25.04.1 using the **Instances** (now **Containers**) screen can be migrated to conventional VMs in 25.10 and later using the process described in the [**Migrating Containers VMs**]({{< ref "/scaletutorials/virtualmachines/#migrating-containers-vms" >}}) tutorial.
 * Resolves ZFS ARC memory management conflicts that were causing out-of-memory crashes in Virtual Machines due to memory fragmentation issues ([NAS-135499](https://ixsystems.atlassian.net/browse/NAS-135499)).
 
   </div>
