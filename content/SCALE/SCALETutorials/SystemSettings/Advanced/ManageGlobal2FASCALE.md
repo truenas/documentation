@@ -165,7 +165,7 @@ SSH 2FA only applies to users who configured a 2FA secret and are using password
 
 3. Go to **Credentials > Users** and edit the desired user account. Select **SSH password login enabled**, then click **Save**.
 
-4. Go to **System Settings > Services** and click the **SSH** toggle. Wait for the service status to show that it is running.
+4. Go to **System Settings > Services** and click the **SSH** <span class="iconify" data-icon="mdi:play-circle" title="Start Service">Start Service</span> button to start the service. Wait for the service status to show that it is running.
 
 5. Open the Google Authentication app on your mobile device.
 

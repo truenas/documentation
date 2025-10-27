@@ -83,7 +83,7 @@ You can configure the SMB service before you add the share, or you can enable th
 Click on the <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i> on the **Windows (SMB) Share** widget, then click **Config Service** to open the **SMB Service** screen.
 
 Go to **System > Services** and scroll down to **SMB**.
-When using the **Services** screen, click the toggle to turn off the SMB service if it is running, then click <i class="material-icons" aria-hidden="true" title="Configure">edit</i> **Edit** to open the **SMB** service settings screen.
+When using the **Services** screen, click the <span class="iconify" data-icon="mdi:stop-circle" title="Stop Service">Stop Service</span> button to turn off the SMB service if it is running, then click <i class="material-icons" aria-hidden="true" title="Configure">edit</i> **Edit** to open the **SMB** service settings screen.
 
 1. Click **Advanced Settings**.
 
