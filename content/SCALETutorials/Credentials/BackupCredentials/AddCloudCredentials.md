@@ -19,7 +19,7 @@ The **Cloud Credentials** screen, accessed from the **Backup Credentials** scree
 {{< include file="/static/includes/CloudServiceProvidersSCALE.md" >}}
 
 To maximize security, TrueNAS encrypts cloud credentials when saving them.
-However, this means that to restore any cloud credentials from a TrueNAS configuration file, you must enable **Export Password Secret Seed** when generating that [configuration backup]({{< ref "/SCALETutorials/SystemSettings/General/ManageSysConfigSCALE" >}}).
+However, this means that to restore any cloud credentials from a TrueNAS configuration file, you must enable **Export Password Secret Seed** when generating that [configuration backup]({{< ref "/SCALETutorials/SystemSettings/Advanced/ManageSysConfig" >}}).
 Remember to protect any downloaded TrueNAS configuration files.
 
 Authentication methods for each provider could differ based on the provider security requirements.
