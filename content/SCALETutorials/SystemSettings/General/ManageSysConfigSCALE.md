@@ -28,21 +28,14 @@ The **Download File** option downloads your TrueNAS SCALE current configuration 
 {{< include file="/static/includes/DownloadSystemConfigFileSCALE.md" >}}
 
 ### Uploading the File
-The **Upload File** option gives users the ability to replace the current system configuration with any previously saved TrueNAS SCALE configuration file.
+The **Upload File** option gives users the ability to replace the current system configuration with any previously saved TrueNAS configuration file.
 
-{{< hint type=warning >}}
-When migrating from a FreeBSD-based releases to a Linux-based release, the new administration user login credentials (name and password) are deleted and replaced with the FreeBSD-based root user and password in the uploaded configuration file.
-Log into the UI with the original root user credentials, then recreate an administration user and password.
-
-To security-harden your system, do not use the **trunas_admin** user or **admin**, choose a unique username and password that cannot be easily guessed.
-Disable the root user login password as the final step.
-{{< /hint >}}
-
-{{< hint type=warning title="Always Include the Secret Seed!" >}}
-If you do not save the secret seed downloading the system config file, various services can break due to missing information.
+If you do not save the secret seed by downloading the system config file, various services can break due to missing information.
 Without the secret seed, encrypted fields are set to empty values. For example, SMB via local accounts and apps.
 Always select the option to save the secret seed when downloading the system config file!
-{{< /hint >}}
+
+Uploading a configuration file from a FreeBSD-based release wipes any existing administrative users and replaces with the original root user and password from the uploaded configuration file.
+To secure the system after restoring from a FreeBSD-based TrueNAS config file, log in with the original root user credentials, recreate an administrative account, and finally re-disable the root account password.
 
 ### Resetting to Defaults
 
@@ -61,12 +54,9 @@ If you do not save the system configuration before resetting it, you could lose 
 The **Reset to Defaults** option resets the system configuration to factory settings.
 After the configuration resets, the system restarts and users must set a new login password.
 
-### Backing Up the Config File
-SCALE does not automatically back up the system configuration file to the system dataset.
+### Remote Backups of the Config File
 
-Users who want to schedule an automatic backup of the system configuration file should:
+TrueCommand provides an easy solution for users who want to schedule an automatic remote backup of the system configuration file:
 1. [Set up TrueCommand](https://www.truenas.com/docs/truecommand/tcgettingstarted/install/).
-2. [Add their SCALE system](https://www.truenas.com/docs/truecommand/tcgettingstarted/connectingtruenas/).
+2. [Add their TrueNAS system](https://www.truenas.com/docs/truecommand/tcgettingstarted/connectingtruenas/).
 3. Create and schedule the [configuration file backup](https://www.truenas.com/docs/truecommand/userguide/systemmanagement/truenasconfigmanage/#create-a-config-backup).
-
-Users can manually back up the SCALE config file by downloading and saving the file to a location that is automatically backed up.
