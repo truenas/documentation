@@ -5,7 +5,7 @@ img: "/images/tn-openstorage-logo.png"
 product: "TrueNAS"
 title: '<img src="/images/Enterprise.png" class="edition-logo" alt="TrueNAS Enterprise"> | <img src="/images/Community_Edition.png" class="edition-logo" alt="TrueNAS Community Edition">'
 majorVersions:
-  - lifecycle: "Previous"
+  - lifecycle: "24.10"
     name: "TrueNAS 24.10 - Electric Eel"
     releaseName: "Electric Eel"
     releases:
@@ -14,7 +14,7 @@ majorVersions:
         link: "https://www.truenas.com/docs/scale/24.10/gettingstarted/scalereleasenotes/#241024"
         releaseDate: "2025-08-07"
         latest: true
-  - lifecycle: "Current"
+  - lifecycle: "25.04"
     name: "TrueNAS 25.04 - Fangtooth"
     releaseName: "Fangtooth"
     releases:
@@ -23,7 +23,7 @@ majorVersions:
         link: "https://www.truenas.com/docs/scale/25.04/gettingstarted/scalereleasenotes/#250423"
         releaseDate: "2025-08-26"
         latest: true
-  - lifecycle: "Next"
+  - lifecycle: "25.10"
     name: "TrueNAS 25.10 - Goldeye"
     releaseName: "Goldeye"
     releases:
