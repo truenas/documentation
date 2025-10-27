@@ -3,7 +3,7 @@
 TrueNAS 25.10 (Goldeye) introduces NVMe over Fabric support, enhanced virtual machine capabilities, and comprehensive ZFS stability improvements.
 
 - **Breaking Changes:**
-  - NVIDIA open-source drivers support Turing and newer GPUs; Pascal, Maxwell, and Volta architectures no longer supported.
+  - NVIDIA open-source drivers support Turing and newer GPUs; Pascal, Maxwell, and Volta architectures are no longer supported.
   - Certificate Authority (CA) functionality removed; use external CAs or ACME certificates.
   - SMART monitoring UI removed; existing tests migrated to cron tasks (install Scrutiny app for advanced monitoring).
   - Active Directory AUTORID IDMAP backend removed and auto-migrated to RID.
