@@ -450,21 +450,6 @@ This procedure applies to the zvol for an Instance or Container VM that has data
    Some VMs experience various issues like network connectivity, or are stopped and do not start.
    Refer to the troubleshooting tips below for more information. 25.10 releases correct some issues encountered in 25.04.2.4 VMs that are migrated.
 
-   {{< expand "Troubleshooting VM Issues" "v" >}}
-   After upgrading from 24.10 to 25.04, VMs are visible and running, but are expected to have issues because 25.04 release does not fully support these older VMs.
-
-   VMs with a Windows OS installed could require converting to VirtIO-SCSI disks to get reconnected to the Internet.
-   To restore connectivity, try clean-mounting the system from the mounted drive from within the VM, and then on the TrueNAS system (host).
-   Follow this by removing driver syntax added to raw qem files.
-
-   If a new VM is created in 25.04.2.1 and it fails to run, stop all containers.
-   In the VM configuration, delete the current NIC, then select the bridge before selecting the NIC again to restore functionality.
-
-   VMs created using the Instances feature initially show on the **Virtual Machine** screen as running when they are not running, but this state corrects on its own.
-
-   If a VM with Windows OS is created in 25.04.0 using the **Virtual Machine** screens (not **Instances** in 25.04.1) the VM should run.
-   If this VM cannot find the NIC, delete the NIC in the configuration from the **Devices** screen for that VM, and then reconfigure it to restore functionality.
-   {{< /expand >}}
 After upgrading to a release that shows the **Virtual Machines** screen and the **Containers** option:
 
 5. Go to **Containers** to see which VMs are listed, then click **Configuration**, and then **Manage Volumes** to open the **Volumes** window.
@@ -516,11 +501,11 @@ After upgrading to a release that shows the **Virtual Machines** screen and the 
    Repeat for each volume you want to migrate to a new VM. Do not rename or move the .block volumes.
    Enter the following command:
 
-   <code>sudo zfs rename <i>tank</i>/.ix-virt/custom/<i>default_vm2410linux-icppg_vm2410linuxclone1</i> <i>tank/vms/default_vm2410linux-icppg_vm2410linuxclone1</i></code>
+   <code>sudo zfs rename <i>tank</i>/.ix-virt/custom/<i>default_debian1-urec9f</i> <i>tank/vms/default_debian1-urec9f</i></code>
 
    Where:
    - *tank* is the pool name in the example.
-   - *default_vm2410linux-icppg_vm2410linuxclone1* is the name of a hidden zvol in the example, and the name given to the migrated zvol.
+   - *default_debian1-urec9f* is the name of a hidden zvol in the example, and the name given to the migrated zvol.
      We do not recommend renaming the migrated zvol to minimize potential issues with the migration process.
    - *vms* is the dataset in the example as the location to store the migrated zvols for VMs. Change this to the location on your system.
 
@@ -529,16 +514,16 @@ After upgrading to a release that shows the **Virtual Machines** screen and the 
 
    c. Verify the `volmode`. Enter the following command for each zvol you rename.
 
-   <code>sudo zfs get volmode <i>tank/vms/default_vm2410linux-icppg_vm2410linuxclone1</i></code>
+   <code>sudo zfs get volmode <i>tank/vms/default_debian1-urec9f</i></code>
 
    Where:
    - *tank* is the pool name.
    - *vms* is the dataset where the zvol is stored.
-   - *default_vm2410linux-icppg_vm2410linuxclone1* is the name of the zvol
+   - *default_debian1-urec9f* is the name of the zvol
 
    This returns the `volmode` for the volume. It should be set to `dev`. If not, enter the following command to set it to `dev`:
 
-   <code>sudo zfs set volmode=dev <i>tank/vms/default_vm2410linux-icppg_vm2410linuxclone1</i></code>
+   <code>sudo zfs set volmode=dev <i>tank/vms/default_debian1-urec9f</i></code>
 
    After completing the commands listed above for each zvol you want to migrate, go to **Datasets** and verify all volumes you migrated show on the screen.
 
