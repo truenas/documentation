@@ -111,7 +111,7 @@ After TrueNAS reboots, you might need to [use the Console Setup menu to configur
 
 After gaining access to the UI, sign in with the admin user credentials created during installation.
 
-Go to **System > General Settings** and [upload the system config file](/scaletutorials/systemsettings/advanced/managesysconfig/#uploading-the-file).
+Go to **System > Advanced Settings** and [upload the system config file](/scaletutorials/systemsettings/advanced/managesysconfig/#uploading-the-file).
 Uploading a previously-saved system config file migrates your settings, including accounts, directory services, networking, services, shares, storage configuration, system setting, data protection tasks, and more.
 The system restarts to apply the uploaded configuration.
 
