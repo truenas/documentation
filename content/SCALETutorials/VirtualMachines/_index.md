@@ -540,7 +540,7 @@ After upgrading to a release that shows the **Virtual Machines** screen and the 
 
    <code>sudo zfs set volmode=dev <i>tank/vms/default_vm2410linux-icppg_vm2410linuxclone1</i></code>
 
-   After completing the commands listed above for each zvol you want to migrate. Go to **Datasets** and verify all volumes you migrated show on the screen.
+   After completing the commands listed above for each zvol you want to migrate, go to **Datasets** and verify all volumes you migrated show on the screen.
 
 7. Create the new VM using the migrated zvol. Repeat these steps for each zvol you migrated.
 
