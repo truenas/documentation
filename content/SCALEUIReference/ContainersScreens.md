@@ -10,10 +10,11 @@ tags:
 
 {{< include file="/static/includes/25.04Virtualization.md" >}}
 
+{{< include file="/static/includes/InstanceWarning.md" >}}
+
 ## Containers Screen
 
 The **Containers** screen allows users to add, edit, or manage Linux containers.
-
 
 The screen header displays a <i class="fa fa-cog" aria-hidden="true"></i> **Pool is not selected** status before a pool for containers is selected.
 See [**Global Settings**](#global-settings) for more information.
