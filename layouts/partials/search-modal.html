@@ -35,7 +35,15 @@
           <div class="filter-section-label">Other Sites</div>
           <div class="filter-section-buttons">
             <button class="site-filter active" data-site="apps">Apps</button>
-            <button class="site-filter active" data-site="api">API</button>
+            <select id="api-version-filter" class="api-filter-dropdown active">
+              <option value="auto">API: Match docs version</option>
+              <option value="v26.04">API: v26.04</option>
+              <option value="v25.10">API: v25.10</option>
+              <option value="v25.04">API: v25.04</option>
+              <option value="v24.10">API: v24.10</option>
+              <option value="all">API: All versions</option>
+              <option value="off">── Don't search API ──</option>
+            </select>
             <button class="site-filter active" data-site="security">Security</button>
             <button class="site-filter active" data-site="connect">TrueNAS Connect</button>
           </div>

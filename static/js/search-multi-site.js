@@ -93,6 +93,10 @@ class MultiSiteSearch {
     this.isSearching = false;
     this.hasResults = false; // Track if results are currently displayed
     this.isLoadingMore = false; // Track if more results are being loaded
+    this.selectedApiVersion = 'auto'; // Track selected API version filter ('auto', 'all', or specific version)
+
+    // Detect current docs version from URL
+    this.currentDocsVersion = this.detectCurrentDocsVersion();
 
     // Bind methods
     this.init = this.init.bind(this);
@@ -103,6 +107,30 @@ class MultiSiteSearch {
     this.updateSearchIcon = this.updateSearchIcon.bind(this);
 
     this.init();
+  }
+
+  detectCurrentDocsVersion() {
+    // Try to detect version from URL (e.g., /docs/scale/25.04/ or /scale/25.04/)
+    const urlMatch = window.location.pathname.match(/\/(?:docs\/)?(?:scale\/)?(\d+\.\d+)/);
+    if (urlMatch) {
+      const version = urlMatch[1]; // e.g., "25.04"
+      console.log(`Detected current docs version: ${version}`);
+      return version;
+    }
+
+    // Fallback: try to detect from version switcher or config
+    const versionSwitcher = document.querySelector('[data-current-version]');
+    if (versionSwitcher) {
+      const version = versionSwitcher.dataset.currentVersion;
+      console.log(`Detected version from switcher: ${version}`);
+      return version;
+    }
+
+    // Default to the default version from config
+    const defaultDocs = Object.keys(searchConfig.indexes).find(key => searchConfig.indexes[key].isDefault);
+    const defaultVersion = searchConfig.indexes[defaultDocs]?.version?.replace(/\s.*$/, '');
+    console.log(`Using default version: ${defaultVersion}`);
+    return defaultVersion;
   }
 
   async init() {
@@ -142,6 +170,37 @@ class MultiSiteSearch {
     filterButtons.forEach(btn => {
       btn.addEventListener('click', (e) => this.toggleSiteFilter(e.target));
     });
+
+    // API version dropdown (replaces button + dropdown)
+    const apiVersionDropdown = document.getElementById('api-version-filter');
+    if (apiVersionDropdown) {
+      apiVersionDropdown.addEventListener('change', (e) => {
+        const value = e.target.value;
+
+        if (value === 'off') {
+          // Disable API search
+          this.selectedApiVersion = 'off';
+          apiVersionDropdown.classList.remove('active');
+          this.activeSites = this.activeSites.filter(site => site !== 'api');
+          console.log('API search disabled');
+        } else {
+          // Enable API search with selected version
+          this.selectedApiVersion = value;
+          apiVersionDropdown.classList.add('active');
+          if (!this.activeSites.includes('api')) {
+            this.activeSites.push('api');
+          }
+          console.log(`API version filter changed to: ${this.selectedApiVersion}`);
+        }
+
+        console.log('Active sites:', this.activeSites);
+
+        // If results are displayed, change search icon to refresh
+        if (this.hasResults) {
+          this.updateSearchIcon('refresh');
+        }
+      });
+    }
 
     // Infinite scroll for search results
     const resultsContainer = document.getElementById('search-results-enhanced');
@@ -195,9 +254,18 @@ class MultiSiteSearch {
     // Toggle the button state
     button.classList.toggle('active');
 
-    // Update active sites list
+    // Update active sites list (excluding 'api' which is managed by dropdown)
     const activeButtons = document.querySelectorAll('.site-filter.active');
-    this.activeSites = Array.from(activeButtons).map(btn => btn.dataset.site);
+    const buttonSites = Array.from(activeButtons).map(btn => btn.dataset.site);
+
+    // Combine button sites with API if the dropdown is active
+    const apiDropdown = document.getElementById('api-version-filter');
+    const apiIsActive = apiDropdown && apiDropdown.classList.contains('active');
+
+    this.activeSites = buttonSites;
+    if (apiIsActive) {
+      this.activeSites.push('api');
+    }
 
     // Ensure at least one site is selected
     if (this.activeSites.length === 0) {
@@ -233,6 +301,7 @@ class MultiSiteSearch {
     const modal = document.getElementById('search-modal');
     if (modal) {
       modal.style.display = 'block';
+
       // Focus on input after modal opens
       setTimeout(() => {
         const input = document.getElementById('search-input-enhanced');
@@ -329,7 +398,44 @@ class MultiSiteSearch {
       const resultsArrays = await Promise.all(searchPromises);
       this.allResults = resultsArrays.flat();
 
-      console.log(`Total results: ${this.allResults.length}`);
+      console.log(`Total results before filtering: ${this.allResults.length}`);
+
+      // Filter API results by version based on dropdown selection
+      if (this.activeSites.includes('api') && this.selectedApiVersion !== 'all' && this.selectedApiVersion !== 'off') {
+        const targetVersion = this.selectedApiVersion === 'auto' ? this.currentDocsVersion : this.selectedApiVersion.replace(/^v/, '');
+
+        if (targetVersion) {
+          this.allResults = this.allResults.filter(result => {
+            // Keep non-API results
+            if (result.siteKey !== 'api') {
+              return true;
+            }
+
+            // For API results, check if version matches target version
+            const resultVersion = result.meta?.version || result.version;
+            if (!resultVersion) {
+              console.log(`API result has no version, keeping: ${result.url}`);
+              return true; // Keep results without version info
+            }
+
+            // Extract version numbers (e.g., "v25.04" or "25.04")
+            const apiVersion = resultVersion.replace(/^v/, '');
+            const matches = apiVersion === targetVersion;
+
+            if (!matches) {
+              console.log(`Filtering out API result: ${result.url} (${apiVersion} != ${targetVersion})`);
+            }
+
+            return matches;
+          });
+
+          console.log(`Filtered to ${this.allResults.length} results matching version ${targetVersion}`);
+        }
+      } else if (this.activeSites.includes('api') && this.selectedApiVersion === 'all') {
+        console.log('Showing all API versions');
+      }
+
+      console.log(`Total results after filtering: ${this.allResults.length}`);
 
       // Sort by score/relevance, then by site priority
       this.allResults.sort((a, b) => {
@@ -385,11 +491,21 @@ class MultiSiteSearch {
       const title = result.meta?.title || result.url?.split('/').pop() || 'Untitled';
       const excerpt = result.excerpt || '';
 
+      // Add version badge for API results
+      let versionBadge = '';
+      if (result.siteKey === 'api') {
+        const resultVersion = result.meta?.version || result.version;
+        if (resultVersion) {
+          versionBadge = `<span class="result-version-badge">${resultVersion}</span>`;
+        }
+      }
+
       html += `
         <div class="search-result-item">
           <div class="result-header">
             ${icon}
             <span class="result-site-badge">${result.siteDisplayName}</span>
+            ${versionBadge}
           </div>
           <h4><a href="${result.url}" target="_blank" rel="noopener">${this.escapeHtml(title)}</a></h4>
           <div class="result-excerpt">${excerpt}</div>
