@@ -1,3 +1,38 @@
+Process time: 2025-10-23 12:54:38
+Initiated by: Dan Pizappi
+
+1404 files reviewed.
+27 files deleted.
+The following files were deleted:
+C:\Users\iXUser\Documents\GitHub\documentation\static\includes\ReplicationCreateDatasetAndAdminHomeDirSteps.md
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Credentials\2FAQRCodeDialog.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Credentials\AddUser-UserIDAndGroupSettings.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Credentials\AddUserDirPermsAuthSettings.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Credentials\AddUserHomeDirAuth.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Credentials\AddUserHomeDirPerm.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Credentials\AddUserIdentificationSettings.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Credentials\AllUsersScreenBuiltInSCALE.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Credentials\AllUsersScreenSCALE.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Credentials\ChangeAdminUserHomeDirectorySetting.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Credentials\EditUserIdentificationSCALE.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Credentials\NewSSHConnectionAuthetication.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Credentials\NewSSHConnectionNameAndMethod.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Credentials\SSHEditUserAuthenticationSettings.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Credentials\UsersAPIKeysButton.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Credentials\UsersAPIKeysMenu.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Credentials\UserScreenBasicSearch.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Credentials\UserScreenUserDetails.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Credentials\UsersScreenUsersScreenAccessWidgetWithAPIKey.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Credentials\UsersScreenUserTable.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Dashboard\APIKeyExpires.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Dashboard\TrueCommandIcon.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Dashboard\TrueNASAboutScreenSCALE.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\DataProtection\CreateRemoteReplicationTask.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\DataProtection\NewSSHConnectionScreen.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\DataProtection\ReplicationSnapshotConfirmationDialog.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\TrueCommand\Dashboard\TrueCommandIcon.png
+
+----------------------------------------
 Process time: 2025-09-18 13:31:25
 Initiated by: Dan Pizappi
 

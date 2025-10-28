@@ -191,6 +191,9 @@ majorVersions:
     majorVersion: "25.10 (Goldeye)"
     releaseName: "Goldeye"
     releases:
+      - name: "25.10.0"
+        link: "https://download.truenas.com/TrueNAS-SCALE-Goldeye/25.10.0/"
+        date: "2025-10-28"
       - name: "25.10-RC.1"
         link: "https://download.truenas.com/TrueNAS-SCALE-Goldeye-RC/25.10-RC.1/"
         date: "2025-09-30"
