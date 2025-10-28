@@ -19,10 +19,10 @@ Save the configuration file each time the system configuration changes.
 
 To download the configuration file:
 
-Go to **System > General Settings** and click on **Manage Configuration**.
+Go to **System > Advanced Settings** and click on **Manage Configuration**.
 Select **Download File**.
 
-{{< trueimage src="/images/SCALE/SystemSettings/GeneralManageConfigurationOptions.png" alt="Download Configuration File" id="Download Configuration File" >}}
+{{< trueimage src="/images/SCALE/SystemSettings/AdvancedManageConfigurationOptions.png" alt="Download Configuration File" id="Download Configuration File" >}}
 
 The **Save Configuration** dialog opens.
 
