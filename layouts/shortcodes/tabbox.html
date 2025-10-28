@@ -4,29 +4,27 @@
 {{- $productData := index .Site.Data.properties $name -}}
 {{- with $productData }}
   <div class="gdoc-columns__content gdoc-markdown--nested flex-even">
-    <div class="section-box" id="{{ .id }}" style="padding-top: 1.5rem; padding-bottom: 1.5rem; max-width: 500px;">
-      <div class="box-image">
-        <img src="{{ .img }}" title="{{ .product }}" alt="{{ .product }}" style="padding-bottom: .5rem; box-shadow: none;">
-      </div>
-      <p style="margin-bottom: 1.5rem;">
-        <b>{{ .title | safeHTML }}</b>
-      </p>
+    <div class="section-box" id="{{ .id }}" style="padding-top: 0; padding-bottom: 1.5rem; max-width: 500px; overflow: hidden;">
+      <h2 class="section-box-header">Download TrueNAS</h2>
 
       {{- if .majorVersions }}
         <div class="section-tabs" style="margin-bottom: 1rem; display: flex; flex-wrap: wrap; gap: 0.25rem;">
           {{- range $index, $majorVersion := .majorVersions }}
-            <div class="section-tab {{ $name }}-section-tab" onclick="showMajorVersion('{{ $name }}', '{{ $majorVersion.lifecycle }}')">{{ if $majorVersion.tabLabel }}{{ $majorVersion.tabLabel }}{{ else }}{{ $majorVersion.lifecycle }}{{ end }}</div>
+            <div class="section-tab {{ $name }}-section-tab" onclick="showMajorVersion('{{ $name }}', {{ $index }})">{{ if $majorVersion.tabLabel }}{{ $majorVersion.tabLabel }}{{ else }}{{ $majorVersion.lifecycle }}{{ end }}</div>
           {{- end }}
         </div>
 
         {{- range $index, $majorVersion := .majorVersions }}
-          <div class="major-version-content {{ $name }}-major-version-content" id="{{ $name }}-majorVersion{{ $majorVersion.lifecycle }}" style="padding-left: 1.5rem; padding-right: 1.5rem; display: {{ if eq $index $defaultTab }}block{{ else }}none{{ end }};">
+          <div class="major-version-content {{ $name }}-major-version-content" id="{{ $name }}-majorVersion{{ $index }}" style="padding-left: 1.5rem; padding-right: 1.5rem; display: {{ if eq $index $defaultTab }}block{{ else }}none{{ end }};">
             {{- if eq $majorVersion.lifecycle "Archive" }}
               {{- range $majorVersion.majorVersions }}
+              {{- if .isDivider }}
+                <hr width="50%" style="margin: 1rem auto;">
+              {{- else }}
               <div style="padding-bottom: 0.5rem;">
                 <b>{{ .majorVersion }}</b>
                 {{- if .releaseNotes }}
-                  | <a href="{{ .releaseNotes }}">Release Notes</a>
+                  <a href="{{ .releaseNotes }}" style="margin-left: 1rem; font-size: 0.9em;">{{ if .releaseNotesLabel }}{{ .releaseNotesLabel }}{{ else }}Release Notes{{ end }}</a>
                 {{- end }}
               </div>
 
@@ -59,11 +57,12 @@
                   </dd>
                 {{- end }}
               {{- end }}
+              {{- end }}
             {{- else }}
               <div style="padding-bottom: 0.5rem;">
                 <b>{{ .majorVersion }}</b>
                 {{- if .releaseNotes }}
-                  <a href="{{ .releaseNotes }}" style="margin-left: 1rem; font-size: 0.9em;">Release Notes</a>
+                  <a href="{{ .releaseNotes }}" style="margin-left: 1rem; font-size: 0.9em;">{{ if .releaseNotesLabel }}{{ .releaseNotesLabel }}{{ else }}Release Notes{{ end }}</a>
                 {{- end }}
               </div>
               
