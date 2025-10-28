@@ -25,6 +25,11 @@ ZFS pool importing works for pools exported or disconnected from the current sys
 The import procedure only applies to disks with a ZFS storage pool.
 {{< /hint >}}
 
+{{< hint type=warning >}}
+TrueNAS supports pool imports using the WebUI or API only.
+Manual pool import via command line can cause unexpected behavior and system issues.
+{{< /hint >}}
+
 {{< expand "Do I need to do anything different with disks installed on a different system?" "v" >}}
 When physically installing ZFS pool disks from another system, use the `zpool export poolname` command in the Linux command line or a web interface equivalent to export the pool on that system.
 Shut down that system and move the drives to the TrueNAS system.

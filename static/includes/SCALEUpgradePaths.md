@@ -216,8 +216,8 @@ See the <a href="https://www.truenas.com/docs/softwarestatus/#which-truenas-vers
               F["23.10.2 (Cobia)"] -->|update| G
               G["24.04.2.5 (Dragonfish)"] -->|update| H
               H["24.10.2.4 (Electric Eel)"] -->|update| I
-              I["25.04.2.3 (Fangtooth)"] -->|"(anticipated)"| J
-            J["25.10 (Goldeye)"]
+              I["25.04.2.5 (Fangtooth)"] -->|"update"| J
+            J["25.10.0 (Goldeye)"]
             {{< /mermaid >}}
           </div>
         </div>
@@ -245,7 +245,7 @@ See the <a href="https://www.truenas.com/docs/softwarestatus/#which-truenas-vers
               D["23.10.2 (Cobia)"] -->|update| E
               E["24.04.2.5 (Dragonfish)"]  -->|update| F
               F["24.10.2.4 (Electric Eel)"] -->|update| G
-              G["25.04.2.3 (Fangtooth)"] -->|"(anticipated)"| H
+              G["25.04.2.5 (Fangtooth)"] -->|"(anticipated)"| H
             H["25.10 (Goldeye)"]
             {{< /mermaid >}}
           </div>

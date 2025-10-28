@@ -149,7 +149,7 @@ Use this process to install the <file>iso</file> file on both controller 1 and c
 
    c. Click **Save**, then **Mount**. You should see the <file>.iso</file> file under **Device 1** or the device name your IPMI configures.
 
-3. Return to the **Remote Control > iKVM/HTML5** window opened in step 2. Either use your keyboard or open the keyboard in the window then:
+4. Return to the **Remote Control > iKVM/HTML5** window opened in step 2. Either use your keyboard or open the keyboard in the window then:
 
    a. Type **8** to restart controller 1 (also repeat for controller 2), and type **y** to confirm and restart.
 
@@ -284,7 +284,10 @@ Take note of this information.
 
 ### Troubleshooting HA Installation
 
+{{< include file="/static/includes/SCALEHADisableSTP.md" >}}
+
 If controller 2 comes online as the primary and controller 1 as the standby, you installed and configured the controllers incorrectly.
+
 1. Go to **System > Failover**, clear the **Default TrueNAS Controller** option, and click **Save**. The system restarts and fails over to the current standby controller (in this case, to controller 1).
 
 2. Log back into the UI with the VIP address. Go to **System > Failover** and select **Default TrueNAS Controller** to make controller 1 the primary controller.

@@ -190,7 +190,7 @@ For example, a system with 18,446,744,073,709,551,615 bytes reports the number a
 
 ### Storage Health Widget
 
-The **ZFS Health** widget shows health-of-the-pool information.
+The **Storage Health** widget shows health-of-the-pool information.
 
 Possible widget details include:
 * Pool status shows the pool status as** Online, no errors** or **Offline**, **Degraded no errors**.
@@ -204,6 +204,7 @@ Possible widget details include:
 {{< trueimage src="/images/SCALE/Storage/StorageDashboardDiskHealthWidget.png" alt="Storage Health Widget" id="Storage Health Widget" >}}
 
 **Scrub Now** opens the **Scrub Pool** dialog. **Start Scrub** in the **Scrub Pool** dialog runs a check on the data integrity of the pool.
+Scrubs identify data integrity problems, detect silent data corruptions caused by transient hardware issues, and provide early disk failure alerts.
 
 **Configure** opens the **Configure Scheduled Scrub** screen.
 
@@ -305,7 +306,7 @@ TrueNAS complies with SAS/SATA specifications and reports temperatures in Celsiu
 
 ## Upgrade Dialog
 
-The **Storage Dashboard** shows the **Upgrade** button for existing pools after an upgrade to a new TrueNAS release that includes new [OpenZFS feature flags]({{< ref "SCALEReleaseNotes.md#component-versions" >}}).
+The **Storage Dashboard** shows the **Upgrade** button for existing pools after an upgrade to a new TrueNAS release that includes new [OpenZFS feature flags]({{< ref "VersionNotes.md#component-versions" >}}).
 Newly created pools are always up-to-date with the OpenZFS feature flags in the installed TrueNAS release.
 
 {{< include file="/static/includes/UpgradePools.md" >}}

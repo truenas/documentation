@@ -32,7 +32,8 @@ class LinkableTabBox {
             urlHashEnabled: options.urlHashEnabled !== false,
             theme: options.theme || 'truenas',
             enableMarkdown: options.enableMarkdown !== false,
-            collapsible: options.collapsible || false
+            collapsible: options.collapsible || false,
+            autoOpen: options.autoOpen || false
         };
         
         this.container = document.getElementById(containerId);
@@ -397,8 +398,11 @@ ${this.config.enableMarkdown ? this.parseMarkdown(cleanContent) : cleanContent}
             if (this.config.urlHashEnabled && window.location.hash) {
                 const hash = window.location.hash.substring(1);
                 this.handleNavigation(hash);
+            } else if (this.config.autoOpen && this.config.defaultTab) {
+                // Auto-open default tab if autoOpen is enabled
+                this.switchToTab(this.config.defaultTab, false);
             } else {
-                // Start with all tabs collapsed if no hash
+                // Start with all tabs collapsed if no hash and no auto-open
                 this.collapseAllTabs();
             }
         } else if (this.config.urlHashEnabled) {

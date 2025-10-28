@@ -1,14 +1,14 @@
 ---
-title: "Global Configuration Screens"
-description: "The Global Configuration widget displays the general TrueNAS network settings not specific to any interface."
+title: "Network Configuration Screens"
+description: "The Network Configuration widget shows the general TrueNAS network settings not specific to any interface."
 weight: 20
 tags:
 - network
 ---
 
-The **Global Configuration** widget shows the general networking settings for the TrueNAS system.
+The **Network Configuration** widget shows the general networking settings for the TrueNAS system.
 
-{{< trueimage src="/images/SCALE/Network/GlobalConfiguration.png" alt="Global Configuration Widget" id="Global Configuration Widget" >}}
+{{< trueimage src="/images/SCALE/Network/NetworkConfigurationWidget.png" alt="Newtork Configuration Widget" id="Network Configuration Widget" >}}
 
 **DNS Servers** shows the IP addresses for the primary and secondary name servers.
 

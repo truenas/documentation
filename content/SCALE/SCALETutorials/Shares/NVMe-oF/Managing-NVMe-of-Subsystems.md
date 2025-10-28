@@ -21,6 +21,8 @@ tags:
 
 {{< include file="/static/includes/NVMe-oF-Structure.md" >}}
 
+{{< include file="/static/includes/NVMeoTCPESXiLimitation.md" >}}
+
 ## Editing a Subsystem
 
 After configuring a NVMe-oF subsystem, you can change the subsystem by adding or deleting a namespace, removing or adding a port, or adding, removing, or deleting a host.
@@ -48,17 +50,26 @@ TrueNAS copies the identification number to the clipboard.
 
 ### Deleting a Subsystem
 
+Before deleting a namespace subsystem, delete the port and any assoicated host. TrueNAS shows an error if the subsystem has an active port and host.
+
 While on the **NVMe-oF** screen, select the subsystem row in the table, then click **Delete** to the right of **Details for *name***.
 The **Delete Subsystem** dialog opens.
 
-Verify the name of the subsystem listed in the dialog to confirm you have the desired subsystem.
+1. [Delete the port](#deleting-a-port). This does not delete the port configuration from the system, it removes it from the namespace subsystem.
 
-Click **Delete** to delete the subsystem and namespace(s) associated with it.
+2. [Delete any assoicated host](#delete-host-dialog). This does not delete the host configuration from the system, it removes it from the namespace subsystem.
+
+3. Delete the subsystem.
+   
+   Verify the name of the subsystem listed in the dialog to confirm you have the desired subsystem.
+
+   Click **Delete** to delete the subsystem and namespace(s) associated with it.
+
 **Cancel** closes the dialog without deleting the subsystem.
 
-Select **Force** if the delete operation fails to start, and click **Delete**.
+Select **Force** if the delete operation shows an in use error, or to delete with a port or host still associated with the subsystem, then click **Delete** again.
 
-<!-- commenting out until edit function is added back to the Namespace widget
+<!-- comment out for now. The edit namespace is currently removed from the UI. It might be added back at a later date.
 ## Editing a Namespace
 
 While on the **NVMe-oF** screen, select the subsystem row in the table, then click the edit <span class="material-icons">edit</span> icon to the right of the zvol path to open the **Edit Namespace** screen.
@@ -80,6 +91,8 @@ The zvol can be exposed by either iSCSI or NVMe-oF, but not at the the same time
 If you delete a namespace you can make the zvol available through iSCSI again.
 Data is not lost when associating the existing zvol with an NVMe subsystem.
 
+Stop the NVMe service before you begin.
+
 With the **Zvol** tab on the **Edit Namespace** screen selected, browse to and select a different parent dataset, and then click **Create Zvol** if you want to use a new zvol.
 To select a different zvol, browse to and select that existing zvol.
 
@@ -100,8 +113,8 @@ Browse to and select the parent dataset or zvol location where the existing file
 
 {{< trueimage src="/images/SCALE/Shares/UseExistingFileInEditNamespace.png" alt="Using an Existing File" id="Using an Existing File" >}}
 
-Click **Save**.-->
-<!-- comment out until edit namespace is added back to the UI 
+Click **Save**.
+
 #### Changing to a New File
 RC.1 will add an enable checkbox to allow disabling the namespace, update screenshots and remove commented out text
 You can use this procedure to add files to the parent dataset for the namespace, from the **New File** tab on the **Add Namespace** or **Edit Namespace** screens.
@@ -124,13 +137,13 @@ Enter a size as a number with a measurement value, for example, *10 MB*, in **Fi
 
 Click **Save**.
 
-The new file shows on the **Namespaces** widget. -->
+The new file shows on the **Namespaces** widget. 
 
 ### Adding a Zvol Namespace
 
 To access the **Add Zvol** screen, click **Create Zvol** while on the **Zvol** tab of the **Edit Namespace** screen.
 
-{{< include file="/static/includes/Add-Zvol-To-NVMe-oF-Namespace.md" >}}
+{{< include file="/static/includes/Add-Zvol-To-NVMe-oF-Namespace.md" >}}-->
 
 ### Deleting a Zvol Namespace
 
@@ -173,7 +186,7 @@ The **Add Port** screen creates a new port *IP address:port* assignment on the s
 1. Select the transport type. **TCP** is the default setting.
    If your system has an Enterprise license, and it supports RDMA, this option is listed as available.
 
-2. Enter an available port number of at least four digits in length. For example, *4420*.
+2. Enter an available port number of at least four digits in length. For example, **4420** is the default and recommended port number.
 
 3. Select the IP address from the dropdown list. Only static IP addresses in the TrueNAS system show on this list.
 
@@ -196,7 +209,7 @@ The **Edit Port** screen shows current port settings for the selected subsystem.
 Select the transport type from the dropdown list.
 Leave **TCP** as the default option unless your system has an Enterprise license and it supports RDMA.
 
-Enter a port number that is at least four digits in length. *4420* is a port number commonly selected for NVMe-oF with IP addresses.
+Enter a port number that is at least four digits in length. **4420** is the default port number, commonly selected for NVMe-oF with IP addresses, and we recommend using this port rather than adding a custom port.
 
 Leave the IP address for the TrueNAS system, or select any static IP address shown on the list.
 
@@ -204,7 +217,7 @@ Click **Save**.
 
 ### Removing a Port from the Subsystem
 
-You can change the port number assigned to the subsystem using the **Remove this port from the subsystem** ![SubsystemPortActionIcon](/images/SCALE/Shares/SubsystemPortActionIcon.png "Subsystem Port Action Icon") icon on the **Ports** widget.
+You can change the port number assigned to the subsystem using the ![RemoveFromSubsystem](/images/SCALE/Shares/RemoveFromSubsystem.png "Remove from Subsystem Icon") **Remove this port from the subsystem** icon on the **Ports** widget.
 
 After removing a port, the **Add** button lists any available port on the system, including the port removed from the subsystem, in the format *IP address:port*.
 

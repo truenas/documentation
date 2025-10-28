@@ -17,7 +17,7 @@ keywords:
 - storage provisioning
 ---
 
-The **Storage Dashboard** widgets provide enhanced storage provisioning capabilities and access to pool management options to keep the pool and disks healthy, upgrade pools and VDEVs, open datasets, snapshots, data protection screens, and manage S.M.A.R.T. tests.
+The **Storage Dashboard** widgets provide enhanced storage provisioning capabilities and access to pool management options to keep the pool and disks healthy, upgrade pools and VDEVs, open datasets, snapshots, and data protection screens.
 This article provides instructions on pool management functions available in the TrueNAS UI.
 
 {{< trueimage src="/images/SCALE/Storage/StorageDashboardWithPool.png" alt="Storage Dashboard with Pool" id="Storage Dashboard with Pool" >}}
@@ -64,7 +64,7 @@ Upgrading a storage pool is typically not required unless the new OpenZFS featur
 
 Do not do a pool-wide ZFS upgrade until you are ready to commit to this TrueNAS major version! You can not undo a pool upgrade, and you lose the ability to roll back to an earlier major version!
 
-The **Upgrade** button displays on the **Storage Dashboard** for existing pools after an upgrade to a new TrueNAS major version that includes new [OpenZFS feature flags]({{< ref "SCALEReleaseNotes.md#component-versions" >}}).
+The **Upgrade** button displays on the **Storage Dashboard** for existing pools after an upgrade to a new TrueNAS major version that includes new [OpenZFS feature flags]({{< ref "VersionNotes.md#component-versions" >}}).
 Newly created pools are always up to date with the OpenZFS feature flags available in the installed TrueNAS version.
 
 {{< trueimage src="/images/SCALE/Storage/StorageDashboardUpgradPoolConfirmationDialog.png" alt="Upgrade Pool Confirmation Dialog" id="Upgrade Pool Confirmation Dialog" >}}
@@ -123,15 +123,27 @@ See [Replacing Disks]({{< ref "ReplacingDisks" >}}) for more information on the 
 
 ## Expanding a Pool
 
-There are a few  ways to increase the size of an existing pool:
+There are a few ways to increase the size of an existing pool:
 
 * Add one or more drives to an existing RAIDZ VDEV.
 * Add a new VDEV of the same type.
 * Add a new VDEV of a different type.
 * Replace all existing disks in the VDEV with larger disks.
 
-Adding a new special VDEV increases usable space in combination with a special_small_files VDEV, but it is not encouraged.
-By default, a VDEV limits all disks to the usable capacity of the smallest attached device.
+Adding a new special VDEV increases usable space in combination with a special_small_files VDEV, but it is not encouraged.  
+A VDEV limits all disks to the usable capacity of the smallest attached device.  
+
+When you use one of the above methods, TrueNAS does not automatically expand the pool to fit newly available space.  
+
+{{< trueimage src="/images/SCALE/Storage/ExpandPoolDialog.png" alt="Expand Pool Dialog" id="Expand Pool Dialog" >}}
+
+To expand an existing pool:
+
+1. Navigate to **Storage** and click **Expand Pool** above the **Usage** widget.  
+2. Select **Confirm** in the **Expand Pool** pop-up screen.  
+3. Click **Continue** to initiate the pool expansion process.  
+
+TrueNAS expands the pool to use the additional available capacity.
 
 ### Extending a RAIDZ VDEV
 
