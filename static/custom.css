@@ -1553,6 +1553,13 @@ pre.chroma {
 .section-box:hover {
 	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
+.section-box-header {
+	color: white;
+	background-color: #0095d5;
+	margin: 0;
+	padding: 1rem 1.5rem;
+	border-radius: 15px 15px 0 0;
+}
 
 .section-divider {
     width: 80px;
@@ -1594,29 +1601,27 @@ a.section-box:hover {
 .section-tabs {
   display: flex;
   justify-content: center;
-  background-color: #0095d5;
+  background-color: var(--accent-color);
 }
 /* Style for individual tab */
 .section-tab {
   padding: .5rem .5rem;
   margin: 0 5px;
   cursor: pointer;
-  background-color: #0095d5;
-  color: white;
+  background-color: var(--accent-color);
   font-weight: 600;
-  border-top: solid;
-  border-top-color: #0095d5;
-
+  border: 2px solid transparent;
+  box-sizing: border-box;
 }
 .section-tab-content {
 	padding-top: .25rem;
 	text-align: center;
 }
 .section-tab.active {
-    background-color: rgb(248, 249, 250);
-    color: #0095d5;
-    border-top: solid;
-    border-top-color: #0095d5;
+    border-top: 2px solid var(--accent-color);
+    border-left: 2px solid var(--accent-color);
+    border-right: 2px solid var(--accent-color);
+    border-bottom: 2px solid transparent;
 }
 .mute {
 	color:#0095d5;
@@ -2340,11 +2345,19 @@ div.draid-grid-table-container::-webkit-scrollbar-track {
 	.section-box{
 		background-color: #475d6b;
 	}
+    .section-tab {
+        color: white;
+    }
     .section-tab.active {
         background-color: #475d6b;
-        color: white;
-        border-top: solid;
-        border-top-color: #0095d5;
+    }
+}
+@media screen and (prefers-color-scheme: light) {
+    .section-tab {
+        color: var(--body-font-color);
+    }
+    .section-tab.active {
+        background-color: rgb(248, 249, 250);
     }
 }
 :root[color-theme=dark] {
@@ -2398,11 +2411,11 @@ div.draid-grid-table-container::-webkit-scrollbar-track {
 	.section-box{
 		background-color: #475d6b;
 	}
+    .section-tab {
+        color: white;
+    }
     .section-tab.active {
         background-color: #475d6b;
-        color: white;
-        border-top: solid;
-        border-top-color: #0095d5;
     }
 }
 :root[color-theme=light] {
@@ -2452,11 +2465,11 @@ div.draid-grid-table-container::-webkit-scrollbar-track {
 	.section-box {
 		background-color: rgb(248, 249, 250);
 	}
+    .section-tab {
+        color: var(--body-font-color);
+    }
     .section-tab.active {
         background-color: rgb(248, 249, 250);
-        color: #0095d5;
-        border-top: solid;
-        border-top-color: #0095d5;
     }
 }
 /* End Additional Automatic and Manual color scheme values */
