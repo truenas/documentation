@@ -32,12 +32,12 @@ majorVersions:
         link: "https://www.truenas.com/docs/scale/25.10/gettingstarted/versionnotes/#25.10.0"
         releaseDate: "2025-10-28"
         latest: true
-      - name: "25.10 Nightlies"
-        type: "Experimental"
-        link: "https://www.truenas.com/docs/scale/25.10/gettingstarted/versionnotes/"
-        releaseDate: "2025-01-27"
+      - name: "25.10.1"
+        type: "Maintenance"
+        link: ""
+        releaseDate: "TBD"
         latest: false
-  - lifecycle: "Preview"
+  - lifecycle: "26.04"
     name: "TrueNAS 26.04 - Halfmoon"
     releaseName: "Halfmoon"
     releases:
@@ -45,4 +45,10 @@ majorVersions:
         type: "Experimental"
         link: "https://www.truenas.com/docs/scale/26.04/gettingstarted/versionnotes/"
         releaseDate: "2025-08-11"
+        latest: true
+      - name: "26.04-BETA.1"
+        type: "Experimental"
+        link: ""
+        releaseDate: "TBD"
         latest: false
+
