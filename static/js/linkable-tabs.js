@@ -62,7 +62,7 @@ class LinkableTabBox {
         styleSheet.id = 'linkable-tabs-styles';
         styleSheet.textContent = `
             .linkable-tabs-wrapper {
-                --truenas-primary: #1194d2;
+                --truenas-primary: #0095d5;
                 --truenas-primary-hover: #36bdeb;
                 --truenas-secondary: #71bf44;
                 --truenas-inactive: #676767;
@@ -484,6 +484,11 @@ ${this.config.enableMarkdown ? this.parseMarkdown(cleanContent) : cleanContent}
             if (updateUrl && this.config.urlHashEnabled) {
                 history.pushState(null, null, `#${tabId}`);
             }
+
+            // Dispatch custom event for jump button sync
+            window.dispatchEvent(new CustomEvent('tabActivated', {
+                detail: { tabId: tabId }
+            }));
         }
     }
 
@@ -521,6 +526,11 @@ ${this.config.enableMarkdown ? this.parseMarkdown(cleanContent) : cleanContent}
             // Execute any scripts in the newly shown tab content
             this.executeTabScripts(pane);
         }
+
+        // Dispatch event with current state (after both expand and collapse)
+        window.dispatchEvent(new CustomEvent('tabActivated', {
+            detail: { tabId: isCurrentlyActive ? null : tabId }
+        }));
     }
 
     collapseAllTabs() {
@@ -541,6 +551,11 @@ ${this.config.enableMarkdown ? this.parseMarkdown(cleanContent) : cleanContent}
             if (pane) pane.classList.remove('active');
             if (button) button.classList.remove('active');
         });
+
+        // Dispatch event indicating no active tabs
+        window.dispatchEvent(new CustomEvent('tabActivated', {
+            detail: { tabId: null }
+        }));
     }
 
     expandTab(tabId, updateUrl = false) {

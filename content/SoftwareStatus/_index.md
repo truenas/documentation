@@ -4,6 +4,7 @@ description: "Find the right TrueNAS version for your use case with current depl
 weight: 5
 related: false
 use_jump_to_buttons: true
+default_jump_button: "which-truenas-version-is-recommended"
 aliases:
  - /scale/gettingstarted/upgrades/
  - /truenasupgrades/

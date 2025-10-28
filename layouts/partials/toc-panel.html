@@ -14,7 +14,7 @@
         width: 100%;
         margin-bottom: 8px;
         padding: 12px 16px;
-        background: #1194d2;
+        background: #676767;
         color: white;
         text-decoration: none;
         border-radius: 6px;
@@ -33,6 +33,11 @@
       }
       .jump-to-button:active {
         transform: translateY(0);
+      }
+      .jump-to-button.active {
+        background: #0095d5;
+        font-weight: 600;
+        box-shadow: 0 3px 6px rgba(0, 149, 213, 0.3);
       }
       .jump-to-button .icon {
         margin-right: 10px;
@@ -171,9 +176,58 @@
 
             buttonsContainer.appendChild(jumpButton);
           });
-          
-          // Icons are now loaded locally, no need for external scanning
-          
+
+          // State synchronization between jump buttons and tabs
+          var defaultButton = {{ if .Page.Params.default_jump_button }}"{{ .Page.Params.default_jump_button }}"{{ else }}null{{ end }};
+
+          function updateActiveButton(targetAnchor) {
+            // Remove active class from all buttons
+            document.querySelectorAll('.jump-to-button').forEach(function(btn) {
+              btn.classList.remove('active');
+            });
+
+            if (!targetAnchor) {
+              // No anchor - use default button if set
+              if (defaultButton) {
+                targetAnchor = defaultButton;
+              } else {
+                return; // No default, all buttons stay inactive
+              }
+            }
+
+            // Find and activate the matching button
+            jumpButtons.forEach(function(buttonConfig, index) {
+              if (buttonConfig.anchor === targetAnchor) {
+                var buttons = document.querySelectorAll('.jump-to-button');
+                if (buttons[index]) {
+                  buttons[index].classList.add('active');
+                }
+              }
+            });
+          }
+
+          // Update buttons on hash change
+          window.addEventListener('hashchange', function() {
+            var hash = window.location.hash.substring(1);
+            updateActiveButton(hash);
+          });
+
+          // Listen for tab state changes (in addition to hash changes)
+          window.addEventListener('tabActivated', function(e) {
+            var activeTabId = e.detail.tabId;
+            if (activeTabId) {
+              // Find matching button anchor for this tab
+              updateActiveButton(activeTabId);
+            } else {
+              // No tabs active - revert to default
+              updateActiveButton(null);
+            }
+          });
+
+          // Initial button state on page load
+          var initialHash = window.location.hash.substring(1);
+          updateActiveButton(initialHash);
+
           {{ else }}
           var tocList = document.querySelector('.toc-list');
           var headers = document.querySelectorAll('.gdoc-page h2, .gdoc-page h3, .gdoc-page h4');
