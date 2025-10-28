@@ -4,11 +4,11 @@
 {{- $productData := index .Site.Data.properties $name -}}
 {{- with $productData }}
   <div class="gdoc-columns__content gdoc-markdown--nested flex-even">
-    <div class="section-box" id="{{ .id }}" style="padding-top: 1.5rem; padding-bottom: 1.5rem; max-width: 500px;">
-      <h2 style="color: #0095d5; margin-top: 0; margin-bottom: 1.5rem; margin-left: 2rem;">Release Schedule</h2>
+    <div class="section-box" id="{{ .id }}" style="padding-top: 0; padding-bottom: 1.5rem; max-width: 500px; overflow: hidden;">
+      <h2 class="section-box-header">Release Schedule</h2>
 
       {{- if .majorVersions }}
-        <div class="section-tabs">
+        <div class="section-tabs" style="background-color: var(--accent-color);">
           {{- range $index, $majorVersion := .majorVersions }}
             <div class="section-tab {{ $name }}-section-tab" onclick="showMajorVersion('{{ $name }}', {{ $index }})">{{ $majorVersion.lifecycle }}</div>
           {{- end }}
@@ -38,7 +38,7 @@
                   {{- end }}
 
                   {{- if .releaseDate }}
-                    <span class="gdoc-props__tag">{{ if eq .releaseDate "" }}TBD{{ else }}{{ dateFormat "2 January 2006" .releaseDate }}{{ end }}</span>
+                    <span class="gdoc-props__tag">{{ if or (eq .releaseDate "") (eq .releaseDate "TBD") }}TBD{{ else }}{{ dateFormat "2 January 2006" .releaseDate }}{{ end }}</span>
                   {{- end }}
                 </dt>
                 <dd style="margin-left: .5rem;">
@@ -76,7 +76,7 @@
                   {{- end }}
 
                   {{- if .releaseDate }}
-                    <span class="gdoc-props__tag">{{ if eq .releaseDate "" }}TBD{{ else }}{{ dateFormat "2 January 2006" .releaseDate }}{{ end }}</span>
+                    <span class="gdoc-props__tag">{{ if or (eq .releaseDate "") (eq .releaseDate "TBD") }}TBD{{ else }}{{ dateFormat "2 January 2006" .releaseDate }}{{ end }}</span>
                   {{- end }}
                 </dt>
                 <dd style="margin-left: .5rem;">
