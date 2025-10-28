@@ -106,6 +106,22 @@ Any new feature flags introduced since the previous OpenZFS version that was int
 
 For more details on feature flags, see [OpenZFS Feature Flags](https://openzfs.github.io/openzfs-docs/Basic%20Concepts/Feature%20Flags.html) and [OpenZFS zpool-feature.7](https://openzfs.github.io/openzfs-docs/man/7/zpool-features.7.html).
 
+## 25.04.2.5
+**October 21, 2025**
+
+The TrueNAS team is pleased to release TrueNAS 25.04.2.5!
+
+This is a small maintenance release that includes fixes centered around Enterprise usage and an SMB version update for security fixes.
+
+### 25.04.2.5 Notable Changes
+
+* Samba version updated from 4.21.7 to 4.21.9 ([4.21.8 Release Notes](https://www.samba.org/samba/history/samba-4.21.8.html) | [4.21.9 Release Notes](https://www.samba.org/samba/history/samba-4.21.9.html))
+* Automatically restart dependent services when Directory Services recovers from a FAULTED state ([NAS-137009](https://ixsystems.atlassian.net/browse/NAS-137009)).
+* Adjust alerting for attached USB devices to avoid spamming Proactive Support alerts during TrueNAS Enterprise hardware troubleshooting sessions ([NAS-137844](https://ixsystems.atlassian.net/browse/NAS-137844)).
+* Improve debug logging for Directory Services troubleshooting ([NAS-138057](https://ixsystems.atlassian.net/browse/NAS-138057)).
+* Revert a [limit on NFS hosts and networks](https://ixsystems.atlassian.net/browse/NAS-131451) in 25.04 ([NAS-138074](https://ixsystems.atlassian.net/browse/NAS-138074)). This is being evaluated for reintroduction in a future TrueNAS release.
+
+
 ## 25.04.2.4
 
 **September 10, 2025**
