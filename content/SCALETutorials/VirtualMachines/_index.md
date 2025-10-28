@@ -262,7 +262,7 @@ Modify settings as needed to suit your use case.
    a. Enter your localization settings for **Language**, **Location**, and **Keymap**.
 
    b. Debian automatically configures networking and assigns an IP address with DHCP.
-      * If the network configuration fails, click **Continue** and do not configure the network yet.
+      If the network configuration fails, click **Continue** and do not configure the network yet.
 
    c. Enter a name in **Hostname**.
 
@@ -313,10 +313,10 @@ Modify settings as needed to suit your use case.
 
    b. Remove the CD-ROM device containing the install media or edit the device order to boot from the Disk device.
 
-      * To remove the CD-ROM from the devices, click the <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp; and select **Delete**.
+      To remove the CD-ROM from the devices, click the <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp; and select **Delete**.
       Click **Delete Device**.
 
-      * To edit the device boot order, click the <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp; and select **Edit**.
+      To edit the device boot order, click the <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp; and select **Edit**.
       Change the CD-ROM **Device Order** to a value greater than that of the existing Disk device, such as *1005*.
       Click **Save**.
 
@@ -407,9 +407,7 @@ The process involves:
 * Verifying the `volmode` for the zvol is correctly configured.
 * Creating a new VM and selecting the migrated zvol as the storage volume.
 
-### Before You Begin
-
-Before beginning the process, and while in 25.04.0 or the latest maintenance release:
+Before beginning the process:
 
 1. Identify the zvol names associated with the Instance VM.
 2. Take a snapshot or back up the zvol for the Instance VM.
@@ -428,18 +426,19 @@ This procedure applies to the zvol for an Instance VM that has data you want to 
 While in a 25.04.01 or a later maintenance release:
 
 1. Go to **Instances**, click on **Configuration**, and then **Manage Volumes** to open the **Volumes** window.
-   The **Volumes** window lists all Instance VMs and the storage volumes associated with each.
+   The **Volumes** window lists all Instance VMs and the assoicated storage volumes (zvols).
 
-   {{< hint type="tip" >}}
-   Take a screenshot of the information to refer to later when entering commands in the **Shell** screen.
+   Record the volume name or take a screenshot of the information to refer to later when entering commands in the **Shell** screen.
+   Zvol names are similar to the VM name but not identical.
    Optionally, you can highlight all the listed information and copy/paste it into a text file, but this is not necessary.
-   {{< /hint >}}
 
-2. While on the **Instances** screen, verify the VM is operational and has Internet access, and then stop the VM.
-   Repeat for each zvol for an Instance VM that you plan to migrate into a new VM in 25.10 or later.
+2. While on the **Instances** screen, verify the VM is operational and the network is operating as expected.
+   One way to verify external network access is to check Internet access. Stop the VM before upgrading.
+   Repeat for each zvol that you plan to migrate into a new VM in later releases.
 
-3. Go to **Datasets**, locate the zvol for the Instance VM, and take a snapshot of the volume as a backup.
-   Repeat for each VM zvol you want to migrate.
+3. Go to **Datasets**, locate the pool associated with Instances (Containers), and take a recursive snapshot to back up all Instances VM zvols.
+   These zvols are in the hidden **.ix-virt** directory created in the pool Instances uses, selected when you configure the feature.
+   To verify the pool, you can go to **Containers > Configure > Global Settings** and look at the **Pool** setting.
 
 4. Go to **System > Update**, and update to the next publicly available maintenance or major version release.
    Follow the release migration paths outlined in the version release notes or the [Software Releases](https://www.truenas.com/docs/softwarereleases/) article.
@@ -449,7 +448,7 @@ While in a 25.04.01 or a later maintenance release:
    Refer to the troubleshooting tips below for more information. 25.10 releases correct some issues encountered in 25.04.2.4 VMs that are migrated.
 
    {{< expand "Troubleshooting VM Issues" "v" >}}
-   After upgrading from 24.10 to 25.04, VMs are visible and running, but are expected to have issues because 25.04 release does not fully support these older VMs.
+   If upgrading from 24.10 to 25.04, VMs are visible and running, but are expected to have issues because 25.04 release does not fully support these older VMs.
 
    VMs with a Windows OS installed could require converting to VirtIO-SCSI disks to get reconnected to the Internet.
    To restore connectivity, try clean-mounting the system from the mounted drive from within the VM, and then on the TrueNAS system (host).
@@ -464,14 +463,10 @@ While in a 25.04.01 or a later maintenance release:
    If this VM cannot find the NIC, delete the NIC in the configuration from the **Devices** screen for that VM, and then reconfigure it to restore functionality.
    {{< /expand >}}
 
-After updating to 25.10 or later:
-
 5. Go to **Containers** to see which VMs are listed, then click **Configuration**, and then **Manage Volumes** to open the **Volumes** window.
    Take a screenshot of the volumes listed, or copy/paste the volumes and VM information into a text file to use later in this procedure.
 
-6. Go to **Virtual Machines** to see which are listed.
-
-7. Go to **System > Shell**. Exit to the Linux prompt for the system.
+6. Go to **System > Shell**. Exit to the Linux prompt for the system.
 
    Note: This is where the logged in admin user needs `sudo` permissions, or where the root user must have a password configured to enter the following commands to find, rename/move, and verify each Instance zvol is properly configured.
 
@@ -541,7 +536,8 @@ After updating to 25.10 or later:
 
    After completing the commands listed above for each zvol you want to migrate. Go to **Datasets** and verify all volumes you migrated show on the screen.
 
-8. Create the new VM using the migrated zvol. Repeat these steps for each zvol you migrated.
+7. Create the new VM using the migrated zvol. Repeat these steps for each zvol you migrated.
+
    Go to **Virtual Machines**, click on **Add** to open the **Create Virtual Machine** wizard.
 
    a. Complete the first screen by entering a name for the new VM, select the operating system used by the Instances VM, enter a brief description, then if using the **Bind** setting, enter a password. Click **Next**.
@@ -555,14 +551,11 @@ After updating to 25.10 or later:
 
    After adding the new VM, click on it to expand it, and click **Devices**.
    Click **Edit** for the **Disk** device, and enter **1000** in the **Device Order** field.
+   Setting the disk to **1000** makes the disk device the first in the boot order for the VM.
+   Setting the disk to first in boot order over a CD-ROM device with an OS on it, if added when creating the VM, prevents the volume from being overwritten by booting from that CD-ROM device.
    Click **Save**.
-   This sets the VM to boot from the disk, which prevents the volume from being overwritten by booting from the CD-ROM device with an OS image file on it (if you added one in the creation wizard).
 
-9. Return to the **Virtual Machines** screen, expand the VM, then click **Start** to verify it opens as expected and has Internet access.
-Footer
-© 2025 GitHub, Inc.
-Footer navigation
-Terms
+8. Return to the **Virtual Machines** screen, expand the VM, then click **Start** to verify it opens as expected and has Internet access.
 
 <div class="noprint">
 

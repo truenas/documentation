@@ -13,7 +13,6 @@ keywords:
 - storage container virtualization
 ---
 
-{{< include file="/static/includes/25.04Virtualization.md" >}}
 
 If you want to access your TrueNAS directories from within a virtual machine or container hosted on the system, you have multiple options:
 
