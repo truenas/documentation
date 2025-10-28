@@ -203,6 +203,10 @@ TrueNAS 25.04.2 is not recommended for TrueNAS Enterprise customers with High Av
 
 ### 25.04.2 Known Issues
 
+* Two-Factor Authentication (2FA) can fail during daylight saving time transitions ([NAS-138200](https://ixsystems.atlassian.net/browse/NAS-138200)).
+  Systems with two-factor authentication configured can experience login failures for approximately one hour during daylight saving time transitions when clocks move backward.
+  North American users should be aware of this issue ahead of the upcoming DST transition on November 2, 2025.
+  The authentication system resolves automatically once the duplicated hour passes.
 * [NAS-136941](https://ixsystems.atlassian.net/browse/NAS-136941) - Virtual Machines: Cannot Retrieve Response UI response on Virtualization UI.
   * Impacts: VMs that were created without VNC passwords on older TrueNAS releases where this was not required.
   * Workaround: Rollback to 24.10 and apply password to display device for the VM(s) before updating.
