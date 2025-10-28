@@ -59,7 +59,7 @@ Choose the right TrueNAS version by balancing your need for new features against
   </div>
   <div data-tab-id="release-schedule" data-tab-label="Release Schedule">
 
-{{< releaselist name=scale-releases defaultTab=2 >}}
+{{< releaselist name=scale-releases defaultTab=3 >}}
 
 {{< expand "Individual releases within a major version are labeled as Early, Stable, or Maintenance (expand for details)." "v" >}}
 
@@ -81,15 +81,7 @@ Choose the right TrueNAS version by balancing your need for new features against
   </div>
   <div data-tab-id="releases" data-tab-label="Downloads">
 
-{{< columns >}}
-
-{{< tabbox name=scale-downloads defaultTab=3 >}}
-
-<--->
-
-{{< tabbox name=core-downloads defaultTab=2 >}}
-
-{{< /columns >}}
+{{< tabbox name=truenas-downloads defaultTab=4 >}}
 
 Each listed release links to download files for that release.
 
