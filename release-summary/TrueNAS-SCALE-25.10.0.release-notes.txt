@@ -1,0 +1,20 @@
+## TrueNAS 25.10.0
+
+TrueNAS 25.10 (Goldeye) introduces NVMe over Fabric support, enhanced virtual machine capabilities, and comprehensive ZFS stability improvements.
+
+- **Breaking Changes:**
+  - NVIDIA open-source drivers support Turing and newer GPUs; Pascal, Maxwell, and Volta architectures are no longer supported.
+  - Certificate Authority (CA) functionality removed; use external CAs or ACME certificates.
+  - SMART monitoring UI removed; existing tests migrated to cron tasks (install Scrutiny app for advanced monitoring).
+  - Active Directory AUTORID IDMAP backend removed and auto-migrated to RID.
+  - SMB shares now use preset-based configuration; "No Preset" shares migrated to "Legacy Share" preset.
+- **New Features:** NVMe over Fabric (TCP for Community, RDMA for Enterprise), VM Secure Boot and disk import/export, update profiles, automatic apps pool migration, and container registry mirror support.
+- **Improvements:** Redesigned Updates/Users/Datasets/Storage Dashboard screens, password manager compatibility, and enhanced network configuration management.
+- **Critical Bug Fixes:** Resolved ZFS property handling during replication, dataset page errors with special characters, zvol editing failures, VM disk export issues, replication speed limit validation, and application upgrade errors.
+
+**Pre-Update Actions:**
+  - Verify NVIDIA GPU is [supported](https://github.com/NVIDIA/open-gpu-kernel-modules/tree/570?tab=readme-ov-file#compatible-gpus) (Turing and later).
+  - Review ACLs after upgrade if using Active Directory AUTORID IDMAP.
+  - Plan certificate management strategy (external CA or ACME).
+
+**[Version Recommendations](https://www.truenas.com/software-status/)** | **[Full Release Notes](https://www.truenas.com/docs/scale/25.10/gettingstarted/scalereleasenotes/#25.10.0)** | **[Known Issues](https://www.truenas.com/docs/scale/25.10/gettingstarted/scalereleasenotes/#known-issues)** | **[Enterprise Support](https://support.truenas.com/)** | **[Forums](https://forums.truenas.com/)**

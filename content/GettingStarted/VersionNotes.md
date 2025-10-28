@@ -8,7 +8,7 @@ related: false
 use_jump_to_buttons: true
 jump_to_buttons:
   - text: "Latest Changes"
-    anchor: "25.10-RC.1"
+    anchor: "25.10.0"
     icon: "fiber-new"
   - text: "Known Issues"
     anchor: "known-issues"
@@ -30,17 +30,82 @@ jump_to_buttons:
     icon: "component-versions"
 ---
 
-{{< hint type="important" icon="gdoc_code" title="25.10 Early Release Documentation" >}}
-This page tracks the early release development for the future TrueNAS major version 25.10 (Goldeye).
-See the stable [25.04 (Fangtooth)](https://www.truenas.com/docs/scale/25.04/gettingstarted/scalereleasenotes/) release notes for information relating to that version.
-{{< /hint >}}
-
 ## Notable Changes and Known Issues
 
 <!-- Hugo-processed content for release notes tab box -->
 <div style="display: none;" id="release-tab-content-source">
 
-  <div data-tab-id="25.10-RC.1" data-tab-label="25.10-RC.1">
+  <div data-tab-id="25.10.0" data-tab-label="25.10.0">
+
+October 28, 2025
+
+The TrueNAS team is pleased to release TrueNAS 25.10.0!
+
+Special thanks to (Github users): [Aurélien Sallé](https://github.com/MDVAurelien), [ReiKirishima](https://github.com/ReiKirishima), [AquariusStar](https://github.com/AquariusStar), [RedstoneSpeaker](https://github.com/RedstoneSpeaker), [Lee Jihaeng](https://github.com/SejoWuigui), [Marcos Ribeiro](https://github.com/marcosasribeiro), [Christos Longros](https://github.com/chrislongros), [dany22m](https://github.com/dany22m), [Aindriú Mac Giolla Eoin](https://github.com/aindriu80), [William Li](https://github.com/WilliamLi0623), [Franco Castillo](https://github.com/castillofrancodamian), [MAURICIO S BASTOS](https://github.com/msbastos), [TeCHiScy](https://github.com/TeCHiScy), [Chen Zhaochang](https://github.com/chenwickc), [Helak](https://github.com/helakostain), [dedebenui](https://github.com/dedebenui), [Henry Essinghigh](https://github.com/essinghigh), [Sophist](https://github.com/Sophist-UK), [Piotr Jasiek](https://github.com/pht31337), [David Sison](https://github.com/davids3), [Emmanuel Ferdman](https://github.com/emmanuel-ferdman) and [zrk02](https://github.com/zrk02) for contributing to TrueNAS 25.10.
+For information on how you can contribute, visit https://www.truenas.com/docs/contributing/.
+
+### 25.10.0 Notable Changes
+
+**New Features:**
+* **NVMe over Fabric**: TCP support (Community Edition) and RDMA (Enterprise) for high-performance storage networking with 400GbE support.
+* **Virtual Machines**: Secure Boot support, disk import/export (QCOW2, RAW, VDI, VHDX, VMDK), and Enterprise HA failover support.
+* **Update Profiles**: Risk-tolerance based update notification system.
+* **Apps**: Automatic pool migration and external container registry mirror support.
+* **Enhanced Users Interface**: Streamlined user management and improved account information display.
+
+**Performance and Stability:**
+* **ZFS**: Critical fixes for encrypted snapshot replication, Direct I/O support, improved memory pressure handling, and enhanced I/O scaling.
+* **VM Memory**: Resolved ZFS ARC memory management conflicts preventing out-of-memory crashes.
+* **Network**: 400GbE interface support and improved DHCP-to-static configuration transitions.
+
+**UI/UX Improvements:**
+* Redesigned Updates, Users, Datasets, and Storage Dashboard screens.
+* Improved password manager compatibility.
+
+**Breaking Changes Requiring Action:**
+* **NVIDIA GPU Drivers**: Switch to open-source drivers supporting Turing and newer (RTX/GTX 16-series+). Pascal, Maxwell, and Volta no longer supported. See [NVIDIA GPU Support](#nvidia-gpu-support).
+* **Active Directory IDMAP**: AUTORID backend removed and auto-migrated to RID. Review ACLs and permissions after upgrade.
+* **Certificate Management**: CA functionality removed. Use external CAs or ACME certificates with DNS authenticators.
+* **SMART Monitoring**: Built-in UI removed. Existing tests auto-migrated to cron tasks. Install Scrutiny app for advanced monitoring. See [Disk Management](#disk-management) for more information on disk health monitoring in 25.10 and beyond.
+* **SMB Shares**: Preset-based configuration introduced. "No Preset" shares migrated to "Legacy Share" preset.
+
+See the 25.10 [Major Features](#major-features) and [Full Changelog](#full-changelog) for more information.
+
+**Notable changes since 25.10-RC.1:**
+
+* Samba version updated from 4.21.7 to 4.21.9 for security fixes ([4.21.8 Release Notes](https://www.samba.org/samba/history/samba-4.21.8.html) | [4.21.9 Release Notes](https://www.samba.org/samba/history/samba-4.21.9.html))
+* Improves ZFS property handling during dataset replication ([NAS-137818](https://ixsystems.atlassian.net/browse/NAS-137818)).
+  Resolves issue where the storage page temporarily displayed errors when receiving active replications due to ZFS properties being unavailable while datasets were in an inconsistent state.
+* Fixes "Failed to load datasets" error on Datasets page ([NAS-138034](https://ixsystems.atlassian.net/browse/NAS-138034)).
+  Resolves issue where directories with ZFS-incompatible characters (such as `[`) caused the Datasets page to fail by gracefully handling `EZFS_INVALIDNAME` errors.
+* Fixes zvol editing and resizing failures ([NAS-137861](https://ixsystems.atlassian.net/browse/NAS-137861)).
+  Resolves validation error "inherit_encryption: Extra inputs are not permitted" when attempting to edit or resize VM zvols through the Datasets interface.
+* Fixes VM disk export failure ([NAS-137836](https://ixsystems.atlassian.net/browse/NAS-137836)).
+  Resolves KeyError when attempting to export VM disks through the Devices menu, allowing successful disk image exports.
+* Fixes inability to remove transfer speed limits from SSH replication tasks ([NAS-137813](https://ixsystems.atlassian.net/browse/NAS-137813)).
+  Resolves validation error "Input should be a valid integer" when attempting to clear the speed limit field, allowing users to successfully remove speed restrictions from existing replication tasks.
+* Fixes Cloud Sync task bandwidth limit validation ([NAS-137922](https://ixsystems.atlassian.net/browse/NAS-137922)).
+  Resolves "Input should be a valid integer" error when configuring bandwidth limits by properly handling rclone-compatible bandwidth formats and improving client-side validation.
+* Fixes NVMe-oF connection failures due to model number length ([NAS-138102](https://ixsystems.atlassian.net/browse/NAS-138102)).
+  Resolves "failed to connect socket: –111" error by limiting NVMe-oF subsystem model string to 40 characters, preventing kernel errors when enabling NVMe-oF shares.
+* Fixes application upgrade failures with validation traceback ([NAS-137805](https://ixsystems.atlassian.net/browse/NAS-137805)).
+  Resolves TypeError "'error' required in context" during app upgrades by ensuring proper Pydantic validation error handling in schema construction.
+* Fixes application update failures due to schema validation errors ([NAS-137940](https://ixsystems.atlassian.net/browse/NAS-137940)).
+  Resolves "argument after ** must be a mapping" exceptions when updating apps by properly handling nested object validation in app schemas.
+* Fixes application image update checks failing with "Connection closed" error ([NAS-137724](https://ixsystems.atlassian.net/browse/NAS-137724)).
+  Resolves RuntimeError when checking for app image updates by ensuring network responses are read within the active connection context.
+* Fixes AMD GPU detection logic ([NAS-137792](https://ixsystems.atlassian.net/browse/NAS-137792)).
+  Resolves issue where AMD graphics cards were not properly detected due to incorrect `kfd_device_exists` variable handling.
+* Fixes API backwards compatibility for configuration methods ([NAS-137468](https://ixsystems.atlassian.net/browse/NAS-137468)).
+  Resolves issue where certain API endpoints like `network.configuration.config` were unavailable in the 25.10.0 API, causing "[ENOMETHOD] Method 'config' not found" errors when called from scripts or applications using previous API versions.
+* Fixes console messages display panel not rendering ([NAS-137814](https://ixsystems.atlassian.net/browse/NAS-137814)).
+  Resolves issue where the console messages panel appeared as a black, unresponsive bar by refactoring the `filesystem.file_tail_follow` API endpoint to properly handle console message retrieval.
+* Fixes unwanted "CronTask Run" email notifications ([NAS-137472](https://ixsystems.atlassian.net/browse/NAS-137472)).
+  Resolves issue where cron tasks were sending emails with subject "CronTask Run" containing only "null" in the message body.
+
+<a href="#full-changelog" target="_blank">Click here</a> to see the full 25.10 changelog or visit the <a href="https://ixsystems.atlassian.net/issues/?filter=13427" target="_blank">TrueNAS 25.10.0 (Goldeye) Changelog</a> in Jira.
+
+{{< expand "25.10-RC.1 Notable Changes" "v" >}}
 
 {{< hint type=warning title="Early Release Software" >}}
 Early releases are intended for testing and feedback purposes.
@@ -87,9 +152,9 @@ The TrueNAS team is pleased to release TrueNAS 25.10-RC.1!
 
 <a href="#full-changelog" target="_blank">Click here</a> to see the full 25.10 changelog or visit the <a href="https://ixsystems.atlassian.net/issues/?filter=13361" target="_blank">TrueNAS 25.10-RC.1 (Goldeye) Changelog</a> in Jira.
 
-  </div>
+{{< /expand >}}
 
-  <div data-tab-id="25.10-BETA.1" data-tab-label="25.10-BETA.1">
+{{< expand "25.10-BETA.1 Notable Changes" "v" >}}
 
 {{< hint type=warning title="Early Release Software" >}}
 Early releases are intended for testing and feedback purposes.
@@ -122,7 +187,7 @@ Failover moves to the **Advanced Settings** screen ([NAS-135469](https://ixsyste
 * Introduces changes to the **Datasets** and **Storage Dashboard** screens ([NAS-135362](https://ixsystems.atlassian.net/browse/NAS-135362), [NAS-135364](https://ixsystems.atlassian.net/browse/NAS-135364)).
   * Renames dataset and pool widgets, and changes links to other screens.
   * Removes **Scrub Tasks** configuration and scheduling from the **Data Protection Tasks** screen, but makes it available on the **Storage Health** widget located on the **Storage Dashboard** ([NAS-135555](https://ixsystems.atlassian.net/browse/NAS-135555)). 
-* Fixes the NVIDIA GPU related error "RenderError: Expected [uuid] to be set for GPU in slot" ([NAS-134152](https://ixsystems.atlassian.net/browse/NAS-134152)).
+* Fixes the NVIDIA GPU-related error "RenderError: Expected [uuid] to be set for GPU in slot" ([NAS-134152](https://ixsystems.atlassian.net/browse/NAS-134152)).
 * Includes the [NVIDIA open GPU kernel module drivers](https://github.com/NVIDIA/open-gpu-kernel-modules).
   These drivers work with Turing and later GPUs.
   Earlier architectures (Pascal, Maxwell, Volta) are not compatible.
@@ -131,7 +196,7 @@ Failover moves to the **Advanced Settings** screen ([NAS-135469](https://ixsyste
 * Adds the **Enable Secure Boot** option to virtual machine configuration screens ([NAS-136466](https://ixsystems.atlassian.net/browse/NAS-136466)).
 * Allows TrueNAS to automatically migrate existing applications when selecting a new applications pool ([NAS-132188](https://ixsystems.atlassian.net/browse/NAS-132188)).
 * Adds TrueNAS Apps service support for configuring external container registry mirrors as alternative sources for Docker images ([NAS-136553](https://ixsystems.atlassian.net/browse/NAS-136553)).
-* Introduces various UI improvements and optimizations simplify core user experiences ([NAS-135159](https://ixsystems.atlassian.net/browse/NAS-135159)).
+* Introduces various UI improvements and optimizations to simplify core user experiences ([NAS-135159](https://ixsystems.atlassian.net/browse/NAS-135159)).
 * Includes critical ZFS stability fixes and performance improvements, including fixed corruptions for plaintext replication of encrypted snapshots, enhanced memory pressure handling, faster pool export operations, improved I/O scaling capabilities, zfs rewrite and Direct I/O support ([NAS-135902](https://ixsystems.atlassian.net/browse/NAS-135902)).
 * Simplifies and improves robustness of gateway and name server settings when changing from DHCP to static aliases ([NAS-136360](https://ixsystems.atlassian.net/browse/NAS-136360) and [NAS-136360](https://ixsystems.atlassian.net/browse/NAS-136360)).
   Moves **Network** screen under the **System** main menu option.
@@ -148,14 +213,16 @@ Failover moves to the **Advanced Settings** screen ([NAS-135469](https://ixsyste
 * Removes the SMART UI ([NAS-134927](https://ixsystems.atlassian.net/browse/NAS-134927)).
   * Removes the built-in SMART test scheduling and monitoring interface to improve user flexibility while maintaining smartmontools binaries for continued third-party script compatibility ([NAS-135020](https://ixsystems.atlassian.net/browse/NAS-135020)).
     Existing scheduled SMART tests are automatically migrated to cron tasks during upgrade, and users can install the Scrutiny app for advanced SMART monitoring.
-  * SMART tests functions no longer show on the **Data Protections Tasks**, **Storage Dashboard**, or individual disk screens.  
-   See [Preparing to Upgrade](#upgrade-prep) for more information.
+  * SMART tests functions no longer show on the **Data Protections Tasks**, **Storage Dashboard**, or individual disk screens.
+   See [Disk Management](#disk-management) for more information on the SMART monitoring transition.
 * Improves drive temperature monitoring efficiency by extending the `drivetemp` kernel module to include SCSI/SAS disk temperatures.
 * Fixes an issue affecting drive temperature reporting on the dashboard ([NAS-135572](https://ixsystems.atlassian.net/browse/NAS-135572)).
 * Fixes a bug to reenable available update notifications for custom apps ([NAS-135124](https://ixsystems.atlassian.net/browse/NAS-135124)).
 * Fixes contrast issues on some UI theme options ([NAS-135519](https://ixsystems.atlassian.net/browse/NAS-135519)).
 
 <a href="#full-changelog" target="_blank">Click here</a> to see the full 25.10 changelog or visit the <a href="https://ixsystems.atlassian.net/issues/?filter=13196" target="_blank">TrueNAS 25.10-BETA.1 (Goldeye) Changelog</a> in Jira.
+
+{{< /expand >}}
 
   </div>
 
@@ -168,14 +235,16 @@ These are ongoing issues that can affect multiple versions in the 25.10 series.
 
 ### Current Known Issues
 
-* The storage page can temporarily show errors while TrueNAS is on the receiving side of an active replication ([NAS-137818](https://ixsystems.atlassian.net/browse/NAS-137818)).
-  This is due to some ZFS properties being unavailable while the dataset is in an inconsistent state. Better handling of this situation is planned for the 25.10.0 (and newer) releases.
-
 * NVMe over TCP is incompatible with VMware ESXi environments ([NAS-137372](https://ixsystems.atlassian.net/browse/NAS-137372)).
   TrueNAS 25.10 uses the Linux kernel NVMe over TCP target driver, which lacks support for fused commands required by VMware ESXi.
   This is an upstream kernel limitation that prevents path initialization in ESXi environments.
 
-<a href="https://ixsystems.atlassian.net/issues/?filter=13362" target="_blank">See the latest status on Jira</a> for public issues discovered in 25.10 that are being resolved in a future TrueNAS release.
+* Two-Factor Authentication (2FA) can fail during daylight saving time transitions ([NAS-138200](https://ixsystems.atlassian.net/browse/NAS-138200)).
+  Systems with two-factor authentication configured can experience login failures for approximately one hour during daylight saving time transitions when clocks move backward.
+  North American users should be aware of this issue ahead of the upcoming DST transition on November 2, 2025.
+  The authentication system resolves automatically once the duplicated hour passes.
+
+<a href="https://ixsystems.atlassian.net/issues/?filter=13428" target="_blank">See the latest status on Jira</a> for public issues discovered in 25.10 that are being resolved in a future TrueNAS release.
 
 See the [Release Notes](https://forums.truenas.com/c/release-notes/13) section of the TrueNAS forum for ongoing updates about known issues, investigations, and statistics about TrueNAS releases.
 
@@ -243,6 +312,7 @@ initializeChangelogTableForTabs('25.10');
   The smartmontools binaries remain installed and continue to be used internally by TrueNAS, ensuring that existing third-party scripts and monitoring tools continue to work unchanged.
   Users seeking advanced SMART monitoring can install the "Scrutiny" app from the TrueNAS catalog, which offers superior disk health tracking with historical data storage, customizable alerts, and automatic drive detection.
   TrueNAS maintains monitoring of critical disk health indicators and automatically migrates existing scheduled SMART tests to cron tasks during upgrade.
+  See [Disk Management](#disk-management) for more information on the SMART monitoring transition.
 
 * TrueNAS 25.10 removes the Certificate Authority (CA) functionality that allowed TrueNAS to create and sign certificates.
   Users can continue to manage certificates by creating Certificate Signing Requests (CSRs) to be signed by external certificate authorities or and importing certificates that have been signed by external CAs or directory services.
@@ -290,10 +360,91 @@ Virtual Machines are now "Enterprise ready" with support for TrueNAS Enterprise 
   These drivers work with Turing and later GPUs.
   Earlier architectures (Pascal, Maxwell, Volta) are not compatible.
   See [NVIDIA GPU Support](#nvidia-gpu-support) for more information.
-* Fixes the NVIDIA GPU related error "RenderError: Expected [uuid] to be set for GPU in slot" ([NAS-134152](https://ixsystems.atlassian.net/browse/NAS-134152)).
+* Fixes the NVIDIA GPU-related error "RenderError: Expected [uuid] to be set for GPU in slot" ([NAS-134152](https://ixsystems.atlassian.net/browse/NAS-134152)).
 * Fixes a bug to reenable available update notifications for custom apps ([NAS-135124](https://ixsystems.atlassian.net/browse/NAS-135124)).
 
 {{< include file="/static/includes/apps-market-ad-banner.md" >}}
+
+  </div>
+
+  <div data-tab-id="disk-management" data-tab-label="Disk Management">
+
+### SMART Monitoring and Disk Management in 25.10 (and Beyond)
+
+TrueNAS 25.10 changes how disk health monitoring works, transitioning from built-in SMART test scheduling to a flexible approach that better serves modern storage environments.
+
+#### What Changed
+
+##### In TrueNAS 25.04 and earlier:
+
+* SMART test scheduling was built into the TrueNAS UI
+* Tests were configured through **Data Protection Tasks** screens
+* SMART test results appeared on the **Storage Dashboard** and individual disk screens
+
+##### In TrueNAS 25.10 and later:
+
+* SMART test scheduling UI is removed
+* SMART monitoring is handled through dedicated applications or user-managed scripts
+* TrueNAS continues to automatically monitor critical disk health indicators
+* The smartmontools binaries remain installed and functional
+* Drive temperature monitoring uses the enhanced `drivetemp` kernel module, extended to include SCSI/SAS disk temperatures
+
+#### Why This Changed
+
+This transition addresses several limitations:
+
+1. Modern Storage Realities: Traditional SMART tests (short and long) designed for mechanical hard drives are less relevant for SSDs and NVMe drives, which now represent an increasing percentage of deployments. These devices focus on different health metrics like write endurance rather than mechanical wear patterns.
+
+2. Flexibility: The previous system was restrictive and difficult to customize for advanced users.
+
+3. Reliability: The integrated SMART test scheduler had persistent bugs and maintenance challenges. Scheduled tests could produce false positives and were difficult to troubleshoot.
+
+4. Better Tools Available: Dedicated monitoring applications like Scrutiny provide superior disk health tracking with historical data storage, customizable alerts, and automatic drive detection.
+
+#### What TrueNAS Still Monitors Automatically
+
+TrueNAS continues to run continuous background monitoring that periodically polls SMART attributes from all drives. The system automatically detects and alerts on critical disk health indicators:
+
+* Uncorrected read, write, and verify errors
+* SMART self-test failures
+* Critical SMART attributes that indicate imminent drive failure
+* Drive temperatures using the enhanced `drivetemp` kernel module
+
+These automatic alerts ensure critical disk health issues are reported immediately without additional monitoring applications.
+
+#### How to Monitor Disk Health in 25.10
+
+TrueNAS 25.10 provides multiple options for monitoring disk health.
+
+##### Built-in Disk Health Widget
+
+The **[Disk Health]({{< ref "/SCALEUIReference/Storage/_index.md#disk-health-widget" >}})** widget on the **Storage Dashboard** provides quick access to temperature monitoring and disk performance metrics:
+
+* Displays disk temperature-related alerts and temperature ranges (highest, lowest, average)
+* **View Disks** opens the **Storage > [Disks]({{< ref "DisksScreen" >}})** screen
+* **View Disk Reports** opens the **[Reporting > Disk]({{< ref "/SCALEUIReference/ReportingScreensSCALE.md#disk-graphs" >}})** screen with historical disk I/O performance and temperature data
+
+##### Scrutiny App for Advanced Monitoring
+
+The **Scrutiny** app provides comprehensive disk health monitoring. Scrutiny automatically detects all system drives and provides a clean web interface displaying SMART status, temperature, capacity, and power-on time at a glance, along with historical data tracking, customizable alert thresholds, and automated SMART test scheduling.
+
+{{< trueimage src="/images/SCALE/Apps/ScrutinyDiskHealthScreenshot.png" alt="Scrutiny Dashboard" id="Scrutiny Dashboard showing disk health monitoring" >}}
+
+Install Scrutiny from the TrueNAS Apps catalog. See the [Scrutiny app documentation](https://apps.truenas.com/catalog/scrutiny/) for installation and configuration details.
+
+##### Migrated SMART Test Cron Jobs
+
+During the 25.10 upgrade, TrueNAS automatically migrates existing scheduled SMART tests to cron tasks, preserving your test schedules and intervals.
+
+View and manage these migrated tests at **System > Advanced Settings > Cron Jobs**.
+
+{{< trueimage src="/images/SCALE/SystemSettings/CronJobsSmartTest.png" alt="Migrated SMART Test Cron Job" id="Migrated SMART Test Cron Job" >}}
+
+You can edit, disable, or delete these cron jobs. If you install Scrutiny or another monitoring solution, disable these migrated cron jobs to avoid duplicate test scheduling.
+
+##### Custom Monitoring Scripts
+
+The smartmontools binaries (`smartctl`, `smartd`) remain installed and continue to function normally. Existing scripts or third-party monitoring tools that invoke smartctl continue to work without modification.
 
   </div>
 
@@ -310,12 +461,12 @@ The new NVIDIA Blackwell (RTX 50-series) chips require the nvidia-open driver to
 Users with compatible hardware can enable TrueNAS to install NVIDIA drivers.
 See the TrueNAS Apps Market for [installation instructions](https://apps.truenas.com/getting-started/initial-setup/#installing-nvidia-drivers).
 
-GPUs based on earlier architectures including Pascal (GTX 10-series, Quadro P-series), Maxwell (GTX 700 and 900-series), and Volta (GTX Titan V) are not supported by the NVIDIA open drivers.
+GPUs based on earlier architectures, including Pascal (GTX 10-series, Quadro P-series), Maxwell (GTX 700 and 900-series), and Volta (GTX Titan V) are not supported by the NVIDIA open drivers.
 This is because these older GPUs lack the required GSP component.
 
 Users with incompatible legacy cards can still utilize them by deploying a TrueNAS Virtual Machine and isolating the GPU to it.
 This approach involves creating a VM, isolating the legacy GPU to that VM, installing the proprietary NVIDIA driver within the VM environment, and running GPU workloads from within the virtual machine.
-However, this workaround requires a secondary GPU (such as integrated Intel graphics or IPMI console) to handle system display duties, as isolating the only GPU in the system would leave TrueNAS without console access.
+However, this workaround requires a secondary GPU (such as integrated Intel graphics or an IPMI console) to handle system display duties, as isolating the only GPU in the system would leave TrueNAS without console access.
 
   </div>
 
