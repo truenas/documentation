@@ -39,20 +39,27 @@ jobs:
               reportContent = 'Report file not found. See workflow logs for details.';
             }
 
+            const runUrl = `${context.payload.repository.html_url}/actions/runs/${context.runId}`;
+            const today = new Date().toISOString().split('T')[0];
+
+            const issueBody = [
+              'The monthly link checker found broken links in the documentation.',
+              '',
+              '## Workflow Run',
+              `[View full workflow run details](${runUrl})`,
+              '',
+              '## Link Check Report',
+              reportContent,
+              '',
+              '---',
+              `_This issue was automatically created by the link checker workflow on ${today}_`
+            ].join('\n');
+
             const issue = await github.rest.issues.create({
               owner: context.repo.owner,
               repo: context.repo.repo,
               title: '🔗 Monthly Link Check Failed',
-              body: `The monthly link checker found broken links in the documentation.
-
-## Workflow Run
-[View full workflow run details](${context.payload.repository.html_url}/actions/runs/${context.runId})
-
-## Link Check Report
-${reportContent}
-
----
-_This issue was automatically created by the link checker workflow on ${new Date().toISOString().split('T')[0]}_`,
+              body: issueBody,
               labels: ['documentation', 'broken-links']
             });
             console.log('Created issue:', issue.data.number);
