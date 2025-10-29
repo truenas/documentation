@@ -1597,6 +1597,27 @@ a.section-box:hover {
 	margin-block-end: .5rem;
 }
 
+/* Section box link styling */
+.section-box a {
+	color: #0095d5;
+	text-decoration: none;
+}
+
+.section-box a:hover {
+	color: #36bdeb;
+	text-decoration: none;
+}
+
+.section-box a:visited {
+	color: #0095d5;
+	text-decoration: none;
+}
+
+.section-box a:visited:hover {
+	color: #36bdeb;
+	text-decoration: none;
+}
+
 /* Style for tab navigation */
 .section-tabs {
   display: flex;
