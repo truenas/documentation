@@ -55,6 +55,3 @@ exclude_path = [
 
 # Cache results to speed up repeated checks
 cache = true
-
-# Verbose output
-verbose = false
