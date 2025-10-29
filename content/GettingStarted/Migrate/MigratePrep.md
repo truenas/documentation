@@ -75,9 +75,10 @@ Please contact Support for assistance!
    <input type="checkbox"> Data protection tasks - Write down or take screenshots of replication, periodic snapshots, cloud sync, or other task settings to reconfigure these after migrating.
    
    SSH connections used in data protection tasks, and the data protection tasks might require reconfiguration in some cases, especially replication tasks.
-   After migrating to 25.10, SSH connections have failed with an authentication error in some cases. There is no way to update the SSH connection manually, and creating a manual SSH connection might result in an authentication error. When this occurs, it requires setting up a new replication task and a new SSH connection between systems on the migrated system (in 25.10).
-   After migrating and the system is online, check replication and data protection tasks that rely on SSH connections.
-   Test each to verify they work as expected.
+   After migrating to 25.10, SSH connections have failed with an authentication error in some cases.
+   There is no way to update the SSH connection manually, and creating a manual SSH connection might result in an authentication error.
+   When this occurs, you must set up a new replication task and a new SSH connection between systems on the migrated system (in 25.10).
+   After migrating and the system is online, check replication and data protection tasks that rely on SSH connections to verify they work as expected.
    If you receive an authentication error, use the notes from the CORE system to reconfigure these tasks and the SSH connection between systems.
 
    Community users with iSCSI deployments can migrate their systems without assistance. Note, unlike FreeBSD systems, Linux Debian systems require at least one LUN set to zero.
