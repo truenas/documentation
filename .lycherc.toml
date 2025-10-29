@@ -34,12 +34,6 @@ exclude = [
 # Include only these schemes
 scheme = [ "https", "http" ]
 
-# Check links in these file types
-include = [
-    '**/*.md',
-    '**/*.html',
-]
-
 # Exclude certain paths from checking
 exclude_path = [
     '.git',
