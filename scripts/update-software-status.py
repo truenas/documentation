@@ -336,8 +336,32 @@ def main():
             print(f"\n- No updates needed")
         
     except Exception as e:
-        print(f"Error fetching API data: {e}")
-        print("Keeping existing static data")
+        # Make API failure VERY visible in console output
+        print("\n" + "="*70)
+        print("⚠️ ⚠️ ⚠️  API FAILURE - SOFTWARE STATUS UPDATE FAILED  ⚠️ ⚠️ ⚠️")
+        print("="*70)
+        print(f"Error: {e}")
+        print("Keeping existing static data in software_status_config.yaml")
+        print("="*70 + "\n")
+
+        # Write error to log file for Jenkins artifact
+        error_log_path = Path(__file__).parent / 'software-status-error.log'
+        from datetime import datetime
+        timestamp = datetime.utcnow().strftime('%Y-%m-%d %H:%M:%S UTC')
+
+        with open(error_log_path, 'a') as error_log:
+            error_log.write(f"\n{'='*70}\n")
+            error_log.write(f"Timestamp: {timestamp}\n")
+            error_log.write(f"Error Type: {type(e).__name__}\n")
+            error_log.write(f"Error Message: {e}\n")
+            error_log.write(f"{'='*70}\n")
+
+        print(f"Error details written to: {error_log_path}")
+
+        # Exit with success (0) to allow build to continue
+        # Config file is unchanged, so no PR will be created
+        import sys
+        sys.exit(0)
 
 if __name__ == '__main__':
     main()
