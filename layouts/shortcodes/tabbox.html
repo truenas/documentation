@@ -4,7 +4,7 @@
 {{- $productData := index .Site.Data.properties $name -}}
 {{- with $productData }}
   <div class="gdoc-columns__content gdoc-markdown--nested flex-even">
-    <div class="section-box" id="{{ .id }}" style="padding-top: 0; padding-bottom: 1.5rem; max-width: 500px; overflow: hidden;">
+    <div class="section-box" id="{{ .id }}" style="padding-top: 0; padding-bottom: 1.5rem; overflow: hidden;">
       <h2 class="section-box-header">Downloads</h2>
 
       {{- if .majorVersions }}
@@ -19,7 +19,7 @@
             {{- if eq $majorVersion.lifecycle "Archive" }}
               {{- range $majorVersion.majorVersions }}
               {{- if .isDivider }}
-                <hr width="50%" style="margin: 1rem auto;">
+                <hr width="33%" style="margin: 1rem 0;">
               {{- else }}
               <div style="padding-bottom: 0.5rem;">
                 <b>{{ .majorVersion }}</b>
