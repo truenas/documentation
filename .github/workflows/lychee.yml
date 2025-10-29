@@ -20,46 +20,5 @@ jobs:
           args: --verbose --no-progress --config '.lycherc.toml' '.'
           # Fail action on broken links
           fail: true
-          # Output results to a file for the issue creation step
-          output: lychee-report.md
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-
-      - name: Create Issue on Failure
-        if: failure()
-        uses: actions/github-script@v7
-        with:
-          script: |
-            const fs = require('fs');
-            let reportContent = '';
-
-            try {
-              reportContent = fs.readFileSync('lychee-report.md', 'utf8');
-            } catch (error) {
-              reportContent = 'Report file not found. See workflow logs for details.';
-            }
-
-            const runUrl = `${context.payload.repository.html_url}/actions/runs/${context.runId}`;
-            const today = new Date().toISOString().split('T')[0];
-
-            const issueBody = [
-              'The monthly link checker found broken links in the documentation.',
-              '',
-              '## Workflow Run',
-              `[View full workflow run details](${runUrl})`,
-              '',
-              '## Link Check Report',
-              reportContent,
-              '',
-              '---',
-              `_This issue was automatically created by the link checker workflow on ${today}_`
-            ].join('\n');
-
-            const issue = await github.rest.issues.create({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              title: '🔗 Monthly Link Check Failed',
-              body: issueBody,
-              labels: ['documentation', 'broken-links']
-            });
-            console.log('Created issue:', issue.data.number);
