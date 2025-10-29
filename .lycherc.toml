@@ -26,9 +26,9 @@ exclude = [
     # Exclude URLs that require authentication
     # Add any specific domains that commonly fail here
 
-    # Exclude URLs with placeholders
-    '{{.*}}',
-    '{%.*%}',
+    # Exclude URLs with placeholders (escape the curly braces for regex)
+    '\{\{.*\}\}',
+    '\{%.*%\}',
 ]
 
 # Include only these schemes
