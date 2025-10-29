@@ -1,5 +1,17 @@
 #!/usr/bin/env python3
-"""Quick script to update table with live API data"""
+"""Quick script to update table with live API data
+
+Updates software_status_config.yaml with latest version recommendations from TrueNAS API.
+Uses cascading profile logic: MISSION_CRITICAL > GENERAL > EARLY_ADOPTER > DEVELOPER
+
+LEGACY CODE CLEANUP TODO (~June 2025):
+When 25.04 is no longer recommended for any user profile, remove pre-25.10 compatibility:
+1. Search for "LEGACY:" comments in this file
+2. Remove version_to_anchor() compressed format logic (lines ~27-35)
+3. Remove doc_path version check logic (lines ~259-271)
+4. Simplify to: version_to_anchor() returns version as-is, doc_path always "versionnotes"
+5. Remove TrueNAS-SCALE-Fangtooth from additional_trains in software_status_config.yaml
+"""
 
 import requests
 import yaml
@@ -7,33 +19,39 @@ import re
 from pathlib import Path
 
 def version_to_anchor(version):
-    """Convert version to documentation anchor"""
-    import re
-    
-    # Extract major version to determine format
-    major_match = re.match(r'^(\d+)', version)
-    major_version = int(major_match.group(1)) if major_match else 0
-    
-    # Format change appears to happen around version 25.10+
-    # Pre-25.10: use compressed format, 25.10+: use full format  
-    if major_version >= 25:
-        # Extract major.minor to be more precise
-        version_match = re.match(r'^(\d+\.\d+)', version)
-        if version_match:
-            major_minor = version_match.group(1)
-            if major_minor >= "25.10":
-                # 25.10+ uses full format: "25.10.0" -> "#25.10.0", "25.10-BETA.1" -> "#25.10-BETA.1"
-                return version
-    
-    # Legacy format for older versions
-    # "25.04.2.1" -> "#250421", "24.10.2.2" -> "#241022", "13.0-U6.8" -> "#130-u68"
-    anchor = version.lower()
-    anchor = anchor.replace('.', '').replace('-u', '-u')  # Keep -u for Core versions
-    return anchor
+    """Convert version to documentation anchor
+
+    Format changes at version 25.10:
+    - Pre-25.10: Compressed format (remove periods): "25.04.2.5" -> "250425"
+    - 25.10+: Full format (keep as-is): "25.10.0" -> "25.10.0"
+
+    LEGACY SUPPORT: The pre-25.10 logic below can be removed once 25.04 is EOL
+    TODO: Remove compressed format logic after ~June 2025 when 25.04 is no longer recommended
+    """
+    # Extract major.minor version
+    version_match = re.match(r'^(\d+)\.(\d+)', version)
+    if not version_match:
+        return version  # Fallback to original if can't parse
+
+    major = int(version_match.group(1))
+    minor = int(version_match.group(2))
+
+    # ========== LEGACY: Remove this check after 25.04 EOL ==========
+    # Check if version is >= 25.10
+    if major > 25 or (major == 25 and minor >= 10):
+        # 25.10+ uses full format with periods
+        return version
+    else:
+        # Pre-25.10 uses compressed format (remove periods)
+        return version.replace('.', '')
+    # ========== END LEGACY CODE ==========
+
+    # After removal, this function should simply be:
+    # return version
 
 def parse_version_for_sorting(version):
     """Parse version string into sortable tuple for proper version ordering"""
-    # Handle formats like: 25.10.0, 25.10-RC.1, 25.10-BETA.1, 24.10.2.2, 13.0-U6.8
+    # Handle formats like: 25.10.0, 25.10-RC.1, 25.10-BETA.1, 24.10.2.2
     
     # Split on dash to separate main version from suffix
     if '-' in version:
@@ -61,11 +79,9 @@ def parse_version_for_sorting(version):
             suffix_priority = 100
         elif suffix_lower.startswith('beta'):
             suffix_priority = 50
-        elif suffix_lower.startswith('u'):  # Core updates like U6.8
-            suffix_priority = 200
         else:
             suffix_priority = 10  # Other pre-releases
-        
+
         # Extract numeric part of suffix for sub-sorting
         suffix_num_match = re.search(r'(\d+)', suffix)
         suffix_num = int(suffix_num_match.group(1)) if suffix_num_match else 0
@@ -74,27 +90,85 @@ def parse_version_for_sorting(version):
     
     return tuple(version_parts + [suffix_priority, suffix_num])
 
-def find_best_version_for_profile(trains, train_releases, profile):
-    """Find the best/latest version for a given profile across all trains"""
-    candidates = []
-    
-    for train_name, releases in train_releases.items():
-        for version, info in releases.items():
-            if info.get('profile') == profile:
-                candidates.append({
+def find_versions_with_cascade(available_trains, train_releases, profiles_config):
+    """Find best version for each profile using cascading logic
+
+    Processes trains from newest to oldest, releases within each train from newest to oldest.
+    When a version is found for a profile, it cascades down to more aggressive profiles
+    if they haven't been filled yet with newer versions.
+
+    Profile hierarchy (most conservative to most aggressive):
+    MISSION_CRITICAL > GENERAL > EARLY_ADOPTER > DEVELOPER
+    """
+
+    # Profile hierarchy from most conservative to most aggressive
+    PROFILE_HIERARCHY = ['MISSION_CRITICAL', 'GENERAL', 'EARLY_ADOPTER', 'DEVELOPER']
+
+    # Pre-compute profile index mapping to avoid repeated lookups
+    profile_to_index = {profile: idx for idx, profile in enumerate(PROFILE_HIERARCHY)}
+
+    # Map config profile names to API profile names for quick lookup
+    config_to_api = profiles_config  # e.g., {'developer': 'DEVELOPER', ...}
+    api_to_config = {v: k for k, v in profiles_config.items()}  # Reverse mapping
+
+    # Initialize results - derive from profiles_config instead of hardcoding
+    profile_results = {profile_name: None for profile_name in profiles_config.keys()}
+
+    # Reverse train list (trains_v2.json gives oldest-first, we need newest-first)
+    trains_newest_first = list(reversed(available_trains))
+
+    print(f"\nProcessing trains in order (newest first): {trains_newest_first}")
+
+    for train_name in trains_newest_first:
+        if train_name not in train_releases:
+            continue
+
+        releases = train_releases[train_name]
+
+        # Sort releases by version (newest first)
+        sorted_versions = sorted(releases.keys(),
+                                key=parse_version_for_sorting,
+                                reverse=True)
+
+        for version in sorted_versions:
+            release_info = releases[version]
+            api_profile = release_info.get('profile')
+
+            if not api_profile or api_profile not in api_to_config:
+                continue
+
+            config_profile_name = api_to_config[api_profile]
+
+            # Assign to this profile if not yet assigned
+            if profile_results[config_profile_name] is None:
+                profile_results[config_profile_name] = {
                     'version': version,
                     'train': train_name,
-                    'info': info,
-                    'date': info.get('date', ''),
-                })
-    
-    if not candidates:
-        return None
-    
-    # Sort by version (newest/highest first)
-    candidates.sort(key=lambda x: parse_version_for_sorting(x['version']), reverse=True)
-    
-    return candidates[0]  # Return the highest version
+                    'info': release_info
+                }
+                print(f"  Found {version} for {config_profile_name} in {train_name}")
+
+            # Cascade down to more aggressive profiles
+            if api_profile in profile_to_index:
+                profile_index = profile_to_index[api_profile]
+                for i in range(profile_index + 1, len(PROFILE_HIERARCHY)):
+                    more_aggressive_api_profile = PROFILE_HIERARCHY[i]
+                    if more_aggressive_api_profile in api_to_config:
+                        more_aggressive_config_name = api_to_config[more_aggressive_api_profile]
+                        if profile_results[more_aggressive_config_name] is None:
+                            profile_results[more_aggressive_config_name] = {
+                                'version': version,
+                                'train': train_name,
+                                'info': release_info
+                            }
+                            print(f"  Cascaded {version} to {more_aggressive_config_name}")
+
+        # Check if all profiles are now filled
+        if all(v is not None for v in profile_results.values()):
+            print(f"\n  All profiles filled, stopping at train {train_name}")
+            break  # No need to check older trains
+
+    return profile_results
 
 def main():
     config_path = Path(__file__).parent.parent / 'data' / 'software_status_config.yaml'
@@ -120,7 +194,19 @@ def main():
         else:
             print("No 'trains' section found in trains_v2.json")
             return
-        
+
+        # Merge in additional trains from config
+        # Insert at position 0 (oldest) so after reversal they're checked last
+        additional_trains = config.get('api_config', {}).get('additional_trains', {})
+        if additional_trains:
+            print(f"\nAdding {len(additional_trains)} additional train(s) from config:")
+            for train_name, train_info in additional_trains.items():
+                if train_name not in available_trains:
+                    available_trains.insert(0, train_name)
+                    print(f"  + {train_name}: {train_info.get('description', 'No description')}")
+                else:
+                    print(f"  - {train_name}: Already in API trains, skipping")
+
         # Step 2: Fetch releases from each train
         print("\nStep 2: Fetching releases from each train...")
         train_releases = {}
@@ -144,25 +230,39 @@ def main():
             except Exception as e:
                 print(f"  ✗ {train_name}: {e}")
         
-        # Step 3: Find best versions for each profile
-        print("\nStep 3: Finding best versions for each profile...")
+        # Step 3: Find best versions for each profile using cascading logic
+        print("\nStep 3: Finding best versions with cascading logic...")
         updates_made = []
-        
-        for profile_name, api_profile in config.get('profiles', {}).items():
-            print(f"\nProcessing {profile_name} ({api_profile})...")
-            
-            best_version = find_best_version_for_profile(available_trains, train_releases, api_profile)
-            
-            if best_version:
-                version = best_version['version']
-                train = best_version['train']
-                
+
+        # Get all profile versions in one pass with cascading
+        profile_results = find_versions_with_cascade(available_trains, train_releases, config.get('profiles', {}))
+
+        # Process each profile result
+        for profile_name, result in profile_results.items():
+            print(f"\nProcessing {profile_name}...")
+
+            if result:
+                version = result['version']
+                train = result['train']
+                release_info = result['info']
+
                 # Generate documentation link
-                major_minor_match = re.match(r'^(\d+\.\d+)', version)
-                major_minor = major_minor_match.group(1) if major_minor_match else "unknown"
+                # Parse version once for all link generation
+                major_minor_match = re.match(r'^(\d+)\.(\d+)', version)
+                if major_minor_match:
+                    major = int(major_minor_match.group(1))
+                    minor = int(major_minor_match.group(2))
+                    major_minor = major_minor_match.group(0)  # Keep original string format (e.g., "25.04")
+                else:
+                    major, minor = 0, 0
+                    major_minor = "unknown"
+
                 anchor = version_to_anchor(version)
-                
-                if 'nightly' in train.lower() or api_profile == 'DEVELOPER':
+
+                # Check if this is a nightly/developer release
+                is_nightly = 'nightly' in train.lower() or release_info.get('profile') == 'DEVELOPER'
+
+                if is_nightly:
                     # Generate nightly download link
                     codename_match = re.search(r'TrueNAS-SCALE-([A-Za-z]+)', train)
                     if codename_match:
@@ -174,41 +274,54 @@ def main():
                         version_display = "Nightly"
                 else:
                     # Generate FQDN release notes link
-                    doc_link = f"https://www.truenas.com/docs/scale/{major_minor}/gettingstarted/scalereleasenotes/#{anchor}"
+                    # ========== LEGACY: Remove path logic after 25.04 EOL ==========
+                    # Path changes at version 25.10: scalereleasenotes -> versionnotes
+                    # TODO: After ~June 2025, remove this check and always use "versionnotes"
+                    if major > 25 or (major == 25 and minor >= 10):
+                        # 25.10+ uses versionnotes path
+                        doc_path = "versionnotes"
+                    else:
+                        # Pre-25.10 uses scalereleasenotes path
+                        doc_path = "scalereleasenotes"
+                    # ========== END LEGACY CODE ==========
+
+                    # After removal, simply use: doc_path = "versionnotes"
+
+                    doc_link = f"https://www.truenas.com/docs/scale/{major_minor}/gettingstarted/{doc_path}/#{anchor}"
                     version_display = version
-                
-                # Update both Enterprise and Community SCALE data when API data available
+
+                # Update both Enterprise and Community data when API data available
                 updated_sections = []
-                
-                for scale_type in ['community_scale', 'enterprise_scale']:
+
+                for scale_type in ['community', 'enterprise']:
                     if scale_type in config['table_data'].get(profile_name, {}):
-                        # Preserve dagger for Mission Critical Community only
+                        # Preserve asterisk for Mission Critical Community only
                         update_data = {
                             'version': version_display,
                             'link': doc_link
                         }
-                        
-                        if profile_name == 'mission_critical' and scale_type == 'community_scale':
-                            # Keep the dagger for Mission Critical Community to maintain Enterprise upsell
-                            update_data['note'] = '<sup style="font-size: 0.6em;">†</sup>'
-                        
+
+                        if profile_name == 'mission_critical' and scale_type == 'community':
+                            # Keep the asterisk for Mission Critical Community to maintain Enterprise upsell
+                            update_data['note'] = '*'
+
                         config['table_data'][profile_name][scale_type] = update_data
                         updated_sections.append(scale_type)
-                
+
                 if updated_sections:
-                    if profile_name == 'mission_critical' and 'community_scale' in updated_sections:
-                        print(f"  ✓ Updated: {version_display} (preserving † for Enterprise upsell)")
+                    if profile_name == 'mission_critical' and 'community' in updated_sections:
+                        print(f"  ✓ Updated: {version_display} (preserving * for Enterprise upsell)")
                     else:
                         print(f"  ✓ Updated: {version_display}")
-                    
+
                     updates_made.append(f"{profile_name}: {version_display} (from {train})")
                     print(f"    Train: {train}")
                     print(f"    Link: {doc_link}")
                     print(f"    Updated sections: {', '.join(updated_sections)}")
                 else:
-                    print(f"  - Skipped (no SCALE sections found): {version} from {train}")
+                    print(f"  - Skipped (no sections found in table_data)")
             else:
-                print(f"  ✗ No {api_profile} versions found")
+                print(f"  ✗ No version found for {profile_name}")
         
         # Step 4: Save updated config
         if updates_made:

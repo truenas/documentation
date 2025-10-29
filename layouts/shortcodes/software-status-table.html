@@ -9,7 +9,7 @@
       <thead>
         <tr style="background-color: #0095d5; color: white;">
           <th style="padding: 1rem; text-align: center; font-weight: bold; border: none; width: 18%;">User Type</th>
-          <th style="padding: 1rem; text-align: center; font-weight: bold; border: none; width: 41%;" colspan="2">
+          <th style="padding: 1rem; text-align: center; font-weight: bold; border: none; width: 41%;">
             <a href="https://www.truenas.com/truenas-enterprise/" style="color: inherit; text-decoration: none;">
               <img src="/images/truenas-enterprise-logo-logo-white-rgb-900px-w-72ppi.png" alt="TrueNAS Enterprise" style="height: 48px;">
             </a>
@@ -26,18 +26,19 @@
         <tr>
           <td style="padding: 1rem; font-weight: bold;"><strong>Developer</strong></td>
           {{ $dev := $config.table_data.developer }}
-          {{ if $dev.enterprise_colspan }}
-            <td style="padding: 1rem; text-align: center;" colspan="{{ $dev.enterprise_colspan }}">N/A</td>
-          {{ else }}
-            <td style="padding: 1rem; text-align: center;">{{ $dev.enterprise_core | default "N/A" }}</td>
-            <td style="padding: 1rem; text-align: center;">{{ $dev.enterprise_scale | default "N/A" }}</td>
-          {{ end }}
-          {{ if $dev.community_scale.link }}
+          {{ if $dev.enterprise.link }}
             <td style="padding: 1rem; text-align: center;">
-              <a href="{{ $dev.community_scale.link }}">{{ $dev.community_scale.version }}</a>
+              <a href="{{ $dev.enterprise.link }}">{{ $dev.enterprise.version }}</a>
             </td>
           {{ else }}
-            <td style="padding: 1rem; text-align: center;">{{ $dev.community_scale.version | default "N/A" }}</td>
+            <td style="padding: 1rem; text-align: center;">{{ $dev.enterprise.version | default "N/A" }}</td>
+          {{ end }}
+          {{ if $dev.community.link }}
+            <td style="padding: 1rem; text-align: center;">
+              <a href="{{ $dev.community.link }}">{{ $dev.community.version }}</a>
+            </td>
+          {{ else }}
+            <td style="padding: 1rem; text-align: center;">{{ $dev.community.version | default "N/A" }}</td>
           {{ end }}
         </tr>
         
@@ -45,18 +46,19 @@
         <tr>
           <td style="padding: 1rem; font-weight: bold;"><strong>Early Adopter</strong></td>
           {{ $ea := $config.table_data.early_adopter }}
-          {{ if $ea.enterprise_colspan }}
-            <td style="padding: 1rem; text-align: center;" colspan="{{ $ea.enterprise_colspan }}">N/A</td>
-          {{ else }}
-            <td style="padding: 1rem; text-align: center;">{{ $ea.enterprise_core | default "N/A" }}</td>
-            <td style="padding: 1rem; text-align: center;">{{ $ea.enterprise_scale | default "N/A" }}</td>
-          {{ end }}
-          {{ if $ea.community_scale.link }}
+          {{ if $ea.enterprise.link }}
             <td style="padding: 1rem; text-align: center;">
-              <a href="{{ $ea.community_scale.link }}">{{ $ea.community_scale.version }}</a>
+              <a href="{{ $ea.enterprise.link }}">{{ $ea.enterprise.version }}</a>
             </td>
           {{ else }}
-            <td style="padding: 1rem; text-align: center;">{{ $ea.community_scale.version | default "N/A" }}</td>
+            <td style="padding: 1rem; text-align: center;">{{ $ea.enterprise.version | default "N/A" }}</td>
+          {{ end }}
+          {{ if $ea.community.link }}
+            <td style="padding: 1rem; text-align: center;">
+              <a href="{{ $ea.community.link }}">{{ $ea.community.version }}</a>
+            </td>
+          {{ else }}
+            <td style="padding: 1rem; text-align: center;">{{ $ea.community.version | default "N/A" }}</td>
           {{ end }}
         </tr>
         
@@ -64,29 +66,21 @@
         <tr>
           <td style="padding: 1rem; font-weight: bold;"><strong>General</strong></td>
           {{ $gen := $config.table_data.general }}
-          {{/* Enterprise Core */}}
-          {{ if $gen.enterprise_core.link }}
+          {{/* Enterprise */}}
+          {{ if $gen.enterprise.link }}
             <td style="padding: 1rem; text-align: center;">
-              <a href="{{ $gen.enterprise_core.link }}">{{ $gen.enterprise_core.version }}</a>{{ $gen.enterprise_core.note }}
+              <a href="{{ $gen.enterprise.link }}">{{ $gen.enterprise.version }}</a>{{ $gen.enterprise.note }}
             </td>
           {{ else }}
-            <td style="padding: 1rem; text-align: center;">{{ $gen.enterprise_core.version | default "N/A" }}{{ $gen.enterprise_core.note }}</td>
-          {{ end }}
-          {{/* Enterprise Scale */}}
-          {{ if $gen.enterprise_scale.link }}
-            <td style="padding: 1rem; text-align: center;">
-              <a href="{{ $gen.enterprise_scale.link }}">{{ $gen.enterprise_scale.version }}</a>
-            </td>
-          {{ else }}
-            <td style="padding: 1rem; text-align: center;">{{ $gen.enterprise_scale.version | default "N/A" }}</td>
+            <td style="padding: 1rem; text-align: center;">{{ $gen.enterprise.version | default "N/A" }}{{ $gen.enterprise.note }}</td>
           {{ end }}
           {{/* Community Scale */}}
-          {{ if $gen.community_scale.link }}
+          {{ if $gen.community.link }}
             <td style="padding: 1rem; text-align: center;">
-              <a href="{{ $gen.community_scale.link }}">{{ $gen.community_scale.version }}</a>{{ $gen.community_scale.note }}
+              <a href="{{ $gen.community.link }}">{{ $gen.community.version }}</a>{{ $gen.community.note }}
             </td>
           {{ else }}
-            <td style="padding: 1rem; text-align: center;">{{ $gen.community_scale.version | default "N/A" }}{{ $gen.community_scale.note }}</td>
+            <td style="padding: 1rem; text-align: center;">{{ $gen.community.version | default "N/A" }}{{ $gen.community.note }}</td>
           {{ end }}
         </tr>
         
@@ -94,29 +88,21 @@
         <tr>
           <td style="padding: 1rem; font-weight: bold;"><strong>Mission Critical</strong></td>
           {{ $mc := $config.table_data.mission_critical }}
-          {{/* Enterprise Core */}}
-          {{ if $mc.enterprise_core.link }}
+          {{/* Enterprise */}}
+          {{ if $mc.enterprise.link }}
             <td style="padding: 1rem; text-align: center;">
-              <a href="{{ $mc.enterprise_core.link }}">{{ $mc.enterprise_core.version }}</a>{{ $mc.enterprise_core.note }}
+              <a href="{{ $mc.enterprise.link }}">{{ $mc.enterprise.version }}</a>{{ $mc.enterprise.note }}
             </td>
           {{ else }}
-            <td style="padding: 1rem; text-align: center;">{{ $mc.enterprise_core.version | default "N/A" }}{{ $mc.enterprise_core.note }}</td>
-          {{ end }}
-          {{/* Enterprise Scale */}}
-          {{ if $mc.enterprise_scale.link }}
-            <td style="padding: 1rem; text-align: center;">
-              <a href="{{ $mc.enterprise_scale.link }}">{{ $mc.enterprise_scale.version }}</a>
-            </td>
-          {{ else }}
-            <td style="padding: 1rem; text-align: center;">{{ $mc.enterprise_scale.version | default "N/A" }}</td>
+            <td style="padding: 1rem; text-align: center;">{{ $mc.enterprise.version | default "N/A" }}{{ $mc.enterprise.note }}</td>
           {{ end }}
           {{/* Community Scale */}}
-          {{ if $mc.community_scale.link }}
+          {{ if $mc.community.link }}
             <td style="padding: 1rem; text-align: center;">
-              <a href="{{ $mc.community_scale.link }}">{{ $mc.community_scale.version }}</a>{{ $mc.community_scale.note | safeHTML }}
+              <a href="{{ $mc.community.link }}">{{ $mc.community.version }}</a>{{ $mc.community.note | safeHTML }}
             </td>
           {{ else }}
-            <td style="padding: 1rem; text-align: center;">{{ $mc.community_scale.version | default "N/A" }}{{ $mc.community_scale.note | safeHTML }}</td>
+            <td style="padding: 1rem; text-align: center;">{{ $mc.community.version | default "N/A" }}{{ $mc.community.note | safeHTML }}</td>
           {{ end }}
         </tr>
       </tbody>
