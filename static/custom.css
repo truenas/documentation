@@ -2696,7 +2696,9 @@ pre.gdoc-mermaid.mermaid.mermaid_sizing {
     text-decoration: none !important;
     margin: -.5em !important;
     transition: all 0.3s ease !important;
-    width: auto !important;
+    width: 75% !important;
+    min-height: 40px !important;
+    box-sizing: border-box !important;
 }
 
 /* Remove styling from the inner link since parent span is now the button */
@@ -2744,6 +2746,16 @@ pre.gdoc-mermaid.mermaid.mermaid_sizing {
 /* Style the use element inside the SVG */
 .gdoc-nav section:last-child .gdoc-nav__list li:nth-child(1) svg use {
     fill: white !important;
+}
+
+/* Style the TrueNAS Connect button (nth-child(2)) - no icon, but same dimensions */
+.gdoc-nav section:last-child .gdoc-nav__list li:nth-child(2) svg.gdoc-icon {
+    display: none !important; /* Hide any empty icon elements */
+}
+
+/* Ensure Connect button text is properly centered without icon */
+.gdoc-nav section:last-child .gdoc-nav__list li:nth-child(2) span.flex {
+    gap: 0 !important; /* Remove any gap since there's no icon */
 }
 
 /* Reorder the menu items - move Apps Market to the very top */
