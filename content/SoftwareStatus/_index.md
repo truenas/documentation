@@ -37,7 +37,7 @@ Choose the right TrueNAS version by balancing your need for new features against
 
 {{< software-status-table >}}
 
-<small>\* TrueNAS Community users with Mission Critical stability needs should consider [TrueNAS Enterprise](https://truenas.com/truenas-enterprise/) appliances for the ultimate in data protection, performance, and around-the-clock support.</small>
+<small>\* TrueNAS Community users with Mission Critical stability needs should consider [TrueNAS Enterprise](https://truenas.com/truenas-enterprise/) appliances for unmatched data protection, performance, and around-the-clock support.</small>
 
 <div style="display: flex; align-items: center; gap: 2rem; padding: 1rem; border: 1px solid var(--accent-color); border-radius: 8px; background-color: var(--accent-color-lite);">
   <div style="flex-shrink: 0;">
