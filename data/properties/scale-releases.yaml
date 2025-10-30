@@ -27,7 +27,7 @@ majorVersions:
     releaseName: "Goldeye"
     releases:
       - name: "25.10.0"
-        type: "Early"
-        link: "https://www.truenas.com/docs/scale/25.10/gettingstarted/scalereleasenotes/"
+        type: "Stable"
+        link: "https://www.truenas.com/docs/scale/25.10/gettingstarted/versionnotes/#25.10.0"
         releaseDate: "2025-10-28"
         latest: true
