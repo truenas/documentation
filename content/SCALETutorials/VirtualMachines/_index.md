@@ -18,11 +18,11 @@ keywords:
 
 TrueNAS includes built-in virtualization capabilities that let you run multiple operating systems on a single system, maximizing hardware utilization and consolidating workloads.
 
-A *virtual machine (VM)* is a software-based computer that runs inside your TrueNAS system, appearing as a separate physical machine to the operating system installed within it. VMs use virtualized hardware components including network interfaces, storage, graphics adapters, and other devices, providing complete isolation between different operating systems and applications.
+A *virtual machine (VM)* is a software-based computer that runs inside your TrueNAS system, appearing as a separate physical machine to the operating system installed within it. VMs use virtualized hardware components, including network interfaces, storage, graphics adapters, and other devices, providing complete isolation between different operating systems and applications.
 
 VMs offer stronger isolation than [containers](/scaletutorials/containers/) but require more system resources, making them ideal for running full operating systems, legacy applications, or services that need dedicated environments.
 
-Enterprise licensed High Availability (HA) systems do not support virtual machines.
+Enterprise-licensed High Availability (HA) systems do not support virtual machines.
 
 {{< expand "What system resources do VMs require?" "v" >}}
 {{< include file="/static/includes/VMRequirements.md" >}}
@@ -55,7 +55,7 @@ If you have not yet added a virtual machine to your system, click **Add Virtual 
    Secure Boot is required for Windows 11 and some Linux distributions, and can be optional or unsupported for older operating systems.
 
    Select **Enable Trusted Platform Module (TPM)** to provide a virtual TPM 2.0 device for the VM.
-   TPM provides hardware-based security functions including secure key storage, cryptographic operations, and platform attestation.
+   TPM provides hardware-based security functions, including secure key storage, cryptographic operations, and platform attestation.
    This is required for Windows 11 and enhances security for other operating systems that support TPM.
 
    Select **Enable Display** to enable a SPICE Virtual Network Computing (VNC) remote connection for the VM.
@@ -63,7 +63,7 @@ If you have not yet added a virtual machine to your system, click **Add Virtual 
 
    Enter a display **Password**
 
-   Use the dropdown menu to change the default IP address in **Bind** if you want to use a specific address as the display network interface, otherwise leave it set to **0.0.0.0**.
+   Use the dropdown menu to change the default IP address in **Bind** if you want to use a specific address as the display network interface. Otherwise, leave it set to **0.0.0.0**.
    The **Bind** menu populates any existing logical interfaces, such as static routes, configured on the system.
    **Bind** cannot be edited after VM creation.
 
@@ -84,7 +84,7 @@ If you have not yet added a virtual machine to your system, click **Add Virtual 
    To dedicate a fixed amount of RAM, enter a value (minimum 256 MiB) in the **Memory Size** field and leave **Minimum Memory Size** empty.
 
    To allow for memory usage flexibility (sometimes called ballooning), define a specific value in the **Minimum Memory Size** field and a larger value in **Memory Size**.
-   The VM uses the **Minimum Memory Size** for normal operations but can dynamically allocate up to the defined **Memory Size** value in situations where the VM requires additional memory.
+   The VM uses the **Minimum Memory Size** for normal operations, but can dynamically allocate up to the defined **Memory Size** value in situations where the VM requires additional memory.
    Reviewing available memory from within the VM typically shows the **Minimum Memory Size**.
 
    Click **Next**.
@@ -121,7 +121,7 @@ If you have not yet added a virtual machine to your system, click **Add Virtual 
 
    {{< trueimage src="/images/SCALE/Virtualization/AddVMInstallMedia.png" alt="Installation Media" id="Installation Media" >}}
 
-   You can create the VM without an OS installed. To add it either type the path or browse to the location and select it.
+   You can create the VM without an OS installed. To add it, either type the path or browse to the location and select it.
 
    To upload an <file>iso</file> select **Upload New Image File** and either enter the path or browse to the location of the file.
 
@@ -134,7 +134,7 @@ If you have not yet added a virtual machine to your system, click **Add Virtual 
    {{< trueimage src="/images/SCALE/Virtualization/AddVMGPU.png" alt="GPU Screen" id="GPU Screen" >}}
 
    {{< hint type="note" title="Supported GPUs" >}}
-   TrueNAS does not have a list of approved GPUs at this time but TrueNAS does support various GPUs from NVIDIA, Intel, and AMD.
+   TrueNAS does not have a list of approved GPUs at this time, but TrueNAS does support various GPUs from NVIDIA, Intel, and AMD.
    As of 24.10, TrueNAS does not automatically install NVIDIA drivers. Instead, users must manually install drivers from the UI. For detailed instructions, see [Installing NVIDIA Drivers](https://apps.truenas.com/getting-started/initial-setup/#installing-nvidia-drivers).
    {{< /hint >}}
 
@@ -182,7 +182,7 @@ Use the **Power Off** button instead.
 
 ## Installing an OS
 
-After configuring the VM in TrueNAS and an OS <file>.iso</file> file is attached, start the VM and begin installing the operating system.
+After configuring the VM in TrueNAS and attaching an OS <file>.iso</file> file, start the VM and begin installing the operating system.
 
 {{< hint type="note" title="OS Specific Settings" >}}
 Some operating systems can require specific settings to function properly in a virtual machine.
@@ -337,9 +337,9 @@ To ensure it starts automatically, create the <file>startup.nsh</file> file at t
 
 1. Go to the **Shell**.
 
-2. At the shell prompt enter `edit startup.nsh`.
+2. At the shell prompt, enter `edit startup.nsh`.
 
-3. In the editor enter:
+3. In the editor, enter:
 
    a. Enter `FS0:` and press <kbd>Enter</kbd>.
 
@@ -426,7 +426,7 @@ This procedure applies to the zvol for an Instance VM that has data you want to 
 While in a 25.04.01 or a later maintenance release:
 
 1. Go to **Instances**, click on **Configuration**, and then **Manage Volumes** to open the **Volumes** window.
-   The **Volumes** window lists all Instance VMs and the assoicated storage volumes (zvols).
+   The **Volumes** window lists all Instance VMs and the associated storage volumes (zvols).
 
    Record the volume name or take a screenshot of the information to refer to later when entering commands in the **Shell** screen.
    Zvol names are similar to the VM name but not identical.
@@ -448,11 +448,11 @@ While in a 25.04.01 or a later maintenance release:
    Refer to the troubleshooting tips below for more information. 25.10 releases correct some issues encountered in 25.04.2.4 VMs that are migrated.
 
    {{< expand "Troubleshooting VM Issues" "v" >}}
-   If upgrading from 24.10 to 25.04, VMs are visible and running, but are expected to have issues because 25.04 release does not fully support these older VMs.
+   If upgrading from 24.10 to 25.04, VMs are visible and running, but are expected to have issues because the 25.04 release does not fully support these older VMs.
 
    VMs with a Windows OS installed could require converting to VirtIO-SCSI disks to get reconnected to the Internet.
    To restore connectivity, try clean-mounting the system from the mounted drive from within the VM, and then on the TrueNAS system (host).
-   Follow this by removing driver syntax added to raw qem files.
+   Follow this by removing driver syntax added to raw QEM files.
 
    If a new VM is created in 25.04.2.1 and it fails to run, stop all containers.
    In the VM configuration, delete the current NIC, then select the bridge before selecting the NIC again to restore functionality.
@@ -472,7 +472,7 @@ While in a 25.04.01 or a later maintenance release:
 
    Enter the following commands at the Linux system prompt:
 
-   a. Locate the hidden zvols for the Instance VMs, by entering:
+   a. Locate the hidden zvols for the Instance VMs by entering:
 
    <code>sudo zfs list -t volume -r -d 10 <i>poolname</i></code>
 
@@ -481,7 +481,7 @@ While in a 25.04.01 or a later maintenance release:
    * *poolname* is the name of the pool associated with the Instance VMs.
      If you have multiple pools associated with the Instance VMs, repeat this command with the name of that pool to show hidden zvols in that pool.
 
-   The **.ix-virt** directory contains the zvols use in Instance VMs. Ignore the entries with the **.block** extension.
+   The **.ix-virt** directory contains the zvols used in Instance VMs. Ignore the entries with the **.block** extension.
    The output includes other zvols in the pool if your system has non-instance VMs configured in the pool name entered in the command.
 
    {{< expand "Example Command Output" "v" >}}
@@ -506,7 +506,7 @@ While in a 25.04.01 or a later maintenance release:
    The zvols in the command output above with `tank/.ix-virt/custom` in the path are the zvols to migrate if these are associated with the VM you want to migrate to new VMs in the 25.10.0 or later release.
    {{< /expand >}}
 
-   b. Rename (and move) each volume in the **.ix-virt** directory to a new location where you can select it when configuration a new VM.
+   b. Rename (and move) each volume in the **.ix-virt** directory to a new location where you can select it when configuring a new VM.
    Repeat for each volume you want to migrate to a new VM. Do not rename or move the .block volumes.
    Enter the following command:
 
@@ -532,15 +532,15 @@ While in a 25.04.01 or a later maintenance release:
    * *default_vm2410linux-icppg_vm2410linuxclone1* is the name of the zvol
 
    This command sets the volume properties to match those used by zvols created through the **Virtual Machines** screen, ensuring optimal performance and behavior.
-   Containers VMs used different property settings that are not optimal for virtual machine workloads.
+   Containers VMs use different property settings that are not optimal for virtual machine workloads.
 
-   After completing the commands listed above for each zvol you want to migrate. Go to **Datasets** and verify all volumes you migrated show on the screen.
+   After completing the commands listed above for each zvol you want to migrate. Go to **Datasets** and verify that all volumes you migrated show on the screen.
 
 7. Create the new VM using the migrated zvol. Repeat these steps for each zvol you migrated.
 
    Go to **Virtual Machines**, click on **Add** to open the **Create Virtual Machine** wizard.
 
-   a. Complete the first screen by entering a name for the new VM, select the operating system used by the Instances VM, enter a brief description, then if using the **Bind** setting, enter a password. Click **Next**.
+   a. Complete the first screen by entering a name for the new VM. Select the operating system used by the Instances VM, enter a brief description, then, if using the **Bind** setting, enter a password. Click **Next**.
 
    b. Configure the CPU and Memory settings, and then click **Next**.
 
