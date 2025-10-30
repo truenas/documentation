@@ -106,6 +106,13 @@ Any new feature flags introduced since the previous OpenZFS version that was int
 
 For more details on feature flags, see [OpenZFS Feature Flags](https://openzfs.github.io/openzfs-docs/Basic%20Concepts/Feature%20Flags.html) and [OpenZFS zpool-feature.7](https://openzfs.github.io/openzfs-docs/man/7/zpool-features.7.html).
 
+## 25.04.2.6
+**October 30, 2025**
+
+The TrueNAS team is pleased to release TrueNAS 25.04.2.6!
+
+This is a small maintenance release with one change to extend the revert on NFS limits to the 25.04.1 and 25.04.2 TrueNAS API versions ([NAS-138229](https://ixsystems.atlassian.net/browse/NAS-138229)).
+
 ## 25.04.2.5
 **October 21, 2025**
 
