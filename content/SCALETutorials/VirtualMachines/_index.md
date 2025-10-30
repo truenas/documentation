@@ -512,18 +512,18 @@ After upgrading to a release that shows the **Virtual Machines** screen and the 
    This renames and moves it to the specified location, and returns to the system Linux prompt.
    To verify the zvol moved, enter the <code>sudo zfs list -t volume -r <i>tank</i></code> command again. The output should show the zvol in the new location.
 
-   c. Verify the `volmode`. Enter the following command for each zvol you rename.
+   c. (Highly Recommended) Set zvol properties to match those of natively-created VM zvols.
+   Enter the following command for each zvol you migrated:
 
-   <code>sudo zfs get volmode <i>tank/vms/default_debian1-urec9f</i></code>
+   <code>sudo zfs set volmode=default primarycache=all secondarycache=all <i>tank/vms/default_debian1-urec9f</i></code>
 
    Where:
    - *tank* is the pool name.
    - *vms* is the dataset where the zvol is stored.
    - *default_debian1-urec9f* is the name of the zvol
 
-   This returns the `volmode` for the volume. It should be set to `dev`. If not, enter the following command to set it to `dev`:
-
-   <code>sudo zfs set volmode=dev <i>tank/vms/default_debian1-urec9f</i></code>
+   This command sets the volume properties to match those used by zvols created through the **Virtual Machines** screen, ensuring optimal performance and behavior.
+   Containers VMs used different property settings that may not be ideal for virtual machine workloads.
 
    After completing the commands listed above for each zvol you want to migrate, go to **Datasets** and verify all volumes you migrated show on the screen.
 
