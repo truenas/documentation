@@ -406,7 +406,7 @@ The process involves:
 
 - Identifying the hidden storage volumes (zvols) associated with the Instance VMs.
 - Renaming (and moving) the zvols to a new dataset where they can be seen and used by a new VM.
-- Verifying the `volmode` for the zvol is correctly configured.
+- (Highly Recommended) Configuring zvol properties to match those of natively-created VM zvols.
 - Creating a new VM and selecting the migrated zvol as the storage volume.
 
 ### Before You Begin
@@ -523,7 +523,7 @@ After upgrading to a release that shows the **Virtual Machines** screen and the 
    - *default_debian1-urec9f* is the name of the zvol
 
    This command sets the volume properties to match those used by zvols created through the **Virtual Machines** screen, ensuring optimal performance and behavior.
-   Containers VMs used different property settings that may not be ideal for virtual machine workloads.
+   Containers VMs used different property settings that are not optimal for virtual machine workloads.
 
    After completing the commands listed above for each zvol you want to migrate, go to **Datasets** and verify all volumes you migrated show on the screen.
 
