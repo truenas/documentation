@@ -26,19 +26,19 @@
         <tr>
           <td style="padding: 1rem; font-weight: bold;"><strong>Developer</strong></td>
           {{ $dev := $config.table_data.developer }}
-          {{ if $dev.enterprise.link }}
+          {{ if and $dev.enterprise.link (ne $dev.enterprise.version "Not Available") }}
             <td style="padding: 1rem; text-align: center;">
               <a href="{{ $dev.enterprise.link }}">{{ $dev.enterprise.version }}</a>
             </td>
           {{ else }}
-            <td style="padding: 1rem; text-align: center;">{{ $dev.enterprise.version | default "N/A" }}</td>
+            <td style="padding: 1rem; text-align: center; color: #999;">{{ $dev.enterprise.version | default "N/A" }}</td>
           {{ end }}
-          {{ if $dev.community.link }}
+          {{ if and $dev.community.link (ne $dev.community.version "Not Available") }}
             <td style="padding: 1rem; text-align: center;">
               <a href="{{ $dev.community.link }}">{{ $dev.community.version }}</a>
             </td>
           {{ else }}
-            <td style="padding: 1rem; text-align: center;">{{ $dev.community.version | default "N/A" }}</td>
+            <td style="padding: 1rem; text-align: center; color: #999;">{{ $dev.community.version | default "N/A" }}</td>
           {{ end }}
         </tr>
         
@@ -46,19 +46,19 @@
         <tr>
           <td style="padding: 1rem; font-weight: bold;"><strong>Early Adopter</strong></td>
           {{ $ea := $config.table_data.early_adopter }}
-          {{ if $ea.enterprise.link }}
+          {{ if and $ea.enterprise.link (ne $ea.enterprise.version "Not Available") }}
             <td style="padding: 1rem; text-align: center;">
               <a href="{{ $ea.enterprise.link }}">{{ $ea.enterprise.version }}</a>
             </td>
           {{ else }}
-            <td style="padding: 1rem; text-align: center;">{{ $ea.enterprise.version | default "N/A" }}</td>
+            <td style="padding: 1rem; text-align: center; color: #999;">{{ $ea.enterprise.version | default "N/A" }}</td>
           {{ end }}
-          {{ if $ea.community.link }}
+          {{ if and $ea.community.link (ne $ea.community.version "Not Available") }}
             <td style="padding: 1rem; text-align: center;">
               <a href="{{ $ea.community.link }}">{{ $ea.community.version }}</a>
             </td>
           {{ else }}
-            <td style="padding: 1rem; text-align: center;">{{ $ea.community.version | default "N/A" }}</td>
+            <td style="padding: 1rem; text-align: center; color: #999;">{{ $ea.community.version | default "N/A" }}</td>
           {{ end }}
         </tr>
         

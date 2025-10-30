@@ -1,15 +1,15 @@
 table_data:
   developer:
     enterprise:
-      version: Halfmoon Nightly
-      link: https://download.truenas.com/truenas-scale-halfmoon-nightly/
+      version: Not Available
+      link: null
     community:
       version: Halfmoon Nightly
       link: https://download.truenas.com/truenas-scale-halfmoon-nightly/
   early_adopter:
     enterprise:
-      version: 25.10.0
-      link: https://www.truenas.com/docs/scale/25.10/gettingstarted/versionnotes/#25.10.0
+      version: Not Available
+      link: null
     community:
       version: 25.10.0
       link: https://www.truenas.com/docs/scale/25.10/gettingstarted/versionnotes/#25.10.0

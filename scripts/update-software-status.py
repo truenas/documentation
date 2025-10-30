@@ -291,9 +291,15 @@ def main():
                     version_display = version
 
                 # Update both Enterprise and Community data when API data available
+                # Note: Enterprise does not support developer or early_adopter profiles
                 updated_sections = []
 
                 for scale_type in ['community', 'enterprise']:
+                    # Skip Enterprise for developer and early_adopter profiles
+                    if scale_type == 'enterprise' and profile_name in ['developer', 'early_adopter']:
+                        print(f"  - Skipping Enterprise for {profile_name} (not available)")
+                        continue
+
                     if scale_type in config['table_data'].get(profile_name, {}):
                         # Preserve asterisk for Mission Critical Community only
                         update_data = {
