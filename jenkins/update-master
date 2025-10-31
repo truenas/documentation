@@ -18,6 +18,25 @@ pipeline {
             sh 'npx pagefind --site "public" --glob "{api,archive,contributing,core,hardware,references,scale,softwarestatus,solutions,truecommand,truenasupgrades}/**/*.html"'
         }
     }
+    stage('Update Software Status') {
+        steps {
+            sh 'python3 scripts/update-software-status.py'
+            script {
+                // Check if software_status_config.yaml was modified
+                def hasChanges = sh(
+                    script: 'git diff --exit-code data/software_status_config.yaml',
+                    returnStatus: true
+                ) != 0
+
+                if (hasChanges) {
+                    echo "⚠️ SOFTWARE STATUS CHANGES DETECTED - Creating PR"
+                    sh 'bash scripts/create-software-status-pr.sh'
+                } else {
+                    echo "✅ Software status is up to date"
+                }
+            }
+        }
+    }
     stage('Publish') {
         steps {
             sh 'rsync -rvza -e "ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no" --delete --exclude="pdf/" --exclude="PRs/" --exclude="CNAME" --exclude="download/" public/ docs@10.242.64.28:/var/www/html/docs1'

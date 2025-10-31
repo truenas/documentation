@@ -1,0 +1,108 @@
+{{/* layouts/shortcodes/software-status-table.html */}}
+{{/* Load software status configuration */}}
+{{ $config := site.Data.software_status_config }}
+
+<div class="gdoc-columns__content gdoc-markdown--nested">
+  <div class="section-box" style="border-radius: 15px;">
+        
+    <table class="truetable" style="width: 100%; border-collapse: collapse; margin: 0; border-radius: 15px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+      <thead>
+        <tr style="background-color: #0095d5; color: white;">
+          <th style="padding: 1rem; text-align: center; font-weight: bold; border: none; width: 18%;">User Type</th>
+          <th style="padding: 1rem; text-align: center; font-weight: bold; border: none; width: 41%;">
+            <a href="https://www.truenas.com/truenas-enterprise/" style="color: inherit; text-decoration: none;">
+              <img src="/images/truenas-enterprise-logo-logo-white-rgb-900px-w-72ppi.png" alt="TrueNAS Enterprise" style="height: 48px;">
+            </a>
+          </th>
+          <th style="padding: 1rem; text-align: center; font-weight: bold; border: none; width: 41%;">
+            <a href="https://www.truenas.com/truenas-community-edition/" style="color: inherit; text-decoration: none;">
+              <img src="/images/truenas-community-edition-logo-white.png" alt="TrueNAS Community Edition" style="height: 48px;">
+            </a>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        {{/* Developer Row */}}
+        <tr>
+          <td style="padding: 1rem; font-weight: bold;"><strong>Developer</strong></td>
+          {{ $dev := $config.table_data.developer }}
+          {{ if and $dev.enterprise.link (ne $dev.enterprise.version "Not Available") }}
+            <td style="padding: 1rem; text-align: center;">
+              <a href="{{ $dev.enterprise.link }}">{{ $dev.enterprise.version }}</a>
+            </td>
+          {{ else }}
+            <td style="padding: 1rem; text-align: center; color: #999;">{{ $dev.enterprise.version | default "N/A" }}</td>
+          {{ end }}
+          {{ if and $dev.community.link (ne $dev.community.version "Not Available") }}
+            <td style="padding: 1rem; text-align: center;">
+              <a href="{{ $dev.community.link }}">{{ $dev.community.version }}</a>
+            </td>
+          {{ else }}
+            <td style="padding: 1rem; text-align: center; color: #999;">{{ $dev.community.version | default "N/A" }}</td>
+          {{ end }}
+        </tr>
+        
+        {{/* Early Adopter Row */}}
+        <tr>
+          <td style="padding: 1rem; font-weight: bold;"><strong>Early Adopter</strong></td>
+          {{ $ea := $config.table_data.early_adopter }}
+          {{ if and $ea.enterprise.link (ne $ea.enterprise.version "Not Available") }}
+            <td style="padding: 1rem; text-align: center;">
+              <a href="{{ $ea.enterprise.link }}">{{ $ea.enterprise.version }}</a>
+            </td>
+          {{ else }}
+            <td style="padding: 1rem; text-align: center; color: #999;">{{ $ea.enterprise.version | default "N/A" }}</td>
+          {{ end }}
+          {{ if and $ea.community.link (ne $ea.community.version "Not Available") }}
+            <td style="padding: 1rem; text-align: center;">
+              <a href="{{ $ea.community.link }}">{{ $ea.community.version }}</a>
+            </td>
+          {{ else }}
+            <td style="padding: 1rem; text-align: center; color: #999;">{{ $ea.community.version | default "N/A" }}</td>
+          {{ end }}
+        </tr>
+        
+        {{/* General Row */}}
+        <tr>
+          <td style="padding: 1rem; font-weight: bold;"><strong>General</strong></td>
+          {{ $gen := $config.table_data.general }}
+          {{/* Enterprise */}}
+          {{ if $gen.enterprise.link }}
+            <td style="padding: 1rem; text-align: center;">
+              <a href="{{ $gen.enterprise.link }}">{{ $gen.enterprise.version }}</a>{{ $gen.enterprise.note }}
+            </td>
+          {{ else }}
+            <td style="padding: 1rem; text-align: center;">{{ $gen.enterprise.version | default "N/A" }}{{ $gen.enterprise.note }}</td>
+          {{ end }}
+          {{/* Community Scale */}}
+          {{ if $gen.community.link }}
+            <td style="padding: 1rem; text-align: center;">
+              <a href="{{ $gen.community.link }}">{{ $gen.community.version }}</a>{{ $gen.community.note }}
+            </td>
+          {{ else }}
+            <td style="padding: 1rem; text-align: center;">{{ $gen.community.version | default "N/A" }}{{ $gen.community.note }}</td>
+          {{ end }}
+        </tr>
+        
+        {{/* Mission Critical Row */}}
+        <tr>
+          <td style="padding: 1rem; font-weight: bold;"><strong>Mission Critical</strong></td>
+          {{ $mc := $config.table_data.mission_critical }}
+          {{/* Enterprise */}}
+          {{ if $mc.enterprise.link }}
+            <td style="padding: 1rem; text-align: center;">
+              <a href="{{ $mc.enterprise.link }}">{{ $mc.enterprise.version }}</a>{{ $mc.enterprise.note }}
+            </td>
+          {{ else }}
+            <td style="padding: 1rem; text-align: center;">{{ $mc.enterprise.version | default "N/A" }}{{ $mc.enterprise.note }}</td>
+          {{ end }}
+          {{/* Community Scale - Always show Enterprise link */}}
+          <td style="padding: 1rem; text-align: center;">
+            <a href="https://www.truenas.com/truenas-enterprise/">Enterprise</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+</div>
