@@ -1,0 +1,51 @@
+# Lychee link checker configuration
+# Documentation: https://github.com/lycheeverse/lychee#configuration-file
+
+# Maximum number of concurrent network requests
+max_concurrency = 10
+
+# Accept status codes for successful links
+accept = [200, 203, 204, 206, 429]
+
+# Timeout for network requests (in seconds)
+timeout = 20
+
+# Maximum number of retries per link
+max_retries = 3
+
+# User agent to use for requests
+user_agent = "Mozilla/5.0 (compatible; LinkChecker/1.0)"
+
+# Exclude certain URLs from checking (regex patterns)
+exclude = [
+    # Exclude localhost and example domains
+    '^https?://localhost',
+    '^https?://127\.0\.0\.1',
+    '^https?://example\.(com|org|net)',
+
+    # Exclude URLs that require authentication
+    # Add any specific domains that commonly fail here
+
+    # Exclude URLs with placeholders (escape the curly braces for regex)
+    '\{\{.*\}\}',
+    '\{%.*%\}',
+]
+
+# Include only these schemes
+scheme = [ "https", "http" ]
+
+# Exclude certain paths from checking
+exclude_path = [
+    '.git',
+    'node_modules',
+    'themes',
+    'public',
+    'resources',
+]
+
+# Skip link checks for private/internal domains if needed
+# Uncomment and add domains as needed:
+# exclude_all_private = false
+
+# Cache results to speed up repeated checks
+cache = true
