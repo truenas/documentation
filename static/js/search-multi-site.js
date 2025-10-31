@@ -89,7 +89,6 @@ class MultiSiteSearch {
     this.isSearching = false;
     this.hasResults = false; // Track if results are currently displayed
     this.isLoadingMore = false; // Track if more results are being loaded
-    this.selectedApiVersions = []; // Track selected API versions as array (e.g., ['v25.04', 'v26.04'])
     this.activeSites = []; // Will be initialized after DOM is ready
 
     // Detect current docs version from URL
@@ -133,20 +132,11 @@ class MultiSiteSearch {
   async init() {
     console.log('Initializing MultiSiteSearch...');
 
-    // Initialize active sites and API versions from checked checkboxes
+    // Initialize active sites from checked checkboxes
     const checkedBoxes = document.querySelectorAll('.filter-checkbox input[type="checkbox"]:checked');
-    const apiCheckboxes = Array.from(checkedBoxes).filter(cb => cb.dataset.site === 'api');
-    const otherSiteCheckboxes = Array.from(checkedBoxes).filter(cb => cb.dataset.site !== 'api');
-
-    this.selectedApiVersions = apiCheckboxes.map(cb => cb.dataset.version);
-    this.activeSites = otherSiteCheckboxes.map(cb => cb.dataset.site);
-
-    if (this.selectedApiVersions.length > 0) {
-      this.activeSites.push('api');
-    }
+    this.activeSites = Array.from(checkedBoxes).map(cb => cb.dataset.site);
 
     console.log('Initial active sites:', this.activeSites);
-    console.log('Initial API versions:', this.selectedApiVersions);
 
     // Set up event listeners
     const trigger = document.getElementById('search-trigger');
@@ -264,35 +254,15 @@ class MultiSiteSearch {
 
   toggleSiteCheckbox(checkbox) {
     const site = checkbox.dataset.site;
-    const version = checkbox.dataset.version;
 
-    // Collect all checked checkboxes
+    // Update active sites list from all checked checkboxes
     const checkedBoxes = document.querySelectorAll('.filter-checkbox input[type="checkbox"]:checked');
-
-    // Separate API checkboxes from other site checkboxes
-    const apiCheckboxes = Array.from(checkedBoxes).filter(cb => cb.dataset.site === 'api');
-    const otherSiteCheckboxes = Array.from(checkedBoxes).filter(cb => cb.dataset.site !== 'api');
-
-    // Update selected API versions
-    this.selectedApiVersions = apiCheckboxes.map(cb => cb.dataset.version);
-
-    // Update active sites list
-    this.activeSites = otherSiteCheckboxes.map(cb => cb.dataset.site);
-
-    // Add 'api' to active sites if any API version is selected
-    if (this.selectedApiVersions.length > 0) {
-      this.activeSites.push('api');
-    }
+    this.activeSites = Array.from(checkedBoxes).map(cb => cb.dataset.site);
 
     // Ensure at least one site is selected
     if (this.activeSites.length === 0) {
       checkbox.checked = true;
-      if (site === 'api' && version) {
-        this.selectedApiVersions = [version];
-        this.activeSites = ['api'];
-      } else {
-        this.activeSites = [site];
-      }
+      this.activeSites = [site];
     }
 
     // If results are displayed, change search icon to refresh
@@ -301,7 +271,6 @@ class MultiSiteSearch {
     }
 
     console.log('Active sites:', this.activeSites);
-    console.log('Selected API versions:', this.selectedApiVersions);
   }
 
   updateSearchIcon(mode = 'search') {
@@ -425,46 +394,55 @@ class MultiSiteSearch {
 
       console.log(`Total results before filtering: ${this.allResults.length}`);
 
-      // Filter API results by version based on selected checkboxes
-      if (this.activeSites.includes('api') && this.selectedApiVersions.length > 0) {
-        // Normalize selected versions (remove 'v' prefix for comparison)
-        const targetVersions = this.selectedApiVersions.map(v => v.replace(/^v/, ''));
-        console.log(`Filtering API results to versions: ${targetVersions.join(', ')}`);
+      // Filter API results to match selected docs versions
+      if (this.activeSites.includes('api')) {
+        // Extract versions from checked docs checkboxes (e.g., "docs-25.04" -> "25.04")
+        const checkedDocs = Array.from(document.querySelectorAll('.filter-checkbox input[type="checkbox"]:checked'))
+          .filter(cb => cb.dataset.site && cb.dataset.site.startsWith('docs-'))
+          .map(cb => cb.dataset.site.replace('docs-', '')); // ["25.04", "26.04", etc.]
 
-        this.allResults = this.allResults.filter(result => {
-          // Keep non-API results
-          if (result.siteKey !== 'api') {
-            return true;
-          }
+        if (checkedDocs.length > 0) {
+          console.log(`Filtering API results to match docs versions: ${checkedDocs.join(', ')}`);
 
-          // For API results, extract version from metadata or URL
-          let resultVersion = result.meta?.version || result.version;
-
-          // If no metadata version, extract from URL (e.g., /v25.04/)
-          if (!resultVersion && result.url) {
-            const urlMatch = result.url.match(/\/v(\d+\.\d+)\//);
-            if (urlMatch) {
-              resultVersion = urlMatch[1]; // e.g., "25.04"
+          this.allResults = this.allResults.filter(result => {
+            // Keep non-API results
+            if (result.siteKey !== 'api') {
+              return true;
             }
-          }
 
-          if (!resultVersion) {
-            console.log(`API result has no version in metadata or URL, filtering out: ${result.url}`);
-            return false; // Filter out results without version info
-          }
+            // For API results, extract version from metadata or URL
+            let resultVersion = result.meta?.version || result.version;
 
-          // Extract version numbers (e.g., "v25.04" or "25.04")
-          const apiVersion = resultVersion.replace(/^v/, '');
-          const matches = targetVersions.includes(apiVersion);
+            // If no metadata version, extract from URL (e.g., /v25.04/)
+            if (!resultVersion && result.url) {
+              const urlMatch = result.url.match(/\/v(\d+\.\d+)\//);
+              if (urlMatch) {
+                resultVersion = urlMatch[1]; // e.g., "25.04"
+              }
+            }
 
-          if (!matches) {
-            console.log(`Filtering out API result: ${result.url} (${apiVersion} not in [${targetVersions.join(', ')}])`);
-          }
+            if (!resultVersion) {
+              console.log(`API result has no version in metadata or URL, filtering out: ${result.url}`);
+              return false; // Filter out results without version info
+            }
 
-          return matches;
-        });
+            // Extract version numbers (e.g., "v25.04" or "25.04")
+            const apiVersion = resultVersion.replace(/^v/, '');
+            const matches = checkedDocs.includes(apiVersion);
 
-        console.log(`Filtered to ${this.allResults.length} results matching selected API versions`);
+            if (!matches) {
+              console.log(`Filtering out API result: ${result.url} (${apiVersion} not in [${checkedDocs.join(', ')}])`);
+            }
+
+            return matches;
+          });
+
+          console.log(`Filtered to ${this.allResults.length} results matching docs versions`);
+        } else {
+          // No docs versions selected, remove all API results
+          console.log('No docs versions selected, removing all API results');
+          this.allResults = this.allResults.filter(result => result.siteKey !== 'api');
+        }
       }
 
       console.log(`Total results after filtering: ${this.allResults.length}`);
