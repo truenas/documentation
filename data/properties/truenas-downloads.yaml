@@ -219,6 +219,9 @@ majorVersions:
     releaseNotes: "https://www.truenas.com/docs/scale/25.04/gettingstarted/scalereleasenotes/"
     releaseName: "Fangtooth"
     releases:
+      - name: "25.04.2.6"
+        link: "https://download.truenas.com/TrueNAS-SCALE-Fangtooth/25.04.2.6"
+        date: "2025-10-30"
       - name: "25.04.2.5"
         link: "https://download.truenas.com/TrueNAS-SCALE-Fangtooth/25.04.2.5"
         date: "2025-10-21"
