@@ -339,7 +339,7 @@ To ensure it starts automatically, create the <file>startup.nsh</file> file at t
 
 2. At the shell prompt, enter `edit startup.nsh`.
 
-3. In the editor, enter:
+3. In the editor:
 
    a. Enter `FS0:` and press <kbd>Enter</kbd>.
 
