@@ -402,10 +402,13 @@ See [Accessing NAS from VM]({{< ref "ContainerNASBridge" >}}) for more informati
 The storage volumes (zvols) for virtual machines created using the **Instances** option in TrueNAS 25.04.0 or 25.04.1 can migrate to new VMs created in using the **Virtual Machines** screen options in 25.10 and later.
 The process involves:
 
-* Identifying the hidden storage volumes (zvols) associated with the Instance VMs.
-* Renaming (and moving) the zvols to a new dataset where they can be seen and used by a new VM.
-* (Highly Recommended) Configuring zvol properties to match those of natively-created VM zvols.
-* Creating a new VM and selecting the migrated zvol as the storage volume.
+- Identifying the hidden storage volumes (zvols) associated with the Instance VMs.
+- Determining which zvol contains the actual VM data by checking the volume size.
+- Renaming (and moving) the zvols to a new dataset where they can be seen and used by a new VM.
+- (Highly Recommended) Configuring zvol properties to match those of natively-created VM zvols.
+- Creating a new VM and selecting the migrated zvol as the storage volume.
+
+### Before You Begin
 
 Before beginning the process:
 
@@ -472,6 +475,20 @@ While in a 25.04.01 or a later maintenance release:
 
    Enter the following commands at the Linux system prompt:
 
+   {{< hint type=important >}}
+   Storage conventions differ based on VM history:
+   - **Migrated VMs** (from pre-Incus TrueNAS) use `custom/default_*` zvols for actual VM data
+   - **VMs created in 25.04.0 or 25.04.1** use `.block` zvols for actual VM data
+   - Small `.block` files (56K) are stubs and should not be migrated
+   {{< /hint >}}
+
+   {{< hint type=important >}}
+   Storage conventions differ based on VM history:
+   - **Migrated VMs** (from pre-Incus TrueNAS) use `custom/default_*` zvols for actual VM data
+   - **VMs created in 25.04.0 or 25.04.1** use `.block` zvols for actual VM data
+   - Small `.block` files (56K) are stubs and should not be migrated
+   {{< /hint >}}
+
    a. Locate the hidden zvols for the Instance VMs by entering:
 
    <code>sudo zfs list -t volume -r -d 10 <i>poolname</i></code>
@@ -481,42 +498,63 @@ While in a 25.04.01 or a later maintenance release:
    * *poolname* is the name of the pool associated with the Instance VMs.
      If you have multiple pools associated with the Instance VMs, repeat this command with the name of that pool to show hidden zvols in that pool.
 
-   The **.ix-virt** directory contains the zvols used in Instance VMs. Ignore the entries with the **.block** extension.
+   The **.ix-virt** directory contains the zvols used in Instance VMs. Check the **USED** or **REFER** columns to identify the actual VM storage:
+   - **For migrated VMs**: Use the `custom/default_*` zvol (typically several GB or more)
+   - **For VMs created in 25.04.0 or 25.04.1**: Use the `.block` zvol that shows significant storage usage (not 56K stubs)
+   - **Ignore**: Stub `.block` files showing only 56K, and zvols not in the `.ix-virt` directory
+
    The output includes other zvols in the pool if your system has non-instance VMs configured in the pool name entered in the command.
 
    {{< expand "Example Command Output" "v" >}}
 
+   **Example showing migrated VMs (custom/ zvols with actual data):**
    ```
    re-minir-102% sudo zfs list -t volume -r tank
-   NAME                                                               USED  AVAIL  REFER  MOUNTPOINT  
-   tank/.ix-virt/custom/default_vm2410linux-8cppg_vm2410linuxclone1     0B  1.66T    56K  -
-   tank/.ix-virt/custom/default_vm2410win-mvqznj_vm2410winclone1        0B  1.66T    56K  -
-   tank/.ix-virt/custom/default_vm2410win-mvqznj_vm2410winclone2        0B  1.66T    56K  -
-   tank/.ix-virt/virtual-machines/vm25041linux.block                   56K  1.66T    56K  -
-   tank/.ix-virt/virtual-machines/vm25041linuxclone.block              56K  1.66T    56K  -
-   tank/.ix-virt/virtual-machines/vm25041win.block                     56K  1.66T    56K  -
-   tank/.ix-virt/virtual-machines/vm25041winclone.block                56K  1.66T    56K  -
-   tank/default_vm2410linux-8cppg_vm2410linuxclone2                     0B  1.66T    56K  -
-   tank/vms/vm2410linux-8cppg                                        40.6G  1.70T    56K  -
-   tank/vms/vm2410linux-8cppg_vm2410linuxclone2                         0B  1.66T    56K  - 
-   tank/vms/vm2410win-mvqznj                                         40.6G  1.70T    56K  -
-   tank/vms/vm2410win-mvqznj_vm2410winclone2                            0B  1.66T    56K  -
+   NAME                                                               USED  AVAIL  REFER  MOUNTPOINT
+   tank/.ix-virt/custom/default_vm2410linux-8cppg                   40.6G  1.66T  40.6G  -  ← Migrate this (actual data)
+   tank/.ix-virt/custom/default_vm2410win-mvqznj                    40.2G  1.66T  40.2G  -  ← Migrate this (actual data)
+   tank/.ix-virt/virtual-machines/vm2410linux.block                   56K  1.66T    56K  -  ← Stub (ignore)
+   tank/.ix-virt/virtual-machines/vm2410win.block                     56K  1.66T    56K  -  ← Stub (ignore)
+   tank/vms/previously-migrated                                     35.1G  1.70T  35.1G  -
    ```
 
-   The zvols in the command output above with `tank/.ix-virt/custom` in the path are the zvols to migrate if these are associated with the VM you want to migrate to new VMs in the 25.10.0 or later release.
+   **Example showing VMs created in 25.04.0/25.04.1 (.block zvols with actual data):**
+   ```
+   qe-realmini% sudo zfs list -t volume -r tank
+   NAME                                                              USED  AVAIL  REFER  MOUNTPOINT
+   tank/.ix-virt/virtual-machines/TrueNAS.block                     6.98G  2.55T  6.98G  -  ← Migrate this (actual data)
+   tank/.ix-virt/virtual-machines/fdsa.block                        25.9M  2.55T   248M  -  ← Migrate this (actual data)
+   tank/.ix-virt/virtual-machines/debian.block                        56K  2.55T    56K  -  ← Stub (ignore)
+   tank/.ix-virt/virtual-machines/mint.block                          56K  2.55T    56K  -  ← Stub (ignore)
+   ```
+
+   In the examples above:
+   - Zvols with `custom/default_*` in the path showing significant storage (40+GB) are migrated VMs to migrate
+   - Zvols with `.block` extension showing significant storage (6.98G, 25.9M) are native Incus VMs to migrate
+   - Small `.block` files at 56K are stubs and should be ignored
    {{< /expand >}}
 
-   b. Rename (and move) each volume in the **.ix-virt** directory to a new location where you can select it when configuring a new VM.
-   Repeat for each volume you want to migrate to a new VM. Do not rename or move the .block volumes.
-   Enter the following command:
+   {{< hint type=note >}}
+   After successfully migrating and confirming functionality of all VMs, the remaining stub `.block` files (56K) in `.ix-virt/virtual-machines/` can optionally be deleted to clean up the hidden dataset.
+   {{< /hint >}}
 
-   <code>sudo zfs rename <i>tank</i>/.ix-virt/custom/<i>default_vm2410linux-icppg_vm2410linuxclone1</i> <i>tank/vms/default_vm2410linux-icppg_vm2410linuxclone1</i></code>
+   b. Rename (and move) each volume in the **.ix-virt** directory to a new location where you can select it when configuring a new VM.
+   Repeat for each volume you want to migrate to a new VM. Do not rename or move stub `.block` files (56K).
+
+   **For migrated VMs (custom/ zvols):**
+
+   <code>sudo zfs rename <i>tank</i>/.ix-virt/custom/<i>default_debian1-urec9f</i> <i>tank/vms/default_debian1-urec9f</i></code>
+
+   **For VMs created in 25.04.0 or 25.04.1 (.block zvols with actual data):**
+
+   <code>sudo zfs rename <i>tank</i>/.ix-virt/virtual-machines/<i>TrueNAS.block</i> <i>tank/vms/TrueNAS.block</i></code>
 
    Where:
-   * *tank* is the pool name in the example.
-   * *default_vm2410linux-icppg_vm2410linuxclone1</i>* is the name of a hidden zvol in the example, and the name given to the migrated zvol.
+   - *tank* is the pool name in the examples.
+   - *default_debian1-urec9f* or *TrueNAS.block* is the name of a hidden zvol in the examples, and the name given to the migrated zvol.
      We do not recommend renaming the migrated zvol to minimize potential issues with the migration process.
-   * *vms* is the dataset in the example as the location to store the migrated zvols for VMs. Change this to the location on your system.
+     For `.block` zvols, you can keep or remove the `.block` extension in the target name.
+   - *vms* is the dataset in the examples as the location to store the migrated zvols for VMs. Change this to the location on your system.
 
    This renames and moves it to the specified location, and returns to the system Linux prompt.
    To verify the zvol moved, enter the <code>sudo zfs list -t volume -r <i>tank</i></code> command again. The output should show the zvol in the new location.
@@ -524,12 +562,18 @@ While in a 25.04.01 or a later maintenance release:
    c. (Highly Recommended) Set zvol properties to match those of natively-created VM zvols.
    Enter the following command for each zvol you migrated:
 
+   **For migrated VMs (custom/ zvols):**
+
    <code>sudo zfs set volmode=default primarycache=all secondarycache=all <i>tank/vms/default_debian1-urec9f</i></code>
 
+   **For VMs created in 25.04.0 or 25.04.1 (.block zvols):**
+
+   <code>sudo zfs set volmode=default primarycache=all secondarycache=all <i>tank/vms/TrueNAS.block</i></code>
+
    Where:
-   * *tank* is the pool name.
-   * *vms* is the dataset where the zvol is stored.
-   * *default_vm2410linux-icppg_vm2410linuxclone1* is the name of the zvol
+   - *tank* is the pool name.
+   - *vms* is the dataset where the zvol is stored.
+   - *default_debian1-urec9f* or *TrueNAS.block* is the name of the zvol
 
    This command sets the volume properties to match those used by zvols created through the **Virtual Machines** screen, ensuring optimal performance and behavior.
    Containers VMs use different property settings that are not optimal for virtual machine workloads.
