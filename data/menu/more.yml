@@ -8,7 +8,7 @@ more:
   - name: TrueNAS Connect
     ref: "https://connect.truenas.com/"
     external: true
-    icon: "gdoc_arrow_right_alt"
+    icon: ""
   - name: TrueNAS API Docs
     ref: "https://api.truenas.com/"
     external: true
