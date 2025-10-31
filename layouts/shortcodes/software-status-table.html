@@ -96,14 +96,10 @@
           {{ else }}
             <td style="padding: 1rem; text-align: center;">{{ $mc.enterprise.version | default "N/A" }}{{ $mc.enterprise.note }}</td>
           {{ end }}
-          {{/* Community Scale */}}
-          {{ if $mc.community.link }}
-            <td style="padding: 1rem; text-align: center;">
-              <a href="{{ $mc.community.link }}">{{ $mc.community.version }}</a>{{ $mc.community.note | safeHTML }}
-            </td>
-          {{ else }}
-            <td style="padding: 1rem; text-align: center;">{{ $mc.community.version | default "N/A" }}{{ $mc.community.note | safeHTML }}</td>
-          {{ end }}
+          {{/* Community Scale - Always show Enterprise link */}}
+          <td style="padding: 1rem; text-align: center;">
+            <a href="https://www.truenas.com/truenas-enterprise/">Enterprise</a>
+          </td>
         </tr>
       </tbody>
     </table>

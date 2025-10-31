@@ -37,15 +37,15 @@ Choose the right TrueNAS version by balancing your need for new features against
 
 {{< software-status-table >}}
 
-<small>\* TrueNAS Community users with Mission Critical stability needs should consider [TrueNAS Enterprise](https://truenas.com/truenas-enterprise/) appliances for unmatched data protection, performance, and around-the-clock support.</small>
-
-<div style="display: flex; align-items: center; gap: 2rem; padding: 1rem; border: 1px solid var(--accent-color); border-radius: 8px; background-color: var(--accent-color-lite);">
-  <div style="flex-shrink: 0;">
-    <img src="/images/open-enterprise-storage--logo-full-color-rgb-large.png" alt="TrueNAS Enterprise" style="max-width: 150px; height: auto;">
-  </div>
-  <div style="flex-grow: 1;">
-    In all cases for systems with a TrueNAS Enterprise support contract, we recommend <a href="https://www.truenas.com/support/">contacting the TrueNAS Support team</a> prior to updating your TrueNAS appliance.
-    Our Support team can provide advice based on your unique requirements and be there to help you resolve any unexpected issues.
+<div style="margin-top: 1.5rem; margin-bottom: 1.5rem;">
+  <div style="display: flex; align-items: center; gap: 2rem; padding: 1rem; border: 1px solid var(--accent-color); border-radius: 8px; background-color: var(--accent-color-lite);">
+    <div style="flex-shrink: 0;">
+      <img src="/images/open-enterprise-storage--logo-full-color-rgb-large.png" alt="TrueNAS Enterprise" style="max-width: 150px; height: auto;">
+    </div>
+    <div style="flex-grow: 1;">
+      In all cases for systems with a TrueNAS Enterprise support contract, we recommend <a href="https://www.truenas.com/support/">contacting the TrueNAS Support team</a> prior to updating your TrueNAS appliance.
+      Our Support team can provide advice based on your unique requirements and be there to help you resolve any unexpected issues.
+    </div>
   </div>
 </div>
 

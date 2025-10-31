@@ -292,6 +292,7 @@ def main():
 
                 # Update both Enterprise and Community data when API data available
                 # Note: Enterprise does not support developer or early_adopter profiles
+                # Note: Community does not support mission_critical profile (shows Enterprise link instead)
                 updated_sections = []
 
                 for scale_type in ['community', 'enterprise']:
@@ -300,26 +301,22 @@ def main():
                         print(f"  - Skipping Enterprise for {profile_name} (not available)")
                         continue
 
+                    # Skip Community for mission_critical profile (shows Enterprise link in template)
+                    if scale_type == 'community' and profile_name == 'mission_critical':
+                        print(f"  - Skipping Community for {profile_name} (shows Enterprise link)")
+                        continue
+
                     if scale_type in config['table_data'].get(profile_name, {}):
-                        # Preserve asterisk for Mission Critical Community only
                         update_data = {
                             'version': version_display,
                             'link': doc_link
                         }
 
-                        if profile_name == 'mission_critical' and scale_type == 'community':
-                            # Keep the asterisk for Mission Critical Community to maintain Enterprise upsell
-                            update_data['note'] = '*'
-
                         config['table_data'][profile_name][scale_type] = update_data
                         updated_sections.append(scale_type)
 
                 if updated_sections:
-                    if profile_name == 'mission_critical' and 'community' in updated_sections:
-                        print(f"  ✓ Updated: {version_display} (preserving * for Enterprise upsell)")
-                    else:
-                        print(f"  ✓ Updated: {version_display}")
-
+                    print(f"  ✓ Updated: {version_display}")
                     updates_made.append(f"{profile_name}: {version_display} (from {train})")
                     print(f"    Train: {train}")
                     print(f"    Link: {doc_link}")

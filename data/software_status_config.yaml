@@ -25,9 +25,8 @@ table_data:
       version: 25.04.2.5
       link: https://www.truenas.com/docs/scale/25.04/gettingstarted/scalereleasenotes/#250425
     community:
-      version: 25.04.2.5
-      link: https://www.truenas.com/docs/scale/25.04/gettingstarted/scalereleasenotes/#250425
-      note: '*'
+      version: Not Available
+      link: null
 api_config:
   base_url: https://update.sys.truenas.net/scale/
   trains_file: trains_v2.json
