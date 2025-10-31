@@ -1,6 +1,7 @@
 User-agent: *
 Disallow: /tags/*
 Disallow: /docs/search/
+Disallow: /pagefind/
 Disallow: /book/*
 Disallow: /archive/*
 Disallow: /volume/*

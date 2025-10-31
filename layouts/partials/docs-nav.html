@@ -3,7 +3,6 @@
     <div class="docsnav">
       <span class="docshome"><a href="https://www.truenas.com/docs/">Documentation Hub</a></span>
       <div class="truenas-menubar" style="float:right;">
-        <span id="docsnav-intro">Product and Version: </span>
         <div class="truenas-docsnav-menuitem" id="products" onmouseover="showProductOptions()" onmouseout="hideProductOptions()">
           <button class="truenas-docsnav-menubutton" id="productButton" data-product-id="">Product <i class="fa fa-angle-down"></i></button>
           <div class="truenas-navmenudropdown" id="productDropdown">
@@ -20,7 +19,24 @@
             <!-- Version dropdown options dynamically load -->
           </div>
         </div>
-        <!-- Placeholder for Docs Search element to drop in here -->
+        <!-- Search Buttons (Split Design) -->
+        <div class="docsnav-search-container">
+          <button id="search-trigger" class="docsnav-search-btn docsnav-search-left" aria-label="Keyword Search" title="Keyword Search">
+            <i class="fa fa-search"></i>
+            <span>Keyword Search</span>
+          </button>
+          <button id="chatbot-open-button" class="docsnav-search-btn docsnav-search-right" aria-label="Conversational Search" title="Conversational Search">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <!-- Chat bubble -->
+              <path d="M20 2H4C2.9 2 2 2.9 2 4V16C2 17.1 2.9 18 4 18H7L12 22L17 18H20C21.1 18 22 17.1 22 16V4C22 2.9 21.1 2 20 2Z" stroke="currentColor" stroke-width="2" fill="none"/>
+              <!-- Three dots inside (typing indicator) -->
+              <circle cx="8" cy="10" r="1.5" fill="currentColor"/>
+              <circle cx="12" cy="10" r="1.5" fill="currentColor"/>
+              <circle cx="16" cy="10" r="1.5" fill="currentColor"/>
+            </svg>
+            <span>AI Search</span>
+          </button>
+        </div>
         <!-- disable placeholder translate element for future work <div id="google_translate_element"></div> -->
         <span id="gdoc-color-theme" style="display:flex;align-items:center;justify-content:center;">
           <svg class="gdoc-icon gdoc_brightness_dark" style="width:30px;height:30px;">
