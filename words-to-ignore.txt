@@ -2318,3 +2318,6 @@ Netlogon
 ENOENT
 incus
 hostnqn
+InstanceWarning
+VirtualMachines
+virtualmachines

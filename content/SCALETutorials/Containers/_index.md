@@ -18,6 +18,8 @@ keywords:
 
 {{< include file="/static/includes/25.04Virtualization.md" >}}
 
+{{< include file="/static/includes/InstanceWarning.md" >}}
+
 **Containers** allow users to configure linux containers in TrueNAS.
 
 *Linux containers*, powered by LXC, offer a lightweight, isolated environment that shares the host system kernel while maintaining its own file system, processes, and network settings.

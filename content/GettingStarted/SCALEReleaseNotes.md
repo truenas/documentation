@@ -196,8 +196,11 @@ TrueNAS 25.04.2 is not recommended for TrueNAS Enterprise customers with High Av
 
   Virtual machines automatically migrate from TrueNAS 24.10 to 25.04.2.
   No manual migration of virtual machines is required.
-* Adds the ability to enter optional custom endpoints in cloud sync credentials that support **Global** and **Select** tiers in Storj ([NAS-133835](https://ixsystems.atlassian.net/browse/NAS-133835)).
+
+* Virtual machines created in 25.04 (pre-25.04.2) and displayed on the **Containers** screen do not automatically start on system boot to prevent conflicts with VMs on the **Virtual Machines** screen that might use the same zvols ([NAS-136946](https://ixsystems.atlassian.net/browse/NAS-136946)).
+* Virtual machines created in 25.04.0 or 25.04.1 using the **Instances** (now **Containers**) screen can be migrated to conventional VMs in 25.10 and later using the process described in the [**Migrating Containers VMs**]({{< ref "/scaletutorials/virtualmachines/#migrating-containers-vms" >}}) tutorial.
 * Adds a Secure Boot checkbox to the **Add Virtual Machine** wizard and **Edit Virtual Machine** form ([NAS-136466](https://ixsystems.atlassian.net/browse/NAS-136466)).
+* Adds the ability to enter optional custom endpoints in cloud sync credentials that support **Global** and **Select** tiers in Storj ([NAS-133835](https://ixsystems.atlassian.net/browse/NAS-133835)).
 * Passes the Storj/iX cloud sync credential access key and secret access key in the UI when creating the credential ([NAS-135837](https://ixsystems.atlassian.net/browse/NAS-135837)).
 * Removes the **Mega** cloud service provider for rclone.
   Mega Technical Support states they no longer support rclone due to bugs in their implementation and requirements to properly troubleshoot issues ([NAS-135844](https://ixsystems.atlassian.net/browse/NAS-135844)).
