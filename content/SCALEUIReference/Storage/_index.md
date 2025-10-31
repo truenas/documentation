@@ -300,9 +300,9 @@ The disk health details include:
 
 TrueNAS complies with SAS/SATA specifications and reports temperatures in Celsius. TrueNAS converts Kelvin to Celsius
 
-**View Disks** opens the **Storage > [Disk]({{< ref "DisksScreen" >}})** screen.
+**View Disks** opens the **Storage > [Disks]({{< ref "DisksScreen" >}})** screen.
 
-**View Reports** opens the **Report** screen for the disks in the selected pool.
+**View Disk Reports** opens the **[Reporting > Disk]({{< ref "/SCALEUIReference/ReportingScreensSCALE.md#disk-graphs" >}})** screen for the disks in the selected pool.
 
 ## Upgrade Dialog
 

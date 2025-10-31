@@ -1,16 +1,20 @@
 #available icons: https://github.com/thegeeklab/hugo-geekdoc/tree/master/src/icons
 ---
 more:
-  - name: TrueNAS API Docs
-    ref: "https://api.truenas.com/"
-    external: true
-    icon: "api-icon"
   - name: TrueNAS Apps
     ref: "https://apps.truenas.com/"
     external: true
     icon: "icon-dots-grid"
+  - name: TrueNAS Connect
+    ref: "https://connect.truenas.com/"
+    external: true
+    icon: ""
+  - name: TrueNAS API Docs
+    ref: "https://api.truenas.com/"
+    external: true
+    icon: "api-icon"
   - name: Security Reports
-    ref: "https://security.truenas.com"
+    ref: "https://security.truenas.com/"
     external: true
     icon: "gdoc_shield"
   - name: Documentation Archive

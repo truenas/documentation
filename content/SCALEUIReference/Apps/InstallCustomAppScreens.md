@@ -92,7 +92,7 @@ Check the documentation for the application you want to install for required ent
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Privileged** | Select to run the container in privileged mode. <br> By default, a container cannot access any devices on the host. With **Privileged** enabled, the container has access to all devices on the host, which allows the container nearly all the same access as processes running on the host. Be cautious if enabling privileged mode. A more secure solution is to use **Capabilities** to grant limited access to system processes as needed. |
+| **Privileged** | Select to run the container in privileged mode. <br> Note that privileged mode grants the container nearly unrestricted access to the host system, providing full administrative access to the entire TrueNAS server. This includes access to privileged credentials, encryption keys, and all data. By default, containers cannot access host devices. With **Privileged** enabled, the container gains access to all host devices and system capabilities. Only enable privileged mode when absolutely necessary and when you fully trust the container source. A more secure solution is to use **Capabilities** below to grant specific, limited permissions as needed. |
 | **Capabilities** | Click **Add** to display a container capability field. Enter a [Linux capability](https://man7.org/linux/man-pages/man7/capabilities.7.html) to enable, for example, enter `CHOWN`. Click **Add** again to enter another capability. |
 | **Custom User** | Select to display the **User ID** and **Group ID** fields. |
 | **User ID** | Displays when **Custom User** is selected. Enter the numeric UID of the user that runs the container. Defaults to **568** (apps). |
