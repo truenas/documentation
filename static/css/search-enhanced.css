@@ -286,17 +286,6 @@
   background: #555;
 }
 
-/* Results Count */
-.results-count {
-  margin-bottom: 1rem;
-  padding: 0.5rem 1rem;
-  background: #f0f8ff;
-  border-left: 4px solid #0095d5;
-  color: var(--body-font-color, #333);
-  font-weight: 600;
-  border-radius: 4px;
-}
-
 /* Individual Search Result */
 .search-result-item {
   margin-bottom: 1.5rem;
@@ -562,11 +551,6 @@
     background: #333;
   }
 
-  .results-count {
-    background: #1e3a4a;
-    color: #e0e0e0;
-  }
-
   .search-result-item {
     border-color: #333;
   }
@@ -576,36 +560,19 @@
     color: #76c7c0;
   }
 
-  .api-filter-dropdown {
-    background-color: var(--body-background, #2a2a2a);
-    border-color: #444;
+  .filter-group {
+    border-color: #0095d5;
+  }
+
+  .filter-group-label {
+    background: var(--body-background, #1a1a1a);
+    color: #0095d5;
+  }
+
+  .search-results-count {
+    background: var(--body-background, #1a1a1a);
+    border-bottom-color: #333;
     color: var(--body-font-color, #e0e0e0);
-    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23e0e0e0' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
-    background-repeat: no-repeat;
-    background-position: right 0.5rem center;
-    background-size: 1rem;
-  }
-
-  .api-filter-dropdown:hover {
-    background-color: #333;
-  }
-
-  .api-filter-dropdown.active {
-    background-color: #0095d5;
-    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
-    background-repeat: no-repeat;
-    background-position: right 0.5rem center;
-    background-size: 1rem;
-    color: white;
-  }
-
-  .api-filter-dropdown option {
-    background: var(--body-background, #2a2a2a);
-    color: var(--body-font-color, #e0e0e0);
-  }
-
-  .api-filter-dropdown option[value="off"] {
-    border-top: 1px solid #444;
   }
 }
 
@@ -626,63 +593,91 @@
   border: 1px solid #a5d6a7;
 }
 
-/* API Filter Dropdown - styled to look like a button */
-.api-filter-dropdown {
-  padding: 0.5rem 1rem;
-  background-color: var(--body-background, #fff);
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  color: var(--body-font-color, #666);
-  font-size: 0.875rem;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  font-weight: 500;
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
-  background-repeat: no-repeat;
-  background-position: right 0.5rem center;
-  background-size: 1rem;
-  padding-right: 2rem;
-}
 
-/* Active state - looks like an active button */
-.api-filter-dropdown.active {
-  background-color: #0095d5;
-  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
-  background-repeat: no-repeat;
-  background-position: right 0.5rem center;
-  background-size: 1rem;
-  color: white;
-  border-color: #0095d5;
-}
+/* ===================================
+   Compact Checkbox Filter Styles
+   =================================== */
 
-.api-filter-dropdown:hover {
-  background-color: rgba(0, 149, 213, 0.1);
-  border-color: #007ab8;
-}
-
-.api-filter-dropdown.active:hover {
-  background-color: #007ab8;
-  border-color: #007ab8;
-}
-
-.api-filter-dropdown:focus {
-  outline: 2px solid #0095d5;
-  outline-offset: 2px;
-}
-
-.api-filter-dropdown option {
+.search-filters {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1.5rem;
+  border-bottom: 1px solid var(--border-color, #ddd);
   background: var(--body-background, #fff);
-  color: var(--body-font-color, #333);
-  padding: 0.5rem;
-  font-weight: normal;
+  flex-wrap: wrap;
 }
 
-/* Separator option styling */
-.api-filter-dropdown option[value="off"] {
-  border-top: 1px solid #ddd;
-  font-style: italic;
-  color: #999;
+.search-results-count {
+  padding: 0.75rem 1.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--body-font-color, #666);
+  background: var(--body-background, #fff);
+  border-bottom: 1px solid var(--border-color, #ddd);
 }
+
+.filter-header {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--body-font-color, #666);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+.filter-checkboxes {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.filter-group {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: 0.35rem 0.65rem;
+  padding: 0.75rem 0.65rem 0.5rem 0.65rem;
+  border: 2px solid #0095d5;
+  border-radius: 4px;
+}
+
+.filter-group-label {
+  position: absolute;
+  top: -0.5rem;
+  left: 0.5rem;
+  background: var(--body-background, #fff);
+  padding: 0 0.25rem;
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: #0095d5;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.filter-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  cursor: pointer;
+  font-size: 0.875rem;
+  user-select: none;
+  white-space: nowrap;
+}
+
+.filter-checkbox input[type="checkbox"] {
+  cursor: pointer;
+  width: 16px;
+  height: 16px;
+  margin: 0;
+}
+
+.filter-checkbox span {
+  color: var(--body-font-color, #333);
+}
+
+.filter-checkbox:hover span {
+  color: #0095d5;
+}
+

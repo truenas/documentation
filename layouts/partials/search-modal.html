@@ -18,38 +18,61 @@
     </div>
 
     <div class="search-filters">
-      <div class="site-filter-buttons">
-        <!-- TrueNAS Major Versions Group -->
-        <div class="filter-section">
-          <div class="filter-section-label">TrueNAS Version</div>
-          <div class="filter-section-buttons">
-            <button class="site-filter" data-site="docs-26.04">26.04</button>
-            <button class="site-filter" data-site="docs-25.10">25.10</button>
-            <button class="site-filter active" data-site="docs-25.04">25.04</button>
-            <button class="site-filter" data-site="docs-24.10">24.10</button>
-          </div>
+      <div class="filter-header">Show Results From:</div>
+      <div class="filter-checkboxes">
+        <div class="filter-group">
+          <span class="filter-group-label">Docs</span>
+          <label class="filter-checkbox">
+            <input type="checkbox" data-site="docs-26.04">
+            <span>26.04</span>
+          </label>
+          <label class="filter-checkbox">
+            <input type="checkbox" data-site="docs-25.10">
+            <span>25.10</span>
+          </label>
+          <label class="filter-checkbox">
+            <input type="checkbox" data-site="docs-25.04" checked>
+            <span>25.04</span>
+          </label>
+          <label class="filter-checkbox">
+            <input type="checkbox" data-site="docs-24.10">
+            <span>24.10</span>
+          </label>
         </div>
-
-        <!-- Other Sites -->
-        <div class="filter-section">
-          <div class="filter-section-label">Other Content</div>
-          <div class="filter-section-buttons">
-            <button class="site-filter active" data-site="apps">Apps</button>
-            <select id="api-version-filter" class="api-filter-dropdown active">
-              <option value="auto">API: Match docs version</option>
-              <option value="v26.04">API: v26.04</option>
-              <option value="v25.10">API: v25.10</option>
-              <option value="v25.04">API: v25.04</option>
-              <option value="v24.10">API: v24.10</option>
-              <option value="all">API: All versions</option>
-              <option value="off">── Don't search API ──</option>
-            </select>
-            <button class="site-filter active" data-site="security">Security</button>
-            <button class="site-filter active" data-site="connect">TrueNAS Connect</button>
-          </div>
+        <div class="filter-group">
+          <span class="filter-group-label">API</span>
+          <label class="filter-checkbox">
+            <input type="checkbox" data-site="api" data-version="v26.04">
+            <span>26.04</span>
+          </label>
+          <label class="filter-checkbox">
+            <input type="checkbox" data-site="api" data-version="v25.10">
+            <span>25.10</span>
+          </label>
+          <label class="filter-checkbox">
+            <input type="checkbox" data-site="api" data-version="v25.04" checked>
+            <span>25.04</span>
+          </label>
+          <label class="filter-checkbox">
+            <input type="checkbox" data-site="api" data-version="v24.10">
+            <span>24.10</span>
+          </label>
         </div>
+        <label class="filter-checkbox">
+          <input type="checkbox" data-site="apps" checked>
+          <span>Apps</span>
+        </label>
+        <label class="filter-checkbox">
+          <input type="checkbox" data-site="security" checked>
+          <span>Security</span>
+        </label>
+        <label class="filter-checkbox">
+          <input type="checkbox" data-site="connect" checked>
+          <span>Connect</span>
+        </label>
       </div>
     </div>
+    <div id="search-results-count" class="search-results-count" style="display:none;"></div>
     <div id="search-results-enhanced" class="search-results"></div>
     <div id="search-loading" class="search-loading" style="display:none;">
       <div class="loading-spinner"></div>
