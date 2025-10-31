@@ -20,24 +20,29 @@
     <div class="search-filters">
       <div class="filter-header">Show Results From:</div>
       <div class="filter-checkboxes">
-        <div class="filter-group">
-          <span class="filter-group-label">Docs</span>
-          <label class="filter-checkbox">
-            <input type="checkbox" data-site="docs-26.04">
-            <span>26.04</span>
+        <div class="docs-filter-container" id="docs-filter-container">
+          <label class="filter-checkbox docs-filter-label">
+            <input type="checkbox" id="docs-main-toggle" checked>
+            <span id="docs-label-text">Docs (25.04)</span>
           </label>
-          <label class="filter-checkbox">
-            <input type="checkbox" data-site="docs-25.10">
-            <span>25.10</span>
-          </label>
-          <label class="filter-checkbox">
-            <input type="checkbox" data-site="docs-25.04" checked>
-            <span>25.04</span>
-          </label>
-          <label class="filter-checkbox">
-            <input type="checkbox" data-site="docs-24.10">
-            <span>24.10</span>
-          </label>
+          <div class="docs-version-menu" id="docs-version-menu">
+            <label class="docs-version-option">
+              <input type="checkbox" data-site="docs-26.04">
+              <span>26.04</span>
+            </label>
+            <label class="docs-version-option">
+              <input type="checkbox" data-site="docs-25.10">
+              <span>25.10</span>
+            </label>
+            <label class="docs-version-option">
+              <input type="checkbox" data-site="docs-25.04" checked>
+              <span>25.04</span>
+            </label>
+            <label class="docs-version-option">
+              <input type="checkbox" data-site="docs-24.10">
+              <span>24.10</span>
+            </label>
+          </div>
         </div>
         <label class="filter-checkbox">
           <input type="checkbox" data-site="api" checked>
@@ -53,7 +58,7 @@
         </label>
         <label class="filter-checkbox">
           <input type="checkbox" data-site="connect" checked>
-          <span>Connect</span>
+          <span>TrueNAS Connect</span>
         </label>
       </div>
     </div>

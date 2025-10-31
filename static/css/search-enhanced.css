@@ -71,7 +71,7 @@
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
   display: flex;
   flex-direction: column;
-  overflow: hidden;
+  overflow: visible;
   animation: slideDown 0.3s ease-out;
 }
 
@@ -94,6 +94,7 @@
   padding: 1.25rem 1.5rem;
   border-bottom: 1px solid var(--border-color, #ddd);
   background: var(--body-background, #fff);
+  flex-shrink: 0;
 }
 
 .search-header h3 {
@@ -135,6 +136,7 @@
   padding: 1rem 1.5rem;
   border-bottom: 1px solid var(--border-color, #ddd);
   background: var(--body-background, #fff);
+  flex-shrink: 0;
 }
 
 #search-input-enhanced {
@@ -574,6 +576,24 @@
     border-bottom-color: #333;
     color: var(--body-font-color, #e0e0e0);
   }
+
+  .docs-filter-label:hover {
+    background: rgba(0, 149, 213, 0.15);
+  }
+
+  .docs-version-menu {
+    background: var(--body-background, #1a1a1a);
+    border-color: #0095d5;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  }
+
+  .docs-version-option:hover {
+    background: rgba(0, 149, 213, 0.2);
+  }
+
+  .docs-version-option span {
+    color: var(--body-font-color, #e0e0e0);
+  }
 }
 
 /* ===================================
@@ -600,12 +620,16 @@
 
 .search-filters {
   display: flex;
-  align-items: center;
+  align-items: baseline;
   gap: 0.75rem;
   padding: 0.75rem 1.5rem;
   border-bottom: 1px solid var(--border-color, #ddd);
   background: var(--body-background, #fff);
   flex-wrap: wrap;
+  overflow: visible;
+  position: relative;
+  z-index: 10;
+  flex-shrink: 0;
 }
 
 .search-results-count {
@@ -615,22 +639,24 @@
   color: var(--body-font-color, #666);
   background: var(--body-background, #fff);
   border-bottom: 1px solid var(--border-color, #ddd);
+  flex-shrink: 0;
 }
 
 .filter-header {
-  font-size: 0.75rem;
-  font-weight: 600;
+  font-size: 0.875rem;
+  font-weight: 500;
   color: var(--body-font-color, #666);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
   white-space: nowrap;
+  display: flex;
+  align-items: center;
+  min-height: 32px;
 }
 
 .filter-checkboxes {
   display: flex;
-  align-items: center;
   gap: 0.75rem;
   flex-wrap: wrap;
+  min-height: 32px;
 }
 
 .filter-group {
@@ -656,7 +682,57 @@
   letter-spacing: 0.05em;
 }
 
-.filter-checkbox {
+.docs-filter-container {
+  position: relative;
+  display: inline-flex;
+  min-height: 32px;
+}
+
+.docs-filter-label {
+  cursor: pointer;
+  padding: 4px 8px;
+  margin: -4px -8px;
+  border-radius: 4px;
+  transition: background 0.15s ease;
+}
+
+.docs-filter-label:hover {
+  background: rgba(0, 149, 213, 0.08);
+}
+
+.docs-filter-container:hover .docs-version-menu {
+  display: flex;
+}
+
+#docs-label-text {
+  user-select: none;
+}
+
+#docs-label-text::after {
+  content: '\25BC';
+  font-size: 0.6rem;
+  margin-left: 0.35rem;
+  opacity: 0.6;
+  vertical-align: middle;
+}
+
+.docs-version-menu {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  min-width: 120px;
+  padding: 0.5rem;
+  background: var(--body-background, #fff);
+  border: 2px solid #0095d5;
+  border-radius: 4px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: none;
+  flex-direction: column;
+  gap: 0.35rem;
+  z-index: 10001;
+}
+
+.docs-version-option {
   display: flex;
   align-items: center;
   gap: 0.35rem;
@@ -664,17 +740,50 @@
   font-size: 0.875rem;
   user-select: none;
   white-space: nowrap;
+  padding: 0.25rem;
+  border-radius: 3px;
+  transition: background 0.15s ease;
 }
 
-.filter-checkbox input[type="checkbox"] {
+.docs-version-option:hover {
+  background: rgba(0, 149, 213, 0.1);
+}
+
+.docs-version-option input[type="checkbox"] {
   cursor: pointer;
   width: 16px;
   height: 16px;
   margin: 0;
 }
 
+.docs-version-option span {
+  color: var(--body-font-color, #333);
+}
+
+.filter-checkbox {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  font-size: 0.875rem;
+  user-select: none;
+  white-space: nowrap;
+  min-height: 32px;
+}
+
+.filter-checkbox input[type="checkbox"] {
+  cursor: pointer;
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  flex-shrink: 0;
+  vertical-align: middle;
+}
+
 .filter-checkbox span {
   color: var(--body-font-color, #333);
+  display: inline-flex;
+  align-items: center;
 }
 
 .filter-checkbox:hover span {

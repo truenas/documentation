@@ -132,11 +132,8 @@ class MultiSiteSearch {
   async init() {
     console.log('Initializing MultiSiteSearch...');
 
-    // Initialize active sites from checked checkboxes
-    const checkedBoxes = document.querySelectorAll('.filter-checkbox input[type="checkbox"]:checked');
-    this.activeSites = Array.from(checkedBoxes).map(cb => cb.dataset.site);
-
-    console.log('Initial active sites:', this.activeSites);
+    // Initialize docs toggle and active sites
+    this.updateDocsToggle();
 
     // Set up event listeners
     const trigger = document.getElementById('search-trigger');
@@ -167,11 +164,62 @@ class MultiSiteSearch {
       });
     }
 
-    // Site filter checkboxes (including API version checkboxes)
-    const filterCheckboxes = document.querySelectorAll('.filter-checkbox input[type="checkbox"]');
+    // Site filter checkboxes (non-docs checkboxes)
+    const filterCheckboxes = document.querySelectorAll('.filter-checkbox input[type="checkbox"]:not(#docs-main-toggle)');
     filterCheckboxes.forEach(checkbox => {
       checkbox.addEventListener('change', (e) => this.toggleSiteCheckbox(e.target));
     });
+
+    // Docs version dropdown (hover-based)
+    const docsContainer = document.getElementById('docs-filter-container');
+    const docsMenu = document.getElementById('docs-version-menu');
+    const docsMainToggle = document.getElementById('docs-main-toggle');
+    const docsVersionCheckboxes = document.querySelectorAll('.docs-version-option input[type="checkbox"]');
+
+    // Prevent dropdown from closing when clicking inside
+    if (docsMenu) {
+      docsMenu.addEventListener('click', (e) => {
+        e.stopPropagation();
+      });
+    }
+
+    // Handle docs version checkbox changes
+    if (docsVersionCheckboxes && docsMainToggle) {
+      docsVersionCheckboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', () => {
+          this.updateDocsToggle();
+          // If results are displayed, change search icon to refresh
+          if (this.hasResults) {
+            this.updateSearchIcon('refresh');
+          }
+        });
+      });
+
+      // Handle main docs toggle
+      docsMainToggle.addEventListener('change', () => {
+        const isChecked = docsMainToggle.checked;
+
+        if (!isChecked) {
+          // Uncheck all version checkboxes
+          docsVersionCheckboxes.forEach(cb => cb.checked = false);
+        } else {
+          // Check at least one version if none are checked
+          const anyChecked = Array.from(docsVersionCheckboxes).some(cb => cb.checked);
+          if (!anyChecked) {
+            // Default to 25.04
+            const default25 = Array.from(docsVersionCheckboxes).find(cb => cb.dataset.site === 'docs-25.04');
+            if (default25) default25.checked = true;
+          }
+        }
+
+        this.updateDocsToggle();
+
+        // If results are displayed, change search icon to refresh
+        if (this.hasResults) {
+          this.updateSearchIcon('refresh');
+        }
+      });
+    }
 
     // Infinite scroll for search results
     const resultsContainer = document.getElementById('search-results-enhanced');
@@ -252,25 +300,78 @@ class MultiSiteSearch {
     console.log('Active sites:', this.activeSites);
   }
 
-  toggleSiteCheckbox(checkbox) {
-    const site = checkbox.dataset.site;
+  updateDocsToggle() {
+    const docsMainToggle = document.getElementById('docs-main-toggle');
+    const docsVersionCheckboxes = document.querySelectorAll('.docs-version-option input[type="checkbox"]');
+    const docsLabelText = document.getElementById('docs-label-text');
 
-    // Update active sites list from all checked checkboxes
-    const checkedBoxes = document.querySelectorAll('.filter-checkbox input[type="checkbox"]:checked');
-    this.activeSites = Array.from(checkedBoxes).map(cb => cb.dataset.site);
+    if (!docsMainToggle || !docsVersionCheckboxes) return;
+
+    // Check if any version is selected
+    const anyChecked = Array.from(docsVersionCheckboxes).some(cb => cb.checked);
+
+    // Auto-uncheck main toggle if no versions selected
+    if (!anyChecked) {
+      docsMainToggle.checked = false;
+      if (docsLabelText) {
+        docsLabelText.textContent = 'Docs';
+      }
+    } else {
+      if (!docsMainToggle.checked) {
+        // Auto-check main toggle if a version is selected
+        docsMainToggle.checked = true;
+      }
+
+      // Update label text with selected versions
+      if (docsLabelText) {
+        const selectedVersions = Array.from(docsVersionCheckboxes)
+          .filter(cb => cb.checked)
+          .map(cb => cb.dataset.site.replace('docs-', ''))
+          .sort((a, b) => {
+            // Sort versions descending (26.04, 25.10, 25.04, 24.10)
+            const [aMajor, aMinor] = a.split('.').map(Number);
+            const [bMajor, bMinor] = b.split('.').map(Number);
+            if (aMajor !== bMajor) return bMajor - aMajor;
+            return bMinor - aMinor;
+          });
+
+        docsLabelText.textContent = `Docs (${selectedVersions.join(', ')})`;
+      }
+    }
+
+    // Update active sites
+    this.updateActiveSites();
+  }
+
+  updateActiveSites() {
+    // Collect non-docs checkboxes
+    const nonDocsCheckboxes = document.querySelectorAll('.filter-checkbox input[type="checkbox"]:not(#docs-main-toggle):checked');
+    this.activeSites = Array.from(nonDocsCheckboxes).map(cb => cb.dataset.site);
+
+    // Add docs sites if main toggle is checked
+    const docsMainToggle = document.getElementById('docs-main-toggle');
+    if (docsMainToggle && docsMainToggle.checked) {
+      const docsVersionCheckboxes = document.querySelectorAll('.docs-version-option input[type="checkbox"]:checked');
+      const docsSites = Array.from(docsVersionCheckboxes).map(cb => cb.dataset.site);
+      this.activeSites.push(...docsSites);
+    }
+
+    console.log('Active sites:', this.activeSites);
+  }
+
+  toggleSiteCheckbox(checkbox) {
+    this.updateActiveSites();
 
     // Ensure at least one site is selected
     if (this.activeSites.length === 0) {
       checkbox.checked = true;
-      this.activeSites = [site];
+      this.updateActiveSites();
     }
 
     // If results are displayed, change search icon to refresh
     if (this.hasResults) {
       this.updateSearchIcon('refresh');
     }
-
-    console.log('Active sites:', this.activeSites);
   }
 
   updateSearchIcon(mode = 'search') {
