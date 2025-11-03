@@ -61,14 +61,15 @@ const searchConfig = {
       priority: 11,
       group: 'other'
     },
-    security: {
-      url: 'https://security.truenas.com/pagefind/',
-      name: 'Security Advisories',
-      displayName: 'Security Advisories',
-      iconSvg: '<svg style="width: 20px; height: 20px; stroke-width: 0.5;" viewBox="0 0 24 24"><path d="M12,1L3,5V11C3,16.55 6.84,21.74 12,23C17.16,21.74 21,16.55 21,11V5L12,1M12,21C7.59,21 4,17.41 4,13V6.31L12,3.11L20,6.31V13C20,17.41 16.41,21 12,21Z"/></svg>',
-      priority: 12,
-      group: 'other'
-    },
+    // TEMPORARILY DISABLED - Uncomment to re-enable when pagefind is fixed
+    // security: {
+    //   url: 'https://security.truenas.com/pagefind/',
+    //   name: 'Security Advisories',
+    //   displayName: 'Security Advisories',
+    //   iconSvg: '<svg style="width: 20px; height: 20px; stroke-width: 0.5;" viewBox="0 0 24 24"><path d="M12,1L3,5V11C3,16.55 6.84,21.74 12,23C17.16,21.74 21,16.55 21,11V5L12,1M12,21C7.59,21 4,17.41 4,13V6.31L12,3.11L20,6.31V13C20,17.41 16.41,21 12,21Z"/></svg>',
+    //   priority: 12,
+    //   group: 'other'
+    // },
     connect: {
       url: 'https://connect.truenas.com/pagefind/',
       name: 'TrueNAS Connect',
