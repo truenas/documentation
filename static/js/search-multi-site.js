@@ -110,7 +110,6 @@ class MultiSiteSearch {
     const urlMatch = window.location.pathname.match(/\/(?:docs\/)?(?:scale\/)?(\d+\.\d+)/);
     if (urlMatch) {
       const version = urlMatch[1]; // e.g., "25.04"
-      console.log(`Detected current docs version: ${version}`);
       return version;
     }
 
@@ -118,20 +117,16 @@ class MultiSiteSearch {
     const versionSwitcher = document.querySelector('[data-current-version]');
     if (versionSwitcher) {
       const version = versionSwitcher.dataset.currentVersion;
-      console.log(`Detected version from switcher: ${version}`);
       return version;
     }
 
     // Default to the default version from config
     const defaultDocs = Object.keys(searchConfig.indexes).find(key => searchConfig.indexes[key].isDefault);
     const defaultVersion = searchConfig.indexes[defaultDocs]?.version?.replace(/\s.*$/, '');
-    console.log(`Using default version: ${defaultVersion}`);
     return defaultVersion;
   }
 
   async init() {
-    console.log('Initializing MultiSiteSearch...');
-
     // Initialize docs toggle and active sites
     this.updateDocsToggle();
 
@@ -240,9 +235,8 @@ class MultiSiteSearch {
     try {
       const defaultDocs = Object.keys(searchConfig.indexes).find(key => searchConfig.indexes[key].isDefault);
       await this.loadIndex(defaultDocs);
-      console.log(`Default docs index (${defaultDocs}) pre-loaded`);
     } catch (error) {
-      console.warn('Could not pre-load docs index:', error);
+      // Could not pre-load docs index
     }
   }
 
@@ -253,13 +247,9 @@ class MultiSiteSearch {
 
     try {
       const config = searchConfig.indexes[siteKey];
-      console.log(`Loading index for ${siteKey} from ${config.url}`);
-
       const pagefind = await import(`${config.url}pagefind.js`);
       await pagefind.init();
-
       this.loadedIndexes.set(siteKey, pagefind);
-      console.log(`Successfully loaded ${siteKey} index`);
       return pagefind;
     } catch (error) {
       console.error(`Failed to load index for ${siteKey}:`, error);
@@ -296,8 +286,6 @@ class MultiSiteSearch {
     if (this.hasResults) {
       this.updateSearchIcon('refresh');
     }
-
-    console.log('Active sites:', this.activeSites);
   }
 
   updateDocsToggle() {
@@ -355,8 +343,6 @@ class MultiSiteSearch {
       const docsSites = Array.from(docsVersionCheckboxes).map(cb => cb.dataset.site);
       this.activeSites.push(...docsSites);
     }
-
-    console.log('Active sites:', this.activeSites);
   }
 
   toggleSiteCheckbox(checkbox) {
@@ -412,7 +398,6 @@ class MultiSiteSearch {
 
   async performSearch() {
     if (this.isSearching) {
-      console.log('Search already in progress');
       return;
     }
 
@@ -420,11 +405,9 @@ class MultiSiteSearch {
     const query = searchInput?.value;
 
     if (!query || query.trim() === '') {
-      console.log('Empty query');
       return;
     }
 
-    console.log(`Searching for: "${query}"`);
     this.isSearching = true;
     this.currentPage = 1;
     this.allResults = [];
@@ -445,19 +428,15 @@ class MultiSiteSearch {
       ? Object.keys(searchConfig.indexes)
       : this.activeSites;
 
-    console.log('Searching sites:', sitesToSearch);
-
     // Search each selected site
     const searchPromises = sitesToSearch.map(async (siteKey) => {
       try {
         const pagefind = await this.loadIndex(siteKey);
         if (!pagefind) {
-          console.warn(`No pagefind instance for ${siteKey}`);
           return [];
         }
 
         const results = await pagefind.search(query);
-        console.log(`Found ${results.results.length} results in ${siteKey}`);
 
         const enrichedResults = await Promise.all(
           results.results.map(async (r) => {
@@ -493,8 +472,6 @@ class MultiSiteSearch {
       const resultsArrays = await Promise.all(searchPromises);
       this.allResults = resultsArrays.flat();
 
-      console.log(`Total results before filtering: ${this.allResults.length}`);
-
       // Filter API results to match selected docs versions
       if (this.activeSites.includes('api')) {
         // Extract versions from checked docs checkboxes (e.g., "docs-25.04" -> "25.04")
@@ -503,7 +480,6 @@ class MultiSiteSearch {
           .map(cb => cb.dataset.site.replace('docs-', '')); // ["25.04", "26.04", etc.]
 
         if (checkedDocs.length > 0) {
-          console.log(`Filtering API results to match docs versions: ${checkedDocs.join(', ')}`);
 
           this.allResults = this.allResults.filter(result => {
             // Keep non-API results
@@ -523,7 +499,6 @@ class MultiSiteSearch {
             }
 
             if (!resultVersion) {
-              console.log(`API result has no version in metadata or URL, filtering out: ${result.url}`);
               return false; // Filter out results without version info
             }
 
@@ -531,22 +506,13 @@ class MultiSiteSearch {
             const apiVersion = resultVersion.replace(/^v/, '');
             const matches = checkedDocs.includes(apiVersion);
 
-            if (!matches) {
-              console.log(`Filtering out API result: ${result.url} (${apiVersion} not in [${checkedDocs.join(', ')}])`);
-            }
-
             return matches;
           });
-
-          console.log(`Filtered to ${this.allResults.length} results matching docs versions`);
         } else {
           // No docs versions selected, remove all API results
-          console.log('No docs versions selected, removing all API results');
           this.allResults = this.allResults.filter(result => result.siteKey !== 'api');
         }
       }
-
-      console.log(`Total results after filtering: ${this.allResults.length}`);
 
       // Sort by score/relevance, then by site priority
       this.allResults.sort((a, b) => {
@@ -761,10 +727,8 @@ class MultiSiteSearch {
 // Initialize when DOM is ready
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', () => {
-    console.log('DOM loaded, creating MultiSiteSearch instance');
     window.multiSiteSearch = new MultiSiteSearch();
   });
 } else {
-  console.log('DOM already loaded, creating MultiSiteSearch instance');
   window.multiSiteSearch = new MultiSiteSearch();
 }
