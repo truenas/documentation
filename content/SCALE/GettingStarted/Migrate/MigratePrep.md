@@ -23,7 +23,7 @@ keywords:
 ## Preparing for Migration
 Read this article before you attempt to migrate your FreeBSD-based system to a Linux-based TrueNAS version.
 {{< hint type="warning" title="Using USB Devices for Backups" >}}
-We strongly recommend not using USB flash drives or USB-attached drives for backups as these can have issues, including with recovering backed-up files.
+We strongly recommend not using USB flash drives or USB-attached drives for backups, as these can have issues, including with recovering backed-up files.
 For more information on using USB drives and devices in general, read the [Hardware Guide]({{< ref "scalehardwareguide" >}}).
 If you must use a USB-type device, verify you can access files on the device before you migrate.
 {{< /hint >}}
@@ -39,7 +39,7 @@ Please contact Support for assistance!
    Either major version can use the [iso upgrade](#migrating-using-an-iso-file-to-upgrade) method for migration.
 
 2. Migrate [GELI-encrypted pools](https://www.truenas.com/docs/core/13.0/coretutorials/storage/pools/storageencryption/#geli-pool-migrations) to a non-GELI-encrypted pool before upgrading from TrueNAS 12.0x or earlier releases!
-   If you do not migrate from GELI to ZFS encryption before upgrading to 13.0-U6.2 (or newer) or migrating to TrueNAS 24.04 (or newer), you permanently lose access to the data in the GELI encrypted pool(s).
+   If you do not migrate from GELI to ZFS encryption before upgrading to 13.0-U6.2 (or newer) or migrating to TrueNAS 24.04 (or newer), you permanently lose access to the data in the GELI-encrypted pool(s).
 
 3. Verify the root user is not locked.
    Go to **Accounts > Users**, select the root user, and click **Edit** to view current settings and confirm **Lock User** is not selected.
@@ -48,7 +48,7 @@ Please contact Support for assistance!
    Use the checklist below to guide you through this step:
 
    <input type="checkbox"> System dataset - Identify your system dataset. If you want to use the same dataset for the system dataset after migrating, note the pool and system dataset.
-   When you set up the first required pool after migrating import this pool first.
+   When you set up the first required pool after migrating, import this pool first.
 
    <input type="checkbox"> Deprecated services - Record the settings for [services deprecated in newer TrueNAS versions](#deprecated-services).
 
@@ -56,11 +56,11 @@ Please contact Support for assistance!
 
    <input type="checkbox"> Plugins or jails - Plugins and jails do not migrate. Record settings for each plugin/jail and back up the data associated with each.
 
-   <input type="checkbox"> CAs, certificates, CSRs - If you added certificate authorities, certificates, or certificate signing requests, they should migrate with the system config file, but as a precaution against possible malformed certificates copy private and public certificate keys and save each, then copy or screenshot all CA, certificate, and CSR setting. Make sure you have backed-up copies of certificates used to import or configure after migrating.
+   <input type="checkbox"> CAs, certificates, CSRs - If you added certificate authorities, certificates, or certificate signing requests, they should migrate with the system config file, but as a precaution against possible malformed certificates, copy private and public certificate keys and save each, then copy or screenshot all CA, certificate, and CSR settings. Make sure you have backup copies of certificates used to import or configure after migrating.
 
    <input type="checkbox"> Usernames beginning with (0-9) - Review local user account names and rename or replace these with a letter or underscore before migrating.
 
-   <input type="checkbox"> User-created accounts with UID or GID less than 1000 - The UID/GID range below 1000 are reserved for built-in system accounts. User-created accounts in this ID range can cause conflicts and undefined behavior after migration, including duplicate accounts with the same ID. Recreate any non-builtin accounts in this range to assign an ID of 1000 or higher, then delete the previous account and reconfigure ACLs as needed before migrating.
+   <input type="checkbox"> User-created accounts with UID or GID less than 1000 - The UID/GID range below 1000 is reserved for built-in system accounts. User-created accounts in this ID range can cause conflicts and undefined behavior after migration, including duplicate accounts with the same ID. Recreate any non-builtin accounts in this range to assign an ID of 1000 or higher, then delete the previous account and reconfigure ACLs as needed before migrating.
 
    <input type="checkbox"> Tunables - Linux-based TrueNAS (22.12 or newer) does not use **Tunables** in the same way. Copy script configurations to add on the **System > Advanced Settings** screen, using the **Sysctl** widget, after migrating.
 
@@ -73,12 +73,19 @@ Please contact Support for assistance!
    <input type="checkbox"> Credentials - Copy or write down the credentials for SSH connections and keypairs, and any configured cloud service backup providers if you do not have the credential settings saved in other files kept secured outside of TrueNAS.
 
    <input type="checkbox"> Data protection tasks - Write down or take screenshots of replication, periodic snapshots, cloud sync, or other task settings to reconfigure these after migrating.
+   
+   TrueNAS uses SSH connections in data protection tasks, so data protection tasks (especially replication tasks) might require reconfiguration in some cases.
+   After migrating to 25.10, SSH connections have failed with an authentication error in some cases.
+   There is no way to update the SSH connection manually, and creating a manual SSH connection might result in an authentication error.
+   When this occurs, you must set up a new replication task and a new SSH connection between systems on the migrated system (in 25.10).
+   After migrating and the system is online, check replication and data protection tasks that rely on SSH connections to verify they work as expected.
+   If you receive an authentication error, use the notes from the CORE system to reconfigure these tasks and the SSH connection between systems.
 
    Community users with iSCSI deployments can migrate their systems without assistance. Note, unlike FreeBSD systems, Linux Debian systems require at least one LUN set to zero.
    iSCSI portals in Linux Debian-based systems are defined globally instead of per port.
 
    Enterprise systems with iSCSI shares and/or fibre channel deployments have special requirements, preparation, and migration steps to ensure data integrity and a smooth migration.
-   Other iSCSI differences only apply to Enterprise High Availability (HA) systems and those with fibre channel ports. Enterprise users **must** contact TrueNAS Customer Support for assistance with their migrations!
+   Other iSCSI differences only apply to Enterprise High Availability (HA) systems and those with Fibre Channel ports. Enterprise users **must** contact TrueNAS Customer Support for assistance with their migrations!
 
 5. Remove all SMB auxiliary parameter settings before migrating.
    In TrueNAS 23.10 (Cobia) or newer, the SMB **Auxiliary Parameters** option is unavailable in the UI.
@@ -88,7 +95,7 @@ Please contact Support for assistance!
    Capture the global network settings, interfaces (LAGG, VLAN, bridge settings), static IP addresses, and aliases.
 
    FreeBSD and Linux use different nomenclature for network interfaces, bridges, LAGGs, and VLANs.
-   Because of the difference, network settings can either get lost or not transfer which means you have no network connectivity.
+   Because of the difference, network settings can either get lost or not transfer, which means you have no network connectivity.
    See [Component Naming]({{< ref "ComponentNaming" >}}) for more information.
 
    When using a TrueNAS Enterprise system from iXsystems, refer to the network port ID manuals of your [TrueNAS Systems](https://www.truenas.com/docs/hardware/) to find the network port assignments in TrueNAS.
@@ -140,9 +147,9 @@ Install a replacement application, such as **DDNS-Updater**, using the service s
 
 {{< expand "Migrating from OpenVPN Service" "v" >}}
 Review your OpenVPN client and server service settings.
-Take note of all certificate, device type, port, protocol, TLS crypt authentication, and additional parameter settings to use in a replacement app.
+Take note of all certificates, device type, port, protocol, TLS crypt authentication, and additional parameter settings to use in a replacement app.
 
-A configured certificate should migrate, but as a precaution, record the certificate authority (CA) and certificate settings, and make a copy of the the private and public keys the CA and certificate uses.
+A configured certificate should migrate, but as a precaution, record the certificate authority (CA) and certificate settings, and make a copy of the private and public keys the CA and certificate uses.
 
 Install a replacement application, such as **WG Easy**, using the service settings from your notes.
 {{< /expand >}}
@@ -165,13 +172,13 @@ Take note of all directory, host, auxiliary parameter, permission, and credentia
 To grant access to a specific user (and group) other than using the default admin user UID and GID, add the new non-root administrative user.
 Note the UID and GID for this new user to enter in the application configuration screen.
 
-To use a specific dataset or storage volume for files, create any new dataset before installing the application.
+To use a specific dataset or storage volume for files, create a new dataset before installing the application.
 Install the replacement application, such as **TFTP Server** (TFTP-HPA), using the service settings from your notes.
 {{< /expand >}}
 
 {{< expand "Migrating from WebDAV Service and Shares" "v" >}}
 Disable both the WebDAV share and service.
-Also disable the **Start Automatically** option to prevent the service from re-enabling after a system restart.
+Also, disable the **Start Automatically** option to prevent the service from re-enabling after a system restart.
 
 Review any existing WebDAV service authentication settings.
 Take note of all IP addresses, port numbers, URLs, and credentials (username and password).

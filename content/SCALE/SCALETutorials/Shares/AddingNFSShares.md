@@ -125,8 +125,8 @@ To begin sharing, click the <span class="material-icons">more_vert</span> on the
 
 {{< trueimage src="/images/SCALE/Shares/NFSWidgetOptions.png" alt="Unix (NFS) Shares Widget Options" id="Unix (NFS) Shares Widget Options" >}}
 
-Or you can go to **System > Services**, locate **NFS**, and click the toggle to running.
-Select **Start Automatically** if you want NFS to activate when TrueNAS boots.
+Or you can go to **System > Services**, locate **NFS**, and click the <span class="iconify" data-icon="mdi:play-circle" title="Start Service">Start Service</span> button to start the service.
+Toggle **Start Automatically** on if you want NFS to activate when TrueNAS boots.
 
 {{<include file="/static/includes/addcolumnorganizer.md">}}
 
