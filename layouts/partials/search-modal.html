@@ -20,11 +20,10 @@
     <div class="search-filters">
       <div class="filter-header">Show Results From:</div>
       <div class="filter-checkboxes">
-        <div class="docs-filter-container" id="docs-filter-container">
-          <label class="filter-checkbox docs-filter-label">
-            <input type="checkbox" id="docs-main-toggle" checked>
-            <span id="docs-label-text">Docs (25.04)</span>
-          </label>
+        <div class="version-filter-container" id="version-filter-container">
+          <div class="version-filter-label">
+            <span id="version-label-text">Version (25.04)</span>
+          </div>
           <div class="docs-version-menu" id="docs-version-menu">
             <label class="docs-version-option">
               <input type="checkbox" data-site="docs-26.04">
@@ -44,6 +43,10 @@
             </label>
           </div>
         </div>
+        <label class="filter-checkbox">
+          <input type="checkbox" id="docs-main-toggle" checked>
+          <span>Docs</span>
+        </label>
         <label class="filter-checkbox">
           <input type="checkbox" data-site="api" checked>
           <span>API</span>

@@ -195,10 +195,9 @@ class MultiSiteSearch {
       docsMainToggle.addEventListener('change', () => {
         const isChecked = docsMainToggle.checked;
 
-        if (!isChecked) {
-          // Uncheck all version checkboxes
-          docsVersionCheckboxes.forEach(cb => cb.checked = false);
-        } else {
+        // Don't uncheck version boxes when main toggle is unchecked
+        // This allows version selections to control API filtering even when Docs is disabled
+        if (isChecked) {
           // Check at least one version if none are checked
           const anyChecked = Array.from(docsVersionCheckboxes).some(cb => cb.checked);
           if (!anyChecked) {
@@ -292,27 +291,18 @@ class MultiSiteSearch {
   updateDocsToggle() {
     const docsMainToggle = document.getElementById('docs-main-toggle');
     const docsVersionCheckboxes = document.querySelectorAll('.docs-version-option input[type="checkbox"]');
-    const docsLabelText = document.getElementById('docs-label-text');
+    const versionLabelText = document.getElementById('version-label-text');
 
     if (!docsMainToggle || !docsVersionCheckboxes) return;
 
     // Check if any version is selected
     const anyChecked = Array.from(docsVersionCheckboxes).some(cb => cb.checked);
 
-    // Auto-uncheck main toggle if no versions selected
-    if (!anyChecked) {
-      docsMainToggle.checked = false;
-      if (docsLabelText) {
-        docsLabelText.textContent = 'Docs';
-      }
-    } else {
-      if (!docsMainToggle.checked) {
-        // Auto-check main toggle if a version is selected
-        docsMainToggle.checked = true;
-      }
-
-      // Update label text with selected versions
-      if (docsLabelText) {
+    // Update version label text based on selected versions
+    if (versionLabelText) {
+      if (!anyChecked) {
+        versionLabelText.textContent = 'Version';
+      } else {
         const selectedVersions = Array.from(docsVersionCheckboxes)
           .filter(cb => cb.checked)
           .map(cb => cb.dataset.site.replace('docs-', ''))
@@ -324,7 +314,7 @@ class MultiSiteSearch {
             return bMinor - aMinor;
           });
 
-        docsLabelText.textContent = `Docs (${selectedVersions.join(', ')})`;
+        versionLabelText.textContent = `Version (${selectedVersions.join(', ')})`;
       }
     }
 
@@ -475,12 +465,11 @@ class MultiSiteSearch {
 
       // Filter API results to match selected docs versions
       if (this.activeSites.includes('api')) {
-        // Extract versions from checked docs checkboxes (e.g., "docs-25.04" -> "25.04")
-        const checkedDocs = Array.from(document.querySelectorAll('.filter-checkbox input[type="checkbox"]:checked'))
-          .filter(cb => cb.dataset.site && cb.dataset.site.startsWith('docs-'))
+        // Extract versions from docs version dropdown (regardless of main docs toggle state)
+        const checkedDocsVersions = Array.from(document.querySelectorAll('.docs-version-option input[type="checkbox"]:checked'))
           .map(cb => cb.dataset.site.replace('docs-', '')); // ["25.04", "26.04", etc.]
 
-        if (checkedDocs.length > 0) {
+        if (checkedDocsVersions.length > 0) {
 
           this.allResults = this.allResults.filter(result => {
             // Keep non-API results
@@ -505,7 +494,7 @@ class MultiSiteSearch {
 
             // Extract version numbers (e.g., "v25.04" or "25.04")
             const apiVersion = resultVersion.replace(/^v/, '');
-            const matches = checkedDocs.includes(apiVersion);
+            const matches = checkedDocsVersions.includes(apiVersion);
 
             return matches;
           });
