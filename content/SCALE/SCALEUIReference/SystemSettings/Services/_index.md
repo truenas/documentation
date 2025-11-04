@@ -14,7 +14,7 @@ tags:
 related: false
 ---
 
-**System > Services** displays each system component that runs continuously in the background. These typically control data-sharing or other external access to the system. Individual services have configuration screens and activation toggles, and you can set them to run automatically.
+**System > Services** displays each system component that runs continuously in the background. These typically control data-sharing or other external access to the system. Individual services have configuration screens, activation buttons, and you can set them to run automatically.
 
 {{< trueimage src="/images/SCALE/SystemSettings/ServicesSCALE.png" alt="TrueNAS Services Screen" id="TrueNAS Services Screen" >}}
 
@@ -28,7 +28,7 @@ The **SMB** service row has two additional links:
 
 The **Start Automatically** toggle sets the service to start after the system restarts.
 
-The **Status** column displays the service status with a badge (Stopped or Running) and a <span class="material-icons">play_circle</span>/<span class="material-icons">stop_circle</span> start/stop button. The start/stop button starts the service or stops it if it is running. It is recommended to stop services before changing configuration settings.
+The **Status** column displays the service status with a badge (Stopped or Running) and a <span class="material-icons" title="Start Service">play_circle</span> start or <span class="material-icons" title="Stop Service">stop_circle</span> stop button. The start button starts the service and the stop button stops it if it is running. It is recommended to stop services before changing configuration settings.
 
 {{<include file="/static/includes/addcolumnorganizer.md">}}
 
