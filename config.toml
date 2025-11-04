@@ -52,7 +52,7 @@ enable = true
 
 # Multi-site search configuration
 [params.search]
-  siteVersion = "25.10"
+  siteVersion = "24.10"
 
 [params]
 
