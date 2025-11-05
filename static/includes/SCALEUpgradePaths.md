@@ -1,8 +1,89 @@
-&NewLine;
+
+Update to the latest maintenance release of the current major version before upgrading to the next major version.
+You can then upgrade directly from the latest maintenance release to the latest release of the next major version.
+
+{{< hint type=note >}}
+This chart shows the basic upgrade paths between TrueNAS major versions.
+Depending on your use case and risk tolerance, you may prefer to delay upgrading to allow additional time for testing and stability.
+See the <a href="https://www.truenas.com/docs/softwarestatus/#which-truenas-version-is-recommended" target="_blank">TrueNAS Software Status</a> for version recommendations tailored to different user types from Developer to Mission Critical.
+{{< /hint >}}
+
+<div class="section-box" id="tn-upgrade-paths" style="padding: 0 40px 40px 40px; margin-bottom: 20px;">
+    <div class="community-paths-container">
+      <img src="/images/truenas-community-edition-logo-blue.png" class="light-mode-logo" style="box-shadow: none; max-width: 225px; padding-bottom: 20px; padding-top: 40px;" title="TrueNAS Community Edition" alt="TrueNAS Community Edition">
+      <img src="/images/truenas-community-edition-logo-white.png" class="dark-mode-logo" style="box-shadow: none; max-width: 225px; padding-bottom: 20px; padding-top: 40px; display: none;" title="TrueNAS Community Edition" alt="TrueNAS Community Edition">
+      <div class="scroll-wrapper">
+        <button class="scroll-nav scroll-nav-left" aria-label="Scroll left" title="Scroll left">‹</button>
+        <button class="scroll-nav scroll-nav-right" aria-label="Scroll right" title="Scroll right">›</button>
+        <div class="scroll-container" id="scrollContainer1">
+          <div class="chart-wrapper">
+            {{< mermaid class="mermaid_sizing" >}}
+            flowchart LR
+              A["11.3-U5"] -->|update| B["12.0-U8.1"]
+              B -->|"update / ISO install"| C["13.0-U6.8 / 13.3-U2"]
+              C -->|update| G
+              C -->|ISO install| J
+              D["22.02.4 (Angelfish)"] -->|update| E
+              E["22.12.4.2 (Bluefin)"] -->|update| F
+              F["23.10.2 (Cobia)"] -->|update| G
+              G["24.04.2.5 (Dragonfish)"] -->|update| H
+              H["24.10.2.4 (Electric Eel)"] -->|update| I
+              I["25.04.2.6 (Fangtooth)"] -->|"update"| J
+            J["25.10.0 (Goldeye)"]
+            {{< /mermaid >}}
+          </div>
+        </div>
+        <div class="scroll-indicator" id="scrollIndicator1">
+          <div class="scroll-dot" data-section="0" title="Beginning"></div>
+          <div class="scroll-dot" data-section="1" title="Middle"></div>
+          <div class="scroll-dot active" data-section="2" title="Latest versions"></div>
+        </div>
+      </div>
+    </div>
+    <div class="enterprise-paths-container">
+      <img src="/images/truenas-enterprise-logo-logo-blue.png" class="light-mode-logo" style="box-shadow: none; max-width: 225px; padding-bottom: 20px; padding-top: 40px;" title="TrueNAS Enterprise" alt="TrueNAS Enterprise">
+      <img src="/images/truenas-enterprise-logo-logo-white-rgb-900px-w-72ppi.png" class="dark-mode-logo" style="box-shadow: none; max-width: 225px; padding-bottom: 20px; padding-top: 40px; display: none;" title="TrueNAS Enterprise" alt="TrueNAS Enterprise">
+      <div class="scroll-wrapper">
+        <button class="scroll-nav scroll-nav-left" aria-label="Scroll left" title="Scroll left">‹</button>
+        <button class="scroll-nav scroll-nav-right" aria-label="Scroll right" title="Scroll right">›</button>
+        <div class="scroll-container" id="scrollContainer2">
+          <div class="chart-wrapper">
+            {{< mermaid class="mermaid_sizing" >}}
+            flowchart LR
+              A["11.3-U5"] -->|update| B
+              B["12.0-U8.1"] -->|update| C
+              C["13.0-U6.8"] -->|ISO install| G
+              C -->|update| E
+              D["23.10.2 (Cobia)"] -->|update| E
+              E["24.04.2.5 (Dragonfish)"]  -->|update| F
+              F["24.10.2.4 (Electric Eel)"] -->|update| G
+              G["25.04.2.6 (Fangtooth)"] -->|"(anticipated)"| H
+            H["25.10 (Goldeye)"]
+            {{< /mermaid >}}
+          </div>
+        </div>
+        <div class="scroll-indicator" id="scrollIndicator2">
+          <div class="scroll-dot" data-section="0" title="Beginning"></div>
+          <div class="scroll-dot" data-section="1" title="Middle"></div>
+          <div class="scroll-dot active" data-section="2" title="Latest versions"></div>
+        </div>
+      </div>
+    </div>
+</div>
+
+Permitted upgrade methods are:
+
+* **update**: Apply updates using the **Update** screen in the TrueNAS UI or install a manual update file.
+  Not all upgrade paths support automatic updates (see chart).
+* **ISO install**: Save your TrueNAS configuration file, perform a fresh install using an .iso file for the target version, then upload the saved configuration.
+
+You can skip major versions using a fresh installation with configuration file restore.
+Before skipping versions, review release notes for each major version to identify service deprecations or significant changes that may affect your configuration.
+Consider upgrading incrementally through major versions with significant changes, or be prepared to manually reconfigure any incompatibilities after upgrading directly to the target version.
 
 <style>
 /* Custom CSS to override Mermaid background color */
-#scale-upgrade-paths .mermaid {
+#tn-upgrade-paths .mermaid {
     background-color: inherit;
 }
 
@@ -187,78 +268,6 @@
 }
 </style>
 
-Update to the latest maintenance release of the current major version before upgrading to the next major version.
-You can then upgrade directly from the latest maintenance release to the latest release of the next major version.
-
-{{< hint type=note >}}
-This chart shows the basic upgrade paths between TrueNAS major versions.
-Depending on your use case and risk tolerance, you may prefer to delay upgrading to allow additional time for testing and stability.
-See the <a href="https://www.truenas.com/docs/softwarestatus/#which-truenas-version-is-recommended" target="_blank">TrueNAS Software Status</a> for version recommendations tailored to different user types from Developer to Mission Critical.
-{{< /hint >}}
-
-<div class="section-box" id="scale-upgrade-paths" style="padding: 0 40px 40px 40px; margin-bottom: 20px;">
-    <div class="upgrade-paths-container">
-      <img src="/images/truenas-community-edition-logo-blue.png" class="light-mode-logo" style="box-shadow: none; max-width: 225px; padding-bottom: 20px; padding-top: 40px;" title="TrueNAS Community Edition" alt="TrueNAS Community Edition">
-      <img src="/images/truenas-community-edition-logo-white.png" class="dark-mode-logo" style="box-shadow: none; max-width: 225px; padding-bottom: 20px; padding-top: 40px; display: none;" title="TrueNAS Community Edition" alt="TrueNAS Community Edition">
-      <div class="scroll-wrapper">
-        <button class="scroll-nav scroll-nav-left" aria-label="Scroll left" title="Scroll left">‹</button>
-        <button class="scroll-nav scroll-nav-right" aria-label="Scroll right" title="Scroll right">›</button>
-        <div class="scroll-container" id="scrollContainer1">
-          <div class="chart-wrapper">
-            {{< mermaid class="mermaid_sizing" >}}
-            flowchart LR
-              A["11.3-U5"] -->|update| B["12.0-U8.1"]
-              B -->|"update / ISO install"| C["13.0-U6.8 / 13.3-U2"]
-              C -->|update| G
-              C -->|ISO install| I
-              D["22.02.4 (Angelfish)"] -->|update| E
-              E["22.12.4.2 (Bluefin)"] -->|update| F
-              F["23.10.2 (Cobia)"] -->|update| G
-              G["24.04.2.5 (Dragonfish)"] -->|update| H
-              H["24.10.2.4 (Electric Eel)"] -->|update| I
-              I["25.04.2.6 (Fangtooth)"] -->|"update"| J
-            J["25.10.0 (Goldeye)"]
-            {{< /mermaid >}}
-          </div>
-        </div>
-        <div class="scroll-indicator" id="scrollIndicator1">
-          <div class="scroll-dot" data-section="0" title="Beginning"></div>
-          <div class="scroll-dot" data-section="1" title="Middle"></div>
-          <div class="scroll-dot active" data-section="2" title="Latest versions"></div>
-        </div>
-      </div>
-    </div>
-    <div class="upgrade-paths-container">
-      <img src="/images/truenas-enterprise-logo-logo-blue.png" class="light-mode-logo" style="box-shadow: none; max-width: 225px; padding-bottom: 20px; padding-top: 40px;" title="TrueNAS Enterprise" alt="TrueNAS Enterprise">
-      <img src="/images/truenas-enterprise-logo-logo-white-rgb-900px-w-72ppi.png" class="dark-mode-logo" style="box-shadow: none; max-width: 225px; padding-bottom: 20px; padding-top: 40px; display: none;" title="TrueNAS Enterprise" alt="TrueNAS Enterprise">
-      <div class="scroll-wrapper">
-        <button class="scroll-nav scroll-nav-left" aria-label="Scroll left" title="Scroll left">‹</button>
-        <button class="scroll-nav scroll-nav-right" aria-label="Scroll right" title="Scroll right">›</button>
-        <div class="scroll-container" id="scrollContainer2">
-          <div class="chart-wrapper">
-            {{< mermaid class="mermaid_sizing" >}}
-            flowchart LR
-              A["11.3-U5"] -->|update| B
-              B["12.0-U8.1"] -->|update| C
-              C["13.0-U6.8"] -->|ISO install| G
-              C -->|update| E
-              D["23.10.2 (Cobia)"] -->|update| E
-              E["24.04.2.5 (Dragonfish)"]  -->|update| F
-              F["24.10.2.4 (Electric Eel)"] -->|update| G
-              G["25.04.2.6 (Fangtooth)"] -->|"(anticipated)"| H
-            H["25.10 (Goldeye)"]
-            {{< /mermaid >}}
-          </div>
-        </div>
-        <div class="scroll-indicator" id="scrollIndicator2">
-          <div class="scroll-dot" data-section="0" title="Beginning"></div>
-          <div class="scroll-dot" data-section="1" title="Middle"></div>
-          <div class="scroll-dot active" data-section="2" title="Latest versions"></div>
-        </div>
-      </div>
-    </div>
-</div>
-
 <script>
   // Enhanced scroll functionality - wait for Mermaid to properly render
   document.addEventListener("DOMContentLoaded", function() {
@@ -352,7 +361,7 @@ See the <a href="https://www.truenas.com/docs/softwarestatus/#which-truenas-vers
     
     // Also listen for tab changes and reinitialize when this tab becomes visible
     function handleTabVisibility() {
-      const upgradePathsSection = document.getElementById('scale-upgrade-paths');
+      const upgradePathsSection = document.getElementById('tn-upgrade-paths');
       if (upgradePathsSection && upgradePathsSection.offsetParent !== null) {
         // Reset check attempts and try again
         checkAttempts = 0;
@@ -383,7 +392,7 @@ See the <a href="https://www.truenas.com/docs/softwarestatus/#which-truenas-vers
         });
       }, { threshold: 0.1 });
       
-      const upgradePathsSection = document.getElementById('scale-upgrade-paths');
+      const upgradePathsSection = document.getElementById('tn-upgrade-paths');
       if (upgradePathsSection) {
         observer.observe(upgradePathsSection);
       }
@@ -391,7 +400,7 @@ See the <a href="https://www.truenas.com/docs/softwarestatus/#which-truenas-vers
     
     // Manual trigger for testing - click anywhere on the upgrade paths section
     document.addEventListener('click', function(e) {
-      const upgradePathsSection = document.getElementById('scale-upgrade-paths');
+      const upgradePathsSection = document.getElementById('tn-upgrade-paths');
       if (upgradePathsSection && upgradePathsSection.contains(e.target)) {
         const container1 = document.getElementById('scrollContainer1');
         if (container1 && container1.scrollWidth === 0) {
@@ -575,13 +584,3 @@ See the <a href="https://www.truenas.com/docs/softwarestatus/#which-truenas-vers
     }
   });
 </script>
-
-Permitted upgrade methods are:
-
-* **update**: Apply updates using the **Update** screen in the TrueNAS UI or install a manual update file.
-  Not all upgrade paths support automatic updates (see chart).
-* **ISO install**: Save your TrueNAS configuration file, perform a fresh install using an .iso file for the target version, then upload the saved configuration.
-
-You can skip major versions using a fresh installation with configuration file restore.
-Before skipping versions, review release notes for each major version to identify service deprecations or significant changes that may affect your configuration.
-Consider upgrading incrementally through major versions with significant changes, or be prepared to manually reconfigure any incompatibilities after upgrading directly to the target version.
