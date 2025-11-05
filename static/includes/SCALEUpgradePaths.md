@@ -1,3 +1,4 @@
+&NewLine;
 
 Update to the latest maintenance release of the current major version before upgrading to the next major version.
 You can then upgrade directly from the latest maintenance release to the latest release of the next major version.
