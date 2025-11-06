@@ -78,7 +78,7 @@ If you select a new pool in the **Pool** dropdown after previously configuring t
 
 {{< hint type=note >}}
 **Migrate existing applications** only affects data saved in the apps dataset, such as the installed app loacation and iXvolume storage.
-Data in mounted host paths is migrated.
+Data in mounted host paths is not migrated.
 {{< /hint >}}
 
 ### Unset Pool
