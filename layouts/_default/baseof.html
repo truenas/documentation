@@ -29,6 +29,7 @@
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
     {{ partial "svg-icon-symbols" . }}
+	{{ partial "search-modal" . }}
 
     <div
       class="wrapper {{ if default false .Site.Params.GeekdocDarkModeDim }}dark-mode-dim{{ end }}"
@@ -48,7 +49,7 @@
             
             <!-- Rest of your code -->
             <button class="scrollToTopBtn" title="Back to top">&#10148;</button>
-            <div class="gdoc-page">
+            <div class="gdoc-page" data-pagefind-meta="version:{{ .Site.Params.search.siteVersion }}">
                 {{ template "main" . }}
                 {{ with .IsPage }}
                     <hr width=15% style="margin-top: 30px; margin-bottom: 40px;">
@@ -77,6 +78,8 @@
     <script src="/js/figurenumber.js"></script>
     <!-- Scroll padding so anchor links are not hidden by the stickymenu -->
     <script src="/js/anchorpad.js"></script>
+	<!-- Multi-site search -->
+    <script src="/js/search-multi-site.js"></script>
 </body>
 </html>
 
