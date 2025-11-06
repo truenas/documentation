@@ -426,7 +426,9 @@ The **[Disk Health]({{< ref "/SCALEUIReference/Storage/_index.md#disk-health-wid
 
 ##### Scrutiny App for Advanced Monitoring
 
-The **Scrutiny** app provides comprehensive disk health monitoring. Scrutiny automatically detects all system drives and provides a clean web interface displaying SMART status, temperature, capacity, and power-on time at a glance, along with historical data tracking, customizable alert thresholds, and automated SMART test scheduling.
+The **Scrutiny** app provides comprehensive disk health monitoring.
+It automatically detects all system drives and offers a clean web interface that displays SMART status, temperature, capacity, and power-on time at a glance.
+Scrutiny also tracks historical data and supports configurable alert thresholds to help identify potential drive issues early.
 
 {{< trueimage src="/images/SCALE/Apps/ScrutinyDiskHealthScreenshot.png" alt="Scrutiny Dashboard" id="Scrutiny Dashboard showing disk health monitoring" >}}
 
