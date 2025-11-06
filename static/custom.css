@@ -1621,8 +1621,8 @@ a.section-box:hover {
 	text-align: center;
 }
 .prod-card-img {
-	width: 10em;
-	height: 15em!important;
+	width: 7.5em;
+	height: 11.25em!important;
 	object-fit: contain;
 }
 .box-image > img:hover {
