@@ -442,7 +442,7 @@ View and manage these migrated tests at **System > Advanced Settings > Cron Jobs
 
 {{< trueimage src="/images/SCALE/SystemSettings/CronJobsSmartTest.png" alt="Migrated SMART Test Cron Job" id="Migrated SMART Test Cron Job" >}}
 
-You can edit, disable, or delete these cron jobs. If you install Scrutiny or another monitoring solution, disable these migrated cron jobs to avoid duplicate test scheduling.
+You can edit, disable, or delete these cron jobs as needed.
 
 ##### Custom Monitoring Scripts
 
