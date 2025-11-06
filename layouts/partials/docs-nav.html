@@ -257,7 +257,9 @@
       productButton.dataset.productId = product.toLowerCase().replace(/\s/g, ''); // Store the selected product ID
     
       var docsnavIntro = document.getElementById('docsnav-intro');
-      docsnavIntro.textContent = 'Product and Version:';
+      if (docsnavIntro) {
+        docsnavIntro.textContent = 'Product and Version:';
+      }
     
       if (product === 'TrueNAS Systems') {
         window.location.href = 'https://www.truenas.com/docs/hardware';
@@ -512,8 +514,10 @@
     }
   
     var docsnavIntro = document.getElementById('docsnav-intro');
-    docsnavIntro.textContent = 'Product and Version:';
-  
+    if (docsnavIntro) {
+      docsnavIntro.textContent = 'Product and Version:';
+    }
+
     var versionDropdown = document.getElementById('versionDropdown');
     versionDropdown.style.display = 'none';
     versionDropdown.innerHTML = '';
