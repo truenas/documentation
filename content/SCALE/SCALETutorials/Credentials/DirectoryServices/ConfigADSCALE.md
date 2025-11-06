@@ -45,7 +45,7 @@ After taking these actions, you can [connect to the Active Directory domain](#co
 ### Setting Time Synchronization
 Active Directory relies on the time-sensitive [Kerberos](https://tools.ietf.org/html/rfc1510) protocol.
 TrueNAS adds the AD domain controller with the [PDC Emulator FSMO Role](https://support.microsoft.com/en-us/help/197132/active-directory-fsmo-roles-in-windows) as the preferred NTP server during the domain join process.
-If your environment requires something different, go to **System > General Settings**, click **Add** to open the **NTP Servers** screen, then add a new or edit a listed server.
+If your environment requires something different, go to **System > Advanced Settings**, click **Add** to open the **NTP Servers** screen, then add a new or edit a listed server.
 
 Keep the local system time sync within five (5) minutes of the AD domain controller time in a default AD environment.
 
