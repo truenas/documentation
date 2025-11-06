@@ -13,10 +13,17 @@ keywords:
 - software storage solutions
 ---
 
-{{<enterprise>}}
+{{< enterprise >}}
 This procedure only applies to TrueNAS Enterprise (HA) systems.
 If attempting to migrate from FreeBSD- to Linux-based TrueNAS versions, see [TrueNAS Migrations]({{< ref "MigratingFromCORE" >}}).
-{{</enterprise>}}
+
+Installing, upgrading, or making some changes to TrueNAS on High Availability (HA) systems is complicated and should be guided by Enterprise-level support.
+Contact TrueNAS Enterprise Support for assistance whenever attempting to install or make some changes to TrueNAS on Enterprise HA hardware.
+
+{{< expand "Contacting Support" "v" >}}
+{{< include file="/static/includes/iXsystemsSupportContact.md" >}}
+{{< /expand >}}
+{{< /enterprise >}}
 
 ## Updating Enterprise (HA) Systems
 
