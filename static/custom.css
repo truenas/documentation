@@ -132,7 +132,7 @@ mark {
 .sidebar-fixed {
     position: sticky;
     top: 0;
-    margin-top: 1.5em;
+    margin-top: 0.5em;
     margin-bottom: 1.5em;
 }
 
@@ -147,16 +147,61 @@ mark {
     background: transparent;
 }
 /* End Site Nav Bar */
+/* Docsnav Search Buttons (Split Design) */
+.docsnav-search-container {
+    display: flex;
+    gap: 2px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.docsnav-search-btn {
+    background-color: #0095d5;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    font-size: 14px;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.docsnav-search-left {
+    border-radius: 15px 0 0 15px;
+}
+
+.docsnav-search-right {
+    border-radius: 0 15px 15px 0;
+}
+
+.docsnav-search-btn:hover {
+    background-color: #007ab8;
+}
+
+.docsnav-search-btn:active {
+    background-color: #006094;
+}
+
+.docsnav-search-btn i {
+    font-size: 16px;
+}
 /* Sticky top menu */
 .sticky {
     position: fixed;
     top: 0;
+    left: 0;
+    right: 0;
     z-index: 5;
     margin: 0 auto;
     padding: .5rem 1rem .5rem 1rem;
 	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 	background: white;
-	min-width: -webkit-fill-available;
+	width: 100%;
 }
 .stickyelement {
     max-width: 100rem;
@@ -294,7 +339,7 @@ mark {
     }
 }
 .gdoc-nav nav {
-    padding: 1rem .25rem 1rem 1rem;
+    padding: 0.5rem .25rem 1rem 1rem;
 }
 .gdoc-nav nav section {
 	margin-top: 0;
@@ -1583,8 +1628,8 @@ a.section-box:hover {
 	text-align: center;
 }
 .prod-card-img {
-	width: 10em;
-	height: 15em!important;
+	width: 7.5em;
+	height: 11.25em!important;
 	object-fit: contain;
 }
 .box-image > img:hover {

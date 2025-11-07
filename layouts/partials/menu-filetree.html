@@ -1,22 +1,4 @@
 {{ $current := . }}
-<!-- Static chatbot button -->
-<div style="margin-top: 15px; margin-bottom: 10px;">
-  <button id="chatbot-open-button" style="padding: 10px 20px; background-color: #0095d5; color: white; border: none; cursor: pointer; border-radius: 15px; display: flex; align-items: center; gap: 10px; transition: opacity 0.3s;">
-    <span id="chatbot-button-icon" style="display: flex; vertical-align: middle;">
-      <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="book" class="svg-inline--fa fa-book" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" style="width: 20px; height: 20px;">
-        <path fill="currentColor" d="M96 0C43 0 0 43 0 96V416c0 53 43 96 96 96H384h32c17.7 0 32-14.3 32-32s-14.3-32-32-32V384c17.7 0 32-14.3 32-32V32c0-17.7-14.3-32-32-32H384 96zm0 384H352v64H96c-17.7 0-32-14.3-32-32s14.3-32 32-32zm32-240c0-8.8 7.2-16 16-16H336c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16zm16 48H336c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16s7.2-16 16-16z"></path>
-      </svg>
-    </span>
-    <span>AI-Powered Search</span>
-  </button>
-</div>
-
-<style>
-  #chatbot-open-button:hover {
-    opacity: 0.8; /* Adjust the opacity for the hover effect */
-  }
-</style>
-
 <!-- Chatbot Initialization Script -->
 <script type="text/javascript">
   window.DocsBotAI = window.DocsBotAI || {};
