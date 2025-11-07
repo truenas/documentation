@@ -63,11 +63,33 @@ For information on how you can contribute, visit https://www.truenas.com/docs/co
 * Improved password manager compatibility.
 
 **Breaking Changes Requiring Action:**
-* **NVIDIA GPU Drivers**: Switch to open-source drivers supporting Turing and newer (RTX/GTX 16-series+). Pascal, Maxwell, and Volta no longer supported. See [NVIDIA GPU Support](#nvidia-gpu-support).
-* **Active Directory IDMAP**: AUTORID backend removed and auto-migrated to RID. Review ACLs and permissions after upgrade.
-* **Certificate Management**: CA functionality removed. Use external CAs or ACME certificates with DNS authenticators.
-* **SMART Monitoring**: Built-in UI removed. Existing tests auto-migrated to cron tasks. Install Scrutiny app for advanced monitoring. See [Disk Management](#disk-management) for more information on disk health monitoring in 25.10 and beyond.
-* **SMB Shares**: Preset-based configuration introduced. "No Preset" shares migrated to "Legacy Share" preset.
+* **NVIDIA GPU Drivers**: 
+  * TrueNAS 25.10 switches to open GPU kernel drivers supporting Turing and newer (RTX/GTX 16-series+). Pascal, Maxwell, and Volta architectures are no longer supported. See [NVIDIA GPU Support](#nvidia-gpu-support) for compatibility details.
+* **Active Directory IDMAP**:
+  * The Active Directory AUTORID IDMAP backend is removed and auto-migrated to RID to improve consistency across multi-server environments. Users should review their ACLs and permissions after upgrade and might need to reconfigure them in some edge cases.
+* **Certificate Management**:
+  * 25.10 removes the Certificate Authority (CA) functionality that allowed TrueNAS to create and sign certificates.
+    Users can continue to manage certificates by creating Certificate Signing Requests (CSRs) to be signed by external certificate authorities or and importing certificates that have been signed by external CAs or directory services.
+    These alternatives provide the certificate management capabilities most users need while ensuring proper certificate validation through established certificate authorities.
+* **SMART Monitoring**:
+  * 25.10 removes the built-in SMART test scheduling and monitoring interface to improve user flexibility for disk monitoring.
+    The smartmontools binaries remain installed and continue to be used internally by TrueNAS, ensuring that existing third-party scripts and monitoring tools continue to work unchanged.
+    Users seeking advanced SMART monitoring can install the "Scrutiny" app from the TrueNAS catalog, which offers superior disk health tracking with historical data storage, customizable alerts, and automatic drive detection.
+    TrueNAS maintains monitoring of critical disk health indicators and automatically migrates existing scheduled SMART tests to cron tasks during upgrade.
+
+    See [Disk Management](#disk-management) for more information on disk health monitoring in 25.10 and beyond.
+* **SMB Shares**:
+  * In 25.10, SMB share configuration only displays options relevant to each purpose-based preset.
+    Existing shares that previously used the **No Preset** option are automatically migrated to the **Legacy Share** preset during upgrade.
+    New shares cannot access legacy configuration options.
+
+    **Legacy Share** options include enabling SMB guest access, the SMB recycle bin, home directory export, AFP compatibility shares, and disabling shadow copies.
+    The SMB recycle bin feature is no longer available for new shares due to security and usability concerns.
+    For file recovery and versioning, use ZFS snapshots, which provide more reliable and predictable data protection.
+    For more information, see [Legacy Share Settings](https://www.truenas.com/docs/scale/25.10/scaleuireference/shares/smbsharesscreens/#legacy-share-settings) and the TrueNAS API documentation [sharing.smb.create](https://api.truenas.com/v25.10.0/api_methods_sharing.smb.create.html) return values for `options` `LegacyOpt`.
+* **Virtual Machine Startup Changes**:
+  * VMs created in TrueNAS 25.04 (pre-25.04.2) and displayed on the **Containers** screen no longer automatically start on system boot to prevent conflicts with VMs on the **Virtual Machines** screen.
+    See [Containers and Virtual Machines](#containers-virtual-machines) for more information.
 
 See the 25.10 [Major Features](#major-features) and [Full Changelog](#full-changelog) for more information.
 
