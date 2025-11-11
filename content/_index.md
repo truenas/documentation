@@ -1,5 +1,5 @@
 ---
-title: "TrueNAS 25.10 (Early)"
+title: "TrueNAS 25.10"
 geekdocCollapseSection: true
 weight: 20
 cascade:
