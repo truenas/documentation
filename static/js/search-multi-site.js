@@ -102,6 +102,7 @@ class MultiSiteSearch {
     this.performSearch = this.performSearch.bind(this);
     this.loadMoreResults = this.loadMoreResults.bind(this);
     this.updateSearchIcon = this.updateSearchIcon.bind(this);
+    this.checkUrlQueryParameter = this.checkUrlQueryParameter.bind(this);
 
     this.init();
   }
@@ -237,6 +238,39 @@ class MultiSiteSearch {
       await this.loadIndex(defaultDocs);
     } catch (error) {
       // Could not pre-load docs index
+    }
+
+    // Check for URL query parameter and auto-execute search
+    this.checkUrlQueryParameter();
+  }
+
+  checkUrlQueryParameter() {
+    // Parse URL query parameters
+    const urlParams = new URLSearchParams(window.location.search);
+    const queryParam = urlParams.get('query');
+
+    if (queryParam && queryParam.trim() !== '') {
+      // Check if we're on the /search/ path and redirect to homepage with query
+      const currentPath = window.location.pathname;
+      if (currentPath === '/search/' || currentPath === '/search') {
+        // Redirect to homepage with query parameter preserved
+        window.location.href = `/${window.location.search}`;
+        return;
+      }
+
+      // Open the modal
+      this.openModal();
+
+      // Set the search input value
+      const searchInput = document.getElementById('search-input-enhanced');
+      if (searchInput) {
+        searchInput.value = queryParam.trim();
+      }
+
+      // Wait a short moment for modal to fully render, then perform search
+      setTimeout(() => {
+        this.performSearch();
+      }, 200);
     }
   }
 
