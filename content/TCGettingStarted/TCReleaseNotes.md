@@ -25,7 +25,8 @@ TrueCommand Cloud deployments are upgraded automatically by TrueNAS. Self-hosted
 
 As a best practice, back up your instance data directory before deploying updates. Self-hosted containers are typically updated by backing up the container volume and pulling the latest available container version. See the [container update tutorial]({{< ref "InstallTCDocker" >}}) for guidance.
 
-This is a maintenance release that addresses SMART data parsing issues, resolves SMTP configuration problems with Fastmail, and removes iXsystems branding from the TrueCommand interface. The release also ensures TrueCommand is compatible with TrueNAS 25.10.
+This is a maintenance release that makes TrueNAS configuration backups more consistent and performant, resolves SMTP configuration problems with Fastmail, and removes iXsystems branding from the TrueCommand interface.
+The release also ensures TrueCommand is compatible with TrueNAS 25.10.
 
 ### TrueNAS Compatibility
 
@@ -73,7 +74,7 @@ The TrueNAS team is pleased to release TrueCommand 3.2.0!
 Notable changes:
 
 * Remove iXsystems branding from TrueCommand ([TC-3309](https://ixsystems.atlassian.net/browse/TC-3309))
-* Smart data parsing error ([TC-3305](https://ixsystems.atlassian.net/browse/TC-3305))
+* Config backup timezone fix and performance improvements ([TC-3317](https://ixsystems.atlassian.net/browse/TC-3317))
 * SMTP configuration with Fastmail not working ([TC-3304](https://ixsystems.atlassian.net/browse/TC-3304))
 * Implement API version dropdown for FT+ RPC API ([TC-3310](https://ixsystems.atlassian.net/browse/TC-3310))
 
