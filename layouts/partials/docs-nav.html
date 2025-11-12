@@ -8,6 +8,8 @@
           <button class="truenas-docsnav-menubutton" id="productButton" data-product-id="">Product <i class="fa fa-angle-down"></i></button>
           <div class="truenas-navmenudropdown" id="productDropdown">
             <div class="truenas-dropdown-item" onclick="selectProduct('TrueNAS')" data-id="truenas">TrueNAS</div>
+            <a class="truenas-dropdown-item" href="https://apps.truenas.com" target="_blank">TrueNAS Apps</a>
+            <a class="truenas-dropdown-item" href="https://connect.truenas.com" target="_blank">TrueNAS Connect</a>
             <div class="truenas-dropdown-item" onclick="selectProduct('TrueCommand')" data-id="truecommand">TrueCommand</div>
             <div class="truenas-dropdown-item" onclick="selectProduct('TrueNAS Systems')" data-id="hardware">TrueNAS Systems</div>
           </div>
@@ -181,7 +183,7 @@
       productButton.innerHTML = 'TrueNAS <i class="fa fa-angle-down"></i>';
     
       if (path.includes('/13.3/')) {
-        versionButton.textContent = '13.3';
+        versionButton.textContent = 'Archive';
       } else if (path.includes('/13.0/')) {
         versionButton.textContent = '13.0';
       }
@@ -273,7 +275,6 @@
               <hr class="version-line">
             </div>
             <div class="truenas-dropdown-item" onclick="selectVersion('24.10')" id="2410">24.10</div>
-            <div class="truenas-dropdown-item" onclick="selectVersion('13.3')" id="13.3">13.3</div>
             <div class="truenas-dropdown-item" onclick="selectVersion('13.0')" id="13">13.0</div>
           </div>
           <div class="truenas-version-group">
@@ -478,8 +479,6 @@
       var relative_url;
       if (version === '13.0') {
         relative_url = 'core/13.0/';
-      } else if (version === '13.3') {
-        relative_url = 'core/13.3/';
       } else if (version === 'Archive') {
         relative_url = 'archive/';
       } else if (version === '24.10') {
@@ -561,7 +560,7 @@
       if (currentPath.includes('/core/13.0/')) {
         versionButton.innerHTML = '13.0 <i class="fa fa-angle-down"></i>';
       } else if (currentPath.includes('/core/13.3/')) {
-        versionButton.innerHTML = '13.3 <i class="fa fa-angle-down"></i>';
+        versionButton.innerHTML = 'Archive <i class="fa fa-angle-down"></i>';
       } else if (currentPath.includes('/scale/25.10/')) {
         versionButton.innerHTML = '25.10 <i class="fa fa-angle-down"></i>';
       } else if (currentPath.includes('/scale/25.04/')) {

@@ -1,27 +1,35 @@
 ---
 id: "core-schedule"
 img: "/images/truenas_core-logo-full-color-rgb.png"
-title: "CORE<sup class='section-sup'>TM</sup> | Enterprise<sup class='section-sup'>TM</sup>"
-properties:
-  - name: "13.0-U6.1"
-    type: "Maintenance"
-    link: "https://www.truenas.com/docs/core/13.0/gettingstarted/corereleasenotes/"
-    tags:
-      en:
-        - 7 December 2023
-    latest: true
-  - name: "13.1-RC.1"
-    type: "Early"
-    link:
-    tags:
-      en:
-        - 23 January 2024
-    latest: false
-  - name: "13.1.0"
-    type: "Stable"
-    link:
-    tags:
-      en:
-        - 5 March 2024
-    latest: false
-    
+product: "TrueNAS CORE"
+title: "CORE&trade; | Enterprise&trade;"
+majorVersions:
+  - lifecycle: "13.0"
+    name: "TrueNAS 13.0"
+    releaseName: "13.0"
+    releases:
+      - name: "13.0-U6.8"
+        type: "Enterprise"
+        link: "https://www.truenas.com/docs/core/13.0/gettingstarted/corereleasenotes/"
+        releaseDate: "2025-07-14"
+        latest: true
+  - lifecycle: "13.3 (Archived)"
+    name: "TrueNAS 13.3"
+    releaseName: "13.3 (Archived)"
+    releases:
+      - name: "13.3-U1"
+        type: "Community"
+        link: "https://www.truenas.com/docs/core/13.3/gettingstarted/corereleasenotes/#133-release-changelog"
+        releaseDate: "2024-11-21"
+        latest: true
+  - lifecycle: "Next"
+    name: "TBD"
+    releaseName: "TBD"
+    releases:
+      - name: "TBD"
+        type: "Experimental"
+        link: ""
+        releaseDate: ""
+        latest: true
+
+
