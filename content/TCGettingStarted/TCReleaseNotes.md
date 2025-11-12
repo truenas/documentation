@@ -77,7 +77,7 @@ Notable changes:
 * SMTP configuration with Fastmail not working ([TC-3304](https://ixsystems.atlassian.net/browse/TC-3304))
 * Implement API version dropdown for FT+ RPC API ([TC-3310](https://ixsystems.atlassian.net/browse/TC-3310))
 
-<a href="https://ixsystems.atlassian.net/issues/?filter=13163" target="_blank">Click here for the full changelog</a> of completed tickets that are included in the TrueCommand 3.2.0 release.
+<a href="https://ixsystems.atlassian.net/issues?filter=13561" target="_blank">Click here for the full changelog</a> of completed tickets that are included in the TrueCommand 3.2.0 release.
 
 {{< include file="/static/includes/JiraFilterInstructions.md" >}}
 
@@ -89,7 +89,7 @@ We recommend that TrueNAS Enterprise High Availability (HA) systems be updated f
 If TrueCommand 3.2.0 is used to upgrade HA systems, the standby controller might fail to activate the updated boot environment, resulting in a version mismatch error between the controllers. If you encounter this issue, manually activate the updated boot environment on the active controller and then failover to complete the upgrade.
 {{< /enterprise >}}
 
-<a href="https://ixsystems.atlassian.net/issues/?filter=13164" target="_blank">Click here to see the latest Jira tickets</a> about known issues in 3.2.0 that are being resolved in a future TrueCommand release.
+<a href="https://ixsystems.atlassian.net/issues?filter=13560" target="_blank">Click here to see the latest Jira tickets</a> about known issues in 3.2.0 that are being resolved in a future TrueCommand release.
 
 ## TrueCommand 3.1.0
 
