@@ -66,7 +66,7 @@ G["3.2.0"]
 
 ## 3.2.0 Changelog
 
-**September 9th, 2025**
+**November 13, 2025**
 
 The TrueNAS team is pleased to release TrueCommand 3.2.0!
 
