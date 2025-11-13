@@ -50,6 +50,10 @@ id = "GTM-P87FM6K"
 [params.ui.readingtime]
 enable = true
 
+# Multi-site search configuration
+[params.search]
+  siteVersion = "25.10"
+
 [params]
 
   # (Optional, default 6) Set how many table of contents levels to be showed on page.

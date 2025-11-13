@@ -132,7 +132,7 @@ mark {
 .sidebar-fixed {
     position: sticky;
     top: 0;
-    margin-top: 1.5em;
+    margin-top: 0.5em;
     margin-bottom: 1.5em;
 }
 
@@ -147,6 +147,49 @@ mark {
     background: transparent;
 }
 /* End Site Nav Bar */
+/* Docsnav Search Buttons (Split Design) */
+.docsnav-search-container {
+    display: flex;
+    gap: 2px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.docsnav-search-btn {
+    background-color: #0095d5;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    font-size: 14px;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.docsnav-search-left {
+    border-radius: 15px 0 0 15px;
+}
+
+.docsnav-search-right {
+    border-radius: 0 15px 15px 0;
+}
+
+.docsnav-search-btn:hover {
+    background-color: #007ab8;
+}
+
+.docsnav-search-btn:active {
+    background-color: #006094;
+}
+
+.docsnav-search-btn i {
+    font-size: 16px;
+}
 /* Sticky top menu */
 .sticky {
     position: fixed;

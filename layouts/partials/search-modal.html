@@ -1,0 +1,77 @@
+<div id="search-modal" class="search-modal" style="display:none;">
+  <div class="search-modal-overlay" id="search-overlay"></div>
+  <div class="search-modal-content">
+    <div class="search-header">
+      <h3>Search TrueNAS Documentation</h3>
+      <button id="search-close" class="search-close" aria-label="Close search">&times;</button>
+    </div>
+
+    <div class="search-input-container">
+      <input type="text"
+             id="search-input-enhanced"
+             placeholder="Keyword Search..."
+             autocomplete="off"
+             aria-label="Search input">
+      <button id="search-submit" class="search-submit-btn" aria-label="Search">
+        <i class="fa fa-search"></i>
+      </button>
+    </div>
+
+    <div class="search-filters">
+      <div class="filter-header">Show Results From:</div>
+      <div class="filter-checkboxes">
+        <div class="version-filter-container" id="version-filter-container">
+          <div class="version-filter-label">
+            <span id="version-label-text">Version (25.04)</span>
+          </div>
+          <div class="docs-version-menu" id="docs-version-menu">
+            <label class="docs-version-option">
+              <input type="checkbox" data-site="docs-26.04">
+              <span>26.04</span>
+            </label>
+            <label class="docs-version-option">
+              <input type="checkbox" data-site="docs-25.10">
+              <span>25.10</span>
+            </label>
+            <label class="docs-version-option">
+              <input type="checkbox" data-site="docs-25.04" checked>
+              <span>25.04</span>
+            </label>
+            <label class="docs-version-option">
+              <input type="checkbox" data-site="docs-24.10">
+              <span>24.10</span>
+            </label>
+          </div>
+        </div>
+        <label class="filter-checkbox">
+          <input type="checkbox" id="docs-main-toggle" checked>
+          <span>Docs</span>
+        </label>
+        <label class="filter-checkbox">
+          <input type="checkbox" data-site="api" checked>
+          <span>API</span>
+        </label>
+        <label class="filter-checkbox">
+          <input type="checkbox" data-site="apps" checked>
+          <span>Apps</span>
+        </label>
+        <!-- TEMPORARILY DISABLED - Uncomment to re-enable when pagefind is fixed
+        <label class="filter-checkbox">
+          <input type="checkbox" data-site="security" checked>
+          <span>Security</span>
+        </label>
+        -->
+        <label class="filter-checkbox">
+          <input type="checkbox" data-site="connect" checked>
+          <span>TrueNAS Connect</span>
+        </label>
+      </div>
+    </div>
+    <div id="search-results-count" class="search-results-count" style="display:none;"></div>
+    <div id="search-results-enhanced" class="search-results"></div>
+    <div id="search-loading" class="search-loading" style="display:none;">
+      <div class="loading-spinner"></div>
+      <p>Searching...</p>
+    </div>
+  </div>
+</div>
