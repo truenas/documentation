@@ -258,7 +258,10 @@ These are ongoing issues that can affect multiple versions in the 25.10 series.
 ### Current Known Issues
 
 * SMB2 query directory with SMB_REOPEN flag is broken ([NAS-138259](https://ixsystems.atlassian.net/browse/NAS-138259)).
-  Windows client systems connected to a TrueNAS 25.10 SMB share can experience incorrect behaviors with viewing and opening files within the share.
+  Client systems connected to TrueNAS 25.10 SMB shares can experience file access issues, including:
+    - Files appearing missing or shares showing as empty when browsing directories
+    - Media libraries (Plex, Jellyfin, etc.) losing access to files or removing them from indexes
+    - Files failing to open or save over SMB
 
 * NVMe over TCP is incompatible with VMware ESXi environments ([NAS-137372](https://ixsystems.atlassian.net/browse/NAS-137372)).
   TrueNAS 25.10 uses the Linux kernel NVMe over TCP target driver, which lacks support for fused commands required by VMware ESXi.
