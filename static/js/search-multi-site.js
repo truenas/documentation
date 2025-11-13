@@ -6,7 +6,7 @@ const LOCAL_TESTING = false; // Change to true for local testing
 const searchConfig = {
   indexes: {
     // TrueNAS Documentation versions
-    // NOTE: To change the default version, move the "isDefault: true" flag to the desired version
+    // NOTE: Default version is determined dynamically from URL or scale-releases.yaml
     'docs-26.04': {
       url: LOCAL_TESTING ? '/pagefind/' : 'https://www.truenas.com/docs/pagefind/',
       name: 'TrueNAS Documentation',
@@ -32,8 +32,7 @@ const searchConfig = {
       version: '25.04',
       icon: 'https://www.truenas.com/docs/favicon/TN-favicon-32x32.png',
       priority: 3,
-      group: 'docs',
-      isDefault: true  // Default selected version - change this flag to set a different default
+      group: 'docs'
     },
     'docs-24.10': {
       url: 'https://www.truenas.com/docs/scale/24.10/pagefind/',
@@ -91,9 +90,10 @@ class MultiSiteSearch {
     this.hasResults = false; // Track if results are currently displayed
     this.isLoadingMore = false; // Track if more results are being loaded
     this.activeSites = []; // Will be initialized after DOM is ready
+    this.currentVersionFromYaml = null; // Will be loaded from scale-releases.yaml
 
-    // Detect current docs version from URL
-    this.currentDocsVersion = this.detectCurrentDocsVersion();
+    // Detect current docs version from URL (synchronous detection)
+    this.currentDocsVersion = this.detectCurrentDocsVersionFromUrl();
 
     // Bind methods
     this.init = this.init.bind(this);
@@ -103,11 +103,13 @@ class MultiSiteSearch {
     this.loadMoreResults = this.loadMoreResults.bind(this);
     this.updateSearchIcon = this.updateSearchIcon.bind(this);
     this.checkUrlQueryParameter = this.checkUrlQueryParameter.bind(this);
+    this.fetchCurrentVersionFromYaml = this.fetchCurrentVersionFromYaml.bind(this);
+    this.setDefaultVersionCheckbox = this.setDefaultVersionCheckbox.bind(this);
 
     this.init();
   }
 
-  detectCurrentDocsVersion() {
+  detectCurrentDocsVersionFromUrl() {
     // Try to detect version from URL (e.g., /docs/scale/25.04/ or /scale/25.04/)
     const urlMatch = window.location.pathname.match(/\/(?:docs\/)?(?:scale\/)?(\d+\.\d+)/);
     if (urlMatch) {
@@ -115,20 +117,94 @@ class MultiSiteSearch {
       return version;
     }
 
-    // Fallback: try to detect from version switcher or config
+    // Fallback: try to detect from version switcher
     const versionSwitcher = document.querySelector('[data-current-version]');
     if (versionSwitcher) {
       const version = versionSwitcher.dataset.currentVersion;
       return version;
     }
 
-    // Default to the default version from config
-    const defaultDocs = Object.keys(searchConfig.indexes).find(key => searchConfig.indexes[key].isDefault);
-    const defaultVersion = searchConfig.indexes[defaultDocs]?.version?.replace(/\s.*$/, '');
-    return defaultVersion;
+    return null; // Will use YAML data as fallback
+  }
+
+  async fetchCurrentVersionFromYaml() {
+    try {
+      const response = await fetch('/data/properties/scale-releases.yaml');
+      if (!response.ok) {
+        throw new Error('Failed to fetch scale-releases.yaml');
+      }
+
+      const yamlText = await response.text();
+
+      // Parse YAML to find the "Current" lifecycle version
+      // Look for the lifecycle: "Current" section and extract the version from the link
+      const lines = yamlText.split('\n');
+      let inCurrentSection = false;
+
+      for (let i = 0; i < lines.length; i++) {
+        const line = lines[i];
+
+        // Detect lifecycle: "Current"
+        if (line.includes('lifecycle:') && line.includes('"Current"')) {
+          inCurrentSection = true;
+          continue;
+        }
+
+        // If we're in the Current section and find a link, extract version
+        if (inCurrentSection && line.includes('link:')) {
+          // Extract version from link like "https://www.truenas.com/docs/scale/25.04/..."
+          const linkMatch = line.match(/\/scale\/(\d+\.\d+)\//);
+          if (linkMatch) {
+            return linkMatch[1]; // e.g., "25.04"
+          }
+        }
+
+        // Exit Current section if we hit another lifecycle
+        if (inCurrentSection && line.includes('lifecycle:') && !line.includes('"Current"')) {
+          break;
+        }
+      }
+
+      // Fallback to hardcoded default
+      return '25.04';
+    } catch (error) {
+      console.error('Error fetching current version from YAML:', error);
+      return '25.04'; // Fallback default
+    }
+  }
+
+  setDefaultVersionCheckbox() {
+    // Determine which version to select
+    let versionToSelect = this.currentDocsVersion || this.currentVersionFromYaml || '25.04';
+
+    // Find and check the appropriate checkbox
+    const docsVersionCheckboxes = document.querySelectorAll('.docs-version-option input[type="checkbox"]');
+
+    docsVersionCheckboxes.forEach(checkbox => {
+      const siteKey = checkbox.dataset.site; // e.g., "docs-25.04"
+      const version = siteKey.replace('docs-', ''); // e.g., "25.04"
+
+      // Check if this is the version to select
+      if (version === versionToSelect) {
+        checkbox.checked = true;
+      } else {
+        checkbox.checked = false;
+      }
+    });
+
+    // Update the docs toggle label
+    this.updateDocsToggle();
   }
 
   async init() {
+    // Fetch current version from YAML if URL detection failed
+    if (!this.currentDocsVersion) {
+      this.currentVersionFromYaml = await this.fetchCurrentVersionFromYaml();
+    }
+
+    // Set the default version checkbox based on URL or YAML data
+    this.setDefaultVersionCheckbox();
+
     // Initialize docs toggle and active sites
     this.updateDocsToggle();
 
@@ -234,8 +310,9 @@ class MultiSiteSearch {
 
     // Try to load default docs index on init (for faster first search)
     try {
-      const defaultDocs = Object.keys(searchConfig.indexes).find(key => searchConfig.indexes[key].isDefault);
-      await this.loadIndex(defaultDocs);
+      const defaultVersion = this.currentDocsVersion || this.currentVersionFromYaml || '25.04';
+      const defaultDocsKey = `docs-${defaultVersion}`;
+      await this.loadIndex(defaultDocsKey);
     } catch (error) {
       // Could not pre-load docs index
     }
