@@ -21,6 +21,8 @@ If you plan to create an ACME certificate, before adding a CSR, make sure the ce
 
 When adding an ACME certificate for a CSR, it is created based on the settings in the selected CSR.
 
+When adding an ACME certificate for a CSR, it is created based on the settings in the selected CSR.
+
 For example, if using a Cloudflare DNS authenticator, in the Cloudflare account, register the domain(s) entered in the **Subject Alternative Name** field on the **Certificate Subject** screen in the **Add CSR** wizard.
 
 If the CSR and provider accounts are not properly configured, a dialog with an error indicating the configuration problem opens.
