@@ -36,6 +36,17 @@ pipeline {
                 }
             }
         }
+        post {
+            always {
+                script {
+                    // Archive error log only if it exists (created on API failure)
+                    if (fileExists('scripts/software-status-error.log')) {
+                        echo "⚠️ Error log found - archiving for review"
+                        archiveArtifacts artifacts: 'scripts/software-status-error.log'
+                    }
+                }
+            }
+        }
     }
     stage('Publish') {
         steps {
