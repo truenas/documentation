@@ -16,6 +16,7 @@ When 25.04 is no longer recommended for any user profile, remove pre-25.10 compa
 import requests
 import yaml
 import re
+import argparse
 from pathlib import Path
 
 def version_to_anchor(version):
@@ -171,12 +172,23 @@ def find_versions_with_cascade(available_trains, train_releases, profiles_config
     return profile_results
 
 def main():
+    # Parse command line arguments
+    parser = argparse.ArgumentParser(description='Update software status recommendations from TrueNAS API')
+    parser.add_argument('--dry-run', action='store_true',
+                       help='Fetch and display updates without modifying the YAML file')
+    args = parser.parse_args()
+
+    if args.dry_run:
+        print("="*70)
+        print("DRY-RUN MODE: Will not modify software_status_config.yaml")
+        print("="*70 + "\n")
+
     config_path = Path(__file__).parent.parent / 'data' / 'software_status_config.yaml'
-    
+
     # Load existing config
     with open(config_path, 'r') as f:
         config = yaml.safe_load(f)
-    
+
     print("Step 1: Fetching available trains...")
     
     try:
@@ -328,15 +340,25 @@ def main():
         
         # Step 4: Save updated config
         if updates_made:
-            with open(config_path, 'w') as f:
-                yaml.dump(config, f, default_flow_style=False, sort_keys=False)
-            
-            print(f"\n✓ Config updated successfully!")
-            print("Updates made:")
-            for update in updates_made:
-                print(f"  - {update}")
+            if args.dry_run:
+                print(f"\n[DRY-RUN] Would have updated config file: {config_path}")
+                print("Updates that would be made:")
+                for update in updates_made:
+                    print(f"  - {update}")
+                print("\n✓ Dry-run completed successfully (no files modified)")
+            else:
+                with open(config_path, 'w') as f:
+                    yaml.dump(config, f, default_flow_style=False, sort_keys=False)
+
+                print(f"\n✓ Config updated successfully!")
+                print("Updates made:")
+                for update in updates_made:
+                    print(f"  - {update}")
         else:
-            print(f"\n- No updates needed")
+            if args.dry_run:
+                print(f"\n[DRY-RUN] No updates needed")
+            else:
+                print(f"\n- No updates needed")
         
     except Exception as e:
         # Make API failure VERY visible in console output
