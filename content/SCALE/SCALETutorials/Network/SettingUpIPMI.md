@@ -58,3 +58,5 @@ Use the [Alert Settings Screen]({{< ref "AlertsSettingsServiceScreen" >}}) under
 Configure the minimum warning level and frequency to display IPMI alerts in the TrueNAS UI.
 
 {{< include file="/static/includes/IPMISELAlert.md" >}}
+
+This is a test. We shouldn't go the the BYOB meeting tomorrow, they're going to make us bring our own beer!
