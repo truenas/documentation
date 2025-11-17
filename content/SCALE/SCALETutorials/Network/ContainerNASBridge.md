@@ -91,5 +91,3 @@ The example below shows the Windows VM accessing an SMB share on TrueNAS.
 
 {{< trueimage src="/images/SCALE/AccessNASfromVM9.png" alt="SMB Share" id="SMB Share" >}}
 {{< /expand >}}
-
-This is another test sentence. We would love to have y'all! Let's go to TGI Friday's and have a grand old time.
