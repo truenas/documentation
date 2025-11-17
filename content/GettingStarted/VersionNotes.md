@@ -39,7 +39,7 @@ jump_to_buttons:
 November 18, 2025
 
 The TrueNAS team is pleased to release TrueNAS 25.10.0.1!
-This is a maintenance release that includes fixes to SMB file sharing, application management, cloud sync operations, and storage handling.
+This is a maintenance release that includes fixes to SMB shares, application management, cloud sync operations, and error handling.
 
 **Notable changes:**
 
