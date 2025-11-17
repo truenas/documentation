@@ -1,0 +1,19 @@
+extends: existence
+message: "Avoid possessive forms ('%s'). Rephrase to avoid using apostrophes for possession."
+level: error
+ignorecase: true
+tokens:
+  - '\b\w+''s\b'
+exceptions:
+  - it's
+  - that's
+  - what's
+  - who's
+  - where's
+  - when's
+  - how's
+  - he's
+  - she's
+  - there's
+  - here's
+  - let's
