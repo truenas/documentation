@@ -24,6 +24,7 @@ exceptions:
   - ASYNC
   - ATA
   - BBU
+  - BIOS
   - BMC
   - BMPUM
   - BPF
@@ -42,6 +43,7 @@ exceptions:
   - CSI
   - CSM
   - CSR
+  - CD
   - CSV
   - CTDB
   - CVE
@@ -54,6 +56,7 @@ exceptions:
   - DIF
   - DMA
   - DNS
+  - DVD
   - ECC
   - ECR
   - EDK
@@ -115,6 +118,7 @@ exceptions:
   - LUN
   - LXC
   - LZJB
+  - MAC
   - MCA
   - MLC
   - MMC
@@ -161,6 +165,7 @@ exceptions:
   - QSFP
   - RAM
   - RBAC
+  - ROM
   - RSFSR
   - RSS
   - RTL
