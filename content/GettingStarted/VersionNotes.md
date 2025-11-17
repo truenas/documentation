@@ -298,7 +298,7 @@ These are ongoing issues that can affect multiple versions in the 25.10 series.
   North American users should be aware of this issue ahead of the upcoming DST transition on November 2, 2025.
   The authentication system resolves automatically once the duplicated hour passes.
 
-<a href="https://ixsystems.atlassian.net/issues/?filter=13428" target="_blank">See the latest status on Jira</a> for public issues discovered in 25.10 that are being resolved in a future TrueNAS release.
+<a href="https://ixsystems.atlassian.net/issues/?filter=13628" target="_blank">See the latest status on Jira</a> for public issues discovered in 25.10 that are being resolved in a future TrueNAS release.
 
 See the [Release Notes](https://forums.truenas.com/c/release-notes/13) section of the TrueNAS forum for ongoing updates about known issues, investigations, and statistics about TrueNAS releases.
 
