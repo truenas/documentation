@@ -4,7 +4,6 @@ level: suggestion
 ignorecase: true
 swap:
   'back up': 'backup'
-  'set up': 'setup'
   'log in': 'login'
   'sign in': 'signin'
   'sign up': 'signup'
