@@ -121,7 +121,7 @@ The **Block (iSCSI) Shares Targets** widget header opens the **iSCSI** screens.
 ### iSCSI Target Screen
 
 iSCSI targets are storage resources on an iSCSI server that are made available to iSCSI initiators (clients) over a TCP/IP network.
-The target is a server-side torage object that encapuslates a block storage resource (e.g., a phyical disk, logical volume, or file) and makes it accessible to initiators via the iSCSI protocol.
+The target is a server-side storage object that encapuslates a block storage resource (e.g., a phyical disk, logical volume, or file) and makes it accessible to initiators via the iSCSI protocol.
 A target is identified by a unique iSCSI qualified name (IQN), and is associated with portal groups for network access and initiator groups for access control.
 
 The **Target** tab shows by default when opening the **iSCSI** screen. Use it to manage iSCSI targets.

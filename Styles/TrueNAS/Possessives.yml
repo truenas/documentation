@@ -1,0 +1,7 @@
+extends: existence
+message: "Avoid possessive forms ('%s'). Rephrase to avoid using apostrophes for possession."
+level: error
+ignorecase: true
+# Match possessives but exclude contractions using negative lookahead
+tokens:
+  - '\b(?!it|that|what|who|where|when|how|he|she|there|here|let)\w+''s\b'
