@@ -36,7 +36,7 @@ jump_to_buttons:
 <div style="display: none;" id="release-tab-content-source">
   <div data-tab-id="25.10.0.1" data-tab-label="25.10.0.1">
 
-November 18, 2025
+November 19, 2025
 
 The TrueNAS team is pleased to release TrueNAS 25.10.0.1!
 This is a maintenance release that includes fixes to SMB shares, application management, cloud sync operations, and error handling.
