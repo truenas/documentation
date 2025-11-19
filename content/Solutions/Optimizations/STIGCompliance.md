@@ -26,7 +26,7 @@ This article details customizable settings to accomplish a security-hardened sys
 
 Existing TrueNAS systems can upgrade to the latest release through the UI.
 Earlier releases of TrueNAS can upgrade by following the established migration paths or might need to clean-install the latest release of SCALE using the <file>iso
-</file>. Refer to documentation on upgrading existing systems found [here]({{< ref "/TrueNASUpgrades" >}}).
+</file>. Refer to documentation on upgrading existing systems found [here]({{< ref "/SoftwareStatus" >}}).
 
 If side-grading (migrating) from an earlier release to the latest TrueNAS release, follow guidance in the [Preparing to Migrate]({{< ref "/SCALE/GettingStarted/Migrate/MigratePrep" >}}) article before beginning the migration.
 

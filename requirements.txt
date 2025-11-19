@@ -1,0 +1,5 @@
+# Python dependencies for documentation automation scripts
+# Used by: scripts/update-software-status.py, scripts/generate_app_docs.py
+
+requests>=2.31.0
+PyYAML>=6.0
