@@ -20,6 +20,7 @@ pipeline {
     }
     stage('Update Software Status') {
         steps {
+            sh 'pip3 install -r requirements.txt'
             sh 'python3 scripts/update-software-status.py'
             script {
                 // Check if software_status_config.yaml was modified
