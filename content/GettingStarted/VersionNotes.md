@@ -8,7 +8,7 @@ related: false
 use_jump_to_buttons: true
 jump_to_buttons:
   - text: "Latest Changes"
-    anchor: "25.10.0"
+    anchor: "25.10.0.1"
     icon: "fiber-new"
   - text: "Known Issues"
     anchor: "known-issues"
