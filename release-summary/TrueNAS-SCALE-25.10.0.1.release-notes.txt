@@ -1,0 +1,9 @@
+## TrueNAS 25.10.0.1
+
+This maintenance release resolves critical SMB file sharing issues, application management bugs, and improves overall system stability.
+
+- **Critical Bug Fixes:** Fixes include SMB2 directory enumeration causing files to appear missing or inaccessible, Time Machine snapshot failures, Docker startup timeouts on HDD systems, and custom app update failures.
+
+**Pre-Update Actions:** None required.
+
+**[Version Recommendations](https://www.truenas.com/software-status/)** | **[Full Release Notes](https://www.truenas.com/docs/scale/25.10/gettingstarted/scalereleasenotes/#25.10.0.1)** | **[Known Issues](https://www.truenas.com/docs/scale/25.10/gettingstarted/scalereleasenotes/#known-issues)** | **[Enterprise Support](https://support.truenas.com/)** | **[Forums](https://forums.truenas.com/)**
