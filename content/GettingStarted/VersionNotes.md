@@ -64,6 +64,8 @@ This is a maintenance release that includes fixes to SMB shares, application man
 * Improves NetBIOS naming by expanding permitted identifiers ([NAS-138390](https://ixsystems.atlassian.net/browse/NAS-138390)).
   Removes additional blacklist restrictions on NetBIOS names and workgroups, allowing more Microsoft-restricted keywords to be used. This change addresses customer environment needs where previously prohibited network naming identifiers are required.
 
+**Known Issue:** Apps configured to use SMB or NFS shares as storage can experience an occasional race condition during boot that causes them to show a "crashed" status. The workaround is to restart the affected app after a minute or two. See <a href="#known-issues" target="_blank">Known Issues</a> for details. Additional fixes are expected in 25.10.1.
+
 <a href="#full-changelog" target="_blank">Click here</a> to see the full 25.10 changelog or visit the <a href="https://ixsystems.atlassian.net/issues/?filter=13627" target="_blank">TrueNAS 25.10.0.1 (Goldeye) Changelog</a> in Jira.
 
   </div>
@@ -288,6 +290,14 @@ These are ongoing issues that can affect multiple versions in the 25.10 series.
 {{< /hint >}}
 
 ### Current Known Issues
+
+* Apps using SMB/NFS storage can experience race condition during boot.
+  When apps are configured to use SMB or NFS shares as storage passthroughs, there can be an occasional race condition during TrueNAS boot where the app startup conflicts with the sharing services startup.
+  This causes affected apps to not fully start and show a "crashed" status.
+
+  Workaround: Restart the affected app after a minute or two.
+  
+  Additional fixes to this area are expected in the 25.10.1 maintenance release.
 
 * NVMe over TCP is incompatible with VMware ESXi environments ([NAS-137372](https://ixsystems.atlassian.net/browse/NAS-137372)).
   TrueNAS 25.10 uses the Linux kernel NVMe over TCP target driver, which lacks support for fused commands required by VMware ESXi.
