@@ -28,9 +28,9 @@ For more information, refer to the [Veeam Ready list](https://www.veeam.com/alli
 
 This article discusses some of the best practices when deploying TrueNAS with Veeam, the specific considerations users must be aware of, and some tips to help with performance.
 The focus is on capabilities native to TrueNAS.
-For more information on using and optimizing Veeam deployments, we encourage you to review relevant Veeam documentation, such as the [Veeam help center](https://www.veeam.com/documentation-guides-datasheets.html) and [Veeam best practices](https://bp.veeam.com/vbr) articles.
+For more information on using and optimizing Veeam deployments, users can review relevant Veeam documentation, such as the [Veeam help center](https://www.veeam.com/documentation-guides-datasheets.html) and [Veeam best practices](https://bp.veeam.com/vbr) articles.
 
-## What Do I Need?
+## Necessary Prerequisites
 
 When deploying TrueNAS with Veeam, prepare the following:
 
