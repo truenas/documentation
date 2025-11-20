@@ -99,19 +99,19 @@ def combine_changelogs(version):
             # Add data rows (skip header)
             all_rows.extend(rows[1:])
     
-    # Remove duplicates based on Issue key (first column)
+    # Remove duplicates based on Issue key (second column)
     seen_keys = set()
     unique_rows = []
-    
+
     for row in all_rows:
-        if row and len(row) > 0:
-            issue_key = row[0]  # Issue key is first column
+        if row and len(row) > 1:
+            issue_key = row[1]  # Issue key is second column (index 1)
             if issue_key not in seen_keys:
                 seen_keys.add(issue_key)
                 unique_rows.append(row)
     
     # Sort by Issue key for consistent output
-    unique_rows.sort(key=lambda x: x[0] if x else '')
+    unique_rows.sort(key=lambda x: x[1] if len(x) > 1 else '')
     
     # Write combined file
     with open(output_file, 'w', newline='', encoding='utf-8') as f:
