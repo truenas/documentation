@@ -137,7 +137,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
 	 {{< trueimage src="/images/Veeam/vsa_deploy10.png" alt="Veeam Software Appliance - Network Configuration" id="Veeam Software Appliance - Network Configuration" >}}
   
-  4. When necessary, adjust the nefault NTP configuration.
+  4. When necessary, adjust the default NTP configuration.
      The default settings are sufficient for most environments.
  
   5. Set the system time zone.
