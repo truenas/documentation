@@ -5,7 +5,7 @@ weight: 44
 ---
 
 Veeam version 13 includes a new [Veeam Infrastructure Appliance](https://helpcenter.veeam.com/rn/veeam_backup_13_0_1_release_notes.html#system-requirements-backup-infrastructure-veeam-infrastructure-appliance) image that integrates with TrueNAS as a virtual machine deployment.
-The goal for this infrastructure appliance with TrueNAS is primarily managing hardened backup repositories.
+The goal for this infrastructure appliance with TrueNAS is to integrate with an existing Veeam Backup & Replication deployment as a hardened backup repository for use in Veeam Jobs.
 
 <!-- Hugo-processed content for component versions tab box -->
 <div style="display: none;" id="requirements-tab-content-source">
@@ -28,7 +28,6 @@ The goal for this infrastructure appliance with TrueNAS is primarily managing ha
   
   * A VNC client. Connects to the TrueNAS VM for Veeam Infrastructure Appliance install and initial configuration.
   * Authenticator App. Veeam requires activating multifactor authentication (MFA) during the appliance initial configuration process.
-  * Veeam license file. Veeam requires uploading a valid license to activate the software appliance.
   * A Veeam Software Appliance deployed and web UI accessible.
 
   </div>
