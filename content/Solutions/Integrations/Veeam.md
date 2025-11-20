@@ -35,7 +35,7 @@ For more information on using and optimizing Veeam deployments, we encourage you
 When deploying TrueNAS with Veeam, prepare the following:
 
 * Veeam Backup & Replication dedicated server - either physical or VM
-* Windows Server and Microsoft SQL for Veeam
+* Windows Server for Veeam
 * TrueNAS appliance with users pre-configured as determined by the admin
 * Networking - 1/10/40/100GbE infrastructure and cables
 * Veeam connected to the Hypervisor or other clients to pull the data to TrueNAS
