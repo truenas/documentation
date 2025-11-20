@@ -8,9 +8,9 @@ aliases:
   - /scale/scaletutorials/communityrecommends/hardened-backup-repository-for-veeam/
   - /scale/communityrecommends/hardened-backup-repository-for-veeam/
 ---
-<div style="text-align:center;">
+<div style="float:left;max-width:25%;">
 
-![TrueNASVeeamReady](/images/Veeam/TrueNASVeeamReadyLogo.png "TrueNAS is Veeam Ready")
+![TrueNASVeeamReady](/images/Veeam/Ready_Repository.png "TrueNAS is Veeam Ready")
 
 </div>
 
