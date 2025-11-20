@@ -1,7 +1,7 @@
 ---
 title: "Veeam Immutability"
 description: "Guide for deploying Veeam immutability in a TrueNAS system using MinIO as S3 object storage."
-weight: 40
+weight: 45
 aliases:
 tags:
  - s3 object storage
