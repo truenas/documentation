@@ -1,0 +1,181 @@
+name: Weekly Docs Changes Summary
+on:
+  schedule:
+    # Run every Monday at 9 AM UTC (adjust as needed)
+    - cron: '0 9 * * 1'
+  workflow_dispatch: # Allow manual trigger for testing
+
+jobs:
+  docs-changes-summary:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get merged PRs from last week
+        id: get-merged-prs
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const oneWeekAgo = new Date(Date.now() - (7 * 24 * 60 * 60 * 1000));
+
+            // Get all merged PRs from the last 7 days
+            const { data: pulls } = await github.rest.pulls.list({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'closed',
+              sort: 'updated',
+              direction: 'desc',
+              per_page: 100
+            });
+
+            const mergedPRs = [];
+
+            for (const pr of pulls) {
+              // Only include PRs that were merged (not just closed)
+              if (!pr.merged_at) continue;
+
+              const mergedDate = new Date(pr.merged_at);
+              if (mergedDate < oneWeekAgo) continue;
+
+              // Get files changed to help with categorization
+              const { data: files } = await github.rest.pulls.listFiles({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                pull_number: pr.number
+              });
+
+              // Categorize the PR
+              let category = 'updated'; // default
+              const title = pr.title.toLowerCase();
+              const labels = pr.labels.map(l => l.name.toLowerCase());
+
+              // Check for new content
+              const hasNewFiles = files.some(f => f.status === 'added');
+              if (hasNewFiles || title.includes('new') || title.includes('add')) {
+                category = 'new';
+              }
+              // Check for fixes
+              else if (labels.includes('bug') || title.includes('fix') || title.includes('correct') || title.includes('typo')) {
+                category = 'fixed';
+              }
+              // Check for removals
+              else if (title.includes('remove') || title.includes('delete') || title.includes('deprecate')) {
+                category = 'removed';
+              }
+
+              mergedPRs.push({
+                number: pr.number,
+                title: pr.title,
+                url: pr.html_url,
+                author: pr.user.login,
+                mergedAt: pr.merged_at,
+                category: category,
+                filesChanged: files.length,
+                labels: pr.labels.map(l => l.name).join(', ')
+              });
+            }
+
+            // Group by category
+            const grouped = {
+              new: mergedPRs.filter(pr => pr.category === 'new'),
+              updated: mergedPRs.filter(pr => pr.category === 'updated'),
+              fixed: mergedPRs.filter(pr => pr.category === 'fixed'),
+              removed: mergedPRs.filter(pr => pr.category === 'removed')
+            };
+
+            return { prs: mergedPRs, grouped: grouped };
+
+      - name: Send Slack notification
+        if: fromJSON(steps.get-merged-prs.outputs.result).prs.length > 0
+        run: |
+          RESULT='${{ steps.get-merged-prs.outputs.result }}'
+          REPO_NAME="${{ github.repository }}"
+
+          # Extract data using jq
+          TOTAL_PRS=$(echo "$RESULT" | jq '.prs | length')
+          NEW_COUNT=$(echo "$RESULT" | jq '.grouped.new | length')
+          UPDATED_COUNT=$(echo "$RESULT" | jq '.grouped.updated | length')
+          FIXED_COUNT=$(echo "$RESULT" | jq '.grouped.fixed | length')
+          REMOVED_COUNT=$(echo "$RESULT" | jq '.grouped.removed | length')
+
+          # Build category sections
+          SECTIONS=""
+
+          # New content section
+          if [ "$NEW_COUNT" -gt 0 ]; then
+            NEW_ITEMS=$(echo "$RESULT" | jq -r '.grouped.new[] | "• *<" + .url + "|#" + (.number|tostring) + ">* " + .title + "\n  _by " + .author + " • " + (.filesChanged|tostring) + " files_"')
+            SECTIONS="${SECTIONS}{\"type\": \"section\",\"text\": {\"type\": \"mrkdwn\",\"text\": \"✨ *New Content* ($NEW_COUNT)\n$NEW_ITEMS\"}},"
+          fi
+
+          # Updated content section
+          if [ "$UPDATED_COUNT" -gt 0 ]; then
+            UPDATED_ITEMS=$(echo "$RESULT" | jq -r '.grouped.updated[] | "• *<" + .url + "|#" + (.number|tostring) + ">* " + .title + "\n  _by " + .author + " • " + (.filesChanged|tostring) + " files_"')
+            SECTIONS="${SECTIONS}{\"type\": \"section\",\"text\": {\"type\": \"mrkdwn\",\"text\": \"📝 *Updated Content* ($UPDATED_COUNT)\n$UPDATED_ITEMS\"}},"
+          fi
+
+          # Bug fixes section
+          if [ "$FIXED_COUNT" -gt 0 ]; then
+            FIXED_ITEMS=$(echo "$RESULT" | jq -r '.grouped.fixed[] | "• *<" + .url + "|#" + (.number|tostring) + ">* " + .title + "\n  _by " + .author + " • " + (.filesChanged|tostring) + " files_"')
+            SECTIONS="${SECTIONS}{\"type\": \"section\",\"text\": {\"type\": \"mrkdwn\",\"text\": \"🐛 *Fixes* ($FIXED_COUNT)\n$FIXED_ITEMS\"}},"
+          fi
+
+          # Removed content section
+          if [ "$REMOVED_COUNT" -gt 0 ]; then
+            REMOVED_ITEMS=$(echo "$RESULT" | jq -r '.grouped.removed[] | "• *<" + .url + "|#" + (.number|tostring) + ">* " + .title + "\n  _by " + .author + " • " + (.filesChanged|tostring) + " files_"')
+            SECTIONS="${SECTIONS}{\"type\": \"section\",\"text\": {\"type\": \"mrkdwn\",\"text\": \"🗑️ *Removed Content* ($REMOVED_COUNT)\n$REMOVED_ITEMS\"}},"
+          fi
+
+          # Remove trailing comma
+          SECTIONS=${SECTIONS%,}
+
+          # Create Slack message
+          cat > slack-message.json << EOF
+          {
+            "text": "📚 Weekly Documentation Changes: $TOTAL_PRS PRs merged",
+            "blocks": [
+              {
+                "type": "header",
+                "text": {
+                  "type": "plain_text",
+                  "text": "📚 Weekly Documentation Changes"
+                }
+              },
+              {
+                "type": "context",
+                "elements": [
+                  {
+                    "type": "mrkdwn",
+                    "text": "Repository: *$REPO_NAME* • Week of $(date -d '7 days ago' +'%B %d') - $(date +'%B %d, %Y') • $TOTAL_PRS PRs merged"
+                  }
+                ]
+              },
+              {
+                "type": "divider"
+              },
+              $SECTIONS
+            ]
+          }
+          EOF
+
+          # Send to Slack
+          curl -X POST -H 'Content-type: application/json' \
+          --data @slack-message.json \
+          ${{ secrets.SLACK_WEBHOOK_URL }}
+
+      - name: Send empty report if no changes
+        if: fromJSON(steps.get-merged-prs.outputs.result).prs.length == 0
+        run: |
+          REPO_NAME="${{ github.repository }}"
+
+          curl -X POST -H 'Content-type: application/json' \
+          --data '{
+            "text": "📚 Weekly Documentation Changes: No changes this week",
+            "blocks": [
+              {
+                "type": "section",
+                "text": {
+                  "type": "mrkdwn",
+                  "text": "📚 *Weekly Documentation Changes - '"$REPO_NAME"'*\n\nNo PRs were merged in the last 7 days.\n\n_Report generated on $(date +'\'%B %d, %Y\'')_"
+                }
+              }
+            ]
+          }' \
+          ${{ secrets.SLACK_WEBHOOK_URL }}
