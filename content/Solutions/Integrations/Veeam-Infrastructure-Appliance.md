@@ -31,7 +31,8 @@ The goal for this infrastructure appliance with TrueNAS is to integrate with an 
   * A Veeam Infrastructure Appliance ISO file.
   * A VNC client. Connects to the TrueNAS VM for Veeam Infrastructure Appliance install and initial configuration.
   * Authenticator App. Veeam requires activating multifactor authentication (MFA) during the appliance initial configuration process.
-  * A Veeam Backup & Replication environment deployed with its web UI accessible.
+  * A Veeam Backup & Replication environment.
+    The hardened repository integrates with both traditional Windows-based and new Linux-based software appliance deployments.
   
 
   </div>
