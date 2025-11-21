@@ -13,7 +13,7 @@ The goal for this infrastructure appliance with TrueNAS is to integrate with an 
 
   **Hardware**
   
-  These requirements are provided by the [official Veeam help center](https://helpcenter.veeam.com/docs/vbr/userguide/system_requirements.html?ver=13#veeam-infrastructure-appliance):
+  The [official Veeam help center](https://helpcenter.veeam.com/docs/vbr/userguide/system_requirements.html?ver=13#veeam-infrastructure-appliance) provides these requirements
   
   * CPU: x86-64 processor (minimum 2 cores recommended).
   * Memory: 8 GB RAM.
@@ -28,6 +28,7 @@ The goal for this infrastructure appliance with TrueNAS is to integrate with an 
   
   * A TrueNAS environment with a storage pool and adequate specifications to host the virtual machine deployment.
     It is strongly recommended to use a storage pool configured with a [SLOG](https://www.truenas.com/docs/references/slog/) device for best performance with this virtualization use case.
+  * A Veeam Infrastructure Appliance ISO file.
   * A VNC client. Connects to the TrueNAS VM for Veeam Infrastructure Appliance install and initial configuration.
   * Authenticator App. Veeam requires activating multifactor authentication (MFA) during the appliance initial configuration process.
   * A Veeam Backup & Replication environment deployed with its web UI accessible.
@@ -58,7 +59,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
      {{< trueimage src="/images/Veeam/vsa_deploy1.png" alt="TrueNAS Virtual Machines Screen" id="TrueNAS Virtual Machines Screen" >}}
 
-  2. Configure the TrueNAS VM so that minimum Veeam requirements are met and the correct ISO image is used.
+  2. Configure a TrueNAS VM that meets or exceeds the minimum Veeam requirements and use the correct ISO image.
      The zvol created here is Disk 1 from the appliance requirements.
      Do not start the VM yet.
 	 
@@ -213,7 +214,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	  
 	  {{< trueimage src="/images/Veeam/via_deploy24.png" alt="Veeam Backup & Replication - Repository Summary" id="Veeam Backup & Replication - Repository Summary" >}}
 
-  12. From here, the hardened repository is added to Veeam Backup & Replication and is available for Jobs like any other repository.
+  12. From here, the hardened repository adds to Veeam Backup & Replication and is functional with Jobs like any other repository.
 
   </div>
 </div>

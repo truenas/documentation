@@ -13,7 +13,7 @@ The goal for this appliance image is smoother, more secure, and easily accessibl
 
   **Hardware**
   
-  These requirements are provided by the [official Veeam help center](https://helpcenter.veeam.com/docs/vbr/userguide/system_requirements.html?ver=13):
+  The [official Veeam help center](https://helpcenter.veeam.com/docs/vbr/userguide/system_requirements.html?ver=13) provides these requirements:
   
   * CPU: x86-64 processor (minimum 8 cores recommended).
   * Memory: 16 GB RAM plus 500 MB RAM for each concurrent job.
@@ -22,7 +22,7 @@ The goal for this appliance image is smoother, more secure, and easily accessibl
     * Medium (up to a few thousand workloads): 960 GB SSD backed
     * Large: Multi-TB SSD
     Larger capacities increases the disk space available to instant recovery cache, which allows running more machines for longer times.
-  * Disk 2: 240 GB minimum and larger than Disk 1. This disk hosts guest file system catalogs and backups.
+  * Disk 2: 240 GB minimum and larger than Disk 1. This disk hosts guest filesystem catalogs and backups.
     Recommended sizing depends on your backup storage needs.
     Any additional disks found in the system automatically join with Disk 2 into the single Logical Volume Manager (LVM) spanned volume.
   
@@ -31,7 +31,8 @@ The goal for this appliance image is smoother, more secure, and easily accessibl
   Have these additional elements prepared before starting the Veeam Software appliance deployment.
   
   * A TrueNAS environment with a storage pool and adequate specifications to host the virtual machine deployment.
-    It is strongly recommended to use a storage pool configured with a [SLOG](https://www.truenas.com/docs/references/slog/) device for best performance with this virtualization use case.
+    It is strongly recommended to use a storage pool configured with a [Separate Intent Log (SLOG)](https://www.truenas.com/docs/references/slog/) device for best performance with this virtualization use case.
+  * A Veeam Software Appliance ISO file.
   * A VNC client. Connects to the TrueNAS VM for Veeam Software Appliance install and initial configuration.
   * Authenticator App. Veeam requires activating multifactor authentication (MFA) during the appliance initial configuration process.
   * Veeam license file. Veeam requires uploading a valid license to activate the software appliance.
@@ -44,7 +45,7 @@ The goal for this appliance image is smoother, more secure, and easily accessibl
   
   * At this time, the appliance supports the vSphere and Hyper-V virtualization platforms only.
   * The appliance does not support the object storage repository type.
-  * File browser is not included and individual files cannot be retrieved from systems that have been backed up.
+  * Veeam Software Appliance does not include File browser, and users cannot retrieve individual files from backed up systems.
   * These advanced features are not present:
     * Entra support
     * Replication jobs
@@ -77,7 +78,7 @@ document.addEventListener('DOMContentLoaded', function() {
      {{< trueimage src="/images/Veeam/vsa_deploy1.png" alt="TrueNAS Virtual Machines Screen" id="TrueNAS Virtual Machines Screen" >}}
 
   2. Configure the TrueNAS VM so that minimum Veeam requirements are met and the correct ISO image is used.
-     The zvol created here is Disk 1 from the appliance requirements.
+     This is Disk 1 from the appliance requirements.
      Do not start the VM yet.
 	 
 	 {{< trueimage src="/images/Veeam/vsa_deploy2.png" alt="TrueNAS VM - Summary" id="TrueNAS VM - Summary" >}} <!-- This image needs to be replaced with a similar shot that shows at least the minimum specs recommended above. -->
