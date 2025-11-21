@@ -5,7 +5,7 @@ weight: 43
 ---
 
 Veeam version 13 includes a new [Linux Software Appliance](https://www.veeam.com/products/veeam-data-platform/software-appliance.html) image that integrates with TrueNAS as a virtual machine deployment.
-The goal for this appliance image is smoother, more secure, and easily accessible deployments of Veeam Backup & Recovery.
+The goal for this appliance image is smoother, more secure, and easily accessible deployments of Veeam Backup & Replication.
 
 <!-- Hugo-processed content for component versions tab box -->
 <div style="display: none;" id="requirements-tab-content-source">
@@ -13,7 +13,7 @@ The goal for this appliance image is smoother, more secure, and easily accessibl
 
   **Hardware**
   
-  These requirements are provided by the [official Veeam help center](https://helpcenter.veeam.com/docs/vbr/userguide/system_requirements.html?ver=13):
+  The [official Veeam help center](https://helpcenter.veeam.com/docs/vbr/userguide/system_requirements.html?ver=13) provides these requirements:
   
   * CPU: x86-64 processor (minimum 8 cores recommended).
   * Memory: 16 GB RAM plus 500 MB RAM for each concurrent job.
@@ -22,14 +22,17 @@ The goal for this appliance image is smoother, more secure, and easily accessibl
     * Medium (up to a few thousand workloads): 960 GB SSD backed
     * Large: Multi-TB SSD
     Larger capacities increases the disk space available to instant recovery cache, which allows running more machines for longer times.
-  * Disk 2: 240 GB minimum and larger than Disk 1. This disk hosts guest file system catalogs and backups.
+  * Disk 2: 240 GB minimum and larger than Disk 1. This disk hosts guest filesystem catalogs and backups.
     Recommended sizing depends on your backup storage needs.
     Any additional disks found in the system automatically join with Disk 2 into the single Logical Volume Manager (LVM) spanned volume.
   
   **Additional**
   
-  Have these additional elements ready to fully install and configure the Veeam Software Appliance.
+  Have these additional elements prepared before starting the Veeam Software appliance deployment.
   
+  * A TrueNAS environment with a storage pool and adequate specifications to host the virtual machine deployment.
+    It is strongly recommended to use a storage pool configured with a [Separate Intent Log (SLOG)](https://www.truenas.com/docs/references/slog/) device for best performance with this virtualization use case.
+  * A Veeam Software Appliance ISO file.
   * A VNC client. Connects to the TrueNAS VM for Veeam Software Appliance install and initial configuration.
   * Authenticator App. Veeam requires activating multifactor authentication (MFA) during the appliance initial configuration process.
   * Veeam license file. Veeam requires uploading a valid license to activate the software appliance.
@@ -42,7 +45,7 @@ The goal for this appliance image is smoother, more secure, and easily accessibl
   
   * At this time, the appliance supports the vSphere and Hyper-V virtualization platforms only.
   * The appliance does not support the object storage repository type.
-  * File browser is not included and individual files cannot be retrieved from systems that have been backed up.
+  * Veeam Software Appliance does not include File browser, and users cannot retrieve individual files from backed up systems.
   * These advanced features are not present:
     * Entra support
     * Replication jobs
@@ -74,23 +77,29 @@ document.addEventListener('DOMContentLoaded', function() {
 
      {{< trueimage src="/images/Veeam/vsa_deploy1.png" alt="TrueNAS Virtual Machines Screen" id="TrueNAS Virtual Machines Screen" >}}
 
-  2. Configure the TrueNAS VM so that minimum Veeam requirements are met and the correct ISO image is used.
-     The zvol created here is Disk 1 from the appliance requirements.
+  2. Configure a TrueNAS VM that meets or exceeds the minimum Veeam requirements and use the correct ISO image.
+     This zvol created with the VM is Disk 1 from the appliance requirements.
      Do not start the VM yet.
 	 
 	 {{< trueimage src="/images/Veeam/vsa_deploy2.png" alt="TrueNAS VM - Summary" id="TrueNAS VM - Summary" >}} <!-- This image needs to be replaced with a similar shot that shows at least the minimum specs recommended above. -->
 	 
-  3. Go to the Storage screen and create a new zvol that is larger than the disk created during VM creation.
+  3. Go to the Storage screen and edit the zvol created in step 2.
+     From the zvol additional options, Set **Sync** to **Always**.
+  
+  4. From the Screen, create a new zvol that is larger than the disk created during VM creation.
      This zvol is the appliance Disk 2 and stores backups.
-  4. Go to the Virtual Machines screen and expand the newly created VM entry.
+	 Set **Sync** to **Always** on this zvol too.
+
+  5. Go to the Virtual Machines screen and expand the newly created VM entry.
      Click Devices > Add to see the Add Device screen.
 	 Add the newly created zvol as a disk in AHCI mode.
      All other settings can remain at their defaults.
 	 
 	 {{< trueimage src="/images/Veeam/vsa_deploy3.png" alt="TrueNAS VM - Adding Veeam Software Appliance Disk 2" id="TrueNAS VM - Adding Veeam Software Appliance Disk 2" >}}
 	 
-  5. Start the VM. Note the VNC connection information.
-  6. Use your preferred VNC client to connect to the VM over the port number and password configured with the VM.
+  6. Start the VM. Note the VNC connection information.
+
+  7. Use your preferred VNC client to connect to the VM over the port number and password configured with the VM.
 
   </div>
   <div data-tab-id="veeam-appliance-install" data-tab-label="2. Install the Veeam Software Appliance">
@@ -114,6 +123,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	 {{< trueimage src="/images/Veeam/vsa_deploy6.png" alt="Veeam Software Appliance - Installation Progress" id="Veeam Software Appliance - Installation Progress" >}}
 	 
   4. Back in the TrueNAS UI, stop the VM.
+
   5. Go to the VM devices and remove the CD-ROM device.
   
 	 {{< trueimage src="/images/Veeam/vsa_deploy7.png" alt="TrueNAS VM - Removing the CD-ROM Device" id="TrueNAS VM - Removing the CD-ROM Device" >}}
@@ -137,7 +147,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
 	 {{< trueimage src="/images/Veeam/vsa_deploy10.png" alt="Veeam Software Appliance - Network Configuration" id="Veeam Software Appliance - Network Configuration" >}}
   
-  4. When necessary, adjust the nefault NTP configuration.
+  4. When necessary, adjust the default NTP configuration.
      The default settings are sufficient for most environments.
  
   5. Set the system time zone.
@@ -175,6 +185,7 @@ document.addEventListener('DOMContentLoaded', function() {
   The Veeam web UI manages standard Veeam operations similarly to Veeam Backup & Replication running from a Windows environment.
 
   1. Use a browser to access the Veeam Backup & Replication web UI and wait for any automated updates to complete.
+
   2. The Veeam Software Appliance requires a license.
      Upload your license file at this time.
 	 
@@ -185,7 +196,9 @@ document.addEventListener('DOMContentLoaded', function() {
   Some actions immediately available are:
 
   1. Add managed servers.
+
   2. Configure backup repositories.
+
   3. Create backup jobs.
   
   {{< trueimage src="/images/Veeam/vsa_deploy18.png" alt="Veeam Backup & Replication - Overview" id="Veeam Backup & Replication - Overview" >}}
