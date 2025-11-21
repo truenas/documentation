@@ -131,15 +131,31 @@ gh pr create --base "$BASE_BRANCH" --head "$BRANCH_NAME" --title "$FINAL_PR_TITL
 # gh pr create will fail if PR already exists, so try to edit instead
 if [ $? -ne 0 ]; then
     echo "PR may already exist, attempting to update..."
-    gh pr edit "$BRANCH_NAME" --title "$FINAL_PR_TITLE" --body "$PR_DESCRIPTION"
 
-    if [ $? -eq 0 ]; then
-        echo "✅ Pull request updated successfully"
-        echo "   Reviewers: $REVIEWERS_LIST"
+    # Query for existing PR by branch name and get the PR number
+    EXISTING_PR=$(gh pr list --head "$BRANCH_NAME" --json number --jq '.[0].number' 2>/dev/null)
+
+    if [ -n "$EXISTING_PR" ]; then
+        echo "Found existing PR #$EXISTING_PR, updating..."
+        gh pr edit "$EXISTING_PR" --title "$FINAL_PR_TITLE" --body "$PR_DESCRIPTION" 2>/dev/null
+
+        if [ $? -eq 0 ]; then
+            echo "✅ Pull request #$EXISTING_PR updated successfully"
+            echo "   Reviewers: $REVIEWERS_LIST"
+        else
+            echo "⚠️  Could not update PR #$EXISTING_PR, but it exists"
+            echo "   The branch has been pushed with latest changes"
+            echo "   View PR: https://github.com/truenas/documentation/pull/$EXISTING_PR"
+        fi
     else
-        echo "⚠️  Could not create or update PR. It may already exist."
+        echo "⚠️  Could not create PR and no existing PR found for branch $BRANCH_NAME"
+        echo "   The branch has been pushed with latest changes"
         echo "   Check: https://github.com/truenas/documentation/pulls"
     fi
+
+    # Always exit successfully - PR creation/update is informational, not critical
+    # The important work (updating config and pushing branch) is already done
+    exit 0
 else
     echo "✅ Pull request created successfully"
     echo "   Reviewers: $REVIEWERS_LIST"
