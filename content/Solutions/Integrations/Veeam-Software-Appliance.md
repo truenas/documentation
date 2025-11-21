@@ -5,7 +5,7 @@ weight: 43
 ---
 
 Veeam version 13 includes a new [Linux Software Appliance](https://www.veeam.com/products/veeam-data-platform/software-appliance.html) image that integrates with TrueNAS as a virtual machine deployment.
-The goal for this appliance image is smoother, more secure, and easily accessible deployments of Veeam Backup & Recovery.
+The goal for this appliance image is smoother, more secure, and easily accessible deployments of Veeam Backup & Replication.
 
 <!-- Hugo-processed content for component versions tab box -->
 <div style="display: none;" id="requirements-tab-content-source">
@@ -28,8 +28,10 @@ The goal for this appliance image is smoother, more secure, and easily accessibl
   
   **Additional**
   
-  Have these additional elements ready to fully install and configure the Veeam Software Appliance.
+  Have these additional elements prepared before starting the Veeam Software appliance deployment.
   
+  * A TrueNAS environment with a storage pool and adequate specifications to host the virtual machine deployment.
+    It is strongly recommended to use a storage pool configured with a [SLOG](https://www.truenas.com/docs/references/slog/) device for best performance with this virtualization use case.
   * A VNC client. Connects to the TrueNAS VM for Veeam Software Appliance install and initial configuration.
   * Authenticator App. Veeam requires activating multifactor authentication (MFA) during the appliance initial configuration process.
   * Veeam license file. Veeam requires uploading a valid license to activate the software appliance.
@@ -80,17 +82,23 @@ document.addEventListener('DOMContentLoaded', function() {
 	 
 	 {{< trueimage src="/images/Veeam/vsa_deploy2.png" alt="TrueNAS VM - Summary" id="TrueNAS VM - Summary" >}} <!-- This image needs to be replaced with a similar shot that shows at least the minimum specs recommended above. -->
 	 
-  3. Go to the Storage screen and create a new zvol that is larger than the disk created during VM creation.
+  3. Go to the Storage screen and edit the zvol created in step 2.
+     From the zvol additional options, Set **Sync** to **Always**.
+  
+  4. From the Screen, create a new zvol that is larger than the disk created during VM creation.
      This zvol is the appliance Disk 2 and stores backups.
-  4. Go to the Virtual Machines screen and expand the newly created VM entry.
+	 Set **Sync** to **Always** on this zvol too.
+
+  5. Go to the Virtual Machines screen and expand the newly created VM entry.
      Click Devices > Add to see the Add Device screen.
 	 Add the newly created zvol as a disk in AHCI mode.
      All other settings can remain at their defaults.
 	 
 	 {{< trueimage src="/images/Veeam/vsa_deploy3.png" alt="TrueNAS VM - Adding Veeam Software Appliance Disk 2" id="TrueNAS VM - Adding Veeam Software Appliance Disk 2" >}}
 	 
-  5. Start the VM. Note the VNC connection information.
-  6. Use your preferred VNC client to connect to the VM over the port number and password configured with the VM.
+  6. Start the VM. Note the VNC connection information.
+
+  7. Use your preferred VNC client to connect to the VM over the port number and password configured with the VM.
 
   </div>
   <div data-tab-id="veeam-appliance-install" data-tab-label="2. Install the Veeam Software Appliance">
@@ -114,6 +122,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	 {{< trueimage src="/images/Veeam/vsa_deploy6.png" alt="Veeam Software Appliance - Installation Progress" id="Veeam Software Appliance - Installation Progress" >}}
 	 
   4. Back in the TrueNAS UI, stop the VM.
+
   5. Go to the VM devices and remove the CD-ROM device.
   
 	 {{< trueimage src="/images/Veeam/vsa_deploy7.png" alt="TrueNAS VM - Removing the CD-ROM Device" id="TrueNAS VM - Removing the CD-ROM Device" >}}
@@ -175,6 +184,7 @@ document.addEventListener('DOMContentLoaded', function() {
   The Veeam web UI manages standard Veeam operations similarly to Veeam Backup & Replication running from a Windows environment.
 
   1. Use a browser to access the Veeam Backup & Replication web UI and wait for any automated updates to complete.
+
   2. The Veeam Software Appliance requires a license.
      Upload your license file at this time.
 	 
@@ -185,7 +195,9 @@ document.addEventListener('DOMContentLoaded', function() {
   Some actions immediately available are:
 
   1. Add managed servers.
+
   2. Configure backup repositories.
+
   3. Create backup jobs.
   
   {{< trueimage src="/images/Veeam/vsa_deploy18.png" alt="Veeam Backup & Replication - Overview" id="Veeam Backup & Replication - Overview" >}}

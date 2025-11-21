@@ -24,11 +24,14 @@ The goal for this infrastructure appliance with TrueNAS is to integrate with an 
   
   **Additional**
   
-  Have these additional elements ready to fully install and configure the Veeam Infrastructure Appliance.
+  Have these additional elements prepared before starting the Veeam Infrastructure Appliance deployment.
   
+  * A TrueNAS environment with a storage pool and adequate specifications to host the virtual machine deployment.
+    It is strongly recommended to use a storage pool configured with a [SLOG](https://www.truenas.com/docs/references/slog/) device for best performance with this virtualization use case.
   * A VNC client. Connects to the TrueNAS VM for Veeam Infrastructure Appliance install and initial configuration.
   * Authenticator App. Veeam requires activating multifactor authentication (MFA) during the appliance initial configuration process.
-  * A Veeam Software Appliance deployed and web UI accessible.
+  * A Veeam Backup & Replication environment deployed with its web UI accessible.
+  
 
   </div>
 </div>
@@ -49,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 <!-- Hugo-processed content for tab box -->
 <div style="display: none;" id="installation-tab-content-source">
-  <div data-tab-id="virtual-machine-deploy" data-tab-label="1. Deploy a TrueNAS Virtual Machine">
+  <div data-tab-id="virtual-machine-deploy" data-tab-label="1. Deploy a TrueNAS Virtual Machine"> 
 
   1. From the TrueNAS UI, go to the Virtual Machines screen and create a new Virtual Machine (VM).
 
@@ -61,18 +64,23 @@ document.addEventListener('DOMContentLoaded', function() {
 	 
 	 {{< trueimage src="/images/Veeam/via_deploy2.png" alt="TrueNAS VM - Summary" id="TrueNAS VM - Summary" >}} <!-- This image needs to be replaced with a similar shot that shows at least the minimum specs recommended above. -->
 	 
-  3. Go to the Storage screen and create a new zvol that is larger than the disk created during VM creation.
+  3. Go to the Storage screen and edit the zvol created in step 2.
+     From the zvol additional options, Set **Sync** to **Always**.
+  
+  4. From the Screen, create a new zvol that is larger than the disk created during VM creation.
      This zvol is the appliance Disk 2 and stores backups.
+	 Set **Sync** to **Always** on this zvol too.
 
-  4. Go to the Virtual Machines screen and expand the newly created VM entry.
+  5. Go to the Virtual Machines screen and expand the newly created VM entry.
      Click Devices > Add to see the Add Device screen.
 	 Add the newly created zvol as a disk in AHCI mode.
      All other settings can remain at their defaults.
 	 
 	 {{< trueimage src="/images/Veeam/via_deploy3.png" alt="TrueNAS VM - Adding Veeam Infrastructure Appliance Disk 2" id="TrueNAS VM - Adding Veeam Infrastructure Appliance Disk 2" >}}
 	 
-  5. Start the VM. Note the VNC connection information.
-  6. Use your preferred VNC client to connect to the VM over the port number and password configured with the VM.
+  6. Start the VM. Note the VNC connection information.
+
+  7. Use your preferred VNC client to connect to the VM over the port number and password configured with the VM.
 
   </div>
   <div data-tab-id="veeam-appliance-install" data-tab-label="2. Install the Veeam Infrastructure Appliance">
@@ -96,6 +104,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	 {{< trueimage src="/images/Veeam/via_deploy6.png" alt="Veeam Infrastructure Appliance - Installation Progress" id="Veeam Infrastructure Appliance - Installation Progress" >}}
 	 
   4. Back in the TrueNAS UI, stop the VM.
+
   5. Go to the VM devices and remove the CD-ROM device.
   
 	 {{< trueimage src="/images/Veeam/vsa_deploy7.png" alt="TrueNAS VM - Removing the CD-ROM Device" id="TrueNAS VM - Removing the CD-ROM Device" >}}
@@ -158,6 +167,7 @@ document.addEventListener('DOMContentLoaded', function() {
   These instructions focus on the Linux-based Software appliance.
 
   1. Use a browser to access the Veeam Software Appliance web UI.
+
   2. Go to **Managed Servers** and click **Add Server**.
      Select **Veeam Infrastructure Appliance**.
 	 
