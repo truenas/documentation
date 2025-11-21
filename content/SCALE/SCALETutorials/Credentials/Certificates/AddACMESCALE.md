@@ -65,5 +65,13 @@ The **shell** authenticator option is intended for advanced users. Improperly co
 
 If you select **shell** as the authenticator, you must enter the path to an authenticator script, the running user, a certificate timeout, and a domain propagation delay.
 
-Advanced users can select this option to pass an authenticator script, such as *acme.sh*, to the shell and add an external DNS authenticator.
-This requires an ACME authenticator script saved to the system.
+Advanced users can select this option to invoke an authenticator script that modifies DNS.
+
+Four parameters are passed to the script:
+
+1. either the verb `set` or `unset`, which indicates if the script should add a TXT record to DNS or remove it.
+2. the fully-qualified domain name, for example `nas.example.com`.
+3. the record in DNS to alter, for example `_acme-challenge.nas.example.com`.
+4. the value to be added to the TXT record.
+
+The script could invoke [acme.sh](https://github.com/acmesh-official/acme.sh) or similar to make modifications in DNS.
