@@ -12,14 +12,7 @@ aliases:
 
 ## TrueNAS X-Series Document Archive
 
-Discontinued TrueNAS X-Series Documents
-
-The TrueNAS X-Series was designated end-of-life (EOL) by iXsystems on March 21, 2024.
-The end-of-support date for TrueNAS X-Series systems is March 21, 2027.
-
-Click below to download archival documents for legacy TrueNAS X-Series systems.
-
-* <a href="https://www.truenas.com/docs/files/XSeriesEOL.pdf" download>TrueNAS X-Series EOL March 2024</a>: Official iXsystems End of Life Notice for TrueNAS X-Series systems.
+* <a href="https://www.truenas.com/docs/files/XSeriesPRN.pdf" download>TrueNAS X-Series Produce Retirement Notice</a>: Official TrueNAS Product Retirement Notice for TrueNAS X-Series systems.
 
 * <a href="https://www.truenas.com/docs/files/XSeriesBSG1.91.pdf" download>TrueNAS X-Series Basic Setup Guide</a>: Deployment Guide for TrueNAS X-Series Products.
 

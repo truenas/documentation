@@ -4,8 +4,8 @@ geekdocCollapseSection: true
 weight: 70
 ---
 
-Systems from iXsystem generally come with a 5 year life cycle.
-All information on older hardware that has reached End-of-Life is added to this section for historical preservation.
+TrueNAS systems generally have a 5 year life cycle.
+All information on retired systems is available here for historical preservation.
 
 <div class="noprint">
 
