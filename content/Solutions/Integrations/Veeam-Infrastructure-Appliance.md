@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', function() {
      {{< trueimage src="/images/Veeam/vsa_deploy1.png" alt="TrueNAS Virtual Machines Screen" id="TrueNAS Virtual Machines Screen" >}}
 
   2. Configure a TrueNAS VM that meets or exceeds the minimum Veeam requirements and use the correct ISO image.
-     The zvol created here is Disk 1 from the appliance requirements.
+     This zvol created with the VM is Disk 1 from the appliance requirements.
      Do not start the VM yet.
 	 
 	 {{< trueimage src="/images/Veeam/via_deploy2.png" alt="TrueNAS VM - Summary" id="TrueNAS VM - Summary" >}} <!-- This image needs to be replaced with a similar shot that shows at least the minimum specs recommended above. -->
