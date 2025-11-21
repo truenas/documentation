@@ -1,8 +1,8 @@
 name: Weekly Docs Changes Summary
 on:
   schedule:
-    # Run every Monday at 9 AM UTC (adjust as needed)
-    - cron: '0 9 * * 1'
+    # Run every Monday at 7 AM EST / 12 PM UTC (8 AM EDT during daylight saving)
+    - cron: '0 12 * * 1'
   workflow_dispatch: # Allow manual trigger for testing
 
 jobs:
