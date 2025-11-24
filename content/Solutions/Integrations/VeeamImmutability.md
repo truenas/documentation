@@ -1,7 +1,7 @@
 ---
 title: "Veeam Immutability"
 description: "Guide for deploying Veeam immutability in a TrueNAS system using MinIO as S3 object storage."
-weight: 40
+weight: 45
 aliases:
 tags:
  - s3 object storage
@@ -12,19 +12,19 @@ tags:
 TrueNAS Enterprise systems can act as S3-compatible object storage for Veeam Backup & Replication Immutability.
 
 Immutability is a feature of Veeam Backup & Replication. When configured with storage solutions such as TrueNAS, it prevents modifying or deleting data for a specified period of time.
-Set the the immutability period based on your needs. After this period expires, backed up data can be modified or deleted again.
+Set the immutability period based on your needs. After this period expires, backed up data can be modified or deleted again.
 
 The immutability feature increases data security, protects data from losses incurred through malware, attacks, or other harmful actions by bad actors, and can protect configuration backups.
 Veeam makes this feature available to work with a number of storage options such as S3 or S3-compatible object repositories.
 
-## How does Veeam Immutability work?
+## How Does Veeam Immutability Work?
 Veeam protects a backup chain and all the restore points of this chain for the specified immutability period.
 The immutability period is the number of days you have to respond to malicious actions.
 During this period you can roll back to the earlier state of your backup chain. Rolling back requires running Veeam PowerShell. See [Rolling Back Immutable Data](https://helpcenter.veeam.com/docs/backup/vsphere/hiw_immutability_os.html?ver=120#rollback) for more information.
 
 For more detailed information on Veeam Immutability, see [How Immutability Works](https://helpcenter.veeam.com/docs/backup/vsphere/hiw_immutability_os.html).
 
-## What is required to configure Veeam Immutability?
+## What is Required to Configure Veeam Immutability?
 
 * Obtain and apply the TrueNAS Enterprise license for VMs and Applications to your TrueNAS Enterprise system.
 * Deploy the MinIO Enterprise app.

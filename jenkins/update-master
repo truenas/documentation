@@ -31,7 +31,16 @@ pipeline {
 
                 if (hasChanges) {
                     echo "⚠️ SOFTWARE STATUS CHANGES DETECTED - Creating PR"
-                    sh 'bash scripts/create-software-status-pr.sh'
+                    def prResult = sh(
+                        script: 'bash scripts/create-software-status-pr.sh',
+                        returnStatus: true
+                    )
+                    if (prResult == 0) {
+                        echo "✅ PR created/updated successfully"
+                    } else {
+                        echo "⚠️ PR creation had issues (exit code: ${prResult}), but continuing build"
+                        echo "   The build will still be published to production"
+                    }
                 } else {
                     echo "✅ Software status is up to date"
                 }
