@@ -291,6 +291,10 @@ These are ongoing issues that can affect multiple versions in the 25.10 series.
 
 ### Current Known Issues
 
+* Hot spare vdevs are limited to a single disk per pool in the UI ([NAS-138640](https://ixsystems.atlassian.net/browse/NAS-138640)).
+  The TrueNAS 25.10 UI currently restricts configuration of hot spare vdevs to one disk per pool.
+  A fix for this issue is expected in an upcoming maintenance release.
+
 * Apps using SMB/NFS storage can experience race condition during boot.
   When apps are configured to use SMB or NFS shares as storage passthroughs, there can be an occasional race condition during TrueNAS boot where the app startup conflicts with the sharing services startup.
   This causes affected apps to not fully start and show a "crashed" status.
