@@ -124,7 +124,7 @@ Refresh the screen to ensure the replacement disk appears in the pool as expecte
 
 ### Replacing a Failed Disk With a Hot Spare
 
-A **Hot Spare** vdev sets up drives as reserved to prevent larger pool and data loss scenarios.
+A **Hot Spare** vdev sets up a disk as reserved to prevent larger pool and data loss scenarios.
 TrueNAS automatically inserts an available hot spare into a **Data** vdev when an active drive fails.
 TrueNAS resilvers the pool after the hot spare is activated.
 
