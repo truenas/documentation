@@ -8,7 +8,7 @@ related: false
 use_jump_to_buttons: true
 jump_to_buttons:
   - text: "Latest Changes"
-    anchor: "25.10.0.1"
+    anchor: "25.10.1"
     icon: "fiber-new"
   - text: "Known Issues"
     anchor: "known-issues"
@@ -34,6 +34,19 @@ jump_to_buttons:
 
 <!-- Hugo-processed content for release notes tab box -->
 <div style="display: none;" id="release-tab-content-source">
+  <div data-tab-id="25.10.1" data-tab-label="25.10.1">
+
+[RELEASE_DATE], 2025
+
+The TrueNAS team is pleased to release TrueNAS 25.10.1!
+
+**Notable changes:**
+
+* [To be added]
+
+<a href="#full-changelog" target="_blank">Click here</a> to see the full 25.10 changelog or visit the <a href="https://ixsystems.atlassian.net/issues/?filter=XXXXX" target="_blank">TrueNAS 25.10.1 (Goldeye) Changelog</a> in Jira.
+
+  </div>
   <div data-tab-id="25.10.0.1" data-tab-label="25.10.0.1">
 
 November 19, 2025
@@ -338,7 +351,7 @@ See the [Release Notes](https://forums.truenas.com/c/release-notes/13) section o
 <script src="/js/linkable-tabs-init.js"></script>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-    initializeHugoTabs('release-tab-content-source', 'release-tabs-container', '25.10-BETA.1');
+    initializeHugoTabs('release-tab-content-source', 'release-tabs-container', '25.10.1');
 });
 </script>
 
