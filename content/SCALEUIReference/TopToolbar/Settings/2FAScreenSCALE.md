@@ -26,6 +26,14 @@ For more information, see the [Managing Global 2FA]({{< ref "ManageGlobal2FASCAL
 
 {{< trueimage src="/images/SCALE/Credentials/2FARenewSecretDialog.png" alt="2FA Renew Secret" id="Renew Secret Dialog" >}}
 
-**Show QR** opens a QR code dialog. Scan with an authenticator app on your mobile device. We recommend Google Authenticator.
+**Show QR** opens a QR code dialog. Scan the QR code with any TOTP-compatible authenticator app on your mobile device or desktop. See [Managing Global 2FA]({{< ref "ManageGlobal2FASCALE" >}}) for recommended authenticator app options.
 
 {{< trueimage src="/images/SCALE/Credentials/2FAQRCodeDialog.png" alt="2FA QR Code" id="2FA QR Code Dialog" >}}
+
+**Unset 2FA Secret** removes the user's existing 2FA setup. A confirmation dialog appears before removing the configuration.
+
+{{< trueimage src="/images/SCALE/Credentials/2FARemoveConfigDialog.png" alt="2FA Remove Configuration" id="Remove 2FA Configuration Dialog" >}}
+
+{{< hint type=warning >}}
+Removing your 2FA configuration reduces account security. If global 2FA is enabled, you will be prompted to set up 2FA again on your next login, though you can skip this prompt if needed.
+{{< /hint >}}
