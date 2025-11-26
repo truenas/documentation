@@ -29,5 +29,5 @@ For more information, see the [Managing Global 2FA]({{< ref "ManageGlobal2FASCAL
 {{< trueimage src="/images/SCALE/Credentials/Unset2FASecret.png" alt="Unset Two-Factor Authentication Dialog" id="Unset Two-Factor Authentication Dialog" >}}
 
 {{< hint type=warning >}}
-Removing your 2FA configuration reduces account security. If global 2FA is enabled, you will be prompted to set up 2FA again on your next login, though you can skip this prompt if needed.
+Removing your 2FA configuration reduces account security. If global 2FA is enabled, you are prompted to set up 2FA again on your next login, though you can skip this prompt if needed.
 {{< /hint >}}
