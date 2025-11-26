@@ -168,6 +168,29 @@ After removing your 2FA configuration:
 - You can skip this prompt if needed using the **Skip Setup** button
 - Other users' 2FA configurations remain unaffected
 
+### Administrator Clearing User 2FA
+
+Administrators can clear 2FA for any user without needing to log in as that user. This is useful when:
+
+- A user has lost access to their authenticator device
+- A user is locked out due to 2FA issues
+- Troubleshooting login problems for users
+
+To clear 2FA for another user:
+
+1. Go to **Credentials > Users**
+2. Select the user whose 2FA needs to be cleared
+3. Click **Clear Two-Factor Authentication** on the **Access** widget
+4. Confirm the action in the dialog
+
+After clearing, the user can log in without 2FA. If Global 2FA is still enabled, they will be prompted to reconfigure 2FA on their next login.
+
+For detailed step-by-step instructions, see [Managing Users - Clearing Two-Factor Authentication for a User]({{< ref "ManageUsers#clearing-two-factor-authentication-for-a-user" >}}).
+
+{{< hint type=tip >}}
+The **Clear Two-Factor Authentication** button only appears for users who have 2FA configured. If you don't see the button, the user has not set up 2FA.
+{{< /hint >}}
+
 ## Using 2FA to Log in to TrueNAS
 
 Enabling 2FA changes the login process for both the TrueNAS web interface and SSH logins.
