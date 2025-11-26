@@ -76,7 +76,7 @@ Before you begin, install a TOTP-compatible authenticator app on your mobile dev
    If you want to enable two-factor authentication for SSH logins, select **Enable Two-Factor Auth for SSH** before you click **Save**.
 
    {{< hint type=tip >}}
-   The **Window** setting extends the validity of authentication codes to include previously generated codes. This can be helpful in high-latency situations where there may be delays between code generation and entry. The default setting works for most environments - only adjust this if users experience authentication issues due to network delays.
+   The **Window** setting extends the validity of authentication codes to include previously generated codes. This can be helpful in high-latency situations where there can be delays between code generation and entry. The default setting works for most environments - only adjust this if users experience authentication issues due to network delays.
    {{< /hint >}}
 
 After enabling Global 2FA, the system prompts users to set up their individual 2FA configuration:
@@ -120,7 +120,7 @@ Before you begin, install a TOTP-compatible authenticator app on your mobile dev
    You can configure two-factor authentication and get the QR code for an authenticator app for the logged-in user at any time, but you must configure global two-factor authentication to enable it.
    {{< /hint >}}
 
-   Set **Interval** to **30** seconds to match the default setting used by most authenticator apps. Using a non-standard interval may cause authentication codes to fail during login.
+   Set **Interval** to **30** seconds to match the default setting used by most authenticator apps. Using a non-standard interval can cause authentication codes to fail during login.
 
 3. Scan the QR code using your authenticator app or manually enter the unique key.
    To generate a new QR code click **Renew 2FA Secret**.
@@ -131,7 +131,7 @@ Before you begin, install a TOTP-compatible authenticator app on your mobile dev
    - **If prompted during login**: Click **Finish** to close the setup dialog.
    - **If accessing from the Settings menu**: Your configuration is saved automatically. You can navigate to other screens as needed.
 
-Your 2FA is now configured. You will need to enter codes from your authenticator app when logging in.
+Your 2FA is now configured. You need to enter codes from your authenticator app when logging in.
 
 If you prefer not to set up 2FA at this time, see [Skipping 2FA Setup](#skipping-2fa-setup).
 
@@ -148,7 +148,7 @@ To skip the setup:
 While 2FA significantly enhances security and is strongly recommended, skipping the initial setup does not prevent access to the system. Users can configure 2FA later by accessing **Settings > Two-Factor Authentication** from the top toolbar.
 {{< /hint >}}
 
-The setup prompt appears once per login session. If you skip setup, you will be prompted again on your next login until you configure 2FA.
+The setup prompt appears once per login session. If you skip setup, you are prompted again on your next login until you configure 2FA.
 
 ### Removing Individual 2FA Configuration
 
@@ -164,7 +164,7 @@ Removing 2FA configuration reduces account security. Only remove 2FA if you plan
 
 After removing your 2FA configuration:
 
-- If **Global 2FA** is still enabled, you will be prompted to set up 2FA again on your next login
+- If **Global 2FA** is still enabled, you are prompted to set up 2FA again on your next login
 - You can skip this prompt if needed using the **Skip Setup** button
 - Other users' 2FA configurations remain unaffected
 
@@ -183,12 +183,12 @@ To clear 2FA for another user:
 3. Click **Clear Two-Factor Authentication** on the **Access** widget
 4. Confirm the action in the dialog
 
-After clearing, the user can log in without 2FA. If Global 2FA is still enabled, they will be prompted to reconfigure 2FA on their next login.
+After clearing, the user can log in without 2FA. If Global 2FA is still enabled, they are prompted to reconfigure 2FA on their next login.
 
 For detailed step-by-step instructions, see [Managing Users - Clearing Two-Factor Authentication for a User]({{< ref "ManageUsers#clearing-two-factor-authentication-for-a-user" >}}).
 
 {{< hint type=tip >}}
-The **Clear Two-Factor Authentication** button only appears for users who have 2FA configured. If you don't see the button, the user has not set up 2FA.
+The **Clear Two-Factor Authentication** button only appears for users who have 2FA configured. If you do not see the button, the user has not set up 2FA.
 {{< /hint >}}
 
 ## Using 2FA to Log in to TrueNAS
