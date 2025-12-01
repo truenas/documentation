@@ -41,7 +41,7 @@ Because of this, we have disabled persistent L2ARC by default in TrueNAS, but yo
 
 ### Activating Persistent L2ARC
 
-TrueNAS releases earlier than 25.04 have persistent L2ARC disabled by default due to potential performance issues.
+TrueNAS legacy releases earlier than 24.04 have persistent L2ARC disabled by default due to potential performance issues.
 Users must manually enable this function.
 Refer to the Documentation Hub archive for information on enabling L2ARC persistence related to your system release, or consider upgrading to the latest publicly available TrueNAS release.
 
