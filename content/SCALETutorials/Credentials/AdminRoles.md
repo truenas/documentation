@@ -98,7 +98,7 @@ If you want to SSH into the system as the root:
 
 1. Go to **Credentials > Users** and click the root user, then click **Edit**.
 
-2. Make sure **Disable Pasword** is disabled. If the root user has **Disable Password** enabled, you cannot use it to gain SSH access to the system.
+2. Make sure **Disable Password** is disabled. If the root user has **Disable Password** enabled, you cannot use it to gain SSH access to the system.
 
 3. Click **Save**.
 
