@@ -166,7 +166,7 @@ After removing your 2FA configuration:
 
 - If **Global 2FA** is still enabled, you are prompted to set up 2FA again on your next login
 - You can skip this prompt if needed using the **Skip Setup** button
-- Other users' 2FA configurations remain unaffected
+- 2FA configurations for other users remain unaffected
 
 ### Administrator Clearing User 2FA
 
@@ -203,7 +203,7 @@ Enter the code from the mobile device (without the space) in the login window an
 
 {{< trueimage src="/images/SCALE/Login/2faSigninSplashScreen.png" alt="2FA Signin Splash Screen" id="2FA Splash Screen" >}}
 
-TOTP codes regenerate every 30 seconds (by default). If a code expires while you're entering it, wait for your authenticator app to display a new code and retry.
+TOTP codes regenerate every 30 seconds (by default). If a code expires while you are entering it, wait for your authenticator app to display a new code and retry.
 
 ### Logging In Using SSH
 
