@@ -26,8 +26,9 @@ The **SSH Connections** and **SSH Keypairs** widgets display a list of SSH conne
 The **SSH Connections** widget allows users to establish Secure Socket Shell (SSH) connections.
 The **SSH Keypairs** widget allows users to generate SSH key pairs required to authenticate the identity of a user or process that wants to access the system using SSH protocol.
 
-**Add** in the **SSH Connections** widget opens the **[SSH Connections](#ssh-connections-screens)** configuration window. 
+**Add** in the **SSH Connections** widget opens the **[SSH Connections](#ssh-connections-screens)** configuration window.
 The connection name on the widget is a link that opens the **SSH Connections** configuration screen already populated with the saved settings for the selected connection.
+The <span class="material-icons">more_vert</span> icon shows options to **Edit** or **Delete** the connection. Delete opens a dialog with an option to delete the associated SSH Keypair.
 
 ### SSH Connections Screens
 
@@ -97,7 +98,7 @@ The **SSH Keypairs** widget on the **Backup Credentials** screen lists SSH key p
 
 The name of the key pair listed on the widget is a link that opens the **[SSH Keypairs](#ssh-keypairs-screen)** configuration screen.
 
-The <span class="material-icons">more_vert</span> icon shows a dropdown list of options: **Download**, **Edit**, and **Delete**. Download saves the public and private key strings as text files for later use. Edit opens the SSH keypair configuration screen. Delete opens the delete dialog. Click **Confirm** and then **Delete** to remove the stored key pairs from the system.
+The <span class="material-icons">more_vert</span> icon shows a dropdown list of options: **Download**, **Edit**, and **Delete**. Download saves the public and private key strings as text files for later use. Edit opens the SSH keypair configuration screen. Delete opens the delete dialog. If the keypair is used by SSH Connections, deleting it also deletes those connections. Click **Confirm** and then **Delete** to remove the stored key pairs from the system.
 
 #### SSH Keypairs Screen
 
