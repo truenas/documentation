@@ -64,7 +64,7 @@ The **Delete Virtual Machine** dialog shows options when deleting the VM and rem
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Delete Virtual Machine Data** | Removes the data associated with this virtual machine. Deleting a VM results in data loss if the data is not backed up. Do not select this option to keep the VM data intact. |
+| **Delete Virtual Machine Data** | Removes the data associated with this virtual machine. When selected, displays a list of disk and raw file devices to delete. Deleting a VM results in data loss if the data is not backed up. Do not select this option to keep the VM data intact. |
 | **Force Delete**| Ignores the virtual machine status during the delete operation. Do not select this option to prevent deleting the VM when it is still active or the state is undefined. |
 | **Enter *vmname* below to confirm** | Blank text entry field to manually enter the name of the VM to delete. This must match the name shown in the dialog. |
 {{< /truetable >}}

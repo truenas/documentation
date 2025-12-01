@@ -11,12 +11,10 @@ tags:
 Two-factor authentication is time-based and requires a correct system time setting.
 {{< /hint >}}
 
-The **Two-Factor Authentication** screen, accessed from the **Settings** menu on the top toolbar, allows managing user-level two-factor authentication (2FA) credentials. It shows a different message if 2FA enabled than when not configured or disabled.
+The **Two-Factor Authentication** screen, accessed from the **Settings** menu on the top toolbar, allows managing user-level two-factor authentication (2FA) credentials. This option only appears in the Settings menu when an administrator has enabled Global 2FA.
 
-To configure 2FA settings go to the [**Advanced Settings**]({{< ref "AdvancedSettingsScreen" >}}) screen.
+Administrators can enable Global 2FA on the [**Advanced Settings**]({{< ref "AdvancedSettingsScreen" >}}) screen.
 For more information, see the [Managing Global 2FA]({{< ref "ManageGlobal2FASCALE" >}}) tutorial.
-
-{{< trueimage src="/images/SCALE/Credentials/2FAScreenDisabled.png" alt="2FAScreenDisabled" id="2FA Screen with Disabled Message" >}}
 
 {{< trueimage src="/images/SCALE/SystemSettings/2FAScreenEnabled.png" alt="2FAScreenEnabled" id="2FA Screen with Enabled Message" >}}
 
@@ -26,6 +24,10 @@ For more information, see the [Managing Global 2FA]({{< ref "ManageGlobal2FASCAL
 
 {{< trueimage src="/images/SCALE/Credentials/2FARenewSecretDialog.png" alt="2FA Renew Secret" id="Renew Secret Dialog" >}}
 
-**Show QR** opens a QR code dialog. Scan with an authenticator app on your mobile device. We recommend Google Authenticator.
+**Unset 2FA Secret** removes the existing 2FA setup of the user. A confirmation dialog appears before removing the configuration.
 
-{{< trueimage src="/images/SCALE/Credentials/2FAQRCodeDialog.png" alt="2FA QR Code" id="2FA QR Code Dialog" >}}
+{{< trueimage src="/images/SCALE/Credentials/Unset2FASecret.png" alt="Unset Two-Factor Authentication Dialog" id="Unset Two-Factor Authentication Dialog" >}}
+
+{{< hint type=warning >}}
+Removing your 2FA configuration reduces account security. If global 2FA is enabled, you are prompted to set up 2FA again on your next login, though you can skip this prompt if needed.
+{{< /hint >}}
