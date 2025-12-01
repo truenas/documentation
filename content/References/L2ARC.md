@@ -16,7 +16,7 @@ Cache drives provide a cheaper alternative to RAM for frequently accessed data.
 ## How Does L2ARC Work?
 
 When a system gets read requests, ZFS uses ARC (RAM) to serve those requests.
-When the ARC is full and there are L2ARC drives allocated to a ZFS pool, ZFS uses the L2ARC to serve the read requests that overflowed from the ARC.
+When the ARC is full, and there are L2ARC drives allocated to a ZFS pool, ZFS uses the L2ARC to serve the read requests that overflowed from the ARC.
 This reduces the use of slower hard drives and therefore increases system performance.
 
 ## Implementation in TrueNAS
@@ -33,13 +33,17 @@ A cache device failure does not affect the integrity of the pool, but it might i
 ### Persistent L2ARC in TrueNAS
 
 By default, the L2ARC cache empties when the system restarts.
-When Persistent L2ARC is enabled, a sysctl repopulates the cache device mapping during the restarts process.
+When Persistent L2ARC is enabled, a sysctl repopulates the cache device mapping during the restart process.
 Persistent L2ARC preserves L2ARC performance even after a system restarts.
 
 However, persistent L2ARC for large data pools can drastically slow the restarts process, degrading middleware and web interface performance.
 Because of this, we have disabled persistent L2ARC by default in TrueNAS, but you can manually activate it.
 
 ### Activating Persistent L2ARC
+
+TrueNAS releases earlier than 25.04 have persistent L2ARC disabled by default due to potential performance issues.
+Users must manually enable this function.
+Refer to the Documentation Hub archive for information on enabling L2ARC persistence related to your system release, or consider upgrading to the latest publicly available TrueNAS release.
 
 {{< tabs "L2ARC" >}}
 {{< tab "TrueNAS 13.0" >}}
@@ -59,7 +63,7 @@ When successful, the output reads: `vfs.zfs.l2arc.rebuild_enabled: 0 -> 1`
 {{< /expand >}}
 {{< /tab >}}
 {{< tab "TrueNAS 24.04 or later" >}}
-TrueNAS enables persistent L2ARC by default. We do not recommend users disable it.
+TrueNAS enables persistent L2ARC by default. We do not recommend disabling it.
 {{< /tab >}}
 {{< /tabs >}}
 
