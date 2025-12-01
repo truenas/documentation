@@ -472,8 +472,8 @@ The **Global Two Factor Authentication** widget shows the status of global two-f
 {{< truetable >}}
 | Name | Description |
 |------|-------------|
-| **Enable Two-Factor Authentication Globally** | Select to enable 2FA for the system. |
-| **Window** | Enter the number of valid passwords. Extends password validity beyond the current to the previous password(s) based on the number entered. For example, setting this to **1** means the current and previous passwords are valid. If the previous password is *a* and the current password is *b*, then both passwords are valid. If set to **2**, the current password (*c* ) and the two previous passwords (*a* and *b*) are valid. Setting this to **3** works the same. Extending the window is useful in high-latency situations. |
+| **Enable Two-Factor Authentication Globally** | Select to prompt users to set up 2FA for the system. When enabled, users without 2FA configured are prompted to set it up on their next login. Users can skip the initial setup if needed. |
+| **Window** | Enter the number of valid authentication codes (tolerance window). Extends code validity beyond the current to the previous code(s) based on the number entered. For example, setting this to **1** means the current and previous codes are valid. If the previous code is *a* and the current code is *b*, then both codes are valid. If set to **2**, the current code (*c*) and the two previous codes (*a* and *b*) are valid. Setting this to **3** works the same. Extending the window is useful in high-latency situations. |
 | **Enable Two-Factor Auth for SSH** | Select to enable 2FA for system SSH access. Leave this disabled until you complete a successful test of 2FA with the UI. |
 {{< /truetable >}}
 {{< /expand >}}
