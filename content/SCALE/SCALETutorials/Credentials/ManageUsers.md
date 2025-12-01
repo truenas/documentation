@@ -63,6 +63,7 @@ The **Shell** option only shows for users with **Shell Access** or **SSH Access*
 ### Disabling a Password
 
 To disable a password, select the user, click **Edit**, and then select **Disable Password**.
+Note that **Disable Password** is not available when **SMB Access** is enabled.
 Setting **Disable Password** hides the **Password** widget, and TrueNAS removes any existing password from the account.
 TrueNAS restricts the account from password-based logins for services like SMB shares and SSH sessions.
 
