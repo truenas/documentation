@@ -10,11 +10,13 @@ docs-changes-summary:
 runs-on: ubuntu-latest
 steps:
 - name: Get merged PRs from last week
-id: get-merged-prs
-uses: actions/github-script@v7
-with:
-script: |
-const oneWeekAgo = new Date(Date.now() - (7 * 24 * 60 * 60 * 1000));
+  id: get-merged-prs
+  uses: actions/github-script@v7
+  with:
+    github-token: ${{ secrets.GITHUB_TOKEN }}
+    script: |
+      const oneWeekAgo = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000);
+      core.info(`One week ago: ${oneWeekAgo.toISOString()}`);
 // Get all merged PRs from the last 7 days
 const { data: pulls } = await github.rest.pulls.list({
 owner: context.repo.owner,
