@@ -92,6 +92,7 @@ jobs:
 
           WEEK_START=$(date -d '7 days ago' +'%B %d' 2>/dev/null || date -v-7d +'%B %d')
           WEEK_END=$(date +'%B %d, %Y')
+          REPORT_DATE=$(date +'%B %d, %Y')
 
           TOTAL_PRS=$(echo "$RESULT" | jq '.prs | length')
           NEW_COUNT=$(echo "$RESULT" | jq '.grouped.new | length')
@@ -99,35 +100,78 @@ jobs:
           FIXED_COUNT=$(echo "$RESULT" | jq '.grouped.fixed | length')
           REMOVED_COUNT=$(echo "$RESULT" | jq '.grouped.removed | length')
 
-          SECTIONS=""
+          # Debug: Print what we got
+          echo "Total PRs found: $TOTAL_PRS"
+          echo "Result data: $RESULT"
+
+          # Build sections array with proper JSON
+          SECTIONS='[]'
 
           if [ "$NEW_COUNT" -gt 0 ]; then
-            NEW_ITEMS=$(echo "$RESULT" | jq -r '.grouped.new[] | "• *<" + .url + "|#" + (.number|tostring) + ">* " + .title + "\\n  _by " + .author + " • " + (.filesChanged|tostring) + " files_"')
-            SECTIONS="${SECTIONS}{\"type\":\"section\",\"text\":{\"type\":\"mrkdwn\",\"text\":\"✨ *New Content* ($NEW_COUNT)\\n$NEW_ITEMS\"}},"
+            NEW_SECTION=$(echo "$RESULT" | jq -r --arg count "$NEW_COUNT" '{
+              type: "section",
+              text: {
+                type: "mrkdwn",
+                text: ("✨ *New Content* (\($count))\n" + (.grouped.new | map("• *<\(.url)|#\(.number)>* \(.title)\n  _by \(.author) • \(.filesChanged) files_") | join("\n")))
+              }
+            }')
+            SECTIONS=$(echo "$SECTIONS" | jq --argjson section "$NEW_SECTION" '. + [$section]')
           fi
 
           if [ "$UPDATED_COUNT" -gt 0 ]; then
-            UPDATED_ITEMS=$(echo "$RESULT" | jq -r '.grouped.updated[] | "• *<" + .url + "|#" + (.number|tostring) + ">* " + .title + "\\n  _by " + .author + " • " + (.filesChanged|tostring) + " files_"')
-            SECTIONS="${SECTIONS}{\"type\":\"section\",\"text\":{\"type\":\"mrkdwn\",\"text\":\"📝 *Updated Content* ($UPDATED_COUNT)\\n$UPDATED_ITEMS\"}},"
+            UPDATED_SECTION=$(echo "$RESULT" | jq -r --arg count "$UPDATED_COUNT" '{
+              type: "section",
+              text: {
+                type: "mrkdwn",
+                text: ("📝 *Updated Content* (\($count))\n" + (.grouped.updated | map("• *<\(.url)|#\(.number)>* \(.title)\n  _by \(.author) • \(.filesChanged) files_") | join("\n")))
+              }
+            }')
+            SECTIONS=$(echo "$SECTIONS" | jq --argjson section "$UPDATED_SECTION" '. + [$section]')
           fi
 
           if [ "$FIXED_COUNT" -gt 0 ]; then
-            FIXED_ITEMS=$(echo "$RESULT" | jq -r '.grouped.fixed[] | "• *<" + .url + "|#" + (.number|tostring) + ">* " + .title + "\\n  _by " + .author + " • " + (.filesChanged|tostring) + " files_"')
-            SECTIONS="${SECTIONS}{\"type\":\"section\",\"text\":{\"type\":\"mrkdwn\",\"text\":\"🐛 *Fixes* ($FIXED_COUNT)\\n$FIXED_ITEMS\"}},"
+            FIXED_SECTION=$(echo "$RESULT" | jq -r --arg count "$FIXED_COUNT" '{
+              type: "section",
+              text: {
+                type: "mrkdwn",
+                text: ("🐛 *Fixes* (\($count))\n" + (.grouped.fixed | map("• *<\(.url)|#\(.number)>* \(.title)\n  _by \(.author) • \(.filesChanged) files_") | join("\n")))
+              }
+            }')
+            SECTIONS=$(echo "$SECTIONS" | jq --argjson section "$FIXED_SECTION" '. + [$section]')
           fi
 
           if [ "$REMOVED_COUNT" -gt 0 ]; then
-            REMOVED_ITEMS=$(echo "$RESULT" | jq -r '.grouped.removed[] | "• *<" + .url + "|#" + (.number|tostring) + ">* " + .title + "\\n  _by " + .author + " • " + (.filesChanged|tostring) + " files_"')
-            SECTIONS="${SECTIONS}{\"type\":\"section\",\"text\":{\"type\":\"mrkdwn\",\"text\":\"🗑️ *Removed Content* ($REMOVED_COUNT)\\n$REMOVED_ITEMS\"}},"
+            REMOVED_SECTION=$(echo "$RESULT" | jq -r --arg count "$REMOVED_COUNT" '{
+              type: "section",
+              text: {
+                type: "mrkdwn",
+                text: ("🗑️ *Removed Content* (\($count))\n" + (.grouped.removed | map("• *<\(.url)|#\(.number)>* \(.title)\n  _by \(.author) • \(.filesChanged) files_") | join("\n")))
+              }
+            }')
+            SECTIONS=$(echo "$SECTIONS" | jq --argjson section "$REMOVED_SECTION" '. + [$section]')
           fi
 
-          SECTIONS=${SECTIONS%,}
+          # Add header section
+          HEADER_SECTION=$(jq -n --arg repo "$REPO_NAME" --arg date "$REPORT_DATE" --arg total "$TOTAL_PRS" '{
+            type: "section",
+            text: {
+              type: "mrkdwn",
+              text: ("📚 *Weekly Documentation Changes - \($repo)*\n\n\($total) PRs merged in the last 7 days\n\n_Report generated on \($date)_")
+            }
+          }')
+          SECTIONS=$(echo "$SECTIONS" | jq --argjson section "$HEADER_SECTION" '. = [$section] + .')
 
-          # Build JSON directly with jq instead of sed
+          # Add divider after header
+          SECTIONS=$(echo "$SECTIONS" | jq '. |= [.[0], {type: "divider"}] + .[1:]')
+
+          # Build final message
           jq -n \
             --arg text "📚 Weekly Documentation Changes: $TOTAL_PRS PRs merged" \
-            --argjson blocks "[$SECTIONS]" \
+            --argjson blocks "$SECTIONS" \
             '{text: $text, blocks: $blocks}' > slack-message.json
+
+          echo "Final message:"
+          cat slack-message.json
 
           curl -X POST -H "Content-type: application/json" \
             --data @slack-message.json \
