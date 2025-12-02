@@ -5,7 +5,7 @@
       # Run every Monday at 7 AM EST / 12 PM UTC (8 AM EDT during
   daylight saving)
       - cron: '0 12 * * 1'
-    workflow_dispatch:
+    workflow_dispatch: {}
 
   jobs:
     docs-changes-summary:
