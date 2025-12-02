@@ -1,8 +1,7 @@
 &NewLine;
 
-{{< hint type=info title="Time Machine and Multiprotocol Shares Are Not Compatible" >}}
-To prevent unexpected failures in SMB shares, TrueNAS 25.04 and later automatically disables SMB2/3 lease support and AAPL extensions (typically used to configure Time Machine) globally when multiprotocol SMB/NFS shares are enabled.
+{{< hint type=info title="Time Machine and Multiprotocol Shares Compatibility" >}}
+**TrueNAS 25.04.0**: Time Machine shares were incompatible with multiprotocol (SMB/NFS) shares. The system automatically disabled SMB2/3 lease support and AAPL extensions globally when multiprotocol shares were configured, preventing Time Machine functionality.
 
-This means that in TrueNAS 25.04 and later, multiprotocol shares are incompatible with Time Machine shares on the same system.
-To prevent service interruption, Time Machine users should make sure that no multiprotocol shares are configured on TrueNAS.
+**TrueNAS 25.04.1 and later**: This limitation has been removed. Multiprotocol shares now use per-share oplock management instead of global oplock disabling, allowing Time Machine and MacOS Media Share to coexist with multiprotocol shares on the same system. SMB leases are permitted globally, with oplocks disabled only at the multiprotocol share level.
 {{< /hint >}}
