@@ -183,6 +183,10 @@ To create a basic Windows SMB share and a dataset, go to **Shares**, then click 
    Select **Time Machine Share** to create a Time Machine share. The SMB share is presented to Mac OS clients as a Time Machine target.
    See [Adding a Basic Time Machine SMB Share]({{< ref "SetUpBasicTimeMachineSMBShare.md" >}}) for more information on creating and using Time Machine shares.
 
+   Select **MacOS Media Share** to create a share optimized for Apple Media & Entertainment workflows.
+   The SMB share is configured with Apple name mangling and requires Apple SMB2/3 protocol extensions for compatibility with Final Cut Pro, Logic Pro, and other professional media applications.
+   See [Setting Up Apple M&E SMB Shares]({{< ref "Apple-M-E.md" >}}) for more information on creating shares for Apple media workflows.
+
    Select **External Share** to [create an external share](#setting-up-an-external-smb-share). Enter the full domain name or IP address and the share name as *192.168.0.200\SHARE* in **Remote Path**.
 
    Select **Time Locked Share** to create a share that makes files read-only after the grace period you specify expires.
