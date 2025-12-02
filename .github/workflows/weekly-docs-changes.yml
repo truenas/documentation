@@ -154,7 +154,7 @@ jobs:
 
           curl -X POST -H 'Content-type: application/json' \
           --data @slack-message.json \
-          ${{ secrets.SLACK_WEBHOOK_URL }}
+          ${{ secrets.SLACK_WEBHOOK_URL_WEEKLY_DOCS_CHANGES }}
 
       - name: Send empty report if no changes
         if: fromJSON(steps.get-merged-prs.outputs.result).prs.length == 0
@@ -173,5 +173,5 @@ jobs:
               }
             ]
           }' \
-          ${{ secrets.SLACK_WEBHOOK_URL }}
+          ${{ secrets.SLACK_WEBHOOK_URL_WEEKLY_DOCS_CHANGES }}
 
