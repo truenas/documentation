@@ -1,9 +1,8 @@
   name: Weekly Docs Changes Summary
 
-  on:
+on:
     schedule:
-      # Run every Monday at 7 AM EST / 12 PM UTC (8 AM EDT during
-  daylight saving)
+      # Run every Monday at 7 AM EST (12 PM UTC)
       - cron: '0 12 * * 1'
     workflow_dispatch: {}
 
