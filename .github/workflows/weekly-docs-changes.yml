@@ -17,8 +17,6 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
             const oneWeekAgo = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000);
-            core.info(`One week ago: ${oneWeekAgo.toISOString()}`);
-            core.info(`Looking for PRs merged after: ${oneWeekAgo.toISOString()}`);
 
             const { data: pulls } = await github.rest.pulls.list({
               owner: context.repo.owner,
@@ -29,19 +27,12 @@ jobs:
               per_page: 100
             });
 
-            core.info(`Found ${pulls.length} closed PRs to check`);
-
             const mergedPRs = [];
             for (const pr of pulls) {
-              if (!pr.merged_at) {
-                continue;
-              }
+              if (!pr.merged_at) continue;
 
               const mergedDate = new Date(pr.merged_at);
-
-              if (mergedDate < oneWeekAgo) {
-                continue;
-              }
+              if (mergedDate < oneWeekAgo) continue;
 
               const { data: files } = await github.rest.pulls.listFiles({
                 owner: context.repo.owner,
@@ -83,14 +74,15 @@ jobs:
               });
             }
 
-            const grouped = {
-              new: mergedPRs.filter(pr => pr.category === 'new'),
-              updated: mergedPRs.filter(pr => pr.category === 'updated'),
-              fixed: mergedPRs.filter(pr => pr.category === 'fixed'),
-              removed: mergedPRs.filter(pr => pr.category === 'removed')
+            return {
+              prs: mergedPRs,
+              grouped: {
+                new: mergedPRs.filter(pr => pr.category === 'new'),
+                updated: mergedPRs.filter(pr => pr.category === 'updated'),
+                fixed: mergedPRs.filter(pr => pr.category === 'fixed'),
+                removed: mergedPRs.filter(pr => pr.category === 'removed')
+              }
             };
-
-            return { prs: mergedPRs, grouped: grouped };
 
       - name: Send Slack notification
         if: fromJSON(steps.get-merged-prs.outputs.result).prs.length > 0
@@ -131,33 +123,17 @@ jobs:
 
           SECTIONS=${SECTIONS%,}
 
-          cat > slack-message.json <<EOF
+          # FIX: QUOTED HEREDOC
+          cat > slack-message.json <<'EOF'
 {
-  "text": "📚 Weekly Documentation Changes: $TOTAL_PRS PRs merged",
-  "blocks": [
-    {
-      "type": "header",
-      "text": {
-        "type": "plain_text",
-        "text": "📚 Weekly Documentation Changes"
-      }
-    },
-    {
-      "type": "context",
-      "elements": [
-        {
-          "type": "mrkdwn",
-          "text": "Repository: *$REPO_NAME* • Week of $WEEK_START - $WEEK_END • $TOTAL_PRS PRs merged"
-        }
-      ]
-    },
-    {
-      "type": "divider"
-    },
-    $SECTIONS
-  ]
+  "text": "placeholder",
+  "blocks": []
 }
 EOF
+
+          # Replace placeholder with real JSON
+          sed -i "s/placeholder/📚 Weekly Documentation Changes: $TOTAL_PRS PRs merged/" slack-message.json
+          sed -i "s/\[\]/$SECTIONS/" slack-message.json
 
           curl -X POST -H "Content-type: application/json" \
             --data @slack-message.json \
