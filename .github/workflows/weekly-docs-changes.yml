@@ -17,6 +17,7 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
             const oneWeekAgo = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000);
+            console.log('Looking for PRs merged after:', oneWeekAgo.toISOString());
 
             const { data: pulls } = await github.rest.pulls.list({
               owner: context.repo.owner,
@@ -27,12 +28,16 @@ jobs:
               per_page: 100
             });
 
+            console.log(`Found ${pulls.length} closed PRs`);
+
             const mergedPRs = [];
             for (const pr of pulls) {
               if (!pr.merged_at) continue;
 
               const mergedDate = new Date(pr.merged_at);
               if (mergedDate < oneWeekAgo) continue;
+
+              console.log(`Processing PR #${pr.number}: ${pr.title}`);
 
               const { data: files } = await github.rest.pulls.listFiles({
                 owner: context.repo.owner,
@@ -74,7 +79,9 @@ jobs:
               });
             }
 
-            return {
+            console.log(`Found ${mergedPRs.length} merged PRs in the last week`);
+
+            const result = {
               prs: mergedPRs,
               grouped: {
                 new: mergedPRs.filter(pr => pr.category === 'new'),
@@ -84,8 +91,14 @@ jobs:
               }
             };
 
+            // Set output for next steps
+            core.setOutput('pr-count', mergedPRs.length);
+            core.setOutput('result', JSON.stringify(result));
+
+            return result;
+
       - name: Send Slack notification
-        if: fromJSON(steps.get-merged-prs.outputs.result).prs.length > 0
+        if: steps.get-merged-prs.outputs.pr-count > 0
         run: |
           RESULT='${{ steps.get-merged-prs.outputs.result }}'
           REPO_NAME="${{ github.repository }}"
@@ -178,7 +191,7 @@ jobs:
             ${{ secrets.SLACK_WEBHOOK_URL_WEEKLY_DOCS_CHANGES }}
 
       - name: Send empty report if no changes
-        if: fromJSON(steps.get-merged-prs.outputs.result).prs.length == 0
+        if: steps.get-merged-prs.outputs.pr-count == 0
         run: |
           REPO_NAME="${{ github.repository }}"
           REPORT_DATE=$(date +'%B %d, %Y')
