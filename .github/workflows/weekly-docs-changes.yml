@@ -16,8 +16,7 @@
           with:
             github-token: ${{ secrets.GITHUB_TOKEN }}
             script: |
-              const oneWeekAgo = new Date(Date.now() - 7 * 24 * 60 * 60
-  * 1000);
+              const oneWeekAgo = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000);
               console.log('Looking for PRs merged after:',
   oneWeekAgo.toISOString());
               const { data: pulls } = await github.rest.pulls.list({
