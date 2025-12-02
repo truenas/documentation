@@ -190,4 +190,3 @@ steps:
           ]
         }" \
         ${{ secrets.SLACK_WEBHOOK_URL_WEEKLY_DOCS_CHANGES }}
-```
