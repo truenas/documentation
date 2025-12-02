@@ -123,17 +123,11 @@ jobs:
 
           SECTIONS=${SECTIONS%,}
 
-          # FIX: QUOTED HEREDOC
-          cat > slack-message.json <<'EOF'
-{
-  "text": "placeholder",
-  "blocks": []
-}
-EOF
-
-          # Replace placeholder with real JSON
-          sed -i "s/placeholder/📚 Weekly Documentation Changes: $TOTAL_PRS PRs merged/" slack-message.json
-          sed -i "s/\[\]/$SECTIONS/" slack-message.json
+          # Build JSON directly with jq instead of sed
+          jq -n \
+            --arg text "📚 Weekly Documentation Changes: $TOTAL_PRS PRs merged" \
+            --argjson blocks "[$SECTIONS]" \
+            '{text: $text, blocks: $blocks}' > slack-message.json
 
           curl -X POST -H "Content-type: application/json" \
             --data @slack-message.json \
