@@ -16,6 +16,10 @@ tags:
 
 ## About Apple Media & Entertainment Shares
 
+{{< hint type=note >}}
+The MacOS Media Share purpose is available in TrueNAS 25.10.1 and later.
+{{< /hint >}}
+
 The MacOS Media Share purpose is designed specifically for Apple professional media workflows, including:
 
 - Final Cut Pro and Final Cut Pro X
