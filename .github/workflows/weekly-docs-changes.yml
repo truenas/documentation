@@ -35,6 +35,32 @@ jobs:
                 repo: context.repo.repo,
                 pull_number: pr.number
               });
+              
+              // Generate a clean summary from the PR
+              function generateSummary(pr, files) {
+                const title = pr.title;
+                const body = pr.body || '';
+                const fileNames = files.map(f => f.filename);
+                
+                // Remove common prefixes and ticket numbers
+                let summary = title
+                  .replace(/^(feat|fix|docs|chore|refactor|test|style|perf|ci|build)(\(.+?\))?:\s*/i, '')
+                  .replace(/^[A-Z]+-\d+[\s\/]+/g, '')
+                  .replace(/\s*\/\s*/g, ' ')
+                  .replace(/\s+/g, ' ')
+                  .trim();
+                
+                // Capitalize first letter
+                summary = summary.charAt(0).toUpperCase() + summary.slice(1);
+                
+                // Ensure it ends with a period if it doesn't have punctuation
+                if (!/[.!?]$/.test(summary)) {
+                  summary += '.';
+                }
+                
+                return summary;
+              }
+              
               let category = 'updated';
               const title = pr.title.toLowerCase();
               const labels = pr.labels.map(l => l.name.toLowerCase());
@@ -55,9 +81,11 @@ jobs:
               ) {
                 category = 'removed';
               }
+              
               mergedPRs.push({
                 number: pr.number,
                 title: pr.title,
+                summary: generateSummary(pr, files),
                 url: pr.html_url,
                 author: pr.user.login,
                 mergedAt: pr.merged_at,
@@ -102,7 +130,7 @@ jobs:
               type: "section",
               text: {
                 type: "mrkdwn",
-                text: ("✨ *New content* (\($count))\n" + (.grouped.new | map("• <\(.url)|PR #\(.number)>: \(.title)\n _@\(.author) • \(.filesChanged) file(s)_") | join("\n")))
+                text: ("✨ *New content* (\($count))\n" + (.grouped.new | map("• <\(.url)|PR #\(.number)>: \(.summary)\n  _by @\(.author) • \(.filesChanged) file(s)_") | join("\n")))
               }
             }')
             SECTIONS=$(echo "$SECTIONS" | jq --argjson section "$NEW_SECTION" '. + [$section]')
@@ -113,7 +141,7 @@ jobs:
               type: "section",
               text: {
                 type: "mrkdwn",
-                text: ("📝 *Updated content* (\($count))\n" + (.grouped.updated | map("• <\(.url)|PR #\(.number)>: \(.title)\n _@\(.author) • \(.filesChanged) file(s)_") | join("\n")))
+                text: ("📝 *Updated content* (\($count))\n" + (.grouped.updated | map("• <\(.url)|PR #\(.number)>: \(.summary)\n  _by @\(.author) • \(.filesChanged) file(s)_") | join("\n")))
               }
             }')
             SECTIONS=$(echo "$SECTIONS" | jq --argjson section "$UPDATED_SECTION" '. + [$section]')
@@ -124,7 +152,7 @@ jobs:
               type: "section",
               text: {
                 type: "mrkdwn",
-                text: ("🐛 *Bug fixes* (\($count))\n" + (.grouped.fixed | map("• <\(.url)|PR #\(.number)>: \(.title)\n _@\(.author) • \(.filesChanged) file(s)_") | join("\n")))
+                text: ("🐛 *Bug fixes* (\($count))\n" + (.grouped.fixed | map("• <\(.url)|PR #\(.number)>: \(.summary)\n  _by @\(.author) • \(.filesChanged) file(s)_") | join("\n")))
               }
             }')
             SECTIONS=$(echo "$SECTIONS" | jq --argjson section "$FIXED_SECTION" '. + [$section]')
@@ -135,7 +163,7 @@ jobs:
               type: "section",
               text: {
                 type: "mrkdwn",
-                text: ("🗑️ *Removed content* (\($count))\n" + (.grouped.removed | map("• <\(.url)|PR #\(.number)>: \(.title)\n _@\(.author) • \(.filesChanged) file(s)_") | join("\n")))
+                text: ("🗑️ *Removed content* (\($count))\n" + (.grouped.removed | map("• <\(.url)|PR #\(.number)>: \(.summary)\n  _by @\(.author) • \(.filesChanged) file(s)_") | join("\n")))
               }
             }')
             SECTIONS=$(echo "$SECTIONS" | jq --argjson section "$REMOVED_SECTION" '. + [$section]')
