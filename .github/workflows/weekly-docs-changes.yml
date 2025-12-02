@@ -9,7 +9,6 @@ jobs:
 docs-changes-summary:
 runs-on: ubuntu-latest
 
-```
 steps:
   - name: Get merged PRs from last week
     id: get-merged-prs
