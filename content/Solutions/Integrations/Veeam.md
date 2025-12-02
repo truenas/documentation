@@ -15,7 +15,7 @@ aliases:
 </div>
 
 TrueNAS Unified Storage appliances are qualified Veeam-ready and can be used to handle demanding file and VM backup requirements.
-These certification tests measure the speed and effectiveness of the data storage repository using a testing methodology defined by Veeam for full backups, full restores, synthetic full backups, and instant VM recovery from within the Veeam Backup & Replication environment.
+These qualification tests measure the speed and effectiveness of the data storage repository using a testing methodology defined by Veeam for full backups, full restores, synthetic full backups, and instant VM recovery from within the Veeam Backup & Replication environment.
 With the ability to seamlessly scale to petabytes of raw capacity, high-performance networking and cache, and all-flash options, TrueNAS appliances are ideal for large and small Veeam Backup & Replication repositories.
 
 {{< expand "Qualified Hardware" "v" >}}
@@ -236,8 +236,6 @@ Here are additional key features that are offered out-of-the-box at no extra cos
 * **Native replication to TrueNAS systems** - TrueNAS native replication is perfect for disaster recovery and compliance.
 * **High-availability (HA) architecture with 99.999% availability** - High Availability (HA) ensures the system is always ready to receive the latest backups.
 * **Triple-parity** - RAID groups (vdevs) can be configured with mirror, single-parity (RAIDZ), dual-parity (RAIDZ2), or triple-parity (RAIDZ3) levels, while copy-on-write, checksums, and data scrubbing help protect long-term data integrity.
-* **Certified with VMware® and Citrix® XenServer®** - TrueNAS can be a hypervisor datastore and a backup repository, with data on different datasets and even pools.
- Just be mindful of the scale of the workloads being run.
 * **Unrivaled scalability in a single dataset** - TrueNAS allows scaling the backup repository from terabytes to petabytes of usable capacity.
  No LUN limits, clustering, or licenses needed.
 
