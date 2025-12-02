@@ -36,31 +36,6 @@ jobs:
                 pull_number: pr.number
               });
               
-              // Generate a clean summary from the PR
-              function generateSummary(pr, files) {
-                const title = pr.title;
-                const body = pr.body || '';
-                const fileNames = files.map(f => f.filename);
-                
-                // Remove common prefixes and ticket numbers
-                let summary = title
-                  .replace(/^(feat|fix|docs|chore|refactor|test|style|perf|ci|build)(\(.+?\))?:\s*/i, '')
-                  .replace(/^[A-Z]+-\d+[\s\/]+/g, '')
-                  .replace(/\s*\/\s*/g, ' ')
-                  .replace(/\s+/g, ' ')
-                  .trim();
-                
-                // Capitalize first letter
-                summary = summary.charAt(0).toUpperCase() + summary.slice(1);
-                
-                // Ensure it ends with a period if it doesn't have punctuation
-                if (!/[.!?]$/.test(summary)) {
-                  summary += '.';
-                }
-                
-                return summary;
-              }
-              
               let category = 'updated';
               const title = pr.title.toLowerCase();
               const labels = pr.labels.map(l => l.name.toLowerCase());
@@ -85,12 +60,13 @@ jobs:
               mergedPRs.push({
                 number: pr.number,
                 title: pr.title,
-                summary: generateSummary(pr, files),
+                body: pr.body || '',
                 url: pr.html_url,
                 author: pr.user.login,
                 mergedAt: pr.merged_at,
                 category: category,
                 filesChanged: files.length,
+                fileNames: files.map(f => f.filename).join(', '),
                 labels: pr.labels.map(l => l.name).join(', ')
               });
             }
@@ -107,10 +83,101 @@ jobs:
             core.setOutput('result', JSON.stringify(result));
             return result;
 
+      - name: Generate AI summaries
+        if: steps.get-merged-prs.outputs.pr-count > 0
+        id: generate-summaries
+        run: |
+          RESULT='${{ steps.get-merged-prs.outputs.result }}'
+          
+          # Create a JSON array of PRs that need summaries
+          PR_DATA=$(echo "$RESULT" | jq -c '.prs[] | {number, title, body, fileNames, category}')
+          
+          # Generate summaries using Claude API
+          SUMMARIES='[]'
+          
+          while IFS= read -r pr; do
+            PR_NUMBER=$(echo "$pr" | jq -r '.number')
+            PR_TITLE=$(echo "$pr" | jq -r '.title')
+            PR_BODY=$(echo "$pr" | jq -r '.body')
+            FILE_NAMES=$(echo "$pr" | jq -r '.fileNames')
+            
+            # Create prompt for Claude
+            PROMPT="You are summarizing a GitHub pull request for a weekly documentation changes report. 
+          
+          PR Title: $PR_TITLE
+          PR Description: $PR_BODY
+          Files changed: $FILE_NAMES
+          
+          Generate a single clear, concise sentence (10-15 words) that describes what changed in this PR. The sentence should:
+          - Be in past tense
+          - Start with a capital letter and end with a period
+          - Focus on WHAT was changed, not ticket numbers or technical jargon
+          - Be understandable to non-technical stakeholders
+          - Remove any ticket numbers, branch names, or project codes
+          
+          Examples:
+          - 'Updated credentials panel to disable password field in edit mode.'
+          - 'Added new authentication flow for enterprise users.'
+          - 'Fixed broken links in the API documentation.'
+          
+          Return ONLY the summary sentence, nothing else."
+          
+            # Call Claude API
+            SUMMARY=$(curl -s https://api.anthropic.com/v1/messages \
+              -H "content-type: application/json" \
+              -H "x-api-key: ${{ secrets.ANTHROPIC_API_KEY }}" \
+              -H "anthropic-version: 2023-06-01" \
+              -d "{
+                \"model\": \"claude-sonnet-4-20250514\",
+                \"max_tokens\": 100,
+                \"messages\": [{
+                  \"role\": \"user\",
+                  \"content\": $(echo "$PROMPT" | jq -Rs .)
+                }]
+              }" | jq -r '.content[0].text' | tr -d '\n')
+            
+            # Add to summaries array
+            SUMMARIES=$(echo "$SUMMARIES" | jq --arg num "$PR_NUMBER" --arg sum "$SUMMARY" '. + [{number: ($num | tonumber), summary: $sum}]')
+            
+            # Small delay to respect rate limits
+            sleep 0.5
+          done <<< "$PR_DATA"
+          
+          # Merge summaries back into the result
+          UPDATED_RESULT=$(echo "$RESULT" | jq --argjson summaries "$SUMMARIES" '
+            .prs |= map(
+              . as $pr | 
+              ($summaries[] | select(.number == $pr.number) | .summary) as $summary |
+              $pr + {summary: $summary}
+            ) |
+            .grouped.new |= map(
+              . as $pr | 
+              ($summaries[] | select(.number == $pr.number) | .summary) as $summary |
+              $pr + {summary: $summary}
+            ) |
+            .grouped.updated |= map(
+              . as $pr | 
+              ($summaries[] | select(.number == $pr.number) | .summary) as $summary |
+              $pr + {summary: $summary}
+            ) |
+            .grouped.fixed |= map(
+              . as $pr | 
+              ($summaries[] | select(.number == $pr.number) | .summary) as $summary |
+              $pr + {summary: $summary}
+            ) |
+            .grouped.removed |= map(
+              . as $pr | 
+              ($summaries[] | select(.number == $pr.number) | .summary) as $summary |
+              $pr + {summary: $summary}
+            )
+          ')
+          
+          echo "result=$UPDATED_RESULT" >> $GITHUB_OUTPUT
+
       - name: Send Slack notification
         if: steps.get-merged-prs.outputs.pr-count > 0
         run: |
-          RESULT='${{ steps.get-merged-prs.outputs.result }}'
+          RESULT='${{ steps.generate-summaries.outputs.result }}'
           REPO_NAME="${{ github.repository }}"
           WEEK_START=$(date -d '7 days ago' +'%B %d' 2>/dev/null || date -v-7d +'%B %d')
           WEEK_END=$(date +'%B %d, %Y')
