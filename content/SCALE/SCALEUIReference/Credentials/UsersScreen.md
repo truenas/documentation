@@ -146,7 +146,7 @@ When cleared, the user can log in without 2FA. If Global 2FA is enabled, the use
 {{< trueimage src="/images/SCALE/Credentials/Clear2FADialog.png" alt="Clear Two-Factor Authentication Dialog" id="Clear Two-Factor Authentication Dialog" >}}
 
 {{< hint type=important >}}
-Clearing 2FA for a user should only be done when necessary, such as when the user has lost access to their authenticator device. This action temporarily reduces account security until 2FA is reconfigured.
+Only clear 2FA for a user when it is necessary, such as when the user has lost access to their authenticator device. This action temporarily reduces account security until 2FA is reconfigured.
 {{< /hint >}}
 
 ## Add or Edit User Screens
