@@ -16,9 +16,7 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
-            const oneWeekAgo = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000);
-            console.log('Looking for PRs merged after:', oneWeekAgo.toISOString());
-
+            const oneWeekAgo = new Date(Date.now() - 604800000);
             const { data: pulls } = await github.rest.pulls.list({
               owner: context.repo.owner,
               repo: context.repo.repo,
@@ -27,29 +25,21 @@ jobs:
               direction: 'desc',
               per_page: 100
             });
-
-            console.log(`Found ${pulls.length} closed PRs`);
-
             const mergedPRs = [];
             for (const pr of pulls) {
               if (!pr.merged_at) continue;
-
               const mergedDate = new Date(pr.merged_at);
               if (mergedDate < oneWeekAgo) continue;
-
-              console.log(`Processing PR #${pr.number}: ${pr.title}`);
-
               const { data: files } = await github.rest.pulls.listFiles({
                 owner: context.repo.owner,
                 repo: context.repo.repo,
                 pull_number: pr.number
               });
-
+              
               let category = 'updated';
               const title = pr.title.toLowerCase();
               const labels = pr.labels.map(l => l.name.toLowerCase());
               const hasNewFiles = files.some(f => f.status === 'added');
-
               if (hasNewFiles || title.includes('new') || title.includes('add')) {
                 category = 'new';
               } else if (
@@ -66,21 +56,20 @@ jobs:
               ) {
                 category = 'removed';
               }
-
+              
               mergedPRs.push({
                 number: pr.number,
                 title: pr.title,
+                body: pr.body || '',
                 url: pr.html_url,
                 author: pr.user.login,
                 mergedAt: pr.merged_at,
                 category: category,
                 filesChanged: files.length,
+                fileNames: files.map(f => f.filename).join(', '),
                 labels: pr.labels.map(l => l.name).join(', ')
               });
             }
-
-            console.log(`Found ${mergedPRs.length} merged PRs in the last week`);
-
             const result = {
               prs: mergedPRs,
               grouped: {
@@ -90,34 +79,117 @@ jobs:
                 removed: mergedPRs.filter(pr => pr.category === 'removed')
               }
             };
-
-            // Set output for next steps
             core.setOutput('pr-count', mergedPRs.length);
             core.setOutput('result', JSON.stringify(result));
-
             return result;
+
+      - name: Generate AI summaries
+        if: steps.get-merged-prs.outputs.pr-count > 0
+        id: generate-summaries
+        run: |
+          RESULT='${{ steps.get-merged-prs.outputs.result }}'
+          
+          # Create a JSON array of PRs that need summaries
+          PR_DATA=$(echo "$RESULT" | jq -c '.prs[] | {number, title, body, fileNames, category}')
+          
+          # Generate summaries using Claude API
+          SUMMARIES='[]'
+          
+          while IFS= read -r pr; do
+            PR_NUMBER=$(echo "$pr" | jq -r '.number')
+            PR_TITLE=$(echo "$pr" | jq -r '.title')
+            PR_BODY=$(echo "$pr" | jq -r '.body')
+            FILE_NAMES=$(echo "$pr" | jq -r '.fileNames')
+            
+            # Create prompt for Claude
+            PROMPT="You are summarizing a GitHub pull request for a weekly documentation changes report. 
+          
+          PR Title: $PR_TITLE
+          PR Description: $PR_BODY
+          Files changed: $FILE_NAMES
+          
+          Generate a single clear, concise sentence (10-15 words) that describes what changed in this PR. The sentence should:
+          - Be in past tense
+          - Start with a capital letter and end with a period
+          - Focus on WHAT was changed, not ticket numbers or technical jargon
+          - Be understandable to non-technical stakeholders
+          - Remove any ticket numbers, branch names, or project codes
+          
+          Examples:
+          - 'Updated credentials panel to disable password field in edit mode.'
+          - 'Added new authentication flow for enterprise users.'
+          - 'Fixed broken links in the API documentation.'
+          
+          Return ONLY the summary sentence, nothing else."
+          
+            # Call Claude API
+            SUMMARY=$(curl -s https://api.anthropic.com/v1/messages \
+              -H "content-type: application/json" \
+              -H "x-api-key: ${{ secrets.ANTHROPIC_API_KEY }}" \
+              -H "anthropic-version: 2023-06-01" \
+              -d "{
+                \"model\": \"claude-sonnet-4-20250514\",
+                \"max_tokens\": 100,
+                \"messages\": [{
+                  \"role\": \"user\",
+                  \"content\": $(echo "$PROMPT" | jq -Rs .)
+                }]
+              }" | jq -r '.content[0].text' | tr -d '\n')
+            
+            # Add to summaries array
+            SUMMARIES=$(echo "$SUMMARIES" | jq --arg num "$PR_NUMBER" --arg sum "$SUMMARY" '. + [{number: ($num | tonumber), summary: $sum}]')
+            
+            # Small delay to respect rate limits
+            sleep 0.5
+          done <<< "$PR_DATA"
+          
+          # Merge summaries back into the result
+          UPDATED_RESULT=$(echo "$RESULT" | jq --argjson summaries "$SUMMARIES" '
+            .prs |= map(
+              . as $pr | 
+              ($summaries[] | select(.number == $pr.number) | .summary) as $summary |
+              $pr + {summary: $summary}
+            ) |
+            .grouped.new |= map(
+              . as $pr | 
+              ($summaries[] | select(.number == $pr.number) | .summary) as $summary |
+              $pr + {summary: $summary}
+            ) |
+            .grouped.updated |= map(
+              . as $pr | 
+              ($summaries[] | select(.number == $pr.number) | .summary) as $summary |
+              $pr + {summary: $summary}
+            ) |
+            .grouped.fixed |= map(
+              . as $pr | 
+              ($summaries[] | select(.number == $pr.number) | .summary) as $summary |
+              $pr + {summary: $summary}
+            ) |
+            .grouped.removed |= map(
+              . as $pr | 
+              ($summaries[] | select(.number == $pr.number) | .summary) as $summary |
+              $pr + {summary: $summary}
+            )
+          ')
+          
+          echo "result=$UPDATED_RESULT" >> $GITHUB_OUTPUT
 
       - name: Send Slack notification
         if: steps.get-merged-prs.outputs.pr-count > 0
         run: |
-          RESULT='${{ steps.get-merged-prs.outputs.result }}'
+          RESULT='${{ steps.generate-summaries.outputs.result }}'
           REPO_NAME="${{ github.repository }}"
-
           WEEK_START=$(date -d '7 days ago' +'%B %d' 2>/dev/null || date -v-7d +'%B %d')
           WEEK_END=$(date +'%B %d, %Y')
           REPORT_DATE=$(date +'%B %d, %Y')
-
           TOTAL_PRS=$(echo "$RESULT" | jq '.prs | length')
           NEW_COUNT=$(echo "$RESULT" | jq '.grouped.new | length')
           UPDATED_COUNT=$(echo "$RESULT" | jq '.grouped.updated | length')
           FIXED_COUNT=$(echo "$RESULT" | jq '.grouped.fixed | length')
           REMOVED_COUNT=$(echo "$RESULT" | jq '.grouped.removed | length')
 
-          # Debug: Print what we got
           echo "Total PRs found: $TOTAL_PRS"
-          echo "Result data: $RESULT"
 
-          # Build sections array with proper JSON
           SECTIONS='[]'
 
           if [ "$NEW_COUNT" -gt 0 ]; then
@@ -125,7 +197,7 @@ jobs:
               type: "section",
               text: {
                 type: "mrkdwn",
-                text: ("✨ *New Content* (\($count))\n" + (.grouped.new | map("• *<\(.url)|#\(.number)>* \(.title)\n  _by \(.author) • \(.filesChanged) files_") | join("\n")))
+                text: ("✨ *New content* (\($count))\n" + (.grouped.new | map("• <\(.url)|PR #\(.number)>: \(.summary)\n  _by @\(.author) • \(.filesChanged) file(s)_") | join("\n")))
               }
             }')
             SECTIONS=$(echo "$SECTIONS" | jq --argjson section "$NEW_SECTION" '. + [$section]')
@@ -136,7 +208,7 @@ jobs:
               type: "section",
               text: {
                 type: "mrkdwn",
-                text: ("📝 *Updated Content* (\($count))\n" + (.grouped.updated | map("• *<\(.url)|#\(.number)>* \(.title)\n  _by \(.author) • \(.filesChanged) files_") | join("\n")))
+                text: ("📝 *Updated content* (\($count))\n" + (.grouped.updated | map("• <\(.url)|PR #\(.number)>: \(.summary)\n  _by @\(.author) • \(.filesChanged) file(s)_") | join("\n")))
               }
             }')
             SECTIONS=$(echo "$SECTIONS" | jq --argjson section "$UPDATED_SECTION" '. + [$section]')
@@ -147,7 +219,7 @@ jobs:
               type: "section",
               text: {
                 type: "mrkdwn",
-                text: ("🐛 *Fixes* (\($count))\n" + (.grouped.fixed | map("• *<\(.url)|#\(.number)>* \(.title)\n  _by \(.author) • \(.filesChanged) files_") | join("\n")))
+                text: ("🐛 *Bug fixes* (\($count))\n" + (.grouped.fixed | map("• <\(.url)|PR #\(.number)>: \(.summary)\n  _by @\(.author) • \(.filesChanged) file(s)_") | join("\n")))
               }
             }')
             SECTIONS=$(echo "$SECTIONS" | jq --argjson section "$FIXED_SECTION" '. + [$section]')
@@ -158,26 +230,23 @@ jobs:
               type: "section",
               text: {
                 type: "mrkdwn",
-                text: ("🗑️ *Removed Content* (\($count))\n" + (.grouped.removed | map("• *<\(.url)|#\(.number)>* \(.title)\n  _by \(.author) • \(.filesChanged) files_") | join("\n")))
+                text: ("🗑️ *Removed content* (\($count))\n" + (.grouped.removed | map("• <\(.url)|PR #\(.number)>: \(.summary)\n  _by @\(.author) • \(.filesChanged) file(s)_") | join("\n")))
               }
             }')
             SECTIONS=$(echo "$SECTIONS" | jq --argjson section "$REMOVED_SECTION" '. + [$section]')
           fi
 
-          # Add header section
           HEADER_SECTION=$(jq -n --arg repo "$REPO_NAME" --arg date "$REPORT_DATE" --arg total "$TOTAL_PRS" '{
             type: "section",
             text: {
               type: "mrkdwn",
-              text: ("📚 *Weekly Documentation Changes - \($repo)*\n\n\($total) PRs merged in the last 7 days\n\n_Report generated on \($date)_")
+              text: ("📚 *Weekly documentation changes for \($repo)*\n\n\($total) PRs merged in the last 7 days.\n\n_Report generated on \($date)_")
             }
           }')
           SECTIONS=$(echo "$SECTIONS" | jq --argjson section "$HEADER_SECTION" '. = [$section] + .')
 
-          # Add divider after header
           SECTIONS=$(echo "$SECTIONS" | jq '. |= [.[0], {type: "divider"}] + .[1:]')
 
-          # Build final message
           jq -n \
             --arg text "📚 Weekly Documentation Changes: $TOTAL_PRS PRs merged" \
             --argjson blocks "$SECTIONS" \
@@ -204,7 +273,7 @@ jobs:
                   \"type\": \"section\",
                   \"text\": {
                     \"type\": \"mrkdwn\",
-                    \"text\": \"📚 *Weekly Documentation Changes - $REPO_NAME*\\n\\nNo PRs were merged in the last 7 days.\\n\\n_Report generated on $REPORT_DATE_\"
+                    \"text\": \"📚 *Weekly documentation changes for $REPO_NAME*\\n\\nNo PRs were merged in the last 7 days.\\n\\n_Report generated on $REPORT_DATE_\"
                   }
                 }
               ]

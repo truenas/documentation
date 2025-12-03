@@ -2,16 +2,18 @@
 title: "Advanced Settings Screen"
 description: "Provides information on the System Settings > Advanced screen, widgets, and configuration screen settings."
 weight: 30
-aliases: 
+aliases:
  - /scale/scaleuireference/systemsettings/advancedsettings/
  - /scale/scaleclireference/auth
  - /scale/scaleclireference/system/cliadvanced/
  - /scale/scaleclireference/system/clicore/
  - /scale/scaleclireference/system/clidevice/
  - /scale/scaleclireference/system/cliinitshutdownscript/
+ - /scale/scaleclireference/system/clintpserver/
  - /scale/scaleclireference/system/clisystemdataset/
  - /scale/scaleclireference/system/clitunable/
  - /scale/scaleclireference/task/clicronjob/
+ - /scale/scaletutorials/dashboard/scaletimesync/
  - /scale/scaletutorials/systemsettings/services/smartservicesscale/
  - /scale/scaleuireference/systemsettings/services/smartservicesscreen/
 tags:
@@ -28,11 +30,12 @@ tags:
  - sed
  - 2fa
  - syslog
+ - ntp
 ---
 
 {{< include file="/static/includes/AdvancedSettingsWarningSCALE.md" >}}
 
-The **Advanced Settings** screen provides configuration options for the console, syslog, audit, kernel, sysctl, storage (system dataset pool), replication, WebSocket sessions, cron jobs, init/shutdown scripts, NTS servers, allowed IP addresses, isolated GPU device(s), self-encrypting drives, and global two-factor authentication.
+The **Advanced Settings** screen provides configuration options for the console, syslog, audit, kernel, sysctl, storage (system dataset pool), replication, WebSocket sessions, cron jobs, init/shutdown scripts, NTP servers, allowed IP addresses, isolated GPU device(s), self-encrypting drives, and global two-factor authentication.
 
 You can download or upload your system configuration files from this screen.
 
