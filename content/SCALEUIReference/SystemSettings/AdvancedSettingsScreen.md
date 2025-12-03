@@ -6,6 +6,8 @@ aliases:
  - /scaleuireference/systemsettings/services/smartservicesscreen/
  - /scaleuireference/dataprotection/smarttestsscreensscale/
  - /scaletutorials/dataprotection/smarttestsscale/
+ - /scale/scaletutorials/dashboard/scaletimesync/
+ - /scale/scaleclireference/system/clintpserver/
  - /scaletutorials/systemsettings/services/smartservicesscale/
 tags:
  - settings
@@ -21,11 +23,12 @@ tags:
  - sed
  - 2fa
  - syslog
+ - ntp
 ---
 
 {{< include file="/static/includes/AdvancedSettingsWarningSCALE.md" >}}
 
-The **Advanced Settings** screen provides configuration options for the console, syslog, audit, kernel, sysctl, storage (system dataset pool), replication, WebSocket sessions, cron jobs, init/shutdown scripts, NTS servers, allowed IP addresses, isolated GPU device(s), self-encrypting drives, and global two-factor authentication.
+The **Advanced Settings** screen provides configuration options for the console, syslog, audit, kernel, sysctl, storage (system dataset pool), replication, WebSocket sessions, cron jobs, init/shutdown scripts, NTP servers, allowed IP addresses, isolated GPU device(s), self-encrypting drives, and global two-factor authentication.
 
 Pre-25.10 systems with S.M.A.R.T. testing schedules have these schedules appearing as cron jobs.
 
