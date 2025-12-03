@@ -99,7 +99,7 @@ Go to **System > Advanced Settings**, scroll down to the **Global Two Factor Aut
 
 If you want to enable 2FA again, go to **System > Advanced Settings**, scroll down to the **Global Two Factor Authentication** widget, and click **Config**.
 
-Check **Enable Two Factor Authentication Globally**, then click **Save**.
+Select **Enable Two Factor Authentication Globally**, then click **Save**.
 To change the system-generated **Secret**, click on the **Settings** icon on the top toolbar and select **Two-Factor Authentication**.
 Click **Renew 2FA Secret**.
 
