@@ -133,8 +133,8 @@ Before you begin, install a TOTP-compatible authenticator app on your mobile dev
    {{< trueimage src="/images/SCALE/SystemSettings/SetUpTwoFactorAuthenticationScreen.png" alt="Set Up Two-Factor Authentication Screen" id="Set Up Two-Factor Authentication Screen" >}}
 
 4. After scanning the code:
-   - **If prompted during login**: Click **Finish** to close the setup dialog.
-   - **If accessing from the Settings menu**: Your configuration is saved automatically. You can navigate to other screens as needed.
+   - If prompted during login: Click **Finish** to close the setup dialog.
+   - If accessing from the **Settings** menu: Your configuration is saved automatically. You can navigate to other screens as needed.
 
 Your 2FA is now configured. You need to enter codes from your authenticator app when logging in.
 
