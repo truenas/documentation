@@ -37,7 +37,7 @@ Before creating a MacOS Media Share, enable **Apple SMB2/3 Protocol Extensions**
 
 Before setting up a MacOS Media Share:
 
-1. **User Accounts**: [Create user accounts]({{< ref "ManageLocalUsersSCALE" >}}) for media professionals who access the share.
+1. **User Accounts**: [Create user accounts]({{< ref "ManageUsers" >}}) for media professionals who access the share.
    Go to **Credentials > Local Users** and click **Add**. Ensure **Samba Authentication** is selected for each user.
 
 2. **Dataset**: Prepare a dataset for the share (or create one during share creation).
@@ -83,7 +83,7 @@ This tutorial uses the **Add SMB** screen to create both the dataset and share.
 
 3. Click **Create Dataset**.
 
-4. Enter a name for the dataset (e.g., "AppleMediaShare" or "FCPProjects") and click **Create**.
+4. Enter a name for the dataset (e.g., *AppleMediaShare* or *FCPProjects*) and click **Create**.
 
    The dataset name populates the **Name** field and becomes the share name.
 
@@ -91,7 +91,7 @@ This tutorial uses the **Add SMB** screen to create both the dataset and share.
 
 5. Select **MacOS Media Share** from the **Purpose** dropdown.
 
-6. (Optional) Enter a description such as "Final Cut Pro project storage" to identify the share's purpose.
+6. (Optional) Enter a description such as *Final Cut Pro project storage* to identify the share's purpose.
 
 7. Ensure **Enabled** is selected to activate the share when the SMB service is running.
 
@@ -147,7 +147,7 @@ See [Managing SMB Shares]({{< ref "ManageSMBShares.md" >}}) for detailed informa
 2. On the Mac client, connect to the share:
    - Open **Finder**
    - Select **Go > Connect to Server** (or press Cmd+K)
-   - Enter the SMB address: `smb://your-truenas-ip/share-name`
+   - Enter the SMB address: `smb://*your-truenas-ip*/*share-name*`
    - Authenticate with a user account that has access to the share
 
 3. The share is now available for use with Final Cut Pro, Logic Pro, and other Apple Media & Entertainment applications.
@@ -180,43 +180,3 @@ If you are migrating an existing media library from a standard SMB share to a Ma
 4. Once verified, migrate remaining data
 5. Update media application libraries and project files to point to the new location
 {{< /hint >}}
-
-## Troubleshooting
-
-### Share Creation Fails
-
-**Problem**: Unable to create the share with an error message.
-
-**Solution**:
-- Verify Apple SMB2/3 Protocol Extensions are enabled in **System > Services > SMB > Advanced Settings**
-- Ensure the SMB service is not in an error state
-- Review system alerts for Active Directory or LDAP connection issues
-
-### Files Not Accessible from Media Applications
-
-**Problem**: Final Cut Pro or Logic Pro cannot access files on the share.
-
-**Solution**:
-- Confirm the share Purpose is set to **MacOS Media Share**
-- Verify Apple name mangling is enabled (visible in Advanced Options > Other Options as a checked, disabled checkbox)
-- Check dataset ACL permissions for the user account
-- Ensure Apple SMB2/3 Protocol Extensions are enabled in the SMB service
-
-### Performance Issues with Large Files
-
-**Problem**: Slow transfer speeds or stuttering during playback of media files.
-
-**Solution**:
-- Consider enabling [SMB Multichannel]({{< ref "SMBMultichannel.md" >}}) for improved throughput
-- Verify network speed and MTU settings
-- Check dataset record size (128K or larger recommended for video files)
-- Monitor system resources (CPU, RAM, disk I/O) during transfers
-- Review SMB service log level (reduce from Debug to Normal if enabled)
-
-## Additional Resources
-
-- [SMB Shares Screens]({{< ref "SMBSharesScreens.md" >}}) - Complete UI reference for SMB share settings
-- [Managing SMB Shares]({{< ref "ManageSMBShares.md" >}}) - Details on ACL configuration and share management
-- [Apple Support: Using Shared Storage with Final Cut Pro](https://support.apple.com/en-ca/101919) - Apple's official requirements
-- [Apple Support: File Sharing](https://support.apple.com/guide/mac-help/connect-mac-shared-computers-servers-mchlp1140/mac) - Mac client configuration
-- [Samba Documentation](https://www.samba.org/samba/docs/current/man-html/smb.conf.5.html) - Technical reference for Apple extensions
