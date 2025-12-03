@@ -37,10 +37,10 @@ Before creating a MacOS Media Share, enable **Apple SMB2/3 Protocol Extensions**
 
 Before setting up a MacOS Media Share:
 
-1. **User Accounts**: [Create user accounts]({{< ref "ManageUsers" >}}) for media professionals who access the share.
+1. User Accounts: [Create user accounts]({{< ref "ManageUsers" >}}) for media professionals who access the share.
    Go to **Credentials > Local Users** and click **Add**. Ensure **Samba Authentication** is selected for each user.
 
-2. **Dataset**: Prepare a dataset for the share (or create one during share creation).
+2. Dataset: Prepare a dataset for the share (or create one during share creation).
    For best performance with large media files, consider:
    - Enabling compression (LZ4 is recommended for media files)
    - Setting appropriate record size (128K or larger for video files)
@@ -156,13 +156,13 @@ See [Managing SMB Shares]({{< ref "ManageSMBShares.md" >}}) for detailed informa
 
 After mounting the share, verify proper operation:
 
-1. **File Creation**: Create test files from Final Cut Pro or Logic Pro to verify proper file handling.
+- File Creation: Create test files from Final Cut Pro or Logic Pro to verify proper file handling.
 
-2. **Character Handling**: Test filenames with special characters to confirm name mangling is working correctly.
+- Character Handling: Test filenames with special characters to confirm name mangling is working correctly.
 
-3. **Performance**: Copy large media files to verify adequate transfer speeds for your workflow.
+- Performance: Copy large media files to verify adequate transfer speeds for your workflow.
 
-4. **Permissions**: Test access with different user accounts to verify ACL configuration.
+- Permissions: Test access with different user accounts to verify ACL configuration.
 
 ## Migrating Existing Media Libraries
 
@@ -173,7 +173,7 @@ If you are migrating an existing media library from a standard SMB share to a Ma
 - Existing project files may need to be re-indexed by media applications
 - Test thoroughly in a non-production environment before migrating production data
 
-**Recommended Migration Approach**:
+Recommended Migration Approach:
 1. Create a new MacOS Media Share
 2. Copy a subset of files for testing
 3. Verify all media applications can properly access and edit files
