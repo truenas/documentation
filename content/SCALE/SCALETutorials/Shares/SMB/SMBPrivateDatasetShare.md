@@ -72,7 +72,7 @@ This article covers:
 
 You can manually add users and groups in TrueNAS, or configure groups in Active Directory and add users to each group, and then have AD add the users and group to TrueNAS.
 After AD adds users and groups, configure private directories, and if needed for other file system functions not related to private directory shares, configure home directories for the users and group(s).
-See [Managing Users]({{< ref "ManagingUsers.md" >}}) for more information on adding home directories.
+See [Managing Users]({{< ref "ManageUsers" >}}) for more information on adding home directories.
 
 Before setting up SMB shares, check system alerts to verify that no errors related to connections to Active Directory are listed.
 Resolve any issues with Active Directory before proceeding. If Active Directory cannot bind with TrueNAS, you cannot start the SMB service after making changes.
@@ -112,9 +112,9 @@ To create SMB private dataset share, go to **Shares**, and click **Add** on the 
 3. Enter the private dataset name, for example *rikka-private*, then click **Create Dataset**.
    The dialog closes, and **Path** is populated with the full path to the new dataset.
 
-   If you created a simple share and dataset using the **Add Dataset** screen, to customize it, go to **Shares**, select it on the **SMB** screen (or widget if it shows on the list), then click **Edit**. Verify the path and **Name** field are populated.
+   If you created a simple share and dataset using the **Add Dataset** screen, to customize it, go to **Shares**, select it on the **SMB** screen (or widget if it shows on the list), then click **Edit**. Verify the path and **Name** field are populated, and change the "Purpose" from **Default Share** to **Private Dataset**.
    
-   {{< trueimage src="/images/SCALE/Shares/AddPrivateSMBShare.png" alt="Set the Share Path" id="Set the Share Path" >}}
+   {{< trueimage src="/images/SCALE/Shares/EditPrivateShareDataset.png" alt="Edit Private Share Dataset" id="Edit Private Share Dataset" >}}
 
    Follow naming conventions for:
    * [Files and directories](https://learn.microsoft.com/en-us/windows/win32/fileio/naming-a-file#naming-conventions)
