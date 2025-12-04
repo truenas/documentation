@@ -27,14 +27,16 @@ This option does not show in 25.10 and later releases unless an existing home sh
 TrueNAS has removed the **Use as Home Share** option, found in the **Other Options** section of the **Advanced Options** screen for the **Add SMB** and **Edit SMB** screens in earlier releases of TrueNAS.
 The **Private Dataset Share** found as a **Purpose** dropdown list option in 25.10 and later releases replaces home shares, and is the recommended method to provide users with a private personal folder they access through an SMB share.
 
-Follow the instructions in the [Adding Private Dataset Shares](#adding-a-private-dataset-share) section below to set up private and personal shares.
+Follow the instructions in the [Adding Private Dataset Shares](#adding-private-dataset-shares) section below to set up private and personal shares.
 
 {{< expand "What is a private dataset and share?" "v" >}}
 The **Private Dataset Share** option allows creating a private personal directory for a user in the specified dataset, that when correctly configured, provides users with a private folder only they access through an SMB share.
 {{< /expand >}}
 
 TrueNAS allows creating one private directory per user, while it still allows creating as many non-private directories as desired or needed.
-Users can mount the share and authenticate access to their private share where they can create as many directories as needed through a Windows File Explorer.
+When a user first authenticates to a Private Dataset Share, TrueNAS automatically creates a subdirectory named after their username (for example, */mnt/poolname/share-name/username/*).
+Each user only sees and can access their own subdirectory when connecting to the share.
+Users can create as many directories as needed through a Windows File Explorer.
 
 TrueNAS does not control what Windows allows through the File Explorer.
 Share ACL settings control who can access the private directory share.
@@ -42,8 +44,6 @@ If the personal directories show in File Explorer, use [Windows file properties]
 
 A user home directory in TrueNAS is a function of the ZFS file system and is not related to the SMB private dataset share or (deprecated Home Share).
 A user configuration does not need to specify or add a file system home directory for a private dataset share.
-
-Private directories created for users display in the datasets table on the **Datasets** screen after you create the dataset for the user private dataset.
 
 Other options for configuring individual user directories include:
 * Configure a single share on the TrueNAS and provision individual user directories on the client OS. 
@@ -55,14 +55,14 @@ Creating an SMB private dataset share requires provisioning users or joining Act
 ## Adding Private Dataset Shares
 
 Private directories are not intended for every user on the system.
-When setting the **Purpose** dropdown list to the **Private Dataset Share** option, TrueNAS does might show the private directories to all users with access to the root level of the share but setting the share ACL prevents other users from accessing the private share.
+When setting the **Purpose** dropdown list to the **Private Dataset Share** option, TrueNAS might show the private directories to all users with access to the root level of the share but setting the share ACL prevents other users from accessing the private share.
 
 Examples of setting up private SMB shares are those for backups, system configuration, and users or departments that need to keep information private from other users.
 
 This article covers:
 1. Adding the private dataset share user.
 2. Creating the private dataset share and the dataset.
-3. Modifying ACL permisions for the dataset(s) and the share.
+3. Modifying ACL permissions for the dataset(s) and the share.
 
 ### Adding the Share User
 
@@ -72,7 +72,7 @@ This article covers:
 
 You can manually add users and groups in TrueNAS, or configure groups in Active Directory and add users to each group, and then have AD add the users and group to TrueNAS.
 After AD adds users and groups, configure private directories, and if needed for other file system functions not related to private directory shares, configure home directories for the users and group(s).
-See [Managing Users]({{< ref "ManagingUsers" >}}) for more information on adding home directories.
+See [Managing Users]({{< ref "ManagingUsers.md" >}}) for more information on adding home directories.
 
 Before setting up SMB shares, check system alerts to verify that no errors related to connections to Active Directory are listed.
 Resolve any issues with Active Directory before proceeding. If Active Directory cannot bind with TrueNAS, you cannot start the SMB service after making changes.
@@ -148,7 +148,7 @@ Dataset ACL permissions are configured on the **Edit ACL** screen. Share ACL per
 #### Setting Dataset Permissions
 
 First, set the dataset permissions to allow your admin user and the user assigned to the private directory share access.
-Your admin user must have permissions granted for the parent dataset (see [Before You Begin](#before-you-begin) and the private dataset covered in this section.
+Your admin user must have permissions granted for the parent dataset covered in [Before You Begin](#before-you-begin) and the private dataset covered in this section.
 If you want or need to grant another user access to the private share dataset, other than the private share user or a group of users, add an ACL entry to the dataset and share ACL to allow access to the private dataset.
 
 Accessing the **Edit ACL** screen with the dataset permissions:
@@ -168,7 +168,7 @@ You can set the owning group to your Active Directory domain admins. Click **App
 ![GroupDomainAdminsSCALE](/images/SCALE/Datasets/GroupDomainAdmins.png "Set the owning group to Domain Admins")
 
 Click **Use Preset** and choose **NFS4_HOME**. If the dataset has a POSIX ACL, choose **HOME**.
-Click **Continue**, then click **Save Access Control List**.
+Click **Continue**.
 
 Next, click **Add Entry** to add user entries for each user that needs access to the dataset.
 To assign required permissions, select **User** in **Who** and locate the user name in the **User** dropdown list.
@@ -190,7 +190,7 @@ Click the triple dot icon at the right of the private dataset share on the Share
 {{< trueimage src="/images/SCALE/Shares/ShareACLForPrivateDatasetShare.png" alt="Set the Share ACL Permissions" id="Set the Share ACL Permissions" >}}
 
 Change **Who** from the default **everyone@** to the private dataset share user. In the example, the user is *rikka* for the *rikka-private* share.
-Leave **Permissionss** set to **Full** and **Type** set to **Allowed**.
+Leave **Permissions** set to **Full** and **Type** set to **Allowed**.
 Click **Add** to show another **Add entry** group of settings. Change **Who** to the admin user to allow for share maintenance tasks, like moving the directory to a new location if that becomes necessary.
 
 If granting other users in a group to a private share for that group, add an entry for each user and change the level of permissions to what is needed. For example, if the group members can read the files but not change them, set **Permission** to **READ** for those users, and grant the user that maintains the documents either **FULL** or **CHANGE** permissions.
