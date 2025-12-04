@@ -20,40 +20,30 @@ tags:
 The MacOS Media Share purpose is available in TrueNAS 25.10.1 and later.
 {{< /hint >}}
 
-The MacOS Media Share purpose is designed specifically for Apple professional media workflows, including:
+TrueNAS provides the MacOS Media Share purpose for professional media production workflows.
+This share type automatically enables Apple name mangling to translate NTFS illegal characters for proper file handling in Apple Media & Entertainment applications like Final Cut Pro, Logic Pro, Motion, and Compressor.
 
-- Final Cut Pro and Final Cut Pro X
-- Logic Pro and Logic Pro X
-- Motion and Compressor
-- Other Apple Media & Entertainment applications that require special file handling
-
-This share type automatically enables Apple name mangling (aapl_name_mangling), which ensures NTFS illegal characters are properly translated for Apple applications.
-This is essential for professional media workflows where file naming conventions and metadata handling are critical.
-
-{{< hint type=important title="Service Requirements" >}}
-Before creating a MacOS Media Share, enable **Apple SMB2/3 Protocol Extensions** in the SMB service configuration.
-TrueNAS requires this for proper operation of Apple-specific features.
-{{< /hint >}}
+Apple name mangling ensures that special characters and metadata are preserved correctly, which is essential when working with media files that have complex naming conventions.
 
 ## Prerequisites
 
 Before setting up a MacOS Media Share:
 
-1. User Accounts: [Create user accounts]({{< ref "ManageUsers" >}}) for media users who access the share.
+* User Accounts: [Create user accounts]({{< ref "ManageUsers" >}}) for media users who access the share.
    Go to **Credentials > Local Users** and click **Add**.
    Ensure **Samba Authentication** is selected for each user.
 
-2. Dataset: Prepare a dataset for the share (or create one during share creation).
+* Dataset: Prepare a dataset for the share (or create one during share creation).
    For best performance with large media files, consider:
-   - Enabling compression (LZ4 is recommended for media files)
-   - Setting appropriate record size (128K or larger for video files)
-   - Configuring adequate space quotas
+  * Enabling compression (LZ4 is recommended for media files)
+  * Setting appropriate record size (128K or larger for video files)  
+  * Configuring adequate space quotas
 
-3. SMB Service: Enable Apple SMB2/3 Protocol Extensions (instructions below).
+* SMB Service: Enable Apple SMB2/3 Protocol Extensions (instructions below).
 
 ## Setting Up a MacOS Media Share
 
-### Step 1: Enable Apple SMB2/3 Protocol Extensions
+### Enable Apple SMB2/3 Protocol Extensions
 
 Enable this service setting before creating the share.
 
@@ -61,7 +51,7 @@ Enable this service setting before creating the share.
 
 2. Select **Config Service** to open the **SMB Service** screen.
 
-   Alternatively, go to **System > Services**, locate **SMB**, and click <i class="material-icons" aria-hidden="true" title="Configure">edit</i>.
+   Alternatively, go to **System > Services**, locate **SMB**, and click the <i class="material-icons" aria-hidden="true" title="Configure">edit</i> configure button.
 
 3. Click **Advanced Settings** to expand advanced options.
 
@@ -71,9 +61,9 @@ Enable this service setting before creating the share.
 
 5. Click **Save**.
 
-6. Restart the SMB service if it is already running.
+6. If the SMB service is already running, restart it for the changes to take effect.
 
-### Step 2: Create the Share and Dataset
+### Create the Share and Dataset
 
 Create the dataset separately using the **Datasets** screen, or create it while adding the share.
 This tutorial uses the **Add SMB** screen to create both the dataset and share.
@@ -98,32 +88,36 @@ This tutorial uses the **Add SMB** screen to create both the dataset and share.
 
 7. Ensure **Enabled** is selected to activate the share when the SMB service is running.
 
-8. If Apple SMB2/3 Protocol Extensions are not enabled, a warning displays indicating the service setting must be configured.
-   Return to Step 1 to enable this setting, then continue.
+8. If Apple SMB2/3 Protocol Extensions are not enabled, a requirement error appears below the **Purpose** field.
 
-### Step 3: Configure Advanced Options
+   {{< trueimage src="/images/SCALE/Shares/MacOSEnableExt.png" alt="MacOS Media Share Extension Required" id="MacOS Media Share Extension Required" >}}
+
+   Click **Enable Now** to enable the required setting in the SMB service configuration. Wait for the service to update.
+   When complete, TrueNAS displays a success message confirming Apple SMB2/3 protocol extension support is enabled.
+
+### Configure Advanced Options
 
 While creating a basic MacOS Media Share requires no additional configuration, you can customize access and logging settings.
 
 1. Click **Advanced Options** to expand additional settings.
 
 2. Configure **Access** settings as needed:
-   - **Export Read-Only**: Leave unselected to allow media file editing
-   - **Browsable to Network Clients**: Enabled by default (recommended)
-   - **Access Based Share Enumeration**: Select to enable if needed for your access control requirements
+   * **Export Read-Only**: Leave unselected to allow media file editing.
+   * **Browsable to Network Clients**: Enabled by default (recommended).
+   * **Access Based Share Enumeration**: Select to enable if needed for your access control requirements.
 
    {{< trueimage src="/images/SCALE/Shares/AddSMBMacOSMediaAdvancedOptions.png" alt="MacOS Media Share - Advanced Options" id="MacOS Media Share - Advanced Options" >}}
 
 3. Optionally enable **Audit Logging**:
-   - Select **Enable Logging** to track share access
-   - Configure **Watch List** and **Ignore List** as needed for monitoring specific users or groups
+   * Select **Enable Logging** to track share access.
+   * Configure **Watch List** and **Ignore List** as needed for monitoring specific users or groups.
 
 4. Note that **Use Apple-style Character Encoding** is automatically enabled under **Other Options** and cannot be disabled.
    This setting is enforced because Apple name mangling is required for proper operation of Apple Media & Entertainment applications.
 
 5. Click **Save** to create the share.
 
-### Step 4: Configure Dataset Permissions
+### Configure Dataset Permissions
 
 After creating the share, configure dataset permissions to grant access to media users.
 
@@ -132,47 +126,51 @@ After creating the share, configure dataset permissions to grant access to media
 2. Click <span class="iconify" data-icon="mdi:dots-vertical"></span> and select **Edit Filesystem ACL**.
 
 3. Configure ACL entries for users or groups who need access:
-   - For individual users: Add ACL entries with appropriate permissions (FULL for editors, READ for reviewers)
-   - For groups: Create a group like *media_users* and add users, then add a group ACL entry
+   * For individual users: Add ACL entries with appropriate permissions (FULL for editors, READ for reviewers).
+   * For groups: Create a group like *media_users* and add users, then add a group ACL entry.
 
 4. Click **Save Access Control List**.
 
 See [Managing SMB Shares]({{< ref "ManageSMBShares.md" >}}) for detailed information on configuring ACL permissions.
 
-### Step 5: Start the SMB Service and Mount the Share
+### Start the SMB Service and Mount the Share
 
-1. If the SMB service is not running, start it from the **Windows (SMB) Shares** widget:
-   - Click <span class="iconify" data-icon="mdi:dots-vertical"></span> on the widget header
-   - Select **Turn On Service**
+If the SMB service is not running, start it from the **Windows (SMB) Shares** widget:
 
-2. On the Mac client, connect to the share:
-   - Open **Finder**
-   - Select **Go > Connect to Server** (or press Cmd+K)
-   - Enter the SMB address: {{< cli >}}smb://*your-truenas-ip*/*share-name*{{< /cli >}}
-   - Authenticate with a user account that has access to the share
+1. Click <span class="iconify" data-icon="mdi:dots-vertical"></span> on the widget header
+2. Select **Turn On Service**
 
-3. The share is now available for use with Final Cut Pro, Logic Pro, and other Apple Media & Entertainment applications.
+### Connect from Mac Client
+
+On the Mac client, connect to the share:
+
+1. Open **Finder**
+2. Select **Go > Connect to Server** (or press Cmd+K)
+3. Enter the SMB address: {{< cli >}}smb://*your-truenas-ip*/*share-name*{{< /cli >}}
+4. Authenticate with a user account that has access to the share
+
+The share is now available for use with Final Cut Pro, Logic Pro, and other Apple Media & Entertainment applications.
 
 ## Testing and Verification
 
 After mounting the share, verify proper operation:
 
-- File Creation: Create test files from Final Cut Pro or Logic Pro to verify proper file handling.
+* File Creation: Create test files from Final Cut Pro or Logic Pro to verify proper file handling.
 
-- Character Handling: Test filenames with special characters to confirm name mangling is working correctly.
+* Character Handling: Test filenames with special characters to confirm name mangling is working correctly.
 
-- Performance: Copy large media files to verify adequate transfer speeds for your workflow.
+* Performance: Copy large media files to verify adequate transfer speeds for your workflow.
 
-- Permissions: Test access with different user accounts to verify ACL configuration.
+* Permissions: Test access with different user accounts to verify ACL configuration.
 
 ## Migrating Existing Media Libraries
 
 {{< hint type=warning title="Migration Considerations" >}}
 If you are migrating an existing media library from a standard SMB share to a MacOS Media Share, be aware that enabling Apple name mangling may affect existing files:
 
-- Files created without name mangling may display differently or have access issues
-- Existing project files may need to be re-indexed by media applications
-- Test thoroughly in a non-production environment before migrating production data
+* Files created without name mangling may display differently or have access issues
+* Existing project files may need to be re-indexed by media applications
+* Test thoroughly in a non-production environment before migrating production data
 
 Recommended Migration Approach:
 1. Create a new MacOS Media Share
