@@ -1,5 +1,17 @@
 &NewLine;
 
+**SMB Access** is the default user access type that allows using the account credentials to access data shared with [SMB]({{< ref "/SCALE/SCALEUIReference/Shares" >}}).
+
+When creating a user, you must:
+
+* Enter a **Full Name** or description for the user, such as a first and last name.
+* Enter a **Username**.
+* Enter a **Password**.
+* Specify or accept the default user ID (**UID**)
+
+TrueNAS requires other options based on the level of access and role assigned to the user.
+The **Shell** option only shows for users with **Shell Access** or **SSH Access** selected.
+
 To manually add a new user, click **Credentials > Users**, and then click **Add** to open the **Add User** screen.
 
 1. Enter a username for the user. Names are case sensitive!

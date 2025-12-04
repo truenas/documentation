@@ -1,7 +1,7 @@
 &NewLine;
 
 {{< hint type=info >}}
-When using the file browser in the Add SMB or Edit SMB screens, if the parent dataset selected has an ACL, TrueNAS shows a warning message advising you to strip the ACL from the dataset. 
+When using the file browser in the Add SMB or Edit SMB screens, if the parent dataset selected has an ACL, TrueNAS might show a warning message advising you to strip the ACL from the dataset. 
 
 {{< trueimage src="/images/SCALE/Shares/ShareACLWarningDialog.png" alt="Strip ACL Warning" id="Strip ACL Warning" >}}
 
