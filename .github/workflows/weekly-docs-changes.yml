@@ -18,7 +18,7 @@ jobs:
           script: |
             const oneWeekAgo = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000);
             console.log('Looking for PRs merged after:', oneWeekAgo.toISOString());
-
+            
             const { data: pulls } = await github.rest.pulls.list({
               owner: context.repo.owner,
               repo: context.repo.repo,
@@ -27,29 +27,28 @@ jobs:
               direction: 'desc',
               per_page: 100
             });
-
+            
             console.log(`Found ${pulls.length} closed PRs`);
-
+            
             const mergedPRs = [];
             for (const pr of pulls) {
               if (!pr.merged_at) continue;
-
               const mergedDate = new Date(pr.merged_at);
               if (mergedDate < oneWeekAgo) continue;
-
+              
               console.log(`Processing PR #${pr.number}: ${pr.title}`);
-
+              
               const { data: files } = await github.rest.pulls.listFiles({
                 owner: context.repo.owner,
                 repo: context.repo.repo,
                 pull_number: pr.number
               });
-
+              
               let category = 'updated';
               const title = pr.title.toLowerCase();
               const labels = pr.labels.map(l => l.name.toLowerCase());
               const hasNewFiles = files.some(f => f.status === 'added');
-
+              
               if (hasNewFiles || title.includes('new') || title.includes('add')) {
                 category = 'new';
               } else if (
@@ -66,7 +65,7 @@ jobs:
               ) {
                 category = 'removed';
               }
-
+              
               mergedPRs.push({
                 number: pr.number,
                 title: pr.title,
@@ -78,9 +77,9 @@ jobs:
                 labels: pr.labels.map(l => l.name).join(', ')
               });
             }
-
+            
             console.log(`Found ${mergedPRs.length} merged PRs in the last week`);
-
+            
             const result = {
               prs: mergedPRs,
               grouped: {
@@ -90,11 +89,9 @@ jobs:
                 removed: mergedPRs.filter(pr => pr.category === 'removed')
               }
             };
-
-            // Set output for next steps
+            
             core.setOutput('pr-count', mergedPRs.length);
             core.setOutput('result', JSON.stringify(result));
-
             return result;
 
       - name: Send Slack notification
@@ -102,22 +99,17 @@ jobs:
         run: |
           RESULT='${{ steps.get-merged-prs.outputs.result }}'
           REPO_NAME="${{ github.repository }}"
-
           WEEK_START=$(date -d '7 days ago' +'%B %d' 2>/dev/null || date -v-7d +'%B %d')
           WEEK_END=$(date +'%B %d, %Y')
           REPORT_DATE=$(date +'%B %d, %Y')
-
           TOTAL_PRS=$(echo "$RESULT" | jq '.prs | length')
           NEW_COUNT=$(echo "$RESULT" | jq '.grouped.new | length')
           UPDATED_COUNT=$(echo "$RESULT" | jq '.grouped.updated | length')
           FIXED_COUNT=$(echo "$RESULT" | jq '.grouped.fixed | length')
           REMOVED_COUNT=$(echo "$RESULT" | jq '.grouped.removed | length')
 
-          # Debug: Print what we got
           echo "Total PRs found: $TOTAL_PRS"
-          echo "Result data: $RESULT"
 
-          # Build sections array with proper JSON
           SECTIONS='[]'
 
           if [ "$NEW_COUNT" -gt 0 ]; then
@@ -125,7 +117,7 @@ jobs:
               type: "section",
               text: {
                 type: "mrkdwn",
-                text: ("✨ *New Content* (\($count))\n" + (.grouped.new | map("• *<\(.url)|#\(.number)>* \(.title)\n  _by \(.author) • \(.filesChanged) files_") | join("\n")))
+                text: ("✨ *New content* (\($count))\n" + (.grouped.new | map("• <\(.url)|PR #\(.number)>: \(.title)\n_@\(.author) • \(.filesChanged) file(s)_") | join("\n")))
               }
             }')
             SECTIONS=$(echo "$SECTIONS" | jq --argjson section "$NEW_SECTION" '. + [$section]')
@@ -136,7 +128,7 @@ jobs:
               type: "section",
               text: {
                 type: "mrkdwn",
-                text: ("📝 *Updated Content* (\($count))\n" + (.grouped.updated | map("• *<\(.url)|#\(.number)>* \(.title)\n  _by \(.author) • \(.filesChanged) files_") | join("\n")))
+                text: ("📝 *Updated content* (\($count))\n" + (.grouped.updated | map("• <\(.url)|PR #\(.number)>: \(.title)\n_@\(.author) • \(.filesChanged) file(s)_") | join("\n")))
               }
             }')
             SECTIONS=$(echo "$SECTIONS" | jq --argjson section "$UPDATED_SECTION" '. + [$section]')
@@ -147,7 +139,7 @@ jobs:
               type: "section",
               text: {
                 type: "mrkdwn",
-                text: ("🐛 *Fixes* (\($count))\n" + (.grouped.fixed | map("• *<\(.url)|#\(.number)>* \(.title)\n  _by \(.author) • \(.filesChanged) files_") | join("\n")))
+                text: ("🐛 *Bug fixes* (\($count))\n" + (.grouped.fixed | map("• <\(.url)|PR #\(.number)>: \(.title)\n_@\(.author) • \(.filesChanged) file(s)_") | join("\n")))
               }
             }')
             SECTIONS=$(echo "$SECTIONS" | jq --argjson section "$FIXED_SECTION" '. + [$section]')
@@ -158,26 +150,23 @@ jobs:
               type: "section",
               text: {
                 type: "mrkdwn",
-                text: ("🗑️ *Removed Content* (\($count))\n" + (.grouped.removed | map("• *<\(.url)|#\(.number)>* \(.title)\n  _by \(.author) • \(.filesChanged) files_") | join("\n")))
+                text: ("🗑️ *Removed content* (\($count))\n" + (.grouped.removed | map("• <\(.url)|PR #\(.number)>: \(.title)\n_@\(.author) • \(.filesChanged) file(s)_") | join("\n")))
               }
             }')
             SECTIONS=$(echo "$SECTIONS" | jq --argjson section "$REMOVED_SECTION" '. + [$section]')
           fi
 
-          # Add header section
           HEADER_SECTION=$(jq -n --arg repo "$REPO_NAME" --arg date "$REPORT_DATE" --arg total "$TOTAL_PRS" '{
             type: "section",
             text: {
               type: "mrkdwn",
-              text: ("📚 *Weekly Documentation Changes - \($repo)*\n\n\($total) PRs merged in the last 7 days\n\n_Report generated on \($date)_")
+              text: ("📚 *Weekly documentation changes for \($repo)*\n\n\($total) PRs merged in the last 7 days.\n\n_Report generated on \($date)_")
             }
           }')
           SECTIONS=$(echo "$SECTIONS" | jq --argjson section "$HEADER_SECTION" '. = [$section] + .')
 
-          # Add divider after header
           SECTIONS=$(echo "$SECTIONS" | jq '. |= [.[0], {type: "divider"}] + .[1:]')
 
-          # Build final message
           jq -n \
             --arg text "📚 Weekly Documentation Changes: $TOTAL_PRS PRs merged" \
             --argjson blocks "$SECTIONS" \
@@ -204,7 +193,7 @@ jobs:
                   \"type\": \"section\",
                   \"text\": {
                     \"type\": \"mrkdwn\",
-                    \"text\": \"📚 *Weekly Documentation Changes - $REPO_NAME*\\n\\nNo PRs were merged in the last 7 days.\\n\\n_Report generated on $REPORT_DATE_\"
+                    \"text\": \"📚 *Weekly documentation changes for $REPO_NAME*\\n\\nNo PRs were merged in the last 7 days.\\n\\n_Report generated on $REPORT_DATE_\"
                   }
                 }
               ]
