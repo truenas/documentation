@@ -139,6 +139,16 @@ When the user has an API key, **View API Keys** shows and opens the **user API K
 **Lock User** opens a confirmation dialog before locking the user. A locked user is prevented from logging in or using password-based services while locked.
 This button toggles to **Unlock User**, which shows a confirmation dialog before unlocking the user.
 
+**Clear Two-Factor Authentication** shows when the user has 2FA configured. Opens a confirmation dialog before clearing the two-factor authentication settings for the user.
+This administrative function helps users who have lost access to their authenticator device or are experiencing 2FA-related login issues.
+When cleared, the user can log in without 2FA. If Global 2FA is enabled, the user is prompted to reconfigure 2FA on their next login.
+
+{{< trueimage src="/images/SCALE/Credentials/Clear2FADialog.png" alt="Clear Two-Factor Authentication Dialog" id="Clear Two-Factor Authentication Dialog" >}}
+
+{{< hint type=important >}}
+Only clear 2FA for a user when it is necessary, such as when the user has lost access to their authenticator device. This action temporarily reduces account security until 2FA is reconfigured.
+{{< /hint >}}
+
 ## Add or Edit User Screens
 
 The **Add User** and **Edit User** configuration screens show the same setting options, but a few options are not editable.
