@@ -1,6 +1,6 @@
 {{- $link := .Get "link" -}}
-{{- $isDownloadable := or (strings.HasSuffix $link ".vssx") (strings.HasSuffix $link ".vsdx") (strings.HasSuffix $link ".pdf") (strings.HasSuffix $link ".zip") -}}
-<a class="section-box" href="{{ $link }}"{{ if $isDownloadable }} download{{ end }}>
+{{- $isVisioStencil := or (strings.HasSuffix $link ".vssx") (strings.HasSuffix $link ".vsdx") -}}
+<a class="section-box" href="{{ $link }}"{{ if $isVisioStencil }} download{{ end }}>
   <div class="box-image">
       <img class="prod-card-img" src="{{ .Get "image" }}" aria-label="{{ .Get "title" }} Documentation Page">
   </div>
