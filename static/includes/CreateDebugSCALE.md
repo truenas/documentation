@@ -1,9 +1,10 @@
 &NewLine;
 
-On TrueNAS systems, go to **System > Advanced Settings**, then click **Save Debug** and wait for the file to download to your local system. 
+On TrueNAS systems, go to **System > General Settings**, then click **Save Debug** and wait for the file to download to your local system.
 Generating the debug file might take a few minutes to complete. After that, it downloads to your system.
+If your browser download shows a dialog asking for confirmation, click **Keep** to continue the download process.
 
-To generate a debug from the TrueNAS CLI, enter <command>system debug > <i>debugname</i>.tgz</command>, replacing <i>debugname</i> with your chosen filename.
+To generate a debug from the TrueNAS CLI, enter <command>system debug > <i>debugname</i>.tgz</command>, replacing <i>debugname</i> with your chosen file name.
 You must use SFTP or a similar method to connect to TrueNAS and download the file from the /home/<i>username</i> location, replacing <i>username</i> with the account name that generated the debug.
 SFTP Example:
 ```

@@ -77,16 +77,25 @@ See https://security.truenas.com/ for security advisories and software bill of m
 Security issues do not appear on public issue trackers due to their sensitive nature.
 If you have discovered a suspected security vulnerability in the latest version of a software release, you can [report this directly to the Security Team](mailto:security-officer@ixsystems.com).
 
-## Downloading a Debug File
-{{< include file="/static/includes/CreateDebugCORE.md" >}}
+### Downloading a Debug File
+
+Downloading a debug file in TrueNAS differs from CORE releases.
+
+#### Downloading a Debug in TrueNAS
+
 {{< include file="/static/includes/CreateDebugSCALE.md" >}}
 
+#### Downloading a Debug in CORE
+
+{{< include file="/static/includes/CreateDebugCORE.md" >}}
+
 ### Adding a Debug File to a Jira Ticket
+
 Jira provides a public-facing area for files that do not require privacy.
 If you are not concerned about data privacy, attach the debug, core, log, or other files to the Jira ticket.
 Debug files attached directly to a Jira issue ticket are visible to other users searching and reading Jira issue tickets.
 
-For users concerned about data privacy, TrueNAS provides a link to a secure file attachment ticket where you can upload files with sensitive information like a system debug or screenshot of network connections.
+For users concerned about data privacy, TrueNAS provides a link to a secure file attachment ticket where you can upload files with sensitive information, like a system debug or screenshot of network connections.
 
 After submitting a bug report, Jira sends a confirmation email with a link to your Jira issue ticket.
 The Jira issue ticket includes a link to the **TrueNAS Private File Attachments** area where you can upload the debug file and any other images or logs you kept private. 
