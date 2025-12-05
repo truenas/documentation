@@ -42,7 +42,8 @@ The TrueNAS team is pleased to release TrueNAS 25.10.1!
 
 **Notable changes:**
 
-* [To be added]
+* Adds MacOS Media Share purpose preset for SMB shares ([NAS-138402](https://ixsystems.atlassian.net/browse/NAS-138402)).
+  Provides optimized configuration for Apple Media & Entertainment workflows including Final Cut Pro, Logic Pro, Motion, and Compressor. See [Setting Up Apple M&E SMB Shares](Apple-M-E) for more information.
 
 <a href="#full-changelog" target="_blank">Click here</a> to see the full 25.10 changelog or visit the <a href="https://ixsystems.atlassian.net/issues/?filter=XXXXX" target="_blank">TrueNAS 25.10.1 (Goldeye) Changelog</a> in Jira.
 
