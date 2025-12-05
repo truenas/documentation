@@ -1,6 +1,10 @@
 {{- $link := .Get "link" -}}
 {{- $isVisioStencil := or (strings.HasSuffix $link ".vssx") (strings.HasSuffix $link ".vsdx") -}}
-<a class="section-box" href="{{ $link }}"{{ if $isVisioStencil }} download{{ end }}>
+{{- $filename := "" -}}
+{{- if $isVisioStencil -}}
+  {{- $filename = path.Base $link -}}
+{{- end -}}
+<a class="section-box" href="{{ $link }}"{{ if $isVisioStencil }} download="{{ $filename }}"{{ end }}>
   <div class="box-image">
       <img class="prod-card-img" src="{{ .Get "image" }}" aria-label="{{ .Get "title" }} Documentation Page">
   </div>
