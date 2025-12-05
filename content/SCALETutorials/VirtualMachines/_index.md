@@ -177,6 +177,25 @@ The **Running** toggle and <i class="material-icons" aria-hidden="true" title="S
 Use the **Power Off** button instead.
 {{< /hint >}}
 
+### Deleting a Virtual Machine
+
+To delete a VM, first stop it if it is running, then click <i class="material-icons" aria-hidden="true" title="Delete">delete</i> **Delete** on the expanded VM details screen.
+
+The **Delete Virtual Machine** dialog opens with options to control what data is removed.
+
+{{< trueimage src="/images/SCALE/Virtualization/DeleteVirtualMachineDialog.png" alt="Delete Virtual Machine Dialog" id="Delete Virtual Machine Dialog" >}}
+
+**Delete Virtual Machine Data** removes the zvols and data associated with the VM. When selected, the dialog displays a list of disk and raw file devices to delete.
+
+{{< hint type="warning" >}}
+Deleting a VM with **Delete Virtual Machine Data** selected results in permanent data loss if the data is not backed up.
+Do not select this option if you want to keep the VM zvols intact for use with another VM or for data recovery.
+{{< /hint >}}
+
+**Force Delete** ignores the VM status during the delete operation. Only select this if the VM is in an undefined state and cannot be stopped normally.
+
+Enter the VM name in the confirmation field to enable the **Delete** button, then click **Delete** to remove the VM.
+
 ## Installing an OS
 
 After configuring the VM in TrueNAS and an OS <file>.iso</file> file is attached, start the VM and begin installing the operating system.
