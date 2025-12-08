@@ -2414,3 +2414,10 @@ multibyte
 misclassification
 workgroups
 passthroughs
+BitLocker
+PINs
+OVMF
+vdi
+UnboundLocalError
+OID
+unchecking
