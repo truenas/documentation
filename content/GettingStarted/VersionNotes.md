@@ -42,8 +42,38 @@ The TrueNAS team is pleased to release TrueNAS 25.10.1!
 
 **Notable changes:**
 
+* Fixes issue where storage pools appeared offline after upgrading to 25.10.0 ([NAS-138236](https://ixsystems.atlassian.net/browse/NAS-138236)).
+  Affected systems experienced temporarily missing vdevs that required a system reboot to restore pool access.
 * Adds MacOS Media Share purpose preset for SMB shares ([NAS-138402](https://ixsystems.atlassian.net/browse/NAS-138402)).
   Provides optimized configuration for Apple Media & Entertainment workflows including Final Cut Pro, Logic Pro, Motion, and Compressor. See [Setting Up Apple M&E SMB Shares](Apple-M-E) for more information.
+* Adds REST API usage monitoring alert.
+  TrueNAS now displays a daily alert when deprecated REST API endpoints are accessed, helping identify integrations that need migration. The REST API was deprecated in TrueNAS 25.04. Full removal is planned for TrueNAS 26.04. For more information about the JSON-RPC 2.0 over WebSocket API, see the [API documentation](https://api.truenas.com/v25.10/jsonrpc.html).
+* Adds **Clear Config** button to Directory Services configuration form.
+  A new **Clear Config** button allows users to easily remove existing directory service configurations. This is useful for troubleshooting, reconfiguration, or switching between directory service types.
+* Updates Samba from 4.22.5 to 4.22.6 ([NAS-138644](https://ixsystems.atlassian.net/browse/NAS-138644)).
+  Includes upstream fix for Time Machine backup failures on newer macOS versions. Resolves an issue where Time Machine backups failed on macOS 15.2 (Tahoe) and later due to a Samba 4.22 behavioral change affecting directory rename operations for open files. TrueNAS 25.04 releases are unaffected.
+* Fixes Windows 11 VM TPM persistence ([NAS-138165](https://ixsystems.atlassian.net/browse/NAS-138165)).
+  Resolves issue where BitLocker PINs and other TPM data reset after every VM restart. Users will need to reset their PIN once after upgrading, after which persistence will function normally.
+* Fixes Secure Boot for virtual machines ([NAS-137898](https://ixsystems.atlassian.net/browse/NAS-137898)).
+  Resolves issue where VMs with Secure Boot enabled failed to boot signed operating systems like Windows 11 due to missing Microsoft keys in OVMF firmware.
+* Fixes VM image file upload default location ([NAS-138502](https://ixsystems.atlassian.net/browse/NAS-138502)).
+  Prevents ISO files from being saved to the boot drive /mnt folder when users don't change the default upload location during VM image upload.
+* Fixes VDI disk import for virtual machines ([NAS-137897](https://ixsystems.atlassian.net/browse/NAS-137897)).
+  Resolves errors when creating VMs using .vdi disk images.
+* Improves error handling for legacy FreeNAS dataset properties ([NAS-138629](https://ixsystems.atlassian.net/browse/NAS-138629)).
+  Users may encounter `"aclmode: failed to get property"` errors when editing datasets on long-running systems that contain invalid `aclmode=discard_chmod` property values from legacy FreeNAS versions. This update improves error messaging to help identify affected datasets. If you encounter this error, run `zfs set aclmode=passthrough dataset_name` via CLI to reset the property to a valid value, then reboot the system.
+* Improves error messaging for pool operations ([NAS-138330](https://ixsystems.atlassian.net/browse/NAS-138330)).
+  Provides clearer error messages when attempting to extend VDEVs or replace disks fails due to ZFS checkpoints or other conditions.
+* Fixes rsync tasks using SSH keychain credentials ([NAS-138334](https://ixsystems.atlassian.net/browse/NAS-138334)).
+  Resolves UnboundLocalError that prevented saving or running SSH-based rsync tasks after upgrading to 25.10.0.
+* Improves replication error messages ([NAS-138202](https://ixsystems.atlassian.net/browse/NAS-138202)).
+  Provides clearer error messages when replication tasks fail due to interrupted SSH connections or network issues.
+* Fixes email sending error after upgrading to 25.10.0 ([NAS-138270](https://ixsystems.atlassian.net/browse/NAS-138270)).
+  Resolves `'str' object has no attribute 'decode'` error when attempting to send test emails or system notifications.
+* Restores HDD temperature data via SNMP ([NAS-138433](https://ixsystems.atlassian.net/browse/NAS-138433)).
+  Resolves issue where SNMP queries for disk temperature (OID .1.3.6.1.4.1.50536.3) returned no data after upgrading to 25.10.0.
+* Fixes issue disabling SSH and Shell access for user accounts ([NAS-138307](https://ixsystems.atlassian.net/browse/NAS-138307)).
+  The **Save** button no longer becomes disabled when unchecking these access options.
 
 <a href="#full-changelog" target="_blank">Click here</a> to see the full 25.10 changelog or visit the <a href="https://ixsystems.atlassian.net/issues/?filter=XXXXX" target="_blank">TrueNAS 25.10.1 (Goldeye) Changelog</a> in Jira.
 
@@ -306,20 +336,27 @@ These are ongoing issues that can affect multiple versions in the 25.10 series.
 
 ### Current Known Issues
 
-* Samba 4.22 has a bug that breaks time machine backups for some newer MacOS versions ([NAS-138644](https://ixsystems.atlassian.net/browse/NAS-138644)).
-  TrueNAS 25.04 releases are unaffected. This is fixed in TrueNAS 25.10.1 with the inclusion of Samba update 4.22.6.
-
-* Hot spare vdevs are limited to a single disk per pool in the UI ([NAS-138640](https://ixsystems.atlassian.net/browse/NAS-138640)).
-  The TrueNAS 25.10 UI currently restricts configuration of hot spare vdevs to one disk per pool.
-  A fix for this issue is expected in an upcoming maintenance release.
-
 * Apps using SMB/NFS storage can experience race condition during boot.
   When apps are configured to use SMB or NFS shares as storage passthroughs, there can be an occasional race condition during TrueNAS boot where the app startup conflicts with the sharing services startup.
   This causes affected apps to not fully start and show a "crashed" status.
 
   Workaround: Restart the affected app after a minute or two.
-  
-  Additional fixes to this area are expected in the 25.10.1 maintenance release.
+
+* Long-running systems with legacy FreeNAS datasets may encounter dataset editing errors ([NAS-138629](https://ixsystems.atlassian.net/browse/NAS-138629)).
+  Users may see `"aclmode: failed to get property"` errors when attempting to edit dataset properties. This affects datasets that contain invalid `aclmode=discard_chmod` property values from legacy FreeNAS versions.
+
+  Workaround: Run `zfs set aclmode=passthrough dataset_name` via CLI (replacing `dataset_name` with the actual dataset path), then reboot the system.
+
+  Error messaging improvements for this issue are included in TrueNAS 25.10.1 to help identify affected datasets.
+
+* Removing RBAC roles from the root account can cause scheduled tasks to fail.
+  The 25.10 UI allows modification of the root account's role assignments. Removing the **FULL_ADMIN** role from the root account can cause Cloud Sync tasks, cron jobs, and other scheduled operations to fail.
+
+  To disable root account access to the TrueNAS UI, use the **Disable Password** option in Credentials > Local Users instead of removing RBAC roles.
+
+  Workaround: If scheduled tasks are not running after modifying root account roles, re-add the **FULL_ADMIN** role to the root account in Credentials > Local Users. If needed, use **Disable Password** to prevent root UI access while maintaining proper system operation.
+
+  Future TrueNAS releases will include additional validation to prevent removal of required root account privileges.
 
 * NVMe over TCP is incompatible with VMware ESXi environments ([NAS-137372](https://ixsystems.atlassian.net/browse/NAS-137372)).
   TrueNAS 25.10 uses the Linux kernel NVMe over TCP target driver, which lacks support for fused commands required by VMware ESXi.
