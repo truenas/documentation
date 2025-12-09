@@ -19,9 +19,21 @@ Auditing all SMB operations without restrictions creates large audit databases t
 Configure filtering to audit only necessary operations.
 {{< /hint >}}
 
-## Configuring Watch List##
+{{< hint type=note >}}
+TrueNAS 25.10.1 and later automatically disables SMB shares when auditing is enabled and the watch list or ignore list contains invalid groups, such as groups that:
 
-Use **Watch List** to specify which groups should have their SMB operations audited. Use **Ignore List** to exclude specific groups from auditing.
+- No longer exist (for example, deleted or renamed groups in Active Directory).
+- Are not SMB groups (groups with **SMB Group** selected in the group configuration).
+
+TrueNAS generates an alert identifying the affected share and the problematic group.
+The share remains disabled until you resolve the group issue or update the share configuration to remove the invalid group.
+See [Troubleshooting Group Validation Issues](#troubleshooting-group-validation-issues) for detailed steps.
+{{< /hint >}}
+
+## Configuring Watch and Ignore Lists
+
+Use **Watch List** to specify which groups should have their SMB operations audited.
+To configure the watch list:
 
 1. Click the **Watch List** field to display available groups on the system.
 2. Select a group to add it to the list.
@@ -29,17 +41,41 @@ Use **Watch List** to specify which groups should have their SMB operations audi
 
 When **Watch List** contains entries, TrueNAS audits only SMB operations performed by members of the listed groups.
 
-**Configuring Ignore List:**
+Use **Ignore List** to exclude specific groups from auditing.
+To configure the ignore list:
+
 1. Click the **Ignore List** field to display available groups on the system.
 2. Select a group to exclude it from auditing.
 3. Repeat to exclude additional groups.
 
 TrueNAS does not record SMB operations performed by members of groups in the **Ignore List**.
 
-**When using both lists:** If a user is a member of groups in both **Watch List** and **Ignore List**, the **Watch List** takes precedence and TrueNAS audits that user's operations.
+When using both lists: If a user is a member of groups in both **Watch List** and **Ignore List**, the **Watch List** takes precedence and TrueNAS audits that user's operations.
 
 Review your settings to verify that at least one list contains entries and the correct groups are selected.
 
 Click **Save**.
 
-After saving, you may need to restart the SMB service for audit logging to begin. Go to **System Settings > Services**, toggle the **SMB** service off then on, and verify the service is running before testing audit log generation.
+After saving, restart the SMB service for audit logging to begin.
+Go to **System Settings > Services**, toggle the **SMB** service off then on, and verify the service is running before testing audit log generation.
+
+## Troubleshooting Group Validation Issues
+
+If you receive an alert indicating an SMB share has been disabled due to invalid groups in the audit configuration, follow these steps:
+
+1. Identify the problem:
+   - Review the alert message to identify which share is affected and which group is invalid.
+
+2. Check group status:
+   - Navigate to **Credentials > Local Groups** to verify the group exists and is configured as an SMB group.
+   - For Active Directory groups, verify the group exists in AD and the directory service connection is functioning.
+   - Confirm the group type is set to SMB (not changed from SMB to another type).
+
+3. Resolve the issue:
+   - If the group was deleted or renamed: Navigate to **Shares > Windows (SMB) Shares**, edit the affected share, and update the **Watch List** or **Ignore List** to remove the invalid group or replace it with the correct group name.
+   - If the group exists but is not an SMB group: Edit the group in **Credentials > Local Groups** and select the **SMB Group** option, or update the share audit configuration to use a different group.
+   - If using Active Directory: Verify the Active Directory connection is active in **Credentials > Directory Services**. If the connection was temporarily offline, restarting the SMB service might re-enable the share once the connection is restored.
+
+4. Restart the SMB service:
+   - After correcting the group configuration or share settings, go to **System > Services** and restart the SMB service to re-enable the share.
+   - Verify the share is functioning by checking the alert has cleared and testing access from an SMB client.
