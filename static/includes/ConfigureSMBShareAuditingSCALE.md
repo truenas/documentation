@@ -19,7 +19,7 @@ Auditing all SMB operations without restrictions creates large audit databases t
 Configure filtering to audit only necessary operations.
 {{< /hint >}}
 
-## Configuring Watch List##
+## Configuring Watch List
 
 Use **Watch List** to specify which groups should have their SMB operations audited. Use **Ignore List** to exclude specific groups from auditing.
 
