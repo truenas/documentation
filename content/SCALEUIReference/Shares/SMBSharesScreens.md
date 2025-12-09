@@ -142,7 +142,7 @@ This behavior is enabled by default and matches FreeBSD behavior.
 
 #### Audit Logging
 
-The **Audit Logging** settings enable the auditing function for the SMB share. Configure a watch list to audit specific groups, or an ignore list to audit all groups except those specified. At least one list (Watch or Ignore) must contain entries for auditing to function. All share options listed in the **Purpose** dropdown show these settings.
+The **Audit Logging** settings enable the auditing function for the SMB share. Configure a watch list to audit specific groups, or an ignore list to audit all groups except those specified. At least one list (watch or ignore) must contain entries for auditing to function. All share options listed in the **Purpose** dropdown show these settings.
 
 {{< trueimage src="/images/SCALE/Shares/AddSMBAdvancedAuditLoggingSettings.png" alt="SMB Audit Logging" id="SMB Audit Logging" >}}
 
