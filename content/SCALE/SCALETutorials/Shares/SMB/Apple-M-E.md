@@ -1,6 +1,6 @@
 ---
-title: "Setting Up Apple M&E SMB Shares"
-description: "Provides instructions for adding an SMB share optimized for Apple Media & Entertainment workflows including Final Cut Pro and Logic Pro."
+title: "Setting Up Apple Media and Entertainment SMB Shares"
+description: "Provides instructions for adding an SMB share optimized for Apple media and entertainment workflows including Final Cut Pro and Logic Pro."
 weight: 27
 aliases:
 tags:
@@ -12,36 +12,45 @@ tags:
 
 {{< include file="/static/includes/RootLevelDatasetShareWarning.md" >}}
 
-{{< include file="/static/includes/AppleMENameManglingWarning.md" >}}
+{{< include file="/static/includes/MacOSMediaShareCompatibility.md" >}}
 
-## About Apple Media & Entertainment Shares
+## About Apple Media and Entertainment Shares
 
 {{< hint type=note >}}
-The MacOS Media Share purpose is available in TrueNAS 25.10.1 and later.
+The **MacOS Media Share** purpose is available in TrueNAS 25.10.1 and later.
 {{< /hint >}}
 
-TrueNAS provides the MacOS Media Share purpose for professional media production workflows.
-This share type automatically enables Apple name mangling to translate NTFS illegal characters for proper file handling in Apple Media & Entertainment applications like Final Cut Pro, Logic Pro, Motion, and Compressor.
+TrueNAS provides the **MacOS Media Share** purpose for professional media production workflows.
+This share type automatically enables **Use Apple-style Character Encoding** to translate NTFS illegal characters for proper file handling in Apple media and entertainment applications like Final Cut Pro, Logic Pro, Motion, and Compressor.
 
-Apple name mangling ensures that special characters and metadata are preserved correctly, which is essential when working with media files that have complex naming conventions.
+Apple-style character encoding ensures that special characters and metadata are preserved correctly, which is essential when working with media files that have complex naming conventions.
 
 ## Prerequisites
 
-Before setting up a MacOS Media Share:
+Before setting up a **MacOS Media Share**:
 
-* User Accounts: [Create user accounts]({{< ref "ManageUsers" >}}) for media users who access the share.
+* [Create user accounts]({{< ref "ManageUsers" >}}) for media users who access the share.
    Go to **Credentials > Local Users** and click **Add**.
    Ensure **Samba Authentication** is selected for each user.
 
-* Dataset: Prepare a dataset for the share (or create one during share creation).
+* Prepare a dataset for the share (or you can create one during share creation).
    For best performance with large media files, consider:
-  * Enabling compression (LZ4 is recommended for media files)
-  * Setting appropriate record size (128K or larger for video files)  
-  * Configuring adequate space quotas
+  * Enabling compression (LZ4 is recommended for media files).
+  * Setting appropriate record size (128K or larger for video files).
+  * Configuring adequate space quotas.
 
-* SMB Service: Enable Apple SMB2/3 Protocol Extensions (instructions below).
+* Turn on **Enable Apple SMB2/3 Protocol Extensions** for the SMB service (instructions below).
 
 ## Setting Up a MacOS Media Share
+
+To set up a macOS media share, complete the following steps in order:
+
+1. [Enable Apple SMB2/3 Protocol Extensions](#enable-apple-smb23-protocol-extensions)
+2. [Create the Share and Dataset](#create-the-share-and-dataset)
+3. [Configure Advanced Options](#configure-advanced-options) (optional)
+4. [Configure Dataset Permissions](#configure-dataset-permissions)
+5. [Start the SMB Service and Mount the Share](#start-the-smb-service-and-mount-the-share)
+6. [Connect from Mac Client](#connect-from-mac-client)
 
 ### Enable Apple SMB2/3 Protocol Extensions
 
@@ -65,8 +74,8 @@ Enable this service setting before creating the share.
 
 ### Create the Share and Dataset
 
-Create the dataset separately using the **Datasets** screen, or create it while adding the share.
-This tutorial uses the **Add SMB** screen to create both the dataset and share.
+You can either create the dataset first using the **Datasets** screen and then add the share, or create both together.
+This tutorial uses the **Add SMB** screen to create both the dataset and share at the same time.
 
 1. Go to **Shares** and click **Add** on the **Windows (SMB) Shares** widget.
 
@@ -97,7 +106,7 @@ This tutorial uses the **Add SMB** screen to create both the dataset and share.
 
 ### Configure Advanced Options
 
-While creating a basic MacOS Media Share requires no additional configuration, you can customize access and logging settings.
+While creating a basic **MacOS Media Share** requires no additional configuration, you can customize access and logging settings.
 
 1. Click **Advanced Options** to expand additional settings.
 
@@ -113,7 +122,7 @@ While creating a basic MacOS Media Share requires no additional configuration, y
    * Configure **Watch List** and **Ignore List** as needed for monitoring specific users or groups.
 
 4. Note that **Use Apple-style Character Encoding** is automatically enabled under **Other Options** and cannot be disabled.
-   This setting is enforced because Apple name mangling is required for proper operation of Apple Media & Entertainment applications.
+   This setting is enforced because Apple character encoding is required for proper operation of Apple media and entertainment applications.
 
 5. Click **Save** to create the share.
 
@@ -137,19 +146,19 @@ See [Managing SMB Shares]({{< ref "ManageSMBShares.md" >}}) for detailed informa
 
 If the SMB service is not running, start it from the **Windows (SMB) Shares** widget:
 
-1. Click <span class="iconify" data-icon="mdi:dots-vertical"></span> on the widget header
-2. Select **Turn On Service**
+1. Click <span class="iconify" data-icon="mdi:dots-vertical"></span> on the widget header.
+2. Select **Turn On Service**.
 
 ### Connect from Mac Client
 
 On the Mac client, connect to the share:
 
-1. Open **Finder**
-2. Select **Go > Connect to Server** (or press Cmd+K)
-3. Enter the SMB address: {{< cli >}}smb://*your-truenas-ip*/*share-name*{{< /cli >}}
-4. Authenticate with a user account that has access to the share
+1. Open **Finder**.
+2. Select **Go > Connect to Server** (or press Cmd+K).
+3. Enter the SMB address: {{< cli >}}smb://*your-truenas-ip*/*share-name*{{< /cli >}}.
+4. Authenticate with a user account that has access to the share.
 
-The share is now available for use with Final Cut Pro, Logic Pro, and other Apple Media & Entertainment applications.
+The share is now available for use with Final Cut Pro, Logic Pro, and other Apple media and entertainment applications.
 
 ## Testing and Verification
 
@@ -157,7 +166,7 @@ After mounting the share, verify proper operation:
 
 * File Creation: Create test files from Final Cut Pro or Logic Pro to verify proper file handling.
 
-* Character Handling: Test filenames with special characters to confirm name mangling is working correctly.
+* Character Handling: Test filenames with special characters to confirm Apple character encoding is working correctly.
 
 * Performance: Copy large media files to verify adequate transfer speeds for your workflow.
 
@@ -166,16 +175,16 @@ After mounting the share, verify proper operation:
 ## Migrating Existing Media Libraries
 
 {{< hint type=warning title="Migration Considerations" >}}
-If you are migrating an existing media library from a standard SMB share to a MacOS Media Share, be aware that enabling Apple name mangling may affect existing files:
+If you are migrating an existing media library from a standard SMB share to a **MacOS Media Share**, be aware that enabling Apple character encoding might affect existing files:
 
-* Files created without name mangling may display differently or have access issues
-* Existing project files may need to be re-indexed by media applications
-* Test thoroughly in a non-production environment before migrating production data
+* Files created without Apple character encoding might display differently or have access issues.
+* Existing project files might need to be re-indexed by media applications.
+* Test thoroughly in a non-production environment before migrating production data.
 
 Recommended Migration Approach:
-1. Create a new MacOS Media Share
-2. Copy a subset of files for testing
-3. Verify all media applications can properly access and edit files
-4. Once verified, migrate remaining data
-5. Update media application libraries and project files to point to the new location
+1. Create a new **MacOS Media Share**.
+2. Copy a subset of files for testing.
+3. Verify all media applications can properly access and edit files.
+   After verifying access, migrate remaining data.
+4. Update media application libraries and project files to point to the new location.
 {{< /hint >}}
