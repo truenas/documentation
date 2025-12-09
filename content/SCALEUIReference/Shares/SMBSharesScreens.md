@@ -144,12 +144,14 @@ This behavior is enabled by default and matches FreeBSD behavior.
 
 The **Audit Logging** settings enable the auditing function for the SMB share. Configure a watch list to audit specific groups, or an ignore list to audit all groups except those specified. At least one list (watch or ignore) must contain entries for auditing to function. All share options listed in the **Purpose** dropdown show these settings.
 
+For detailed information about group validation and troubleshooting disabled shares, see [Configuring SMB Auditing]({{< relref "AuditingSCALE.md#configuring-smb-auditing" >}}).
+
 {{< trueimage src="/images/SCALE/Shares/AddSMBAdvancedAuditLoggingSettings.png" alt="SMB Audit Logging" id="SMB Audit Logging" >}}
 
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Enable Logging** | Enables audit logging for the SMB share and displays two additional options: **Watch List** and **Ignore List**. This controls whether audit messages are generated for the share after configuring at least one list. <br>Note: Auditing is not available when SMB1 support is enabled for the server. |
+| **Enable Logging** | Enables audit logging for the SMB share and displays two additional options: **Watch List** and **Ignore List**. This controls whether audit messages are generated for the share after configuring at least one list. <br>Note: Auditing is not available when SMB1 support is enabled for the server. <br>Starting in TrueNAS 25.10.1, shares are automatically disabled in the running configuration if the watch or ignore lists contain invalid groups. |
 | **Watch List** | Specifies groups to audit. Click the field to display the dropdown list of group options. Auditing applies only to user accounts that are members of groups in this list. If the same user belongs to groups in both the **Watch List** and **Ignore List**, the watch list takes precedence and operations are audited. |
 | **Ignore List** | Specifies groups to exclude from auditing. Click the field to display the dropdown list of group options. If the same user belongs to groups in both the **Watch List** and **Ignore List**, the watch list takes precedence and operations are audited. |
 {{< /truetable >}}
