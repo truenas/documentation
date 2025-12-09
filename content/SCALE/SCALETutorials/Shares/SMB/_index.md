@@ -277,7 +277,7 @@ See [Setting Up SMB Home Shares]({{< ref "SMBPrivateDatasetShare" >}}) for more 
 {{< /expand >}}
 
 {{< expand "SMB Audit Logging" "v" >}}
-To enable SMB audit logging, from either the **Add SMB** or **Edit SMB** screens, click **Advanced Options**, scroll down to **Audit Logging**, and select **Enable**.
+{{< include file="/static/includes/ConfigureSMBShareAuditingSCALE.md" >}}
 {{< /expand >}}
 
 ## Tuning ACLs for SMB Shares
