@@ -46,6 +46,8 @@ The TrueNAS team is pleased to release TrueNAS 25.10.1!
   Affected systems experienced temporarily missing vdevs that required a system reboot to restore pool access.
 * Adds MacOS Media Share purpose preset for SMB shares ([NAS-138402](https://ixsystems.atlassian.net/browse/NAS-138402)).
   Provides optimized configuration for Apple Media & Entertainment workflows including Final Cut Pro, Logic Pro, Motion, and Compressor. See [Setting Up Apple M&E SMB Shares](Apple-M-E) for more information.
+* Adds automatic validation for SMB share audit logging configurations.
+  TrueNAS 25.10.1 automatically disables SMB shares when auditing is enabled and watch or ignore lists contain invalid groups (deleted/renamed groups or groups that are no longer SMB-type). This protective measure prevents auditing misconfigurations that could cause security or compliance issues. The system generates alerts identifying affected shares and problematic groups. See [Configuring SMB Auditing](ManageSMBShares#configuring-smb-auditing) for configuration details and troubleshooting steps.
 * Adds REST API usage monitoring alert.
   TrueNAS now displays a daily alert when deprecated REST API endpoints are accessed, helping identify integrations that need migration. The REST API was deprecated in TrueNAS 25.04. Full removal is planned for TrueNAS 26.04. For more information about the JSON-RPC 2.0 over WebSocket API, see the [API documentation](https://api.truenas.com/v25.10/jsonrpc.html).
 * Adds **Clear Config** button to Directory Services configuration form.
