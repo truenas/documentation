@@ -142,16 +142,16 @@ This behavior is enabled by default and matches FreeBSD behavior.
 
 #### Audit Logging
 
-The **Audit Logging** settings enable the auditing function for the SMB share and allow configuring a watch list and ignore list groups that administrators want to monitor. All share options listed in the **Purpose** dropdown show these settings.
+The **Audit Logging** settings enable the auditing function for the SMB share. Configure a watch list to audit specific groups, or an ignore list to audit all groups except those specified. At least one list (watch or ignore) must contain entries for auditing to function. All share options listed in the **Purpose** dropdown show these settings.
 
 {{< trueimage src="/images/SCALE/Shares/AddSMBAdvancedAuditLoggingSettings.png" alt="SMB Audit Logging" id="SMB Audit Logging" >}}
 
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Enable Logging** | Enables audit logging for the SMB share, and shows two additional options: **Watch List** and **Ignore List**. This controls whether audit messages are generated for the share. <br>Note: Auditing might not be enabled if SMB1 support is enabled for the server. |
-| **Watch List** | Sets up a list of groups for which you want to generate audit logging messages. Clicking in the field shows the dropdown list of group options. Leave blank to include all SMB users with access to the share. If also setting a limit list, the watch list takes precedence when a conflict occurs. |
-| **Ignore List** | When selected, this sets up a list of groups to ignore when auditing. If conflict arises where the same groups are in the **Watch List** and **Ignore List** (based on user group membership), the watch listing takes precedence, and ops is audited. |
+| **Enable Logging** | Enables audit logging for the SMB share and displays two additional options: **Watch List** and **Ignore List**. This controls whether audit messages are generated for the share after configuring at least one list. <br>Note: Auditing is not available when SMB1 support is enabled for the server. |
+| **Watch List** | Specifies groups to audit. Click the field to display the dropdown list of group options. Auditing applies only to user accounts that are members of groups in this list. If the same user belongs to groups in both the **Watch List** and **Ignore List**, the watch list takes precedence and operations are audited. |
+| **Ignore List** | Specifies groups to exclude from auditing. Click the field to display the dropdown list of group options. If the same user belongs to groups in both the **Watch List** and **Ignore List**, the watch list takes precedence and operations are audited. |
 {{< /truetable >}}
 
 #### Other Options Settings
