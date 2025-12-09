@@ -82,7 +82,7 @@ To manually add a new user, click **Credentials > Users**, and then click **Add*
    This directory is an immutable directory shared by service accounts and accounts that should not have a full home directory.
    If set to this path TrueNAS does not create a home directory for the user. You must change this to the path for the dataset created for home directories.
 
-   {{< trueimage src="/images/SCALE/Credentials/AddUserHomeDirectorySettings.png" alt="User Home Directory Settings" id="User Home Directory Settings" >}}
+   {{< trueimage src="/images/SCALE/Credentials/AddingAHomeDirectory.png" alt="User Home Directory Settings" id="User Home Directory Settings" >}}
 
    Select **Create Home Directory** to create a new home directory. Leave unselected to select an existing home directory.
    The file browser field is renamed based on whether you select this option.
