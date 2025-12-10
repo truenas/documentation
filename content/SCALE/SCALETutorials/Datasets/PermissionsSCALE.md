@@ -1,5 +1,5 @@
 ---
-title: "Setting Up ACL Permissions"
+title: "Configuring ACL Permissions"
 description: "Provides general information on ACLs, and instructions on editing and viewing ACL permissions using the ACL editor screens."
 weight: 55
 aliases:
@@ -23,22 +23,24 @@ ACL permissions control the actions users can perform on dataset contents and sh
 
 {{< hint type=note >}}
 An Access Control List (ACL) is a set of account permissions associated with a dataset that applies to directories or files within that dataset.
-TrueNAS uses ACLs to manage user interactions with shared datasets and creates them when users add a dataset to a pool.
+TrueNAS uses ACLs to manage user interactions with shared datasets.
+When you create a dataset, TrueNAS sets the ACL type based on the dataset preset, but you must configure the ACL before it becomes active.
 {{< /hint >}}
 
 ## ACL Types in TrueNAS
 
 TrueNAS offers two ACL types: POSIX and NFSv4.
 The **Dataset Preset** setting on the **Add Dataset** screen determines the type of ACL for the dataset.
-Datasets created with the **Generic** dataset preset are given a POSIX (Unix) ACL.
-Datasets created with the **SMB** dataset preset are given an NFSv4 ACL. SMB shares require the more robust configurations in an NFSv4 ACL.
-For most cases a POSIX ACL is all you need.
+Datasets created with the **Generic** dataset preset have the ACL type set to a POSIX (Unix) ACL.
+Datasets created with the **SMB** dataset preset have the ACL type set to an NFSv4 ACL.
+SMB shares require the more robust configurations in an NFSv4 ACL.
+For most cases, a POSIX ACL is all you need.
 If you want the more granular ACL controls in the NFSv4 ACL, you can create a dataset using the **SMB** dataset preset without creating an SMB share, or you can use the **ACL Type** option on the **Add Dataset > Advanced Options** screen to change a dataset using the **Generic** preset from a POSIX to NFSv4 ACL.
 For a more in-depth explanation of ACLs and configurations in TrueNAS, see our [ACL Primer](https://www.truenas.com/docs/references/aclprimer/).
 
 {{< expand "How do I know what ACL Type my dataset has?" "v" >}}
 The **Permissions** widget for the dataset shows the dataset ACL type.
-When **Unix Permissions** shows in the widget the dataset has a POSIX ACL.
+When **Unix Permissions** shows in the widget, the dataset has a POSIX ACL.
 
 Alternatively, click **Edit** on the **Dataset Details** widget for the dataset to open the **Edit Dataset** screen, then click **Advanced Options** and scroll down to the **ACL Type** field to see the ACL type.
 
@@ -58,14 +60,14 @@ Both the POSIX and NFSv4 **ACL Editors** screens allow you to:
 When using a preset and customising the ACL, select the preset first and then customize the ACL with new users or groups.
 Selecting the preset after adding new ACL entries (ACEs) erases any ACEs added to the ACL, requiring you to re-enter them.
 Click **Save Access Control List** when you are done configuring the ACL.
-In most cases the owner user and group should remain set to **root**, but you can change this to the primary admin user and group account with full privileges.
-Add ACE items for users, groups, directories, etc. not included in preset configurations to customize access permissions to the dataset.
+In most cases, the owner user and group should remain set to **root**, but you can change this to the primary admin user and group account with full privileges.
+Add ACE items for users, groups, directories, etc., not included in preset configurations to customize access permissions to the dataset.
 
 When adding a dataset using the SMB preset for a share or just setting up an NFSv4 ACL, TrueNAS shows the **Set ACL for this dataset** dialog after you save the dataset.
 Click **Go to ACL Manager** to configure the ACL.
 You must configure an ACL for the dataset.
 The dataset does not have an ACL until you configure it even though you see ACL information in the **Permissions** widget.
-This initially indicates the type of ACL created and default basic permissions.
+This initially indicates the type of ACL created and the default basic permissions.
 To access the dataset and files within it, you must set up the ACL with users and access permissions.
 
 If you want to defer configuring the ACL, click **Return to pool list**, but make a note to return to the dataset to configure the ACL before attempting to use it.
@@ -99,7 +101,7 @@ Click **Save** to save changes and close the **Unix Permissions Editor** screen,
 
 Accept the default option **Select a preset ACL** to choose from the options on the [**Preset** dropdown list](#posix-preset-options).
 Select **Create a custom ACL** to open the **Edit ACL** screen for a POSIX ACL with a minimal default configuration.
-Selecting a preset also opens the **Edit ACL** screen but with different defaut configurations based on the preset selected.
+Selecting a preset also opens the **Edit ACL** screen, but with different default configurations based on the preset selected.
 
 After selecting a preset, click **Continue** to close the preset window and show the **Edit ACL** screen for a POSIX ACL.
 Next [add ACL entries](#adding-posix-acl-entries).
@@ -111,15 +113,15 @@ Next [add ACL entries](#adding-posix-acl-entries).
 * **POSIX_RESTRICTED** - Gives the owner full dataset control. The group can modify the dataset contents.
   Others have no access. Use when you want group collaboration but need to restrict outside access.
 * **POSIX_HOME** - Gives the owner full dataset control. The group can modify the dataset contents.
-  All other accounts can navigate the dataset but cannot read or modify files.
-  Use for private user directories where others need to traverse the path but not access contents.
+  All other accounts can navigate the dataset, but cannot read or modify files.
+  Use for private user directories where others need to traverse the path but not access the contents.
 * **POSIX_ADMIN** - Gives the admin user and builtin_administrators group full dataset control.
   All other accounts can navigate the dataset but cannot read or modify files.
   Use for administrative datasets that only system administrators should access.
 
 ### Adding POSIX ACL Entries
 
-The **Edit ACL** screen shows the ACL owner and owner group and allows you to change both just as you can on the **Unix Permissions Editor** screen.
+The **Edit ACL** screen shows the ACL owner and owner group and allows you to change both, just as you can on the **Unix Permissions Editor** screen.
 It also allows you to define ACL entries, such as users, groups, etc. Presets populate the **Access Control List** with default ACE entries.
 
 You can define the ACE entries when you first configure the POSIX ACL or change ACL entries (ACEs) and permissions for ACEs.
@@ -137,7 +139,7 @@ When adding an ACL entry (ACE), first add an item, and then assign the type and 
    The POSIX flag for an ACL entry controls inheritance for newly created files and directories.
    The default flag can only be set on directories, not on files.
    When **Default** is selected, the ACL entry becomes a default ACL that applies to new objects created inside that directory, but it does not affect the access permissions of the current directory, just controls what new files/directories inherit.
-   New files inherit the default ACL as their access ACL. New directories inhert the default ACL as both their access ACL and thier default ACL.
+   New files inherit the default ACL as their access ACL. New directories inherit the default ACL as both their access ACL and their default ACL.
    This continues down the tree of files and directories.
 
    If not set, the ACL entry only affects access to the directory itself; new files and directories created inside the dataset do not inherit the permission.
@@ -146,10 +148,10 @@ When adding an ACL entry (ACE), first add an item, and then assign the type and 
 
 ## Changing an ACL Owner or Owner Group
 
-This applies to both POSIX and NFSv4 ACLs. The Edit ACL screen for POSIX and NFSv4 ACLs show different configuration options but the **Owner** and **Owner Group** settings are the same for both ACL types.
+This applies to both POSIX and NFSv4 ACLs. The **Edit ACL** screen for POSIX and NFSv4 ACLs shows different configuration options, but the **Owner** and **Owner Group** settings are the same for both ACL types.
 
 Think of the owner of the ACL as the main traffic cop granting other users access. In most cases, leave the default user set to **root**.
-To allow a system administrator access either change the owner and owner group to that admin user name, or add that admin user as an ACL entrey (ACE) and grant it full permissions to allow it to administer the ACL and configure the dataset for other functions like an SMB share.
+To allow a system administrator access, either change the owner and owner group to that admin user name, or add that admin user as an ACL entry (ACE) and grant it full permissions to allow it to administer the ACL and configure the dataset for other functions like an SMB share.
 
 To change the owner and owner group:
 
@@ -160,7 +162,7 @@ Click **Apply Group** to apply the group change.
 
 User and group options include those created manually or imported from a directory service.
 
-To prevent errors, TrueNAS only submits changes after selecting the apply option.
+To prevent errors, TrueNAS only submits changes after you select the apply options.
 
 {{< hint type=important >}}
 A common misconfiguration is not adding or removing the **Execute** permission from a dataset that is a parent to other child datasets.
@@ -189,27 +191,32 @@ See [Granting Root Access to Host Paths](/scale/scaletutorials/containers/#grant
 
 ## Configuring an NFSv4 ACL
 
-Selecting **SMB** in the **Dataset Preset** field on the **Add Dataset** sreen applies an NFSv4 ACL type to the dataset.
-You can use the **SMB** dataset preset and choose to not create an SMB share as the easiest way to apply an NFSv4 ACL to a dataset, or you can leave **Dataset Preset** set to **Generic**, click **Advanced Options**, scroll down to the **ACL Type** field and select NFSv4 to apply this to the dataset.
+Selecting **SMB** in the **Dataset Preset** field on the **Add Dataset** screen applies an NFSv4 ACL type to the dataset.
+You can use the **SMB** dataset preset and choose to not create an SMB share as the easiest way to apply an NFSv4 ACL to a dataset, or you can leave **Dataset Preset** set to **Generic**, click **Advanced Options**, scroll down to the **ACL Type** field, and select NFSv4 to apply this to the dataset.
 
-After applying the NFSv4 ACL type to a dataset you must configure the ACL.
-The Permissions widget for the dataset continues to show **Unix Permission-** until you configure the ACL.
+After applying the NFSv4 ACL type to a dataset, you must configure the ACL.
+If you uset the **ACL Type** setting on the **Add Dataset > Advanced Options** screen for a dataset with the **Generic** preset to change to an NFSv4 ACL, the **Permissions** widget for the dataset shows **Unix Permission** until you configure the NFSv4 ACL.
 
-With the dataset selected, click **Edit** on the **Permissions** widget to open the **Edit ACL** screen.
+{{< trueimage src="/images/SCALE/Datasets/PermissionsWidgetUnixACL.png" alt="Permissions Widget Showing Unix ACL" id="Permissions Widget Showing Unix ACL" >}}
 
-To rewrite the current ACL with a standardized preset, follow the steps above in [Configuring an ACL](#configuring-an-acl-nfsv4-acl) to step 6 where you click **Use Preset**, and then select an option:
+The **Permissions** widget for datasets with the **SMB** preset shows **NFSv4 permissions**, but you still need to configure the ACL permissions. The dataset does not have an ACL applied until you configure the ACL.
 
-An NFS4 ACL preset loads pre-configured permissions to match general permissions situations.
+{{< trueimage src="/images/SCALE/Datasets/PermissionsWidgetNFSv4ACL.png" alt="Permissions Widget for an NFSv4 ACL" id="Permissions Widget for an NFSv4 ACL" >}}
 
-To change NFSv4 ACL permissions for an existing dataset with a configured ACL:
-
-Go to **Datasets**, select the dataset, scroll down to the **Permissions** widget, and click **Edit**. The **Edit ACL** screen opens.
+To edit or configure an NFSv4 ACL, select the dataset on the dataset tree table, then click **Edit** on the **Permissions** widget to open the **Edit ACL** screen.
 
 {{< trueimage src="/images/SCALE/Datasets//EditACLScreenNFSv4Type.png" alt="Edit ACL for NFSv4 ACL" id="Edit ACL for NFSv4 ACL" >}}
 
 You can change the owner and owner group, and/or change, add, or delete an ACE item on the **Access Control List**.
 
-Either change the owner and owner group to the admin user on your system with full administration privileges or add the admin user name as an ACE item on the Access Control List. This allows the admin user to make functional changes for the dataset and child datasets nested under it. For example, when configuring shares and private dataset shares. 
+Either change the owner and owner group to the admin user on your system with full administration privileges or add the admin user name as an ACE item on the Access Control List.
+This allows the admin user to make functional changes for the dataset and child datasets nested under it.
+For example, when configuring shares and private dataset shares. 
+
+To rewrite the current ACL with a standardized preset, click **Use Preset** on the **Edit ACL** screen, which opens the **Select a preset ACL** window.
+
+Select the preset option, then click **Continue** to apply the preset.
+Presets load pre-configured permissions to match general permissions situations.
 
 ### NFSv4 ACL Presets 
 
@@ -233,14 +240,14 @@ When adding an ACL entry (ACE), first add an item, and then assign the type and 
 
 {{< include file="/static/includes/AddACESteps1-4.md" >}} 
 
-<div style="padding-left: 33px;">If <b>Basic</b> is selected, the <b>Permisions</b> dropdown list shows four options: <b>Read</b>, <b>*Modify</b>, <b>Traverse</b> and <b>Full Control</b>.
-If <b>Advanced</b> is selected, the **Permisions** dropdown list shows 14 checkboxes for more granular control over the permissions granted to the selected ACE entry.
-Options are: <b>Read Data</b>, <b>Write Data</b>, <b>Append Data</b>, <b>Read Named Attributes</b>, <b>Writed Named Attributes</b>, <b>Execute</b>, <b>Delete Children</b>, <b>Read Attributes</b>, <b>/Write Attributes</b>, <b>Delete</b>, <b>Read ACL</b>, <b>Write ACL</b>, <b>Write Owner</b>, and <b>Synchronize</b>.
+<div style="padding-left: 33px;">If <b>Basic</b> is selected, the <b>Permissions</b> dropdown list shows four options: <b>Read</b>, <b>Modify</b>, <b>Traverse</b> and <b>Full Control</b>.
+If <b>Advanced</b> is selected, the **Permissions** dropdown list shows 14 checkboxes for more granular control over the permissions granted to the selected ACE entry.
+Options are: <b>Read Data</b>, <b>Write Data</b>, <b>Append Data</b>, <b>Read Named Attributes</b>, <b>Write Named Attributes</b>, <b>Execute</b>, <b>Delete Children</b>, <b>Read Attributes</b>, <b>Write Attributes</b>, <b>Delete</b>, <b>Read ACL</b>, <b>Write ACL</b>, <b>Write Owner</b>, and <b>Synchronize</b>.
 
-5. (Optional) Select the ACL flags to apply the ACE item selected on the **Access Control List** not to the entire ACL.
+5. (Optional) Select the ACL flags to apply the ACE item selected on the **Access Control List**, not to the entire ACL.
    Each ACE entry can have different flags set. Flags apply to the files, directories, and subdirectories created in this dataset.
    Flag options:
-   * **Basic** shows the **Inherit** and **No Inherit** flags. Just as with the POSIX **Defaut** flag, this determines if files and directories in this dataset, for the ACE item selected (for example a user item selected on the **Access Control List**), inherit the ACL from the dataset.
+   * **Basic** shows the **Inherit** and **No Inherit** flags. Just as with the POSIX **Default** flag, this determines if files and directories in this dataset, for the ACE item selected (for example, a user item selected on the **Access Control List**), inherit the ACL from the dataset.
    * **Advanced** shows five flags for more granular control. Flag options are:
      * **File Inherit** - Selected by default. Limits ACL inheritance for files in the dataset for the selected ACE item.
      * **Directory Inherit** - Selected by default. Limits ACL inheritance for directories in the dataset for the selected ACE item.
