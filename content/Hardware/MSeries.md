@@ -30,7 +30,7 @@ Visit the [M Series product page](https://www.truenas.com/m-series/) for more de
 
 <div class="docs-sections">
 
-{{< imagecard image="/images/Hardware/MSeries/MSeriesPUM.png" title="Product User Manual" link="https://www.truenas.com/docs/files/MSeriesPUM.pdf"
+{{< imagecard-lang image="/images/Hardware/MSeries/MSeriesPUM.png" title="Product User Manual" link="https://www.truenas.com/docs/files/MSeriesPUM.pdf"
 descr="Comprehensive User Manual for TrueNAS M-Series systems." >}}
 
 {{< imagecard image="/images/Hardware/MSeries/MSeriesHANetworking1.png" title="HA Networking" link="https://www.truenas.com/docs/files/MSeriesHANetworking.pdf"
