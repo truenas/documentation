@@ -43,7 +43,7 @@ The goal for this appliance image is smoother, more secure, and easily accessibl
   The Veeam Software Appliance release is growing towards the same maturity as the traditional Veeam Backup & Replication offering.
   The initial appliance image has these key differences:
   
-  * At this time, the appliance supports the vSphere and Hyper-V virtualization platforms only.
+  * At this time, the appliance supports backup and recovery operations for vSphere and Hyper-V virtualization platforms only.
   * The appliance does not support the object storage repository type.
   * Veeam Software Appliance does not include File browser, and users cannot retrieve individual files from backed up systems.
   * These advanced features are not present:
