@@ -579,11 +579,13 @@ The smartmontools binaries (`smartctl`, `smartd`) remain installed and continue 
   
 ### NVIDIA GPU Support
 
-TrueNAS 25.10 introduces support for [NVIDIA open GPU kernel module drivers](https://us.download.nvidia.com/XFree86/Linux-x86_64/570.172.08/README/kernel_open.html), enabling compatibility with the latest NVIDIA graphics cards including the newest Blackwell architecture.
-This driver update ensures support for modern GPU acceleration workloads in TrueNAS Apps and Containers.
+TrueNAS 25.10 introduces support for [NVIDIA open GPU kernel module drivers](https://us.download.nvidia.com/XFree86/Linux-x86_64/570.172.08/README/kernel_open.html), preparing TrueNAS to support the latest NVIDIA graphics cards including newer architectures like Blackwell.
+This driver update ensures TrueNAS Apps and Containers can utilize modern GPU acceleration workloads.
 
 The open GPU kernel drivers are [compatible with Turing architecture and later GPUs](https://github.com/NVIDIA/open-gpu-kernel-modules/tree/570?tab=readme-ov-file#compatible-gpus), which includes GTX 16-series cards and all RTX series cards.
-The new NVIDIA Blackwell (RTX 50-series) chips require the nvidia-open driver to function, as this driver leverages the built-in NVIDIA GSP (GPU System Processor).
+Newer architectures like NVIDIA Blackwell (RTX 50-series, RTX PRO Blackwell) require the nvidia-open driver to function, as this driver leverages the built-in NVIDIA GSP (GPU System Processor).
+
+To verify your GPU is supported, check the installed NVIDIA driver version in [Software Component Versions](#component-versions-tab). Click the driver version number to view NVIDIA's release page, which includes a "Supported Products" tab listing all compatible GPUs for that driver version.
 
 Users with compatible hardware can enable TrueNAS to install NVIDIA drivers.
 See the TrueNAS Apps Market for [installation instructions](https://apps.truenas.com/getting-started/initial-setup/#installing-nvidia-drivers).
