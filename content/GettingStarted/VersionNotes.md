@@ -45,7 +45,7 @@ The TrueNAS team is pleased to release TrueNAS 25.10.1!
 * Fixes issue where storage pools appeared offline after upgrading to 25.10.0 ([NAS-138236](https://ixsystems.atlassian.net/browse/NAS-138236)).
   Affected systems experienced temporarily missing VDEVs that required a system reboot to restore pool access.
 * Adds **MacOS Media Share** purpose preset for SMB shares ([NAS-138402](https://ixsystems.atlassian.net/browse/NAS-138402)).
-  Provides optimized configuration for Apple media and entertainment workflows including Final Cut Pro, Logic Pro, Motion, and Compressor. See [Setting Up Apple Media and Entertainment SMB Shares](Apple-M-E) for more information.
+  Provides optimized configuration for Apple media and entertainment workflows including Final Cut Pro, Logic Pro, Motion, and Compressor. See [Setting Up Apple Media and Entertainment SMB Shares]({{< ref "/SCALETutorials/Shares/SMB/Apple-M-E.md" >}}) for more information.
 * Adds automatic validation for SMB share audit logging configurations.
   TrueNAS 25.10.1 automatically disables SMB shares when auditing is enabled and watch or ignore lists contain invalid groups (deleted/renamed groups or groups that are no longer SMB-type). This protective measure prevents auditing misconfigurations that could cause security or compliance issues. The system generates alerts identifying affected shares and problematic groups. See [Configuring SMB Auditing](ManageSMBShares#configuring-smb-auditing) for configuration details and troubleshooting steps.
 * Adds REST API usage monitoring alert.
