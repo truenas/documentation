@@ -32,6 +32,10 @@ To manage an SMB share, click <span class="material-icons">more_vert</span> drop
   The **Dataset Preset** option determines the ACL type and the type of **ACL Editor** screen that opens (POSIX or NSFv4).
 * **Delete** opens a delete confirmation dialog. Use this to delete the share and remove it from the system. Delete does not affect shared data.
 
+## Configuring SMB Auditing
+
+{{< include file="/static/includes/ConfigureSMBShareAuditingSCALE.md" >}}
+
 ## Modifying ACL Permissions for SMB Shares
 
 {{< include file="/static/includes/ShareACLDialogs.md" >}}
