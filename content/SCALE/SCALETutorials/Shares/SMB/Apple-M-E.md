@@ -31,7 +31,7 @@ Before setting up a **MacOS Media Share**:
 
 * [Create user accounts]({{< ref "ManageUsers" >}}) for media users who access the share.
    Go to **Credentials > Local Users** and click **Add**.
-   Ensure **Samba Authentication** is selected for each user.
+   Ensure **SMB Access** is selected for each user.
 
 * Prepare a dataset for the share (or you can create one during share creation).
    For best performance with large media files, consider:
