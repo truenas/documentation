@@ -93,7 +93,7 @@ It opens the [**Create Dataset**](#create-dataset) dialog.
 
 ### Basic Settings
 
-The **Basic Options** settings show by default on the **Add** and **Edit SMB** screens. Basic settings show for all share options in the **Purpose** dropdown list, only the **External Share** option shows the **Remote Path** setting.
+The **Basic Options** settings show by default on the **Add** and **Edit SMB** screens. Basic settings show for all share options in the **Purpose** dropdown list; only the **External Share** option shows the **Remote Path** setting.
 
 {{< trueimage src="/images/SCALE/Shares/AddShareBasicOptions.png" alt="Add SMB Basic Options" id="Add SMB Basic Options" >}}
 
@@ -139,7 +139,7 @@ This behavior is enabled by default and matches FreeBSD behavior.
 |---------|-------------|
 | **Export Read-Only** | Prohibits writes to the share when enabled. |
 | **Browsable to Network Clients** | Determines whether this share name is included when browsing shares. Enabled by default. Private dataset shares (the replacement for home shares) are only visible to the owner, regardless of this setting. |
-| **Access Based Share Enumeration** | Restricts share visibility to users with read or write access to the share. This setting applies to datasets with a POSIX ACL type. For datasets with NFSv4 ACL type, access-based enumeration is automatically enabled and does not allow disabling. See the [smb.conf](https://www.samba.org/samba/docs/current/man-html/smb.conf.5.html) manual page. |
+| **Access Based Share Enumeration** | Restricts share visibility to users with read or write access to the share. This setting applies to datasets with a POSIX ACL type. For datasets with NFSv4 ACL type, access-based enumeration is automatically enabled and cannot be disabled. See the [smb.conf](https://www.samba.org/samba/docs/current/man-html/smb.conf.5.html) manual page. |
 {{< /truetable >}}
 
 #### Audit Logging
@@ -154,7 +154,7 @@ For detailed information about group validation and troubleshooting disabled sha
 | Setting | Description |
 |---------|-------------|
 | **Enable Logging** | Enables audit logging for the SMB share and displays two additional options: **Watch List** and **Ignore List**. This controls whether audit messages are generated for the share after configuring at least one list. <br>Note: Auditing is not available when SMB1 support is enabled for the server. <br>Starting in TrueNAS 25.10.1, shares are automatically disabled in the running configuration if the watch or ignore lists contain invalid groups. |
-| **Watch List** | Specifies groups to audit. Click the field to display the dropdown list of group options. Auditing applies only to user accounts that are members of groups in this list. If the same user belongs to groups in both the **Watch List** and **Ignore List**, the watch list takes precedence and operations are audited. |
+| **Watch List** | Specifies groups to audit. Click the field to display the dropdown list of group options. Auditing applies only to user accounts that are members of groups in this list. If the same user belongs to groups in both the **Watch List** and **Ignore List**, the watch list takes precedence, and operations are audited. |
 | **Ignore List** | Specifies groups to exclude from auditing. Click the field to display the dropdown list of group options. If the same user belongs to groups in both the **Watch List** and **Ignore List**, the watch list takes precedence and operations are audited. |
 {{< /truetable >}}
 
