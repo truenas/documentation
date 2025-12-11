@@ -1,6 +1,6 @@
 ---
 title: "Setting Up Apple Media and Entertainment SMB Shares"
-description: "Provides instructions for adding an SMB share optimized for Apple media and entertainment workflows including Final Cut Pro and Logic Pro."
+description: "Provides instructions for adding an SMB share optimized for Apple media and entertainment workflows, including Final Cut Pro and Logic Pro."
 weight: 27
 aliases:
 tags:
@@ -122,7 +122,7 @@ While creating a basic **MacOS Media Share** requires no additional configuratio
    * Configure **Watch List** and **Ignore List** as needed for monitoring specific users or groups.
 
 4. Note that **Use Apple-style Character Encoding** is automatically enabled under **Other Options** and cannot be disabled.
-   This setting is enforced because Apple character encoding is required for proper operation of Apple media and entertainment applications.
+   TrueNAS enforces this setting because Apple media and entertainment applications require Apple character encoding to operate properly.
 
 5. Click **Save** to create the share.
 
@@ -185,6 +185,6 @@ Recommended Migration Approach:
 1. Create a new **MacOS Media Share**.
 2. Copy a subset of files for testing.
 3. Verify all media applications can properly access and edit files.
-   After verifying access, migrate remaining data.
+   After verifying access, migrate the remaining data.
 4. Update media application libraries and project files to point to the new location.
 {{< /hint >}}
