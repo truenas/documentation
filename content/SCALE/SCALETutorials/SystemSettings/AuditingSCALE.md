@@ -35,7 +35,6 @@ Auditing event types are:
 - Session and user
 - Sudo and root user commands (includes STIG-compliant shell commands)
 - SMB protocol and share
-- NFS protocol and share
 - iSCSI protocol and share
 - FTP service
 - STIG-compliant security objects
@@ -63,7 +62,7 @@ Generated every time a user logs into a shell session and uses sudo to perform a
 The event data for a sudo event includes the command.
 {{< /expand >}}
 
-### SMB and NFS Auditing Events
+### SMB Auditing Events
 
 SMB events are omitted by default from the **System > Audit** screen.
 To view these audit results, go to **System > Services** and click <i class="material-icons" aria-hidden="true" title="Audit Logs">receipt_long</i> **Audit Logs** for the SMB service or use the **Service** dropdown on the main **Audit** screen to select **SMB**.
@@ -73,7 +72,11 @@ SMB audit logs include all SMB protocol events, but do not include changes to SM
 See the middleware service log to review those events.
 {{< /hint >}}
 
-The following sections also apply to NFS share audit logs.
+{{< hint type=note >}}
+SMB Authentication events are logged globally for all users connecting to the SMB server, regardless of Watch List or Ignore List configuration.
+Watch and Ignore Lists control subsequent SMB operations (Connect, Create, Write, Read, etc.) but do not filter Authentication events.
+This ensures a complete audit trail of all authentication attempts for security and compliance purposes.
+{{< /hint >}}
 
 {{< expand "Connect Events" "v" >}}
 Generated every time an SMB client performs an SMB tree connection (TCON) to a given share.
