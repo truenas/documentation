@@ -73,8 +73,8 @@ See the middleware service log to review those events.
 {{< /hint >}}
 
 {{< hint type=note >}}
-SMB Authentication events are logged globally for all users connecting to the SMB server, regardless of Watch List or Ignore List configuration.
-Watch and Ignore Lists control subsequent SMB operations (connect, create, write, read, etc.) but do not filter authentication events.
+SMB authentication events are logged globally for all users connecting to the SMB server, regardless of **Watch List** or **Ignore List** configuration.
+Watch and ignore lists control subsequent SMB operations (connect, create, write, read, etc.) but do not filter authentication events.
 This ensures a complete audit trail of all authentication attempts for security and compliance purposes.
 {{< /hint >}}
 
