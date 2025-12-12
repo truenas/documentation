@@ -54,7 +54,7 @@ When using both lists: If a user is a member of groups in both **Watch List** an
 
 {{< hint type=note title="Authentication Events" >}}
 SMB authentication events are logged globally for all users connecting to the SMB server, regardless of **Watch List** or **Ignore List** settings.
-watch and ignore lists control subsequent operations (connect, file creates, reads, writes, etc.) but do not filter authentication events.
+Watch and ignore lists control subsequent operations (connect, file creates, reads, writes, etc.) but do not filter authentication events.
 Users in the **Ignore List** still have their initial authentication logged, but their file operations on the share are not audited.
 {{< /hint >}}
 
