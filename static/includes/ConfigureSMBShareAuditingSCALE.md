@@ -40,7 +40,7 @@ TrueNAS does not record SMB operations performed by members of groups in the **I
 
 {{< hint type=note title="Authentication Events" >}}
 SMB Authentication events are logged globally for all users connecting to the SMB server, regardless of Watch List or Ignore List settings.
-Watch and Ignore Lists control subsequent operations (Connect, file creates, reads, writes, etc.) but do not filter Authentication events.
+Watch and Ignore Lists control subsequent operations (connect, file creates, reads, writes, etc.) but do not filter authentication events.
 Users in the Ignore List still have their initial authentication logged, but their file operations on the share are not audited.
 {{< /hint >}}
 
