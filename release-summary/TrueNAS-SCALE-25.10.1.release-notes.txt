@@ -1,0 +1,15 @@
+## TrueNAS 25.10.1
+
+This maintenance release resolves a critical storage pool upgrade issue, enhances SMB configurations for Apple workflows, and improves virtual machine stability.
+
+- **New Features:**
+  - MacOS Media Share SMB preset optimized for Apple media workflows.
+  - SMB audit logging validation automatically disables misconfigured shares.
+  - REST API usage monitoring with daily alerts for deprecated endpoints.
+  - Directory services "Clear Config" button for easier reconfiguration.
+- **Improvements:** Samba 4.22.6 fixes Time Machine on macOS 15.2+, enhanced error messaging for dataset properties, pool operations, and replication tasks.
+- **Critical Bug Fixes:** Storage pool offline after 25.10.0 upgrade, VM improvements (TPM persistence, Secure Boot, image uploads, VDI import), network services (rsync SSH, email, SNMP temperature), and user SSH/Shell access controls.
+
+**Pre-Update Actions:** None required when updating from 25.10.0.1.
+
+**[Version Recommendations](https://www.truenas.com/software-status/)** | **[Full Release Notes](https://www.truenas.com/docs/scale/25.10/gettingstarted/versionnotes/#25.10.1)** | **[Known Issues](https://www.truenas.com/docs/scale/25.10/gettingstarted/versionnotes/#known-issues)** | **[Enterprise Support](https://support.truenas.com/)** | **[Forums](https://forums.truenas.com/)**
