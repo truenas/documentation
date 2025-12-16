@@ -369,6 +369,22 @@ These are ongoing issues that can affect multiple versions in the 25.10 series.
   North American users should be aware of this issue ahead of the upcoming DST transition on November 2, 2025.
   The authentication system resolves automatically once the duplicated hour passes.
 
+* Locking encrypted datasets fails when actively shared via iSCSI or SMB.
+  Attempting to lock an encrypted dataset while it is actively shared via iSCSI or SMB fails with an EBUSY error.
+  No alert is generated and no email notification is sent when the lock operation fails.
+
+  Workaround: Before locking the dataset, disable the share (iSCSI extent or SMB share) in the sharing configuration.
+  After locking the dataset, you can re-enable the share if needed.
+
+  This issue will be resolved in a future TrueNAS release.
+
+* Kerberized NFS and SMB host access control improvements in progress ([NAS-138814](https://ixsystems.atlassian.net/browse/NAS-138814)).
+  TrueNAS 25.10.0 and 25.10.1 users should exercise caution when using Kerberized NFS, particularly in high-availability configurations with Active Directory or FreeIPA.
+  Known issues include potential failover scenarios where NFS service restart may not properly restore client connectivity.
+  Additionally, SMB **hosts allow** and **hosts deny** host access controls were limited to legacy share purposes in 25.10.0.
+
+  Improvements to Kerberized NFS functionality, Kerberos keytab synchronization for Active Directory, and restoration of SMB host access controls to all share purposes are actively being developed and tested for inclusion in TrueNAS 25.10.2.
+
 <a href="https://ixsystems.atlassian.net/issues/?filter=13698" target="_blank">See the latest status on Jira</a> for public issues discovered in 25.10 that are being resolved in a future TrueNAS release.
 
 See the [Release Notes](https://forums.truenas.com/c/release-notes/13) section of the TrueNAS forum for ongoing updates about known issues, investigations, and statistics about TrueNAS releases.
