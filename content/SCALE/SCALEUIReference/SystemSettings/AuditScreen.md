@@ -34,7 +34,7 @@ The **Audit** screen lists log entries in a table that shows:
 The **Service** dropdown at the top of the screen filters audit entries by service type. Options include **SMB**, **Middleware**, **Sudo**, and **System**. Select a specific service to view only entries for that service. When no service is selected, the screen displays entries from all services.
 
 **Audit Settings** opens the **System > Advanced Settings** screen showing the **Audit** widget.
-For more information on configuring audit settings, see [Advanced Settings Screen]({{< relref "AdvancedSettingsScreen.md#Audit-Widget" >}})
+For more information on configuring audit settings, see [Advanced Settings Screen]({{< relref "AdvancedSettingsScreen.md#Audit-Widget" >}}).
 
 TrueNAS includes a manual page with more information on the [VFS auditing functions](https://github.com/truenas/samba/blob/SCALE-v4-19-stable/docs-xml/manpages/vfs_truenas_audit.8.xml).
 
