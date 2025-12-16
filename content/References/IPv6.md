@@ -10,7 +10,7 @@ tags:
 
 ## What is IPv6?
 IPv6 is the next generation Internet protocol replacing the current IPv4 protocol.
-IPv4 is running out of numbers due to the ever increasing number devices world wide wanting to connect.
+[IPv4 is running out of numbers](https://pingmynetwork.com/network/ccna-200-301/introduction-to-ipv6) due to the ever increasing number devices world wide wanting to connect.
 The rise of the Internet of Things (IoT), where smart sensors in homes, motor vehicles, and businesses all want or need to connect to the Internet to allow data collection and sharing for analytics, device maintenance and monitoring, increased safety and productivity, and overall improvement in consumer and customer experiences is a source of an ever-increasing demand for IP addresses.
 Because of the length and configuration of IPv6 addresses, there is little risk of this protocol running out of numbers any time soon.
 
