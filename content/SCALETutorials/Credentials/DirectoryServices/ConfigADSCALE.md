@@ -41,6 +41,8 @@ Enter the password for this account.
 
 After taking these actions, you can [connect to the Active Directory domain](#connecting-to-the-active-directory-domain).
 
+{{< include file="/static/includes/NetBIOSValidationWarning.md" >}}
+
 ### Setting Time Synchronization
 Active Directory relies on the time-sensitive [Kerberos](https://tools.ietf.org/html/rfc1510) protocol.
 TrueNAS adds the AD domain controller with the [PDC Emulator FSMO Role](https://support.microsoft.com/en-us/help/197132/active-directory-fsmo-roles-in-windows) as the preferred NTP server during the domain join process.
@@ -106,7 +108,7 @@ TrueNAS automatically begins using this default keytab and removes any administr
 ### Troubleshooting - Resyncing the Cache
 If the cache becomes out of sync or fewer users than expected are available in the permissions editors, resync it by clicking **Settings** in the **Active Directory** window and then click **Rebuild Directory Service Cache**.
 
-The name in **NetBIOS Name** should match the name in **Hostname** on the **Global Configuration** settings screen.
+The name in **TrueNAS Hostname** should match the name in **Hostname** on the **System > Network** screen.
 
 ## Disabling Active Directory
 To disable your AD server connection without deleting your configuration or leaving the AD domain, click **Settings** to open the **Active Directory** settings screen.
