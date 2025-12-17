@@ -59,7 +59,7 @@ The **Shares > SMB** screen shows an expanded presentation of the table on the *
 **SMB Sessions** opens the [**SMB Status**](#smb-status-screens) screen.
 
 **Columns** shows a set of options to customize the list view.
-Options include **Unselect All**, **Path**, **Description**, **Enabled** and **Reset to Defaults**.
+Options include **Unselect All**, **Path**, **Description**, **Enabled**, and **Reset to Defaults**.
 
 **Add** opens the [**Add SMB**](#add-and-edit-smb-screens) configuration screen.
 
