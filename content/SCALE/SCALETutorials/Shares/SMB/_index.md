@@ -12,7 +12,6 @@ tags:
 - shares
 ---
 
-
 {{< include file="/static/includes/RootLevelDatasetShareWarning.md" >}}
 
 ## About Windows (SMB) Shares
@@ -183,9 +182,9 @@ To create a basic Windows SMB share and a dataset, go to **Shares**, then click 
    Select **Time Machine Share** to create a Time Machine share. The SMB share is presented to Mac OS clients as a Time Machine target.
    See [Adding a Basic Time Machine SMB Share]({{< ref "SetUpBasicTimeMachineSMBShare.md" >}}) for more information on creating and using Time Machine shares.
 
-   Select **MacOS Media Share** (available in TrueNAS 25.10.1 and later) to create a share optimized for Apple media and entertainment workflows.
-   The SMB share is configured with Apple-style character encoding and requires Apple SMB2/3 protocol extensions for compatibility with Final Cut Pro, Logic Pro, and other professional media applications.
-   See [Setting Up Apple M&E SMB Shares]({{< ref "Apple-M-E.md" >}}) for more information on creating shares for Apple media workflows.
+   Select **Final Cut Pro Storage Share** (available in TrueNAS 25.10.1 and later) to create a share optimized for Final Cut Pro workflows.
+   The SMB share is configured with Apple-style character encoding and requires Apple SMB2/3 protocol extensions for compatibility with Final Cut Pro.
+   See [Setting Up Final Cut Pro SMB Shares]({{< ref "FCPShare.md" >}}) for more information on creating shares for Final Cut Pro workflows.
 
    Select **External Share** to [create an external share](#setting-up-an-external-smb-share). Enter the full domain name or IP address and the share name as *192.168.0.200\SHARE* in **Remote Path**.
 
@@ -232,7 +231,6 @@ Additional client-side configuration is required to provide guest access to thes
 If setting up guest access with read-only permissions, see the information in [Adding a New Share Group](#adding-a-new-share-group).
 If the share is nested under parent datasets, see [Using the Traverse Permission](#using-the-traverse-permission).
 {{< /expand >}}
-
 {{< expand "Read or Write Access" "v" >}}
 To prohibit writes to the share, select **Export Read-Only**.
 
