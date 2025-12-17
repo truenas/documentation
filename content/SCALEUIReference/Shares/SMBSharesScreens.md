@@ -228,6 +228,8 @@ When **Purpose** is set to **MacOS Media Share**, the following settings show in
 {{< /tab >}}
 {{< /tabs >}}
 
+{{< include file="/static/includes/SMBVFSConfigurationWarning.md" >}}
+
 #### Legacy Share Settings
 
 The **Edit SMB** screen sets **Purpose** to **Legacy Share** after upgrading to 25.10 when shares created in a release before 25.10 have **Purpose** set to **No Preset**. The **Advanced Options > Other Options** settings selected in the existing share show the same options in the upgraded share.
@@ -241,6 +243,10 @@ For example, a 25.04 SMB share with **Purpose** set to **No Preset** and **Use a
 We recommend changing **Purpose** to **Private Datasets Share**. Refer to the instructions in the [Setting Up SMB Private Dataset Shares]({{< ref "SMBPrivateDatasetShare.md" >}}) tutorial for more information on setting up this replacement for Home Shares.
 
 {{< include file="/static/includes/auxiliary-parameters-caution.md" >}}
+
+{{< hint type=note >}}
+VFS module configuration (`catia`, `fruit`, `streams_xattr`) cannot be set through Auxiliary Parameters. Use the appropriate share purpose preset (MacOS Media Share, Time Machine, etc.) instead.
+{{< /hint >}}
 
 This table lists (pre-25.10) **Other Options** settings.
 These only show on the **Edit SMB** screen after upgrading from an earlier release with an existing SMB share configured with them, unless indicated otherwise.
