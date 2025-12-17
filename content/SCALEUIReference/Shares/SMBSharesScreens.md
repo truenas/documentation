@@ -213,10 +213,10 @@ When **Purpose** is set to **Private Dataset Share**, the following settings sho
 | **Auto Quota** | Sets the specified ZFS quota in gibibytes (GiB) on new datasets. If the value is zero, TrueNAS disables automatic quotas for the share. Only shows when **Purpose** is set to the **Private Dataset Share** option. |
 {{< /truetable >}}
 {{< /tab >}}
-{{< tab "MacOS Media Share" >}}
-When **Purpose** is set to **MacOS Media Share**, the following settings show in **Other Options**.
+{{< tab "Final Cut Pro Storage Share" >}}
+When **Purpose** is set to **Final Cut Pro Storage Share**, the following settings show in **Other Options**.
 
-{{< trueimage src="/images/SCALE/Shares/AddSMBAdvancedSettingsMacOSMediaShare.png" alt="Other Options - MacOS Media Share" id="Other Options - MacOS Media Share" >}}
+{{< trueimage src="/images/SCALE/Shares/AddSMBAdvancedSettingsMacOSMediaShare.png" alt="Other Options - Final Cut Pro Storage Share" id="Other Options - Final Cut Pro Storage Share" >}}
 
 {{< include file="/static/includes/MacOSMediaShareCompatibility.md" >}}
 
@@ -245,7 +245,7 @@ We recommend changing **Purpose** to **Private Datasets Share**. Refer to the in
 {{< include file="/static/includes/auxiliary-parameters-caution.md" >}}
 
 {{< hint type=note >}}
-VFS module configuration (`catia`, `fruit`, `streams_xattr`) cannot be set through Auxiliary Parameters. Use the appropriate share purpose preset (MacOS Media Share, Time Machine, etc.) instead.
+VFS module configuration (`catia`, `fruit`, `streams_xattr`) cannot be set through Auxiliary Parameters. Use the appropriate share purpose preset (Final Cut Pro Storage Share, Time Machine, etc.) instead.
 {{< /hint >}}
 
 This table lists (pre-25.10) **Other Options** settings.
