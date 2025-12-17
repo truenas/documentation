@@ -65,5 +65,7 @@ The **shell** authenticator option is intended for advanced users. Improperly co
 
 If you select **shell** as the authenticator, you must enter the path to an authenticator script, the running user, a certificate timeout, and a domain propagation delay.
 
-Advanced users can select this option to pass an authenticator script, such as *acme.sh*, to the shell and add an external DNS authenticator.
+Advanced users can select this option to invoke an authenticator script and add an external DNS authenticator.
+
 This requires an ACME authenticator script saved to the system.
+The script can invoke [acme.sh](https://github.com/acmesh-official/acme.sh) or similar.
