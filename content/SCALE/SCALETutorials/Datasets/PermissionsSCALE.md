@@ -95,7 +95,8 @@ Accept the default root in **Owner** and **Owner Group**, or if you want to chan
 
 Next, select the **Access** levels using the **Read**, **Write**, **Execute** checkboxes for **User**, **Group**, **Other**.
 
-Click **Save** to save changes and close the **Unix Permissions Editor** screen, or to further define the POSIX ACL, click **Set ACL** to open the **Select a preset ACL** window with two options: **Select a preset ACL** and **Create a custom ACL**.
+Click **Save** to save changes and close the **Unix Permissions Editor** screen.
+To further define the POSIX ACL, click **Set ACL** to open the **Select a preset ACL** window with two options: **Select a preset ACL** and **Create a custom ACL**.
 
 {{< trueimage src="/images/SCALE/Datasets/SelectAPresetPOSIXACL.png" alt="Select a Preset ACL Window" id="Select a Preset ACL Window" >}}
 
