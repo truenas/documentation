@@ -236,7 +236,7 @@ When adding an ACL entry (ACE), first add an item, and then assign the type and 
 
 {{< include file="/static/includes/AddACESteps1-4.md" >}} 
 
-<div style="padding-left: 33px;">If <b>Basic</b> is selected, the <b>Permissions</b> dropdown list shows four options: <b>Read</b>, <b>Modify</b>, <b>Traverse</b> and <b>Full Control</b>.
+<div style="padding-left: 33px;">If <b>Basic</b> is selected, the <b>Permissions</b> dropdown list shows four options: <b>Read</b>, <b>Modify</b>, <b>Traverse</b>, and <b>Full Control</b>.
 If <b>Advanced</b> is selected, the **Permissions** dropdown list shows 14 checkboxes for more granular control over the permissions granted to the selected ACE entry.
 Options are: <b>Read Data</b>, <b>Write Data</b>, <b>Append Data</b>, <b>Read Named Attributes</b>, <b>Write Named Attributes</b>, <b>Execute</b>, <b>Delete Children</b>, <b>Read Attributes</b>, <b>Write Attributes</b>, <b>Delete</b>, <b>Read ACL</b>, <b>Write ACL</b>, <b>Write Owner</b>, and <b>Synchronize</b>.
 
