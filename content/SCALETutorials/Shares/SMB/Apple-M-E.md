@@ -25,6 +25,8 @@ This share type automatically enables **Use Apple-style Character Encoding** to 
 
 Apple-style character encoding ensures that special characters and metadata are preserved correctly, which is essential when working with media files that have complex naming conventions.
 
+{{< include file="/static/includes/SMBVFSConfigurationWarning.md" >}}
+
 ## Prerequisites
 
 Before setting up a **MacOS Media Share**:
