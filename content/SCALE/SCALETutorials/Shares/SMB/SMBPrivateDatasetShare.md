@@ -17,7 +17,7 @@ They no longer support Home Shares as of October 2025.
 TrueNAS removed the home share option from the SMB share **Purpose** list in 24.04 (Dragonfish).
 
 The SMB share **Other Options** in pre-25.10 releases includes a home share legacy option, but it is not recommended for new shares.
-It is for organisations still using the legacy home shares option to add a single SMB share to provide a personal directory for every user account.
+It is for organizations still using the legacy home shares option to add a single SMB share to provide a personal directory for every user account.
 Future TrueNAS releases can introduce instability or require configuration changes affecting this legacy feature.
 This option does not show in 25.10 and later releases unless an existing home share is upgraded to 25.10 or later.
 {{< /hint >}}
