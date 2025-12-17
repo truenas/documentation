@@ -35,7 +35,6 @@ Auditing event types are:
 - Session and user
 - Sudo and root user commands (includes STIG-compliant shell commands)
 - SMB protocol and share
-- NFS protocol and share
 - iSCSI protocol and share
 - FTP service
 - STIG-compliant security objects
@@ -63,17 +62,21 @@ Generated every time a user logs into a shell session and uses sudo to perform a
 The event data for a sudo event includes the command.
 {{< /expand >}}
 
-### SMB and NFS Auditing Events
+### SMB Auditing Events
 
-SMB and NFS events are omitted by default from the **System > Audit** screen.
-To view these audit results, go to **System > Services** and click <i class="material-icons" aria-hidden="true" title="Audit Logs">receipt_long</i> **Audit Logs** for the SMB or NFS service or use advanced search on the main **Audit** screen to query {{< cli >}}"Service" = "SMB"{{< /cli >}}.
+SMB events are omitted by default from the **System > Audit** screen.
+To view these audit results, go to **System > Services** and click <i class="material-icons" aria-hidden="true" title="Audit Logs">receipt_long</i> **Audit Logs** for the SMB service or use the **Service** dropdown on the main **Audit** screen to select **SMB**.
 
 {{< hint type=info title="SMB Service Audit Logs" >}}
 SMB audit logs include all SMB protocol events, but do not include changes to SMB configuration, such as creating an SMB share or querying and modifying SMB ACLs.
 See the middleware service log to review those events.
 {{< /hint >}}
 
-The following sections also apply to NFS share audit logs.
+{{< hint type=note >}}
+SMB authentication events are logged globally for all users connecting to the SMB server, regardless of **Watch List** or **Ignore List** configuration.
+Watch and ignore lists control subsequent SMB operations (connect, create, write, read, etc.) but do not filter authentication events.
+This ensures a complete audit trail of all authentication attempts for security and compliance purposes.
+{{< /hint >}}
 
 {{< expand "Connect Events" "v" >}}
 Generated every time an SMB client performs an SMB tree connection (TCON) to a given share.
@@ -138,7 +141,7 @@ Each audit message is a single JSON file containing mandatory fields.
 It can also include additional optional records.
 Message size is limited to not exceeding 1024 bytes for maximum portability with different syslog implementations.
 
-Use the **Export to CSV** button on an audit screen to download audit logs in a format readable in a spreadsheet program.
+Use the **Export** button on an audit screen to download audit logs in CSV, JSON, or YAML format. CSV format is readable in spreadsheet programs.
 Use the **Copy to Clipboard** option on the **Event Data** widget to copy the selected audit message event record to a text or JSON object file.
 The JSON object for an audit message contains the version information, the service that might be the name of the SMB share, a session ID, and the tree connection (tcon_id).
 
@@ -175,21 +178,23 @@ Users have access to audit information from three locations in the TrueNAS UI:
 
 ## Searching Audit Logs
 
-{{< trueimage src="/images/SCALE/SystemSettings/SystemSettingsAuditScreen.png" alt="Audit Screen" id="Audit Screen" >}}
+{{< trueimage src="/images/SCALE/SystemSettings/AuditScreen.png" alt="Audit Screen" id="Audit Screen" >}}
+
+Use the **Service** dropdown at the top of the screen to filter audit entries by service type (SMB, Middleware, etc.).
 
 The audit screen includes basic and advanced search options.
 Click **Switch to Basic** to change to the basic search function or click **Switch to Advanced** to show the advanced search operators.
 
 You can enter any filters in the basic **Search** field to show events matching the entry.
 
-To enter advanced search parameters, use the format displayed in the field, for example, *Service = "SMB" AND Event = "CLOSE"* to show closed SMB events.
+To enter advanced search parameters, use the format displayed in the field, for example, *Event = "CLOSE"* to show close events. Use the **Service** dropdown to filter by service type (SMB, Middleware, etc.) before or after applying advanced search filters.
 Event types are listed in [Auditing Event Types](#auditing-event-types).
 
 Advanced search uses a syntax similar to SQL/JQL and allows several custom variables for filtering.
 Parentheses define query priority.
 Clicking the advanced **Search** field prompts you with a dropdown of available event types, options, and operators to help you complete the search string.
 
-For example, to search for any SMB connect or close event from the user *smbuser* or any non-authentication SMB events, enter `(Service = "SMB" AND Event in ("Connect", "Close") AND User in ("smbuser")) OR (Event != "Authentication"  AND Service = "SMB")`.
+For example, to search for connect or close events from the user *smbuser*, select **SMB** from the **Service** dropdown and enter `Event in ("Connect", "Close") AND User = "smbuser"` in the advanced search field. To exclude authentication events, enter `Event != "Authentication"`.
 
 {{< trueimage src="/images/SCALE/SystemSettings/AuditAdvancedSearch.png" alt="Advanced Search" id="Advanced Search" >}}
 
@@ -197,7 +202,7 @@ The advanced search automatically checks syntax and shows <i class="material-ico
 
 Click on a row to show details of that event in the **Metadata** and **Event Data** widgets.
 
-**Export as CSV** sends the event log data to a CSV file you can open in a spreadsheet program (i.e., MS Excel, Google Sheets, etc.) or other data management app that accepts CSV files.
+**Export** provides a dropdown to export event log data in CSV, JSON, or YAML format. CSV files can be opened in spreadsheet programs (i.e., MS Excel, Google Sheets, etc.). JSON and YAML formats are useful for importing into data management applications or automation tools.
 
 The <i class="material-icons" aria-hidden="true" title="Copy to Clipboard">assignment</i> (**Copy to Clipboard**) icon shows two options, **Copy Text** and **Copy Json**.
 **Copy Text** copies the event to a text file.
