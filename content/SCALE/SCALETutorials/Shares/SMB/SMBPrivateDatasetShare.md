@@ -165,7 +165,7 @@ You can set the owning group to your Active Directory domain admins. Click **App
 
 {{< trueimage src="/images/SCALE/Shares/SetACLPresetForPrivateDataset.png" alt="Add Dataset ACL Permissions" id="Add Dataset ACL Permissions" >}}
 
-![GroupDomainAdminsSCALE](/images/SCALE/Datasets/GroupDomainAdmins.png "Set the owning group to Domain Admins")
+{{< trueimage src="/images/SCALE/Datasets/GroupDomainAdmins.png" alt="Set the owning group to Domain Admins" id="Set the owning group to Domain Admins" >}}
 
 Click **Use Preset** and choose **NFS4_HOME**. If the dataset has a POSIX ACL, choose **HOME**.
 Click **Continue**.
