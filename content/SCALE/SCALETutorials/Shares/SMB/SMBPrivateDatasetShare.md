@@ -112,7 +112,7 @@ To create SMB private dataset share, go to **Shares**, and click **Add** on the 
 3. Enter the private dataset name, for example *rikka-private*, then click **Create Dataset**.
    The dialog closes, and **Path** is populated with the full path to the new dataset.
 
-   If you created a simple share and dataset using the **Add Dataset** screen, to customize it, go to **Shares**, select it on the **SMB** screen (or widget if it shows on the list), then click **Edit**. Verify the path and **Name** field are populated, and change the "Purpose" from **Default Share** to **Private Dataset**.
+   If you create a simple share and dataset using the **Add Dataset** screen, to customize it, go to **Shares**, select it on the **SMB** screen (or widget if it shows on the list), then click **Edit**. Verify the path and **Name** field are populated, and change the "Purpose" from **Default Share** to **Private Dataset**.
    
    {{< trueimage src="/images/SCALE/Shares/EditPrivateShareDataset.png" alt="Edit Private Share Dataset" id="Edit Private Share Dataset" >}}
 
