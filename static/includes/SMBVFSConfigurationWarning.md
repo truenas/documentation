@@ -1,37 +1,34 @@
 &NewLine;
 
-{{< hint type=info title="About VFS Module Configuration" >}}
+{{< hint type=info title="Manual VFS Configuration Is Not Supported" >}}
 Many online guides recommend manually configuring SMB VFS options for macOS compatibility:
 
 ```
 vfs objects = catia fruit streams_xattr
 ```
 
-TrueNAS handles this differently. Instead of manual configuration, the TrueNAS **MacOS Media Share** purpose preset automatically configures these VFS modules in a way that integrates properly with TrueNAS architecture.
+TrueNAS does not support manual VFS module configuration. This is because setting the configuration above overrides the TrueNAS default VFS module configuration, which unknowingly causes breakages with critical TrueNAS features including Asynchronous I/O (AIO), Access Control Lists (ACLs), and Shadow Copies.
 
-If you attempt to manually configure VFS options through Auxiliary Parameters, TrueNAS raises a validation error to prevent configuration conflicts.
+If you attempt to manually configure VFS options through Auxiliary Parameters, TrueNAS raises a validation error to prevent these configuration conflicts.
 
-{{< expand "Why does TrueNAS use a different approach?" "v" >}}
-The TrueNAS SMB implementation includes advanced features that require careful integration with VFS modules:
+{{< expand "Why does TrueNAS handle VFS modules differently?" "v" >}}
+The TrueNAS SMB implementation integrates VFS modules with several advanced features:
 
-Asynchronous I/O (AIO) Integration
+Asynchronous I/O (AIO)
+- TrueNAS uses AIO for SMB performance optimization
+- Manual VFS configuration can override the VFS modules needed for AIO functionality
+- This can lead to poor performance or stability issues
 
-- TrueNAS uses advanced AIO for SMB performance optimization
-- Manual VFS configuration can conflict with the TrueNAS AIO implementation
-- Conflicts can lead to poor performance or data integrity issues
-
-Access Control List (ACL) Handling
-
+Access Control Lists (ACLs)
 - The TrueNAS ACL implementation requires specific VFS module integration
 - Manual VFS configuration can bypass or break ACL functionality
 - This can result in incorrect permission handling
 
-Managed Configuration
+Shadow Copies
+- TrueNAS Shadow Copies enable point-in-time recovery of files
+- Manual VFS configuration can disable Shadow Copy functionality
+- Users lose the ability to restore previous file versions
 
-- The **MacOS Media Share** preset ensures all components work together correctly
-- VFS modules are configured with parameters specific to TrueNAS architecture
-- Automatic configuration prevents common misconfiguration issues
-
-By using TrueNAS purpose presets, you get a share that works seamlessly with Apple media and entertainment products such as Final Cut Pro, Logic Pro, Motion, and Compressor, without manually configuring VFS options.
+The **Final Cut Pro Storage Share** purpose preset automatically configures VFS modules to integrate properly with TrueNAS AIO, ACLs, and Shadow Copies. By using this preset instead of manual configuration, you get a share that works seamlessly with Final Cut Pro without risking system functionality.
 {{< /expand >}}
 {{< /hint >}}

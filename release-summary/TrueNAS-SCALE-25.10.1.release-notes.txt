@@ -3,7 +3,7 @@
 This maintenance release resolves a critical storage pool upgrade issue, enhances SMB configurations for Apple workflows, and improves virtual machine stability.
 
 - **New Features:**
-  - MacOS Media Share SMB preset optimized for Apple media workflows.
+  - Final Cut Pro Storage Share SMB preset optimized for Final Cut Pro workflows.
   - SMB audit logging validation automatically disables misconfigured shares.
   - REST API usage monitoring with daily alerts for deprecated endpoints.
   - Directory services "Clear Config" button for easier reconfiguration.
