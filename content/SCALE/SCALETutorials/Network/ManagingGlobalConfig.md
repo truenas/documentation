@@ -27,6 +27,10 @@ Go to **System > Network**, and click **Settings** on the **Network Configuratio
 
 1. Enter the host name for your TrueNAS in **Hostname**. For example, replace the default value *truenas* with something like *localnas*.
 
+   {{< hint type=note >}}
+   If you plan to use Active Directory or SMB services, the hostname is also used as the NetBIOS name and must comply with NetBIOS naming restrictions: maximum 15 characters, cannot contain `\ / : * ? " < > |`, and cannot use Microsoft or RFC 852 reserved words (ANONYMOUS, AUTHENTICATED USER, BATCH, BUILTIN, DIALUP, DOMAIN, ENTERPRISE, INTERACTIVE, INTERNET, LOCAL, NETWORK, NULL, PROXY, RESTRICTED, SELF, SERVER, USERS, WORLD, GATEWAY, GW, TAC). TrueNAS 25.04 and later enforce these restrictions through validation.
+   {{< /hint >}}
+
    {{< trueimage src="/images/SCALE/Network/GlobalConfigHostAndDomainNameSettings.png" alt="Global Configuration Host and Domain Name Settings" id="Global Configuration Host and Domain Name Settings" >}}
 
 2. Enter the system domain name in **Domain**. For example, replace the default **local** with *example.com*.
