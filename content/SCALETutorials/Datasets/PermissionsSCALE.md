@@ -248,7 +248,7 @@ Options are: <b>Read Data</b>, <b>Write Data</b>, <b>Append Data</b>, <b>Read Na
      * **File Inherit** - Selected by default. Limits ACL inheritance for files in the dataset for the selected ACE item.
      * **Directory Inherit** - Selected by default. Limits ACL inheritance for directories in the dataset for the selected ACE item.
      * **No Propagate Inherit** - Limits ACL inheritance to direct child directories. Files and directories created in this dataset inherit the ACL, but subdirectories cannot pass it further down the tree for the selected ACE item.
-     * **Inherit Only** - Removes the ACE from permission checks but allows new files or subdirectories to inherit it for this dataset and the selected ACE item. Inherit Only is removed from these new objects.
+     * **Inherit Only** - Removes the ACE from permission checks but allows new files or subdirectories to inherit it for this dataset and the selected ACE item. **Inherit Only** is removed from these new objects.
      * **Inherited** - Selected by default. Indicates the selected ACE item inherited the ACL from the parent dataset (set by TrueNAS).
 
    Selecting <b>Advanced</b> allows more granular control of file and directory permissions for a selected ACE item (such as a user) on the **Access Control List**.
