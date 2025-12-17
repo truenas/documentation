@@ -63,7 +63,7 @@ The TrueNAS team is pleased to release TrueNAS 25.10.1!
 * Fixes VDI disk import for virtual machines ([NAS-137897](https://ixsystems.atlassian.net/browse/NAS-137897)).
   Resolves errors when creating VMs using .vdi disk images.
 * Improves error handling for legacy FreeNAS dataset properties ([NAS-138629](https://ixsystems.atlassian.net/browse/NAS-138629)).
-  Users may encounter `"aclmode: failed to get property"` errors when editing datasets on long-running systems that contain invalid `aclmode=discard_chmod` property values from legacy FreeNAS versions. This update improves error messaging to help identify affected datasets. If you encounter this error, run `zfs set aclmode=passthrough dataset_name` via CLI to reset the property to a valid value, then reboot the system.
+  Users can encounter `"aclmode: failed to get property"` errors when editing datasets on long-running systems that contain invalid `aclmode=discard_chmod` property values from legacy FreeNAS versions. This update improves error messaging to help identify affected datasets. If you encounter this error, run `zfs set aclmode=passthrough dataset_name` via CLI to reset the property to a valid value, then reboot the system.
 * Improves error messaging for pool operations ([NAS-138330](https://ixsystems.atlassian.net/browse/NAS-138330)).
   Provides clearer error messages when attempting to extend VDEVs or replace disks fails due to ZFS checkpoints or other conditions.
 * Fixes rsync tasks using SSH keychain credentials ([NAS-138334](https://ixsystems.atlassian.net/browse/NAS-138334)).
@@ -75,7 +75,7 @@ The TrueNAS team is pleased to release TrueNAS 25.10.1!
 * Restores HDD temperature data via SNMP ([NAS-138433](https://ixsystems.atlassian.net/browse/NAS-138433)).
   Resolves issue where SNMP queries for disk temperature (OID .1.3.6.1.4.1.50536.3) returned no data after upgrading to 25.10.0.
 * Fixes issue disabling SSH and Shell access for user accounts ([NAS-138307](https://ixsystems.atlassian.net/browse/NAS-138307)).
-  The **Save** button no longer becomes disabled when unchecking these access options.
+  The **Save** button no longer becomes disabled when clearing these access options.
 
 <a href="#full-changelog" target="_blank">Click here</a> to see the full 25.10 changelog or visit the <a href="https://ixsystems.atlassian.net/issues/?filter=13697" target="_blank">TrueNAS 25.10.1 (Goldeye) Changelog</a> in Jira.
 
@@ -250,7 +250,7 @@ The TrueNAS team is pleased to release TrueNAS 25.10-RC.1!
   Prevents libvirt service from starting automatically when browsing VM creation options, improving system responsiveness.
 * Enhances session security with improved random number generation ([NAS-137318](https://ixsystems.atlassian.net/browse/NAS-137318)).
   Uses SSL-based random number generator for creating session IDs, improving overall cryptographic security.
-* Fixes an issue where the ACL editor ignored unchecked "Apply Owner" and "Apply Group" checkboxes and always applied owner/group changes recursively, potentially causing unintended ownership changes ([NAS-137378](https://ixsystems.atlassian.net/browse/NAS-137378)).
+* Fixes an issue where the ACL editor ignored unset "Apply Owner" and "Apply Group" checkboxes and always applied owner/group changes recursively, potentially causing unintended ownership changes ([NAS-137378](https://ixsystems.atlassian.net/browse/NAS-137378)).
 * The PGP public keys for the TrueNAS Security Team have been renewed and published to the [TrueNAS Security Advisories](https://security.truenas.com/).
 
 <a href="#full-changelog" target="_blank">Click here</a> to see the full 25.10 changelog or visit the <a href="https://ixsystems.atlassian.net/issues/?filter=13361" target="_blank">TrueNAS 25.10-RC.1 (Goldeye) Changelog</a> in Jira.
@@ -380,7 +380,7 @@ These are ongoing issues that can affect multiple versions in the 25.10 series.
 
 * Kerberized NFS and SMB host access control improvements in progress ([NAS-138814](https://ixsystems.atlassian.net/browse/NAS-138814)).
   TrueNAS 25.10.0 and 25.10.1 users should exercise caution when using Kerberized NFS, particularly in high-availability configurations with Active Directory or FreeIPA.
-  Known issues include potential failover scenarios where NFS service restart may not properly restore client connectivity.
+  Known issues include potential failover scenarios where NFS service restart might not properly restore client connectivity.
   Additionally, SMB **hosts allow** and **hosts deny** host access controls were limited to legacy share purposes in 25.10.0.
 
   Improvements to Kerberized NFS functionality, Kerberos keytab synchronization for Active Directory, and restoration of SMB host access controls to all share purposes are actively being developed and tested for inclusion in TrueNAS 25.10.2.
@@ -601,7 +601,7 @@ This driver update ensures TrueNAS Apps and Containers can utilize modern GPU ac
 The open GPU kernel drivers are [compatible with Turing architecture and later GPUs](https://github.com/NVIDIA/open-gpu-kernel-modules/tree/570?tab=readme-ov-file#compatible-gpus), which includes GTX 16-series cards and all RTX series cards.
 Newer architectures like NVIDIA Blackwell (RTX 50-series, RTX PRO Blackwell) require the nvidia-open driver to function, as this driver leverages the built-in NVIDIA GSP (GPU System Processor).
 
-To verify your GPU is supported, check the installed NVIDIA driver version in [Software Component Versions](#component-versions-tab). Click the driver version number to view NVIDIA's release page, which includes a "Supported Products" tab listing all compatible GPUs for that driver version.
+To verify your GPU is supported, check the installed NVIDIA driver version in [Software Component Versions](#component-versions-tab). Click the driver version number to view the NVIDIA release page, which includes a "Supported Products" tab listing all compatible GPUs for that driver version.
 
 Users with compatible hardware can enable TrueNAS to install NVIDIA drivers.
 See the TrueNAS Apps Market for [installation instructions](https://apps.truenas.com/getting-started/initial-setup/#installing-nvidia-drivers).
