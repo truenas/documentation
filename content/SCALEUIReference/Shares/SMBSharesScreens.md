@@ -89,7 +89,7 @@ It opens the [**Create Dataset**](#create-dataset) dialog.
 
 **Enable Now** appears on both the Add SMB and Edit SMB screens after selecting the **Time Machine Share** option in **Purpose** if the **Enable SMB2/3 Protocol** option is not already enabled in the **Advanced Options** section of the [**SMB** service screen]({{< ref "SMBServicesScreen.md" >}}).
 
-**Enable Now** also appears on both the Add SMB and Edit SMB screens after selecting the **Final Cut Pro Storage Share** option in **Purpose** if the **Enable Apple SMB2/3 Protocol Extensions** option is not already enabled in the **Advanced Options** section of the [**SMB** service screen]({{< ref "SMBServicesScreen.md" >}}). When this requirement is not met, an inline requirement error message appears below the **Purpose** field stating: *This parameter requires Apple SMB2/3 protocol extension support to be enabled in SMB service.* Click **Enable Now** to enable the required setting. The service updates automatically.
+**Enable Now** also appears on both the **Add SMB** and **Edit SMB** screens after selecting the **Final Cut Pro Storage Share** option in **Purpose** if the **Enable Apple SMB2/3 Protocol Extensions** option is not already enabled in the **Advanced Options** section of the [**SMB** service screen]({{< ref "SMBServicesScreen.md" >}}). When this requirement is not met, an inline requirement error message appears below the **Purpose** field stating: *This parameter requires Apple SMB2/3 protocol extension support to be enabled in SMB service.* Click **Enable Now** to enable the required setting. The service updates automatically.
 
 ### Basic Settings
 
@@ -223,7 +223,7 @@ When **Purpose** is set to **Final Cut Pro Storage Share**, the following settin
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Use Apple-style Character Encoding** | Automatically enabled and non-editable for Final Cut Pro Storage Share. This implements Apple-style character encoding for NTFS illegal characters, which is required for proper operation of Final Cut Pro. This setting cannot be changed for this share purpose because it is essential for Final Cut Pro compatibility. |
+| **Use Apple-style Character Encoding** | Automatically enabled and non-editable for **Final Cut Pro Storage Share**. This implements Apple-style character encoding for NTFS illegal characters, which is required for proper operation of Final Cut Pro. This setting cannot be changed for this share purpose because it is essential for Final Cut Pro compatibility. |
 {{< /truetable >}}
 {{< /tab >}}
 {{< /tabs >}}
@@ -245,7 +245,7 @@ We recommend changing **Purpose** to **Private Datasets Share**. Refer to the in
 {{< include file="/static/includes/auxiliary-parameters-caution.md" >}}
 
 {{< hint type=note >}}
-VFS module configuration (`catia`, `fruit`, `streams_xattr`) cannot be set through Auxiliary Parameters. Use the appropriate share purpose preset (Final Cut Pro Storage Share, Time Machine, etc.) instead.
+VFS module configuration (`catia`, `fruit`, `streams_xattr`) cannot be set through auxiliary parameters. Use the appropriate share purpose preset (Final Cut Pro Storage Share, Time Machine, etc.) instead.
 {{< /hint >}}
 
 This table lists (pre-25.10) **Other Options** settings.

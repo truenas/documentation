@@ -7,7 +7,7 @@ Many online guides recommend manually configuring SMB VFS options for macOS comp
 vfs objects = catia fruit streams_xattr
 ```
 
-TrueNAS does not support manual VFS module configuration. Manually setting VFS objects via Auxiliary Parameters or CLI overrides TrueNAS defaults and breaks Asynchronous I/O (AIO), Access Control Lists (ACLs), and Shadow Copies.
+TrueNAS does not support manual VFS module configuration. Manually setting VFS objects via auxiliary parameters or CLI overrides TrueNAS defaults and breaks Asynchronous I/O (AIO), Access Control Lists (ACLs), and Shadow Copies.
 
 {{< expand "Why does TrueNAS handle VFS modules differently?" "v" >}}
 The TrueNAS SMB implementation integrates VFS modules with several advanced features:
