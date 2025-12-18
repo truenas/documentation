@@ -46,18 +46,6 @@ See [Using Administrator Logins]({{< ref "adminroles" >}}) for more information.
 
 ## Creating User Accounts
 
-**SMB Access** is the default user access type that allows using the account credentials to access data shared with [SMB]({{< ref "/SCALEUIReference/Shares" >}}).
-
-When creating a user, you must:
-
-* Enter a **Full Name** or description for the user, such as a first and last name.
-* Enter a **Username**.
-* Enter a **Password**.
-* Specify or accept the default user ID (**UID**)
-
-TrueNAS requires other options based on the level of access and role assigned to the user.
-The **Shell** option only shows for users with **Shell Access** or **SSH Access** selected.
-
 {{< include file="/static/includes/AddingAUser.md" >}}
 
 ### Disabling a Password
