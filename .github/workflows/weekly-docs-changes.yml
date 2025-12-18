@@ -98,56 +98,24 @@ jobs:
       - name: Generate AI summaries
         if: steps.get-merged-prs.outputs.pr-count > 0
         id: generate-summaries
+        shell: bash
         run: |
-          # Save result to file to avoid shell escaping issues
           echo '${{ steps.get-merged-prs.outputs.result }}' > result.json
-          
-          # Build PR list for the prompt
           jq -r '.prs[] | "PR #\(.number): \(.title) (Files: \(.filesChanged), Category: \(.category))"' result.json > pr_list.txt
-          
-          # Build the prompt directly
           echo "Summarize each of these documentation PRs in one clear, concise sentence (max 15 words). Return ONLY valid JSON as an array of objects with 'number' (integer) and 'summary' (string) fields. No markdown, no code blocks, just the JSON array." > prompt.txt
           echo "" >> prompt.txt
           echo "PRs:" >> prompt.txt
           cat pr_list.txt >> prompt.txt
-          
-          # Create API request with proper JSON escaping
-          jq -n \
-            --rawfile prompt prompt.txt \
-            '{
-              model: "claude-sonnet-4-20250514",
-              max_tokens: 2000,
-              messages: [{
-                role: "user",
-                content: $prompt
-              }]
-            }' > request.json
-          
+          jq -n --rawfile prompt prompt.txt '{model: "claude-sonnet-4-20250514", max_tokens: 2000, messages: [{role: "user", content: $prompt}]}' > request.json
           echo "Calling Anthropic API..."
-          
-          # Call Anthropic API
-          curl -s https://api.anthropic.com/v1/messages \
-            -H "Content-Type: application/json" \
-            -H "x-api-key: ${{ secrets.ANTHROPIC_API_KEY }}" \
-            -H "anthropic-version: 2023-06-01" \
-            -d @request.json > response.json
-          
+          curl -s https://api.anthropic.com/v1/messages -H "Content-Type: application/json" -H "x-api-key: ${{ secrets.ANTHROPIC_API_KEY }}" -H "anthropic-version: 2023-06-01" -d @request.json > response.json
           echo "API Response:"
           cat response.json | jq '.'
-          
-          # Extract and clean the summaries
           cat response.json | jq -r '.content[0].text' | sed 's/^```json//g' | sed 's/^```//g' | sed 's/```$//g' > summaries_raw.txt
-          
-          # Validate it's proper JSON and minify it
           SUMMARIES=$(cat summaries_raw.txt | jq -c '.')
-          
           echo "Extracted summaries:"
           echo "$SUMMARIES" | jq '.'
-          
-          # Save to output file
           echo "$SUMMARIES" > summaries.json
-          
-          # Use printf to avoid any shell interpretation issues
           printf "summaries<<EOFMARKER\n%s\nEOFMARKER\n" "$SUMMARIES" >> "$GITHUB_OUTPUT"
 
       - name: Send Slack notification
