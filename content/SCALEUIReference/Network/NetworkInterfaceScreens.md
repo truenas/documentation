@@ -106,7 +106,7 @@ Use **Description** to further define or clarify how or where the bridge is used
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Parent Interface** | Shows a dropdown list of VLAN parent interface options. Options are usually an Ethernet card connected to a switch port configured for the VLAN. New link aggregations are not available until you restart the system. |
+| **Parent Interface** | Shows a dropdown list of VLAN parent interface options. Options are usually an Ethernet card connected to a switch port configured for the VLAN. |
 | **VLAN Tag** |(Required) Accepts manual or copy/paste entry of the numeric tag configured in the switched network. Request this tag from your IT department if you are not the network administrator for your systems. |
 | **Priority Code Point** | Shows a dropdown list of the class of service options. The available 802.1p class of service ranges from **Best effort (default)** to **Network control (highest)**. |
 {{< /truetable >}}
