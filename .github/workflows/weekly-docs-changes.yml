@@ -74,7 +74,8 @@ jobs:
                 mergedAt: pr.merged_at,
                 category: category,
                 filesChanged: files.length,
-                labels: pr.labels.map(l => l.name).join(', ')
+                labels: pr.labels.map(l => l.name).join(', '),
+                body: pr.body || ''
               });
             }
             
@@ -94,10 +95,53 @@ jobs:
             core.setOutput('result', JSON.stringify(result));
             return result;
 
+      - name: Generate AI summaries
+        if: steps.get-merged-prs.outputs.pr-count > 0
+        id: generate-summaries
+        run: |
+          RESULT='${{ steps.get-merged-prs.outputs.result }}'
+          
+          # Build prompt with PR details
+          PR_LIST=$(echo "$RESULT" | jq -r '.prs[] | "PR #\(.number): \(.title)\nFiles changed: \(.filesChanged)\nCategory: \(.category)"' | tr '\n' ' ' | sed 's/PR #/\nPR #/g')
+          
+          # Create the API request
+          cat > request.json << 'EOF'
+          {
+            "model": "claude-sonnet-4-20250514",
+            "max_tokens": 2000,
+            "messages": [{
+              "role": "user",
+              "content": "Summarize each of these documentation PRs in one clear, concise sentence (max 15 words). Return ONLY valid JSON as an array of objects with 'number' (integer) and 'summary' (string) fields. No markdown, no code blocks, just the JSON array.\n\nPRs:\n"
+            }]
+          }
+          EOF
+          
+          # Add PR list to the prompt
+          jq --arg prs "$PR_LIST" '.messages[0].content += $prs' request.json > request_final.json
+          
+          # Call Anthropic API
+          RESPONSE=$(curl -s https://api.anthropic.com/v1/messages \
+            -H "Content-Type: application/json" \
+            -H "x-api-key: ${{ secrets.ANTHROPIC_API_KEY }}" \
+            -H "anthropic-version: 2023-06-01" \
+            -d @request_final.json)
+          
+          echo "API Response:"
+          echo "$RESPONSE" | jq '.'
+          
+          # Extract the text content and clean it
+          SUMMARIES=$(echo "$RESPONSE" | jq -r '.content[0].text' | sed 's/^```json//g' | sed 's/^```//g' | sed 's/```$//g' | tr -d '\n' | jq -c '.')
+          
+          echo "Extracted summaries:"
+          echo "$SUMMARIES" | jq '.'
+          
+          echo "summaries=$SUMMARIES" >> $GITHUB_OUTPUT
+
       - name: Send Slack notification
         if: steps.get-merged-prs.outputs.pr-count > 0
         run: |
           RESULT='${{ steps.get-merged-prs.outputs.result }}'
+          SUMMARIES='${{ steps.generate-summaries.outputs.summaries }}'
           REPO_NAME="${{ github.repository }}"
           WEEK_START=$(date -d '7 days ago' +'%B %d' 2>/dev/null || date -v-7d +'%B %d')
           WEEK_END=$(date +'%B %d, %Y')
@@ -109,48 +153,65 @@ jobs:
           REMOVED_COUNT=$(echo "$RESULT" | jq '.grouped.removed | length')
 
           echo "Total PRs found: $TOTAL_PRS"
+          echo "Summaries available: $(echo "$SUMMARIES" | jq 'length')"
 
           SECTIONS='[]'
 
           if [ "$NEW_COUNT" -gt 0 ]; then
-            NEW_SECTION=$(echo "$RESULT" | jq -r --arg count "$NEW_COUNT" '{
+            NEW_SECTION=$(echo "$RESULT" | jq -r --arg count "$NEW_COUNT" --argjson summaries "$SUMMARIES" '{
               type: "section",
               text: {
                 type: "mrkdwn",
-                text: ("✨ *New content* (\($count))\n" + (.grouped.new | map("• <\(.url)|PR #\(.number)>: \(.title)\n_@\(.author) • \(.filesChanged) file(s)_") | join("\n")))
+                text: ("✨ *New content* (\($count))\n" + (.grouped.new | map(
+                  . as $pr | 
+                  ($summaries | map(select(.number == $pr.number) | .summary) | .[0] // $pr.title) as $summary |
+                  "• <\($pr.url)|PR #\($pr.number)>: \($summary)\n_@\($pr.author) • \($pr.filesChanged) file(s)_"
+                ) | join("\n")))
               }
             }')
             SECTIONS=$(echo "$SECTIONS" | jq --argjson section "$NEW_SECTION" '. + [$section]')
           fi
 
           if [ "$UPDATED_COUNT" -gt 0 ]; then
-            UPDATED_SECTION=$(echo "$RESULT" | jq -r --arg count "$UPDATED_COUNT" '{
+            UPDATED_SECTION=$(echo "$RESULT" | jq -r --arg count "$UPDATED_COUNT" --argjson summaries "$SUMMARIES" '{
               type: "section",
               text: {
                 type: "mrkdwn",
-                text: ("📝 *Updated content* (\($count))\n" + (.grouped.updated | map("• <\(.url)|PR #\(.number)>: \(.title)\n_@\(.author) • \(.filesChanged) file(s)_") | join("\n")))
+                text: ("📝 *Updated content* (\($count))\n" + (.grouped.updated | map(
+                  . as $pr | 
+                  ($summaries | map(select(.number == $pr.number) | .summary) | .[0] // $pr.title) as $summary |
+                  "• <\($pr.url)|PR #\($pr.number)>: \($summary)\n_@\($pr.author) • \($pr.filesChanged) file(s)_"
+                ) | join("\n")))
               }
             }')
             SECTIONS=$(echo "$SECTIONS" | jq --argjson section "$UPDATED_SECTION" '. + [$section]')
           fi
 
           if [ "$FIXED_COUNT" -gt 0 ]; then
-            FIXED_SECTION=$(echo "$RESULT" | jq -r --arg count "$FIXED_COUNT" '{
+            FIXED_SECTION=$(echo "$RESULT" | jq -r --arg count "$FIXED_COUNT" --argjson summaries "$SUMMARIES" '{
               type: "section",
               text: {
                 type: "mrkdwn",
-                text: ("🐛 *Bug fixes* (\($count))\n" + (.grouped.fixed | map("• <\(.url)|PR #\(.number)>: \(.title)\n_@\(.author) • \(.filesChanged) file(s)_") | join("\n")))
+                text: ("🐛 *Bug fixes* (\($count))\n" + (.grouped.fixed | map(
+                  . as $pr | 
+                  ($summaries | map(select(.number == $pr.number) | .summary) | .[0] // $pr.title) as $summary |
+                  "• <\($pr.url)|PR #\($pr.number)>: \($summary)\n_@\($pr.author) • \($pr.filesChanged) file(s)_"
+                ) | join("\n")))
               }
             }')
             SECTIONS=$(echo "$SECTIONS" | jq --argjson section "$FIXED_SECTION" '. + [$section]')
           fi
 
           if [ "$REMOVED_COUNT" -gt 0 ]; then
-            REMOVED_SECTION=$(echo "$RESULT" | jq -r --arg count "$REMOVED_COUNT" '{
+            REMOVED_SECTION=$(echo "$RESULT" | jq -r --arg count "$REMOVED_COUNT" --argjson summaries "$SUMMARIES" '{
               type: "section",
               text: {
                 type: "mrkdwn",
-                text: ("🗑️ *Removed content* (\($count))\n" + (.grouped.removed | map("• <\(.url)|PR #\(.number)>: \(.title)\n_@\(.author) • \(.filesChanged) file(s)_") | join("\n")))
+                text: ("🗑️ *Removed content* (\($count))\n" + (.grouped.removed | map(
+                  . as $pr | 
+                  ($summaries | map(select(.number == $pr.number) | .summary) | .[0] // $pr.title) as $summary |
+                  "• <\($pr.url)|PR #\($pr.number)>: \($summary)\n_@\($pr.author) • \($pr.filesChanged) file(s)_"
+                ) | join("\n")))
               }
             }')
             SECTIONS=$(echo "$SECTIONS" | jq --argjson section "$REMOVED_SECTION" '. + [$section]')
