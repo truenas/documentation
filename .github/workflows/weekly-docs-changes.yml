@@ -115,10 +115,10 @@ jobs:
           cat prompt_header.txt pr_list.txt > full_prompt.txt
           
           # Build JSON Payload safely using jq
-          # Note: Switched to claude-3-5-sonnet-20240620
+          # UPDATED: Using Claude 4.5 Sonnet (Released Sep 2025)
           jq -n --rawfile prompt full_prompt.txt \
             '{
-              model: "claude-3-5-sonnet-latest", 
+              model: "claude-sonnet-4-5-20250929", 
               max_tokens: 2000, 
               messages: [{role: "user", content: $prompt}]
             }' > request.json
@@ -133,7 +133,7 @@ jobs:
           # Extract content and clean potential markdown code blocks
           cat response.json | jq -r '.content[0].text' | sed 's/^```json//g' | sed 's/^```//g' | sed 's/```$//g' > summaries.json
           
-          # Validate JSON (Optional but good practice)
+          # Validate JSON
           if ! jq -e . summaries.json >/dev/null 2>&1; then
             echo "Error: Invalid JSON received from API"
             cat response.json
