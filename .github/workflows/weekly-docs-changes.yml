@@ -99,43 +99,55 @@ jobs:
         if: steps.get-merged-prs.outputs.pr-count > 0
         id: generate-summaries
         run: |
-          RESULT='${{ steps.get-merged-prs.outputs.result }}'
+          # Save result to file to avoid shell escaping issues
+          echo '${{ steps.get-merged-prs.outputs.result }}' > result.json
           
-          # Build prompt with PR details
-          PR_LIST=$(echo "$RESULT" | jq -r '.prs[] | "PR #\(.number): \(.title)\nFiles changed: \(.filesChanged)\nCategory: \(.category)"' | tr '\n' ' ' | sed 's/PR #/\nPR #/g')
+          # Build PR list for the prompt
+          jq -r '.prs[] | "PR #\(.number): \(.title) (Files: \(.filesChanged), Category: \(.category))"' result.json > pr_list.txt
           
-          # Create the API request
-          cat > request.json << 'EOF'
-          {
-            "model": "claude-sonnet-4-20250514",
-            "max_tokens": 2000,
-            "messages": [{
-              "role": "user",
-              "content": "Summarize each of these documentation PRs in one clear, concise sentence (max 15 words). Return ONLY valid JSON as an array of objects with 'number' (integer) and 'summary' (string) fields. No markdown, no code blocks, just the JSON array.\n\nPRs:\n"
-            }]
-          }
-          EOF
+          # Build the prompt
+          PROMPT="Summarize each of these documentation PRs in one clear, concise sentence (max 15 words). Return ONLY valid JSON as an array of objects with 'number' (integer) and 'summary' (string) fields. No markdown, no code blocks, just the JSON array.
+
+PRs:
+$(cat pr_list.txt)"
           
-          # Add PR list to the prompt
-          jq --arg prs "$PR_LIST" '.messages[0].content += $prs' request.json > request_final.json
+          # Create API request with proper JSON escaping
+          jq -n \
+            --arg prompt "$PROMPT" \
+            '{
+              model: "claude-sonnet-4-20250514",
+              max_tokens: 2000,
+              messages: [{
+                role: "user",
+                content: $prompt
+              }]
+            }' > request.json
+          
+          echo "Calling Anthropic API..."
           
           # Call Anthropic API
-          RESPONSE=$(curl -s https://api.anthropic.com/v1/messages \
+          curl -s https://api.anthropic.com/v1/messages \
             -H "Content-Type: application/json" \
             -H "x-api-key: ${{ secrets.ANTHROPIC_API_KEY }}" \
             -H "anthropic-version: 2023-06-01" \
-            -d @request_final.json)
+            -d @request.json > response.json
           
           echo "API Response:"
-          echo "$RESPONSE" | jq '.'
+          cat response.json | jq '.'
           
-          # Extract the text content and clean it
-          SUMMARIES=$(echo "$RESPONSE" | jq -r '.content[0].text' | sed 's/^```json//g' | sed 's/^```//g' | sed 's/```$//g' | tr -d '\n' | jq -c '.')
+          # Extract and clean the summaries
+          cat response.json | jq -r '.content[0].text' | sed 's/^```json//g' | sed 's/^```//g' | sed 's/```$//g' > summaries_raw.txt
+          
+          # Validate it's proper JSON and minify it
+          SUMMARIES=$(cat summaries_raw.txt | jq -c '.')
           
           echo "Extracted summaries:"
           echo "$SUMMARIES" | jq '.'
           
-          echo "summaries=$SUMMARIES" >> $GITHUB_OUTPUT
+          # Use delimiter to safely output multiline content
+          echo "summaries<<EOF" >> $GITHUB_OUTPUT
+          echo "$SUMMARIES" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
 
       - name: Send Slack notification
         if: steps.get-merged-prs.outputs.pr-count > 0
