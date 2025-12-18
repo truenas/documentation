@@ -105,15 +105,18 @@ jobs:
           # Build PR list for the prompt
           jq -r '.prs[] | "PR #\(.number): \(.title) (Files: \(.filesChanged), Category: \(.category))"' result.json > pr_list.txt
           
-          # Build the prompt
-          PROMPT="Summarize each of these documentation PRs in one clear, concise sentence (max 15 words). Return ONLY valid JSON as an array of objects with 'number' (integer) and 'summary' (string) fields. No markdown, no code blocks, just the JSON array.
+          # Build the prompt in a file to avoid shell issues
+          cat > prompt.txt << 'PROMPT_EOF'
+          Summarize each of these documentation PRs in one clear, concise sentence (max 15 words). Return ONLY valid JSON as an array of objects with 'number' (integer) and 'summary' (string) fields. No markdown, no code blocks, just the JSON array.
 
-PRs:
-$(cat pr_list.txt)"
+          PRs:
+          PROMPT_EOF
+          
+          cat pr_list.txt >> prompt.txt
           
           # Create API request with proper JSON escaping
           jq -n \
-            --arg prompt "$PROMPT" \
+            --rawfile prompt prompt.txt \
             '{
               model: "claude-sonnet-4-20250514",
               max_tokens: 2000,
