@@ -147,12 +147,8 @@ jobs:
           # Save to output file
           echo "$SUMMARIES" > summaries.json
           
-          # Output as single line using environment file
-          {
-            echo "summaries<<EOFMARKER"
-            echo "$SUMMARIES"
-            echo "EOFMARKER"
-          } >> "$GITHUB_OUTPUT"
+          # Use printf to avoid any shell interpretation issues
+          printf "summaries<<EOFMARKER\n%s\nEOFMARKER\n" "$SUMMARIES" >> "$GITHUB_OUTPUT"
 
       - name: Send Slack notification
         if: steps.get-merged-prs.outputs.pr-count > 0
