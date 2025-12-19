@@ -31,10 +31,10 @@ Visit the [R Series product page](https://www.truenas.com/r-series/) for more de
 
 <div class="docs-sections">
 
-{{< imagecard image="/images/Hardware/RSeries/R20PUM.png" title="R20 User Manual" link="https://www.truenas.com/docs/files/R20PUM.pdf"
+{{< imagecard-lang image="/images/Hardware/RSeries/R20PUM.png" title="R20 User Manual" link="https://www.truenas.com/docs/files/RSeriesPUM/R20B/R20PUM.pdf"
 descr="User Manual for the TrueNAS R20." >}}
 
-{{< imagecard image="/images/Hardware/RSeries/R50BMPUM.png" title="R50 User Manual" link="https://www.truenas.com/docs/files/R50PUM.pdf"
+{{< imagecard-lang image="/images/Hardware/RSeries/R50BMPUM.png" title="R50 User Manual" link="https://www.truenas.com/docs/files/RSeriesPUM/R50BM/R50PUM.pdf"
 descr="User Manual for the TrueNAS R50." >}}
 
 {{< imagecard image="/images/Hardware/NetworkPortID.png" title="Network Port IDs" link="https://www.truenas.com/docs/files/RSeriesNetworkPortIDs.pdf"

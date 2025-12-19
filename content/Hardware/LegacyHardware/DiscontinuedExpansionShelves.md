@@ -5,6 +5,14 @@ geekdocCollapseSection: true
 weight: 50
 ---
 
+## ES102 Gen 1 Expansion Shelf
+
+* <a href="https://www.truenas.com/docs/files/ES102G1PRN.pdf" download>ES102 PRN</a>: Official TrueNAS Product Retirement Notice for the TrueNAS ES102 Gen 1 Expansion Shelf.
+
+* <a href="https://www.truenas.com/docs/files/ES102BSG1.1.pdf" download>ES102 Basic Setup Guide</a>: Deployment guide for TrueNAS ES102 Gen 1 Expansion Shelf.
+
+* <a href="https://www.truenas.com/docs/files/ES102BSG1.1.pdf" download>ES102 Gen 1 Hardware Stencils</a>: Download ES102 Gen 1 Expansion Shelf stencils to diagram your TrueNAS hardware configuration.
+
 ## ES12 Expansion Shelf
 
 * <a href="https://www.truenas.com/docs/files/ES12PRN.pdf" download>ES12 PRN</a>: Official TrueNAS Product Retirement Notice for the TrueNAS ES12 Expansion Shelf.
