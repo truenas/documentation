@@ -46,23 +46,12 @@ See [Using Administrator Logins]({{< ref "adminroles" >}}) for more information.
 
 ## Creating User Accounts
 
-**SMB Access** is the default user access type that allows using the account credentials to access data shared with [SMB]({{< ref "/SCALE/SCALEUIReference/Shares" >}}).
-
-When creating a user, you must:
-
-* Enter a **Full Name** or description for the user, such as a first and last name.
-* Enter a **Username**.
-* Enter a **Password**.
-* Specify or accept the default user ID (**UID**)
-
-TrueNAS requires other options based on the level of access and role assigned to the user.
-The **Shell** option only shows for users with **Shell Access** or **SSH Access** selected.
-
 {{< include file="/static/includes/AddingAUser.md" >}}
 
 ### Disabling a Password
 
 To disable a password, select the user, click **Edit**, and then select **Disable Password**.
+Note that **Disable Password** is not available when **SMB Access** is enabled.
 Setting **Disable Password** hides the **Password** widget, and TrueNAS removes any existing password from the account.
 TrueNAS restricts the account from password-based logins for services like SMB shares and SSH sessions.
 
@@ -114,3 +103,48 @@ To set the API key to expire, clear the checkmark in **Non-expiring**, then sele
 {{< trueimage src="/images/SCALE/Credentials/AddAPIKeyExpiration.png" alt="Set API Key Expiration" id="Set API Key Expiration" >}}
 
 After setting the date, click **Save**. The **Access** widget for this user shows the API Key icon and the **View API Keys** link.
+
+## Clearing Two-Factor Authentication for a User
+
+Administrators can clear two-factor authentication (2FA) for a user from the **Users** screen. This is typically necessary when:
+
+- A user has lost access to their authenticator device (lost phone, broken device, etc.)
+- A user cannot generate valid 2FA codes due to device time synchronization issues
+- A user needs to switch to a different authenticator app or device
+- Troubleshooting 2FA-related login problems
+
+{{< hint type=important >}}
+Clearing 2FA should only be done when necessary, as it temporarily reduces account security. When Global 2FA is enabled, users are prompted to reconfigure 2FA on their next login.
+{{< /hint >}}
+
+To clear 2FA for a user:
+
+1. Go to **Credentials > Users**.
+
+2. Click on the user row to select the user whose 2FA needs to be cleared.
+
+3. On the **Access** widget, click **Clear Two-Factor Authentication**.
+
+   {{< trueimage src="/images/SCALE/Credentials/UsersScreenAccessWidgetWithAPIKey.png" alt="Access Widget with Clear 2FA Button" id="Access Widget with Clear 2FA Button" >}}
+
+   {{< hint type=note >}}
+   The **Clear Two-Factor Authentication** button only appears for users who have 2FA configured. Users without 2FA configured do not show this button.
+   {{< /hint >}}
+
+4. A confirmation dialog appears asking if you want to clear two-factor authentication settings for this user.
+
+   {{< trueimage src="/images/SCALE/Credentials/Clear2FADialog.png" alt="Clear Two-Factor Authentication Dialog" id="Clear Two-Factor Authentication Dialog" >}}
+
+5. Click **Clear** to confirm, or **Cancel** to abort the operation.
+
+After clearing, the user can log in without 2FA codes. If Global 2FA is enabled on the system, the user is prompted to set up 2FA again on their next login.
+
+### User Self-Clearing vs Admin Clearing
+
+Users can also remove their own 2FA configuration using the **Settings** menu:
+
+- User self-clearing: The logged-in user accesses **Settings > Two-Factor Authentication** and clicks **Unset 2FA Secret**. This allows users to manage their own 2FA settings.
+
+- Admin clearing: Administrators use **Credentials > Users > Access Widget > Clear Two-Factor Authentication** to clear 2FA for another user. This is specifically for helping users who cannot access their accounts.
+
+For more information on 2FA configuration and management, see [Managing Global 2FA]({{< ref "ManageGlobal2FASCALE" >}}).

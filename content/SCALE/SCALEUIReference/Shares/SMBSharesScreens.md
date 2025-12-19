@@ -63,7 +63,7 @@ The **Shares > SMB** screen shows an expanded presentation of the table on the *
 **SMB Sessions** opens the [**SMB Status**](#smb-status-screens) screen.
 
 **Columns** shows a set of options to customize the list view.
-Options include **Unselect All**, **Path**, **Description**, **Enabled** and **Reset to Defaults**.
+Options include **Unselect All**, **Path**, **Description**, **Enabled**, and **Reset to Defaults**.
 
 **Add** opens the [**Add SMB**](#add-and-edit-smb-screens) configuration screen.
 
@@ -91,11 +91,13 @@ It opens the [**Create Dataset**](#create-dataset) dialog.
 
 **Save** creates the share (or saves an existing one) and adds it to the **Windows (SMB) Shares** widget and the **SMB** table on the **SMB** screen.
 
-**Enable Now** shows on both the Add SMB and Edit SMB screens after selecting the **Time Machine Share** option in **Purpose** if the **Enable SMB2/3 Protocol** option is not already enabled on the **Advanced Options** of the [**SMB** service screen]({{< ref "SMBServicesScreen.md" >}}).
+**Enable Now** appears on both the Add SMB and Edit SMB screens after selecting the **Time Machine Share** option in **Purpose** if the **Enable SMB2/3 Protocol** option is not already enabled in the **Advanced Options** section of the [**SMB** service screen]({{< ref "SMBServicesScreen.md" >}}).
+
+**Enable Now** also appears on both the **Add SMB** and **Edit SMB** screens after selecting the **Final Cut Pro Storage Share** option in **Purpose** if the **Enable Apple SMB2/3 Protocol Extensions** option is not already enabled in the **Advanced Options** section of the [**SMB** service screen]({{< ref "SMBServicesScreen.md" >}}). When this requirement is not met, an inline requirement error message appears below the **Purpose** field stating: *This parameter requires Apple SMB2/3 protocol extension support to be enabled in SMB service.* Click **Enable Now** to enable the required setting. The service updates automatically.
 
 ### Basic Settings
 
-The **Basic Options** settings show by default on the **Add** and **Edit SMB** screens. Basic settings show for all share options in the **Purpose** dropdown list, only the **External Share** option shows the **Remote Path** setting.
+The **Basic Options** settings show by default on the **Add** and **Edit SMB** screens. Basic settings show for all share options in the **Purpose** dropdown list; only the **External Share** option shows the **Remote Path** setting.
 
 {{< trueimage src="/images/SCALE/Shares/AddShareBasicOptions.png" alt="Add SMB Basic Options" id="Add SMB Basic Options" >}}
 
@@ -107,7 +109,7 @@ The **Basic Options** settings show by default on the **Add** and **Edit SMB** s
 | **Path** | Specifies the mount path for the share. It includes a blank field and a file browser field directly below it. The blank field allows text entry of a share mount path or allows Truenas to populate it with the path to the dataset selected in the file browser field. The file browser allows selecting the mount path to the share dataset on the local file system that TrueNAS exports over the SMB protocol. The <span class="material-icons">arrow_right</span> icon to the left of <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M5 21L3 9h18l-2 12zm5-6h4q.425 0 .713-.288T15 14t-.288-.712T14 13h-4q-.425 0-.712.288T9 14t.288.713T10 15M6 8q-.425 0-.712-.288T5 7t.288-.712T6 6h12q.425 0 .713.288T19 7t-.288.713T18 8zm2-3q-.425 0-.712-.288T7 4t.288-.712T8 3h8q.425 0 .713.288T17 4t-.288.713T16 5z"/></svg> expands the dataset directory tree. Root datasets do not show and cannot be selected for shares unless the share existed prior to upgrading to 25.10 or later releases. |
 | **Create Dataset** | Creates a dataset for a share while configuring the share. Inactive until the parent dataset is selected. It opens the [**Create Dataset**](#create-dataset) dialog, where you enter a name for a new dataset. The dataset name becomes the SMB share name. **Create** adds the dataset and populates **Name** field on the **Add SMB** screen. |
 | **Name** | Sets the name for the share. This text entry field accepts manual entry or copy/paste of a name for the share that does not exceed 80 characters. A name must not exceed 80 characters because of how the SMB protocol uses the name. A name cannot have invalid characters as specified in Microsoft documentation MS-FSCC section 2.1.6. <br>**Name** is automatically populated with the name of the dataset when you use **Create Dataset**. If not supplied, the share name becomes the last component of the path. This forms part of the full share path name when SMB clients perform and SMB tree connect. <br>If changing the name, follow the naming conventions for [files and directories](https://learn.microsoft.com/en-us/windows/win32/fileio/naming-a-file#naming-conventions) or [share names](https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-fscc/dc9978d7-6299-4c5a-a22d-a039cdc716ea). |
-| **Purpose** | Sets the share type to one selected on the dropdown list. Options are: <br><li>**Default Share** -  <br><li>**Time Machine Share** - <br><li>**Multi-Protocol Share** - The SMB share is configured for multi-protocol (SMB and NFS) access. Set this if the path is shared through NFS, FTP, or used by containers or apps. Note: This setting can reduce SMB share performance because it turns off some SMB features for safer interoperability with external processes.<br><li>**Time Locked Share** - The SMB share makes files read-only through the SMB protocol after the set grace period ends. <br>**WARNINGS**: This setting does not work if the path is accessed locally or if another SMB share without the **Time Locked Share** purpose uses the same path.<br>This setting might not meet regulatory requirements for write-once storage.<br><li>**Private Datasets Share** - This server uses the specified dataset_naming_schema in options to make a new ZFS dataset when the client connects. The server uses this dataset as the share path during the SMB session.<br><li>**External Share** - The SMB share is a DFS proxy to a share hosted on an external SMB server.</li> The selected option applies predetermined settings and changes the settings shown in [**Other Options**](#other-options-settings) when showing advanced options. |
+| **Purpose** | Sets the share type to one selected on the dropdown list. Options are: <br><li>**Default Share** - The SMB share uses standard configuration with default settings suitable for general-purpose file sharing. This is the recommended option when you do not need specialized share functionality. <br><li>**Time Machine Share** - The SMB share is optimized for Apple Time Machine backups. This option configures the share to serve as a backup destination for macOS devices. It requires SMB2/3 protocol support enabled in the SMB service configuration. <br><li>**Final Cut Pro Storage Share** - Available in TrueNAS 25.10.1 and later. The SMB share is optimized for Final Cut Pro workflows. This option requires Apple SMB2/3 protocol extensions enabled in the SMB service configuration and forcibly enables Apple name mangling for proper media file handling. **Warning**: Name mangling can cause unexpected behavior for existing data written without this feature enabled. See [Setting Up Final Cut Pro SMB Shares]({{< ref "FCPShare.md" >}}) for details.<br><li>**Multi-Protocol Share** - The SMB share is configured for multi-protocol (SMB and NFS) access. Set this if the path is shared through NFS, FTP, or used by containers or apps. Note: This setting can reduce SMB share performance because it turns off some SMB features for safer interoperability with external processes.<br><li>**Time Locked Share** - The SMB share makes files read-only through the SMB protocol after the set grace period ends. <br>**WARNINGS**: This setting does not work if the path is accessed locally or if another SMB share without the **Time Locked Share** purpose uses the same path.<br>This setting might not meet regulatory requirements for write-once storage.<br><li>**Private Datasets Share** - The server creates a new ZFS dataset for each user when the client connects, using the specified dataset naming schema in options. The server uses this dataset as the share path during the SMB session. This provides isolated storage spaces for individual users.<br><li>**External Share** - The SMB share is a DFS proxy to a share hosted on an external SMB server. Use this option to redirect users to shares on other servers.</li> The selected option applies predetermined settings and changes the settings shown in [**Other Options**](#other-options-settings) when showing advanced options. |
 | **Remote Path** | Sets the path to a remote server and share. Each server entry must include a full domain name or IP address and the share name. Separate the server and share name with the `\` characters. Example: *192.168.0.200\SHARE*. This text entry field accepts copy/paste of a path to the external server and share. Shows when **Purpose** is set to **External Share**. |
 | **Description** | A text-entry field for a brief description or notes about how this share is used. The description entered shows in the **Description** column on the **Windows (SMB) Shares** widget on the **Shares** dashboard and the **SMB** table on the **SMB** screen. |
 | **Enabled** | A toggle that shows the status of the share and allows enabling or disabling the share. This does not enable or disable the SMB service. **Enabled** is the default setting. |
@@ -140,22 +142,24 @@ This behavior is enabled by default and matches FreeBSD behavior.
 | Setting | Description |
 |---------|-------------|
 | **Export Read-Only** | Prohibits writes to the share when enabled. |
-| **Browsable to Network Clients** | Determines whether this share name is included when browsing shares when enabled. This is enabled by default. Private dataset shares (the replacement for home shares) are only visible to the owner, regardless of this setting. |
-| **Access Based Share Enumeration** | Restricts share visibility to users with read or write access to the share. This setting applies to datasets with a POSIX ACL type. For datasets with NFSv4 ACL type, access-based enumeration is automatically enabled and does not allow disabling. See the [smb.conf](https://www.samba.org/samba/docs/current/man-html/smb.conf.5.html) manual page. |
+| **Browsable to Network Clients** | Determines whether this share name is included when browsing shares. Enabled by default. Private dataset shares (the replacement for home shares) are only visible to the owner, regardless of this setting. |
+| **Access Based Share Enumeration** | Restricts share visibility to users with read or write access to the share. This setting applies to datasets with a POSIX ACL type. For datasets with NFSv4 ACL type, access-based enumeration is automatically enabled and cannot be disabled. See the [smb.conf](https://www.samba.org/samba/docs/current/man-html/smb.conf.5.html) manual page. |
 {{< /truetable >}}
 
 #### Audit Logging
 
-The **Audit Logging** settings enable the auditing function for the SMB share and allow configuring a watch list and ignore list groups that administrators want to monitor. All share options listed in the **Purpose** dropdown show these settings.
+The **Audit Logging** settings enable the auditing function for the SMB share. Configure a watch list to audit specific groups, or an ignore list to audit all groups except those specified. At least one list (watch or ignore) must contain entries for auditing to function. All share options listed in the **Purpose** dropdown show these settings.
+
+For detailed information about group validation and troubleshooting disabled shares, see [Configuring SMB Auditing]({{< relref "AuditingSCALE.md#configuring-smb-auditing" >}}).
 
 {{< trueimage src="/images/SCALE/Shares/AddSMBAdvancedAuditLoggingSettings.png" alt="SMB Audit Logging" id="SMB Audit Logging" >}}
 
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Enable Logging** | Enables audit logging for the SMB share, and shows two additional options: **Watch List** and **Ignore List**. This controls whether audit messages are generated for the share. <br>Note: Auditing might not be enabled if SMB1 support is enabled for the server. |
-| **Watch List** | Sets up a list of groups for which you want to generate audit logging messages. Clicking in the field shows the dropdown list of group options. Leave blank to include all SMB users with access to the share. If also setting a limit list, the watch list takes precedence when a conflict occurs. |
-| **Ignore List** | When selected, this sets up a list of groups to ignore when auditing. If conflict arises where the same groups are in the **Watch List** and **Ignore List** (based on user group membership), the watch listing takes precedence, and ops is audited. |
+| **Enable Logging** | Enables audit logging for the SMB share and displays two additional options: **Watch List** and **Ignore List**. This controls whether audit messages are generated for the share after configuring at least one list. <br>Note: Auditing is not available when SMB1 support is enabled for the server. <br>Starting in TrueNAS 25.10.1, shares are automatically disabled in the running configuration if the watch or ignore lists contain invalid groups. |
+| **Watch List** | Specifies groups to audit. Click the field to display the dropdown list of group options. Auditing applies only to user accounts that are members of groups in this list. If the same user belongs to groups in both the **Watch List** and **Ignore List**, the watch list takes precedence, and operations are audited. |
+| **Ignore List** | Specifies groups to exclude from auditing. Click the field to display the dropdown list of group options. If the same user belongs to groups in both the **Watch List** and **Ignore List**, the watch list takes precedence and operations are audited. |
 {{< /truetable >}}
 
 #### Other Options Settings
@@ -213,7 +217,22 @@ When **Purpose** is set to **Private Dataset Share**, the following settings sho
 | **Auto Quota** | Sets the specified ZFS quota in gibibytes (GiB) on new datasets. If the value is zero, TrueNAS disables automatic quotas for the share. Only shows when **Purpose** is set to the **Private Dataset Share** option. |
 {{< /truetable >}}
 {{< /tab >}}
+{{< tab "Final Cut Pro Storage Share" >}}
+When **Purpose** is set to **Final Cut Pro Storage Share**, the following settings show in **Other Options**.
+
+{{< trueimage src="/images/SCALE/Shares/AddSMBAdvancedSettingsMacOSMediaShare.png" alt="Other Options - Final Cut Pro Storage Share" id="Other Options - Final Cut Pro Storage Share" >}}
+
+{{< include file="/static/includes/MacOSMediaShareCompatibility.md" >}}
+
+{{< truetable >}}
+| Setting | Description |
+|---------|-------------|
+| **Use Apple-style Character Encoding** | Automatically enabled and non-editable for **Final Cut Pro Storage Share**. This implements Apple-style character encoding for NTFS illegal characters, which is required for proper operation of Final Cut Pro. This setting cannot be changed for this share purpose because it is essential for Final Cut Pro compatibility. |
+{{< /truetable >}}
+{{< /tab >}}
 {{< /tabs >}}
+
+{{< include file="/static/includes/SMBVFSConfigurationWarning.md" >}}
 
 #### Legacy Share Settings
 
@@ -229,6 +248,10 @@ We recommend changing **Purpose** to **Private Datasets Share**. Refer to the in
 
 {{< include file="/static/includes/auxiliary-parameters-caution.md" >}}
 
+{{< hint type=note >}}
+VFS module configuration (`catia`, `fruit`, `streams_xattr`) cannot be set through auxiliary parameters. Use the appropriate share purpose preset (Final Cut Pro Storage Share, Time Machine, etc.) instead.
+{{< /hint >}}
+
 This table lists (pre-25.10) **Other Options** settings.
 These only show on the **Edit SMB** screen after upgrading from an earlier release with an existing SMB share configured with them, unless indicated otherwise.
 Do not confuse these settings with those listed in the settings listed in the [**Settings by Purpose**](#other-options-settings) tabbed area in the section above.
@@ -237,7 +260,6 @@ Do not confuse these settings with those listed in the settings listed in the [*
 | Setting | Description |
 |---------|-------------|
 | **Use as Home Share** | Allows the share to host user home directories. Each user has a personal home directory that they use when connecting to the share that is not accessible by other users. Home Shares allow for personal, dynamic shares. You can only use one share as the home share. See [Adding an SMB Home Share]({{< ref "SMBPrivateDatasetShare" >}}) for more information. |
-| **Time Machine** | Enables [Apple Time Machine](https://support.apple.com/en-us/HT201250) backups on this share. This option requires SMB2/3 protocol extension support. You can enable this in the general SMB server configuration. |
 | **Time Machine Quota** | Visible when **Time Machine** is enabled. Sets a maximum limit on storage consumed by Time Machine backups. This applies to the entire share. |
 | **Legacy AFP Compatibility** | Enables backend compatibility with metadata written by legacy netatalk implementations. This option configures Samba to properly read and present Apple Filing Protocol (AFP) metadata, such as resource forks to SMB clients. Only enable this option when migrating data that was previously shared via the AFP. Pure SMB shares and standard macOS SMB clients do not require this compatibility option. Shows only when a pre-25.10 share selected this option. |
 | **Enable Shadow Copies** | Exports ZFS snapshots as [Shadow Copies](https://docs.microsoft.com/en-us/windows/win32/vss/shadow-copies-and-shadow-copy-sets) for Microsoft Volume Shadow Copy Service (VSS) clients. |

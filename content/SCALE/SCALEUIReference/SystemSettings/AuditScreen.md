@@ -25,14 +25,16 @@ The **Audit** screen lists all session or user events, facilitating comprehensiv
 
 The **Audit** screen lists log entries in a table that shows:
 
-* **Service** - The service performing the operation (e.g. **Midddleware**).
-* **User** - Name of the user (login or internal process user (e.g., **admin**, **UNAUTHENTICATED**, etc.)
+* **Service** - The service performing the operation (e.g. **Middleware**).
+* **User** - Name of the user (login or internal process user (e.g. **admin**, **UNAUTHENTICATED**, etc.)).
 * **Timestamp** - Date and time the event occurred.
-* **Event** - Name of the process (e.g., **Authentication**, **Method Call**, etc.)
-* **Event Data** - A short description of the operation (e.g., **Credentials: Password Login**, **System advanced update**, etc.).
+* **Event** - Name of the process (e.g. **Authentication**, **Method Call**, etc.).
+* **Event Data** - A short description of the operation (e.g. **Credentials: Password Login**, **System advanced update**, etc.).
+
+The **Service** dropdown at the top of the screen filters audit entries by service type. Options include **SMB**, **Middleware**, **Sudo**, and **System**. Select a specific service to view only entries for that service. When no service is selected, the screen displays entries from all services.
 
 **Audit Settings** opens the **System > Advanced Settings** screen showing the **Audit** widget.
-For more information on configuring audit settings, see [Advanced Settings Screen]({{< relref "AdvancedSettingsScreen.md #Audit-Widget" >}})
+For more information on configuring audit settings, see [Advanced Settings Screen]({{< relref "AdvancedSettingsScreen.md#Audit-Widget" >}}).
 
 TrueNAS includes a manual page with more information on the [VFS auditing functions](https://github.com/truenas/samba/blob/SCALE-v4-19-stable/docs-xml/manpages/vfs_truenas_audit.8.xml).
 
@@ -49,7 +51,7 @@ Clicking in the **Search** field does not show search filter options in basic se
 
 **Search** starts the search operation based on the search parameters entered.
 
-**Export to CSV** generates a CSV file of audit log records and downloads it to the **Downloads** folder on the server.
+**Export** dropdown exports audit log records in multiple formats. Select **CSV**, **JSON**, or **YAML** to generate a compressed file (tar.gz format) that downloads to your browser's default download location. The export includes all audit entries that match the current filter settings.
 
 ### Audit Screen Log Details Widgets
 

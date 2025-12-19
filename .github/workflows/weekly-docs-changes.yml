@@ -1,0 +1,234 @@
+name: Weekly Docs Changes Summary
+
+on:
+  schedule:
+    - cron: '0 12 * * 1' # Every Monday at 12:00
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+  pull-requests: read
+
+jobs:
+  docs-changes-summary:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get merged PRs from last week
+        id: get-merged-prs
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const fs = require('fs');
+            
+            // 1. Calculate Date Range
+            const oneWeekAgo = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000);
+            console.log('Looking for PRs merged after:', oneWeekAgo.toISOString());
+            
+            // 2. Fetch PRs (handling basic pagination might be needed for very active repos, 
+            // but 100 is usually enough for a weekly summary)
+            const { data: pulls } = await github.rest.pulls.list({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'closed',
+              sort: 'updated',
+              direction: 'desc',
+              per_page: 100
+            });
+            
+            const mergedPRs = [];
+            
+            // 3. Filter and Process
+            for (const pr of pulls) {
+              if (!pr.merged_at) continue;
+              const mergedDate = new Date(pr.merged_at);
+              if (mergedDate < oneWeekAgo) continue;
+              
+              console.log(`Processing PR #${pr.number}: ${pr.title}`);
+              
+              // Fetch changed files to determine category
+              const { data: files } = await github.rest.pulls.listFiles({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                pull_number: pr.number
+              });
+              
+              // Categorization Logic
+              let category = 'updated';
+              const title = pr.title.toLowerCase();
+              const labels = pr.labels.map(l => l.name.toLowerCase());
+              const hasNewFiles = files.some(f => f.status === 'added');
+              
+              if (hasNewFiles || title.includes('new') || title.includes('add')) {
+                category = 'new';
+              } else if (labels.includes('bug') || title.includes('fix') || title.includes('correct')) {
+                category = 'fixed';
+              } else if (title.includes('remove') || title.includes('delete') || title.includes('deprecate')) {
+                category = 'removed';
+              }
+              
+              mergedPRs.push({
+                number: pr.number,
+                title: pr.title,
+                url: pr.html_url,
+                author: pr.user.login,
+                mergedAt: pr.merged_at,
+                category: category,
+                filesChanged: files.length,
+                labels: pr.labels.map(l => l.name).join(', ')
+              });
+            }
+            
+            console.log(`Found ${mergedPRs.length} merged PRs.`);
+            
+            // 4. Create Result Object
+            const result = {
+              prs: mergedPRs,
+              grouped: {
+                new: mergedPRs.filter(pr => pr.category === 'new'),
+                updated: mergedPRs.filter(pr => pr.category === 'updated'),
+                fixed: mergedPRs.filter(pr => pr.category === 'fixed'),
+                removed: mergedPRs.filter(pr => pr.category === 'removed')
+              }
+            };
+            
+            // 5. WRITE TO DISK (Safer than setOutput)
+            fs.writeFileSync('prs.json', JSON.stringify(result));
+            
+            // Set count output for the 'if' condition in next steps
+            core.setOutput('pr-count', mergedPRs.length);
+
+      - name: Generate AI summaries
+        if: steps.get-merged-prs.outputs.pr-count > 0
+        id: generate-summaries
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          # Create a clean text list for the prompt
+          jq -r '.prs[] | "PR #\(.number): \(.title) (Files: \(.filesChanged), Category: \(.category))"' prs.json > pr_list.txt
+          
+          # Construct the prompt
+          echo "Summarize each of these documentation PRs in one clear, concise sentence (max 15 words). Return ONLY valid JSON as an array of objects with 'number' (integer) and 'summary' (string) fields. No markdown, no code blocks." > prompt_header.txt
+          echo "" >> prompt_header.txt
+          echo "PRs:" >> prompt_header.txt
+          
+          cat prompt_header.txt pr_list.txt > full_prompt.txt
+          
+          # Build JSON Payload safely using jq
+          # UPDATED: Using Claude 4.5 Sonnet (Released Sep 2025)
+          jq -n --rawfile prompt full_prompt.txt \
+            '{
+              model: "claude-sonnet-4-5-20250929", 
+              max_tokens: 2000, 
+              messages: [{role: "user", content: $prompt}]
+            }' > request.json
+          
+          echo "Calling Anthropic API..."
+          curl -s https://api.anthropic.com/v1/messages \
+            -H "Content-Type: application/json" \
+            -H "x-api-key: $ANTHROPIC_API_KEY" \
+            -H "anthropic-version: 2023-06-01" \
+            -d @request.json > response.json
+          
+          # Extract content and clean potential markdown code blocks
+          cat response.json | jq -r '.content[0].text' | sed 's/^```json//g' | sed 's/^```//g' | sed 's/```$//g' > summaries.json
+          
+          # Validate JSON
+          if ! jq -e . summaries.json >/dev/null 2>&1; then
+            echo "Error: Invalid JSON received from API"
+            cat response.json
+            exit 1
+          fi
+
+      - name: Send Slack notification
+        if: steps.get-merged-prs.outputs.pr-count > 0
+        env:
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_URL_WEEKLY_DOCS_CHANGES }}
+          REPO_NAME: ${{ github.repository }}
+        run: |
+          # Calculate dates
+          WEEK_START=$(date -d '7 days ago' +'%B %d' 2>/dev/null || date -v-7d +'%B %d')
+          REPORT_DATE=$(date +'%B %d, %Y')
+          
+          # Load data into variables safely
+          # We use --argjson to inject the JSON files directly into the jq filter
+          jq -n \
+            --argjson data "$(cat prs.json)" \
+            --argjson summaries "$(cat summaries.json)" \
+            --arg repo "$REPO_NAME" \
+            --arg date "$REPORT_DATE" \
+            '
+            ($data.prs | length) as $total_prs |
+            
+            # Helper function to generate sections
+            def generate_section(title; pr_list):
+              if (pr_list | length) > 0 then
+                {
+                  type: "section",
+                  text: {
+                    type: "mrkdwn",
+                    text: ("" + title + " (" + (pr_list | length | tostring) + ")\n" + 
+                      (pr_list | map(
+                        . as $pr | 
+                        ($summaries[] | select(.number == $pr.number) | .summary // $pr.title) as $summary |
+                        "• <" + $pr.url + "|PR #" + ($pr.number | tostring) + ">: " + $summary + "\n_@" + $pr.author + " • " + ($pr.filesChanged | tostring) + " file(s)_"
+                      ) | join("\n"))
+                    )
+                  }
+                }
+              else empty end;
+            
+            # Build the blocks
+            [
+              {
+                type: "section",
+                text: {
+                  type: "mrkdwn",
+                  text: ("📚 *Weekly documentation changes for " + $repo + "*\n\n" + ($total_prs | tostring) + " PRs merged in the last 7 days.\n\n_Report generated on " + $date + "_")
+                }
+              },
+              { type: "divider" },
+              generate_section("✨ *New content*"; $data.grouped.new),
+              generate_section("📝 *Updated content*"; $data.grouped.updated),
+              generate_section("🐛 *Bug fixes*"; $data.grouped.fixed),
+              generate_section("🗑️ *Removed content*"; $data.grouped.removed)
+            ] 
+            | map(select(. != null)) 
+            as $blocks |
+            
+            {
+              text: ("📚 Weekly Documentation Changes: " + ($total_prs | tostring) + " PRs merged"),
+              blocks: $blocks
+            }
+            ' > slack-message.json
+            
+          echo "Sending payload..."
+          curl -X POST -H "Content-type: application/json" \
+            --data @slack-message.json \
+            "$SLACK_WEBHOOK"
+
+      - name: Send empty report if no changes
+        if: steps.get-merged-prs.outputs.pr-count == 0
+        env:
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_URL_WEEKLY_DOCS_CHANGES }}
+          REPO_NAME: ${{ github.repository }}
+        run: |
+          REPORT_DATE=$(date +'%B %d, %Y')
+          
+          # Create simple JSON for empty state
+          jq -n --arg repo "$REPO_NAME" --arg date "$REPORT_DATE" '{
+            text: "📚 Weekly Documentation Changes: No changes this week",
+            blocks: [
+              {
+                type: "section",
+                text: {
+                  type: "mrkdwn",
+                  text: ("📚 *Weekly documentation changes for " + $repo + "*\n\nNo PRs were merged in the last 7 days.\n\n_Report generated on " + $date + "_")
+                }
+              }
+            ]
+          }' > empty-message.json
+          
+          curl -X POST -H "Content-type: application/json" \
+            --data @empty-message.json \
+            "$SLACK_WEBHOOK"
