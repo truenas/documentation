@@ -87,7 +87,7 @@ To delete a device:
    {{< trueimage src="/images/SCALE/Virtualization/DeleteVMDevice.png" alt="Delete Virtual Machine Device" id="Delete Virtual Machine Device" >}}
 
 3. Select **Force Delete** to force the system to delete the device (for example, device is a CD-ROM).
-   When deleting a disk, it forces the system to delete the zvol even if other devices or services are using it or are affiliated with the zvol device.
+   When deleting a disk, it forces the system to delete the zvol even if other devices or services use it or have affiliations with the zvol device.
 4. Click **Delete Device**.
 
 ### Changing the Device Order
@@ -162,7 +162,7 @@ After stopping the VM and clicking **Devices** to open the **Devices** screen:
 ### Exporting a Disk to an Image
 
 Use this function to convert a VM disk (zvol) to a portable disk image file.
-Exported images can be imported into other VMs, transferred to different systems, or used as backups.
+You can import exported images into other VMs, transfer them to different systems, or use them as backups.
 
 After stopping the VM and clicking **Devices** to open the **Devices** screen:
 

@@ -66,7 +66,8 @@ If you have not yet added a virtual machine to your system, clicking **Add Virtu
       **Enable Display (VNC)** shows the **Bind** and **Password** fields.
 
    i. Select the IP address or option to use in **Bind**. Shows if you select **Enable Display**.
-      The **Bind** and **Password** fields display. If you select it, change the default IP address to use a specific address as the display network interface; otherwise, leave it set to **0.0.0.0**.
+      The **Bind** and **Password** fields display. If you select it, change the default IP address to use a specific address as the display network interface.
+      Otherwise, leave it set to **0.0.0.0**.
       The **Bind** list populates with any existing logical interfaces, such as static routes, configured on the system.
       You cannot edit the **Bind** setting after saving the VM settings.
 
@@ -428,8 +429,7 @@ See [Accessing NAS from VM]({{< ref "ContainerNASBridge" >}}) for more informati
 
 ## Migrating Containers VMs
 
-The storage volumes (zvols) for virtual machines you created using the **Instances** screen in TrueNAS 25.04.0 or 25.04.1 can migrate to new VMs.
-The **Instances** screen was renamed to **Containers** in 25.04.2 and later.
+You can migrate storage volumes (zvols) from virtual machines created using the **Containers** screen (formerly **Instances**) in TrueNAS 25.04.x to new VMs.
 You create new VMs using the **Virtual Machines** screen in 25.04.2 and later.
 The process involves:
 
@@ -450,7 +450,7 @@ Before beginning the process:
 3. Verify the VM is operational and the network is functioning as expected. One way to do this is to verify it has Internet access.
    Then stop the VM before you upgrade to the next release.
 4. Identify the dataset where you want to move the volume.
-   We do not recommend renaming or moving the volume more than once, as it increases the risk of possible data corruption or loss.
+   We do not recommend renaming or moving the volume multiple times, as it increases the risk of possible data corruption or loss.
 
 You do not need to log in as the root user if the logged-in admin user has permission to use `sudo` commands.
 If not, go to **Credentials > Users** and edit the user to allow `sudo` commands.
@@ -544,7 +544,7 @@ After upgrading to a release that shows the **Virtual Machines** screen and the 
    ```
 
    In the examples above:
-   - Zvols with `custom/default_*` in the path showing significant storage (40+GB) are migrated VMs that you should migrate
+   - Zvols with `custom/default_*` in the path showing significant storage (40+GB) contain migrated VMs that you should migrate
    - Zvols with `.block` extension showing significant storage (6.98G, 25.9M) are native Incus VMs that you should migrate
    - Small `.block` files at 56K are stubs and you should ignore them
    {{< /expand >}}

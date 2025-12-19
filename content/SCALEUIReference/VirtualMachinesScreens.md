@@ -242,7 +242,7 @@ The **Installation Media** settings specify the location of the operating system
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Choose Installation Media Image** | Shows two fields, the mount path field and a file browser field directly below it. Sets the mount path to what is selected in the file browser field. To collapse the file branch, click on the <i class="fa fa-caret-right" aria-hidden="true"></i> to the left of **/mnt**. |
+| **Choose Installation Media Image** | Shows two fields, the mount path field and a file browser field directly below it. Sets the mount path to what you select in the file browser field. To collapse the file branch, click on the <i class="fa fa-caret-right" aria-hidden="true"></i> to the left of **/mnt**. |
 | **Upload New Image File** | Opens the **Upload Image File** dialog, where you browse to, and select the image file location on the local system or a network location available to your TrueNAS system. **Choose File** sets the file location and activates **Upload**.  |
 {{< /truetable >}}
 {{< /expand >}}
