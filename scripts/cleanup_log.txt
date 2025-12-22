@@ -1,3 +1,14 @@
+Process time: 2025-12-08 15:02:12
+Initiated by: Dan Pizappi
+
+1421 files reviewed.
+3 files deleted.
+The following files were deleted:
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\Community_Edition-white.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\Enterprise-white.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\truenas-community-edition-logo-inverted-rgb-900px-w-72ppi.png
+
+----------------------------------------
 Process time: 2025-11-17 16:27:46
 Initiated by: Dan Pizappi
 
