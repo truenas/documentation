@@ -68,7 +68,7 @@ Or
 
 Before you begin, modify the system DNS server settings.
 Take a screenshot of your current settings to refer to if you need to revert to pre-AD settings for any reason.
-Change the nameserver 1 setting to the IP address of the AD sever and clear the other name server settings.
+Change the nameserver 1 setting to the IP address of the AD server and clear the other name server settings.
 Make sure the domain name is set to something other than the default value **truenas**.
 
 To connect TrueNAS to Active Directory:
@@ -104,7 +104,7 @@ To connect TrueNAS to Active Directory:
 
    TrueNAS creates the default Kerberos realm and principal, and the **Computer Account OU** value **/computers/servers/NAS**.
 
-   If you get a DNS server error, go to **Network > Global Configuration**, click **Settings** and verify the DNS nameserver IP addresses are correctly configured with addresses that permit access to the Active Directory domain controller.
+   If you get a DNS server error, go to **Network > Global Configuration**, click **Settings**, and verify the DNS nameserver IP addresses are correctly configured with addresses that permit access to the Active Directory domain controller.
    Correct any network configuration settings, then reconfigure the Active Directory settings.
 
 5. Click **Save**.
@@ -123,7 +123,7 @@ Joining AD also adds default Kerberos realms and generates a default **AD_MACHIN
 TrueNAS automatically begins using this default keytab and removes any administrator credentials stored in the TrueNAS configuration file.
 
 ### Troubleshooting - Resyncing the Cache
-If the cache becomes out of sync or fewer users than expected are available in the permissions editors, resync it by clicking **Settings** in the **Active Directory** window and then click **Rebuild Directory Service Cache**.
+If the cache becomes out of sync or fewer users than expected are available in the permissions editors, click **Settings** in the **Active Directory** window, then click **Rebuild Directory Service Cache** to resync the cache.
 
 The name in **TrueNAS Hostname** should match the name in **Hostname** on the **System > Network** screen.
 
@@ -137,7 +137,7 @@ Click **Configure Active Directory** to open the **Active Directory** screen wit
 Select **Enable** again, and click **Save** to reactivate your connection to your AD server.
 
 ## Leaving Active Directory
-TrueNAS requires users to cleanly leave an Active Directory to delete the configuration.
+Users must cleanly leave an Active Directory for TrueNAS to delete the configuration.
 To cleanly leave AD, click **Leave Domain** on the **Active Directory Advanced Settings** screen to remove the AD object.
 Remove the computer account and associated DNS records from the Active Directory.
 
