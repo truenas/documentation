@@ -29,7 +29,7 @@ Expanding a VM shows the [details screen](#virtual-machine-details-screen) detai
 ## Virtual Machine Details Screen
 
 The expanded **Virtual Machines** screen shows the details and options for a VM.
-Details include the basic information on the number of virtual CPUs, cores, and threads, the amount of memory, and boot loader and system clock types.
+Details include the basic information on the number of virtual CPUs, cores and threads, the amount of memory, the boot loader, and system clock types.
 Additional details include the display port number and the shutdown timeout in seconds.
 
 {{< trueimage src="/images/SCALE/Virtualization/VirtualMachinesScreenwithVMDetails.png" alt="VM Details" id="VM Details" >}}
@@ -45,7 +45,7 @@ When you place a VM in a suspended state, the options shown on the VM details sc
 | **Restart** | <span class="material-icons">replay</span> | Stops then starts the VM. Shows for a running VM. |
 | **Power Off** | <span class="material-icons">power_settings_new</span> | Shows after starting a VM. Powers off and halts the VM, similar to turning off a computer power switch. Shows only when the VM is running. |
 | **Resume** | Shows when you place a VM in a suspended state. The VM resumes operation and returns to the normal Running state.  |
-| **Stop** | <i class="material-icons" aria-hidden="true" title="Stop">stop</i> | Shows after starting a VM. Stops a running VM. Virtual machines do not always respond to **STOP** or the command might time out if the VM does not have an OS. Use **Power Off** instead. **Stop** toggles to **Start** after the VM stops. |
+| **Stop** | <i class="material-icons" aria-hidden="true" title="Stop">stop</i> | Shows after starting a VM. Stops a running VM. Virtual machines do not always respond to **STOP**, or the command might time out if the VM does not have an OS. Use **Power Off** instead. **Stop** toggles to **Start** after the VM stops. |
 | **Edit** | <span class="material-icons">mode_edit</span> | Opens the **[Edit Virtual Machine](#edit-virtual-machine-screen)** with editable VM settings. You cannot edit a VM while it is running. Stop the VM to edit the properties and settings. |
 | **Delete** | <i class="material-icons" aria-hidden="true" title="Delete">delete</i> | Deletes a VM and removes it from the system. Opens a [delete dialog](#delete-virtual-machine-dialog). You cannot delete a virtual machine that is running. Stop the VM to delete it. |
 | **Devices** | <i class="material-icons" aria-hidden="true" title="Devices">device_hub</i> | Shows after starting a VM. Opens the **[Virtual Machine Devices](#devices-screens)** screen for the selected VM. |
@@ -85,7 +85,7 @@ The **Serial Shell** button opens the **VM Serial Shell** screen, where you can 
 
 {{< trueimage src="/images/SCALE/Virtualization/VMSerialShellScreen.png" alt="Serial Shell" id="Serial Shell" >}}
 
-The **Virtual Machines** breadcrumb in the header to returns to the **Virtual Machine** screen.
+The **Virtual Machines** breadcrumb in the header returns to the **Virtual Machine** screen.
 
 ### Edit Virtual Machine Screen
 
@@ -109,7 +109,7 @@ You also cannot change the display type or bind address for a saved VM from this
 | **Description** | Enter a description (optional). |
 | **System Clock** | Select the VM system time from the dropdown list. Options are **Local** or **UTC**. The default is **Local**. |
 | **Boot Method** | Select the boot method option from the dropdown list. Select **UEFI** for newer operating systems or **Legacy BIOS** for older operating systems that only support BIOS booting. |
-| **Shutdown Timeout** | Enter the time, in seconds, the system waits for the VM to cleanly shut down. During the shutdown, the system powers off the VM after the shutdown timeout entered expires. |
+| **Shutdown Timeout** | Enter the time, in seconds, the system waits for the VM to cleanly shut down. During the shutdown, the system powers off the VM after the shutdown timeout expires. |
 | **Start on Boot** | Select to start this VM when the system boots. |
 | **Enable Hyper-V Enlightenments** | Shows for VMs set for Windows OS. KVM implements Hyper-V Enlightenments for Windows guests. These features make Windows think they are running on a Hyper-V-compatible hypervisor and use Hyper-V-specific features. In some cases, enabling these enlightenments might improve the usability and performance for the guest. |
 | **Enable Secure Boot** | Turns on the secure boot function in TrueNAS. Only available when using the wizard to create a new VM; it is not available on the edit screen. Some operating systems, like Windows 11, might not require secure boot. |
@@ -326,7 +326,7 @@ A disk device has four options: **Edit**, **Delete**, **Details**, and **Export 
 {{< expand "Display Settings" "v" >}}
 Display settings show when you set **Device Type** to **Display**. You can only have one display type set to **VNC** (the default when creating a new VM), but you can add a second display device and set it to **SPICE**.
 
-Remote clients can connect to VM display sessions using a SPICE client, or by installing a third-party remote desktop server inside your VM.
+Remote clients can connect to VM display sessions using a SPICE client or by installing a third-party remote desktop server inside your VM.
 SPICE clients are available from the [SPICE Protocol site](https://www.spice-space.org/).
 
 {{< trueimage src="/images/SCALE/Virtualization/VMAddDeviceDisplay.png" alt="Add Device - Display" id="Add Device - Display" >}}
