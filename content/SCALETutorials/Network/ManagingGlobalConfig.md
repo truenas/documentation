@@ -19,7 +19,7 @@ Be sure to check both locations when troubleshooting network connectivity issues
 
 Use the **Network Configuration** widget to add general network settings like the default gateway and DNS name servers to allow external communication.
 
-To add new or change existing network interfaces, see [Interface Configurations]({{< ref "/SCALE/SCALETutorials/Network/Interfaces" >}}).
+To add new or change existing network interfaces, see [Interface Configurations]({{< ref "/SCALETutorials/Network/Interfaces/" >}}).
 
 Go to **System > Network**, and click **Settings** on the **Network Configuration** widget to open the **Edit Global Configuration** screen.
 
@@ -60,7 +60,7 @@ Go to **System > Network**, and click **Settings** on the **Network Configuratio
 
 6. Click **Save**. The **Network Configuration** widget on the **Network** screen shows the new settings.
 
-<!-- Commenting out this section until more information on what each service allows or requires, then use a snippet for this content in the UI ref and here.
+<!-- Commenting out this section until more information on what each service allows or requires, then use a snippet for this content in the UI  and here.
 ## Setting Up External Communication for Services
 
 Use the **Global Configuration Outbound Network** settings to add services for external communication capability.
