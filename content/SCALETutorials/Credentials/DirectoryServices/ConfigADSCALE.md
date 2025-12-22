@@ -41,6 +41,8 @@ Enter the password for this account.
 
 After taking these actions, you can [connect to the Active Directory domain](#connecting-to-the-active-directory-domain).
 
+{{< include file="/static/includes/NetBIOSValidationWarning.md" >}}
+
 ### Setting Time Synchronization
 Active Directory relies on the time-sensitive [Kerberos](https://tools.ietf.org/html/rfc1510) protocol.
 TrueNAS adds the AD domain controller with the [PDC Emulator FSMO Role](https://support.microsoft.com/en-us/help/197132/active-directory-fsmo-roles-in-windows) as the preferred NTP server during the domain join process.
@@ -65,27 +67,43 @@ Or
 
 Before you begin, modify the system DNS server settings.
 Take a screenshot of your current settings to refer to if you need to revert to pre-AD settings for any reason.
-Change the nameserver 1 setting to the IP address of the AD sever and clear the other name server settings.
+Change the nameserver 1 setting to the IP address of the AD server and clear the other name server settings.
 Make sure the domain name is set to something other than the default value **truenas**.
 
 To connect TrueNAS to Active Directory:
 
-1. Go to **Credentials > Directory Services** click **Configure Active Directory** to open the **Active Directory** configuration screen.
+1. Go to **Credentials > Directory Services** and click **Configure Directory Services** to open the **Directory Services Configuration** form.
 
-2. Enter the domain name for the AD in **Domain Name** and the `bindname` and `bindpw` account credentials in **Domain Account Name** and **Domain Account Password**.
-   Default **Domain Account Name** created for TrueNAS is **Administrator**.
+2. Select **Active Directory** as the directory service type.
 
-3. Enter the TrueNAS hostname in **NetBIOS Name**. Change the default **TRUENAS** to something else.
-   Enter the TrueNAS host name that matches the information on the **Network > Global Configuration** screen in the **Hostname** field.
+3. Enter the **Active Directory Configuration** settings:
+   - Enter the TrueNAS host name in **TrueNAS Hostname** (required).
+   - Enter the domain name for the AD in **Domain Name** (required).  
+   - Enter the site name in **Site Name** (optional).
+   - Enter the computer account organizational unit in **Computer Account OU** (optional).
+   - Select **Use Default Domain** if needed for your environment.
 
-4. Select **Enable** to attempt to join the AD domain immediately after saving the configuration.
-   TrueNAS populates the **Kerberos Realm** and **Kerberos Principal** fields on the **Advanced Options** settings screen.
+4. Enter the **Trusted Domains Configuration** settings if needed for your environment.
+
+   Starting in TrueNAS 25.10, trusted domains are configured as part of the Active Directory configuration rather than as separate IDmap entries.
+
+   {{< trueimage src="/images/SCALE/Credentials/TrustedDomainsConfiguration.png" alt="Trusted Domains Configuration" id="Trusted Domains Configuration" >}}
+
+
+5. Enter the **IDMAP Configuration** settings.
+   - By default, **Use TrueNAS Server IDMAP Defaults** is selected.
+   - To customize IDMAP settings, clear **Use TrueNAS Server IDMAP Defaults** to reveal additional configuration options:
+   - **Builtin** section with optional **Name** field and required **Range Low** and **Range High** fields.
+   - **IDMAP Domain** section with required **IDMAP Backend**, **Name**, **Range Low**, and **Range High** fields.
+
+6. Click **Save**.
+
 
    {{< trueimage src="/images/SCALE/Credentials/ActiveDirectoryBasicOptions.png" alt="Active Directory Basic Options" id="Active Directory Basic Options" >}}
 
    TrueNAS creates the default Kerberos realm and principal, and the **Computer Account OU** value **/computers/servers/NAS**.
 
-   If you get a DNS server error, go to **Network > Global Configuration**, click **Settings** and verify the DNS nameserver IP addresses are correctly configured with addresses that permit access to the Active Directory domain controller.
+   If you get a DNS server error, go to **Network > Global Configuration**, click **Settings**, and verify the DNS nameserver IP addresses are correctly configured with addresses that permit access to the Active Directory domain controller.
    Correct any network configuration settings, then reconfigure the Active Directory settings.
 
 5. Click **Save**.
@@ -104,9 +122,9 @@ Joining AD also adds default Kerberos realms and generates a default **AD_MACHIN
 TrueNAS automatically begins using this default keytab and removes any administrator credentials stored in the TrueNAS configuration file.
 
 ### Troubleshooting - Resyncing the Cache
-If the cache becomes out of sync or fewer users than expected are available in the permissions editors, resync it by clicking **Settings** in the **Active Directory** window and then click **Rebuild Directory Service Cache**.
+If the cache becomes out of sync or fewer users than expected are available in the permissions editors, click **Settings** in the **Active Directory** window, then click **Rebuild Directory Service Cache** to resync the cache.
 
-The name in **NetBIOS Name** should match the name in **Hostname** on the **Global Configuration** settings screen.
+The name in **TrueNAS Hostname** should match the name in **Hostname** on the **System > Network** screen.
 
 ## Disabling Active Directory
 To disable your AD server connection without deleting your configuration or leaving the AD domain, click **Settings** to open the **Active Directory** settings screen.
@@ -118,7 +136,7 @@ Click **Configure Active Directory** to open the **Active Directory** screen wit
 Select **Enable** again, and click **Save** to reactivate your connection to your AD server.
 
 ## Leaving Active Directory
-TrueNAS requires users to cleanly leave an Active Directory to delete the configuration.
+Users must cleanly leave an Active Directory for TrueNAS to delete the configuration.
 To cleanly leave AD, click **Leave Domain** on the **Active Directory Advanced Settings** screen to remove the AD object.
 Remove the computer account and associated DNS records from the Active Directory.
 
