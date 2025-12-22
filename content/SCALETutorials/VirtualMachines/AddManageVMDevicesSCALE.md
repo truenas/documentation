@@ -34,7 +34,7 @@ After selecting the VM row on the **Virtual Machines** list and clicking on **De
 Devices added when you create the VM show by default. You can add additional or edit existing devices.
 
 Click on the <span class="material-icons">more_vert</span> at the right of the device row.
-Options for each device show. A disk device shows four options: **Edit**, **Delete**, **Details**, and **Export to Image**.
+TrueNAS shows options for each device. A disk device shows four options: **Edit**, **Delete**, **Details**, and **Export to Image**.
 Other device types do not include the export option.
 
 Click *Edit** to open the **Edit Device** screen.
@@ -65,12 +65,12 @@ Steps below are optional. Change them based on your use case.
 {{< expand "To edit display type or bind address after creating a VM" "v" >}}
 Go to **Virtual Machines**, locate the VM you want to modify, and click on it to expand it.
 Click <i class="material-icons" aria-hidden="true" title="Devices">device_hub</i> **Devices** to open the **Devices** screen associated with the VM.
-Click the <span class="material-icons">more_vert</span> icon at the right of the display device and click on **Edit** to open the **Edit Device** screen for that display device.
+Click the <span class="material-icons">more_vert</span> icon to the right of the display device and click on **Edit** to open the **Edit Device** screen for that display device.
 Select the IP address or other option on the **Bind** dropdown.
 
 You can assign a port number to your display device or use the default port number associated with the device.
 
-You can add a second display device to have a VNC and SPICE display associated with the VM, but only one display device can be active at one time.
+You can add a second display device to have a VNC and SPICE display associated with the VM, but only one display device can be active at a time.
 Adding a second display device assigns a different default port number to the second display device.
 {{< /expand >}}
 
@@ -86,7 +86,7 @@ To delete a device:
 
    {{< trueimage src="/images/SCALE/Virtualization/DeleteVMDevice.png" alt="Delete Virtual Machine Device" id="Delete Virtual Machine Device" >}}
 
-3. Select **Force Delete** to force the system to delete the device (for example, device is a CD-ROM).
+3. Select **Force Delete** to force the system to delete the device (for example, the device is a CD-ROM).
    When deleting a disk, it forces the system to delete the zvol even if other devices or services use it or have affiliations with the zvol device.
 4. Click **Delete Device**.
 
@@ -227,7 +227,7 @@ After stopping the VM and clicking **Devices** to open the **Devices** screen:
    TrueNAS allows a VM to have two different display devices: a VNC display device added through the VM creation wizard if you select the **Enable Display (VNC)** option, and a second SPICE display device added to the VM using the **Add Device** screen with **Device Type** set to display.
 
    If you created the VM without the display, the **Display Type** dropdown list shows the **VNC** and **SPICE** options.
-   Select the display type on the dropdown list. (We recommend VNC).
+   Select the display type from the dropdown list. (We recommend VNC).
    To add a second display device, repeat this procedure and select **SPICE** (the only option for the second display device).
 3. Enter a fixed port number in **Port**.
    To allow TrueNAS to assign the port after restarting the VM, set the value to zero (leave the field empty).
