@@ -24,9 +24,9 @@ Click **Save** or **Cancel** to close the configuration screen and return to the
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **NetBIOS Name** | Automatically populates with the original system host name. Enter a name that does not exceed 15 characters that is not the same as the **Workgroup** name. |
-| **NetBIOS Alias** | Enter any alias name that does not exceed 15 characters in length. If entering multiple aliases, separate alias names with a space between them. |
-| **Workgroup** | Enter a name that matches the Windows workgroup name. If you do not configure a workgroup, and Active Directory or LDAP is active, TrueNAS detects and sets the correct workgroup from these services. |
+| **NetBIOS Name** | Enter the NetBIOS name for the TrueNAS system (maximum 15 characters). Cannot contain: `\ / : * ? " < > |`. Cannot use Microsoft or RFC 852 reserved words. Must differ from the **Workgroup** name. TrueNAS 25.04 and later enforce these restrictions. Automatically populates with the original system hostname. |
+| **NetBIOS Alias** | Enter alias names (maximum 15 characters each). Cannot contain: `\ / : * ? " < > |`. Cannot use Microsoft or RFC 852 reserved words. TrueNAS 25.04 and later enforce these restrictions. Separate multiple aliases with a space between them. |
+| **Workgroup** | Enter a name that matches the Windows workgroup name (maximum 15 characters). Cannot contain: `\ / : * ? " < > |`. Cannot use Microsoft or RFC 852 reserved words. TrueNAS 25.04 and later enforce these restrictions. If you do not configure a workgroup and Active Directory or LDAP is active, TrueNAS detects and sets the correct workgroup from these services. |
 | **Description** | (Optional) Enter any notes or descriptive details about the service configuration. |
 | **Enable SMB1 support** | Select to allow legacy SMB1 clients to connect to the server (see caution below). SMB audit logging does not work when using SMB1. |
 | **NTLMv1 Auth** | Off by default. Select to allow [smbd](https://www.samba.org/samba/docs/current/man-html/smbd.8.html) attempts to authenticate users with the insecure and vulnerable NTLMv1 encryption. This setting allows backward compatibility with older versions of Windows, but we do not recommend it. Do not use on untrusted networks. |
