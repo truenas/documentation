@@ -409,7 +409,7 @@ Enter `ping` followed by the known IP or hostname of another client on the netwo
 Confirm the ping is successful.
 To confirm internet access, you can ping a known web server, such as `ping google.com`.
 
-Log in to another client on the network and ping the IP address of your new VM.
+Log into another client on the network and ping the IP address of your new VM.
 Confirm the ping is successful.
 {{< /expand >}}
 
