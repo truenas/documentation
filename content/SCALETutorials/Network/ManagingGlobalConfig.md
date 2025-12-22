@@ -25,9 +25,9 @@ Be sure to check both locations when troubleshooting network connectivity issues
 ## Adding Network Settings
 Use the **Global Configuration Settings** screen to add general network settings like the default gateway and DNS name servers to allow external communication.
 
-To add new or change existing network interfaces see [Interface Configurations]({{< ref "/SCALETutorials/Network/Interfaces/" >}}).
+To add new or change existing network interfaces see [Interface Configurations]({{< ref "/SCALETutorials/Network/Interfaces" >}}).
 
-To add new or change existing network interfaces, see [Interface Configurations]({{< ref "/SCALE/SCALETutorials/Network/Interfaces" >}}).
+To add new or change existing network interfaces, see [Interface Configurations]({{< ref "/SCALETutorials/Network/Interfaces" >}}).
 
 Go to **Network**, and click **Settings** on the **Global Configuration** widget to open the **Edit Global Configuration** screen.
 
