@@ -29,13 +29,12 @@ Expanding a VM shows the [details screen](#virtual-machine-details-screen) detai
 ## Virtual Machine Details Screen
 
 The expanded **Virtual Machines** screen shows the details and options for a VM.
-Details include the basic information on the number of virtual CPUs, cores and threads, the amount of memory, the boot loader, and system clock types.
-Additional details include the display port number and the shutdown timeout in seconds.
+Details include the basic information on the number of virtual CPUs, cores, and threads, the amount of memory, boot loader, and system clock types, the display port number, and the shutdown timeout in seconds.
 
 {{< trueimage src="/images/SCALE/Virtualization/VirtualMachinesScreenwithVMDetails.png" alt="VM Details" id="VM Details" >}}
 
 Options shown change after starting a virtual machine.
-When you place a VM in a suspended state, the options shown on the VM details screen change to show only the **Power Off** and **Resume** options.
+When a VM is placed in a suspended state, the options shown on the VM details screen change to show only the **Power Off** and **Resume** options.
 
 {{< expand "VM Options" "v" >}}
 {{< truetable >}}
@@ -44,8 +43,8 @@ When you place a VM in a suspended state, the options shown on the VM details sc
 | **Start** | <span class="iconify" data-icon="bxs:right-arrow"></span> | Starts a VM. The toggle turns blue when the VM switches to running. The **Start** button toggles to **Stop**. While running, the screen shows the **Restart**,**Power Off**, **Display**, and **Serial Shell** buttons. |
 | **Restart** | <span class="material-icons">replay</span> | Stops then starts the VM. Shows for a running VM. |
 | **Power Off** | <span class="material-icons">power_settings_new</span> | Shows after starting a VM. Powers off and halts the VM, similar to turning off a computer power switch. Shows only when the VM is running. |
-| **Resume** | Shows when you place a VM in a suspended state. The VM resumes operation and returns to the normal Running state.  |
-| **Stop** | <i class="material-icons" aria-hidden="true" title="Stop">stop</i> | Shows after starting a VM. Stops a running VM. Virtual machines do not always respond to **STOP**, or the command might time out if the VM does not have an OS. Use **Power Off** instead. **Stop** toggles to **Start** after the VM stops. |
+| **Resume** | Shows when a VM is placed in a suspended state. The VM resumes operation and returns to the normal Running state.  |
+| **Stop** | <i class="material-icons" aria-hidden="true" title="Stop">stop</i> | Shows after starting a VM. Stops a running VM. Virtual machines do not always respond to **STOP** or the command might time out if the VM does not have an OS. Use **Power Off** instead. **Stop** toggles to **Start** after the VM stops. |
 | **Edit** | <span class="material-icons">mode_edit</span> | Opens the **[Edit Virtual Machine](#edit-virtual-machine-screen)** with editable VM settings. You cannot edit a VM while it is running. Stop the VM to edit the properties and settings. |
 | **Delete** | <i class="material-icons" aria-hidden="true" title="Delete">delete</i> | Deletes a VM and removes it from the system. Opens a [delete dialog](#delete-virtual-machine-dialog). You cannot delete a virtual machine that is running. Stop the VM to delete it. |
 | **Devices** | <i class="material-icons" aria-hidden="true" title="Devices">device_hub</i> | Shows after starting a VM. Opens the **[Virtual Machine Devices](#devices-screens)** screen for the selected VM. |
@@ -66,7 +65,7 @@ The **Delete Virtual Machine** dialog shows options when deleting the VM and rem
 | Setting | Description |
 |---------|-------------|
 | **Delete Virtual Machine Data** | Removes the data associated with this virtual machine. When selected, displays a list of disk and raw file devices to delete. Deleting a VM results in data loss if the data is not backed up. Do not select this option to keep the VM data intact. |
-| **Force Delete**| Ignores the virtual machine status during the delete operation. Do not select this option to prevent deleting the VM when it remains active or has an undefined state. |
+| **Force Delete**| Ignores the virtual machine status during the delete operation. Do not select this option to prevent deleting the VM when it is still active or the state is undefined. |
 | **Enter *vmname* below to confirm** | Blank text entry field to manually enter the name of the VM to delete. This must match the name shown in the dialog. |
 {{< /truetable >}}
 
@@ -85,19 +84,17 @@ The **Serial Shell** button opens the **VM Serial Shell** screen, where you can 
 
 {{< trueimage src="/images/SCALE/Virtualization/VMSerialShellScreen.png" alt="Serial Shell" id="Serial Shell" >}}
 
-The **Virtual Machines** breadcrumb in the header returns to the **Virtual Machine** screen.
+The **Virtual Machines** breadcrumb in the header to returns to the **Virtual Machine** screen.
 
 ### Edit Virtual Machine Screen
 
 The **Edit VM** screen shows a subset of settings in the **[Create Virtual Machine](#create-virtual-machine-wizard-screens)** screens.
-It includes the general settings from the wizard **Operating System** screen, **CPU and Memory** screen, and **GPUs** screen.
+It includes the general settings also on the wizard **Operating System** screen, **CPU and Memory**, and **GPUs** screen settings.
 To edit disks, network, or display settings, click [**Devices**](#virtual-machine-details-screen) on the expanded view of the VM to open the [**Devices**](#devices-screens) screen.
 
 #### General Settings
 
-The **Edit** screen **General Settings** specifies the basic settings for a VM.
-Unlike the **Create Virtual Machine** wizard, you cannot change the **Enable** or **Start on Boot** status from this screen.
-You also cannot change the display type or bind address for a saved VM from this screen.
+The **Edit** screen **General Settings** specifies the basic settings for a VM. Unlike the **Create Virtual Machine** wizard, you cannot change the **Enable** or **Start on Boot** status or change the display type or bind address for a saved VM from this screen.
 
 {{< trueimage src="/images/SCALE/Virtualization/EditVMGeneralSettings.png" alt="Edit General Settings" id="Edit General Settings" >}}
 
@@ -109,7 +106,7 @@ You also cannot change the display type or bind address for a saved VM from this
 | **Description** | Enter a description (optional). |
 | **System Clock** | Select the VM system time from the dropdown list. Options are **Local** or **UTC**. The default is **Local**. |
 | **Boot Method** | Select the boot method option from the dropdown list. Select **UEFI** for newer operating systems or **Legacy BIOS** for older operating systems that only support BIOS booting. |
-| **Shutdown Timeout** | Enter the time, in seconds, the system waits for the VM to cleanly shut down. During the shutdown, the system powers off the VM after the shutdown timeout expires. |
+| **Shutdown Timeout** | Enter the time, in seconds, the system waits for the VM to cleanly shut down. During the shutdown, the system powers off the VM after the shutdown timeout entered expires. |
 | **Start on Boot** | Select to start this VM when the system boots. |
 | **Enable Hyper-V Enlightenments** | Shows for VMs set for Windows OS. KVM implements Hyper-V Enlightenments for Windows guests. These features make Windows think they are running on a Hyper-V-compatible hypervisor and use Hyper-V-specific features. In some cases, enabling these enlightenments might improve the usability and performance for the guest. |
 | **Enable Secure Boot** | Turns on the secure boot function in TrueNAS. Only available when using the wizard to create a new VM; it is not available on the edit screen. Some operating systems, like Windows 11, might not require secure boot. |
@@ -170,17 +167,17 @@ The **Operating System** settings specify the VM operating system type, the time
 | Setting | Description |
 |---------|-------------|
 | **Guest Operating System** | (Required) Sets the operating system for the VM operating system to the option selected on the dropdown list. Options are **Windows**, which adds the **Enable Hyper-V Enlightenments** option. **Linux**, and **FreeBSD**. |
-| **Enable Hyper-V Enlightenments** | Only shows when you set **Guest Operating System** to **Windows**. When enabled, the VM emulates a Hyper-V-compatible hypervisor for the Windows guest operating system and makes some Hyper-V-specific features available. |
+| **Enable Hyper-V Enlightenments** | Only shows when **Guest Operating System** is set to **Windows**. When enabled, the VM emulates a Hyper-V-compatible hypervisor for the Windows guest operating system and makes some Hyper-V-specific features available. |
 | **Name** | (Required) Text entry field that accepts manual or copy/paste entry of a name for the VM that consists of alphanumeric characters. |
 | **Description** | (Optional) Text entry field that accepts manual or copy/paste entry of a brief description about the VM. For example, the type of OS for the VM or the purpose of the VM. |
 | **System Clock** | (Required) Sets the VM system clock to the option selected on the dropdown list. Options are: **Local**, which uses the TrueNAS SCALE system clock setting, or **UTC**, which uses the Coordinated Universal Time clock. The default is **Local**. |
 | **Boot Method** | (Required) Sets the boot method to the option selected on the dropdown list. Options are: **UEFI** for newer operating systems or **Legacy BIOS** for older operating systems that only support BIOS booting. |
-| **Enable Secure Boot** | Sets the VM to verify boot components using digital signatures. This prevents unauthorized code from running during startup. Windows 11 and some Linux distributions require this feature. |
+| **Enable Secure Boot** | Sets the VM to verify boot components using digital signatures. This prevents unauthorized code from running during startup and is required for Windows 11 and some Linux distributions. |
 | **Enable Trusted Platform Module (TPM)** | Sets TrueNAS to provide a virtual TPM 2.0 device for the VM. This enables hardware-based security functions, including secure key storage and cryptographic operations. Required for Windows 11. |
 | **Shutdown Timeout** | Text entry field that accepts manual entry of a time in seconds that the system waits for the VM to cleanly shut down. During system shutdown, the system powers off after the shutdown timeout for the VM expires. |
-| **Start on Boot** | Sets the VM to automatically start after you restart the system or it reboots. Selected by default. |
+| **Start on Boot** | Sets the VM to automatically start after restarting the system or when it is rebooted. Selected by default. |
 | **Enable Display (VNC)** | Enables a VNC display (Virtual Network Computing) remote connection. VNC is the default display type when adding a VM. Requires UEFI booting. Selected by default. |
-| **Bind** | Shows when you select **Enable Display**. Sets an IP address to use for remote VNC sessions. Note that this setting only applies when using a VNC client other than the TrueNAS WebUI. |
+| **Bind** | Shows when **Enable Display** is selected. Sets an IP address to use for remote VNC sessions. Note that this setting only applies when using a VNC client other than the TrueNAS WebUI. |
 | **Password** | (Required)  Displays when **Enable Display** is selected.Enter a password to secure access to the VM. Enter this when logging into the VNC display. |
 {{< /truetable >}}
 {{< /expand >}}
@@ -194,9 +191,7 @@ The **CPU and Memory** settings specify the CPU mode, model, and memory size. Th
 
 ### Disks Settings
 
-The **Disks** settings specify how you add virtual disks.
-Options include creating a new zvol on an existing dataset for a disk image or using an existing zvol for the VM.
-You can also import an existing disk image file (QCOW2, QED, RAW, VDI, VHDX, VMDK) and convert it to a zvol.
+The **Disks** settings specify how virtual disks are added. Options are creating a new zvol on an existing dataset for a disk image, using an existing zvol for the VM, or importing an existing disk image file (QCOW2, QED, RAW, VDI, VHDX, VMDK) and converting it to a zvol.
 
 {{< trueimage src="/images/SCALE/Virtualization/CreateVirtualMachinesDisksSettings.png" alt="Disks Settings" id="Disks Settings" >}}
 
@@ -211,7 +206,7 @@ You can also import an existing disk image file (QCOW2, QED, RAW, VDI, VHDX, VMD
 | **Select Disk Type** | Sets the disk type to the option selected on the dropdown list. Options are **AHCI** or **VirtIO**. Select **AHCI** for Windows VMs. **VirtIO** requires a guest OS that supports VirtIO paravirtualized network drivers. |
 | **Select Existing Zvol** | (Required) Shows after selecting **Use existing disk image**. Sets the disk to the existing zvol selected from the dropdown list. |
 | **Zvol Location** | (Required) Shows a dropdown list of datasets to select as the location where the system creates a new zvol. When you select **Import Image**, this specifies the destination dataset for the converted zvol. When you select **Create new disk image**, this specifies where the system creates the new zvol. |
-| **Size** | (Required) Shows when you select **Create new disk image**. Allocates space for the new zvol. (Examples: 500 KiB, 500M, 2 TB). Units smaller than MiB are not allowed. |
+| **Size** | (Required) Shows when **Create new disk image** is selected. Allocates space for the new zvol. (Examples: 500 KiB, 500M, 2 TB). Units smaller than MiB are not allowed. |
 {{< /truetable >}}
 {{< /expand >}}
 
@@ -242,7 +237,7 @@ The **Installation Media** settings specify the location of the operating system
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Choose Installation Media Image** | Shows two fields, the mount path field and a file browser field directly below it. Sets the mount path to what you select in the file browser field. To collapse the file branch, click on the <i class="fa fa-caret-right" aria-hidden="true"></i> to the left of **/mnt**. |
+| **Choose Installation Media Image** | Shows two fields, the mount path field and a file browser field directly below it. Sets the mount path to what is selected in the file browser field. To collapse the file branch, click on the <i class="fa fa-caret-right" aria-hidden="true"></i> to the left of **/mnt**. |
 | **Upload New Image File** | Opens the **Upload Image File** dialog, where you browse to, and select the image file location on the local system or a network location available to your TrueNAS system. **Choose File** sets the file location and activates **Upload**.  |
 {{< /truetable >}}
 {{< /expand >}}
@@ -284,15 +279,15 @@ The **Add Device** screen shows different settings based on the option selected 
 Accepts a number (such as *1003*) that represents where in the boot order this device should be. The higher the number, the later in the boot-up process the device falls.
 
 {{< expand "CD-ROM Settings" "v" >}}
-CD-ROM settings show when you set **Device Type** to **CD-ROM**.
+CD-ROM settings show when **Device Type** is set to **CD-ROM**.
 
 {{< trueimage src="/images/SCALE/Virtualization/VMAddDeviceCDROM.png" alt="Add Device - CD-ROM" id="Add Device - CD-ROM" >}}
 
-**CD-ROM Path** shows two fields: the **/mnt** path field that populates with what you select in the file browser field directly below it. The <iconify-icon icon="bxs:right-arrow"></iconify-icon> to the left of <iconify-icon icon="bxs:folder"></iconify-icon>**/mnt** expands or collapses the directory branch while you browse to the location of the CD-ROM file on the system. |
+**CD-ROM Path** shows two fields: the **/mnt** path field that populates with what is selected with the file browser field directly below it. The <iconify-icon icon="bxs:right-arrow"></iconify-icon> to the left of <iconify-icon icon="bxs:folder"></iconify-icon>**/mnt** expands or collapses the directory branch while you browse to the location of the CD-ROM file on the system. |
 {{< /expand >}}
 
 {{< expand "NIC Settings" "v" >}}
-VM network interface card settings show when you set **Device Type** to **NIC**.
+VM network interface card settings show when **Device Type** is set to **NIC**.
 
 {{< trueimage src="/images/SCALE/Virtualization/VMAddDeviceNIC.png" alt="Add Device - NIC" id="Add Device - NIC" >}}
 
@@ -308,7 +303,7 @@ VM network interface card settings show when you set **Device Type** to **NIC**.
 {{< /expand >}}
 
 {{< expand "Disk Settings" "v" >}}
-Disk settings, including disk location, drive type, and disk sector size, show when you set **Device Type** to **Disk**.
+Disk settings, including disk location, drive type, and disk sector size, show when **Device Type** is set to **Disk**.
 A disk device has four options: **Edit**, **Delete**, **Details**, and **Export to Image**.
 **Export to Image** opens the [**Export Disk to Image**](#export-disk-to-image-window) window.
 
@@ -324,9 +319,9 @@ A disk device has four options: **Edit**, **Delete**, **Details**, and **Export 
 {{< /expand >}}
 
 {{< expand "Display Settings" "v" >}}
-Display settings show when you set **Device Type** to **Display**. You can only have one display type set to **VNC** (the default when creating a new VM), but you can add a second display device and set it to **SPICE**.
+Display settings show when **Device Type** is set to **Display**. You can only have one display type set to **VNC** (the default when creating a new VM), but you can add a second display device and set it to **SPICE**.
 
-Remote clients can connect to VM display sessions using a SPICE client or by installing a third-party remote desktop server inside your VM.
+Remote clients can connect to VM display sessions using a SPICE client, or by installing a third-party remote desktop server inside your VM.
 SPICE clients are available from the [SPICE Protocol site](https://www.spice-space.org/).
 
 {{< trueimage src="/images/SCALE/Virtualization/VMAddDeviceDisplay.png" alt="Add Device - Display" id="Add Device - Display" >}}
@@ -334,8 +329,8 @@ SPICE clients are available from the [SPICE Protocol site](https://www.spice-spa
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Display Type** | Sets a new display device type to the option selected. <br>When you create a VM without a display device, the **Display Type** options are **VNC** or **SPICE**. When you create the VM with the display device set to the default **VNC**, only the **SPICE** option shows on the dropdown list. <br>TrueNAS allows creating two display devices, one from the VM creation wizard, which uses the default **VNC** display, and a second through the **Add Device** screen with the **Device Type** set to **Display**. Only **SPICE** shows when adding the second display device. |
-| **Port** | Text field that accepts manual or copy/paste entry of a port number. You can set this to **0**, leave it empty for TrueNAS to assign a port when you start the VM, or set it to a fixed preferred port number. |
+| **Display Type** | Sets a new display device type to the option selected. <br>When a VM is created without a display device, the **Display Type** options are **VNC** or **SPICE**. When the VM is created with the display device set to the default **VNC**, only the **SPICE** option shows on the dropdown list. <br>TrueNAS allows creating two display devices, one from the VM creation wizard, which uses the default **VNC** display, and a second through the **Add Device** screen with the **Device Type** set to **Display**. Only **SPICE** shows when adding the second display device. |
+| **Port** | Text field that accepts manual or copy/paste entry of a port number. Can be set to **0**, left empty for TrueNAS to assign a port when the VM is started, or set to a fixed preferred port number. |
 | **Resolution** | Sets the screen resolution for the VM display session to the option selected on the dropdown list. |
 | **Bind** | Sets the IP address used for the SPICE display sessions to the option selected on the dropdown list. Options include the default **0.0.0.0**, **::**, **::1**, IP addresses obtained from your network, and the TrueNAS primary interface. |
 | **Password** | Text field that accepts manual or copy/paste entry of a password, that is eight characters in length, that TrueNAS automatically passes to the remote display session. |
@@ -345,14 +340,14 @@ SPICE clients are available from the [SPICE Protocol site](https://www.spice-spa
 {{< /expand >}}
 
 {{< expand "Raw File Settings" "v" >}}
-Shows the raw file settings, including file location, size, disk sector size, and type when you set **Device Type** to **Raw File**.
+Shows the raw file settings, including file location, size, disk sector size, and type when **Device Type** is set to **Raw File**.
 
 {{< trueimage src="/images/SCALE/Virtualization/VMAddDeviceRawFile.png" alt="Add Device - Raw File" id="Add Device - Raw File" >}}
 
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Raw File** | Shows two fields. A file browser field and a blank field that populates with what you select in the file browser directly below it. Use the <iconify-icon icon="bxs:right-arrow"></iconify-icon> to the left of <iconify-icon icon="bxs:folder"></iconify-icon>**/mnt** to expand or collapse the directory branches as you browse to and select the location of the file on the system. |
+| **Raw File** | Shows two fields. A file browser field and a blank field that populates with what is selected in the file browser directly below it. Use the <iconify-icon icon="bxs:right-arrow"></iconify-icon> to the left of <iconify-icon icon="bxs:folder"></iconify-icon>**/mnt** to expand or collapse the directory branches as you browse to and select the location of the file on the system. |
 | **Disk sector size** | Sets the disk sector size to the option selected on the dropdown list. Options are **Default**, which uses the ZFS volume values, **512** or **4096**. Setting a sector size changes both the logical and physical sector size. |
 | **Mode** | Sets the drive type to the option selected on the dropdown list. Options are: <br><li>**AHCI** - Emulates an AHCI hard disk for better software compatibility. <br><li>**VirtIO** - Uses paravirtualized drivers and can provide better performance, but the operating system installed in the VM must support VirtIO disk devices.</li>. |
 | **Raw filesize** | Text field that accepts manual entry of a number for the size of the file in GiB. |
@@ -360,7 +355,7 @@ Shows the raw file settings, including file location, size, disk sector size, an
 {{< /expand >}}
 
 {{< expand "PCI Passthrough Settings" "v" >}}
-Shows PCI passthrough device settings when you set **Device Type** to **PCI Passthrough Device**.
+Shows PCI passthrough device settings when **Device Type** is set to **PCI Passthrough Device**.
 
 {{< hint type=important >}}
 Depending upon the type of device installed in your system, you might see a **PCI device does not have a reset mechanism defined** warning.
@@ -370,11 +365,11 @@ If this occurs, determine if you want to proceed with this action.
 
 {{< trueimage src="/images/SCALE/Virtualization/VMAddDevicePCIpass.png" alt="Add Device - PCI Passthrough" id="Add Device - PCI Passthrough" >}}
 
-**PCI Passthrough Device** sets the PCI device to what you manually enter or select on the dropdown list of options. Enter a device as *bus#/slot#/fcn#*, for example *0000:00:04.3 'System peripheral': Sky Lake-E CBDMA Registers by 'Intel Corporation'*.
+**PCI Passthrough Device** sets the PCI device to what is manually entered or select on the dropdown list of options. Enter a device as *bus#/slot#/fcn#*, for example *0000:00:04.3 'System peripheral': Sky Lake-E CBDMA Registers by 'Intel Corporation'*.
 {{< /expand >}}
 
 {{< expand "USB Passthrough Settings" "v" >}}
-Shows the USB passthrough device setting when you set **Device Type** to **USB Passthrough Device**.
+Shows the USB passthrough device setting when **Device Type** is set to **USB Passthrough Device**.
 
 {{< trueimage src="/images/SCALE/Virtualization/VMAddDeviceUSBpass.png" alt="Add Device - USB Passthrough" id="Add Device - USB Passthrough" >}}
 
