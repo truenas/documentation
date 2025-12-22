@@ -13,7 +13,7 @@ keywords:
 TrueNAS has built-in virtualization capabilities that allow running multiple operating systems on a single system, maximizing hardware utilization, and consolidating workloads.
 
 A *virtual machine (VM)* is a software-based computer that runs inside your TrueNAS system, and appears as a separate physical machine to the operating system installed within it.
-VMs use virtualized hardware components, including, network interfaces, storage volumes, graphics adapters, and other devices, providing complete isolation between different operating systems and applications.
+VMs use virtualized hardware components, including network interfaces, storage volumes, graphics adapters, and other devices, providing complete isolation between different operating systems and applications.
 
 VMs offer stronger isolation than [containers](/scaletutorials/containers/) but require more system resources, making them ideal for running full operating systems, legacy applications, or services that need dedicated environments.
 
@@ -45,7 +45,7 @@ If you have not yet added a virtual machine to your system, clicking **Add Virtu
 
    b. Enter a name for the VM.
 
-   c. (Optional) Enter a description for the VM. This can be any short text string describing how the VM is used or which operating system is configured.
+   c. (Optional) Enter a description for the VM. This can be any short text string describing how you use the VM or which operating system you configure.
 
    d. (Optional) Change the default settings in **System Clock** and **Boot Method** to suit your use case.
       Select **UTC** as the VM system time from the **System Clock** dropdown if you do not want to use the default **Local** setting.
@@ -53,20 +53,21 @@ If you have not yet added a virtual machine to your system, clicking **Add Virtu
 
    e. (Optional) Select **Enable Secure Boot** to enable cryptographic verification of boot loaders, operating system kernels, and drivers during VM startup.
       This security feature prevents unauthorized or malicious code from running during the boot process by checking digital signatures against trusted certificates.
-      Secure Boot is required for Windows 11 and some Linux distributions, and can be optional or unsupported for older operating systems.
+      Windows 11 and some Linux distributions require Secure Boot, while older operating systems might not support it.
       Secure boot is only available from the VM creation wizard.
 
    f. (Optional) Select **Enable Trusted Platform Module (TPM)** to provide a virtual TPM 2.0 device for the VM.
       TPM provides hardware-based security functions, including secure key storage, cryptographic operations, and platform attestation.
-      This is required for Windows 11 and enhances security for other operating systems that support TPM.
+      Windows 11 requires this feature, and it enhances security for other operating systems that support TPM.
 
-   g. (Optional) Select **Start on Boot** to start the VM after the system is restarted or boots up.
+   g. (Optional) Select **Start on Boot** to start the VM after you restart the system or it boots up.
 
    h. (Optional) Select **Enable Display (VNC)** to enable a Virtual Network Computing (VNC) remote connection for the VM.
       **Enable Display (VNC)** shows the **Bind** and **Password** fields.
 
    i. Select the IP address or option to use in **Bind**. Shows if you select **Enable Display**.
-      The **Bind** and **Password** fields display. If it is selected, to change the default IP address to use a specific address as the display network interface; otherwise, leave it set to **0.0.0.0**.
+      The **Bind** and **Password** fields display. If you select it, change the default IP address to use a specific address as the display network interface.
+      Otherwise, leave it set to **0.0.0.0**.
       The **Bind** list populates with any existing logical interfaces, such as static routes, configured on the system.
       You cannot edit the **Bind** setting after saving the VM settings.
 
@@ -79,7 +80,7 @@ If you have not yet added a virtual machine to your system, clicking **Add Virtu
 
    {{< trueimage src="/images/SCALE/Virtualization/CreateVirtualMachineCPUAndMemorySettings.png" alt="CPU and Memory Settings" id="CPU and Memory Settings" >}}
 
-   When the **Guest Operating System** is set to Windows, **Virtual CPUs** shows the default value of 2.
+   When you set **Guest Operating System** to Windows, **Virtual CPUs** shows the default value of 2.
    The VM operating system might have operational or licensing restrictions on the number of CPUs.
 
    Do not allocate too much memory to a VM. Activating a VM with all available memory allocated to it can slow the host system or prevent other VMs from starting.
@@ -90,7 +91,7 @@ If you have not yet added a virtual machine to your system, clicking **Add Virtu
    To dedicate a fixed amount of RAM, enter a value (minimum 256 MiB) in the **Memory Size** field and leave **Minimum Memory Size** empty.
 
    To allow for memory usage flexibility (sometimes called ballooning), define a specific value in the **Minimum Memory Size** field and a larger value in **Memory Size**.
-   The VM uses the **Minimum Memory Size** for normal operations but can dynamically allocate up to the defined **Memory Size** value in situations where the VM requires additional memory.
+   The VM uses the **Minimum Memory Size** for normal operations, but can dynamically allocate up to the defined **Memory Size** value in situations where the VM requires additional memory.
    Reviewing available memory from within the VM typically shows the **Minimum Memory Size**.
 
    Click **Next**.
@@ -113,7 +114,8 @@ If you have not yet added a virtual machine to your system, clicking **Add Virtu
 
    Select either **AHCI** or **VirtIO** from the **Select Disk Type** dropdown list. We recommend using **AHCI** for Windows VMs.
 
-   When creating a new disk image, select the location for the new zvol from the **Zvol Location** dropdown list and enter a value in **Size (Examples: 500KiB, 500M, and 2TB)** to indicate the amount of space to allocate for the new zvol.
+   When creating a new disk image, select the location for the new zvol from the **Zvol Location** dropdown list.
+   Enter a value in **Size (Examples: 500KiB, 500M, and 2TB)** to indicate the amount of space to allocate for the new zvol.
 
    Click **Next**.
 
@@ -170,7 +172,7 @@ After creating the VM and configuring devices for it, click on the VM to expand 
 
 An active VM displays options for <i class="material-icons" aria-hidden="true" title="VNC">settings_ethernet</i> **Display** and <i class="material-icons" aria-hidden="true" title="Serial Shell">keyboard_arrow_right</i> **Serial Shell** connections.
 
-When a display device is configured, remote clients can connect to VM display sessions.
+When you configure a display device, remote clients can connect to VM display sessions.
 
 If the display connection screen appears distorted, try adjusting the display device resolution.
 
@@ -179,7 +181,8 @@ Click <i class="material-icons" aria-hidden="true" title="Power Off Button">powe
 
 {{< hint type="tip" title="OS Dependent Toggles" >}}
 If the VM does not have a guest OS installed, the VM **Running** toggle and <i class="material-icons" aria-hidden="true" title="Stop Button">stop</i> **Stop** button might not function as expected.
-The **Running** toggle and <i class="material-icons" aria-hidden="true" title="Stop Button">stop</i> **Stop** buttons send an ACPI power down command to the VM operating system, but since an OS is not installed, these commands time out.
+The **Running** toggle and <i class="material-icons" aria-hidden="true" title="Stop Button">stop</i> **Stop** buttons send an ACPI power down command to the VM operating system.
+However, since an OS is not installed, these commands time out.
 Use the **Power Off** button instead.
 {{< /hint >}}
 
@@ -187,7 +190,7 @@ Use the **Power Off** button instead.
 
 To delete a VM, first stop it if it is running, then click <i class="material-icons" aria-hidden="true" title="Delete">delete</i> **Delete** on the expanded VM details screen.
 
-The **Delete Virtual Machine** dialog opens with options to control what data is removed.
+The **Delete Virtual Machine** dialog opens with options to control what data the system removes.
 
 {{< trueimage src="/images/SCALE/Virtualization/DeleteVirtualMachineDialog.png" alt="Delete Virtual Machine Dialog" id="Delete Virtual Machine Dialog" >}}
 
@@ -198,13 +201,13 @@ Deleting a VM with **Delete Virtual Machine Data** selected results in permanent
 Do not select this option if you want to keep the VM zvols intact for use with another VM or for data recovery.
 {{< /hint >}}
 
-**Force Delete** ignores the VM status during the delete operation. Only select this if the VM is in an undefined state and cannot be stopped normally.
+**Force Delete** ignores the VM status during the delete operation. Only select this if the VM has an undefined state and you cannot stop it normally.
 
 Enter the VM name in the confirmation field to enable the **Delete** button, then click **Delete** to remove the VM.
 
 ## Installing an OS
 
-After configuring the VM in TrueNAS and an OS <file>.iso</file> file is attached, start the VM and begin installing the operating system.
+After you configure the VM in TrueNAS and attach an OS <file>.iso</file> file, start the VM and begin installing the operating system.
 
 {{< hint type="note" title="OS Specific Settings" >}}
 Some operating systems can require specific settings to function properly in a virtual machine.
@@ -259,8 +262,8 @@ Modify settings as needed to suit your use case.
 
    **Installation Media**
 
-   The installation ISO is uploaded to local storage.
-   If the ISO is not uploaded, select **Upload an installer image file**.
+   This example assumes you uploaded the installation ISO to local storage.
+   If you have not uploaded the ISO, select **Upload an installer image file**.
    Select a dataset to store the ISO, click **Choose file**, then click **Upload**. Wait for the upload to
    complete.
 
@@ -406,7 +409,7 @@ Enter `ping` followed by the known IP or hostname of another client on the netwo
 Confirm the ping is successful.
 To confirm internet access, you can ping a known web server, such as `ping google.com`.
 
-Log in to another client on the network and ping the IP address of your new VM.
+Log into another client on the network and ping the IP address of your new VM.
 Confirm the ping is successful.
 {{< /expand >}}
 
@@ -426,12 +429,13 @@ See [Accessing NAS from VM]({{< ref "ContainerNASBridge" >}}) for more informati
 
 ## Migrating Containers VMs
 
-The storage volumes (zvols) for virtual machines created using the **Instances** screen in TrueNAS 25.04.0 or 25.04.1 (renamed the **Containers** screen in 25.04.2 and later) can migrate to new VMs created using the **Virtual Machines** screen in 25.04.2 and later.
+You can migrate storage volumes (zvols) from virtual machines created using the **Containers** screen (formerly **Instances**) in TrueNAS 25.04.x to new VMs.
+You create new VMs using the **Virtual Machines** screen in 25.04.2 and later.
 The process involves:
 
 - Identifying the hidden storage volumes (zvols) associated with the Instance VMs.
 - Determining which zvol contains the actual VM data by checking the volume size.
-- Renaming (and moving) the zvols to a new dataset where they can be seen and used by a new VM.
+- Renaming (and moving) the zvols to a new dataset where you can see and use them with a new VM.
 - (Highly Recommended) Configuring zvol properties to match those of natively-created VM zvols.
 - Creating a new VM and selecting the migrated zvol as the storage volume.
 
@@ -446,17 +450,19 @@ Before beginning the process:
 3. Verify the VM is operational and the network is functioning as expected. One way to do this is to verify it has Internet access.
    Then stop the VM before you upgrade to the next release.
 4. Identify the dataset where you want to move the volume.
-   We do not recommend renaming or moving the volume more than once, as it increases the risk of possible data corruption or loss.
+   We do not recommend renaming or moving the volume multiple times, as it increases the risk of possible data corruption or loss.
 
 You do not need to log in as the root user if the logged-in admin user has permission to use `sudo` commands.
-If not, go to **Credentials > Users**, edit the user to allow `sudo` commands, or verify the root user has an active password to switch to this user when entering commands in the **Shell** screen.
+If not, go to **Credentials > Users** and edit the user to allow `sudo` commands.
+Alternatively, verify the root user has an active password to switch to this user when entering commands in the **Shell** screen.
 
 ### Migrating a Zvol for an Instance VM
 
-This procedure applies to the zvol for an Instance or Container VM that has data you want to preserve and access from a new VM using the **Virtual Machines** screens in later releases.
+This procedure applies to the zvol for an Instance or Container VM that has data you want to preserve.
+Use this to access the data from a new VM using the **Virtual Machines** screens in later releases.
 
 1. Go to **Instances** (or **Containers**), click on **Configuration**, and then **Manage Volumes** to open the **Volumes** window.
-   The **Volumes** window lists all Instances VMs and associated storage volumes (zvols).
+   The **Volumes** window lists all Instances, VMs, and associated storage volumes (zvols).
 
    Record the volume name or take a screenshot of the information to refer to later when entering commands in the **Shell** screen. Zvol names are similar to the VM name but not identical.
    Optionally, you can highlight all the listed information and copy/paste it into a text file, but this is not necessary.
@@ -472,19 +478,21 @@ This procedure applies to the zvol for an Instance or Container VM that has data
 4. Go to **System > Update**, and update to the next publicly available maintenance or major version release.
    Follow the release migration paths outlined in the version release notes or the [Software Releases](https://www.truenas.com/docs/softwarereleases/) article.
 
-   After updating to a 25.04.x release or later, VMs created using **Instances** screens show on the **Containers** screen, and are stopped.
-   Some VMs experience various issues like network connectivity, or are stopped and do not start.
-   Refer to the troubleshooting tips below for more information. 25.10 releases correct some issues encountered in 25.04.2.4 VMs that are migrated.
+   After you update to a 25.04.x release or later, VMs you created using **Instances** screens show on the **Containers** screen in a stopped state.
+   Some VMs experience various issues like network connectivity, or stop and do not start.
+   Refer to the troubleshooting tips below for more information. 25.10 releases correct some issues that migrated 25.04.2.4 VMs encounter.
 
 After upgrading to a release that shows the **Virtual Machines** screen and the **Containers** option:
 
-5. Go to **Containers** to see which VMs are listed, then click **Configuration**, and then **Manage Volumes** to open the **Volumes** window.
+5. Go to **Containers** to see which VMs the system lists, then click **Configuration**, and then **Manage Volumes** to open the **Volumes** window.
    Take a screenshot of the volumes listed, or copy/paste the volumes and VM information into a text file to use later in this procedure.
-   Zvol names are similar to the VM but not identical. Volume names are used in step 6 below.
+   Zvol names are similar to the VM but not identical. You use volume names in step 6 below.
 
 6. Go to **System > Shell**. Exit to the Linux prompt for the system.
 
-   Note: This is where the logged-in admin user needs `sudo` permissions, or where the root user must have a password configured to enter the following commands to find, rename/move, and verify each Instance zvol is properly configured.
+   Note: This is where the logged-in admin user needs `sudo` permissions to enter the following commands.
+   Alternatively, the root user must have a password configured to enter these commands.
+   These commands find, rename/move, and verify each Instance zvol is properly configured.
    Experienced users can switch to the root user if the root user has a password assigned and enabled.
 
    Enter the following commands at the Linux system prompt:
@@ -493,10 +501,10 @@ After upgrading to a release that shows the **Virtual Machines** screen and the 
    Storage conventions differ based on VM history:
    - **Migrated VMs** (from pre-Incus TrueNAS) use `custom/default_*` zvols for actual VM data
    - **VMs created in 25.04.0 or 25.04.1** use `.block` zvols for actual VM data
-   - Small `.block` files (56K) are stubs and should not be migrated
+   - Small `.block` files (56K) are stubs, and you should not migrate them
    {{< /hint >}}
 
-   a. Locate the hidden zvols for the Instance VMs, by entering:
+   a. Locate the hidden zvols for the Instance VMs by entering:
 
    <code>sudo zfs list -t volume -r -d 10 <i>poolname</i></code>
 
@@ -536,13 +544,13 @@ After upgrading to a release that shows the **Virtual Machines** screen and the 
    ```
 
    In the examples above:
-   - Zvols with `custom/default_*` in the path showing significant storage (40+GB) are migrated VMs to migrate
-   - Zvols with `.block` extension showing significant storage (6.98G, 25.9M) are native Incus VMs to migrate
-   - Small `.block` files at 56K are stubs and should be ignored
+   - Zvols with `custom/default_*` in the path showing significant storage (40+GB) contain migrated VMs that you should migrate
+   - Zvols with `.block` extension showing significant storage (6.98G, 25.9M) are native Incus VMs that you should migrate
+   - Small `.block` files at 56K are stubs, and you should ignore them
    {{< /expand >}}
 
    {{< hint type=note >}}
-   After successfully migrating and confirming functionality of all VMs, the remaining stub `.block` files (56K) in `.ix-virt/virtual-machines/` can optionally be deleted to clean up the hidden dataset.
+   After you successfully migrate and confirm functionality of all VMs, you can optionally delete the remaining stub `.block` files (56K) in `.ix-virt/virtual-machines/` to clean up the hidden dataset.
    {{< /hint >}}
 
    b. Rename (and move) each volume in the **.ix-virt** directory to a new location where you can select it when configuring a new VM.
@@ -579,11 +587,11 @@ After upgrading to a release that shows the **Virtual Machines** screen and the 
 
    Where:
    - *tank* is the pool name.
-   - *vms* is the dataset where the zvol is stored.
+   - *vms* is the dataset that stores the zvol.
    - *default_debian1-urec9f* or *TrueNAS.block* is the name of the zvol
 
    This command sets the volume properties to match those used by zvols created through the **Virtual Machines** screen, ensuring optimal performance and behavior.
-   Containers VMs used different property settings that are not optimal for virtual machine workloads.
+   Containers VMs use different property settings that are not optimal for virtual machine workloads.
 
    After completing the commands listed above for each zvol you want to migrate, go to **Datasets** and verify all volumes you migrated show on the screen.
 
@@ -592,7 +600,9 @@ After upgrading to a release that shows the **Virtual Machines** screen and the 
    Go to **Virtual Machines**, click on **Add** to open the **Create Virtual Machine** wizard.
    For more information or details on using the Create Virtual Machine wizard, see [Creating a Virtual Machine](#creating-a-virtual-machine).
 
-   a. Complete the first screen by entering a name for the new VM, select the operating system used by the Instances VM, enter a brief description, and then if using the **Bind** setting, enter a password. Click **Next**.
+   a. Complete the first screen by entering a name for the new VM and selecting the operating system used by the Instances VM.
+   Enter a brief description, and then if using the **Bind** setting, enter a password.
+   Click **Next**.
 
    b. Configure the CPU and Memory settings, and then click **Next**.
 
@@ -604,7 +614,7 @@ After upgrading to a release that shows the **Virtual Machines** screen and the 
    After adding the new VM, click on the row to expand it, and click **Devices**.
    Click **Edit** for the **Disk** device, and enter **1000** in the **Device Order** field.
    Setting the disk to **1000** makes the disk device the first in the boot order for the VM.
-   Setting the disk to first in boot order over a CD-ROM device with an OS on it, if added when creating the VM, prevents the volume from being overwritten by booting from that CD-ROM device.
+   Setting the disk to first in boot order over a CD-ROM device with an OS on it, if you added one when creating the VM, prevents that CD-ROM device from overwriting the volume when you boot.
    Click **Save**.
 
 8. Return to the **Virtual Machines** screen, expand the VM, then click **Start** to verify it opens as expected and has network access.
