@@ -41,6 +41,8 @@ Enter the password for this account.
 
 After taking these actions, you can [connect to the Active Directory domain](#connecting-to-the-active-directory-domain).
 
+{{< include file="/static/includes/NetBIOSValidationWarning.md" >}}
+
 ### Setting Time Synchronization
 Active Directory relies on the time-sensitive [Kerberos](https://tools.ietf.org/html/rfc1510) protocol.
 TrueNAS adds the AD domain controller with the [PDC Emulator FSMO Role](https://support.microsoft.com/en-us/help/197132/active-directory-fsmo-roles-in-windows) as the preferred NTP server during the domain join process.
@@ -65,7 +67,7 @@ Or
 
 Before you begin, modify the system DNS server settings.
 Take a screenshot of your current settings to refer to if you need to revert to pre-AD settings for any reason.
-Change the nameserver 1 setting to the IP address of the AD sever and clear the other name server settings.
+Change the nameserver 1 setting to the IP address of the AD server and clear the other name server settings.
 Make sure the domain name is set to something other than the default value **truenas**.
 
 To connect TrueNAS to Active Directory:
@@ -90,7 +92,7 @@ To connect TrueNAS to Active Directory:
 
 5. Enter the **IDMAP Configuration** settings.
    - By default, **Use TrueNAS Server IDMAP Defaults** is selected.
-   - To customize IDMAP settings, uncheck **Use TrueNAS Server IDMAP Defaults** to reveal additional configuration options:
+   - To customize IDMAP settings, clear **Use TrueNAS Server IDMAP Defaults** to reveal additional configuration options:
    - **Builtin** section with optional **Name** field and required **Range Low** and **Range High** fields.
    - **IDMAP Domain** section with required **IDMAP Backend**, **Name**, **Range Low**, and **Range High** fields.
 
@@ -110,9 +112,9 @@ Joining AD also adds default Kerberos realms and generates a default **AD_MACHIN
 TrueNAS automatically begins using this default keytab and removes any administrator credentials stored in the TrueNAS configuration file.
 
 ### Troubleshooting - Resyncing the Cache
-If the cache becomes out of sync or fewer users than expected are available in the permissions editors, resync it by clicking **Settings** in the **Active Directory** window and then click **Rebuild Directory Service Cache**.
+If the cache becomes out of sync or fewer users than expected are available in the permissions editors, click **Settings** in the **Active Directory** window, then click **Rebuild Directory Service Cache** to resync the cache.
 
-The name in **NetBIOS Name** should match the name in **Hostname** on the **Global Configuration** settings screen.
+The name in **TrueNAS Hostname** should match the name in **Hostname** on the **System > Network** screen.
 
 ## Disabling Active Directory
 To disable your AD server connection without deleting your configuration or leaving the AD domain, click **Settings** to open the **Active Directory** settings screen.
@@ -124,7 +126,7 @@ Click **Configure Active Directory** to open the **Active Directory** screen wit
 Select **Enable** again, and click **Save** to reactivate your connection to your AD server.
 
 ## Leaving Active Directory
-TrueNAS requires users to cleanly leave an Active Directory to delete the configuration.
+Users must cleanly leave an Active Directory for TrueNAS to delete the configuration.
 To cleanly leave AD, click **Leave Domain** on the **Active Directory Advanced Settings** screen to remove the AD object.
 Remove the computer account and associated DNS records from the Active Directory.
 
