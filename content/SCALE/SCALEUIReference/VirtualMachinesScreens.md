@@ -31,7 +31,8 @@ Expanding a VM shows the [details screen](#virtual-machine-details-screen) detai
 ## Virtual Machine Details Screen
 
 The expanded **Virtual Machines** screen shows the details and options for a VM.
-Details include the basic information on the number of virtual CPUs, cores, and threads, the amount of memory, boot loader, and system clock types, the display port number, and the shutdown timeout in seconds.
+Details include the basic information on the number of virtual CPUs, cores, threads, the amount of memory, the boot loader, and system clock types.
+Additional details include the display port number and the shutdown timeout in seconds.
 
 {{< trueimage src="/images/SCALE/Virtualization/VirtualMachinesScreenwithVMDetails.png" alt="VM Details" id="VM Details" >}}
 
@@ -139,7 +140,7 @@ The **Devices** screen shows a table listing of VM devices configured on your sy
 
 **Add** opens the [**Add Device**](#devices-add-screens) screen. Settings change based on the various device types.
 
-The <span class="material-icons">more_vert</span> at the right of each device row has three options:
+The <span class="material-icons">more_vert</span> at the right of each device row shows options for that device:
 
 * **Edit** - Opens the **Edit *type* Device** screen where *type* is the device type selected.
   Settings vary based on the type of device selected in **Device Type**. See **[Add Device](#devices-add-screens)** screen.
@@ -148,6 +149,8 @@ The <span class="material-icons">more_vert</span> at the right of each device ro
 * **Delete** - Opens the **Delete Device** dialog.
 
 * **Details** - Opens an information dialog showing the port, type, bind IP, and other details about the device.
+
+* **Export to Image** - Shows only for disk devices. Opens the **[Export Disk to Image](#export-disk-to-image-window)** window to convert the disk (zvol) to a portable disk image file in QCOW2, QED, RAW, VDI, VHDX, or VMDK format.
 
 ## Create Virtual Machine Wizard Screens
 
@@ -191,7 +194,7 @@ The **CPU and Memory** settings specify the CPU mode, model, and memory size. Th
 
 ### Disks Settings
 
-The **Disks** settings specify how virtual disks are added. Options are creating a new zvol on an existing dataset for a disk image, or using an existing zvol or file for the VM.
+The **Disks** settings specify how virtual disks are added. Options are creating a new zvol on an existing dataset for a disk image, using an existing zvol for the VM, or importing an existing disk image file (QCOW2, QED, RAW, VDI, VHDX, VMDK) and converting it to a zvol.
 
 {{< trueimage src="/images/SCALE/Virtualization/CreateVirtualMachinesDisksSettings.png" alt="Disks Settings" id="Disks Settings" >}}
 
@@ -199,12 +202,14 @@ The **Disks** settings specify how virtual disks are added. Options are creating
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Create new disk image** | Shows settings to create a new zvol on an existing dataset to use as a virtual hard drive for the VM. |
-| **Use existing disk image** | Shows settings to select an existing zvol or file for the VM. Shows the **Select Disk Type** and **Select Existing Zvol**  fields. |
+| **Create new disk image** | Shows settings to create a new zvol on an existing dataset to use as a virtual hard drive for the VM. Displays the **Select Disk Type**, **Zvol Location**, and **Size** fields. |
+| **Use existing disk image** | Shows settings to select an existing zvol for the VM. Displays the **Select Disk Type** and **Select Existing Zvol** fields. |
+| **Import Image** | Checkbox option to import an existing disk image file and convert it to a zvol for VM use. When you select this option, the **Image Source** field displays. Supports QCOW2, QED, RAW, VDI, VHDX, and VMDK formats with automatic format detection. |
+| **Image Source** | (Required) Displays when you select **Import Image**. Browse to and select the source disk image file to import. The system automatically detects the image format from the file. |
 | **Select Disk Type** | Sets the disk type to the option selected on the dropdown list. Options are **AHCI** or **VirtIO**. Select **AHCI** for Windows VMs. **VirtIO** requires a guest OS that supports VirtIO paravirtualized network drivers. |
-| **Select Existing Zvol** | (Required) Showss after selecting **Use existing disk image**. Sets the disk to the existing zvol selected from the dropdown list. |
-| **Zvol Location** | (Required) Shows when **Create new disk image** is selected. Shows a dropdown list of datasets to select as the location where a new zvol is created. |
-| **Size** | (Required) Shows when **Create new disk image* is selected. Allocates space for the new zvol. (Examples: 500 KiB, 500M, 2 TB). Units smaller than MiB are not allowed. |
+| **Select Existing Zvol** | (Required) Shows after selecting **Use existing disk image**. Sets the disk to the existing zvol selected from the dropdown list. |
+| **Zvol Location** | (Required) Shows a dropdown list of datasets to select as the location where the system creates a new zvol. When you select **Import Image**, this specifies the destination dataset for the converted zvol. When you select **Create new disk image**, this specifies where the system creates the new zvol. |
+| **Size** | (Required) Shows when **Create new disk image** is selected. Allocates space for the new zvol. (Examples: 500 KiB, 500M, 2 TB). Units smaller than MiB are not allowed. |
 {{< /truetable >}}
 {{< /expand >}}
 
@@ -381,16 +386,16 @@ Shows the USB passthrough device setting when **Device Type** is set to **USB Pa
 
 ### Export Disk to Image Window
 
-The **Export Disk to Image** window shows a file browser and other settings to export the selected disk to create a VM disk image that you can then specify later as a zvol for use by a VM. It is accessed from a disk device on the **Devices** screen.
+The **Export Disk to Image** window shows a file browser and other settings to convert a VM disk (zvol) to a portable disk image file. You access it from a disk device on the **Devices** screen.
 
 {{< trueimage src="/images/SCALE/Virtualization/ExportDiskToImageWindow.png" alt="Export Disk to Image" id="Export Disk to Image" >}}
 
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Destination Directory** | Sets the path to the desired dataset/directory where you want to export the image file. Enter the mount path, or use the file browser to browse to and select the mount path. Clicking on the dataset/directory selects it and populates the blank field directly above the file browser field. |
-| **Image Name** | Show the name for the exported image file. The appropriate extension is added automatically based on the format selected in **Image Format**. |
-| **Image Format** | Sets the type of image created and adds the file extension the name in **Image Name**. Options are: <br><li>**QCOW2 - QEMU Copy On Write** <br><li>**QED - QUEM Enhanced Disk** <br><li>**RAW - Raw Disk Image** <br><li>**VDI - Virtual Box Disk**, which is the default for disks in TrueNAS VM. <br><li>**VHDX - Hyper-V Virtual Hard Disk** <br><li>**VMDX - VMware Virtual Machine Disk**</li> |
+| **Destination Directory** | Sets the path to the desired dataset/directory where you want to export the image file. Enter the mount path, or use the file browser to browse to and select the mount path. When you click on the dataset/directory, the system selects it and populates the blank field directly above the file browser field. |
+| **Image Name** | Shows the name for the exported image file. The system automatically adds the appropriate file extension based on the format you select in **Image Format**. |
+| **Image Format** | Sets the type of image the system creates and adds the file extension to the name in **Image Name**. Options are: <br><li>**QCOW2 - QEMU Copy On Write** <br><li>**QED - QEMU Enhanced Disk** <br><li>**RAW - Raw Disk Image** <br><li>**VDI - VirtualBox Disk Image** <br><li>**VHDX - Hyper-V Virtual Hard Disk** <br><li>**VMDK - VMware Virtual Machine Disk**</li> |
 {{< /truetable >}}
 
 {{<include file="/static/includes/addcolumnorganizer.md">}}

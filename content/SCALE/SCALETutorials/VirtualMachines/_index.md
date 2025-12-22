@@ -107,11 +107,17 @@ If you have not yet added a virtual machine to your system, clicking **Add Virtu
 
    Select **Use existing disk image** to use an existing zvol for the VM.
 
+   (Optional) Select **Import Image** to import an existing disk image file and convert it to a zvol for use by the VM.
+
+   {{< trueimage src="/images/SCALE/Virtualization/ImportDiskImageSettings.png" alt="Import Image Options" id="Import Image Options" >}}
+
+   When you select **Import Image**, browse to and select the source disk image file in **Image Source**.
+   The system automatically detects the image format (QCOW2, QED, RAW, VDI, VHDX, or VMDK).
+   Select the destination dataset in **Zvol Location** where the system creates the converted zvol.
+
    Select either **AHCI** or **VirtIO** from the **Select Disk Type** dropdown list. We recommend using **AHCI** for Windows VMs.
 
-   Select the location for the new zvol from the **Zvol Location** dropdown list.
-
-   Enter a value in **Size (Examples: 500KiB, 500M, and 2TB)** to indicate the amount of space to allocate for the new zvol.
+   When creating a new disk image, select the location for the new zvol from the **Zvol Location** dropdown list and enter a value in **Size (Examples: 500KiB, 500M, and 2TB)** to indicate the amount of space to allocate for the new zvol.
 
    Click **Next**.
 
