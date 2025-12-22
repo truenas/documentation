@@ -159,7 +159,8 @@ After stopping the VM and clicking **Devices** to open the **Devices** screen:
 
 ### Exporting a Disk to an Image
 
-You can use this function to create a VM disk image that you can then specify later as a zvol for use by a VM.
+Use this function to convert a VM disk (zvol) to a portable disk image file.
+Exported images can be imported into other VMs, transferred to different systems, or used as backups.
 
 After stopping the VM and clicking **Devices** to open the **Devices** screen:
 
@@ -167,9 +168,11 @@ After stopping the VM and clicking **Devices** to open the **Devices** screen:
 
    {{< trueimage src="/images/SCALE/Virtualization/ExportDiskToImageWindow.png" alt="Export Disk to Image" id="Export Disk to Image" >}}
 
-2. Browse to select the dataset/directory using the file browser, click on the dataset/directory to select it, and populate the mount path field.
-3. Select the image format from the **Image Format** dropdown list. Selecting the format adds the extension to the image name in **Image Name**.
-4. Click **Export**. The disk is saved as an image in the location specified in **Destination Directory**.
+2. Browse to select the dataset/directory using the file browser. Click on the dataset/directory to select it and populate the mount path field.
+3. Select the image format from the **Image Format** dropdown list.
+   Available formats include QCOW2 (QEMU Copy On Write), QED (QEMU Enhanced Disk), RAW (Raw Disk Image), VDI (VirtualBox Disk Image), VHDX (Hyper-V Virtual Hard Disk), and VMDK (VMware Virtual Machine Disk).
+   The system automatically adds the appropriate file extension to the name in **Image Name**.
+4. Click **Export**. The system saves the disk as an image in the location you specified in **Destination Directory**.
 
 ### Adding a PCI Passthrough Device
 

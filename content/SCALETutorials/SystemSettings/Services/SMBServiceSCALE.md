@@ -58,17 +58,17 @@ Click in the **Transport Encryption Behavior** field to select the option and be
 * **Required - always encrypt transport (rejecting access if client does not support encryption - incompatible with SMB1 server `enable_smb1`)**
 
 Select the **Default** option to use the TrueNAS current behavior.
-If set to default, there is not a technical limitation preventing an SMB client from negotiating an encrypted session if it is required.
+If set to default, there is no technical limitation preventing an SMB client from negotiating an encrypted session if required.
 
-If concerned about having Windows SMB clients always using signing in your environment, make a GPO change on the client side to always sign SMB2+ traffic.
+If you are concerned about having Windows SMB clients always using signing in your environment, make a GPO change on the client side to always sign SMB2+ traffic.
 This defaults to the Windows settings **digitally sign communications (always)** and to **off**.
 
-For more information on Windows SMB-client side transport encryption see [Windows SMB Signing Policies](https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/overview-server-message-block-signing#policy-locations-for-smb-signing).
+For more information on Windows SMB-client side transport encryption, see [Windows SMB Signing Policies](https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/overview-server-message-block-signing#policy-locations-for-smb-signing).
 
 ## Auditing SMB Events
 
 To monitor SMB service event logs, such as when a client attempts to authenticate to the share, use the TrueNAS [auditing screen]({{< ref "auditingscale" >}}).
-Go to **System > Audit** to review event logs including SMB connect, disconnect, create, read or write events, and others.
+Go to **System > Audit** to review event logs, including SMB connect, disconnect, create, read or write events, and others.
 
 Enter `SMB` in the [search bar]({{< ref "auditingscale.md#searching-audit-logs" >}}) to view only SMB service logs or use the advanced search to further limit results.
 
