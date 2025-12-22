@@ -93,7 +93,7 @@ To connect TrueNAS to Active Directory:
 
 5. Enter the **IDMAP Configuration** settings.
    - By default, **Use TrueNAS Server IDMAP Defaults** is selected.
-   - To customize IDMAP settings, uncheck **Use TrueNAS Server IDMAP Defaults** to reveal additional configuration options:
+   - To customize IDMAP settings, clear **Use TrueNAS Server IDMAP Defaults** to reveal additional configuration options:
    - **Builtin** section with optional **Name** field and required **Range Low** and **Range High** fields.
    - **IDMAP Domain** section with required **IDMAP Backend**, **Name**, **Range Low**, and **Range High** fields.
 
