@@ -61,7 +61,7 @@ Click in the **Transport Encryption Behavior** field to select the option and be
 Select the **Default** option to use the TrueNAS current behavior.
 If set to default, there is no technical limitation preventing an SMB client from negotiating an encrypted session if required.
 
-If concerned about having Windows SMB clients always using signing in your environment, make a GPO change on the client side to always sign SMB2+ traffic.
+If you are concerned about having Windows SMB clients always using signing in your environment, make a GPO change on the client side to always sign SMB2+ traffic.
 This defaults to the Windows settings **digitally sign communications (always)** and to **off**.
 
 For more information on Windows SMB-client side transport encryption, see [Windows SMB Signing Policies](https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/overview-server-message-block-signing#policy-locations-for-smb-signing).
