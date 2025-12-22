@@ -13,7 +13,7 @@ keywords:
 TrueNAS has built-in virtualization capabilities that allow running multiple operating systems on a single system, maximizing hardware utilization, and consolidating workloads.
 
 A *virtual machine (VM)* is a software-based computer that runs inside your TrueNAS system, and appears as a separate physical machine to the operating system installed within it.
-VMs use virtualized hardware components, including, network interfaces, storage volumes, graphics adapters, and other devices, providing complete isolation between different operating systems and applications.
+VMs use virtualized hardware components, including network interfaces, storage volumes, graphics adapters, and other devices, providing complete isolation between different operating systems and applications.
 
 VMs offer stronger isolation than [containers](/scaletutorials/containers/) but require more system resources, making them ideal for running full operating systems, legacy applications, or services that need dedicated environments.
 
@@ -91,7 +91,7 @@ If you have not yet added a virtual machine to your system, clicking **Add Virtu
    To dedicate a fixed amount of RAM, enter a value (minimum 256 MiB) in the **Memory Size** field and leave **Minimum Memory Size** empty.
 
    To allow for memory usage flexibility (sometimes called ballooning), define a specific value in the **Minimum Memory Size** field and a larger value in **Memory Size**.
-   The VM uses the **Minimum Memory Size** for normal operations but can dynamically allocate up to the defined **Memory Size** value in situations where the VM requires additional memory.
+   The VM uses the **Minimum Memory Size** for normal operations, but can dynamically allocate up to the defined **Memory Size** value in situations where the VM requires additional memory.
    Reviewing available memory from within the VM typically shows the **Minimum Memory Size**.
 
    Click **Next**.
@@ -462,7 +462,7 @@ This procedure applies to the zvol for an Instance or Container VM that has data
 Use this to access the data from a new VM using the **Virtual Machines** screens in later releases.
 
 1. Go to **Instances** (or **Containers**), click on **Configuration**, and then **Manage Volumes** to open the **Volumes** window.
-   The **Volumes** window lists all Instances VMs and associated storage volumes (zvols).
+   The **Volumes** window lists all Instances, VMs, and associated storage volumes (zvols).
 
    Record the volume name or take a screenshot of the information to refer to later when entering commands in the **Shell** screen. Zvol names are similar to the VM name but not identical.
    Optionally, you can highlight all the listed information and copy/paste it into a text file, but this is not necessary.
@@ -501,10 +501,10 @@ After upgrading to a release that shows the **Virtual Machines** screen and the 
    Storage conventions differ based on VM history:
    - **Migrated VMs** (from pre-Incus TrueNAS) use `custom/default_*` zvols for actual VM data
    - **VMs created in 25.04.0 or 25.04.1** use `.block` zvols for actual VM data
-   - Small `.block` files (56K) are stubs and you should not migrate them
+   - Small `.block` files (56K) are stubs, and you should not migrate them
    {{< /hint >}}
 
-   a. Locate the hidden zvols for the Instance VMs, by entering:
+   a. Locate the hidden zvols for the Instance VMs by entering:
 
    <code>sudo zfs list -t volume -r -d 10 <i>poolname</i></code>
 
@@ -546,7 +546,7 @@ After upgrading to a release that shows the **Virtual Machines** screen and the 
    In the examples above:
    - Zvols with `custom/default_*` in the path showing significant storage (40+GB) contain migrated VMs that you should migrate
    - Zvols with `.block` extension showing significant storage (6.98G, 25.9M) are native Incus VMs that you should migrate
-   - Small `.block` files at 56K are stubs and you should ignore them
+   - Small `.block` files at 56K are stubs, and you should ignore them
    {{< /expand >}}
 
    {{< hint type=note >}}
@@ -591,7 +591,7 @@ After upgrading to a release that shows the **Virtual Machines** screen and the 
    - *default_debian1-urec9f* or *TrueNAS.block* is the name of the zvol
 
    This command sets the volume properties to match those used by zvols created through the **Virtual Machines** screen, ensuring optimal performance and behavior.
-   Containers VMs used different property settings that are not optimal for virtual machine workloads.
+   Containers VMs use different property settings that are not optimal for virtual machine workloads.
 
    After completing the commands listed above for each zvol you want to migrate, go to **Datasets** and verify all volumes you migrated show on the screen.
 
@@ -600,7 +600,7 @@ After upgrading to a release that shows the **Virtual Machines** screen and the 
    Go to **Virtual Machines**, click on **Add** to open the **Create Virtual Machine** wizard.
    For more information or details on using the Create Virtual Machine wizard, see [Creating a Virtual Machine](#creating-a-virtual-machine).
 
-   a. Complete the first screen by entering a name for the new VM and select the operating system used by the Instances VM.
+   a. Complete the first screen by entering a name for the new VM and selecting the operating system used by the Instances VM.
    Enter a brief description, and then if using the **Bind** setting, enter a password.
    Click **Next**.
 
