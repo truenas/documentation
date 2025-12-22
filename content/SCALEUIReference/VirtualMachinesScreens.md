@@ -29,7 +29,8 @@ Expanding a VM shows the [details screen](#virtual-machine-details-screen) detai
 ## Virtual Machine Details Screen
 
 The expanded **Virtual Machines** screen shows the details and options for a VM.
-Details include the basic information on the number of virtual CPUs, cores, and threads, the amount of memory, boot loader, and system clock types, the display port number, and the shutdown timeout in seconds.
+Details include the basic information on the number of virtual CPUs, cores, threads, the amount of memory, the boot loader, and system clock types.
+Additional details include the display port number and the shutdown timeout in seconds.
 
 {{< trueimage src="/images/SCALE/Virtualization/VirtualMachinesScreenwithVMDetails.png" alt="VM Details" id="VM Details" >}}
 
