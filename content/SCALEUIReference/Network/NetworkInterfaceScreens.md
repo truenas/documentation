@@ -42,12 +42,12 @@ The **Add Interface** screen allows you to configure the settings for a new inte
 The **Edit Interface** screen allows changes to settings for an existing interface.
 Both screens show the [test changes](#test-changes) options to validate settings and prevent losing access to the TrueNAS system if the interface is incorrectly configured.
 
-The setting on the **Add Interface** and **Edit Interface** screens are almost identical.
+The settings on the **Add Interface** and **Edit Interface** screens are almost identical.
 
 **Type** only shows on the **Add Interface** screen. You cannot change it on the **Edit Interface** screen.
 **Type** is a required field. The additional settings show on the **Add Interface** screen based on the selected type.
 
-**Apply** saves setting changes, and shows the test changes options.
+**Apply** saves setting changes and shows the test changes options.
 
 {{<include file="/static/includes/addcolumnorganizer.md">}}
 
@@ -60,7 +60,7 @@ Interface settings configure the network interface name, type, and IP address as
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Type** | (Required) Only shows on the **Add Interface** screen. Sets the type of interface based on the selection on the dropdown list. Options are: <br><li> **Bridge** - Creates a logical link between multiple networks. <br><li>**Link Aggregation** (LAGG) - Combines multiple network connections into a single interface. <br><li>**VLAN** - Partitions and isolates a segment of the connection. <br></li>Each type of interface shows additional configuration settings for that type. You cannot change the type after you click **Apply** and test and accept the interface change. |
+| **Type** | (Required) Only shows on the **Add Interface** screen. Sets the type of interface based on the selection in the dropdown list. Options are: <br><li> **Bridge** - Creates a logical link between multiple networks. <br><li>**Link Aggregation** (LAGG) - Combines multiple network connections into a single interface. <br><li>**VLAN** - Partitions and isolates a segment of the connection. <br></li>Each type of interface shows additional configuration settings for that type. You cannot change the type after you click **Apply** and test and accept the interface change. |
 | **Name** | (Required) Accepts manual or copy/paste entry of a name for the interface. Names must use the format bond*X* for a LAGG, vlan*X* for a VLAN, or br*X* for a bridge, and where *X* is a number representing a non-parent interface. Assign the first interface of any type the appropriate name plus zero, for example, **br0** for the first bridge interface created. You cannot change the interface name after clicking **Apply**. After saving, **Name** becomes a read-only field when editing an interface. |
 | **Description** | Accepts manual or copy/paste entry of a description for the interface. Descriptions can provide additional information about how you use the interface or what it connects to. |
 | **DHCP** | Enable DHCP, allowing it to assign IP addresses to the interface. Shows two options: **Get IP Address Automatically from DHCP** and **Define Static IP Addresses**. reate a static IPv4 or IPv6 configuration.  |
@@ -92,7 +92,7 @@ Use **Description** to further define or clarify how or where you use the LAGG.
 |---------|-------------|
 | **Link Aggregation Protocol** | The protocol determines the outgoing and incoming traffic ports. Shows a dropdown list with three Link Aggregation (LAGG) protocol options:  <br><li>**LACP** - Use if the network switch is capable of active LACP (this is the recommended protocol). **LACP** shows additional settings.<br><li>**Failover** - Use if the network switch does not support active LACP. This is the default protocol choice and is only used if the network switch does not support active LACP. **Failover** uses only the **Link Aggregation Interfaces** setting. <br<li>**Loadbalance** - Use to set up loadbalancing. This does not use any other link aggregation settings.</li> |
 | **Link Aggregation Interfaces** | (Required) Shows a dropdown list of interfaces in the system. Select the interfaces to use in the aggregation.<br> Warning! Link Aggregation creation fails if any of the selected interfaces are manually configured!<br><li>Failover shows the interfaces that you can enable for failover. When you enable the toggle, the system selects the interface.<br><li>Loadbalance shows the **Transmit Hash Policy** setting. |
-| **Transmit Hash Policy** | Shows when you set the protocol to **LCAP** or **Loadbalance**. Dropdown list shows three hash policy options, **LAYER2**, **LAYER2+3** the default, or **LAYER3+4**. |
+| **Transmit Hash Policy** | Shows when you set the protocol to **LCAP** or **Loadbalance**. The dropdown list shows three hash policy options: **LAYER2**, **LAYER2+3** (the default), and **LAYER3+4**. |
 | **LACPDU Rate** | Shows when you set the protocol to **LCAP**. Shows a dropdown list with two options: **Slow** or **Fast**. |
 {{< /truetable >}}
 
