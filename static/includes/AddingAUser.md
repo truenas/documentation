@@ -1,6 +1,6 @@
 &NewLine;
 
-**SMB Access** is the default user access type that allows using the account credentials to access data shared with [SMB]({{< ref "/SCALE/SCALEUIReference/Shares" >}}).
+**SMB Access** is the default user access type that allows using the account credentials to access data shared with [SMB]({{< ref "/SCALEUIReference/Shares" >}}).
 
 When creating a user, you must:
 
