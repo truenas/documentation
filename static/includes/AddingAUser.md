@@ -1,5 +1,17 @@
 &NewLine;
 
+**SMB Access** is the default user access type that allows using the account credentials to access data shared with [SMB]({{< ref "/SCALEUIReference/Shares" >}}).
+
+When creating a user, you must:
+
+* Enter a **Full Name** or description for the user, such as a first and last name.
+* Enter a **Username**.
+* Enter a **Password**.
+* Specify or accept the default user ID (**UID**)
+
+TrueNAS requires other options based on the level of access and role assigned to the user.
+The **Shell** option only shows for users with **Shell Access** or **SSH Access** selected.
+
 To manually add a new user, click **Credentials > Users**, and then click **Add** to open the **Add User** screen.
 
 1. Enter a username for the user. Names are case sensitive!
@@ -70,7 +82,7 @@ To manually add a new user, click **Credentials > Users**, and then click **Add*
    This directory is an immutable directory shared by service accounts and accounts that should not have a full home directory.
    If set to this path TrueNAS does not create a home directory for the user. You must change this to the path for the dataset created for home directories.
 
-   {{< trueimage src="/images/SCALE/Credentials/AddUserHomeDirectorySettings.png" alt="User Home Directory Settings" id="User Home Directory Settings" >}}
+   {{< trueimage src="/images/SCALE/Credentials/AddingAHomeDirectory.png" alt="User Home Directory Settings" id="User Home Directory Settings" >}}
 
    Select **Create Home Directory** to create a new home directory. Leave unselected to select an existing home directory.
    The file browser field is renamed based on whether you select this option.
