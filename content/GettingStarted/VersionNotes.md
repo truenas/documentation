@@ -8,7 +8,7 @@ related: false
 use_jump_to_buttons: true
 jump_to_buttons:
   - text: "Latest Changes"
-    anchor: "25.10.0.1"
+    anchor: "25.10.1"
     icon: "fiber-new"
   - text: "Known Issues"
     anchor: "known-issues"
@@ -34,39 +34,50 @@ jump_to_buttons:
 
 <!-- Hugo-processed content for release notes tab box -->
 <div style="display: none;" id="release-tab-content-source">
-  <div data-tab-id="25.10.0.1" data-tab-label="25.10.0.1">
+  <div data-tab-id="25.10.1" data-tab-label="25.10.1">
 
-November 19, 2025
+December 18, 2025
 
-The TrueNAS team is pleased to release TrueNAS 25.10.0.1!
-This is a maintenance release that includes fixes to SMB shares, application management, cloud sync operations, and error handling.
+The TrueNAS team is pleased to release TrueNAS 25.10.1!
 
 **Notable changes:**
 
-* Fixes an SMB2 query directory with `SMB_REOPEN` flag issue ([NAS-138259](https://ixsystems.atlassian.net/browse/NAS-138259)).
-  Resolves an issue where client systems connected to TrueNAS 25.10 SMB shares could experience file access issues, including files appearing missing or shares showing as empty when browsing directories, media libraries (Plex, Jellyfin, etc.) losing access to files or removing them from indexes, and files failing to open or save over SMB.
-* Fixes VFS disconnect handling that prevented Time Machine snapshots ([NAS-135813](https://ixsystems.atlassian.net/browse/NAS-135813)).
-  Resolves a bug in the `io_uring_vfs_disconnect` function where walking the Samba VFS stack for `smb_vfs_disconnect` was terminating early, causing Apple Time Machine snapshots to fail execution. The function now properly traverses the full VFS stack without premature exit.
-* Fixes Docker service startup failures on systems with slow disk initialization ([NAS-138232](https://ixsystems.atlassian.net/browse/NAS-138232)).
-  Resolves a timeout issue where Docker initialization on HDD-equipped systems could take 2-3+ minutes, exceeding the default 120-second service timeout. This caused the apps service to be incorrectly marked as FAILED even though Docker eventually started successfully. The service timeout has been extended to 960 seconds (16 minutes) to accommodate slower disk scenarios.
-* Fixes custom application update failures from version 1.2.13 to 1.2.14 ([NAS-138230](https://ixsystems.atlassian.net/browse/NAS-138230)).
-  Resolves an issue where custom applications would fail to update properly, with multiple update attempts yielding no errors but the update notification persisting. The fix ensures that custom app versions are correctly upgraded alongside image updates during the application upgrade process.
-* Fixes false validation errors for custom app upgrades ([NAS-138534](https://ixsystems.atlassian.net/browse/NAS-138534)).
-  Resolves an issue where validation errors were incorrectly raised for custom apps during upgrade summaries when only the container image required updating. The system now properly recognizes that custom apps qualify for upgrade availability if either their images are outdated or catalog manifest changes exist.
-* Fixes Cloud Sync Task validation errors after upgrading to 25.10 ([NAS-138281](https://ixsystems.atlassian.net/browse/NAS-138281)).
-  Resolves an issue where Cloud Sync Tasks would display no available tasks after upgrade, with validation errors occurring when querying cloud sync tasks. The errors stemmed from Pydantic validation failures where parameters like `chunk_size` exceeded schema-defined limits.
-* Fixes a DNS validation typo in directory services ([NAS-138364](https://ixsystems.atlassian.net/browse/NAS-138364)).
-  Resolves a typo in DNS validation logic where "@" was incorrectly used instead of "." as the separator between hostname and domain name.
-* Fixes ZFS error handling for paths with multibyte UTF-8 characters ([NAS-138554](https://ixsystems.atlassian.net/browse/NAS-138554)).
-  Resolves an issue where ZFS paths containing multibyte characters would generate corrupted error descriptions, causing Python's Unicode decoder to fail. This resulted in simplified error messages instead of detailed ZFS exceptions and misclassification of error codes (`EZFS_UNKNOWN` instead of `EZFS_INVALIDNAME`), breaking dataset resolution APIs.
-* Fixes false temperature alerts for disks with negative threshold values ([NAS-138028](https://ixsystems.atlassian.net/browse/NAS-138028)).
-  Resolves an issue where disks with invalid or negative temperature thresholds would trigger persistent warning alerts in the GUI and automated email notifications. The system now properly filters out disks with negative temperature threshold configurations during alert generation.
-* Improves NetBIOS naming by expanding permitted identifiers ([NAS-138390](https://ixsystems.atlassian.net/browse/NAS-138390)).
-  Removes additional blacklist restrictions on NetBIOS names and workgroups, allowing more Microsoft-restricted keywords to be used. This change addresses customer environment needs where previously prohibited network naming identifiers are required.
+* Fixes issue where storage pools appeared offline after upgrading to 25.10.0 ([NAS-138236](https://ixsystems.atlassian.net/browse/NAS-138236)).
+  Affected systems experienced temporarily missing VDEVs that required a system reboot to restore pool access.
+* Adds **Final Cut Pro Storage Share** purpose preset for SMB shares ([NAS-138402](https://ixsystems.atlassian.net/browse/NAS-138402)).
+  Provides optimized configuration for Final Cut Pro workflows. See [Setting Up Final Cut Pro SMB Shares]({{< ref "/SCALETutorials/Shares/SMB/FCPShare.md" >}}) for more information.
+* Adds automatic validation for SMB share audit logging configurations.
+  TrueNAS 25.10.1 automatically disables SMB shares when auditing is enabled and watch or ignore lists contain invalid groups (deleted/renamed groups or groups that are no longer SMB-type). This protective measure prevents auditing misconfigurations that could cause security or compliance issues. The system generates alerts identifying affected shares and problematic groups. See [Configuring SMB Auditing](ManageSMBShares#configuring-smb-auditing) for configuration details and troubleshooting steps.
+* Adds REST API usage monitoring alert.
+  TrueNAS now displays a daily alert when deprecated REST API endpoints are accessed, helping identify integrations that need migration. The REST API was deprecated in TrueNAS 25.04. Full removal is planned for TrueNAS 26.04. For more information about the JSON-RPC 2.0 over WebSocket API, see the [API documentation](https://api.truenas.com/v25.10/jsonrpc.html).
+* Adds **Clear Config** button to the directory services configuration form.
+  This button allows users to easily remove existing directory service configurations. This is useful for troubleshooting, reconfiguration, or switching between directory service types.
+* Updates Samba from 4.22.5 to 4.22.6 ([NAS-138644](https://ixsystems.atlassian.net/browse/NAS-138644)).
+  Includes upstream fix for Time Machine backup failures on newer macOS versions. Resolves an issue where Time Machine backups failed on macOS 15.2 (Tahoe) and later due to a Samba 4.22 behavioral change affecting directory rename operations for open files. TrueNAS 25.04 releases are unaffected.
+* Fixes Windows 11 virtual machine Trusted Platform Module (TPM) persistence ([NAS-138165](https://ixsystems.atlassian.net/browse/NAS-138165)).
+  Resolves issue where BitLocker PINs and other TPM data reset after every VM restart. Users need to reset their PIN once after upgrading, after which persistence functions normally.
+* Fixes Secure Boot for virtual machines ([NAS-137898](https://ixsystems.atlassian.net/browse/NAS-137898)).
+  Resolves issue where VMs with Secure Boot enabled failed to boot signed operating systems like Windows 11 due to missing Microsoft keys in OVMF firmware.
+* Fixes VM image file upload default location ([NAS-138502](https://ixsystems.atlassian.net/browse/NAS-138502)).
+  Prevents ISO files from being saved to the boot drive /mnt folder when users do not change the default upload location during VM image upload.
+* Fixes VDI disk import for virtual machines ([NAS-137897](https://ixsystems.atlassian.net/browse/NAS-137897)).
+  Resolves errors when creating VMs using .vdi disk images.
+* Improves error handling for legacy FreeNAS dataset properties ([NAS-138629](https://ixsystems.atlassian.net/browse/NAS-138629)).
+  Users can encounter `"aclmode: failed to get property"` errors when editing datasets on long-running systems that contain invalid `aclmode=discard_chmod` property values from legacy FreeNAS versions. This update improves error messaging to help identify affected datasets. If you encounter this error, run `zfs set aclmode=passthrough dataset_name` via CLI to reset the property to a valid value, then reboot the system.
+* Improves error messaging for pool operations ([NAS-138330](https://ixsystems.atlassian.net/browse/NAS-138330)).
+  Provides clearer error messages when attempting to extend VDEVs or replace disks fails due to ZFS checkpoints or other conditions.
+* Fixes rsync tasks using SSH keychain credentials ([NAS-138334](https://ixsystems.atlassian.net/browse/NAS-138334)).
+  Resolves UnboundLocalError that prevented saving or running SSH-based rsync tasks after upgrading to 25.10.0.
+* Improves replication error messages ([NAS-138202](https://ixsystems.atlassian.net/browse/NAS-138202)).
+  Provides clearer error messages when replication tasks fail due to interrupted SSH connections or network issues.
+* Fixes email sending error after upgrading to 25.10.0 ([NAS-138270](https://ixsystems.atlassian.net/browse/NAS-138270)).
+  Resolves `'str' object has no attribute 'decode'` error when attempting to send test emails or system notifications.
+* Restores HDD temperature data via SNMP ([NAS-138433](https://ixsystems.atlassian.net/browse/NAS-138433)).
+  Resolves issue where SNMP queries for disk temperature (OID .1.3.6.1.4.1.50536.3) returned no data after upgrading to 25.10.0.
+* Fixes issue disabling SSH and Shell access for user accounts ([NAS-138307](https://ixsystems.atlassian.net/browse/NAS-138307)).
+  The **Save** button no longer becomes disabled when clearing these access options.
 
-**Known Issue:** Apps configured to use SMB or NFS shares as storage can experience an occasional race condition during boot that causes them to show a "crashed" status. The workaround is to restart the affected app after a minute or two. See <a href="#known-issues" target="_blank">Known Issues</a> for details. Additional fixes are expected in 25.10.1.
-
-<a href="#full-changelog" target="_blank">Click here</a> to see the full 25.10 changelog or visit the <a href="https://ixsystems.atlassian.net/issues/?filter=13627" target="_blank">TrueNAS 25.10.0.1 (Goldeye) Changelog</a> in Jira.
+<a href="#full-changelog" target="_blank">Click here</a> to see the full 25.10 changelog or visit the <a href="https://ixsystems.atlassian.net/issues/?filter=13697" target="_blank">TrueNAS 25.10.1 (Goldeye) Changelog</a> in Jira.
 
   </div>
   <div data-tab-id="25.10.0" data-tab-label="25.10.0">
@@ -161,6 +172,42 @@ See the 25.10 [Major Features](#major-features) and [Full Changelog](#full-chang
 
 <a href="#full-changelog" target="_blank">Click here</a> to see the full 25.10 changelog or visit the <a href="https://ixsystems.atlassian.net/issues/?filter=13427" target="_blank">TrueNAS 25.10.0 (Goldeye) Changelog</a> in Jira.
 
+{{< expand "25.10.0.1 Notable Changes" "v" >}}
+
+November 19, 2025
+
+The TrueNAS team is pleased to release TrueNAS 25.10.0.1!
+This is a maintenance release that includes fixes to SMB shares, application management, cloud sync operations, and error handling.
+
+**Notable changes:**
+
+* Fixes an SMB2 query directory with `SMB_REOPEN` flag issue ([NAS-138259](https://ixsystems.atlassian.net/browse/NAS-138259)).
+  Resolves an issue where client systems connected to TrueNAS 25.10 SMB shares could experience file access issues, including files appearing missing or shares showing as empty when browsing directories, media libraries (Plex, Jellyfin, etc.) losing access to files or removing them from indexes, and files failing to open or save over SMB.
+* Fixes VFS disconnect handling that prevented Time Machine snapshots ([NAS-135813](https://ixsystems.atlassian.net/browse/NAS-135813)).
+  Resolves a bug in the `io_uring_vfs_disconnect` function where walking the Samba VFS stack for `smb_vfs_disconnect` was terminating early, causing Apple Time Machine snapshots to fail execution. The function now properly traverses the full VFS stack without premature exit.
+* Fixes Docker service startup failures on systems with slow disk initialization ([NAS-138232](https://ixsystems.atlassian.net/browse/NAS-138232)).
+  Resolves a timeout issue where Docker initialization on HDD-equipped systems could exceed the default 120-second service timeout. This caused the apps service to be incorrectly marked as FAILED even though Docker eventually started successfully. The service timeout is extended to 960 seconds (16 minutes) to accommodate slower disk scenarios.
+* Fixes custom application update failures from version 1.2.13 to 1.2.14 ([NAS-138230](https://ixsystems.atlassian.net/browse/NAS-138230)).
+  Resolves an issue where custom applications failed to update properly, with multiple update attempts yielding no errors but the update notification persisting. The fix ensures that custom app versions are correctly upgraded alongside image updates during the application upgrade process.
+* Fixes false validation errors for custom app upgrades ([NAS-138534](https://ixsystems.atlassian.net/browse/NAS-138534)).
+  Resolves an issue where validation errors were incorrectly raised for custom apps during upgrade summaries when only the container image required updating. The system now properly recognizes that custom apps qualify for upgrade availability if either their images are outdated or catalog manifest changes exist.
+* Fixes cloud sync task validation errors after upgrading to 25.10 ([NAS-138281](https://ixsystems.atlassian.net/browse/NAS-138281)).
+  Resolves an issue where cloud sync tasks would display no available tasks after upgrade, with validation errors occurring when querying cloud sync tasks. The errors stemmed from Pydantic validation failures where parameters like `chunk_size` exceeded schema-defined limits.
+* Fixes a DNS validation typo in directory services ([NAS-138364](https://ixsystems.atlassian.net/browse/NAS-138364)).
+  Resolves a typo in DNS validation logic where "@" was incorrectly used instead of "." as the separator between hostname and domain name.
+* Fixes ZFS error handling for paths with multibyte UTF-8 characters ([NAS-138554](https://ixsystems.atlassian.net/browse/NAS-138554)).
+  Resolves an issue where ZFS paths containing multibyte characters would generate corrupted error descriptions, causing the Python Unicode decoder to fail. This resulted in simplified error messages instead of detailed ZFS exceptions and misclassification of error codes (`EZFS_UNKNOWN` instead of `EZFS_INVALIDNAME`), breaking dataset resolution APIs.
+* Fixes false temperature alerts for disks with negative threshold values ([NAS-138028](https://ixsystems.atlassian.net/browse/NAS-138028)).
+  Resolves an issue where disks with invalid or negative temperature thresholds triggered persistent warning alerts in the GUI and automated email notifications. The system now properly filters out disks with negative temperature threshold configurations during alert generation.
+* Improves NetBIOS naming by expanding permitted identifiers ([NAS-138390](https://ixsystems.atlassian.net/browse/NAS-138390)).
+  Removes additional blacklist restrictions on NetBIOS names and workgroups, allowing more Microsoft-restricted keywords to be used. This change addresses customer environment needs where previously prohibited network naming identifiers are required.
+
+**Known Issue:** Apps configured to use SMB or NFS shares as storage can experience an occasional race condition during boot that causes them to show a "crashed" status. The workaround is to restart the affected app after a minute or two. See <a href="#known-issues" target="_blank">Known Issues</a> for details. Additional fixes are expected in 25.10.1.
+
+<a href="#full-changelog" target="_blank">Click here</a> to see the full 25.10 changelog or visit the <a href="https://ixsystems.atlassian.net/issues/?filter=13627" target="_blank">TrueNAS 25.10.0.1 (Goldeye) Changelog</a> in Jira.
+
+{{< /expand >}}
+
 {{< expand "25.10-RC.1 Notable Changes" "v" >}}
 
 {{< hint type=warning title="Early Release Software" >}}
@@ -203,7 +250,7 @@ The TrueNAS team is pleased to release TrueNAS 25.10-RC.1!
   Prevents libvirt service from starting automatically when browsing VM creation options, improving system responsiveness.
 * Enhances session security with improved random number generation ([NAS-137318](https://ixsystems.atlassian.net/browse/NAS-137318)).
   Uses SSL-based random number generator for creating session IDs, improving overall cryptographic security.
-* Fixes an issue where the ACL editor ignored unchecked "Apply Owner" and "Apply Group" checkboxes and always applied owner/group changes recursively, potentially causing unintended ownership changes ([NAS-137378](https://ixsystems.atlassian.net/browse/NAS-137378)).
+* Fixes an issue where the ACL editor ignored unset "Apply Owner" and "Apply Group" checkboxes and always applied owner/group changes recursively, potentially causing unintended ownership changes ([NAS-137378](https://ixsystems.atlassian.net/browse/NAS-137378)).
 * The PGP public keys for the TrueNAS Security Team have been renewed and published to the [TrueNAS Security Advisories](https://security.truenas.com/).
 
 <a href="#full-changelog" target="_blank">Click here</a> to see the full 25.10 changelog or visit the <a href="https://ixsystems.atlassian.net/issues/?filter=13361" target="_blank">TrueNAS 25.10-RC.1 (Goldeye) Changelog</a> in Jira.
@@ -291,20 +338,27 @@ These are ongoing issues that can affect multiple versions in the 25.10 series.
 
 ### Current Known Issues
 
-* Samba 4.22 has a bug that breaks time machine backups for some newer MacOS versions ([NAS-138644](https://ixsystems.atlassian.net/browse/NAS-138644)).
-  TrueNAS 25.04 releases are unaffected. This is fixed in TrueNAS 25.10.1 with the inclusion of Samba update 4.22.6.
-
-* Hot spare vdevs are limited to a single disk per pool in the UI ([NAS-138640](https://ixsystems.atlassian.net/browse/NAS-138640)).
-  The TrueNAS 25.10 UI currently restricts configuration of hot spare vdevs to one disk per pool.
-  A fix for this issue is expected in an upcoming maintenance release.
-
 * Apps using SMB/NFS storage can experience race condition during boot.
   When apps are configured to use SMB or NFS shares as storage passthroughs, there can be an occasional race condition during TrueNAS boot where the app startup conflicts with the sharing services startup.
   This causes affected apps to not fully start and show a "crashed" status.
 
   Workaround: Restart the affected app after a minute or two.
-  
-  Additional fixes to this area are expected in the 25.10.1 maintenance release.
+
+* Long-running systems with legacy FreeNAS datasets might encounter dataset editing errors ([NAS-138629](https://ixsystems.atlassian.net/browse/NAS-138629)).
+  Users might see `"aclmode: failed to get property"` errors when attempting to edit dataset properties. This affects datasets that contain invalid `aclmode=discard_chmod` property values from legacy FreeNAS versions.
+
+  Workaround: Run `zfs set aclmode=passthrough dataset_name` via CLI (replacing `dataset_name` with the actual dataset path), then reboot the system.
+
+  Error messaging improvements for this issue are included in TrueNAS 25.10.1 to help identify affected datasets.
+
+* Removing RBAC roles from the root account can cause scheduled tasks to fail.
+  The 25.10 UI allows modification of the role assignments for the root account. Removing the **FULL_ADMIN** role from the root account can cause cloud sync tasks, cron jobs, and other scheduled operations to fail.
+
+  To disable root account access to the TrueNAS UI, use the **Disable Password** option in Credentials > Local Users instead of removing RBAC roles.
+
+  Workaround: If scheduled tasks are not running after modifying root account roles, re-add the **FULL_ADMIN** role to the root account in Credentials > Local Users. If needed, use **Disable Password** to prevent root UI access while maintaining proper system operation.
+
+  Future TrueNAS releases are planned to include additional validation to prevent removal of required root account privileges.
 
 * NVMe over TCP is incompatible with VMware ESXi environments ([NAS-137372](https://ixsystems.atlassian.net/browse/NAS-137372)).
   TrueNAS 25.10 uses the Linux kernel NVMe over TCP target driver, which lacks support for fused commands required by VMware ESXi.
@@ -315,7 +369,23 @@ These are ongoing issues that can affect multiple versions in the 25.10 series.
   North American users should be aware of this issue ahead of the upcoming DST transition on November 2, 2025.
   The authentication system resolves automatically once the duplicated hour passes.
 
-<a href="https://ixsystems.atlassian.net/issues/?filter=13628" target="_blank">See the latest status on Jira</a> for public issues discovered in 25.10 that are being resolved in a future TrueNAS release.
+* Locking encrypted datasets fails when actively shared via iSCSI or SMB.
+  Attempting to lock an encrypted dataset while it is actively shared via iSCSI or SMB fails with an EBUSY error.
+  No alert is generated and no email notification is sent when the lock operation fails.
+
+  Workaround: Before locking the dataset, disable the share (iSCSI extent or SMB share) in the sharing configuration.
+  After locking the dataset, you can re-enable the share if needed.
+
+  This issue will be resolved in a future TrueNAS release.
+
+* Kerberized NFS and SMB host access control improvements in progress ([NAS-138814](https://ixsystems.atlassian.net/browse/NAS-138814)).
+  TrueNAS 25.10.0 and 25.10.1 users should exercise caution when using Kerberized NFS, particularly in high-availability configurations with Active Directory or FreeIPA.
+  Known issues include potential failover scenarios where NFS service restart might not properly restore client connectivity.
+  Additionally, SMB **hosts allow** and **hosts deny** host access controls were limited to legacy share purposes in 25.10.0.
+
+  Improvements to Kerberized NFS functionality, Kerberos keytab synchronization for Active Directory, and restoration of SMB host access controls to all share purposes are actively being developed and tested for inclusion in TrueNAS 25.10.2.
+
+<a href="https://ixsystems.atlassian.net/issues/?filter=13698" target="_blank">See the latest status on Jira</a> for public issues discovered in 25.10 that are being resolved in a future TrueNAS release.
 
 See the [Release Notes](https://forums.truenas.com/c/release-notes/13) section of the TrueNAS forum for ongoing updates about known issues, investigations, and statistics about TrueNAS releases.
 
@@ -341,7 +411,7 @@ See the [Release Notes](https://forums.truenas.com/c/release-notes/13) section o
 <script src="/js/linkable-tabs-init.js"></script>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-    initializeHugoTabs('release-tab-content-source', 'release-tabs-container', '25.10-BETA.1');
+    initializeHugoTabs('release-tab-content-source', 'release-tabs-container', '25.10.1');
 });
 </script>
 
@@ -525,11 +595,13 @@ The smartmontools binaries (`smartctl`, `smartd`) remain installed and continue 
   
 ### NVIDIA GPU Support
 
-TrueNAS 25.10 introduces support for [NVIDIA open GPU kernel module drivers](https://us.download.nvidia.com/XFree86/Linux-x86_64/570.172.08/README/kernel_open.html), enabling compatibility with the latest NVIDIA graphics cards including the newest Blackwell architecture.
-This driver update ensures support for modern GPU acceleration workloads in TrueNAS Apps and Containers.
+TrueNAS 25.10 introduces support for [NVIDIA open GPU kernel module drivers](https://us.download.nvidia.com/XFree86/Linux-x86_64/570.172.08/README/kernel_open.html), preparing TrueNAS to support the latest NVIDIA graphics cards including newer architectures like Blackwell.
+This driver update ensures TrueNAS Apps and Containers can utilize modern GPU acceleration workloads.
 
 The open GPU kernel drivers are [compatible with Turing architecture and later GPUs](https://github.com/NVIDIA/open-gpu-kernel-modules/tree/570?tab=readme-ov-file#compatible-gpus), which includes GTX 16-series cards and all RTX series cards.
-The new NVIDIA Blackwell (RTX 50-series) chips require the nvidia-open driver to function, as this driver leverages the built-in NVIDIA GSP (GPU System Processor).
+Newer architectures like NVIDIA Blackwell (RTX 50-series, RTX PRO Blackwell) require the nvidia-open driver to function, as this driver leverages the built-in NVIDIA GSP (GPU System Processor).
+
+To verify your GPU is supported, check the installed NVIDIA driver version in [Software Component Versions](#component-versions-tab). Click the driver version number to view the NVIDIA release page, which includes a "Supported Products" tab listing all compatible GPUs for that driver version.
 
 Users with compatible hardware can enable TrueNAS to install NVIDIA drivers.
 See the TrueNAS Apps Market for [installation instructions](https://apps.truenas.com/getting-started/initial-setup/#installing-nvidia-drivers).

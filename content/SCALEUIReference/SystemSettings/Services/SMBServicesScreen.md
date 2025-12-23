@@ -24,9 +24,9 @@ Click **Save** or **Cancel** to close the configuration screen and return to the
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **NetBIOS Name** | Automatically populates with the original system host name. Enter a name that does not exceed 15 characters that is not the same as the **Workgroup** name. |
-| **NetBIOS Alias** | Enter any alias name that does not exceed 15 characters in length. If entering multiple aliases, separate alias names with a space between them. |
-| **Workgroup** | Enter a name that matches the Windows workgroup name. If you do not configure a workgroup, and Active Directory or LDAP is active, TrueNAS detects and sets the correct workgroup from these services. |
+| **NetBIOS Name** | Enter the NetBIOS name for the TrueNAS system (maximum 15 characters). Cannot contain: `\ / : * ? " < > |`. Cannot use Microsoft or RFC 852 reserved words. Must differ from the **Workgroup** name. TrueNAS 25.04 and later enforce these restrictions. Automatically populates with the original system hostname. |
+| **NetBIOS Alias** | Enter alias names (maximum 15 characters each). Cannot contain: `\ / : * ? " < > |`. Cannot use Microsoft or RFC 852 reserved words. TrueNAS 25.04 and later enforce these restrictions. Separate multiple aliases with a space between them. |
+| **Workgroup** | Enter a name that matches the Windows workgroup name (maximum 15 characters). Cannot contain: `\ / : * ? " < > |`. Cannot use Microsoft or RFC 852 reserved words. TrueNAS 25.04 and later enforce these restrictions. If you do not configure a workgroup and Active Directory or LDAP is active, TrueNAS detects and sets the correct workgroup from these services. |
 | **Description** | (Optional) Enter any notes or descriptive details about the service configuration. |
 | **Enable SMB1 support** | Select to allow legacy SMB1 clients to connect to the server (see caution below). SMB audit logging does not work when using SMB1. |
 | **NTLMv1 Auth** | Off by default. Select to allow [smbd](https://www.samba.org/samba/docs/current/man-html/smbd.8.html) attempts to authenticate users with the insecure and vulnerable NTLMv1 encryption. This setting allows backward compatibility with older versions of Windows, but we do not recommend it. Do not use on untrusted networks. |
@@ -46,7 +46,7 @@ Click **Save** or **Cancel** to close the configuration screen and return to the
 | **Use Debug** | Select to log more detailed information about SMB. By default, TrueNAS logs error and warning-level messages. We do not recommend enabling debug logging for production servers as it can generate large log files and impact performance. |
 | **Use Syslog Only** | Select to log authentication failures in <file>/var/log/messages</file> instead of the default <file>/var/log/samba4/log.smbd</file>. |
 | **Local Master** | Selected by default and determines if the system participates in a browser election. Leave cleared when the network contains an Active Directory or LDAP server or when Vista or Windows 7 machines are present. |
-| **Enable Apple SMB2/3 Protocol Extensions** | Select to allow MacOS to use these [protocol extensions](https://support.apple.com/en-us/HT210803) to improve the performance and behavioral characteristics of SMB shares. TrueNAS requires Apple SMB2/3 protocol extensions for Time Machine support and **MacOS Media Share** (Apple media and entertainment workflows). You must enable this setting before creating shares with the **Time Machine Share** or **MacOS Media Share** purpose options. |
+| **Enable Apple SMB2/3 Protocol Extensions** | Select to allow MacOS to use these [protocol extensions](https://support.apple.com/en-us/HT210803) to improve the performance and behavioral characteristics of SMB shares. TrueNAS requires Apple SMB2/3 protocol extensions for Time Machine support and **Final Cut Pro Storage Share** workflows. You must enable this setting before creating shares with the **Time Machine Share** or **Final Cut Pro Storage Share** purpose options. |
 | **Multichannel** | SMB multichannel allows servers to use multiple network connections simultaneously by combining the bandwidth of several network interface cards (NICs) for better performance. SMB multichannel does not function if you combine NICs into a LAGG. |
 {{< /truetable >}}
 
