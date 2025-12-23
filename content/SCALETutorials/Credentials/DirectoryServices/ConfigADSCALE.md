@@ -96,7 +96,17 @@ To connect TrueNAS to Active Directory:
    - **Builtin** section with optional **Name** field and required **Range Low** and **Range High** fields.
    - **IDMAP Domain** section with required **IDMAP Backend**, **Name**, **Range Low**, and **Range High** fields.
 
-6. Click **Save**..
+6. Click **Save**.
+
+
+   {{< trueimage src="/images/SCALE/Credentials/ActiveDirectoryBasicOptions.png" alt="Active Directory Basic Options" id="Active Directory Basic Options" >}}
+
+   TrueNAS creates the default Kerberos realm and principal, and the **Computer Account OU** value **/computers/servers/NAS**.
+
+   If you get a DNS server error, go to **Network > Global Configuration**, click **Settings**, and verify the DNS nameserver IP addresses are correctly configured with addresses that permit access to the Active Directory domain controller.
+   Correct any network configuration settings, then reconfigure the Active Directory settings.
+
+5. Click **Save**.
 
 TrueNAS offers advanced options for fine-tuning the AD configuration, but the preconfigured defaults are generally suitable.
 
