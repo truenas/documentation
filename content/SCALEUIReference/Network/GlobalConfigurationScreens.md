@@ -16,7 +16,7 @@ The **Network Configuration** widget shows the general networking settings for t
 
 The remaining general network settings shown in the widget are the system host name, domain name, HTTP proxy address, any configured service announcement, additional domains, the host name database, and the outbound network setting.
 
-**Settings** opens the **Edit Global Configuration** screen where you can add or change global network settings for the TrueNAS system.
+**Settings** opens the **Edit Global Configuration** screen, where you can add or change global network settings for the TrueNAS system.
 
 {{< include file="/static/includes/NetworkWarn.md" >}}
 
@@ -37,8 +37,8 @@ Some fields only show in the **Edit Global Configuration** screen when the appro
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Hostname** | Sets the system host name. The default value is **truenas**. Some applications require setting this to a value other than **truenas**. |
-| **Inherit domain from DHCP** | Sets the domain is inherited from DHCP when selected. |
+| **Hostname** | Sets the system host name. The default value is **truenas**. Some applications require setting this to a value other than **truenas**. If using Active Directory or SMB services, the hostname is also used as the NetBIOS name and must comply with NetBIOS naming restrictions: maximum 15 characters, cannot contain `\ / : * ? " < > |`, and cannot use Microsoft or RFC 852 reserved words. TrueNAS 25.04 and later enforce these restrictions through validation. |
+| **Inherit domain from DHCP** | Sets the domain to be inherited from DHCP when selected. |
 | **Hostname (TrueNAS Controller 2)** | Sets the system host name for a second controller in High Availability (HA) systems where there is a second TrueNAS controller. A name can consist of upper and lower case alphanumeric and allowed special characters dot (.) and/or dash (-). |
 | **Hostname (Virtual)** | Sets a virtual host name that shows when using a virtual host, for example, on a TrueNAS High Availability system. Also used as the Kerberos principal name. Enter the fully qualified host name plus the domain name. A name can consist of upper and lower case alphanumeric and the allowed special characters, dot (.) and/or dash (-). |
 | **Domain** | Enter a system domain name, for example, *example.com*. |
@@ -75,8 +75,8 @@ Some fields only show in the **Edit Global Configuration** screen when the appro
 
 ### Outbound Network and Other Settings
 
-The **Outbound Network** setting should matches preferred system services allowed to communicate externally for your use case.
-The **Other Settings** allow setting an HTTP proxy, and any host name database preferences.
+The **Outbound Network** setting should match the preferred system services allowed to communicate externally for your use case.
+The **Other Settings** allow setting an HTTP proxy and any host name database preferences.
 
 {{< trueimage src="/images/SCALE/Network/GlobalConfigOutboundSettings.png" alt="Global Configuration Outbound Settings" id="Global Configuration Outbound Settings" >}}
 
