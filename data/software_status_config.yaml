@@ -33,6 +33,13 @@ api_config:
   additional_trains:
     TrueNAS-SCALE-Fangtooth:
       description: TrueNAS SCALE Fangtooth 25.04 [release]
+# Temporary overrides for specific profile/scale_type combinations
+# Remove this section or clear its data to restore normal API behavior
+profile_overrides:
+  general:
+    enterprise:
+      version: 25.04.2.6
+      link: https://www.truenas.com/docs/scale/25.04/gettingstarted/scalereleasenotes/#250426
 doc_patterns:
   scale_release: /docs/scale/{major_minor}/gettingstarted/scalereleasenotes/#{version_anchor}
 nightly_patterns:
