@@ -25,11 +25,8 @@ Visit the [H Series product page](https://www.truenas.com/h-series/) for more de
 
 <div class="docs-sections">
 
-{{< imagecard image="/images/Hardware/HSeries/HSeriesPUM.png" title="Product User Manual" link="https://www.truenas.com/docs/files/HSeriesPUM.pdf"
+{{< imagecard-lang image="/images/Hardware/HSeries/HSeriesPUM.png" title="Product User Manual" link="https://www.truenas.com/docs/files/HSeriesPUM/HSeriesPUM.pdf"
 descr="Comprehensive User Manual for TrueNAS H-Series systems." >}}
-
-{{< imagecard image="/images/Hardware/HSeries/HSeriesHANetworking.png" title="HA Networking" link="https://www.truenas.com/docs/files/HSeriesHANetworking.pdf"
-descr="Additional cabling examples for High Availability H-Series systems." >}}
 
 {{< imagecard image="/images/Hardware/HSeries/HSeriesSOV.png" title="Statement of Volatility" link="https://www.truenas.com/docs/files/HSeriesSOV.pdf"
 descr="TrueNAS official Statement of Volatility for H-Series systems." >}}
