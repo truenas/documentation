@@ -2305,3 +2305,5 @@ Cksum
 nvd
 ManagePoolsScale
 Halfmoon
+RSeriesPUM
+imagecard-lang

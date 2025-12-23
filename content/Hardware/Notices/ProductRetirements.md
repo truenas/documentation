@@ -9,6 +9,8 @@ aliases:
 
 <div class="docs-sections">
 
+{{< imagecard image="/images/Hardware/Document.png" title="TrueNAS ES102 Gen 1: November 2025" link="https://www.truenas.com/docs/files/ES102G1PRN.pdf" descr="" >}}
+
 {{< imagecard image="/images/Hardware/Document.png" title="TrueNAS ES12: January 2025" link="https://www.truenas.com/docs/files/ES12PRN.pdf" descr="" >}}
 
 {{< imagecard image="/images/Hardware/Document.png" title="TrueNAS R10: January 2025" link="https://www.truenas.com/docs/files/R10PRN.pdf" descr="" >}}
