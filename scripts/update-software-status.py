@@ -4,7 +4,7 @@
 Updates software_status_config.yaml with latest version recommendations from TrueNAS API.
 Uses cascading profile logic: MISSION_CRITICAL > GENERAL > EARLY_ADOPTER > DEVELOPER
 
-LEGACY CODE CLEANUP TODO (~June 2025):
+LEGACY CODE CLEANUP TODO:
 When 25.04 is no longer recommended for any user profile, remove pre-25.10 compatibility:
 1. Search for "LEGACY:" comments in this file
 2. Remove version_to_anchor() compressed format logic (lines ~27-35)
@@ -307,6 +307,9 @@ def main():
                 # Note: Community does not support mission_critical profile (shows Enterprise link instead)
                 updated_sections = []
 
+                # Check for manual overrides in config
+                profile_overrides = config.get('profile_overrides') or {}
+
                 for scale_type in ['community', 'enterprise']:
                     # Skip Enterprise for developer and early_adopter profiles
                     if scale_type == 'enterprise' and profile_name in ['developer', 'early_adopter']:
@@ -319,10 +322,22 @@ def main():
                         continue
 
                     if scale_type in config['table_data'].get(profile_name, {}):
-                        update_data = {
-                            'version': version_display,
-                            'link': doc_link
-                        }
+                        # Check for override first
+                        override_data = profile_overrides.get(profile_name, {}).get(scale_type)
+
+                        if override_data:
+                            # Use override instead of API data
+                            update_data = {
+                                'version': override_data['version'],
+                                'link': override_data['link']
+                            }
+                            print(f"  ⚠ Using override for {scale_type}: {override_data['version']}")
+                        else:
+                            # Normal API update
+                            update_data = {
+                                'version': version_display,
+                                'link': doc_link
+                            }
 
                         config['table_data'][profile_name][scale_type] = update_data
                         updated_sections.append(scale_type)
