@@ -24,7 +24,7 @@ For the **Sync** option, we recommend production systems with critical data use 
 Choosing **Disabled** is only suitable in situations where data loss from system crashes or power loss is acceptable.
 
 Select either **Sensitive** or **Insensitive** from the **Case Sensitivity** dropdown.
-The **Case Sensitivity** setting is found under **Advanced Options** and is not editable after saving the dataset.
+The **Case Sensitivity** setting in **Advanced Options** is not editable after you save the dataset.
 
 Click **Save**.
 
