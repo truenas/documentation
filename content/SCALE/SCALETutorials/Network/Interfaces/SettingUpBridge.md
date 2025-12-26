@@ -22,8 +22,10 @@ You can use bridging to integrate different types of networks (e.g., wireless an
 You can also use a bridge to allow a VM, container, or app configured on TrueNAS to communicate with the host system.
 See [Accessing NAS from Containers]({{< ref "ContainerNASBridge" >}}) for more information.
 
-{{< include file="/static/includes/BeforeYouBridge.md" >}}
+## Before You Begin
 
+{{< include file="/static/includes/InterfaceBeforeYouBegin.md" >}}
+{{< include file="/static/includes/TestingNetworkChanges.md" >}}
 {{< include file="/static/includes/NetworkBridgeSCALE.md" >}}
 
 {{<include file="/static/includes/addcolumnorganizer.md">}}
