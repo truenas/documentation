@@ -14,7 +14,7 @@ Select the **Dataset Preset** option you want to use. Options are:
 
 If creating an SMB or multi-protocol (SMB and NFS) share, the dataset name value auto-populates the share name field with the dataset name.
 
-The system automatically creates the ix-apps dataset for Docker storage, but we recommend creating separate datasets for application data storage if you plan to deploy container applications.
+If configuring a pool to deploy applications, the system automatically creates the ix-apps dataset for Docker storage, but we recommend creating separate datasets for application data storage.
 
 If you want to store data by application, create the dataset(s) first, then deploy your application.
 When creating a dataset for an application, select **Apps** as the **Dataset Preset**. This optimizes the dataset for use by an application.
