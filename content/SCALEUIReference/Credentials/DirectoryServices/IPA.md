@@ -54,13 +54,15 @@ The **Basic Configuration** section settings control core IPA service settings.
 
 The **Credential Configuration** section settings define authentication methods for IPA access.
 
+{{< trueimage src="/images/SCALE/Credentials/DirectoryServicesCredentialConfig.png" alt="Credential Configuration" id="Credential Configuration" >}}
+
 **Credential Type** (Required) Sets the appropriate credential type for IPA authentication to the option selected on the dropdown list. Options include **Kerberos User** and **Kerberos Principal**.
 
 ### IPA Configuration Section
 
 The settings on the **IPA Configuration** section settings define the connection parameters and validation options.
 
-{{< trueimage src="/images/SCALE/Credentials/IPAFinalConfigOptions.png" alt="IPA Configuration" id="IPA Configuration" >}}
+{{< trueimage src="/images/SCALE/Credentials/IPAConfigurationSettings.png" alt="IPA Configuration" id="IPA Configuration" >}}
 
 {{< expand "IPA Configuration Settings" "v" >}}
 {{< truetable >}}
@@ -78,7 +80,7 @@ The settings on the **IPA Configuration** section settings define the connection
 
 The **SMB Domain Configuration** section controls SMB integration settings.
 
-{{< trueimage src="/images/SCALE/Credentials/IPAFinalConfigOptions.png" alt="IPA Basic Configuration" id="IPA Basic Configuration" >}}
+{{< trueimage src="/images/SCALE/Credentials/IPASMBConfig.png" alt="IPA SMB Configuration" id="IPA SMB Configuration" >}}
 
 {{< expand "SMB Domain Configuration Settings" "v" >}}
 {{< truetable >}}
