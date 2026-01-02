@@ -12,9 +12,8 @@ keywords:
 
 TrueNAS has an [Open LDAP](https://www.openldap.org/) client for accessing the information on an LDAP server.
 An LDAP server provides directory services for finding network resources like users and their associated permissions.
-{{< hint type=note >}}
-You can have either Active Directory or LDAP configured on TrueNAS but not both.
-{{< /hint >}}
+
+{{< include file="/static/includes/DirectoryServiceConflictAdmonition.md" >}}
 
 {{< expand "Does LDAP work with SMB?" "v" >}}
 LDAP authentication for SMB shares is disabled unless you configured and populated the LDAP directory with Samba attributes.

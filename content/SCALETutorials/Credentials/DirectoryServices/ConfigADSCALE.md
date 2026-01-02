@@ -13,6 +13,8 @@ keywords:
 
 {{< include file="/static/includes/DirectoryServiceAccessAdmonition.md" >}}
 
+{{< include file="/static/includes/DirectoryServiceConflictAdmonition.md" >}}
+
 ## Configuring TrueNAS Active Directory Access
 The Active Directory (AD) service shares resources in a Windows network.
 AD provides authentication and authorization services for the users in a network, eliminating the need to recreate the user accounts on TrueNAS.

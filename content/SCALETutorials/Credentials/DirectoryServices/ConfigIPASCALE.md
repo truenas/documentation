@@ -13,9 +13,8 @@ keywords:
 
 TrueNAS supports [IPA (Identity, Policy, and Audit)](https://www.freeipa.org/) as a comprehensive identity management solution.
 IPA integrates LDAP, Kerberos, NTP, and DNS services in a single package, providing centralized authentication and authorization for network resources.
-{{< hint type=note >}}
-You can have either Active Directory, LDAP, or IPA configured on TrueNAS but not multiple directory services simultaneously.
-{{< /hint >}}
+
+{{< include file="/static/includes/DirectoryServiceConflictAdmonition.md" >}}
 
 {{< expand "Does IPA work with SMB?" "v" >}}
 IPA can work with SMB shares when properly configured.
