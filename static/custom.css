@@ -379,6 +379,7 @@ mark {
   z-index: 1000 !important;
   background-color: #ffffff;
   border-bottom: 2px solid #31beec;
+  padding: 8px 0;
 }
 
 /* Dark mode for TrueNAS top header */
@@ -644,14 +645,14 @@ mark {
 
 /* Fix container layout */
 #TrueNASHeader .container.linksrow {
-  padding: 0.75rem 2rem; /* Increased vertical and horizontal padding */
+  padding: 0.25rem 1rem; /* Minimal padding top and bottom */
 }
 
 #TrueNASHeader .container.truerow {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  min-height: 85px; /* Increased height to match connect-docs */
+  min-height: 60px; /* Set row height to match reference site */
 }
 
 /* Ensure proper flex behavior for menubar (TrueNAS header only) */
