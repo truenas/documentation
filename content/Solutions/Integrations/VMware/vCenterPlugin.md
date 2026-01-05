@@ -46,13 +46,14 @@ The vCenter plugin supports many different TrueNAS software versions installed o
 | 22.12   | Yes (exception) |
 | 23.10   | Yes (exception) |
 | 24.04   | Yes (exception) |
+| 24.10   | Yes (exception) |
 | 25.04   | Yes |
 | 25.10   | Yes |
 {{< /truetable >}}
 
 **Exceptions**
 
-* TrueNAS 22.12, 23.10, and 24.04 do not support Fibre Channel for VMFS datastores.
+* TrueNAS 22.12, 23.10, 24.04, and 24.10 do not support Fibre Channel for VMFS datastores.
 
 ## Plugin Release Notes
 
@@ -61,11 +62,12 @@ The vCenter plugin supports many different TrueNAS software versions installed o
 **January 6, 2026**
 
 TrueNAS is pleased to release TrueNAS vCenter Plugin version 3.7.0!
-This release expands TrueNAS compatibility to 25.10 and includes bugfixes for:
+This release expands TrueNAS compatibility to 25.10 and include these changes:
 
-* Storage space reporting
-* Datastore mount path visualization
-* Fibre Channel port parsing error
+* Use the TrueNAS WebSocket API instead of the deprecated REST method.
+* More accurate space capacity reporting.
+* Remove read-only datasets for NFS datastore creation.
+* Fix Fibre Channel port selection.
 
 ### Previous Versions Release Notes
 
@@ -257,7 +259,7 @@ In a browser, go to your vCenter Server web interface, log in, and click **Menu 
 
 Fill in the required information.
 A hostname or IP address can be used for the TrueNAS system.
-Newer TrueNAS releases like 25.10 can use an API key in place of a password.
+Using an API key with TrueNAS releases 25.04 and newer also requires configuring an HTTPS connection.
 For High Availability systems, use the VIP address or hostname to ensure the plugin remains connected in the event of a system failover.
 Click **Add Host** and the TrueNAS hostname or IP address appears in the list of connected systems.
 
