@@ -31,10 +31,10 @@ Please contact TrueNAS Enterprise Support to learn more and schedule a time to d
 {{< /enterprise >}}
 
 [vCenter Server](https://www.vmware.com/products/vcenter-server.html) provides a web interface to manage physical and virtual machines.
-The iXsystems TrueNAS vCenter Plugin activates management options for TrueNAS hardware attached to vCenter Server.
+The TrueNAS vCenter Plugin activates management options for TrueNAS hardware attached to vCenter Server.
 This enables limited TrueNAS system management from a single interface.
 
-The TrueNAS vCenter plugin is currently compatible with VMware vCenter Server versions [**8.0**](https://docs.vmware.com/en/VMware-vSphere/8.0/vsphere-vcenter-installation/GUID-8DC3866D-5087-40A2-8067-1361A2AF95BD.html), [**7.0**](https://docs.vmware.com/en/VMware-vSphere/7.0/com.vmware.vcenter.install.doc/GUID-8DC3866D-5087-40A2-8067-1361A2AF95BD.html), and [**6.7.0**](https://docs.vmware.com/en/VMware-vSphere/6.7/com.vmware.vcenter.install.doc/GUID-8DC3866D-5087-40A2-8067-1361A2AF95BD.html).
+The TrueNAS vCenter plugin is currently compatible with VMware vCenter Server versions [**8.0**](https://docs.vmware.com/en/VMware-vSphere/8.0/vsphere-vcenter-installation/GUID-8DC3866D-5087-40A2-8067-1361A2AF95BD.html) and [**7.0**](https://docs.vmware.com/en/VMware-vSphere/7.0/com.vmware.vcenter.install.doc/GUID-8DC3866D-5087-40A2-8067-1361A2AF95BD.html).
 
 The vCenter plugin supports many different TrueNAS software versions installed on TrueNAS Enterprise licensed hardware:
 
@@ -46,16 +46,32 @@ The vCenter plugin supports many different TrueNAS software versions installed o
 | 22.12   | Yes (exception) |
 | 23.10   | Yes (exception) |
 | 24.04   | Yes (exception) |
+| 24.10   | Yes (exception) |
+| 25.04   | Yes |
+| 25.10   | Yes |
 {{< /truetable >}}
 
 **Exceptions**
 
-* TrueNAS 22.12, 23.10, and 24.04 do not support Fibre Channel for VMFS datastores.
-
+* TrueNAS 22.12, 23.10, 24.04, and 24.10 do not support Fibre Channel for VMFS datastores.
 
 ## Plugin Release Notes
 
-### TrueNAS vCenter Plugin 3.6.0
+### TrueNAS vCenter Plugin 3.7.0
+
+**January 6, 2026**
+
+TrueNAS is pleased to release TrueNAS vCenter Plugin version 3.7.0!
+This release expands TrueNAS compatibility to 25.10 and include these changes:
+
+* Use the TrueNAS WebSocket API instead of the deprecated REST method.
+* More accurate space capacity reporting.
+* Remove read-only datasets for NFS datastore creation.
+* Fix Fibre Channel port selection.
+
+### Previous Versions Release Notes
+
+{{< expand "3.6.0 (Click to expand)" "v" >}}
 
 **September 3, 2024**
 
@@ -67,7 +83,7 @@ This is a minor release to fix an issue with VMFS datastore management with True
 The TrueNAS vCenter Plugin deployment status can appear to be stuck in the vCenter activity panel.
 This is a cosmetic issue and the plugin deploys fully.
 
-### Previous Versions Release Notes
+{{< /expand >}}
 
 {{< expand "3.5.0 (Click to expand)" "v" >}}
 **October 6, 2023**
@@ -243,6 +259,7 @@ In a browser, go to your vCenter Server web interface, log in, and click **Menu 
 
 Fill in the required information.
 A hostname or IP address can be used for the TrueNAS system.
+Using an API key with TrueNAS releases 25.04 and newer also requires configuring an HTTPS connection.
 For High Availability systems, use the VIP address or hostname to ensure the plugin remains connected in the event of a system failover.
 Click **Add Host** and the TrueNAS hostname or IP address appears in the list of connected systems.
 
