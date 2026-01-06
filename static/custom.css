@@ -445,20 +445,20 @@ p,h1,h2,h3,h4,th,td,a,body {
 }
 
 /* Edition buttons - ensure proper colors in dark mode */
-[color-mode="dark"] .truenas-edition-buttons .truenas-edition-button:first-child {
-  background: #71bf44 !important;
+[color-mode="dark"] #TrueNASHeader .truenas-edition-buttons .truenas-edition-button:first-child {
+  background-color: #71bf44 !important;
 }
 
-[color-mode="dark"] .truenas-edition-buttons .truenas-edition-button:first-child:hover {
-  background: #0095d5 !important;
+[color-mode="dark"] #TrueNASHeader .truenas-edition-buttons .truenas-edition-button:first-child:hover {
+  background-color: #0095d5 !important;
 }
 
-[color-mode="dark"] .truenas-edition-buttons .truenas-edition-button:last-child {
-  background: #0095d5 !important;
+[color-mode="dark"] #TrueNASHeader .truenas-edition-buttons .truenas-edition-button:last-child {
+  background-color: #0095d5 !important;
 }
 
-[color-mode="dark"] .truenas-edition-buttons .truenas-edition-button:last-child:hover {
-  background: #71bf44 !important;
+[color-mode="dark"] #TrueNASHeader .truenas-edition-buttons .truenas-edition-button:last-child:hover {
+  background-color: #71bf44 !important;
 }
 
 /* Automatic dark mode detection (for when color-mode is "auto") */
@@ -525,20 +525,20 @@ p,h1,h2,h3,h4,th,td,a,body {
     color: #31beec !important;
   }
 
-  .truenas-edition-buttons .truenas-edition-button:first-child {
-    background: #71bf44 !important;
+  #TrueNASHeader .truenas-edition-buttons .truenas-edition-button:first-child {
+    background-color: #71bf44 !important;
   }
 
-  .truenas-edition-buttons .truenas-edition-button:first-child:hover {
-    background: #0095d5 !important;
+  #TrueNASHeader .truenas-edition-buttons .truenas-edition-button:first-child:hover {
+    background-color: #0095d5 !important;
   }
 
-  .truenas-edition-buttons .truenas-edition-button:last-child {
-    background: #0095d5 !important;
+  #TrueNASHeader .truenas-edition-buttons .truenas-edition-button:last-child {
+    background-color: #0095d5 !important;
   }
 
-  .truenas-edition-buttons .truenas-edition-button:last-child:hover {
-    background: #71bf44 !important;
+  #TrueNASHeader .truenas-edition-buttons .truenas-edition-button:last-child:hover {
+    background-color: #71bf44 !important;
   }
 }
 
@@ -878,21 +878,21 @@ p,h1,h2,h3,h4,th,td,a,body {
 }
 
 /* Enterprise button - green default, blue hover */
-.truenas-edition-buttons .truenas-edition-button:first-child {
-  background: #71bf44 !important;
+#TrueNASHeader .truenas-edition-buttons .truenas-edition-button:first-child {
+  background-color: #71bf44 !important;
 }
 
-.truenas-edition-buttons .truenas-edition-button:first-child:hover {
-  background: #0095d5 !important;
+#TrueNASHeader .truenas-edition-buttons .truenas-edition-button:first-child:hover {
+  background-color: #0095d5 !important;
 }
 
 /* Community button - blue default, green hover */
-.truenas-edition-buttons .truenas-edition-button:last-child {
-  background: #0095d5 !important;
+#TrueNASHeader .truenas-edition-buttons .truenas-edition-button:last-child {
+  background-color: #0095d5 !important;
 }
 
-.truenas-edition-buttons .truenas-edition-button:last-child:hover {
-  background: #71bf44 !important;
+#TrueNASHeader .truenas-edition-buttons .truenas-edition-button:last-child:hover {
+  background-color: #71bf44 !important;
 }
 
 .truenas-edition-button img {
