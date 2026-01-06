@@ -142,25 +142,7 @@ To connect TrueNAS to Active Directory:
 
    * **IDMAP Domain** section with required **IDMAP Backend**, **Name**, **Range Low**, and **Range High** fields.
 
-### Understanding IDMAP Backends
-
-When customizing IDMAP settings, you can select from several backend options. Each backend uses a different method to map Windows security identifiers (SIDs) to UNIX UIDs and GIDs:
-
-* **AD** - Reads UID and GID mappings from an Active Directory server that uses pre-existing RFC2307 / SFU schema extensions.
-
-* **AUTORID** - Automatically allocates UID and GID ranges for each domain. Useful for environments with multiple trusted domains.
-
-* **LDAP** - Reads and writes UID / GID mapping tables from an external LDAP server.
-
-* **NSS** - Uses the Name Service Switch (NSS) to retrieve Unix user and group information from local or network sources.
-
-* **RFC2307** - Reads ID mappings from RFC2307 attributes on a standalone LDAP server. This backend is read-only.
-
-* **RID** - Uses an algorithm to map UIDs and GIDs to SIDs. It determines the UID or GID by adding the RID value from the Windows Account SID to the base value in range_low.
-
-* **TDB** - Stores ID mappings in a local Trivial Database (TDB) file. Allocates new UIDs and GIDs as needed. Useful for standalone servers but not recommended for multi-server environments as mappings are not shared.
-
-For most environments, the default RID backend provides consistent, reliable ID mapping without additional configuration.
+See [Understanding IDMAP Backends](#understanding-idmap-backends) for more information on IDMapping.
 
 8. Click **Save**.
 
@@ -181,6 +163,26 @@ When the import completes, AD users and groups become available while configurin
 
 Joining AD also adds default Kerberos realms and generates a default **AD_MACHINE_ACCOUNT** keytab.
 TrueNAS automatically begins using this default keytab and removes any administrator credentials stored in the TrueNAS configuration file.
+
+### Understanding IDMAP Backends
+
+When customizing IDMAP settings, you can select from several backend options. Each backend uses a different method to map Windows security identifiers (SIDs) to UNIX UIDs and GIDs:
+
+* **AD** - Reads UID and GID mappings from an Active Directory server that uses pre-existing RFC2307 / SFU schema extensions.
+
+* **AUTORID** - Automatically allocates UID and GID ranges for each domain. Useful for environments with multiple trusted domains.
+
+* **LDAP** - Reads and writes UID / GID mapping tables from an external LDAP server.
+
+* **NSS** - Uses the Name Service Switch (NSS) to retrieve Unix user and group information from local or network sources.
+
+* **RFC2307** - Reads ID mappings from RFC2307 attributes on a standalone LDAP server. This backend is read-only.
+
+* **RID** - Uses an algorithm to map UIDs and GIDs to SIDs. It determines the UID or GID by adding the RID value from the Windows Account SID to the base value in range_low.
+
+* **TDB** - Stores ID mappings in a local Trivial Database (TDB) file. Allocates new UIDs and GIDs as needed. Useful for standalone servers but not recommended for multi-server environments as mappings are not shared.
+
+For most environments, the default RID backend provides consistent, reliable ID mapping without additional configuration.
 
 ### Troubleshooting - Resyncing the Cache
 If the cache becomes out of sync or fewer users than expected are available in the permissions editors, click **Settings** in the **Active Directory** widget, then click **Rebuild Directory Service Cache** to resync the cache.
