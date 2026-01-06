@@ -334,87 +334,351 @@ p,h1,h2,h3,h4,th,td,a,body {
     padding: 0 1rem 0 1rem;
     cursor: pointer;
 }
-
-.truenas-menubutton {
-    background-color: #000;
-    color: white;
-    padding: 13px;
-    border: none;
-    font-family: "din-2014";
-	font-size: 16px;
-    font-weight: 400;
-}
-.truenas-menubutton:hover {
-  color: #000000;
-}
-.truenas-menubutton,.truenas-menubutton a {color:#white;cursor:pointer;}
-.truenas-menulink {
-    background-color: #000;
-    color: white;
-    padding: 16px;
-    font-size: 16px;
-    border: none;
-}
-.truenas-menulink a {color:#000000;}
-.truenas-menudropdown {
-    display: none;
+.toc-panel {
     position: absolute;
-    background-color: #000000;
-    border-radius: 20px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 10;
+    overflow-y: auto;
+    padding: 1rem 1rem 1rem 0rem;
+    font-size: 14px;
+    background-color: var(--body-background);
+    scrollbar-width: thin;
 }
-.truenas-menudropdown a {
-    font-family: "din-2014";
-	font-size: 16px;
-    font-weight: 600;
-    color: white;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: table;
+.toc-fixed {
+    position: fixed;
+    top: 0;
 }
-.dropdown-item {
-  cursor: pointer;
-  font-family: "din-2014";
+@media screen and (max-width: 68rem) {
+    .sidebar-right {
+        transition: transform 0.3s ease;
+        transform: translateX(100%);
+        display: none;
+        position: fixed;
+        right: 10rem;
+    }
+    .sidebar-right__control {
+        display: none !important;
+    }
+    .toc-panel {
+        width: 12rem;
+        padding-left: .5rem;
+        transition: top 0.2s ease-in-out;
+        will-change: top;
+    }
+}
+/* End sitenav styles */
+/* ========== END SITENAV STYLES ========== */
+
+/* ========== TRUENAS HEADER & FOOTER STYLES ========== */
+
+/* Reset any positioning - let TrueNAS header scroll naturally */
+#TrueNASHeader {
+  position: relative;
+  z-index: 1000 !important;
+  background-color: #ffffff;
+  border-bottom: 2px solid #31beec;
+  padding: 8px 0;
+}
+
+/* Dark mode for TrueNAS top header */
+[color-mode="dark"] #TrueNASHeader {
+  background: linear-gradient(90deg, #002637 0%, #002637 60%, #000000 100%) !important;
+  color: #ffffff !important;
+}
+
+[color-mode="dark"] #TrueNASHeader a {
+  color: #ffffff !important;
+}
+
+/* Menu buttons and links */
+[color-mode="dark"] #TrueNASHeader .truenas-menubutton {
+  color: #ffffff !important;
+}
+
+[color-mode="dark"] #TrueNASHeader .truenas-menubutton:hover {
+  color: #31beec !important;
+}
+
+[color-mode="dark"] #TrueNASHeader .truenas-menuitem-link {
+  color: #ffffff !important;
+}
+
+[color-mode="dark"] #TrueNASHeader .truenas-menuitem-link:hover {
+  color: #31beec !important;
+}
+
+[color-mode="dark"] #TrueNASHeader .truenas-menuitem-text b,
+[color-mode="dark"] #TrueNASHeader .truenas-menuitem-text p {
+  color: #ffffff !important;
+}
+
+[color-mode="dark"] #TrueNASHeader .truenas-menuitem-link:hover .truenas-menuitem-text b,
+[color-mode="dark"] #TrueNASHeader .truenas-menuitem-link:hover .truenas-menuitem-text p {
+  color: #31beec !important;
+}
+
+/* Dropdown menus */
+[color-mode="dark"] #TrueNASHeader .truenas-menudropdown {
+  background-color: #1b1f22 !important;
+  border-color: #31beec !important;
+}
+
+[color-mode="dark"] #TrueNASHeader .truenas-menudropdown a {
+  color: #ffffff !important;
+}
+
+[color-mode="dark"] #TrueNASHeader .truenas-menudropdown a:hover {
+  color: #31beec !important;
+  background-color: transparent !important;
+}
+
+[color-mode="dark"] #TrueNASHeader .truenasdownload-menudropdown {
+  background-color: #1b1f22 !important;
+  border-color: #31beec !important;
+}
+
+/* Support button and links */
+[color-mode="dark"] #TrueNASHeader .truenas-supportbutton {
+  color: #ffffff !important;
+}
+
+[color-mode="dark"] #TrueNASHeader .truenas-supportbutton:hover {
+  color: #31beec !important;
+}
+
+/* Edition buttons - ensure proper colors in dark mode */
+[color-mode="dark"] .truenas-edition-buttons .truenas-edition-button:first-child {
+  background: #71bf44 !important;
+}
+
+[color-mode="dark"] .truenas-edition-buttons .truenas-edition-button:first-child:hover {
+  background: #0095d5 !important;
+}
+
+[color-mode="dark"] .truenas-edition-buttons .truenas-edition-button:last-child {
+  background: #0095d5 !important;
+}
+
+[color-mode="dark"] .truenas-edition-buttons .truenas-edition-button:last-child:hover {
+  background: #71bf44 !important;
+}
+
+/* Automatic dark mode detection (for when color-mode is "auto") */
+@media (prefers-color-scheme: dark) {
+  #TrueNASHeader {
+    background: linear-gradient(90deg, #002637 0%, #002637 60%, #000000 100%) !important;
+    color: #ffffff !important;
+  }
+
+  #TrueNASHeader a {
+    color: #ffffff !important;
+  }
+
+  #TrueNASHeader .truenas-menubutton {
+    color: #ffffff !important;
+  }
+
+  #TrueNASHeader .truenas-menubutton:hover {
+    color: #31beec !important;
+  }
+
+  #TrueNASHeader .truenas-menuitem-link {
+    color: #ffffff !important;
+  }
+
+  #TrueNASHeader .truenas-menuitem-link:hover {
+    color: #31beec !important;
+  }
+
+  #TrueNASHeader .truenas-menuitem-text b,
+  #TrueNASHeader .truenas-menuitem-text p {
+    color: #ffffff !important;
+  }
+
+  #TrueNASHeader .truenas-menuitem-link:hover .truenas-menuitem-text b,
+  #TrueNASHeader .truenas-menuitem-link:hover .truenas-menuitem-text p {
+    color: #31beec !important;
+  }
+
+  #TrueNASHeader .truenas-menudropdown {
+    background-color: #1b1f22 !important;
+    border-color: #31beec !important;
+  }
+
+  #TrueNASHeader .truenas-menudropdown a {
+    color: #ffffff !important;
+  }
+
+  #TrueNASHeader .truenas-menudropdown a:hover {
+    color: #31beec !important;
+    background-color: transparent !important;
+  }
+
+  #TrueNASHeader .truenasdownload-menudropdown {
+    background-color: #1b1f22 !important;
+    border-color: #31beec !important;
+  }
+
+  #TrueNASHeader .truenas-supportbutton {
+    color: #ffffff !important;
+  }
+
+  #TrueNASHeader .truenas-supportbutton:hover {
+    color: #31beec !important;
+  }
+
+  .truenas-edition-buttons .truenas-edition-button:first-child {
+    background: #71bf44 !important;
+  }
+
+  .truenas-edition-buttons .truenas-edition-button:first-child:hover {
+    background: #0095d5 !important;
+  }
+
+  .truenas-edition-buttons .truenas-edition-button:last-child {
+    background: #0095d5 !important;
+  }
+
+  .truenas-edition-buttons .truenas-edition-button:last-child:hover {
+    background: #71bf44 !important;
+  }
+}
+
+/* Explicit light mode override - must come after media query to override browser preference */
+:root[color-theme=light] #TrueNASHeader {
+  background: #ffffff !important;
+  color: #000000 !important;
+}
+
+:root[color-theme=light] #TrueNASHeader a {
+  color: inherit !important;
+}
+
+:root[color-theme=light] #TrueNASHeader .truenas-menubutton {
+  color: #000000 !important;
+}
+
+:root[color-theme=light] #TrueNASHeader .truenas-menubutton:hover {
+  color: #0095d5 !important;
+}
+
+:root[color-theme=light] #TrueNASHeader .truenas-menuitem-link {
+  color: #000000 !important;
+}
+
+:root[color-theme=light] #TrueNASHeader .truenas-menuitem-link:hover {
+  color: #0095d5 !important;
+}
+
+:root[color-theme=light] #TrueNASHeader .truenas-menuitem-text b,
+:root[color-theme=light] #TrueNASHeader .truenas-menuitem-text p {
+  color: #000000 !important;
+}
+
+:root[color-theme=light] #TrueNASHeader .truenas-menuitem-link:hover .truenas-menuitem-text b,
+:root[color-theme=light] #TrueNASHeader .truenas-menuitem-link:hover .truenas-menuitem-text p {
+  color: #0095d5 !important;
+}
+
+:root[color-theme=light] #TrueNASHeader .truenas-menudropdown {
+  background-color: #ffffff !important;
+  border-color: #0095d5 !important;
+}
+
+:root[color-theme=light] #TrueNASHeader .truenas-menudropdown a {
+  color: #000000 !important;
+}
+
+:root[color-theme=light] #TrueNASHeader .truenas-menudropdown a:hover {
+  color: #0095d5 !important;
+}
+
+/* Ensure the header itself has proper stacking context */
+#TrueNASHeader .gdoc-header {
+  position: relative;
+  z-index: 10001;
+  background-color: transparent;
+}
+
+/* Make sure menu items create proper stacking context */
+.truenas-menuitem {
+  position: relative;
+  z-index: 10002;
+}
+
+/* Reset Docsy navbar to normal behavior */
+.td-navbar {
+  margin-top: 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Reset main content */
+.td-main {
+  margin-top: 0;
+}
+
+/* Media menu should only show on smaller screens */
+.truenas-mediamenu {
+  display: none;
+}
+
+@media screen and (max-width: 800px) {
+  .truenas-mediamenu {
+    display: block;
+  }
+
+  .truenas-menubar {
+    display: none;
+  }
+}
+
+/* Ensure consistent container sizing */
+#TrueNASHeader .container {
+  max-width: 100rem;
+  margin: 0 auto;
+  background: transparent;
+}
+
+/* Fix container layout */
+#TrueNASHeader .container.linksrow {
+  padding: 0.25rem 1rem; /* Minimal padding top and bottom */
+}
+
+#TrueNASHeader .container.truerow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 60px; /* Set row height to match reference site */
+}
+
+/* Ensure proper flex behavior for menubar (TrueNAS header only) */
+#TrueNASHeader .truenas-menubar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Group wrapper for dropdown menu buttons with pill border */
+.truenas-menu-buttons-group {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  border: 1px solid #31beec;
+  border-radius: 50px;
+  padding: 5px;
+}
+
+/* WordPress-style menu buttons */
+.truenas-menubutton {
+  background-color: transparent;
+  color: #2b2b2b;
+  padding: 8px 16px;
+  border: none;
+  font-family: "Inter iX", Helvetica, Arial, Lucida, sans-serif;
   font-size: 16px;
   font-weight: 500;
-  color: white;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: table;
-}
-.linkscolumn {
-	width: 50%;
-	float: left;
-}
-.truenas-menuitem{
-	position: relative;
-}
-.truenas-menudropdown a:hover {color: #0095D5;}
-.truenas-menuitem:hover .truenas-menudropdown {display: block;}
-.truenas-menuitem:hover .truenas-menubutton {background-color: #000000;color:#0095D5;}
-.truenas-menuitem:hover .truenasdownload-menudropdown {display: block;}
-.truenasdownload-menudropdown a:hover {color: #0095D5;}
-.truenas-menuitem:hover .truenas-downloadbutton {
-    color: #0095D5;
-}
-.truenas-downloadbutton {
-    background-color: #000000;
-    color: #71bf44;
-    padding: 13px;
-    border: none;
-    font-family: "din-2014";
-	font-size: 16px;
-    font-weight: 600;
- }
-.truenas-downloadbutton:hover {
-    color: #0095D5;
-}
-.truenas-downloadbutton a {
-    font-family: "din-2014";
-    font-weight: 500;
-    font-size: 16px;
-    color:#ffffff;
+  cursor: pointer;
+  transition: color 0.3s ease;
 }
 
 .truenas-menubutton:hover {
