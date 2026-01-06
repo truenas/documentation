@@ -31,13 +31,13 @@ To configure Kerberos realms:
 
 3. Enter the realm name in **Realm**. Required. Enter the name as a domain name, for example, *example.com*.
 
-4. Enter the Key Distribution Center name in **KDC**. The KDC acts as the third-party authentication service for Kerberos. Separate multiple values by pressing <kbd>Enter</kbd>.
+4. (Optional) Enter the Key Distribution Center name in **KDC**. The KDC acts as the third-party authentication service for Kerberos. If left blank, TrueNAS uses DNS discovery to locate the KDC. Separate multiple values by pressing <kbd>Enter</kbd>.
 
 5. (Optional) Enter the primary KDC in **Primary KDC**. The Kerberos client uses this KDC when acquiring credentials if the current KDC fails with a bad password error. This is valuable for domains with hub-and-spoke topology.
 
-6. (Optional) Enter the server that performs all database changes in **Admin Server**. Separate multiple values by pressing <kbd>Enter</kbd>.
+6. (Optional) Enter the server that performs all database changes in **Admin Server**. If left blank, TrueNAS uses DNS discovery. Separate multiple values by pressing <kbd>Enter</kbd>.
 
-7. (Optional) Enter the server that performs all password changes in **Password Server**. Separate multiple values by pressing <kbd>Enter</kbd>.
+7. (Optional) Enter the server that performs all password changes in **Password Server**. If left blank, TrueNAS uses DNS discovery. Separate multiple values by pressing <kbd>Enter</kbd>.
 
 8. Click **Save**. 
 
@@ -46,11 +46,9 @@ To configure Kerberos realms:
 TrueNAS automatically generates a keytab after you configure AD.
 {{< /hint >}}
 
-A Kerberos keytab replaces the administration credentials for Active Directory after initial configuration.
-Since TrueNAS does not save the Active Directory or LDAP administrator account password in the system database, keytabs can be a security risk in some environments.
+A Kerberos keytab is a file containing one or more Kerberos principals with their associated encryption keys. TrueNAS automatically generates a keytab during the Active Directory domain join process. The keytab principals are typically associated with the TrueNAS host computer account.
 
-When using a keytab, create and use a less-privileged account to perform queries.
-TrueNAS stores that account password in the system database.
+Keytabs allow authentication without requiring password storage. TrueNAS does not store the Active Directory or LDAP administrator account password in the system database after the keytab is created.
 
 ### Adding a Keytab to TrueNAS
 
@@ -68,11 +66,11 @@ After generating the keytab:
 
 ### Using a Keytab with Active Directory or LDAP
 
-To make AD use the keytab, go to the **Directory Services** screen, click **Settings** in the **Active Directory** widget, and select the keytab using the **Kerberos Principal** dropdown list.
+To configure AD to use a keytab, go to the **Directory Services** screen, click **Settings** in the **Active Directory** widget, and select the keytab using the **Kerberos Principal** dropdown list.
 
-When using a keytab with AD, ensure the keytab username and password match the **Domain Account Name** and **Domain Account Password**.
+The keytab must correspond to the computer account created during the domain join process.
 
-To make LDAP use a keytab principal, click **Settings** in the **LDAP** widget and select the keytab using the **Kerberos Principal** dropdown list.
+To configure LDAP to use a keytab principal, click **Settings** in the **LDAP** widget and select the keytab using the **Kerberos Principal** dropdown list.
 
 ### Kerberos Settings
 
@@ -86,8 +84,8 @@ To access Kerberos Settings:
 
 2. Click **Settings** in the **Kerberos Settings** widget to open the **Kerberos Settings** screen.
 
-3. (Optional) Enter additional Kerberos application settings in **Appdefaults Auxiliary Parameters**. See the *appdefaults* section of [krb.conf(5)](https://web.mit.edu/kerberos/krb5-1.12/doc/admin/conf_files/krb5_conf.html) for available settings and usage syntax.
+3. (Optional) Enter additional Kerberos application settings in **Appdefaults Auxiliary Parameters**. See the *appdefaults* section of [krb.conf(5)](https://web.mit.edu/kerberos/krb5-1.20/doc/admin/conf_files/krb5_conf.html) for available settings and usage syntax.
 
-4. (Optional) Enter additional Kerberos library settings in **Libdefaults Auxiliary Parameters**. See the *libdefaults* section of [krb.conf(5)](https://web.mit.edu/kerberos/krb5-1.12/doc/admin/conf_files/krb5_conf.html) for available settings and usage syntax.
+4. (Optional) Enter additional Kerberos library settings in **Libdefaults Auxiliary Parameters**. See the *libdefaults* section of [krb.conf(5)](https://web.mit.edu/kerberos/krb5-1.20/doc/admin/conf_files/krb5_conf.html) for available settings and usage syntax.
 
 5. Click **Save**.

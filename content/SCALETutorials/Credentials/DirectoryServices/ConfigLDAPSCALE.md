@@ -36,7 +36,7 @@ To configure TrueNAS to use an LDAP directory server:
 
    * Select the **Enable Service** checkbox to activate the LDAP configuration. Selected by default.
 
-   * Select the **Enable Account Cache** checkbox to cache user and group information for improved performance. Selected by default.
+   * Select the **Enable Account Cache** checkbox to cache user and group information. Caching makes directory users and groups available in UI dropdown menus. Selected by default.
 
    * Select the **Enable DNS Updates** checkbox to allow the directory service to update DNS records. Selected by default.
 

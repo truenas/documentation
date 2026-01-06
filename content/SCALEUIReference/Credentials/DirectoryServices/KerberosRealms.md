@@ -41,8 +41,8 @@ The <i class="material-icons" aria-hidden="true" title="Configure">edit</i> butt
 | Setting | Description |
 |---------|-------|
 | **Realm** | (Required) Enter the name of the realm as a domain name, For example, *example.com*. AD configured TrueNAS systems pre-populate this field with the required information. |
-| **KDC** | Enter the name of the Key Distribution Center (KDC).The KDC acts as as the third-party authentication service for Kerberos. Separate multiple values by pressing <kbd>Enter</kbd>. For example, *kdc1.example.com* press <kbd>Enter</kbd> then *kdc2.example.com*. |
-| **Primary KDC** | Specifies the primary Key Distribution Center(KDC) for the realm. The Kerberos client uses this KDC when acquiring credentials if the current KDC fails with a bad password error. This is valuable for domains with hub-and-spoke topology where password changes slowly propagate from the hub to the spoke. |
-| **Admin Server** | Define the server that performs all database changes. Separate multiple values by pressing <kbd>Enter</kbd>. |
-| **Password Server** | Define the server that performs all password changes. Separate multiple values by pressing <kbd>Enter</kbd>. |
+| **KDC** | Enter the name of the Key Distribution Center (KDC). The KDC acts as the third-party authentication service for Kerberos. If left blank, TrueNAS uses DNS discovery to locate the KDC. Separate multiple values by pressing <kbd>Enter</kbd>. For example, *kdc1.example.com* press <kbd>Enter</kbd> then *kdc2.example.com*. |
+| **Primary KDC** | Specifies the primary Key Distribution Center (KDC) for the realm. The Kerberos client uses this KDC when acquiring credentials if the current KDC fails with a bad password error. This is valuable for domains with hub-and-spoke topology where password changes slowly propagate from the hub to the spoke. |
+| **Admin Server** | Define the server that performs all database changes. If left blank, TrueNAS uses DNS discovery. Separate multiple values by pressing <kbd>Enter</kbd>. |
+| **Password Server** | Define the server that performs all password changes. If left blank, TrueNAS uses DNS discovery. Separate multiple values by pressing <kbd>Enter</kbd>. |
 {{< /truetable >}}

@@ -48,7 +48,7 @@ The **Basic Configuration** section settings control core Active Directory servi
 |---------|-------------|
 | **Configuration Type** | Sets the type of directory service. **Active Directory** shows Active Directory domain integration settings. |
 | **Enable Service** | Activates the Active Directory configuration. Enabled by default. Clear to disable the configuration without deleting it. Re-enable it later without reconfiguring it. The **[Directory Services]({{< ref "/SCALEUIReference/Credentials/DirectoryServices" >}})** screen returns to the default and provides the options to configure AD, LDAP, or IPA. |
-| **Enable Account Cache** | Caches user and group information for improved performance. Enabled by default. |
+| **Enable Account Cache** | Caches user and group information. Caching makes directory users and groups available in UI dropdown menus. Enabled by default. |
 | **Enable DNS Updates** | Allows the directory service to update DNS records. Enabled by default. |
 | **Timeout (seconds)** | The number of seconds before the directory service connection times out. Valid range is 1-40 seconds. |
 | **Kerberos Realm** | Defines the Kerberos realm for authentication. This field auto-populates after joining the Active Directory domain. |
@@ -83,9 +83,9 @@ The **Active Directory Configuration** section settings define the connection pa
 |---------|-------------|
 | **TrueNAS Hostname** | (Required) The hostname for the TrueNAS system. This value must match the **Hostname** setting on the **Network > Global Configuration** screen and cannot exceed 15 characters. Cannot contain: `\ / : * ? " < > |`. Cannot use Microsoft or RFC 852 reserved words (ANONYMOUS, AUTHENTICATED USER, BATCH, BUILTIN, DIALUP, DOMAIN, ENTERPRISE, INTERACTIVE, INTERNET, LOCAL, NETWORK, NULL, PROXY, RESTRICTED, SELF, SERVER, USERS, WORLD, GATEWAY, GW, TAC). Must differ from the Workgroup name. |
 | **Domain Name** | (Required) The Active Directory domain name (for example, *example.com*) or child domain (for example, *sales.example.com*) if configuring access to a child domain. |
-| **Site Name** | The relative distinguished name (RDN) of the site object in the AD server. |
-| **Computer Account OU** | The organizational unit (OU) where new computer accounts are created. The OU string includes the distinguished name (DN) of the Computer Account OU. For example, *OU=Computers,DC=example,DC=com*. |
-| **Use Default Domain** | Removes the domain name prefix from AD users and groups. Not recommended as this can cause collisions with local user account names. |
+| **Site Name** | The relative distinguished name (RDN) of the site object in the AD server. TrueNAS automatically detects this from the Active Directory server. |
+| **Computer Account OU** | The organizational unit (OU) where the TrueNAS computer object is created when joining the Active Directory domain for the first time. The OU string includes the distinguished name (DN) of the Computer Account OU. For example, *OU=Computers,DC=example,DC=com*. |
+| **Use Default Domain** | Removes the domain name prefix from AD users and groups. This setting may be required for specific configurations such as Kerberos authentication with NFS for AD users. Note that using this setting can cause collisions with local user account names. |
 {{< /truetable >}}
 {{< /expand >}}
 

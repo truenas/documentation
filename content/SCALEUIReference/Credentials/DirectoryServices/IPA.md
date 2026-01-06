@@ -43,7 +43,7 @@ The **Basic Configuration** section settings control core IPA service settings.
 |---------|-------------|  
 | **Configuration Type** | Sets the type of directory service. **IPA** shows Identity, Policy, and Audit directory service integration settings. |
 | **Enable Service** | Activates the IPA configuration. Enabled by default. Clear to disable the configuration without deleting it. Re-enable it later without reconfiguring it. The **[Directory Services]({{< ref "/SCALEUIReference/Credentials/DirectoryServices" >}})** screen returns to the default and provides the options to configure AD, LDAP, or IPA. |
-| **Enable Account Cache** | Caches user and group information for improved performance. Enabled by default. |
+| **Enable Account Cache** | Caches user and group information. Caching makes directory users and groups available in UI dropdown menus. Enabled by default. |
 | **Enable DNS Updates** | Allows the directory service to update DNS records. Enabled by default. |
 | **Timeout (seconds)** | The number of seconds before the directory service connection times out. Valid range is 1-40 seconds. |
 | **Kerberos Realm** | Defines the Kerberos realm for authentication (usually the uppercase version of the domain name, e.g., *EXAMPLE.COM*). This field auto-populates when selecting Active Directory domain. |

@@ -84,7 +84,7 @@ To connect TrueNAS to Active Directory:
 
    * Select the **Enable Service** checkbox to activate the AD configuration.
 
-   * Select the **Enable Account Cache** checkbox to cache user and group information for improved performance. Selected by default.
+   * Select the **Enable Account Cache** checkbox to cache user and group information. Caching makes directory users and groups available in UI dropdown menus. Users with large domains should consider disabling account caching in order to reduce the load on domain controllers. Selected by default.
 
    * Select the **Enable DNS Updates** checkbox to allow the directory service to update DNS records. Selected by default.
 
@@ -112,9 +112,9 @@ To connect TrueNAS to Active Directory:
 
    * (Optional) Enter the site name in **Site Name**.
 
-   * (Optional) Enter the organizational unit in **Computer Account OU**. The OU string includes the distinguished name (DN) of the Computer Account OU. For example, *OU=Computers,DC=example,DC=com*.
+   * (Optional) Enter the organizational unit in **Computer Account OU**. This controls the location where the TrueNAS computer object is created when joining the Active Directory domain for the first time. The OU string includes the distinguished name (DN) of the Computer Account OU. For example, *OU=Computers,DC=example,DC=com*.
 
-   * (Optional) Select the **Use Default Domain** checkbox to remove the domain name prefix from AD users and groups. Not recommended as this can cause collisions with local user account names.
+   * (Optional) Select the **Use Default Domain** checkbox to remove the domain name prefix from AD users and groups. This setting may be required for specific configurations such as Kerberos authentication with NFS for AD users. Note that using this setting can cause collisions with local user account names.
 
 6. (Optional) Configure trusted domains:
 
@@ -139,6 +139,26 @@ To connect TrueNAS to Active Directory:
    * **Builtin** section with optional **Name** field and required **Range Low** and **Range High** fields.
 
    * **IDMAP Domain** section with required **IDMAP Backend**, **Name**, **Range Low**, and **Range High** fields.
+
+### Understanding IDMAP Backends
+
+When customizing IDMAP settings, you can select from several backend options. Each backend uses a different method to map Windows security identifiers (SIDs) to UNIX UIDs and GIDs:
+
+* **AD** - Reads UID and GID mappings from an Active Directory server that uses pre-existing RFC2307 / SFU schema extensions.
+
+* **AUTORID** - Automatically allocates UID and GID ranges for each domain. Useful for environments with multiple trusted domains.
+
+* **LDAP** - Reads and writes UID / GID mapping tables from an external LDAP server.
+
+* **NSS** - Uses the Name Service Switch (NSS) to retrieve Unix user and group information from local or network sources.
+
+* **RFC2307** - Reads ID mappings from RFC2307 attributes on a standalone LDAP server. This backend is read-only.
+
+* **RID** - Uses an algorithm to map UIDs and GIDs to SIDs. It determines the UID or GID by adding the RID value from the Windows Account SID to the base value in range_low.
+
+* **TDB** - Stores ID mappings in a local Trivial Database (TDB) file. Allocates new UIDs and GIDs as needed. Useful for standalone servers but not recommended for multi-server environments as mappings are not shared.
+
+For most environments, the default RID backend provides consistent, reliable ID mapping without additional configuration.
 
 8. Click **Save**.
 
