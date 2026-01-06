@@ -20,14 +20,32 @@ mark {
 }
 .flex {
   display: flex;
-}
+}  
 .gdoc-page {
 	flex: 1;
     padding: 1rem 2rem 0rem 0rem;
 	flex-grow: 1;
 }
-
-/* ========== SITENAV (DOCS NAV BAR) STYLES ========== */
+/* Site header */
+.gdoc-brand__img {
+    max-width: 8em;
+    width: auto;
+    height: auto;
+}
+.gdoc-header .icon {
+    height: 1.5rem;
+    width:  1.5rem;
+}
+.iconsbar {
+    background: #000;
+    text-align: right !important;
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+}
+.iconsbar a {
+    color: #fff;
+}
 /* Site Nav Bar */
 .docshome {
   flex: 1;
@@ -128,6 +146,7 @@ mark {
 .sidebar-fixed::-webkit-scrollbar-track {
     background: transparent;
 }
+/* End Site Nav Bar */
 /* Docsnav Search Buttons (Split Design) */
 .docsnav-search-container {
     display: flex;
@@ -175,8 +194,8 @@ mark {
 .sticky {
     position: fixed;
     top: 0;
-	left: 0;
-	right: 0;
+    left: 0;
+    right: 0;
     z-index: 5;
     margin: 0 auto;
     padding: .5rem 1rem .5rem 1rem;
@@ -189,18 +208,50 @@ mark {
 	margin: 0 auto;
 	padding: .5rem 1rem 0rem 1rem;
 }
-#sitenav {
-	display:flex;
-	flex-wrap:wrap;
+.truerow {
+	display: block;
+}
+.stickybackground {
+	z-index: 1;
+	max-width: 100rem;
+	margin: 0 auto;
+	background: white;
+}
+.gdoc-header__link {
+    float:left;
+	
+}
+.truenas-menubar {
+    float: right;
+    display: flex;
+    font-family: "din-2014";
+	font-size: 16px;
+    font-weight: 400;
 	justify-content:center;
 	align-items:center;
-	gap: 1rem;
 }
-/* At mobile breakpoint, align hamburger to left */
-@media screen and (max-width: 68rem) {
-	#sitenav {
-		justify-content: space-between;
+.menubar-link {
+	padding-right: 1.5rem;
+}
+@media screen and (max-width:800px) {
+	.docshome {
+		text-align: center;
 	}
+	#gdoc-color-theme {
+		flex:1;		
+	}
+	.google_translate_element {
+	}
+}
+@media screen and (max-width:46rem) {
+	.container.truerow {
+        display: none;
+    }
+}
+#docsnav-intro {
+	padding-right: 2px;
+	font-size: 18px;
+	font-weight: bold;
 }
 .docsnav {
 	display:flex;
@@ -209,14 +260,6 @@ mark {
 	justify-content:center;
 	align-items:center;
 	margin: 0 auto;
-}
-/* Override inline float:right on truenas-menubar and make it display items horizontally */
-.docsnav .truenas-menubar {
-	float: none !important;
-	display: flex !important;
-	align-items: center !important;
-	gap: 10px !important;
-	flex-wrap: nowrap !important;
 }
 .truenas-docsnav-menubutton {
     background-color: white;
@@ -256,25 +299,7 @@ mark {
 	font-weight: bold;
     margin-bottom: 0;
 }
-#docsnav-intro {
-	padding-right: 2px;
-	font-size: 18px;
-	font-weight: bold;
-}
-.gdoc-header__link {
-    float:left;
-}
-.menubar-link {
-	padding-right: 1.5rem;
-}
-@media screen and (max-width:800px) {
-	.docshome {
-		text-align: center;
-	}
-	#gdoc-color-theme {
-		flex:1;
-	}
-}
+/* End sticky top menu */
 /* Adjust Nav sidebar */
 .gdoc-nav {
 	flex: 0 0 17rem;
@@ -289,7 +314,7 @@ mark {
         margin-top: 4em;
     }
     .gdoc-nav__control {
-        display: inline-block;
+        display: inline-block
     }
 	#menu-control:checked~main .gdoc-nav nav,#menu-control:checked~main .gdoc-page {
         transform: translateX(18rem)
@@ -314,7 +339,7 @@ mark {
     }
 }
 .gdoc-nav nav {
-    padding: 1rem .25rem 1rem 1rem;
+    padding: 0.5rem .25rem 1rem 1rem;
 }
 .gdoc-nav nav section {
 	margin-top: 0;
@@ -326,1582 +351,605 @@ mark {
 	flex: 1;
     padding: 1rem 1.5rem 0rem 2.25rem;
 }
+.gdoc-header {
+    background: #000000;
+	border-bottom-width: 20px;
+	border-bottom-color: #0095d5;
+    padding: 1rem 1rem 1rem 1rem;
+	border-bottom-width: 0px;
+}
+
+.truenas-menubutton {
+    background-color: #000;
+    color: white;
+    padding: 13px;
+    border: none;
+    font-family: "din-2014";
+	font-size: 16px;
+    font-weight: 400;
+}
+.truenas-menubutton:hover {
+  color: #000000;
+}
+.truenas-menubutton,.truenas-menubutton a {color:#white;cursor:pointer;}
+.truenas-menulink {
+    background-color: #000;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+}
+.truenas-menulink a {color:#000000;}
+.truenas-menudropdown {
+    display: none;
+    position: absolute;
+    background-color: #000000;
+    border-radius: 20px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 10;
+}
+.truenas-menudropdown a {
+    font-family: "din-2014";
+	font-size: 16px;
+    font-weight: 600;
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: table;
+}
+.dropdown-item {
+  cursor: pointer;
+  font-family: "din-2014";
+  font-size: 16px;
+  font-weight: 500;
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: table;
+}
+.linkscolumn {
+	width: 50%;
+	float: left;
+}
+.truenas-menuitem{
+	position: relative;
+}
+.truenas-menudropdown a:hover {color: #0095D5;}
+.truenas-menuitem:hover .truenas-menudropdown {display: block;}
+.truenas-menuitem:hover .truenas-menubutton {background-color: #000000;color:#0095D5;}
+.truenas-menuitem:hover .truenasdownload-menudropdown {display: block;}
+.truenasdownload-menudropdown a:hover {color: #0095D5;}
+.truenas-menuitem:hover .truenas-downloadbutton {
+    color: #0095D5;
+}
+.truenas-downloadbutton {
+    background-color: #000000;
+    color: #71bf44;
+    padding: 13px;
+    border: none;
+    font-family: "din-2014";
+	font-size: 16px;
+    font-weight: 600;
+ }
+.truenas-downloadbutton:hover {
+    color: #0095D5;
+}
+.truenas-downloadbutton a {
+    font-family: "din-2014";
+    font-weight: 500;
+    font-size: 16px;
+    color:#ffffff;
+}
+.truenas-downloadbutton a:hover {
+    color: #00597f;
+    text-decoration: none;
+}
+.truenas-supportbutton {
+    background:#0095D5;
+    color: white;
+    padding: 13px 30px 10px 30px;
+    border: none;
+    border-radius: 15px;
+    margin-left: 5px;
+    font-family: "din-2014";
+	font-size: 16px;
+    font-weight: 600;
+ }
+.truenas-supportbutton:hover {
+    background-color: #71bf44;
+}
+.truenas-supportbutton a {
+    font-family: "din-2014";
+    font-weight: 500;
+    font-size: 16px;
+    color:#ffffff;
+}
+.truenas-supportbutton a:hover {
+    color: #00597f;
+    text-decoration: none;
+}
+.truenasdownload-menudropdown {
+    display: none;
+    position: absolute;
+    background-color: #000000;
+    border-radius: 20px;
+    min-width: max-content;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 10;
+	right: 0;
+	left: auto;
+}
+.truenasdownload-menudropdown a {
+    font-family: "din-2014";
+    font-weight: 500;
+    font-size: 16px;
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+.truenas-menudropdown {
+    display: none;
+    position: absolute;
+    background-color: #000000;
+    min-width: max-content;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 10;
+}
+#resources-box {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.truenasdownload-menudropdown a {
+    font-family: "din-2014";
+    font-weight: 500;
+    font-size: 16px;
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+/* Link container styling */
+.truenas-menuitem-link {
+    display: flex !important; /* Ensures the image and text are in a horizontal row */
+    align-items: center; /* Vertically aligns items */
+    gap: 1rem; /* Adds spacing between image and text */
+    text-decoration: none; /* Removes underline for links */
+    color: inherit; /* Keeps text color consistent with parent */
+    max-width: 400px; /* Sets maximum width for wrapping */
+    line-height: 1.5; /* Improves text readability */
+}
+
+/* Icon/image styling */
+.truenas-menuitem-link img {
+    width: 2.5rem; /* Sets a fixed width for the image */
+    height: auto; /* Maintains the image's aspect ratio */
+    flex-shrink: 0; /* Prevents the image from resizing */
+    vertical-align: middle; /* Aligns image with the text */
+    margin-right: 1rem; /* Adds spacing between image and text */
+}
+
+/* Text container styling */
+.truenas-menuitem-text {
+    flex: 1; /* Allows the text container to take remaining space */
+    overflow-wrap: break-word; /* Wraps text to prevent overflow */
+}
+
+/* Bold text styling */
+.truenas-menuitem-text b {
+    font-size: 1rem; /* Adjust bold text size */
+    margin-bottom: 0.25rem; /* Adds spacing below bold text */
+    display: block; /* Makes the bold text a block-level element */
+}
+
+/* Paragraph text styling */
+.truenas-menuitem-text p {
+    font-size: 0.9rem; /* Adjusts paragraph text size */
+    line-height: 1.4; /* Enhances readability */
+    margin: 0; /* Removes default margin */
+}
+/* Parent Columns: two main columns */
+.truenas-menuitem-columns {
+    display: flex; /* Make the left and right columns appear side by side */
+    gap: 2rem; /* Space between the two main columns */
+}
+
+/* Each Column */
+.truenas-menuitem-column {
+    flex: 1; /* Allow each column to take equal width */
+    display: flex;
+    flex-direction: column;
+}
+/* Media query for narrower screens */
+@media (max-width: 1180px) {
+    .truenas-menuitem-columns {
+        flex-direction: column; /* Stack the columns vertically */
+    }
+
+    .truenas-menuitem-column {
+        flex: none; /* Remove equal width restriction for stacking */
+        width: 100%; /* Ensure each column takes full width */
+    }
+}
+/* Sub-columns: dividing each column into two */
+.truenas-sub-columns {
+    display: flex; /* Align sub-columns side by side */
+    gap: 2rem; /* Space between the two sub-columns */
+}
+
+/* Each Sub-column */
+.truenas-sub-column {
+    flex: 1; /* Make sure each sub-column takes equal space */
+}
+
+/* Optional: Styling the links inside sub-columns */
+.truenas-sub-column a {
+    display: block;
+    color: white;
+    text-decoration: none;
+}
+
+.truenas-sub-column a:hover {
+    color: #0095d5; /* Optional: Hover color */
+}
+
+/* Optional: Styling for hr */
+.truenas-menudropdown-hr {
+    border: 0;
+    border-top: 1px solid white;
+}
+
+
+.truenas-menuitem-link {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+    text-decoration: none;
+    color: inherit;
+}
+
+.truenas-menuitem-link img {
+    width: 2.5rem;
+    height: auto;
+    flex-shrink: 0;
+}
+
+.truenas-menuitem-text {
+    max-width: calc(100%);
+    overflow-wrap: break-word;
+}
+
+.truenas-menudropdown {
+    display: none;
+    position: absolute;
+    background-color: #000000;
+    padding: 1rem;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+}
+
+.truenas-menuitem:hover .truenas-menudropdown {
+    display: block;
+}
+/* Horizontal Rule Styling */
+.truenas-menudropdown-hr {
+    border: 0;
+    border-top: 1px solid #ccc; /* Customize the color of the horizontal rule */
+    margin: 1rem 0; /* Add spacing above and below the rule */
+}
+
+/* Maintain existing styles for columns */
+.truenas-menuitem-columns {
+    display: flex;
+    gap: 2rem; /* Space between columns */
+}
+
+.truenas-menuitem-column {
+    flex: 1; /* Equal width for columns */
+    display: flex;
+    flex-direction: column;
+    gap: 1rem; /* Space between items in each column */
+}
+
+
+/* Adjust breadcrumb header sizing */
+.gdoc-page__header {
+	font-size: small;
+	margin-bottom: 1rem;
+}
 /* Add right sidebar for page TOCs */
 .sidebar-right {
     flex: 0 0 16rem;
     width: 0;
-}
-.sidebar-right__control {
+  }
+  .sidebar-right__control {
     display: none;
     position: absolute;
     right: 0;
     padding: 0 1rem 0 1rem;
     cursor: pointer;
-}
-.toc-panel {
-    position: absolute;
-    overflow-y: auto;
-    padding: 1rem 1rem 1rem 0rem;
-    font-size: 14px;
-    background-color: var(--body-background);
-    scrollbar-width: thin;
-}
-.toc-fixed {
-    position: fixed;
-    top: 0;
-}
-@media screen and (max-width: 68rem) {
+  }
+  .toc-panel {
+      position: absolute;
+      overflow-y: auto;
+      padding: 1rem 1rem 1rem 0rem;
+      font-size: 14px;
+      background-color: var(--body-background);
+      scrollbar-width: thin;
+    }
+    
+  .toc-fixed {
+      position: fixed;
+      top: 0;
+    }
+    
+    .toc-absolute {
+      position: absolute;
+      top: auto;
+    }
+    
+    .toc-footer-overlap {
+      position: absolute;
+      top: 90px; /* or however much space you want above the footer */
+    }
+    
+  @media screen and (max-width: 68rem) {
     .sidebar-right {
-        transition: transform 0.3s ease;
-        transform: translateX(100%);
-        display: none;
-        position: fixed;
-        right: 10rem;
+      transition: transform 0.3s ease;
+      transform: translateX(100%); /* Start with the sidebar hidden */
+      display: none;
+      position: fixed;
+      right: 10rem;
     }
     .sidebar-right__control {
-        display: none !important;
+      display: inline-block;
     }
     .toc-panel {
-        width: 12rem;
-        padding-left: .5rem;
-        transition: top 0.2s ease-in-out;
-        will-change: top;
+      width: 12rem;
+      padding-left: .5rem;
+      transition: top 0.2s ease-in-out;
+      will-change: top;
     }
-}
-/* End sitenav styles */
-/* ========== END SITENAV STYLES ========== */
-
-/* ========== TRUENAS HEADER & FOOTER STYLES ========== */
-
-/* Reset any positioning - let TrueNAS header scroll naturally */
-#TrueNASHeader {
-  position: relative;
-  z-index: 1000 !important;
-  background-color: #ffffff;
-  border-bottom: 2px solid #31beec;
-  padding: 8px 0;
-}
-
-/* Dark mode for TrueNAS top header */
-[color-mode="dark"] #TrueNASHeader {
-  background: linear-gradient(90deg, #002637 0%, #002637 60%, #000000 100%) !important;
-  color: #ffffff !important;
-}
-
-[color-mode="dark"] #TrueNASHeader a {
-  color: #ffffff !important;
-}
-
-/* Menu buttons and links */
-[color-mode="dark"] #TrueNASHeader .truenas-menubutton {
-  color: #ffffff !important;
-}
-
-[color-mode="dark"] #TrueNASHeader .truenas-menubutton:hover {
-  color: #31beec !important;
-}
-
-[color-mode="dark"] #TrueNASHeader .truenas-menuitem-link {
-  color: #ffffff !important;
-}
-
-[color-mode="dark"] #TrueNASHeader .truenas-menuitem-link:hover {
-  color: #31beec !important;
-}
-
-[color-mode="dark"] #TrueNASHeader .truenas-menuitem-text b,
-[color-mode="dark"] #TrueNASHeader .truenas-menuitem-text p {
-  color: #ffffff !important;
-}
-
-[color-mode="dark"] #TrueNASHeader .truenas-menuitem-link:hover .truenas-menuitem-text b,
-[color-mode="dark"] #TrueNASHeader .truenas-menuitem-link:hover .truenas-menuitem-text p {
-  color: #31beec !important;
-}
-
-/* Dropdown menus */
-[color-mode="dark"] #TrueNASHeader .truenas-menudropdown {
-  background-color: #1b1f22 !important;
-  border-color: #31beec !important;
-}
-
-[color-mode="dark"] #TrueNASHeader .truenas-menudropdown a {
-  color: #ffffff !important;
-}
-
-[color-mode="dark"] #TrueNASHeader .truenas-menudropdown a:hover {
-  color: #31beec !important;
-  background-color: transparent !important;
-}
-
-[color-mode="dark"] #TrueNASHeader .truenasdownload-menudropdown {
-  background-color: #1b1f22 !important;
-  border-color: #31beec !important;
-}
-
-/* Support button and links */
-[color-mode="dark"] #TrueNASHeader .truenas-supportbutton {
-  color: #ffffff !important;
-}
-
-[color-mode="dark"] #TrueNASHeader .truenas-supportbutton:hover {
-  color: #31beec !important;
-}
-
-/* Edition buttons - ensure proper colors in dark mode */
-[color-mode="dark"] .truenas-edition-buttons .truenas-edition-button:first-child {
-  background: #71bf44 !important;
-}
-
-[color-mode="dark"] .truenas-edition-buttons .truenas-edition-button:first-child:hover {
-  background: #0095d5 !important;
-}
-
-[color-mode="dark"] .truenas-edition-buttons .truenas-edition-button:last-child {
-  background: #0095d5 !important;
-}
-
-[color-mode="dark"] .truenas-edition-buttons .truenas-edition-button:last-child:hover {
-  background: #71bf44 !important;
-}
-
-/* Automatic dark mode detection (for when color-mode is "auto") */
-@media (prefers-color-scheme: dark) {
-  #TrueNASHeader {
-    background: linear-gradient(90deg, #002637 0%, #002637 60%, #000000 100%) !important;
-    color: #ffffff !important;
   }
-
-  #TrueNASHeader a {
-    color: #ffffff !important;
+  .toc-list {
+    list-style-type: none;
+    padding: 0;
   }
-
-  #TrueNASHeader .truenas-menubutton {
-    color: #ffffff !important;
+  .toc-list li {
+    margin-left: 0;
   }
-
-  #TrueNASHeader .truenas-menubutton:hover {
-    color: #31beec !important;
-  }
-
-  #TrueNASHeader .truenas-menuitem-link {
-    color: #ffffff !important;
-  }
-
-  #TrueNASHeader .truenas-menuitem-link:hover {
-    color: #31beec !important;
-  }
-
-  #TrueNASHeader .truenas-menuitem-text b,
-  #TrueNASHeader .truenas-menuitem-text p {
-    color: #ffffff !important;
-  }
-
-  #TrueNASHeader .truenas-menuitem-link:hover .truenas-menuitem-text b,
-  #TrueNASHeader .truenas-menuitem-link:hover .truenas-menuitem-text p {
-    color: #31beec !important;
-  }
-
-  #TrueNASHeader .truenas-menudropdown {
-    background-color: #1b1f22 !important;
-    border-color: #31beec !important;
-  }
-
-  #TrueNASHeader .truenas-menudropdown a {
-    color: #ffffff !important;
-  }
-
-  #TrueNASHeader .truenas-menudropdown a:hover {
-    color: #31beec !important;
-    background-color: transparent !important;
-  }
-
-  #TrueNASHeader .truenasdownload-menudropdown {
-    background-color: #1b1f22 !important;
-    border-color: #31beec !important;
-  }
-
-  #TrueNASHeader .truenas-supportbutton {
-    color: #ffffff !important;
-  }
-
-  #TrueNASHeader .truenas-supportbutton:hover {
-    color: #31beec !important;
-  }
-
-  .truenas-edition-buttons .truenas-edition-button:first-child {
-    background: #71bf44 !important;
-  }
-
-  .truenas-edition-buttons .truenas-edition-button:first-child:hover {
-    background: #0095d5 !important;
-  }
-
-  .truenas-edition-buttons .truenas-edition-button:last-child {
-    background: #0095d5 !important;
-  }
-
-  .truenas-edition-buttons .truenas-edition-button:last-child:hover {
-    background: #71bf44 !important;
-  }
-}
-
-/* Explicit light mode override - must come after media query to override browser preference */
-:root[color-theme=light] #TrueNASHeader {
-  background: #ffffff !important;
-  color: #000000 !important;
-}
-
-:root[color-theme=light] #TrueNASHeader a {
-  color: inherit !important;
-}
-
-:root[color-theme=light] #TrueNASHeader .truenas-menubutton {
-  color: #000000 !important;
-}
-
-:root[color-theme=light] #TrueNASHeader .truenas-menubutton:hover {
-  color: #0095d5 !important;
-}
-
-:root[color-theme=light] #TrueNASHeader .truenas-menuitem-link {
-  color: #000000 !important;
-}
-
-:root[color-theme=light] #TrueNASHeader .truenas-menuitem-link:hover {
-  color: #0095d5 !important;
-}
-
-:root[color-theme=light] #TrueNASHeader .truenas-menuitem-text b,
-:root[color-theme=light] #TrueNASHeader .truenas-menuitem-text p {
-  color: #000000 !important;
-}
-
-:root[color-theme=light] #TrueNASHeader .truenas-menuitem-link:hover .truenas-menuitem-text b,
-:root[color-theme=light] #TrueNASHeader .truenas-menuitem-link:hover .truenas-menuitem-text p {
-  color: #0095d5 !important;
-}
-
-:root[color-theme=light] #TrueNASHeader .truenas-menudropdown {
-  background-color: #ffffff !important;
-  border-color: #0095d5 !important;
-}
-
-:root[color-theme=light] #TrueNASHeader .truenas-menudropdown a {
-  color: #000000 !important;
-}
-
-:root[color-theme=light] #TrueNASHeader .truenas-menudropdown a:hover {
-  color: #0095d5 !important;
-}
-
-/* Ensure the header itself has proper stacking context */
-#TrueNASHeader .gdoc-header {
-  position: relative;
-  z-index: 10001;
-  background-color: transparent;
-}
-
-/* Make sure menu items create proper stacking context */
-.truenas-menuitem {
-  position: relative;
-  z-index: 10002;
-}
-
-/* Reset Docsy navbar to normal behavior */
-.td-navbar {
-  margin-top: 0;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
-
-/* Reset main content */
-.td-main {
-  margin-top: 0;
-}
-
-/* Media menu should only show on smaller screens */
-.truenas-mediamenu {
-  display: none;
-}
-
-@media screen and (max-width: 800px) {
-  .truenas-mediamenu {
+  .toc-list li a {
     display: block;
+    margin-left: 0; /* Reset any default margin */
+    padding-bottom: .5rem;
   }
-
-  .truenas-menubar {
-    display: none;
-  }
-}
-
-/* Ensure consistent container sizing */
-#TrueNASHeader .container {
-  max-width: 100rem;
-  margin: 0 auto;
-  background: transparent;
-}
-
-/* Fix container layout */
-#TrueNASHeader .container.linksrow {
-  padding: 0.25rem 1rem; /* Minimal padding top and bottom */
-}
-
-#TrueNASHeader .container.truerow {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  min-height: 60px; /* Set row height to match reference site */
-}
-
-/* Ensure proper flex behavior for menubar (TrueNAS header only) */
-#TrueNASHeader .truenas-menubar {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-/* Group wrapper for dropdown menu buttons with pill border */
-.truenas-menu-buttons-group {
-  display: flex;
-  align-items: center;
-  gap: 0;
-  border: 1px solid #31beec;
-  border-radius: 50px;
-  padding: 5px;
-}
-
-/* WordPress-style menu buttons */
-.truenas-menubutton {
-  background-color: transparent;
-  color: #2b2b2b;
-  padding: 8px 16px;
-  border: none;
-  font-family: "Inter iX", Helvetica, Arial, Lucida, sans-serif;
-  font-size: 16px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: color 0.3s ease;
-}
-
-.truenas-menubutton:hover {
-  color: #31beec;
-}
-
-/* Get In Touch button - simple styling */
-.truenas-getintouch-button {
-  background-color: transparent;
-  color: #2b2b2b;
-  padding: 13px 20px;
-  border: none;
-  font-family: "Inter iX", Helvetica, Arial, Lucida, sans-serif;
-  font-size: 16px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: color 0.3s ease;
-}
-
-.truenas-getintouch-button:hover {
-  color: #31beec;
-}
-
-/* Get A Quote button - primary button with green wipe animation matching homepage */
-.truenas-quote-button {
-  background: transparent;
-  border: 1px solid #0095d5;
-  color: white;
-  padding: 13px 30px;
-  border-radius: 30px;
-  margin-left: 10px;
-  font-family: "Inter iX", Helvetica, Arial, Lucida, sans-serif;
-  font-size: 16px;
-  font-weight: 600;
-  cursor: pointer;
-  position: relative;
-  overflow: hidden;
-  z-index: 1;
-}
-
-.truenas-quote-button::after {
-  content: '';
-  position: absolute;
-  top: -1px;
-  left: -1px;
-  right: -1px;
-  bottom: -1px;
-  background: #0095d5;
-  z-index: -2;
-  border-radius: 30px;
-}
-
-.truenas-quote-button::before {
-  content: '';
-  position: absolute;
-  top: -1px;
-  left: -10%;
-  width: 0;
-  bottom: -1px;
-  background: #71bf44;
-  transition: width 0.25s ease;
-  transform: skewX(-10deg);
-  z-index: -1;
-}
-
-.truenas-quote-button:hover::before {
-  width: 120%;
-}
-
-.truenas-quote-button:hover {
-  border-color: #71bf44 !important;
-  color: white !important;
-}
-
-/* WordPress-style dropdown menus */
-.truenas-menudropdown {
-  display: none;
-  position: absolute;
-  background-color: #ffffff;
-  width: max-content;
-  box-shadow: 0px 8px 24px 0px rgba(0,0,0,0.15);
-  z-index: 10;
-  top: 100%;
-  left: 0;
-  border-radius: 8px;
-  padding: 1rem;
-  border: 1px solid #e0e0e0;
-}
-
-/* Wide dropdown for Support & Resources */
-.truenas-menudropdown-wide {
-  min-width: 700px;
-}
-
-/* Prevent dropdowns from going off-screen on the right */
-/* Right-align Support & Resources and Company dropdowns */
-.truenas-menuitem:nth-last-child(-n+3) .truenas-menudropdown {
-  left: auto;
-  right: 0;
-}
-
-/* Products dropdown - position to avoid overflow */
-.truenas-menuitem:first-child .truenas-menudropdown {
-  left: 50%;
-  transform: translateX(-50%);
-  right: auto;
-}
-
-/* On narrower screens, shift it further left */
-@media (max-width: 1200px) {
-  .truenas-menuitem:first-child .truenas-menudropdown {
-    left: auto;
-    right: 1rem;
-    transform: none;
-  }
-}
-
-/* Dropdown link styling */
-.truenas-menudropdown a {
-  font-family: "Inter iX", Helvetica, Arial, Lucida, sans-serif;
-  font-size: 14px;
-  font-weight: 500;
-  color: #2b2b2b;
-  padding: 6px 10px;
-  text-decoration: none;
-  display: block;
-  transition: color 0.3s ease;
-}
-
-.truenas-menudropdown a:hover {
-  color: #31beec;
-}
-
-/* Menu item hover states */
-.truenas-menuitem:hover .truenas-menudropdown {
-  display: block;
-}
-
-.truenas-menuitem:hover .truenas-menubutton {
-  color: #31beec;
-}
-
-/* Menu item links with images and text */
-.truenas-menuitem-link {
-  display: flex !important;
-  align-items: center !important;
-  gap: 0.75rem !important;
-  text-decoration: none !important;
-  color: #2b2b2b !important;
-  max-width: 350px !important;
-  line-height: 1.4 !important;
-  padding: 8px 10px !important;
-  font-family: "Inter iX", Helvetica, Arial, Lucida, sans-serif !important;
-  font-size: 14px !important;
-  font-weight: 500 !important;
-  transition: color 0.3s ease !important;
-}
-
-.truenas-menuitem-link img {
-  width: 95px !important;
-  height: auto !important;
-  flex-shrink: 0 !important;
-  margin-right: 0.5rem !important;
-  vertical-align: middle !important;
-}
-
-.truenas-menuitem-link:hover {
-  color: #31beec !important;
-}
-
-/* Ensure the text within menuitem-links also changes on hover */
-.truenas-menuitem-link:hover .truenas-menuitem-text,
-.truenas-menuitem-link:hover .truenas-menuitem-text b,
-.truenas-menuitem-link:hover .truenas-menuitem-text p {
-  color: #31beec !important;
-}
-
-/* Edition buttons container - side by side, same height */
-.truenas-edition-buttons {
-  display: flex !important;
-  gap: 0 !important;
-  margin-top: 0.5rem !important;
-}
-
-/* Edition buttons (Enterprise and Community) - button style */
-.truenas-edition-button {
-  display: flex !important;
-  flex: 1 !important;
-  align-items: flex-start !important;
-  gap: 0.75rem !important;
-  padding: 1rem !important;
-  text-decoration: none !important;
-  border-radius: 0 !important;
-  transition: background-color 0.3s ease !important;
-  font-family: "Inter iX", Helvetica, Arial, Lucida, sans-serif !important;
-  min-height: 100px !important;
-}
-
-/* Enterprise button - green default, blue hover */
-.truenas-edition-buttons .truenas-edition-button:first-child {
-  background: #71bf44 !important;
-}
-
-.truenas-edition-buttons .truenas-edition-button:first-child:hover {
-  background: #0095d5 !important;
-}
-
-/* Community button - blue default, green hover */
-.truenas-edition-buttons .truenas-edition-button:last-child {
-  background: #0095d5 !important;
-}
-
-.truenas-edition-buttons .truenas-edition-button:last-child:hover {
-  background: #71bf44 !important;
-}
-
-.truenas-edition-button img {
-  width: 80px !important;
-  height: auto !important;
-  flex-shrink: 0 !important;
-}
-
-.truenas-edition-button .edition-text {
-  display: flex !important;
-  flex-direction: column !important;
-  gap: 0.25rem !important;
-  text-align: left !important;
-}
-
-.truenas-edition-button .edition-title {
-  font-size: 16px !important;
-  font-weight: 600 !important;
-  color: white !important;
-  line-height: 1.3 !important;
-}
-
-.truenas-edition-button .edition-description {
-  font-size: 14px !important;
-  font-weight: 400 !important;
-  color: rgba(0, 0, 0, 0.7) !important;
-  line-height: 1.4 !important;
-}
-
-/* Column headers with gradient underline */
-.truenas-column-header {
-  color: #0095d5 !important;
-  font-weight: 600 !important;
-  font-family: "Inter iX", Helvetica, Arial, Lucida, sans-serif !important;
-  margin-bottom: 0.5rem !important;
-  padding: 0 12px !important;
-  padding-top: 2rem !important;
-  font-size: 16px !important;
-  line-height: 1.2 !important;
-  display: block !important;
-}
-
-/* Menu item columns layout */
-.truenas-menuitem-columns {
-  display: flex;
-  gap: 0.5rem;
-}
-
-.truenas-menuitem-column {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.truenas-sub-columns {
-  display: flex;
-  gap: 1rem;
-}
-
-.truenas-sub-column {
-  flex: 1;
-}
-
-/* Horizontal rule styling with gradient */
-.truenas-menudropdown-hr {
-  border: 0 !important;
-  height: 3px !important;
-  background: linear-gradient(90deg, #31beec 0%, #71bf44 100%) !important;
-  margin: 0.5rem 0 1rem 0 !important;
-  display: block !important;
-  box-sizing: border-box !important;
-}
-
-/* Text styling */
-.truenas-menuitem-text b {
-  display: block;
-  font-weight: 600;
-  color: inherit;
-}
-
-.truenas-menuitem-text p {
-  margin: 0;
-  font-size: 14px;
-  opacity: 0.7;
-  color: inherit;
-}
-
-/* Media menu button styling */
-.truenas-mediamenu .truenas-menubutton {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 8px 12px;
-}
-
-.truenas-mediamenu .truenas-menubutton img {
-  width: 16px;
-  height: 16px;
-}
-
-/* Media menu hover states */
-.truenas-mediamenu:hover .truenas-menudropdown {
-  display: block;
-}
-
-.truenas-mediamenu:hover .truenas-menubutton {
-  background-color: black;
-  color: white;
-}
-
-/* Fix logo display */
-#TrueNASHeader .gdoc-brand__link {
-  display: block !important;
-  visibility: visible !important;
-}
-
-#TrueNASHeader .gdoc-brand__img {
-  display: block !important;
-  visibility: visible !important;
-  width: 276px;
-  height: auto;
-  max-width: 276px;
-  opacity: 1 !important;
-}
-
-#TrueNASHeader .flex.align-center {
-  display: flex !important;
-  align-items: center !important;
-}
-
-/* ===== TrueNAS Header Responsive Design ===== */
-
-/* Default (Desktop) Styles - No changes needed for existing layout */
-
-/* Dynamic logo sizing for all breakpoints */
-.gdoc-brand__img {
-  max-width: 184px; /* Set proportional width for 40px height */
-  height: auto;
-  width: auto;
-  max-height: 40px; /* Reduced from 60px to match reference site */
-  object-fit: contain; /* Maintain aspect ratio */
-}
-
-/* Hamburger menu - hidden by default */
-.truenas-hamburger-menu {
-  display: none;
-  position: relative;
-}
-
-.truenas-hamburger-button {
-  background: none;
-  border: none;
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  width: 30px;
-  height: 24px;
-  padding: 0;
-  margin-right: 1rem;
-}
-
-.hamburger-bar {
-  width: 100%;
-  height: 3px;
-  background-color: #31beec;
-  transition: all 0.3s ease;
-}
-
-.truenas-hamburger-menu .truenas-menudropdown {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background-color: #ffffff;
-  border-radius: 10px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  border: 1px solid #e0e0e0;
-  z-index: 1000;
-  min-width: 250px;
-  padding: 0.5rem 0;
-}
-
-.truenas-hamburger-menu .truenas-menudropdown a {
-  display: block;
-  padding: 12px 16px;
-  color: #2b2b2b;
-  text-decoration: none;
-  font-family: "Inter iX", Helvetica, Arial, Lucida, sans-serif;
-  font-size: 16px;
-  font-weight: 500;
-  transition: color 0.3s ease;
-}
-
-.truenas-hamburger-menu .truenas-menudropdown a:hover {
-  color: #31beec;
-  background-color: #f5f5f5;
-}
-
-/* Disabled - this was causing all menus to open on hover */
-/* .truenas-hamburger-menu:hover .truenas-menudropdown {
-  display: block !important;
-  z-index: 10000 !important;
-} */
-
-/* ===== BREAKPOINT 2: TABLET SIZE ===== */
-/* DISABLED - This breakpoint was causing unwanted layout wrapping */
-/* @media screen and (max-width: 1200px) and (min-width: 769px) {
-  #TrueNASHeader .container.truerow {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1rem;
-  }
-} */
-
-/* ===== BREAKPOINT: MOBILE MENU AT 1180px ===== */
-@media screen and (max-width: 1180px) {
-  /* Hide desktop menu buttons group */
-  .truenas-menu-buttons-group {
-    display: none !important;
-  }
-
-  /* Show hamburger menu in menubar (stays on right side) */
-  .truenas-hamburger-menu {
-    display: block;
-  }
-
-  /* Keep logo and menubar on same line - override 1200px breakpoint */
-  #TrueNASHeader .container.truerow {
-    flex-direction: row !important;
-    align-items: center !important;
-    justify-content: space-between !important;
-  }
-
-  /* Mobile dropdown container - full width overlay */
-  .truenas-mobile-dropdown {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #ffffff;
-    z-index: 10000;
-    overflow-y: auto;
-    padding: 20px 10px 10px;
-  }
-
-  .truenas-mobile-dropdown.active {
-    display: flex;
-    flex-direction: column;
-  }
-
-  /* Mobile menu columns container */
-  .mobile-menu-columns {
-    display: flex;
-    gap: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-    width: 100%;
-  }
-
-  .mobile-menu-column {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-
-  /* Mobile menu section */
-  .mobile-menu-section {
-    position: relative;
-  }
-
-  .mobile-menu-title {
-    display: block;
-    color: #2b2b2b;
-    font-size: 18px;
-    font-weight: 600;
-    cursor: pointer;
-    padding: 12px 15px;
-    border: none;
-    background: none;
-    text-align: left;
-    width: 100%;
-  }
-
-  .mobile-menu-title i {
-    float: right;
-    transition: transform 0.3s ease;
-  }
-
-  .mobile-menu-section.expanded .mobile-menu-title i {
-    transform: rotate(180deg);
-  }
-
-  /* Hide dropdowns by default */
-  .mobile-menu-section .truenas-menudropdown {
-    display: none !important;
-    position: relative !important;
-    top: auto !important;
-    left: auto !important;
-    right: auto !important;
-    transform: none !important;
-    background-color: #ffffff !important;
-    border: 1px solid #e0e0e0 !important;
-    border-radius: 8px !important;
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1) !important;
-    padding: 1rem !important;
-    margin: 0.5rem 0 1rem 0 !important;
-    max-height: none !important;
-    z-index: 10 !important;
-  }
-
-  /* Show dropdowns only when section is expanded */
-  .mobile-menu-section.expanded .truenas-menudropdown {
-    display: block !important;
-  }
-
-  /* Close button styling - simple X Close text, sticky at bottom */
-  .mobile-menu-close {
-    margin-top: auto;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-    background-color: #ffffff;
-    color: #666;
-    border: none;
+  /* End right sidebar */
+/* Nested Menu items */
+.nested-menubutton {
+    font-family: "din-2014";
+    font-weight: 500;
     font-size: 16px;
-    font-weight: 400;
-    cursor: pointer;
-    text-align: center;
-    font-family: "Inter iX", Helvetica, Arial, Lucida, sans-serif;
-    position: sticky;
-    bottom: 0;
-  }
-
-  .mobile-menu-close::before {
-    content: "\00d7";
-    font-size: 24px;
-    margin-right: 8px;
-    vertical-align: middle;
-  }
-
-  .mobile-menu-close:hover {
-    color: #0095d5;
-  }
-}
-
-  /* Adjust dropdown positioning for wrapped layout */
-  .truenas-menudropdown,
-  .truenasdownload-menudropdown {
-    right: auto;
-    left: 0;
-  }
-}
-
-/* ===== BREAKPOINT 2.5: COMPACT TABLET (Emergency space-saving) ===== */
-@media screen and (max-width: 950px) and (min-width: 769px) {
-  /* Make Enterprise Support button icon-only to save space */
-  .truenas-supportbutton {
-    padding: 13px 15px 10px 15px; /* Reduce horizontal padding */
-    min-width: auto;
-  }
-
-  /* Hide the text, keep only the icon */
-  .truenas-supportbutton {
-    font-size: 0; /* Hide text */
-  }
-
-  .truenas-supportbutton i {
-    font-size: 16px; /* Restore icon size */
-    margin: 0; /* Remove text spacing */
-  }
-
-  /* Add tooltip on hover to show what the button does */
-  .truenas-supportbutton::after {
-    content: "Enterprise Support";
-    position: absolute;
-    bottom: -30px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: #000;
     color: white;
-    padding: 4px 8px;
-    border-radius: 4px;
-    font-size: 12px;
-    white-space: nowrap;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.3s;
-    z-index: 1000;
-  }
-
-  .truenas-supportbutton:hover::after {
-    opacity: 1;
-  }
-
-  /* Ensure the menuitem has relative positioning for tooltip */
-  .truenas-menuitem:last-child {
-    position: relative;
-  }
-}
-
-/* ===== BREAKPOINT 3: TABLET/MOBILE (768px) ===== */
-@media screen and (max-width: 768px) {
-  /* Hide Get A Quote button */
-  .truenas-quote-button {
-    display: none !important;
-  }
-
-  /* Keep hamburger on right side */
-  .truenas-hamburger-menu {
+    padding: 12px 16px;
+    text-decoration: none;
     display: block;
-  }
+    border: none;
+    background-color: #000000;;
+}
+.truenas-nested-menudropdown {
+    display: none;
+    position: absolute;
+    background-color: #0095d5;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 10;
+    margin-top: -.5em;
+    margin-left: -1.5em;
+}
+.nested-menubutton:hover + .truenas-nested-menudropdown {display: block;}
 
-  /* Keep header layout: logo left, hamburger right */
-  #TrueNASHeader .container.truerow {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  /* Responsive logo sizing */
-  .gdoc-brand__img {
-    max-width: 160px !important; /* Proportional to 35px height */
-    width: auto !important;
-    height: auto !important;
-    max-height: 35px !important; /* Reduced from 50px */
-    object-fit: contain !important;
-  }
-
-  /* Constrain mobile dropdown to viewport */
-  .truenas-mobile-dropdown {
-    padding: 15px 10px 10px !important;
-    box-sizing: border-box !important;
-  }
-
-  .mobile-menu-columns {
-    max-width: 100% !important;
-    width: 100% !important;
-    box-sizing: border-box !important;
-  }
-
-  /* Constrain dropdown menus to viewport width - stretch across full width */
-  .mobile-menu-section .truenas-menudropdown {
-    position: absolute !important;
-    left: 0 !important;
-    right: 0 !important;
-    width: calc(100vw - 20px) !important;
-    max-width: calc(100vw - 20px) !important;
-    margin-left: 10px !important;
-    margin-right: 10px !important;
-    overflow-x: hidden !important;
-    box-sizing: border-box !important;
-  }
-
-  /* Anchor right column menus to the right */
-  .mobile-menu-column:last-child .mobile-menu-section .truenas-menudropdown {
-    left: auto !important;
-    right: 0 !important;
-    margin-left: 0 !important;
-    margin-right: 10px !important;
-  }
-
-  .mobile-menu-section .truenas-menudropdown a,
-  .mobile-menu-section .truenas-menudropdown .truenas-menuitem-link {
-    white-space: normal !important;
-    word-wrap: break-word !important;
-    overflow-wrap: break-word !important;
-  }
-
-  /* Allow text wrapping in menu items */
-  .truenas-menuitem-text b,
-  .truenas-menuitem-text p {
-    white-space: normal !important;
-    overflow-wrap: break-word !important;
-  }
-
-  /* Constrain columns */
-  .truenas-menuitem-columns {
-    max-width: 100% !important;
-    overflow-x: hidden !important;
-  }
-
-  .truenas-menuitem-column {
-    min-width: 0 !important;
-    overflow-x: hidden !important;
-  }
-
-  /* Constrain images in dropdowns */
-  .mobile-menu-section .truenas-menudropdown img {
-    max-width: 60px !important;
-  }
+.truenas-nested-menudropdown a {
+    font-family: "din-2014";
+    font-weight: 500;
+    font-size: 16px;
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
 }
 
-/* ===== BREAKPOINT 4: SMALL MOBILE (480px) ===== */
-@media screen and (max-width: 480px) {
-  /* Single column layout for mobile menu */
-  .mobile-menu-columns {
-    flex-direction: column !important;
-    gap: 1rem !important;
-  }
-
-  .mobile-menu-column {
-    width: 100% !important;
-  }
-
-  /* Reset positioning - center all menus in single column */
-  .mobile-menu-section .truenas-menudropdown,
-  .mobile-menu-column:last-child .mobile-menu-section .truenas-menudropdown {
-    left: 50% !important;
-    right: auto !important;
-    transform: translateX(-50%) !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-  }
-
-  /* Single column dropdowns */
-  .mobile-menu-section .truenas-menudropdown .truenas-menuitem-columns {
-    flex-direction: column !important;
-  }
-
-  .mobile-menu-section .truenas-menudropdown .truenas-menuitem-column {
-    width: 100% !important;
-  }
-
-  /* Smaller logo on very small screens */
-  .gdoc-brand__img {
-    max-width: 138px !important; /* Proportional to 30px height */
-    width: auto !important;
-    height: auto !important;
-    max-height: 30px !important; /* Reduced from 40px */
-    object-fit: contain !important;
-  }
-
-  /* Reduce padding on mobile dropdown */
-  .truenas-mobile-dropdown {
-    padding: 15px 5px 5px !important;
-  }
-
-  /* Compact mobile menu titles */
-  .mobile-menu-title {
-    font-size: 16px !important;
-    padding: 10px 12px !important;
-  }
-
-  /* Edition buttons single column */
-  .truenas-edition-buttons {
-    flex-direction: column !important;
-  }
+.nested-menubutton a {
+    margin-left: 2rem;
 }
 
-/* ===== ADDITIONAL RESPONSIVE ADJUSTMENTS ===== */
-@media screen and (max-width: 480px) {
-  /* Extra small mobile adjustments */
-  .gdoc-brand__img {
-    max-width: 150px;
-  }
-
-  .truenas-hamburger-menu .truenas-menudropdown {
-    min-width: 220px;
-    max-width: calc(100vw - 2rem);
-  }
-
-  #TrueNASHeader .container.truerow {
-    padding-left: 2.5rem;
-    padding-right: 1rem;
-  }
-}
-
-/* Smooth transitions for all responsive changes */
-.gdoc-brand__img,
-.truenas-menubar,
-.truenas-hamburger-menu {
-  transition: all 0.3s ease;
-}
-
-/* ===== TRUENAS FOOTER STYLES (Converted from SCSS) ===== */
+/* End site header */
+/* Site footer */
 
 .gdoc-footer {
-  font-family: "Inter", sans-serif;
-  font-weight: 400;
-  font-size: 16px;
-  background-image: linear-gradient(90deg, #002637 0%, #000000 100%);
-  color: white;
-  margin-top: auto;
-  z-index: 2;
-  padding: 2rem 0;
-  margin-left: calc(-1 * var(--bs-gutter-x, 1.5rem) * 0.5);
-  margin-right: calc(-1 * var(--bs-gutter-x, 1.5rem) * 0.5);
-  padding-left: calc(var(--bs-gutter-x, 1.5rem) * 0.5);
-  padding-right: calc(var(--bs-gutter-x, 1.5rem) * 0.5);
-}
-
-@media (min-width: 992px) {
-  .gdoc-footer {
-    margin-left: 0;
-    margin-right: 0;
-    padding-left: 0;
-    padding-right: 0;
-  }
-}
-
-.gdoc-footer .footer-row {
-  padding-left: 10%;
-  padding-right: 10%;
-  padding-bottom: 2rem;
+    max-width: 100%;
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    background-color: #000000;
+    color: white;
+    padding: 2rem 15%;
+    margin-top: auto;
+    z-index: 2;
 }
 
 .gdoc-footer__link {
-  color: #31beec !important;
-  text-decoration: none;
+    color: white;
 }
 
 .gdoc-footer__link:visited {
-  color: #31beec !important;
+    color: white;
 }
 
-.gdoc-footer__link:hover {
-  color: #71bf44 !important;
-  text-decoration: none;
+.gdoc-footer .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; 
+    align-items: center;
+    text-align: center; 
+    width: 100%;
+}
+
+.gdoc-footer__item {
+    padding-top: 1rem;
+    padding-left: 0.5rem;
+    font-size: 12px;
 }
 
 .footer-row {
-  display: flex;
-  justify-content: space-between;
-  gap: 1rem;
-  position: relative;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    position: relative;
 }
 
 .footer-column {
-  flex: 1;
-  max-width: 25%;
+    flex: 1;
+    max-width: 25%;
+    padding: 0 2rem;
+    border-right: 2px solid #0095d5;
 }
 
-.footer-column h2 {
-  font-size: 1rem;
-  font-weight: 400;
-  margin-bottom: 1rem;
-  margin-top: 0;
-  color: white;
-}
-
-.footer-column a {
-  color: #31beec !important;
-  text-decoration: none;
-}
-
-.footer-column a:hover {
-  color: #71bf44 !important;
-  text-decoration: none;
-}
-
-.footer-column-last {
-  border-right: none;
-}
-
-.footer-logo {
-  max-width: 100%;
-  width: 250px;
-  height: auto;
-  margin-bottom: 1.5rem;
-  display: block;
-}
-
-.footer-address {
-  margin-bottom: 1.5rem;
-  line-height: 1.5;
-  color: white;
-}
-
-.footer-contact-item {
-  display: flex;
-  align-items: center;
-  margin-bottom: 0.75rem;
-}
-
-.footer-contact-item .footer-icon-wrapper {
-  width: 24px;
-  display: flex;
-  justify-content: center;
-  margin-right: 10px;
-}
-
-.footer-contact-item .footer-icon-wrapper i {
-  font-size: 1rem;
-  color: white;
-}
-
-.footer-contact-item a {
-  color: #31beec !important;
-  text-decoration: none;
-}
-
-.footer-contact-item a:hover {
-  color: #71bf44 !important;
-  text-decoration: none;
-}
-
-.footer-list {
-  list-style: none;
-  line-height: 2em;
-  margin: 0;
-  padding: 0;
-}
-
-.footer-list li {
-  margin: 0;
-  padding: 0;
-}
-
-.footer-list a {
-  color: #31beec !important;
-  text-decoration: none;
-}
-
-.footer-list a:hover {
-  color: #71bf44 !important;
-  text-decoration: none;
+.footer-column:last-child {
+    border-right: none;
 }
 
 .footer-button {
-  display: block;
-  background: transparent;
-  color: white !important;
-  padding: 10px 20px;
-  text-decoration: none !important;
-  border-radius: 50px;
-  text-align: center;
-  margin-bottom: 1.5rem;
-  margin-left: auto;
-  margin-right: auto;
-  font-weight: 700;
-  position: relative;
-  overflow: hidden;
-  border: none;
-  z-index: 1;
-  width: fit-content;
-}
-
-.footer-button::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: #0095d5;
-  z-index: -2;
-  border-radius: 50px;
-}
-
-.footer-button::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -10%;
-  width: 0;
-  height: 100%;
-  background: #71bf44;
-  transition: width 0.25s ease;
-  transform: skewX(-10deg);
-  z-index: -1;
-  border-radius: 50px;
+    display: inline-flex;
+    background-color: #0095d5;
+    color: white !important;
+    width: 90%;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
 }
 
 .footer-button:hover {
-  color: white !important;
-  text-decoration: none !important;
+    background-color: white;
+    color: #0095d5 !important;
+    text-decoration: none;
 }
 
-.footer-button:hover::before {
-  width: 120%;
-}
 
-.footer-button:visited {
-  color: white !important;
-}
-
-.footer-column .footer-button {
-  color: white !important;
-}
-
-.footer-column .footer-button:hover {
-  color: white !important;
-}
-
-.footer-column .footer-button:visited {
-  color: white !important;
-}
-
-.social-row {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  flex-wrap: wrap;
-  margin-top: 20px;
-}
-
-.social-icon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.3s ease;
-  background: transparent;
-}
-
-.social-icon:hover {
-  transform: translateY(-5px) scale(1.1);
-  box-shadow: 0 10px 25px rgba(255,255,255,0.15);
-}
-
-.social-icon i {
-  font-size: 20px;
-  color: white;
-  transition: all 0.3s ease;
-}
-
-.social-icon img {
-  width: 20px;
-  height: 20px;
-  display: block;
-  transition: all 0.3s ease;
-}
-
-.social-icon:hover i,
-.social-icon:hover img {
-  filter: brightness(1.2);
-}
-
-.footer-bottom {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1.5rem 10%;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
-
-.footer-bottom-left {
-  flex: 1;
-}
-
-.footer-bottom-left span {
-  font-size: 14px;
-  color: white;
-}
-
-.footer-bottom-right {
-  display: flex;
-  gap: 1.5rem;
-  flex-wrap: wrap;
-}
-
-.footer-bottom-right a {
-  font-size: 14px;
-  color: #31beec !important;
-  text-decoration: none;
-}
-
-.footer-bottom-right a:hover {
-  color: #71bf44 !important;
-  text-decoration: none;
-}
-
-@media (max-width: 1200px) {
-  .footer-row {
-    padding-left: 5%;
-    padding-right: 5%;
-  }
-
-  .footer-column {
-    padding: 0 1rem;
-  }
-
-  .footer-logo {
+.social-links {
+    display: flex;
+    gap: 1rem;
+    color: white;
     max-width: 100%;
-    width: 230px;
-  }
+    flex-wrap: wrap;
 }
 
-@media (max-width: 1100px) {
-  .footer-logo {
-    max-width: 100%;
-    width: 200px;
-  }
+.social-links a i,
+.social-links a img,
+.social-links a span.iconify {
+    width: 20px;
+    height: 20px;
+    color: white;
+    fill: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.social-links a {
+    text-decoration: none;
+    color: white;
+}
+
+.social-links a:visited {
+    color: white;
+}
+
+.footer-logo {
+    max-width: 80%;
+    margin-bottom: 1.5rem;
+    margin-block-start: .83rem;
+}
+
+.footer-column h2 {
+    font-weight: 500;
+    margin-left: 0;
+    margin-bottom: 2rem;
+}
+
+.footer-column h3 {
+    font-weight: 500;
+    margin-left: 0;
+    margin-bottom: 1rem;
+}
+
+.footer-list {
+    list-style: none;
+    line-height: 2em;
+    margin: 0;
+    padding: 0;
+    margin-left: 0;
+}
+
+.footer-list li {
+    margin-left: 0;
+}
+
+.footer-list a, 
+.gdoc-footer__link {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-list a:visited, 
+.gdoc-footer__link:visited {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-list a:hover, 
+.gdoc-footer__link:hover {
+    color: #666;
+    text-decoration: none;
 }
 
 @media (max-width: 980px) {
-  .footer-row {
-    flex-wrap: wrap;
-    gap: 0;
-  }
+    .footer-row {
+        flex-direction: column;  /* Stack the columns vertically */
+        align-items: left;  /* Center the columns horizontally */
+    }
 
-  .footer-column {
-    flex: 0 0 calc(50% - 1rem);
-    max-width: calc(50% - 1rem);
-    padding: 0 0.5rem 2rem 0.5rem;
-    margin: 0 0.5rem;
-  }
+    .footer-column {
+        max-width: 100%;  /* Allow each column to take up the full width */
+        padding: 1rem;  /* Adjust padding for better spacing */
+        border-right: none;  /* Remove border between columns */
+    }
 
-  .footer-column:nth-child(1) {
-    order: 1;
-  }
+    .footer-column h2, 
+    .footer-column h3 {
+        text-align: center;  /* Center align the headers */
+    }
 
-  .footer-column:nth-child(2) {
-    order: 2;
-  }
+    .gdoc-footer .container {
+        padding-left: 0;  /* Remove the left padding */
+        padding-right: 0;  /* Remove the right padding */
+    }
 
-  .footer-column:nth-child(3) {
-    order: 3;
-  }
+    .footer-button {
+        width: 50%;
+    }
+    
+    .footer-logo {
+        display: inline-flex;
+        width: 75%;
+    }
 
-  .footer-column:nth-child(4) {
-    order: 4;
-  }
-
-  .social-row {
-    justify-content: center;
-  }
-
-  .footer-bottom {
-    flex-direction: column;
-    padding: 1.5rem 5%;
-    gap: 1rem;
-  }
-
-  .footer-bottom-left {
-    text-align: center;
-  }
-
-  .footer-bottom-right {
-    justify-content: center;
-  }
-
-  .footer-logo {
-    max-width: 230px;
-  }
 }
 
-@media (max-width: 600px) {
-  .social-icon i {
-    font-size: 18px;
-  }
-
-  .social-icon img {
-    width: 18px;
-    height: 18px;
-  }
-}
-
-@media (max-width: 480px) {
-  .footer-row {
-    flex-direction: column;
-  }
-
-  .footer-column {
-    flex: 0 0 100%;
-    max-width: 100%;
-    text-align: center;
-    padding: 1rem 0;
-  }
-
-  .footer-column:nth-child(1),
-  .footer-column:nth-child(2),
-  .footer-column:nth-child(3),
-  .footer-column:nth-child(4) {
-    flex: 0 0 100%;
-    max-width: 100%;
-    order: initial;
-  }
-
-  .footer-column h2 {
-    text-align: center;
-  }
-
-  .footer-bottom {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .footer-bottom-left {
-    text-align: center;
-  }
-
-  .footer-bottom-right {
-    justify-content: center;
-  }
-
-  .footer-logo {
-    max-width: 200px;
-  }
-
-  .footer-address {
-    text-align: center;
-  }
-
-  .footer-contact-item {
-    justify-content: center;
-  }
-}
-
-/* ========== END TRUENAS HEADER & FOOTER STYLES ========== */
+/* End site footer */
 
 /* Styling images in the Topics Tab Boxes */
 .topic-image {
@@ -2267,7 +1315,7 @@ pre.chroma {
 .truetable thead tr:hover {
     background-color: transparent;  /* Remove hover effect from header */
   }
-
+  
 /* Adjust for tables inside Enterprise shortcode */
 .gdoc-hint.note .truenas-enterprise__text .truetable tr {background-color: rgba(134,142,150,.05);}
 .gdoc-hint.note .truenas-enterprise__text .truetable tr:hover {background-color: #e6e6e6!important;}
@@ -2349,7 +1397,7 @@ pre.chroma {
     display: inline-block; /* Make the container adjust to content */
     max-width: 100%; /* Set the maximum width to 100% */
   }
-
+  
   .gdoc-markdown pre code {
     color: var(--body-font-color);
     background-color: var(--accent-color);
@@ -2427,7 +1475,7 @@ pre.chroma {
         background-color: #212c32;
         color: #c2cfd7;
         }
-
+    
         .gdoc-expand__head {
         background-color: #c2cfd7;
         color: #464646;
@@ -2565,7 +1613,7 @@ pre.chroma {
     border: none;
     margin: .5rem auto;
   }
-
+  
 /* Adjust section-box for TrueNAS Systems page cards */
 .ixprods {
 	color: var(--body-font-color);
@@ -2580,8 +1628,8 @@ a.section-box:hover {
 	text-align: center;
 }
 .prod-card-img {
-	width: 10em;
-	height: 15em!important;
+	width: 7.5em;
+	height: 11.25em!important;
 	object-fit: contain;
 }
 .box-image > img:hover {
@@ -2594,33 +1642,52 @@ a.section-box:hover {
 	margin-block-end: .5rem;
 }
 
+/* Section box link styling */
+.section-box a {
+	color: #0095d5;
+	text-decoration: none;
+}
+
+.section-box a:hover {
+	color: #36bdeb;
+	text-decoration: none;
+}
+
+.section-box a:visited {
+	color: #0095d5;
+	text-decoration: none;
+}
+
+.section-box a:visited:hover {
+	color: #36bdeb;
+	text-decoration: none;
+}
+
 /* Style for tab navigation */
 .section-tabs {
   display: flex;
   justify-content: center;
-  background-color: #0095d5;
+  background-color: var(--accent-color);
 }
 /* Style for individual tab */
 .section-tab {
   padding: .5rem .5rem;
   margin: 0 5px;
   cursor: pointer;
-  background-color: #0095d5;
-  color: white;
+  background-color: var(--accent-color);
   font-weight: 600;
-  border-top: solid;
-  border-top-color: #0095d5;
-
+  border: 2px solid transparent;
+  box-sizing: border-box;
 }
 .section-tab-content {
 	padding-top: .25rem;
 	text-align: center;
 }
 .section-tab.active {
-    background-color: rgb(248, 249, 250);
-    color: #0095d5;
-    border-top: solid;
-    border-top-color: #0095d5;
+    border-top: 2px solid var(--accent-color);
+    border-left: 2px solid var(--accent-color);
+    border-right: 2px solid var(--accent-color);
+    border-bottom: 2px solid transparent;
 }
 .mute {
 	color:#0095d5;
@@ -2628,8 +1695,15 @@ a.section-box:hover {
 }
 /* Adjust input elements for calculator */
 .monitor {
-    color: var(--body-font-color); /* Adjust text color as needed */
-  } 
+    color: var(--body-font-color);
+    background-color: var(--body-background);
+  }
+input[type='radio']  {
+    accent-color: #0095d5;
+}
+input[type='checkbox']  {
+    accent-color: #0095d5;
+}
 /* End Adjust input elements for calculator */
 
 /* Style for tables with class "inputs" */
@@ -2802,7 +1876,7 @@ table.debug td:hover {
 /* Style for capacity graph "graph-inputs" */
 table.graph-inputs {
     border-collapse: collapse;
-    border-spacing: 0;
+    border-spacing: 0; 
     border: none;
     margin-right: auto;
 	margin-left: auto;
@@ -2810,7 +1884,7 @@ table.graph-inputs {
     background-color: var(--body-background);
     width: 75% !important;
     margin: 0 auto;
-}
+} 
 
 table.graph-inputs tr {
     border: none !important;
@@ -3337,11 +2411,19 @@ div.draid-grid-table-container::-webkit-scrollbar-track {
 	.section-box{
 		background-color: #475d6b;
 	}
+    .section-tab {
+        color: white;
+    }
     .section-tab.active {
         background-color: #475d6b;
-        color: white;
-        border-top: solid;
-        border-top-color: #0095d5;
+    }
+}
+@media screen and (prefers-color-scheme: light) {
+    .section-tab {
+        color: var(--body-font-color);
+    }
+    .section-tab.active {
+        background-color: rgb(248, 249, 250);
     }
 }
 :root[color-theme=dark] {
@@ -3395,11 +2477,11 @@ div.draid-grid-table-container::-webkit-scrollbar-track {
 	.section-box{
 		background-color: #475d6b;
 	}
+    .section-tab {
+        color: white;
+    }
     .section-tab.active {
         background-color: #475d6b;
-        color: white;
-        border-top: solid;
-        border-top-color: #0095d5;
     }
 }
 :root[color-theme=light] {
@@ -3449,11 +2531,11 @@ div.draid-grid-table-container::-webkit-scrollbar-track {
 	.section-box {
 		background-color: rgb(248, 249, 250);
 	}
+    .section-tab {
+        color: var(--body-font-color);
+    }
     .section-tab.active {
         background-color: rgb(248, 249, 250);
-        color: #0095d5;
-        border-top: solid;
-        border-top-color: #0095d5;
     }
 }
 /* End Additional Automatic and Manual color scheme values */
@@ -3465,6 +2547,24 @@ pre.gdoc-mermaid.mermaid.mermaid_sizing {
   align-items: center;
   background-color: var(--body-background);
 }
+/* Theme-aware edition logos in release lists */
+/* Default light mode - no filter needed */
+.edition-logo {
+    /* Images are already dark for light backgrounds */
+}
+
+/* Manual dark mode selection - invert to white */
+:root[color-theme="dark"] .edition-logo {
+    filter: brightness(0) invert(1);
+}
+
+/* System preference dark mode fallback */
+@media (prefers-color-scheme: dark) {
+    :root:not([color-theme]) .edition-logo {
+        filter: brightness(0) invert(1);
+    }
+}
+
 /* Additional variable colors */
 :root[color-theme='light'] {
   --enterprise-title: rgb(52, 58, 64); /* Define --enterprise-title for the light theme */
@@ -3505,48 +2605,48 @@ pre.gdoc-mermaid.mermaid.mermaid_sizing {
     height: 24px !important;
     vertical-align: middle !important;
   }
-  
+
   .no-highlight-table table {
     background: transparent !important; /* Prevents colored highlights */
     border-collapse: collapse;
     width: 100%;
   }
-
+  
   .no-highlight-table th, .no-highlight-table td {
     border: 1px solid #ddd; /* Light border for readability */
     padding: 8px;
     text-align: left;
   }
-
+  
   .no-highlight-table tr:nth-child(even) {
     background: transparent !important; /* Removes alternating row colors */
   }
-
+  
 /* Styling for App Support Definitions Cards */
 :root[color-theme="light"] {
     --card-background: rgb(248, 249, 250);
   }
-
+  
   :root[color-theme="dark"] {
     --card-background: #475d6b;
   }
-
+  
   @media (prefers-color-scheme: dark) {
     :root {
       --card-background: #475d6b;
     }
   }
-
+  
   @media (prefers-color-scheme: light) {
     :root {
       --card-background: rgb(248, 249, 250);
     }
   }
-
+  
   .support-cards {
     display: block; /* Stack cards vertically */
   }
-
+  
   .support-card {
     background-color: var(--card-background);
     width: 100%;
@@ -3557,30 +2657,30 @@ pre.gdoc-mermaid.mermaid.mermaid_sizing {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     transition: 0.3s;
   }
-
+  
   .support-card:hover {
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
   }
-
+  
   .community {
     border-left: 5px solid #71BF44;
   }
-
+  
   .enterprise-deployment {
     border-left: 5px solid #31BEEC;
   }
-
+  
   .enterprise-application {
     border-left: 5px solid #0095D5;
-  }
+  }  
 
   .support-title {
     font-size: 1.25rem;
     font-weight: bold;
-    display: block;
+    display: block; 
     margin-bottom: 0.5rem;
   }
-
+  
 
 /* End Styling for App Support Definitions Cards */
 
@@ -3592,14 +2692,14 @@ pre.gdoc-mermaid.mermaid.mermaid_sizing {
     width: 100%;
     padding: 5px;
   }
-
+  
   .version-label {
     flex-shrink: 0;
     font-size: 0.9em;
     color: white;
     line-height: 1;
   }
-
+  
   .version-line {
     flex-grow: 1;
     height: 1px;
@@ -3656,7 +2756,7 @@ pre.gdoc-mermaid.mermaid.mermaid_sizing {
         background-color: #71bf44 !important;
         border-color: #71bf44 !important;
     }
-
+    
     .gdoc-nav a[href="https://apps.truenas.com/"]:hover,
     .gdoc-nav a[href="https://connect.truenas.com"]:hover {
         background-color: #5da639 !important;
