@@ -80,7 +80,7 @@ To connect TrueNAS to Active Directory:
 
 3. Enter the **Basic Configuration** settings:
 
-{{< trueimage src="/images/SCALE/Credentials/ADBasicConfig.png" alt="AD Basic Configuration" id="AD Basic Configuration" >}}
+   {{< trueimage src="/images/SCALE/Credentials/ADBasicConfig.png" alt="AD Basic Configuration" id="AD Basic Configuration" >}}
 
    * Select the **Enable Service** checkbox to activate the AD configuration.
 
@@ -88,15 +88,15 @@ To connect TrueNAS to Active Directory:
      Caching makes directory users and groups available in UI dropdown menus.
      Users with large domains should consider disabling account caching in order to reduce the load on domain controllers.
 
-   * Select the **Enable DNS Updates** checkbox to allow the directory service to update DNS records. Selected by default.
+   * Leave the **Enable DNS Updates** checkbox selected to allow the directory service to update DNS records. 
 
-   * Enter the number of seconds (1-40) before the directory service connection times out in **Timeout (seconds)**. Required.
+   * Enter the number of seconds (1-40) before the directory service connection times out in **Timeout (seconds)**.
 
    * Enter the Kerberos realm in **Kerberos Realm**. TrueNAS auto-populates this field after joining the domain.
 
 4. Enter the **Credential Configuration** settings:
 
-{{< trueimage src="/images/SCALE/Credentials/DirectoryServicesCredentialConfig.png" alt="Credential Configuration" id="Credential Configuration" >}}
+   {{< trueimage src="/images/SCALE/Credentials/DirectoryServicesCredentialConfig.png" alt="Credential Configuration" id="Credential Configuration" >}}
 
    * Select **Kerberos User** from the **Credential Type** dropdown list. Required.
 
@@ -104,19 +104,19 @@ To connect TrueNAS to Active Directory:
 
    * Enter the password for the administrator account in **Password**. Required.
 
-5. Enter the **Active Directory Configuration** settings:
+5. Enter the required **Active Directory Configuration** settings:
 
-{{< trueimage src="/images/SCALE/Credentials/ActiveDirectoryBasicOptions.png" alt="AD Configuration" id="AD Configuration" >}}
+   {{< trueimage src="/images/SCALE/Credentials/ActiveDirectoryBasicOptions.png" alt="AD Configuration" id="AD Configuration" >}}
 
-   * Enter the TrueNAS hostname in **TrueNAS Hostname**. Required. This value must match the **Hostname** setting on the **Network > Global Configuration** screen and cannot exceed 15 characters.
+   * Enter the TrueNAS hostname in **TrueNAS Hostname**. This value must match the **Hostname** setting on the **Network > Global Configuration** screen and cannot exceed 15 characters.
 
-   * Enter the Active Directory domain name in **Domain Name**. Required. For example, *example.com* or *sales.example.com* if configuring access to a child domain.
+   * Enter the Active Directory domain name in **Domain Name**. For example, *example.com* or *sales.example.com* if configuring access to a child domain.
 
    * (Optional) Enter the site name in **Site Name**.
 
    * (Optional) Enter the organizational unit in **Computer Account OU**. This controls the location where the TrueNAS computer object is created when joining the Active Directory domain for the first time. The OU string includes the distinguished name (DN) of the Computer Account OU. For example, *OU=Computers,DC=example,DC=com*.
 
-   * (Optional) Select the **Use Default Domain** checkbox to remove the domain name prefix from AD users and groups. This setting may be required for specific configurations such as Kerberos authentication with NFS for AD users. Note that using this setting can cause collisions with local user account names.
+   * (Optional) Select the **Use Default Domain** checkbox to remove the domain name prefix from AD users and groups. This setting might be required for specific configurations such as Kerberos authentication with NFS for AD users. Using this setting can cause collisions with local user account names.
 
 6. (Optional) Configure trusted domains:
 
