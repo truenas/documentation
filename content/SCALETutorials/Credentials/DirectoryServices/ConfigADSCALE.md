@@ -84,7 +84,9 @@ To connect TrueNAS to Active Directory:
 
    * Select the **Enable Service** checkbox to activate the AD configuration.
 
-   * Select the **Enable Account Cache** checkbox to cache user and group information. Caching makes directory users and groups available in UI dropdown menus. Users with large domains should consider disabling account caching in order to reduce the load on domain controllers. Selected by default.
+   * Leave the **Enable Account Cache** checkbox selected to cache user and group information.
+     Caching makes directory users and groups available in UI dropdown menus.
+     Users with large domains should consider disabling account caching in order to reduce the load on domain controllers.
 
    * Select the **Enable DNS Updates** checkbox to allow the directory service to update DNS records. Selected by default.
 
