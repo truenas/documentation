@@ -140,7 +140,16 @@ This behavior is enabled by default and matches FreeBSD behavior.
 | **Export Read-Only** | Prohibits writes to the share when enabled. |
 | **Browsable to Network Clients** | Determines whether this share name is included when browsing shares. Enabled by default. Private dataset shares (the replacement for home shares) are only visible to the owner, regardless of this setting. |
 | **Access Based Share Enumeration** | Restricts share visibility to users with read or write access to the share. This setting applies to datasets with a POSIX ACL type. For datasets with NFSv4 ACL type, access-based enumeration is automatically enabled and cannot be disabled. See the [smb.conf](https://www.samba.org/samba/docs/current/man-html/smb.conf.5.html) manual page. |
+| **Hosts Allow** | Specifies a list of allowed IP addresses or host names. When populated, restricts access to only the addresses entered. This can break UI access for all other IP or host name entries. Separate entries by pressing <kbd>Enter</kbd>. See [smb.conf](https://www.samba.org/samba/docs/current/man-html/smb.conf.5.html#HOSTSALLOW) for detailed syntax. Not available for **External Share** preset. |
+| **Hosts Deny** | Specifies a list of denied IP addresses or host names. Works in combination with **Hosts Allow** to control access. Separate entries by pressing <kbd>Enter</kbd>. See [smb.conf](https://www.samba.org/samba/docs/current/man-html/smb.conf.5.html#HOSTSDENY) for detailed syntax. Not available for **External Share** preset. |
 {{< /truetable >}}
+
+Hosts Allow and Hosts Deny interaction:
+
+* Both empty: Any host can access the share
+* **Hosts Allow** populated, **Hosts Deny** empty: Only hosts in Allow list can access
+* **Hosts Allow** empty, **Hosts Deny** populated: All hosts except those in Deny list can access
+* Both populated: Hosts in Allow list can access; hosts not in either list can access; hosts in Deny list cannot access
 
 {{< hint type=note >}}
 Legacy share additional access options:
@@ -148,8 +157,6 @@ Legacy share additional access options:
 Shares with **Purpose** set to **Legacy Share** display additional access controls not available in modern presets:
 * **Enable ACL** - Configure custom ACL entries
 * **Allow Guest Access** - Enable anonymous access without credentials
-* **Hosts Allow** - Restrict access to specific IP addresses or host names
-* **Hosts Deny** - Block access from specific IP addresses or host names
 
 See [Legacy Share Settings](#legacy-share-settings) for complete details on these options.
 {{< /hint >}}
@@ -277,16 +284,7 @@ These settings only show on the **Edit SMB** screen for shares with **Purpose** 
 |---------|-------------|
 | **Enable ACL** | Shows additional ACL configuration options for the share. When enabled, allows configuring custom ACL entries beyond standard share ACL settings. Only shows for **Legacy Share** preset. |
 | **Allow Guest Access** | Allows anonymous access to the share without requiring user credentials. The privileges granted are the same as those for a guest account. Windows 10 version 1709 and Windows Server 2019 and later disable guest access by default and require additional client-side configuration. Not recommended due to security vulnerabilities. Only shows for **Legacy Share** preset. |
-| **Hosts Allow** | Specifies a list of allowed IP addresses or host names. When populated, restricts access to only the addresses entered. This can break UI access for all other IP or host name entries. Separate entries by pressing <kbd>Enter</kbd>. See [smb.conf](https://www.samba.org/samba/docs/current/man-html/smb.conf.5.html#HOSTSALLOW) for detailed syntax. Only shows for **Legacy Share** preset. |
-| **Hosts Deny** | Specifies a list of denied IP addresses or host names. Works in combination with **Hosts Allow** to control access. Separate entries by pressing <kbd>Enter</kbd>. See [smb.conf](https://www.samba.org/samba/docs/current/man-html/smb.conf.5.html#HOSTSDENY) for detailed syntax. Only shows for **Legacy Share** preset. |
 {{< /truetable >}}
-
-Hosts Allow and Hosts Deny interaction:
-
-* Both empty: Any host can access the share
-* **Hosts Allow** populated, **Hosts Deny** empty: Only hosts in Allow list can access
-* **Hosts Allow** empty, **Hosts Deny** populated: All hosts except those in Deny list can access
-* Both populated: Hosts in Allow list can access; hosts not in either list can access; hosts in Deny list cannot access
 
 ##### Legacy Other Options
 
