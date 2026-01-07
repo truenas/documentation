@@ -1,0 +1,143 @@
+<!-- Mobile Menu JavaScript -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const hamburgerButton = document.querySelector('.truenas-hamburger-button');
+  const mobileDropdown = document.querySelector('.truenas-mobile-dropdown');
+  const closeButton = document.querySelector('.mobile-menu-close');
+
+  // Clone desktop dropdowns into mobile sections
+  const menuMapping = {
+    'products': 'desktop-products',
+    'solutions': 'desktop-solutions',
+    'support': 'desktop-support',
+    'company': 'desktop-company'
+  };
+
+  Object.keys(menuMapping).forEach(function(mobileId) {
+    const mobileSection = document.querySelector('.mobile-menu-section[data-menu="' + mobileId + '"]');
+    const desktopItem = document.getElementById(menuMapping[mobileId]);
+
+    if (mobileSection && desktopItem) {
+      const desktopDropdown = desktopItem.querySelector('.truenas-menudropdown');
+      if (desktopDropdown) {
+        const clonedDropdown = desktopDropdown.cloneNode(true);
+        mobileSection.appendChild(clonedDropdown);
+      }
+    }
+  });
+
+  if (hamburgerButton && mobileDropdown) {
+    // Open mobile menu
+    hamburgerButton.addEventListener('click', function(e) {
+      e.stopPropagation();
+      mobileDropdown.classList.add('active');
+      document.body.style.overflow = 'hidden'; // Prevent body scroll
+    });
+
+    // Close mobile menu
+    if (closeButton) {
+      closeButton.addEventListener('click', function(e) {
+        e.stopPropagation();
+        mobileDropdown.classList.remove('active');
+        document.body.style.overflow = '';
+        // Collapse all sections
+        document.querySelectorAll('.mobile-menu-section').forEach(function(section) {
+          section.classList.remove('expanded');
+        });
+      });
+    }
+
+    // Toggle sections on click
+    const mobileSections = document.querySelectorAll('.mobile-menu-section');
+    mobileSections.forEach(function(section) {
+      const title = section.querySelector('.mobile-menu-title');
+      if (title) {
+        title.addEventListener('click', function(e) {
+          e.stopPropagation();
+          section.classList.toggle('expanded');
+        });
+      }
+    });
+  }
+});
+</script>
+
+<!-- TrueNAS Dropdowns Z-Index and Hover Management -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Fix TrueNAS dropdowns z-index and positioning
+  function forceDropdownZIndex() {
+    const dropdowns = document.querySelectorAll('.truenas-menudropdown');
+    dropdowns.forEach(dropdown => {
+      dropdown.style.setProperty('z-index', '9999', 'important');
+      dropdown.style.setProperty('position', 'absolute', 'important');
+      dropdown.style.setProperty('pointer-events', 'auto', 'important');
+    });
+
+    // Ensure TrueNAS header has high stacking context
+    const truenasHeader = document.querySelector('#TrueNASHeader');
+    if (truenasHeader) {
+      truenasHeader.style.setProperty('z-index', '2000', 'important');
+      truenasHeader.style.setProperty('position', 'relative', 'important');
+    }
+
+    // Ensure GeekDoc nav has lower z-index
+    const geekdocNav = document.querySelector('#sitenav');
+    if (geekdocNav) {
+      geekdocNav.style.setProperty('z-index', '1030', 'important');
+    }
+  }
+
+  // Apply immediately
+  forceDropdownZIndex();
+  setTimeout(forceDropdownZIndex, 100);
+
+  // Enhanced dropdown hover behavior with proper positioning
+  const menuItems = document.querySelectorAll('.truenas-menuitem');
+
+  menuItems.forEach(item => {
+    const dropdown = item.querySelector('.truenas-menudropdown');
+
+    if (dropdown) {
+      let hoverTimeout;
+
+      function showDropdown() {
+        clearTimeout(hoverTimeout);
+        item.classList.add('force-show');
+        dropdown.style.setProperty('display', 'block', 'important');
+        dropdown.style.setProperty('z-index', '9999', 'important');
+        dropdown.style.setProperty('position', 'absolute', 'important');
+        dropdown.style.setProperty('visibility', 'visible', 'important');
+        dropdown.style.setProperty('opacity', '1', 'important');
+      }
+
+      function hideDropdown() {
+        item.classList.remove('force-show');
+        dropdown.style.setProperty('display', 'none', 'important');
+      }
+
+      // Show on button hover
+      item.addEventListener('mouseenter', showDropdown);
+
+      // Keep visible when in dropdown area
+      dropdown.addEventListener('mouseenter', showDropdown);
+
+      // Hide when leaving button with delay
+      item.addEventListener('mouseleave', () => {
+        hoverTimeout = setTimeout(() => {
+          if (!dropdown.matches(':hover')) {
+            hideDropdown();
+          }
+        }, 50);
+      });
+
+      // Hide when leaving dropdown
+      dropdown.addEventListener('mouseleave', () => {
+        hoverTimeout = setTimeout(() => {
+          hideDropdown();
+        }, 50);
+      });
+    }
+  });
+});
+</script>
