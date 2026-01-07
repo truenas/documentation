@@ -292,9 +292,12 @@ Use the **Hosts Deny** field to enter a list of denied host names or IP addresse
 {{< /expand >}}
 
 {{< expand "Legacy Share Preset (Upgraded Shares Only)" "v" >}}
+What is a legacy share?
 
 When you upgrade to TrueNAS SCALE 25.10 from an earlier release, existing shares that used the **No Preset** option are automatically migrated to the **Legacy Share** preset.
 This preset provides access to configuration options that are no longer available for new shares.
+
+Why can't I create a new legacy share?
 
 The **Add SMB** screen does not include **Legacy Share** as an option. This preset only appears in the **Edit SMB** screen for shares created before 25.10.
 TrueNAS removed these options from new shares due to:
