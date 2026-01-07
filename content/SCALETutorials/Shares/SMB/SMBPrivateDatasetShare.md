@@ -36,7 +36,7 @@ A **Private Dataset Share** is not the same as guest access:
 * **Private Dataset Share** creates per-user isolated datasets - users must authenticate with credentials
 * **Guest Access** (**Legacy Share** only) allows anonymous access without credentials
 
-If you are looking for guest access functionality, see the [Guest Access]({{< relref "/SCALETutorials/Shares/SMB/_index.md#guest-access" >}}) section in the main SMB tutorial.
+If you're looking for guest access functionality, see the [Guest Access]({{< relref "/SCALETutorials/Shares/SMB/_index.md#guest-access" >}}) section in the main SMB tutorial.
 {{< /hint >}}
 {{< /expand >}}
 
