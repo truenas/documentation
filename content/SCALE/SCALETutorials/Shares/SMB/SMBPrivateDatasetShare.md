@@ -31,6 +31,15 @@ Follow the instructions in the [Adding Private Dataset Shares](#adding-private-d
 
 {{< expand "What is a private dataset and share?" "v" >}}
 The **Private Dataset Share** option allows creating a private personal directory for a user in the specified dataset, that when correctly configured, provides users with a private folder only they access through an SMB share.
+
+{{< hint type=important title="Private Dataset Share vs. Guest Access" >}}
+A **Private Dataset Share** is not the same as guest access:
+
+* **Private Dataset Share** creates per-user isolated datasets - users must authenticate with credentials
+* **Guest Access** (**Legacy Share** only) allows anonymous access without credentials
+
+If you're looking for guest access functionality, see the [Guest Access]({{< relref "/SCALETutorials/Shares/SMB/_index.md#guest-access" >}}) section in the main SMB tutorial.
+{{< /hint >}}
 {{< /expand >}}
 
 TrueNAS allows creating one private directory per user, while it still allows creating as many non-private directories as desired or needed.
