@@ -146,6 +146,18 @@ This behavior is enabled by default and matches FreeBSD behavior.
 | **Access Based Share Enumeration** | Restricts share visibility to users with read or write access to the share. This setting applies to datasets with a POSIX ACL type. For datasets with NFSv4 ACL type, access-based enumeration is automatically enabled and cannot be disabled. See the [smb.conf](https://www.samba.org/samba/docs/current/man-html/smb.conf.5.html) manual page. |
 {{< /truetable >}}
 
+{{< hint type=note >}}
+Legacy share additional access options:
+
+Shares with **Purpose** set to **Legacy Share** display additional access controls not available in modern presets:
+* **Enable ACL** - Configure custom ACL entries
+* **Allow Guest Access** - Enable anonymous access without credentials
+* **Hosts Allow** - Restrict access to specific IP addresses or host names
+* **Hosts Deny** - Block access from specific IP addresses or host names
+
+See [Legacy Share Settings](#legacy-share-settings) for complete details on these options.
+{{< /hint >}}
+
 #### Audit Logging
 
 The **Audit Logging** settings enable the auditing function for the SMB share. Configure a watch list to audit specific groups, or an ignore list to audit all groups except those specified. At least one list (watch or ignore) must contain entries for auditing to function. All share options listed in the **Purpose** dropdown show these settings.
@@ -252,9 +264,38 @@ We recommend changing **Purpose** to **Private Datasets Share**. Refer to the in
 VFS module configuration (`catia`, `fruit`, `streams_xattr`) cannot be set through auxiliary parameters. Use the appropriate share purpose preset (Final Cut Pro Storage Share, Time Machine, etc.) instead.
 {{< /hint >}}
 
-This table lists (pre-25.10) **Other Options** settings.
-These only show on the **Edit SMB** screen after upgrading from an earlier release with an existing SMB share configured with them, unless indicated otherwise.
-Do not confuse these settings with those listed in the settings listed in the [**Settings by Purpose**](#other-options-settings) tabbed area in the section above.
+Legacy share unique options:
+
+In addition to the options available in modern presets, legacy shares provide access to deprecated configuration options. These are organized into two categories:
+
+Legacy Access Options (shown in Advanced Options > Access section) modify how clients can access the share and which hosts can connect.
+
+Legacy Other Options (shown in Advanced Options > Other Options section) enable deprecated features for compatibility with pre-25.10 configurations.
+
+##### Legacy Access Options
+
+These settings only show on the **Edit SMB** screen for shares with **Purpose** set to **Legacy Share**.
+
+{{< truetable >}}
+| Setting | Description |
+|---------|-------------|
+| **Enable ACL** | Shows additional ACL configuration options for the share. When enabled, allows configuring custom ACL entries beyond standard share ACL settings. Only shows for **Legacy Share** preset. |
+| **Allow Guest Access** | Allows anonymous access to the share without requiring user credentials. The privileges granted are the same as those for a guest account. Windows 10 version 1709 and Windows Server 2019 and later disable guest access by default and require additional client-side configuration. Not recommended due to security vulnerabilities. Only shows for **Legacy Share** preset. |
+| **Hosts Allow** | Specifies a list of allowed IP addresses or host names. When populated, restricts access to only the addresses entered. This can break UI access for all other IP or host name entries. Separate entries by pressing <kbd>Enter</kbd>. See [smb.conf](https://www.samba.org/samba/docs/current/man-html/smb.conf.5.html#HOSTSALLOW) for detailed syntax. Only shows for **Legacy Share** preset. |
+| **Hosts Deny** | Specifies a list of denied IP addresses or host names. Works in combination with **Hosts Allow** to control access. Separate entries by pressing <kbd>Enter</kbd>. See [smb.conf](https://www.samba.org/samba/docs/current/man-html/smb.conf.5.html#HOSTSDENY) for detailed syntax. Only shows for **Legacy Share** preset. |
+{{< /truetable >}}
+
+Hosts Allow and Hosts Deny interaction:
+
+* Both empty: Any host can access the share
+* **Hosts Allow** populated, **Hosts Deny** empty: Only hosts in Allow list can access
+* **Hosts Allow** empty, **Hosts Deny** populated: All hosts except those in Deny list can access
+* Both populated: Hosts in Allow list can access; hosts not in either list can access; hosts in Deny list cannot access
+
+##### Legacy Other Options
+
+These settings only show on the **Edit SMB** screen after upgrading from an earlier release with an existing SMB share configured with them, unless indicated otherwise.
+Do not confuse these settings with those listed in the [**Settings by Purpose**](#other-options-settings) tabbed area in the section above.
 
 {{< truetable >}}
 | Setting | Description |
@@ -269,7 +310,8 @@ Do not confuse these settings with those listed in the settings listed in the [*
 | **Enable SMB2/3 Durable Handles** | Allows using open file handles that can withstand short disconnections. Support for POSIX byte-range locks in Samba is also disabled. This option is not recommended when configuring multi-protocol or local access to files. |
 | **Enable FSRVP** | Enables support for the File Server Remote VSS Protocol ([FSVRP](https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-fsrvp/dae107ec-8198-4778-a950-faa7edad125b)). This protocol allows remote procedure call (RPC) clients to manage snapshots for a specific SMB share. Requires setting the share path to a dataset mount point. Snapshots have the prefix `fss-` followed by a snapshot creation timestamp. A snapshot must have this prefix for an RPC user to delete it. |
 | **Path Suffix** | Appends a suffix to the share connection path. Use to provide individualized shares on a per-user, per-computer, or per-IP address basis. Suffixes can contain a macro. See the [smb.conf](https://www.samba.org/samba/docs/current/man-html/smb.conf.5.html) manual page for a list of supported macros. The connection path must be preset before a client connects. |
-| **Additional Parameters String** | Shows a string of parameters associated with the share preset selected, or if no preset, enter additional smb4.conf parameters not covered by the TrueNAS API. | 
+| **VUID** | Sets the user session identifier to a valid universally unique identifier (UUID4). Samba uses the UUID to uniquely identify the share for macOS Time Machine backups. A UUID4 string is 36-character hexadecimal in format 8-4-4-4-12 (for example, `123e4567-e89b-12d3-a456-426614174000`). Generate using commands or online tools. Shows for **Legacy Share** with Time Machine functionality enabled. |
+| **Additional Parameters String** | Shows a string of parameters associated with the share preset selected, or if no preset, enter additional smb4.conf parameters not covered by the TrueNAS API. |
 {{< /truetable >}} 
 
 #### Create Dataset
