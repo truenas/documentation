@@ -93,7 +93,7 @@ See the [Release Notes](https://forums.truenas.com/c/release-notes/13) section o
 
 {{< include file="/static/includes/DeprecationsList.md" >}}
 
-See also: [Feature Deprecations]({{< ref "Deprecations" >}}).
+For additional resources, see the [Feature Deprecations]({{< ref "Deprecations" >}}) page.
 
   </div>
 
