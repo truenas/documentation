@@ -24,7 +24,7 @@ jump_to_buttons:
     icon: "new-releases"
   - text: "Deprecations"
     anchor: "deprecations"
-    icon: "warning"
+    icon: "timeline"
   - text: "Full 26.04 Changelog"
     anchor: "full-changelog"
     icon: "history"
