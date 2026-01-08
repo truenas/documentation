@@ -22,6 +22,9 @@ jump_to_buttons:
   - text: "26.04 Major Features"
     anchor: "major-features"
     icon: "new-releases"
+  - text: "Deprecations"
+    anchor: "deprecations"
+    icon: "warning"
   - text: "Full 26.04 Changelog"
     anchor: "full-changelog"
     icon: "history"
@@ -84,6 +87,14 @@ See the [Release Notes](https://forums.truenas.com/c/release-notes/13) section o
   <div data-tab-id="full-changelog" data-tab-label="Full 26.04 Changelog">
 <!-- CSV Changelog Table with Version Support -->
 <div id="csv-changelog-container"></div>
+  </div>
+
+  <div data-tab-id="deprecations" data-tab-label="Deprecations">
+
+{{< include file="/static/includes/DeprecationsList.md" >}}
+
+See also: [Feature Deprecations]({{< ref "Deprecations" >}}).
+
   </div>
 
 </div>
