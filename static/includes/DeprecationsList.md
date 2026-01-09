@@ -24,7 +24,7 @@ Migration Path:
 5. Deploy updated integrations before upgrading to 26.04.
 
 Impact: Systems still using the REST API must migrate to the Websocket API before upgrading to 26.04.
-REST API endpoints will not function in 26.04 and later.
+REST API endpoints do not function in 26.04 and later.
 
 See Also:
 
