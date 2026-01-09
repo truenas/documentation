@@ -7,6 +7,9 @@ Plan migrations immediately to avoid disruptions during upgrades.
 
 ## Features Removed in 26.04
 
+<!-- Uncomment this line when there are no features removed in this version -->
+<!-- *No features are removed in this version.* -->
+
 ### REST API
 
 {{< deprecation-status deprecated="25.04" removed="26.04" >}}
@@ -35,6 +38,7 @@ See Also:
 
 ## Deprecated Features (Removal in Future Versions)
 
-*Check back for updates as development continues.*
+<!-- Comment out this line when adding deprecations -->
+*No features are currently deprecated for future removal.*
 
 ---
