@@ -1,0 +1,29 @@
+{{ $_hugo_config := `{ "version": 1 }` }}
+{{/* Shortcode for displaying deprecation status with visual badges */}}
+{{/* Usage for features removed in current version: {{< deprecation-status deprecated="25.04" removed="26.04" >}} */}}
+{{/* Usage for features deprecated now for future removal: {{< deprecation-status deprecated="26.04" removing="27.04" >}} */}}
+{{/* Usage with generic removal version: {{< deprecation-status deprecated="26.04" removing="TBD" >}} */}}
+
+{{ $deprecated := .Get "deprecated" }}
+{{ $removed := .Get "removed" }}
+{{ $removing := .Get "removing" }}
+
+<div style="display: inline-flex; gap: 0.5rem; align-items: center; margin: 0.5rem 0 1rem 0; flex-wrap: wrap;">
+  {{ if $deprecated }}
+  <span style="display: inline-block; padding: 0.25rem 0.75rem; background-color: #ffc107; color: #000; border-radius: 4px; font-size: 0.875rem; font-weight: 500; white-space: nowrap;">
+    Deprecated: {{ $deprecated }}
+  </span>
+  {{ end }}
+
+  {{ if $removed }}
+  <span style="display: inline-block; padding: 0.25rem 0.75rem; background-color: #dc3545; color: #fff; border-radius: 4px; font-size: 0.875rem; font-weight: 500; white-space: nowrap;">
+    Removed: {{ $removed }}
+  </span>
+  {{ end }}
+
+  {{ if $removing }}
+  <span style="display: inline-block; padding: 0.25rem 0.75rem; background-color: #fd7e14; color: #fff; border-radius: 4px; font-size: 0.875rem; font-weight: 500; white-space: nowrap;">
+    Planned Removal: {{ $removing }}
+  </span>
+  {{ end }}
+</div>
