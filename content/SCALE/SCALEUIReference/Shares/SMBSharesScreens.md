@@ -239,7 +239,7 @@ When **Purpose** is set to **Private Dataset Share**, the following settings sho
 {{< tab "Final Cut Pro Storage Share" >}}
 When **Purpose** is set to **Final Cut Pro Storage Share**, the following settings show in **Other Options**.
 
-{{< trueimage src="/images/SCALE/Shares/AddSMBAdvancedSettingsMacOSMediaShare.png" alt="Other Options - Final Cut Pro Storage Share" id="Other Options - Final Cut Pro Storage Share" >}}
+{{< trueimage src="/images/SCALE/Shares/SMBSettingsFinalCutPro.png" alt="Other Options - Final Cut Pro Storage Share" id="Other Options - Final Cut Pro Storage Share" >}}
 
 {{< include file="/static/includes/MacOSMediaShareCompatibility.md" >}}
 

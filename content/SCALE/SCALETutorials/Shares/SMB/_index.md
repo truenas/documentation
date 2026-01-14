@@ -231,7 +231,7 @@ To enable guest access on a **Legacy Share**:
 The privileges granted are the same as those for a guest account.
 
 {{< hint type=warning >}}
-Windows 10 version 1709 and later, and Windows Server 2019 and later disable guest access by default as a security measure.
+Windows 10 version 1709 and later--and Windows Server 2019 and later--disable guest access by default as a security measure.
 Windows clients require additional configuration to connect to shares with guest access enabled.
 
 To enable guest access on Windows clients, modify Windows registry settings or Group Policy to allow insecure guest logons.
@@ -297,7 +297,6 @@ Use the **Hosts Deny** field to enter a list of denied host names or IP addresse
 {{< /expand >}}
 
 {{< expand "Legacy Share Preset (Upgraded Shares Only)" "v" >}}
-What is a legacy share?
 
 When you upgrade to TrueNAS SCALE 25.10 from an earlier release, existing shares that used the **No Preset** option are automatically migrated to the **Legacy Share** preset.
 This preset provides access to configuration options that are no longer available for new shares.
