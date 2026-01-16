@@ -12,9 +12,10 @@ Enter a value in **Name**.
 Select the **Dataset Preset** option you want to use. Options are:
 {{< include file="/static/includes/DatasetPresetOptions.md" >}}
 
-If creating an SMB or multi-protocol (SMB and NFS) share the dataset name value auto-populates the share name field with the dataset name.
+If creating an SMB or multi-protocol (SMB and NFS) share, the dataset name value auto-populates the share name field with the dataset name.
 
-If you plan to deploy container applications, the system automatically creates the **ix-apps** dataset for Docker storage for but separate datasets used for application data storage.
+If configuring a pool to deploy applications, the system automatically creates the ix-apps dataset for Docker storage, but we recommend creating separate datasets for application data storage.
+
 If you want to store data by application, create the dataset(s) first, then deploy your application.
 When creating a dataset for an application, select **Apps** as the **Dataset Preset**. This optimizes the dataset for use by an application.
 
@@ -23,7 +24,7 @@ For the **Sync** option, we recommend production systems with critical data use 
 Choosing **Disabled** is only suitable in situations where data loss from system crashes or power loss is acceptable.
 
 Select either **Sensitive** or **Insensitive** from the **Case Sensitivity** dropdown.
-The **Case Sensitivity** setting is found under **Advanced Options** and is not editable after saving the dataset.
+The **Case Sensitivity** setting in **Advanced Options** is not editable after you save the dataset.
 
 Click **Save**.
 
