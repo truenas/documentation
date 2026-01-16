@@ -33,7 +33,7 @@ Configure TrueNAS to use an IPA directory server:
 
 3. Enter the **Basic Configuration** settings:
 
-{{< trueimage src="/images/SCALE/Credentials/IPABasicConfigOptions.png" alt="IPA Basic Options" id="IPA Basic Options" >}}
+   {{< trueimage src="/images/SCALE/Credentials/IPABasicConfigOptions.png" alt="IPA Basic Options" id="IPA Basic Options" >}}
 
    * Select the **Enable Service** checkbox to activate the IPA configuration. Selected by default.
 
@@ -47,7 +47,7 @@ Configure TrueNAS to use an IPA directory server:
 
 4. Enter the **Credential Configuration** settings:
 
-{{< trueimage src="/images/SCALE/Credentials/DirectoryServicesCredentialConfig.png" alt="Credential Configuration" id="Credential Configuration" >}}
+   {{< trueimage src="/images/SCALE/Credentials/DirectoryServicesCredentialConfig.png" alt="Credential Configuration" id="Credential Configuration" >}}
 
    * Select **Kerberos User** from the **Credential Type** dropdown list. Required.
 
@@ -57,7 +57,7 @@ Configure TrueNAS to use an IPA directory server:
 
 5. Enter the **IPA Configuration** settings:
 
-{{< trueimage src="/images/SCALE/Credentials/IPAConfigurationSettings.png" alt="IPA Configuration" id="IPA Configuration" >}}
+   {{< trueimage src="/images/SCALE/Credentials/IPAConfigurationSettings.png" alt="IPA Configuration" id="IPA Configuration" >}}
 
    * Enter the IPA server hostname or IP address in **Target Server**. Required.
 
@@ -71,7 +71,7 @@ Configure TrueNAS to use an IPA directory server:
 
 6. Configure SMB domain settings:
 
-{{< trueimage src="/images/SCALE/Credentials/IPASMBConfig.png" alt="IPA SMB Configuration" id="IPA SMB Configuration" >}}
+   {{< trueimage src="/images/SCALE/Credentials/IPASMBConfig.png" alt="IPA SMB Configuration" id="IPA SMB Configuration" >}}
 
    Select **Use Default SMB Domain Configuration** to use default SMB domain settings. Selected by default.
 

@@ -132,7 +132,7 @@ To connect TrueNAS to Active Directory:
    IDMAP (Identity Mapping) ensures that UIDs and GIDs assigned to Active Directory users and groups have consistent values domain-wide. By default, TrueNAS uses an algorithmic method based on the RID component of the user or group SID, which is suitable for most environments. Only administrators experienced with configuring ID mapping should customize IDMAP settings. Misconfiguration can lead to permissions incorrectly assigned to users or groups when data is transferred via ZFS replication or rsync, or when accessed via NFS or other protocols that directly access UIDs/GIDs on files.
    {{< /hint >}}
 
-{{< trueimage src="/images/SCALE/Credentials/ADIDMAPConfig.png" alt="IDMAP Configuration" id="IDMAP Configuration" >}}
+   {{< trueimage src="/images/SCALE/Credentials/ADIDMAPConfig.png" alt="IDMAP Configuration" id="IDMAP Configuration" >}}
 
    Select **Use TrueNAS Server IDMAP Defaults** to use default IDMAP configuration. Selected by default and recommended for most setups.
 
@@ -142,7 +142,7 @@ To connect TrueNAS to Active Directory:
 
    * **IDMAP Domain** section with required **IDMAP Backend**, **Name**, **Range Low**, and **Range High** fields.
 
-See [Understanding IDMAP Backends](#understanding-idmap-backends) for more information on IDMapping.
+   See [Understanding IDMAP Backends](#understanding-idmap-backends) for more information on IDMapping.
 
 8. Click **Save**.
 
