@@ -2,6 +2,11 @@
 title: "Kerberos Settings Screen"
 description: "Provides information on the **Kerberos Settings** widget and configuration screen settings."
 weight: 40
+aliases:
+  - /scale/credentials/directoryservices/activedirectoryscale/
+  - /scale/credentials/directoryservices/ldapscale/
+  - /scale/credentials/directoryservices/idmapscale/
+  - /scale/credentials/directoryservices/kerberosscale/
 tags:
 - kerberos
 ---

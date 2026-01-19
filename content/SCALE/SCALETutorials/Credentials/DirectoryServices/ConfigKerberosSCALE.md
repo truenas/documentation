@@ -2,6 +2,7 @@
 title: "Configuring Kerberos"
 description: "Provides instructions on configuring and managing Kerberos realms and keytabs in TrueNAS."
 weight: 25
+aliases:
 tags:
 - kerberos
 keywords:
