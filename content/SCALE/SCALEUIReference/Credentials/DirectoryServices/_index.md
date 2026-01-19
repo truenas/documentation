@@ -3,12 +3,6 @@ title: "Directory Services Screens"
 description: "Describes the screens and fields in the TrueNAS Directory Services section."
 geekdocCollapseSection: true
 weight: 30
-aliases:
-  - /scale/credentials/directoryservices/activedirectoryscale/
-  - /scale/credentials/directoryservices/ldapscale/
-  - /scale/credentials/directoryservices/idmapscale/
-  - /scale/credentials/directoryservices/kerberosscale/
-  - /scale/scaleclireference/directory-service/
 tags:
 - kerberos
 - activedirectory
@@ -31,14 +25,14 @@ The main option displays:
 
 * **Configure Directory Services** opens the **Directory Services Configuration** form where you can set up Active Directory, IPA, or LDAP connections.
 
-* **Advanced Settings** opens a warning dialog before showing configuration options for [ID mapping]({{< ref "Idmap.md" >}}) and Kerberos.
+* **Advanced Settings** opens a warning dialog before showing configuration options for Kerberos.
 
-After configuring Active Directory or LDAP, the **Directory Services** screen includes the widgets for each option, and adds the **Show** button to the right of **Advanced Settings**. **Show** opens the warning dialog stating incorrectly configuring advanced settings is dangerous.
+After configuring Active Directory, IPA, or LDAP, the **Directory Services** screen includes the widget for the configured service, and adds the **Show** button to the right of **Advanced Settings**. **Show** opens the warning dialog stating incorrectly configuring advanced settings is dangerous.
 
 {{< trueimage src="/images/SCALE/Credentials/DirectoryServicesScreen.png" alt="Directory Services with Widgets" id="Directory Services with Widgets" >}}
 
-**Advanced Settings**, before configuring either Active Directory or LDAP, shows a warning dialog stating incorrectly configuring advanced settings is dangerous. 
-**Continue** closes the dialog and then show the **Idmap**, **Kerberos Settings**, **Kerberos Realms**, and **Kerberos Keytabs** configuration widgets.
+**Advanced Settings** shows a warning dialog stating incorrectly configuring advanced settings is dangerous.
+**Continue** closes the dialog and shows the **Kerberos Settings**, **Kerberos Realms**, and **Kerberos Keytabs** configuration widgets.
 
 {{< trueimage src="/images/SCALE/Credentials/DirServicesAdvancedSettingsWidgets.png" alt="Directory Services Advanced Settings" id="Directory Services Advanced Settings" >}}
 
