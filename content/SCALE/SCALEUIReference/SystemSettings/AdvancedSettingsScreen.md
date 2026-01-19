@@ -459,13 +459,23 @@ Isolated GPU devices are reserved for use by configured applications or a VM.
 To allocate an isolated GPU device, select it while creating or editing the VM configuration.
 When allocated to a VM, the isolated GPU connects to the VM as if it were physically installed in that VM, and it becomes unavailable for any other allocations.
 
-## Global Two-Factor Authentication Widget
+## Global Two Factor Authentication Widget
 
-The **Global Two Factor Authentication** widget shows the status of global two-facator authentication, the tolerance window, and the status of two-factor authentication in SSH sessions. It provides access to the configuration screen that allows you to set up two-factor authentication (2FA) for your system.
+The **Global Two Factor Authentication** widget shows the status of global two-factor authentication, the tolerance window, and the status of two-factor authentication for SSH sessions. It provides access to the configuration screen that allows you to set up two-factor authentication (2FA) for your system.
+
+The widget displays the following information:
+
+{{< truetable >}}
+| Field | Description |
+|-------|-------------|
+| **Global 2FA** | Shows whether Global 2FA is enabled or disabled. |
+| **Tolerance Window** | Shows the current tolerance window value. |
+| **Two Factor Authentication for SSH** | Shows whether 2FA for SSH is enabled or disabled. |
+{{< /truetable >}}
 
 {{< trueimage src="/images/SCALE/SystemSettings/GlobalTwoFactorAuthenticationWidget.png" alt="Global Two Factor Authentication Widget" id="Global Two Factor Authentication Settings Widget" >}}
 
-**Configure** opens the **Global Two Factor Authentication Settings** configuration screen.
+**Configure** opens the **Global Two Factor Authentication** configuration screen.
 
 {{<include file="/static/includes/addcolumnorganizer.md">}}
 
@@ -473,11 +483,11 @@ The **Global Two Factor Authentication** widget shows the status of global two-f
 
 {{< expand "Global Two Factor Authentication Settings" "v" >}}
 {{< truetable >}}
-| Name | Description |
-|------|-------------|
-| **Enable Two-Factor Authentication Globally** | Select to prompt users to set up 2FA for the system. When enabled, users without 2FA configured are prompted to set it up on their next login. Users can skip the initial setup if needed. |
+| Setting | Description |
+|---------|-------------|
+| **Enable Two Factor Authentication Globally** | Select to prompt users to set up 2FA for the system. When enabled, users without 2FA configured are prompted to set it up on their next login. Users can skip the initial setup if needed. |
 | **Window** | Enter the number of valid authentication codes (tolerance window). Extends code validity beyond the current to the previous code(s) based on the number entered. For example, setting this to **1** means the current and previous codes are valid. If the previous code is *a* and the current code is *b*, then both codes are valid. If set to **2**, the current code (*c*) and the two previous codes (*a* and *b*) are valid. Setting this to **3** works the same. Extending the window is useful in high-latency situations. |
-| **Enable Two-Factor Auth for SSH** | Select to enable 2FA for system SSH access. Leave this disabled until you complete a successful test of 2FA with the UI. |
+| **Enable Two Factor Authentication for SSH** | Select to enable 2FA for system SSH access. Leave this disabled until you complete a successful test of 2FA with the UI. |
 {{< /truetable >}}
 {{< /expand >}}
 
