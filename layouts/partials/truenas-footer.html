@@ -1,0 +1,124 @@
+<!-- TrueNAS Legacy Footer -->
+<!-- Check if we were passed the ?showsearch=true and need to display docsbot-->
+<script defer>
+    // Function to get the value of a query parameter by name
+    function getSearchQueryParam(param) {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get(param);
+    }
+
+    // Event listener after DocsBot Init
+    document.addEventListener('DOMContentLoaded', function() {
+      const paramValue = getSearchQueryParam('showsearch');
+      if (paramValue) {
+        setTimeout(function() {
+            // Find the button element
+            var aibutton = document.getElementById("chatbot-button-icon");
+
+            // Check if the button exists
+            if (aibutton) {
+              // Simulate a click on the button
+              aibutton.click();
+            }
+        }, 1000);
+      }
+    })
+</script>
+
+<!-- TrueNAS Footer - Updated to match WordPress design -->
+<footer class="gdoc-footer">
+	<div class="footer-row">
+		<!-- Column 1: Logo, Address, Contact -->
+		<div class="footer-column">
+			<a href="https://www.truenas.com/">
+				<img src="/images/tn-open-enterprise-storage-white-version.png" alt="TrueNAS Logo" class="footer-logo">
+			</a>
+			<div class="footer-address">
+				541 Division Street<br>
+				Campbell, CA 95008, USA
+			</div>
+			<div class="footer-contact-item">
+				<span class="footer-icon-wrapper">
+					<i class="fa fa-envelope" aria-hidden="true"></i>
+				</span>
+				<a href="mailto:info@truenas.com">info@truenas.com</a>
+			</div>
+			<div class="footer-contact-item">
+				<span class="footer-icon-wrapper">
+					<i class="fa fa-podcast" aria-hidden="true"></i>
+				</span>
+				<a href="https://www.truenas.com/truenas-podcast/">Listen to our Podcast</a>
+			</div>
+		</div>
+
+		<!-- Column 2: Support -->
+		<div class="footer-column">
+			<h2 class="footer-column-title">Support</h2>
+			<ul class="footer-list">
+				<li><a href="https://www.ixsystems.com/support/">Enterprise Support</a></li>
+				<li><a href="https://forums.truenas.com/">Community Support</a></li>
+				<li><a href="https://forums.truenas.com/">Forums</a></li>
+				<li><a href="https://www.truenas.com/faq/">FAQs</a></li>
+			</ul>
+		</div>
+
+		<!-- Column 3: Useful Links -->
+		<div class="footer-column">
+			<h2 class="footer-column-title">Useful Links</h2>
+			<ul class="footer-list">
+				<li><a href="https://www.truenas.com/careers/">Careers</a></li>
+				<li><a href="https://www.ixsystems.com/about-us/">About Us</a></li>
+				<li><a href="https://www.truenas.com/blog/">Blog</a></li>
+				<li><a href="https://www.ixsystems.com/newsroom/">News & Articles</a></li>
+				<li><a href="https://www.truenas.com/truenas-scale/">TrueNAS Community Edition</a></li>
+				<li><a href="https://www.truenas.com/truenas-core/">TrueNAS Legacy (CORE)</a></li>
+				<li><a href="https://www.truenas.com/truecommand/">TrueCommand</a></li>
+				<li><a href="https://www.truenas.com/freenas/">FreeNAS</a></li>
+				<li><a href="https://www.truenas.com/software-status/">Software Status</a></li>
+				<li><a href="https://www.truenas.com/reseller-network/">Reseller Network</a></li>
+			</ul>
+		</div>
+
+		<!-- Column 4: Newsletter & Social -->
+		<div class="footer-column footer-column-last">
+			<a href="https://www.truenas.com/newsletter/" class="footer-button">Subscribe to our newsletter</a>
+
+			<div class="social-row">
+				<a href="https://www.linkedin.com/company/ixsystems" class="social-icon linkedin" target="_blank" aria-label="LinkedIn" title="Follow us on LinkedIn">
+					<i class="fab fa-linkedin-in"></i>
+				</a>
+				<a href="https://www.youtube.com/@TrueNAS" class="social-icon youtube" target="_blank" aria-label="YouTube" title="Subscribe to our YouTube channel">
+					<i class="fab fa-youtube"></i>
+				</a>
+				<a href="https://twitter.com/truenas" class="social-icon twitter" target="_blank" aria-label="X (Twitter)" title="Follow us on X">
+					<img src="/favicon/x-logo-white.svg" alt="X (Twitter)">
+				</a>
+				<a href="https://www.facebook.com/truenascommunity" class="social-icon facebook" target="_blank" aria-label="Facebook" title="Like us on Facebook">
+					<i class="fab fa-facebook"></i>
+				</a>
+				<a href="https://discord.gg/truenas" class="social-icon discord" target="_blank" aria-label="Discord" title="Join our Discord server">
+					<img src="/favicon/Discord-Logo-White.png" alt="Discord">
+				</a>
+				<a href="https://github.com/truenas" class="social-icon github" target="_blank" aria-label="GitHub" title="Check out our GitHub">
+					<img src="/favicon/github.png" alt="GitHub">
+				</a>
+				<a href="https://www.vendop.com/vendor/ixsystems-inc/reviews/" class="social-icon vendop" target="_blank" aria-label="Vendop" title="Visit Vendop">
+					<img src="/favicon/vendop.svg" alt="Vendop">
+				</a>
+			</div>
+		</div>
+	</div>
+
+	<!-- Bottom row with copyright and links -->
+	<div class="footer-bottom">
+		<div class="footer-bottom-left">
+			<span>© Copyright <script>document.write(new Date().getFullYear())</script>&nbsp;iXsystems, Inc. dba TrueNAS. All rights reserved.</span>
+		</div>
+		<div class="footer-bottom-right">
+			<a href="https://www.truenas.com/cookie-policy/" class="gdoc-footer__link">Cookie Policy</a>
+			<a href="https://www.truenas.com/privacy-policy/" class="gdoc-footer__link">Privacy Policy</a>
+			<a href="https://www.truenas.com/logos/" class="gdoc-footer__link">TrueNAS Logos</a>
+			<a href="https://www.truenas.com/trademarks/" class="gdoc-footer__link">Trademark Policy</a>
+		</div>
+	</div>
+</footer>

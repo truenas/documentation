@@ -12,7 +12,6 @@ tags:
 - shares
 ---
 
-
 {{< include file="/static/includes/RootLevelDatasetShareWarning.md" >}}
 
 ## About Windows (SMB) Shares
@@ -90,8 +89,8 @@ To add or edit users, go to **Credentials > Users**, then add or edit an existin
 Click **Add** to create a new user or as many new user accounts as needed.
 Joining TrueNAS to Active Directory creates the user accounts.
 
-Enter the values in each required field, verify **SMB User** is selected, then click **Save**.
-For more information on the fields and adding users, see [Creating User Accounts]({{< ref "ManageLocalUsersScale" >}}).
+Enter the values in each required field, verify **SMB Access** is selected, then click **Save**.
+For more information on the fields and adding users, see [Creating User Accounts]({{< ref "ManageUsers" >}}).
 
 By default, all new users are members of a built-in group called **builtin_users**.
 You can use a group to grant access to all users on the server or add more groups to fine-tune permissions for large numbers of users.
@@ -124,10 +123,10 @@ TrueNAS creates the ZFS dataset with these settings:
 * **ACL Mode** set to **Restricted**
    The **ACL Type** influences the **ACL Mode** setting. When **ACL Type** is set to **Inherit**, you cannot change the **ACL Mode** setting.
    When **ACL Type** is set to **NFSv4**, you can change the **ACL Mode** to **Restricted**.
-   
+
    {{< hint type=note >}}
-   For datasets with **NFSv4** ACL type, SMB clients automatically use access-based enumeration. 
-   This means directory listings over SMB only include files and directories for which the client has read permissions. 
+   For datasets with **NFSv4** ACL type, SMB clients automatically use access-based enumeration.
+   This means directory listings over SMB only include files and directories for which the client has read permissions.
    This behavior is enabled by default and matches FreeBSD behavior.
    {{< /hint >}}
 
@@ -183,6 +182,10 @@ To create a basic Windows SMB share and a dataset, go to **Shares**, then click 
    Select **Time Machine Share** to create a Time Machine share. The SMB share is presented to Mac OS clients as a Time Machine target.
    See [Adding a Basic Time Machine SMB Share]({{< ref "SetUpBasicTimeMachineSMBShare.md" >}}) for more information on creating and using Time Machine shares.
 
+   Select **Final Cut Pro Storage Share** (available in TrueNAS 25.10.1 and later) to create a share optimized for Final Cut Pro workflows.
+   The SMB share is configured with Apple-style character encoding and requires Apple SMB2/3 protocol extensions for compatibility with Final Cut Pro.
+   See [Setting Up Final Cut Pro SMB Shares]({{< ref "FCPShare.md" >}}) for more information on creating shares for Final Cut Pro workflows.
+
    Select **External Share** to [create an external share](#setting-up-an-external-smb-share). Enter the full domain name or IP address and the share name as *192.168.0.200\SHARE* in **Remote Path**.
 
    Select **Time Locked Share** to create a share that makes files read-only after the grace period you specify expires.
@@ -211,34 +214,69 @@ A basic SMB share does not need to use the **Advanced Options** settings. Click 
 See [SMB Shares Screens]({{< ref "SMBSharesScreens" >}}) for all settings and other possible use cases.
 
 {{< expand "Guest Access" "v" >}}
-{{< hint type=info >}}
-Guest access is not a recommended configuration as it adds security vulnerabilities!
+{{< hint type=warning >}}
+Guest access adds security vulnerabilities and should be avoided.
 {{< /hint >}}
 
-To allow guest access to the share, select **Private Dataset Share**.
+Guest access allows users to connect to an SMB share without providing credentials.
+In TrueNAS SCALE 25.10 and later, this feature is only available for shares with the **Legacy Share** preset (shares that used **No Preset** in releases before 25.10).
+
+To enable guest access on a **Legacy Share**:
+
+1. Go to **Shares** and click on the share name to expand the share widget, then click **Edit**.
+2. Click **Advanced Options** and scroll down to the **Access** settings.
+3. Select the **Allow Guest Access** checkbox.
+4. Click **Save**.
+
 The privileges granted are the same as those for a guest account.
-Windows 10 version 1709 and Windows Server version 1903 disable guest access by default.
-Additional client-side configuration is required to provide guest access to these clients.
 
-* **Mac OS clients** - Prevents attempts to connect as a user that does not exist in TrueNAS and does not automatically connect as the guest account.
+{{< hint type=warning >}}
+Windows 10 version 1709 and later--and Windows Server 2019 and later--disable guest access by default as a security measure.
+Windows clients require additional configuration to connect to shares with guest access enabled.
 
-* **Connect As: Guest** - Allows a guest to log into the Mac OS with the guest account.
+To enable guest access on Windows clients, modify Windows registry settings or Group Policy to allow insecure guest logons.
+See Microsoft documentation for configuration details.
+{{< /hint >}}
+
+For new shares:
+
+New shares created in TrueNAS SCALE 25.10 and later cannot select the **Legacy Share** preset, and therefore cannot use guest access.
+Guest access has been limited to legacy shares due to security concerns and client-side deprecation:
+
+* Windows 10 version 1709 and Windows Server 2019 and later disable guest access by default
+* Major SMB client vendors are deprecating guest users
+* Guest sessions cannot use signing and encryption features
+
+Client-specific behavior:
+
+* Mac OS clients - Prevent automatic connection as guest account.
+  Users must explicitly select **Connect As: Guest**.
   See the [Apple documentation](https://support.apple.com/guide/mac-help/connect-mac-shared-computers-servers-mchlp1140/mac) for more details.
+* Windows clients - Require registry or Group Policy modifications to enable insecure guest authentication
 
-If setting up guest access with read-only permissions, see the information in [Adding a New Share Group](#adding-a-new-share-group).
+Alternative approaches:
+
+Instead of guest access, consider these secure alternatives:
+
+* Create a dedicated guest user account with limited permissions
+* Use share ACL to restrict the guest user to read-only access
+
 If the share is nested under parent datasets, see [Using the Traverse Permission](#using-the-traverse-permission).
 {{< /expand >}}
-
 {{< expand "Read or Write Access" "v" >}}
 To prohibit writes to the share, select **Export Read-Only**.
 
 Select **Access Based Share Enumeration** to restrict share visibility for users with read or write access to the share.
-This setting applies to datasets with a POSIX ACL type. 
+This setting applies to datasets with a POSIX ACL type.
 For datasets with NFSv4 ACL type, access-based enumeration is automatically enabled and does not allow disabling.
 See the [smb.conf](https://www.samba.org/samba/docs/current/man-html/smb.conf.5.html) manual page.
 {{< /expand >}}
 
 {{< expand "Host Allow and Host Deny" "v" >}}
+{{< hint type=note >}}
+Hosts Allow and Hosts Deny settings are available for all share presets except **External Share**.
+{{< /hint >}}
+
 Use the **Host Allow** and **Host Deny** options to allow or deny specific host names and IP addresses.
 
 Use the **Hosts Allow** field to enter a list of allowed IP addresses.
@@ -251,10 +289,52 @@ You can find a more detailed description with examples [here](https://www.samba.
 Use the **Hosts Deny** field to enter a list of denied host names or IP addresses. Separate entries by pressing <kbd>Enter</kbd>.
 
 **Hosts Allow** and **Hosts Deny** work together to produce different situations:
+
 * Leaving both **Hosts Allow** and **Hosts Deny** free of entries allows any host to access the SMB share.
 * Adding entries to the **Hosts Allow** list but not the **Hosts Deny** list allows only the hosts on the **Hosts Allow** list to access the share.
 * Adding entries to the **Hosts Deny** list but not the **Hosts Allow** list allows all hosts not on the **Hosts Deny** list to access the share.
 * Adding entries to both a **Hosts Allow** and **Hosts Deny** list allows all hosts on the **Hosts Allow** list to access the share and allows hosts not on the **Hosts Allow** or **Hosts Deny** list to access the share.
+{{< /expand >}}
+
+{{< expand "Legacy Share Preset (Upgraded Shares Only)" "v" >}}
+
+When you upgrade to TrueNAS SCALE 25.10 from an earlier release, existing shares that used the **No Preset** option are automatically migrated to the **Legacy Share** preset.
+This preset provides access to configuration options that are no longer available for new shares.
+
+Why can't I create a new legacy share?
+
+The **Add SMB** screen does not include **Legacy Share** as an option. This preset only appears in the **Edit SMB** screen for shares created before 25.10.
+TrueNAS removed these options from new shares due to:
+
+* Security concerns (guest access, recycle bin)
+* Better alternatives available (ZFS snapshots instead of recycle bin)
+* Client-side deprecation (guest access no longer supported by major vendors)
+
+Legacy share options:
+
+Legacy shares provide access to additional settings not available in modern presets.
+
+In the **Access** section:
+
+* **Enable ACL** - Configure additional ACL entries for custom access controls
+* **Allow Guest Access** - Enable anonymous access without credentials (not recommended)
+
+In the **Other Options** section:
+
+* **Use as Home Share** - Configure share as user home directories (see [Private Dataset Share]({{< ref "SMBPrivateDatasetShare" >}}) for modern alternative)
+* **Time Machine Quota** - Set maximum limit on Time Machine backup storage
+* **Legacy AFP Compatibility** - Support for migrated AFP shares
+* **Enable Shadow Copies** - Export ZFS snapshots as volume shadow copies for VSS clients (see [Shadow Copies]({{< ref "AddSMBShadowCopies" >}}))
+* **Export Recycle Bin** - Move deleted files to a `.recycle` directory (not recommended - use ZFS snapshots instead)
+* **Use Apple-style Character Encoding** - Translate NTFS illegal characters to Unicode private range
+* **Enable Alternate Data Streams** - Support multiple NTFS data streams
+* **Enable SMB2/3 Durable Handles** - Allow file handles to survive disconnections
+* **Enable FSRVP** - Remote VSS protocol support for snapshot management
+* **Path Suffix** - Append per-user/computer/IP suffixes to connection path
+* **Additional Parameters String** - Add custom smb.conf parameters (advanced users only)
+* **VUID** - Time Machine volume UUID for mDNS advertisements
+
+See [Legacy Share Settings]({{< ref "SMBSharesScreens#legacy-share-settings" >}}) in the UI reference for complete details on each option.
 {{< /expand >}}
 
 {{< expand "Apple Filing Protocol (AFP) Compatibility" "v" >}}
@@ -276,7 +356,7 @@ See [Setting Up SMB Home Shares]({{< ref "SMBPrivateDatasetShare" >}}) for more 
 {{< /expand >}}
 
 {{< expand "SMB Audit Logging" "v" >}}
-To enable SMB audit logging, from either the **Add SMB** or **Edit SMB** screens, click **Advanced Options**, scroll down to **Audit Logging**, and select **Enable**.
+{{< include file="/static/includes/ConfigureSMBShareAuditingSCALE.md" >}}
 {{< /expand >}}
 
 ## Tuning ACLs for SMB Shares
@@ -324,8 +404,8 @@ Each SMB share on the list also has a toggle to enable or disable the service fo
 
 ### Starting the Service Using System Settings
 
-To make SMB share available on the network, go to **System > Services** and click the **SMB** toggle.
-Set **Start Automatically** if you want the service to activate when TrueNAS boots.
+To make SMB share available on the network, go to **System > Services** and click the **SMB** <span class="iconify" data-icon="mdi:play-circle" title="Start Service">Start Service</span> button to start the service.
+Toggle **Start Automatically** on if you want the service to activate when TrueNAS boots.
 
 ## Configuring the SMB Service
 
@@ -355,6 +435,7 @@ Open the command line and run the following command with the appropriate drive l
 <code>net use <i>Z</i>: &bsol;&bsol;<i>TrueNAS_name</i>&bsol;<i>share_name</i> /PERSISTENT:YES</code>
 
 Where:
+
 * *Z* is the drive letter to map to TrueNAS and the share
 * *TrueNAS_name* is either the host name or the system IP address
 * *share_name* is the name given to the SMB share
@@ -372,7 +453,7 @@ Enter the SMB address as follows: <code>smb://<i>192.168.1.111</i></code>.
 
 Input the username and password for the user assigned to that pool or a guest user if the share has guest access.
 
-For further tuning in macOS, Apple provides some enterprise-specific pointers in their [Adjust SMB browsing behavior in macOS](https://support.apple.com/en-us/102064) article.
+For further tuning in Mac OS, Apple provides some enterprise-specific pointers in their [Adjust SMB browsing behavior in macOS](https://support.apple.com/en-us/102064) article.
 
 {{< /expand >}}
 

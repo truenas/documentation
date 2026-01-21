@@ -30,7 +30,7 @@ icon4="IconEnterprise.png" cell4title="Meets any Expansion Requirements" cell4te
 
 <div class="docs-sections">
 
-{{< imagecard image="/images/Hardware/ExpansionShelves/ES24BSG.png" title="ES24 Basic Setup Guide" link="https://www.truenas.com/docs/files/ES24BSG1.12.pdf"
+{{< imagecard-lang image="/images/Hardware/ExpansionShelves/ES24BSG.png" title="ES24 Basic Setup Guide" link="https://www.truenas.com/docs/files/ES24BSG/ES24BSG25111.pdf"
 descr="Deployment guide for TrueNAS ES24 Expansion Shelf." >}}
 
 {{< imagecard image="/images/Hardware/ExpansionShelves/ES24Stencil.png" title="ES24 Hardware Stencils" link="https://www.truenas.com/docs/files/es24_stencil_pack.vssx"
@@ -42,7 +42,7 @@ descr="Download ES24 Expansion Shelf stencils to diagram your TrueNAS hardware c
 
 <div class="docs-sections">
 
-{{< imagecard image="/images/Hardware/ExpansionShelves/ES24FBSG.png" title="ES24F Basic Setup Guide" link="https://www.truenas.com/docs/files/ES24FBSG1.2.pdf"
+{{< imagecard-lang image="/images/Hardware/ExpansionShelves/ES24FBSG.png" title="ES24F Basic Setup Guide" link="https://www.truenas.com/docs/files/ES24FBSG/ES24FBSG25111.pdf"
 descr="Deployment guide for TrueNAS ES24F Expansion Shelf." >}}
 
 {{< imagecard image="/images/Hardware/ExpansionShelves/ES24FStencil.png" title="ES24F Hardware Stencils" link="https://www.truenas.com/docs/files/es24f_stencil_pack.vssx"
@@ -54,7 +54,7 @@ descr="Download ES24F Expansion Shelf stencils to diagram your TrueNAS hardware 
 
 <div class="docs-sections">
 
-{{< imagecard image="/images/Hardware/ExpansionShelves/ES24NPUM.png" title="ES24N User Manual" link="https://www.truenas.com/docs/files/ES24NPUM.pdf"
+{{< imagecard-lang image="/images/Hardware/ExpansionShelves/ES24NPUM.png" title="ES24N User Manual" link="https://www.truenas.com/docs/files/ES24NPUM/ES24NPUM.pdf"
 descr="Comprehensive User Manual for the TrueNAS ES24N." >}}
 
 {{< imagecard image="/images/Hardware/ExpansionShelves/ES24NConnection.png" title="Connect ES24N to TrueNAS F-Series" link="https://www.truenas.com/docs/files/ConnectES24NtoFSeries.pdf"
@@ -69,7 +69,7 @@ descr="Download ES24N Expansion Shelf stencils to diagram your TrueNAS hardware 
 
 <div class="docs-sections">
 
-{{< imagecard image="/images/Hardware/ExpansionShelves/ES60Gen2PUM.png" title="ES60 Gen 2 User Manual" link="https://www.truenas.com/docs/files/ES60Gen2PUM.pdf"
+{{< imagecard-lang image="/images/Hardware/ExpansionShelves/ES60Gen2PUM.png" title="ES60 Gen 2 User Manual" link="https://www.truenas.com/docs/files/ES60PUM/ES60Gen2PUM.pdf"
 descr="Comprehensive User Manual for the TrueNAS ES60 Gen 2." >}}
 
 {{< imagecard image="/images/Hardware/ExpansionShelves/ES60Gen2Stencil.png" title="ES60 Gen 2 Hardware Stencils" link="https://www.truenas.com/docs/files/es60_gen_2_stencil_pack.vssx"
@@ -77,23 +77,11 @@ descr="Download ES60 Gen 2 Expansion Shelf stencils to diagram your TrueNAS hard
 
 </div>
 
-## ES102 Gen 1 Resources
-
-<div class="docs-sections">
-
-{{< imagecard image="/images/Hardware/ExpansionShelves/ES102BSG.png" title="ES102 Basic Setup Guide" link="https://www.truenas.com/docs/files/ES102BSG1.1.pdf"
-descr="Deployment guide for TrueNAS ES102 Expansion Shelf." >}}
-
-{{< imagecard image="/images/Hardware/ExpansionShelves/ES60Gen2Stencil.png" title="ES102 Gen 1 Hardware Stencils" link="https://www.truenas.com/docs/files/es102_gen1_stencil_pack.vssx"
-descr="Download ES102 Gen 1 Expansion Shelf stencils to diagram your TrueNAS hardware configuration." >}}
-
-</div>
-
 ## ES102 Gen 2 Resources
 
 <div class="docs-sections">
 
-{{< imagecard image="/images/Hardware/ExpansionShelves/ES102Gen2PUM.png" title="ES102 Gen 2 User Manual" link="https://www.truenas.com/docs/files/ES102Gen2PUM.pdf"
+{{< imagecard-lang image="/images/Hardware/ExpansionShelves/ES102Gen2PUM.png" title="ES102 Gen 2 User Manual" link="https://www.truenas.com/docs/files/ES102PUM/ES102Gen2PUM.pdf"
 descr="Comprehensive User Manual for the TrueNAS ES102 Gen 2." >}}
 
 {{< imagecard image="/images/Hardware/ExpansionShelves/ES102Gen2Stencil.png" title="ES102 Gen 2 Hardware Stencils" link="https://www.truenas.com/docs/files/es102_gen_2_stencil_pack.vssx"

@@ -18,6 +18,46 @@ pipeline {
             sh 'npx pagefind --site "public" --glob "{api,archive,contributing,core,hardware,references,scale,softwarestatus,solutions,truecommand,truenasupgrades}/**/*.html"'
         }
     }
+    stage('Update Software Status') {
+        steps {
+            sh 'pip3 install --break-system-packages -r requirements.txt'
+            sh 'python3 scripts/update-software-status.py'
+            script {
+                // Check if software_status_config.yaml was modified
+                def hasChanges = sh(
+                    script: 'git diff --exit-code data/software_status_config.yaml',
+                    returnStatus: true
+                ) != 0
+
+                if (hasChanges) {
+                    echo "⚠️ SOFTWARE STATUS CHANGES DETECTED - Creating PR"
+                    def prResult = sh(
+                        script: 'bash scripts/create-software-status-pr.sh',
+                        returnStatus: true
+                    )
+                    if (prResult == 0) {
+                        echo "✅ PR created/updated successfully"
+                    } else {
+                        echo "⚠️ PR creation had issues (exit code: ${prResult}), but continuing build"
+                        echo "   The build will still be published to production"
+                    }
+                } else {
+                    echo "✅ Software status is up to date"
+                }
+            }
+        }
+        post {
+            always {
+                script {
+                    // Archive error log only if it exists (created on API failure)
+                    if (fileExists('scripts/software-status-error.log')) {
+                        echo "⚠️ Error log found - archiving for review"
+                        archiveArtifacts artifacts: 'scripts/software-status-error.log'
+                    }
+                }
+            }
+        }
+    }
     stage('Publish') {
         steps {
             sh 'rsync -rvza -e "ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no" --delete --exclude="pdf/" --exclude="PRs/" --exclude="CNAME" --exclude="download/" public/ docs@10.242.64.28:/var/www/html/docs1'

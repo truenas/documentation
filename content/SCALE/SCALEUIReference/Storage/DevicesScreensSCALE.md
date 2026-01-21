@@ -5,10 +5,8 @@ weight: 35
 aliases:
  - /scale/scaleuireference/storage/pools/devicesscreensscale/
 tags:
-- smart
 - disks
 - sed
-- smart
 ---
 
 The **VDEVs** screen lists VDEVS and disks configured for the selected pool.

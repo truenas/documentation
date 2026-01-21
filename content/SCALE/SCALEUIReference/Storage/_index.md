@@ -306,7 +306,7 @@ TrueNAS complies with SAS/SATA specifications and reports temperatures in Celsiu
 
 ## Upgrade Dialog
 
-The **Storage Dashboard** shows the **Upgrade** button for existing pools after an upgrade to a new TrueNAS release that includes new [OpenZFS feature flags]({{< ref "SCALEReleaseNotes.md#component-versions" >}}).
+The **Storage Dashboard** shows the **Upgrade** button for existing pools after an upgrade to a new TrueNAS release that includes new [OpenZFS feature flags]({{< ref "VersionNotes.md#component-versions" >}}).
 Newly created pools are always up-to-date with the OpenZFS feature flags in the installed TrueNAS release.
 
 {{< include file="/static/includes/UpgradePools.md" >}}

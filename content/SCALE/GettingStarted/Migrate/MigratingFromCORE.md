@@ -84,7 +84,7 @@ If this process fails, retry using the iso file method above.
 1. Confirm that the system is on the latest public release of TrueNAS 13.0 or 13.3.
 
 2. Download the [TrueNAS manual update file](https://www.truenas.com/download-truenas-scale/).
-   See [Software Releases]({{< ref "TrueNASUpgrades/#upgrade-paths" >}}) for current recommended update paths to make sure you download and migrate to the correct version.
+   See [Software Releases]({{< ref "SoftwareStatus/#upgrade-paths" >}}) for current recommended update paths to make sure you download and migrate to the correct version.
 
 3. Click **CHECK FOR UPDATES** in the **System Information** card on the **Dashboard** or go to **System > Update**.
 
@@ -113,7 +113,7 @@ After TrueNAS reboots, you might need to [use the Console Setup menu to configur
 
 After gaining access to the UI, sign in with the admin user credentials created during installation.
 
-Go to **System > General Settings** and [upload the system config file](/scale/scaletutorials/systemsettings/general/managesysconfigscale/#uploading-the-file).
+Go to **System > Advanced Settings** and [upload the system config file](/scale/scaletutorials/systemsettings/advanced/managesysconfig/#uploading-the-file).
 Uploading a previously-saved system config file migrates your settings, including accounts, directory services, networking, services, shares, storage configuration, system setting, data protection tasks, and more.
 The system restarts to apply the uploaded configuration.
 

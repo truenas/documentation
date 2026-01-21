@@ -76,11 +76,8 @@ When using TrueNAS as a VMware datastore:
 
 * Increase the VM disk timeouts to better survive long restarts or other delayed disk operations. 
   Set the timeout to a minimum of *300 seconds*.
-  VMware provides instructions for setting disk timeouts on some specific guest operating systems:
-
-  * Windows guest operating system: https://docs.vmware.com/en/VMware-vSphere/6.7/com.vmware.vsphere.storage.doc/GUID-EA1E1AAD-7130-457F-8894-70A63BD0623A.html
-  * Linux guests running kernel version 2.6: https://kb.vmware.com/s/article/1009465
-
+  VMware provides instructions for setting disk timeouts on the Windows guest operating systems: https://techdocs.broadcom.com/us/en/vmware-cis/vsphere/vsphere/6-7/set-guest-operating-system-timeout.html
+  
   NOTE: Restarts or failovers typically complete much faster than 300 seconds and Disk IO resumes automatically when finished.
 
 ### VMware Snapshots on TrueNAS

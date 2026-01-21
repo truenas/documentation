@@ -4,57 +4,41 @@ description: "Archived documents for discontinued TrueNAS Enterprise Expansion S
 geekdocCollapseSection: true
 weight: 50
 ---
-## Expansion Shelf Document Archive
 
-Discontinued Expansion Shelf Documents
+## ES102 Gen 1 Expansion Shelf
 
-### ES12 Expansion Shelf
+* <a href="https://www.truenas.com/docs/files/ES102G1PRN.pdf" download>ES102 PRN</a>: Official TrueNAS Product Retirement Notice for the TrueNAS ES102 Gen 1 Expansion Shelf.
 
-The ES12 Expansion Shelf was designated end-of-life (EOL) by iXsystems on January 31, 2025.
-The end-of-support date for ES12 Expansion Shelf systems is January 31, 2030.
+* <a href="https://www.truenas.com/docs/files/ES102BSG1.1.pdf" download>ES102 Basic Setup Guide</a>: Deployment guide for TrueNAS ES102 Gen 1 Expansion Shelf.
 
-Click below to download archival documents for legacy ES12 Expansion Shelf systems.
+* <a href="https://www.truenas.com/docs/files/ES102BSG1.1.pdf" download>ES102 Gen 1 Hardware Stencils</a>: Download ES102 Gen 1 Expansion Shelf stencils to diagram your TrueNAS hardware configuration.
 
-* <a href="https://www.truenas.com/docs/files/TrueNAS%20ES12%20EOL.pdf" download>ES12 EOL January 2025</a>: Official iXsystems EoL for the TrueNAS ES12 Expansion Shelf.
+## ES12 Expansion Shelf
+
+* <a href="https://www.truenas.com/docs/files/ES12PRN.pdf" download>ES12 PRN</a>: Official TrueNAS Product Retirement Notice for the TrueNAS ES12 Expansion Shelf.
 
 * <a href="https://www.truenas.com/docs/files/ES12BSG1.81.pdf" download>ES12 Basic Setup Guide</a>: Deployment guide for TrueNAS ES12 Expansion Shelf.
 
-### ES60 Expansion Shelf
+## ES60 Expansion Shelf
 
-The ES60 Expansion Shelf was designated end-of-life (EOL) by iXsystems on February 27, 2024.
-The end-of-support date for ES60 Expansion Shelf systems is February 27, 2027.
+* <a href="https://www.truenas.com/docs/files/ES60PRN.pdf" download>ES60 Gen 1 PRN</a>: Official TrueNAS Product Retirement Notice for the TrueNAS ES60 Expansion Shelf.
 
-Click below to download archival documents for legacy ES60 Expansion Shelf systems.
-
-* <a href="https://www.truenas.com/docs/files/ES60EOL.pdf" download>ES60 Gen 1 EOL February 2024</a>: Official iXsystems EoL for the TrueNAS ES60 Expansion Shelf.
 * <a href="https://www.truenas.com/docs/files/ES60BSG1.94.pdf" download>ES60 Basic Setup Guide</a>: Deployment guide for TrueNAS ES60 Expansion Shelf.
 
-### E24 Expansion Shelf
+## E24 Expansion Shelf
 
-The E24 Expansion Shelf was designated end-of-life (EOL) by iXsystems on December 28, 2017.
-The end-of-support date for E24 Expansion Shelf systems is December 28, 2022.
+* <a href="https://www.truenas.com/docs/files/E24PRN.pdf" download>E24 Expansion EOL December 2017</a>: Official TrueNAS Product Retirement Notice for the TrueNAS E24 expansion shelf.
 
-Click below to download archival documents for legacy E24 Expansion Shelf systems.
-
-* <a href="https://www.truenas.com/docs/files/E24EOL.pdf" download>E24 Expansion EOL December 2017</a>: Official iXsystems EoL for the TrueNAS E24 expansion shelf.
 * <a href="https://www.truenas.com/docs/files/E24BSGv1_0.pdf" download>E24 Basic Setup Guide</a>: Deployment guide for TrueNAS E24 Expansion Shelf.
 
-### E60 Expansion Shelf
+## E60 Expansion Shelf
 
-The E60 Expansion Shelf was designated end-of-life (EOL) by iXsystems on May 17, 2017.
-The end-of-support date for E60 Expansion Shelf systems is May 17, 2022.
+* <a href="https://www.truenas.com/docs/files/E60PRN.pdf" download>E60 Expansion EOL June 2017</a>: Official TrueNAS Product Retirement Notice for the TrueNAS E60 expansion shelf.
 
-Click below to download archival documents for legacy E60 Expansion Shelf systems.
-
-* <a href="https://www.truenas.com/docs/files/E60EOL.pdf" download>E60 Expansion EOL June 2017</a>: Official iXsystems EoL for the TrueNAS E60 expansion shelf.
 * <a href="https://www.truenas.com/docs/files/E60BSGv1_0.pdf" download>E60 Basic Setup Guide</a>: Deployment guide for TrueNAS E60 Expansion Shelf.
 
-### E16 Expansion Shelf
+## E16 Expansion Shelf
 
-The E16 Expansion Shelf was designated end-of-life (EOL) by iXsystems on December 28, 2017.
-The end-of-support date for E16 Expansion Shelf systems is January 31, 2020.
+* <a href="https://www.truenas.com/docs/files/E16PRN.pdf" download>E16 Expansion EOL January 2017</a>: Official TrueNAS Product Retirement Notice for the TrueNAS E16 expansion shelf.
 
-Click below to download archival documents for legacy E16 Expansion Shelf systems.
-
-* <a href="https://www.truenas.com/docs/files/E16EOL.pdf" download>E16 Expansion EOL January 2017</a>: Official iXsystems EoL for the TrueNAS E16 expansion shelf.
 * <a href="https://www.truenas.com/docs/files/E16BSGv1_0.pdf" download>E16 Basic Setup Guide</a>: Deployment guide for TrueNAS E16 Expansion Shelf.

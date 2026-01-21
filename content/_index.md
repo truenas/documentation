@@ -25,7 +25,7 @@ All documentation is open-source and accepts community contributions!
 Use the **Product** and **Version** dropdowns above or the cards below to access up to date latest documentation for your selected version.<br>
 While browsing, switch to a different version of the same product to see the corresponding article for that version.
 
-Use the TrueNAS AI Search below or on the left sidebar to ask questions about TrueNAS.
+Use the TrueNAS AI Search below or the search buttons above to learn more about TrueNAS.
 
 <div style="padding-top: 6px; padding-bottom: 1px; border-radius: 15px; overflow: hidden; background-color: white; width: 94%;">
     <iframe src="https://docsbot.ai/iframe/c6l7vGyugnoP9SSSoNXy/h6qDF4J2h3xfHKO9Nm6r" 

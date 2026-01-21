@@ -1,19 +1,16 @@
 ---
 title: "General Settings Screen"
-description: "Provides information on the General Settings screen, widgets, and configuration settings for getting support, changing console or the GUI, localization and keyboard setups, and adding NTP servers."
+description: "Provides information on the General Settings screen, widgets, and configuration settings for getting support, changing console or the GUI, localization and keyboard setups, and system email."
 weight: 20
-aliases: 
+aliases:
  - /scale/scaleclireference/system/cliconfig/
  - /scale/scaleclireference/system/cligeneral/
- - /scale/scaleclireference/system/clintpserver/
  - /scale/scaleclireference/system/clisupport/
  - /scale/scaleclireference/system/clitruenas/
- - /scale/scaletutorials/dashboard/scaletimesync/
  - /scale/scaleuireference/systemsettings/generalsettings/
 tags:
  - settings
  - console
- - ntp
  - configuration files
 ---
 
@@ -26,22 +23,35 @@ The **General Settings** screen has four widgets that show current general syste
 
 {{< trueimage src="/images/SCALE/SystemSettings/SystemGeneralScreen.png" alt="General Settings Screen" id="General Settings Screen" >}}
 
-## Support Widget
+Community systems show the same widgets, but are not eligible for Enterprise support options or licenses.
+The TrueNAS logo shows for the Community Edition of TrueNAS.
 
-The **Support** widget shows general hardware and software specifications and links to the [Documentation Hub](https://www.truenas.com/docs/), [TrueNAS Forums](https://forums.truenas.com/), and offers [TrueNAS Licensing](https://www.ixsystems.com/support/) information.
+## Support Widgets
+
+The **Support** widget for Community Edition TrueNAS shows the version, model number of the CPU detected, system memory detected, a system serial number if configured, and links to the [Documentation Hub](https://www.truenas.com/docs/), [TrueNAS Forums](https://forums.truenas.com/), and offers [TrueNAS Licensing](https://www.ixsystems.com/support/) information.
 
 {{< trueimage src="/images/SCALE/SystemSettings/SystemGeneralSupportWidget.png" alt="Support Widget" id="Support Widget" >}}
 
-Community systems show the same widgets, but are not eligible for Enterprise support options or licenses.
+The Community Edition Support widget shows a TrueNAS icon instead of a system image available for TrueNAS Mini and other platforms sold by TrueNAS.
+Images of non-standard systems are not supported due to the number of different options available in the marketplace.
+
+**File Ticket** opens a [feedback/report issue window](#send-feedback-window) where users can provide feedback on the screen or report an issue and save/attach a system debug file.
+
+**Save Debug** starts downloading a system debug file to the local machine.
+
+{{< enterprise>}}
+The **Support** widget on the **General Settings** screen for Enterprise customers shows system licenses applied to the system, the system model, serial, license numbers not shown for Community Edition of TrueNAS, and any additional hardware associated with the system.
+
+{{< trueimage src="/images/SCALE/SystemSettings/SystemGeneralSupportWidgetEnterprise.png" alt="Support Widget - Enterprise" id="Support Widget - Enterprise" >}}
 
 The **This is a production system** toggle, which shows only on TrueNAS Enterprise systems, opens the [**Update Production Status**](#update-production-status-dialog) dialog.
 
-**Add License** opens the **[License](#license-screen)** screen. After adding a license, **Update License** replaces the **Add License** button.
+**Add License** opens the **[License](#license-screen)** screen.
+After adding a license, **Update License** replaces the **Add License** button.
 
 **Get Support** dropdown shows two options: **File Ticket** and **Proactive Support** when the system is an Enterprise-licensed system.
 Non-Enterprise licensed systems only show the [**File Ticket**](#) option.
-
-**Save Debug** starts downloading a system debug file to the local machine.
+{{< /enterprise >}}
 
 ### Update Production Status Dialog
 

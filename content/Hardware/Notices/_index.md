@@ -12,7 +12,7 @@ aliases:
 
 <div class="docs-sections">
 
-{{< imagecard image="/images/Hardware/Notices.png" title="End of Life Announcements" link="/hardware/notices/endoflifeannouncements/" descr="Official iXsystems TrueNAS system end of life (EoL) and end of support (EoS) announcements." >}}
+{{< imagecard image="/images/Hardware/Document.png" title="Product Retirement Announcements" link="/hardware/notices/productretirements/" descr="Official TrueNAS product end of availability (EoA) and end of support life (EoSL) announcements." >}}
 
 {{< imagecard image="/images/ixsystems_logo-logo-full-color-rgb.png" title="RMA Policy" link="https://www.truenas.com/docs/hardware/notices/rmapolicy/" descr="Official iXsystems Return Merchandise Authorization (RMA) policy and other warranty, service, and support coverage." >}}
 

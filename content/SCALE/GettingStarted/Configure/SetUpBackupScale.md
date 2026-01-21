@@ -31,7 +31,7 @@ After setting up TrueNAS, first, back up your system configuration by downloadin
 
 ### Downloading the Initial System Debug File
 
-After saving the system configuration, save an initial system debug file by going to **System > Advanced Settings** and clicking **Save Debug**. After the download completes, save this initial debug file with your system configuration file.
+After saving the system configuration, save an initial system debug file by going to **System > General Settings** and clicking **Save Debug**. After the download completes, save this initial debug file with your system configuration file.
 
 Why download the initial system debug file?
 Downloading and storing the initial system debug after completing the system configuration is a recommended best practice to have a point of reference for your system if a problem arises. Save a debug file after a major system upgrade or reconfiguration to provide Support or Engineering if requested.

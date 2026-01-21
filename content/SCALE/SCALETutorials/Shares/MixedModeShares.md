@@ -60,7 +60,7 @@ From the **Shares** screen, click on the **Windows (SMB) Shares** <span class="m
 
 After adding a share, use the toggle to enable or disable the service for that share.
 
-To enable the service from the **System > Services** screen, click the toggle for the service and set **Start Automatically** if you want the service to activate when TrueNAS boots.
+To enable the service from the **System > Services** screen, click the <span class="iconify" data-icon="mdi:play-circle" title="Start Service">Start Service</span> button to start the service and toggle **Start Automatically** on if you want the service to activate when TrueNAS boots.
 
 ### Configuring and Starting the NFS Service
 
@@ -89,7 +89,7 @@ Each NFS share on the list also has a toggle to enable or disable the service fo
 
 {{< trueimage src="/images/SCALE/Shares/NFSWidgetOptions.png" alt="Unix (NFS) Shares Widget Options" id="Unix (NFS) Shares Widget Options" >}}
 
-To enable the service from the **System > Services** screen, click the toggle for the service and set **Start Automatically** to start the service when TrueNAS boots.
+To enable the service from the **System > Services** screen, click the <span class="iconify" data-icon="mdi:play-circle" title="Start Service">Start Service</span> icon to start the service and toggle **Start Automatically** on to start the service when TrueNAS boots.
 
 {{< hint type=note >}}
 The NFS service does not automatically start on boot if all NFS shares are encrypted and locked.

@@ -9,7 +9,7 @@ Your CSV changelog table is now ready with version support and automated generat
 - ✅ **Version configuration**: `/static/data/changelog-versions.json`
 - ✅ **Version support**: Multiple CSV files per release version  
 - ✅ **Automated generation**: Script to combine individual releases
-- ✅ **Integration**: Added to `SCALEReleaseNotes.md` with version selector
+- ✅ **Integration**: Added to `VersionNotes.md` with version selector
 
 ### 2. **Version Configuration**
 
@@ -96,7 +96,7 @@ This will automatically:
 #### **Step D: Update Documentation Pages**
 Update your release notes page to use the new version:
 ```javascript
-// In your release notes page (e.g., SCALEReleaseNotes.md)
+// In your release notes page (e.g., VersionNotes.md)
 initializeChangelogTableForTabs('25.10');  // Matches the key in changelog-versions.json
 ```
 

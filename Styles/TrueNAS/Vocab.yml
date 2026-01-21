@@ -1,0 +1,12 @@
+extends: existence
+message: "Verify your use of '%s' with the A-Z word list."
+link: 'https://learn.microsoft.com/en-us/style-guide/a-z-word-list-term-collections/'
+level: suggestion
+ignorecase: true
+# Only flag the most commonly problematic words that appear in TrueNAS docs
+# Provides link to A-Z word list for verification
+tokens:
+  - '\ballows?\b'
+  - '\bensure\b'
+  - '\binsure\b'
+  - '\bassure\b'

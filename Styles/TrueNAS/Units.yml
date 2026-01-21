@@ -7,14 +7,6 @@ swap:
   megabytes: MB
   terabytes: TB
   kilobytes: KB
-  'zero': '0'
-  'one': '1'
-  'two': '2'
-  'three': '3'
-  'four': '4'
-  'five': '5'
-  'six': '6'
-  'seven': '7'
-  'eight': '8'
-  'nine': '9'
+  # Note: TrueNAS style allows spelling out 1-10, only flag 11+
+  # No number substitutions needed - spelled-out numbers 1-10 are acceptable
 nonword: false

@@ -8,18 +8,18 @@ aliases:
   - /scale/scaletutorials/communityrecommends/hardened-backup-repository-for-veeam/
   - /scale/communityrecommends/hardened-backup-repository-for-veeam/
 ---
-<div style="text-align:center;">
+<div style="float:left;max-width:25%;">
 
-![TrueNASVeeamReady](/images/Veeam/TrueNASVeeamReadyLogo.png "TrueNAS is Veeam Ready")
+![TrueNASVeeamReady](/images/Veeam/Ready_Repository.png "TrueNAS is Veeam Ready")
 
 </div>
 
-TrueNAS Unified Storage appliances are certified Veeam-ready and can be used to handle demanding file and VM backup requirements.
-These certification tests measure the speed and effectiveness of the data storage repository using a testing methodology defined by Veeam for full backups, full restores, synthetic full backups, and instant VM recovery from within the Veeam Backup & Replication environment.
+TrueNAS Unified Storage appliances are qualified Veeam-ready and can be used to handle demanding file and VM backup requirements.
+These qualification tests measure the speed and effectiveness of the data storage repository using a testing methodology defined by Veeam for full backups, full restores, synthetic full backups, and instant VM recovery from within the Veeam Backup & Replication environment.
 With the ability to seamlessly scale to petabytes of raw capacity, high-performance networking and cache, and all-flash options, TrueNAS appliances are ideal for large and small Veeam Backup & Replication repositories.
 
-{{< expand "Certified Hardware" "v" >}}
-These TrueNAS products are certified by Veeam:
+{{< expand "Qualified Hardware" "v" >}}
+These TrueNAS products are qualified by Veeam:
 
 ![VeeamReadyTrueNASProducts](/images/Veeam/VeeamReadyiX.png "TrueNAS Products that are Veeam Ready")
 
@@ -28,14 +28,14 @@ For more information, refer to the [Veeam Ready list](https://www.veeam.com/alli
 
 This article discusses some of the best practices when deploying TrueNAS with Veeam, the specific considerations users must be aware of, and some tips to help with performance.
 The focus is on capabilities native to TrueNAS.
-For more information on using and optimizing Veeam deployments, we encourage you to review relevant Veeam documentation, such as the [Veeam help center](https://www.veeam.com/documentation-guides-datasheets.html) and [Veeam best practices](https://bp.veeam.com/vbr) articles.
+For more information on using and optimizing Veeam deployments, users can review relevant Veeam documentation, such as the [Veeam help center](https://www.veeam.com/documentation-guides-datasheets.html) and [Veeam best practices](https://bp.veeam.com/vbr) articles.
 
-## What Do I Need?
+## Necessary Prerequisites
 
 When deploying TrueNAS with Veeam, prepare the following:
 
 * Veeam Backup & Replication dedicated server - either physical or VM
-* Windows Server and Microsoft SQL for Veeam
+* Windows Server for Veeam
 * TrueNAS appliance with users pre-configured as determined by the admin
 * Networking - 1/10/40/100GbE infrastructure and cables
 * Veeam connected to the Hypervisor or other clients to pull the data to TrueNAS
@@ -236,8 +236,6 @@ Here are additional key features that are offered out-of-the-box at no extra cos
 * **Native replication to TrueNAS systems** - TrueNAS native replication is perfect for disaster recovery and compliance.
 * **High-availability (HA) architecture with 99.999% availability** - High Availability (HA) ensures the system is always ready to receive the latest backups.
 * **Triple-parity** - RAID groups (vdevs) can be configured with mirror, single-parity (RAIDZ), dual-parity (RAIDZ2), or triple-parity (RAIDZ3) levels, while copy-on-write, checksums, and data scrubbing help protect long-term data integrity.
-* **Certified with VMware® and Citrix® XenServer®** - TrueNAS can be a hypervisor datastore and a backup repository, with data on different datasets and even pools.
- Just be mindful of the scale of the workloads being run.
 * **Unrivaled scalability in a single dataset** - TrueNAS allows scaling the backup repository from terabytes to petabytes of usable capacity.
  No LUN limits, clustering, or licenses needed.
 

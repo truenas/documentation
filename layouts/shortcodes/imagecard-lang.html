@@ -1,0 +1,59 @@
+{{ $baseLink := .Get "link" }}
+{{ $baseLinkNoExt := strings.TrimSuffix ".pdf" $baseLink }}
+{{ $image := .Get "image" }}
+{{ $title := .Get "title" }}
+{{ $descr := .Get "descr" }}
+
+{{/* EU Languages in alphabetical order with language codes */}}
+{{ $languages := slice
+  (dict "name" "Български" "code" "bg")
+  (dict "name" "Čeština" "code" "cs")
+  (dict "name" "Dansk" "code" "da")
+  (dict "name" "Deutsch" "code" "de")
+  (dict "name" "Eesti" "code" "et")
+  (dict "name" "Ελληνικά" "code" "el")
+  (dict "name" "Español" "code" "es")
+  (dict "name" "Français" "code" "fr")
+  (dict "name" "Hrvatski" "code" "hr")
+  (dict "name" "Íslenska" "code" "is")
+  (dict "name" "Italiano" "code" "it")
+  (dict "name" "Latviešu" "code" "lv")
+  (dict "name" "Lietuvių" "code" "lt")
+  (dict "name" "Lëtzebuergesch" "code" "lb")
+  (dict "name" "Magyar" "code" "hu")
+  (dict "name" "Malti" "code" "mt")
+  (dict "name" "Nederlands" "code" "nl")
+  (dict "name" "Bokmål" "code" "nb")
+  (dict "name" "Polski" "code" "pl")
+  (dict "name" "Português" "code" "pt")
+  (dict "name" "Română" "code" "ro")
+  (dict "name" "Slovenčina" "code" "sk")
+  (dict "name" "Slovenščina" "code" "sl")
+  (dict "name" "Suomi" "code" "fi")
+  (dict "name" "Svenska" "code" "sv")
+}}
+
+<a class="section-box" href="{{ $baseLink }}">
+  <div class="box-image">
+    <img class="prod-card-img" src="{{ $image }}" aria-label="{{ $title }} Documentation Page">
+  </div>
+  <div class="section-tab-content ixprods">
+    <b style="justify-content:center;font-size:1.5rem;font-weight:600;">{{ $title }}</b>
+    <p>{{ $descr }}</p>
+
+    <div class="language-selector" style="margin-top: 1rem; margin-bottom: 1rem;">
+      <select
+        id="lang-select-{{ md5 $baseLink }}"
+        class="language-dropdown"
+        onchange="event.preventDefault(); event.stopPropagation(); window.open(this.value, '_blank');"
+        onclick="event.preventDefault(); event.stopPropagation();"
+        style="padding: 0.25rem 0.5rem; border-radius: 4px; min-width: 200px; cursor: pointer; background-color: var(--body-background); color: var(--body-font-color); border: 1px solid var(--accent-color);">
+        <option value="" disabled selected>Select a language...</option>
+        {{ range $languages }}
+          {{ $langLink := printf "%s-%s.pdf" $baseLinkNoExt .code }}
+          <option value="{{ $langLink }}">{{ .name }} ({{ .code }})</option>
+        {{ end }}
+      </select>
+    </div>
+  </div>
+</a>

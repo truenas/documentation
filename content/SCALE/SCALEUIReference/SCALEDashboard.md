@@ -47,9 +47,10 @@ Click on the image to display the **View Enclosure** screen.
 |-------|-------------|
 | **Platform** | Shows as **Generic** for customer-provided server and hardware and displays the TrueNAS logo to the left of the **System Information** fields. The TrueNAS model number for the iXsystems-provided server and hardware and a picture of the server shows in the area to the left of the fields. |
 | **Version** | Shows the currently installed software release of TrueNAS. Use the clipboard <span class="material-icons-outlined">assignment</span> icon to display the full name of the release installed and to copy the version to the clipboard. |
-| **Hostname** | Shows the host name for the TrueNAS system. Configure the host name on the **Network > Global Configuration** screen. |
+| **Edition** | Shows the edition of the currently installed software release of TrueNAS. |
 | **Uptime** | Shows the number of consecutive days, hours, and minutes of system runtime since the last restart. |
 | **Updates Available**<br>**Check for Updates** | Opens the **System Update** screen, or go to **System > Update** on the left-side main menu panel to open the **System Update** screen. **Updates Available** shows when systems updates are available for the current system release train. | 
+| **System Serial** | Shows the unique serial number of the attached TrueNAS system. |
 {{< /truetable >}}
 {{< /expand >}}
 
@@ -219,8 +220,8 @@ Select an individual widget in a layout with multiple widgets to change the cate
 ### Widget Type Options by Category
 
 {{< expand "Widget Type Options for Network" "v" >}}
-There are four types available when **Widget Category** is set to **Network**.
-Selecting **Network**, **IPv4 Address** or **IPv6 Address** as the type adds the **Interfaces** field to the screen.
+There are three types available when **Widget Category** is set to **Network**.
+Selecting **Interface**, **IPv4 Address** or **IPv6 Address** as the type adds the **Interfaces** field to the screen.
 
 **Interface** shows the interface ID, link state, I/O traffic, Media type and subtype, and IP address assigned to the interface, and the dynamic bar graph for the I/O traffic. 
 Can use a full or half-size widget.
@@ -259,16 +260,14 @@ The **Backup Task** widget can only use a full-size widget.
 {{< /expand >}}
 
 {{< expand "Widget Type Options for CPU" "v" >}}
-Only **CPU** is the available widget type when **Widget Category** is set to **CPU**. It has a total of six widgets shown in two widgets on the Dashboard.
+Only **CPU Model**, **CPU Overview**, and **CPU Temp** are available as widget types when **Widget Category** is set to **CPU** and a full layout is selected.
 
-The **CPU** widgets can be full, half, or quarter-size widgets.
-CPU **Widget Type** options are **CPU Model**, **CPU Recent Usage**, **CPU usage**.
-Select the two half-size layouts to activate the option to add **CPU Temperature Per Core** and **CPU Usage Per Core**.
+**CPU Recent Temperature**, **CPU Recent Usage**, **CPU Usage Per Core**, **CPU Temperature Per Core**, and **CPU Usage** become available as a **Widget Type** when full, half, or quarter-sized layouts are selected.
 {{< /expand >}}
 
 {{< expand "Widget Type Options for System Information" "v" >}}
-The **System Information** widget has six **Widget Type** options, **Hostname-Active**, **OS Version**, **Serial-Active**, and **System Image**, System Information-Active**, and **System Uptime**.
-HA systems, with two controllers and the HA license, show the **Hostname-Standby**, **Serial-Standby**, and **System Information-Standby** widget types.
+The **System Information** widget has six **Widget Type** options, **Hostname-Active**, **OS Version**, **Serial-Active**, and **System Image**, **System Information-Active**, and **System Uptime**.
+HA systems, with two controllers and an HA license, show the **Hostname-Standby**, **Serial-Standby**, and **System Information-Standby** widget types.
 
 {{< enterprise >}}
 The dashboard in larger systems with hundreds of drives have a slower response when populating the screen widgets in normal and configuration mode.

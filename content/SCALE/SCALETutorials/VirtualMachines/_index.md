@@ -17,7 +17,7 @@ keywords:
 TrueNAS has built-in virtualization capabilities that allow running multiple operating systems on a single system, maximizing hardware utilization, and consolidating workloads.
 
 A *virtual machine (VM)* is a software-based computer that runs inside your TrueNAS system, and appears as a separate physical machine to the operating system installed within it.
-VMs use virtualized hardware components including, network interfaces, storage volumes, graphics adapters, and other devices, providing complete isolation between different operating systems and applications.
+VMs use virtualized hardware components, including, network interfaces, storage volumes, graphics adapters, and other devices, providing complete isolation between different operating systems and applications.
 
 VMs offer stronger isolation than [containers](/scale/scaletutorials/containers/) but require more system resources, making them ideal for running full operating systems, legacy applications, or services that need dedicated environments.
 
@@ -51,18 +51,21 @@ If you have not yet added a virtual machine to your system, clicking **Add Virtu
 
    c. (Optional) Enter a description for the VM. This can be any short text string describing how the VM is used or which operating system is configured.
 
-   d. (Optional) Change the default settings in **System Clock** and **Boot Method** to suit your use case. 
+   d. (Optional) Change the default settings in **System Clock** and **Boot Method** to suit your use case.
       Select **UTC** as the VM system time from the **System Clock** dropdown if you do not want to use the default **Local** setting.
       Select **UEFI** from the **Boot Method** dropdown, unless using an older OS that requires **Legacy BIOS**.
 
-   e. (Optional) Select **Enable Secure Boot** to enable cryptographic verification of boot loaders, operating system kernels, and drivers during VM startup. This security feature prevents unauthorized or malicious code from running during the boot process by checking digital signatures against trusted certificates. Secure Boot is required for Windows 11 and some Linux distributions, and can be optional or unsupported for older operating systems.
-      
+   e. (Optional) Select **Enable Secure Boot** to enable cryptographic verification of boot loaders, operating system kernels, and drivers during VM startup.
+      This security feature prevents unauthorized or malicious code from running during the boot process by checking digital signatures against trusted certificates.
+      Secure Boot is required for Windows 11 and some Linux distributions, and can be optional or unsupported for older operating systems.
+      Secure boot is only available from the VM creation wizard.
+
    f. (Optional) Select **Enable Trusted Platform Module (TPM)** to provide a virtual TPM 2.0 device for the VM.
-   TPM provides hardware-based security functions, including secure key storage, cryptographic operations, and platform attestation.
-   This is required for Windows 11 and enhances security for other operating systems that support TPM.
+      TPM provides hardware-based security functions, including secure key storage, cryptographic operations, and platform attestation.
+      This is required for Windows 11 and enhances security for other operating systems that support TPM.
 
    g. (Optional) Select **Start on Boot** to start the VM after the system is restarted or boots up.
-   
+
    h. (Optional) Select **Enable Display (VNC)** to enable a Virtual Network Computing (VNC) remote connection for the VM.
       **Enable Display (VNC)** shows the **Bind** and **Password** fields.
 
@@ -104,11 +107,17 @@ If you have not yet added a virtual machine to your system, clicking **Add Virtu
 
    Select **Use existing disk image** to use an existing zvol for the VM.
 
+   (Optional) Select **Import Image** to import an existing disk image file and convert it to a zvol for use by the VM.
+
+   {{< trueimage src="/images/SCALE/Virtualization/ImportDiskImageSettings.png" alt="Import Image Options" id="Import Image Options" >}}
+
+   When you select **Import Image**, browse to and select the source disk image file in **Image Source**.
+   The system automatically detects the image format (QCOW2, QED, RAW, VDI, VHDX, or VMDK).
+   Select the destination dataset in **Zvol Location** where the system creates the converted zvol.
+
    Select either **AHCI** or **VirtIO** from the **Select Disk Type** dropdown list. We recommend using **AHCI** for Windows VMs.
 
-   Select the location for the new zvol from the **Zvol Location** dropdown list.
-
-   Enter a value in **Size (Examples: 500KiB, 500M, and 2TB)** to indicate the amount of space to allocate for the new zvol.
+   When creating a new disk image, select the location for the new zvol from the **Zvol Location** dropdown list and enter a value in **Size (Examples: 500KiB, 500M, and 2TB)** to indicate the amount of space to allocate for the new zvol.
 
    Click **Next**.
 
@@ -116,8 +125,8 @@ If you have not yet added a virtual machine to your system, clicking **Add Virtu
 
    {{< trueimage src="/images/SCALE/Virtualization/CreateVirtualMachinesNetworkInterfaceSettings.png" alt="Network Interface Settings" id="Network Interface Settings" >}}
 
-   Select the network interface type from the **Adapter Type** dropdown list. Select **Intel e82585 (e1000)** as it offers a higher level of compatibility with most operating systems. 
-   
+   Select the network interface type from the **Adapter Type** dropdown list. Select **Intel e82585 (e1000)** as it offers a higher level of compatibility with most operating systems.
+
    Select **VirtIO** if the guest operating system supports para-virtualized network drivers.
    The **VirtIO** network interface requires a guest OS that supports VirtIO para-virtualized network drivers.
 
@@ -177,6 +186,25 @@ If the VM does not have a guest OS installed, the VM **Running** toggle and <i c
 The **Running** toggle and <i class="material-icons" aria-hidden="true" title="Stop Button">stop</i> **Stop** buttons send an ACPI power down command to the VM operating system, but since an OS is not installed, these commands time out.
 Use the **Power Off** button instead.
 {{< /hint >}}
+
+### Deleting a Virtual Machine
+
+To delete a VM, first stop it if it is running, then click <i class="material-icons" aria-hidden="true" title="Delete">delete</i> **Delete** on the expanded VM details screen.
+
+The **Delete Virtual Machine** dialog opens with options to control what data is removed.
+
+{{< trueimage src="/images/SCALE/Virtualization/DeleteVirtualMachineDialog.png" alt="Delete Virtual Machine Dialog" id="Delete Virtual Machine Dialog" >}}
+
+**Delete Virtual Machine Data** removes the zvols and data associated with the VM. When selected, the dialog displays a list of disk and raw file devices to delete.
+
+{{< hint type="warning" >}}
+Deleting a VM with **Delete Virtual Machine Data** selected results in permanent data loss if the data is not backed up.
+Do not select this option if you want to keep the VM zvols intact for use with another VM or for data recovery.
+{{< /hint >}}
+
+**Force Delete** ignores the VM status during the delete operation. Only select this if the VM is in an undefined state and cannot be stopped normally.
+
+Enter the VM name in the confirmation field to enable the **Delete** button, then click **Delete** to remove the VM.
 
 ## Installing an OS
 

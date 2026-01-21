@@ -62,7 +62,7 @@ class LinkableTabBox {
         styleSheet.id = 'linkable-tabs-styles';
         styleSheet.textContent = `
             .linkable-tabs-wrapper {
-                --truenas-primary: #1194d2;
+                --truenas-primary: #0095d5;
                 --truenas-primary-hover: #36bdeb;
                 --truenas-secondary: #71bf44;
                 --truenas-inactive: #676767;
@@ -154,30 +154,51 @@ class LinkableTabBox {
                 to { opacity: 1; transform: translateY(0); }
             }
             
+            /* Medium width tab overlap fix */
+            @media (max-width: 1310px) and (min-width: 1081px) {
+                .linkable-tabs-nav {
+                    max-width: 100%;
+                    flex-wrap: wrap;
+                    gap: 4px;
+                }
+                
+                .linkable-tab-button {
+                    padding: 12px 18px;
+                    font-size: 13px;
+                    white-space: nowrap;
+                    border-right: none !important;
+                    border-radius: 8px !important;
+                    margin-bottom: 4px;
+                }
+                
+                .linkable-tabs-wrapper .linkable-tab-button.first-tab,
+                .linkable-tabs-wrapper .linkable-tab-button.last-tab {
+                    border-radius: 8px !important;
+                }
+            }
+            
             /* Responsive design */
             @media (max-width: 768px) {
                 .linkable-tabs-nav {
                     flex-direction: column;
+                    gap: 4px;
                 }
                 
                 .linkable-tab-button {
-                    border-right: none;
-                    border-bottom: 1px solid var(--accent-color, #dee2e6);
+                    border-right: none !important;
+                    border-bottom: none !important;
                     text-align: center;
-                    border-radius: 0 !important;
+                    border-radius: 8px !important;
+                    margin-bottom: 4px;
                 }
                 
-                .linkable-tab-button:first-child {
-                    border-top-left-radius: 8px !important;
-                    border-top-right-radius: 8px !important;
+                .linkable-tab-button:first-child,
+                .linkable-tab-button:last-of-type {
+                    border-radius: 8px !important;
                 }
                 
                 .linkable-tab-button:last-of-type {
-                    border-bottom: none;
-                    border-bottom-left-radius: 8px !important;
-                    border-bottom-right-radius: 8px !important;
-                    border-top-left-radius: 0 !important;
-                    border-top-right-radius: 0 !important;
+                    margin-bottom: 0;
                 }
                 
                 .linkable-tab-content {
@@ -463,6 +484,11 @@ ${this.config.enableMarkdown ? this.parseMarkdown(cleanContent) : cleanContent}
             if (updateUrl && this.config.urlHashEnabled) {
                 history.pushState(null, null, `#${tabId}`);
             }
+
+            // Dispatch custom event for jump button sync
+            window.dispatchEvent(new CustomEvent('tabActivated', {
+                detail: { tabId: tabId }
+            }));
         }
     }
 
@@ -500,6 +526,11 @@ ${this.config.enableMarkdown ? this.parseMarkdown(cleanContent) : cleanContent}
             // Execute any scripts in the newly shown tab content
             this.executeTabScripts(pane);
         }
+
+        // Dispatch event with current state (after both expand and collapse)
+        window.dispatchEvent(new CustomEvent('tabActivated', {
+            detail: { tabId: isCurrentlyActive ? null : tabId }
+        }));
     }
 
     collapseAllTabs() {
@@ -520,6 +551,11 @@ ${this.config.enableMarkdown ? this.parseMarkdown(cleanContent) : cleanContent}
             if (pane) pane.classList.remove('active');
             if (button) button.classList.remove('active');
         });
+
+        // Dispatch event indicating no active tabs
+        window.dispatchEvent(new CustomEvent('tabActivated', {
+            detail: { tabId: null }
+        }));
     }
 
     expandTab(tabId, updateUrl = false) {

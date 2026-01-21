@@ -83,7 +83,7 @@ The TrueNAS documentation includes two main content types for each version:
 
 ### Development Content (Nightly/Unstable)
 - TrueNAS 25.10 Development Content: https://truenas.com/docs/scale/
-- Latest Development Features: https://truenas.com/docs/scale/gettingstarted/scalereleasenotes/
+- Latest Development Features: https://truenas.com/docs/scale/gettingstarted/versionnotes/
 
 ## TrueNAS 25.04 (Current Stable - Default)
 

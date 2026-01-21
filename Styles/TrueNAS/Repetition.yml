@@ -1,0 +1,30 @@
+extends: repetition
+message: "'%s' is repeated!"
+level: error
+alpha: true
+tokens:
+  - '[^\s]+'
+# Ignore repetitions that are part of common UI patterns
+exceptions:
+  - list
+  - List
+  - screen
+  - Screen
+  - button
+  - Button
+  - field
+  - Field
+  - menu
+  - Menu
+  - panel
+  - Panel
+  - widget
+  - Widget
+  - dialog
+  - Dialog
+  - window
+  - Window
+  - card
+  - Card
+  - page
+  - Page

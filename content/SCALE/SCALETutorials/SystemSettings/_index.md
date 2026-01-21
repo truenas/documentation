@@ -38,7 +38,7 @@ TrueNAS system management options are collected in this section of the UI and or
 
 * **Services** displays each system component that runs continuously in the background.
   These typically control data sharing or other external access to the system.
-  Individual services have their own configuration screens and activation toggles, and can be set to run automatically.
+  Individual services have their own configuration screens, start and stop buttons, and can be set to start automatically.
 
 * **Shell** allows users to use the Linux command-line interface (CLI) directly in the web UI.
 

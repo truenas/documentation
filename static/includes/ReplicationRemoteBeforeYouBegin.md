@@ -21,7 +21,7 @@ When setting up remote replication:
 
    Select **Create Home Directory**, then use the file browser to select an existing dataset or use **Create Dataset** after selecting the parent dataset to create a new dataset for home directories.
    
-   See [Managing Users]({{< ref "ManageLocalUsersSCALE" >}}) for more information on home directories, SSH access, and sudo commands.
+   See [Managing Users]({{< ref "ManageUsers" >}}) for more information on home directories, SSH access, and sudo commands.
 
 3. Set up an [SSH connection]({{< ref "AddSSHConnectionKeyPair" >}}) in TrueNAS before creating a remote replication task.
 

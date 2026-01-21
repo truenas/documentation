@@ -12,7 +12,7 @@ tags:
 TrueNAS 25.04 and later uses a versioned [JSON-RPC 2.0 over WebSocket API](https://api.truenas.com) with support for user-linked API access keys ([API Reference]({{< ref "/scale/api" >}})).
 
 User-linked API keys allow administrators to configure per-user access to the TrueNAS API.
-Keys are revocable and can be configured to expire on a preset date.
+Keys are revocable. You can also configure them to expire on a preset date.
 
 Click <i class="material-icons" aria-hidden="true" title="laptop" style="vertical-align: top;">laptop</i> **My API Keys** from the <i class="material-icons" aria-hidden="true">account_circle</i> user settings dropdown menu in the top right toolbar.
 The **User API Keys** screen opens.
@@ -25,15 +25,29 @@ Click **API Docs** to view [API Documentation](#api-documentation) embedded with
 
 {{<include file="/static/includes/addcolumnorganizer.md">}}
 
+## TrueNAS Connect API Keys
+
+TrueNAS Connect automatically creates an API key when you register your system in the TrueNAS Connect service. TrueNAS uses this key, shown on the **User API Key** screen, to authenticate with the TrueNAS Connect service.
+
+{{< trueimage src="/images/SCALE/Dashboard/APIKeysScreenWithTNCKeys.png" alt="TrueNAS Connect API Keys" id="TrueNAS Connect API Keys" >}}
+
+There are instances where you might see more than one *tnc* key listed.
+
+If you delete a *tnc* API key, the TrueNAS Connect prompts you to re-authenticate the next time you connect to the service.
+
 ## Adding an API Key
 
 {{< include file="/static/includes/API_AD.md" >}}
 
 {{< include file="/static/includes/APIKeyWarn.md" >}}
 
-Select **My API Keys** from the **Settings** dropdown on the top toolbar or click **API Keys** on the **Users** screen to open the **User API Keys** screen.
+Select **My API Keys** from the **Settings** dropdown on the top toolbar.
 
-Click **Add** to open the **Add API Key** screen.
+Alternatively, you can go to **Credentials > Users**, select the user row, and then click the **View API Keys** link on the **Access** widget to open the **User API Keys** screen.
+
+If a key does not exist for the user, click on the **Add API Key** link to open the **Add API Key** screen.
+
+Click **Add API Key** to open the **Add API Key** screen.
 
 {{< trueimage src="/images/SCALE/Dashboard/APIKeysAdd.png" alt="Add API Key" id="Add API Key" >}}
 
@@ -46,7 +60,7 @@ A non-expiring key remains active until it is manually revoked or changed to exp
 To create a key with a scheduled expiration, disable **Non-expiring** by clearing the checkbox.
 Click on the calendar icon in the **Expires On** field and select the expiration date. The field does not allow typing a date.
 
-{{< trueimage src="/images/SCALE/Dashboard/APIKeyExpires.png" alt="Key Expiration Settings" id="Key Expiration Settings" >}}
+{{< trueimage src="/images/SCALE/Credentials/AddAPIKeyExpiration.png" alt="Set API Key Expiration" id="Set API Key Expiration" >}}
 
 Click **Save**. The **API Key** dialog opens with a generated key string.
 TrueNAS API key strings are 64 randomly generated characters long.
