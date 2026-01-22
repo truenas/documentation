@@ -33,7 +33,7 @@ To configure TrueNAS to use an LDAP directory server:
 
 3. Enter the **Basic Configuration** settings:
 
-{{< trueimage src="/images/SCALE/Credentials/LDAPBasicConfig.png" alt="LDAP Basic Configuration" id="LDAP Basic Configuration" >}}
+   {{< trueimage src="/images/SCALE/Credentials/LDAPBasicConfig.png" alt="LDAP Basic Configuration" id="LDAP Basic Configuration" >}}
 
    * Select the **Enable Service** checkbox to activate the LDAP configuration. Selected by default.
 
@@ -59,7 +59,7 @@ To configure TrueNAS to use an LDAP directory server:
 
 5. Enter the **LDAP Configuration** settings:
 
-{{< trueimage src="/images/SCALE/Credentials/LDAPBasicOptionsSettings.png" alt="LDAP Configuration" id="LDAP Configuration" >}}
+   {{< trueimage src="/images/SCALE/Credentials/LDAPBasicOptionsSettings.png" alt="LDAP Configuration" id="LDAP Configuration" >}}
 
    * Enter the LDAP server URLs in **Server URLs**. Required. Separate multiple entries by pressing <kbd>Enter</kbd>. If using a cloud service LDAP server, do not include the full URL.
 
