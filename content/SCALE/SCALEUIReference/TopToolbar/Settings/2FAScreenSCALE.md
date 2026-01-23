@@ -36,9 +36,9 @@ Users can still configure their personal 2FA settings, but authentication codes 
 
 When Global 2FA is enabled but the current user has not configured their personal 2FA, the screen displays the following messages:
 
-> Two-Factor authentication is enabled on this system, but it's not yet configured for your user. Please configure it now.
+**Two-Factor authentication is enabled on this system, but it's not yet configured for your user. Please configure it now.**
 
-> Two-Factor Authentication has been enabled on this system. It is strongly recommended to set up 2FA for your account to enhance security. Make sure to scan the QR code with your authenticator app before logging out or navigating away, otherwise you may have difficulty accessing your account later.
+**Two-Factor Authentication has been enabled on this system. It is strongly recommended to set up 2FA for your account to enhance security. Make sure to scan the QR code with your authenticator app before logging out or navigating away, otherwise you may have difficulty accessing your account later.**
 
 Users should configure their 2FA immediately to maintain secure access to their account.
 
