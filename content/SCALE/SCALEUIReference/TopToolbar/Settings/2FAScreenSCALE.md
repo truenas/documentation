@@ -46,7 +46,7 @@ Users should configure their 2FA immediately to maintain secure access to their 
 
 When the user has configured 2FA, the screen displays a green confirmation message:
 
-> Two-Factor authentication has been configured.
+**Two-Factor authentication has been configured.**
 
 The screen also displays the QR code and text code for the user's 2FA secret.
 
