@@ -68,7 +68,7 @@ Click **Renew** to confirm or **Cancel** to keep the existing secret.
 
 **Unset 2FA Secret** removes the existing 2FA configuration for the user. A confirmation dialog appears with the message:
 
-> Are you sure you want to unset two-factor authentication? This will remove your current 2FA configuration and you will need to set it up again to use 2FA.
+**Are you sure you want to unset two-factor authentication? This will remove your current 2FA configuration and you will need to set it up again to use 2FA.**
 
 Click **Unset 2FA** to confirm or **Cancel** to keep the existing configuration.
 
