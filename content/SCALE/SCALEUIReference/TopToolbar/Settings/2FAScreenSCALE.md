@@ -82,7 +82,7 @@ Removing your 2FA configuration reduces account security. If Global 2FA is enabl
 
 After configuring 2FA, the screen displays a QR code that users scan with their authenticator app. The screen also displays the following warning:
 
-> Scan this QR Code with your authenticator app of choice. The next time you try to login, you will be asked to enter an One Time Password (OTP) from your authenticator app. This step is extremely important. Without the OTP you will be locked out of this system.
+**Scan this QR Code with your authenticator app of choice. The next time you try to login, you will be asked to enter an One Time Password (OTP) from your authenticator app. This step is extremely important. Without the OTP you will be locked out of this system.**
 
 ### Text Code Section
 
