@@ -56,7 +56,7 @@ The **Set Up Two-Factor Authentication** card contains the following elements:
 
 ### Actions
 
-**Configure 2FA Secret** appears when the user has not yet configured 2FA. Click to generate a new 2FA secret and display the QR code.
+**Configure 2FA Secret** shows before the user configures 2FA. Clicking on this generates a new 2FA secret and displays the QR code.
 
 **Renew 2FA Secret** appears after 2FA is configured. Click to generate a new secret and QR code. A confirmation dialog appears with the message:
 
