@@ -77,7 +77,7 @@ Before you begin, install a TOTP-compatible authenticator app on your mobile dev
 
    {{< trueimage src="/images/SCALE/SystemSettings/Enable2FAGlobally.png" alt="Enable2FAGlobally" id="Check Enable Two Factor Authentication Globally" >}}
 
-   If you want to enable two-factor authentication for SSH logins, select **Enable Two-Factor Auth for SSH** before you click **Save**.
+   If you want to enable two-factor authentication for SSH logins, select **Enable Two Factor Authentication for SSH** before you click **Save**.
    SSH 2FA only applies to users who configured a 2FA secret and are using password-based authentication.
 
    {{< hint type=tip >}}
@@ -93,19 +93,18 @@ See [Setting Up Individual 2FA](#setting-up-individual-2fa) for detailed instruc
 
 ### Disabling Global 2FA
 
-Go to **System > Advanced Settings**, scroll down to the **Global Two Factor Authentication** widget, and click **Config**. Clear the **Enable Two-Factor Authentication Globally** checkbox and click **Save**.
+Go to **System > Advanced Settings**, scroll down to the **Global Two Factor Authentication** widget, and click **Configure**. Clear the **Enable Two Factor Authentication Globally** checkbox and click **Save**.
 
 ### Reactivating Global 2FA
 
-If you want to enable 2FA again, go to **System > Advanced Settings**, scroll down to the **Global Two Factor Authentication** widget, and click **Config**.
+If you want to enable 2FA again, go to **System > Advanced Settings**, scroll down to the **Global Two Factor Authentication** widget, and click **Configure**.
 
 Select **Enable Two Factor Authentication Globally**, then click **Save**.
-To change the system-generated **Secret**, click on the **Settings** icon on the top toolbar and select **Two-Factor Authentication**.
-Click **Renew 2FA Secret**.
+To change the system-generated **Secret**, go to **Credentials > Two Factor Auth** and click **Renew 2FA Secret**.
 
 ## Setting Up Individual 2FA
 
-When administrators enable Global 2FA, users without 2FA configured are prompted to set it up on their next login. Users can also set up 2FA at any time by accessing **Settings > Two-Factor Authentication** from the top toolbar.
+When administrators enable Global 2FA, users without 2FA configured are prompted to set it up on their next login. Users can also set up 2FA at any time by going to **Credentials > Two Factor Auth**, or by clicking the **Settings** icon on the top toolbar and selecting **Two-Factor Authentication** (this option only appears when Global 2FA is enabled).
 
 {{< hint type=warning >}}
 Set up a second 2FA device as a backup before proceeding.
@@ -115,26 +114,20 @@ Before you begin, install a TOTP-compatible authenticator app on your mobile dev
 
 **To set up individual 2FA:**
 
-1. Click the **Settings** icon on the top toolbar, then select **Two-Factor Authentication** to open the **User Two-Factor Authentication Actions** screen.
+1. Go to **Credentials > Two Factor Auth** to open the **Two Factor Auth** screen.
 
-   {{< trueimage src="/images/SCALE/SystemSettings/UserTwoFactorAuthenticationActionsScreen.png" alt="User Two-Factor Authentication Actions Screen" id="User Two-Factor Authentication Actions Screen" >}}
-
-2. Click **Configure 2FA Secret** to open the **Set Up Two-Factor Authentication** screen and view the QR code. The **Set Up Two-Factor Authentication** screen also has the unique key with a copy to clipboard button so you can configure 2FA using a non-camera method if necessary.
+   {{< trueimage src="/images/SCALE/SystemSettings/UserTwoFactorAuthenticationActionsScreen.png" alt="Two Factor Auth Screen" id="Two Factor Auth Screen" >}}
 
    {{< hint type="info">}}
-   You can configure two-factor authentication and get the QR code for an authenticator app for the logged-in user at any time, but you must configure global two-factor authentication to enable it.
+   If Global 2FA is not enabled, the screen displays a warning message. You can still configure your personal 2FA settings, but they do not take effect until a system administrator enables Global 2FA.
    {{< /hint >}}
 
-   Set **Interval** to **30** seconds to match the default setting used by most authenticator apps. Using a non-standard interval can cause authentication codes to fail during login.
-
-3. Scan the QR code using your authenticator app or manually enter the unique key.
-   To generate a new QR code click **Renew 2FA Secret**.
+2. Click **Configure 2FA Secret** to view the QR code and setup options. The screen displays the unique key with a copy to clipboard button so you can configure 2FA using a non-camera method if necessary.
 
    {{< trueimage src="/images/SCALE/SystemSettings/SetUpTwoFactorAuthenticationScreen.png" alt="Set Up Two-Factor Authentication Screen" id="Set Up Two-Factor Authentication Screen" >}}
 
-4. After scanning the code:
-   - If prompted during login: Click **Finish** to close the setup dialog.
-   - If accessing from the **Settings** menu: Your configuration is saved automatically. You can navigate to other screens as needed.
+3. Scan the QR code using your authenticator app or manually enter the unique key.
+   To generate a new QR code, click **Renew 2FA Secret**.
 
 Your 2FA is now configured. You need to enter codes from your authenticator app when logging in.
 
@@ -144,13 +137,8 @@ If you prefer not to set up 2FA at this time, see [Skipping 2FA Setup](#skipping
 
 When administrators enable **Global 2FA**, users without 2FA configured are prompted to set it up on their next login. However, individual setup is optional and can be skipped. See [Setting Up Individual 2FA](#setting-up-individual-2fa) for the full setup process.
 
-To skip the setup:
-
-1. When the **Two-Factor Authentication** setup screen appears, click **Skip Setup**.
-2. Confirm the decision in the dialog that appears.
-
 {{< hint type=note >}}
-While 2FA significantly enhances security and is strongly recommended, skipping the initial setup does not prevent access to the system. Users can configure 2FA later by accessing **Settings > Two-Factor Authentication** from the top toolbar.
+While 2FA significantly enhances security and is strongly recommended, skipping the initial setup does not prevent access to the system. Users can configure 2FA later by going to **Credentials > Two Factor Auth**.
 {{< /hint >}}
 
 The setup prompt appears once per login session. If you skip setup, you are prompted again on your next login until you configure 2FA.
@@ -159,7 +147,7 @@ The setup prompt appears once per login session. If you skip setup, you are prom
 
 Users can remove their personal 2FA configuration without disabling global 2FA:
 
-1. Click the **Settings** icon on the top toolbar and select **Two-Factor Authentication**.
+1. Go to **Credentials > Two Factor Auth**.
 2. Click **Unset 2FA Secret**.
 3. Confirm the removal when prompted.
 
@@ -212,7 +200,7 @@ TOTP codes regenerate every 30 seconds (by default). If a code expires while you
 
 ### Logging In Using SSH
 
-1. Confirm that you set **Enable Two-Factor Auth for SSH** in **System > Advanced > Global Two Factor Authentication**.
+1. Confirm that you set **Enable Two Factor Authentication for SSH** in **System > Advanced Settings > Global Two Factor Authentication**.
 
 2. Ensure the user configured a 2FA secret (see [Enabling 2FA](#enabling-2fa) above).
 
