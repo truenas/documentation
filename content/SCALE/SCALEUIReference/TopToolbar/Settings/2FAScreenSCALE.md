@@ -60,7 +60,7 @@ The **Set Up Two-Factor Authentication** card contains the following elements:
 
 **Renew 2FA Secret** appears after 2FA is configured. Click to generate a new secret and QR code. A confirmation dialog appears with the message:
 
-> Renewing the secret will cause a new URI and a new QR code to be generated, making it necessary to update your two-factor device or app.
+**Renewing the secret will cause a new URI and a new QR code to be generated, making it necessary to update your two-factor device or app.**
 
 Click **Renew** to confirm or **Cancel** to keep the existing secret.
 
