@@ -32,3 +32,10 @@ The **Kerberos Settings** configuration screen is available for advanced Kerbero
 {{< hint type=note >}}
 Advanced Kerberos auxiliary parameter configuration options are removed in TrueNAS 25.10. Kerberos settings are now managed through the unified directory services configuration.
 {{< /hint >}}
+
+{{< truetable >}}
+| Setting | Description |
+|---------|-------------|
+| **Appdefaults Auxiliary Parameters** | Additional Kerberos application settings. See the  *appdefaults* section of [krb.conf(5)](https://web.mit.edu/kerberos/krb5-1.20/doc/admin/conf_files/krb5_conf.html) for available settings and usage syntax. |
+| **Libdefaults Auxiliary Parameters** | Additional Kerberos library settings. See the *libdefaults* section of [krb.conf(5)](https://web.mit.edu/kerberos/krb5-1.20/doc/admin/conf_files/krb5_conf.html) for available settings and usage syntax. |
+{{< /truetable >}}

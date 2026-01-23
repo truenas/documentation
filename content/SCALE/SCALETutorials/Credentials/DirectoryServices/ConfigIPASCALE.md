@@ -13,9 +13,8 @@ keywords:
 
 TrueNAS supports [IPA (Identity, Policy, and Audit)](https://www.freeipa.org/) as a comprehensive identity management solution.
 IPA integrates LDAP, Kerberos, NTP, and DNS services in a single package, providing centralized authentication and authorization for network resources.
-{{< hint type=note >}}
-You can have either Active Directory, LDAP, or IPA configured on TrueNAS but not multiple directory services simultaneously.
-{{< /hint >}}
+
+{{< include file="/static/includes/DirectoryServiceConflictAdmonition.md" >}}
 
 {{< expand "Does IPA work with SMB?" "v" >}}
 IPA can work with SMB shares when properly configured.
@@ -30,29 +29,53 @@ Configure TrueNAS to use an IPA directory server:
 
 1. Go to **Credentials > Directory Services** and click **Configure Directory Services** to open the **Directory Services Configuration** form.
 
-2. Select **IPA** as the **Configuration Type**.
+2. Select **IPA** from the **Configuration Type** dropdown list.
 
-{{< trueimage src="/images/SCALE/Credentials/IPAFinalConfigOptions.png" alt="IPA Configuration" id="IPA Configuration" >}}
+3. Enter the **Basic Configuration** settings:
 
-3. Enter or select the **Basic Configuration** settings:
-   - **Enable Service**, selected by default, activates the IPA configuration. Clear the checkbox to disable the service.
-   - **Enable Account Cache**, selected by default, caches user and group information for improved performance. Clear the checkbox to disable.
-   - **Enable DNS Updates**, selected by default, allows the directory service to update DNS records. Clear the checkbox to disable.
-   - Enter the number of seconds (1-40 seconds) before the connection for directory services times out in **Timeout (seconds)**.
-   - Enter the domain name in **Kerberos Realm**. This is usually the uppercase version of the domain name, e.g., *EXAMPLE.COM*.
+   {{< trueimage src="/images/SCALE/Credentials/IPABasicConfigOptions.png" alt="IPA Basic Options" id="IPA Basic Options" >}}
 
-   {{< trueimage src="/images/SCALE/Credentials/IPABasicConfigOptions.png" alt="IPA Configuration" id="IPA Configuration" >}}
+   * Select the **Enable Service** checkbox to activate the IPA configuration. Selected by default.
 
-4. Select the appropriate **Credential Type** for IPA authentication from the dropdown list. Options are **Kerberos User** or **Kerberos Principal**.
+   * Select the **Enable Account Cache** checkbox to cache user and group information. Caching makes directory users and groups available in UI dropdown menus. Selected by default.
 
-5. Enter or select the **IPA Configuration** settings:
-   - Enter the host name or IP address in **Target Server**.
-   - Enter the host name for your TrueNAS system in **TrueNAS Hostname**.
-   - Enter the **Domain** name.
-   - Enter the **Base DN** for the IPA directory.
-   - Select **Validate Certificates** to verify certificate authenticity when connecting to the IPA server.
+   * Select the **Enable DNS Updates** checkbox to allow the directory service to update DNS records. Selected by default.
 
-6. Select **Use Default SMB Domain Configuration** to use default settings, or clear the checkbox to enter a name, the domain and range settings.
+   * Enter the number of seconds (1-40) before the directory service connection times out in **Timeout (seconds)**. Required.
+
+   * Enter the domain name in **Kerberos Realm**. This is usually the uppercase version of the domain name, for example, *EXAMPLE.COM*.
+
+4. Enter the **Credential Configuration** settings:
+
+   {{< trueimage src="/images/SCALE/Credentials/DirectoryServicesCredentialConfig.png" alt="Credential Configuration" id="Credential Configuration" >}}
+
+   * Select **Kerberos User** from the **Credential Type** dropdown list. Required.
+
+   * Enter the IPA user account username in **Username**. Required.
+
+   * Enter the password for the user account in **Password**. Required.
+
+5. Enter the **IPA Configuration** settings:
+
+   {{< trueimage src="/images/SCALE/Credentials/IPAConfigurationSettings.png" alt="IPA Configuration" id="IPA Configuration" >}}
+
+   * Enter the IPA server hostname or IP address in **Target Server**. Required.
+
+   * Enter the hostname for your TrueNAS system in **TrueNAS Hostname**. Required.
+
+   * Enter the domain name in **Domain**. Required.
+
+   * Enter the base distinguished name for the IPA directory in **Base DN**. Required. For example, *dc=example,dc=com*.
+
+   * (Optional) Select the **Validate Certificates** checkbox to verify certificate authenticity when connecting to the IPA server. TrueNAS validates the full certificate chain when this option is selected.
+
+6. Configure SMB domain settings:
+
+   {{< trueimage src="/images/SCALE/Credentials/IPASMBConfig.png" alt="IPA SMB Configuration" id="IPA SMB Configuration" >}}
+
+   Select **Use Default SMB Domain Configuration** to use default SMB domain settings. Selected by default.
+
+   To customize SMB domain settings, clear **Use Default SMB Domain Configuration** to reveal additional configuration options: **Name**, **Domain Name**, **Range Low**, **Range High**, and **Domain SID**.
 
 7. Click **Save**.
 

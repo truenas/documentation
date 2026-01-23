@@ -17,66 +17,113 @@ tags:
 
 {{< include file="/static/includes/DirectoryServiceAccessAdmonition.md" >}}
 
+## Configuring Active Directory
+
+The **Active Directory** directory service configuration screen shows after selecting **Active Directory** in the **Configuration Type** dropdown list in the **Directory Services Configuration** screen.
+
+For detailed configuration instructions, see [Configuring Active Directory]({{< relref "ConfigADSCALE.md" >}}).
+
 ## Active Directory Widget
-The **Active Directory** widget displays after you configure TrueNAS to access your Active Directory domain controller.
+
+The **Active Directory** widget displays after configuring TrueNAS to access your Active Directory domain controller.
 The widget shows **Status**, **Domain Name**, and **Domain Account Name**.
 
 {{< trueimage src="/images/SCALE/Credentials/ActiveDirectoryWidget.png" alt="Active Directory Widget" id="Active Directory Widget" >}}
 
-**Settings** opens the **Active Directory** edit screen that shows the settings you can edit.
-
-## Active Directory - Add and Edit Screens
-The **Active Directory** configuration screen opens showing the **Basic Options** as the default view.
-**Advanced Options** shows additional advanced setting options.
-After configuring TrueNAS to access Active Directory, **Settings** opens the **Active Directory** screen showing the few basic options you can edit and the option to access advanced settings.
+**Settings** opens the **Active Directory** configuration screen.
 
 **Rebuild Directory Service Cache** resyncs the cache if it gets out of sync or if there are fewer users than expected available in the permissions editors.
 
-**Leave Domain** shows after configuring Active Directory access, and disconnects the TrueNAS system from the Active Directory server.
+**Leave Domain** removes the TrueNAS system from the Active Directory server.
 
-### Active Directory - Basic Options
-The edit version of the **Basic Options** screen only shows options you can edit, which are the **Domain Name** and **Enable** options.
-**Basic Options** settings also show on the **[Advanced Options](#active-directory-advanced-options)** screen.
+## Directory Services Active Directory Configuration Screen
 
-{{< trueimage src="/images/SCALE/Credentials/ActiveDirectoryBasicOptions.png" alt="Active Directory Basic Options" id="Active Directory Basic Options" >}}
+The **Directory Services Configuration** screen organizes settings into multiple sections: **Basic Configuration**, **Credential Configuration**, **Active Directory Configuration**, **Trusted Domains Configuration**, and **IDMAP Configuration**.
 
-{{< trueimage src="/images/SCALE/Credentials/ActiveDirectoryBasicOptionsEditScreen.png" alt="Active Directory Edit Basic Options" id="Active Directory Edit Basic Options" >}}
+The **Directory Services Configuration** screen is used to configure one of three directory services: Active Directory, IPA, or LDAP. The configuration sections and settings change based on the **Configuration Type** selected.
 
-{{< expand "Basic Option Settings" "v" >}}
+### Active Directory Basic Configuration Section
+
+The **Basic Configuration** section settings control core Active Directory service settings.
+
+{{< trueimage src="/images/SCALE/Credentials/ADBasicConfig.png" alt="AD Basic Configuration" id="AD Basic Configuration" >}}
+
+{{< expand "Basic Configuration Settings" "v" >}}
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **TrueNAS Hostname** | Enter the hostname for the TrueNAS system. The hostname can be found on the **System > Network** screen. The name cannot exceed 15 characters. Cannot contain: `\ / : * ? " < > |`. Cannot use Microsoft or RFC 852 reserved words (ANONYMOUS, AUTHENTICATED USER, BATCH, BUILTIN, DIALUP, DOMAIN, ENTERPRISE, INTERACTIVE, INTERNET, LOCAL, NETWORK, NULL, PROXY, RESTRICTED, SELF, SERVER, USERS, WORLD, GATEWAY, GW, TAC). Must differ from the Workgroup name. TrueNAS 25.04 and later enforce these restrictions through validation. |
-| **Domain Name** | (Required) Enter the Active Directory domain name (example.com) or child domain (sales.example.com) if configuring TrueNAS with access to a limited portion of your configuration. This is the name of the domain with all the user and group objects that TrueNAS accesses. Editable after saving. |
-| **Domain Account Name** | (Required) Enter the bindname TrueNAS should use as the account name. The default value is **Administrator**. TrueNAS creates this account after the domain joins. Not editable after saving. |
-| **Domain Account Password** | (Required) Enter the bindpw password for the account. Required the first time you configure a domain. After initial configuration, the password is not needed to edit, start, or stop the service. After the initial configuration or joining, TrueNAS uses the **Kerberos Principal** instead of the password. |
-| **Enable (requires password or Kerberos principal)** | Select to enable the Active Directory service in TrueNAS. TrueNAS populates the **Kerberos Realm** and **Kerberos Principal** fields with what it discovers in AD. Clear to disable Active Directory. After disabling Active Directory, the **[Directory Services]({{< ref "/SCALE/SCALEUIReference/Credentials/DirectoryServices" >}})** screen returns to the default and shows the options to configure AD or LDAP. TrueNAS creates a Kerberos realm and keytab from what it detects in Active Directory, then populates the **Kerberos Realm** and **Kerberos Principal** settings on the **Advanced Options** screen. |
+| **Configuration Type** | Sets the type of directory service. **Active Directory** shows Active Directory domain integration settings. |
+| **Enable Service** | Activates the Active Directory configuration. Enabled by default. Clear to disable the configuration without deleting it. Re-enable it later without reconfiguring it. The **[Directory Services]({{< ref "/SCALE/SCALEUIReference/Credentials/DirectoryServices" >}})** screen returns to the default and provides the options to configure AD, LDAP, or IPA. |
+| **Enable Account Cache** | Caches user and group information. Caching makes directory users and groups available in UI dropdown menus. Enabled by default. |
+| **Enable DNS Updates** | Allows the directory service to update DNS records. Enabled by default. |
+| **Timeout (seconds)** | The number of seconds before the directory service connection times out. Valid range is 1-40 seconds. |
+| **Kerberos Realm** | Defines the Kerberos realm for authentication. This field auto-populates after joining the Active Directory domain. |
 {{< /truetable >}}
 {{< /expand >}}
 
-### Active Directory - Advanced Options
-The **Advanced Options** screen shows both the basic and advanced option settings on the add and edit versions of the **Active Directory** screen.
+### Active Directory Credential Configuration Section
 
-{{< trueimage src="/images/SCALE/Credentials/ActiveDirectoryAdvancedOptions.png" alt="Active Directory Advanced Options" id="Active Directory Advanced Options" >}}
+The **Credential Configuration** section settings define authentication methods for Active Directory access.
 
-{{< expand "Advanced Options Settings" "v" >}}
+{{< trueimage src="/images/SCALE/Credentials/DirectoryServicesCredentialConfig.png" alt="Credential Configuration" id="Credential Configuration" >}}
+
+{{< expand "Credential Configuration Settings" "v" >}}
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Site Name** | Enter the relative distinguished name (RDN) of the site object in the AD server. This is the first component of the distinguished name in AD. For more info, read [Configuring Active Directory]({{< ref "ConfigADSCALE" >}}). |
-| **Kerberos Realm** | Select an existing realm from the dropdown list of options. Options are those configured in **Kerberos Realms**. After selecting **Enable (requires password or Kerberos principal)**, TrueNAS populates the **Kerberos Realm** and **Kerberos Principal** fields with what it discovered in AD. |
-| **Kerberos Principal** | Select the location of the principal in the keytab created in **Directory Services > Kerberos Keytabs**. After selecting **Enable (requires password or Kerberos principal)**, TrueNAS populates the **Kerberos Realm** and **Kerberos Principal** fields with what it discovered in AD. |
-| **Computer Account OU** | The organizational unit (OU) where new computer accounts are created. The OU string includes the distinguished name (DN) of the Computer Account OU that includes the hierarchical location of the OU within the directory structure. For example, *OU=Computers,DC=example,DC=com*. The OU string is read from top to bottom without relative distinguished names (RDNs). Slashes (/) are used as delimiters, as in *Computers/Servers/NAS*. Backslashes (\) are used to escape characters but not as a separator. Backslashes are interpreted at multiple levels and might require doubling or even quadrupling to take effect. When this field is blank, new computer accounts are created in the Active Directory default OU. |
-| **AD Timeout** | Enter the number of seconds before timeout. To view the AD connection status, go to **Task Manager > *History** to open the **Jobs** screen. |
-| **DNS Timeout** | Enter the number of seconds before a timeout. Increase this value if AD DNS queries time out. |
-| **Winbind NSS Info** | Winbind NSS specifies the method used by Winbind to retrieve user and group information. Select the schema to use when querying AD for user/group info. Options:<br><li>**TEMPLATE** - (default) Select to use a template to construct user and group entries based on attributes. Other options:<br><li>**rfc2307** - Select to use the RFC 2307 schema, Windows 2003 R2 schema support.<br><li>**sfu** - Select to use the Service for Unix 3.0 or 3.5 schema to access Unix attributes in Active Directory.<br><li>**sfu20** - Select to use the Service for Unix 2.0 schema to access Unix attributes in Active Directory.</li> |
-| **NetBIOS Alias** | Alternative names that SMB clients can use when connecting to this NAS (maximum 15 characters each). Cannot contain: `\ / : * ? " < > |`. Cannot use Microsoft or RFC 852 reserved words. TrueNAS 25.04 and later enforce these restrictions through validation. |
-|**Enable (requires password or Kerberos principle)** | Select to enable AD service. The first time you select this option, you must enter the password for the domain admin account. After selecting **Enable (requires password or Kerberos principal)**, TrueNAS populates the **Kerberos Realm** and **Kerberos Principal** fields with what it discovered in AD. |
-| **Verbose Logging** | Select to increase logging verbosity related to the Active Directory service in <file>/var/log/midlewared.log</file>. |
-| **Allow Trusted Domains** | Allows clients to access the TrueNAS server if they are members of domains that have a trust relationship with the domain to which TrueNAS is joined. Starting in TrueNAS 25.10, trusted domains are configured as part of the directory services configuration rather than as separate IDmap entries. |
-| **Use Default Domain** | AD users and groups by default have a domain name prefix (`DOMAIN\`). In some edge cases, this might cause erratic behavior from some clients and applications that are poorly designed and cannot handle the prefix. Select only if required for a specific application or client. Note that using this setting is not recommended as it can cause collisions with local user account names.  |
-| **Allow DNS Updates** | Select to enable Samba to do DNS updates when joining a domain. Selected by default. |
-| **Disable AD User/Group Cache** | TrueNAS maintains a cache of users and groups for API consumers (including the WebUI). This is a convenience feature that might be disabled if the domain contains large numbers of users and groups, or if caching generates excessive load on the domain controller. Select to disable caching AD users and groups. |
-| **Restrict PAM** | Select to restrict SSH access in certain circumstances to members in BUILTIN\\Administrators. Pluggable Authentication Module (PAM) enables systems to authenticate users against AD credentials. |
+| **Credential Type** | (Required) Sets the credential type for Active Directory authentication. Options include **Kerberos User** and **Kerberos Principal**. |
+| **Username** | (Required) The Active Directory domain administrator username. Enter only the username (for example, *Administrator*), not the domain-prefixed format. |
+| **Password** | (Required) The password for the administrator account. |
+{{< /truetable >}}
+{{< /expand >}}
+
+### Active Directory Configuration Section
+
+The **Active Directory Configuration** section settings define the connection parameters and domain-specific options.
+
+{{< trueimage src="/images/SCALE/Credentials/ActiveDirectoryBasicOptions.png" alt="AD Configuration" id="AD Configuration" >}}
+
+{{< expand "Active Directory Configuration Settings" "v" >}}
+{{< truetable >}}
+| Setting | Description |
+|---------|-------------|
+| **TrueNAS Hostname** | (Required) The hostname for the TrueNAS system. This value must match the **Hostname** setting on the **Network > Global Configuration** screen and cannot exceed 15 characters. Cannot contain: `\ / : * ? " < > |`. Cannot use Microsoft or RFC 852 reserved words (ANONYMOUS, AUTHENTICATED USER, BATCH, BUILTIN, DIALUP, DOMAIN, ENTERPRISE, INTERACTIVE, INTERNET, LOCAL, NETWORK, NULL, PROXY, RESTRICTED, SELF, SERVER, USERS, WORLD, GATEWAY, GW, TAC). Must differ from the Workgroup name. |
+| **Domain Name** | (Required) The Active Directory domain name (for example, *example.com*) or child domain (for example, *sales.example.com*) if configuring access to a child domain. |
+| **Site Name** | The relative distinguished name (RDN) of the site object in the AD server. TrueNAS automatically detects this from the Active Directory server. |
+| **Computer Account OU** | The organizational unit (OU) where the TrueNAS computer object is created when joining the Active Directory domain for the first time. The OU string includes the distinguished name (DN) of the Computer Account OU. For example, *OU=Computers,DC=example,DC=com*. |
+| **Use Default Domain** | Removes the domain name prefix from AD users and groups. This setting may be required for specific configurations such as Kerberos authentication with NFS for AD users. Note that using this setting can cause collisions with local user account names. |
+{{< /truetable >}}
+{{< /expand >}}
+
+### Trusted Domains Configuration Section
+
+The **Trusted Domains Configuration** section controls access for trusted domains.
+
+{{< expand "Trusted Domains Configuration Settings" "v" >}}
+{{< truetable >}}
+| Setting | Description |
+|---------|-------------|
+| **Enable Trusted Domains** | Allows clients to access TrueNAS if they are members of domains with a trust relationship. Starting in TrueNAS 25.10, trusted domains are configured as part of the Active Directory configuration rather than as separate IDmap entries. When enabled, additional trusted domain configuration options appear. Each trusted domain requires an **IDMAP Backend** selection. |
+{{< /truetable >}}
+{{< /expand >}}
+
+### IDMAP Configuration Section
+
+The **IDMAP Configuration** section controls identity mapping settings.
+
+{{< trueimage src="/images/SCALE/Credentials/ADIDMAPConfig.png" alt="IDMAP Configuration" id="IDMAP Configuration" >}}
+
+{{< hint type=important >}}
+IDMAP (Identity Mapping) ensures that UIDs and GIDs assigned to Active Directory users and groups have consistent values domain-wide. By default, TrueNAS uses an algorithmic method based on the RID component of the user or group SID, which is suitable for most environments. Only administrators experienced with configuring ID mapping should customize IDMAP settings.
+{{< /hint >}}
+
+{{< expand "IDMAP Configuration Settings" "v" >}}
+{{< truetable >}}
+| Setting | Description |
+|---------|-------------|
+| **Use TrueNAS Server IDMAP Defaults** | Uses default IDMAP configuration. Enabled by default and recommended for most setups. Clear to reveal additional configuration options: **Builtin** section with optional **Name** field and required **Range Low** and **Range High** fields, and **IDMAP Domain** section with required **IDMAP Backend**, **Name**, **Range Low**, and **Range High** fields. |
+| **IDMAP Backend** | Sets the backend plugin interface for Winbind to store SID in UID/GID mapping tables. Options include **AD**, **AUTORID**, **LDAP**, **NSS**, **RFC2307**, **RID**, and **TDB**. |
+| **Range Low** | The lowest UID/GID number the IDMAP backend translates. Works with **Range High** to establish the range. |
+| **Range High** | The highest UID/GID number the IDMAP backend translates. Works with **Range Low** to establish the range. |
 {{< /truetable >}}
 {{< /expand >}}
