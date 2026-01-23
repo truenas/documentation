@@ -29,7 +29,7 @@ This guide will go over the minimum hardware requirements and offer suggestions 
 The heart of any storage system is the symbiotic pairing of the file system and physical storage devices.
 The ZFS file system in TrueNAS provides the [best available data protection of any file system at any cost](https://www.ixsystems.com/blog/openzfs-vs-the-competition/) and makes effective use of spinning-disk storage, all-flash storage, or a mix of both.
 ZFS is prepared for the eventual failure of storage devices and is highly configurable to achieve the perfect balance of redundancy and performance to meet any storage goal.
-A properly configured TrueNAS system can tolerate multiple storage device failures and recreate its boot media with a copy of the [configuration file]({{< ref "ManageSysConfigSCALE" >}}).
+A properly configured TrueNAS system can tolerate multiple storage device failures and recreate its boot media with a copy of the [configuration file]({{< ref "ManageSysConfig" >}}).
 
 ### Storage Device Quantities
 
