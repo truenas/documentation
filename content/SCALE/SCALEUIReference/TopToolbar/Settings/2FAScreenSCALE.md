@@ -70,7 +70,7 @@ Click **Renew** to confirm or **Cancel** to keep the existing secret.
 
 **Are you sure you want to unset two-factor authentication? This will remove your current 2FA configuration and you will need to set it up again to use 2FA.**
 
-Click **Unset 2FA** to confirm or **Cancel** to keep the existing configuration.
+**Unset 2FA** confirms changes. **Cancel** keeps the existing configuration.
 
 {{< trueimage src="/images/SCALE/Credentials/Unset2FASecret.png" alt="Unset Two-Factor Authentication Dialog" id="Unset Two-Factor Authentication Dialog" >}}
 
