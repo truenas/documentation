@@ -26,7 +26,7 @@ The **Two Factor Auth** screen displays different information depending on the G
 
 When Global 2FA is not enabled, the screen displays a warning message:
 
-> Two-Factor authentication is not enabled on this system. You can configure your personal settings, but they will have no effect until two-factor authentication is enabled globally by system administrator.
+**Two-Factor authentication is not enabled on this system. You can configure your personal settings, but they will have no effect until two-factor authentication is enabled globally by system administrator.**
 
 Users can still configure their personal 2FA settings, but authentication codes are not required for login until a system administrator enables Global 2FA.
 
