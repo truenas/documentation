@@ -86,4 +86,5 @@ After configuring 2FA, the screen displays a QR code that users scan with their 
 
 ### Text Code Section
 
-Below the QR code, the screen displays the text version of the 2FA secret with a copy-to-clipboard button. Users can manually enter this code into their authenticator app if they cannot scan the QR code.
+Below the QR code, the screen displays the text version of the 2FA secret with a copy-to-clipboard button. 
+The copy-to-clipboard button allows users save the code and then manually enter it into their authenticator app if they cannot scan the QR code.
