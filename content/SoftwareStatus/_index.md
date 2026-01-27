@@ -42,9 +42,9 @@ Choose the right TrueNAS version by balancing your need for new features against
     <div style="flex-shrink: 0;">
       <img src="/images/open-enterprise-storage--logo-full-color-rgb-large.png" alt="TrueNAS Enterprise" style="max-width: 150px; height: auto;">
     </div>
-    <div style="flex-grow: 1;">
-      In all cases for systems with a TrueNAS Enterprise support contract, we recommend <a href="https://www.truenas.com/support/">contacting the TrueNAS Support team</a> prior to updating your TrueNAS appliance.
-      Our Support team can provide advice based on your unique requirements and be there to help you resolve any unexpected issues.
+    <div style="flex-grow: 1; font-size: 0.95rem;">
+      <p style="margin-top: 0;">* We recommend the default Mission Critical update profile for all TrueNAS Enterprise systems.</p>
+      <p style="margin-bottom: 0;">Customers with a TrueNAS Enterprise support contract should <a href="https://www.truenas.com/support/">contact TrueNAS Support</a> before system updates. Our Support team can provide advice based on your unique requirements and help resolve any unexpected issues.</p>
     </div>
   </div>
 </div>
