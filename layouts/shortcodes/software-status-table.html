@@ -91,10 +91,10 @@
           {{/* Enterprise */}}
           {{ if $mc.enterprise.link }}
             <td style="padding: 1rem; text-align: center;">
-              <a href="{{ $mc.enterprise.link }}">{{ $mc.enterprise.version }}</a>{{ $mc.enterprise.note }}
+              <a href="{{ $mc.enterprise.link }}">{{ $mc.enterprise.version }}</a>*{{ $mc.enterprise.note }}
             </td>
           {{ else }}
-            <td style="padding: 1rem; text-align: center;">{{ $mc.enterprise.version | default "N/A" }}{{ $mc.enterprise.note }}</td>
+            <td style="padding: 1rem; text-align: center;">{{ $mc.enterprise.version | default "N/A" }}*{{ $mc.enterprise.note }}</td>
           {{ end }}
           {{/* Community Scale - Always show Enterprise link */}}
           <td style="padding: 1rem; text-align: center;">
