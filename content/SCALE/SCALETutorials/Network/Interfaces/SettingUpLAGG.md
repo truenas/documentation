@@ -15,6 +15,10 @@ TrueNAS uses [lagg(4)](https://wiki.debian.org/BridgeNetworkConnections) to mana
 {{< include file="/static/includes/InterfaceBeforeYouBegin.md" >}}
 {{< include file="/static/includes/BeforeYouBridge.md" >}}
 
+If configuring an LACP link aggregation, configure a port-channel or link aggregation group on your network switch before creating the LAGG interface in TrueNAS.
+The switch ports connected to your TrueNAS interfaces must be configured for LACP (IEEE 802.3ad) and active before TrueNAS can successfully negotiate the link aggregation.
+Consult your switch documentation for specific configuration steps.
+
 {{< include file="/static/includes/TestingNetworkChanges.md" >}}
 
 ## Adding a Link Aggregation Interface
