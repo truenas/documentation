@@ -15,11 +15,11 @@ table_data:
       link: https://www.truenas.com/docs/scale/25.10/gettingstarted/versionnotes/#25.10.1
   general:
     enterprise:
-      version: 25.04.2.6
-      link: https://www.truenas.com/docs/scale/25.04/gettingstarted/scalereleasenotes/#250426
+      version: 25.10.1
+      link: https://www.truenas.com/docs/scale/25.10/gettingstarted/versionnotes/#25.10.1
     community:
-      version: 25.04.2.6
-      link: https://www.truenas.com/docs/scale/25.04/gettingstarted/scalereleasenotes/#250426
+      version: 25.10.1
+      link: https://www.truenas.com/docs/scale/25.10/gettingstarted/versionnotes/#25.10.1
   mission_critical:
     enterprise:
       version: 25.04.2.6
