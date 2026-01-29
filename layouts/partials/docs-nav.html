@@ -217,7 +217,7 @@
         versionButton.textContent = 'Archive';
       } else {
         // Default version if no specific path is matched
-        versionButton.textContent = '26.04';
+        versionButton.textContent = '26';
       }
       versionUpdated = true;  
     } else if (path.includes('/truecommand/')) {
@@ -277,7 +277,7 @@
               <small class="version-label">Next</small>
               <hr class="version-line">
             </div>
-            <div class="truenas-dropdown-item" onclick="selectVersion('scale-nightly')" id="scale-nightly">26.04</div>
+            <div class="truenas-dropdown-item" onclick="selectVersion('scale-nightly')" id="scale-nightly">26</div>
             <div class="truenas-dropdown-item" onclick="selectVersion('25.10')" id="2510">25.10</div>
           </div>
           <div class="truenas-version-group">
@@ -591,7 +591,7 @@
         versionButton.innerHTML = '22.12 <i class="fa fa-angle-down"></i>';
       } else {
         // Default to latest version if no specific path is matched
-        versionButton.innerHTML = '26.04 <i class="fa fa-angle-down"></i>';
+        versionButton.innerHTML = '26 <i class="fa fa-angle-down"></i>';
       }
       
       versionDropdown.style.display = 'none';    
