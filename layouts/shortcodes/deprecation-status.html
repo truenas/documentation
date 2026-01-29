@@ -1,8 +1,8 @@
 {{ $_hugo_config := `{ "version": 1 }` }}
 {{/* Shortcode for displaying deprecation status with visual badges */}}
-{{/* Usage for features removed in current version: {{< deprecation-status deprecated="25.04" removed="26.04" >}} */}}
-{{/* Usage for features deprecated now for future removal: {{< deprecation-status deprecated="26.04" removing="27.04" >}} */}}
-{{/* Usage with generic removal version: {{< deprecation-status deprecated="26.04" removing="TBD" >}} */}}
+{{/* Usage for features removed in current version: {{< deprecation-status deprecated="25.04" removed="26" >}} */}}
+{{/* Usage for features deprecated now for future removal: {{< deprecation-status deprecated="26" removing="27.04" >}} */}}
+{{/* Usage with generic removal version: {{< deprecation-status deprecated="26" removing="TBD" >}} */}}
 
 {{ $deprecated := .Get "deprecated" }}
 {{ $removed := .Get "removed" }}
