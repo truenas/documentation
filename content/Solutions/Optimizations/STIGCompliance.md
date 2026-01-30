@@ -34,7 +34,7 @@ If clean-installing TrueNAS for the first time, follow guidance in the [Installa
 
 ### Prerequisites
 
-If you are installing TrueNAS on servers other than licensed TrueNAS Enterprise systems, you should read and follow guidance in the [TrueNAS Hardware Guide]({{< ref "SCALEHardwareGuide" >}}).
+If you are installing TrueNAS on servers other than licensed TrueNAS Enterprise systems, you should read and follow guidance in the [TrueNAS Hardware Guide]({{< ref "TNHardwareGuide" >}}).
 
 ## Configuring TrueNAS
 
