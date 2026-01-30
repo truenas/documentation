@@ -7,11 +7,11 @@ const searchConfig = {
   indexes: {
     // TrueNAS Documentation versions
     // NOTE: Default version is determined dynamically from URL or scale-releases.yaml
-    'docs-26.04': {
+    'docs-26': {
       url: LOCAL_TESTING ? '/pagefind/' : 'https://www.truenas.com/docs/pagefind/',
       name: 'TrueNAS Documentation',
-      displayName: 'TrueNAS 26.04 Nightly',
-      version: '26.04 Nightly',
+      displayName: 'TrueNAS 26 Nightly',
+      version: '26 Nightly',
       icon: LOCAL_TESTING ? '/favicon/TN-favicon-32x32.png' : 'https://www.truenas.com/docs/favicon/TN-favicon-32x32.png',
       priority: 1,
       group: 'docs'
@@ -418,7 +418,7 @@ class MultiSiteSearch {
           .filter(cb => cb.checked)
           .map(cb => cb.dataset.site.replace('docs-', ''))
           .sort((a, b) => {
-            // Sort versions descending (26.04, 25.10, 25.04, 24.10)
+            // Sort versions descending (26, 25.10, 25.04, 24.10)
             const [aMajor, aMinor] = a.split('.').map(Number);
             const [bMajor, bMinor] = b.split('.').map(Number);
             if (aMajor !== bMajor) return bMajor - aMajor;
@@ -578,7 +578,7 @@ class MultiSiteSearch {
       if (this.activeSites.includes('api')) {
         // Extract versions from docs version dropdown (regardless of main docs toggle state)
         const checkedDocsVersions = Array.from(document.querySelectorAll('.docs-version-option input[type="checkbox"]:checked'))
-          .map(cb => cb.dataset.site.replace('docs-', '')); // ["25.04", "26.04", etc.]
+          .map(cb => cb.dataset.site.replace('docs-', '')); // ["25.04", "26", etc.]
 
         if (checkedDocsVersions.length > 0) {
 
