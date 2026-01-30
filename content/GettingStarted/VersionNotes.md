@@ -49,7 +49,7 @@ The TrueNAS team is pleased to release TrueNAS 25.10.1!
 * Adds automatic validation for SMB share audit logging configurations.
   TrueNAS 25.10.1 automatically disables SMB shares when auditing is enabled and watch or ignore lists contain invalid groups (deleted/renamed groups or groups that are no longer SMB-type). This protective measure prevents auditing misconfigurations that could cause security or compliance issues. The system generates alerts identifying affected shares and problematic groups. See [Configuring SMB Auditing](ManageSMBShares#configuring-smb-auditing) for configuration details and troubleshooting steps.
 * Adds REST API usage monitoring alert.
-  TrueNAS now displays a daily alert when deprecated REST API endpoints are accessed, helping identify integrations that need migration. The REST API was deprecated in TrueNAS 25.04. Full removal is planned for TrueNAS 26.04. For more information about the JSON-RPC 2.0 over WebSocket API, see the [API documentation](https://api.truenas.com/v25.10/jsonrpc.html).
+  TrueNAS now displays a daily alert when deprecated REST API endpoints are accessed, helping identify integrations that need migration. The REST API was deprecated in TrueNAS 25.04. Full removal is planned for TrueNAS 26. For more information about the JSON-RPC 2.0 over WebSocket API, see the [API documentation](https://api.truenas.com/v25.10/jsonrpc.html).
 * Adds **Clear Config** button to the directory services configuration form.
   This button allows users to easily remove existing directory service configurations. This is useful for troubleshooting, reconfiguration, or switching between directory service types.
 * Updates Samba from 4.22.5 to 4.22.6 ([NAS-138644](https://ixsystems.atlassian.net/browse/NAS-138644)).
@@ -312,7 +312,7 @@ Failover moves to the **Advanced Settings** screen ([NAS-135469](https://ixsyste
   Existing configurations using **AUTORID** are automatically migrated to **RID** during upgrade.
   Users should review their ACLs and permissions after upgrade and might need to reconfigure them in some edge cases.
 * Completes the transition to the versioned JSON-RPC 2.0 over WebSocket API by migrating all remaining jobs and events from the deprecated REST API ([NAS-133984](https://ixsystems.atlassian.net/browse/NAS-133984)).
-  Full removal of the REST API is planned for the TrueNAS 26.04 release.
+  Full removal of the REST API is planned for the TrueNAS 26 release.
 * Removes the SMART UI ([NAS-134927](https://ixsystems.atlassian.net/browse/NAS-134927)).
   * Removes the built-in SMART test scheduling and monitoring interface to improve user flexibility while maintaining smartmontools binaries for continued third-party script compatibility ([NAS-135020](https://ixsystems.atlassian.net/browse/NAS-135020)).
     Existing scheduled SMART tests are automatically migrated to cron tasks during upgrade, and users can install the Scrutiny app for advanced SMART monitoring.
