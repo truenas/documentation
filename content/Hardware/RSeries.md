@@ -56,9 +56,6 @@ descr="iXsystems official Statement of Volatility for the R20B system." >}}
 descr="User Manual for the TrueNAS R50." >}}
 
 {{< imagecard image="/images/Hardware/NetworkPortID.png" title="Network Port IDs" link="https://www.truenas.com/docs/files/RSeriesNetworkPortIDs.pdf"
-descr="Identifications list of TrueNAS R-Series systems network ports." >}}
-
-{{< imagecard image="/images/Hardware/NetworkPortID.png" title="Network Port IDs" link="https://www.truenas.com/docs/files/RSeriesNetworkPortIDs.pdf"
 descr="Identifications list of TrueNAS R20 and R50 systems network ports." >}}
 
 {{< imagecard image="/images/Hardware/RSeries/RSeriesOOBM.png" title="Out-of-Band Management" link="https://www.truenas.com/docs/files/RSeriesOOBM1.1.pdf"
