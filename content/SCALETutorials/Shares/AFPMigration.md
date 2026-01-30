@@ -12,7 +12,7 @@ tags:
 
 Since the Apple Filing Protocol (AFP) for shares is deprecated and no longer receives updates, it is not present in TrueNAS.
 
-However, users can sidegrade AFP configurations into TrueNAS 24.04 to migrate previously-saved AFP configurations into SMB configurations.
+However, users can sidegrade AFP configurations into TrueNAS to migrate previously-saved AFP configurations into SMB configurations.
 
 ## Migrating AFP Shares
 
@@ -30,7 +30,7 @@ Do not clear the **Legacy AFP Compatibility** checkbox, as it impacts how data i
 Any other shares created to access these paths after the migration must also have **Legacy AFP Compatibility** selected.
 {{< /hint >}}
 
-Once you have [migrated to TrueNAS 24.04]({{< ref "MigratingFromCore" >}}), you can find your migrated AFP configuration in **Shares >** **Windows Shares (SMB)** with the prefix **AFP_**.
+Once you have [migrated to TrueNAS]({{< ref "MigratingFromCore" >}}), you can find your migrated AFP configuration in **Shares >** **Windows Shares (SMB)** with the prefix **AFP_**.
 To make the migrated AFP share accessible, start the SMB service.
 
 ![MigratedAFPShareSCALE](/images/SCALE/Shares/MigratedAFPShareSCALE.png "Migrated AFP Share")
