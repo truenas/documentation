@@ -1,5 +1,5 @@
 ---
-title: "26.04 (Halfmoon) Development Notes"
+title: "26 (Halfmoon) Development Notes"
 description: "Highlights, change log, and known issues for the latest TrueNAS nightly development version."
 weight: 10
 related: false
@@ -8,24 +8,24 @@ aliases:
  - /scale/scalereleasenotes/
  - /scalenext-releasenotes/
  - /scale/scalenextversion/
- - /scale/26.04/gettingstarted/scalereleasenotes/
- - /scale/26.04/gettingstarted/versionnotes/
+ - /scale/26/gettingstarted/scalereleasenotes/
+ - /scale/26/gettingstarted/versionnotes/
  - /scale/gettingstarted/scalereleasenotes/ 
  - /releasenotes/
 jump_to_buttons:
   - text: "Latest Changes"
-    anchor: "26.04-nightly-changes"
+    anchor: "26-nightly-changes"
     icon: "fiber-new"
   - text: "Known Issues"
     anchor: "known-issues"
     icon: "warning"
-  - text: "26.04 Major Features"
+  - text: "26 Major Features"
     anchor: "major-features"
     icon: "new-releases"
   - text: "Deprecations"
     anchor: "deprecations"
     icon: "timeline"
-  - text: "Full 26.04 Changelog"
+  - text: "Full 26 Changelog"
     anchor: "full-changelog"
     icon: "history"
   - text: "Preparing to Upgrade"
@@ -39,8 +39,8 @@ jump_to_buttons:
     icon: "component-versions"
 ---
 
-{{< hint type="tip" title="26.04 Nightly Development Documentation" >}}
-This page tracks the latest development roadmap and notes for the future TrueNAS major version 26.04 (Halfmoon).
+{{< hint type="tip" title="26 Nightly Development Documentation" >}}
+This page tracks the latest development roadmap and notes for the future TrueNAS major version 26 (Halfmoon).
 
 See the stable [25.04 (Fangtooth)](https://www.truenas.com/docs/scale/25.04/gettingstarted/scalereleasenotes/) or pre-release [25.10 (Goldeye)](https://www.truenas.com/docs/scale/25.10/gettingstarted/versionnotes/) release notes for information relating to those versions.
 {{< /hint >}}
@@ -49,14 +49,14 @@ See the stable [25.04 (Fangtooth)](https://www.truenas.com/docs/scale/25.04/gett
 
 <!-- Hugo-processed content for release notes tab box -->
 <div style="display: none;" id="release-tab-content-source">
-  <div data-tab-id="26.04-nightly-changes" data-tab-label="26.04 Nightly Changes">
+  <div data-tab-id="26-nightly-changes" data-tab-label="26 Nightly Changes">
 
 {{< hint type=warning title="Early Release Software" >}}
 Early releases are intended for testing and feedback purposes.
 Do not use early-release software for critical tasks.
 {{< /hint >}}
 
-TrueNAS 26.04 (Halfmoon) is currently in active development.
+TrueNAS 26 (Halfmoon) is currently in active development.
 
 Check back for more information.
 
@@ -64,14 +64,14 @@ Check back for more information.
 
   <div data-tab-id="known-issues" data-tab-label="Known Issues">
 
-{{< hint type="important" title="Known Issues in 26.04" >}}
-These are ongoing issues that can affect multiple versions in the 26.04 series.
+{{< hint type="important" title="Known Issues in 26" >}}
+These are ongoing issues that can affect multiple versions in the 26 series.
 <br> When resolved, issues move to **Notable Changes** for the appropriate release.
 {{< /hint >}}
 
 ### Current Known Issues
 
-No known issues currently reported for 26.04 development builds.
+No known issues currently reported for 26 development builds.
 
 Check back for more information.
 
@@ -79,12 +79,12 @@ See the [Release Notes](https://forums.truenas.com/c/release-notes/13) section o
 
   </div>
 
-  <div data-tab-id="major-features" data-tab-label="26.04 Major Features">
+  <div data-tab-id="major-features" data-tab-label="26 Major Features">
 
-{{< include file="/static/includes/26.04FeatureList.md" >}}
+{{< include file="/static/includes/26FeatureList.md" >}}
 
   </div>
-  <div data-tab-id="full-changelog" data-tab-label="Full 26.04 Changelog">
+  <div data-tab-id="full-changelog" data-tab-label="Full 26 Changelog">
 <!-- CSV Changelog Table with Version Support -->
 <div id="csv-changelog-container"></div>
   </div>
@@ -106,7 +106,7 @@ For additional resources, see the [Feature Deprecations]({{< ref "Deprecations" 
 <script src="/js/linkable-tabs-init.js"></script>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-    initializeHugoTabs('release-tab-content-source', 'release-tabs-container', '26.04-nightly-changes');
+    initializeHugoTabs('release-tab-content-source', 'release-tabs-container', '26-nightly-changes');
 });
 </script>
 
@@ -114,7 +114,7 @@ document.addEventListener('DOMContentLoaded', function() {
 {{< changelog-scripts >}}
 <script>
 // Initialize changelog table for version
-initializeChangelogTableForTabs('26.04');
+initializeChangelogTableForTabs('26');
 </script>
 
 ## Upgrading TrueNAS {#upgrading}
@@ -158,7 +158,7 @@ initializeChangelogTableForTabs('26.04');
 
 {{< include file="/static/includes/EarlyReleaseWarning.md" >}}
 
-{{< include file="/static/includes/26.04UpgradeMethods.md" >}}
+{{< include file="/static/includes/26UpgradeMethods.md" >}}
 
 {{< include file="/static/includes/SCALEUpgradePaths.md" >}}
   </div>  
@@ -200,7 +200,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 Click the component version number to see release notes for that component.
 
-{{< component-versions "26.04" >}}
+{{< component-versions "26" >}}
 
 \*TrueNAS (25.10 and later) includes the [NVIDIA open GPU kernel module drivers](https://github.com/NVIDIA/open-gpu-kernel-modules).
   These drivers work with Turing and later GPUs.
