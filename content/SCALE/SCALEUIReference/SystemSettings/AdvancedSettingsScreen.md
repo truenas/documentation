@@ -459,6 +459,41 @@ Isolated GPU devices are reserved for use by configured applications or a VM.
 To allocate an isolated GPU device, select it while creating or editing the VM configuration.
 When allocated to a VM, the isolated GPU connects to the VM as if it were physically installed in that VM, and it becomes unavailable for any other allocations.
 
+## NVIDIA Drivers Widget
+
+The **NVIDIA Drivers** widget displays the installation status of NVIDIA GPU drivers for use with containers and applications.
+
+{{< hint type=note >}}
+NVIDIA drivers are required to use NVIDIA GPU devices with containers.
+TrueNAS includes the [NVIDIA open GPU kernel module drivers](https://github.com/NVIDIA/open-gpu-kernel-modules), which work with Turing and later GPU architectures.
+Earlier architectures (Pascal, Maxwell, Volta) are not compatible.
+{{< /hint >}}
+
+{{< trueimage src="/images/SCALE/SystemSettings/AdvancedSettingsNVIDIADriversWidget.png" alt="NVIDIA Drivers Widget" id="NVIDIA Drivers Widget" >}}
+
+**Configure** opens the **NVIDIA Drivers** configuration screen.
+
+### NVIDIA Drivers Configuration Screen
+
+The **NVIDIA Drivers** configuration screen allows you to install or remove NVIDIA GPU drivers on your system.
+
+{{< trueimage src="/images/SCALE/SystemSettings/NVIDIADriversConfigScreen.png" alt="NVIDIA Drivers Configuration Screen" id="NVIDIA Drivers Configuration Screen" >}}
+
+**Install NVIDIA Drivers** installs the NVIDIA GPU drivers on the system.
+Select this option to enable NVIDIA GPU support for containers.
+
+{{< hint type=warning >}}
+Installing NVIDIA drivers requires the system to use the production kernel.
+If **Enable Debug Kernel** is selected, NVIDIA driver installation fails.
+See [Debug Kernel](#debug-kernel) for more information.
+{{< /hint >}}
+
+After installation completes, NVIDIA GPU devices become available for assignment to containers.
+To verify installation, check that your GPU devices appear in the container GPU device selection list.
+
+**Uninstall** removes the NVIDIA GPU drivers from the system.
+Containers using NVIDIA GPUs cannot start after driver removal.
+
 ## Global Two Factor Authentication Widget
 
 The **Global Two Factor Authentication** widget shows the status of global two-factor authentication, the tolerance window, and the status of two-factor authentication for SSH sessions. It provides access to the configuration screen that allows you to set up two-factor authentication (2FA) for your system.
